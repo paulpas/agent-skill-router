@@ -1,6 +1,8 @@
-# Trading Bot Skills
+# Skills
 
-A collection of 92 OpenCode skills for algorithmic trading, AI/ML integration, systematic trading systems, and coding patterns. All trading-domain skills use a consistent `trading-*` prefix for easy discovery.
+A growing collection of OpenCode skills organized by domain. Each skill is a self-contained directory (`<prefix>-<topic>/SKILL.md`) — the directory name is intentionally descriptive so you can find what you need without consulting this file. New domains and skills are added over time.
+
+Skills are loaded in OpenCode via the `/skill` command. Browse by category below or search by directory name prefix.
 
 ## Categories
 
