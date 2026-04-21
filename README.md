@@ -1,11 +1,12 @@
 # Trading Bot Skills
 
-A collection of 83 OpenCode skills for algorithmic trading, AI/ML integration, and systematic trading systems.
+A collection of 92 OpenCode skills for algorithmic trading, AI/ML integration, and systematic trading systems.
 
 ## Categories
 
 - [AI Integration](#ai-integration) (17 skills)
 - [Backtesting](#backtesting) (6 skills)
+- [Coding Patterns](#coding-patterns) (9 skills)
 - [Data Pipelines](#data-pipelines) (10 skills)
 - [Exchange Integration](#exchange-integration) (10 skills)
 - [Execution Algorithms](#execution-algorithms) (6 skills)
@@ -67,6 +68,28 @@ A collection of 83 OpenCode skills for algorithmic trading, AI/ML integration, a
 **[backtesting-sharpe-ratio](./backtesting-sharpe-ratio/SKILL.md)** — Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics
 
 **[backtesting-walk-forward](./backtesting-walk-forward/SKILL.md)** — Walk-Forward Optimization for Robust Strategy Validation
+
+---
+
+## Coding Patterns
+
+**[coding-conviction-scoring](./coding-conviction-scoring/SKILL.md)** — Multi-factor conviction scoring engine combining technical, momentum, trend, volatility, and volume signals with configurable weights
+
+**[coding-data-normalization](./coding-data-normalization/SKILL.md)** — Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization
+
+**[coding-event-bus](./coding-event-bus/SKILL.md)** — Async pub/sub event bus with typed events, mixed sync/async dispatch, and singleton initialization for trading systems
+
+**[coding-event-driven-architecture](./coding-event-driven-architecture/SKILL.md)** — Event-driven architecture for real-time trading systems: pub/sub patterns, event types, signal flow, strategy base, and common pitfalls
+
+**[coding-fastapi-patterns](./coding-fastapi-patterns/SKILL.md)** — FastAPI application structure with typed error hierarchy, global exception handlers, CORS middleware, request timing, and lifecycle events
+
+**[coding-pydantic-config](./coding-pydantic-config/SKILL.md)** — Pydantic-based configuration management with frozen models, nested hierarchy, TOML/env parsing, and module-level singleton
+
+**[coding-pydantic-models](./coding-pydantic-models/SKILL.md)** — Pydantic frozen data models for trading: enums, annotated constraints, field/model validators, and computed properties
+
+**[coding-strategy-base](./coding-strategy-base/SKILL.md)** — Abstract base strategy pattern with initialization guards, typed abstract methods, and conviction scoring integration
+
+**[coding-websocket-manager](./coding-websocket-manager/SKILL.md)** — WebSocket connection manager with state machine (connecting/connected/reconnecting/error), exponential backoff, and message routing
 
 ---
 
