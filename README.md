@@ -1,6 +1,6 @@
 # Trading Bot Skills
 
-A collection of 92 OpenCode skills for algorithmic trading, AI/ML integration, and systematic trading systems.
+A collection of 92 OpenCode skills for algorithmic trading, AI/ML integration, systematic trading systems, and coding patterns.
 
 ## Categories
 
