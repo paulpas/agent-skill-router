@@ -16,34 +16,13 @@ Skills are loaded in OpenCode via the `/skill` command. Browse by category below
 - [Trading Technical Analysis](#trading-technical-analysis) (13 skills)
 - [Trading Fundamentals](#trading-fundamentals) (6 skills)
 - [Coding Patterns](#coding-patterns) (9 skills)
-- [CNCF Cloud Native](#cncf-cloud-native) (71 skills)
-
----
-
-
-## Coding Patterns
-
-**[coding-conviction-scoring](./coding-conviction-scoring/SKILL.md)** — Multi-factor conviction scoring engine combining technical, momentum, trend, volatility, and volume signals with configurable weights
-
-**[coding-data-normalization](./coding-data-normalization/SKILL.md)** — Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization
-
-**[coding-event-bus](./coding-event-bus/SKILL.md)** — Async pub/sub event bus with typed events, mixed sync/async dispatch, and singleton initialization for trading systems
-
-**[coding-event-driven-architecture](./coding-event-driven-architecture/SKILL.md)** — Event-driven architecture for real-time trading systems: pub/sub patterns, event types, signal flow, strategy base, and common pitfalls
-
-**[coding-fastapi-patterns](./coding-fastapi-patterns/SKILL.md)** — FastAPI application structure with typed error hierarchy, global exception handlers, CORS middleware, request timing, and lifecycle events
-
-**[coding-pydantic-config](./coding-pydantic-config/SKILL.md)** — Pydantic-based configuration management with frozen models, nested hierarchy, TOML/env parsing, and module-level singleton
-
-**[coding-pydantic-models](./coding-pydantic-models/SKILL.md)** — Pydantic frozen data models for trading: enums, annotated constraints, field/model validators, and computed properties
-
-**[coding-strategy-base](./coding-strategy-base/SKILL.md)** — Abstract base strategy pattern with initialization guards, typed abstract methods, and conviction scoring integration
-
-**[coding-websocket-manager](./coding-websocket-manager/SKILL.md)** — WebSocket connection manager with state machine (connecting/connected/reconnecting/error), exponential backoff, and message routing
+- [CNCF Cloud Native](#cncf-cloud-native) (83 skills - 55 enriched with 300+ lines, 28 with 260-299 lines)
 
 ---
 
 ## CNCF Cloud Native
+
+**55 enriched skills** with 300+ lines of comprehensive content, **28 skills** with 260-299 lines (below 300-line threshold).
 
 **[cncf-argo](./cncf-argo/SKILL.md)** — Argo in Continuous Integration & Delivery - cloud native architecture, patterns, pitfalls, and best practices
 **[cncf-artifact-hub](./cncf-artifact-hub/SKILL.md)** — Artifact Hub in Application Definition & Image Build - cloud native architecture, patterns, pitfalls, and best practices
