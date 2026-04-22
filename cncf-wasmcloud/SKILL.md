@@ -1,19 +1,264 @@
 ---
 name: cncf-wasmcloud
-description: wasmCloud in Scheduling &amp; Orchestration - cloud native architecture, patterns, pitfalls, and best practices
+description: wasmCloud in WebAssembly-based distributed applications platform
 ---
+
 # wasmCloud in Cloud-Native Engineering
+
+**Category:** Scheduling & Orchestration  
+**Status:** Active  
+**Stars:** 1,100  
+**Last Updated:** 2026-04-22  
+**Primary Language:** Rust  
+**Documentation:** [WebAssembly-based distributed applications platform](https://wasmcloud.com/docs/)  
+
+---
 
 ## Purpose and Use Cases
 
+wasmCloud is a core component of the cloud-native ecosystem, serving as applications platform
+
+### What Problem Does It Solve?
+
+wasmCloud addresses the challenge of distributed applications using WebAssembly. It provides portability, security, and language agnosticism for distributed systems.
+
+### When to Use This Project
+
+Use wasmCloud when need wasm-based apps, require security isolation, or want language-agnostic distributed computing. Not ideal for simple deployments or when edge computing, microservices with wasm, or secure distributed applications.
+
+### Key Use Cases
+
+- WebAssembly Microservices
+- Edge Computing Applications
+- Secure Function Execution
+- Language-Agnostic Distributed Systems
+- Portable Cloud-Native Apps
+
+---
+
 ## Architecture Design Patterns
+
+### Core Components
+
+- **Host**: WasmCloud host runtime
+- **Actor**: Application logic
+- **Provider**: Backend services
+- **Controller**: Cluster management
+- **Distributed KV**: State management
+
+### Component Interactions
+
+1. **Actor → Provider**: Actor calls provider
+1. **Host → Actor**: Host executes actor
+1. **Host → Provider**: Host manages provider
+1. **Controller → Host**: Controller manages hosts
+
+### Data Flow Patterns
+
+1. **Actor Execution**: Actor loaded → Executed by host → Calls provider
+1. **Provider Registration**: Provider starts → Registered with host
+1. **Message Flow**: Actor → Provider → Response
+1. **State Sync**: Distributed KV sync across hosts
+
+### Design Principles
+
+- **Security First**: Sandboxed execution
+- **Portability**: Run anywhere
+- **Language Agnostic**: Any language with wasm support
+- **Decentralized**: Decentralized architecture
+
+---
 
 ## Integration Approaches
 
+### Integration with Other CNCF Projects
+
+- **WASI**: WebAssembly System Interface
+- **Kubernetes**: Deployment platform
+- **OCF**: Open Cloud Framework
+- **Hyperspace**: Distributed KV
+
+### API Patterns
+
+- **Actor API**: Actor interface
+- **Provider API**: Provider interface
+- **Host API**: Host management API
+- **WIT**: WebAssembly Interface Type
+
+### Configuration Patterns
+
+- **Host Config**: Host configuration
+- **Actor Config**: Actor configuration
+- **Provider Config**: Provider configuration
+- **Cluster Config**: Cluster settings
+
+### Extension Mechanisms
+
+- **Custom Providers**: Add custom providers
+- **Custom Actors**: Add custom actors
+- **Custom Hosts**: Custom host implementations
+
+---
+
 ## Common Pitfalls and How to Avoid Them
+
+### Misconfigurations
+
+- **Provider Connection**: Provider connection failures
+  - **How to Avoid**: Check provider health, verify configurations
+- **WASI Issues**: WASI compatibility issues
+  - **How to Avoid**: Use compatible WASI versions, update toolchains
+
+### Performance Issues
+
+- **Host Scalability**: Host scalability issues
+  - **How to Avoid**: Scale hosts, optimize provider usage
+- **Upgrade Issues**: Upgrade failures
+  - **How to Avoid**: Test upgrades, follow upgrade path
+
+### Operational Challenges
+
+- **Performance Issues**: Performance degradation
+  - **How to Avoid**: Monitor performance, tune configurations
+- **Tooling Issues**: Tooling limitations
+  - **How to Avoid**: Use latest tooling, contribute improvements
+
+### Security Pitfalls
+
+
+---
 
 ## Coding Practices
 
+### Idiomatic Configuration
+
+- **Actor Design**: Design actors for portability
+- **Provider Integration**: Integrate with providers cleanly
+- **State Management**: Manage distributed state effectively
+
+### API Usage Patterns
+
+- **wadm**: WasmCloud deployment tool
+- **wash**: WasmCloud host
+- **wit**: Wasm Interface Type tool
+- **wasm-tools**: Wasm tools
+
+### Observability Best Practices
+
+- **Host Metrics**: Monitor host performance
+- **Actor Metrics**: Track actor execution
+- **Provider Metrics**: Monitor provider health
+
+### Testing Strategies
+
+- **Integration Tests**: Test actor-provider interactions
+- **Security Tests**: Validate security isolation
+- **Performance Tests**: Validate performance
+
+### Development Workflow
+
+- **Local Development**: Use wash locally
+- **Debug Commands**: Check host and actor logs
+- **Test Environment**: Set up test cluster
+- **CI/CD Integration**: Automate testing
+- **Monitoring Setup**: Configure observability
+- **Documentation**: Maintain documentation
+
+---
+
 ## Fundamentals
 
+### Essential Concepts
+
+- **Actor**: Application logic
+- **Provider**: Backend services
+- **Host**: Wasm runtime
+- **Capability**: Provider capability
+- **WIT**: WebAssembly Interface Type
+- **Distributed KV**: State management
+- **Controller**: Cluster controller
+- **Manifest**: Application manifest
+
+### Terminology Glossary
+
+- **Actor**: Application component
+- **Provider**: Service provider
+- **Host**: Wasm runtime
+- **Capability**: Provider interface
+- **WIT**: WebAssembly Interface Type
+
+### Data Models and Types
+
+- **Actor**: Actor definition
+- **Provider**: Provider definition
+- **Capability**: Capability interface
+- **Manifest**: Application manifest
+
+### Lifecycle Management
+
+- **Actor Execution**: Actor loaded → Executed → Calls provider → Returns
+- **Provider Registration**: Provider starts → Registered → Ready
+- **Message Flow**: Actor → Provider → Response
+- **State Sync**: KV state sync across hosts
+
+### State Management
+
+- **Actor State**: Loaded, running, or stopped
+- **Provider State**: Running or offline
+- **Host State**: Active or degraded
+- **KV State**: Synced or outdated
+
+---
+
 ## Scaling and Deployment Patterns
+
+### Horizontal Scaling
+
+- **Actor Scaling**: Scale actor instances
+- **Provider Scaling**: Scale provider instances
+- **Host Scaling**: Scale hosts
+
+### High Availability
+
+- **Host HA**: Multiple hosts
+- **Provider HA**: Provider redundancy
+- **KV HA**: Distributed KV redundancy
+
+### Production Deployments
+
+- **Cluster Setup**: Deploy wasmCloud cluster
+- **Network Configuration**: Configure network
+- **Security Setup**: Enable security isolation
+- **Monitoring Setup**: Configure metrics
+- **Logging Setup**: Centralize logs
+- **Backup Strategy**: Backup configurations
+- **Resource Quotas**: Set resource limits
+- **Performance Tuning**: Optimize performance
+
+### Upgrade Strategies
+
+- **Host Upgrade**: Upgrade wasmCloud host
+- **Provider Upgrade**: Upgrade providers
+- **Actor Upgrade**: Upgrade actors
+- **Testing**: Verify functionality
+
+### Resource Management
+
+- **CPU Resources**: CPU limits
+- **Memory Resources**: Memory limits
+- **Storage Resources**: Storage configuration
+- **Network Resources**: Network configuration
+
+---
+
+## Additional Resources
+
+- **Official Documentation:** https://wasmcloud.com/docs/
+- **GitHub Repository:** Check the project's official documentation for repository link
+- **CNCF Project Page:** [cncf.io/projects/cncf-wasmcloud/](https://www.cncf.io/projects/cncf-wasmcloud/)
+- **Community:** Check the official documentation for community channels
+- **Versioning:** Refer to project's release notes for version-specific features
+
+---
+
+*Content generated automatically. Verify against official documentation before production use.*
