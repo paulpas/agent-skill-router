@@ -1,0 +1,326 @@
+---
+name: cncf-zot
+description: Zot in Container Registry - cloud native architecture, patterns, pitfalls, and best practices
+---
+
+ # Zot in Cloud-Native Engineering
+
+**Category:** container-registry  
+**Status:** Active  
+**Stars:** 2,090  
+**Last Updated:** 2026-04-21  
+**Primary Language:** Go  
+**Documentation:** [https://github.com/project-zot/zot](https://github.com/project-zot/zot)  
+
+---
+
+## Purpose and Use Cases
+
+Zot is a cloud-native project that provides container-registry functionality for modern distributed systems.
+
+### What Problem Does It Solve?
+
+Zot addresses the challenges of container-registry in cloud-native environments, enabling teams to implement container-registry features without embedding them in application code.
+
+### When to Use This Project
+
+Use zot when you need container-registry capabilities in your Kubernetes or cloud-native infrastructure. It's ideal when you require container-registry with minimal application code changes.
+
+### Key Use Cases
+
+
+- container-registry for microservices
+- Integration with Kubernetes and CNCF ecosystem
+- container-registry with declarative configuration
+- container-registry for observability and monitoring
+- container-registry for security and compliance
+
+---
+
+## Architecture Design Patterns
+
+### Core Components
+
+
+- **Primary Component**: Core functionality
+- **Controller**: Cluster management
+- **Agent**: Node-level execution
+- **API Server**: Management interface
+- **Storage**: Configuration persistence
+
+### Component Interactions
+
+
+1. **Client → Core**: Request routing
+2. **Core → Storage**: Configuration persistence
+3. **Controller → Agents**: Command distribution
+4. **Agents → Controller**: Status reporting
+5. **Storage → Controllers**: Configuration sync
+
+### Data Flow Patterns
+
+
+1. **Request Flow**: Client → Core → Backend
+2. **Configuration Flow**: API → Storage → Nodes
+3. **State Flow**: Nodes → Control Plane → Dashboard
+4. **Telemetry Flow**: Data → Collector → Storage
+
+### Design Principles
+
+
+- **Declarative Configuration**: YAML/CRD-based configuration
+- **Kubernetes-Native**: Leverages Kubernetes APIs
+- **Extensible**: Plugin/adapter architecture
+- **Observability First**: Built-in metrics, tracing, logging
+- **High Availability**: Multi-node clustering
+- **Secure by Default**: TLS, authentication, authorization
+
+---
+
+## Integration Approaches
+
+### Integration with Other CNCF Projects
+
+
+- **Kubernetes**: Native integration with K8s APIs
+- **Prometheus**: Metrics collection integration
+- **Grafana**: Dashboard visualization
+- **Jaeger/Zipkin**: Distributed tracing
+- **CoreDNS**: Service discovery integration
+- **Envoy**: Service mesh integration
+- **Istio**: Service mesh control plane
+
+### API Patterns
+
+
+- **RESTful API**: Management endpoints
+- **gRPC API**: Internal communication
+- **WebSocket API**: Real-time updates
+- **Admin API**: Configuration management
+
+### Configuration Patterns
+
+
+- **YAML Manifests**: Human-readable configs
+- **JSON**: Machine-readable format
+- **Environment Variables**: Runtime configuration
+- **ConfigMaps**: Kubernetes config storage
+- **CRDs**: Kubernetes custom resources
+
+### Extension Mechanisms
+
+
+- **Plugins**: Extend functionality
+- **Filters**: Process requests
+- **Hooks**: Event callbacks
+- **Modules**: Add features
+
+---
+
+## Common Pitfalls and How to Avoid Them
+
+### Misconfigurations
+
+
+- **Endpoint Configuration**: Wrong API endpoints
+- **Authentication**: Missing or incorrect auth
+- **Resource Limits**: Insufficient resource allocation
+- **SSL/TLS**: Certificate validation issues
+- **Network Policy**: Incorrect network rules
+- **Scaling**: Under/over-provisioned resources
+
+### Performance Issues
+
+
+- **Request Latency**: High latency
+- **Throughput**: Low throughput
+- **Memory Usage**: High memory consumption
+- **CPU Usage**: High CPU usage
+- **Connection Pooling**: Pool exhaustion
+- **Cache Misses**: High cache miss rate
+
+### Operational Challenges
+
+
+- **Configuration Management**: Config drift
+- **Upgrade Management**: Rolling upgrades
+- **Monitoring**: Metrics collection
+- **Logging**: Log aggregation
+- **Troubleshooting**: Issue diagnosis
+- **Security**: Security audits
+
+### Security Pitfalls
+
+
+- **Authentication**: Missing authentication
+- **Authorization**: Overly permissive ACLs
+- **TLS Configuration**: Weak TLS settings
+- **Secrets Management**: Exposed secrets
+- **RBAC**: Insufficient access control
+- **Vulnerabilities**: Outdated dependencies
+
+---
+
+## Coding Practices
+
+### Idiomatic Configuration
+
+
+- **YAML**: Configuration files
+- **JSON**: API payloads
+- **Environment Variables**: Runtime config
+- **ConfigMaps**: Kubernetes config
+
+### API Usage Patterns
+
+
+- **REST API**: Management endpoints
+- **gRPC API**: Internal communication
+- **WebSocket API**: Real-time updates
+
+### Observability Best Practices
+
+
+- **Prometheus Metrics**: Custom metrics
+- **Tracing**: Distributed tracing
+- **Access Logs**: Request logging
+- **Alerting**: Health checks
+
+### Testing Strategies
+
+
+- **Unit Tests**: Component tests
+- **Integration Tests**: Service tests
+- **E2E Tests**: Full stack tests
+- **Load Tests**: Performance tests
+
+### Development Workflow
+
+
+- **Development**: Local dev setup
+- **Testing**: Unit and integration tests
+- **Debugging**: Logging, tracing
+- **Deployment**: Docker, Kubernetes
+- **CI/CD**: GitHub Actions
+- **Tools**: Project CLI tools
+
+---
+
+## Fundamentals
+
+### Essential Concepts
+
+
+- **Cluster**: Node group
+- **Node**: Individual server
+- **Pod**: Container unit
+- **Service**: Network service
+- **Config**: Configuration data
+- **Secret**: Sensitive data
+- **Volume**: Storage volume
+- **Namespace**: Logical partition
+
+### Terminology Glossary
+
+
+- **Cluster**: Cluster of nodes
+- **Node**: Individual node
+- **Service**: Service endpoint
+- **Config**: Configuration data
+- **Secret**: Secret data
+- **Volume**: Storage
+- **Namespace**: Namespace
+- **Pod**: Pod unit
+
+### Data Models and Types
+
+
+- **Config**: Config spec
+- **Secret**: Secret spec
+- **Service**: Service spec
+- **Deployment**: Deployment spec
+- **Pod**: Pod spec
+- **Volume**: Volume spec
+- **Namespace**: Namespace spec
+
+### Lifecycle Management
+
+
+- **Service Lifecycle**: Create → Deploy → Scale → Delete
+- **Pod Lifecycle**: Pending → Running → Succeeded/Failed
+- **Config Lifecycle**: Create → Apply → Update → Delete
+- **Secret Lifecycle**: Create → Encrypt → Decrypt → Delete
+
+### State Management
+
+
+- **Config State**: Applied config
+- **Service State**: Service state
+- **Pod State**: Pod state
+- **Volume State**: Volume state
+- **Secret State**: Encrypted data
+- **Namespace State**: Namespace data
+
+---
+
+## Scaling and Deployment Patterns
+
+### Horizontal Scaling
+
+
+- **Node Scaling**: Add/remove nodes
+- **Container Scaling**: Pod replicas
+- **Database Scaling**: Database clusters
+- **Cache Scaling**: Cache clusters
+- **Load Balancing**: Frontend balancing
+
+### High Availability
+
+
+- **Multiple Instances**: Redundant instances
+- **Load Balancing**: Frontend balancing
+- **Health Checking**: Automatic failover
+- **Graceful Shutdowns**: Clean shutdown
+- **Data Replication**: HA storage
+
+### Production Deployments
+
+
+- **Configuration**: Production config
+- **Load Balancing**: Frontend HA
+- **Monitoring**: Metrics setup
+- **Alerting**: Alerting setup
+- **Logging**: Centralized logging
+- **Security**: Security hardening
+
+### Upgrade Strategies
+
+
+- **Rolling Update**: Rolling deployment
+- **Blue-Green**: Blue-green deployment
+- **Canary**: Canary release
+- **Backup**: Pre-upgrade backup
+- **Validation**: Post-upgrade validation
+
+### Resource Management
+
+
+- **Memory Configuration**: Memory limits
+- **CPU Configuration**: CPU limits
+- **Storage Configuration**: Storage limits
+- **Network Configuration**: Network limits
+- **Connection Limits**: Connection limits
+
+---
+
+## Additional Resources
+
+- **Official Documentation:** [{repo_info['html_url']}]({repo_info['html_url']})
+- **GitHub Repository:** [{repo_info['html_url']}]({repo_info['html_url']})
+- **CNCF Project Page:** [cncf.io/projects/{project_info['name']}/](https://www.cncf.io/projects/{project_info['name']}/)
+- **Community:** Check the GitHub repository for community channels
+- **Versioning:** Refer to project's release notes for version-specific features
+
+---
+
+*Content generated automatically. Verify against official documentation before production use.*
