@@ -323,4 +323,167 @@ Use cilium when you need network capabilities in your Kubernetes or cloud-native
 
 ---
 
+## Examples
+
+### Enable Network Policy
+
+```yaml
+# Enable Cilium with network policy enforcement
+helm install cilium cilium/cilium --namespace kube-system   --set networkPolicy.enabled=true   --set hubble.relay.enabled=true   --set hubble.ui.enabled=true
+
+# Create network policy
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-liveness-probes
+spec:
+  endpointSelector:
+    matchLabels:
+      app: frontend
+  ingress:
+    - fromEntities:
+        - cluster
+```
+
+### Service Mesh with L7 Policies
+
+```yaml
+# Enable Cilium service mesh
+helm install cilium cilium/cilium --namespace kube-system   --set hubble.relay.enabled=true   --set hubble.ui.enabled=true   --set config.enabled=true
+
+# L7 policy for HTTP traffic
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: frontend-to-backend
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            app: frontend
+      toPorts:
+        - ports:
+            - port: "80"
+              protocol: TCP
+          rules:
+            http:
+              - method: "GET"
+                path: "/api/.*"
+```
+
+### Monitor with Hubble
+
+```yaml
+# Hubble metrics configuration
+helm install cilium cilium/cilium --namespace kube-system   --set hubble.metrics.enabled="{dns,drop,tcp,flow,port-distribution,httpV2}"
+
+# Query metrics
+kubectl exec -n kube-system <hubble-relay-pod> -- hubble observe --last 100
+
+# Hubble UI access
+kubectl port-forward -n hubble-ui svc/hubble-ui 12000:80
+```
+
+## Troubleshooting
+
+### Cilium pods in CrashLoopBackOff
+
+**Cause:** Kernel version incompatibility or resource constraints
+
+**Solution:**
+
+```bash
+# Check kernel version requirements
+# Cilium requires Linux kernel 4.9.17+ or 5.8+
+
+# Check logs
+kubectl logs -n kube-system <cilium-pod>
+
+# Disable bpf masquerade if IP masquerade conflicts
+helm install cilium cilium/cilium --set bpf.masquerade=false
+```
+
+### Network policies not being enforced
+
+**Cause:** Cilium not installed with network policy support
+
+**Solution:**
+
+```bash
+# Verify Cilium is managing the cluster
+kubectl get nodes -l alpha.cilium.io/ingress-gateway-ip-alloc
+
+# Enable network policy
+kubectl -n kube-system patch daemonset cilium --type=json   -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--network-policy"}]'
+
+# Restart Cilium pods
+kubectl -n kube-system delete pods -l k8s-app=cilium
+```
+
+### Hubble relay connection failures
+
+**Cause:** Hubble relay not properly configured or DNS issues
+
+**Solution:**
+
+```bash
+# Enable Hubble relay
+helm install cilium cilium/cilium --set hubble.relay.enabled=true
+
+# Check relay status
+kubectl -n kube-system get pods -l app.kubernetes.io/name=hubble-relay
+
+# Restart relay
+kubectl -n kube-system delete pods -l app.kubernetes.io/name=hubble-relay
+```
+
+### L7 policy not matching traffic
+
+**Cause:** Incorrect HTTP rule specification or L7 parser issues
+
+**Solution:**
+
+```bash
+# Verify HTTP parsing
+cilium status --verbose | grep -A5 "HTTP"
+
+# Use correct HTTP rules format
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: http-policy
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            app: frontend
+      toPorts:
+        - ports:
+            - port: "80"
+              protocol: TCP
+          rules:
+            http:
+              - method: "GET"
+              - path: "/api/v1/.*"
+```
+
+### IP allocation conflicts
+
+**Cause:** Overlapping IP ranges with other CNI plugins
+
+**Solution:**
+
+```bash
+# Configure unique IP ranges
+helm install cilium cilium/cilium --set ipam.mode=cilium --set clusterPoolIPv4PodCIDR=10.0.0.0/8
+
+# Or use AWS VPC CNI integration
+helm install cilium cilium/cilium   --set kubeProxyReplacement=partial   --set k8sServiceHost=<api-server-ip>   --set k8sServicePort=<api-server-port>
+```
 *Content generated automatically. Verify against official documentation before production use.*

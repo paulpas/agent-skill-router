@@ -330,4 +330,161 @@ spec:
 
 ---
 
+## Examples
+
+### Single Node Cluster
+
+```yaml
+# Single node etcd configuration
+etcd --name=single-node   --data-dir=/var/lib/etcd   --listen-client-urls=https://0.0.0.0:2379   --advertise-client-urls=https://127.0.0.1:2379   --listen-peer-urls=https://0.0.0.0:2380   --client-cert-auth=true   --auto-tls=true   --peer-client-cert-auth=true   --peer-auto-tls=true
+
+# With configuration file
+etcd --config=/etc/etcd/etcd.conf.yml
+```
+
+### Three Node Cluster
+
+```yaml
+# Node 1
+etcd --name=etcd1   --data-dir=/var/lib/etcd   --initial-advertise-peer-urls=https://10.0.0.1:2380   --listen-peer-urls=https://10.0.0.1:2380   --listen-client-urls=https://10.0.0.1:2379,https://127.0.0.1:2379   --advertise-client-urls=https://10.0.0.1:2379   --initial-cluster=etcd1=https://10.0.0.1:2380,etcd2=https://10.0.0.2:2380,etcd3=https://10.0.0.3:2380   --initial-cluster-token=etcd-cluster-secure-token   --initial-cluster-state=new   --client-cert-auth=true   --peer-client-cert-auth=true
+
+# Node 2 and 3 similar with different IP addresses
+```
+
+### Kubernetes Integrated etcd
+
+```yaml
+# etcd configuration for Kubernetes
+apiVersion: v1
+kind: Pod
+metadata:
+  name: etcd
+  namespace: kube-system
+spec:
+  containers:
+  - name: etcd
+    image: k8s.gcr.io/etcd:3.5.9-0
+    command:
+    - etcd
+    - --data-dir=/var/lib/etcd
+    - --name=etcd0
+    - --initial-advertise-peer-urls=https://10.0.0.1:2380
+    - --listen-peer-urls=https://0.0.0.0:2380
+    - --listen-client-urls=https://0.0.0.0:2379
+    - --advertise-client-urls=https://10.0.0.1:2379
+    - --initial-cluster=etcd0=https://10.0.0.1:2380,etcd1=https://10.0.0.2:2380,etcd2=https://10.0.0.3:2380
+    - --initial-cluster-token=k8s-etcd-cluster-token
+    - --initial-cluster-state=new
+    - --client-cert-auth=true
+    - --peer-client-cert-auth=true
+    - --auto-tls=true
+    - --peer-auto-tls=true
+    volumeMounts:
+    - mountPath: /var/lib/etcd
+      name: etcd-data
+    - mountPath: /etc/ssl/certs
+      name: certs
+  hostNetwork: true
+  volumes:
+  - name: etcd-data
+    hostPath:
+      path: /var/lib/etcd
+  - name: certs
+    hostPath:
+      path: /etc/ssl/certs
+```
+
+## Troubleshooting
+
+### etcd cluster health check failing
+
+**Cause:** Network connectivity issues or member failures
+
+**Solution:**
+
+```bash
+# Check cluster health
+etcdctl endpoint health --endpoints=https://127.0.0.1:2379   --cacert=/etc/etcd/pki/ca.crt   --cert=/etc/etcd/pki/etcd.crt   --key=/etc/etcd/pki/etcd.key
+
+# List members
+etcdctl member list --endpoints=https://127.0.0.1:2379   --cacert=/etc/etcd/pki/ca.crt   --cert=/etc/etcd/pki/etcd.crt   --key=/etc/etcd/pki/etcd.key
+
+# Remove failed member
+etcdctl member remove <member-id> --endpoints=https://127.0.0.1:2379
+```
+
+### etcd disk space exhaustion
+
+**Cause:** Write operations without compaction or retention
+
+**Solution:**
+
+```bash
+# Check current database size
+etcdctl endpoint status --endpoints=https://127.0.0.1:2379 -w table
+
+# Compact old revisions
+etcdctl compact <rev>
+
+# Defragment database
+etcdctl defrag --endpoints=https://127.0.0.1:2379
+
+# Set auto-compaction
+etcd --auto-compaction-version=3 --auto-compaction-mode=periodic --auto-compaction-retention=1h
+```
+
+### Leader election stuck or slow
+
+**Cause:** Network latency or resource constraints
+
+**Solution:**
+
+```bash
+# Check leader
+etcdctl endpoint status --endpoints=https://127.0.0.1:2379 -w table
+
+# Adjust election timeout (advanced)
+# In configuration, increase election-timeout if high latency
+--election-timeout=5000 --heartbeat-interval=500
+
+# Ensure adequate resources
+# etcd needs consistent I/O performance
+```
+
+### Member not syncing with cluster
+
+**Cause:** Network partition or data inconsistency
+
+**Solution:**
+
+```bash
+# Remove and re-add member
+etcdctl member remove <member-id> --endpoints=https://127.0.0.1:2379
+
+# On the failed node, clear data
+rm -rf /var/lib/etcd
+
+# Re-add as new member
+etcd --name=<new-name> --initial-cluster-state=existing ...
+
+# Or use etcdctl member add
+etcdctl member add <new-name> --peer-urls=https://<ip>:2380
+```
+
+### TLS certificate validation failures
+
+**Cause:** Certificate expiration or misconfiguration
+
+**Solution:**
+
+```bash
+# Check certificate expiration
+openssl x509 -in /etc/etcd/pki/etcd.crt -noout -dates
+
+# Renew certificates before expiration
+# Update all members with new certs
+
+# Verify client certs
+etcdctl endpoint health --endpoints=https://127.0.0.1:2379   --cacert=/etc/etcd/pki/ca.crt   --cert=/etc/etcd/pki/admin.crt   --key=/etc/etcd/pki/admin.key
+```
 *Content generated automatically. Verify against official documentation before production use.*

@@ -327,4 +327,186 @@ Use CoreDNS when deploying Kubernetes clusters and need DNS-based service discov
 
 ---
 
+## Examples
+
+### Basic Kubernetes Service Discovery
+
+```yaml
+# Corefile for Kubernetes service discovery
+.:53 {
+    errors
+    health {
+       lameduck 5s
+    }
+    ready
+    kubernetes cluster.local in-addr.arpa ip6.arpa {
+       pods insecure
+       fallthrough in-addr.arpa ip6.arpa
+       ttl 30
+    }
+    prometheus :9153
+    forward . /etc/resolv.conf {
+       max_concurrent 1000
+    }
+    cache 30
+    loop
+    reload
+    loadbalance
+}
+```
+
+### Custom DNS Records
+
+```yaml
+# Add custom A records
+.:53 {
+    errors
+    health
+    kubernetes cluster.local in-addr.arpa ip6.arpa {
+       pods insecure
+       fallthrough in-addr.arpa ip6.arpa
+    }
+    forward . /etc/resolv.conf
+    cache 30
+    loop
+    reload
+    loadbalance
+    
+    # Custom records
+    rewrite continue {
+      name regex (.*)\.internal\.example\.com {1}.svc.cluster.local
+    }
+    file /etc/coredns/zones/example.com.cluster.local {
+      reload 5s
+    }
+}
+```
+
+### Conditional Forwarding
+
+```yaml
+# Forward specific domains to upstream DNS
+.:53 {
+    errors
+    health
+    kubernetes cluster.local in-addr.arpa ip6.arpa {
+       pods insecure
+       fallthrough in-addr.arpa ip6.arpa
+    }
+    
+    # Conditional forwarders
+    forward . /etc/resolv.conf
+    forward . 8.8.8.8 8.8.4.4 {
+       protocol prefer_udp
+    }
+    forward example.com 10.0.0.1
+    
+    cache 30
+    loop
+    reload
+    loadbalance
+}
+```
+
+## Troubleshooting
+
+### DNS resolution failing for services
+
+**Cause:** CoreDNS not properly configured or pods not ready
+
+**Solution:**
+
+```bash
+# Check CoreDNS pods status
+kubectl -n kube-system get pods -l k8s-app=kube-dns
+
+# Check endpoints
+kubectl -n kube-system get endpoints kube-dns
+
+# Restart CoreDNS
+kubectl -n kube-system rollout restart deployment coredns
+
+# Check DNS pod logs
+kubectl -n kube-system logs -l k8s-app=kube-dns
+```
+
+### High DNS query latency
+
+**Cause:** Cache misconfiguration or upstream DNS issues
+
+**Solution:**
+
+```bash
+# Increase cache size
+# In Corefile, increase cache TTL
+cache 3600
+
+# Check upstream DNS
+# Test direct query
+nslookup kubernetes.default.svc.cluster.local 10.96.0.10
+
+# Monitor cache hit ratio
+kubectl -n kube-system exec <coredns-pod> -- curl localhost:9153/metrics | grep dns_cache_hits_total
+```
+
+### DNS loop detected
+
+**Cause:** Incorrect CoreDNS configuration causing infinite loops
+
+**Solution:**
+
+```bash
+# Remove loop detection (if false positive)
+# Add 'loop off' to Corefile
+.:53 {
+    errors
+    health
+    kubernetes cluster.local in-addr.arpa ip6.arpa
+    forward . /etc/resolv.conf
+    loop off  # Disable loop detection
+    cache 30
+    reload
+}
+
+# Or fix configuration to prevent actual loops
+```
+
+### External DNS resolution failing
+
+**Cause:** Upstream DNS server issues or network policies
+
+**Solution:**
+
+```bash
+# Check upstream DNS
+kubectl -n kube-system exec -it <pod> -- nslookup google.com 8.8.8.8
+
+# Configure specific upstream servers
+forward . 8.8.8.8 1.1.1.1
+
+# Check network policies
+kubectl get networkpolicies --all-namespaces
+
+# Test DNS from cluster
+kubectl run -it --rm --image=busybox debug -- nslookup google.com
+```
+
+### CoreDNS crashes with OOM
+
+**Cause:** Insufficient memory allocation
+
+**Solution:**
+
+```bash
+# Increase memory limit in deployment
+kubectl -n kube-system set resources deployment coredns   --limits=memory=256Mi   --requests=memory=128Mi
+
+# Reduce cache size
+cache 1800
+
+# Limit concurrent queries
+forward . /etc/resolv.conf {
+   max_concurrent 500
+}
+```
 *Content generated automatically. Verify against official documentation before production use.*

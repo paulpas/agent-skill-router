@@ -339,4 +339,172 @@ Use containerd as your container runtime when running Kubernetes (it's the defau
 
 ---
 
+## Examples
+
+### Configure Registry Mirrors
+
+```yaml
+# Configure registry mirrors in /etc/containerd/config.toml
+version = 2
+
+[plugins."io.containerd.grpc.v1.cri".registry]
+  config_path = "/etc/containerd/certs.d"
+
+[plugins."io.containerd.grpc.v1.cri".registry.mirrors]
+  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
+    endpoint = ["https://registry-1.docker.io"]
+  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."gcr.io"]
+    endpoint = ["https://gcr.io"]
+  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."ghcr.io"]
+    endpoint = ["https://ghcr.io"]
+```
+
+### Configure Snapshotster
+
+```yaml
+# Configure different snapshotter for better performance
+version = 2
+
+[plugins."io.containerd.grpc.v1.cri".containerd]
+  snapshotter = "overlayfs"
+  default_runtime_name = "runc"
+
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes]
+  [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+    runtime_type = "io.containerd.runc.v2"
+    runtime_engine = ""
+    runtime_root = ""
+
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+  SystemdCgroup = true
+  BinaryName = "containerd-shim-runc-v2"
+```
+
+### Enable Content Trust
+
+```yaml
+# Enable content trust for image verification
+# Set environment variable
+export DOCKER_CONTENT_TRUST=1
+
+# Or configure in containerd config
+version = 2
+
+[plugins."io.containerd.grpc.v1.cri".containerd]
+  disable_snapshot_annotations = false
+  discard_unpacked_layers = false
+
+[plugins."io.containerd.grpc.v1.cri".x509_key_pair_streaming]
+  tls_cert_file = "/etc/containerd/certs/client.crt"
+  tls_key_file = "/etc/containerd/certs/client.key"
+```
+
+## Troubleshooting
+
+### Containerd fails to start
+
+**Cause:** Incorrect config.toml syntax or missing directories
+
+**Solution:**
+
+```bash
+# Validate configuration
+containerd config dump
+
+# Check for syntax errors
+containerd config validate
+
+# Create missing directories
+sudo mkdir -p /etc/containerd/certs.d
+sudo mkdir -p /var/lib/containerd
+
+# Restart service
+sudo systemctl restart containerd
+```
+
+### Image pull failures
+
+**Cause:** Registry authentication or network issues
+
+**Solution:**
+
+```bash
+# Configure registry credentials
+sudo mkdir -p /etc/containerd/certs.d/<registry>
+sudo cat > /etc/containerd/certs.d/<registry>/hosts.toml <<EOF
+[host."https://<registry>"]
+  capabilities = ["pull", "resolve"]
+  credentials = { username = "<user>", password = "<pass>" }
+EOF
+
+# Restart containerd
+sudo systemctl restart containerd
+
+# Test image pull
+ctr images pull <registry>/<image>
+```
+
+### Snapshotter errors (overlayfs/unix)
+
+**Cause:** File system compatibility or disk space issues
+
+**Solution:**
+
+```bash
+# Check available space
+df -h /var/lib/containerd
+
+# Change snapshotter in config
+# Try 'native' snapshotter for compatibility
+version = 2
+[plugins."io.containerd.grpc.v1.cri".containerd]
+  snapshotter = "native"
+
+# Or try 'stargz' for lazy pulling
+[plugins."io.containerd.grpc.v1.cri".containerd.snapshotter]
+  name = "stargz"
+```
+
+### CRI gRPC server not starting
+
+**Cause:** Port conflicts or socket file issues
+
+**Solution:**
+
+```bash
+# Check for port conflicts
+sudo ss -tlnp | grep 10010
+
+# Remove stale socket file
+sudo rm -f /var/run/containerd/containerd.sock
+
+# Restart containerd
+sudo systemctl restart containerd
+
+# Verify gRPC is working
+ctr version
+```
+
+### Image garbage collection not working
+
+**Cause:** Disk usage thresholds not properly configured
+
+**Solution:**
+
+```bash
+# Configure garbage collection
+version = 2
+
+[plugins."io.containerd.grpc.v1.cri"]
+  [plugins."io.containerd.grpc.v1.cri".containerd]
+    discard_unpacked_layers = true
+
+[plugins."io.containerd.grpc.v1.cri".containerd.snapshotter]
+  name = "overlayfs"
+
+[plugins."io.containerd.grpc.v1.cri".containerd]
+  [plugins."io.containerd.grpc.v1.cri".containerd.garbage_collection_policy]
+    min_reclaim = "10Gi"
+    threshold = 85
+```
 *Content generated automatically. Verify against official documentation before production use.*

@@ -323,4 +323,64 @@ Use krustlet when you need kubernetes capabilities in your Kubernetes or cloud-n
 
 ---
 
+## Examples
+
+### Basic Configuration
+
+The typical configuration pattern for cncf-krustlet follows standard CNCF practices:
+
+```yaml
+# Example configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cncf-krustlet-config
+data:
+  # Configuration goes here
+  config.yaml: |
+    # Base configuration
+```
+
+### Common Workflows
+
+1. **Installation**: Use official documentation for platform-specific installation
+2. **Configuration**: Configure via ConfigMaps or Helm values
+3. **Scaling**: Scale based on workload requirements
+
+### Advanced Features
+
+- Feature-rich configuration options
+- Integration with Kubernetes ecosystem
+- Production-grade deployment patterns
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Deployment Failures**
+   - Check pod logs for errors
+   - Verify configuration values
+   - Ensure network connectivity
+
+2. **Performance Issues**
+   - Monitor resource usage
+   - Adjust resource limits
+   - Check for bottlenecks
+
+3. **Configuration Errors**
+   - Validate YAML syntax
+   - Check required fields
+   - Verify environment-specific settings
+
+4. **Integration Problems**
+   - Verify API compatibility
+   - Check dependency versions
+   - Review integration documentation
+
+### Getting Help
+
+- Check official documentation
+- Search GitHub issues
+- Join community channels
+- Review logs and metrics
 *Content generated automatically. Verify against official documentation before production use.*
