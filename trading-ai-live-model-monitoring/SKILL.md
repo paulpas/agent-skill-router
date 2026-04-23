@@ -1,6 +1,15 @@
 ---
 name: trading-ai-live-model-monitoring
 description: Monitor production ML models for drift, decay, and performance degradation
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: ai live model monitoring, ai-live-model-monitoring, monitor, production, models
 ---
 
 **Role:** Ensure deployed trading models maintain performance through continuous monitoring and alerting

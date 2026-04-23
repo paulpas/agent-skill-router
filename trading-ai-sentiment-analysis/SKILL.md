@@ -1,6 +1,15 @@
 ---
 name: trading-ai-sentiment-analysis
 description: AI-powered sentiment analysis for news, social media, and political figures in trading
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: ai sentiment analysis, ai-sentiment-analysis, ai-powered, social, media
 ---
 
 # Sentiment Analysis for Trading: The 5 Laws of Market Emotion

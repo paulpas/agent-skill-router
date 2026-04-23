@@ -1,6 +1,15 @@
 ---
 name: trading-fundamentals-trading-psychology
 description: Emotional discipline, cognitive bias awareness, and maintaining operational integrity in trading
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: fundamentals trading psychology, fundamentals-trading-psychology, emotional, discipline, cognitive
 ---
 
 **Role:** Guide an AI coding assistant to build trading systems that respect human psychological limits and prevent emotionally-driven decisions

@@ -1,16 +1,19 @@
 ---
 name: cncf-process-releases
 description: Creates or updates RELEASES.md documenting the release process, versioning policy, and release cadence for CNCF projects
+license: MIT
+compatibility: opencode
 how_to_guide: https://contribute.cncf.io/maintainers/github/releases/
 id: releases
-mcp_servers:
-  - description: Check file existence, create files, open PRs
-    id: github
-    url: https://github.com/github/mcp-server-github
-  - description: Verify project maturity level and landscape metadata
-    id: cncf-landscape
-    url: https://github.com/cncf/landscape-mcp
+mcp_servers: 
 template_source: https://contribute.cncf.io/maintainers/github/releases/
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: process releases, process-releases, creates, updates, documenting
 ---
 
 # CNCF Release Process

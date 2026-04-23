@@ -1,6 +1,15 @@
 ---
 name: cncf-cortex
 description: Cortex in Monitoring & Observability - distributed, horizontally scalable Prometheus system
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: cortex, monitoring, observability, distributed
 ---
 # Cortex in Cloud-Native Engineering
 

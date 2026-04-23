@@ -1,6 +1,15 @@
 ---
 name: cncf-falco
 description: Falco in Cloud-Native Engineering - Cloud Native Runtime Security
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: falco, cloud-native, engineering, cloud
 ---
 
 # Falco in Cloud-Native Engineering

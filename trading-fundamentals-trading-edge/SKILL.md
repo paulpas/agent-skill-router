@@ -1,6 +1,15 @@
 ---
 name: trading-fundamentals-trading-edge
 description: Finding and maintaining competitive advantage in trading systems.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: fundamentals trading edge, fundamentals-trading-edge, finding, maintaining, competitive
 ---
 
 **Role:** Identify, quantify, test, and optimize sources of edge in trading strategies to ensure long-term profitability.

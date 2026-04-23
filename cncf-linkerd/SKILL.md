@@ -1,6 +1,15 @@
 ---
 name: cncf-linkerd
 description: Linkerd in Service Mesh - cloud native architecture, patterns, pitfalls, and best practices
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: linkerd, service, cloud, native
 ---
 # Linkerd in Cloud-Native Engineering
 

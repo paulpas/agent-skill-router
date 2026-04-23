@@ -1,6 +1,15 @@
 ---
 name: cncf-litmus
 description: Litmus in Chaos Engineering - cloud native architecture, patterns, pits and best practices
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: litmus, chaos, engineering, cloud
 ---
 # Litmus in Cloud-Native Engineering
 

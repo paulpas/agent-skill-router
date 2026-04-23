@@ -1,6 +1,15 @@
 ---
 name: trading-backtest-lookahead-bias
 description: Preventing lookahead bias in backtesting through strict causality enforcement, time-based validation, and comprehensive detection frameworks.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: backtest lookahead bias, backtest-lookahead-bias, preventing, backtesting, strict
 ---
 
 **Role:** Backtest Quality Engineer

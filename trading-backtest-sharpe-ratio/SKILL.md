@@ -1,6 +1,15 @@
 ---
 name: trading-backtest-sharpe-ratio
 description: Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: backtest sharpe ratio, backtest-sharpe-ratio, calculation, risk-adjusted, performance
 ---
 
 **Role:** Risk-Adjusted Performance Analyst — implements comprehensive Sharpe ratio calculations and risk-adjusted performance metrics to evaluate strategy quality while accounting for volatility and risk.

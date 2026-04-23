@@ -1,6 +1,15 @@
 ---
 name: trading-data-order-book
 description: Order book data handling, spread calculation, liquidity measurement, and cross-exchange normalization
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: data order book, data-order-book, handling, spread, calculation
 ---
 
 # Order Book Data Pipeline: The 5 Laws of Liquidity Analysis

@@ -1,6 +1,15 @@
 ---
 name: trading-exchange-order-book-sync
 description: Order book synchronization and state management for accurate trading
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: exchange order book sync, exchange-order-book-sync, synchronization, state, management
 ---
 
 **Role:** Maintain consistent order book state across multiple exchanges and timeframes

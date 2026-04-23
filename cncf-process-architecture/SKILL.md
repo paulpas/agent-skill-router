@@ -1,12 +1,18 @@
 ---
 name: cncf-process-architecture
 description: Creates or updates ARCHITECTURE.md documenting the project's design, components, and technical decisions for CNCF projects
+license: MIT
+compatibility: opencode
 id: architecture
-mcp_servers:
-  - description: List repo structure, check file existence, create ARCHITECTURE.md
-    id: github
-    url: https://github.com/github/mcp-server-github
+mcp_servers: 
 template_source: https://contribute.cncf.io/maintainers/templates/
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: process architecture, process-architecture, creates, updates, documenting
 ---
 
 # CNCF Architecture Documentation Process

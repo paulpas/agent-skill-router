@@ -1,6 +1,15 @@
 ---
 name: coding-pydantic-config
 description: Pydantic-based configuration management with frozen models, nested hierarchy, TOML/env parsing, and module-level singleton
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: coding
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: pydantic config, pydantic-config, pydantic-based, configuration, management
 ---
 
 # Skill: coding-pydantic-config

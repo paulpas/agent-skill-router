@@ -1,6 +1,15 @@
 ---
 name: coding-conviction-scoring
 description: Multi-factor conviction scoring engine combining technical, momentum, trend, volatility, and volume signals with configurable weights
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: coding
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: conviction scoring, conviction-scoring, multi-factor, engine, combining
 ---
 
 # Skill: coding-conviction-scoring

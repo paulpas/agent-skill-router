@@ -1,6 +1,15 @@
 ---
 name: trading-technical-market-microstructure
 description: Order book dynamics and order flow analysis
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: technical market microstructure, technical-market-microstructure, order, dynamics, analysis
 ---
 
 **Role:** Analyze order book depth, spread, and trade execution patterns

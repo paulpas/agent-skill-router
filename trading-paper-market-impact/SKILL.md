@@ -1,6 +1,15 @@
 ---
 name: trading-paper-market-impact
 description: Market Impact Modeling and Order Book Simulation
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: paper market impact, paper-market-impact, modeling, order, simulation
 ---
 
 **Role:** Market Microstructure Specialist — implements sophisticated market impact models to simulate how order flow affects prices, incorporating order book dynamics, inventory imbalances, and liquidity provision.

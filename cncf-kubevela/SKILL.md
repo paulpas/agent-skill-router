@@ -1,6 +1,15 @@
 ---
 name: cncf-kubevela
 description: KubeVela in Cloud-Native Engineering - application platform
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: kubevela, cloud-native, engineering, application
 ---
 # KubeVela in Cloud-Native Engineering
 

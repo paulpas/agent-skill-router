@@ -1,3 +1,17 @@
+---
+name: programming-algorithms
+description: Comprehensive algorithm selection guide — choose, implement, and optimize algorithms based on time/space trade-offs, input characteristics, and problem constraints
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: programming
+  role: reference
+  scope: implementation
+  output-format: code
+  triggers: algorithm, algorithms, data structure, sorting, searching, complexity, big-O
+---
+
 # Skill: programming-algorithms
 
 # Programming Algorithms: A Comprehensive Guide for Algorithm Selection

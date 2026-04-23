@@ -1,6 +1,15 @@
 ---
 name: cncf-oathkeeper
 description: Oathkeeper in Identity & Access - cloud native architecture, patterns, pitfalls, and best practices
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: oathkeeper, identity, access, cloud
 ---
 
  # Oathkeeper in Cloud-Native Engineering

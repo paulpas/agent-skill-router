@@ -1,6 +1,15 @@
 ---
 name: trading-ai-time-series-forecasting
 description: Time series forecasting for price prediction and market analysis
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: ai time series forecasting, ai-time-series-forecasting, price, prediction, market
 ---
 
 **Role:** Implement forecasting models that predict future price movements and market indicators

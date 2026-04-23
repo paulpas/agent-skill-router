@@ -1,6 +1,15 @@
 ---
 name: trading-technical-false-signal-filtering
 description: False Signal Filtering Techniques for Robust Technical Analysis
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: technical false signal filtering, technical-false-signal-filtering, techniques, robust, analysis
 ---
 
 **Role:** Technical Analysis Engineer — implements algorithms to identify and filter out spurious technical signals that lead to false entries and losses.

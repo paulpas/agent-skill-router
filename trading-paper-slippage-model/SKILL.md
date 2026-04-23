@@ -1,6 +1,15 @@
 ---
 name: trading-paper-slippage-model
 description: Slippage Modeling and Execution Simulation
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: paper slippage model, paper-slippage-model, modeling, execution, simulation
 ---
 
 **Role:** Execution Quality Specialist — implements comprehensive slippage models to simulate real-world execution quality, accounting for market impact, liquidity constraints, and order flow dynamics.

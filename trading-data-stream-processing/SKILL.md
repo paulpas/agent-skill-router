@@ -1,6 +1,15 @@
 ---
 name: trading-data-stream-processing
 description: Streaming data processing for real-time trading signals and analytics
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: data stream processing, data-stream-processing, streaming, real-time, trading
 ---
 
 **Role:** Process streaming data with low latency for real-time trading decisions

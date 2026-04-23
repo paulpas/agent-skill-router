@@ -1,6 +1,15 @@
 ---
 name: cncf-cert-manager
 description: cert-manager in Cloud-Native Engineering - Certificate Management for Kubernetes
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: cert manager, cert-manager, cert-manager, cloud-native, engineering
 ---
 # cert-manager in Cloud-Native Engineering
 

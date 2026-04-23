@@ -1,13 +1,19 @@
 ---
 name: cncf-process-security-policy
 description: Creates or updates SECURITY.md defining the vulnerability reporting process, disclosure timeline, and supported versions for CNCF projects
+license: MIT
+compatibility: opencode
 how_to_guide: https://contribute.cncf.io/projects/best-practices/security/
 id: security-policy
-mcp_servers:
-  - description: Check file existence, fetch template, enable private vulnerability reporting, create SECURITY.md
-    id: github
-    url: https://github.com/github/mcp-server-github
+mcp_servers: 
 template_source: https://github.com/cncf/tag-security/blob/main/project-resources/templates/SECURITY.md
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: process security policy, process-security-policy, creates, updates, defining
 ---
 
 # CNCF Security Policy Process

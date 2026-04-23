@@ -2,10 +2,16 @@
 name: coding-security-review
 description: Security-focused code review identifying vulnerabilities like injection, XSS, insecure deserialization, and misconfigurations, with remediation guidance
 license: MIT
+compatibility: opencode
 metadata:
+  version: "1.0.0"
+  domain: coding
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: security review, security-review, security-focused, identifying, vulnerabilities
   author: https://github.com/Jeffallan
   source: https://github.com/farmage/opencode-skills
-  version: "1.0.0"
 ---
 
 # Security Reviewer

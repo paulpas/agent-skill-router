@@ -1,6 +1,15 @@
 ---
 name: cncf-helm
 description: Helm in Cloud-Native Engineering - The Kubernetes Package Manager
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: helm, cloud-native, engineering, kubernetes
 ---
 
 # Helm in Cloud-Native Engineering

@@ -1,6 +1,15 @@
 ---
 name: cncf-flatcar-container-linux
 description: Flatcar Container Linux in Cloud-Native Engineering - container Linux
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: flatcar container linux, flatcar-container-linux, cloud-native, engineering
 ---
 # Flatcar Container Linux in Cloud-Native Engineering
 

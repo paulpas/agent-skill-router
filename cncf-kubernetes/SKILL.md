@@ -1,6 +1,15 @@
 ---
 name: cncf-kubernetes
 description: Kubernetes in Cloud-Native Engineering - Production-Grade Container Scheduling and Management
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: kubernetes, cloud-native, engineering, production-grade
 ---
 
 # Kubernetes in Cloud-Native Engineering

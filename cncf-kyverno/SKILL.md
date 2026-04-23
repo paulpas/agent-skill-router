@@ -1,6 +1,15 @@
 ---
 name: cncf-kyverno
 description: Kyverno in Cloud-Native Engineering - policy engine
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: kyverno, cloud-native, engineering, policy
 ---
 # Kyverno in Cloud-Native Engineering
 

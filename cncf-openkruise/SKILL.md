@@ -1,6 +1,15 @@
 ---
 name: cncf-openkruise
 description: OpenKruise in Extended Kubernetes workload management with advanced deployment strategies
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: openkruise, extended, kubernetes, workload
 ---
 
 # OpenKruise in Cloud-Native Engineering

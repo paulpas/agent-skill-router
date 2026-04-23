@@ -1,6 +1,15 @@
 ---
 name: coding-markdown-best-practices
 description: Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: coding
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: markdown best practices, markdown-best-practices, opencode, skills, syntax
 ---
 
 # Markdown Best Practices Skill

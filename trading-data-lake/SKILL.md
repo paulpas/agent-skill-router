@@ -1,6 +1,15 @@
 ---
 name: trading-data-lake
 description: Data lake architecture and management for trading data storage
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: data lake, data-lake, architecture, management, trading
 ---
 
 **Role:** Provide scalable, cost-effective storage for trading data with efficient query capabilities

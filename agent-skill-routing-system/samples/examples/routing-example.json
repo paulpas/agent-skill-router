@@ -1,0 +1,72 @@
+{
+  "requestId": "req_abc123xyz789",
+  "taskId": "skill_route_20240123_001",
+  "task": "Execute a 100 BTC order on BTC/USD with TWAP algorithm over 30 minutes with minimal market impact",
+  "selectedSkills": [
+    {
+      "name": "trading-execution-twap",
+      "score": 0.95,
+      "role": "primary",
+      "reasoning": "TWAP algorithm specifically designed for large order execution with minimal market impact"
+    },
+    {
+      "name": "trading-exchange-ccxt-patterns",
+      "score": 0.89,
+      "role": "supporting",
+      "reasoning": "Provides CCXT exchange adapter for connecting to multiple exchanges"
+    },
+    {
+      "name": "risk-management-stop-loss",
+      "score": 0.82,
+      "role": "supporting",
+      "reasoning": "Should be configured as part of TWAP execution for protection"
+    }
+  ],
+  "executionPlan": {
+    "strategy": "sequential",
+    "steps": [
+      {
+        "skill": "trading-execution-twap",
+        "inputs": {
+          "symbol": "BTC/USD",
+          "quantity": 100,
+          "duration": 30,
+          "side": "sell",
+          "exchange": "binance"
+        },
+        "dependencies": []
+      },
+      {
+        "skill": "trading-exchange-ccxt-patterns",
+        "inputs": {
+          "symbol": "BTC/USD",
+          "action": "connect"
+        },
+        "dependencies": ["trading-execution-twap"]
+      }
+    ]
+  },
+  "confidence": 0.92,
+  "reasoningSummary": "Selected TWAP for execution optimization with CCXT exchange adapter. Risk management will be configured as supporting skill for stop-loss protection.",
+  "candidatePool": [
+    "trading-execution-twap",
+    "trading-execution-iceberg",
+    "trading-execution-vwap",
+    "trading-exchange-ccxt-patterns",
+    "risk-management-stop-loss",
+    "market-data-feeds",
+    "portfolio-management"
+  ],
+  "routingScores": {
+    "trading-execution-twap": 0.95,
+    "trading-exchange-ccxt-patterns": 0.89,
+    "risk-management-stop-loss": 0.82,
+    "trading-execution-iceberg": 0.76,
+    "trading-execution-vwap": 0.71
+  },
+  "latencyMs": 1250,
+  "constraintsApplied": {
+    "maxSkills": 5,
+    "categories": ["trading-execution", "risk-management"]
+  }
+}

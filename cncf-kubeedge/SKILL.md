@@ -1,6 +1,15 @@
 ---
 name: cncf-kubeedge
 description: KubeEdge in Cloud-Native Engineering - edge computing
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: kubeedge, cloud-native, engineering, computing
 ---
 # KubeEdge in Cloud-Native Engineering
 

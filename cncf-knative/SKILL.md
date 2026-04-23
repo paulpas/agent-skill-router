@@ -1,6 +1,15 @@
 ---
 name: cncf-knative
 description: Knative in Cloud-Native Engineering - serverless on Kubernetes
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: knative, cloud-native, engineering, serverless
 ---
 # Knative in Cloud-Native Engineering
 

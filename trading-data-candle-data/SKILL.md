@@ -1,6 +1,15 @@
 ---
 name: trading-data-candle-data
 description: OHLCV candle data processing, timeframe management, and validation for trading algorithms
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: data candle data, data-candle-data, ohlcv, processing, timeframe
 ---
 
 # Candle Data Pipeline: The 5 Laws of Financial Time Series

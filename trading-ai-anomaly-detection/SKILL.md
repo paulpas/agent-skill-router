@@ -1,6 +1,15 @@
 ---
 name: trading-ai-anomaly-detection
 description: Detect anomalous market behavior, outliers, and potential market manipulation
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: ai anomaly detection, ai-anomaly-detection, detect, anomalous, market
 ---
 
 **Role:** Build detection systems that identify unusual price movements, volume spikes, and structural breaks

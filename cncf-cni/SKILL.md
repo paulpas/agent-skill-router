@@ -1,6 +1,15 @@
 ---
 name: cncf-cni
 description: Cni in Cloud-Native Engineering - Container Network Interface - networking for Linux containers
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: cni, cloud-native, engineering, container
 ---
 
 # Cni in Cloud-Native Engineering

@@ -1,6 +1,15 @@
 ---
 name: cncf-karmada
 description: Karmada in Cloud-Native Engineering - multi-cluster orchestration
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: karmada, cloud-native, engineering, multi-cluster
 ---
 # Karmada in Cloud-Native Engineering
 

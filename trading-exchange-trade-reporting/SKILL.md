@@ -1,6 +1,15 @@
 ---
 name: trading-exchange-trade-reporting
 description: Real-time trade reporting and execution analytics for monitoring and optimization
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: exchange trade reporting, exchange-trade-reporting, real-time, execution, analytics
 ---
 
 **Role:** Generate and analyze trade reports for performance monitoring and regulatory compliance

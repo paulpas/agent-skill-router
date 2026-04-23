@@ -1,6 +1,15 @@
 ---
 name: trading-technical-indicator-confluence
 description: Indicator Confluence Validation Systems for Confirming Trading Signals
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: technical indicator confluence, technical-indicator-confluence, validation, systems, confirming
 ---
 
 **Role:** Technical Validation Engineer — implements systems that require multiple technical indicators to align before confirming trading signals, reducing false positives and increasing probability of success.

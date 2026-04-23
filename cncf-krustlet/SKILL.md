@@ -1,6 +1,15 @@
 ---
 name: cncf-krustlet
 description: Krustlet in Kubernetes Runtime - cloud native architecture, patterns, pitfalls, and best practices
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: krustlet, kubernetes, runtime, cloud
 ---
 
  # Krustlet in Cloud-Native Engineering

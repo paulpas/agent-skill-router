@@ -1,6 +1,15 @@
 ---
 name: trading-execution-twap-vwap
 description: TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: execution twap vwap, execution-twap-vwap, algorithms, institutional-grade, order
 ---
 
 **Role:** Trading Algorithm Engineer — designs and implements optimal execution strategies to minimize market impact and execution costs.

@@ -1,6 +1,15 @@
 ---
 name: cncf-strimzi
 description: Strimzi in Kafka on Kubernetes - Apache Kafka for cloud-native environments
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: strimzi, kafka, kubernetes, apache
 ---
 
 # Strimzi in Cloud-Native Engineering

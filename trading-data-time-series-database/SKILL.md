@@ -1,6 +1,15 @@
 ---
 name: trading-data-time-series-database
 description: Time-series database queries and optimization for financial data
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: data time series database, data-time-series-database, time-series, queries, optimization
 ---
 
 **Role:** Efficiently query time-series data with support for financial data patterns

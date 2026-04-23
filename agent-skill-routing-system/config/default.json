@@ -1,0 +1,92 @@
+// Configuration for the Agent Skill Routing System
+export interface AppConfig {
+  /**
+   * Directory containing skill definitions
+   */
+  skillsDirectory: string;
+  
+  /**
+   * Embedding model configuration
+   */
+  embedding: {
+    model: string;
+    dimensions: number;
+    apiKey?: string;
+    batchSize: number;
+  };
+  
+  /**
+   * LLM configuration for ranking candidates
+   */
+  llm: {
+    model: string;
+    apiKey?: string;
+    maxCandidates: number;
+    temperature: number;
+    maxTokens: number;
+  };
+  
+  /**
+   * Execution configuration
+   */
+  execution: {
+    maxRetries: number;
+    timeoutMs: number;
+    parallelConcurrency: number;
+    fallbackEnabled: boolean;
+  };
+  
+  /**
+   * Safety configuration
+   */
+  safety: {
+    maxSkillsInPlan: number;
+    enablePromptInjectionFilter: boolean;
+    requireSchemaValidation: boolean;
+    skillAllowlist: string[];
+  };
+  
+  /**
+   * Observability configuration
+   */
+  observability: {
+    level: 'debug' | 'info' | 'warn' | 'error';
+    includePayloads: boolean;
+    logDirectory: string;
+  };
+}
+
+/**
+ * Default configuration
+ */
+export const defaultConfig: AppConfig = {
+  skillsDirectory: './samples/skill-definitions',
+  embedding: {
+    model: 'text-embedding-3-small',
+    dimensions: 1536,
+    batchSize: 100,
+  },
+  llm: {
+    model: 'gpt-4o-mini',
+    maxCandidates: 10,
+    temperature: 0.1,
+    maxTokens: 1000,
+  },
+  execution: {
+    maxRetries: 2,
+    timeoutMs: 30000,
+    parallelConcurrency: 5,
+    fallbackEnabled: true,
+  },
+  safety: {
+    maxSkillsInPlan: 5,
+    enablePromptInjectionFilter: true,
+    requireSchemaValidation: true,
+    skillAllowlist: [],
+  },
+  observability: {
+    level: 'info',
+    includePayloads: false,
+    logDirectory: './logs',
+  },
+};

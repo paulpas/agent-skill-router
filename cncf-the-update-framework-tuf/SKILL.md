@@ -1,6 +1,15 @@
 ---
 name: cncf-the-update-framework-tuf
 description: The Update Framework (TUF) in Secure software update framework for protecting software deliveries
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: the update framework tuf, the-update-framework-tuf, secure, software, protecting
 ---
 
 # The Update Framework (TUF) in Cloud-Native Engineering

@@ -1,6 +1,15 @@
 ---
 name: trading-risk-stop-loss
 description: Stop loss strategies for risk management
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: risk stop loss, risk-stop-loss, strategies, management
 ---
 
 **Role:** Implement stop loss mechanisms to limit losses and protect capital

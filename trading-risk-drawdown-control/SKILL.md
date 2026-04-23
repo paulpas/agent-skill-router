@@ -1,6 +1,15 @@
 ---
 name: trading-risk-drawdown-control
 description: Maximum drawdown control and equity preservation
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: risk drawdown control, risk-drawdown-control, maximum, equity, preservation
 ---
 
 **Role:** Implement drawdown protection mechanisms to preserve capital during losing streaks

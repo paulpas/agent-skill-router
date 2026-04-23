@@ -1,6 +1,15 @@
 ---
 name: cncf-argo
 description: Argo in Cloud-Native Engineering - Kubernetes-Native Workflow, CI/CD, and Governance
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: argo, cloud-native, engineering, kubernetes-native
 ---
 # Argo in Cloud-Native Engineering
 

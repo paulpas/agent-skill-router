@@ -1,6 +1,15 @@
 ---
 name: trading-technical-volatility-analysis
 description: Volatility measurement, forecasting, and risk assessment
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: technical volatility analysis, technical-volatility-analysis, measurement, forecasting, assessment
 ---
 
 **Role:** Quantify market volatility for risk management, position sizing, and option pricing

@@ -1,13 +1,19 @@
 ---
 name: cncf-process-incident-response
 description: Creates or updates an incident response plan covering detection, triage, communication, and post-incident review for CNCF projects
+license: MIT
+compatibility: opencode
 how_to_guide: https://contribute.cncf.io/projects/best-practices/security/
 id: incident-response
-mcp_servers:
-  - description: Check file existence, fetch template, verify advisory draft access, create incident response doc
-    id: github
-    url: https://github.com/github/mcp-server-github
+mcp_servers: 
 template_source: https://github.com/cncf/tag-security/blob/main/project-resources/templates/INCIDENT-RESPONSE.md
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: process incident response, process-incident-response, creates, updates, covering
 ---
 
 # CNCF Incident Response Process

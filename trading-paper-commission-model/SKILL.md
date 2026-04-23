@@ -1,6 +1,15 @@
 ---
 name: trading-paper-commission-model
 description: Commission Model and Fee Structure Simulation
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: paper commission model, paper-commission-model, structure, simulation
 ---
 
 **Role:** Cost Analysis Specialist — implements comprehensive fee models to accurately calculate trading costs including commissions, exchange fees, clearing fees, and tax lot tracking for realistic backtesting and performance attribution.

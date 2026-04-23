@@ -1,6 +1,15 @@
 ---
 name: cncf-keda
 description: KEDA in Cloud-Native Engineering - event-driven autoscaling
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: keda, cloud-native, engineering, event-driven
 ---
 # KEDA in Cloud-Native Engineering
 

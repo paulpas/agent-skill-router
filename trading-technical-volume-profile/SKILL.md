@@ -1,6 +1,15 @@
 ---
 name: trading-technical-volume-profile
 description: Volume analysis techniques for understanding market structure
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: technical volume profile, technical-volume-profile, analysis, techniques, understanding
 ---
 
 **Role:** Interpret volume distribution to identify accumulation, distribution, and liquidity zones

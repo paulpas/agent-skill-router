@@ -1,6 +1,15 @@
 ---
 name: cncf-coredns
 description: Coredns in Cloud-Native Engineering - CoreDNS is a DNS server that chains plugins
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: coredns, cloud-native, engineering, server
 ---
 
 # Coredns in Cloud-Native Engineering

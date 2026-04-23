@@ -1,6 +1,15 @@
 ---
 name: coding-data-normalization
 description: Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: coding
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: data normalization, data-normalization, exchange, layer, typed
 ---
 
 # Skill: coding-data-normalization

@@ -1,6 +1,15 @@
 ---
 name: cncf-thanos
 description: Thanos in High availability Prometheus solution with long-term storage
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: thanos, availability, prometheus, solution
 ---
 
 # Thanos in Cloud-Native Engineering

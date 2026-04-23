@@ -1,6 +1,15 @@
 ---
 name: trading-risk-stress-testing
 description: Stress test scenarios and portfolio resilience analysis
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: risk stress testing, risk-stress-testing, scenarios, portfolio, resilience
 ---
 
 **Role:** Evaluate portfolio performance under extreme market conditions

@@ -1,6 +1,15 @@
 ---
 name: cncf-open-telemetry
 description: OpenTelemetry in Observability - cloud native architecture, patterns, pitfalls, and best practices
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: open telemetry, open-telemetry, opentelemetry, observability, cloud
 ---
 
  # Open-Telemetry in Cloud-Native Engineering

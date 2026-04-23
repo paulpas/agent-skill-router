@@ -1,6 +1,15 @@
 ---
 name: trading-technical-momentum-indicators
 description: RSI, MACD, Stochastic oscillators and momentum analysis
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: technical momentum indicators, technical-momentum-indicators, stochastic, oscillators, analysis
 ---
 
 **Role:** Measure the speed and strength of price movement for timing entries and exits

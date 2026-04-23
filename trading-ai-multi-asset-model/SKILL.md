@@ -1,6 +1,15 @@
 ---
 name: trading-ai-multi-asset-model
 description: Model inter-asset relationships for portfolio and cross-asset strategies
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: ai multi asset model, ai-multi-asset-model, inter-asset, relationships, portfolio
 ---
 
 **Role:** Capture and exploit relationships between multiple assets for diversified trading

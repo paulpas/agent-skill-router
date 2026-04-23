@@ -1,6 +1,15 @@
 ---
 name: trading-technical-statistical-arbitrage
 description: Pair trading and cointegration-based arbitrage strategies
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: technical statistical arbitrage, technical-statistical-arbitrage, trading, cointegration-based, strategies
 ---
 
 **Role:** Identify and trade mean-reverting relationships between securities

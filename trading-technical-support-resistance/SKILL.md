@@ -1,6 +1,15 @@
 ---
 name: trading-technical-support-resistance
 description: Technical levels where price tends to pause or reverse
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: technical support resistance, technical-support-resistance, levels, where, price
 ---
 
 **Role:** Identify and validate key S/R levels for entry, exit, and stop placement

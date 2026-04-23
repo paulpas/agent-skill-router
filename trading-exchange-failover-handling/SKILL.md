@@ -1,6 +1,15 @@
 ---
 name: trading-exchange-failover-handling
 description: Automated failover and redundancy management for exchange connectivity
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: exchange failover handling, exchange-failover-handling, automated, redundancy, management
 ---
 
 **Role:** Manage multiple exchange connections with automatic failover for uninterrupted trading

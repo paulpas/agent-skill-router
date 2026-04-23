@@ -1,6 +1,15 @@
 ---
 name: trading-risk-tail-risk
 description: Tail risk management and extreme event protection
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: risk tail risk, risk-tail-risk, management, extreme, event
 ---
 
 **Role:** Identify and protect against tail risk events

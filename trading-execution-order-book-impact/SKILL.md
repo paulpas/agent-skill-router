@@ -1,6 +1,15 @@
 ---
 name: trading-execution-order-book-impact
 description: Order Book Impact Measurement and Market Microstructure Analysis
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: execution order book impact, execution-order-book-impact, measurement, market, microstructure
 ---
 
 **Role:** Market Microstructure Analyst — designs tools to measure, predict, and mitigate the impact of trading activity on order book dynamics.

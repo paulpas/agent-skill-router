@@ -1,6 +1,15 @@
 ---
 name: trading-risk-correlation-risk
 description: Correlation breakdown and portfolio diversification risk
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: risk correlation risk, risk-correlation-risk, breakdown, portfolio, diversification
 ---
 
 **Role:** Monitor and manage correlation risk in multi-asset portfolios

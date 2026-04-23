@@ -1,6 +1,15 @@
 ---
 name: cncf-ory-kratos
 description: ORY Kratos in Identity & Access - cloud native architecture, patterns, pitfalls, and best practices
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: ory kratos, ory-kratos, identity, access, cloud
 ---
 
  # Ory-Kratos in Cloud-Native Engineering

@@ -1,6 +1,15 @@
 ---
 name: cncf-emissary-ingress
 description: Emissary-Ingress in Cloud-Native Engineering - Kubernetes ingress controller
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: emissary ingress, emissary-ingress, emissary-ingress, cloud-native, engineering
 ---
 # Emissary-Ingress in Cloud-Native Engineering
 

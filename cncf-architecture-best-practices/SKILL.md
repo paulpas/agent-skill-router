@@ -1,6 +1,15 @@
 ---
 name: cncf-architecture-best-practices
 description: Cloud Native Computing Foundation (CNCF) architecture best practices for production-grade Kubernetes deployments. Covers service mesh, CNI, GitOps, CI/CD, observability, security, networking, and scaling patterns across the CNCF landscape.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: architecture best practices, architecture-best-practices, cloud, native, computing
 ---
 
 # CNCF Architecture Best Practices

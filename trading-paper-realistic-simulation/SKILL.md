@@ -1,6 +1,15 @@
 ---
 name: trading-paper-realistic-simulation
 description: Realistic Paper Trading Simulation with Market Impact and Execution Fees
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: paper realistic simulation, paper-realistic-simulation, trading, market, impact
 ---
 
 **Role:** Trading System Simulator — implements comprehensive paper trading simulations that replicate live trading conditions including slippage, fees, partial fills, and market impact for accurate performance estimation.

@@ -1,6 +1,15 @@
 ---
 name: cncf-zot
 description: Zot in Container Registry - cloud native architecture, patterns, pitfalls, and best practices
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: zot, container, registry, cloud
 ---
 
  # Zot in Cloud-Native Engineering

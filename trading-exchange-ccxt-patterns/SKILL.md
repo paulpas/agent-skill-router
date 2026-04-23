@@ -1,6 +1,15 @@
 ---
 name: trading-exchange-ccxt-patterns
 description: Effective patterns for using CCXT library for exchange connectivity including error handling, rate limiting, and state management
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: exchange ccxt patterns, exchange-ccxt-patterns, effective, library, connectivity
 ---
 
 **Role:** Guide an AI coding assistant to build robust exchange integrations using CCXT with proper error handling, state management, and performance optimization

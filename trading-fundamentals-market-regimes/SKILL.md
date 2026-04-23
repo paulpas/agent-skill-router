@@ -1,6 +1,15 @@
 ---
 name: trading-fundamentals-market-regimes
 description: Market regime detection and adaptation for trading systems across changing market conditions.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: fundamentals market regimes, fundamentals-market-regimes, regime, detection, adaptation
 ---
 
 **Role:** Identify and adapt to different market regimes (trending, mean-reverting, sideways, volatile) to optimize trading strategy parameters dynamically.

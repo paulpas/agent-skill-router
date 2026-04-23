@@ -1,6 +1,15 @@
 ---
 name: cncf-tikv
 description: TiKV in Distributed transactional key-value database inspired by Google Spanner
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: tikv, distributed, transactional, key-value
 ---
 
 # TiKV in Cloud-Native Engineering

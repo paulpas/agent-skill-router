@@ -1,6 +1,15 @@
 ---
 name: trading-ai-feature-engineering
 description: Create actionable trading features from raw market data
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: ai feature engineering, ai-feature-engineering, create, actionable, trading
 ---
 
 **Role:** Transform price and volume data into predictive features for machine learning models

@@ -1,6 +1,15 @@
 ---
 name: trading-exchange-websocket-streaming
 description: Real-time market data streaming and processing
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: exchange websocket streaming, exchange-websocket-streaming, real-time, market, processing
 ---
 
 **Role:** Handle real-time WebSocket connections for low-latency market data

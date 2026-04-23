@@ -1,6 +1,15 @@
 ---
 name: cncf-volcano
 description: Volcano in Batch scheduling infrastructure for Kubernetes
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: volcano, batch, scheduling, infrastructure
 ---
 
 # Volcano in Cloud-Native Engineering

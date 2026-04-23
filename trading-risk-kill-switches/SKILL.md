@@ -1,6 +1,15 @@
 ---
 name: trading-risk-kill-switches
 description: Implementing multi-layered kill switches at account, strategy, market, and infrastructure levels to prevent catastrophic losses and system failures
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: risk kill switches, risk-kill-switches, implementing, multi-layered, account
 ---
 
 **Role:** Guide an AI coding assistant to build comprehensive kill switch systems that automatically halt trading operations when predefined risk thresholds are breached, protecting capital and preventing system damage

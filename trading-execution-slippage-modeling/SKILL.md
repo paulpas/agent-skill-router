@@ -1,6 +1,15 @@
 ---
 name: trading-execution-slippage-modeling
 description: Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution Analysis
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: execution slippage modeling, execution-slippage-modeling, estimation, simulation, realistic
 ---
 
 **Role:** Algorithmic Trading Risk Analyst — builds models to estimate, simulate, and account for slippage and transaction costs in execution analysis and strategy optimization.

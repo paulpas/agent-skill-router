@@ -1,6 +1,15 @@
 ---
 name: trading-ai-hyperparameter-tuning
 description: Optimize model configurations for trading applications
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: ai hyperparameter tuning, ai-hyperparameter-tuning, optimize, model, configurations
 ---
 
 **Role:** Systematically find optimal hyperparameters that balance prediction accuracy with trading performance

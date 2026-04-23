@@ -1,0 +1,72 @@
+---
+metadata:
+  name: "trading-execution-twap"
+  category: "trading-execution"
+  description: "Time-Weighted Average Price algorithm for executing large orders with minimal market impact"
+  tags:
+    - "trading"
+    - "execution"
+    - "twap"
+    - "order-optimization"
+    - "market-impact"
+  version: "1.0.0"
+  author: "OpenCode Trading Systems"
+  dependencies:
+    - "ccxt"
+    - "trading-api"
+
+input_schema:
+  type: "object"
+  properties:
+    symbol:
+      type: "string"
+      description: "Trading pair symbol (e.g., BTC/USD, ETH/USDT)"
+    quantity:
+      type: "number"
+      description: "Total quantity to execute"
+      minimum: 0
+    duration:
+      type: "number"
+      description: "Duration in minutes"
+      minimum: 1
+    side:
+      type: "string"
+      enum:
+        - "buy"
+        - "sell"
+      description: "Order side"
+    exchange:
+      type: "string"
+      description: "Exchange identifier (e.g., binance, coinbase)"
+
+output_schema:
+  type: "object"
+  properties:
+    averagePrice:
+      type: "number"
+      description: "Weighted average execution price"
+    executedQuantity:
+      type: "number"
+      description: "Total executed quantity"
+    executionTime:
+      type: "number"
+      description: "Total execution time in seconds"
+    marketImpact:
+      type: "number"
+      description: "Estimated market impact as percentage"
+    chunks:
+      type: "array"
+      items:
+        type: "object"
+        properties:
+          timestamp:
+            type: "string"
+          quantity:
+            type: "number"
+          price:
+            type: "number"
+
+performance:
+  averageLatencyMs: 45000
+  successRate: 0.95
+  lastUpdated: "2024-01-20"

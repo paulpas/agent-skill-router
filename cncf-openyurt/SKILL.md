@@ -1,6 +1,15 @@
 ---
 name: cncf-openyurt
 description: OpenYurt in Extending Kubernetes to edge computing scenarios with cloud-edge协同
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: openyurt, extending, kubernetes, computing
 ---
 
 # OpenYurt in Cloud-Native Engineering

@@ -1,6 +1,15 @@
 ---
 name: trading-paper-fill-simulation
 description: Fill Simulation Models for Order Execution Probability
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: paper fill simulation, paper-fill-simulation, models, order, execution
 ---
 
 **Role:** Fill Simulation Engineer — implements sophisticated models for predicting order fill probability, partial fills, and execution quality under realistic market conditions.

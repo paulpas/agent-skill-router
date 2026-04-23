@@ -1,6 +1,15 @@
 ---
 name: trading-ai-explainable-ai
 description: Explainable AI for understanding and trusting trading model decisions
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: ai explainable ai, ai-explainable-ai, understanding, trusting, trading
 ---
 
 **Role:** Build interpretability systems that make model predictions understandable to traders and risk managers

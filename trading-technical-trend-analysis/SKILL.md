@@ -1,6 +1,15 @@
 ---
 name: trading-technical-trend-analysis
 description: Trend identification, classification, and continuation analysis
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: technical trend analysis, technical-trend-analysis, identification, classification, continuation
 ---
 
 **Role:** Determine market trend direction and strength for directional trading decisions

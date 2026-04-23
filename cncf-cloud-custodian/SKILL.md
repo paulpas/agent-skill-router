@@ -1,6 +1,15 @@
 ---
 name: cncf-cloud-custodian
 description: Cloud Custodian in Cloud-Native Engineering -/rules engine for cloud infrastructure management
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: cloud custodian, cloud-custodian, cloud-native, engineering, rules
 ---
 # Cloud Custodian in Cloud-Native Engineering
 

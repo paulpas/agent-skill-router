@@ -1,3 +1,17 @@
+---
+name: cncf-fluentd
+description: Fluentd unified logging layer for collecting, transforming, and routing log data in cloud-native environments
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: fluentd, log collection, logging, unified logging, log routing
+---
+
 ## Tutorial
 
 This tutorial will guide you through installing, configuring, and using Fluentd for centralized logging collection.

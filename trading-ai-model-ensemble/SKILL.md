@@ -1,6 +1,15 @@
 ---
 name: trading-ai-model-ensemble
 description: Combine multiple models for improved prediction accuracy and robustness
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: ai model ensemble, ai-model-ensemble, combine, multiple, models
 ---
 
 **Role:** Design and implement ensemble methods that leverage multiple models for trading signals

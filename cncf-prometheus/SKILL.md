@@ -1,6 +1,15 @@
 ---
 name: cncf-prometheus
 description: Prometheus in Cloud-Native Engineering - The Prometheus monitoring system and time series database.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  triggers: prometheus, cloud-native, engineering, monitoring
 ---
 
 # Prometheus in Cloud-Native Engineering
