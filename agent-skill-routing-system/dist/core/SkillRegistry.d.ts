@@ -85,5 +85,12 @@ export declare class SkillRegistry {
         tags: number;
         skillsWithoutEmbeddings: number;
     };
+    /**
+     * Lenient line-by-line frontmatter extractor for YAML that strict parsers reject.
+     * Handles: unquoted colons in values, tabs, CRLF line endings, trailing spaces.
+     */
+    private parseFrontmatterLenient;
+    /** Strip surrounding single or double quotes from a YAML scalar value */
+    private unquoteFrontmatterValue;
 }
 //# sourceMappingURL=SkillRegistry.d.ts.map

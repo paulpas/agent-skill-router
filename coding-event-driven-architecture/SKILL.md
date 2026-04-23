@@ -1,6 +1,6 @@
 ---
 name: coding-event-driven-architecture
-description: Event-driven architecture for real-time trading systems: pub/sub patterns, event types, signal flow, strategy base, and common pitfalls
+description: "Event-driven architecture for real-time trading systems: pub/sub patterns, event types, signal flow, strategy base, and common pitfalls"
 license: MIT
 compatibility: opencode
 metadata:

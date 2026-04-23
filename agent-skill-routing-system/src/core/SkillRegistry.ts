@@ -140,17 +140,24 @@ export class SkillRegistry {
     let fm: Record<string, unknown>;
     try {
       fm = YAML.parse(fmMatch[1]) as Record<string, unknown>;
-    } catch {
-      this.logger.warn(`Failed to parse YAML frontmatter in ${filePath}`);
-      const baseName = path.basename(path.dirname(filePath));
-      return {
-        name: baseName,
-        category: baseName.split('-')[0] || 'general',
-        description: `Skill loaded from ${baseName}`,
-        tags: [baseName.split('-')[0] || 'general'],
-        input_schema: { type: 'object', properties: {}, required: [] },
-        output_schema: { type: 'object', properties: {}, required: [] },
-      };
+      if (!fm || typeof fm !== 'object') throw new Error('YAML parsed to non-object');
+    } catch (yamlErr) {
+      this.logger.debug(`YAML.parse failed for ${filePath}, trying lenient extractor`, {
+        error: yamlErr instanceof Error ? yamlErr.message : String(yamlErr),
+      });
+      fm = this.parseFrontmatterLenient(fmMatch[1]);
+      if (Object.keys(fm).length === 0) {
+        this.logger.debug(`Lenient extractor found nothing in ${filePath}, using filename defaults`);
+        const baseName = path.basename(path.dirname(filePath));
+        return {
+          name: baseName,
+          category: baseName.split('-')[0] || 'general',
+          description: `Skill loaded from ${baseName}`,
+          tags: [baseName.split('-')[0] || 'general'],
+          input_schema: { type: 'object', properties: {}, required: [] },
+          output_schema: { type: 'object', properties: {}, required: [] },
+        };
+      }
     }
 
     // Map SKILL.md frontmatter fields to SkillMetadata
@@ -391,5 +398,67 @@ export class SkillRegistry {
       tags: this.skillsByTag.size,
       skillsWithoutEmbeddings,
     };
+  }
+
+  /**
+   * Lenient line-by-line frontmatter extractor for YAML that strict parsers reject.
+   * Handles: unquoted colons in values, tabs, CRLF line endings, trailing spaces.
+   */
+  private parseFrontmatterLenient(raw: string): Record<string, unknown> {
+    const result: Record<string, unknown> = {};
+    const metadataBlock: Record<string, string> = {};
+    let inMetadata = false;
+
+    const lines = raw.replace(/\r\n/g, '\n').split('\n');
+
+    for (const line of lines) {
+      const trimmed = line.trimEnd();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+
+      // Detect start of metadata: block (indented sub-keys follow)
+      if (/^metadata\s*:/.test(trimmed)) {
+        inMetadata = true;
+        continue;
+      }
+
+      // Indented line inside metadata block
+      if (inMetadata && /^\s+\S/.test(line)) {
+        const metaMatch = trimmed.match(/^([a-zA-Z0-9_-]+)\s*:\s*(.*)/);
+        if (metaMatch) {
+          metadataBlock[metaMatch[1]] = this.unquoteFrontmatterValue(metaMatch[2].trim());
+        }
+        continue;
+      }
+
+      // Any non-indented line ends the metadata block
+      if (inMetadata && !/^\s/.test(line)) {
+        inMetadata = false;
+      }
+
+      // Top-level key: value — take EVERYTHING after the first colon as the value.
+      // This handles unquoted values containing colons (e.g. "description: Foo: Bar").
+      const topMatch = trimmed.match(/^([a-zA-Z0-9_-]+)\s*:\s*(.*)/);
+      if (topMatch) {
+        result[topMatch[1]] = this.unquoteFrontmatterValue(topMatch[2].trim());
+      }
+    }
+
+    if (Object.keys(metadataBlock).length > 0) {
+      result['metadata'] = metadataBlock;
+    }
+
+    return result;
+  }
+
+  /** Strip surrounding single or double quotes from a YAML scalar value */
+  private unquoteFrontmatterValue(value: string): string {
+    if (!value) return value;
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      return value.slice(1, -1);
+    }
+    return value;
   }
 }
