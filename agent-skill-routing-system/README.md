@@ -50,6 +50,41 @@ User Request (Task Description)
 └───────────────────┘
 ```
 
+## Remote Skill Loading
+
+The router automatically clones `https://github.com/paulpas/skills` on startup and refreshes it hourly. Skills are cached to a persistent Docker named volume (`skill-router-cache`) so they survive container restarts.
+
+**Priority**: Local mount (`/skills`) always wins over remote skills. If the same skill name exists in both, the local version is used.
+
+### New endpoints
+
+| Endpoint | Description |
+|---|---|
+| `GET /skills` | List all loaded skills with name, category, tags, source file |
+| `POST /reload` | Trigger immediate GitHub pull + skill reload |
+
+```bash
+# Trigger manual reload
+curl -X POST http://localhost:3000/reload
+
+# List all loaded skills
+curl http://localhost:3000/skills | jq '.total'
+```
+
+### Disable remote loading
+
+```bash
+./install-skill-router.sh --no-github
+```
+
+### GitHub token (optional)
+
+Unauthenticated GitHub access is rate-limited to 60 requests/hour. For frequent syncs or private repos:
+
+```bash
+GITHUB_TOKEN=ghp_... ./install-skill-router.sh
+```
+
 ## Quick Start (Docker)
 
 The recommended way to run the router is via Docker with the skills repo mounted:
@@ -160,6 +195,11 @@ See [`SKILL_FORMAT_SPEC.md`](../SKILL_FORMAT_SPEC.md) for the complete authoring
 | `LLAMACPP_BASE_URL` | `http://host.docker.internal:8080` | llama.cpp server base URL |
 | `SKILLS_DIRECTORY` | `/skills` | Path to skills repo root inside the container |
 | `PORT` | `3000` | HTTP server port |
+| `GITHUB_SKILLS_ENABLED` | `true` | Set to `false` to disable GitHub remote loading |
+| `GITHUB_SKILLS_REPO` | `https://github.com/paulpas/skills` | Remote skills repository URL |
+| `SKILL_CACHE_DIR` | `/cache/skills` | Local path inside container for cached repo |
+| `SKILL_SYNC_INTERVAL` | `3600` | Seconds between GitHub syncs |
+| `GITHUB_TOKEN` | — | Optional GitHub token for higher rate limits |
 
 ## API Reference
 

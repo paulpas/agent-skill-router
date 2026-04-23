@@ -18,7 +18,7 @@ import { Logger } from '../observability/Logger.js';
  * Configuration for the Router
  */
 export interface RouterConfig {
-  skillsDirectory: string;
+  skillsDirectory: string | string[];
   embedding?: {
     model?: string;
     dimensions?: number;
@@ -275,5 +275,12 @@ export class Router {
   async reloadSkills(): Promise<void> {
     await this.skillRegistry.reload();
     this.vectorDatabase.setSkills(this.skillRegistry.getAllSkills());
+  }
+
+  /**
+   * Get all loaded skill definitions (delegates to registry)
+   */
+  getAllSkills() {
+    return this.skillRegistry.getAllSkills();
   }
 }

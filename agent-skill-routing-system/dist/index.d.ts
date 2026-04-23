@@ -10,6 +10,7 @@ export * from './embedding/EmbeddingService.js';
 export * from './embedding/VectorDatabase.js';
 export * from './llm/LLMRanker.js';
 export * from './observability/Logger.js';
+export * from './skills/GitHubSkillLoader.js';
 /**
   * Main application class
    */
@@ -17,6 +18,7 @@ export declare class AgentSkillRoutingApp {
     private app;
     private router;
     private mcpBridge;
+    private githubLoader;
     private logger;
     constructor(config?: Partial<RouterConfig & MCPBridgeConfig>);
     private config;

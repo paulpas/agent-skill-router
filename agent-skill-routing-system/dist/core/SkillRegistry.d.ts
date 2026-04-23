@@ -3,7 +3,10 @@ import type { SkillDefinition } from './types.js';
  * Configuration for the skill registry
  */
 export interface SkillRegistryConfig {
-    skillsDirectory: string;
+    /** Single directory or array of directories to load skills from.
+     *  When multiple directories are given, skills loaded earlier win on name collision
+     *  (i.e. list local mount first so local skills override remote ones). */
+    skillsDirectory: string | string[];
     cacheDirectory?: string;
     generateEmbeddings?: boolean;
 }
@@ -19,7 +22,9 @@ export declare class SkillRegistry {
     private logger;
     constructor(config: SkillRegistryConfig);
     /**
-     * Load all skills from the skills directory
+     * Load all skills from one or more skill directories.
+     * Directories are processed in order; first directory wins on name collision
+     * so local skills always override remote ones.
      */
     loadSkills(): Promise<void>;
     /**

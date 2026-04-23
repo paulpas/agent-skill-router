@@ -13,7 +13,10 @@ import { Logger } from '../observability/Logger.js';
  * Configuration for the skill registry
  */
 export interface SkillRegistryConfig {
-  skillsDirectory: string;
+  /** Single directory or array of directories to load skills from.
+   *  When multiple directories are given, skills loaded earlier win on name collision
+   *  (i.e. list local mount first so local skills override remote ones). */
+  skillsDirectory: string | string[];
   cacheDirectory?: string;
   generateEmbeddings?: boolean;
 }
@@ -40,50 +43,56 @@ export class SkillRegistry {
   }
 
   /**
-   * Load all skills from the skills directory
+   * Load all skills from one or more skill directories.
+   * Directories are processed in order; first directory wins on name collision
+   * so local skills always override remote ones.
    */
   async loadSkills(): Promise<void> {
-    this.logger.info('Loading skills from directory', {
-      directory: this.config.skillsDirectory,
-    });
+    const dirs = Array.isArray(this.config.skillsDirectory)
+      ? this.config.skillsDirectory
+      : [this.config.skillsDirectory];
 
-    try {
-      // Find all SKILL.md files exclusively
-      const pattern = path.join(this.config.skillsDirectory, '**/SKILL.md');
-      const files = await glob(pattern);
+    this.logger.info('Loading skills from directories', { directories: dirs });
 
-      this.logger.debug(`Found ${files.length} potential skill files`);
+    for (const dir of dirs) {
+      try {
+        const pattern = path.join(dir, '**/SKILL.md');
+        const files = await glob(pattern);
+        this.logger.debug(`Found ${files.length} SKILL.md files in ${dir}`);
 
-      for (const file of files) {
-        try {
-          const skill = await this.loadSkillFromFile(file);
-          if (skill) {
-            await this.addSkill(skill);
+        for (const file of files) {
+          try {
+            const skill = await this.loadSkillFromFile(file);
+            if (skill) {
+              // Local-first: first directory wins on name collision
+              if (!this.skills.has(skill.metadata.name)) {
+                await this.addSkill(skill);
+              } else {
+                this.logger.debug(`Skipping duplicate skill from remote: ${skill.metadata.name}`);
+              }
+            }
+          } catch (error) {
+            this.logger.error(`Failed to load skill from ${file}`, {
+              error: error instanceof Error ? error.message : String(error),
+            });
           }
-        } catch (error) {
-          this.logger.error(`Failed to load skill from ${file}`, {
-            error: error instanceof Error ? error.message : String(error),
-            file,
-          });
         }
+      } catch (error) {
+        this.logger.warn(`Failed to scan directory ${dir}`, {
+          error: error instanceof Error ? error.message : String(error),
+        });
       }
-
-      // Generate embeddings if configured and not already present
-      if (this.config.generateEmbeddings) {
-        await this.generateMissingEmbeddings();
-      }
-
-      this.logger.info(`Loaded ${this.skills.size} skills total`, {
-        skillCount: this.skills.size,
-        categories: this.skillsByCategory.size,
-        tags: this.skillsByTag.size,
-      });
-    } catch (error) {
-      this.logger.error('Failed to load skills', {
-        error: error instanceof Error ? error.message : String(error),
-      });
-      throw error;
     }
+
+    if (this.config.generateEmbeddings) {
+      await this.generateMissingEmbeddings();
+    }
+
+    this.logger.info(`Loaded ${this.skills.size} skills total`, {
+      skillCount: this.skills.size,
+      categories: this.skillsByCategory.size,
+      tags: this.skillsByTag.size,
+    });
   }
 
   /**
@@ -284,9 +293,12 @@ export class SkillRegistry {
       const texts = batchSlice.map((b) => b.text);
 
       try {
+        const primaryDir = Array.isArray(this.config.skillsDirectory)
+          ? this.config.skillsDirectory[0]
+          : this.config.skillsDirectory;
         const embeddings = await this.embeddingService.batchEmbeddings(
           texts,
-          this.config.skillsDirectory
+          primaryDir
         );
 
         embeddings.forEach((embedding, index) => {

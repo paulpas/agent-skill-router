@@ -8,6 +8,7 @@ RUN npm run build
 
 # Stage 2: Runtime
 FROM node:20-alpine AS runtime
+RUN apk add --no-cache git
 WORKDIR /app
 COPY --from=builder /app/dist ./dist
 COPY package*.json ./
@@ -21,7 +22,12 @@ ENV EMBEDDING_PROVIDER=openai
 ENV EMBEDDING_MODEL=text-embedding-3-small
 # For llamacpp: set to http://host.docker.internal:8080 to reach host's llama.cpp
 ENV LLAMACPP_BASE_URL=http://host.docker.internal:8080
-VOLUME ["/skills"]
+ENV GITHUB_SKILLS_ENABLED=true
+ENV GITHUB_SKILLS_REPO=https://github.com/paulpas/skills
+ENV SKILL_CACHE_DIR=/cache/skills
+ENV SKILL_SYNC_INTERVAL=3600
+# GITHUB_TOKEN= (optional, set at runtime for private repos or higher rate limits)
+VOLUME ["/skills", "/cache"]
 ENV NODE_ENV=production
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
   CMD wget -qO- http://localhost:3000/health || exit 1

@@ -30,6 +30,9 @@ LLM_MODEL="${LLM_MODEL:-}"
 ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
 LLAMACPP_URL="${LLAMACPP_URL:-}"
 EMBEDDING_PROVIDER="${EMBEDDING_PROVIDER:-openai}"
+GITHUB_ENABLED=true
+GITHUB_TOKEN="${GITHUB_TOKEN:-}"
+SYNC_INTERVAL="${SYNC_INTERVAL:-3600}"
 
 usage() {
   cat <<EOF
@@ -50,6 +53,9 @@ ${BOLD}Options:${RESET}
   --anthropic-key KEY                    Anthropic API key (or ANTHROPIC_API_KEY env)
   --llamacpp-url URL                     llama.cpp base URL (default: http://host.docker.internal:8080)
   --embedding-provider openai|llamacpp   Embedding provider (default: openai)
+  --no-github              Disable GitHub remote skill loading
+  --github-token TOKEN     GitHub token (or GITHUB_TOKEN env) for higher rate limits
+  --sync-interval SECS     GitHub sync interval in seconds (default: 3600)
   --help                 Show this help message
 
 ${BOLD}Examples:${RESET}
@@ -109,6 +115,9 @@ while [[ $# -gt 0 ]]; do
       EMBEDDING_PROVIDER="${2:?'--embedding-provider requires a value'}"
       shift 2
       ;;
+    --no-github)       GITHUB_ENABLED=false; shift ;;
+    --github-token)    GITHUB_TOKEN="$2"; shift 2 ;;
+    --sync-interval)   SYNC_INTERVAL="$2"; shift 2 ;;
     --help|-h)
       usage
       ;;
@@ -301,8 +310,12 @@ docker run -d \
   ${ANTHROPIC_API_KEY:+-e ANTHROPIC_API_KEY="$ANTHROPIC_API_KEY"} \
   ${LLAMACPP_URL:+-e LLAMACPP_BASE_URL="$LLAMACPP_URL"} \
   -e EMBEDDING_PROVIDER="$EMBEDDING_PROVIDER" \
+  -e GITHUB_SKILLS_ENABLED="$GITHUB_ENABLED" \
+  -e SKILL_SYNC_INTERVAL="$SYNC_INTERVAL" \
+  ${GITHUB_TOKEN:+-e GITHUB_TOKEN="$GITHUB_TOKEN"} \
   -e SKILLS_DIRECTORY=/skills \
   -v "${ROUTER_DIR%/agent-skill-routing-system}:/skills:ro" \
+  -v skill-router-cache:/cache \
   skill-router:latest
 
 ok "Container started: skill-router on port $PORT"
@@ -571,6 +584,11 @@ echo -e "  ${BOLD}Health:${RESET}       http://localhost:$PORT/health ${GREEN}âœ
 echo -e "  ${BOLD}LLM Provider:${RESET} $LLM_PROVIDER ($_model_display)"
 echo -e "  ${BOLD}Embeddings:${RESET}   $EMBEDDING_PROVIDER"
 echo -e "  ${BOLD}Service:${RESET}      $SERVICE_STATUS"
+if [[ "$GITHUB_ENABLED" == "true" ]]; then
+  echo -e "  ${BOLD}GitHub Sync:${RESET}  enabled (https://github.com/paulpas/skills, every ${SYNC_INTERVAL}s)"
+else
+  echo -e "  ${BOLD}GitHub Sync:${RESET}  disabled"
+fi
 
 if $INTEGRATE_OPENCODE; then
   echo -e "  ${BOLD}Config:${RESET}       $OPENCODE_CONFIG ${GREEN}âœ“${RESET}"

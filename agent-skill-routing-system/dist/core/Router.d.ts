@@ -3,7 +3,7 @@ import type { RouteRequest, RouteResponse } from '../core/types.js';
  * Configuration for the Router
  */
 export interface RouterConfig {
-    skillsDirectory: string;
+    skillsDirectory: string | string[];
     embedding?: {
         model?: string;
         dimensions?: number;
@@ -69,5 +69,9 @@ export declare class Router {
      * Reload skills
      */
     reloadSkills(): Promise<void>;
+    /**
+     * Get all loaded skill definitions (delegates to registry)
+     */
+    getAllSkills(): import("../core/types.js").SkillDefinition[];
 }
 //# sourceMappingURL=Router.d.ts.map

@@ -177,6 +177,12 @@ class Router {
         await this.skillRegistry.reload();
         this.vectorDatabase.setSkills(this.skillRegistry.getAllSkills());
     }
+    /**
+     * Get all loaded skill definitions (delegates to registry)
+     */
+    getAllSkills() {
+        return this.skillRegistry.getAllSkills();
+    }
 }
 exports.Router = Router;
 //# sourceMappingURL=Router.js.map
