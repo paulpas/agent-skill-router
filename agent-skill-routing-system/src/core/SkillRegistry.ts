@@ -5,14 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { glob } from 'glob';
 import YAML from 'yaml';
-import { v4 as uuidv4 } from 'uuid';
-import { z } from 'zod';
-import type {
-  SkillMetadata,
-  SkillDefinition,
-  SkillSearchResult,
-  EmbeddingResponse,
-} from './types.js';
+import type { SkillMetadata, SkillDefinition } from './types.js';
 import { EmbeddingService } from '../embedding/EmbeddingService.js';
 import { Logger } from '../observability/Logger.js';
 
@@ -94,15 +87,14 @@ export class SkillRegistry {
   }
 
   /**
-   * Load a single skill from a file
-   */
+    * Load a single skill from a file
+    */
   private async loadSkillFromFile(filePath: string): Promise<SkillDefinition | null> {
     const ext = path.extname(filePath).toLowerCase();
+    let content = '';
+    let metadata: SkillMetadata;
 
     try {
-      let content: string;
-      let metadata: SkillMetadata;
-
       switch (ext) {
         case '.ts':
         case '.js':
@@ -113,12 +105,14 @@ export class SkillRegistry {
         case '.json':
           const jsonContent = await fs.promises.readFile(filePath, 'utf-8');
           metadata = JSON.parse(jsonContent);
+          content = jsonContent;
           break;
 
         case '.yaml':
         case '.yml':
           const yamlContent = await fs.promises.readFile(filePath, 'utf-8');
           metadata = YAML.parse(yamlContent);
+          content = yamlContent;
           break;
 
         default:
@@ -135,7 +129,7 @@ export class SkillRegistry {
       return {
         metadata,
         sourceFile: filePath,
-        rawContent: content || '',
+        rawContent: content,
       };
     } catch (error) {
       this.logger.error(`Failed to parse skill file ${filePath}`, {
@@ -191,10 +185,14 @@ export class SkillRegistry {
    * Validate skill metadata against expected schema
    */
   private isValidSkillMetadata(metadata: SkillMetadata): boolean {
-    const requiredFields = ['name', 'category', 'description', 'tags'];
+    const requiredFields: (keyof SkillMetadata)[] = ['name', 'category', 'description', 'tags'];
 
     for (const field of requiredFields) {
-      if (!metadata[field] || (Array.isArray(metadata[field]) && metadata[field].length === 0)) {
+      const value = metadata[field];
+      if (value === undefined || value === null) {
+        return false;
+      }
+      if (Array.isArray(value) && value.length === 0) {
         return false;
       }
     }

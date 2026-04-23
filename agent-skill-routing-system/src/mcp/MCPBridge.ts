@@ -1,12 +1,13 @@
 // MCP Bridge - central abstraction for all MCP tools
 
-import { IMCPTool, BaseMCPTool } from './types.js';
+import { IMCPTool } from './types.js';
 import { ShellCommandTool } from './tools/ShellCommandTool.js';
 import { FileTool } from './tools/FileTool.js';
 import { HTTPTool } from './tools/HTTPTool.js';
 import { KubectlTool } from './tools/KubectlTool.js';
 import { LogFetchTool } from './tools/LogFetchTool.js';
-import type { ToolSpec, ToolResult } from '../core/types.js';
+import { ToolResult, ToolSpec } from '../core/types.js';
+import { Logger } from '../observability/Logger.js';
 
 /**
  * Configuration for MCP Bridge
@@ -22,28 +23,38 @@ export interface MCPBridgeConfig {
  */
 export class MCPBridge {
   private tools: Map<string, IMCPTool> = new Map();
-  private config: MCPBridgeConfig;
+   private config: MCPBridgeConfig;
+   private logger: Logger;
 
-  constructor(config: Partial<MCPBridgeConfig> = {}) {
-    this.config = {
-      enabledTools: [],
-      disableTools: [],
-      defaultTimeoutMs: 30000,
-      ...config,
-    };
+   constructor(config: Partial<MCPBridgeConfig> = {}) {
+     this.logger = new Logger('MCPBridge', {
+       level: 'info',
+       includePayloads: false,
+     });
+     this.config = {
+       enabledTools: [],
+       disableTools: [],
+       defaultTimeoutMs: 30000,
+       ...(config || {}),
+     };
 
-    this.initializeTools();
-  }
+     // Merge disableTools properly
+     if (config.disableTools !== undefined) {
+       this.config.disableTools = config.disableTools;
+     }
+
+     this.initializeTools();
+   }
 
   /**
    * Initialize all configured tools
    */
   private initializeTools(): void {
-    const enabledTools = this.config.enabledTools.length > 0
+    const enabledTools = this.config.enabledTools !== undefined && this.config.enabledTools.length > 0
       ? this.config.enabledTools
       : ['shell', 'file', 'http', 'kubectl', 'log_fetch'];
 
-    const disabledTools = new Set(this.config.disableTools);
+    const disabledTools = new Set(this.config.disableTools || []);
 
     const toolFactories: Record<string, () => IMCPTool> = {
       shell: () => new ShellCommandTool(this.config.defaultTimeoutMs),
@@ -63,7 +74,9 @@ export class MCPBridge {
           const tool = factory();
           this.tools.set(tool.name, tool);
         } catch (error) {
-          console.error(`Failed to initialize tool ${name}:`, error);
+          this.logger.error(`Failed to initialize tool ${name}:`, {
+            error: error instanceof Error ? error.message : String(error),
+          });
         }
       }
     }

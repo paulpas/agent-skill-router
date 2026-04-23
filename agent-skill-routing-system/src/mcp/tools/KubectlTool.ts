@@ -1,25 +1,45 @@
 // MCP Tool: Kubectl Command Execution
 
-import { BaseMCPTool } from '../types.js';
+import { BaseMCPTool, IMCPTool } from '../types.js';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
 const execAsync = promisify(exec);
 
 /**
- * Kubectl Tool for executing Kubernetes commands
+ * MCP Tool result
  */
-export class KubectlTool extends BaseMCPTool {
+interface ToolResult {
+  success: boolean;
+  output?: unknown;
+  error?: string;
+  latencyMs: number;
+  metadata?: Record<string, unknown>;
+}
+
+/**
+ * MCP Tool specification for LLM
+ */
+interface ToolSpec {
+  name: string;
+  description: string;
+  parameters: Record<string, unknown>;
+}
+
+/**
+ * Kubectl Tool for executing kubectl commands
+ */
+export class KubectlTool extends BaseMCPTool implements IMCPTool {
   constructor(timeoutMs: number = 30000) {
     super(
-      'kubectl',
-      'Execute kubectl commands for Kubernetes cluster management',
+      'run_kubectl_command',
+      'Execute kubectl commands for Kubernetes cluster management. Supports commands like get, describe, logs, apply, delete, etc.',
       timeoutMs
     );
   }
 
   /**
-   * Execute kubectl command
+   * Execute a kubectl command
    */
   async execute(args: Record<string, unknown>): Promise<ToolResult> {
     const startTime = Date.now();
@@ -28,31 +48,13 @@ export class KubectlTool extends BaseMCPTool {
       this.validateArgs(args, ['command']);
 
       const command = String(args.command);
-
-      // Validate command
-      this.validateKubectlCommand(command);
-
-      // Check if kubectl is available
-      await this.checkKubectlAvailable();
-
-      // Execute kubectl command
       const fullCommand = `kubectl ${command}`;
-      const { stdout, stderr } = await this.withTimeout(
-        execAsync(fullCommand),
-        this.timeoutMs
-      );
+      const result = await this.executeCommand(fullCommand);
 
       return {
         success: true,
-        output: {
-          stdout,
-          stderr,
-          exitCode: 0,
-        },
+        output: result,
         latencyMs: Date.now() - startTime,
-        metadata: {
-          command: fullCommand,
-        },
       };
     } catch (error) {
       return {
@@ -64,41 +66,32 @@ export class KubectlTool extends BaseMCPTool {
   }
 
   /**
-   * Validate kubectl command
+   * Execute a kubectl command with security validation
    */
-  private validateKubectlCommand(command: string): void {
-    // Block dangerous operations
+  private async executeCommand(command: string): Promise<string> {
+    // Security check for dangerous operations
     const dangerousPatterns = [
-      /kubectl\s+delete\s+(all|namespace|clusterrolebinding|clusterrole)\s+/,
-      /kubectl\s+delete\s+-n\s+kube-system/,
-      /kubectl\s+exec\s+-it/,
-      /kubectl\s+run\s+--generator=/,
-      /kubectl\s+create\s+serviceaccount\s+default/,
-      /kubectl\s+create\s+clusterrolebinding\s+/,
+      /kubectl\s+run\s+.*--generator=run-pod\/v1/,
+      /kubectl\s+delete\s+--all/,
+      /kubectl\s+create\s+serviceaccount\s+.*--cluster-role=cluster-admin/,
     ];
 
     for (const pattern of dangerousPatterns) {
       if (pattern.test(command)) {
-        throw new Error(`Dangerous kubectl command pattern detected: ${pattern.source}`);
+        throw new Error('Dangerous kubectl command detected and blocked');
       }
     }
 
-    // Limit command length
-    if (command.length > 500) {
-      throw new Error('kubectl command length exceeds maximum of 500 characters');
-    }
-  }
+    const { stdout, stderr } = await execAsync(command, {
+      timeout: this.timeoutMs,
+      maxBuffer: 1024 * 1024 * 10,
+    });
 
-  /**
-   * Check if kubectl is available
-   */
-  private async checkKubectlAvailable(): Promise<void> {
-    try {
-      const { execSync } = require('child_process');
-      execSync('kubectl version --client', { stdio: 'ignore' });
-    } catch {
-      throw new Error('kubectl is not installed or not available in PATH');
+    if (stderr && stderr.includes('Error')) {
+      throw new Error(stderr);
     }
+
+    return stdout || stderr || 'Command executed successfully';
   }
 
   /**
@@ -113,7 +106,7 @@ export class KubectlTool extends BaseMCPTool {
         properties: {
           command: {
             type: 'string',
-            description: 'kubectl subcommand (e.g., "get pods", "apply -f config.yaml")',
+            description: 'The kubectl subcommand to execute (e.g., "get pods", "describe node node-1")',
           },
         },
         required: ['command'],

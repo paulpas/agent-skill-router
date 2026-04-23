@@ -157,10 +157,10 @@ export class ExecutionPlanner {
   }
 
   /**
-   * Generate reasoning for the execution plan
+  * Generate reasoning for the execution plan
    */
   private generateReasoning(
-    task: string,
+    _task: string,
     skills: SelectedSkill[],
     strategy: ExecutionStrategy
   ): string {
@@ -257,7 +257,7 @@ export class ExecutionPlanner {
               skills: batch.map((s) => s.skill),
             },
             dependencies: [],
-            timeoutMs: batch.reduce((max, s) => s.timeoutMs || 0, 0),
+            timeoutMs: batch.reduce((_, s) => s.timeoutMs || 0, 0),
           });
           batch.forEach((s) => executed.add(s.skill));
         } else {

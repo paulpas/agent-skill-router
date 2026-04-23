@@ -67,15 +67,15 @@ export class ExecutionEngine {
         // Sanitize inputs
         const sanitizedInputs = this.safetyLayer.sanitizeInputs(inputs);
 
-        // Execute tool
-        const result = await this.executeWithTimeout(
-          tool.execute(sanitizedInputs),
-          timeoutMs || this.config.defaultTimeoutMs
-        );
+       // Execute tool
+       const result: { success: boolean; output?: unknown; error?: string; latencyMs: number } = await this.executeWithTimeout(
+         tool.execute(sanitizedInputs),
+         timeoutMs || this.config.defaultTimeoutMs
+       );
 
-        if (!result.success) {
-          throw new Error(result.error || 'Tool execution failed');
-        }
+       if (!result.success) {
+         throw new Error(result.error || 'Tool execution failed');
+       }
 
         this.logger.info('Skill executed successfully', {
           skill: skillName,
@@ -184,14 +184,9 @@ export class ExecutionEngine {
 
       // Clean up completed promises
       for (let i = active.length - 1; i >= 0; i--) {
-        if (active[i].then) {
-          // Check if promise is settled
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const p = active[i] as any;
-          if (p.state === 'fulfilled' || p.state === 'rejected') {
-            active.splice(i, 1);
-          }
-        } else {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const p = active[i] as any;
+        if (p.state === 'fulfilled' || p.state === 'rejected') {
           active.splice(i, 1);
         }
       }

@@ -5,32 +5,59 @@ import { Router, RouterConfig } from './core/Router.js';
 import { MCPBridge, MCPBridgeConfig } from './mcp/MCPBridge.js';
 import { Logger } from './observability/Logger.js';
 
+/**
+ * Route request body
+ */
+interface RouteRequestBody {
+  task: string;
+  context?: Record<string, unknown>;
+  constraints?: {
+    categories?: string[];
+    maxSkills?: number;
+    latencyBudgetMs?: number;
+  };
+}
+
+/**
+ * Execute request body
+ */
+interface ExecuteRequestBody {
+  task: string;
+  taskId?: string;
+  inputs?: Record<string, unknown>;
+  skills?: string[];
+}
+
 export * from './core/types.js';
 export * from './core/Router.js';
 export * from './core/ExecutionEngine.js';
 export * from './core/ExecutionPlanner.js';
 export * from './core/SafetyLayer.js';
 export * from './mcp/MCPBridge.js';
-export * from './mcp/types.js';
+// DO NOT export mcp/types.js to avoid duplicate ToolResult/ToolSpec exports
 export * from './embedding/EmbeddingService.js';
 export * from './embedding/VectorDatabase.js';
 export * from './llm/LLMRanker.js';
 export * from './observability/Logger.js';
 
 /**
- * Main application class
- */
-export class AgentSkillRoutingApp {
-  private app: FastifyInstance | null = null;
-  private router: Router | null = null;
-  private mcpBridge: MCPBridge | null = null;
-  private logger: Logger;
+  * Main application class
+   */
+  export class AgentSkillRoutingApp {
+    private app: FastifyInstance | null = null;
+    private router: Router | null = null;
+    private mcpBridge: MCPBridge | null = null;
+    private logger: Logger;
 
-  constructor(private config: RouterConfig & MCPBridgeConfig = {}) {
-    this.logger = new Logger('Main', {
-      level: config.observability?.level || 'info',
-    });
-  }
+    constructor(config: Partial<RouterConfig & MCPBridgeConfig> = {}) {
+      this.logger = new Logger('Main', {
+        level: config.observability?.level || 'info',
+      });
+      // Store config for later use if needed
+      this.config = config as RouterConfig & MCPBridgeConfig;
+    }
+    
+    private config: RouterConfig & MCPBridgeConfig;
 
   /**
    * Initialize the application
@@ -64,11 +91,97 @@ export class AgentSkillRoutingApp {
       logger: false,
     });
 
-    // Define routes
-    this.app.post('/route', this.handleRoute.bind(this));
-    this.app.post('/execute', this.handleExecute.bind(this));
-    this.app.get('/health', this.handleHealth.bind(this));
-    this.app.get('/stats', this.handleStats.bind(this));
+    // Define routes with proper Fastify typing
+    this.app.post(
+      '/route',
+      async (request, reply) => {
+        try {
+          const body = request.body as RouteRequestBody;
+          const response = await this.router!.routeTask(body);
+          reply.code(200).send(response);
+        } catch (error) {
+          this.logger.error('Route request failed', {
+            error: error instanceof Error ? error.message : String(error),
+          });
+          reply.code(500).send({
+            error: 'Route failed',
+            message: error instanceof Error ? error.message : String(error),
+          });
+        }
+      }
+    );
+
+    this.app.post(
+      '/execute',
+      async (request, reply) => {
+        try {
+          const body = request.body as ExecuteRequestBody;
+          const { task, taskId, inputs, skills } = body;
+          const results: {
+            skillName: string;
+            status: 'success' | 'failure';
+            output?: unknown;
+            error?: string;
+            latencyMs: number;
+          }[] = [];
+
+          if (skills && skills.length > 0) {
+            for (const skillName of skills) {
+              const tool = this.mcpBridge!.getTool(skillName);
+              if (tool) {
+                const result = await tool.execute(inputs || {});
+                results.push({
+                  skillName,
+                  status: result.success ? 'success' : 'failure',
+                  output: result.output,
+                  error: result.error,
+                  latencyMs: result.latencyMs,
+                });
+              } else {
+                results.push({
+                  skillName,
+                  status: 'failure',
+                  error: `Tool not found: ${skillName}`,
+                  latencyMs: 0,
+                });
+              }
+            }
+          }
+
+          reply.code(200).send({
+            taskId: taskId || 'auto_' + Date.now(),
+            task,
+            status: results.every((r) => r.status === 'success') ? 'success' : 'partial_failure',
+            results,
+          });
+        } catch (error) {
+          this.logger.error('Execute request failed', {
+            error: error instanceof Error ? error.message : String(error),
+          });
+          reply.code(500).send({
+            error: 'Execution failed',
+            message: error instanceof Error ? error.message : String(error),
+          });
+        }
+      }
+    );
+
+    this.app.get('/health', async (_request, reply) => {
+      reply.code(200).send({
+        status: 'healthy',
+        timestamp: new Date().toISOString(),
+        version: '1.0.0',
+      });
+    });
+
+    this.app.get('/stats', async (_request, reply) => {
+      const routerStats = this.router!.getStats();
+      const mcpStats = this.mcpBridge!.getStats();
+      reply.code(200).send({
+        skills: routerStats,
+        mcpTools: mcpStats,
+      });
+    });
 
     // Start server
     try {
@@ -92,146 +205,6 @@ export class AgentSkillRoutingApp {
     if (this.router) {
       await this.router.reloadSkills();
     }
-  }
-
-  /**
-   * Handle /route endpoint
-   */
-  private async handleRoute(
-    request: {
-      body: {
-        task: string;
-        context?: Record<string, unknown>;
-        constraints?: {
-          categories?: string[];
-          maxSkills?: number;
-          latencyBudgetMs?: number;
-        };
-      };
-    },
-    reply: {
-      code: (status: number) => { json: (data: unknown) => void };
-    }
-  ) {
-    try {
-      const { task, context, constraints } = request.body;
-
-      const response = await this.router!.routeTask({
-        task,
-        context,
-        constraints,
-      });
-
-      reply.code(200).json(response);
-    } catch (error) {
-      this.logger.error('Route request failed', {
-        error: error instanceof Error ? error.message : String(error),
-      });
-
-      reply.code(500).json({
-        error: 'Route failed',
-        message: error instanceof Error ? error.message : String(error),
-      });
-    }
-  }
-
-  /**
-   * Handle /execute endpoint
-   */
-  private async handleExecute(
-    request: {
-      body: {
-        task: string;
-        taskId?: string;
-        inputs?: Record<string, unknown>;
-        skills?: string[];
-      };
-    },
-    reply: {
-      code: (status: number) => { json: (data: unknown) => void };
-    }
-  ) {
-    try {
-      const { task, taskId, inputs, skills } = request.body;
-
-      // For now, use a simple execution approach
-      // In production, you'd route first, then execute
-
-      const results = [];
-
-      if (skills && skills.length > 0) {
-        for (const skillName of skills) {
-          const tool = this.mcpBridge!.getTool(skillName);
-          if (tool) {
-            const result = await tool.execute(inputs || {});
-            results.push({
-              skillName,
-              status: result.success ? 'success' : 'failure',
-              output: result.output,
-              error: result.error,
-              latencyMs: result.latencyMs,
-            });
-          } else {
-            results.push({
-              skillName,
-              status: 'failure',
-              error: `Tool not found: ${skillName}`,
-              latencyMs: 0,
-            });
-          }
-        }
-      }
-
-      reply.code(200).json({
-        taskId: taskId || 'auto_' + Date.now(),
-        task,
-        status: results.every((r) => r.status === 'success') ? 'success' : 'partial_failure',
-        results,
-      });
-    } catch (error) {
-      this.logger.error('Execute request failed', {
-        error: error instanceof Error ? error.message : String(error),
-      });
-
-      reply.code(500).json({
-        error: 'Execution failed',
-        message: error instanceof Error ? error.message : String(error),
-      });
-    }
-  }
-
-  /**
-   * Handle /health endpoint
-   */
-  private async handleHealth(
-    request: {},
-    reply: {
-      code: (status: number) => { json: (data: unknown) => void };
-    }
-  ) {
-    reply.code(200).json({
-      status: 'healthy',
-      timestamp: new Date().toISOString(),
-      version: '1.0.0',
-    });
-  }
-
-  /**
-   * Handle /stats endpoint
-   */
-  private async handleStats(
-    request: {},
-    reply: {
-      code: (status: number) => { json: (data: unknown) => void };
-    }
-  ) {
-    const routerStats = this.router!.getStats();
-    const mcpStats = this.mcpBridge!.getStats();
-
-    reply.code(200).json({
-      skills: routerStats,
-      mcpTools: mcpStats,
-    });
   }
 }
 

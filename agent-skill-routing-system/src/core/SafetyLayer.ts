@@ -282,7 +282,7 @@ export class SafetyLayer {
    * Validate schema compatibility between skill input and execution inputs
    */
   validateSchema(
-    skillName: string,
+    _skillName: string,
     inputSchema: unknown,
     inputs: Record<string, unknown>
   ): ValidationResult {
@@ -368,7 +368,11 @@ export class SafetyLayer {
   /**
    * Sanitize an object recursively
    */
-  private sanitizeObject(obj: Record<string, unknown>): Record<string, unknown> {
+  private sanitizeObject(obj: unknown): unknown {
+    if (typeof obj !== 'object' || obj === null) {
+      return obj;
+    }
+    
     const sanitized: Record<string, unknown> = {};
 
     for (const [key, value] of Object.entries(obj)) {

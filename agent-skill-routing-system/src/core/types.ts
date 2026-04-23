@@ -39,6 +39,26 @@ export interface SkillSearchResult {
 }
 
 /**
+ * MCP Tool result
+ */
+export interface ToolResult {
+  success: boolean;
+  output?: unknown;
+  error?: string;
+  latencyMs: number;
+  metadata?: Record<string, unknown>;
+}
+
+/**
+ * MCP Tool specification
+ */
+export interface ToolSpec {
+  name: string;
+  description: string;
+  parameters: Record<string, unknown>;
+}
+
+/**
  * LLM ranking result for a skill candidate
  */
 export interface SkillRanking {

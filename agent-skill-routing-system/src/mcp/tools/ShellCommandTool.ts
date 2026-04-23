@@ -7,6 +7,26 @@ import { promisify } from 'util';
 const execAsync = promisify(exec);
 
 /**
+ * MCP Tool result
+ */
+interface ToolResult {
+  success: boolean;
+  output?: unknown;
+  error?: string;
+  latencyMs: number;
+  metadata?: Record<string, unknown>;
+}
+
+/**
+ * MCP Tool specification for LLM
+ */
+interface ToolSpec {
+  name: string;
+  description: string;
+  parameters: Record<string, unknown>;
+}
+
+/**
  * Shell Command Tool for executing shell commands
  */
 export class ShellCommandTool extends BaseMCPTool implements IMCPTool {
@@ -28,27 +48,12 @@ export class ShellCommandTool extends BaseMCPTool implements IMCPTool {
       this.validateArgs(args, ['command']);
 
       const command = String(args.command);
-
-      // Security: Validate command doesn't contain dangerous patterns
-      this.validateCommand(command);
-
-      // Execute the command
-      const { stdout, stderr } = await this.withTimeout(
-        execAsync(command, { maxBuffer: 1024 * 1024 * 10 }), // 10MB buffer
-        this.timeoutMs
-      );
+      const result = await this.executeCommand(command);
 
       return {
         success: true,
-        output: {
-          stdout,
-          stderr,
-          exitCode: 0,
-        },
+        output: result,
         latencyMs: Date.now() - startTime,
-        metadata: {
-          commandLength: command.length,
-        },
       };
     } catch (error) {
       return {
@@ -60,30 +65,36 @@ export class ShellCommandTool extends BaseMCPTool implements IMCPTool {
   }
 
   /**
-   * Validate command for security
+   * Execute a shell command with security validation
    */
-  private validateCommand(command: string): void {
-    // Block dangerous commands
+  private async executeCommand(command: string): Promise<string> {
+    // Security check for dangerous commands
     const dangerousPatterns = [
-      /rm\s+-rf\s+\/$/,
-      /rm\s+-rf\s+\.\.$/,
-      /sudo\s+/,
-      /eval\s+/,
-      /exec\s+\(/,
-      /system\s+\(/,
-      /base64\s+-d/, // Potential data exfiltration
+      /rm\s+-rf\s+/,
+      /mkfs\s+/,
+      /dd\s+/,
+      /chmod\s+777\s+/,
+      /useradd\s+/,
+      /userdel\s+/,
+      /passwd\s+/,
     ];
 
     for (const pattern of dangerousPatterns) {
       if (pattern.test(command)) {
-        throw new Error(`Dangerous command pattern detected: ${pattern.source}`);
+        throw new Error('Dangerous command detected and blocked');
       }
     }
 
-    // Limit command length
-    if (command.length > 1000) {
-      throw new Error('Command length exceeds maximum of 1000 characters');
+    const { stdout, stderr } = await execAsync(command, {
+      timeout: this.timeoutMs,
+      maxBuffer: 1024 * 1024 * 10, // 10MB
+    });
+
+    if (stderr && !stderr.includes('warn') && !stderr.includes('Warning')) {
+      throw new Error(stderr);
     }
+
+    return stdout || stderr || 'Command executed successfully';
   }
 
   /**

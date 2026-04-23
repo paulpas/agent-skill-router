@@ -1,5 +1,7 @@
 // MCP Tool Interface and Base Class
 
+import { ToolResult, ToolSpec } from '../core/types.js';
+
 /**
  * Base interface for all MCP tools
  */
@@ -62,6 +64,11 @@ export abstract class BaseMCPTool implements IMCPTool {
       ),
     ]);
   }
+
+  /**
+   * Execute - must be implemented by subclasses
+   */
+  abstract execute(args: Record<string, unknown>): Promise<ToolResult>;
 
   /**
    * Get tool specification for LLM

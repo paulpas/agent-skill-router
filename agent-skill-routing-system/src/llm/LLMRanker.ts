@@ -1,7 +1,5 @@
 // LLM Ranker - ranks skill candidates using an LLM
 
-import { z } from 'zod';
-import { zodToJsonSchema } from 'zod-to-json-schema';
 import type { SkillDefinition, SkillRanking, SelectedSkill } from '../core/types.js';
 import { Logger } from '../observability/Logger.js';
 
@@ -75,27 +73,27 @@ export class LLMRanker {
     }));
 
     return selectedSkills;
-  }
+   }
 
-  /**
-   * Build the ranking prompt for the LLM
-   */
-  private buildRankingPrompt(
-    task: string,
-    candidates: SkillDefinition[]
-  ): string {
-    const candidatesInfo = candidates
-      .map(
-        (c, index) => `
-${index + 1}. ${c.metadata.name}
-   Category: ${c.metadata.category}
-   Description: ${c.metadata.description}
-   Tags: ${c.metadata.tags.join(', ')}
-`
-      )
-      .join('\n');
+   /**
+    * Build the ranking prompt for the LLM
+    */
+   private buildRankingPrompt(
+     task: string,
+     candidates: SkillDefinition[]
+   ): string {
+     const candidatesInfo = candidates
+       .map(
+         (c, index) => `
+ ${index + 1}. ${c.metadata.name}
+    Category: ${c.metadata.category}
+    Description: ${c.metadata.description}
+    Tags: ${c.metadata.tags.join(', ')}
+ `
+       )
+       .join('\n');
 
-    return `You are a skill router for an agentic coding system. Given a task, rank the most appropriate skills to execute it.
+     return `You are a skill router for an agentic coding system. Given a task, rank the most appropriate skills to execute it.
 
 Task: ${task}
 

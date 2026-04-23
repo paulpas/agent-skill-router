@@ -4,10 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type {
   RouteRequest,
   RouteResponse,
-  SkillDefinition,
   SelectedSkill,
-  ExecutionPlan,
-  EmbeddingResponse,
 } from '../core/types.js';
 import { SkillRegistry } from '../core/SkillRegistry.js';
 import { VectorDatabase } from '../embedding/VectorDatabase.js';

@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { EmbeddingRequest, EmbeddingResponse } from '../core/types.js';
+import { EmbeddingResponse } from '../core/types.js';
 import { Logger } from '../observability/Logger.js';
 
 /**
@@ -104,8 +104,9 @@ export class EmbeddingService {
     if (uncachedTexts.length > 0) {
       const embeddings = await this.generateEmbeddingsFromAPI(uncachedTexts);
 
-      embeddings.forEach((embedding, index) => {
-        const text = uncachedTexts[index];
+      for (let i = 0; i < embeddings.length; i++) {
+        const text = uncachedTexts[i];
+        const embedding = embeddings[i];
         const result: EmbeddingResponse = {
           embedding,
           dimensions: this.config.dimensions,
@@ -118,7 +119,7 @@ export class EmbeddingService {
         if (cacheKey) {
           await this.saveToCacheFile(text, result, cacheKey);
         }
-      });
+      }
     }
 
     return results;
@@ -302,9 +303,4 @@ export class EmbeddingService {
     }
     return hash.toString(16).padStart(8, '0');
   }
-
-  /**
-   * Logger instance
-   */
- // Logger is now a proper property
 }

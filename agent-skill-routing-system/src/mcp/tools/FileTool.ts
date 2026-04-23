@@ -5,6 +5,26 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 /**
+ * MCP Tool result
+ */
+interface ToolResult {
+  success: boolean;
+  output?: unknown;
+  error?: string;
+  latencyMs: number;
+  metadata?: Record<string, unknown>;
+}
+
+/**
+ * MCP Tool specification for LLM
+ */
+interface ToolSpec {
+  name: string;
+  description: string;
+  parameters: Record<string, unknown>;
+}
+
+/**
  * File Tool for reading and writing files
  */
 export class FileTool extends BaseMCPTool implements IMCPTool {

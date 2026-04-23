@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { createWriteStream } from 'fs';
+import { createWriteStream, WriteStream } from 'fs';
 import { LogEntry } from '../core/types.js';
 
 /**
@@ -100,7 +100,7 @@ export class Logger {
 
     // Write to console
     if (this.config.logToConsole) {
-      this.writeToConsole(entry, formatted);
+      this.writeToConsole(entry);
     }
 
     // Write to file
@@ -134,7 +134,7 @@ export class Logger {
   /**
    * Write to console
    */
-  private writeToConsole(entry: LogEntry, formatted: string): void {
+  private writeToConsole(entry: LogEntry): void {
     const color = this.getColorForLevel(entry.level);
     const timestamp = entry.timestamp.split('T')[1].slice(0, 12);
 
@@ -206,7 +206,7 @@ export class Logger {
   /**
    * Create a logger for a specific task
    */
-  forTask(taskId: string): Logger {
+  forTask(_taskId: string): Logger {
     return new Logger(this.category, {
       ...this.config,
       includePayloads: true,
