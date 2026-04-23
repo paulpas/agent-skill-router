@@ -48,8 +48,8 @@ export class SkillRegistry {
     });
 
     try {
-      // Find all skill definition files (ts, js, json, yaml, yml, md)
-      const pattern = path.join(this.config.skillsDirectory, '**/*.{ts,js,json,yaml,yml,md}');
+      // Find all SKILL.md files exclusively
+      const pattern = path.join(this.config.skillsDirectory, '**/SKILL.md');
       const files = await glob(pattern);
 
       this.logger.debug(`Found ${files.length} potential skill files`);
@@ -87,104 +87,25 @@ export class SkillRegistry {
   }
 
   /**
-    * Load a single skill from a file
-    */
+   * Load a single skill from a SKILL.md file
+   */
   private async loadSkillFromFile(filePath: string): Promise<SkillDefinition | null> {
-    const ext = path.extname(filePath).toLowerCase();
-    let content = '';
-    let metadata: SkillMetadata;
-
     try {
-      switch (ext) {
-        case '.ts':
-        case '.js':
-          content = await fs.promises.readFile(filePath, 'utf-8');
-          metadata = this.parseSkillFromModule(content, filePath);
-          break;
+      const content = await fs.promises.readFile(filePath, 'utf-8');
+      const metadata = this.parseSkillFromMarkdown(content, filePath);
 
-        case '.json':
-          const jsonContent = await fs.promises.readFile(filePath, 'utf-8');
-          metadata = JSON.parse(jsonContent);
-          content = jsonContent;
-          break;
-
-        case '.yaml':
-        case '.yml':
-          const yamlContent = await fs.promises.readFile(filePath, 'utf-8');
-          metadata = YAML.parse(yamlContent);
-          content = yamlContent;
-          break;
-
-        case '.md':
-          const mdContent = await fs.promises.readFile(filePath, 'utf-8');
-          metadata = this.parseSkillFromMarkdown(mdContent, filePath);
-          content = mdContent;
-          break;
-
-        default:
-          this.logger.debug(`Skipping unsupported file type: ${filePath}`);
-          return null;
-      }
-
-      // Validate metadata against schema
       if (!this.isValidSkillMetadata(metadata)) {
         this.logger.warn(`Invalid skill metadata in ${filePath}`);
         return null;
       }
 
-      return {
-        metadata,
-        sourceFile: filePath,
-        rawContent: content,
-      };
+      return { metadata, sourceFile: filePath, rawContent: content };
     } catch (error) {
       this.logger.error(`Failed to parse skill file ${filePath}`, {
         error: error instanceof Error ? error.message : String(error),
       });
       return null;
     }
-  }
-
-  /**
-   * Parse skill metadata from a TypeScript/JavaScript module
-   */
-  private parseSkillFromModule(
-    content: string,
-    filePath: string
-  ): SkillMetadata {
-    // Try to find skill definition in module exports
-    // This is a simplified parser - in production, use ts-morph or similar
-    const skillRegex = /export\s+(default\s+)?const\s+skill\s*=\s*({[\s\S]*?});/;
-    const match = content.match(skillRegex);
-
-    if (match) {
-      try {
-        // Extract JSON-like content and parse
-        const jsonStr = match[2];
-        // This is a simple approach - real implementation needs proper AST parsing
-        return JSON.parse(jsonStr);
-      } catch {
-        // Fall back to simple extraction
-        return {
-          name: path.basename(filePath, path.extname(filePath)),
-          category: 'general',
-          description: 'Skill loaded from TypeScript module',
-          tags: ['typescript', 'module'],
-          input_schema: { type: 'object', properties: {}, required: [] },
-          output_schema: { type: 'object', properties: {}, required: [] },
-        };
-      }
-    }
-
-    // Use filename as default
-    return {
-      name: path.basename(filePath, path.extname(filePath)),
-      category: 'general',
-      description: 'Skill loaded from file',
-      tags: ['default'],
-      input_schema: { type: 'object', properties: {}, required: [] },
-      output_schema: { type: 'object', properties: {}, required: [] },
-    };
   }
 
   /**

@@ -23,13 +23,9 @@ export declare class SkillRegistry {
      */
     loadSkills(): Promise<void>;
     /**
-      * Load a single skill from a file
-      */
-    private loadSkillFromFile;
-    /**
-     * Parse skill metadata from a TypeScript/JavaScript module
+     * Load a single skill from a SKILL.md file
      */
-    private parseSkillFromModule;
+    private loadSkillFromFile;
     /**
      * Parse skill metadata from a SKILL.md file with YAML frontmatter
      * Maps OpenCode skill frontmatter fields to SkillMetadata schema
