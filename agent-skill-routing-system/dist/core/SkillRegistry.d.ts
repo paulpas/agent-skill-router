@@ -31,6 +31,11 @@ export declare class SkillRegistry {
      */
     private parseSkillFromModule;
     /**
+     * Parse skill metadata from a SKILL.md file with YAML frontmatter
+     * Maps OpenCode skill frontmatter fields to SkillMetadata schema
+     */
+    private parseSkillFromMarkdown;
+    /**
      * Validate skill metadata against expected schema
      */
     private isValidSkillMetadata;

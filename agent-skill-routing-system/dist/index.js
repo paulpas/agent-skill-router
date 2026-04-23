@@ -185,4 +185,14 @@ exports.AgentSkillRoutingApp = AgentSkillRoutingApp;
 function createApp(config) {
     return new AgentSkillRoutingApp(config);
 }
+// Auto-start when run directly
+if (require.main === module) {
+    const skillsDirectory = process.env.SKILLS_DIRECTORY || './samples/skill-definitions';
+    const port = parseInt(process.env.PORT || '3000', 10);
+    const app = createApp({ skillsDirectory });
+    app.initialize().then(() => app.start(port)).catch((err) => {
+        console.error('Failed to start:', err);
+        process.exit(1);
+    });
+}
 //# sourceMappingURL=index.js.map
