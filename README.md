@@ -25,75 +25,145 @@ Skills are loaded in OpenCode via the `/skill` command. Browse by category below
 **55 enriched skills** with 300+ lines of comprehensive content, **28 skills** with 260-299 lines (below 300-line threshold).
 
 **[cncf-argo](./cncf-argo/SKILL.md)** — Argo in Continuous Integration & Delivery - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-artifact-hub](./cncf-artifact-hub/SKILL.md)** — Artifact Hub in Application Definition & Image Build - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-backstage](./cncf-backstage/SKILL.md)** — Backstage in Application Definition & Image Build - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-buildpacks](./cncf-buildpacks/SKILL.md)** — Buildpacks in Application Definition & Image Build - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-cert-manager](./cncf-cert-manager/SKILL.md)** — cert-manager in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-chaosmesh](./cncf-chaosmesh/SKILL.md)** — Chaos Mesh in Chaos Engineering - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-cilium](./cncf-cilium/SKILL.md)** — Cilium in Cloud Native Network - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-cloud-custodian](./cncf-cloud-custodian/SKILL.md)** — Cloud Custodian in Automation & Configuration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-cloudevents](./cncf-cloudevents/SKILL.md)** — CloudEvents in Streaming & Messaging - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-containerd](./cncf-containerd/SKILL.md)** — containerd in Container Runtime - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-container-network-interface-cni](./cncf-container-network-interface-cni/SKILL.md)** — Container Network Interface in Cloud Native Network - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-contour](./cncf-contour/SKILL.md)** — Contour in Service Proxy - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-coredns](./cncf-coredns/SKILL.md)** — CoreDNS in Coordination & Service Discovery - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-cortex](./cncf-cortex/SKILL.md)** — Cortex in Observability - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-cri-o](./cncf-cri-o/SKILL.md)** — CRI-O in Container Runtime - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-crossplane](./cncf-crossplane/SKILL.md)** — Crossplane in Scheduling & Orchestration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-cubefs](./cncf-cubefs/SKILL.md)** — CubeFS in Cloud Native Storage - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-dapr](./cncf-dapr/SKILL.md)** — Dapr in Application Definition & Image Build - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-dragonfly](./cncf-dragonfly/SKILL.md)** — Dragonfly in Container Registry - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-emissary-ingress](./cncf-emissary-ingress/SKILL.md)** — Emissary-Ingress in API Gateway - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-envoy](./cncf-envoy/SKILL.md)** — Envoy in Service Proxy - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-etcd](./cncf-etcd/SKILL.md)** — etcd in Coordination & Service Discovery - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-falco](./cncf-falco/SKILL.md)** — Falco in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-flatcar-container-linux](./cncf-flatcar-container-linux/SKILL.md)** — Flatcar Container Linux in Certified Kubernetes - Distribution - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-fluentd](./cncf-fluentd/SKILL.md)** — Fluentd in Observability - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-fluid](./cncf-fluid/SKILL.md)** — Fluid in Scheduling & Orchestration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-flux](./cncf-flux/SKILL.md)** — Flux in Continuous Integration & Delivery - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-grpc](./cncf-grpc/SKILL.md)** — gRPC in Remote Procedure Call - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-harbor](./cncf-harbor/SKILL.md)** — Harbor in Container Registry - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-helm](./cncf-helm/SKILL.md)** — Helm in Application Definition & Image Build - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-in-toto](./cncf-in-toto/SKILL.md)** — in-toto in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-istio](./cncf-istio/SKILL.md)** — Istio in Service Mesh - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-jaeger](./cncf-jaeger/SKILL.md)** — Jaeger in Observability - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-karmada](./cncf-karmada/SKILL.md)** — Karmada in Scheduling & Orchestration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-keda](./cncf-keda/SKILL.md)** — KEDA in Scheduling & Orchestration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-keycloak](./cncf-keycloak/SKILL.md)** — Keycloak in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-knative](./cncf-knative/SKILL.md)** — Knative in Scheduling & Orchestration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-kserve](./cncf-kserve/SKILL.md)** — KServe in ML Serving - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-kubeflow](./cncf-kubeflow/SKILL.md)** — Kubeflow in Scheduling & Orchestration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-kubeedge](./cncf-kubeedge/SKILL.md)** — KubeEdge in Automation & Configuration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-kubescape](./cncf-kubescape/SKILL.md)** — Kubescape in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-kubevela](./cncf-kubevela/SKILL.md)** — KubeVela in Application Definition & Image Build - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-kubevirt](./cncf-kubevirt/SKILL.md)** — KubeVirt in Application Definition & Image Build - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-kyverno](./cncf-kyverno/SKILL.md)** — Kyverno in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-kubernetes](./cncf-kubernetes/SKILL.md)** — Kubernetes in Scheduling & Orchestration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-lima](./cncf-lima/SKILL.md)** — Lima in Container Runtime - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-linkerd](./cncf-linkerd/SKILL.md)** — Linkerd in Service Mesh - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-litmus](./cncf-litmus/SKILL.md)** — Litmus in Chaos Engineering - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-longhorn](./cncf-longhorn/SKILL.md)** — Longhorn in Cloud Native Storage - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-metal3-io](./cncf-metal3-io/SKILL.md)** — metal3-io in Automation & Configuration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-nats](./cncf-nats/SKILL.md)** — NATS in Streaming & Messaging - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-notary-project](./cncf-notary-project/SKILL.md)** — Notary Project in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-opencost](./cncf-opencost/SKILL.md)** — OpenCost in Continuous Optimization - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-openfeature](./cncf-openfeature/SKILL.md)** — OpenFeature in Feature Flagging - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-openfga](./cncf-openfga/SKILL.md)** — OpenFGA in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-openkruise](./cncf-openkruise/SKILL.md)** — OpenKruise in Continuous Integration & Delivery - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-open-policy-agent-opa](./cncf-open-policy-agent-opa/SKILL.md)** — Open Policy Agent in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-opentelemetry](./cncf-opentelemetry/SKILL.md)** — OpenTelemetry in Observability - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-openyurt](./cncf-openyurt/SKILL.md)** — OpenYurt in Automation & Configuration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-operator-framework](./cncf-operator-framework/SKILL.md)** — Operator Framework in Application Definition & Image Build - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-prometheus](./cncf-prometheus/SKILL.md)** — Prometheus in Observability - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-rook](./cncf-rook/SKILL.md)** — Rook in Cloud Native Storage - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-spiffe](./cncf-spiffe/SKILL.md)** — SPIFFE in Key Management - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-spire](./cncf-spire/SKILL.md)** — SPIRE in Key Management - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-strimzi](./cncf-strimzi/SKILL.md)** — Strimzi in Streaming & Messaging - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-thanos](./cncf-thanos/SKILL.md)** — Thanos in Observability - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-the-update-framework-tuf](./cncf-the-update-framework-tuf/SKILL.md)** — The Update Framework in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-tikv](./cncf-tikv/SKILL.md)** — TiKV in Database - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-vitess](./cncf-vitess/SKILL.md)** — Vitess in Database - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-volcano](./cncf-volcano/SKILL.md)** — Volcano in Scheduling & Orchestration - cloud native architecture, patterns, pitfalls, and best practices
+
 **[cncf-wasmcloud](./cncf-wasmcloud/SKILL.md)** — wasmCloud in Scheduling & Orchestration - cloud native architecture, patterns, pitfalls, and best practices
 
 ---
