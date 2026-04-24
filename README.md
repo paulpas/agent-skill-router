@@ -654,8 +654,8 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-04-24 13:26:59 UTC  
-> **Total skills:** 239
+> **Last updated:** 2026-04-24 13:38:16 UTC  
+> **Total skills:** 279
 
 ## Skills by Domain
 
@@ -695,7 +695,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [agent-test-oracle-generator](../../skills/agent-test-oracle-generator/SKILL.md) | Generates test oracles and expected outputs for testing... | expected output, test oracle... |
 
 
-### Cncf (109 skills)
+### Cncf (149 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -722,6 +722,26 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-aws-sqs](../../skills/cncf-aws-sqs/SKILL.md) | Deploys managed message queues with SQS for asynchronous... | dead-letter queue, fifo queue... |
 | [cncf-aws-ssm](../../skills/cncf-aws-ssm/SKILL.md) | Manages EC2 instances and on-premises servers with AWS... | configuration management, parameter store... |
 | [cncf-aws-vpc](../../skills/cncf-aws-vpc/SKILL.md) | Configures Virtual Private Clouds with subnets, route... | vpc, virtual private cloud... |
+| [cncf-azure-aks](../../skills/cncf-azure-aks/SKILL.md) | Managed Kubernetes cluster with automatic scaling and Azure... | aks, kubernetes... |
+| [cncf-azure-automation](../../skills/cncf-azure-automation/SKILL.md) | Automation and orchestration of Azure resources with... | automation, runbooks... |
+| [cncf-azure-blob-storage](../../skills/cncf-azure-blob-storage/SKILL.md) | Object storage with versioning, lifecycle policies, and... | blob storage, object storage... |
+| [cncf-azure-cdn](../../skills/cncf-azure-cdn/SKILL.md) | Content delivery network for caching and global content... | cdn, content delivery... |
+| [cncf-azure-container-registry](../../skills/cncf-azure-container-registry/SKILL.md) | Stores and manages container images with integration to AKS... | container registry, acr... |
+| [cncf-azure-cosmos-db](../../skills/cncf-azure-cosmos-db/SKILL.md) | Global NoSQL database with multi-region distribution and... | cosmos db, nosql... |
+| [cncf-azure-event-hubs](../../skills/cncf-azure-event-hubs/SKILL.md) | Event streaming platform for high-throughput data ingestion... | event hubs, event streaming... |
+| [cncf-azure-functions](../../skills/cncf-azure-functions/SKILL.md) | Serverless computing with event-driven functions and... | azure functions, serverless... |
+| [cncf-azure-key-vault](../../skills/cncf-azure-key-vault/SKILL.md) | Manages encryption keys, secrets, and certificates with... | key vault, key management... |
+| [cncf-azure-keyvault-secrets](../../skills/cncf-azure-keyvault-secrets/SKILL.md) | Secret management and rotation for sensitive credentials... | secrets, secret management... |
+| [cncf-azure-load-balancer](../../skills/cncf-azure-load-balancer/SKILL.md) | Distributes traffic across VMs with health probes and... | load balancer, load balancing... |
+| [cncf-azure-monitor](../../skills/cncf-azure-monitor/SKILL.md) | Monitoring and logging for Azure resources with alerting... | azure monitor, monitoring... |
+| [cncf-azure-rbac](../../skills/cncf-azure-rbac/SKILL.md) | Manages identity and access with roles, service principals,... | rbac, role-based access... |
+| [cncf-azure-resource-manager](../../skills/cncf-azure-resource-manager/SKILL.md) | Infrastructure as code using ARM templates for repeatable... | resource manager, arm templates... |
+| [cncf-azure-scale-sets](../../skills/cncf-azure-scale-sets/SKILL.md) | Manages auto-scaling VM groups with load balancing and... | scale sets, vmss... |
+| [cncf-azure-service-bus](../../skills/cncf-azure-service-bus/SKILL.md) | Messaging service with queues and topics for reliable... | service bus, messaging... |
+| [cncf-azure-sql-database](../../skills/cncf-azure-sql-database/SKILL.md) | Managed relational database with elastic pools,... | sql database, relational database... |
+| [cncf-azure-traffic-manager](../../skills/cncf-azure-traffic-manager/SKILL.md) | DNS-based traffic routing with health checks and geographic... | traffic manager, dns... |
+| [cncf-azure-virtual-machines](../../skills/cncf-azure-virtual-machines/SKILL.md) | Deploys and manages VMs with auto-scaling, availability... | virtual machines, vm... |
+| [cncf-azure-virtual-networks](../../skills/cncf-azure-virtual-networks/SKILL.md) | Networking with subnets, network security groups, and VPN... | virtual networks, networking... |
 | [cncf-backstage](../../skills/cncf-backstage/SKILL.md) | Backstage in Cloud-Native Engineering - Developer Portal... | backstage, cloud-native... |
 | [cncf-buildpacks](../../skills/cncf-buildpacks/SKILL.md) | Buildpacks in Cloud-Native Engineering - Turn source code... | buildpacks, cloud-native... |
 | [cncf-calico](../../skills/cncf-calico/SKILL.md) | Calico in Cloud Native Security - cloud native... | calico, cdn... |
@@ -749,6 +769,26 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-fluentd](../../skills/cncf-fluentd/SKILL.md) | Fluentd unified logging layer for collecting, transforming,... | fluentd, log collection... |
 | [cncf-fluid](../../skills/cncf-fluid/SKILL.md) | Fluid in A Kubernetes-native data acceleration layer for... | acceleration, container orchestration... |
 | [cncf-flux](../../skills/cncf-flux/SKILL.md) | Flux in Cloud-Native Engineering - GitOps for Kubernetes | cloud-native, declarative... |
+| [cncf-gcp-autoscaling](../../skills/cncf-gcp-autoscaling/SKILL.md) | Automatically scales compute resources based on metrics... | autoscaling, auto-scaling... |
+| [cncf-gcp-cloud-cdn](../../skills/cncf-gcp-cloud-cdn/SKILL.md) | Content delivery network for caching and globally... | cloud cdn, cdn... |
+| [cncf-gcp-cloud-dns](../../skills/cncf-gcp-cloud-dns/SKILL.md) | Manages DNS with health checks, traffic routing, and... | cloud dns, dns... |
+| [cncf-gcp-cloud-functions](../../skills/cncf-gcp-cloud-functions/SKILL.md) | Deploys serverless functions triggered by events with... | cloud functions, serverless... |
+| [cncf-gcp-cloud-kms](../../skills/cncf-gcp-cloud-kms/SKILL.md) | Manages encryption keys for data protection with automated... | kms, key management... |
+| [cncf-gcp-cloud-load-balancing](../../skills/cncf-gcp-cloud-load-balancing/SKILL.md) | Distributes traffic across instances with automatic... | load balancing, traffic distribution... |
+| [cncf-gcp-cloud-monitoring](../../skills/cncf-gcp-cloud-monitoring/SKILL.md) | Monitors GCP resources with metrics, logging, and alerting... | cloud monitoring, monitoring... |
+| [cncf-gcp-cloud-operations](../../skills/cncf-gcp-cloud-operations/SKILL.md) | Systems management including monitoring, logging, error... | cloud operations, monitoring... |
+| [cncf-gcp-cloud-pubsub](../../skills/cncf-gcp-cloud-pubsub/SKILL.md) | Asynchronous messaging service for event streaming and... | pubsub, messaging... |
+| [cncf-gcp-cloud-sql](../../skills/cncf-gcp-cloud-sql/SKILL.md) | Provides managed relational databases (MySQL, PostgreSQL)... | cloud sql, relational database... |
+| [cncf-gcp-cloud-storage](../../skills/cncf-gcp-cloud-storage/SKILL.md) | Stores objects with versioning, lifecycle policies, access... | cloud storage, gcs... |
+| [cncf-gcp-cloud-tasks](../../skills/cncf-gcp-cloud-tasks/SKILL.md) | Manages task queues for asynchronous job execution with... | cloud tasks, task queue... |
+| [cncf-gcp-compute-engine](../../skills/cncf-gcp-compute-engine/SKILL.md) | Deploys and manages virtual machine instances with... | compute engine, gce... |
+| [cncf-gcp-container-registry](../../skills/cncf-gcp-container-registry/SKILL.md) | Stores and manages container images with integration to GKE... | container registry, gcr... |
+| [cncf-gcp-deployment-manager](../../skills/cncf-gcp-deployment-manager/SKILL.md) | Infrastructure as code using YAML templates for repeatable... | deployment manager, infrastructure as code... |
+| [cncf-gcp-firestore](../../skills/cncf-gcp-firestore/SKILL.md) | NoSQL document database with real-time sync, offline... | firestore, nosql... |
+| [cncf-gcp-gke](../../skills/cncf-gcp-gke/SKILL.md) | Managed Kubernetes cluster with automatic scaling,... | gke, kubernetes... |
+| [cncf-gcp-iam](../../skills/cncf-gcp-iam/SKILL.md) | Manages identity and access control with service accounts,... | iam, identity access management... |
+| [cncf-gcp-secret-manager](../../skills/cncf-gcp-secret-manager/SKILL.md) | Stores and rotates secrets with encryption and audit... | secret manager, secrets... |
+| [cncf-gcp-vpc](../../skills/cncf-gcp-vpc/SKILL.md) | Provides networking with subnets, firewall rules, and VPC... | vpc, virtual private cloud... |
 | [cncf-grpc](../../skills/cncf-grpc/SKILL.md) | gRPC in Remote Procedure Call - cloud native architecture,... | cdn, grpc... |
 | [cncf-harbor](../../skills/cncf-harbor/SKILL.md) | Harbor in Cloud-Native Engineering - container registry | cloud-native, container... |
 | [cncf-helm](../../skills/cncf-helm/SKILL.md) | Helm in Cloud-Native Engineering - The Kubernetes Package... | cloud-native, container orchestration... |
@@ -1035,7 +1075,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [trading-technical-volume-profile](../../skills/trading-technical-volume-profile/SKILL.md) | Trading | Volume analysis techniques for understanding market... |
 
 
-### Reference (Learn & Understand) (112 skills)
+### Reference (Learn & Understand) (152 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1062,6 +1102,26 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-aws-sqs](../../skills/cncf-aws-sqs/SKILL.md) | Cncf | Deploys managed message queues with SQS for asynchronous... |
 | [cncf-aws-ssm](../../skills/cncf-aws-ssm/SKILL.md) | Cncf | Manages EC2 instances and on-premises servers with AWS... |
 | [cncf-aws-vpc](../../skills/cncf-aws-vpc/SKILL.md) | Cncf | Configures Virtual Private Clouds with subnets, route... |
+| [cncf-azure-aks](../../skills/cncf-azure-aks/SKILL.md) | Cncf | Managed Kubernetes cluster with automatic scaling and Azure... |
+| [cncf-azure-automation](../../skills/cncf-azure-automation/SKILL.md) | Cncf | Automation and orchestration of Azure resources with... |
+| [cncf-azure-blob-storage](../../skills/cncf-azure-blob-storage/SKILL.md) | Cncf | Object storage with versioning, lifecycle policies, and... |
+| [cncf-azure-cdn](../../skills/cncf-azure-cdn/SKILL.md) | Cncf | Content delivery network for caching and global content... |
+| [cncf-azure-container-registry](../../skills/cncf-azure-container-registry/SKILL.md) | Cncf | Stores and manages container images with integration to AKS... |
+| [cncf-azure-cosmos-db](../../skills/cncf-azure-cosmos-db/SKILL.md) | Cncf | Global NoSQL database with multi-region distribution and... |
+| [cncf-azure-event-hubs](../../skills/cncf-azure-event-hubs/SKILL.md) | Cncf | Event streaming platform for high-throughput data ingestion... |
+| [cncf-azure-functions](../../skills/cncf-azure-functions/SKILL.md) | Cncf | Serverless computing with event-driven functions and... |
+| [cncf-azure-key-vault](../../skills/cncf-azure-key-vault/SKILL.md) | Cncf | Manages encryption keys, secrets, and certificates with... |
+| [cncf-azure-keyvault-secrets](../../skills/cncf-azure-keyvault-secrets/SKILL.md) | Cncf | Secret management and rotation for sensitive credentials... |
+| [cncf-azure-load-balancer](../../skills/cncf-azure-load-balancer/SKILL.md) | Cncf | Distributes traffic across VMs with health probes and... |
+| [cncf-azure-monitor](../../skills/cncf-azure-monitor/SKILL.md) | Cncf | Monitoring and logging for Azure resources with alerting... |
+| [cncf-azure-rbac](../../skills/cncf-azure-rbac/SKILL.md) | Cncf | Manages identity and access with roles, service principals,... |
+| [cncf-azure-resource-manager](../../skills/cncf-azure-resource-manager/SKILL.md) | Cncf | Infrastructure as code using ARM templates for repeatable... |
+| [cncf-azure-scale-sets](../../skills/cncf-azure-scale-sets/SKILL.md) | Cncf | Manages auto-scaling VM groups with load balancing and... |
+| [cncf-azure-service-bus](../../skills/cncf-azure-service-bus/SKILL.md) | Cncf | Messaging service with queues and topics for reliable... |
+| [cncf-azure-sql-database](../../skills/cncf-azure-sql-database/SKILL.md) | Cncf | Managed relational database with elastic pools,... |
+| [cncf-azure-traffic-manager](../../skills/cncf-azure-traffic-manager/SKILL.md) | Cncf | DNS-based traffic routing with health checks and geographic... |
+| [cncf-azure-virtual-machines](../../skills/cncf-azure-virtual-machines/SKILL.md) | Cncf | Deploys and manages VMs with auto-scaling, availability... |
+| [cncf-azure-virtual-networks](../../skills/cncf-azure-virtual-networks/SKILL.md) | Cncf | Networking with subnets, network security groups, and VPN... |
 | [cncf-backstage](../../skills/cncf-backstage/SKILL.md) | Cncf | Backstage in Cloud-Native Engineering - Developer Portal... |
 | [cncf-buildpacks](../../skills/cncf-buildpacks/SKILL.md) | Cncf | Buildpacks in Cloud-Native Engineering - Turn source code... |
 | [cncf-calico](../../skills/cncf-calico/SKILL.md) | Cncf | Calico in Cloud Native Security - cloud native... |
@@ -1089,6 +1149,26 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-fluentd](../../skills/cncf-fluentd/SKILL.md) | Cncf | Fluentd unified logging layer for collecting, transforming,... |
 | [cncf-fluid](../../skills/cncf-fluid/SKILL.md) | Cncf | Fluid in A Kubernetes-native data acceleration layer for... |
 | [cncf-flux](../../skills/cncf-flux/SKILL.md) | Cncf | Flux in Cloud-Native Engineering - GitOps for Kubernetes |
+| [cncf-gcp-autoscaling](../../skills/cncf-gcp-autoscaling/SKILL.md) | Cncf | Automatically scales compute resources based on metrics... |
+| [cncf-gcp-cloud-cdn](../../skills/cncf-gcp-cloud-cdn/SKILL.md) | Cncf | Content delivery network for caching and globally... |
+| [cncf-gcp-cloud-dns](../../skills/cncf-gcp-cloud-dns/SKILL.md) | Cncf | Manages DNS with health checks, traffic routing, and... |
+| [cncf-gcp-cloud-functions](../../skills/cncf-gcp-cloud-functions/SKILL.md) | Cncf | Deploys serverless functions triggered by events with... |
+| [cncf-gcp-cloud-kms](../../skills/cncf-gcp-cloud-kms/SKILL.md) | Cncf | Manages encryption keys for data protection with automated... |
+| [cncf-gcp-cloud-load-balancing](../../skills/cncf-gcp-cloud-load-balancing/SKILL.md) | Cncf | Distributes traffic across instances with automatic... |
+| [cncf-gcp-cloud-monitoring](../../skills/cncf-gcp-cloud-monitoring/SKILL.md) | Cncf | Monitors GCP resources with metrics, logging, and alerting... |
+| [cncf-gcp-cloud-operations](../../skills/cncf-gcp-cloud-operations/SKILL.md) | Cncf | Systems management including monitoring, logging, error... |
+| [cncf-gcp-cloud-pubsub](../../skills/cncf-gcp-cloud-pubsub/SKILL.md) | Cncf | Asynchronous messaging service for event streaming and... |
+| [cncf-gcp-cloud-sql](../../skills/cncf-gcp-cloud-sql/SKILL.md) | Cncf | Provides managed relational databases (MySQL, PostgreSQL)... |
+| [cncf-gcp-cloud-storage](../../skills/cncf-gcp-cloud-storage/SKILL.md) | Cncf | Stores objects with versioning, lifecycle policies, access... |
+| [cncf-gcp-cloud-tasks](../../skills/cncf-gcp-cloud-tasks/SKILL.md) | Cncf | Manages task queues for asynchronous job execution with... |
+| [cncf-gcp-compute-engine](../../skills/cncf-gcp-compute-engine/SKILL.md) | Cncf | Deploys and manages virtual machine instances with... |
+| [cncf-gcp-container-registry](../../skills/cncf-gcp-container-registry/SKILL.md) | Cncf | Stores and manages container images with integration to GKE... |
+| [cncf-gcp-deployment-manager](../../skills/cncf-gcp-deployment-manager/SKILL.md) | Cncf | Infrastructure as code using YAML templates for repeatable... |
+| [cncf-gcp-firestore](../../skills/cncf-gcp-firestore/SKILL.md) | Cncf | NoSQL document database with real-time sync, offline... |
+| [cncf-gcp-gke](../../skills/cncf-gcp-gke/SKILL.md) | Cncf | Managed Kubernetes cluster with automatic scaling,... |
+| [cncf-gcp-iam](../../skills/cncf-gcp-iam/SKILL.md) | Cncf | Manages identity and access control with service accounts,... |
+| [cncf-gcp-secret-manager](../../skills/cncf-gcp-secret-manager/SKILL.md) | Cncf | Stores and rotates secrets with encryption and audit... |
+| [cncf-gcp-vpc](../../skills/cncf-gcp-vpc/SKILL.md) | Cncf | Provides networking with subnets, firewall rules, and VPC... |
 | [cncf-grpc](../../skills/cncf-grpc/SKILL.md) | Cncf | gRPC in Remote Procedure Call - cloud native architecture,... |
 | [cncf-harbor](../../skills/cncf-harbor/SKILL.md) | Cncf | Harbor in Cloud-Native Engineering - container registry |
 | [cncf-helm](../../skills/cncf-helm/SKILL.md) | Cncf | Helm in Cloud-Native Engineering - The Kubernetes Package... |
@@ -1222,6 +1302,26 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-aws-sqs](../../skills/cncf-aws-sqs/SKILL.md) | Cncf | Deploys managed message queues with SQS for asynchronous... | Reference |
 | [cncf-aws-ssm](../../skills/cncf-aws-ssm/SKILL.md) | Cncf | Manages EC2 instances and on-premises servers with AWS... | Reference |
 | [cncf-aws-vpc](../../skills/cncf-aws-vpc/SKILL.md) | Cncf | Configures Virtual Private Clouds with subnets, route... | Reference |
+| [cncf-azure-aks](../../skills/cncf-azure-aks/SKILL.md) | Cncf | Managed Kubernetes cluster with automatic scaling and Azure... | Reference |
+| [cncf-azure-automation](../../skills/cncf-azure-automation/SKILL.md) | Cncf | Automation and orchestration of Azure resources with... | Reference |
+| [cncf-azure-blob-storage](../../skills/cncf-azure-blob-storage/SKILL.md) | Cncf | Object storage with versioning, lifecycle policies, and... | Reference |
+| [cncf-azure-cdn](../../skills/cncf-azure-cdn/SKILL.md) | Cncf | Content delivery network for caching and global content... | Reference |
+| [cncf-azure-container-registry](../../skills/cncf-azure-container-registry/SKILL.md) | Cncf | Stores and manages container images with integration to AKS... | Reference |
+| [cncf-azure-cosmos-db](../../skills/cncf-azure-cosmos-db/SKILL.md) | Cncf | Global NoSQL database with multi-region distribution and... | Reference |
+| [cncf-azure-event-hubs](../../skills/cncf-azure-event-hubs/SKILL.md) | Cncf | Event streaming platform for high-throughput data ingestion... | Reference |
+| [cncf-azure-functions](../../skills/cncf-azure-functions/SKILL.md) | Cncf | Serverless computing with event-driven functions and... | Reference |
+| [cncf-azure-key-vault](../../skills/cncf-azure-key-vault/SKILL.md) | Cncf | Manages encryption keys, secrets, and certificates with... | Reference |
+| [cncf-azure-keyvault-secrets](../../skills/cncf-azure-keyvault-secrets/SKILL.md) | Cncf | Secret management and rotation for sensitive credentials... | Reference |
+| [cncf-azure-load-balancer](../../skills/cncf-azure-load-balancer/SKILL.md) | Cncf | Distributes traffic across VMs with health probes and... | Reference |
+| [cncf-azure-monitor](../../skills/cncf-azure-monitor/SKILL.md) | Cncf | Monitoring and logging for Azure resources with alerting... | Reference |
+| [cncf-azure-rbac](../../skills/cncf-azure-rbac/SKILL.md) | Cncf | Manages identity and access with roles, service principals,... | Reference |
+| [cncf-azure-resource-manager](../../skills/cncf-azure-resource-manager/SKILL.md) | Cncf | Infrastructure as code using ARM templates for repeatable... | Reference |
+| [cncf-azure-scale-sets](../../skills/cncf-azure-scale-sets/SKILL.md) | Cncf | Manages auto-scaling VM groups with load balancing and... | Reference |
+| [cncf-azure-service-bus](../../skills/cncf-azure-service-bus/SKILL.md) | Cncf | Messaging service with queues and topics for reliable... | Reference |
+| [cncf-azure-sql-database](../../skills/cncf-azure-sql-database/SKILL.md) | Cncf | Managed relational database with elastic pools,... | Reference |
+| [cncf-azure-traffic-manager](../../skills/cncf-azure-traffic-manager/SKILL.md) | Cncf | DNS-based traffic routing with health checks and geographic... | Reference |
+| [cncf-azure-virtual-machines](../../skills/cncf-azure-virtual-machines/SKILL.md) | Cncf | Deploys and manages VMs with auto-scaling, availability... | Reference |
+| [cncf-azure-virtual-networks](../../skills/cncf-azure-virtual-networks/SKILL.md) | Cncf | Networking with subnets, network security groups, and VPN... | Reference |
 | [cncf-backstage](../../skills/cncf-backstage/SKILL.md) | Cncf | Backstage in Cloud-Native Engineering - Developer Portal... | Reference |
 | [cncf-buildpacks](../../skills/cncf-buildpacks/SKILL.md) | Cncf | Buildpacks in Cloud-Native Engineering - Turn source code... | Reference |
 | [cncf-calico](../../skills/cncf-calico/SKILL.md) | Cncf | Calico in Cloud Native Security - cloud native... | Reference |
@@ -1249,6 +1349,26 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-fluentd](../../skills/cncf-fluentd/SKILL.md) | Cncf | Fluentd unified logging layer for collecting, transforming,... | Reference |
 | [cncf-fluid](../../skills/cncf-fluid/SKILL.md) | Cncf | Fluid in A Kubernetes-native data acceleration layer for... | Reference |
 | [cncf-flux](../../skills/cncf-flux/SKILL.md) | Cncf | Flux in Cloud-Native Engineering - GitOps for Kubernetes | Reference |
+| [cncf-gcp-autoscaling](../../skills/cncf-gcp-autoscaling/SKILL.md) | Cncf | Automatically scales compute resources based on metrics... | Reference |
+| [cncf-gcp-cloud-cdn](../../skills/cncf-gcp-cloud-cdn/SKILL.md) | Cncf | Content delivery network for caching and globally... | Reference |
+| [cncf-gcp-cloud-dns](../../skills/cncf-gcp-cloud-dns/SKILL.md) | Cncf | Manages DNS with health checks, traffic routing, and... | Reference |
+| [cncf-gcp-cloud-functions](../../skills/cncf-gcp-cloud-functions/SKILL.md) | Cncf | Deploys serverless functions triggered by events with... | Reference |
+| [cncf-gcp-cloud-kms](../../skills/cncf-gcp-cloud-kms/SKILL.md) | Cncf | Manages encryption keys for data protection with automated... | Reference |
+| [cncf-gcp-cloud-load-balancing](../../skills/cncf-gcp-cloud-load-balancing/SKILL.md) | Cncf | Distributes traffic across instances with automatic... | Reference |
+| [cncf-gcp-cloud-monitoring](../../skills/cncf-gcp-cloud-monitoring/SKILL.md) | Cncf | Monitors GCP resources with metrics, logging, and alerting... | Reference |
+| [cncf-gcp-cloud-operations](../../skills/cncf-gcp-cloud-operations/SKILL.md) | Cncf | Systems management including monitoring, logging, error... | Reference |
+| [cncf-gcp-cloud-pubsub](../../skills/cncf-gcp-cloud-pubsub/SKILL.md) | Cncf | Asynchronous messaging service for event streaming and... | Reference |
+| [cncf-gcp-cloud-sql](../../skills/cncf-gcp-cloud-sql/SKILL.md) | Cncf | Provides managed relational databases (MySQL, PostgreSQL)... | Reference |
+| [cncf-gcp-cloud-storage](../../skills/cncf-gcp-cloud-storage/SKILL.md) | Cncf | Stores objects with versioning, lifecycle policies, access... | Reference |
+| [cncf-gcp-cloud-tasks](../../skills/cncf-gcp-cloud-tasks/SKILL.md) | Cncf | Manages task queues for asynchronous job execution with... | Reference |
+| [cncf-gcp-compute-engine](../../skills/cncf-gcp-compute-engine/SKILL.md) | Cncf | Deploys and manages virtual machine instances with... | Reference |
+| [cncf-gcp-container-registry](../../skills/cncf-gcp-container-registry/SKILL.md) | Cncf | Stores and manages container images with integration to GKE... | Reference |
+| [cncf-gcp-deployment-manager](../../skills/cncf-gcp-deployment-manager/SKILL.md) | Cncf | Infrastructure as code using YAML templates for repeatable... | Reference |
+| [cncf-gcp-firestore](../../skills/cncf-gcp-firestore/SKILL.md) | Cncf | NoSQL document database with real-time sync, offline... | Reference |
+| [cncf-gcp-gke](../../skills/cncf-gcp-gke/SKILL.md) | Cncf | Managed Kubernetes cluster with automatic scaling,... | Reference |
+| [cncf-gcp-iam](../../skills/cncf-gcp-iam/SKILL.md) | Cncf | Manages identity and access control with service accounts,... | Reference |
+| [cncf-gcp-secret-manager](../../skills/cncf-gcp-secret-manager/SKILL.md) | Cncf | Stores and rotates secrets with encryption and audit... | Reference |
+| [cncf-gcp-vpc](../../skills/cncf-gcp-vpc/SKILL.md) | Cncf | Provides networking with subnets, firewall rules, and VPC... | Reference |
 | [cncf-grpc](../../skills/cncf-grpc/SKILL.md) | Cncf | gRPC in Remote Procedure Call - cloud native architecture,... | Reference |
 | [cncf-harbor](../../skills/cncf-harbor/SKILL.md) | Cncf | Harbor in Cloud-Native Engineering - container registry | Reference |
 | [cncf-helm](../../skills/cncf-helm/SKILL.md) | Cncf | Helm in Cloud-Native Engineering - The Kubernetes Package... | Reference |
