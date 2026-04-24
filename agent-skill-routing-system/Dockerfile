@@ -30,6 +30,6 @@ ENV SKILL_SYNC_INTERVAL=3600
 VOLUME ["/skills", "/cache"]
 ENV LOG_LEVEL=info
 ENV NODE_ENV=production
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD wget -qO- http://localhost:3000/health || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=90s --retries=3 \
+  CMD wget -qO- http://127.0.0.1:3000/health | grep -q '"ready":true' || exit 1
 CMD ["node", "dist/index.js"]

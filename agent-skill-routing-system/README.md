@@ -9,6 +9,105 @@ Production-grade agentic skill orchestration for OpenCode. Routes tasks to the r
 - **Executes Safely** — schema validation, prompt-injection filtering, retry logic, timeout management
 - **Observes Everything** — structured JSON logs with full task-ID correlation
 
+## How It Works — Request Flow
+
+Every time OpenCode receives a task, the skill router automatically selects the most relevant skill and injects its full content into the AI's context. Here is the complete flow with real timing data:
+
+```
+User prompt in OpenCode
+        │
+        ▼ (automatic — OpenCode calls MCP tool)
+┌─────────────────────────────────┐
+│  skill-router-mcp.js            │  MCP stdio server on localhost
+│  tools: route_to_skill,         │  Registered in opencode.json
+│         list_skills             │  Logs → ~/.config/opencode/skill-router-mcp.log
+└──────────────┬──────────────────┘
+               │ POST /route {"task":"..."} (~1ms)
+               ▼
+┌─────────────────────────────────┐
+│  Fastify HTTP Server :3000      │  Docker container: skill-router
+│  → POST /route                  │  Logs → docker logs skill-router
+└──────────────┬──────────────────┘
+               │
+               ▼ Safety check (~1ms)
+┌─────────────────────────────────┐
+│  Safety Layer                   │  Prompt injection detection
+│                                 │  Schema validation
+└──────────────┬──────────────────┘
+               │
+               ▼ Generate task embedding (~400ms)
+┌─────────────────────────────────┐
+│  Embedding Service              │  text-embedding-3-small (OpenAI)
+│                                 │  or llama.cpp local embeddings
+└──────────────┬──────────────────┘
+               │
+               ▼ Cosine similarity search (~1ms)
+┌─────────────────────────────────┐
+│  Vector Database                │  In-memory cosine similarity
+│                                 │  Returns top-20 candidates
+└──────────────┬──────────────────┘
+               │ e.g. coding-security-review (0.508), coding-code-review (0.442)...
+               ▼ Re-rank with LLM (~3000ms)
+┌─────────────────────────────────┐
+│  LLM Ranker                     │  gpt-4o-mini / claude / local
+│                                 │  Scores 0.0–1.0 + reasoning
+│                                 │  Logs prompt + raw response
+└──────────────┬──────────────────┘
+               │ e.g. coding-security-review score=0.95, "Directly matches..."
+               ▼ Filter (score >= 0.5, max 5 skills)
+┌─────────────────────────────────┐
+│  Execution Planner              │  sequential / parallel / hybrid
+└──────────────┬──────────────────┘
+               │
+               ▼ (~1ms)
+┌─────────────────────────────────┐
+│  MCP wrapper reads SKILL.md     │  From /home/user/git/skills/<name>/SKILL.md
+│  Returns full content to        │  (direct disk read — no extra HTTP call)
+│  OpenCode                       │
+└──────────────┬──────────────────┘
+               │
+               ▼
+OpenCode AI follows the skill's
+guidelines, checklists, and patterns
+```
+
+### Typical Latency Breakdown
+
+| Stage                          | Time     |
+|-------------------------------|----------|
+| Safety check                  | ~1ms     |
+| Task embedding (OpenAI)       | ~400ms   |
+| Vector similarity search      | ~1ms     |
+| LLM re-ranking (gpt-4o-mini)  | ~3,000ms |
+| Skill file read               | ~1ms     |
+| **Total end-to-end**          | **~3.5s** |
+
+> With a local llama.cpp model for both embeddings and ranking, the LLM step drops to ~200-800ms depending on hardware.
+
+### What the Logs Show
+
+**Docker logs** (`docker logs -f skill-router`) — server-side pipeline:
+
+```
+[00:38:10] [Main]       → POST /route
+[00:38:10] [Main]       Routing task  {"task":"review Python code..."}
+[00:38:10] [Router]     Vector search candidates  {"candidateCount":4,"topCandidates":[{"name":"coding-security-review","similarity":0.508},...]}
+[00:38:10] [LLMRanker]  Sending ranking request to LLM  {"provider":"openai","model":"gpt-4o-mini","candidates":["coding-security-review",...]}
+[00:38:13] [LLMRanker]  LLM ranking result  {"durationMs":3069,"rankings":[{"skill":"coding-security-review","score":0.95,"reason":"Directly matches..."}]}
+[00:38:13] [Router]     Selected skills  {"selectedSkills":[{"name":"coding-security-review","score":0.95,"role":"primary"}]}
+[00:38:13] [Router]     Routing completed  {"confidence":0.935,"latencyMs":3463}
+[00:38:13] [Main]       ← POST /route  {"status":200,"durationMs":3465}
+```
+
+**MCP wrapper logs** (`tail -f ~/.config/opencode/skill-router-mcp.log`) — client-side:
+
+```
+[INFO]  tool called  {"tool":"route_to_skill","task":"review Python code..."}
+[DEBUG] → POST /route
+[DEBUG] ← POST /route  {"status":200,"durationMs":2036}
+[INFO]  skill resolved  {"skill":"coding-security-review","fileFound":true,"totalMatches":2}
+```
+
 ## Architecture
 
 ```

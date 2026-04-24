@@ -38,7 +38,7 @@ export class GitHubSkillLoader {
   /** Clone the repo if needed, pull if already cloned. Call on startup. */
   async initialize(): Promise<void> {
     if (await this.isCloned()) {
-      this.logger.info('Skills cache exists, pulling latest', { dir: this.cacheDir });
+      this.logger.info('Skills cache exists, syncing (fetch + reset)', { dir: this.cacheDir });
       await this.pull();
     } else {
       this.logger.info('Cloning skills repository', { url: this.repoUrl, to: this.cacheDir });
@@ -101,7 +101,10 @@ export class GitHubSkillLoader {
   }
 
   private async pull(): Promise<void> {
-    await execFileAsync('git', ['-C', this.cacheDir, 'pull', '--ff-only', '--depth=1']);
+    // Fetch latest without requiring fast-forward — handles force pushes and rebased history
+    await execFileAsync('git', ['-C', this.cacheDir, 'fetch', '--depth=1', 'origin', 'main']);
+    // Hard reset to remote HEAD — always wins, never diverges
+    await execFileAsync('git', ['-C', this.cacheDir, 'reset', '--hard', 'origin/main']);
   }
 
   /** Inject token into HTTPS URL for authenticated access if provided. */
