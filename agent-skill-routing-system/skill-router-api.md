@@ -83,11 +83,11 @@ Triggers an immediate `git fetch + reset` and re-indexes all skills. Use after p
 
 ## Skill Citation
 
-When `route_to_skill` loads a skill, end your response with one line:
+When `route_to_skill` loads skills, end your response with one compact line:
 
-`> 📖 skill: <skill-name>`
+`> 📖 skill: <name-1>, <name-2>`
 
-Omit entirely if no skill was loaded this turn.
+List all loaded skill names comma-separated. Omit entirely if no skill was loaded this turn.
 
 ## Docker Management
 
