@@ -41,7 +41,7 @@ sequenceDiagram
     API->>Plan: build execution plan
     Plan-->>API: sequential / parallel / hybrid
     API-->>MCP: top skill name + confidence
-    MCP->>Disk: read /skills/<name>/SKILL.md
+    MCP->>Disk: read /skills/<name>/SKILL.md  (mounted from repo/skills/)
     Disk-->>MCP: full skill content
     MCP-->>U: skill content injected into context
 ```
@@ -110,7 +110,7 @@ sequenceDiagram
 
 The router automatically clones `https://github.com/paulpas/skills` on startup and refreshes it hourly. Skills are cached to a persistent Docker named volume (`skill-router-cache`) so they survive container restarts.
 
-**Priority**: Local mount (`/skills`) always wins over remote skills. If the same skill name exists in both, the local version is used.
+**Priority**: Local mount (`/skills`, sourced from `<repo>/skills/`) always wins over remote skills. If the same skill name exists in both, the local version is used.
 
 ### New endpoints
 
@@ -244,7 +244,7 @@ OPENAI_API_KEY=sk-... ./install-skill-router.sh
 
 The install script:
 1. Builds the Docker image (`skill-router:latest`)
-2. Mounts the skills repo at `/skills` inside the container
+2. Mounts `<repo>/skills/` at `/skills` inside the container
 3. Starts the container with `--restart unless-stopped`
 4. Creates a systemd user service for boot persistence
 5. Polls `/health` to confirm startup

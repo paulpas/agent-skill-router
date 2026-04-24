@@ -314,7 +314,7 @@ docker run -d \
   -e SKILL_SYNC_INTERVAL="$SYNC_INTERVAL" \
   ${GITHUB_TOKEN:+-e GITHUB_TOKEN="$GITHUB_TOKEN"} \
   -e SKILLS_DIRECTORY=/skills \
-  -v "${ROUTER_DIR%/agent-skill-routing-system}:/skills:ro" \
+  -v "${ROUTER_DIR%/agent-skill-routing-system}/skills:/skills:ro" \
   -v skill-router-cache:/cache \
   skill-router:latest
 

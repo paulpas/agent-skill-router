@@ -26,11 +26,12 @@ A **skill** is a self-contained Markdown document that injects specialized behav
 Skills live at:
 
 ```
-<skills-root>/
-  <domain>-<topic>/
-    SKILL.md          ← the only required file
-    references/       ← optional: referenced sub-documents
-    scripts/          ← optional: helper scripts
+<repo-root>/
+  skills/
+    <domain>-<topic>/
+      SKILL.md          ← the only required file
+      references/       ← optional: referenced sub-documents
+      scripts/          ← optional: helper scripts
 ```
 
 ### How OpenCode Uses Skills

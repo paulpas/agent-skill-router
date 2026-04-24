@@ -6,7 +6,7 @@ A curated collection of skills for [OpenCode](https://opencode.ai) AI sessions, 
 
 ## How It Works
 
-A **skill** is a Markdown document stored at `<domain>-<topic>/SKILL.md`. When loaded, its full content becomes part of the active model context, shaping how the AI responds to the current task. Skills carry structured YAML frontmatter that identifies their domain, role, and trigger keywords.
+A **skill** is a Markdown document stored at `skills/<domain>-<topic>/SKILL.md`. When loaded, its full content becomes part of the active model context, shaping how the AI responds to the current task. Skills carry structured YAML frontmatter that identifies their domain, role, and trigger keywords.
 
 OpenCode loads skills in two ways:
 
@@ -42,8 +42,8 @@ git clone https://github.com/paulpas/skills.git .opencode/skills
 To use only specific skills, symlink individual skill directories into either install location:
 
 ```bash
-ln -s /path/to/skills/cncf-prometheus ~/.config/opencode/skills/cncf-prometheus
-ln -s /path/to/skills/trading-risk-stop-loss ~/.config/opencode/skills/trading-risk-stop-loss
+ln -s /path/to/skills/skills/cncf-prometheus ~/.config/opencode/skills/cncf-prometheus
+ln -s /path/to/skills/skills/trading-risk-stop-loss ~/.config/opencode/skills/trading-risk-stop-loss
 ```
 
 ### Verification
@@ -61,18 +61,24 @@ After installation, skills are discovered automatically. Verify by:
 Skills follow a strict `<domain>-<topic>/SKILL.md` layout. The directory name is intentionally descriptive — you can identify a skill's purpose without consulting this file.
 
 ```
-skills/
-  agent-confidence-based-selector/
-    SKILL.md
-  cncf-prometheus/
-    SKILL.md
-    references/        ← optional sub-documents
-  coding-code-review/
-    SKILL.md
-  trading-risk-stop-loss/
-    SKILL.md
-  programming-algorithms/
-    SKILL.md
+skills-repo/
+├── skills/                         ← all skill definitions live here
+│   ├── agent-confidence-based-selector/
+│   │   └── SKILL.md
+│   ├── cncf-prometheus/
+│   │   ├── SKILL.md
+│   │   └── references/             ← optional sub-documents
+│   ├── coding-code-review/
+│   │   └── SKILL.md
+│   ├── trading-risk-stop-loss/
+│   │   └── SKILL.md
+│   └── programming-algorithms/
+│       └── SKILL.md
+├── agent-skill-routing-system/     ← HTTP routing service (not a skill)
+├── README.md
+├── SKILL_FORMAT_SPEC.md
+├── reformat_skills.py
+└── install-skill-router.sh
 ```
 
 ---
@@ -392,7 +398,7 @@ skills/
 
 ## Contributing
 
-To add a skill, create `<domain>-<topic>/SKILL.md` following [SKILL_FORMAT_SPEC.md](./SKILL_FORMAT_SPEC.md). Run `python reformat_skills.py` to apply standard frontmatter.
+To add a skill, create `skills/<domain>-<topic>/SKILL.md` following [SKILL_FORMAT_SPEC.md](./SKILL_FORMAT_SPEC.md). Run `python reformat_skills.py` to apply standard frontmatter.
 
 ---
 

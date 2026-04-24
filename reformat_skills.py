@@ -22,6 +22,7 @@ import sys
 # ---------------------------------------------------------------------------
 
 SKILLS_ROOT = os.path.dirname(os.path.abspath(__file__))
+SKILLS_DIR = os.path.join(SKILLS_ROOT, "skills")
 
 DOMAIN_PREFIXES = {
     "agent-": "agent",
@@ -555,7 +556,7 @@ def main():
     summary = Summary()
     error_details = []
 
-    for folder_name, skill_path in find_skill_dirs(SKILLS_ROOT):
+    for folder_name, skill_path in find_skill_dirs(SKILLS_DIR):
         changes = enrich_skill(skill_path, folder_name)
         summary.record(changes)
         if changes.get("error"):
