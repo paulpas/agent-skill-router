@@ -391,21 +391,20 @@ API_DOC_PATH=""
 
 if $INTEGRATE_OPENCODE; then
 
-  # STEP 11 — Link skill-router-api.md into OpenCode config
+  # STEP 11 — Fetch skill-router-api.md from GitHub
   echo ""
-  echo -e "${BOLD}[Step 11] Linking skill-router-api.md into OpenCode config...${RESET}"
+  echo -e "${BOLD}[Step 11] Fetching skill-router-api.md from GitHub...${RESET}"
 
-  CANONICAL_API_DOC="${ROUTER_DIR}/skill-router-api.md"
   API_DOC_PATH="$HOME/.config/opencode/skill-router-api.md"
+  RAW_URL="https://raw.githubusercontent.com/paulpas/skills/main/agent-skill-routing-system/skill-router-api.md"
   mkdir -p "$HOME/.config/opencode"
 
-  if [[ ! -f "$CANONICAL_API_DOC" ]]; then
-    warn "Canonical skill-router-api.md not found at $CANONICAL_API_DOC — skipping"
+  if command -v curl &>/dev/null; then
+    curl -fsSL "$RAW_URL" -o "$API_DOC_PATH" && ok "Written: $API_DOC_PATH" || warn "curl fetch failed, skipping"
+  elif command -v wget &>/dev/null; then
+    wget -q "$RAW_URL" -O "$API_DOC_PATH" && ok "Written: $API_DOC_PATH" || warn "wget fetch failed, skipping"
   else
-    # Remove existing file or stale symlink, then create fresh symlink
-    rm -f "$API_DOC_PATH"
-    ln -sf "$CANONICAL_API_DOC" "$API_DOC_PATH"
-    ok "Linked $API_DOC_PATH → $CANONICAL_API_DOC"
+    warn "Neither curl nor wget found — skipping skill-router-api.md fetch"
   fi
 
   # STEP 12 — Update opencode.json instructions array
