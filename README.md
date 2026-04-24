@@ -83,6 +83,69 @@ skills-repo/
 
 ---
 
+## Skill Router
+
+The **Skill Router** is a Fastify HTTP service (`agent-skill-routing-system/`) paired with an MCP stdio wrapper that automatically routes any task description to the most relevant skill using OpenAI embeddings + LLM re-ranking. Instead of remembering skill names or typing `/skill` commands, the right skill is found and injected into the AI's context before it answers.
+
+### How It Fits In
+
+Every time OpenCode receives a task, the `route_to_skill` MCP tool fires automatically:
+
+1. The task is embedded with `text-embedding-3-small` and compared against all skill vectors.
+2. The top candidates are re-ranked by `gpt-4o-mini` (or a local model).
+3. The winning skill's `SKILL.md` is read from disk and injected into the model's context.
+
+The skills directory (`skills/`) is bind-mounted into the Docker container so the router always reads the live versions on disk.
+
+### Latency Breakdown
+
+| Stage | Time |
+|---|---|
+| Safety check | ~1 ms |
+| Task embedding (OpenAI) | ~400 ms |
+| Vector similarity search | ~1 ms |
+| LLM re-ranking (gpt-4o-mini) | ~3,000 ms |
+| Skill file read | ~1 ms |
+| **Total end-to-end** | **~3.5 s** |
+
+> Using a local llama.cpp model for both embeddings and ranking drops the LLM step to ~200–800 ms depending on hardware.
+
+### Quick Start
+
+```bash
+OPENAI_API_KEY=sk-... ./install-skill-router.sh --integrate-opencode
+```
+
+The install script builds the Docker image, registers the MCP tool in `~/.config/opencode/config.json`, and starts the service. Alternative providers are supported via environment variables: set `LLM_PROVIDER=anthropic` with `ANTHROPIC_API_KEY`, or `LLM_PROVIDER=llamacpp` with `LLAMACPP_BASE_URL` for a fully local setup.
+
+### Monitoring
+
+| What | Command |
+|---|---|
+| Skill accesses (MCP side) | `tail -f ~/.config/opencode/skill-router-mcp.log \| grep 'SKILL ACCESS'` |
+| Full routing pipeline (Docker) | `docker logs -f skill-router 2>&1 \| grep -E 'Route result\|Vector search'` |
+| Routing history (JSON) | `curl -s http://localhost:3000/access-log \| python3 -m json.tool` |
+| Service health | `curl -s http://localhost:3000/health` |
+
+### API Quick Reference
+
+```bash
+# Route a task to the best skill
+curl -X POST http://localhost:3000/route \
+  -H "Content-Type: application/json" \
+  -d '{"task": "review Python code for security issues"}'
+
+# List all indexed skills
+curl http://localhost:3000/skills
+
+# Service stats
+curl http://localhost:3000/stats
+```
+
+See [`agent-skill-routing-system/README.md`](./agent-skill-routing-system/README.md) for full docs including all environment variables, API reference, and local model configuration.
+
+---
+
 ## Domain Prefixes
 
 | Prefix | Description |
