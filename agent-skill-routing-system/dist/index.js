@@ -48,6 +48,7 @@ class AgentSkillRoutingApp {
     logger;
     ready = false;
     loadingError = null;
+    accessLog = [];
     constructor(config = {}) {
         this.logger = new Logger_js_1.Logger('Main', {
             level: config.observability?.level || 'info',
@@ -86,10 +87,24 @@ class AgentSkillRoutingApp {
                 this.logger.info('Routing task', { task: body.task.slice(0, 120) });
                 const response = await this.router.routeTask(body);
                 this.logger.info('Route result', {
-                    topSkill: response.selectedSkills?.[0]?.name,
+                    topSkill: response.selectedSkills?.[0]?.name ?? null,
+                    reason: response.selectedSkills?.[0]?.reasoning?.slice(0, 150) ?? null,
+                    score: response.selectedSkills?.[0]?.score ?? null,
                     totalMatches: response.selectedSkills?.length,
-                    confidence: response.selectedSkills?.[0]?.score,
+                    confidence: response.confidence,
+                    latencyMs: response.latencyMs,
                 });
+                this.accessLog.push({
+                    timestamp: new Date().toISOString(),
+                    task: body.task.length > 120 ? body.task.slice(0, 120) + '...' : body.task,
+                    topSkill: response.selectedSkills?.[0]?.name ?? null,
+                    totalMatches: response.selectedSkills?.length ?? 0,
+                    confidence: response.confidence,
+                    latencyMs: response.latencyMs,
+                });
+                // Keep only last 100 entries
+                if (this.accessLog.length > 100)
+                    this.accessLog.shift();
                 reply.code(200).send(response);
             }
             catch (error) {
@@ -195,6 +210,16 @@ class AgentSkillRoutingApp {
                 sourceFile: s.sourceFile,
             }));
             reply.code(200).send({ total: skills.length, skills });
+        });
+        // ── /access-log ────────────────────────────────────────────────────────
+        this.app.get('/access-log', async (_request, reply) => {
+            if (!this.ready) {
+                return reply.status(503).send({ error: 'Skills are still loading, please wait.' });
+            }
+            reply.send({
+                totalRequests: this.accessLog.length,
+                entries: [...this.accessLog].reverse(), // newest first
+            });
         });
         // ── /health — always 200 immediately ──────────────────────────────────
         this.app.get('/health', async (_request, reply) => {

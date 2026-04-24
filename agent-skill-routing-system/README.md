@@ -349,6 +349,65 @@ See [`SKILL_FORMAT_SPEC.md`](../SKILL_FORMAT_SPEC.md) for the complete authoring
 | `SKILL_SYNC_INTERVAL` | `3600` | Seconds between GitHub syncs |
 | `GITHUB_TOKEN` | — | Optional GitHub token for higher rate limits |
 
+## Monitoring
+
+### Watch Live Skill Access
+
+**MCP wrapper log** (OpenCode side — shows every skill the AI requests):
+```bash
+tail -f ~/.config/opencode/skill-router-mcp.log | grep 'SKILL ACCESS'
+```
+
+**Docker service log** (server side — full pipeline with timings):
+```bash
+docker logs -f skill-router 2>&1
+```
+
+**Watch both simultaneously** (split view):
+```bash
+# Terminal 1 — MCP wrapper (OpenCode → router calls)
+tail -f ~/.config/opencode/skill-router-mcp.log
+
+# Terminal 2 — Docker service (vector search → LLM → result)
+docker logs -f skill-router 2>&1 | grep -E 'Route result|Vector search|LLM ranking|SKILL'
+```
+
+### Access History API
+
+View the rolling history of the last 100 skill routing requests:
+```bash
+curl -s http://localhost:3000/access-log | python3 -m json.tool
+```
+
+Example output:
+```json
+{
+  "totalRequests": 3,
+  "entries": [
+    {
+      "timestamp": "2026-04-24T00:38:13.996Z",
+      "task": "review Python code for security vulnerabilities...",
+      "topSkill": "coding-security-review",
+      "totalMatches": 2,
+      "confidence": 0.935,
+      "latencyMs": 3463
+    }
+  ]
+}
+```
+
+### Quick Health Check
+```bash
+# Is it running and ready?
+curl -s http://localhost:3000/health | python3 -m json.tool
+
+# How many skills loaded?
+curl -s http://localhost:3000/stats | python3 -m json.tool
+
+# Force reload skills from GitHub
+curl -s -X POST http://localhost:3000/reload | python3 -m json.tool
+```
+
 ## API Reference
 
 ### `GET /health`

@@ -22,6 +22,7 @@ export declare class AgentSkillRoutingApp {
     private logger;
     private ready;
     private loadingError;
+    private accessLog;
     constructor(config?: Partial<RouterConfig & MCPBridgeConfig>);
     private config;
     /**
