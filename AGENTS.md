@@ -19,6 +19,7 @@ This guide explains how to create new skills for the agent-skill-router reposito
 - [Trigger Engineering for Conversational Discovery](#trigger-engineering-for-conversational-discovery)
 - [Choosing Related Skills](#choosing-related-skills)
 - [Workflow to Add a Skill](#workflow-to-add-a-skill)
+- [Utility Scripts and Automation](#utility-scripts-and-automation)
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
 - [Quality Checklist](#quality-checklist)
 - [Related Documentation](#related-documentation)
@@ -839,8 +840,298 @@ Related skills show: trading-risk-position-sizing, trading-risk-kill-switches
     - Test: Would non-technical teammates use these words in conversation?
 
 7. **Verify auto-discovery** (takes up to 1 hour by default):
-    - The skill-router automatically fetches updated `skills-index.json` every `SKILL_SYNC_INTERVAL` seconds (default: 1 hour)
-    - For immediate pickup: `curl -X POST http://localhost:3000/reload`
+     - The skill-router automatically fetches updated `skills-index.json` every `SKILL_SYNC_INTERVAL` seconds (default: 1 hour)
+     - For immediate pickup: `curl -X POST http://localhost:3000/reload`
+
+---
+
+## Utility Scripts and Automation
+
+This repository includes automation scripts to maintain the skill catalog and improve trigger quality. These scripts eliminate manual catalog maintenance and ensure consistency across all skills.
+
+### 1. generate_readme.py
+
+**Purpose:** Auto-generates the skills catalog in the README with zero manual effort.
+
+**Location:** `scripts/generate_readme.py`
+
+**What it does:**
+- Reads all skill directories and extracts metadata (name, description, domain, role, triggers)
+- Organizes skills into three auto-generated sections:
+  - **Skills by Domain** — Table grouped by domain category (agent, cncf, coding, trading, programming)
+  - **Skills by Role** — Table grouped by skill role (implementation, reference, orchestration, review)
+  - **Complete Skills Index** — Alphabetical table of all 463+ skills with descriptions, domains, and roles
+- Inserts content between `<!-- AUTO-GENERATED SKILLS INDEX START/END -->` markers
+- Preserves all existing README content outside the markers
+- Includes generation timestamp and skill count
+
+**Usage:**
+```bash
+# Update README.md in-place
+python3 scripts/generate_readme.py
+
+# Generate custom output file
+python3 scripts/generate_readme.py --output custom_skills.md
+
+# Specify custom repository root
+python3 scripts/generate_readme.py --repo-root /path/to/repo
+```
+
+**Features:**
+- ✅ 696+ hyperlinks to all 239+ skills (clickable links to SKILL.md)
+- ✅ Smart description truncation at word boundaries
+- ✅ Organized tables by Domain, Role, and Alphabetical Index
+- ✅ Automatic timestamp and skill count
+- ✅ Zero LLM involvement needed for catalog updates
+
+**When to use:**
+- After adding new skills to the repository
+- After modifying skill metadata (description, triggers, domain, role)
+- Before committing changes to ensure README is up-to-date
+- As part of CI/CD pipeline for automatic catalog maintenance
+
+---
+
+### 2. enhance_triggers.py
+
+**Purpose:** Adds user-friendly, conversational triggers to skills for improved discoverability.
+
+**Location:** `scripts/enhance_triggers.py`
+
+**What it does:**
+- Scans all 239+ skills in the repository
+- Identifies skills that could benefit from additional conversational triggers
+- Adds user-friendly variants like:
+  - "how do I..." questions
+  - "what is..." clarifications
+  - Common colloquialisms and business language
+  - Related technology names
+  - Operational task language
+- Maintains the 5-8 term trigger limit per skill
+- Generates detailed report in `TRIGGER_ENHANCEMENTS.md`
+- Preserves YAML formatting and existing content
+
+**Usage:**
+```bash
+# Enhance all skills and generate report
+python3 scripts/enhance_triggers.py
+```
+
+**Output:**
+- Updates all SKILL.md files with improved triggers
+- Generates `TRIGGER_ENHANCEMENTS.md` report showing:
+  - All enhanced skills (before/after comparison)
+  - Enhancement statistics by domain
+  - Quality assurance metrics
+
+**When to use:**
+- After reviewing existing skill triggers for quality
+- When skills need better user discovery
+- After adding new skill categories
+- To ensure triggers match both technical AND conversational language
+
+**Example enhancements:**
+```yaml
+# Before
+triggers: kubernetes, k8s, container orchestration, pod management
+
+# After (with user-friendly variants added)
+triggers: kubernetes, k8s, managing containers, deploying apps, how do i run containers
+```
+
+---
+
+### 3. reformat_skills.py
+
+**Purpose:** Validates and normalizes YAML frontmatter across all skills.
+
+**Location:** `scripts/reformat_skills.py` (maintained by repository)
+
+**What it does:**
+- Validates YAML syntax in all skill frontmatter
+- Normalizes formatting (indentation, field order)
+- Fills in missing optional metadata fields from templates
+- Reports errors and validation failures
+- Ensures consistency across all skills
+
+**Usage:**
+```bash
+python3 scripts/reformat_skills.py
+```
+
+**Error reporting:**
+- Lists all skills with invalid YAML
+- Identifies missing required fields
+- Suggests corrections for common issues
+
+---
+
+### 4. generate_index.py
+
+**Purpose:** Regenerates the skill-router index for skill discovery.
+
+**Location:** `scripts/generate_index.py` (maintained by repository)
+
+**What it does:**
+- Reads all skill metadata from SKILL.md files
+- Generates `skills-index.json` for skill-router consumption
+- Enables auto-loading of skills based on triggers
+- Updates skill statistics and categorization
+- Indexes trigger keywords for fast matching
+
+**Usage:**
+```bash
+python3 scripts/generate_index.py
+```
+
+**Output:**
+- `skills-index.json` — Complete skill registry with metadata
+- Statistics on skills per domain, role, and trigger
+- Validation of all trigger keywords
+
+---
+
+## Recommended Workflow
+
+When adding or modifying skills, follow this step-by-step process:
+
+### 1. Create or Edit Skill
+
+Create a new skill directory and SKILL.md file:
+```bash
+mkdir -p skills/<skill-name>/
+# Edit skills/<skill-name>/SKILL.md
+# Follow skill schema from this document
+```
+
+Ensure your SKILL.md includes:
+- ✅ Proper YAML frontmatter with all required fields
+- ✅ H1 title (human-readable)
+- ✅ When to Use section
+- ✅ When NOT to Use section
+- ✅ Core content (Purpose, Patterns, etc.)
+- ✅ 5-8 specific triggers (both technical and conversational)
+
+### 2. Validate YAML
+
+Run the reformatter to validate your frontmatter:
+```bash
+python3 scripts/reformat_skills.py
+```
+
+**Check output:** Are there any errors for your skill? Fix any YAML syntax issues before proceeding.
+
+### 3. Enhance Triggers (Optional)
+
+If you want to add more conversational triggers:
+```bash
+python3 scripts/enhance_triggers.py
+```
+
+Review the `TRIGGER_ENHANCEMENTS.md` report to see suggested triggers. Manually edit your skill's triggers if desired.
+
+### 4. Regenerate Router Index
+
+Update the skill-router index:
+```bash
+python3 scripts/generate_index.py
+```
+
+This makes your skill discoverable via skill-router triggers.
+
+### 5. Update README Catalog
+
+Regenerate the README with your new/modified skill:
+```bash
+python3 scripts/generate_readme.py
+```
+
+**Verify:** Check that your skill appears in the README with correct name, description, and hyperlink.
+
+### 6. Commit and Push
+
+Commit all changes:
+```bash
+git add -A
+git commit -m "feat: add [skill-name] skill
+
+- New skill directory: skills/[skill-name]/
+- Description: [your description]
+- Triggers: [list key triggers]
+- Updated skill catalog and router index"
+git push origin main
+```
+
+---
+
+## Automation One-Liner
+
+To run all scripts in sequence (recommended for new skills):
+
+```bash
+python3 scripts/reformat_skills.py && \
+python3 scripts/enhance_triggers.py && \
+python3 scripts/generate_index.py && \
+python3 scripts/generate_readme.py && \
+echo "✅ All automation complete!"
+```
+
+This ensures:
+1. ✅ YAML is valid
+2. ✅ Triggers are enhanced
+3. ✅ Router index is updated
+4. ✅ README catalog is refreshed
+
+---
+
+## CI/CD Integration
+
+For automated skill maintenance, run these commands in your CI/CD pipeline:
+
+```bash
+#!/bin/bash
+# Validate all skills
+python3 scripts/reformat_skills.py || exit 1
+
+# Update indices
+python3 scripts/generate_index.py || exit 1
+
+# Regenerate documentation
+python3 scripts/generate_readme.py || exit 1
+
+# Verify all skills are valid
+git diff --exit-code || {
+  echo "⚠ Skills need updates. Please run automation scripts."
+  exit 1
+}
+```
+
+---
+
+## Troubleshooting
+
+### SKILL.md not found
+**Problem:** Script skips a skill because SKILL.md is missing.  
+**Solution:** Ensure your skill directory contains a SKILL.md file in the root.
+
+### YAML parsing error
+**Problem:** `reformat_skills.py` reports invalid YAML.  
+**Solution:** 
+- Check for missing quotes around strings with colons
+- Ensure proper indentation (2 spaces, no tabs)
+- Validate YAML at https://www.yamllint.com/
+
+### Triggers not updated
+**Problem:** `enhance_triggers.py` doesn't modify your skill.  
+**Solution:** Your triggers may already be comprehensive. Run the script to generate the report (`TRIGGER_ENHANCEMENTS.md`) to see what it recommends.
+
+### README not updating
+**Problem:** Your skill doesn't appear in the generated README.  
+**Solution:** 
+- Check that SKILL.md has valid YAML frontmatter
+- Ensure `name` field is present and matches directory name
+- Ensure `description` field is present
+- Run `reformat_skills.py` first to fix any YAML issues
 
 ---
 
