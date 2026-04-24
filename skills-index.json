@@ -2562,6 +2562,866 @@
     "path": "skills/coding-data-normalization/SKILL.md"
   },
   {
+    "name": "coding-ds-ab-testing",
+    "description": "Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "A/B testing",
+      "A/B test",
+      "statistical test",
+      "power analysis",
+      "sample size",
+      "how do I design tests"
+    ],
+    "path": "skills/coding-ds-ab-testing/SKILL.md"
+  },
+  {
+    "name": "coding-ds-anomaly-detection",
+    "description": "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "anomaly detection",
+      "outlier detection",
+      "isolation forest",
+      "LOF",
+      "one-class SVM",
+      "how do I detect anomalies"
+    ],
+    "path": "skills/coding-ds-anomaly-detection/SKILL.md"
+  },
+  {
+    "name": "coding-ds-association-rules",
+    "description": "Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "association rules",
+      "market basket",
+      "apriori",
+      "frequent itemsets",
+      "recommendation",
+      "pattern mining"
+    ],
+    "path": "skills/coding-ds-association-rules/SKILL.md"
+  },
+  {
+    "name": "coding-ds-bayesian-inference",
+    "description": "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "bayesian inference",
+      "bayes",
+      "prior",
+      "posterior",
+      "probabilistic inference",
+      "how do i do bayesian"
+    ],
+    "path": "skills/coding-ds-bayesian-inference/SKILL.md"
+  },
+  {
+    "name": "coding-ds-bias-variance-tradeoff",
+    "description": "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "bias-variance",
+      "overfitting",
+      "underfitting",
+      "regularization",
+      "generalization",
+      "how do I prevent overfitting"
+    ],
+    "path": "skills/coding-ds-bias-variance-tradeoff/SKILL.md"
+  },
+  {
+    "name": "coding-ds-categorical-encoding",
+    "description": "Encodes categorical variables using one-hot encoding, target encoding, ordinal encoding, embeddings, and other encoding strategies",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "categorical encoding",
+      "one-hot encoding",
+      "target encoding",
+      "ordinal encoding",
+      "categorical variables"
+    ],
+    "path": "skills/coding-ds-categorical-encoding/SKILL.md"
+  },
+  {
+    "name": "coding-ds-causal-inference",
+    "description": "Implements causal models, directed acyclic graphs (DAGs), confounding adjustment, and mediation analysis for causal discovery",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "causal inference",
+      "causality",
+      "causal models",
+      "DAG",
+      "confounding",
+      "how do i determine causation"
+    ],
+    "path": "skills/coding-ds-causal-inference/SKILL.md"
+  },
+  {
+    "name": "coding-ds-classification-metrics",
+    "description": "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "classification metrics",
+      "precision",
+      "recall",
+      "F1-score",
+      "ROC-AUC",
+      "confusion matrix"
+    ],
+    "path": "skills/coding-ds-classification-metrics/SKILL.md"
+  },
+  {
+    "name": "coding-ds-clustering",
+    "description": "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "clustering",
+      "k-means",
+      "hierarchical clustering",
+      "DBSCAN",
+      "mixture models",
+      "how do I cluster data"
+    ],
+    "path": "skills/coding-ds-clustering/SKILL.md"
+  },
+  {
+    "name": "coding-ds-community-detection",
+    "description": "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "community detection",
+      "graph clustering",
+      "modularity",
+      "spectral clustering",
+      "graph partitioning"
+    ],
+    "path": "skills/coding-ds-community-detection/SKILL.md"
+  },
+  {
+    "name": "coding-ds-confidence-intervals",
+    "description": "Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "confidence intervals",
+      "bootstrap",
+      "uncertainty quantification",
+      "confidence bounds",
+      "credible intervals"
+    ],
+    "path": "skills/coding-ds-confidence-intervals/SKILL.md"
+  },
+  {
+    "name": "coding-ds-correlation-analysis",
+    "description": "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "correlation analysis",
+      "covariance",
+      "multivariate analysis",
+      "correlation",
+      "pearson",
+      "spearman",
+      "feature relationships"
+    ],
+    "path": "skills/coding-ds-correlation-analysis/SKILL.md"
+  },
+  {
+    "name": "coding-ds-cross-validation",
+    "description": "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "cross-validation",
+      "k-fold",
+      "stratified cross-validation",
+      "time-series cross-validation",
+      "validation"
+    ],
+    "path": "skills/coding-ds-cross-validation/SKILL.md"
+  },
+  {
+    "name": "coding-ds-data-collection",
+    "description": "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "data collection",
+      "web scraping",
+      "API integration",
+      "data gathering",
+      "data acquisition",
+      "ETL",
+      "how do i collect data"
+    ],
+    "path": "skills/coding-ds-data-collection/SKILL.md"
+  },
+  {
+    "name": "coding-ds-data-ingestion",
+    "description": "Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "ETL pipeline",
+      "data ingestion",
+      "streaming data",
+      "batch processing",
+      "pipeline",
+      "how do i ingest data"
+    ],
+    "path": "skills/coding-ds-data-ingestion/SKILL.md"
+  },
+  {
+    "name": "coding-ds-data-privacy",
+    "description": "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "data privacy",
+      "anonymization",
+      "differential privacy",
+      "GDPR",
+      "PII protection",
+      "privacy-preserving",
+      "sensitive data"
+    ],
+    "path": "skills/coding-ds-data-privacy/SKILL.md"
+  },
+  {
+    "name": "coding-ds-data-profiling",
+    "description": "Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "data profiling",
+      "metadata extraction",
+      "schema analysis",
+      "data schema",
+      "how do i profile data",
+      "data structure"
+    ],
+    "path": "skills/coding-ds-data-profiling/SKILL.md"
+  },
+  {
+    "name": "coding-ds-data-quality",
+    "description": "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "data validation",
+      "data cleaning",
+      "outlier detection",
+      "data quality",
+      "how do i clean data",
+      "missing values"
+    ],
+    "path": "skills/coding-ds-data-quality/SKILL.md"
+  },
+  {
+    "name": "coding-ds-data-versioning",
+    "description": "Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment tracking and governance",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "data versioning",
+      "data lineage",
+      "provenance",
+      "reproducibility",
+      "data governance",
+      "how do i track data"
+    ],
+    "path": "skills/coding-ds-data-versioning/SKILL.md"
+  },
+  {
+    "name": "coding-ds-data-visualization",
+    "description": "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "data visualization",
+      "plotting",
+      "dashboards",
+      "charts",
+      "matplotlib",
+      "seaborn",
+      "plotly",
+      "how do i visualize data"
+    ],
+    "path": "skills/coding-ds-data-visualization/SKILL.md"
+  },
+  {
+    "name": "coding-ds-dimensionality-reduction",
+    "description": "Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "dimensionality reduction",
+      "PCA",
+      "t-SNE",
+      "UMAP",
+      "feature extraction",
+      "how do i reduce dimensions"
+    ],
+    "path": "skills/coding-ds-dimensionality-reduction/SKILL.md"
+  },
+  {
+    "name": "coding-ds-distribution-fitting",
+    "description": "Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "distribution fitting",
+      "goodness-of-fit",
+      "fitting distributions",
+      "distribution selection",
+      "how do i fit"
+    ],
+    "path": "skills/coding-ds-distribution-fitting/SKILL.md"
+  },
+  {
+    "name": "coding-ds-eda",
+    "description": "Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristics",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "exploratory data analysis",
+      "EDA",
+      "summary statistics",
+      "distributions",
+      "data exploration",
+      "how do i explore data"
+    ],
+    "path": "skills/coding-ds-eda/SKILL.md"
+  },
+  {
+    "name": "coding-ds-ensemble-methods",
+    "description": "Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "ensemble methods",
+      "bagging",
+      "boosting",
+      "stacking",
+      "voting",
+      "blending",
+      "ensemble learning"
+    ],
+    "path": "skills/coding-ds-ensemble-methods/SKILL.md"
+  },
+  {
+    "name": "coding-ds-experimental-design",
+    "description": "Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "experimental design",
+      "DOE",
+      "factorial design",
+      "randomization",
+      "blocking",
+      "how do I design experiments"
+    ],
+    "path": "skills/coding-ds-experimental-design/SKILL.md"
+  },
+  {
+    "name": "coding-ds-explainability",
+    "description": "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "explainability",
+      "interpretability",
+      "transparency",
+      "understanding models",
+      "how do I explain predictions"
+    ],
+    "path": "skills/coding-ds-explainability/SKILL.md"
+  },
+  {
+    "name": "coding-ds-feature-engineering",
+    "description": "Creates and transforms features including polynomial features, interactions, domain-specific features, and feature transformations",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "feature engineering",
+      "feature creation",
+      "feature transformation",
+      "how do I engineer features",
+      "feature design"
+    ],
+    "path": "skills/coding-ds-feature-engineering/SKILL.md"
+  },
+  {
+    "name": "coding-ds-feature-interaction",
+    "description": "Discovers and engineers feature interactions including polynomial interactions, cross-features, and interaction detection methods",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "feature interaction",
+      "interaction terms",
+      "polynomial features",
+      "cross-features",
+      "feature interactions"
+    ],
+    "path": "skills/coding-ds-feature-interaction/SKILL.md"
+  },
+  {
+    "name": "coding-ds-feature-scaling-normalization",
+    "description": "Scales and normalizes features using standardization, normalization, robust scaling, and other scaling methods for model compatibility",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "feature scaling",
+      "normalization",
+      "standardization",
+      "robust scaling",
+      "scaling features",
+      "how do I scale"
+    ],
+    "path": "skills/coding-ds-feature-scaling-normalization/SKILL.md"
+  },
+  {
+    "name": "coding-ds-feature-selection",
+    "description": "Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based methods",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "feature selection",
+      "feature importance",
+      "recursive elimination",
+      "univariate selection",
+      "feature selection methods"
+    ],
+    "path": "skills/coding-ds-feature-selection/SKILL.md"
+  },
+  {
+    "name": "coding-ds-hyperparameter-tuning",
+    "description": "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "hyperparameter tuning",
+      "grid search",
+      "random search",
+      "bayesian optimization",
+      "how do I tune parameters"
+    ],
+    "path": "skills/coding-ds-hyperparameter-tuning/SKILL.md"
+  },
+  {
+    "name": "coding-ds-hypothesis-testing",
+    "description": "Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "hypothesis testing",
+      "t-test",
+      "chi-square",
+      "p-value",
+      "statistical significance",
+      "how do i test hypotheses"
+    ],
+    "path": "skills/coding-ds-hypothesis-testing/SKILL.md"
+  },
+  {
+    "name": "coding-ds-instrumental-variables",
+    "description": "Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "instrumental variables",
+      "IV",
+      "2SLS",
+      "endogeneity",
+      "causal effect",
+      "how do i handle endogeneity"
+    ],
+    "path": "skills/coding-ds-instrumental-variables/SKILL.md"
+  },
+  {
+    "name": "coding-ds-intervention-analysis",
+    "description": "Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "treatment effects",
+      "intervention analysis",
+      "CATE",
+      "heterogeneous effects",
+      "treatment response"
+    ],
+    "path": "skills/coding-ds-intervention-analysis/SKILL.md"
+  },
+  {
+    "name": "coding-ds-kernel-density",
+    "description": "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "kernel density estimation",
+      "KDE",
+      "non-parametric",
+      "density estimation",
+      "bandwidth selection"
+    ],
+    "path": "skills/coding-ds-kernel-density/SKILL.md"
+  },
+  {
+    "name": "coding-ds-linear-regression",
+    "description": "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "linear regression",
+      "OLS",
+      "ridge regression",
+      "lasso",
+      "elastic net",
+      "regularization"
+    ],
+    "path": "skills/coding-ds-linear-regression/SKILL.md"
+  },
+  {
+    "name": "coding-ds-logistic-regression",
+    "description": "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "logistic regression",
+      "classification",
+      "binary classification",
+      "multinomial",
+      "how do i classify"
+    ],
+    "path": "skills/coding-ds-logistic-regression/SKILL.md"
+  },
+  {
+    "name": "coding-ds-maximum-likelihood",
+    "description": "Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "maximum likelihood",
+      "MLE",
+      "likelihood estimation",
+      "likelihood function",
+      "optimization"
+    ],
+    "path": "skills/coding-ds-maximum-likelihood/SKILL.md"
+  },
+  {
+    "name": "coding-ds-metrics-and-kpis",
+    "description": "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "metrics",
+      "KPI",
+      "key performance indicator",
+      "business metrics",
+      "metric definition",
+      "how do I choose metrics"
+    ],
+    "path": "skills/coding-ds-metrics-and-kpis/SKILL.md"
+  },
+  {
+    "name": "coding-ds-missing-data",
+    "description": "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "missing data",
+      "imputation",
+      "NaN handling",
+      "missing values",
+      "how do i handle missing data",
+      "data gaps"
+    ],
+    "path": "skills/coding-ds-missing-data/SKILL.md"
+  },
+  {
+    "name": "coding-ds-model-fairness",
+    "description": "Evaluates and mitigates fairness issues including bias detection, fairness metrics, and debiasing strategies in machine learning",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "model fairness",
+      "fairness metrics",
+      "bias detection",
+      "debiasing",
+      "fair machine learning",
+      "how do I check bias"
+    ],
+    "path": "skills/coding-ds-model-fairness/SKILL.md"
+  },
+  {
+    "name": "coding-ds-model-interpretation",
+    "description": "Interprets models using SHAP values, LIME, feature importance, permutation importance, and other explainability techniques",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "model interpretation",
+      "SHAP",
+      "LIME",
+      "feature importance",
+      "explainability",
+      "how do I explain models"
+    ],
+    "path": "skills/coding-ds-model-interpretation/SKILL.md"
+  },
+  {
+    "name": "coding-ds-model-robustness",
+    "description": "Improves model robustness including adversarial robustness, out-of-distribution detection, and uncertainty quantification",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "model robustness",
+      "adversarial robustness",
+      "out-of-distribution",
+      "OOD detection",
+      "robustness testing"
+    ],
+    "path": "skills/coding-ds-model-robustness/SKILL.md"
+  },
+  {
+    "name": "coding-ds-model-selection",
+    "description": "Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "model selection",
+      "AIC",
+      "BIC",
+      "validation curves",
+      "learning curves",
+      "model comparison"
+    ],
+    "path": "skills/coding-ds-model-selection/SKILL.md"
+  },
+  {
+    "name": "coding-ds-monte-carlo",
+    "description": "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "monte carlo",
+      "sampling",
+      "simulation",
+      "stochastic",
+      "markov chain",
+      "mcmc",
+      "how do i simulate"
+    ],
+    "path": "skills/coding-ds-monte-carlo/SKILL.md"
+  },
+  {
+    "name": "coding-ds-neural-networks",
+    "description": "Implements deep neural networks, backpropagation, activation functions, architectures (CNN, RNN, Transformers), and training strategies",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "neural networks",
+      "deep learning",
+      "backpropagation",
+      "CNN",
+      "RNN",
+      "transformers",
+      "how do i use deep learning"
+    ],
+    "path": "skills/coding-ds-neural-networks/SKILL.md"
+  },
+  {
+    "name": "coding-ds-observational-studies",
+    "description": "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "observational studies",
+      "propensity score",
+      "matching",
+      "stratification",
+      "observational data",
+      "adjustment"
+    ],
+    "path": "skills/coding-ds-observational-studies/SKILL.md"
+  },
+  {
+    "name": "coding-ds-online-experiments",
+    "description": "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "multi-armed bandits",
+      "bandits",
+      "contextual bandits",
+      "exploration exploitation",
+      "online learning"
+    ],
+    "path": "skills/coding-ds-online-experiments/SKILL.md"
+  },
+  {
+    "name": "coding-ds-privacy-ml",
+    "description": "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "privacy machine learning",
+      "differential privacy",
+      "federated learning",
+      "privacy attacks",
+      "privacy-preserving"
+    ],
+    "path": "skills/coding-ds-privacy-ml/SKILL.md"
+  },
+  {
+    "name": "coding-ds-randomized-experiments",
+    "description": "Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "randomized experiments",
+      "RCT",
+      "experimental design",
+      "randomization",
+      "blocking",
+      "sample size"
+    ],
+    "path": "skills/coding-ds-randomized-experiments/SKILL.md"
+  },
+  {
+    "name": "coding-ds-regression-evaluation",
+    "description": "Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared, and other metrics for assessing predictive accuracy",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "regression evaluation",
+      "MSE",
+      "RMSE",
+      "MAE",
+      "R-squared",
+      "regression metrics",
+      "how do i evaluate"
+    ],
+    "path": "skills/coding-ds-regression-evaluation/SKILL.md"
+  },
+  {
+    "name": "coding-ds-reproducible-research",
+    "description": "Implements reproducible research practices including code organization, environment management, documentation, and experiment tracking",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "reproducible research",
+      "reproducibility",
+      "code organization",
+      "environment",
+      "notebooks",
+      "how do I reproduce"
+    ],
+    "path": "skills/coding-ds-reproducible-research/SKILL.md"
+  },
+  {
+    "name": "coding-ds-statistical-power",
+    "description": "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "statistical power",
+      "power analysis",
+      "sample size",
+      "effect size",
+      "Type I error",
+      "Type II error"
+    ],
+    "path": "skills/coding-ds-statistical-power/SKILL.md"
+  },
+  {
+    "name": "coding-ds-support-vector-machines",
+    "description": "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "support vector machines",
+      "SVM",
+      "kernel methods",
+      "support vectors",
+      "SVM classification"
+    ],
+    "path": "skills/coding-ds-support-vector-machines/SKILL.md"
+  },
+  {
+    "name": "coding-ds-synthetic-control",
+    "description": "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "synthetic control",
+      "difference-in-differences",
+      "DiD",
+      "quasi-experiment",
+      "impact evaluation"
+    ],
+    "path": "skills/coding-ds-synthetic-control/SKILL.md"
+  },
+  {
+    "name": "coding-ds-time-series-forecasting",
+    "description": "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "time series forecasting",
+      "ARIMA",
+      "exponential smoothing",
+      "LSTM",
+      "forecasting",
+      "time series prediction"
+    ],
+    "path": "skills/coding-ds-time-series-forecasting/SKILL.md"
+  },
+  {
+    "name": "coding-ds-topic-modeling",
+    "description": "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "topic modeling",
+      "LDA",
+      "NMF",
+      "topic extraction",
+      "latent dirichlet allocation",
+      "text analysis"
+    ],
+    "path": "skills/coding-ds-topic-modeling/SKILL.md"
+  },
+  {
+    "name": "coding-ds-tree-methods",
+    "description": "Implements decision trees, random forests, gradient boosting (XGBoost, LightGBM), and tree ensemble methods for classification and regression",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "decision trees",
+      "random forest",
+      "gradient boosting",
+      "xgboost",
+      "lightgbm",
+      "how do i use trees"
+    ],
+    "path": "skills/coding-ds-tree-methods/SKILL.md"
+  },
+  {
     "name": "coding-event-bus",
     "description": "Async pub/sub event bus with typed events, mixed sync/async dispatch,",
     "domain": "coding",

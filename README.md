@@ -654,8 +654,8 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-04-24 13:38:16 UTC  
-> **Total skills:** 279
+> **Last updated:** 2026-04-24 13:58:57 UTC  
+> **Total skills:** 337
 
 ## Skills by Domain
 
@@ -850,13 +850,71 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-zot](../../skills/cncf-zot/SKILL.md) | Zot in Container Registry - cloud native architecture,... | cdn, container... |
 
 
-### Coding (15 skills)
+### Coding (73 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [coding-code-review](../../skills/coding-code-review/SKILL.md) | Analyzes code diffs and files to identify bugs, security... | analyzes, code review... |
 | [coding-conviction-scoring](../../skills/coding-conviction-scoring/SKILL.md) | Multi-factor conviction scoring engine combining technical,... | combining, conviction scoring... |
 | [coding-data-normalization](../../skills/coding-data-normalization/SKILL.md) | Exchange data normalization layer: typed dataclasses for... | data normalization, data-normalization... |
+| [coding-ds-ab-testing](../../skills/coding-ds-ab-testing/SKILL.md) | Designs and analyzes A/B tests including hypothesis... | A/B testing, A/B test... |
+| [coding-ds-anomaly-detection](../../skills/coding-ds-anomaly-detection/SKILL.md) | Detects anomalies and outliers using isolation forests,... | anomaly detection, outlier detection... |
+| [coding-ds-association-rules](../../skills/coding-ds-association-rules/SKILL.md) | Discovers association rules and frequent itemsets using... | association rules, market basket... |
+| [coding-ds-bayesian-inference](../../skills/coding-ds-bayesian-inference/SKILL.md) | Applies Bayesian methods for prior selection, posterior... | bayesian inference, bayes... |
+| [coding-ds-bias-variance-tradeoff](../../skills/coding-ds-bias-variance-tradeoff/SKILL.md) | Analyzes bias-variance tradeoff, overfitting, underfitting,... | bias-variance, overfitting... |
+| [coding-ds-categorical-encoding](../../skills/coding-ds-categorical-encoding/SKILL.md) | Encodes categorical variables using one-hot encoding,... | categorical encoding, one-hot encoding... |
+| [coding-ds-causal-inference](../../skills/coding-ds-causal-inference/SKILL.md) | Implements causal models, directed acyclic graphs (DAGs),... | causal inference, causality... |
+| [coding-ds-classification-metrics](../../skills/coding-ds-classification-metrics/SKILL.md) | Evaluates classification models using precision, recall,... | classification metrics, precision... |
+| [coding-ds-clustering](../../skills/coding-ds-clustering/SKILL.md) | Implements clustering algorithms including K-means,... | clustering, k-means... |
+| [coding-ds-community-detection](../../skills/coding-ds-community-detection/SKILL.md) | Detects communities and clusters in graphs using modularity... | community detection, graph clustering... |
+| [coding-ds-confidence-intervals](../../skills/coding-ds-confidence-intervals/SKILL.md) | Constructs confidence intervals using bootstrap, analytical... | confidence intervals, bootstrap... |
+| [coding-ds-correlation-analysis](../../skills/coding-ds-correlation-analysis/SKILL.md) | Analyzes correlation, covariance, and multivariate... | correlation analysis, covariance... |
+| [coding-ds-cross-validation](../../skills/coding-ds-cross-validation/SKILL.md) | Implements k-fold cross-validation, stratified... | cross-validation, k-fold... |
+| [coding-ds-data-collection](../../skills/coding-ds-data-collection/SKILL.md) | Implements data gathering strategies including APIs, web... | data collection, web scraping... |
+| [coding-ds-data-ingestion](../../skills/coding-ds-data-ingestion/SKILL.md) | Designs and implements ETL pipelines, streaming data... | ETL pipeline, data ingestion... |
+| [coding-ds-data-privacy](../../skills/coding-ds-data-privacy/SKILL.md) | Applies privacy-preserving techniques including... | data privacy, anonymization... |
+| [coding-ds-data-profiling](../../skills/coding-ds-data-profiling/SKILL.md) | Extracts data profiles, schemas, metadata, and statistical... | data profiling, metadata extraction... |
+| [coding-ds-data-quality](../../skills/coding-ds-data-quality/SKILL.md) | Implements data validation, cleaning, outlier detection,... | data validation, data cleaning... |
+| [coding-ds-data-versioning](../../skills/coding-ds-data-versioning/SKILL.md) | Implements data versioning, lineage tracking, provenance... | data versioning, data lineage... |
+| [coding-ds-data-visualization](../../skills/coding-ds-data-visualization/SKILL.md) | Creates effective visualizations including plots, charts,... | data visualization, plotting... |
+| [coding-ds-dimensionality-reduction](../../skills/coding-ds-dimensionality-reduction/SKILL.md) | Reduces data dimensionality using PCA, t-SNE, UMAP,... | dimensionality reduction, PCA... |
+| [coding-ds-distribution-fitting](../../skills/coding-ds-distribution-fitting/SKILL.md) | Fits statistical distributions to data using... | distribution fitting, goodness-of-fit... |
+| [coding-ds-eda](../../skills/coding-ds-eda/SKILL.md) | Performs exploratory data analysis using summary... | exploratory data analysis, EDA... |
+| [coding-ds-ensemble-methods](../../skills/coding-ds-ensemble-methods/SKILL.md) | Combines multiple models using bagging, boosting, stacking,... | ensemble methods, bagging... |
+| [coding-ds-experimental-design](../../skills/coding-ds-experimental-design/SKILL.md) | Designs experiments using design of experiments (DOE),... | experimental design, DOE... |
+| [coding-ds-explainability](../../skills/coding-ds-explainability/SKILL.md) | Implements explainability and interpretability techniques... | explainability, interpretability... |
+| [coding-ds-feature-engineering](../../skills/coding-ds-feature-engineering/SKILL.md) | Creates and transforms features including polynomial... | feature engineering, feature creation... |
+| [coding-ds-feature-interaction](../../skills/coding-ds-feature-interaction/SKILL.md) | Discovers and engineers feature interactions including... | feature interaction, interaction terms... |
+| [coding-ds-feature-scaling-normalization](../../skills/coding-ds-feature-scaling-normalization/SKILL.md) | Scales and normalizes features using standardization,... | feature scaling, normalization... |
+| [coding-ds-feature-selection](../../skills/coding-ds-feature-selection/SKILL.md) | Selects relevant features using univariate selection,... | feature selection, feature importance... |
+| [coding-ds-hyperparameter-tuning](../../skills/coding-ds-hyperparameter-tuning/SKILL.md) | Optimizes hyperparameters using grid search, random search,... | hyperparameter tuning, grid search... |
+| [coding-ds-hypothesis-testing](../../skills/coding-ds-hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square... | hypothesis testing, t-test... |
+| [coding-ds-instrumental-variables](../../skills/coding-ds-instrumental-variables/SKILL.md) | Uses instrumental variables (IV), two-stage least squares... | instrumental variables, IV... |
+| [coding-ds-intervention-analysis](../../skills/coding-ds-intervention-analysis/SKILL.md) | Estimates treatment effects, conditional average treatment... | treatment effects, intervention analysis... |
+| [coding-ds-kernel-density](../../skills/coding-ds-kernel-density/SKILL.md) | Implements kernel density estimation, non-parametric... | kernel density estimation, KDE... |
+| [coding-ds-linear-regression](../../skills/coding-ds-linear-regression/SKILL.md) | Implements linear regression including OLS, ridge... | linear regression, OLS... |
+| [coding-ds-logistic-regression](../../skills/coding-ds-logistic-regression/SKILL.md) | Implements logistic regression for binary and multinomial... | logistic regression, classification... |
+| [coding-ds-maximum-likelihood](../../skills/coding-ds-maximum-likelihood/SKILL.md) | Implements maximum likelihood estimation, likelihood... | maximum likelihood, MLE... |
+| [coding-ds-metrics-and-kpis](../../skills/coding-ds-metrics-and-kpis/SKILL.md) | Defines, selects, and monitors key performance indicators... | metrics, KPI... |
+| [coding-ds-missing-data](../../skills/coding-ds-missing-data/SKILL.md) | Handles missing data using imputation strategies, deletion... | missing data, imputation... |
+| [coding-ds-model-fairness](../../skills/coding-ds-model-fairness/SKILL.md) | Evaluates and mitigates fairness issues including bias... | model fairness, fairness metrics... |
+| [coding-ds-model-interpretation](../../skills/coding-ds-model-interpretation/SKILL.md) | Interprets models using SHAP values, LIME, feature... | model interpretation, SHAP... |
+| [coding-ds-model-robustness](../../skills/coding-ds-model-robustness/SKILL.md) | Improves model robustness including adversarial robustness,... | model robustness, adversarial robustness... |
+| [coding-ds-model-selection](../../skills/coding-ds-model-selection/SKILL.md) | Compares and selects models using AIC, BIC, validation... | model selection, AIC... |
+| [coding-ds-monte-carlo](../../skills/coding-ds-monte-carlo/SKILL.md) | Implements Monte Carlo sampling, simulation methods, and... | monte carlo, sampling... |
+| [coding-ds-neural-networks](../../skills/coding-ds-neural-networks/SKILL.md) | Implements deep neural networks, backpropagation,... | neural networks, deep learning... |
+| [coding-ds-observational-studies](../../skills/coding-ds-observational-studies/SKILL.md) | Analyzes observational data using matching methods,... | observational studies, propensity score... |
+| [coding-ds-online-experiments](../../skills/coding-ds-online-experiments/SKILL.md) | Implements multi-armed bandits, contextual bandits,... | multi-armed bandits, bandits... |
+| [coding-ds-privacy-ml](../../skills/coding-ds-privacy-ml/SKILL.md) | Implements privacy-preserving machine learning including... | privacy machine learning, differential privacy... |
+| [coding-ds-randomized-experiments](../../skills/coding-ds-randomized-experiments/SKILL.md) | Designs and analyzes randomized controlled trials (RCTs),... | randomized experiments, RCT... |
+| [coding-ds-regression-evaluation](../../skills/coding-ds-regression-evaluation/SKILL.md) | Evaluates regression models using MSE, RMSE, MAE, MAPE,... | regression evaluation, MSE... |
+| [coding-ds-reproducible-research](../../skills/coding-ds-reproducible-research/SKILL.md) | Implements reproducible research practices including code... | reproducible research, reproducibility... |
+| [coding-ds-statistical-power](../../skills/coding-ds-statistical-power/SKILL.md) | Analyzes statistical power, sample size determination,... | statistical power, power analysis... |
+| [coding-ds-support-vector-machines](../../skills/coding-ds-support-vector-machines/SKILL.md) | Implements support vector machines (SVM) with kernel... | support vector machines, SVM... |
+| [coding-ds-synthetic-control](../../skills/coding-ds-synthetic-control/SKILL.md) | Implements synthetic control methods,... | synthetic control, difference-in-differences... |
+| [coding-ds-time-series-forecasting](../../skills/coding-ds-time-series-forecasting/SKILL.md) | Implements ARIMA, exponential smoothing, state-space... | time series forecasting, ARIMA... |
+| [coding-ds-topic-modeling](../../skills/coding-ds-topic-modeling/SKILL.md) | Implements topic modeling using Latent Dirichlet Allocation... | topic modeling, LDA... |
+| [coding-ds-tree-methods](../../skills/coding-ds-tree-methods/SKILL.md) | Implements decision trees, random forests, gradient... | decision trees, random forest... |
 | [coding-event-bus](../../skills/coding-event-bus/SKILL.md) | Async pub/sub event bus with typed events, mixed sync/async... | async, event bus... |
 | [coding-event-driven-architecture](../../skills/coding-event-driven-architecture/SKILL.md) | Event-driven architecture for real-time trading systems:... | event driven architecture, event-driven... |
 | [coding-fastapi-patterns](../../skills/coding-fastapi-patterns/SKILL.md) | FastAPI application structure with typed error hierarchy,... | application, cloud infrastructure... |
@@ -971,13 +1029,71 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 ## Skills by Role
 
 
-### Implementation (Build Features) (98 skills)
+### Implementation (Build Features) (156 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [coding-code-review](../../skills/coding-code-review/SKILL.md) | Coding | Analyzes code diffs and files to identify bugs, security... |
 | [coding-conviction-scoring](../../skills/coding-conviction-scoring/SKILL.md) | Coding | Multi-factor conviction scoring engine combining technical,... |
 | [coding-data-normalization](../../skills/coding-data-normalization/SKILL.md) | Coding | Exchange data normalization layer: typed dataclasses for... |
+| [coding-ds-ab-testing](../../skills/coding-ds-ab-testing/SKILL.md) | Coding | Designs and analyzes A/B tests including hypothesis... |
+| [coding-ds-anomaly-detection](../../skills/coding-ds-anomaly-detection/SKILL.md) | Coding | Detects anomalies and outliers using isolation forests,... |
+| [coding-ds-association-rules](../../skills/coding-ds-association-rules/SKILL.md) | Coding | Discovers association rules and frequent itemsets using... |
+| [coding-ds-bayesian-inference](../../skills/coding-ds-bayesian-inference/SKILL.md) | Coding | Applies Bayesian methods for prior selection, posterior... |
+| [coding-ds-bias-variance-tradeoff](../../skills/coding-ds-bias-variance-tradeoff/SKILL.md) | Coding | Analyzes bias-variance tradeoff, overfitting, underfitting,... |
+| [coding-ds-categorical-encoding](../../skills/coding-ds-categorical-encoding/SKILL.md) | Coding | Encodes categorical variables using one-hot encoding,... |
+| [coding-ds-causal-inference](../../skills/coding-ds-causal-inference/SKILL.md) | Coding | Implements causal models, directed acyclic graphs (DAGs),... |
+| [coding-ds-classification-metrics](../../skills/coding-ds-classification-metrics/SKILL.md) | Coding | Evaluates classification models using precision, recall,... |
+| [coding-ds-clustering](../../skills/coding-ds-clustering/SKILL.md) | Coding | Implements clustering algorithms including K-means,... |
+| [coding-ds-community-detection](../../skills/coding-ds-community-detection/SKILL.md) | Coding | Detects communities and clusters in graphs using modularity... |
+| [coding-ds-confidence-intervals](../../skills/coding-ds-confidence-intervals/SKILL.md) | Coding | Constructs confidence intervals using bootstrap, analytical... |
+| [coding-ds-correlation-analysis](../../skills/coding-ds-correlation-analysis/SKILL.md) | Coding | Analyzes correlation, covariance, and multivariate... |
+| [coding-ds-cross-validation](../../skills/coding-ds-cross-validation/SKILL.md) | Coding | Implements k-fold cross-validation, stratified... |
+| [coding-ds-data-collection](../../skills/coding-ds-data-collection/SKILL.md) | Coding | Implements data gathering strategies including APIs, web... |
+| [coding-ds-data-ingestion](../../skills/coding-ds-data-ingestion/SKILL.md) | Coding | Designs and implements ETL pipelines, streaming data... |
+| [coding-ds-data-privacy](../../skills/coding-ds-data-privacy/SKILL.md) | Coding | Applies privacy-preserving techniques including... |
+| [coding-ds-data-profiling](../../skills/coding-ds-data-profiling/SKILL.md) | Coding | Extracts data profiles, schemas, metadata, and statistical... |
+| [coding-ds-data-quality](../../skills/coding-ds-data-quality/SKILL.md) | Coding | Implements data validation, cleaning, outlier detection,... |
+| [coding-ds-data-versioning](../../skills/coding-ds-data-versioning/SKILL.md) | Coding | Implements data versioning, lineage tracking, provenance... |
+| [coding-ds-data-visualization](../../skills/coding-ds-data-visualization/SKILL.md) | Coding | Creates effective visualizations including plots, charts,... |
+| [coding-ds-dimensionality-reduction](../../skills/coding-ds-dimensionality-reduction/SKILL.md) | Coding | Reduces data dimensionality using PCA, t-SNE, UMAP,... |
+| [coding-ds-distribution-fitting](../../skills/coding-ds-distribution-fitting/SKILL.md) | Coding | Fits statistical distributions to data using... |
+| [coding-ds-eda](../../skills/coding-ds-eda/SKILL.md) | Coding | Performs exploratory data analysis using summary... |
+| [coding-ds-ensemble-methods](../../skills/coding-ds-ensemble-methods/SKILL.md) | Coding | Combines multiple models using bagging, boosting, stacking,... |
+| [coding-ds-experimental-design](../../skills/coding-ds-experimental-design/SKILL.md) | Coding | Designs experiments using design of experiments (DOE),... |
+| [coding-ds-explainability](../../skills/coding-ds-explainability/SKILL.md) | Coding | Implements explainability and interpretability techniques... |
+| [coding-ds-feature-engineering](../../skills/coding-ds-feature-engineering/SKILL.md) | Coding | Creates and transforms features including polynomial... |
+| [coding-ds-feature-interaction](../../skills/coding-ds-feature-interaction/SKILL.md) | Coding | Discovers and engineers feature interactions including... |
+| [coding-ds-feature-scaling-normalization](../../skills/coding-ds-feature-scaling-normalization/SKILL.md) | Coding | Scales and normalizes features using standardization,... |
+| [coding-ds-feature-selection](../../skills/coding-ds-feature-selection/SKILL.md) | Coding | Selects relevant features using univariate selection,... |
+| [coding-ds-hyperparameter-tuning](../../skills/coding-ds-hyperparameter-tuning/SKILL.md) | Coding | Optimizes hyperparameters using grid search, random search,... |
+| [coding-ds-hypothesis-testing](../../skills/coding-ds-hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square... |
+| [coding-ds-instrumental-variables](../../skills/coding-ds-instrumental-variables/SKILL.md) | Coding | Uses instrumental variables (IV), two-stage least squares... |
+| [coding-ds-intervention-analysis](../../skills/coding-ds-intervention-analysis/SKILL.md) | Coding | Estimates treatment effects, conditional average treatment... |
+| [coding-ds-kernel-density](../../skills/coding-ds-kernel-density/SKILL.md) | Coding | Implements kernel density estimation, non-parametric... |
+| [coding-ds-linear-regression](../../skills/coding-ds-linear-regression/SKILL.md) | Coding | Implements linear regression including OLS, ridge... |
+| [coding-ds-logistic-regression](../../skills/coding-ds-logistic-regression/SKILL.md) | Coding | Implements logistic regression for binary and multinomial... |
+| [coding-ds-maximum-likelihood](../../skills/coding-ds-maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood... |
+| [coding-ds-metrics-and-kpis](../../skills/coding-ds-metrics-and-kpis/SKILL.md) | Coding | Defines, selects, and monitors key performance indicators... |
+| [coding-ds-missing-data](../../skills/coding-ds-missing-data/SKILL.md) | Coding | Handles missing data using imputation strategies, deletion... |
+| [coding-ds-model-fairness](../../skills/coding-ds-model-fairness/SKILL.md) | Coding | Evaluates and mitigates fairness issues including bias... |
+| [coding-ds-model-interpretation](../../skills/coding-ds-model-interpretation/SKILL.md) | Coding | Interprets models using SHAP values, LIME, feature... |
+| [coding-ds-model-robustness](../../skills/coding-ds-model-robustness/SKILL.md) | Coding | Improves model robustness including adversarial robustness,... |
+| [coding-ds-model-selection](../../skills/coding-ds-model-selection/SKILL.md) | Coding | Compares and selects models using AIC, BIC, validation... |
+| [coding-ds-monte-carlo](../../skills/coding-ds-monte-carlo/SKILL.md) | Coding | Implements Monte Carlo sampling, simulation methods, and... |
+| [coding-ds-neural-networks](../../skills/coding-ds-neural-networks/SKILL.md) | Coding | Implements deep neural networks, backpropagation,... |
+| [coding-ds-observational-studies](../../skills/coding-ds-observational-studies/SKILL.md) | Coding | Analyzes observational data using matching methods,... |
+| [coding-ds-online-experiments](../../skills/coding-ds-online-experiments/SKILL.md) | Coding | Implements multi-armed bandits, contextual bandits,... |
+| [coding-ds-privacy-ml](../../skills/coding-ds-privacy-ml/SKILL.md) | Coding | Implements privacy-preserving machine learning including... |
+| [coding-ds-randomized-experiments](../../skills/coding-ds-randomized-experiments/SKILL.md) | Coding | Designs and analyzes randomized controlled trials (RCTs),... |
+| [coding-ds-regression-evaluation](../../skills/coding-ds-regression-evaluation/SKILL.md) | Coding | Evaluates regression models using MSE, RMSE, MAE, MAPE,... |
+| [coding-ds-reproducible-research](../../skills/coding-ds-reproducible-research/SKILL.md) | Coding | Implements reproducible research practices including code... |
+| [coding-ds-statistical-power](../../skills/coding-ds-statistical-power/SKILL.md) | Coding | Analyzes statistical power, sample size determination,... |
+| [coding-ds-support-vector-machines](../../skills/coding-ds-support-vector-machines/SKILL.md) | Coding | Implements support vector machines (SVM) with kernel... |
+| [coding-ds-synthetic-control](../../skills/coding-ds-synthetic-control/SKILL.md) | Coding | Implements synthetic control methods,... |
+| [coding-ds-time-series-forecasting](../../skills/coding-ds-time-series-forecasting/SKILL.md) | Coding | Implements ARIMA, exponential smoothing, state-space... |
+| [coding-ds-topic-modeling](../../skills/coding-ds-topic-modeling/SKILL.md) | Coding | Implements topic modeling using Latent Dirichlet Allocation... |
+| [coding-ds-tree-methods](../../skills/coding-ds-tree-methods/SKILL.md) | Coding | Implements decision trees, random forests, gradient... |
 | [coding-event-bus](../../skills/coding-event-bus/SKILL.md) | Coding | Async pub/sub event bus with typed events, mixed sync/async... |
 | [coding-event-driven-architecture](../../skills/coding-event-driven-architecture/SKILL.md) | Coding | Event-driven architecture for real-time trading systems:... |
 | [coding-fastapi-patterns](../../skills/coding-fastapi-patterns/SKILL.md) | Coding | FastAPI application structure with typed error hierarchy,... |
@@ -1431,6 +1547,64 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [coding-code-review](../../skills/coding-code-review/SKILL.md) | Coding | Analyzes code diffs and files to identify bugs, security... | Implementation |
 | [coding-conviction-scoring](../../skills/coding-conviction-scoring/SKILL.md) | Coding | Multi-factor conviction scoring engine combining technical,... | Implementation |
 | [coding-data-normalization](../../skills/coding-data-normalization/SKILL.md) | Coding | Exchange data normalization layer: typed dataclasses for... | Implementation |
+| [coding-ds-ab-testing](../../skills/coding-ds-ab-testing/SKILL.md) | Coding | Designs and analyzes A/B tests including hypothesis... | Implementation |
+| [coding-ds-anomaly-detection](../../skills/coding-ds-anomaly-detection/SKILL.md) | Coding | Detects anomalies and outliers using isolation forests,... | Implementation |
+| [coding-ds-association-rules](../../skills/coding-ds-association-rules/SKILL.md) | Coding | Discovers association rules and frequent itemsets using... | Implementation |
+| [coding-ds-bayesian-inference](../../skills/coding-ds-bayesian-inference/SKILL.md) | Coding | Applies Bayesian methods for prior selection, posterior... | Implementation |
+| [coding-ds-bias-variance-tradeoff](../../skills/coding-ds-bias-variance-tradeoff/SKILL.md) | Coding | Analyzes bias-variance tradeoff, overfitting, underfitting,... | Implementation |
+| [coding-ds-categorical-encoding](../../skills/coding-ds-categorical-encoding/SKILL.md) | Coding | Encodes categorical variables using one-hot encoding,... | Implementation |
+| [coding-ds-causal-inference](../../skills/coding-ds-causal-inference/SKILL.md) | Coding | Implements causal models, directed acyclic graphs (DAGs),... | Implementation |
+| [coding-ds-classification-metrics](../../skills/coding-ds-classification-metrics/SKILL.md) | Coding | Evaluates classification models using precision, recall,... | Implementation |
+| [coding-ds-clustering](../../skills/coding-ds-clustering/SKILL.md) | Coding | Implements clustering algorithms including K-means,... | Implementation |
+| [coding-ds-community-detection](../../skills/coding-ds-community-detection/SKILL.md) | Coding | Detects communities and clusters in graphs using modularity... | Implementation |
+| [coding-ds-confidence-intervals](../../skills/coding-ds-confidence-intervals/SKILL.md) | Coding | Constructs confidence intervals using bootstrap, analytical... | Implementation |
+| [coding-ds-correlation-analysis](../../skills/coding-ds-correlation-analysis/SKILL.md) | Coding | Analyzes correlation, covariance, and multivariate... | Implementation |
+| [coding-ds-cross-validation](../../skills/coding-ds-cross-validation/SKILL.md) | Coding | Implements k-fold cross-validation, stratified... | Implementation |
+| [coding-ds-data-collection](../../skills/coding-ds-data-collection/SKILL.md) | Coding | Implements data gathering strategies including APIs, web... | Implementation |
+| [coding-ds-data-ingestion](../../skills/coding-ds-data-ingestion/SKILL.md) | Coding | Designs and implements ETL pipelines, streaming data... | Implementation |
+| [coding-ds-data-privacy](../../skills/coding-ds-data-privacy/SKILL.md) | Coding | Applies privacy-preserving techniques including... | Implementation |
+| [coding-ds-data-profiling](../../skills/coding-ds-data-profiling/SKILL.md) | Coding | Extracts data profiles, schemas, metadata, and statistical... | Implementation |
+| [coding-ds-data-quality](../../skills/coding-ds-data-quality/SKILL.md) | Coding | Implements data validation, cleaning, outlier detection,... | Implementation |
+| [coding-ds-data-versioning](../../skills/coding-ds-data-versioning/SKILL.md) | Coding | Implements data versioning, lineage tracking, provenance... | Implementation |
+| [coding-ds-data-visualization](../../skills/coding-ds-data-visualization/SKILL.md) | Coding | Creates effective visualizations including plots, charts,... | Implementation |
+| [coding-ds-dimensionality-reduction](../../skills/coding-ds-dimensionality-reduction/SKILL.md) | Coding | Reduces data dimensionality using PCA, t-SNE, UMAP,... | Implementation |
+| [coding-ds-distribution-fitting](../../skills/coding-ds-distribution-fitting/SKILL.md) | Coding | Fits statistical distributions to data using... | Implementation |
+| [coding-ds-eda](../../skills/coding-ds-eda/SKILL.md) | Coding | Performs exploratory data analysis using summary... | Implementation |
+| [coding-ds-ensemble-methods](../../skills/coding-ds-ensemble-methods/SKILL.md) | Coding | Combines multiple models using bagging, boosting, stacking,... | Implementation |
+| [coding-ds-experimental-design](../../skills/coding-ds-experimental-design/SKILL.md) | Coding | Designs experiments using design of experiments (DOE),... | Implementation |
+| [coding-ds-explainability](../../skills/coding-ds-explainability/SKILL.md) | Coding | Implements explainability and interpretability techniques... | Implementation |
+| [coding-ds-feature-engineering](../../skills/coding-ds-feature-engineering/SKILL.md) | Coding | Creates and transforms features including polynomial... | Implementation |
+| [coding-ds-feature-interaction](../../skills/coding-ds-feature-interaction/SKILL.md) | Coding | Discovers and engineers feature interactions including... | Implementation |
+| [coding-ds-feature-scaling-normalization](../../skills/coding-ds-feature-scaling-normalization/SKILL.md) | Coding | Scales and normalizes features using standardization,... | Implementation |
+| [coding-ds-feature-selection](../../skills/coding-ds-feature-selection/SKILL.md) | Coding | Selects relevant features using univariate selection,... | Implementation |
+| [coding-ds-hyperparameter-tuning](../../skills/coding-ds-hyperparameter-tuning/SKILL.md) | Coding | Optimizes hyperparameters using grid search, random search,... | Implementation |
+| [coding-ds-hypothesis-testing](../../skills/coding-ds-hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square... | Implementation |
+| [coding-ds-instrumental-variables](../../skills/coding-ds-instrumental-variables/SKILL.md) | Coding | Uses instrumental variables (IV), two-stage least squares... | Implementation |
+| [coding-ds-intervention-analysis](../../skills/coding-ds-intervention-analysis/SKILL.md) | Coding | Estimates treatment effects, conditional average treatment... | Implementation |
+| [coding-ds-kernel-density](../../skills/coding-ds-kernel-density/SKILL.md) | Coding | Implements kernel density estimation, non-parametric... | Implementation |
+| [coding-ds-linear-regression](../../skills/coding-ds-linear-regression/SKILL.md) | Coding | Implements linear regression including OLS, ridge... | Implementation |
+| [coding-ds-logistic-regression](../../skills/coding-ds-logistic-regression/SKILL.md) | Coding | Implements logistic regression for binary and multinomial... | Implementation |
+| [coding-ds-maximum-likelihood](../../skills/coding-ds-maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood... | Implementation |
+| [coding-ds-metrics-and-kpis](../../skills/coding-ds-metrics-and-kpis/SKILL.md) | Coding | Defines, selects, and monitors key performance indicators... | Implementation |
+| [coding-ds-missing-data](../../skills/coding-ds-missing-data/SKILL.md) | Coding | Handles missing data using imputation strategies, deletion... | Implementation |
+| [coding-ds-model-fairness](../../skills/coding-ds-model-fairness/SKILL.md) | Coding | Evaluates and mitigates fairness issues including bias... | Implementation |
+| [coding-ds-model-interpretation](../../skills/coding-ds-model-interpretation/SKILL.md) | Coding | Interprets models using SHAP values, LIME, feature... | Implementation |
+| [coding-ds-model-robustness](../../skills/coding-ds-model-robustness/SKILL.md) | Coding | Improves model robustness including adversarial robustness,... | Implementation |
+| [coding-ds-model-selection](../../skills/coding-ds-model-selection/SKILL.md) | Coding | Compares and selects models using AIC, BIC, validation... | Implementation |
+| [coding-ds-monte-carlo](../../skills/coding-ds-monte-carlo/SKILL.md) | Coding | Implements Monte Carlo sampling, simulation methods, and... | Implementation |
+| [coding-ds-neural-networks](../../skills/coding-ds-neural-networks/SKILL.md) | Coding | Implements deep neural networks, backpropagation,... | Implementation |
+| [coding-ds-observational-studies](../../skills/coding-ds-observational-studies/SKILL.md) | Coding | Analyzes observational data using matching methods,... | Implementation |
+| [coding-ds-online-experiments](../../skills/coding-ds-online-experiments/SKILL.md) | Coding | Implements multi-armed bandits, contextual bandits,... | Implementation |
+| [coding-ds-privacy-ml](../../skills/coding-ds-privacy-ml/SKILL.md) | Coding | Implements privacy-preserving machine learning including... | Implementation |
+| [coding-ds-randomized-experiments](../../skills/coding-ds-randomized-experiments/SKILL.md) | Coding | Designs and analyzes randomized controlled trials (RCTs),... | Implementation |
+| [coding-ds-regression-evaluation](../../skills/coding-ds-regression-evaluation/SKILL.md) | Coding | Evaluates regression models using MSE, RMSE, MAE, MAPE,... | Implementation |
+| [coding-ds-reproducible-research](../../skills/coding-ds-reproducible-research/SKILL.md) | Coding | Implements reproducible research practices including code... | Implementation |
+| [coding-ds-statistical-power](../../skills/coding-ds-statistical-power/SKILL.md) | Coding | Analyzes statistical power, sample size determination,... | Implementation |
+| [coding-ds-support-vector-machines](../../skills/coding-ds-support-vector-machines/SKILL.md) | Coding | Implements support vector machines (SVM) with kernel... | Implementation |
+| [coding-ds-synthetic-control](../../skills/coding-ds-synthetic-control/SKILL.md) | Coding | Implements synthetic control methods,... | Implementation |
+| [coding-ds-time-series-forecasting](../../skills/coding-ds-time-series-forecasting/SKILL.md) | Coding | Implements ARIMA, exponential smoothing, state-space... | Implementation |
+| [coding-ds-topic-modeling](../../skills/coding-ds-topic-modeling/SKILL.md) | Coding | Implements topic modeling using Latent Dirichlet Allocation... | Implementation |
+| [coding-ds-tree-methods](../../skills/coding-ds-tree-methods/SKILL.md) | Coding | Implements decision trees, random forests, gradient... | Implementation |
 | [coding-event-bus](../../skills/coding-event-bus/SKILL.md) | Coding | Async pub/sub event bus with typed events, mixed sync/async... | Implementation |
 | [coding-event-driven-architecture](../../skills/coding-event-driven-architecture/SKILL.md) | Coding | Event-driven architecture for real-time trading systems:... | Implementation |
 | [coding-fastapi-patterns](../../skills/coding-fastapi-patterns/SKILL.md) | Coding | FastAPI application structure with typed error hierarchy,... | Implementation |
