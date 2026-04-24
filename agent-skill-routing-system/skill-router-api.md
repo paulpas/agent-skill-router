@@ -81,6 +81,14 @@ curl -X POST http://localhost:3000/reload
 ```
 Triggers an immediate `git fetch + reset` and re-indexes all skills. Use after pushing new skills.
 
+## Skill Citation
+
+When `route_to_skill` loads a skill, end your response with one line:
+
+`> 📖 skill: <skill-name>`
+
+Omit entirely if no skill was loaded this turn.
+
 ## Docker Management
 
 ```bash
