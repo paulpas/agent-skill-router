@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, compliance, how do i find security issues, infrastructure as code,
     monitoring, openfga, security, vulnerability scanning
+  related-skills: cncf-calico, cncf-notary-project, cncf-open-policy-agent-opa, cncf-ory-hydra
 ---
 
 # OpenFGA in Cloud-Native Engineering

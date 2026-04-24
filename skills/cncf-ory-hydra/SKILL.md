@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: ory hydra, ory-hydra, security, compliance, how do i find security issues,
     infrastructure as code, vulnerability scanning, monitoring
+  related-skills: cncf-calico, cncf-openfga, cncf-ory-kratos
 ---
 
 

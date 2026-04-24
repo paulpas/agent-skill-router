@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, infrastructure as code, k8s service, kubernetes service, linkerd,
     monitoring, native, service
+  related-skills: cncf-calico, cncf-cilium, cncf-contour, cncf-kuma
 ---
 
 # Linkerd in Cloud-Native Engineering

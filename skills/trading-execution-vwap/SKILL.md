@@ -11,8 +11,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: average, execution vwap, execution-vwap, price, volume-weighted
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Execute orders in proportion to market volume to minimize slippage in high-volume periods
 

@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: analysis, technical volume profile, technical-volume-profile, techniques,
     understanding
+  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Interpret volume distribution to identify accumulation, distribution, and liquidity zones
 

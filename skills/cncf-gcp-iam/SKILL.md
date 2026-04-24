@@ -1,6 +1,7 @@
 ---
 name: cncf-gcp-iam
-description: Manages identity and access control with service accounts, roles, and fine-grained permissions.
+description: Manages identity and access control with service accounts, roles, and
+  fine-grained permissions.
 license: MIT
 compatibility: opencode
 metadata:
@@ -10,7 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: iam, identity access management, service account, roles, permissions
-  related-skills: cncf-gcp-cloud-kms, cncf-gcp-compute-engine, cncf-gcp-gke, cncf-gcp-cloud-sql
+  related-skills: cncf-azure-rbac, cncf-gcp-cloud-kms, cncf-gcp-cloud-sql, cncf-gcp-compute-engine
 ---
 
 

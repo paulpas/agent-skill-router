@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: execution, modeling, paper slippage model, paper-slippage-model, simulation
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Execution Quality Specialist — implements comprehensive slippage models to simulate real-world execution quality, accounting for market impact, liquidity constraints, and order flow dynamics.
 

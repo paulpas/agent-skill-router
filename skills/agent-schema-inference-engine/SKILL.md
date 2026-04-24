@@ -11,6 +11,7 @@ metadata:
   scope: schema
   output-format: schema
   triggers: data schema, schema discovery, schema inference, schema-inference-engine
+  related-skills: agent-add-new-skill, agent-confidence-based-selector, agent-goal-to-milestones, agent-multi-skill-executor, agent-network-diagnostics
 ---
 
 

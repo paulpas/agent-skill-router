@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: vpc, virtual private cloud, subnet, route table, security group, nat gateway,
     network acl, vpn
-  related-skills: cncf-aws-ec2, cncf-aws-elb, cncf-aws-iam, cncf-aws-cloudformation
+  related-skills: cncf-aws-cloudformation, cncf-aws-ec2, cncf-aws-eks, cncf-aws-elb
 ---
 
 

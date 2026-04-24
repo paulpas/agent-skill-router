@@ -4,12 +4,15 @@ description: Maximum Drawdown, Recovery Time, and Value-at-Risk Analysis
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: backtest drawdown analysis, backtest-drawdown-analysis, maximum, recovery, value-at-risk
+  triggers: backtest drawdown analysis, backtest-drawdown-analysis, maximum, recovery,
+    value-at-risk
+  related-skills: trading-backtest-position-sizing, trading-fundamentals-risk-management-basics,
+    trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
 
 **Role:** Risk Analysis Specialist — implements comprehensive drawdown and risk metrics to evaluate strategy drawdown behavior, recovery characteristics, and tail risk exposure.

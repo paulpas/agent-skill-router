@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: analysis, candlestick, chart, technical price action patterns, technical-price-action-patterns
+  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Identify high-probability price patterns to forecast market direction
 

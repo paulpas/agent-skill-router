@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: analysis, robust, technical false signal filtering, technical-false-signal-filtering,
     techniques
+  related-skills: trading-technical-cycle-analysis, trading-technical-indicator-confluence,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Technical Analysis Engineer — implements algorithms to identify and filter out spurious technical signals that lead to false entries and losses.
 

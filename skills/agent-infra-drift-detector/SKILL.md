@@ -10,8 +10,8 @@ metadata:
   role: debugging
   scope: compliance
   output-format: report
-  triggers: cloud infrastructure, drift detection, infra drift, infra-drift-detector,
-    infrastructure drift
+  triggers: cloud infrastructure, drift detection, infra drift, infra-drift-detector, infrastructure drift
+  related-skills: agent-code-correctness-verifier, agent-error-trace-explainer, agent-goal-to-milestones, agent-hot-path-detector, agent-multi-skill-executor
 ---
 
 

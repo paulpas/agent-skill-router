@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: confirming, systems, technical indicator confluence, technical-indicator-confluence,
     validation
+  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Technical Validation Engineer — implements systems that require multiple technical indicators to align before confirming trading signals, reducing false positives and increasing probability of success.
 

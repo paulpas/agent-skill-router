@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: exchange, execution rate limiting, execution-rate-limiting, management,
     robust
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Trading Infrastructure Engineer — designs rate limiting systems and exchange API integrations to ensure reliable, compliant, and efficient order execution without triggering account suspensions or API blacklists.
 

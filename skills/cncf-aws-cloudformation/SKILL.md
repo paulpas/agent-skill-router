@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: cloudformation, infrastructure as code, iac, cloudformation template,
     stack, aws template, yaml, json
-  related-skills: cncf-aws-ec2, cncf-aws-rds, cncf-aws-vpc, cncf-aws-iam
+  related-skills: cncf-aws-ec2, cncf-aws-iam, cncf-aws-rds, cncf-aws-s3
 ---
 
 

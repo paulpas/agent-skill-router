@@ -12,8 +12,9 @@ metadata:
   output-format: code
   triggers: estimation, execution slippage modeling, execution-slippage-modeling,
     realistic, simulation
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Algorithmic Trading Risk Analyst — builds models to estimate, simulate, and account for slippage and transaction costs in execution analysis and strategy optimization.
 

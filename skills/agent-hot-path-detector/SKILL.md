@@ -11,6 +11,7 @@ metadata:
   scope: analysis
   output-format: analysis
   triggers: critical, execution, hot path detector, hot-path-detector, identifies
+  related-skills: agent-code-correctness-verifier, agent-error-trace-explainer, agent-goal-to-milestones, agent-infra-drift-detector, agent-multi-skill-executor
 ---
 
 

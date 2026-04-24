@@ -11,8 +11,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: account, implementing, multi-layered, risk kill switches, risk-kill-switches
+  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing,
+    trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
-
 
 **Role:** Guide an AI coding assistant to build comprehensive kill switch systems that automatically halt trading operations when predefined risk thresholds are breached, protecting capital and preventing system damage
 

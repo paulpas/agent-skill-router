@@ -10,8 +10,8 @@ metadata:
   role: verification
   scope: "code\u8D28\u91CF"
   output-format: analysis
-  triggers: code correctness verifier, code-correctness-verifier, semantics, syntax,
-    types, verifies
+  triggers: code correctness verifier, code-correctness-verifier, semantics, syntax, types, verifies
+  related-skills: agent-dynamic-replanner, agent-error-trace-explainer, agent-goal-to-milestones, agent-hot-path-detector, agent-infra-drift-detector
 ---
 
 

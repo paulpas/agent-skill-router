@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: content, how do i find security issues, notary project, notary-project,
     security, trust, vulnerability scanning, security auditing
+  related-skills: cncf-openfga
 ---
 
 

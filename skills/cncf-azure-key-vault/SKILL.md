@@ -1,6 +1,7 @@
 ---
 name: cncf-azure-key-vault
-description: Manages encryption keys, secrets, and certificates with access control and auditing.
+description: Manages encryption keys, secrets, and certificates with access control
+  and auditing.
 license: MIT
 compatibility: opencode
 metadata:
@@ -9,8 +10,10 @@ metadata:
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: key vault, key management, secrets, certificate management, encryption keys
-  related-skills: cncf-azure-rbac, cncf-azure-virtual-machines, cncf-azure-functions, cncf-azure-sql-database
+  triggers: key vault, key management, secrets, certificate management, encryption
+    keys
+  related-skills: cncf-azure-automation, cncf-azure-blob-storage, cncf-azure-functions,
+    cncf-azure-rbac
 ---
 
 

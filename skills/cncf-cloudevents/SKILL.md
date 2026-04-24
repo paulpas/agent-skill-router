@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, cloudevents, infrastructure as code, messaging, monitoring, streaming,
     cloudformation, cloudfront
+  related-skills: cncf-nats
 ---
 
 

@@ -1,8 +1,8 @@
 ---
 name: programming-abl-v12-learning
-description: "Reference guide for Progress OpenEdge ABL 12.7 (2023) \u2014 v10\u2192\
-  v12 migration, INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic\
-  \ collections, safe navigation operator, server-side joins"
+description: Reference guide for Progress OpenEdge ABL 12.7 (2023) — v10→v12 migration,
+  INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic collections,
+  safe navigation operator, server-side joins
 license: MIT
 compatibility: opencode
 metadata:
@@ -13,7 +13,7 @@ metadata:
   output-format: code
   triggers: abl v12, openedge 12, abl 12.7, v10 to v12 migration, abl migration, catch
     throw, jsonobject, read-json
-  related-skills: programming-abl-v10-learning, programming-abl-v12-ui
+  related-skills: programming-abl-v10-learning
 ---
 
 

@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: ai time series forecasting, ai-time-series-forecasting, market, prediction,
     price
+  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis,
+    trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Implement forecasting models that predict future price movements and market indicators
 

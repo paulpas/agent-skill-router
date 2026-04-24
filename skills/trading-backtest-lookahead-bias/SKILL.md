@@ -12,10 +12,9 @@ metadata:
   output-format: code
   triggers: backtest lookahead bias, backtest-lookahead-bias, backtesting, preventing,
     strict, unit tests, testing, test automation
+  related-skills: trading-backtest-position-exits, trading-backtest-sharpe-ratio,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
-
-
 
 **Role:** Backtest Quality Engineer
 

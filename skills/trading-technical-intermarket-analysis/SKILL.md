@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: asset, cross-market, relationships, technical intermarket analysis, technical-intermarket-analysis
+  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Analyze relationships between markets to identify divergences and arbitrage opportunities
 

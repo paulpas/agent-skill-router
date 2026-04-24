@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: calculations, management, portfolio, risk value at risk, risk-value-at-risk
+  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing,
+    trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
-
 
 **Role:** Quantify potential losses in portfolio value over specified time horizons
 

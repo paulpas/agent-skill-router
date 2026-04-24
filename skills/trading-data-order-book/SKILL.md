@@ -11,8 +11,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: calculation, data order book, data-order-book, handling, spread
+  related-skills: trading-ai-order-flow-analysis, trading-fundamentals-market-structure,
+    trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
-
 
 # Order Book Data Pipeline: The 5 Laws of Liquidity Analysis
 

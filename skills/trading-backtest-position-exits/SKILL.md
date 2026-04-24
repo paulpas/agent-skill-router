@@ -11,8 +11,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: backtest position exits, backtest-position-exits, stops, strategies, trailing
+  related-skills: trading-backtest-lookahead-bias, trading-backtest-sharpe-ratio,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Manage the systematic exit of trading positions to lock in profits, limit losses, and adapt to market conditions.
 

@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, feature, flagging, infrastructure as code, monitoring, openfeature,
     cloudformation, cloudfront
+  related-skills: cncf-calico, cncf-cilium
 ---
 
 

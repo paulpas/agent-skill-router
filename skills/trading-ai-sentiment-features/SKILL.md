@@ -4,12 +4,14 @@ description: Extract market sentiment from news, social media, and analyst repor
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
   triggers: ai sentiment features, ai-sentiment-features, extract, market, social
+  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis,
+    trading-technical-false-signal-filtering
 ---
 
 **Role:** Convert sentiment signals into actionable trading features with proper temporal alignment

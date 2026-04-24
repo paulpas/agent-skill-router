@@ -12,9 +12,9 @@ metadata:
   output-format: code
   triggers: caching, exchange market data cache, exchange-market-data-cache, high-performance,
     layer, optimization, elasticache, performance
+  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+    trading-data-order-book
 ---
-
-
 
 **Role:** Cache market data efficiently to reduce API calls and improve data access speed
 

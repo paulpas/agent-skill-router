@@ -11,6 +11,7 @@ metadata:
   scope: resource
   output-format: optimization
   triggers: cost optimization, resource allocation, resource optimizer, resource-optimizer
+  related-skills: agent-add-new-skill, agent-code-correctness-verifier, agent-confidence-based-selector, agent-goal-to-milestones, agent-network-diagnostics
 ---
 
 

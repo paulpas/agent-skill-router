@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: elb, load balancer, alb, nlb, application load balancer, health check,
     ssl termination, traffic distribution
-  related-skills: cncf-aws-ec2, cncf-aws-vpc, cncf-aws-cloudwatch
+  related-skills: cncf-aws-cloudwatch, cncf-aws-ec2, cncf-aws-route53, cncf-aws-vpc
 ---
 
 

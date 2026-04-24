@@ -12,8 +12,9 @@ metadata:
   output-format: code
   triggers: adaptation, detection, fundamentals market regimes, fundamentals-market-regimes,
     regime
+  related-skills: trading-paper-commission-model, trading-paper-market-impact, trading-fundamentals-trading-edge,
+    trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Identify and adapt to different market regimes (trending, mean-reverting, sideways, volatile) to optimize trading strategy parameters dynamically.
 

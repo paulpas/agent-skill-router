@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: ai synthetic data, ai-synthetic-data, financial, generate, training
+  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis,
+    trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Create realistic synthetic market data when actual data is limited or for augmenting training sets
 

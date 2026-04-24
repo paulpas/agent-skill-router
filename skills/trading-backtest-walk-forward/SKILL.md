@@ -11,10 +11,9 @@ metadata:
   output-format: code
   triggers: backtest walk forward, backtest-walk-forward, optimization, robust, walk-forward,
     performance, speed
+  related-skills: trading-backtest-lookahead-bias, trading-backtest-position-exits,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
-
-
 
 **Role:** Backtest Validation Engineer — implements walk-forward optimization to validate strategy robustness, prevent overfitting, and ensure out-of-sample performance consistency.
 

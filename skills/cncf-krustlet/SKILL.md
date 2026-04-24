@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, container orchestration, infrastructure as code, k8s, krustlet, monitoring,
     runtime, cloudformation
+  related-skills: cncf-calico, cncf-cilium, cncf-kong-ingress-controller, cncf-lima
 ---
 
 

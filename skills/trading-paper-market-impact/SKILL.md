@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: modeling, order, paper market impact, paper-market-impact, simulation
+  related-skills: trading-fundamentals-market-regimes, trading-paper-commission-model,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Market Microstructure Specialist — implements sophisticated market impact models to simulate how order flow affects prices, incorporating order book dynamics, inventory imbalances, and liquidity provision.
 

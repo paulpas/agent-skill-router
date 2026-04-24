@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: algorithms, execution twap vwap, execution-twap-vwap, institutional-grade,
     order
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Trading Algorithm Engineer — designs and implements optimal execution strategies to minimize market impact and execution costs.
 

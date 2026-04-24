@@ -11,10 +11,9 @@ metadata:
   output-format: code
   triggers: portfolio, resilience, risk stress testing, risk-stress-testing, scenarios,
     unit tests, testing, test automation
+  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing,
+    trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
-
-
-
 
 **Role:** Evaluate portfolio performance under extreme market conditions
 

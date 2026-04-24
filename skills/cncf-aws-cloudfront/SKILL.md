@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: cloudfront, cdn, content distribution, edge caching, ddos protection,
     waf, ssl termination, content delivery
-  related-skills: cncf-aws-s3, cncf-aws-acm, cncf-aws-route53
+  related-skills: cncf-aws-route53, cncf-aws-s3
 ---
 
 

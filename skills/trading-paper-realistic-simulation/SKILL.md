@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: impact, market, paper realistic simulation, paper-realistic-simulation,
     trading
+  related-skills: trading-fundamentals-market-regimes, trading-paper-commission-model,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Trading System Simulator — implements comprehensive paper trading simulations that replicate live trading conditions including slippage, fees, partial fills, and market impact for accurate performance estimation.
 

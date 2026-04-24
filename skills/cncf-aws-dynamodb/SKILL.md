@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: dynamodb, nosql, key-value store, dynamodb stream, global table, partition
     key, sort key, auto-scaling
-  related-skills: cncf-aws-lambda, cncf-aws-kms, cncf-aws-cloudwatch
+  related-skills: cncf-aws-auto-scaling, cncf-aws-cloudwatch, cncf-aws-kms, cncf-aws-lambda
 ---
 
 

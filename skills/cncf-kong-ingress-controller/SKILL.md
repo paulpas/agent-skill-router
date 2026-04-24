@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: kong ingress controller, kong-ingress-controller, native, container orchestration,
     infrastructure as code, kubernetes ingress, monitoring, cdn
+  related-skills: cncf-kong, cncf-krustlet
 ---
 
 

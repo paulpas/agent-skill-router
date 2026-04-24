@@ -10,8 +10,8 @@ metadata:
   role: diagnosis
   scope: root cause analysis
   output-format: analysis
-  triggers: analyzes, failures, root cause, stacktrace root cause, stacktrace-root-cause,
-    stacktraces
+  triggers: analyzes, failures, root cause, stacktrace root cause, stacktrace-root-cause, stacktraces
+  related-skills: agent-code-correctness-verifier, agent-confidence-based-selector, agent-error-trace-explainer, agent-k8s-debugger, agent-multi-skill-executor
 ---
 
 

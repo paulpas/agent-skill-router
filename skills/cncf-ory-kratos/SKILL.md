@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: access, cdn, identity, infrastructure as code, monitoring, ory kratos,
     ory-kratos, cloudformation
+  related-skills: cncf-oathkeeper, cncf-ory-hydra
 ---
 
 

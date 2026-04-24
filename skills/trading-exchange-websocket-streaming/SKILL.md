@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: exchange websocket streaming, exchange-websocket-streaming, market, processing,
     real-time
+  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+    trading-data-order-book
 ---
-
 
 **Role:** Handle real-time WebSocket connections for low-latency market data
 

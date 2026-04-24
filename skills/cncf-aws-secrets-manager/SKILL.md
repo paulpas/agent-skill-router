@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: credential rotation, password rotation, secret management, secrets manager,
     sensitive data
-  related-skills: cncf-aws-iam, cncf-aws-kms, cncf-aws-lambda
+  related-skills: cncf-aws-iam, cncf-aws-kms, cncf-aws-lambda, cncf-aws-ssm
 ---
 
 

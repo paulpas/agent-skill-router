@@ -12,6 +12,7 @@ metadata:
   scope: orchestration
   output-format: analysis
   triggers: executes, multiple, parallel skill runner, parallel-skill-runner, specifications
+  related-skills: agent-confidence-based-selector, agent-dynamic-replanner, agent-error-trace-explainer, agent-multi-skill-executor, agent-regression-detector
 ---
 
 

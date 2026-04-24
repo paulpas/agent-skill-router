@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: cmk, customer-managed key, data encryption, encryption, key management,
     key rotation, kms
-  related-skills: cncf-aws-s3, cncf-aws-rds, cncf-aws-dynamodb, cncf-aws-iam
+  related-skills: cncf-aws-dynamodb, cncf-aws-ecr, cncf-aws-iam, cncf-aws-rds
 ---
 
 

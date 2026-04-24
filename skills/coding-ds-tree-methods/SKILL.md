@@ -1,16 +1,18 @@
 ---
 name: coding-ds-tree-methods
-description: Implements decision trees, random forests, gradient boosting (XGBoost, LightGBM), and tree ensemble methods for classification and regression
+description: Implements decision trees, random forests, gradient boosting (XGBoost,
+  LightGBM), and tree ensemble methods for classification and regression
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
   role: implementation
   scope: implementation
   output-format: code
-  triggers: decision trees, random forest, gradient boosting, xgboost, lightgbm, how do i use trees
-  related-skills: coding-ds-ensemble-methods, coding-ds-feature-importance, coding-ds-hyperparameter-tuning
+  triggers: decision trees, random forest, gradient boosting, xgboost, lightgbm, how
+    do i use trees
+  related-skills: coding-ds-ensemble-methods, coding-ds-hyperparameter-tuning
 ---
 
 # Tree-Based Methods

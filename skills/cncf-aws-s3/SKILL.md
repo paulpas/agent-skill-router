@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: s3, object storage, bucket, versioning, lifecycle policy, s3 access, static
     website, object expiration
-  related-skills: cncf-aws-cloudformation, cncf-aws-iam, cncf-aws-kms
+  related-skills: cncf-aws-cloudformation, cncf-aws-cloudfront, cncf-aws-iam, cncf-aws-kms
 ---
 
 

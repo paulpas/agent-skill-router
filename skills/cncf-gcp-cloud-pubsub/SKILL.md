@@ -1,6 +1,7 @@
 ---
 name: cncf-gcp-cloud-pubsub
-description: Asynchronous messaging service for event streaming and decoupled application integration.
+description: Asynchronous messaging service for event streaming and decoupled application
+  integration.
 license: MIT
 compatibility: opencode
 metadata:
@@ -10,7 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: pubsub, messaging, event streaming, message queue, asynchronous messaging
-  related-skills: cncf-gcp-cloud-functions, cncf-gcp-cloud-tasks, cncf-gcp-cloud-monitoring, cncf-gcp-dataflow
+  related-skills: cncf-gcp-cloud-functions, cncf-gcp-cloud-monitoring, cncf-gcp-cloud-tasks
 ---
 
 

@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: cloudwatch, monitoring, metrics, logs, alarms, dashboard, log insights,
     log groups
-  related-skills: cncf-aws-ec2, cncf-aws-lambda, cncf-aws-dynamodb, cncf-aws-cloudtrail
+  related-skills: cncf-aws-auto-scaling, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 ---
 
 

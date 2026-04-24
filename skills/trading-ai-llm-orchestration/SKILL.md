@@ -11,8 +11,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: ai llm orchestration, ai-llm-orchestration, language, large, model
+  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis,
+    trading-technical-false-signal-filtering
 ---
-
 
 # LLM Orchestration for Trading: The 5 Laws of AI-Powered Analysis
 

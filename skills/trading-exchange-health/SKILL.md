@@ -11,10 +11,9 @@ metadata:
   output-format: code
   triggers: connectivity, exchange health, exchange-health, monitoring, system, cloudwatch,
     logging
+  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+    trading-data-order-book
 ---
-
-
-
 
 **Role:** Monitor exchange API health and availability to ensure reliable trading operations
 

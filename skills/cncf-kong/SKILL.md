@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, gateway, infrastructure as code, kong, monitoring, native, api gateway,
     api management
+  related-skills: cncf-calico, cncf-cilium, cncf-kong-ingress-controller
 ---
 
 

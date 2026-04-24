@@ -12,8 +12,9 @@ metadata:
   output-format: code
   triggers: connectivity, effective, exchange ccxt patterns, exchange-ccxt-patterns,
     library
+  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+    trading-data-order-book
 ---
-
 
 **Role:** Guide an AI coding assistant to build robust exchange integrations using CCXT with proper error handling, state management, and performance optimization
 

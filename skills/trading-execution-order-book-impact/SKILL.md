@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: execution order book impact, execution-order-book-impact, market, measurement,
     microstructure
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Market Microstructure Analyst — designs tools to measure, predict, and mitigate the impact of trading activity on order book dynamics.
 

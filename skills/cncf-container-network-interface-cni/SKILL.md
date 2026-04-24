@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: architecture, cdn, container network interface cni, container-network-interface-cni,
     infrastructure as code, monitoring, native, cloudformation
+  related-skills: cncf-calico, cncf-cilium, cncf-lima, cncf-longhorn
 ---
 
 

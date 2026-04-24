@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: event hubs, event streaming, data ingestion, streaming, message streaming
-  related-skills: cncf-azure-service-bus, cncf-azure-stream-analytics, cncf-azure-monitor, cncf-azure-functions
+  related-skills: cncf-azure-functions, cncf-azure-monitor, cncf-azure-service-bus
 ---
 
 

@@ -11,8 +11,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: calculating, optimal, risk position sizing, risk-position-sizing, sizes
+  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing,
+    trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
-
 
 **Role:** Guide an AI coding assistant to implement mathematically sound position sizing that balances growth optimization with capital preservation across varying market conditions
 

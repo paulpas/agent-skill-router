@@ -1,6 +1,7 @@
 ---
 name: cncf-azure-rbac
-description: Manages identity and access with roles, service principals, and fine-grained permissions.
+description: Manages identity and access with roles, service principals, and fine-grained
+  permissions.
 license: MIT
 compatibility: opencode
 metadata:
@@ -10,7 +11,8 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: rbac, role-based access, access control, iam, roles, permissions
-  related-skills: cncf-azure-key-vault, cncf-azure-virtual-machines, cncf-azure-aks, cncf-azure-monitor
+  related-skills: cncf-azure-aks, cncf-azure-automation, cncf-azure-blob-storage,
+    cncf-azure-key-vault
 ---
 
 

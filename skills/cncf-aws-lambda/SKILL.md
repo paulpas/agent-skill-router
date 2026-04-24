@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: lambda, serverless, event-driven, lambda function, api gateway, s3 trigger,
     sqs, dynamodb stream
-  related-skills: cncf-aws-iam, cncf-aws-sqs, cncf-aws-dynamodb, cncf-aws-cloudwatch
+  related-skills: cncf-aws-cloudwatch, cncf-aws-dynamodb, cncf-aws-iam, cncf-aws-secrets-manager
 ---
 
 

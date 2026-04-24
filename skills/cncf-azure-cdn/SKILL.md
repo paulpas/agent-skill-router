@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cdn, content delivery, content distribution, caching, global delivery
-  related-skills: cncf-azure-blob-storage, cncf-azure-virtual-machines, cncf-azure-monitor, cncf-azure-app-service
+  related-skills: cncf-azure-blob-storage, cncf-azure-monitor, cncf-azure-virtual-machines
 ---
 
 

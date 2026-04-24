@@ -1,6 +1,7 @@
 ---
 name: cncf-gcp-deployment-manager
-description: Infrastructure as code using YAML templates for repeatable GCP resource deployments.
+description: Infrastructure as code using YAML templates for repeatable GCP resource
+  deployments.
 license: MIT
 compatibility: opencode
 metadata:
@@ -10,7 +11,8 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: deployment manager, infrastructure as code, iac, templates, yaml
-  related-skills: cncf-gcp-compute-engine, cncf-gcp-vpc, cncf-gcp-cloud-sql, cncf-gcp-gke
+  related-skills: cncf-azure-resource-manager, cncf-gcp-cloud-sql, cncf-gcp-compute-engine,
+    cncf-gcp-gke
 ---
 
 

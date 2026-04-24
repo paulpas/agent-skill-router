@@ -10,8 +10,8 @@ metadata:
   role: orchestration
   scope: orchestration
   output-format: analysis
-  triggers: appropriate, confidence based selector, confidence-based-selector, executes,
-    selects
+  triggers: appropriate, confidence based selector, confidence-based-selector, executes, selects
+  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-container-inspector, agent-diff-quality-analyzer
 ---
 
 

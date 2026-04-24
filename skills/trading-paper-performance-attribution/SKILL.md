@@ -11,10 +11,9 @@ metadata:
   output-format: code
   triggers: optimization, paper performance attribution, paper-performance-attribution,
     strategy, systems, trading, performance, speed
+  related-skills: trading-backtest-lookahead-bias, trading-backtest-position-exits,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
-
-
 
 **Role:** Performance Analyst — implements systems to decompose portfolio returns into signal, execution, and market components to understand sources of alpha and identify areas for improvement.
 

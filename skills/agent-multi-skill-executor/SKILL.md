@@ -12,6 +12,7 @@ metadata:
   scope: orchestration
   output-format: analysis
   triggers: execution, multi skill executor, multi-skill-executor, multiple, orchestrates
+  related-skills: agent-code-correctness-verifier, agent-confidence-based-selector, agent-dynamic-replanner, agent-error-trace-explainer, agent-hot-path-detector
 ---
 
 

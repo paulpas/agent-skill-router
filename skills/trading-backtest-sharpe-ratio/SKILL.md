@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: backtest sharpe ratio, backtest-sharpe-ratio, calculation, optimization,
     performance, risk-adjusted, speed
+  related-skills: trading-backtest-lookahead-bias, trading-backtest-position-exits,
+    trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
-
 
 **Role:** Risk-Adjusted Performance Analyst — implements comprehensive Sharpe ratio calculations and risk-adjusted performance metrics to evaluate strategy quality while accounting for volatility and risk.
 

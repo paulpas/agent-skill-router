@@ -1,6 +1,7 @@
 ---
 name: cncf-azure-virtual-machines
-description: Deploys and manages VMs with auto-scaling, availability sets, and integration with Azure services.
+description: Deploys and manages VMs with auto-scaling, availability sets, and integration
+  with Azure services.
 license: MIT
 compatibility: opencode
 metadata:
@@ -10,7 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: virtual machines, vm, azure vm, compute, instance types, scaling
-  related-skills: cncf-azure-virtual-networks, cncf-azure-monitor, cncf-azure-rbac, cncf-azure-scale-sets
+  related-skills: cncf-azure-automation, cncf-azure-monitor, cncf-azure-rbac, cncf-azure-scale-sets
 ---
 
 

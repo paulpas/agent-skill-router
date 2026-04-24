@@ -1,15 +1,18 @@
 ---
 name: trading-data-alternative-data
-description: Alternative data ingestion pipelines for trading signals including news, social media, and on-chain data sources
+description: Alternative data ingestion pipelines for trading signals including news,
+  social media, and on-chain data sources
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
   triggers: data alternative data, data-alternative-data, ingestion, pipelines, trading
+  related-skills: trading-data-backfill-strategy, trading-data-candle-data, trading-ai-order-flow-analysis,
+    trading-data-order-book
 ---
 
 # Alternative Data Ingestion Pipeline: The 5 Laws of Data Normalization

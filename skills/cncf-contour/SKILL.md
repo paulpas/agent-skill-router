@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, contour, infrastructure as code, k8s service, kubernetes service,
     monitoring, proxy, service
+  related-skills: cncf-calico, cncf-cilium, cncf-kuma, cncf-linkerd
 ---
 
 # Contour in Cloud-Native Engineering

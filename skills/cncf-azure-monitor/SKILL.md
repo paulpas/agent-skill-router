@@ -10,7 +10,8 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: azure monitor, monitoring, logging, observability, metrics, alerts
-  related-skills: cncf-azure-virtual-machines, cncf-azure-sql-database, cncf-azure-aks, cncf-azure-functions
+  related-skills: cncf-azure-aks, cncf-azure-automation, cncf-azure-blob-storage,
+    cncf-azure-functions
 ---
 
 

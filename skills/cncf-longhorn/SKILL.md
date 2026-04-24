@@ -12,6 +12,8 @@ metadata:
   output-format: manifests
   triggers: cdn, infrastructure as code, longhorn, monitoring, native, storage, cloudformation,
     cloudfront
+  related-skills: cncf-calico, cncf-cilium, cncf-container-network-interface-cni,
+    cncf-nats
 ---
 
 

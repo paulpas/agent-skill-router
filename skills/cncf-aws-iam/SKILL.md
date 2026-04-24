@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: iam, identity management, access control, iam role, iam policy, mfa, least
     privilege, service role
-  related-skills: cncf-aws-kms, cncf-aws-secrets-manager, cncf-aws-cloudtrail
+  related-skills: cncf-aws-cloudformation, cncf-aws-ec2, cncf-aws-ecr, cncf-aws-eks
 ---
 
 

@@ -11,8 +11,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: average, execution twap, execution-twap, price, time-weighted
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Execute large orders over time to minimize market impact and achieve good prices
 

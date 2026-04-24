@@ -12,8 +12,9 @@ metadata:
   output-format: code
   triggers: analytics, exchange trade reporting, exchange-trade-reporting, execution,
     real-time
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Generate and analyze trade reports for performance monitoring and regulatory compliance
 

@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: data backfill strategy, data-backfill-strategy, historical, populating,
     strategic
+  related-skills: trading-data-alternative-data, trading-data-candle-data, trading-ai-order-flow-analysis,
+    trading-data-order-book
 ---
-
 
 **Role:** Efficiently populate and maintain historical data for analysis and backtesting
 

@@ -11,8 +11,8 @@ metadata:
   role: quality assurance
   scope: regression detection
   output-format: analysis
-  triggers: behavioral, detects, optimization, performance, regression detector, regression-detector,
-    regressions, speed
+  triggers: behavioral, detects, optimization, performance, regression detector, regression-detector, regressions, speed
+  related-skills: agent-code-correctness-verifier, agent-error-trace-explainer, agent-goal-to-milestones, agent-hot-path-detector, agent-infra-drift-detector
 ---
 
 

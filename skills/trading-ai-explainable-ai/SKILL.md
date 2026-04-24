@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: ai explainable ai, ai-explainable-ai, trading, trusting, understanding
+  related-skills: trading-ai-anomaly-detection, trading-ai-feature-engineering, trading-technical-cycle-analysis,
+    trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Build interpretability systems that make model predictions understandable to traders and risk managers
 

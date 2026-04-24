@@ -1,15 +1,19 @@
 ---
 name: trading-fundamentals-risk-management-basics
-description: Position sizing, stop-loss implementation, and system-level risk controls to preserve capital
+description: Position sizing, stop-loss implementation, and system-level risk controls
+  to preserve capital
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: fundamentals risk management basics, fundamentals-risk-management-basics, position, sizing, stop-loss
+  triggers: fundamentals risk management basics, fundamentals-risk-management-basics,
+    position, sizing, stop-loss
+  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing,
+    trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
 
 **Role:** Guide an AI coding assistant to implement robust risk management that prevents catastrophic losses while allowing trading opportunities to breathe

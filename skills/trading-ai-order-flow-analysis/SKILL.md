@@ -4,12 +4,14 @@ description: Analyze order flow to detect market pressure and anticipate price m
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
   triggers: ai order flow analysis, ai-order-flow-analysis, analyze, detect, market
+  related-skills: trading-data-order-book, trading-fundamentals-market-structure,
+    trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
 
 **Role:** Extract actionable insights from order book dynamics and trade flow data

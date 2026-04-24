@@ -11,6 +11,7 @@ metadata:
   scope: log analysis
   output-format: analysis
   triggers: analyzes, logs, patterns, runtime, runtime log analyzer, runtime-log-analyzer
+  related-skills: agent-code-correctness-verifier, agent-confidence-based-selector, agent-error-trace-explainer, agent-k8s-debugger, agent-multi-skill-executor
 ---
 
 

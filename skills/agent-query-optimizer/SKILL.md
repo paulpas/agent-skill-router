@@ -10,8 +10,8 @@ metadata:
   role: optimization
   scope: query
   output-format: optimization
-  triggers: database optimization, query optimization, query optimizer, query-optimizer,
-    relational database, sql optimization, postgresql, postgres
+  triggers: database optimization, query optimization, query optimizer, query-optimizer, relational database, sql optimization, postgresql, postgres
+  related-skills: agent-add-new-skill, agent-code-correctness-verifier, agent-confidence-based-selector, agent-goal-to-milestones, agent-network-diagnostics
 ---
 
 

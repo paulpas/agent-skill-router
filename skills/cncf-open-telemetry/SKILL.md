@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, infrastructure as code, monitoring, observability, open telemetry,
     open-telemetry, opentelemetry, cloudformation
+  related-skills: cncf-calico, cncf-cilium, cncf-longhorn, cncf-nats
 ---
 
 

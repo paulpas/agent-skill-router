@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: execution, models, order, paper fill simulation, paper-fill-simulation
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Fill Simulation Engineer — implements sophisticated models for predicting order fill probability, partial fills, and execution quality under realistic market conditions.
 

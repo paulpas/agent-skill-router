@@ -1,0 +1,212 @@
+================================================================================
+           SKILL RELATIONSHIP ANALYSIS - BASELINE REPORT
+           First Comprehensive Analysis Run - 2026-04-24
+================================================================================
+
+📊 EXECUTIVE SUMMARY
+================================================================================
+
+Analysis Date:       2026-04-24 16:29:57
+Report File:         SKILL_RELATIONSHIPS_ANALYSIS.md (380 lines)
+Total Skills:        337
+Status:              🔴 CRITICAL - Network requires urgent attention
+
+KEY METRICS:
+┌─────────────────────────────────────────────────────────────────────┐
+│ Total Skills                    337                                 │
+│ Orphaned Skills (0-1 rels)      201 (59.6%) ← CRITICAL             │
+│ Reciprocal Failures             187 (35.7%) ← ACTION REQUIRED      │
+│ Average Relations/Skill          1.40 ← BELOW TARGET (2.0+)        │
+│ Network Health Score             23% ← FAILING                     │
+└─────────────────────────────────────────────────────────────────────┘
+
+BASELINE STATISTICS BY DOMAIN
+================================================================================
+
+┌──────────────┬───────┬─────────────────┬──────────┬────────────────┐
+│ Domain       │ Count │ Avg Relations   │ Orphaned │ Health Score   │
+├──────────────┼───────┼─────────────────┼──────────┼────────────────┤
+│ agent        │  29   │  0.00 (0%)      │  29/29   │ 🔴 0%          │
+│ cncf         │ 149   │  2.01 (decent)  │  71/149  │ 🟡 52.3%       │
+│ coding       │  73   │  2.36 (good)    │  15/73   │ 🟢 79.5%       │
+│ programming  │   3   │  0.67 (poor)    │   3/3    │ 🔴 0%          │
+│ trading      │  83   │  0.00 (0%)      │  83/83   │ 🔴 0%          │
+├──────────────┼───────┼─────────────────┼──────────┼────────────────┤
+│ TOTAL        │ 337   │  1.40           │ 201/337  │ 🔴 23%         │
+└──────────────┴───────┴─────────────────┴──────────┴────────────────┘
+
+CRITICAL FINDINGS
+================================================================================
+
+⚠️  AGENT DOMAIN COMPLETELY DISCONNECTED
+    • 29 skills with ZERO relationships (0.00 avg)
+    • 100% orphaned rate
+    • These are foundational orchestration skills
+    • Should be the most connected domain
+    • Impact: Medium (29 skills) | Effort: Medium | Priority: HIGH
+
+⚠️  TRADING DOMAIN COMPLETELY DISCONNECTED
+    • 83 skills with ZERO relationships (0.00 avg)
+    • 100% orphaned rate
+    • Largest isolated domain
+    • Should have clear strategy/execution/risk relationships
+    • Impact: Highest (83 skills) | Effort: High | Priority: HIGH
+
+⚠️  PROGRAMMING DOMAIN COMPLETELY DISCONNECTED
+    • 3 skills with ZERO relationships (0.67 avg)
+    • 100% orphaned rate
+    • Smallest domain but critical foundational skills
+    • Impact: Low (3 skills) | Effort: Low | Priority: MEDIUM
+
+⚠️  RECIPROCAL RELATIONSHIP FAILURES
+    • 187 one-way relationships found
+    • 35.7% of relationships are asymmetrical
+    • Many skills declare relationships that aren't reciprocated
+    • Creates poor user experience in skill discovery
+    • Indicates incomplete implementation
+
+POSITIVE FINDINGS
+================================================================================
+
+✅ CODING DOMAIN IS WELL-CONNECTED
+   • 73 skills with 2.36 avg relationships
+   • Only 15 orphaned (20.5%)
+   • 79.5% network health
+   • This is the target model for other domains
+   • Can serve as template for improvements
+
+✅ CNCF DOMAIN IS ACCEPTABLE
+   • 149 skills with 2.01 avg relationships
+   • 47.7% orphaned (best non-coding)
+   • 52.3% network health
+   • AWS/Azure/GCP relationships partially established
+   • Good foundation to build upon
+
+IMPROVEMENT OPPORTUNITIES
+================================================================================
+
+QUICK WINS (Best ROI):
+
+1️⃣  FIX RECIPROCAL FAILURES [Effort: 2 hrs | Impact: Network symmetry]
+    • Leverage existing relationship data
+    • No new relationships needed
+    • Just complete the one-way connections
+    • Expected result: 187 → 0 failures
+
+2️⃣  AGENT DOMAIN [Effort: 3 hrs | Impact: +29-58 relationships]
+    • Small, foundational domain
+    • Clear hierarchical structure possible
+    • Current: 0 avg → Target: 2+
+    • Est. improvement: 0% → 66%+ health
+
+3️⃣  PROGRAMMING DOMAIN [Effort: 30 min | Impact: Quick win]
+    • Only 3 skills
+    • Link to coding-* where applicable
+    • Current: 0.67 avg → Target: 2+
+    • Est. improvement: 0% → 66%+ health
+
+HIGH-IMPACT PROJECTS:
+
+4️⃣  TRADING DOMAIN [Effort: 6 hrs | Impact: +83-166 relationships]
+    • Largest opportunity (83 skills)
+    • Requires domain expertise
+    • Group by: Strategy, Risk, Execution, Signals
+    • Current: 0 avg → Target: 2+
+    • Est. improvement: 0% → 78%+ health
+
+5️⃣  CNCF EXPANSION [Effort: 4 hrs | Impact: +50+ relationships]
+    • Build cloud ecosystem relationships
+    • Leverage AWS/Azure/GCP families
+    • Current: 2.01 → Target: 3.0+
+    • Est. improvement: 52% → 85%+ health
+
+CONCRETE IMPROVEMENT PATH
+================================================================================
+
+PHASE 1: QUICK WINS (Expected: 2 hours)
+  ├─ Fix 187 reciprocal failures
+  ├─ Add 3 programming-* relationships
+  ├─ Expected new avg relations: 1.40 → 1.55
+  └─ Expected new orphaned: 201 → 195
+
+PHASE 2: AGENT DOMAIN (Expected: 3 hours)
+  ├─ Define 29 inter-skill relationships
+  ├─ Build hierarchical network
+  ├─ Expected new avg relations: 1.55 → 1.65
+  └─ Expected new orphaned: 195 → 166
+
+PHASE 3: TRADING DOMAIN (Expected: 6 hours)
+  ├─ Define strategy ecosystem
+  ├─ Add ~100-120 relationships
+  ├─ Expected new avg relations: 1.65 → 1.95
+  └─ Expected new orphaned: 166 → 83
+
+PHASE 4: CNCF EXPANSION (Expected: 4 hours)
+  ├─ Complete orphaned CNCF skills
+  ├─ Add ~50+ relationships
+  ├─ Expected new avg relations: 1.95 → 2.10
+  └─ Expected new orphaned: 83 → 33
+
+AFTER ALL PHASES:
+  ├─ Expected average relations: 1.40 → 2.10 (50% improvement)
+  ├─ Expected orphaned: 201 → 33 (83% reduction)
+  ├─ Expected reciprocal failures: 187 → 0 (100% fixed)
+  └─ Expected network health: 23% → 76% (GOOD)
+
+NEXT STEPS
+================================================================================
+
+1. ✓ SAVE BASELINE
+   └─ File: ANALYSIS_BASELINE_2026-04-24.txt (this file)
+
+2. ⏳ CREATE IMPROVEMENT PLAN
+   └─ By domain with specific skill relationships
+
+3. ⏳ IMPLEMENT FIXES
+   └─ Phase 1-4 as outlined above
+
+4. ⏳ RE-RUN ANALYSIS
+   └─ After each phase
+   └─ Compare against baseline metrics
+   └─ Track percentage improvements
+
+5. ⏳ DOCUMENT CHANGES
+   └─ Create BEFORE/AFTER comparisons
+   └─ Track ROI by phase
+
+METRICS TRACKING
+================================================================================
+
+Use these formulas to measure improvement:
+
+Orphaned Reduction %:
+  = ((Baseline Orphaned - New Orphaned) / Baseline Orphaned) × 100
+  = ((201 - NEW) / 201) × 100
+
+Avg Relations Improvement %:
+  = ((New Avg - Baseline Avg) / Baseline Avg) × 100
+  = ((NEW - 1.40) / 1.40) × 100
+
+Reciprocal Failure Reduction %:
+  = ((187 - NEW) / 187) × 100
+
+Overall Network Health %:
+  = (Avg Relations / 2.0) × (1 - Orphaned%) × (1 - Reciprocal Failures%)
+
+BASELINE VALUES FOR COMPARISON:
+┌──────────────────────────────────────────────┐
+│ Total Skills:              337                │
+│ Orphaned Skills:           201 (59.6%)        │
+│ Reciprocal Failures:       187 (35.7%)        │
+│ Average Relations:         1.40               │
+│ Network Health:            23%                │
+│                                              │
+│ Best Domain: coding (79.5%)                  │
+│ Worst Domain: agent/trading/prog (0-0.67%)  │
+└──────────────────────────────────────────────┘
+
+================================================================================
+
+Generated: 2026-04-24 16:29:57
+Analysis Source: SKILL_RELATIONSHIPS_ANALYSIS.md (380 lines)
+Next Review: After implementation of Phase 1

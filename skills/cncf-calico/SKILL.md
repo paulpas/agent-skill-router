@@ -12,6 +12,8 @@ metadata:
   output-format: manifests
   triggers: calico, cdn, how do i find security issues, infrastructure as code, monitoring,
     native, security, vulnerability scanning
+  related-skills: cncf-cilium, cncf-container-network-interface-cni, cncf-contour,
+    cncf-in-toto
 ---
 
 

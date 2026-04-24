@@ -10,8 +10,8 @@ metadata:
   role: debugging
   scope: kubernetes
   output-format: analysis
-  triggers: container orchestration, diagnoses, k8s, k8s debugger, k8s-debugger, kubernetes-debugger,
-    kubernetes
+  triggers: container orchestration, diagnoses, k8s, k8s debugger, k8s-debugger, kubernetes-debugger, kubernetes
+  related-skills: agent-code-correctness-verifier, agent-confidence-based-selector, agent-error-trace-explainer, agent-multi-skill-executor, agent-regression-detector
 ---
 
 

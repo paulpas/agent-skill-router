@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: assessment, execution, risk liquidity risk, risk-liquidity-risk, trade
+  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing,
+    trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
-
 
 **Role:** Evaluate liquidity conditions before executing trades
 

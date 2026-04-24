@@ -23,7 +23,7 @@
       "autoscaling-advisor",
       "scale-in",
       "scale-out",
-      "scaling"
+      "scaling policies"
     ],
     "path": "skills/agent-autoscaling-advisor/SKILL.md"
   },
@@ -36,7 +36,8 @@
       "build bottlenecks",
       "ci-cd analysis",
       "ci-cd analyzer",
-      "ci-cd-pipeline-analyzer"
+      "ci-cd-pipeline-analyzer",
+      "pipeline optimization"
     ],
     "path": "skills/agent-ci-cd-pipeline-analyzer/SKILL.md"
   },
@@ -49,7 +50,9 @@
       "code correctness verifier",
       "code-correctness-verifier",
       "semantics",
-      "syntax"
+      "syntax",
+      "types",
+      "verifies"
     ],
     "path": "skills/agent-code-correctness-verifier/SKILL.md"
   },
@@ -62,7 +65,8 @@
       "appropriate",
       "confidence based selector",
       "confidence-based-selector",
-      "executes"
+      "executes",
+      "selects"
     ],
     "path": "skills/agent-confidence-based-selector/SKILL.md"
   },
@@ -103,7 +107,10 @@
       "analyzes",
       "code quality",
       "diff quality analyzer",
-      "diff-quality-analyzer"
+      "diff-quality-analyzer",
+      "diffs",
+      "linting",
+      "code standards"
     ],
     "path": "skills/agent-diff-quality-analyzer/SKILL.md"
   },
@@ -131,7 +138,8 @@
       "error-trace-explainer",
       "errors",
       "exceptions",
-      "explains"
+      "explains",
+      "traces"
     ],
     "path": "skills/agent-error-trace-explainer/SKILL.md"
   },
@@ -145,7 +153,8 @@
       "failure mode analysis",
       "failure-mode-analysis",
       "failures",
-      "mitigation"
+      "mitigation",
+      "risk"
     ],
     "path": "skills/agent-failure-mode-analysis/SKILL.md"
   },
@@ -186,7 +195,8 @@
       "cloud infrastructure",
       "drift detection",
       "infra drift",
-      "infra-drift-detector"
+      "infra-drift-detector",
+      "infrastructure drift"
     ],
     "path": "skills/agent-infra-drift-detector/SKILL.md"
   },
@@ -201,7 +211,8 @@
       "k8s",
       "k8s debugger",
       "k8s-debugger",
-      "kubernetes-debugger"
+      "kubernetes-debugger",
+      "kubernetes"
     ],
     "path": "skills/agent-k8s-debugger/SKILL.md"
   },
@@ -242,7 +253,8 @@
       "bottlenecks",
       "connectivity issues",
       "network analysis",
-      "network diagnostics"
+      "network diagnostics",
+      "network-diagnostics"
     ],
     "path": "skills/agent-network-diagnostics/SKILL.md"
   },
@@ -269,7 +281,10 @@
       "bottlenecks",
       "optimization",
       "performance profiler",
-      "performance-profiler"
+      "performance-profiler",
+      "profiles",
+      "performance",
+      "speed"
     ],
     "path": "skills/agent-performance-profiler/SKILL.md"
   },
@@ -282,7 +297,11 @@
       "database optimization",
       "query optimization",
       "query optimizer",
-      "query-optimizer"
+      "query-optimizer",
+      "relational database",
+      "sql optimization",
+      "postgresql",
+      "postgres"
     ],
     "path": "skills/agent-query-optimizer/SKILL.md"
   },
@@ -297,7 +316,9 @@
       "optimization",
       "performance",
       "regression detector",
-      "regression-detector"
+      "regression-detector",
+      "regressions",
+      "speed"
     ],
     "path": "skills/agent-regression-detector/SKILL.md"
   },
@@ -352,7 +373,8 @@
       "evaluates",
       "quality",
       "self critique engine",
-      "self-critique-engine"
+      "self-critique-engine",
+      "self-critiques"
     ],
     "path": "skills/agent-self-critique-engine/SKILL.md"
   },
@@ -366,7 +388,8 @@
       "failures",
       "root cause",
       "stacktrace root cause",
-      "stacktrace-root-cause"
+      "stacktrace-root-cause",
+      "stacktraces"
     ],
     "path": "skills/agent-stacktrace-root-cause/SKILL.md"
   },
@@ -379,7 +402,8 @@
       "complex",
       "decomposes",
       "task decomposition engine",
-      "task-decomposition-engine"
+      "task-decomposition-engine",
+      "tasks"
     ],
     "path": "skills/agent-task-decomposition-engine/SKILL.md"
   },
@@ -393,7 +417,8 @@
       "test oracle",
       "test validation",
       "test-oracle",
-      "enterprise"
+      "enterprise database",
+      "oracle"
     ],
     "path": "skills/agent-test-oracle-generator/SKILL.md"
   },
@@ -847,7 +872,7 @@
   },
   {
     "name": "cncf-azure-key-vault",
-    "description": "Manages encryption keys, secrets, and certificates with access control and auditing.",
+    "description": "Manages encryption keys, secrets, and certificates with access control",
     "domain": "cncf",
     "tags": [
       "cncf",
@@ -855,7 +880,7 @@
       "key management",
       "secrets",
       "certificate management",
-      "encryption keys"
+      "encryption"
     ],
     "path": "skills/cncf-azure-key-vault/SKILL.md"
   },
@@ -904,7 +929,7 @@
   },
   {
     "name": "cncf-azure-rbac",
-    "description": "Manages identity and access with roles, service principals, and fine-grained permissions.",
+    "description": "Manages identity and access with roles, service principals, and fine-grained",
     "domain": "cncf",
     "tags": [
       "cncf",
@@ -991,7 +1016,7 @@
   },
   {
     "name": "cncf-azure-virtual-machines",
-    "description": "Deploys and manages VMs with auto-scaling, availability sets, and integration with Azure services.",
+    "description": "Deploys and manages VMs with auto-scaling, availability sets, and integration",
     "domain": "cncf",
     "tags": [
       "cncf",
@@ -1510,7 +1535,7 @@
   },
   {
     "name": "cncf-gcp-cloud-pubsub",
-    "description": "Asynchronous messaging service for event streaming and decoupled application integration.",
+    "description": "Asynchronous messaging service for event streaming and decoupled application",
     "domain": "cncf",
     "tags": [
       "cncf",
@@ -1553,7 +1578,7 @@
   },
   {
     "name": "cncf-gcp-cloud-tasks",
-    "description": "Manages task queues for asynchronous job execution with retry policies and rate limiting.",
+    "description": "Manages task queues for asynchronous job execution with retry policies",
     "domain": "cncf",
     "tags": [
       "cncf",
@@ -1596,7 +1621,7 @@
   },
   {
     "name": "cncf-gcp-deployment-manager",
-    "description": "Infrastructure as code using YAML templates for repeatable GCP resource deployments.",
+    "description": "Infrastructure as code using YAML templates for repeatable GCP resource",
     "domain": "cncf",
     "tags": [
       "cncf",
@@ -1638,7 +1663,7 @@
   },
   {
     "name": "cncf-gcp-iam",
-    "description": "Manages identity and access control with service accounts, roles, and fine-grained permissions.",
+    "description": "Manages identity and access control with service accounts, roles, and",
     "domain": "cncf",
     "tags": [
       "cncf",
@@ -3408,7 +3433,7 @@
   },
   {
     "name": "coding-ds-tree-methods",
-    "description": "Implements decision trees, random forests, gradient boosting (XGBoost, LightGBM), and tree ensemble methods for classification and regression",
+    "description": "Implements decision trees, random forests, gradient boosting (XGBoost,",
     "domain": "coding",
     "tags": [
       "coding",
@@ -3417,7 +3442,7 @@
       "gradient boosting",
       "xgboost",
       "lightgbm",
-      "how do i use trees"
+      "how"
     ],
     "path": "skills/coding-ds-tree-methods/SKILL.md"
   },
@@ -3592,7 +3617,7 @@
   },
   {
     "name": "programming-abl-v10-learning",
-    "description": "Reference guide for Progress OpenEdge ABL 10.1A (2005) \\u2014 data types,\\",
+    "description": "Reference guide for Progress OpenEdge ABL 10.1A (2005) \u2014 data types,",
     "domain": "programming",
     "tags": [
       "programming",
@@ -3608,7 +3633,7 @@
   },
   {
     "name": "programming-abl-v12-learning",
-    "description": "Reference guide for Progress OpenEdge ABL 12.7 (2023) \\u2014 v10\\u2192\\",
+    "description": "Reference guide for Progress OpenEdge ABL 12.7 (2023) \u2014 v10\u2192v12 migration,",
     "domain": "programming",
     "tags": [
       "programming",
@@ -3864,8 +3889,7 @@
       "ai volatility prediction",
       "ai-volatility-prediction",
       "forecast",
-      "management",
-      "option"
+      "management"
     ],
     "path": "skills/trading-ai-volatility-prediction/SKILL.md"
   },
@@ -3878,8 +3902,7 @@
       "backtest drawdown analysis",
       "backtest-drawdown-analysis",
       "maximum",
-      "recovery",
-      "value-at-risk"
+      "recovery"
     ],
     "path": "skills/trading-backtest-drawdown-analysis/SKILL.md"
   },
@@ -3952,7 +3975,7 @@
   },
   {
     "name": "trading-data-alternative-data",
-    "description": "Alternative data ingestion pipelines for trading signals including news, social media, and on-chain data sources",
+    "description": "Alternative data ingestion pipelines for trading signals including news,",
     "domain": "trading",
     "tags": [
       "data alternative data",
@@ -3978,7 +4001,7 @@
   },
   {
     "name": "trading-data-candle-data",
-    "description": "OHLCV candle data processing, timeframe management, and validation for trading algorithms",
+    "description": "OHLCV candle data processing, timeframe management, and validation for",
     "domain": "trading",
     "tags": [
       "trading",
@@ -4323,15 +4346,12 @@
   },
   {
     "name": "trading-fundamentals-risk-management-basics",
-    "description": "Position sizing, stop-loss implementation, and system-level risk controls to preserve capital",
+    "description": "Position sizing, stop-loss implementation, and system-level risk controls",
     "domain": "trading",
     "tags": [
       "trading",
       "fundamentals risk management basics",
-      "fundamentals-risk-management-basics",
-      "position",
-      "sizing",
-      "stop-loss"
+      "fundamentals-risk-management-basics"
     ],
     "path": "skills/trading-fundamentals-risk-management-basics/SKILL.md"
   },

@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: exchange order book sync, exchange-order-book-sync, management, state,
     synchronization
+  related-skills: trading-exchange-order-execution-api, trading-exchange-rate-limiting,
+    trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
-
 
 **Role:** Maintain consistent order book state across multiple exchanges and timeframes
 

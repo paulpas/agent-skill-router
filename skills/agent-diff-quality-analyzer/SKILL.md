@@ -10,8 +10,8 @@ metadata:
   role: analysis
   scope: code quality
   output-format: analysis
-  triggers: analyzes, code quality, diff quality analyzer, diff-quality-analyzer,
-    diffs, linting, code standards
+  triggers: analyzes, code quality, diff quality analyzer, diff-quality-analyzer, diffs, linting, code standards
+  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector, agent-container-inspector
 ---
 
 

@@ -11,6 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: chain, in toto, in-toto, supply
+  related-skills: cncf-calico
 ---
 
 # in-toto in Cloud-Native Engineering

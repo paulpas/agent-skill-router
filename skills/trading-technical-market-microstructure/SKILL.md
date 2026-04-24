@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   output-format: code
   triggers: analysis, dynamics, order, technical market microstructure, technical-market-microstructure
+  related-skills: trading-ai-order-flow-analysis, trading-data-order-book, trading-exchange-order-book-sync,
+    trading-exchange-order-execution-api
 ---
-
 
 **Role:** Analyze order book depth, spread, and trade execution patterns
 

@@ -11,8 +11,9 @@ metadata:
   output-format: code
   triggers: competitive, finding, fundamentals trading edge, fundamentals-trading-edge,
     maintaining
+  related-skills: trading-fundamentals-trading-plan, trading-fundamentals-trading-psychology,
+    trading-ai-multi-asset-model, trading-risk-correlation-risk
 ---
-
 
 **Role:** Identify, quantify, test, and optimize sources of edge in trading strategies to ensure long-term profitability.
 
