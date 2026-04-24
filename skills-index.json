@@ -2545,6 +2545,41 @@
     "path": "skills/cncf-zot/SKILL.md"
   },
   {
+    "name": "coding-architectural-patterns",
+    "description": "Software architecture patterns including MVC, MVVM, microservices, event-driven, CQRS, DDD, hexagonal architecture, layered architecture, and pattern selection criteria",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "architectural patterns",
+      "system design",
+      "architecture",
+      "microservices",
+      "design patterns",
+      "CQRS",
+      "DDD",
+      "hexagonal architecture",
+      "MVC"
+    ],
+    "path": "skills/coding-architectural-patterns/SKILL.md"
+  },
+  {
+    "name": "coding-code-quality-policies",
+    "description": "Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limits, and automated enforcement",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "code quality",
+      "clean code",
+      "linting",
+      "code formatting",
+      "testing policies",
+      "cyclomatic complexity",
+      "code standards",
+      "automated enforcement"
+    ],
+    "path": "skills/coding-code-quality-policies/SKILL.md"
+  },
+  {
     "name": "coding-code-review",
     "description": "Analyzes code diffs and files to identify bugs, security vulnerabilities,",
     "domain": "coding",
@@ -2571,6 +2606,23 @@
       "multi-factor"
     ],
     "path": "skills/coding-conviction-scoring/SKILL.md"
+  },
+  {
+    "name": "coding-cve-dependency-management",
+    "description": "Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerability scanning, and policy-driven patching",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "CVE",
+      "dependency management",
+      "vulnerability scanning",
+      "dependency updates",
+      "security patching",
+      "SCA",
+      "software composition analysis",
+      "vulnerability remediation"
+    ],
+    "path": "skills/coding-cve-dependency-management/SKILL.md"
   },
   {
     "name": "coding-data-normalization",
@@ -3489,6 +3541,23 @@
     "path": "skills/coding-fastapi-patterns/SKILL.md"
   },
   {
+    "name": "coding-git-advanced",
+    "description": "Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for experienced developers",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "git rebase",
+      "git cherry-pick",
+      "git bisect",
+      "git reflog",
+      "worktrees",
+      "filter-branch",
+      "multi-repo",
+      "advanced git"
+    ],
+    "path": "skills/coding-git-advanced/SKILL.md"
+  },
+  {
     "name": "coding-git-branching-strategies",
     "description": "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development,",
     "domain": "coding",
@@ -3571,6 +3640,23 @@
       "vulnerabilities"
     ],
     "path": "skills/coding-security-review/SKILL.md"
+  },
+  {
+    "name": "coding-semver-automation",
+    "description": "Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and tools like semantic-release",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "semantic versioning",
+      "semver",
+      "version bumping",
+      "conventional commits",
+      "semantic-release",
+      "changelog automation",
+      "release automation",
+      "git tags"
+    ],
+    "path": "skills/coding-semver-automation/SKILL.md"
   },
   {
     "name": "coding-strategy-base",

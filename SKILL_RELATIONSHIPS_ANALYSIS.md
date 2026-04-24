@@ -1,28 +1,28 @@
 # Skill Relationship Analysis Report
 
-**Generated:** 2026-04-24 17:45:54
-**Total Skills Analyzed:** 296
+**Generated:** 2026-04-24 17:59:56
+**Total Skills Analyzed:** 303
 
 ## 📊 Quick Statistics
 
-- **Total Skills:** 296
-- **Orphaned Skills** (0-1 relationships): 43 (14.5%)
-- **Reciprocal Failures:** 398
-- **Average Relations per Skill:** 2.78
+- **Total Skills:** 303
+- **Orphaned Skills** (0-1 relationships): 45 (14.9%)
+- **Reciprocal Failures:** 401
+- **Average Relations per Skill:** 2.76
 
 ## 🏢 Skills by Domain
 
 | Domain | Count | Avg Relations | Orphaned | Target |
 |--------|-------|---------------|----------|--------|
 | agent | 28 | 4.00 | 0 | 4+ |
-| cncf | 123 | 2.51 | 41 | 3+ |
-| coding | 59 | 3.47 | 1 | 4+ |
+| cncf | 123 | 2.52 | 41 | 3+ |
+| coding | 66 | 3.29 | 3 | 3+ |
 | programming | 3 | 1.33 | 1 | 2+ |
 | trading | 83 | 2.31 | 0 | 2+ |
 
 ## ❌ Reciprocal Failures
 
-Found **398** relationships that are not reciprocated.
+Found **401** relationships that are not reciprocated.
 
 ### agent-diff-quality-analyzer
 
@@ -156,7 +156,7 @@ Found **398** relationships that are not reciprocated.
 
 ## 🏜️ Orphaned Skills
 
-Found **43** skills with 0-1 relationships.
+Found **45** skills with 0-1 relationships.
 
 - **cncf-argo** (cncf): (none)
 - **cncf-artifact-hub** (cncf): (none)
@@ -189,7 +189,7 @@ Found **43** skills with 0-1 relationships.
 - **cncf-openyurt** (cncf): (none)
 - **cncf-operator-framework** (cncf): (none)
 
-... and 13 more
+... and 15 more
 
 ## 💡 Suggested New Relationships
 
@@ -402,7 +402,7 @@ Based on domain and semantic similarity analysis, here are **50** suggested rela
 3. **Domain-Specific Goals:**
    - **agent:** Increase from 4.0 to 4+ relations/skill
    - **cncf:** Increase from 2.5 to 3+ relations/skill
-   - **coding:** Increase from 3.5 to 4+ relations/skill
+   - **coding:** Increase from 3.3 to 3+ relations/skill
    - **programming:** Increase from 1.3 to 2+ relations/skill
    - **trading:** Increase from 2.3 to 2+ relations/skill
 

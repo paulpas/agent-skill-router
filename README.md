@@ -665,8 +665,8 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-04-24 17:45:56 UTC  
-> **Total skills:** 338
+> **Last updated:** 2026-04-24 17:59:36 UTC  
+> **Total skills:** 343
 
 ## Skills by Domain
 
@@ -861,12 +861,15 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-zot](../../skills/cncf-zot/SKILL.md) | Zot in Container Registry - cloud native architecture,... | cdn, container... |
 
 
-### Coding (74 skills)
+### Coding (79 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
+| [coding-architectural-patterns](../../skills/coding-architectural-patterns/SKILL.md) | Software architecture patterns including MVC, MVVM,... | architectural patterns, system design... |
+| [coding-code-quality-policies](../../skills/coding-code-quality-policies/SKILL.md) | Establishing policies for maintaining a clean codebase... | code quality, clean code... |
 | [coding-code-review](../../skills/coding-code-review/SKILL.md) | Analyzes code diffs and files to identify bugs, security... | analyzes, code review... |
 | [coding-conviction-scoring](../../skills/coding-conviction-scoring/SKILL.md) | Multi-factor conviction scoring engine combining technical,... | combining, conviction scoring... |
+| [coding-cve-dependency-management](../../skills/coding-cve-dependency-management/SKILL.md) | Cybersecurity operations skill for automating software... | CVE, dependency management... |
 | [coding-data-normalization](../../skills/coding-data-normalization/SKILL.md) | Exchange data normalization layer: typed dataclasses for... | data normalization, data-normalization... |
 | [coding-ds-ab-testing](../../skills/coding-ds-ab-testing/SKILL.md) | Designs and analyzes A/B tests including hypothesis... | A/B testing, A/B test... |
 | [coding-ds-anomaly-detection](../../skills/coding-ds-anomaly-detection/SKILL.md) | Detects anomalies and outliers using isolation forests,... | anomaly detection, outlier detection... |
@@ -929,12 +932,14 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [coding-event-bus](../../skills/coding-event-bus/SKILL.md) | Async pub/sub event bus with typed events, mixed sync/async... | async, event bus... |
 | [coding-event-driven-architecture](../../skills/coding-event-driven-architecture/SKILL.md) | Event-driven architecture for real-time trading systems:... | event driven architecture, event-driven... |
 | [coding-fastapi-patterns](../../skills/coding-fastapi-patterns/SKILL.md) | FastAPI application structure with typed error hierarchy,... | application, cloud infrastructure... |
+| [coding-git-advanced](../../skills/coding-git-advanced/SKILL.md) | Advanced Git operations including rebasing, cherry-picking,... | git rebase, git cherry-pick... |
 | [coding-git-branching-strategies](../../skills/coding-git-branching-strategies/SKILL.md) | Git branching models including Git Flow, GitHub Flow,... | git branching strategies, git repository... |
 | [coding-juice-shop](../../skills/coding-juice-shop/SKILL.md) | OWASP Juice Shop guide: Web application security testing... | application, guide... |
 | [coding-markdown-best-practices](../../skills/coding-markdown-best-practices/SKILL.md) | Markdown best practices for OpenCode skills - syntax rules,... | markdown best practices, markdown-best-practices... |
 | [coding-pydantic-config](../../skills/coding-pydantic-config/SKILL.md) | Pydantic-based configuration management with frozen models,... | configuration, management... |
 | [coding-pydantic-models](../../skills/coding-pydantic-models/SKILL.md) | Pydantic frozen data models for trading: enums, annotated... | enums, frozen... |
 | [coding-security-review](../../skills/coding-security-review/SKILL.md) | Security-focused code review identifying vulnerabilities... | identifying, security review... |
+| [coding-semver-automation](../../skills/coding-semver-automation/SKILL.md) | Automating semantic versioning in Git repositories for... | semantic versioning, semver... |
 | [coding-strategy-base](../../skills/coding-strategy-base/SKILL.md) | Abstract base strategy pattern with initialization guards,... | abstract, initialization... |
 | [coding-test-driven-development](../../skills/coding-test-driven-development/SKILL.md) | Test-Driven Development (TDD) and Behavior-Driven... | behavior-driven, patterns... |
 | [coding-websocket-manager](../../skills/coding-websocket-manager/SKILL.md) | WebSocket connection manager with state machine... | connection, machine... |
@@ -1041,12 +1046,14 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 ## Skills by Role
 
 
-### Implementation (Build Features) (157 skills)
+### Implementation (Build Features) (160 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
+| [coding-code-quality-policies](../../skills/coding-code-quality-policies/SKILL.md) | Coding | Establishing policies for maintaining a clean codebase... |
 | [coding-code-review](../../skills/coding-code-review/SKILL.md) | Coding | Analyzes code diffs and files to identify bugs, security... |
 | [coding-conviction-scoring](../../skills/coding-conviction-scoring/SKILL.md) | Coding | Multi-factor conviction scoring engine combining technical,... |
+| [coding-cve-dependency-management](../../skills/coding-cve-dependency-management/SKILL.md) | Coding | Cybersecurity operations skill for automating software... |
 | [coding-data-normalization](../../skills/coding-data-normalization/SKILL.md) | Coding | Exchange data normalization layer: typed dataclasses for... |
 | [coding-ds-ab-testing](../../skills/coding-ds-ab-testing/SKILL.md) | Coding | Designs and analyzes A/B tests including hypothesis... |
 | [coding-ds-anomaly-detection](../../skills/coding-ds-anomaly-detection/SKILL.md) | Coding | Detects anomalies and outliers using isolation forests,... |
@@ -1115,6 +1122,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [coding-pydantic-config](../../skills/coding-pydantic-config/SKILL.md) | Coding | Pydantic-based configuration management with frozen models,... |
 | [coding-pydantic-models](../../skills/coding-pydantic-models/SKILL.md) | Coding | Pydantic frozen data models for trading: enums, annotated... |
 | [coding-security-review](../../skills/coding-security-review/SKILL.md) | Coding | Security-focused code review identifying vulnerabilities... |
+| [coding-semver-automation](../../skills/coding-semver-automation/SKILL.md) | Coding | Automating semantic versioning in Git repositories for... |
 | [coding-strategy-base](../../skills/coding-strategy-base/SKILL.md) | Coding | Abstract base strategy pattern with initialization guards,... |
 | [coding-test-driven-development](../../skills/coding-test-driven-development/SKILL.md) | Coding | Test-Driven Development (TDD) and Behavior-Driven... |
 | [coding-websocket-manager](../../skills/coding-websocket-manager/SKILL.md) | Coding | WebSocket connection manager with state machine... |
@@ -1204,7 +1212,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [trading-technical-volume-profile](../../skills/trading-technical-volume-profile/SKILL.md) | Trading | Volume analysis techniques for understanding market... |
 
 
-### Reference (Learn & Understand) (152 skills)
+### Reference (Learn & Understand) (154 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1357,6 +1365,8 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-volcano](../../skills/cncf-volcano/SKILL.md) | Cncf | Volcano in Batch scheduling infrastructure for Kubernetes |
 | [cncf-wasmcloud](../../skills/cncf-wasmcloud/SKILL.md) | Cncf | wasmCloud in WebAssembly-based distributed applications... |
 | [cncf-zot](../../skills/cncf-zot/SKILL.md) | Cncf | Zot in Container Registry - cloud native architecture,... |
+| [coding-architectural-patterns](../../skills/coding-architectural-patterns/SKILL.md) | Coding | Software architecture patterns including MVC, MVVM,... |
+| [coding-git-advanced](../../skills/coding-git-advanced/SKILL.md) | Coding | Advanced Git operations including rebasing, cherry-picking,... |
 | [programming-abl-v10-learning](../../skills/programming-abl-v10-learning/SKILL.md) | Programming | Reference guide for Progress OpenEdge ABL 10.1A (2005) —... |
 | [programming-abl-v12-learning](../../skills/programming-abl-v12-learning/SKILL.md) | Programming | Reference guide for Progress OpenEdge ABL 12.7 (2023) —... |
 | [programming-algorithms](../../skills/programming-algorithms/SKILL.md) | Programming | Comprehensive algorithm selection guide — choose,... |
@@ -1557,8 +1567,11 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-volcano](../../skills/cncf-volcano/SKILL.md) | Cncf | Volcano in Batch scheduling infrastructure for Kubernetes | Reference |
 | [cncf-wasmcloud](../../skills/cncf-wasmcloud/SKILL.md) | Cncf | wasmCloud in WebAssembly-based distributed applications... | Reference |
 | [cncf-zot](../../skills/cncf-zot/SKILL.md) | Cncf | Zot in Container Registry - cloud native architecture,... | Reference |
+| [coding-architectural-patterns](../../skills/coding-architectural-patterns/SKILL.md) | Coding | Software architecture patterns including MVC, MVVM,... | Reference |
+| [coding-code-quality-policies](../../skills/coding-code-quality-policies/SKILL.md) | Coding | Establishing policies for maintaining a clean codebase... | Implementation |
 | [coding-code-review](../../skills/coding-code-review/SKILL.md) | Coding | Analyzes code diffs and files to identify bugs, security... | Implementation |
 | [coding-conviction-scoring](../../skills/coding-conviction-scoring/SKILL.md) | Coding | Multi-factor conviction scoring engine combining technical,... | Implementation |
+| [coding-cve-dependency-management](../../skills/coding-cve-dependency-management/SKILL.md) | Coding | Cybersecurity operations skill for automating software... | Implementation |
 | [coding-data-normalization](../../skills/coding-data-normalization/SKILL.md) | Coding | Exchange data normalization layer: typed dataclasses for... | Implementation |
 | [coding-ds-ab-testing](../../skills/coding-ds-ab-testing/SKILL.md) | Coding | Designs and analyzes A/B tests including hypothesis... | Implementation |
 | [coding-ds-anomaly-detection](../../skills/coding-ds-anomaly-detection/SKILL.md) | Coding | Detects anomalies and outliers using isolation forests,... | Implementation |
@@ -1621,12 +1634,14 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [coding-event-bus](../../skills/coding-event-bus/SKILL.md) | Coding | Async pub/sub event bus with typed events, mixed sync/async... | Implementation |
 | [coding-event-driven-architecture](../../skills/coding-event-driven-architecture/SKILL.md) | Coding | Event-driven architecture for real-time trading systems:... | Implementation |
 | [coding-fastapi-patterns](../../skills/coding-fastapi-patterns/SKILL.md) | Coding | FastAPI application structure with typed error hierarchy,... | Implementation |
+| [coding-git-advanced](../../skills/coding-git-advanced/SKILL.md) | Coding | Advanced Git operations including rebasing, cherry-picking,... | Reference |
 | [coding-git-branching-strategies](../../skills/coding-git-branching-strategies/SKILL.md) | Coding | Git branching models including Git Flow, GitHub Flow,... | Implementation |
 | [coding-juice-shop](../../skills/coding-juice-shop/SKILL.md) | Coding | OWASP Juice Shop guide: Web application security testing... | Implementation |
 | [coding-markdown-best-practices](../../skills/coding-markdown-best-practices/SKILL.md) | Coding | Markdown best practices for OpenCode skills - syntax rules,... | Implementation |
 | [coding-pydantic-config](../../skills/coding-pydantic-config/SKILL.md) | Coding | Pydantic-based configuration management with frozen models,... | Implementation |
 | [coding-pydantic-models](../../skills/coding-pydantic-models/SKILL.md) | Coding | Pydantic frozen data models for trading: enums, annotated... | Implementation |
 | [coding-security-review](../../skills/coding-security-review/SKILL.md) | Coding | Security-focused code review identifying vulnerabilities... | Implementation |
+| [coding-semver-automation](../../skills/coding-semver-automation/SKILL.md) | Coding | Automating semantic versioning in Git repositories for... | Implementation |
 | [coding-strategy-base](../../skills/coding-strategy-base/SKILL.md) | Coding | Abstract base strategy pattern with initialization guards,... | Implementation |
 | [coding-test-driven-development](../../skills/coding-test-driven-development/SKILL.md) | Coding | Test-Driven Development (TDD) and Behavior-Driven... | Implementation |
 | [coding-websocket-manager](../../skills/coding-websocket-manager/SKILL.md) | Coding | WebSocket connection manager with state machine... | Implementation |

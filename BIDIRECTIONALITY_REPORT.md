@@ -9,9 +9,9 @@
 ## Bidirectionality Validation
 
 - Bidirectional relationships verified: 508
-- Bidirectionality violations: 530
+- Bidirectionality violations: 531
 
-⚠️ **530 violations remaining** (skipped due to 4-skill limit)
+⚠️ **531 violations remaining** (skipped due to 4-skill limit)
 
 ## Fixed One-Way Relationships
 
