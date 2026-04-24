@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: ai sentiment analysis, ai-powered, ai-sentiment-analysis, media, social
-  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis,
+  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis
     trading-technical-false-signal-filtering
 ---
 

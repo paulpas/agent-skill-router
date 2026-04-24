@@ -11,6 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: abstract, initialization, pattern, strategy base, strategy-base
+  related-skills: 
 ---
 
 

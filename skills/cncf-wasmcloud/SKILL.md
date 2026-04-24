@@ -10,6 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: applications, distributed, wasmcloud, webassembly-based
+  related-skills: 
 ---
 
 

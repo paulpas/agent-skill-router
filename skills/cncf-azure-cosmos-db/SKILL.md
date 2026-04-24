@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cosmos db, nosql, document database, global database, distributed database
-  related-skills: cncf-azure-monitor, cncf-azure-rbac, cncf-azure-functions, cncf-azure-key-vault
+  related-skills: cncf-azure-functions, cncf-azure-key-vault, cncf-azure-monitor, cncf-azure-rbac
 ---
 
 

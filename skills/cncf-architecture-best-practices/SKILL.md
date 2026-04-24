@@ -13,6 +13,7 @@ metadata:
   output-format: manifests
   triggers: architecture best practices, architecture-best-practices, cdn, computing,
     infrastructure as code, monitoring, native, cloudformation
+  related-skills: 
 ---
 
 
@@ -194,6 +195,7 @@ spec:
         port:
           number: 8080
       weight: 10
+  related-skills: 
 ---
 apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -251,6 +253,7 @@ spec:
     ports:
     - protocol: TCP
       port: 8080
+  related-skills: 
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -444,6 +447,7 @@ spec:
     value: gcr.io/my-project/payment-service
   - name: namespace
     value: production
+  related-skills: 
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
@@ -517,6 +521,7 @@ spec:
     - build-image
 ```
 
+  related-skills: 
 ---
 
 ## 3. Legacy vs Modern Approaches
@@ -716,6 +721,7 @@ spec:
   kubernetesProvider: EKS
   # Variant
   variant: Calico
+  related-skills: 
 ---
 apiVersion: operator.tigera.io/v1
 kind: APIServer
@@ -775,6 +781,7 @@ type: Opaque
 stringData:
   admin.password: $2a$10$1234567890abcdef
   admin.passwordMtime: "2024-01-01T00:00:00Z"
+  related-skills: 
 ---
 apiVersion: argoproj.io/v1beta1
 kind: ArgoCD
@@ -822,6 +829,7 @@ spec:
     branch: main
   secretRef:
     name: github-token
+  related-skills: 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
@@ -862,6 +870,7 @@ spec:
     value: https://github.com/myorg/payment-service.git
   - name: git-revision
     value: HEAD
+  related-skills: 
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
@@ -999,6 +1008,7 @@ spec:
   serviceMonitorSelector:
     matchLabels:
       prometheus: servicemon
+  related-skills: 
 ---
 # Grafana with dashboards
 apiVersion: apps/v1
@@ -1046,6 +1056,7 @@ spec:
       - name: grafana-dashboards
         configMap:
           name: grafana-dashboards
+  related-skills: 
 ---
 # Loki for logs
 apiVersion: v1
@@ -1084,6 +1095,7 @@ data:
         cache_ttl: 1h
     querier:
       max_concurrent: 20
+  related-skills: 
 ---
 # Jaeger for traces
 apiVersion: v1
@@ -1107,6 +1119,7 @@ data:
       options:
         memory:
           max-traces: 100000
+  related-skills: 
 ---
 # Prometheus Rules for alerting
 apiVersion: monitoring.coreos.com/v1
@@ -1184,6 +1197,7 @@ data:
         enable: true
         syncPod: true
         syncNodeTime: true
+  related-skills: 
 ---
 # KubeEdge Edge Core
 apiVersion: v1
@@ -1305,6 +1319,7 @@ functions:
       memory: "128Mi"
 ```
 
+  related-skills: 
 ---
 
 ## 5. Scaling Patterns
@@ -1437,6 +1452,7 @@ spec:
             name: api-gateway-v2
             port:
               number: 80
+  related-skills: 
 ---
 apiVersion: networking.istio.io/v1beta1
 kind: Gateway
@@ -1514,6 +1530,7 @@ data:
     - hostname: dashboard.payments.example.com
       service: http://dashboard.production.svc.cluster.local:3000
     - service: http_status:404
+  related-skills: 
 ---
 # Kubernetes Service exposed via tunnel
 apiVersion: v1
@@ -1531,6 +1548,7 @@ spec:
   type: ClusterIP
 ```
 
+  related-skills: 
 ---
 
 ## 6. Security Architecture
@@ -1551,6 +1569,7 @@ spec:
   policyTypes:
   - Ingress
   - Egress
+  related-skills: 
 ---
 # Allow ingress from api-gateway
 apiVersion: networking.k8s.io/v1
@@ -1576,6 +1595,7 @@ spec:
     ports:
     - protocol: TCP
       port: 8080
+  related-skills: 
 ---
 # Allow egress to database
 apiVersion: networking.k8s.io/v1
@@ -1599,6 +1619,7 @@ spec:
     ports:
     - protocol: TCP
       port: 5432
+  related-skills: 
 ---
 # Allow DNS
 apiVersion: networking.k8s.io/v1
@@ -1636,6 +1657,7 @@ metadata:
     pod-security.kubernetes.io/audit-version: latest
     pod-security.kubernetes.io/warn: restricted
     pod-security.kubernetes.io/warn-version: latest
+  related-skills: 
 ---
 # Pod Security Example - compliant pod
 apiVersion: apps/v1
@@ -1705,6 +1727,7 @@ type: Opaque
 stringData:
   database-password: "secure-password-here"
   api-key: "secure-api-key-here"
+  related-skills: 
 ---
 # External Secret with Vault
 apiVersion: external-secrets.io/v1beta1
@@ -1729,6 +1752,7 @@ spec:
     remoteRef:
       key: secrets/payment-service/api
       property: key
+  related-skills: 
 ---
 # Vault Backend SecretStore
 apiVersion: external-secrets.io/v1beta1
@@ -1767,6 +1791,7 @@ spec:
       clientCertificate: /etc/certs/cert-chain.pem
       privateKey: /etc/certs/key.pem
       caCertificates: /etc/certs/root-cert.pem
+  related-skills: 
 ---
 # Peer Authentication for namespace
 apiVersion: security.istio.io/v1beta1
@@ -1777,6 +1802,7 @@ metadata:
 spec:
   mtls:
     mode: STRICT
+  related-skills: 
 ---
 # Authorization Policy
 apiVersion: security.istio.io/v1beta1
@@ -1808,6 +1834,7 @@ spec:
         - /api/v1/payments/*
 ```
 
+  related-skills: 
 ---
 
 ## 7. Networking Architecture
@@ -1836,6 +1863,7 @@ spec:
       env:
         ENABLE_MULTI_CLUSTER_MESH_DISCOVERY: "true"
         ENABLE_AUTO_MESH_HOSTNAME: "true"
+  related-skills: 
 ---
 # Secondary cluster
 apiVersion: install.istio.io/v1alpha1
@@ -1856,6 +1884,7 @@ spec:
       env:
         ENABLE_MULTI_CLUSTER_MESH_DISCOVERY: "true"
         ENABLE_AUTO_MESH_HOSTNAME: "true"
+  related-skills: 
 ---
 # Shared root CA
 apiVersion: v1
@@ -1866,7 +1895,8 @@ metadata:
 type: Opaque
 stringData:
   root-cert.pem: |
-    -----BEGIN CERTIFICATE-----
+      related-skills: 
+-----BEGIN CERTIFICATE-----
     ... shared root CA certificate ...
     -----END CERTIFICATE-----
 ```
@@ -1891,6 +1921,7 @@ spec:
   holdTime: 90s
   keepAliveTime: 30s
   password: "bgp-secret-key"
+  related-skills: 
 ---
 apiVersion: cilium.io/v2
 kind: CiliumBGPClusterConfig
@@ -1926,6 +1957,7 @@ spec:
     protocol: HTTPS
   location: MESH_EXTERNAL
   resolution: DNS
+  related-skills: 
 ---
 # Sidecar configuration
 apiVersion: networking.istio.io/v1beta1
@@ -1939,6 +1971,7 @@ spec:
     - "./*.production.svc.cluster.local"
     - "istio-system/*.istio-system.svc.cluster.local"
     - "*/payment-gateway-external"
+  related-skills: 
 ---
 # Gateway configuration
 apiVersion: networking.istio.io/v1beta1
@@ -1969,6 +2002,7 @@ spec:
       credentialName: internal-tls
 ```
 
+  related-skills: 
 ---
 
 ## 8. Best Practices
@@ -2008,6 +2042,7 @@ spec:
           limits:
             cpu: "500m"
             memory: "512Mi"
+  related-skills: 
 ---
 apiVersion: v1
 kind: Service
@@ -2101,6 +2136,7 @@ spec:
       - name: config
         configMap:
           name: payment-service-config
+  related-skills: 
 ---
 # Vertical Pod Autoscaler
 apiVersion: autoscaling.k8s.io/v1
@@ -2225,6 +2261,7 @@ spec:
           name: payment-service-config
       - name: logs
         emptyDir: {}
+  related-skills: 
 ---
 # Fluentd sidecar for log collection
       - name: fluentd
@@ -2301,6 +2338,7 @@ spec:
       targetLabel: instance
 ```
 
+  related-skills: 
 ---
 
 ## 9. Common Pitfalls
@@ -2503,6 +2541,7 @@ metadata:
 data:
   environment: "production"
   api_url: "https://api.example.com"
+  related-skills: 
 ---
 spec:
   template:
@@ -2602,6 +2641,7 @@ spec:
 # Monitoring alerts set up
 ```
 
+  related-skills: 
 ---
 
 ## 10. References

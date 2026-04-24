@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, engineering, envoy, high-performance, optimization, performance,
     speed
+  related-skills: 
 ---
 
 

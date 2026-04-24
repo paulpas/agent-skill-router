@@ -12,7 +12,7 @@ metadata:
   scope: self evaluation
   output-format: critique
   triggers: correctness, evaluates, quality, self critique engine, self-critique-engine, self-critiques
-  related-skills: agent-add-new-skill, agent-confidence-based-selector, agent-goal-to-milestones, agent-multi-skill-executor, agent-network-diagnostics
+  related-skills: agent-add-new-skill, agent-confidence-based-selector, agent-goal-to-milestones, agent-multi-skill-executor
 ---
 
 

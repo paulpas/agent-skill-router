@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: secrets, secret management, secret rotation, credential management, password
-  related-skills: cncf-azure-key-vault, cncf-azure-rbac, cncf-azure-functions, cncf-azure-virtual-machines
+  related-skills: cncf-azure-functions, cncf-azure-key-vault, cncf-azure-rbac, cncf-azure-virtual-machines
 ---
 
 

@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: impact, market, paper realistic simulation, paper-realistic-simulation,
     trading
-  related-skills: trading-fundamentals-market-regimes, trading-paper-commission-model,
+  related-skills: trading-fundamentals-market-regimes, trading-paper-commission-model
     trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
 

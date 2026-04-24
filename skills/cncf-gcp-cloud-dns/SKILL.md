@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud dns, dns, domain name, health checks, traffic routing
-  related-skills: cncf-gcp-vpc, cncf-gcp-cloud-load-balancing, cncf-gcp-cloud-monitoring, cncf-gcp-compute-engine
+  related-skills: cncf-gcp-cloud-load-balancing, cncf-gcp-cloud-monitoring, cncf-gcp-compute-engine, cncf-gcp-vpc
 ---
 
 

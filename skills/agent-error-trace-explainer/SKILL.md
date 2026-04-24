@@ -11,7 +11,7 @@ metadata:
   scope: error analysis
   output-format: explanation
   triggers: error trace explainer, error-trace-explainer, errors, exceptions, explains, traces
-  related-skills: agent-code-correctness-verifier, agent-confidence-based-selector, agent-dynamic-replanner, agent-hot-path-detector, agent-infra-drift-detector
+  related-skills: agent-code-correctness-verifier, agent-confidence-based-selector, agent-dynamic-replanner, agent-hot-path-detector
 ---
 
 

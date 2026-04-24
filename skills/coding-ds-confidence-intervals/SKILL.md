@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals
-  related-skills: coding-ds-hypothesis-testing, coding-ds-bayesian-inference, coding-ds-monte-carlo
+  related-skills: coding-ds-bayesian-inference, coding-ds-hypothesis-testing, coding-ds-monte-carlo
 ---
 
 # Confidence Intervals

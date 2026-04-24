@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: application, cloud infrastructure, fastapi patterns, fastapi-patterns,
     structure, typed
+  related-skills: 
 ---
 
 

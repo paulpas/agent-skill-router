@@ -12,6 +12,7 @@ metadata:
   triggers: batch, cloud infrastructure, infrastructure, scheduling, servers, volcano,
     ec2, virtual machines
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 
 

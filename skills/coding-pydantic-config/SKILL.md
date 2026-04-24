@@ -11,6 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: configuration, management, pydantic config, pydantic-based, pydantic-config
+  related-skills: 
 ---
 
 

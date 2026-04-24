@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, cilium, infrastructure as code, monitoring, native, network, cloudformation,
     cloudfront
-  related-skills: cncf-calico, cncf-container-network-interface-cni, cncf-contour,
+  related-skills: cncf-calico, cncf-container-network-interface-cni, cncf-contour, cncf-kuma
     cncf-kong
 ---
 

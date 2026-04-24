@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: container, cri o, cri-o, runtime
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 # CRI-O in Cloud-Native Engineering
 
@@ -233,6 +234,7 @@ data:
   .dockerconfigjson: <base64-encoded-config>
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 apiVersion: v1
 kind: Pod
 metadata:
@@ -280,6 +282,7 @@ crictl logs <container-id>
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ## Common Pitfalls and How to Avoid Them
 
@@ -437,6 +440,7 @@ spec:
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ## Coding Practices
 
@@ -925,6 +929,7 @@ seccomp_profile = "runtime/default"
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ## Additional Resources
 

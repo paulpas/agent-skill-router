@@ -11,6 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud-native, containerd, engineering, reliable
+  related-skills: 
 ---
 
 

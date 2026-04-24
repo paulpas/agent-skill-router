@@ -12,7 +12,7 @@ metadata:
   output-format: code
   triggers: exchange websocket handling, exchange-websocket-handling, market, real-time,
     websockets
-  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+  related-skills: trading-ai-order-flow-analysis, trading-data-alternative-data, trading-data-backfill-strategy
     trading-data-order-book
 ---
 

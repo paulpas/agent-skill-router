@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: build, manage, operator framework, operator-framework, tools
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 
 # Operator Framework in Cloud-Native Engineering

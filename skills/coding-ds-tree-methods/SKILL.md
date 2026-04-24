@@ -12,7 +12,7 @@ metadata:
   output-format: code
   triggers: decision trees, random forest, gradient boosting, xgboost, lightgbm, how
     do i use trees
-  related-skills: coding-ds-ensemble-methods, coding-ds-hyperparameter-tuning
+  related-skills: coding-ds-ensemble-methods, coding-ds-hyperparameter-tuning, coding-ds-neural-networks, coding-ds-support-vector-machines
 ---
 
 # Tree-Based Methods

@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: analysis, fundamentals market structure, fundamentals-market-structure,
     participants, trading
-  related-skills: trading-ai-order-flow-analysis, trading-data-order-book, trading-exchange-order-book-sync,
+  related-skills: trading-ai-order-flow-analysis, trading-data-order-book, trading-exchange-order-book-sync
     trading-exchange-order-execution-api
 ---
 

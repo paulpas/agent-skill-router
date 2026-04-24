@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud sql, relational database, mysql, postgresql, managed database
-  related-skills: cncf-gcp-vpc, cncf-gcp-iam, cncf-gcp-cloud-kms, cncf-gcp-cloud-monitoring
+  related-skills: cncf-gcp-cloud-kms, cncf-gcp-cloud-monitoring, cncf-gcp-iam, cncf-gcp-vpc
 ---
 
 

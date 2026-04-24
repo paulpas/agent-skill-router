@@ -16,6 +16,7 @@ metadata:
   output-format: manifests
   triggers: covering, creates, process incident response, process-incident-response,
     updates
+  related-skills: 
 ---
 
 

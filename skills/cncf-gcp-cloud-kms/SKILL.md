@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: kms, key management, encryption, encryption keys, key rotation
-  related-skills: cncf-gcp-cloud-storage, cncf-gcp-cloud-sql, cncf-gcp-secret-manager, cncf-gcp-iam
+  related-skills: cncf-gcp-cloud-sql, cncf-gcp-cloud-storage, cncf-gcp-iam, cncf-gcp-secret-manager
 ---
 
 

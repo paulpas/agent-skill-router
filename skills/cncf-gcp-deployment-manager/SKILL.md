@@ -11,7 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: deployment manager, infrastructure as code, iac, templates, yaml
-  related-skills: cncf-azure-resource-manager, cncf-gcp-cloud-sql, cncf-gcp-compute-engine,
+  related-skills: cncf-azure-resource-manager, cncf-gcp-cloud-sql, cncf-gcp-compute-engine
     cncf-gcp-gke
 ---
 

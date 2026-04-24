@@ -11,7 +11,7 @@ metadata:
   scope: ci-cd
   output-format: analysis
   triggers: build bottlenecks, ci-cd analysis, ci-cd analyzer, ci-cd-pipeline-analyzer, pipeline optimization
-  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-confidence-based-selector, agent-container-inspector, agent-diff-quality-analyzer
+  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-confidence-based-selector, agent-container-inspector
 ---
 
 

@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: key vault, key management, secrets, certificate management, encryption
     keys
-  related-skills: cncf-azure-automation, cncf-azure-blob-storage, cncf-azure-functions,
+  related-skills: cncf-azure-automation, cncf-azure-blob-storage, cncf-azure-functions, cncf-azure-sql-database
     cncf-azure-rbac
 ---
 

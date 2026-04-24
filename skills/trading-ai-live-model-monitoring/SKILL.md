@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: ai live model monitoring, ai-live-model-monitoring, models, monitor, production
-  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis,
+  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis
     trading-technical-false-signal-filtering
 ---
 

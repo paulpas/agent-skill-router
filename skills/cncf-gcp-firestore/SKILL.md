@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: firestore, nosql, document database, real-time sync, data synchronization
-  related-skills: cncf-gcp-cloud-kms, cncf-gcp-iam, cncf-gcp-cloud-monitoring, cncf-gcp-cloud-functions
+  related-skills: cncf-gcp-cloud-functions, cncf-gcp-cloud-kms, cncf-gcp-cloud-monitoring, cncf-gcp-iam
 ---
 
 

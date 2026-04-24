@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: ai anomaly detection, ai-anomaly-detection, anomalous, detect, market
-  related-skills: trading-ai-explainable-ai, trading-ai-feature-engineering, trading-technical-cycle-analysis,
+  related-skills: trading-ai-explainable-ai, trading-ai-feature-engineering, trading-ai-time-series-forecasting, trading-technical-cycle-analysis
     trading-technical-false-signal-filtering
 ---
 

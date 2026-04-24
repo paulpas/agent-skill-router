@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: logistic regression, classification, binary classification, multinomial, how do i classify
-  related-skills: coding-ds-linear-regression, coding-ds-classification-metrics, coding-ds-feature-engineering
+  related-skills: coding-ds-classification-metrics, coding-ds-feature-engineering, coding-ds-linear-regression
 ---
 
 # Logistic Regression

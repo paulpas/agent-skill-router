@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud operations, monitoring, logging, error reporting, diagnostics
-  related-skills: cncf-gcp-cloud-monitoring, cncf-gcp-compute-engine, cncf-gcp-gke, cncf-gcp-cloud-functions
+  related-skills: cncf-gcp-cloud-functions, cncf-gcp-cloud-monitoring, cncf-gcp-compute-engine, cncf-gcp-gke
 ---
 
 

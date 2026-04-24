@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: automated, exchange failover handling, exchange-failover-handling, management,
     redundancy
-  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+  related-skills: trading-ai-order-flow-analysis, trading-data-alternative-data, trading-data-backfill-strategy
     trading-data-order-book
 ---
 

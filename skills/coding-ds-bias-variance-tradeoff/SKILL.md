@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: bias-variance, overfitting, underfitting, regularization, generalization, how do I prevent overfitting
-  related-skills: coding-ds-hyperparameter-tuning, coding-ds-model-selection, coding-ds-cross-validation
+  related-skills: coding-ds-cross-validation, coding-ds-hyperparameter-tuning, coding-ds-model-selection
 ---
 
 # Bias-Variance Tradeoff

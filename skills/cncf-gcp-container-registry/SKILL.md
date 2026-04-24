@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: container registry, gcr, container images, image registry, docker images
-  related-skills: cncf-gcp-gke, cncf-gcp-cloud-functions, cncf-gcp-iam, cncf-gcp-cloud-monitoring
+  related-skills: cncf-gcp-cloud-functions, cncf-gcp-cloud-monitoring, cncf-gcp-gke, cncf-gcp-iam
 ---
 
 

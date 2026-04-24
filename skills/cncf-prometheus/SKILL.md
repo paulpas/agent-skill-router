@@ -13,6 +13,7 @@ metadata:
   triggers: cloud-native, engineering, metrics, monitoring, prometheus, prometheus
     monitoring, cloudwatch, logging
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-fluentd
 
 
 
@@ -549,6 +550,7 @@ metadata:
   name: prometheus
   namespace: monitoring
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-fluentd
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -569,6 +571,7 @@ rules:
 - nonResourceURLs: ["/metrics", "/metrics/cadvisor"]
   verbs: ["get"]
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-fluentd
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -582,6 +585,7 @@ subjects:
   name: prometheus
   namespace: monitoring
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-fluentd
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -602,6 +606,7 @@ data:
       kubernetes_sd_configs:
       - role: pod
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-fluentd
 apiVersion: v1
 kind: Service
 metadata:
@@ -616,6 +621,7 @@ spec:
   - port: 9090
     targetPort: 9090
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-fluentd
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -655,6 +661,7 @@ EOF
 ```
 
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-fluentd
 
 ### 2. Basic Configuration
 
@@ -765,6 +772,7 @@ kubectl apply -f service-monitor.yaml
 ```
 
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-fluentd
 
 ### 3. Usage Examples
 

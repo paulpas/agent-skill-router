@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: model interpretation, SHAP, LIME, feature importance, explainability, how do I explain models
-  related-skills: coding-ds-feature-selection, coding-ds-explainability, coding-ds-model-fairness
+  related-skills: coding-ds-explainability, coding-ds-feature-selection, coding-ds-model-fairness
 ---
 
 # Model Interpretation

@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: blob storage, object storage, azure storage, storage account, blob
-  related-skills: cncf-azure-monitor, cncf-azure-rbac, cncf-azure-cdn, cncf-azure-key-vault
+  related-skills: cncf-azure-cdn, cncf-azure-key-vault, cncf-azure-monitor, cncf-azure-rbac
 ---
 
 

@@ -12,7 +12,7 @@ metadata:
   output-format: code
   triggers: fundamentals risk management basics, fundamentals-risk-management-basics,
     position, sizing, stop-loss
-  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing,
+  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing
     trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
 

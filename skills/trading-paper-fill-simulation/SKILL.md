@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: execution, models, order, paper fill simulation, paper-fill-simulation
-  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api,
+  related-skills: trading-exchange-order-book-sync, trading-exchange-order-execution-api
     trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
 

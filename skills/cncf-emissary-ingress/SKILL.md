@@ -12,6 +12,7 @@ metadata:
   triggers: cloud-native, emissary ingress, emissary-ingress, engineering, kubernetes
     ingress, container orchestration, ingress, http routing
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-aws-route53
 
 
 
@@ -242,6 +243,7 @@ spec:
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-aws-route53
 
 ## Fundamentals
 

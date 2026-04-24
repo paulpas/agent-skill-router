@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud functions, serverless, functions, event-driven, function deployment
-  related-skills: cncf-gcp-cloud-pubsub, cncf-gcp-cloud-tasks, cncf-gcp-cloud-monitoring, cncf-gcp-iam
+  related-skills: cncf-gcp-cloud-monitoring, cncf-gcp-cloud-pubsub, cncf-gcp-cloud-tasks, cncf-gcp-iam
 ---
 
 

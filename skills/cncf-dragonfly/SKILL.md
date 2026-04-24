@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, distribution, dragonfly, engineering, elb, load balancer,
     load balancing
+  related-skills: 
 ---
 
 
@@ -241,6 +242,7 @@ spec:
       cpu: "500m"
 ```
 
+  related-skills: 
 ---
 
 ## Fundamentals

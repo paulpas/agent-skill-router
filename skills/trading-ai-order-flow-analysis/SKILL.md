@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: ai order flow analysis, ai-order-flow-analysis, analyze, detect, market
-  related-skills: trading-data-order-book, trading-fundamentals-market-structure,
+  related-skills: trading-data-order-book, trading-data-validation, trading-exchange-health, trading-fundamentals-market-structure
     trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
 

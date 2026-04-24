@@ -11,7 +11,7 @@ metadata:
   scope: failure analysis
   output-format: analysis
   triggers: analyzes, failure mode analysis, failure-mode-analysis, failures, mitigation, risk
-  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector, agent-container-inspector
+  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector
 ---
 
 

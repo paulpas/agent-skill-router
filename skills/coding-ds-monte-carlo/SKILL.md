@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: monte carlo, sampling, simulation, stochastic, markov chain, mcmc, how do i simulate
-  related-skills: coding-ds-bayesian-inference, coding-ds-confidence-intervals, coding-ds-distribution-fitting
+  related-skills: coding-ds-bayesian-inference, coding-ds-confidence-intervals, coding-ds-distribution-fitting, coding-ds-kernel-density
 ---
 
 # Monte Carlo Methods

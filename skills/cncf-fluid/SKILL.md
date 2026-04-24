@@ -13,6 +13,7 @@ metadata:
   triggers: acceleration, container orchestration, fluid, kubernetes-native, layer,
     kubernetes, k8s
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 
 

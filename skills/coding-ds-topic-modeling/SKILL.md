@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation, text analysis
-  related-skills: coding-ds-clustering, coding-ds-dimensionality-reduction, coding-ds-association-rules
+  related-skills: coding-ds-association-rules, coding-ds-clustering, coding-ds-dimensionality-reduction
 ---
 
 # Topic Modeling

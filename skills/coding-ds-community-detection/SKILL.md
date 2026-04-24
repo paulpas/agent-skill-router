@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: community detection, graph clustering, modularity, spectral clustering, graph partitioning
-  related-skills: coding-ds-clustering, coding-ds-association-rules, coding-ds-dimensionality-reduction
+  related-skills: coding-ds-association-rules, coding-ds-clustering, coding-ds-dimensionality-reduction
 ---
 
 # Community Detection

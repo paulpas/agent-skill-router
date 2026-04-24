@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: vpc, virtual private cloud, networking, subnets, firewall, vpc peering
-  related-skills: cncf-gcp-compute-engine, cncf-gcp-cloud-sql, cncf-gcp-gke, cncf-gcp-cloud-load-balancing
+  related-skills: cncf-gcp-cloud-load-balancing, cncf-gcp-cloud-sql, cncf-gcp-compute-engine, cncf-gcp-gke
 ---
 
 

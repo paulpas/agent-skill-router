@@ -12,7 +12,7 @@ metadata:
   scope: orchestration
   output-format: analysis
   triggers: complex, decomposes, task decomposition engine, task-decomposition-engine, tasks
-  related-skills: agent-code-correctness-verifier, agent-confidence-based-selector, agent-dynamic-replanner, agent-error-trace-explainer, agent-multi-skill-executor
+  related-skills: agent-code-correctness-verifier, agent-confidence-based-selector, agent-dynamic-replanner, agent-error-trace-explainer
 ---
 
 

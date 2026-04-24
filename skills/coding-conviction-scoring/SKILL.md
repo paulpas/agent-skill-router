@@ -11,6 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: combining, conviction scoring, conviction-scoring, engine, multi-factor
+  related-skills: 
 ---
 
 

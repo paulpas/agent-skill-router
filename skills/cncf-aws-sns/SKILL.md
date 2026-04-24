@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: messaging, notifications, pub/sub, publish subscribe, sns, subscription,
     topic
-  related-skills: cncf-aws-sqs, cncf-aws-lambda, cncf-aws-cloudwatch
+  related-skills: cncf-aws-cloudwatch, cncf-aws-lambda, cncf-aws-sqs
 ---
 
 

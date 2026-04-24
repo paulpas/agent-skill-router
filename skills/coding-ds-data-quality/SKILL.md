@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: data validation, data cleaning, outlier detection, data quality, how do i clean data, missing values
-  related-skills: coding-ds-data-collection, coding-ds-missing-data, coding-ds-data-profiling
+  related-skills: coding-ds-anomaly-detection, coding-ds-data-collection, coding-ds-data-profiling, coding-ds-missing-data
 ---
 
 # Data Quality

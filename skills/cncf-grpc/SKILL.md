@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, grpc, infrastructure as code, microservices communication, monitoring,
     procedure, remote, rpc framework
+  related-skills: 
 ---
 
 # gRPC in Cloud-Native Engineering
@@ -571,7 +572,8 @@ jobs:
 ### Terminology Glossary
 
 | Term | Definition |
-|------|------------|
+|  related-skills: 
+------|------------|
 | **Stub** | Client-side proxy that makes gRPC calls appear as local method calls |
 | **Server** | Service implementation that receives and processes gRPC requests |
 | **Channel** | Connection management object handle |

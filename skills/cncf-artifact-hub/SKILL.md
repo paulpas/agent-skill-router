@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: artifact hub, artifact-hub, cloud-native, engineering, repository
 ---
+  related-skills: cncf-argo, cncf-aws-eks, cncf-azure-aks, cncf-azure-resource-manager
 # Artifact Hub in Cloud-Native Engineering
 
 **Category:** artifact  

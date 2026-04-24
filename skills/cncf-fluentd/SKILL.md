@@ -13,6 +13,7 @@ metadata:
   triggers: fluentd, log collection, log routing, logging, unified logging, cloudwatch,
     log forwarding, monitoring
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-gcp-autoscaling
 
 
 
@@ -232,6 +233,7 @@ data:
 ```
 
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-gcp-autoscaling
 
 ### 3. Usage Examples
 

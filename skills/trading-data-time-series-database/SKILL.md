@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: data time series database, data-time-series-database, optimization, queries,
     time-series, performance, speed
-  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+  related-skills: trading-ai-order-flow-analysis, trading-data-alternative-data, trading-data-backfill-strategy
     trading-data-order-book
 ---
 

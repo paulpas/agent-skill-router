@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: resource manager, arm templates, infrastructure as code, iac, deployment
-  related-skills: cncf-azure-virtual-machines, cncf-azure-virtual-networks, cncf-azure-sql-database, cncf-azure-aks
+  related-skills: cncf-azure-aks, cncf-azure-sql-database, cncf-azure-virtual-machines, cncf-azure-virtual-networks
 ---
 
 

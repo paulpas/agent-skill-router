@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: rds, relational database, mysql, postgresql, multi-az, database failover,
     read replica, automated backup
-  related-skills: cncf-aws-auto-scaling, cncf-aws-cloudformation, cncf-aws-cloudwatch,
+  related-skills: cncf-aws-auto-scaling, cncf-aws-cloudformation, cncf-aws-cloudwatch, cncf-cubefs
     cncf-aws-iam
 ---
 

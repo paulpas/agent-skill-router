@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: experimental design, DOE, factorial design, randomization, blocking, how do I design experiments
-  related-skills: coding-ds-ab-testing, coding-ds-statistical-power, coding-ds-randomized-experiments
+  related-skills: coding-ds-ab-testing, coding-ds-online-experiments, coding-ds-randomized-experiments, coding-ds-statistical-power
 ---
 
 # Experimental Design

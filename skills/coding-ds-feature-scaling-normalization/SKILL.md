@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: feature scaling, normalization, standardization, robust scaling, scaling features, how do I scale
-  related-skills: coding-ds-feature-engineering, coding-ds-categorical-encoding, coding-ds-linear-regression
+  related-skills: coding-ds-categorical-encoding, coding-ds-feature-engineering, coding-ds-linear-regression
 ---
 
 # Feature Scaling

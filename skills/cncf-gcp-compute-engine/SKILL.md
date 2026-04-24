@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: compute engine, gce, virtual machine, vm, auto-scaling, instance group
-  related-skills: cncf-gcp-vpc, cncf-gcp-cloud-monitoring, cncf-gcp-iam, cncf-gcp-autoscaling
+  related-skills: cncf-gcp-autoscaling, cncf-gcp-cloud-monitoring, cncf-gcp-iam, cncf-gcp-vpc
 ---
 
 

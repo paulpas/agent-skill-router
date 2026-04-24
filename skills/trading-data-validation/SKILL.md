@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: assurance, data validation, data-validation, quality, trading
-  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+  related-skills: trading-ai-order-flow-analysis, trading-data-alternative-data, trading-data-backfill-strategy
     trading-data-order-book
 ---
 

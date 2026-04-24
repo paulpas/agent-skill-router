@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: randomized experiments, RCT, experimental design, randomization, blocking, sample size
-  related-skills: coding-ds-causal-inference, coding-ds-ab-testing, coding-ds-observational-studies
+  related-skills: coding-ds-ab-testing, coding-ds-causal-inference, coding-ds-intervention-analysis, coding-ds-observational-studies
 ---
 
 # Randomized Experiments

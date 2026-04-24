@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: regression evaluation, MSE, RMSE, MAE, R-squared, regression metrics, how do i evaluate
-  related-skills: coding-ds-linear-regression, coding-ds-cross-validation, coding-ds-model-selection
+  related-skills: coding-ds-cross-validation, coding-ds-linear-regression, coding-ds-metrics-and-kpis, coding-ds-model-selection
 ---
 
 # Regression Evaluation

@@ -12,7 +12,7 @@ metadata:
   scope: orchestration
   output-format: analysis
   triggers: goal to milestones, goal-to-milestones, goals, high-level, translates
-  related-skills: agent-add-new-skill, agent-code-correctness-verifier, agent-confidence-based-selector, agent-hot-path-detector, agent-infra-drift-detector
+  related-skills: agent-add-new-skill, agent-code-correctness-verifier, agent-confidence-based-selector, agent-hot-path-detector
 ---
 
 

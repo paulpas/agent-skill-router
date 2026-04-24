@@ -11,7 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: rbac, role-based access, access control, iam, roles, permissions
-  related-skills: cncf-azure-aks, cncf-azure-automation, cncf-azure-blob-storage,
+  related-skills: cncf-azure-aks, cncf-azure-automation, cncf-azure-blob-storage, cncf-gcp-iam
     cncf-azure-key-vault
 ---
 

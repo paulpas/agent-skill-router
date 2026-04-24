@@ -10,6 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: data normalization, data-normalization, exchange, layer, typed
+  related-skills: 
 ---
 
 # Skill: coding-data-normalization

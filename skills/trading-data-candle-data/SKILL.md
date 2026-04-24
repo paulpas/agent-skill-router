@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: data candle data, data-candle-data, ohlcv, processing, timeframe
-  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+  related-skills: trading-ai-order-flow-analysis, trading-data-alternative-data, trading-data-backfill-strategy
     trading-data-order-book
 ---
 

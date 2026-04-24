@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: ai regime classification, ai-regime-classification, current, detect, market
-  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering,
+  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering
     trading-technical-indicator-confluence, trading-technical-intermarket-analysis
 ---
 

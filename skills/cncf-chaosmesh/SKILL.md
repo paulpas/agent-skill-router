@@ -11,6 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: chaos, chaosmesh, cloud-native, engineering
+  related-skills: 
 ---
 
 # Chaos Mesh in Cloud-Native Engineering

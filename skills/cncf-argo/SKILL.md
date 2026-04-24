@@ -13,6 +13,7 @@ metadata:
   triggers: argo, cloud-native, container orchestration, engineering, kubernetes-native,
     kubernetes, k8s
 ---
+  related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 
 
@@ -505,6 +506,7 @@ spec:
         - templateName: success-rate
         startingStep: 2
 ---
+  related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
 metadata:
@@ -552,6 +554,7 @@ helm version
 ```
 
 ---
+  related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 ### 1. Installation
 
@@ -735,6 +738,7 @@ metadata:
   name: workflow-sa
   namespace: argo
 ---
+  related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 # Create Role for workflow execution
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -752,6 +756,7 @@ rules:
   resources: ["workflows", "workflowtemplates", "cronworkflows"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 ---
+  related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 # Bind role to service account
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -1051,6 +1056,7 @@ kubectl rollouts version
 ```
 
 ---
+  related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 ### 3. Basic Usage Examples
 
@@ -1268,6 +1274,7 @@ spec:
         - templateName: success-rate
         startingStep: 2  # Start analysis after setWeight: 40
 ---
+  related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 # Create the AnalysisTemplate for health checks
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
@@ -1316,6 +1323,7 @@ kubectl rollouts undo myapp
 ```
 
 ---
+  related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 ### 4. Common Operations
 

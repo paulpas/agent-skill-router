@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: bayesian inference, bayes, prior, posterior, probabilistic inference, how do i do bayesian
-  related-skills: coding-ds-maximum-likelihood, coding-ds-monte-carlo, coding-ds-hypothesis-testing
+  related-skills: coding-ds-confidence-intervals, coding-ds-hypothesis-testing, coding-ds-maximum-likelihood, coding-ds-monte-carlo
 ---
 
 # Bayesian Inference

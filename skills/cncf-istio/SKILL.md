@@ -13,6 +13,7 @@ metadata:
   triggers: cloud-native, connect, engineering, istio, service mesh, traffic management,
     kubernetes service
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 
 
@@ -577,6 +578,7 @@ spec:
   mtls:
     mode: STRICT
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 # Disable mTLS for specific workloads
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
@@ -616,6 +618,7 @@ EOF
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ### 3. Usage Examples
 
@@ -655,6 +658,7 @@ spec:
         subset: v1
       weight: 100
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 # Create subsets
 apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
@@ -718,6 +722,7 @@ open http://localhost:20001
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ### 4. Common Operations
 
@@ -913,6 +918,7 @@ spec:
   mtls:
     mode: STRICT
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 # Permissive mode for gradual migration
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication

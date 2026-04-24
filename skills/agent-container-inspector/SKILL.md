@@ -11,7 +11,7 @@ metadata:
   scope: container
   output-format: analysis
   triggers: container, container inspector, container-inspector, inspects, runtime
-  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector, agent-diff-quality-analyzer
+  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector
 ---
 
 

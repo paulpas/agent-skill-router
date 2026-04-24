@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: support vector machines, SVM, kernel methods, support vectors, SVM classification
-  related-skills: coding-ds-tree-methods, coding-ds-neural-networks, coding-ds-hyperparameter-tuning
+  related-skills: coding-ds-hyperparameter-tuning, coding-ds-neural-networks, coding-ds-tree-methods
 ---
 
 # Support Vector Machines

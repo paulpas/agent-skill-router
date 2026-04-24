@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: azure monitor, monitoring, logging, observability, metrics, alerts
-  related-skills: cncf-azure-aks, cncf-azure-automation, cncf-azure-blob-storage,
+  related-skills: cncf-azure-aks, cncf-azure-automation, cncf-azure-blob-storage, cncf-fluentd
     cncf-azure-functions
 ---
 

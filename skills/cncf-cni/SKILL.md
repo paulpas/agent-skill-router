@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, cni, container, engineering
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 
 # Cni in Cloud-Native Engineering

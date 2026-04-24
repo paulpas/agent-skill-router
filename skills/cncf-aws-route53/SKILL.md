@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: cname, dns, domain, failover, health check, hosted zone, route 53, traffic
     policy
-  related-skills: cncf-aws-elb, cncf-aws-cloudfront, cncf-aws-cloudwatch
+  related-skills: cncf-aws-cloudfront, cncf-aws-cloudwatch, cncf-aws-elb, cncf-cni
 ---
 
 

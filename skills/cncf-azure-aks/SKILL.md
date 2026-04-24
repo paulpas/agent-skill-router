@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: aks, kubernetes, container orchestration, k8s, managed kubernetes
-  related-skills: cncf-azure-container-registry, cncf-azure-virtual-networks, cncf-azure-rbac, cncf-azure-monitor
+  related-skills: cncf-azure-container-registry, cncf-azure-monitor, cncf-azure-rbac, cncf-azure-virtual-networks
 ---
 
 

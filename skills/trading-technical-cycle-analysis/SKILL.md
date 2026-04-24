@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: cycles, market, periodic, technical cycle analysis, technical-cycle-analysis
-  related-skills: trading-technical-false-signal-filtering, trading-technical-indicator-confluence,
+  related-skills: trading-ai-time-series-forecasting, trading-ai-volatility-prediction, trading-technical-false-signal-filtering, trading-technical-indicator-confluence
     trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
 

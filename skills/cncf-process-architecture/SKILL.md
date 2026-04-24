@@ -14,6 +14,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: creates, documenting, process architecture, process-architecture, updates
+  related-skills: 
 ---
 
 

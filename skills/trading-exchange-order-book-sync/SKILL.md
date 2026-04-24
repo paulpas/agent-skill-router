@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: exchange order book sync, exchange-order-book-sync, management, state,
     synchronization
-  related-skills: trading-exchange-order-execution-api, trading-exchange-rate-limiting,
+  related-skills: trading-exchange-order-execution-api, trading-exchange-rate-limiting, trading-execution-vwap, trading-fundamentals-market-structure
     trading-technical-cycle-analysis, trading-technical-false-signal-filtering
 ---
 

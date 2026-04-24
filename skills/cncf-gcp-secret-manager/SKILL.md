@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: secret manager, secrets, secret storage, credential management, secret rotation
-  related-skills: cncf-gcp-cloud-kms, cncf-gcp-iam, cncf-gcp-cloud-functions, cncf-gcp-compute-engine
+  related-skills: cncf-gcp-cloud-functions, cncf-gcp-cloud-kms, cncf-gcp-compute-engine, cncf-gcp-iam
 ---
 
 

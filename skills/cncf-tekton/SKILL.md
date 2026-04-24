@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, engineering, pipeline, tekton
 ---
+  related-skills: cncf-argo, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 
 # Tekton in Cloud-Native Engineering
@@ -444,6 +445,7 @@ spec:
     runAfter:
     - build
 ---
+  related-skills: cncf-argo, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 # PipelineRun to execute the pipeline
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
@@ -507,6 +509,7 @@ spec:
         echo "No test results to upload"
       fi
 ---
+  related-skills: cncf-argo, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 # TaskRun to execute the task
 apiVersion: tekton.dev/v1beta1
 kind: TaskRun
@@ -541,6 +544,7 @@ spec:
     value: main
 
 ---
+  related-skills: cncf-argo, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 apiVersion: tekton.dev/v1beta1
 kind: PipelineResource
 metadata:
@@ -552,6 +556,7 @@ spec:
     value: gcr.io/myproject/myapp:latest
 
 ---
+  related-skills: cncf-argo, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:

@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: reproducible research, reproducibility, code organization, environment, notebooks, how do I reproduce
-  related-skills: coding-ds-data-versioning, coding-ds-explainability, coding-ds-model-robustness
+  related-skills: coding-ds-data-versioning, coding-ds-explainability, coding-ds-model-robustness, coding-ds-privacy-ml
 ---
 
 # Reproducible Research

@@ -13,7 +13,7 @@ metadata:
   output-format: code
   triggers: abl, abl programming, abl v10, openedge, openedge 10, progress 4gl, progress
     abl
-  related-skills: programming-abl-v12-learning
+  related-skills: programming-abl-v12-learning, programming-algorithms
 ---
 
 

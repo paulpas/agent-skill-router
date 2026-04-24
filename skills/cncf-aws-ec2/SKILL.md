@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: ec2, compute instances, auto-scaling, load balancing, asg, launch template,
     instance types, ebs volumes
-  related-skills: cncf-aws-auto-scaling, cncf-aws-cloudformation, cncf-aws-cloudwatch,
+  related-skills: cncf-aws-auto-scaling, cncf-aws-cloudformation, cncf-aws-cloudwatch, cncf-spire
     cncf-aws-elb
 ---
 

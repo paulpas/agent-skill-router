@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, engineering, kyverno, policy, kubernetes policies, security
     policies, container orchestration, vulnerability scanning
+  related-skills: 
 ---
 
 
@@ -241,6 +242,7 @@ spec:
       cpu: "500m"
 ```
 
+  related-skills: 
 ---
 
 ## Fundamentals

@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: gke, kubernetes, container orchestration, k8s, managed kubernetes
-  related-skills: cncf-gcp-container-registry, cncf-gcp-vpc, cncf-gcp-iam, cncf-gcp-cloud-monitoring
+  related-skills: cncf-gcp-cloud-monitoring, cncf-gcp-container-registry, cncf-gcp-iam, cncf-gcp-vpc
 ---
 
 

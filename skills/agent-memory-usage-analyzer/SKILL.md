@@ -11,7 +11,7 @@ metadata:
   scope: analysis
   output-format: analysis
   triggers: analyzes, leaks, memory, memory usage analyzer, memory-usage-analyzer
-  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector, agent-container-inspector
+  related-skills: agent-add-new-skill, agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector
 ---
 
 

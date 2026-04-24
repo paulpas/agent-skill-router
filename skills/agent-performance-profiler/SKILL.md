@@ -11,7 +11,7 @@ metadata:
   scope: analysis
   output-format: analysis
   triggers: bottlenecks, optimization, performance profiler, performance-profiler, profiles, performance, speed
-  related-skills: agent-add-new-skill, agent-code-correctness-verifier, agent-confidence-based-selector, agent-goal-to-milestones, agent-network-diagnostics
+  related-skills: agent-add-new-skill, agent-code-correctness-verifier, agent-confidence-based-selector, agent-goal-to-milestones
 ---
 
 

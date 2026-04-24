@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: cloud infrastructure, paper commission model, paper-commission-model,
     simulation, structure
-  related-skills: trading-fundamentals-market-regimes, trading-paper-market-impact,
+  related-skills: trading-fundamentals-market-regimes, trading-paper-market-impact, trading-paper-realistic-simulation
     trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
 

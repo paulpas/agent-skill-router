@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: event, extreme, management, risk tail risk, risk-tail-risk
-  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing,
+  related-skills: trading-backtest-drawdown-analysis, trading-backtest-position-sizing
     trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
 

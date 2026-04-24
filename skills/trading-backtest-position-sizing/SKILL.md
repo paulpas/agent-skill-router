@@ -12,7 +12,7 @@ metadata:
   output-format: code
   triggers: algorithms, backtest position sizing, backtest-position-sizing, fixed,
     fractional
-  related-skills: trading-backtest-drawdown-analysis, trading-fundamentals-risk-management-basics,
+  related-skills: trading-backtest-drawdown-analysis, trading-fundamentals-risk-management-basics, trading-risk-position-sizing, trading-risk-stop-loss
     trading-exchange-order-book-sync, trading-exchange-order-execution-api
 ---
 

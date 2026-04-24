@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: ensemble methods, bagging, boosting, stacking, voting, blending, ensemble learning
-  related-skills: coding-ds-tree-methods, coding-ds-neural-networks, coding-ds-model-selection
+  related-skills: coding-ds-model-selection, coding-ds-neural-networks, coding-ds-tree-methods
 ---
 
 # Ensemble Methods

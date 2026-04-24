@@ -14,6 +14,7 @@ metadata:
   output-format: code
   triggers: application, guide, juice shop, juice-shop, owasp, security best practices,
     security guidelines, vulnerability scanning
+  related-skills: 
 ---
 
 

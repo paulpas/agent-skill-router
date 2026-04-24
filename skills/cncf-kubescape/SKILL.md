@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, container orchestration, engineering, k8s, kubescape, kubernetes
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-aws-kms
 
 
 # Kubescape in Cloud-Native Engineering
@@ -240,6 +241,7 @@ spec:
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-aws-kms
 
 ## Fundamentals
 

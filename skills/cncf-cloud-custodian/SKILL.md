@@ -10,6 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud custodian, cloud-custodian, cloud-native, engineering, rules
+  related-skills: 
 ---
 # Cloud Custodian in Cloud-Native Engineering
 

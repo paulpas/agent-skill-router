@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: computing, container orchestration, extending, k8s, openyurt, kubernetes
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 
 

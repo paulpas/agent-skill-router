@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships
-  related-skills: coding-ds-eda, coding-ds-data-visualization, coding-ds-feature-engineering
+  related-skills: coding-ds-data-visualization, coding-ds-eda, coding-ds-feature-engineering, coding-ds-feature-interaction
 ---
 
 # Correlation Analysis

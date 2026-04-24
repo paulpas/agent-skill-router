@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: load balancer, load balancing, traffic distribution, health checks, routing
-  related-skills: cncf-azure-virtual-machines, cncf-azure-scale-sets, cncf-azure-virtual-networks, cncf-azure-monitor
+  related-skills: cncf-azure-monitor, cncf-azure-scale-sets, cncf-azure-virtual-machines, cncf-azure-virtual-networks
 ---
 
 

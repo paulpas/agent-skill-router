@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: connection, machine, ml, state, websocket manager, websocket-manager,
     machine learning, ai
+  related-skills: 
 ---
 
 

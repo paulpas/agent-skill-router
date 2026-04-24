@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: data visualization, plotting, dashboards, charts, matplotlib, seaborn, plotly, how do i visualize data
-  related-skills: coding-ds-eda, coding-ds-correlation-analysis, coding-ds-data-profiling
+  related-skills: coding-ds-correlation-analysis, coding-ds-data-profiling, coding-ds-eda
 ---
 
 # Data Visualization

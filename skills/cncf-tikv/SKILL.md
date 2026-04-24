@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: distributed, key-value, tikv, transactional
 ---
+  related-skills: cncf-aws-dynamodb, cncf-aws-ecr, cncf-aws-rds, cncf-aws-s3
 
 
 # TiKV in Cloud-Native Engineering

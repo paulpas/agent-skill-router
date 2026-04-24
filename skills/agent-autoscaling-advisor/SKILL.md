@@ -11,7 +11,7 @@ metadata:
   scope: scaling
   output-format: recommendation
   triggers: autoscaling advisor, autoscaling-advisor, scale-in, scale-out, scaling policies
-  related-skills: agent-add-new-skill, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector, agent-container-inspector, agent-diff-quality-analyzer
+  related-skills: agent-add-new-skill, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector, agent-container-inspector
 ---
 
 

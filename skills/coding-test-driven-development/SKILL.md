@@ -13,6 +13,7 @@ metadata:
   triggers: behavior-driven, patterns, test driven development, test-driven, test-driven-development
   author: https://github.com/Jeffallan
   source: https://github.com/farmage/opencode-skills
+  related-skills: 
 ---
 
 

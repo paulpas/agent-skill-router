@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: cross-validation, k-fold, stratified cross-validation, time-series cross-validation, validation
-  related-skills: coding-ds-hyperparameter-tuning, coding-ds-model-selection, coding-ds-classification-metrics
+  related-skills: coding-ds-classification-metrics, coding-ds-hyperparameter-tuning, coding-ds-model-selection, coding-ds-regression-evaluation
 ---
 
 # Cross-Validation

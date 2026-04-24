@@ -11,6 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: protecting, secure, software, the update framework tuf, the-update-framework-tuf
+  related-skills: 
 ---
 
 

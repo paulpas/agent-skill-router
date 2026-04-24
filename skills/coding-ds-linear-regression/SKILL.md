@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: linear regression, OLS, ridge regression, lasso, elastic net, regularization
-  related-skills: coding-ds-logistic-regression, coding-ds-regression-evaluation, coding-ds-feature-engineering
+  related-skills: coding-ds-feature-engineering, coding-ds-feature-scaling-normalization, coding-ds-logistic-regression, coding-ds-regression-evaluation
 ---
 
 # Linear Regression

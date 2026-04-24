@@ -16,6 +16,7 @@ metadata:
   output-format: manifests
   triggers: creates, documenting, process releases, process-releases, updates
 ---
+  related-skills: cncf-argo, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 
 # CNCF Release Process

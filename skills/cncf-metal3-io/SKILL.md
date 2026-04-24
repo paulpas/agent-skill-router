@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, infrastructure as code, metal, metal3 io, metal3-io, monitoring,
     provisioning, cloudformation
+  related-skills: 
 ---
 
 

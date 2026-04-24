@@ -10,6 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: buildpacks, cloud-native, engineering, source
+  related-skills: 
 ---
 # Buildpacks in Cloud-Native Engineering
 

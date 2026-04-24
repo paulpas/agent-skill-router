@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, coredns, engineering, server
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 
 # Coredns in Cloud-Native Engineering
@@ -613,6 +614,7 @@ EOF
 ```
 
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 ### 3. Usage Examples
 
@@ -692,6 +694,7 @@ curl -s 'http://localhost:9153/metrics' | grep 'coredns_dns_requests_total'
 ```
 
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 ### 4. Common Operations
 

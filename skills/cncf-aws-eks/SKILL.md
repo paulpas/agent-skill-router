@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: eks, container orchestration, k8s, cluster, pods, namespaces, ingress,
     kubernetes namespace
-  related-skills: cncf-aws-ecr, cncf-aws-vpc, cncf-aws-iam, cncf-aws-cloudwatch
+  related-skills: cncf-aws-cloudwatch, cncf-aws-ecr, cncf-aws-iam, cncf-aws-vpc
 ---
 
 

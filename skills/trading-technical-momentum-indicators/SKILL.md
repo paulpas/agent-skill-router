@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: analysis, oscillators, stochastic, technical momentum indicators, technical-momentum-indicators
-  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering,
+  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering
     trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
 

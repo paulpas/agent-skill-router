@@ -10,6 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud-native, engineering, kserve, model
+  related-skills: 
 ---
 
 # KServe in Cloud-Native Engineering
@@ -238,6 +239,7 @@ spec:
       cpu: "500m"
 ```
 
+  related-skills: 
 ---
 
 ## Fundamentals

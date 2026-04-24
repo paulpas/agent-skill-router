@@ -13,7 +13,7 @@ metadata:
   output-format: code
   triggers: abl v12, openedge 12, abl 12.7, v10 to v12 migration, abl migration, catch
     throw, jsonobject, read-json
-  related-skills: programming-abl-v10-learning
+  related-skills: programming-abl-v10-learning, programming-algorithms
 ---
 
 

@@ -13,6 +13,7 @@ metadata:
   triggers: container orchestration, crossplane, engineering, kubernetes-native, platform,
     kubernetes, k8s
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 
 
@@ -184,6 +185,7 @@ spec:
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ## Integration Approaches
 
@@ -256,6 +258,7 @@ spec:
                       description: AWS region
       served: true
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 # Define composition
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
@@ -300,6 +303,7 @@ spec:
     - name: v1alpha1
       served: true
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
@@ -401,6 +405,7 @@ spec:
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ## Common Pitfalls and How to Avoid Them
 
@@ -441,6 +446,7 @@ spec:
     name: db-creds
     namespace: default  # Should match app namespace
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 apiVersion: database.example.org/v1alpha1
 kind: PostgreSQLInstance
 metadata:
@@ -553,6 +559,7 @@ spec:
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ## Coding Practices
 
@@ -843,6 +850,7 @@ kind: Namespace
 metadata:
   name: team-a
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 # Team A claim
 apiVersion: database.example.org/v1alpha1
 kind: PostgreSQLInstance
@@ -895,6 +903,7 @@ spec:
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ## Additional Resources
 

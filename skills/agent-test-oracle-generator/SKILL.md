@@ -12,7 +12,7 @@ metadata:
   scope: quality
   output-format: test-spec
   triggers: expected output, test oracle, test validation, test-oracle, enterprise database, oracle
-  related-skills: agent-add-new-skill, agent-confidence-based-selector, agent-goal-to-milestones, agent-multi-skill-executor, agent-network-diagnostics
+  related-skills: agent-add-new-skill, agent-confidence-based-selector, agent-goal-to-milestones, agent-multi-skill-executor
 ---
 
 

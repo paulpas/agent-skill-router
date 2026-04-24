@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: treatment effects, intervention analysis, CATE, heterogeneous effects, treatment response
-  related-skills: coding-ds-causal-inference, coding-ds-observational-studies, coding-ds-randomized-experiments
+  related-skills: coding-ds-causal-inference, coding-ds-observational-studies, coding-ds-randomized-experiments, coding-ds-synthetic-control
 ---
 
 # Intervention Analysis

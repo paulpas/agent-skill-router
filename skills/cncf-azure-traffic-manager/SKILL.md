@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: traffic manager, dns, traffic routing, health checks, geographic routing
-  related-skills: cncf-azure-virtual-machines, cncf-azure-aks, cncf-azure-load-balancer, cncf-azure-monitor
+  related-skills: cncf-azure-aks, cncf-azure-load-balancer, cncf-azure-monitor, cncf-azure-virtual-machines
 ---
 
 

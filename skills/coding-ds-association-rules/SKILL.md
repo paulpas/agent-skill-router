@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: association rules, market basket, apriori, frequent itemsets, recommendation, pattern mining
-  related-skills: coding-ds-clustering, coding-ds-topic-modeling, coding-ds-community-detection
+  related-skills: coding-ds-clustering, coding-ds-community-detection, coding-ds-topic-modeling
 ---
 
 # Association Rules

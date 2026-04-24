@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: implementation, real-world, spiffe, spire
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2
 
 
 # SPIRE in Cloud-Native Engineering

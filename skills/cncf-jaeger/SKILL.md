@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, distributed, distributed tracing, engineering, jaeger, tracing,
     request tracing, xray
+  related-skills: 
 ---
 
 
@@ -240,6 +241,7 @@ spec:
       cpu: "500m"
 ```
 
+  related-skills: 
 ---
 
 ## Fundamentals
@@ -667,6 +669,7 @@ spec:
       interval: 30s
 ```
 
+  related-skills: 
 ---
 
 *This SKILL.md file was verified and last updated on 2026-04-22. Content based on CNCF Jaeger project and production usage patterns.*

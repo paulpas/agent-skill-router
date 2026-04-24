@@ -11,7 +11,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: chain, in toto, in-toto, supply
-  related-skills: cncf-calico
+  related-skills: cncf-aws-kms, cncf-aws-s3, cncf-aws-secrets-manager, cncf-azure-key-vault
 ---
 
 # in-toto in Cloud-Native Engineering

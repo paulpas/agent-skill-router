@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: neural networks, deep learning, backpropagation, CNN, RNN, transformers, how do i use deep learning
-  related-skills: coding-ds-tree-methods, coding-ds-ensemble-methods, coding-ds-hyperparameter-tuning
+  related-skills: coding-ds-categorical-encoding, coding-ds-ensemble-methods, coding-ds-hyperparameter-tuning, coding-ds-tree-methods
 ---
 
 # Neural Networks

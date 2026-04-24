@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: data privacy, anonymization, differential privacy, GDPR, PII protection, privacy-preserving, sensitive data
-  related-skills: coding-ds-privacy-ml, coding-ds-data-versioning
+  related-skills: coding-ds-data-versioning, coding-ds-privacy-ml
 ---
 
 # Data Privacy

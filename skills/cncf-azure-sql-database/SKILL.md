@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: sql database, relational database, managed database, azure sql, elasticity
-  related-skills: cncf-azure-virtual-networks, cncf-azure-monitor, cncf-azure-key-vault, cncf-azure-rbac
+  related-skills: cncf-azure-key-vault, cncf-azure-monitor, cncf-azure-rbac, cncf-azure-virtual-networks
 ---
 
 

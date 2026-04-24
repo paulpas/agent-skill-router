@@ -11,6 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: async, event bus, event-bus, events, typed, eventbridge, event routing
+  related-skills: 
 ---
 
 

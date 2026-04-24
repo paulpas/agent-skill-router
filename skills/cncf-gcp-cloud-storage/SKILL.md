@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud storage, gcs, object storage, bucket, versioning, storage lifecycle
-  related-skills: cncf-gcp-cloud-cdn, cncf-gcp-iam, cncf-gcp-cloud-monitoring, cncf-gcp-cloud-kms
+  related-skills: cncf-gcp-cloud-cdn, cncf-gcp-cloud-kms, cncf-gcp-cloud-monitoring, cncf-gcp-iam
 ---
 
 

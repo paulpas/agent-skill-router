@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: container registry, container security, containers, docker images, ecr,
     image repository, image scanning, vulnerability scanning
-  related-skills: cncf-aws-eks, cncf-aws-iam, cncf-aws-kms
+  related-skills: cncf-aws-eks, cncf-aws-iam, cncf-aws-kms, cncf-cubefs
 ---
 
 

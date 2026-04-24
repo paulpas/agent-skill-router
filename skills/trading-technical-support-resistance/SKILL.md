@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: levels, price, technical support resistance, technical-support-resistance,
     where
-  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering,
+  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering
     trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
 

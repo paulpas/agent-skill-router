@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: modeling, order, paper market impact, paper-market-impact, simulation
-  related-skills: trading-fundamentals-market-regimes, trading-paper-commission-model,
+  related-skills: trading-fundamentals-market-regimes, trading-paper-commission-model
     trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
 

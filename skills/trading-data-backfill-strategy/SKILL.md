@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: data backfill strategy, data-backfill-strategy, historical, populating,
     strategic
-  related-skills: trading-data-alternative-data, trading-data-candle-data, trading-ai-order-flow-analysis,
+  related-skills: trading-ai-order-flow-analysis, trading-data-alternative-data, trading-data-candle-data, trading-data-validation
     trading-data-order-book
 ---
 

@@ -12,6 +12,7 @@ metadata:
   triggers: cloud-native, container orchestration, engineering, helm, k8s, k8s charts,
     kubernetes package manager, kubernetes
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 
 

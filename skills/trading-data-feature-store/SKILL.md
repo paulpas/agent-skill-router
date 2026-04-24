@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: data feature store, data-feature-store, machine, management, ml, storage,
     machine learning, ai
-  related-skills: trading-data-alternative-data, trading-data-backfill-strategy, trading-ai-order-flow-analysis,
+  related-skills: trading-ai-order-flow-analysis, trading-data-alternative-data, trading-data-backfill-strategy
     trading-data-order-book
 ---
 

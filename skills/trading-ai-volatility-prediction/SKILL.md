@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: ai volatility prediction, ai-volatility-prediction, forecast, management,
     option
-  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis,
+  related-skills: trading-ai-anomaly-detection, trading-ai-explainable-ai, trading-technical-cycle-analysis
     trading-technical-false-signal-filtering
 ---
 

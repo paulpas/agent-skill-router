@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: anomaly detection, outlier detection, isolation forest, LOF, one-class SVM, how do I detect anomalies
-  related-skills: coding-ds-clustering, coding-ds-model-robustness, coding-ds-data-quality
+  related-skills: coding-ds-clustering, coding-ds-data-quality, coding-ds-model-robustness
 ---
 
 # Anomaly Detection

@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: feature selection, feature importance, recursive elimination, univariate selection, feature selection methods
-  related-skills: coding-ds-feature-engineering, coding-ds-model-interpretation, coding-ds-hyperparameter-tuning
+  related-skills: coding-ds-feature-engineering, coding-ds-feature-interaction, coding-ds-hyperparameter-tuning, coding-ds-model-interpretation
 ---
 
 # Feature Selection

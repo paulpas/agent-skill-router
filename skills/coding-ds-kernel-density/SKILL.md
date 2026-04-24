@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: kernel density estimation, KDE, non-parametric, density estimation, bandwidth selection
-  related-skills: coding-ds-distribution-fitting, coding-ds-monte-carlo, coding-ds-eda
+  related-skills: coding-ds-distribution-fitting, coding-ds-eda, coding-ds-monte-carlo
 ---
 
 # Kernel Density Estimation

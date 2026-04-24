@@ -13,6 +13,7 @@ metadata:
   triggers: framework, observability, opentelemetry, tracing, cloudwatch, xray, distributed
     tracing, logging
 ---
+  related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-fluentd
 
 
 

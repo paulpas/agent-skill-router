@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: explainability, interpretability, transparency, understanding models, how do I explain predictions
-  related-skills: coding-ds-model-interpretation, coding-ds-model-fairness, coding-ds-model-robustness
+  related-skills: coding-ds-model-fairness, coding-ds-model-interpretation, coding-ds-model-robustness, coding-ds-reproducible-research
 ---
 
 # Explainability

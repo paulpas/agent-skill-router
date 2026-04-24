@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: content, how do i find security issues, notary project, notary-project,
     security, trust, vulnerability scanning, security auditing
-  related-skills: cncf-openfga
+  related-skills: cncf-aws-kms, cncf-aws-s3, cncf-aws-secrets-manager, cncf-azure-key-vault
 ---
 
 

@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: backtest position exits, backtest-position-exits, stops, strategies, trailing
-  related-skills: trading-backtest-lookahead-bias, trading-backtest-sharpe-ratio,
+  related-skills: trading-backtest-lookahead-bias, trading-backtest-sharpe-ratio, trading-backtest-walk-forward, trading-paper-performance-attribution
     trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
 

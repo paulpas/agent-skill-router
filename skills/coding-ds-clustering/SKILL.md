@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: clustering, k-means, hierarchical clustering, DBSCAN, mixture models, how do I cluster data
-  related-skills: coding-ds-dimensionality-reduction, coding-ds-anomaly-detection, coding-ds-community-detection
+  related-skills: coding-ds-anomaly-detection, coding-ds-association-rules, coding-ds-community-detection, coding-ds-dimensionality-reduction
 ---
 
 # Clustering

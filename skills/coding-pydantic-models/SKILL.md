@@ -11,6 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: enums, frozen, pydantic models, pydantic-models, trading
+  related-skills: 
 ---
 
 
@@ -124,6 +125,7 @@ class SignalEvent(BaseModel):
         return v
 ```
 
+  related-skills: 
 ---
 
 ### 5. `@model_validator(mode="after")` — Cross-Field Validation

@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: azure functions, serverless, function app, event-driven, function deployment
-  related-skills: cncf-azure-service-bus, cncf-azure-cosmos-db, cncf-azure-monitor, cncf-azure-rbac
+  related-skills: cncf-azure-cosmos-db, cncf-azure-monitor, cncf-azure-rbac, cncf-azure-service-bus
 ---
 
 

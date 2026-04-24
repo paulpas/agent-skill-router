@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: feature interaction, interaction terms, polynomial features, cross-features, feature interactions
-  related-skills: coding-ds-feature-engineering, coding-ds-feature-selection, coding-ds-correlation-analysis
+  related-skills: coding-ds-correlation-analysis, coding-ds-feature-engineering, coding-ds-feature-selection
 ---
 
 # Feature Interaction

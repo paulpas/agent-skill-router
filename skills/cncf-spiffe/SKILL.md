@@ -10,6 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: identity, product, secure, spiffe
+  related-skills: 
 ---
 
 

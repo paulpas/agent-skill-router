@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: cognitive, discipline, emotional, fundamentals trading psychology, fundamentals-trading-psychology
-  related-skills: trading-fundamentals-trading-edge, trading-fundamentals-trading-plan,
+  related-skills: trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
     trading-ai-multi-asset-model, trading-risk-correlation-risk
 ---
 

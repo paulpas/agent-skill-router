@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: feature engineering, feature creation, feature transformation, how do I engineer features, feature design
-  related-skills: coding-ds-feature-selection, coding-ds-categorical-encoding, coding-ds-feature-scaling-normalization
+  related-skills: coding-ds-categorical-encoding, coding-ds-feature-scaling-normalization, coding-ds-feature-selection, coding-ds-missing-data
 ---
 
 # Feature Engineering

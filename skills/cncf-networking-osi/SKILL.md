@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, layers, model, networking osi, networking-osi
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 
 # OSI Model Networking for Cloud-Native
@@ -215,6 +216,7 @@ EOF
 4. **STP blocking**: Ports in blocking state don't forward
 
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 ## Layer 3: Network
 
@@ -423,6 +425,7 @@ tcpdump -i eth0 host <server> and port <port> -X
 4. **Slow transfer**: Congestion control or flow control issue
 
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 ## Layer 5: Session
 
@@ -489,6 +492,7 @@ spec:
     port: 8080
     targetPort: 8080
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -526,6 +530,7 @@ wscat -c wss://example.com/ws --no-check
 3. **Half-open sessions**: Client crashed, server unaware
 
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 ## Layer 6: Presentation
 
@@ -718,6 +723,7 @@ grpcurl -plaintext api.example.com:50051 list
 4. **DNS failure**: CoreDNS issue or network partition
 
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 ## Modern Cloud Implementations: CNCF Project Mappings
 
@@ -895,6 +901,7 @@ kubectl get ingress --all-namespaces
 ```
 
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 ## Scaling Considerations
 
@@ -1018,6 +1025,7 @@ EOF
 ```
 
 ---
+  related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 
 ## References
 

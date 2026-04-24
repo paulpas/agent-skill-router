@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: automation, runbooks, update management, orchestration, automation account
-  related-skills: cncf-azure-virtual-machines, cncf-azure-monitor, cncf-azure-rbac, cncf-azure-key-vault
+  related-skills: cncf-azure-key-vault, cncf-azure-monitor, cncf-azure-rbac, cncf-azure-virtual-machines
 ---
 
 

@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: hypothesis testing, t-test, chi-square, p-value, statistical significance, how do i test hypotheses
-  related-skills: coding-ds-confidence-intervals, coding-ds-maximum-likelihood, coding-ds-ab-testing
+  related-skills: coding-ds-ab-testing, coding-ds-bayesian-inference, coding-ds-confidence-intervals, coding-ds-maximum-likelihood
 ---
 
 # Hypothesis Testing

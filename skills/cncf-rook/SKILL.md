@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, orchestration, rook, storage
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ecr
 
 
 # Rook in Cloud-Native Engineering

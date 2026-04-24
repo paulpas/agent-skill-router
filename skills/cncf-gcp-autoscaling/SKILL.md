@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: autoscaling, auto-scaling, scaling, horizontal scaling, vertical scaling
-  related-skills: cncf-gcp-compute-engine, cncf-gcp-gke, cncf-gcp-cloud-monitoring, cncf-gcp-cloud-load-balancing
+  related-skills: cncf-gcp-cloud-load-balancing, cncf-gcp-cloud-monitoring, cncf-gcp-compute-engine, cncf-gcp-gke
 ---
 
 

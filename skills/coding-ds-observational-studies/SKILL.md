@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: observational studies, propensity score, matching, stratification, observational data, adjustment
-  related-skills: coding-ds-causal-inference, coding-ds-randomized-experiments, coding-ds-intervention-analysis
+  related-skills: coding-ds-causal-inference, coding-ds-intervention-analysis, coding-ds-randomized-experiments, coding-ds-synthetic-control
 ---
 
 # Observational Studies

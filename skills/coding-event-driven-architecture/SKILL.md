@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: event driven architecture, event-driven, event-driven-architecture, real-time,
     trading, eventbridge, event bus, event routing
+  related-skills: 
 ---
 
 
@@ -146,6 +147,7 @@ class Signal:
     metadata: dict = field(default_factory=dict)
 ```
 
+  related-skills: 
 ---
 
 ### 5. `SignalGenerator` Protocol Pattern

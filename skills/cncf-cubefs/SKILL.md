@@ -12,6 +12,7 @@ metadata:
   triggers: cubefs, distributed, high-performance, optimization, storage, performance,
     speed
 ---
+  related-skills: cncf-aws-dynamodb, cncf-aws-ecr, cncf-aws-rds, cncf-aws-s3
 
 
 
@@ -154,6 +155,7 @@ spec:
         ports:
         - containerPort: 9100
 ---
+  related-skills: cncf-aws-dynamodb, cncf-aws-ecr, cncf-aws-rds, cncf-aws-s3
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -184,6 +186,7 @@ spec:
         hostPath:
           path: /var/lib/cubefs
 ---
+  related-skills: cncf-aws-dynamodb, cncf-aws-ecr, cncf-aws-rds, cncf-aws-s3
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -239,6 +242,7 @@ spec:
       namespace: kube-system
   storageClassName: cubefs
 ---
+  related-skills: cncf-aws-dynamodb, cncf-aws-ecr, cncf-aws-rds, cncf-aws-s3
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -267,6 +271,7 @@ mc alias set cubefs http://cubefs-s3:7400 access-key secret-key
 ```
 
 ---
+  related-skills: cncf-aws-dynamodb, cncf-aws-ecr, cncf-aws-rds, cncf-aws-s3
 
 ## Common Pitfalls and How to Avoid Them
 
@@ -387,6 +392,7 @@ metadata:
 ```
 
 ---
+  related-skills: cncf-aws-dynamodb, cncf-aws-ecr, cncf-aws-rds, cncf-aws-s3
 
 ## Coding Practices
 

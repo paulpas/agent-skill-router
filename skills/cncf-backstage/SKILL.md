@@ -10,6 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: backstage, cloud-native, developer, engineering
+  related-skills: 
 ---
 
 # Backstage in Cloud-Native Engineering

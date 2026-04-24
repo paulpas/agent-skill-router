@@ -10,6 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud-native, engineering, flatcar container linux, flatcar-container-linux
+  related-skills: 
 ---
 
 # Flatcar Container Linux in Cloud-Native Engineering
@@ -238,6 +239,7 @@ spec:
       cpu: "500m"
 ```
 
+  related-skills: 
 ---
 
 ## Fundamentals

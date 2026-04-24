@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cdn, chaos, engineering, infrastructure as code, litmus, monitoring, cloudformation,
     cloudfront
+  related-skills: 
 ---
 
 
@@ -372,6 +373,7 @@ rules:
   - apiGroups: ["batch"]
     resources: ["jobs"]
     verbs: ["get", "list", "create", "delete"]
+  related-skills: 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -685,7 +687,8 @@ chaos-test:
 ### Terminology Glossary
 
 | Term | Definition |
-|------|------------|
+|  related-skills: 
+------|------------|
 | **ChaosExperiment** | Kubernetes resource defining a chaos scenario |
 | **ChaosEngine** | Main orchestration resource for chaos execution |
 | **ChaosResult** | Result of chaos experiment execution |
@@ -774,6 +777,7 @@ metadata:
   name: chaos-web-namespace-1
   namespace: namespace-1
 spec: ...
+  related-skills: 
 ---
 apiVersion: litmuschaos.io/v1alpha1
 kind: ChaosEngine

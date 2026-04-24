@@ -87,7 +87,7 @@ Minimum required fields:
 ---
 name: coding-graphql-patterns
 description: "GraphQL schema design, resolver patterns, and query optimization for production APIs."
-  related-skills: agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector, agent-container-inspector, agent-diff-quality-analyzer
+  related-skills: agent-autoscaling-advisor, agent-ci-cd-pipeline-analyzer, agent-confidence-based-selector, agent-container-inspector
 license: MIT
 compatibility: opencode
 metadata:

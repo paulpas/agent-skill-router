@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, declarative, engineering, flux, git-driven operations, gitops
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 # Flux in Cloud-Native Engineering
 
@@ -239,6 +240,7 @@ spec:
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ## Fundamentals
 

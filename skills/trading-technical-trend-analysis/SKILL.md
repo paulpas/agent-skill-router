@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: classification, continuation, identification, technical trend analysis,
     technical-trend-analysis
-  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering,
+  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering
     trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
 

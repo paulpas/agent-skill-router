@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: causal inference, causality, causal models, DAG, confounding, how do i determine causation
-  related-skills: coding-ds-observational-studies, coding-ds-intervention-analysis, coding-ds-randomized-experiments
+  related-skills: coding-ds-intervention-analysis, coding-ds-observational-studies, coding-ds-randomized-experiments, coding-ds-synthetic-control
 ---
 
 # Causal Inference

@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data
-  related-skills: coding-ds-data-visualization, coding-ds-correlation-analysis, coding-ds-data-profiling
+  related-skills: coding-ds-correlation-analysis, coding-ds-data-profiling, coding-ds-data-visualization, coding-ds-missing-data
 ---
 
 # Exploratory Data Analysis

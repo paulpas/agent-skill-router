@@ -13,6 +13,7 @@ metadata:
   triggers: cloud-native, container orchestration, engineering, k8s, production-grade,
     kubernetes
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 
 
@@ -529,6 +530,7 @@ data:
   database.password: cG9zdGdyZXMxMjM=
   api.key: YWJjZGVmMTIzNDU2
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 # Using ConfigMap and Secret in Pod
 apiVersion: v1
 kind: Pod

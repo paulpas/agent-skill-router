@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: maximum likelihood, MLE, likelihood estimation, likelihood function, optimization
-  related-skills: coding-ds-bayesian-inference, coding-ds-monte-carlo, coding-ds-linear-regression
+  related-skills: coding-ds-bayesian-inference, coding-ds-hypothesis-testing, coding-ds-linear-regression, coding-ds-monte-carlo
 ---
 
 # Maximum Likelihood Estimation

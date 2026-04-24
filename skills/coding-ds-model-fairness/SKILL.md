@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: model fairness, fairness metrics, bias detection, debiasing, fair machine learning, how do I check bias
-  related-skills: coding-ds-explainability, coding-ds-model-robustness, coding-ds-privacy-ml
+  related-skills: coding-ds-explainability, coding-ds-model-interpretation, coding-ds-model-robustness, coding-ds-privacy-ml
 ---
 
 # Model Fairness

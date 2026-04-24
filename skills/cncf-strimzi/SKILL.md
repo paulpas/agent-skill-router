@@ -12,6 +12,7 @@ metadata:
   triggers: apache, container orchestration, event streaming, k8s, kafka, message
     streaming, strimzi, kubernetes
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 
 

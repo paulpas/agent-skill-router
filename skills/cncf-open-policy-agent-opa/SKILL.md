@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: open policy agent opa, open-policy-agent-opa, security, compliance, how
     do i find security issues, infrastructure as code, vulnerability scanning, monitoring
-  related-skills: cncf-openfga
+  related-skills: cncf-aws-kms, cncf-aws-s3, cncf-aws-secrets-manager, cncf-azure-key-vault
 ---
 
 # Open Policy Agent in Cloud-Native Engineering

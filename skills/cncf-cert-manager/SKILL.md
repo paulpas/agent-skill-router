@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cert manager, cert-manager, cloud-native, engineering
 ---
+  related-skills: cncf-aws-kms, cncf-aws-s3, cncf-aws-secrets-manager, cncf-azure-key-vault
 
 # cert-manager in Cloud-Native Engineering
 

@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: metrics, KPI, key performance indicator, business metrics, metric definition, how do I choose metrics
-  related-skills: coding-ds-ab-testing, coding-ds-classification-metrics, coding-ds-regression-evaluation
+  related-skills: coding-ds-ab-testing, coding-ds-classification-metrics, coding-ds-online-experiments, coding-ds-regression-evaluation
 ---
 
 # Metrics and KPIs

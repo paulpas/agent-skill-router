@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: load balancing, traffic distribution, load balancer, health checks, traffic routing
-  related-skills: cncf-gcp-compute-engine, cncf-gcp-gke, cncf-gcp-cloud-monitoring, cncf-gcp-vpc
+  related-skills: cncf-gcp-cloud-monitoring, cncf-gcp-compute-engine, cncf-gcp-gke, cncf-gcp-vpc
 ---
 
 

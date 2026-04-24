@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: model robustness, adversarial robustness, out-of-distribution, OOD detection, robustness testing
-  related-skills: coding-ds-anomaly-detection, coding-ds-explainability, coding-ds-model-fairness
+  related-skills: coding-ds-anomaly-detection, coding-ds-explainability, coding-ds-model-fairness, coding-ds-reproducible-research
 ---
 
 # Model Robustness

@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: data profiling, metadata extraction, schema analysis, data schema, how do i profile data, data structure
-  related-skills: coding-ds-eda, coding-ds-data-quality, coding-ds-data-visualization
+  related-skills: coding-ds-data-quality, coding-ds-data-visualization, coding-ds-eda
 ---
 
 # Data Profiling

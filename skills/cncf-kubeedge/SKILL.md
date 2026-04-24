@@ -11,6 +11,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, computing, engineering, kubeedge
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 # KubeEdge in Cloud-Native Engineering
 
@@ -239,6 +240,7 @@ spec:
 ```
 
 ---
+  related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 ## Fundamentals
 

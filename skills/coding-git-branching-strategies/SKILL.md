@@ -14,6 +14,7 @@ metadata:
     including, models, version control
   author: https://github.com/Jeffallan
   source: https://github.com/farmage/opencode-skills
+  related-skills: 
 ---
 
 

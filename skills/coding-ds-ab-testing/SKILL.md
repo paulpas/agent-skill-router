@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: A/B testing, A/B test, statistical test, power analysis, sample size, how do I design tests
-  related-skills: coding-ds-hypothesis-testing, coding-ds-experimental-design, coding-ds-statistical-power
+  related-skills: coding-ds-classification-metrics, coding-ds-experimental-design, coding-ds-hypothesis-testing, coding-ds-statistical-power
 ---
 
 # A/B Testing

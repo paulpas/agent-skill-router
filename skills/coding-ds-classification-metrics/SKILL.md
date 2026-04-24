@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: classification metrics, precision, recall, F1-score, ROC-AUC, confusion matrix
-  related-skills: coding-ds-cross-validation, coding-ds-model-selection, coding-ds-ab-testing
+  related-skills: coding-ds-ab-testing, coding-ds-cross-validation, coding-ds-metrics-and-kpis, coding-ds-model-selection
 ---
 
 # Classification Metrics

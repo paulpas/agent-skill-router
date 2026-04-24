@@ -11,7 +11,7 @@ metadata:
   output-format: code
   triggers: cloud infrastructure, framework, fundamentals trading plan, fundamentals-trading-plan,
     management, structure
-  related-skills: trading-fundamentals-trading-edge, trading-fundamentals-trading-psychology,
+  related-skills: trading-fundamentals-trading-edge, trading-fundamentals-trading-psychology
     trading-ai-multi-asset-model, trading-risk-correlation-risk
 ---
 

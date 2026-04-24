@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: cloud cdn, cdn, content delivery, caching, global distribution
-  related-skills: cncf-gcp-cloud-storage, cncf-gcp-cloud-load-balancing, cncf-gcp-cloud-monitoring, cncf-gcp-compute-engine
+  related-skills: cncf-gcp-cloud-load-balancing, cncf-gcp-cloud-monitoring, cncf-gcp-cloud-storage, cncf-gcp-compute-engine
 ---
 
 

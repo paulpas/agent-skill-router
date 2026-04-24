@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: data versioning, data lineage, provenance, reproducibility, data governance, how do i track data
-  related-skills: coding-ds-reproducible-research, coding-ds-data-collection, coding-ds-data-ingestion
+  related-skills: coding-ds-data-collection, coding-ds-data-ingestion, coding-ds-data-privacy, coding-ds-reproducible-research
 ---
 
 # Data Versioning

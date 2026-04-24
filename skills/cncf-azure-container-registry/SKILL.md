@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: container registry, acr, container images, image registry, docker images
-  related-skills: cncf-azure-aks, cncf-azure-functions, cncf-azure-rbac, cncf-azure-monitor
+  related-skills: cncf-azure-aks, cncf-azure-functions, cncf-azure-monitor, cncf-azure-rbac
 ---
 
 

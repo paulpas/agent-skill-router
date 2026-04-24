@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: assessment, forecasting, measurement, technical volatility analysis, technical-volatility-analysis
-  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering,
+  related-skills: trading-technical-cycle-analysis, trading-technical-false-signal-filtering
     trading-fundamentals-trading-edge, trading-fundamentals-trading-plan
 ---
 

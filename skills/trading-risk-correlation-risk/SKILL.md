@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: breakdown, diversification, portfolio, risk correlation risk, risk-correlation-risk
-  related-skills: trading-ai-multi-asset-model, trading-backtest-drawdown-analysis,
+  related-skills: trading-ai-multi-asset-model, trading-backtest-drawdown-analysis
     trading-backtest-position-sizing, trading-fundamentals-risk-management-basics
 ---
 

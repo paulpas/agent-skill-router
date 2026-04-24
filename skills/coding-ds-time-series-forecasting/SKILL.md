@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: time series forecasting, ARIMA, exponential smoothing, LSTM, forecasting, time series prediction
-  related-skills: coding-ds-neural-networks, coding-ds-regression-evaluation, coding-ds-feature-engineering
+  related-skills: coding-ds-feature-engineering, coding-ds-neural-networks, coding-ds-regression-evaluation
 ---
 
 # Time Series Forecasting

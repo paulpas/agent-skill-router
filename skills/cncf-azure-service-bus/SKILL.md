@@ -10,7 +10,7 @@ metadata:
   scope: infrastructure
   output-format: manifests
   triggers: service bus, messaging, message queue, queues, topics, event messaging
-  related-skills: cncf-azure-functions, cncf-azure-monitor, cncf-azure-event-hubs, cncf-azure-rbac
+  related-skills: cncf-azure-event-hubs, cncf-azure-functions, cncf-azure-monitor, cncf-azure-rbac
 ---
 
 

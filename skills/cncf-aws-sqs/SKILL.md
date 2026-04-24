@@ -13,7 +13,7 @@ metadata:
   output-format: manifests
   triggers: dead-letter queue, fifo queue, message deduplication, message queue, queue,
     queuing, sqs, visibility timeout
-  related-skills: cncf-aws-lambda, cncf-aws-sns, cncf-aws-cloudwatch
+  related-skills: cncf-aws-cloudwatch, cncf-aws-lambda, cncf-aws-sns
 ---
 
 

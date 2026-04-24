@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters
-  related-skills: coding-ds-cross-validation, coding-ds-model-selection, coding-ds-bias-variance-tradeoff
+  related-skills: coding-ds-bias-variance-tradeoff, coding-ds-cross-validation, coding-ds-model-selection, coding-ds-tree-methods
 ---
 
 # Hyperparameter Tuning

@@ -12,7 +12,7 @@ metadata:
   output-format: manifests
   triggers: asg, auto-scaling, dynamic scaling, scaling policy, scheduled scaling,
     target tracking
-  related-skills: cncf-aws-ec2, cncf-aws-cloudwatch, cncf-aws-rds, cncf-aws-dynamodb
+  related-skills: cncf-aws-cloudwatch, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-rds
 ---
 
 

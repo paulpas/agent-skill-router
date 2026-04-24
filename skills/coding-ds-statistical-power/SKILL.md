@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: statistical power, power analysis, sample size, effect size, Type I error, Type II error
-  related-skills: coding-ds-ab-testing, coding-ds-hypothesis-testing, coding-ds-experimental-design
+  related-skills: coding-ds-ab-testing, coding-ds-experimental-design, coding-ds-hypothesis-testing
 ---
 
 # Statistical Power

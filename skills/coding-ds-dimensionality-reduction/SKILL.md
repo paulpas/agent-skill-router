@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   triggers: dimensionality reduction, PCA, t-SNE, UMAP, feature extraction, how do i reduce dimensions
-  related-skills: coding-ds-clustering, coding-ds-eda, coding-ds-feature-engineering
+  related-skills: coding-ds-clustering, coding-ds-community-detection, coding-ds-eda, coding-ds-feature-engineering
 ---
 
 # Dimensionality Reduction
