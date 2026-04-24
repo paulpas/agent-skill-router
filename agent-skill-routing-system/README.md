@@ -22,42 +22,44 @@ sequenceDiagram
     participant Embed as Embedding Service
     participant VDB as Vector Database
     participant LLM as LLM Ranker
-    participant Plan as Execution Planner
-    participant Disk as SKILL.md (disk)
+    participant GH as GitHub Raw
 
+    Note over MCP: On startup: sync skill-router-api.md from GitHub
     U->>MCP: invoke route_to_skill(task)
     MCP->>API: POST /route {"task":"..."}
-    API->>Safety: validate request
+    API->>Safety: validate request (2+ signals to block)
     Safety-->>API: pass
-    API->>Embed: generate task embedding
-    Note over Embed: text-embedding-3-small ~400ms
+    API->>Embed: generate task embedding (~400ms, cached after first)
     Embed-->>API: task vector
-    API->>VDB: cosine similarity search
-    Note over VDB: returns top-20 candidates
-    VDB-->>API: candidates (e.g. score=0.508, 0.442...)
-    API->>LLM: rank candidates
-    Note over LLM: gpt-4o-mini / claude / llama.cpp ~3,000ms
+    API->>VDB: cosine similarity search → top-20 candidates
+    VDB-->>API: candidates with similarity scores
+    API->>LLM: rank candidates (cache check first)
+    Note over LLM: Cache hit: ~5ms · Cold: ~3,000ms
     LLM-->>API: ranked skills with scores + reasoning
-    API->>Plan: build execution plan
-    Plan-->>API: sequential / parallel / hybrid
-    API-->>MCP: top skill name + confidence
-    MCP->>Disk: read /skills/<name>/SKILL.md  (mounted from repo/skills/)
-    Disk-->>MCP: full skill content
-    MCP-->>U: skill content injected into context
+    API-->>MCP: all selected skills (name + score)
+    par fetch all skills in parallel
+        MCP->>API: GET /skill/name-1
+        MCP->>API: GET /skill/name-2
+    end
+    API->>GH: fetch SKILL.md content on demand (cached in memory)
+    GH-->>API: raw SKILL.md
+    API-->>MCP: skill content(s)
+    MCP-->>U: all skill contents injected into context
+    Note over U: Response ends with: > 📖 skill: name-1, name-2
 ```
 
 ### Typical Latency Breakdown
 
-| Stage                          | Time     |
-|-------------------------------|----------|
-| Safety check                  | ~1ms     |
-| Task embedding (OpenAI)       | ~400ms   |
-| Vector similarity search      | ~1ms     |
-| LLM re-ranking (gpt-4o-mini)  | ~3,000ms |
-| Skill file read               | ~1ms     |
-| **Total end-to-end**          | **~3.5s** |
+| Stage | Cold | Warm (cached) |
+|---|---|---|
+| Safety check | ~1 ms | ~1 ms |
+| Task embedding | ~400 ms | ~1 ms (memory) |
+| Vector search | ~1 ms | ~1 ms |
+| LLM re-ranking | ~3,000 ms | ~5 ms (cache hit) |
+| Skill content fetch | ~1 ms (disk) / ~150 ms (GitHub) | ~1 ms (memory) |
+| **Total** | **~3.5 s** | **~10 ms** |
 
-> With a local llama.cpp model for both embeddings and ranking, the LLM step drops to ~200-800ms depending on hardware.
+> Local llama.cpp drops cold LLM step to ~200–800 ms. Warm requests are fast regardless of provider.
 
 ### What the Logs Show
 
@@ -77,65 +79,81 @@ sequenceDiagram
 **MCP wrapper logs** (`tail -f ~/.config/opencode/skill-router-mcp.log`) — client-side:
 
 ```
-[INFO]  tool called  {"tool":"route_to_skill","task":"review Python code..."}
+[INFO]  [SKILL ACCESS] route_to_skill invoked  {"task":"review Python code..."}
 [DEBUG] → POST /route
 [DEBUG] ← POST /route  {"status":200,"durationMs":2036}
-[INFO]  skill resolved  {"skill":"coding-security-review","fileFound":true,"totalMatches":2}
+[INFO]  [SKILL ACCESS] skills resolved  {"loaded":["coding-security-review","coding-code-review"],"total":2,"missing":[]}
 ```
 
 ## Architecture
 
 ```mermaid
 sequenceDiagram
-    participant C as Client
+    participant C as Client (MCP wrapper)
     participant S as Safety Layer
     participant E as Embedding Service
     participant V as Vector Database
+    participant LC as LLM Cache
     participant L as LLM Ranker
     participant P as Execution Planner
-    participant X as Execution Engine
-    participant M as MCP Bridge
+    participant R as SkillRegistry
 
     C->>S: task request
     S->>E: validated request
-    E->>V: task vector
-    V->>L: top-K candidates
+    E->>V: task vector (disk cache → memory → API)
+    V->>LC: top-K candidates
+    LC-->>C: cached ranking (if hit, ~5ms)
+    LC->>L: candidates (if miss, ~3,000ms)
+    L->>LC: store result
     L->>P: ranked skills + scores
-    P->>X: execution plan
-    X->>M: skill invocations
-    M-->>C: results
+    P-->>C: selected skills list
+    par content fetch (parallel)
+        C->>R: GET /skill/name-1
+        C->>R: GET /skill/name-2
+    end
+    R-->>C: SKILL.md contents (memory → disk → GitHub raw)
 ```
 
-## Remote Skill Loading
+## Skill Discovery & Sync
 
-The router automatically clones `https://github.com/paulpas/skills` on startup and refreshes it hourly. Skills are cached to a persistent Docker named volume (`skill-router-cache`) so they survive container restarts.
+### Startup
 
-**Priority**: Local mount (`/skills`, sourced from `<repo>/skills/`) always wins over remote skills. If the same skill name exists in both, the local version is used.
+On startup the router fetches a lightweight index file (`skills-index.json`, ~50 KB) from GitHub raw:
 
-### New endpoints
+```
+https://raw.githubusercontent.com/paulpas/skills/main/skills-index.json
+```
 
-| Endpoint | Description |
-|---|---|
-| `GET /skills` | List all loaded skills with name, category, tags, source file |
-| `POST /reload` | Trigger immediate GitHub pull + skill reload |
+This contains name/description/domain/tags for every skill. Embeddings are generated in batches of 100 (~2 s total), then the router reports `ready: true`.
+
+Skill *content* (full `SKILL.md`) is fetched on-demand from `/skill/:name` the first time a skill is selected, then cached in memory.
+
+### Periodic Auto-Refresh
+
+Every `SKILL_SYNC_INTERVAL` seconds (default: 3600) the router re-fetches `skills-index.json`. New entries are embedded and added to the vector database immediately — no restart required.
 
 ```bash
-# Trigger manual reload
+# Trigger an immediate refresh
 curl -X POST http://localhost:3000/reload
-
-# List all loaded skills
-curl http://localhost:3000/skills | jq '.total'
 ```
 
-### Disable remote loading
+### Local Volume Mount (optional)
+
+Mount the `skills/` directory for local-first resolution:
+
+```bash
+docker run ... -v /path/to/skills/skills:/skills:ro skill-router:latest
+```
+
+Local files always win over remote content for the same skill name.
+
+### Disable Remote Loading
 
 ```bash
 ./install-skill-router.sh --no-github
 ```
 
-### GitHub token (optional)
-
-Unauthenticated GitHub access is rate-limited to 60 requests/hour. For frequent syncs or private repos:
+### GitHub Token (optional)
 
 ```bash
 GITHUB_TOKEN=ghp_... ./install-skill-router.sh
@@ -160,6 +178,14 @@ This will:
 1. Create `~/.config/opencode/skill-router-api.md` — API reference injected into every OpenCode session
 2. Create `~/.config/opencode/skill-router-mcp.js` — MCP stdio wrapper (Node.js, stdlib-only)
 3. Register the MCP server in `~/.config/opencode/opencode.json`
+
+### API Doc Auto-Sync
+
+The MCP wrapper (`skill-router-mcp.js`) fetches `skill-router-api.md` from GitHub on every startup and re-checks hourly, overwriting the local copy if the content changed. To update the instructions the AI sees:
+
+1. Edit `agent-skill-routing-system/skill-router-api.md` in the repo
+2. Push to GitHub
+3. Restart OpenCode (or wait up to 1 hour)
 
 ### Manual Setup
 
@@ -232,6 +258,16 @@ tail -f ~/.config/opencode/skill-router-mcp.log
 | `route_to_skill` not in tool list | Restart OpenCode after editing `opencode.json` |
 | Tool returns "router not running" | Run `docker start skill-router` or `./install-skill-router.sh` |
 | Skill content missing | Check `docker logs skill-router` — ensure `ready: true` and 200+ skills loaded |
+
+## Skill Citation
+
+After loading skills, the AI appends a compact footer to every response:
+
+```
+> 📖 skill: coding-security-review, coding-code-review
+```
+
+This is driven by the `## Skill Citation` instruction in `skill-router-api.md`. All loaded skills are listed comma-separated. The footer is omitted when no skill was loaded.
 
 ## Quick Start (Docker)
 
@@ -348,6 +384,8 @@ See [`SKILL_FORMAT_SPEC.md`](../SKILL_FORMAT_SPEC.md) for the complete authoring
 | `SKILL_CACHE_DIR` | `/cache/skills` | Local path inside container for cached repo |
 | `SKILL_SYNC_INTERVAL` | `3600` | Seconds between GitHub syncs |
 | `GITHUB_TOKEN` | — | Optional GitHub token for higher rate limits |
+| `GITHUB_RAW_BASE_URL` | `https://raw.githubusercontent.com/paulpas/skills/main` | Base URL for fetching skills-index.json and skill content |
+| `SAFETY_STRICT` | `false` | Set `true` to block on single threat signal instead of requiring 2+ |
 
 ## Monitoring
 
@@ -529,7 +567,7 @@ agent-skill-routing-system/
 
 ## Safety Features
 
-- **Prompt Injection Filtering** — blocks injection attempts, command injection, SQL injection patterns
+- **Prompt Injection Filtering** — requires 2 or more independent threat signals to block a request (reducing false positives on legitimate tasks like "disable system service" or "check for shell script issues"). Set `SAFETY_STRICT=true` to revert to single-signal blocking.
 - **Schema Validation** — skill inputs validated before execution
 - **Skill Allowlist** — optional: restrict execution to approved skill names only
 

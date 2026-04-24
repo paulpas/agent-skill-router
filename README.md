@@ -52,42 +52,53 @@ sequenceDiagram
     participant Embed as Embedding Service
     participant VDB as Vector Database
     participant LLM as LLM Ranker
-    participant Plan as Execution Planner
-    participant Disk as SKILL.md (disk)
+    participant GH as GitHub Raw
 
+    Note over MCP: On startup: sync skill-router-api.md from GitHub
     U->>MCP: invoke route_to_skill(task)
     MCP->>API: POST /route {"task":"..."}
-    API->>Safety: validate request
+    API->>Safety: validate request (2+ signals to block)
     Safety-->>API: pass
-    API->>Embed: generate task embedding
-    Note over Embed: text-embedding-3-small ~400ms
+    API->>Embed: generate task embedding (~400ms, cached after first)
     Embed-->>API: task vector
-    API->>VDB: cosine similarity search
-    Note over VDB: returns top-20 candidates
-    VDB-->>API: candidates (e.g. score=0.508, 0.442...)
-    API->>LLM: rank candidates
-    Note over LLM: gpt-4o-mini / claude / llama.cpp ~3,000ms
+    API->>VDB: cosine similarity search → top-20 candidates
+    VDB-->>API: candidates with similarity scores
+    API->>LLM: rank candidates (cache check first)
+    Note over LLM: Cache hit: ~5ms · Cold: ~3,000ms
     LLM-->>API: ranked skills with scores + reasoning
-    API->>Plan: build execution plan
-    Plan-->>API: sequential / parallel / hybrid
-    API-->>MCP: top skill name + confidence
-    MCP->>Disk: read /skills/<name>/SKILL.md  (mounted from repo/skills/)
-    Disk-->>MCP: full skill content
-    MCP-->>U: skill content injected into context
+    API-->>MCP: all selected skills (name + score)
+    par fetch all skills in parallel
+        MCP->>API: GET /skill/name-1
+        MCP->>API: GET /skill/name-2
+    end
+    API->>GH: fetch SKILL.md content on demand (cached in memory)
+    GH-->>API: raw SKILL.md
+    API-->>MCP: skill content(s)
+    MCP-->>U: all skill contents injected into context
+    Note over U: Response ends with: > 📖 skill: name-1, name-2
 ```
 
 ### Latency
 
-| Stage | Time |
-|---|---|
-| Safety check | ~1 ms |
-| Task embedding (OpenAI) | ~400 ms |
-| Vector similarity search | ~1 ms |
-| LLM re-ranking (gpt-4o-mini) | ~3,000 ms |
-| Skill file read | ~1 ms |
-| **Total end-to-end** | **~3.5 s** |
+| Stage | Cold | Warm (cached) |
+|---|---|---|
+| Safety check | ~1 ms | ~1 ms |
+| Task embedding | ~400 ms | ~1 ms (memory) |
+| Vector search | ~1 ms | ~1 ms |
+| LLM re-ranking | ~3,000 ms | ~5 ms (cache hit) |
+| Skill content fetch | ~1 ms (disk) / ~150 ms (GitHub) | ~1 ms (memory) |
+| **Total** | **~3.5 s** | **~10 ms** |
 
-> Using a local llama.cpp model drops the LLM step to ~200–800 ms depending on hardware.
+> Local llama.cpp drops cold LLM step to ~200–800 ms. Warm requests are fast regardless of provider.
+
+### Key Behaviours
+
+- **Multi-skill loading** — all high-confidence matches are fetched in parallel; the AI receives full context for each
+- **Skill citation** — every response ends with `> 📖 skill: name-1, name-2` listing loaded skills
+- **Auto index refresh** — `skills-index.json` is re-fetched from GitHub every `SKILL_SYNC_INTERVAL` seconds (default: 1 hour); new skills become routable without restart
+- **API doc sync** — `skill-router-api.md` is fetched from GitHub on every MCP startup; edits to the repo file propagate automatically
+- **LLM ranking cache** — identical task+candidates combos are served from memory (~5 ms) on repeat queries
+- **Batch embeddings** — all skill embeddings are generated in parallel batches of 100 on startup (~2 s total)
 
 ---
 
@@ -442,7 +453,7 @@ skills-repo/
 
 ## Adding Skills
 
-Create `skills/<domain>-<topic>/SKILL.md` following the format in [SKILL_FORMAT_SPEC.md](./SKILL_FORMAT_SPEC.md). Run `python reformat_skills.py` to apply standard frontmatter. The router picks up new skills automatically on the next reload.
+Create `skills/<domain>-<topic>/SKILL.md` following the format in [SKILL_FORMAT_SPEC.md](./SKILL_FORMAT_SPEC.md). Run `python reformat_skills.py` to apply standard frontmatter. Run `python3 generate_index.py` after adding a skill to update `skills-index.json`, then push. The router auto-discovers new skills within `SKILL_SYNC_INTERVAL` seconds (default: 1 hour). For immediate pickup: `curl -X POST http://localhost:3000/reload`
 
 ```yaml
 ---
