@@ -19,6 +19,23 @@ from typing import Dict, List, Tuple, Optional
 import yaml
 
 
+def truncate_at_word_boundary(text: str, max_length: int = 60) -> str:
+    """Truncate text at word boundary with ellipsis if needed."""
+    if len(text) <= max_length:
+        return text
+
+    # Find the last space before max_length
+    truncated = text[:max_length]
+    last_space = truncated.rfind(" ")
+
+    if last_space > 0:
+        # Truncate at the last word boundary
+        return text[:last_space] + "..."
+    else:
+        # No space found, truncate hard and add ellipsis
+        return text[: max_length - 3] + "..."
+
+
 # Color codes for terminal output
 class Colors:
     RED = "\033[91m"
@@ -216,10 +233,8 @@ def generate_skills_by_domain(skills: List[Dict]) -> str:
         for skill in domain_skills:
             skill_link = f"[{skill['name']}](../../skills/{skill['name']}/SKILL.md)"
 
-            # Truncate description to ~60 chars
-            desc = skill["description"]
-            if len(desc) > 60:
-                desc = desc[:57] + "..."
+            # Truncate description at word boundary
+            desc = truncate_at_word_boundary(skill["description"], max_length=60)
 
             # Show top 2-3 triggers
             triggers = ", ".join(skill["trigger_list"][:2])
@@ -271,10 +286,8 @@ def generate_skills_by_role(skills: List[Dict]) -> str:
             skill_link = f"[{skill['name']}](../../skills/{skill['name']}/SKILL.md)"
             domain = skill["domain"].capitalize()
 
-            # Truncate description to ~60 chars
-            desc = skill["description"]
-            if len(desc) > 60:
-                desc = desc[:57] + "..."
+            # Truncate description at word boundary
+            desc = truncate_at_word_boundary(skill["description"], max_length=60)
 
             lines.append(f"| {skill_link} | {domain} | {desc} |")
 
@@ -284,26 +297,26 @@ def generate_skills_by_role(skills: List[Dict]) -> str:
 
 
 def generate_skills_index(skills: List[Dict]) -> str:
-    """Generate Complete Skills Index table."""
+    """Generate Complete Skills Index table with improved formatting."""
     lines = ["## Complete Skills Index\n"]
-    lines.append("| Skill Name | Category | Description | Triggers |")
+    lines.append("| Skill Name | Domain | Description | Role |")
     lines.append("|---|---|---|---|")
 
     # Sort by name alphabetically
     for skill in sorted(skills, key=lambda s: s["name"]):
-        # Truncate description and triggers for table
-        desc = skill["description"]
-        if len(desc) > 60:
-            desc = desc[:57] + "..."
+        # Use word-boundary truncation for description (60 chars)
+        desc = truncate_at_word_boundary(skill["description"], max_length=60)
 
-        # Truncate triggers to 3-4 main ones
-        triggers = ", ".join(skill["trigger_list"][:3])
-        if len(skill["trigger_list"]) > 3:
-            triggers += "..."
-
+        # Format domain with proper capitalization
         domain = skill["domain"].capitalize()
+
+        # Format role
+        role = skill["role"].capitalize()
+
+        # Create skill link
         skill_link = f"[{skill['name']}](../../skills/{skill['name']}/SKILL.md)"
-        lines.append(f"| {skill_link} | {domain} | {desc} | {triggers} |")
+
+        lines.append(f"| {skill_link} | {domain} | {desc} | {role} |")
 
     lines.append("")
     return "\n".join(lines)
