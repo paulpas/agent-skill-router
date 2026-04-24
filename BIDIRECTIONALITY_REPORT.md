@@ -2,16 +2,16 @@
 
 ## Summary
 
-- Total skills scanned: 338
-- One-way relationships fixed: 34
-- Total reciprocal relationships added: 46
+- Total skills scanned: 343
+- One-way relationships fixed: 36
+- Total reciprocal relationships added: 48
 
 ## Bidirectionality Validation
 
-- Bidirectional relationships verified: 508
-- Bidirectionality violations: 531
+- Bidirectional relationships verified: 522
+- Bidirectionality violations: 529
 
-⚠️ **531 violations remaining** (skipped due to 4-skill limit)
+⚠️ **529 violations remaining** (skipped due to 4-skill limit)
 
 ## Fixed One-Way Relationships
 
@@ -58,6 +58,14 @@
 ### coding-code-review
 
 **Added reciprocal relationships:** test-automation-demo
+
+### coding-git-advanced
+
+**Added reciprocal relationships:** coding-code-quality-policies
+
+### coding-semver-automation
+
+**Added reciprocal relationships:** coding-cve-dependency-management
 
 ### trading-ai-anomaly-detection
 
