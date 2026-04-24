@@ -45,7 +45,18 @@ export declare class SafetyLayer {
      */
     validateExecuteRequest(request: ExecuteRequest): Promise<SecurityResult>;
     /**
-     * Check for prompt injection attempts
+     * Check for prompt injection attempts.
+     *
+     * Design: collect signals from three independent categories, then decide:
+     *   - 0 signals  → safe
+     *   - 1 signal   → warn (log), but allow through (unless SAFETY_STRICT=true)
+     *   - 2+ signals → block
+     *
+     * Patterns are deliberately high-confidence to avoid false positives on
+     * normal developer task descriptions like:
+     *   "review code for security issues and check for vulnerabilities"
+     *   "use dependency injection in this service"
+     *   "run shell script to deploy"
      */
     private checkPromptInjection;
     /**

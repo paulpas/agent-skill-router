@@ -80,7 +80,10 @@ export const defaultConfig: AppConfig = {
   },
   safety: {
     maxSkillsInPlan: 5,
-    enablePromptInjectionFilter: true,
+    // enablePromptInjectionFilter controls whether injection scanning runs at all.
+    // Single-signal vs multi-signal blocking is governed by SAFETY_STRICT env var
+    // (see SafetyLayer.ts). Set SAFETY_STRICT=true to block on any single signal.
+    enablePromptInjectionFilter: process.env.SAFETY_STRICT === 'true' || true,
     requireSchemaValidation: true,
     skillAllowlist: [],
   },
