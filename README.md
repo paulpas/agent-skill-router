@@ -1,64 +1,110 @@
-# OpenCode Skills
+# Skills — An AI Skill Routing System
 
-A curated collection of skills for [OpenCode](https://opencode.ai) AI sessions, organized by domain. Each skill is a self-contained `SKILL.md` file that injects specialized behavior, knowledge, and constraints into the AI's context — turning a general-purpose assistant into a focused expert for the task at hand. This repository is intended for engineers who want consistent, high-quality AI assistance across cloud-native infrastructure, algorithmic trading, software engineering patterns, agent orchestration, and algorithm reference.
+265 expert skills for AI coding agents, with a built-in routing engine that automatically selects and injects the right skill into your AI's context before it answers. No manual `/skill` commands — just ask, and the right expertise loads itself.
+
+```
+You → "review this Python code for security issues"
+         ↓
+   route_to_skill()  [auto-fires on every task]
+         ↓
+   embed → vector search → LLM re-rank → coding-security-review/SKILL.md
+         ↓
+   Full expert skill injected into context — AI answers as a security reviewer
+```
+
+---
+
+## Quick Start
+
+**With OpenAI (recommended):**
+
+```bash
+git clone https://github.com/paulpas/skills
+cd skills
+OPENAI_API_KEY=sk-... ./install-skill-router.sh --integrate-opencode
+```
+
+Restart OpenCode. Every task you type now automatically routes to the most relevant skill.
+
+**No API key? Use a local model:**
+
+```bash
+./install-skill-router.sh \
+  --provider llamacpp \
+  --embedding-provider llamacpp \
+  --llamacpp-url http://localhost:8080
+```
+
+> llama.cpp must serve both `/v1/chat/completions` and `/v1/embeddings`. No `OPENAI_API_KEY` required.
 
 ---
 
 ## How It Works
 
-A **skill** is a Markdown document stored at `skills/<domain>-<topic>/SKILL.md`. When loaded, its full content becomes part of the active model context, shaping how the AI responds to the current task. Skills carry structured YAML frontmatter that identifies their domain, role, and trigger keywords.
+Every time OpenCode receives a task, the `route_to_skill` MCP tool fires automatically:
 
-OpenCode loads skills in two ways:
+```mermaid
+sequenceDiagram
+    participant U as OpenCode (User)
+    participant MCP as skill-router-mcp.js
+    participant API as Fastify :3000
+    participant Safety as Safety Layer
+    participant Embed as Embedding Service
+    participant VDB as Vector Database
+    participant LLM as LLM Ranker
+    participant Plan as Execution Planner
+    participant Disk as SKILL.md (disk)
 
-| Loading Mode | Mechanism | When It Fires |
-|---|---|---|
-| **Manual** | User types `/skill <name>` in the OpenCode chat | Explicitly requested |
-| **Auto-load** | `metadata.triggers` keyword match | Detected in conversation context |
+    U->>MCP: invoke route_to_skill(task)
+    MCP->>API: POST /route {"task":"..."}
+    API->>Safety: validate request
+    Safety-->>API: pass
+    API->>Embed: generate task embedding
+    Note over Embed: text-embedding-3-small ~400ms
+    Embed-->>API: task vector
+    API->>VDB: cosine similarity search
+    Note over VDB: returns top-20 candidates
+    VDB-->>API: candidates (e.g. score=0.508, 0.442...)
+    API->>LLM: rank candidates
+    Note over LLM: gpt-4o-mini / claude / llama.cpp ~3,000ms
+    LLM-->>API: ranked skills with scores + reasoning
+    API->>Plan: build execution plan
+    Plan-->>API: sequential / parallel / hybrid
+    API-->>MCP: top skill name + confidence
+    MCP->>Disk: read /skills/<name>/SKILL.md  (mounted from repo/skills/)
+    Disk-->>MCP: full skill content
+    MCP-->>U: skill content injected into context
+```
 
-Auto-loading is the primary mechanism: when your message contains a keyword listed in a skill's `triggers` field, that skill is automatically injected into context — no command required. Manual loading is available for any skill at any time via `/skill <name>`.
+### Latency
+
+| Stage | Time |
+|---|---|
+| Safety check | ~1 ms |
+| Task embedding (OpenAI) | ~400 ms |
+| Vector similarity search | ~1 ms |
+| LLM re-ranking (gpt-4o-mini) | ~3,000 ms |
+| Skill file read | ~1 ms |
+| **Total end-to-end** | **~3.5 s** |
+
+> Using a local llama.cpp model drops the LLM step to ~200–800 ms depending on hardware.
 
 ---
 
-## Installation
+## Monitoring
 
-### Global Installation (Recommended)
-
-Clone the repository to your OpenCode global skills directory. All skills become available in every OpenCode session.
-
-```bash
-git clone https://github.com/paulpas/skills.git ~/.config/opencode/skills
-```
-
-### Project-Local Installation
-
-Clone to a project's `.opencode/skills` directory to scope skills to that project only.
-
-```bash
-git clone https://github.com/paulpas/skills.git .opencode/skills
-```
-
-### Selective Installation (Symlinks)
-
-To use only specific skills, symlink individual skill directories into either install location:
-
-```bash
-ln -s /path/to/skills/skills/cncf-prometheus ~/.config/opencode/skills/cncf-prometheus
-ln -s /path/to/skills/skills/trading-risk-stop-loss ~/.config/opencode/skills/trading-risk-stop-loss
-```
-
-### Verification
-
-After installation, skills are discovered automatically. Verify by:
-
-1. Starting a new OpenCode session in your project directory
-2. Mentioning a topic covered by a skill (e.g., "help me with prometheus metrics") — the matching skill auto-loads
-3. Or load manually: type `/skill <skill-name>` in the OpenCode chat (e.g., `/skill cncf-prometheus`)
+| What | Command |
+|---|---|
+| Skill accesses (MCP side) | `tail -f ~/.config/opencode/skill-router-mcp.log \| grep 'SKILL ACCESS'` |
+| Full routing pipeline (Docker) | `docker logs -f skill-router 2>&1 \| grep -E 'Route result\|Vector search'` |
+| Routing history (JSON) | `curl -s http://localhost:3000/access-log \| python3 -m json.tool` |
+| Service health | `curl -s http://localhost:3000/health` |
 
 ---
 
-## Directory Structure
+## The Skills Library
 
-Skills follow a strict `<domain>-<topic>/SKILL.md` layout. The directory name is intentionally descriptive — you can identify a skill's purpose without consulting this file.
+265 skills across 5 domains, organized in `skills/`. Each skill is a `SKILL.md` file with YAML frontmatter — the routing engine reads these directly.
 
 ```
 skills-repo/
@@ -74,79 +120,14 @@ skills-repo/
 │   │   └── SKILL.md
 │   └── programming-algorithms/
 │       └── SKILL.md
-├── agent-skill-routing-system/     ← HTTP routing service (not a skill)
+├── agent-skill-routing-system/     ← the HTTP routing service
 ├── README.md
 ├── SKILL_FORMAT_SPEC.md
 ├── reformat_skills.py
 └── install-skill-router.sh
 ```
 
----
-
-## Skill Router
-
-The **Skill Router** is a Fastify HTTP service (`agent-skill-routing-system/`) paired with an MCP stdio wrapper that automatically routes any task description to the most relevant skill using OpenAI embeddings + LLM re-ranking. Instead of remembering skill names or typing `/skill` commands, the right skill is found and injected into the AI's context before it answers.
-
-### How It Fits In
-
-Every time OpenCode receives a task, the `route_to_skill` MCP tool fires automatically:
-
-1. The task is embedded with `text-embedding-3-small` and compared against all skill vectors.
-2. The top candidates are re-ranked by `gpt-4o-mini` (or a local model).
-3. The winning skill's `SKILL.md` is read from disk and injected into the model's context.
-
-The skills directory (`skills/`) is bind-mounted into the Docker container so the router always reads the live versions on disk.
-
-### Latency Breakdown
-
-| Stage | Time |
-|---|---|
-| Safety check | ~1 ms |
-| Task embedding (OpenAI) | ~400 ms |
-| Vector similarity search | ~1 ms |
-| LLM re-ranking (gpt-4o-mini) | ~3,000 ms |
-| Skill file read | ~1 ms |
-| **Total end-to-end** | **~3.5 s** |
-
-> Using a local llama.cpp model for both embeddings and ranking drops the LLM step to ~200–800 ms depending on hardware.
-
-### Quick Start
-
-```bash
-OPENAI_API_KEY=sk-... ./install-skill-router.sh --integrate-opencode
-```
-
-The install script builds the Docker image, registers the MCP tool in `~/.config/opencode/config.json`, and starts the service. Alternative providers are supported via environment variables: set `LLM_PROVIDER=anthropic` with `ANTHROPIC_API_KEY`, or `LLM_PROVIDER=llamacpp` with `LLAMACPP_BASE_URL` for a fully local setup.
-
-### Monitoring
-
-| What | Command |
-|---|---|
-| Skill accesses (MCP side) | `tail -f ~/.config/opencode/skill-router-mcp.log \| grep 'SKILL ACCESS'` |
-| Full routing pipeline (Docker) | `docker logs -f skill-router 2>&1 \| grep -E 'Route result\|Vector search'` |
-| Routing history (JSON) | `curl -s http://localhost:3000/access-log \| python3 -m json.tool` |
-| Service health | `curl -s http://localhost:3000/health` |
-
-### API Quick Reference
-
-```bash
-# Route a task to the best skill
-curl -X POST http://localhost:3000/route \
-  -H "Content-Type: application/json" \
-  -d '{"task": "review Python code for security issues"}'
-
-# List all indexed skills
-curl http://localhost:3000/skills
-
-# Service stats
-curl http://localhost:3000/stats
-```
-
-See [`agent-skill-routing-system/README.md`](./agent-skill-routing-system/README.md) for full docs including all environment variables, API reference, and local model configuration.
-
----
-
-## Domain Prefixes
+### Domain Prefixes
 
 | Prefix | Description |
 |---|---|
@@ -158,311 +139,331 @@ See [`agent-skill-routing-system/README.md`](./agent-skill-routing-system/README
 
 ---
 
-## Agent Orchestration
+### Agent Orchestration
 
-- [agent-confidence-based-selector](./agent-confidence-based-selector/SKILL.md) — Selects and executes the most appropriate skill based on confidence scores and relevance metrics, enabling intelligent skill routing for dynamic task resolution
-- [agent-dependency-graph-builder](./agent-dependency-graph-builder/SKILL.md) — Builds and maintains dependency graphs for task execution, enabling visualization of task relationships, identification of bottlenecks, and optimization of execution order
-- [agent-dynamic-replanner](./agent-dynamic-replanner/SKILL.md) — Dynamically adjusts execution plans based on real-time feedback, changing conditions, and emerging information, enabling adaptive problem solving in uncertain environments
-- [agent-goal-to-milestones](./agent-goal-to-milestones/SKILL.md) — Translates high-level goals into actionable milestones and tasks that can be executed by specialized skills, enabling goal-directed problem solving with measurable progress tracking
-- [agent-multi-skill-executor](./agent-multi-skill-executor/SKILL.md) — Orchestrates execution of multiple skill specifications in sequence, managing skill dependencies, result aggregation, and error recovery for complex multi-step operations
-- [agent-parallel-skill-runner](./agent-parallel-skill-runner/SKILL.md) — Executes multiple skill specifications concurrently, managing parallel workers, synchronization, and result collection for performance-optimized multi-skill operations
-- [agent-task-decomposition-engine](./agent-task-decomposition-engine/SKILL.md) — Decomposes complex tasks into smaller, manageable subtasks that can be executed by appropriate specialized skills, enabling problem-solving for complex multi-step operations
-
----
-
-## CNCF Cloud Native
-
-### Architecture & Best Practices
-
-- [cncf-architecture-best-practices](./cncf-architecture-best-practices/SKILL.md) — Cloud Native Computing Foundation (CNCF) architecture best practices for production-grade Kubernetes deployments. Covers service mesh, CNI, GitOps, CI/CD, observability, security, networking, and scaling patterns across the CNCF landscape.
-- [cncf-networking-osi](./cncf-networking-osi/SKILL.md) — OSI Model Networking for Cloud-Native - All 7 layers with CNCF project mappings, Kubernetes networking, and troubleshooting patterns.
-
-### Application Definition & Build
-
-- [cncf-argo](./cncf-argo/SKILL.md) — Argo in Cloud-Native Engineering - Kubernetes-Native Workflow, CI/CD, and Governance
-- [cncf-artifact-hub](./cncf-artifact-hub/SKILL.md) — Artifact Hub in Cloud-Native Engineering - Repository for Kubernetes Helm, Falco, OPA, and more
-- [cncf-backstage](./cncf-backstage/SKILL.md) — Backstage in Cloud-Native Engineering - Developer Portal for Microservices
-- [cncf-buildpacks](./cncf-buildpacks/SKILL.md) — Buildpacks in Cloud-Native Engineering - Turn source code into container images without Dockerfiles
-- [cncf-dapr](./cncf-dapr/SKILL.md) — Dapr in Cloud-Native Engineering - distributed application runtime
-- [cncf-helm](./cncf-helm/SKILL.md) — Helm in Cloud-Native Engineering - The Kubernetes Package Manager
-- [cncf-kubevela](./cncf-kubevela/SKILL.md) — KubeVela in Cloud-Native Engineering - application platform
-- [cncf-kubevirt](./cncf-kubevirt/SKILL.md) — KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes
-- [cncf-operator-framework](./cncf-operator-framework/SKILL.md) — Operator Framework in Tools to build and manage Kubernetes operators with standardized patterns
-
-### Container Runtime
-
-- [cncf-containerd](./cncf-containerd/SKILL.md) — Containerd in Cloud-Native Engineering - An open and reliable container runtime
-- [cncf-cri-o](./cncf-cri-o/SKILL.md) — CRI-O in Container Runtime - OCI-compliant container runtime for Kubernetes
-- [cncf-krustlet](./cncf-krustlet/SKILL.md) — Krustlet in Kubernetes Runtime - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-lima](./cncf-lima/SKILL.md) — Lima in Container Runtime - cloud native architecture, patterns, pitfalls, and best practices
-
-### Container Registry
-
-- [cncf-dragonfly](./cncf-dragonfly/SKILL.md) — Dragonfly in Cloud-Native Engineering - P2P file distribution
-- [cncf-harbor](./cncf-harbor/SKILL.md) — Harbor in Cloud-Native Engineering - container registry
-- [cncf-zot](./cncf-zot/SKILL.md) — Zot in Container Registry - cloud native architecture, patterns, pitfalls, and best practices
-
-### Networking & Service Mesh
-
-- [cncf-calico](./cncf-calico/SKILL.md) — Calico in Cloud Native Security - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-cilium](./cncf-cilium/SKILL.md) — Cilium in Cloud Native Network - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-cni](./cncf-cni/SKILL.md) — Cni in Cloud-Native Engineering - Container Network Interface - networking for Linux containers
-- [cncf-container-network-interface-cni](./cncf-container-network-interface-cni/SKILL.md) — Container Network Interface in Cloud Native Network - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-contour](./cncf-contour/SKILL.md) — Contour in Service Proxy - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-emissary-ingress](./cncf-emissary-ingress/SKILL.md) — Emissary-Ingress in Cloud-Native Engineering - Kubernetes ingress controller
-- [cncf-envoy](./cncf-envoy/SKILL.md) — Envoy in Cloud-Native Engineering - Cloud-native high-performance edge/middle/service proxy
-- [cncf-grpc](./cncf-grpc/SKILL.md) — gRPC in Remote Procedure Call - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-istio](./cncf-istio/SKILL.md) — Istio in Cloud-Native Engineering - Connect, secure, control, and observe services.
-- [cncf-kong](./cncf-kong/SKILL.md) — Kong in API Gateway - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-kong-ingress-controller](./cncf-kong-ingress-controller/SKILL.md) — Kong Ingress Controller in Kubernetes - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-kuma](./cncf-kuma/SKILL.md) — Kuma in Service Mesh - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-linkerd](./cncf-linkerd/SKILL.md) — Linkerd in Service Mesh - cloud native architecture, patterns, pitfalls, and best practices
-
-### Observability
-
-- [cncf-cortex](./cncf-cortex/SKILL.md) — Cortex in Monitoring & Observability - distributed, horizontally scalable Prometheus system
-- [cncf-fluentd](./cncf-fluentd/SKILL.md) — Fluentd unified logging layer for collecting, transforming, and routing log data in cloud-native environments
-- [cncf-jaeger](./cncf-jaeger/SKILL.md) — Jaeger in Cloud-Native Engineering - distributed tracing
-- [cncf-open-telemetry](./cncf-open-telemetry/SKILL.md) — OpenTelemetry in Observability - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-opentelemetry](./cncf-opentelemetry/SKILL.md) — OpenTelemetry in Observability framework for tracing, metrics, and logs with vendor-neutral APIs
-- [cncf-prometheus](./cncf-prometheus/SKILL.md) — Prometheus in Cloud-Native Engineering - The Prometheus monitoring system and time series database.
-- [cncf-thanos](./cncf-thanos/SKILL.md) — Thanos in High availability Prometheus solution with long-term storage
-
-### Scheduling & Orchestration
-
-- [cncf-crossplane](./cncf-crossplane/SKILL.md) — Crossplane in Platform Engineering - Kubernetes-native control plane for multi-cloud infrastructure
-- [cncf-fluid](./cncf-fluid/SKILL.md) — Fluid in A Kubernetes-native data acceleration layer for data-intensive applications
-- [cncf-karmada](./cncf-karmada/SKILL.md) — Karmada in Cloud-Native Engineering - multi-cluster orchestration
-- [cncf-keda](./cncf-keda/SKILL.md) — KEDA in Cloud-Native Engineering - event-driven autoscaling
-- [cncf-knative](./cncf-knative/SKILL.md) — Knative in Cloud-Native Engineering - serverless on Kubernetes
-- [cncf-kubeflow](./cncf-kubeflow/SKILL.md) — Kubeflow in Cloud-Native Engineering - ML on Kubernetes
-- [cncf-kubernetes](./cncf-kubernetes/SKILL.md) — Kubernetes in Cloud-Native Engineering - Production-Grade Container Scheduling and Management
-- [cncf-volcano](./cncf-volcano/SKILL.md) — Volcano in Batch scheduling infrastructure for Kubernetes
-- [cncf-wasmcloud](./cncf-wasmcloud/SKILL.md) — wasmCloud in WebAssembly-based distributed applications platform
-
-### Security & Compliance
-
-- [cncf-cert-manager](./cncf-cert-manager/SKILL.md) — cert-manager in Cloud-Native Engineering - Certificate Management for Kubernetes
-- [cncf-falco](./cncf-falco/SKILL.md) — Falco in Cloud-Native Engineering - Cloud Native Runtime Security
-- [cncf-in-toto](./cncf-in-toto/SKILL.md) — in-toto in Supply Chain Security - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-keycloak](./cncf-keycloak/SKILL.md) — Keycloak in Cloud-Native Engineering - identity and access management
-- [cncf-kubescape](./cncf-kubescape/SKILL.md) — Kubescape in Cloud-Native Engineering - Kubernetes security
-- [cncf-kyverno](./cncf-kyverno/SKILL.md) — Kyverno in Cloud-Native Engineering - policy engine
-- [cncf-notary-project](./cncf-notary-project/SKILL.md) — Notary Project in Content Trust & Security - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-oathkeeper](./cncf-oathkeeper/SKILL.md) — Oathkeeper in Identity & Access - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-open-policy-agent-opa](./cncf-open-policy-agent-opa/SKILL.md) — Open Policy Agent in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-openfga](./cncf-openfga/SKILL.md) — OpenFGA in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-openfeature](./cncf-openfeature/SKILL.md) — OpenFeature in Feature Flagging - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-ory-hydra](./cncf-ory-hydra/SKILL.md) — ORY Hydra in Security & Compliance - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-ory-kratos](./cncf-ory-kratos/SKILL.md) — ORY Kratos in Identity & Access - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-spiffe](./cncf-spiffe/SKILL.md) — SPIFFE in Secure Product Identity Framework for Applications
-- [cncf-spire](./cncf-spire/SKILL.md) — SPIRE in SPIFFE Implementation for Real-World Deployments
-- [cncf-the-update-framework-tuf](./cncf-the-update-framework-tuf/SKILL.md) — The Update Framework (TUF) in Secure software update framework for protecting software deliveries
-
-### Storage
-
-- [cncf-cubefs](./cncf-cubefs/SKILL.md) — CubeFS in Storage - distributed, high-performance file system
-- [cncf-longhorn](./cncf-longhorn/SKILL.md) — Longhorn in Cloud Native Storage - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-rook](./cncf-rook/SKILL.md) — Rook in Cloud-Native Storage Orchestration for Kubernetes
-
-### Streaming & Messaging
-
-- [cncf-cloudevents](./cncf-cloudevents/SKILL.md) — CloudEvents in Streaming & Messaging - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-nats](./cncf-nats/SKILL.md) — NATS in Cloud Native Messaging - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-strimzi](./cncf-strimzi/SKILL.md) — Strimzi in Kafka on Kubernetes - Apache Kafka for cloud-native environments
-
-### Database & Key-Value
-
-- [cncf-coredns](./cncf-coredns/SKILL.md) — Coredns in Cloud-Native Engineering - CoreDNS is a DNS server that chains plugins
-- [cncf-etcd](./cncf-etcd/SKILL.md) — etcd in Cloud-Native Engineering - distributed key-value store
-- [cncf-tikv](./cncf-tikv/SKILL.md) — TiKV in Distributed transactional key-value database inspired by Google Spanner
-- [cncf-vitess](./cncf-vitess/SKILL.md) — Vitess in Database clustering system for horizontal scaling of MySQL
-
-### CI/CD & GitOps
-
-- [cncf-flux](./cncf-flux/SKILL.md) — Flux in Cloud-Native Engineering - GitOps for Kubernetes
-- [cncf-openkruise](./cncf-openkruise/SKILL.md) — OpenKruise in Extended Kubernetes workload management with advanced deployment strategies
-- [cncf-tekton](./cncf-tekton/SKILL.md) — Tekton in Cloud-Native Engineering - A cloud-native Pipeline resource.
-
-### Automation & Edge
-
-- [cncf-chaosmesh](./cncf-chaosmesh/SKILL.md) — Chaos Mesh in Cloud-Native Engineering - chaos engineering platform for Kubernetes
-- [cncf-cloud-custodian](./cncf-cloud-custodian/SKILL.md) — Cloud Custodian in Cloud-Native Engineering - rules engine for cloud infrastructure management
-- [cncf-flatcar-container-linux](./cncf-flatcar-container-linux/SKILL.md) — Flatcar Container Linux in Cloud-Native Engineering - container Linux
-- [cncf-kubeedge](./cncf-kubeedge/SKILL.md) — KubeEdge in Cloud-Native Engineering - edge computing
-- [cncf-kserve](./cncf-kserve/SKILL.md) — KServe in Cloud-Native Engineering - model serving
-- [cncf-litmus](./cncf-litmus/SKILL.md) — Litmus in Chaos Engineering - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-metal3-io](./cncf-metal3-io/SKILL.md) — metal3.io in Bare Metal Provisioning - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-opencost](./cncf-opencost/SKILL.md) — OpenCost in Kubernetes Cost Monitoring - cloud native architecture, patterns, pitfalls, and best practices
-- [cncf-openyurt](./cncf-openyurt/SKILL.md) — OpenYurt in Extending Kubernetes to edge computing scenarios
-
-### Cost & Process
-
-- [cncf-process-architecture](./cncf-process-architecture/SKILL.md) — Creates or updates ARCHITECTURE.md documenting the project's design, components, and technical decisions for CNCF projects
-- [cncf-process-incident-response](./cncf-process-incident-response/SKILL.md) — Creates or updates an incident response plan covering detection, triage, communication, and post-incident review for CNCF projects
-- [cncf-process-releases](./cncf-process-releases/SKILL.md) — Creates or updates RELEASES.md documenting the release process, versioning policy, and release cadence for CNCF projects
-- [cncf-process-security-policy](./cncf-process-security-policy/SKILL.md) — Creates or updates SECURITY.md defining the vulnerability reporting process, disclosure timeline, and supported versions for CNCF projects
+- [agent-confidence-based-selector](./skills/agent-confidence-based-selector/SKILL.md) — Selects the most appropriate skill based on confidence scores and relevance metrics
+- [agent-dependency-graph-builder](./skills/agent-dependency-graph-builder/SKILL.md) — Builds and maintains dependency graphs for task execution
+- [agent-dynamic-replanner](./skills/agent-dynamic-replanner/SKILL.md) — Dynamically adjusts execution plans based on real-time feedback and changing conditions
+- [agent-goal-to-milestones](./skills/agent-goal-to-milestones/SKILL.md) — Translates high-level goals into actionable milestones
+- [agent-multi-skill-executor](./skills/agent-multi-skill-executor/SKILL.md) — Orchestrates execution of multiple skills in sequence with dependency management
+- [agent-parallel-skill-runner](./skills/agent-parallel-skill-runner/SKILL.md) — Executes multiple skills concurrently with synchronization and result collection
+- [agent-task-decomposition-engine](./skills/agent-task-decomposition-engine/SKILL.md) — Decomposes complex tasks into manageable subtasks for specialized skills
 
 ---
 
-## Coding Patterns
+### CNCF Cloud Native
 
-- [coding-code-review](./coding-code-review/SKILL.md) — Analyzes code diffs and files to identify bugs, security vulnerabilities, code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback
-- [coding-conviction-scoring](./coding-conviction-scoring/SKILL.md) — Conviction scoring for trade confidence and risk assessment
-- [coding-data-normalization](./coding-data-normalization/SKILL.md) — Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization
-- [coding-event-bus](./coding-event-bus/SKILL.md) — Async pub/sub event bus with typed events, mixed sync/async dispatch, and singleton initialization for trading systems
-- [coding-event-driven-architecture](./coding-event-driven-architecture/SKILL.md) — Event-driven architecture for real-time trading systems: pub/sub patterns, event types, signal flow, strategy base, and common pitfalls
-- [coding-fastapi-patterns](./coding-fastapi-patterns/SKILL.md) — FastAPI application structure with typed error hierarchy, global exception handlers, CORS middleware, request timing, and lifecycle events
-- [coding-git-branching-strategies](./coding-git-branching-strategies/SKILL.md) — Git branching models including Git Flow, GitHub Flow, Trunk-Based Development, and feature flag strategies for CI/CD pipelines
-- [coding-juice-shop](./coding-juice-shop/SKILL.md) — OWASP Juice Shop guide: Web application security testing with intentionally vulnerable Node.js/Express application for learning and practice
-- [coding-markdown-best-practices](./coding-markdown-best-practices/SKILL.md) — Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency
-- [coding-pydantic-config](./coding-pydantic-config/SKILL.md) — Pydantic-based configuration management with frozen models, nested hierarchy, TOML/env parsing, and module-level singleton
-- [coding-pydantic-models](./coding-pydantic-models/SKILL.md) — Pydantic frozen data models for trading: enums, annotated constraints, field/model validators, and computed properties
-- [coding-security-review](./coding-security-review/SKILL.md) — Security-focused code review identifying vulnerabilities like injection, XSS, insecure deserialization, and misconfigurations, with remediation guidance
-- [coding-strategy-base](./coding-strategy-base/SKILL.md) — Abstract base strategy pattern with initialization guards, typed abstract methods, and conviction scoring integration
-- [coding-test-driven-development](./coding-test-driven-development/SKILL.md) — Test-Driven Development (TDD) and Behavior-Driven Development (BDD) patterns with pytest, unit tests, mocking, and test pyramid principles
-- [coding-websocket-manager](./coding-websocket-manager/SKILL.md) — WebSocket connection manager with state machine (connecting/connected/reconnecting/error), exponential backoff, and message routing
+#### Architecture & Best Practices
 
----
+- [cncf-architecture-best-practices](./skills/cncf-architecture-best-practices/SKILL.md) — Production-grade Kubernetes: service mesh, CNI, GitOps, CI/CD, observability, security, networking, and scaling
+- [cncf-networking-osi](./skills/cncf-networking-osi/SKILL.md) — OSI Model networking for cloud-native — all 7 layers with CNCF project mappings
 
-## Trading AI & ML
+#### Application Definition & Build
 
-- [trading-ai-anomaly-detection](./trading-ai-anomaly-detection/SKILL.md) — Detect anomalous market behavior, outliers, and potential market manipulation
-- [trading-ai-explainable-ai](./trading-ai-explainable-ai/SKILL.md) — Explainable AI for understanding and trusting trading model decisions
-- [trading-ai-feature-engineering](./trading-ai-feature-engineering/SKILL.md) — Create actionable trading features from raw market data
-- [trading-ai-hyperparameter-tuning](./trading-ai-hyperparameter-tuning/SKILL.md) — Optimize model configurations for trading applications
-- [trading-ai-live-model-monitoring](./trading-ai-live-model-monitoring/SKILL.md) — Monitor production ML models for drift, decay, and performance degradation
-- [trading-ai-llm-orchestration](./trading-ai-llm-orchestration/SKILL.md) — Large Language Model orchestration for trading analysis with structured output using instructor/pydantic
-- [trading-ai-model-ensemble](./trading-ai-model-ensemble/SKILL.md) — Combine multiple models for improved prediction accuracy and robustness
-- [trading-ai-multi-asset-model](./trading-ai-multi-asset-model/SKILL.md) — Model inter-asset relationships for portfolio and cross-asset strategies
-- [trading-ai-news-embedding](./trading-ai-news-embedding/SKILL.md) — Process news text using NLP embeddings for trading signals
-- [trading-ai-order-flow-analysis](./trading-ai-order-flow-analysis/SKILL.md) — Analyze order flow to detect market pressure and anticipate price moves
-- [trading-ai-regime-classification](./trading-ai-regime-classification/SKILL.md) — Detect current market regime for adaptive trading strategies
-- [trading-ai-reinforcement-learning](./trading-ai-reinforcement-learning/SKILL.md) — Reinforcement Learning for automated trading agents and policy optimization
-- [trading-ai-sentiment-analysis](./trading-ai-sentiment-analysis/SKILL.md) — AI-powered sentiment analysis for news, social media, and political figures in trading
-- [trading-ai-sentiment-features](./trading-ai-sentiment-features/SKILL.md) — Extract market sentiment from news, social media, and analyst reports
-- [trading-ai-synthetic-data](./trading-ai-synthetic-data/SKILL.md) — Generate synthetic financial data for training and testing trading models
-- [trading-ai-time-series-forecasting](./trading-ai-time-series-forecasting/SKILL.md) — Time series forecasting for price prediction and market analysis
-- [trading-ai-volatility-prediction](./trading-ai-volatility-prediction/SKILL.md) — Forecast volatility for risk management and option pricing
+- [cncf-argo](./skills/cncf-argo/SKILL.md) — Kubernetes-native workflow, CI/CD, and governance
+- [cncf-artifact-hub](./skills/cncf-artifact-hub/SKILL.md) — Repository for Kubernetes Helm, Falco, OPA, and more
+- [cncf-backstage](./skills/cncf-backstage/SKILL.md) — Developer portal for microservices
+- [cncf-buildpacks](./skills/cncf-buildpacks/SKILL.md) — Source code to container images without Dockerfiles
+- [cncf-dapr](./skills/cncf-dapr/SKILL.md) — Distributed application runtime
+- [cncf-helm](./skills/cncf-helm/SKILL.md) — The Kubernetes package manager
+- [cncf-kubevela](./skills/cncf-kubevela/SKILL.md) — Kubernetes application platform
+- [cncf-kubevirt](./skills/cncf-kubevirt/SKILL.md) — Virtualization on Kubernetes
+- [cncf-operator-framework](./skills/cncf-operator-framework/SKILL.md) — Build and manage Kubernetes operators with standardized patterns
 
----
+#### Container Runtime
 
-## Trading Backtesting
+- [cncf-containerd](./skills/cncf-containerd/SKILL.md) — Open and reliable container runtime
+- [cncf-cri-o](./skills/cncf-cri-o/SKILL.md) — OCI-compliant container runtime for Kubernetes
+- [cncf-krustlet](./skills/cncf-krustlet/SKILL.md) — Kubernetes runtime patterns and best practices
+- [cncf-lima](./skills/cncf-lima/SKILL.md) — Container runtime patterns and best practices
 
-- [trading-backtest-drawdown-analysis](./trading-backtest-drawdown-analysis/SKILL.md) — Maximum Drawdown, Recovery Time, and Value-at-Risk Analysis
-- [trading-backtest-lookahead-bias](./trading-backtest-lookahead-bias/SKILL.md) — Preventing lookahead bias in backtesting through strict causality enforcement, time-based validation, and comprehensive detection frameworks.
-- [trading-backtest-position-exits](./trading-backtest-position-exits/SKILL.md) — Exit strategies, trailing stops, and take-profit mechanisms for trading systems.
-- [trading-backtest-position-sizing](./trading-backtest-position-sizing/SKILL.md) — Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility Adjustment
-- [trading-backtest-sharpe-ratio](./trading-backtest-sharpe-ratio/SKILL.md) — Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics
-- [trading-backtest-walk-forward](./trading-backtest-walk-forward/SKILL.md) — Walk-Forward Optimization for Robust Strategy Validation
+#### Container Registry
 
----
+- [cncf-dragonfly](./skills/cncf-dragonfly/SKILL.md) — P2P file distribution
+- [cncf-harbor](./skills/cncf-harbor/SKILL.md) — Container registry
+- [cncf-zot](./skills/cncf-zot/SKILL.md) — Cloud-native container registry patterns
 
-## Trading Data Pipelines
+#### Networking & Service Mesh
 
-- [trading-data-alternative-data](./trading-data-alternative-data/SKILL.md) — Alternative data ingestion pipelines for trading signals including news, social media, and on-chain data sources
-- [trading-data-backfill-strategy](./trading-data-backfill-strategy/SKILL.md) — Strategic data backfill for populating historical data in trading systems
-- [trading-data-candle-data](./trading-data-candle-data/SKILL.md) — OHLCV candle data processing, timeframe management, and validation for trading algorithms
-- [trading-data-enrichment](./trading-data-enrichment/SKILL.md) — Data enrichment techniques for adding context to raw trading data
-- [trading-data-feature-store](./trading-data-feature-store/SKILL.md) — Feature storage and management for machine learning trading models
-- [trading-data-lake](./trading-data-lake/SKILL.md) — Data lake architecture and management for trading data storage
-- [trading-data-order-book](./trading-data-order-book/SKILL.md) — Order book data handling, spread calculation, liquidity measurement, and cross-exchange normalization
-- [trading-data-stream-processing](./trading-data-stream-processing/SKILL.md) — Streaming data processing for real-time trading signals and analytics
-- [trading-data-time-series-database](./trading-data-time-series-database/SKILL.md) — Time-series database queries and optimization for financial data
-- [trading-data-validation](./trading-data-validation/SKILL.md) — Data validation and quality assurance for trading data pipelines
+- [cncf-calico](./skills/cncf-calico/SKILL.md) — Cloud-native network security
+- [cncf-cilium](./skills/cncf-cilium/SKILL.md) — eBPF-based cloud-native networking
+- [cncf-cni](./skills/cncf-cni/SKILL.md) — Container Network Interface for Linux containers
+- [cncf-container-network-interface-cni](./skills/cncf-container-network-interface-cni/SKILL.md) — CNI architecture patterns
+- [cncf-contour](./skills/cncf-contour/SKILL.md) — Service proxy patterns
+- [cncf-emissary-ingress](./skills/cncf-emissary-ingress/SKILL.md) — Kubernetes ingress controller
+- [cncf-envoy](./skills/cncf-envoy/SKILL.md) — High-performance edge/middle/service proxy
+- [cncf-grpc](./skills/cncf-grpc/SKILL.md) — Remote procedure call patterns
+- [cncf-istio](./skills/cncf-istio/SKILL.md) — Connect, secure, control, and observe services
+- [cncf-kong](./skills/cncf-kong/SKILL.md) — API gateway patterns
+- [cncf-kong-ingress-controller](./skills/cncf-kong-ingress-controller/SKILL.md) — Kong Ingress Controller for Kubernetes
+- [cncf-kuma](./skills/cncf-kuma/SKILL.md) — Service mesh patterns
+- [cncf-linkerd](./skills/cncf-linkerd/SKILL.md) — Lightweight service mesh
 
----
+#### Observability
 
-## Trading Exchange Integration
+- [cncf-cortex](./skills/cncf-cortex/SKILL.md) — Distributed, horizontally scalable Prometheus
+- [cncf-fluentd](./skills/cncf-fluentd/SKILL.md) — Unified logging layer for cloud-native environments
+- [cncf-jaeger](./skills/cncf-jaeger/SKILL.md) — Distributed tracing
+- [cncf-open-telemetry](./skills/cncf-open-telemetry/SKILL.md) — OpenTelemetry architecture patterns
+- [cncf-opentelemetry](./skills/cncf-opentelemetry/SKILL.md) — Vendor-neutral tracing, metrics, and logs framework
+- [cncf-prometheus](./skills/cncf-prometheus/SKILL.md) — Monitoring system and time series database
+- [cncf-thanos](./skills/cncf-thanos/SKILL.md) — High-availability Prometheus with long-term storage
 
-- [trading-exchange-ccxt-patterns](./trading-exchange-ccxt-patterns/SKILL.md) — Effective patterns for using CCXT library for exchange connectivity including error handling, rate limiting, and state management
-- [trading-exchange-failover-handling](./trading-exchange-failover-handling/SKILL.md) — Automated failover and redundancy management for exchange connectivity
-- [trading-exchange-health](./trading-exchange-health/SKILL.md) — Exchange system health monitoring and connectivity status tracking
-- [trading-exchange-market-data-cache](./trading-exchange-market-data-cache/SKILL.md) — High-performance caching layer for market data with low latency and high throughput
-- [trading-exchange-order-book-sync](./trading-exchange-order-book-sync/SKILL.md) — Order book synchronization and state management for accurate trading
-- [trading-exchange-order-execution-api](./trading-exchange-order-execution-api/SKILL.md) — Order execution and management API for trading systems
-- [trading-exchange-rate-limiting](./trading-exchange-rate-limiting/SKILL.md) — Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API Integration
-- [trading-exchange-trade-reporting](./trading-exchange-trade-reporting/SKILL.md) — Real-time trade reporting and execution analytics for monitoring and optimization
-- [trading-exchange-websocket-handling](./trading-exchange-websocket-handling/SKILL.md) — Real-time market data handling with WebSockets including connection management, data aggregation, and robust error recovery
-- [trading-exchange-websocket-streaming](./trading-exchange-websocket-streaming/SKILL.md) — Real-time market data streaming and processing
+#### Scheduling & Orchestration
 
----
+- [cncf-crossplane](./skills/cncf-crossplane/SKILL.md) — Kubernetes-native multi-cloud infrastructure control plane
+- [cncf-fluid](./skills/cncf-fluid/SKILL.md) — Kubernetes-native data acceleration for data-intensive apps
+- [cncf-karmada](./skills/cncf-karmada/SKILL.md) — Multi-cluster orchestration
+- [cncf-keda](./skills/cncf-keda/SKILL.md) — Event-driven autoscaling
+- [cncf-knative](./skills/cncf-knative/SKILL.md) — Serverless on Kubernetes
+- [cncf-kubeflow](./skills/cncf-kubeflow/SKILL.md) — ML on Kubernetes
+- [cncf-kubernetes](./skills/cncf-kubernetes/SKILL.md) — Production-grade container scheduling and management
+- [cncf-volcano](./skills/cncf-volcano/SKILL.md) — Batch scheduling infrastructure for Kubernetes
+- [cncf-wasmcloud](./skills/cncf-wasmcloud/SKILL.md) — WebAssembly-based distributed applications platform
 
-## Trading Execution Algorithms
+#### Security & Compliance
 
-- [trading-execution-order-book-impact](./trading-execution-order-book-impact/SKILL.md) — Order Book Impact Measurement and Market Microstructure Analysis
-- [trading-execution-rate-limiting](./trading-execution-rate-limiting/SKILL.md) — Rate Limiting and Exchange API Management for Robust Trading Execution
-- [trading-execution-slippage-modeling](./trading-execution-slippage-modeling/SKILL.md) — Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution Analysis
-- [trading-execution-twap](./trading-execution-twap/SKILL.md) — Time-Weighted Average Price algorithm for executing large orders with minimal market impact
-- [trading-execution-twap-vwap](./trading-execution-twap-vwap/SKILL.md) — TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution
-- [trading-execution-vwap](./trading-execution-vwap/SKILL.md) — Volume-Weighted Average Price algorithm for executing orders relative to market volume
+- [cncf-cert-manager](./skills/cncf-cert-manager/SKILL.md) — Certificate management for Kubernetes
+- [cncf-falco](./skills/cncf-falco/SKILL.md) — Cloud-native runtime security
+- [cncf-in-toto](./skills/cncf-in-toto/SKILL.md) — Supply chain security patterns
+- [cncf-keycloak](./skills/cncf-keycloak/SKILL.md) — Identity and access management
+- [cncf-kubescape](./skills/cncf-kubescape/SKILL.md) — Kubernetes security scanning
+- [cncf-kyverno](./skills/cncf-kyverno/SKILL.md) — Kubernetes policy engine
+- [cncf-notary-project](./skills/cncf-notary-project/SKILL.md) — Content trust and supply chain security
+- [cncf-oathkeeper](./skills/cncf-oathkeeper/SKILL.md) — Identity and access proxy
+- [cncf-open-policy-agent-opa](./skills/cncf-open-policy-agent-opa/SKILL.md) — Policy as code
+- [cncf-openfga](./skills/cncf-openfga/SKILL.md) — Fine-grained authorization
+- [cncf-openfeature](./skills/cncf-openfeature/SKILL.md) — Vendor-neutral feature flagging
+- [cncf-ory-hydra](./skills/cncf-ory-hydra/SKILL.md) — OAuth 2.0 / OpenID Connect server
+- [cncf-ory-kratos](./skills/cncf-ory-kratos/SKILL.md) — Cloud-native identity management
+- [cncf-spiffe](./skills/cncf-spiffe/SKILL.md) — Secure production identity framework
+- [cncf-spire](./skills/cncf-spire/SKILL.md) — SPIFFE implementation for real-world deployments
+- [cncf-the-update-framework-tuf](./skills/cncf-the-update-framework-tuf/SKILL.md) — Secure software update framework
 
----
+#### Storage
 
-## Trading Paper Trading
+- [cncf-cubefs](./skills/cncf-cubefs/SKILL.md) — Distributed high-performance file system
+- [cncf-longhorn](./skills/cncf-longhorn/SKILL.md) — Cloud-native storage patterns
+- [cncf-rook](./skills/cncf-rook/SKILL.md) — Cloud-native storage orchestration for Kubernetes
 
-- [trading-paper-commission-model](./trading-paper-commission-model/SKILL.md) — Commission Model and Fee Structure Simulation
-- [trading-paper-fill-simulation](./trading-paper-fill-simulation/SKILL.md) — Fill Simulation Models for Order Execution Probability
-- [trading-paper-market-impact](./trading-paper-market-impact/SKILL.md) — Market Impact Modeling and Order Book Simulation
-- [trading-paper-performance-attribution](./trading-paper-performance-attribution/SKILL.md) — Performance Attribution Systems for Trading Strategy Decomposition
-- [trading-paper-realistic-simulation](./trading-paper-realistic-simulation/SKILL.md) — Realistic Paper Trading Simulation with Market Impact and Execution Fees
-- [trading-paper-slippage-model](./trading-paper-slippage-model/SKILL.md) — Slippage Modeling and Execution Simulation
+#### Streaming & Messaging
 
----
+- [cncf-cloudevents](./skills/cncf-cloudevents/SKILL.md) — Cloud-native event streaming patterns
+- [cncf-nats](./skills/cncf-nats/SKILL.md) — Cloud-native messaging
+- [cncf-strimzi](./skills/cncf-strimzi/SKILL.md) — Apache Kafka for cloud-native environments
 
-## Trading Risk Management
+#### Database & Key-Value
 
-- [trading-risk-correlation-risk](./trading-risk-correlation-risk/SKILL.md) — Correlation breakdown and portfolio diversification risk
-- [trading-risk-drawdown-control](./trading-risk-drawdown-control/SKILL.md) — Maximum drawdown control and equity preservation
-- [trading-risk-kill-switches](./trading-risk-kill-switches/SKILL.md) — Implementing multi-layered kill switches at account, strategy, market, and infrastructure levels to prevent catastrophic losses and system failures
-- [trading-risk-liquidity-risk](./trading-risk-liquidity-risk/SKILL.md) — Liquidity assessment and trade execution risk
-- [trading-risk-position-sizing](./trading-risk-position-sizing/SKILL.md) — Calculating optimal position sizes using Kelly criterion, volatility adjustments, and edge-based sizing to maximize long-term growth while managing risk
-- [trading-risk-stop-loss](./trading-risk-stop-loss/SKILL.md) — Stop loss strategies for risk management
-- [trading-risk-stress-testing](./trading-risk-stress-testing/SKILL.md) — Stress test scenarios and portfolio resilience analysis
-- [trading-risk-tail-risk](./trading-risk-tail-risk/SKILL.md) — Tail risk management and extreme event protection
-- [trading-risk-value-at-risk](./trading-risk-value-at-risk/SKILL.md) — Value at Risk calculations for portfolio risk management
+- [cncf-coredns](./skills/cncf-coredns/SKILL.md) — DNS server that chains plugins
+- [cncf-etcd](./skills/cncf-etcd/SKILL.md) — Distributed key-value store
+- [cncf-tikv](./skills/cncf-tikv/SKILL.md) — Distributed transactional key-value database
+- [cncf-vitess](./skills/cncf-vitess/SKILL.md) — Horizontal scaling for MySQL
 
----
+#### CI/CD & GitOps
 
-## Trading Technical Analysis
+- [cncf-flux](./skills/cncf-flux/SKILL.md) — GitOps for Kubernetes
+- [cncf-openkruise](./skills/cncf-openkruise/SKILL.md) — Advanced Kubernetes workload management
+- [cncf-tekton](./skills/cncf-tekton/SKILL.md) — Cloud-native pipeline resource
 
-- [trading-technical-cycle-analysis](./trading-technical-cycle-analysis/SKILL.md) — Market cycles and periodic patterns in price movement
-- [trading-technical-false-signal-filtering](./trading-technical-false-signal-filtering/SKILL.md) — False Signal Filtering Techniques for Robust Technical Analysis
-- [trading-technical-indicator-confluence](./trading-technical-indicator-confluence/SKILL.md) — Indicator Confluence Validation Systems for Confirming Trading Signals
-- [trading-technical-intermarket-analysis](./trading-technical-intermarket-analysis/SKILL.md) — Cross-market relationships and asset class correlations
-- [trading-technical-market-microstructure](./trading-technical-market-microstructure/SKILL.md) — Order book dynamics and order flow analysis
-- [trading-technical-momentum-indicators](./trading-technical-momentum-indicators/SKILL.md) — RSI, MACD, Stochastic oscillators and momentum analysis
-- [trading-technical-price-action-patterns](./trading-technical-price-action-patterns/SKILL.md) — Analysis of candlestick and chart patterns for price movement prediction
-- [trading-technical-regime-detection](./trading-technical-regime-detection/SKILL.md) — Market Regime Detection Systems for Adaptive Trading Strategies
-- [trading-technical-statistical-arbitrage](./trading-technical-statistical-arbitrage/SKILL.md) — Pair trading and cointegration-based arbitrage strategies
-- [trading-technical-support-resistance](./trading-technical-support-resistance/SKILL.md) — Technical levels where price tends to pause or reverse
-- [trading-technical-trend-analysis](./trading-technical-trend-analysis/SKILL.md) — Trend identification, classification, and continuation analysis
-- [trading-technical-volatility-analysis](./trading-technical-volatility-analysis/SKILL.md) — Volatility measurement, forecasting, and risk assessment
-- [trading-technical-volume-profile](./trading-technical-volume-profile/SKILL.md) — Volume analysis techniques for understanding market structure
+#### Automation & Edge
+
+- [cncf-chaosmesh](./skills/cncf-chaosmesh/SKILL.md) — Chaos engineering platform for Kubernetes
+- [cncf-cloud-custodian](./skills/cncf-cloud-custodian/SKILL.md) — Rules engine for cloud infrastructure management
+- [cncf-flatcar-container-linux](./skills/cncf-flatcar-container-linux/SKILL.md) — Container-optimized Linux
+- [cncf-kubeedge](./skills/cncf-kubeedge/SKILL.md) — Edge computing with Kubernetes
+- [cncf-kserve](./skills/cncf-kserve/SKILL.md) — Model serving on Kubernetes
+- [cncf-litmus](./skills/cncf-litmus/SKILL.md) — Cloud-native chaos engineering
+- [cncf-metal3-io](./skills/cncf-metal3-io/SKILL.md) — Bare metal provisioning patterns
+- [cncf-opencost](./skills/cncf-opencost/SKILL.md) — Kubernetes cost monitoring
+- [cncf-openyurt](./skills/cncf-openyurt/SKILL.md) — Extending Kubernetes to edge scenarios
+
+#### Process & Documentation
+
+- [cncf-process-architecture](./skills/cncf-process-architecture/SKILL.md) — Create or update `ARCHITECTURE.md` for CNCF projects
+- [cncf-process-incident-response](./skills/cncf-process-incident-response/SKILL.md) — Incident response plan: detection, triage, communication, post-incident review
+- [cncf-process-releases](./skills/cncf-process-releases/SKILL.md) — Release process, versioning policy, and cadence documentation
+- [cncf-process-security-policy](./skills/cncf-process-security-policy/SKILL.md) — Vulnerability reporting, disclosure timeline, and supported versions
 
 ---
 
-## Trading Fundamentals
+### Coding Patterns
 
-- [trading-fundamentals-market-regimes](./trading-fundamentals-market-regimes/SKILL.md) — Market regime detection and adaptation for trading systems across changing market conditions.
-- [trading-fundamentals-market-structure](./trading-fundamentals-market-structure/SKILL.md) — Market Structure and Trading Participants Analysis
-- [trading-fundamentals-risk-management-basics](./trading-fundamentals-risk-management-basics/SKILL.md) — Position sizing, stop-loss implementation, and system-level risk controls to preserve capital
-- [trading-fundamentals-trading-edge](./trading-fundamentals-trading-edge/SKILL.md) — Finding and maintaining competitive advantage in trading systems.
-- [trading-fundamentals-trading-plan](./trading-fundamentals-trading-plan/SKILL.md) — Trading Plan Structure and Risk Management Framework
-- [trading-fundamentals-trading-psychology](./trading-fundamentals-trading-psychology/SKILL.md) — Emotional discipline, cognitive bias awareness, and maintaining operational integrity in trading
-
----
-
-## Programming
-
-- [programming-algorithms](./programming-algorithms/SKILL.md) — Comprehensive algorithm selection guide — choose, implement, and optimize algorithms based on time/space trade-offs, input characteristics, and problem constraints
-
----
-
-## Contributing
-
-To add a skill, create `skills/<domain>-<topic>/SKILL.md` following [SKILL_FORMAT_SPEC.md](./SKILL_FORMAT_SPEC.md). Run `python reformat_skills.py` to apply standard frontmatter.
+- [coding-code-review](./skills/coding-code-review/SKILL.md) — Bugs, security vulnerabilities, code smells, and architectural concerns with prioritized feedback
+- [coding-conviction-scoring](./skills/coding-conviction-scoring/SKILL.md) — Trade confidence and risk assessment scoring
+- [coding-data-normalization](./skills/coding-data-normalization/SKILL.md) — Typed dataclasses for ticker/trade/orderbook with exchange-specific parsing
+- [coding-event-bus](./skills/coding-event-bus/SKILL.md) — Async pub/sub event bus with typed events and singleton initialization
+- [coding-event-driven-architecture](./skills/coding-event-driven-architecture/SKILL.md) — Event-driven architecture for real-time systems: pub/sub, signal flow, strategy base
+- [coding-fastapi-patterns](./skills/coding-fastapi-patterns/SKILL.md) — FastAPI structure: typed error hierarchy, exception handlers, CORS, request timing
+- [coding-git-branching-strategies](./skills/coding-git-branching-strategies/SKILL.md) — Git Flow, GitHub Flow, Trunk-Based Development, and feature flag strategies
+- [coding-juice-shop](./skills/coding-juice-shop/SKILL.md) — OWASP Juice Shop: web application security testing guide
+- [coding-markdown-best-practices](./skills/coding-markdown-best-practices/SKILL.md) — Markdown syntax rules, common pitfalls, and documentation consistency
+- [coding-pydantic-config](./skills/coding-pydantic-config/SKILL.md) — Pydantic config with frozen models, nested hierarchy, TOML/env parsing
+- [coding-pydantic-models](./skills/coding-pydantic-models/SKILL.md) — Pydantic frozen data models: enums, annotated constraints, validators, computed properties
+- [coding-security-review](./skills/coding-security-review/SKILL.md) — Security vulnerabilities: injection, XSS, insecure deserialization, misconfigurations
+- [coding-strategy-base](./skills/coding-strategy-base/SKILL.md) — Abstract base strategy pattern with initialization guards and typed abstract methods
+- [coding-test-driven-development](./skills/coding-test-driven-development/SKILL.md) — TDD and BDD with pytest, unit tests, mocking, and test pyramid principles
+- [coding-websocket-manager](./skills/coding-websocket-manager/SKILL.md) — WebSocket state machine with exponential backoff and message routing
 
 ---
 
-See [SKILL_FORMAT_SPEC.md](./SKILL_FORMAT_SPEC.md) for the full skill authoring guide.
+### Trading AI & ML
+
+- [trading-ai-anomaly-detection](./skills/trading-ai-anomaly-detection/SKILL.md) — Detect anomalous market behavior, outliers, and potential manipulation
+- [trading-ai-explainable-ai](./skills/trading-ai-explainable-ai/SKILL.md) — Explainable AI for understanding and trusting trading model decisions
+- [trading-ai-feature-engineering](./skills/trading-ai-feature-engineering/SKILL.md) — Create actionable trading features from raw market data
+- [trading-ai-hyperparameter-tuning](./skills/trading-ai-hyperparameter-tuning/SKILL.md) — Optimize model configurations for trading applications
+- [trading-ai-live-model-monitoring](./skills/trading-ai-live-model-monitoring/SKILL.md) — Monitor production ML models for drift, decay, and performance degradation
+- [trading-ai-llm-orchestration](./skills/trading-ai-llm-orchestration/SKILL.md) — LLM orchestration for trading analysis with structured output via instructor/pydantic
+- [trading-ai-model-ensemble](./skills/trading-ai-model-ensemble/SKILL.md) — Combine multiple models for improved prediction accuracy
+- [trading-ai-multi-asset-model](./skills/trading-ai-multi-asset-model/SKILL.md) — Model inter-asset relationships for portfolio and cross-asset strategies
+- [trading-ai-news-embedding](./skills/trading-ai-news-embedding/SKILL.md) — Process news text using NLP embeddings for trading signals
+- [trading-ai-order-flow-analysis](./skills/trading-ai-order-flow-analysis/SKILL.md) — Analyze order flow to detect market pressure and anticipate price moves
+- [trading-ai-regime-classification](./skills/trading-ai-regime-classification/SKILL.md) — Detect current market regime for adaptive trading strategies
+- [trading-ai-reinforcement-learning](./skills/trading-ai-reinforcement-learning/SKILL.md) — Reinforcement learning for automated trading agents and policy optimization
+- [trading-ai-sentiment-analysis](./skills/trading-ai-sentiment-analysis/SKILL.md) — AI-powered sentiment from news, social media, and political figures
+- [trading-ai-sentiment-features](./skills/trading-ai-sentiment-features/SKILL.md) — Extract market sentiment from news, social media, and analyst reports
+- [trading-ai-synthetic-data](./skills/trading-ai-synthetic-data/SKILL.md) — Generate synthetic financial data for training and testing models
+- [trading-ai-time-series-forecasting](./skills/trading-ai-time-series-forecasting/SKILL.md) — Time series forecasting for price prediction and market analysis
+- [trading-ai-volatility-prediction](./skills/trading-ai-volatility-prediction/SKILL.md) — Forecast volatility for risk management and option pricing
+
+---
+
+### Trading Backtesting
+
+- [trading-backtest-drawdown-analysis](./skills/trading-backtest-drawdown-analysis/SKILL.md) — Maximum drawdown, recovery time, and Value-at-Risk analysis
+- [trading-backtest-lookahead-bias](./skills/trading-backtest-lookahead-bias/SKILL.md) — Prevent lookahead bias through strict causality enforcement and time-based validation
+- [trading-backtest-position-exits](./skills/trading-backtest-position-exits/SKILL.md) — Exit strategies, trailing stops, and take-profit mechanisms
+- [trading-backtest-position-sizing](./skills/trading-backtest-position-sizing/SKILL.md) — Fixed fractional, Kelly criterion, and volatility-adjusted sizing
+- [trading-backtest-sharpe-ratio](./skills/trading-backtest-sharpe-ratio/SKILL.md) — Sharpe ratio and risk-adjusted performance metrics
+- [trading-backtest-walk-forward](./skills/trading-backtest-walk-forward/SKILL.md) — Walk-forward optimization for robust strategy validation
+
+---
+
+### Trading Data Pipelines
+
+- [trading-data-alternative-data](./skills/trading-data-alternative-data/SKILL.md) — Alternative data ingestion: news, social media, on-chain data sources
+- [trading-data-backfill-strategy](./skills/trading-data-backfill-strategy/SKILL.md) — Strategic backfill for populating historical data
+- [trading-data-candle-data](./skills/trading-data-candle-data/SKILL.md) — OHLCV processing, timeframe management, and validation
+- [trading-data-enrichment](./skills/trading-data-enrichment/SKILL.md) — Add context to raw trading data
+- [trading-data-feature-store](./skills/trading-data-feature-store/SKILL.md) — Feature storage and management for ML trading models
+- [trading-data-lake](./skills/trading-data-lake/SKILL.md) — Data lake architecture for trading data storage
+- [trading-data-order-book](./skills/trading-data-order-book/SKILL.md) — Order book handling, spread calculation, liquidity measurement
+- [trading-data-stream-processing](./skills/trading-data-stream-processing/SKILL.md) — Streaming data processing for real-time signals and analytics
+- [trading-data-time-series-database](./skills/trading-data-time-series-database/SKILL.md) — Time-series database queries and optimization for financial data
+- [trading-data-validation](./skills/trading-data-validation/SKILL.md) — Data validation and quality assurance for trading pipelines
+
+---
+
+### Trading Exchange Integration
+
+- [trading-exchange-ccxt-patterns](./skills/trading-exchange-ccxt-patterns/SKILL.md) — CCXT patterns: error handling, rate limiting, and state management
+- [trading-exchange-failover-handling](./skills/trading-exchange-failover-handling/SKILL.md) — Automated failover and redundancy for exchange connectivity
+- [trading-exchange-health](./skills/trading-exchange-health/SKILL.md) — Exchange health monitoring and connectivity status
+- [trading-exchange-market-data-cache](./skills/trading-exchange-market-data-cache/SKILL.md) — High-performance caching for market data with low latency
+- [trading-exchange-order-book-sync](./skills/trading-exchange-order-book-sync/SKILL.md) — Order book synchronization and state management
+- [trading-exchange-order-execution-api](./skills/trading-exchange-order-execution-api/SKILL.md) — Order execution and management API
+- [trading-exchange-rate-limiting](./skills/trading-exchange-rate-limiting/SKILL.md) — Rate limiting and circuit breaker patterns for exchange APIs
+- [trading-exchange-trade-reporting](./skills/trading-exchange-trade-reporting/SKILL.md) — Real-time trade reporting and execution analytics
+- [trading-exchange-websocket-handling](./skills/trading-exchange-websocket-handling/SKILL.md) — Real-time market data: connection management, data aggregation, error recovery
+- [trading-exchange-websocket-streaming](./skills/trading-exchange-websocket-streaming/SKILL.md) — Real-time market data streaming and processing
+
+---
+
+### Trading Execution Algorithms
+
+- [trading-execution-order-book-impact](./skills/trading-execution-order-book-impact/SKILL.md) — Order book impact measurement and market microstructure analysis
+- [trading-execution-rate-limiting](./skills/trading-execution-rate-limiting/SKILL.md) — Rate limiting and exchange API management for robust execution
+- [trading-execution-slippage-modeling](./skills/trading-execution-slippage-modeling/SKILL.md) — Slippage estimation, simulation, and fee modeling
+- [trading-execution-twap](./skills/trading-execution-twap/SKILL.md) — Time-weighted average price for executing large orders with minimal impact
+- [trading-execution-twap-vwap](./skills/trading-execution-twap-vwap/SKILL.md) — TWAP and VWAP: institutional-grade order execution
+- [trading-execution-vwap](./skills/trading-execution-vwap/SKILL.md) — Volume-weighted average price execution
+
+---
+
+### Trading Paper Trading
+
+- [trading-paper-commission-model](./skills/trading-paper-commission-model/SKILL.md) — Commission model and fee structure simulation
+- [trading-paper-fill-simulation](./skills/trading-paper-fill-simulation/SKILL.md) — Fill simulation models for order execution probability
+- [trading-paper-market-impact](./skills/trading-paper-market-impact/SKILL.md) — Market impact modeling and order book simulation
+- [trading-paper-performance-attribution](./skills/trading-paper-performance-attribution/SKILL.md) — Performance attribution for trading strategy decomposition
+- [trading-paper-realistic-simulation](./skills/trading-paper-realistic-simulation/SKILL.md) — Realistic paper trading with market impact and execution fees
+- [trading-paper-slippage-model](./skills/trading-paper-slippage-model/SKILL.md) — Slippage modeling and execution simulation
+
+---
+
+### Trading Risk Management
+
+- [trading-risk-correlation-risk](./skills/trading-risk-correlation-risk/SKILL.md) — Correlation breakdown and portfolio diversification risk
+- [trading-risk-drawdown-control](./skills/trading-risk-drawdown-control/SKILL.md) — Maximum drawdown control and equity preservation
+- [trading-risk-kill-switches](./skills/trading-risk-kill-switches/SKILL.md) — Multi-layered kill switches at account, strategy, market, and infrastructure levels
+- [trading-risk-liquidity-risk](./skills/trading-risk-liquidity-risk/SKILL.md) — Liquidity assessment and trade execution risk
+- [trading-risk-position-sizing](./skills/trading-risk-position-sizing/SKILL.md) — Kelly criterion, volatility adjustments, and edge-based sizing
+- [trading-risk-stop-loss](./skills/trading-risk-stop-loss/SKILL.md) — Stop loss strategies for risk management
+- [trading-risk-stress-testing](./skills/trading-risk-stress-testing/SKILL.md) — Stress test scenarios and portfolio resilience analysis
+- [trading-risk-tail-risk](./skills/trading-risk-tail-risk/SKILL.md) — Tail risk management and extreme event protection
+- [trading-risk-value-at-risk](./skills/trading-risk-value-at-risk/SKILL.md) — Value at Risk calculations for portfolio risk management
+
+---
+
+### Trading Technical Analysis
+
+- [trading-technical-cycle-analysis](./skills/trading-technical-cycle-analysis/SKILL.md) — Market cycles and periodic patterns in price movement
+- [trading-technical-false-signal-filtering](./skills/trading-technical-false-signal-filtering/SKILL.md) — False signal filtering for robust technical analysis
+- [trading-technical-indicator-confluence](./skills/trading-technical-indicator-confluence/SKILL.md) — Indicator confluence validation for confirming trading signals
+- [trading-technical-intermarket-analysis](./skills/trading-technical-intermarket-analysis/SKILL.md) — Cross-market relationships and asset class correlations
+- [trading-technical-market-microstructure](./skills/trading-technical-market-microstructure/SKILL.md) — Order book dynamics and order flow analysis
+- [trading-technical-momentum-indicators](./skills/trading-technical-momentum-indicators/SKILL.md) — RSI, MACD, stochastic oscillators, and momentum analysis
+- [trading-technical-price-action-patterns](./skills/trading-technical-price-action-patterns/SKILL.md) — Candlestick and chart patterns for price movement prediction
+- [trading-technical-regime-detection](./skills/trading-technical-regime-detection/SKILL.md) — Market regime detection for adaptive trading strategies
+- [trading-technical-statistical-arbitrage](./skills/trading-technical-statistical-arbitrage/SKILL.md) — Pair trading and cointegration-based arbitrage
+- [trading-technical-support-resistance](./skills/trading-technical-support-resistance/SKILL.md) — Technical levels where price tends to pause or reverse
+- [trading-technical-trend-analysis](./skills/trading-technical-trend-analysis/SKILL.md) — Trend identification, classification, and continuation
+- [trading-technical-volatility-analysis](./skills/trading-technical-volatility-analysis/SKILL.md) — Volatility measurement, forecasting, and risk assessment
+- [trading-technical-volume-profile](./skills/trading-technical-volume-profile/SKILL.md) — Volume analysis for understanding market structure
+
+---
+
+### Trading Fundamentals
+
+- [trading-fundamentals-market-regimes](./skills/trading-fundamentals-market-regimes/SKILL.md) — Market regime detection and adaptation across changing conditions
+- [trading-fundamentals-market-structure](./skills/trading-fundamentals-market-structure/SKILL.md) — Market structure and trading participants analysis
+- [trading-fundamentals-risk-management-basics](./skills/trading-fundamentals-risk-management-basics/SKILL.md) — Position sizing, stop-loss, and system-level risk controls
+- [trading-fundamentals-trading-edge](./skills/trading-fundamentals-trading-edge/SKILL.md) — Finding and maintaining competitive advantage in trading systems
+- [trading-fundamentals-trading-plan](./skills/trading-fundamentals-trading-plan/SKILL.md) — Trading plan structure and risk management framework
+- [trading-fundamentals-trading-psychology](./skills/trading-fundamentals-trading-psychology/SKILL.md) — Emotional discipline, cognitive bias awareness, and operational integrity
+
+---
+
+### Programming
+
+- [programming-algorithms](./skills/programming-algorithms/SKILL.md) — Algorithm selection guide: time/space trade-offs, input characteristics, and problem constraints
+
+---
+
+## Adding Skills
+
+Create `skills/<domain>-<topic>/SKILL.md` following the format in [SKILL_FORMAT_SPEC.md](./SKILL_FORMAT_SPEC.md). Run `python reformat_skills.py` to apply standard frontmatter. The router picks up new skills automatically on the next reload.
+
+```yaml
+---
+name: my-skill-name
+description: One-line description of what this skill does
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: coding
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: keyword1, keyword2, keyword3
+---
+```
+
+Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment, kubectl`) rather than generic (`cloud, infrastructure, ops`).
+
+---
+
+## Full Documentation
+
+→ [`agent-skill-routing-system/README.md`](./agent-skill-routing-system/README.md) — complete router docs: all environment variables, API reference, provider configuration, safety features, and local model setup.
