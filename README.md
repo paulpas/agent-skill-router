@@ -665,8 +665,8 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-04-24 17:37:55 UTC  
-> **Total skills:** 337
+> **Last updated:** 2026-04-24 17:43:46 UTC  
+> **Total skills:** 338
 
 ## Skills by Domain
 
@@ -861,7 +861,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [cncf-zot](../../skills/cncf-zot/SKILL.md) | Zot in Container Registry - cloud native architecture,... | cdn, container... |
 
 
-### Coding (73 skills)
+### Coding (74 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -938,6 +938,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [coding-strategy-base](../../skills/coding-strategy-base/SKILL.md) | Abstract base strategy pattern with initialization guards,... | abstract, initialization... |
 | [coding-test-driven-development](../../skills/coding-test-driven-development/SKILL.md) | Test-Driven Development (TDD) and Behavior-Driven... | behavior-driven, patterns... |
 | [coding-websocket-manager](../../skills/coding-websocket-manager/SKILL.md) | WebSocket connection manager with state machine... | connection, machine... |
+| [test-automation-demo](../../skills/test-automation-demo/SKILL.md) | Demonstrates the skill automation system with pre-commit... | test automation, automation testing... |
 
 
 ### Programming (3 skills)
@@ -1040,7 +1041,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 ## Skills by Role
 
 
-### Implementation (Build Features) (156 skills)
+### Implementation (Build Features) (157 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1117,6 +1118,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [coding-strategy-base](../../skills/coding-strategy-base/SKILL.md) | Coding | Abstract base strategy pattern with initialization guards,... |
 | [coding-test-driven-development](../../skills/coding-test-driven-development/SKILL.md) | Coding | Test-Driven Development (TDD) and Behavior-Driven... |
 | [coding-websocket-manager](../../skills/coding-websocket-manager/SKILL.md) | Coding | WebSocket connection manager with state machine... |
+| [test-automation-demo](../../skills/test-automation-demo/SKILL.md) | Coding | Demonstrates the skill automation system with pre-commit... |
 | [trading-ai-anomaly-detection](../../skills/trading-ai-anomaly-detection/SKILL.md) | Trading | Detect anomalous market behavior, outliers, and potential... |
 | [trading-ai-explainable-ai](../../skills/trading-ai-explainable-ai/SKILL.md) | Trading | Explainable AI for understanding and trusting trading model... |
 | [trading-ai-feature-engineering](../../skills/trading-ai-feature-engineering/SKILL.md) | Trading | Create actionable trading features from raw market data |
@@ -1631,6 +1633,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [programming-abl-v10-learning](../../skills/programming-abl-v10-learning/SKILL.md) | Programming | Reference guide for Progress OpenEdge ABL 10.1A (2005) —... | Reference |
 | [programming-abl-v12-learning](../../skills/programming-abl-v12-learning/SKILL.md) | Programming | Reference guide for Progress OpenEdge ABL 12.7 (2023) —... | Reference |
 | [programming-algorithms](../../skills/programming-algorithms/SKILL.md) | Programming | Comprehensive algorithm selection guide — choose,... | Reference |
+| [test-automation-demo](../../skills/test-automation-demo/SKILL.md) | Coding | Demonstrates the skill automation system with pre-commit... | Implementation |
 | [trading-ai-anomaly-detection](../../skills/trading-ai-anomaly-detection/SKILL.md) | Trading | Detect anomalous market behavior, outliers, and potential... | Implementation |
 | [trading-ai-explainable-ai](../../skills/trading-ai-explainable-ai/SKILL.md) | Trading | Explainable AI for understanding and trusting trading model... | Implementation |
 | [trading-ai-feature-engineering](../../skills/trading-ai-feature-engineering/SKILL.md) | Trading | Create actionable trading features from raw market data | Implementation |

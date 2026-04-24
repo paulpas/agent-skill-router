@@ -3663,6 +3663,19 @@
     "path": "skills/programming-algorithms/SKILL.md"
   },
   {
+    "name": "test-automation-demo",
+    "description": "Demonstrates the skill automation system with pre-commit hook validation and automatic relationship updates",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "test automation",
+      "automation testing",
+      "demo skill",
+      "hook test"
+    ],
+    "path": "skills/test-automation-demo/SKILL.md"
+  },
+  {
     "name": "trading-ai-anomaly-detection",
     "description": "Detect anomalous market behavior, outliers, and potential market manipulation",
     "domain": "trading",
