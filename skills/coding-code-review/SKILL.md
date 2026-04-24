@@ -1,18 +1,21 @@
 ---
 name: coding-code-review
-description: Analyzes code diffs and files to identify bugs, security vulnerabilities, code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback
+description: Analyzes code diffs and files to identify bugs, security vulnerabilities,
+  code smells, and architectural concerns, producing a structured review report with
+  prioritized, actionable feedback
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.1.0"
+  version: 1.1.0
   domain: coding
   role: implementation
   scope: implementation
   output-format: code
-  triggers: code review, code-review, analyzes, diffs, files
+  triggers: analyzes, code review, code-review, diffs, files
   author: https://github.com/Jeffallan
   source: https://github.com/farmage/opencode-skills
 ---
+
 
 # Code Reviewer
 

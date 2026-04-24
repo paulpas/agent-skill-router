@@ -1,17 +1,21 @@
 ---
 name: programming-abl-v10-learning
-description: Reference guide for Progress OpenEdge ABL 10.1A (2005) — data types, variable declaration, procedures, functions, OOP basics, error handling, database access, transaction handling, control flow
+description: "Reference guide for Progress OpenEdge ABL 10.1A (2005) \u2014 data types,\
+  \ variable declaration, procedures, functions, OOP basics, error handling, database\
+  \ access, transaction handling, control flow"
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: programming
   role: reference
   scope: implementation
   output-format: code
-  triggers: ABL, OpenEdge, Progress 4GL, ABL v10, OpenEdge 10, Progress ABL, ABL programming
+  triggers: abl, abl programming, abl v10, openedge, openedge 10, progress 4gl, progress
+    abl
   related-skills: programming-abl-v12-learning, programming-abl-v10-ui
 ---
+
 
 # Progress OpenEdge ABL 10.1A — Reference Guide
 

@@ -1,16 +1,20 @@
 ---
 name: cncf-nats
-description: NATS in Cloud Native Messaging - cloud native architecture, patterns, pitfalls, and best practices
+description: NATS in Cloud Native Messaging - cloud native architecture, patterns,
+  pitfalls, and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: nats, cloud, native, messaging
+  triggers: cdn, infrastructure as code, messaging, monitoring, native, nats, cloudformation,
+    cloudfront
 ---
+
+
 
 # NATS in Cloud-Native Engineering
 

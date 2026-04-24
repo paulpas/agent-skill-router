@@ -4,13 +4,14 @@ description: KServe in Cloud-Native Engineering - model serving
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: kserve, cloud-native, engineering, model
+  triggers: cloud-native, engineering, kserve, model
 ---
+
 # KServe in Cloud-Native Engineering
 
 **Category:** ml  

@@ -4,13 +4,14 @@ description: KubeEdge in Cloud-Native Engineering - edge computing
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: kubeedge, cloud-native, engineering, computing
+  triggers: cloud-native, computing, engineering, kubeedge
 ---
+
 # KubeEdge in Cloud-Native Engineering
 
 **Category:** edge  

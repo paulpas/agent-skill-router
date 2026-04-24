@@ -4,13 +4,14 @@ description: Tail risk management and extreme event protection
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: risk tail risk, risk-tail-risk, management, extreme, event
+  triggers: event, extreme, management, risk tail risk, risk-tail-risk
 ---
+
 
 **Role:** Identify and protect against tail risk events
 

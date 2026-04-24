@@ -4,13 +4,14 @@ description: Analysis of candlestick and chart patterns for price movement predi
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: technical price action patterns, technical-price-action-patterns, analysis, candlestick, chart
+  triggers: analysis, candlestick, chart, technical price action patterns, technical-price-action-patterns
 ---
+
 
 **Role:** Identify high-probability price patterns to forecast market direction
 

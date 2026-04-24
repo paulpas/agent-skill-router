@@ -4,13 +4,14 @@ description: Data enrichment techniques for adding context to raw trading data
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: data enrichment, data-enrichment, techniques, adding, context
+  triggers: adding, context, data enrichment, data-enrichment, techniques
 ---
+
 
 **Role:** Add contextual information to raw data for better decision making
 

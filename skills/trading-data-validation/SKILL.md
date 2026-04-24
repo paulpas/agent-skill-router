@@ -4,13 +4,14 @@ description: Data validation and quality assurance for trading data pipelines
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: data validation, data-validation, quality, assurance, trading
+  triggers: assurance, data validation, data-validation, quality, trading
 ---
+
 
 **Role:** Ensure trading data meets quality standards before processing to prevent bad decisions
 

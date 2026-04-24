@@ -1,16 +1,20 @@
 ---
 name: agent-task-decomposition-engine
-description: Decomposes complex tasks into smaller, manageable subtasks that can be executed by appropriate specialized skills, enabling problem-solving for complex multi-step operations.
+description: Decomposes complex tasks into smaller, manageable subtasks that can be
+  executed by appropriate specialized skills, enabling problem-solving for complex
+  multi-step operations.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: orchestration
   scope: orchestration
   output-format: analysis
-  triggers: task decomposition engine, task-decomposition-engine, decomposes, complex, tasks
+  triggers: complex, decomposes, task decomposition engine, task-decomposition-engine,
+    tasks
 ---
+
 
 # Task Decomposition Engine (Agent Problem Solving)
 

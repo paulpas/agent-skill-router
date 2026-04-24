@@ -1,16 +1,18 @@
 ---
 name: agent-memory-usage-analyzer
-description: Analyzes memory allocation patterns, identifies memory leaks, and provides optimization guidance for memory-efficient code.
+description: Analyzes memory allocation patterns, identifies memory leaks, and provides
+  optimization guidance for memory-efficient code.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: debugging
   scope: analysis
   output-format: analysis
-  triggers: memory usage analyzer, memory-usage-analyzer, analyzes, memory, leaks
+  triggers: analyzes, leaks, memory, memory usage analyzer, memory-usage-analyzer
 ---
+
 
 # Memory Usage Analyzer (Allocation Pattern Analysis)
 

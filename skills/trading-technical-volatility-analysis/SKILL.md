@@ -4,13 +4,14 @@ description: Volatility measurement, forecasting, and risk assessment
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: technical volatility analysis, technical-volatility-analysis, measurement, forecasting, assessment
+  triggers: assessment, forecasting, measurement, technical volatility analysis, technical-volatility-analysis
 ---
+
 
 **Role:** Quantify market volatility for risk management, position sizing, and option pricing
 

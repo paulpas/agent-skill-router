@@ -1,16 +1,19 @@
 ---
 name: agent-parallel-skill-runner
-description: Executes multiple skill specifications concurrently, managing parallel workers, synchronization, and result collection for performance-optimized multi-skill operations.
+description: Executes multiple skill specifications concurrently, managing parallel
+  workers, synchronization, and result collection for performance-optimized multi-skill
+  operations.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: orchestration
   scope: orchestration
   output-format: analysis
-  triggers: parallel skill runner, parallel-skill-runner, executes, multiple, specifications
+  triggers: executes, multiple, parallel skill runner, parallel-skill-runner, specifications
 ---
+
 
 # Parallel Skill Runner (Agent Skill Concurrency)
 

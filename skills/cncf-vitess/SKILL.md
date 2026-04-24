@@ -4,13 +4,14 @@ description: Vitess in Database clustering system for horizontal scaling of MySQ
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: vitess, database, clustering, system
+  triggers: clustering, system, vitess
 ---
+
 
 # Vitess in Cloud-Native Engineering
 

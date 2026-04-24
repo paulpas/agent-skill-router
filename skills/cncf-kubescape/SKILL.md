@@ -4,13 +4,15 @@ description: Kubescape in Cloud-Native Engineering - Kubernetes security
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: kubescape, cloud-native, engineering, kubernetes
+  triggers: cloud-native, container orchestration, engineering, k8s, kubescape, kubernetes
 ---
+
+
 # Kubescape in Cloud-Native Engineering
 
 **Category:** security  

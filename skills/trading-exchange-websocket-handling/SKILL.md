@@ -1,16 +1,19 @@
 ---
 name: trading-exchange-websocket-handling
-description: Real-time market data handling with WebSockets including connection management, data aggregation, and robust error recovery
+description: Real-time market data handling with WebSockets including connection management,
+  data aggregation, and robust error recovery
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: exchange websocket handling, exchange-websocket-handling, real-time, market, websockets
+  triggers: exchange websocket handling, exchange-websocket-handling, market, real-time,
+    websockets
 ---
+
 
 **Role:** Guide an AI coding assistant to build robust real-time data pipelines using WebSockets that handle connection instability, data synchronization, and high-frequency updates
 

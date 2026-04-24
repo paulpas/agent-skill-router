@@ -1,17 +1,21 @@
 ---
 name: cncf-aws-eks
-description: Deploys managed Kubernetes clusters with EKS for container orchestration, auto-scaling, networking, and integrations with AWS services for production Kubernetes workloads.
+description: Deploys managed Kubernetes clusters with EKS for container orchestration,
+  auto-scaling, networking, and integrations with AWS services for production Kubernetes
+  workloads.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: EKS, Kubernetes, container orchestration, K8s, cluster, pods, namespaces, ingress
+  triggers: eks, container orchestration, k8s, cluster, pods, namespaces, ingress,
+    kubernetes namespace
   related-skills: cncf-aws-ecr, cncf-aws-vpc, cncf-aws-iam, cncf-aws-cloudwatch
 ---
+
 
 # EKS (Elastic Kubernetes Service)
 

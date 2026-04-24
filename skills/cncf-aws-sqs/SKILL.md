@@ -1,17 +1,21 @@
 ---
 name: cncf-aws-sqs
-description: Deploys managed message queues with SQS for asynchronous processing, decoupling services, and reliable message delivery with visibility timeout and dead-letter queues.
+description: Deploys managed message queues with SQS for asynchronous processing,
+  decoupling services, and reliable message delivery with visibility timeout and dead-letter
+  queues.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: SQS, message queue, queue, FIFO queue, visibility timeout, dead-letter queue, message deduplication
+  triggers: dead-letter queue, fifo queue, message deduplication, message queue, queue,
+    queuing, sqs, visibility timeout
   related-skills: cncf-aws-lambda, cncf-aws-sns, cncf-aws-cloudwatch
 ---
+
 
 # SQS (Simple Queue Service)
 

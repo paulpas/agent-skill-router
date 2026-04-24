@@ -4,13 +4,17 @@ description: Stress test scenarios and portfolio resilience analysis
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: risk stress testing, risk-stress-testing, scenarios, portfolio, resilience
+  triggers: portfolio, resilience, risk stress testing, risk-stress-testing, scenarios,
+    unit tests, testing, test automation
 ---
+
+
+
 
 **Role:** Evaluate portfolio performance under extreme market conditions
 

@@ -4,13 +4,14 @@ description: Detect anomalous market behavior, outliers, and potential market ma
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: ai anomaly detection, ai-anomaly-detection, detect, anomalous, market
+  triggers: ai anomaly detection, ai-anomaly-detection, anomalous, detect, market
 ---
+
 
 **Role:** Build detection systems that identify unusual price movements, volume spikes, and structural breaks
 

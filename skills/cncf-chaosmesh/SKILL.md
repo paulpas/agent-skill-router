@@ -1,16 +1,18 @@
 ---
 name: cncf-chaosmesh
-description: Chaos Mesh in Cloud-Native Engineering -混沌工程平台 for Kubernetes
+description: "Chaos Mesh in Cloud-Native Engineering -\u6DF7\u6C8C\u5DE5\u7A0B\u5E73\
+  \u53F0 for Kubernetes"
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: chaosmesh, chaos, cloud-native, engineering
+  triggers: chaos, chaosmesh, cloud-native, engineering
 ---
+
 # Chaos Mesh in Cloud-Native Engineering
 
 **Category:** chaos  

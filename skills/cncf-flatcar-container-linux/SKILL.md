@@ -4,13 +4,14 @@ description: Flatcar Container Linux in Cloud-Native Engineering - container Lin
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: flatcar container linux, flatcar-container-linux, cloud-native, engineering
+  triggers: cloud-native, engineering, flatcar container linux, flatcar-container-linux
 ---
+
 # Flatcar Container Linux in Cloud-Native Engineering
 
 **Category:** os  

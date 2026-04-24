@@ -4,13 +4,17 @@ description: Emissary-Ingress in Cloud-Native Engineering - Kubernetes ingress c
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: emissary ingress, emissary-ingress, emissary-ingress, cloud-native, engineering
+  triggers: cloud-native, emissary ingress, emissary-ingress, engineering, kubernetes
+    ingress, container orchestration, ingress, http routing
 ---
+
+
+
 # Emissary-Ingress in Cloud-Native Engineering
 
 **Category:** networking  

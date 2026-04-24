@@ -1,16 +1,20 @@
 ---
 name: trading-exchange-market-data-cache
-description: High-performance caching layer for market data with low latency and high throughput
+description: High-performance caching layer for market data with low latency and high
+  throughput
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: exchange market data cache, exchange-market-data-cache, high-performance, caching, layer
+  triggers: caching, exchange market data cache, exchange-market-data-cache, high-performance,
+    layer, optimization, elasticache, performance
 ---
+
+
 
 **Role:** Cache market data efficiently to reduce API calls and improve data access speed
 

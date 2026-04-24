@@ -1,16 +1,19 @@
 ---
 name: trading-backtest-position-sizing
-description: "Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility Adjustment"
+description: 'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility
+  Adjustment'
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: backtest position sizing, backtest-position-sizing, algorithms, fixed, fractional
+  triggers: algorithms, backtest position sizing, backtest-position-sizing, fixed,
+    fractional
 ---
+
 
 **Role:** Risk Management Specialist — implements dynamic position sizing algorithms to optimize capital allocation while controlling risk exposure and maximizing long-term growth.
 

@@ -4,13 +4,14 @@ description: Generate synthetic financial data for training and testing trading 
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: ai synthetic data, ai-synthetic-data, generate, financial, training
+  triggers: ai synthetic data, ai-synthetic-data, financial, generate, training
 ---
+
 
 **Role:** Create realistic synthetic market data when actual data is limited or for augmenting training sets
 

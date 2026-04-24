@@ -4,13 +4,16 @@ description: Thanos in High availability Prometheus solution with long-term stor
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: thanos, availability, prometheus, solution
+  triggers: availability, metrics, prometheus, prometheus monitoring, solution, thanos,
+    cloudwatch, monitoring
 ---
+
+
 
 # Thanos in Cloud-Native Engineering
 

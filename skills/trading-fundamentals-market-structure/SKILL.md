@@ -4,13 +4,15 @@ description: Market Structure and Trading Participants Analysis
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: fundamentals market structure, fundamentals-market-structure, trading, participants, analysis
+  triggers: analysis, fundamentals market structure, fundamentals-market-structure,
+    participants, trading
 ---
+
 
 **Role:** Market Microstructure Analyst — implements comprehensive market structure analysis to understand how trading venues, order types, and participant behaviors influence price formation and execution quality.
 

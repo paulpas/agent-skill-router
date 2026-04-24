@@ -4,13 +4,15 @@ description: Rate Limiting and Exchange API Management for Robust Trading Execut
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: execution rate limiting, execution-rate-limiting, exchange, management, robust
+  triggers: exchange, execution rate limiting, execution-rate-limiting, management,
+    robust
 ---
+
 
 **Role:** Trading Infrastructure Engineer — designs rate limiting systems and exchange API integrations to ensure reliable, compliant, and efficient order execution without triggering account suspensions or API blacklists.
 

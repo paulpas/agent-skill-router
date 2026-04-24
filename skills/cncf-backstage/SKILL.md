@@ -4,13 +4,14 @@ description: Backstage in Cloud-Native Engineering - Developer Portal for Micros
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: backstage, cloud-native, engineering, developer
+  triggers: backstage, cloud-native, developer, engineering
 ---
+
 # Backstage in Cloud-Native Engineering
 
 **Category:** portal  

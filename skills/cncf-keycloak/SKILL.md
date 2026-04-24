@@ -4,13 +4,14 @@ description: Keycloak in Cloud-Native Engineering - identity and access manageme
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: keycloak, cloud-native, engineering, identity
+  triggers: cloud-native, engineering, identity, keycloak
 ---
+
 # Keycloak in Cloud-Native Engineering
 
 **Category:** security  

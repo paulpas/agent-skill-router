@@ -1,16 +1,19 @@
 ---
 name: programming-algorithms
-description: Comprehensive algorithm selection guide — choose, implement, and optimize algorithms based on time/space trade-offs, input characteristics, and problem constraints
+description: "Comprehensive algorithm selection guide \u2014 choose, implement, and\
+  \ optimize algorithms based on time/space trade-offs, input characteristics, and\
+  \ problem constraints"
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: programming
   role: reference
   scope: implementation
   output-format: code
-  triggers: algorithm, algorithms, data structure, sorting, searching, complexity, big-O
+  triggers: algorithm, algorithms, big-o, complexity, data structure, searching, sorting
 ---
+
 
 # Skill: programming-algorithms
 

@@ -1,18 +1,20 @@
 ---
 name: coding-test-driven-development
-description: Test-Driven Development (TDD) and Behavior-Driven Development (BDD) patterns with pytest, unit tests, mocking, and test pyramid principles
+description: Test-Driven Development (TDD) and Behavior-Driven Development (BDD) patterns
+  with pytest, unit tests, mocking, and test pyramid principles
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
   role: implementation
   scope: implementation
   output-format: code
-  triggers: test driven development, test-driven-development, test-driven, behavior-driven, patterns
+  triggers: behavior-driven, patterns, test driven development, test-driven, test-driven-development
   author: https://github.com/Jeffallan
   source: https://github.com/farmage/opencode-skills
 ---
+
 
 # Test-Driven Development (TDD)
 

@@ -1,16 +1,21 @@
 ---
 name: cncf-fluid
-description: Fluid in A Kubernetes-native data acceleration layer for data-intensive applications
+description: Fluid in A Kubernetes-native data acceleration layer for data-intensive
+  applications
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: fluid, kubernetes-native, acceleration, layer
+  triggers: acceleration, container orchestration, fluid, kubernetes-native, layer,
+    kubernetes, k8s
 ---
+
+
+
 
 # Fluid in Cloud-Native Engineering
 

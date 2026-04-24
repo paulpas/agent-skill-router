@@ -4,13 +4,14 @@ description: Detect current market regime for adaptive trading strategies
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: ai regime classification, ai-regime-classification, detect, current, market
+  triggers: ai regime classification, ai-regime-classification, current, detect, market
 ---
+
 
 **Role:** Identify market regimes to switch between trading strategies based on current conditions
 

@@ -4,13 +4,15 @@ description: Reinforcement Learning for automated trading agents and policy opti
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: ai reinforcement learning, ai-reinforcement-learning, automated, trading, agents
+  triggers: agents, ai reinforcement learning, ai-reinforcement-learning, automated,
+    trading
 ---
+
 
 **Role:** Design and implement RL agents that learn optimal trading strategies through interaction with market environments
 

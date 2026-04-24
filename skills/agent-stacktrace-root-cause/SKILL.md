@@ -1,16 +1,19 @@
 ---
 name: agent-stacktrace-root-cause
-description: Performs stacktrace root cause analysis by examining stack frames, identifying failure chains, and determining the underlying cause of errors and exceptions.
+description: Performs stacktrace root cause analysis by examining stack frames, identifying
+  failure chains, and determining the underlying cause of errors and exceptions.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: diagnosis
   scope: root cause analysis
   output-format: analysis
-  triggers: stacktrace root cause, stacktrace-root-cause, analyzes, stacktraces, root cause, failures
+  triggers: analyzes, failures, root cause, stacktrace root cause, stacktrace-root-cause,
+    stacktraces
 ---
+
 
 # Stacktrace Root Cause (Agent Failure Diagnosis)
 

@@ -1,17 +1,20 @@
 ---
 name: cncf-aws-iam
-description: Configures identity and access management with IAM users, roles, policies, and MFA for secure, least-privilege access control across AWS resources and services.
+description: Configures identity and access management with IAM users, roles, policies,
+  and MFA for secure, least-privilege access control across AWS resources and services.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: IAM, identity management, access control, IAM role, IAM policy, MFA, least privilege, service role
+  triggers: iam, identity management, access control, iam role, iam policy, mfa, least
+    privilege, service role
   related-skills: cncf-aws-kms, cncf-aws-secrets-manager, cncf-aws-cloudtrail
 ---
+
 
 # IAM (Identity and Access Management)
 

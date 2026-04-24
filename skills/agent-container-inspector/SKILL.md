@@ -1,16 +1,18 @@
 ---
 name: agent-container-inspector
-description: Inspects container configurations, runtime state, logs, and system resources for debugging and security analysis.
+description: Inspects container configurations, runtime state, logs, and system resources
+  for debugging and security analysis.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: debugging
   scope: container
   output-format: analysis
-  triggers: container inspector, container-inspector, inspects, container, runtime
+  triggers: container, container inspector, container-inspector, inspects, runtime
 ---
+
 
 # Container Inspector (Container Runtime Analysis)
 

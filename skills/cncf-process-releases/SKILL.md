@@ -1,20 +1,22 @@
 ---
 name: cncf-process-releases
-description: Creates or updates RELEASES.md documenting the release process, versioning policy, and release cadence for CNCF projects
+description: Creates or updates RELEASES.md documenting the release process, versioning
+  policy, and release cadence for CNCF projects
 license: MIT
 compatibility: opencode
 how_to_guide: https://contribute.cncf.io/maintainers/github/releases/
 id: releases
-mcp_servers: 
+mcp_servers: null
 template_source: https://contribute.cncf.io/maintainers/github/releases/
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: process releases, process-releases, creates, updates, documenting
+  triggers: creates, documenting, process releases, process-releases, updates
 ---
+
 
 # CNCF Release Process
 

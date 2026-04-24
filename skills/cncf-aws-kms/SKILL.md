@@ -1,17 +1,21 @@
 ---
 name: cncf-aws-kms
-description: Manages encryption keys with AWS KMS for data protection at rest and in transit, key rotation, and compliance with encryption standards across all AWS services.
+description: Manages encryption keys with AWS KMS for data protection at rest and
+  in transit, key rotation, and compliance with encryption standards across all AWS
+  services.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: KMS, encryption, key management, data encryption, key rotation, CMK, customer-managed key
+  triggers: cmk, customer-managed key, data encryption, encryption, key management,
+    key rotation, kms
   related-skills: cncf-aws-s3, cncf-aws-rds, cncf-aws-dynamodb, cncf-aws-iam
 ---
+
 
 # KMS (AWS Key Management Service)
 

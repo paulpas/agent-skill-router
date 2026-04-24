@@ -4,13 +4,14 @@ description: wasmCloud in WebAssembly-based distributed applications platform
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: wasmcloud, webassembly-based, distributed, applications
+  triggers: applications, distributed, wasmcloud, webassembly-based
 ---
+
 
 # wasmCloud in Cloud-Native Engineering
 

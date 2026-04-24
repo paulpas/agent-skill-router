@@ -4,13 +4,17 @@ description: Exchange system health monitoring and connectivity status tracking
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: exchange health, exchange-health, system, monitoring, connectivity
+  triggers: connectivity, exchange health, exchange-health, monitoring, system, cloudwatch,
+    logging
 ---
+
+
+
 
 **Role:** Monitor exchange API health and availability to ensure reliable trading operations
 

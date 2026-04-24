@@ -1,16 +1,18 @@
 ---
 name: coding-strategy-base
-description: Abstract base strategy pattern with initialization guards, typed abstract methods, and conviction scoring integration
+description: Abstract base strategy pattern with initialization guards, typed abstract
+  methods, and conviction scoring integration
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
   role: implementation
   scope: implementation
   output-format: code
-  triggers: strategy base, strategy-base, abstract, pattern, initialization
+  triggers: abstract, initialization, pattern, strategy base, strategy-base
 ---
+
 
 # Skill: coding-strategy-base
 

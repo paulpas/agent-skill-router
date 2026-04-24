@@ -4,13 +4,15 @@ description: Strategic data backfill for populating historical data in trading s
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: data backfill strategy, data-backfill-strategy, strategic, populating, historical
+  triggers: data backfill strategy, data-backfill-strategy, historical, populating,
+    strategic
 ---
+
 
 **Role:** Efficiently populate and maintain historical data for analysis and backtesting
 

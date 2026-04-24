@@ -1,17 +1,20 @@
 ---
 name: cncf-aws-ecr
-description: Manages container image repositories with ECR for secure storage, scanning, replication, and integration with EKS, ECS, and Lambda for container deployments.
+description: Manages container image repositories with ECR for secure storage, scanning,
+  replication, and integration with EKS, ECS, and Lambda for container deployments.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: ECR, container registry, Docker images, image repository, image scanning, container security
+  triggers: container registry, container security, containers, docker images, ecr,
+    image repository, image scanning, vulnerability scanning
   related-skills: cncf-aws-eks, cncf-aws-iam, cncf-aws-kms
 ---
+
 
 # ECR (Elastic Container Registry)
 

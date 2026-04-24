@@ -1,17 +1,21 @@
 ---
 name: cncf-aws-lambda
-description: Deploys serverless event-driven applications with Lambda functions, triggers, layers, and VPC integration for cost-effective, auto-scaling compute without server management.
+description: Deploys serverless event-driven applications with Lambda functions, triggers,
+  layers, and VPC integration for cost-effective, auto-scaling compute without server
+  management.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: Lambda, serverless, event-driven, Lambda function, API Gateway, S3 trigger, SQS, DynamoDB stream
+  triggers: lambda, serverless, event-driven, lambda function, api gateway, s3 trigger,
+    sqs, dynamodb stream
   related-skills: cncf-aws-iam, cncf-aws-sqs, cncf-aws-dynamodb, cncf-aws-cloudwatch
 ---
+
 
 # Lambda (AWS Lambda)
 

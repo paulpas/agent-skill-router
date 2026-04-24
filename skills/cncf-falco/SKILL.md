@@ -4,13 +4,16 @@ description: Falco in Cloud-Native Engineering - Cloud Native Runtime Security
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: falco, cloud-native, engineering, cloud
+  triggers: cdn, cloud-native, engineering, falco, infrastructure as code, monitoring,
+    cloudformation, cloudfront
 ---
+
+
 
 # Falco in Cloud-Native Engineering
 

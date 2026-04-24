@@ -1,16 +1,20 @@
 ---
 name: coding-event-bus
-description: Async pub/sub event bus with typed events, mixed sync/async dispatch, and singleton initialization for trading systems
+description: Async pub/sub event bus with typed events, mixed sync/async dispatch,
+  and singleton initialization for trading systems
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
   role: implementation
   scope: implementation
   output-format: code
-  triggers: event bus, event-bus, async, typed, events
+  triggers: async, event bus, event-bus, events, typed, eventbridge, event routing
 ---
+
+
+
 
 # Skill: coding-event-bus
 

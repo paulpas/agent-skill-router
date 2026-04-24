@@ -4,13 +4,14 @@ description: Cross-market relationships and asset class correlations
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: technical intermarket analysis, technical-intermarket-analysis, cross-market, relationships, asset
+  triggers: asset, cross-market, relationships, technical intermarket analysis, technical-intermarket-analysis
 ---
+
 
 **Role:** Analyze relationships between markets to identify divergences and arbitrage opportunities
 

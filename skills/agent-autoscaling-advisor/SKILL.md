@@ -1,16 +1,19 @@
 ---
 name: agent-autoscaling-advisor
-description: Advisors on optimal auto-scaling configurations for distributed systems to balance cost and availability.
+description: Advisors on optimal auto-scaling configurations for distributed systems
+  to balance cost and availability.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: optimization
   scope: scaling
   output-format: recommendation
-  triggers: autoscaling advisor, autoscaling-advisor, scaling policies, scale-out, scale-in
+  triggers: autoscaling advisor, autoscaling-advisor, scale-in, scale-out, scaling
+    policies
 ---
+
 
 # Autoscaling Advisor (Scaling Policy Optimization)
 

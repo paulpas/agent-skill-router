@@ -4,13 +4,16 @@ description: Strimzi in Kafka on Kubernetes - Apache Kafka for cloud-native envi
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: strimzi, kafka, kubernetes, apache
+  triggers: apache, container orchestration, event streaming, k8s, kafka, message
+    streaming, strimzi, kubernetes
 ---
+
+
 
 # Strimzi in Cloud-Native Engineering
 

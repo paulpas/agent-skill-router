@@ -1,16 +1,18 @@
 ---
 name: trading-ai-llm-orchestration
-description: Large Language Model orchestration for trading analysis with structured output using instructor/pydantic
+description: Large Language Model orchestration for trading analysis with structured
+  output using instructor/pydantic
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: ai llm orchestration, ai-llm-orchestration, large, language, model
+  triggers: ai llm orchestration, ai-llm-orchestration, language, large, model
 ---
+
 
 # LLM Orchestration for Trading: The 5 Laws of AI-Powered Analysis
 

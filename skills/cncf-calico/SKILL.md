@@ -1,16 +1,19 @@
 ---
 name: cncf-calico
-description: Calico in Cloud Native Security - cloud native architecture, patterns, pitfalls, and best practices
+description: Calico in Cloud Native Security - cloud native architecture, patterns,
+  pitfalls, and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: calico, cloud, native, security
+  triggers: calico, cdn, how do i find security issues, infrastructure as code, monitoring,
+    native, security, vulnerability scanning
 ---
+
 
  # Calico in Cloud-Native Engineering
 

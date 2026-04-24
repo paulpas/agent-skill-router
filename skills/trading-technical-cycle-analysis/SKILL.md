@@ -4,13 +4,14 @@ description: Market cycles and periodic patterns in price movement
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: technical cycle analysis, technical-cycle-analysis, market, cycles, periodic
+  triggers: cycles, market, periodic, technical cycle analysis, technical-cycle-analysis
 ---
+
 
 **Role:** Identify and trade based on cyclical market behavior
 

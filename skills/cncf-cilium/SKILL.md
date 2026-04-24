@@ -1,16 +1,20 @@
 ---
 name: cncf-cilium
-description: Cilium in Cloud Native Network - cloud native architecture, patterns, pitfalls, and best practices
+description: Cilium in Cloud Native Network - cloud native architecture, patterns,
+  pitfalls, and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: cilium, cloud, native, network
+  triggers: cdn, cilium, infrastructure as code, monitoring, native, network, cloudformation,
+    cloudfront
 ---
+
+
 
  # Cilium in Cloud-Native Engineering
 

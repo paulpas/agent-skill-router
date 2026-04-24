@@ -1,16 +1,19 @@
 ---
 name: cncf-kong-ingress-controller
-description: Kong Ingress Controller in Kubernetes - cloud native architecture, patterns, pitfalls, and best practices
+description: Kong Ingress Controller in Kubernetes - cloud native architecture, patterns,
+  pitfalls, and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: kong ingress controller, kong-ingress-controller, kubernetes, cloud, native
+  triggers: kong ingress controller, kong-ingress-controller, native, container orchestration,
+    infrastructure as code, kubernetes ingress, monitoring, cdn
 ---
+
 
  # Kong-Ingress-Controller in Cloud-Native Engineering
 

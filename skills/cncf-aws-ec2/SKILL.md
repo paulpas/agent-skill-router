@@ -1,17 +1,21 @@
 ---
 name: cncf-aws-ec2
-description: Deploys, configures, and auto-scales EC2 instances with load balancing, using best practices for high availability, security, and cost optimization in AWS compute environments.
+description: Deploys, configures, and auto-scales EC2 instances with load balancing,
+  using best practices for high availability, security, and cost optimization in AWS
+  compute environments.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: EC2, compute instances, auto-scaling, load balancing, ASG, launch template, instance types, EBS volumes
+  triggers: ec2, compute instances, auto-scaling, load balancing, asg, launch template,
+    instance types, ebs volumes
   related-skills: cncf-aws-elb, cncf-aws-vpc, cncf-aws-iam, cncf-aws-cloudwatch
 ---
+
 
 # EC2 (Elastic Compute Cloud)
 

@@ -1,16 +1,21 @@
 ---
 name: cncf-crossplane
-description: Crossplane in Platform Engineering - Kubernetes-native control plane for multi-cloud infrastructure
+description: Crossplane in Platform Engineering - Kubernetes-native control plane
+  for multi-cloud infrastructure
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: crossplane, platform, engineering, kubernetes-native
+  triggers: container orchestration, crossplane, engineering, kubernetes-native, platform,
+    kubernetes, k8s
 ---
+
+
+
 # Crossplane in Cloud-Native Engineering
 
 **Category:** platform  

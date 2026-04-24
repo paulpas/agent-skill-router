@@ -4,13 +4,14 @@ description: Combine multiple models for improved prediction accuracy and robust
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: ai model ensemble, ai-model-ensemble, combine, multiple, models
+  triggers: ai model ensemble, ai-model-ensemble, combine, models, multiple
 ---
+
 
 **Role:** Design and implement ensemble methods that leverage multiple models for trading signals
 

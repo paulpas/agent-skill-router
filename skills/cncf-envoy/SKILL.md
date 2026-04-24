@@ -1,16 +1,21 @@
 ---
 name: cncf-envoy
-description: Envoy in Cloud-Native Engineering - Cloud-native high-performance edge/middle/service proxy
+description: Envoy in Cloud-Native Engineering - Cloud-native high-performance edge/middle/service
+  proxy
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: envoy, cloud-native, engineering, high-performance
+  triggers: cloud-native, engineering, envoy, high-performance, optimization, performance,
+    speed
 ---
+
+
+
 
 # Envoy in Cloud-Native Engineering
 

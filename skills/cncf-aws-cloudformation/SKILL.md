@@ -1,17 +1,20 @@
 ---
 name: cncf-aws-cloudformation
-description: Creates Infrastructure as Code templates with CloudFormation for reproducible, versioned, automated deployments of entire AWS infrastructure stacks.
+description: Creates Infrastructure as Code templates with CloudFormation for reproducible,
+  versioned, automated deployments of entire AWS infrastructure stacks.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: CloudFormation, infrastructure as code, IaC, CloudFormation template, stack, AWS template, YAML, JSON
+  triggers: cloudformation, infrastructure as code, iac, cloudformation template,
+    stack, aws template, yaml, json
   related-skills: cncf-aws-ec2, cncf-aws-rds, cncf-aws-vpc, cncf-aws-iam
 ---
+
 
 # CloudFormation
 

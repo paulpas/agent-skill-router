@@ -1,17 +1,23 @@
 ---
 name: cncf-aws-ssm
-description: Manages EC2 instances and on-premises servers with AWS Systems Manager for configuration management, patch management, and secure shell access without SSH keys.
+description: Manages EC2 instances and on-premises servers with AWS Systems Manager
+  for configuration management, patch management, and secure shell access without
+  SSH keys.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: Systems Manager, SSM, patch management, configuration management, Session Manager, parameter store
+  triggers: configuration management, parameter store, patch management, session manager,
+    ssm, systems manager, ansible, automation
   related-skills: cncf-aws-ec2, cncf-aws-iam, cncf-aws-secrets-manager
 ---
+
+
+
 
 # SSM (AWS Systems Manager)
 

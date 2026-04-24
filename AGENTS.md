@@ -16,6 +16,8 @@ This guide explains how to create new skills for the agent-skill-router reposito
 - [Content Structure](#content-structure)
 - [Naming Conventions](#naming-conventions)
 - [Triggers Guidelines](#triggers-guidelines)
+- [Trigger Engineering for Conversational Discovery](#trigger-engineering-for-conversational-discovery)
+- [Choosing Related Skills](#choosing-related-skills)
 - [Workflow to Add a Skill](#workflow-to-add-a-skill)
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
 - [Quality Checklist](#quality-checklist)
@@ -388,6 +390,426 @@ Ask these questions for each trigger candidate:
 
 ---
 
+## Trigger Engineering for Conversational Discovery
+
+Expert trigger design makes skills discoverable through **natural conversation language**, not just technical jargon. This section teaches a two-tier strategy for triggers that match how real users search for help.
+
+### The Two-Tier Trigger Strategy
+
+Effective triggers combine **technical precision** with **conversational accessibility**. Use two complementary tiers:
+
+**Tier 1: Technical Terms** — Exact domain terminology
+- Used by practitioners, documentation, official product names
+- Examples: `kubernetes`, `EC2`, `PostgreSQL`, `ATR`, `PromQL`
+
+**Tier 2: Conversational Variants** — How non-technical users or the business would phrase their need
+- Natural language questions: "how do I...", "what is...", "help with..."
+- Business language: "cost savings", "security", "compliance", "performance"
+- Everyday terms: "cloud server" (→ EC2), "database" (→ PostgreSQL), "container" (→ Kubernetes)
+
+**Example: Kubernetes Skill**
+
+```
+Technical Tier: kubernetes, k8s, container orchestration, pod management, deployment, statefulset
+Conversational Tier: managing containers, deploying applications, scaling apps, orchestration, how do i run containers
+```
+
+By blending tiers, your skill matches:
+- ✅ Expert typing `k8s pod management`
+- ✅ Business user typing `how do i scale my apps`
+- ✅ Manager typing `container deployment`
+- ✅ Learner typing `kubernetes tutorial`
+
+### User-Friendly Trigger Patterns
+
+When designing triggers, use these conversational patterns as templates:
+
+| Pattern | Example Trigger | Use Case | When to Use |
+|---------|-----------------|----------|------------|
+| **Core Name** | `kubernetes`, `postgresql`, `stop loss` | Primary search term | Always include; this is your main hook |
+| **Abbreviation** | `k8s`, `postgres`, `ATR` | Power users, common shorthand | Include if widely known in the domain |
+| **"how do I..."** | `how do i run a server`, `how do i store data`, `how do i deploy apps` | Questions non-technical users ask | At least 1 per skill; top priority for discovery |
+| **"what is..."** | `what is kubernetes`, `what is load balancing` | Learning/clarification questions | Include if skill explains a concept |
+| **"help with..."** | `help with container management`, `help with backups` | Request-style phrasing | Use for operational concerns |
+| **Common colloquialisms** | `cloud server` (EC2), `database` (PostgreSQL), `app hosting` | Everyday business language | Match how non-engineers describe the problem |
+| **Related tech** | `docker` (→ Kubernetes skill), `yaml` (→ Kubernetes skill), `ssl` (→ security skill) | Adjacent concerns | 1-2 adjacent terms users might search |
+| **Operational tasks** | `scaling`, `monitoring`, `backup`, `encryption`, `replication` | Action-oriented phrases | Essential for infrastructure skills |
+| **Misspellings/variants** | `postgres` (→ postgresql), `elastic search` (→ opensearch), `k8` (→ k8s) | Common user errors | Include only high-frequency variants |
+| **Business value phrases** | `cost savings`, `faster deployment`, `secure storage`, `compliance` | Business/management language | Use when business value is a primary driver |
+
+**Real Example: PostgreSQL Skill**
+
+This skill needs to match queries from:
+- DBAs: `postgresql replication`, `postgres backups`, `pg_replication_slots`
+- Developers: `sql database`, `how do i store data`, `postgres connection pooling`
+- Managers: `managed database`, `database performance`, `reliable data storage`
+
+**Effective Triggers:**
+```yaml
+triggers: postgresql, postgres, managed database, relational database, how do i store data, backups, replication
+```
+
+This hits:
+- Technical: `postgresql`, `postgres`, `replication`
+- Conversational: `managed database`, `how do i store data`
+- Business: `reliable data storage` (implied in "managed database")
+
+### Domain-Specific Trigger Guidelines
+
+Each domain's user base searches differently. Tailor your triggers to their vocabulary:
+
+#### CNCF Skills (Cloud Infrastructure)
+
+**Characteristics:**
+- Mixed audience: SREs (technical), DevOps engineers, platform teams
+- High operational focus — users search by task, not just product
+- Cross-product ecosystem — users often search for multiple solutions
+
+**Trigger Strategy:**
+
+1. **Include both product name AND category name**
+   - Good: `kubernetes, container orchestration`
+   - Bad: just `kubernetes` (misses "orchestration" searches)
+
+2. **Add operational tasks**
+   - Examples: `deploying`, `scaling`, `monitoring`, `logging`, `alerting`, `networking`
+   - Why: Users think in tasks first ("how do I scale?"), product second
+
+3. **Add deployment patterns**
+   - Examples: `managed`, `self-hosted`, `containerized`, `serverless`
+   - Why: Different users search based on deployment model
+
+4. **Add adjacent tech bridge terms**
+   - Examples: For Kubernetes: `docker`, `helm`, `istio`; for Prometheus: `grafana`, `alertmanager`
+   - Why: Users often know related tools but may not know this one
+
+**Template for CNCF Skills:**
+```
+primary-product, product-abbreviation, product-category, how-do-i-[task], [deployment-pattern], adjacent-product
+```
+
+**Concrete Examples:**
+
+```yaml
+# PostgreSQL
+triggers: postgresql, postgres, managed database, relational database, how do i store data, backups, replication
+
+# Kubernetes
+triggers: kubernetes, k8s, container orchestration, managing containers, deploying applications, scaling apps, helm
+
+# Prometheus
+triggers: prometheus, promql, time-series database, metrics monitoring, how do i monitor systems, alerting, grafana
+```
+
+#### Trading Skills (Algorithmic & Quantitative)
+
+**Characteristics:**
+- Audience: Quants, algo traders, risk managers, portfolio engineers
+- Two languages: technical (Python, financial math) + financial (Greeks, risk metrics)
+- Regulatory concern — risk compliance vocabulary matters
+
+**Trigger Strategy:**
+
+1. **Include both technical terms AND financial concepts**
+   - Technical: `stop loss`, `ATR`, `trailing stop`
+   - Financial: `capital protection`, `risk management`, `position control`
+
+2. **Add market context**
+   - Examples: `options`, `crypto`, `forex`, `stocks`, `futures`, `equities`
+   - Why: Same strategy applies across markets; users search for their market
+
+3. **Add execution concepts**
+   - Examples: `entry points`, `exit strategy`, `position sizing`, `portfolio rebalancing`
+   - Why: Execution is how traders think about algorithms
+
+4. **Add risk/compliance language**
+   - Examples: `risk limits`, `regulatory limits`, `drawdown control`, `loss prevention`
+   - Why: Risk managers use this vocabulary
+
+**Template for Trading Skills:**
+```
+technical-term, financial-concept, how-do-i-[task], market-context, risk-language
+```
+
+**Concrete Examples:**
+
+```yaml
+# Stop Loss
+triggers: stop loss, risk management, capital protection, trading strategy, how do i limit losses, exit points, volatility
+
+# Position Sizing
+triggers: position sizing, portfolio allocation, risk management, money management, how much should i trade, kelly criterion
+
+# VWAP Execution
+triggers: vwap, volume-weighted average price, execution algorithm, order execution, how do i execute large orders, minimal market impact
+```
+
+#### Coding Skills (Implementation & Patterns)
+
+**Characteristics:**
+- Audience: Software engineers at all levels (juniors need "how to"; seniors search by pattern)
+- Learning angle matters — documentation + tutorials are valuable
+- Quality concepts (testing, security, performance) drive searches
+
+**Trigger Strategy:**
+
+1. **Include design patterns AND implementation approach**
+   - Pattern: `code review`, `testing`, `refactoring`
+   - Approach: `unit testing`, `integration testing`, `peer review`
+
+2. **Add learning variants**
+   - Examples: `learn how to`, `tutorial`, `example`, `best practices`, `guide`
+   - Why: Junior engineers search this way; valuable for skill discovery
+
+3. **Add use cases**
+   - Examples: For testing: `unit test`, `integration test`, `mocking`; for security: `vulnerability`, `injection`, `OWASP`
+   - Why: Context matters; same skill applies in different contexts
+
+4. **Add quality/non-functional concerns**
+   - Examples: `performance optimization`, `debugging`, `profiling`, `security`, `accessibility`
+   - Why: Quality-focused developers search by concern, not pattern name
+
+**Template for Coding Skills:**
+```
+pattern-name, how-do-i-[implement], use-case, quality-concern, best-practices
+```
+
+**Concrete Examples:**
+
+```yaml
+# Code Review
+triggers: code review, pull request, quality checks, security review, peer review, how do i review code, testing standards
+
+# Refactoring
+triggers: refactoring, code quality, technical debt, how do i improve code, legacy code, performance optimization
+
+# Testing
+triggers: unit testing, test automation, how do i test code, mocking, test coverage, tdd, continuous integration
+```
+
+#### Agent Skills (Orchestration & Routing)
+
+**Characteristics:**
+- Audience: System designers, orchestration engineers, automation developers
+- Multi-step workflows — users think about routing and fallback
+- Decision-making language is key
+
+**Trigger Strategy:**
+
+1. **Include routing/selection concepts**
+   - Examples: `routing`, `selection`, `dispatch`, `orchestration`, `delegation`
+
+2. **Add decision-making language**
+   - Examples: `choose`, `select`, `route`, `delegate`, `assign`
+
+3. **Add multi-step concepts**
+   - Examples: `workflow`, `pipeline`, `orchestration`, `automation`, `agent coordination`
+
+4. **Add operational language**
+   - Examples: `how do i automate this`, `parallel execution`, `error handling`, `fallback`
+
+**Template for Agent Skills:**
+```
+core-concept, routing-term, orchestration-term, how-do-i-[automate], multi-step-pattern
+```
+
+**Concrete Examples:**
+
+```yaml
+# Task Routing
+triggers: task routing, agent selection, orchestration, how do i automate this, workflow automation, agent dispatch
+
+# Parallel Execution
+triggers: parallel execution, agent coordination, concurrent tasks, workflow orchestration, how do i run tasks in parallel
+```
+
+#### Programming Skills (Reference & Fundamentals)
+
+**Characteristics:**
+- Audience: Computer Science students, algorithm enthusiasts, interview prep
+- Implementation understanding + problem-solving
+- Learning and reference both important
+
+**Trigger Strategy:**
+
+1. **Include algorithm names AND problem categories**
+   - Algorithm: `quicksort`, `mergesort`, `dijkstra`
+   - Category: `sorting algorithms`, `graph algorithms`, `dynamic programming`
+
+2. **Add learning variants**
+   - Examples: `how to implement`, `understand`, `learn`, `tutorial`
+
+3. **Add problem context**
+   - Examples: `sorting`, `searching`, `pathfinding`, `optimization`
+
+4. **Add complexity concerns**
+   - Examples: `time complexity`, `space complexity`, `efficiency`, `optimization`
+
+**Template for Programming Skills:**
+```
+algorithm-name, problem-category, how-to-implement, complexity-concern
+```
+
+**Concrete Examples:**
+
+```yaml
+# Sorting Algorithms
+triggers: sorting algorithms, quicksort, mergesort, how do i sort data efficiently, algorithm optimization, time complexity
+
+# Graph Traversal
+triggers: graph algorithms, dfs, bfs, how do i traverse a graph, pathfinding, tree traversal
+```
+
+### The 5-8 Term Limit Strategy
+
+You have 5-8 terms total. Prioritize ruthlessly:
+
+**MUST INCLUDE (non-negotiable):**
+1. Primary product/concept name (e.g., "Kubernetes", "PostgreSQL", "Code Review")
+2. Most common abbreviation if one exists (e.g., "k8s", "postgres", "PR")
+
+**SHOULD INCLUDE (based on domain):**
+1. 1-2 conversational variants matching your domain's typical user questions
+2. 1 "how do I..." variant if your skill solves a task
+3. 1 related operational task or adjacent concern
+
+**COULD INCLUDE (if space allows — 7-8 terms):**
+1. Alternative spelling or common misspelling (only high-frequency variants)
+2. Business value phrase (only if it's a primary driver)
+3. One adjacent technology name (only if users often search for both)
+
+**Worked Example: Stop Loss Skill (Trading)**
+
+Starting candidates (11 terms — too many):
+```
+stop loss, trailing stop, ATR stop, fixed percentage, volatility stop, 
+stop placement, position protection, emergency stop, risk management, 
+how do i limit losses, capital protection, stop-loss
+```
+
+Prioritize:
+```
+MUST: stop loss, trailing stop            (core concepts)
+SHOULD: ATR stop, position protection,    (domain-specific operational task)
+        how do i limit losses              (conversational variant)
+COULD: emergency stop, stop-loss          (variant + risk context)
+```
+
+Final 7 terms (fits 5-8 limit):
+```yaml
+triggers: stop loss, trailing stop, ATR stop, stop placement, position protection, how do i limit losses, emergency stop
+```
+
+This captures:
+- ✅ Technical: `stop loss`, `ATR stop`, `trailing stop`
+- ✅ Conversational: `how do i limit losses`, `position protection`
+- ✅ Operational: `stop placement`
+- ✅ Emergency context: `emergency stop`
+
+### Testing Your Triggers
+
+Before committing a skill, validate your triggers:
+
+**Readability Test:**
+- [ ] Read triggers aloud — do they sound like questions you'd hear in Slack or Stack Overflow?
+- [ ] Could you imagine each trigger in a real user message?
+
+**Coverage Test:**
+- [ ] Ask non-technical teammates — would they use these words?
+- [ ] Search for similar skills — do your triggers overlap dangerously?
+- [ ] Think of edge cases — what legitimate need might miss your triggers?
+
+**Precision Test:**
+- [ ] For each trigger, ask: "If someone searched this, would they always need this skill?"
+- [ ] If the answer is "no" for 2+ triggers, revise them
+
+**Diversity Test:**
+- [ ] Do your triggers include at least one technical term?
+- [ ] Do your triggers include at least one conversational/user phrase?
+- [ ] Is there at least one task-oriented term?
+
+### Common Trigger Mistakes to Avoid
+
+| Mistake | Problem | Example | Fix |
+|---------|---------|---------|-----|
+| **Only technical terms** | Won't match user search language | `kubernetes, k8s, deployment, orchestration` | Add "how do i run containers", "managing containers" |
+| **Internal jargon only** | Team-specific vocabulary, not user-facing | `DeploymentController, KubeletConfig` | Use publicly documented terms |
+| **Triggers too broad** | Matches irrelevant conversations | `database` (matches every DB) | Be specific: `PostgreSQL`, `managed database` |
+| **Triggers too narrow** | Misses natural phrasings | `DatabaseReplicationWithStreamingBinaryLogging` | Simplify to "replication", "backups" |
+| **Abbreviations only** | Non-technical users don't know them | `RLS, RBAC, IAM` | Include spelled-out: "role-based access control" |
+| **No business language** | Misses business/manager searches | `kubernetes, k8s, containerization, orchestration` | Add "scaling apps", "managing infrastructure" |
+| **Missing conversational variants** | Loses discovery opportunities | `code-review, code_review, codereview` | Include `"how do i review code"`, `"pull request"` |
+| **Confusing hyphenation** | Different hyphenation = no match | `"stop loss"` but user searches `"stop-loss"` | Include both variants if common |
+
+---
+
+## Choosing Related Skills
+
+The `metadata.related-skills` field helps users discover complementary skills and prevents skill overlap.
+
+### What Makes a Skill "Related"?
+
+Two skills are related if using one naturally leads to needing the other:
+
+**Strong Relationships (definitely related):**
+- Layering: `trading-risk-stop-loss` ↔ `trading-risk-kill-switches` (emergency layer on top)
+- Sequencing: `cncf-kubernetes` ↔ `cncf-helm` (install K8s, then manage charts)
+- Complementary: `cncf-prometheus` ↔ `cncf-alertmanager` (metrics + alerts)
+- Variants: `coding-code-review` ↔ `coding-security-review` (both review practices)
+
+**Weak Relationships (avoid listing):**
+- Tangential: `kubernetes` ↔ `docker` (overlapping, but separate skills)
+- Too broad: `trading-risk-stop-loss` ↔ `trading-strategy-bollinger-bands` (unrelated strategies)
+- Obvious: `kubernetes` ↔ `containers` (container orchestration is about containers)
+
+### How Many Related Skills Should You List?
+
+**Recommend: 2–4 related skills**
+
+- **0–1**: Skill is very standalone (OK, but less discoverable)
+- **2–4**: Goldilocks zone — users find complementary skills without overwhelming choice
+- **5+**: Too many; dilutes focus and suggests poor boundary design
+
+### Should Relationships Be Reciprocal?
+
+**Yes, always.** If A lists B as related, B should list A.
+
+Example:
+```yaml
+# trading-risk-stop-loss skill
+metadata:
+  related-skills: trading-risk-kill-switches, trading-risk-position-sizing
+
+# trading-risk-kill-switches skill must include:
+metadata:
+  related-skills: trading-risk-stop-loss, ...
+```
+
+Without reciprocity, users miss the full skill network.
+
+### Building a Skill Network
+
+When designing a group of related skills, think about the **user journey**:
+
+```
+User starts with: "I need risk management"
+      ↓
+Loads: trading-risk-position-sizing (how much to trade?)
+      ↓
+Related skills show: trading-risk-stop-loss, trading-risk-kill-switches
+      ↓
+User loads: trading-risk-stop-loss (where to exit?)
+      ↓
+Related skills show: trading-risk-position-sizing, trading-risk-kill-switches
+```
+
+**Good Network Design:**
+- Each skill is a stepping stone to the next
+- No isolated skills (always 2+ connections)
+- Hierarchical: foundational skills (positioning) → tactical skills (stops) → emergency skills (kill switches)
+
+---
+
 ## Workflow to Add a Skill
 
 1. **Create directory**: `skills/<name>/`
@@ -404,15 +826,21 @@ Ask these questions for each trigger candidate:
    - Without this step, the new skill won't be routable
 
 5. **Commit and push**:
-   ```bash
-   git add -A
-   git commit -m "feat: add <name> skill"
-   git push
-   ```
+    ```bash
+    git add -A
+    git commit -m "feat: add <name> skill"
+    git push
+    ```
 
-6. **Verify auto-discovery** (takes up to 1 hour by default):
-   - The skill-router automatically fetches updated `skills-index.json` every `SKILL_SYNC_INTERVAL` seconds (default: 1 hour)
-   - For immediate pickup: `curl -X POST http://localhost:3000/reload`
+6. **Validate triggers for conversational discovery**:
+    - Run: `python3 scripts/generate_readme.py` — verifies triggers appear in auto-generated index
+    - Check: Do the triggers match how users would search for this skill?
+    - Review: Are both technical AND conversational variants present?
+    - Test: Would non-technical teammates use these words in conversation?
+
+7. **Verify auto-discovery** (takes up to 1 hour by default):
+    - The skill-router automatically fetches updated `skills-index.json` every `SKILL_SYNC_INTERVAL` seconds (default: 1 hour)
+    - For immediate pickup: `curl -X POST http://localhost:3000/reload`
 
 ---
 
@@ -465,6 +893,15 @@ Use this checklist when writing a new skill or auditing an existing one.
 - [ ] Related Skills table is present if `metadata.related-skills` is non-empty
 - [ ] No debug statements or placeholder text (e.g. "TODO", "FIXME", "example.com" links)
 - [ ] External links point to real, stable URLs (not placeholder `example.com`)
+
+### Triggers
+
+- [ ] `metadata.triggers` includes both technical terms AND conversational variants
+- [ ] `metadata.triggers` includes at least one "how do I..." variant (if skill solves a task)
+- [ ] `metadata.triggers` includes at least one phrase non-technical users would actually say
+- [ ] All 5-8 triggers are distinct and meaningful (no near-duplicates)
+- [ ] Triggers follow domain-specific guidelines (see "Domain-Specific Trigger Guidelines" section)
+- [ ] Triggers avoid ultra-generic terms that would match irrelevant conversations
 
 ### Domain-Specific
 

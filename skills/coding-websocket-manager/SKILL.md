@@ -1,16 +1,21 @@
 ---
 name: coding-websocket-manager
-description: WebSocket connection manager with state machine (connecting/connected/reconnecting/error), exponential backoff, and message routing
+description: WebSocket connection manager with state machine (connecting/connected/reconnecting/error),
+  exponential backoff, and message routing
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
   role: implementation
   scope: implementation
   output-format: code
-  triggers: websocket manager, websocket-manager, connection, state, machine
+  triggers: connection, machine, ml, state, websocket manager, websocket-manager,
+    machine learning, ai
 ---
+
+
+
 
 # Skill: coding-websocket-manager
 

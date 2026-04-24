@@ -4,13 +4,14 @@ description: Tekton in Cloud-Native Engineering - A cloud-native Pipeline resour
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: tekton, cloud-native, engineering, pipeline
+  triggers: cloud-native, engineering, pipeline, tekton
 ---
+
 
 # Tekton in Cloud-Native Engineering
 

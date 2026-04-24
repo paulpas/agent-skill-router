@@ -1,16 +1,20 @@
 ---
 name: agent-self-critique-engine
-description: Enables autonomous agents to self-critique their work by evaluating output quality, correctness, and compliance with requirements, enabling iterative improvement without external feedback.
+description: Enables autonomous agents to self-critique their work by evaluating output
+  quality, correctness, and compliance with requirements, enabling iterative improvement
+  without external feedback.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: quality assurance
   scope: self evaluation
   output-format: critique
-  triggers: self critique engine, self-critique-engine, self-critiques, evaluates, quality, correctness
+  triggers: correctness, evaluates, quality, self critique engine, self-critique-engine,
+    self-critiques
 ---
+
 
 # Self-Critique Engine (Agent Autonomous Evaluation)
 

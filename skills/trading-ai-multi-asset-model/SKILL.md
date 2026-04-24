@@ -4,13 +4,14 @@ description: Model inter-asset relationships for portfolio and cross-asset strat
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: ai multi asset model, ai-multi-asset-model, inter-asset, relationships, portfolio
+  triggers: ai multi asset model, ai-multi-asset-model, inter-asset, portfolio, relationships
 ---
+
 
 **Role:** Capture and exploit relationships between multiple assets for diversified trading
 

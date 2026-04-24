@@ -4,13 +4,17 @@ description: Time-series database queries and optimization for financial data
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: data time series database, data-time-series-database, time-series, queries, optimization
+  triggers: data time series database, data-time-series-database, optimization, queries,
+    time-series, performance, speed
 ---
+
+
+
 
 **Role:** Efficiently query time-series data with support for financial data patterns
 

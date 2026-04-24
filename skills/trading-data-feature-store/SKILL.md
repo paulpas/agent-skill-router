@@ -4,13 +4,17 @@ description: Feature storage and management for machine learning trading models
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: data feature store, data-feature-store, storage, management, machine
+  triggers: data feature store, data-feature-store, machine, management, ml, storage,
+    machine learning, ai
 ---
+
+
+
 
 **Role:** Store and retrieve engineered features for consistent model training and inference
 

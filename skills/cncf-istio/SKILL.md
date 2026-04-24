@@ -1,16 +1,21 @@
 ---
 name: cncf-istio
-description: Istio in Cloud-Native Engineering - Connect, secure, control, and observe services.
+description: Istio in Cloud-Native Engineering - Connect, secure, control, and observe
+  services.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: istio, cloud-native, engineering, connect
+  triggers: cloud-native, connect, engineering, istio, service mesh, traffic management,
+    kubernetes service
 ---
+
+
+
 
 # Istio in Cloud-Native Engineering
 

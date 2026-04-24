@@ -1,16 +1,20 @@
 ---
 name: agent-regression-detector
-description: Detects performance and behavioral regressions by comparing agent execution before and after code changes, identifying performance degradation and behavioral changes.
+description: Detects performance and behavioral regressions by comparing agent execution
+  before and after code changes, identifying performance degradation and behavioral
+  changes.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: quality assurance
   scope: regression detection
   output-format: analysis
-  triggers: regression detector, regression-detector, detects, performance, behavioral, regressions
+  triggers: behavioral, detects, optimization, performance, regression detector, regression-detector,
+    regressions, speed
 ---
+
 
 # Regression Detector (Agent Change Impact Analysis)
 

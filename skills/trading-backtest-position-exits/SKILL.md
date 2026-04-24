@@ -1,16 +1,18 @@
 ---
 name: trading-backtest-position-exits
-description: Exit strategies, trailing stops, and take-profit mechanisms for trading systems.
+description: Exit strategies, trailing stops, and take-profit mechanisms for trading
+  systems.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: backtest position exits, backtest-position-exits, strategies, trailing, stops
+  triggers: backtest position exits, backtest-position-exits, stops, strategies, trailing
 ---
+
 
 **Role:** Manage the systematic exit of trading positions to lock in profits, limit losses, and adapt to market conditions.
 

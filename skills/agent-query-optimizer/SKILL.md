@@ -1,16 +1,21 @@
 ---
 name: agent-query-optimizer
-description: Analyzes and optimizes database queries for performance, identifying bottlenecks and generating optimization recommendations.
+description: Analyzes and optimizes database queries for performance, identifying
+  bottlenecks and generating optimization recommendations.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: optimization
   scope: query
   output-format: optimization
-  triggers: query optimizer, query-optimizer, query optimization, SQL optimization, database optimization
+  triggers: database optimization, query optimization, query optimizer, query-optimizer,
+    relational database, sql optimization, postgresql, postgres
 ---
+
+
+
 
 # Query Optimizer (Database Query Analysis)
 

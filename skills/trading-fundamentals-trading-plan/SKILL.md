@@ -4,13 +4,15 @@ description: Trading Plan Structure and Risk Management Framework
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: fundamentals trading plan, fundamentals-trading-plan, structure, management, framework
+  triggers: cloud infrastructure, framework, fundamentals trading plan, fundamentals-trading-plan,
+    management, structure
 ---
+
 
 **Role:** Trading Strategy Developer — builds comprehensive trading plans that define rules, risk parameters, and execution guidelines for systematic trading operations.
 

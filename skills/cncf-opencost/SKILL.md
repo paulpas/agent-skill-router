@@ -1,16 +1,20 @@
 ---
 name: cncf-opencost
-description: OpenCost in Kubernetes Cost Monitoring - cloud native architecture, patterns, pitfalls, and best practices
+description: OpenCost in Kubernetes Cost Monitoring - cloud native architecture, patterns,
+  pitfalls, and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: opencost, kubernetes, monitoring, cloud
+  triggers: cdn, container orchestration, infrastructure as code, k8s, monitoring,
+    opencost, cloudformation, cloudfront
 ---
+
+
 
 # OpenCost in Cloud-Native Engineering
 

@@ -4,13 +4,17 @@ description: Harbor in Cloud-Native Engineering - container registry
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: harbor, cloud-native, engineering, container
+  triggers: cloud-native, container, engineering, harbor, container images, private
+    registry, docker
 ---
+
+
+
 # Harbor in Cloud-Native Engineering
 
 **Category:** registry  

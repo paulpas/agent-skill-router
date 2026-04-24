@@ -1,16 +1,19 @@
 ---
 name: agent-failure-mode-analysis
-description: Performs failure mode analysis by identifying potential failure points in agent systems, assessing failure impact, and generating mitigation strategies.
+description: Performs failure mode analysis by identifying potential failure points
+  in agent systems, assessing failure impact, and generating mitigation strategies.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: reliability
   scope: failure analysis
   output-format: analysis
-  triggers: failure mode analysis, failure-mode-analysis, analyzes, failures, risk, mitigation
+  triggers: analyzes, failure mode analysis, failure-mode-analysis, failures, mitigation,
+    risk
 ---
+
 
 # Failure Mode Analysis (Agent System Reliability)
 

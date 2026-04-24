@@ -4,13 +4,14 @@ description: CRI-O in Container Runtime - OCI-compliant container runtime for Ku
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: cri o, cri-o, cri-o, container, runtime
+  triggers: container, cri o, cri-o, runtime
 ---
+
 # CRI-O in Cloud-Native Engineering
 
 **Category:** container-runtime  

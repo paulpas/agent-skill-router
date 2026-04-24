@@ -1,16 +1,19 @@
 ---
 name: agent-confidence-based-selector
-description: Selects and executes the most appropriate skill based on confidence scores and relevance metrics, enabling intelligent skill routing for dynamic task resolution.
+description: Selects and executes the most appropriate skill based on confidence scores
+  and relevance metrics, enabling intelligent skill routing for dynamic task resolution.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: orchestration
   scope: orchestration
   output-format: analysis
-  triggers: confidence based selector, confidence-based-selector, selects, executes, appropriate
+  triggers: appropriate, confidence based selector, confidence-based-selector, executes,
+    selects
 ---
+
 
 # Confidence-Based Selector (Agent Skill Selection)
 

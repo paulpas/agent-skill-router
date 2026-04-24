@@ -1,16 +1,19 @@
 ---
 name: cncf-open-policy-agent-opa
-description: Open Policy Agent in Security &amp; Compliance - cloud native architecture, patterns, pitfalls, and best practices
+description: Open Policy Agent in Security &amp; Compliance - cloud native architecture,
+  patterns, pitfalls, and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: open policy agent opa, open-policy-agent-opa, security, compliance, cloud
+  triggers: open policy agent opa, open-policy-agent-opa, security, compliance, how
+    do i find security issues, infrastructure as code, vulnerability scanning, monitoring
 ---
+
 # Open Policy Agent in Cloud-Native Engineering
 
 ## Purpose and Use Cases

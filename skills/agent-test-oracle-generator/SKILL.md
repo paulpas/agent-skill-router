@@ -1,16 +1,22 @@
 ---
 name: agent-test-oracle-generator
-description: Generates test oracles and expected outputs for testing code by analyzing specifications, requirements, and implementation intent to create accurate, comprehensive test validation data.
+description: Generates test oracles and expected outputs for testing code by analyzing
+  specifications, requirements, and implementation intent to create accurate, comprehensive
+  test validation data.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: testing
   scope: quality
   output-format: test-spec
-  triggers: test oracle, test-oracle, test validation, expected output, test validation
+  triggers: expected output, test oracle, test validation, test-oracle, enterprise
+    database, oracle
 ---
+
+
+
 
 # Test Oracle Generator
 

@@ -1,16 +1,20 @@
 ---
 name: cncf-lima
-description: Lima in Container Runtime - cloud native architecture, patterns, pitfalls, and best practices
+description: Lima in Container Runtime - cloud native architecture, patterns, pitfalls,
+  and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: lima, container, runtime, cloud
+  triggers: cdn, container, infrastructure as code, lima, monitoring, runtime, cloudformation,
+    cloudfront
 ---
+
+
 
 # Lima in Cloud-Native Engineering
 

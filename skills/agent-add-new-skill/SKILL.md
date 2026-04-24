@@ -1,16 +1,19 @@
 ---
 name: agent-add-new-skill
-description: "Step-by-step guide for adding a new skill to the paulpas/skills repository: frontmatter spec, content structure, index update, and push workflow."
+description: 'Step-by-step guide for adding a new skill to the paulpas/skills repository:
+  frontmatter spec, content structure, index update, and push workflow.'
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: orchestration
   scope: orchestration
   output-format: analysis
-  triggers: add skill, new skill, create skill, skill authoring, skill template, contribute skill
+  triggers: add skill, contribute skill, create skill, new skill, skill authoring,
+    skill template
 ---
+
 
 # Add New Skill
 

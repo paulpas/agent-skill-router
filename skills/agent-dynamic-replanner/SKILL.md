@@ -1,16 +1,19 @@
 ---
 name: agent-dynamic-replanner
-description: Dynamically adjusts execution plans based on real-time feedback, changing conditions, and emerging information, enabling adaptive problem solving in uncertain environments.
+description: Dynamically adjusts execution plans based on real-time feedback, changing
+  conditions, and emerging information, enabling adaptive problem solving in uncertain
+  environments.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: orchestration
   scope: orchestration
   output-format: analysis
-  triggers: dynamic replanner, dynamic-replanner, dynamically, adjusts, execution
+  triggers: adjusts, dynamic replanner, dynamic-replanner, dynamically, execution
 ---
+
 
 # Dynamic Replanner (Agent Adaptive Planning)
 

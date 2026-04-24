@@ -1,16 +1,21 @@
 ---
 name: agent-diff-quality-analyzer
-description: Analyzes code quality changes in diffs by evaluating syntactic, semantic, and architectural impact of modifications.
+description: Analyzes code quality changes in diffs by evaluating syntactic, semantic,
+  and architectural impact of modifications.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: analysis
   scope: code quality
   output-format: analysis
-  triggers: diff quality analyzer, diff-quality-analyzer, analyzes, diffs, code quality
+  triggers: analyzes, code quality, diff quality analyzer, diff-quality-analyzer,
+    diffs, linting, code standards
 ---
+
+
+
 
 # Diff Quality Analyzer (Agent Code Change Assessment)
 

@@ -4,13 +4,15 @@ description: Order book synchronization and state management for accurate tradin
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: exchange order book sync, exchange-order-book-sync, synchronization, state, management
+  triggers: exchange order book sync, exchange-order-book-sync, management, state,
+    synchronization
 ---
+
 
 **Role:** Maintain consistent order book state across multiple exchanges and timeframes
 

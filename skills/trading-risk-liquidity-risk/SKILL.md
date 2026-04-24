@@ -4,13 +4,14 @@ description: Liquidity assessment and trade execution risk
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: risk liquidity risk, risk-liquidity-risk, assessment, trade, execution
+  triggers: assessment, execution, risk liquidity risk, risk-liquidity-risk, trade
 ---
+
 
 **Role:** Evaluate liquidity conditions before executing trades
 

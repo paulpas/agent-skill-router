@@ -4,13 +4,17 @@ description: Performance Attribution Systems for Trading Strategy Decomposition
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: paper performance attribution, paper-performance-attribution, systems, trading, strategy
+  triggers: optimization, paper performance attribution, paper-performance-attribution,
+    strategy, systems, trading, performance, speed
 ---
+
+
+
 
 **Role:** Performance Analyst — implements systems to decompose portfolio returns into signal, execution, and market components to understand sources of alpha and identify areas for improvement.
 

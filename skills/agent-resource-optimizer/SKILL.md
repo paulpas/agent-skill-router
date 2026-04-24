@@ -1,16 +1,18 @@
 ---
 name: agent-resource-optimizer
-description: Optimizes resource allocation across distributed systems to minimize costs while maintaining performance SLAs.
+description: Optimizes resource allocation across distributed systems to minimize
+  costs while maintaining performance SLAs.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: optimization
   scope: resource
   output-format: optimization
-  triggers: resource optimizer, resource-optimizer, cost optimization, resource allocation
+  triggers: cost optimization, resource allocation, resource optimizer, resource-optimizer
 ---
+
 
 # Resource Optimizer (Cost-Performance Balance)
 

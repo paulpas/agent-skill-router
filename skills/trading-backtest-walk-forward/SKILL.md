@@ -4,13 +4,17 @@ description: Walk-Forward Optimization for Robust Strategy Validation
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: backtest walk forward, backtest-walk-forward, walk-forward, optimization, robust
+  triggers: backtest walk forward, backtest-walk-forward, optimization, robust, walk-forward,
+    performance, speed
 ---
+
+
+
 
 **Role:** Backtest Validation Engineer — implements walk-forward optimization to validate strategy robustness, prevent overfitting, and ensure out-of-sample performance consistency.
 

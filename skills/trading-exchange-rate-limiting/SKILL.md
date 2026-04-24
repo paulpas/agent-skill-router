@@ -1,16 +1,18 @@
 ---
 name: trading-exchange-rate-limiting
-description: Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API Integration
+description: Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API
+  Integration
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: exchange rate limiting, exchange-rate-limiting, strategies, circuit, breaker
+  triggers: breaker, circuit, exchange rate limiting, exchange-rate-limiting, strategies
 ---
+
 
 **Role:** Backend System Architect — designs robust API integration patterns that respect exchange rate limits while maximizing throughput and resilience.
 

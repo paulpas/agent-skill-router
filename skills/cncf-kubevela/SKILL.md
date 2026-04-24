@@ -4,13 +4,14 @@ description: KubeVela in Cloud-Native Engineering - application platform
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: kubevela, cloud-native, engineering, application
+  triggers: application, cloud-native, engineering, kubevela
 ---
+
 # KubeVela in Cloud-Native Engineering
 
 **Category:** application-platform  

@@ -1,18 +1,23 @@
 ---
 name: coding-juice-shop
-description: "OWASP Juice Shop guide: Web application security testing with intentionally vulnerable Node.js/Express application for learning and practice"
+description: 'OWASP Juice Shop guide: Web application security testing with intentionally
+  vulnerable Node.js/Express application for learning and practice'
 license: MIT
 compatibility: opencode
 how_to_guide: https://pwning.owasp-juice.shop/
 id: juice-shop
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
   role: implementation
   scope: implementation
   output-format: code
-  triggers: juice shop, juice-shop, owasp, guide, application
+  triggers: application, guide, juice shop, juice-shop, owasp, security best practices,
+    security guidelines, vulnerability scanning
 ---
+
+
+
 
 # OWASP Juice Shop
 

@@ -1,16 +1,18 @@
 ---
 name: cncf-containerd
-description: Containerd in Cloud-Native Engineering - An open and reliable container runtime
+description: Containerd in Cloud-Native Engineering - An open and reliable container
+  runtime
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: containerd, cloud-native, engineering, reliable
+  triggers: cloud-native, containerd, engineering, reliable
 ---
+
 
 # Containerd in Cloud-Native Engineering
 

@@ -4,13 +4,17 @@ description: Dragonfly in Cloud-Native Engineering - P2P file distribution
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: dragonfly, cloud-native, engineering, distribution
+  triggers: cloud-native, distribution, dragonfly, engineering, elb, load balancer,
+    load balancing
 ---
+
+
+
 # Dragonfly in Cloud-Native Engineering
 
 **Category:** distribution  

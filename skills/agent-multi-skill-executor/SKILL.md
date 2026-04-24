@@ -1,16 +1,19 @@
 ---
 name: agent-multi-skill-executor
-description: Orchestrates execution of multiple skill specifications in sequence, managing skill dependencies, result aggregation, and error recovery for complex multi-step operations.
+description: Orchestrates execution of multiple skill specifications in sequence,
+  managing skill dependencies, result aggregation, and error recovery for complex
+  multi-step operations.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: orchestration
   scope: orchestration
   output-format: analysis
-  triggers: multi skill executor, multi-skill-executor, orchestrates, execution, multiple
+  triggers: execution, multi skill executor, multi-skill-executor, multiple, orchestrates
 ---
+
 
 # Multi-Skill Executor (Agent Skill Orchestration)
 

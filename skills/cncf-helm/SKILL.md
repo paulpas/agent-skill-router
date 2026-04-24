@@ -4,13 +4,16 @@ description: Helm in Cloud-Native Engineering - The Kubernetes Package Manager
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: helm, cloud-native, engineering, kubernetes
+  triggers: cloud-native, container orchestration, engineering, helm, k8s, k8s charts,
+    kubernetes package manager, kubernetes
 ---
+
+
 
 # Helm in Cloud-Native Engineering
 

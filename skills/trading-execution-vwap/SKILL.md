@@ -1,16 +1,18 @@
 ---
 name: trading-execution-vwap
-description: Volume-Weighted Average Price algorithm for executing orders relative to market volume
+description: Volume-Weighted Average Price algorithm for executing orders relative
+  to market volume
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: execution vwap, execution-vwap, volume-weighted, average, price
+  triggers: average, execution vwap, execution-vwap, price, volume-weighted
 ---
+
 
 **Role:** Execute orders in proportion to market volume to minimize slippage in high-volume periods
 

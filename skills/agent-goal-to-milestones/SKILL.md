@@ -1,16 +1,19 @@
 ---
 name: agent-goal-to-milestones
-description: Translates high-level goals into actionable milestones and tasks that can be executed by specialized skills, enabling goal-directed problem solving with measurable progress tracking.
+description: Translates high-level goals into actionable milestones and tasks that
+  can be executed by specialized skills, enabling goal-directed problem solving with
+  measurable progress tracking.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: orchestration
   scope: orchestration
   output-format: analysis
-  triggers: goal to milestones, goal-to-milestones, translates, high-level, goals
+  triggers: goal to milestones, goal-to-milestones, goals, high-level, translates
 ---
+
 
 # Goal to Milestones (Agent Goal Directed Planning)
 

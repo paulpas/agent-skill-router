@@ -1,16 +1,18 @@
 ---
 name: cncf-operator-framework
-description: Operator Framework in Tools to build and manage Kubernetes operators with standardized patterns
+description: Operator Framework in Tools to build and manage Kubernetes operators
+  with standardized patterns
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: operator framework, operator-framework, tools, build, manage
+  triggers: build, manage, operator framework, operator-framework, tools
 ---
+
 
 # Operator Framework in Cloud-Native Engineering
 

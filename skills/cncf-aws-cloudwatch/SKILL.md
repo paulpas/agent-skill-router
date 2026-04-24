@@ -1,17 +1,21 @@
 ---
 name: cncf-aws-cloudwatch
-description: Configures CloudWatch monitoring with metrics, logs, alarms, and dashboards for visibility into AWS resource performance, application health, and operational metrics.
+description: Configures CloudWatch monitoring with metrics, logs, alarms, and dashboards
+  for visibility into AWS resource performance, application health, and operational
+  metrics.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: CloudWatch, monitoring, metrics, logs, alarms, dashboard, log insights, log groups
+  triggers: cloudwatch, monitoring, metrics, logs, alarms, dashboard, log insights,
+    log groups
   related-skills: cncf-aws-ec2, cncf-aws-lambda, cncf-aws-dynamodb, cncf-aws-cloudtrail
 ---
+
 
 # CloudWatch (Amazon CloudWatch)
 

@@ -1,16 +1,19 @@
 ---
 name: cncf-contour
-description: Contour in Service Proxy - cloud native architecture, patterns, pitfalls, and best practices
+description: Contour in Service Proxy - cloud native architecture, patterns, pitfalls,
+  and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: contour, service, proxy, cloud
+  triggers: cdn, contour, infrastructure as code, k8s service, kubernetes service,
+    monitoring, proxy, service
 ---
+
 # Contour in Cloud-Native Engineering
 
 **Category:** ingress  

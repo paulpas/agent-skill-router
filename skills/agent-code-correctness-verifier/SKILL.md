@@ -1,16 +1,19 @@
 ---
 name: agent-code-correctness-verifier
-description: Verifies code correctness by analyzing syntax, semantics, and type consistency across all code artifacts in the codebase.
+description: Verifies code correctness by analyzing syntax, semantics, and type consistency
+  across all code artifacts in the codebase.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: verification
-  scope: code质量
+  scope: "code\u8D28\u91CF"
   output-format: analysis
-  triggers: code correctness verifier, code-correctness-verifier, verifies, syntax, semantics, types
+  triggers: code correctness verifier, code-correctness-verifier, semantics, syntax,
+    types, verifies
 ---
+
 
 # Code Correctness Verifier (Agent Code Quality Assurance)
 

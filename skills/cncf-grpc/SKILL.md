@@ -1,16 +1,19 @@
 ---
 name: cncf-grpc
-description: gRPC in Remote Procedure Call - cloud native architecture, patterns, pitfalls, and best practices
+description: gRPC in Remote Procedure Call - cloud native architecture, patterns,
+  pitfalls, and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: grpc, remote, procedure, cloud
+  triggers: cdn, grpc, infrastructure as code, microservices communication, monitoring,
+    procedure, remote, rpc framework
 ---
+
 # gRPC in Cloud-Native Engineering
 
 ## Purpose and Use Cases

@@ -1,17 +1,21 @@
 ---
 name: cncf-aws-s3
-description: Configures S3 object storage with versioning, lifecycle policies, encryption, and access controls for durable, scalable data storage with cost optimization in AWS.
+description: Configures S3 object storage with versioning, lifecycle policies, encryption,
+  and access controls for durable, scalable data storage with cost optimization in
+  AWS.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: S3, object storage, bucket, versioning, lifecycle policy, S3 access, static website, object expiration
+  triggers: s3, object storage, bucket, versioning, lifecycle policy, s3 access, static
+    website, object expiration
   related-skills: cncf-aws-cloudformation, cncf-aws-iam, cncf-aws-kms
 ---
+
 
 # S3 (Simple Storage Service)
 

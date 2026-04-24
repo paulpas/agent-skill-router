@@ -4,13 +4,15 @@ description: Order execution and management API for trading systems
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: exchange order execution api, exchange-order-execution-api, management, trading, systems
+  triggers: exchange order execution api, exchange-order-execution-api, management,
+    systems, trading
 ---
+
 
 **Role:** Execute and manage orders across multiple exchanges with consistency and reliability
 

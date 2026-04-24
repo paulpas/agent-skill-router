@@ -4,13 +4,15 @@ description: Finding and maintaining competitive advantage in trading systems.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: trading
   role: implementation
   scope: implementation
   output-format: code
-  triggers: fundamentals trading edge, fundamentals-trading-edge, finding, maintaining, competitive
+  triggers: competitive, finding, fundamentals trading edge, fundamentals-trading-edge,
+    maintaining
 ---
+
 
 **Role:** Identify, quantify, test, and optimize sources of edge in trading strategies to ensure long-term profitability.
 

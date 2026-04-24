@@ -1,17 +1,20 @@
 ---
 name: cncf-aws-sns
-description: Deploys managed pub/sub messaging with SNS for asynchronous notifications across services, mobile push, email, and Lambda integrations.
+description: Deploys managed pub/sub messaging with SNS for asynchronous notifications
+  across services, mobile push, email, and Lambda integrations.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: SNS, publish subscribe, messaging, notifications, pub/sub, topic, subscription
+  triggers: messaging, notifications, pub/sub, publish subscribe, sns, subscription,
+    topic
   related-skills: cncf-aws-sqs, cncf-aws-lambda, cncf-aws-cloudwatch
 ---
+
 
 # SNS (Simple Notification Service)
 

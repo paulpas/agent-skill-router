@@ -1,17 +1,20 @@
 ---
 name: cncf-aws-auto-scaling
-description: Configures automatic scaling of compute resources (EC2, RDS, DynamoDB, Lambda) based on demand metrics with scaling policies and lifecycle hooks.
+description: Configures automatic scaling of compute resources (EC2, RDS, DynamoDB,
+  Lambda) based on demand metrics with scaling policies and lifecycle hooks.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: auto-scaling, scaling policy, target tracking, ASG, dynamic scaling, scheduled scaling
+  triggers: asg, auto-scaling, dynamic scaling, scaling policy, scheduled scaling,
+    target tracking
   related-skills: cncf-aws-ec2, cncf-aws-cloudwatch, cncf-aws-rds, cncf-aws-dynamodb
 ---
+
 
 # Auto Scaling
 

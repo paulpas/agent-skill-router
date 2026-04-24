@@ -4,13 +4,14 @@ description: SPIFFE in Secure Product Identity Framework for Applications
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: spiffe, secure, product, identity
+  triggers: identity, product, secure, spiffe
 ---
+
 
 # SPIFFE in Cloud-Native Engineering
 

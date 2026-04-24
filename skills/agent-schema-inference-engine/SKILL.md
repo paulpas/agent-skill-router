@@ -1,16 +1,18 @@
 ---
 name: agent-schema-inference-engine
-description: Inferences data schemas from actual data samples, generatingtyped data structures and validation rules for data pipelines.
+description: Inferences data schemas from actual data samples, generatingtyped data
+  structures and validation rules for data pipelines.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: agent
   role: data
   scope: schema
   output-format: schema
-  triggers: schema inference, schema-inference-engine, schema discovery, data schema
+  triggers: data schema, schema discovery, schema inference, schema-inference-engine
 ---
+
 
 # Schema Inference Engine (Data Schema Discovery)
 

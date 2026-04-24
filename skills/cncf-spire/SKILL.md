@@ -4,13 +4,14 @@ description: SPIRE in SPIFFE Implementation for Real-World Deployments
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: spire, spiffe, implementation, real-world
+  triggers: implementation, real-world, spiffe, spire
 ---
+
 
 # SPIRE in Cloud-Native Engineering
 

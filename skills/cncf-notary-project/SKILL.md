@@ -1,16 +1,20 @@
 ---
 name: cncf-notary-project
-description: Notary Project in Content Trust &amp; Security - cloud native architecture, patterns, pitfalls, and best practices
+description: Notary Project in Content Trust &amp; Security - cloud native architecture,
+  patterns, pitfalls, and best practices
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: notary project, notary-project, content, trust, security
+  triggers: content, how do i find security issues, notary project, notary-project,
+    security, trust, vulnerability scanning, security auditing
 ---
+
+
 
 # Notary Project in Cloud-Native Engineering
 

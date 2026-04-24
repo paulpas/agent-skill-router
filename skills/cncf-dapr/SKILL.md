@@ -4,13 +4,14 @@ description: Dapr in Cloud-Native Engineering - distributed application runtime
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: cncf
   role: reference
   scope: infrastructure
   output-format: manifests
-  triggers: dapr, cloud-native, engineering, distributed
+  triggers: cloud-native, dapr, distributed, engineering
 ---
+
 # Dapr in Cloud-Native Engineering
 
 **Category:** runtime  
