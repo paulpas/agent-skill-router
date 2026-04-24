@@ -398,7 +398,10 @@ if $INTEGRATE_OPENCODE; then
   API_DOC_PATH="$HOME/.config/opencode/skill-router-api.md"
   mkdir -p "$HOME/.config/opencode"
 
-  cat > "$API_DOC_PATH" <<MARKDOWN
+  if [[ -f "$API_DOC_PATH" ]]; then
+    ok "skill-router-api.md already exists, skipping (use --force to overwrite)"
+  else
+    cat > "$API_DOC_PATH" <<MARKDOWN
 # Skill Router API
 
 The Skill Router is running at \`http://localhost:${PORT}\` and provides intelligent task→skill matching.
@@ -462,7 +465,8 @@ docker stop skill-router
 \`\`\`
 MARKDOWN
 
-  ok "Written: $API_DOC_PATH"
+    ok "Written: $API_DOC_PATH"
+  fi
 
   # STEP 12 — Update opencode.json instructions array
   echo ""
@@ -512,6 +516,47 @@ PYEOF
     _update_instructions_python
   fi
 
+  # STEP 12b — Inject skill-router MCP entry into opencode.json
+  echo ""
+  echo -e "${BOLD}[Step 12b] Injecting skill-router MCP server into $OPENCODE_CONFIG...${RESET}"
+  MCP_NODE_CMD="$(which node)"
+  MCP_SCRIPT_PATH="$HOME/.config/opencode/skill-router-mcp.js"
+
+  if command -v jq &>/dev/null; then
+    if jq -e '.mcp["skill-router"]' "$OPENCODE_CONFIG" > /dev/null 2>&1; then
+      ok "skill-router already in mcp section, skipping"
+    else
+      jq --arg cmd "$MCP_NODE_CMD" --arg script "$MCP_SCRIPT_PATH" '
+        .mcp["skill-router"] = {
+          "type": "local",
+          "command": [$cmd, $script],
+          "enabled": true
+        }
+      ' "$OPENCODE_CONFIG" > "$OPENCODE_CONFIG.tmp" && mv "$OPENCODE_CONFIG.tmp" "$OPENCODE_CONFIG"
+      ok "Added skill-router to mcp section"
+    fi
+  else
+    python3 - "$OPENCODE_CONFIG" "$MCP_NODE_CMD" "$MCP_SCRIPT_PATH" <<'PYEOF'
+import sys, json
+cfg_path, node_cmd, script_path = sys.argv[1], sys.argv[2], sys.argv[3]
+with open(cfg_path) as f:
+    cfg = json.load(f)
+if 'mcp' not in cfg:
+    cfg['mcp'] = {}
+if 'skill-router' not in cfg['mcp']:
+    cfg['mcp']['skill-router'] = {
+        "type": "local",
+        "command": [node_cmd, script_path],
+        "enabled": True
+    }
+    with open(cfg_path, 'w') as f:
+        json.dump(cfg, f, indent=2)
+    print("Added skill-router to mcp section")
+else:
+    print("skill-router already in mcp section, skipping")
+PYEOF
+  fi
+
   # STEP 13 — Validate opencode.json
   echo ""
   echo -e "${BOLD}[Step 13] Validating opencode.json...${RESET}"
@@ -551,7 +596,10 @@ else
   SYSTEMD_USER_DIR="$HOME/.config/systemd/user"
   mkdir -p "$SYSTEMD_USER_DIR"
 
-  cat > "$SYSTEMD_USER_DIR/skill-router.service" <<UNIT
+  if [[ -f "$SYSTEMD_USER_DIR/skill-router.service" ]]; then
+    ok "Systemd service file already exists, skipping"
+  else
+    cat > "$SYSTEMD_USER_DIR/skill-router.service" <<UNIT
 [Unit]
 Description=Skill Router (Docker)
 After=docker.service
@@ -567,13 +615,14 @@ Restart=no
 WantedBy=default.target
 UNIT
 
-  ok "Written: $SYSTEMD_USER_DIR/skill-router.service"
+    ok "Written: $SYSTEMD_USER_DIR/skill-router.service"
 
-  systemctl --user daemon-reload
-  ok "Reloaded systemd user daemon"
+    systemctl --user daemon-reload
+    ok "Reloaded systemd user daemon"
 
-  systemctl --user enable skill-router
-  ok "Enabled skill-router user service"
+    systemctl --user enable skill-router
+    ok "Enabled skill-router user service"
+  fi
 
   SERVICE_STATUS="systemd user service enabled ✓"
 fi
