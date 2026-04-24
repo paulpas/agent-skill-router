@@ -391,81 +391,21 @@ API_DOC_PATH=""
 
 if $INTEGRATE_OPENCODE; then
 
-  # STEP 11 — Generate skill-router-api.md
+  # STEP 11 — Link skill-router-api.md into OpenCode config
   echo ""
-  echo -e "${BOLD}[Step 11] Generating skill-router-api.md...${RESET}"
+  echo -e "${BOLD}[Step 11] Linking skill-router-api.md into OpenCode config...${RESET}"
 
+  CANONICAL_API_DOC="${ROUTER_DIR}/skill-router-api.md"
   API_DOC_PATH="$HOME/.config/opencode/skill-router-api.md"
   mkdir -p "$HOME/.config/opencode"
 
-  if [[ -f "$API_DOC_PATH" ]]; then
-    ok "skill-router-api.md already exists, skipping (use --force to overwrite)"
+  if [[ ! -f "$CANONICAL_API_DOC" ]]; then
+    warn "Canonical skill-router-api.md not found at $CANONICAL_API_DOC — skipping"
   else
-    cat > "$API_DOC_PATH" <<MARKDOWN
-# Skill Router API
-
-The Skill Router is running at \`http://localhost:${PORT}\` and provides intelligent task→skill matching.
-
-## Endpoints
-
-### Health Check
-\`\`\`bash
-curl http://localhost:${PORT}/health
-\`\`\`
-Response: \`{"status":"healthy","timestamp":"...","version":"1.0.0"}\`
-
-### Stats
-\`\`\`bash
-curl http://localhost:${PORT}/stats
-\`\`\`
-Response: \`{"skills":{"totalSkills":N,"categories":[...],"tags":[...]},"mcpTools":{...}}\`
-
-### Route a Task to Skills
-\`\`\`bash
-curl -X POST http://localhost:${PORT}/route \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "task": "Deploy a Kubernetes manifest to production",
-    "context": {"environment": "production"},
-    "constraints": {"maxSkills": 3}
-  }'
-\`\`\`
-Returns: selected skills, confidence scores, execution plan (sequential/parallel/hybrid).
-
-### Execute a Task
-\`\`\`bash
-curl -X POST http://localhost:${PORT}/execute \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "task": "Deploy a Kubernetes manifest to production",
-    "inputs": {"manifest": "..."},
-    "skills": ["cncf-kubernetes"]
-  }'
-\`\`\`
-
-## Usage in OpenCode Sessions
-
-When you need to route a task to the best skill, call the \`/route\` endpoint via shell tools.
-The router uses OpenAI embeddings + LLM ranking to find the most relevant skills.
-
-## Docker Management
-
-\`\`\`bash
-# Check container status
-docker ps --filter name=skill-router
-
-# View logs
-docker logs skill-router --tail 50 -f
-
-# Restart
-docker restart skill-router
-
-# Stop
-docker stop skill-router
-\`\`\`
-MARKDOWN
-
-    ok "Written: $API_DOC_PATH"
+    # Remove existing file or stale symlink, then create fresh symlink
+    rm -f "$API_DOC_PATH"
+    ln -sf "$CANONICAL_API_DOC" "$API_DOC_PATH"
+    ok "Linked $API_DOC_PATH → $CANONICAL_API_DOC"
   fi
 
   # STEP 12 — Update opencode.json instructions array
