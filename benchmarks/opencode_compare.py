@@ -863,13 +863,88 @@ def apply_code_quality_to_result(
 # ─── Comparison Orchestration ─────────────────────────────────────────────────
 
 
+def _infer_function_signature(test_cases: list) -> str:
+    """Infer a function signature from test case input shapes.
+
+    Examines the first test case's ``input`` list (which matches the positional
+    args that the test runner unpacks with ``fn(*input)``).  Returns a Python
+    ``def`` header with generic arg names based on the number and types of args.
+
+    Args:
+        test_cases: List of test case dicts with ``input`` and ``expected_output``.
+
+    Returns:
+        A ``def solve(...)`` string, e.g. ``"def solve(items)"`` or
+        ``"def solve(items, constraint)"``.
+    """
+    if not test_cases:
+        return "def solve(input_data)"
+
+    inp = test_cases[0].get("input", [])
+    if not isinstance(inp, list) or len(inp) == 0:
+        return "def solve(arg)"
+
+    if len(inp) == 1:
+        arg0 = inp[0]
+        if isinstance(arg0, list):
+            return "def solve(items)"
+        elif isinstance(arg0, str):
+            return "def solve(text)"
+        else:
+            return "def solve(arg)"
+    elif len(inp) == 2:
+        arg0, arg1 = inp[0], inp[1]
+        a0 = (
+            "items"
+            if isinstance(arg0, list)
+            else "text"
+            if isinstance(arg0, str)
+            else "arg1"
+        )
+        a1 = (
+            "constraint"
+            if isinstance(arg1, str)
+            else "options"
+            if isinstance(arg1, list)
+            else "arg2"
+        )
+        return f"def solve({a0}, {a1})"
+    else:
+        names = [f"arg{i + 1}" for i in range(len(inp))]
+        return f"def solve({', '.join(names)})"
+
+
+def _format_test_examples(test_cases: list, max_examples: int = 2) -> str:
+    """Format 1–2 test cases as human-readable input→output examples.
+
+    Args:
+        test_cases:   List of test case dicts.
+        max_examples: Maximum number of examples to include.
+
+    Returns:
+        Multi-line string with example pairs, or empty string if no cases.
+    """
+    lines: list[str] = []
+    for tc in test_cases[:max_examples]:
+        inp = tc.get("input")
+        out = tc.get("expected_output")
+        lines.append(f"  solve(*{inp!r}) → {out!r}")
+    return "\n".join(lines)
+
+
 def build_run_task(exercise_data: dict) -> str:
     """Build the prompt string that is actually sent to opencode.
 
     When the exercise has a ``coding_challenge``, the abstract architecture
     ``task`` is used as context and the ``coding_challenge.description`` becomes
-    the imperative directive.  An explicit code-generation instruction is
-    appended so the model emits a fenced code block rather than routing advice.
+    the imperative directive.  The prompt also includes:
+
+    - The inferred function signature (from test case input shapes) so the
+      model writes a function with the correct number of arguments.
+    - Example input→output pairs from the first two test cases so the model
+      understands the exact return format.
+    - An explicit "do not use tools" directive to prevent the model from
+      entering an agentic tool-use loop that burns the timeout budget.
 
     Without a ``coding_challenge`` the plain ``task`` text is returned unchanged,
     preserving existing behaviour for non-coding exercises.
@@ -888,18 +963,25 @@ def build_run_task(exercise_data: dict) -> str:
 
     language = challenge.get("language", "python")
     coding_desc = challenge.get("description", "")
+    test_cases = challenge.get("success_criteria", {}).get("test_cases", [])
+
+    signature = _infer_function_signature(test_cases)
+    examples = _format_test_examples(test_cases)
+    examples_block = f"\nExample behaviour:\n{examples}\n" if examples else ""
 
     return (
+        f"IMPORTANT: Do not use any tools. Do not search files. "
+        f"Do not call route_to_skill. Just write the code directly.\n\n"
         f"Context: {task}\n\n"
-        f"Coding task: {coding_desc}\n\n"
-        f"Write working {language} code only. "
-        f"Provide a single self-contained top-level {language} function that "
-        f"solves the coding task above. "
-        f"The function must accept the described inputs as positional arguments "
-        f"and return the described output directly. "
-        f"Wrap the code in a ```{language} ... ``` fenced block. "
-        f"Do not include any prose, imports, or class definitions — "
-        f"only the function definition inside the code block."
+        f"Coding task: {coding_desc}\n"
+        f"{examples_block}\n"
+        f"Write a single top-level {language} function with this signature:\n"
+        f"  {signature}\n\n"
+        f"The function must accept positional arguments exactly as shown above "
+        f"and return the output value directly (no wrapping dict or extra keys). "
+        f"Wrap only the function in a ```{language} ... ``` fenced block. "
+        f"Do not use any tools or read any files. "
+        f"Output only the function definition inside the code block."
     )
 
 
