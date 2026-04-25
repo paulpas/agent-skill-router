@@ -1,6 +1,6 @@
 ---
 name: code-validation
-description: Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense
+description: Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions
 license: MIT
 compatibility: opencode
 metadata:
@@ -20,6 +20,7 @@ Validates pipeline stages against allowed configuration and returns 'valid_confi
 ## When to Use
 
 - Validating pipeline stages against allowed configurations (e.g., build, test, deploy, notify)
+- Validating environment-specific stages (e.g., dev: build, test, lint vs prod: build, test, security-scan, deploy)
 - Checking user roles against a whitelist of permitted roles
 - Verifying environment names against allowed deployment targets
 - Ensuring configuration values match expected options
@@ -73,7 +74,7 @@ def validate_pipeline(stages: list[str]) -> str:
 | Uses list for allowed set (`["build", "test", ...]`) | Uses set for O(1) lookup (`{"build", "test", ...}`) |
 | No guard clause for empty list | Returns "valid_config" for empty list |
 | Missing type hints | Explicit return type annotation (`-> str`) |
-| Loop continues after finding invalid | Early return on first invalid stage |
+| Loop continues after finding invalid (late return) | Early return on first invalid stage |
 
 ### Pattern 2: Pipeline Stage Validation with Config Status
 
@@ -125,7 +126,7 @@ def validate_pipeline_case_insensitive(stages: list[str]) -> str:
 
 ### Pattern 4: Pipeline Stage Validation with Input Validation
 
-Validates pipeline stages with explicit type checking at function entry. This pattern demonstrates the 5 Laws of Elegant Defense with Parse Don't Validate principle.
+Validates pipeline stages with explicit type checking at function entry. This pattern demonstrates the 5 Laws of Elegant Defense with Parse Don't Validate principle. **Note:** Returns "invalid_config" for invalid input rather than raising exceptions, following the "Fail Fast" law with graceful degradation.
 
 ```python
 def validate_pipeline_strict(stages: list[str]) -> str:
@@ -133,31 +134,66 @@ def validate_pipeline_strict(stages: list[str]) -> str:
     
     Returns "valid_config" if all stages are valid, "invalid_config" otherwise.
     
-    Raises:
-        TypeError: If stages is not a list of strings
+    Args:
+        stages: List of pipeline stage names to validate
+        
+    Returns:
+        "valid_config" if all stages are in allowed set or list is empty,
+        "invalid_config" if input is invalid or contains invalid stages
     """
     ALLOWED_STAGES = {"build", "test", "deploy", "notify"}
     
     # Parse: validate input type at boundary (Parse, Don't Validate)
+    # If input is not a list, return invalid_config instead of raising exception
     if not isinstance(stages, list):
-        raise TypeError(f"Expected list of stages, got {type(stages).__name__}")
+        return "invalid_config"
     
+    # Check each stage: skip non-string items and return invalid_config
     for i, stage in enumerate(stages):
         if not isinstance(stage, str):
-            raise TypeError(f"Stage at index {i} must be string, got {type(stage).__name__}")
+            return "invalid_config"
     
     # Guard clause: empty list is valid (nothing to validate)
     if not stages:
         return "valid_config"
     
     # Parse: identify invalid stages at boundary
-    invalid = [stage for stage in stages if stage not in ALLOWED_STAGES]
-    
-    # Fail Fast: return invalid_config immediately if any invalid stages found
-    if invalid:
-        return "invalid_config"
+    for stage in stages:
+        if stage not in ALLOWED_STAGES:
+            return "invalid_config"
     
     # Atomic Predictability: pure function, same input always yields same output
+    return "valid_config"
+```
+
+### Pattern 5: None Handling with Explicit Guard Clauses
+
+Demonstrates how to handle None input explicitly with clear guard clauses. This pattern shows how to gracefully handle common edge cases without raising exceptions.
+
+```python
+def validate_pipeline_with_none_handling(stages: list[str] | None) -> str:
+    """Validate pipeline stages with explicit None handling.
+    
+    Returns "valid_config" if all stages are valid, "invalid_config" otherwise.
+    
+    Args:
+        stages: Optional list of pipeline stage names (None treated as empty list)
+        
+    Returns:
+        "valid_config" if stages is None, empty, or all stages valid,
+        "invalid_config" if any stage is not in allowed set
+    """
+    ALLOWED_STAGES = {"build", "test", "deploy", "notify"}
+    
+    # Guard clause: None or empty list both return valid_config (nothing to validate)
+    if not stages:
+        return "valid_config"
+    
+    # Parse: identify invalid stages at boundary
+    for stage in stages:
+        if not isinstance(stage, str) or stage not in ALLOWED_STAGES:
+            return "invalid_config"
+    
     return "valid_config"
 ```
 
@@ -179,17 +215,18 @@ The function must return exactly one of two status strings:
 ### MUST DO
 - Return "valid_config" for valid pipeline stages (empty list or all in allowed set)
 - Return "invalid_config" for any invalid stages found
-- Use guard clauses for early return on edge cases (empty list, invalid input type)
+- Use guard clauses for early return on edge cases (empty list, invalid input type, non-string items)
 - Use Sets for O(1) lookup performance
 - Keep ALLOWED_STAGES constant at the top of the function
 - Validate input types at function entry when using Parse, Don't Validate approach
+- Check each stage is a string and return "invalid_config" if non-string items are found
 
 ### MUST NOT DO
 - Raise exceptions for invalid stages (return "invalid_config" instead for validation errors)
 - Mutate input or use hidden state
 - Use list lookup for allowed set (use Sets)
 - Hardcode allowed values deep in logic
-- Skip input validation for non-string types when using strict mode
+- Process non-string items in the stages list
 
 ---
 
@@ -199,3 +236,42 @@ The function must return exactly one of two status strings:
 |---|---|
 | `coding-error-handling` | Complementary skill for designing descriptive error messages and failure modes |
 | `m0-foundation` | APEX Trading Platform foundation patterns including the 5 Laws of Elegant Defense |
+
+---
+
+> **Note:** These examples should be used as constants passed to a parameterized function. For production use, define these as configurable constants and pass them as parameters to validation functions.
+
+## Environment-Specific Configuration Examples
+
+### Default Pipeline Stages
+
+```python
+DEFAULT_ALLOWED_STAGES = {"build", "test", "deploy", "notify"}
+```
+
+### Development Environment
+
+```python
+DEV_ALLOWED_STAGES = {"build", "test", "lint", "type-check"}
+```
+
+### Production Environment
+
+```python
+PROD_ALLOWED_STAGES = {"build", "test", "security-scan", "deploy", "notify"}
+```
+
+### Staging Environment
+
+```python
+STAGING_ALLOWED_STAGES = {"build", "test", "deploy", "smoke-test", "notify"}
+```
+
+---
+
+## Config Status Constants
+
+| Status | Meaning | Operational Impact |
+|---|---|---|
+| `"valid_config"` | All stages are in the allowed set | Pipeline proceeds to next stage |
+| `"invalid_config"` | At least one stage is not allowed | Pipeline halts, error logged |

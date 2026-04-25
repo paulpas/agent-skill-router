@@ -8461,7 +8461,7 @@
   },
   {
     "name": "code-validation",
-    "description": "Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense",
+    "description": "Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions",
     "domain": "coding",
     "tags": [
       "coding",
