@@ -34,6 +34,7 @@ import ast
 import copy
 import json
 import os
+import select
 import shutil
 import subprocess
 import sys
@@ -50,7 +51,7 @@ OPENCODE_BINARY = Path("/home/paulpas/.opencode/bin/opencode")
 OPENCODE_CONFIG_PATH = Path("/home/paulpas/.config/opencode/opencode.json")
 
 DEFAULT_MODEL = "llamacpp/qwen3-coder-next-8_0"
-DEFAULT_TIMEOUT = 120
+DEFAULT_TIMEOUT = 300
 RESPONSE_PREVIEW_CHARS = 500
 CODE_EXEC_TIMEOUT_SECONDS = 10
 
@@ -296,20 +297,24 @@ def run_opencode(
     extra_env: Optional[dict] = None,
     timeout: int = DEFAULT_TIMEOUT,
 ) -> tuple[str, float, list[dict]]:
-    """Run `opencode run <task> --format json --model <model>` as subprocess.
+    """Run opencode run <task> --format json, streaming stdout until session.idle or error.
+
+    Streams stdout line-by-line and terminates the process as soon as it sees
+    a terminal event (session.idle or error), rather than waiting for the process
+    to exit on its own (which it never does in persistent-session mode).
 
     Args:
         task:       Task description sent to opencode.
         model:      Model identifier in provider/model format.
         extra_env:  Extra environment variables (merged with os.environ).
                     Pass {"XDG_CONFIG_HOME": tmpdir} to override config.
-        timeout:    Seconds before the process is killed.
+        timeout:    Seconds before the process is forcibly killed.
 
     Returns:
         (response_text, latency_ms, raw_events)
 
     Raises:
-        RuntimeError: If the binary is missing or subprocess returns non-zero exit.
+        RuntimeError: If the binary is missing or the run times out.
     """
     if not OPENCODE_BINARY.exists():
         raise RuntimeError(f"OpenCode binary not found: {OPENCODE_BINARY}")
@@ -329,35 +334,63 @@ def run_opencode(
         env.update(extra_env)
 
     start = time.perf_counter()
+    lines_collected: list[str] = []
+
     try:
-        proc = subprocess.run(
+        proc = subprocess.Popen(
             cmd,
-            capture_output=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             text=True,
-            timeout=timeout,
             env=env,
         )
-    except subprocess.TimeoutExpired:
-        raise RuntimeError(
-            f"opencode run timed out after {timeout}s. "
-            "Try --timeout with a larger value."
-        )
+
+        deadline = start + timeout
+
+        while True:
+            remaining = deadline - time.perf_counter()
+            if remaining <= 0:
+                proc.kill()
+                raise RuntimeError(
+                    f"opencode run timed out after {timeout}s. "
+                    "Try --timeout with a larger value."
+                )
+
+            ready, _, _ = select.select([proc.stdout], [], [], min(remaining, 1.0))
+            if ready:
+                line = proc.stdout.readline()
+                if not line:
+                    # EOF — process exited
+                    break
+                line = line.strip()
+                if line:
+                    lines_collected.append(line)
+                    # Terminate on terminal events — parse at the boundary
+                    try:
+                        event = json.loads(line)
+                        etype = event.get("type", "")
+                        if etype in ("session.idle", "error"):
+                            proc.terminate()
+                            try:
+                                proc.wait(timeout=5)
+                            except subprocess.TimeoutExpired:
+                                proc.kill()
+                            break
+                    except json.JSONDecodeError:
+                        pass  # Non-JSON line — skip cleanly
+            else:
+                # No data within poll interval — check if process has already exited
+                if proc.poll() is not None:
+                    break
+
+    except RuntimeError:
+        if "proc" in locals() and proc.poll() is None:
+            proc.kill()
+        raise
 
     latency_ms = (time.perf_counter() - start) * 1000
-
-    if proc.returncode != 0:
-        stderr_preview = proc.stderr[:500] if proc.stderr else "(no stderr)"
-        # Non-zero exit is not always fatal — parse what we got
-        stdout = proc.stdout or ""
-        response_text, raw_events = parse_opencode_json_stream(stdout)
-        if not response_text:
-            raise RuntimeError(
-                f"opencode exited with code {proc.returncode}. stderr: {stderr_preview}"
-            )
-        return response_text, latency_ms, raw_events
-
-    stdout = proc.stdout or ""
-    response_text, raw_events = parse_opencode_json_stream(stdout)
+    stdout_text = "\n".join(lines_collected)
+    response_text, raw_events = parse_opencode_json_stream(stdout_text)
     return response_text, latency_ms, raw_events
 
 
