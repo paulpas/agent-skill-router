@@ -1,6 +1,6 @@
-# Agent Skill Router — 1,777 Expert Skills with Built-In Compression
+# Agent Skill Router — 1,827 Expert Skills with Built-In Compression
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1,777 skills across 5 domains and built-in SkillCompressor for reducing token overhead, the router makes expert knowledge instantly available without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1,827 skills across 5 domains and built-in SkillCompressor for reducing token overhead, the router makes expert knowledge instantly available without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context (compressed if needed) — AI answers a
 ```
 
 **Key Features:**
-- 🎯 **1,777 Skills** organized across Agent, CNCF, Coding, Programming, and Trading domains
+- 🎯 **1,827 Skills** organized across Agent, CNCF, Coding, Programming, and Trading domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65% with configurable compression levels (0-10+)
 - ⚡ **Fast** — cached warm requests respond in ~10ms; cold requests in ~3.5s
@@ -51,12 +51,12 @@ All skills live in `skills/` organized by domain:
 
 ```
 skills/
-├── agent/                       (222 skills)
+├── agent/                       (271 skills)
 │   ├── confidence-based-selector/
 │   │   └── SKILL.md
-│   ├── task-routing/
+│   ├── task-decomposition-engine/
 │   │   └── SKILL.md
-│   └── ... 220 more
+│   └── ... 269 more
 │
 ├── cncf/                        (365 skills)
 │   ├── kubernetes/
@@ -72,17 +72,17 @@ skills/
 │   │   └── SKILL.md
 │   └── ... 315 more
 │
-├── programming/                 (790 skills)
-│   ├── sorting-algorithms/
+├── programming/                 (791 skills)
+│   ├── react-best-practices/
 │   │   └── SKILL.md
-│   ├── graph-algorithms/
+│   ├── advanced-evaluation/
 │   │   └── SKILL.md
-│   └── ... 788 more
+│   └── ... 789 more
 │
 └── trading/                     (83 skills)
-    ├── risk-stop-loss/
+    ├── ai-anomaly-detection/
     │   └── SKILL.md
-    ├── position-sizing/
+    ├── backtest-walk-forward/
     │   └── SKILL.md
     └── ... 81 more
 
@@ -350,25 +350,25 @@ curl -X POST http://localhost:3000/reload
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| **Agent** | 222 | AI orchestration, routing, task decomposition |
+| **Agent** | 271 | AI orchestration, routing, task decomposition |
 | **CNCF** | 365 | Kubernetes, cloud-native tooling, DevOps |
 | **Coding** | 317 | Software patterns, security, testing |
-| **Programming** | 790 | Algorithms, frameworks, languages |
+| **Programming** | 791 | Algorithms, frameworks, languages |
 | **Trading** | 83 | Execution, risk management, ML models |
 
-### Agent Skills (222)
+### Agent Skills (271)
 
 Orchestration, routing, and AI agent patterns for task automation.
 
 | Skill | Description |
 |-------|-------------|
 | [confidence-based-selector](./skills/agent/confidence-based-selector/SKILL.md) | Select appropriate skill based on confidence scores and relevance |
-| [task-routing](./skills/agent/task-routing/SKILL.md) | Route tasks to specialized agents |
 | [task-decomposition-engine](./skills/agent/task-decomposition-engine/SKILL.md) | Break complex tasks into manageable subtasks |
 | [parallel-skill-runner](./skills/agent/parallel-skill-runner/SKILL.md) | Execute multiple skills concurrently |
 | [multi-skill-executor](./skills/agent/multi-skill-executor/SKILL.md) | Orchestrate skill execution with dependencies |
+| [add-new-skill](./skills/agent/add-new-skill/SKILL.md) | Create and register new skills in the routing system |
 
-*[View all 222 Agent skills →](./skills/agent/)*
+*[View all 271 Agent skills →](./skills/agent/)*
 
 ### CNCF Skills (365)
 
@@ -398,19 +398,19 @@ Software engineering patterns, security, testing, and best practices.
 
 *[View all 317 Coding skills →](./skills/coding/)*
 
-### Programming Skills (790)
+### Programming Skills (791)
 
 Algorithms, data structures, frameworks, and language reference.
 
 | Skill | Description |
 |-------|-------------|
-| [sorting-algorithms](./skills/programming/sorting-algorithms/SKILL.md) | Algorithm selection and complexity analysis |
-| [graph-algorithms](./skills/programming/graph-algorithms/SKILL.md) | Graph traversal and pathfinding |
-| [dynamic-programming](./skills/programming/dynamic-programming/SKILL.md) | DP patterns and optimization |
 | [react-best-practices](./skills/programming/react-best-practices/SKILL.md) | Modern React patterns and hooks |
-| [nodejs-patterns](./skills/programming/nodejs-patterns/SKILL.md) | Node.js architecture and streams |
+| [advanced-evaluation](./skills/programming/advanced-evaluation/SKILL.md) | Advanced evaluation techniques |
+| [fp-react](./skills/programming/fp-react/SKILL.md) | Functional programming in React |
+| [react-component-performance](./skills/programming/react-component-performance/SKILL.md) | React component optimization strategies |
+| [react-flow-architect](./skills/programming/react-flow-architect/SKILL.md) | React Flow architecture and patterns |
 
-*[View all 790 Programming skills →](./skills/programming/)*
+*[View all 791 Programming skills →](./skills/programming/)*
 
 ### Trading Skills (83)
 
@@ -418,11 +418,11 @@ Algorithmic execution, risk management, backtesting, and ML models.
 
 | Skill | Description |
 |-------|-------------|
-| [risk-stop-loss](./skills/trading/risk-stop-loss/SKILL.md) | Stop loss strategies and implementation |
-| [position-sizing](./skills/trading/position-sizing/SKILL.md) | Kelly criterion and volatility adjustment |
-| [twap-vwap](./skills/trading/twap-vwap/SKILL.md) | Order execution algorithms |
+| [ai-anomaly-detection](./skills/trading/ai-anomaly-detection/SKILL.md) | AI-powered anomaly detection in market data |
 | [backtest-walk-forward](./skills/trading/backtest-walk-forward/SKILL.md) | Robust strategy validation |
-| [sentiment-analysis](./skills/trading/sentiment-analysis/SKILL.md) | Market sentiment from news and social |
+| [ai-explainable-ai](./skills/trading/ai-explainable-ai/SKILL.md) | Model interpretability in trading systems |
+| [ai-feature-engineering](./skills/trading/ai-feature-engineering/SKILL.md) | Feature engineering for trading ML models |
+| [ai-hyperparameter-tuning](./skills/trading/ai-hyperparameter-tuning/SKILL.md) | ML model hyperparameter optimization |
 
 *[View all 83 Trading skills →](./skills/trading/)*
 
