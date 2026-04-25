@@ -1,0 +1,13 @@
+{
+  "name": "Git Rebase Workflow",
+  "tier": "simple",
+  "description": "Advanced git features question with specific terminology",
+  "task": "Explain interactive rebase and when to use it. When should we rebase vs. merge? What are the risks?",
+  "required_skills": ["coding-git-advanced"],
+  "complexity_factors": {
+    "query_length": "short",
+    "context_complexity": 2,
+    "expected_routing_paths": 1,
+    "skill_interdependencies": "none"
+  }
+}

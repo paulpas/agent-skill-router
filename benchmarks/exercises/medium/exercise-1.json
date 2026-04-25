@@ -1,0 +1,13 @@
+{
+  "name": "Full CI/CD Workflow",
+  "tier": "medium",
+  "description": "CI/CD pipeline design requiring versioning, branching, and quality checks",
+  "task": "Build a CI/CD pipeline that automatically bumps semantic versions, enforces code quality gates, and uses a proper branching strategy. All changes should be tested before merge.",
+  "required_skills": ["coding-git-branching-strategies", "coding-semver-automation", "coding-code-quality-policies"],
+  "complexity_factors": {
+    "query_length": "medium",
+    "context_complexity": 5,
+    "expected_routing_paths": 2,
+    "skill_interdependencies": "high"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Quality + Branching",
+  "tier": "simple",
+  "description": "Process-oriented exercise combining code quality standards with git workflow",
+  "task": "Establish code quality standards for our team and design a git workflow to enforce them. How do we integrate quality checks into our branching strategy?",
+  "required_skills": ["coding-code-quality-policies", "coding-git-branching-strategies"],
+  "complexity_factors": {
+    "query_length": "medium",
+    "context_complexity": 3,
+    "expected_routing_paths": 1,
+    "skill_interdependencies": "parallel"
+  }
+}

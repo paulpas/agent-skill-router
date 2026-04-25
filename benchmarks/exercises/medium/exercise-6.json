@@ -1,0 +1,13 @@
+{
+  "name": "Security-Focused Release",
+  "tier": "medium",
+  "description": "Release pipeline with security scanning, code review, and versioning",
+  "task": "Create a secure release pipeline: scan dependencies for CVEs, review code for security issues, version patches appropriately, and establish quality gates. What's our process for security incidents?",
+  "required_skills": ["coding-security-review", "coding-cve-dependency-management", "coding-semver-automation", "coding-code-quality-policies"],
+  "complexity_factors": {
+    "query_length": "long",
+    "context_complexity": 6,
+    "expected_routing_paths": 2,
+    "skill_interdependencies": "high"
+  }
+}

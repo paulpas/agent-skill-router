@@ -1,0 +1,13 @@
+{
+  "name": "Complex Refactor",
+  "tier": "medium",
+  "description": "Large multi-phase refactoring with architecture, quality, and git considerations",
+  "task": "We need to refactor our codebase to improve quality and align with better architectural patterns. Plan the phases, manage the git workflow, and maintain code quality throughout.",
+  "required_skills": ["coding-code-quality-policies", "coding-architectural-patterns", "coding-git-advanced", "coding-git-branching-strategies"],
+  "complexity_factors": {
+    "query_length": "long",
+    "context_complexity": 6,
+    "expected_routing_paths": 2,
+    "skill_interdependencies": "high"
+  }
+}

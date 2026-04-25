@@ -1,0 +1,13 @@
+{
+  "name": "Architecture with Quality",
+  "tier": "medium",
+  "description": "Architectural design that enforces code quality and advanced git patterns",
+  "task": "Design a system architecture that enforces code quality standards from the ground up. How do we structure the codebase? What git workflow best supports this architecture?",
+  "required_skills": ["coding-architectural-patterns", "coding-code-quality-policies", "coding-git-advanced"],
+  "complexity_factors": {
+    "query_length": "medium",
+    "context_complexity": 5,
+    "expected_routing_paths": 2,
+    "skill_interdependencies": "high"
+  }
+}

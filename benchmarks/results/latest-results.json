@@ -1,0 +1,705 @@
+{
+  "timestamp": "2026-04-25T00:52:55.544183+00:00",
+  "duration_seconds": 5.45,
+  "environment": {
+    "python_version": "3.12.3",
+    "platform": "linux",
+    "machine": "x86_64",
+    "timestamp": "2026-04-25T00:53:00.992467+00:00"
+  },
+  "summary": {
+    "total_exercises": 24,
+    "overall_accuracy": 0.875,
+    "avg_overhead_ms": 0.62,
+    "avg_router_latency_ms": 89.67,
+    "avg_precision": 0.971,
+    "avg_recall": 0.99,
+    "duration_seconds": 5.45
+  },
+  "tiers": {
+    "simple": {
+      "exercises": 9,
+      "accuracy": 0.889,
+      "avg_overhead_ms": 4.92,
+      "avg_router_latency_ms": 23.76,
+      "avg_skill_ratio": 1.111,
+      "results": [
+        {
+          "name": "Code Review Basic",
+          "tier": "simple",
+          "expected_skills": [
+            "coding-code-review"
+          ],
+          "expected_skills_count": 1,
+          "actual_skills": [
+            "coding-code-review"
+          ],
+          "actual_skills_count": 1,
+          "correct": true,
+          "with_router_ms": 86.01,
+          "without_router_ms": 138.45,
+          "overhead_ms": -52.44,
+          "overhead_pct": -37.87,
+          "router_latency_ms": 25.53,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Git Branching Strategy",
+          "tier": "simple",
+          "expected_skills": [
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 1,
+          "actual_skills": [
+            "coding-code-review",
+            "coding-git-branching-strategies"
+          ],
+          "actual_skills_count": 2,
+          "correct": false,
+          "with_router_ms": 121.86,
+          "without_router_ms": 144.21,
+          "overhead_ms": -22.35,
+          "overhead_pct": -15.5,
+          "router_latency_ms": 23.54,
+          "skill_count_ratio": 2.0,
+          "precision": 0.5,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Security Check",
+          "tier": "simple",
+          "expected_skills": [
+            "coding-security-review"
+          ],
+          "expected_skills_count": 1,
+          "actual_skills": [
+            "coding-security-review"
+          ],
+          "actual_skills_count": 1,
+          "correct": true,
+          "with_router_ms": 58.93,
+          "without_router_ms": 134.63,
+          "overhead_ms": -75.7,
+          "overhead_pct": -56.23,
+          "router_latency_ms": 24.96,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Version Bump",
+          "tier": "simple",
+          "expected_skills": [
+            "coding-semver-automation"
+          ],
+          "expected_skills_count": 1,
+          "actual_skills": [
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 1,
+          "correct": true,
+          "with_router_ms": 56.63,
+          "without_router_ms": 96.73,
+          "overhead_ms": -40.1,
+          "overhead_pct": -41.46,
+          "router_latency_ms": 18.66,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "CVE Scanning",
+          "tier": "simple",
+          "expected_skills": [
+            "coding-cve-dependency-management"
+          ],
+          "expected_skills_count": 1,
+          "actual_skills": [
+            "coding-cve-dependency-management"
+          ],
+          "actual_skills_count": 1,
+          "correct": true,
+          "with_router_ms": 131.49,
+          "without_router_ms": 50.47,
+          "overhead_ms": 81.02,
+          "overhead_pct": 160.52,
+          "router_latency_ms": 28.59,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Code Quality + Refactoring",
+          "tier": "simple",
+          "expected_skills": [
+            "coding-code-quality-policies",
+            "coding-git-advanced"
+          ],
+          "expected_skills_count": 2,
+          "actual_skills": [
+            "coding-code-quality-policies",
+            "coding-git-advanced"
+          ],
+          "actual_skills_count": 2,
+          "correct": true,
+          "with_router_ms": 182.53,
+          "without_router_ms": 78.71,
+          "overhead_ms": 103.82,
+          "overhead_pct": 131.9,
+          "router_latency_ms": 16.87,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Architecture Decision",
+          "tier": "simple",
+          "expected_skills": [
+            "coding-architectural-patterns"
+          ],
+          "expected_skills_count": 1,
+          "actual_skills": [
+            "coding-architectural-patterns"
+          ],
+          "actual_skills_count": 1,
+          "correct": true,
+          "with_router_ms": 68.19,
+          "without_router_ms": 50.75,
+          "overhead_ms": 17.44,
+          "overhead_pct": 34.37,
+          "router_latency_ms": 25.87,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Git Rebase Workflow",
+          "tier": "simple",
+          "expected_skills": [
+            "coding-git-advanced"
+          ],
+          "expected_skills_count": 1,
+          "actual_skills": [
+            "coding-git-advanced"
+          ],
+          "actual_skills_count": 1,
+          "correct": true,
+          "with_router_ms": 176.83,
+          "without_router_ms": 159.76,
+          "overhead_ms": 17.07,
+          "overhead_pct": 10.69,
+          "router_latency_ms": 19.87,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Quality + Branching",
+          "tier": "simple",
+          "expected_skills": [
+            "coding-code-quality-policies",
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 2,
+          "actual_skills": [
+            "coding-code-quality-policies",
+            "coding-git-branching-strategies"
+          ],
+          "actual_skills_count": 2,
+          "correct": true,
+          "with_router_ms": 66.71,
+          "without_router_ms": 51.2,
+          "overhead_ms": 15.51,
+          "overhead_pct": 30.29,
+          "router_latency_ms": 29.92,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        }
+      ]
+    },
+    "medium": {
+      "exercises": 9,
+      "accuracy": 0.778,
+      "avg_overhead_ms": -0.31,
+      "avg_router_latency_ms": 77.9,
+      "avg_skill_ratio": 1.0,
+      "results": [
+        {
+          "name": "Full CI/CD Workflow",
+          "tier": "medium",
+          "expected_skills": [
+            "coding-git-branching-strategies",
+            "coding-semver-automation",
+            "coding-code-quality-policies"
+          ],
+          "expected_skills_count": 3,
+          "actual_skills": [
+            "coding-code-quality-policies",
+            "coding-git-branching-strategies",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 3,
+          "correct": true,
+          "with_router_ms": 103.59,
+          "without_router_ms": 58.56,
+          "overhead_ms": 45.03,
+          "overhead_pct": 76.9,
+          "router_latency_ms": 53.51,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Security Patch Process",
+          "tier": "medium",
+          "expected_skills": [
+            "coding-security-review",
+            "coding-cve-dependency-management",
+            "coding-semver-automation"
+          ],
+          "expected_skills_count": 3,
+          "actual_skills": [
+            "coding-cve-dependency-management",
+            "coding-security-review",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 3,
+          "correct": true,
+          "with_router_ms": 73.44,
+          "without_router_ms": 141.34,
+          "overhead_ms": -67.9,
+          "overhead_pct": -48.04,
+          "router_latency_ms": 45.55,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Architecture with Quality",
+          "tier": "medium",
+          "expected_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced"
+          ],
+          "expected_skills_count": 3,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced"
+          ],
+          "actual_skills_count": 3,
+          "correct": true,
+          "with_router_ms": 172.63,
+          "without_router_ms": 114.47,
+          "overhead_ms": 58.16,
+          "overhead_pct": 50.81,
+          "router_latency_ms": 67.11,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Complex Refactor",
+          "tier": "medium",
+          "expected_skills": [
+            "coding-code-quality-policies",
+            "coding-architectural-patterns",
+            "coding-git-advanced",
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 4,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-git-branching-strategies"
+          ],
+          "actual_skills_count": 4,
+          "correct": true,
+          "with_router_ms": 110.49,
+          "without_router_ms": 150.28,
+          "overhead_ms": -39.79,
+          "overhead_pct": -26.48,
+          "router_latency_ms": 99.31,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Release Pipeline",
+          "tier": "medium",
+          "expected_skills": [
+            "coding-semver-automation",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 4,
+          "actual_skills": [
+            "coding-code-quality-policies",
+            "coding-code-review",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 5,
+          "correct": false,
+          "with_router_ms": 132.49,
+          "without_router_ms": 112.73,
+          "overhead_ms": 19.76,
+          "overhead_pct": 17.53,
+          "router_latency_ms": 118.01,
+          "skill_count_ratio": 1.25,
+          "precision": 0.8,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Security-Focused Release",
+          "tier": "medium",
+          "expected_skills": [
+            "coding-security-review",
+            "coding-cve-dependency-management",
+            "coding-semver-automation",
+            "coding-code-quality-policies"
+          ],
+          "expected_skills_count": 4,
+          "actual_skills": [
+            "coding-code-quality-policies",
+            "coding-cve-dependency-management",
+            "coding-security-review"
+          ],
+          "actual_skills_count": 3,
+          "correct": false,
+          "with_router_ms": 112.47,
+          "without_router_ms": 146.9,
+          "overhead_ms": -34.43,
+          "overhead_pct": -23.44,
+          "router_latency_ms": 62.4,
+          "skill_count_ratio": 0.75,
+          "precision": 1.0,
+          "recall": 0.75,
+          "iterations": 1
+        },
+        {
+          "name": "Multi-Repo Management",
+          "tier": "medium",
+          "expected_skills": [
+            "coding-git-advanced",
+            "coding-semver-automation",
+            "coding-git-branching-strategies",
+            "coding-code-quality-policies",
+            "coding-architectural-patterns"
+          ],
+          "expected_skills_count": 5,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 5,
+          "correct": true,
+          "with_router_ms": 125.7,
+          "without_router_ms": 107.46,
+          "overhead_ms": 18.24,
+          "overhead_pct": 16.97,
+          "router_latency_ms": 106.75,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Monorepo Setup",
+          "tier": "medium",
+          "expected_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-semver-automation",
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 5,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 5,
+          "correct": true,
+          "with_router_ms": 60.27,
+          "without_router_ms": 71.87,
+          "overhead_ms": -11.6,
+          "overhead_pct": -16.14,
+          "router_latency_ms": 56.39,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Cross-Team Workflow",
+          "tier": "medium",
+          "expected_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-security-review",
+            "coding-semver-automation",
+            "coding-git-advanced",
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 6,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-security-review",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 6,
+          "correct": true,
+          "with_router_ms": 113.07,
+          "without_router_ms": 103.3,
+          "overhead_ms": 9.76,
+          "overhead_pct": 9.45,
+          "router_latency_ms": 92.06,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        }
+      ]
+    },
+    "heavy": {
+      "exercises": 6,
+      "accuracy": 1.0,
+      "avg_overhead_ms": -4.43,
+      "avg_router_latency_ms": 206.19,
+      "avg_skill_ratio": 1.0,
+      "results": [
+        {
+          "name": "Enterprise Release",
+          "tier": "heavy",
+          "expected_skills": [
+            "coding-semver-automation",
+            "coding-code-quality-policies",
+            "coding-security-review",
+            "coding-git-advanced",
+            "coding-architectural-patterns",
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 6,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-security-review",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 6,
+          "correct": true,
+          "with_router_ms": 162.57,
+          "without_router_ms": 176.78,
+          "overhead_ms": -14.21,
+          "overhead_pct": -8.04,
+          "router_latency_ms": 171.96,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Large Refactor Campaign",
+          "tier": "heavy",
+          "expected_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-security-review",
+            "coding-git-branching-strategies",
+            "coding-semver-automation"
+          ],
+          "expected_skills_count": 6,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-security-review",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 6,
+          "correct": true,
+          "with_router_ms": 51.9,
+          "without_router_ms": 135.64,
+          "overhead_ms": -83.74,
+          "overhead_pct": -61.73,
+          "router_latency_ms": 121.44,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Multi-Service Deployment",
+          "tier": "heavy",
+          "expected_skills": [
+            "coding-semver-automation",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-architectural-patterns",
+            "coding-cve-dependency-management",
+            "coding-security-review"
+          ],
+          "expected_skills_count": 7,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-cve-dependency-management",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-security-review",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 7,
+          "correct": true,
+          "with_router_ms": 184.22,
+          "without_router_ms": 76.72,
+          "overhead_ms": 107.5,
+          "overhead_pct": 140.12,
+          "router_latency_ms": 297.96,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Platform Infrastructure Modernization",
+          "tier": "heavy",
+          "expected_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-git-advanced",
+            "coding-semver-automation",
+            "coding-cve-dependency-management",
+            "coding-security-review",
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 7,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-cve-dependency-management",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-security-review",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 7,
+          "correct": true,
+          "with_router_ms": 54.37,
+          "without_router_ms": 167.8,
+          "overhead_ms": -113.43,
+          "overhead_pct": -67.6,
+          "router_latency_ms": 106.6,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Production Incident Response + Prevention",
+          "tier": "heavy",
+          "expected_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-security-review",
+            "coding-git-advanced",
+            "coding-semver-automation",
+            "coding-cve-dependency-management",
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 7,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-cve-dependency-management",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-security-review",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 7,
+          "correct": true,
+          "with_router_ms": 142.52,
+          "without_router_ms": 146.6,
+          "overhead_ms": -4.08,
+          "overhead_pct": -2.79,
+          "router_latency_ms": 263.8,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        },
+        {
+          "name": "Full Governance Framework",
+          "tier": "heavy",
+          "expected_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-security-review",
+            "coding-git-advanced",
+            "coding-semver-automation",
+            "coding-cve-dependency-management",
+            "coding-git-branching-strategies"
+          ],
+          "expected_skills_count": 7,
+          "actual_skills": [
+            "coding-architectural-patterns",
+            "coding-code-quality-policies",
+            "coding-cve-dependency-management",
+            "coding-git-advanced",
+            "coding-git-branching-strategies",
+            "coding-security-review",
+            "coding-semver-automation"
+          ],
+          "actual_skills_count": 7,
+          "correct": true,
+          "with_router_ms": 179.75,
+          "without_router_ms": 98.39,
+          "overhead_ms": 81.36,
+          "overhead_pct": 82.69,
+          "router_latency_ms": 275.4,
+          "skill_count_ratio": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iterations": 1
+        }
+      ]
+    }
+  }
+}

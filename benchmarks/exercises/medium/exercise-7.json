@@ -1,0 +1,13 @@
+{
+  "name": "Multi-Repo Management",
+  "tier": "medium",
+  "description": "Managing multiple repositories with consistent versioning, branching, and quality",
+  "task": "Manage multiple repositories with consistent versioning, branching strategies, quality standards, and architectural patterns. How do we keep everything synchronized and avoid drift?",
+  "required_skills": ["coding-git-advanced", "coding-semver-automation", "coding-git-branching-strategies", "coding-code-quality-policies", "coding-architectural-patterns"],
+  "complexity_factors": {
+    "query_length": "long",
+    "context_complexity": 7,
+    "expected_routing_paths": 3,
+    "skill_interdependencies": "high"
+  }
+}

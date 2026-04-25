@@ -1,0 +1,13 @@
+{
+  "name": "Platform Infrastructure Modernization",
+  "tier": "heavy",
+  "description": "Complete platform modernization affecting architecture, security, and all processes",
+  "task": "Modernize platform infrastructure: refactor architecture for scalability, establish security practices, improve code quality organization-wide, manage complex git workflows, version services consistently, scan for vulnerabilities, coordinate across 8+ teams.",
+  "required_skills": ["coding-architectural-patterns", "coding-code-quality-policies", "coding-git-advanced", "coding-semver-automation", "coding-cve-dependency-management", "coding-security-review", "coding-git-branching-strategies"],
+  "complexity_factors": {
+    "query_length": "long",
+    "context_complexity": 10,
+    "expected_routing_paths": 4,
+    "skill_interdependencies": "very_high"
+  }
+}

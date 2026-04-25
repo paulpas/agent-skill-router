@@ -1,0 +1,13 @@
+{
+  "name": "Monorepo Setup",
+  "tier": "medium",
+  "description": "Monorepo design with shared architecture, versioning, quality, and workflows",
+  "task": "Design a monorepo structure that supports multiple services with shared architectural patterns, quality standards, semantic versioning per package, and coordinated git workflows.",
+  "required_skills": ["coding-architectural-patterns", "coding-code-quality-policies", "coding-git-advanced", "coding-semver-automation", "coding-git-branching-strategies"],
+  "complexity_factors": {
+    "query_length": "long",
+    "context_complexity": 7,
+    "expected_routing_paths": 3,
+    "skill_interdependencies": "high"
+  }
+}

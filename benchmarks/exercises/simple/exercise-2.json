@@ -1,0 +1,13 @@
+{
+  "name": "Git Branching Strategy",
+  "tier": "simple",
+  "description": "Clear request for git workflow design, focused on team branching strategy",
+  "task": "Help me design a git branching strategy for a team of 5 developers. We use feature branches and need a process for code review and merging.",
+  "required_skills": ["coding-git-branching-strategies"],
+  "complexity_factors": {
+    "query_length": "medium",
+    "context_complexity": 2,
+    "expected_routing_paths": 1,
+    "skill_interdependencies": "none"
+  }
+}

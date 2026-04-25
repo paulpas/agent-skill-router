@@ -1,0 +1,13 @@
+{
+  "name": "Full Governance Framework",
+  "tier": "heavy",
+  "description": "Comprehensive governance spanning all coding domains for enterprise",
+  "task": "Build comprehensive governance framework: establish architectural patterns, enforce code quality standards, implement security review processes, design git workflows, manage semantic versioning, scan dependencies for vulnerabilities, coordinate team processes. Document all standards and ensure compliance.",
+  "required_skills": ["coding-architectural-patterns", "coding-code-quality-policies", "coding-security-review", "coding-git-advanced", "coding-semver-automation", "coding-cve-dependency-management", "coding-git-branching-strategies"],
+  "complexity_factors": {
+    "query_length": "long",
+    "context_complexity": 10,
+    "expected_routing_paths": 4,
+    "skill_interdependencies": "very_high"
+  }
+}

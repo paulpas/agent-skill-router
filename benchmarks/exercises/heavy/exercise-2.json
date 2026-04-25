@@ -1,0 +1,13 @@
+{
+  "name": "Large Refactor Campaign",
+  "tier": "heavy",
+  "description": "Organization-wide refactoring touching architecture, quality, and security",
+  "task": "Execute a large multi-team refactor: modernize architecture, improve code quality, address security concerns, manage git history, coordinate team workflows, and version appropriately. This will take 3+ months.",
+  "required_skills": ["coding-architectural-patterns", "coding-code-quality-policies", "coding-git-advanced", "coding-security-review", "coding-git-branching-strategies", "coding-semver-automation"],
+  "complexity_factors": {
+    "query_length": "long",
+    "context_complexity": 9,
+    "expected_routing_paths": 4,
+    "skill_interdependencies": "very_high"
+  }
+}

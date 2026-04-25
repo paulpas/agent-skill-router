@@ -1,0 +1,13 @@
+{
+  "name": "Release Pipeline",
+  "tier": "medium",
+  "description": "Complete release process with versioning, quality gates, team workflows",
+  "task": "Build a complete release process: semantic versioning of releases, quality gates to pass, team branching workflow, and automated steps. How do we ensure consistency across releases?",
+  "required_skills": ["coding-semver-automation", "coding-code-quality-policies", "coding-git-advanced", "coding-git-branching-strategies"],
+  "complexity_factors": {
+    "query_length": "long",
+    "context_complexity": 6,
+    "expected_routing_paths": 2,
+    "skill_interdependencies": "high"
+  }
+}
