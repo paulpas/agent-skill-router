@@ -59,10 +59,10 @@ cd /home/paulpas/git/agent-skill-router
 ls -la benchmarks/
 
 # Check config
-cat openconfig.json
+cat benchmarks/openconfig.json
 ```
 
-The benchmark system is **config-driven**. The `openconfig.json` file specifies the default model and available options. No API keys needed for local models!
+The benchmark system is **config-driven**. The `benchmarks/openconfig.json` file specifies the default model and available options. No API keys needed for local models!
 
 ### Run All Benchmarks
 
@@ -122,11 +122,11 @@ python3 benchmarks/harness/comparison.py --summarize
 
 ## Configuration
 
-The benchmarking system uses `openconfig.json` for config-driven LLM model selection. This eliminates the need for command-line flags and provides a single source of truth for model preferences.
+The benchmarking system uses `benchmarks/openconfig.json` for config-driven LLM model selection. This eliminates the need for command-line flags and provides a single source of truth for model preferences.
 
 ### Configuration File
 
-**Location:** `openconfig.json` (in project root)
+**Location:** `benchmarks/openconfig.json`
 
 **Example:**
 
@@ -150,11 +150,11 @@ The benchmarking system uses `openconfig.json` for config-driven LLM model selec
 
 1. **Default Model**: The `default` field specifies which model is used when `--model` flag is not provided
 2. **Available Models**: The `available` list shows which models can be selected
-3. **Fallback**: If `openconfig.json` is missing, the system falls back to internal defaults (gpt-4)
+3. **Fallback**: If `benchmarks/openconfig.json` is missing, the system falls back to internal defaults (gpt-4)
 
 ### Changing the Default Model
 
-Edit `openconfig.json` and change the `default` field:
+Edit `benchmarks/openconfig.json` and change the `default` field:
 
 ```json
 {

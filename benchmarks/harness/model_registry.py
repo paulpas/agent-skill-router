@@ -758,11 +758,11 @@ class ModelRegistry:
         print("\n" + "=" * 100 + "\n")
 
     @classmethod
-    def load_config(cls, config_path: str = "openconfig.json") -> Dict:
+    def load_config(cls, config_path: str = None) -> Dict:
         """Load model configuration from openconfig.json.
 
         Args:
-            config_path: Path to openconfig.json (default: openconfig.json in cwd)
+            config_path: Path to openconfig.json (default: benchmarks/openconfig.json relative to repo root)
 
         Returns:
             Config dictionary with 'default' and 'available' keys
@@ -770,6 +770,13 @@ class ModelRegistry:
         """
         if cls._config is not None:
             return cls._config
+
+        # If no path provided, use default location relative to this file
+        if config_path is None:
+            # harness/ is at benchmarks/harness/
+            # so ../openconfig.json is at benchmarks/openconfig.json
+            harness_dir = Path(__file__).resolve().parent
+            config_path = str(harness_dir.parent / "openconfig.json")
 
         config_file = Path(config_path)
 
