@@ -36,6 +36,40 @@ ENV SKILL_SYNC_INTERVAL=3600
 VOLUME ["/cache"]
 ENV LOG_LEVEL=info
 # ════════════════════════════════════════════════════════════════════════════════
+# LLM-BASED SKILL COMPRESSION
+# ════════════════════════════════════════════════════════════════════════════════
+# Semantic compression reduces token consumption by 45-77% while preserving meaning.
+# Uses Claude (Anthropic API) to intelligently compress skill documentation.
+#
+# Key Features:
+#   - Multi-layer caching (memory 1hr + disk 7 days + original)
+#   - Request deduplication (100 concurrent = 1 LLM call)
+#   - Lazy write buffer (reduces I/O by 95%)
+#   - Fallback safety (returns original if LLM fails)
+#
+# BUILD EXAMPLES:
+#   docker build . [default: compression enabled]
+#   docker build --build-arg SKILL_COMPRESSION_ENABLED=false . [disable]
+#   docker build --build-arg SKILL_COMPRESSION_STRATEGY=brief . [77% reduction]
+#
+# See LLM_COMPRESSION.md and DEPLOYMENT.md for complete documentation
+# ════════════════════════════════════════════════════════════════════════════════
+ARG SKILL_COMPRESSION_ENABLED=true
+ARG SKILL_COMPRESSION_STRATEGY=moderate
+ARG SKILL_COMPRESSION_LLM_MODEL=claude-3-haiku
+ARG SKILL_COMPRESSION_MEMORY_TTL_MINUTES=60
+ARG SKILL_COMPRESSION_DISK_TTL_DAYS=7
+ARG SKILL_COMPRESSION_LAZY_WRITE_INTERVAL_MS=5000
+#
+ENV SKILL_COMPRESSION_ENABLED=$SKILL_COMPRESSION_ENABLED \
+    SKILL_COMPRESSION_STRATEGY=$SKILL_COMPRESSION_STRATEGY \
+    SKILL_COMPRESSION_LLM_MODEL=$SKILL_COMPRESSION_LLM_MODEL \
+    SKILL_COMPRESSION_MEMORY_TTL_MINUTES=$SKILL_COMPRESSION_MEMORY_TTL_MINUTES \
+    SKILL_COMPRESSION_DISK_TTL_DAYS=$SKILL_COMPRESSION_DISK_TTL_DAYS \
+    SKILL_COMPRESSION_LAZY_WRITE_INTERVAL_MS=$SKILL_COMPRESSION_LAZY_WRITE_INTERVAL_MS
+# ════════════════════════════════════════════════════════════════════════════════
+# REGEX-BASED SKILL COMPRESSION (Legacy)
+# ════════════════════════════════════════════════════════════════════════════════
 # SKILL_COMPRESSION_LEVEL: Stackable compression transformations (0-10+)
 # ════════════════════════════════════════════════════════════════════════════════
 # Compression levels STACK - each level includes all transformations from previous levels:
