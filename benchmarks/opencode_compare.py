@@ -212,19 +212,13 @@ def load_tier_exercises(tier: str) -> list[dict]:
 def parse_opencode_json_stream(stdout_text: str) -> tuple[str, list[dict]]:
     """Parse the newline-delimited JSON event stream from `opencode run --format json`.
 
-    Event format overview:
-      - step_start:            {"type":"step_start", "part":{...}}
-      - message.part.updated:  {"type":"message.part.updated",
-                                 "properties":{"part":{"type":"text","text":"...","id":"..."},
-                                               "delta":"..."}}
-      - session.idle:          {"type":"session.idle", "properties":{"sessionID":"..."}}
-      - error:                 {"type":"error", "error":{"name":"...","data":{"message":"..."}}}
+    Actual event format (confirmed from live output):
+      step_start:   {"type":"step_start", "part":{"type":"step-start",...}}
+      text:         {"type":"text", "part":{"type":"text","text":"...", "id":"..."}}
+      step_finish:  {"type":"step_finish", "part":{"type":"step-finish","reason":"stop",...}}
+      error:        {"type":"error", "error":{"name":"...","data":{"message":"..."}}}
 
-    Text assembly:
-      For each "message.part.updated" event where properties.part.type == "text",
-      we record the latest full `text` value keyed by part `id`.
-      The final assistant response is the concatenation of all part texts
-      in the order they were first seen.
+    Text is assembled from all "text" events in order, concatenating part.text values.
 
     Args:
         stdout_text: Raw stdout from the opencode subprocess.
@@ -233,41 +227,26 @@ def parse_opencode_json_stream(stdout_text: str) -> tuple[str, list[dict]]:
         (response_text, raw_events) — assembled text and all parsed events.
     """
     raw_events: list[dict] = []
+    text_parts: list[str] = []
     error_messages: list[str] = []
-
-    # part_id → (order_index, latest_text)
-    text_parts: dict[str, tuple[int, str]] = {}
-    part_order: list[str] = []
 
     for line in stdout_text.splitlines():
         line = line.strip()
         if not line:
             continue
-
         try:
             event = json.loads(line)
         except json.JSONDecodeError:
-            continue  # Skip non-JSON lines (ANSI escape codes, etc.)
+            continue
 
         raw_events.append(event)
         event_type = event.get("type", "")
 
-        if event_type == "message.part.updated":
-            properties = event.get("properties", {})
-            part = properties.get("part", {})
-            part_type = part.get("type", "")
-            part_id = part.get("id", "")
-
-            if part_type == "text" and part_id:
-                text_val = part.get("text", "")
-                if part_id not in text_parts:
-                    # First time we see this part id — record its order
-                    part_order.append(part_id)
-                    text_parts[part_id] = (len(part_order) - 1, text_val)
-                else:
-                    # Update with latest (longer) text
-                    order_idx = text_parts[part_id][0]
-                    text_parts[part_id] = (order_idx, text_val)
+        if event_type == "text":
+            part = event.get("part", {})
+            text_val = part.get("text", "")
+            if text_val:
+                text_parts.append(text_val)
 
         elif event_type == "error":
             error_data = event.get("error", {})
@@ -277,11 +256,7 @@ def parse_opencode_json_stream(stdout_text: str) -> tuple[str, list[dict]]:
                 f"{error_name}: {error_msg}" if error_msg else error_name
             )
 
-    # Assemble response from parts in order of first appearance
-    ordered_texts = [text_parts[pid][1] for pid in part_order if pid in text_parts]
-    response_text = "".join(ordered_texts).strip()
-
-    # If we got errors but no response, include the error message
+    response_text = "".join(text_parts).strip()
     if not response_text and error_messages:
         response_text = f"[ERROR] {'; '.join(error_messages)}"
 
@@ -297,10 +272,10 @@ def run_opencode(
     extra_env: Optional[dict] = None,
     timeout: int = DEFAULT_TIMEOUT,
 ) -> tuple[str, float, list[dict]]:
-    """Run opencode run <task> --format json, streaming stdout until session.idle or error.
+    """Run opencode run <task> --format json, streaming stdout until step_finish or error.
 
     Streams stdout line-by-line and terminates the process as soon as it sees
-    a terminal event (session.idle or error), rather than waiting for the process
+    a terminal event (step_finish or error), rather than waiting for the process
     to exit on its own (which it never does in persistent-session mode).
 
     Args:
@@ -369,7 +344,7 @@ def run_opencode(
                     try:
                         event = json.loads(line)
                         etype = event.get("type", "")
-                        if etype in ("session.idle", "error"):
+                        if etype in ("step_finish", "error"):
                             proc.terminate()
                             try:
                                 proc.wait(timeout=5)
