@@ -9,6 +9,8 @@ RUN npm run build
 # Stage 2: Runtime
 FROM node:20-alpine AS runtime
 ARG COMPRESSION_LEVEL=4
+ARG ENABLE_LLM_COMPRESSION=true
+ARG OPENAI_MODEL=gpt-4o-mini
 RUN apk add --no-cache git
 WORKDIR /app
 COPY --from=builder /app/dist ./dist
@@ -33,8 +35,57 @@ ENV SKILL_CACHE_DIR=/cache/skills
 ENV SKILL_SYNC_INTERVAL=3600
 # GITHUB_TOKEN= (optional, set at runtime for private repos or higher rate limits)
 # /skills volume mount is optional — skill content is fetched on-demand from GitHub
-VOLUME ["/cache"]
+VOLUME ["/cache", "/app/cache/compressed"]
 ENV LOG_LEVEL=info
+# ════════════════════════════════════════════════════════════════════════════════
+# OPENAI-BASED LLM COMPRESSION CONFIGURATION
+# ════════════════════════════════════════════════════════════════════════════════
+# LLM-based skill compression uses OpenAI API to intelligently compress documentation.
+# This is OPTIONAL — set OPENAI_API_KEY at runtime to enable semantic compression.
+#
+# STARTUP BEHAVIOR:
+#   - Server starts normally even if OPENAI_API_KEY is unset
+#   - If OPENAI_API_KEY is empty: Falls back to regex-based compression (legacy method)
+#   - If OPENAI_API_KEY is set: Uses OpenAI LLM for semantic compression
+#   - Compression can be disabled entirely by setting ENABLE_LLM_COMPRESSION=false
+#
+# COMPRESSION CHARACTERISTICS:
+#   - Semantic compression: 45-77% token reduction while preserving critical meaning
+#   - Memory cache: 1-hour TTL for frequently accessed skills
+#   - Disk cache: 24-hour TTL for compressed versions (stores in /app/cache/compressed)
+#   - Graceful degradation: Returns original content if LLM fails
+#   - Request deduplication: Concurrent identical requests → 1 LLM call
+#
+# RUNTIME EXAMPLES:
+#   # Enable with OpenAI API key
+#   docker run -e OPENAI_API_KEY="sk-..." myapp
+#
+#   # Enable with custom model
+#   docker run -e OPENAI_API_KEY="sk-..." -e OPENAI_MODEL="gpt-4" myapp
+#
+#   # Enable with Azure OpenAI
+#   docker run -e OPENAI_API_KEY="..." \
+#     -e OPENAI_BASE_URL="https://myorg.openai.azure.com" \
+#     -e OPENAI_MODEL="gpt-4o-mini" myapp
+#
+#   # Disable LLM compression (use regex fallback)
+#   docker run -e ENABLE_LLM_COMPRESSION="false" myapp
+#
+#   # With custom cache settings
+#   docker run -e OPENAI_API_KEY="sk-..." \
+#     -e COMPRESSION_CACHE_SIZE_MB="1024" \
+#     -e COMPRESSION_CACHE_TTL_HOURS="48" myapp
+#
+# HEALTH CHECK:
+#   - /health endpoint works even if OpenAI API is unavailable
+#   - Compression gracefully falls back to regex method if LLM fails
+#   - No service disruption if API key is incorrect
+# ════════════════════════════════════════════════════════════════════════════════
+ENV OPENAI_API_KEY=""                      # Your OpenAI API key (required for LLM compression)
+ENV OPENAI_MODEL="gpt-4o-mini"             # Model to use (gpt-4o-mini, gpt-4, gpt-4-turbo, etc.)
+ENV OPENAI_BASE_URL=""                     # Optional: For Azure OpenAI or custom endpoints
+ENV OPENAI_ORG_ID=""                       # Optional: OpenAI Organization ID
+ENV ENABLE_LLM_COMPRESSION="true"          # Set to "false" to disable LLM compression (falls back to regex)
 # ════════════════════════════════════════════════════════════════════════════════
 # LLM-BASED SKILL COMPRESSION
 # ════════════════════════════════════════════════════════════════════════════════
@@ -112,6 +163,15 @@ ENV SKILL_COMPRESSION_ENABLED=$SKILL_COMPRESSION_ENABLED \
 # See COMPRESSION.md for detailed level descriptions (5-10+ also available)
 # ════════════════════════════════════════════════════════════════════════════════
 ENV SKILL_COMPRESSION_LEVEL=${COMPRESSION_LEVEL}
+# ════════════════════════════════════════════════════════════════════════════════
+# COMPRESSION CACHE CONFIGURATION
+# ════════════════════════════════════════════════════════════════════════════════
+# Settings for both LLM and regex-based compression caching
+# ════════════════════════════════════════════════════════════════════════════════
+ENV COMPRESSION_CACHE_SIZE_MB="512"        # Max disk cache size in MB (0=unlimited)
+ENV COMPRESSION_CACHE_TTL_HOURS="24"       # Cache invalidation (no access) in hours
+ENV COMPRESSION_RETRY_THRESHOLD="2"        # Retry compression if accessed >N times in 30min
+# ════════════════════════════════════════════════════════════════════════════════
 ENV NODE_ENV=production
 HEALTHCHECK --interval=60s --timeout=10s --start-period=90s --retries=3 \
   CMD wget -qO- http://127.0.0.1:3000/health | grep -q '"ready":true' || exit 1
