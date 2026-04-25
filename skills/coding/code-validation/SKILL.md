@@ -189,7 +189,7 @@ The function must return exactly one of two status strings:
 - Mutate input or use hidden state
 - Use list lookup for allowed set (use Sets)
 - Hardcode allowed values deep in logic
-- Skip input validation for non-string types when using strict模式
+- Skip input validation for non-string types when using strict mode
 
 ---
 
