@@ -6,6 +6,7 @@ A comprehensive benchmarking suite for measuring the performance, accuracy, and 
 
 - [Overview](#overview)
 - [Quick Start](#quick-start)
+- [Real MCP Benchmark (NEW)](#real-mcp-benchmark-with-actual-http-calls)
 - [Configuration](#configuration)
 - [Three-Tier Exercise Framework](#three-tier-exercise-framework)
 - [Running Benchmarks](#running-benchmarks)
@@ -99,7 +100,93 @@ python3 benchmarks/harness/comparison.py --current latest-results.json --previou
 python3 benchmarks/harness/comparison.py --summarize
 ```
 
-### Output Example
+---
+
+## Real MCP Benchmark (with Actual HTTP Calls)
+
+**NEW:** The Real MCP Benchmark system makes **ACTUAL HTTP calls** to the skill router and measures real performance with vs without routing.
+
+### Quick Start: Real MCP Benchmark
+
+```bash
+# Requires router running at localhost:3000
+# Start router: docker run -p 3000:3000 skill-router
+
+# Run benchmark with actual router
+python3 benchmarks/harness/benchmark.py --tier simple --use-real-mcp
+
+# With detailed output
+python3 benchmarks/harness/benchmark.py --tier simple --use-real-mcp --verbose
+
+# Run comprehensive test suite
+python3 benchmarks/test_mcp_benchmark.py
+```
+
+### What It Measures
+
+✅ **Real HTTP Latency** - Actual network roundtrip time to `/route` endpoint
+✅ **WITH vs WITHOUT Router** - Compare execution time including/excluding routing
+✅ **Router Overhead** - Exact cost in milliseconds of using the router
+✅ **Accuracy** - Percentage of exercises with correct skill selection
+✅ **Router Health** - Checks if router is available and responsive
+
+### Example Output
+
+```
+======================================================================
+REAL MCP BENCHMARK: 4 exercises
+======================================================================
+
+[1/4] Code Review Basic
+  WITHOUT router: 87.3ms
+  WITH router: 132.1ms (overhead: 44.8ms, 51.4%)
+  Router latency: 42.3ms
+  Skills: 2 selected
+
+[2/4] Architecture Review
+  ✅ Baseline: 156.2ms
+  WITH router: 198.5ms (overhead: 42.3ms, 27.1%)
+  Router latency: 39.8ms
+  Skills: 2 selected
+
+======================================================================
+BENCHMARK SUMMARY
+======================================================================
+
+Exercises: 4
+Correct: 4/4 (100.0%)
+
+Performance:
+  Baseline (WITHOUT router):  110.5ms avg
+  WITH router:                156.3ms avg
+  Router overhead:             45.8ms avg (41.5%)
+  Router latency:              41.2ms avg
+
+📊 Results exported to benchmarks/results/real-mcp-20260425-143025.json
+```
+
+### Key Features
+
+| Feature | Benefit |
+|---------|---------|
+| **Real HTTP calls** | Actual latency, not simulated |
+| **WITH/WITHOUT comparison** | See true cost of routing |
+| **Router health checks** | Verifies router is available |
+| **JSON export** | Results for offline analysis |
+| **Error handling** | Graceful fallback if router unavailable |
+
+### Learn More
+
+See [REAL_MCP_BENCHMARK.md](./REAL_MCP_BENCHMARK.md) for complete documentation including:
+- Detailed API reference
+- Performance optimization tips
+- Troubleshooting guide
+- CI/CD integration examples
+- Advanced usage patterns
+
+---
+
+### Output Example (Simulated Benchmark)
 
 ```
 ╔════════════════════════════════════════════════════════════════╗

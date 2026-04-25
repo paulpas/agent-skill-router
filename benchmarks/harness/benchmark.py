@@ -7,6 +7,7 @@ import sys
 import argparse
 import time
 import random
+import asyncio
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 from datetime import datetime, timezone
@@ -18,6 +19,7 @@ from metrics import ExerciseMetrics, MetricsCollector
 from llm_performance import create_llm_benchmark, CodeQualityAnalyzer
 from model_registry import ModelRegistry, Provider
 from llm_factory import LLMFactory
+from mcp_benchmark import RealMCPBenchmark, run_benchmark_async
 
 
 class BenchmarkRunner:
@@ -537,6 +539,17 @@ def main():
         type=str,
         help="Compare multiple models (comma-separated: gpt-4,claude-3-opus,mixtral-8x7b)",
     )
+    parser.add_argument(
+        "--use-real-mcp",
+        action="store_true",
+        help="Use real MCP router for benchmarking (requires localhost:3000)",
+    )
+    parser.add_argument(
+        "--router-url",
+        type=str,
+        default="http://localhost:3000",
+        help="URL of the skill router service (default: http://localhost:3000)",
+    )
 
     args = parser.parse_args()
 
@@ -582,6 +595,11 @@ def main():
         _run_model_comparison(model_list, args)
         sys.exit(0)
 
+    # Handle real MCP benchmarking
+    if args.use_real_mcp:
+        _run_real_mcp_benchmark(args)
+        sys.exit(0)
+
     # Create runner with selected model
     runner = BenchmarkRunner(
         warmup_runs=args.warmup,
@@ -606,6 +624,69 @@ def main():
     # Exit with appropriate code
     overall_accuracy = results.get("summary", {}).get("overall_accuracy", 0)
     if overall_accuracy < 0.85:
+        sys.exit(1)
+
+
+def _run_real_mcp_benchmark(args):
+    """Run real MCP benchmark with actual HTTP calls to the router."""
+    print("\n" + "=" * 80)
+    print("REAL MCP BENCHMARK WITH ACTUAL ROUTER CALLS")
+    print("=" * 80)
+    print(f"Router URL: {args.router_url}")
+    print(f"Tier: {args.tier}")
+    print(f"Verbose: {args.verbose}\n")
+
+    # Load exercises
+    runner = BenchmarkRunner()
+    exercises = runner.load_exercises(args.tier)
+
+    if args.exercise:
+        exercises = [e for e in exercises if e.get("name") == args.exercise]
+        if not exercises:
+            print(f"❌ Exercise not found: {args.exercise}")
+            sys.exit(1)
+
+    if not exercises:
+        print(f"❌ No exercises found for tier: {args.tier}")
+        sys.exit(1)
+
+    print(f"📋 Loaded {len(exercises)} exercises\n")
+
+    # Ensure exercises have required fields for routing
+    for exercise in exercises:
+        if "task_description" not in exercise:
+            exercise["task_description"] = exercise.get(
+                "description", exercise.get("name", "Task")
+            )
+        if "required_skills" not in exercise:
+            exercise["required_skills"] = exercise.get("expected_skills", [])
+
+    # Run the real MCP benchmark
+    try:
+        benchmark = asyncio.run(
+            run_benchmark_async(
+                exercises, router_url=args.router_url, verbose=args.verbose
+            )
+        )
+
+        # Save results
+        if args.output:
+            output_path = args.output
+        else:
+            results_dir = os.path.join(runner.repo_root, "benchmarks", "results")
+            os.makedirs(results_dir, exist_ok=True)
+            timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+            output_path = os.path.join(results_dir, f"real-mcp-{timestamp}.json")
+
+        benchmark.export_results(output_path)
+        print(f"\n✅ Real MCP benchmark completed successfully")
+
+    except Exception as e:
+        print(f"\n❌ Real MCP benchmark failed: {e}")
+        if args.verbose:
+            import traceback
+
+            traceback.print_exc()
         sys.exit(1)
 
 
