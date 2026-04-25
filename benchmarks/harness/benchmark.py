@@ -706,6 +706,8 @@ def _run_model_comparison(model_names: list, args):
             os.path.dirname(args.output or "results/latest-results.json"),
             "model-comparison.json",
         )
+        # Create directory if it doesn't exist
+        os.makedirs(os.path.dirname(comparison_output), exist_ok=True)
         with open(comparison_output, "w") as f:
             json.dump(results_by_model, f, indent=2)
         print(f"\nDetailed comparison saved to: {comparison_output}")
