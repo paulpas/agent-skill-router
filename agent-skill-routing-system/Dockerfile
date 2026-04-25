@@ -35,14 +35,48 @@ ENV SKILL_SYNC_INTERVAL=3600
 # /skills volume mount is optional — skill content is fetched on-demand from GitHub
 VOLUME ["/cache"]
 ENV LOG_LEVEL=info
-# SKILL_COMPRESSION_LEVEL: 0-10+
-# 0=off, 1=5% savings, 2=12%, 3=18%, 4=28%, 5=35%, etc.
-# Usage: docker build --build-arg COMPRESSION_LEVEL=N .
-# Examples:
-#   COMPRESSION_LEVEL=0 → no compression (default in source)
-#   COMPRESSION_LEVEL=2 → 12% token savings (conservative)
-#   COMPRESSION_LEVEL=4 → 28% token savings (recommended default)
-#   COMPRESSION_LEVEL=7 → 55% token savings (aggressive)
+# ════════════════════════════════════════════════════════════════════════════════
+# SKILL_COMPRESSION_LEVEL: Stackable compression transformations (0-10+)
+# ════════════════════════════════════════════════════════════════════════════════
+# Compression levels STACK - each level includes all transformations from previous levels:
+#
+# Level 0: (OFF)
+#   - No compression, original SKILL.md content
+#   - 0% savings
+#
+# Level 1: Remove blank lines (STACKS FROM: none)
+#   - Transformation: Remove extra blank lines within sections
+#   - ≈ 5% token savings
+#
+# Level 2: + Remove "When to Use" (STACKS FROM: Level 1)
+#   - Includes: Level 1 transformations
+#   - Transformation: Remove "When to Use" bullets section
+#   - ≈ 12% token savings (cumulative: 1 + 2)
+#
+# Level 3: + Remove "When NOT to Use" (STACKS FROM: Level 1 + 2)
+#   - Includes: Level 1 + Level 2 transformations
+#   - Transformation: Remove "When NOT to Use" section
+#   - ≈ 18% token savings (cumulative: 1 + 2 + 3)
+#
+# Level 4: + Collapse "Core Workflow" (STACKS FROM: Level 1 + 2 + 3)
+#   - Includes: Level 1 + Level 2 + Level 3 transformations
+#   - Transformation: Collapse "Core Workflow" to single paragraph
+#   - ≈ 28% token savings (cumulative: 1 + 2 + 3 + 4)
+#
+# RECOMMENDED USAGE:
+#   - Development: COMPRESSION_LEVEL=0 (original content)
+#   - Production: COMPRESSION_LEVEL=2-4 (12-28% savings)
+#
+# BUILD EXAMPLES:
+#   docker build . [default: level 4]
+#   docker build --build-arg COMPRESSION_LEVEL=0 . [no compression]
+#   docker build --build-arg COMPRESSION_LEVEL=1 . [5% savings]
+#   docker build --build-arg COMPRESSION_LEVEL=2 . [12% savings]
+#   docker build --build-arg COMPRESSION_LEVEL=3 . [18% savings]
+#   docker build --build-arg COMPRESSION_LEVEL=4 . [28% savings, recommended]
+#
+# See COMPRESSION.md for detailed level descriptions (5-10+ also available)
+# ════════════════════════════════════════════════════════════════════════════════
 ENV SKILL_COMPRESSION_LEVEL=${COMPRESSION_LEVEL}
 ENV NODE_ENV=production
 HEALTHCHECK --interval=60s --timeout=10s --start-period=90s --retries=3 \
