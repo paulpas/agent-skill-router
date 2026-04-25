@@ -3,13 +3,24 @@
     "default": "qwen3-coder-next-8_0",
     "available": [
       "qwen3-coder-next-8_0",
+      "qwen3-coder-next",
       "qwen2-72b",
       "nemotron-120b",
       "qwen35-27b",
-      "qwen3-coder-30b",
-      "gpt-oss-20b",
-      "gemini-3-flash",
-      "gemini-2-5-flash"
+      "qwen3-coder:30b",
+      "gpt-oss:20b",
+      "gemini-3-flash-preview",
+      "gemini-2.5-flash",
+      "gpt-4o",
+      "gpt-4o-mini",
+      "o1",
+      "o1-mini",
+      "o3",
+      "gpt-4-turbo",
+      "claude-3-5-sonnet",
+      "claude-3-5-haiku",
+      "claude-opus-4",
+      "claude-opus"
     ]
   }
 }
