@@ -1,5 +1,0 @@
-
-Processed 1776 skills
-Already complete: 1775 skills
-Skipped (no domain match):  1 skills
-Errors: 0
