@@ -289,8 +289,27 @@ class AgentSkillRoutingApp {
         // Bind port IMMEDIATELY — skills load in background below
         try {
             await this.app.listen({ port, host: '0.0.0.0' });
-            this.logger.info(`Server listening on port ${port} (skills loading in background)`, {
+            // Clear startup message with compression info
+            const compressionStatus = this.compressionLevel === 0
+                ? '(DISABLED - opt-in for production)'
+                : `(Level ${this.compressionLevel} - ~${5 + 5 * this.compressionLevel}% savings)`;
+            console.log(`
+╔════════════════════════════════════════════════════════════════╗
+║              SKILL ROUTER READY                                 ║
+╚════════════════════════════════════════════════════════════════╝
+  • Server: http://0.0.0.0:${port}
+  • Status: http://localhost:${port}/health
+  • Skills: http://localhost:${port}/skills
+  • Metrics: http://localhost:${port}/metrics
+  • Compression: ${compressionStatus}
+
+Use --help for configuration options.
+      `.trim());
+            this.logger.debug('Server startup config', {
+                port,
+                host: '0.0.0.0',
                 compressionLevel: this.compressionLevel,
+                skillsDirectory: this.config.skillsDirectory,
             });
         }
         catch (error) {
@@ -424,24 +443,95 @@ function createApp(config, compressionLevel = 0) {
     return new AgentSkillRoutingApp(config, compressionLevel);
 }
 /**
- * Parse CLI arguments for compression level
+ * Show usage help for CLI arguments
+ */
+function showHelp() {
+    console.log(`
+╔════════════════════════════════════════════════════════════════╗
+║              Agent Skill Routing System                         ║
+║              Usage: node dist/index.js [OPTIONS]               ║
+╚════════════════════════════════════════════════════════════════╝
+
+OPTIONS:
+  --help, -h                       Show this help message
+  --compression-level=N            Set compression level (0-10+)
+                                   0=off (default), 10+=extreme
+  --uncompressed                   Force no compression (alias for --compression-level=0)
+  --port=N                         Server port (default: 3000)
+  --skills-directory=PATH          Path to skills directory
+
+ENVIRONMENT VARIABLES:
+  SKILL_COMPRESSION_LEVEL          Compression level (0-10+)
+  SKILLS_DIRECTORY                 Path to skills directory
+  PORT                             Server port (default: 3000)
+
+COMPRESSION LEVELS:
+  0  → No compression (original)                    0% savings
+  1  → Remove blank lines                           ~5% savings
+  2  → Remove "When to Use" section                 ~12% savings
+  3  → Remove "When NOT to Use" section             ~18% savings
+  4  → Collapse "Core Workflow" to paragraph        ~28% savings
+  5  → Remove related-skills table                  ~35% savings
+  6  → Remove markdown formatting                   ~42% savings
+  7  → Remove code examples                         ~55% savings
+  8  → Abbreviate section names                     ~68% savings
+  9  → Combine all sections                         ~75% savings
+  10+→ Summary only (first 200 chars)               ~85% savings
+
+EXAMPLES:
+  # Start with Level 5 compression (35% savings)
+  node dist/index.js --compression-level=5
+
+  # Start with Level 0 (no compression, default)
+  node dist/index.js
+
+  # Use environment variable
+  SKILL_COMPRESSION_LEVEL=7 node dist/index.js
+
+  # Query API with per-request compression
+  curl "http://localhost:3000/skill/foo?compression=5"
+
+  # View compression metrics
+  curl "http://localhost:3000/metrics"
+
+NOTES:
+  - Default compression: 0 (off) — opt-in for safety
+  - API query parameter overrides CLI/env setting
+  - Cache: LRU 100MB, 1-hour TTL from last access
+  - For production: Start with Level 0, gradually enable based on metrics
+
+For more info: https://github.com/paulpas/agent-skill-router/blob/main/COMPRESSION.md
+`);
+}
+/**
+ * Parse CLI arguments for compression level and show help if requested
  */
 function parseCompressionLevel() {
-    // Check environment variable first (highest priority)
+    // Check for help first (early exit)
+    for (const arg of process.argv.slice(2)) {
+        if (arg === '--help' || arg === '-h') {
+            showHelp();
+            process.exit(0);
+        }
+    }
+    // Check environment variable first (highest priority after help)
     if (process.env.SKILL_COMPRESSION_LEVEL) {
         const level = parseInt(process.env.SKILL_COMPRESSION_LEVEL, 10);
         if (!isNaN(level) && level >= 0) {
+            console.log(`✓ Compression level from env var: ${level}`);
             return level;
         }
     }
     // Check command-line arguments
     for (const arg of process.argv.slice(2)) {
         if (arg === '--uncompressed') {
+            console.log(`✓ Compression disabled (--uncompressed)`);
             return 0;
         }
         if (arg.startsWith('--compression-level=')) {
             const level = parseInt(arg.replace('--compression-level=', ''), 10);
             if (!isNaN(level) && level >= 0) {
+                console.log(`✓ Compression level from CLI: ${level}`);
                 return level;
             }
         }

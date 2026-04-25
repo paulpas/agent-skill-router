@@ -86,7 +86,12 @@ class SkillCompressor {
                     replacement: (match) => {
                         const lines = match.match(/^\d+\.\s+(.+?)(?:\n|$)/gm);
                         const steps = (lines || [])
-                            .map((line) => line.replace(/^\d+\.\s+/, '').replace(/\*\*(.+?)\*\*[—:]?\s*/, '$1: ').trim())
+                            .map((line) => {
+                            let step = line.replace(/^\d+\.\s+/, '').trim();
+                            // Handle bold text at start: **Step Title** - description or **Step Title**: description
+                            step = step.replace(/^\*\*(.+?)\*\*\s*[—:-]?\s*/, '$1: ');
+                            return step;
+                        })
                             .join('; ');
                         return `## Core Workflow\n${steps}`;
                     },
@@ -139,7 +144,7 @@ class SkillCompressor {
             transformations: [
                 {
                     name: 'Remove inline code examples',
-                    pattern: /```[\s\S]*?```\n?(?!```)/g,
+                    pattern: /```[\s\S]*?```/g,
                     replacement: '[code example removed]',
                     skipInCodeBlocks: false,
                 },
@@ -195,7 +200,7 @@ class SkillCompressor {
                         const fmMatch = match.match(/^---[\s\S]*?---\n\n# (.+?)$/m);
                         const firstPara = match.match(/^# .+?\n\n(.+?)(?:\n\n|\Z)/s);
                         const title = fmMatch ? fmMatch[1] : 'Skill';
-                        const summary = firstPara ? firstPara[1].substring(0, 200) : 'Skill content';
+                        const summary = firstPara ? firstPara[1].slice(0, 200) : 'Skill content';
                         return `# ${title}\n\n${summary}`;
                     },
                     skipInCodeBlocks: false,
