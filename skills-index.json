@@ -8460,6 +8460,22 @@
     "path": "skills/coding/code-review-checklist/SKILL.md"
   },
   {
+    "name": "code-validation",
+    "description": "Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense",
+    "domain": "coding",
+    "tags": [
+      "coding",
+      "validation",
+      "code validation",
+      "pipeline validation",
+      "config status",
+      "input validation",
+      "validate pipeline",
+      "pipeline stages"
+    ],
+    "path": "skills/coding/code-validation/SKILL.md"
+  },
+  {
     "name": "cleanup-tech-debt",
     "description": "Provides You are a technical debt expert specializing in identifying,",
     "domain": "coding",

@@ -40,6 +40,11 @@ export declare class SkillRegistry {
     private maxCacheSizeBytes;
     private currentCacheSizeBytes;
     private readonly ONE_HOUR_MS;
+    private llmCompressor;
+    private diskCache;
+    private memoryCache;
+    private deduplicator;
+    private accessCounter;
     constructor(config: SkillRegistryConfig);
     /**
      * Fetch the lightweight skills-index.json from a remote URL and populate the
@@ -147,5 +152,27 @@ export declare class SkillRegistry {
     private parseFrontmatterLenient;
     /** Strip surrounding single or double quotes from a YAML scalar value */
     private unquoteFrontmatterValue;
+    /**
+     * Initialize the LLM-based compressor with an LLM client
+     * Called once after LLM client is available
+     */
+    setLLMClient(llmClient: any): void;
+    /**
+     * Pre-compute compressed versions for a skill (fire-and-forget, async)
+     * Called after loading a skill to populate caches
+     * No errors thrown: graceful degradation if compression fails
+     * Public so it can be called from tests and external code
+     */
+    preComputeCompressedVersions(skillName: string, domain: string, content: string): Promise<void>;
+    /**
+     * Get skill content with cache layering (memory → disk → original)
+     * Implements versionHint for compression version selection
+     */
+    getSkillContentWithCompression(skillName: string, domain: string, versionHint?: 'brief' | 'moderate' | 'detailed'): Promise<string>;
+    /**
+     * Increment access counter for smart retry tracking
+     * Tracks access within 30-minute windows
+     */
+    private incrementAccessCounter;
 }
 //# sourceMappingURL=SkillRegistry.d.ts.map

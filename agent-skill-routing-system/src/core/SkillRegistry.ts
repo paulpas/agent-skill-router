@@ -10,6 +10,10 @@ import { EmbeddingService } from '../embedding/EmbeddingService.js';
 import { Logger } from '../observability/Logger.js';
 import { SkillCompressor } from './SkillCompressor.js';
 import { CompressionMetrics } from '../utils/CompressionMetrics.js';
+import { LLMSkillCompressor } from './LLMSkillCompressor.js';
+import { DiskCompressionCache } from './DiskCompressionCache.js';
+import { InMemoryCompressionCache } from './InMemoryCompressionCache.js';
+import { CompressionDeduplicator } from './CompressionDeduplicator.js';
 
 /**
  * Cached skill content entry with LRU metadata
@@ -57,6 +61,13 @@ export class SkillRegistry {
   private currentCacheSizeBytes: number = 0;
   private readonly ONE_HOUR_MS = 60 * 60 * 1000;
 
+  // Phase 3-5: LLM-based compression system
+  private llmCompressor: LLMSkillCompressor | null = null;
+  private diskCache: DiskCompressionCache | null = null;
+  private memoryCache: InMemoryCompressionCache | null = null;
+  private deduplicator: CompressionDeduplicator | null = null;
+  private accessCounter: Map<string, { count: number; window: Date }> = new Map();
+
   constructor(config: SkillRegistryConfig) {
     this.config = {
       cacheDirectory: './.skill-cache',
@@ -73,6 +84,15 @@ export class SkillRegistry {
     // Initialize metrics with max cache size
     const metrics = CompressionMetrics.getInstance();
     metrics.setMaxCacheSize(this.maxCacheSizeBytes);
+    
+    // Initialize LLM-based compression caches (Phase 3-5)
+    const skillsDir = Array.isArray(this.config.skillsDirectory)
+      ? this.config.skillsDirectory[0]
+      : this.config.skillsDirectory;
+    this.diskCache = new DiskCompressionCache(skillsDir);
+    this.memoryCache = new InMemoryCompressionCache(60); // 1 hour TTL
+    this.deduplicator = new CompressionDeduplicator();
+    // llmCompressor: will be initialized when LLM client becomes available
     
     this.loadPersistedContentCache();
   }
@@ -856,5 +876,167 @@ export class SkillRegistry {
       return value.slice(1, -1);
     }
     return value;
+  }
+
+  /**
+   * Initialize the LLM-based compressor with an LLM client
+   * Called once after LLM client is available
+   */
+  setLLMClient(llmClient: any): void {
+    if (!llmClient) {
+      this.logger.warn('Attempted to set null LLM client');
+      return;
+    }
+    this.llmCompressor = new LLMSkillCompressor(llmClient);
+    this.logger.info('LLM compressor initialized');
+  }
+
+  /**
+   * Pre-compute compressed versions for a skill (fire-and-forget, async)
+   * Called after loading a skill to populate caches
+   * No errors thrown: graceful degradation if compression fails
+   * Public so it can be called from tests and external code
+   */
+  async preComputeCompressedVersions(
+    skillName: string,
+    domain: string,
+    content: string
+  ): Promise<void> {
+    // Guard: LLM compressor not initialized
+    if (!this.llmCompressor || !this.deduplicator || !this.diskCache) {
+      return;
+    }
+
+    try {
+      // Deduplicate concurrent requests
+      const compressed = await this.deduplicator.compress(skillName, content, this.llmCompressor);
+      
+      if (!compressed) {
+        // Compression failed or returned null
+        this.logger.debug('Compression returned null', { skillName, domain });
+        this.incrementAccessCounter(skillName);
+        return;
+      }
+
+      // Save to disk cache (lazy write)
+      await this.diskCache.saveCompressedVersions(skillName, domain, compressed);
+      
+      this.logger.debug('Pre-computed compressed versions', {
+        skillName,
+        domain,
+        briefRatio: compressed.brief.compressionRatio.toFixed(2),
+        moderateRatio: compressed.moderate.compressionRatio.toFixed(2),
+        detailedRatio: compressed.detailed.compressionRatio.toFixed(2),
+      });
+    } catch (error) {
+      // Fail gracefully: log error and increment retry counter
+      this.logger.error('Pre-compute compression failed', {
+        skillName,
+        domain,
+        error: String(error),
+      });
+      this.incrementAccessCounter(skillName);
+    }
+  }
+
+  /**
+   * Get skill content with cache layering (memory → disk → original)
+   * Implements versionHint for compression version selection
+   */
+  async getSkillContentWithCompression(
+    skillName: string,
+    domain: string,
+    versionHint?: 'brief' | 'moderate' | 'detailed'
+  ): Promise<string> {
+    // Guard: validate inputs
+    if (!skillName || !domain) {
+      this.logger.warn('Invalid input to getSkillContentWithCompression', {
+        skillName,
+        domain,
+      });
+      return '';
+    }
+
+    // Use moderate as default if not specified
+    const version = versionHint || 'moderate';
+
+    // 1. Check in-memory cache (1 hour TTL from last access)
+    if (this.memoryCache) {
+      const cached = this.memoryCache.get(skillName, version);
+      if (cached) {
+        this.logger.debug('Served from memory cache', {
+          skillName,
+          version,
+        });
+        return cached.content;
+      }
+    }
+
+    // 2. Check disk cache (fresh only, 7-day max age)
+    if (this.diskCache) {
+      const cached = await this.diskCache.getCompressedVersion(skillName, domain, version);
+      if (cached) {
+        // Add to memory cache for faster next hit
+        if (this.memoryCache) {
+          this.memoryCache.set(skillName, version, cached);
+        }
+        this.logger.debug('Served from disk cache', {
+          skillName,
+          version,
+        });
+        return cached.content;
+      }
+
+      // Check access count for deferred retry
+      const accessInfo = this.accessCounter.get(skillName);
+      if (accessInfo) {
+        const windowMs = Date.now() - accessInfo.window.getTime();
+        if (windowMs < 30 * 60 * 1000 && accessInfo.count > 2) {
+          // Mark for deferred retry
+          this.logger.info('Scheduling deferred retry', {
+            skillName,
+            accessCount: accessInfo.count,
+            windowMinutes: (windowMs / 1000 / 60).toFixed(1),
+          });
+          // Could schedule a re-compression here
+        }
+      }
+    }
+
+    // 3. Fallback: return original content
+    this.logger.debug('Serving original content (no compression)', {
+      skillName,
+      version,
+    });
+    return await this.getSkillContent(skillName);
+  }
+
+  /**
+   * Increment access counter for smart retry tracking
+   * Tracks access within 30-minute windows
+   */
+  private incrementAccessCounter(skillName: string): void {
+    const now = Date.now();
+    const entry = this.accessCounter.get(skillName);
+
+    if (!entry) {
+      // New entry
+      this.accessCounter.set(skillName, {
+        count: 1,
+        window: new Date(),
+      });
+      return;
+    }
+
+    // Check if still in same 30-minute window
+    const windowMs = now - entry.window.getTime();
+    if (windowMs < 30 * 60 * 1000) {
+      // Same window: increment
+      entry.count++;
+    } else {
+      // New window: reset
+      entry.count = 1;
+      entry.window = new Date();
+    }
   }
 }

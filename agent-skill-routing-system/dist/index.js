@@ -228,11 +228,21 @@ class AgentSkillRoutingApp {
                 return reply.status(503).send({ error: 'Skills are still loading, please wait.' });
             }
             const { name } = request.params;
-            const queryCompression = request.query.compression ? parseInt(request.query.compression, 10) : undefined;
-            const level = queryCompression !== undefined ? queryCompression : this.compressionLevel;
+            const domain = request.query.domain || 'programming'; // Phase 6: domain parameter
+            const compressionVersion = request.query.compression || 'moderate'; // Phase 6: compression version
             try {
-                const content = await this.router.getRegistry().getSkillContent(name, level);
-                reply.header('Content-Type', 'text/plain; charset=utf-8').send(content);
+                // Phase 6: Call new compression-aware method
+                const registry = this.router.getRegistry();
+                const content = await registry.getSkillContentWithCompression?.(name, domain, compressionVersion) ||
+                    await registry.getSkillContent(name);
+                // Phase 6: Add compression response headers
+                reply
+                    .header('Content-Type', 'text/plain; charset=utf-8')
+                    .header('X-Compression-Version', compressionVersion)
+                    .header('X-Compression-Tokens', '0') // TODO: track token count
+                    .header('X-Compression-Ratio', '1.0') // TODO: calculate ratio
+                    .header('X-Compression-Source', 'original') // TODO: track source
+                    .send(content);
             }
             catch (error) {
                 reply.status(404).send({
