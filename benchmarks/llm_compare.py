@@ -646,8 +646,10 @@ def route_task(router_url: str, task_description: str) -> tuple[list[str], float
     data = resp.json()
     skill_names: list[str] = []
 
-    if "skills" in data and isinstance(data["skills"], list):
-        for skill in data["skills"]:
+    # Router returns "selectedSkills"; fall back to "skills" for compatibility
+    raw_skills = data.get("selectedSkills") or data.get("skills") or []
+    if isinstance(raw_skills, list):
+        for skill in raw_skills:
             if isinstance(skill, dict):
                 name = skill.get("name", "")
                 if name:

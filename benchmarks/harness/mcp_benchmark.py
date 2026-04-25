@@ -207,13 +207,18 @@ class RealMCPBenchmark:
                         selected_skills = []
                         confidence_scores = {}
 
-                        if "skills" in data and isinstance(data["skills"], list):
-                            for skill in data["skills"]:
+                        # Router returns "selectedSkills"; fall back to "skills" for compatibility
+                        raw_skills = (
+                            data.get("selectedSkills") or data.get("skills") or []
+                        )
+                        if isinstance(raw_skills, list):
+                            for skill in raw_skills:
                                 if isinstance(skill, dict):
                                     skill_name = skill.get("name", "unknown")
                                     selected_skills.append(skill_name)
+                                    # Router uses "score" field, not "confidence"
                                     confidence_scores[skill_name] = skill.get(
-                                        "confidence", 0.0
+                                        "score", skill.get("confidence", 0.0)
                                     )
                                 else:
                                     selected_skills.append(str(skill))
