@@ -2,14 +2,14 @@
 
 ## Summary
 
-- Total CNCF skills: 365
-- Orphaned skills (before): 247
+- Total CNCF skills: 0
+- Orphaned skills (before): 0
 - Skills enhanced: 0
-- Orphaned skills (after): 247
+- Orphaned skills (after): 0
 - Reduction: 0 orphaned skills fixed
 
-- Average relations (before): 1.23
-- Average relations (after): 1.23
+- Average relations (before): 0.00
+- Average relations (after): 0.00
 
 ## Enhanced Skills
 

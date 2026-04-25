@@ -665,8 +665,8 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-04-25 10:37:10 UTC  
-> **Total skills:** 1776
+> **Last updated:** 2026-04-25 14:09:40 UTC  
+> **Total skills:** 1777
 
 ## Skills by Domain
 
@@ -1270,7 +1270,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [zot](../../skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture,... | cdn, container... |
 
 
-### Coding (317 skills)
+### Coding (318 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1531,6 +1531,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [scanning-security-sast](../../skills/coding/scanning-security-sast/SKILL.md) | "Static Application Security Testing (SAST) for code... | security scanning security sast, security... |
 | [sdk](../../skills/coding/sdk/SKILL.md) | "Provides Build applications that programmatically interact... | copilot sdk, backend... |
 | [secrets-rotation](../../skills/coding/secrets-rotation/SKILL.md) | "Provides Automate AWS secrets rotation for RDS, API keys,... | aws secrets rotation, security... |
+| [secure-release-pipeline](../../skills/coding/secure-release-pipeline/SKILL.md) | Implements comprehensive secure release pipeline with CVE... | secure release, CVE scanning... |
 | [security](../../skills/coding/security/SKILL.md) | "Provides Master smart contract security best practices,... | solidity security, security... |
 | [security-audit](../../skills/coding/security-audit/SKILL.md) | "Provides Comprehensive AWS security posture assessment... | aws security audit, security... |
 | [security-audit](../../skills/coding/security-audit/SKILL.md) | "Provides Security auditor for Laravel applications.... | laravel security audit, security... |
@@ -1985,6 +1986,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [gift](../../skills/programming/gift/SKILL.md) | "Provides Relationship-aware daily gift engine with... | daily gift, productivity... |
 | [git-worktrees](../../skills/programming/git-worktrees/SKILL.md) | "Provides Git worktrees create isolated workspaces sharing... | using git worktrees, development... |
 | [github](../../skills/programming/github/SKILL.md) | "Provides use the `gh` cli for issues, pull requests,... | github, uncategorized... |
+| [godot-4-migration](../../skills/programming/godot-4-migration/SKILL.md) | "Provides Specialized guide for migrating Godot 3.x... | godot 4 migration, game... |
 | [golang](../../skills/programming/golang/SKILL.md) | "Provides Guide for building reliable, fault-tolerant Go... | dbos golang, development... |
 | [golang](../../skills/programming/golang/SKILL.md) | "Provides Build production-ready gRPC services in Go with... | grpc golang, development... |
 | [gratitude](../../skills/programming/gratitude/SKILL.md) | Provides Multi-agent research skill for parallel research... | infinite gratitude, ai... |
@@ -2095,7 +2097,6 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [metrics-calculation](../../skills/programming/metrics-calculation/SKILL.md) | "Provides Calculate portfolio risk metrics including VaR,... | risk metrics calculation, business... |
 | [metrics-framework](../../skills/programming/metrics-framework/SKILL.md) | "Provides Comprehensive guide to tracking, calculating, and... | startup metrics framework, business... |
 | [migration](../../skills/programming/migration/SKILL.md) | "Provides Master AngularJS to Angular migration, including... | angular migration, web... |
-| [migration](../../skills/programming/migration/SKILL.md) | "Provides Specialized guide for migrating Godot 3.x... | godot 4 migration, game... |
 | [migration-code-migrate](../../skills/programming/migration-code-migrate/SKILL.md) | "Provides You are a code migration expert specializing in... | framework migration code migrate, development... |
 | [migration-deps-upgrade](../../skills/programming/migration-deps-upgrade/SKILL.md) | "Provides You are a dependency management expert... | framework migration deps upgrade, development... |
 | [migration-helper](../../skills/programming/migration-helper/SKILL.md) | "Provides Step-by-step guide for migrating Odoo custom... | odoo migration helper, business... |
@@ -2479,7 +2480,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 ## Skills by Role
 
 
-### Implementation (Build Features) (1419 skills)
+### Implementation (Build Features) (1420 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -3225,6 +3226,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [git-worktrees](../../skills/git-worktrees/SKILL.md) | Programming | "Provides Git worktrees create isolated workspaces sharing... |
 | [github](../../skills/github/SKILL.md) | Programming | "Provides use the `gh` cli for issues, pull requests,... |
 | [github-repo-commander](../../skills/github-repo-commander/SKILL.md) | Coding | "Provides 7-stage super workflow for GitHub repo audit,... |
+| [godot-4-migration](../../skills/godot-4-migration/SKILL.md) | Programming | "Provides Specialized guide for migrating Godot 3.x... |
 | [golang](../../skills/golang/SKILL.md) | Programming | "Provides Guide for building reliable, fault-tolerant Go... |
 | [golang](../../skills/golang/SKILL.md) | Programming | "Provides Build production-ready gRPC services in Go with... |
 | [graphql](../../skills/graphql/SKILL.md) | Coding | Provides GraphQL gives clients exactly the data they need -... |
@@ -3396,7 +3398,6 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [microsoft-playwright-testing-ts](../../skills/microsoft-playwright-testing-ts/SKILL.md) | Cncf | Provides Run Playwright tests at scale with cloud-hosted... |
 | [migration](../../skills/migration/SKILL.md) | Cncf | "Provides Master database schema and data migrations across... |
 | [migration](../../skills/migration/SKILL.md) | Programming | "Provides Master AngularJS to Angular migration, including... |
-| [migration](../../skills/migration/SKILL.md) | Programming | "Provides Specialized guide for migrating Godot 3.x... |
 | [migration-code-migrate](../../skills/migration-code-migrate/SKILL.md) | Programming | "Provides You are a code migration expert specializing in... |
 | [migration-deps-upgrade](../../skills/migration-deps-upgrade/SKILL.md) | Programming | "Provides You are a dependency management expert... |
 | [migration-helper](../../skills/migration-helper/SKILL.md) | Programming | "Provides Step-by-step guide for migrating Odoo custom... |
@@ -3661,6 +3662,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [search-documents-ts](../../skills/search-documents-ts/SKILL.md) | Cncf | "Provides Build search applications with vector, hybrid,... |
 | [search-implementation](../../skills/search-implementation/SKILL.md) | Programming | Provides Combine vector and keyword search for improved... |
 | [search-patterns](../../skills/search-patterns/SKILL.md) | Programming | Provides Implement efficient similarity search with vector... |
+| [secure-release-pipeline](../../skills/secure-release-pipeline/SKILL.md) | Coding | Implements comprehensive secure release pipeline with CVE... |
 | [security-best-practices](../../skills/security-best-practices/SKILL.md) | Coding | Provides Implement secure API design patterns including... |
 | [security-coder](../../skills/security-coder/SKILL.md) | Coding | Provides Expert in secure backend coding practices... |
 | [security-coder](../../skills/security-coder/SKILL.md) | Programming | Provides Expert in secure mobile coding practices... |
@@ -5170,6 +5172,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [github-comments](../../skills/agent/github-comments/SKILL.md) | Agent | "Provides use when you need to address review or issue... | Orchestration |
 | [github-repo-commander](../../skills/coding/github-repo-commander/SKILL.md) | Coding | "Provides 7-stage super workflow for GitHub repo audit,... | Implementation |
 | [goal-to-milestones](../../skills/agent/goal-to-milestones/SKILL.md) | Agent | "Translates high-level goals into actionable milestones and... | Orchestration |
+| [godot-4-migration](../../skills/programming/godot-4-migration/SKILL.md) | Programming | "Provides Specialized guide for migrating Godot 3.x... | Implementation |
 | [golang](../../skills/programming/golang/SKILL.md) | Programming | "Provides Guide for building reliable, fault-tolerant Go... | Implementation |
 | [golang](../../skills/programming/golang/SKILL.md) | Programming | "Provides Build production-ready gRPC services in Go with... | Implementation |
 | [golang-pro](../../skills/agent/golang-pro/SKILL.md) | Agent | "Provides use when building durable distributed systems... | Orchestration |
@@ -5393,7 +5396,6 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [microsoft-playwright-testing-ts](../../skills/cncf/microsoft-playwright-testing-ts/SKILL.md) | Cncf | Provides Run Playwright tests at scale with cloud-hosted... | Implementation |
 | [migration](../../skills/cncf/migration/SKILL.md) | Cncf | "Provides Master database schema and data migrations across... | Implementation |
 | [migration](../../skills/programming/migration/SKILL.md) | Programming | "Provides Master AngularJS to Angular migration, including... | Implementation |
-| [migration](../../skills/programming/migration/SKILL.md) | Programming | "Provides Specialized guide for migrating Godot 3.x... | Implementation |
 | [migration-code-migrate](../../skills/programming/migration-code-migrate/SKILL.md) | Programming | "Provides You are a code migration expert specializing in... | Implementation |
 | [migration-deps-upgrade](../../skills/programming/migration-deps-upgrade/SKILL.md) | Programming | "Provides You are a dependency management expert... | Implementation |
 | [migration-helper](../../skills/programming/migration-helper/SKILL.md) | Programming | "Provides Step-by-step guide for migrating Odoo custom... | Implementation |
@@ -5740,6 +5742,7 @@ Good triggers are specific and task-oriented (`kubernetes, k8s, pod, deployment,
 | [search-implementation](../../skills/programming/search-implementation/SKILL.md) | Programming | Provides Combine vector and keyword search for improved... | Implementation |
 | [search-patterns](../../skills/programming/search-patterns/SKILL.md) | Programming | Provides Implement efficient similarity search with vector... | Implementation |
 | [secrets-rotation](../../skills/coding/secrets-rotation/SKILL.md) | Coding | "Provides Automate AWS secrets rotation for RDS, API keys,... | Review |
+| [secure-release-pipeline](../../skills/coding/secure-release-pipeline/SKILL.md) | Coding | Implements comprehensive secure release pipeline with CVE... | Implementation |
 | [security](../../skills/coding/security/SKILL.md) | Coding | "Provides Master smart contract security best practices,... | Review |
 | [security-audit](../../skills/coding/security-audit/SKILL.md) | Coding | "Provides Comprehensive AWS security posture assessment... | Review |
 | [security-audit](../../skills/coding/security-audit/SKILL.md) | Coding | "Provides Security auditor for Laravel applications.... | Review |
