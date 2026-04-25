@@ -20,6 +20,15 @@ class ExerciseMetrics:
     without_router_ms: float
     router_latency_ms: float = 0.0
     iterations: int = 1
+    tokens_with_router: int = 0
+    tokens_without_router: int = 0
+    prompt_tokens_with_router: int = 0
+    response_tokens_with_router: int = 0
+    prompt_tokens_without_router: int = 0
+    response_tokens_without_router: int = 0
+    token_efficiency_ratio: float = 0.0
+    cost_with_router_usd: float = 0.0
+    cost_without_router_usd: float = 0.0
 
     @property
     def overhead_ms(self) -> float:
@@ -61,6 +70,28 @@ class ExerciseMetrics:
         correct_count = len(set(self.actual_skills) & set(self.expected_skills))
         return correct_count / len(self.expected_skills)
 
+    @property
+    def token_savings_pct(self) -> float:
+        """Token reduction from using router."""
+        if self.tokens_without_router == 0:
+            return 0.0
+        return (
+            (self.tokens_without_router - self.tokens_with_router)
+            / self.tokens_without_router
+        ) * 100
+
+    @property
+    def cost_savings_usd(self) -> float:
+        """Dollar savings from router optimization."""
+        return self.cost_without_router_usd - self.cost_with_router_usd
+
+    @property
+    def cost_savings_pct(self) -> float:
+        """Cost reduction percentage."""
+        if self.cost_without_router_usd == 0:
+            return 0.0
+        return (self.cost_savings_usd / self.cost_without_router_usd) * 100
+
     def to_dict(self) -> dict:
         """Convert to dictionary for JSON serialization."""
         return {
@@ -80,6 +111,19 @@ class ExerciseMetrics:
             "precision": round(self.precision, 3),
             "recall": round(self.recall, 3),
             "iterations": self.iterations,
+            "tokens": {
+                "prompt_with_router": self.prompt_tokens_with_router,
+                "response_with_router": self.response_tokens_with_router,
+                "total_with_router": self.tokens_with_router,
+                "prompt_without_router": self.prompt_tokens_without_router,
+                "response_without_router": self.response_tokens_without_router,
+                "total_without_router": self.tokens_without_router,
+                "token_savings_pct": round(self.token_savings_pct, 1),
+                "cost_with_router_usd": round(self.cost_with_router_usd, 4),
+                "cost_without_router_usd": round(self.cost_without_router_usd, 4),
+                "cost_savings_usd": round(self.cost_savings_usd, 4),
+                "cost_savings_pct": round(self.cost_savings_pct, 1),
+            },
         }
 
 
@@ -129,6 +173,21 @@ class MetricsCollector:
         avg_precision = sum(m.precision for m in self.metrics) / len(self.metrics)
         avg_recall = sum(m.recall for m in self.metrics) / len(self.metrics)
 
+        # Token metrics
+        total_tokens_with_router = sum(m.tokens_with_router for m in self.metrics)
+        total_tokens_without_router = sum(m.tokens_without_router for m in self.metrics)
+        total_cost_with_router = sum(m.cost_with_router_usd for m in self.metrics)
+        total_cost_without_router = sum(m.cost_without_router_usd for m in self.metrics)
+
+        token_savings_pct = (
+            (total_tokens_without_router - total_tokens_with_router)
+            / total_tokens_without_router
+            * 100
+            if total_tokens_without_router > 0
+            else 0.0
+        )
+        cost_savings_usd = total_cost_without_router - total_cost_with_router
+
         return {
             "total_exercises": len(self.metrics),
             "overall_accuracy": round(total_accuracy, 3),
@@ -136,6 +195,12 @@ class MetricsCollector:
             "avg_router_latency_ms": round(avg_router_latency, 2),
             "avg_precision": round(avg_precision, 3),
             "avg_recall": round(avg_recall, 3),
+            "total_tokens_with_router": total_tokens_with_router,
+            "total_tokens_without_router": total_tokens_without_router,
+            "token_savings_pct": round(token_savings_pct, 1),
+            "total_cost_with_router_usd": round(total_cost_with_router, 4),
+            "total_cost_without_router_usd": round(total_cost_without_router, 4),
+            "cost_savings_usd": round(cost_savings_usd, 4),
         }
 
     def generate_report(self) -> dict:
@@ -152,17 +217,40 @@ class MetricsCollector:
                 accuracy, overhead, latency, skill_ratio = self.get_tier_metrics(
                     tier_name
                 )
+
+                # Calculate tier-level token metrics
+                tier_tokens_with = sum(m.tokens_with_router for m in tier_metrics)
+                tier_tokens_without = sum(m.tokens_without_router for m in tier_metrics)
+                tier_cost_with = sum(m.cost_with_router_usd for m in tier_metrics)
+                tier_cost_without = sum(m.cost_without_router_usd for m in tier_metrics)
+
+                tier_token_savings = (
+                    (tier_tokens_without - tier_tokens_with) / tier_tokens_without * 100
+                    if tier_tokens_without > 0
+                    else 0.0
+                )
+
                 tier_summaries[tier_name] = {
                     "exercises": len(tier_metrics),
                     "accuracy": round(accuracy, 3),
                     "avg_overhead_ms": round(overhead, 2),
                     "avg_router_latency_ms": round(latency, 2),
                     "avg_skill_ratio": round(skill_ratio, 3),
+                    "total_tokens_with_router": tier_tokens_with,
+                    "total_tokens_without_router": tier_tokens_without,
+                    "token_savings_pct": round(tier_token_savings, 1),
+                    "total_cost_with_router_usd": round(tier_cost_with, 4),
+                    "total_cost_without_router_usd": round(tier_cost_without, 4),
+                    "cost_savings_usd": round(tier_cost_without - tier_cost_with, 4),
                     "results": [m.to_dict() for m in tier_metrics],
                 }
 
         overall = self.get_overall_metrics()
         total_runtime = (datetime.now(timezone.utc) - self.start_time).total_seconds()
+
+        # Calculate estimated monthly/annual savings
+        monthly_savings = overall.get("cost_savings_usd", 0) * 30
+        annual_savings = overall.get("cost_savings_usd", 0) * 365
 
         return {
             "timestamp": self.start_time.isoformat(),
@@ -171,6 +259,8 @@ class MetricsCollector:
             "summary": {
                 **overall,
                 "duration_seconds": round(total_runtime, 2),
+                "estimated_monthly_savings_usd": round(monthly_savings, 2),
+                "estimated_annual_savings_usd": round(annual_savings, 2),
             },
             "tiers": tier_summaries,
         }
@@ -193,46 +283,76 @@ class MetricsCollector:
         report = self.generate_report()
         summary = report["summary"]
 
-        print("\n" + "═" * 70)
-        print("║            AGENT-SKILL-ROUTER BENCHMARK RESULTS                 ║")
-        print("═" * 70)
+        print("\n" + "═" * 80)
+        print(
+            "║                  AGENT-SKILL-ROUTER BENCHMARK RESULTS                      ║"
+        )
+        print("═" * 80)
 
         # Overall stats
         print(
-            f"║ Total Exercises:  {summary['total_exercises']:3d}                                    ║"
+            f"║ Total Exercises:  {summary['total_exercises']:3d}                                       ║"
         )
         print(
-            f"║ Duration:         {summary['duration_seconds']:6.1f}s                                  ║"
+            f"║ Duration:         {summary['duration_seconds']:6.1f}s                                     ║"
         )
-        print("╠" + "═" * 68 + "╣")
+        print("╠" + "═" * 78 + "╣")
 
         # Tier breakdowns
         for tier_name in ["simple", "medium", "heavy"]:
             if tier_name in report["tiers"]:
                 tier = report["tiers"][tier_name]
                 print(
-                    f"║ {tier_name.upper():8s} Tier: {tier['exercises']:2d} exercises, "
+                    f"║ {tier_name.upper():8s} Tier: {tier['exercises']:2d} ex, "
                     f"Accuracy: {tier['accuracy'] * 100:5.1f}%, "
-                    f"Overhead: {tier['avg_overhead_ms']:6.1f}ms ║"
+                    f"Overhead: {tier['avg_overhead_ms']:6.1f}ms, "
+                    f"Tokens: {tier['token_savings_pct']:5.1f}% saved ║"
                 )
 
-        print("╠" + "═" * 68 + "╣")
+        print("╠" + "═" * 78 + "╣")
         print(
-            f"║ ROUTING ACCURACY:      {summary['overall_accuracy'] * 100:5.1f}%                          ║"
+            f"║ ROUTING ACCURACY:      {summary['overall_accuracy'] * 100:5.1f}%                               ║"
         )
         print(
-            f"║ AVG LATENCY OVERHEAD:  {summary['avg_overhead_ms']:6.1f}ms                            ║"
+            f"║ AVG LATENCY OVERHEAD:  {summary['avg_overhead_ms']:6.1f}ms                                 ║"
         )
         print(
-            f"║ ROUTER LATENCY:        {summary['avg_router_latency_ms']:6.1f}ms                            ║"
+            f"║ ROUTER LATENCY:        {summary['avg_router_latency_ms']:6.1f}ms                                 ║"
         )
         print(
-            f"║ AVG PRECISION:         {summary['avg_precision'] * 100:5.1f}%                            ║"
+            f"║ AVG PRECISION:         {summary['avg_precision'] * 100:5.1f}%                                 ║"
         )
         print(
-            f"║ AVG RECALL:            {summary['avg_recall'] * 100:5.1f}%                            ║"
+            f"║ AVG RECALL:            {summary['avg_recall'] * 100:5.1f}%                                 ║"
         )
-        print("╠" + "═" * 68 + "╣")
+        print("╠" + "═" * 78 + "╣")
+
+        # Token metrics
+        print(
+            f"║ TOKEN USAGE (All Exercises):                                               ║"
+        )
+        print(
+            f"║   With Router:  {summary['total_tokens_with_router']:8d} tokens                                ║"
+        )
+        print(
+            f"║   Without:      {summary['total_tokens_without_router']:8d} tokens                                ║"
+        )
+        print(
+            f"║   Savings:      {summary['token_savings_pct']:6.1f}%                                    ║"
+        )
+        print(
+            f"║   Cost (Router):     ${summary['total_cost_with_router_usd']:8.4f}                                 ║"
+        )
+        print(
+            f"║   Cost (Without):    ${summary['total_cost_without_router_usd']:8.4f}                                 ║"
+        )
+        print(
+            f"║   Monthly Savings:   ${summary['estimated_monthly_savings_usd']:8.2f}                                 ║"
+        )
+        print(
+            f"║   Annual Savings:    ${summary['estimated_annual_savings_usd']:8.2f}                                 ║"
+        )
+        print("╠" + "═" * 78 + "╣")
 
         # Verdict
         accuracy = summary["overall_accuracy"]
@@ -247,8 +367,8 @@ class MetricsCollector:
         else:
             verdict = "❌ FAIL - Needs investigation"
 
-        print(f"║ VERDICT: {verdict:60s} ║")
-        print("╚" + "═" * 68 + "╝")
+        print(f"║ VERDICT: {verdict:68s} ║")
+        print("╚" + "═" * 78 + "╝")
 
 
 def format_latency(ms: float, precision: int = 1) -> str:

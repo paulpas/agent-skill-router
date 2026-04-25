@@ -380,6 +380,102 @@ class BenchmarkComparison:
                                 f"  {metric_name:20s}: {current_val:6.0f} {unit:s} (was {baseline_val:6.0f}, {delta_pct:+.1f}%)"
                             )
 
+    def _print_results(self, results: dict, label: str):
+        """Print results without baseline comparison."""
+        print(f"\n{label} Results:\n")
+        summary = results.get("summary", {})
+        print(f"Overall Accuracy: {summary.get('overall_accuracy', 0) * 100:.1f}%")
+        print(f"Avg Overhead: {summary.get('avg_overhead_ms', 0):.2f}ms")
+        print(f"Router Latency: {summary.get('avg_router_latency_ms', 0):.2f}ms")
+
+    def print_token_comparison(self):
+        """Print token usage and cost comparison analysis."""
+        print("\n" + "═" * 100)
+        print("║ TOKEN USAGE AND COST ANALYSIS".ljust(99) + "║")
+        print("═" * 100)
+
+        summary = self.current.get("summary", {})
+        if not any(
+            k in summary
+            for k in [
+                "total_tokens_with_router",
+                "total_tokens_without_router",
+            ]
+        ):
+            print("\nNo token metrics available in current results.\n")
+            return
+
+        print("\n📊 TOKEN USAGE BY TIER:")
+        print("─" * 100)
+
+        for tier in ["simple", "medium", "heavy"]:
+            tier_data = self.current.get("tiers", {}).get(tier)
+            if not tier_data:
+                continue
+
+            tokens_with = tier_data.get("total_tokens_with_router", 0)
+            tokens_without = tier_data.get("total_tokens_without_router", 0)
+            savings_pct = tier_data.get("token_savings_pct", 0.0)
+            cost_with = tier_data.get("total_cost_with_router_usd", 0.0)
+            cost_without = tier_data.get("total_cost_without_router_usd", 0.0)
+
+            print(f"\n{tier.upper()} TIER ({tier_data.get('exercises', 0)} exercises):")
+            print(
+                f"  Tokens (with router): {tokens_with:>8d} "
+                f"│ Tokens (without): {tokens_without:>8d} "
+                f"│ Savings: {savings_pct:>6.1f}%"
+            )
+            print(
+                f"  Cost (with router):   ${cost_with:>8.4f} "
+                f"│ Cost (without):  ${cost_without:>8.4f} "
+                f"│ Savings: ${cost_without - cost_with:>8.4f}"
+            )
+
+        print("\n" + "─" * 100)
+        print("\n💰 OVERALL COST ANALYSIS:")
+        print("─" * 100)
+
+        total_with = summary.get("total_tokens_with_router", 0)
+        total_without = summary.get("total_tokens_without_router", 0)
+        token_savings = summary.get("token_savings_pct", 0.0)
+        cost_with = summary.get("total_cost_with_router_usd", 0.0)
+        cost_without = summary.get("total_cost_without_router_usd", 0.0)
+        cost_savings = summary.get("cost_savings_usd", 0.0)
+        monthly_savings = summary.get("estimated_monthly_savings_usd", 0.0)
+        annual_savings = summary.get("estimated_annual_savings_usd", 0.0)
+
+        print(f"Total Tokens (with router):    {total_with:>10d} tokens")
+        print(f"Total Tokens (without router): {total_without:>10d} tokens")
+        print(f"Token Savings:                 {token_savings:>10.1f}%")
+        print()
+        print(f"Total Cost (with router):      ${cost_with:>10.4f}")
+        print(f"Total Cost (without router):   ${cost_without:>10.4f}")
+        print(f"Cost Savings (per benchmark):  ${cost_savings:>10.4f}")
+        print(f"Estimated Monthly Savings:     ${monthly_savings:>10.2f}")
+        print(f"Estimated Annual Savings:      ${annual_savings:>10.2f}")
+
+        # ROI analysis if we assume router has overhead
+        if cost_savings > 0.01:  # Only show if meaningful savings
+            print("\n" + "─" * 100)
+            print("\n📈 ROI ANALYSIS (Assuming Router Infrastructure Costs):")
+            print("─" * 100)
+            assumed_monthly_cost = 100.0  # Assume $100/month infrastructure
+            months_to_breakeven = assumed_monthly_cost / (
+                monthly_savings if monthly_savings > 0 else 1
+            )
+            print(f"Assumed monthly router cost:   ${assumed_monthly_cost:.2f}")
+            print(f"Months to break-even:          {months_to_breakeven:>10.1f} months")
+            if months_to_breakeven < 12:
+                print(
+                    f"✅ Router investment breaks even in {months_to_breakeven:.0f} months!"
+                )
+            else:
+                print(
+                    "⚠️  Router infrastructure cost needs to be justified by other factors"
+                )
+
+        print("\n")
+
     def _print_llm_results(self, llm_results: list, label: str):
         """Print LLM results without baseline comparison."""
         print(f"{label} LLM Results:")
@@ -430,6 +526,9 @@ def main():
 
     # Print comparison
     comparison.print_comparison()
+
+    # Print token analysis
+    comparison.print_token_comparison()
 
     # Print LLM comparison if available
     if baseline:

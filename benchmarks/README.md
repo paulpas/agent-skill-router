@@ -10,6 +10,7 @@ A comprehensive benchmarking suite for measuring the performance, accuracy, and 
 - [Running Benchmarks](#running-benchmarks)
 - [Understanding Results](#understanding-results)
 - [Interpreting Metrics](#interpreting-metrics)
+- [Token Usage and Cost Analysis](#token-usage-and-cost-analysis)
 - [Historical Tracking](#historical-tracking)
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
@@ -560,6 +561,230 @@ If router latency is high:
 1. Is it the search phase? → Optimize trigger matching (use inverted index)
 2. Is it the ranking phase? → Optimize scoring algorithm (use lightweight embeddings)
 3. Is it both? → Consider parallel search + ranking
+
+---
+
+## Token Usage and Cost Analysis
+
+The benchmarking system now tracks comprehensive token metrics for all LLM calls, enabling cost-benefit analysis of the skill router.
+
+### What Tokens Are Tracked
+
+1. **Prompt Tokens** — Tokens in the LLM prompt (task description + router context)
+2. **Response Tokens** — Tokens in the LLM response (generated code)
+3. **Total Tokens** — Sum of prompt and response tokens
+4. **Token Efficiency** — Ratio of output to input tokens (optimization metric)
+
+### With-Router vs. Without-Router Metrics
+
+For each exercise, the system tracks:
+
+- **Tokens with Router**: Total tokens when router pre-selects relevant skills
+- **Tokens without Router**: Total tokens when all skills are included (baseline)
+- **Token Savings %**: Percentage reduction from using router
+- **Cost with Router**: Estimated USD cost with router optimization
+- **Cost without Router**: Baseline cost without optimization
+
+### How Costs Are Calculated
+
+Token costs use **current LLM provider pricing**:
+
+| Provider | Model | Input Cost | Output Cost |
+|----------|-------|-----------|------------|
+| **OpenAI** | GPT-4 | $0.03/1K tokens | $0.06/1K tokens |
+| **OpenAI** | GPT-3.5-turbo | $0.0005/1K tokens | $0.0015/1K tokens |
+| **Anthropic** | Claude-3-Opus | $0.015/1K tokens | $0.075/1K tokens |
+| **Anthropic** | Claude-3-Sonnet | $0.003/1K tokens | $0.015/1K tokens |
+| **Ollama** | Local models | $0 | $0 |
+
+**Formula:**
+```
+Cost = (prompt_tokens × input_price_per_token) + (response_tokens × output_price_per_token)
+```
+
+**Example (GPT-4):**
+```
+Prompt tokens:   1,250 × $0.00003 = $0.0375
+Response tokens:   350 × $0.00006 = $0.0210
+Total cost:                         = $0.0585
+```
+
+### Supported Pricing Models
+
+The system supports configurable pricing for:
+- **OpenAI**: gpt-4, gpt-3.5-turbo
+- **Anthropic**: claude-3-opus, claude-3-sonnet
+- **Ollama**: Local models (free)
+- **Custom**: Easy to add new providers
+
+To add custom pricing, edit `PRICING_CONFIG` in `llm_performance.py`:
+
+```python
+"my-provider": {
+    "input": 0.001 / 1000,    # $0.001 per 1K input tokens
+    "output": 0.002 / 1000,   # $0.002 per 1K output tokens
+},
+```
+
+### Interpreting Token Metrics
+
+#### Token Savings Percentage
+
+**Definition:** Reduction in tokens when router pre-selects skills
+
+```
+Savings % = (Tokens_Without - Tokens_With) / Tokens_Without × 100
+```
+
+**Interpretation:**
+- **30-40%**: Excellent — router significantly reduces context
+- **20-30%**: Good — meaningful optimization
+- **10-20%**: Fair — minor optimization
+- **<10%**: Negligible — consider trigger tuning
+
+**Example:**
+```
+Without router: 2,500 tokens
+With router:    1,650 tokens
+Savings:        (2,500 - 1,650) / 2,500 × 100 = 34%
+```
+
+#### Cost Savings Analysis
+
+**Monthly Savings Estimate:**
+```
+Monthly Savings = Cost_Savings × Exercise_Frequency × 30 days
+```
+
+For a busy deployment (100+ coding exercises/day):
+```
+With router:      100 exercises × $0.0585 × 30 = $175.50/month
+Without router:   100 exercises × $0.0892 × 30 = $267.60/month
+Savings:                                          = $92.10/month
+Annual savings:                                   = $1,105.20/year
+```
+
+### ROI Calculation
+
+To evaluate if router infrastructure costs are justified:
+
+```
+Months to Break-Even = Infrastructure_Cost_Per_Month / Monthly_Token_Savings
+
+Example (router costs $50/month):
+$50 / $92.10 = 0.54 months → ✅ Breaks even in 2 weeks!
+```
+
+### Token Report Format
+
+Results include per-exercise token metrics:
+
+```json
+{
+  "tokens": {
+    "prompt_with_router": 1250,
+    "response_with_router": 350,
+    "total_with_router": 1600,
+    "prompt_without_router": 2100,
+    "response_without_router": 400,
+    "total_without_router": 2500,
+    "token_savings_pct": 36.0,
+    "cost_with_router_usd": 0.18,
+    "cost_without_router_usd": 0.26,
+    "cost_savings_usd": 0.08,
+    "cost_savings_pct": 30.8
+  }
+}
+```
+
+### Tier-Level Aggregation
+
+Token metrics are also aggregated by tier:
+
+```json
+{
+  "tiers": {
+    "simple": {
+      "total_tokens_with_router": 14400,
+      "total_tokens_without_router": 22500,
+      "token_savings_pct": 36.0,
+      "total_cost_with_router_usd": 1.44,
+      "total_cost_without_router_usd": 2.25,
+      "cost_savings_usd": 0.81
+    }
+  }
+}
+```
+
+### Comparing Token Performance
+
+Use `comparison.py` to compare token metrics across runs:
+
+```bash
+python3 benchmarks/harness/comparison.py \
+  --current latest-results.json \
+  --baseline previous-results.json
+```
+
+Output includes:
+- Token usage deltas
+- Cost trend analysis
+- Savings tracking over time
+- ROI impact
+
+### Example Output
+
+```
+╔════════════════════════════════════════════════════════════════╗
+║ TOKEN USAGE AND COST ANALYSIS                                  ║
+╠════════════════════════════════════════════════════════════════╣
+║ Total Tokens (with router):      45,600 tokens                ║
+║ Total Tokens (without router):   68,450 tokens                ║
+║ Token Savings:                        33.4%                   ║
+║                                                                ║
+║ Total Cost (with router):        $4.82                        ║
+║ Total Cost (without router):     $7.23                        ║
+║ Cost Savings (per benchmark):    $2.41                        ║
+║ Estimated Monthly Savings:       $72.30                       ║
+║ Estimated Annual Savings:        $867.60                      ║
+╠════════════════════════════════════════════════════════════════╣
+║ ROI ANALYSIS                                                   ║
+║ Assumed monthly router cost:     $100.00                      ║
+║ Months to break-even:            1.38 months                  ║
+║ ✅ Router investment breaks even in ~1 month!                 ║
+╚════════════════════════════════════════════════════════════════╝
+```
+
+### Best Practices for Token Analysis
+
+1. **Run Multiple Iterations**
+   - Token counts vary based on model output length
+   - Use 5+ iterations for stable averages
+   - Look at min/max/median, not just mean
+
+2. **Compare with Real Pricing**
+   - Update `PRICING_CONFIG` with current provider rates
+   - Rates change frequently (check OpenAI/Anthropic websites)
+   - Use historical rates for trend analysis
+
+3. **Account for Cache Hits**
+   - If using prompt caching, token savings increase
+   - Track cache hit rates separately
+   - Factor into ROI calculations
+
+4. **Monitor Cost Trends**
+   - Save baseline token metrics
+   - Track changes over time
+   - Alert if cost increases unexpectedly
+   - Use for capacity planning
+
+5. **Calculate True ROI**
+   ```python
+   # True ROI includes all factors
+   annual_savings = (tokens_without - tokens_with) × price_per_token × exercises_per_year
+   infrastructure_cost = router_uptime × maintenance × team_time
+   roi_pct = annual_savings / infrastructure_cost × 100
+   ```
 
 ---
 
