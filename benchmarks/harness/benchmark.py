@@ -15,7 +15,9 @@ from datetime import datetime, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from metrics import ExerciseMetrics, MetricsCollector
-from llm_performance import create_llm_benchmark
+from llm_performance import create_llm_benchmark, CodeQualityAnalyzer
+from model_registry import ModelRegistry, Provider
+from llm_factory import LLMFactory
 
 
 class BenchmarkRunner:
@@ -444,7 +446,9 @@ class BenchmarkRunner:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run agent-skill-router benchmarks")
+    parser = argparse.ArgumentParser(
+        description="Run agent-skill-router benchmarks with real LLM API calls"
+    )
     parser.add_argument(
         "--tier",
         choices=["simple", "medium", "heavy", "all"],
@@ -493,38 +497,85 @@ def main():
     parser.add_argument(
         "--with-llm",
         action="store_true",
-        help="Measure LLM code generation performance (requires API key)",
+        help="Measure LLM code generation performance (uses REAL API calls)",
     )
     parser.add_argument(
-        "--llm-model",
+        "--model",
         type=str,
         default="gpt-4",
-        help="LLM model to use (gpt-4, claude-opus, codellama, etc.)",
+        help="LLM model to use (gpt-4, gpt-3.5-turbo, claude-3-opus, mixtral-8x7b, etc.)",
     )
     parser.add_argument(
-        "--llm-api-key",
+        "--list-models",
+        action="store_true",
+        help="Show all available models",
+    )
+    parser.add_argument(
+        "--list-configured",
+        action="store_true",
+        help="Show only configured models (with API keys)",
+    )
+    parser.add_argument(
+        "--show-costs",
+        action="store_true",
+        help="Show cost comparison across models",
+    )
+    parser.add_argument(
+        "--models",
         type=str,
-        help="API key for LLM service (or set env var OPENAI_API_KEY or ANTHROPIC_API_KEY)",
+        help="Compare multiple models (comma-separated: gpt-4,claude-3-opus,mixtral-8x7b)",
+    )
+    parser.add_argument(
+        "--interactive",
+        action="store_true",
+        help="Interactive model selection",
     )
 
     args = parser.parse_args()
 
-    # Get API key from argument or environment
-    llm_api_key = args.llm_api_key
-    if not llm_api_key and args.with_llm:
-        llm_api_key = os.environ.get("OPENAI_API_KEY") or os.environ.get(
-            "ANTHROPIC_API_KEY"
-        )
+    # Handle list/info commands
+    if args.list_models:
+        ModelRegistry.print_model_catalog(configured_only=False)
+        sys.exit(0)
 
-    # Create runner
+    if args.list_configured:
+        ModelRegistry.print_model_catalog(configured_only=True)
+        sys.exit(0)
+
+    if args.show_costs:
+        ModelRegistry.print_cost_comparison()
+        sys.exit(0)
+
+    # Interactive mode: let user select model
+    if args.interactive and args.with_llm:
+        selected_model = _interactive_model_selection()
+        if selected_model is None:
+            sys.exit(1)
+        args.model = selected_model
+
+    # Guard: validate model selection if using LLM
+    if args.with_llm:
+        is_valid, error = ModelRegistry.validate_model(args.model)
+        if not is_valid:
+            print(f"❌ Error: {error}")
+            print("\nRun --list-configured to see available models")
+            sys.exit(1)
+
+    # Handle multiple model comparison
+    if args.models:
+        model_list = [m.strip() for m in args.models.split(",")]
+        _run_model_comparison(model_list, args)
+        sys.exit(0)
+
+    # Create runner with selected model
     runner = BenchmarkRunner(
         warmup_runs=args.warmup,
         iterations=args.iterations,
         timeout=args.timeout,
         baseline_enabled=not args.baseline_only,
         with_llm=args.with_llm,
-        llm_model=args.llm_model,
-        llm_api_key=llm_api_key,
+        llm_model=args.model,
+        llm_api_key=None,  # Use environment variables
     )
 
     # Run benchmarks
@@ -541,6 +592,108 @@ def main():
     overall_accuracy = results.get("summary", {}).get("overall_accuracy", 0)
     if overall_accuracy < 0.85:
         sys.exit(1)
+
+
+def _interactive_model_selection() -> Optional[str]:
+    """Interactive model selection UI."""
+    configured = ModelRegistry.list_configured_models()
+
+    if not configured:
+        print("❌ No configured models found. Set API keys:")
+        print("   OPENAI_API_KEY for OpenAI models")
+        print("   ANTHROPIC_API_KEY for Anthropic models")
+        print("   GROQ_API_KEY for Groq models")
+        print("   (Local Ollama models require no key)")
+        return None
+
+    print("\n" + "=" * 80)
+    print("AVAILABLE MODELS (with configured API keys)")
+    print("=" * 80 + "\n")
+
+    models_list = sorted(configured.items())
+    for i, (name, info) in enumerate(models_list, 1):
+        cost_str = (
+            "FREE"
+            if info.is_local()
+            else f"${info.cost_input_per_mtok:.2f}/${info.cost_output_per_mtok:.2f}/1M"
+        )
+        print(f"  {i}) {name:<25} {cost_str:<20}")
+
+    print("\nSelect model (1-{}): ".format(len(models_list)), end="", flush=True)
+    try:
+        choice = input().strip()
+        idx = int(choice) - 1
+        if 0 <= idx < len(models_list):
+            return models_list[idx][0]
+    except (ValueError, IndexError):
+        pass
+
+    print("❌ Invalid selection")
+    return None
+
+
+def _run_model_comparison(model_names: list, args):
+    """Run benchmarks with multiple models and compare results."""
+    print("\n" + "=" * 80)
+    print(f"COMPARING {len(model_names)} MODELS")
+    print("=" * 80 + "\n")
+
+    results_by_model = {}
+
+    for model_name in model_names:
+        is_valid, error = ModelRegistry.validate_model(model_name)
+        if not is_valid:
+            print(f"⏭️  Skipping {model_name}: {error}")
+            continue
+
+        print(f"\n▶️  Running benchmarks with {model_name}...")
+
+        runner = BenchmarkRunner(
+            warmup_runs=args.warmup,
+            iterations=args.iterations,
+            timeout=args.timeout,
+            baseline_enabled=not args.baseline_only,
+            with_llm=args.with_llm,
+            llm_model=model_name,
+            llm_api_key=None,
+        )
+
+        results = runner.run_all(
+            tier=args.tier,
+            exercise_name=args.exercise,
+            verbose=False,
+        )
+
+        results_by_model[model_name] = results
+
+    # Print comparison
+    if results_by_model:
+        print("\n" + "=" * 80)
+        print("MODEL COMPARISON RESULTS")
+        print("=" * 80)
+
+        # Summary table
+        print(f"\n{'Model':<25} {'Accuracy':<12} {'Speed (ms)':<15} {'Cost (USD)':<15}")
+        print("-" * 80)
+
+        for model_name, results in results_by_model.items():
+            summary = results.get("summary", {})
+            accuracy = summary.get("overall_accuracy", 0)
+            avg_time = summary.get("avg_time_with_router_ms", 0)
+            cost = summary.get("total_cost_usd", 0)
+
+            print(
+                f"{model_name:<25} {accuracy * 100:>10.1f}% {avg_time:>14.1f} ${cost:>14.2f}"
+            )
+
+        # Save detailed comparison
+        comparison_output = os.path.join(
+            os.path.dirname(args.output or "results/latest-results.json"),
+            "model-comparison.json",
+        )
+        with open(comparison_output, "w") as f:
+            json.dump(results_by_model, f, indent=2)
+        print(f"\nDetailed comparison saved to: {comparison_output}")
 
 
 if __name__ == "__main__":

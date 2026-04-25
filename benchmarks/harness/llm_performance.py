@@ -85,6 +85,48 @@ class LLMCodeGenerator(ABC):
         pass
 
 
+class RealLLMCodeGenerator(LLMCodeGenerator):
+    """Real LLM code generator using actual API calls via LLMFactory."""
+
+    def __init__(self, llm_client):
+        """Initialize with an LLM client from LLMFactory."""
+        self.client = llm_client
+
+    def generate_code(self, prompt: str, language: str) -> str:
+        """Generate code using real LLM API."""
+        formatted_prompt = f"""Generate {language} code to solve this:
+
+{prompt}
+
+Requirements:
+- Must be syntactically correct and executable
+- Include error handling
+- Add meaningful comments
+- Follow best practices for {language}
+- Return clean, production-ready code
+- Code only, no explanation"""
+
+        try:
+            response = self.client.generate(
+                formatted_prompt,
+                temperature=0.2,  # Low temperature for code generation
+                max_tokens=2048,
+            )
+
+            code = response.text
+
+            # Extract code from markdown if present
+            if f"```{language}" in code:
+                code = code.split(f"```{language}")[1].split("```")[0].strip()
+            elif "```" in code:
+                code = code.split("```")[1].split("```")[0].strip()
+
+            return code
+
+        except Exception as e:
+            raise RuntimeError(f"LLM code generation failed: {e}")
+
+
 class OpenAICodeGenerator(LLMCodeGenerator):
     """OpenAI-based code generator."""
 
@@ -835,14 +877,14 @@ console.log(JSON.stringify({{passed, total}}));
 
 
 class LLMPerformanceBenchmark:
-    """Benchmark LLM performance on coding tasks."""
+    """Benchmark LLM performance on coding tasks with REAL API calls."""
 
     def __init__(self, llm_model: str = "gpt-4", api_key: Optional[str] = None):
-        """Initialize benchmark.
+        """Initialize benchmark with real LLM client.
 
         Args:
             llm_model: LLM model to use (gpt-4, claude-opus, etc.)
-            api_key: API key for LLM service
+            api_key: Optional API key (uses env vars if not provided)
         """
         self.llm_model = llm_model
         self.api_key = api_key
@@ -850,16 +892,17 @@ class LLMPerformanceBenchmark:
         self.analyzer = CodeQualityAnalyzer()
 
     def _create_generator(self) -> Optional[LLMCodeGenerator]:
-        """Create appropriate code generator."""
-        if self.api_key is None:
-            return None
+        """Create real code generator using actual API calls."""
+        try:
+            from llm_factory import LLMFactory
 
-        if self.llm_model.startswith("gpt"):
-            return OpenAICodeGenerator(self.api_key, self.llm_model)
-        elif self.llm_model.startswith("claude"):
-            return AnthropicCodeGenerator(self.api_key, self.llm_model)
-        else:
-            return OllamaCodeGenerator(model=self.llm_model)
+            # Create real LLM client
+            llm_client = LLMFactory.create(self.llm_model)
+            # Wrap it in code generator interface
+            return RealLLMCodeGenerator(llm_client)
+        except (ImportError, ValueError) as e:
+            print(f"⚠️  Could not create LLM client: {e}")
+            return None
 
     def evaluate_exercise(
         self,

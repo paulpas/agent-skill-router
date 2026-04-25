@@ -326,6 +326,27 @@ Options:
   --timeout SECONDS
     Timeout per exercise. Default: 30
     
+  --with-llm
+    Measure LLM code generation performance (uses REAL API calls)
+    
+  --model MODEL_NAME
+    LLM model to use (gpt-4, claude-3-opus, mixtral-8x7b, etc.)
+    
+  --list-models
+    Show all available models
+    
+  --list-configured
+    Show only configured models (with API keys available)
+    
+  --show-costs
+    Show cost comparison across all models
+    
+  --models MODEL1,MODEL2,...
+    Compare multiple models in single run
+    
+  --interactive
+    Interactive model selection UI
+    
   --help, -h
     Show full help message
 ```
@@ -874,23 +895,30 @@ else:
 
 ---
 
-## LLM Performance Measurement
+## Selecting an LLM Model
 
-The benchmarking system now includes LLM code generation performance measurement, allowing you to evaluate how the skill router impacts LLM-generated code quality.
+The benchmarking system now uses REAL LLM API calls (not simulated) with comprehensive model support.
 
-### Quick Start with LLM Benchmarks
+### Quick Start with Real LLM Benchmarks
 
 ```bash
-# Run benchmarks with LLM code generation (requires OpenAI or Anthropic API key)
-export OPENAI_API_KEY="your-key-here"
+# Run benchmarks with REAL LLM API calls
+export OPENAI_API_KEY="sk-..."
 python3 benchmarks/harness/benchmark.py --tier simple --with-llm
 
 # Use different LLM model
-python3 benchmarks/harness/benchmark.py --tier simple --with-llm --llm-model claude-opus
+python3 benchmarks/harness/benchmark.py --tier simple --with-llm --model claude-3-opus
 
-# Run without API key (generates mock results for testing)
-python3 benchmarks/harness/benchmark.py --tier simple --with-llm --llm-model mock
+# Use fast + cheap Groq model
+python3 benchmarks/harness/benchmark.py --tier simple --with-llm --model mixtral-8x7b
+
+# Use local Ollama (free, no API key)
+python3 benchmarks/harness/benchmark.py --tier simple --with-llm --model codellama
 ```
+
+## LLM Performance Measurement
+
+The benchmarking system now uses REAL LLM API calls to measure LLM code generation performance, allowing you to evaluate how the skill router impacts code quality.
 
 ### LLM Code Quality Metrics
 
