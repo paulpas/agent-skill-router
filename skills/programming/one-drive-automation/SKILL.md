@@ -1,5 +1,5 @@
 ---
-name: drive-automation
+name: automation
 description: '"Provides Automate OneDrive file management, search, uploads, downloads,
   sharing, permissions, and folder operations via Rube MCP (Composio). Always search
   tool"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: one drive automation, productivity, how do i automate
 ---
+
 
 
 # One Drive Automation

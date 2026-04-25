@@ -1,5 +1,5 @@
 ---
-name: monitor-opentelemetry-ts
+name: opentelemetry-ts
 description: '"Provides Auto-instrument Node.js applications with distributed tracing,
   metrics, and logs"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure monitor opentelemetry ts, cloud, implementation guide
 ---
+
 
 
 # Azure Monitor Opentelemetry Ts

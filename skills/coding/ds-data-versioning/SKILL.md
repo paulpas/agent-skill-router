@@ -1,5 +1,5 @@
 ---
-name: ds-data-versioning
+name: data-versioning
 description: '"Implements data versioning, lineage tracking, provenance management,
   and reproducible data pipelines for experiment tracking and governance"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     how do i track data
   related-skills: ds-data-collection, ds-data-ingestion, ds-data-privacy, ds-reproducible-research
 ---
+
 
 
 # Data Versioning

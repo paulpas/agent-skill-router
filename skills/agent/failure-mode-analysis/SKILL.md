@@ -1,5 +1,5 @@
 ---
-name: failure-mode-analysis
+name: mode-analysis
 description: '"Performs failure mode analysis by identifying potential failure points"
   in agent systems, assessing failure impact, and generating mitigation strategies.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     risk
   related-skills: add-new-skill, autoscaling-advisor, ci-cd-pipeline-analyzer, confidence-based-selector
 ---
+
 
 
 

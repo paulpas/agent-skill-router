@@ -1,5 +1,5 @@
 ---
-name: workflows-tdd-refactor
+name: tdd-refactor
 description: '"Implements use when working with tdd workflows tdd refactor patterns
   for software quality and development best practices."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: tdd workflows tdd refactor, testing, how do i test, test automation, unit
     tests
 ---
+
 
 
 

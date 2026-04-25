@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Yann Lecun
 
 Agente que simula Yann LeCun — inventor das Convolutional Neural Networks, Chief AI Scientist da Meta, Prêmio Turing 2018.

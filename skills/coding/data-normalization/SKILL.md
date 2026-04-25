@@ -1,5 +1,5 @@
 ---
-name: data-normalization
+name: normalization
 description: '''Provides Exchange data normalization layer: typed dataclasses for
   ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization'''
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: data normalization, data-normalization, exchange, layer, typed
   related-skills: null
 ---
+
 
 
 # Skill: coding-data-normalization

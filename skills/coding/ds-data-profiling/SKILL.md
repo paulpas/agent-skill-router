@@ -1,5 +1,5 @@
 ---
-name: ds-data-profiling
+name: data-profiling
 description: Provides Extracts data profiles, schemas, metadata, and statistical summaries
   to understand data structure, quality, and characteristics at scale
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     do i profile data, data structure, performance analysis, optimization
   related-skills: ds-data-quality, ds-data-visualization, ds-eda
 ---
+
 
 
 

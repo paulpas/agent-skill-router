@@ -1,5 +1,5 @@
 ---
-name: infra-drift-detector
+name: drift-detector
 description: '"Detects and reports infrastructure drift between desired state and
   actual" cloud infrastructure configuration.'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: code-correctness-verifier, error-trace-explainer, goal-to-milestones,
     hot-path-detector
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: ai-reinforcement-learning
+name: reinforcement-learning
 description: '"Provides Reinforcement Learning for automated trading agents and policy
   optimization"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     trading
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Design and implement RL agents that learn optimal trading strategies through interaction with market environments

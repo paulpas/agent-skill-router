@@ -1,5 +1,5 @@
 ---
-name: eventhub-rust
+name: rust
 description: Provides Azure Event Hubs SDK for Rust. Use for sending and receiving
   events, streaming data ingestion
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: azure eventhub rust, cloud, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

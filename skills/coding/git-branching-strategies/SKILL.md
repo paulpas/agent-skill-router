@@ -1,5 +1,5 @@
 ---
-name: git-branching-strategies
+name: branching-strategies
 description: '"Git branching models including Git Flow, GitHub Flow, Trunk-Based Development"
   and feature flag strategies for CI/CD pipelines'
 license: MIT
@@ -16,6 +16,7 @@ metadata:
   source: https://github.com/farmage/opencode-skills
   related-skills: git-advanced, semver-automation
 ---
+
 
 
 

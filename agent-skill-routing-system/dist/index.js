@@ -351,8 +351,28 @@ Use --help for configuration options.
             disableTools: this.config.disableTools,
             defaultTimeoutMs: this.config.defaultTimeoutMs,
         });
+        // Load compression configuration for scaling to 1,778 skills
+        const compressionCacheSizeMB = parseInt(process.env.COMPRESSION_CACHE_SIZE_MB || '1024', 10);
+        const compressionWarmupSkills = parseInt(process.env.COMPRESSION_WARMUP_SKILLS || '100', 10);
+        const compressionBatchSize = parseInt(process.env.COMPRESSION_BATCH_SIZE || '10', 10);
+        const compressionAdaptiveTTL = process.env.COMPRESSION_ADAPTIVE_TTL !== 'false';
+        this.logger.info('[COMPRESSION] Configuration loaded', {
+            cacheSizeMB: compressionCacheSizeMB,
+            warmupSkills: compressionWarmupSkills,
+            batchSize: compressionBatchSize,
+            adaptiveTTL: compressionAdaptiveTTL,
+        });
         // Initialize Router with all skill directories (used for local-scan fallback)
-        this.router = new Router_js_1.Router({ ...this.config, skillsDirectory: skillsDirs });
+        this.router = new Router_js_1.Router({
+            ...this.config,
+            skillsDirectory: skillsDirs,
+            compression: {
+                maxCacheSizeBytes: compressionCacheSizeMB * 1024 * 1024,
+                warmupSkillsCount: compressionWarmupSkills,
+                compressionBatchSize,
+                adaptiveTTL: compressionAdaptiveTTL,
+            },
+        });
         if (githubEnabled) {
             // Primary path: fetch lightweight index from GitHub (no git clone needed)
             const githubRawBase = process.env.GITHUB_RAW_BASE_URL ||
@@ -423,10 +443,26 @@ Use --help for configuration options.
                 await this.router.reloadSkills();
             });
         }
+        // Trigger startup warmup for top skills (non-blocking)
+        const warmupSkillsCount = parseInt(process.env.COMPRESSION_WARMUP_SKILLS || '100', 10);
+        const warmupTimeoutMs = parseInt(process.env.COMPRESSION_WARMUP_TIMEOUT_MS || '30000', 10);
+        if (warmupSkillsCount > 0) {
+            this.logger.info('[COMPRESSION-WARMUP] triggering on startup', { skillCount: warmupSkillsCount });
+            // Start warmup with timeout but don't block readiness
+            Promise.race([
+                this.router.getRegistry().warmupCompressionCache(warmupSkillsCount),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('Warmup timeout')), warmupTimeoutMs)),
+            ]).catch((err) => {
+                this.logger.warn('[COMPRESSION-WARMUP] startup warmup failed or timed out', {
+                    error: err instanceof Error ? err.message : String(err),
+                });
+            });
+        }
         this.ready = true;
         this.logger.info('Background initialization complete', {
             skillCount: this.router.getStats().totalSkills,
             githubSync: !!this.githubLoader,
+            warmupScheduled: warmupSkillsCount > 0,
         });
     }
     /**

@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Prometheus Configuration
 
 Complete guide to Prometheus setup, metric collection, scrape configuration, and recording rules.

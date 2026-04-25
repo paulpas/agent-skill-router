@@ -1,5 +1,5 @@
 ---
-name: project-parser
+name: parser
 description: '"Provides Searches and explores Burp Suite project files (.burp) from
   the command line. Use when searching response headers or bodies with regex patterns,
   extra"'
@@ -14,6 +14,7 @@ metadata:
   triggers: burpsuite project parser, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

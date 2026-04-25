@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Legacy Modernizer
 
 Refactor legacy codebases, migrate outdated frameworks, and implement gradual modernization. Handles technical debt, dependency updates, and backward compatibility.

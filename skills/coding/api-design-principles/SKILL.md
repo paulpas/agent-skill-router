@@ -1,5 +1,5 @@
 ---
-name: design-principles
+name: principles
 description: '"Provides Master REST and GraphQL API design principles to build intuitive,
   scalable, and maintainable APIs that delight developers and stand the test of time"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: api design principles, backend, how do i test
 ---
+
 
 
 # Api Design Principles

@@ -1,5 +1,5 @@
 ---
-name: application-dev-ai-assistant
+name: dev-ai-assistant
 description: Provides You are an AI assistant development expert specializing in creating
   intelligent conversational interfaces, chatbots, and AI-powered applications. Desi
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: llm application dev ai assistant, ai, ml, implementation guide, machine
     learning, scikit-learn
 ---
+
 
 
 

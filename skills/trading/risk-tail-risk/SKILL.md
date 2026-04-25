@@ -1,5 +1,5 @@
 ---
-name: risk-tail-risk
+name: tail-risk
 description: '"Implements tail risk management and extreme event protection for risk
   management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: event, extreme, management, risk tail risk, risk-tail-risk
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api
 ---
+
 
 
 **Role:** Identify and protect against tail risk events

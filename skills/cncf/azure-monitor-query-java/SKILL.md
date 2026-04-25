@@ -1,5 +1,5 @@
 ---
-name: monitor-query-java
+name: query-java
 description: '"Provides Azure Monitor Query SDK for Java. Execute Kusto queries against
   Log Analytics workspaces and query metrics from Azure resources"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure monitor query java, cloud, implementation guide
 ---
+
 
 
 # Azure Monitor Query Java

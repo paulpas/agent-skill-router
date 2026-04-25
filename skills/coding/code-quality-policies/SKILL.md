@@ -1,5 +1,5 @@
 ---
-name: code-quality-policies
+name: quality-policies
 description: '"Provides Establishing policies for maintaining a clean codebase including
   code standards, linting, formatting, testing requirements, cyclomatic complexity
   limi"'
@@ -15,6 +15,7 @@ metadata:
     cyclomatic complexity, code standards, automated enforcement
   related-skills: git-advanced, architectural-patterns
 ---
+
 
 
 # Code Quality Policies

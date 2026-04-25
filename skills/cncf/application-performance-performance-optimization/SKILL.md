@@ -1,5 +1,5 @@
 ---
-name: performance-performance-optimization
+name: performance-optimization
 description: Provides Optimize end-to-end application performance with profiling,
   observability, and backend/frontend tuning. Use when coordinating performance optimization
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: application performance performance optimization, reliability, implementation
     guide, linkerd, optimization, observability, performance, service mesh
 ---
+
 
 
 

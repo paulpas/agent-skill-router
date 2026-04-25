@@ -1,5 +1,5 @@
 ---
-name: emotion-engineer
+name: engineer
 description: '"Provides one sentence - what this skill does and when to invoke it
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: visual emotion engineer, uncategorized, implementation guide
 ---
+
 
 
 # Visual Emotion Engineer

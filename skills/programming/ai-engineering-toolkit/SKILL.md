@@ -1,5 +1,5 @@
 ---
-name: engineering-toolkit
+name: toolkit
 description: '''Provides 6 production-ready AI engineering workflows: prompt evaluation
   (8-dimension scoring), context budget planning, RAG pipeline design, agent security
   aud'''
@@ -14,6 +14,7 @@ metadata:
   triggers: ai engineering toolkit, data, ai, how do i secure, machine learning, ml,
     scikit-learn
 ---
+
 
 
 

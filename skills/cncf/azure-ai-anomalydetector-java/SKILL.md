@@ -1,5 +1,5 @@
 ---
-name: ai-anomalydetector-java
+name: anomalydetector-java
 description: '"Provides Build anomaly detection applications with Azure AI Anomaly
   Detector SDK for Java. Use when implementing univariate/multivariate anomaly detection,
   tim"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure ai anomalydetector java, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Anomalydetector Java

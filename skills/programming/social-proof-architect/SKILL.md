@@ -1,5 +1,5 @@
 ---
-name: proof-architect
+name: architect
 description: '"Provides one sentence - what this skill does and when to invoke it
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: social proof architect, uncategorized, implementation guide
 ---
+
 
 
 # Social Proof Architect

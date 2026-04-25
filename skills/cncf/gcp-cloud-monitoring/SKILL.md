@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-monitoring
+name: cloud-monitoring
 description: '"Monitors GCP resources with metrics, logging, and alerting for operational
   visibility"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     cloudwatch, grafana
   related-skills: gcp-autoscaling, gcp-cloud-cdn, gcp-cloud-dns, gcp-cloud-functions
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: native-cli
+name: cli
 description: Provides Design spec with 98 rules for building CLI tools that AI agents
   can safely use. Covers structured JSON output, error handling, input contracts,
   safety
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: ai native cli, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

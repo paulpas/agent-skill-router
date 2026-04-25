@@ -1,5 +1,5 @@
 ---
-name: storage-file-share-py
+name: file-share-py
 description: '"Provides Azure Storage File Share SDK for Python. Use for SMB file
   shares, directories, and file operations in the cloud"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure storage file share py, cloud, implementation guide
 ---
+
 
 
 # Azure Storage File Share Py

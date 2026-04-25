@@ -1,5 +1,5 @@
 ---
-name: workflow-patterns
+name: patterns
 description: Implements proven architectural patterns for building n8n workflows for
   orchestration and agent coordination in autonomous systems.
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: n8n workflow patterns, automation, how do i automate, jenkins, ci/cd pipeline,
     continuous integration
 ---
+
 
 
 

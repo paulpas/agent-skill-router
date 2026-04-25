@@ -1,5 +1,5 @@
 ---
-name: ds-reproducible-research
+name: reproducible-research
 description: '"Implements reproducible research practices including code organization,
   environment management, documentation, and experiment tracking"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     notebooks, how do I reproduce
   related-skills: ds-data-versioning, ds-explainability, ds-model-robustness, ds-privacy-ml
 ---
+
 
 
 # Reproducible Research

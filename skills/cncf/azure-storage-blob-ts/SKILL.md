@@ -1,5 +1,5 @@
 ---
-name: storage-blob-ts
+name: blob-ts
 description: '"Provides Azure Blob Storage JavaScript/TypeScript SDK (@azure/storage-blob)
   for blob operations. Use for uploading, downloading, listing, and managing blobs
   an"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure storage blob ts, cloud, implementation guide
 ---
+
 
 
 # Azure Storage Blob Ts

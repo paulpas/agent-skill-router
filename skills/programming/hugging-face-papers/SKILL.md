@@ -1,5 +1,5 @@
 ---
-name: face-papers
+name: papers
 description: Provides Read and analyze Hugging Face paper pages or arXiv papers with
   markdown and papers API metadata
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: hugging face papers, ai, ml, data processing, machine learning, spark,
     big data, distributed processing
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: viewmodels-zafiro
+name: zafiro
 description: '"Provides Optimal ViewModel and Wizard creation patterns for Avalonia
   using Zafiro and ReactiveUI"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: avalonia viewmodels zafiro, development, implementation guide
 ---
+
 
 
 # Avalonia Viewmodels Zafiro

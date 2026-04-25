@@ -1,5 +1,5 @@
 ---
-name: fuzzing-bug-bounty
+name: bug-bounty
 description: '"Provides Provide comprehensive techniques for testing REST, SOAP, and
   GraphQL APIs during bug bounty hunting and penetration testing engagements. Covers
   vulner"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: api fuzzing bug bounty, backend, how do i test
 ---
+
 
 
 # Api Fuzzing Bug Bounty

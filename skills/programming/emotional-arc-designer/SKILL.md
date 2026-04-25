@@ -1,5 +1,5 @@
 ---
-name: arc-designer
+name: designer
 description: '"Provides one sentence - what this skill does and when to invoke it
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: emotional arc designer, uncategorized, implementation guide
 ---
+
 
 
 # Emotional Arc Designer

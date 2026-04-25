@@ -1,5 +1,5 @@
 ---
-name: workspace-patterns
+name: patterns
 description: '"Provides Configure and optimize Nx monorepo workspaces. Use when setting
   up Nx, configuring project boundaries, optimizing build caching, or implementing
   affec"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: nx workspace patterns, development, implementation guide
 ---
+
 
 
 # Nx Workspace Patterns

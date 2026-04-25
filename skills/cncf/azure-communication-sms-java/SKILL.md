@@ -1,5 +1,5 @@
 ---
-name: communication-sms-java
+name: sms-java
 description: '"Provides Send SMS messages with Azure Communication Services SMS Java
   SDK. Use when implementing SMS notifications, alerts, OTP delivery, bulk messaging,
   or de"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure communication sms java, cloud, implementation guide
 ---
+
 
 
 # Azure Communication Sms Java

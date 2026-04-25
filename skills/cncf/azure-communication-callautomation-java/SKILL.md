@@ -1,5 +1,5 @@
 ---
-name: communication-callautomation-java
+name: callautomation-java
 description: '"Provides Build server-side call automation workflows including IVR
   systems, call routing, recording, and AI-powered interactions"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure communication callautomation java, cloud, how do i automate
 ---
+
 
 
 # Azure Communication Callautomation Java

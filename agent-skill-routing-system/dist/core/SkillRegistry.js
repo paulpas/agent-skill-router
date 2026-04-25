@@ -33,22 +33,30 @@ class SkillRegistry {
     compressionCache = new Map();
     maxCacheSizeBytes;
     currentCacheSizeBytes = 0;
-    ONE_HOUR_MS = 60 * 60 * 1000;
     // Phase 3-5: LLM-based compression system
     llmCompressor = null;
     diskCache = null;
     memoryCache = null;
     deduplicator = null;
     accessCounter = new Map();
+    // Scaling for 1,778 skills: priority queue and adaptive TTL
+    accessPriority = new Map(); // access score for hotness ranking
+    topAccessedSkills = new Set(); // top 100 frequently accessed skills
+    HOT_SKILLS_COUNT = 100;
+    HOT_SKILL_TTL_MS = 30 * 60 * 1000; // 30 minutes for hot skills
+    COLD_SKILL_TTL_MS = 60 * 60 * 1000; // 1 hour for cold skills
     constructor(config) {
         this.config = {
             cacheDirectory: './.skill-cache',
             generateEmbeddings: true,
             compressionLevel: 0,
-            maxCacheSizeBytes: 100 * 1024 * 1024, // 100MB
+            maxCacheSizeBytes: 1024 * 1024 * 1024, // 1GB for 1,778 skills
+            warmupSkillsCount: 100,
+            adaptiveTTL: true,
+            compressionBatchSize: 10,
             ...config,
         };
-        this.maxCacheSizeBytes = this.config.maxCacheSizeBytes || 100 * 1024 * 1024;
+        this.maxCacheSizeBytes = this.config.maxCacheSizeBytes || (1024 * 1024 * 1024);
         this.compressor = new SkillCompressor_js_1.SkillCompressor();
         this.logger = new Logger_js_1.Logger('SkillRegistry');
         // Initialize metrics with max cache size
@@ -176,13 +184,14 @@ class SkillRegistry {
     }
     /**
      * Get skill content from compression cache if valid (not expired)
+     * Implements adaptive TTL: hot skills 30min, cold skills 1 hour
      */
     getFromCompressionCache(name, level) {
         const metrics = CompressionMetrics_js_1.CompressionMetrics.getInstance();
         const key = `${name}@L${level}`;
         const entry = this.compressionCache.get(key);
+        // Guard: early return on cache miss
         if (!entry) {
-            // Log cache miss
             metrics.logCompressionEvent({
                 timestamp: new Date().toISOString(),
                 event: 'cache_miss',
@@ -191,13 +200,21 @@ class SkillRegistry {
             });
             return null;
         }
-        // Check if entry is expired (1 hour from last access)
+        // Determine TTL based on skill hotness
+        const isHotSkill = this.config.adaptiveTTL && this.topAccessedSkills.has(name);
+        const ttl = isHotSkill ? this.HOT_SKILL_TTL_MS : this.COLD_SKILL_TTL_MS;
+        // Check if entry is expired
         const now = Date.now();
-        if (now - entry.timestamp > this.ONE_HOUR_MS) {
-            this.logger.info('[COMPRESSION-CACHE] entry expired', { name, level, ageMs: now - entry.timestamp });
+        if (now - entry.timestamp > ttl) {
+            this.logger.info('[COMPRESSION-CACHE] entry expired', {
+                name,
+                level,
+                ageMs: now - entry.timestamp,
+                isHotSkill,
+                ttlMs: ttl,
+            });
             this.compressionCache.delete(key);
             this.currentCacheSizeBytes -= entry.sizeBytes;
-            // Log TTL expiration
             metrics.logCompressionEvent({
                 timestamp: new Date().toISOString(),
                 event: 'cache_miss',
@@ -207,9 +224,10 @@ class SkillRegistry {
             });
             return null;
         }
-        // Update TTL (reset timestamp on each access)
+        // Update access tracking and reset timestamp
         entry.timestamp = now;
         entry.accessCount++;
+        this.updateAccessPriority(name);
         // Log cache hit
         metrics.logCompressionEvent({
             timestamp: new Date().toISOString(),
@@ -303,14 +321,24 @@ class SkillRegistry {
         }
     }
     /**
-     * Evict the least recently accessed entry from the compression cache
+     * Evict the least recently accessed entry from the compression cache.
+     * Prefers evicting cold skills over hot skills to maintain hit rate.
+     * Early Exit: guard on empty cache
      */
     evictLRUEntry() {
         const metrics = CompressionMetrics_js_1.CompressionMetrics.getInstance();
+        if (this.compressionCache.size === 0) {
+            return; // Guard: nothing to evict
+        }
         let lruKey = null;
         let lruAccessCount = Infinity;
         let lruTimestamp = Infinity;
+        // First pass: find coldest cold skill to evict (not in topAccessedSkills)
         for (const [key, entry] of this.compressionCache.entries()) {
+            const skillName = key.split('@')[0];
+            if (this.topAccessedSkills.has(skillName)) {
+                continue; // Skip hot skills — protect them from eviction
+            }
             // LRU: lowest access count, then oldest timestamp
             if (entry.accessCount < lruAccessCount || (entry.accessCount === lruAccessCount && entry.timestamp < lruTimestamp)) {
                 lruKey = key;
@@ -318,24 +346,37 @@ class SkillRegistry {
                 lruTimestamp = entry.timestamp;
             }
         }
-        if (lruKey) {
-            const entry = this.compressionCache.get(lruKey);
-            if (entry) {
-                this.currentCacheSizeBytes -= entry.sizeBytes;
-                this.compressionCache.delete(lruKey);
-                // Log eviction event
-                metrics.logCompressionEvent({
-                    timestamp: new Date().toISOString(),
-                    event: 'cache_eviction',
-                    skillName: lruKey.split('@')[0], // Extract skill name from key
-                    cacheSize: this.currentCacheSizeBytes,
-                });
-                this.logger.info('[COMPRESSION-CACHE] LRU eviction', {
-                    key: lruKey,
-                    freedBytes: entry.sizeBytes,
-                    cacheSize: (this.currentCacheSizeBytes / 1024 / 1024).toFixed(1),
-                });
+        // Fallback: if all remaining entries are hot skills, evict the oldest hot skill
+        if (!lruKey) {
+            for (const [key, entry] of this.compressionCache.entries()) {
+                if (entry.accessCount < lruAccessCount || (entry.accessCount === lruAccessCount && entry.timestamp < lruTimestamp)) {
+                    lruKey = key;
+                    lruAccessCount = entry.accessCount;
+                    lruTimestamp = entry.timestamp;
+                }
             }
+        }
+        if (!lruKey) {
+            return; // Guard: should not happen
+        }
+        const entry = this.compressionCache.get(lruKey);
+        if (entry) {
+            const skillName = lruKey.split('@')[0];
+            this.currentCacheSizeBytes -= entry.sizeBytes;
+            this.compressionCache.delete(lruKey);
+            metrics.logCompressionEvent({
+                timestamp: new Date().toISOString(),
+                event: 'cache_eviction',
+                skillName,
+                cacheSize: this.currentCacheSizeBytes,
+            });
+            this.logger.info('[COMPRESSION-CACHE] LRU eviction', {
+                key: lruKey,
+                skillName,
+                isHotSkill: this.topAccessedSkills.has(skillName),
+                freedBytes: entry.sizeBytes,
+                cacheSize: (this.currentCacheSizeBytes / 1024 / 1024).toFixed(1),
+            });
         }
     }
     /** Write skill content to the on-disk content cache (non-fatal on error). */
@@ -371,6 +412,102 @@ class SkillRegistry {
         catch {
             // Cache directory doesn't exist yet — first boot
         }
+    }
+    /**
+     * Update access priority for a skill to track hotness.
+     * Used by getFromCompressionCache to build top-N list.
+     */
+    updateAccessPriority(skillName) {
+        const current = this.accessPriority.get(skillName) || 0;
+        const newScore = current + 1;
+        this.accessPriority.set(skillName, newScore);
+        // Update top accessed skills if this skill qualifies
+        if (newScore > 0 && this.topAccessedSkills.size < this.HOT_SKILLS_COUNT) {
+            this.topAccessedSkills.add(skillName);
+        }
+        else if (this.topAccessedSkills.size >= this.HOT_SKILLS_COUNT) {
+            // Find the lowest-scoring skill in top-N
+            let minSkill = null;
+            let minScore = Infinity;
+            for (const skill of this.topAccessedSkills) {
+                const score = this.accessPriority.get(skill) || 0;
+                if (score < minScore) {
+                    minScore = score;
+                    minSkill = skill;
+                }
+            }
+            // If this skill scores higher, replace the minimum
+            if (minSkill && newScore > minScore) {
+                this.topAccessedSkills.delete(minSkill);
+                this.topAccessedSkills.add(skillName);
+            }
+        }
+    }
+    /**
+     * Warm up compression cache by pre-compressing top N frequently accessed skills.
+     * Non-blocking: logs progress but doesn't throw on errors.
+     * Useful for startup: ensures hot skills are ready in memory.
+     */
+    async warmupCompressionCache(topN = 100) {
+        const warmupCount = Math.min(topN, this.config.warmupSkillsCount ?? 100);
+        if (warmupCount === 0) {
+            this.logger.info('[COMPRESSION-WARMUP] disabled (warmupSkillsCount=0)');
+            return;
+        }
+        this.logger.info('[COMPRESSION-WARMUP] starting', { topN: warmupCount });
+        const t0 = Date.now();
+        let successCount = 0;
+        let skippedCount = 0;
+        // Collect skills to warm (try to get frequently accessed ones first)
+        const skillsToWarm = [];
+        // First priority: skills already in topAccessedSkills
+        for (const skill of this.topAccessedSkills) {
+            if (skillsToWarm.length >= warmupCount)
+                break;
+            skillsToWarm.push(skill);
+        }
+        // Second priority: random sample from all skills
+        if (skillsToWarm.length < warmupCount) {
+            const allSkills = Array.from(this.skills.keys());
+            const shuffled = allSkills.sort(() => Math.random() - 0.5);
+            for (const skill of shuffled) {
+                if (skillsToWarm.length >= warmupCount)
+                    break;
+                if (!this.topAccessedSkills.has(skill)) {
+                    skillsToWarm.push(skill);
+                }
+            }
+        }
+        // Compress skills in batches (non-blocking with delays)
+        const batchSize = this.config.compressionBatchSize ?? 10;
+        for (let i = 0; i < skillsToWarm.length; i += batchSize) {
+            const batch = skillsToWarm.slice(i, i + batchSize);
+            // Process batch in parallel
+            const batchPromises = batch.map((skillName) => this.getSkillContent(skillName, this.config.compressionLevel ?? 0)
+                .then(() => {
+                successCount++;
+            })
+                .catch((err) => {
+                skippedCount++;
+                this.logger.debug('[COMPRESSION-WARMUP] failed for skill', {
+                    skillName,
+                    error: err instanceof Error ? err.message : String(err),
+                });
+            }));
+            await Promise.all(batchPromises);
+            // Small delay between batches to avoid overwhelming the system
+            if (i + batchSize < skillsToWarm.length) {
+                await new Promise((resolve) => setTimeout(resolve, 100));
+            }
+        }
+        const durationMs = Date.now() - t0;
+        this.logger.info('[COMPRESSION-WARMUP] complete', {
+            totalRequested: warmupCount,
+            successCount,
+            skippedCount,
+            durationMs,
+            avgTimePerSkillMs: (durationMs / successCount).toFixed(1),
+        });
     }
     /**
      * Load all skills from one or more skill directories.

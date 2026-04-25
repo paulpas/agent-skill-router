@@ -1,5 +1,5 @@
 ---
-name: traffic-management
+name: management
 description: Provides Comprehensive guide to Istio traffic management for production
   service mesh deployments
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: istio traffic management, cloud, how do i deploy, service mesh, istio,
     kubernetes service
 ---
+
 
 
 

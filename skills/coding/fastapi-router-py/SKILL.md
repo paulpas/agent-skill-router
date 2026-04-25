@@ -1,5 +1,5 @@
 ---
-name: router-py
+name: py
 description: '"Provides Create FastAPI routers following established patterns with
   proper authentication, response models, and HTTP status codes"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: fastapi router py, backend, implementation guide
 ---
+
 
 
 # Fastapi Router Py

@@ -1,5 +1,5 @@
 ---
-name: process-incident-response
+name: incident-response
 description: '"Creates or updates an incident response plan covering detection, triage"
   communication, and post-incident review for CNCF projects'
 license: MIT
@@ -18,6 +18,7 @@ metadata:
     updates
   related-skills: null
 ---
+
 
 
 

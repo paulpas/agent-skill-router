@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Todoist Automation
 
 Automate Todoist task management, projects, sections, filtering, and bulk operations via Rube MCP (Composio). Always search tools first for current schemas.

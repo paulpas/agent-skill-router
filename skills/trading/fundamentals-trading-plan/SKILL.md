@@ -1,5 +1,5 @@
 ---
-name: fundamentals-trading-plan
+name: trading-plan
 description: '"Implements trading plan structure and risk management framework for
   risk management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     management, structure
   related-skills: fundamentals-trading-edge, risk-correlation-risk
 ---
+
 
 
 **Role:** Trading Strategy Developer — builds comprehensive trading plans that define rules, risk parameters, and execution guidelines for systematic trading operations.

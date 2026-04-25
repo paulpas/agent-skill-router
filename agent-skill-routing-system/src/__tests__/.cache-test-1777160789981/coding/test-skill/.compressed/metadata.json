@@ -1,0 +1,31 @@
+{
+  "skillName": "test-skill",
+  "domain": "coding",
+  "versions": {
+    "brief": {
+      "created": "2026-04-17T23:46:29.981Z",
+      "lastAccessed": "2026-04-17T23:46:29.981Z",
+      "accessCount": 0,
+      "tokens": 50,
+      "compressionRatio": 0.1,
+      "status": "fresh"
+    },
+    "moderate": {
+      "created": "2026-04-25T23:46:29.981Z",
+      "lastAccessed": "2026-04-25T23:46:29.981Z",
+      "accessCount": 0,
+      "tokens": 100,
+      "compressionRatio": 0.25,
+      "status": "fresh"
+    },
+    "detailed": {
+      "created": "2026-04-25T23:46:29.981Z",
+      "lastAccessed": "2026-04-25T23:46:29.981Z",
+      "accessCount": 0,
+      "tokens": 200,
+      "compressionRatio": 0.5,
+      "status": "fresh"
+    }
+  },
+  "lastCleanup": "2026-04-25T23:46:34.986Z"
+}

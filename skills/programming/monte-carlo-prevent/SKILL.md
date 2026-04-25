@@ -1,5 +1,5 @@
 ---
-name: carlo-prevent
+name: prevent
 description: Provides Surfaces Monte Carlo data observability context (table health,
   alerts, lineage, blast radius) before SQL/dbt edits
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: monte carlo prevent, data, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

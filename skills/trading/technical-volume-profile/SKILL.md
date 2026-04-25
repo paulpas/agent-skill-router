@@ -1,5 +1,5 @@
 ---
-name: technical-volume-profile
+name: volume-profile
 description: '"Provides Volume analysis techniques for understanding market structure"'
 license: MIT
 compatibility: opencode
@@ -13,6 +13,7 @@ metadata:
     understanding
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Interpret volume distribution to identify accumulation, distribution, and liquidity zones

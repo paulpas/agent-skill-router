@@ -1,5 +1,5 @@
 ---
-name: qweb-templates
+name: templates
 description: '"Provides Expert in Odoo QWeb templating for PDF reports, email templates,
   and website pages. Covers t-if, t-foreach, t-field, and report actions"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo qweb templates, business, implementation guide
 ---
+
 
 
 # Odoo Qweb Templates

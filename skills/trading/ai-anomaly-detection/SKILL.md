@@ -1,5 +1,5 @@
 ---
-name: ai-anomaly-detection
+name: anomaly-detection
 description: '"Provides Detect anomalous market behavior, outliers, and potential
   market manipulation"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai anomaly detection, ai-anomaly-detection, anomalous, detect, market
   related-skills: ai-explainable-ai, ai-feature-engineering, ai-time-series-forecasting
 ---
+
 
 
 **Role:** Build detection systems that identify unusual price movements, volume spikes, and structural breaks

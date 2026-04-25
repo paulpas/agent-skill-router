@@ -1,5 +1,5 @@
 ---
-name: design-expert
+name: expert
 description: '"Provides Core UI/UX engineering skill for building highly interactive,
   spatial, weightless, and glassmorphism-based web interfaces using GSAP and 3D CSS"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: antigravity design expert, design, implementation guide
 ---
+
 
 
 # Antigravity Design Expert

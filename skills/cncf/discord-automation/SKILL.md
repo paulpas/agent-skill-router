@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Discord Automation
 
 Automate Discord tasks via Rube MCP (Composio): messages, channels, roles, webhooks, reactions. Always search tools first for current schemas.

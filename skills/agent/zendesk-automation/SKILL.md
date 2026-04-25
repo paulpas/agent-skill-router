@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Zendesk Automation
 
 Automate Zendesk tasks via Rube MCP (Composio): tickets, users, organizations, replies. Always search tools first for current schemas.

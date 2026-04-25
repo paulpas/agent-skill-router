@@ -1,5 +1,5 @@
 ---
-name: data-stream-processing
+name: stream-processing
 description: '"Provides Streaming data processing for real-time trading signals and
   analytics"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     trading
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Process streaming data with low latency for real-time trading decisions

@@ -1,5 +1,5 @@
 ---
-name: ds-ensemble-methods
+name: ensemble-methods
 description: '"Provides Combines multiple models using bagging, boosting, stacking,
   voting, and blending for improved predictive performance and robustness"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     learning
   related-skills: ds-model-selection, ds-neural-networks, ds-tree-methods
 ---
+
 
 
 # Ensemble Methods

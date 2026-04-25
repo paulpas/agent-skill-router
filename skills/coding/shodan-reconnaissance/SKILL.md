@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Shodan Reconnaissance
 
 Provide systematic methodologies for leveraging Shodan as a reconnaissance tool during penetration testing engagements.

@@ -1,5 +1,5 @@
 ---
-name: flow-architect
+name: architect
 description: '"Provides Build production-ready ReactFlow applications with hierarchical
   navigation, performance optimization, and advanced state management"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: react flow architect, web, development, implementation guide
 ---
+
 
 
 # React Flow Architect

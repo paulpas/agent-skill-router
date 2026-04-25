@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Sales Enablement
 
 Create sales collateral such as decks, one-pagers, objection docs, demo scripts, playbooks, and proposal templates. Use when a sales team needs assets that help reps move deals forward and close.

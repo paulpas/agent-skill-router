@@ -1,5 +1,5 @@
 ---
-name: ds-explainability
+name: explainability
 description: '"Implements explainability and interpretability techniques for model
   transparency, understanding decisions, and building trust"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-model-fairness, ds-model-interpretation, ds-model-robustness,
     ds-reproducible-research
 ---
+
 
 
 # Explainability

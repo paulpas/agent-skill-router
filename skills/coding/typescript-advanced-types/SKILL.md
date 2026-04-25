@@ -1,5 +1,5 @@
 ---
-name: advanced-types
+name: types
 description: '"Provides Comprehensive guidance for mastering TypeScript''s advanced
   type system including generics, conditional types, mapped types, template literal
   types, an"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: typescript advanced types, code, implementation guide
 ---
+
 
 
 # Typescript Advanced Types

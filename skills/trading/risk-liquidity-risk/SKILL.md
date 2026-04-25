@@ -1,5 +1,5 @@
 ---
-name: risk-liquidity-risk
+name: liquidity-risk
 description: '"Implements liquidity assessment and trade execution risk for risk management
   and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: assessment, execution, risk liquidity risk, risk-liquidity-risk, trade
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api
 ---
+
 
 
 **Role:** Evaluate liquidity conditions before executing trades

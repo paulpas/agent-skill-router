@@ -1,5 +1,5 @@
 ---
-name: forensic-incident-response
+name: incident-response
 description: '"Provides Investigate sudden drops in organic traffic or rankings and
   run a structured forensic SEO incident response with triage, root-cause analysis
   and recov"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo forensic incident response, content, implementation guide
 ---
+
 
 
 # Seo Forensic Incident Response

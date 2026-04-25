@@ -1,5 +1,5 @@
 ---
-name: analysis-patterns
+name: patterns
 description: '"Provides Apply STRIDE methodology to systematically identify threats.
   Use when analyzing system security, conducting threat modeling sessions, or creating
   secu"'
@@ -14,6 +14,7 @@ metadata:
   triggers: stride analysis patterns, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

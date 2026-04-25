@@ -1,5 +1,5 @@
 ---
-name: penetration-testing
+name: testing
 description: Provides Conduct comprehensive SSH security assessments including enumeration,
   credential attacks, vulnerability exploitation, tunneling techniques, and post-e
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ssh penetration testing, security, how do i secure, security auditing,
     unit tests, vulnerability scanning, testing
 ---
+
 
 
 

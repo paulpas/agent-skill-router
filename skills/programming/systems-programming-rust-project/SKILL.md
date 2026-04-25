@@ -1,5 +1,5 @@
 ---
-name: programming-rust-project
+name: rust-project
 description: '"Provides You are a Rust project architecture expert specializing in
   scaffolding production-ready Rust applications. Generate complete project structures
   with c"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: systems programming rust project, development, implementation guide
 ---
+
 
 
 # Systems Programming Rust Project

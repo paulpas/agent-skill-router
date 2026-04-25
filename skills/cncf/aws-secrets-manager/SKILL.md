@@ -1,5 +1,5 @@
 ---
-name: aws-secrets-manager
+name: secrets-manager
 description: '"Manages sensitive data with automatic encryption, rotation, and fine-grained"
   access control for database passwords, API keys, and credentials.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     sensitive data
   related-skills: aws-iam, aws-kms, aws-lambda, aws-ssm
 ---
+
 
 
 

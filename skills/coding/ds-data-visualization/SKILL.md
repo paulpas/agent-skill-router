@@ -1,5 +1,5 @@
 ---
-name: ds-data-visualization
+name: data-visualization
 description: '"Creates effective visualizations including plots, charts, dashboards,
   and interactive visualizations for data insight and storytelling"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     plotly, how do i visualize data
   related-skills: ds-correlation-analysis, ds-data-profiling, ds-eda
 ---
+
 
 
 # Data Visualization

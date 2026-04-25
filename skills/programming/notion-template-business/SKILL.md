@@ -1,5 +1,5 @@
 ---
-name: template-business
+name: business
 description: '"Provides Expert in building and selling Notion templates as a business
   - not just making templates, but building a sustainable digital product business.
   Covers"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: notion template business, business, implementation guide
 ---
+
 
 
 # Notion Template Business

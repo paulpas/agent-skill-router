@@ -1,5 +1,5 @@
 ---
-name: to-code-compliance
+name: code-compliance
 description: '"Provides Verifies code implements exactly what documentation specifies
   for blockchain audits. Use when comparing code against whitepapers, finding gaps
   between"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: spec to code compliance, code, quality, implementation guide
 ---
+
 
 
 # Spec To Code Compliance

@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Lead Magnets
 
 Plan and optimize lead magnets for email capture and lead generation. Use when designing gated content, checklists, templates, downloadable resources, or other offers that convert visitors into subscribers.

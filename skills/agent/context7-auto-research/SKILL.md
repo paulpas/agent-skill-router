@@ -1,5 +1,5 @@
 ---
-name: auto-research
+name: research
 description: '"Provides Automatically fetch latest library/framework documentation
   for Claude Code via Context7 API. Use when you need up-to-date documentation for
   libraries"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: context7 auto research, meta, how do i test
 ---
+
 
 
 # Context7 Auto Research

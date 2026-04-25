@@ -1,5 +1,5 @@
 ---
-name: to-be-done-analyst
+name: be-done-analyst
 description: '"Provides one sentence - what this skill does and when to invoke it
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: jobs to be done analyst, uncategorized, implementation guide
 ---
+
 
 
 # Jobs To Be Done Analyst

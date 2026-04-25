@@ -1,5 +1,5 @@
 ---
-name: escalation-methods
+name: methods
 description: '"Provides Provide comprehensive techniques for escalating privileges
   from a low-privileged user to root/administrator access on compromised Linux and
   Windows sy"'
@@ -14,6 +14,7 @@ metadata:
   triggers: privilege escalation methods, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

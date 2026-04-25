@@ -1,5 +1,5 @@
 ---
-name: behavioral-xray
+name: xray
 description: '"Provides X-ray any AI model''s behavioral patterns — refusal boundaries,  hallucination
   tendencies, reasoning style, formatting defaults. No API key needed"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: bdistill behavioral xray, ai, testing, how do i test, distributed tracing,
     machine learning, test automation, unit tests
 ---
+
 
 
 

@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Go Playwright
 
 Expert capability for robust, stealthy, and efficient browser automation using Playwright Go.

@@ -1,5 +1,5 @@
 ---
-name: ds-model-robustness
+name: model-robustness
 description: Improves model robustness including adversarial robustness, out-of-distribution
   detection, and uncertainty quantification
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     robustness testing, unit tests, testing
   related-skills: ds-anomaly-detection, ds-explainability, ds-model-fairness, ds-reproducible-research
 ---
+
 
 
 

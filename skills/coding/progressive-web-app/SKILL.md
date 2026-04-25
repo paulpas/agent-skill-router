@@ -1,5 +1,5 @@
 ---
-name: web-app
+name: app
 description: '"Provides Build Progressive Web Apps (PWAs) with offline support, installability,
   and caching strategies. Trigger whenever the user mentions PWA, service worker"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: progressive web app, front, end, implementation guide
 ---
+
 
 
 # Progressive Web App

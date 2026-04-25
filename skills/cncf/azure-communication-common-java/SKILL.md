@@ -1,5 +1,5 @@
 ---
-name: communication-common-java
+name: common-java
 description: '"Provides Azure Communication Services common utilities for Java. Use
   when working with CommunicationTokenCredential, user identifiers, token refresh,
   or shared"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure communication common java, cloud, implementation guide
 ---
+
 
 
 # Azure Communication Common Java

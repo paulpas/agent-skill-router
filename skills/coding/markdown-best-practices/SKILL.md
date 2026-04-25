@@ -1,5 +1,5 @@
 ---
-name: markdown-best-practices
+name: best-practices
 description: '"Provides Markdown best practices for OpenCode skills - syntax rules,
   common pitfalls, and coding practices for documentation consistency"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: markdown best practices, markdown-best-practices, opencode, skills, syntax
   related-skills: null
 ---
+
 
 
 # Markdown Best Practices Skill

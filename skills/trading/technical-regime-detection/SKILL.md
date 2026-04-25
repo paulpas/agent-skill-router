@@ -1,5 +1,5 @@
 ---
-name: technical-regime-detection
+name: regime-detection
 description: '"Provides Market Regime Detection Systems for Adaptive Trading Strategies"'
 license: MIT
 compatibility: opencode
@@ -12,6 +12,7 @@ metadata:
   triggers: adaptive, market, systems, technical regime detection, technical-regime-detection
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Market Regime Analyst — implements algorithms to identify and track market regime transitions, enabling adaptive strategy parameters and risk management.

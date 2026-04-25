@@ -1,5 +1,5 @@
 ---
-name: content-writer
+name: writer
 description: '"Provides Writes SEO-optimized content based on provided keywords and
   topic briefs. Creates engaging, comprehensive content following best practices.
   Use PROACT"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo content writer, content, implementation guide
 ---
+
 
 
 # Seo Content Writer

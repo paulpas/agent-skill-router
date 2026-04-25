@@ -1,5 +1,5 @@
 ---
-name: process-releases
+name: releases
 description: '"Creates or updates RELEASES.md documenting the release process, versioning"
   policy, and release cadence for CNCF projects'
 license: MIT
@@ -16,6 +16,7 @@ metadata:
   output-format: manifests
   triggers: creates, documenting, process releases, process-releases, updates
 ---
+
 
   related-skills: cncf-argo, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 

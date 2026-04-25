@@ -1,5 +1,5 @@
 ---
-name: data-validation
+name: validation
 description: '"Provides Data validation and quality assurance for trading data pipelines"'
 license: MIT
 compatibility: opencode
@@ -12,6 +12,7 @@ metadata:
   triggers: assurance, data validation, data-validation, quality, trading
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Ensure trading data meets quality standards before processing to prevent bad decisions

@@ -1,5 +1,5 @@
 ---
-name: hacking-methodology
+name: methodology
 description: '"Provides Master the complete penetration testing lifecycle from reconnaissance
   through reporting. This skill covers the five stages of ethical hacking methodol"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ethical hacking methodology, security, how do i test, security auditing,
     vulnerability scanning
 ---
+
 
 
 

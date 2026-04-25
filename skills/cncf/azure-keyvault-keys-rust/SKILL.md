@@ -1,5 +1,5 @@
 ---
-name: keyvault-keys-rust
+name: keys-rust
 description: '"Provides Azure Key Vault Keys SDK for Rust. Use for creating, managing,
   and using cryptographic keys. Triggers"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure keyvault keys rust, cloud, implementation guide
 ---
+
 
 
 # Azure Keyvault Keys Rust

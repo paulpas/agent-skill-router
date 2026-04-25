@@ -1,5 +1,5 @@
 ---
-name: exchange-rate-limiting
+name: rate-limiting
 description: '"Rate Limiting Strategies and Circuit Breaker Patterns for Exchange
   API" Integration'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: breaker, circuit, exchange rate limiting, exchange-rate-limiting, strategies
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
 ---
+
 
 
 **Role:** Backend System Architect — designs robust API integration patterns that respect exchange rate limits while maximizing throughput and resilience.

@@ -1,5 +1,5 @@
 ---
-name: data-time-series-database
+name: time-series-database
 description: '"Provides Time-series database queries and optimization for financial
   data"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     time-series, performance, speed
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Efficiently query time-series data with support for financial data patterns

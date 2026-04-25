@@ -1,5 +1,5 @@
 ---
-name: expert-skill
+name: skill
 description: '"Provides Write, review, or improve SwiftUI code following best practices
   for state management, view composition, performance, and iOS 26+ Liquid Glass adoption"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: swiftui expert skill, mobile, implementation guide
 ---
+
 
 
 # Swiftui Expert Skill

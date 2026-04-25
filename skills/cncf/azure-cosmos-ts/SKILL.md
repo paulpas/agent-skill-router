@@ -1,5 +1,5 @@
 ---
-name: cosmos-ts
+name: ts
 description: Provides Azure Cosmos DB JavaScript/TypeScript SDK (@azure/cosmos) for
   data plane operations. Use for CRUD operations on documents, queries, bulk operations,
   a
@@ -14,6 +14,7 @@ metadata:
   triggers: azure cosmos ts, cloud, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

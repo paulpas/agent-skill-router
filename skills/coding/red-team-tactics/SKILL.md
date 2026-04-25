@@ -1,5 +1,5 @@
 ---
-name: team-tactics
+name: tactics
 description: '"Provides Red team tactics principles based on MITRE ATT&CK. Attack
   phases, detection evasion, reporting"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: red team tactics, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

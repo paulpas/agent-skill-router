@@ -1,5 +1,5 @@
 ---
-name: with-files
+name: files
 description: '''Implements work like manus: use persistent markdown files as your
   for orchestration and agent coordination in autonomous systems.'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: planning with files, planning, implementation guide
 ---
+
 
 
 # Planning With Files

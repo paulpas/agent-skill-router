@@ -1,5 +1,5 @@
 ---
-name: mgmt-botservice-py
+name: botservice-py
 description: '"Provides Azure Bot Service Management SDK for Python. Use for creating,
   managing, and configuring Azure Bot Service resources"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure mgmt botservice py, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Botservice Py

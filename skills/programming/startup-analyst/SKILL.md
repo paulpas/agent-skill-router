@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Startup Analyst
 
 Expert startup business analyst specializing in market sizing, financial modeling, competitive analysis, and strategic planning for early-stage companies.

@@ -1,5 +1,5 @@
 ---
-name: ds-feature-engineering
+name: feature-engineering
 description: '"Creates and transforms features including polynomial features, interactions,
   domain-specific features, and feature transformations"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-categorical-encoding, ds-feature-scaling-normalization, ds-feature-selection,
     ds-missing-data
 ---
+
 
 
 # Feature Engineering

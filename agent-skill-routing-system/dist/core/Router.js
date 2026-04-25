@@ -24,6 +24,10 @@ class Router {
     constructor(config) {
         this.skillRegistry = new SkillRegistry_js_1.SkillRegistry({
             skillsDirectory: config.skillsDirectory,
+            maxCacheSizeBytes: config.compression?.maxCacheSizeBytes,
+            warmupSkillsCount: config.compression?.warmupSkillsCount,
+            compressionBatchSize: config.compression?.compressionBatchSize,
+            adaptiveTTL: config.compression?.adaptiveTTL,
         });
         this.vectorDatabase = new VectorDatabase_js_1.VectorDatabase();
         this.embeddingService = new EmbeddingService_js_1.EmbeddingService({

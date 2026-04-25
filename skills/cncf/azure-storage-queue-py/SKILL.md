@@ -1,5 +1,5 @@
 ---
-name: storage-queue-py
+name: queue-py
 description: '"Provides Azure Queue Storage SDK for Python. Use for reliable message
   queuing, task distribution, and asynchronous processing"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure storage queue py, cloud, implementation guide
 ---
+
 
 
 # Azure Storage Queue Py

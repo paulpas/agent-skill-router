@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Database Optimizer
 
 Expert database optimizer specializing in modern performance tuning, query optimization, and scalable architectures.

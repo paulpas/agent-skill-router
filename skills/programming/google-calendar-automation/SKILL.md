@@ -1,5 +1,5 @@
 ---
-name: calendar-automation
+name: automation
 description: '"Provides Lightweight Google Calendar integration with standalone OAuth
   authentication. No MCP server required"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: google calendar automation, productivity, implementation guide
 ---
+
 
 
 # Google Calendar Automation

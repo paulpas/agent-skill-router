@@ -1,5 +1,5 @@
 ---
-name: ds-bayesian-inference
+name: bayesian-inference
 description: '"Applies Bayesian methods for prior selection, posterior estimation,
   and probabilistic inference in machine learning models"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-confidence-intervals, ds-hypothesis-testing, ds-maximum-likelihood,
     ds-monte-carlo
 ---
+
 
 
 # Bayesian Inference

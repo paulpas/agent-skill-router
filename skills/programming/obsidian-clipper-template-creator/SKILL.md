@@ -1,5 +1,5 @@
 ---
-name: clipper-template-creator
+name: template-creator
 description: '"Provides Guide for creating templates for the Obsidian Web Clipper.
   Use when you want to create a new clipping template, understand available variables,
   or for"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: obsidian clipper template creator, uncategorized, implementation guide
 ---
+
 
 
 # Obsidian Clipper Template Creator

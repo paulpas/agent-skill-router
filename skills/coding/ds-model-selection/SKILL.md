@@ -1,5 +1,5 @@
 ---
-name: ds-model-selection
+name: model-selection
 description: '"Provides Compares and selects models using AIC, BIC, validation curves,
   learning curves, and model comparison techniques"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
   related-skills: ds-bias-variance-tradeoff, ds-cross-validation, ds-hyperparameter-tuning,
     ds-regression-evaluation
 ---
+
 
 
 # Model Selection

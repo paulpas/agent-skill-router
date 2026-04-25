@@ -1,5 +1,5 @@
 ---
-name: ds-feature-selection
+name: feature-selection
 description: '"Selects relevant features using univariate selection, recursive elimination,
   stability selection, and importance-based methods"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-feature-engineering, ds-feature-interaction, ds-hyperparameter-tuning,
     ds-model-interpretation
 ---
+
 
 
 # Feature Selection

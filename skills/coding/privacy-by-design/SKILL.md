@@ -1,5 +1,5 @@
 ---
-name: by-design
+name: design
 description: '"Provides use when building apps that collect user data. ensures privacy  protections
   are built in from the start—data minimization, consent, encryption"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: privacy by design, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: actor-development
+name: development
 description: '''Provides Important: Before you begin, fill in the generatedBy property
   in the meta section of .actor/actor.json. Replace it with the tool and model you''''re
   curr'''
@@ -14,6 +14,7 @@ metadata:
   triggers: apify actor development, automation, how do i automate, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

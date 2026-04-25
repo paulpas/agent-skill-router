@@ -1,5 +1,5 @@
 ---
-name: aws-dynamodb
+name: dynamodb
 description: '"Deploys managed NoSQL databases with DynamoDB for scalable, low-latency"
   key-value storage, streams, and global tables with high availability and automatic
   replication.'
@@ -15,6 +15,7 @@ metadata:
     key, sort key, auto-scaling
   related-skills: aws-auto-scaling, aws-cloudwatch, aws-kms, aws-lambda
 ---
+
 
 
 

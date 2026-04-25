@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-tasks
+name: cloud-tasks
 description: '"Manages task queues for asynchronous job execution with retry policies"
   and rate limiting.'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: cloud tasks, task queue, task scheduling, asynchronous tasks, job scheduling
   related-skills: gcp-cloud-functions, gcp-cloud-monitoring, gcp-cloud-pubsub
 ---
+
 
 
 

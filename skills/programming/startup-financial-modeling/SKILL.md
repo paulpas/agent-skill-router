@@ -1,5 +1,5 @@
 ---
-name: financial-modeling
+name: modeling
 description: '"Provides Build comprehensive 3-5 year financial models with revenue
   projections, cost structures, cash flow analysis, and scenario planning for early-stage
   sta"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: startup financial modeling, business, implementation guide
 ---
+
 
 
 # Startup Financial Modeling

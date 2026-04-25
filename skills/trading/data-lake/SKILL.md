@@ -1,5 +1,5 @@
 ---
-name: data-lake
+name: lake
 description: '"Provides Data lake architecture and management for trading data storage"'
 license: MIT
 compatibility: opencode
@@ -12,6 +12,7 @@ metadata:
   triggers: architecture, data lake, data-lake, management, trading
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Provide scalable, cost-effective storage for trading data with efficient query capabilities

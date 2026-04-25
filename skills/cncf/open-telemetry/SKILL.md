@@ -1,5 +1,5 @@
 ---
-name: open-telemetry
+name: telemetry
 description: '"OpenTelemetry in Observability - cloud native architecture, patterns"
   pitfalls, and best practices'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     open-telemetry, opentelemetry, cloudformation
   related-skills: calico, cilium, container-network-interface-cni, contour
 ---
+
 
 
 

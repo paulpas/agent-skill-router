@@ -1,5 +1,5 @@
 ---
-name: agent-skills
+name: skills
 description: '"Provides Production-grade test automation skills for 46 frameworks
   across E2E, unit, mobile, BDD, visual, and cloud testing in 15+ languages"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: lambdatest agent skills, testing, how do i test, test automation, unit
     tests
 ---
+
 
 
 

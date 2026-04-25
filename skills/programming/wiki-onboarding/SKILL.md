@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Wiki Onboarding
 
 Generate two complementary onboarding documents that together give any engineer — from newcomer to principal — a complete understanding of a codebase. Use when user asks for onboarding docs or getting-started guides, user runs /deep-wiki, or user wants to help new team members understand a codebase.

@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-functions
+name: cloud-functions
 description: Deploys serverless functions triggered by events with automatic scaling
   and GCP service integration
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     eventbridge, kubernetes deployment, container orchestration
   related-skills: gcp-cloud-monitoring
 ---
+
 
 
 

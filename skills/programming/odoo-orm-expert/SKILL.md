@@ -1,5 +1,5 @@
 ---
-name: orm-expert
+name: expert
 description: '''Provides Master Odoo ORM patterns: search, browse, create, write,
   domain filters, computed fields, and performance-safe query techniques'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo orm expert, business, implementation guide
 ---
+
 
 
 # Odoo Orm Expert

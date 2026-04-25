@@ -1,5 +1,5 @@
 ---
-name: tailwind-setup
+name: setup
 description: '"Provides Set up Tailwind CSS v4 in Expo with react-native-css and NativeWind
   v5 for universal styling"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: expo tailwind setup, mobile, implementation guide
 ---
+
 
 
 # Expo Tailwind Setup

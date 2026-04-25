@@ -1,5 +1,5 @@
 ---
-name: validation-expert
+name: expert
 description: '"Provides Expert in Zod — TypeScript-first schema validation. Covers  parsing,
   custom errors, refinements, type inference, and integration with React  Hook Form"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: zod validation expert, framework, implementation guide
 ---
+
 
 
 # Zod Validation Expert

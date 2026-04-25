@@ -1,5 +1,5 @@
 ---
-name: penetration-testing
+name: testing
 description: Provides Provide comprehensive techniques for penetration testing AWS
   cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata
   endpoi
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: aws penetration testing, cloud, how do i test, unit tests, testing
 ---
+
 
 
 

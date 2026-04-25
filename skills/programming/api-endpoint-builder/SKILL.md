@@ -1,5 +1,5 @@
 ---
-name: endpoint-builder
+name: builder
 description: '"Builds production-ready REST API endpoints with validation, error handling,
   authentication, and documentation. Follows best practices for security and"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: api endpoint builder, development, how do i secure
 ---
+
 
 
 # Api Endpoint Builder

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Simplify Code
 
 Review a diff for clarity and safe simplifications, then optionally apply low-risk fixes.

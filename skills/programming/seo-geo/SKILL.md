@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Seo Geo
 
 Optimize content for AI Overviews, ChatGPT, Perplexity, and other AI search systems. Use when improving GEO, AI citations, llms.txt readiness, crawler accessibility, and passage-level citability.

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Box Automation
 
 Automate Box operations including file upload/download, content search, folder management, collaboration, metadata queries, and sign requests through Composio's Box toolkit.

@@ -1,5 +1,5 @@
 ---
-name: health-analyzer
+name: analyzer
 description: '"Provides 分析旅行健康数据、评 估目的地健康风险、提供疫苗接 种建议、生成多语言紧急医疗信 息卡片。支持WHO/CDC数据集成的专业
   级旅行健康风险评估。"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: travel health analyzer, health, implementation guide
 ---
+
 
 
 # Travel Health Analyzer

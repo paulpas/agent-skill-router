@@ -1,5 +1,5 @@
 ---
-name: best-practices
+name: practices
 description: Provides CloudFormation template optimization, nested stacks, drift detection,
   and production-ready patterns. Use when writing or reviewing CF templates
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: cloudformation best practices, cloud, implementation guide, infrastructure
     as code, cloudformation
 ---
+
 
 
 

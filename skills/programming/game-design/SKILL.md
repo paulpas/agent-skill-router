@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Game Design
 
 Game design principles. GDD structure, balancing, player psychology, progression.

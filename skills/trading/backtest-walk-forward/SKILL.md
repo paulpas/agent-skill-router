@@ -1,5 +1,5 @@
 ---
-name: backtest-walk-forward
+name: walk-forward
 description: '"Implements walk-forward optimization for robust strategy validation
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     performance, speed
   related-skills: backtest-lookahead-bias, fundamentals-trading-plan
 ---
+
 
 
 **Role:** Backtest Validation Engineer — implements walk-forward optimization to validate strategy robustness, prevent overfitting, and ensure out-of-sample performance consistency.

@@ -1,5 +1,5 @@
 ---
-name: store-changelog
+name: changelog
 description: '"Provides Generate user-facing App Store release notes from git history
   since the last tag"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: app store changelog, uncategorized, implementation guide
 ---
+
 
 
 # App Store Changelog

@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Advogado Criminal
 
 Advogado criminalista especializado em Maria da Penha, violencia domestica, feminicidio, direito penal brasileiro, medidas protetivas, inquerito policial e acao penal.

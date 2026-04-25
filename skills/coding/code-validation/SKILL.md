@@ -1,17 +1,21 @@
 ---
-name: code-validation
-description: Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions
+name: validation
+description: Validates pipeline stages and returns config status strings (valid_config/invalid_config)
+  using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config
+  for invalid input types instead of raising exceptions
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: validation, code validation, pipeline validation, config status, input validation, validate pipeline, pipeline stages
+  triggers: validation, code validation, pipeline validation, config status, input
+    validation, validate pipeline, pipeline stages
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: coding-error-handling, m0-foundation
+  related-skills: error-handling, m0-foundation
 ---
+
 
 # Pipeline Stage Validator
 
@@ -80,6 +84,8 @@ def validate_pipeline(stages: list[str]) -> str:
 
 Similar to Pattern 1 but uses list comprehension for filtering invalid stages, then checks if any remain. Demonstrates an alternative style while maintaining guard clause and early return.
 
+**Performance Note:** This pattern always iterates through all stages to build the `invalid` list (even if the first item is invalid), which is less efficient than Pattern 1's early return approach. Use Pattern 1 when performance is critical and you expect early invalid items.
+
 ```python
 def validate_pipeline_comprehension(stages: list[str]) -> str:
     """Validate pipeline stages using list comprehension for filtering.
@@ -129,13 +135,16 @@ def validate_pipeline_case_insensitive(stages: list[str]) -> str:
 Validates pipeline stages with explicit type checking at function entry. This pattern demonstrates the 5 Laws of Elegant Defense with Parse Don't Validate principle. **Note:** Returns "invalid_config" for invalid input rather than raising exceptions, following the "Fail Fast" law with graceful degradation.
 
 ```python
-def validate_pipeline_strict(stages: list[str]) -> str:
+from typing import Any
+
+def validate_pipeline_strict(stages: Any) -> str:
     """Validate pipeline stages with input validation and early exit.
     
     Returns "valid_config" if all stages are valid, "invalid_config" otherwise.
+    Handles any input type gracefully, returning "invalid_config" for non-list or non-string items.
     
     Args:
-        stages: List of pipeline stage names to validate
+        stages: Pipeline stages to validate (any type handled gracefully)
         
     Returns:
         "valid_config" if all stages are in allowed set or list is empty,
@@ -148,14 +157,14 @@ def validate_pipeline_strict(stages: list[str]) -> str:
     if not isinstance(stages, list):
         return "invalid_config"
     
-    # Check each stage: skip non-string items and return invalid_config
-    for i, stage in enumerate(stages):
-        if not isinstance(stage, str):
-            return "invalid_config"
-    
     # Guard clause: empty list is valid (nothing to validate)
     if not stages:
         return "valid_config"
+    
+    # Parse: identify non-string items at boundary
+    for i, stage in enumerate(stages):
+        if not isinstance(stage, str):
+            return "invalid_config"
     
     # Parse: identify invalid stages at boundary
     for stage in stages:
@@ -168,7 +177,7 @@ def validate_pipeline_strict(stages: list[str]) -> str:
 
 ### Pattern 5: None Handling with Explicit Guard Clauses
 
-Demonstrates how to handle None input explicitly with clear guard clauses. This pattern shows how to gracefully handle common edge cases without raising exceptions.
+Demonstrates how to handle None input explicitly with clear guard clauses. This pattern shows how to gracefully handle common edge cases without raising exceptions. **Note:** Type checking is split into a separate condition to avoid TypeError when checking `stage not in ALLOWED_STAGES` on non-string items.
 
 ```python
 def validate_pipeline_with_none_handling(stages: list[str] | None) -> str:
@@ -186,12 +195,14 @@ def validate_pipeline_with_none_handling(stages: list[str] | None) -> str:
     ALLOWED_STAGES = {"build", "test", "deploy", "notify"}
     
     # Guard clause: None or empty list both return valid_config (nothing to validate)
-    if not stages:
+    if stages is None or not stages:
         return "valid_config"
     
-    # Parse: identify invalid stages at boundary
+    # Parse: identify invalid stages at boundary (separate type check to avoid TypeError)
     for stage in stages:
-        if not isinstance(stage, str) or stage not in ALLOWED_STAGES:
+        if not isinstance(stage, str):
+            return "invalid_config"
+        if stage not in ALLOWED_STAGES:
             return "invalid_config"
     
     return "valid_config"

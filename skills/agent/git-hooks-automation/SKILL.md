@@ -1,5 +1,5 @@
 ---
-name: hooks-automation
+name: automation
 description: '"Provides Master Git hooks setup with Husky, lint-staged, pre-commit
   framework, and commitlint. Automate code quality gates, formatting, linting, and
   commit mes"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: git hooks automation, workflow, how do i automate
 ---
+
 
 
 # Git Hooks Automation

@@ -1,5 +1,5 @@
 ---
-name: backtest-drawdown-analysis
+name: drawdown-analysis
 description: '"Implements maximum drawdown, recovery time, and value-at-risk analysis
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: backtest-position-sizing, exchange-order-execution-api, fundamentals-risk-management-basics,
     risk-position-sizing
 ---
+
 
 
 **Role:** Risk Analysis Specialist — implements comprehensive drawdown and risk metrics to evaluate strategy drawdown behavior, recovery characteristics, and tail risk exposure.

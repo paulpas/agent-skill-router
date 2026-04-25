@@ -1,5 +1,5 @@
 ---
-name: ds-data-ingestion
+name: data-ingestion
 description: '"Provides Designs and implements ETL pipelines, streaming data ingestion,
   batch processing, and data pipeline orchestration for reliable data flow"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     how do i ingest data
   related-skills: ds-data-collection, ds-data-quality, ds-data-versioning
 ---
+
 
 
 # Data Ingestion

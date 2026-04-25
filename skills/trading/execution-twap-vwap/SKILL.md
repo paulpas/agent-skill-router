@@ -1,5 +1,5 @@
 ---
-name: execution-twap-vwap
+name: twap-vwap
 description: '''Provides ''''TWAP and VWAP Execution Algorithms: Institutional-Grade
   Order Execution'''''''
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     order
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
 ---
+
 
 
 **Role:** Trading Algorithm Engineer — designs and implements optimal execution strategies to minimize market impact and execution costs.

@@ -1,5 +1,5 @@
 ---
-name: accounting-setup
+name: setup
 description: '''Provides Expert guide for configuring Odoo Accounting: chart of accounts,
   journals, fiscal positions, taxes, payment terms, and bank reconciliation'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo accounting setup, business, implementation guide
 ---
+
 
 
 # Odoo Accounting Setup

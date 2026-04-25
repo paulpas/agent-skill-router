@@ -1,5 +1,5 @@
 ---
-name: debugging-error-analysis
+name: error-analysis
 description: '"Provides You are an expert error analysis specialist with deep expertise
   in debugging distributed systems, analyzing production incidents, and implementing
   com"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: error debugging error analysis, development, implementation guide
 ---
+
 
 
 # Error Debugging Error Analysis

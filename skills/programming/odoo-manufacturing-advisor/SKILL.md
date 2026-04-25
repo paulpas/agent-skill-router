@@ -1,5 +1,5 @@
 ---
-name: manufacturing-advisor
+name: advisor
 description: '''Provides Expert guide for Odoo Manufacturing: Bills of Materials (BoM),
   Work Centers, routings, MRP planning, and production order workflows'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo manufacturing advisor, business, implementation guide
 ---
+
 
 
 # Odoo Manufacturing Advisor

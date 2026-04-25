@@ -1,5 +1,5 @@
 ---
-name: ds-ab-testing
+name: ab-testing
 description: Provides Designs and analyzes A/B tests including hypothesis testing,
   power analysis, sample size calculation, and statistical significance evaluation
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-classification-metrics, ds-experimental-design, ds-hypothesis-testing,
     ds-statistical-power
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: aeo-blog-writer
+name: blog-writer
 description: '"Provides Writes long-form blog posts with TL;DR block, definition sentence,
   comparison table, and 5-question FAQ for SEO ranking and AEO citation. Activate
   whe"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo aeo blog writer, content, implementation guide
 ---
+
 
 
 # Seo Aeo Blog Writer

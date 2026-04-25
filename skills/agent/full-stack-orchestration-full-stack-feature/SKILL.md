@@ -1,5 +1,5 @@
 ---
-name: stack-orchestration-full-stack-feature
+name: orchestration-full-stack-feature
 description: '"Provides use when working with full stack orchestration full stack
   feature"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: full stack orchestration full stack feature, workflow, implementation
     guide
 ---
+
 
 
 # Full Stack Orchestration Full Stack Feature

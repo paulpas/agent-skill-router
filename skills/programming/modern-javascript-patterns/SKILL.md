@@ -1,5 +1,5 @@
 ---
-name: javascript-patterns
+name: patterns
 description: '"Provides Comprehensive guide for mastering modern JavaScript (ES6+)
   features, functional programming patterns, and best practices for writing clean,
   maintainab"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: modern javascript patterns, development, implementation guide
 ---
+
 
 
 # Modern Javascript Patterns

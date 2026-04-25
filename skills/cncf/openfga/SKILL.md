@@ -16,6 +16,7 @@ metadata:
 ---
 
 
+
 # OpenFGA in Cloud-Native Engineering
 
 ## Purpose and Use Cases

@@ -1,5 +1,5 @@
 ---
-name: ds-support-vector-machines
+name: support-vector-machines
 description: '"Implements support vector machines (SVM) with kernel methods, support
   vectors, and margin maximization for classification and regression"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: support vector machines, SVM, kernel methods, support vectors, SVM classification
   related-skills: ds-hyperparameter-tuning, ds-neural-networks, ds-tree-methods
 ---
+
 
 
 # Support Vector Machines

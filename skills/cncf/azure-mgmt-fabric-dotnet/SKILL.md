@@ -1,5 +1,5 @@
 ---
-name: mgmt-fabric-dotnet
+name: fabric-dotnet
 description: '"Configures azure resource manager sdk for fabric in .net for cloud-native
   deployment and infrastructure management."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure mgmt fabric dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Fabric Dotnet

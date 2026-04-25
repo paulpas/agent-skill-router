@@ -1,5 +1,5 @@
 ---
-name: monitor-opentelemetry-exporter-py
+name: opentelemetry-exporter-py
 description: '"Provides Azure Monitor OpenTelemetry Exporter for Python. Use for low-level
   OpenTelemetry export to Application Insights"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure monitor opentelemetry exporter py, cloud, implementation guide
 ---
+
 
 
 # Azure Monitor Opentelemetry Exporter Py

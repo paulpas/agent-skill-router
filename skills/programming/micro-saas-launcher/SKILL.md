@@ -1,5 +1,5 @@
 ---
-name: saas-launcher
+name: launcher
 description: '"Provides Expert in launching small, focused SaaS products fast - the
   indie hacker approach to building profitable software. Covers idea validation, MVP
   develop"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: micro saas launcher, business, implementation guide
 ---
+
 
 
 # Micro Saas Launcher

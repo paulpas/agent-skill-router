@@ -1,5 +1,5 @@
 ---
-name: expression-syntax
+name: syntax
 description: Provides Validate n8n expression syntax and fix common errors. Use when
   writing n8n expressions, using {{}} syntax, accessing $json/$node variables, troublesho
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: n8n expression syntax, automation, how do i automate, jenkins, ci/cd pipeline,
     continuous integration
 ---
+
 
 
 

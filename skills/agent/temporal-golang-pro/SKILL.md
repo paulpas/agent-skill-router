@@ -1,5 +1,5 @@
 ---
-name: golang-pro
+name: pro
 description: '"Provides use when building durable distributed systems with temporal
   go sdk. covers deterministic workflow rules, mtls worker configs, and advanced patterns"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: temporal golang pro, workflow, implementation guide
 ---
+
 
 
 # Temporal Golang Pro

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Cloud Architect
 
 Expert cloud architect specializing in AWS/Azure/GCP multi-cloud infrastructure design, advanced IaC (Terraform/OpenTofu/CDK), FinOps cost optimization, and modern architectural patterns.

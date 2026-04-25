@@ -1,5 +1,5 @@
 ---
-name: technical-cycle-analysis
+name: cycle-analysis
 description: '"Implements market cycles and periodic patterns in price movement for
   risk management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
   related-skills: ai-time-series-forecasting, ai-volatility-prediction, fundamentals-trading-plan,
     technical-false-signal-filtering
 ---
+
 
 
 **Role:** Identify and trade based on cyclical market behavior

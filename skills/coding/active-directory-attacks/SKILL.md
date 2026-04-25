@@ -1,5 +1,5 @@
 ---
-name: directory-attacks
+name: attacks
 description: '"Provides Provide comprehensive techniques for attacking Microsoft Active
   Directory environments. Covers reconnaissance, credential harvesting, Kerberos attacks"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: active directory attacks, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

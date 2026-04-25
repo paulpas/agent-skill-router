@@ -1,5 +1,5 @@
 ---
-name: azure-service-bus
+name: service-bus
 description: '"Provides Messaging service with queues and topics for reliable communication"'
 license: MIT
 compatibility: opencode
@@ -13,6 +13,7 @@ metadata:
     kubernetes service, sns
   related-skills: azure-event-hubs, azure-functions, azure-monitor
 ---
+
 
 
 

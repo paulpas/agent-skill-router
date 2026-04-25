@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Gpt Taste
 
 Use when generating elite GSAP-heavy frontend pages with strict AIDA structure, wide hero typography, and gapless bento grids.

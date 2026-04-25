@@ -1,5 +1,5 @@
 ---
-name: learning-ops-ml-pipeline
+name: ops-ml-pipeline
 description: '''Provides design and implement a complete ml pipeline for: $arguments
   functionality and capabilities.'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: machine learning ops ml pipeline, uncategorized, implementation guide
 ---
+
 
 
 # Machine Learning Ops Ml Pipeline

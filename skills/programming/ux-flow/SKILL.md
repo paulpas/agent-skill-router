@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Ux Flow
 
 Design user flows and screen structure using StyleSeed UX patterns such as progressive disclosure, hub-and-spoke navigation, and information pyramids.

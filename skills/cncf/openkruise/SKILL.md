@@ -13,6 +13,7 @@ metadata:
   triggers: container orchestration, extended, k8s, openkruise, workload, kubernetes
 ---
 
+
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2
 
 

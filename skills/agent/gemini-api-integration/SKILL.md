@@ -1,5 +1,5 @@
 ---
-name: api-integration
+name: integration
 description: Provides use when integrating google gemini api into projects. covers
   model selection, multimodal inputs, streaming, function calling, and production
   best prac
@@ -14,6 +14,7 @@ metadata:
   triggers: gemini api integration, automation, how do i automate, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

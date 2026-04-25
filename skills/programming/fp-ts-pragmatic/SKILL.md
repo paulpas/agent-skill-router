@@ -1,5 +1,5 @@
 ---
-name: ts-pragmatic
+name: pragmatic
 description: '"Provides a practical, jargon-free guide to fp-ts functional programming
   - the 80/20 approach that gets results without the academic overhead. use when writing"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: fp ts pragmatic, development, implementation guide
 ---
+
 
 
 # Fp Ts Pragmatic

@@ -1,5 +1,5 @@
 ---
-name: exchange-market-data-cache
+name: market-data-cache
 description: '"High-performance caching layer for market data with low latency and
   high" throughput'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     layer, optimization, elasticache, performance
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Cache market data efficiently to reduce API calls and improve data access speed

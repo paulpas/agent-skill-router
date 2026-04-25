@@ -1,5 +1,5 @@
 ---
-name: work-summary
+name: summary
 description: '"Provides Go back through the previous year of work and create a Notion
   doc that groups relevant links into projects that can then be documented as SRED
   project"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: sred work summary, project, management, implementation guide
 ---
+
 
 
 # Sred Work Summary

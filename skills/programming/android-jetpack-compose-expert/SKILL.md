@@ -1,5 +1,5 @@
 ---
-name: jetpack-compose-expert
+name: compose-expert
 description: '"Provides Expert guidance for building modern Android UIs with Jetpack
   Compose, covering state management, navigation, performance, and Material Design
   3"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: android jetpack compose expert, mobile, implementation guide
 ---
+
 
 
 # Android Jetpack Compose Expert

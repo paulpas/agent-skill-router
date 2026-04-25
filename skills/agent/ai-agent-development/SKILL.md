@@ -1,5 +1,5 @@
 ---
-name: agent-development
+name: development
 description: '"Provides AI agent development workflow for building autonomous agents,
   multi-agent systems, and agent orchestration with CrewAI, LangGraph, and custom
   agents"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: ai agent development, granular, workflow, implementation guide
 ---
+
 
 
 # Ai Agent Development

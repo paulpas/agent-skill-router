@@ -1,5 +1,5 @@
 ---
-name: debugging-multi-agent-review
+name: multi-agent-review
 description: '"Provides use when working with error debugging multi agent review functionality
   and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: error debugging multi agent review, development, implementation guide
 ---
+
 
 
 # Error Debugging Multi Agent Review

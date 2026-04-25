@@ -1,5 +1,5 @@
 ---
-name: skill-project-guidelines-example
+name: project-guidelines-example
 description: '"Implements project guidelines skill (example) for orchestration and
   agent coordination in autonomous systems."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: cc skill project guidelines example, meta, implementation guide
 ---
+
 
 
 # Cc Skill Project Guidelines Example

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Animejs Animation
 
 Advanced JavaScript animation library skill for creating complex, high-performance web animations.

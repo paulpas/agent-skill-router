@@ -1,5 +1,5 @@
 ---
-name: ds-distribution-fitting
+name: distribution-fitting
 description: '"Provides Fits statistical distributions to data using goodness-of-fit
   tests, parameter estimation, and distribution selection methods"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     selection, how do i fit
   related-skills: ds-kernel-density, ds-maximum-likelihood, ds-monte-carlo
 ---
+
 
 
 # Distribution Fitting

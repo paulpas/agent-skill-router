@@ -1,5 +1,5 @@
 ---
-name: reverse-logistics
+name: logistics
 description: '"Provides Codified expertise for returns authorisation, receipt and
   inspection, disposition decisions, refund processing, fraud detection, and warranty
   claims m"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: returns reverse logistics, business, implementation guide
 ---
+
 
 
 # Returns Reverse Logistics

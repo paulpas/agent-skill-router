@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Fal Upscale
 
 Upscale and enhance image and video resolution using AI

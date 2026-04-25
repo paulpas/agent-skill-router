@@ -1,5 +1,5 @@
 ---
-name: meta-optimizer
+name: optimizer
 description: '"Creates optimized meta titles, descriptions, and URL suggestions based
   on character limits and best practices. Generates compelling, keyword-rich meta"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: seo meta optimizer, content, implementation guide
 ---
+
 
 
 # Seo Meta Optimizer

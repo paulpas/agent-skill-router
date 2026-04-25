@@ -1,5 +1,5 @@
 ---
-name: bot-builder
+name: builder
 description: '"Provides Build Slack apps using the Bolt framework across Python, JavaScript,
   and Java. Covers Block Kit for rich UIs, interactive components, slash commands"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: slack bot builder, api, integration, implementation guide
 ---
+
 
 
 # Slack Bot Builder

@@ -1,5 +1,5 @@
 ---
-name: new-track
+name: track
 description: '"Provides Create a new track with specification and phased implementation
   plan"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: conductor new track, workflow, implementation guide
 ---
+
 
 
 # Conductor New Track

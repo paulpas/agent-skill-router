@@ -1,5 +1,5 @@
 ---
-name: structure-protocol
+name: protocol
 description: '"Provides Give agents persistent structural memory of a codebase —  navigate
   dependencies, track public APIs, and understand why connections exist  without re-rea"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: data structure protocol, data, science, data processing, spark, big data,
     distributed processing
 ---
+
 
 
 

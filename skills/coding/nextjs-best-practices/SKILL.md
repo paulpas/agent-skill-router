@@ -1,5 +1,5 @@
 ---
-name: best-practices
+name: practices
 description: Provides Next.js App Router principles. Server Components, data fetching,
   routing patterns
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: nextjs best practices, frontend, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

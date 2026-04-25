@@ -1,5 +1,5 @@
 ---
-name: backtest-position-sizing
+name: position-sizing
 description: '"''Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and
   Volatility" Adjustment'''
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api, fundamentals-risk-management-basics,
     risk-position-sizing
 ---
+
 
 
 **Role:** Risk Management Specialist — implements dynamic position sizing algorithms to optimize capital allocation while controlling risk exposure and maximizing long-term growth.

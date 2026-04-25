@@ -1,5 +1,5 @@
 ---
-name: content-refresher
+name: refresher
 description: '"Provides Identifies outdated elements in provided content and suggests
   updates to maintain freshness. Finds statistics, dates, and examples that need updating"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: seo content refresher, content, implementation guide
 ---
+
 
 
 # Seo Content Refresher

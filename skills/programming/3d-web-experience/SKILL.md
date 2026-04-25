@@ -1,5 +1,5 @@
 ---
-name: web-experience
+name: experience
 description: '"Provides Expert in building 3D experiences for the web - Three.js,
   React Three Fiber, Spline, WebGL, and interactive 3D scenes. Covers product configurators,
   3"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: 3d web experience, design, implementation guide
 ---
+
 
 
 # 3D Web Experience

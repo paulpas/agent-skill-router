@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Clerk Auth
 
 Expert patterns for Clerk auth implementation, middleware, organizations, webhooks, and user sync

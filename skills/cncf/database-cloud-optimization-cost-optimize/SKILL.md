@@ -1,5 +1,5 @@
 ---
-name: cloud-optimization-cost-optimize
+name: optimization-cost-optimize
 description: Provides You are a cloud cost optimization expert specializing in reducing
   infrastructure expenses while maintaining performance and reliability. Analyze cloud
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: database cloud optimization cost optimize, database, data processing,
     spark, big data, distributed processing
 ---
+
 
 
 

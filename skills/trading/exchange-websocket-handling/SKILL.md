@@ -1,5 +1,5 @@
 ---
-name: exchange-websocket-handling
+name: websocket-handling
 description: '"Real-time market data handling with WebSockets including connection
   management" data aggregation, and robust error recovery'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     websockets
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Guide an AI coding assistant to build robust real-time data pipelines using WebSockets that handle connection instability, data synchronization, and high-frequency updates

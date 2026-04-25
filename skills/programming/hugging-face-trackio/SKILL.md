@@ -1,5 +1,5 @@
 ---
-name: face-trackio
+name: trackio
 description: Provides Track ML experiments with Trackio using Python logging, alerts,
   and CLI metric retrieval
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: hugging face trackio, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

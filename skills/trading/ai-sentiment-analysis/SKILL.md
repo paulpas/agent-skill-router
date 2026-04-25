@@ -1,5 +1,5 @@
 ---
-name: ai-sentiment-analysis
+name: sentiment-analysis
 description: '"AI-powered sentiment analysis for news, social media, and political
   figures" in trading'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai sentiment analysis, ai-powered, ai-sentiment-analysis, media, social
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 # Sentiment Analysis for Trading: The 5 Laws of Market Emotion

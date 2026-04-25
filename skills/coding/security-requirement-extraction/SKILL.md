@@ -1,5 +1,5 @@
 ---
-name: requirement-extraction
+name: extraction
 description: '"Provides Derive security requirements from threat models and business
   context. Use when translating threats into actionable requirements, creating security
   use"'
@@ -14,6 +14,7 @@ metadata:
   triggers: security requirement extraction, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

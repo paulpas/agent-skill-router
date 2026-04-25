@@ -1,5 +1,5 @@
 ---
-name: self-critique-engine
+name: critique-engine
 description: '"Enables autonomous agents to self-critique their work by evaluating
   output" quality, correctness, and compliance with requirements, enabling iterative
   improvement without external feedback.'
@@ -15,6 +15,7 @@ metadata:
     self-critiques
   related-skills: add-new-skill, confidence-based-selector, goal-to-milestones, multi-skill-executor
 ---
+
 
 
 

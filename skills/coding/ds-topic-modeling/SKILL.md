@@ -1,5 +1,5 @@
 ---
-name: ds-topic-modeling
+name: topic-modeling
 description: '"Implements topic modeling using Latent Dirichlet Allocation (LDA),
   Non-negative Matrix Factorization (NMF), and other topic extraction methods"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     text analysis
   related-skills: ds-association-rules, ds-clustering, ds-dimensionality-reduction
 ---
+
 
 
 # Topic Modeling

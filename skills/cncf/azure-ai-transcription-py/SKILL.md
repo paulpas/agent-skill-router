@@ -1,5 +1,5 @@
 ---
-name: ai-transcription-py
+name: transcription-py
 description: '"Provides Azure AI Transcription SDK for Python. Use for real-time and
   batch speech-to-text transcription with timestamps and diarization"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai transcription py, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Transcription Py

@@ -1,5 +1,5 @@
 ---
-name: network-diagnostics
+name: diagnostics
 description: '"Diagnoses network connectivity issues, identifies bottlenecks, and
   provides" actionable resolution strategies for distributed systems.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     network-diagnostics
   related-skills: add-new-skill, autoscaling-advisor, ci-cd-pipeline-analyzer, confidence-based-selector
 ---
+
 
 
 

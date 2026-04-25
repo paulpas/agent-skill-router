@@ -1,5 +1,5 @@
 ---
-name: data-alternative-data
+name: alternative-data
 description: '"Alternative data ingestion pipelines for trading signals including
   news" social media, and on-chain data sources'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: data alternative data, data-alternative-data, ingestion, pipelines, trading
   related-skills: ai-order-flow-analysis, data-backfill-strategy, data-candle-data
 ---
+
 
 
 # Alternative Data Ingestion Pipeline: The 5 Laws of Data Normalization

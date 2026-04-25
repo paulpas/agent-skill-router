@@ -1,5 +1,5 @@
 ---
-name: data-backfill-strategy
+name: backfill-strategy
 description: '"Provides Strategic data backfill for populating historical data in
   trading systems"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     strategic
   related-skills: ai-order-flow-analysis, data-alternative-data, data-candle-data
 ---
+
 
 
 **Role:** Efficiently populate and maintain historical data for analysis and backtesting

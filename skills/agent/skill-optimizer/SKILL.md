@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Skill Optimizer
 
 Diagnose and optimize Agent Skills (SKILL.md) with real session data and research-backed static analysis. Works with Claude Code, Codex, and any Agent Skills-compatible agent.

@@ -1,5 +1,5 @@
 ---
-name: security-policies
+name: policies
 description: Provides Comprehensive guide for implementing NetworkPolicy, PodSecurityPolicy,
   RBAC, and Pod Security Standards in Kubernetes
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: k8s security policies, devops, how do i deploy, kubernetes, vulnerability
     scanning, container orchestration, k8s, security
 ---
+
 
 
 

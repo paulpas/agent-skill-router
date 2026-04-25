@@ -1,5 +1,5 @@
 ---
-name: cost-cleanup
+name: cleanup
 description: '"Configures automated cleanup of unused aws resources to reduce costs
   for cloud-native deployment and infrastructure management."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: aws cost cleanup, cloud, how do i automate
 ---
+
 
 
 # Aws Cost Cleanup

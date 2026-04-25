@@ -1,5 +1,5 @@
 ---
-name: pydantic-config
+name: config
 description: '"Pydantic-based configuration management with frozen models, nested
   hierarchy" TOML/env parsing, and module-level singleton'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: configuration, management, pydantic config, pydantic-based, pydantic-config
   related-skills: null
 ---
+
 
 
 

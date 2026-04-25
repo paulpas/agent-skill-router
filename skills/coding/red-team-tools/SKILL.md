@@ -1,5 +1,5 @@
 ---
-name: team-tools
+name: tools
 description: '"Provides Implement proven methodologies and tool workflows from top
   security researchers for effective reconnaissance, vulnerability discovery, and
   bug bounty"'
@@ -14,6 +14,7 @@ metadata:
   triggers: red team tools, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

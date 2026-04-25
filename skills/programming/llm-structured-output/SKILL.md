@@ -1,5 +1,5 @@
 ---
-name: structured-output
+name: output
 description: '"Get reliable JSON, enums, and typed objects from LLMs using response_format,
   tool_use, and schema-constrained decoding across OpenAI, Anthropic, and G" "'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: llm structured output, ai, ml, implementation guide
 ---
+
 
 
 # Llm Structured Output

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Office Productivity
 
 Office productivity workflow covering document creation, spreadsheet automation, presentation generation, and integration with LibreOffice and Microsoft Office formats.

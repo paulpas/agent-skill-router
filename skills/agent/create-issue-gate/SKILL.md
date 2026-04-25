@@ -1,5 +1,5 @@
 ---
-name: issue-gate
+name: gate
 description: '"Provides use when starting a new implementation task and an issue must
   be created with strict acceptance criteria gating before execution"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: create issue gate, workflow, implementation guide
 ---
+
 
 
 # Create Issue Gate

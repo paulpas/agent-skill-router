@@ -1,5 +1,5 @@
 ---
-name: mesh-expert
+name: expert
 description: Provides Expert service mesh architect specializing in Istio, Linkerd,
   and cloud-native networking patterns. Masters traffic management, security policies,
   obs
@@ -14,6 +14,7 @@ metadata:
   triggers: service mesh expert, reliability, how do i secure, kubernetes service,
     linkerd, container orchestration, observability, service
 ---
+
 
 
 

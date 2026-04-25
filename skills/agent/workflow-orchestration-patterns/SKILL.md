@@ -1,5 +1,5 @@
 ---
-name: orchestration-patterns
+name: patterns
 description: '"Provides Master workflow orchestration architecture with Temporal,
   covering fundamental design decisions, resilience patterns, and best practices for
   building"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: workflow orchestration patterns, workflow, implementation guide
 ---
+
 
 
 # Workflow Orchestration Patterns

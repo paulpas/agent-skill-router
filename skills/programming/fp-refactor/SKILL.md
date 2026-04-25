@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Fp Refactor
 
 Comprehensive guide for refactoring imperative TypeScript code to fp-ts functional patterns

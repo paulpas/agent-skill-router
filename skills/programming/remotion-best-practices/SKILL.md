@@ -1,5 +1,5 @@
 ---
-name: best-practices
+name: practices
 description: '"Provides best practices for remotion - video creation in react functionality
   and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: remotion best practices, media, implementation guide
 ---
+
 
 
 # Remotion Best Practices

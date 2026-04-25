@@ -1,5 +1,5 @@
 ---
-name: ds-tree-methods
+name: tree-methods
 description: '"Implements decision trees, random forests, gradient boosting (XGBoost"
   LightGBM), and tree ensemble methods for classification and regression'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-ensemble-methods, ds-hyperparameter-tuning, ds-neural-networks,
     ds-support-vector-machines
 ---
+
 
 
 # Tree-Based Methods

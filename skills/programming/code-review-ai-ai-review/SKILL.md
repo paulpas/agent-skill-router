@@ -1,5 +1,5 @@
 ---
-name: review-ai-ai-review
+name: ai-ai-review
 description: '"Provides You are an expert AI-powered code review specialist combining
   automated static analysis, intelligent pattern recognition, and modern DevOps practices"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: code review ai ai review, development, how do i automate
 ---
+
 
 
 # Code Review Ai Ai Review

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Vexor
 
 Vector-powered CLI for semantic file search with a Claude/Codex skill

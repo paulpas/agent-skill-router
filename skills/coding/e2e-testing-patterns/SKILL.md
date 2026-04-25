@@ -1,5 +1,5 @@
 ---
-name: testing-patterns
+name: patterns
 description: Provides Build reliable, fast, and maintainable end-to-end test suites
   that provide confidence to ship code quickly and catch regressions before users
   do
@@ -14,6 +14,7 @@ metadata:
   triggers: e2e testing patterns, test, automation, how do i test, jenkins, unit tests,
     ci/cd pipeline, continuous integration
 ---
+
 
 
 

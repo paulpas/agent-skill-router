@@ -1,5 +1,5 @@
 ---
-name: path-traversal
+name: traversal
 description: '"Provides Identify and exploit file path traversal (directory traversal)
   vulnerabilities that allow attackers to read arbitrary files on the server, potentially"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: file path traversal, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

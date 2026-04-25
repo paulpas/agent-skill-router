@@ -35,11 +35,19 @@ export declare class DiskCompressionCache {
     private flushTimer;
     private readonly FLUSH_INTERVAL_MS;
     private readonly FLUSH_THRESHOLD;
+    private readonly BATCH_COMPRESSION_SIZE;
+    private readonly BATCH_COMPRESSION_INTERVAL_MS;
     private metadataCache;
     private readonly MAX_AGE_DAYS;
     private readonly ACCESS_WINDOW_MS;
     private readonly SMART_RETRY_THRESHOLD;
     constructor(skillsDirectory: string);
+    /**
+     * Warm up cache by pre-loading and caching compressed versions for top skills.
+     * Non-blocking: doesn't throw on errors, logs progress.
+     * Used on startup to ensure frequently accessed skills are ready.
+     */
+    warmupCache(topSkillNames: string[]): Promise<void>;
     /**
      * Save compressed versions to disk (lazy write)
      * Early Exit: guard invalid inputs
@@ -74,8 +82,9 @@ export declare class DiskCompressionCache {
      */
     private scheduleFlush;
     /**
-     * Flush write buffer to disk
-     * Atomic: process all pending writes together
+     * Flush write buffer to disk with batch processing.
+     * Processes BATCH_COMPRESSION_SIZE entries at a time with delays between batches.
+     * Non-blocking: doesn't throw on errors, logs progress.
      */
     private flush;
     /**

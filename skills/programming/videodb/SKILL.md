@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Videodb
 
 Video and audio perception, indexing, and editing. Ingest files/URLs/live streams, build visual/spoken indexes, search with timestamps, edit timelines, add overlays/subtitles, generate media, and create real-time alerts.

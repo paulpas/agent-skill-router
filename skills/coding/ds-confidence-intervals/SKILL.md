@@ -1,5 +1,5 @@
 ---
-name: ds-confidence-intervals
+name: confidence-intervals
 description: '"Provides Constructs confidence intervals using bootstrap, analytical
   methods, and uncertainty quantification for parameter estimation"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     bounds, credible intervals
   related-skills: ds-bayesian-inference, ds-hypothesis-testing, ds-monte-carlo
 ---
+
 
 
 # Confidence Intervals

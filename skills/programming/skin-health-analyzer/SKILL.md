@@ -1,5 +1,5 @@
 ---
-name: health-analyzer
+name: analyzer
 description: Provides Analyze skin health data, identify skin problem patterns, assess
   skin health status. Supports correlation analysis with nutrition, chronic diseases,
   a
@@ -14,6 +14,7 @@ metadata:
   triggers: skin health analyzer, health, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

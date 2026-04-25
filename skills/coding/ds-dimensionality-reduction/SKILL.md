@@ -1,5 +1,5 @@
 ---
-name: ds-dimensionality-reduction
+name: dimensionality-reduction
 description: '"Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders,
   and other feature extraction methods for visualization and efficiency"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     i reduce dimensions
   related-skills: ds-clustering, ds-community-detection, ds-eda, ds-feature-engineering
 ---
+
 
 
 # Dimensionality Reduction

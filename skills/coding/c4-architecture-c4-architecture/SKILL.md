@@ -1,5 +1,5 @@
 ---
-name: architecture-c4-architecture
+name: c4-architecture
 description: '"Provides Generate comprehensive C4 architecture documentation for an
   existing repository/codebase using a bottom-up analysis approach"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: c4 architecture c4 architecture, architecture, implementation guide
 ---
+
 
 
 # C4 Architecture C4 Architecture

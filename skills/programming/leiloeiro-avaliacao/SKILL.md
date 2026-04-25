@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Leiloeiro Avaliacao
 
 Avaliacao pericial de imoveis em leilao. Valor de mercado, liquidacao forcada, ABNT NBR 14653, metodos comparativo/renda/custo, CUB e margem de seguranca.

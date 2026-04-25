@@ -1,5 +1,5 @@
 ---
-name: shell-pro
+name: pro
 description: '"Provides Expert in strict POSIX sh scripting for maximum portability
   across Unix-like systems. Specializes in shell scripts that run on any POSIX-compliant
   she"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: posix shell pro, uncategorized, implementation guide
 ---
+
 
 
 # Posix Shell Pro

@@ -1,5 +1,5 @@
 ---
-name: migration-code-migrate
+name: code-migrate
 description: '"Provides You are a code migration expert specializing in transitioning
   codebases between frameworks, languages, versions, and platforms. Generate comprehensive"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: framework migration code migrate, development, implementation guide
 ---
+
 
 
 # Framework Migration Code Migrate

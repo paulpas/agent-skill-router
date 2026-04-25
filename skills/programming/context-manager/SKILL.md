@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Context Manager
 
 Elite AI context engineering specialist mastering dynamic context management, vector databases, knowledge graphs, and intelligent memory systems.

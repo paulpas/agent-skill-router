@@ -1,5 +1,5 @@
 ---
-name: k8s-debugger
+name: debugger
 description: '"Diagnoses Kubernetes cluster issues, debug pods, deployments, and cluster"
   components using structured debugging workflows.'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: code-correctness-verifier, confidence-based-selector, error-trace-explainer,
     multi-skill-executor
 ---
+
 
 
 

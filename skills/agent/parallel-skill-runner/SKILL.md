@@ -1,5 +1,5 @@
 ---
-name: parallel-skill-runner
+name: skill-runner
 description: '"Executes multiple skill specifications concurrently, managing parallel"
   workers, synchronization, and result collection for performance-optimized multi-skill
   operations.'
@@ -15,6 +15,7 @@ metadata:
   related-skills: confidence-based-selector, dynamic-replanner, error-trace-explainer,
     multi-skill-executor
 ---
+
 
 
 

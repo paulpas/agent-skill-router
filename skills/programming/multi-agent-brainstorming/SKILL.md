@@ -1,5 +1,5 @@
 ---
-name: agent-brainstorming
+name: brainstorming
 description: Provides Simulate a structured peer-review process using multiple specialized
   agents to validate designs, surface hidden assumptions, and identify failure mode
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: multi agent brainstorming, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

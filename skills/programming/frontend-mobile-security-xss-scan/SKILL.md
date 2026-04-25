@@ -1,5 +1,5 @@
 ---
-name: mobile-security-xss-scan
+name: security-xss-scan
 description: Provides You are a frontend security specialist focusing on Cross-Site
   Scripting (XSS) vulnerability detection and prevention. Analyze React, Vue, Angular,
   and
@@ -14,6 +14,7 @@ metadata:
   triggers: frontend mobile security xss scan, web, development, how do i secure,
     vulnerability scanning, security
 ---
+
 
 
 

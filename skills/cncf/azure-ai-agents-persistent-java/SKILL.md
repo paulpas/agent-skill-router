@@ -1,5 +1,5 @@
 ---
-name: ai-agents-persistent-java
+name: agents-persistent-java
 description: '"Provides Azure AI Agents Persistent SDK for Java. Low-level SDK for
   creating and managing AI agents with threads, messages, runs, and tools"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai agents persistent java, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Agents Persistent Java

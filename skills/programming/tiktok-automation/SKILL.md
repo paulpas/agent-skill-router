@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Tiktok Automation
 
 Automate TikTok tasks via Rube MCP (Composio): upload/publish videos, post photos, manage content, and view user profiles/stats. Always search tools first for current schemas.

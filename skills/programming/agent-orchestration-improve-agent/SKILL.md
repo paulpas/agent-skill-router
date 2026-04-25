@@ -1,5 +1,5 @@
 ---
-name: orchestration-improve-agent
+name: improve-agent
 description: Provides Systematic improvement of existing agents through performance
   analysis, prompt engineering, and continuous iteration
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: agent orchestration improve agent, ai, ml, implementation guide, machine
     learning, scikit-learn
 ---
+
 
 
 

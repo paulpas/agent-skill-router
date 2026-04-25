@@ -1,5 +1,5 @@
 ---
-name: management-deps-audit
+name: deps-audit
 description: '"Provides You are a dependency security expert specializing in vulnerability
   scanning, license compliance, and supply chain security. Analyze project dependenci"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: dependency management deps audit, security, how do i secure, security
     auditing, vulnerability scanning
 ---
+
 
 
 

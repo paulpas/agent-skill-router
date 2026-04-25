@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Dotnet Architect
 
 Expert .NET backend architect specializing in C#, ASP.NET Core, Entity Framework, Dapper, and enterprise application patterns.

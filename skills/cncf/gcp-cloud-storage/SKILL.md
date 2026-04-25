@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-storage
+name: cloud-storage
 description: '"Provides Stores objects with versioning, lifecycle policies, access
   control, and integration with other GCP services"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     how do i store files, s3
   related-skills: gcp-cloud-cdn, gcp-cloud-kms, gcp-cloud-monitoring
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: aws-iam
+name: iam
 description: '"Configures identity and access management with IAM users, roles, policies"
   and MFA for secure, least-privilege access control across AWS resources and services.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     privilege, service role
   related-skills: aws-cloudformation, aws-ec2, aws-ecr, aws-eks
 ---
+
 
 
 

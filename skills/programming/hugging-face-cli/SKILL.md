@@ -1,5 +1,5 @@
 ---
-name: face-cli
+name: cli
 description: Provides use the hugging face hub cli (`hf`) to download, upload, and
   manage models, datasets, and spaces
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: hugging face cli, ai, ml, data processing, machine learning, spark, big
     data, distributed processing
 ---
+
 
 
 

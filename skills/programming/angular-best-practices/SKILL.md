@@ -1,5 +1,5 @@
 ---
-name: best-practices
+name: practices
 description: '"Provides Angular performance optimization and best practices guide.
   Use when writing, reviewing, or refactoring Angular code for optimal performance,
   bundle si"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: angular best practices, web, development, implementation guide
 ---
+
 
 
 # Angular Best Practices

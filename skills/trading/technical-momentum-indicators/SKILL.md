@@ -1,5 +1,5 @@
 ---
-name: technical-momentum-indicators
+name: momentum-indicators
 description: '"Implements rsi, macd, stochastic oscillators and momentum analysis
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: analysis, oscillators, stochastic, technical momentum indicators, technical-momentum-indicators
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Measure the speed and strength of price movement for timing entries and exits

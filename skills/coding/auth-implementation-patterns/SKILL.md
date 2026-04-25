@@ -1,5 +1,5 @@
 ---
-name: implementation-patterns
+name: patterns
 description: '"Provides Build secure, scalable authentication and authorization systems
   using industry-standard patterns and modern best practices"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: auth implementation patterns, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

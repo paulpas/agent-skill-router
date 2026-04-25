@@ -1,5 +1,5 @@
 ---
-name: security-coder
+name: coder
 description: '"Provides Expert in secure frontend coding practices specializing in
   XSS prevention, output sanitization, and client-side security patterns"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: frontend security coder, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

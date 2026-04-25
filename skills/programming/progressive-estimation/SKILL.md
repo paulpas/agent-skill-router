@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Progressive Estimation
 
 Estimate AI-assisted and hybrid human+agent development work with research-backed PERT statistics and calibration feedback loops

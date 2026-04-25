@@ -1,17 +1,21 @@
 ---
-name: secure-release-pipeline
-description: Implements comprehensive secure release pipeline with CVE scanning, security code review, semantic versioning for patches, and multi-stage quality gates for secure deployments.
+name: release-pipeline
+description: Implements comprehensive secure release pipeline with CVE scanning, security
+  code review, semantic versioning for patches, and multi-stage quality gates for
+  secure deployments.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: secure release, CVE scanning, security audit, version management, quality gates, dependency security, semantic versioning, incident response, patch management
+  triggers: secure release, CVE scanning, security audit, version management, quality
+    gates, dependency security, semantic versioning, incident response, patch management
   role: implementation
   scope: implementation
   output-format: code
   related-skills: code-review, risk-management
 ---
+
 
 # Secure Release Pipeline Manager
 

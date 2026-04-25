@@ -1,5 +1,5 @@
 ---
-name: ui-dark-ts
+name: dark-ts
 description: Provides a modern dark-themed react ui system using tailwind css and
   framer motion. designed for dashboards, admin panels, and data-rich applications
   with glas
@@ -14,6 +14,7 @@ metadata:
   triggers: frontend ui dark ts, web, development, data processing, spark, big data,
     distributed processing
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: ai-voicelive-ts
+name: voicelive-ts
 description: '"Provides Azure AI Voice Live SDK for JavaScript/TypeScript. Build real-time
   voice AI applications with bidirectional WebSocket communication"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai voicelive ts, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Voicelive Ts

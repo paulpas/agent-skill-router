@@ -1,5 +1,5 @@
 ---
-name: servicebus-py
+name: py
 description: '"Provides Azure Service Bus SDK for Python messaging. Use for queues,
   topics, subscriptions, and enterprise messaging patterns"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure servicebus py, cloud, implementation guide
 ---
+
 
 
 # Azure Servicebus Py

@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Advogado Especialista
 
 Advogado especialista em todas as areas do Direito brasileiro: familia, criminal, trabalhista, tributario, consumidor, imobiliario, empresarial, civil e constitucional.

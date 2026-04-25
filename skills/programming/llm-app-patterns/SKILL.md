@@ -1,5 +1,5 @@
 ---
-name: app-patterns
+name: patterns
 description: Provides Production-ready patterns for building LLM applications, inspired
   by [Dify](https://github.com/langgenius/dify) and industry best practices
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: llm app patterns, data, ai, data processing, machine learning, spark,
     big data, distributed processing
 ---
+
 
 
 

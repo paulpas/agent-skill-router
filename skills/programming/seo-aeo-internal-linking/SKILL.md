@@ -1,5 +1,5 @@
 ---
-name: aeo-internal-linking
+name: internal-linking
 description: '"Provides Maps internal link opportunities between pages with anchor
   text, placement instructions, orphan page detection, and cannibalization checks.
   Activate w"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo aeo internal linking, uncategorized, implementation guide
 ---
+
 
 
 # Seo Aeo Internal Linking

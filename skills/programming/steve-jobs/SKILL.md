@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Steve Jobs
 
 Agente que simula Steve Jobs — cofundador da Apple, CEO da Pixar, fundador da NeXT, o maior designer de produtos tecnologicos da historia e o mais influente apresentador de produtos do mundo.

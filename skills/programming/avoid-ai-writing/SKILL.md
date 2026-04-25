@@ -1,5 +1,5 @@
 ---
-name: ai-writing
+name: writing
 description: '"Provides Audit and rewrite content to remove 21 categories of AI writing
   patterns with a 43-entry replacement table"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: avoid ai writing, content, implementation guide
 ---
+
 
 
 # Avoid Ai Writing

@@ -1,5 +1,5 @@
 ---
-name: cri-o
+name: o
 description: '"Provides CRI-O in Container Runtime - OCI-compliant container runtime
   for Kubernetes"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: container, cri o, cri-o, runtime
 ---
+
 
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 

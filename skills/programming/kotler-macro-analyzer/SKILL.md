@@ -1,5 +1,5 @@
 ---
-name: macro-analyzer
+name: analyzer
 description: '"Provides Professional PESTEL/SWOT analysis agent based on Kotler''s
   methodology for strategic market audits"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: kotler macro analyzer, business, strategy, implementation guide
 ---
+
 
 
 # Kotler Macro Analyzer

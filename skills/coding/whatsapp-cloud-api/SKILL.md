@@ -1,5 +1,5 @@
 ---
-name: cloud-api
+name: api
 description: '"Provides Integracao com WhatsApp Business Cloud API (Meta). Mensagens,
   templates, webhooks HMAC-SHA256, automacao de atendimento. Boilerplates Node.js
   e Python"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: whatsapp cloud api, backend, implementation guide
 ---
+
 
 
 # Whatsapp Cloud Api

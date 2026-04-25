@@ -1,5 +1,5 @@
 ---
-name: components-menus
+name: menus
 description: '"Provides Check for .claude/apple-design-context.md before asking questions.
   Use existing context and only ask for information not already covered"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: hig components menus, development, implementation guide
 ---
+
 
 
 # Hig Components Menus

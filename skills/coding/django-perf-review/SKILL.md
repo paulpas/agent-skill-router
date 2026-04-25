@@ -1,5 +1,5 @@
 ---
-name: perf-review
+name: review
 description: '"Implements django performance code review. use when asked to patterns
   for software quality and development best practices."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: django perf review, backend, implementation guide
 ---
+
 
 
 # Django Perf Review

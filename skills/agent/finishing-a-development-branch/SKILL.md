@@ -1,5 +1,5 @@
 ---
-name: a-development-branch
+name: development-branch
 description: '"Provides use when implementation is complete, all tests pass, and you
   need to decide how to integrate the work - guides completion of development work
   by prese"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: finishing a development branch, workflow, how do i test
 ---
+
 
 
 # Finishing A Development Branch

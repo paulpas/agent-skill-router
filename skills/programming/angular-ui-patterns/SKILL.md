@@ -1,5 +1,5 @@
 ---
-name: ui-patterns
+name: patterns
 description: Provides Modern Angular UI patterns for loading states, error handling,
   and data display. Use when building UI components, handling async data, or managing
   com
@@ -14,6 +14,7 @@ metadata:
   triggers: angular ui patterns, web, development, data processing, spark, big data,
     distributed processing
 ---
+
 
 
 

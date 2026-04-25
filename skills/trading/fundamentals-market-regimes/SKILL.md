@@ -1,5 +1,5 @@
 ---
-name: fundamentals-market-regimes
+name: market-regimes
 description: '"Market regime detection and adaptation for trading systems across changing"
   market conditions.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     regime
   related-skills: fundamentals-trading-edge, paper-commission-model, paper-market-impact
 ---
+
 
 
 **Role:** Identify and adapt to different market regimes (trending, mean-reverting, sideways, volatile) to optimize trading strategy parameters dynamically.

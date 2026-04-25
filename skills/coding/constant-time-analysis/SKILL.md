@@ -1,5 +1,5 @@
 ---
-name: time-analysis
+name: analysis
 description: '"Provides Analyze cryptographic code to detect operations that leak
   secret data through execution timing variations"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: constant time analysis, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

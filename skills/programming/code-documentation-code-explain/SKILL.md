@@ -1,5 +1,5 @@
 ---
-name: documentation-code-explain
+name: code-explain
 description: '"Provides You are a code education expert specializing in explaining
   complex code through clear narratives, visual diagrams, and step-by-step breakdowns.
   Transf"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: code documentation code explain, development, implementation guide
 ---
+
 
 
 # Code Documentation Code Explain

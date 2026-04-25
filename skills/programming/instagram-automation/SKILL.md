@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Instagram Automation
 
 Automate Instagram tasks via Rube MCP (Composio): create posts, carousels, manage media, get insights, and publishing limits. Always search tools first for current schemas.

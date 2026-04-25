@@ -1,5 +1,5 @@
 ---
-name: messaging-webpubsub-java
+name: webpubsub-java
 description: '"Provides Build real-time web applications with Azure Web PubSub SDK
   for Java. Use when implementing WebSocket-based messaging, live updates, chat applications"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure messaging webpubsub java, cloud, implementation guide
 ---
+
 
 
 # Azure Messaging Webpubsub Java

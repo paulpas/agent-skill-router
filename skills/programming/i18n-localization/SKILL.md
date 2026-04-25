@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # I18N Localization
 
 Internationalization and localization patterns. Detecting hardcoded strings, managing translations, locale files, RTL support.

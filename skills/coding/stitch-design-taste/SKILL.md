@@ -1,5 +1,5 @@
 ---
-name: design-taste
+name: taste
 description: '"Provides use when generating google stitch design.md systems for premium
   typography, color, layout, motion intent, and anti-generic ui rules"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: stitch design taste, frontend, implementation guide
 ---
+
 
 
 # Stitch Design Taste

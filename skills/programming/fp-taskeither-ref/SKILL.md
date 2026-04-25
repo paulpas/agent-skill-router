@@ -1,5 +1,5 @@
 ---
-name: taskeither-ref
+name: ref
 description: '"Provides Quick reference for TaskEither. Use when user needs async
   error handling, API calls, or Promise-based operations that can fail"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: fp taskeither ref, development, implementation guide
 ---
+
 
 
 # Fp Taskeither Ref

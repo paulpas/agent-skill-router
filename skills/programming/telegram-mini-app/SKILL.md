@@ -1,5 +1,5 @@
 ---
-name: mini-app
+name: app
 description: '"Provides Expert in building Telegram Mini Apps (TWA) - web apps that
   run inside Telegram with native-like experience. Covers the TON ecosystem, Telegram
   Web Ap"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: telegram mini app, uncategorized, implementation guide
 ---
+
 
 
 # Telegram Mini App

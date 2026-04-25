@@ -1,5 +1,5 @@
 ---
-name: ds-categorical-encoding
+name: categorical-encoding
 description: '"Provides Encodes categorical variables using one-hot encoding, target
   encoding, ordinal encoding, embeddings, and other encoding strategies"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     categorical variables
   related-skills: ds-feature-engineering, ds-feature-scaling-normalization, ds-neural-networks
 ---
+
 
 
 # Categorical Encoding

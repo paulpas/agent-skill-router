@@ -1,5 +1,5 @@
 ---
-name: activity-planner
+name: planner
 description: '"Provides Plan puzzle-based activities for classrooms, parties, and
   events with pre-configured generator links"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: puzzle activity planner, education, implementation guide
 ---
+
 
 
 # Puzzle Activity Planner

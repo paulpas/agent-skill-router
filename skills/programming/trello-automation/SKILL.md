@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Trello Automation
 
 Automate Trello boards, cards, and workflows via Rube MCP (Composio). Create cards, manage lists, assign members, and search across boards programmatically.

@@ -1,5 +1,5 @@
 ---
-name: ai-projects-py
+name: projects-py
 description: '"Provides Build AI applications on Microsoft Foundry using the azure-ai-projects
   SDK"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai projects py, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Projects Py

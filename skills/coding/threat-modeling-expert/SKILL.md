@@ -1,5 +1,5 @@
 ---
-name: modeling-expert
+name: expert
 description: '"Provides Expert in threat modeling methodologies, security architecture
   review, and risk assessment. Masters STRIDE, PASTA, attack trees, and security requirem"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: threat modeling expert, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: mobile-development-component-scaffold
+name: development-component-scaffold
 description: '"Provides You are a React component architecture expert specializing
   in scaffolding production-ready, accessible, and performant components. Generate
   complete c"'
@@ -14,6 +14,7 @@ metadata:
   triggers: frontend mobile development component scaffold, app, builder, implementation
     guide
 ---
+
 
 
 # Frontend Mobile Development Component Scaffold

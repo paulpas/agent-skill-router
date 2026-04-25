@@ -1,5 +1,5 @@
 ---
-name: query-expert
+name: expert
 description: '"Provides Expert in TanStack Query (React Query) — asynchronous  state
   management. Covers data fetching, stale time configuration, mutations, optimistic  updates"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: tanstack query expert, framework, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

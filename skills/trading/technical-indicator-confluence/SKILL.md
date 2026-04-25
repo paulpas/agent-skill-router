@@ -1,5 +1,5 @@
 ---
-name: technical-indicator-confluence
+name: indicator-confluence
 description: '"Provides Indicator Confluence Validation Systems for Confirming Trading
   Signals"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     validation
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Technical Validation Engineer — implements systems that require multiple technical indicators to align before confirming trading signals, reducing false positives and increasing probability of success.

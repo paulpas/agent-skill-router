@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Error Detective
 
 Search logs and codebases for error patterns, stack traces, and anomalies. Correlates errors across systems and identifies root causes.

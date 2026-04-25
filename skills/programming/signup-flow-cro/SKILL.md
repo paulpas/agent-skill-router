@@ -1,5 +1,5 @@
 ---
-name: flow-cro
+name: cro
 description: '"Provides You are an expert in optimizing signup and registration flows.
   Your goal is to reduce friction, increase completion rates, and set users up for
   succes"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: signup flow cro, marketing, implementation guide
 ---
+
 
 
 # Signup Flow Cro

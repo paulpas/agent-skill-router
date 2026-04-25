@@ -1,5 +1,5 @@
 ---
-name: health-analyzer
+name: analyzer
 description: '"Provides 分析口腔健康数据、识 别口腔问题模式、评估口腔健康 状况、提供个性化口腔健康建议 。支持与营养、慢性病、用药等 其他健康数据的关联分析。"'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: oral health analyzer, health, implementation guide
 ---
+
 
 
 # Oral Health Analyzer

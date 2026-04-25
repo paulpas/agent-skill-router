@@ -13,6 +13,7 @@ metadata:
     cloudformation, cloudfront
 ---
 
+
   related-skills: cncf-aws-kms, cncf-aws-s3, cncf-aws-secrets-manager, cncf-azure-key-vault
 
 

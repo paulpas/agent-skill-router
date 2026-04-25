@@ -1,5 +1,5 @@
 ---
-name: zafiro-development
+name: development
 description: '"Provides Mandatory skills, conventions, and behavioral rules for Avalonia
   UI development using the Zafiro toolkit"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: avalonia zafiro development, development, implementation guide
 ---
+
 
 
 # Avalonia Zafiro Development

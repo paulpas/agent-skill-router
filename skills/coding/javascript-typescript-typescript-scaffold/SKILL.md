@@ -1,5 +1,5 @@
 ---
-name: typescript-typescript-scaffold
+name: typescript-scaffold
 description: '"Provides You are a TypeScript project architecture expert specializing
   in scaffolding production-ready Node.js and frontend applications. Generate complete
   pro"'
@@ -14,6 +14,7 @@ metadata:
   triggers: javascript typescript typescript scaffold, app, builder, implementation
     guide
 ---
+
 
 
 # Javascript Typescript Typescript Scaffold

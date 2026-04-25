@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Ui Component
 
 Generate a new UI component that follows StyleSeed Toss conventions for structure, tokens, accessibility, and component ergonomics.

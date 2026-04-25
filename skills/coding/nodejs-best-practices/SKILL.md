@@ -1,5 +1,5 @@
 ---
-name: best-practices
+name: practices
 description: '"Provides Node.js development principles and decision-making. Framework
   selection, async patterns, security, and architecture. Teaches thinking, not copying"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: nodejs best practices, architecture, how do i secure
 ---
+
 
 
 # Nodejs Best Practices

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Bulletmind
 
 Convert input into clean, structured, hierarchical bullet points for summarization, note-taking, and structured thinking.

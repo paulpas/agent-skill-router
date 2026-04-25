@@ -1,5 +1,5 @@
 ---
-name: hot-path-detector
+name: path-detector
 description: '"Identifies critical execution paths (hot paths) in code that impact
   most" performance, reliability, and resource usage.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
   related-skills: code-correctness-verifier, error-trace-explainer, goal-to-milestones,
     infra-drift-detector
 ---
+
 
 
 

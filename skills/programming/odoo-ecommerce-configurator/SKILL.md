@@ -1,5 +1,5 @@
 ---
-name: ecommerce-configurator
+name: configurator
 description: '''Provides Expert guide for Odoo eCommerce and Website: product catalog,
   payment providers, shipping methods, SEO, and order-to-fulfillment workflow'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo ecommerce configurator, business, implementation guide
 ---
+
 
 
 # Odoo Ecommerce Configurator

@@ -1,5 +1,5 @@
 ---
-name: scanning-security-dependencies
+name: security-dependencies
 description: '"Provides You are a security expert specializing in dependency vulnerability
   analysis, SBOM generation, and supply chain security. Scan project dependencies
   acr"'
@@ -14,6 +14,7 @@ metadata:
   triggers: security scanning security dependencies, security, how do i secure, security
     auditing, vulnerability scanning
 ---
+
 
 
 

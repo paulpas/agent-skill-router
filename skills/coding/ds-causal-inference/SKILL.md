@@ -1,5 +1,5 @@
 ---
-name: ds-causal-inference
+name: causal-inference
 description: Implements causal models, directed acyclic graphs (DAGs), confounding
   adjustment, and mediation analysis for causal discovery
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-intervention-analysis, ds-observational-studies, ds-randomized-experiments,
     ds-synthetic-control
 ---
+
 
 
 

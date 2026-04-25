@@ -1,5 +1,5 @@
 ---
-name: skill-security-review
+name: security-review
 description: Provides this skill ensures all code follows security best practices
   and identifies potential vulnerabilities. use when implementing authentication or
   authoriz
@@ -14,6 +14,7 @@ metadata:
   triggers: cc skill security review, meta, how do i secure, vulnerability scanning,
     security
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: orchestration-multi-agent-optimize
+name: multi-agent-optimize
 description: Provides Optimize multi-agent systems with coordinated profiling, workload
   distribution, and cost-aware orchestration. Use when improving agent performance,
   th
@@ -14,6 +14,7 @@ metadata:
   triggers: agent orchestration multi agent optimize, ai, ml, implementation guide,
     machine learning, scikit-learn
 ---
+
 
 
 

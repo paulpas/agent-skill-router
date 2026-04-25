@@ -1,5 +1,5 @@
 ---
-name: dev-guidelines
+name: guidelines
 description: '"Provides You are a senior backend engineer operating production-grade
   services under strict architectural and reliability constraints. Use when routes,
   control"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: backend dev guidelines, backend, implementation guide
 ---
+
 
 
 # Backend Dev Guidelines

@@ -1,5 +1,5 @@
 ---
-name: search-documents-py
+name: documents-py
 description: '"Provides Azure AI Search SDK for Python. Use for vector search, hybrid
   search, semantic ranking, indexing, and skillsets"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure search documents py, cloud, implementation guide
 ---
+
 
 
 # Azure Search Documents Py

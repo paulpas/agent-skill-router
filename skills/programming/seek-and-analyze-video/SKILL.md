@@ -1,5 +1,5 @@
 ---
-name: and-analyze-video
+name: analyze-video
 description: Provides Seek and analyze video content using Memories.ai Large Visual
   Memory Model for persistent video intelligence
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: seek and analyze video, data, ai, data processing, machine learning, spark,
     big data, distributed processing
 ---
+
 
 
 

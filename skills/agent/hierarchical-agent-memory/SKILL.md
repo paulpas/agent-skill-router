@@ -1,5 +1,5 @@
 ---
-name: agent-memory
+name: memory
 description: '"Provides Scoped CLAUDE.md memory system that reduces context token
   spend. Creates directory-level context files, tracks savings via dashboard, and
   routes agent"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: hierarchical agent memory, memory, implementation guide
 ---
+
 
 
 # Hierarchical Agent Memory

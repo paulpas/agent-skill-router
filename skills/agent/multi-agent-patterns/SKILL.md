@@ -1,5 +1,5 @@
 ---
-name: agent-patterns
+name: patterns
 description: Implements this skill should be used when the user asks to for orchestration
   and agent coordination in autonomous systems.
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: multi agent patterns, ai, agents, implementation guide, machine learning,
     ml, scikit-learn
 ---
+
 
 
 

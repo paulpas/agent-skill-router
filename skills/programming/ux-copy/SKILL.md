@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Ux Copy
 
 Generate UX microcopy in StyleSeed's Toss-inspired voice for buttons, empty states, errors, toasts, confirmations, and form guidance.

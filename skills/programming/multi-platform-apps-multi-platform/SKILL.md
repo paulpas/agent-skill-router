@@ -1,5 +1,5 @@
 ---
-name: platform-apps-multi-platform
+name: apps-multi-platform
 description: '"Provides Build and deploy the same feature consistently across web,
   mobile, and desktop platforms using API-first architecture and parallel implementation
   stra"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: multi platform apps multi platform, development, how do i deploy
 ---
+
 
 
 # Multi Platform Apps Multi Platform

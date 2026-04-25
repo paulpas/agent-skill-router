@@ -1,5 +1,5 @@
 ---
-name: comms-anthropic
+name: anthropic
 description: '''Provides to write internal communications, use this skill for: functionality
   and capabilities.'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: internal comms anthropic, content, implementation guide
 ---
+
 
 
 # Internal Comms Anthropic

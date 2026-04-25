@@ -1,5 +1,5 @@
 ---
-name: appconfiguration-py
+name: py
 description: '"Provides Azure App Configuration SDK for Python. Use for centralized
   configuration management, feature flags, and dynamic settings"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure appconfiguration py, cloud, implementation guide
 ---
+
 
 
 # Azure Appconfiguration Py

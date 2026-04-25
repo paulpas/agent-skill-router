@@ -1,5 +1,5 @@
 ---
-name: technical-intermarket-analysis
+name: intermarket-analysis
 description: '"Implements cross-market relationships and asset class correlations
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: asset, cross-market, relationships, technical intermarket analysis, technical-intermarket-analysis
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Analyze relationships between markets to identify divergences and arbitrage opportunities

@@ -1,5 +1,5 @@
 ---
-name: woocommerce-development
+name: development
 description: '''Provides WooCommerce store development workflow covering store setup,
   payment integration, shipping configuration, customization, and WordPress 7.0 features:
   A'''
@@ -14,6 +14,7 @@ metadata:
   triggers: wordpress woocommerce development, granular, workflow, implementation
     guide
 ---
+
 
 
 # Wordpress Woocommerce Development

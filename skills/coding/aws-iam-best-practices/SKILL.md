@@ -1,5 +1,5 @@
 ---
-name: iam-best-practices
+name: best-practices
 description: Provides IAM policy review, hardening, and least privilege implementation
 license: MIT
 compatibility: opencode
@@ -12,6 +12,7 @@ metadata:
   triggers: aws iam best practices, security, how do i secure, access control, security
     auditing, vulnerability scanning, iam
 ---
+
 
 
 

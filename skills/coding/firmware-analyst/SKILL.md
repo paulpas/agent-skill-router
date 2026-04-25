@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Firmware Analyst
 
 Expert firmware analyst specializing in embedded systems, IoT security, and hardware reverse engineering.

@@ -1,5 +1,5 @@
 ---
-name: ds-linear-regression
+name: linear-regression
 description: '"Implements linear regression including OLS, ridge regression, lasso,
   elastic net, and other regularized linear models for prediction"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
   related-skills: ds-feature-engineering, ds-feature-scaling-normalization, ds-logistic-regression,
     ds-regression-evaluation
 ---
+
 
 
 # Linear Regression

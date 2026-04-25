@@ -1,5 +1,5 @@
 ---
-name: psychology-strategist
+name: strategist
 description: '"Provides one sentence - what this skill does and when to invoke it
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: price psychology strategist, uncategorized, implementation guide
 ---
+
 
 
 # Price Psychology Strategist

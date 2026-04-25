@@ -1,5 +1,5 @@
 ---
-name: ai-regime-classification
+name: regime-classification
 description: '"Provides Detect current market regime for adaptive trading strategies"'
 license: MIT
 compatibility: opencode
@@ -12,6 +12,7 @@ metadata:
   triggers: ai regime classification, ai-regime-classification, current, detect, market
   related-skills: technical-cycle-analysis, technical-intermarket-analysis
 ---
+
 
 
 **Role:** Identify market regimes to switch between trading strategies based on current conditions

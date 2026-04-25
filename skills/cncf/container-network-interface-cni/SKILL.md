@@ -1,5 +1,5 @@
 ---
-name: container-network-interface-cni
+name: network-interface-cni
 description: '"Container Network Interface in Cloud Native Network - cloud native
   architecture" patterns, pitfalls, and best practices'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     infrastructure as code, monitoring, native, cloudformation
   related-skills: calico, cilium, lima, longhorn
 ---
+
 
 
 

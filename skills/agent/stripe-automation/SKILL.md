@@ -18,6 +18,7 @@ metadata:
 
 
 
+
 # Stripe Automation
 
 Automate Stripe tasks via Rube MCP (Composio): customers, charges, subscriptions, invoices, products, refunds. Always search tools first for current schemas.

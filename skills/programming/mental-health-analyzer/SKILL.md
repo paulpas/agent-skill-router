@@ -1,5 +1,5 @@
 ---
-name: health-analyzer
+name: analyzer
 description: '"Provides 分析心理健康数据、识 别心理模式、评估心理健康状况 、提供个性化心理健康建议。支 持与睡眠、运动、营养等其他健 康数据的关联分析。"'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: mental health analyzer, health, implementation guide
 ---
+
 
 
 # Mental Health Analyzer

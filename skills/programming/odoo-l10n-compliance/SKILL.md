@@ -1,5 +1,5 @@
 ---
-name: l10n-compliance
+name: compliance
 description: '''Provides Country-specific Odoo localization: tax configuration, e-invoicing
   (CFDI, FatturaPA, SAF-T), fiscal reporting, and country chart of accounts setup'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo l10n compliance, business, implementation guide
 ---
+
 
 
 # Odoo L10N Compliance

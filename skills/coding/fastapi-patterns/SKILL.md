@@ -1,5 +1,5 @@
 ---
-name: fastapi-patterns
+name: patterns
 description: '"FastAPI application structure with typed error hierarchy, global exception"
   handlers, CORS middleware, request timing, and lifecycle events'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     structure, typed
   related-skills: null
 ---
+
 
 
 

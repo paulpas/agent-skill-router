@@ -1,5 +1,5 @@
 ---
-name: ai-contentsafety-ts
+name: contentsafety-ts
 description: '"Provides Analyze text and images for harmful content with customizable
   blocklists"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai contentsafety ts, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Contentsafety Ts

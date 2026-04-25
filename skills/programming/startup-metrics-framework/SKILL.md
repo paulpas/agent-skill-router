@@ -1,5 +1,5 @@
 ---
-name: metrics-framework
+name: framework
 description: '"Provides Comprehensive guide to tracking, calculating, and optimizing
   key performance metrics for different startup business models from seed through
   Series A"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: startup metrics framework, business, implementation guide
 ---
+
 
 
 # Startup Metrics Framework

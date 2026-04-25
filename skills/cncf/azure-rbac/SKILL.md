@@ -1,5 +1,5 @@
 ---
-name: azure-rbac
+name: rbac
 description: '"Manages identity and access with roles, service principals, and fine-grained"
   permissions.'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: rbac, role-based access, access control, iam, roles, permissions
   related-skills: azure-aks, azure-automation, azure-blob-storage, gcp-iam
 ---
+
 
 
 

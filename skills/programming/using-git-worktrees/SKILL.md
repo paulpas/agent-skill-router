@@ -1,5 +1,5 @@
 ---
-name: git-worktrees
+name: worktrees
 description: '"Provides Git worktrees create isolated workspaces sharing the same
   repository, allowing work on multiple branches simultaneously without switching"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: using git worktrees, development, implementation guide
 ---
+
 
 
 # Using Git Worktrees

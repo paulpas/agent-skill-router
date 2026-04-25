@@ -1,5 +1,5 @@
 ---
-name: the-update-framework-tuf
+name: update-framework-tuf
 description: '"The Update Framework (TUF) in Secure software update framework for
   protecting" software deliveries'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: protecting, secure, software, the update framework tuf, the-update-framework-tuf
   related-skills: null
 ---
+
 
 
 

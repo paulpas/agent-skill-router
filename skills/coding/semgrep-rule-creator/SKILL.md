@@ -1,5 +1,5 @@
 ---
-name: rule-creator
+name: creator
 description: '"Creates custom Semgrep rules for detecting security vulnerabilities,
   bug patterns, and code patterns. Use when writing Semgrep rules or building custo"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: semgrep rule creator, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

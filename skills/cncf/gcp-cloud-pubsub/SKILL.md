@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-pubsub
+name: cloud-pubsub
 description: '"Asynchronous messaging service for event streaming and decoupled application"
   integration.'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: pubsub, messaging, event streaming, message queue, asynchronous messaging
   related-skills: gcp-cloud-functions, gcp-cloud-monitoring, gcp-cloud-tasks
 ---
+
 
 
 

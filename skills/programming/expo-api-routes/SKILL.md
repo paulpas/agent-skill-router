@@ -1,5 +1,5 @@
 ---
-name: api-routes
+name: routes
 description: '"Provides Guidelines for creating API routes in Expo Router with EAS
   Hosting"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: expo api routes, mobile, implementation guide
 ---
+
 
 
 # Expo Api Routes

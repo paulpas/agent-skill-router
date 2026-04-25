@@ -1,5 +1,5 @@
 ---
-name: either-ref
+name: ref
 description: '"Provides Quick reference for Either type. Use when user needs error
   handling, validation, or operations that can fail with typed errors"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: fp either ref, development, implementation guide
 ---
+
 
 
 # Fp Either Ref

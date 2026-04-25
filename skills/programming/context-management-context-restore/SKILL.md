@@ -1,5 +1,5 @@
 ---
-name: management-context-restore
+name: context-restore
 description: Provides use when working with context management context restore functionality
   and capabilities.
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: context management context restore, ai, ml, implementation guide, machine
     learning, scikit-learn
 ---
+
 
 
 

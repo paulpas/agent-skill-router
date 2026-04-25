@@ -1,5 +1,5 @@
 ---
-name: andruia-niche-intelligence
+name: niche-intelligence
 description: '"Provides Estratega de Inteligencia de Dominio de Andru.ia. Analiza
   el  nicho específico de un proyecto para inyectar conocimientos, regulaciones y  estándares
   ún"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: 20 andruia niche intelligence, andruia, implementation guide
 ---
+
 
 
 # 20 Andruia Niche Intelligence

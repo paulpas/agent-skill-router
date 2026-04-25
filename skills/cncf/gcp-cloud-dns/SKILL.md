@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-dns
+name: cloud-dns
 description: Manages DNS with health checks, traffic routing, and low-latency resolution
 license: MIT
 compatibility: opencode
@@ -14,6 +14,7 @@ metadata:
   related-skills: gcp-cloud-load-balancing, gcp-cloud-monitoring, gcp-compute-engine,
     gcp-vpc
 ---
+
 
 
 

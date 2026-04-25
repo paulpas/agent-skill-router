@@ -1,5 +1,5 @@
 ---
-name: ds-monte-carlo
+name: monte-carlo
 description: '"Implements Monte Carlo sampling, simulation methods, and stochastic
   approximation for uncertainty estimation and numerical integration"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-bayesian-inference, ds-confidence-intervals, ds-distribution-fitting,
     ds-kernel-density
 ---
+
 
 
 # Monte Carlo Methods

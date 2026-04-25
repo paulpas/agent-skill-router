@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Twitter Automation
 
 Automate Twitter/X tasks via Rube MCP (Composio): posts, search, users, bookmarks, lists, media. Always search tools first for current schemas.

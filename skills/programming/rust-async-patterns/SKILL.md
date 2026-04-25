@@ -1,5 +1,5 @@
 ---
-name: async-patterns
+name: patterns
 description: '"Provides Master Rust async programming with Tokio, async traits, error
   handling, and concurrent patterns. Use when building async Rust applications, implementi"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: rust async patterns, development, implementation guide
 ---
+
 
 
 # Rust Async Patterns

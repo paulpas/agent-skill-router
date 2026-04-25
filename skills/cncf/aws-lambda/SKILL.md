@@ -1,5 +1,5 @@
 ---
-name: aws-lambda
+name: lambda
 description: '"Deploys serverless event-driven applications with Lambda functions,
   triggers" layers, and VPC integration for cost-effective, auto-scaling compute without
   server management.'
@@ -15,6 +15,7 @@ metadata:
     sqs, dynamodb stream
   related-skills: aws-cloudwatch, aws-dynamodb, aws-iam, aws-secrets-manager
 ---
+
 
 
 

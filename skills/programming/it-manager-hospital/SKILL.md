@@ -1,5 +1,5 @@
 ---
-name: manager-hospital
+name: hospital
 description: '"Provides World-class Hospital IT Management Advisor specializing in
   clinical safety, digital maturity (HIMSS/ONA/JCI), and HIS/PEP ecosystems"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: it manager hospital, uncategorized, implementation guide
 ---
+
 
 
 # It Manager Hospital

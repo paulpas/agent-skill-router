@@ -1,5 +1,5 @@
 ---
-name: browser-automation
+name: automation
 description: '"Provides AI-powered browser automation — navigate sites, fill forms,  extract
   structured data, log in with stored credentials, and build reusable workflows"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: skyvern browser automation, browser, automation, how do i automate, jenkins,
     ci/cd pipeline, continuous integration
 ---
+
 
 
 

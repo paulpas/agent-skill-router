@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Screenshots
 
 Generate marketing screenshots of your app using Playwright. Use when the user wants to create screenshots for Product Hunt, social media, landing pages, or documentation.

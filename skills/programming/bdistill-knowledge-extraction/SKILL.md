@@ -1,5 +1,5 @@
 ---
-name: knowledge-extraction
+name: extraction
 description: Provides Extract structured domain knowledge from AI models in-session
   or from local open-source models via Ollama. No API key needed
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: bdistill knowledge extraction, ai, research, implementation guide, machine
     learning, ml, scikit-learn
 ---
+
 
 
 

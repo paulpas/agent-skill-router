@@ -1,5 +1,5 @@
 ---
-name: debugging-error-trace
+name: error-trace
 description: '"Provides You are an error tracking and observability expert specializing
   in implementing comprehensive error monitoring solutions. Set up error tracking
   system"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: error debugging error trace, development, implementation guide
 ---
+
 
 
 # Error Debugging Error Trace

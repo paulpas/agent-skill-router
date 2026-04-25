@@ -1,5 +1,5 @@
 ---
-name: event-action
+name: action
 description: '"CRITICAL: Use for Makepad event and action handling. Triggers on" makepad
   event, makepad action, Event enum, ActionTrait, handle_event, MouseDown, KeyDown,
   TouchUpdate, Hit, Finger"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: makepad event action, development, implementation guide
 ---
+
 
 
 # Makepad Event Action

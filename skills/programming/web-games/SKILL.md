@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Web Games
 
 Web browser game development principles. Framework selection, WebGPU, optimization, PWA.

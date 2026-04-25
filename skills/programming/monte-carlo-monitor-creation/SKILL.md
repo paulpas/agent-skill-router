@@ -1,5 +1,5 @@
 ---
-name: carlo-monitor-creation
+name: monitor-creation
 description: '"Guides creation of Monte Carlo monitors via MCP tools, producing monitors-as-code
   YAML for CI/CD deployment"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: monte carlo monitor creation, data, how do i deploy
 ---
+
 
 
 # Monte Carlo Monitor Creation

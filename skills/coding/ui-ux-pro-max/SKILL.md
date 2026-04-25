@@ -1,5 +1,5 @@
 ---
-name: ux-pro-max
+name: pro-max
 description: '"Provides Comprehensive design guide for web and mobile applications.
   Use when designing new UI components or pages, choosing color palettes and typography,
   or"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: ui ux pro max, front, end, implementation guide
 ---
+
 
 
 # Ui Ux Pro Max

@@ -1,5 +1,5 @@
 ---
-name: data-fetching
+name: fetching
 description: Provides use when implementing or debugging any network request, api
   call, or data fetching. covers fetch api, react query, swr, error handling, caching,
   offli
@@ -14,6 +14,7 @@ metadata:
   triggers: native data fetching, development, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

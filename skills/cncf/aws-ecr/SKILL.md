@@ -1,5 +1,5 @@
 ---
-name: aws-ecr
+name: ecr
 description: '"Manages container image repositories with ECR for secure storage, scanning"
   replication, and integration with EKS, ECS, and Lambda for container deployments.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     image repository, image scanning, vulnerability scanning
   related-skills: aws-eks, aws-iam, aws-kms, cubefs
 ---
+
 
 
 

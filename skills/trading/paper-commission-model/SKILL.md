@@ -1,5 +1,5 @@
 ---
-name: paper-commission-model
+name: commission-model
 description: '"Implements commission model and fee structure simulation for risk management
   and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     simulation, structure
   related-skills: fundamentals-market-regimes, fundamentals-trading-plan, paper-market-impact
 ---
+
 
 
 **Role:** Cost Analysis Specialist — implements comprehensive fee models to accurately calculate trading costs including commissions, exchange fees, clearing fees, and tax lot tracking for realistic backtesting and performance attribution.

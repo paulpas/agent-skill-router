@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Deployment Procedures
 
 Production deployment principles and decision-making. Safe deployment workflows, rollback strategies, and verification. Teaches thinking, not scripts.

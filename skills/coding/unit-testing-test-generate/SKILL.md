@@ -1,5 +1,5 @@
 ---
-name: testing-test-generate
+name: test-generate
 description: '"Provides Generate comprehensive, maintainable unit tests across languages
   with strong coverage and edge case focus"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: unit testing test generate, testing, how do i test, test automation, unit
     tests
 ---
+
 
 
 

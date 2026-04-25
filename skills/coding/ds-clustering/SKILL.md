@@ -1,5 +1,5 @@
 ---
-name: ds-clustering
+name: clustering
 description: '"Implements clustering algorithms including K-means, hierarchical clustering,
   DBSCAN, Gaussian mixture models, and spectral clustering"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-anomaly-detection, ds-association-rules, ds-community-detection,
     ds-dimensionality-reduction
 ---
+
 
 
 # Clustering

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Shopify Development
 
 Build Shopify apps, extensions, themes using GraphQL Admin API, Shopify CLI, Polaris UI, and Liquid.

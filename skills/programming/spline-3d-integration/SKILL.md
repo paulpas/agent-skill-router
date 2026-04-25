@@ -1,5 +1,5 @@
 ---
-name: 3d-integration
+name: integration
 description: '"Provides use when adding interactive 3d scenes from spline.design to
   web projects, including react embedding and runtime control api"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: spline 3d integration, web, development, implementation guide
 ---
+
 
 
 # Spline 3D Integration

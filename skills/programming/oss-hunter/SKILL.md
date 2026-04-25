@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Oss Hunter
 
 Automatically hunt for high-impact OSS contribution opportunities in trending repositories.

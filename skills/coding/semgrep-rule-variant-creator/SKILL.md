@@ -1,5 +1,5 @@
 ---
-name: rule-variant-creator
+name: variant-creator
 description: '"Creates language variants of existing Semgrep rules. Use when porting
   a Semgrep rule to specified target languages. Takes an existing rule and target"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: semgrep rule variant creator, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

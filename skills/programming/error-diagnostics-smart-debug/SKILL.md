@@ -1,5 +1,5 @@
 ---
-name: diagnostics-smart-debug
+name: smart-debug
 description: '"Provides use when working with error diagnostics smart debug functionality
   and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: error diagnostics smart debug, development, implementation guide
 ---
+
 
 
 # Error Diagnostics Smart Debug

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Remotion
 
 Generate walkthrough videos from Stitch projects using Remotion with smooth transitions, zooming, and text overlays

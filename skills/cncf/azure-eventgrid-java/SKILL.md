@@ -1,5 +1,5 @@
 ---
-name: eventgrid-java
+name: java
 description: '"Provides Build event-driven applications with Azure Event Grid SDK
   for Java. Use when publishing events, implementing pub/sub patterns, or integrating
   with Azu"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure eventgrid java, cloud, implementation guide
 ---
+
 
 
 # Azure Eventgrid Java

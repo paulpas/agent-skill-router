@@ -1,5 +1,5 @@
 ---
-name: advanced-workflows
+name: workflows
 description: '"Provides Master advanced Git techniques to maintain clean history,
   collaborate effectively, and recover from any situation with confidence"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: git advanced workflows, workflow, implementation guide
 ---
+
 
 
 # Git Advanced Workflows

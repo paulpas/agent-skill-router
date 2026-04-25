@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Deep Research
 
 Run autonomous research tasks that plan, search, read, and synthesize information into comprehensive reports.

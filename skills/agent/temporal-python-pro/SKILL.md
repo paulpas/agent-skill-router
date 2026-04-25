@@ -1,5 +1,5 @@
 ---
-name: python-pro
+name: pro
 description: '"Provides Master Temporal workflow orchestration with Python SDK. Implements
   durable workflows, saga patterns, and distributed transactions. Covers async/await"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: temporal python pro, workflow, implementation guide
 ---
+
 
 
 # Temporal Python Pro

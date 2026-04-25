@@ -1,5 +1,5 @@
 ---
-name: compute-batch-java
+name: batch-java
 description: '"Provides Azure Batch SDK for Java. Run large-scale parallel and HPC
   batch jobs with pools, jobs, tasks, and compute nodes"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure compute batch java, cloud, implementation guide
 ---
+
 
 
 # Azure Compute Batch Java

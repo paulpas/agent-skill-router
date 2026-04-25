@@ -1,5 +1,5 @@
 ---
-name: content-analytics
+name: analytics
 description: Provides Track engagement metrics, measure campaign ROI, and analyze
   content performance across Instagram, Facebook, YouTube, and TikTok
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: apify content analytics, automation, how do i automate, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

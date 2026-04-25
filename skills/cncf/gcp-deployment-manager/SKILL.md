@@ -1,5 +1,5 @@
 ---
-name: gcp-deployment-manager
+name: deployment-manager
 description: '"Infrastructure as code using YAML templates for repeatable GCP resource"
   deployments.'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: deployment manager, infrastructure as code, iac, templates, yaml
   related-skills: azure-resource-manager, gcp-cloud-sql
 ---
+
 
 
 

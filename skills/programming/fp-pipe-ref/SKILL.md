@@ -1,5 +1,5 @@
 ---
-name: pipe-ref
+name: ref
 description: Provides Quick reference for pipe and flow. Use when user needs to chain
   functions, compose operations, or build data pipelines in fp-ts
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: fp pipe ref, development, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

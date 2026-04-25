@@ -1,5 +1,5 @@
 ---
-name: components-status
+name: status
 description: '"Provides Apple HIG guidance for status and progress UI components including
   progress indicators, status bars, and activity rings"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: hig components status, development, implementation guide
 ---
+
 
 
 # Hig Components Status

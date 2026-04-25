@@ -1,5 +1,5 @@
 ---
-name: ai-development
+name: development
 description: '"Provides Expert in building voice AI applications - from real-time
   voice agents to voice-enabled apps. Covers OpenAI Realtime API, Vapi for voice agents,
   Deepg"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: voice ai development, voice, agents, implementation guide
 ---
+
 
 
 # Voice Ai Development

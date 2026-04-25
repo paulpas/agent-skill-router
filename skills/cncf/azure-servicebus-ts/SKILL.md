@@ -1,5 +1,5 @@
 ---
-name: servicebus-ts
+name: ts
 description: '"Configures enterprise messaging with queues, topics, and subscriptions
   for cloud-native deployment and infrastructure management."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure servicebus ts, cloud, implementation guide
 ---
+
 
 
 # Azure Servicebus Ts

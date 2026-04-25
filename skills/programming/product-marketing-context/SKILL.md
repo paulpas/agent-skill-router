@@ -1,5 +1,5 @@
 ---
-name: marketing-context
+name: context
 description: '"Provides Create or update a reusable product marketing context document
   with positioning, audience, ICP, use cases, and messaging. Use at the start of a
   projec"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: product marketing context, business, implementation guide
 ---
+
 
 
 # Product Marketing Context

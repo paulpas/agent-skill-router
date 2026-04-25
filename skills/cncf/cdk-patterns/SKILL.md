@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Cdk Patterns
 
 Common AWS CDK patterns and constructs for building cloud infrastructure with TypeScript, Python, or Java. Use when designing reusable CDK stacks and L3 constructs.

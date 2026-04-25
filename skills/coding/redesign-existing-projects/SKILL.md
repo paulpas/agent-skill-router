@@ -1,5 +1,5 @@
 ---
-name: existing-projects
+name: projects
 description: '"Provides use when upgrading existing websites or apps by auditing generic
   ui patterns and applying premium design fixes without rewrites"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: redesign existing projects, frontend, implementation guide
 ---
+
 
 
 # Redesign Existing Projects

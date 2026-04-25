@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Salesforce Automation
 
 Automate Salesforce tasks via Rube MCP (Composio): leads, contacts, accounts, opportunities, SOQL queries. Always search tools first for current schemas.

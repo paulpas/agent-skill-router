@@ -1,5 +1,5 @@
 ---
-name: risk-position-sizing
+name: position-sizing
 description: '"Calculating optimal position sizes using Kelly criterion, volatility"
   adjustments, and edge-based sizing to maximize long-term growth while managing risk'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: calculating, optimal, risk position sizing, risk-position-sizing, sizes
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api
 ---
+
 
 
 **Role:** Guide an AI coding assistant to implement mathematically sound position sizing that balances growth optimization with capital preservation across varying market conditions

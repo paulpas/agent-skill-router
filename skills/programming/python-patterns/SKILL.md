@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Python Patterns
 
 Python development principles and decision-making. Framework selection, async patterns, type hints, project structure. Teaches thinking, not copying.

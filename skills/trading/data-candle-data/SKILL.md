@@ -1,5 +1,5 @@
 ---
-name: data-candle-data
+name: candle-data
 description: '"OHLCV candle data processing, timeframe management, and validation
   for" trading algorithms'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: data candle data, data-candle-data, ohlcv, processing, timeframe
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 # Candle Data Pipeline: The 5 Laws of Financial Time Series

@@ -1,5 +1,5 @@
 ---
-name: trend-analysis
+name: analysis
 description: Provides Discover and track emerging trends across Google Trends, Instagram,
   Facebook, YouTube, and TikTok to inform content strategy
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: apify trend analysis, automation, how do i automate, jenkins, ci/cd pipeline,
     continuous integration
 ---
+
 
 
 

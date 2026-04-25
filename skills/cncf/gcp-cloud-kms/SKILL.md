@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-kms
+name: cloud-kms
 description: '"Manages encryption keys for data protection with automated rotation
   and auditing"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: kms, key management, encryption, encryption keys, key rotation
   related-skills: gcp-cloud-sql, gcp-cloud-storage, gcp-secret-manager
 ---
+
 
 
 

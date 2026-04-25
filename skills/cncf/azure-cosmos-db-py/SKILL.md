@@ -1,5 +1,5 @@
 ---
-name: cosmos-db-py
+name: db-py
 description: '"Provides Build production-grade Azure Cosmos DB NoSQL services following
   clean code, security best practices, and TDD principles"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure cosmos db py, cloud, how do i secure
 ---
+
 
 
 # Azure Cosmos Db Py

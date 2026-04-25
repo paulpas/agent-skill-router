@@ -1,5 +1,5 @@
 ---
-name: performance-optimization
+name: optimization
 description: Provides Optimize website and web application performance including loading
   speed, Core Web Vitals, bundle size, caching strategies, and runtime performance
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: web performance optimization, front, end, implementation guide, optimization,
     performance
 ---
+
 
 
 

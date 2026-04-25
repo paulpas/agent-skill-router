@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Julia Pro
 
 Master Julia 1.10+ with modern features, performance optimization, multiple dispatch, and production-ready practices.

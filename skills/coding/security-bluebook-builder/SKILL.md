@@ -1,5 +1,5 @@
 ---
-name: bluebook-builder
+name: builder
 description: '"Provides Build a minimal but real security policy for sensitive apps.
   The output is a single, coherent Blue Book document using MUST/SHOULD/CAN language,
   with"'
@@ -14,6 +14,7 @@ metadata:
   triggers: security bluebook builder, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

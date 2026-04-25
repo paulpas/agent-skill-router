@@ -1,5 +1,5 @@
 ---
-name: ai-contentunderstanding-py
+name: contentunderstanding-py
 description: '"Provides Azure AI Content Understanding SDK for Python. Use for multimodal
   content extraction from documents, images, audio, and video"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai contentunderstanding py, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Contentunderstanding Py

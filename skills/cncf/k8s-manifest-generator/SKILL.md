@@ -1,5 +1,5 @@
 ---
-name: manifest-generator
+name: generator
 description: Provides Step-by-step guidance for creating production-ready Kubernetes
   manifests including Deployments, Services, ConfigMaps, Secrets, and PersistentVolumeCla
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: k8s manifest generator, devops, how do i deploy, kubernetes, container
     orchestration, k8s
 ---
+
 
 
 

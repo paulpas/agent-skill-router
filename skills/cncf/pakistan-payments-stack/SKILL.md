@@ -1,5 +1,5 @@
 ---
-name: payments-stack
+name: stack
 description: '"Provides Design and implement production-grade Pakistani payment integrations
   (JazzCash, Easypaisa, bank/PSP rails, optional Raast) for SaaS with PKR billing"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: pakistan payments stack, api, integration, implementation guide
 ---
+
 
 
 # Pakistan Payments Stack

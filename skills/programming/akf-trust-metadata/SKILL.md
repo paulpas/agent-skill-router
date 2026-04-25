@@ -1,5 +1,5 @@
 ---
-name: trust-metadata
+name: metadata
 description: '"Provides the ai native file format. exif for ai — stamps every  file
   with trust scores, source provenance, and compliance metadata. embeds into  20+
   formats (doc"'
@@ -14,6 +14,7 @@ metadata:
   triggers: akf trust metadata, uncategorized, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

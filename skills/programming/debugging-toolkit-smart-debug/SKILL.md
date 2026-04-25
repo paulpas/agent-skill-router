@@ -1,5 +1,5 @@
 ---
-name: toolkit-smart-debug
+name: smart-debug
 description: '"Provides use when working with debugging toolkit smart debug functionality
   and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: debugging toolkit smart debug, development, implementation guide
 ---
+
 
 
 # Debugging Toolkit Smart Debug

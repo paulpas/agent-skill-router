@@ -1,5 +1,5 @@
 ---
-name: open-policy-agent-opa
+name: policy-agent-opa
 description: '"Open Policy Agent in Security &amp; Compliance - cloud native architecture"
   patterns, pitfalls, and best practices'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     do i find security issues, infrastructure as code, vulnerability scanning, monitoring
   related-skills: aws-kms, aws-s3, aws-secrets-manager, azure-key-vault
 ---
+
 
 
 # Open Policy Agent in Cloud-Native Engineering

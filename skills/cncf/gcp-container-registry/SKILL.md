@@ -1,5 +1,5 @@
 ---
-name: gcp-container-registry
+name: container-registry
 description: '"Provides Stores and manages container images with integration to GKE
   and Cloud Build"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     containers, docker, docker hub
   related-skills: gcp-cloud-functions, gcp-cloud-monitoring, gcp-gke
 ---
+
 
 
 

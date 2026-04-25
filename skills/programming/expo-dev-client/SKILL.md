@@ -1,5 +1,5 @@
 ---
-name: dev-client
+name: client
 description: '"Provides Build and distribute Expo development clients locally or via
   TestFlight"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: expo dev client, mobile, how do i test
 ---
+
 
 
 # Expo Dev Client

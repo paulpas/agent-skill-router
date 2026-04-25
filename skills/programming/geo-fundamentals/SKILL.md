@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Geo Fundamentals
 
 Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity).

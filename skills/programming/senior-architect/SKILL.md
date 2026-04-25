@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Senior Architect
 
 Complete toolkit for senior architect with modern tools and best practices.

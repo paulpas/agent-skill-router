@@ -1,5 +1,5 @@
 ---
-name: ds-maximum-likelihood
+name: maximum-likelihood
 description: Implements maximum likelihood estimation, likelihood functions, and optimization
   methods for parameter estimation in probabilistic models
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-bayesian-inference, ds-hypothesis-testing, ds-linear-regression,
     ds-monte-carlo
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: supabase-auth
+name: auth
 description: '"Provides expert integration of supabase auth with next.js app router
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: nextjs supabase auth, uncategorized, implementation guide
 ---
+
 
 
 # Nextjs Supabase Auth

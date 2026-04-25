@@ -1,5 +1,5 @@
 ---
-name: ds-missing-data
+name: missing-data
 description: '"Handles missing data using imputation strategies, deletion methods,
   and techniques for dealing with incomplete datasets while preserving information"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     missing data, data gaps
   related-skills: ds-data-quality, ds-eda, ds-feature-engineering
 ---
+
 
 
 # Missing Data Handling

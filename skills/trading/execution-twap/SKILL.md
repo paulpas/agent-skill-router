@@ -1,5 +1,5 @@
 ---
-name: execution-twap
+name: twap
 description: '"Time-Weighted Average Price algorithm for executing large orders with"
   minimal market impact'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: average, execution twap, execution-twap, price, time-weighted
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
 ---
+
 
 
 **Role:** Execute large orders over time to minimize market impact and achieve good prices

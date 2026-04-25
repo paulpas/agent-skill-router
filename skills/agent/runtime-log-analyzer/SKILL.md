@@ -1,5 +1,5 @@
 ---
-name: runtime-log-analyzer
+name: log-analyzer
 description: '"Analyzes runtime logs from agent execution to identify patterns, detect"
   anomalies, and extract actionable insights for system optimization.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
   related-skills: code-correctness-verifier, confidence-based-selector, error-trace-explainer,
     k8s-debugger
 ---
+
 
 
 

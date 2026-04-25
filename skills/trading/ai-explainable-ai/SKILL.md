@@ -1,5 +1,5 @@
 ---
-name: ai-explainable-ai
+name: explainable-ai
 description: '"Provides Explainable AI for understanding and trusting trading model
   decisions"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai explainable ai, ai-explainable-ai, trading, trusting, understanding
   related-skills: ai-anomaly-detection, ai-feature-engineering, ai-time-series-forecasting
 ---
+
 
 
 **Role:** Build interpretability systems that make model predictions understandable to traders and risk managers

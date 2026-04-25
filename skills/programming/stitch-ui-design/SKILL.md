@@ -1,5 +1,5 @@
 ---
-name: ui-design
+name: design
 description: '"Provides Expert guidance for crafting effective prompts in Google Stitch,
   the AI-powered UI design tool by Google Labs. This skill helps create precise, action"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: stitch ui design, design, implementation guide
 ---
+
 
 
 # Stitch Ui Design

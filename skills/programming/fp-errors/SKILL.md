@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Fp Errors
 
 Stop throwing everywhere - handle errors as values using Either and TaskEither for cleaner, more predictable code

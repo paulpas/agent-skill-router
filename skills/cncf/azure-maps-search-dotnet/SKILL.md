@@ -1,5 +1,5 @@
 ---
-name: maps-search-dotnet
+name: search-dotnet
 description: '"Provides Azure Maps SDK for .NET. Location-based services including
   geocoding, routing, rendering, geolocation, and weather. Use for address search,
   directions"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure maps search dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Maps Search Dotnet

@@ -1,5 +1,5 @@
 ---
-name: gif-creator
+name: creator
 description: '"Provides a toolkit providing utilities and knowledge for creating animated
   gifs optimized for slack"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: slack gif creator, uncategorized, implementation guide
 ---
+
 
 
 # Slack Gif Creator

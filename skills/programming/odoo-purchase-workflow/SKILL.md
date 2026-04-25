@@ -1,5 +1,5 @@
 ---
-name: purchase-workflow
+name: workflow
 description: '"Provides Expert guide for Odoo Purchase: RFQ → PO → Receipt  → Vendor
   Bill workflow, purchase agreements, vendor price lists, and 3-way  matching"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo purchase workflow, business, implementation guide
 ---
+
 
 
 # Odoo Purchase Workflow

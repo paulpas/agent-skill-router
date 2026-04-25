@@ -1,5 +1,5 @@
 ---
-name: ai-projects-dotnet
+name: projects-dotnet
 description: '"Provides Azure AI Projects SDK for .NET. High-level client for Azure
   AI Foundry projects including agents, connections, datasets, deployments, evaluations,
   and"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure ai projects dotnet, cloud, how do i deploy
 ---
+
 
 
 # Azure Ai Projects Dotnet

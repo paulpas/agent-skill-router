@@ -1,5 +1,5 @@
 ---
-name: storage-blob-java
+name: blob-java
 description: '"Provides Build blob storage applications using the Azure Storage Blob
   SDK for Java"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure storage blob java, cloud, implementation guide
 ---
+
 
 
 # Azure Storage Blob Java

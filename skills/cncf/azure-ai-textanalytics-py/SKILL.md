@@ -1,5 +1,5 @@
 ---
-name: ai-textanalytics-py
+name: textanalytics-py
 description: '"Provides Azure AI Text Analytics SDK for sentiment analysis, entity
   recognition, key phrases, language detection, PII, and healthcare NLP. Use for natural
   lang"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure ai textanalytics py, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Textanalytics Py

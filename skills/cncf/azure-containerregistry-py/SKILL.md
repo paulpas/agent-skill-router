@@ -1,5 +1,5 @@
 ---
-name: containerregistry-py
+name: py
 description: '"Provides Azure Container Registry SDK for Python. Use for managing
   container images, artifacts, and repositories"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure containerregistry py, cloud, implementation guide
 ---
+
 
 
 # Azure Containerregistry Py

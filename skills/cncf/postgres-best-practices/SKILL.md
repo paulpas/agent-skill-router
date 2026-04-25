@@ -1,5 +1,5 @@
 ---
-name: best-practices
+name: practices
 description: Provides Postgres performance optimization and best practices from Supabase.
   Use this skill when writing, reviewing, or optimizing Postgres queries, schema des
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: postgres best practices, database, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

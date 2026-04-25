@@ -1,5 +1,5 @@
 ---
-name: ai-order-flow-analysis
+name: order-flow-analysis
 description: '"Provides Analyze order flow to detect market pressure and anticipate
   price moves"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai order flow analysis, ai-order-flow-analysis, analyze, detect, market
   related-skills: data-order-book, data-validation, exchange-health, exchange-order-execution-api
 ---
+
 
 
 **Role:** Extract actionable insights from order book dynamics and trade flow data

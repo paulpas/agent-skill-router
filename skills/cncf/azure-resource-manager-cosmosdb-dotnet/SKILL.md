@@ -1,5 +1,5 @@
 ---
-name: resource-manager-cosmosdb-dotnet
+name: manager-cosmosdb-dotnet
 description: '"Configures azure resource manager sdk for cosmos db in .net for cloud-native
   deployment and infrastructure management."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure resource manager cosmosdb dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Resource Manager Cosmosdb Dotnet

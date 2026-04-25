@@ -1,5 +1,5 @@
 ---
-name: store-optimization
+name: optimization
 description: '"Provides Complete App Store Optimization (ASO) toolkit for researching,
   optimizing, and tracking mobile app performance on Apple App Store and Google Play
   Stor"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: app store optimization, marketing, implementation guide
 ---
+
 
 
 # App Store Optimization

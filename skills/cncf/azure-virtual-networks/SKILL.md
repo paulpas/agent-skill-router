@@ -1,5 +1,5 @@
 ---
-name: azure-virtual-networks
+name: virtual-networks
 description: '"Provides Networking with subnets, network security groups, and VPN
   connectivity"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     zones, network segmentation
   related-skills: azure-aks, azure-load-balancer, azure-monitor, azure-resource-manager
 ---
+
 
 
 

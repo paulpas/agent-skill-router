@@ -1,5 +1,5 @@
 ---
-name: ai-agents-persistent-dotnet
+name: agents-persistent-dotnet
 description: '"Provides Azure AI Agents Persistent SDK for .NET. Low-level SDK for
   creating and managing AI agents with threads, messages, runs, and tools"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai agents persistent dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Agents Persistent Dotnet

@@ -1,5 +1,5 @@
 ---
-name: post-writer-seo
+name: writer-seo
 description: '"Provides Social Media Strategist and Content Writer. Creates clear,
   engaging social media posts for Instagram, LinkedIn, and Facebook"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: social post writer seo, growth, implementation guide
 ---
+
 
 
 # Social Post Writer Seo

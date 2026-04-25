@@ -1,5 +1,5 @@
 ---
-name: face-jobs
+name: jobs
 description: Provides Run workloads on Hugging Face Jobs with managed CPUs, GPUs,
   TPUs, secrets, and Hub persistence
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: hugging face jobs, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

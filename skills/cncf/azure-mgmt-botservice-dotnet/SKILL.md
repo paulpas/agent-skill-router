@@ -1,5 +1,5 @@
 ---
-name: mgmt-botservice-dotnet
+name: botservice-dotnet
 description: '"Provides Azure Resource Manager SDK for Bot Service in .NET. Management
   plane operations for creating and managing Azure Bot resources, channels (Teams,
   Direct"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure mgmt botservice dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Botservice Dotnet

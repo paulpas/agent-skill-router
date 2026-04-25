@@ -1,5 +1,5 @@
 ---
-name: concurrency-expert
+name: expert
 description: '"Provides Review and fix Swift concurrency issues such as actor isolation
   and Sendable violations"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: swift concurrency expert, uncategorized, implementation guide
 ---
+
 
 
 # Swift Concurrency Expert

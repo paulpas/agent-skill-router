@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Skill Check
 
 Validate Claude Code skills against the agentskills specification. Catches structural, semantic, and naming issues before users do.

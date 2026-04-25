@@ -1,5 +1,5 @@
 ---
-name: skill-frontend-patterns
+name: frontend-patterns
 description: '"Provides Frontend development patterns for React, Next.js, state management,
   performance optimization, and UI best practices"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: cc skill frontend patterns, meta, implementation guide
 ---
+
 
 
 # Cc Skill Frontend Patterns

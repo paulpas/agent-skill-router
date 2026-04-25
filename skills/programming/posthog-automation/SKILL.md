@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Posthog Automation
 
 Automate PostHog tasks via Rube MCP (Composio): events, feature flags, projects, user profiles, annotations. Always search tools first for current schemas.

@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Energy Procurement
 
 Codified expertise for electricity and gas procurement, tariff optimisation, demand charge management, renewable PPA evaluation, and multi-facility energy cost management.

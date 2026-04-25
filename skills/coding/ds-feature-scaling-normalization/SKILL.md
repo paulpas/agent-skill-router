@@ -1,5 +1,5 @@
 ---
-name: ds-feature-scaling-normalization
+name: feature-scaling-normalization
 description: '"Provides Scales and normalizes features using standardization, normalization,
   robust scaling, and other scaling methods for model compatibility"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     features, how do I scale
   related-skills: ds-categorical-encoding, ds-feature-engineering, ds-linear-regression
 ---
+
 
 
 # Feature Scaling

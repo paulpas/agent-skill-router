@@ -1,5 +1,5 @@
 ---
-name: ui-generator
+name: generator
 description: '"Provides Utilizes Magic by 21st.dev to generate, compare, and integrate
   multiple production-ready UI component variations"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: magic ui generator, web, development, implementation guide
 ---
+
 
 
 # Magic Ui Generator

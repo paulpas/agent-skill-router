@@ -1,5 +1,5 @@
 ---
-name: skill-orchestrator
+name: orchestrator
 description: '"Provides a meta-skill that understands task requirements, dynamically
   selects appropriate skills, tracks successful skill combinations using agent-memory-mcp"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: antigravity skill orchestrator, meta, implementation guide
 ---
+
 
 
 # Antigravity Skill Orchestrator

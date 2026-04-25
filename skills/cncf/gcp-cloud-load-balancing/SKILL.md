@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-load-balancing
+name: cloud-load-balancing
 description: '"Provides Distributes traffic across instances with automatic failover
   and health checking"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     routing, elb
   related-skills: gcp-autoscaling, gcp-cloud-cdn, gcp-cloud-dns, gcp-cloud-monitoring
 ---
+
 
 
 

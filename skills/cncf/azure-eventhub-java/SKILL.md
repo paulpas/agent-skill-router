@@ -1,5 +1,5 @@
 ---
-name: eventhub-java
+name: java
 description: Provides Build real-time streaming applications with Azure Event Hubs
   SDK for Java. Use when implementing event streaming, high-throughput data ingestion,
   or b
@@ -14,6 +14,7 @@ metadata:
   triggers: azure eventhub java, cloud, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

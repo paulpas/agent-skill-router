@@ -1,5 +1,5 @@
 ---
-name: cloud-architecture
+name: architecture
 description: '"Provides Decision framework and patterns for architecting applications
   across AWS, Azure, and GCP"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: multi cloud architecture, cloud, implementation guide
 ---
+
 
 
 # Multi Cloud Architecture

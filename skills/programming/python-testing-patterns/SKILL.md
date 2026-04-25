@@ -1,5 +1,5 @@
 ---
-name: testing-patterns
+name: patterns
 description: Provides Implement comprehensive testing strategies with pytest, fixtures,
   mocking, and test-driven development. Use when writing Python tests, setting up
   test
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: python testing patterns, development, how do i test, unit tests, testing
 ---
+
 
 
 

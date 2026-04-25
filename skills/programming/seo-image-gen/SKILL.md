@@ -1,5 +1,5 @@
 ---
-name: image-gen
+name: gen
 description: '"Provides Generate SEO-focused images such as OG cards, hero images,
   schema assets, product visuals, and infographics. Use when image generation is part
   of an S"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo image gen, content, implementation guide
 ---
+
 
 
 # Seo Image Gen

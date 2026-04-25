@@ -1,5 +1,5 @@
 ---
-name: pr-workflows-git-workflow
+name: workflows-git-workflow
 description: '"Provides Orchestrate a comprehensive git workflow from code review
   through PR creation, leveraging specialized agents for quality assurance, testing,
   and deplo"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: git pr workflows git workflow, workflow, how do i test
 ---
+
 
 
 # Git Pr Workflows Git Workflow

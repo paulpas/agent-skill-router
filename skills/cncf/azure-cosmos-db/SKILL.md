@@ -1,5 +1,5 @@
 ---
-name: azure-cosmos-db
+name: cosmos-db
 description: Provides Global NoSQL database with multi-region distribution and guaranteed
   latency
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     cassandra, mongodb, nosql database
   related-skills: azure-functions, azure-monitor
 ---
+
 
 
 

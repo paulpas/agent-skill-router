@@ -1,5 +1,5 @@
 ---
-name: cloud-networking
+name: networking
 description: '"Provides Configure secure, high-performance connectivity between on-premises
   and cloud environments using VPN, Direct Connect, and ExpressRoute"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: hybrid cloud networking, cloud, implementation guide
 ---
+
 
 
 # Hybrid Cloud Networking

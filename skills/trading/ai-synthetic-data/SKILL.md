@@ -1,5 +1,5 @@
 ---
-name: ai-synthetic-data
+name: synthetic-data
 description: '"Provides Generate synthetic financial data for training and testing
   trading models"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai synthetic data, ai-synthetic-data, financial, generate, training
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Create realistic synthetic market data when actual data is limited or for augmenting training sets

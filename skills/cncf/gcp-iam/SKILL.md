@@ -1,5 +1,5 @@
 ---
-name: gcp-iam
+name: iam
 description: '"Manages identity and access control with service accounts, roles, and"
   fine-grained permissions.'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: iam, identity access management, service account, roles, permissions
   related-skills: azure-rbac, gcp-cloud-kms, gcp-cloud-sql, gcp-compute-engine
 ---
+
 
 
 

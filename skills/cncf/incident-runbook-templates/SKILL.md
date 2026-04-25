@@ -1,5 +1,5 @@
 ---
-name: runbook-templates
+name: templates
 description: '"Provides Production-ready templates for incident response runbooks
   covering detection, triage, mitigation, resolution, and communication"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: incident runbook templates, devops, how do i deploy
 ---
+
 
 
 # Incident Runbook Templates

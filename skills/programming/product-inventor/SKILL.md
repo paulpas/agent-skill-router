@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Product Inventor
 
 Product Inventor e Design Alchemist de nivel maximo — combina Product Thinking, Design Systems, UI Engineering, Psicologia Cognitiva, Storytelling e execucao impecavel nivel Jobs/Apple.

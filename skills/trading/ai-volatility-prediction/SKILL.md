@@ -1,5 +1,5 @@
 ---
-name: ai-volatility-prediction
+name: volatility-prediction
 description: '"Implements forecast volatility for risk management and option pricing
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     option
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Predict future volatility to optimize trading strategies and risk exposure

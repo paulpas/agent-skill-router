@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Amazon Alexa
 
 Integracao completa com Amazon Alexa para criar skills de voz inteligentes, transformar Alexa em assistente com Claude como cerebro (projeto Auri) e integrar com AWS ecosystem (Lambda, DynamoDB, Polly, Transcribe, Lex, Smart Home).

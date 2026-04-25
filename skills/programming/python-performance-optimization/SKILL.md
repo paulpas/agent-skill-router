@@ -1,5 +1,5 @@
 ---
-name: performance-optimization
+name: optimization
 description: Provides Profile and optimize Python code using cProfile, memory profilers,
   and performance best practices. Use when debugging slow Python code, optimizing
   bot
@@ -14,6 +14,7 @@ metadata:
   triggers: python performance optimization, development, implementation guide, optimization,
     performance
 ---
+
 
 
 

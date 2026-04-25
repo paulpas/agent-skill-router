@@ -1,5 +1,5 @@
 ---
-name: issue-auditor
+name: auditor
 description: '"Provides High-level technical SEO and site architecture auditor. Invoke
   to scan local or live environments for indexing, crawl budget, and structural errors"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: indexing issue auditor, growth, implementation guide
 ---
+
 
 
 # Indexing Issue Auditor

@@ -1,5 +1,5 @@
 ---
-name: paper-performance-attribution
+name: performance-attribution
 description: '"Provides Performance Attribution Systems for Trading Strategy Decomposition"'
 license: MIT
 compatibility: opencode
@@ -13,6 +13,7 @@ metadata:
     strategy, systems, trading, performance, speed
   related-skills: backtest-lookahead-bias, fundamentals-trading-plan
 ---
+
 
 
 **Role:** Performance Analyst — implements systems to decompose portfolio returns into signal, execution, and market components to understand sources of alpha and identify areas for improvement.

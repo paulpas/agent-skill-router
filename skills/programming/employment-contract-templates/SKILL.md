@@ -1,5 +1,5 @@
 ---
-name: contract-templates
+name: templates
 description: '"Provides Templates and patterns for creating legally sound employment
   documentation including contracts, offer letters, and HR policies"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: employment contract templates, legal, implementation guide
 ---
+
 
 
 # Employment Contract Templates

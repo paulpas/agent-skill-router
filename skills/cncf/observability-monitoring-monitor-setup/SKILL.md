@@ -1,5 +1,5 @@
 ---
-name: monitoring-monitor-setup
+name: monitor-setup
 description: '"Provides You are a monitoring and observability expert specializing
   in implementing comprehensive monitoring solutions. Set up metrics collection, distributed"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: observability monitoring monitor setup, devops, how do i deploy
 ---
+
 
 
 # Observability Monitoring Monitor Setup

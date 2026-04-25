@@ -1,5 +1,5 @@
 ---
-name: execution-vwap
+name: vwap
 description: '"Volume-Weighted Average Price algorithm for executing orders relative"
   to market volume'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: average, execution vwap, execution-vwap, price, volume-weighted
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
 ---
+
 
 
 **Role:** Execute orders in proportion to market volume to minimize slippage in high-volume periods

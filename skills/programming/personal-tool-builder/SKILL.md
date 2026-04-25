@@ -1,5 +1,5 @@
 ---
-name: tool-builder
+name: builder
 description: '"Provides Expert in building custom tools that solve your own problems
   first. The best products often start as personal tools - scratch your own itch,
   build for"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: personal tool builder, uncategorized, implementation guide
 ---
+
 
 
 # Personal Tool Builder

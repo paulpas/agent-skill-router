@@ -1,5 +1,5 @@
 ---
-name: goal-to-milestones
+name: to-milestones
 description: '"Translates high-level goals into actionable milestones and tasks that"
   can be executed by specialized skills, enabling goal-directed problem solving with
   measurable progress tracking.'
@@ -15,6 +15,7 @@ metadata:
   related-skills: add-new-skill, code-correctness-verifier, confidence-based-selector,
     hot-path-detector
 ---
+
 
 
 

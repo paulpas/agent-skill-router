@@ -1,5 +1,5 @@
 ---
-name: paper-conversion
+name: conversion
 description: '"Provides this skill should be used when the user asks to convert an
   academic paper in latex from one format (e.g., springer, ipol) to another format
   (e.g., mdp"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: latex paper conversion, uncategorized, implementation guide
 ---
+
 
 
 # Latex Paper Conversion

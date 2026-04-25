@@ -1,5 +1,5 @@
 ---
-name: mgmt-arizeaiobservabilityeval-dotnet
+name: arizeaiobservabilityeval-dotnet
 description: '"Provides Azure Resource Manager SDK for Arize AI Observability and
   Evaluation (.NET)"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure mgmt arizeaiobservabilityeval dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Arizeaiobservabilityeval Dotnet

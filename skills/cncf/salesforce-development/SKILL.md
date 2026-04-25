@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Salesforce Development
 
 Expert patterns for Salesforce platform development including Lightning Web Components (LWC), Apex triggers and classes, REST/Bulk APIs, Connected Apps, and Salesforce DX with scratch orgs and 2nd generation packages (2GP).

@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Copilot Sdk
 
 Build applications that programmatically interact with GitHub Copilot. The SDK wraps the Copilot CLI via JSON-RPC, providing session management, custom tools, hooks, MCP server integration, and streaming across Node.js, Python, Go, and .NET.

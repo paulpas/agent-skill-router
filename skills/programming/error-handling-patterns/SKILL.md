@@ -1,5 +1,5 @@
 ---
-name: handling-patterns
+name: patterns
 description: '"Provides Build resilient applications with robust error handling strategies
   that gracefully handle failures and provide excellent debugging experiences"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: error handling patterns, development, implementation guide
 ---
+
 
 
 # Error Handling Patterns

@@ -1,5 +1,5 @@
 ---
-name: cost-optimizer
+name: optimizer
 description: '"Provides Comprehensive AWS cost analysis and optimization recommendations
   using AWS CLI and Cost Explorer"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: aws cost optimizer, cloud, implementation guide
 ---
+
 
 
 # Aws Cost Optimizer

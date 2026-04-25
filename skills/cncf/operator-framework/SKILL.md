@@ -1,5 +1,5 @@
 ---
-name: operator-framework
+name: framework
 description: '"Operator Framework in Tools to build and manage Kubernetes operators"
   with standardized patterns'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: build, manage, operator framework, operator-framework, tools
 ---
+
 
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 

@@ -1,5 +1,5 @@
 ---
-name: security-coder
+name: coder
 description: Provides Expert in secure backend coding practices specializing in input
   validation, authentication, and API security. Use PROACTIVELY for backend security
   imp
@@ -14,6 +14,7 @@ metadata:
   triggers: backend security coder, backend, how do i secure, vulnerability scanning,
     security
 ---
+
 
 
 

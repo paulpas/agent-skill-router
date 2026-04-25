@@ -1,5 +1,5 @@
 ---
-name: review-excellence
+name: excellence
 description: '"Provides Transform code reviews from gatekeeping to knowledge sharing
   through constructive feedback, systematic analysis, and collaborative improvement"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: code review excellence, development, implementation guide
 ---
+
 
 
 # Code Review Excellence

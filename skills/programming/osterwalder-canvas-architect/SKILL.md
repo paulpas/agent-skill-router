@@ -1,5 +1,5 @@
 ---
-name: canvas-architect
+name: architect
 description: '"Provides Iterative consultant agent for building and validating logically
   consistent 9-block Business Model Canvases"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: osterwalder canvas architect, business, strategy, implementation guide
 ---
+
 
 
 # Osterwalder Canvas Architect

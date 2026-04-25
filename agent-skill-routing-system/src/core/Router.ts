@@ -39,6 +39,13 @@ export interface RouterConfig {
     level?: 'debug' | 'info' | 'warn' | 'error';
     includePayloads?: boolean;
   };
+  // Compression configuration for scaling to 1,778 skills
+  compression?: {
+    maxCacheSizeBytes?: number;
+    warmupSkillsCount?: number;
+    compressionBatchSize?: number;
+    adaptiveTTL?: boolean;
+  };
 }
 
 /**
@@ -56,6 +63,10 @@ export class Router {
   constructor(config: RouterConfig) {
     this.skillRegistry = new SkillRegistry({
       skillsDirectory: config.skillsDirectory,
+      maxCacheSizeBytes: config.compression?.maxCacheSizeBytes,
+      warmupSkillsCount: config.compression?.warmupSkillsCount,
+      compressionBatchSize: config.compression?.compressionBatchSize,
+      adaptiveTTL: config.compression?.adaptiveTTL,
     });
 
     this.vectorDatabase = new VectorDatabase();

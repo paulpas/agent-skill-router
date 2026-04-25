@@ -1,5 +1,5 @@
 ---
-name: elite-gemini-high
+name: gemini-high
 description: '"Provides Modo Elite Coder + UX Pixel-Perfect otimizado especificamente  para
   Gemini 3.1 Pro High. Workflow completo com foco em qualidade máxima e  eficiência
   de"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: nerdzao elite gemini high, uncategorized, implementation guide
 ---
+
 
 
 # Nerdzao Elite Gemini High

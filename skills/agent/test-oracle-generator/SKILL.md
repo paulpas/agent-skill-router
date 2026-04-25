@@ -1,5 +1,5 @@
 ---
-name: test-oracle-generator
+name: oracle-generator
 description: '"Generates test oracles and expected outputs for testing code by analyzing"
   specifications, requirements, and implementation intent to create accurate, comprehensive
   test validation data.'
@@ -15,6 +15,7 @@ metadata:
     database, oracle
   related-skills: add-new-skill, confidence-based-selector, goal-to-milestones, multi-skill-executor
 ---
+
 
 
 

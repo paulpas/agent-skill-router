@@ -1,5 +1,5 @@
 ---
-name: azure-sql-database
+name: sql-database
 description: Provides Managed relational database with elastic pools, geo-replication,
   and automatic backups
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     postgresql, postgres
   related-skills: azure-monitor, azure-resource-manager, azure-virtual-networks
 ---
+
 
 
 

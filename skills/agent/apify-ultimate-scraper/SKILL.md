@@ -1,5 +1,5 @@
 ---
-name: ultimate-scraper
+name: scraper
 description: Provides AI-driven data extraction from 55+ Actors across all major platforms.
   This skill automatically selects the best Actor for your task
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: apify ultimate scraper, automation, how do i automate, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

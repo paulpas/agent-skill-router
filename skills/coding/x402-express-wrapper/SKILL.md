@@ -1,5 +1,5 @@
 ---
-name: express-wrapper
+name: wrapper
 description: '"Provides Wrapper oficial de M2MCent (Node.js) para inyectar muros de
   pago x402 en APIs o servidores Model Context Protocol (MCP). Usar al construir nuevos
   serv"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: x402 express wrapper, backend, implementation guide
 ---
+
 
 
 # X402 Express Wrapper

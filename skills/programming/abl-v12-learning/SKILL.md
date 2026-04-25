@@ -1,5 +1,5 @@
 ---
-name: abl-v12-learning
+name: v12-learning
 description: '"Reference guide for Progress OpenEdge ABL 12.7 (2023) — v10→v12 migration"
   INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic collections,
   safe navigation operator, server-side joins'
@@ -15,6 +15,7 @@ metadata:
     throw, jsonobject, read-json
   related-skills: abl-v10-learning, algorithms
 ---
+
 
 
 

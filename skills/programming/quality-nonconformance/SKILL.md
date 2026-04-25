@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Quality Nonconformance
 
 Codified expertise for quality control, non-conformance investigation, root cause analysis, corrective action, and supplier quality management in regulated manufacturing.

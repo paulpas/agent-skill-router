@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Trigger Dev
 
 Trigger.dev expert for background jobs, AI workflows, and reliable async execution with excellent developer experience and TypeScript-first design.

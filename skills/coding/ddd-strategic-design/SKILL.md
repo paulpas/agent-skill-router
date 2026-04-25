@@ -1,5 +1,5 @@
 ---
-name: strategic-design
+name: design
 description: '"Provides Design DDD strategic artifacts including subdomains, bounded
   contexts, and ubiquitous language for complex business domains"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: ddd strategic design, architecture, implementation guide
 ---
+
 
 
 # Ddd Strategic Design

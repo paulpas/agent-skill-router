@@ -1,5 +1,5 @@
 ---
-name: load-testing
+name: testing
 description: '"Provides Comprehensive k6 load testing skill for API, browser, and
   scalability testing. Write realistic load scenarios, analyze results, and integrate
   with CI/"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: k6 load testing, testing, how do i test, test automation, unit tests
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: artifacts-builder
+name: builder
 description: '''Provides To build powerful frontend claude.ai artifacts, follow these
   steps:'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: web artifacts builder, web, development, implementation guide
 ---
+
 
 
 # Web Artifacts Builder

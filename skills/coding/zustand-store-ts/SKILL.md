@@ -1,5 +1,5 @@
 ---
-name: store-ts
+name: ts
 description: '"Provides Create Zustand stores following established patterns with
   proper TypeScript types and middleware"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: zustand store ts, frontend, implementation guide
 ---
+
 
 
 # Zustand Store Ts

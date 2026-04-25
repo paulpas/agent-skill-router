@@ -1,5 +1,5 @@
 ---
-name: ds-privacy-ml
+name: privacy-ml
 description: '"Implements privacy-preserving machine learning including differential
   privacy, federated learning, and privacy attack prevention"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     attacks, privacy-preserving
   related-skills: ds-data-privacy, ds-model-fairness, ds-reproducible-research
 ---
+
 
 
 # Privacy in ML

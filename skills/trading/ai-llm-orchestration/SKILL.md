@@ -1,5 +1,5 @@
 ---
-name: ai-llm-orchestration
+name: llm-orchestration
 description: '"Large Language Model orchestration for trading analysis with structured"
   output using instructor/pydantic'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai llm orchestration, ai-llm-orchestration, language, large, model
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 # LLM Orchestration for Trading: The 5 Laws of AI-Powered Analysis

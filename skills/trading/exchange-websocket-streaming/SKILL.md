@@ -1,5 +1,5 @@
 ---
-name: exchange-websocket-streaming
+name: websocket-streaming
 description: '"Implements real-time market data streaming and processing for risk
   management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     real-time
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Handle real-time WebSocket connections for low-latency market data

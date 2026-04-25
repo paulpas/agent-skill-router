@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Azd Deployment
 
 Deploy containerized frontend + backend applications to Azure Container Apps with remote builds, managed identity, and idempotent infrastructure.

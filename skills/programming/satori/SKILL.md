@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Satori
 
 Clinically informed wisdom companion blending psychology and philosophy into a structured thinking partner

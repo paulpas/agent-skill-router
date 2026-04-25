@@ -1,5 +1,5 @@
 ---
-name: aeo-content-cluster
+name: content-cluster
 description: '"Builds a topical authority map with a pillar page, prioritised cluster
   articles, content types, internal link map, and content gap analysis. Activate"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: seo aeo content cluster, content, implementation guide
 ---
+
 
 
 # Seo Aeo Content Cluster

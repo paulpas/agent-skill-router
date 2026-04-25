@@ -1,5 +1,5 @@
 ---
-name: automation-demo
+name: demo
 description: '"Demonstrates the skill automation system with pre-commit hook validation
   and automatic relationship updates"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     tests
   related-skills: coding:code-review
 ---
+
 
 
 

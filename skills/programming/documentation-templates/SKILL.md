@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Documentation Templates
 
 Documentation templates and structure guidelines. README, API docs, code comments, and AI-friendly documentation.

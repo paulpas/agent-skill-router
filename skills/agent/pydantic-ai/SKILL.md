@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Pydantic Ai
 
 Build production-ready AI agents with PydanticAI — type-safe tool use, structured outputs, dependency injection, and multi-model support.

@@ -1,5 +1,5 @@
 ---
-name: ds-instrumental-variables
+name: instrumental-variables
 description: '"Provides Uses instrumental variables (IV), two-stage least squares
   (2SLS), and IV estimation to identify causal effects in observational data"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     handle endogeneity
   related-skills: ds-causal-inference, ds-linear-regression, ds-observational-studies
 ---
+
 
 
 # Instrumental Variables

@@ -1,5 +1,5 @@
 ---
-name: ui-verification
+name: verification
 description: Provides Automated end-to-end UI testing and verification on an Android
   Emulator using ADB
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: android ui verification, test, automation, how do i test, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

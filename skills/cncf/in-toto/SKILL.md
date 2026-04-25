@@ -1,5 +1,5 @@
 ---
-name: in-toto
+name: toto
 description: '"in-toto in Supply Chain Security - cloud native architecture, patterns"
   pitfalls, and best practices'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: chain, in toto, in-toto, supply
   related-skills: aws-kms, aws-s3, aws-secrets-manager, azure-key-vault
 ---
+
 
 
 # in-toto in Cloud-Native Engineering

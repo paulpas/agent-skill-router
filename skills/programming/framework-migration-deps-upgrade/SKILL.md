@@ -1,5 +1,5 @@
 ---
-name: migration-deps-upgrade
+name: deps-upgrade
 description: '"Provides You are a dependency management expert specializing in safe,
   incremental upgrades of project dependencies. Plan and execute dependency updates
   with mi"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: framework migration deps upgrade, development, implementation guide
 ---
+
 
 
 # Framework Migration Deps Upgrade

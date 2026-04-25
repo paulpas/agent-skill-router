@@ -1,5 +1,5 @@
 ---
-name: ds-experimental-design
+name: experimental-design
 description: '"Provides Designs experiments using design of experiments (DOE), factorial
   designs, randomization, and blocking for efficient learning"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-ab-testing, ds-online-experiments, ds-randomized-experiments,
     ds-statistical-power
 ---
+
 
 
 # Experimental Design

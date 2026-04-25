@@ -1,5 +1,5 @@
 ---
-name: risk-drawdown-control
+name: drawdown-control
 description: '"Implements maximum drawdown control and equity preservation for risk
   management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: equity, maximum, preservation, risk drawdown control, risk-drawdown-control
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api
 ---
+
 
 
 **Role:** Implement drawdown protection mechanisms to preserve capital during losing streaks

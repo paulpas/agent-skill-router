@@ -1,5 +1,5 @@
 ---
-name: factory-explainer
+name: explainer
 description: '"Provides Explain Bitcoin Lightning channel factories and the SuperScalar  protocol
   — scalable Lightning onboarding using shared UTXOs, Decker-Wattenhofer  trees"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: lightning factory explainer, blockchain, implementation guide
 ---
+
 
 
 # Lightning Factory Explainer

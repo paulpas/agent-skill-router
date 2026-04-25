@@ -1,5 +1,5 @@
 ---
-name: health-analyzer
+name: analyzer
 description: '"Provides 分析职业健康数据、识 别工作相关健康风险、评估职业 健康状况、提供个性化职业健康 建议。支持与睡眠、运动、心理 健康等其他健康数据的关联分析
   。"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: occupational health analyzer, health, implementation guide
 ---
+
 
 
 # Occupational Health Analyzer

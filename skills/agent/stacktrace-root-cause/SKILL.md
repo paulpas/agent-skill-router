@@ -1,5 +1,5 @@
 ---
-name: stacktrace-root-cause
+name: root-cause
 description: '"Performs stacktrace root cause analysis by examining stack frames,
   identifying" failure chains, and determining the underlying cause of errors and
   exceptions.'
@@ -16,6 +16,7 @@ metadata:
   related-skills: code-correctness-verifier, confidence-based-selector, error-trace-explainer,
     k8s-debugger
 ---
+
 
 
 

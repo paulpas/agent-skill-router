@@ -1,5 +1,5 @@
 ---
-name: ds-data-collection
+name: data-collection
 description: '"Implements data gathering strategies including APIs, web scraping,
   sensor data collection, and database queries for building machine learning datasets"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     ETL, how do i collect data
   related-skills: ds-data-ingestion, ds-data-quality, ds-data-versioning
 ---
+
 
 
 # Data Collection

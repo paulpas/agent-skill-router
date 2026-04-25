@@ -1,5 +1,5 @@
 ---
-name: view-refactor
+name: refactor
 description: Provides Refactor SwiftUI views into smaller components with stable,
   explicit data flow
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: swiftui view refactor, mobile, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

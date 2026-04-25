@@ -1,5 +1,5 @@
 ---
-name: query-optimizer
+name: optimizer
 description: '"Analyzes and optimizes database queries for performance, identifying"
   bottlenecks and generating optimization recommendations.'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: add-new-skill, code-correctness-verifier, confidence-based-selector,
     goal-to-milestones
 ---
+
 
 
 

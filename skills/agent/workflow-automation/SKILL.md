@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Workflow Automation
 
 Workflow automation is the infrastructure that makes AI agents reliable. Without durable execution, a network hiccup during a 10-step payment flow means lost money and angry customers. With it, workflows resume exactly where they left off.

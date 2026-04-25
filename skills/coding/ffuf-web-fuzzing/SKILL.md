@@ -1,5 +1,5 @@
 ---
-name: web-fuzzing
+name: fuzzing
 description: '"Provides Expert guidance for ffuf web fuzzing during penetration testing,
   including authenticated fuzzing with raw requests, auto-calibration, and result
   analy"'
@@ -14,6 +14,7 @@ metadata:
   triggers: ffuf web fuzzing, security, how do i test, security auditing, vulnerability
     scanning
 ---
+
 
 
 

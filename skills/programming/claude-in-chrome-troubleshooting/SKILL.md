@@ -1,5 +1,5 @@
 ---
-name: in-chrome-troubleshooting
+name: chrome-troubleshooting
 description: Provides Diagnose and fix Claude in Chrome MCP extension connectivity
   issues. Use when mcp__claude-in-chrome__* tools fail, return
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: claude in chrome troubleshooting, ai, ml, implementation guide, machine
     learning, scikit-learn
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: stage-mapper
+name: mapper
 description: '"Provides one sentence - what this skill does and when to invoke it
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: awareness stage mapper, uncategorized, implementation guide
 ---
+
 
 
 # Awareness Stage Mapper

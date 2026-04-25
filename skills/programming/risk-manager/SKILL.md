@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Risk Manager
 
 Monitor portfolio risk, R-multiples, and position limits. Creates hedging strategies, calculates expectancy, and implements stop-losses.

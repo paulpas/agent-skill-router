@@ -1,5 +1,5 @@
 ---
-name: abl-v10-learning
+name: v10-learning
 description: '"Reference guide for Progress OpenEdge ABL 10.1A (2005) — data types"
   variable declaration, procedures, functions, OOP basics, error handling, database
   access, transaction handling, control flow'
@@ -15,6 +15,7 @@ metadata:
     abl
   related-skills: abl-v12-learning, algorithms
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: project-organizer
+name: organizer
 description: '"Provides Take a list of projects and their related documentation, and
   organize them into the SRED format for submission"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: sred project organizer, project, management, implementation guide
 ---
+
 
 
 # Sred Project Organizer

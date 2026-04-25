@@ -1,5 +1,5 @@
 ---
-name: automation-workflow-automate
+name: workflow-automate
 description: Provides You are a workflow automation expert specializing in creating
   efficient CI/CD pipelines, GitHub Actions workflows, and automated development processes
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: cicd automation workflow automate, automation, how do i automate, jenkins,
     ci/cd pipeline, continuous integration
 ---
+
 
 
 

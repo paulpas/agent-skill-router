@@ -1,5 +1,5 @@
 ---
-name: store-design
+name: design
 description: '"Provides Design and implement event stores for event-sourced systems.
   Use when building event sourcing infrastructure, choosing event store technologies,
   or im"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: event store design, architecture, implementation guide
 ---
+
 
 
 # Event Store Design

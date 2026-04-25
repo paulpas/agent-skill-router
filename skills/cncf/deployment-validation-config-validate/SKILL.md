@@ -1,5 +1,5 @@
 ---
-name: validation-config-validate
+name: config-validate
 description: Provides You are a configuration management expert specializing in validating,
   testing, and ensuring the correctness of application configurations. Create comp
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: deployment validation config validate, devops, how do i test, kubernetes
     deployment, container orchestration, deployment
 ---
+
 
 
 

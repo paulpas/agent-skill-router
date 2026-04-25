@@ -1,5 +1,5 @@
 ---
-name: agent-task-orchestrator
+name: task-orchestrator
 description: '"Provides Route tasks to specialized AI agents with anti-duplication,
   quality gates, and 30-minute heartbeat monitoring"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: multi agent task orchestrator, agent, orchestration, implementation guide
 ---
+
 
 
 # Multi Agent Task Orchestrator

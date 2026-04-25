@@ -1,5 +1,5 @@
 ---
-name: search-documents-dotnet
+name: documents-dotnet
 description: '"Provides Azure AI Search SDK for .NET (Azure.Search.Documents). Use
   for building search applications with full-text, vector, semantic, and hybrid search"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure search documents dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Search Documents Dotnet

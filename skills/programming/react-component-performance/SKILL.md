@@ -1,5 +1,5 @@
 ---
-name: component-performance
+name: performance
 description: Provides Diagnose slow React components and suggest targeted performance
   fixes
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: react component performance, web, development, implementation guide, optimization,
     performance
 ---
+
 
 
 

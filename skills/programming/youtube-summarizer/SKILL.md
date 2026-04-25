@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Youtube Summarizer
 
 Extract transcripts from YouTube videos and generate comprehensive, detailed summaries using intelligent analysis frameworks

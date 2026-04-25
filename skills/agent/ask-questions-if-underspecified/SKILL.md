@@ -1,5 +1,5 @@
 ---
-name: questions-if-underspecified
+name: if-underspecified
 description: '"Provides Clarify requirements before implementing. Use when serious
   doubts arise"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: ask questions if underspecified, workflow, implementation guide
 ---
+
 
 
 # Ask Questions If Underspecified

@@ -1,5 +1,5 @@
 ---
-name: psychographic-profiler
+name: profiler
 description: '"Provides one sentence - what this skill does and when to invoke it
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: customer psychographic profiler, uncategorized, implementation guide
 ---
+
 
 
 # Customer Psychographic Profiler

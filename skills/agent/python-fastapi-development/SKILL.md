@@ -1,5 +1,5 @@
 ---
-name: fastapi-development
+name: development
 description: '"Provides Python FastAPI backend development with async patterns, SQLAlchemy,
   Pydantic, authentication, and production API patterns"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: python fastapi development, granular, workflow, implementation guide
 ---
+
 
 
 # Python Fastapi Development

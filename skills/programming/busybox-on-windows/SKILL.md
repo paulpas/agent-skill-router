@@ -1,5 +1,5 @@
 ---
-name: on-windows
+name: windows
 description: '"Provides How to use a Win32 build of BusyBox to run many of the standard
   UNIX command line tools on Windows"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: busybox on windows, development, implementation guide
 ---
+
 
 
 # Busybox On Windows

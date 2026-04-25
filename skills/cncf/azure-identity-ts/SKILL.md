@@ -1,5 +1,5 @@
 ---
-name: identity-ts
+name: ts
 description: '"Provides Authenticate to Azure services with various credential types"'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: azure identity ts, cloud, implementation guide
 ---
+
 
 
 # Azure Identity Ts

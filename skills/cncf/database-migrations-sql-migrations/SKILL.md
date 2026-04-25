@@ -1,5 +1,5 @@
 ---
-name: migrations-sql-migrations
+name: sql-migrations
 description: Provides SQL database migrations with zero-downtime strategies for PostgreSQL,
   MySQL, and SQL Server. Focus on data integrity and rollback plans
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: database migrations sql migrations, database, data processing, spark,
     big data, distributed processing
 ---
+
 
 
 

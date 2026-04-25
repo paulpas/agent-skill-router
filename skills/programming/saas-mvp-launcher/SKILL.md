@@ -1,5 +1,5 @@
 ---
-name: mvp-launcher
+name: launcher
 description: '"Provides use when planning or building a saas mvp from scratch. provides
   a structured roadmap covering tech stack, architecture, auth, payments, and launch
   che"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: saas mvp launcher, business, implementation guide
 ---
+
 
 
 # Saas Mvp Launcher

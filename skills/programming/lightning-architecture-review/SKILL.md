@@ -1,5 +1,5 @@
 ---
-name: architecture-review
+name: review
 description: '"Provides Review Bitcoin Lightning Network protocol designs, compare
   channel factory approaches, and analyze Layer 2 scaling tradeoffs. Covers trust
   models, on-"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: lightning architecture review, blockchain, implementation guide
 ---
+
 
 
 # Lightning Architecture Review

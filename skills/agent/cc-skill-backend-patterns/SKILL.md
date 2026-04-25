@@ -1,5 +1,5 @@
 ---
-name: skill-backend-patterns
+name: backend-patterns
 description: Provides Backend architecture patterns, API design, database optimization,
   and server-side best practices for Node.js, Express, and Next.js API routes
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: cc skill backend patterns, meta, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

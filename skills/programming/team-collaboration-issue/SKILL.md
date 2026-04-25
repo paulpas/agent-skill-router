@@ -1,5 +1,5 @@
 ---
-name: collaboration-issue
+name: issue
 description: '"Provides You are a GitHub issue resolution expert specializing in systematic
   bug investigation, feature implementation, and collaborative development workflows"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: team collaboration issue, project, management, implementation guide
 ---
+
 
 
 # Team Collaboration Issue

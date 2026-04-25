@@ -1,5 +1,5 @@
 ---
-name: strategy-base
+name: base
 description: '"Abstract base strategy pattern with initialization guards, typed abstract"
   methods, and conviction scoring integration'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: abstract, initialization, pattern, strategy base, strategy-base
   related-skills: null
 ---
+
 
 
 

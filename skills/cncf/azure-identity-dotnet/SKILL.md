@@ -1,5 +1,5 @@
 ---
-name: identity-dotnet
+name: dotnet
 description: '"Provides Azure Identity SDK for .NET. Authentication library for Azure
   SDK clients using Microsoft Entra ID. Use for DefaultAzureCredential, managed identity"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure identity dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Identity Dotnet

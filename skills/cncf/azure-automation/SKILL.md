@@ -1,5 +1,5 @@
 ---
-name: azure-automation
+name: automation
 description: Provides Automation and orchestration of Azure resources with runbooks
   and update management
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     jenkins, ci/cd pipeline, continuous integration
   related-skills: azure-monitor
 ---
+
 
 
 

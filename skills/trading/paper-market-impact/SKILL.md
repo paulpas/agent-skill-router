@@ -1,5 +1,5 @@
 ---
-name: paper-market-impact
+name: market-impact
 description: '"Implements market impact modeling and order book simulation for risk
   management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: modeling, order, paper market impact, paper-market-impact, simulation
   related-skills: fundamentals-market-regimes, fundamentals-trading-plan
 ---
+
 
 
 **Role:** Market Microstructure Specialist — implements sophisticated market impact models to simulate how order flow affects prices, incorporating order book dynamics, inventory imbalances, and liquidity provision.

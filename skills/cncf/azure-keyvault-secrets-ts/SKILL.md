@@ -1,5 +1,5 @@
 ---
-name: keyvault-secrets-ts
+name: secrets-ts
 description: '"Provides Manage secrets using Azure Key Vault Secrets SDK for JavaScript
   (@azure/keyvault-secrets). Use when storing and retrieving application secrets or
   conf"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure keyvault secrets ts, cloud, implementation guide
 ---
+
 
 
 # Azure Keyvault Secrets Ts

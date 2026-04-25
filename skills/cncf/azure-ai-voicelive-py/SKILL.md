@@ -1,5 +1,5 @@
 ---
-name: ai-voicelive-py
+name: voicelive-py
 description: '"Provides Build real-time voice AI applications with bidirectional WebSocket
   communication"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai voicelive py, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Voicelive Py

@@ -1,5 +1,5 @@
 ---
-name: error-trace-explainer
+name: trace-explainer
 description: '"Explains error traces and exceptions by analyzing stack traces, error"
   messages, and context to provide human-understandable error explanations.'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: code-correctness-verifier, confidence-based-selector, dynamic-replanner,
     hot-path-detector
 ---
+
 
 
 

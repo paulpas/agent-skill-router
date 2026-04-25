@@ -1,5 +1,5 @@
 ---
-name: artifact-hub
+name: hub
 description: '"Provides Artifact Hub in Cloud-Native Engineering - Repository for
   Kubernetes Helm, Falco, OPA, and more"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: artifact hub, artifact-hub, cloud-native, engineering, repository
 ---
+
 
   related-skills: cncf-argo, cncf-aws-eks, cncf-azure-aks, cncf-azure-resource-manager
 # Artifact Hub in Cloud-Native Engineering

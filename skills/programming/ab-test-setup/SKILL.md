@@ -1,5 +1,5 @@
 ---
-name: test-setup
+name: setup
 description: '"Provides Structured guide for setting up A/B tests with mandatory gates
   for hypothesis, metrics, and execution readiness"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: ab test setup, marketing, how do i test
 ---
+
 
 
 # Ab Test Setup

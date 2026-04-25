@@ -1,5 +1,5 @@
 ---
-name: aws-sqs
+name: sqs
 description: '"Deploys managed message queues with SQS for asynchronous processing"
   decoupling services, and reliable message delivery with visibility timeout and dead-letter
   queues.'
@@ -15,6 +15,7 @@ metadata:
     queuing, sqs, visibility timeout
   related-skills: aws-cloudwatch, aws-lambda, aws-sns
 ---
+
 
 
 

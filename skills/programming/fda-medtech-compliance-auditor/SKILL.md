@@ -1,5 +1,5 @@
 ---
-name: medtech-compliance-auditor
+name: compliance-auditor
 description: '"Provides Expert AI auditor for Medical Device (SaMD) compliance, IEC
   62304, and 21 CFR Part 820. Reviews DHFs, technical files, and software validation"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: fda medtech compliance auditor, legal, implementation guide
 ---
+
 
 
 # Fda Medtech Compliance Auditor

@@ -1,5 +1,5 @@
 ---
-name: face-model-trainer
+name: model-trainer
 description: Provides Train or fine-tune TRL language models on Hugging Face Jobs,
   including SFT, DPO, GRPO, and GGUF export
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: hugging face model trainer, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

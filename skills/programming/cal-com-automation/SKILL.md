@@ -1,5 +1,5 @@
 ---
-name: com-automation
+name: automation
 description: '''Provides Automate Cal.com tasks via Rube MCP (Composio): manage bookings,
   check availability, configure webhooks, and handle teams. Always search tools first
   f'''
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: cal com automation, productivity, how do i automate
 ---
+
 
 
 # Cal Com Automation

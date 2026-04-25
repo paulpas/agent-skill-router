@@ -1,5 +1,5 @@
 ---
-name: aws-eks
+name: eks
 description: '"Deploys managed Kubernetes clusters with EKS for container orchestration"
   auto-scaling, networking, and integrations with AWS services for production Kubernetes
   workloads.'
@@ -15,6 +15,7 @@ metadata:
     kubernetes namespace
   related-skills: aws-cloudwatch, aws-ecr, aws-iam, aws-vpc
 ---
+
 
 
 

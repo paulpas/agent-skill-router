@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Interview Coach
 
 Full job search coaching system — JD decoding, resume, storybank, mock interviews, transcript analysis, comp negotiation. 23 commands, persistent state.

@@ -1,5 +1,5 @@
 ---
-name: microsoft-playwright-testing-ts
+name: playwright-testing-ts
 description: Provides Run Playwright tests at scale with cloud-hosted browsers and
   integrated Azure portal reporting
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: azure microsoft playwright testing ts, cloud, how do i test, unit tests,
     testing
 ---
+
 
 
 

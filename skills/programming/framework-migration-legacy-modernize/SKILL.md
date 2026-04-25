@@ -1,5 +1,5 @@
 ---
-name: migration-legacy-modernize
+name: legacy-modernize
 description: '"Provides Orchestrate a comprehensive legacy system modernization using
   the strangler fig pattern, enabling gradual replacement of outdated components while
   mai"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: framework migration legacy modernize, development, implementation guide
 ---
+
 
 
 # Framework Migration Legacy Modernize

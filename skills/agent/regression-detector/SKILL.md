@@ -1,5 +1,5 @@
 ---
-name: regression-detector
+name: detector
 description: '"Detects performance and behavioral regressions by comparing agent execution"
   before and after code changes, identifying performance degradation and behavioral
   changes.'
@@ -16,6 +16,7 @@ metadata:
   related-skills: code-correctness-verifier, error-trace-explainer, goal-to-milestones,
     hot-path-detector
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: end-visual-design
+name: visual-design
 description: '"Provides use when designing expensive agency-grade interfaces with
   premium fonts, spatial rhythm, soft depth, and fluid microinteractions"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: high end visual design, frontend, implementation guide
 ---
+
 
 
 # High End Visual Design

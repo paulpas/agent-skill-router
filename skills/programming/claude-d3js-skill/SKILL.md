@@ -1,5 +1,5 @@
 ---
-name: d3js-skill
+name: skill
 description: Provides this skill provides guidance for creating sophisticated, interactive
   data visualisations using d3.js
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: claude d3js skill, ai, ml, data processing, machine learning, spark, big
     data, distributed processing
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: technical-price-action-patterns
+name: price-action-patterns
 description: '"Provides Analysis of candlestick and chart patterns for price movement
   prediction"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: analysis, candlestick, chart, technical price action patterns, technical-price-action-patterns
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Identify high-probability price patterns to forecast market direction

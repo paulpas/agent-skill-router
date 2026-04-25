@@ -1,5 +1,5 @@
 ---
-name: carlo-push-ingestion
+name: push-ingestion
 description: Provides Expert guide for pushing metadata, lineage, and query logs to
   Monte Carlo from any data warehouse
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: monte carlo push ingestion, data, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

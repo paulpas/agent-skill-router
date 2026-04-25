@@ -1,5 +1,5 @@
 ---
-name: relationship-management
+name: management
 description: '"Provides Codified expertise for managing carrier portfolios, negotiating
   freight rates, tracking carrier performance, allocating freight, and maintaining
   strat"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: carrier relationship management, business, implementation guide
 ---
+
 
 
 # Carrier Relationship Management

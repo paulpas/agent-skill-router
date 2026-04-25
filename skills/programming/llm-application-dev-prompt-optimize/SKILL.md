@@ -1,5 +1,5 @@
 ---
-name: application-dev-prompt-optimize
+name: dev-prompt-optimize
 description: Provides You are an expert prompt engineer specializing in crafting effective
   prompts for LLMs through advanced techniques including constitutional AI, chain-o
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: llm application dev prompt optimize, ai, ml, implementation guide, machine
     learning, scikit-learn
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: gcp-firestore
+name: firestore
 description: Provides NoSQL document database with real-time sync, offline support,
   and automatic scaling
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     mongodb, nosql database
   related-skills: gcp-cloud-functions, gcp-cloud-kms, gcp-cloud-monitoring
 ---
+
 
 
 

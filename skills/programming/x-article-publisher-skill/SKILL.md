@@ -1,5 +1,5 @@
 ---
-name: article-publisher-skill
+name: publisher-skill
 description: '"Provides publish articles to x/twitter functionality and capabilities."'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: x article publisher skill, marketing, implementation guide
 ---
+
 
 
 # X Article Publisher Skill

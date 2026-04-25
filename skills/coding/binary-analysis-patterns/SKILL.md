@@ -1,5 +1,5 @@
 ---
-name: analysis-patterns
+name: patterns
 description: '"Provides Comprehensive patterns and techniques for analyzing compiled
   binaries, understanding assembly code, and reconstructing program logic"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: binary analysis patterns, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

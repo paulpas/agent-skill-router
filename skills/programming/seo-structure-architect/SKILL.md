@@ -1,5 +1,5 @@
 ---
-name: structure-architect
+name: architect
 description: '"Analyzes and optimizes content structure including header hierarchy,
   suggests schema markup, and internal linking opportunities. Creates search-friend"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: seo structure architect, content, implementation guide
 ---
+
 
 
 # Seo Structure Architect

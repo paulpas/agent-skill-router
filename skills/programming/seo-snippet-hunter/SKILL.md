@@ -1,5 +1,5 @@
 ---
-name: snippet-hunter
+name: hunter
 description: '"Provides Formats content to be eligible for featured snippets and SERP
   features. Creates snippet-optimized content blocks based on best practices. Use
   PROACTIV"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo snippet hunter, content, implementation guide
 ---
+
 
 
 # Seo Snippet Hunter

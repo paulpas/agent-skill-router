@@ -1,5 +1,5 @@
 ---
-name: lead-generation
+name: generation
 description: Implements scrape leads from multiple platforms using apify actors for
   orchestration and agent coordination in autonomous systems.
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: apify lead generation, automation, how do i automate, jenkins, ci/cd pipeline,
     continuous integration
 ---
+
 
 
 

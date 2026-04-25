@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Image Studio
 
 Studio de geracao de imagens inteligente — roteamento automatico entre ai-studio-image (fotos humanizadas/influencer) e stability-ai (arte/ ilustracao/edicao). Detecta o tipo de imagem solicitada e escolhe o modelo ideal automaticamente.

@@ -1,5 +1,5 @@
 ---
-name: azure-resource-manager
+name: resource-manager
 description: '"Provides Infrastructure as code using ARM templates for repeatable
   Azure resource deployments"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     cloudformation, kubernetes deployment, rolling updates
   related-skills: azure-aks, azure-sql-database, azure-virtual-networks
 ---
+
 
 
 

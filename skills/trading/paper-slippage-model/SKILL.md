@@ -1,5 +1,5 @@
 ---
-name: paper-slippage-model
+name: slippage-model
 description: '"Implements slippage modeling and execution simulation for risk management
   and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: execution, modeling, paper slippage model, paper-slippage-model, simulation
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
 ---
+
 
 
 **Role:** Execution Quality Specialist — implements comprehensive slippage models to simulate real-world execution quality, accounting for market impact, liquidity constraints, and order flow dynamics.

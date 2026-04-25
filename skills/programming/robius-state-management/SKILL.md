@@ -1,5 +1,5 @@
 ---
-name: state-management
+name: management
 description: '''''CRITICAL: Use for Robius state management patterns. Triggers on''
   AppState, persistence, theme switch, 状态管理,'''
 license: MIT
@@ -20,6 +20,7 @@ metadata:
   triggers: robius state management, robius-state-management, critical, patterns,
     triggers
 ---
+
 
 
 # Robius State Management

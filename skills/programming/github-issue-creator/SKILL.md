@@ -1,5 +1,5 @@
 ---
-name: issue-creator
+name: creator
 description: '"Provides Turn error logs, screenshots, voice notes, and rough bug reports
   into crisp, developer-ready GitHub issues with repro steps, impact, and evidence"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: github issue creator, project, management, implementation guide
 ---
+
 
 
 # Github Issue Creator

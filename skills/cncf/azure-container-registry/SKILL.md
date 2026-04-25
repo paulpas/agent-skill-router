@@ -1,5 +1,5 @@
 ---
-name: azure-container-registry
+name: container-registry
 description: '"Provides Stores and manages container images with integration to AKS
   and Azure services"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     containers, docker, docker hub
   related-skills: azure-aks, azure-functions, azure-monitor
 ---
+
 
 
 

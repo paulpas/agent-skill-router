@@ -1,5 +1,5 @@
 ---
-name: ds-metrics-and-kpis
+name: metrics-and-kpis
 description: '"Defines, selects, and monitors key performance indicators (KPIs), business
   metrics, and evaluation metrics for decision-making"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-ab-testing, ds-classification-metrics, ds-online-experiments,
     ds-regression-evaluation
 ---
+
 
 
 

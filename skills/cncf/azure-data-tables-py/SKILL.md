@@ -1,5 +1,5 @@
 ---
-name: data-tables-py
+name: tables-py
 description: '"Provides Azure Tables SDK for Python (Storage and Cosmos DB). Use for
   NoSQL key-value storage, entity CRUD, and batch operations"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure data tables py, cloud, implementation guide
 ---
+
 
 
 # Azure Data Tables Py

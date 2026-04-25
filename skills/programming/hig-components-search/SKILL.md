@@ -1,5 +1,5 @@
 ---
-name: components-search
+name: search
 description: '"Provides Apple HIG guidance for navigation-related components including
   search fields, page controls, and path controls"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: hig components search, development, implementation guide
 ---
+
 
 
 # Hig Components Search

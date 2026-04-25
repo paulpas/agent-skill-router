@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Frontend Slides
 
 Create stunning, animation-rich HTML presentations from scratch or by converting PowerPoint files.

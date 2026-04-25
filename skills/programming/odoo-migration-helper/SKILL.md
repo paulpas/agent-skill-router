@@ -1,5 +1,5 @@
 ---
-name: migration-helper
+name: helper
 description: '"Provides Step-by-step guide for migrating Odoo custom modules between  versions
   (v14→v15→v16→v17). Covers API changes, deprecated methods,  and view migration"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo migration helper, business, implementation guide
 ---
+
 
 
 # Odoo Migration Helper

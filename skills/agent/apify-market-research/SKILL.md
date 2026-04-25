@@ -1,5 +1,5 @@
 ---
-name: market-research
+name: research
 description: Provides Analyze market conditions, geographic opportunities, pricing,
   consumer behavior, and product validation across Google Maps, Facebook, Instagram,
   Booki
@@ -14,6 +14,7 @@ metadata:
   triggers: apify market research, automation, how do i automate, jenkins, ci/cd pipeline,
     continuous integration
 ---
+
 
 
 

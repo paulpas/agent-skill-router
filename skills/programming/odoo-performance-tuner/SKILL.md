@@ -1,5 +1,5 @@
 ---
-name: performance-tuner
+name: tuner
 description: '''Provides Expert guide for diagnosing and fixing Odoo performance issues:
   slow queries, worker configuration, memory limits, PostgreSQL tuning, and profiling
   to'''
@@ -14,6 +14,7 @@ metadata:
   triggers: odoo performance tuner, business, implementation guide, optimization,
     performance
 ---
+
 
 
 

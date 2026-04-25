@@ -1,5 +1,5 @@
 ---
-name: ds-randomized-experiments
+name: randomized-experiments
 description: '"Provides Designs and analyzes randomized controlled trials (RCTs),
   A/B tests, experimental blocking, and sample size calculations"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     sample size
   related-skills: ds-ab-testing, ds-causal-inference, ds-intervention-analysis, ds-observational-studies
 ---
+
 
 
 # Randomized Experiments

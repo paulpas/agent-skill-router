@@ -1,5 +1,5 @@
 ---
-name: mgmt-apicenter-dotnet
+name: apicenter-dotnet
 description: '"Provides Azure API Center SDK for .NET. Centralized API inventory management
   with governance, versioning, and discovery"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure mgmt apicenter dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Apicenter Dotnet

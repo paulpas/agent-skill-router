@@ -1,5 +1,5 @@
 ---
-name: dashboard-design
+name: design
 description: '"Provides Comprehensive patterns for designing effective Key Performance
   Indicator (KPI) dashboards that drive business decisions"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: kpi dashboard design, business, implementation guide
 ---
+
 
 
 # Kpi Dashboard Design

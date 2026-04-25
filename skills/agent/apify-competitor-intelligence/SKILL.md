@@ -1,5 +1,5 @@
 ---
-name: competitor-intelligence
+name: intelligence
 description: Provides Analyze competitor strategies, content, pricing, ads, and market
   positioning across Google Maps, Booking.com, Facebook, Instagram, YouTube, and TikTok
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: apify competitor intelligence, automation, how do i automate, jenkins,
     ci/cd pipeline, continuous integration
 ---
+
 
 
 

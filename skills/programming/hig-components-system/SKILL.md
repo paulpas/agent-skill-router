@@ -1,5 +1,5 @@
 ---
-name: components-system
+name: system
 description: '''Provides Apple HIG guidance for system experience components: widgets,
   live activities, notifications, complications, home screen quick actions, top shelf,
   wat'''
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: hig components system, development, implementation guide
 ---
+
 
 
 # Hig Components System

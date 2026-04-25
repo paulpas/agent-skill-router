@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Skill Scanner
 
 Scan agent skills for security issues before adoption. Detects prompt injection, malicious code, excessive permissions, secret exposure, and supply chain risks.

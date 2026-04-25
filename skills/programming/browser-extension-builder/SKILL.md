@@ -1,5 +1,5 @@
 ---
-name: extension-builder
+name: builder
 description: '"Provides Expert in building browser extensions that solve real problems
   - Chrome, Firefox, and cross-browser extensions. Covers extension architecture,
   manifes"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: browser extension builder, web, development, implementation guide
 ---
+
 
 
 # Browser Extension Builder

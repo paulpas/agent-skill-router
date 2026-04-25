@@ -1,5 +1,5 @@
 ---
-name: suite-testing
+name: testing
 description: Provides Execute comprehensive web application security testing using
   Burp Suite's integrated toolset, including HTTP traffic interception and modification,
   re
@@ -14,6 +14,7 @@ metadata:
   triggers: burp suite testing, security, how do i test, security auditing, unit tests,
     vulnerability scanning, testing
 ---
+
 
 
 

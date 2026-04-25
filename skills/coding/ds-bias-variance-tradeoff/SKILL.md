@@ -1,5 +1,5 @@
 ---
-name: ds-bias-variance-tradeoff
+name: bias-variance-tradeoff
 description: '"Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization
   strategies for improving model generalization"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     how do I prevent overfitting
   related-skills: ds-cross-validation, ds-hyperparameter-tuning, ds-model-selection
 ---
+
 
 
 # Bias-Variance Tradeoff

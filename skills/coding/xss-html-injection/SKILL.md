@@ -1,5 +1,5 @@
 ---
-name: html-injection
+name: injection
 description: '"Provides Execute comprehensive client-side injection vulnerability
   assessments on web applications to identify XSS and HTML injection flaws, demonstrate
   exploi"'
@@ -14,6 +14,7 @@ metadata:
   triggers: xss html injection, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

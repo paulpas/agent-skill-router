@@ -1,5 +1,5 @@
 ---
-name: composition-analysis
+name: analysis
 description: '"Provides Design optimal team structures, hiring plans, compensation
   strategies, and equity allocation for early-stage startups from pre-seed through
   Series A"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: team composition analysis, business, implementation guide
 ---
+
 
 
 # Team Composition Analysis

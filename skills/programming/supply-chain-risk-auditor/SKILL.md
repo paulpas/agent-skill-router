@@ -1,5 +1,5 @@
 ---
-name: chain-risk-auditor
+name: risk-auditor
 description: '"Provides Identifies dependencies at heightened risk of exploitation
   or takeover. Use when assessing supply chain attack surface, evaluating dependency
   health"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: supply chain risk auditor, uncategorized, implementation guide
 ---
+
 
 
 # Supply Chain Risk Auditor

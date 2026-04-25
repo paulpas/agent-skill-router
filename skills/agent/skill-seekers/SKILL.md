@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Skill Seekers
 
 -Automatically convert documentation websites, GitHub repositories, and PDFs into Claude AI skills in minutes.

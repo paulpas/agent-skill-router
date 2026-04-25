@@ -1,5 +1,5 @@
 ---
-name: communication-chat-java
+name: chat-java
 description: '"Provides Build real-time chat applications with thread management,
   messaging, participants, and read receipts"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure communication chat java, cloud, implementation guide
 ---
+
 
 
 # Azure Communication Chat Java

@@ -1,5 +1,5 @@
 ---
-name: pydantic-models
+name: models
 description: '"''Pydantic frozen data models for trading: enums, annotated constraints"
   field/model validators, and computed properties'''
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: enums, frozen, pydantic models, pydantic-models, trading
   related-skills: null
 ---
+
 
 
 

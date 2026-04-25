@@ -1,5 +1,5 @@
 ---
-name: build-optimization
+name: optimization
 description: '"Provides Optimize Bazel builds for large-scale monorepos. Use when
   configuring Bazel, implementing remote execution, or optimizing build performance
   for enterp"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: bazel build optimization, development, implementation guide
 ---
+
 
 
 # Bazel Build Optimization

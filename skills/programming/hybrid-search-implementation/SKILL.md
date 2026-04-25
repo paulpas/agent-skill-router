@@ -1,5 +1,5 @@
 ---
-name: search-implementation
+name: implementation
 description: Provides Combine vector and keyword search for improved retrieval. Use
   when implementing RAG systems, building search engines, or when neither approach
   alone p
@@ -14,6 +14,7 @@ metadata:
   triggers: hybrid search implementation, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

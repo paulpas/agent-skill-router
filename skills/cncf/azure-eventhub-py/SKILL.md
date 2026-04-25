@@ -1,5 +1,5 @@
 ---
-name: eventhub-py
+name: py
 description: '"Provides Azure Event Hubs SDK for Python streaming. Use for high-throughput
   event ingestion, producers, consumers, and checkpointing"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure eventhub py, cloud, implementation guide
 ---
+
 
 
 # Azure Eventhub Py

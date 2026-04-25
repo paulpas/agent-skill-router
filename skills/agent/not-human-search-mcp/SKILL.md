@@ -1,5 +1,5 @@
 ---
-name: human-search-mcp
+name: search-mcp
 description: '"Provides Search AI-ready websites, inspect indexed site details, verify
   MCP endpoints, and discover tools and APIs using the Not Human Search MCP server"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: not human search mcp, mcp, implementation guide
 ---
+
 
 
 # Not Human Search Mcp

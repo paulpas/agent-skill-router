@@ -1,5 +1,5 @@
 ---
-name: content-auditor
+name: auditor
 description: '"Analyzes provided content for quality, E-E-A-T signals, and SEO best
   practices. Scores content and provides improvement recommendations based on estab"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: seo content auditor, content, implementation guide
 ---
+
 
 
 # Seo Content Auditor

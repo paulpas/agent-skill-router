@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Analyze Project
 
 Forensic root cause analyzer for Antigravity sessions. Classifies scope deltas, rework patterns, root causes, hotspots, and auto-improves prompts/health.

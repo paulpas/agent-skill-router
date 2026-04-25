@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Embedding Strategies
 
 Guide to selecting and optimizing embedding models for vector search applications.

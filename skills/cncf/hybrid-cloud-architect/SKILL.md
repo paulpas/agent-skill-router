@@ -1,5 +1,5 @@
 ---
-name: cloud-architect
+name: architect
 description: '"Provides Expert hybrid cloud architect specializing in complex multi-cloud
   solutions across AWS/Azure/GCP and private clouds (OpenStack/VMware)"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: hybrid cloud architect, cloud, implementation guide
 ---
+
 
 
 # Hybrid Cloud Architect

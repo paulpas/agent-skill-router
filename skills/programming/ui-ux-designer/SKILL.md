@@ -1,5 +1,5 @@
 ---
-name: ux-designer
+name: designer
 description: '"Provides Create interface designs, wireframes, and design systems.
   Masters user research, accessibility standards, and modern design tools"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: ui ux designer, web, development, implementation guide
 ---
+
 
 
 # Ui Ux Designer

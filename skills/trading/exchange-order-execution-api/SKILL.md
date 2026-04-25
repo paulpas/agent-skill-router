@@ -1,5 +1,5 @@
 ---
-name: exchange-order-execution-api
+name: order-execution-api
 description: '"Implements order execution and management api for trading systems for
   risk management and algorithmic trading execution."'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: exchange-order-book-sync, exchange-rate-limiting, execution-twap,
     technical-false-signal-filtering
 ---
+
 
 
 **Role:** Execute and manage orders across multiple exchanges with consistency and reliability

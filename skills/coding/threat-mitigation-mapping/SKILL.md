@@ -1,5 +1,5 @@
 ---
-name: mitigation-mapping
+name: mapping
 description: '"Provides Map identified threats to appropriate security controls and
   mitigations. Use when prioritizing security investments, creating remediation plans,
   or va"'
@@ -14,6 +14,7 @@ metadata:
   triggers: threat mitigation mapping, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

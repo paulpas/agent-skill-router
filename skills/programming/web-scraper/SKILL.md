@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Web Scraper
 
 Web scraping inteligente multi-estrategia. Extrai dados estruturados de paginas web (tabelas, listas, precos). Paginacao, monitoramento e export CSV/JSON.

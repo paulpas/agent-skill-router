@@ -1,5 +1,5 @@
 ---
-name: conviction-scoring
+name: scoring
 description: '"Multi-factor conviction scoring engine combining technical, momentum"
   trend, volatility, and volume signals with configurable weights'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: combining, conviction scoring, conviction-scoring, engine, multi-factor
   related-skills: null
 ---
+
 
 
 

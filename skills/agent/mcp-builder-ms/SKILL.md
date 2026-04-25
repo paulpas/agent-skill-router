@@ -1,5 +1,5 @@
 ---
-name: builder-ms
+name: ms
 description: Provides use this skill when building mcp servers to integrate external
   apis or services, whether in python (fastmcp) or node/typescript (mcp sdk)
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: mcp builder ms, ai, agents, implementation guide, machine learning, ml,
     scikit-learn
 ---
+
 
 
 

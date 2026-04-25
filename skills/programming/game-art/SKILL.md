@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Game Art
 
 Game art principles. Visual style selection, asset pipeline, animation workflow.

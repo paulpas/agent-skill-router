@@ -1,5 +1,5 @@
 ---
-name: pipeline-workflow
+name: workflow
 description: '"Provides Complete end-to-end MLOps pipeline orchestration from data
   preparation through model deployment"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: ml pipeline workflow, workflow, how do i deploy
 ---
+
 
 
 # Ml Pipeline Workflow

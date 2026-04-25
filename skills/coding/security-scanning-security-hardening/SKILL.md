@@ -1,5 +1,5 @@
 ---
-name: scanning-security-hardening
+name: security-hardening
 description: '"Provides Coordinate multi-layer security scanning and hardening across
   application, infrastructure, and compliance controls"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: security scanning security hardening, security, how do i secure, security
     auditing, vulnerability scanning
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: event-bus
+name: bus
 description: '"Async pub/sub event bus with typed events, mixed sync/async dispatch"
   and singleton initialization for trading systems'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: async, event bus, event-bus, events, typed, eventbridge, event routing
   related-skills: null
 ---
+
 
 
 

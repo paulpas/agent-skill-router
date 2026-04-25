@@ -1,5 +1,5 @@
 ---
-name: ai-feature-engineering
+name: feature-engineering
 description: '"Implements create actionable trading features from raw market data
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: actionable, ai feature engineering, ai-feature-engineering, create, trading
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Transform price and volume data into predictive features for machine learning models

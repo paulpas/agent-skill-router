@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Bamboohr Automation
 
 Automate BambooHR tasks via Rube MCP (Composio): employees, time-off, benefits, dependents, employee updates. Always search tools first for current schemas.

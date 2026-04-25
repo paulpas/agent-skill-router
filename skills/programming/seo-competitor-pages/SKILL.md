@@ -1,5 +1,5 @@
 ---
-name: competitor-pages
+name: pages
 description: '"Provides Generate SEO-optimized competitor comparison and alternatives
   pages. Covers"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: seo competitor pages, uncategorized, implementation guide
 ---
+
 
 
 # Seo Competitor Pages

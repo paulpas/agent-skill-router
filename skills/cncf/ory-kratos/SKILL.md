@@ -1,5 +1,5 @@
 ---
-name: ory-kratos
+name: kratos
 description: '"ORY Kratos in Identity & Access - cloud native architecture, patterns"
   pitfalls, and best practices'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     ory-kratos, cloudformation
   related-skills: oathkeeper, ory-hydra
 ---
+
 
 
 

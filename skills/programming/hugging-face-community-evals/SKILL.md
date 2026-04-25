@@ -1,5 +1,5 @@
 ---
-name: face-community-evals
+name: community-evals
 description: Provides Run local evaluations for Hugging Face Hub models with inspect-ai
   or lighteval
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: hugging face community evals, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

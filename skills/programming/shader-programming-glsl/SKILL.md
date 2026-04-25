@@ -1,5 +1,5 @@
 ---
-name: programming-glsl
+name: glsl
 description: '"Provides Expert guide for writing efficient GLSL shaders (Vertex/Fragment)
   for web and game engines, covering syntax, uniforms, and common effects"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: shader programming glsl, uncategorized, implementation guide
 ---
+
 
 
 # Shader Programming Glsl

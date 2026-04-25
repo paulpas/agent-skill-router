@@ -1,5 +1,5 @@
 ---
-name: metrics-calculation
+name: calculation
 description: '"Provides Calculate portfolio risk metrics including VaR, CVaR, Sharpe,
   Sortino, and drawdown analysis. Use when measuring portfolio risk, implementing
   risk lim"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: risk metrics calculation, business, implementation guide
 ---
+
 
 
 # Risk Metrics Calculation

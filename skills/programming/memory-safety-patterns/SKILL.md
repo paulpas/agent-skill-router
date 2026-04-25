@@ -1,5 +1,5 @@
 ---
-name: safety-patterns
+name: patterns
 description: '"Provides Cross-language patterns for memory-safe programming including
   RAII, ownership, smart pointers, and resource management"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: memory safety patterns, development, implementation guide
 ---
+
 
 
 # Memory Safety Patterns

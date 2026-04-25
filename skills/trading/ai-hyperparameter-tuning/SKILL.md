@@ -1,5 +1,5 @@
 ---
-name: ai-hyperparameter-tuning
+name: hyperparameter-tuning
 description: '"Implements optimize model configurations for trading applications for
   risk management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     optimize
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Systematically find optimal hyperparameters that balance prediction accuracy with trading performance

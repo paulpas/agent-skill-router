@@ -1,5 +1,5 @@
 ---
-name: gcp-vpc
+name: vpc
 description: '"Provides networking with subnets, firewall rules, and VPC peering for
   secure cloud infrastructure"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     availability zones, network segmentation
   related-skills: gcp-cloud-dns, gcp-cloud-load-balancing, gcp-cloud-sql, gcp-compute-engine
 ---
+
 
 
 

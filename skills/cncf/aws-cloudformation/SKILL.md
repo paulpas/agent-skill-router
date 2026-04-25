@@ -1,5 +1,5 @@
 ---
-name: aws-cloudformation
+name: cloudformation
 description: '"Creates Infrastructure as Code templates with CloudFormation for reproducible"
   versioned, automated deployments of entire AWS infrastructure stacks.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     stack, aws template, yaml, json
   related-skills: aws-ec2, aws-iam, aws-rds, aws-s3
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: ui-swift-ui
+name: swift-ui
 description: '"Provides expo-ui-swift-ui functionality and capabilities."'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: expo ui swift ui, mobile, implementation guide
 ---
+
 
 
 # Expo Ui Swift Ui

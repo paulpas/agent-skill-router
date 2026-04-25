@@ -1,5 +1,5 @@
 ---
-name: native-architecture
+name: architecture
 description: '"Provides Production-ready patterns for React Native development with
   Expo, including navigation, state management, native modules, and offline-first
   architectu"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: react native architecture, web, development, implementation guide
 ---
+
 
 
 # React Native Architecture

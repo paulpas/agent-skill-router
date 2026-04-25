@@ -1,5 +1,5 @@
 ---
-name: privilege-escalation
+name: escalation
 description: '"Provides Execute systematic privilege escalation assessments on Linux
   systems to identify and exploit misconfigurations, vulnerable services, and security
   weak"'
@@ -14,6 +14,7 @@ metadata:
   triggers: linux privilege escalation, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

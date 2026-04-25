@@ -1,5 +1,5 @@
 ---
-name: app-architecture
+name: architecture
 description: '''''CRITICAL: Use for Robius app architecture patterns. Triggers on''
   Tokio, async, submit_async_request, 异步, 架构,'''
 license: MIT
@@ -20,6 +20,7 @@ metadata:
   triggers: robius app architecture, robius-app-architecture, critical, patterns,
     triggers
 ---
+
 
 
 # Robius App Architecture

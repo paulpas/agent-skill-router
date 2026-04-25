@@ -1,5 +1,5 @@
 ---
-name: engineering-data-driven-feature
+name: data-driven-feature
 description: '"Provides Build features guided by data insights, A/B testing, and continuous
   measurement using specialized agents for analysis, implementation, and experimenta"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: data engineering data driven feature, data, science, how do i test
 ---
+
 
 
 # Data Engineering Data Driven Feature

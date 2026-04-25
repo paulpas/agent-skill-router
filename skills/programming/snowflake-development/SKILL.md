@@ -18,6 +18,7 @@ metadata:
 
 
 
+
 # Snowflake Development
 
 Comprehensive Snowflake development assistant covering SQL best practices, data pipeline design (Dynamic Tables, Streams, Tasks, Snowpipe), Cortex AI functions, Cortex Agents, Snowpark Python, dbt integration, performance tuning, and security hardening.

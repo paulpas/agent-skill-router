@@ -1,5 +1,5 @@
 ---
-name: transformation-patterns
+name: patterns
 description: '"Provides Production-ready patterns for dbt (data build tool) including
   model organization, testing strategies, documentation, and incremental processing"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: dbt transformation patterns, data, how do i test
 ---
+
 
 
 # Dbt Transformation Patterns

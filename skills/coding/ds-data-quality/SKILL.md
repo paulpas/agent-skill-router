@@ -1,5 +1,5 @@
 ---
-name: ds-data-quality
+name: data-quality
 description: '"Implements data validation, cleaning, outlier detection, and quality
   assurance techniques to ensure reliable datasets for model training"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     i clean data, missing values
   related-skills: ds-anomaly-detection, ds-data-collection, ds-data-profiling, ds-missing-data
 ---
+
 
 
 # Data Quality

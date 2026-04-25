@@ -1,5 +1,5 @@
 ---
-name: cleanup-deps-audit
+name: deps-audit
 description: '"Provides You are a dependency security expert specializing in vulnerability
   scanning, license compliance, and supply chain security. Analyze project dependenci"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: codebase cleanup deps audit, development, how do i secure
 ---
+
 
 
 # Codebase Cleanup Deps Audit

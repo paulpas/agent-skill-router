@@ -1,5 +1,5 @@
 ---
-name: rails-project
+name: project
 description: '"Provides create a new rails project functionality and capabilities."'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: new rails project, uncategorized, implementation guide
 ---
+
 
 
 # New Rails Project

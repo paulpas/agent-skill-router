@@ -18,6 +18,7 @@ metadata:
 
 
 
+
 # Playwright Java
 
 Scaffold, write, debug, and enhance enterprise-grade Playwright E2E tests in Java using Page Object Model, JUnit 5, Allure reporting, and parallel execution.

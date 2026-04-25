@@ -1,5 +1,5 @@
 ---
-name: workflows-tdd-green
+name: tdd-green
 description: '"Provides Implement the minimal code needed to make failing tests pass
   in the TDD green phase"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: tdd workflows tdd green, testing, how do i test, test automation, unit
     tests
 ---
+
 
 
 

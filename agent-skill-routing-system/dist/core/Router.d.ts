@@ -25,6 +25,12 @@ export interface RouterConfig {
         level?: 'debug' | 'info' | 'warn' | 'error';
         includePayloads?: boolean;
     };
+    compression?: {
+        maxCacheSizeBytes?: number;
+        warmupSkillsCount?: number;
+        compressionBatchSize?: number;
+        adaptiveTTL?: boolean;
+    };
 }
 /**
  * Router - orchestrates skill routing

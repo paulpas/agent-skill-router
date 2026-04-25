@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Jira Automation
 
 Automate Jira tasks via Rube MCP (Composio): issues, projects, sprints, boards, comments, users. Always search tools first for current schemas.

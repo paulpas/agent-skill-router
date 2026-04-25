@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Design Spells
 
 Curated micro-interactions and design details that add "magic" and personality to websites and apps.

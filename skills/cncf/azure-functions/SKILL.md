@@ -1,5 +1,5 @@
 ---
-name: azure-functions
+name: functions
 description: Provides Serverless computing with event-driven functions and automatic
   scaling
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     eventbridge, kubernetes deployment, container orchestration
   related-skills: azure-container-registry, azure-cosmos-db, azure-event-hubs, azure-keyvault-secrets
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: ui-patterns
+name: patterns
 description: '"Provides Apply proven SwiftUI UI patterns for navigation, sheets, async
   state, and reusable screens"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: swiftui ui patterns, mobile, implementation guide
 ---
+
 
 
 # Swiftui Ui Patterns

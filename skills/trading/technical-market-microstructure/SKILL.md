@@ -1,5 +1,5 @@
 ---
-name: technical-market-microstructure
+name: market-microstructure
 description: '"Implements order book dynamics and order flow analysis for risk management
   and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: analysis, dynamics, order, technical market microstructure, technical-market-microstructure
   related-skills: ai-order-flow-analysis, data-order-book
 ---
+
 
 
 **Role:** Analyze order book depth, spread, and trade execution patterns

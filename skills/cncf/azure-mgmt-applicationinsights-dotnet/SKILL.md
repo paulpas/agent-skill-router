@@ -1,5 +1,5 @@
 ---
-name: mgmt-applicationinsights-dotnet
+name: applicationinsights-dotnet
 description: '"Provides Azure Application Insights SDK for .NET. Application performance
   monitoring and observability resource management"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure mgmt applicationinsights dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Applicationinsights Dotnet

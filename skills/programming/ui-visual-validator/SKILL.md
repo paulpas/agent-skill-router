@@ -1,5 +1,5 @@
 ---
-name: visual-validator
+name: validator
 description: '"Provides Rigorous visual validation expert specializing in UI testing,
   design system compliance, and accessibility verification"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: ui visual validator, design, how do i test
 ---
+
 
 
 # Ui Visual Validator

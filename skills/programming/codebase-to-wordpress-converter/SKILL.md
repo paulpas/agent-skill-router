@@ -1,5 +1,5 @@
 ---
-name: to-wordpress-converter
+name: wordpress-converter
 description: '"Provides Expert skill for converting any codebase (React/HTML/Next.js)
   into a pixel-perfect, SEO-optimized, and dynamic WordPress theme"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: codebase to wordpress converter, development, implementation guide
 ---
+
 
 
 # Codebase To Wordpress Converter

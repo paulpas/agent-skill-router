@@ -1,5 +1,5 @@
 ---
-name: chat-agent-discovery
+name: agent-discovery
 description: '"Provides Discover and search 18K+ MCP servers and AI agents across
   6+ registries using Global Chat''s cross-protocol directory and MCP server"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: global chat agent discovery, development, implementation guide
 ---
+
 
 
 # Global Chat Agent Discovery

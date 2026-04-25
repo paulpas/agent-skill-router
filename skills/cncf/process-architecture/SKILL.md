@@ -1,5 +1,5 @@
 ---
-name: process-architecture
+name: architecture
 description: '"Creates or updates ARCHITECTURE.md documenting the project''s design"
   components, and technical decisions for CNCF projects'
 license: MIT
@@ -16,6 +16,7 @@ metadata:
   triggers: creates, documenting, process architecture, process-architecture, updates
   related-skills: null
 ---
+
 
 
 

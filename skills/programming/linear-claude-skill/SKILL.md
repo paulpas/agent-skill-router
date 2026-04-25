@@ -1,5 +1,5 @@
 ---
-name: claude-skill
+name: skill
 description: '"Provides manage linear issues, projects, and teams functionality and
   capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: linear claude skill, project, management, implementation guide
 ---
+
 
 
 # Linear Claude Skill

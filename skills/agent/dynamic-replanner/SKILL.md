@@ -1,5 +1,5 @@
 ---
-name: dynamic-replanner
+name: replanner
 description: '"Dynamically adjusts execution plans based on real-time feedback, changing"
   conditions, and emerging information, enabling adaptive problem solving in uncertain
   environments.'
@@ -15,6 +15,7 @@ metadata:
   related-skills: code-correctness-verifier, confidence-based-selector, error-trace-explainer,
     multi-skill-executor
 ---
+
 
 
 

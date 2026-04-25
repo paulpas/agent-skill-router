@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: review
 description: '"Provides use when completing tasks, implementing major features, or
   before merging to verify work meets requirements"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: requesting code review, workflow, implementation guide
 ---
+
 
 
 # Requesting Code Review

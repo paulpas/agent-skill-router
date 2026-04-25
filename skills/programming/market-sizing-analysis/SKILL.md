@@ -1,5 +1,5 @@
 ---
-name: sizing-analysis
+name: analysis
 description: '"Provides Comprehensive market sizing methodologies for calculating
   Total Addressable Market (TAM), Serviceable Available Market (SAM), and Serviceable
   Obtainab"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: market sizing analysis, business, implementation guide
 ---
+
 
 
 # Market Sizing Analysis

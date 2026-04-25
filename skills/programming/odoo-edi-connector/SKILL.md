@@ -1,5 +1,5 @@
 ---
-name: edi-connector
+name: connector
 description: '''Provides Guide for implementing EDI (Electronic Data Interchange)
   with Odoo: X12, EDIFACT document mapping, partner onboarding, and automated order
   processing'''
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: odoo edi connector, business, how do i automate
 ---
+
 
 
 # Odoo Edi Connector

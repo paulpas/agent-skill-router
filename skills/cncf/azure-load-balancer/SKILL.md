@@ -1,5 +1,5 @@
 ---
-name: azure-load-balancer
+name: load-balancer
 description: Provides Distributes traffic across VMs with health probes and rule-based
   routing
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     elb, route53, dns
   related-skills: azure-monitor, azure-scale-sets, azure-traffic-manager, azure-virtual-networks
 ---
+
 
 
 

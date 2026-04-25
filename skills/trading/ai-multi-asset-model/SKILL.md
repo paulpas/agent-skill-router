@@ -1,5 +1,5 @@
 ---
-name: ai-multi-asset-model
+name: multi-asset-model
 description: '"Provides Model inter-asset relationships for portfolio and cross-asset
   strategies"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai multi asset model, ai-multi-asset-model, inter-asset, portfolio, relationships
   related-skills: backtest-drawdown-analysis, fundamentals-risk-management-basics
 ---
+
 
 
 **Role:** Capture and exploit relationships between multiple assets for diversified trading

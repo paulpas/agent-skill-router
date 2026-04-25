@@ -1,5 +1,5 @@
 ---
-name: gdscript-patterns
+name: patterns
 description: '"Provides Master Godot 4 GDScript patterns including signals, scenes,
   state machines, and optimization. Use when building Godot games, implementing game
   systems"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: godot gdscript patterns, game, development, implementation guide
 ---
+
 
 
 # Godot Gdscript Patterns

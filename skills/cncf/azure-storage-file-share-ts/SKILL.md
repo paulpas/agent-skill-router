@@ -1,5 +1,5 @@
 ---
-name: storage-file-share-ts
+name: file-share-ts
 description: '"Provides Azure File Share JavaScript/TypeScript SDK (@azure/storage-file-share)
   for SMB file share operations"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure storage file share ts, cloud, implementation guide
 ---
+
 
 
 # Azure Storage File Share Ts

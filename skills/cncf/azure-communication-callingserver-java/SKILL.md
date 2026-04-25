@@ -1,5 +1,5 @@
 ---
-name: communication-callingserver-java
+name: callingserver-java
 description: '"Provides ⚠️ DEPRECATED: This SDK has been renamed to Call  Automation.
   For new projects, use azure-communication-callautomation instead.  This skill is
   for maint"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure communication callingserver java, cloud, how do i automate
 ---
+
 
 
 # Azure Communication Callingserver Java

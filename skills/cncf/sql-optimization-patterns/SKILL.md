@@ -1,5 +1,5 @@
 ---
-name: optimization-patterns
+name: patterns
 description: Provides Transform slow database queries into lightning-fast operations
   through systematic optimization, proper indexing, and query plan analysis
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: sql optimization patterns, database, data processing, spark, big data,
     distributed processing
 ---
+
 
 
 

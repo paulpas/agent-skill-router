@@ -1,5 +1,5 @@
 ---
-name: cannibalization-detector
+name: detector
 description: '"Analyzes multiple provided pages to identify keyword overlap and potential
   cannibalization issues. Suggests differentiation strategies. Use PROACTIVEL"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: seo cannibalization detector, content, implementation guide
 ---
+
 
 
 # Seo Cannibalization Detector

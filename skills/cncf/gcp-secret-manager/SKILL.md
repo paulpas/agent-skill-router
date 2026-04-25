@@ -1,5 +1,5 @@
 ---
-name: gcp-secret-manager
+name: secret-manager
 description: '"Provides Stores and rotates secrets with encryption and audit logging
   for sensitive data"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     rotation
   related-skills: gcp-cloud-functions, gcp-cloud-kms, gcp-compute-engine
 ---
+
 
 
 

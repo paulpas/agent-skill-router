@@ -1,5 +1,5 @@
 ---
-name: testing-review-ai-review
+name: review-ai-review
 description: Provides You are an expert AI-powered code review specialist combining
   automated static analysis, intelligent pattern recognition, and modern DevOps practices
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: performance testing review ai review, development, how do i automate,
     optimization, unit tests, performance, testing
 ---
+
 
 
 

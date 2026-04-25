@@ -1,5 +1,5 @@
 ---
-name: azure-scale-sets
+name: scale-sets
 description: '"Manages auto-scaling VM groups with load balancing and health management"'
 license: MIT
 compatibility: opencode
@@ -12,6 +12,7 @@ metadata:
   triggers: scale sets, vmss, auto-scaling, scaling, vm groups, autoscaling
   related-skills: azure-load-balancer, azure-monitor, azure-virtual-networks
 ---
+
 
 
 

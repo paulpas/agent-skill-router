@@ -30,12 +30,16 @@ class CompressionCleanupJob {
     cleanupTimer = null;
     isRunning = false;
     scheduleInterval;
-    constructor(diskCache, skillsDirectory, maxAgeDays = 7, scheduleInterval = '0 2 * * *' // 2 AM daily (cron notation)
-    ) {
+    // Batch cleanup for 1,778 skills
+    cleanupBatchSize = 50; // process 50 skills at a time
+    CLEANUP_BATCH_INTERVAL_MS = 500; // 500ms between batches
+    constructor(diskCache, skillsDirectory, maxAgeDays = 7, scheduleInterval = '0 2 * * *', // 2 AM daily (cron notation)
+    cleanupBatchSize = 50) {
         this.diskCache = diskCache;
         this.skillsDirectory = skillsDirectory;
         this.maxAgeDays = maxAgeDays;
         this.scheduleInterval = scheduleInterval;
+        this.cleanupBatchSize = cleanupBatchSize;
         this.logger = new Logger_1.Logger('CompressionCleanupJob');
     }
     /**
@@ -129,7 +133,9 @@ class CompressionCleanupJob {
         }
     }
     /**
-     * Scan all compressed directories and cleanup expired versions
+     * Scan all compressed directories and cleanup expired versions with batch processing.
+     * Processes CLEANUP_BATCH_SIZE skills at a time with delays between batches.
+     * Non-blocking: logs progress per batch.
      */
     async scanAndCleanup() {
         let skillsScanned = 0;
@@ -139,6 +145,8 @@ class CompressionCleanupJob {
         try {
             // Scan skills directory structure: skills/{domain}/{skillname}/.compressed/
             const domains = await this.scanDomains();
+            // Collect all skills to cleanup
+            const skillsToCleanup = [];
             for (const domain of domains) {
                 const domainPath = path_1.default.join(this.skillsDirectory, domain);
                 try {
@@ -148,18 +156,31 @@ class CompressionCleanupJob {
                         // Check if .compressed directory exists
                         try {
                             await fs_1.default.promises.access(compressedDir);
+                            skillsToCleanup.push({ domain, skillName });
                         }
                         catch {
                             // Directory doesn't exist, skip
-                            continue;
                         }
-                        // Run cleanup for this skill
+                    }
+                }
+                catch (error) {
+                    this.logger.debug('Error scanning domain', {
+                        domain,
+                        error: String(error),
+                    });
+                }
+            }
+            // Process skills in batches with delays between batches
+            for (let i = 0; i < skillsToCleanup.length; i += this.cleanupBatchSize) {
+                const batch = skillsToCleanup.slice(i, i + this.cleanupBatchSize);
+                // Process batch in parallel
+                const batchPromises = batch.map(async ({ domain, skillName }) => {
+                    try {
                         const result = await this.diskCache.cleanupExpiredVersions(skillName, domain, this.maxAgeDays);
                         skillsScanned++;
                         versionsDeleted += result.deleted.length;
                         deferredRetries += result.deferred.length;
-                        // Estimate space freed (rough estimate: ~1KB per version)
-                        spaceFreed += result.deleted.length * 1024;
+                        spaceFreed += result.deleted.length * 1024; // ~1KB per version
                         if (result.deleted.length > 0 || result.deferred.length > 0) {
                             this.logger.debug('Cleaned up skill', {
                                 skillName,
@@ -169,12 +190,25 @@ class CompressionCleanupJob {
                             });
                         }
                     }
-                }
-                catch (error) {
-                    this.logger.debug('Error scanning domain', {
-                        domain,
-                        error: String(error),
-                    });
+                    catch (error) {
+                        this.logger.debug('Failed to cleanup skill', {
+                            skillName,
+                            domain,
+                            error: String(error),
+                        });
+                    }
+                });
+                await Promise.all(batchPromises);
+                // Log progress and delay between batches
+                this.logger.debug('Cleanup batch complete', {
+                    batchNumber: Math.floor(i / this.cleanupBatchSize) + 1,
+                    skillsInBatch: batch.length,
+                    totalScanned: skillsScanned,
+                    totalDeleted: versionsDeleted,
+                });
+                // Delay between batches to avoid I/O overhead
+                if (i + this.cleanupBatchSize < skillsToCleanup.length) {
+                    await new Promise((resolve) => setTimeout(resolve, this.CLEANUP_BATCH_INTERVAL_MS));
                 }
             }
         }
@@ -189,6 +223,18 @@ class CompressionCleanupJob {
             deferredRetries,
             spaceFreed,
         };
+    }
+    /**
+     * Pre-warm cache by loading compressed versions for top skills.
+     * Called on startup to ensure frequently accessed skills are ready.
+     * Non-blocking: logs progress but doesn't throw.
+     */
+    async preWarmCache(topSkillNames) {
+        if (!topSkillNames || topSkillNames.length === 0) {
+            return;
+        }
+        this.logger.info('[COMPRESSION-CLEANUP] pre-warming cache', { skillCount: topSkillNames.length });
+        await this.diskCache.warmupCache(topSkillNames);
     }
     /**
      * Scan available domains in skills directory

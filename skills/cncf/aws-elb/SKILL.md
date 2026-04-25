@@ -1,5 +1,5 @@
 ---
-name: aws-elb
+name: elb
 description: '"Configures Elastic Load Balancing (ALB, NLB, Classic) for distributing"
   traffic across instances with health checks, SSL termination, and cross-AZ failover.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     ssl termination, traffic distribution
   related-skills: aws-cloudwatch, aws-ec2, aws-route53, aws-vpc
 ---
+
 
 
 

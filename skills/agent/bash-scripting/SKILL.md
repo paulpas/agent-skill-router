@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Bash Scripting
 
 Bash scripting workflow for creating production-ready shell scripts with defensive patterns, error handling, and testing.

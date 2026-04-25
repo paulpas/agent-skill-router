@@ -1,5 +1,5 @@
 ---
-name: git-advanced
+name: advanced
 description: '"Provides Advanced Git operations including rebasing, cherry-picking,
   bisecting, reflog, worktrees, filtering branches, and multi-repository workflows
   for exper"'
@@ -15,6 +15,7 @@ metadata:
     multi-repo, advanced git
   related-skills: git-branching-strategies, semver-automation
 ---
+
 
 
 # Advanced Git Operations

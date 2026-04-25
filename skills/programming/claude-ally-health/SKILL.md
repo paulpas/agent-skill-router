@@ -1,5 +1,5 @@
 ---
-name: ally-health
+name: health
 description: Provides a health assistant skill for medical information analysis, symptom
   tracking, and wellness guidance
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: claude ally health, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

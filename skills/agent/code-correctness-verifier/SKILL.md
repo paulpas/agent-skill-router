@@ -1,5 +1,5 @@
 ---
-name: code-correctness-verifier
+name: correctness-verifier
 description: '"Verifies code correctness by analyzing syntax, semantics, and type
   consistency" across all code artifacts in the codebase.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     types, verifies
   related-skills: dynamic-replanner, error-trace-explainer, goal-to-milestones, hot-path-detector
 ---
+
 
 
 

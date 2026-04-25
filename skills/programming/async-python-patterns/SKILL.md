@@ -1,5 +1,5 @@
 ---
-name: python-patterns
+name: patterns
 description: '"Provides Comprehensive guidance for implementing asynchronous Python
   applications using asyncio, concurrent programming patterns, and async/await for
   building"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: async python patterns, development, implementation guide
 ---
+
 
 
 # Async Python Patterns

@@ -1,5 +1,5 @@
 ---
-name: prompt-optimizer
+name: optimizer
 description: Provides use when improving prompts for any llm. applies proven prompt
   engineering techniques to boost output quality, reduce hallucinations, and cut token
   usa
@@ -14,6 +14,7 @@ metadata:
   triggers: llm prompt optimizer, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

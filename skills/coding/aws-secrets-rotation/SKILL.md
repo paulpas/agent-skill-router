@@ -1,5 +1,5 @@
 ---
-name: secrets-rotation
+name: rotation
 description: '"Provides Automate AWS secrets rotation for RDS, API keys, and credentials"'
 license: MIT
 compatibility: opencode
@@ -12,6 +12,7 @@ metadata:
   triggers: aws secrets rotation, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

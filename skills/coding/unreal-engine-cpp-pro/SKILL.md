@@ -1,5 +1,5 @@
 ---
-name: engine-cpp-pro
+name: cpp-pro
 description: '"Provides Expert guide for Unreal Engine 5.x C++ development, covering
   UObject hygiene, performance patterns, and best practices"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: unreal engine cpp pro, code, implementation guide
 ---
+
 
 
 # Unreal Engine Cpp Pro

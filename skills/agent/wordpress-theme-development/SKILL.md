@@ -1,5 +1,5 @@
 ---
-name: theme-development
+name: development
 description: '"Provides WordPress theme development workflow covering theme architecture,
   template hierarchy, custom post types, block editor support, responsive design,
   and"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: wordpress theme development, granular, workflow, implementation guide
 ---
+
 
 
 # Wordpress Theme Development

@@ -1,5 +1,5 @@
 ---
-name: architectural-patterns
+name: patterns
 description: '"Provides Software architecture patterns including MVC, MVVM, microservices,
   event-driven, CQRS, DDD, hexagonal architecture, layered architecture, and pattern"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     patterns, CQRS, DDD, hexagonal architecture
   related-skills: code-quality-policies
 ---
+
 
 
 

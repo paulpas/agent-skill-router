@@ -1,5 +1,5 @@
 ---
-name: debugger-agent
+name: agent
 description: '"Provides Debug the current iOS project on a booted simulator with XcodeBuildMCP"'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: ios debugger agent, mobile, implementation guide
 ---
+
 
 
 # Ios Debugger Agent

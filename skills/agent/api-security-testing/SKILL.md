@@ -1,5 +1,5 @@
 ---
-name: security-testing
+name: testing
 description: Provides API security testing workflow for REST and GraphQL APIs covering
   authentication, authorization, rate limiting, input validation, and security best
   pra
@@ -14,6 +14,7 @@ metadata:
   triggers: api security testing, granular, workflow, how do i test, unit tests, vulnerability
     scanning, security, testing
 ---
+
 
 
 

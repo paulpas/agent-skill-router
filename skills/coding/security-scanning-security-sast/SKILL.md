@@ -1,5 +1,5 @@
 ---
-name: scanning-security-sast
+name: security-sast
 description: '"Static Application Security Testing (SAST) for code vulnerability"
   analysis across multiple languages and frameworks "'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: security scanning security sast, security, how do i test
 ---
+
 
 
 # Security Scanning Security Sast

@@ -1,5 +1,5 @@
 ---
-name: context-mapping
+name: mapping
 description: '"Provides Map relationships between bounded contexts and define integration
   contracts using DDD context mapping patterns"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: ddd context mapping, architecture, implementation guide
 ---
+
 
 
 # Ddd Context Mapping

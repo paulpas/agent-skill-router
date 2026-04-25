@@ -1,5 +1,5 @@
 ---
-name: extension-developer
+name: developer
 description: '"Provides Expert in building Chrome Extensions using Manifest V3. Covers
   background scripts, service workers, content scripts, and cross-context communication"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: chrome extension developer, front, end, implementation guide
 ---
+
 
 
 # Chrome Extension Developer

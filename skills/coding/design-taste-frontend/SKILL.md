@@ -1,5 +1,5 @@
 ---
-name: taste-frontend
+name: frontend
 description: '"Provides use when building high-agency frontend interfaces with strict
   design taste, calibrated color, responsive layout, and motion rules"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: design taste frontend, frontend, implementation guide
 ---
+
 
 
 # Design Taste Frontend

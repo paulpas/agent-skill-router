@@ -1,5 +1,5 @@
 ---
-name: keyvault-certificates-rust
+name: certificates-rust
 description: '"Provides Azure Key Vault Certificates SDK for Rust. Use for creating,
   importing, and managing certificates"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure keyvault certificates rust, cloud, implementation guide
 ---
+
 
 
 # Azure Keyvault Certificates Rust

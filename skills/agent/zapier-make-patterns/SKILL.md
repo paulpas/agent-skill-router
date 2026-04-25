@@ -1,5 +1,5 @@
 ---
-name: make-patterns
+name: patterns
 description: Provides No-code automation democratizes workflow building. Zapier and
   Make (formerly Integromat) let non-developers automate business processes without
   writin
@@ -14,6 +14,7 @@ metadata:
   triggers: zapier make patterns, automation, how do i automate, jenkins, ci/cd pipeline,
     continuous integration
 ---
+
 
 
 

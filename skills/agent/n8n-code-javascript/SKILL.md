@@ -1,5 +1,5 @@
 ---
-name: code-javascript
+name: javascript
 description: Provides Write JavaScript code in n8n Code nodes. Use when writing JavaScript
   in n8n, using $input/$json/$node syntax, making HTTP requests with $helpers, work
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: n8n code javascript, automation, how do i automate, jenkins, ci/cd pipeline,
     continuous integration
 ---
+
 
 
 

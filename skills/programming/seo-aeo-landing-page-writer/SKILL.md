@@ -1,5 +1,5 @@
 ---
-name: aeo-landing-page-writer
+name: landing-page-writer
 description: '"Provides Writes complete, structured landing pages optimized for SEO
   ranking, AEO citation, and visitor conversion. Activate when the user wants to write
   or ge"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo aeo landing page writer, uncategorized, implementation guide
 ---
+
 
 
 # Seo Aeo Landing Page Writer

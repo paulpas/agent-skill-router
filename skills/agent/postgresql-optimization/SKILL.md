@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Postgresql Optimization
 
 PostgreSQL database optimization workflow for query tuning, indexing strategies, performance analysis, and production database management.

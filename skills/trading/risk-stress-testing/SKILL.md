@@ -1,5 +1,5 @@
 ---
-name: risk-stress-testing
+name: stress-testing
 description: '"Implements stress test scenarios and portfolio resilience analysis
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     unit tests, testing, test automation
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api
 ---
+
 
 
 **Role:** Evaluate portfolio performance under extreme market conditions

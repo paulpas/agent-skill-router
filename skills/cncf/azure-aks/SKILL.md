@@ -1,5 +1,5 @@
 ---
-name: azure-aks
+name: aks
 description: '"Provides Managed Kubernetes cluster with automatic scaling and Azure
   service integration"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
   related-skills: azure-container-registry, azure-monitor, azure-resource-manager,
     azure-traffic-manager
 ---
+
 
 
 

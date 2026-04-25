@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Manage Skills
 
 Discover, list, create, edit, toggle, copy, move, and delete AI agent skills across 11 tools (Cursor, Claude, Agents, Windsurf, Copilot, Codex, Cline, Aider, Continue, Roo Code, Augment)

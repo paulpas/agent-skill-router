@@ -1,5 +1,5 @@
 ---
-name: risk-value-at-risk
+name: value-at-risk
 description: '"Implements value at risk calculations for portfolio risk management
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: calculations, management, portfolio, risk value at risk, risk-value-at-risk
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api
 ---
+
 
 
 **Role:** Quantify potential losses in portfolio value over specified time horizons

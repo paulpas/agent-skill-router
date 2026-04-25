@@ -1,5 +1,5 @@
 ---
-name: automated-tests
+name: tests
 description: '"Provides Write and run Odoo automated tests using TransactionCase,
   HttpCase, and browser tour tests. Covers test data setup, mocking, and CI integration"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo automated tests, business, how do i test
 ---
+
 
 
 # Odoo Automated Tests

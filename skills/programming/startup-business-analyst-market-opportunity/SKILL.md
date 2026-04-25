@@ -1,5 +1,5 @@
 ---
-name: business-analyst-market-opportunity
+name: analyst-market-opportunity
 description: '"Generate comprehensive market opportunity analysis with TAM/SAM/SOM"
   calculations "'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: startup business analyst market opportunity, business, implementation
     guide
 ---
+
 
 
 # Startup Business Analyst Market Opportunity

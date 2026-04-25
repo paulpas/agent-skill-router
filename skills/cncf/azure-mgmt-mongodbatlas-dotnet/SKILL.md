@@ -1,5 +1,5 @@
 ---
-name: mgmt-mongodbatlas-dotnet
+name: mongodbatlas-dotnet
 description: '"Provides Manage MongoDB Atlas Organizations as Azure ARM resources
   with unified billing through Azure Marketplace"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure mgmt mongodbatlas dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Mongodbatlas Dotnet

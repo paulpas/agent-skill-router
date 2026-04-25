@@ -1,5 +1,5 @@
 ---
-name: orm-expert
+name: expert
 description: '"Provides Expert in Drizzle ORM for TypeScript — schema design,  relational
   queries, migrations, and serverless database integration. Use when  building type-safe"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: drizzle orm expert, database, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

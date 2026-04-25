@@ -1,5 +1,5 @@
 ---
-name: azure-monitor
+name: monitor
 description: '"Provides Monitoring and logging for Azure resources with alerting and
   observability"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: azure monitor, monitoring, logging, observability, metrics, alerts, cloudwatch
   related-skills: azure-aks, azure-automation, azure-blob-storage, azure-cdn
 ---
+
 
 
 

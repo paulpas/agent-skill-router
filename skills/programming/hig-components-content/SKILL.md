@@ -1,5 +1,5 @@
 ---
-name: components-content
+name: content
 description: '"Provides Apple Human Interface Guidelines for content display components"'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: hig components content, development, implementation guide
 ---
+
 
 
 # Hig Components Content

@@ -1,5 +1,5 @@
 ---
-name: paper-fill-simulation
+name: fill-simulation
 description: '"Implements fill simulation models for order execution probability for
   risk management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: execution, models, order, paper fill simulation, paper-fill-simulation
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
 ---
+
 
 
 **Role:** Fill Simulation Engineer — implements sophisticated models for predicting order fill probability, partial fills, and execution quality under realistic market conditions.

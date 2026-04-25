@@ -1,5 +1,5 @@
 ---
-name: semver-automation
+name: automation
 description: '"Provides Automating semantic versioning in Git repositories for version
   bumping, changelog generation, and release automation using conventional commits
   and to"'
@@ -15,6 +15,7 @@ metadata:
     changelog automation, release automation, git tags
   related-skills: git-advanced, git-branching-strategies
 ---
+
 
 
 # Semantic Versioning Automation

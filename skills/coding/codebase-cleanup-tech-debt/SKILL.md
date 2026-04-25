@@ -1,5 +1,5 @@
 ---
-name: cleanup-tech-debt
+name: tech-debt
 description: '"Provides You are a technical debt expert specializing in identifying,
   quantifying, and prioritizing technical debt in software projects. Analyze the codebase
   t"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: codebase cleanup tech debt, code, quality, implementation guide
 ---
+
 
 
 # Codebase Cleanup Tech Debt

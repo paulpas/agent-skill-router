@@ -1,5 +1,5 @@
 ---
-name: security-review
+name: review
 description: '"Provides Find exploitable vulnerabilities in GitHub Actions workflows.  Every
   finding MUST include a concrete exploitation scenario — if you can''t  build the
   att"'
@@ -14,6 +14,7 @@ metadata:
   triggers: gha security review, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

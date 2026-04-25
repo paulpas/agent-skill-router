@@ -1,5 +1,5 @@
 ---
-name: ai-contentsafety-java
+name: contentsafety-java
 description: '"Provides Build content moderation applications using the Azure AI Content
   Safety SDK for Java"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai contentsafety java, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Contentsafety Java

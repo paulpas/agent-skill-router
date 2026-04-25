@@ -1,5 +1,5 @@
 ---
-name: crm-automation
+name: automation
 description: '''Provides Automate Zoho CRM tasks via Rube MCP (Composio): create/update
   records, search contacts, manage leads, and convert leads. Always search tools first
   fo'''
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: zoho crm automation, business, how do i automate
 ---
+
 
 
 # Zoho Crm Automation

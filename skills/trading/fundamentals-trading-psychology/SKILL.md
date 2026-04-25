@@ -1,5 +1,5 @@
 ---
-name: fundamentals-trading-psychology
+name: trading-psychology
 description: '"Emotional discipline, cognitive bias awareness, and maintaining operational"
   integrity in trading'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: cognitive, discipline, emotional, fundamentals trading psychology, fundamentals-trading-psychology
   related-skills: fundamentals-trading-edge, risk-correlation-risk
 ---
+
 
 
 **Role:** Guide an AI coding assistant to build trading systems that respect human psychological limits and prevent emotionally-driven decisions

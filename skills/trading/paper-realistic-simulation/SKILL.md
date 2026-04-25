@@ -1,5 +1,5 @@
 ---
-name: paper-realistic-simulation
+name: realistic-simulation
 description: '"Provides Realistic Paper Trading Simulation with Market Impact and
   Execution Fees"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     trading
   related-skills: fundamentals-market-regimes, fundamentals-trading-plan
 ---
+
 
 
 **Role:** Trading System Simulator — implements comprehensive paper trading simulations that replicate live trading conditions including slippage, fees, partial fills, and market impact for accurate performance estimation.

@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Audit Skills
 
 Expert security auditor for AI Skills and Bundles. Performs non-intrusive static analysis to identify malicious patterns, data leaks, system stability risks, and obfuscated payloads across Windows, macOS, Linux/Unix, and Mobile (Android/iOS).

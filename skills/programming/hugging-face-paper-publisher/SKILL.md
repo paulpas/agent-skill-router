@@ -1,5 +1,5 @@
 ---
-name: face-paper-publisher
+name: paper-publisher
 description: Provides Publish and manage research papers on Hugging Face Hub. Supports
   creating paper pages, linking papers to models/datasets, claiming authorship, and
   gen
@@ -14,6 +14,7 @@ metadata:
   triggers: hugging face paper publisher, ai, ml, data processing, machine learning,
     spark, big data, distributed processing
 ---
+
 
 
 

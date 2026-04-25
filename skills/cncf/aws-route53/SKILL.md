@@ -1,5 +1,5 @@
 ---
-name: aws-route53
+name: route53
 description: '"Configures DNS routing with Route 53 for domain registration, health"
   checks, failover, and traffic management with private hosted zones.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     policy
   related-skills: aws-cloudfront, aws-cloudwatch, aws-elb, cni
 ---
+
 
 
 

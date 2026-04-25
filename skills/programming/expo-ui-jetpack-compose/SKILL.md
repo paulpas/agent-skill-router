@@ -1,5 +1,5 @@
 ---
-name: ui-jetpack-compose
+name: jetpack-compose
 description: '"Provides expo-ui-jetpack-compose functionality and capabilities."'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: expo ui jetpack compose, mobile, implementation guide
 ---
+
 
 
 # Expo Ui Jetpack Compose

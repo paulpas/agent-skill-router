@@ -1,5 +1,5 @@
 ---
-name: ai-translation-text-py
+name: translation-text-py
 description: '"Provides Azure AI Text Translation SDK for real-time text translation,
   transliteration, language detection, and dictionary lookup. Use for translating
   text con"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure ai translation text py, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Translation Text Py

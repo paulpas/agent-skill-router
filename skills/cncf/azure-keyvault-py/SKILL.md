@@ -1,5 +1,5 @@
 ---
-name: keyvault-py
+name: py
 description: '"Provides Azure Key Vault SDK for Python. Use for secrets, keys, and
   certificates management with secure storage"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure keyvault py, cloud, implementation guide
 ---
+
 
 
 # Azure Keyvault Py

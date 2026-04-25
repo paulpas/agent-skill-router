@@ -1,5 +1,5 @@
 ---
-name: cicd-workflows
+name: workflows
 description: '"Provides Helps understand and write EAS workflow YAML files for Expo
   projects. Use this skill when the user asks about CI/CD or workflows in an Expo
   or EAS con"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: expo cicd workflows, mobile, implementation guide
 ---
+
 
 
 # Expo Cicd Workflows

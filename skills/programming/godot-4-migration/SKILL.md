@@ -10,8 +10,9 @@ metadata:
   scope: implementation
   triggers: godot 4 migration, game, development, implementation guide
   version: 1.0.0
-name: godot-4-migration
+name: 4-migration
 ---
+
 
 
 

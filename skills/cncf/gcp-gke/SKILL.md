@@ -1,5 +1,5 @@
 ---
-name: gcp-gke
+name: gke
 description: '"Provides Managed Kubernetes cluster with automatic scaling, networking,
   and GCP service integration"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: gke, kubernetes, container orchestration, k8s, managed kubernetes
   related-skills: gcp-autoscaling, gcp-cloud-monitoring, gcp-container-registry, gcp-vpc
 ---
+
 
 
 

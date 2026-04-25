@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: review
 description: '"Analyzes code diffs and files to identify bugs, security vulnerabilities"
   code smells, and architectural concerns, producing a structured review report with
   prioritized, actionable feedback'
@@ -16,6 +16,7 @@ metadata:
   source: https://github.com/farmage/opencode-skills
   related-skills: null
 ---
+
 
 
 

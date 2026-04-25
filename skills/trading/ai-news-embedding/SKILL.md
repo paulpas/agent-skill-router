@@ -1,5 +1,5 @@
 ---
-name: ai-news-embedding
+name: news-embedding
 description: '"Implements process news text using nlp embeddings for trading signals
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai news embedding, ai-news-embedding, embeddings, process, trading
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Extract meaningful representations from news text to create predictive trading features

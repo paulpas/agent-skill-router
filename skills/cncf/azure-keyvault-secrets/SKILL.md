@@ -1,5 +1,5 @@
 ---
-name: azure-keyvault-secrets
+name: keyvault-secrets
 description: '"Provides Secret management and rotation for sensitive credentials and
   configuration"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: secrets, secret management, secret rotation, credential management, password
   related-skills: azure-functions
 ---
+
 
 
 

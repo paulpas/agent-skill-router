@@ -1,5 +1,5 @@
 ---
-name: change-tracker
+name: tracker
 description: '"Provides Track code changes with structured JSON records, state machine
   enforcement, and AI session handoff for bot continuity"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: technical change tracker, development, implementation guide
 ---
+
 
 
 # Technical Change Tracker

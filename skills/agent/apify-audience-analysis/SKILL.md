@@ -1,5 +1,5 @@
 ---
-name: audience-analysis
+name: analysis
 description: Provides Understand audience demographics, preferences, behavior patterns,
   and engagement quality across Facebook, Instagram, YouTube, and TikTok
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: apify audience analysis, automation, how do i automate, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

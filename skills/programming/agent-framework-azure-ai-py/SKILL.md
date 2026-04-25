@@ -1,5 +1,5 @@
 ---
-name: framework-azure-ai-py
+name: azure-ai-py
 description: Provides Build persistent agents on Azure AI Foundry using the Microsoft
   Agent Framework Python SDK
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: agent framework azure ai py, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

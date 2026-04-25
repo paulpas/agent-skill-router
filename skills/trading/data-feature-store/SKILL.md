@@ -1,5 +1,5 @@
 ---
-name: data-feature-store
+name: feature-store
 description: '"Provides Feature storage and management for machine learning trading
   models"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     machine learning, ai
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Store and retrieve engineered features for consistent model training and inference

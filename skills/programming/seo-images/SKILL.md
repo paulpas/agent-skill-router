@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Seo Images
 
 Image optimization analysis for SEO and performance. Checks alt text, file sizes, formats, responsive images, lazy loading, and CLS prevention. Use when user says "image optimization", "alt text", "image SEO", "image size", or "image audit".

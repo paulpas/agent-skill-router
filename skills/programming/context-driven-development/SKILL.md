@@ -1,5 +1,5 @@
 ---
-name: driven-development
+name: development
 description: Provides Guide for implementing and maintaining context as a managed
   artifact alongside code, enabling consistent AI interactions and team alignment
   through st
@@ -14,6 +14,7 @@ metadata:
   triggers: context driven development, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: compliance-accessibility-audit
+name: accessibility-audit
 description: '"Provides You are an accessibility expert specializing in WCAG compliance,
   inclusive design, and assistive technology compatibility. Conduct audits, identify
   ba"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: accessibility compliance accessibility audit, design, implementation guide
 ---
+
 
 
 # Accessibility Compliance Accessibility Audit

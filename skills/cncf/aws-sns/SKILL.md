@@ -1,5 +1,5 @@
 ---
-name: aws-sns
+name: sns
 description: '"Deploys managed pub/sub messaging with SNS for asynchronous notifications"
   across services, mobile push, email, and Lambda integrations.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     topic
   related-skills: aws-cloudwatch, aws-lambda, aws-sqs
 ---
+
 
 
 

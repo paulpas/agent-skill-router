@@ -1,5 +1,5 @@
 ---
-name: azure-virtual-machines
+name: virtual-machines
 description: '"Deploys and manages VMs with auto-scaling, availability sets, and integration"
   with Azure services.'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: virtual machines, vm, azure vm, compute, instance types, scaling
   related-skills: azure-automation, azure-monitor, azure-rbac, azure-scale-sets
 ---
+
 
 
 

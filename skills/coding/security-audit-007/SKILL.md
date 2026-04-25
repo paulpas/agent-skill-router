@@ -11,8 +11,9 @@ metadata:
   scope: implementation
   triggers: 007, security, how do i secure, security auditing, vulnerability scanning
   version: 1.0.0
-name: security-audit-007
+name: audit-007
 ---
+
 
 
 

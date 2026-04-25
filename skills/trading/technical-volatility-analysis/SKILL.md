@@ -1,5 +1,5 @@
 ---
-name: technical-volatility-analysis
+name: volatility-analysis
 description: '"Implements volatility measurement, forecasting, and risk assessment
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: assessment, forecasting, measurement, technical volatility analysis, technical-volatility-analysis
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Quantify market volatility for risk management, position sizing, and option pricing

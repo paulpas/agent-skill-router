@@ -18,6 +18,7 @@ metadata:
 
 
 
+
 # Freshdesk Automation
 
 Automate Freshdesk helpdesk operations including tickets, contacts, companies, notes, and replies via Rube MCP (Composio). Always search tools first for current schemas.

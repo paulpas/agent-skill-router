@@ -1,5 +1,5 @@
 ---
-name: speed-reader
+name: reader
 description: Provides -Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style
   ORP highlighting
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: claude speed reader, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

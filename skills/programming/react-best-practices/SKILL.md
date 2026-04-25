@@ -1,5 +1,5 @@
 ---
-name: best-practices
+name: practices
 description: '"Provides Comprehensive performance optimization guide for React and
   Next.js applications, maintained by Vercel. Use when writing new React components
   or Next.j"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: react best practices, web, development, implementation guide
 ---
+
 
 
 # React Best Practices

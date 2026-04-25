@@ -1,5 +1,5 @@
 ---
-name: documentation-doc-generate
+name: doc-generate
 description: '"Provides You are a documentation expert specializing in creating comprehensive,
   maintainable documentation from code. Generate API docs, architecture diagrams"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: code documentation doc generate, development, implementation guide
 ---
+
 
 
 # Code Documentation Doc Generate

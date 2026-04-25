@@ -1,5 +1,5 @@
 ---
-name: ds-model-fairness
+name: model-fairness
 description: '"Evaluates and mitigates fairness issues including bias detection, fairness
   metrics, and debiasing strategies in machine learning"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-explainability, ds-model-interpretation, ds-model-robustness,
     ds-privacy-ml
 ---
+
 
 
 # Model Fairness

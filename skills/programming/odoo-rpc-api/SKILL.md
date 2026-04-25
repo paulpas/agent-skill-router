@@ -1,5 +1,5 @@
 ---
-name: rpc-api
+name: api
 description: '"Provides Expert on Odoo''s external JSON-RPC and XML-RPC APIs. Covers
   authentication, model calls, record CRUD, and real-world integration examples in
   Python, J"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: odoo rpc api, business, implementation guide
 ---
+
 
 
 # Odoo Rpc Api

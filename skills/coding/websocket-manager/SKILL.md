@@ -1,5 +1,5 @@
 ---
-name: websocket-manager
+name: manager
 description: '"WebSocket connection manager with state machine (connecting/connected/reconnecting/error)"
   exponential backoff, and message routing'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     machine learning, ai
   related-skills: null
 ---
+
 
 
 

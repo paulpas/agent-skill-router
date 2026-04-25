@@ -1,5 +1,5 @@
 ---
-name: layout-zafiro
+name: zafiro
 description: '"Provides Guidelines for modern Avalonia UI layout using Zafiro.Avalonia,
   emphasizing shared styles, generic components, and avoiding XAML redundancy"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: avalonia layout zafiro, development, implementation guide
 ---
+
 
 
 # Avalonia Layout Zafiro

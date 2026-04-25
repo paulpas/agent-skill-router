@@ -1,5 +1,5 @@
 ---
-name: risk-kill-switches
+name: kill-switches
 description: '"Implementing multi-layered kill switches at account, strategy, market"
   and infrastructure levels to prevent catastrophic losses and system failures'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: account, implementing, multi-layered, risk kill switches, risk-kill-switches
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api
 ---
+
 
 
 **Role:** Guide an AI coding assistant to build comprehensive kill switch systems that automatically halt trading operations when predefined risk thresholds are breached, protecting capital and preventing system damage

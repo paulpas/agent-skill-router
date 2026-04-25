@@ -1,5 +1,5 @@
 ---
-name: ds-correlation-analysis
+name: correlation-analysis
 description: '"Analyzes correlation, covariance, and multivariate relationships between
   variables using statistical methods and visualization techniques"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     pearson, spearman, feature relationships
   related-skills: ds-data-visualization, ds-eda, ds-feature-engineering, ds-feature-interaction
 ---
+
 
 
 # Correlation Analysis

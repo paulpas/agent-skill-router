@@ -1,5 +1,5 @@
 ---
-name: native-ui
+name: ui
 description: '"Provides Complete guide for building beautiful apps with Expo Router.
   Covers fundamentals, styling, components, navigation, animations, patterns, and
   native ta"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: building native ui, mobile, implementation guide
 ---
+
 
 
 # Building Native Ui

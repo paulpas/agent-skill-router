@@ -1,5 +1,5 @@
 ---
-name: twitter-scraper
+name: scraper
 description: '"Provides X (Twitter) data platform skill — tweet search, user lookup,  follower
   extraction, engagement metrics, giveaway draws, monitoring, webhooks,  19 extract"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: x twitter scraper, data, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

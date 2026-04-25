@@ -13,6 +13,7 @@ metadata:
 ---
 
 
+
 # Architect Review
 
 Master software architect specializing in modern architecture

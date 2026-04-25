@@ -1,5 +1,5 @@
 ---
-name: ds-community-detection
+name: community-detection
 description: '"Detects communities and clusters in graphs using modularity optimization,
   spectral methods, and graph partitioning algorithms"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     graph partitioning
   related-skills: ds-association-rules, ds-clustering, ds-dimensionality-reduction
 ---
+
 
 
 # Community Detection

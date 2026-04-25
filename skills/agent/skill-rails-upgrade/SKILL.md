@@ -1,5 +1,5 @@
 ---
-name: rails-upgrade
+name: upgrade
 description: '"Implements analyze rails apps and provide upgrade assessments for orchestration
   and agent coordination in autonomous systems."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: skill rails upgrade, meta, implementation guide
 ---
+
 
 
 # Skill Rails Upgrade

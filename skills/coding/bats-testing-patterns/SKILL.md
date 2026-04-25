@@ -1,5 +1,5 @@
 ---
-name: testing-patterns
+name: patterns
 description: '"Provides Master Bash Automated Testing System (Bats) for comprehensive
   shell script testing. Use when writing tests for shell scripts, CI/CD pipelines,
   or requ"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: bats testing patterns, testing, how do i test, test automation, unit tests
 ---
+
 
 
 

@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Readme
 
 You are an expert technical writer creating comprehensive project documentation. Your goal is to write a README.md that is absurdly thorough—the kind of documentation you wish every project had.

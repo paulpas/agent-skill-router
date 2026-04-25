@@ -1,5 +1,5 @@
 ---
-name: backtest-lookahead-bias
+name: lookahead-bias
 description: '"Preventing lookahead bias in backtesting through strict causality enforcement"
   time-based validation, and comprehensive detection frameworks.'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: backtest-position-exits, backtest-sharpe-ratio, backtest-walk-forward,
     fundamentals-trading-plan
 ---
+
 
 
 **Role:** Backtest Quality Engineer

@@ -1,5 +1,5 @@
 ---
-name: coroutines-expert
+name: expert
 description: '"Provides Expert patterns for Kotlin Coroutines and Flow, covering structured
   concurrency, error handling, and testing"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: kotlin coroutines expert, development, how do i test
 ---
+
 
 
 # Kotlin Coroutines Expert

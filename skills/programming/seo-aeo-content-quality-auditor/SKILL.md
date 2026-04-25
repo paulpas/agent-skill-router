@@ -1,5 +1,5 @@
 ---
-name: aeo-content-quality-auditor
+name: content-quality-auditor
 description: '"Audits content for SEO and AEO performance with scored reports, severity-ranked
   fix lists, and projected scores after fixes. Activate when the user wa"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: seo aeo content quality auditor, content, implementation guide
 ---
+
 
 
 # Seo Aeo Content Quality Auditor

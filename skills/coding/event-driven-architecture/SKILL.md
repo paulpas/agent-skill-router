@@ -1,5 +1,5 @@
 ---
-name: event-driven-architecture
+name: driven-architecture
 description: '"''Event-driven architecture for real-time trading systems: pub/sub
   patterns" event types, signal flow, strategy base, and common pitfalls'''
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     trading, eventbridge, event bus, event routing
   related-skills: null
 ---
+
 
 
 

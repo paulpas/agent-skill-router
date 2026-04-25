@@ -1,5 +1,5 @@
 ---
-name: ds-neural-networks
+name: neural-networks
 description: '"Implements deep neural networks, backpropagation, activation functions,
   architectures (CNN, RNN, Transformers), and training strategies"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-categorical-encoding, ds-ensemble-methods, ds-hyperparameter-tuning,
     ds-tree-methods
 ---
+
 
 
 

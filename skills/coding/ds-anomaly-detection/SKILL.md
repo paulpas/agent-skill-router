@@ -1,5 +1,5 @@
 ---
-name: ds-anomaly-detection
+name: anomaly-detection
 description: '"Detects anomalies and outliers using isolation forests, local outlier
   factor (LOF), one-class SVM, and isolation-based methods"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     SVM, how do I detect anomalies
   related-skills: ds-clustering, ds-data-quality, ds-model-robustness
 ---
+
 
 
 # Anomaly Detection

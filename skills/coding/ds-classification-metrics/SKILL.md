@@ -1,5 +1,5 @@
 ---
-name: ds-classification-metrics
+name: classification-metrics
 description: '"Evaluates classification models using precision, recall, F1-score,
   ROC-AUC, confusion matrix, and other classification metrics"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     matrix
   related-skills: ds-ab-testing, ds-cross-validation, ds-metrics-and-kpis, ds-model-selection
 ---
+
 
 
 # Classification Metrics

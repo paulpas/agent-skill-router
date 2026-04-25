@@ -1,5 +1,5 @@
 ---
-name: compliance-compliance-check
+name: compliance-check
 description: '"Provides You are a compliance expert specializing in regulatory requirements
   for software systems including GDPR, HIPAA, SOC2, PCI-DSS, and other industry stan"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: security compliance compliance check, security, how do i secure, security
     auditing, vulnerability scanning
 ---
+
 
 
 

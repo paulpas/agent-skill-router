@@ -1,5 +1,5 @@
 ---
-name: inventory-optimizer
+name: optimizer
 description: '''Provides Expert guide for Odoo Inventory: stock valuation (FIFO/AVCO),
   reordering rules, putaway strategies, routes, and multi-warehouse configuration'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo inventory optimizer, business, implementation guide
 ---
+
 
 
 # Odoo Inventory Optimizer

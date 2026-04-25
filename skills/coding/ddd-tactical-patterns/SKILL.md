@@ -1,5 +1,5 @@
 ---
-name: tactical-patterns
+name: patterns
 description: '"Provides Apply DDD tactical patterns in code using entities, value
   objects, aggregates, repositories, and domain events with explicit invariants"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: ddd tactical patterns, architecture, implementation guide
 ---
+
 
 
 # Ddd Tactical Patterns

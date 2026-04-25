@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Wiki Changelog
 
 Generate structured changelogs from git history. Use when user asks "what changed recently", "generate a changelog", "summarize commits" or user wants to understand recent development activity.

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Marketing Psychology
 
 Apply behavioral science and mental models to marketing decisions, prioritized using a psychological leverage and feasibility scoring system.

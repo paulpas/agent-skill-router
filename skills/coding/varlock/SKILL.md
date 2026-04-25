@@ -15,6 +15,7 @@ metadata:
 
 
 
+
 # Varlock
 
 Secure-by-default environment variable management for Claude Code sessions.

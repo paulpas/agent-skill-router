@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Deployment Engineer
 
 Expert deployment engineer specializing in modern CI/CD pipelines, GitOps workflows, and advanced deployment automation.

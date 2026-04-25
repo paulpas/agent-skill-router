@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Seo Dataforseo
 
 Use DataForSEO for live SERPs, keyword metrics, backlinks, competitor analysis, on-page checks, and AI visibility data. Trigger when the user needs real SEO data rather than static guidance.

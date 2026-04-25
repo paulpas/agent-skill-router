@@ -1,5 +1,5 @@
 ---
-name: workflows-tdd-cycle
+name: tdd-cycle
 description: '"Implements use when working with tdd workflows tdd cycle patterns for
   software quality and development best practices."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: tdd workflows tdd cycle, testing, how do i test, test automation, unit
     tests
 ---
+
 
 
 

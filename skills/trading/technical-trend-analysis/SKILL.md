@@ -1,5 +1,5 @@
 ---
-name: technical-trend-analysis
+name: trend-analysis
 description: '"Provides Trend identification, classification, and continuation analysis"'
 license: MIT
 compatibility: opencode
@@ -13,6 +13,7 @@ metadata:
     technical-trend-analysis
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Determine market trend direction and strength for directional trading decisions

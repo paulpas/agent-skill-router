@@ -1,5 +1,5 @@
 ---
-name: monitoring-slo-implement
+name: slo-implement
 description: '"Provides You are an SLO (Service Level Objective) expert specializing
   in implementing reliability standards and error budget-based engineering practices.
   Desig"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: observability monitoring slo implement, devops, how do i deploy
 ---
+
 
 
 # Observability Monitoring Slo Implement

@@ -1,5 +1,5 @@
 ---
-name: data-order-book
+name: order-book
 description: '"Order book data handling, spread calculation, liquidity measurement"
   and cross-exchange normalization'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: calculation, data order book, data-order-book, handling, spread
   related-skills: ai-order-flow-analysis, exchange-order-execution-api, fundamentals-market-structure
 ---
+
 
 
 # Order Book Data Pipeline: The 5 Laws of Liquidity Analysis

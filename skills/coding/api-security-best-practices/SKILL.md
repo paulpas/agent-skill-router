@@ -1,5 +1,5 @@
 ---
-name: security-best-practices
+name: best-practices
 description: Provides Implement secure API design patterns including authentication,
   authorization, input validation, rate limiting, and protection against common API
   vulne
@@ -14,6 +14,7 @@ metadata:
   triggers: api security best practices, backend, implementation guide, vulnerability
     scanning, security
 ---
+
 
 
 

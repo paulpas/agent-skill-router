@@ -1,5 +1,5 @@
 ---
-name: compliance-checker
+name: checker
 description: '"Provides Automated compliance checking against CIS, PCI-DSS, HIPAA,
   and SOC 2 benchmarks"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: aws compliance checker, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

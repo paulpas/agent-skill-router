@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-operations
+name: cloud-operations
 description: '"Provides Systems management including monitoring, logging, error reporting,
   and diagnostics"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: cloud operations, monitoring, logging, error reporting, diagnostics, cloudwatch
   related-skills: gcp-cloud-functions, gcp-cloud-monitoring, gcp-compute-engine, gcp-gke
 ---
+
 
 
 

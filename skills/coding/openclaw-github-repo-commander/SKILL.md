@@ -1,5 +1,5 @@
 ---
-name: github-repo-commander
+name: repo-commander
 description: '"Provides 7-stage super workflow for GitHub repo audit, cleanup, PR
   review, and competitor analysis"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: openclaw github repo commander, development, and, how do i test
 ---
+
 
 
 # Openclaw Github Repo Commander

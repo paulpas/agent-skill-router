@@ -1,5 +1,5 @@
 ---
-name: ds-observational-studies
+name: observational-studies
 description: '"Analyzes observational data using matching methods, propensity scores,
   stratification, and adjustment for confounding bias"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-causal-inference, ds-intervention-analysis, ds-randomized-experiments,
     ds-synthetic-control
 ---
+
 
 
 # Observational Studies

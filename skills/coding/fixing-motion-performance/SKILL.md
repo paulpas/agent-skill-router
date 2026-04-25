@@ -1,5 +1,5 @@
 ---
-name: motion-performance
+name: performance
 description: Provides Audit and fix animation performance issues including layout
   thrashing, compositor properties, scroll-linked motion, and blur effects. Use when
   animati
@@ -14,6 +14,7 @@ metadata:
   triggers: fixing motion performance, front, end, implementation guide, optimization,
     performance
 ---
+
 
 
 

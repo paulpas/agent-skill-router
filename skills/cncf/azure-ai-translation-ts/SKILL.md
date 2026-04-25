@@ -1,5 +1,5 @@
 ---
-name: ai-translation-ts
+name: translation-ts
 description: '"Configures text and document translation with rest-style clients for
   cloud-native deployment and infrastructure management."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai translation ts, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Translation Ts

@@ -1,5 +1,5 @@
 ---
-name: bot-builder
+name: builder
 description: '"Provides Expert in building Telegram bots that solve real problems
   - from simple automation to complex AI-powered bots. Covers bot architecture, the
   Telegram B"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: telegram bot builder, api, integration, how do i automate
 ---
+
 
 
 # Telegram Bot Builder

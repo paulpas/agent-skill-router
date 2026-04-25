@@ -1,5 +1,5 @@
 ---
-name: image-edit
+name: edit
 description: Provides AI-powered image editing with style transfer and object removal
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: fal image edit, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

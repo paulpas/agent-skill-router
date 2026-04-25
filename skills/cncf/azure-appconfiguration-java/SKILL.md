@@ -1,5 +1,5 @@
 ---
-name: appconfiguration-java
+name: java
 description: '"Provides Azure App Configuration SDK for Java. Centralized application
   configuration management with key-value settings, feature flags, and snapshots"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure appconfiguration java, cloud, implementation guide
 ---
+
 
 
 # Azure Appconfiguration Java

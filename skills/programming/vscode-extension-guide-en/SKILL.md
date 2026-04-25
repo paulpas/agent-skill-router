@@ -1,5 +1,5 @@
 ---
-name: extension-guide-en
+name: guide-en
 description: '"Provides Guide for VS Code extension development from scaffolding to
   Marketplace publication"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: vscode extension guide en, core, dev, implementation guide
 ---
+
 
 
 # Vscode Extension Guide En

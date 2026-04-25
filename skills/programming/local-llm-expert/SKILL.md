@@ -1,5 +1,5 @@
 ---
-name: llm-expert
+name: expert
 description: Provides Master local LLM inference, model selection, VRAM optimization,
   and local deployment using Ollama, llama.cpp, vLLM, and LM Studio. Expert in quantizat
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: local llm expert, data, ai, how do i deploy, machine learning, ml, scikit-learn
 ---
+
 
 
 

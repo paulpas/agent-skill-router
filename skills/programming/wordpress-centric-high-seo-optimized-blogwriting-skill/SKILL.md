@@ -1,5 +1,5 @@
 ---
-name: centric-high-seo-optimized-blogwriting-skill
+name: high-seo-optimized-blogwriting-skill
 description: '"Provides use this skill when the user asks to write a blog post, article,
   or seo content. this applies a professional structure, truth boxes, click-bait-free
   a"'
@@ -14,6 +14,7 @@ metadata:
   triggers: wordpress centric high seo optimized blogwriting skill, content, implementation
     guide
 ---
+
 
 
 # Wordpress Centric High Seo Optimized Blogwriting Skill

@@ -1,5 +1,5 @@
 ---
-name: menubar-tuist-app
+name: tuist-app
 description: '"Provides Build, refactor, or review SwiftUI macOS menubar apps that
   use Tuist"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: macos menubar tuist app, uncategorized, implementation guide
 ---
+
 
 
 # Macos Menubar Tuist App

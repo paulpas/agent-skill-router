@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Cost Optimization
 
 Strategies and patterns for optimizing cloud costs across AWS, Azure, and GCP.

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Leiloeiro Edital
 
 Analise e auditoria de editais de leilao judicial e extrajudicial. Riscos ocultos, clausulas perigosas, debitos, ocupante e classificacao da oportunidade.

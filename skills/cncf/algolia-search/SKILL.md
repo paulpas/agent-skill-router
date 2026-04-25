@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Algolia Search
 
 Expert patterns for Algolia search implementation, indexing strategies, React InstantSearch, and relevance tuning

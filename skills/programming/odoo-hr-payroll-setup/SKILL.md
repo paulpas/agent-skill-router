@@ -1,5 +1,5 @@
 ---
-name: hr-payroll-setup
+name: payroll-setup
 description: '''Provides Expert guide for Odoo HR and Payroll: salary structures,
   payslip rules, leave policies, employee contracts, and payroll journal entries'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo hr payroll setup, business, implementation guide
 ---
+
 
 
 # Odoo Hr Payroll Setup

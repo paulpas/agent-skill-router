@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Server Management
 
 Server management principles and decision-making. Process management, monitoring strategy, and scaling decisions. Teaches thinking, not commands.

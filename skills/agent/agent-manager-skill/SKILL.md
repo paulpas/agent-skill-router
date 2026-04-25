@@ -1,5 +1,5 @@
 ---
-name: manager-skill
+name: skill
 description: Provides Manage multiple local CLI agents via tmux sessions (start/stop/monitor/assign)
   with cron-friendly scheduling
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: agent manager skill, ai, agents, implementation guide, machine learning,
     ml, scikit-learn
 ---
+
 
 
 

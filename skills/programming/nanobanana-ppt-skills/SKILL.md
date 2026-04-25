@@ -1,5 +1,5 @@
 ---
-name: ppt-skills
+name: skills
 description: '"Provides AI-powered PPT generation with document analysis and styled
   images"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: nanobanana ppt skills, presentation, processing, implementation guide
 ---
+
 
 
 # Nanobanana Ppt Skills

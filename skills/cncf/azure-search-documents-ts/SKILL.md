@@ -1,5 +1,5 @@
 ---
-name: search-documents-ts
+name: documents-ts
 description: '"Provides Build search applications with vector, hybrid, and semantic
   search capabilities"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure search documents ts, cloud, implementation guide
 ---
+
 
 
 # Azure Search Documents Ts

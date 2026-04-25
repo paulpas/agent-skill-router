@@ -1,5 +1,5 @@
 ---
-name: aws-ec2
+name: ec2
 description: '"Deploys, configures, and auto-scales EC2 instances with load balancing"
   using best practices for high availability, security, and cost optimization in AWS
   compute environments.'
@@ -15,6 +15,7 @@ metadata:
     instance types, ebs volumes
   related-skills: aws-auto-scaling, aws-cloudformation, aws-cloudwatch
 ---
+
 
 
 

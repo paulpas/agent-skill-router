@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Analytics Product
 
 Analytics de produto — PostHog, Mixpanel, eventos, funnels, cohorts, retencao, north star metric, OKRs e dashboards de produto.

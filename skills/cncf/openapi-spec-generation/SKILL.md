@@ -1,5 +1,5 @@
 ---
-name: spec-generation
+name: generation
 description: '"Provides Generate and maintain OpenAPI 3.1 specifications from code,
   design-first specs, and validation patterns. Use when creating API documentation,
   generati"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: openapi spec generation, api, integration, implementation guide
 ---
+
 
 
 # Openapi Spec Generation

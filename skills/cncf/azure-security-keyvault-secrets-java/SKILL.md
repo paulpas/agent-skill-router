@@ -1,5 +1,5 @@
 ---
-name: security-keyvault-secrets-java
+name: keyvault-secrets-java
 description: Provides Azure Key Vault Secrets Java SDK for secret management. Use
   when storing, retrieving, or managing passwords, API keys, connection strings, or
   other se
@@ -14,6 +14,7 @@ metadata:
   triggers: azure security keyvault secrets java, cloud, implementation guide, vulnerability
     scanning, security
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: decision-records
+name: records
 description: '"Provides Comprehensive patterns for creating, maintaining, and managing
   Architecture Decision Records (ADRs) that capture the context and rationale behind
   sign"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: architecture decision records, architecture, implementation guide
 ---
+
 
 
 # Architecture Decision Records

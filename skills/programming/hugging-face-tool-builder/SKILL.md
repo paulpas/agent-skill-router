@@ -1,5 +1,5 @@
 ---
-name: face-tool-builder
+name: tool-builder
 description: Provides Your purpose is now is to create reusable command line scripts
   and utilities for using the Hugging Face API, allowing chaining, piping and intermediat
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: hugging face tool builder, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

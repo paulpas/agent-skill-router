@@ -1,5 +1,5 @@
 ---
-name: news-report
+name: report
 description: '"Provides Scrapes content based on a preset URL list, filters high-quality
   technical information, and generates daily Markdown reports"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: daily news report, content, implementation guide
 ---
+
 
 
 # Daily News Report

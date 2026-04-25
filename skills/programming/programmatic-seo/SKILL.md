@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Programmatic Seo
 
 Design and evaluate programmatic SEO strategies for creating SEO-driven pages at scale using templates and structured data.

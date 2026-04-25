@@ -1,5 +1,5 @@
 ---
-name: workers-expert
+name: expert
 description: '"Provides Expert in Cloudflare Workers and the Edge Computing ecosystem.
   Covers Wrangler, KV, D1, Durable Objects, and R2 storage"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: cloudflare workers expert, framework, implementation guide
 ---
+
 
 
 # Cloudflare Workers Expert

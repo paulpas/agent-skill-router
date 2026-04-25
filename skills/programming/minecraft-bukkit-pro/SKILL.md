@@ -1,5 +1,5 @@
 ---
-name: bukkit-pro
+name: pro
 description: '"Provides Master Minecraft server plugin development with Bukkit, Spigot,
   and Paper APIs"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: minecraft bukkit pro, game, development, implementation guide
 ---
+
 
 
 # Minecraft Bukkit Pro

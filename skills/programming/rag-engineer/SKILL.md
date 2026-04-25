@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Rag Engineer
 
 Expert in building Retrieval-Augmented Generation systems. Masters embedding models, vector databases, chunking strategies, and retrieval optimization for LLM applications.

@@ -1,5 +1,5 @@
 ---
-name: appconfiguration-ts
+name: ts
 description: '"Provides Centralized configuration management with feature flags and
   dynamic refresh"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure appconfiguration ts, cloud, implementation guide
 ---
+
 
 
 # Azure Appconfiguration Ts

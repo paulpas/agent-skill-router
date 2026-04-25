@@ -1,5 +1,5 @@
 ---
-name: nextjs-development
+name: development
 description: '"Provides React and Next.js 14+ application development with App Router,
   Server Components, TypeScript, Tailwind CSS, and modern frontend patterns"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: react nextjs development, granular, workflow, implementation guide
 ---
+
 
 
 # React Nextjs Development

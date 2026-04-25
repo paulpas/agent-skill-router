@@ -1,5 +1,5 @@
 ---
-name: ai-openai-dotnet
+name: openai-dotnet
 description: '"Provides Azure OpenAI SDK for .NET. Client library for Azure OpenAI
   and OpenAI services. Use for chat completions, embeddings, image generation, audio
   transcri"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure ai openai dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Openai Dotnet

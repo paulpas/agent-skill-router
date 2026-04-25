@@ -1,5 +1,5 @@
 ---
-name: azure-traffic-manager
+name: traffic-manager
 description: Provides DNS-based traffic routing with health checks and geographic
   distribution
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     route53, domain management
   related-skills: azure-aks, azure-load-balancer, azure-monitor
 ---
+
 
 
 

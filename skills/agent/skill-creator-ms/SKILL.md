@@ -1,5 +1,5 @@
 ---
-name: creator-ms
+name: ms
 description: '"Provides Guide for creating effective skills for AI coding agents working
   with Azure SDKs and Microsoft Foundry services. Use when creating new skills or
   updat"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: skill creator ms, meta, implementation guide
 ---
+
 
 
 # Skill Creator Ms

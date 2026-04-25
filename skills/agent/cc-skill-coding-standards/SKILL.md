@@ -1,5 +1,5 @@
 ---
-name: skill-coding-standards
+name: coding-standards
 description: '"Provides Universal coding standards, best practices, and patterns for
   TypeScript, JavaScript, React, and Node.js development"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: cc skill coding standards, meta, implementation guide
 ---
+
 
 
 # Cc Skill Coding Standards

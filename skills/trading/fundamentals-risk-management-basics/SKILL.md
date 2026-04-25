@@ -1,5 +1,5 @@
 ---
-name: fundamentals-risk-management-basics
+name: risk-management-basics
 description: '"Position sizing, stop-loss implementation, and system-level risk controls"
   to preserve capital'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     position, sizing, stop-loss
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api
 ---
+
 
 
 **Role:** Guide an AI coding assistant to implement robust risk management that prevents catastrophic losses while allowing trading opportunities to breathe

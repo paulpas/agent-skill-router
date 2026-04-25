@@ -1,5 +1,5 @@
 ---
-name: ds-kernel-density
+name: kernel-density
 description: '"Implements kernel density estimation, non-parametric density estimation,
   and bandwidth selection for probability density functions"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     selection
   related-skills: ds-distribution-fitting, ds-eda, ds-monte-carlo
 ---
+
 
 
 # Kernel Density Estimation

@@ -1,5 +1,5 @@
 ---
-name: engineering-patterns
+name: patterns
 description: Provides Master advanced prompt engineering techniques to maximize LLM
   performance, reliability, and controllability
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: prompt engineering patterns, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: testing-observability-api-mock
+name: observability-api-mock
 description: Provides You are an API mocking expert specializing in realistic mock
   services for development, testing, and demos. Design mocks that simulate real API
   behavio
@@ -14,6 +14,7 @@ metadata:
   triggers: api testing observability api mock, backend, how do i test, unit tests,
     testing
 ---
+
 
 
 

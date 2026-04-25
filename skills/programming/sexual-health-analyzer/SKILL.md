@@ -1,5 +1,5 @@
 ---
-name: health-analyzer
+name: analyzer
 description: '"Provides sexual health analyzer functionality and capabilities."'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: sexual health analyzer, health, implementation guide
 ---
+
 
 
 # Sexual Health Analyzer

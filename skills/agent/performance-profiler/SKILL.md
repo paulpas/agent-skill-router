@@ -1,5 +1,5 @@
 ---
-name: performance-profiler
+name: profiler
 description: '"Profiles code execution to identify performance bottlenecks and optimization"
   opportunities across systems.'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: add-new-skill, code-correctness-verifier, confidence-based-selector,
     goal-to-milestones
 ---
+
 
 
 

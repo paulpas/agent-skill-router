@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Pc Games
 
 PC and console game development principles. Engine selection, platform features, optimization strategies.

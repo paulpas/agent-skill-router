@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Notion Automation
 
 Automate Notion tasks via Rube MCP (Composio): pages, databases, blocks, comments, users. Always search tools first for current schemas.

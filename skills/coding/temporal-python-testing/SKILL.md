@@ -1,5 +1,5 @@
 ---
-name: python-testing
+name: testing
 description: '"Provides Comprehensive testing approaches for Temporal workflows using
   pytest, progressive disclosure resources for specific testing scenarios"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: temporal python testing, testing, how do i test, test automation, unit
     tests
 ---
+
 
 
 

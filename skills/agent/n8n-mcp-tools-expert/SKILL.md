@@ -1,5 +1,5 @@
 ---
-name: mcp-tools-expert
+name: tools-expert
 description: Provides Expert guide for using n8n-mcp MCP tools effectively. Use when
   searching for nodes, validating configurations, accessing templates, managing workflows
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: n8n mcp tools expert, automation, how do i automate, jenkins, ci/cd pipeline,
     continuous integration
 ---
+
 
 
 

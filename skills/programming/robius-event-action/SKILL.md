@@ -1,5 +1,5 @@
 ---
-name: event-action
+name: action
 description: '"CRITICAL: Use for Robius event and action patterns. Triggers on" custom
   action, MatchEvent, post_action, cx.widget_action, handle_actions, DefaultNone,
   widget action, event handlin"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: robius event action, development, implementation guide
 ---
+
 
 
 # Robius Event Action

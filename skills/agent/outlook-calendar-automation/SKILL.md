@@ -1,5 +1,5 @@
 ---
-name: calendar-automation
+name: automation
 description: '''Provides Automate Outlook Calendar tasks via Rube MCP (Composio):
   create events, manage attendees, find meeting times, and handle invitations. Always
   search to'''
@@ -14,6 +14,7 @@ metadata:
   triggers: outlook calendar automation, automation, how do i automate, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: cloud-run
+name: run
 description: '"Provides Specialized skill for building production-ready serverless
   applications on GCP. Covers Cloud Run services (containerized), Cloud Run Functions
   (event-"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: gcp cloud run, cloud, implementation guide
 ---
+
 
 
 # Gcp Cloud Run

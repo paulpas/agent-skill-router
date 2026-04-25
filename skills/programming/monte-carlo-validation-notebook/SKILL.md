@@ -1,5 +1,5 @@
 ---
-name: carlo-validation-notebook
+name: validation-notebook
 description: Generates SQL validation notebooks for dbt PR changes with before/after
   comparison queries
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: monte carlo validation notebook, data, data processing, spark, big data,
     distributed processing
 ---
+
 
 
 

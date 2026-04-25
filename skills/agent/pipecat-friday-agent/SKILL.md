@@ -1,5 +1,5 @@
 ---
-name: friday-agent
+name: agent
 description: '"Provides Build a low-latency, Iron Man-inspired tactical voice assistant
   (F.R.I.D.A.Y.) using Pipecat, Gemini, and OpenAI"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: pipecat friday agent, voice, agents, implementation guide
 ---
+
 
 
 # Pipecat Friday Agent

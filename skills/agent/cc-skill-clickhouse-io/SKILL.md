@@ -1,5 +1,5 @@
 ---
-name: skill-clickhouse-io
+name: clickhouse-io
 description: Provides ClickHouse database patterns, query optimization, analytics,
   and data engineering best practices for high-performance analytical workloads
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: cc skill clickhouse io, meta, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

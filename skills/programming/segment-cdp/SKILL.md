@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Segment Cdp
 
 Expert patterns for Segment Customer Data Platform including Analytics.js, server-side tracking, tracking plans with Protocols, identity resolution, destinations configuration, and data governance best practices.

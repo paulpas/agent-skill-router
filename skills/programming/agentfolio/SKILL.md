@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Agentfolio
 
 Skill for discovering and researching autonomous AI agents, tools, and ecosystems using the AgentFolio directory.

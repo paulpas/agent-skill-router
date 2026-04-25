@@ -1,5 +1,5 @@
 ---
-name: business-analyst-financial-projections
+name: analyst-financial-projections
 description: '"Create detailed 3-5 year financial model with revenue, costs, cash"
   flow, and scenarios "'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: startup business analyst financial projections, business, implementation
     guide
 ---
+
 
 
 # Startup Business Analyst Financial Projections

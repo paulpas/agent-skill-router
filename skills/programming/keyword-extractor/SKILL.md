@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Keyword Extractor
 
 Extracts up to 50 highly relevant SEO keywords from text. Use when user wants to generate or extract keywords for given text.

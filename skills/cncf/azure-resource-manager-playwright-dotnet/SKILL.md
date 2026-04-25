@@ -1,5 +1,5 @@
 ---
-name: resource-manager-playwright-dotnet
+name: manager-playwright-dotnet
 description: '"Provides Azure Resource Manager SDK for Microsoft Playwright Testing
   in .NET"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure resource manager playwright dotnet, cloud, how do i test
 ---
+
 
 
 # Azure Resource Manager Playwright Dotnet

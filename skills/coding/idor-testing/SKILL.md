@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Idor Testing
 
 Provide systematic methodologies for identifying and exploiting Insecure Direct Object Reference (IDOR) vulnerabilities in web applications.

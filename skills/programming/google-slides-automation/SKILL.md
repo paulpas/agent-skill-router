@@ -1,5 +1,5 @@
 ---
-name: slides-automation
+name: automation
 description: '"Provides Lightweight Google Slides integration with standalone OAuth
   authentication. No MCP server required. Full read/write access"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: google slides automation, presentation, processing, implementation guide
 ---
+
 
 
 # Google Slides Automation

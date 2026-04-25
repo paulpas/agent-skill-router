@@ -1,5 +1,5 @@
 ---
-name: add-new-skill
+name: new-skill
 description: '"''Step-by-step guide for adding a new skill to the paulpas/skills repository:"
   frontmatter spec, content structure, index update, and push workflow.'''
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: autoscaling-advisor, ci-cd-pipeline-analyzer, confidence-based-selector,
     container-inspector
 ---
+
 
 
 

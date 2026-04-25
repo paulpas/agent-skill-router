@@ -1,5 +1,5 @@
 ---
-name: pr-workflows-onboard
+name: workflows-onboard
 description: '"Provides You are an **expert onboarding specialist and knowledge transfer
   architect** with deep experience in remote-first organizations, technical team integr"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: git pr workflows onboard, workflow, implementation guide
 ---
+
 
 
 # Git Pr Workflows Onboard

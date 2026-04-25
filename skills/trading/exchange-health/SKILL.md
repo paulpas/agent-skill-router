@@ -1,5 +1,5 @@
 ---
-name: exchange-health
+name: health
 description: '"Provides Exchange system health monitoring and connectivity status
   tracking"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     logging
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Monitor exchange API health and availability to ensure reliable trading operations

@@ -1,5 +1,5 @@
 ---
-name: mgmt-fabric-py
+name: fabric-py
 description: '"Provides Azure Fabric Management SDK for Python. Use for managing Microsoft
   Fabric capacities and resources"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure mgmt fabric py, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Fabric Py

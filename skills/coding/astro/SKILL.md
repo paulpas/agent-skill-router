@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Astro
 
 Build content-focused websites with Astro — zero JS by default, islands architecture, multi-framework components, and Markdown/MDX support.

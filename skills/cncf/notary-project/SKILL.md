@@ -1,5 +1,5 @@
 ---
-name: notary-project
+name: project
 description: '"Notary Project in Content Trust &amp; Security - cloud native architecture"
   patterns, pitfalls, and best practices'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     security, trust, vulnerability scanning, security auditing
   related-skills: aws-kms, aws-s3, aws-secrets-manager, azure-key-vault
 ---
+
 
 
 

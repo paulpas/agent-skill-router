@@ -1,5 +1,5 @@
 ---
-name: container-inspector
+name: inspector
 description: '"Inspects container configurations, runtime state, logs, and system
   resources" for debugging and security analysis.'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: container, container inspector, container-inspector, inspects, runtime
   related-skills: add-new-skill, autoscaling-advisor, ci-cd-pipeline-analyzer, confidence-based-selector
 ---
+
 
 
 

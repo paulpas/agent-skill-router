@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Gmail Automation
 
 Lightweight Gmail integration with standalone OAuth authentication. No MCP server required.

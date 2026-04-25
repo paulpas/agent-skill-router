@@ -1,5 +1,5 @@
 ---
-name: defensive-patterns
+name: patterns
 description: '"Provides Master defensive Bash programming techniques for production-grade
   scripts. Use when writing robust shell scripts, CI/CD pipelines, or system utilities"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: bash defensive patterns, development, implementation guide
 ---
+
 
 
 # Bash Defensive Patterns

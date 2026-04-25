@@ -1,5 +1,5 @@
 ---
-name: business-analyst-business-case
+name: analyst-business-case
 description: '"Generate comprehensive investor-ready business case document with"
   market, solution, financials, and strategy "'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: startup business analyst business case, business, implementation guide
 ---
+
 
 
 # Startup Business Analyst Business Case

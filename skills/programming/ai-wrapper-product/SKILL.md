@@ -1,5 +1,5 @@
 ---
-name: wrapper-product
+name: product
 description: Provides Expert in building products that wrap AI APIs (OpenAI, Anthropic,
   etc. ) into focused tools people will pay for. Not just
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: ai wrapper product, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

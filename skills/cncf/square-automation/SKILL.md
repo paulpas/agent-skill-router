@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Square Automation
 
 Automate Square tasks via Rube MCP (Composio): payments, orders, invoices, locations. Always search tools first for current schemas.

@@ -1,5 +1,5 @@
 ---
-name: debugging-debug-trace
+name: debug-trace
 description: Provides You are a debugging expert specializing in setting up comprehensive
   debugging environments, distributed tracing, and diagnostic tools. Configure debug
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: distributed debugging debug trace, reliability, implementation guide,
     linkerd, observability, service mesh
 ---
+
 
 
 

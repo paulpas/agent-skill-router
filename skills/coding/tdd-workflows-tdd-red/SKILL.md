@@ -1,5 +1,5 @@
 ---
-name: workflows-tdd-red
+name: tdd-red
 description: '"Provides Generate failing tests for the TDD red phase to define expected
   behavior and edge cases"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: tdd workflows tdd red, testing, how do i test, test automation, unit tests
 ---
+
 
 
 

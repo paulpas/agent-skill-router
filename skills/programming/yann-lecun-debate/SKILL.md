@@ -1,5 +1,5 @@
 ---
-name: lecun-debate
+name: debate
 description: '"Provides Sub-skill de debates e posições de Yann LeCun. Cobre  críticas
   técnicas detalhadas aos LLMs, rivalidades intelectuais (LeCun vs  Hinton, Sutskever,
   Russ"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: yann lecun debate, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

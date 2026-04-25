@@ -1,5 +1,5 @@
 ---
-name: technical-statistical-arbitrage
+name: statistical-arbitrage
 description: '"Implements pair trading and cointegration-based arbitrage strategies
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     trading
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Identify and trade mean-reverting relationships between securities

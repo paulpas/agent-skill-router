@@ -1,5 +1,5 @@
 ---
-name: output-enforcement
+name: enforcement
 description: '"Provides use when a task requires exhaustive unabridged output, complete
   files, or strict prevention of placeholders and skipped code"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: full output enforcement, frontend, implementation guide
 ---
+
 
 
 # Full Output Enforcement

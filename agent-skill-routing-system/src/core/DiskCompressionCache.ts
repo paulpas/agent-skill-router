@@ -56,7 +56,11 @@ export class DiskCompressionCache {
   private flushScheduled = false;
   private flushTimer: NodeJS.Timeout | null = null;
   private readonly FLUSH_INTERVAL_MS = 5000; // 5 seconds
-  private readonly FLUSH_THRESHOLD = 100; // flush when 100 pending
+  private readonly FLUSH_THRESHOLD = 50; // reduced from 100 for faster batching at scale
+
+  // Batch compression for 1,778 skills
+  private readonly BATCH_COMPRESSION_SIZE = 10; // compress 10 at a time
+  private readonly BATCH_COMPRESSION_INTERVAL_MS = 100; // 100ms between batches
 
   // In-memory metadata cache (loaded on first access)
   private metadataCache: Map<string, CompressionMetadata> = new Map();
@@ -69,6 +73,65 @@ export class DiskCompressionCache {
   constructor(skillsDirectory: string) {
     this.skillsDirectory = skillsDirectory;
     this.logger = new Logger('DiskCompressionCache');
+  }
+
+  /**
+   * Warm up cache by pre-loading and caching compressed versions for top skills.
+   * Non-blocking: doesn't throw on errors, logs progress.
+   * Used on startup to ensure frequently accessed skills are ready.
+   */
+  async warmupCache(topSkillNames: string[]): Promise<void> {
+    if (!topSkillNames || topSkillNames.length === 0) {
+      this.logger.debug('[DISK-CACHE-WARMUP] no skills to warm');
+      return;
+    }
+
+    this.logger.info('[DISK-CACHE-WARMUP] starting', { count: topSkillNames.length });
+    const t0 = Date.now();
+    let loadedCount = 0;
+    let missingCount = 0;
+
+    // Try to load compressed versions in batches (non-blocking)
+    for (let i = 0; i < topSkillNames.length; i += this.BATCH_COMPRESSION_SIZE) {
+      const batch = topSkillNames.slice(i, i + this.BATCH_COMPRESSION_SIZE);
+
+      // Load batch in parallel
+      const batchPromises = batch.map(async (skillName) => {
+        try {
+          // Try to get versions from disk (will cache metadata)
+          // Attempt each version (brief, moderate, detailed)
+          const versions = ['brief', 'moderate', 'detailed'] as const;
+          for (const version of versions) {
+            await this.getCompressedVersion(skillName, 'agent', version).catch(() => {
+              // Silently continue if version doesn't exist
+            });
+          }
+          loadedCount++;
+        } catch (err) {
+          missingCount++;
+          this.logger.debug('[DISK-CACHE-WARMUP] failed to load', {
+            skillName,
+            error: err instanceof Error ? err.message : String(err),
+          });
+        }
+      });
+
+      await Promise.all(batchPromises);
+
+      // Small delay between batches to avoid I/O overhead
+      if (i + this.BATCH_COMPRESSION_SIZE < topSkillNames.length) {
+        await new Promise((resolve) => setTimeout(resolve, this.BATCH_COMPRESSION_INTERVAL_MS));
+      }
+    }
+
+    const durationMs = Date.now() - t0;
+    this.logger.info('[DISK-CACHE-WARMUP] complete', {
+      totalRequested: topSkillNames.length,
+      loaded: loadedCount,
+      missing: missingCount,
+      durationMs,
+      avgTimePerSkillMs: (durationMs / topSkillNames.length).toFixed(1),
+    });
   }
 
   /**
@@ -410,8 +473,9 @@ export class DiskCompressionCache {
   }
 
   /**
-   * Flush write buffer to disk
-   * Atomic: process all pending writes together
+   * Flush write buffer to disk with batch processing.
+   * Processes BATCH_COMPRESSION_SIZE entries at a time with delays between batches.
+   * Non-blocking: doesn't throw on errors, logs progress.
    */
   private async flush(): Promise<void> {
     // Guard: nothing to flush
@@ -421,24 +485,40 @@ export class DiskCompressionCache {
     }
 
     const bufferSize = this.writeBuffer.size;
-    this.logger.info('Flushing write buffer', { size: bufferSize });
+    const entries = Array.from(this.writeBuffer.entries());
+    this.logger.info('Flushing write buffer with batching', {
+      size: bufferSize,
+      batchSize: this.BATCH_COMPRESSION_SIZE,
+    });
 
     const t0 = Date.now();
     let successCount = 0;
     let errorCount = 0;
 
-    // Process all pending writes
-    for (const [bufferKey, entry] of this.writeBuffer.entries()) {
-      try {
-        await this.flushEntry(entry);
-        successCount++;
-        this.writeBuffer.delete(bufferKey);
-      } catch (error) {
-        errorCount++;
-        this.logger.error('Failed to flush entry', {
-          bufferKey,
-          error: String(error),
-        });
+    // Process entries in batches with delays between batches
+    for (let i = 0; i < entries.length; i += this.BATCH_COMPRESSION_SIZE) {
+      const batch = entries.slice(i, i + this.BATCH_COMPRESSION_SIZE);
+
+      // Process batch in parallel
+      const batchPromises = batch.map(async ([bufferKey, entry]) => {
+        try {
+          await this.flushEntry(entry);
+          successCount++;
+          this.writeBuffer.delete(bufferKey);
+        } catch (error) {
+          errorCount++;
+          this.logger.error('Failed to flush entry', {
+            bufferKey,
+            error: String(error),
+          });
+        }
+      });
+
+      await Promise.all(batchPromises);
+
+      // Delay between batches to avoid overwhelming I/O
+      if (i + this.BATCH_COMPRESSION_SIZE < entries.length) {
+        await new Promise((resolve) => setTimeout(resolve, this.BATCH_COMPRESSION_INTERVAL_MS));
       }
     }
 
@@ -447,7 +527,9 @@ export class DiskCompressionCache {
       total: bufferSize,
       successful: successCount,
       failed: errorCount,
+      batchesProcessed: Math.ceil(bufferSize / this.BATCH_COMPRESSION_SIZE),
       durationMs,
+      avgBatchDurationMs: (durationMs / Math.ceil(bufferSize / this.BATCH_COMPRESSION_SIZE)).toFixed(1),
     });
 
     this.flushScheduled = false;

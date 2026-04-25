@@ -1,5 +1,5 @@
 ---
-name: brand-reputation-monitoring
+name: reputation-monitoring
 description: Provides Scrape reviews, ratings, and brand mentions from multiple platforms
   using Apify Actors
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: apify brand reputation monitoring, automation, how do i automate, jenkins,
     ci/cd pipeline, continuous integration
 ---
+
 
 
 

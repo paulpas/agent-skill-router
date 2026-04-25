@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Seo Audit
 
 Diagnose and audit SEO issues affecting crawlability, indexation, rankings, and organic performance.

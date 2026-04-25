@@ -1,5 +1,5 @@
 ---
-name: ai-sdk-expert
+name: sdk-expert
 description: '"Provides Expert in the Vercel AI SDK. Covers Core API (generateText,
   streamText), UI hooks (useChat, useCompletion), tool calling, and streaming UI components"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: vercel ai sdk expert, web, development, implementation guide
 ---
+
 
 
 # Vercel Ai Sdk Expert

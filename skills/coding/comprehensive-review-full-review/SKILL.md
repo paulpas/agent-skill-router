@@ -1,5 +1,5 @@
 ---
-name: review-full-review
+name: full-review
 description: '"Implements use when working with comprehensive review full review patterns
   for software quality and development best practices."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: comprehensive review full review, code, quality, implementation guide
 ---
+
 
 
 # Comprehensive Review Full Review

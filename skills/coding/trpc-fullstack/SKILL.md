@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Trpc Fullstack
 
 Build end-to-end type-safe APIs with tRPC — routers, procedures, middleware, subscriptions, and Next.js/React integration patterns.

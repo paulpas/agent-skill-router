@@ -1,5 +1,5 @@
 ---
-name: ci-cd-pipeline-analyzer
+name: cd-pipeline-analyzer
 description: '"Analyzes CI/CD pipelines for optimization opportunities, identifying"
   bottlenecks and improving build throughput.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     pipeline optimization
   related-skills: add-new-skill, autoscaling-advisor, confidence-based-selector, container-inspector
 ---
+
 
 
 

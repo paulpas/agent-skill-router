@@ -1,5 +1,5 @@
 ---
-name: aws-rds
+name: rds
 description: '"Deploys managed relational databases (MySQL, PostgreSQL, MariaDB, Oracle"
   SQL Server) with multi-AZ failover, automated backups, read replicas, and encryption
   for production-grade database infrastructure.'
@@ -15,6 +15,7 @@ metadata:
     read replica, automated backup
   related-skills: aws-auto-scaling, aws-cloudformation, aws-cloudwatch
 ---
+
 
 
 

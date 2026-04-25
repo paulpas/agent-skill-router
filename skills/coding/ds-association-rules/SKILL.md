@@ -1,5 +1,5 @@
 ---
-name: ds-association-rules
+name: association-rules
 description: '"Provides Discovers association rules and frequent itemsets using Apriori,
   Eclat, and market basket analysis for pattern mining"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     pattern mining
   related-skills: ds-clustering, ds-community-detection, ds-topic-modeling
 ---
+
 
 
 # Association Rules

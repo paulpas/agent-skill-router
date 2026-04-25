@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Lex
 
 Centralized 'Truth Engine' for cross-jurisdictional legal context (US, EU, CA) and contract scaffolding.

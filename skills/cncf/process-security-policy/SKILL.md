@@ -1,5 +1,5 @@
 ---
-name: process-security-policy
+name: security-policy
 description: '"Creates or updates SECURITY.md defining the vulnerability reporting
   process" disclosure timeline, and supported versions for CNCF projects'
 license: MIT
@@ -17,6 +17,7 @@ metadata:
   triggers: creates, defining, process security policy, process-security-policy, updates,
     vulnerability scanning, security, security auditing
 ---
+
 
   related-skills: cncf-aws-kms, cncf-aws-s3, cncf-aws-secrets-manager, cncf-azure-key-vault
 

@@ -1,5 +1,5 @@
 ---
-name: application-dev-langchain-agent
+name: dev-langchain-agent
 description: Provides You are an expert LangChain agent developer specializing in
   production-grade AI systems using LangChain 0.1+ and LangGraph
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: llm application dev langchain agent, ai, ml, implementation guide, machine
     learning, scikit-learn
 ---
+
 
 
 

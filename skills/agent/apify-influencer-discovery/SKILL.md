@@ -1,5 +1,5 @@
 ---
-name: influencer-discovery
+name: discovery
 description: Provides Find and evaluate influencers for brand partnerships, verify
   authenticity, and track collaboration performance across Instagram, Facebook, YouTube,
   an
@@ -14,6 +14,7 @@ metadata:
   triggers: apify influencer discovery, automation, how do i automate, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

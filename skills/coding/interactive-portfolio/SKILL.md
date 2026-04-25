@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Interactive Portfolio
 
 Expert in building portfolios that actually land jobs and clients - not just showing work, but creating memorable experiences. Covers developer portfolios, designer portfolios, creative portfolios, and portfolios that convert visitors into opportunities.

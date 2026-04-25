@@ -1,5 +1,5 @@
 ---
-name: batch-refactor
+name: refactor
 description: '"Provides Plan and execute large refactors with dependency-aware work
   packets and parallel analysis"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: orchestrate batch refactor, uncategorized, implementation guide
 ---
+
 
 
 # Orchestrate Batch Refactor

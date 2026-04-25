@@ -1,5 +1,5 @@
 ---
-name: mesh-observability
+name: observability
 description: Provides Complete guide to observability patterns for Istio, Linkerd,
   and service mesh deployments
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: service mesh observability, devops, how do i deploy, kubernetes service,
     container orchestration, service
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: pipeline-design
+name: design
 description: Provides Architecture patterns for multi-stage CI/CD pipelines with approval
   gates and deployment strategies
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: deployment pipeline design, devops, how do i deploy, kubernetes deployment,
     container orchestration, deployment
 ---
+
 
 
 

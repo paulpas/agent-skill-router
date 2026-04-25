@@ -1,5 +1,5 @@
 ---
-name: azure-key-vault
+name: key-vault
 description: '"Manages encryption keys, secrets, and certificates with access control"
   and auditing.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     keys
   related-skills: azure-automation, azure-blob-storage, azure-functions
 ---
+
 
 
 

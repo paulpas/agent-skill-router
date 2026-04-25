@@ -1,5 +1,5 @@
 ---
-name: cleanup-refactor-clean
+name: refactor-clean
 description: '"Provides You are a code refactoring expert specializing in clean code
   principles, SOLID design patterns, and modern software engineering best practices.
   Analyz"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: codebase cleanup refactor clean, development, implementation guide
 ---
+
 
 
 # Codebase Cleanup Refactor Clean

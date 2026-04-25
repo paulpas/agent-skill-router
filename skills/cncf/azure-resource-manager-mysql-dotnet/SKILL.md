@@ -1,5 +1,5 @@
 ---
-name: resource-manager-mysql-dotnet
+name: manager-mysql-dotnet
 description: Provides Azure MySQL Flexible Server SDK for .NET. Database management
   for MySQL Flexible Server deployments
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: azure resource manager mysql dotnet, cloud, how do i deploy, relational
     database, postgresql
 ---
+
 
 
 

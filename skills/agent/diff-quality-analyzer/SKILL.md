@@ -1,5 +1,5 @@
 ---
-name: diff-quality-analyzer
+name: quality-analyzer
 description: '"Analyzes code quality changes in diffs by evaluating syntactic, semantic"
   and architectural impact of modifications.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     diffs, linting, code standards
   related-skills: add-new-skill, autoscaling-advisor, ci-cd-pipeline-analyzer, confidence-based-selector
 ---
+
 
 
 

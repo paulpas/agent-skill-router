@@ -1,5 +1,5 @@
 ---
-name: execution-slippage-modeling
+name: slippage-modeling
 description: '"Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution"
   Analysis'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     realistic, simulation
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
 ---
+
 
 
 **Role:** Algorithmic Trading Risk Analyst — builds models to estimate, simulate, and account for slippage and transaction costs in execution analysis and strategy optimization.

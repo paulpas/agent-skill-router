@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Senior Fullstack
 
 Complete toolkit for senior fullstack with modern tools and best practices.

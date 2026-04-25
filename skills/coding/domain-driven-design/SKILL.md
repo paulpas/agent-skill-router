@@ -1,5 +1,5 @@
 ---
-name: driven-design
+name: design
 description: '"Provides Plan and route Domain-Driven Design work from strategic modeling
   to tactical implementation and evented architecture patterns"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: domain driven design, architecture, implementation guide
 ---
+
 
 
 # Domain Driven Design

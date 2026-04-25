@@ -1,5 +1,5 @@
 ---
-name: audit-pre-push
+name: pre-push
 description: '''Provides Deep audit before GitHub push: removes junk files, dead code,
   security holes, and optimization issues. Checks every file line-by-line for production
   r'''
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: codebase audit pre push, development, how do i secure
 ---
+
 
 
 # Codebase Audit Pre Push

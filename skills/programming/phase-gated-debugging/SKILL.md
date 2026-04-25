@@ -1,5 +1,5 @@
 ---
-name: gated-debugging
+name: debugging
 description: '"Provides use when debugging any bug. enforces a 5-phase protocol where
   code edits are blocked until root cause is confirmed. prevents premature fix attempts"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: phase gated debugging, uncategorized, implementation guide
 ---
+
 
 
 # Phase Gated Debugging

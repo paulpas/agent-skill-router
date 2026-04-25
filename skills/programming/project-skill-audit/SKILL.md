@@ -1,5 +1,5 @@
 ---
-name: skill-audit
+name: audit
 description: '"Provides Audit a project and recommend the highest-value skills to
   add or update"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: project skill audit, uncategorized, implementation guide
 ---
+
 
 
 # Project Skill Audit

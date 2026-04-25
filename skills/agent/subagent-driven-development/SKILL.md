@@ -1,5 +1,5 @@
 ---
-name: driven-development
+name: development
 description: '"Provides use when executing implementation plans with independent tasks
   in the current session"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: subagent driven development, workflow, implementation guide
 ---
+
 
 
 # Subagent Driven Development

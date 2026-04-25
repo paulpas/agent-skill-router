@@ -1,5 +1,5 @@
 ---
-name: aws-cloudwatch
+name: cloudwatch
 description: '"Configures CloudWatch monitoring with metrics, logs, alarms, and dashboards"
   for visibility into AWS resource performance, application health, and operational
   metrics.'
@@ -15,6 +15,7 @@ metadata:
     log groups
   related-skills: aws-auto-scaling, aws-dynamodb, aws-ec2, aws-eks
 ---
+
 
 
 

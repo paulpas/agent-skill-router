@@ -1,5 +1,5 @@
 ---
-name: ds-hypothesis-testing
+name: hypothesis-testing
 description: Implements hypothesis testing including t-tests, chi-square tests, p-values,
   and statistical significance evaluation for data-driven decisions
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     how do i test hypotheses, unit tests, testing
   related-skills: ds-ab-testing, ds-bayesian-inference, ds-confidence-intervals, ds-maximum-likelihood
 ---
+
 
 
 

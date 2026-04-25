@@ -1,5 +1,5 @@
 ---
-name: window-management
+name: management
 description: '"Provides Strategies for managing LLM context windows including summarization,
   trimming, routing, and avoiding context rot"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: context window management, memory, implementation guide
 ---
+
 
 
 # Context Window Management

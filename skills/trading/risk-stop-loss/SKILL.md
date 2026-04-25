@@ -1,5 +1,5 @@
 ---
-name: risk-stop-loss
+name: stop-loss
 description: '"Implements stop loss strategies for risk management for risk management
   and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: management, risk stop loss, risk-stop-loss, strategies
   related-skills: backtest-drawdown-analysis, exchange-order-execution-api
 ---
+
 
 
 **Role:** Implement stop loss mechanisms to limit losses and protect capital

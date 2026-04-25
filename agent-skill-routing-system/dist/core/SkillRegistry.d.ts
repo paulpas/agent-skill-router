@@ -21,6 +21,9 @@ export interface SkillRegistryConfig {
     generateEmbeddings?: boolean;
     compressionLevel?: number;
     maxCacheSizeBytes?: number;
+    warmupSkillsCount?: number;
+    adaptiveTTL?: boolean;
+    compressionBatchSize?: number;
 }
 /**
  * Skill Registry - manages all available skills
@@ -38,12 +41,16 @@ export declare class SkillRegistry {
     private compressionCache;
     private maxCacheSizeBytes;
     private currentCacheSizeBytes;
-    private readonly ONE_HOUR_MS;
     private llmCompressor;
     private diskCache;
     private memoryCache;
     private deduplicator;
     private accessCounter;
+    private accessPriority;
+    private topAccessedSkills;
+    private readonly HOT_SKILLS_COUNT;
+    private readonly HOT_SKILL_TTL_MS;
+    private readonly COLD_SKILL_TTL_MS;
     constructor(config: SkillRegistryConfig);
     /**
      * Fetch the lightweight skills-index.json from a remote URL and populate the
@@ -59,6 +66,7 @@ export declare class SkillRegistry {
     getSkillContent(name: string, compressionLevel?: number): Promise<string>;
     /**
      * Get skill content from compression cache if valid (not expired)
+     * Implements adaptive TTL: hot skills 30min, cold skills 1 hour
      */
     private getFromCompressionCache;
     /**
@@ -66,7 +74,9 @@ export declare class SkillRegistry {
      */
     private applyCompressionAndCache;
     /**
-     * Evict the least recently accessed entry from the compression cache
+     * Evict the least recently accessed entry from the compression cache.
+     * Prefers evicting cold skills over hot skills to maintain hit rate.
+     * Early Exit: guard on empty cache
      */
     private evictLRUEntry;
     /** Write skill content to the on-disk content cache (non-fatal on error). */
@@ -76,6 +86,17 @@ export declare class SkillRegistry {
      * This avoids a GitHub round-trip for skills accessed since last restart.
      */
     private loadPersistedContentCache;
+    /**
+     * Update access priority for a skill to track hotness.
+     * Used by getFromCompressionCache to build top-N list.
+     */
+    private updateAccessPriority;
+    /**
+     * Warm up compression cache by pre-compressing top N frequently accessed skills.
+     * Non-blocking: logs progress but doesn't throw on errors.
+     * Useful for startup: ensures hot skills are ready in memory.
+     */
+    warmupCompressionCache(topN?: number): Promise<void>;
     /**
      * Load all skills from one or more skill directories.
      * Directories are processed in order; first directory wins on name collision

@@ -1,5 +1,5 @@
 ---
-name: data-handling
+name: handling
 description: '"Provides Practical implementation guide for GDPR-compliant data processing,
   consent management, and privacy controls"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: gdpr data handling, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

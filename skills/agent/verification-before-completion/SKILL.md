@@ -1,5 +1,5 @@
 ---
-name: before-completion
+name: completion
 description: '"Provides Claiming work is complete without verification is dishonesty,
   not efficiency. Use when ANY variation of success/completion claims, ANY expression
   of s"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: verification before completion, workflow, implementation guide
 ---
+
 
 
 # Verification Before Completion

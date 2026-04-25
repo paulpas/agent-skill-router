@@ -1,5 +1,5 @@
 ---
-name: data-enrichment
+name: enrichment
 description: '"Provides Data enrichment techniques for adding context to raw trading
   data"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: adding, context, data enrichment, data-enrichment, techniques
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Add contextual information to raw data for better decision making

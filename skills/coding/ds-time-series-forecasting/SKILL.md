@@ -1,5 +1,5 @@
 ---
-name: ds-time-series-forecasting
+name: time-series-forecasting
 description: '"Implements ARIMA, exponential smoothing, state-space models, LSTM networks,
   and deep learning methods for temporal prediction"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     time series prediction
   related-skills: ds-feature-engineering, ds-neural-networks, ds-regression-evaluation
 ---
+
 
 
 # Time Series Forecasting

@@ -1,5 +1,5 @@
 ---
-name: azure-cdn
+name: cdn
 description: Provides Content delivery network for caching and global content distribution
 license: MIT
 compatibility: opencode
@@ -13,6 +13,7 @@ metadata:
     cloudfront, elasticache, redis
   related-skills: azure-blob-storage, azure-monitor
 ---
+
 
 
 

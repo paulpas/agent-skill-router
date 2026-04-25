@@ -1,5 +1,5 @@
 ---
-name: ds-feature-interaction
+name: feature-interaction
 description: '"Provides Discovers and engineers feature interactions including polynomial
   interactions, cross-features, and interaction detection methods"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     feature interactions
   related-skills: ds-correlation-analysis, ds-feature-engineering, ds-feature-selection
 ---
+
 
 
 # Feature Interaction

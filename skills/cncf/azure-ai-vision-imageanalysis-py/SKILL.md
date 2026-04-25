@@ -1,5 +1,5 @@
 ---
-name: ai-vision-imageanalysis-py
+name: vision-imageanalysis-py
 description: '"Provides Azure AI Vision Image Analysis SDK for captions, tags, objects,
   OCR, people detection, and smart cropping. Use for computer vision and image understan"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai vision imageanalysis py, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Vision Imageanalysis Py

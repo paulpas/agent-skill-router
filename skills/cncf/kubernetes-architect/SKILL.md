@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Kubernetes Architect
 
 Expert Kubernetes architect specializing in cloud-native infrastructure, advanced GitOps workflows (ArgoCD/Flux), and enterprise container orchestration.

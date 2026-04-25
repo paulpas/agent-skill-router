@@ -1,5 +1,5 @@
 ---
-name: task-decomposition-engine
+name: decomposition-engine
 description: '"Decomposes complex tasks into smaller, manageable subtasks that can
   be" executed by appropriate specialized skills, enabling problem-solving for complex
   multi-step operations.'
@@ -16,6 +16,7 @@ metadata:
   related-skills: code-correctness-verifier, confidence-based-selector, dynamic-replanner,
     error-trace-explainer
 ---
+
 
 
 

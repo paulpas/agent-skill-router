@@ -1,5 +1,5 @@
 ---
-name: andruia-skill-smith
+name: skill-smith
 description: '"Provides Ingeniero de Sistemas de Andru.ia. Diseña, redacta y despliega  nuevas
   habilidades (skills) dentro del repositorio siguiendo el Estándar de  Diamante"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: 10 andruia skill smith, andruia, implementation guide
 ---
+
 
 
 # 10 Andruia Skill Smith

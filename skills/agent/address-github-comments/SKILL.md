@@ -1,5 +1,5 @@
 ---
-name: github-comments
+name: comments
 description: '"Provides use when you need to address review or issue comments on an
   open github pull request using the gh cli"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: address github comments, workflow, implementation guide
 ---
+
 
 
 # Address Github Comments

@@ -1,5 +1,5 @@
 ---
-name: plugin-development
+name: development
 description: '"Provides WordPress plugin development workflow covering plugin architecture,
   hooks, admin interfaces, REST API, security best practices, and WordPress 7.0 feat"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: wordpress plugin development, granular, workflow, how do i secure
 ---
+
 
 
 # Wordpress Plugin Development

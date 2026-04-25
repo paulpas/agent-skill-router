@@ -1,5 +1,5 @@
 ---
-name: ory-hydra
+name: hydra
 description: '"ORY Hydra in Security & Compliance - cloud native architecture, patterns"
   pitfalls, and best practices'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     infrastructure as code, vulnerability scanning, monitoring
   related-skills: calico, openfga, ory-kratos
 ---
+
 
 
 

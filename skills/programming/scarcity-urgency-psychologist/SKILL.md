@@ -1,5 +1,5 @@
 ---
-name: urgency-psychologist
+name: psychologist
 description: '"Provides one sentence - what this skill does and when to invoke it
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: scarcity urgency psychologist, uncategorized, implementation guide
 ---
+
 
 
 # Scarcity Urgency Psychologist

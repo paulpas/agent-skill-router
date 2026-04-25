@@ -1,5 +1,5 @@
 ---
-name: upgrade-advisor
+name: advisor
 description: '''Provides Step-by-step Odoo version upgrade advisor: pre-upgrade checklist,
   community vs enterprise upgrade path, OCA module compatibility, and post-upgrade
   val'''
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: odoo upgrade advisor, business, implementation guide
 ---
+
 
 
 # Odoo Upgrade Advisor

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Backend Architect
 
 Expert backend architect specializing in scalable API design, microservices architecture, and distributed systems.

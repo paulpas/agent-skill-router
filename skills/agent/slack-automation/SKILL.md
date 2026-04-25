@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Slack Automation
 
 Automate Slack workspace operations including messaging, search, channel management, and reaction workflows through Composio's Slack toolkit.

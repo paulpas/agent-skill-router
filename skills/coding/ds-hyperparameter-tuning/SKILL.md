@@ -1,5 +1,5 @@
 ---
-name: ds-hyperparameter-tuning
+name: hyperparameter-tuning
 description: '"Optimizes hyperparameters using grid search, random search, Bayesian
   optimization, and evolutionary methods for model improvement"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-bias-variance-tradeoff, ds-cross-validation, ds-model-selection,
     ds-tree-methods
 ---
+
 
 
 # Hyperparameter Tuning

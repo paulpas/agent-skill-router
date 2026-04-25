@@ -1,5 +1,5 @@
 ---
-name: refactoring-refactor-clean
+name: refactor-clean
 description: Provides You are a code refactoring expert specializing in clean code
   principles, SOLID design patterns, and modern software engineering best practices.
   Analyz
@@ -14,6 +14,7 @@ metadata:
   triggers: code refactoring refactor clean, code, quality, implementation guide,
     code improvement, refactoring
 ---
+
 
 
 

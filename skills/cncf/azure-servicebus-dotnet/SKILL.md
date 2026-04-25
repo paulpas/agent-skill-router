@@ -1,5 +1,5 @@
 ---
-name: servicebus-dotnet
+name: dotnet
 description: '"Provides Azure Service Bus SDK for .NET. Enterprise messaging with
   queues, topics, subscriptions, and sessions"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure servicebus dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Servicebus Dotnet

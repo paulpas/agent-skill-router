@@ -18,6 +18,7 @@ metadata:
 
 
 
+
 # Pagerduty Automation
 
 Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search tools first for current schemas.

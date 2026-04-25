@@ -1,5 +1,5 @@
 ---
-name: storage-blob-py
+name: blob-py
 description: '"Provides Azure Blob Storage SDK for Python. Use for uploading, downloading,
   listing blobs, managing containers, and blob lifecycle"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure storage blob py, cloud, implementation guide
 ---
+
 
 
 # Azure Storage Blob Py

@@ -1,5 +1,5 @@
 ---
-name: channel-factories
+name: factories
 description: '"Provides Technical reference on Lightning Network channel factories,
   multi-party channels, LSP architectures, and Bitcoin Layer 2 scaling without soft
   forks. C"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: lightning channel factories, blockchain, implementation guide
 ---
+
 
 
 # Lightning Channel Factories

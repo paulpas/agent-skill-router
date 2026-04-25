@@ -1,5 +1,5 @@
 ---
-name: ds-logistic-regression
+name: logistic-regression
 description: '"Implements logistic regression for binary and multinomial classification
   with probability estimation and odds ratio interpretation"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     how do i classify
   related-skills: ds-classification-metrics, ds-feature-engineering, ds-linear-regression
 ---
+
 
 
 # Logistic Regression

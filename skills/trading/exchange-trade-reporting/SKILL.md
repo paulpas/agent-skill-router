@@ -1,5 +1,5 @@
 ---
-name: exchange-trade-reporting
+name: trade-reporting
 description: '"Real-time trade reporting and execution analytics for monitoring and"
   optimization'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     real-time
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
 ---
+
 
 
 **Role:** Generate and analyze trade reports for performance monitoring and regulatory compliance

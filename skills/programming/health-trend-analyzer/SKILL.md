@@ -1,5 +1,5 @@
 ---
-name: trend-analyzer
+name: analyzer
 description: '"Provides 分析一段时间内健康数 据的趋势和模式。关联药物、症 状、生命体征、化验结果和其他 健康指标的变化。识别令人担忧 的趋势、改善情况，并提供数据
   驱动的洞察。当用户询问健康趋 势、模式、随时间的变化或"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: health trend analyzer, health, implementation guide
 ---
+
 
 
 # Health Trend Analyzer

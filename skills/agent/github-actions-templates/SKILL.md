@@ -1,5 +1,5 @@
 ---
-name: actions-templates
+name: templates
 description: '"Provides Production-ready GitHub Actions workflow patterns for testing,
   building, and deploying applications"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: github actions templates, workflow, how do i test
 ---
+
 
 
 # Github Actions Templates

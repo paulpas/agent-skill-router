@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # File Uploads
 
 Expert at handling file uploads and cloud storage. Covers S3, Cloudflare R2, presigned URLs, multipart uploads, and image optimization. Knows how to handle large files without blocking.

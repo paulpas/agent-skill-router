@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Bitbucket Automation
 
 Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for current schemas.

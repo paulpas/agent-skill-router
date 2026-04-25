@@ -1,5 +1,5 @@
 ---
-name: ai-vision-imageanalysis-java
+name: vision-imageanalysis-java
 description: '"Provides Build image analysis applications with Azure AI Vision SDK
   for Java. Use when implementing image captioning, OCR text extraction, object detection,
   ta"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure ai vision imageanalysis java, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Vision Imageanalysis Java

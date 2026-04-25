@@ -1,5 +1,5 @@
 ---
-name: ai-live-model-monitoring
+name: live-model-monitoring
 description: '"Provides Monitor production ML models for drift, decay, and performance
   degradation"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai live model monitoring, ai-live-model-monitoring, models, monitor, production
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Ensure deployed trading models maintain performance through continuous monitoring and alerting

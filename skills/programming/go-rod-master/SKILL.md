@@ -1,5 +1,5 @@
 ---
-name: rod-master
+name: master
 description: '"Provides Comprehensive guide for browser automation and web scraping
   with go-rod (Chrome DevTools Protocol) including stealth anti-bot-detection patterns"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: go rod master, development, how do i automate
 ---
+
 
 
 # Go Rod Master

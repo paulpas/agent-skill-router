@@ -14,6 +14,7 @@ metadata:
     kubernetes, k8s
 ---
 
+
   related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 

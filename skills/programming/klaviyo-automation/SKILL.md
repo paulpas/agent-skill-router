@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Klaviyo Automation
 
 Automate Klaviyo tasks via Rube MCP (Composio): manage email/SMS campaigns, inspect campaign messages, track tags, and monitor send jobs. Always search tools first for current schemas.

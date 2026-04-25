@@ -1,5 +1,5 @@
 ---
-name: identity-rust
+name: rust
 description: '"Provides Azure Identity SDK for Rust authentication. Use for DeveloperToolsCredential,
   ManagedIdentityCredential, ClientSecretCredential, and token-based authe"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure identity rust, cloud, implementation guide
 ---
+
 
 
 # Azure Identity Rust

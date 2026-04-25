@@ -1,17 +1,20 @@
 ---
-name: makepad-animation
-description: Implements Makepad animation system patterns with transitions, hover effects, and state management.
+name: animation
+description: Implements Makepad animation system patterns with transitions, hover
+  effects, and state management.
 license: MIT
 compatibility: opencode
-version: "1.0.0"
+version: 1.0.0
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: programming
   role: implementation
   scope: implementation
   output-format: code
-  triggers: makepad animation, makepad animator, makepad hover, state management, transitions
+  triggers: makepad animation, makepad animator, makepad hover, state management,
+    transitions
 ---
+
 
 # Makepad Animation
 

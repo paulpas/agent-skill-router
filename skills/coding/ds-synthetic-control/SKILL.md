@@ -1,5 +1,5 @@
 ---
-name: ds-synthetic-control
+name: synthetic-control
 description: '"Implements synthetic control methods, difference-in-differences estimation,
   and quasi-experimental designs for impact evaluation"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     evaluation
   related-skills: ds-causal-inference, ds-intervention-analysis, ds-observational-studies
 ---
+
 
 
 # Synthetic Control Methods

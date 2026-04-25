@@ -1,5 +1,5 @@
 ---
-name: food-safety-auditor
+name: safety-auditor
 description: '"Provides Expert AI auditor for FDA Food Safety (FSMA), HACCP, and PCQI
   compliance. Reviews food facility records and preventive controls"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: fda food safety auditor, legal, implementation guide
 ---
+
 
 
 # Fda Food Safety Auditor

@@ -1,5 +1,5 @@
 ---
-name: ai-voicelive-dotnet
+name: voicelive-dotnet
 description: '"Provides Azure AI Voice Live SDK for .NET. Build real-time voice AI
   applications with bidirectional WebSocket communication"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai voicelive dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Voicelive Dotnet

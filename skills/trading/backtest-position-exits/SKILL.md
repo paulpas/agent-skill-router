@@ -1,5 +1,5 @@
 ---
-name: backtest-position-exits
+name: position-exits
 description: '"Exit strategies, trailing stops, and take-profit mechanisms for trading"
   systems.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
   related-skills: backtest-lookahead-bias, backtest-sharpe-ratio, backtest-walk-forward,
     fundamentals-trading-plan
 ---
+
 
 
 **Role:** Manage the systematic exit of trading positions to lock in profits, limit losses, and adapt to market conditions.

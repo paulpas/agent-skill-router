@@ -14,6 +14,7 @@ metadata:
     ec2, virtual machines
 ---
 
+
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 

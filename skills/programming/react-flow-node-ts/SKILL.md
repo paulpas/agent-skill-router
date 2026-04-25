@@ -1,5 +1,5 @@
 ---
-name: flow-node-ts
+name: node-ts
 description: '"Provides Create React Flow node components following established patterns
   with proper TypeScript types and store integration"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: react flow node ts, web, development, implementation guide
 ---
+
 
 
 # React Flow Node Ts

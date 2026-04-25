@@ -1,5 +1,5 @@
 ---
-name: resource-manager-postgresql-dotnet
+name: manager-postgresql-dotnet
 description: Provides Azure PostgreSQL Flexible Server SDK for .NET. Database management
   for PostgreSQL Flexible Server deployments
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: azure resource manager postgresql dotnet, cloud, how do i deploy, postgres,
     postgresql
 ---
+
 
 
 

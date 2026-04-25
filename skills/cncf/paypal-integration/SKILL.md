@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Paypal Integration
 
 Master PayPal payment integration including Express Checkout, IPN handling, recurring billing, and refund workflows.

@@ -1,5 +1,5 @@
 ---
-name: shell-reliability
+name: reliability
 description: '''Provides Reliable command execution on Windows: paths, encoding, and
   common binary pitfalls'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: windows shell reliability, uncategorized, implementation guide
 ---
+
 
 
 # Windows Shell Reliability

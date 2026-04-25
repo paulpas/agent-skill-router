@@ -1,5 +1,5 @@
 ---
-name: aws-modules
+name: modules
 description: '"Provides Terraform module creation for AWS — reusable modules,  state
   management, and HCL best practices. Use when building or reviewing Terraform  AWS
   infrastru"'
@@ -14,6 +14,7 @@ metadata:
   triggers: terraform aws modules, devops, how do i deploy, infrastructure as code,
     cloudformation
 ---
+
 
 
 

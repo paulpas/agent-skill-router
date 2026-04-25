@@ -1,5 +1,5 @@
 ---
-name: technical-support-resistance
+name: support-resistance
 description: '"Implements technical levels where price tends to pause or reverse for
   risk management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     where
   related-skills: fundamentals-trading-plan, technical-cycle-analysis
 ---
+
 
 
 **Role:** Identify and validate key S/R levels for entry, exit, and stop placement

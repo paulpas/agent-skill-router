@@ -1,5 +1,5 @@
 ---
-name: agent-patterns
+name: patterns
 description: Provides Design patterns for building autonomous coding agents, inspired
   by [Cline](https://github.com/cline/cline) and [OpenAI Codex](https://github.com/opena
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: autonomous agent patterns, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

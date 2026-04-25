@@ -1,5 +1,5 @@
 ---
-name: lecun-filosofia
+name: filosofia
 description: '"Provides sub-skill filosófica e pedagógica de yann lecun functionality  and
   capabilities."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: yann lecun filosofia, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

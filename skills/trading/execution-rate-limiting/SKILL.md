@@ -1,5 +1,5 @@
 ---
-name: execution-rate-limiting
+name: rate-limiting
 description: '"Provides Rate Limiting and Exchange API Management for Robust Trading
   Execution"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     robust
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
 ---
+
 
 
 **Role:** Trading Infrastructure Engineer — designs rate limiting systems and exchange API integrations to ensure reliable, compliant, and efficient order execution without triggering account suspensions or API blacklists.

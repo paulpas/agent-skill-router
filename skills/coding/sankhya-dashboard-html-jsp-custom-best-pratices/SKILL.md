@@ -1,5 +1,5 @@
 ---
-name: dashboard-html-jsp-custom-best-pratices
+name: html-jsp-custom-best-pratices
 description: '"Provides this skill should be used when the user asks for patterns,
   best practices, creation, or fixing of sankhya dashboards using html, jsp, java,
   and sql"'
@@ -14,6 +14,7 @@ metadata:
   triggers: sankhya dashboard html jsp custom best pratices, code, implementation
     guide
 ---
+
 
 
 # Sankhya Dashboard Html Jsp Custom Best Pratices

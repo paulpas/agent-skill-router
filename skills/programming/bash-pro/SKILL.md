@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # Bash Pro
 
 Master of defensive Bash scripting for production automation, CI/CD

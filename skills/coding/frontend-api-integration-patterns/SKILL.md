@@ -1,5 +1,5 @@
 ---
-name: api-integration-patterns
+name: integration-patterns
 description: '"Provides Production-ready patterns for integrating frontend applications
   with backend APIs, including race condition handling, request cancellation, retry
   stra"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: frontend api integration patterns, frontend, implementation guide
 ---
+
 
 
 # Frontend Api Integration Patterns

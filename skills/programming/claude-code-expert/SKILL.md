@@ -1,5 +1,5 @@
 ---
-name: code-expert
+name: expert
 description: Provides Especialista profundo em Claude Code - CLI da Anthropic. Maximiza
   produtividade com atalhos, hooks, MCPs, configuracoes avancadas, workflows, CLAUDE.m
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: claude code expert, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

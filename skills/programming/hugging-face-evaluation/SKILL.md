@@ -1,5 +1,5 @@
 ---
-name: face-evaluation
+name: evaluation
 description: Provides Add and manage evaluation results in Hugging Face model cards.
   Supports extracting eval tables from README content, importing scores from Artificial
   A
@@ -14,6 +14,7 @@ metadata:
   triggers: hugging face evaluation, ai, ml, implementation guide, machine learning,
     scikit-learn
 ---
+
 
 
 

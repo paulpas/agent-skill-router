@@ -1,5 +1,5 @@
 ---
-name: exception-management
+name: management
 description: '"Provides Codified expertise for handling freight exceptions, shipment
   delays, damages, losses, and carrier disputes. Informed by logistics professionals
   with 1"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: logistics exception management, uncategorized, implementation guide
 ---
+
 
 
 # Logistics Exception Management

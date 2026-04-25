@@ -1,5 +1,5 @@
 ---
-name: backup-strategy
+name: strategy
 description: '''Provides Complete Odoo backup and restore strategy: database dumps,
   filestore backup, automated scheduling, cloud storage upload, and tested restore
   procedures'''
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: odoo backup strategy, business, how do i test
 ---
+
 
 
 # Odoo Backup Strategy

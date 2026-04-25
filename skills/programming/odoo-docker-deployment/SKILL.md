@@ -1,5 +1,5 @@
 ---
-name: docker-deployment
+name: deployment
 description: Provides Production-ready Docker and docker-compose setup for Odoo with
   PostgreSQL, persistent volumes, environment-based configuration, and Nginx reverse
   prox
@@ -14,6 +14,7 @@ metadata:
   triggers: odoo docker deployment, business, implementation guide, containers, kubernetes
     deployment, container orchestration, deployment, docker
 ---
+
 
 
 

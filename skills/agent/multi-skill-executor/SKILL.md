@@ -1,5 +1,5 @@
 ---
-name: multi-skill-executor
+name: skill-executor
 description: '"Orchestrates execution of multiple skill specifications in sequence"
   managing skill dependencies, result aggregation, and error recovery for complex
   multi-step operations.'
@@ -15,6 +15,7 @@ metadata:
   related-skills: code-correctness-verifier, confidence-based-selector, dynamic-replanner,
     error-trace-explainer
 ---
+
 
 
 

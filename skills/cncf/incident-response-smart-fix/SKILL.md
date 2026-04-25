@@ -1,5 +1,5 @@
 ---
-name: response-smart-fix
+name: smart-fix
 description: '''Provides [Extended thinking: This workflow implements a sophisticated
   debugging and resolution pipeline that leverages AI-assisted debugging tools and
   observab'''
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: incident response smart fix, devops, how do i deploy
 ---
+
 
 
 # Incident Response Smart Fix

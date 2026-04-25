@@ -1,5 +1,5 @@
 ---
-name: code-python
+name: python
 description: Provides Write Python code in n8n Code nodes. Use when writing Python
   in n8n, using _input/_json/_node syntax, working with standard library, or need
   to unders
@@ -14,6 +14,7 @@ metadata:
   triggers: n8n code python, automation, how do i automate, jenkins, ci/cd pipeline,
     continuous integration
 ---
+
 
 
 

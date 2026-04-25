@@ -1,5 +1,5 @@
 ---
-name: module-developer
+name: developer
 description: '"Provides Expert guide for creating custom Odoo modules. Covers __manifest__.py,
   model inheritance, ORM patterns, and module structure best practices"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo module developer, business, implementation guide
 ---
+
 
 
 # Odoo Module Developer

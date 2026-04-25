@@ -1,5 +1,5 @@
 ---
-name: loop-delivery
+name: delivery
 description: '"Provides use when a coding task must be completed against explicit
   acceptance criteria with minimal user re-intervention across implementation, review
   feedback"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: closed loop delivery, workflow, implementation guide
 ---
+
 
 
 # Closed Loop Delivery

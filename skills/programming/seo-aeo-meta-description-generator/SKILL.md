@@ -1,5 +1,5 @@
 ---
-name: aeo-meta-description-generator
+name: meta-description-generator
 description: '"Provides Writes 3 title tag variants and 3 meta description variants
   per page with SERP preview, OG tags, and Twitter Card tags. Activate when the user
   wants t"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo aeo meta description generator, uncategorized, implementation guide
 ---
+
 
 
 # Seo Aeo Meta Description Generator

@@ -1,5 +1,5 @@
 ---
-name: dev-jobs-mcp
+name: jobs-mcp
 description: '"Provides Search 8,400+ AI and ML jobs across 489 companies, inspect
   listings and employers, match roles, and view salary and market stats via AI Dev
   Jobs MCP"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: ai dev jobs mcp, mcp, implementation guide
 ---
+
 
 
 # Ai Dev Jobs Mcp

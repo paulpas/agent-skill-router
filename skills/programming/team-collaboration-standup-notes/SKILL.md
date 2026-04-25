@@ -1,5 +1,5 @@
 ---
-name: collaboration-standup-notes
+name: standup-notes
 description: '"Provides You are an expert team communication specialist focused on
   async-first standup practices, AI-assisted note generation from commit history,
   and effecti"'
@@ -14,6 +14,7 @@ metadata:
   triggers: team collaboration standup notes, project, management, implementation
     guide
 ---
+
 
 
 # Team Collaboration Standup Notes

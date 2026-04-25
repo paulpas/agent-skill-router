@@ -1,5 +1,5 @@
 ---
-name: development-python-scaffold
+name: python-scaffold
 description: '"Provides You are a Python project architecture expert specializing
   in scaffolding production-ready Python applications. Generate complete project structures
   wi"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: python development python scaffold, development, implementation guide
 ---
+
 
 
 # Python Development Python Scaffold

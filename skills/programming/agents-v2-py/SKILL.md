@@ -1,5 +1,5 @@
 ---
-name: v2-py
+name: py
 description: Provides Build container-based Foundry Agents with Azure AI Projects
   SDK (ImageBasedHostedAgentDefinition). Use when creating hosted agents with custom
   contain
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: agents v2 py, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: aeo-check
+name: check
 description: '"Provides Score any MCP server, API, or CLI for agent-readiness using
   Clarvia AEO (Agent Experience Optimization). Search 15,400+ indexed tools before
   adding th"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: clarvia aeo check, tool, quality, implementation guide
 ---
+
 
 
 # Clarvia Aeo Check

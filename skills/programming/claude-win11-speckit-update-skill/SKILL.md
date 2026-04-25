@@ -1,5 +1,5 @@
 ---
-name: win11-speckit-update-skill
+name: speckit-update-skill
 description: Provides windows 11 system management functionality and capabilities.
 license: MIT
 compatibility: opencode
@@ -12,6 +12,7 @@ metadata:
   triggers: claude win11 speckit update skill, ai, ml, implementation guide, machine
     learning, scikit-learn
 ---
+
 
 
 

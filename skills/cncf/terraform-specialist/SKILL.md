@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Terraform Specialist
 
 Expert Terraform/OpenTofu specialist mastering advanced IaC automation, state management, and enterprise infrastructure patterns.

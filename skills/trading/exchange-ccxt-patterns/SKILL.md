@@ -1,5 +1,5 @@
 ---
-name: exchange-ccxt-patterns
+name: ccxt-patterns
 description: '"Effective patterns for using CCXT library for exchange connectivity
   including" error handling, rate limiting, and state management'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     library
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Guide an AI coding assistant to build robust exchange integrations using CCXT with proper error handling, state management, and performance optimization

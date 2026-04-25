@@ -1,5 +1,5 @@
 ---
-name: sales-crm-expert
+name: crm-expert
 description: '''Provides Expert guide for Odoo Sales and CRM: pipeline stages, quotation
   templates, pricelists, sales teams, lead scoring, and forecasting'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo sales crm expert, business, implementation guide
 ---
+
 
 
 # Odoo Sales Crm Expert

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Brevo Automation
 
 Automate Brevo (formerly Sendinblue) email marketing operations through Composio's Brevo toolkit via Rube MCP.

@@ -1,5 +1,5 @@
 ---
-name: aws-kms
+name: kms
 description: '"Manages encryption keys with AWS KMS for data protection at rest and"
   in transit, key rotation, and compliance with encryption standards across all AWS
   services.'
@@ -15,6 +15,7 @@ metadata:
     key rotation, kms
   related-skills: aws-dynamodb, aws-ecr, aws-iam, aws-rds
 ---
+
 
 
 

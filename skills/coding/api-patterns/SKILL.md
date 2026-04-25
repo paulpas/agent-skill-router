@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Api Patterns
 
 API design principles and decision-making. REST vs GraphQL vs tRPC selection, response formats, versioning, pagination.

@@ -1,5 +1,5 @@
 ---
-name: use-guardian
+name: guardian
 description: '"Provides FREE — Intelligent tool-call reliability wrapper. Monitors,  retries,
   fixes, and learns from tool failures. Auto-recovers from truncated JSON,  timeouts"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: tool use guardian, reliability, implementation guide, linkerd, observability,
     service mesh
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: liquid-glass
+name: glass
 description: '"Provides Implement or review SwiftUI Liquid Glass APIs with correct
   fallbacks and modifier order"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: swiftui liquid glass, mobile, implementation guide
 ---
+
 
 
 # Swiftui Liquid Glass

@@ -1,5 +1,5 @@
 ---
-name: search-patterns
+name: patterns
 description: Provides Implement efficient similarity search with vector databases.
   Use when building semantic search, implementing nearest neighbor queries, or optimizing
   r
@@ -14,6 +14,7 @@ metadata:
   triggers: similarity search patterns, data, ai, data processing, machine learning,
     spark, big data, distributed processing
 ---
+
 
 
 

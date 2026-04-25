@@ -1,5 +1,5 @@
 ---
-name: azure-blob-storage
+name: blob-storage
 description: Provides Object storage with versioning, lifecycle policies, and integration
   to other Azure services
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     do i store files, s3, file storage
   related-skills: azure-cdn, azure-monitor
 ---
+
 
 
 

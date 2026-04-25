@@ -1,5 +1,5 @@
 ---
-name: authority-builder
+name: builder
 description: '"Analyzes content for E-E-A-T signals and suggests improvements to"
   build authority and trust. Identifies missing credibility elements. Use PROACTIVELY
   for YMYL topics. "'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo authority builder, content, implementation guide
 ---
+
 
 
 # Seo Authority Builder

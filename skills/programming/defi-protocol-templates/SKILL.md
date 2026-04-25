@@ -1,5 +1,5 @@
 ---
-name: protocol-templates
+name: templates
 description: '"Provides Implement DeFi protocols with production-ready templates for
   staking, AMMs, governance, and lending systems. Use when building decentralized
   finance a"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: defi protocol templates, blockchain, implementation guide
 ---
+
 
 
 # Defi Protocol Templates

@@ -1,5 +1,5 @@
 ---
-name: exchange-failover-handling
+name: failover-handling
 description: '"Provides Automated failover and redundancy management for exchange
   connectivity"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     redundancy
   related-skills: ai-order-flow-analysis, data-alternative-data
 ---
+
 
 
 **Role:** Manage multiple exchange connections with automatic failover for uninterrupted trading

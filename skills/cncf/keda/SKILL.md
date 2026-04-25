@@ -18,6 +18,7 @@ metadata:
 
 
 
+
 # KEDA in Cloud-Native Engineering
 
 **Category:** autoscaling  

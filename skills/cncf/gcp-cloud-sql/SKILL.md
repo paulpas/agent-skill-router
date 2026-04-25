@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-sql
+name: cloud-sql
 description: '"Provides managed relational databases (MySQL, PostgreSQL) with automated
   backups, replication, and encryption"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     sql database
   related-skills: gcp-cloud-kms, gcp-cloud-monitoring, gcp-vpc
 ---
+
 
 
 

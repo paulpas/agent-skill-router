@@ -1,5 +1,5 @@
 ---
-name: keyword-strategist
+name: strategist
 description: '"Analyzes keyword usage in provided content, calculates density, suggests
   semantic variations and LSI keywords based on the topic. Prevents over-optimi"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: seo keyword strategist, content, implementation guide
 ---
+
 
 
 # Seo Keyword Strategist

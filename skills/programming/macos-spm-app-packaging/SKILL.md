@@ -1,5 +1,5 @@
 ---
-name: spm-app-packaging
+name: app-packaging
 description: '"Provides Scaffold, build, sign, and package SwiftPM macOS apps without
   Xcode projects"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: macos spm app packaging, uncategorized, implementation guide
 ---
+
 
 
 # Macos Spm App Packaging

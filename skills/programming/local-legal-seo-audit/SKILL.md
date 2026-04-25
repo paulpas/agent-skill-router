@@ -1,5 +1,5 @@
 ---
-name: legal-seo-audit
+name: seo-audit
 description: '"Provides Audit and improve local SEO for law firms, attorneys, forensic
   experts and legal/professional services sites with local presence, focusing on GBP,
   dir"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: local legal seo audit, marketing, implementation guide
 ---
+
 
 
 # Local Legal Seo Audit

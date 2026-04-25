@@ -1,5 +1,5 @@
 ---
-name: identity-java
+name: java
 description: '"Provides Authenticate Java applications with Azure services using Microsoft
   Entra ID (Azure AD)"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure identity java, cloud, implementation guide
 ---
+
 
 
 # Azure Identity Java

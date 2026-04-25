@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Context Guardian
 
 Guardiao de contexto que preserva dados criticos antes da compactacao automatica. Snapshots, verificacao de integridade e zero perda de informacao.

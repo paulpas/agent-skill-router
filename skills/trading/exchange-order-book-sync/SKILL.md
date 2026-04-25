@@ -1,5 +1,5 @@
 ---
-name: exchange-order-book-sync
+name: order-book-sync
 description: '"Provides Order book synchronization and state management for accurate
   trading"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: exchange-order-execution-api, exchange-rate-limiting, execution-vwap,
     technical-false-signal-filtering
 ---
+
 
 
 **Role:** Maintain consistent order book state across multiple exchanges and timeframes

@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: review
 description: '"Provides Code review requires technical evaluation, not emotional performance"'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: receiving code review, workflow, implementation guide
 ---
+
 
 
 # Receiving Code Review

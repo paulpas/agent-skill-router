@@ -1,5 +1,5 @@
 ---
-name: content-planner
+name: planner
 description: '"Creates comprehensive content outlines and topic clusters for SEO"
   Plans content calendars and identifies topic gaps. Use PROACTIVELY for content strategy
   and planning. "'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo content planner, content, implementation guide
 ---
+
 
 
 # Seo Content Planner

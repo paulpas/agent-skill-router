@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Quant Analyst
 
 Build financial models, backtest trading strategies, and analyze market data. Implements risk metrics, portfolio optimization, and statistical arbitrage.

@@ -1,5 +1,5 @@
 ---
-name: drive-automation
+name: automation
 description: Provides Lightweight Google Drive integration with standalone OAuth authentication.
   No MCP server required. Full read/write access
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: google drive automation, automation, how do i automate, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

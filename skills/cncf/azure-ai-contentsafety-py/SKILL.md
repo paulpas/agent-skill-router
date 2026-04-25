@@ -1,5 +1,5 @@
 ---
-name: ai-contentsafety-py
+name: contentsafety-py
 description: '"Provides Azure AI Content Safety SDK for Python. Use for detecting
   harmful content in text and images with multi-severity classification"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai contentsafety py, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Contentsafety Py

@@ -1,5 +1,5 @@
 ---
-name: ds-eda
+name: eda
 description: '"Provides Performs exploratory data analysis using summary statistics,
   distributions, correlations, and descriptive methods to understand dataset characteristic"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-correlation-analysis, ds-data-profiling, ds-data-visualization,
     ds-missing-data
 ---
+
 
 
 # Exploratory Data Analysis

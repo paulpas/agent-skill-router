@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Security Auditor
 
 Expert security auditor specializing in DevSecOps, comprehensive cybersecurity, and compliance frameworks.

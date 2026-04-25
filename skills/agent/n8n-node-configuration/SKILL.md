@@ -1,5 +1,5 @@
 ---
-name: node-configuration
+name: configuration
 description: Provides Operation-aware node configuration guidance. Use when configuring
   nodes, understanding property dependencies, determining required fields, choosing
   be
@@ -14,6 +14,7 @@ metadata:
   triggers: n8n node configuration, automation, how do i automate, jenkins, ci/cd
     pipeline, continuous integration
 ---
+
 
 
 

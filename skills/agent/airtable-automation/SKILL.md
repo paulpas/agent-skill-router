@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Airtable Automation
 
 Automate Airtable tasks via Rube MCP (Composio): records, bases, tables, fields, views. Always search tools first for current schemas.

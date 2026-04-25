@@ -1,5 +1,5 @@
 ---
-name: skill-continuous-learning
+name: continuous-learning
 description: '"Implements development skill from everything-claude-code for orchestration
   and agent coordination in autonomous systems."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: cc skill continuous learning, meta, implementation guide
 ---
+
 
 
 # Cc Skill Continuous Learning

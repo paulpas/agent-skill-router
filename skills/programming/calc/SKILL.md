@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Calc
 
 Spreadsheet creation, format conversion (ODS/XLSX/CSV), formulas, data automation with LibreOffice Calc.

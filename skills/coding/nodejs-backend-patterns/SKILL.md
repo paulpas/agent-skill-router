@@ -1,5 +1,5 @@
 ---
-name: backend-patterns
+name: patterns
 description: '"Provides Comprehensive guidance for building scalable, maintainable,
   and production-ready Node.js backend applications with modern frameworks, architectural
   pa"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: nodejs backend patterns, backend, implementation guide
 ---
+
 
 
 # Nodejs Backend Patterns

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Videodb Skills
 
 Upload, stream, search, edit, transcribe, and generate AI video and audio using the VideoDB SDK.

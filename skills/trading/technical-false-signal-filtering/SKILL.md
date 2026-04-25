@@ -1,5 +1,5 @@
 ---
-name: technical-false-signal-filtering
+name: false-signal-filtering
 description: '"Provides False Signal Filtering Techniques for Robust Technical Analysis"'
 license: MIT
 compatibility: opencode
@@ -14,6 +14,7 @@ metadata:
   related-skills: fundamentals-trading-plan, technical-cycle-analysis, technical-indicator-confluence,
     technical-momentum-indicators
 ---
+
 
 
 **Role:** Technical Analysis Engineer — implements algorithms to identify and filter out spurious technical signals that lead to false entries and losses.

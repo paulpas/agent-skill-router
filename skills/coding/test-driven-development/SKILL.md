@@ -1,5 +1,5 @@
 ---
-name: test-driven-development
+name: driven-development
 description: '"Test-Driven Development (TDD) and Behavior-Driven Development (BDD)
   patterns" with pytest, unit tests, mocking, and test pyramid principles'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   source: https://github.com/farmage/opencode-skills
   related-skills: null
 ---
+
 
 
 

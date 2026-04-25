@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Database Design
 
 Database design principles and decision-making. Schema design, indexing strategy, ORM selection, serverless databases.

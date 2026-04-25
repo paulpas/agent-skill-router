@@ -1,5 +1,5 @@
 ---
-name: claude-skill
+name: skill
 description: '"Implements web fuzzing with ffuf patterns for software quality and
   development best practices."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ffuf claude skill, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

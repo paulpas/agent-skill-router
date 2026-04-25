@@ -1,5 +1,5 @@
 ---
-name: parallel-agents
+name: agents
 description: Provides use when facing 2+ independent tasks that can be worked on without
   shared state or sequential dependencies
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: dispatching parallel agents, ai, agents, implementation guide, machine
     learning, ml, scikit-learn
 ---
+
 
 
 

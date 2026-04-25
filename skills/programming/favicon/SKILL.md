@@ -13,6 +13,7 @@ metadata:
 ---
 
 
+
 # Favicon
 
 Generate favicons from a source image

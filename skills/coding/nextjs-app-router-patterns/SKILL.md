@@ -1,5 +1,5 @@
 ---
-name: app-router-patterns
+name: router-patterns
 description: '"Provides Comprehensive patterns for Next.js 14+ App Router architecture,
   Server Components, and modern full-stack React development"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: nextjs app router patterns, framework, implementation guide
 ---
+
 
 
 # Nextjs App Router Patterns

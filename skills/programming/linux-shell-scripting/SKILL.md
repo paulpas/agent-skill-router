@@ -1,5 +1,5 @@
 ---
-name: shell-scripting
+name: scripting
 description: '"Provides Provide production-ready shell script templates for common
   Linux system administration tasks including backups, monitoring, user management,
   log analy"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: linux shell scripting, development, implementation guide
 ---
+
 
 
 # Linux Shell Scripting

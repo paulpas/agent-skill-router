@@ -1,5 +1,5 @@
 ---
-name: cosmos-rust
+name: rust
 description: Provides Azure Cosmos DB SDK for Rust (NoSQL API). Use for document CRUD,
   queries, containers, and globally distributed data
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: azure cosmos rust, cloud, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

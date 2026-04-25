@@ -1,5 +1,5 @@
 ---
-name: cloud-custodian
+name: custodian
 description: '"Provides Cloud Custodian in Cloud-Native Engineering -/rules engine
   for cloud infrastructure management"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: cloud custodian, cloud-custodian, cloud-native, engineering, rules
   related-skills: null
 ---
+
 
 # Cloud Custodian in Cloud-Native Engineering
 

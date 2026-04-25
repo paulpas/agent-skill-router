@@ -1,5 +1,5 @@
 ---
-name: data-transforms
+name: transforms
 description: Provides Everyday data transformations using functional patterns - arrays,
   objects, grouping, aggregation, and null-safe access
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: fp data transforms, development, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

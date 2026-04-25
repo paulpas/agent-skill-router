@@ -1,5 +1,5 @@
 ---
-name: components-dialogs
+name: dialogs
 description: '"Provides Apple HIG guidance for presentation components including alerts,
   action sheets, popovers, sheets, and digit entry views"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: hig components dialogs, development, implementation guide
 ---
+
 
 
 # Hig Components Dialogs

@@ -1,5 +1,5 @@
 ---
-name: gcp-cloud-cdn
+name: cloud-cdn
 description: Provides Content delivery network for caching and globally distributing
   content with low latency
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: gcp-cloud-load-balancing, gcp-cloud-monitoring, gcp-cloud-storage,
     gcp-compute-engine
 ---
+
 
 
 

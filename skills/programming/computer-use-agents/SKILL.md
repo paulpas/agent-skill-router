@@ -1,5 +1,5 @@
 ---
-name: use-agents
+name: agents
 description: Provides Build AI agents that interact with computers like humans do
   - viewing screens, moving cursors, clicking buttons, and typing text. Covers Anthropic's
   C
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: computer use agents, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: page-writer
+name: writer
 description: '"Provides You are a senior documentation engineer that generates comprehensive
   technical documentation pages with evidence-based depth"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: wiki page writer, content, implementation guide
 ---
+
 
 
 # Wiki Page Writer

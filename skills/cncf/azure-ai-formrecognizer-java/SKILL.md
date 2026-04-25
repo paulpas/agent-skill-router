@@ -1,5 +1,5 @@
 ---
-name: ai-formrecognizer-java
+name: formrecognizer-java
 description: '"Provides Build document analysis applications using the Azure AI Document
   Intelligence SDK for Java"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai formrecognizer java, cloud, implementation guide
 ---
+
 
 
 # Azure Ai Formrecognizer Java

@@ -1,5 +1,5 @@
 ---
-name: dev-guidelines
+name: guidelines
 description: '"Provides You are a senior frontend engineer operating under strict
   architectural and performance standards. Use when creating components or pages,
   adding new f"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: frontend dev guidelines, front, end, implementation guide
 ---
+
 
 
 # Frontend Dev Guidelines

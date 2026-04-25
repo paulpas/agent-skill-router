@@ -1,5 +1,5 @@
 ---
-name: skill-strategic-compact
+name: strategic-compact
 description: '"Implements development skill from everything-claude-code for orchestration
   and agent coordination in autonomous systems."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: cc skill strategic compact, meta, implementation guide
 ---
+
 
 
 # Cc Skill Strategic Compact

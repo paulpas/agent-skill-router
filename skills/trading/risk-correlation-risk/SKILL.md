@@ -1,5 +1,5 @@
 ---
-name: risk-correlation-risk
+name: correlation-risk
 description: '"Implements correlation breakdown and portfolio diversification risk
   for risk management and algorithmic trading execution."'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: breakdown, diversification, portfolio, risk correlation risk, risk-correlation-risk
   related-skills: ai-multi-asset-model, fundamentals-risk-management-basics
 ---
+
 
 
 **Role:** Monitor and manage correlation risk in multi-asset portfolios

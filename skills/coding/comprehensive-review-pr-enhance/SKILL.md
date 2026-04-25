@@ -1,5 +1,5 @@
 ---
-name: review-pr-enhance
+name: pr-enhance
 description: '"Provides Generate structured PR descriptions from diffs, add review
   checklists, risk assessments, and test coverage summaries. Use when the user says"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: comprehensive review pr enhance, code, quality, how do i test
 ---
+
 
 
 # Comprehensive Review Pr Enhance

@@ -1,5 +1,5 @@
 ---
-name: trade-compliance
+name: compliance
 description: '"Provides Codified expertise for customs documentation, tariff classification,
   duty optimisation, restricted party screening, and regulatory compliance across
   m"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: customs trade compliance, legal, implementation guide
 ---
+
 
 
 # Customs Trade Compliance

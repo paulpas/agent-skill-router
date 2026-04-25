@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Docs Architect
 
 Creates comprehensive technical documentation from existing codebases. Analyzes architecture, design patterns, and implementation details to produce long-form technical manuals and ebooks.

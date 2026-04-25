@@ -1,5 +1,5 @@
 ---
-name: crypto-wallet
+name: wallet
 description: '"Provides Crypto wallet management across 7 blockchains via EmblemAI
   Agent Hustle API. Balance checks, token swaps, portfolio analysis, and transaction
   executio"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: emblemai crypto wallet, uncategorized, implementation guide
 ---
+
 
 
 # Emblemai Crypto Wallet

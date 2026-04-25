@@ -1,5 +1,5 @@
 ---
-name: ai-projects-ts
+name: projects-ts
 description: '"Provides High-level SDK for Azure AI Foundry projects with agents,
   connections, deployments, and evaluations"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure ai projects ts, cloud, how do i deploy
 ---
+
 
 
 # Azure Ai Projects Ts

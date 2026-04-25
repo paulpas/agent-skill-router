@@ -1,5 +1,5 @@
 ---
-name: brutalist-ui
+name: ui
 description: Provides use when creating raw industrial or tactical telemetry uis with
   rigid grids, stark typography, crt effects, and high-density data
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: industrial brutalist ui, frontend, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

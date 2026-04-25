@@ -1,5 +1,5 @@
 ---
-name: aws-cloudfront
+name: cloudfront
 description: '"Configures CloudFront CDN for global content distribution with edge
   caching" DDoS protection, and SSL/TLS termination for improved performance and security.'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     waf, ssl termination, content delivery
   related-skills: aws-route53, aws-s3
 ---
+
 
 
 

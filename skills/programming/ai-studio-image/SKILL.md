@@ -1,5 +1,5 @@
 ---
-name: studio-image
+name: image
 description: Provides Geracao de imagens humanizadas via Google AI Studio (Gemini).
   Fotos realistas estilo influencer ou educacional com iluminacao natural e imperfeicoes
   s
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: ai studio image, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: response-incident-response
+name: incident-response
 description: '"Configures use when working with incident response incident response
   for cloud-native deployment and infrastructure management."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: incident response incident response, devops, how do i deploy
 ---
+
 
 
 # Incident Response Incident Response

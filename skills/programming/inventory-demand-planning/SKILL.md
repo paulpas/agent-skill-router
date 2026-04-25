@@ -1,5 +1,5 @@
 ---
-name: demand-planning
+name: planning
 description: '"Provides Codified expertise for demand forecasting, safety stock optimisation,
   replenishment planning, and promotional lift estimation at multi-location retail"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: inventory demand planning, business, implementation guide
 ---
+
 
 
 # Inventory Demand Planning

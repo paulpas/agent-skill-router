@@ -1,5 +1,5 @@
 ---
-name: generator-builder
+name: builder
 description: '"Provides Expert in building shareable generator tools that go viral
   - name generators, quiz makers, avatar creators, personality tests, and calculator
   tools. C"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: viral generator builder, marketing, how do i test
 ---
+
 
 
 # Viral Generator Builder

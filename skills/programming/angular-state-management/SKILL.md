@@ -1,5 +1,5 @@
 ---
-name: state-management
+name: management
 description: '"Provides Master modern Angular state management with Signals, NgRx,
   and RxJS. Use when setting up global state, managing component stores, choosing
   between sta"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: angular state management, web, development, implementation guide
 ---
+
 
 
 # Angular State Management

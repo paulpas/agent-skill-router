@@ -1,5 +1,5 @@
 ---
-name: azure-event-hubs
+name: event-hubs
 description: '"Provides Event streaming platform for high-throughput data ingestion
   and processing"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     kafka
   related-skills: azure-functions, azure-monitor, azure-service-bus
 ---
+
 
 
 

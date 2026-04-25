@@ -1,5 +1,5 @@
 ---
-name: face-gradio
+name: gradio
 description: Provides Build or edit Gradio apps, layouts, components, and chat interfaces
   in Python
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: hugging face gradio, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

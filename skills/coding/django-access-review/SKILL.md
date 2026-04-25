@@ -1,5 +1,5 @@
 ---
-name: access-review
+name: review
 description: '"Implements django-access-review patterns for software quality and development
   best practices."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: django access review, backend, implementation guide
 ---
+
 
 
 # Django Access Review

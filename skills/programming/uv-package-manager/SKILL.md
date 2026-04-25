@@ -1,5 +1,5 @@
 ---
-name: package-manager
+name: manager
 description: '"Provides Comprehensive guide to using uv, an extremely fast Python
   package installer and resolver written in Rust, for modern Python project management
   and dep"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: uv package manager, development, implementation guide
 ---
+
 
 
 # Uv Package Manager

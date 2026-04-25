@@ -1,5 +1,5 @@
 ---
-name: external-api-development
+name: api-development
 description: '"Provides this skill guides you through creating custom external web
   service apis for moodle lms, following moodle''s external api framework and coding
   standards"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: moodle external api development, api, integration, implementation guide
 ---
+
 
 
 # Moodle External Api Development

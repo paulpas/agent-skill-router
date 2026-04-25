@@ -1,5 +1,5 @@
 ---
-name: quality-frameworks
+name: frameworks
 description: '"Provides Implement data quality validation with Great Expectations,
   dbt tests, and data contracts. Use when building data quality pipelines, implementing
   valid"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: data quality frameworks, data, science, how do i test
 ---
+
 
 
 # Data Quality Frameworks

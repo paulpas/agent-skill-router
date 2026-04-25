@@ -1,5 +1,5 @@
 ---
-name: penetration-testing
+name: testing
 description: Provides Conduct comprehensive security assessments of SMTP (Simple Mail
   Transfer Protocol) servers to identify vulnerabilities including open relays, user
   enu
@@ -14,6 +14,7 @@ metadata:
   triggers: smtp penetration testing, security, how do i secure, security auditing,
     unit tests, vulnerability scanning, testing
 ---
+
 
 
 

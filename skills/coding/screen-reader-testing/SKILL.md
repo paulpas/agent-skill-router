@@ -1,5 +1,5 @@
 ---
-name: reader-testing
+name: testing
 description: '"Provides Practical guide to testing web applications with screen readers
   for comprehensive accessibility validation"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: screen reader testing, testing, how do i test, test automation, unit tests
 ---
+
 
 
 

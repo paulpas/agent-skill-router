@@ -1,5 +1,5 @@
 ---
-name: keyvault-secrets-rust
+name: secrets-rust
 description: '"Provides Azure Key Vault Secrets SDK for Rust. Use for storing and
   retrieving secrets, passwords, and API keys. Triggers"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure keyvault secrets rust, cloud, implementation guide
 ---
+
 
 
 # Azure Keyvault Secrets Rust

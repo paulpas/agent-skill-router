@@ -1,5 +1,5 @@
 ---
-name: aws-ssm
+name: ssm
 description: '"Manages EC2 instances and on-premises servers with AWS Systems Manager"
   for configuration management, patch management, and secure shell access without
   SSH keys.'
@@ -15,6 +15,7 @@ metadata:
     ssm, systems manager, ansible, automation
   related-skills: aws-ec2, aws-iam, aws-secrets-manager
 ---
+
 
 
 

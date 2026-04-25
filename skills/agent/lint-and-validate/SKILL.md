@@ -1,5 +1,5 @@
 ---
-name: and-validate
+name: validate
 description: '''Provides MANDATORY: Run appropriate validation tools after EVERY code
   change. Do not finish a task until the code is error-free'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: lint and validate, workflow, implementation guide
 ---
+
 
 
 # Lint And Validate

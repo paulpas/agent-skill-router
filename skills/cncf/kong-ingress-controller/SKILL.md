@@ -1,5 +1,5 @@
 ---
-name: kong-ingress-controller
+name: ingress-controller
 description: '"Kong Ingress Controller in Kubernetes - cloud native architecture,
   patterns" pitfalls, and best practices'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     infrastructure as code, kubernetes ingress, monitoring, cdn
   related-skills: kong, krustlet
 ---
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-name: ds-data-privacy
+name: data-privacy
 description: '"Applies privacy-preserving techniques including anonymization, differential
   privacy, encryption, and GDPR compliance for sensitive data"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     privacy-preserving, sensitive data
   related-skills: ds-data-versioning, ds-privacy-ml
 ---
+
 
 
 # Data Privacy

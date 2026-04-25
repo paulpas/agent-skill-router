@@ -1,5 +1,5 @@
 ---
-name: perception-psychologist
+name: psychologist
 description: '"Provides one sentence - what this skill does and when to invoke it
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: brand perception psychologist, uncategorized, implementation guide
 ---
+
 
 
 # Brand Perception Psychologist

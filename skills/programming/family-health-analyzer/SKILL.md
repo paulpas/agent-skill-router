@@ -1,5 +1,5 @@
 ---
-name: health-analyzer
+name: analyzer
 description: '"Provides 分析家族病史、评估遗 传风险、识别家庭健康模式、提 供个性化预防建议 functionality and capabilities."'
 license: MIT
 compatibility: opencode
@@ -11,6 +11,7 @@ metadata:
   output-format: code
   triggers: family health analyzer, health, implementation guide
 ---
+
 
 
 # Family Health Analyzer

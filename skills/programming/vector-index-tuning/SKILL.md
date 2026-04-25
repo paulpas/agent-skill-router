@@ -1,5 +1,5 @@
 ---
-name: index-tuning
+name: tuning
 description: Provides Optimize vector index performance for latency, recall, and memory.
   Use when tuning HNSW parameters, selecting quantization strategies, or scaling vect
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: vector index tuning, data, ai, data processing, machine learning, spark,
     big data, distributed processing
 ---
+
 
 
 

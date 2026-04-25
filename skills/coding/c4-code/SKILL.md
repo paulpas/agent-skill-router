@@ -15,6 +15,7 @@ metadata:
 ---
 
 
+
 # C4 Code
 
 Expert C4 Code-level documentation specialist. Analyzes code directories to create comprehensive C4 code-level documentation including function signatures, arguments, dependencies, and code structure.

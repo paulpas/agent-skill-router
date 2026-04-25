@@ -1,5 +1,5 @@
 ---
-name: concurrency-patterns
+name: patterns
 description: '"Provides Master Go concurrency with goroutines, channels, sync primitives,
   and context. Use when building concurrent Go applications, implementing worker pools"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: go concurrency patterns, development, implementation guide
 ---
+
 
 
 # Go Concurrency Patterns

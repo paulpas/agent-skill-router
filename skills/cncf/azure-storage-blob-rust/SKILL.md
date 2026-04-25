@@ -1,5 +1,5 @@
 ---
-name: storage-blob-rust
+name: blob-rust
 description: '"Provides Azure Blob Storage SDK for Rust. Use for uploading, downloading,
   and managing blobs and containers"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure storage blob rust, cloud, implementation guide
 ---
+
 
 
 # Azure Storage Blob Rust

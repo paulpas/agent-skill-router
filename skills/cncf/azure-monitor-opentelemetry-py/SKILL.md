@@ -1,5 +1,5 @@
 ---
-name: monitor-opentelemetry-py
+name: opentelemetry-py
 description: '"Provides Azure Monitor OpenTelemetry Distro for Python. Use for one-line
   Application Insights setup with auto-instrumentation"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure monitor opentelemetry py, cloud, implementation guide
 ---
+
 
 
 # Azure Monitor Opentelemetry Py

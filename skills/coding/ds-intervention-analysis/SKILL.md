@@ -1,5 +1,5 @@
 ---
-name: ds-intervention-analysis
+name: intervention-analysis
 description: '"Provides Estimates treatment effects, conditional average treatment
   effects (CATE), heterogeneous effects, and individual treatment responses"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-causal-inference, ds-observational-studies, ds-randomized-experiments,
     ds-synthetic-control
 ---
+
 
 
 # Intervention Analysis

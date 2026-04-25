@@ -1,5 +1,5 @@
 ---
-name: ai-model-ensemble
+name: model-ensemble
 description: '"Provides Combine multiple models for improved prediction accuracy and
   robustness"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai model ensemble, ai-model-ensemble, combine, models, multiple
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Design and implement ensemble methods that leverage multiple models for trading signals

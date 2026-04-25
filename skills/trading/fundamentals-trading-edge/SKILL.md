@@ -1,5 +1,5 @@
 ---
-name: fundamentals-trading-edge
+name: trading-edge
 description: '"Provides Finding and maintaining competitive advantage in trading systems"'
 license: MIT
 compatibility: opencode
@@ -13,6 +13,7 @@ metadata:
     maintaining
   related-skills: fundamentals-market-regimes, fundamentals-trading-plan, risk-correlation-risk
 ---
+
 
 
 **Role:** Identify, quantify, test, and optimize sources of edge in trading strategies to ensure long-term profitability.

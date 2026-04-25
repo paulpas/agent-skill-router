@@ -1,5 +1,5 @@
 ---
-name: dependency-graph-builder
+name: graph-builder
 description: '"Builds and maintains dependency graphs for task execution, enabling
   visualization" of task relationships, identification of bottlenecks, and optimization
   of execution order.'
@@ -14,6 +14,7 @@ metadata:
   triggers: builds, dependency graph builder, dependency-graph-builder, graphs, maintains
   related-skills: null
 ---
+
 
 
 

@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Magic Animator
 
 AI-powered animation tool for creating motion in logos, UI, icons, and social media assets.

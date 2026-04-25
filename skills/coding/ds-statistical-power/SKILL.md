@@ -1,5 +1,5 @@
 ---
-name: ds-statistical-power
+name: statistical-power
 description: '"Analyzes statistical power, sample size determination, effect size
   estimation, and Type I/Type II error control"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     Type II error
   related-skills: ds-ab-testing, ds-experimental-design, ds-hypothesis-testing
 ---
+
 
 
 # Statistical Power

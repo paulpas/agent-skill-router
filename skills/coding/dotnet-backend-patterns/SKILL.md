@@ -1,5 +1,5 @@
 ---
-name: backend-patterns
+name: patterns
 description: '"Provides Master C#/.NET patterns for building production-grade APIs,
   MCP servers, and enterprise backends with modern best practices (2024/2025)"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: dotnet backend patterns, backend, implementation guide
 ---
+
 
 
 # Dotnet Backend Patterns

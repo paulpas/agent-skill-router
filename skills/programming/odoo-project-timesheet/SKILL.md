@@ -1,5 +1,5 @@
 ---
-name: project-timesheet
+name: timesheet
 description: '''Provides Expert guide for Odoo Project and Timesheets: task stages,
   billable time tracking, timesheet approval, budget alerts, and invoicing from timesheets'''
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: odoo project timesheet, business, implementation guide
 ---
+
 
 
 # Odoo Project Timesheet

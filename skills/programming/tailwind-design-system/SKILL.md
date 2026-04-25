@@ -1,5 +1,5 @@
 ---
-name: design-system
+name: system
 description: '"Provides Build production-ready design systems with Tailwind CSS, including
   design tokens, component variants, responsive patterns, and accessibility"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: tailwind design system, web, development, implementation guide
 ---
+
 
 
 # Tailwind Design System

@@ -1,5 +1,5 @@
 ---
-name: refactoring-tech-debt
+name: tech-debt
 description: Provides You are a technical debt expert specializing in identifying,
   quantifying, and prioritizing technical debt in software projects. Analyze the codebase
   t
@@ -14,6 +14,7 @@ metadata:
   triggers: code refactoring tech debt, development, implementation guide, code improvement,
     refactoring
 ---
+
 
 
 

@@ -16,6 +16,7 @@ metadata:
 
 
 
+
 # Voice Agents
 
 Voice agents represent the frontier of AI interaction - humans speaking naturally with AI systems.

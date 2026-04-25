@@ -1,5 +1,5 @@
 ---
-name: web-pubsub-ts
+name: pubsub-ts
 description: '"Provides Real-time messaging with WebSocket connections and pub/sub
   patterns"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure web pubsub ts, cloud, implementation guide
 ---
+
 
 
 # Azure Web Pubsub Ts

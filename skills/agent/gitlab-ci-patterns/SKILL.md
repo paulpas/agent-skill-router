@@ -1,5 +1,5 @@
 ---
-name: ci-patterns
+name: patterns
 description: '"Provides Comprehensive GitLab CI/CD pipeline patterns for automated
   testing, building, and deployment"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: gitlab ci patterns, workflow, how do i test
 ---
+
 
 
 # Gitlab Ci Patterns

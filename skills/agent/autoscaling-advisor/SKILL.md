@@ -1,5 +1,5 @@
 ---
-name: autoscaling-advisor
+name: advisor
 description: '"Advisors on optimal auto-scaling configurations for distributed systems"
   to balance cost and availability.'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: add-new-skill, ci-cd-pipeline-analyzer, confidence-based-selector,
     container-inspector
 ---
+
 
 
 

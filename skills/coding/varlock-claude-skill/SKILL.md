@@ -1,5 +1,5 @@
 ---
-name: claude-skill
+name: skill
 description: '"Provides Secure environment variable management ensuring secrets are
   never exposed in Claude sessions, terminals, logs, or git commits"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: varlock claude skill, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

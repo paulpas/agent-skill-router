@@ -1,5 +1,5 @@
 ---
-name: reversing-techniques
+name: techniques
 description: '''Provides AUTHORIZED USE ONLY: This skill contains dual-use security
   techniques. Before proceeding with any bypass or analysis: > 1'''
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: anti reversing techniques, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

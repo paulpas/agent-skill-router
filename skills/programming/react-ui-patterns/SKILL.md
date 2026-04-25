@@ -1,5 +1,5 @@
 ---
-name: ui-patterns
+name: patterns
 description: Provides Modern React UI patterns for loading states, error handling,
   and data fetching. Use when building UI components, handling async data, or managing
   UI s
@@ -14,6 +14,7 @@ metadata:
   triggers: react ui patterns, web, development, data processing, spark, big data,
     distributed processing
 ---
+
 
 
 

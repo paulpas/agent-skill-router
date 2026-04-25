@@ -1,5 +1,5 @@
 ---
-name: components-layout
+name: layout
 description: '"Provides Apple Human Interface Guidelines for layout and navigation
   components"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: hig components layout, development, implementation guide
 ---
+
 
 
 # Hig Components Layout

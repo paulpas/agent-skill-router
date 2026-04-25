@@ -1,5 +1,5 @@
 ---
-name: chart-scaffolding
+name: scaffolding
 description: Provides Comprehensive guidance for creating, organizing, and managing
   Helm charts for packaging and deploying Kubernetes applications
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: helm chart scaffolding, devops, how do i deploy, kubernetes package manager,
     container orchestration, helm
 ---
+
 
 
 

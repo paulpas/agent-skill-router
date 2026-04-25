@@ -1,5 +1,5 @@
 ---
-name: review-checklist
+name: checklist
 description: '"Provides Comprehensive checklist for conducting thorough code reviews
   covering functionality, security, performance, and maintainability"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: code review checklist, code, quality, how do i secure
 ---
+
 
 
 # Code Review Checklist

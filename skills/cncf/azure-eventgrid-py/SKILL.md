@@ -1,5 +1,5 @@
 ---
-name: eventgrid-py
+name: py
 description: '"Provides Azure Event Grid SDK for Python. Use for publishing events,
   handling CloudEvents, and event-driven architectures"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure eventgrid py, cloud, implementation guide
 ---
+
 
 
 # Azure Eventgrid Py

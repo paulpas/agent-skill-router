@@ -1,5 +1,5 @@
 ---
-name: ds-model-interpretation
+name: model-interpretation
 description: '"Provides Interprets models using SHAP values, LIME, feature importance,
   permutation importance, and other explainability techniques"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     how do I explain models
   related-skills: ds-explainability, ds-feature-selection, ds-model-fairness
 ---
+
 
 
 # Model Interpretation

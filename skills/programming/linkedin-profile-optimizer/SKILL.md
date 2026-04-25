@@ -1,5 +1,5 @@
 ---
-name: profile-optimizer
+name: optimizer
 description: '"Provides High-intent expert for LinkedIn profile checks, authority
   building, and SEO optimization. Invoke to audit, rewrite, and enhance profiles for
   top 1% po"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: linkedin profile optimizer, growth, implementation guide
 ---
+
 
 
 # Linkedin Profile Optimizer

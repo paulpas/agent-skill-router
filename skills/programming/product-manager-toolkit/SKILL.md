@@ -1,5 +1,5 @@
 ---
-name: manager-toolkit
+name: toolkit
 description: '"Provides Essential tools and frameworks for modern product management,
   from discovery to delivery"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: product manager toolkit, business, implementation guide
 ---
+
 
 
 # Product Manager Toolkit

@@ -1,5 +1,5 @@
 ---
-name: security-review
+name: review
 description: '"Security-focused code review identifying vulnerabilities like injection"
   XSS, insecure deserialization, and misconfigurations, with remediation guidance'
 license: MIT
@@ -16,6 +16,7 @@ metadata:
   source: https://github.com/farmage/opencode-skills
   related-skills: cve-dependency-management
 ---
+
 
 
 

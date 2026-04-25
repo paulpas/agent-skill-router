@@ -1,5 +1,5 @@
 ---
-name: fundamentals-market-structure
+name: market-structure
 description: '"Implements market structure and trading participants analysis for risk
   management and algorithmic trading execution."'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     participants, trading
   related-skills: ai-order-flow-analysis, data-order-book
 ---
+
 
 
 **Role:** Market Microstructure Analyst — implements comprehensive market structure analysis to understand how trading venues, order types, and participant behaviors influence price formation and execution quality.

@@ -1,5 +1,5 @@
 ---
-name: memory-usage-analyzer
+name: usage-analyzer
 description: '"Analyzes memory allocation patterns, identifies memory leaks, and provides"
   optimization guidance for memory-efficient code.'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: analyzes, leaks, memory, memory usage analyzer, memory-usage-analyzer
   related-skills: add-new-skill, autoscaling-advisor, ci-cd-pipeline-analyzer, confidence-based-selector
 ---
+
 
 
 

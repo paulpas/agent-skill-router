@@ -1,5 +1,5 @@
 ---
-name: mental-states
+name: states
 description: Provides this skill should be used when the user asks to functionality
   and capabilities.
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: bdi mental states, ai, ml, implementation guide, machine learning, scikit-learn
 ---
+
 
 
 

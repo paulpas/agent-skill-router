@@ -1,5 +1,5 @@
 ---
-name: types-ref
+name: ref
 description: '"Provides Quick reference for fp-ts types. Use when user asks which
   type to use, needs Option/Either/Task decision help, or wants fp-ts imports"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: fp types ref, development, implementation guide
 ---
+
 
 
 # Fp Types Ref

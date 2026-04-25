@@ -1,5 +1,5 @@
 ---
-name: aeo-keyword-research
+name: keyword-research
 description: '"Provides Researches and prioritises SEO keywords with AEO question
   queries, difficulty tiers, cannibalization checks, and a content map. Activate when
   the user"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: seo aeo keyword research, content, implementation guide
 ---
+
 
 
 # Seo Aeo Keyword Research

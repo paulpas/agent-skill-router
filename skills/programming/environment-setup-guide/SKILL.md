@@ -1,5 +1,5 @@
 ---
-name: setup-guide
+name: guide
 description: '"Provides Guide developers through setting up development environments
   with proper tools, dependencies, and configurations"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: environment setup guide, development, implementation guide
 ---
+
 
 
 # Environment Setup Guide

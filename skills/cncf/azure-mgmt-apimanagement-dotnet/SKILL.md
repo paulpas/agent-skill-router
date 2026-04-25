@@ -1,5 +1,5 @@
 ---
-name: mgmt-apimanagement-dotnet
+name: apimanagement-dotnet
 description: '"Configures azure resource manager sdk for api management in .net for
   cloud-native deployment and infrastructure management."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure mgmt apimanagement dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Apimanagement Dotnet

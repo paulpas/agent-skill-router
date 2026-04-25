@@ -1,5 +1,5 @@
 ---
-name: ts-errors
+name: errors
 description: '"Provides Handle errors as values using fp-ts Either and TaskEither
   for cleaner, more predictable TypeScript code. Use when implementing error handling
   patterns"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: fp ts errors, development, implementation guide
 ---
+
 
 
 # Fp Ts Errors

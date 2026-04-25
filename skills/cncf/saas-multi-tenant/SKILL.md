@@ -1,5 +1,5 @@
 ---
-name: multi-tenant
+name: tenant
 description: '"Provides Design and implement multi-tenant SaaS architectures with
   row-level security, tenant-scoped queries, shared-schema isolation, and safe cross-tenant
   ad"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: saas multi tenant, database, how do i secure
 ---
+
 
 
 # Saas Multi Tenant

@@ -1,5 +1,5 @@
 ---
-name: pptx-generator
+name: generator
 description: '"Provides Generate complete Python scripts that build polished PowerPoint
   decks with python-pptx and real slide content"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: python pptx generator, development, implementation guide
 ---
+
 
 
 # Python Pptx Generator

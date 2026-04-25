@@ -1,5 +1,5 @@
 ---
-name: resource-manager-sql-dotnet
+name: manager-sql-dotnet
 description: '"Configures azure resource manager sdk for azure sql in .net for cloud-native
   deployment and infrastructure management."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure resource manager sql dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Resource Manager Sql Dotnet

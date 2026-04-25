@@ -1,5 +1,5 @@
 ---
-name: networking-osi
+name: osi
 description: '"OSI Model Networking for Cloud-Native - All 7 layers with CNCF project"
   mappings, Kubernetes networking, and troubleshooting patterns.'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: manifests
   triggers: cloud-native, layers, model, networking osi, networking-osi
 ---
+
 
   related-skills: cncf-aws-route53, cncf-azure-cdn, cncf-azure-traffic-manager, cncf-azure-virtual-networks
 

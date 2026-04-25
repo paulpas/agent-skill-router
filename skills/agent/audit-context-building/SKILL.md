@@ -1,5 +1,5 @@
 ---
-name: context-building
+name: building
 description: '"Enables ultra-granular, line-by-line code analysis to build deep architectural
   context before vulnerability or bug finding"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: audit context building, meta, implementation guide
 ---
+
 
 
 # Audit Context Building

@@ -1,5 +1,5 @@
 ---
-name: eventhub-dotnet
+name: dotnet
 description: '"Configures azure event hubs sdk for .net for cloud-native deployment
   and infrastructure management."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure eventhub dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Eventhub Dotnet

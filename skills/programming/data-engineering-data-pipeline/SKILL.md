@@ -1,5 +1,5 @@
 ---
-name: engineering-data-pipeline
+name: data-pipeline
 description: Provides You are a data pipeline architecture expert specializing in
   scalable, reliable, and cost-effective data pipelines for batch and streaming data
   process
@@ -14,6 +14,7 @@ metadata:
   triggers: data engineering data pipeline, data, science, data processing, spark,
     big data, distributed processing
 ---
+
 
 
 

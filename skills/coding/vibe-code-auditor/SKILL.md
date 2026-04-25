@@ -1,5 +1,5 @@
 ---
-name: code-auditor
+name: auditor
 description: '"Provides Audit rapidly generated or AI-produced code for structural
   flaws, fragility, and production risks"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: vibe code auditor, code, quality, implementation guide
 ---
+
 
 
 # Vibe Code Auditor

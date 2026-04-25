@@ -1,5 +1,5 @@
 ---
-name: workflow-automation
+name: automation
 description: '"Provides Patterns for automating GitHub workflows with AI assistance,
   inspired by [Gemini CLI](https://github.com/google-gemini/gemini-cli) and modern
   DevOps p"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: github workflow automation, workflow, how do i automate
 ---
+
 
 
 # Github Workflow Automation

@@ -1,5 +1,5 @@
 ---
-name: bd-agent
+name: agent
 description: '"Provides Production-tested patterns for building AI agents that autonomously
   discover, > evaluate, and acquire token listings for cryptocurrency exchanges"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: crypto bd agent, blockchain, how do i test
 ---
+
 
 
 # Crypto Bd Agent

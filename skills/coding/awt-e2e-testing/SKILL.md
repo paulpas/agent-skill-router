@@ -1,5 +1,5 @@
 ---
-name: e2e-testing
+name: testing
 description: '"Provides AI-powered E2E web testing — eyes and hands for AI coding  tools.
   Declarative YAML scenarios, Playwright execution, visual matching (OpenCV  + OCR),
   pla"'
@@ -14,6 +14,7 @@ metadata:
   triggers: awt e2e testing, test, automation, how do i test, jenkins, unit tests,
     ci/cd pipeline, continuous integration
 ---
+
 
 
 

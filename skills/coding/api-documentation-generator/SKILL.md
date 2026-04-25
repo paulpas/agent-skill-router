@@ -1,5 +1,5 @@
 ---
-name: documentation-generator
+name: generator
 description: '"Provides Generate comprehensive, developer-friendly API documentation
   from code, including endpoints, parameters, examples, and best practices"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: api documentation generator, backend, implementation guide
 ---
+
 
 
 # Api Documentation Generator

@@ -1,5 +1,5 @@
 ---
-name: gcp-compute-engine
+name: compute-engine
 description: '"Deploys and manages virtual machine instances with auto-scaling, instance
   groups, and integration with GCP services for IaaS workloads"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: compute engine, gce, virtual machine, vm, auto-scaling, instance group
   related-skills: gcp-autoscaling, gcp-cloud-cdn, gcp-cloud-dns, gcp-cloud-monitoring
 ---
+
 
 
 

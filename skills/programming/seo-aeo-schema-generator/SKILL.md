@@ -1,5 +1,5 @@
 ---
-name: aeo-schema-generator
+name: schema-generator
 description: Generates valid JSON-LD structured data for 10 schema types with rich
   result eligibility validation and implementation-ready script blocks. Activate w
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: seo aeo schema generator, uncategorized, data processing, spark, big data,
     distributed processing
 ---
+
 
 
 

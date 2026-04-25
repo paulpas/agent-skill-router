@@ -1,5 +1,5 @@
 ---
-name: aws-vpc
+name: vpc
 description: '"Configures Virtual Private Clouds with subnets, route tables, NAT gateways"
   security groups, and network ACLs for secure, isolated network infrastructure on
   AWS.'
@@ -15,6 +15,7 @@ metadata:
     network acl, vpn
   related-skills: aws-cloudformation, aws-ec2, aws-eks, aws-elb
 ---
+
 
 
 

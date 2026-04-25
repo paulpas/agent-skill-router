@@ -1,5 +1,5 @@
 ---
-name: security-audit
+name: audit
 description: '"Provides Security auditor for Laravel applications. Analyzes code for
   vulnerabilities, misconfigurations, and insecure practices using OWASP standards
   and Lara"'
@@ -14,6 +14,7 @@ metadata:
   triggers: laravel security audit, security, how do i secure, security auditing,
     vulnerability scanning
 ---
+
 
 
 

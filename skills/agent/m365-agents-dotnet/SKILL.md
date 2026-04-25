@@ -1,5 +1,5 @@
 ---
-name: agents-dotnet
+name: dotnet
 description: Provides Microsoft 365 Agents SDK for .NET. Build multichannel agents
   for Teams/M365/Copilot Studio with ASP.NET Core hosting, AgentApplication routing,
   and MS
@@ -14,6 +14,7 @@ metadata:
   triggers: m365 agents dotnet, ai, agents, implementation guide, machine learning,
     ml, scikit-learn
 ---
+
 
 
 

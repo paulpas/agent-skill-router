@@ -1,5 +1,5 @@
 ---
-name: writing-guide
+name: guide
 description: '"Provides this skill enforces sentry''s blog writing standards across  every
   post — whether you''re helping an engineer write their first blog post  or a marketer
   d"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: blog writing guide, content, implementation guide
 ---
+
 
 
 # Blog Writing Guide

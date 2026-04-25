@@ -1,5 +1,5 @@
 ---
-name: module-library
+name: library
 description: Provides Production-ready Terraform module patterns for AWS, Azure, and
   GCP infrastructure
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: terraform module library, devops, how do i deploy, infrastructure as code,
     cloudformation
 ---
+
 
 
 

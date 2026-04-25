@@ -1,5 +1,5 @@
 ---
-name: testing-patterns
+name: patterns
 description: Provides Comprehensive guide for implementing robust testing strategies
   in JavaScript/TypeScript applications using modern testing frameworks and best practice
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: javascript testing patterns, development, how do i test, unit tests, testing
 ---
+
 
 
 

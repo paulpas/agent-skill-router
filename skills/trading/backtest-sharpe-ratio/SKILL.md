@@ -1,5 +1,5 @@
 ---
-name: backtest-sharpe-ratio
+name: sharpe-ratio
 description: '"Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics"'
 license: MIT
 compatibility: opencode
@@ -13,6 +13,7 @@ metadata:
     performance, risk-adjusted, speed
   related-skills: backtest-lookahead-bias, fundamentals-trading-plan
 ---
+
 
 
 **Role:** Risk-Adjusted Performance Analyst — implements comprehensive Sharpe ratio calculations and risk-adjusted performance metrics to evaluate strategy quality while accounting for volatility and risk.

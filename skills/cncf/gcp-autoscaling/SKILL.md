@@ -1,5 +1,5 @@
 ---
-name: gcp-autoscaling
+name: autoscaling
 description: '"Provides Automatically scales compute resources based on metrics like
   CPU and custom signals"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
   related-skills: gcp-cloud-load-balancing, gcp-cloud-monitoring, gcp-compute-engine,
     gcp-gke
 ---
+
 
 
 

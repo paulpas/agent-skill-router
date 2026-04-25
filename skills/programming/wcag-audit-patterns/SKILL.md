@@ -1,5 +1,5 @@
 ---
-name: audit-patterns
+name: patterns
 description: '"Provides Comprehensive guide to auditing web content against WCAG 2.2
   guidelines with actionable remediation strategies"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: wcag audit patterns, design, implementation guide
 ---
+
 
 
 # Wcag Audit Patterns

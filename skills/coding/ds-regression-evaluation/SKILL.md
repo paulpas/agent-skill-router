@@ -1,5 +1,5 @@
 ---
-name: ds-regression-evaluation
+name: regression-evaluation
 description: '"Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared,
   and other metrics for assessing predictive accuracy"'
 license: MIT
@@ -15,6 +15,7 @@ metadata:
   related-skills: ds-cross-validation, ds-linear-regression, ds-metrics-and-kpis,
     ds-model-selection
 ---
+
 
 
 # Regression Evaluation

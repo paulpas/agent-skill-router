@@ -1,5 +1,5 @@
 ---
-name: ts-react
+name: react
 description: Provides Practical patterns for using fp-ts with React - hooks, state,
   forms, data fetching. Use when building React apps with functional programming patterns
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: fp ts react, development, data processing, spark, big data, distributed
     processing
 ---
+
 
 
 

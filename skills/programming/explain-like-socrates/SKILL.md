@@ -1,5 +1,5 @@
 ---
-name: like-socrates
+name: socrates
 description: '"Explains concepts using Socratic-style dialogue. Use when the user
   asks to explain, teach or help understand a concept like socrates" "'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: explain like socrates, content, implementation guide
 ---
+
 
 
 # Explain Like Socrates

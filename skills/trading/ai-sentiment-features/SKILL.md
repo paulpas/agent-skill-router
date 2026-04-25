@@ -1,5 +1,5 @@
 ---
-name: ai-sentiment-features
+name: sentiment-features
 description: '"Provides Extract market sentiment from news, social media, and analyst
   reports"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: ai sentiment features, ai-sentiment-features, extract, market, social
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Convert sentiment signals into actionable trading features with proper temporal alignment

@@ -1,5 +1,5 @@
 ---
-name: refactoring-context-restore
+name: context-restore
 description: Provides use when working with code refactoring context restore functionality
   and capabilities.
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: code refactoring context restore, development, implementation guide, code
     improvement, refactoring
 ---
+
 
 
 

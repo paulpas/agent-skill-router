@@ -1,5 +1,5 @@
 ---
-name: teams-automation
+name: automation
 description: '''Provides Automate Microsoft Teams tasks via Rube MCP (Composio): send
   messages, manage channels, create meetings, handle chats, and search messages. Always
   sea'''
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: microsoft teams automation, api, integration, how do i automate
 ---
+
 
 
 # Microsoft Teams Automation

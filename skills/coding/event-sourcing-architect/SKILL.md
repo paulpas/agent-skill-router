@@ -1,5 +1,5 @@
 ---
-name: sourcing-architect
+name: architect
 description: '"Provides Expert in event sourcing, CQRS, and event-driven architecture
   patterns. Masters event store design, projection building, saga orchestration, and
   event"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: event sourcing architect, architecture, implementation guide
 ---
+
 
 
 # Event Sourcing Architect

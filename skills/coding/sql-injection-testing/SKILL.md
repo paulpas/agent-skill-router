@@ -1,5 +1,5 @@
 ---
-name: injection-testing
+name: testing
 description: Provides Execute comprehensive SQL injection vulnerability assessments
   on web applications to identify database security flaws, demonstrate exploitation
   techni
@@ -14,6 +14,7 @@ metadata:
   triggers: sql injection testing, security, how do i secure, security auditing, unit
     tests, vulnerability scanning, testing
 ---
+
 
 
 

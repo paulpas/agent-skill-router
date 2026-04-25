@@ -1,5 +1,5 @@
 ---
-name: development-feature-development
+name: feature-development
 description: '"Provides Orchestrate end-to-end backend feature development from requirements
   to deployment. Use when coordinating multi-phase feature delivery across teams an"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: backend development feature development, backend, how do i deploy
 ---
+
 
 
 # Backend Development Feature Development

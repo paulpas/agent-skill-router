@@ -1,5 +1,5 @@
 ---
-name: security-audit
+name: audit
 description: '"Provides Comprehensive AWS security posture assessment using AWS CLI
   and security best practices"'
 license: MIT
@@ -13,6 +13,7 @@ metadata:
   triggers: aws security audit, security, how do i secure, security auditing, vulnerability
     scanning
 ---
+
 
 
 

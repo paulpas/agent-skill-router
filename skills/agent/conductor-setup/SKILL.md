@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Conductor Setup
 
 Configure a Rails project to work with Conductor (parallel coding agents)

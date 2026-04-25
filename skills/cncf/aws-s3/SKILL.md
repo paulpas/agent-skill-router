@@ -1,5 +1,5 @@
 ---
-name: aws-s3
+name: s3
 description: '"Configures S3 object storage with versioning, lifecycle policies, encryption"
   and access controls for durable, scalable data storage with cost optimization in
   AWS.'
@@ -15,6 +15,7 @@ metadata:
     website, object expiration
   related-skills: aws-cloudformation, aws-cloudfront, aws-iam, aws-kms
 ---
+
 
 
 

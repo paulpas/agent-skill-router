@@ -1,5 +1,5 @@
 ---
-name: ui-design-system
+name: design-system
 description: '"Provides Build accessible design systems with Radix UI primitives.
   Headless component customization, theming strategies, and compound component patterns
   for pr"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: radix ui design system, web, development, implementation guide
 ---
+
 
 
 # Radix Ui Design System

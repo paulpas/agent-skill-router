@@ -1,5 +1,5 @@
 ---
-name: database-engineer
+name: engineer
 description: Provides Expert in vector databases, embedding strategies, and semantic
   search implementation. Masters Pinecone, Weaviate, Qdrant, Milvus, and pgvector
   for RAG
@@ -14,6 +14,7 @@ metadata:
   triggers: vector database engineer, data, ai, data processing, machine learning,
     spark, big data, distributed processing
 ---
+
 
 
 

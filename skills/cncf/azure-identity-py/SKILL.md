@@ -1,5 +1,5 @@
 ---
-name: identity-py
+name: py
 description: '"Provides Azure Identity SDK for Python authentication. Use for DefaultAzureCredential,
   managed identity, service principals, and token caching"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: azure identity py, cloud, implementation guide
 ---
+
 
 
 # Azure Identity Py

@@ -1,5 +1,5 @@
 ---
-name: mgmt-weightsandbiases-dotnet
+name: weightsandbiases-dotnet
 description: '"Provides Azure Weights & Biases SDK for .NET. ML experiment tracking
   and model management via Azure Marketplace. Use for creating W&B instances, managing
   SSO"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: azure mgmt weightsandbiases dotnet, cloud, implementation guide
 ---
+
 
 
 # Azure Mgmt Weightsandbiases Dotnet

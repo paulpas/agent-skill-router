@@ -1,5 +1,5 @@
 ---
-name: design-guidelines
+name: guidelines
 description: '"Provides review files for compliance with web interface guidelines
   functionality and capabilities."'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: web design guidelines, design, implementation guide
 ---
+
 
 
 # Web Design Guidelines

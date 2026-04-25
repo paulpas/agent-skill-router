@@ -1,5 +1,5 @@
 ---
-name: ds-online-experiments
+name: online-experiments
 description: '"Implements multi-armed bandits, contextual bandits, exploration-exploitation
   tradeoff, and online learning algorithms"'
 license: MIT
@@ -14,6 +14,7 @@ metadata:
     online learning
   related-skills: ds-ab-testing, ds-experimental-design, ds-metrics-and-kpis
 ---
+
 
 
 # Online Experiments

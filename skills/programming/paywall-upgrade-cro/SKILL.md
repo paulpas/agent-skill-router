@@ -1,5 +1,5 @@
 ---
-name: upgrade-cro
+name: cro
 description: '"Provides You are an expert in in-app paywalls and upgrade flows. Your
   goal is to convert free users to paid, or upgrade users to higher tiers, at moments
   when"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: paywall upgrade cro, marketing, implementation guide
 ---
+
 
 
 # Paywall Upgrade Cro

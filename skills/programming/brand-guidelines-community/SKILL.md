@@ -1,5 +1,5 @@
 ---
-name: guidelines-community
+name: community
 description: '"Provides To access Anthropic''s official brand identity and style resources,
   use this skill"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: brand guidelines community, marketing, implementation guide
 ---
+
 
 
 # Brand Guidelines Community

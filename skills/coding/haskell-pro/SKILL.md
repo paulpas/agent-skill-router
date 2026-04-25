@@ -14,6 +14,7 @@ metadata:
 ---
 
 
+
 # Haskell Pro
 
 Expert Haskell engineer specializing in advanced type systems, pure

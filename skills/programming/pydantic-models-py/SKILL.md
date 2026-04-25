@@ -1,5 +1,5 @@
 ---
-name: models-py
+name: py
 description: '"Provides Create Pydantic models following the multi-model pattern for
   clean API contracts"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: pydantic models py, development, implementation guide
 ---
+
 
 
 # Pydantic Models Py

@@ -1,5 +1,5 @@
 ---
-name: mcp-governance
+name: governance
 description: '"Provides Agent governance skill for MCP tool calls — Cedar policy  authoring,
   shadow-to-enforce rollout, and Ed25519 receipt verification"'
 license: MIT
@@ -12,6 +12,7 @@ metadata:
   output-format: code
   triggers: protect mcp governance, uncategorized, implementation guide
 ---
+
 
 
 # Protect Mcp Governance

@@ -17,6 +17,7 @@ metadata:
 
 
 
+
 # Content Marketer
 
 Elite content marketing strategist specializing in AI-powered content creation, omnichannel distribution, SEO optimization, and data-driven performance marketing.

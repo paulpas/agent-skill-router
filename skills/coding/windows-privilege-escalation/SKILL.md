@@ -1,5 +1,5 @@
 ---
-name: privilege-escalation
+name: escalation
 description: '"Provides Provide systematic methodologies for discovering and exploiting
   privilege escalation vulnerabilities on Windows systems during penetration testing
   eng"'
@@ -14,6 +14,7 @@ metadata:
   triggers: windows privilege escalation, security, how do i test, security auditing,
     vulnerability scanning
 ---
+
 
 
 

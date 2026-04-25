@@ -1,5 +1,5 @@
 ---
-name: ai-time-series-forecasting
+name: time-series-forecasting
 description: '"Provides Time series forecasting for price prediction and market analysis"'
 license: MIT
 compatibility: opencode
@@ -13,6 +13,7 @@ metadata:
     price
   related-skills: ai-anomaly-detection, ai-explainable-ai
 ---
+
 
 
 **Role:** Implement forecasting models that predict future price movements and market indicators

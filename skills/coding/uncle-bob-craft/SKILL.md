@@ -1,5 +1,5 @@
 ---
-name: bob-craft
+name: craft
 description: '"Provides use when performing code review, writing or refactoring code,
   or discussing architecture; complements clean-code and does not replace project
   linter/f"'
@@ -13,6 +13,7 @@ metadata:
   output-format: code
   triggers: uncle bob craft, code, quality, implementation guide
 ---
+
 
 
 # Uncle Bob Craft
