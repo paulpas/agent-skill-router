@@ -121,13 +121,21 @@ def load_opencode_config() -> dict:
         )
 
 
+_SKILL_ROUTER_API_MD = Path("/home/paulpas/.config/opencode/skill-router-api.md")
+
+
 def make_no_mcp_config_dir(base_config: dict) -> str:
     """Create a temp XDG_CONFIG_HOME dir with skill-router MCP disabled.
 
     Writes a modified opencode.json to:
         <tmpdir>/opencode/opencode.json
 
-    with mcp["skill-router"]["enabled"] set to False.
+    Changes applied vs. the base config:
+      - mcp["skill-router"]["enabled"] → False  (disables the MCP tool)
+      - instructions list stripped of skill-router-api.md  (removes the
+        auto-routing directive that tells the model to call route_to_skill
+        before every task; without MCP the tool call fails and causes an
+        infinite retry loop)
 
     Args:
         base_config: Original config dict (not mutated).
@@ -140,8 +148,18 @@ def make_no_mcp_config_dir(base_config: dict) -> str:
     os.makedirs(config_dir, exist_ok=True)
 
     modified = copy.deepcopy(base_config)
+
+    # Disable the skill-router MCP server
     if "mcp" in modified and "skill-router" in modified["mcp"]:
         modified["mcp"]["skill-router"]["enabled"] = False
+
+    # Remove the auto-routing instruction so the model doesn't attempt to call
+    # route_to_skill when the MCP tool is unavailable
+    if "instructions" in modified:
+        api_md_str = str(_SKILL_ROUTER_API_MD)
+        modified["instructions"] = [
+            instr for instr in modified["instructions"] if instr != api_md_str
+        ]
 
     config_file = os.path.join(config_dir, "opencode.json")
     with open(config_file, "w") as f:

@@ -3,7 +3,6 @@ import fs from 'fs';
 import path from 'path';
 import { CompressionCleanupJob } from '../jobs/CompressionCleanupJob';
 import { DiskCompressionCache } from '../core/DiskCompressionCache';
-import { CompressedVersions } from '../core/LLMSkillCompressor';
 
 describe('CompressionCleanupJob', () => {
   let cacheDir: string;
@@ -62,10 +61,10 @@ describe('CompressionCleanupJob', () => {
     const promise1 = cleanupJob.runCleanup();
     const promise2 = cleanupJob.runCleanup(); // Should return early
     
-    const [result1, result2] = await Promise.all([promise1, promise2]);
+    const results = await Promise.all([promise1, promise2]);
     
     // Second run should have 0 skills scanned
-    expect(result2.skillsScanned).toBe(0);
+    expect(results[1].skillsScanned).toBe(0);
   });
 
   it('should handle cleanup errors gracefully', async () => {

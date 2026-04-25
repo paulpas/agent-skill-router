@@ -10,7 +10,6 @@ const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const glob_1 = require("glob");
 const yaml_1 = __importDefault(require("yaml"));
-const EmbeddingService_js_1 = require("../embedding/EmbeddingService.js");
 const Logger_js_1 = require("../observability/Logger.js");
 const SkillCompressor_js_1 = require("./SkillCompressor.js");
 const CompressionMetrics_js_1 = require("../utils/CompressionMetrics.js");
@@ -26,7 +25,6 @@ class SkillRegistry {
     skillsByCategory = new Map();
     skillsByTag = new Map();
     config;
-    embeddingService;
     logger;
     compressor;
     /** In-memory cache for on-demand skill content */
@@ -51,7 +49,6 @@ class SkillRegistry {
             ...config,
         };
         this.maxCacheSizeBytes = this.config.maxCacheSizeBytes || 100 * 1024 * 1024;
-        this.embeddingService = new EmbeddingService_js_1.EmbeddingService();
         this.compressor = new SkillCompressor_js_1.SkillCompressor();
         this.logger = new Logger_js_1.Logger('SkillRegistry');
         // Initialize metrics with max cache size
@@ -574,54 +571,12 @@ class SkillRegistry {
         });
     }
     /**
-     * Build text for embedding generation from skill metadata
-     */
-    buildEmbeddingText(metadata) {
-        return [
-            metadata.name,
-            metadata.category,
-            metadata.description,
-            ...metadata.tags,
-            ...(metadata.dependencies || []),
-        ].join(' ');
-    }
-    /**
      * Generate embeddings for skills that don't have them
+     * Note: Embedding service is not currently available, so this is a no-op
      */
     async generateMissingEmbeddings() {
-        const skillsWithoutEmbeddings = Array.from(this.skills.values()).filter((skill) => !skill.metadata.embedding);
-        if (skillsWithoutEmbeddings.length === 0) {
-            return;
-        }
-        this.logger.info(`Generating embeddings for ${skillsWithoutEmbeddings.length} skills`);
-        const batch = [];
-        for (const skill of skillsWithoutEmbeddings) {
-            batch.push({
-                skill,
-                text: this.buildEmbeddingText(skill.metadata),
-            });
-        }
-        // Process in batches
-        const batchSize = 100;
-        for (let i = 0; i < batch.length; i += batchSize) {
-            const batchSlice = batch.slice(i, i + batchSize);
-            const texts = batchSlice.map((b) => b.text);
-            try {
-                const primaryDir = Array.isArray(this.config.skillsDirectory)
-                    ? this.config.skillsDirectory[0]
-                    : this.config.skillsDirectory;
-                const embeddings = await this.embeddingService.batchEmbeddings(texts, primaryDir);
-                embeddings.forEach((embedding, index) => {
-                    const { skill } = batchSlice[index];
-                    skill.metadata.embedding = embedding.embedding;
-                });
-            }
-            catch (error) {
-                this.logger.error('Failed to generate embeddings for batch', {
-                    error: error instanceof Error ? error.message : String(error),
-                });
-            }
-        }
+        // Embedding service not available - skip
+        return;
     }
     /**
      * Get a skill by name

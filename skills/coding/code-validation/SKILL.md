@@ -44,6 +44,37 @@ Validates pipeline stages against allowed configuration and returns 'valid_confi
 
 ## Implementation Patterns
 
+### Pattern 1: Basic Pipeline Validation
+
+Validates pipeline stages against a fixed set of allowed stages using a guard clause and early exit.
+
+```python
+def validate_pipeline(stages: list[str]) -> str:
+    """Validate pipeline stages and return config status.
+    
+    Returns "valid_config" if all stages are in allowed set, "invalid_config" otherwise.
+    """
+    ALLOWED_STAGES = {"build", "test", "deploy", "notify"}
+    
+    # Guard clause: empty list is valid
+    if not stages:
+        return "valid_config"
+    
+    # Check each stage
+    for stage in stages:
+        if stage not in ALLOWED_STAGES:
+            return "invalid_config"
+    
+    return "valid_config"
+```
+
+| ❌ BAD | ✅ GOOD |
+|--------|---------|
+| Uses list for allowed set (`["build", "test", ...]`) | Uses set for O(1) lookup (`{"build", "test", ...}`) |
+| No guard clause for empty list | Returns "valid_config" for empty list |
+| Missing type hints | Explicit return type annotation (`-> str`) |
+| Loop continues after finding invalid | Early return on first invalid stage |
+
 ### Pattern 3: Case-Insensitive Pipeline Validation
 
 Handles validation where case should be ignored for pipeline stages.

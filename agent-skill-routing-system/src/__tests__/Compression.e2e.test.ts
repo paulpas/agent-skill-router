@@ -75,7 +75,7 @@ Here is some code:
 
 \`\`\`typescript
 function test() {
-  console.log('test');
+  return 42;
 }
 \`\`\`
 

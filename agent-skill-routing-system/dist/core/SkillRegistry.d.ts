@@ -30,7 +30,6 @@ export declare class SkillRegistry {
     private skillsByCategory;
     private skillsByTag;
     private config;
-    private embeddingService;
     private logger;
     private compressor;
     /** In-memory cache for on-demand skill content */
@@ -101,11 +100,8 @@ export declare class SkillRegistry {
      */
     private addSkill;
     /**
-     * Build text for embedding generation from skill metadata
-     */
-    private buildEmbeddingText;
-    /**
      * Generate embeddings for skills that don't have them
+     * Note: Embedding service is not currently available, so this is a no-op
      */
     private generateMissingEmbeddings;
     /**
