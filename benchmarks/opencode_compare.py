@@ -73,6 +73,15 @@ class RunResult:
     error: Optional[str] = None
     success: bool = True
 
+    # Token usage fields
+    input_tokens: int = 0
+    output_tokens: int = 0
+    total_tokens: int = 0
+    reasoning_tokens: int = 0
+    cache_read_tokens: int = 0
+    cache_write_tokens: int = 0
+    cost_usd: float = 0.0
+
     # Code quality fields (None when no coding_challenge in exercise)
     code_generated: Optional[str] = None
     code_compiles: Optional[bool] = None
@@ -227,7 +236,7 @@ def load_tier_exercises(tier: str) -> list[dict]:
 # ─── JSON Event Stream Parser ─────────────────────────────────────────────────
 
 
-def parse_opencode_json_stream(stdout_text: str) -> tuple[str, list[dict]]:
+def parse_opencode_json_stream(stdout_text: str) -> tuple[str, list[dict], dict]:
     """Parse the newline-delimited JSON event stream from `opencode run --format json`.
 
     Actual event format (confirmed from live output):
@@ -237,16 +246,28 @@ def parse_opencode_json_stream(stdout_text: str) -> tuple[str, list[dict]]:
       error:        {"type":"error", "error":{"name":"...","data":{"message":"..."}}}
 
     Text is assembled from all "text" events in order, concatenating part.text values.
+    Token counts are accumulated from all "step_finish" events.
 
     Args:
         stdout_text: Raw stdout from the opencode subprocess.
 
     Returns:
-        (response_text, raw_events) — assembled text and all parsed events.
+        (response_text, raw_events, token_totals) — assembled text, all parsed events,
+        and cumulative token usage dict with keys: input, output, total, reasoning,
+        cache_read, cache_write, cost.
     """
     raw_events: list[dict] = []
     text_parts: list[str] = []
     error_messages: list[str] = []
+    token_totals: dict = {
+        "input": 0,
+        "output": 0,
+        "total": 0,
+        "reasoning": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "cost": 0.0,
+    }
 
     for line in stdout_text.splitlines():
         line = line.strip()
@@ -266,6 +287,18 @@ def parse_opencode_json_stream(stdout_text: str) -> tuple[str, list[dict]]:
             if text_val:
                 text_parts.append(text_val)
 
+        elif event_type == "step_finish":
+            part = event.get("part", {})
+            tokens = part.get("tokens", {})
+            token_totals["input"] += tokens.get("input", 0)
+            token_totals["output"] += tokens.get("output", 0)
+            token_totals["total"] += tokens.get("total", 0)
+            token_totals["reasoning"] += tokens.get("reasoning", 0)
+            cache = tokens.get("cache", {})
+            token_totals["cache_read"] += cache.get("read", 0)
+            token_totals["cache_write"] += cache.get("write", 0)
+            token_totals["cost"] += part.get("cost", 0.0) or 0.0
+
         elif event_type == "error":
             error_data = event.get("error", {})
             error_name = error_data.get("name", "")
@@ -278,7 +311,7 @@ def parse_opencode_json_stream(stdout_text: str) -> tuple[str, list[dict]]:
     if not response_text and error_messages:
         response_text = f"[ERROR] {'; '.join(error_messages)}"
 
-    return response_text, raw_events
+    return response_text, raw_events, token_totals
 
 
 # ─── OpenCode Runner ──────────────────────────────────────────────────────────
@@ -289,7 +322,7 @@ def run_opencode(
     model: str,
     extra_env: Optional[dict] = None,
     timeout: int = DEFAULT_TIMEOUT,
-) -> tuple[str, float, list[dict]]:
+) -> tuple[str, float, list[dict], dict]:
     """Run opencode run <task> --format json, streaming stdout until step_finish or error.
 
     Streams stdout line-by-line and terminates the process as soon as it sees
@@ -304,7 +337,7 @@ def run_opencode(
         timeout:    Seconds before the process is forcibly killed.
 
     Returns:
-        (response_text, latency_ms, raw_events)
+        (response_text, latency_ms, raw_events, token_totals)
 
     Raises:
         RuntimeError: If the binary is missing or the run times out.
@@ -399,8 +432,8 @@ def run_opencode(
 
     latency_ms = (time.perf_counter() - start) * 1000
     stdout_text = "\n".join(lines_collected)
-    response_text, raw_events = parse_opencode_json_stream(stdout_text)
-    return response_text, latency_ms, raw_events
+    response_text, raw_events, token_totals = parse_opencode_json_stream(stdout_text)
+    return response_text, latency_ms, raw_events, token_totals
 
 
 def run_with_mcp(
@@ -420,13 +453,22 @@ def run_with_mcp(
     """
     print("  🔀 Running WITH MCP (skill-router active)...")
     try:
-        response_text, latency_ms, _ = run_opencode(task, model, timeout=timeout)
+        response_text, latency_ms, _, tokens = run_opencode(
+            task, model, timeout=timeout
+        )
         return RunResult(
             mcp_enabled=True,
             model=model,
             response_text=response_text,
             latency_ms=latency_ms,
             success=True,
+            input_tokens=tokens["input"],
+            output_tokens=tokens["output"],
+            total_tokens=tokens["total"],
+            reasoning_tokens=tokens["reasoning"],
+            cache_read_tokens=tokens["cache_read"],
+            cache_write_tokens=tokens["cache_write"],
+            cost_usd=tokens["cost"],
         )
     except RuntimeError as e:
         return RunResult(
@@ -463,7 +505,7 @@ def run_without_mcp(
 
     try:
         extra_env = {**os.environ, "XDG_CONFIG_HOME": tmpdir}
-        response_text, latency_ms, _ = run_opencode(
+        response_text, latency_ms, _, tokens = run_opencode(
             task, model, extra_env=extra_env, timeout=timeout
         )
         return RunResult(
@@ -472,6 +514,13 @@ def run_without_mcp(
             response_text=response_text,
             latency_ms=latency_ms,
             success=True,
+            input_tokens=tokens["input"],
+            output_tokens=tokens["output"],
+            total_tokens=tokens["total"],
+            reasoning_tokens=tokens["reasoning"],
+            cache_read_tokens=tokens["cache_read"],
+            cache_write_tokens=tokens["cache_write"],
+            cost_usd=tokens["cost"],
         )
     except RuntimeError as e:
         return RunResult(
@@ -1122,6 +1171,52 @@ def print_comparison_table(comparisons: list[ExerciseComparison]) -> None:
                 f"{sign}{delta:>{col - 2}.0f}ms ({sign}{pct:.0f}%)"
             )
 
+            # ── TOKEN COMPARISON SECTION ──
+            print("\nTOKEN USAGE")
+            print(thin)
+            tok_header = f"{'Metric':<22} {'WITHOUT MCP':>{col}} {'WITH MCP':>{col}} {'Delta':>{col}}"
+            print(tok_header)
+            print("─" * (22 + col * 3 + 4))
+
+            def _tok_delta(wo_val: int, mcp_val: int) -> str:
+                diff = mcp_val - wo_val
+                sign_t = "+" if diff >= 0 else ""
+                if wo_val > 0:
+                    pct_t = diff / wo_val * 100
+                    return f"{sign_t}{diff:,} ({sign_t}{pct_t:.0f}%)"
+                return f"{sign_t}{diff:,}"
+
+            tok_rows: list[tuple[str, str, str, str]] = [
+                (
+                    "Input tokens",
+                    f"{w.input_tokens:,}",
+                    f"{m.input_tokens:,}",
+                    _tok_delta(w.input_tokens, m.input_tokens),
+                ),
+                (
+                    "Output tokens",
+                    f"{w.output_tokens:,}",
+                    f"{m.output_tokens:,}",
+                    _tok_delta(w.output_tokens, m.output_tokens),
+                ),
+                (
+                    "Total tokens",
+                    f"{w.total_tokens:,}",
+                    f"{m.total_tokens:,}",
+                    _tok_delta(w.total_tokens, m.total_tokens),
+                ),
+                (
+                    "Cost (USD)",
+                    f"${w.cost_usd:.3f}",
+                    f"${m.cost_usd:.3f}",
+                    f"${m.cost_usd - w.cost_usd:+.3f}",
+                ),
+            ]
+            for tok_label, tok_wo, tok_mcp, tok_d in tok_rows:
+                print(
+                    f"{tok_label:<22} {tok_wo:>{col}} {tok_mcp:>{col}} {tok_d:>{col}}"
+                )
+
             # ── CODE QUALITY SECTION ──
             w_has = _has_quality_data(w)
             m_has = _has_quality_data(m)
@@ -1289,6 +1384,46 @@ def print_comparison_table(comparisons: list[ExerciseComparison]) -> None:
         print(sep)
 
 
+def _print_aggregate_token_totals(valid: list[ExerciseComparison]) -> None:
+    """Print TOKEN TOTALS section for a set of valid (both-succeeded) comparisons."""
+    sep = "═" * 72
+    col_t = 18
+
+    wo_input_total = sum(c.without_mcp.input_tokens for c in valid)  # type: ignore[union-attr]
+    mcp_input_total = sum(c.with_mcp.input_tokens for c in valid)  # type: ignore[union-attr]
+    wo_output_total = sum(c.without_mcp.output_tokens for c in valid)  # type: ignore[union-attr]
+    mcp_output_total = sum(c.with_mcp.output_tokens for c in valid)  # type: ignore[union-attr]
+    wo_tokens_total = sum(c.without_mcp.total_tokens for c in valid)  # type: ignore[union-attr]
+    mcp_tokens_total = sum(c.with_mcp.total_tokens for c in valid)  # type: ignore[union-attr]
+    wo_cost_total = sum(c.without_mcp.cost_usd for c in valid)  # type: ignore[union-attr]
+    mcp_cost_total = sum(c.with_mcp.cost_usd for c in valid)  # type: ignore[union-attr]
+
+    n = len(valid)
+    wo_avg_tokens = wo_tokens_total / n if n > 0 else 0.0
+    mcp_avg_tokens = mcp_tokens_total / n if n > 0 else 0.0
+
+    print(f"\n{'TOKEN TOTALS (across all exercises)':}")
+    print("─" * 55)
+    print(f"{'':30} {'WITHOUT MCP':>{col_t}} {'WITH MCP':>{col_t}}")
+    print("─" * (30 + col_t * 2 + 2))
+    print(
+        f"{'Total input tokens':<30} {wo_input_total:>{col_t},} {mcp_input_total:>{col_t},}"
+    )
+    print(
+        f"{'Total output tokens':<30} {wo_output_total:>{col_t},} {mcp_output_total:>{col_t},}"
+    )
+    print(
+        f"{'Total tokens':<30} {wo_tokens_total:>{col_t},} {mcp_tokens_total:>{col_t},}"
+    )
+    print(
+        f"{'Total cost (USD)':<30} ${wo_cost_total:>{col_t - 1}.2f} ${mcp_cost_total:>{col_t - 1}.2f}"
+    )
+    print(
+        f"{'Avg tokens/exercise':<30} {wo_avg_tokens:>{col_t},.0f} {mcp_avg_tokens:>{col_t},.0f}"
+    )
+    print(sep)
+
+
 def print_aggregate_summary(comparisons: list[ExerciseComparison]) -> None:
     """Print aggregate summary across all exercises."""
     valid = [
@@ -1337,6 +1472,8 @@ def print_aggregate_summary(comparisons: list[ExerciseComparison]) -> None:
     ]
 
     if not coding_valid:
+        # No coding exercises — still show token totals
+        _print_aggregate_token_totals(valid)
         return
 
     wo_correctness = [
@@ -1378,6 +1515,8 @@ def print_aggregate_summary(comparisons: list[ExerciseComparison]) -> None:
     print(f"Exercises where WITHOUT MCP won: {wo_wins}/{len(coding_valid)}")
     print(f"Exercises tied:                  {ties}/{len(coding_valid)}")
     print(sep)
+
+    _print_aggregate_token_totals(valid)
 
 
 # ─── Result Serialisation ─────────────────────────────────────────────────────
