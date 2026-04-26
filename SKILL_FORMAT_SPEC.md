@@ -28,10 +28,11 @@ Skills live at:
 ```
 <repo-root>/
   skills/
-    <domain>-<topic>/
-      SKILL.md          ← the only required file
-      references/       ← optional: referenced sub-documents
-      scripts/          ← optional: helper scripts
+    <domain>/           ← one of: agent, cncf, coding, programming, trading
+      <topic>/          ← kebab-case topic name (e.g. git-advanced, risk-stop-loss)
+        SKILL.md        ← the only required file
+        references/     ← optional: referenced sub-documents
+        scripts/        ← optional: helper scripts
 ```
 
 ### How OpenCode Uses Skills
@@ -59,26 +60,106 @@ Model reads skill and applies its constraints
 
 ### Naming Convention
 
-Skill directories follow strict kebab-case: `<domain>-<topic>`.
+Skills live in a two-level directory hierarchy: `skills/<domain>/<topic>/`
 
-| Valid | Invalid |
-|---|---|
-| `trading-risk-stop-loss` | `TradingRiskStopLoss` |
-| `cncf-prometheus` | `cncf_prometheus` |
-| `coding-code-review` | `coding_codeReview` |
-| `agent-confidence-based-selector` | `agentConfidenceSelector` |
+The `name` field in frontmatter must match the **topic directory name** exactly — no domain prefix.
 
-The `name` field in frontmatter **must exactly match** the directory name.
+| Directory | Correct `name` | Wrong `name` |
+|---|---|---|
+| `skills/coding/git-advanced/` | `git-advanced` | `coding-git-advanced` |
+| `skills/trading/risk-stop-loss/` | `risk-stop-loss` | `trading-risk-stop-loss` |
+| `skills/cncf/prometheus/` | `prometheus` | `cncf-prometheus` |
+| `skills/agent/confidence-based-selector/` | `confidence-based-selector` | `agent-confidence-based-selector` |
+
+The skill router constructs the full routable ID as `<domain>-<topic>` automatically from the file path.
 
 **Known domains:**
 
-| Prefix | Category |
+| Domain directory | Category |
 |---|---|
-| `agent-` | AI agent orchestration patterns |
-| `cncf-` | CNCF cloud native projects |
-| `coding-` | General coding patterns and practices |
-| `trading-` | Algorithmic trading implementation |
-| `programming-` | Language/algorithm reference material |
+| `agent/` | AI agent orchestration patterns |
+| `cncf/` | CNCF cloud native projects |
+| `coding/` | General coding patterns and practices |
+| `trading/` | Algorithmic trading implementation |
+| `programming/` | Language/algorithm reference material |
+
+---
+
+## ⚠️ Content Quality Gate — Never Create a Stub
+
+> **This is the most important rule in this document.** An AI agent that creates a stub skill causes real harm: it pollutes the router index, deceives the model that loads it, causes token explosions, and in severe cases causes 900-second timeouts. Creating a stub is always worse than not creating a skill at all.
+
+### What a Stub Is
+
+A stub is a skill file with generic placeholder content instead of actionable domain expertise. Stubs are identifiable by:
+
+1. **The sentinel string** — Any skill containing this exact phrase is a stub:
+   ```
+   Implementing this specific pattern or feature
+   ```
+
+2. **Size check** — Skills under 3,000 bytes (≈600 words) are almost always stubs. Real skills are 5,000–15,000 bytes.
+
+3. **Generic Core Workflow** — If the Core Workflow section says something like:
+   ```
+   1. Identify the specific use case
+   2. Apply the pattern or technique
+   3. Validate and test the implementation
+   4. Iterate based on results
+   ```
+   ...it is a stub. Every real skill has specific, numbered steps with concrete commands, code, or decisions.
+
+4. **No code examples** — Implementation skills (`role: implementation`) with zero code blocks are stubs.
+
+### The Anti-Stub Checklist (REQUIRED before publishing any skill)
+
+- [ ] **Size**: File is ≥ 3,000 bytes of actual content (not counting frontmatter)
+- [ ] **No sentinel**: File does NOT contain `"Implementing this specific pattern or feature"`
+- [ ] **Real code**: At least 2 code blocks with actual commands/code (not placeholder pseudocode)
+- [ ] **Real workflow**: Core Workflow lists domain-specific steps, not generic advice
+- [ ] **Real constraints**: MUST DO / MUST NOT DO contain actionable, domain-specific rules
+- [ ] **Specific triggers**: Triggers are domain-specific phrases, not generic words like `code`, `data`, `risk`
+
+### What Makes a Skill Real
+
+A real skill gives a model **information it cannot derive from general training**:
+
+| Category | Real Content Examples | Stub Content Examples |
+|---|---|---|
+| Code examples | Actual ESLint config, bash commands, Python functions | `# your code here` |
+| Workflow steps | `git rebase -i HEAD~5` → resolve conflicts → `git push --force-with-lease` | "Apply the pattern or technique" |
+| Constraints | "Never rebase shared branches (main, develop, release/*)" | "Follow best practices" |
+| When NOT to use | "Avoid when collaborators have already pulled this branch" | "Use your judgment" |
+| Related skills | Named skills that complement this one | Empty or placeholder names |
+
+### Minimum Content Requirements by Domain
+
+| Domain | Minimum content | Required elements |
+|---|---|---|
+| `coding/*` | 3+ code blocks in the primary language | BAD vs GOOD examples, MUST DO/MUST NOT DO, When NOT to Use |
+| `trading/*` | 2+ Python functions with typed signatures | Risk constraints, APEX file path conventions |
+| `cncf/*` | 1+ complete working YAML manifest | Architecture diagram or table, Common Pitfalls |
+| `agent/*` | ASCII flow diagram | Fallback/error routing, reference to code-philosophy |
+| `programming/*` | 1+ implementation in a specific language | Complexity table, algorithm steps |
+
+### TL;DR for Code Generation (REQUIRED for implementation skills)
+
+Every skill with `role: implementation` MUST include a `## TL;DR for Code Generation` section. This section is specifically for when the model is asked to write code — it gives the 3-7 most important constraints in plain language.
+
+**Format:**
+```markdown
+## TL;DR for Code Generation
+
+- Use guard clauses — return early on invalid input before doing work
+- Return simple types (bool, str, int, list) — avoid returning complex nested dicts
+- Cyclomatic complexity ≤ 10 per function — split anything larger
+- Handle the null/empty case explicitly
+- No subprocess calls in pure logic functions
+- [domain-specific rule 1]
+- [domain-specific rule 2]
+```
+
+This section is deliberately short. If a model reads nothing else, it reads this before writing code.
 
 ---
 
@@ -142,11 +223,11 @@ The `metadata` block enables auto-loading, categorization, and skill discovery. 
 
 ### Complete Frontmatter Examples by Domain
 
-#### `agent-*` Skill
+#### `agent/` Skill
 
 ```yaml
 ---
-name: agent-confidence-based-selector
+name: confidence-based-selector
 description: Selects and executes the most appropriate skill based on confidence scores and relevance metrics, enabling intelligent skill routing for dynamic task resolution.
 license: MIT
 compatibility: opencode
@@ -161,11 +242,11 @@ metadata:
 ---
 ```
 
-#### `cncf-*` Skill
+#### `cncf/` Skill
 
 ```yaml
 ---
-name: cncf-prometheus
+name: prometheus
 description: Prometheus architecture, PromQL patterns, alerting rules, ServiceMonitor configuration, and Kubernetes integration for cloud-native observability.
 license: MIT
 compatibility: opencode
@@ -180,11 +261,11 @@ metadata:
 ---
 ```
 
-#### `coding-*` Skill
+#### `coding/` Skill
 
 ```yaml
 ---
-name: coding-code-review
+name: code-review
 description: Analyzes code diffs and files to identify bugs, security vulnerabilities, code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback.
 license: MIT
 compatibility: opencode
@@ -201,11 +282,11 @@ metadata:
 ---
 ```
 
-#### `trading-*` Skill
+#### `trading/` Skill
 
 ```yaml
 ---
-name: trading-risk-stop-loss
+name: risk-stop-loss
 description: Implements stop-loss strategies (fixed percentage, ATR-based, trailing, support/resistance, volatility-adjusted) to limit position losses in algorithmic trading systems.
 license: MIT
 compatibility: opencode
@@ -220,11 +301,11 @@ metadata:
 ---
 ```
 
-#### `programming-*` Skill
+#### `programming/` Skill
 
 ```yaml
 ---
-name: programming-algorithms
+name: algorithms
 description: Reference guide for common algorithms (sorting, search, graph traversal, dynamic programming) with complexity analysis and Python implementation patterns.
 license: MIT
 compatibility: opencode
@@ -286,6 +367,14 @@ Brief role description — 1–3 sentences. What does loading this skill make th
 - [ ] Step or check 1
 - [ ] Step or check 2
 - [ ] Step or check 3
+
+## TL;DR for Code Generation
+<!-- REQUIRED for role=implementation skills. 3–7 bullets. Domain-specific constraints for writing code.
+     This is the first thing a model reads before writing code. Be specific and actionable. -->
+
+- [Most critical coding constraint for this domain]
+- [Second most critical]
+- [Third most critical]
 
 ---
 
@@ -669,12 +758,13 @@ Use this checklist when writing a new skill or auditing an existing one.
 
 ## 7. Complete Annotated Example
 
-The following is a complete, annotated `SKILL.md` for `trading-risk-stop-loss`. Inline comments (`<!-- -->`) explain each structural choice. In a real skill, remove all comments.
+The following is a complete, annotated `SKILL.md` for `skills/trading/risk-stop-loss/SKILL.md`. Inline comments (`<!-- -->`) explain each structural choice. In a real skill, remove all comments.
 
 ```markdown
 ---
-# ↓ REQUIRED: Must exactly match the directory name
-name: trading-risk-stop-loss
+# ↓ REQUIRED: Must match the topic directory name only — no domain prefix
+# Directory: skills/trading/risk-stop-loss/ → name: risk-stop-loss
+name: risk-stop-loss
 
 # ↓ REQUIRED: Single sentence. Active verb. Domain-specific terms.
 #   Model reads this to decide whether to load the skill.
@@ -727,6 +817,17 @@ Stop losses are not just price levels — they are adaptive risk management tool
 - [ ] Confirm trailing stop distance adapts to volatility (not fixed pct)
 - [ ] Implement emergency stop as an independent layer, not conditional on other stops
 - [ ] Track stop trigger rate for strategy performance analysis
+
+<!-- TL;DR FOR CODE GENERATION: REQUIRED for role=implementation.
+     The model reads this first before writing any code.
+     Be specific — every bullet must constrain actual code output. -->
+## TL;DR for Code Generation
+
+- Return stop price as a float — never None unless invalid input
+- Validate: stop must be below entry for longs, above for shorts
+- ATR multiplier default is 2.0 — accept as parameter, never hardcode
+- Always include an emergency stop layer regardless of stop type chosen
+- Log every stop trigger with: symbol, type, entry price, stop price, realized P&L
 
 ---
 
@@ -898,11 +999,15 @@ When implementing or reviewing stop loss logic, produce:
 | `description: Stop loss` | Too vague — model may skip the skill | Add active verb + domain terms + scope |
 | Missing `triggers` | Skill never auto-loads | Add 3–8 specific keywords |
 | `triggers: risk, code, data` | Fires on everything | Use domain-specific phrases |
-| `name: trading_risk_stop_loss` | Wrong format | Use kebab-case matching directory name |
+| `name: trading-risk-stop-loss` in `skills/trading/risk-stop-loss/` | Wrong — includes domain prefix | Use topic-only: `name: risk-stop-loss` |
 | Missing "When NOT to Use" | Model applies skill inappropriately | Always add exclusion cases |
 | Code without typing | Ambiguous signatures | Add Python type hints and docstrings |
 | Links to `example.com` | Broken references | Use real URLs or omit the link |
 | H1 = directory name | Unreadable | Use human-readable title |
+| Creating a skill under 3,000 bytes | Always a stub — too thin to help | Fill with real code, commands, and constraints before committing |
+| Copying generic workflow steps | Stub sentinel pattern | Write specific numbered steps with actual commands for this domain |
+| No code examples in implementation skill | Model cannot generate good code without examples | Add at least 2 real code blocks |
+| Missing "TL;DR for Code Generation" | Model reads irrelevant prose before writing code | Add 3–7 specific constraints under that heading |
 
 ---
 

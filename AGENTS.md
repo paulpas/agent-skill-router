@@ -95,6 +95,45 @@ Each domain has a prefix and default metadata values:
 
 ---
 
+## 🚫 Zero-Tolerance Stub Policy
+
+**Creating a stub skill is prohibited.** A stub is a skill with generic placeholder content that provides no domain expertise. Stubs corrupt the router index and actively harm AI performance.
+
+### Immediate Rejection Criteria
+
+A skill is rejected if ANY of the following are true:
+
+1. File contains: `Implementing this specific pattern or feature` → **STUB SENTINEL — DELETE**
+2. File is under 3,000 bytes of content → **TOO THIN — EXPAND OR DON'T CREATE**
+3. Core Workflow has generic steps like "Identify use case → Apply pattern → Validate" → **STUB — REWRITE**
+4. Implementation skill has zero code examples → **INCOMPLETE — ADD CODE**
+5. `metadata.triggers` contains only generic words (`code`, `data`, `risk`, `pattern`) → **TOO BROAD — SHARPEN**
+
+### What to Do Instead
+
+| You want to... | Don't... | Do... |
+|---|---|---|
+| Create a skill quickly | Generate a stub template | Research the domain first, write real code examples |
+| Cover many topics | Create many thin skills | Create one real skill covering the core use case well |
+| Add a placeholder | Create a stub and commit | Add a TODO note to yourself — don't commit incomplete skills |
+
+### Checking Your Work Before Committing
+
+```bash
+# Check size (must be ≥ 3000 bytes)
+wc -c skills/<domain>/<topic>/SKILL.md
+
+# Check for stub sentinel
+grep -l "Implementing this specific pattern or feature" skills/<domain>/<topic>/SKILL.md
+
+# Count code blocks (implementation skills need ≥ 2)
+grep -c '```' skills/<domain>/<topic>/SKILL.md
+```
+
+See `SKILL_FORMAT_SPEC.md` for the complete content quality specification.
+
+---
+
 ## Creating a New Skill
 
 ### Step 1: Create the Directory
@@ -1149,12 +1188,25 @@ git diff --exit-code || {
 | Missing "When NOT to Use" section | Model applies skill inappropriately | Always include exclusion cases for complex skills |
 | Code without typing | Ambiguous signatures | Add Python type hints and docstrings |
 | Links to placeholder URLs | Broken references | Use real URLs or omit the link |
+| Generic workflow steps | Creates a stub — router returns useless content | Write actual numbered steps with specific commands/code |
+| Skill under 3,000 bytes | Guaranteed stub — model gets nothing actionable | Expand with real examples before committing |
+| Missing TL;DR for Code Generation | Model wastes tokens reading prose before coding | Add the section with 3–7 specific constraints |
 
 ---
 
 ## Quality Checklist
 
 Use this checklist when writing a new skill or auditing an existing one.
+
+### Anti-Stub (REQUIRED — check before every commit)
+
+- [ ] File is ≥ 3,000 bytes of content (excluding frontmatter)
+- [ ] File does NOT contain: `"Implementing this specific pattern or feature"`
+- [ ] At least 2 real code blocks with actual commands or implementations
+- [ ] Core Workflow has domain-specific steps, not generic "identify → apply → validate"
+- [ ] MUST DO / MUST NOT DO contain actionable, specific rules (not "follow best practices")
+- [ ] `metadata.triggers` has at least one domain-specific phrase (not just `code`, `data`, `pattern`)
+- [ ] If `role = implementation`: `## TL;DR for Code Generation` section is present with 3+ bullets
 
 ### Frontmatter
 
