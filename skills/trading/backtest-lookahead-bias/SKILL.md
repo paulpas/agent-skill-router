@@ -1069,15 +1069,117 @@ if __name__ == "__main__":
 
 ## Common Mistakes to Avoid
 
-1. **Using `rolling(..., center=True)` without adjustment**: Centered rolling windows use future data points to calculate the current value, creating lookahead bias. Always use right-aligned windows with explicit `shift(1)`.
+### ❌ Mistake 1: Using Future Data in Entry Signals (Lookahead Bias)
+```python
+# BAD: Entry signal uses future price data
+def calculate_entry_signal(today_index):
+    """BUG: Uses future data to make TODAY's decision"""
+    
+    # Looking FORWARD 10 bars to decide entry
+    future_prices = prices[today_index:today_index+10]
+    future_high = max(future_prices)
+    
+    # If future price goes up, we say "yes, enter today"
+    # But we can't know the future on the actual day!
+    if future_high > entry_threshold:
+        return ENTRY_SIGNAL
 
-2. **Calculating indicators on the full dataset before filtering**: Computing indicators on the entire dataset and then filtering by date still allows future data to influence past signals. Calculate indicators incrementally or with proper lag.
+# GOOD: Entry signal only uses historical data
+def calculate_entry_signal(today_index):
+    """Use only data up to and including TODAY"""
+    
+    # Only use historical data (up to today_index)
+    historical_prices = prices[0:today_index+1]
+    historical_ma = moving_average(historical_prices, period=20)
+    
+    # Decision based only on data available TODAY
+    if prices[today_index] > historical_ma:
+        return ENTRY_SIGNAL  # Valid signal
+```
 
-3. **Forward-fill (ffill) without date context**: Forward-filling values across dates that should be NaN introduces future data into the signal. Ensure forward-fill only occurs within the same trading day.
+**Why BAD is wrong:** You're peeking into the future. Real trading can't do this.
 
-4. **Using `shift(-1)` instead of `shift(1)`**: Negative shifts look into the future. Signal generation should use `shift(1)` to ensure the signal for time t is based on information available at time t-1.
+**Why GOOD works:** Only uses data available at decision time.
 
-5. **Optimizing parameters on full dataset then testing**: Parameter optimization that uses the entire dataset looks into the future. Use walk-forward optimization where parameters are re-estimated on rolling in-sample periods before out-of-sample testing.
+### ❌ Mistake 2: Peeking at Price Extremes in Stop Loss Testing
+```python
+# BAD: Stop loss evaluation uses price extremes within bar
+def simulate_bar_trade(entry_price, stop_loss, bar):
+    """BUG: Uses intraday extremes you don't know until end of bar"""
+    
+    # This happens DURING the bar, we don't know it yet
+    if bar.low < stop_loss:
+        fill_price = bar.low  # Perfect fill at the worst price?!
+        return EXIT_AT_FILL
+    
+    return NO_EXIT
+
+# GOOD: Realistic stop loss execution assumptions
+def simulate_bar_trade(entry_price, stop_loss, bar):
+    """Simulate realistic stop loss execution"""
+    
+    # If price goes BELOW stop during bar
+    if bar.low < stop_loss:
+        # In reality, you get the first price below your stop,
+        # not the exact stop level (due to slippage)
+        realistic_fill = min(
+            stop_loss * 0.98,  # Assume 2% slippage
+            bar.low  # Or worse, if we dip below
+        )
+        return EXIT_AT_PRICE(realistic_fill)
+    
+    return NO_EXIT
+```
+
+**Why BAD is wrong:** Stop losses don't always fill at exact price. You're too optimistic.
+
+**Why GOOD works:** Assumes realistic slippage and gapping.
+
+### ❌ Mistake 3: Optimization on Same Data You Test On
+```python
+# BAD: Optimize and test on identical dataset
+def backtest_with_optimization(all_data):
+    """BUG: Overfitting - parameters optimized on test set"""
+    
+    best_sharpe = -999
+    best_params = None
+    
+    # Search entire parameter space on ALL data
+    for sma_length in range(10, 200):
+        for rsi_period in range(5, 30):
+            # Backtest on SAME data you're optimizing
+            results = run_backtest(all_data, sma_length, rsi_period)
+            
+            if results.sharpe > best_sharpe:
+                best_sharpe = results.sharpe
+                best_params = (sma_length, rsi_period)
+    
+    return best_params  # These are overfit to historical data!
+
+# GOOD: Walk-forward validation separates training and testing
+def backtest_with_walk_forward_validation(all_data, train_size=252, test_size=63):
+    """Train on one period, test on next - never mixing"""
+    
+    all_results = []
+    
+    for i in range(0, len(all_data) - train_size - test_size, test_size):
+        # Split into training and testing periods
+        train_data = all_data[i:i+train_size]
+        test_data = all_data[i+train_size:i+train_size+test_size]
+        
+        # Step 1: Optimize parameters ONLY on training data
+        best_params = optimize_parameters(train_data)
+        
+        # Step 2: Evaluate ONLY on unseen test data
+        test_results = run_backtest(test_data, **best_params)
+        all_results.append(test_results)
+    
+    return all_results  # No overfitting!
+```
+
+**Why BAD fails:** Your parameters are overfit to historical data. Breaks on new data.
+
+**Why GOOD works:** Always test on data you didn't optimize on.
 
 ## References
 

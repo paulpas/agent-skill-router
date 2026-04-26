@@ -1183,15 +1183,130 @@ Before completing your task, verify:
 
 ## Common Mistakes to Avoid
 
-1. **Post-Entry Risk Definition**: Risk parameters must be defined before entry, not after. Planning for exit should drive entry decisions.
+### ❌ Mistake 1: No Explicit Exit Plan Defined
+```python
+# BAD: Trading plan with no exit specification
+trading_plan = {
+    'symbol': 'AAPL',
+    'entry_rule': 'Price breaks above 20-day high',
+    'position_size': 100,
+    'stop_loss': -0.05,  # Vague! -5% of what?
+    # MISSING: exit_target, time_limit, trailing_stop
+}
 
-2. **Discretionary Overrides**: Entry/exit criteria must be objective. Discretionary "exceptions" erode consistency and create hidden risk.
+# GOOD: Comprehensive exit plan with multiple targets
+@dataclass
+class ExitPlan:
+    """Complete exit strategy with multiple targets"""
+    stop_loss_pct: float  # Hard stop as % of entry
+    profit_targets: List[float]  # Multiple profit levels
+    time_based_exit_bars: Optional[int]  # Exit after N bars if not profitable
+    trailing_stop_atr_multiple: Optional[float]  # Trail by N x ATR
+    
+    def validate(self):
+        """Verify plan is logically sound"""
+        assert self.stop_loss_pct < 0, "Stop loss must be negative %"
+        assert len(self.profit_targets) >= 1, "Need at least one target"
+        assert all(t > 0 for t in self.profit_targets), "Targets must be positive %"
 
-3. **Ignoring Position Sizing**: Fixed position sizes regardless of account size or volatility can lead to over/under-leverage.
+@dataclass
+class TradingPlan:
+    """Complete trading plan with entry AND exit"""
+    entry_rules: List[str]
+    exit_plan: ExitPlan
+    position_sizing: 'PositionSizer'
+    risk_per_trade_pct: float  # Max % of account at risk
+    
+    def validate_consistency(self):
+        """Ensure entry and exit rules are compatible"""
+        self.exit_plan.validate()
+        assert self.risk_per_trade_pct > 0
+        assert self.risk_per_trade_pct <= 0.02, "Risk should be 1-2% per trade"
+```
 
-4. **Incomplete Trade Journaling**: Journaling every trade is essential for continuous improvement. Missing data prevents analysis.
+**Why BAD fails:** Vague exit criteria lead to emotional decisions mid-trade.
 
-5. **Not Rebalancing Risk**: Risk parameters should be reviewed and adjusted based on performance and market conditions.
+**Why GOOD works:** Specific exit targets defined before trade, prevents emotional exits.
+
+### ❌ Mistake 2: Fixed Position Size (Ignores Risk)
+```python
+# BAD: Same position size always
+position_size = 100  # Always 100 shares
+# Problem: After a 50% drawdown, 100 shares still represents 2x the risk!
+
+# GOOD: Risk-adjusted position sizing
+def calculate_position_size(
+    account_equity: float,
+    risk_percent_per_trade: float,  # e.g., 1%
+    entry_price: float,
+    stop_loss_price: float,
+    min_size: int = 1
+) -> int:
+    """Position size scales with current risk tolerance"""
+    
+    # Guard: Invalid inputs
+    if account_equity <= 0:
+        raise ValueError(f"Invalid equity: {account_equity}")
+    if entry_price == stop_loss_price:
+        raise ValueError("Entry must differ from stop loss")
+    
+    # Calculate: How much $ can we risk?
+    max_risk_dollars = account_equity * (risk_percent_per_trade / 100)
+    
+    # Calculate: How much price risk per share?
+    price_risk_per_share = abs(entry_price - stop_loss_price)
+    
+    # Calculate: Shares that equal our risk tolerance
+    shares = int(max_risk_dollars / price_risk_per_share)
+    
+    # Validate: Size respects risk limit
+    actual_risk = shares * price_risk_per_share
+    assert actual_risk <= max_risk_dollars, "Size exceeds risk limit"
+    
+    return max(shares, min_size)
+```
+
+**Why BAD fails:** After losses, your position size is now oversized relative to equity.
+
+**Why GOOD works:** Size automatically shrinks as equity decreases, preventing cascade losses.
+
+### ❌ Mistake 3: No Pre-Trade Validation
+```python
+# BAD: Execute any trade that meets entry signal
+if signal == BUY:
+    execute_market_order(symbol, size)  # No checks!
+
+# GOOD: Validate trade against plan before execution
+class TradeValidator:
+    def validate_trade(self, plan: TradingPlan, signal: Signal) -> tuple[bool, List[str]]:
+        """Verify trade is consistent with plan before execution"""
+        errors = []
+        
+        # Constraint 1: Check we have an exit plan
+        if not plan.exit_plan:
+            errors.append("No exit plan defined")
+        
+        # Constraint 2: Check position size is within limits
+        if not self.is_position_size_valid(plan.position_sizing):
+            errors.append("Position size violates limits")
+        
+        # Constraint 3: Check liquidity is sufficient
+        current_spread = self.get_current_spread(signal.symbol)
+        if current_spread > plan.max_spread:
+            errors.append(f"Spread {current_spread} exceeds max {plan.max_spread}")
+        
+        # Constraint 4: Check account has sufficient capital
+        required_margin = self.calculate_margin_requirement(signal, plan)
+        available_margin = self.get_available_margin()
+        if required_margin > available_margin:
+            errors.append(f"Insufficient margin: need {required_margin}, have {available_margin}")
+        
+        return len(errors) == 0, errors
+```
+
+**Why BAD fails:** Executes trades even when account can't support them (margin calls).
+
+**Why GOOD works:** Validates entry signal against entire trading plan before execution.
 
 ## References
 

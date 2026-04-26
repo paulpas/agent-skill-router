@@ -992,12 +992,119 @@ Before completing your task, verify:
 
 ## Common Mistakes to Avoid
 
-1. **Single-Layer Protection**: Only having account-level kill switches without strategy or market-level protection
-2. **No Cooldown Periods**: Re-enabling trading immediately after a trigger without cooling down
-3. **Threshold Too High**: Setting thresholds so high that the kill switch never triggers until too late
-4. **Not Logging Triggers**: Failing to log when triggers occur makes post-mortem analysis impossible
-5. **Manual Reset Required**: Requiring manual intervention for automated recovery when automatic recovery is safe
-6. **No Hierarchy**: Not distinguishing between critical (immediate halt) and warning (reduce position) switches
+### ❌ Mistake 1: Kill Switches Disabled or Bypassed Without Audit Trail
+```python
+# BAD: Kill switches can be easily disabled
+def __init__(self):
+    self.kill_switches = {
+        'daily_loss': False,  # Disabled - no audit!
+        'margin_call': False,  # Disabled - why?
+        'max_leverage': True,
+    }
+    # No way to track who disabled what or when
+
+# GOOD: Kill switches enforced with immutable audit trail
+@dataclass
+class KillSwitchConfig:
+    enabled: bool
+    threshold: float
+    cooldown_minutes: int
+    _audit_log: List[dict] = field(default_factory=list, init=False, repr=False)
+
+class KillSwitchManager:
+    def __init__(self):
+        self.switches_locked = True  # Immutable by default
+    
+    def disable_switch(self, name: str, reason: str, approver: str):
+        """Only disable with approval and full audit logging"""
+        if self.switches_locked:
+            raise PermissionError(f"Switches locked. Contact {self.admin_email}")
+        
+        self.config[name]._audit_log.append({
+            'timestamp': datetime.now(),
+            'action': 'disabled',
+            'reason': reason,
+            'approver': approver
+        })
+        self.config[name].enabled = False
+```
+
+**Why BAD is dangerous:** A single line comment disables critical risk protection. Days later, you forget it's disabled. Account wipes.
+
+**Why GOOD works:** Requires explicit approval, logs everything, and defaults to **locked**.
+
+### ❌ Mistake 2: Single-Layer Kill Switch (No Defense in Depth)
+```python
+# BAD: Only ONE check before trading
+def execute_trade(self, order):
+    if self.daily_loss < 0.03:  # Single check!
+        self.execute(order)
+    # If this check has a bug, no fallback protection
+
+# GOOD: Multi-layered kill switches (Defense in Depth)
+def should_execute_trade(self, order) -> tuple[bool, List[str]]:
+    """Check multiple independent layers before execution"""
+    kill_reasons = []
+    
+    # Layer 1: Account-level protection
+    ok, msg = self.account_switches.check_daily_loss()
+    if not ok:
+        kill_reasons.append(f"ACCOUNT: {msg}")
+    
+    # Layer 2: Strategy-level protection
+    ok, msg = self.strategy_switches.check_consecutive_losses(order.strategy)
+    if not ok:
+        kill_reasons.append(f"STRATEGY: {msg}")
+    
+    # Layer 3: Market-level protection
+    ok, msg = self.market_switches.check_volatility(order.symbol)
+    if not ok:
+        kill_reasons.append(f"MARKET: {msg}")
+    
+    # Layer 4: Infrastructure-level protection
+    ok, msg = self.infra_switches.check_network_health()
+    if not ok:
+        kill_reasons.append(f"INFRASTRUCTURE: {msg}")
+    
+    return len(kill_reasons) == 0, kill_reasons
+```
+
+**Why BAD fails:** If that one check has a bug, no fallback. You're unprotected.
+
+**Why GOOD works:** 4 independent layers. Even if one fails, 3 others protect you.
+
+### ❌ Mistake 3: Delayed Kill Switch Execution
+```python
+# BAD: Kill switch triggers but execution is delayed
+def check_and_halt():
+    if account_loss > 0.05:
+        print("KILL SWITCH TRIGGERED!")  # Just logs
+        time.sleep(1)  # Why delay?!
+        self.log_event("Kill switch")  # Logging takes time
+        self.send_email()  # Emails are slow
+        close_all_positions()  # NOW we exit - but losses already accumulated!
+
+# GOOD: Immediate, synchronous kill switch execution with async notifications
+def check_and_halt():
+    """Kill switch must execute IMMEDIATELY"""
+    if account_loss > 0.05:
+        # SYNCHRONOUS: Close positions first, before anything else
+        closed_positions = self.close_all_positions_immediately()
+        
+        # THEN: Log and notify (these are async - won't block trading halt)
+        self.thread_pool.submit(lambda: self.audit_log.record({
+            'timestamp': datetime.now(),
+            'type': 'kill_switch_triggered',
+            'positions_closed': len(closed_positions),
+            'loss_percent': account_loss
+        }))
+        
+        self.thread_pool.submit(self.notify_operators_urgent)
+```
+
+**Why BAD fails:** The delay between trigger and execution causes additional losses.
+
+**Why GOOD works:** Closes positions immediately. Only THEN notifies (async).
 
 ## References
 

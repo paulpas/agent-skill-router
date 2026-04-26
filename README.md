@@ -384,7 +384,7 @@ Kubernetes, cloud-native projects, DevOps, and infrastructure patterns.
 
 *[View all 365 CNCF skills →](./skills/cncf/)*
 
-### Coding Skills (317)
+### Software Engineering (SWE) Skills (317)
 
 Software engineering patterns, security, testing, and best practices.
 
@@ -742,8 +742,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-04-25 18:54:55 UTC  
-> **Total skills:** 1778
+> **Last updated:** 2026-04-26 09:03:05 UTC  
+> **Total skills:** 1460
 
 ## Skills by Domain
 
@@ -1347,329 +1347,11 @@ MIT — All skills are freely available and redistributable.
 | [zot](../../skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture,... | cdn, container... |
 
 
-### Coding (319 skills)
+### Coding (1 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
-| [101](../../skills/coding/101/SKILL.md) | "Provides Configure and test common network services (HTTP,... | network 101, testing... |
-| [ab-testing](../../skills/coding/ab-testing/SKILL.md) | Provides Designs and analyzes A/B tests including... | A/B testing, A/B test... |
-| [accessibility](../../skills/coding/accessibility/SKILL.md) | "Provides Audit and fix HTML accessibility issues including... | fixing accessibility, front... |
-| [advanced](../../skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing,... | git rebase, git cherry-pick... |
-| [analysis](../../skills/coding/analysis/SKILL.md) | "Provides Analyze cryptographic code to detect operations... | constant time analysis, security... |
-| [analysis](../../skills/coding/analysis/SKILL.md) | "Provides Execute comprehensive network traffic analysis... | wireshark analysis, security... |
-| [analyst](../../skills/coding/analyst/SKILL.md) | "Provides Expert firmware analyst specializing in embedded... | firmware analyst, security... |
-| [analyst](../../skills/coding/analyst/SKILL.md) | "Provides Expert malware analyst specializing in defensive... | malware analyst, security... |
-| [anomaly-detection](../../skills/coding/anomaly-detection/SKILL.md) | "Detects anomalies and outliers using isolation forests,... | anomaly detection, outlier detection... |
-| [api](../../skills/coding/api/SKILL.md) | "Provides Integracao com WhatsApp Business Cloud API... | whatsapp cloud api, backend... |
-| [app](../../skills/coding/app/SKILL.md) | "Provides Build Progressive Web Apps (PWAs) with offline... | progressive web app, front... |
-| [appdeploy](../../skills/coding/appdeploy/SKILL.md) | "Provides Deploy web apps with backend APIs, database, and... | appdeploy, backend... |
-| [architect](../../skills/coding/architect/SKILL.md) | "Provides Expert backend architect specializing in scalable... | backend architect, backend... |
-| [architect](../../skills/coding/architect/SKILL.md) | "Creates comprehensive technical documentation from... | docs architect, architecture... |
-| [architect](../../skills/coding/architect/SKILL.md) | "Provides Expert in event sourcing, CQRS, and event-driven... | event sourcing architect, architecture... |
-| [architect](../../skills/coding/architect/SKILL.md) | "Provides Master modern GraphQL with federation,... | graphql architect, architecture... |
-| [architecture](../../skills/coding/architecture/SKILL.md) | "Provides Architectural decision-making framework.... | architecture, implementation guide... |
-| [architecture](../../skills/coding/architecture/SKILL.md) | "Provides Plan or restructure website hierarchy,... | site architecture, architecture... |
-| [architecture](../../skills/coding/architecture/SKILL.md) | "Provides Guide for quality focused software architecture.... | software architecture, architecture... |
-| [association-rules](../../skills/coding/association-rules/SKILL.md) | "Provides Discovers association rules and frequent itemsets... | association rules, market basket... |
-| [astro](../../skills/coding/astro/SKILL.md) | "Provides Build content-focused websites with Astro — zero... | astro, frontend... |
-| [attacks](../../skills/coding/attacks/SKILL.md) | "Provides Provide comprehensive techniques for attacking... | active directory attacks, security... |
-| [audit](../../skills/coding/audit/SKILL.md) | "Provides Comprehensive AWS security posture assessment... | aws security audit, security... |
-| [audit](../../skills/coding/audit/SKILL.md) | "Provides Security auditor for Laravel applications.... | laravel security audit, security... |
-| [audit](../../skills/coding/audit/SKILL.md) | "Provides Autonomously deep-scan entire codebase... | production code audit, architecture... |
-| [audit](../../skills/coding/audit/SKILL.md) | "Detects missing zeroization of sensitive data in source... | zeroize audit, security... |
-| [audit-007](../../skills/coding/audit-007/SKILL.md) | "Provides Security audit, hardening, threat modeling... | 007, security... |
-| [auditor](../../skills/coding/auditor/SKILL.md) | "Provides Expert security auditor specializing in... | security auditor, security... |
-| [auditor](../../skills/coding/auditor/SKILL.md) | "Provides Audit rapidly generated or AI-produced code for... | vibe code auditor, code... |
-| [authentication](../../skills/coding/authentication/SKILL.md) | "Provides Identify and exploit authentication and session... | broken authentication, security... |
-| [automation](../../skills/coding/automation/SKILL.md) | Provides Browser automation powers web testing, scraping,... | browser automation, test... |
-| [automation](../../skills/coding/automation/SKILL.md) | "Provides Automating semantic versioning in Git... | semantic versioning, semver... |
-| [automation](../../skills/coding/automation/SKILL.md) | "Provides AI-powered browser automation — navigate sites,... | skyvern browser automation, browser... |
-| [automator](../../skills/coding/automator/SKILL.md) | Provides Master AI-powered test automation with modern... | test automator, test... |
-| [backend](../../skills/coding/backend/SKILL.md) | "Provides Build ASP.NET Core 8+ backend services with EF... | dotnet backend, backend... |
-| [base](../../skills/coding/base/SKILL.md) | "Abstract base strategy pattern with initialization guards,... | abstract, initialization... |
-| [bayesian-inference](../../skills/coding/bayesian-inference/SKILL.md) | "Applies Bayesian methods for prior selection, posterior... | bayesian inference, bayes... |
-| [best-practices](../../skills/coding/best-practices/SKILL.md) | Provides Implement secure API design patterns including... | api security best practices, backend... |
-| [best-practices](../../skills/coding/best-practices/SKILL.md) | Provides IAM policy review, hardening, and least privilege... | aws iam best practices, security... |
-| [best-practices](../../skills/coding/best-practices/SKILL.md) | "Provides Markdown best practices for OpenCode skills -... | markdown best practices, markdown-best-practices... |
-| [bias-variance-tradeoff](../../skills/coding/bias-variance-tradeoff/SKILL.md) | "Analyzes bias-variance tradeoff, overfitting,... | bias-variance, overfitting... |
-| [branching-strategies](../../skills/coding/branching-strategies/SKILL.md) | "Git branching models including Git Flow, GitHub Flow,... | git branching strategies, git repository... |
-| [bug-bounty](../../skills/coding/bug-bounty/SKILL.md) | "Provides Provide comprehensive techniques for testing... | api fuzzing bug bounty, backend... |
-| [bugs](../../skills/coding/bugs/SKILL.md) | "Provides Find bugs, security vulnerabilities, and code... | find bugs, code... |
-| [builder](../../skills/coding/builder/SKILL.md) | "Provides Build a minimal but real security policy for... | security bluebook builder, security... |
-| [bus](../../skills/coding/bus/SKILL.md) | "Async pub/sub event bus with typed events, mixed... | async, event bus... |
-| [c4-architecture](../../skills/coding/c4-architecture/SKILL.md) | "Provides Generate comprehensive C4 architecture... | c4 architecture c4 architecture, architecture... |
-| [categorical-encoding](../../skills/coding/categorical-encoding/SKILL.md) | "Provides Encodes categorical variables using one-hot... | categorical encoding, one-hot encoding... |
-| [causal-inference](../../skills/coding/causal-inference/SKILL.md) | Implements causal models, directed acyclic graphs (DAGs),... | causal inference, causality... |
-| [check](../../skills/coding/check/SKILL.md) | "Provides Score any MCP server, API, or CLI for... | clarvia aeo check, tool... |
-| [checker](../../skills/coding/checker/SKILL.md) | "Provides Automated compliance checking against CIS,... | aws compliance checker, security... |
-| [checklist](../../skills/coding/checklist/SKILL.md) | "Provides Comprehensive checklist for conducting thorough... | code review checklist, code... |
-| [checklist](../../skills/coding/checklist/SKILL.md) | "Provides Provide a comprehensive checklist for planning,... | pentest checklist, security... |
-| [classification-metrics](../../skills/coding/classification-metrics/SKILL.md) | "Evaluates classification models using precision, recall,... | classification metrics, precision... |
-| [clustering](../../skills/coding/clustering/SKILL.md) | "Implements clustering algorithms including K-means,... | clustering, k-means... |
-| [code](../../skills/coding/code/SKILL.md) | "Provides Expert C4 Code-level documentation specialist.... | c4 code, architecture... |
-| [code](../../skills/coding/code/SKILL.md) | "Implements this skill embodies the principles of patterns... | clean code, code... |
-| [code-compliance](../../skills/coding/code-compliance/SKILL.md) | "Provides Verifies code implements exactly what... | spec to code compliance, code... |
-| [coder](../../skills/coding/coder/SKILL.md) | Provides Expert in secure backend coding practices... | backend security coder, backend... |
-| [coder](../../skills/coding/coder/SKILL.md) | "Provides Expert in secure frontend coding practices... | frontend security coder, security... |
-| [commands](../../skills/coding/commands/SKILL.md) | "Provides Provide a comprehensive command reference for... | pentest commands, security... |
-| [community-detection](../../skills/coding/community-detection/SKILL.md) | "Detects communities and clusters in graphs using... | community detection, graph clustering... |
-| [compliance](../../skills/coding/compliance/SKILL.md) | "Provides Master PCI DSS (Payment Card Industry Data... | pci compliance, security... |
-| [compliance-check](../../skills/coding/compliance-check/SKILL.md) | "Provides You are a compliance expert specializing in... | security compliance compliance check, security... |
-| [component](../../skills/coding/component/SKILL.md) | "Provides Expert C4 Component-level documentation... | c4 component, architecture... |
-| [confidence-intervals](../../skills/coding/confidence-intervals/SKILL.md) | "Provides Constructs confidence intervals using bootstrap,... | confidence intervals, bootstrap... |
-| [config](../../skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen... | configuration, management... |
-| [configuration](../../skills/coding/configuration/SKILL.md) | "Provides Configure mutual TLS (mTLS) for zero-trust... | mtls configuration, security... |
-| [configuration](../../skills/coding/configuration/SKILL.md) | Provides Static Application Security Testing (SAST) tool... | sast configuration, security... |
-| [configuration](../../skills/coding/configuration/SKILL.md) | "Provides Master ShellCheck static analysis configuration... | shellcheck configuration, code... |
-| [construction](../../skills/coding/construction/SKILL.md) | "Provides Build comprehensive attack trees to visualize... | attack tree construction, security... |
-| [container](../../skills/coding/container/SKILL.md) | "Implements expert c4 container-level documentation... | c4 container, architecture... |
-| [context](../../skills/coding/context/SKILL.md) | "Provides Expert C4 Context-level documentation specialist.... | c4 context, architecture... |
-| [convex](../../skills/coding/convex/SKILL.md) | 'Provides Convex reactive backend expert: schema design,... | convex, framework... |
-| [correlation-analysis](../../skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate... | correlation analysis, covariance... |
-| [cpp-pro](../../skills/coding/cpp-pro/SKILL.md) | "Provides Expert guide for Unreal Engine 5.x C++... | unreal engine cpp pro, code... |
-| [craft](../../skills/coding/craft/SKILL.md) | "Provides use when performing code review, writing or... | uncle bob craft, code... |
-| [creator](../../skills/coding/creator/SKILL.md) | "Creates custom Semgrep rules for detecting security... | semgrep rule creator, security... |
-| [cross-validation](../../skills/coding/cross-validation/SKILL.md) | "Implements k-fold cross-validation, stratified... | cross-validation, k-fold... |
-| [data-collection](../../skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web... | data collection, web scraping... |
-| [data-ingestion](../../skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming... | ETL pipeline, data ingestion... |
-| [data-privacy](../../skills/coding/data-privacy/SKILL.md) | "Applies privacy-preserving techniques including... | data privacy, anonymization... |
-| [data-profiling](../../skills/coding/data-profiling/SKILL.md) | Provides Extracts data profiles, schemas, metadata, and... | data profiling, metadata extraction... |
-| [data-quality](../../skills/coding/data-quality/SKILL.md) | "Implements data validation, cleaning, outlier detection,... | data validation, data cleaning... |
-| [data-versioning](../../skills/coding/data-versioning/SKILL.md) | "Implements data versioning, lineage tracking, provenance... | data versioning, data lineage... |
-| [data-visualization](../../skills/coding/data-visualization/SKILL.md) | "Creates effective visualizations including plots, charts,... | data visualization, plotting... |
-| [database](../../skills/coding/database/SKILL.md) | "Provides Direct REST API access to PubMed. Advanced... | pubmed database, backend... |
-| [database](../../skills/coding/database/SKILL.md) | Provides Direct REST API access to UniProt. Protein... | uniprot database, backend... |
-| [debugger](../../skills/coding/debugger/SKILL.md) | "Debugging specialist for errors, test failures, and... | debugger, development... |
-| [debugging](../../skills/coding/debugging/SKILL.md) | "Provides use when encountering any bug, test failure, or... | systematic debugging, development... |
 | [demo](../../skills/coding/demo/SKILL.md) | "Demonstrates the skill automation system with pre-commit... | test automation, automation testing... |
-| [dependency-management](../../skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating... | CVE, dependency management... |
-| [deps-audit](../../skills/coding/deps-audit/SKILL.md) | "Provides You are a dependency security expert specializing... | dependency management deps audit, security... |
-| [design](../../skills/coding/design/SKILL.md) | "Provides Design DDD strategic artifacts including... | ddd strategic design, architecture... |
-| [design](../../skills/coding/design/SKILL.md) | "Provides Plan and route Domain-Driven Design work from... | domain driven design, architecture... |
-| [design](../../skills/coding/design/SKILL.md) | "Provides Design and implement event stores for... | event store design, architecture... |
-| [design](../../skills/coding/design/SKILL.md) | "Provides You are a frontend designer-engineer, not a... | frontend design, front... |
-| [design](../../skills/coding/design/SKILL.md) | "Provides use when building apps that collect user data.... | privacy by design, security... |
-| [developer](../../skills/coding/developer/SKILL.md) | "Provides Expert in building Chrome Extensions using... | chrome extension developer, front... |
-| [developer](../../skills/coding/developer/SKILL.md) | "Provides Build React components, implement responsive... | frontend developer, front... |
-| [development-component-scaffold](../../skills/coding/development-component-scaffold/SKILL.md) | "Provides You are a React component architecture expert... | frontend mobile development component scaffold, app... |
-| [dimensionality-reduction](../../skills/coding/dimensionality-reduction/SKILL.md) | "Provides Reduces data dimensionality using PCA, t-SNE,... | dimensionality reduction, PCA... |
-| [distribution-fitting](../../skills/coding/distribution-fitting/SKILL.md) | "Provides Fits statistical distributions to data using... | distribution fitting, goodness-of-fit... |
-| [documenter](../../skills/coding/documenter/SKILL.md) | "Provides Master API documentation with OpenAPI 3.1,... | api documenter, backend... |
-| [driven-architecture](../../skills/coding/driven-architecture/SKILL.md) | "'Event-driven architecture for real-time trading systems:... | event driven architecture, event-driven... |
-| [driven-development](../../skills/coding/driven-development/SKILL.md) | "Test-Driven Development (TDD) and Behavior-Driven... | behavior-driven, patterns... |
-| [eda](../../skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary... | exploratory data analysis, EDA... |
-| [enforcement](../../skills/coding/enforcement/SKILL.md) | "Provides use when a task requires exhaustive unabridged... | full output enforcement, frontend... |
-| [engineer](../../skills/coding/engineer/SKILL.md) | "Provides Expert reverse engineer specializing in binary... | reverse engineer, security... |
-| [engineering](../../skills/coding/engineering/SKILL.md) | "Provides Comprehensive techniques for capturing,... | protocol reverse engineering, security... |
-| [ensemble-methods](../../skills/coding/ensemble-methods/SKILL.md) | "Provides Combines multiple models using bagging, boosting,... | ensemble methods, bagging... |
-| [escalation](../../skills/coding/escalation/SKILL.md) | "Provides Execute systematic privilege escalation... | linux privilege escalation, security... |
-| [escalation](../../skills/coding/escalation/SKILL.md) | "Provides Provide systematic methodologies for discovering... | windows privilege escalation, security... |
-| [experience](../../skills/coding/experience/SKILL.md) | "Provides Expert in building immersive scroll-driven... | scroll experience, front... |
-| [experimental-design](../../skills/coding/experimental-design/SKILL.md) | "Provides Designs experiments using design of experiments... | experimental design, DOE... |
-| [expert](../../skills/coding/expert/SKILL.md) | "Provides Expert in Cloudflare Workers and the Edge... | cloudflare workers expert, framework... |
-| [expert](../../skills/coding/expert/SKILL.md) | "Provides Advanced .faf (Foundational AI-context Format)... | faf expert, coding... |
-| [expert](../../skills/coding/expert/SKILL.md) | "Provides Senior Laravel Engineer role for... | laravel expert, framework... |
-| [expert](../../skills/coding/expert/SKILL.md) | "Provides You are an expert in Nest.js with deep knowledge... | nestjs expert, framework... |
-| [expert](../../skills/coding/expert/SKILL.md) | "Provides Expert in TanStack Query (React Query) —... | tanstack query expert, framework... |
-| [expert](../../skills/coding/expert/SKILL.md) | "Provides Expert in threat modeling methodologies, security... | threat modeling expert, security... |
-| [expert](../../skills/coding/expert/SKILL.md) | "Provides TypeScript and JavaScript expert with deep... | typescript expert, framework... |
-| [expert](../../skills/coding/expert/SKILL.md) | "Provides Expert in Zod — TypeScript-first schema... | zod validation expert, framework... |
-| [explainability](../../skills/coding/explainability/SKILL.md) | "Implements explainability and interpretability techniques... | explainability, interpretability... |
-| [extraction](../../skills/coding/extraction/SKILL.md) | "Provides Derive security requirements from threat models... | security requirement extraction, security... |
-| [feature-development](../../skills/coding/feature-development/SKILL.md) | "Provides Orchestrate end-to-end backend feature... | backend development feature development, backend... |
-| [feature-engineering](../../skills/coding/feature-engineering/SKILL.md) | "Creates and transforms features including polynomial... | feature engineering, feature creation... |
-| [feature-interaction](../../skills/coding/feature-interaction/SKILL.md) | "Provides Discovers and engineers feature interactions... | feature interaction, interaction terms... |
-| [feature-scaling-normalization](../../skills/coding/feature-scaling-normalization/SKILL.md) | "Provides Scales and normalizes features using... | feature scaling, normalization... |
-| [feature-selection](../../skills/coding/feature-selection/SKILL.md) | "Selects relevant features using univariate selection,... | feature selection, feature importance... |
-| [fixing](../../skills/coding/fixing/SKILL.md) | "Provides Systematically identify and fix all failing tests... | test fixing, development... |
-| [forensics](../../skills/coding/forensics/SKILL.md) | "Provides Comprehensive techniques for acquiring,... | memory forensics, security... |
-| [framework](../../skills/coding/framework/SKILL.md) | "Provides ⚠️ AUTHORIZED USE ONLY > This skill is for... | metasploit framework, security... |
-| [frontend](../../skills/coding/frontend/SKILL.md) | "Provides use when building high-agency frontend interfaces... | design taste frontend, frontend... |
-| [full-review](../../skills/coding/full-review/SKILL.md) | "Implements use when working with comprehensive review full... | comprehensive review full review, code... |
-| [fullstack](../../skills/coding/fullstack/SKILL.md) | "Provides Build end-to-end type-safe APIs with tRPC —... | trpc fullstack, framework... |
-| [fuzzing](../../skills/coding/fuzzing/SKILL.md) | "Provides Expert guidance for ffuf web fuzzing during... | ffuf web fuzzing, security... |
-| [gateway](../../skills/coding/gateway/SKILL.md) | "Provides REST API gateway for ComfyUI servers. Workflow... | comfyui gateway, backend... |
-| [generator](../../skills/coding/generator/SKILL.md) | "Provides Generate comprehensive, developer-friendly API... | api documentation generator, backend... |
-| [generator](../../skills/coding/generator/SKILL.md) | "Generates high-converting Next.js/React landing pages with... | landing page generator, front... |
-| [graphql](../../skills/coding/graphql/SKILL.md) | Provides GraphQL gives clients exactly the data they need -... | graphql, backend... |
-| [guidelines](../../skills/coding/guidelines/SKILL.md) | "Provides You are a senior backend engineer operating... | backend dev guidelines, backend... |
-| [guidelines](../../skills/coding/guidelines/SKILL.md) | "Provides You are a senior frontend engineer operating... | frontend dev guidelines, front... |
-| [handling](../../skills/coding/handling/SKILL.md) | "Provides Practical implementation guide for GDPR-compliant... | gdpr data handling, security... |
-| [hono](../../skills/coding/hono/SKILL.md) | "Provides Build ultra-fast web APIs and full-stack apps... | hono, backend... |
-| [html-jsp-custom-best-pratices](../../skills/coding/html-jsp-custom-best-pratices/SKILL.md) | "Provides this skill should be used when the user asks for... | sankhya dashboard html jsp custom best pratices, code... |
-| [hunter](../../skills/coding/hunter/SKILL.md) | "Provides Systematically finds and fixes bugs using proven... | bug hunter, development... |
-| [hyperparameter-tuning](../../skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random... | hyperparameter tuning, grid search... |
-| [hypothesis-testing](../../skills/coding/hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square... | hypothesis testing, t-test... |
-| [implementation](../../skills/coding/implementation/SKILL.md) | "Provides Implement Command Query Responsibility... | cqrs implementation, architecture... |
-| [injection](../../skills/coding/injection/SKILL.md) | "Provides Execute comprehensive client-side injection... | xss html injection, security... |
-| [instrumental-variables](../../skills/coding/instrumental-variables/SKILL.md) | "Provides Uses instrumental variables (IV), two-stage least... | instrumental variables, IV... |
-| [integration-patterns](../../skills/coding/integration-patterns/SKILL.md) | "Provides Production-ready patterns for integrating... | frontend api integration patterns, frontend... |
-| [intervention-analysis](../../skills/coding/intervention-analysis/SKILL.md) | "Provides Estimates treatment effects, conditional average... | treatment effects, intervention analysis... |
-| [java](../../skills/coding/java/SKILL.md) | Provides Scaffold, write, debug, and enhance... | playwright java, test... |
-| [kaizen](../../skills/coding/kaizen/SKILL.md) | "Provides Guide for continuous improvement, error proofing,... | kaizen, code... |
-| [kernel-density](../../skills/coding/kernel-density/SKILL.md) | "Implements kernel density estimation, non-parametric... | kernel density estimation, KDE... |
-| [leiloeiros](../../skills/coding/leiloeiros/SKILL.md) | "Provides Coleta e consulta dados de leiloeiros oficiais de... | junta leiloeiros, backend... |
-| [linear-regression](../../skills/coding/linear-regression/SKILL.md) | "Implements linear regression including OLS, ridge... | linear regression, OLS... |
-| [logistic-regression](../../skills/coding/logistic-regression/SKILL.md) | "Implements logistic regression for binary and multinomial... | logistic regression, classification... |
-| [management](../../skills/coding/management/SKILL.md) | Provides Secure secrets management practices for CI/CD... | secrets management, security... |
-| [manager](../../skills/coding/manager/SKILL.md) | "WebSocket connection manager with state machine... | connection, machine... |
-| [mapping](../../skills/coding/mapping/SKILL.md) | "Provides Map relationships between bounded contexts and... | ddd context mapping, architecture... |
-| [mapping](../../skills/coding/mapping/SKILL.md) | "Provides Map identified threats to appropriate security... | threat mitigation mapping, security... |
-| [maximum-likelihood](../../skills/coding/maximum-likelihood/SKILL.md) | Implements maximum likelihood estimation, likelihood... | maximum likelihood, MLE... |
-| [metadata](../../skills/coding/metadata/SKILL.md) | Provides Audit and fix HTML metadata including page titles,... | fixing metadata, front... |
-| [methodology](../../skills/coding/methodology/SKILL.md) | "Provides Master the complete penetration testing lifecycle... | ethical hacking methodology, security... |
-| [methods](../../skills/coding/methods/SKILL.md) | "Provides Provide comprehensive techniques for escalating... | privilege escalation methods, security... |
-| [metrics-and-kpis](../../skills/coding/metrics-and-kpis/SKILL.md) | "Defines, selects, and monitors key performance indicators... | metrics, KPI... |
-| [missing-data](../../skills/coding/missing-data/SKILL.md) | "Handles missing data using imputation strategies, deletion... | missing data, imputation... |
-| [model-fairness](../../skills/coding/model-fairness/SKILL.md) | "Evaluates and mitigates fairness issues including bias... | model fairness, fairness metrics... |
-| [model-interpretation](../../skills/coding/model-interpretation/SKILL.md) | "Provides Interprets models using SHAP values, LIME,... | model interpretation, SHAP... |
-| [model-robustness](../../skills/coding/model-robustness/SKILL.md) | Improves model robustness including adversarial robustness,... | model robustness, adversarial robustness... |
-| [model-selection](../../skills/coding/model-selection/SKILL.md) | "Provides Compares and selects models using AIC, BIC,... | model selection, AIC... |
-| [models](../../skills/coding/models/SKILL.md) | "'Pydantic frozen data models for trading: enums, annotated... | enums, frozen... |
-| [monte-carlo](../../skills/coding/monte-carlo/SKILL.md) | "Implements Monte Carlo sampling, simulation methods, and... | monte carlo, sampling... |
-| [neural-networks](../../skills/coding/neural-networks/SKILL.md) | "Implements deep neural networks, backpropagation,... | neural networks, deep learning... |
-| [normalization](../../skills/coding/normalization/SKILL.md) | 'Provides Exchange data normalization layer: typed... | data normalization, data-normalization... |
-| [observability-api-mock](../../skills/coding/observability-api-mock/SKILL.md) | Provides You are an API mocking expert specializing in... | api testing observability api mock, backend... |
-| [observational-studies](../../skills/coding/observational-studies/SKILL.md) | "Analyzes observational data using matching methods,... | observational studies, propensity score... |
-| [omega](../../skills/coding/omega/SKILL.md) | "Provides CISO operacional enterprise para gestao total de... | cred omega, security... |
-| [online-experiments](../../skills/coding/online-experiments/SKILL.md) | "Implements multi-armed bandits, contextual bandits,... | multi-armed bandits, bandits... |
-| [optimization](../../skills/coding/optimization/SKILL.md) | Provides Optimize website and web application performance... | web performance optimization, front... |
-| [orchestration](../../skills/coding/orchestration/SKILL.md) | "Provides Patterns for managing distributed transactions... | saga orchestration, architecture... |
-| [orchestrator](../../skills/coding/orchestrator/SKILL.md) | "Provides Master TDD orchestrator specializing in... | tdd orchestrator, testing... |
-| [parser](../../skills/coding/parser/SKILL.md) | "Provides Searches and explores Burp Suite project files... | burpsuite project parser, security... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides API design principles and decision-making. REST... | api patterns, backend... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Software architecture patterns including MVC,... | architectural patterns, system design... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Provides Master proven backend architecture patterns... | architecture patterns, architecture... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Build secure, scalable authentication and... | auth implementation patterns, security... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Master Bash Automated Testing System (Bats) for... | bats testing patterns, testing... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Comprehensive patterns and techniques for... | binary analysis patterns, security... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Apply DDD tactical patterns in code using... | ddd tactical patterns, architecture... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Master C#/.NET patterns for building... | dotnet backend patterns, backend... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Provides Build reliable, fast, and maintainable end-to-end... | e2e testing patterns, test... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "FastAPI application structure with typed error hierarchy,... | application, cloud infrastructure... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Provides Master microservices architecture patterns... | microservices patterns, architecture... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Comprehensive guidance for building scalable,... | nodejs backend patterns, backend... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Build read models and projections from event... | projection patterns, architecture... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Modern React patterns and principles. Hooks,... | react patterns, frontend... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Apply STRIDE methodology to systematically... | stride analysis patterns, security... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Tailwind CSS v4 principles. CSS-first... | tailwind patterns, frontend... |
-| [patterns](../../skills/coding/patterns/SKILL.md) | "Provides Jest testing patterns, factory functions, mocking... | testing patterns, testing... |
-| [performance](../../skills/coding/performance/SKILL.md) | Provides Audit and fix animation performance issues... | fixing motion performance, front... |
-| [playwright](../../skills/coding/playwright/SKILL.md) | Provides Expert capability for robust, stealthy, and... | go playwright, test... |
-| [portfolio](../../skills/coding/portfolio/SKILL.md) | "Provides Expert in building portfolios that actually land... | interactive portfolio, front... |
-| [pr-enhance](../../skills/coding/pr-enhance/SKILL.md) | "Provides Generate structured PR descriptions from diffs,... | comprehensive review pr enhance, code... |
-| [practices](../../skills/coding/practices/SKILL.md) | Provides Next.js App Router principles. Server Components,... | nextjs best practices, frontend... |
-| [practices](../../skills/coding/practices/SKILL.md) | "Provides Node.js development principles and... | nodejs best practices, architecture... |
-| [principles](../../skills/coding/principles/SKILL.md) | "Provides Master REST and GraphQL API design principles to... | api design principles, backend... |
-| [privacy-ml](../../skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including... | privacy machine learning, differential privacy... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Write efficient C code with proper memory... | c pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Write idiomatic C++ code with modern features,... | cpp pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Write modern C# code with advanced features like... | csharp pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Master Django 5.x with async views, DRF, Celery,... | django pro, framework... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Write idiomatic Elixir code with OTP patterns,... | elixir pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Build high-performance async APIs with FastAPI,... | fastapi pro, framework... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Master Go 1.21+ with modern patterns, advanced... | golang pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Expert Haskell engineer specializing in advanced... | haskell pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Master Java 21+ with modern features like virtual... | java pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Master modern JavaScript with ES6+, async... | javascript pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Master Julia 1.10+ with modern features,... | julia pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Write idiomatic PHP code with generators, iterators, SPL... | php pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Master Python 3.12+ with modern features, async... | python pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Write idiomatic Ruby code with metaprogramming,... | ruby pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Master Rust 1.75+ with modern async patterns,... | rust pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | Provides Master enterprise-grade Scala development with... | scala pro, code... |
-| [pro](../../skills/coding/pro/SKILL.md) | "Provides Master TypeScript with advanced types, generics,... | typescript pro, code... |
-| [pro-max](../../skills/coding/pro-max/SKILL.md) | "Provides Comprehensive design guide for web and mobile... | ui ux pro max, front... |
-| [projects](../../skills/coding/projects/SKILL.md) | "Provides use when upgrading existing websites or apps by... | redesign existing projects, frontend... |
-| [py](../../skills/coding/py/SKILL.md) | "Provides Create FastAPI routers following established... | fastapi router py, backend... |
-| [quality-policies](../../skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean... | code quality, clean code... |
-| [randomized-experiments](../../skills/coding/randomized-experiments/SKILL.md) | "Provides Designs and analyzes randomized controlled trials... | randomized experiments, RCT... |
-| [reconnaissance](../../skills/coding/reconnaissance/SKILL.md) | "Provides Provide systematic methodologies for leveraging... | shodan reconnaissance, security... |
-| [records](../../skills/coding/records/SKILL.md) | "Provides Comprehensive patterns for creating, maintaining,... | architecture decision records, architecture... |
-| [refactor-clean](../../skills/coding/refactor-clean/SKILL.md) | Provides You are a code refactoring expert specializing in... | code refactoring refactor clean, code... |
-| [regression-evaluation](../../skills/coding/regression-evaluation/SKILL.md) | "Evaluates regression models using MSE, RMSE, MAE, MAPE,... | regression evaluation, MSE... |
-| [release-pipeline](../../skills/coding/release-pipeline/SKILL.md) | Implements comprehensive secure release pipeline with CVE... | secure release, CVE scanning... |
-| [repo-commander](../../skills/coding/repo-commander/SKILL.md) | "Provides 7-stage super workflow for GitHub repo audit,... | openclaw github repo commander, development... |
-| [reproducible-research](../../skills/coding/reproducible-research/SKILL.md) | "Implements reproducible research practices including code... | reproducible research, reproducibility... |
-| [review](../../skills/coding/review/SKILL.md) | "Provides Master software architect specializing in modern... | architect review, architecture... |
-| [review](../../skills/coding/review/SKILL.md) | "Analyzes code diffs and files to identify bugs, security... | analyzes, code review... |
-| [review](../../skills/coding/review/SKILL.md) | "Provides Professional code review with auto CHANGELOG... | codex review, code... |
-| [review](../../skills/coding/review/SKILL.md) | "Implements security-focused code review for prs, commits,... | differential review, security... |
-| [review](../../skills/coding/review/SKILL.md) | "Implements django-access-review patterns for software... | django access review, backend... |
-| [review](../../skills/coding/review/SKILL.md) | "Implements django performance code review. use when asked... | django perf review, backend... |
-| [review](../../skills/coding/review/SKILL.md) | "Implements verify fix commits address audit findings... | fix review, code... |
-| [review](../../skills/coding/review/SKILL.md) | "Provides Find exploitable vulnerabilities in GitHub... | gha security review, security... |
-| [review](../../skills/coding/review/SKILL.md) | "Security-focused code review identifying vulnerabilities... | identifying, security review... |
-| [review](../../skills/coding/review/SKILL.md) | "Provides Human review workflow for AI-generated GitHub... | vibers code review, code... |
-| [rotation](../../skills/coding/rotation/SKILL.md) | "Provides Automate AWS secrets rotation for RDS, API keys,... | aws secrets rotation, security... |
-| [router-patterns](../../skills/coding/router-patterns/SKILL.md) | "Provides Comprehensive patterns for Next.js 14+ App Router... | nextjs app router patterns, framework... |
-| [scanner](../../skills/coding/scanner/SKILL.md) | "Provides Advanced vulnerability analysis principles. OWASP... | vulnerability scanner, security... |
-| [scoring](../../skills/coding/scoring/SKILL.md) | "Multi-factor conviction scoring engine combining... | combining, conviction scoring... |
-| [sdk](../../skills/coding/sdk/SKILL.md) | "Provides Build applications that programmatically interact... | copilot sdk, backend... |
-| [security](../../skills/coding/security/SKILL.md) | "Provides Master smart contract security best practices,... | solidity security, security... |
-| [security-dependencies](../../skills/coding/security-dependencies/SKILL.md) | "Provides You are a security expert specializing in... | security scanning security dependencies, security... |
-| [security-hardening](../../skills/coding/security-hardening/SKILL.md) | "Provides Coordinate multi-layer security scanning and... | security scanning security hardening, security... |
-| [security-sast](../../skills/coding/security-sast/SKILL.md) | "Static Application Security Testing (SAST) for code... | security scanning security sast, security... |
-| [shadcn](../../skills/coding/shadcn/SKILL.md) | "Manages shadcn/ui components and projects, providing... | shadcn, framework... |
-| [shop](../../skills/coding/shop/SKILL.md) | "'OWASP Juice Shop guide: Web application security testing... | application, guide... |
-| [skill](../../skills/coding/skill/SKILL.md) | "Implements web fuzzing with ffuf patterns for software... | ffuf claude skill, security... |
-| [skill](../../skills/coding/skill/SKILL.md) | 'Provides IMPORTANT - Path Resolution: This skill can be... | playwright skill, test... |
-| [skill](../../skills/coding/skill/SKILL.md) | "Implements pairwise test generation patterns for software... | pypict skill, testing... |
-| [skill](../../skills/coding/skill/SKILL.md) | "Provides Secure environment variable management ensuring... | varlock claude skill, security... |
-| [skills](../../skills/coding/skills/SKILL.md) | "Provides Expert security auditor for AI Skills and... | audit skills, security... |
-| [skills](../../skills/coding/skills/SKILL.md) | "Provides Production-grade test automation skills for 46... | lambdatest agent skills, testing... |
-| [specialist](../../skills/coding/specialist/SKILL.md) | "Provides BullMQ expert for Redis-backed job queues,... | bullmq specialist, framework... |
-| [statistical-power](../../skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination,... | statistical power, power analysis... |
-| [strategies](../../skills/coding/strategies/SKILL.md) | "Provides Transform debugging from frustrating guesswork... | debugging strategies, development... |
-| [support-vector-machines](../../skills/coding/support-vector-machines/SKILL.md) | "Implements support vector machines (SVM) with kernel... | support vector machines, SVM... |
-| [sveltekit](../../skills/coding/sveltekit/SKILL.md) | "Provides Build full-stack web applications with SvelteKit... | sveltekit, frontend... |
-| [synthetic-control](../../skills/coding/synthetic-control/SKILL.md) | "Implements synthetic control methods,... | synthetic control, difference-in-differences... |
-| [tactics](../../skills/coding/tactics/SKILL.md) | "Provides Red team tactics principles based on MITRE... | red team tactics, security... |
-| [taste](../../skills/coding/taste/SKILL.md) | "Provides use when generating elite gsap-heavy frontend... | gpt taste, frontend... |
-| [taste](../../skills/coding/taste/SKILL.md) | "Provides use when generating google stitch design.md... | stitch design taste, frontend... |
-| [tdd-cycle](../../skills/coding/tdd-cycle/SKILL.md) | "Implements use when working with tdd workflows tdd cycle... | tdd workflows tdd cycle, testing... |
-| [tdd-green](../../skills/coding/tdd-green/SKILL.md) | "Provides Implement the minimal code needed to make failing... | tdd workflows tdd green, testing... |
-| [tdd-red](../../skills/coding/tdd-red/SKILL.md) | "Provides Generate failing tests for the TDD red phase to... | tdd workflows tdd red, testing... |
-| [tdd-refactor](../../skills/coding/tdd-refactor/SKILL.md) | "Implements use when working with tdd workflows tdd... | tdd workflows tdd refactor, testing... |
-| [tech-debt](../../skills/coding/tech-debt/SKILL.md) | "Provides You are a technical debt expert specializing in... | codebase cleanup tech debt, code... |
-| [techniques](../../skills/coding/techniques/SKILL.md) | 'Provides AUTHORIZED USE ONLY: This skill contains dual-use... | anti reversing techniques, security... |
-| [telegram](../../skills/coding/telegram/SKILL.md) | "Provides Integracao completa com Telegram Bot API. Setup... | telegram, backend... |
-| [templates](../../skills/coding/templates/SKILL.md) | "Provides Create production-ready FastAPI projects with... | fastapi templates, app... |
-| [templates](../../skills/coding/templates/SKILL.md) | "Provides Project scaffolding templates for new... | templates, app... |
-| [test-generate](../../skills/coding/test-generate/SKILL.md) | "Provides Generate comprehensive, maintainable unit tests... | unit testing test generate, testing... |
-| [testing](../../skills/coding/testing/SKILL.md) | "Provides AI-powered E2E web testing — eyes and hands for... | awt e2e testing, test... |
-| [testing](../../skills/coding/testing/SKILL.md) | Provides Execute comprehensive web application security... | burp suite testing, security... |
-| [testing](../../skills/coding/testing/SKILL.md) | Provides Identify and exploit HTML injection... | html injection testing, security... |
-| [testing](../../skills/coding/testing/SKILL.md) | Provides Provide systematic methodologies for identifying... | idor testing, security... |
-| [testing](../../skills/coding/testing/SKILL.md) | "Provides Comprehensive k6 load testing skill for API,... | k6 load testing, testing... |
-| [testing](../../skills/coding/testing/SKILL.md) | "Provides Practical guide to testing web applications with... | screen reader testing, testing... |
-| [testing](../../skills/coding/testing/SKILL.md) | Provides Conduct comprehensive security assessments of SMTP... | smtp penetration testing, security... |
-| [testing](../../skills/coding/testing/SKILL.md) | Provides Execute comprehensive SQL injection vulnerability... | sql injection testing, security... |
-| [testing](../../skills/coding/testing/SKILL.md) | Provides Conduct comprehensive SSH security assessments... | ssh penetration testing, security... |
-| [testing](../../skills/coding/testing/SKILL.md) | "Provides Comprehensive testing approaches for Temporal... | temporal python testing, testing... |
-| [testing](../../skills/coding/testing/SKILL.md) | Provides To test local web applications, write native... | webapp testing, test... |
-| [testing](../../skills/coding/testing/SKILL.md) | Provides Assess WordPress installations for common... | wordpress penetration testing, security... |
-| [time-series-forecasting](../../skills/coding/time-series-forecasting/SKILL.md) | "Implements ARIMA, exponential smoothing, state-space... | time series forecasting, ARIMA... |
-| [tools](../../skills/coding/tools/SKILL.md) | "Provides Implement proven methodologies and tool workflows... | red team tools, security... |
-| [tools](../../skills/coding/tools/SKILL.md) | "Provides Master essential security scanning tools for... | scanning tools, security... |
-| [topic-modeling](../../skills/coding/topic-modeling/SKILL.md) | "Implements topic modeling using Latent Dirichlet... | topic modeling, LDA... |
-| [traversal](../../skills/coding/traversal/SKILL.md) | "Provides Identify and exploit file path traversal... | file path traversal, security... |
-| [tree-methods](../../skills/coding/tree-methods/SKILL.md) | "Implements decision trees, random forests, gradient... | decision trees, random forest... |
-| [ts](../../skills/coding/ts/SKILL.md) | "Provides Create Zustand stores following established... | zustand store ts, frontend... |
-| [types](../../skills/coding/types/SKILL.md) | "Provides Comprehensive guidance for mastering TypeScript's... | typescript advanced types, code... |
-| [typescript-scaffold](../../skills/coding/typescript-scaffold/SKILL.md) | "Provides You are a TypeScript project architecture expert... | javascript typescript typescript scaffold, app... |
-| [ui](../../skills/coding/ui/SKILL.md) | Provides use when creating raw industrial or tactical... | industrial brutalist ui, frontend... |
-| [ui](../../skills/coding/ui/SKILL.md) | "Provides use when creating clean editorial interfaces with... | minimalist ui, frontend... |
-| [uploads](../../skills/coding/uploads/SKILL.md) | "Provides Expert at handling file uploads and cloud... | file uploads, security... |
-| [validation](../../skills/coding/validation/SKILL.md) | Validates pipeline stages and returns config status strings... | validation, code validation... |
-| [variant-creator](../../skills/coding/variant-creator/SKILL.md) | "Creates language variants of existing Semgrep rules. Use... | semgrep rule variant creator, security... |
-| [varlock](../../skills/coding/varlock/SKILL.md) | "Provides Secure-by-default environment variable management... | varlock, security... |
-| [verification](../../skills/coding/verification/SKILL.md) | Provides Automated end-to-end UI testing and verification... | android ui verification, test... |
-| [visual-design](../../skills/coding/visual-design/SKILL.md) | "Provides use when designing expensive agency-grade... | high end visual design, frontend... |
-| [vulnerabilities](../../skills/coding/vulnerabilities/SKILL.md) | "Provides Provide a comprehensive, structured reference for... | top web vulnerabilities, security... |
-| [widget](../../skills/coding/widget/SKILL.md) | "Provides Build a real-time support chat system with a... | chat widget, front... |
-| [workflow](../../skills/coding/workflow/SKILL.md) | "Provides Test-Driven Development workflow principles.... | tdd workflow, testing... |
-| [wrapper](../../skills/coding/wrapper/SKILL.md) | "Provides Wrapper oficial de M2MCent (Node.js) para... | x402 express wrapper, backend... |
 
 
 ### Programming (789 skills)
@@ -2558,14 +2240,12 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (1421 skills)
+### Implementation (Build Features) (1217 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [4-migration](../../skills/4-migration/SKILL.md) | Programming | "Provides Specialized guide for migrating Godot 3.x... |
 | [a11y](../../skills/a11y/SKILL.md) | Programming | "Provides Audit a StyleSeed-based component or page for... |
-| [ab-testing](../../skills/ab-testing/SKILL.md) | Coding | Provides Designs and analyzes A/B tests including... |
-| [accessibility](../../skills/accessibility/SKILL.md) | Coding | "Provides Audit and fix HTML accessibility issues including... |
 | [accessibility-audit](../../skills/accessibility-audit/SKILL.md) | Programming | "Provides You are an accessibility expert specializing in... |
 | [action](../../skills/action/SKILL.md) | Programming | "CRITICAL: Use for Makepad event and action handling.... |
 | [action](../../skills/action/SKILL.md) | Programming | "CRITICAL: Use for Robius event and action patterns.... |
@@ -2637,12 +2317,10 @@ MIT — All skills are freely available and redistributable.
 | [animation](../../skills/animation/SKILL.md) | Programming | Implements Makepad animation system patterns with... |
 | [animation](../../skills/animation/SKILL.md) | Programming | "Provides Three.js animation - keyframe animation, skeletal... |
 | [animator](../../skills/animator/SKILL.md) | Programming | "Provides AI-powered animation tool for creating motion in... |
-| [anomaly-detection](../../skills/anomaly-detection/SKILL.md) | Coding | "Detects anomalies and outliers using isolation forests,... |
 | [anomaly-detection](../../skills/anomaly-detection/SKILL.md) | Trading | "Provides Detect anomalous market behavior, outliers, and... |
 | [anomalydetector-java](../../skills/anomalydetector-java/SKILL.md) | Cncf | "Provides Build anomaly detection applications with Azure... |
 | [anthropic](../../skills/anthropic/SKILL.md) | Programming | "Provides To access Anthropic's official brand identity and... |
 | [anthropic](../../skills/anthropic/SKILL.md) | Programming | 'Provides to write internal communications, use this skill... |
-| [api](../../skills/api/SKILL.md) | Coding | "Provides Integracao com WhatsApp Business Cloud API... |
 | [api](../../skills/api/SKILL.md) | Programming | 'Provides Build apps with the Claude API or Anthropic SDK.... |
 | [api](../../skills/api/SKILL.md) | Programming | "Provides Expert on Odoo's external JSON-RPC and XML-RPC... |
 | [api-development](../../skills/api-development/SKILL.md) | Cncf | "Provides this skill guides you through creating custom... |
@@ -2650,10 +2328,8 @@ MIT — All skills are freely available and redistributable.
 | [apicenter-py](../../skills/apicenter-py/SKILL.md) | Cncf | Provides Azure API Center Management SDK for Python. Use... |
 | [apimanagement-dotnet](../../skills/apimanagement-dotnet/SKILL.md) | Cncf | "Configures azure resource manager sdk for api management... |
 | [apimanagement-py](../../skills/apimanagement-py/SKILL.md) | Cncf | "Provides Azure API Management SDK for Python. Use for... |
-| [app](../../skills/app/SKILL.md) | Coding | "Provides Build Progressive Web Apps (PWAs) with offline... |
 | [app](../../skills/app/SKILL.md) | Programming | "Provides Expert in building Telegram Mini Apps (TWA) - web... |
 | [app-packaging](../../skills/app-packaging/SKILL.md) | Programming | "Provides Scaffold, build, sign, and package SwiftPM macOS... |
-| [appdeploy](../../skills/appdeploy/SKILL.md) | Coding | "Provides Deploy web apps with backend APIs, database, and... |
 | [applicationinsights-dotnet](../../skills/applicationinsights-dotnet/SKILL.md) | Cncf | "Provides Azure Application Insights SDK for .NET.... |
 | [apps](../../skills/apps/SKILL.md) | Cncf | "Provides Expert patterns for Shopify app development... |
 | [apps-multi-platform](../../skills/apps-multi-platform/SKILL.md) | Programming | "Provides Build and deploy the same feature consistently... |
@@ -2663,10 +2339,6 @@ MIT — All skills are freely available and redistributable.
 | [architect](../../skills/architect/SKILL.md) | Cncf | Provides Expert database architect specializing in data... |
 | [architect](../../skills/architect/SKILL.md) | Cncf | "Provides Expert hybrid cloud architect specializing in... |
 | [architect](../../skills/architect/SKILL.md) | Cncf | Provides Expert Kubernetes architect specializing in... |
-| [architect](../../skills/architect/SKILL.md) | Coding | "Provides Expert backend architect specializing in scalable... |
-| [architect](../../skills/architect/SKILL.md) | Coding | "Creates comprehensive technical documentation from... |
-| [architect](../../skills/architect/SKILL.md) | Coding | "Provides Expert in event sourcing, CQRS, and event-driven... |
-| [architect](../../skills/architect/SKILL.md) | Coding | "Provides Master modern GraphQL with federation,... |
 | [architect](../../skills/architect/SKILL.md) | Programming | "Provides Specialized skill for building production-ready... |
 | [architect](../../skills/architect/SKILL.md) | Programming | "Provides Expert .NET backend architect specializing in C#,... |
 | [architect](../../skills/architect/SKILL.md) | Programming | "Provides Expert in monorepo architecture, build systems,... |
@@ -2677,22 +2349,16 @@ MIT — All skills are freely available and redistributable.
 | [architect](../../skills/architect/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... |
 | [architect](../../skills/architect/SKILL.md) | Programming | "Provides You are a documentation architect that produces... |
 | [architecture](../../skills/architecture/SKILL.md) | Cncf | "Provides Decision framework and patterns for architecting... |
-| [architecture](../../skills/architecture/SKILL.md) | Coding | "Provides Architectural decision-making framework.... |
-| [architecture](../../skills/architecture/SKILL.md) | Coding | "Provides Plan or restructure website hierarchy,... |
-| [architecture](../../skills/architecture/SKILL.md) | Coding | "Provides Guide for quality focused software architecture.... |
 | [architecture](../../skills/architecture/SKILL.md) | Programming | Provides Master the LangChain framework for building... |
 | [architecture](../../skills/architecture/SKILL.md) | Programming | "Provides Production-ready patterns for React Native... |
 | [arizeaiobservabilityeval-dotnet](../../skills/arizeaiobservabilityeval-dotnet/SKILL.md) | Cncf | "Provides Azure Resource Manager SDK for Arize AI... |
 | [art](../../skills/art/SKILL.md) | Programming | "Provides Algorithmic philosophies are computational... |
 | [art](../../skills/art/SKILL.md) | Programming | "Provides Game art principles. Visual style selection,... |
-| [association-rules](../../skills/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets... |
-| [astro](../../skills/astro/SKILL.md) | Coding | "Provides Build content-focused websites with Astro — zero... |
 | [astropy](../../skills/astropy/SKILL.md) | Programming | Provides Astropy is the core Python package for astronomy,... |
 | [async](../../skills/async/SKILL.md) | Programming | "Provides Practical async patterns using TaskEither - clean... |
 | [audio](../../skills/audio/SKILL.md) | Agent | "Implements text-to-speech and speech-to-text using fal.ai... |
 | [audio](../../skills/audio/SKILL.md) | Programming | "Provides Game audio principles. Sound design, music... |
 | [audit](../../skills/audit/SKILL.md) | Agent | Provides Comprehensive security auditing workflow covering... |
-| [audit](../../skills/audit/SKILL.md) | Coding | "Provides Autonomously deep-scan entire codebase... |
 | [audit](../../skills/audit/SKILL.md) | Programming | Provides Analyze a repository to generate recommended... |
 | [audit](../../skills/audit/SKILL.md) | Programming | "Provides Audit a project and recommend the highest-value... |
 | [audit](../../skills/audit/SKILL.md) | Programming | "Provides Diagnose and audit SEO issues affecting... |
@@ -2734,8 +2400,6 @@ MIT — All skills are freely available and redistributable.
 | [automation](../../skills/automation/SKILL.md) | Cncf | 'Provides Automate Square tasks via Rube MCP (Composio):... |
 | [automation](../../skills/automation/SKILL.md) | Cncf | 'Provides Automate Telegram tasks via Rube MCP (Composio):... |
 | [automation](../../skills/automation/SKILL.md) | Cncf | 'Provides Automate WhatsApp Business tasks via Rube MCP... |
-| [automation](../../skills/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git... |
-| [automation](../../skills/automation/SKILL.md) | Coding | "Provides AI-powered browser automation — navigate sites,... |
 | [automation](../../skills/automation/SKILL.md) | Programming | 'Provides Automate ActiveCampaign tasks via Rube MCP... |
 | [automation](../../skills/automation/SKILL.md) | Programming | 'Provides Automate Amplitude tasks via Rube MCP (Composio):... |
 | [automation](../../skills/automation/SKILL.md) | Programming | 'Provides Automate Asana tasks via Rube MCP (Composio):... |
@@ -2788,20 +2452,14 @@ MIT — All skills are freely available and redistributable.
 | [avaliacao](../../skills/avaliacao/SKILL.md) | Programming | "Provides Avaliacao pericial de imoveis em leilao. Valor de... |
 | [axiom](../../skills/axiom/SKILL.md) | Programming | "Provides First-principles assumption auditor. Classifies... |
 | [azure-ai-py](../../skills/azure-ai-py/SKILL.md) | Programming | Provides Build persistent agents on Azure AI Foundry using... |
-| [backend](../../skills/backend/SKILL.md) | Coding | "Provides Build ASP.NET Core 8+ backend services with EF... |
 | [backend](../../skills/backend/SKILL.md) | Programming | "Provides Functional programming patterns for Node.js/Deno... |
 | [backend-patterns](../../skills/backend-patterns/SKILL.md) | Agent | Provides Backend architecture patterns, API design,... |
 | [backfill-strategy](../../skills/backfill-strategy/SKILL.md) | Trading | "Provides Strategic data backfill for populating historical... |
 | [base](../../skills/base/SKILL.md) | Cncf | Provides Database management, forms, reports, and data... |
-| [base](../../skills/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards,... |
 | [bases](../../skills/bases/SKILL.md) | Programming | Provides Create and edit Obsidian Bases (.base files) with... |
 | [basics](../../skills/basics/SKILL.md) | Programming | "CRITICAL: Use for Makepad getting started and app... |
 | [batch-java](../../skills/batch-java/SKILL.md) | Cncf | "Provides Azure Batch SDK for Java. Run large-scale... |
-| [bayesian-inference](../../skills/bayesian-inference/SKILL.md) | Coding | "Applies Bayesian methods for prior selection, posterior... |
 | [be-done-analyst](../../skills/be-done-analyst/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... |
-| [best-practices](../../skills/best-practices/SKILL.md) | Coding | Provides Implement secure API design patterns including... |
-| [best-practices](../../skills/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills -... |
-| [bias-variance-tradeoff](../../skills/bias-variance-tradeoff/SKILL.md) | Coding | "Analyzes bias-variance tradeoff, overfitting,... |
 | [biopython](../../skills/biopython/SKILL.md) | Programming | "Provides Biopython is a comprehensive set of freely... |
 | [blob-java](../../skills/blob-java/SKILL.md) | Cncf | "Provides Build blob storage applications using the Azure... |
 | [blob-py](../../skills/blob-py/SKILL.md) | Cncf | "Provides Azure Blob Storage SDK for Python. Use for... |
@@ -2813,10 +2471,8 @@ MIT — All skills are freely available and redistributable.
 | [botservice-py](../../skills/botservice-py/SKILL.md) | Cncf | "Provides Azure Bot Service Management SDK for Python. Use... |
 | [brainstorming](../../skills/brainstorming/SKILL.md) | Programming | "Provides use before creative or constructive work... |
 | [brainstorming](../../skills/brainstorming/SKILL.md) | Programming | Provides Simulate a structured peer-review process using... |
-| [branching-strategies](../../skills/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow,... |
 | [bridge](../../skills/bridge/SKILL.md) | Programming | 'Provides Sync Odoo with WooCommerce: products, inventory,... |
 | [buffett](../../skills/buffett/SKILL.md) | Programming | "Provides Agente que simula Warren Buffett — o maior... |
-| [bug-bounty](../../skills/bug-bounty/SKILL.md) | Coding | "Provides Provide comprehensive techniques for testing... |
 | [build](../../skills/build/SKILL.md) | Programming | "Provides Build, maintain, and extend the EarLLM One... |
 | [builder](../../skills/builder/SKILL.md) | Agent | Provides Create MCP (Model Context Protocol) servers that... |
 | [builder](../../skills/builder/SKILL.md) | Cncf | "Provides Build Slack apps using the Bolt framework across... |
@@ -2832,10 +2488,8 @@ MIT — All skills are freely available and redistributable.
 | [builder](../../skills/builder/SKILL.md) | Programming | 'Provides To build powerful frontend claude.ai artifacts,... |
 | [building](../../skills/building/SKILL.md) | Agent | "Enables ultra-granular, line-by-line code analysis to... |
 | [bulletmind](../../skills/bulletmind/SKILL.md) | Programming | "Provides Convert input into clean, structured,... |
-| [bus](../../skills/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed... |
 | [business](../../skills/business/SKILL.md) | Programming | "Provides Expert in building and selling Notion templates... |
 | [buttercup](../../skills/buttercup/SKILL.md) | Programming | "Provides All pods run in namespace crs. Use when pods in... |
-| [c4-architecture](../../skills/c4-architecture/SKILL.md) | Coding | "Provides Generate comprehensive C4 architecture... |
 | [caching](../../skills/caching/SKILL.md) | Programming | Provides Caching strategies for LLM prompts including... |
 | [caching](../../skills/caching/SKILL.md) | Programming | "Provides Configure Turborepo for efficient monorepo builds... |
 | [calc](../../skills/calc/SKILL.md) | Programming | "Provides Spreadsheet creation, format conversion... |
@@ -2846,20 +2500,16 @@ MIT — All skills are freely available and redistributable.
 | [candle-data](../../skills/candle-data/SKILL.md) | Trading | "OHLCV candle data processing, timeframe management, and... |
 | [canvas](../../skills/canvas/SKILL.md) | Programming | "Provides Create and edit JSON Canvas files (.canvas) with... |
 | [card](../../skills/card/SKILL.md) | Programming | "Provides 生成紧急情况下快速访 问的医疗信息摘要卡片。当用户 需要旅行、就诊准备、紧急情况 或询问... |
-| [categorical-encoding](../../skills/categorical-encoding/SKILL.md) | Coding | "Provides Encodes categorical variables using one-hot... |
-| [causal-inference](../../skills/causal-inference/SKILL.md) | Coding | Implements causal models, directed acyclic graphs (DAGs),... |
 | [ccxt-patterns](../../skills/ccxt-patterns/SKILL.md) | Trading | "Effective patterns for using CCXT library for exchange... |
 | [cdp](../../skills/cdp/SKILL.md) | Programming | Provides Expert patterns for Segment Customer Data Platform... |
 | [certificates-rust](../../skills/certificates-rust/SKILL.md) | Cncf | "Provides Azure Key Vault Certificates SDK for Rust. Use... |
 | [changelog](../../skills/changelog/SKILL.md) | Programming | "Provides Generate user-facing App Store release notes from... |
 | [changelog](../../skills/changelog/SKILL.md) | Programming | "Provides Generate structured changelogs from git history.... |
 | [chat-java](../../skills/chat-java/SKILL.md) | Cncf | "Provides Build real-time chat applications with thread... |
-| [check](../../skills/check/SKILL.md) | Coding | "Provides Score any MCP server, API, or CLI for... |
 | [check](../../skills/check/SKILL.md) | Programming | "Provides Validate Claude Code skills against the... |
 | [chinese](../../skills/chinese/SKILL.md) | Programming | "Provides Detect and rewrite AI-like Chinese text with a... |
 | [chrome-troubleshooting](../../skills/chrome-troubleshooting/SKILL.md) | Programming | Provides Diagnose and fix Claude in Chrome MCP extension... |
 | [cirq](../../skills/cirq/SKILL.md) | Programming | "Provides Cirq is Google Quantum AI's open-source framework... |
-| [classification-metrics](../../skills/classification-metrics/SKILL.md) | Coding | "Evaluates classification models using precision, recall,... |
 | [cleanup](../../skills/cleanup/SKILL.md) | Cncf | "Configures automated cleanup of unused aws resources to... |
 | [cli](../../skills/cli/SKILL.md) | Programming | Provides Design spec with 98 rules for building CLI tools... |
 | [cli](../../skills/cli/SKILL.md) | Programming | "Provides GDB debugging assistant for AI agents - analyze... |
@@ -2870,15 +2520,12 @@ MIT — All skills are freely available and redistributable.
 | [cli](../../skills/cli/SKILL.md) | Programming | "Provides Semantic file discovery via `vexor`. Use whenever... |
 | [clickhouse-io](../../skills/clickhouse-io/SKILL.md) | Agent | Provides ClickHouse database patterns, query optimization,... |
 | [client](../../skills/client/SKILL.md) | Programming | "Provides Build and distribute Expo development clients... |
-| [clustering](../../skills/clustering/SKILL.md) | Coding | "Implements clustering algorithms including K-means,... |
 | [coach](../../skills/coach/SKILL.md) | Programming | "Provides Full job search coaching system — JD decoding,... |
 | [coauthoring](../../skills/coauthoring/SKILL.md) | Programming | "Provides this skill provides a structured workflow for... |
-| [code](../../skills/code/SKILL.md) | Coding | "Provides Expert C4 Code-level documentation specialist.... |
 | [code](../../skills/code/SKILL.md) | Programming | "Provides Generate React code with Rayden UI components... |
 | [code](../../skills/code/SKILL.md) | Programming | "Provides Review a diff for clarity and safe... |
 | [code-explain](../../skills/code-explain/SKILL.md) | Programming | "Provides You are a code education expert specializing in... |
 | [code-migrate](../../skills/code-migrate/SKILL.md) | Programming | "Provides You are a code migration expert specializing in... |
-| [coder](../../skills/coder/SKILL.md) | Coding | Provides Expert in secure backend coding practices... |
 | [coder](../../skills/coder/SKILL.md) | Programming | Provides Expert in secure mobile coding practices... |
 | [coding-standards](../../skills/coding-standards/SKILL.md) | Agent | "Provides Universal coding standards, best practices, and... |
 | [commission-model](../../skills/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation... |
@@ -2887,18 +2534,14 @@ MIT — All skills are freely available and redistributable.
 | [communications](../../skills/communications/SKILL.md) | Cncf | 'Provides Build communication features with Twilio: SMS... |
 | [community](../../skills/community/SKILL.md) | Programming | "Provides To access Anthropic's official brand identity and... |
 | [community](../../skills/community/SKILL.md) | Programming | 'Provides to write internal communications, use this skill... |
-| [community-detection](../../skills/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using... |
 | [community-evals](../../skills/community-evals/SKILL.md) | Programming | Provides Run local evaluations for Hugging Face Hub models... |
 | [compliance](../../skills/compliance/SKILL.md) | Programming | "Provides Codified expertise for customs documentation,... |
 | [compliance](../../skills/compliance/SKILL.md) | Programming | 'Provides Country-specific Odoo localization: tax... |
 | [compliance-auditor](../../skills/compliance-auditor/SKILL.md) | Programming | "Provides Expert AI auditor for Medical Device (SaMD)... |
-| [component](../../skills/component/SKILL.md) | Coding | "Provides Expert C4 Component-level documentation... |
 | [component](../../skills/component/SKILL.md) | Programming | "Provides Generate a new UI component that follows... |
 | [components](../../skills/components/SKILL.md) | Programming | "Provides Core component library and design system... |
 | [compose-expert](../../skills/compose-expert/SKILL.md) | Programming | "Provides Expert guidance for building modern Android UIs... |
 | [compression](../../skills/compression/SKILL.md) | Programming | Implements when agent sessions generate millions of tokens... |
-| [confidence-intervals](../../skills/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap,... |
-| [config](../../skills/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen... |
 | [config-validate](../../skills/config-validate/SKILL.md) | Cncf | Provides You are a configuration management expert... |
 | [configuration](../../skills/configuration/SKILL.md) | Agent | Provides Operation-aware node configuration guidance. Use... |
 | [configuration](../../skills/configuration/SKILL.md) | Programming | Provides Complete guide to Prometheus setup, metric... |
@@ -2906,7 +2549,6 @@ MIT — All skills are freely available and redistributable.
 | [configurator](../../skills/configurator/SKILL.md) | Programming | 'Provides Expert guide for Odoo eCommerce and Website:... |
 | [connector](../../skills/connector/SKILL.md) | Programming | 'Provides Guide for implementing EDI (Electronic Data... |
 | [consultant](../../skills/consultant/SKILL.md) | Agent | "Provides Arquitecto de Soluciones Principal y Consultor... |
-| [container](../../skills/container/SKILL.md) | Coding | "Implements expert c4 container-level documentation... |
 | [content](../../skills/content/SKILL.md) | Programming | "Provides Apple Human Interface Guidelines for content... |
 | [content](../../skills/content/SKILL.md) | Programming | "Provides Content quality and E-E-A-T analysis with AI... |
 | [content](../../skills/content/SKILL.md) | Programming | "Provides You are an expert social media strategist with... |
@@ -2917,7 +2559,6 @@ MIT — All skills are freely available and redistributable.
 | [contentsafety-ts](../../skills/contentsafety-ts/SKILL.md) | Cncf | "Provides Analyze text and images for harmful content with... |
 | [contentunderstanding-py](../../skills/contentunderstanding-py/SKILL.md) | Cncf | "Provides Azure AI Content Understanding SDK for Python.... |
 | [context](../../skills/context/SKILL.md) | Agent | "Provides use for file-based context management, dynamic... |
-| [context](../../skills/context/SKILL.md) | Coding | "Provides Expert C4 Context-level documentation specialist.... |
 | [context](../../skills/context/SKILL.md) | Programming | "Provides Create or update a shared Apple design context... |
 | [context](../../skills/context/SKILL.md) | Programming | "Provides Create or update a reusable product marketing... |
 | [context-restore](../../skills/context-restore/SKILL.md) | Programming | Provides use when working with code refactoring context... |
@@ -2926,13 +2567,10 @@ MIT — All skills are freely available and redistributable.
 | [continuous-learning](../../skills/continuous-learning/SKILL.md) | Agent | "Implements development skill from everything-claude-code... |
 | [controls](../../skills/controls/SKILL.md) | Programming | "Provides Check for .claude/apple-design-context.md before... |
 | [conversion](../../skills/conversion/SKILL.md) | Programming | "Provides this skill should be used when the user asks to... |
-| [convex](../../skills/convex/SKILL.md) | Coding | 'Provides Convex reactive backend expert: schema design,... |
 | [copy](../../skills/copy/SKILL.md) | Programming | "Provides Generate UX microcopy in StyleSeed's... |
 | [copywriting](../../skills/copywriting/SKILL.md) | Programming | "Provides Write rigorous, conversion-focused marketing copy... |
 | [core](../../skills/core/SKILL.md) | Agent | 'Provides Auri: assistente de voz inteligente (Alexa +... |
-| [correlation-analysis](../../skills/correlation-analysis/SKILL.md) | Coding | "Analyzes correlation, covariance, and multivariate... |
 | [correlation-risk](../../skills/correlation-risk/SKILL.md) | Trading | "Implements correlation breakdown and portfolio... |
-| [cpp-pro](../../skills/cpp-pro/SKILL.md) | Coding | "Provides Expert guide for Unreal Engine 5.x C++... |
 | [creative](../../skills/creative/SKILL.md) | Programming | "Provides Create, iterate, and scale paid ad creative for... |
 | [creator](../../skills/creator/SKILL.md) | Agent | "Provides To create new CLI skills following Anthropic's... |
 | [creator](../../skills/creator/SKILL.md) | Programming | "Provides Professional-grade brand voice analysis, SEO... |
@@ -2947,37 +2585,24 @@ MIT — All skills are freely available and redistributable.
 | [cro](../../skills/cro/SKILL.md) | Programming | "Provides You are an expert in in-app paywalls and upgrade... |
 | [cro](../../skills/cro/SKILL.md) | Programming | "Provides Create and optimize popups, modals, overlays,... |
 | [cro](../../skills/cro/SKILL.md) | Programming | "Provides You are an expert in optimizing signup and... |
-| [cross-validation](../../skills/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified... |
 | [cycle-analysis](../../skills/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price... |
 | [daily](../../skills/daily/SKILL.md) | Programming | "Provides documentation and capabilities reference for... |
 | [dark-ts](../../skills/dark-ts/SKILL.md) | Programming | Provides a modern dark-themed react ui system using... |
 | [darwin](../../skills/darwin/SKILL.md) | Programming | "Provides Darwinian idea evolution engine — toss rough... |
 | [dashboards](../../skills/dashboards/SKILL.md) | Cncf | Provides Create and manage production-ready Grafana... |
-| [data-collection](../../skills/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web... |
 | [data-driven-feature](../../skills/data-driven-feature/SKILL.md) | Programming | "Provides Build features guided by data insights, A/B... |
-| [data-ingestion](../../skills/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming... |
 | [data-pipeline](../../skills/data-pipeline/SKILL.md) | Programming | Provides You are a data pipeline architecture expert... |
-| [data-privacy](../../skills/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including... |
-| [data-profiling](../../skills/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and... |
-| [data-quality](../../skills/data-quality/SKILL.md) | Coding | "Implements data validation, cleaning, outlier detection,... |
-| [data-versioning](../../skills/data-versioning/SKILL.md) | Coding | "Implements data versioning, lineage tracking, provenance... |
-| [data-visualization](../../skills/data-visualization/SKILL.md) | Coding | "Creates effective visualizations including plots, charts,... |
 | [database](../../skills/database/SKILL.md) | Agent | Provides Database development and operations workflow... |
-| [database](../../skills/database/SKILL.md) | Coding | "Provides Direct REST API access to PubMed. Advanced... |
-| [database](../../skills/database/SKILL.md) | Coding | Provides Direct REST API access to UniProt. Protein... |
 | [dataforseo](../../skills/dataforseo/SKILL.md) | Programming | Provides use dataforseo for live serps, keyword metrics,... |
 | [dataset-viewer](../../skills/dataset-viewer/SKILL.md) | Programming | Provides Query Hugging Face datasets through the Dataset... |
 | [datasets](../../skills/datasets/SKILL.md) | Programming | Provides Create and manage datasets on Hugging Face Hub.... |
 | [db-py](../../skills/db-py/SKILL.md) | Cncf | "Provides Build production-grade Azure Cosmos DB NoSQL... |
 | [debate](../../skills/debate/SKILL.md) | Programming | "Provides Sub-skill de debates e posições de Yann LeCun.... |
 | [debug-trace](../../skills/debug-trace/SKILL.md) | Cncf | Provides You are a debugging expert specializing in setting... |
-| [debugger](../../skills/debugger/SKILL.md) | Coding | "Debugging specialist for errors, test failures, and... |
-| [debugging](../../skills/debugging/SKILL.md) | Coding | "Provides use when encountering any bug, test failure, or... |
 | [debugging](../../skills/debugging/SKILL.md) | Programming | "Provides use when debugging any bug. enforces a 5-phase... |
 | [defuddle](../../skills/defuddle/SKILL.md) | Programming | "Provides Extract clean markdown content from web pages... |
 | [degradation](../../skills/degradation/SKILL.md) | Programming | Provides Language models exhibit predictable degradation... |
 | [demo](../../skills/demo/SKILL.md) | Coding | "Demonstrates the skill automation system with pre-commit... |
-| [dependency-management](../../skills/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating... |
 | [deploy](../../skills/deploy/SKILL.md) | Cncf | "Provides DevOps e deploy de aplicacoes — Docker, CI/CD com... |
 | [deployment](../../skills/deployment/SKILL.md) | Agent | Provides Kubernetes deployment workflow for container... |
 | [deployment](../../skills/deployment/SKILL.md) | Cncf | Provides Deploy containerized frontend + backend... |
@@ -2989,10 +2614,6 @@ MIT — All skills are freely available and redistributable.
 | [deps-upgrade](../../skills/deps-upgrade/SKILL.md) | Programming | "Provides You are a dependency management expert... |
 | [design](../../skills/design/SKILL.md) | Cncf | Provides Database design principles and decision-making.... |
 | [design](../../skills/design/SKILL.md) | Cncf | Provides Architecture patterns for multi-stage CI/CD... |
-| [design](../../skills/design/SKILL.md) | Coding | "Provides Design DDD strategic artifacts including... |
-| [design](../../skills/design/SKILL.md) | Coding | "Provides Plan and route Domain-Driven Design work from... |
-| [design](../../skills/design/SKILL.md) | Coding | "Provides Design and implement event stores for... |
-| [design](../../skills/design/SKILL.md) | Coding | "Provides You are a frontend designer-engineer, not a... |
 | [design](../../skills/design/SKILL.md) | Programming | "Provides These are instructions for creating design... |
 | [design](../../skills/design/SKILL.md) | Programming | "Provides Game design principles. GDD structure, balancing,... |
 | [design](../../skills/design/SKILL.md) | Programming | "Provides Comprehensive patterns for designing effective... |
@@ -3011,8 +2632,6 @@ MIT — All skills are freely available and redistributable.
 | [dev-langchain-agent](../../skills/dev-langchain-agent/SKILL.md) | Programming | Provides You are an expert LangChain agent developer... |
 | [dev-prompt-optimize](../../skills/dev-prompt-optimize/SKILL.md) | Programming | Provides You are an expert prompt engineer specializing in... |
 | [developer](../../skills/developer/SKILL.md) | Agent | "Provides Comprehensive guide for creating and managing... |
-| [developer](../../skills/developer/SKILL.md) | Coding | "Provides Expert in building Chrome Extensions using... |
-| [developer](../../skills/developer/SKILL.md) | Coding | "Provides Build React components, implement responsive... |
 | [developer](../../skills/developer/SKILL.md) | Programming | "Provides Build production-ready Web3 applications, smart... |
 | [developer](../../skills/developer/SKILL.md) | Programming | Provides Develop native iOS applications with... |
 | [developer](../../skills/developer/SKILL.md) | Programming | "Provides Develop React Native, Flutter, or native mobile... |
@@ -3036,20 +2655,16 @@ MIT — All skills are freely available and redistributable.
 | [development](../../skills/development/SKILL.md) | Programming | "Provides Game development orchestrator. Routes to... |
 | [development](../../skills/development/SKILL.md) | Programming | Provides this skill covers the principles for identifying... |
 | [development](../../skills/development/SKILL.md) | Programming | Provides Comprehensive Snowflake development assistant... |
-| [development-component-scaffold](../../skills/development-component-scaffold/SKILL.md) | Coding | "Provides You are a React component architecture expert... |
 | [devops](../../skills/devops/SKILL.md) | Agent | "Provides Cloud infrastructure and DevOps workflow covering... |
 | [dialogs](../../skills/dialogs/SKILL.md) | Programming | "Provides Apple HIG guidance for presentation components... |
 | [diary](../../skills/diary/SKILL.md) | Agent | 'Provides Unified Diary System: A context-preserving... |
-| [dimensionality-reduction](../../skills/dimensionality-reduction/SKILL.md) | Coding | "Provides Reduces data dimensionality using PCA, t-SNE,... |
 | [discovery](../../skills/discovery/SKILL.md) | Agent | Provides Find and evaluate influencers for brand... |
-| [distribution-fitting](../../skills/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using... |
 | [doc-generate](../../skills/doc-generate/SKILL.md) | Programming | "Provides You are a documentation expert specializing in... |
 | [doc-generate](../../skills/doc-generate/SKILL.md) | Programming | "Provides You are a documentation expert specializing in... |
 | [document-intelligence-dotnet](../../skills/document-intelligence-dotnet/SKILL.md) | Cncf | Provides Azure AI Document Intelligence SDK for .NET.... |
 | [document-intelligence-ts](../../skills/document-intelligence-ts/SKILL.md) | Cncf | Provides Extract text, tables, and structured data from... |
 | [documentation](../../skills/documentation/SKILL.md) | Agent | "Provides API documentation workflow for generating OpenAPI... |
 | [documentation](../../skills/documentation/SKILL.md) | Agent | "Provides Documentation generation workflow covering API... |
-| [documenter](../../skills/documenter/SKILL.md) | Coding | "Provides Master API documentation with OpenAPI 3.1,... |
 | [documents-dotnet](../../skills/documents-dotnet/SKILL.md) | Cncf | "Provides Azure AI Search SDK for .NET... |
 | [documents-py](../../skills/documents-py/SKILL.md) | Cncf | "Provides Azure AI Search SDK for Python. Use for vector... |
 | [documents-ts](../../skills/documents-ts/SKILL.md) | Cncf | "Provides Build search applications with vector, hybrid,... |
@@ -3061,11 +2676,8 @@ MIT — All skills are freely available and redistributable.
 | [draw](../../skills/draw/SKILL.md) | Programming | "Provides Vector graphics and diagram creation, format... |
 | [drawdown-analysis](../../skills/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and... |
 | [drawdown-control](../../skills/drawdown-control/SKILL.md) | Trading | "Implements maximum drawdown control and equity... |
-| [driven-architecture](../../skills/driven-architecture/SKILL.md) | Coding | "'Event-driven architecture for real-time trading systems:... |
-| [driven-development](../../skills/driven-development/SKILL.md) | Coding | "Test-Driven Development (TDD) and Behavior-Driven... |
 | [dsl](../../skills/dsl/SKILL.md) | Programming | "CRITICAL: Use for Makepad DSL syntax and inheritance.... |
 | [ecommerce](../../skills/ecommerce/SKILL.md) | Agent | Provides Extract product data, prices, reviews, and seller... |
-| [eda](../../skills/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary... |
 | [edges](../../skills/edges/SKILL.md) | Programming | "Provides sharp-edges functionality and capabilities." |
 | [edit](../../skills/edit/SKILL.md) | Programming | Provides AI-powered image editing with style transfer and... |
 | [edital](../../skills/edital/SKILL.md) | Programming | "Provides Analise e auditoria de editais de leilao judicial... |
@@ -3073,7 +2685,6 @@ MIT — All skills are freely available and redistributable.
 | [elite](../../skills/elite/SKILL.md) | Programming | "Provides Senior Elite Software Engineer (15+) and Senior... |
 | [email](../../skills/email/SKILL.md) | Programming | "Provides Write B2B cold emails and follow-up sequences... |
 | [enablement](../../skills/enablement/SKILL.md) | Programming | "Provides Create sales collateral such as decks,... |
-| [enforcement](../../skills/enforcement/SKILL.md) | Coding | "Provides use when a task requires exhaustive unabridged... |
 | [engine](../../skills/engine/SKILL.md) | Programming | "Provides Motor de crescimento para produtos digitais --... |
 | [engine-development](../../skills/engine-development/SKILL.md) | Programming | Provides Build real-time conversational AI voice engines... |
 | [engineer](../../skills/engineer/SKILL.md) | Agent | Transforms user prompts into optimized prompts using... |
@@ -3092,7 +2703,6 @@ MIT — All skills are freely available and redistributable.
 | [engineer](../../skills/engineer/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... |
 | [engineering](../../skills/engineering/SKILL.md) | Programming | Provides Expert guide on prompt engineering patterns, best... |
 | [enrichment](../../skills/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to... |
-| [ensemble-methods](../../skills/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting,... |
 | [error-analysis](../../skills/error-analysis/SKILL.md) | Programming | "Provides You are an expert error analysis specialist with... |
 | [error-analysis](../../skills/error-analysis/SKILL.md) | Programming | "Provides You are an expert error analysis specialist with... |
 | [error-trace](../../skills/error-trace/SKILL.md) | Programming | "Provides You are an error tracking and observability... |
@@ -3108,22 +2718,13 @@ MIT — All skills are freely available and redistributable.
 | [evaluation](../../skills/evaluation/SKILL.md) | Programming | Provides Master comprehensive evaluation strategies for LLM... |
 | [evolution](../../skills/evolution/SKILL.md) | Programming | "Provides this skill enables makepad-skills to self-improve... |
 | [excellence](../../skills/excellence/SKILL.md) | Programming | "Provides Transform code reviews from gatekeeping to... |
-| [experience](../../skills/experience/SKILL.md) | Coding | "Provides Expert in building immersive scroll-driven... |
 | [experience](../../skills/experience/SKILL.md) | Programming | "Provides Expert in building 3D experiences for the web -... |
-| [experimental-design](../../skills/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments... |
 | [expert](../../skills/expert/SKILL.md) | Agent | Provides Expert guide for interpreting and fixing n8n... |
 | [expert](../../skills/expert/SKILL.md) | Cncf | Provides You are an advanced Docker containerization expert... |
 | [expert](../../skills/expert/SKILL.md) | Cncf | "Provides Expert in Drizzle ORM for TypeScript — schema... |
 | [expert](../../skills/expert/SKILL.md) | Cncf | Provides Expert guidance for distributed NoSQL databases... |
 | [expert](../../skills/expert/SKILL.md) | Cncf | Provides You are an expert in Prisma ORM with deep... |
 | [expert](../../skills/expert/SKILL.md) | Cncf | Provides Expert service mesh architect specializing in... |
-| [expert](../../skills/expert/SKILL.md) | Coding | "Provides Expert in Cloudflare Workers and the Edge... |
-| [expert](../../skills/expert/SKILL.md) | Coding | "Provides Advanced .faf (Foundational AI-context Format)... |
-| [expert](../../skills/expert/SKILL.md) | Coding | "Provides Senior Laravel Engineer role for... |
-| [expert](../../skills/expert/SKILL.md) | Coding | "Provides You are an expert in Nest.js with deep knowledge... |
-| [expert](../../skills/expert/SKILL.md) | Coding | "Provides Expert in TanStack Query (React Query) —... |
-| [expert](../../skills/expert/SKILL.md) | Coding | "Provides TypeScript and JavaScript expert with deep... |
-| [expert](../../skills/expert/SKILL.md) | Coding | "Provides Expert in Zod — TypeScript-first schema... |
 | [expert](../../skills/expert/SKILL.md) | Programming | "Provides Core UI/UX engineering skill for building highly... |
 | [expert](../../skills/expert/SKILL.md) | Programming | "Provides Senior embedded software engineer specializing in... |
 | [expert](../../skills/expert/SKILL.md) | Programming | Provides Master Bevy's Entity Component System (ECS) in... |
@@ -3137,7 +2738,6 @@ MIT — All skills are freely available and redistributable.
 | [expert](../../skills/expert/SKILL.md) | Programming | "Provides Create Mermaid diagrams for flowcharts,... |
 | [expert](../../skills/expert/SKILL.md) | Programming | 'Provides Master Odoo ORM patterns: search, browse, create,... |
 | [expert](../../skills/expert/SKILL.md) | Programming | "Provides Review and fix Swift concurrency issues such as... |
-| [explainability](../../skills/explainability/SKILL.md) | Coding | "Implements explainability and interpretability techniques... |
 | [explainable-ai](../../skills/explainable-ai/SKILL.md) | Trading | "Provides Explainable AI for understanding and trusting... |
 | [explainer](../../skills/explainer/SKILL.md) | Programming | "Provides Explain Bitcoin Lightning channel factories and... |
 | [expo](../../skills/expo/SKILL.md) | Programming | "Provides upgrade expo sdk versions functionality and... |
@@ -3150,12 +2750,7 @@ MIT — All skills are freely available and redistributable.
 | [failover-handling](../../skills/failover-handling/SKILL.md) | Trading | "Provides Automated failover and redundancy management for... |
 | [false-signal-filtering](../../skills/false-signal-filtering/SKILL.md) | Trading | "Provides False Signal Filtering Techniques for Robust... |
 | [favicon](../../skills/favicon/SKILL.md) | Programming | "Provides generate favicons from a source image... |
-| [feature-development](../../skills/feature-development/SKILL.md) | Coding | "Provides Orchestrate end-to-end backend feature... |
-| [feature-engineering](../../skills/feature-engineering/SKILL.md) | Coding | "Creates and transforms features including polynomial... |
 | [feature-engineering](../../skills/feature-engineering/SKILL.md) | Trading | "Implements create actionable trading features from raw... |
-| [feature-interaction](../../skills/feature-interaction/SKILL.md) | Coding | "Provides Discovers and engineers feature interactions... |
-| [feature-scaling-normalization](../../skills/feature-scaling-normalization/SKILL.md) | Coding | "Provides Scales and normalizes features using... |
-| [feature-selection](../../skills/feature-selection/SKILL.md) | Coding | "Selects relevant features using univariate selection,... |
 | [feature-store](../../skills/feature-store/SKILL.md) | Trading | "Provides Feature storage and management for machine... |
 | [feedback](../../skills/feedback/SKILL.md) | Programming | "Provides Add loading, empty, error, and success feedback... |
 | [fetching](../../skills/fetching/SKILL.md) | Programming | Provides use when implementing or debugging any network... |
@@ -3166,7 +2761,6 @@ MIT — All skills are freely available and redistributable.
 | [filosofia](../../skills/filosofia/SKILL.md) | Programming | "Provides sub-skill filosófica e pedagógica de yann lecun... |
 | [fintech](../../skills/fintech/SKILL.md) | Cncf | "Provides Expert patterns for Plaid API integration... |
 | [firebase](../../skills/firebase/SKILL.md) | Cncf | "Provides Firebase gives you a complete backend in minutes... |
-| [fixing](../../skills/fixing/SKILL.md) | Coding | "Provides Systematically identify and fix all failing tests... |
 | [flow](../../skills/flow/SKILL.md) | Programming | "Provides Design user flows and screen structure using... |
 | [font](../../skills/font/SKILL.md) | Programming | "CRITICAL: Use for Makepad font and text rendering.... |
 | [formrecognizer-java](../../skills/formrecognizer-java/SKILL.md) | Cncf | "Provides Build document analysis applications using the... |
@@ -3174,10 +2768,8 @@ MIT — All skills are freely available and redistributable.
 | [framework](../../skills/framework/SKILL.md) | Programming | "Provides Comprehensive guide to tracking, calculating, and... |
 | [frameworks](../../skills/frameworks/SKILL.md) | Programming | "Provides Build robust, production-grade backtesting... |
 | [frameworks](../../skills/frameworks/SKILL.md) | Programming | "Provides Implement data quality validation with Great... |
-| [frontend](../../skills/frontend/SKILL.md) | Coding | "Provides use when building high-agency frontend interfaces... |
 | [frontend](../../skills/frontend/SKILL.md) | Programming | "Provides Frontend development skill for React, Next.js,... |
 | [frontend-patterns](../../skills/frontend-patterns/SKILL.md) | Agent | "Provides Frontend development patterns for React, Next.js,... |
-| [fullstack](../../skills/fullstack/SKILL.md) | Coding | "Provides Build end-to-end type-safe APIs with tRPC —... |
 | [fullstack](../../skills/fullstack/SKILL.md) | Programming | "Provides Complete toolkit for senior fullstack with modern... |
 | [fundamentals](../../skills/fundamentals/SKILL.md) | Programming | Provides Context is the complete state available to a... |
 | [fundamentals](../../skills/fundamentals/SKILL.md) | Programming | "Provides Generative Engine Optimization for AI search... |
@@ -3190,7 +2782,6 @@ MIT — All skills are freely available and redistributable.
 | [games](../../skills/games/SKILL.md) | Programming | "Provides Web browser game development principles.... |
 | [gate](../../skills/gate/SKILL.md) | Programming | Provides Pre-ingestion verification for epistemic quality... |
 | [gates](../../skills/gates/SKILL.md) | Programming | "Provides Agente que simula Bill Gates — cofundador da... |
-| [gateway](../../skills/gateway/SKILL.md) | Coding | "Provides REST API gateway for ComfyUI servers. Workflow... |
 | [gemini-high](../../skills/gemini-high/SKILL.md) | Programming | "Provides Modo Elite Coder + UX Pixel-Perfect otimizado... |
 | [gen](../../skills/gen/SKILL.md) | Programming | "Provides Generate SEO-focused images such as OG cards,... |
 | [generate](../../skills/generate/SKILL.md) | Programming | Provides generate images and videos using fal.ai ai models... |
@@ -3198,8 +2789,6 @@ MIT — All skills are freely available and redistributable.
 | [generation](../../skills/generation/SKILL.md) | Cncf | "Provides Generate and maintain OpenAPI 3.1 specifications... |
 | [generation](../../skills/generation/SKILL.md) | Programming | "Provides Generate real audio narratives from text content... |
 | [generator](../../skills/generator/SKILL.md) | Cncf | Provides Step-by-step guidance for creating... |
-| [generator](../../skills/generator/SKILL.md) | Coding | "Provides Generate comprehensive, developer-friendly API... |
-| [generator](../../skills/generator/SKILL.md) | Coding | "Generates high-converting Next.js/React landing pages with... |
 | [generator](../../skills/generator/SKILL.md) | Programming | "Provides Utilizes Magic by 21st.dev to generate, compare,... |
 | [generator](../../skills/generator/SKILL.md) | Programming | "Provides Generate complete Python scripts that build... |
 | [geo](../../skills/geo/SKILL.md) | Programming | "Provides Optimize content for AI Overviews, ChatGPT,... |
@@ -3212,7 +2801,6 @@ MIT — All skills are freely available and redistributable.
 | [golang](../../skills/golang/SKILL.md) | Programming | "Provides Build production-ready gRPC services in Go with... |
 | [governance](../../skills/governance/SKILL.md) | Programming | "Provides Agent governance skill for MCP tool calls — Cedar... |
 | [gradio](../../skills/gradio/SKILL.md) | Programming | Provides Build or edit Gradio apps, layouts, components,... |
-| [graphql](../../skills/graphql/SKILL.md) | Coding | Provides GraphQL gives clients exactly the data they need -... |
 | [gratitude](../../skills/gratitude/SKILL.md) | Programming | Provides Multi-agent research skill for parallel research... |
 | [guardian](../../skills/guardian/SKILL.md) | Cncf | "Provides FREE — Intelligent tool-call reliability wrapper.... |
 | [guardian](../../skills/guardian/SKILL.md) | Programming | Provides Guardiao de contexto que preserva dados criticos... |
@@ -3220,8 +2808,6 @@ MIT — All skills are freely available and redistributable.
 | [guide](../../skills/guide/SKILL.md) | Programming | Provides To provide a comprehensive reference for... |
 | [guide](../../skills/guide/SKILL.md) | Programming | "Provides Guide developers through setting up development... |
 | [guide-en](../../skills/guide-en/SKILL.md) | Programming | "Provides Guide for VS Code extension development from... |
-| [guidelines](../../skills/guidelines/SKILL.md) | Coding | "Provides You are a senior backend engineer operating... |
-| [guidelines](../../skills/guidelines/SKILL.md) | Coding | "Provides You are a senior frontend engineer operating... |
 | [guidelines](../../skills/guidelines/SKILL.md) | Programming | "Provides Write copy following Sentry brand guidelines. Use... |
 | [guidelines](../../skills/guidelines/SKILL.md) | Programming | "Provides review files for compliance with web interface... |
 | [handoff-patterns](../../skills/handoff-patterns/SKILL.md) | Cncf | Provides Effective patterns for on-call shift transitions,... |
@@ -3230,16 +2816,11 @@ MIT — All skills are freely available and redistributable.
 | [helper](../../skills/helper/SKILL.md) | Programming | "Provides Step-by-step guide for migrating Odoo custom... |
 | [high-seo-optimized-blogwriting-skill](../../skills/high-seo-optimized-blogwriting-skill/SKILL.md) | Programming | "Provides use this skill when the user asks to write a blog... |
 | [hinton](../../skills/hinton/SKILL.md) | Programming | "Provides Agente que simula Geoffrey Hinton — Godfather of... |
-| [hono](../../skills/hono/SKILL.md) | Coding | "Provides Build ultra-fast web APIs and full-stack apps... |
 | [hospital](../../skills/hospital/SKILL.md) | Programming | "Provides World-class Hospital IT Management Advisor... |
 | [hreflang](../../skills/hreflang/SKILL.md) | Programming | "Provides Hreflang and international SEO audit, validation,... |
-| [html-jsp-custom-best-pratices](../../skills/html-jsp-custom-best-pratices/SKILL.md) | Coding | "Provides this skill should be used when the user asks for... |
-| [hunter](../../skills/hunter/SKILL.md) | Coding | "Provides Systematically finds and fixes bugs using proven... |
 | [hunter](../../skills/hunter/SKILL.md) | Programming | "Provides Automatically hunt for high-impact OSS... |
 | [hunter](../../skills/hunter/SKILL.md) | Programming | "Provides Formats content to be eligible for featured... |
-| [hyperparameter-tuning](../../skills/hyperparameter-tuning/SKILL.md) | Coding | "Optimizes hyperparameters using grid search, random... |
 | [hyperparameter-tuning](../../skills/hyperparameter-tuning/SKILL.md) | Trading | "Implements optimize model configurations for trading... |
-| [hypothesis-testing](../../skills/hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square... |
 | [ia](../../skills/ia/SKILL.md) | Programming | "Provides Especialista em leiloes judiciais e... |
 | [ideas](../../skills/ideas/SKILL.md) | Programming | "Provides Provide proven marketing strategies and growth... |
 | [image](../../skills/image/SKILL.md) | Programming | Provides Geracao de imagens humanizadas via Google AI... |
@@ -3247,7 +2828,6 @@ MIT — All skills are freely available and redistributable.
 | [images](../../skills/images/SKILL.md) | Programming | "Provides Image optimization analysis for SEO and... |
 | [implementation](../../skills/implementation/SKILL.md) | Agent | Provides RAG (Retrieval-Augmented Generation)... |
 | [implementation](../../skills/implementation/SKILL.md) | Cncf | Provides Framework for defining and implementing Service... |
-| [implementation](../../skills/implementation/SKILL.md) | Coding | "Provides Implement Command Query Responsibility... |
 | [implementation](../../skills/implementation/SKILL.md) | Programming | Provides Combine vector and keyword search for improved... |
 | [impress](../../skills/impress/SKILL.md) | Programming | "Provides Presentation creation, format conversion... |
 | [improve-agent](../../skills/improve-agent/SKILL.md) | Programming | Provides Systematic improvement of existing agents through... |
@@ -3261,7 +2841,6 @@ MIT — All skills are freely available and redistributable.
 | [inputs](../../skills/inputs/SKILL.md) | Programming | "Provides Check for .claude/apple-design-context.md before... |
 | [instagram](../../skills/instagram/SKILL.md) | Programming | "Provides Integracao completa com Instagram via Graph API.... |
 | [installer](../../skills/installer/SKILL.md) | Agent | "Provides Instala, valida, registra e verifica novas skills... |
-| [instrumental-variables](../../skills/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least... |
 | [integration](../../skills/integration/SKILL.md) | Agent | Provides use when integrating google gemini api into... |
 | [integration](../../skills/integration/SKILL.md) | Cncf | "Provides Expert patterns for HubSpot CRM integration... |
 | [integration](../../skills/integration/SKILL.md) | Cncf | "Provides Integrate Stripe, PayPal, and payment processors.... |
@@ -3271,12 +2850,10 @@ MIT — All skills are freely available and redistributable.
 | [integration](../../skills/integration/SKILL.md) | Programming | 'Provides Connect Odoo with Shopify: sync products,... |
 | [integration](../../skills/integration/SKILL.md) | Programming | "CRITICAL: Use for Matrix SDK integration with Makepad.... |
 | [integration](../../skills/integration/SKILL.md) | Programming | "Provides use when adding interactive 3d scenes from... |
-| [integration-patterns](../../skills/integration-patterns/SKILL.md) | Coding | "Provides Production-ready patterns for integrating... |
 | [intelligence](../../skills/intelligence/SKILL.md) | Agent | Provides Analyze competitor strategies, content, pricing,... |
 | [interaction](../../skills/interaction/SKILL.md) | Programming | "Provides Three.js interaction - raycasting, controls,... |
 | [intermarket-analysis](../../skills/intermarket-analysis/SKILL.md) | Trading | "Implements cross-market relationships and asset class... |
 | [internal-linking](../../skills/internal-linking/SKILL.md) | Programming | "Provides Maps internal link opportunities between pages... |
-| [intervention-analysis](../../skills/intervention-analysis/SKILL.md) | Coding | "Provides Estimates treatment effects, conditional average... |
 | [inventor](../../skills/inventor/SKILL.md) | Programming | "Provides Product Inventor e Design Alchemist de nivel... |
 | [issue](../../skills/issue/SKILL.md) | Programming | "Provides You are a GitHub issue resolution expert... |
 | [java](../../skills/java/SKILL.md) | Cncf | "Provides Azure App Configuration SDK for Java. Centralized... |
@@ -3294,7 +2871,6 @@ MIT — All skills are freely available and redistributable.
 | [js](../../skills/js/SKILL.md) | Programming | "Provides Run Hugging Face models in JavaScript or... |
 | [juridico](../../skills/juridico/SKILL.md) | Programming | 'Provides Analise juridica de leiloes: nulidades, bem de... |
 | [karpathy](../../skills/karpathy/SKILL.md) | Programming | "Provides Agente que simula Andrej Karpathy — ex-Director... |
-| [kernel-density](../../skills/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric... |
 | [keys-rust](../../skills/keys-rust/SKILL.md) | Cncf | "Provides Azure Key Vault Keys SDK for Rust. Use for... |
 | [keys-ts](../../skills/keys-ts/SKILL.md) | Cncf | "Provides Manage cryptographic keys using Azure Key Vault... |
 | [keyvault-keys-dotnet](../../skills/keyvault-keys-dotnet/SKILL.md) | Cncf | Provides Azure Key Vault Keys SDK for .NET. Client library... |
@@ -3317,20 +2893,17 @@ MIT — All skills are freely available and redistributable.
 | [learn](../../skills/learn/SKILL.md) | Programming | Provides Machine learning in Python with scikit-learn. Use... |
 | [lecun](../../skills/lecun/SKILL.md) | Programming | "Provides Agente que simula Yann LeCun — inventor das... |
 | [legacy-modernize](../../skills/legacy-modernize/SKILL.md) | Programming | "Provides Orchestrate a comprehensive legacy system... |
-| [leiloeiros](../../skills/leiloeiros/SKILL.md) | Coding | "Provides Coleta e consulta dados de leiloeiros oficiais de... |
 | [lex](../../skills/lex/SKILL.md) | Programming | "Provides Centralized 'Truth Engine' for... |
 | [library](../../skills/library/SKILL.md) | Cncf | Provides Production-ready Terraform module patterns for... |
 | [library](../../skills/library/SKILL.md) | Programming | "Provides Extensive icon library and AI-driven icon... |
 | [library](../../skills/library/SKILL.md) | Programming | "Provides a comprehensive collection of battle-tested... |
 | [lighting](../../skills/lighting/SKILL.md) | Programming | "Provides Three.js lighting - light types, shadows,... |
-| [linear-regression](../../skills/linear-regression/SKILL.md) | Coding | "Implements linear regression including OLS, ridge... |
 | [linux](../../skills/linux/SKILL.md) | Programming | "Provides Bash/Linux terminal patterns. Critical commands,... |
 | [liquidity-risk](../../skills/liquidity-risk/SKILL.md) | Trading | "Implements liquidity assessment and trade execution risk... |
 | [live-model-monitoring](../../skills/live-model-monitoring/SKILL.md) | Trading | "Provides Monitor production ML models for drift, decay,... |
 | [llm-orchestration](../../skills/llm-orchestration/SKILL.md) | Trading | "Large Language Model orchestration for trading analysis... |
 | [loaders](../../skills/loaders/SKILL.md) | Programming | "Provides Three.js asset loading - GLTF, textures, images,... |
 | [localization](../../skills/localization/SKILL.md) | Programming | "Provides Internationalization and localization patterns.... |
-| [logistic-regression](../../skills/logistic-regression/SKILL.md) | Coding | "Implements logistic regression for binary and multinomial... |
 | [logistics](../../skills/logistics/SKILL.md) | Programming | "Provides Codified expertise for returns authorisation,... |
 | [lookahead-bias](../../skills/lookahead-bias/SKILL.md) | Trading | "Preventing lookahead bias in backtesting through strict... |
 | [loop](../../skills/loop/SKILL.md) | Programming | "Teaches agents to iteratively build websites using Stitch... |
@@ -3344,7 +2917,6 @@ MIT — All skills are freely available and redistributable.
 | [management](../../skills/management/SKILL.md) | Programming | "Provides Codified expertise for handling freight... |
 | [management](../../skills/management/SKILL.md) | Programming | "Provides Build efficient, scalable monorepos that enable... |
 | [management](../../skills/management/SKILL.md) | Programming | "Provides Master modern React state management with Redux... |
-| [manager](../../skills/manager/SKILL.md) | Coding | "WebSocket connection manager with state machine... |
 | [manager](../../skills/manager/SKILL.md) | Programming | Provides Elite AI context engineering specialist mastering... |
 | [manager](../../skills/manager/SKILL.md) | Programming | "Provides Senior PM agent with 6 knowledge domains, 30+... |
 | [manager](../../skills/manager/SKILL.md) | Programming | "Provides Monitor portfolio risk, R-multiples, and position... |
@@ -3358,7 +2930,6 @@ MIT — All skills are freely available and redistributable.
 | [manager-sql-dotnet](../../skills/manager-sql-dotnet/SKILL.md) | Cncf | "Configures azure resource manager sdk for azure sql in... |
 | [manifest](../../skills/manifest/SKILL.md) | Programming | "Provides Install and configure the Manifest observability... |
 | [mapper](../../skills/mapper/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... |
-| [mapping](../../skills/mapping/SKILL.md) | Coding | "Provides Map relationships between bounded contexts and... |
 | [markdown](../../skills/markdown/SKILL.md) | Programming | "Provides Create and edit Obsidian Flavored Markdown with... |
 | [market-data-cache](../../skills/market-data-cache/SKILL.md) | Trading | "High-performance caching layer for market data with low... |
 | [market-impact](../../skills/market-impact/SKILL.md) | Trading | "Implements market impact modeling and order book... |
@@ -3372,7 +2943,6 @@ MIT — All skills are freely available and redistributable.
 | [materials](../../skills/materials/SKILL.md) | Programming | "Provides Three.js materials - PBR, basic, phong, shader... |
 | [matplotlib](../../skills/matplotlib/SKILL.md) | Programming | "Provides Matplotlib is Python's foundational visualization... |
 | [maxia](../../skills/maxia/SKILL.md) | Programming | "Provides Connect to MAXIA AI-to-AI marketplace on Solana.... |
-| [maximum-likelihood](../../skills/maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood... |
 | [mcp](../../skills/mcp/SKILL.md) | Programming | Provides a hybrid memory system that provides persistent,... |
 | [mcp](../../skills/mcp/SKILL.md) | Programming | Provides Connect to Helium's MCP server for news research,... |
 | [md](../../skills/md/SKILL.md) | Programming | Provides this skill should be used when the user asks to... |
@@ -3384,25 +2954,17 @@ MIT — All skills are freely available and redistributable.
 | [menus](../../skills/menus/SKILL.md) | Programming | "Provides Check for .claude/apple-design-context.md before... |
 | [mercado](../../skills/mercado/SKILL.md) | Programming | "Provides Analise de mercado imobiliario para leiloes.... |
 | [meta-description-generator](../../skills/meta-description-generator/SKILL.md) | Programming | "Provides Writes 3 title tag variants and 3 meta... |
-| [metadata](../../skills/metadata/SKILL.md) | Coding | Provides Audit and fix HTML metadata including page titles,... |
 | [metadata](../../skills/metadata/SKILL.md) | Programming | "Provides the ai native file format. exif for ai — stamps... |
-| [metrics-and-kpis](../../skills/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators... |
 | [migration](../../skills/migration/SKILL.md) | Cncf | "Provides Master database schema and data migrations across... |
 | [migration](../../skills/migration/SKILL.md) | Programming | "Provides Master AngularJS to Angular migration, including... |
 | [migration-observability](../../skills/migration-observability/SKILL.md) | Cncf | Configures migration monitoring, cdc, and observability... |
 | [mirror](../../skills/mirror/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... |
-| [missing-data](../../skills/missing-data/SKILL.md) | Coding | "Handles missing data using imputation strategies, deletion... |
 | [ml](../../skills/ml/SKILL.md) | Agent | "Provides AI and machine learning workflow covering LLM... |
 | [ml-py](../../skills/ml-py/SKILL.md) | Cncf | Provides Azure Machine Learning SDK v2 for Python. Use for... |
 | [mode](../../skills/mode/SKILL.md) | Programming | 'Provides Version 2.35.0 | PRD to Production | Zero Human... |
 | [model-ensemble](../../skills/model-ensemble/SKILL.md) | Trading | "Provides Combine multiple models for improved prediction... |
-| [model-fairness](../../skills/model-fairness/SKILL.md) | Coding | "Evaluates and mitigates fairness issues including bias... |
-| [model-interpretation](../../skills/model-interpretation/SKILL.md) | Coding | "Provides Interprets models using SHAP values, LIME,... |
-| [model-robustness](../../skills/model-robustness/SKILL.md) | Coding | Improves model robustness including adversarial robustness,... |
-| [model-selection](../../skills/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC,... |
 | [model-trainer](../../skills/model-trainer/SKILL.md) | Programming | Provides Train or fine-tune TRL language models on Hugging... |
 | [modeling](../../skills/modeling/SKILL.md) | Programming | "Provides Build comprehensive 3-5 year financial models... |
-| [models](../../skills/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated... |
 | [modernization](../../skills/modernization/SKILL.md) | Programming | "Provides Master React version upgrades, class to hooks... |
 | [modernizer](../../skills/modernizer/SKILL.md) | Programming | "Provides Refactor legacy codebases, migrate outdated... |
 | [modes](../../skills/modes/SKILL.md) | Agent | "Provides AI operational modes (brainstorm, implement,... |
@@ -3414,7 +2976,6 @@ MIT — All skills are freely available and redistributable.
 | [monitor](../../skills/monitor/SKILL.md) | Programming | Provides Monitor de performance do Claude Code e sistema... |
 | [monitor-creation](../../skills/monitor-creation/SKILL.md) | Programming | "Guides creation of Monte Carlo monitors via MCP tools,... |
 | [monitor-setup](../../skills/monitor-setup/SKILL.md) | Cncf | "Provides You are a monitoring and observability expert... |
-| [monte-carlo](../../skills/monte-carlo/SKILL.md) | Coding | "Implements Monte Carlo sampling, simulation methods, and... |
 | [moyu](../../skills/moyu/SKILL.md) | Programming | "Anti-over-engineering guardrail that activates when an AI... |
 | [ms](../../skills/ms/SKILL.md) | Agent | Provides use this skill when building mcp servers to... |
 | [ms](../../skills/ms/SKILL.md) | Agent | "Provides Guide for creating effective skills for AI coding... |
@@ -3426,22 +2987,17 @@ MIT — All skills are freely available and redistributable.
 | [neon](../../skills/neon/SKILL.md) | Cncf | Provides Neon is a serverless Postgres platform that... |
 | [networking](../../skills/networking/SKILL.md) | Cncf | "Provides Configure secure, high-performance connectivity... |
 | [networkx](../../skills/networkx/SKILL.md) | Programming | "Provides NetworkX is a Python package for creating,... |
-| [neural-networks](../../skills/neural-networks/SKILL.md) | Coding | "Implements deep neural networks, backpropagation,... |
 | [news-embedding](../../skills/news-embedding/SKILL.md) | Trading | "Implements process news text using nlp embeddings for... |
 | [niche-intelligence](../../skills/niche-intelligence/SKILL.md) | Agent | "Provides Estratega de Inteligencia de Dominio de Andru.ia.... |
 | [node-ts](../../skills/node-ts/SKILL.md) | Programming | "Provides Create React Flow node components following... |
 | [nonconformance](../../skills/nonconformance/SKILL.md) | Programming | "Provides Codified expertise for quality control,... |
-| [normalization](../../skills/normalization/SKILL.md) | Coding | 'Provides Exchange data normalization layer: typed... |
 | [notebooklm](../../skills/notebooklm/SKILL.md) | Programming | Provides Interact with Google NotebookLM to query... |
 | [observability](../../skills/observability/SKILL.md) | Cncf | Provides Complete guide to observability patterns for... |
-| [observability-api-mock](../../skills/observability-api-mock/SKILL.md) | Coding | Provides You are an API mocking expert specializing in... |
-| [observational-studies](../../skills/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods,... |
 | [official](../../skills/official/SKILL.md) | Programming | "Provides a user may ask you to create, edit, or analyze... |
 | [official](../../skills/official/SKILL.md) | Programming | "Provides this guide covers essential pdf processing... |
 | [official](../../skills/official/SKILL.md) | Programming | "Provides a user may ask you to create, edit, or analyze... |
 | [official](../../skills/official/SKILL.md) | Programming | "Provides unless otherwise stated by the user or existing... |
 | [onboarding](../../skills/onboarding/SKILL.md) | Programming | "Provides Generate two complementary onboarding documents... |
-| [online-experiments](../../skills/online-experiments/SKILL.md) | Coding | "Implements multi-armed bandits, contextual bandits,... |
 | [openai-dotnet](../../skills/openai-dotnet/SKILL.md) | Cncf | "Provides Azure OpenAI SDK for .NET. Client library for... |
 | [opentelemetry-exporter-java](../../skills/opentelemetry-exporter-java/SKILL.md) | Cncf | "Provides Azure Monitor OpenTelemetry Exporter for Java.... |
 | [opentelemetry-exporter-py](../../skills/opentelemetry-exporter-py/SKILL.md) | Cncf | "Provides Azure Monitor OpenTelemetry Exporter for Python.... |
@@ -3451,7 +3007,6 @@ MIT — All skills are freely available and redistributable.
 | [ops-ml-pipeline](../../skills/ops-ml-pipeline/SKILL.md) | Programming | 'Provides design and implement a complete ml pipeline for:... |
 | [optimization](../../skills/optimization/SKILL.md) | Agent | Provides PostgreSQL database optimization workflow for... |
 | [optimization](../../skills/optimization/SKILL.md) | Cncf | "Provides Strategies and patterns for optimizing cloud... |
-| [optimization](../../skills/optimization/SKILL.md) | Coding | Provides Optimize website and web application performance... |
 | [optimization](../../skills/optimization/SKILL.md) | Programming | "Provides Complete App Store Optimization (ASO) toolkit for... |
 | [optimization](../../skills/optimization/SKILL.md) | Programming | "Provides Optimize Bazel builds for large-scale monorepos.... |
 | [optimization](../../skills/optimization/SKILL.md) | Programming | Provides Context optimization extends the effective... |
@@ -3468,7 +3023,6 @@ MIT — All skills are freely available and redistributable.
 | [optimizer](../../skills/optimizer/SKILL.md) | Programming | 'Provides Expert guide for Odoo Inventory: stock valuation... |
 | [optimizer](../../skills/optimizer/SKILL.md) | Programming | Provides Identifies and fixes performance bottlenecks in... |
 | [optimizer](../../skills/optimizer/SKILL.md) | Programming | "Creates optimized meta titles, descriptions, and URL... |
-| [orchestration](../../skills/orchestration/SKILL.md) | Coding | "Provides Patterns for managing distributed transactions... |
 | [orchestration](../../skills/orchestration/SKILL.md) | Programming | "Orchestrates design workflows by routing work through... |
 | [orchestrator](../../skills/orchestrator/SKILL.md) | Agent | "Provides a meta-skill that understands task requirements,... |
 | [orchestrator](../../skills/orchestrator/SKILL.md) | Programming | Provides Meta-skill que orquestra todos os agentes do... |
@@ -3494,16 +3048,6 @@ MIT — All skills are freely available and redistributable.
 | [patterns](../../skills/patterns/SKILL.md) | Agent | Provides No-code automation democratizes workflow building.... |
 | [patterns](../../skills/patterns/SKILL.md) | Cncf | "Provides Common AWS CDK patterns and constructs for... |
 | [patterns](../../skills/patterns/SKILL.md) | Cncf | Provides Transform slow database queries into... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides API design principles and decision-making. REST... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | Provides Master proven backend architecture patterns... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Apply DDD tactical patterns in code using... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Master C#/.NET patterns for building... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "FastAPI application structure with typed error hierarchy,... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | Provides Master microservices architecture patterns... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Comprehensive guidance for building scalable,... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Build read models and projections from event... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Modern React patterns and principles. Hooks,... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Tailwind CSS v4 principles. CSS-first... |
 | [patterns](../../skills/patterns/SKILL.md) | Programming | Provides Modern Angular UI patterns for loading states,... |
 | [patterns](../../skills/patterns/SKILL.md) | Programming | "Provides Comprehensive guidance for implementing... |
 | [patterns](../../skills/patterns/SKILL.md) | Programming | Provides Design patterns for building autonomous coding... |
@@ -3531,7 +3075,6 @@ MIT — All skills are freely available and redistributable.
 | [patterns](../../skills/patterns/SKILL.md) | Programming | "Provides Comprehensive guide to auditing web content... |
 | [payroll-setup](../../skills/payroll-setup/SKILL.md) | Programming | 'Provides Expert guide for Odoo HR and Payroll: salary... |
 | [pentesting](../../skills/pentesting/SKILL.md) | Cncf | "Provides Provide systematic methodologies for automated... |
-| [performance](../../skills/performance/SKILL.md) | Coding | Provides Audit and fix animation performance issues... |
 | [performance](../../skills/performance/SKILL.md) | Programming | Provides Diagnose slow React components and suggest... |
 | [performance-attribution](../../skills/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading... |
 | [performance-optimization](../../skills/performance-optimization/SKILL.md) | Cncf | Provides Optimize end-to-end application performance with... |
@@ -3546,7 +3089,6 @@ MIT — All skills are freely available and redistributable.
 | [plotly](../../skills/plotly/SKILL.md) | Programming | Provides Interactive visualization library. Use when you... |
 | [polars](../../skills/polars/SKILL.md) | Programming | Provides Fast in-memory DataFrame library for datasets that... |
 | [policies](../../skills/policies/SKILL.md) | Cncf | Provides Comprehensive guide for implementing... |
-| [portfolio](../../skills/portfolio/SKILL.md) | Coding | "Provides Expert in building portfolios that actually land... |
 | [position-exits](../../skills/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit... |
 | [position-sizing](../../skills/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly... |
 | [position-sizing](../../skills/position-sizing/SKILL.md) | Trading | "Calculating optimal position sizes using Kelly criterion,... |
@@ -3556,8 +3098,6 @@ MIT — All skills are freely available and redistributable.
 | [postprocessing](../../skills/postprocessing/SKILL.md) | Programming | "Provides Three.js post-processing - EffectComposer, bloom,... |
 | [practices](../../skills/practices/SKILL.md) | Cncf | Provides CloudFormation template optimization, nested... |
 | [practices](../../skills/practices/SKILL.md) | Cncf | Provides Postgres performance optimization and best... |
-| [practices](../../skills/practices/SKILL.md) | Coding | Provides Next.js App Router principles. Server Components,... |
-| [practices](../../skills/practices/SKILL.md) | Coding | "Provides Node.js development principles and... |
 | [practices](../../skills/practices/SKILL.md) | Programming | "Provides Angular performance optimization and best... |
 | [practices](../../skills/practices/SKILL.md) | Programming | "Provides Comprehensive performance optimization guide for... |
 | [practices](../../skills/practices/SKILL.md) | Programming | "Provides best practices for remotion - video creation in... |
@@ -3568,33 +3108,13 @@ MIT — All skills are freely available and redistributable.
 | [prevent](../../skills/prevent/SKILL.md) | Programming | Provides Surfaces Monte Carlo data observability context... |
 | [prevention](../../skills/prevention/SKILL.md) | Programming | "Provides Reduce voluntary and involuntary churn with... |
 | [price-action-patterns](../../skills/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for... |
-| [principles](../../skills/principles/SKILL.md) | Coding | "Provides Master REST and GraphQL API design principles to... |
 | [principles](../../skills/principles/SKILL.md) | Programming | "Provides Evaluate interfaces against 168 research-backed... |
-| [privacy-ml](../../skills/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Write efficient C code with proper memory... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Write idiomatic C++ code with modern features,... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Write modern C# code with advanced features like... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Master Django 5.x with async views, DRF, Celery,... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Write idiomatic Elixir code with OTP patterns,... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Build high-performance async APIs with FastAPI,... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Master Go 1.21+ with modern patterns, advanced... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Expert Haskell engineer specializing in advanced... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Master Java 21+ with modern features like virtual... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Master modern JavaScript with ES6+, async... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Master Julia 1.10+ with modern features,... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Write idiomatic PHP code with generators, iterators, SPL... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Master Python 3.12+ with modern features, async... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Write idiomatic Ruby code with metaprogramming,... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Master Rust 1.75+ with modern async patterns,... |
-| [pro](../../skills/pro/SKILL.md) | Coding | Provides Master enterprise-grade Scala development with... |
-| [pro](../../skills/pro/SKILL.md) | Coding | "Provides Master TypeScript with advanced types, generics,... |
 | [pro](../../skills/pro/SKILL.md) | Programming | "Master of defensive Bash scripting for production... |
 | [pro](../../skills/pro/SKILL.md) | Programming | "Provides Professional, ethical HR partner for hiring,... |
 | [pro](../../skills/pro/SKILL.md) | Programming | Provides Elite IT Management Advisor specializing in... |
 | [pro](../../skills/pro/SKILL.md) | Programming | "Provides Master Minecraft server plugin development with... |
 | [pro](../../skills/pro/SKILL.md) | Programming | "Provides Expert in strict POSIX sh scripting for maximum... |
 | [pro](../../skills/pro/SKILL.md) | Programming | Provides Master modern SQL with cloud-native databases,... |
-| [pro-max](../../skills/pro-max/SKILL.md) | Coding | "Provides Comprehensive design guide for web and mobile... |
 | [procedures](../../skills/procedures/SKILL.md) | Cncf | Provides Production deployment principles and... |
 | [procurement](../../skills/procurement/SKILL.md) | Programming | "Provides Codified expertise for electricity and gas... |
 | [product](../../skills/product/SKILL.md) | Programming | Provides Every product will be AI-powered. The question is... |
@@ -3608,7 +3128,6 @@ MIT — All skills are freely available and redistributable.
 | [project](../../skills/project/SKILL.md) | Agent | "Provides Forensic root cause analyzer for Antigravity... |
 | [project](../../skills/project/SKILL.md) | Programming | "Provides create a new rails project functionality and... |
 | [project-guidelines-example](../../skills/project-guidelines-example/SKILL.md) | Agent | "Implements project guidelines skill (example) for... |
-| [projects](../../skills/projects/SKILL.md) | Coding | "Provides use when upgrading existing websites or apps by... |
 | [projects-dotnet](../../skills/projects-dotnet/SKILL.md) | Cncf | "Provides Azure AI Projects SDK for .NET. High-level client... |
 | [projects-java](../../skills/projects-java/SKILL.md) | Cncf | Provides Azure AI Projects SDK for Java. High-level SDK for... |
 | [projects-py](../../skills/projects-py/SKILL.md) | Cncf | "Provides Build AI applications on Microsoft Foundry using... |
@@ -3637,7 +3156,6 @@ MIT — All skills are freely available and redistributable.
 | [py](../../skills/py/SKILL.md) | Cncf | "Provides Azure Identity SDK for Python authentication. Use... |
 | [py](../../skills/py/SKILL.md) | Cncf | "Provides Azure Key Vault SDK for Python. Use for secrets,... |
 | [py](../../skills/py/SKILL.md) | Cncf | "Provides Azure Service Bus SDK for Python messaging. Use... |
-| [py](../../skills/py/SKILL.md) | Coding | "Provides Create FastAPI routers following established... |
 | [py](../../skills/py/SKILL.md) | Programming | Provides Build container-based Foundry Agents with Azure AI... |
 | [py](../../skills/py/SKILL.md) | Programming | Provides Microsoft 365 Agents SDK for Python. Build... |
 | [py](../../skills/py/SKILL.md) | Programming | "Provides Create Pydantic models following the multi-model... |
@@ -3647,13 +3165,11 @@ MIT — All skills are freely available and redistributable.
 | [qa](../../skills/qa/SKILL.md) | Agent | Provides Comprehensive testing and QA workflow covering... |
 | [qa](../../skills/qa/SKILL.md) | Programming | "Provides Answer repository questions grounded entirely in... |
 | [qiskit](../../skills/qiskit/SKILL.md) | Programming | "Provides Qiskit is the world's most popular open-source... |
-| [quality-policies](../../skills/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean... |
 | [query](../../skills/query/SKILL.md) | Programming | Provides food database query functionality and capabilities. |
 | [query-java](../../skills/query-java/SKILL.md) | Cncf | "Provides Azure Monitor Query SDK for Java. Execute Kusto... |
 | [query-py](../../skills/query-py/SKILL.md) | Cncf | "Provides Azure Monitor Query SDK for Python. Use for... |
 | [queue-py](../../skills/queue-py/SKILL.md) | Cncf | "Provides Azure Queue Storage SDK for Python. Use for... |
 | [queue-ts](../../skills/queue-ts/SKILL.md) | Cncf | "Provides Azure Queue Storage JavaScript/TypeScript SDK... |
-| [randomized-experiments](../../skills/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials... |
 | [rate-limiting](../../skills/rate-limiting/SKILL.md) | Trading | "Rate Limiting Strategies and Circuit Breaker Patterns for... |
 | [rate-limiting](../../skills/rate-limiting/SKILL.md) | Trading | "Provides Rate Limiting and Exchange API Management for... |
 | [react](../../skills/react/SKILL.md) | Programming | Provides Practical patterns for using fp-ts with React -... |
@@ -3662,7 +3178,6 @@ MIT — All skills are freely available and redistributable.
 | [readme](../../skills/readme/SKILL.md) | Programming | "Provides You are an expert technical writer creating... |
 | [realistic-simulation](../../skills/realistic-simulation/SKILL.md) | Trading | "Provides Realistic Paper Trading Simulation with Market... |
 | [recallmax](../../skills/recallmax/SKILL.md) | Agent | "Provides FREE — God-tier long-context memory for AI... |
-| [records](../../skills/records/SKILL.md) | Coding | "Provides Comprehensive patterns for creating, maintaining,... |
 | [ref](../../skills/ref/SKILL.md) | Programming | "Provides Quick reference for Either type. Use when user... |
 | [ref](../../skills/ref/SKILL.md) | Programming | Provides Quick reference for Option type. Use when user... |
 | [ref](../../skills/ref/SKILL.md) | Programming | Provides Quick reference for pipe and flow. Use when user... |
@@ -3676,14 +3191,10 @@ MIT — All skills are freely available and redistributable.
 | [refresher](../../skills/refresher/SKILL.md) | Programming | "Provides Identifies outdated elements in provided content... |
 | [regime-classification](../../skills/regime-classification/SKILL.md) | Trading | "Provides Detect current market regime for adaptive trading... |
 | [regime-detection](../../skills/regime-detection/SKILL.md) | Trading | "Provides Market Regime Detection Systems for Adaptive... |
-| [regression-evaluation](../../skills/regression-evaluation/SKILL.md) | Coding | "Evaluates regression models using MSE, RMSE, MAE, MAPE,... |
 | [reinforcement-learning](../../skills/reinforcement-learning/SKILL.md) | Trading | "Provides Reinforcement Learning for automated trading... |
-| [release-pipeline](../../skills/release-pipeline/SKILL.md) | Coding | Implements comprehensive secure release pipeline with CVE... |
 | [reliability](../../skills/reliability/SKILL.md) | Programming | 'Provides Reliable command execution on Windows: paths,... |
 | [remotion](../../skills/remotion/SKILL.md) | Programming | "Provides Generate walkthrough videos from Stitch projects... |
-| [repo-commander](../../skills/repo-commander/SKILL.md) | Coding | "Provides 7-stage super workflow for GitHub repo audit,... |
 | [report](../../skills/report/SKILL.md) | Programming | "Provides Scrapes content based on a preset URL list,... |
-| [reproducible-research](../../skills/reproducible-research/SKILL.md) | Coding | "Implements reproducible research practices including code... |
 | [reputation-monitoring](../../skills/reputation-monitoring/SKILL.md) | Agent | Provides Scrape reviews, ratings, and brand mentions from... |
 | [research](../../skills/research/SKILL.md) | Agent | Provides Analyze market conditions, geographic... |
 | [research](../../skills/research/SKILL.md) | Agent | "Provides Automatically fetch latest library/framework... |
@@ -3691,11 +3202,6 @@ MIT — All skills are freely available and redistributable.
 | [research](../../skills/research/SKILL.md) | Programming | Provides Thesis-driven equity analysis from public SEC... |
 | [researcher](../../skills/researcher/SKILL.md) | Programming | "Provides You are an expert software engineer and systems... |
 | [responder](../../skills/responder/SKILL.md) | Cncf | Provides Expert SRE incident responder specializing in... |
-| [review](../../skills/review/SKILL.md) | Coding | "Provides Master software architect specializing in modern... |
-| [review](../../skills/review/SKILL.md) | Coding | "Analyzes code diffs and files to identify bugs, security... |
-| [review](../../skills/review/SKILL.md) | Coding | "Implements django-access-review patterns for software... |
-| [review](../../skills/review/SKILL.md) | Coding | "Implements django performance code review. use when asked... |
-| [review](../../skills/review/SKILL.md) | Coding | "Security-focused code review identifying vulnerabilities... |
 | [review](../../skills/review/SKILL.md) | Programming | "Provides Review Bitcoin Lightning Network protocol... |
 | [review](../../skills/review/SKILL.md) | Programming | "Provides Review UI code for StyleSeed design-system... |
 | [review-ai-review](../../skills/review-ai-review/SKILL.md) | Programming | Provides You are an expert AI-powered code review... |
@@ -3706,7 +3212,6 @@ MIT — All skills are freely available and redistributable.
 | [risk-auditor](../../skills/risk-auditor/SKILL.md) | Programming | "Provides Identifies dependencies at heightened risk of... |
 | [risk-management-basics](../../skills/risk-management-basics/SKILL.md) | Trading | "Position sizing, stop-loss implementation, and... |
 | [router](../../skills/router/SKILL.md) | Agent | "Provides use when the user is unsure which skill to use or... |
-| [router-patterns](../../skills/router-patterns/SKILL.md) | Coding | "Provides Comprehensive patterns for Next.js 14+ App Router... |
 | [routes](../../skills/routes/SKILL.md) | Programming | "Provides Guidelines for creating API routes in Expo Router... |
 | [rules](../../skills/rules/SKILL.md) | Programming | 'Provides Expert in Odoo access control:... |
 | [run](../../skills/run/SKILL.md) | Cncf | "Provides Specialized skill for building production-ready... |
@@ -3723,7 +3228,6 @@ MIT — All skills are freely available and redistributable.
 | [schema](../../skills/schema/SKILL.md) | Programming | "Detect, validate, and generate Schema.org structured data.... |
 | [schema-generator](../../skills/schema-generator/SKILL.md) | Programming | Generates valid JSON-LD structured data for 10 schema types... |
 | [scientist](../../skills/scientist/SKILL.md) | Programming | Provides Expert data scientist for advanced analytics,... |
-| [scoring](../../skills/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining... |
 | [scraper](../../skills/scraper/SKILL.md) | Agent | Provides AI-driven data extraction from 55+ Actors across... |
 | [scraper](../../skills/scraper/SKILL.md) | Programming | Provides Deep web scraping, screenshots, PDF parsing, and... |
 | [scraper](../../skills/scraper/SKILL.md) | Programming | Provides Web scraping inteligente multi-estrategia. Extrai... |
@@ -3732,7 +3236,6 @@ MIT — All skills are freely available and redistributable.
 | [scripting](../../skills/scripting/SKILL.md) | Agent | "Provides Bash scripting workflow for creating... |
 | [scripting](../../skills/scripting/SKILL.md) | Agent | "Provides Operating system and shell scripting... |
 | [scripting](../../skills/scripting/SKILL.md) | Programming | "Provides Provide production-ready shell script templates... |
-| [sdk](../../skills/sdk/SKILL.md) | Coding | "Provides Build applications that programmatically interact... |
 | [sdk-expert](../../skills/sdk-expert/SKILL.md) | Programming | "Provides Expert in the Vercel AI SDK. Covers Core API... |
 | [seaborn](../../skills/seaborn/SKILL.md) | Programming | Provides Seaborn is a Python visualization library for... |
 | [search](../../skills/search/SKILL.md) | Cncf | "Provides Expert patterns for Algolia search... |
@@ -3759,11 +3262,9 @@ MIT — All skills are freely available and redistributable.
 | [setup](../../skills/setup/SKILL.md) | Programming | "Provides Set up Tailwind CSS v4 in Expo with... |
 | [setup](../../skills/setup/SKILL.md) | Programming | 'Provides Expert guide for configuring Odoo Accounting:... |
 | [setup](../../skills/setup/SKILL.md) | Programming | "Provides Interactive StyleSeed setup wizard for choosing... |
-| [shadcn](../../skills/shadcn/SKILL.md) | Coding | "Manages shadcn/ui components and projects, providing... |
 | [shaders](../../skills/shaders/SKILL.md) | Programming | "CRITICAL: Use for Makepad shader system. Triggers on"... |
 | [shaders](../../skills/shaders/SKILL.md) | Programming | "Provides Three.js shaders - GLSL, ShaderMaterial,... |
 | [sharpe-ratio](../../skills/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted... |
-| [shop](../../skills/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing... |
 | [simplifier](../../skills/simplifier/SKILL.md) | Programming | "Provides Simplifies and refines code for clarity,... |
 | [sitemap](../../skills/sitemap/SKILL.md) | Programming | "Provides Analyze existing XML sitemaps or generate new... |
 | [skill](../../skills/skill/SKILL.md) | Agent | Provides Manage multiple local CLI agents via tmux sessions... |
@@ -3791,7 +3292,6 @@ MIT — All skills are freely available and redistributable.
 | [sms-java](../../skills/sms-java/SKILL.md) | Cncf | "Provides Send SMS messages with Azure Communication... |
 | [socrates](../../skills/socrates/SKILL.md) | Programming | "Explains concepts using Socratic-style dialogue. Use when... |
 | [specialist](../../skills/specialist/SKILL.md) | Cncf | Provides Expert Terraform/OpenTofu specialist mastering... |
-| [specialist](../../skills/specialist/SKILL.md) | Coding | "Provides BullMQ expert for Redis-backed job queues,... |
 | [specialist](../../skills/specialist/SKILL.md) | Programming | "Provides expert web researcher using advanced search... |
 | [speckit-update-skill](../../skills/speckit-update-skill/SKILL.md) | Programming | Provides windows 11 system management functionality and... |
 | [speed](../../skills/speed/SKILL.md) | Programming | Provides launch rsvp speed reader for text functionality... |
@@ -3803,13 +3303,11 @@ MIT — All skills are freely available and redistributable.
 | [standup-notes](../../skills/standup-notes/SKILL.md) | Programming | "Provides You are an expert team communication specialist... |
 | [states](../../skills/states/SKILL.md) | Programming | Provides this skill should be used when the user asks to... |
 | [statistical-arbitrage](../../skills/statistical-arbitrage/SKILL.md) | Trading | "Implements pair trading and cointegration-based arbitrage... |
-| [statistical-power](../../skills/statistical-power/SKILL.md) | Coding | "Analyzes statistical power, sample size determination,... |
 | [statsmodels](../../skills/statsmodels/SKILL.md) | Programming | "Provides Statsmodels is Python's premier library for... |
 | [status](../../skills/status/SKILL.md) | Programming | "Provides Apple HIG guidance for status and progress UI... |
 | [stop-loss](../../skills/stop-loss/SKILL.md) | Trading | "Implements stop loss strategies for risk management for... |
 | [storytelling](../../skills/storytelling/SKILL.md) | Programming | Provides Transform raw data into compelling narratives that... |
 | [strategic-compact](../../skills/strategic-compact/SKILL.md) | Agent | "Implements development skill from everything-claude-code... |
-| [strategies](../../skills/strategies/SKILL.md) | Coding | "Provides Transform debugging from frustrating guesswork... |
 | [strategies](../../skills/strategies/SKILL.md) | Programming | Provides Guide to selecting and optimizing embedding models... |
 | [strategist](../../skills/strategist/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... |
 | [strategist](../../skills/strategist/SKILL.md) | Programming | "Analyzes keyword usage in provided content, calculates... |
@@ -3826,13 +3324,10 @@ MIT — All skills are freely available and redistributable.
 | [superpowers](../../skills/superpowers/SKILL.md) | Agent | "Provides use when starting any conversation - establishes... |
 | [support](../../skills/support/SKILL.md) | Programming | "Provides Elite AI-powered customer support specialist... |
 | [support-resistance](../../skills/support-resistance/SKILL.md) | Trading | "Implements technical levels where price tends to pause or... |
-| [support-vector-machines](../../skills/support-vector-machines/SKILL.md) | Coding | "Implements support vector machines (SVM) with kernel... |
 | [sutskever](../../skills/sutskever/SKILL.md) | Programming | "Provides Agente que simula Ilya Sutskever — co-fundador da... |
-| [sveltekit](../../skills/sveltekit/SKILL.md) | Coding | "Provides Build full-stack web applications with SvelteKit... |
 | [swift-ui](../../skills/swift-ui/SKILL.md) | Programming | "Provides expo-ui-swift-ui functionality and capabilities." |
 | [sympy](../../skills/sympy/SKILL.md) | Programming | "Provides SymPy is a Python library for symbolic... |
 | [syntax](../../skills/syntax/SKILL.md) | Agent | Provides Validate n8n expression syntax and fix common... |
-| [synthetic-control](../../skills/synthetic-control/SKILL.md) | Coding | "Implements synthetic control methods,... |
 | [synthetic-data](../../skills/synthetic-data/SKILL.md) | Trading | "Provides Generate synthetic financial data for training... |
 | [system](../../skills/system/SKILL.md) | Programming | 'Provides Apple HIG guidance for system experience... |
 | [system](../../skills/system/SKILL.md) | Programming | "Provides Build production-ready design systems with... |
@@ -3843,18 +3338,13 @@ MIT — All skills are freely available and redistributable.
 | [tables-py](../../skills/tables-py/SKILL.md) | Cncf | "Provides Azure Tables SDK for Python (Storage and Cosmos... |
 | [tail-risk](../../skills/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event... |
 | [tao](../../skills/tao/SKILL.md) | Programming | "Provides Matemático ultra-avançado inspirado em Terence... |
-| [taste](../../skills/taste/SKILL.md) | Coding | "Provides use when generating elite gsap-heavy frontend... |
-| [taste](../../skills/taste/SKILL.md) | Coding | "Provides use when generating google stitch design.md... |
 | [tech](../../skills/tech/SKILL.md) | Programming | Provides Integrate multiple digital health data sources,... |
 | [tech-debt](../../skills/tech-debt/SKILL.md) | Programming | Provides You are a technical debt expert specializing in... |
 | [technical](../../skills/technical/SKILL.md) | Programming | "Provides Audit technical SEO across crawlability,... |
 | [technologies](../../skills/technologies/SKILL.md) | Programming | "Provides Check for .claude/apple-design-context.md before... |
 | [tecnico](../../skills/tecnico/SKILL.md) | Programming | "Provides Sub-skill técnica de Yann LeCun. Cobre CNNs,... |
-| [telegram](../../skills/telegram/SKILL.md) | Coding | "Provides Integracao completa com Telegram Bot API. Setup... |
 | [template-creator](../../skills/template-creator/SKILL.md) | Programming | "Provides Guide for creating templates for the Obsidian Web... |
 | [templates](../../skills/templates/SKILL.md) | Cncf | "Provides Production-ready templates for incident response... |
-| [templates](../../skills/templates/SKILL.md) | Coding | "Provides Create production-ready FastAPI projects with... |
-| [templates](../../skills/templates/SKILL.md) | Coding | "Provides Project scaffolding templates for new... |
 | [templates](../../skills/templates/SKILL.md) | Programming | "Provides Implement DeFi protocols with production-ready... |
 | [templates](../../skills/templates/SKILL.md) | Programming | "Provides Documentation templates and structure guidelines.... |
 | [templates](../../skills/templates/SKILL.md) | Programming | "Provides Templates and patterns for creating legally sound... |
@@ -3870,7 +3360,6 @@ MIT — All skills are freely available and redistributable.
 | [textanalytics-py](../../skills/textanalytics-py/SKILL.md) | Cncf | "Provides Azure AI Text Analytics SDK for sentiment... |
 | [textures](../../skills/textures/SKILL.md) | Programming | "Provides Three.js textures - texture types, UV mapping,... |
 | [time-series-database](../../skills/time-series-database/SKILL.md) | Trading | "Provides Time-series database queries and optimization for... |
-| [time-series-forecasting](../../skills/time-series-forecasting/SKILL.md) | Coding | "Implements ARIMA, exponential smoothing, state-space... |
 | [time-series-forecasting](../../skills/time-series-forecasting/SKILL.md) | Trading | "Provides Time series forecasting for price prediction and... |
 | [timesheet](../../skills/timesheet/SKILL.md) | Programming | 'Provides Expert guide for Odoo Project and Timesheets:... |
 | [tmux](../../skills/tmux/SKILL.md) | Programming | "Provides Expert tmux session, window, and pane management... |
@@ -3880,7 +3369,6 @@ MIT — All skills are freely available and redistributable.
 | [toolkit](../../skills/toolkit/SKILL.md) | Programming | 'Provides 6 production-ready AI engineering workflows:... |
 | [toolkit](../../skills/toolkit/SKILL.md) | Programming | "Provides Essential tools and frameworks for modern product... |
 | [tools-expert](../../skills/tools-expert/SKILL.md) | Agent | Provides Expert guide for using n8n-mcp MCP tools... |
-| [topic-modeling](../../skills/topic-modeling/SKILL.md) | Coding | "Implements topic modeling using Latent Dirichlet... |
 | [tracing](../../skills/tracing/SKILL.md) | Cncf | Provides Implement distributed tracing with Jaeger and... |
 | [tracker](../../skills/tracker/SKILL.md) | Programming | "Provides Track code changes with structured JSON records,... |
 | [tracking](../../skills/tracking/SKILL.md) | Programming | Provides Design, audit, and improve analytics tracking... |
@@ -3895,7 +3383,6 @@ MIT — All skills are freely available and redistributable.
 | [translation-document-py](../../skills/translation-document-py/SKILL.md) | Cncf | "Provides Azure AI Document Translation SDK for batch... |
 | [translation-text-py](../../skills/translation-text-py/SKILL.md) | Cncf | "Provides Azure AI Text Translation SDK for real-time text... |
 | [translation-ts](../../skills/translation-ts/SKILL.md) | Cncf | "Configures text and document translation with rest-style... |
-| [tree-methods](../../skills/tree-methods/SKILL.md) | Coding | "Implements decision trees, random forests, gradient... |
 | [trend-analysis](../../skills/trend-analysis/SKILL.md) | Trading | "Provides Trend identification, classification, and... |
 | [troubleshooter](../../skills/troubleshooter/SKILL.md) | Cncf | "Provides Expert DevOps troubleshooter specializing in... |
 | [troubleshooting](../../skills/troubleshooting/SKILL.md) | Agent | "Provides Linux system troubleshooting workflow for... |
@@ -3906,17 +3393,12 @@ MIT — All skills are freely available and redistributable.
 | [ts](../../skills/ts/SKILL.md) | Cncf | "Provides Authenticate to Azure services with various... |
 | [ts](../../skills/ts/SKILL.md) | Cncf | Provides Connect to Azure Database for PostgreSQL Flexible... |
 | [ts](../../skills/ts/SKILL.md) | Cncf | "Configures enterprise messaging with queues, topics, and... |
-| [ts](../../skills/ts/SKILL.md) | Coding | "Provides Create Zustand stores following established... |
 | [tuist-app](../../skills/tuist-app/SKILL.md) | Programming | "Provides Build, refactor, or review SwiftUI macOS menubar... |
 | [tuner](../../skills/tuner/SKILL.md) | Programming | 'Provides Expert guide for diagnosing and fixing Odoo... |
 | [tuning](../../skills/tuning/SKILL.md) | Programming | Provides Optimize vector index performance for latency,... |
 | [twap](../../skills/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large... |
 | [twap-vwap](../../skills/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms:... |
-| [types](../../skills/types/SKILL.md) | Coding | "Provides Comprehensive guidance for mastering TypeScript's... |
 | [typescript](../../skills/typescript/SKILL.md) | Programming | "Provides Guide for building reliable, fault-tolerant... |
-| [typescript-scaffold](../../skills/typescript-scaffold/SKILL.md) | Coding | "Provides You are a TypeScript project architecture expert... |
-| [ui](../../skills/ui/SKILL.md) | Coding | Provides use when creating raw industrial or tactical... |
-| [ui](../../skills/ui/SKILL.md) | Coding | "Provides use when creating clean editorial interfaces with... |
 | [ui](../../skills/ui/SKILL.md) | Programming | "Validates animation durations, enforces typography scale,... |
 | [ui](../../skills/ui/SKILL.md) | Programming | "Provides Complete guide for building beautiful apps with... |
 | [updater](../../skills/updater/SKILL.md) | Programming | "Provides speckit safe update functionality and... |
@@ -3925,7 +3407,6 @@ MIT — All skills are freely available and redistributable.
 | [upscale](../../skills/upscale/SKILL.md) | Programming | Provides upscale and enhance image and video resolution... |
 | [use](../../skills/use/SKILL.md) | Programming | "Provides Build and maintain Rayden UI components and... |
 | [v2-py](../../skills/v2-py/SKILL.md) | Agent | Provides Build hosted agents using Azure AI Projects SDK... |
-| [validation](../../skills/validation/SKILL.md) | Coding | Validates pipeline stages and returns config status strings... |
 | [validation](../../skills/validation/SKILL.md) | Trading | "Provides Data validation and quality assurance for trading... |
 | [validation-notebook](../../skills/validation-notebook/SKILL.md) | Programming | Generates SQL validation notebooks for dbt PR changes with... |
 | [validator](../../skills/validator/SKILL.md) | Programming | "Provides Rigorous visual validation expert specializing in... |
@@ -3938,7 +3419,6 @@ MIT — All skills are freely available and redistributable.
 | [vision-imageanalysis-java](../../skills/vision-imageanalysis-java/SKILL.md) | Cncf | "Provides Build image analysis applications with Azure AI... |
 | [vision-imageanalysis-py](../../skills/vision-imageanalysis-py/SKILL.md) | Cncf | "Provides Azure AI Vision Image Analysis SDK for captions,... |
 | [vision-trainer](../../skills/vision-trainer/SKILL.md) | Programming | Provides Train or fine-tune vision models on Hugging Face... |
-| [visual-design](../../skills/visual-design/SKILL.md) | Coding | "Provides use when designing expensive agency-grade... |
 | [vitepress](../../skills/vitepress/SKILL.md) | Programming | "Provides Transform generated wiki Markdown files into a... |
 | [vizcom](../../skills/vizcom/SKILL.md) | Programming | "Provides AI-powered product design tool for transforming... |
 | [voicelive-dotnet](../../skills/voicelive-dotnet/SKILL.md) | Cncf | "Provides Azure AI Voice Live SDK for .NET. Build real-time... |
@@ -3958,7 +3438,6 @@ MIT — All skills are freely available and redistributable.
 | [websocket-handling](../../skills/websocket-handling/SKILL.md) | Trading | "Real-time market data handling with WebSockets including... |
 | [websocket-streaming](../../skills/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing... |
 | [weightsandbiases-dotnet](../../skills/weightsandbiases-dotnet/SKILL.md) | Cncf | "Provides Azure Weights & Biases SDK for .NET. ML... |
-| [widget](../../skills/widget/SKILL.md) | Coding | "Provides Build a real-time support chat system with a... |
 | [widgets](../../skills/widgets/SKILL.md) | Programming | 'Provides Version: makepad-widgets (dev branch) | Last... |
 | [windows](../../skills/windows/SKILL.md) | Programming | "Provides How to use a Win32 build of BusyBox to run many... |
 | [windows](../../skills/windows/SKILL.md) | Programming | "Provides PowerShell Windows patterns. Critical pitfalls,... |
@@ -3971,7 +3450,6 @@ MIT — All skills are freely available and redistributable.
 | [workflow-automate](../../skills/workflow-automate/SKILL.md) | Agent | Provides You are a workflow automation expert specializing... |
 | [workflows](../../skills/workflows/SKILL.md) | Programming | "Provides Helps understand and write EAS workflow YAML... |
 | [worktrees](../../skills/worktrees/SKILL.md) | Programming | "Provides Git worktrees create isolated workspaces sharing... |
-| [wrapper](../../skills/wrapper/SKILL.md) | Coding | "Provides Wrapper oficial de M2MCent (Node.js) para... |
 | [writer](../../skills/writer/SKILL.md) | Agent | "Provides Create and improve agent skills following the... |
 | [writer](../../skills/writer/SKILL.md) | Programming | "Provides Writes SEO-optimized content based on provided... |
 | [writer](../../skills/writer/SKILL.md) | Programming | "Provides You are a senior documentation engineer that... |
@@ -3985,11 +3463,10 @@ MIT — All skills are freely available and redistributable.
 | [zafiro](../../skills/zafiro/SKILL.md) | Programming | "Provides Optimal ViewModel and Wizard creation patterns... |
 
 
-### Reference (Learn & Understand) (156 skills)
+### Reference (Learn & Understand) (154 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
-| [advanced](../../skills/advanced/SKILL.md) | Coding | "Provides Advanced Git operations including rebasing,... |
 | [aks](../../skills/aks/SKILL.md) | Cncf | "Provides Managed Kubernetes cluster with automatic scaling... |
 | [algorithms](../../skills/algorithms/SKILL.md) | Programming | ''Provides Comprehensive algorithm selection guide u2014... |
 | [architecture](../../skills/architecture/SKILL.md) | Cncf | "Creates or updates ARCHITECTURE.md documenting the... |
@@ -4105,7 +3582,6 @@ MIT — All skills are freely available and redistributable.
 | [opentelemetry](../../skills/opentelemetry/SKILL.md) | Cncf | "OpenTelemetry in Observability framework for tracing,... |
 | [openyurt](../../skills/openyurt/SKILL.md) | Cncf | ''Provides OpenYurt in Extending Kubernetes to edge... |
 | [osi](../../skills/osi/SKILL.md) | Cncf | "OSI Model Networking for Cloud-Native - All 7 layers with... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Software architecture patterns including MVC,... |
 | [policy-agent-opa](../../skills/policy-agent-opa/SKILL.md) | Cncf | "Open Policy Agent in Security &amp; Compliance - cloud... |
 | [project](../../skills/project/SKILL.md) | Cncf | "Notary Project in Content Trust &amp; Security - cloud... |
 | [prometheus](../../skills/prometheus/SKILL.md) | Cncf | "Prometheus in Cloud-Native Engineering - The Prometheus... |
@@ -4220,133 +3696,12 @@ MIT — All skills are freely available and redistributable.
 | [writer](../../skills/writer/SKILL.md) | Agent | "Provides Create pull requests following Sentry's... |
 | [writing](../../skills/writing/SKILL.md) | Agent | "Provides Structured task planning with clear breakdowns,... |
 
-
-### Review (Audit & Validate) (112 skills)
-
-| Skill Name | Domain | Description |
-|---|---|---|
-| [101](../../skills/101/SKILL.md) | Coding | "Provides Configure and test common network services (HTTP,... |
-| [analysis](../../skills/analysis/SKILL.md) | Coding | "Provides Analyze cryptographic code to detect operations... |
-| [analysis](../../skills/analysis/SKILL.md) | Coding | "Provides Execute comprehensive network traffic analysis... |
-| [analyst](../../skills/analyst/SKILL.md) | Coding | "Provides Expert firmware analyst specializing in embedded... |
-| [analyst](../../skills/analyst/SKILL.md) | Coding | "Provides Expert malware analyst specializing in defensive... |
-| [attacks](../../skills/attacks/SKILL.md) | Coding | "Provides Provide comprehensive techniques for attacking... |
-| [audit](../../skills/audit/SKILL.md) | Coding | "Provides Comprehensive AWS security posture assessment... |
-| [audit](../../skills/audit/SKILL.md) | Coding | "Provides Security auditor for Laravel applications.... |
-| [audit](../../skills/audit/SKILL.md) | Coding | "Detects missing zeroization of sensitive data in source... |
-| [audit-007](../../skills/audit-007/SKILL.md) | Coding | "Provides Security audit, hardening, threat modeling... |
-| [auditor](../../skills/auditor/SKILL.md) | Coding | "Provides Expert security auditor specializing in... |
-| [auditor](../../skills/auditor/SKILL.md) | Coding | "Provides Audit rapidly generated or AI-produced code for... |
-| [authentication](../../skills/authentication/SKILL.md) | Coding | "Provides Identify and exploit authentication and session... |
-| [automation](../../skills/automation/SKILL.md) | Coding | Provides Browser automation powers web testing, scraping,... |
-| [automator](../../skills/automator/SKILL.md) | Coding | Provides Master AI-powered test automation with modern... |
-| [best-practices](../../skills/best-practices/SKILL.md) | Coding | Provides IAM policy review, hardening, and least privilege... |
-| [bugs](../../skills/bugs/SKILL.md) | Coding | "Provides Find bugs, security vulnerabilities, and code... |
-| [builder](../../skills/builder/SKILL.md) | Coding | "Provides Build a minimal but real security policy for... |
-| [checker](../../skills/checker/SKILL.md) | Coding | "Provides Automated compliance checking against CIS,... |
-| [checklist](../../skills/checklist/SKILL.md) | Coding | "Provides Comprehensive checklist for conducting thorough... |
-| [checklist](../../skills/checklist/SKILL.md) | Coding | "Provides Provide a comprehensive checklist for planning,... |
-| [code](../../skills/code/SKILL.md) | Coding | "Implements this skill embodies the principles of patterns... |
-| [code-compliance](../../skills/code-compliance/SKILL.md) | Coding | "Provides Verifies code implements exactly what... |
-| [coder](../../skills/coder/SKILL.md) | Coding | "Provides Expert in secure frontend coding practices... |
-| [commands](../../skills/commands/SKILL.md) | Coding | "Provides Provide a comprehensive command reference for... |
-| [compliance](../../skills/compliance/SKILL.md) | Coding | "Provides Master PCI DSS (Payment Card Industry Data... |
-| [compliance-check](../../skills/compliance-check/SKILL.md) | Coding | "Provides You are a compliance expert specializing in... |
-| [configuration](../../skills/configuration/SKILL.md) | Coding | "Provides Configure mutual TLS (mTLS) for zero-trust... |
-| [configuration](../../skills/configuration/SKILL.md) | Coding | Provides Static Application Security Testing (SAST) tool... |
-| [configuration](../../skills/configuration/SKILL.md) | Coding | "Provides Master ShellCheck static analysis configuration... |
-| [construction](../../skills/construction/SKILL.md) | Coding | "Provides Build comprehensive attack trees to visualize... |
-| [craft](../../skills/craft/SKILL.md) | Coding | "Provides use when performing code review, writing or... |
-| [creator](../../skills/creator/SKILL.md) | Coding | "Creates custom Semgrep rules for detecting security... |
-| [deps-audit](../../skills/deps-audit/SKILL.md) | Coding | "Provides You are a dependency security expert specializing... |
-| [design](../../skills/design/SKILL.md) | Coding | "Provides use when building apps that collect user data.... |
-| [engineer](../../skills/engineer/SKILL.md) | Coding | "Provides Expert reverse engineer specializing in binary... |
-| [engineering](../../skills/engineering/SKILL.md) | Coding | "Provides Comprehensive techniques for capturing,... |
-| [escalation](../../skills/escalation/SKILL.md) | Coding | "Provides Execute systematic privilege escalation... |
-| [escalation](../../skills/escalation/SKILL.md) | Coding | "Provides Provide systematic methodologies for discovering... |
-| [expert](../../skills/expert/SKILL.md) | Coding | "Provides Expert in threat modeling methodologies, security... |
-| [extraction](../../skills/extraction/SKILL.md) | Coding | "Provides Derive security requirements from threat models... |
-| [forensics](../../skills/forensics/SKILL.md) | Coding | "Provides Comprehensive techniques for acquiring,... |
-| [framework](../../skills/framework/SKILL.md) | Coding | "Provides ⚠️ AUTHORIZED USE ONLY > This skill is for... |
-| [full-review](../../skills/full-review/SKILL.md) | Coding | "Implements use when working with comprehensive review full... |
-| [fuzzing](../../skills/fuzzing/SKILL.md) | Coding | "Provides Expert guidance for ffuf web fuzzing during... |
-| [handling](../../skills/handling/SKILL.md) | Coding | "Provides Practical implementation guide for GDPR-compliant... |
-| [injection](../../skills/injection/SKILL.md) | Coding | "Provides Execute comprehensive client-side injection... |
-| [java](../../skills/java/SKILL.md) | Coding | Provides Scaffold, write, debug, and enhance... |
-| [kaizen](../../skills/kaizen/SKILL.md) | Coding | "Provides Guide for continuous improvement, error proofing,... |
-| [management](../../skills/management/SKILL.md) | Coding | Provides Secure secrets management practices for CI/CD... |
-| [mapping](../../skills/mapping/SKILL.md) | Coding | "Provides Map identified threats to appropriate security... |
-| [methodology](../../skills/methodology/SKILL.md) | Coding | "Provides Master the complete penetration testing lifecycle... |
-| [methods](../../skills/methods/SKILL.md) | Coding | "Provides Provide comprehensive techniques for escalating... |
-| [omega](../../skills/omega/SKILL.md) | Coding | "Provides CISO operacional enterprise para gestao total de... |
-| [orchestrator](../../skills/orchestrator/SKILL.md) | Coding | "Provides Master TDD orchestrator specializing in... |
-| [parser](../../skills/parser/SKILL.md) | Coding | "Provides Searches and explores Burp Suite project files... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Build secure, scalable authentication and... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Master Bash Automated Testing System (Bats) for... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Comprehensive patterns and techniques for... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | Provides Build reliable, fast, and maintainable end-to-end... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Apply STRIDE methodology to systematically... |
-| [patterns](../../skills/patterns/SKILL.md) | Coding | "Provides Jest testing patterns, factory functions, mocking... |
-| [playwright](../../skills/playwright/SKILL.md) | Coding | Provides Expert capability for robust, stealthy, and... |
-| [pr-enhance](../../skills/pr-enhance/SKILL.md) | Coding | "Provides Generate structured PR descriptions from diffs,... |
-| [reconnaissance](../../skills/reconnaissance/SKILL.md) | Coding | "Provides Provide systematic methodologies for leveraging... |
-| [refactor-clean](../../skills/refactor-clean/SKILL.md) | Coding | Provides You are a code refactoring expert specializing in... |
-| [review](../../skills/review/SKILL.md) | Coding | "Provides Professional code review with auto CHANGELOG... |
-| [review](../../skills/review/SKILL.md) | Coding | "Implements security-focused code review for prs, commits,... |
-| [review](../../skills/review/SKILL.md) | Coding | "Implements verify fix commits address audit findings... |
-| [review](../../skills/review/SKILL.md) | Coding | "Provides Find exploitable vulnerabilities in GitHub... |
-| [review](../../skills/review/SKILL.md) | Coding | "Provides Human review workflow for AI-generated GitHub... |
-| [rotation](../../skills/rotation/SKILL.md) | Coding | "Provides Automate AWS secrets rotation for RDS, API keys,... |
-| [scanner](../../skills/scanner/SKILL.md) | Coding | "Provides Advanced vulnerability analysis principles. OWASP... |
-| [security](../../skills/security/SKILL.md) | Coding | "Provides Master smart contract security best practices,... |
-| [security-dependencies](../../skills/security-dependencies/SKILL.md) | Coding | "Provides You are a security expert specializing in... |
-| [security-hardening](../../skills/security-hardening/SKILL.md) | Coding | "Provides Coordinate multi-layer security scanning and... |
-| [security-sast](../../skills/security-sast/SKILL.md) | Coding | "Static Application Security Testing (SAST) for code... |
-| [skill](../../skills/skill/SKILL.md) | Coding | "Implements web fuzzing with ffuf patterns for software... |
-| [skill](../../skills/skill/SKILL.md) | Coding | 'Provides IMPORTANT - Path Resolution: This skill can be... |
-| [skill](../../skills/skill/SKILL.md) | Coding | "Implements pairwise test generation patterns for software... |
-| [skill](../../skills/skill/SKILL.md) | Coding | "Provides Secure environment variable management ensuring... |
-| [skills](../../skills/skills/SKILL.md) | Coding | "Provides Expert security auditor for AI Skills and... |
-| [skills](../../skills/skills/SKILL.md) | Coding | "Provides Production-grade test automation skills for 46... |
-| [tactics](../../skills/tactics/SKILL.md) | Coding | "Provides Red team tactics principles based on MITRE... |
-| [tdd-cycle](../../skills/tdd-cycle/SKILL.md) | Coding | "Implements use when working with tdd workflows tdd cycle... |
-| [tdd-green](../../skills/tdd-green/SKILL.md) | Coding | "Provides Implement the minimal code needed to make failing... |
-| [tdd-red](../../skills/tdd-red/SKILL.md) | Coding | "Provides Generate failing tests for the TDD red phase to... |
-| [tdd-refactor](../../skills/tdd-refactor/SKILL.md) | Coding | "Implements use when working with tdd workflows tdd... |
-| [tech-debt](../../skills/tech-debt/SKILL.md) | Coding | "Provides You are a technical debt expert specializing in... |
-| [techniques](../../skills/techniques/SKILL.md) | Coding | 'Provides AUTHORIZED USE ONLY: This skill contains dual-use... |
-| [test-generate](../../skills/test-generate/SKILL.md) | Coding | "Provides Generate comprehensive, maintainable unit tests... |
-| [testing](../../skills/testing/SKILL.md) | Coding | "Provides AI-powered E2E web testing — eyes and hands for... |
-| [testing](../../skills/testing/SKILL.md) | Coding | Provides Execute comprehensive web application security... |
-| [testing](../../skills/testing/SKILL.md) | Coding | Provides Identify and exploit HTML injection... |
-| [testing](../../skills/testing/SKILL.md) | Coding | Provides Provide systematic methodologies for identifying... |
-| [testing](../../skills/testing/SKILL.md) | Coding | "Provides Comprehensive k6 load testing skill for API,... |
-| [testing](../../skills/testing/SKILL.md) | Coding | "Provides Practical guide to testing web applications with... |
-| [testing](../../skills/testing/SKILL.md) | Coding | Provides Conduct comprehensive security assessments of SMTP... |
-| [testing](../../skills/testing/SKILL.md) | Coding | Provides Execute comprehensive SQL injection vulnerability... |
-| [testing](../../skills/testing/SKILL.md) | Coding | Provides Conduct comprehensive SSH security assessments... |
-| [testing](../../skills/testing/SKILL.md) | Coding | "Provides Comprehensive testing approaches for Temporal... |
-| [testing](../../skills/testing/SKILL.md) | Coding | Provides To test local web applications, write native... |
-| [testing](../../skills/testing/SKILL.md) | Coding | Provides Assess WordPress installations for common... |
-| [tools](../../skills/tools/SKILL.md) | Coding | "Provides Implement proven methodologies and tool workflows... |
-| [tools](../../skills/tools/SKILL.md) | Coding | "Provides Master essential security scanning tools for... |
-| [traversal](../../skills/traversal/SKILL.md) | Coding | "Provides Identify and exploit file path traversal... |
-| [uploads](../../skills/uploads/SKILL.md) | Coding | "Provides Expert at handling file uploads and cloud... |
-| [variant-creator](../../skills/variant-creator/SKILL.md) | Coding | "Creates language variants of existing Semgrep rules. Use... |
-| [varlock](../../skills/varlock/SKILL.md) | Coding | "Provides Secure-by-default environment variable management... |
-| [verification](../../skills/verification/SKILL.md) | Coding | Provides Automated end-to-end UI testing and verification... |
-| [vulnerabilities](../../skills/vulnerabilities/SKILL.md) | Coding | "Provides Provide a comprehensive, structured reference for... |
-| [workflow](../../skills/workflow/SKILL.md) | Coding | "Provides Test-Driven Development workflow principles.... |
-
 ## Complete Skills Index
 
 | Skill Name | Domain | Description | Role |
 |---|---|---|---|
-| [101](../../skills/coding/101/SKILL.md) | Coding | "Provides Configure and test common network services (HTTP,... | Review |
 | [4-migration](../../skills/programming/4-migration/SKILL.md) | Programming | "Provides Specialized guide for migrating Godot 3.x... | Implementation |
 | [a11y](../../skills/programming/a11y/SKILL.md) | Programming | "Provides Audit a StyleSeed-based component or page for... | Implementation |
-| [ab-testing](../../skills/coding/ab-testing/SKILL.md) | Coding | Provides Designs and analyzes A/B tests including... | Implementation |
-| [accessibility](../../skills/coding/accessibility/SKILL.md) | Coding | "Provides Audit and fix HTML accessibility issues including... | Implementation |
 | [accessibility-audit](../../skills/programming/accessibility-audit/SKILL.md) | Programming | "Provides You are an accessibility expert specializing in... | Implementation |
 | [action](../../skills/programming/action/SKILL.md) | Programming | "CRITICAL: Use for Makepad event and action handling.... | Implementation |
 | [action](../../skills/programming/action/SKILL.md) | Programming | "CRITICAL: Use for Robius event and action patterns.... | Implementation |
@@ -4354,7 +3709,6 @@ MIT — All skills are freely available and redistributable.
 | [adhx](../../skills/programming/adhx/SKILL.md) | Programming | Provides Fetch any X/Twitter post as clean LLM-friendly... | Implementation |
 | [admin](../../skills/cncf/admin/SKILL.md) | Cncf | "Provides Expert database administrator specializing in... | Implementation |
 | [ads](../../skills/programming/ads/SKILL.md) | Programming | "Provides You are an expert performance marketer with... | Implementation |
-| [advanced](../../skills/coding/advanced/SKILL.md) | Coding | "Provides Advanced Git operations including rebasing,... | Reference |
 | [advisor](../../skills/agent/advisor/SKILL.md) | Agent | "Advisors on optimal auto-scaling configurations for... | Optimization |
 | [advisor](../../skills/agent/advisor/SKILL.md) | Agent | "Provides Conselho de especialistas — consulta multiplos... | Implementation |
 | [advisor](../../skills/programming/advisor/SKILL.md) | Programming | Provides Draft privacy policies, terms of service,... | Implementation |
@@ -4389,13 +3743,9 @@ MIT — All skills are freely available and redistributable.
 | [altman](../../skills/programming/altman/SKILL.md) | Programming | "Provides Agente que simula Sam Altman — CEO da OpenAI,... | Implementation |
 | [analysis](../../skills/agent/analysis/SKILL.md) | Agent | Provides Understand audience demographics, preferences,... | Implementation |
 | [analysis](../../skills/agent/analysis/SKILL.md) | Agent | Provides Discover and track emerging trends across Google... | Implementation |
-| [analysis](../../skills/coding/analysis/SKILL.md) | Coding | "Provides Analyze cryptographic code to detect operations... | Review |
-| [analysis](../../skills/coding/analysis/SKILL.md) | Coding | "Provides Execute comprehensive network traffic analysis... | Review |
 | [analysis](../../skills/programming/analysis/SKILL.md) | Programming | "Provides Comprehensive market sizing methodologies for... | Implementation |
 | [analysis](../../skills/programming/analysis/SKILL.md) | Programming | "Provides Design optimal team structures, hiring plans,... | Implementation |
 | [analysis](../../skills/programming/analysis/SKILL.md) | Programming | "Provides Find similar vulnerabilities and bugs across... | Implementation |
-| [analyst](../../skills/coding/analyst/SKILL.md) | Coding | "Provides Expert firmware analyst specializing in embedded... | Review |
-| [analyst](../../skills/coding/analyst/SKILL.md) | Coding | "Provides Expert malware analyst specializing in defensive... | Review |
 | [analyst](../../skills/programming/analyst/SKILL.md) | Programming | Provides Master modern business analysis with AI-powered... | Implementation |
 | [analyst](../../skills/programming/analyst/SKILL.md) | Programming | "Provides Build financial models, backtest trading... | Implementation |
 | [analyst](../../skills/programming/analyst/SKILL.md) | Programming | "Provides Expert startup business analyst specializing in... | Implementation |
@@ -4426,12 +3776,10 @@ MIT — All skills are freely available and redistributable.
 | [animation](../../skills/programming/animation/SKILL.md) | Programming | Implements Makepad animation system patterns with... | Implementation |
 | [animation](../../skills/programming/animation/SKILL.md) | Programming | "Provides Three.js animation - keyframe animation, skeletal... | Implementation |
 | [animator](../../skills/programming/animator/SKILL.md) | Programming | "Provides AI-powered animation tool for creating motion in... | Implementation |
-| [anomaly-detection](../../skills/coding/anomaly-detection/SKILL.md) | Coding | "Detects anomalies and outliers using isolation forests,... | Implementation |
 | [anomaly-detection](../../skills/trading/anomaly-detection/SKILL.md) | Trading | "Provides Detect anomalous market behavior, outliers, and... | Implementation |
 | [anomalydetector-java](../../skills/cncf/anomalydetector-java/SKILL.md) | Cncf | "Provides Build anomaly detection applications with Azure... | Implementation |
 | [anthropic](../../skills/programming/anthropic/SKILL.md) | Programming | "Provides To access Anthropic's official brand identity and... | Implementation |
 | [anthropic](../../skills/programming/anthropic/SKILL.md) | Programming | 'Provides to write internal communications, use this skill... | Implementation |
-| [api](../../skills/coding/api/SKILL.md) | Coding | "Provides Integracao com WhatsApp Business Cloud API... | Implementation |
 | [api](../../skills/programming/api/SKILL.md) | Programming | 'Provides Build apps with the Claude API or Anthropic SDK.... | Implementation |
 | [api](../../skills/programming/api/SKILL.md) | Programming | "Provides Expert on Odoo's external JSON-RPC and XML-RPC... | Implementation |
 | [api-development](../../skills/cncf/api-development/SKILL.md) | Cncf | "Provides this skill guides you through creating custom... | Implementation |
@@ -4439,10 +3787,8 @@ MIT — All skills are freely available and redistributable.
 | [apicenter-py](../../skills/cncf/apicenter-py/SKILL.md) | Cncf | Provides Azure API Center Management SDK for Python. Use... | Implementation |
 | [apimanagement-dotnet](../../skills/cncf/apimanagement-dotnet/SKILL.md) | Cncf | "Configures azure resource manager sdk for api management... | Implementation |
 | [apimanagement-py](../../skills/cncf/apimanagement-py/SKILL.md) | Cncf | "Provides Azure API Management SDK for Python. Use for... | Implementation |
-| [app](../../skills/coding/app/SKILL.md) | Coding | "Provides Build Progressive Web Apps (PWAs) with offline... | Implementation |
 | [app](../../skills/programming/app/SKILL.md) | Programming | "Provides Expert in building Telegram Mini Apps (TWA) - web... | Implementation |
 | [app-packaging](../../skills/programming/app-packaging/SKILL.md) | Programming | "Provides Scaffold, build, sign, and package SwiftPM macOS... | Implementation |
-| [appdeploy](../../skills/coding/appdeploy/SKILL.md) | Coding | "Provides Deploy web apps with backend APIs, database, and... | Implementation |
 | [applicationinsights-dotnet](../../skills/cncf/applicationinsights-dotnet/SKILL.md) | Cncf | "Provides Azure Application Insights SDK for .NET.... | Implementation |
 | [apps](../../skills/cncf/apps/SKILL.md) | Cncf | "Provides Expert patterns for Shopify app development... | Implementation |
 | [apps-multi-platform](../../skills/programming/apps-multi-platform/SKILL.md) | Programming | "Provides Build and deploy the same feature consistently... | Implementation |
@@ -4452,10 +3798,6 @@ MIT — All skills are freely available and redistributable.
 | [architect](../../skills/cncf/architect/SKILL.md) | Cncf | Provides Expert database architect specializing in data... | Implementation |
 | [architect](../../skills/cncf/architect/SKILL.md) | Cncf | "Provides Expert hybrid cloud architect specializing in... | Implementation |
 | [architect](../../skills/cncf/architect/SKILL.md) | Cncf | Provides Expert Kubernetes architect specializing in... | Implementation |
-| [architect](../../skills/coding/architect/SKILL.md) | Coding | "Provides Expert backend architect specializing in scalable... | Implementation |
-| [architect](../../skills/coding/architect/SKILL.md) | Coding | "Creates comprehensive technical documentation from... | Implementation |
-| [architect](../../skills/coding/architect/SKILL.md) | Coding | "Provides Expert in event sourcing, CQRS, and event-driven... | Implementation |
-| [architect](../../skills/coding/architect/SKILL.md) | Coding | "Provides Master modern GraphQL with federation,... | Implementation |
 | [architect](../../skills/programming/architect/SKILL.md) | Programming | "Provides Specialized skill for building production-ready... | Implementation |
 | [architect](../../skills/programming/architect/SKILL.md) | Programming | "Provides Expert .NET backend architect specializing in C#,... | Implementation |
 | [architect](../../skills/programming/architect/SKILL.md) | Programming | "Provides Expert in monorepo architecture, build systems,... | Implementation |
@@ -4467,9 +3809,6 @@ MIT — All skills are freely available and redistributable.
 | [architect](../../skills/programming/architect/SKILL.md) | Programming | "Provides You are a documentation architect that produces... | Implementation |
 | [architecture](../../skills/cncf/architecture/SKILL.md) | Cncf | "Provides Decision framework and patterns for architecting... | Implementation |
 | [architecture](../../skills/cncf/architecture/SKILL.md) | Cncf | "Creates or updates ARCHITECTURE.md documenting the... | Reference |
-| [architecture](../../skills/coding/architecture/SKILL.md) | Coding | "Provides Architectural decision-making framework.... | Implementation |
-| [architecture](../../skills/coding/architecture/SKILL.md) | Coding | "Provides Plan or restructure website hierarchy,... | Implementation |
-| [architecture](../../skills/coding/architecture/SKILL.md) | Coding | "Provides Guide for quality focused software architecture.... | Implementation |
 | [architecture](../../skills/programming/architecture/SKILL.md) | Programming | Provides Master the LangChain framework for building... | Implementation |
 | [architecture](../../skills/programming/architecture/SKILL.md) | Programming | "Provides Production-ready patterns for React Native... | Implementation |
 | [architecture](../../skills/programming/architecture/SKILL.md) | Programming | ''CRITICAL: Use for Robius app architecture patterns.... | Reference |
@@ -4477,32 +3816,21 @@ MIT — All skills are freely available and redistributable.
 | [arizeaiobservabilityeval-dotnet](../../skills/cncf/arizeaiobservabilityeval-dotnet/SKILL.md) | Cncf | "Provides Azure Resource Manager SDK for Arize AI... | Implementation |
 | [art](../../skills/programming/art/SKILL.md) | Programming | "Provides Algorithmic philosophies are computational... | Implementation |
 | [art](../../skills/programming/art/SKILL.md) | Programming | "Provides Game art principles. Visual style selection,... | Implementation |
-| [association-rules](../../skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets... | Implementation |
-| [astro](../../skills/coding/astro/SKILL.md) | Coding | "Provides Build content-focused websites with Astro — zero... | Implementation |
 | [astropy](../../skills/programming/astropy/SKILL.md) | Programming | Provides Astropy is the core Python package for astronomy,... | Implementation |
 | [async](../../skills/programming/async/SKILL.md) | Programming | "Provides Practical async patterns using TaskEither - clean... | Implementation |
-| [attacks](../../skills/coding/attacks/SKILL.md) | Coding | "Provides Provide comprehensive techniques for attacking... | Review |
 | [audio](../../skills/agent/audio/SKILL.md) | Agent | "Implements text-to-speech and speech-to-text using fal.ai... | Implementation |
 | [audio](../../skills/programming/audio/SKILL.md) | Programming | "Provides Game audio principles. Sound design, music... | Implementation |
 | [audit](../../skills/agent/audit/SKILL.md) | Agent | Provides Comprehensive security auditing workflow covering... | Implementation |
-| [audit](../../skills/coding/audit/SKILL.md) | Coding | "Provides Comprehensive AWS security posture assessment... | Review |
-| [audit](../../skills/coding/audit/SKILL.md) | Coding | "Provides Security auditor for Laravel applications.... | Review |
-| [audit](../../skills/coding/audit/SKILL.md) | Coding | "Provides Autonomously deep-scan entire codebase... | Implementation |
-| [audit](../../skills/coding/audit/SKILL.md) | Coding | "Detects missing zeroization of sensitive data in source... | Review |
 | [audit](../../skills/programming/audit/SKILL.md) | Programming | Provides Analyze a repository to generate recommended... | Implementation |
 | [audit](../../skills/programming/audit/SKILL.md) | Programming | "Provides Audit a project and recommend the highest-value... | Implementation |
 | [audit](../../skills/programming/audit/SKILL.md) | Programming | "Provides Diagnose and audit SEO issues affecting... | Implementation |
 | [audit](../../skills/programming/audit/SKILL.md) | Programming | Provides Audit SwiftUI performance issues from code review... | Implementation |
 | [audit](../../skills/programming/audit/SKILL.md) | Programming | "Provides Audit screens against Nielsen's heuristics and... | Implementation |
-| [audit-007](../../skills/coding/audit-007/SKILL.md) | Coding | "Provides Security audit, hardening, threat modeling... | Review |
-| [auditor](../../skills/coding/auditor/SKILL.md) | Coding | "Provides Expert security auditor specializing in... | Review |
-| [auditor](../../skills/coding/auditor/SKILL.md) | Coding | "Provides Audit rapidly generated or AI-produced code for... | Review |
 | [auditor](../../skills/programming/auditor/SKILL.md) | Programming | Audits GitHub Actions workflows for security... | Implementation |
 | [auditor](../../skills/programming/auditor/SKILL.md) | Programming | "Provides High-level technical SEO and site architecture... | Implementation |
 | [auditor](../../skills/programming/auditor/SKILL.md) | Programming | "Analyzes provided content for quality, E-E-A-T signals,... | Implementation |
 | [auth](../../skills/programming/auth/SKILL.md) | Programming | "Provides Expert patterns for Clerk auth implementation,... | Implementation |
 | [auth](../../skills/programming/auth/SKILL.md) | Programming | "Provides expert integration of supabase auth with next.js... | Implementation |
-| [authentication](../../skills/coding/authentication/SKILL.md) | Coding | "Provides Identify and exploit authentication and session... | Review |
 | [auto-scaling](../../skills/cncf/auto-scaling/SKILL.md) | Cncf | "Configures automatic scaling of compute resources (EC2,... | Reference |
 | [automation](../../skills/agent/automation/SKILL.md) | Agent | 'Provides Automate Airtable tasks via Rube MCP (Composio):... | Implementation |
 | [automation](../../skills/agent/automation/SKILL.md) | Agent | "Provides Automate Bitbucket repositories, pull requests,... | Orchestration |
@@ -4543,9 +3871,6 @@ MIT — All skills are freely available and redistributable.
 | [automation](../../skills/cncf/automation/SKILL.md) | Cncf | 'Provides Automate Square tasks via Rube MCP (Composio):... | Implementation |
 | [automation](../../skills/cncf/automation/SKILL.md) | Cncf | 'Provides Automate Telegram tasks via Rube MCP (Composio):... | Implementation |
 | [automation](../../skills/cncf/automation/SKILL.md) | Cncf | 'Provides Automate WhatsApp Business tasks via Rube MCP... | Implementation |
-| [automation](../../skills/coding/automation/SKILL.md) | Coding | Provides Browser automation powers web testing, scraping,... | Review |
-| [automation](../../skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git... | Implementation |
-| [automation](../../skills/coding/automation/SKILL.md) | Coding | "Provides AI-powered browser automation — navigate sites,... | Implementation |
 | [automation](../../skills/programming/automation/SKILL.md) | Programming | 'Provides Automate ActiveCampaign tasks via Rube MCP... | Implementation |
 | [automation](../../skills/programming/automation/SKILL.md) | Programming | 'Provides Automate Amplitude tasks via Rube MCP (Composio):... | Implementation |
 | [automation](../../skills/programming/automation/SKILL.md) | Programming | 'Provides Automate Asana tasks via Rube MCP (Composio):... | Implementation |
@@ -4594,30 +3919,22 @@ MIT — All skills are freely available and redistributable.
 | [automation](../../skills/programming/automation/SKILL.md) | Programming | 'Provides Automate Wrike project management via Rube MCP... | Implementation |
 | [automation](../../skills/programming/automation/SKILL.md) | Programming | 'Provides Automate YouTube tasks via Rube MCP (Composio):... | Implementation |
 | [automation](../../skills/programming/automation/SKILL.md) | Programming | 'Provides Automate Zoho CRM tasks via Rube MCP (Composio):... | Implementation |
-| [automator](../../skills/coding/automator/SKILL.md) | Coding | Provides Master AI-powered test automation with modern... | Review |
 | [automator](../../skills/programming/automator/SKILL.md) | Programming | "Provides Draft cold emails, follow-ups, and proposal... | Implementation |
 | [autoscaling](../../skills/cncf/autoscaling/SKILL.md) | Cncf | "Provides Automatically scales compute resources based on... | Reference |
 | [avaliacao](../../skills/programming/avaliacao/SKILL.md) | Programming | "Provides Avaliacao pericial de imoveis em leilao. Valor de... | Implementation |
 | [axiom](../../skills/programming/axiom/SKILL.md) | Programming | "Provides First-principles assumption auditor. Classifies... | Implementation |
 | [azure-ai-py](../../skills/programming/azure-ai-py/SKILL.md) | Programming | Provides Build persistent agents on Azure AI Foundry using... | Implementation |
-| [backend](../../skills/coding/backend/SKILL.md) | Coding | "Provides Build ASP.NET Core 8+ backend services with EF... | Implementation |
 | [backend](../../skills/programming/backend/SKILL.md) | Programming | "Provides Functional programming patterns for Node.js/Deno... | Implementation |
 | [backend-patterns](../../skills/agent/backend-patterns/SKILL.md) | Agent | Provides Backend architecture patterns, API design,... | Implementation |
 | [backfill-strategy](../../skills/trading/backfill-strategy/SKILL.md) | Trading | "Provides Strategic data backfill for populating historical... | Implementation |
 | [backstage](../../skills/cncf/backstage/SKILL.md) | Cncf | "Provides Backstage in Cloud-Native Engineering - Developer... | Reference |
 | [base](../../skills/cncf/base/SKILL.md) | Cncf | Provides Database management, forms, reports, and data... | Implementation |
-| [base](../../skills/coding/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards,... | Implementation |
 | [based-selector](../../skills/agent/based-selector/SKILL.md) | Agent | "Selects and executes the most appropriate skill based on... | Orchestration |
 | [bases](../../skills/programming/bases/SKILL.md) | Programming | Provides Create and edit Obsidian Bases (.base files) with... | Implementation |
 | [basics](../../skills/programming/basics/SKILL.md) | Programming | "CRITICAL: Use for Makepad getting started and app... | Implementation |
 | [batch-java](../../skills/cncf/batch-java/SKILL.md) | Cncf | "Provides Azure Batch SDK for Java. Run large-scale... | Implementation |
-| [bayesian-inference](../../skills/coding/bayesian-inference/SKILL.md) | Coding | "Applies Bayesian methods for prior selection, posterior... | Implementation |
 | [be-done-analyst](../../skills/programming/be-done-analyst/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... | Implementation |
 | [best-practices](../../skills/cncf/best-practices/SKILL.md) | Cncf | "Cloud Native Computing Foundation (CNCF) architecture best... | Reference |
-| [best-practices](../../skills/coding/best-practices/SKILL.md) | Coding | Provides Implement secure API design patterns including... | Implementation |
-| [best-practices](../../skills/coding/best-practices/SKILL.md) | Coding | Provides IAM policy review, hardening, and least privilege... | Review |
-| [best-practices](../../skills/coding/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills -... | Implementation |
-| [bias-variance-tradeoff](../../skills/coding/bias-variance-tradeoff/SKILL.md) | Coding | "Analyzes bias-variance tradeoff, overfitting,... | Implementation |
 | [biopython](../../skills/programming/biopython/SKILL.md) | Programming | "Provides Biopython is a comprehensive set of freely... | Implementation |
 | [blob-java](../../skills/cncf/blob-java/SKILL.md) | Cncf | "Provides Build blob storage applications using the Azure... | Implementation |
 | [blob-py](../../skills/cncf/blob-py/SKILL.md) | Cncf | "Provides Azure Blob Storage SDK for Python. Use for... | Implementation |
@@ -4632,17 +3949,13 @@ MIT — All skills are freely available and redistributable.
 | [brainstorming](../../skills/programming/brainstorming/SKILL.md) | Programming | "Provides use before creative or constructive work... | Implementation |
 | [brainstorming](../../skills/programming/brainstorming/SKILL.md) | Programming | Provides Simulate a structured peer-review process using... | Implementation |
 | [branch](../../skills/agent/branch/SKILL.md) | Agent | "Provides Create a git branch following Sentry naming... | Orchestration |
-| [branching-strategies](../../skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow,... | Implementation |
 | [bridge](../../skills/programming/bridge/SKILL.md) | Programming | 'Provides Sync Odoo with WooCommerce: products, inventory,... | Implementation |
 | [buffett](../../skills/programming/buffett/SKILL.md) | Programming | "Provides Agente que simula Warren Buffett — o maior... | Implementation |
-| [bug-bounty](../../skills/coding/bug-bounty/SKILL.md) | Coding | "Provides Provide comprehensive techniques for testing... | Implementation |
-| [bugs](../../skills/coding/bugs/SKILL.md) | Coding | "Provides Find bugs, security vulnerabilities, and code... | Review |
 | [build](../../skills/agent/build/SKILL.md) | Agent | "Implements build for orchestration and agent coordination... | Orchestration |
 | [build](../../skills/programming/build/SKILL.md) | Programming | "Provides Build, maintain, and extend the EarLLM One... | Implementation |
 | [builder](../../skills/agent/builder/SKILL.md) | Agent | Provides Create MCP (Model Context Protocol) servers that... | Implementation |
 | [builder](../../skills/cncf/builder/SKILL.md) | Cncf | "Provides Build Slack apps using the Bolt framework across... | Implementation |
 | [builder](../../skills/cncf/builder/SKILL.md) | Cncf | "Provides Expert in building Telegram bots that solve real... | Implementation |
-| [builder](../../skills/coding/builder/SKILL.md) | Coding | "Provides Build a minimal but real security policy for... | Review |
 | [builder](../../skills/programming/builder/SKILL.md) | Programming | Provides Tools are how AI agents interact with the world. A... | Implementation |
 | [builder](../../skills/programming/builder/SKILL.md) | Programming | "Builds production-ready REST API endpoints with... | Implementation |
 | [builder](../../skills/programming/builder/SKILL.md) | Programming | Provides Main application building orchestrator. Creates... | Implementation |
@@ -4655,10 +3968,8 @@ MIT — All skills are freely available and redistributable.
 | [building](../../skills/agent/building/SKILL.md) | Agent | "Enables ultra-granular, line-by-line code analysis to... | Implementation |
 | [buildpacks](../../skills/cncf/buildpacks/SKILL.md) | Cncf | "Provides Buildpacks in Cloud-Native Engineering - Turn... | Reference |
 | [bulletmind](../../skills/programming/bulletmind/SKILL.md) | Programming | "Provides Convert input into clean, structured,... | Implementation |
-| [bus](../../skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed... | Implementation |
 | [business](../../skills/programming/business/SKILL.md) | Programming | "Provides Expert in building and selling Notion templates... | Implementation |
 | [buttercup](../../skills/programming/buttercup/SKILL.md) | Programming | "Provides All pods run in namespace crs. Use when pods in... | Implementation |
-| [c4-architecture](../../skills/coding/c4-architecture/SKILL.md) | Coding | "Provides Generate comprehensive C4 architecture... | Implementation |
 | [caching](../../skills/programming/caching/SKILL.md) | Programming | Provides Caching strategies for LLM prompts including... | Implementation |
 | [caching](../../skills/programming/caching/SKILL.md) | Programming | "Provides Configure Turborepo for efficient monorepo builds... | Implementation |
 | [calc](../../skills/programming/calc/SKILL.md) | Programming | "Provides Spreadsheet creation, format conversion... | Implementation |
@@ -4670,8 +3981,6 @@ MIT — All skills are freely available and redistributable.
 | [candle-data](../../skills/trading/candle-data/SKILL.md) | Trading | "OHLCV candle data processing, timeframe management, and... | Implementation |
 | [canvas](../../skills/programming/canvas/SKILL.md) | Programming | "Provides Create and edit JSON Canvas files (.canvas) with... | Implementation |
 | [card](../../skills/programming/card/SKILL.md) | Programming | "Provides 生成紧急情况下快速访 问的医疗信息摘要卡片。当用户 需要旅行、就诊准备、紧急情况 或询问... | Implementation |
-| [categorical-encoding](../../skills/coding/categorical-encoding/SKILL.md) | Coding | "Provides Encodes categorical variables using one-hot... | Implementation |
-| [causal-inference](../../skills/coding/causal-inference/SKILL.md) | Coding | Implements causal models, directed acyclic graphs (DAGs),... | Implementation |
 | [ccxt-patterns](../../skills/trading/ccxt-patterns/SKILL.md) | Trading | "Effective patterns for using CCXT library for exchange... | Implementation |
 | [cd-pipeline-analyzer](../../skills/agent/cd-pipeline-analyzer/SKILL.md) | Agent | "Analyzes CI/CD pipelines for optimization opportunities,... | Optimization |
 | [cdn](../../skills/cncf/cdn/SKILL.md) | Cncf | Provides Content delivery network for caching and global... | Reference |
@@ -4681,16 +3990,11 @@ MIT — All skills are freely available and redistributable.
 | [changelog](../../skills/programming/changelog/SKILL.md) | Programming | "Provides Generate structured changelogs from git history.... | Implementation |
 | [chaosmesh](../../skills/cncf/chaosmesh/SKILL.md) | Cncf | ''Provides Chaos Mesh in Cloud-Native Engineering... | Reference |
 | [chat-java](../../skills/cncf/chat-java/SKILL.md) | Cncf | "Provides Build real-time chat applications with thread... | Implementation |
-| [check](../../skills/coding/check/SKILL.md) | Coding | "Provides Score any MCP server, API, or CLI for... | Implementation |
 | [check](../../skills/programming/check/SKILL.md) | Programming | "Provides Validate Claude Code skills against the... | Implementation |
-| [checker](../../skills/coding/checker/SKILL.md) | Coding | "Provides Automated compliance checking against CIS,... | Review |
-| [checklist](../../skills/coding/checklist/SKILL.md) | Coding | "Provides Comprehensive checklist for conducting thorough... | Review |
-| [checklist](../../skills/coding/checklist/SKILL.md) | Coding | "Provides Provide a comprehensive checklist for planning,... | Review |
 | [chinese](../../skills/programming/chinese/SKILL.md) | Programming | "Provides Detect and rewrite AI-like Chinese text with a... | Implementation |
 | [chrome-troubleshooting](../../skills/programming/chrome-troubleshooting/SKILL.md) | Programming | Provides Diagnose and fix Claude in Chrome MCP extension... | Implementation |
 | [cilium](../../skills/cncf/cilium/SKILL.md) | Cncf | "Cilium in Cloud Native Network - cloud native... | Reference |
 | [cirq](../../skills/programming/cirq/SKILL.md) | Programming | "Provides Cirq is Google Quantum AI's open-source framework... | Implementation |
-| [classification-metrics](../../skills/coding/classification-metrics/SKILL.md) | Coding | "Evaluates classification models using precision, recall,... | Implementation |
 | [cleanup](../../skills/cncf/cleanup/SKILL.md) | Cncf | "Configures automated cleanup of unused aws resources to... | Implementation |
 | [cli](../../skills/programming/cli/SKILL.md) | Programming | Provides Design spec with 98 rules for building CLI tools... | Implementation |
 | [cli](../../skills/programming/cli/SKILL.md) | Programming | "Provides GDB debugging assistant for AI agents - analyze... | Implementation |
@@ -4716,22 +4020,15 @@ MIT — All skills are freely available and redistributable.
 | [cloudformation](../../skills/cncf/cloudformation/SKILL.md) | Cncf | "Creates Infrastructure as Code templates with... | Reference |
 | [cloudfront](../../skills/cncf/cloudfront/SKILL.md) | Cncf | "Configures CloudFront CDN for global content distribution... | Reference |
 | [cloudwatch](../../skills/cncf/cloudwatch/SKILL.md) | Cncf | "Configures CloudWatch monitoring with metrics, logs,... | Reference |
-| [clustering](../../skills/coding/clustering/SKILL.md) | Coding | "Implements clustering algorithms including K-means,... | Implementation |
 | [cni](../../skills/cncf/cni/SKILL.md) | Cncf | "Cni in Cloud-Native Engineering - Container Network... | Reference |
 | [coach](../../skills/programming/coach/SKILL.md) | Programming | "Provides Full job search coaching system — JD decoding,... | Implementation |
 | [coauthoring](../../skills/programming/coauthoring/SKILL.md) | Programming | "Provides this skill provides a structured workflow for... | Implementation |
-| [code](../../skills/coding/code/SKILL.md) | Coding | "Provides Expert C4 Code-level documentation specialist.... | Implementation |
-| [code](../../skills/coding/code/SKILL.md) | Coding | "Implements this skill embodies the principles of patterns... | Review |
 | [code](../../skills/programming/code/SKILL.md) | Programming | "Provides Generate React code with Rayden UI components... | Implementation |
 | [code](../../skills/programming/code/SKILL.md) | Programming | "Provides Review a diff for clarity and safe... | Implementation |
-| [code-compliance](../../skills/coding/code-compliance/SKILL.md) | Coding | "Provides Verifies code implements exactly what... | Review |
 | [code-explain](../../skills/programming/code-explain/SKILL.md) | Programming | "Provides You are a code education expert specializing in... | Implementation |
 | [code-migrate](../../skills/programming/code-migrate/SKILL.md) | Programming | "Provides You are a code migration expert specializing in... | Implementation |
-| [coder](../../skills/coding/coder/SKILL.md) | Coding | Provides Expert in secure backend coding practices... | Implementation |
-| [coder](../../skills/coding/coder/SKILL.md) | Coding | "Provides Expert in secure frontend coding practices... | Review |
 | [coder](../../skills/programming/coder/SKILL.md) | Programming | Provides Expert in secure mobile coding practices... | Implementation |
 | [coding-standards](../../skills/agent/coding-standards/SKILL.md) | Agent | "Provides Universal coding standards, best practices, and... | Implementation |
-| [commands](../../skills/coding/commands/SKILL.md) | Coding | "Provides Provide a comprehensive command reference for... | Review |
 | [comments](../../skills/agent/comments/SKILL.md) | Agent | "Provides use when you need to address review or issue... | Orchestration |
 | [commission-model](../../skills/trading/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation... | Implementation |
 | [commit](../../skills/agent/commit/SKILL.md) | Agent | "Provides ALWAYS use this skill when committing code... | Orchestration |
@@ -4740,34 +4037,23 @@ MIT — All skills are freely available and redistributable.
 | [communications](../../skills/cncf/communications/SKILL.md) | Cncf | 'Provides Build communication features with Twilio: SMS... | Implementation |
 | [community](../../skills/programming/community/SKILL.md) | Programming | "Provides To access Anthropic's official brand identity and... | Implementation |
 | [community](../../skills/programming/community/SKILL.md) | Programming | 'Provides to write internal communications, use this skill... | Implementation |
-| [community-detection](../../skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using... | Implementation |
 | [community-evals](../../skills/programming/community-evals/SKILL.md) | Programming | Provides Run local evaluations for Hugging Face Hub models... | Implementation |
 | [completion](../../skills/agent/completion/SKILL.md) | Agent | "Provides Claiming work is complete without verification is... | Orchestration |
-| [compliance](../../skills/coding/compliance/SKILL.md) | Coding | "Provides Master PCI DSS (Payment Card Industry Data... | Review |
 | [compliance](../../skills/programming/compliance/SKILL.md) | Programming | "Provides Codified expertise for customs documentation,... | Implementation |
 | [compliance](../../skills/programming/compliance/SKILL.md) | Programming | 'Provides Country-specific Odoo localization: tax... | Implementation |
 | [compliance-auditor](../../skills/programming/compliance-auditor/SKILL.md) | Programming | "Provides Expert AI auditor for Medical Device (SaMD)... | Implementation |
-| [compliance-check](../../skills/coding/compliance-check/SKILL.md) | Coding | "Provides You are a compliance expert specializing in... | Review |
-| [component](../../skills/coding/component/SKILL.md) | Coding | "Provides Expert C4 Component-level documentation... | Implementation |
 | [component](../../skills/programming/component/SKILL.md) | Programming | "Provides Generate a new UI component that follows... | Implementation |
 | [components](../../skills/programming/components/SKILL.md) | Programming | "Provides Core component library and design system... | Implementation |
 | [compose-expert](../../skills/programming/compose-expert/SKILL.md) | Programming | "Provides Expert guidance for building modern Android UIs... | Implementation |
 | [compression](../../skills/programming/compression/SKILL.md) | Programming | Implements when agent sessions generate millions of tokens... | Implementation |
 | [compute-engine](../../skills/cncf/compute-engine/SKILL.md) | Cncf | "Deploys and manages virtual machine instances with... | Reference |
-| [confidence-intervals](../../skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap,... | Implementation |
-| [config](../../skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen... | Implementation |
 | [config-validate](../../skills/cncf/config-validate/SKILL.md) | Cncf | Provides You are a configuration management expert... | Implementation |
 | [configuration](../../skills/agent/configuration/SKILL.md) | Agent | Provides Operation-aware node configuration guidance. Use... | Implementation |
-| [configuration](../../skills/coding/configuration/SKILL.md) | Coding | "Provides Configure mutual TLS (mTLS) for zero-trust... | Review |
-| [configuration](../../skills/coding/configuration/SKILL.md) | Coding | Provides Static Application Security Testing (SAST) tool... | Review |
-| [configuration](../../skills/coding/configuration/SKILL.md) | Coding | "Provides Master ShellCheck static analysis configuration... | Review |
 | [configuration](../../skills/programming/configuration/SKILL.md) | Programming | Provides Complete guide to Prometheus setup, metric... | Implementation |
 | [configurator](../../skills/cncf/configurator/SKILL.md) | Cncf | "Provides Generate production-ready mise.toml setups for... | Implementation |
 | [configurator](../../skills/programming/configurator/SKILL.md) | Programming | 'Provides Expert guide for Odoo eCommerce and Website:... | Implementation |
 | [connector](../../skills/programming/connector/SKILL.md) | Programming | 'Provides Guide for implementing EDI (Electronic Data... | Implementation |
-| [construction](../../skills/coding/construction/SKILL.md) | Coding | "Provides Build comprehensive attack trees to visualize... | Review |
 | [consultant](../../skills/agent/consultant/SKILL.md) | Agent | "Provides Arquitecto de Soluciones Principal y Consultor... | Implementation |
-| [container](../../skills/coding/container/SKILL.md) | Coding | "Implements expert c4 container-level documentation... | Implementation |
 | [container-linux](../../skills/cncf/container-linux/SKILL.md) | Cncf | "Provides Flatcar Container Linux in Cloud-Native... | Reference |
 | [container-registry](../../skills/cncf/container-registry/SKILL.md) | Cncf | "Provides Stores and manages container images with... | Reference |
 | [container-registry](../../skills/cncf/container-registry/SKILL.md) | Cncf | "Provides Stores and manages container images with... | Reference |
@@ -4782,7 +4068,6 @@ MIT — All skills are freely available and redistributable.
 | [contentsafety-ts](../../skills/cncf/contentsafety-ts/SKILL.md) | Cncf | "Provides Analyze text and images for harmful content with... | Implementation |
 | [contentunderstanding-py](../../skills/cncf/contentunderstanding-py/SKILL.md) | Cncf | "Provides Azure AI Content Understanding SDK for Python.... | Implementation |
 | [context](../../skills/agent/context/SKILL.md) | Agent | "Provides use for file-based context management, dynamic... | Implementation |
-| [context](../../skills/coding/context/SKILL.md) | Coding | "Provides Expert C4 Context-level documentation specialist.... | Implementation |
 | [context](../../skills/programming/context/SKILL.md) | Programming | "Provides Create or update a shared Apple design context... | Implementation |
 | [context](../../skills/programming/context/SKILL.md) | Programming | "Provides Create or update a reusable product marketing... | Implementation |
 | [context-restore](../../skills/programming/context-restore/SKILL.md) | Programming | Provides use when working with code refactoring context... | Implementation |
@@ -4792,21 +4077,16 @@ MIT — All skills are freely available and redistributable.
 | [contour](../../skills/cncf/contour/SKILL.md) | Cncf | "Contour in Service Proxy - cloud native architecture,... | Reference |
 | [controls](../../skills/programming/controls/SKILL.md) | Programming | "Provides Check for .claude/apple-design-context.md before... | Implementation |
 | [conversion](../../skills/programming/conversion/SKILL.md) | Programming | "Provides this skill should be used when the user asks to... | Implementation |
-| [convex](../../skills/coding/convex/SKILL.md) | Coding | 'Provides Convex reactive backend expert: schema design,... | Implementation |
 | [copy](../../skills/programming/copy/SKILL.md) | Programming | "Provides Generate UX microcopy in StyleSeed's... | Implementation |
 | [copywriting](../../skills/programming/copywriting/SKILL.md) | Programming | "Provides Write rigorous, conversion-focused marketing copy... | Implementation |
 | [core](../../skills/agent/core/SKILL.md) | Agent | 'Provides Auri: assistente de voz inteligente (Alexa +... | Implementation |
 | [coredns](../../skills/cncf/coredns/SKILL.md) | Cncf | "Coredns in Cloud-Native Engineering - CoreDNS is a DNS... | Reference |
 | [correctness-verifier](../../skills/agent/correctness-verifier/SKILL.md) | Agent | "Verifies code correctness by analyzing syntax, semantics,... | Verification |
-| [correlation-analysis](../../skills/coding/correlation-analysis/SKILL.md) | Coding | "Analyzes correlation, covariance, and multivariate... | Implementation |
 | [correlation-risk](../../skills/trading/correlation-risk/SKILL.md) | Trading | "Implements correlation breakdown and portfolio... | Implementation |
 | [cortex](../../skills/cncf/cortex/SKILL.md) | Cncf | "Cortex in Monitoring & Observability - distributed,... | Reference |
 | [cosmos-db](../../skills/cncf/cosmos-db/SKILL.md) | Cncf | Provides Global NoSQL database with multi-region... | Reference |
-| [cpp-pro](../../skills/coding/cpp-pro/SKILL.md) | Coding | "Provides Expert guide for Unreal Engine 5.x C++... | Implementation |
-| [craft](../../skills/coding/craft/SKILL.md) | Coding | "Provides use when performing code review, writing or... | Review |
 | [creative](../../skills/programming/creative/SKILL.md) | Programming | "Provides Create, iterate, and scale paid ad creative for... | Implementation |
 | [creator](../../skills/agent/creator/SKILL.md) | Agent | "Provides To create new CLI skills following Anthropic's... | Implementation |
-| [creator](../../skills/coding/creator/SKILL.md) | Coding | "Creates custom Semgrep rules for detecting security... | Review |
 | [creator](../../skills/programming/creator/SKILL.md) | Programming | "Provides Professional-grade brand voice analysis, SEO... | Implementation |
 | [creator](../../skills/programming/creator/SKILL.md) | Programming | "Provides Turn error logs, screenshots, voice notes, and... | Implementation |
 | [creator](../../skills/programming/creator/SKILL.md) | Programming | "Provides a toolkit providing utilities and knowledge for... | Implementation |
@@ -4820,7 +4100,6 @@ MIT — All skills are freely available and redistributable.
 | [cro](../../skills/programming/cro/SKILL.md) | Programming | "Provides You are an expert in in-app paywalls and upgrade... | Implementation |
 | [cro](../../skills/programming/cro/SKILL.md) | Programming | "Provides Create and optimize popups, modals, overlays,... | Implementation |
 | [cro](../../skills/programming/cro/SKILL.md) | Programming | "Provides You are an expert in optimizing signup and... | Implementation |
-| [cross-validation](../../skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified... | Implementation |
 | [crossplane](../../skills/cncf/crossplane/SKILL.md) | Cncf | "Crossplane in Platform Engineering - Kubernetes-native... | Reference |
 | [cubefs](../../skills/cncf/cubefs/SKILL.md) | Cncf | "Provides CubeFS in Storage - distributed, high-performance... | Reference |
 | [custodian](../../skills/cncf/custodian/SKILL.md) | Cncf | "Provides Cloud Custodian in Cloud-Native Engineering... | Reference |
@@ -4830,18 +4109,9 @@ MIT — All skills are freely available and redistributable.
 | [dark-ts](../../skills/programming/dark-ts/SKILL.md) | Programming | Provides a modern dark-themed react ui system using... | Implementation |
 | [darwin](../../skills/programming/darwin/SKILL.md) | Programming | "Provides Darwinian idea evolution engine — toss rough... | Implementation |
 | [dashboards](../../skills/cncf/dashboards/SKILL.md) | Cncf | Provides Create and manage production-ready Grafana... | Implementation |
-| [data-collection](../../skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web... | Implementation |
 | [data-driven-feature](../../skills/programming/data-driven-feature/SKILL.md) | Programming | "Provides Build features guided by data insights, A/B... | Implementation |
-| [data-ingestion](../../skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming... | Implementation |
 | [data-pipeline](../../skills/programming/data-pipeline/SKILL.md) | Programming | Provides You are a data pipeline architecture expert... | Implementation |
-| [data-privacy](../../skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including... | Implementation |
-| [data-profiling](../../skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and... | Implementation |
-| [data-quality](../../skills/coding/data-quality/SKILL.md) | Coding | "Implements data validation, cleaning, outlier detection,... | Implementation |
-| [data-versioning](../../skills/coding/data-versioning/SKILL.md) | Coding | "Implements data versioning, lineage tracking, provenance... | Implementation |
-| [data-visualization](../../skills/coding/data-visualization/SKILL.md) | Coding | "Creates effective visualizations including plots, charts,... | Implementation |
 | [database](../../skills/agent/database/SKILL.md) | Agent | Provides Database development and operations workflow... | Implementation |
-| [database](../../skills/coding/database/SKILL.md) | Coding | "Provides Direct REST API access to PubMed. Advanced... | Implementation |
-| [database](../../skills/coding/database/SKILL.md) | Coding | Provides Direct REST API access to UniProt. Protein... | Implementation |
 | [dataforseo](../../skills/programming/dataforseo/SKILL.md) | Programming | Provides use dataforseo for live serps, keyword metrics,... | Implementation |
 | [dataset-viewer](../../skills/programming/dataset-viewer/SKILL.md) | Programming | Provides Query Hugging Face datasets through the Dataset... | Implementation |
 | [datasets](../../skills/programming/datasets/SKILL.md) | Programming | Provides Create and manage datasets on Hugging Face Hub.... | Implementation |
@@ -4849,15 +4119,12 @@ MIT — All skills are freely available and redistributable.
 | [debate](../../skills/programming/debate/SKILL.md) | Programming | "Provides Sub-skill de debates e posições de Yann LeCun.... | Implementation |
 | [debug-trace](../../skills/cncf/debug-trace/SKILL.md) | Cncf | Provides You are a debugging expert specializing in setting... | Implementation |
 | [debugger](../../skills/agent/debugger/SKILL.md) | Agent | "Diagnoses Kubernetes cluster issues, debug pods,... | Debugging |
-| [debugger](../../skills/coding/debugger/SKILL.md) | Coding | "Debugging specialist for errors, test failures, and... | Implementation |
-| [debugging](../../skills/coding/debugging/SKILL.md) | Coding | "Provides use when encountering any bug, test failure, or... | Implementation |
 | [debugging](../../skills/programming/debugging/SKILL.md) | Programming | "Provides use when debugging any bug. enforces a 5-phase... | Implementation |
 | [decomposition-engine](../../skills/agent/decomposition-engine/SKILL.md) | Agent | "Decomposes complex tasks into smaller, manageable subtasks... | Orchestration |
 | [defuddle](../../skills/programming/defuddle/SKILL.md) | Programming | "Provides Extract clean markdown content from web pages... | Implementation |
 | [degradation](../../skills/programming/degradation/SKILL.md) | Programming | Provides Language models exhibit predictable degradation... | Implementation |
 | [delivery](../../skills/agent/delivery/SKILL.md) | Agent | "Provides use when a coding task must be completed against... | Orchestration |
 | [demo](../../skills/coding/demo/SKILL.md) | Coding | "Demonstrates the skill automation system with pre-commit... | Implementation |
-| [dependency-management](../../skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating... | Implementation |
 | [deploy](../../skills/cncf/deploy/SKILL.md) | Cncf | "Provides DevOps e deploy de aplicacoes — Docker, CI/CD com... | Implementation |
 | [deployment](../../skills/agent/deployment/SKILL.md) | Agent | Provides Kubernetes deployment workflow for container... | Implementation |
 | [deployment](../../skills/cncf/deployment/SKILL.md) | Cncf | Provides Deploy containerized frontend + backend... | Implementation |
@@ -4866,16 +4133,10 @@ MIT — All skills are freely available and redistributable.
 | [deployment](../../skills/programming/deployment/SKILL.md) | Programming | Provides Production-ready Docker and docker-compose setup... | Implementation |
 | [deployment](../../skills/programming/deployment/SKILL.md) | Programming | Provides expert knowledge for deploying to vercel with... | Implementation |
 | [deployment-manager](../../skills/cncf/deployment-manager/SKILL.md) | Cncf | "Infrastructure as code using YAML templates for repeatable... | Reference |
-| [deps-audit](../../skills/coding/deps-audit/SKILL.md) | Coding | "Provides You are a dependency security expert specializing... | Review |
 | [deps-audit](../../skills/programming/deps-audit/SKILL.md) | Programming | "Provides You are a dependency security expert specializing... | Implementation |
 | [deps-upgrade](../../skills/programming/deps-upgrade/SKILL.md) | Programming | "Provides You are a dependency management expert... | Implementation |
 | [design](../../skills/cncf/design/SKILL.md) | Cncf | Provides Database design principles and decision-making.... | Implementation |
 | [design](../../skills/cncf/design/SKILL.md) | Cncf | Provides Architecture patterns for multi-stage CI/CD... | Implementation |
-| [design](../../skills/coding/design/SKILL.md) | Coding | "Provides Design DDD strategic artifacts including... | Implementation |
-| [design](../../skills/coding/design/SKILL.md) | Coding | "Provides Plan and route Domain-Driven Design work from... | Implementation |
-| [design](../../skills/coding/design/SKILL.md) | Coding | "Provides Design and implement event stores for... | Implementation |
-| [design](../../skills/coding/design/SKILL.md) | Coding | "Provides You are a frontend designer-engineer, not a... | Implementation |
-| [design](../../skills/coding/design/SKILL.md) | Coding | "Provides use when building apps that collect user data.... | Review |
 | [design](../../skills/programming/design/SKILL.md) | Programming | "Provides These are instructions for creating design... | Implementation |
 | [design](../../skills/programming/design/SKILL.md) | Programming | "Provides Game design principles. GDD structure, balancing,... | Implementation |
 | [design](../../skills/programming/design/SKILL.md) | Programming | "Provides Comprehensive patterns for designing effective... | Implementation |
@@ -4896,8 +4157,6 @@ MIT — All skills are freely available and redistributable.
 | [dev-langchain-agent](../../skills/programming/dev-langchain-agent/SKILL.md) | Programming | Provides You are an expert LangChain agent developer... | Implementation |
 | [dev-prompt-optimize](../../skills/programming/dev-prompt-optimize/SKILL.md) | Programming | Provides You are an expert prompt engineer specializing in... | Implementation |
 | [developer](../../skills/agent/developer/SKILL.md) | Agent | "Provides Comprehensive guide for creating and managing... | Implementation |
-| [developer](../../skills/coding/developer/SKILL.md) | Coding | "Provides Expert in building Chrome Extensions using... | Implementation |
-| [developer](../../skills/coding/developer/SKILL.md) | Coding | "Provides Build React components, implement responsive... | Implementation |
 | [developer](../../skills/programming/developer/SKILL.md) | Programming | "Provides Build production-ready Web3 applications, smart... | Implementation |
 | [developer](../../skills/programming/developer/SKILL.md) | Programming | Provides Develop native iOS applications with... | Implementation |
 | [developer](../../skills/programming/developer/SKILL.md) | Programming | "Provides Develop React Native, Flutter, or native mobile... | Implementation |
@@ -4923,21 +4182,17 @@ MIT — All skills are freely available and redistributable.
 | [development](../../skills/programming/development/SKILL.md) | Programming | Provides this skill covers the principles for identifying... | Implementation |
 | [development](../../skills/programming/development/SKILL.md) | Programming | Provides Comprehensive Snowflake development assistant... | Implementation |
 | [development-branch](../../skills/agent/development-branch/SKILL.md) | Agent | "Provides use when implementation is complete, all tests... | Orchestration |
-| [development-component-scaffold](../../skills/coding/development-component-scaffold/SKILL.md) | Coding | "Provides You are a React component architecture expert... | Implementation |
 | [devops](../../skills/agent/devops/SKILL.md) | Agent | "Provides Cloud infrastructure and DevOps workflow covering... | Implementation |
 | [diagnostics](../../skills/agent/diagnostics/SKILL.md) | Agent | "Diagnoses network connectivity issues, identifies... | Debugging |
 | [dialogs](../../skills/programming/dialogs/SKILL.md) | Programming | "Provides Apple HIG guidance for presentation components... | Implementation |
 | [diary](../../skills/agent/diary/SKILL.md) | Agent | 'Provides Unified Diary System: A context-preserving... | Implementation |
-| [dimensionality-reduction](../../skills/coding/dimensionality-reduction/SKILL.md) | Coding | "Provides Reduces data dimensionality using PCA, t-SNE,... | Implementation |
 | [discovery](../../skills/agent/discovery/SKILL.md) | Agent | Provides Find and evaluate influencers for brand... | Implementation |
-| [distribution-fitting](../../skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using... | Implementation |
 | [doc-generate](../../skills/programming/doc-generate/SKILL.md) | Programming | "Provides You are a documentation expert specializing in... | Implementation |
 | [doc-generate](../../skills/programming/doc-generate/SKILL.md) | Programming | "Provides You are a documentation expert specializing in... | Implementation |
 | [document-intelligence-dotnet](../../skills/cncf/document-intelligence-dotnet/SKILL.md) | Cncf | Provides Azure AI Document Intelligence SDK for .NET.... | Implementation |
 | [document-intelligence-ts](../../skills/cncf/document-intelligence-ts/SKILL.md) | Cncf | Provides Extract text, tables, and structured data from... | Implementation |
 | [documentation](../../skills/agent/documentation/SKILL.md) | Agent | "Provides API documentation workflow for generating OpenAPI... | Implementation |
 | [documentation](../../skills/agent/documentation/SKILL.md) | Agent | "Provides Documentation generation workflow covering API... | Implementation |
-| [documenter](../../skills/coding/documenter/SKILL.md) | Coding | "Provides Master API documentation with OpenAPI 3.1,... | Implementation |
 | [documents-dotnet](../../skills/cncf/documents-dotnet/SKILL.md) | Cncf | "Provides Azure AI Search SDK for .NET... | Implementation |
 | [documents-py](../../skills/cncf/documents-py/SKILL.md) | Cncf | "Provides Azure AI Search SDK for Python. Use for vector... | Implementation |
 | [documents-ts](../../skills/cncf/documents-ts/SKILL.md) | Cncf | "Provides Build search applications with vector, hybrid,... | Implementation |
@@ -4951,14 +4206,11 @@ MIT — All skills are freely available and redistributable.
 | [drawdown-analysis](../../skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and... | Implementation |
 | [drawdown-control](../../skills/trading/drawdown-control/SKILL.md) | Trading | "Implements maximum drawdown control and equity... | Implementation |
 | [drift-detector](../../skills/agent/drift-detector/SKILL.md) | Agent | "Detects and reports infrastructure drift between desired... | Debugging |
-| [driven-architecture](../../skills/coding/driven-architecture/SKILL.md) | Coding | "'Event-driven architecture for real-time trading systems:... | Implementation |
-| [driven-development](../../skills/coding/driven-development/SKILL.md) | Coding | "Test-Driven Development (TDD) and Behavior-Driven... | Implementation |
 | [dsl](../../skills/programming/dsl/SKILL.md) | Programming | "CRITICAL: Use for Makepad DSL syntax and inheritance.... | Implementation |
 | [dynamodb](../../skills/cncf/dynamodb/SKILL.md) | Cncf | "Deploys managed NoSQL databases with DynamoDB for... | Reference |
 | [ec2](../../skills/cncf/ec2/SKILL.md) | Cncf | "Deploys, configures, and auto-scales EC2 instances with... | Reference |
 | [ecommerce](../../skills/agent/ecommerce/SKILL.md) | Agent | Provides Extract product data, prices, reviews, and seller... | Implementation |
 | [ecr](../../skills/cncf/ecr/SKILL.md) | Cncf | "Manages container image repositories with ECR for secure... | Reference |
-| [eda](../../skills/coding/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary... | Implementation |
 | [edges](../../skills/programming/edges/SKILL.md) | Programming | "Provides sharp-edges functionality and capabilities." | Implementation |
 | [edit](../../skills/programming/edit/SKILL.md) | Programming | Provides AI-powered image editing with style transfer and... | Implementation |
 | [edital](../../skills/programming/edital/SKILL.md) | Programming | "Provides Analise e auditoria de editais de leilao judicial... | Implementation |
@@ -4968,13 +4220,11 @@ MIT — All skills are freely available and redistributable.
 | [elite](../../skills/programming/elite/SKILL.md) | Programming | "Provides Senior Elite Software Engineer (15+) and Senior... | Implementation |
 | [email](../../skills/programming/email/SKILL.md) | Programming | "Provides Write B2B cold emails and follow-up sequences... | Implementation |
 | [enablement](../../skills/programming/enablement/SKILL.md) | Programming | "Provides Create sales collateral such as decks,... | Implementation |
-| [enforcement](../../skills/coding/enforcement/SKILL.md) | Coding | "Provides use when a task requires exhaustive unabridged... | Implementation |
 | [engine](../../skills/programming/engine/SKILL.md) | Programming | "Provides Motor de crescimento para produtos digitais --... | Implementation |
 | [engine-development](../../skills/programming/engine-development/SKILL.md) | Programming | Provides Build real-time conversational AI voice engines... | Implementation |
 | [engineer](../../skills/agent/engineer/SKILL.md) | Agent | Transforms user prompts into optimized prompts using... | Implementation |
 | [engineer](../../skills/cncf/engineer/SKILL.md) | Cncf | Provides Expert deployment engineer specializing in modern... | Implementation |
 | [engineer](../../skills/cncf/engineer/SKILL.md) | Cncf | Provides Build production-ready monitoring, logging, and... | Implementation |
-| [engineer](../../skills/coding/engineer/SKILL.md) | Coding | "Provides Expert reverse engineer specializing in binary... | Review |
 | [engineer](../../skills/programming/engineer/SKILL.md) | Programming | Provides Build production-ready LLM applications, advanced... | Implementation |
 | [engineer](../../skills/programming/engineer/SKILL.md) | Programming | Provides Build scalable data pipelines, modern data... | Implementation |
 | [engineer](../../skills/programming/engineer/SKILL.md) | Programming | Provides Build production ML systems with PyTorch 2.x,... | Implementation |
@@ -4986,10 +4236,8 @@ MIT — All skills are freely available and redistributable.
 | [engineer](../../skills/programming/engineer/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... | Implementation |
 | [engineer](../../skills/programming/engineer/SKILL.md) | Programming | Provides Expert in vector databases, embedding strategies,... | Implementation |
 | [engineer](../../skills/programming/engineer/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... | Implementation |
-| [engineering](../../skills/coding/engineering/SKILL.md) | Coding | "Provides Comprehensive techniques for capturing,... | Review |
 | [engineering](../../skills/programming/engineering/SKILL.md) | Programming | Provides Expert guide on prompt engineering patterns, best... | Implementation |
 | [enrichment](../../skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to... | Implementation |
-| [ensemble-methods](../../skills/coding/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting,... | Implementation |
 | [envoy](../../skills/cncf/envoy/SKILL.md) | Cncf | "Envoy in Cloud-Native Engineering - Cloud-native... | Reference |
 | [error-analysis](../../skills/programming/error-analysis/SKILL.md) | Programming | "Provides You are an expert error analysis specialist with... | Implementation |
 | [error-analysis](../../skills/programming/error-analysis/SKILL.md) | Programming | "Provides You are an expert error analysis specialist with... | Implementation |
@@ -4997,8 +4245,6 @@ MIT — All skills are freely available and redistributable.
 | [error-trace](../../skills/programming/error-trace/SKILL.md) | Programming | "Provides You are an error tracking and observability... | Implementation |
 | [errors](../../skills/programming/errors/SKILL.md) | Programming | "Provides Stop throwing everywhere - handle errors as... | Implementation |
 | [errors](../../skills/programming/errors/SKILL.md) | Programming | "Provides Handle errors as values using fp-ts Either and... | Implementation |
-| [escalation](../../skills/coding/escalation/SKILL.md) | Coding | "Provides Execute systematic privilege escalation... | Review |
-| [escalation](../../skills/coding/escalation/SKILL.md) | Coding | "Provides Provide systematic methodologies for discovering... | Review |
 | [especialista](../../skills/programming/especialista/SKILL.md) | Programming | 'Provides Advogado especialista em todas as areas do... | Implementation |
 | [estimation](../../skills/programming/estimation/SKILL.md) | Programming | "Provides Estimate AI-assisted and hybrid human+agent... | Implementation |
 | [etcd](../../skills/cncf/etcd/SKILL.md) | Cncf | "Provides etcd in Cloud-Native Engineering - distributed... | Reference |
@@ -5010,23 +4256,13 @@ MIT — All skills are freely available and redistributable.
 | [event-hubs](../../skills/cncf/event-hubs/SKILL.md) | Cncf | "Provides Event streaming platform for high-throughput data... | Reference |
 | [evolution](../../skills/programming/evolution/SKILL.md) | Programming | "Provides this skill enables makepad-skills to self-improve... | Implementation |
 | [excellence](../../skills/programming/excellence/SKILL.md) | Programming | "Provides Transform code reviews from gatekeeping to... | Implementation |
-| [experience](../../skills/coding/experience/SKILL.md) | Coding | "Provides Expert in building immersive scroll-driven... | Implementation |
 | [experience](../../skills/programming/experience/SKILL.md) | Programming | "Provides Expert in building 3D experiences for the web -... | Implementation |
-| [experimental-design](../../skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments... | Implementation |
 | [expert](../../skills/agent/expert/SKILL.md) | Agent | Provides Expert guide for interpreting and fixing n8n... | Implementation |
 | [expert](../../skills/cncf/expert/SKILL.md) | Cncf | Provides You are an advanced Docker containerization expert... | Implementation |
 | [expert](../../skills/cncf/expert/SKILL.md) | Cncf | "Provides Expert in Drizzle ORM for TypeScript — schema... | Implementation |
 | [expert](../../skills/cncf/expert/SKILL.md) | Cncf | Provides Expert guidance for distributed NoSQL databases... | Implementation |
 | [expert](../../skills/cncf/expert/SKILL.md) | Cncf | Provides You are an expert in Prisma ORM with deep... | Implementation |
 | [expert](../../skills/cncf/expert/SKILL.md) | Cncf | Provides Expert service mesh architect specializing in... | Implementation |
-| [expert](../../skills/coding/expert/SKILL.md) | Coding | "Provides Expert in Cloudflare Workers and the Edge... | Implementation |
-| [expert](../../skills/coding/expert/SKILL.md) | Coding | "Provides Advanced .faf (Foundational AI-context Format)... | Implementation |
-| [expert](../../skills/coding/expert/SKILL.md) | Coding | "Provides Senior Laravel Engineer role for... | Implementation |
-| [expert](../../skills/coding/expert/SKILL.md) | Coding | "Provides You are an expert in Nest.js with deep knowledge... | Implementation |
-| [expert](../../skills/coding/expert/SKILL.md) | Coding | "Provides Expert in TanStack Query (React Query) —... | Implementation |
-| [expert](../../skills/coding/expert/SKILL.md) | Coding | "Provides Expert in threat modeling methodologies, security... | Review |
-| [expert](../../skills/coding/expert/SKILL.md) | Coding | "Provides TypeScript and JavaScript expert with deep... | Implementation |
-| [expert](../../skills/coding/expert/SKILL.md) | Coding | "Provides Expert in Zod — TypeScript-first schema... | Implementation |
 | [expert](../../skills/programming/expert/SKILL.md) | Programming | "Provides Core UI/UX engineering skill for building highly... | Implementation |
 | [expert](../../skills/programming/expert/SKILL.md) | Programming | "Provides Senior embedded software engineer specializing in... | Implementation |
 | [expert](../../skills/programming/expert/SKILL.md) | Programming | Provides Master Bevy's Entity Component System (ECS) in... | Implementation |
@@ -5040,11 +4276,9 @@ MIT — All skills are freely available and redistributable.
 | [expert](../../skills/programming/expert/SKILL.md) | Programming | "Provides Create Mermaid diagrams for flowcharts,... | Implementation |
 | [expert](../../skills/programming/expert/SKILL.md) | Programming | 'Provides Master Odoo ORM patterns: search, browse, create,... | Implementation |
 | [expert](../../skills/programming/expert/SKILL.md) | Programming | "Provides Review and fix Swift concurrency issues such as... | Implementation |
-| [explainability](../../skills/coding/explainability/SKILL.md) | Coding | "Implements explainability and interpretability techniques... | Implementation |
 | [explainable-ai](../../skills/trading/explainable-ai/SKILL.md) | Trading | "Provides Explainable AI for understanding and trusting... | Implementation |
 | [explainer](../../skills/programming/explainer/SKILL.md) | Programming | "Provides Explain Bitcoin Lightning channel factories and... | Implementation |
 | [expo](../../skills/programming/expo/SKILL.md) | Programming | "Provides upgrade expo sdk versions functionality and... | Implementation |
-| [extraction](../../skills/coding/extraction/SKILL.md) | Coding | "Provides Derive security requirements from threat models... | Review |
 | [extraction](../../skills/programming/extraction/SKILL.md) | Programming | Provides Extract structured domain knowledge from AI models... | Implementation |
 | [extractor](../../skills/programming/extractor/SKILL.md) | Programming | "Extracts up to 50 highly relevant SEO keywords from text.... | Implementation |
 | [fabric-dotnet](../../skills/cncf/fabric-dotnet/SKILL.md) | Cncf | "Configures azure resource manager sdk for fabric in .net... | Implementation |
@@ -5055,12 +4289,7 @@ MIT — All skills are freely available and redistributable.
 | [falco](../../skills/cncf/falco/SKILL.md) | Cncf | "Provides Falco in Cloud-Native Engineering - Cloud Native... | Reference |
 | [false-signal-filtering](../../skills/trading/false-signal-filtering/SKILL.md) | Trading | "Provides False Signal Filtering Techniques for Robust... | Implementation |
 | [favicon](../../skills/programming/favicon/SKILL.md) | Programming | "Provides generate favicons from a source image... | Implementation |
-| [feature-development](../../skills/coding/feature-development/SKILL.md) | Coding | "Provides Orchestrate end-to-end backend feature... | Implementation |
-| [feature-engineering](../../skills/coding/feature-engineering/SKILL.md) | Coding | "Creates and transforms features including polynomial... | Implementation |
 | [feature-engineering](../../skills/trading/feature-engineering/SKILL.md) | Trading | "Implements create actionable trading features from raw... | Implementation |
-| [feature-interaction](../../skills/coding/feature-interaction/SKILL.md) | Coding | "Provides Discovers and engineers feature interactions... | Implementation |
-| [feature-scaling-normalization](../../skills/coding/feature-scaling-normalization/SKILL.md) | Coding | "Provides Scales and normalizes features using... | Implementation |
-| [feature-selection](../../skills/coding/feature-selection/SKILL.md) | Coding | "Selects relevant features using univariate selection,... | Implementation |
 | [feature-store](../../skills/trading/feature-store/SKILL.md) | Trading | "Provides Feature storage and management for machine... | Implementation |
 | [feedback](../../skills/programming/feedback/SKILL.md) | Programming | "Provides Add loading, empty, error, and success feedback... | Implementation |
 | [fetching](../../skills/programming/fetching/SKILL.md) | Programming | Provides use when implementing or debugging any network... | Implementation |
@@ -5073,32 +4302,25 @@ MIT — All skills are freely available and redistributable.
 | [fintech](../../skills/cncf/fintech/SKILL.md) | Cncf | "Provides Expert patterns for Plaid API integration... | Implementation |
 | [firebase](../../skills/cncf/firebase/SKILL.md) | Cncf | "Provides Firebase gives you a complete backend in minutes... | Implementation |
 | [firestore](../../skills/cncf/firestore/SKILL.md) | Cncf | Provides NoSQL document database with real-time sync,... | Reference |
-| [fixing](../../skills/coding/fixing/SKILL.md) | Coding | "Provides Systematically identify and fix all failing tests... | Implementation |
 | [flow](../../skills/programming/flow/SKILL.md) | Programming | "Provides Design user flows and screen structure using... | Implementation |
 | [fluentd](../../skills/cncf/fluentd/SKILL.md) | Cncf | "Fluentd unified logging layer for collecting,... | Reference |
 | [fluid](../../skills/cncf/fluid/SKILL.md) | Cncf | "Fluid in A Kubernetes-native data acceleration layer for... | Reference |
 | [flux](../../skills/cncf/flux/SKILL.md) | Cncf | "Configures flux in cloud-native engineering - gitops for... | Reference |
 | [font](../../skills/programming/font/SKILL.md) | Programming | "CRITICAL: Use for Makepad font and text rendering.... | Implementation |
-| [forensics](../../skills/coding/forensics/SKILL.md) | Coding | "Provides Comprehensive techniques for acquiring,... | Review |
 | [formrecognizer-java](../../skills/cncf/formrecognizer-java/SKILL.md) | Cncf | "Provides Build document analysis applications using the... | Implementation |
 | [foundations](../../skills/programming/foundations/SKILL.md) | Programming | "Provides apple human interface guidelines design... | Implementation |
 | [framework](../../skills/cncf/framework/SKILL.md) | Cncf | "Operator Framework in Tools to build and manage Kubernetes... | Reference |
-| [framework](../../skills/coding/framework/SKILL.md) | Coding | "Provides ⚠️ AUTHORIZED USE ONLY > This skill is for... | Review |
 | [framework](../../skills/programming/framework/SKILL.md) | Programming | "Provides Comprehensive guide to tracking, calculating, and... | Implementation |
 | [frameworks](../../skills/programming/frameworks/SKILL.md) | Programming | "Provides Build robust, production-grade backtesting... | Implementation |
 | [frameworks](../../skills/programming/frameworks/SKILL.md) | Programming | "Provides Implement data quality validation with Great... | Implementation |
-| [frontend](../../skills/coding/frontend/SKILL.md) | Coding | "Provides use when building high-agency frontend interfaces... | Implementation |
 | [frontend](../../skills/programming/frontend/SKILL.md) | Programming | "Provides Frontend development skill for React, Next.js,... | Implementation |
 | [frontend-patterns](../../skills/agent/frontend-patterns/SKILL.md) | Agent | "Provides Frontend development patterns for React, Next.js,... | Implementation |
-| [full-review](../../skills/coding/full-review/SKILL.md) | Coding | "Implements use when working with comprehensive review full... | Review |
-| [fullstack](../../skills/coding/fullstack/SKILL.md) | Coding | "Provides Build end-to-end type-safe APIs with tRPC —... | Implementation |
 | [fullstack](../../skills/programming/fullstack/SKILL.md) | Programming | "Provides Complete toolkit for senior fullstack with modern... | Implementation |
 | [functions](../../skills/cncf/functions/SKILL.md) | Cncf | Provides Serverless computing with event-driven functions... | Reference |
 | [fundamentals](../../skills/programming/fundamentals/SKILL.md) | Programming | Provides Context is the complete state available to a... | Implementation |
 | [fundamentals](../../skills/programming/fundamentals/SKILL.md) | Programming | "Provides Generative Engine Optimization for AI search... | Implementation |
 | [fundamentals](../../skills/programming/fundamentals/SKILL.md) | Programming | "Provides Core principles of SEO including E-E-A-T, Core... | Implementation |
 | [fundamentals](../../skills/programming/fundamentals/SKILL.md) | Programming | "Provides Three.js scene setup, cameras, renderer, Object3D... | Implementation |
-| [fuzzing](../../skills/coding/fuzzing/SKILL.md) | Coding | "Provides Expert guidance for ffuf web fuzzing during... | Review |
 | [games](../../skills/programming/games/SKILL.md) | Programming | "Provides 2D game development principles. Sprites,... | Implementation |
 | [games](../../skills/programming/games/SKILL.md) | Programming | "Provides 3D game development principles. Rendering,... | Implementation |
 | [games](../../skills/programming/games/SKILL.md) | Programming | "Provides Mobile game development principles. Touch input,... | Implementation |
@@ -5107,7 +4329,6 @@ MIT — All skills are freely available and redistributable.
 | [gate](../../skills/agent/gate/SKILL.md) | Agent | "Provides use when starting a new implementation task and... | Orchestration |
 | [gate](../../skills/programming/gate/SKILL.md) | Programming | Provides Pre-ingestion verification for epistemic quality... | Implementation |
 | [gates](../../skills/programming/gates/SKILL.md) | Programming | "Provides Agente que simula Bill Gates — cofundador da... | Implementation |
-| [gateway](../../skills/coding/gateway/SKILL.md) | Coding | "Provides REST API gateway for ComfyUI servers. Workflow... | Implementation |
 | [gemini-high](../../skills/programming/gemini-high/SKILL.md) | Programming | "Provides Modo Elite Coder + UX Pixel-Perfect otimizado... | Implementation |
 | [gen](../../skills/programming/gen/SKILL.md) | Programming | "Provides Generate SEO-focused images such as OG cards,... | Implementation |
 | [generate](../../skills/programming/generate/SKILL.md) | Programming | Provides generate images and videos using fal.ai ai models... | Implementation |
@@ -5115,8 +4336,6 @@ MIT — All skills are freely available and redistributable.
 | [generation](../../skills/cncf/generation/SKILL.md) | Cncf | "Provides Generate and maintain OpenAPI 3.1 specifications... | Implementation |
 | [generation](../../skills/programming/generation/SKILL.md) | Programming | "Provides Generate real audio narratives from text content... | Implementation |
 | [generator](../../skills/cncf/generator/SKILL.md) | Cncf | Provides Step-by-step guidance for creating... | Implementation |
-| [generator](../../skills/coding/generator/SKILL.md) | Coding | "Provides Generate comprehensive, developer-friendly API... | Implementation |
-| [generator](../../skills/coding/generator/SKILL.md) | Coding | "Generates high-converting Next.js/React landing pages with... | Implementation |
 | [generator](../../skills/programming/generator/SKILL.md) | Programming | "Provides Utilizes Magic by 21st.dev to generate, compare,... | Implementation |
 | [generator](../../skills/programming/generator/SKILL.md) | Programming | "Provides Generate complete Python scripts that build... | Implementation |
 | [geo](../../skills/programming/geo/SKILL.md) | Programming | "Provides Optimize content for AI Overviews, ChatGPT,... | Implementation |
@@ -5131,7 +4350,6 @@ MIT — All skills are freely available and redistributable.
 | [governance](../../skills/programming/governance/SKILL.md) | Programming | "Provides Agent governance skill for MCP tool calls — Cedar... | Implementation |
 | [gradio](../../skills/programming/gradio/SKILL.md) | Programming | Provides Build or edit Gradio apps, layouts, components,... | Implementation |
 | [graph-builder](../../skills/agent/graph-builder/SKILL.md) | Agent | "Builds and maintains dependency graphs for task execution,... | Orchestration |
-| [graphql](../../skills/coding/graphql/SKILL.md) | Coding | Provides GraphQL gives clients exactly the data they need -... | Implementation |
 | [gratitude](../../skills/programming/gratitude/SKILL.md) | Programming | Provides Multi-agent research skill for parallel research... | Implementation |
 | [grpc](../../skills/cncf/grpc/SKILL.md) | Cncf | "gRPC in Remote Procedure Call - cloud native architecture,... | Reference |
 | [guardian](../../skills/cncf/guardian/SKILL.md) | Cncf | "Provides FREE — Intelligent tool-call reliability wrapper.... | Implementation |
@@ -5140,11 +4358,8 @@ MIT — All skills are freely available and redistributable.
 | [guide](../../skills/programming/guide/SKILL.md) | Programming | Provides To provide a comprehensive reference for... | Implementation |
 | [guide](../../skills/programming/guide/SKILL.md) | Programming | "Provides Guide developers through setting up development... | Implementation |
 | [guide-en](../../skills/programming/guide-en/SKILL.md) | Programming | "Provides Guide for VS Code extension development from... | Implementation |
-| [guidelines](../../skills/coding/guidelines/SKILL.md) | Coding | "Provides You are a senior backend engineer operating... | Implementation |
-| [guidelines](../../skills/coding/guidelines/SKILL.md) | Coding | "Provides You are a senior frontend engineer operating... | Implementation |
 | [guidelines](../../skills/programming/guidelines/SKILL.md) | Programming | "Provides Write copy following Sentry brand guidelines. Use... | Implementation |
 | [guidelines](../../skills/programming/guidelines/SKILL.md) | Programming | "Provides review files for compliance with web interface... | Implementation |
-| [handling](../../skills/coding/handling/SKILL.md) | Coding | "Provides Practical implementation guide for GDPR-compliant... | Review |
 | [handoff-patterns](../../skills/cncf/handoff-patterns/SKILL.md) | Cncf | Provides Effective patterns for on-call shift transitions,... | Implementation |
 | [harbor](../../skills/cncf/harbor/SKILL.md) | Cncf | "Configures harbor in cloud-native engineering - container... | Reference |
 | [health](../../skills/programming/health/SKILL.md) | Programming | Provides a health assistant skill for medical information... | Implementation |
@@ -5153,18 +4368,13 @@ MIT — All skills are freely available and redistributable.
 | [helper](../../skills/programming/helper/SKILL.md) | Programming | "Provides Step-by-step guide for migrating Odoo custom... | Implementation |
 | [high-seo-optimized-blogwriting-skill](../../skills/programming/high-seo-optimized-blogwriting-skill/SKILL.md) | Programming | "Provides use this skill when the user asks to write a blog... | Implementation |
 | [hinton](../../skills/programming/hinton/SKILL.md) | Programming | "Provides Agente que simula Geoffrey Hinton — Godfather of... | Implementation |
-| [hono](../../skills/coding/hono/SKILL.md) | Coding | "Provides Build ultra-fast web APIs and full-stack apps... | Implementation |
 | [hospital](../../skills/programming/hospital/SKILL.md) | Programming | "Provides World-class Hospital IT Management Advisor... | Implementation |
 | [hreflang](../../skills/programming/hreflang/SKILL.md) | Programming | "Provides Hreflang and international SEO audit, validation,... | Implementation |
-| [html-jsp-custom-best-pratices](../../skills/coding/html-jsp-custom-best-pratices/SKILL.md) | Coding | "Provides this skill should be used when the user asks for... | Implementation |
 | [hub](../../skills/cncf/hub/SKILL.md) | Cncf | "Provides Artifact Hub in Cloud-Native Engineering -... | Reference |
-| [hunter](../../skills/coding/hunter/SKILL.md) | Coding | "Provides Systematically finds and fixes bugs using proven... | Implementation |
 | [hunter](../../skills/programming/hunter/SKILL.md) | Programming | "Provides Automatically hunt for high-impact OSS... | Implementation |
 | [hunter](../../skills/programming/hunter/SKILL.md) | Programming | "Provides Formats content to be eligible for featured... | Implementation |
 | [hydra](../../skills/cncf/hydra/SKILL.md) | Cncf | "ORY Hydra in Security & Compliance - cloud native... | Reference |
-| [hyperparameter-tuning](../../skills/coding/hyperparameter-tuning/SKILL.md) | Coding | "Optimizes hyperparameters using grid search, random... | Implementation |
 | [hyperparameter-tuning](../../skills/trading/hyperparameter-tuning/SKILL.md) | Trading | "Implements optimize model configurations for trading... | Implementation |
-| [hypothesis-testing](../../skills/coding/hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square... | Implementation |
 | [ia](../../skills/programming/ia/SKILL.md) | Programming | "Provides Especialista em leiloes judiciais e... | Implementation |
 | [iam](../../skills/cncf/iam/SKILL.md) | Cncf | "Configures identity and access management with IAM users,... | Reference |
 | [iam](../../skills/cncf/iam/SKILL.md) | Cncf | "Manages identity and access control with service accounts,... | Reference |
@@ -5176,7 +4386,6 @@ MIT — All skills are freely available and redistributable.
 | [implement](../../skills/agent/implement/SKILL.md) | Agent | "Provides Execute tasks from a track's implementation plan... | Orchestration |
 | [implementation](../../skills/agent/implementation/SKILL.md) | Agent | Provides RAG (Retrieval-Augmented Generation)... | Implementation |
 | [implementation](../../skills/cncf/implementation/SKILL.md) | Cncf | Provides Framework for defining and implementing Service... | Implementation |
-| [implementation](../../skills/coding/implementation/SKILL.md) | Coding | "Provides Implement Command Query Responsibility... | Implementation |
 | [implementation](../../skills/programming/implementation/SKILL.md) | Programming | Provides Combine vector and keyword search for improved... | Implementation |
 | [impress](../../skills/programming/impress/SKILL.md) | Programming | "Provides Presentation creation, format conversion... | Implementation |
 | [improve-agent](../../skills/programming/improve-agent/SKILL.md) | Programming | Provides Systematic improvement of existing agents through... | Implementation |
@@ -5191,13 +4400,11 @@ MIT — All skills are freely available and redistributable.
 | [ingestion-py](../../skills/cncf/ingestion-py/SKILL.md) | Cncf | "Provides Azure Monitor Ingestion SDK for Python. Use for... | Implementation |
 | [ingress](../../skills/cncf/ingress/SKILL.md) | Cncf | "Provides Emissary-Ingress in Cloud-Native Engineering -... | Reference |
 | [ingress-controller](../../skills/cncf/ingress-controller/SKILL.md) | Cncf | "Kong Ingress Controller in Kubernetes - cloud native... | Reference |
-| [injection](../../skills/coding/injection/SKILL.md) | Coding | "Provides Execute comprehensive client-side injection... | Review |
 | [inngest](../../skills/agent/inngest/SKILL.md) | Agent | "Provides Inngest expert for serverless-first background... | Orchestration |
 | [inputs](../../skills/programming/inputs/SKILL.md) | Programming | "Provides Check for .claude/apple-design-context.md before... | Implementation |
 | [inspector](../../skills/agent/inspector/SKILL.md) | Agent | "Inspects container configurations, runtime state, logs,... | Debugging |
 | [instagram](../../skills/programming/instagram/SKILL.md) | Programming | "Provides Integracao completa com Instagram via Graph API.... | Implementation |
 | [installer](../../skills/agent/installer/SKILL.md) | Agent | "Provides Instala, valida, registra e verifica novas skills... | Implementation |
-| [instrumental-variables](../../skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least... | Implementation |
 | [integration](../../skills/agent/integration/SKILL.md) | Agent | Provides use when integrating google gemini api into... | Implementation |
 | [integration](../../skills/cncf/integration/SKILL.md) | Cncf | "Provides Expert patterns for HubSpot CRM integration... | Implementation |
 | [integration](../../skills/cncf/integration/SKILL.md) | Cncf | "Provides Integrate Stripe, PayPal, and payment processors.... | Implementation |
@@ -5207,13 +4414,11 @@ MIT — All skills are freely available and redistributable.
 | [integration](../../skills/programming/integration/SKILL.md) | Programming | 'Provides Connect Odoo with Shopify: sync products,... | Implementation |
 | [integration](../../skills/programming/integration/SKILL.md) | Programming | "CRITICAL: Use for Matrix SDK integration with Makepad.... | Implementation |
 | [integration](../../skills/programming/integration/SKILL.md) | Programming | "Provides use when adding interactive 3d scenes from... | Implementation |
-| [integration-patterns](../../skills/coding/integration-patterns/SKILL.md) | Coding | "Provides Production-ready patterns for integrating... | Implementation |
 | [intelligence](../../skills/agent/intelligence/SKILL.md) | Agent | Provides Analyze competitor strategies, content, pricing,... | Implementation |
 | [intelligence](../../skills/agent/intelligence/SKILL.md) | Agent | "Provides Protocolo de Inteligência Pré-Tarefa — ativa... | Orchestration |
 | [interaction](../../skills/programming/interaction/SKILL.md) | Programming | "Provides Three.js interaction - raycasting, controls,... | Implementation |
 | [intermarket-analysis](../../skills/trading/intermarket-analysis/SKILL.md) | Trading | "Implements cross-market relationships and asset class... | Implementation |
 | [internal-linking](../../skills/programming/internal-linking/SKILL.md) | Programming | "Provides Maps internal link opportunities between pages... | Implementation |
-| [intervention-analysis](../../skills/coding/intervention-analysis/SKILL.md) | Coding | "Provides Estimates treatment effects, conditional average... | Implementation |
 | [inventor](../../skills/programming/inventor/SKILL.md) | Programming | "Provides Product Inventor e Design Alchemist de nivel... | Implementation |
 | [io](../../skills/cncf/io/SKILL.md) | Cncf | "metal3.io in Bare Metal Provisioning - cloud native... | Reference |
 | [issue](../../skills/programming/issue/SKILL.md) | Programming | "Provides You are a GitHub issue resolution expert... | Implementation |
@@ -5225,7 +4430,6 @@ MIT — All skills are freely available and redistributable.
 | [java](../../skills/cncf/java/SKILL.md) | Cncf | "Provides Build event-driven applications with Azure Event... | Implementation |
 | [java](../../skills/cncf/java/SKILL.md) | Cncf | Provides Build real-time streaming applications with Azure... | Implementation |
 | [java](../../skills/cncf/java/SKILL.md) | Cncf | "Provides Authenticate Java applications with Azure... | Implementation |
-| [java](../../skills/coding/java/SKILL.md) | Coding | Provides Scaffold, write, debug, and enhance... | Review |
 | [javascript](../../skills/agent/javascript/SKILL.md) | Agent | Provides Write JavaScript code in n8n Code nodes. Use when... | Implementation |
 | [jetpack-compose](../../skills/programming/jetpack-compose/SKILL.md) | Programming | "Provides expo-ui-jetpack-compose functionality and... | Implementation |
 | [jobgpt](../../skills/programming/jobgpt/SKILL.md) | Programming | "Provides Job search automation, auto apply, resume... | Implementation |
@@ -5235,11 +4439,9 @@ MIT — All skills are freely available and redistributable.
 | [jq](../../skills/programming/jq/SKILL.md) | Programming | "Provides Expert jq usage for JSON querying, filtering,... | Implementation |
 | [js](../../skills/programming/js/SKILL.md) | Programming | "Provides Run Hugging Face models in JavaScript or... | Implementation |
 | [juridico](../../skills/programming/juridico/SKILL.md) | Programming | 'Provides Analise juridica de leiloes: nulidades, bem de... | Implementation |
-| [kaizen](../../skills/coding/kaizen/SKILL.md) | Coding | "Provides Guide for continuous improvement, error proofing,... | Review |
 | [karmada](../../skills/cncf/karmada/SKILL.md) | Cncf | "Provides Karmada in Cloud-Native Engineering -... | Reference |
 | [karpathy](../../skills/programming/karpathy/SKILL.md) | Programming | "Provides Agente que simula Andrej Karpathy — ex-Director... | Implementation |
 | [keda](../../skills/cncf/keda/SKILL.md) | Cncf | "Configures keda in cloud-native engineering - event-driven... | Reference |
-| [kernel-density](../../skills/coding/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric... | Implementation |
 | [key-vault](../../skills/cncf/key-vault/SKILL.md) | Cncf | "Manages encryption keys, secrets, and certificates with... | Reference |
 | [keycloak](../../skills/cncf/keycloak/SKILL.md) | Cncf | "Provides Keycloak in Cloud-Native Engineering - identity... | Reference |
 | [keys-rust](../../skills/cncf/keys-rust/SKILL.md) | Cncf | "Provides Azure Key Vault Keys SDK for Rust. Use for... | Implementation |
@@ -5280,14 +4482,12 @@ MIT — All skills are freely available and redistributable.
 | [learn](../../skills/programming/learn/SKILL.md) | Programming | Provides Machine learning in Python with scikit-learn. Use... | Implementation |
 | [lecun](../../skills/programming/lecun/SKILL.md) | Programming | "Provides Agente que simula Yann LeCun — inventor das... | Implementation |
 | [legacy-modernize](../../skills/programming/legacy-modernize/SKILL.md) | Programming | "Provides Orchestrate a comprehensive legacy system... | Implementation |
-| [leiloeiros](../../skills/coding/leiloeiros/SKILL.md) | Coding | "Provides Coleta e consulta dados de leiloeiros oficiais de... | Implementation |
 | [lex](../../skills/programming/lex/SKILL.md) | Programming | "Provides Centralized 'Truth Engine' for... | Implementation |
 | [library](../../skills/cncf/library/SKILL.md) | Cncf | Provides Production-ready Terraform module patterns for... | Implementation |
 | [library](../../skills/programming/library/SKILL.md) | Programming | "Provides Extensive icon library and AI-driven icon... | Implementation |
 | [library](../../skills/programming/library/SKILL.md) | Programming | "Provides a comprehensive collection of battle-tested... | Implementation |
 | [lighting](../../skills/programming/lighting/SKILL.md) | Programming | "Provides Three.js lighting - light types, shadows,... | Implementation |
 | [lima](../../skills/cncf/lima/SKILL.md) | Cncf | "Lima in Container Runtime - cloud native architecture,... | Reference |
-| [linear-regression](../../skills/coding/linear-regression/SKILL.md) | Coding | "Implements linear regression including OLS, ridge... | Implementation |
 | [linkerd](../../skills/cncf/linkerd/SKILL.md) | Cncf | "Linkerd in Service Mesh - cloud native architecture,... | Reference |
 | [linux](../../skills/programming/linux/SKILL.md) | Programming | "Provides Bash/Linux terminal patterns. Critical commands,... | Implementation |
 | [liquidity-risk](../../skills/trading/liquidity-risk/SKILL.md) | Trading | "Implements liquidity assessment and trade execution risk... | Implementation |
@@ -5298,7 +4498,6 @@ MIT — All skills are freely available and redistributable.
 | [loaders](../../skills/programming/loaders/SKILL.md) | Programming | "Provides Three.js asset loading - GLTF, textures, images,... | Implementation |
 | [localization](../../skills/programming/localization/SKILL.md) | Programming | "Provides Internationalization and localization patterns.... | Implementation |
 | [log-analyzer](../../skills/agent/log-analyzer/SKILL.md) | Agent | "Analyzes runtime logs from agent execution to identify... | Monitoring |
-| [logistic-regression](../../skills/coding/logistic-regression/SKILL.md) | Coding | "Implements logistic regression for binary and multinomial... | Implementation |
 | [logistics](../../skills/programming/logistics/SKILL.md) | Programming | "Provides Codified expertise for returns authorisation,... | Implementation |
 | [longhorn](../../skills/cncf/longhorn/SKILL.md) | Cncf | "Longhorn in Cloud Native Storage - cloud native... | Reference |
 | [lookahead-bias](../../skills/trading/lookahead-bias/SKILL.md) | Trading | "Preventing lookahead bias in backtesting through strict... | Implementation |
@@ -5309,7 +4508,6 @@ MIT — All skills are freely available and redistributable.
 | [management](../../skills/agent/management/SKILL.md) | Agent | "Provides use this skill when creating, managing, or... | Orchestration |
 | [management](../../skills/cncf/management/SKILL.md) | Cncf | Provides Comprehensive guide to Istio traffic management... | Implementation |
 | [management](../../skills/cncf/management/SKILL.md) | Cncf | Provides Server management principles and decision-making.... | Implementation |
-| [management](../../skills/coding/management/SKILL.md) | Coding | Provides Secure secrets management practices for CI/CD... | Review |
 | [management](../../skills/programming/management/SKILL.md) | Programming | "Provides Master modern Angular state management with... | Implementation |
 | [management](../../skills/programming/management/SKILL.md) | Programming | "Provides Codified expertise for managing carrier... | Implementation |
 | [management](../../skills/programming/management/SKILL.md) | Programming | "Provides Manage citations systematically throughout the... | Implementation |
@@ -5318,7 +4516,6 @@ MIT — All skills are freely available and redistributable.
 | [management](../../skills/programming/management/SKILL.md) | Programming | "Provides Master modern React state management with Redux... | Implementation |
 | [management](../../skills/programming/management/SKILL.md) | Programming | ''CRITICAL: Use for Robius state management patterns.... | Reference |
 | [manager](../../skills/cncf/manager/SKILL.md) | Cncf | "cert-manager in Cloud-Native Engineering - Certificate... | Reference |
-| [manager](../../skills/coding/manager/SKILL.md) | Coding | "WebSocket connection manager with state machine... | Implementation |
 | [manager](../../skills/programming/manager/SKILL.md) | Programming | Provides Elite AI context engineering specialist mastering... | Implementation |
 | [manager](../../skills/programming/manager/SKILL.md) | Programming | "Provides Senior PM agent with 6 knowledge domains, 30+... | Implementation |
 | [manager](../../skills/programming/manager/SKILL.md) | Programming | "Provides Monitor portfolio risk, R-multiples, and position... | Implementation |
@@ -5332,8 +4529,6 @@ MIT — All skills are freely available and redistributable.
 | [manager-sql-dotnet](../../skills/cncf/manager-sql-dotnet/SKILL.md) | Cncf | "Configures azure resource manager sdk for azure sql in... | Implementation |
 | [manifest](../../skills/programming/manifest/SKILL.md) | Programming | "Provides Install and configure the Manifest observability... | Implementation |
 | [mapper](../../skills/programming/mapper/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... | Implementation |
-| [mapping](../../skills/coding/mapping/SKILL.md) | Coding | "Provides Map relationships between bounded contexts and... | Implementation |
-| [mapping](../../skills/coding/mapping/SKILL.md) | Coding | "Provides Map identified threats to appropriate security... | Review |
 | [markdown](../../skills/programming/markdown/SKILL.md) | Programming | "Provides Create and edit Obsidian Flavored Markdown with... | Implementation |
 | [market-data-cache](../../skills/trading/market-data-cache/SKILL.md) | Trading | "High-performance caching layer for market data with low... | Implementation |
 | [market-impact](../../skills/trading/market-impact/SKILL.md) | Trading | "Implements market impact modeling and order book... | Implementation |
@@ -5347,7 +4542,6 @@ MIT — All skills are freely available and redistributable.
 | [materials](../../skills/programming/materials/SKILL.md) | Programming | "Provides Three.js materials - PBR, basic, phong, shader... | Implementation |
 | [matplotlib](../../skills/programming/matplotlib/SKILL.md) | Programming | "Provides Matplotlib is Python's foundational visualization... | Implementation |
 | [maxia](../../skills/programming/maxia/SKILL.md) | Programming | "Provides Connect to MAXIA AI-to-AI marketplace on Solana.... | Implementation |
-| [maximum-likelihood](../../skills/coding/maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood... | Implementation |
 | [mcp](../../skills/programming/mcp/SKILL.md) | Programming | Provides a hybrid memory system that provides persistent,... | Implementation |
 | [mcp](../../skills/programming/mcp/SKILL.md) | Programming | Provides Connect to Helium's MCP server for news research,... | Implementation |
 | [md](../../skills/programming/md/SKILL.md) | Programming | Provides this skill should be used when the user asks to... | Implementation |
@@ -5359,28 +4553,18 @@ MIT — All skills are freely available and redistributable.
 | [menus](../../skills/programming/menus/SKILL.md) | Programming | "Provides Check for .claude/apple-design-context.md before... | Implementation |
 | [mercado](../../skills/programming/mercado/SKILL.md) | Programming | "Provides Analise de mercado imobiliario para leiloes.... | Implementation |
 | [meta-description-generator](../../skills/programming/meta-description-generator/SKILL.md) | Programming | "Provides Writes 3 title tag variants and 3 meta... | Implementation |
-| [metadata](../../skills/coding/metadata/SKILL.md) | Coding | Provides Audit and fix HTML metadata including page titles,... | Implementation |
 | [metadata](../../skills/programming/metadata/SKILL.md) | Programming | "Provides the ai native file format. exif for ai — stamps... | Implementation |
-| [methodology](../../skills/coding/methodology/SKILL.md) | Coding | "Provides Master the complete penetration testing lifecycle... | Review |
-| [methods](../../skills/coding/methods/SKILL.md) | Coding | "Provides Provide comprehensive techniques for escalating... | Review |
-| [metrics-and-kpis](../../skills/coding/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators... | Implementation |
 | [migration](../../skills/cncf/migration/SKILL.md) | Cncf | "Provides Master database schema and data migrations across... | Implementation |
 | [migration](../../skills/programming/migration/SKILL.md) | Programming | "Provides Master AngularJS to Angular migration, including... | Implementation |
 | [migration-observability](../../skills/cncf/migration-observability/SKILL.md) | Cncf | Configures migration monitoring, cdc, and observability... | Implementation |
 | [mirror](../../skills/programming/mirror/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... | Implementation |
-| [missing-data](../../skills/coding/missing-data/SKILL.md) | Coding | "Handles missing data using imputation strategies, deletion... | Implementation |
 | [ml](../../skills/agent/ml/SKILL.md) | Agent | "Provides AI and machine learning workflow covering LLM... | Implementation |
 | [ml-py](../../skills/cncf/ml-py/SKILL.md) | Cncf | Provides Azure Machine Learning SDK v2 for Python. Use for... | Implementation |
 | [mode](../../skills/programming/mode/SKILL.md) | Programming | 'Provides Version 2.35.0 | PRD to Production | Zero Human... | Implementation |
 | [mode-analysis](../../skills/agent/mode-analysis/SKILL.md) | Agent | "Performs failure mode analysis by identifying potential... | Reliability |
 | [model-ensemble](../../skills/trading/model-ensemble/SKILL.md) | Trading | "Provides Combine multiple models for improved prediction... | Implementation |
-| [model-fairness](../../skills/coding/model-fairness/SKILL.md) | Coding | "Evaluates and mitigates fairness issues including bias... | Implementation |
-| [model-interpretation](../../skills/coding/model-interpretation/SKILL.md) | Coding | "Provides Interprets models using SHAP values, LIME,... | Implementation |
-| [model-robustness](../../skills/coding/model-robustness/SKILL.md) | Coding | Improves model robustness including adversarial robustness,... | Implementation |
-| [model-selection](../../skills/coding/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC,... | Implementation |
 | [model-trainer](../../skills/programming/model-trainer/SKILL.md) | Programming | Provides Train or fine-tune TRL language models on Hugging... | Implementation |
 | [modeling](../../skills/programming/modeling/SKILL.md) | Programming | "Provides Build comprehensive 3-5 year financial models... | Implementation |
-| [models](../../skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated... | Implementation |
 | [modernization](../../skills/programming/modernization/SKILL.md) | Programming | "Provides Master React version upgrades, class to hooks... | Implementation |
 | [modernizer](../../skills/programming/modernizer/SKILL.md) | Programming | "Provides Refactor legacy codebases, migrate outdated... | Implementation |
 | [modes](../../skills/agent/modes/SKILL.md) | Agent | "Provides AI operational modes (brainstorm, implement,... | Implementation |
@@ -5393,7 +4577,6 @@ MIT — All skills are freely available and redistributable.
 | [monitor](../../skills/programming/monitor/SKILL.md) | Programming | Provides Monitor de performance do Claude Code e sistema... | Implementation |
 | [monitor-creation](../../skills/programming/monitor-creation/SKILL.md) | Programming | "Guides creation of Monte Carlo monitors via MCP tools,... | Implementation |
 | [monitor-setup](../../skills/cncf/monitor-setup/SKILL.md) | Cncf | "Provides You are a monitoring and observability expert... | Implementation |
-| [monte-carlo](../../skills/coding/monte-carlo/SKILL.md) | Coding | "Implements Monte Carlo sampling, simulation methods, and... | Implementation |
 | [moyu](../../skills/programming/moyu/SKILL.md) | Programming | "Anti-over-engineering guardrail that activates when an AI... | Implementation |
 | [ms](../../skills/agent/ms/SKILL.md) | Agent | Provides use this skill when building mcp servers to... | Implementation |
 | [ms](../../skills/agent/ms/SKILL.md) | Agent | "Provides Guide for creating effective skills for AI coding... | Implementation |
@@ -5407,26 +4590,20 @@ MIT — All skills are freely available and redistributable.
 | [network-interface-cni](../../skills/cncf/network-interface-cni/SKILL.md) | Cncf | "Container Network Interface in Cloud Native Network -... | Reference |
 | [networking](../../skills/cncf/networking/SKILL.md) | Cncf | "Provides Configure secure, high-performance connectivity... | Implementation |
 | [networkx](../../skills/programming/networkx/SKILL.md) | Programming | "Provides NetworkX is a Python package for creating,... | Implementation |
-| [neural-networks](../../skills/coding/neural-networks/SKILL.md) | Coding | "Implements deep neural networks, backpropagation,... | Implementation |
 | [new-skill](../../skills/agent/new-skill/SKILL.md) | Agent | "'Step-by-step guide for adding a new skill to the... | Orchestration |
 | [news-embedding](../../skills/trading/news-embedding/SKILL.md) | Trading | "Implements process news text using nlp embeddings for... | Implementation |
 | [niche-intelligence](../../skills/agent/niche-intelligence/SKILL.md) | Agent | "Provides Estratega de Inteligencia de Dominio de Andru.ia.... | Implementation |
 | [node-ts](../../skills/programming/node-ts/SKILL.md) | Programming | "Provides Create React Flow node components following... | Implementation |
 | [nonconformance](../../skills/programming/nonconformance/SKILL.md) | Programming | "Provides Codified expertise for quality control,... | Implementation |
-| [normalization](../../skills/coding/normalization/SKILL.md) | Coding | 'Provides Exchange data normalization layer: typed... | Implementation |
 | [notebooklm](../../skills/programming/notebooklm/SKILL.md) | Programming | Provides Interact with Google NotebookLM to query... | Implementation |
 | [o](../../skills/cncf/o/SKILL.md) | Cncf | "Provides CRI-O in Container Runtime - OCI-compliant... | Reference |
 | [oathkeeper](../../skills/cncf/oathkeeper/SKILL.md) | Cncf | "Oathkeeper in Identity & Access - cloud native... | Reference |
 | [observability](../../skills/cncf/observability/SKILL.md) | Cncf | Provides Complete guide to observability patterns for... | Implementation |
-| [observability-api-mock](../../skills/coding/observability-api-mock/SKILL.md) | Coding | Provides You are an API mocking expert specializing in... | Implementation |
-| [observational-studies](../../skills/coding/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods,... | Implementation |
 | [official](../../skills/programming/official/SKILL.md) | Programming | "Provides a user may ask you to create, edit, or analyze... | Implementation |
 | [official](../../skills/programming/official/SKILL.md) | Programming | "Provides this guide covers essential pdf processing... | Implementation |
 | [official](../../skills/programming/official/SKILL.md) | Programming | "Provides a user may ask you to create, edit, or analyze... | Implementation |
 | [official](../../skills/programming/official/SKILL.md) | Programming | "Provides unless otherwise stated by the user or existing... | Implementation |
-| [omega](../../skills/coding/omega/SKILL.md) | Coding | "Provides CISO operacional enterprise para gestao total de... | Review |
 | [onboarding](../../skills/programming/onboarding/SKILL.md) | Programming | "Provides Generate two complementary onboarding documents... | Implementation |
-| [online-experiments](../../skills/coding/online-experiments/SKILL.md) | Coding | "Implements multi-armed bandits, contextual bandits,... | Implementation |
 | [openai-dotnet](../../skills/cncf/openai-dotnet/SKILL.md) | Cncf | "Provides Azure OpenAI SDK for .NET. Client library for... | Implementation |
 | [opencost](../../skills/cncf/opencost/SKILL.md) | Cncf | "OpenCost in Kubernetes Cost Monitoring - cloud native... | Reference |
 | [openfeature](../../skills/cncf/openfeature/SKILL.md) | Cncf | "OpenFeature in Feature Flagging - cloud native... | Reference |
@@ -5442,7 +4619,6 @@ MIT — All skills are freely available and redistributable.
 | [ops-ml-pipeline](../../skills/programming/ops-ml-pipeline/SKILL.md) | Programming | 'Provides design and implement a complete ml pipeline for:... | Implementation |
 | [optimization](../../skills/agent/optimization/SKILL.md) | Agent | Provides PostgreSQL database optimization workflow for... | Implementation |
 | [optimization](../../skills/cncf/optimization/SKILL.md) | Cncf | "Provides Strategies and patterns for optimizing cloud... | Implementation |
-| [optimization](../../skills/coding/optimization/SKILL.md) | Coding | Provides Optimize website and web application performance... | Implementation |
 | [optimization](../../skills/programming/optimization/SKILL.md) | Programming | "Provides Complete App Store Optimization (ASO) toolkit for... | Implementation |
 | [optimization](../../skills/programming/optimization/SKILL.md) | Programming | "Provides Optimize Bazel builds for large-scale monorepos.... | Implementation |
 | [optimization](../../skills/programming/optimization/SKILL.md) | Programming | Provides Context optimization extends the effective... | Implementation |
@@ -5462,12 +4638,10 @@ MIT — All skills are freely available and redistributable.
 | [optimizer](../../skills/programming/optimizer/SKILL.md) | Programming | Provides Identifies and fixes performance bottlenecks in... | Implementation |
 | [optimizer](../../skills/programming/optimizer/SKILL.md) | Programming | "Creates optimized meta titles, descriptions, and URL... | Implementation |
 | [oracle-generator](../../skills/agent/oracle-generator/SKILL.md) | Agent | "Generates test oracles and expected outputs for testing... | Testing |
-| [orchestration](../../skills/coding/orchestration/SKILL.md) | Coding | "Provides Patterns for managing distributed transactions... | Implementation |
 | [orchestration](../../skills/programming/orchestration/SKILL.md) | Programming | "Orchestrates design workflows by routing work through... | Implementation |
 | [orchestration-full-stack-feature](../../skills/agent/orchestration-full-stack-feature/SKILL.md) | Agent | "Provides use when working with full stack orchestration... | Orchestration |
 | [orchestrator](../../skills/agent/orchestrator/SKILL.md) | Agent | "Provides use when a coding task should be driven... | Orchestration |
 | [orchestrator](../../skills/agent/orchestrator/SKILL.md) | Agent | "Provides a meta-skill that understands task requirements,... | Implementation |
-| [orchestrator](../../skills/coding/orchestrator/SKILL.md) | Coding | "Provides Master TDD orchestrator specializing in... | Review |
 | [orchestrator](../../skills/programming/orchestrator/SKILL.md) | Programming | Provides Meta-skill que orquestra todos os agentes do... | Implementation |
 | [orchestrator](../../skills/programming/orchestrator/SKILL.md) | Programming | "Provides Orquestrador unificado de canais sociais —... | Implementation |
 | [order-book](../../skills/trading/order-book/SKILL.md) | Trading | "Order book data handling, spread calculation, liquidity... | Implementation |
@@ -5486,7 +4660,6 @@ MIT — All skills are freely available and redistributable.
 | [pages](../../skills/programming/pages/SKILL.md) | Programming | "Provides Generate SEO-optimized competitor comparison and... | Implementation |
 | [paper-publisher](../../skills/programming/paper-publisher/SKILL.md) | Programming | Provides Publish and manage research papers on Hugging Face... | Implementation |
 | [papers](../../skills/programming/papers/SKILL.md) | Programming | Provides Read and analyze Hugging Face paper pages or arXiv... | Implementation |
-| [parser](../../skills/coding/parser/SKILL.md) | Coding | "Provides Searches and explores Burp Suite project files... | Review |
 | [path-detector](../../skills/agent/path-detector/SKILL.md) | Agent | "Identifies critical execution paths (hot paths) in code... | Debugging |
 | [pattern](../../skills/programming/pattern/SKILL.md) | Programming | "Provides Generate reusable UI patterns such as card... | Implementation |
 | [patterns](../../skills/agent/patterns/SKILL.md) | Agent | Provides Build production Apache Airflow DAGs with best... | Orchestration |
@@ -5498,23 +4671,6 @@ MIT — All skills are freely available and redistributable.
 | [patterns](../../skills/agent/patterns/SKILL.md) | Agent | Provides No-code automation democratizes workflow building.... | Implementation |
 | [patterns](../../skills/cncf/patterns/SKILL.md) | Cncf | "Provides Common AWS CDK patterns and constructs for... | Implementation |
 | [patterns](../../skills/cncf/patterns/SKILL.md) | Cncf | Provides Transform slow database queries into... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides API design principles and decision-making. REST... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Software architecture patterns including MVC,... | Reference |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | Provides Master proven backend architecture patterns... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Build secure, scalable authentication and... | Review |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Master Bash Automated Testing System (Bats) for... | Review |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Comprehensive patterns and techniques for... | Review |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Apply DDD tactical patterns in code using... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Master C#/.NET patterns for building... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | Provides Build reliable, fast, and maintainable end-to-end... | Review |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "FastAPI application structure with typed error hierarchy,... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | Provides Master microservices architecture patterns... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Comprehensive guidance for building scalable,... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Build read models and projections from event... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Modern React patterns and principles. Hooks,... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Apply STRIDE methodology to systematically... | Review |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Tailwind CSS v4 principles. CSS-first... | Implementation |
-| [patterns](../../skills/coding/patterns/SKILL.md) | Coding | "Provides Jest testing patterns, factory functions, mocking... | Review |
 | [patterns](../../skills/programming/patterns/SKILL.md) | Programming | Provides Modern Angular UI patterns for loading states,... | Implementation |
 | [patterns](../../skills/programming/patterns/SKILL.md) | Programming | "Provides Comprehensive guidance for implementing... | Implementation |
 | [patterns](../../skills/programming/patterns/SKILL.md) | Programming | Provides Design patterns for building autonomous coding... | Implementation |
@@ -5542,7 +4698,6 @@ MIT — All skills are freely available and redistributable.
 | [patterns](../../skills/programming/patterns/SKILL.md) | Programming | "Provides Comprehensive guide to auditing web content... | Implementation |
 | [payroll-setup](../../skills/programming/payroll-setup/SKILL.md) | Programming | 'Provides Expert guide for Odoo HR and Payroll: salary... | Implementation |
 | [pentesting](../../skills/cncf/pentesting/SKILL.md) | Cncf | "Provides Provide systematic methodologies for automated... | Implementation |
-| [performance](../../skills/coding/performance/SKILL.md) | Coding | Provides Audit and fix animation performance issues... | Implementation |
 | [performance](../../skills/programming/performance/SKILL.md) | Programming | Provides Diagnose slow React components and suggest... | Implementation |
 | [performance-attribution](../../skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading... | Implementation |
 | [performance-optimization](../../skills/cncf/performance-optimization/SKILL.md) | Cncf | Provides Optimize end-to-end application performance with... | Implementation |
@@ -5556,13 +4711,11 @@ MIT — All skills are freely available and redistributable.
 | [platform](../../skills/programming/platform/SKILL.md) | Programming | Provides Platform APIs for model management, pricing, and... | Implementation |
 | [platform](../../skills/programming/platform/SKILL.md) | Programming | "CRITICAL: Use for Makepad cross-platform support. Triggers... | Implementation |
 | [platforms](../../skills/programming/platforms/SKILL.md) | Programming | "Provides Apple Human Interface Guidelines for... | Implementation |
-| [playwright](../../skills/coding/playwright/SKILL.md) | Coding | Provides Expert capability for robust, stealthy, and... | Review |
 | [playwright-testing-ts](../../skills/cncf/playwright-testing-ts/SKILL.md) | Cncf | Provides Run Playwright tests at scale with cloud-hosted... | Implementation |
 | [plotly](../../skills/programming/plotly/SKILL.md) | Programming | Provides Interactive visualization library. Use when you... | Implementation |
 | [polars](../../skills/programming/polars/SKILL.md) | Programming | Provides Fast in-memory DataFrame library for datasets that... | Implementation |
 | [policies](../../skills/cncf/policies/SKILL.md) | Cncf | Provides Comprehensive guide for implementing... | Implementation |
 | [policy-agent-opa](../../skills/cncf/policy-agent-opa/SKILL.md) | Cncf | "Open Policy Agent in Security &amp; Compliance - cloud... | Reference |
-| [portfolio](../../skills/coding/portfolio/SKILL.md) | Coding | "Provides Expert in building portfolios that actually land... | Implementation |
 | [position-exits](../../skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit... | Implementation |
 | [position-sizing](../../skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly... | Implementation |
 | [position-sizing](../../skills/trading/position-sizing/SKILL.md) | Trading | "Calculating optimal position sizes using Kelly criterion,... | Implementation |
@@ -5572,11 +4725,8 @@ MIT — All skills are freely available and redistributable.
 | [postprocessing](../../skills/programming/postprocessing/SKILL.md) | Programming | "Provides Three.js post-processing - EffectComposer, bloom,... | Implementation |
 | [pr](../../skills/agent/pr/SKILL.md) | Agent | "Provides Alias for sentry-skills:pr-writer. Use when users... | Orchestration |
 | [pr](../../skills/agent/pr/SKILL.md) | Agent | "Provides Iterate on a PR until CI passes. Use when you... | Orchestration |
-| [pr-enhance](../../skills/coding/pr-enhance/SKILL.md) | Coding | "Provides Generate structured PR descriptions from diffs,... | Review |
 | [practices](../../skills/cncf/practices/SKILL.md) | Cncf | Provides CloudFormation template optimization, nested... | Implementation |
 | [practices](../../skills/cncf/practices/SKILL.md) | Cncf | Provides Postgres performance optimization and best... | Implementation |
-| [practices](../../skills/coding/practices/SKILL.md) | Coding | Provides Next.js App Router principles. Server Components,... | Implementation |
-| [practices](../../skills/coding/practices/SKILL.md) | Coding | "Provides Node.js development principles and... | Implementation |
 | [practices](../../skills/programming/practices/SKILL.md) | Programming | "Provides Angular performance optimization and best... | Implementation |
 | [practices](../../skills/programming/practices/SKILL.md) | Programming | "Provides Comprehensive performance optimization guide for... | Implementation |
 | [practices](../../skills/programming/practices/SKILL.md) | Programming | "Provides best practices for remotion - video creation in... | Implementation |
@@ -5587,35 +4737,15 @@ MIT — All skills are freely available and redistributable.
 | [prevent](../../skills/programming/prevent/SKILL.md) | Programming | Provides Surfaces Monte Carlo data observability context... | Implementation |
 | [prevention](../../skills/programming/prevention/SKILL.md) | Programming | "Provides Reduce voluntary and involuntary churn with... | Implementation |
 | [price-action-patterns](../../skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for... | Implementation |
-| [principles](../../skills/coding/principles/SKILL.md) | Coding | "Provides Master REST and GraphQL API design principles to... | Implementation |
 | [principles](../../skills/programming/principles/SKILL.md) | Programming | "Provides Evaluate interfaces against 168 research-backed... | Implementation |
-| [privacy-ml](../../skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including... | Implementation |
 | [pro](../../skills/agent/pro/SKILL.md) | Agent | "Provides use when building durable distributed systems... | Orchestration |
 | [pro](../../skills/agent/pro/SKILL.md) | Agent | "Provides Master Temporal workflow orchestration with... | Orchestration |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Write efficient C code with proper memory... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Write idiomatic C++ code with modern features,... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Write modern C# code with advanced features like... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Master Django 5.x with async views, DRF, Celery,... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Write idiomatic Elixir code with OTP patterns,... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Build high-performance async APIs with FastAPI,... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Master Go 1.21+ with modern patterns, advanced... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Expert Haskell engineer specializing in advanced... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Master Java 21+ with modern features like virtual... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Master modern JavaScript with ES6+, async... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Master Julia 1.10+ with modern features,... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Write idiomatic PHP code with generators, iterators, SPL... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Master Python 3.12+ with modern features, async... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Write idiomatic Ruby code with metaprogramming,... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Master Rust 1.75+ with modern async patterns,... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | Provides Master enterprise-grade Scala development with... | Implementation |
-| [pro](../../skills/coding/pro/SKILL.md) | Coding | "Provides Master TypeScript with advanced types, generics,... | Implementation |
 | [pro](../../skills/programming/pro/SKILL.md) | Programming | "Master of defensive Bash scripting for production... | Implementation |
 | [pro](../../skills/programming/pro/SKILL.md) | Programming | "Provides Professional, ethical HR partner for hiring,... | Implementation |
 | [pro](../../skills/programming/pro/SKILL.md) | Programming | Provides Elite IT Management Advisor specializing in... | Implementation |
 | [pro](../../skills/programming/pro/SKILL.md) | Programming | "Provides Master Minecraft server plugin development with... | Implementation |
 | [pro](../../skills/programming/pro/SKILL.md) | Programming | "Provides Expert in strict POSIX sh scripting for maximum... | Implementation |
 | [pro](../../skills/programming/pro/SKILL.md) | Programming | Provides Master modern SQL with cloud-native databases,... | Implementation |
-| [pro-max](../../skills/coding/pro-max/SKILL.md) | Coding | "Provides Comprehensive design guide for web and mobile... | Implementation |
 | [procedures](../../skills/cncf/procedures/SKILL.md) | Cncf | Provides Production deployment principles and... | Implementation |
 | [procurement](../../skills/programming/procurement/SKILL.md) | Programming | "Provides Codified expertise for electricity and gas... | Implementation |
 | [product](../../skills/programming/product/SKILL.md) | Programming | Provides Every product will be AI-powered. The question is... | Implementation |
@@ -5631,7 +4761,6 @@ MIT — All skills are freely available and redistributable.
 | [project](../../skills/cncf/project/SKILL.md) | Cncf | "Notary Project in Content Trust &amp; Security - cloud... | Reference |
 | [project](../../skills/programming/project/SKILL.md) | Programming | "Provides create a new rails project functionality and... | Implementation |
 | [project-guidelines-example](../../skills/agent/project-guidelines-example/SKILL.md) | Agent | "Implements project guidelines skill (example) for... | Implementation |
-| [projects](../../skills/coding/projects/SKILL.md) | Coding | "Provides use when upgrading existing websites or apps by... | Implementation |
 | [projects-dotnet](../../skills/cncf/projects-dotnet/SKILL.md) | Cncf | "Provides Azure AI Projects SDK for .NET. High-level client... | Implementation |
 | [projects-java](../../skills/cncf/projects-java/SKILL.md) | Cncf | Provides Azure AI Projects SDK for Java. High-level SDK for... | Implementation |
 | [projects-py](../../skills/cncf/projects-py/SKILL.md) | Cncf | "Provides Build AI applications on Microsoft Foundry using... | Implementation |
@@ -5662,7 +4791,6 @@ MIT — All skills are freely available and redistributable.
 | [py](../../skills/cncf/py/SKILL.md) | Cncf | "Provides Azure Identity SDK for Python authentication. Use... | Implementation |
 | [py](../../skills/cncf/py/SKILL.md) | Cncf | "Provides Azure Key Vault SDK for Python. Use for secrets,... | Implementation |
 | [py](../../skills/cncf/py/SKILL.md) | Cncf | "Provides Azure Service Bus SDK for Python messaging. Use... | Implementation |
-| [py](../../skills/coding/py/SKILL.md) | Coding | "Provides Create FastAPI routers following established... | Implementation |
 | [py](../../skills/programming/py/SKILL.md) | Programming | Provides Build container-based Foundry Agents with Azure AI... | Implementation |
 | [py](../../skills/programming/py/SKILL.md) | Programming | Provides Microsoft 365 Agents SDK for Python. Build... | Implementation |
 | [py](../../skills/programming/py/SKILL.md) | Programming | "Provides Create Pydantic models following the multi-model... | Implementation |
@@ -5674,13 +4802,11 @@ MIT — All skills are freely available and redistributable.
 | [qiskit](../../skills/programming/qiskit/SKILL.md) | Programming | "Provides Qiskit is the world's most popular open-source... | Implementation |
 | [qstash](../../skills/agent/qstash/SKILL.md) | Agent | "Provides Upstash QStash expert for serverless message... | Orchestration |
 | [quality-analyzer](../../skills/agent/quality-analyzer/SKILL.md) | Agent | "Analyzes code quality changes in diffs by evaluating... | Analysis |
-| [quality-policies](../../skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean... | Implementation |
 | [query](../../skills/programming/query/SKILL.md) | Programming | Provides food database query functionality and capabilities. | Implementation |
 | [query-java](../../skills/cncf/query-java/SKILL.md) | Cncf | "Provides Azure Monitor Query SDK for Java. Execute Kusto... | Implementation |
 | [query-py](../../skills/cncf/query-py/SKILL.md) | Cncf | "Provides Azure Monitor Query SDK for Python. Use for... | Implementation |
 | [queue-py](../../skills/cncf/queue-py/SKILL.md) | Cncf | "Provides Azure Queue Storage SDK for Python. Use for... | Implementation |
 | [queue-ts](../../skills/cncf/queue-ts/SKILL.md) | Cncf | "Provides Azure Queue Storage JavaScript/TypeScript SDK... | Implementation |
-| [randomized-experiments](../../skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials... | Implementation |
 | [rate-limiting](../../skills/trading/rate-limiting/SKILL.md) | Trading | "Rate Limiting Strategies and Circuit Breaker Patterns for... | Implementation |
 | [rate-limiting](../../skills/trading/rate-limiting/SKILL.md) | Trading | "Provides Rate Limiting and Exchange API Management for... | Implementation |
 | [rbac](../../skills/cncf/rbac/SKILL.md) | Cncf | "Manages identity and access with roles, service... | Reference |
@@ -5691,8 +4817,6 @@ MIT — All skills are freely available and redistributable.
 | [readme](../../skills/programming/readme/SKILL.md) | Programming | "Provides You are an expert technical writer creating... | Implementation |
 | [realistic-simulation](../../skills/trading/realistic-simulation/SKILL.md) | Trading | "Provides Realistic Paper Trading Simulation with Market... | Implementation |
 | [recallmax](../../skills/agent/recallmax/SKILL.md) | Agent | "Provides FREE — God-tier long-context memory for AI... | Implementation |
-| [reconnaissance](../../skills/coding/reconnaissance/SKILL.md) | Coding | "Provides Provide systematic methodologies for leveraging... | Review |
-| [records](../../skills/coding/records/SKILL.md) | Coding | "Provides Comprehensive patterns for creating, maintaining,... | Implementation |
 | [ref](../../skills/programming/ref/SKILL.md) | Programming | "Provides Quick reference for Either type. Use when user... | Implementation |
 | [ref](../../skills/programming/ref/SKILL.md) | Programming | Provides Quick reference for Option type. Use when user... | Implementation |
 | [ref](../../skills/programming/ref/SKILL.md) | Programming | Provides Quick reference for pipe and flow. Use when user... | Implementation |
@@ -5701,22 +4825,17 @@ MIT — All skills are freely available and redistributable.
 | [refactor](../../skills/programming/refactor/SKILL.md) | Programming | "Provides Comprehensive guide for refactoring imperative... | Implementation |
 | [refactor](../../skills/programming/refactor/SKILL.md) | Programming | "Provides Plan and execute large refactors with... | Implementation |
 | [refactor](../../skills/programming/refactor/SKILL.md) | Programming | Provides Refactor SwiftUI views into smaller components... | Implementation |
-| [refactor-clean](../../skills/coding/refactor-clean/SKILL.md) | Coding | Provides You are a code refactoring expert specializing in... | Review |
 | [refactor-clean](../../skills/programming/refactor-clean/SKILL.md) | Programming | "Provides You are a code refactoring expert specializing in... | Implementation |
 | [reference](../../skills/programming/reference/SKILL.md) | Programming | "Provides this category provides reference materials for... | Implementation |
 | [refresher](../../skills/programming/refresher/SKILL.md) | Programming | "Provides Identifies outdated elements in provided content... | Implementation |
 | [regime-classification](../../skills/trading/regime-classification/SKILL.md) | Trading | "Provides Detect current market regime for adaptive trading... | Implementation |
 | [regime-detection](../../skills/trading/regime-detection/SKILL.md) | Trading | "Provides Market Regime Detection Systems for Adaptive... | Implementation |
-| [regression-evaluation](../../skills/coding/regression-evaluation/SKILL.md) | Coding | "Evaluates regression models using MSE, RMSE, MAE, MAPE,... | Implementation |
 | [reinforcement-learning](../../skills/trading/reinforcement-learning/SKILL.md) | Trading | "Provides Reinforcement Learning for automated trading... | Implementation |
-| [release-pipeline](../../skills/coding/release-pipeline/SKILL.md) | Coding | Implements comprehensive secure release pipeline with CVE... | Implementation |
 | [releases](../../skills/cncf/releases/SKILL.md) | Cncf | "Creates or updates RELEASES.md documenting the release... | Reference |
 | [reliability](../../skills/programming/reliability/SKILL.md) | Programming | 'Provides Reliable command execution on Windows: paths,... | Implementation |
 | [remotion](../../skills/programming/remotion/SKILL.md) | Programming | "Provides Generate walkthrough videos from Stitch projects... | Implementation |
 | [replanner](../../skills/agent/replanner/SKILL.md) | Agent | "Dynamically adjusts execution plans based on real-time... | Orchestration |
-| [repo-commander](../../skills/coding/repo-commander/SKILL.md) | Coding | "Provides 7-stage super workflow for GitHub repo audit,... | Implementation |
 | [report](../../skills/programming/report/SKILL.md) | Programming | "Provides Scrapes content based on a preset URL list,... | Implementation |
-| [reproducible-research](../../skills/coding/reproducible-research/SKILL.md) | Coding | "Implements reproducible research practices including code... | Implementation |
 | [reputation-monitoring](../../skills/agent/reputation-monitoring/SKILL.md) | Agent | Provides Scrape reviews, ratings, and brand mentions from... | Implementation |
 | [requests](../../skills/agent/requests/SKILL.md) | Agent | "Provides Fetch unread GitHub notifications for open PRs... | Orchestration |
 | [research](../../skills/agent/research/SKILL.md) | Agent | Provides Analyze market conditions, geographic... | Implementation |
@@ -5729,16 +4848,6 @@ MIT — All skills are freely available and redistributable.
 | [revert](../../skills/agent/revert/SKILL.md) | Agent | "Implements git-aware undo by logical work unit (track,... | Orchestration |
 | [review](../../skills/agent/review/SKILL.md) | Agent | "Provides Code review requires technical evaluation, not... | Orchestration |
 | [review](../../skills/agent/review/SKILL.md) | Agent | "Provides use when completing tasks, implementing major... | Orchestration |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Provides Master software architect specializing in modern... | Implementation |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Analyzes code diffs and files to identify bugs, security... | Implementation |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Provides Professional code review with auto CHANGELOG... | Review |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Implements security-focused code review for prs, commits,... | Review |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Implements django-access-review patterns for software... | Implementation |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Implements django performance code review. use when asked... | Implementation |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Implements verify fix commits address audit findings... | Review |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Provides Find exploitable vulnerabilities in GitHub... | Review |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Security-focused code review identifying vulnerabilities... | Implementation |
-| [review](../../skills/coding/review/SKILL.md) | Coding | "Provides Human review workflow for AI-generated GitHub... | Review |
 | [review](../../skills/programming/review/SKILL.md) | Programming | "Provides Review Bitcoin Lightning Network protocol... | Implementation |
 | [review](../../skills/programming/review/SKILL.md) | Programming | "Provides Review UI code for StyleSeed design-system... | Implementation |
 | [review-ai-review](../../skills/programming/review-ai-review/SKILL.md) | Programming | Provides You are an expert AI-powered code review... | Implementation |
@@ -5750,10 +4859,8 @@ MIT — All skills are freely available and redistributable.
 | [risk-management-basics](../../skills/trading/risk-management-basics/SKILL.md) | Trading | "Position sizing, stop-loss implementation, and... | Implementation |
 | [rook](../../skills/cncf/rook/SKILL.md) | Cncf | "Configures rook in cloud-native storage orchestration for... | Reference |
 | [root-cause](../../skills/agent/root-cause/SKILL.md) | Agent | "Performs stacktrace root cause analysis by examining stack... | Diagnosis |
-| [rotation](../../skills/coding/rotation/SKILL.md) | Coding | "Provides Automate AWS secrets rotation for RDS, API keys,... | Review |
 | [route53](../../skills/cncf/route53/SKILL.md) | Cncf | "Configures DNS routing with Route 53 for domain... | Reference |
 | [router](../../skills/agent/router/SKILL.md) | Agent | "Provides use when the user is unsure which skill to use or... | Implementation |
-| [router-patterns](../../skills/coding/router-patterns/SKILL.md) | Coding | "Provides Comprehensive patterns for Next.js 14+ App Router... | Implementation |
 | [routes](../../skills/programming/routes/SKILL.md) | Programming | "Provides Guidelines for creating API routes in Expo Router... | Implementation |
 | [rules](../../skills/programming/rules/SKILL.md) | Programming | 'Provides Expert in Odoo access control:... | Implementation |
 | [run](../../skills/cncf/run/SKILL.md) | Cncf | "Provides Specialized skill for building production-ready... | Implementation |
@@ -5767,13 +4874,11 @@ MIT — All skills are freely available and redistributable.
 | [scaffolding](../../skills/cncf/scaffolding/SKILL.md) | Cncf | Provides Comprehensive guidance for creating, organizing,... | Implementation |
 | [scale-sets](../../skills/cncf/scale-sets/SKILL.md) | Cncf | "Manages auto-scaling VM groups with load balancing and... | Reference |
 | [scanner](../../skills/agent/scanner/SKILL.md) | Agent | "Provides Scan agent skills for security issues before... | Implementation |
-| [scanner](../../skills/coding/scanner/SKILL.md) | Coding | "Provides Advanced vulnerability analysis principles. OWASP... | Review |
 | [scanpy](../../skills/programming/scanpy/SKILL.md) | Programming | Provides Scanpy is a scalable Python toolkit for analyzing... | Implementation |
 | [scheduling](../../skills/programming/scheduling/SKILL.md) | Programming | "Provides Codified expertise for production scheduling, job... | Implementation |
 | [schema](../../skills/programming/schema/SKILL.md) | Programming | "Detect, validate, and generate Schema.org structured data.... | Implementation |
 | [schema-generator](../../skills/programming/schema-generator/SKILL.md) | Programming | Generates valid JSON-LD structured data for 10 schema types... | Implementation |
 | [scientist](../../skills/programming/scientist/SKILL.md) | Programming | Provides Expert data scientist for advanced analytics,... | Implementation |
-| [scoring](../../skills/coding/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining... | Implementation |
 | [scraper](../../skills/agent/scraper/SKILL.md) | Agent | Provides AI-driven data extraction from 55+ Actors across... | Implementation |
 | [scraper](../../skills/programming/scraper/SKILL.md) | Programming | Provides Deep web scraping, screenshots, PDF parsing, and... | Implementation |
 | [scraper](../../skills/programming/scraper/SKILL.md) | Programming | Provides Web scraping inteligente multi-estrategia. Extrai... | Implementation |
@@ -5782,7 +4887,6 @@ MIT — All skills are freely available and redistributable.
 | [scripting](../../skills/agent/scripting/SKILL.md) | Agent | "Provides Bash scripting workflow for creating... | Implementation |
 | [scripting](../../skills/agent/scripting/SKILL.md) | Agent | "Provides Operating system and shell scripting... | Implementation |
 | [scripting](../../skills/programming/scripting/SKILL.md) | Programming | "Provides Provide production-ready shell script templates... | Implementation |
-| [sdk](../../skills/coding/sdk/SKILL.md) | Coding | "Provides Build applications that programmatically interact... | Implementation |
 | [sdk-expert](../../skills/programming/sdk-expert/SKILL.md) | Programming | "Provides Expert in the Vercel AI SDK. Covers Core API... | Implementation |
 | [seaborn](../../skills/programming/seaborn/SKILL.md) | Programming | Provides Seaborn is a Python visualization library for... | Implementation |
 | [search](../../skills/cncf/search/SKILL.md) | Cncf | "Provides Expert patterns for Algolia search... | Implementation |
@@ -5794,12 +4898,8 @@ MIT — All skills are freely available and redistributable.
 | [secrets-manager](../../skills/cncf/secrets-manager/SKILL.md) | Cncf | "Manages sensitive data with automatic encryption,... | Reference |
 | [secrets-rust](../../skills/cncf/secrets-rust/SKILL.md) | Cncf | "Provides Azure Key Vault Secrets SDK for Rust. Use for... | Implementation |
 | [secrets-ts](../../skills/cncf/secrets-ts/SKILL.md) | Cncf | "Provides Manage secrets using Azure Key Vault Secrets SDK... | Implementation |
-| [security](../../skills/coding/security/SKILL.md) | Coding | "Provides Master smart contract security best practices,... | Review |
-| [security-dependencies](../../skills/coding/security-dependencies/SKILL.md) | Coding | "Provides You are a security expert specializing in... | Review |
-| [security-hardening](../../skills/coding/security-hardening/SKILL.md) | Coding | "Provides Coordinate multi-layer security scanning and... | Review |
 | [security-policy](../../skills/cncf/security-policy/SKILL.md) | Cncf | "Creates or updates SECURITY.md defining the vulnerability... | Reference |
 | [security-review](../../skills/agent/security-review/SKILL.md) | Agent | Provides this skill ensures all code follows security best... | Implementation |
-| [security-sast](../../skills/coding/security-sast/SKILL.md) | Coding | "Static Application Security Testing (SAST) for code... | Review |
 | [security-xss-scan](../../skills/programming/security-xss-scan/SKILL.md) | Programming | Provides You are a frontend security specialist focusing on... | Implementation |
 | [seekers](../../skills/agent/seekers/SKILL.md) | Agent | "Provides -Automatically convert documentation websites,... | Implementation |
 | [sentiment-analysis](../../skills/trading/sentiment-analysis/SKILL.md) | Trading | "AI-powered sentiment analysis for news, social media, and... | Implementation |
@@ -5818,19 +4918,13 @@ MIT — All skills are freely available and redistributable.
 | [setup](../../skills/programming/setup/SKILL.md) | Programming | "Provides Set up Tailwind CSS v4 in Expo with... | Implementation |
 | [setup](../../skills/programming/setup/SKILL.md) | Programming | 'Provides Expert guide for configuring Odoo Accounting:... | Implementation |
 | [setup](../../skills/programming/setup/SKILL.md) | Programming | "Provides Interactive StyleSeed setup wizard for choosing... | Implementation |
-| [shadcn](../../skills/coding/shadcn/SKILL.md) | Coding | "Manages shadcn/ui components and projects, providing... | Implementation |
 | [shaders](../../skills/programming/shaders/SKILL.md) | Programming | "CRITICAL: Use for Makepad shader system. Triggers on"... | Implementation |
 | [shaders](../../skills/programming/shaders/SKILL.md) | Programming | "Provides Three.js shaders - GLSL, ShaderMaterial,... | Implementation |
 | [sharpe-ratio](../../skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted... | Implementation |
-| [shop](../../skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing... | Implementation |
 | [simplifier](../../skills/programming/simplifier/SKILL.md) | Programming | "Provides Simplifies and refines code for clarity,... | Implementation |
 | [sitemap](../../skills/programming/sitemap/SKILL.md) | Programming | "Provides Analyze existing XML sitemaps or generate new... | Implementation |
 | [skill](../../skills/agent/skill/SKILL.md) | Agent | Provides Manage multiple local CLI agents via tmux sessions... | Implementation |
 | [skill](../../skills/cncf/skill/SKILL.md) | Cncf | Configures terraform infrastructure as code best practices... | Implementation |
-| [skill](../../skills/coding/skill/SKILL.md) | Coding | "Implements web fuzzing with ffuf patterns for software... | Review |
-| [skill](../../skills/coding/skill/SKILL.md) | Coding | 'Provides IMPORTANT - Path Resolution: This skill can be... | Review |
-| [skill](../../skills/coding/skill/SKILL.md) | Coding | "Implements pairwise test generation patterns for software... | Review |
-| [skill](../../skills/coding/skill/SKILL.md) | Coding | "Provides Secure environment variable management ensuring... | Review |
 | [skill](../../skills/programming/skill/SKILL.md) | Programming | Provides this skill provides guidance for creating... | Implementation |
 | [skill](../../skills/programming/skill/SKILL.md) | Programming | "Provides manage linear issues, projects, and teams... | Implementation |
 | [skill](../../skills/programming/skill/SKILL.md) | Programming | "Provides Write, review, or improve SwiftUI code following... | Implementation |
@@ -5839,8 +4933,6 @@ MIT — All skills are freely available and redistributable.
 | [skill-smith](../../skills/agent/skill-smith/SKILL.md) | Agent | "Provides Ingeniero de Sistemas de Andru.ia. Diseña,... | Implementation |
 | [skills](../../skills/agent/skills/SKILL.md) | Agent | "Implements use when creating, updating, or improving agent... | Implementation |
 | [skills](../../skills/cncf/skills/SKILL.md) | Cncf | "Provides AWS development with infrastructure automation... | Implementation |
-| [skills](../../skills/coding/skills/SKILL.md) | Coding | "Provides Expert security auditor for AI Skills and... | Review |
-| [skills](../../skills/coding/skills/SKILL.md) | Coding | "Provides Production-grade test automation skills for 46... | Review |
 | [skills](../../skills/programming/skills/SKILL.md) | Programming | Provides scientific research and analysis skills... | Implementation |
 | [skills](../../skills/programming/skills/SKILL.md) | Programming | 'Provides Makepad UI development skills for Rust apps:... | Implementation |
 | [skills](../../skills/programming/skills/SKILL.md) | Programming | Provides Discover, list, create, edit, toggle, copy, move,... | Implementation |
@@ -5859,7 +4951,6 @@ MIT — All skills are freely available and redistributable.
 | [sns](../../skills/cncf/sns/SKILL.md) | Cncf | "Deploys managed pub/sub messaging with SNS for... | Reference |
 | [socrates](../../skills/programming/socrates/SKILL.md) | Programming | "Explains concepts using Socratic-style dialogue. Use when... | Implementation |
 | [specialist](../../skills/cncf/specialist/SKILL.md) | Cncf | Provides Expert Terraform/OpenTofu specialist mastering... | Implementation |
-| [specialist](../../skills/coding/specialist/SKILL.md) | Coding | "Provides BullMQ expert for Redis-backed job queues,... | Implementation |
 | [specialist](../../skills/programming/specialist/SKILL.md) | Programming | "Provides expert web researcher using advanced search... | Implementation |
 | [speckit-update-skill](../../skills/programming/speckit-update-skill/SKILL.md) | Programming | Provides windows 11 system management functionality and... | Implementation |
 | [speed](../../skills/programming/speed/SKILL.md) | Programming | Provides launch rsvp speed reader for text functionality... | Implementation |
@@ -5876,14 +4967,12 @@ MIT — All skills are freely available and redistributable.
 | [standup-notes](../../skills/programming/standup-notes/SKILL.md) | Programming | "Provides You are an expert team communication specialist... | Implementation |
 | [states](../../skills/programming/states/SKILL.md) | Programming | Provides this skill should be used when the user asks to... | Implementation |
 | [statistical-arbitrage](../../skills/trading/statistical-arbitrage/SKILL.md) | Trading | "Implements pair trading and cointegration-based arbitrage... | Implementation |
-| [statistical-power](../../skills/coding/statistical-power/SKILL.md) | Coding | "Analyzes statistical power, sample size determination,... | Implementation |
 | [statsmodels](../../skills/programming/statsmodels/SKILL.md) | Programming | "Provides Statsmodels is Python's premier library for... | Implementation |
 | [status](../../skills/agent/status/SKILL.md) | Agent | "Implements display project status, active tracks, and next... | Orchestration |
 | [status](../../skills/programming/status/SKILL.md) | Programming | "Provides Apple HIG guidance for status and progress UI... | Implementation |
 | [stop-loss](../../skills/trading/stop-loss/SKILL.md) | Trading | "Implements stop loss strategies for risk management for... | Implementation |
 | [storytelling](../../skills/programming/storytelling/SKILL.md) | Programming | Provides Transform raw data into compelling narratives that... | Implementation |
 | [strategic-compact](../../skills/agent/strategic-compact/SKILL.md) | Agent | "Implements development skill from everything-claude-code... | Implementation |
-| [strategies](../../skills/coding/strategies/SKILL.md) | Coding | "Provides Transform debugging from frustrating guesswork... | Implementation |
 | [strategies](../../skills/programming/strategies/SKILL.md) | Programming | Provides Guide to selecting and optimizing embedding models... | Implementation |
 | [strategist](../../skills/programming/strategist/SKILL.md) | Programming | "Provides one sentence - what this skill does and when to... | Implementation |
 | [strategist](../../skills/programming/strategist/SKILL.md) | Programming | "Analyzes keyword usage in provided content, calculates... | Implementation |
@@ -5901,13 +4990,10 @@ MIT — All skills are freely available and redistributable.
 | [superpowers](../../skills/agent/superpowers/SKILL.md) | Agent | "Provides use when starting any conversation - establishes... | Implementation |
 | [support](../../skills/programming/support/SKILL.md) | Programming | "Provides Elite AI-powered customer support specialist... | Implementation |
 | [support-resistance](../../skills/trading/support-resistance/SKILL.md) | Trading | "Implements technical levels where price tends to pause or... | Implementation |
-| [support-vector-machines](../../skills/coding/support-vector-machines/SKILL.md) | Coding | "Implements support vector machines (SVM) with kernel... | Implementation |
 | [sutskever](../../skills/programming/sutskever/SKILL.md) | Programming | "Provides Agente que simula Ilya Sutskever — co-fundador da... | Implementation |
-| [sveltekit](../../skills/coding/sveltekit/SKILL.md) | Coding | "Provides Build full-stack web applications with SvelteKit... | Implementation |
 | [swift-ui](../../skills/programming/swift-ui/SKILL.md) | Programming | "Provides expo-ui-swift-ui functionality and capabilities." | Implementation |
 | [sympy](../../skills/programming/sympy/SKILL.md) | Programming | "Provides SymPy is a Python library for symbolic... | Implementation |
 | [syntax](../../skills/agent/syntax/SKILL.md) | Agent | Provides Validate n8n expression syntax and fix common... | Implementation |
-| [synthetic-control](../../skills/coding/synthetic-control/SKILL.md) | Coding | "Implements synthetic control methods,... | Implementation |
 | [synthetic-data](../../skills/trading/synthetic-data/SKILL.md) | Trading | "Provides Generate synthetic financial data for training... | Implementation |
 | [system](../../skills/programming/system/SKILL.md) | Programming | 'Provides Apple HIG guidance for system experience... | Implementation |
 | [system](../../skills/programming/system/SKILL.md) | Programming | "Provides Build production-ready design systems with... | Implementation |
@@ -5916,54 +5002,29 @@ MIT — All skills are freely available and redistributable.
 | [systems](../../skills/programming/systems/SKILL.md) | Programming | "Provides Email has the highest ROI of any marketing... | Implementation |
 | [tables-java](../../skills/cncf/tables-java/SKILL.md) | Cncf | "Provides Build table storage applications using the Azure... | Implementation |
 | [tables-py](../../skills/cncf/tables-py/SKILL.md) | Cncf | "Provides Azure Tables SDK for Python (Storage and Cosmos... | Implementation |
-| [tactics](../../skills/coding/tactics/SKILL.md) | Coding | "Provides Red team tactics principles based on MITRE... | Review |
 | [tail-risk](../../skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event... | Implementation |
 | [tao](../../skills/programming/tao/SKILL.md) | Programming | "Provides Matemático ultra-avançado inspirado em Terence... | Implementation |
 | [task-orchestrator](../../skills/agent/task-orchestrator/SKILL.md) | Agent | "Provides Route tasks to specialized AI agents with... | Orchestration |
-| [taste](../../skills/coding/taste/SKILL.md) | Coding | "Provides use when generating elite gsap-heavy frontend... | Implementation |
-| [taste](../../skills/coding/taste/SKILL.md) | Coding | "Provides use when generating google stitch design.md... | Implementation |
-| [tdd-cycle](../../skills/coding/tdd-cycle/SKILL.md) | Coding | "Implements use when working with tdd workflows tdd cycle... | Review |
-| [tdd-green](../../skills/coding/tdd-green/SKILL.md) | Coding | "Provides Implement the minimal code needed to make failing... | Review |
-| [tdd-red](../../skills/coding/tdd-red/SKILL.md) | Coding | "Provides Generate failing tests for the TDD red phase to... | Review |
-| [tdd-refactor](../../skills/coding/tdd-refactor/SKILL.md) | Coding | "Implements use when working with tdd workflows tdd... | Review |
 | [tech](../../skills/programming/tech/SKILL.md) | Programming | Provides Integrate multiple digital health data sources,... | Implementation |
-| [tech-debt](../../skills/coding/tech-debt/SKILL.md) | Coding | "Provides You are a technical debt expert specializing in... | Review |
 | [tech-debt](../../skills/programming/tech-debt/SKILL.md) | Programming | Provides You are a technical debt expert specializing in... | Implementation |
 | [technical](../../skills/programming/technical/SKILL.md) | Programming | "Provides Audit technical SEO across crawlability,... | Implementation |
-| [techniques](../../skills/coding/techniques/SKILL.md) | Coding | 'Provides AUTHORIZED USE ONLY: This skill contains dual-use... | Review |
 | [technologies](../../skills/programming/technologies/SKILL.md) | Programming | "Provides Check for .claude/apple-design-context.md before... | Implementation |
 | [tecnico](../../skills/programming/tecnico/SKILL.md) | Programming | "Provides Sub-skill técnica de Yann LeCun. Cobre CNNs,... | Implementation |
 | [tekton](../../skills/cncf/tekton/SKILL.md) | Cncf | "Provides Tekton in Cloud-Native Engineering - A... | Reference |
-| [telegram](../../skills/coding/telegram/SKILL.md) | Coding | "Provides Integracao completa com Telegram Bot API. Setup... | Implementation |
 | [telemetry](../../skills/cncf/telemetry/SKILL.md) | Cncf | "OpenTelemetry in Observability - cloud native... | Reference |
 | [template-creator](../../skills/programming/template-creator/SKILL.md) | Programming | "Provides Guide for creating templates for the Obsidian Web... | Implementation |
 | [templates](../../skills/agent/templates/SKILL.md) | Agent | "Provides Production-ready GitHub Actions workflow patterns... | Orchestration |
 | [templates](../../skills/cncf/templates/SKILL.md) | Cncf | "Provides Production-ready templates for incident response... | Implementation |
-| [templates](../../skills/coding/templates/SKILL.md) | Coding | "Provides Create production-ready FastAPI projects with... | Implementation |
-| [templates](../../skills/coding/templates/SKILL.md) | Coding | "Provides Project scaffolding templates for new... | Implementation |
 | [templates](../../skills/programming/templates/SKILL.md) | Programming | "Provides Implement DeFi protocols with production-ready... | Implementation |
 | [templates](../../skills/programming/templates/SKILL.md) | Programming | "Provides Documentation templates and structure guidelines.... | Implementation |
 | [templates](../../skills/programming/templates/SKILL.md) | Programming | "Provides Templates and patterns for creating legally sound... | Implementation |
 | [templates](../../skills/programming/templates/SKILL.md) | Programming | "Provides Expert in Odoo QWeb templating for PDF reports,... | Implementation |
 | [tenant](../../skills/cncf/tenant/SKILL.md) | Cncf | "Provides Design and implement multi-tenant SaaS... | Implementation |
-| [test-generate](../../skills/coding/test-generate/SKILL.md) | Coding | "Provides Generate comprehensive, maintainable unit tests... | Review |
 | [testing](../../skills/agent/testing/SKILL.md) | Agent | Provides API security testing workflow for REST and GraphQL... | Implementation |
 | [testing](../../skills/agent/testing/SKILL.md) | Agent | Provides End-to-end testing workflow with Playwright for... | Implementation |
 | [testing](../../skills/agent/testing/SKILL.md) | Agent | Provides Web application security testing workflow for... | Implementation |
 | [testing](../../skills/cncf/testing/SKILL.md) | Cncf | Provides Provide comprehensive techniques for penetration... | Implementation |
 | [testing](../../skills/cncf/testing/SKILL.md) | Cncf | Provides Conduct comprehensive security assessments of... | Implementation |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | "Provides AI-powered E2E web testing — eyes and hands for... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | Provides Execute comprehensive web application security... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | Provides Identify and exploit HTML injection... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | Provides Provide systematic methodologies for identifying... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | "Provides Comprehensive k6 load testing skill for API,... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | "Provides Practical guide to testing web applications with... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | Provides Conduct comprehensive security assessments of SMTP... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | Provides Execute comprehensive SQL injection vulnerability... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | Provides Conduct comprehensive SSH security assessments... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | "Provides Comprehensive testing approaches for Temporal... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | Provides To test local web applications, write native... | Review |
-| [testing](../../skills/coding/testing/SKILL.md) | Coding | Provides Assess WordPress installations for common... | Review |
 | [testing](../../skills/programming/testing/SKILL.md) | Programming | Provides Master comprehensive testing strategies for smart... | Implementation |
 | [tests](../../skills/programming/tests/SKILL.md) | Programming | "Provides Write and run Odoo automated tests using... | Implementation |
 | [textanalytics-py](../../skills/cncf/textanalytics-py/SKILL.md) | Cncf | "Provides Azure AI Text Analytics SDK for sentiment... | Implementation |
@@ -5971,7 +5032,6 @@ MIT — All skills are freely available and redistributable.
 | [thanos](../../skills/cncf/thanos/SKILL.md) | Cncf | "Provides Thanos in High availability Prometheus solution... | Reference |
 | [tikv](../../skills/cncf/tikv/SKILL.md) | Cncf | "TiKV in Distributed transactional key-value database... | Reference |
 | [time-series-database](../../skills/trading/time-series-database/SKILL.md) | Trading | "Provides Time-series database queries and optimization for... | Implementation |
-| [time-series-forecasting](../../skills/coding/time-series-forecasting/SKILL.md) | Coding | "Implements ARIMA, exponential smoothing, state-space... | Implementation |
 | [time-series-forecasting](../../skills/trading/time-series-forecasting/SKILL.md) | Trading | "Provides Time series forecasting for price prediction and... | Implementation |
 | [timesheet](../../skills/programming/timesheet/SKILL.md) | Programming | 'Provides Expert guide for Odoo Project and Timesheets:... | Implementation |
 | [tmux](../../skills/programming/tmux/SKILL.md) | Programming | "Provides Expert tmux session, window, and pane management... | Implementation |
@@ -5981,10 +5041,7 @@ MIT — All skills are freely available and redistributable.
 | [tool-builder](../../skills/programming/tool-builder/SKILL.md) | Programming | Provides Your purpose is now is to create reusable command... | Implementation |
 | [toolkit](../../skills/programming/toolkit/SKILL.md) | Programming | 'Provides 6 production-ready AI engineering workflows:... | Implementation |
 | [toolkit](../../skills/programming/toolkit/SKILL.md) | Programming | "Provides Essential tools and frameworks for modern product... | Implementation |
-| [tools](../../skills/coding/tools/SKILL.md) | Coding | "Provides Implement proven methodologies and tool workflows... | Review |
-| [tools](../../skills/coding/tools/SKILL.md) | Coding | "Provides Master essential security scanning tools for... | Review |
 | [tools-expert](../../skills/agent/tools-expert/SKILL.md) | Agent | Provides Expert guide for using n8n-mcp MCP tools... | Implementation |
-| [topic-modeling](../../skills/coding/topic-modeling/SKILL.md) | Coding | "Implements topic modeling using Latent Dirichlet... | Implementation |
 | [toto](../../skills/cncf/toto/SKILL.md) | Cncf | "in-toto in Supply Chain Security - cloud native... | Reference |
 | [trace-explainer](../../skills/agent/trace-explainer/SKILL.md) | Agent | "Explains error traces and exceptions by analyzing stack... | Diagnosis |
 | [tracing](../../skills/cncf/tracing/SKILL.md) | Cncf | Provides Implement distributed tracing with Jaeger and... | Implementation |
@@ -6003,8 +5060,6 @@ MIT — All skills are freely available and redistributable.
 | [translation-document-py](../../skills/cncf/translation-document-py/SKILL.md) | Cncf | "Provides Azure AI Document Translation SDK for batch... | Implementation |
 | [translation-text-py](../../skills/cncf/translation-text-py/SKILL.md) | Cncf | "Provides Azure AI Text Translation SDK for real-time text... | Implementation |
 | [translation-ts](../../skills/cncf/translation-ts/SKILL.md) | Cncf | "Configures text and document translation with rest-style... | Implementation |
-| [traversal](../../skills/coding/traversal/SKILL.md) | Coding | "Provides Identify and exploit file path traversal... | Review |
-| [tree-methods](../../skills/coding/tree-methods/SKILL.md) | Coding | "Implements decision trees, random forests, gradient... | Implementation |
 | [trend-analysis](../../skills/trading/trend-analysis/SKILL.md) | Trading | "Provides Trend identification, classification, and... | Implementation |
 | [troubleshooter](../../skills/cncf/troubleshooter/SKILL.md) | Cncf | "Provides Expert DevOps troubleshooter specializing in... | Implementation |
 | [troubleshooting](../../skills/agent/troubleshooting/SKILL.md) | Agent | "Provides Linux system troubleshooting workflow for... | Implementation |
@@ -6015,24 +5070,18 @@ MIT — All skills are freely available and redistributable.
 | [ts](../../skills/cncf/ts/SKILL.md) | Cncf | "Provides Authenticate to Azure services with various... | Implementation |
 | [ts](../../skills/cncf/ts/SKILL.md) | Cncf | Provides Connect to Azure Database for PostgreSQL Flexible... | Implementation |
 | [ts](../../skills/cncf/ts/SKILL.md) | Cncf | "Configures enterprise messaging with queues, topics, and... | Implementation |
-| [ts](../../skills/coding/ts/SKILL.md) | Coding | "Provides Create Zustand stores following established... | Implementation |
 | [tuist-app](../../skills/programming/tuist-app/SKILL.md) | Programming | "Provides Build, refactor, or review SwiftUI macOS menubar... | Implementation |
 | [tuner](../../skills/programming/tuner/SKILL.md) | Programming | 'Provides Expert guide for diagnosing and fixing Odoo... | Implementation |
 | [tuning](../../skills/programming/tuning/SKILL.md) | Programming | Provides Optimize vector index performance for latency,... | Implementation |
 | [twap](../../skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large... | Implementation |
 | [twap-vwap](../../skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms:... | Implementation |
-| [types](../../skills/coding/types/SKILL.md) | Coding | "Provides Comprehensive guidance for mastering TypeScript's... | Implementation |
 | [typescript](../../skills/programming/typescript/SKILL.md) | Programming | "Provides Guide for building reliable, fault-tolerant... | Implementation |
-| [typescript-scaffold](../../skills/coding/typescript-scaffold/SKILL.md) | Coding | "Provides You are a TypeScript project architecture expert... | Implementation |
-| [ui](../../skills/coding/ui/SKILL.md) | Coding | Provides use when creating raw industrial or tactical... | Implementation |
-| [ui](../../skills/coding/ui/SKILL.md) | Coding | "Provides use when creating clean editorial interfaces with... | Implementation |
 | [ui](../../skills/programming/ui/SKILL.md) | Programming | "Validates animation durations, enforces typography scale,... | Implementation |
 | [ui](../../skills/programming/ui/SKILL.md) | Programming | "Provides Complete guide for building beautiful apps with... | Implementation |
 | [update-framework-tuf](../../skills/cncf/update-framework-tuf/SKILL.md) | Cncf | "The Update Framework (TUF) in Secure software update... | Reference |
 | [updater](../../skills/programming/updater/SKILL.md) | Programming | "Provides speckit safe update functionality and... | Implementation |
 | [upgrade](../../skills/agent/upgrade/SKILL.md) | Agent | "Implements analyze rails apps and provide upgrade... | Implementation |
 | [upgrade](../../skills/programming/upgrade/SKILL.md) | Programming | "Provides Master major dependency version upgrades,... | Implementation |
-| [uploads](../../skills/coding/uploads/SKILL.md) | Coding | "Provides Expert at handling file uploads and cloud... | Review |
 | [upscale](../../skills/programming/upscale/SKILL.md) | Programming | Provides upscale and enhance image and video resolution... | Implementation |
 | [usage-analyzer](../../skills/agent/usage-analyzer/SKILL.md) | Agent | "Analyzes memory allocation patterns, identifies memory... | Debugging |
 | [use](../../skills/programming/use/SKILL.md) | Programming | "Provides Build and maintain Rayden UI components and... | Implementation |
@@ -6040,16 +5089,12 @@ MIT — All skills are freely available and redistributable.
 | [v12-learning](../../skills/programming/v12-learning/SKILL.md) | Programming | "Reference guide for Progress OpenEdge ABL 12.7 (2023) —... | Reference |
 | [v2-py](../../skills/agent/v2-py/SKILL.md) | Agent | Provides Build hosted agents using Azure AI Projects SDK... | Implementation |
 | [validate](../../skills/agent/validate/SKILL.md) | Agent | 'Provides MANDATORY: Run appropriate validation tools after... | Orchestration |
-| [validation](../../skills/coding/validation/SKILL.md) | Coding | Validates pipeline stages and returns config status strings... | Implementation |
 | [validation](../../skills/trading/validation/SKILL.md) | Trading | "Provides Data validation and quality assurance for trading... | Implementation |
 | [validation-notebook](../../skills/programming/validation-notebook/SKILL.md) | Programming | Generates SQL validation notebooks for dbt PR changes with... | Implementation |
 | [validator](../../skills/agent/validator/SKILL.md) | Agent | "Validates Conductor project artifacts for completeness"... | Orchestration |
 | [validator](../../skills/programming/validator/SKILL.md) | Programming | "Provides Rigorous visual validation expert specializing in... | Implementation |
 | [value-at-risk](../../skills/trading/value-at-risk/SKILL.md) | Trading | "Implements value at risk calculations for portfolio risk... | Implementation |
 | [vantage](../../skills/programming/vantage/SKILL.md) | Programming | 'Provides Access 20+ years of global financial data:... | Implementation |
-| [variant-creator](../../skills/coding/variant-creator/SKILL.md) | Coding | "Creates language variants of existing Semgrep rules. Use... | Review |
-| [varlock](../../skills/coding/varlock/SKILL.md) | Coding | "Provides Secure-by-default environment variable management... | Review |
-| [verification](../../skills/coding/verification/SKILL.md) | Coding | Provides Automated end-to-end UI testing and verification... | Review |
 | [vexor](../../skills/programming/vexor/SKILL.md) | Programming | "Provides Vector-powered CLI for semantic file search with... | Implementation |
 | [viboscope](../../skills/agent/viboscope/SKILL.md) | Agent | "Provides Psychological compatibility matching — find... | Implementation |
 | [videodb](../../skills/programming/videodb/SKILL.md) | Programming | "Provides Video and audio perception, indexing, and... | Implementation |
@@ -6059,7 +5104,6 @@ MIT — All skills are freely available and redistributable.
 | [vision-imageanalysis-java](../../skills/cncf/vision-imageanalysis-java/SKILL.md) | Cncf | "Provides Build image analysis applications with Azure AI... | Implementation |
 | [vision-imageanalysis-py](../../skills/cncf/vision-imageanalysis-py/SKILL.md) | Cncf | "Provides Azure AI Vision Image Analysis SDK for captions,... | Implementation |
 | [vision-trainer](../../skills/programming/vision-trainer/SKILL.md) | Programming | Provides Train or fine-tune vision models on Hugging Face... | Implementation |
-| [visual-design](../../skills/coding/visual-design/SKILL.md) | Coding | "Provides use when designing expensive agency-grade... | Implementation |
 | [vitepress](../../skills/programming/vitepress/SKILL.md) | Programming | "Provides Transform generated wiki Markdown files into a... | Implementation |
 | [vitess](../../skills/cncf/vitess/SKILL.md) | Cncf | "Provides Vitess in Database clustering system for... | Reference |
 | [vizcom](../../skills/programming/vizcom/SKILL.md) | Programming | "Provides AI-powered product design tool for transforming... | Implementation |
@@ -6073,7 +5117,6 @@ MIT — All skills are freely available and redistributable.
 | [volume-profile](../../skills/trading/volume-profile/SKILL.md) | Trading | "Provides Volume analysis techniques for understanding... | Implementation |
 | [vpc](../../skills/cncf/vpc/SKILL.md) | Cncf | "Configures Virtual Private Clouds with subnets, route... | Reference |
 | [vpc](../../skills/cncf/vpc/SKILL.md) | Cncf | "Provides networking with subnets, firewall rules, and VPC... | Reference |
-| [vulnerabilities](../../skills/coding/vulnerabilities/SKILL.md) | Coding | "Provides Provide a comprehensive, structured reference for... | Review |
 | [vwap](../../skills/trading/vwap/SKILL.md) | Trading | "Volume-Weighted Average Price algorithm for executing... | Implementation |
 | [walk-forward](../../skills/trading/walk-forward/SKILL.md) | Trading | "Implements walk-forward optimization for robust strategy... | Implementation |
 | [wallet](../../skills/programming/wallet/SKILL.md) | Programming | "Provides Crypto wallet management across 7 blockchains via... | Implementation |
@@ -6085,7 +5128,6 @@ MIT — All skills are freely available and redistributable.
 | [websocket-handling](../../skills/trading/websocket-handling/SKILL.md) | Trading | "Real-time market data handling with WebSockets including... | Implementation |
 | [websocket-streaming](../../skills/trading/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing... | Implementation |
 | [weightsandbiases-dotnet](../../skills/cncf/weightsandbiases-dotnet/SKILL.md) | Cncf | "Provides Azure Weights & Biases SDK for .NET. ML... | Implementation |
-| [widget](../../skills/coding/widget/SKILL.md) | Coding | "Provides Build a real-time support chat system with a... | Implementation |
 | [widgets](../../skills/programming/widgets/SKILL.md) | Programming | 'Provides Version: makepad-widgets (dev branch) | Last... | Implementation |
 | [windows](../../skills/programming/windows/SKILL.md) | Programming | "Provides How to use a Win32 build of BusyBox to run many... | Implementation |
 | [windows](../../skills/programming/windows/SKILL.md) | Programming | "Provides PowerShell Windows patterns. Critical pitfalls,... | Implementation |
@@ -6094,7 +5136,6 @@ MIT — All skills are freely available and redistributable.
 | [wordpress-converter](../../skills/programming/wordpress-converter/SKILL.md) | Programming | "Provides Expert skill for converting any codebase... | Implementation |
 | [workflow](../../skills/agent/workflow/SKILL.md) | Agent | "Provides Complete end-to-end MLOps pipeline orchestration... | Orchestration |
 | [workflow](../../skills/cncf/workflow/SKILL.md) | Cncf | "Provides Complete guide to implementing GitOps workflows... | Implementation |
-| [workflow](../../skills/coding/workflow/SKILL.md) | Coding | "Provides Test-Driven Development workflow principles.... | Review |
 | [workflow](../../skills/programming/workflow/SKILL.md) | Programming | Provides generate workflow json files for chaining ai... | Implementation |
 | [workflow](../../skills/programming/workflow/SKILL.md) | Programming | "Provides Expert guide for Odoo Purchase: RFQ → PO →... | Implementation |
 | [workflow-automate](../../skills/agent/workflow-automate/SKILL.md) | Agent | Provides You are a workflow automation expert specializing... | Implementation |
@@ -6105,7 +5146,6 @@ MIT — All skills are freely available and redistributable.
 | [workflows-onboard](../../skills/agent/workflows-onboard/SKILL.md) | Agent | "Provides You are an **expert onboarding specialist and... | Orchestration |
 | [workflows-pr-enhance](../../skills/agent/workflows-pr-enhance/SKILL.md) | Agent | "Provides You are a PR optimization expert specializing in... | Orchestration |
 | [worktrees](../../skills/programming/worktrees/SKILL.md) | Programming | "Provides Git worktrees create isolated workspaces sharing... | Implementation |
-| [wrapper](../../skills/coding/wrapper/SKILL.md) | Coding | "Provides Wrapper oficial de M2MCent (Node.js) para... | Implementation |
 | [writer](../../skills/agent/writer/SKILL.md) | Agent | "Provides Create pull requests following Sentry's... | Orchestration |
 | [writer](../../skills/agent/writer/SKILL.md) | Agent | "Provides Create and improve agent skills following the... | Implementation |
 | [writer](../../skills/programming/writer/SKILL.md) | Programming | "Provides Writes SEO-optimized content based on provided... | Implementation |
