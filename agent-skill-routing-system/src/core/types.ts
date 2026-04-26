@@ -15,6 +15,9 @@ export interface SkillMetadata {
   output_schema: unknown;
   embedding?: number[];
   draft?: boolean; // Quality gate: true if skill is a stub/template
+  maturity?: 'draft' | 'beta' | 'stable'; // NEW: Skill maturity level
+  completeness?: number; // NEW: 0-100 quality completeness score
+  exampleCount?: number; // NEW: Number of code examples provided
   performance?: {
     averageLatencyMs: number;
     successRate: number;

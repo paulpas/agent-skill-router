@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Quality Dashboard | Agent Skill Router</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+      color: #e0e0e0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #00d4ff;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    }
+
+    .timestamp {
+      color: #888;
+      font-size: 12px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .metric-card {
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #00d4ff, #00ff88);
+    }
+
+    .metric-card:hover {
+      border-color: #00d4ff;
+      background: #242424;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 212, 255, 0.15);
+    }
+
+    .metric-label {
+      color: #888;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .metric-value {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .metric-bar {
+      width: 100%;
+      height: 4px;
+      background: #333;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .metric-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00d4ff, #00ff88);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    .status-good { color: #00ff88; }
+    .status-warning { color: #ffaa00; }
+    .status-critical { color: #ff4444; }
+
+    .details {
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .details h2 {
+      color: #00d4ff;
+      font-size: 18px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+
+    .detail-label {
+      color: #888;
+      flex: 1;
+    }
+
+    .detail-value {
+      color: #e0e0e0;
+      font-weight: bold;
+      flex: 0 0 auto;
+      margin-left: 10px;
+    }
+
+    .alert {
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      border-left: 4px solid;
+    }
+
+    .alert.critical {
+      background: rgba(255, 68, 68, 0.1);
+      border-color: #ff4444;
+      color: #ff8888;
+    }
+
+    .alert.warning {
+      background: rgba(255, 170, 0, 0.1);
+      border-color: #ffaa00;
+      color: #ffcc66;
+    }
+
+    .alert.info {
+      background: rgba(0, 212, 255, 0.1);
+      border-color: #00d4ff;
+      color: #66e0ff;
+    }
+
+    .alert-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .score {
+      display: inline-block;
+      padding: 4px 8px;
+      background: #2a2a2a;
+      border-radius: 3px;
+      font-family: 'Monaco', monospace;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+    }
+
+    .skill-domain-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .domain-box {
+      background: #2a2a2a;
+      padding: 12px;
+      border-radius: 4px;
+      border-left: 3px solid #00d4ff;
+    }
+
+    .domain-name {
+      color: #00d4ff;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .domain-count {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .loading {
+      text-align: center;
+      color: #888;
+      padding: 20px;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #00d4ff;
+      border-radius: 50%;
+      animation: spin 1.4s linear infinite;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛡️ Skill Quality Dashboard</h1>
+      <p class="timestamp">Agent Skill Router | Real-time Quality Metrics</p>
+      <p class="timestamp" id="last-updated">Last updated: Loading...</p>
+    </header>
+
+    <!-- Critical Alerts -->
+    <div id="alerts-container"></div>
+
+    <!-- Main Metrics Grid -->
+    <div class="grid">
+      <div class="metric-card">
+        <div class="metric-label">Overall Health Score</div>
+        <div class="metric-value" id="health-score">Loading...</div>
+        <div class="metric-bar">
+          <div class="metric-bar-fill" id="health-bar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">English Skills</div>
+        <div class="metric-value status-good" id="english-count">0 / 0</div>
+        <div class="metric-bar">
+          <div class="metric-bar-fill" id="english-bar" style="width: 100%"></div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Skills with Examples</div>
+        <div class="metric-value" id="examples-percent">0%</div>
+        <div class="metric-bar">
+          <div class="metric-bar-fill" id="examples-bar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Good/Bad Example Patterns</div>
+        <div class="metric-value" id="patterns-percent">0%</div>
+        <div class="metric-bar">
+          <div class="metric-bar-fill" id="patterns-bar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Average Skill Size</div>
+        <div class="metric-value" id="avg-size">0 KB</div>
+        <div style="color: #888; font-size: 12px; margin-top: 10px;">
+          Minimum target: 2 KB
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-label">Maturity Distribution</div>
+        <div style="margin-top: 10px;">
+          <div style="color: #00ff88; font-size: 12px;">Stable: <span id="stable-count">0</span></div>
+          <div style="color: #ffaa00; font-size: 12px;">Beta: <span id="beta-count">0</span></div>
+          <div style="color: #ff4444; font-size: 12px;">Draft: <span id="draft-count">0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed Breakdown -->
+    <div class="details">
+      <h2>📊 Skills by Domain</h2>
+      <div id="domain-breakdown" class="skill-domain-list">
+        <div class="loading"><span class="spinner"></span>Loading domains...</div>
+      </div>
+    </div>
+
+    <div class="details">
+      <h2>📈 Quality Metrics</h2>
+      <div id="quality-metrics">
+        <div class="detail-row">
+          <span class="detail-label">Total Skills</span>
+          <span class="detail-value" id="total-skills">0</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Non-English Skills (CRITICAL)</span>
+          <span class="detail-value status-good" id="non-english">0</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Undersized Skills (&lt;2KB)</span>
+          <span class="detail-value" id="undersized">0</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Missing Examples (&gt;3KB)</span>
+          <span class="detail-value" id="missing-examples">0</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Average Completeness</span>
+          <span class="detail-value" id="avg-completeness">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="details">
+      <h2>🎯 Quality Targets (Monthly Review)</h2>
+      <div id="targets">
+        <div class="detail-row">
+          <span class="detail-label">English Skills Target</span>
+          <span class="detail-value">100%</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Skills with Examples Target</span>
+          <span class="detail-value">100%</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Good/Bad Patterns Target</span>
+          <span class="detail-value">95%</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Overall Health Target</span>
+          <span class="detail-value">85 / 100</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Generated by Agent Skill Router Quality Dashboard | 7-Layer Guardrails System</p>
+    <p>For details, see: SKILL_GOVERNANCE.md</p>
+  </footer>
+
+  <script>
+    // Dashboard data loader
+    async function loadDashboard() {
+      try {
+        // Try to load from API endpoint
+        const response = await fetch('/stats');
+        if (!response.ok) throw new Error('API unavailable');
+        
+        const data = await response.json();
+        renderDashboard(data);
+      } catch (error) {
+        console.log('API unavailable, showing demo data');
+        renderDashboard(getDemoData());
+      }
+    }
+
+    function getDemoData() {
+      // Demo data for when API is unavailable
+      return {
+        totalSkills: 1778,
+        englishSkills: 1768,
+        skillsWithExamples: 923,
+        skillsWithPatterns: 1280,
+        avgSize: 3.2, // KB
+        nonEnglish: 10,
+        undersized: 15,
+        missingExamples: 55,
+        avgCompleteness: 72,
+        domains: {
+          'trading': 83,
+          'agent': 271,
+          'cncf': 365,
+          'coding': 316,
+          'programming': 791
+        },
+        maturity: {
+          stable: 856,
+          beta: 534,
+          draft: 388
+        }
+      };
+    }
+
+    function calculateHealthScore(data) {
+      let score = 100;
+      
+      // Deduct for non-English skills (critical)
+      score -= Math.min(data.nonEnglish * 2, 20);
+      
+      // Deduct for missing examples
+      const examplePercent = (data.skillsWithExamples / data.totalSkills) * 100;
+      score -= Math.max(0, (100 - examplePercent) * 0.2);
+      
+      // Deduct for missing patterns
+      const patternPercent = (data.skillsWithPatterns / data.totalSkills) * 100;
+      score -= Math.max(0, (95 - patternPercent) * 0.1);
+      
+      // Deduct for undersized skills
+      score -= Math.min(data.undersized * 0.3, 10);
+      
+      return Math.max(0, Math.min(100, Math.round(score)));
+    }
+
+    function renderDashboard(data) {
+      const health = calculateHealthScore(data);
+      const englishPercent = (data.englishSkills / data.totalSkills) * 100;
+      const examplePercent = (data.skillsWithExamples / data.totalSkills) * 100;
+      const patternPercent = (data.skillsWithPatterns / data.totalSkills) * 100;
+
+      // Update health score
+      document.getElementById('health-score').textContent = `${health} / 100`;
+      document.getElementById('health-score').className = `metric-value ${
+        health >= 85 ? 'status-good' : health >= 65 ? 'status-warning' : 'status-critical'
+      }`;
+      document.getElementById('health-bar').style.width = `${health}%`;
+
+      // Update English skills
+      document.getElementById('english-count').textContent = 
+        `${data.englishSkills} / ${data.totalSkills}`;
+      document.getElementById('english-bar').style.width = `${englishPercent}%`;
+
+      // Update examples
+      document.getElementById('examples-percent').textContent = `${Math.round(examplePercent)}%`;
+      document.getElementById('examples-percent').className = 
+        `metric-value ${examplePercent >= 90 ? 'status-good' : 'status-warning'}`;
+      document.getElementById('examples-bar').style.width = `${examplePercent}%`;
+
+      // Update patterns
+      document.getElementById('patterns-percent').textContent = `${Math.round(patternPercent)}%`;
+      document.getElementById('patterns-percent').className = 
+        `metric-value ${patternPercent >= 90 ? 'status-good' : 'status-warning'}`;
+      document.getElementById('patterns-bar').style.width = `${patternPercent}%`;
+
+      // Update size
+      document.getElementById('avg-size').textContent = `${data.avgSize.toFixed(1)} KB`;
+
+      // Update maturity
+      document.getElementById('stable-count').textContent = data.maturity.stable;
+      document.getElementById('beta-count').textContent = data.maturity.beta;
+      document.getElementById('draft-count').textContent = data.maturity.draft;
+
+      // Update details
+      document.getElementById('total-skills').textContent = data.totalSkills;
+      document.getElementById('non-english').textContent = data.nonEnglish;
+      document.getElementById('undersized').textContent = data.undersized;
+      document.getElementById('missing-examples').textContent = data.missingExamples;
+      document.getElementById('avg-completeness').textContent = `${data.avgCompleteness}%`;
+
+      // Update domain breakdown
+      const domainHtml = Object.entries(data.domains)
+        .map(([domain, count]) => `
+          <div class="domain-box">
+            <div class="domain-name">${domain.charAt(0).toUpperCase() + domain.slice(1)}</div>
+            <div class="domain-count">${count} skills</div>
+          </div>
+        `).join('');
+      document.getElementById('domain-breakdown').innerHTML = domainHtml;
+
+      // Render alerts
+      renderAlerts(health, data);
+
+      // Update timestamp
+      const now = new Date();
+      document.getElementById('last-updated').textContent = 
+        `Last updated: ${now.toLocaleString()}`;
+    }
+
+    function renderAlerts(health, data) {
+      const alerts = [];
+
+      if (data.nonEnglish > 0) {
+        alerts.push({
+          type: 'critical',
+          title: '🚨 Non-English Skills Found',
+          message: `${data.nonEnglish} skills contain non-English content. All skills must be in English.`
+        });
+      }
+
+      if (health < 65) {
+        alerts.push({
+          type: 'critical',
+          title: '⚠️ Critical Health Score',
+          message: `Overall quality score is ${health}/100. Quality degradation detected.`
+        });
+      } else if (health < 85) {
+        alerts.push({
+          type: 'warning',
+          title: '⚡ Health Score Below Target',
+          message: `Current score is ${health}/100. Target is 85/100.`
+        });
+      }
+
+      if (data.missingExamples > 0) {
+        alerts.push({
+          type: 'warning',
+          title: '📚 Missing Examples',
+          message: `${data.missingExamples} substantive skills (>3KB) are missing good/bad example patterns.`
+        });
+      }
+
+      if (alerts.length === 0) {
+        alerts.push({
+          type: 'info',
+          title: '✅ No Critical Issues',
+          message: 'All quality gates are within acceptable thresholds.'
+        });
+      }
+
+      const alertsHtml = alerts.map(alert => `
+        <div class="alert ${alert.type}">
+          <div class="alert-title">${alert.title}</div>
+          <div>${alert.message}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('alerts-container').innerHTML = alertsHtml;
+    }
+
+    // Load dashboard on page load
+    loadDashboard();
+
+    // Auto-refresh every 30 seconds
+    setInterval(loadDashboard, 30000);
+  </script>
+</body>
+</html>

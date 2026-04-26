@@ -1,0 +1,116 @@
+#!/bin/bash
+set -e
+
+echo "🔍 Validating skills..."
+
+# 1. Language detection (non-English skills)
+python3 << 'PYTHON_EOF'
+import os
+import re
+
+non_english = []
+skills_dir = 'skills'
+
+if os.path.exists(skills_dir):
+    for domain in os.listdir(skills_dir):
+        domain_path = os.path.join(skills_dir, domain)
+        if not os.path.isdir(domain_path):
+            continue
+        
+        for skill in os.listdir(domain_path):
+            skill_path = os.path.join(domain_path, skill, 'SKILL.md')
+            if not os.path.isfile(skill_path):
+                continue
+            
+            with open(skill_path, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+            
+            # Detect non-ASCII characters that indicate non-English
+            # Chinese, Japanese, Korean, Arabic, Cyrillic
+            if re.search(r'[\u4e00-\u9fff]|[\u3040-\u309f]|[\u30a0-\u30ff]|[\u0600-\u06ff]|[\u0400-\u04ff]', content):
+                non_english.append(f"{domain}/{skill}")
+
+    if non_english:
+        print(f"❌ Non-English skills detected ({len(non_english)}):")
+        for skill in non_english[:5]:
+            print(f"   - {skill}")
+        if len(non_english) > 5:
+            print(f"   ... and {len(non_english)-5} more")
+        exit(1)
+
+print("✅ Language check passed")
+PYTHON_EOF
+
+# 2. Size validation (minimum 2000 bytes for real skills)
+python3 << 'PYTHON_EOF'
+import os
+
+too_small = []
+skills_dir = 'skills'
+
+if os.path.exists(skills_dir):
+    for domain in os.listdir(skills_dir):
+        domain_path = os.path.join(skills_dir, domain)
+        if not os.path.isdir(domain_path):
+            continue
+        
+        for skill in os.listdir(domain_path):
+            skill_path = os.path.join(domain_path, skill, 'SKILL.md')
+            if not os.path.isfile(skill_path):
+                continue
+            
+            size = os.path.getsize(skill_path)
+            if size < 2000:
+                too_small.append((f"{domain}/{skill}", size))
+
+    if too_small:
+        print(f"⚠️  Small skills ({len(too_small)}) - please review:")
+        for skill, size in too_small[:3]:
+            print(f"   - {skill} ({size} bytes)")
+        # Don't fail, just warn
+        print(f"   💡 Recommendation: Skills <2000 bytes should have examples added")
+
+print("✅ Size validation passed")
+PYTHON_EOF
+
+# 3. Example validation (check for "BAD" and "GOOD" examples)
+python3 << 'PYTHON_EOF'
+import os
+import re
+
+missing_examples = []
+skills_dir = 'skills'
+
+if os.path.exists(skills_dir):
+    for domain in os.listdir(skills_dir):
+        domain_path = os.path.join(skills_dir, domain)
+        if not os.path.isdir(domain_path):
+            continue
+        
+        for skill in os.listdir(domain_path):
+            skill_path = os.path.join(domain_path, skill, 'SKILL.md')
+            if not os.path.isfile(skill_path):
+                continue
+            
+            with open(skill_path, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+            
+            # Check for good/bad example patterns
+            has_bad = bool(re.search(r'(?:❌|WRONG|BAD|✗)', content))
+            has_good = bool(re.search(r'(?:✅|GOOD|CORRECT|✓)', content))
+            size = os.path.getsize(skill_path)
+            
+            # Only check substantive skills (>3KB)
+            if size > 3000 and not (has_bad or has_good):
+                missing_examples.append(f"{domain}/{skill}")
+
+    if missing_examples:
+        print(f"⚠️  Missing good/bad examples ({len(missing_examples)}):")
+        for skill in missing_examples[:3]:
+            print(f"   - {skill}")
+        print(f"   💡 Recommendation: Add ❌ BAD and ✅ GOOD example patterns")
+
+print("✅ Example validation passed")
+PYTHON_EOF
+
+echo "✅ All pre-commit checks passed"
