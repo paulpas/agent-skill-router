@@ -22,7 +22,7 @@ export interface EmbeddingServiceConfig {
   provider?: EmbeddingProvider;
   apiKey?: string;
   llamacppBaseUrl?: string;
-  model: string;
+  model?: string;
   dimensions: number;
   cacheDirectory?: string;
   batchSize: number;

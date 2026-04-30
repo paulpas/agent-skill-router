@@ -13,7 +13,7 @@ export interface LLMRankerConfig {
   anthropicApiKey?: string;
   /** llama.cpp base URL e.g. http://localhost:8080 (required for llamacpp provider) */
   llamacppBaseUrl?: string;
-  model: string;
+  model?: string;
   temperature?: number;
   maxTokens?: number;
   maxCandidates?: number;

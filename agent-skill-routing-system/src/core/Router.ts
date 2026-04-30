@@ -72,12 +72,12 @@ export class Router {
 
     this.vectorDatabase = new VectorDatabase();
     this.embeddingService = new EmbeddingService({
-      model: config.embedding?.model || 'text-embedding-3-small',
+      model: config.embedding?.model,
       dimensions: config.embedding?.dimensions || 1536,
     });
 
     this.llmRanker = new LLMRanker({
-      model: config.llm?.model || 'gpt-4o-mini',
+      model: config.llm?.model,
       maxCandidates: config.llm?.maxCandidates || 10,
     });
 

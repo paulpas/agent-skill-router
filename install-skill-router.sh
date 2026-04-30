@@ -27,6 +27,7 @@ NO_SERVICE=false
 INTEGRATE_OPENCODE=false
 LLM_PROVIDER="${LLM_PROVIDER:-openai}"
 LLM_MODEL="${LLM_MODEL:-}"
+EMBEDDING_MODEL="${EMBEDDING_MODEL:-}"
 ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
 LLAMACPP_URL="${LLAMACPP_URL:-}"
 EMBEDDING_PROVIDER="${EMBEDDING_PROVIDER:-openai}"
@@ -52,6 +53,7 @@ ${BOLD}Options:${RESET}
   --config PATH          Path to opencode.json (only used with --integrate-opencode)
   --provider openai|anthropic|llamacpp   LLM provider (default: openai)
   --model MODEL                          LLM model name (provider default if omitted)
+  --embedding-model MODEL                Embedding model name (provider default if omitted)
   --anthropic-key KEY                    Anthropic API key (or ANTHROPIC_API_KEY env)
   --llamacpp-url URL                     llama.cpp base URL (default: http://host.docker.internal:8080)
   --embedding-provider openai|llamacpp   Embedding provider (default: openai)
@@ -106,6 +108,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --model)
       LLM_MODEL="${2:?'--model requires a value'}"
+      shift 2
+      ;;
+    --embedding-model)
+      EMBEDDING_MODEL="${2:?'--embedding-model requires a value'}"
       shift 2
       ;;
     --anthropic-key)
@@ -320,6 +326,7 @@ docker run -d \
   -e OPENAI_API_KEY="$OPENAI_API_KEY" \
   -e LLM_PROVIDER="$LLM_PROVIDER" \
   ${LLM_MODEL:+-e LLM_MODEL="$LLM_MODEL"} \
+  ${EMBEDDING_MODEL:+-e EMBEDDING_MODEL="$EMBEDDING_MODEL"} \
   ${ANTHROPIC_API_KEY:+-e ANTHROPIC_API_KEY="$ANTHROPIC_API_KEY"} \
   ${LLAMACPP_URL:+-e LLAMACPP_BASE_URL="$LLAMACPP_URL"} \
   -e EMBEDDING_PROVIDER="$EMBEDDING_PROVIDER" \
@@ -779,11 +786,12 @@ echo -e "${BOLD}${GREEN}║         Skill Router Installation Complete        �
 echo -e "${BOLD}${GREEN}╚══════════════════════════════════════════════════╝${RESET}"
 echo ""
 _model_display="${LLM_MODEL:-provider default}"
+_embedding_model_display="${EMBEDDING_MODEL:-provider default}"
 echo -e "  ${BOLD}Container:${RESET}    skill-router (running on port $PORT)"
 echo -e "  ${BOLD}Image:${RESET}        skill-router:latest"
 echo -e "  ${BOLD}Health:${RESET}       http://localhost:$PORT/health ${GREEN}✓${RESET}"
 echo -e "  ${BOLD}LLM Provider:${RESET} $LLM_PROVIDER ($_model_display)"
-echo -e "  ${BOLD}Embeddings:${RESET}   $EMBEDDING_PROVIDER"
+echo -e "  ${BOLD}Embeddings:${RESET}   $EMBEDDING_PROVIDER ($_embedding_model_display)"
 echo -e "  ${BOLD}Service:${RESET}      $SERVICE_STATUS"
 if [[ "$GITHUB_ENABLED" == "true" ]]; then
   echo -e "  ${BOLD}GitHub Sync:${RESET}  enabled (https://github.com/paulpas/skills)"
