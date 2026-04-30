@@ -468,11 +468,54 @@ PYEOF
     _update_instructions_python
   fi
 
-  # STEP 12b — Inject skill-router MCP entry into opencode.json
+  # STEP 12b — Install the skill-router-mcp.js bridge script
+  # The bridge is a stdio MCP server that OpenCode launches; it proxies
+  # tool calls to the router's HTTP API. This file is portable across
+  # Linux and macOS (no hardcoded absolute paths — it resolves $HOME,
+  # SKILLS dir, and log path at runtime).
+  #
+  # Install the file BEFORE injecting the config entry (Step 12c), so
+  # opencode.json never references a missing file. If this step fails,
+  # opencode.json is left untouched.
   echo ""
-  echo -e "${BOLD}[Step 12b] Injecting skill-router MCP server into $OPENCODE_CONFIG...${RESET}"
+  echo -e "${BOLD}[Step 12b] Installing skill-router-mcp.js bridge script...${RESET}"
+
   MCP_NODE_CMD="$(which node)"
   MCP_SCRIPT_PATH="$HOME/.config/opencode/skill-router-mcp.js"
+  BRIDGE_SRC="$ROUTER_DIR/skill-router-mcp.js"
+
+  if [[ ! -f "$BRIDGE_SRC" ]]; then
+    err "Bridge script source not found: $BRIDGE_SRC"
+    err "Expected it shipped alongside the Dockerfile in $ROUTER_DIR"
+    exit 1
+  fi
+
+  mkdir -p "$(dirname "$MCP_SCRIPT_PATH")"
+
+  if [[ -f "$MCP_SCRIPT_PATH" ]]; then
+    # Only overwrite if content differs, to preserve local edits if any.
+    if cmp -s "$BRIDGE_SRC" "$MCP_SCRIPT_PATH"; then
+      ok "Bridge script already up to date: $MCP_SCRIPT_PATH"
+    else
+      cp "$BRIDGE_SRC" "$MCP_SCRIPT_PATH"
+      ok "Bridge script updated: $MCP_SCRIPT_PATH"
+    fi
+  else
+    cp "$BRIDGE_SRC" "$MCP_SCRIPT_PATH"
+    ok "Bridge script installed: $MCP_SCRIPT_PATH"
+  fi
+
+  # Sanity-check the copy with `node --check` if node is available.
+  if node --check "$MCP_SCRIPT_PATH" 2>/dev/null; then
+    ok "Bridge script syntax valid"
+  else
+    warn "node --check failed on $MCP_SCRIPT_PATH — review manually"
+  fi
+
+  # STEP 12c — Inject skill-router MCP entry into opencode.json
+  # This runs AFTER Step 12b so the config never points at a missing file.
+  echo ""
+  echo -e "${BOLD}[Step 12c] Injecting skill-router MCP server into $OPENCODE_CONFIG...${RESET}"
 
   if command -v jq &>/dev/null; then
     if jq -e '.mcp["skill-router"]' "$OPENCODE_CONFIG" > /dev/null 2>&1; then
@@ -507,42 +550,6 @@ if 'skill-router' not in cfg['mcp']:
 else:
     print("skill-router already in mcp section, skipping")
 PYEOF
-  fi
-
-  # STEP 12c — Install the skill-router-mcp.js bridge script
-  # The bridge is a stdio MCP server that OpenCode launches; it proxies
-  # tool calls to the router's HTTP API. This file is portable across
-  # Linux and macOS (no hardcoded absolute paths — it resolves $HOME,
-  # SKILLS dir, and log path at runtime).
-  echo ""
-  echo -e "${BOLD}[Step 12c] Installing skill-router-mcp.js bridge script...${RESET}"
-
-  BRIDGE_SRC="$ROUTER_DIR/skill-router-mcp.js"
-
-  if [[ ! -f "$BRIDGE_SRC" ]]; then
-    err "Bridge script source not found: $BRIDGE_SRC"
-    err "Expected it shipped alongside the Dockerfile in $ROUTER_DIR"
-    exit 1
-  fi
-
-  if [[ -f "$MCP_SCRIPT_PATH" ]]; then
-    # Only overwrite if content differs, to preserve local edits if any.
-    if cmp -s "$BRIDGE_SRC" "$MCP_SCRIPT_PATH"; then
-      ok "Bridge script already up to date: $MCP_SCRIPT_PATH"
-    else
-      cp "$BRIDGE_SRC" "$MCP_SCRIPT_PATH"
-      ok "Bridge script updated: $MCP_SCRIPT_PATH"
-    fi
-  else
-    cp "$BRIDGE_SRC" "$MCP_SCRIPT_PATH"
-    ok "Bridge script installed: $MCP_SCRIPT_PATH"
-  fi
-
-  # Sanity-check the copy with `node --check` if node is available.
-  if node --check "$MCP_SCRIPT_PATH" 2>/dev/null; then
-    ok "Bridge script syntax valid"
-  else
-    warn "node --check failed on $MCP_SCRIPT_PATH — review manually"
   fi
 
   # STEP 13 — Validate opencode.json
