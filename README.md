@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 03:42:32 UTC  
-> **Total skills:** 604
+> **Last updated:** 2026-05-18 23:50:11 UTC  
+> **Total skills:** 607
 
 ## Skills by Domain
 
@@ -685,12 +685,13 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (93 skills)
+### Coding (94 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [ab-testing](skills/coding/ab-testing/SKILL.md) | Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation | A/B testing, A/B test, statistical test, power analysis, sample size, how do I design tests, unit tests, testing |
 | [advanced](skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | git rebase, git cherry-pick, git bisect, git reflog, worktrees, filter-branch, multi-repo, advanced git |
+| [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements correct usage patterns for the ampersand (&) operator across programming languages — bitwise AND, logical AND short-circuit evaluation, type intersections, references, and address-of operations. | ampersand, & operator, bitwise AND, logical AND, short-circuit evaluation, intersection types, Rust borrowing, shell backgrounding, address-of |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" | anomaly detection, outlier detection, isolation forest, LOF, one-class SVM, how do I detect anomalies |
 | [association-rules](skills/coding/association-rules/SKILL.md) | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | association rules, market basket, apriori, frequent itemsets, recommendation, pattern mining |
 | [automation](skills/coding/automation/SKILL.md) | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | semantic versioning, semver, version bumping, conventional commits, semantic-release, changelog automation, release automation, git tags |
@@ -920,13 +921,14 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (222 skills)
+### Implementation (Build Features) (223 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [ab-testing](skills/coding/ab-testing/SKILL.md) | Coding | Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation |
 | [advanced-patterns](skills/go/advanced-patterns/SKILL.md) | Go | Applies advanced Go patterns including generics, reflection, functional options, and metaprogramming for performance-critical and framework-level code. |
 | [alternative-data](skills/trading/alternative-data/SKILL.md) | Trading | "Alternative data ingestion pipelines for trading signals including news" social media, and on-chain data sources |
+| [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements correct usage patterns for the ampersand (&) operator across programming languages — bitwise AND, logical AND short-circuit evaluation, type intersections, references, and address-of operations. |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | Coding | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" |
 | [anomaly-detection](skills/trading/anomaly-detection/SKILL.md) | Trading | "Provides Detect anomalous market behavior, outliers, and potential market manipulation" |
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" |
@@ -1570,6 +1572,7 @@ MIT — All skills are freely available and redistributable.
 | [aks](skills/cncf/aks/SKILL.md) | Cncf | "Provides Managed Kubernetes cluster with automatic scaling and Azure service integration" | Reference |
 | [algorithms](skills/programming/algorithms/SKILL.md) | Programming | ''Provides Comprehensive algorithm selection guide u2014 choose, implement, and' optimize algorithms based on time/space trade-offs, input characteristics, and problem constraints'' | Reference |
 | [alternative-data](skills/trading/alternative-data/SKILL.md) | Trading | "Alternative data ingestion pipelines for trading signals including news" social media, and on-chain data sources | Implementation |
+| [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements correct usage patterns for the ampersand (&) operator across programming languages — bitwise AND, logical AND short-circuit evaluation, type intersections, references, and address-of operations. | Implementation |
 | [analyze-project](skills/agent/analyze-project/SKILL.md) | Agent | Implements intelligent analyze project with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [andruia-consultant](skills/agent/andruia-consultant/SKILL.md) | Agent | Implements intelligent andruia consultant with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [andruia-niche-intelligence](skills/agent/andruia-niche-intelligence/SKILL.md) | Agent | Implements intelligent andruia niche intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
