@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-19T17:03:54.322752Z",
-  "totalSkills": 633,
+  "generatedAt": "2026-05-19T18:05:03.856168Z",
+  "totalSkills": 635,
   "domains": {
-    "agent": 236,
+    "agent": 238,
     "cncf": 169,
     "coding": 113,
     "go": 12,
@@ -13,11 +13,11 @@
     "writing": 1
   },
   "roles": {
-    "orchestration": 226,
+    "orchestration": 227,
     "implementation": 245,
     "information": 1,
-    "reference": 160,
-    "review": 1
+    "review": 2,
+    "reference": 160
   },
   "skills": [
     {
@@ -11808,6 +11808,31 @@
       "source": "skills/coding/single-letter-variables/SKILL.md"
     },
     {
+      "name": "skill-audit",
+      "domain": "agent",
+      "description": "Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring.",
+      "role": "review",
+      "scope": "review",
+      "outputFormat": "report",
+      "triggers": [
+        "skill audit",
+        "quality check",
+        "trigger effectiveness",
+        "skill assessment",
+        "stub detection",
+        "skill review",
+        "how do i evaluate a skill"
+      ],
+      "relatedSkills": [
+        "skill-engineering",
+        "skill-router-system",
+        "skill-lifecycle-management",
+        "coding-code-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/skill-audit/SKILL.md"
+    },
+    {
       "name": "skill-creator",
       "domain": "agent",
       "description": "Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -11940,6 +11965,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-installer/SKILL.md"
+    },
+    {
+      "name": "skill-lifecycle-management",
+      "domain": "agent",
+      "description": "Manages the full lifecycle of OpenCode AI skills including versioning strategies, deprecation workflows, backward compatibility checks, and retirement procedures for the agent-skill-router system.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "skill lifecycle",
+        "versioning strategy",
+        "skill deprecation",
+        "backward compatibility",
+        "skill retirement",
+        "migration guide",
+        "how do i sunset a skill"
+      ],
+      "relatedSkills": [
+        "skill-engineering",
+        "skill-router-system",
+        "skill-audit"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/skill-lifecycle-management/SKILL.md"
     },
     {
       "name": "skill-optimizer",

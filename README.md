@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 17:03:54 UTC  
-> **Total skills:** 633
+> **Last updated:** 2026-05-19 18:05:04 UTC  
+> **Total skills:** 635
 
 ## Skills by Domain
 
 
-### Agent (236 skills)
+### Agent (238 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -464,12 +464,14 @@ MIT — All skills are freely available and redistributable.
 | [self-critique-engine](skills/agent/self-critique-engine/SKILL.md) | Implements intelligent self critique engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | self-critique-engine, self critique engine, how do i self-critique-engine, orchestrate self-critique-engine, automate self-critique-engine, agent self-critique-engine |
 | [sendgrid-automation](skills/agent/sendgrid-automation/SKILL.md) | Implements intelligent sendgrid automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | sendgrid-automation, sendgrid automation, how do i sendgrid-automation, orchestrate sendgrid-automation, automate sendgrid-automation, agent sendgrid-automation |
 | [shopify-automation](skills/agent/shopify-automation/SKILL.md) | Implements intelligent shopify automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | shopify-automation, shopify automation, how do i shopify-automation, orchestrate shopify-automation, automate shopify-automation, agent shopify-automation |
+| [skill-audit](skills/agent/skill-audit/SKILL.md) | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. | skill audit, quality check, trigger effectiveness, skill assessment, stub detection, skill review, how do i evaluate a skill |
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-creator, skill creator, how do i skill-creator, orchestrate skill-creator, automate skill-creator, agent skill-creator |
 | [skill-creator-ms](skills/agent/skill-creator-ms/SKILL.md) | Implements intelligent skill creator ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-creator-ms, skill creator ms, how do i skill-creator-ms, orchestrate skill-creator-ms, automate skill-creator-ms, agent skill-creator-ms |
 | [skill-developer](skills/agent/skill-developer/SKILL.md) | Implements intelligent skill developer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-developer, skill developer, how do i skill-developer, orchestrate skill-developer, automate skill-developer, agent skill-developer |
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. | skill design, trigger engineering, SKILL.md crafting, stub detection, skill generation, agent skill routing, how do i create a skill |
 | [skill-improver](skills/agent/skill-improver/SKILL.md) | Implements intelligent skill improver with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-improver, skill improver, how do i skill-improver, orchestrate skill-improver, automate skill-improver, agent skill-improver |
 | [skill-installer](skills/agent/skill-installer/SKILL.md) | Implements intelligent skill installer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-installer, skill installer, how do i skill-installer, orchestrate skill-installer, automate skill-installer, agent skill-installer |
+| [skill-lifecycle-management](skills/agent/skill-lifecycle-management/SKILL.md) | Manages the full lifecycle of OpenCode AI skills including versioning strategies, deprecation workflows, backward compatibility checks, and retirement procedures for the agent-skill-router system. | skill lifecycle, versioning strategy, skill deprecation, backward compatibility, skill retirement, migration guide, how do i sunset a skill |
 | [skill-optimizer](skills/agent/skill-optimizer/SKILL.md) | Implements intelligent skill optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-optimizer, skill optimizer, how do i skill-optimizer, orchestrate skill-optimizer, automate skill-optimizer, agent skill-optimizer |
 | [skill-rails-upgrade](skills/agent/skill-rails-upgrade/SKILL.md) | Implements intelligent skill rails upgrade with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-rails-upgrade, skill rails upgrade, how do i skill-rails-upgrade, orchestrate skill-rails-upgrade, automate skill-rails-upgrade, agent skill-rails-upgrade |
 | [skill-router](skills/agent/skill-router/SKILL.md) | Implements intelligent skill router with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-router, skill router, how do i skill-router, orchestrate skill-router, automate skill-router, agent skill-router |
@@ -1370,7 +1372,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (226 skills)
+### Orchestration (Manage AI Agents) (227 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1560,6 +1562,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-developer](skills/agent/skill-developer/SKILL.md) | Agent | Implements intelligent skill developer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-improver](skills/agent/skill-improver/SKILL.md) | Agent | Implements intelligent skill improver with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-installer](skills/agent/skill-installer/SKILL.md) | Agent | Implements intelligent skill installer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [skill-lifecycle-management](skills/agent/skill-lifecycle-management/SKILL.md) | Agent | Manages the full lifecycle of OpenCode AI skills including versioning strategies, deprecation workflows, backward compatibility checks, and retirement procedures for the agent-skill-router system. |
 | [skill-optimizer](skills/agent/skill-optimizer/SKILL.md) | Agent | Implements intelligent skill optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-rails-upgrade](skills/agent/skill-rails-upgrade/SKILL.md) | Agent | Implements intelligent skill rails upgrade with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-router](skills/agent/skill-router/SKILL.md) | Agent | Implements intelligent skill router with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -1602,11 +1605,12 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Agent | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 
 
-### Review (Audit & Validate) (1 skills)
+### Review (Audit & Validate) (2 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [humanizer](skills/coding/humanizer/SKILL.md) | Coding | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process |
+| [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. |
 
 ## Complete Skills Index
 
@@ -2130,12 +2134,14 @@ MIT — All skills are freely available and redistributable.
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | Implementation |
 | [shopify-automation](skills/agent/shopify-automation/SKILL.md) | Agent | Implements intelligent shopify automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | Implementation |
+| [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. | Review |
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Agent | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-creator-ms](skills/agent/skill-creator-ms/SKILL.md) | Agent | Implements intelligent skill creator ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-developer](skills/agent/skill-developer/SKILL.md) | Agent | Implements intelligent skill developer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Agent | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. | Implementation |
 | [skill-improver](skills/agent/skill-improver/SKILL.md) | Agent | Implements intelligent skill improver with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-installer](skills/agent/skill-installer/SKILL.md) | Agent | Implements intelligent skill installer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [skill-lifecycle-management](skills/agent/skill-lifecycle-management/SKILL.md) | Agent | Manages the full lifecycle of OpenCode AI skills including versioning strategies, deprecation workflows, backward compatibility checks, and retirement procedures for the agent-skill-router system. | Orchestration |
 | [skill-optimizer](skills/agent/skill-optimizer/SKILL.md) | Agent | Implements intelligent skill optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-rails-upgrade](skills/agent/skill-rails-upgrade/SKILL.md) | Agent | Implements intelligent skill rails upgrade with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-router](skills/agent/skill-router/SKILL.md) | Agent | Implements intelligent skill router with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
