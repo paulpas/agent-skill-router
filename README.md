@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 03:29:59 UTC  
-> **Total skills:** 613
+> **Last updated:** 2026-05-19 04:19:01 UTC  
+> **Total skills:** 614
 
 ## Skills by Domain
 
@@ -685,7 +685,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (99 skills)
+### Coding (100 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -778,6 +778,7 @@ MIT — All skills are freely available and redistributable.
 | [scoring](skills/coding/scoring/SKILL.md) | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | combining, conviction scoring, conviction-scoring, engine, multi-factor |
 | [shop](skills/coding/shop/SKILL.md) | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | application, guide, juice shop, juice-shop, owasp, security best practices, security guidelines, vulnerability scanning |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | software architecture, system design, layered architecture, hexagonal architecture, clean architecture, separation of concerns, scalable design, architectural patterns |
+| [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | software engineering, modular design, separation of concerns, defensive programming, KISS principle, YAGNI, clean architecture |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error |
@@ -927,7 +928,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (228 skills)
+### Implementation (Build Features) (229 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1119,6 +1120,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Agent | Engineers production-ready AI skills following framework standards, including YAML frontmatter, trigger design, workflow structuring, and stub prevention for reliable agent routing. |
 | [slippage-model](skills/trading/slippage-model/SKILL.md) | Trading | "Implements slippage modeling and execution simulation for risk management and algorithmic trading execution." |
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis |
+| [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. |
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. |
@@ -2085,6 +2087,7 @@ MIT — All skills are freely available and redistributable.
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis | Implementation |
 | [sns](skills/cncf/sns/SKILL.md) | Cncf | "Deploys managed pub/sub messaging with SNS for asynchronous notifications" across services, mobile push, email, and Lambda integrations. | Reference |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Coding | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | Reference |
+| [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | Implementation |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | Implementation |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | Implementation |
 | [spiffe](skills/cncf/spiffe/SKILL.md) | Cncf | "Provides SPIFFE in Secure Product Identity Framework for Applications" | Reference |
