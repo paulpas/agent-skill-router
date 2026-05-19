@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-19T22:13:56.438025Z",
-  "totalSkills": 645,
+  "generatedAt": "2026-05-19T22:26:36.118182Z",
+  "totalSkills": 646,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 117,
+    "coding": 118,
     "go": 12,
     "linux": 11,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 253,
+    "implementation": 254,
     "reference": 161,
     "information": 1,
     "review": 2
@@ -13093,6 +13093,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-synthetic-data/SKILL.md"
+    },
+    {
+      "name": "system-architecture",
+      "domain": "coding",
+      "description": "Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "system architecture",
+        "software design",
+        "hexagonal architecture",
+        "ports and adapters",
+        "layered architecture",
+        "dependency injection",
+        "architectural boundaries",
+        "event-driven",
+        "microservices",
+        "monolith design",
+        "scalable systems",
+        "maintainable code"
+      ],
+      "relatedSkills": [
+        "test-driven-development",
+        "error-handling",
+        "modular-design",
+        "api-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/system-architecture/SKILL.md"
     },
     {
       "name": "tail-risk",
