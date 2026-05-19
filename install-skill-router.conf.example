@@ -81,6 +81,15 @@ LLAMACPP_URL=http://host.docker.internal:8080
 PORT=3000
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Skill Routing Configuration (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Maximum number of skills to return per route request
+# This setting allows the config file to override runtime request constraints
+# Priority: Config file (MAX_SKILLS) > Env var > Request constraints > Default (5)
+MAX_SKILLS=5
+
+# ─────────────────────────────────────────────────────────────────────────────
 # GitHub Integration (Optional)
 # ─────────────────────────────────────────────────────────────────────────────
 

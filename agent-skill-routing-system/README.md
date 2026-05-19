@@ -402,6 +402,7 @@ See [`SKILL_FORMAT_SPEC.md`](../SKILL_FORMAT_SPEC.md) for the complete authoring
 | `GITHUB_SKILLS_REPO` | `https://github.com/paulpas/skills` | Remote skills repository URL |
 | `SKILL_CACHE_DIR` | `/cache/skills` | Local path inside container for cached repo |
 | `SKILL_SYNC_INTERVAL` | `3600` | Seconds between GitHub syncs |
+| `MAX_SKILLS` | `5` | Maximum skills to return per route (config file > env var > request constraints) |
 | `GITHUB_TOKEN` | — | Optional GitHub token for higher rate limits |
 | `GITHUB_RAW_BASE_URL` | `https://raw.githubusercontent.com/paulpas/skills/main` | Base URL for fetching skills-index.json and skill content |
 | `SAFETY_STRICT` | `false` | Set `true` to block on single threat signal instead of requiring 2+ |

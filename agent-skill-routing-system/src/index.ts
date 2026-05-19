@@ -536,6 +536,15 @@ Use --help for configuration options.
     const compressionWarmupSkills = parseInt(process.env.COMPRESSION_WARMUP_SKILLS || '100', 10);
     const compressionBatchSize = parseInt(process.env.COMPRESSION_BATCH_SIZE || '10', 10);
     const compressionAdaptiveTTL = process.env.COMPRESSION_ADAPTIVE_TTL !== 'false';
+
+    // Load skill routing configuration
+    const maxSkillsFromEnv = parseInt(process.env.MAX_SKILLS || '', 10);
+    const maxSkillsConfigured = maxSkillsFromEnv > 0 ? maxSkillsFromEnv : undefined;
+    this.logger.info('[MAX_SKILLS] Configuration loaded', {
+      fromEnv: maxSkillsFromEnv,
+      configured: maxSkillsConfigured ?? 'default',
+    });
+
     this.logger.info('[COMPRESSION] Configuration loaded', {
       cacheSizeMB: compressionCacheSizeMB,
       warmupSkills: compressionWarmupSkills,
@@ -547,6 +556,10 @@ Use --help for configuration options.
     this.router = new Router({
       ...this.config,
       skillsDirectory: skillsDirs,
+      execution: {
+        maxSkills: maxSkillsConfigured ?? this.config.execution?.maxSkills,
+        timeoutMs: this.config.execution?.timeoutMs || 30000,
+      },
       compression: {
         maxCacheSizeBytes: compressionCacheSizeMB * 1024 * 1024,
         warmupSkillsCount: compressionWarmupSkills,

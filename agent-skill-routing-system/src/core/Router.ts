@@ -277,7 +277,10 @@ this.logger.info('Vector search candidates', {
     }
 
     // Filter by max skills
-    const maxSkills = constraints?.maxSkills || 5;
+    // Config (from env var) takes priority over request constraints
+    const maxSkills = this.config.execution?.maxSkills 
+      ?? constraints?.maxSkills 
+      ?? 5;
     filtered = filtered.slice(0, maxSkills);
 
     // Filter by categories if specified
