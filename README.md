@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 22:26:36 UTC  
-> **Total skills:** 646
+> **Last updated:** 2026-05-19 17:59:45 UTC  
+> **Total skills:** 647
 
 ## Skills by Domain
 
@@ -699,7 +699,7 @@ MIT — All skills are freely available and redistributable.
 |---|---|---|
 | [ab-testing](skills/coding/ab-testing/SKILL.md) | Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation | A/B testing, A/B test, statistical test, power analysis, sample size, how do I design tests, unit tests, testing |
 | [advanced](skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | git rebase, git cherry-pick, git bisect, git reflog, worktrees, filter-branch, multi-repo, advanced git |
-| [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements correct usage patterns for the ampersand (&) operator across programming languages — bitwise AND, logical AND short-circuit evaluation, type intersections, references, and address-of operations. | ampersand, & operator, bitwise AND, logical AND, short-circuit evaluation, intersection types, Rust borrowing, shell backgrounding, address-of |
+| [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. | &, ampersand operator, bitwise AND, address of, flag checking, bitmask, pointer manipulation |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" | anomaly detection, outlier detection, isolation forest, LOF, one-class SVM, how do I detect anomalies |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
 | [association-rules](skills/coding/association-rules/SKILL.md) | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | association rules, market basket, apriori, frequent itemsets, recommendation, pattern mining |
@@ -836,7 +836,7 @@ MIT — All skills are freely available and redistributable.
 | [web-applications](skills/go/web-applications/SKILL.md) | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. | go web, go http, go router, go middleware, go rest api, go templates, go websocket |
 
 
-### Linux (11 skills)
+### Linux (12 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -850,6 +850,7 @@ MIT — All skills are freely available and redistributable.
 | [observability](skills/linux/observability/SKILL.md) | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | linux observability, system metrics, log collection, performance profiling, eBPF, perf, capacity planning, monitoring |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. | IPMI, iLO, iDRAC, PXE boot, iSCSI, multipath, bare-metal provisioning, datacenter rack |
 | [resource-management](skills/linux/resource-management/SKILL.md) | Manages Linux system resources using cgroups v2, namespaces, and systemd for workload isolation and resource guarantees in cloud and on-prem environments. | cgroups, resource management, cpu limit, memory limit, systemd resource, OOM, workload isolation, resource quota |
+| [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. | shell background processes, parallel execution, job control, fg bg jobs wait, xargs P flag, background shell, process management |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. | storage architecture, LVM, filesystem, XFS, ext4, btrfs, cloud storage, NVMe, mount options, storage monitoring |
 
 
@@ -966,7 +967,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (254 skills)
+### Implementation (Build Features) (255 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -975,7 +976,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-architecture-patterns](skills/agent/agent-architecture-patterns/SKILL.md) | Agent | Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives. |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
 | [alternative-data](skills/trading/alternative-data/SKILL.md) | Trading | "Alternative data ingestion pipelines for trading signals including news" social media, and on-chain data sources |
-| [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements correct usage patterns for the ampersand (&) operator across programming languages — bitwise AND, logical AND short-circuit evaluation, type intersections, references, and address-of operations. |
+| [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | Coding | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" |
 | [anomaly-detection](skills/trading/anomaly-detection/SKILL.md) | Trading | "Provides Detect anomalous market behavior, outliers, and potential market manipulation" |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. |
@@ -1176,6 +1177,7 @@ MIT — All skills are freely available and redistributable.
 | [sentiment-features](skills/trading/sentiment-features/SKILL.md) | Trading | "Provides Extract market sentiment from news, social media, and analyst reports" |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" |
+| [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Linux | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. |
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. |
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Agent | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. |
@@ -1658,7 +1660,7 @@ MIT — All skills are freely available and redistributable.
 | [aks](skills/cncf/aks/SKILL.md) | Cncf | "Provides Managed Kubernetes cluster with automatic scaling and Azure service integration" | Reference |
 | [algorithms](skills/programming/algorithms/SKILL.md) | Programming | ''Provides Comprehensive algorithm selection guide u2014 choose, implement, and' optimize algorithms based on time/space trade-offs, input characteristics, and problem constraints'' | Reference |
 | [alternative-data](skills/trading/alternative-data/SKILL.md) | Trading | "Alternative data ingestion pipelines for trading signals including news" social media, and on-chain data sources | Implementation |
-| [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements correct usage patterns for the ampersand (&) operator across programming languages — bitwise AND, logical AND short-circuit evaluation, type intersections, references, and address-of operations. | Implementation |
+| [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. | Implementation |
 | [analyze-project](skills/agent/analyze-project/SKILL.md) | Agent | Implements intelligent analyze project with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [andruia-consultant](skills/agent/andruia-consultant/SKILL.md) | Agent | Implements intelligent andruia consultant with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [andruia-niche-intelligence](skills/agent/andruia-niche-intelligence/SKILL.md) | Agent | Implements intelligent andruia niche intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2163,6 +2165,7 @@ MIT — All skills are freely available and redistributable.
 | [service-bus](skills/cncf/service-bus/SKILL.md) | Cncf | "Provides Messaging service with queues and topics for reliable communication" | Reference |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. | Implementation |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" | Implementation |
+| [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Linux | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. | Implementation |
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | Implementation |
 | [shopify-automation](skills/agent/shopify-automation/SKILL.md) | Agent | Implements intelligent shopify automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | Implementation |
