@@ -264,8 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
+<<<<<<< HEAD
 > **Last updated:** 2026-05-19 22:13:57 UTC  
 > **Total skills:** 645
+=======
+> **Last updated:** 2026-05-19 17:25:47 UTC  
+> **Total skills:** 646
+>>>>>>> 0853e4af4 (feat: add new skill - system-architecture)
 
 ## Skills by Domain
 
@@ -693,7 +698,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (118 skills)
+### Coding (119 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -810,6 +815,7 @@ MIT — All skills are freely available and redistributable.
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" | support vector machines, SVM, kernel methods, support vectors, SVM classification |
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" | synthetic control, difference-in-differences, DiD, quasi-experiment, impact evaluation |
+| [system-architecture](skills/coding/system-architecture/SKILL.md) | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. | system architecture, software design, hexagonal architecture, ports and adapters, layered architecture, dependency injection, architectural boundaries, event-driven, microservices, monolith design, scalable systems, maintainable code |
 | [testing-unit-integration-e2e](skills/coding/testing-unit-integration-e2e/SKILL.md) | Implements comprehensive testing strategies (unit, integration, contract, and end-to-end) with appropriate test doubles, isolation levels, and coverage thresholds for reliable software delivery. | unit testing, integration testing, contract testing, end-to-end testing, e2e, test doubles, test isolation, smoke tests |
 | [time-series-forecasting](skills/coding/time-series-forecasting/SKILL.md) | "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction" | time series forecasting, ARIMA, exponential smoothing, LSTM, forecasting, time series prediction |
 | [topic-modeling](skills/coding/topic-modeling/SKILL.md) | "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods" | topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation, text analysis |
@@ -965,7 +971,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (253 skills)
+### Implementation (Build Features) (254 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1195,6 +1201,7 @@ MIT — All skills are freely available and redistributable.
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | Coding | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" |
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | Coding | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" |
 | [synthetic-data](skills/trading/synthetic-data/SKILL.md) | Trading | "Provides Generate synthetic financial data for training and testing trading models" |
+| [system-architecture](skills/coding/system-architecture/SKILL.md) | Coding | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. |
 | [tail-risk](skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event protection for risk management and algorithmic trading execution." |
 | [terraform](skills/cncf/terraform/SKILL.md) | Cncf | Implements Terraform infrastructure as code for cloud provisioning with state management, modules, remote backends, and troubleshooting |
 | [testing-strategies](skills/go/testing-strategies/SKILL.md) | Go | Implements comprehensive testing strategies for Go including unit tests, integration tests, benchmarks, table-driven tests, and mock patterns. |
@@ -2209,6 +2216,7 @@ MIT — All skills are freely available and redistributable.
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | Coding | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" | Implementation |
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | Coding | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" | Implementation |
 | [synthetic-data](skills/trading/synthetic-data/SKILL.md) | Trading | "Provides Generate synthetic financial data for training and testing trading models" | Implementation |
+| [system-architecture](skills/coding/system-architecture/SKILL.md) | Coding | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. | Implementation |
 | [tail-risk](skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event protection for risk management and algorithmic trading execution." | Implementation |
 | [task-decomposition-engine](skills/agent/task-decomposition-engine/SKILL.md) | Agent | Implements intelligent task decomposition engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [task-intelligence](skills/agent/task-intelligence/SKILL.md) | Agent | Implements intelligent task intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
