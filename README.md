@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 02:21:26 UTC  
-> **Total skills:** 611
+> **Last updated:** 2026-05-19 02:52:30 UTC  
+> **Total skills:** 612
 
 ## Skills by Domain
 
@@ -685,7 +685,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (98 skills)
+### Coding (99 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -737,6 +737,7 @@ MIT — All skills are freely available and redistributable.
 | [feature-selection](skills/coding/feature-selection/SKILL.md) | "Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based methods" | feature selection, feature importance, recursive elimination, univariate selection, feature selection methods |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. | framework setup, project scaffolding, dependency configuration, boilerplate generation, environment validation, starter kits, tech stack selection |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices | grpc development, grpc debugging, protocol buffers, rpc services, grpc errors, stream handling, unary calls, grpc gateway |
+| [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. | hexagonal architecture, ports and adapters, clean architecture, dependency inversion, core business logic, how do i decouple my code, separate business logic from framework |
 | [humanizer](skills/coding/humanizer/SKILL.md) | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation, comments, technical writing, readability, code clarity |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | hypothesis testing, t-test, chi-square, p-value, statistical significance, how do i test hypotheses, unit tests, testing |
@@ -925,7 +926,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (227 skills)
+### Implementation (Build Features) (228 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1016,6 +1017,7 @@ MIT — All skills are freely available and redistributable.
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Linux | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. |
 | [health](skills/trading/health/SKILL.md) | Trading | "Provides Exchange system health monitoring and connectivity status tracking" |
 | [health-check-patterns](skills/cncf/health-check-patterns/SKILL.md) | Cncf | Implements comprehensive health check patterns for cloud-native applications including Kubernetes probes, HTTP health endpoints, database checks, and circuit breaker patterns |
+| [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Coding | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | Coding | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" |
 | [hyperparameter-tuning](skills/trading/hyperparameter-tuning/SKILL.md) | Trading | "Implements optimize model configurations for trading applications for risk management and algorithmic trading execution." |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions |
@@ -1831,6 +1833,7 @@ MIT — All skills are freely available and redistributable.
 | [health-check-patterns](skills/cncf/health-check-patterns/SKILL.md) | Cncf | Implements comprehensive health check patterns for cloud-native applications including Kubernetes probes, HTTP health endpoints, database checks, and circuit breaker patterns | Implementation |
 | [helm](skills/cncf/helm/SKILL.md) | Cncf | "Provides Helm in Cloud-Native Engineering - The Kubernetes Package Manager" | Reference |
 | [helpdesk-automation](skills/agent/helpdesk-automation/SKILL.md) | Agent | Implements intelligent helpdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Coding | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. | Implementation |
 | [hierarchical-agent-memory](skills/agent/hierarchical-agent-memory/SKILL.md) | Agent | Implements intelligent hierarchical agent memory with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [hosted-agents](skills/agent/hosted-agents/SKILL.md) | Agent | Implements intelligent hosted agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [hosted-agents-v2-py](skills/agent/hosted-agents-v2-py/SKILL.md) | Agent | Implements intelligent hosted agents v2 py with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
