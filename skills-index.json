@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-19T20:20:15.835577Z",
-  "totalSkills": 640,
+  "generatedAt": "2026-05-19T20:56:20.710105Z",
+  "totalSkills": 642,
   "domains": {
-    "agent": 240,
+    "agent": 242,
     "cncf": 169,
     "coding": 114,
     "go": 12,
@@ -13,11 +13,11 @@
     "writing": 1
   },
   "roles": {
-    "orchestration": 227,
+    "orchestration": 228,
     "implementation": 250,
+    "reference": 161,
     "information": 1,
-    "review": 2,
-    "reference": 160
+    "review": 2
   },
   "skills": [
     {
@@ -4264,6 +4264,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/design-patterns-architecture/SKILL.md"
+    },
+    {
+      "name": "developer-pattern-library",
+      "domain": "agent",
+      "description": "Curates and maintains a personal library of validated code patterns, solutions, and anti-patterns accumulated through development experience, enabling faster problem-solving on future tasks.",
+      "role": "reference",
+      "scope": "orchestration",
+      "outputFormat": "report",
+      "triggers": [
+        "pattern library",
+        "developer patterns",
+        "reusable solutions",
+        "personal knowledge base",
+        "code patterns",
+        "anti-patterns",
+        "how do i organize my code snippets",
+        "solution catalog"
+      ],
+      "relatedSkills": [
+        "personal-workflow-framework",
+        "workflow-patterns",
+        "skill-creator"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/developer-pattern-library/SKILL.md"
     },
     {
       "name": "development",
@@ -10266,6 +10291,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/personal-knowledge-management/SKILL.md"
+    },
+    {
+      "name": "personal-workflow-framework",
+      "domain": "agent",
+      "description": "Designs personalized development workflows by mapping task types to optimized process patterns, enabling developers to choose structured approaches that match project complexity and team size.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "personal workflow",
+        "developer workflow",
+        "structured approach",
+        "task methodology",
+        "how do i organize my work",
+        "development process",
+        "workflow customization",
+        "project methodology"
+      ],
+      "relatedSkills": [
+        "workflow-patterns",
+        "planning-with-files",
+        "closed-loop-delivery"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/personal-workflow-framework/SKILL.md"
     },
     {
       "name": "pipecat-friday-agent",

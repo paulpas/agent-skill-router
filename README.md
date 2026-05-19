@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 20:20:16 UTC  
-> **Total skills:** 640
+> **Last updated:** 2026-05-19 20:56:21 UTC  
+> **Total skills:** 642
 
 ## Skills by Domain
 
 
-### Agent (240 skills)
+### Agent (242 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -357,6 +357,7 @@ MIT — All skills are freely available and redistributable.
 | [database](skills/agent/database/SKILL.md) | Implements intelligent database with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | database, database, how do i database, orchestrate database, automate database, agent database |
 | [database-admin](skills/agent/database-admin/SKILL.md) | Implements database administration best practices (PostgreSQL tuning, MySQL replication, MongoDB sharding, Redis optimization) with real operational commands and query analysis patterns. | database administration, postgresql tuning, connection pooling, query optimization, vacuuming, mysql replication, mongodb sharding, redis memory |
 | [dependency-graph-builder](skills/agent/dependency-graph-builder/SKILL.md) | Implements intelligent dependency graph builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | dependency-graph-builder, dependency graph builder, how do i dependency-graph-builder, orchestrate dependency-graph-builder, automate dependency-graph-builder, agent dependency-graph-builder |
+| [developer-pattern-library](skills/agent/developer-pattern-library/SKILL.md) | Curates and maintains a personal library of validated code patterns, solutions, and anti-patterns accumulated through development experience, enabling faster problem-solving on future tasks. | pattern library, developer patterns, reusable solutions, personal knowledge base, code patterns, anti-patterns, how do i organize my code snippets, solution catalog |
 | [development](skills/agent/development/SKILL.md) | Implements intelligent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | development, development, how do i development, orchestrate development, automate development, agent development |
 | [diary](skills/agent/diary/SKILL.md) | Implements intelligent diary with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | diary, diary, how do i diary, orchestrate diary, automate diary, agent diary |
 | [diff-quality-analyzer](skills/agent/diff-quality-analyzer/SKILL.md) | Implements intelligent diff quality analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | diff-quality-analyzer, diff quality analyzer, how do i diff-quality-analyzer, orchestrate diff-quality-analyzer, automate diff-quality-analyzer, agent diff-quality-analyzer |
@@ -443,6 +444,7 @@ MIT — All skills are freely available and redistributable.
 | [parallel-agents](skills/agent/parallel-agents/SKILL.md) | Implements intelligent parallel agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | parallel-agents, parallel agents, how do i parallel-agents, orchestrate parallel-agents, automate parallel-agents, agent parallel-agents |
 | [parallel-skill-runner](skills/agent/parallel-skill-runner/SKILL.md) | Implements intelligent parallel skill runner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | parallel-skill-runner, parallel skill runner, how do i parallel-skill-runner, orchestrate parallel-skill-runner, automate parallel-skill-runner, agent parallel-skill-runner |
 | [performance-profiler](skills/agent/performance-profiler/SKILL.md) | Implements intelligent performance profiler with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | performance-profiler, performance profiler, how do i performance-profiler, orchestrate performance-profiler, automate performance-profiler, agent performance-profiler, optimization, performance |
+| [personal-workflow-framework](skills/agent/personal-workflow-framework/SKILL.md) | Designs personalized development workflows by mapping task types to optimized process patterns, enabling developers to choose structured approaches that match project complexity and team size. | personal workflow, developer workflow, structured approach, task methodology, how do i organize my work, development process, workflow customization, project methodology |
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | pipecat-friday-agent, pipecat friday agent, how do i pipecat-friday-agent, orchestrate pipecat-friday-agent, automate pipecat-friday-agent, agent pipecat-friday-agent |
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | plan-writing, plan writing, how do i plan-writing, orchestrate plan-writing, automate plan-writing, agent plan-writing |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | planning-with-files, planning with files, how do i planning-with-files, orchestrate planning-with-files, automate planning-with-files, agent planning-with-files |
@@ -1216,7 +1218,7 @@ MIT — All skills are freely available and redistributable.
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." |
 
 
-### Reference (Learn & Understand) (160 skills)
+### Reference (Learn & Understand) (161 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1268,6 +1270,7 @@ MIT — All skills are freely available and redistributable.
 | [dapr](skills/cncf/dapr/SKILL.md) | Cncf | "Provides Dapr in Cloud-Native Engineering - distributed application runtime" |
 | [deployment-manager](skills/cncf/deployment-manager/SKILL.md) | Cncf | "Infrastructure as code using YAML templates for repeatable GCP resource" deployments. |
 | [deployment-philosophy](skills/cncf/deployment-philosophy/SKILL.md) | Cncf | Architects multi-stage deployment strategies that balance speed, safety, and reliability through systematic risk assessment and controlled change delivery. |
+| [developer-pattern-library](skills/agent/developer-pattern-library/SKILL.md) | Agent | Curates and maintains a personal library of validated code patterns, solutions, and anti-patterns accumulated through development experience, enabling faster problem-solving on future tasks. |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Coding | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. |
 | [dragonfly](skills/cncf/dragonfly/SKILL.md) | Cncf | "Provides Dragonfly in Cloud-Native Engineering - P2P file distribution" |
 | [dynamodb](skills/cncf/dynamodb/SKILL.md) | Cncf | "Deploys managed NoSQL databases with DynamoDB for scalable, low-latency" key-value storage, streams, and global tables with high availability and automatic replication. |
@@ -1382,7 +1385,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (227 skills)
+### Orchestration (Manage AI Agents) (228 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1544,6 +1547,7 @@ MIT — All skills are freely available and redistributable.
 | [parallel-agents](skills/agent/parallel-agents/SKILL.md) | Agent | Implements intelligent parallel agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [parallel-skill-runner](skills/agent/parallel-skill-runner/SKILL.md) | Agent | Implements intelligent parallel skill runner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [performance-profiler](skills/agent/performance-profiler/SKILL.md) | Agent | Implements intelligent performance profiler with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [personal-workflow-framework](skills/agent/personal-workflow-framework/SKILL.md) | Agent | Designs personalized development workflows by mapping task types to optimized process patterns, enabling developers to choose structured approaches that match project complexity and team size. |
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Agent | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Agent | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Agent | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -1812,6 +1816,7 @@ MIT — All skills are freely available and redistributable.
 | [deployment-philosophy](skills/cncf/deployment-philosophy/SKILL.md) | Cncf | Architects multi-stage deployment strategies that balance speed, safety, and reliability through systematic risk assessment and controlled change delivery. | Reference |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Coding | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | Implementation |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Coding | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. | Implementation |
+| [developer-pattern-library](skills/agent/developer-pattern-library/SKILL.md) | Agent | Curates and maintains a personal library of validated code patterns, solutions, and anti-patterns accumulated through development experience, enabling faster problem-solving on future tasks. | Reference |
 | [development](skills/agent/development/SKILL.md) | Agent | Implements intelligent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [diary](skills/agent/diary/SKILL.md) | Agent | Implements intelligent diary with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [diff-quality-analyzer](skills/agent/diff-quality-analyzer/SKILL.md) | Agent | Implements intelligent diff quality analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2076,6 +2081,7 @@ MIT — All skills are freely available and redistributable.
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading Strategy Decomposition" | Implementation |
 | [performance-profiler](skills/agent/performance-profiler/SKILL.md) | Agent | Implements intelligent performance profiler with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | Implementation |
+| [personal-workflow-framework](skills/agent/personal-workflow-framework/SKILL.md) | Agent | Designs personalized development workflows by mapping task types to optimized process patterns, enabling developers to choose structured approaches that match project complexity and team size. | Orchestration |
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Agent | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Agent | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Agent | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
