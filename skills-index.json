@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-19T12:20:37.586059Z",
-  "totalSkills": 620,
+  "generatedAt": "2026-05-19T13:54:35.254031Z",
+  "totalSkills": 625,
   "domains": {
-    "agent": 235,
+    "agent": 236,
     "cncf": 169,
-    "coding": 104,
+    "coding": 108,
     "go": 12,
     "linux": 11,
     "programming": 5,
@@ -12,8 +12,8 @@
     "writing": 1
   },
   "roles": {
-    "orchestration": 225,
-    "implementation": 233,
+    "orchestration": 226,
+    "implementation": 237,
     "information": 1,
     "reference": 160,
     "review": 1
@@ -8023,6 +8023,31 @@
       "source": "skills/linux/make-build-system/SKILL.md"
     },
     {
+      "name": "make-workflow-automation",
+      "domain": "agent",
+      "description": "Builds and debugs automated workflows in Make (Integromat) using modules, scenarios, routing, error handling, and scheduling for no-code/low-code automation.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "make",
+        "make com",
+        "integromat",
+        "workflow automation",
+        "no code automation",
+        "scenario builder",
+        "webhook trigger",
+        "task routing"
+      ],
+      "relatedSkills": [
+        "agent-task-routing",
+        "parallel-skill-runner",
+        "coding-script-automation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/make-workflow-automation/SKILL.md"
+    },
+    {
       "name": "makefile",
       "domain": "coding",
       "description": "Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes.",
@@ -10325,6 +10350,33 @@
       "source": "skills/agent/python-fastapi-development/SKILL.md"
     },
     {
+      "name": "python-module-structure",
+      "domain": "coding",
+      "description": "Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "python module",
+        "python package",
+        "__init__.py",
+        "module structure",
+        "pyproject.toml",
+        "type stubs",
+        ".pyi",
+        "circular imports"
+      ],
+      "relatedSkills": [
+        "framework-requirements",
+        "engineering-principles",
+        "dry-principles",
+        "code-quality-policies",
+        "pydantic-models"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/python-module-structure/SKILL.md"
+    },
+    {
       "name": "quality-policies",
       "domain": "coding",
       "description": "\"Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi\"",
@@ -10595,6 +10647,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/receiving-code-review/SKILL.md"
+    },
+    {
+      "name": "refactoring-techniques",
+      "domain": "coding",
+      "description": "Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "refactoring",
+        "clean up code",
+        "reduce complexity",
+        "extract method",
+        "rename variable",
+        "improve readability",
+        "how do i refactor legacy code",
+        "technical debt",
+        "code smell"
+      ],
+      "relatedSkills": [
+        "test-driven-development",
+        "software-testing-strategy",
+        "dry-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/refactoring-techniques/SKILL.md"
     },
     {
       "name": "regime-classification",
@@ -10889,6 +10967,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/resource-optimizer/SKILL.md"
+    },
+    {
+      "name": "rest-api-patterns",
+      "domain": "coding",
+      "description": "Implements RESTful API design patterns including resource modeling, HTTP method dispatching, structured error responses per RFC 7807, pagination, filtering, versioning, and HATEOAS for production-quality APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "REST API",
+        "RESTful design",
+        "RFC 7807",
+        "HTTP methods",
+        "API versioning",
+        "HATEOAS",
+        "pagination"
+      ],
+      "relatedSkills": [
+        "fastapi-patterns",
+        "grpc-patterns",
+        "code-validation",
+        "input-validation",
+        "frontend-api-integration-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rest-api-patterns/SKILL.md"
     },
     {
       "name": "review",
@@ -12006,6 +12110,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-engineering-principles/SKILL.md"
+    },
+    {
+      "name": "software-testing-strategy",
+      "domain": "coding",
+      "description": "Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "testing strategy",
+        "unit test",
+        "integration test",
+        "property-based testing",
+        "test coverage",
+        "mocking",
+        "assertion",
+        "pytest",
+        "test suite design",
+        "how do i write tests"
+      ],
+      "relatedSkills": [
+        "test-driven-development",
+        "refactoring-techniques",
+        "code-quality-policies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-testing-strategy/SKILL.md"
     },
     {
       "name": "spiffe",
