@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 03:11:10 UTC  
-> **Total skills:** 612
+> **Last updated:** 2026-05-19 03:29:59 UTC  
+> **Total skills:** 613
 
 ## Skills by Domain
 
@@ -808,7 +808,7 @@ MIT — All skills are freely available and redistributable.
 | [web-applications](skills/go/web-applications/SKILL.md) | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. | go web, go http, go router, go middleware, go rest api, go templates, go websocket |
 
 
-### Linux (10 skills)
+### Linux (11 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -817,6 +817,7 @@ MIT — All skills are freely available and redistributable.
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. | kernel tuning, sysctl, NUMA, interrupt affinity, page cache, TCP tuning, kernel parameters, performance tuning |
 | [linux-security](skills/linux/linux-security/SKILL.md) | Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments. | linux security, hardening, CIS benchmark, SELinux, AppArmor, SSH hardening, file integrity, audit framework |
 | [linux-services](skills/linux/linux-services/SKILL.md) | Manages Linux services with systemd for reliable operation, dependency ordering, resource isolation, and automated recovery in cloud and on-prem environments. | systemd, service management, unit file, service restart, socket activation, systemd timer, journal, service dependency |
+| [make-build-system](skills/linux/make-build-system/SKILL.md) | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, and cross-compilation for reproducible software builds. | makefile, GNU make, build automation, incremental builds, phony targets, make variables, dependency graph, cross-compilation |
 | [networking](skills/linux/networking/SKILL.md) | Configures and optimizes Linux networking for cloud virtual networks and on-prem data center infrastructure with performance and security focus. | linux networking, bond interface, VLAN, bridge, network namespace, nftables, routing, cloud networking, VPC |
 | [observability](skills/linux/observability/SKILL.md) | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | linux observability, system metrics, log collection, performance profiling, eBPF, perf, capacity planning, monitoring |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. | IPMI, iLO, iDRAC, PXE boot, iSCSI, multipath, bare-metal provisioning, datacenter rack |
@@ -926,7 +927,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (227 skills)
+### Implementation (Build Features) (228 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1042,6 +1043,7 @@ MIT — All skills are freely available and redistributable.
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | Coding | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" |
 | [lookahead-bias](skills/trading/lookahead-bias/SKILL.md) | Trading | "Preventing lookahead bias in backtesting through strict causality enforcement" time-based validation, and comprehensive detection frameworks. |
 | [make](skills/coding/make/SKILL.md) | Coding | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. |
+| [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, and cross-compilation for reproducible software builds. |
 | [makefile](skills/coding/makefile/SKILL.md) | Coding | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. |
 | [manager](skills/coding/manager/SKILL.md) | Coding | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing |
 | [market-data-cache](skills/trading/market-data-cache/SKILL.md) | Trading | "High-performance caching layer for market data with low latency and high" throughput |
@@ -1913,6 +1915,7 @@ MIT — All skills are freely available and redistributable.
 | [m365-agents-ts](skills/agent/m365-agents-ts/SKILL.md) | Agent | Implements intelligent m365 agents ts with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [make](skills/coding/make/SKILL.md) | Coding | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. | Implementation |
 | [make-automation](skills/agent/make-automation/SKILL.md) | Agent | Implements intelligent make automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, and cross-compilation for reproducible software builds. | Implementation |
 | [makefile](skills/coding/makefile/SKILL.md) | Coding | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. | Implementation |
 | [manager](skills/cncf/manager/SKILL.md) | Cncf | "cert-manager in Cloud-Native Engineering - Certificate Management for" Kubernetes | Reference |
 | [manager](skills/coding/manager/SKILL.md) | Coding | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing | Implementation |
