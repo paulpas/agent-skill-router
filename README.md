@@ -687,7 +687,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (107 skills)
+### Coding (109 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -777,6 +777,7 @@ MIT — All skills are freely available and redistributable.
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | randomized experiments, RCT, experimental design, randomization, blocking, sample size |
+| [refactoring-techniques](skills/coding/refactoring-techniques/SKILL.md) | Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity. | refactoring, clean up code, reduce complexity, extract method, rename variable, improve readability, how do i refactor legacy code, technical debt, code smell |
 | [regression-evaluation](skills/coding/regression-evaluation/SKILL.md) | "Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared, and other metrics for assessing predictive accuracy" | regression evaluation, MSE, RMSE, MAE, R-squared, regression metrics, how do i evaluate |
 | [release-pipeline](skills/coding/release-pipeline/SKILL.md) | Implements comprehensive secure release pipeline with CVE scanning, security code review, semantic versioning for patches, and multi-stage quality gates for secure deployments. | secure release, CVE scanning, security audit, version management, quality gates, dependency security, semantic versioning, incident response |
 | [reproducible-research](skills/coding/reproducible-research/SKILL.md) | "Implements reproducible research practices including code organization, environment management, documentation, and experiment tracking" | reproducible research, reproducibility, code organization, environment, notebooks, how do I reproduce |
@@ -790,6 +791,7 @@ MIT — All skills are freely available and redistributable.
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | software engineering, modular design, separation of concerns, defensive programming, KISS principle, YAGNI, clean architecture |
+| [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | testing strategy, unit test, integration test, property-based testing, test coverage, mocking, assertion, pytest, test suite design, how do i write tests |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" | support vector machines, SVM, kernel methods, support vectors, SVM classification |
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" | synthetic control, difference-in-differences, DiD, quasi-experiment, impact evaluation |
@@ -937,7 +939,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (235 skills)
+### Implementation (Build Features) (237 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1111,6 +1113,7 @@ MIT — All skills are freely available and redistributable.
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API" Integration |
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Provides Rate Limiting and Exchange API Management for Robust Trading Execution" |
 | [realistic-simulation](skills/trading/realistic-simulation/SKILL.md) | Trading | "Provides Realistic Paper Trading Simulation with Market Impact and Execution Fees" |
+| [refactoring-techniques](skills/coding/refactoring-techniques/SKILL.md) | Coding | Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity. |
 | [regime-classification](skills/trading/regime-classification/SKILL.md) | Trading | "Provides Detect current market regime for adaptive trading strategies" |
 | [regime-detection](skills/trading/regime-detection/SKILL.md) | Trading | "Provides Market Regime Detection Systems for Adaptive Trading Strategies" |
 | [regression-evaluation](skills/coding/regression-evaluation/SKILL.md) | Coding | "Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared, and other metrics for assessing predictive accuracy" |
@@ -1138,6 +1141,7 @@ MIT — All skills are freely available and redistributable.
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. |
+| [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. |
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. |
 | [statistical-arbitrage](skills/trading/statistical-arbitrage/SKILL.md) | Trading | "Implements pair trading and cointegration-based arbitrage strategies for risk management and algorithmic trading execution." |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | Coding | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" |
@@ -2054,6 +2058,7 @@ MIT — All skills are freely available and redistributable.
 | [realistic-simulation](skills/trading/realistic-simulation/SKILL.md) | Trading | "Provides Realistic Paper Trading Simulation with Market Impact and Execution Fees" | Implementation |
 | [recallmax](skills/agent/recallmax/SKILL.md) | Agent | Implements intelligent recallmax with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [receiving-code-review](skills/agent/receiving-code-review/SKILL.md) | Agent | Implements intelligent receiving code review with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [refactoring-techniques](skills/coding/refactoring-techniques/SKILL.md) | Coding | Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity. | Implementation |
 | [regime-classification](skills/trading/regime-classification/SKILL.md) | Trading | "Provides Detect current market regime for adaptive trading strategies" | Implementation |
 | [regime-detection](skills/trading/regime-detection/SKILL.md) | Trading | "Provides Market Regime Detection Systems for Adaptive Trading Strategies" | Implementation |
 | [regression-detector](skills/agent/regression-detector/SKILL.md) | Agent | Implements intelligent regression detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2117,6 +2122,7 @@ MIT — All skills are freely available and redistributable.
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | Implementation |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | Implementation |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | Implementation |
+| [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | Implementation |
 | [spiffe](skills/cncf/spiffe/SKILL.md) | Cncf | "Provides SPIFFE in Secure Product Identity Framework for Applications" | Reference |
 | [spire](skills/cncf/spire/SKILL.md) | Cncf | "Configures spire in spiffe implementation for real-world deployments for cloud-native deployment and infrastructure management." | Reference |
 | [sql-database](skills/cncf/sql-database/SKILL.md) | Cncf | Provides Managed relational database with elastic pools, geo-replication, and automatic backups | Reference |
