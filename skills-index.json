@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-19T18:34:12.997583Z",
-  "totalSkills": 635,
+  "generatedAt": "2026-05-19T19:09:58.146451Z",
+  "totalSkills": 637,
   "domains": {
-    "agent": 238,
+    "agent": 240,
     "cncf": 169,
     "coding": 113,
     "go": 12,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 227,
-    "implementation": 245,
+    "implementation": 247,
     "information": 1,
     "review": 2,
     "reference": 160
@@ -141,6 +141,33 @@
       "source": "skills/go/advanced-patterns/SKILL.md"
     },
     {
+      "name": "agent-architecture-patterns",
+      "domain": "agent",
+      "description": "Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "agent architecture",
+        "multi-agent system",
+        "design patterns",
+        "pub-sub messaging",
+        "circuit breakers",
+        "state management",
+        "event-driven architecture",
+        "service discovery",
+        "fault tolerance"
+      ],
+      "relatedSkills": [
+        "agent-context-management",
+        "workflow-patterns",
+        "dispatching-parallel-agents",
+        "hierarchical-agent-memory"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-architecture-patterns/SKILL.md"
+    },
+    {
       "name": "agent-context-management",
       "domain": "agent",
       "description": "Implements context window management, sliding window strategies, and persistent memory patterns to maintain AI agent coherence across long interactions.",
@@ -230,6 +257,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-memory-systems/SKILL.md"
+    },
+    {
+      "name": "agent-reliability-engineering",
+      "domain": "agent",
+      "description": "Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "fault tolerance",
+        "circuit breaker",
+        "retry strategy",
+        "exponential backoff",
+        "graceful degradation",
+        "health check",
+        "dead letter queue",
+        "timeout management",
+        "reliability engineering",
+        "agent resilience"
+      ],
+      "relatedSkills": [
+        "agent-architecture-patterns",
+        "workflow-patterns",
+        "failure-mode-analysis"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-reliability-engineering/SKILL.md"
     },
     {
       "name": "ai-agent-development",
