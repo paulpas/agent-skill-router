@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 04:19:01 UTC  
-> **Total skills:** 614
+> **Last updated:** 2026-05-19 04:42:28 UTC  
+> **Total skills:** 615
 
 ## Skills by Domain
 
@@ -685,7 +685,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (100 skills)
+### Coding (101 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -727,6 +727,7 @@ MIT — All skills are freely available and redistributable.
 | [driven-development](skills/coding/driven-development/SKILL.md) | "Test-Driven Development (TDD) and Behavior-Driven Development (BDD) patterns" with pytest, unit tests, mocking, and test pyramid principles | behavior-driven, patterns, test driven development, test-driven, test-driven-development |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | dry principle, don't repeat yourself, code duplication, refactoring, code duplication detection, refactoring guidance, maintainable code, code reuse |
 | [eda](skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data |
+| [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | engineering principles, SOLID, DRY, KISS, separation of concerns, code architecture, defensive programming, clean code |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | ensemble methods, bagging, boosting, stacking, voting, blending, ensemble learning |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | event-driven, event driven architecture, pub/sub, event sourcing, CQRS, saga pattern, outbox pattern, message queue, eventual consistency |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | experimental design, DOE, factorial design, randomization, blocking, how do I design experiments |
@@ -928,7 +929,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (229 skills)
+### Implementation (Build Features) (230 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -997,6 +998,7 @@ MIT — All skills are freely available and redistributable.
 | [driven-development](skills/coding/driven-development/SKILL.md) | Coding | "Test-Driven Development (TDD) and Behavior-Driven Development (BDD) patterns" with pytest, unit tests, mocking, and test pyramid principles |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Coding | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases |
 | [eda](skills/coding/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" |
+| [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Coding | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. |
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" |
 | [error-handling](skills/go/error-handling/SKILL.md) | Go | Designs robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery strategies for resilient applications. |
@@ -1772,6 +1774,7 @@ MIT — All skills are freely available and redistributable.
 | [eda](skills/coding/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | Implementation |
 | [eks](skills/cncf/eks/SKILL.md) | Cncf | "Deploys managed Kubernetes clusters with EKS for container orchestration" auto-scaling, networking, and integrations with AWS services for production Kubernetes workloads. | Reference |
 | [elb](skills/cncf/elb/SKILL.md) | Cncf | "Configures Elastic Load Balancing (ALB, NLB, Classic) for distributing" traffic across instances with health checks, SSL termination, and cross-AZ failover. | Reference |
+| [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Coding | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | Implementation |
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" | Implementation |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | Implementation |
 | [envoy](skills/cncf/envoy/SKILL.md) | Cncf | "Envoy in Cloud-Native Engineering - Cloud-native high-performance edge/middle/service" proxy | Reference |
