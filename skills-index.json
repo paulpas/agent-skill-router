@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-05-19T03:42:31.815873Z",
-  "totalSkills": 604,
+  "generatedAt": "2026-05-19T12:17:11.339916Z",
+  "totalSkills": 620,
   "domains": {
-    "agent": 234,
+    "agent": 235,
     "cncf": 169,
-    "coding": 91,
+    "coding": 104,
     "go": 12,
-    "linux": 10,
-    "programming": 4,
+    "linux": 11,
+    "programming": 5,
     "trading": 83,
     "writing": 1
   },
   "roles": {
-    "orchestration": 224,
-    "implementation": 221,
+    "orchestration": 225,
+    "implementation": 233,
     "information": 1,
-    "reference": 157,
+    "reference": 160,
     "review": 1
   },
   "skills": [
@@ -426,6 +426,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/data-alternative-data/SKILL.md"
+    },
+    {
+      "name": "ampersand-operator",
+      "domain": "coding",
+      "description": "Implements correct usage patterns for the ampersand (&) operator across programming languages — bitwise AND, logical AND short-circuit evaluation, type intersections, references, and address-of operations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ampersand",
+        "& operator",
+        "bitwise AND",
+        "logical AND",
+        "short-circuit evaluation",
+        "intersection types",
+        "Rust borrowing",
+        "shell backgrounding",
+        "address-of"
+      ],
+      "relatedSkills": [
+        "bitwise-operations",
+        "type-systems",
+        "memory-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ampersand-operator/SKILL.md"
     },
     {
       "name": "analyze-project",
@@ -4311,6 +4337,30 @@
       "source": "skills/coding/domain-driven-design/SKILL.md"
     },
     {
+      "name": "domain-modeling",
+      "domain": "coding",
+      "description": "Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "analysis",
+      "triggers": [
+        "domain modeling",
+        "ubiquitous language",
+        "bounded context",
+        "subdomain classification",
+        "domain map",
+        "how do i understand the domain",
+        "strategic design"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "software-design-principles",
+        "framework-requirements"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/domain-modeling/SKILL.md"
+    },
+    {
       "name": "dragonfly",
       "domain": "cncf",
       "description": "\"Provides Dragonfly in Cloud-Native Engineering - P2P file distribution\"",
@@ -4639,6 +4689,31 @@
       "source": "skills/cncf/aws-elb/SKILL.md"
     },
     {
+      "name": "engineering-principles",
+      "domain": "coding",
+      "description": "Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "engineering principles",
+        "SOLID",
+        "DRY",
+        "KISS",
+        "separation of concerns",
+        "code architecture",
+        "defensive programming",
+        "clean code"
+      ],
+      "relatedSkills": [
+        "code-review",
+        "refactoring",
+        "test-driven-development"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/engineering-principles/SKILL.md"
+    },
+    {
       "name": "enrichment",
       "domain": "trading",
       "description": "\"Provides Data enrichment techniques for adding context to raw trading data\"",
@@ -4764,6 +4839,33 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/etcd/SKILL.md"
+    },
+    {
+      "name": "event-driven-patterns",
+      "domain": "coding",
+      "description": "Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "event-driven",
+        "event driven architecture",
+        "pub/sub",
+        "event sourcing",
+        "CQRS",
+        "saga pattern",
+        "outbox pattern",
+        "message queue",
+        "eventual consistency"
+      ],
+      "relatedSkills": [
+        "microservices-patterns",
+        "architecture-decision-records",
+        "domain-driven-design",
+        "test-driven-development"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/event-driven-patterns/SKILL.md"
     },
     {
       "name": "event-hubs",
@@ -5276,6 +5378,31 @@
       "source": "skills/cncf/flux/SKILL.md"
     },
     {
+      "name": "for-loop-iteration",
+      "domain": "programming",
+      "description": "Teaches idiomatic for loop patterns across Python, JavaScript, Go, C/C++, Rust, and shell scripting with anti-patterns, common pitfalls, and best practices.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "for loop",
+        "iteration",
+        "loop patterns",
+        "enumerate",
+        "range",
+        "iterator",
+        "list comprehension",
+        "index-based loop",
+        "how do i iterate over a collection"
+      ],
+      "relatedSkills": [
+        "algorithms",
+        "sorting-algorithms"
+      ],
+      "version": "1.0.0",
+      "source": "skills/programming/for-loop-iteration/SKILL.md"
+    },
+    {
       "name": "framework",
       "domain": "cncf",
       "description": "\"Operator Framework in Tools to build and manage Kubernetes operators\" with standardized patterns",
@@ -5292,6 +5419,30 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/operator-framework/SKILL.md"
+    },
+    {
+      "name": "framework-requirements",
+      "domain": "coding",
+      "description": "Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework setup",
+        "project scaffolding",
+        "dependency configuration",
+        "boilerplate generation",
+        "environment validation",
+        "starter kits",
+        "tech stack selection"
+      ],
+      "relatedSkills": [
+        "test-driven-development",
+        "software-design-principles",
+        "design-patterns-and-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-requirements/SKILL.md"
     },
     {
       "name": "framework-selection",
@@ -6019,6 +6170,29 @@
       "source": "skills/agent/helpdesk-automation/SKILL.md"
     },
     {
+      "name": "hexagonal-architecture",
+      "domain": "coding",
+      "description": "Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "hexagonal architecture",
+        "ports and adapters",
+        "clean architecture",
+        "dependency inversion",
+        "core business logic",
+        "how do i decouple my code",
+        "separate business logic from framework"
+      ],
+      "relatedSkills": [
+        "test-driven-development",
+        "event-driven-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/hexagonal-architecture/SKILL.md"
+    },
+    {
       "name": "hierarchical-agent-memory",
       "domain": "agent",
       "description": "Implements intelligent hierarchical agent memory with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -6525,6 +6699,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-instrumental-variables/SKILL.md"
+    },
+    {
+      "name": "intelligent-skill-selection",
+      "domain": "agent",
+      "description": "Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "skill selection",
+        "task routing",
+        "choosing the right skill",
+        "semantic matching",
+        "confidence threshold",
+        "adaptive routing",
+        "agent dispatch",
+        "fallback strategy"
+      ],
+      "relatedSkills": [
+        "dependency-graph-builder",
+        "parallel-skill-runner",
+        "dynamic-replanner"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/intelligent-skill-selection/SKILL.md"
     },
     {
       "name": "intercom-automation",
@@ -7800,6 +7999,30 @@
       "source": "skills/agent/make-automation/SKILL.md"
     },
     {
+      "name": "make-build-system",
+      "domain": "linux",
+      "description": "Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, and cross-compilation for reproducible software builds.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "makefile",
+        "GNU make",
+        "build automation",
+        "incremental builds",
+        "phony targets",
+        "make variables",
+        "dependency graph",
+        "cross-compilation"
+      ],
+      "relatedSkills": [
+        "linux-services",
+        "coding-test-driven-development"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/make-build-system/SKILL.md"
+    },
+    {
       "name": "makefile",
       "domain": "coding",
       "description": "Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes.",
@@ -8161,6 +8384,32 @@
       "source": "skills/coding/ds-metrics-and-kpis/SKILL.md"
     },
     {
+      "name": "microservices-architecture",
+      "domain": "coding",
+      "description": "Implements microservices architecture patterns (bounded contexts, API gateway, event-driven communication, saga orchestration) for decomposing monolithic applications into scalable, independent services.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "microservices architecture",
+        "service decomposition",
+        "bounded context",
+        "how do i split a monolith",
+        "inter-service communication",
+        "event-driven messaging",
+        "API gateway",
+        "saga pattern"
+      ],
+      "relatedSkills": [
+        "coding-monolith-refactoring",
+        "coding-domain-driven-design",
+        "cncf-kubernetes-deployment",
+        "coding-event-driven-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/microservices-architecture/SKILL.md"
+    },
+    {
       "name": "missing-data",
       "domain": "coding",
       "description": "\"Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information\"",
@@ -8434,6 +8683,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/azure-monitor/SKILL.md"
+    },
+    {
+      "name": "monolith-architecture",
+      "domain": "coding",
+      "description": "Implements modular monolith patterns (bounded-context layering, hexagonal ports, database-per-module, interface-based inter-module communication) to build cleanly structured single-deployable applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "monolith",
+        "monolithic architecture",
+        "modular monolith",
+        "how do i structure a monolith",
+        "code organization",
+        "layered architecture",
+        "hexagonal architecture in monolith",
+        "single deployable unit"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "software-architecture",
+        "domain-driven-design",
+        "architectural-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/monolith-architecture/SKILL.md"
     },
     {
       "name": "monte-carlo",
@@ -9483,6 +9758,30 @@
       "source": "skills/agent/outlook-calendar-automation/SKILL.md"
     },
     {
+      "name": "output-formatting",
+      "domain": "coding",
+      "description": "Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "output formatting",
+        "structured output",
+        "json schema",
+        "response templating",
+        "deterministic output",
+        "data validation",
+        "prompt engineering"
+      ],
+      "relatedSkills": [
+        "prompt-engineering",
+        "error-handling",
+        "test-driven-development"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/output-formatting/SKILL.md"
+    },
+    {
       "name": "parallel-agents",
       "domain": "agent",
       "description": "Implements intelligent parallel agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -9615,6 +9914,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/performance-profiler/SKILL.md"
+    },
+    {
+      "name": "personal-knowledge-management",
+      "domain": "coding",
+      "description": "Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficiently.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "personal knowledge management",
+        "PKM",
+        "Zettelkasten",
+        "PARA framework",
+        "note taking",
+        "how do i organize my notes",
+        "knowledge base",
+        "second brain"
+      ],
+      "relatedSkills": [
+        "test-driven-development",
+        "refactoring",
+        "code-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/personal-knowledge-management/SKILL.md"
     },
     {
       "name": "pipecat-friday-agent",
@@ -11160,6 +11484,30 @@
       "source": "skills/agent/shopify-automation/SKILL.md"
     },
     {
+      "name": "single-letter-variables",
+      "domain": "coding",
+      "description": "Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "single letter variables",
+        "naming conventions",
+        "code readability",
+        "variable names",
+        "a b c d x y z",
+        "ambiguous identifiers",
+        "code review"
+      ],
+      "relatedSkills": [
+        "code-review",
+        "refactoring-legacy-code",
+        "dry-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/single-letter-variables/SKILL.md"
+    },
+    {
       "name": "skill-creator",
       "domain": "agent",
       "description": "Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -11228,24 +11576,23 @@
     {
       "name": "skill-engineering",
       "domain": "agent",
-      "description": "Engineers production-ready AI skills following framework standards, including YAML frontmatter, trigger design, workflow structuring, and stub prevention for reliable agent routing.",
+      "description": "Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system.",
       "role": "implementation",
-      "scope": "infrastructure",
+      "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "skill design",
-        "skill creation",
-        "AI skill",
-        "framework standards",
         "trigger engineering",
-        "workflow pattern",
-        "agent configuration",
-        "skill routing"
+        "SKILL.md crafting",
+        "stub detection",
+        "skill generation",
+        "agent skill routing",
+        "how do i create a skill"
       ],
       "relatedSkills": [
-        "confidence-based-selector",
-        "task-routing-engine",
-        "dependency-graph-builder"
+        "coding-code-review",
+        "agent-task-routing",
+        "coding-security-review"
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-engineering/SKILL.md"
@@ -11562,26 +11909,75 @@
       "source": "skills/cncf/aws-sns/SKILL.md"
     },
     {
-      "name": "software-design-principles",
+      "name": "software-architecture",
       "domain": "coding",
-      "description": "Implements core software design principles (SOLID, KISS, YAGNI, composition over inheritance, DRY) to guide architecture decisions and prevent structural debt.",
+      "description": "Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns.",
+      "role": "reference",
+      "scope": "infrastructure",
+      "outputFormat": "analysis",
+      "triggers": [
+        "software architecture",
+        "system design",
+        "layered architecture",
+        "hexagonal architecture",
+        "clean architecture",
+        "separation of concerns",
+        "scalable design",
+        "architectural patterns"
+      ],
+      "relatedSkills": [
+        "code-review",
+        "test-driven-development",
+        "modular-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-architecture/SKILL.md"
+    },
+    {
+      "name": "software-delivery-pipelines",
+      "domain": "coding",
+      "description": "Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "software design",
-        "SOLID principles",
-        "KISS",
-        "YAGNI",
+        "CI/CD pipeline",
+        "continuous integration",
+        "continuous deployment",
+        "deployment strategy",
+        "blue-green deployment",
+        "canary release",
+        "how do i set up CI/CD"
+      ],
+      "relatedSkills": [
+        "secure-release-pipeline",
+        "test-driven-development",
+        "semver-automation",
+        "git-branching-strategies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-delivery-pipelines/SKILL.md"
+    },
+    {
+      "name": "software-design-principles",
+      "domain": "coding",
+      "description": "Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "software design principles",
+        "SOLID",
         "DRY",
-        "composition over inheritance",
-        "clean code",
+        "KISS",
+        "dependency injection",
+        "clean architecture",
         "modular design"
       ],
       "relatedSkills": [
-        "coding-code-review",
-        "coding-design-patterns",
-        "coding-refactoring"
+        "refactoring",
+        "test-driven-development",
+        "code-review"
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-design-principles/SKILL.md"
