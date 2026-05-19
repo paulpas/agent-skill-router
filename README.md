@@ -264,22 +264,24 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 13:36:13 UTC  
-> **Total skills:** 635
+> **Last updated:** 2026-05-19 14:09:00 UTC  
+> **Total skills:** 637
 
 ## Skills by Domain
 
 
-### Agent (238 skills)
+### Agent (240 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [acceptance-orchestrator](skills/agent/acceptance-orchestrator/SKILL.md) | Implements intelligent acceptance orchestrator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | acceptance-orchestrator, acceptance orchestrator, how do i acceptance-orchestrator, orchestrate acceptance-orchestrator, automate acceptance-orchestrator, agent acceptance-orchestrator |
 | [address-github-comments](skills/agent/address-github-comments/SKILL.md) | Implements intelligent address github comments with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | address-github-comments, address github comments, how do i address-github-comments, orchestrate address-github-comments, automate address-github-comments, agent address-github-comments |
+| [agent-architecture-patterns](skills/agent/agent-architecture-patterns/SKILL.md) | Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives. | agent architecture, multi-agent system, design patterns, pub-sub messaging, circuit breakers, state management, event-driven architecture, service discovery, fault tolerance |
 | [agent-context-management](skills/agent/agent-context-management/SKILL.md) | Implements context window management, sliding window strategies, and persistent memory patterns to maintain AI agent coherence across long interactions. | context window, agent memory, sliding window, session state, prompt optimization, rag, token management, long conversation history |
 | [agent-evaluation](skills/agent/agent-evaluation/SKILL.md) | Implements intelligent agent evaluation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-evaluation, agent evaluation, how do i agent-evaluation, orchestrate agent-evaluation, automate agent-evaluation, agent agent-evaluation |
 | [agent-manager-skill](skills/agent/agent-manager-skill/SKILL.md) | Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-manager-skill, agent manager skill, how do i agent-manager-skill, orchestrate agent-manager-skill, automate agent-manager-skill, agent agent-manager-skill |
 | [agent-memory-systems](skills/agent/agent-memory-systems/SKILL.md) | Implements intelligent agent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-memory-systems, agent memory systems, how do i agent-memory-systems, orchestrate agent-memory-systems, automate agent-memory-systems, agent agent-memory-systems |
+| [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. | fault tolerance, circuit breaker, retry strategy, exponential backoff, graceful degradation, health check, dead letter queue, timeout management, reliability engineering, agent resilience |
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-agent-development, ai agent development, how do i ai-agent-development, orchestrate ai-agent-development, automate ai-agent-development, agent ai-agent-development |
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-agents-architect, ai agents architect, how do i ai-agents-architect, orchestrate ai-agents-architect, automate ai-agents-architect, agent ai-agents-architect |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-dev-jobs-mcp, ai dev jobs mcp, how do i ai-dev-jobs-mcp, orchestrate ai-dev-jobs-mcp, automate ai-dev-jobs-mcp, agent ai-dev-jobs-mcp |
@@ -955,12 +957,14 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (245 skills)
+### Implementation (Build Features) (247 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [ab-testing](skills/coding/ab-testing/SKILL.md) | Coding | Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation |
 | [advanced-patterns](skills/go/advanced-patterns/SKILL.md) | Go | Applies advanced Go patterns including generics, reflection, functional options, and metaprogramming for performance-critical and framework-level code. |
+| [agent-architecture-patterns](skills/agent/agent-architecture-patterns/SKILL.md) | Agent | Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives. |
+| [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
 | [alternative-data](skills/trading/alternative-data/SKILL.md) | Trading | "Alternative data ingestion pipelines for trading signals including news" social media, and on-chain data sources |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements correct usage patterns for the ampersand (&) operator across programming languages — bitwise AND, logical AND short-circuit evaluation, type intersections, references, and address-of operations. |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | Coding | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" |
@@ -1621,10 +1625,12 @@ MIT — All skills are freely available and redistributable.
 | [address-github-comments](skills/agent/address-github-comments/SKILL.md) | Agent | Implements intelligent address github comments with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [advanced](skills/coding/advanced/SKILL.md) | Coding | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | Reference |
 | [advanced-patterns](skills/go/advanced-patterns/SKILL.md) | Go | Applies advanced Go patterns including generics, reflection, functional options, and metaprogramming for performance-critical and framework-level code. | Implementation |
+| [agent-architecture-patterns](skills/agent/agent-architecture-patterns/SKILL.md) | Agent | Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives. | Implementation |
 | [agent-context-management](skills/agent/agent-context-management/SKILL.md) | Agent | Implements context window management, sliding window strategies, and persistent memory patterns to maintain AI agent coherence across long interactions. | Orchestration |
 | [agent-evaluation](skills/agent/agent-evaluation/SKILL.md) | Agent | Implements intelligent agent evaluation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [agent-manager-skill](skills/agent/agent-manager-skill/SKILL.md) | Agent | Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [agent-memory-systems](skills/agent/agent-memory-systems/SKILL.md) | Agent | Implements intelligent agent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. | Implementation |
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Agent | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Agent | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
