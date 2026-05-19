@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 19:38:19 UTC  
-> **Total skills:** 638
+> **Last updated:** 2026-05-19 15:19:40 UTC  
+> **Total skills:** 640
 
 ## Skills by Domain
 
@@ -867,7 +867,7 @@ MIT — All skills are freely available and redistributable.
 | [v12-learning](skills/programming/v12-learning/SKILL.md) | "Reference guide for Progress OpenEdge ABL 12.7 (2023) — v10→v12 migration" INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic collections, safe navigation operator, server-side joins | abl v12, openedge 12, abl 12.7, v10 to v12 migration, abl migration, catch throw, jsonobject, read-json |
 
 
-### Trading (83 skills)
+### Trading (85 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -912,6 +912,8 @@ MIT — All skills are freely available and redistributable.
 | [order-book-sync](skills/trading/order-book-sync/SKILL.md) | "Provides Order book synchronization and state management for accurate trading" | exchange order book sync, exchange-order-book-sync, management, state, synchronization |
 | [order-execution-api](skills/trading/order-execution-api/SKILL.md) | "Implements order execution and management api for trading systems for risk management and algorithmic trading execution." | exchange order execution api, exchange-order-execution-api, management, systems, trading |
 | [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | "Provides Analyze order flow to detect market pressure and anticipate price moves" | ai order flow analysis, ai-order-flow-analysis, analyze, detect, market |
+| [order-flow-footprint](skills/trading/order-flow-footprint/SKILL.md) | Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures. | footprint chart, volume delta, cumulative delta, order flow analysis, delta divergence, stacked imbalance, aggressive buying, order flow footprint |
+| [order-flow-toxicity](skills/trading/order-flow-toxicity/SKILL.md) | Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk. | order flow toxicity, VPIN, PIN model, adverse selection, predatory HFT, toxic flow, informed trading, liquidity provider toxicity |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | "Provides Performance Attribution Systems for Trading Strategy Decomposition" | optimization, paper performance attribution, paper-performance-attribution, strategy, systems, trading, performance, speed |
 | [position-exits](skills/trading/position-exits/SKILL.md) | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. | backtest position exits, backtest-position-exits, stops, strategies, trailing |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' | algorithms, backtest position sizing, backtest-position-sizing, fixed, fractional |
@@ -958,7 +960,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (248 skills)
+### Implementation (Build Features) (250 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1126,6 +1128,8 @@ MIT — All skills are freely available and redistributable.
 | [order-book-sync](skills/trading/order-book-sync/SKILL.md) | Trading | "Provides Order book synchronization and state management for accurate trading" |
 | [order-execution-api](skills/trading/order-execution-api/SKILL.md) | Trading | "Implements order execution and management api for trading systems for risk management and algorithmic trading execution." |
 | [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | "Provides Analyze order flow to detect market pressure and anticipate price moves" |
+| [order-flow-footprint](skills/trading/order-flow-footprint/SKILL.md) | Trading | Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures. |
+| [order-flow-toxicity](skills/trading/order-flow-toxicity/SKILL.md) | Trading | Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk. |
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Coding | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. |
 | [patterns](skills/coding/patterns/SKILL.md) | Coding | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading Strategy Decomposition" |
@@ -2058,6 +2062,8 @@ MIT — All skills are freely available and redistributable.
 | [order-book-sync](skills/trading/order-book-sync/SKILL.md) | Trading | "Provides Order book synchronization and state management for accurate trading" | Implementation |
 | [order-execution-api](skills/trading/order-execution-api/SKILL.md) | Trading | "Implements order execution and management api for trading systems for risk management and algorithmic trading execution." | Implementation |
 | [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | "Provides Analyze order flow to detect market pressure and anticipate price moves" | Implementation |
+| [order-flow-footprint](skills/trading/order-flow-footprint/SKILL.md) | Trading | Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures. | Implementation |
+| [order-flow-toxicity](skills/trading/order-flow-toxicity/SKILL.md) | Trading | Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk. | Implementation |
 | [os-scripting](skills/agent/os-scripting/SKILL.md) | Agent | Implements intelligent os scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [osi](skills/cncf/osi/SKILL.md) | Cncf | "OSI Model Networking for Cloud-Native - All 7 layers with CNCF project" mappings, Kubernetes networking, and troubleshooting patterns. | Reference |
 | [outlook-automation](skills/agent/outlook-automation/SKILL.md) | Agent | Implements intelligent outlook automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
