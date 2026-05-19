@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-19T23:17:38.279194Z",
-  "totalSkills": 648,
+  "generatedAt": "2026-05-19T23:57:02.290447Z",
+  "totalSkills": 649,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 119,
+    "coding": 120,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 256,
+    "implementation": 257,
     "reference": 161,
     "information": 1,
     "review": 2
@@ -5677,6 +5677,31 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/operator-framework/SKILL.md"
+    },
+    {
+      "name": "framework-design",
+      "domain": "coding",
+      "description": "Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework design",
+        "architectural blueprint",
+        "extension points",
+        "adapter pattern",
+        "interface contracts",
+        "composition root",
+        "framework integration"
+      ],
+      "relatedSkills": [
+        "software-architecture",
+        "modular-design",
+        "error-handling",
+        "fastapi-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-design/SKILL.md"
     },
     {
       "name": "framework-performance-tuning",
