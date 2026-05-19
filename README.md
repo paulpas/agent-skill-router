@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 06:00:29 UTC  
-> **Total skills:** 618
+> **Last updated:** 2026-05-19 06:26:49 UTC  
+> **Total skills:** 619
 
 ## Skills by Domain
 
@@ -685,7 +685,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (104 skills)
+### Coding (105 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -770,6 +770,7 @@ MIT — All skills are freely available and redistributable.
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. | output formatting, structured output, json schema, response templating, deterministic output, data validation, prompt engineering |
 | [patterns](skills/coding/patterns/SKILL.md) | "Provides Software architecture patterns including MVC, MVVM, microservices, event-driven, CQRS, DDD, hexagonal architecture, layered architecture, and pattern" | architectural patterns, system design, architecture, microservices, design patterns, CQRS, DDD, hexagonal architecture |
 | [patterns](skills/coding/patterns/SKILL.md) | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events | application, cloud infrastructure, fastapi patterns, fastapi-patterns, structure, typed |
+| [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | randomized experiments, RCT, experimental design, randomization, blocking, sample size |
@@ -932,7 +933,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (232 skills)
+### Implementation (Build Features) (233 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1093,6 +1094,7 @@ MIT — All skills are freely available and redistributable.
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Coding | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. |
 | [patterns](skills/coding/patterns/SKILL.md) | Coding | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading Strategy Decomposition" |
+| [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... |
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "Calculating optimal position sizes using Kelly criterion, volatility" adjustments, and edge-based sizing to maximize long-term growth while managing risk |
@@ -2011,6 +2013,7 @@ MIT — All skills are freely available and redistributable.
 | [patterns](skills/coding/patterns/SKILL.md) | Coding | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events | Implementation |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading Strategy Decomposition" | Implementation |
 | [performance-profiler](skills/agent/performance-profiler/SKILL.md) | Agent | Implements intelligent performance profiler with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | Implementation |
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Agent | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Agent | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Agent | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
