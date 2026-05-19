@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 05:24:09 UTC  
-> **Total skills:** 616
+> **Last updated:** 2026-05-19 05:45:32 UTC  
+> **Total skills:** 617
 
 ## Skills by Domain
 
@@ -685,7 +685,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (102 skills)
+### Coding (103 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -723,6 +723,7 @@ MIT — All skills are freely available and redistributable.
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" | dimensionality reduction, PCA, t-SNE, UMAP, feature extraction, how do i reduce dimensions |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | distribution fitting, goodness-of-fit, fitting distributions, distribution selection, how do i fit |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns |
+| [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | domain modeling, ubiquitous language, bounded context, subdomain classification, domain map, how do i understand the domain, strategic design |
 | [driven-architecture](skills/coding/driven-architecture/SKILL.md) | "'Event-driven architecture for real-time trading systems: pub/sub patterns" event types, signal flow, strategy base, and common pitfalls' | event driven architecture, event-driven, event-driven-architecture, real-time, trading, eventbridge, event bus, event routing |
 | [driven-development](skills/coding/driven-development/SKILL.md) | "Test-Driven Development (TDD) and Behavior-Driven Development (BDD) patterns" with pytest, unit tests, mocking, and test pyramid principles | behavior-driven, patterns, test driven development, test-driven, test-driven-development |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | dry principle, don't repeat yourself, code duplication, refactoring, code duplication detection, refactoring guidance, maintainable code, code reuse |
@@ -1167,7 +1168,7 @@ MIT — All skills are freely available and redistributable.
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." |
 
 
-### Reference (Learn & Understand) (159 skills)
+### Reference (Learn & Understand) (160 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1219,6 +1220,7 @@ MIT — All skills are freely available and redistributable.
 | [dapr](skills/cncf/dapr/SKILL.md) | Cncf | "Provides Dapr in Cloud-Native Engineering - distributed application runtime" |
 | [deployment-manager](skills/cncf/deployment-manager/SKILL.md) | Cncf | "Infrastructure as code using YAML templates for repeatable GCP resource" deployments. |
 | [deployment-philosophy](skills/cncf/deployment-philosophy/SKILL.md) | Cncf | Architects multi-stage deployment strategies that balance speed, safety, and reliability through systematic risk assessment and controlled change delivery. |
+| [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Coding | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. |
 | [dragonfly](skills/cncf/dragonfly/SKILL.md) | Cncf | "Provides Dragonfly in Cloud-Native Engineering - P2P file distribution" |
 | [dynamodb](skills/cncf/dynamodb/SKILL.md) | Cncf | "Deploys managed NoSQL databases with DynamoDB for scalable, low-latency" key-value storage, streams, and global tables with high availability and automatic replication. |
 | [ec2](skills/cncf/ec2/SKILL.md) | Cncf | "Deploys, configures, and auto-scales EC2 instances with load balancing" using best practices for high availability, security, and cost optimization in AWS compute environments. |
@@ -1762,6 +1764,7 @@ MIT — All skills are freely available and redistributable.
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization | Implementation |
 | [documentation](skills/agent/documentation/SKILL.md) | Agent | Implements intelligent documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | Implementation |
+| [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Coding | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | Reference |
 | [dragonfly](skills/cncf/dragonfly/SKILL.md) | Cncf | "Provides Dragonfly in Cloud-Native Engineering - P2P file distribution" | Reference |
 | [drawdown-analysis](skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." | Implementation |
 | [drawdown-control](skills/trading/drawdown-control/SKILL.md) | Trading | "Implements maximum drawdown control and equity preservation for risk management and algorithmic trading execution." | Implementation |
