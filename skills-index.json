@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-19T22:26:36.118182Z",
-  "totalSkills": 646,
+  "generatedAt": "2026-05-19T23:00:14.407200Z",
+  "totalSkills": 647,
   "domains": {
     "agent": 242,
     "cncf": 169,
     "coding": 118,
     "go": 12,
-    "linux": 11,
+    "linux": 12,
     "maker": 3,
     "programming": 5,
     "trading": 85,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 254,
+    "implementation": 255,
     "reference": 161,
     "information": 1,
     "review": 2
@@ -485,25 +485,22 @@
     {
       "name": "ampersand-operator",
       "domain": "coding",
-      "description": "Implements correct usage patterns for the ampersand (&) operator across programming languages — bitwise AND, logical AND short-circuit evaluation, type intersections, references, and address-of operations.",
+      "description": "Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "ampersand",
-        "& operator",
+        "&",
+        "ampersand operator",
         "bitwise AND",
-        "logical AND",
-        "short-circuit evaluation",
-        "intersection types",
-        "Rust borrowing",
-        "shell backgrounding",
-        "address-of"
+        "address of",
+        "flag checking",
+        "bitmask",
+        "pointer manipulation"
       ],
       "relatedSkills": [
-        "bitwise-operations",
-        "type-systems",
-        "memory-management"
+        "coding-bitwise-operations",
+        "coding-error-handling"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ampersand-operator/SKILL.md"
@@ -12006,6 +12003,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/backtest-sharpe-ratio/SKILL.md"
+    },
+    {
+      "name": "shell-process-management",
+      "domain": "linux",
+      "description": "Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "shell background processes",
+        "parallel execution",
+        "job control",
+        "fg bg jobs wait",
+        "xargs P flag",
+        "background shell",
+        "process management"
+      ],
+      "relatedSkills": [
+        "linux-services",
+        "linux-filesystem"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/shell-process-management/SKILL.md"
     },
     {
       "name": "shop",
