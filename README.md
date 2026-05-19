@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 23:00:15 UTC  
-> **Total skills:** 647
+> **Last updated:** 2026-05-19 23:17:39 UTC  
+> **Total skills:** 648
 
 ## Skills by Domain
 
@@ -693,7 +693,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (119 skills)
+### Coding (120 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -701,6 +701,7 @@ MIT — All skills are freely available and redistributable.
 | [advanced](skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | git rebase, git cherry-pick, git bisect, git reflog, worktrees, filter-branch, multi-repo, advanced git |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. | &, ampersand operator, bitwise AND, address of, flag checking, bitmask, pointer manipulation |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" | anomaly detection, outlier detection, isolation forest, LOF, one-class SVM, how do I detect anomalies |
+| [api-design](skills/coding/api-design/SKILL.md) | Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services. | api design, rest api, endpoint design, api architecture, resource modeling, error handling patterns, pagination strategy, rate limiting, api versioning, graphql design, web service design, http methods, idempotency |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
 | [association-rules](skills/coding/association-rules/SKILL.md) | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | association rules, market basket, apriori, frequent itemsets, recommendation, pattern mining |
 | [automation](skills/coding/automation/SKILL.md) | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | semantic versioning, semver, version bumping, conventional commits, semantic-release, changelog automation, release automation, git tags |
@@ -967,7 +968,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (255 skills)
+### Implementation (Build Features) (256 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -979,6 +980,7 @@ MIT — All skills are freely available and redistributable.
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | Coding | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" |
 | [anomaly-detection](skills/trading/anomaly-detection/SKILL.md) | Trading | "Provides Detect anomalous market behavior, outliers, and potential market manipulation" |
+| [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services. |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. |
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" |
@@ -1669,6 +1671,7 @@ MIT — All skills are freely available and redistributable.
 | [anomaly-detection](skills/trading/anomaly-detection/SKILL.md) | Trading | "Provides Detect anomalous market behavior, outliers, and potential market manipulation" | Implementation |
 | [antigravity-skill-orchestrator](skills/agent/antigravity-skill-orchestrator/SKILL.md) | Agent | Implements intelligent antigravity skill orchestrator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [antigravity-workflows](skills/agent/antigravity-workflows/SKILL.md) | Agent | Implements intelligent antigravity workflows with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services. | Implementation |
 | [api-documentation](skills/agent/api-documentation/SKILL.md) | Agent | Implements intelligent api documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-security-testing](skills/agent/api-security-testing/SKILL.md) | Agent | Implements intelligent api security testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [apify-actor-development](skills/agent/apify-actor-development/SKILL.md) | Agent | Implements intelligent apify actor development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

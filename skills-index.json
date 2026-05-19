@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-19T23:00:14.407200Z",
-  "totalSkills": 647,
+  "generatedAt": "2026-05-19T23:17:38.279194Z",
+  "totalSkills": 648,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 118,
+    "coding": 119,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 255,
+    "implementation": 256,
     "reference": 161,
     "information": 1,
     "review": 2
@@ -682,6 +682,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/antigravity-workflows/SKILL.md"
+    },
+    {
+      "name": "api-design",
+      "domain": "coding",
+      "description": "Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "api design",
+        "rest api",
+        "endpoint design",
+        "api architecture",
+        "resource modeling",
+        "error handling patterns",
+        "pagination strategy",
+        "rate limiting",
+        "api versioning",
+        "graphql design",
+        "web service design",
+        "http methods",
+        "idempotency"
+      ],
+      "relatedSkills": [
+        "code-review",
+        "testing",
+        "security-review",
+        "documentation-writing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-design/SKILL.md"
     },
     {
       "name": "api-documentation",
