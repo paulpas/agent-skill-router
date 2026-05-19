@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 00:15:50 UTC  
-> **Total skills:** 607
+> **Last updated:** 2026-05-19 00:33:17 UTC  
+> **Total skills:** 608
 
 ## Skills by Domain
 
@@ -685,7 +685,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (94 skills)
+### Coding (95 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -749,6 +749,7 @@ MIT — All skills are freely available and redistributable.
 | [manager](skills/coding/manager/SKILL.md) | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing | connection, machine, ml, state, websocket manager, websocket-manager, machine learning, ai |
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models | maximum likelihood, MLE, likelihood estimation, likelihood function, optimization, performance, speed |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | metrics, KPI, key performance indicator, business metrics, metric definition, how do I choose metrics, cloudwatch, optimization |
+| [microservices-architecture](skills/coding/microservices-architecture/SKILL.md) | Implements microservices architecture patterns (bounded contexts, API gateway, event-driven communication, saga orchestration) for decomposing monolithic applications into scalable, independent services. | microservices architecture, service decomposition, bounded context, how do i split a monolith, inter-service communication, event-driven messaging, API gateway, saga pattern |
 | [missing-data](skills/coding/missing-data/SKILL.md) | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" | missing data, imputation, NaN handling, missing values, how do i handle missing data, data gaps |
 | [model-fairness](skills/coding/model-fairness/SKILL.md) | "Evaluates and mitigates fairness issues including bias detection, fairness metrics, and debiasing strategies in machine learning" | model fairness, fairness metrics, bias detection, debiasing, fair machine learning, how do I check bias |
 | [model-interpretation](skills/coding/model-interpretation/SKILL.md) | "Provides Interprets models using SHAP values, LIME, feature importance, permutation importance, and other explainability techniques" | model interpretation, SHAP, LIME, feature importance, explainability, how do I explain models |
@@ -921,7 +922,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (223 skills)
+### Implementation (Build Features) (224 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1045,6 +1046,7 @@ MIT — All skills are freely available and redistributable.
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Agent | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" |
+| [microservices-architecture](skills/coding/microservices-architecture/SKILL.md) | Coding | Implements microservices architecture patterns (bounded contexts, API gateway, event-driven communication, saga orchestration) for decomposing monolithic applications into scalable, independent services. |
 | [missing-data](skills/coding/missing-data/SKILL.md) | Coding | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" |
 | [mobile-applications](skills/go/mobile-applications/SKILL.md) | Go | Develops cross-platform mobile applications with Go using Fyne and Go mobile for iOS and Android with platform-optimized UI patterns. |
 | [model-ensemble](skills/trading/model-ensemble/SKILL.md) | Trading | "Provides Combine multiple models for improved prediction accuracy and robustness" |
@@ -1916,6 +1918,7 @@ MIT — All skills are freely available and redistributable.
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems | Implementation |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Agent | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution | Implementation |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | Implementation |
+| [microservices-architecture](skills/coding/microservices-architecture/SKILL.md) | Coding | Implements microservices architecture patterns (bounded contexts, API gateway, event-driven communication, saga orchestration) for decomposing monolithic applications into scalable, independent services. | Implementation |
 | [missing-data](skills/coding/missing-data/SKILL.md) | Coding | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" | Implementation |
 | [ml-pipeline-workflow](skills/agent/ml-pipeline-workflow/SKILL.md) | Agent | Implements intelligent ml pipeline workflow with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mobile-applications](skills/go/mobile-applications/SKILL.md) | Go | Develops cross-platform mobile applications with Go using Fyne and Go mobile for iOS and Android with platform-optimized UI patterns. | Implementation |
