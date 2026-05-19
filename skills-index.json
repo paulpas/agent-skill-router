@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-19T16:52:04.063628Z",
-  "totalSkills": 632,
+  "generatedAt": "2026-05-19T17:03:54.322752Z",
+  "totalSkills": 633,
   "domains": {
     "agent": 236,
     "cncf": 169,
-    "coding": 112,
+    "coding": 113,
     "go": 12,
     "linux": 11,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 226,
-    "implementation": 244,
+    "implementation": 245,
     "information": 1,
     "reference": 160,
     "review": 1
@@ -941,6 +941,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/apify-ultimate-scraper/SKILL.md"
+    },
+    {
+      "name": "app-configuration-patterns",
+      "domain": "coding",
+      "description": "Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "configuration management",
+        "environment variables",
+        "feature flags",
+        "secrets management",
+        "config validation",
+        ".env files",
+        "yaml configuration",
+        "config overlay"
+      ],
+      "relatedSkills": [
+        "security-review",
+        "deployment-patterns",
+        "software-design-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/app-configuration-patterns/SKILL.md"
     },
     {
       "name": "architecture",
