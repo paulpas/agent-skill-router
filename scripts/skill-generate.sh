@@ -166,9 +166,34 @@ main() {
 
     # Commit and push if configured
     if check_push_permission "$NO_PUSH"; then
-        git add -A
-        git commit -m "feat: generate new skill(s) via opencode" 2>/dev/null || true
-        git push origin main 2>/dev/null && log_ok "Pushed to origin/main" || log_warn "Push failed — commit saved locally"
+        # Check for ongoing rebase - skip commit/push if rebasing
+        if [[ -d "$PROJECT_ROOT/.git/rebase-merge" ]] || [[ -d "$PROJECT_ROOT/.git/rebase-apply" ]]; then
+            log_warn "Interactive rebase in progress - skipping commit/push"
+            log_info "Run 'git rebase --abort' to restore normal operation"
+        else
+            # Check if there are any changes to commit
+            local changes
+            changes=$(git status --porcelain 2>/dev/null)
+            if [[ -z "$changes" ]]; then
+                log_info "No changes to commit"
+            else
+                # Use timestamp-based message to distinguish commits in a loop
+                local timestamp
+                timestamp=$(date +%Y%m%d-%H%M%S)
+                local commit_msg="feat: generate new skill(s) via opencode ($timestamp)"
+                
+                git add -A
+                if git commit -m "$commit_msg" 2>/dev/null; then
+                    if git push origin main 2>/dev/null; then
+                        log_ok "Pushed to origin/main"
+                    else
+                        log_warn "Push failed — commit saved locally"
+                    fi
+                else
+                    log_warn "Commit failed — changes may be empty or already committed"
+                fi
+            fi
+        fi
     fi
 }
 
