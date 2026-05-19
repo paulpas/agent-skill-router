@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-19T16:18:09.397742Z",
-  "totalSkills": 629,
+  "generatedAt": "2026-05-19T16:52:04.063628Z",
+  "totalSkills": 632,
   "domains": {
     "agent": 236,
     "cncf": 169,
-    "coding": 109,
+    "coding": 112,
     "go": 12,
     "linux": 11,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 226,
-    "implementation": 241,
+    "implementation": 244,
     "information": 1,
     "reference": 160,
     "review": 1
@@ -3112,6 +3112,31 @@
     },
     {
       "name": "configuration-management",
+      "domain": "coding",
+      "description": "Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "configuration management",
+        "environment variables",
+        "feature flags",
+        "secrets management",
+        "config validation",
+        ".env files",
+        "yaml configuration",
+        "config overlay"
+      ],
+      "relatedSkills": [
+        "security-review",
+        "deployment-patterns",
+        "software-design-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/configuration-management/SKILL.md"
+    },
+    {
+      "name": "configuration-management",
       "domain": "go",
       "description": "Manages application configuration in Go with environment variables, YAML/JSON parsing, validation, defaults, and hierarchy for multi-environment deployments.",
       "role": "implementation",
@@ -3914,6 +3939,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/database-admin/SKILL.md"
+    },
+    {
+      "name": "database-design-modeling",
+      "domain": "coding",
+      "description": "Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "database design",
+        "schema design",
+        "data modeling",
+        "sql migrations",
+        "indexing strategy",
+        "database normalization",
+        "foreign keys",
+        "entity relationship"
+      ],
+      "relatedSkills": [
+        "backend-dev-guidelines",
+        "api-design-principles",
+        "domain-driven-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/database-design-modeling/SKILL.md"
     },
     {
       "name": "database-patterns",
@@ -9449,6 +9499,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/linux/observability/SKILL.md"
+    },
+    {
+      "name": "observability-patterns",
+      "domain": "coding",
+      "description": "Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "observability",
+        "structured logging",
+        "metrics",
+        "distributed tracing",
+        "open telemetry",
+        "prometheus",
+        "health checks",
+        "debug production"
+      ],
+      "relatedSkills": [
+        "code-review",
+        "security-review",
+        "software-design-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/observability-patterns/SKILL.md"
     },
     {
       "name": "observational-studies",

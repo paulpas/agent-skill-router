@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 16:18:10 UTC  
-> **Total skills:** 629
+> **Last updated:** 2026-05-19 16:52:04 UTC  
+> **Total skills:** 632
 
 ## Skills by Domain
 
@@ -687,7 +687,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (110 skills)
+### Coding (113 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -711,6 +711,7 @@ MIT — All skills are freely available and redistributable.
 | [community-detection](skills/coding/community-detection/SKILL.md) | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | community detection, graph clustering, modularity, spectral clustering, graph partitioning |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals |
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config |
+| [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" | correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | cross-validation, k-fold, stratified cross-validation, time-series cross-validation, validation |
 | [data-collection](skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data |
@@ -720,6 +721,7 @@ MIT — All skills are freely available and redistributable.
 | [data-quality](skills/coding/data-quality/SKILL.md) | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" | data validation, data cleaning, outlier detection, data quality, how do i clean data, missing values |
 | [data-versioning](skills/coding/data-versioning/SKILL.md) | "Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment tracking and governance" | data versioning, data lineage, provenance, reproducibility, data governance, how do i track data |
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" | data visualization, plotting, dashboards, charts, matplotlib, seaborn, plotly, how do i visualize data |
+| [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | database design, schema design, data modeling, sql migrations, indexing strategy, database normalization, foreign keys, entity relationship |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | CVE, dependency management, vulnerability scanning, dependency updates, security patching, SCA, software composition analysis, vulnerability remediation |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | design patterns, GoF, SOLID, DRY, factory pattern, software architecture, refactoring, SOLID principles |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. | design patterns, GoF, SOLID, DRY, YAGNI, architecture, creational patterns, structural patterns |
@@ -768,6 +770,7 @@ MIT — All skills are freely available and redistributable.
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" | monte carlo, sampling, simulation, stochastic, markov chain, mcmc, how do i simulate |
 | [neural-networks](skills/coding/neural-networks/SKILL.md) | "Implements deep neural networks, backpropagation, activation functions, architectures (CNN, RNN, Transformers), and training strategies" | neural networks, deep learning, backpropagation, CNN, RNN, transformers, how do i use deep learning, hugging face |
 | [normalization](skills/coding/normalization/SKILL.md) | 'Provides Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization' | data normalization, data-normalization, exchange, layer, typed |
+| [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. | observability, structured logging, metrics, distributed tracing, open telemetry, prometheus, health checks, debug production |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" | observational studies, propensity score, matching, stratification, observational data, adjustment |
 | [online-experiments](skills/coding/online-experiments/SKILL.md) | "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms" | multi-armed bandits, bandits, contextual bandits, exploration exploitation, online learning |
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. | output formatting, structured output, json schema, response templating, deterministic output, data validation, prompt engineering |
@@ -949,7 +952,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (241 skills)
+### Implementation (Build Features) (244 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -987,6 +990,7 @@ MIT — All skills are freely available and redistributable.
 | [concurrency-patterns](skills/go/concurrency-patterns/SKILL.md) | Go | Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications. |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" |
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton |
+| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. |
 | [configuration-management](skills/go/configuration-management/SKILL.md) | Go | Manages application configuration in Go with environment variables, YAML/JSON parsing, validation, defaults, and hierarchy for multi-environment deployments. |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | Coding | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" |
 | [correlation-risk](skills/trading/correlation-risk/SKILL.md) | Trading | "Implements correlation breakdown and portfolio diversification risk for risk management and algorithmic trading execution." |
@@ -1002,6 +1006,7 @@ MIT — All skills are freely available and redistributable.
 | [data-versioning](skills/coding/data-versioning/SKILL.md) | Coding | "Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment tracking and governance" |
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | Coding | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" |
 | [database-admin](skills/agent/database-admin/SKILL.md) | Agent | Implements database administration best practices (PostgreSQL tuning, MySQL replication, MongoDB sharding, Redis optimization) with real operational commands and query analysis patterns. |
+| [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Coding | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. |
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" |
 | [deployment-orchestration](skills/cncf/deployment-orchestration/SKILL.md) | Cncf | Orchestrates complex multi-stage deployments with dependency management, sequencing rules, and failure handling across interconnected services. |
@@ -1102,6 +1107,7 @@ MIT — All skills are freely available and redistributable.
 | [news-embedding](skills/trading/news-embedding/SKILL.md) | Trading | "Implements process news text using nlp embeddings for trading signals for risk management and algorithmic trading execution." |
 | [normalization](skills/coding/normalization/SKILL.md) | Coding | 'Provides Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization' |
 | [observability](skills/linux/observability/SKILL.md) | Linux | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. |
+| [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Coding | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Linux | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. |
 | [online-experiments](skills/coding/online-experiments/SKILL.md) | Coding | "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms" |
@@ -1740,6 +1746,7 @@ MIT — All skills are freely available and redistributable.
 | [confidence-based-selector](skills/agent/confidence-based-selector/SKILL.md) | Agent | Implements intelligent confidence based selector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | Implementation |
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | Implementation |
+| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | Implementation |
 | [configuration-management](skills/go/configuration-management/SKILL.md) | Go | Manages application configuration in Go with environment variables, YAML/JSON parsing, validation, defaults, and hierarchy for multi-environment deployments. | Implementation |
 | [container-inspector](skills/agent/container-inspector/SKILL.md) | Agent | Implements intelligent container inspector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [container-linux](skills/cncf/container-linux/SKILL.md) | Cncf | "Provides Flatcar Container Linux in Cloud-Native Engineering - container Linux" | Reference |
@@ -1776,6 +1783,7 @@ MIT — All skills are freely available and redistributable.
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | Coding | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" | Implementation |
 | [database](skills/agent/database/SKILL.md) | Agent | Implements intelligent database with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [database-admin](skills/agent/database-admin/SKILL.md) | Agent | Implements database administration best practices (PostgreSQL tuning, MySQL replication, MongoDB sharding, Redis optimization) with real operational commands and query analysis patterns. | Implementation |
+| [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Coding | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | Implementation |
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. | Implementation |
 | [dependency-graph-builder](skills/agent/dependency-graph-builder/SKILL.md) | Agent | Implements intelligent dependency graph builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | Implementation |
@@ -2019,6 +2027,7 @@ MIT — All skills are freely available and redistributable.
 | [o](skills/cncf/o/SKILL.md) | Cncf | "Provides CRI-O in Container Runtime - OCI-compliant container runtime for Kubernetes" | Reference |
 | [oathkeeper](skills/cncf/oathkeeper/SKILL.md) | Cncf | "Oathkeeper in Identity & Access - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [observability](skills/linux/observability/SKILL.md) | Linux | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | Implementation |
+| [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Coding | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. | Implementation |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" | Implementation |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Linux | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. | Implementation |
 | [online-experiments](skills/coding/online-experiments/SKILL.md) | Coding | "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms" | Implementation |
