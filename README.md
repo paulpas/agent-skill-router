@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 01:03:19 UTC  
-> **Total skills:** 609
+> **Last updated:** 2026-05-19 01:52:48 UTC  
+> **Total skills:** 610
 
 ## Skills by Domain
 
@@ -685,7 +685,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (96 skills)
+### Coding (97 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -728,6 +728,7 @@ MIT — All skills are freely available and redistributable.
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | dry principle, don't repeat yourself, code duplication, refactoring, code duplication detection, refactoring guidance, maintainable code, code reuse |
 | [eda](skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | ensemble methods, bagging, boosting, stacking, voting, blending, ensemble learning |
+| [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | event-driven, event driven architecture, pub/sub, event sourcing, CQRS, saga pattern, outbox pattern, message queue, eventual consistency |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | experimental design, DOE, factorial design, randomization, blocking, how do I design experiments |
 | [explainability](skills/coding/explainability/SKILL.md) | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" | explainability, interpretability, transparency, understanding models, how do I explain predictions |
 | [feature-engineering](skills/coding/feature-engineering/SKILL.md) | "Creates and transforms features including polynomial features, interactions, domain-specific features, and feature transformations" | feature engineering, feature creation, feature transformation, how do I engineer features, feature design |
@@ -923,7 +924,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (225 skills)
+### Implementation (Build Features) (226 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -995,6 +996,7 @@ MIT — All skills are freely available and redistributable.
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" |
 | [error-handling](skills/go/error-handling/SKILL.md) | Go | Designs robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery strategies for resilient applications. |
+| [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" |
 | [explainability](skills/coding/explainability/SKILL.md) | Coding | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" |
 | [explainable-ai](skills/trading/explainable-ai/SKILL.md) | Trading | "Provides Explainable AI for understanding and trusting trading model decisions" |
@@ -1768,6 +1770,7 @@ MIT — All skills are freely available and redistributable.
 | [error-handling](skills/go/error-handling/SKILL.md) | Go | Designs robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery strategies for resilient applications. | Implementation |
 | [error-trace-explainer](skills/agent/error-trace-explainer/SKILL.md) | Agent | Implements intelligent error trace explainer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [etcd](skills/cncf/etcd/SKILL.md) | Cncf | "Provides etcd in Cloud-Native Engineering - distributed key-value store" | Reference |
+| [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | Implementation |
 | [event-hubs](skills/cncf/event-hubs/SKILL.md) | Cncf | "Provides Event streaming platform for high-throughput data ingestion and processing" | Reference |
 | [executing-plans](skills/agent/executing-plans/SKILL.md) | Agent | Implements intelligent executing plans with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | Implementation |
