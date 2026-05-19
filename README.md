@@ -264,7 +264,7 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 18:05:04 UTC  
+> **Last updated:** 2026-05-19 18:34:13 UTC  
 > **Total skills:** 635
 
 ## Skills by Domain
@@ -751,7 +751,7 @@ MIT — All skills are freely available and redistributable.
 | [humanizer](skills/coding/humanizer/SKILL.md) | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation, comments, technical writing, readability, code clarity |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | hypothesis testing, t-test, chi-square, p-value, statistical significance, how do i test hypotheses, unit tests, testing |
-| [input-validation](skills/coding/input-validation/SKILL.md) | Validates, sanitizes, and transforms inbound data through typed schema checks, OWASP-compliant sanitization, and defensive parsing to prevent injection attacks and data corruption. | input validation, data sanitization, schema validation, input filtering, sanitize user input, prevent injection, OWASP, form validation, parse and validate, defense in depth, data entry |
+| [input-validation](skills/coding/input-validation/SKILL.md) | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | input validation, data sanitization, schema validation, input filtering, sanitize user input, prevent injection, OWASP, form validation, parse and validate |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | instrumental variables, IV, 2SLS, endogeneity, causal effect, how do i handle endogeneity |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" | treatment effects, intervention analysis, CATE, heterogeneous effects, treatment response |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" | kernel density estimation, KDE, non-parametric, density estimation, bandwidth selection |
@@ -1058,7 +1058,7 @@ MIT — All skills are freely available and redistributable.
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions |
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. |
 | [indicator-confluence](skills/trading/indicator-confluence/SKILL.md) | Trading | "Provides Indicator Confluence Validation Systems for Confirming Trading Signals" |
-| [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks, OWASP-compliant sanitization, and defensive parsing to prevent injection attacks and data corruption. |
+| [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" |
 | [intermarket-analysis](skills/trading/intermarket-analysis/SKILL.md) | Trading | "Implements cross-market relationships and asset class correlations for risk management and algorithmic trading execution." |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | Coding | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" |
@@ -1913,7 +1913,7 @@ MIT — All skills are freely available and redistributable.
 | [ingress](skills/cncf/ingress/SKILL.md) | Cncf | "Provides Emissary-Ingress in Cloud-Native Engineering - Kubernetes ingress controller" | Reference |
 | [ingress-controller](skills/cncf/ingress-controller/SKILL.md) | Cncf | "Kong Ingress Controller in Kubernetes - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [inngest](skills/agent/inngest/SKILL.md) | Agent | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
-| [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks, OWASP-compliant sanitization, and defensive parsing to prevent injection attacks and data corruption. | Implementation |
+| [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | Implementation |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | Implementation |
 | [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Agent | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. | Orchestration |
 | [intercom-automation](skills/agent/intercom-automation/SKILL.md) | Agent | Implements intelligent intercom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
