@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-19T19:09:58.146451Z",
-  "totalSkills": 637,
+  "generatedAt": "2026-05-19T19:38:18.372091Z",
+  "totalSkills": 638,
   "domains": {
     "agent": 240,
     "cncf": 169,
-    "coding": 113,
+    "coding": 114,
     "go": 12,
     "linux": 11,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 227,
-    "implementation": 247,
+    "implementation": 248,
     "information": 1,
     "review": 2,
     "reference": 160
@@ -5068,6 +5068,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/azure-event-hubs/SKILL.md"
+    },
+    {
+      "name": "event-storming",
+      "domain": "coding",
+      "description": "Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "event storming",
+        "eventstorming",
+        "domain discovery",
+        "workshop facilitation",
+        "bounded context",
+        "domain events",
+        "sticky notes",
+        "collaborative modeling"
+      ],
+      "relatedSkills": [
+        "ddd-context-mapping",
+        "ddd-tactical-patterns",
+        "event-driven-patterns",
+        "architecture-decision-records"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/event-storming/SKILL.md"
     },
     {
       "name": "executing-plans",
