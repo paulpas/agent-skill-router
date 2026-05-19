@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 05:05:47 UTC  
-> **Total skills:** 615
+> **Last updated:** 2026-05-19 05:24:09 UTC  
+> **Total skills:** 616
 
 ## Skills by Domain
 
@@ -465,7 +465,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-creator, skill creator, how do i skill-creator, orchestrate skill-creator, automate skill-creator, agent skill-creator |
 | [skill-creator-ms](skills/agent/skill-creator-ms/SKILL.md) | Implements intelligent skill creator ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-creator-ms, skill creator ms, how do i skill-creator-ms, orchestrate skill-creator-ms, automate skill-creator-ms, agent skill-creator-ms |
 | [skill-developer](skills/agent/skill-developer/SKILL.md) | Implements intelligent skill developer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-developer, skill developer, how do i skill-developer, orchestrate skill-developer, automate skill-developer, agent skill-developer |
-| [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. | skill design, trigger engineering, SKILL.md crafting, skill quality validation, stub detection, skill generation, agent skill routing, how do i create a skill |
+| [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. | skill design, trigger engineering, SKILL.md crafting, stub detection, skill generation, agent skill routing, how do i create a skill |
 | [skill-improver](skills/agent/skill-improver/SKILL.md) | Implements intelligent skill improver with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-improver, skill improver, how do i skill-improver, orchestrate skill-improver, automate skill-improver, agent skill-improver |
 | [skill-installer](skills/agent/skill-installer/SKILL.md) | Implements intelligent skill installer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-installer, skill installer, how do i skill-installer, orchestrate skill-installer, automate skill-installer, agent skill-installer |
 | [skill-optimizer](skills/agent/skill-optimizer/SKILL.md) | Implements intelligent skill optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-optimizer, skill optimizer, how do i skill-optimizer, orchestrate skill-optimizer, automate skill-optimizer, agent skill-optimizer |
@@ -685,7 +685,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (101 skills)
+### Coding (102 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -778,6 +778,7 @@ MIT — All skills are freely available and redistributable.
 | [review](skills/coding/review/SKILL.md) | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance | identifying, security review, security-focused, security-review, vulnerabilities, vulnerability scanning, security, security auditing |
 | [scoring](skills/coding/scoring/SKILL.md) | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | combining, conviction scoring, conviction-scoring, engine, multi-factor |
 | [shop](skills/coding/shop/SKILL.md) | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | application, guide, juice shop, juice-shop, owasp, security best practices, security guidelines, vulnerability scanning |
+| [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | single letter variables, naming conventions, code readability, variable names, a b c d x y z, ambiguous identifiers, code review |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | software architecture, system design, layered architecture, hexagonal architecture, clean architecture, separation of concerns, scalable design, architectural patterns |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design |
@@ -929,7 +930,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (230 skills)
+### Implementation (Build Features) (231 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1119,6 +1120,7 @@ MIT — All skills are freely available and redistributable.
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" |
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' |
+| [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. |
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Agent | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. |
 | [slippage-model](skills/trading/slippage-model/SKILL.md) | Trading | "Implements slippage modeling and execution simulation for risk management and algorithmic trading execution." |
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis |
@@ -2071,6 +2073,7 @@ MIT — All skills are freely available and redistributable.
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" | Implementation |
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | Implementation |
 | [shopify-automation](skills/agent/shopify-automation/SKILL.md) | Agent | Implements intelligent shopify automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | Implementation |
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Agent | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-creator-ms](skills/agent/skill-creator-ms/SKILL.md) | Agent | Implements intelligent skill creator ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-developer](skills/agent/skill-developer/SKILL.md) | Agent | Implements intelligent skill developer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
