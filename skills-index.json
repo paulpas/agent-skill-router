@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-19T20:56:20.710105Z",
-  "totalSkills": 642,
+  "generatedAt": "2026-05-19T21:44:00.873154Z",
+  "totalSkills": 644,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 114,
+    "coding": 116,
     "go": 12,
     "linux": 11,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 250,
+    "implementation": 252,
     "reference": 161,
     "information": 1,
     "review": 2
@@ -5699,6 +5699,65 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/framework-selection/SKILL.md"
+    },
+    {
+      "name": "framework-selection",
+      "domain": "coding",
+      "description": "Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework selection",
+        "tech stack evaluation",
+        "weighted scoring matrix",
+        "AHP decision",
+        "framework comparison",
+        "technology assessment",
+        "framework criteria",
+        "evaluate frameworks",
+        "choose framework",
+        "select technology",
+        "tech stack decision",
+        "framework trade-offs"
+      ],
+      "relatedSkills": [
+        "framework-requirements",
+        "software-architecture",
+        "hexagonal-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-selection/SKILL.md"
+    },
+    {
+      "name": "framework-utilization",
+      "domain": "coding",
+      "description": "Integrates selected frameworks into applications using dependency injection, configuration management, extension mechanisms, lifecycle management, and testable architecture patterns to minimize coupling and maximize maintainability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework integration",
+        "dependency injection",
+        "middleware patterns",
+        "framework hooks",
+        "plugin architecture",
+        "framework lifecycle",
+        "framework configuration",
+        "extension points",
+        "framework testing",
+        "decouple framework",
+        "framework coupling",
+        "wire dependencies"
+      ],
+      "relatedSkills": [
+        "framework-selection",
+        "hexagonal-architecture",
+        "pydantic-config",
+        "software-design-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-utilization/SKILL.md"
     },
     {
       "name": "freshdesk-automation",
