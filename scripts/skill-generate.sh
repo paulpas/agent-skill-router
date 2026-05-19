@@ -9,7 +9,6 @@
 # Options:
 #   -d, --domain DOMAIN   Target domain (cncf, coding, go, linux, etc.)
 #   -n, --name NAME       Override the generated skill name
-#   --no-push             Don't commit/push to git (save locally only)
 #   --help                Show help
 #
 # The prompt tells Opencode to:
@@ -17,12 +16,12 @@
 #   - Read AGENTS.md for naming conventions and best practices
 #   - Create a complete SKILL.md file
 #   - Update supporting files (skills-index.json, README.md, etc.)
-#   - Push changes to git (unless --no-push)
+#   - Handle git operations (commit and push to origin main)
 #
 # Examples:
 #   ./scripts/skill-generate.sh "Create a skill about Kubernetes networking"
 #   ./scripts/skill-generate.sh "Add a Go rate limiting pattern" -d go -n rate-limiting
-#   ./scripts/skill-generate.sh "Create a VWAP trading strategy" --no-push
+#   ./scripts/skill-generate.sh "Create a VWAP trading strategy"
 # =============================================================================
 
 set -euo pipefail
@@ -47,8 +46,8 @@ show_help() {
 Usage: ./scripts/skill-generate.sh "Task description" [OPTIONS]
 
 Generate new skills via Opencode. The prompt instructs Opencode to read
-SKILL_FORMAT_SPEC.md and AGENTS.md, understand the requirements, and
-create a complete skill — including updating all supporting files.
+SKILL_FORMAT_SPEC.md and AGENTS.md, understand the requirements, create
+a skill, validate it, and push to git.
 
 ARGUMENTS:
   "Task description"    Describe the skill you want to create
@@ -57,53 +56,24 @@ OPTIONS:
   -d, --domain DOMAIN   Target domain: agent, cncf, coding, go, linux,
                         programming, trading, or writing
   -n, --name NAME       Override the generated skill name (kebab-case)
-  --no-push             Save locally only, do not commit/push to git
   --help                Show this help message
 
 EXAMPLES:
   ./scripts/skill-generate.sh "Create a skill about Kubernetes networking"
   ./scripts/skill-generate.sh "Add a Go rate limiting pattern" -d go -n rate-limiting
-  ./scripts/skill-generate.sh "Create a VWAP trading strategy" --no-push
+  ./scripts/skill-generate.sh "Create a VWAP trading strategy"
 HELP
-}
-
-check_push_permission() {
-    local NO_PUSH="$1"
-
-    if [[ "$NO_PUSH" == "true" ]]; then
-        log_warn "Push disabled (--no-push flag)"
-        return 1
-    fi
-
-    local contribute="true"
-    if [[ -f "$PROJECT_ROOT/install-skill-router.conf" ]]; then
-        contribute=$(grep "^AUTO_SKILL_CONTRIBUTE" "$PROJECT_ROOT/install-skill-router.conf" 2>/dev/null | cut -d= -f2 | tr -d '[:space:]' || echo "true")
-    fi
-
-    if [[ "$contribute" != "true" ]]; then
-        log_warn "Push disabled by config (AUTO_SKILL_CONTRIBUTE=false)"
-        return 1
-    fi
-
-    if ! git -C "$PROJECT_ROOT" remote get-url origin &>/dev/null; then
-        log_warn "No git remote 'origin' configured"
-        return 1
-    fi
-
-    return 0
 }
 
 main() {
     local DOMAIN=""
     local NAME=""
-    local NO_PUSH=false
     local TASK=""
 
     while [[ $# -gt 0 ]]; do
         case "$1" in
             -d|--domain) DOMAIN="$2"; shift 2 ;;
             -n|--name) NAME="$2"; shift 2 ;;
-            --no-push) NO_PUSH=true; shift ;;
             --help|-h) show_help; exit 0 ;;
             *) TASK="$1"; shift ;;
         esac
@@ -128,6 +98,22 @@ main() {
     prompt+="\n5. After generating the SKILL.md file, run: ./scripts/validate_skill.sh <path-to-created-file>"
     prompt+="\n6. If validation FAILS, fix the issues immediately and re-run validate_skill.sh until it PASSES before finishing"
     prompt+="\n7. Do NOT commit or finish until the skill passes validation"
+
+    # Add comprehensive git handling instructions
+    prompt+="\n\nGIT HANDLING INSTRUCTIONS — after creating the skill and confirming it passes validation, you MUST handle git operations:"
+    prompt+="\n1. Check git status: run 'git status' to see what files were created/modified"
+    prompt+="\n2. Stage changes: run 'git add -A' to stage all new and modified files"
+    prompt+="\n3. Handle any git issues:"
+    prompt+="\n   - If pre-commit hook fails: use 'SKIP_SKILL_VALIDATE=1 git commit' to bypass OR fix validation issues first"
+    prompt+="\n   - If git user not configured: set with 'git config user.email \"opencode@local\"' and 'git config user.name \"OpenCode\"'"
+    prompt+="\n   - If there are merge conflicts: resolve them by editing conflicted files, then 'git add' and 'git commit'"
+    prompt+="\n   - If push fails (e.g., non-fast-forward): first 'git pull --rebase origin main', resolve any conflicts, then push again"
+    prompt+="\n   - If rebasing in progress: abort with 'git rebase --abort' before continuing"
+    prompt+="\n4. Create a commit with message: 'feat: add new skill - [skill-name]' (use actual skill name)"
+    prompt+="\n5. Push to origin main: run 'git push origin main'"
+    prompt+="\n6. If push fails for any reason, retry with appropriate fix until it succeeds"
+    prompt+="\n7. Verify push succeeded by checking 'git log' shows your commit"
+    prompt+="\n\nIMPORTANT: You have full access to bash and git. Use it proactively to handle any issues. Do not give up until push succeeds or it's clearly impossible (e.g., no remote configured)."
 
     if [[ -n "$DOMAIN" ]]; then
         prompt+="\n\nPlace this skill in the '$DOMAIN' domain."
@@ -172,54 +158,6 @@ main() {
         echo ""
         log_info "Updated supporting files:"
         echo "$modified_files" | sed 's/^/  /'
-    fi
-
-    # Commit and push if configured
-    if check_push_permission "$NO_PUSH"; then
-        # Check for ongoing rebase - skip commit/push if rebasing
-        if [[ -d "$PROJECT_ROOT/.git/rebase-merge" ]] || [[ -d "$PROJECT_ROOT/.git/rebase-apply" ]]; then
-            log_warn "Interactive rebase in progress - skipping commit/push"
-            log_info "Run 'git rebase --abort' to restore normal operation"
-        else
-            # Check if there are any changes to commit
-            local changes
-            changes=$(git status --porcelain 2>/dev/null)
-            if [[ -z "$changes" ]]; then
-                log_info "No changes to commit"
-            else
-                # Use timestamp-based message to distinguish commits in a loop
-                local timestamp
-                timestamp=$(date +%Y%m%d-%H%M%S)
-                local commit_msg="feat: generate new skill(s) via opencode ($timestamp)"
-                
-                # Skip pre-commit hook validation for auto-generated commits
-                # Set SKIP_SKILL_VALIDATE to explicitly mark this as an auto-generated commit
-                export SKIP_SKILL_VALIDATE=1
-                
-                git add -A
-                
-                # Set git user temporarily if not configured (required for commits)
-                if git commit \
-                    -c user.email="opencode@local" \
-                    -c user.name="OpenCode" \
-                    --no-verify \
-                    -m "$commit_msg" 2>&1; then
-                    
-                    log_ok "Committed with message: $commit_msg"
-                    
-                    if git push origin main 2>&1; then
-                        log_ok "Pushed to origin/main"
-                    else
-                        log_error "Push failed — commit saved locally"
-                        log_info "To push manually, run: git push origin main"
-                    fi
-                else
-                    log_error "Commit failed"
-                    log_info "To troubleshoot, run: git status"
-                    log_info "Note: Pre-commit hooks are skipped (--no-verify)"
-                fi
-            fi
-        fi
     fi
 }
 
