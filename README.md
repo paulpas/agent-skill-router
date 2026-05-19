@@ -270,7 +270,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Domain
 
 
-### Agent (235 skills)
+### Agent (236 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -412,6 +412,7 @@ MIT — All skills are freely available and redistributable.
 | [m365-agents-dotnet](skills/agent/m365-agents-dotnet/SKILL.md) | Implements intelligent m365 agents dotnet with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | m365-agents-dotnet, m365 agents dotnet, how do i m365-agents-dotnet, orchestrate m365-agents-dotnet, automate m365-agents-dotnet, agent m365-agents-dotnet |
 | [m365-agents-ts](skills/agent/m365-agents-ts/SKILL.md) | Implements intelligent m365 agents ts with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | m365-agents-ts, m365 agents ts, how do i m365-agents-ts, orchestrate m365-agents-ts, automate m365-agents-ts, agent m365-agents-ts |
 | [make-automation](skills/agent/make-automation/SKILL.md) | Implements intelligent make automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | make-automation, make automation, how do i make-automation, orchestrate make-automation, automate make-automation, agent make-automation |
+| [make-workflow-automation](skills/agent/make-workflow-automation/SKILL.md) | Builds and debugs automated workflows in Make (Integromat) using modules, scenarios, routing, error handling, and scheduling for no-code/low-code automation. | make, make com, integromat, workflow automation, no code automation, scenario builder, webhook trigger, task routing |
 | [mcp-builder](skills/agent/mcp-builder/SKILL.md) | Implements intelligent mcp builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | mcp-builder, mcp builder, how do i mcp-builder, orchestrate mcp-builder, automate mcp-builder, agent mcp-builder |
 | [mcp-builder-ms](skills/agent/mcp-builder-ms/SKILL.md) | Implements intelligent mcp builder ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | mcp-builder-ms, mcp builder ms, how do i mcp-builder-ms, orchestrate mcp-builder-ms, automate mcp-builder-ms, agent mcp-builder-ms |
 | [memory-systems](skills/agent/memory-systems/SKILL.md) | Implements intelligent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | memory-systems, memory systems, how do i memory-systems, orchestrate memory-systems, automate memory-systems, agent memory-systems |
@@ -686,7 +687,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (105 skills)
+### Coding (107 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -773,11 +774,13 @@ MIT — All skills are freely available and redistributable.
 | [patterns](skills/coding/patterns/SKILL.md) | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events | application, cloud infrastructure, fastapi patterns, fastapi-patterns, structure, typed |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving |
+| [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | randomized experiments, RCT, experimental design, randomization, blocking, sample size |
 | [regression-evaluation](skills/coding/regression-evaluation/SKILL.md) | "Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared, and other metrics for assessing predictive accuracy" | regression evaluation, MSE, RMSE, MAE, R-squared, regression metrics, how do i evaluate |
 | [release-pipeline](skills/coding/release-pipeline/SKILL.md) | Implements comprehensive secure release pipeline with CVE scanning, security code review, semantic versioning for patches, and multi-stage quality gates for secure deployments. | secure release, CVE scanning, security audit, version management, quality gates, dependency security, semantic versioning, incident response |
 | [reproducible-research](skills/coding/reproducible-research/SKILL.md) | "Implements reproducible research practices including code organization, environment management, documentation, and experiment tracking" | reproducible research, reproducibility, code organization, environment, notebooks, how do I reproduce |
+| [rest-api-patterns](skills/coding/rest-api-patterns/SKILL.md) | Implements RESTful API design patterns including resource modeling, HTTP method dispatching, structured error responses per RFC 7807, pagination, filtering, versioning, and HATEOAS for production-quality APIs. | REST API, RESTful design, RFC 7807, HTTP methods, API versioning, HATEOAS, pagination |
 | [review](skills/coding/review/SKILL.md) | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback | analyzes, code review, code-review, diffs, files |
 | [review](skills/coding/review/SKILL.md) | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance | identifying, security review, security-focused, security-review, vulnerabilities, vulnerability scanning, security, security auditing |
 | [scoring](skills/coding/scoring/SKILL.md) | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | combining, conviction scoring, conviction-scoring, engine, multi-factor |
@@ -934,7 +937,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (233 skills)
+### Implementation (Build Features) (235 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1102,6 +1105,7 @@ MIT — All skills are freely available and redistributable.
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" |
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning |
+| [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" |
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API" Integration |
@@ -1114,6 +1118,7 @@ MIT — All skills are freely available and redistributable.
 | [release-pipeline](skills/coding/release-pipeline/SKILL.md) | Coding | Implements comprehensive secure release pipeline with CVE scanning, security code review, semantic versioning for patches, and multi-stage quality gates for secure deployments. |
 | [reproducible-research](skills/coding/reproducible-research/SKILL.md) | Coding | "Implements reproducible research practices including code organization, environment management, documentation, and experiment tracking" |
 | [resource-management](skills/linux/resource-management/SKILL.md) | Linux | Manages Linux system resources using cgroups v2, namespaces, and systemd for workload isolation and resource guarantees in cloud and on-prem environments. |
+| [rest-api-patterns](skills/coding/rest-api-patterns/SKILL.md) | Coding | Implements RESTful API design patterns including resource modeling, HTTP method dispatching, structured error responses per RFC 7807, pagination, filtering, versioning, and HATEOAS for production-quality APIs. |
 | [review](skills/coding/review/SKILL.md) | Coding | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback |
 | [review](skills/coding/review/SKILL.md) | Coding | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance |
 | [risk-management-basics](skills/trading/risk-management-basics/SKILL.md) | Trading | "Position sizing, stop-loss implementation, and system-level risk controls" to preserve capital |
@@ -1339,7 +1344,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (225 skills)
+### Orchestration (Manage AI Agents) (226 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1475,6 +1480,7 @@ MIT — All skills are freely available and redistributable.
 | [m365-agents-dotnet](skills/agent/m365-agents-dotnet/SKILL.md) | Agent | Implements intelligent m365 agents dotnet with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [m365-agents-ts](skills/agent/m365-agents-ts/SKILL.md) | Agent | Implements intelligent m365 agents ts with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [make-automation](skills/agent/make-automation/SKILL.md) | Agent | Implements intelligent make automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [make-workflow-automation](skills/agent/make-workflow-automation/SKILL.md) | Agent | Builds and debugs automated workflows in Make (Integromat) using modules, scenarios, routing, error handling, and scheduling for no-code/low-code automation. |
 | [mcp-builder](skills/agent/mcp-builder/SKILL.md) | Agent | Implements intelligent mcp builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [mcp-builder-ms](skills/agent/mcp-builder-ms/SKILL.md) | Agent | Implements intelligent mcp builder ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [memory-systems](skills/agent/memory-systems/SKILL.md) | Agent | Implements intelligent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -1933,6 +1939,7 @@ MIT — All skills are freely available and redistributable.
 | [make](skills/coding/make/SKILL.md) | Coding | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. | Implementation |
 | [make-automation](skills/agent/make-automation/SKILL.md) | Agent | Implements intelligent make automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, and cross-compilation for reproducible software builds. | Implementation |
+| [make-workflow-automation](skills/agent/make-workflow-automation/SKILL.md) | Agent | Builds and debugs automated workflows in Make (Integromat) using modules, scenarios, routing, error handling, and scheduling for no-code/low-code automation. | Orchestration |
 | [makefile](skills/coding/makefile/SKILL.md) | Coding | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. | Implementation |
 | [manager](skills/cncf/manager/SKILL.md) | Cncf | "cert-manager in Cloud-Native Engineering - Certificate Management for" Kubernetes | Reference |
 | [manager](skills/coding/manager/SKILL.md) | Coding | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing | Implementation |
@@ -2034,6 +2041,7 @@ MIT — All skills are freely available and redistributable.
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning | Implementation |
 | [pydantic-ai](skills/agent/pydantic-ai/SKILL.md) | Agent | Implements intelligent pydantic ai with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [python-fastapi-development](skills/agent/python-fastapi-development/SKILL.md) | Agent | Implements intelligent python fastapi development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | Implementation |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | Implementation |
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Agent | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [rag-implementation](skills/agent/rag-implementation/SKILL.md) | Agent | Implements intelligent rag implementation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2059,6 +2067,7 @@ MIT — All skills are freely available and redistributable.
 | [resource-management](skills/linux/resource-management/SKILL.md) | Linux | Manages Linux system resources using cgroups v2, namespaces, and systemd for workload isolation and resource guarantees in cloud and on-prem environments. | Implementation |
 | [resource-manager](skills/cncf/resource-manager/SKILL.md) | Cncf | "Provides Infrastructure as code using ARM templates for repeatable Azure resource deployments" | Reference |
 | [resource-optimizer](skills/agent/resource-optimizer/SKILL.md) | Agent | Implements intelligent resource optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [rest-api-patterns](skills/coding/rest-api-patterns/SKILL.md) | Coding | Implements RESTful API design patterns including resource modeling, HTTP method dispatching, structured error responses per RFC 7807, pagination, filtering, versioning, and HATEOAS for production-quality APIs. | Implementation |
 | [review](skills/coding/review/SKILL.md) | Coding | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback | Implementation |
 | [review](skills/coding/review/SKILL.md) | Coding | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance | Implementation |
 | [risk-management-basics](skills/trading/risk-management-basics/SKILL.md) | Trading | "Position sizing, stop-loss implementation, and system-level risk controls" to preserve capital | Implementation |
