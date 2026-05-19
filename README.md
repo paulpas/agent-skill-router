@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 13:54:36 UTC  
-> **Total skills:** 625
+> **Last updated:** 2026-05-19 16:18:10 UTC  
+> **Total skills:** 629
 
 ## Skills by Domain
 
@@ -687,7 +687,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (109 skills)
+### Coding (110 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -702,6 +702,7 @@ MIT — All skills are freely available and redistributable.
 | [best-practices](skills/coding/best-practices/SKILL.md) | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" | markdown best practices, markdown-best-practices, opencode, skills, syntax |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" | bias-variance, overfitting, underfitting, regularization, generalization, how do I prevent overfitting |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | git branching strategies, git repository, git-branching-strategies, github, including, models, version control |
+| [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | makefile testing, build validation, phony target tests, continuous integration for builds, incremental build verification, dependency graph analysis, build reproducibility, make test suite, artifact verification |
 | [bus](skills/coding/bus/SKILL.md) | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | async, event bus, event-bus, events, typed, eventbridge, event routing |
 | [categorical-encoding](skills/coding/categorical-encoding/SKILL.md) | "Provides Encodes categorical variables using one-hot encoding, target encoding, ordinal encoding, embeddings, and other encoding strategies" | categorical encoding, one-hot encoding, target encoding, ordinal encoding, categorical variables |
 | [causal-inference](skills/coding/causal-inference/SKILL.md) | Implements causal models, directed acyclic graphs (DAGs), confounding adjustment, and mediation analysis for causal discovery | causal inference, causality, causal models, DAG, confounding, how do i determine causation, airflow, data pipelines |
@@ -837,6 +838,15 @@ MIT — All skills are freely available and redistributable.
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. | storage architecture, LVM, filesystem, XFS, ext4, btrfs, cloud storage, NVMe, mount options, storage monitoring |
 
 
+### Maker (3 skills)
+
+| Skill Name | Description | Triggers |
+|---|---|---|
+| [digital-fabrication](skills/maker/digital-fabrication/SKILL.md) | Implements 3D printing slicing, laser cutting calibration, CNC toolpaths, and STL validation workflows for turning CAD models into fabrication-ready parts with optimized parameters. | 3d printing, slicer, gcode, laser cutting, cnc milling, cad model, additive manufacturing |
+| [maker-safety-practices](skills/maker/maker-safety-practices/SKILL.md) | Implements makerspace safety protocols with PPE selection by hazard type, machine-specific safe operating procedures (3D printers, laser cutters, CNC, soldering), and emergency response. | maker safety, makerspace safety, 3d printer safety, laser cutter safety, PPE selection, fume extraction, how do i work safely with tools |
+| [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. | rapid prototyping, quick prototype, proof of concept, iterative design, mockup, wireframe, how do i quickly test an idea |
+
+
 ### Programming (5 skills)
 
 | Skill Name | Description | Triggers |
@@ -939,7 +949,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (237 skills)
+### Implementation (Build Features) (241 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -959,6 +969,7 @@ MIT — All skills are freely available and redistributable.
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | Coding | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" |
 | [blue-green-deployment](skills/cncf/blue-green-deployment/SKILL.md) | Cncf | Implements blue-green deployment strategies with traffic switching, state management, and rollback capabilities to achieve zero-downtime releases. |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines |
+| [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems |
 | [canary-deployment](skills/cncf/canary-deployment/SKILL.md) | Cncf | Orchestrates canary deployment strategies with gradual traffic promotion, automated health monitoring, and rollback triggers for progressive risk management. |
 | [candle-data](skills/trading/candle-data/SKILL.md) | Trading | "OHLCV candle data processing, timeframe management, and validation for" trading algorithms |
@@ -997,6 +1008,7 @@ MIT — All skills are freely available and redistributable.
 | [deployment-patterns](skills/go/deployment-patterns/SKILL.md) | Go | Deploys Go applications with build optimization, multi-stage Docker builds, binary sizing, and deployment strategies for cloud and on-prem. |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Coding | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Coding | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. |
+| [digital-fabrication](skills/maker/digital-fabrication/SKILL.md) | Maker | Implements 3D printing slicing, laser cutting calibration, CNC toolpaths, and STL validation workflows for turning CAD models into fabrication-ready parts with optimized parameters. |
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | Coding | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" |
 | [disaster-recovery](skills/cncf/disaster-recovery/SKILL.md) | Cncf | Implements comprehensive disaster recovery planning for Kubernetes clusters with backup strategies, recovery procedures, cross-region replication, RPO/RTO planning, and validation workflows. |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" |
@@ -1058,6 +1070,7 @@ MIT — All skills are freely available and redistributable.
 | [make](skills/coding/make/SKILL.md) | Coding | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. |
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, and cross-compilation for reproducible software builds. |
 | [makefile](skills/coding/makefile/SKILL.md) | Coding | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. |
+| [maker-safety-practices](skills/maker/maker-safety-practices/SKILL.md) | Maker | Implements makerspace safety protocols with PPE selection by hazard type, machine-specific safe operating procedures (3D printers, laser cutters, CNC, soldering), and emergency response. |
 | [manager](skills/coding/manager/SKILL.md) | Coding | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing |
 | [market-data-cache](skills/trading/market-data-cache/SKILL.md) | Trading | "High-performance caching layer for market data with low latency and high" throughput |
 | [market-impact](skills/trading/market-impact/SKILL.md) | Trading | "Implements market impact modeling and order book simulation for risk management and algorithmic trading execution." |
@@ -1110,6 +1123,7 @@ MIT — All skills are freely available and redistributable.
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" |
+| [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Maker | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. |
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API" Integration |
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Provides Rate Limiting and Exchange API Management for Robust Trading Execution" |
 | [realistic-simulation](skills/trading/realistic-simulation/SKILL.md) | Trading | "Provides Realistic Paper Trading Simulation with Market Impact and Execution Fees" |
@@ -1660,6 +1674,7 @@ MIT — All skills are freely available and redistributable.
 | [blueprint](skills/agent/blueprint/SKILL.md) | Agent | Implements intelligent blueprint with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | Implementation |
 | [build](skills/agent/build/SKILL.md) | Agent | Implements intelligent build with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | Implementation |
 | [buildpacks](skills/cncf/buildpacks/SKILL.md) | Cncf | "Provides Buildpacks in Cloud-Native Engineering - Turn source code into container images without Dockerfiles" | Reference |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | Implementation |
 | [calico](skills/cncf/calico/SKILL.md) | Cncf | "Calico in Cloud Native Security - cloud native architecture, patterns" pitfalls, and best practices | Reference |
@@ -1773,6 +1788,7 @@ MIT — All skills are freely available and redistributable.
 | [development](skills/agent/development/SKILL.md) | Agent | Implements intelligent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [diary](skills/agent/diary/SKILL.md) | Agent | Implements intelligent diary with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [diff-quality-analyzer](skills/agent/diff-quality-analyzer/SKILL.md) | Agent | Implements intelligent diff quality analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [digital-fabrication](skills/maker/digital-fabrication/SKILL.md) | Maker | Implements 3D printing slicing, laser cutting calibration, CNC toolpaths, and STL validation workflows for turning CAD models into fabrication-ready parts with optimized parameters. | Implementation |
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | Coding | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" | Implementation |
 | [disaster-recovery](skills/cncf/disaster-recovery/SKILL.md) | Cncf | Implements comprehensive disaster recovery planning for Kubernetes clusters with backup strategies, recovery procedures, cross-region replication, RPO/RTO planning, and validation workflows. | Implementation |
 | [dispatching-parallel-agents](skills/agent/dispatching-parallel-agents/SKILL.md) | Agent | Implements intelligent dispatching parallel agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -1945,6 +1961,7 @@ MIT — All skills are freely available and redistributable.
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, and cross-compilation for reproducible software builds. | Implementation |
 | [make-workflow-automation](skills/agent/make-workflow-automation/SKILL.md) | Agent | Builds and debugs automated workflows in Make (Integromat) using modules, scenarios, routing, error handling, and scheduling for no-code/low-code automation. | Orchestration |
 | [makefile](skills/coding/makefile/SKILL.md) | Coding | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. | Implementation |
+| [maker-safety-practices](skills/maker/maker-safety-practices/SKILL.md) | Maker | Implements makerspace safety protocols with PPE selection by hazard type, machine-specific safe operating procedures (3D printers, laser cutters, CNC, soldering), and emergency response. | Implementation |
 | [manager](skills/cncf/manager/SKILL.md) | Cncf | "cert-manager in Cloud-Native Engineering - Certificate Management for" Kubernetes | Reference |
 | [manager](skills/coding/manager/SKILL.md) | Coding | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing | Implementation |
 | [market-data-cache](skills/trading/market-data-cache/SKILL.md) | Trading | "High-performance caching layer for market data with low latency and high" throughput | Implementation |
@@ -2050,6 +2067,7 @@ MIT — All skills are freely available and redistributable.
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Agent | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [rag-implementation](skills/agent/rag-implementation/SKILL.md) | Agent | Implements intelligent rag implementation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | Implementation |
+| [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Maker | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. | Implementation |
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API" Integration | Implementation |
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Provides Rate Limiting and Exchange API Management for Robust Trading Execution" | Implementation |
 | [rbac](skills/cncf/rbac/SKILL.md) | Cncf | "Manages identity and access with roles, service principals, and fine-grained" permissions. | Reference |

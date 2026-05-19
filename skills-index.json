@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-05-19T13:54:35.254031Z",
-  "totalSkills": 625,
+  "generatedAt": "2026-05-19T16:18:09.397742Z",
+  "totalSkills": 629,
   "domains": {
     "agent": 236,
     "cncf": 169,
-    "coding": 108,
+    "coding": 109,
     "go": 12,
     "linux": 11,
+    "maker": 3,
     "programming": 5,
     "trading": 83,
     "writing": 1
   },
   "roles": {
     "orchestration": 226,
-    "implementation": 237,
+    "implementation": 241,
     "information": 1,
     "reference": 160,
     "review": 1
@@ -1589,6 +1590,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/build/SKILL.md"
+    },
+    {
+      "name": "build-test-validation",
+      "domain": "coding",
+      "description": "Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "makefile testing",
+        "build validation",
+        "phony target tests",
+        "continuous integration for builds",
+        "incremental build verification",
+        "dependency graph analysis",
+        "build reproducibility",
+        "make test suite",
+        "artifact verification"
+      ],
+      "relatedSkills": [
+        "coding-makefile",
+        "coding-make",
+        "linux-make-build-system"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/build-test-validation/SKILL.md"
     },
     {
       "name": "buildpacks",
@@ -4174,6 +4201,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/diff-quality-analyzer/SKILL.md"
+    },
+    {
+      "name": "digital-fabrication",
+      "domain": "maker",
+      "description": "Implements 3D printing slicing, laser cutting calibration, CNC toolpaths, and STL validation workflows for turning CAD models into fabrication-ready parts with optimized parameters.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "3d printing",
+        "slicer",
+        "gcode",
+        "laser cutting",
+        "cnc milling",
+        "cad model",
+        "additive manufacturing"
+      ],
+      "relatedSkills": [
+        "rapid-prototyping-workflow",
+        "maker-safety-practices"
+      ],
+      "version": "1.0.0",
+      "source": "skills/maker/digital-fabrication/SKILL.md"
     },
     {
       "name": "dimensionality-reduction",
@@ -8073,6 +8123,29 @@
       "source": "skills/coding/makefile/SKILL.md"
     },
     {
+      "name": "maker-safety-practices",
+      "domain": "maker",
+      "description": "Implements makerspace safety protocols with PPE selection by hazard type, machine-specific safe operating procedures (3D printers, laser cutters, CNC, soldering), and emergency response.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "maker safety",
+        "makerspace safety",
+        "3d printer safety",
+        "laser cutter safety",
+        "PPE selection",
+        "fume extraction",
+        "how do i work safely with tools"
+      ],
+      "relatedSkills": [
+        "rapid-prototyping-workflow",
+        "digital-fabrication"
+      ],
+      "version": "1.0.0",
+      "source": "skills/maker/maker-safety-practices/SKILL.md"
+    },
+    {
       "name": "manager",
       "domain": "cncf",
       "description": "\"cert-manager in Cloud-Native Engineering - Certificate Management for\" Kubernetes",
@@ -10467,6 +10540,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-randomized-experiments/SKILL.md"
+    },
+    {
+      "name": "rapid-prototyping-workflow",
+      "domain": "maker",
+      "description": "Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "rapid prototyping",
+        "quick prototype",
+        "proof of concept",
+        "iterative design",
+        "mockup",
+        "wireframe",
+        "how do i quickly test an idea"
+      ],
+      "relatedSkills": [
+        "digital-fabrication",
+        "maker-safety-practices"
+      ],
+      "version": "1.0.0",
+      "source": "skills/maker/rapid-prototyping-workflow/SKILL.md"
     },
     {
       "name": "rate-limiting",
