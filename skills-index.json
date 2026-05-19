@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-19T19:38:18.372091Z",
-  "totalSkills": 638,
+  "generatedAt": "2026-05-19T20:20:15.835577Z",
+  "totalSkills": 640,
   "domains": {
     "agent": 240,
     "cncf": 169,
@@ -9,12 +9,12 @@
     "linux": 11,
     "maker": 3,
     "programming": 5,
-    "trading": 83,
+    "trading": 85,
     "writing": 1
   },
   "roles": {
     "orchestration": 227,
-    "implementation": 248,
+    "implementation": 250,
     "information": 1,
     "review": 2,
     "reference": 160
@@ -9948,6 +9948,57 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-order-flow-analysis/SKILL.md"
+    },
+    {
+      "name": "order-flow-footprint",
+      "domain": "trading",
+      "description": "Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "footprint chart",
+        "volume delta",
+        "cumulative delta",
+        "order flow analysis",
+        "delta divergence",
+        "stacked imbalance",
+        "aggressive buying",
+        "order flow footprint"
+      ],
+      "relatedSkills": [
+        "ai-order-flow-analysis",
+        "data-order-book",
+        "technical-volume-profile"
+      ],
+      "version": "1.0.0",
+      "source": "skills/trading/order-flow-footprint/SKILL.md"
+    },
+    {
+      "name": "order-flow-toxicity",
+      "domain": "trading",
+      "description": "Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "order flow toxicity",
+        "VPIN",
+        "PIN model",
+        "adverse selection",
+        "predatory HFT",
+        "toxic flow",
+        "informed trading",
+        "liquidity provider toxicity"
+      ],
+      "relatedSkills": [
+        "ai-order-flow-analysis",
+        "risk-kill-switches",
+        "execution-slippage-modeling",
+        "data-order-book"
+      ],
+      "version": "1.0.0",
+      "source": "skills/trading/order-flow-toxicity/SKILL.md"
     },
     {
       "name": "os-scripting",
