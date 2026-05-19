@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 01:52:48 UTC  
-> **Total skills:** 610
+> **Last updated:** 2026-05-19 02:21:26 UTC  
+> **Total skills:** 611
 
 ## Skills by Domain
 
@@ -685,7 +685,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (97 skills)
+### Coding (98 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -735,6 +735,7 @@ MIT — All skills are freely available and redistributable.
 | [feature-interaction](skills/coding/feature-interaction/SKILL.md) | "Provides Discovers and engineers feature interactions including polynomial interactions, cross-features, and interaction detection methods" | feature interaction, interaction terms, polynomial features, cross-features, feature interactions |
 | [feature-scaling-normalization](skills/coding/feature-scaling-normalization/SKILL.md) | "Provides Scales and normalizes features using standardization, normalization, robust scaling, and other scaling methods for model compatibility" | feature scaling, normalization, standardization, robust scaling, scaling features, how do I scale |
 | [feature-selection](skills/coding/feature-selection/SKILL.md) | "Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based methods" | feature selection, feature importance, recursive elimination, univariate selection, feature selection methods |
+| [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. | framework setup, project scaffolding, dependency configuration, boilerplate generation, environment validation, starter kits, tech stack selection |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices | grpc development, grpc debugging, protocol buffers, rpc services, grpc errors, stream handling, unary calls, grpc gateway |
 | [humanizer](skills/coding/humanizer/SKILL.md) | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation, comments, technical writing, readability, code clarity |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters |
@@ -924,7 +925,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (226 skills)
+### Implementation (Build Features) (227 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1009,6 +1010,7 @@ MIT — All skills are freely available and redistributable.
 | [feature-selection](skills/coding/feature-selection/SKILL.md) | Coding | "Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based methods" |
 | [feature-store](skills/trading/feature-store/SKILL.md) | Trading | "Provides Feature storage and management for machine learning trading models" |
 | [fill-simulation](skills/trading/fill-simulation/SKILL.md) | Trading | "Implements fill simulation models for order execution probability for risk management and algorithmic trading execution." |
+| [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. |
 | [gitops-troubleshooting](skills/agent/gitops-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves GitOps synchronization failures, drift detection issues, and reconciliation problems for ArgoCD and Flux deployments with actionable debugging commands. |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Linux | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. |
@@ -1796,6 +1798,7 @@ MIT — All skills are freely available and redistributable.
 | [flux](skills/cncf/flux/SKILL.md) | Cncf | "Configures flux in cloud-native engineering - gitops for kubernetes for cloud-native deployment and infrastructure management." | Reference |
 | [for-loop-iteration](skills/programming/for-loop-iteration/SKILL.md) | Programming | Teaches idiomatic for loop patterns across Python, JavaScript, Go, C/C++, Rust, and shell scripting with anti-patterns, common pitfalls, and best practices. | Reference |
 | [framework](skills/cncf/framework/SKILL.md) | Cncf | "Operator Framework in Tools to build and manage Kubernetes operators" with standardized patterns | Reference |
+| [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. | Implementation |
 | [framework-selection](skills/agent/framework-selection/SKILL.md) | Agent | Applies structured decision-making frameworks (weighted scoring, RICE, MoSCoW, decision matrices) to evaluate options against requirements and select optimal solutions. | Orchestration |
 | [freshdesk-automation](skills/agent/freshdesk-automation/SKILL.md) | Agent | Implements intelligent freshdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [full-stack-orchestration-full-stack-feature](skills/agent/full-stack-orchestration-full-stack-feature/SKILL.md) | Agent | Implements intelligent full stack orchestration full stack feature with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
