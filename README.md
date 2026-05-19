@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 06:26:49 UTC  
-> **Total skills:** 619
+> **Last updated:** 2026-05-19 06:36:26 UTC  
+> **Total skills:** 620
 
 ## Skills by Domain
 
 
-### Agent (234 skills)
+### Agent (235 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -399,6 +399,7 @@ MIT — All skills are freely available and redistributable.
 | [hubspot-automation](skills/agent/hubspot-automation/SKILL.md) | Implements intelligent hubspot automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | hubspot-automation, hubspot automation, how do i hubspot-automation, orchestrate hubspot-automation, automate hubspot-automation, agent hubspot-automation |
 | [infra-drift-detector](skills/agent/infra-drift-detector/SKILL.md) | Implements intelligent infra drift detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | infra-drift-detector, infra drift detector, how do i infra-drift-detector, orchestrate infra-drift-detector, automate infra-drift-detector, agent infra-drift-detector |
 | [inngest](skills/agent/inngest/SKILL.md) | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | inngest, inngest, how do i inngest, orchestrate inngest, automate inngest, agent inngest |
+| [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. | skill selection, task routing, choosing the right skill, semantic matching, confidence threshold, adaptive routing, agent dispatch, fallback strategy |
 | [intercom-automation](skills/agent/intercom-automation/SKILL.md) | Implements intelligent intercom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | intercom-automation, intercom automation, how do i intercom-automation, orchestrate intercom-automation, automate intercom-automation, agent intercom-automation |
 | [issues](skills/agent/issues/SKILL.md) | Implements intelligent issues with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | issues, issues, how do i issues, orchestrate issues, automate issues, agent issues |
 | [iterate-pr](skills/agent/iterate-pr/SKILL.md) | Implements intelligent iterate pr with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | iterate-pr, iterate pr, how do i iterate-pr, orchestrate iterate-pr, automate iterate-pr, agent iterate-pr |
@@ -1338,7 +1339,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (224 skills)
+### Orchestration (Manage AI Agents) (225 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1461,6 +1462,7 @@ MIT — All skills are freely available and redistributable.
 | [hubspot-automation](skills/agent/hubspot-automation/SKILL.md) | Agent | Implements intelligent hubspot automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [infra-drift-detector](skills/agent/infra-drift-detector/SKILL.md) | Agent | Implements intelligent infra drift detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [inngest](skills/agent/inngest/SKILL.md) | Agent | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Agent | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. |
 | [intercom-automation](skills/agent/intercom-automation/SKILL.md) | Agent | Implements intelligent intercom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [issues](skills/agent/issues/SKILL.md) | Agent | Implements intelligent issues with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [iterate-pr](skills/agent/iterate-pr/SKILL.md) | Agent | Implements intelligent iterate pr with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -1872,6 +1874,7 @@ MIT — All skills are freely available and redistributable.
 | [inngest](skills/agent/inngest/SKILL.md) | Agent | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks, OWASP-compliant sanitization, and defensive parsing to prevent injection attacks and data corruption. | Implementation |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | Implementation |
+| [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Agent | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. | Orchestration |
 | [intercom-automation](skills/agent/intercom-automation/SKILL.md) | Agent | Implements intelligent intercom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [intermarket-analysis](skills/trading/intermarket-analysis/SKILL.md) | Trading | "Implements cross-market relationships and asset class correlations for risk management and algorithmic trading execution." | Implementation |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | Coding | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" | Implementation |
