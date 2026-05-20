@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T20:20:28.594321Z",
-  "totalSkills": 704,
+  "generatedAt": "2026-05-20T20:56:10.631129Z",
+  "totalSkills": 705,
   "domains": {
     "agent": 248,
     "cncf": 169,
-    "coding": 163,
+    "coding": 164,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -13,7 +13,7 @@
     "writing": 2
   },
   "roles": {
-    "orchestration": 230,
+    "orchestration": 231,
     "implementation": 304,
     "reference": 164,
     "information": 1,
@@ -6251,6 +6251,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-design/SKILL.md"
+    },
+    {
+      "name": "framework-lifecycle",
+      "domain": "coding",
+      "description": "Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "framework lifecycle",
+        "framework decision",
+        "technology lifecycle",
+        "framework evaluation",
+        "framework rollback",
+        "tech stack lifecycle",
+        "framework governance"
+      ],
+      "relatedSkills": [
+        "framework-selection",
+        "framework-requirements",
+        "framework-utilization",
+        "architecture-decision-records",
+        "technical-debt-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-lifecycle/SKILL.md"
     },
     {
       "name": "framework-performance-tuning",
