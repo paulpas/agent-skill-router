@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T22:19:29.296040Z",
-  "totalSkills": 709,
+  "generatedAt": "2026-05-20T22:44:59.895401Z",
+  "totalSkills": 710,
   "domains": {
     "agent": 249,
     "cncf": 169,
-    "coding": 167,
+    "coding": 168,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 307,
+    "implementation": 308,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -4835,6 +4835,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/design-patterns-architecture/SKILL.md"
+    },
+    {
+      "name": "design-systems",
+      "domain": "coding",
+      "description": "Implements production design systems with design token architecture, component theming, accessibility standards, documentation patterns, and cross-platform consistency for scalable UI ecosystems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "design system",
+        "design tokens",
+        "theming",
+        "accessibility",
+        "a11y",
+        "component library",
+        "UI kit",
+        "design language",
+        "style guide",
+        "token architecture",
+        "cross-platform consistency"
+      ],
+      "relatedSkills": [
+        "component-architecture",
+        "api-design",
+        "engineering-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/design-systems/SKILL.md"
     },
     {
       "name": "developer-pattern-library",
