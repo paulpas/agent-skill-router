@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-20T18:16:25.626640Z",
-  "totalSkills": 697,
+  "generatedAt": "2026-05-20T19:02:39.488818Z",
+  "totalSkills": 699,
   "domains": {
-    "agent": 244,
+    "agent": 246,
     "cncf": 169,
     "coding": 161,
     "go": 12,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 230,
-    "implementation": 297,
+    "implementation": 299,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -193,6 +193,34 @@
       "source": "skills/agent/agent-architecture-patterns/SKILL.md"
     },
     {
+      "name": "agent-communication-patterns",
+      "domain": "agent",
+      "description": "Implements inter-agent communication patterns (message passing, event-driven coordination, shared memory protocols, RPC-style calls, structured JSON messaging) for reliable multi-agent systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "agent communication",
+        "message passing",
+        "event driven",
+        "shared memory",
+        "rpc calls",
+        "multi agent coordination",
+        "inter agent messaging",
+        "message queue agents",
+        "structured messaging",
+        "agent to agent communication",
+        "agent messaging protocol"
+      ],
+      "relatedSkills": [
+        "ai-agent-safety",
+        "multi-agent-patterns",
+        "task-decomposition-engine"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-communication-patterns/SKILL.md"
+    },
+    {
       "name": "agent-context-management",
       "domain": "agent",
       "description": "Implements context window management, sliding window strategies, and persistent memory patterns to maintain AI agent coherence across long interactions.",
@@ -331,6 +359,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ai-agent-development/SKILL.md"
+    },
+    {
+      "name": "ai-agent-safety",
+      "domain": "agent",
+      "description": "Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ai agent safety",
+        "hallucination detection",
+        "prompt injection",
+        "output validation",
+        "tool call safety",
+        "guardrails",
+        "autonomous agent safety",
+        "AI safety"
+      ],
+      "relatedSkills": [
+        "agent-context-management",
+        "self-critique-engine",
+        "risk-value-at-risk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/ai-agent-safety/SKILL.md"
     },
     {
       "name": "ai-agents-architect",
