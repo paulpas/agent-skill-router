@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 10:44:21 UTC  
-> **Total skills:** 680
+> **Last updated:** 2026-05-20 06:05:49 UTC  
+> **Total skills:** 681
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (146 skills)
+### Coding (147 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -725,6 +725,7 @@ MIT — All skills are freely available and redistributable.
 | [clustering](skills/coding/clustering/SKILL.md) | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" | clustering, k-means, hierarchical clustering, DBSCAN, mixture models, how do I cluster data |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | code duplication, duplicate code detection, copy-paste code, boilerplate removal, semantic duplication, radon metrics, pylint warnings, refactoring detection, DRY principle, code quality analysis |
 | [community-detection](skills/coding/community-detection/SKILL.md) | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | community detection, graph clustering, modularity, spectral clustering, graph partitioning |
+| [component-architecture](skills/coding/component-architecture/SKILL.md) | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. | component architecture, compound components, headless ui, render props, component composition, container presentational pattern, component hooks, how do i design reusable components, component library design, UI composition |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals |
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config |
 | [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
@@ -1006,7 +1007,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (281 skills)
+### Implementation (Build Features) (282 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1048,6 +1049,7 @@ MIT — All skills are freely available and redistributable.
 | [clustering](skills/coding/clustering/SKILL.md) | Coding | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" |
 | [commission-model](skills/trading/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" |
+| [component-architecture](skills/coding/component-architecture/SKILL.md) | Coding | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. |
 | [concurrency-patterns](skills/go/concurrency-patterns/SKILL.md) | Go | Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications. |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" |
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton |
@@ -1846,6 +1848,7 @@ MIT — All skills are freely available and redistributable.
 | [commission-model](skills/trading/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." | Implementation |
 | [commit](skills/agent/commit/SKILL.md) | Agent | Implements intelligent commit with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | Implementation |
+| [component-architecture](skills/coding/component-architecture/SKILL.md) | Coding | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. | Implementation |
 | [compute-engine](skills/cncf/compute-engine/SKILL.md) | Cncf | "Deploys and manages virtual machine instances with auto-scaling, instance groups, and integration with GCP services for IaaS workloads" | Reference |
 | [concise-planning](skills/agent/concise-planning/SKILL.md) | Agent | Implements intelligent concise planning with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [concurrency-patterns](skills/go/concurrency-patterns/SKILL.md) | Go | Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications. | Implementation |
