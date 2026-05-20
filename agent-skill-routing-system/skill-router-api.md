@@ -104,3 +104,41 @@ docker restart skill-router
 # Stop
 docker stop skill-router
 ```
+
+---
+
+## Writing Effective Task Descriptions
+
+The skill router matches your task description against skill triggers — the keywords skill authors define in their metadata. Writing task descriptions that align with how skills are triggered produces better routing results.
+
+### The Two-Tier Strategy
+
+Skills use a two-tier trigger strategy combining:
+
+1. **Technical Terms** — Exact domain terminology, abbreviations, and product names (e.g., `PromQL`, `kubernetes`, `ATR`, `stop loss`)
+2. **Conversational Variants** — Natural language phrases non-technical users would type (e.g., `how do i monitor systems`, `how do i limit losses`, `help with backups`)
+
+**Your task description benefits from using both styles:**
+
+| Effective | Less Effective |
+|-----------|-----------------|
+| `Implement a stop loss strategy for crypto trading` | `Do risk management` |
+| `Set up Kubernetes monitoring with Prometheus` | `Configure monitoring` |
+| `Write unit tests for the auth module` | `Add tests` |
+
+### Guidelines for Better Routing
+
+- **Be specific** — Use the exact tool/framework name: `PostgreSQL` not just `database`, `pytest` not just `testing`
+- **Include the action** — Verbs help: `deploy`, `refactor`, `debug`, `implement`
+- **Mention context** — Add market context (`crypto`, `forex`), deployment model (`self-hosted`, `serverless`), or operational concern (`production`, `high-traffic`)
+- **Use natural phrasing** — Write like you'd ask a colleague: "how do i set up CI/CD" works better than "CI/CD pipeline configuration"
+- **Avoid ultra-generic words** — Words like `code`, `data`, `risk`, `pattern` alone are too broad and may not trigger the right skill
+
+### How Trigger Matching Works
+
+The router scores your task against each skill's trigger set:
+- Direct keyword matches increase the score
+- Conversational variants (how do i..., help with...) catch broader phrasing
+- Domain-specific terms (technical + business language) improve precision
+
+A well-formed task description with 2-4 domain-specific terms typically produces confident routing results.
