@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T11:58:29.437947Z",
-  "totalSkills": 683,
+  "generatedAt": "2026-05-20T12:41:05.864320Z",
+  "totalSkills": 684,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 148,
+    "coding": 149,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 284,
+    "implementation": 285,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -9596,6 +9596,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/monolith-architecture/SKILL.md"
+    },
+    {
+      "name": "monolith-refactoring",
+      "domain": "coding",
+      "description": "Refactors legacy monolithic \"big ball of mud\" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "monolith refactoring",
+        "big ball of mud",
+        "how do i untangle legacy code",
+        "spaghetti code cleanup",
+        "module extraction",
+        "strangler fig pattern",
+        "codebase restructuring",
+        "technical debt refactoring",
+        "god class decomposition",
+        "dependency analysis"
+      ],
+      "relatedSkills": [
+        "monolith-architecture",
+        "microservices-architecture",
+        "anti-corruption-layer",
+        "domain-driven-design",
+        "technical-debt-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/monolith-refactoring/SKILL.md"
     },
     {
       "name": "monte-carlo",
