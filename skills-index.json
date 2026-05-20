@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T03:13:09.927735Z",
-  "totalSkills": 661,
+  "generatedAt": "2026-05-20T04:16:10.071140Z",
+  "totalSkills": 664,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 132,
+    "coding": 135,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 267,
+    "implementation": 270,
     "reference": 161,
     "information": 1,
     "review": 4
@@ -12975,6 +12975,32 @@
       "source": "skills/coding/software-engineering-principles/SKILL.md"
     },
     {
+      "name": "software-error-handling",
+      "domain": "coding",
+      "description": "Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "error handling",
+        "exception design",
+        "retry logic",
+        "circuit breaker",
+        "graceful degradation",
+        "error recovery",
+        "resilience patterns",
+        "how do i handle errors in software"
+      ],
+      "relatedSkills": [
+        "software-engineering-principles",
+        "refactoring-techniques",
+        "software-testing-strategy",
+        "observability-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-error-handling/SKILL.md"
+    },
+    {
       "name": "software-testing-strategy",
       "domain": "coding",
       "description": "Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions.",
@@ -13503,6 +13529,31 @@
       "source": "skills/coding/system-architecture/SKILL.md"
     },
     {
+      "name": "systematic-debugging",
+      "domain": "coding",
+      "description": "Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "systematic debugging",
+        "root cause analysis",
+        "stack trace",
+        "binary search debugging",
+        "production outage",
+        "how do i debug systematically",
+        "five whys",
+        "bug isolation"
+      ],
+      "relatedSkills": [
+        "engineering-principles",
+        "software-error-handling",
+        "code-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/systematic-debugging/SKILL.md"
+    },
+    {
       "name": "tail-risk",
       "domain": "trading",
       "description": "\"Implements tail risk management and extreme event protection for risk management and algorithmic trading execution.\"",
@@ -13566,6 +13617,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/task-intelligence/SKILL.md"
+    },
+    {
+      "name": "technical-debt-management",
+      "domain": "coding",
+      "description": "Tracks, categorizes, and systematically reduces technical debt across codebases using quantitative scoring, prioritization matrices, and automated refactoring strategies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "technical debt",
+        "code quality",
+        "refactoring strategy",
+        "legacy code",
+        "debt tracking",
+        "interest rate",
+        "how do i reduce technical debt",
+        "debt inventory"
+      ],
+      "relatedSkills": [
+        "engineering-principles",
+        "refactoring-techniques",
+        "code-quality-policies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/technical-debt-management/SKILL.md"
     },
     {
       "name": "tekton",
