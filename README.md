@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 09:24:00 UTC  
-> **Total skills:** 676
+> **Last updated:** 2026-05-20 05:07:52 UTC  
+> **Total skills:** 678
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (143 skills)
+### Coding (145 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -707,6 +707,8 @@ MIT — All skills are freely available and redistributable.
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. | anti-pattern, god object, leaky abstraction, feature envy, shotgun surgery, cargo cult, code smell, refactoring, bad design, harmful patterns |
 | [api-design](skills/coding/api-design/SKILL.md) | Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services. | api design, rest api, endpoint design, api architecture, resource modeling, error handling patterns, pagination strategy, rate limiting, api versioning, graphql design, web service design, http methods, idempotency |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
+| [architectural-review](skills/coding/architectural-review/SKILL.md) | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. | architectural review, architecture assessment, system quality evaluation, technical debt audit, how do i evaluate my architecture, codebase health check, coupling analysis, cohesion metrics |
+| [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | architecture decision records, ADR, architectural decisions, how do i document architectural choices, design rationale, technology selection, system trade-offs, decision log |
 | [association-rules](skills/coding/association-rules/SKILL.md) | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | association rules, market basket, apriori, frequent itemsets, recommendation, pattern mining |
 | [automation](skills/coding/automation/SKILL.md) | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | semantic versioning, semver, version bumping, conventional commits, semantic-release, changelog automation, release automation, git tags |
 | [base](skills/coding/base/SKILL.md) | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | abstract, initialization, pattern, strategy base, strategy-base |
@@ -1287,7 +1289,7 @@ MIT — All skills are freely available and redistributable.
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 
 
-### Reference (Learn & Understand) (163 skills)
+### Reference (Learn & Understand) (164 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1295,6 +1297,7 @@ MIT — All skills are freely available and redistributable.
 | [aks](skills/cncf/aks/SKILL.md) | Cncf | "Provides Managed Kubernetes cluster with automatic scaling and Azure service integration" |
 | [algorithms](skills/programming/algorithms/SKILL.md) | Programming | ''Provides Comprehensive algorithm selection guide u2014 choose, implement, and' optimize algorithms based on time/space trade-offs, input characteristics, and problem constraints'' |
 | [architecture](skills/cncf/architecture/SKILL.md) | Cncf | "Creates or updates ARCHITECTURE.md documenting the project's design" components, and technical decisions for CNCF projects |
+| [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Coding | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. |
 | [argo](skills/cncf/argo/SKILL.md) | Cncf | "Argo in Cloud-Native Engineering - Kubernetes-Native Workflow, CI/CD" and Governance |
 | [async-runtime](skills/programming/async-runtime/SKILL.md) | Programming | Implements and analyzes Rust async runtime patterns including tokio, async-std, and custom executors for high-performance concurrent systems. |
 | [auto-scaling](skills/cncf/auto-scaling/SKILL.md) | Cncf | "Configures automatic scaling of compute resources (EC2, RDS, DynamoDB" Lambda) based on demand metrics with scaling policies and lifecycle hooks. |
@@ -1691,11 +1694,12 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Agent | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 
 
-### Review (Audit & Validate) (4 skills)
+### Review (Audit & Validate) (5 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Coding | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. |
+| [architectural-review](skills/coding/architectural-review/SKILL.md) | Coding | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Coding | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. |
 | [humanizer](skills/coding/humanizer/SKILL.md) | Coding | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. |
@@ -1752,7 +1756,9 @@ MIT — All skills are freely available and redistributable.
 | [apify-trend-analysis](skills/agent/apify-trend-analysis/SKILL.md) | Agent | Implements intelligent apify trend analysis with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [apify-ultimate-scraper](skills/agent/apify-ultimate-scraper/SKILL.md) | Agent | Implements intelligent apify ultimate scraper with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | Implementation |
+| [architectural-review](skills/coding/architectural-review/SKILL.md) | Coding | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. | Review |
 | [architecture](skills/cncf/architecture/SKILL.md) | Cncf | "Creates or updates ARCHITECTURE.md documenting the project's design" components, and technical decisions for CNCF projects | Reference |
+| [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Coding | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | Reference |
 | [argo](skills/cncf/argo/SKILL.md) | Cncf | "Argo in Cloud-Native Engineering - Kubernetes-Native Workflow, CI/CD" and Governance | Reference |
 | [ask-questions-if-underspecified](skills/agent/ask-questions-if-underspecified/SKILL.md) | Agent | Implements intelligent ask questions if underspecified with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | Implementation |
