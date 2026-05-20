@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T16:00:48.497421Z",
-  "totalSkills": 691,
+  "generatedAt": "2026-05-20T16:44:41.539672Z",
+  "totalSkills": 693,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 156,
+    "coding": 158,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 292,
+    "implementation": 294,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -7359,6 +7359,36 @@
       "source": "skills/cncf/process-incident-response/SKILL.md"
     },
     {
+      "name": "incident-response",
+      "domain": "coding",
+      "description": "Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "incident response",
+        "production outage",
+        "on-call procedures",
+        "postmortem",
+        "blameless postmortem",
+        "RCA root cause analysis",
+        "service degradation",
+        "how do i handle a production incident",
+        "incident command",
+        "severity classification",
+        "rollback procedure",
+        "escalation path"
+      ],
+      "relatedSkills": [
+        "systematic-debugging",
+        "observability-patterns",
+        "engineering-principles",
+        "production-logging"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/incident-response/SKILL.md"
+    },
+    {
       "name": "incident-response-runbooks",
       "domain": "cncf",
       "description": "Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments.",
@@ -11052,6 +11082,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/paper-performance-attribution/SKILL.md"
+    },
+    {
+      "name": "performance-optimization",
+      "domain": "coding",
+      "description": "Identifies and eliminates performance bottlenecks through systematic profiling (cProfile, py-spy, memory_profiler), Big-O complexity analysis, algorithmic optimization, and benchmark-driven validation to reduce latency and resource usage.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "performance optimization",
+        "code profiling",
+        "bottleneck analysis",
+        "cProfile",
+        "py-spy",
+        "Big O complexity",
+        "memory leak detection",
+        "slow code",
+        "latency reduction",
+        "how do i make my code faster",
+        "benchmarking",
+        "time complexity",
+        "p95 latency"
+      ],
+      "relatedSkills": [
+        "framework-performance-tuning",
+        "performance-testing",
+        "systematic-debugging",
+        "memoization-cache-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/performance-optimization/SKILL.md"
     },
     {
       "name": "performance-profiler",
