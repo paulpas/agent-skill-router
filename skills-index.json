@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T16:44:41.539672Z",
-  "totalSkills": 693,
+  "generatedAt": "2026-05-20T17:31:09.297810Z",
+  "totalSkills": 695,
   "domains": {
-    "agent": 243,
+    "agent": 244,
     "cncf": 169,
-    "coding": 158,
+    "coding": 159,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -13,8 +13,8 @@
     "writing": 2
   },
   "roles": {
-    "orchestration": 229,
-    "implementation": 294,
+    "orchestration": 230,
+    "implementation": 295,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -13130,6 +13130,34 @@
       "source": "skills/coding/skill-development-workflow/SKILL.md"
     },
     {
+      "name": "skill-ecosystem-design",
+      "domain": "agent",
+      "description": "Designs interconnected skill networks with dependency graphs, reciprocal relationships, layered capabilities, and cross-domain bridges to maximize discoverability and create coherent capability clusters for AI agent systems.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "skill ecosystem",
+        "skill network",
+        "skill dependencies",
+        "skill relationships",
+        "layered skills",
+        "cross-domain skills",
+        "how do i design skill networks",
+        "reciprocal skills",
+        "skill clusters",
+        "capability mapping"
+      ],
+      "relatedSkills": [
+        "agent-skill-trigger-engineering",
+        "coding-skill-lifecycle-management",
+        "agent-skill-router",
+        "agent-confidence-based-selector"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/skill-ecosystem-design/SKILL.md"
+    },
+    {
       "name": "skill-engineering",
       "domain": "agent",
       "description": "Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system.",
@@ -13220,6 +13248,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-lifecycle-management/SKILL.md"
+    },
+    {
+      "name": "skill-lifecycle-management",
+      "domain": "coding",
+      "description": "Manages the complete lifecycle of SKILL.md files including versioning strategies, deprecation workflows, retirement criteria, migration plans, and automated drift detection to keep skills current across the repository.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "skill lifecycle",
+        "skill versioning",
+        "skill deprecation",
+        "skill retirement",
+        "how do i manage skills",
+        "skill migration",
+        "deprecated skills",
+        "skill health monitoring",
+        "skill drift detection",
+        "maturity tracking"
+      ],
+      "relatedSkills": [
+        "coding-skill-development-workflow",
+        "agent-skill-trigger-engineering",
+        "coding-code-quality-policies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/skill-lifecycle-management/SKILL.md"
     },
     {
       "name": "skill-optimizer",
