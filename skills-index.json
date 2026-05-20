@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T21:29:12.503594Z",
-  "totalSkills": 706,
+  "generatedAt": "2026-05-20T22:04:08.743098Z",
+  "totalSkills": 708,
   "domains": {
     "agent": 249,
     "cncf": 169,
-    "coding": 164,
+    "coding": 166,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 304,
+    "implementation": 306,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -2822,6 +2822,36 @@
       "source": "skills/cncf/gcp-cloud-monitoring/SKILL.md"
     },
     {
+      "name": "cloud-native-architecture",
+      "domain": "coding",
+      "description": "Implements cloud-native architecture patterns including Kubernetes-native design, service mesh integration, GitOps workflows, serverless compute, immutable infrastructure, and platform engineering for resilient distributed systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "cloud native architecture",
+        "kubernetes design",
+        "container orchestration",
+        "service mesh",
+        "GitOps",
+        "serverless architecture",
+        "immutable infrastructure",
+        "platform engineering",
+        "internal developer platform",
+        "how do i design cloud-native systems",
+        "declarative configuration",
+        "ephemerality"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "distributed-systems-architecture",
+        "event-driven-architecture",
+        "observability-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/cloud-native-architecture/SKILL.md"
+    },
+    {
       "name": "cloud-operations",
       "domain": "cncf",
       "description": "\"Provides Systems management including monitoring, logging, error reporting, and diagnostics\"",
@@ -4279,6 +4309,39 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-data-ingestion/SKILL.md"
+    },
+    {
+      "name": "data-intensive-systems",
+      "domain": "coding",
+      "description": "Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "data architecture",
+        "stream processing",
+        "kafka",
+        "change data capture",
+        "CDC",
+        "event sourcing",
+        "lakehouse",
+        "data mesh",
+        "real-time analytics",
+        "batch processing",
+        "data pipeline design",
+        "how do i build a data pipeline",
+        "data streaming",
+        "Flink",
+        "Spark Streaming"
+      ],
+      "relatedSkills": [
+        "event-driven-architecture",
+        "database-design-modeling",
+        "observability-patterns",
+        "distributed-systems-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/data-intensive-systems/SKILL.md"
     },
     {
       "name": "data-privacy",
