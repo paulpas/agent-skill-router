@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 08:01:24 UTC  
-> **Total skills:** 672
+> **Last updated:** 2026-05-20 03:31:40 UTC  
+> **Total skills:** 674
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (141 skills)
+### Coding (143 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -740,6 +740,7 @@ MIT — All skills are freely available and redistributable.
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | database design, schema design, data modeling, sql migrations, indexing strategy, database normalization, foreign keys, entity relationship |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | dependency inversion principle, DIP, dependency injection, inversion of control, IoC, loose coupling, high level low level abstraction, constructor injection, factory pattern, testable architecture |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | CVE, dependency management, vulnerability scanning, dependency updates, security patching, SCA, software composition analysis, vulnerability remediation |
+| [design-pattern-selection](skills/coding/design-pattern-selection/SKILL.md) | Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics. | design pattern, GoF pattern, factory method, strategy pattern, decorator pattern, observer pattern, how do i choose a pattern, structural pattern |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | design patterns, GoF, SOLID, DRY, factory pattern, software architecture, refactoring, SOLID principles |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. | design patterns, GoF, SOLID, DRY, YAGNI, architecture, creational patterns, structural patterns |
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" | dimensionality reduction, PCA, t-SNE, UMAP, feature extraction, how do i reduce dimensions |
@@ -835,6 +836,7 @@ MIT — All skills are freely available and redistributable.
 | [test-driven-development](skills/coding/test-driven-development/SKILL.md) | Implements test-driven development (TDD) cycle with red-green-refactor workflow, writing failing unit tests before implementation code to drive design and catch regressions early. | test-driven development, tdd, red-green-refactor, unit testing, how do i write tests first, test-first approach, behavior driven |
 | [testing-unit-integration-e2e](skills/coding/testing-unit-integration-e2e/SKILL.md) | Implements comprehensive testing strategies (unit, integration, contract, and end-to-end) with appropriate test doubles, isolation levels, and coverage thresholds for reliable software delivery. | unit testing, integration testing, contract testing, end-to-end testing, e2e, test doubles, test isolation, smoke tests |
 | [time-series-forecasting](skills/coding/time-series-forecasting/SKILL.md) | "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction" | time series forecasting, ARIMA, exponential smoothing, LSTM, forecasting, time series prediction |
+| [tool-evaluation-workflow](skills/coding/tool-evaluation-workflow/SKILL.md) | Applies a structured evaluation framework to select tools, libraries, and frameworks based on technical fit, community health, security posture, performance benchmarks, and total cost of ownership for software projects. | tool evaluation, library selection, framework comparison, proof of concept, technology assessment, how do i evaluate tools, build vs buy decision, dependency management |
 | [topic-modeling](skills/coding/topic-modeling/SKILL.md) | "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods" | topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation, text analysis |
 | [tree-methods](skills/coding/tree-methods/SKILL.md) | "Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods for classification and regression | decision trees, random forest, gradient boosting, xgboost, lightgbm, how do i use trees |
 | [validation](skills/coding/validation/SKILL.md) | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions | validation, code validation, pipeline validation, config status, input validation, validate pipeline, pipeline stages |
@@ -992,7 +994,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (277 skills)
+### Implementation (Build Features) (279 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1061,6 +1063,7 @@ MIT — All skills are freely available and redistributable.
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" |
 | [deployment-orchestration](skills/cncf/deployment-orchestration/SKILL.md) | Cncf | Orchestrates complex multi-stage deployments with dependency management, sequencing rules, and failure handling across interconnected services. |
 | [deployment-patterns](skills/go/deployment-patterns/SKILL.md) | Go | Deploys Go applications with build optimization, multi-stage Docker builds, binary sizing, and deployment strategies for cloud and on-prem. |
+| [design-pattern-selection](skills/coding/design-pattern-selection/SKILL.md) | Coding | Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics. |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Coding | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Coding | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. |
 | [digital-fabrication](skills/maker/digital-fabrication/SKILL.md) | Maker | Implements 3D printing slicing, laser cutting calibration, CNC toolpaths, and STL validation workflows for turning CAD models into fabrication-ready parts with optimized parameters. |
@@ -1250,6 +1253,7 @@ MIT — All skills are freely available and redistributable.
 | [time-series-database](skills/trading/time-series-database/SKILL.md) | Trading | "Provides Time-series database queries and optimization for financial data" |
 | [time-series-forecasting](skills/coding/time-series-forecasting/SKILL.md) | Coding | "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction" |
 | [time-series-forecasting](skills/trading/time-series-forecasting/SKILL.md) | Trading | "Provides Time series forecasting for price prediction and market analysis" |
+| [tool-evaluation-workflow](skills/coding/tool-evaluation-workflow/SKILL.md) | Coding | Applies a structured evaluation framework to select tools, libraries, and frameworks based on technical fit, community health, security posture, performance benchmarks, and total cost of ownership for software projects. |
 | [topic-modeling](skills/coding/topic-modeling/SKILL.md) | Coding | "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods" |
 | [trade-reporting](skills/trading/trade-reporting/SKILL.md) | Trading | "Real-time trade reporting and execution analytics for monitoring and" optimization |
 | [trading-edge](skills/trading/trading-edge/SKILL.md) | Trading | "Provides Finding and maintaining competitive advantage in trading systems" |
@@ -1883,6 +1887,7 @@ MIT — All skills are freely available and redistributable.
 | [deployment-orchestration](skills/cncf/deployment-orchestration/SKILL.md) | Cncf | Orchestrates complex multi-stage deployments with dependency management, sequencing rules, and failure handling across interconnected services. | Implementation |
 | [deployment-patterns](skills/go/deployment-patterns/SKILL.md) | Go | Deploys Go applications with build optimization, multi-stage Docker builds, binary sizing, and deployment strategies for cloud and on-prem. | Implementation |
 | [deployment-philosophy](skills/cncf/deployment-philosophy/SKILL.md) | Cncf | Architects multi-stage deployment strategies that balance speed, safety, and reliability through systematic risk assessment and controlled change delivery. | Reference |
+| [design-pattern-selection](skills/coding/design-pattern-selection/SKILL.md) | Coding | Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics. | Implementation |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Coding | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | Implementation |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Coding | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. | Implementation |
 | [developer-pattern-library](skills/agent/developer-pattern-library/SKILL.md) | Agent | Curates and maintains a personal library of validated code patterns, solutions, and anti-patterns accumulated through development experience, enabling faster problem-solving on future tasks. | Reference |
@@ -2305,6 +2310,7 @@ MIT — All skills are freely available and redistributable.
 | [time-series-database](skills/trading/time-series-database/SKILL.md) | Trading | "Provides Time-series database queries and optimization for financial data" | Implementation |
 | [time-series-forecasting](skills/coding/time-series-forecasting/SKILL.md) | Coding | "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction" | Implementation |
 | [time-series-forecasting](skills/trading/time-series-forecasting/SKILL.md) | Trading | "Provides Time series forecasting for price prediction and market analysis" | Implementation |
+| [tool-evaluation-workflow](skills/coding/tool-evaluation-workflow/SKILL.md) | Coding | Applies a structured evaluation framework to select tools, libraries, and frameworks based on technical fit, community health, security posture, performance benchmarks, and total cost of ownership for software projects. | Implementation |
 | [topic-modeling](skills/coding/topic-modeling/SKILL.md) | Coding | "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods" | Implementation |
 | [toto](skills/cncf/toto/SKILL.md) | Cncf | "in-toto in Supply Chain Security - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [track-management](skills/agent/track-management/SKILL.md) | Agent | Implements intelligent track management with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
