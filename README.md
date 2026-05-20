@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 21:29:13 UTC  
-> **Total skills:** 706
+> **Last updated:** 2026-05-20 17:03:40 UTC  
+> **Total skills:** 708
 
 ## Skills by Domain
 
@@ -700,7 +700,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (165 skills)
+### Coding (167 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -729,6 +729,7 @@ MIT — All skills are freely available and redistributable.
 | [categorical-encoding](skills/coding/categorical-encoding/SKILL.md) | "Provides Encodes categorical variables using one-hot encoding, target encoding, ordinal encoding, embeddings, and other encoding strategies" | categorical encoding, one-hot encoding, target encoding, ordinal encoding, categorical variables |
 | [causal-inference](skills/coding/causal-inference/SKILL.md) | Implements causal models, directed acyclic graphs (DAGs), confounding adjustment, and mediation analysis for causal discovery | causal inference, causality, causal models, DAG, confounding, how do i determine causation, airflow, data pipelines |
 | [classification-metrics](skills/coding/classification-metrics/SKILL.md) | "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics" | classification metrics, precision, recall, F1-score, ROC-AUC, confusion matrix |
+| [cloud-native-architecture](skills/coding/cloud-native-architecture/SKILL.md) | Implements cloud-native architecture patterns including Kubernetes-native design, service mesh integration, GitOps workflows, serverless compute, immutable infrastructure, and platform engineering for resilient distributed systems. | cloud native architecture, kubernetes design, container orchestration, service mesh, GitOps, serverless architecture, immutable infrastructure, platform engineering, internal developer platform, how do i design cloud-native systems, declarative configuration, ephemerality |
 | [clustering](skills/coding/clustering/SKILL.md) | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" | clustering, k-means, hierarchical clustering, DBSCAN, mixture models, how do I cluster data |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | code duplication, duplicate code detection, copy-paste code, boilerplate removal, semantic duplication, radon metrics, pylint warnings, refactoring detection, DRY principle, code quality analysis |
 | [community-detection](skills/coding/community-detection/SKILL.md) | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | community detection, graph clustering, modularity, spectral clustering, graph partitioning |
@@ -744,6 +745,7 @@ MIT — All skills are freely available and redistributable.
 | [data-collection](skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | json serialization, xml parsing, base64 encoding, url encoding, yaml config, protocol buffers, data serialization, type coercion, character encoding, message encoding |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data |
+| [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | data architecture, stream processing, kafka, change data capture, CDC, event sourcing, lakehouse, data mesh, real-time analytics, batch processing, data pipeline design, how do i build a data pipeline, data streaming, Flink, Spark Streaming |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | data privacy, anonymization, differential privacy, GDPR, PII protection, privacy-preserving, sensitive data |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale | data profiling, metadata extraction, schema analysis, data schema, how do i profile data, data structure, performance analysis, optimization |
 | [data-quality](skills/coding/data-quality/SKILL.md) | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" | data validation, data cleaning, outlier detection, data quality, how do i clean data, missing values |
@@ -1032,7 +1034,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (304 skills)
+### Implementation (Build Features) (306 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1074,6 +1076,7 @@ MIT — All skills are freely available and redistributable.
 | [classification-metrics](skills/coding/classification-metrics/SKILL.md) | Coding | "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics" |
 | [cloud-development](skills/go/cloud-development/SKILL.md) | Go | Develops cloud-native Go applications with context propagation, graceful shutdown, health checks, and configuration management for production. |
 | [cloud-linux-engineering](skills/linux/cloud-linux-engineering/SKILL.md) | Linux | Engineers Linux systems for cloud-native environments with cloud-init bootstrapping, IMDSv2 security, ephemeral lifecycle management, spot instance handling, and cloud observability integration. |
+| [cloud-native-architecture](skills/coding/cloud-native-architecture/SKILL.md) | Coding | Implements cloud-native architecture patterns including Kubernetes-native design, service mesh integration, GitOps workflows, serverless compute, immutable infrastructure, and platform engineering for resilient distributed systems. |
 | [clustering](skills/coding/clustering/SKILL.md) | Coding | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" |
 | [commission-model](skills/trading/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" |
@@ -1095,6 +1098,7 @@ MIT — All skills are freely available and redistributable.
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" |
+| [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale |
 | [data-quality](skills/coding/data-quality/SKILL.md) | Coding | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" |
@@ -1885,6 +1889,7 @@ MIT — All skills are freely available and redistributable.
 | [cloud-linux-engineering](skills/linux/cloud-linux-engineering/SKILL.md) | Linux | Engineers Linux systems for cloud-native environments with cloud-init bootstrapping, IMDSv2 security, ephemeral lifecycle management, spot instance handling, and cloud observability integration. | Implementation |
 | [cloud-load-balancing](skills/cncf/cloud-load-balancing/SKILL.md) | Cncf | "Provides Distributes traffic across instances with automatic failover and health checking" | Reference |
 | [cloud-monitoring](skills/cncf/cloud-monitoring/SKILL.md) | Cncf | "Monitors GCP resources with metrics, logging, and alerting for operational visibility" | Reference |
+| [cloud-native-architecture](skills/coding/cloud-native-architecture/SKILL.md) | Coding | Implements cloud-native architecture patterns including Kubernetes-native design, service mesh integration, GitOps workflows, serverless compute, immutable infrastructure, and platform engineering for resilient distributed systems. | Implementation |
 | [cloud-operations](skills/cncf/cloud-operations/SKILL.md) | Cncf | "Provides Systems management including monitoring, logging, error reporting, and diagnostics" | Reference |
 | [cloud-pubsub](skills/cncf/cloud-pubsub/SKILL.md) | Cncf | "Asynchronous messaging service for event streaming and decoupled application" integration. | Reference |
 | [cloud-sql](skills/cncf/cloud-sql/SKILL.md) | Cncf | "Provides managed relational databases (MySQL, PostgreSQL) with automated backups, replication, and encryption" | Reference |
@@ -1949,6 +1954,7 @@ MIT — All skills are freely available and redistributable.
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | Implementation |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | Implementation |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | Implementation |
+| [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | Implementation |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | Implementation |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale | Implementation |
 | [data-quality](skills/coding/data-quality/SKILL.md) | Coding | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" | Implementation |
