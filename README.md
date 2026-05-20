@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 20:20:29 UTC  
-> **Total skills:** 704
+> **Last updated:** 2026-05-20 15:49:57 UTC  
+> **Total skills:** 705
 
 ## Skills by Domain
 
@@ -699,7 +699,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (164 skills)
+### Coding (165 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -776,6 +776,7 @@ MIT — All skills are freely available and redistributable.
 | [feature-scaling-normalization](skills/coding/feature-scaling-normalization/SKILL.md) | "Provides Scales and normalizes features using standardization, normalization, robust scaling, and other scaling methods for model compatibility" | feature scaling, normalization, standardization, robust scaling, scaling features, how do I scale |
 | [feature-selection](skills/coding/feature-selection/SKILL.md) | "Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based methods" | feature selection, feature importance, recursive elimination, univariate selection, feature selection methods |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | framework design, architectural blueprint, extension points, adapter pattern, interface contracts, composition root, framework integration |
+| [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | framework lifecycle, framework decision, technology lifecycle, framework evaluation, framework rollback, tech stack lifecycle, framework governance |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | framework performance, performance tuning, optimize framework, profiling application, connection pooling, caching strategy, async optimization, memory management, reduce latency, increase throughput, framework benchmarking, slow endpoint |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. | framework setup, project scaffolding, dependency configuration, boilerplate generation, environment validation, starter kits, tech stack selection |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | framework selection, tech stack evaluation, weighted scoring matrix, AHP decision, framework comparison, technology assessment, framework criteria, evaluate frameworks, choose framework, select technology, tech stack decision, framework trade-offs |
@@ -1510,7 +1511,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (230 skills)
+### Orchestration (Manage AI Agents) (231 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1605,6 +1606,7 @@ MIT — All skills are freely available and redistributable.
 | [fal-audio](skills/agent/fal-audio/SKILL.md) | Agent | Implements intelligent fal audio with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [filesystem-context](skills/agent/filesystem-context/SKILL.md) | Agent | Implements intelligent filesystem context with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [finishing-a-development-branch](skills/agent/finishing-a-development-branch/SKILL.md) | Agent | Implements intelligent finishing a development branch with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Coding | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. |
 | [framework-selection](skills/agent/framework-selection/SKILL.md) | Agent | Applies structured decision-making frameworks (weighted scoring, RICE, MoSCoW, decision matrices) to evaluate options against requirements and select optimal solutions. |
 | [freshdesk-automation](skills/agent/freshdesk-automation/SKILL.md) | Agent | Implements intelligent freshdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [full-stack-orchestration-full-stack-feature](skills/agent/full-stack-orchestration-full-stack-feature/SKILL.md) | Agent | Implements intelligent full stack orchestration full stack feature with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -2029,6 +2031,7 @@ MIT — All skills are freely available and redistributable.
 | [for-loop-iteration](skills/programming/for-loop-iteration/SKILL.md) | Programming | Teaches idiomatic for loop patterns across Python, JavaScript, Go, C/C++, Rust, and shell scripting with anti-patterns, common pitfalls, and best practices. | Reference |
 | [framework](skills/cncf/framework/SKILL.md) | Cncf | "Operator Framework in Tools to build and manage Kubernetes operators" with standardized patterns | Reference |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | Implementation |
+| [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Coding | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | Orchestration |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | Implementation |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. | Implementation |
 | [framework-selection](skills/agent/framework-selection/SKILL.md) | Agent | Applies structured decision-making frameworks (weighted scoring, RICE, MoSCoW, decision matrices) to evaluate options against requirements and select optimal solutions. | Orchestration |
