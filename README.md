@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 07:17:19 UTC  
-> **Total skills:** 670
+> **Last updated:** 2026-05-20 08:01:24 UTC  
+> **Total skills:** 672
 
 ## Skills by Domain
 
@@ -897,7 +897,7 @@ MIT — All skills are freely available and redistributable.
 | [v12-learning](skills/programming/v12-learning/SKILL.md) | "Reference guide for Progress OpenEdge ABL 12.7 (2023) — v10→v12 migration" INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic collections, safe navigation operator, server-side joins | abl v12, openedge 12, abl 12.7, v10 to v12 migration, abl migration, catch throw, jsonobject, read-json |
 
 
-### Trading (85 skills)
+### Trading (87 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -986,11 +986,13 @@ MIT — All skills are freely available and redistributable.
 | [walk-forward](skills/trading/walk-forward/SKILL.md) | "Implements walk-forward optimization for robust strategy validation for risk management and algorithmic trading execution." | backtest walk forward, backtest-walk-forward, optimization, robust, walk-forward, performance, speed |
 | [websocket-handling](skills/trading/websocket-handling/SKILL.md) | "Real-time market data handling with WebSockets including connection management" data aggregation, and robust error recovery | exchange websocket handling, exchange-websocket-handling, market, real-time, websockets |
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." | exchange websocket streaming, exchange-websocket-streaming, market, processing, real-time |
+| [your-edge](skills/trading/your-edge/SKILL.md) | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. | trading edge, edge discovery, alpha generation, edge validation, statistical advantage, walk forward test, monte carlo simulation, performance decay, competitive moat, your edge |
+| [your-position](skills/trading/your-position/SKILL.md) | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. | position management, mental accounting, home bias, disposition effect, portfolio impact, position thesis, behavioral bias, sunk cost fallacy, your position |
 
 ## Skills by Role
 
 
-### Implementation (Build Features) (275 skills)
+### Implementation (Build Features) (277 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1269,6 +1271,8 @@ MIT — All skills are freely available and redistributable.
 | [websocket-handling](skills/trading/websocket-handling/SKILL.md) | Trading | "Real-time market data handling with WebSockets including connection management" data aggregation, and robust error recovery |
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." |
 | [yagni](skills/coding/yagni/SKILL.md) | Coding | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. |
+| [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. |
+| [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 
 
 ### Reference (Learn & Understand) (161 skills)
@@ -2351,6 +2355,8 @@ MIT — All skills are freely available and redistributable.
 | [writing-plans](skills/agent/writing-plans/SKILL.md) | Agent | Implements intelligent writing plans with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [writing-skills](skills/agent/writing-skills/SKILL.md) | Agent | Implements intelligent writing skills with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [yagni](skills/coding/yagni/SKILL.md) | Coding | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. | Implementation |
+| [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. | Implementation |
+| [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. | Implementation |
 | [zapier-make-patterns](skills/agent/zapier-make-patterns/SKILL.md) | Agent | Implements intelligent zapier make patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [zendesk-automation](skills/agent/zendesk-automation/SKILL.md) | Agent | Implements intelligent zendesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [zipai-optimizer](skills/agent/zipai-optimizer/SKILL.md) | Agent | Implements intelligent zipai optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

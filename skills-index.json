@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-20T07:17:18.362214Z",
-  "totalSkills": 670,
+  "generatedAt": "2026-05-20T08:01:23.328207Z",
+  "totalSkills": 672,
   "domains": {
     "agent": 243,
     "cncf": 169,
@@ -9,12 +9,12 @@
     "linux": 12,
     "maker": 3,
     "programming": 5,
-    "trading": 85,
+    "trading": 87,
     "writing": 1
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 275,
+    "implementation": 277,
     "reference": 161,
     "information": 1,
     "review": 4
@@ -15264,6 +15264,61 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/yagni/SKILL.md"
+    },
+    {
+      "name": "your-edge",
+      "domain": "trading",
+      "description": "Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "trading edge",
+        "edge discovery",
+        "alpha generation",
+        "edge validation",
+        "statistical advantage",
+        "walk forward test",
+        "monte carlo simulation",
+        "performance decay",
+        "competitive moat",
+        "your edge"
+      ],
+      "relatedSkills": [
+        "fundamentals-trading-edge",
+        "backtest-walk-forward",
+        "backtest-sharpe-ratio",
+        "ai-regime-classification"
+      ],
+      "version": "1.0.0",
+      "source": "skills/trading/your-edge/SKILL.md"
+    },
+    {
+      "name": "your-position",
+      "domain": "trading",
+      "description": "Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "position management",
+        "mental accounting",
+        "home bias",
+        "disposition effect",
+        "portfolio impact",
+        "position thesis",
+        "behavioral bias",
+        "sunk cost fallacy",
+        "your position"
+      ],
+      "relatedSkills": [
+        "risk-position-sizing",
+        "risk-stop-loss",
+        "risk-kill-switches",
+        "backtest-drawdown-analysis"
+      ],
+      "version": "1.0.0",
+      "source": "skills/trading/your-position/SKILL.md"
     },
     {
       "name": "zapier-make-patterns",
