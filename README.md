@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 04:16:10 UTC  
-> **Total skills:** 664
+> **Last updated:** 2026-05-20 04:50:57 UTC  
+> **Total skills:** 666
 
 ## Skills by Domain
 
 
-### Agent (242 skills)
+### Agent (243 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -483,6 +483,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-scanner](skills/agent/skill-scanner/SKILL.md) | Implements intelligent skill scanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-scanner, skill scanner, how do i skill-scanner, orchestrate skill-scanner, automate skill-scanner, agent skill-scanner |
 | [skill-seekers](skills/agent/skill-seekers/SKILL.md) | Implements intelligent skill seekers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-seekers, skill seekers, how do i skill-seekers, orchestrate skill-seekers, automate skill-seekers, agent skill-seekers |
 | [skill-sentinel](skills/agent/skill-sentinel/SKILL.md) | Implements intelligent skill sentinel with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-sentinel, skill sentinel, how do i skill-sentinel, orchestrate skill-sentinel, automate skill-sentinel, agent skill-sentinel |
+| [skill-trigger-engineering](skills/agent/skill-trigger-engineering/SKILL.md) | Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives. | skill triggers, trigger engineering, auto-loading, skill discovery, trigger calibration, keyword matching, how do i design triggers, conversational discovery, two-tier trigger strategy, trigger testing |
 | [skill-writer](skills/agent/skill-writer/SKILL.md) | Implements intelligent skill writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-writer, skill writer, how do i skill-writer, orchestrate skill-writer, automate skill-writer, agent skill-writer |
 | [slack-automation](skills/agent/slack-automation/SKILL.md) | Implements intelligent slack automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | slack-automation, slack automation, how do i slack-automation, orchestrate slack-automation, automate slack-automation, agent slack-automation |
 | [stacktrace-root-cause](skills/agent/stacktrace-root-cause/SKILL.md) | Implements intelligent stacktrace root cause with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | stacktrace-root-cause, stacktrace root cause, how do i stacktrace-root-cause, orchestrate stacktrace-root-cause, automate stacktrace-root-cause, agent stacktrace-root-cause |
@@ -693,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (136 skills)
+### Coding (137 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -814,6 +815,7 @@ MIT — All skills are freely available and redistributable.
 | [shop](skills/coding/shop/SKILL.md) | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | application, guide, juice shop, juice-shop, owasp, security best practices, security guidelines, vulnerability scanning |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | single letter variables, naming conventions, code readability, variable names, a b c d x y z, ambiguous identifiers, code review |
 | [single-responsibility](skills/coding/single-responsibility/SKILL.md) | Detects and refactors classes that violate the Single Responsibility Principle by splitting multi-purpose modules into focused components with clear responsibility boundaries. | single responsibility principle, SRP, god class, split class, cohesion, high coupling, module boundary, one reason to change, separation of concerns |
+| [skill-development-workflow](skills/coding/skill-development-workflow/SKILL.md) | Implements the complete skill creation lifecycle from research through validation, including Python-based quality gates, stub detection, and automated compliance checking against SKILL_FORMAT_SPEC.md requirements. | skill creation workflow, skill development, skill lifecycle, quality gate validation, skill validator, stub detection, skill compliance check, how do i create a skill, SKILL.md format, skill generation pipeline |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | software architecture, system design, layered architecture, hexagonal architecture, clean architecture, separation of concerns, scalable design, architectural patterns |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design |
@@ -984,7 +986,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (270 skills)
+### Implementation (Build Features) (271 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1207,6 +1209,7 @@ MIT — All skills are freely available and redistributable.
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. |
 | [single-responsibility](skills/coding/single-responsibility/SKILL.md) | Coding | Detects and refactors classes that violate the Single Responsibility Principle by splitting multi-purpose modules into focused components with clear responsibility boundaries. |
+| [skill-development-workflow](skills/coding/skill-development-workflow/SKILL.md) | Coding | Implements the complete skill creation lifecycle from research through validation, including Python-based quality gates, stub detection, and automated compliance checking against SKILL_FORMAT_SPEC.md requirements. |
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Agent | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. |
 | [slippage-model](skills/trading/slippage-model/SKILL.md) | Trading | "Implements slippage modeling and execution simulation for risk management and algorithmic trading execution." |
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis |
@@ -1427,7 +1430,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (228 skills)
+### Orchestration (Manage AI Agents) (229 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1626,6 +1629,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-scanner](skills/agent/skill-scanner/SKILL.md) | Agent | Implements intelligent skill scanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-seekers](skills/agent/skill-seekers/SKILL.md) | Agent | Implements intelligent skill seekers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-sentinel](skills/agent/skill-sentinel/SKILL.md) | Agent | Implements intelligent skill sentinel with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [skill-trigger-engineering](skills/agent/skill-trigger-engineering/SKILL.md) | Agent | Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives. |
 | [skill-writer](skills/agent/skill-writer/SKILL.md) | Agent | Implements intelligent skill writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [slack-automation](skills/agent/slack-automation/SKILL.md) | Agent | Implements intelligent slack automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [stacktrace-root-cause](skills/agent/stacktrace-root-cause/SKILL.md) | Agent | Implements intelligent stacktrace root cause with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -2219,6 +2223,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Agent | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-creator-ms](skills/agent/skill-creator-ms/SKILL.md) | Agent | Implements intelligent skill creator ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-developer](skills/agent/skill-developer/SKILL.md) | Agent | Implements intelligent skill developer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [skill-development-workflow](skills/coding/skill-development-workflow/SKILL.md) | Coding | Implements the complete skill creation lifecycle from research through validation, including Python-based quality gates, stub detection, and automated compliance checking against SKILL_FORMAT_SPEC.md requirements. | Implementation |
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Agent | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. | Implementation |
 | [skill-improver](skills/agent/skill-improver/SKILL.md) | Agent | Implements intelligent skill improver with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-installer](skills/agent/skill-installer/SKILL.md) | Agent | Implements intelligent skill installer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2230,6 +2235,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-scanner](skills/agent/skill-scanner/SKILL.md) | Agent | Implements intelligent skill scanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-seekers](skills/agent/skill-seekers/SKILL.md) | Agent | Implements intelligent skill seekers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-sentinel](skills/agent/skill-sentinel/SKILL.md) | Agent | Implements intelligent skill sentinel with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [skill-trigger-engineering](skills/agent/skill-trigger-engineering/SKILL.md) | Agent | Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives. | Orchestration |
 | [skill-writer](skills/agent/skill-writer/SKILL.md) | Agent | Implements intelligent skill writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [slack-automation](skills/agent/slack-automation/SKILL.md) | Agent | Implements intelligent slack automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [slippage-model](skills/trading/slippage-model/SKILL.md) | Trading | "Implements slippage modeling and execution simulation for risk management and algorithmic trading execution." | Implementation |

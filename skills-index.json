@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T04:16:10.071140Z",
-  "totalSkills": 664,
+  "generatedAt": "2026-05-20T04:50:56.982683Z",
+  "totalSkills": 666,
   "domains": {
-    "agent": 242,
+    "agent": 243,
     "cncf": 169,
-    "coding": 135,
+    "coding": 136,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -13,8 +13,8 @@
     "writing": 1
   },
   "roles": {
-    "orchestration": 228,
-    "implementation": 270,
+    "orchestration": 229,
+    "implementation": 271,
     "reference": 161,
     "information": 1,
     "review": 4
@@ -12517,6 +12517,32 @@
       "source": "skills/agent/skill-developer/SKILL.md"
     },
     {
+      "name": "skill-development-workflow",
+      "domain": "coding",
+      "description": "Implements the complete skill creation lifecycle from research through validation, including Python-based quality gates, stub detection, and automated compliance checking against SKILL_FORMAT_SPEC.md requirements.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "skill creation workflow",
+        "skill development",
+        "skill lifecycle",
+        "quality gate validation",
+        "skill validator",
+        "stub detection",
+        "skill compliance check",
+        "how do i create a skill",
+        "SKILL.md format",
+        "skill generation pipeline"
+      ],
+      "relatedSkills": [
+        "coding-code-quality-policies",
+        "agent-skill-trigger-engineering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/skill-development-workflow/SKILL.md"
+    },
+    {
       "name": "skill-engineering",
       "domain": "agent",
       "description": "Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system.",
@@ -12764,6 +12790,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-sentinel/SKILL.md"
+    },
+    {
+      "name": "skill-trigger-engineering",
+      "domain": "agent",
+      "description": "Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "skill triggers",
+        "trigger engineering",
+        "auto-loading",
+        "skill discovery",
+        "trigger calibration",
+        "keyword matching",
+        "how do i design triggers",
+        "conversational discovery",
+        "two-tier trigger strategy",
+        "trigger testing"
+      ],
+      "relatedSkills": [
+        "coding-skill-development-workflow",
+        "agent-confidence-based-selector",
+        "agent-task-routing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/skill-trigger-engineering/SKILL.md"
     },
     {
       "name": "skill-writer",
