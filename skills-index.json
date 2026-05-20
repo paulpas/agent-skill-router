@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T03:01:50.316554Z",
-  "totalSkills": 660,
+  "generatedAt": "2026-05-20T03:13:09.927735Z",
+  "totalSkills": 661,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 131,
+    "coding": 132,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 266,
+    "implementation": 267,
     "reference": 161,
     "information": 1,
     "review": 4
@@ -14994,6 +14994,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/writing-skills/SKILL.md"
+    },
+    {
+      "name": "yagni",
+      "domain": "coding",
+      "description": "Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "yagni",
+        "you aren't gonna need it",
+        "don't build it now",
+        "over-engineering",
+        "premature abstraction",
+        "speculative features",
+        "kill unused code",
+        "remove complexity"
+      ],
+      "relatedSkills": [
+        "kiss-principle",
+        "dht-technical-debt",
+        "progressive-enhancement",
+        "emergent-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/yagni/SKILL.md"
     },
     {
       "name": "zapier-make-patterns",
