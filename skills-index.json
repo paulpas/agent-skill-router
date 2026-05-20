@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-20T08:32:11.795891Z",
-  "totalSkills": 674,
+  "generatedAt": "2026-05-20T09:23:59.951467Z",
+  "totalSkills": 676,
   "domains": {
     "agent": 243,
     "cncf": 169,
@@ -8,14 +8,14 @@
     "go": 12,
     "linux": 12,
     "maker": 3,
-    "programming": 5,
+    "programming": 6,
     "trading": 87,
-    "writing": 1
+    "writing": 2
   },
   "roles": {
     "orchestration": 229,
     "implementation": 279,
-    "reference": 161,
+    "reference": 163,
     "information": 1,
     "review": 4
   },
@@ -6580,6 +6580,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/google-drive-automation/SKILL.md"
+    },
+    {
+      "name": "graph-traversal",
+      "domain": "programming",
+      "description": "Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "graph traversal",
+        "depth first search",
+        "DFS",
+        "breadth first search",
+        "BFS",
+        "connected components",
+        "shortest path unweighted",
+        "tree traversal",
+        "cycle detection",
+        "topological sort",
+        "graph algorithm",
+        "level order traversal"
+      ],
+      "relatedSkills": [
+        "algorithms",
+        "for-loop-iteration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/programming/graph-traversal/SKILL.md"
     },
     {
       "name": "grpc",
@@ -13811,6 +13839,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/technical-debt-management/SKILL.md"
+    },
+    {
+      "name": "technical-documentation",
+      "domain": "writing",
+      "description": "Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "report",
+      "triggers": [
+        "technical documentation",
+        "how do i write docs",
+        "README",
+        "API documentation",
+        "getting started guide",
+        "architecture overview",
+        "developer experience",
+        "docs-as-code",
+        "documentation structure",
+        "markdown docs"
+      ],
+      "relatedSkills": [
+        "humanizer"
+      ],
+      "version": "1.0.0",
+      "source": "skills/writing/technical-documentation/SKILL.md"
     },
     {
       "name": "tekton",

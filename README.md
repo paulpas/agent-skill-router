@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 08:32:12 UTC  
-> **Total skills:** 674
+> **Last updated:** 2026-05-20 09:24:00 UTC  
+> **Total skills:** 676
 
 ## Skills by Domain
 
@@ -888,13 +888,14 @@ MIT — All skills are freely available and redistributable.
 | [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. | rapid prototyping, quick prototype, proof of concept, iterative design, mockup, wireframe, how do i quickly test an idea |
 
 
-### Programming (5 skills)
+### Programming (6 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [algorithms](skills/programming/algorithms/SKILL.md) | ''Provides Comprehensive algorithm selection guide u2014 choose, implement, and' optimize algorithms based on time/space trade-offs, input characteristics, and problem constraints'' | algorithms, comprehensive, algorithm, selection |
 | [async-runtime](skills/programming/async-runtime/SKILL.md) | Implements and analyzes Rust async runtime patterns including tokio, async-std, and custom executors for high-performance concurrent systems. | rust async, tokio, async-std, futures, executor, concurrency, non-blocking io, async runtime |
 | [for-loop-iteration](skills/programming/for-loop-iteration/SKILL.md) | Teaches idiomatic for loop patterns across Python, JavaScript, Go, C/C++, Rust, and shell scripting with anti-patterns, common pitfalls, and best practices. | for loop, iteration, loop patterns, enumerate, range, iterator, list comprehension, index-based loop, how do i iterate over a collection |
+| [graph-traversal](skills/programming/graph-traversal/SKILL.md) | Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving. | graph traversal, depth first search, DFS, breadth first search, BFS, connected components, shortest path unweighted, tree traversal, cycle detection, topological sort, graph algorithm, level order traversal |
 | [v10-learning](skills/programming/v10-learning/SKILL.md) | "Reference guide for Progress OpenEdge ABL 10.1A (2005) — data types" variable declaration, procedures, functions, OOP basics, error handling, database access, transaction handling, control flow | abl, abl programming, abl v10, openedge, openedge 10, progress 4gl, progress abl |
 | [v12-learning](skills/programming/v12-learning/SKILL.md) | "Reference guide for Progress OpenEdge ABL 12.7 (2023) — v10→v12 migration" INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic collections, safe navigation operator, server-side joins | abl v12, openedge 12, abl 12.7, v10 to v12 migration, abl migration, catch throw, jsonobject, read-json |
 
@@ -990,6 +991,13 @@ MIT — All skills are freely available and redistributable.
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." | exchange websocket streaming, exchange-websocket-streaming, market, processing, real-time |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. | trading edge, edge discovery, alpha generation, edge validation, statistical advantage, walk forward test, monte carlo simulation, performance decay, competitive moat, your edge |
 | [your-position](skills/trading/your-position/SKILL.md) | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. | position management, mental accounting, home bias, disposition effect, portfolio impact, position thesis, behavioral bias, sunk cost fallacy, your position |
+
+
+### Writing (1 skills)
+
+| Skill Name | Description | Triggers |
+|---|---|---|
+| [technical-documentation](skills/writing/technical-documentation/SKILL.md) | Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices. | technical documentation, how do i write docs, README, API documentation, getting started guide, architecture overview, developer experience, docs-as-code, documentation structure, markdown docs |
 
 ## Skills by Role
 
@@ -1279,7 +1287,7 @@ MIT — All skills are freely available and redistributable.
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 
 
-### Reference (Learn & Understand) (161 skills)
+### Reference (Learn & Understand) (163 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1351,6 +1359,7 @@ MIT — All skills are freely available and redistributable.
 | [framework](skills/cncf/framework/SKILL.md) | Cncf | "Operator Framework in Tools to build and manage Kubernetes operators" with standardized patterns |
 | [functions](skills/cncf/functions/SKILL.md) | Cncf | Provides Serverless computing with event-driven functions and automatic scaling |
 | [gke](skills/cncf/gke/SKILL.md) | Cncf | "Provides Managed Kubernetes cluster with automatic scaling, networking, and GCP service integration" |
+| [graph-traversal](skills/programming/graph-traversal/SKILL.md) | Programming | Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving. |
 | [grpc](skills/cncf/grpc/SKILL.md) | Cncf | "gRPC in Remote Procedure Call - cloud native architecture, patterns" pitfalls, and best practices |
 | [harbor](skills/cncf/harbor/SKILL.md) | Cncf | "Configures harbor in cloud-native engineering - container registry for cloud-native deployment and infrastructure management." |
 | [helm](skills/cncf/helm/SKILL.md) | Cncf | "Provides Helm in Cloud-Native Engineering - The Kubernetes Package Manager" |
@@ -1427,6 +1436,7 @@ MIT — All skills are freely available and redistributable.
 | [sqs](skills/cncf/sqs/SKILL.md) | Cncf | "Deploys managed message queues with SQS for asynchronous processing" decoupling services, and reliable message delivery with visibility timeout and dead-letter queues. |
 | [ssm](skills/cncf/ssm/SKILL.md) | Cncf | "Manages EC2 instances and on-premises servers with AWS Systems Manager" for configuration management, patch management, and secure shell access without SSH keys. |
 | [strimzi](skills/cncf/strimzi/SKILL.md) | Cncf | "Provides Strimzi in Kafka on Kubernetes - Apache Kafka for cloud-native environments" |
+| [technical-documentation](skills/writing/technical-documentation/SKILL.md) | Writing | Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices. |
 | [tekton](skills/cncf/tekton/SKILL.md) | Cncf | "Provides Tekton in Cloud-Native Engineering - A cloud-native Pipeline resource" |
 | [telemetry](skills/cncf/telemetry/SKILL.md) | Cncf | "OpenTelemetry in Observability - cloud native architecture, patterns" pitfalls, and best practices |
 | [thanos](skills/cncf/thanos/SKILL.md) | Cncf | "Provides Thanos in High availability Prometheus solution with long-term storage" |
@@ -1979,6 +1989,7 @@ MIT — All skills are freely available and redistributable.
 | [google-analytics-automation](skills/agent/google-analytics-automation/SKILL.md) | Agent | Implements intelligent google analytics automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [google-docs-automation](skills/agent/google-docs-automation/SKILL.md) | Agent | Implements intelligent google docs automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [google-drive-automation](skills/agent/google-drive-automation/SKILL.md) | Agent | Implements intelligent google drive automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [graph-traversal](skills/programming/graph-traversal/SKILL.md) | Programming | Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving. | Reference |
 | [grpc](skills/cncf/grpc/SKILL.md) | Cncf | "gRPC in Remote Procedure Call - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices | Implementation |
 | [harbor](skills/cncf/harbor/SKILL.md) | Cncf | "Configures harbor in cloud-native engineering - container registry for cloud-native deployment and infrastructure management." | Reference |
@@ -2294,6 +2305,7 @@ MIT — All skills are freely available and redistributable.
 | [task-decomposition-engine](skills/agent/task-decomposition-engine/SKILL.md) | Agent | Implements intelligent task decomposition engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [task-intelligence](skills/agent/task-intelligence/SKILL.md) | Agent | Implements intelligent task intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [technical-debt-management](skills/coding/technical-debt-management/SKILL.md) | Coding | Tracks, categorizes, and systematically reduces technical debt across codebases using quantitative scoring, prioritization matrices, and automated refactoring strategies. | Implementation |
+| [technical-documentation](skills/writing/technical-documentation/SKILL.md) | Writing | Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices. | Reference |
 | [tekton](skills/cncf/tekton/SKILL.md) | Cncf | "Provides Tekton in Cloud-Native Engineering - A cloud-native Pipeline resource" | Reference |
 | [telemetry](skills/cncf/telemetry/SKILL.md) | Cncf | "OpenTelemetry in Observability - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [temporal-golang-pro](skills/agent/temporal-golang-pro/SKILL.md) | Agent | Implements intelligent temporal golang pro with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
