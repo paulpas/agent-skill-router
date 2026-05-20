@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T05:51:15.986646Z",
+  "generatedAt": "2026-05-20T06:15:32.019075Z",
   "totalSkills": 668,
   "domains": {
     "agent": 243,
@@ -4867,24 +4867,6 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/event-driven-architecture/SKILL.md"
-    },
-    {
-      "name": "driven-development",
-      "domain": "coding",
-      "description": "\"Test-Driven Development (TDD) and Behavior-Driven Development (BDD) patterns\" with pytest, unit tests, mocking, and test pyramid principles",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "behavior-driven",
-        "patterns",
-        "test driven development",
-        "test-driven",
-        "test-driven-development"
-      ],
-      "relatedSkills": [],
-      "version": "1.0.0",
-      "source": "skills/coding/test-driven-development/SKILL.md"
     },
     {
       "name": "dry-principles",
@@ -13885,6 +13867,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/terraform-infrastructure/SKILL.md"
+    },
+    {
+      "name": "test-driven-development",
+      "domain": "coding",
+      "description": "Implements test-driven development (TDD) cycle with red-green-refactor workflow, writing failing unit tests before implementation code to drive design and catch regressions early.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "test-driven development",
+        "tdd",
+        "red-green-refactor",
+        "unit testing",
+        "how do i write tests first",
+        "test-first approach",
+        "behavior driven"
+      ],
+      "relatedSkills": [
+        "mocking",
+        "test-coverage-analysis",
+        "refactoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/test-driven-development/SKILL.md"
     },
     {
       "name": "test-oracle-generator",
