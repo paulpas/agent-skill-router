@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 20:56:11 UTC  
-> **Total skills:** 705
+> **Last updated:** 2026-05-20 16:28:35 UTC  
+> **Total skills:** 706
 
 ## Skills by Domain
 
 
-### Agent (248 skills)
+### Agent (249 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -374,6 +374,7 @@ MIT — All skills are freely available and redistributable.
 | [fal-audio](skills/agent/fal-audio/SKILL.md) | Implements intelligent fal audio with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | fal-audio, fal audio, how do i fal-audio, orchestrate fal-audio, automate fal-audio, agent fal-audio |
 | [filesystem-context](skills/agent/filesystem-context/SKILL.md) | Implements intelligent filesystem context with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | filesystem-context, filesystem context, how do i filesystem-context, orchestrate filesystem-context, automate filesystem-context, agent filesystem-context |
 | [finishing-a-development-branch](skills/agent/finishing-a-development-branch/SKILL.md) | Implements intelligent finishing a development branch with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | finishing-a-development-branch, finishing a development branch, how do i finishing-a-development-branch, orchestrate finishing-a-development-branch, automate finishing-a-development-branch, agent finishing-a-development-branch |
+| [framework-orchestration-routing](skills/agent/framework-orchestration-routing/SKILL.md) | Orchestrates task routing across multiple AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen, MCP) by selecting the optimal framework for each subtask and composing cross-framework workflows with proper context bridges. | framework orchestration routing, FOR, langchain, llamaindex, crewai, auto gen, multi agent orchestration, cross framework workflow, how do i choose ai framework, agent framework selection |
 | [framework-selection](skills/agent/framework-selection/SKILL.md) | Applies structured decision-making frameworks (weighted scoring, RICE, MoSCoW, decision matrices) to evaluate options against requirements and select optimal solutions. | framework selection, weighted scoring, decision matrix, option evaluation, criteria-based selection, RICE prioritization, MoSCoW, how do i choose between options |
 | [freshdesk-automation](skills/agent/freshdesk-automation/SKILL.md) | Implements intelligent freshdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | freshdesk-automation, freshdesk automation, how do i freshdesk-automation, orchestrate freshdesk-automation, automate freshdesk-automation, agent freshdesk-automation |
 | [full-stack-orchestration-full-stack-feature](skills/agent/full-stack-orchestration-full-stack-feature/SKILL.md) | Implements intelligent full stack orchestration full stack feature with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | full-stack-orchestration-full-stack-feature, full stack orchestration full stack feature, how do i full-stack-orchestration-full-stack-feature, orchestrate full-stack-orchestration-full-stack-feature, automate full-stack-orchestration-full-stack-feature, agent full-stack-orchestration-full-stack-feature |
@@ -1511,7 +1512,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (231 skills)
+### Orchestration (Manage AI Agents) (232 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1607,6 +1608,7 @@ MIT — All skills are freely available and redistributable.
 | [filesystem-context](skills/agent/filesystem-context/SKILL.md) | Agent | Implements intelligent filesystem context with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [finishing-a-development-branch](skills/agent/finishing-a-development-branch/SKILL.md) | Agent | Implements intelligent finishing a development branch with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Coding | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. |
+| [framework-orchestration-routing](skills/agent/framework-orchestration-routing/SKILL.md) | Agent | Orchestrates task routing across multiple AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen, MCP) by selecting the optimal framework for each subtask and composing cross-framework workflows with proper context bridges. |
 | [framework-selection](skills/agent/framework-selection/SKILL.md) | Agent | Applies structured decision-making frameworks (weighted scoring, RICE, MoSCoW, decision matrices) to evaluate options against requirements and select optimal solutions. |
 | [freshdesk-automation](skills/agent/freshdesk-automation/SKILL.md) | Agent | Implements intelligent freshdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [full-stack-orchestration-full-stack-feature](skills/agent/full-stack-orchestration-full-stack-feature/SKILL.md) | Agent | Implements intelligent full stack orchestration full stack feature with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -2032,6 +2034,7 @@ MIT — All skills are freely available and redistributable.
 | [framework](skills/cncf/framework/SKILL.md) | Cncf | "Operator Framework in Tools to build and manage Kubernetes operators" with standardized patterns | Reference |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | Implementation |
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Coding | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | Orchestration |
+| [framework-orchestration-routing](skills/agent/framework-orchestration-routing/SKILL.md) | Agent | Orchestrates task routing across multiple AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen, MCP) by selecting the optimal framework for each subtask and composing cross-framework workflows with proper context bridges. | Orchestration |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | Implementation |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. | Implementation |
 | [framework-selection](skills/agent/framework-selection/SKILL.md) | Agent | Applies structured decision-making frameworks (weighted scoring, RICE, MoSCoW, decision matrices) to evaluate options against requirements and select optimal solutions. | Orchestration |
