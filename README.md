@@ -264,8 +264,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
+<!-- Resolved: keeping generated version with current skill count -->
 > **Last updated:** 2026-05-20 11:58:30 UTC  
-> **Total skills:** 683
+> **Total skills:** 684
 
 ## Skills by Domain
 
@@ -694,7 +695,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (149 skills)
+### Coding (150 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -797,6 +798,7 @@ MIT — All skills are freely available and redistributable.
 | [model-selection](skills/coding/model-selection/SKILL.md) | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" | model selection, AIC, BIC, validation curves, learning curves, model comparison |
 | [models](skills/coding/models/SKILL.md) | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | enums, frozen, pydantic models, pydantic-models, trading |
 | [monolith-architecture](skills/coding/monolith-architecture/SKILL.md) | Implements modular monolith patterns (bounded-context layering, hexagonal ports, database-per-module, interface-based inter-module communication) to build cleanly structured single-deployable applications. | monolith, monolithic architecture, modular monolith, how do i structure a monolith, code organization, layered architecture, hexagonal architecture in monolith, single deployable unit |
+| [monolith-refactoring](skills/coding/monolith-refactoring/SKILL.md) | Refactors legacy monolithic "big ball of mud" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition. | monolith refactoring, big ball of mud, how do i untangle legacy code, spaghetti code cleanup, module extraction, strangler fig pattern, codebase restructuring, technical debt refactoring, god class decomposition, dependency analysis |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" | monte carlo, sampling, simulation, stochastic, markov chain, mcmc, how do i simulate |
 | [neural-networks](skills/coding/neural-networks/SKILL.md) | "Implements deep neural networks, backpropagation, activation functions, architectures (CNN, RNN, Transformers), and training strategies" | neural networks, deep learning, backpropagation, CNN, RNN, transformers, how do i use deep learning, hugging face |
 | [normalization](skills/coding/normalization/SKILL.md) | 'Provides Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization' | data normalization, data-normalization, exchange, layer, typed |
@@ -1009,7 +1011,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (284 skills)
+### Implementation (Build Features) (285 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1176,6 +1178,7 @@ MIT — All skills are freely available and redistributable.
 | [modular-design](skills/go/modular-design/SKILL.md) | Go | Designs modular Go applications with clean architecture, dependency injection, package boundaries, and interface-based design for maintainable codebases. |
 | [momentum-indicators](skills/trading/momentum-indicators/SKILL.md) | Trading | "Implements rsi, macd, stochastic oscillators and momentum analysis for risk management and algorithmic trading execution." |
 | [monolith-architecture](skills/coding/monolith-architecture/SKILL.md) | Coding | Implements modular monolith patterns (bounded-context layering, hexagonal ports, database-per-module, interface-based inter-module communication) to build cleanly structured single-deployable applications. |
+| [monolith-refactoring](skills/coding/monolith-refactoring/SKILL.md) | Coding | Refactors legacy monolithic "big ball of mud" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition. |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | Coding | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" |
 | [multi-asset-model](skills/trading/multi-asset-model/SKILL.md) | Trading | "Provides Model inter-asset relationships for portfolio and cross-asset strategies" |
 | [network-troubleshooting](skills/agent/network-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves network connectivity issues including firewall rules, DNS resolution, load balancer configuration, container networking, VPN connectivity, and network policy debugging for Docker, Kubernetes, and cloud-native environments |
@@ -2134,6 +2137,7 @@ MIT — All skills are freely available and redistributable.
 | [momentum-indicators](skills/trading/momentum-indicators/SKILL.md) | Trading | "Implements rsi, macd, stochastic oscillators and momentum analysis for risk management and algorithmic trading execution." | Implementation |
 | [monitor](skills/cncf/monitor/SKILL.md) | Cncf | "Provides Monitoring and logging for Azure resources with alerting and observability" | Reference |
 | [monolith-architecture](skills/coding/monolith-architecture/SKILL.md) | Coding | Implements modular monolith patterns (bounded-context layering, hexagonal ports, database-per-module, interface-based inter-module communication) to build cleanly structured single-deployable applications. | Implementation |
+| [monolith-refactoring](skills/coding/monolith-refactoring/SKILL.md) | Coding | Refactors legacy monolithic "big ball of mud" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition. | Implementation |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | Coding | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" | Implementation |
 | [multi-advisor](skills/agent/multi-advisor/SKILL.md) | Agent | Implements intelligent multi advisor with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [multi-agent-patterns](skills/agent/multi-agent-patterns/SKILL.md) | Agent | Implements intelligent multi agent patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
