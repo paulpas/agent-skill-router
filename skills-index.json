@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T22:04:08.743098Z",
-  "totalSkills": 708,
+  "generatedAt": "2026-05-20T22:19:29.296040Z",
+  "totalSkills": 709,
   "domains": {
     "agent": 249,
     "cncf": 169,
-    "coding": 166,
+    "coding": 167,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 306,
+    "implementation": 307,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -15392,6 +15392,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/execution-twap-vwap/SKILL.md"
+    },
+    {
+      "name": "typescript-intersection-types",
+      "domain": "coding",
+      "description": "Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "intersection types",
+        "ampersand type",
+        "type merging",
+        "TypeScript & operator",
+        "props merging",
+        "mixin pattern",
+        "type conflicts",
+        "keyof T & K",
+        "generic constraints",
+        "ComponentProps & custom"
+      ],
+      "relatedSkills": [
+        "typescript-utility-types",
+        "typescript-generics-patterns",
+        "typescript-decorator-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/typescript-intersection-types/SKILL.md"
     },
     {
       "name": "update-framework-tuf",
