@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-20T10:08:21.558338Z",
-  "totalSkills": 678,
+  "generatedAt": "2026-05-20T10:44:20.929019Z",
+  "totalSkills": 680,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 144,
+    "coding": 145,
     "go": 12,
-    "linux": 12,
+    "linux": 13,
     "maker": 3,
     "programming": 6,
     "trading": 87,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 279,
+    "implementation": 281,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -12502,6 +12502,34 @@
       "source": "skills/trading/backtest-sharpe-ratio/SKILL.md"
     },
     {
+      "name": "shell-parameter-expansion",
+      "domain": "linux",
+      "description": "Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "bash parameter expansion",
+        "${VAR:-default}",
+        "variable default value",
+        "shell variable substitution",
+        "pattern matching shell",
+        "case modification",
+        "how do i handle unset variables",
+        "bash safe defaults",
+        "${##pattern}",
+        "${VAR:?error}",
+        "shell scripting safety"
+      ],
+      "relatedSkills": [
+        "linux-services",
+        "coding-output-sanitization",
+        "linux-shell-process-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/shell-parameter-expansion/SKILL.md"
+    },
+    {
       "name": "shell-process-management",
       "domain": "linux",
       "description": "Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting.",
@@ -15417,6 +15445,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/yagni/SKILL.md"
+    },
+    {
+      "name": "yaml-anchor-alias",
+      "domain": "coding",
+      "description": "Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "yaml anchor",
+        "yaml alias",
+        "config deduplication",
+        "merge key",
+        "helm template",
+        "ansible common config",
+        "kubernetes shared spec",
+        "how do i reduce yaml repetition",
+        "<<:",
+        "&label",
+        "*alias"
+      ],
+      "relatedSkills": [
+        "coding-data-encoding",
+        "cncf-kubernetes",
+        "linux-systemd-services"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/yaml-anchor-alias/SKILL.md"
     },
     {
       "name": "your-edge",
