@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 10:08:22 UTC  
-> **Total skills:** 678
+> **Last updated:** 2026-05-20 05:43:52 UTC  
+> **Total skills:** 680
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (145 skills)
+### Coding (146 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -843,6 +843,7 @@ MIT — All skills are freely available and redistributable.
 | [tree-methods](skills/coding/tree-methods/SKILL.md) | "Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods for classification and regression | decision trees, random forest, gradient boosting, xgboost, lightgbm, how do i use trees |
 | [validation](skills/coding/validation/SKILL.md) | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions | validation, code validation, pipeline validation, config status, input validation, validate pipeline, pipeline stages |
 | [yagni](skills/coding/yagni/SKILL.md) | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. | yagni, you aren't gonna need it, don't build it now, over-engineering, premature abstraction, speculative features, kill unused code, remove complexity |
+| [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | yaml anchor, yaml alias, config deduplication, merge key, helm template, ansible common config, kubernetes shared spec, how do i reduce yaml repetition, <<:, &label, *alias |
 
 
 ### Go (12 skills)
@@ -863,7 +864,7 @@ MIT — All skills are freely available and redistributable.
 | [web-applications](skills/go/web-applications/SKILL.md) | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. | go web, go http, go router, go middleware, go rest api, go templates, go websocket |
 
 
-### Linux (12 skills)
+### Linux (13 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -877,6 +878,7 @@ MIT — All skills are freely available and redistributable.
 | [observability](skills/linux/observability/SKILL.md) | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | linux observability, system metrics, log collection, performance profiling, eBPF, perf, capacity planning, monitoring |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. | IPMI, iLO, iDRAC, PXE boot, iSCSI, multipath, bare-metal provisioning, datacenter rack |
 | [resource-management](skills/linux/resource-management/SKILL.md) | Manages Linux system resources using cgroups v2, namespaces, and systemd for workload isolation and resource guarantees in cloud and on-prem environments. | cgroups, resource management, cpu limit, memory limit, systemd resource, OOM, workload isolation, resource quota |
+| [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. | bash parameter expansion, ${VAR:-default}, variable default value, shell variable substitution, pattern matching shell, case modification, how do i handle unset variables, bash safe defaults, ${##pattern}, ${VAR:?error}, shell scripting safety |
 | [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. | shell background processes, parallel execution, job control, fg bg jobs wait, xargs P flag, background shell, process management |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. | storage architecture, LVM, filesystem, XFS, ext4, btrfs, cloud storage, NVMe, mount options, storage monitoring |
 
@@ -1004,7 +1006,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (279 skills)
+### Implementation (Build Features) (281 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1227,6 +1229,7 @@ MIT — All skills are freely available and redistributable.
 | [sentiment-features](skills/trading/sentiment-features/SKILL.md) | Trading | "Provides Extract market sentiment from news, social media, and analyst reports" |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" |
+| [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Linux | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. |
 | [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Linux | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. |
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. |
@@ -1285,6 +1288,7 @@ MIT — All skills are freely available and redistributable.
 | [websocket-handling](skills/trading/websocket-handling/SKILL.md) | Trading | "Real-time market data handling with WebSockets including connection management" data aggregation, and robust error recovery |
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." |
 | [yagni](skills/coding/yagni/SKILL.md) | Coding | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. |
+| [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. |
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 
@@ -2251,6 +2255,7 @@ MIT — All skills are freely available and redistributable.
 | [service-bus](skills/cncf/service-bus/SKILL.md) | Cncf | "Provides Messaging service with queues and topics for reliable communication" | Reference |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. | Implementation |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" | Implementation |
+| [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Linux | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. | Implementation |
 | [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Linux | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. | Implementation |
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | Implementation |
 | [shopify-automation](skills/agent/shopify-automation/SKILL.md) | Agent | Implements intelligent shopify automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2379,6 +2384,7 @@ MIT — All skills are freely available and redistributable.
 | [writing-plans](skills/agent/writing-plans/SKILL.md) | Agent | Implements intelligent writing plans with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [writing-skills](skills/agent/writing-skills/SKILL.md) | Agent | Implements intelligent writing skills with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [yagni](skills/coding/yagni/SKILL.md) | Coding | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. | Implementation |
+| [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | Implementation |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. | Implementation |
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. | Implementation |
 | [zapier-make-patterns](skills/agent/zapier-make-patterns/SKILL.md) | Agent | Implements intelligent zapier make patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
