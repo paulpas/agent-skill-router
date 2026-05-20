@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-19T23:57:02.290447Z",
-  "totalSkills": 649,
+  "generatedAt": "2026-05-20T00:42:48.251932Z",
+  "totalSkills": 651,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 120,
+    "coding": 122,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,10 +14,10 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 257,
+    "implementation": 258,
     "reference": 161,
     "information": 1,
-    "review": 2
+    "review": 3
   },
   "skills": [
     {
@@ -638,6 +638,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-anomaly-detection/SKILL.md"
+    },
+    {
+      "name": "anti-patterns",
+      "domain": "coding",
+      "description": "Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices.",
+      "role": "review",
+      "scope": "review",
+      "outputFormat": "report",
+      "triggers": [
+        "anti-pattern",
+        "god object",
+        "leaky abstraction",
+        "feature envy",
+        "shotgun surgery",
+        "cargo cult",
+        "code smell",
+        "refactoring",
+        "bad design",
+        "harmful patterns"
+      ],
+      "relatedSkills": [
+        "design-patterns-and-principles",
+        "refactoring",
+        "code-review",
+        "modular-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/anti-patterns/SKILL.md"
     },
     {
       "name": "antigravity-skill-orchestrator",
@@ -1446,6 +1474,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/bdistill-behavioral-xray/SKILL.md"
+    },
+    {
+      "name": "behavioral-design-patterns",
+      "domain": "coding",
+      "description": "Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "behavioral patterns",
+        "observer pattern",
+        "state pattern",
+        "command pattern",
+        "strategy pattern",
+        "template method",
+        "mediator pattern",
+        "chain of responsibility",
+        "iterator pattern",
+        "object communication"
+      ],
+      "relatedSkills": [
+        "design-patterns-and-principles",
+        "event-driven-architecture",
+        "refactoring",
+        "modular-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/behavioral-design-patterns/SKILL.md"
     },
     {
       "name": "behavioral-modes",
