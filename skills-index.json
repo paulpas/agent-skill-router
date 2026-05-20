@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T04:50:56.982683Z",
-  "totalSkills": 666,
+  "generatedAt": "2026-05-20T05:51:15.986646Z",
+  "totalSkills": 668,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 136,
+    "coding": 138,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 271,
+    "implementation": 273,
     "reference": 161,
     "information": 1,
     "review": 4
@@ -3991,6 +3991,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-data-collection/SKILL.md"
+    },
+    {
+      "name": "data-encoding",
+      "domain": "coding",
+      "description": "Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "json serialization",
+        "xml parsing",
+        "base64 encoding",
+        "url encoding",
+        "yaml config",
+        "protocol buffers",
+        "data serialization",
+        "type coercion",
+        "character encoding",
+        "message encoding"
+      ],
+      "relatedSkills": [
+        "input-validation",
+        "error-handling",
+        "data-normalization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/data-encoding/SKILL.md"
     },
     {
       "name": "data-ingestion",
@@ -10520,6 +10547,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/output-formatting/SKILL.md"
+    },
+    {
+      "name": "output-sanitization",
+      "domain": "coding",
+      "description": "Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "output sanitization",
+        "html escaping",
+        "sql escaping",
+        "csv quoting",
+        "url encoding",
+        "shell argument escaping",
+        "log sanitization",
+        "xss prevention",
+        "output encoding",
+        "context-specific escaping"
+      ],
+      "relatedSkills": [
+        "input-validation",
+        "security-review",
+        "error-handling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/output-sanitization/SKILL.md"
     },
     {
       "name": "parallel-agents",
