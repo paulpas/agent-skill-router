@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 02:08:54 UTC  
-> **Total skills:** 658
+> **Last updated:** 2026-05-19 22:01:25 UTC  
+> **Total skills:** 660
 
 ## Skills by Domain
 
@@ -693,11 +693,12 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (130 skills)
+### Coding (132 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [ab-testing](skills/coding/ab-testing/SKILL.md) | Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation | A/B testing, A/B test, statistical test, power analysis, sample size, how do I design tests, unit tests, testing |
+| [abstraction-design-patterns](skills/coding/abstraction-design-patterns/SKILL.md) | Designs clean, maintainable abstractions using Protocols, ABCs, interfaces, and composition to reduce coupling while avoiding over-engineering and leaky abstractions. | abstraction design, interface design, Protocol pattern, over-abstraction, leaky abstraction, composition over inheritance, Rule of Three |
 | [advanced](skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | git rebase, git cherry-pick, git bisect, git reflog, worktrees, filter-branch, multi-repo, advanced git |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. | &, ampersand operator, bitwise AND, address of, flag checking, bitmask, pointer manipulation |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" | anomaly detection, outlier detection, isolation forest, LOF, one-class SVM, how do I detect anomalies |
@@ -718,6 +719,7 @@ MIT — All skills are freely available and redistributable.
 | [causal-inference](skills/coding/causal-inference/SKILL.md) | Implements causal models, directed acyclic graphs (DAGs), confounding adjustment, and mediation analysis for causal discovery | causal inference, causality, causal models, DAG, confounding, how do i determine causation, airflow, data pipelines |
 | [classification-metrics](skills/coding/classification-metrics/SKILL.md) | "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics" | classification metrics, precision, recall, F1-score, ROC-AUC, confusion matrix |
 | [clustering](skills/coding/clustering/SKILL.md) | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" | clustering, k-means, hierarchical clustering, DBSCAN, mixture models, how do I cluster data |
+| [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | code duplication, duplicate code detection, copy-paste code, boilerplate removal, semantic duplication, radon metrics, pylint warnings, refactoring detection, DRY principle, code quality analysis |
 | [community-detection](skills/coding/community-detection/SKILL.md) | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | community detection, graph clustering, modularity, spectral clustering, graph partitioning |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals |
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config |
@@ -978,11 +980,12 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (265 skills)
+### Implementation (Build Features) (266 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [ab-testing](skills/coding/ab-testing/SKILL.md) | Coding | Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation |
+| [abstraction-design-patterns](skills/coding/abstraction-design-patterns/SKILL.md) | Coding | Designs clean, maintainable abstractions using Protocols, ABCs, interfaces, and composition to reduce coupling while avoiding over-engineering and leaky abstractions. |
 | [advanced-patterns](skills/go/advanced-patterns/SKILL.md) | Go | Applies advanced Go patterns including generics, reflection, functional options, and metaprogramming for performance-critical and framework-level code. |
 | [agent-architecture-patterns](skills/agent/agent-architecture-patterns/SKILL.md) | Agent | Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives. |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
@@ -1650,11 +1653,12 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Agent | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 
 
-### Review (Audit & Validate) (3 skills)
+### Review (Audit & Validate) (4 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Coding | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. |
+| [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Coding | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. |
 | [humanizer](skills/coding/humanizer/SKILL.md) | Coding | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. |
 
@@ -1663,6 +1667,7 @@ MIT — All skills are freely available and redistributable.
 | Skill Name | Domain | Description | Role |
 |---|---|---|---|
 | [ab-testing](skills/coding/ab-testing/SKILL.md) | Coding | Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation | Implementation |
+| [abstraction-design-patterns](skills/coding/abstraction-design-patterns/SKILL.md) | Coding | Designs clean, maintainable abstractions using Protocols, ABCs, interfaces, and composition to reduce coupling while avoiding over-engineering and leaky abstractions. | Implementation |
 | [acceptance-orchestrator](skills/agent/acceptance-orchestrator/SKILL.md) | Agent | Implements intelligent acceptance orchestrator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [address-github-comments](skills/agent/address-github-comments/SKILL.md) | Agent | Implements intelligent address github comments with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [advanced](skills/coding/advanced/SKILL.md) | Coding | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | Reference |
@@ -1788,6 +1793,7 @@ MIT — All skills are freely available and redistributable.
 | [clustering](skills/coding/clustering/SKILL.md) | Coding | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" | Implementation |
 | [cni](skills/cncf/cni/SKILL.md) | Cncf | "Cni in Cloud-Native Engineering - Container Network Interface - networking" for Linux containers | Reference |
 | [code-correctness-verifier](skills/agent/code-correctness-verifier/SKILL.md) | Agent | Implements intelligent code correctness verifier with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Coding | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | Review |
 | [commission-model](skills/trading/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." | Implementation |
 | [commit](skills/agent/commit/SKILL.md) | Agent | Implements intelligent commit with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | Implementation |
