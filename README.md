@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 16:00:49 UTC  
-> **Total skills:** 691
+> **Last updated:** 2026-05-20 11:41:48 UTC  
+> **Total skills:** 693
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (157 skills)
+### Coding (159 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -778,6 +778,7 @@ MIT — All skills are freely available and redistributable.
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | hypothesis testing, t-test, chi-square, p-value, statistical significance, how do i test hypotheses, unit tests, testing |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. | idempotency, idempotent, idempotency key, request deduplication, exactly once, duplicate detection, optimistic concurrency, idempotent handler, outbox pattern, race condition prevention |
+| [incident-response](skills/coding/incident-response/SKILL.md) | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. | incident response, production outage, on-call procedures, postmortem, blameless postmortem, RCA root cause analysis, service degradation, how do i handle a production incident, incident command, severity classification, rollback procedure, escalation path |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | input validation, data sanitization, schema validation, input filtering, sanitize user input, prevent injection, OWASP, form validation, parse and validate |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | instrumental variables, IV, 2SLS, endogeneity, causal effect, how do i handle endogeneity |
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. | interface segregation principle, ISP, fat interface, thin interface, client specific, Protocol, ABC, unused methods, stub implementation, NotImplementedError, duck typing |
@@ -813,6 +814,7 @@ MIT — All skills are freely available and redistributable.
 | [output-sanitization](skills/coding/output-sanitization/SKILL.md) | Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption. | output sanitization, html escaping, sql escaping, csv quoting, url encoding, shell argument escaping, log sanitization, xss prevention, output encoding, context-specific escaping |
 | [patterns](skills/coding/patterns/SKILL.md) | "Provides Software architecture patterns including MVC, MVVM, microservices, event-driven, CQRS, DDD, hexagonal architecture, layered architecture, and pattern" | architectural patterns, system design, architecture, microservices, design patterns, CQRS, DDD, hexagonal architecture |
 | [patterns](skills/coding/patterns/SKILL.md) | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events | application, cloud infrastructure, fastapi patterns, fastapi-patterns, structure, typed |
+| [performance-optimization](skills/coding/performance-optimization/SKILL.md) | Identifies and eliminates performance bottlenecks through systematic profiling (cProfile, py-spy, memory_profiler), Big-O complexity analysis, algorithmic optimization, and benchmark-driven validation to reduce latency and resource usage. | performance optimization, code profiling, bottleneck analysis, cProfile, py-spy, Big O complexity, memory leak detection, slow code, latency reduction, how do i make my code faster, benchmarking, time complexity, p95 latency |
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. | performance testing, load testing, stress test, p95 latency, bottleneck detection, how do i measure system performance, k6, locust |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | port interface, driving port, driven port, port contract, Protocol vs ABC, hexagonal ports, how do i define clean boundaries, dependency inversion, framework-agnostic interfaces |
@@ -1017,7 +1019,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (292 skills)
+### Implementation (Build Features) (294 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1138,6 +1140,7 @@ MIT — All skills are freely available and redistributable.
 | [hyperparameter-tuning](skills/trading/hyperparameter-tuning/SKILL.md) | Trading | "Implements optimize model configurations for trading applications for risk management and algorithmic trading execution." |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Coding | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. |
+| [incident-response](skills/coding/incident-response/SKILL.md) | Coding | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. |
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. |
 | [indicator-confluence](skills/trading/indicator-confluence/SKILL.md) | Trading | "Provides Indicator Confluence Validation Systems for Confirming Trading Signals" |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. |
@@ -1214,6 +1217,7 @@ MIT — All skills are freely available and redistributable.
 | [output-sanitization](skills/coding/output-sanitization/SKILL.md) | Coding | Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption. |
 | [patterns](skills/coding/patterns/SKILL.md) | Coding | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading Strategy Decomposition" |
+| [performance-optimization](skills/coding/performance-optimization/SKILL.md) | Coding | Identifies and eliminates performance bottlenecks through systematic profiling (cProfile, py-spy, memory_profiler), Big-O complexity analysis, algorithmic optimization, and benchmark-driven validation to reduce latency and resource usage. |
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Coding | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Coding | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. |
@@ -2051,6 +2055,7 @@ MIT — All skills are freely available and redistributable.
 | [iam](skills/cncf/iam/SKILL.md) | Cncf | "Manages identity and access control with service accounts, roles, and" fine-grained permissions. | Reference |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Coding | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. | Implementation |
 | [incident-response](skills/cncf/incident-response/SKILL.md) | Cncf | "Creates or updates an incident response plan covering detection, triage" communication, and post-incident review for CNCF projects | Reference |
+| [incident-response](skills/coding/incident-response/SKILL.md) | Coding | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. | Implementation |
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. | Implementation |
 | [indicator-confluence](skills/trading/indicator-confluence/SKILL.md) | Trading | "Provides Indicator Confluence Validation Systems for Confirming Trading Signals" | Implementation |
 | [infra-drift-detector](skills/agent/infra-drift-detector/SKILL.md) | Agent | Implements intelligent infra drift detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2212,6 +2217,7 @@ MIT — All skills are freely available and redistributable.
 | [patterns](skills/coding/patterns/SKILL.md) | Coding | "Provides Software architecture patterns including MVC, MVVM, microservices, event-driven, CQRS, DDD, hexagonal architecture, layered architecture, and pattern" | Reference |
 | [patterns](skills/coding/patterns/SKILL.md) | Coding | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events | Implementation |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading Strategy Decomposition" | Implementation |
+| [performance-optimization](skills/coding/performance-optimization/SKILL.md) | Coding | Identifies and eliminates performance bottlenecks through systematic profiling (cProfile, py-spy, memory_profiler), Big-O complexity analysis, algorithmic optimization, and benchmark-driven validation to reduce latency and resource usage. | Implementation |
 | [performance-profiler](skills/agent/performance-profiler/SKILL.md) | Agent | Implements intelligent performance profiler with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Coding | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. | Implementation |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | Implementation |
