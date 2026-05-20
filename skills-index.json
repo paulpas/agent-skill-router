@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T13:33:32.021251Z",
-  "totalSkills": 685,
+  "generatedAt": "2026-05-20T14:08:48.452535Z",
+  "totalSkills": 686,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 150,
+    "coding": 151,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 286,
+    "implementation": 287,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -10990,6 +10990,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/performance-profiler/SKILL.md"
+    },
+    {
+      "name": "performance-testing",
+      "domain": "coding",
+      "description": "Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "performance testing",
+        "load testing",
+        "stress test",
+        "p95 latency",
+        "bottleneck detection",
+        "how do i measure system performance",
+        "k6",
+        "locust"
+      ],
+      "relatedSkills": [
+        "coding-code-quality-policies",
+        "coding-debugging-profiling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/performance-testing/SKILL.md"
     },
     {
       "name": "personal-knowledge-management",
