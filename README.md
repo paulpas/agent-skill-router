@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 15:18:04 UTC  
-> **Total skills:** 689
+> **Last updated:** 2026-05-20 11:00:12 UTC  
+> **Total skills:** 691
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (155 skills)
+### Coding (157 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -739,6 +739,7 @@ MIT — All skills are freely available and redistributable.
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | data privacy, anonymization, differential privacy, GDPR, PII protection, privacy-preserving, sensitive data |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale | data profiling, metadata extraction, schema analysis, data schema, how do i profile data, data structure, performance analysis, optimization |
 | [data-quality](skills/coding/data-quality/SKILL.md) | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" | data validation, data cleaning, outlier detection, data quality, how do i clean data, missing values |
+| [data-validation-patterns](skills/coding/data-validation-patterns/SKILL.md) | Implements comprehensive data validation and sanitization (schema validation with pydantic, type coercion safety, input sanitization, output encoding, transformation pipelines) to ensure data integrity throughout software systems. | data validation, schema validation, pydantic model, input sanitization, type coercion, data transformation, how do i validate data, output encoding |
 | [data-versioning](skills/coding/data-versioning/SKILL.md) | "Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment tracking and governance" | data versioning, data lineage, provenance, reproducibility, data governance, how do i track data |
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" | data visualization, plotting, dashboards, charts, matplotlib, seaborn, plotly, how do i visualize data |
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | database design, schema design, data modeling, sql migrations, indexing strategy, database normalization, foreign keys, entity relationship |
@@ -816,6 +817,7 @@ MIT — All skills are freely available and redistributable.
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | port interface, driving port, driven port, port contract, Protocol vs ABC, hexagonal ports, how do i define clean boundaries, dependency inversion, framework-agnostic interfaces |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving |
+| [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | randomized experiments, RCT, experimental design, randomization, blocking, sample size |
@@ -1015,7 +1017,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (290 skills)
+### Implementation (Build Features) (292 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1077,6 +1079,7 @@ MIT — All skills are freely available and redistributable.
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale |
 | [data-quality](skills/coding/data-quality/SKILL.md) | Coding | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" |
+| [data-validation-patterns](skills/coding/data-validation-patterns/SKILL.md) | Coding | Implements comprehensive data validation and sanitization (schema validation with pydantic, type coercion safety, input sanitization, output encoding, transformation pipelines) to ensure data integrity throughout software systems. |
 | [data-versioning](skills/coding/data-versioning/SKILL.md) | Coding | "Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment tracking and governance" |
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | Coding | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" |
 | [database-admin](skills/agent/database-admin/SKILL.md) | Agent | Implements database administration best practices (PostgreSQL tuning, MySQL replication, MongoDB sharding, Redis optimization) with real operational commands and query analysis patterns. |
@@ -1219,6 +1222,7 @@ MIT — All skills are freely available and redistributable.
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "Calculating optimal position sizes using Kelly criterion, volatility" adjustments, and edge-based sizing to maximize long-term growth while managing risk |
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" |
+| [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. |
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" |
@@ -1914,6 +1918,7 @@ MIT — All skills are freely available and redistributable.
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | Implementation |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale | Implementation |
 | [data-quality](skills/coding/data-quality/SKILL.md) | Coding | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" | Implementation |
+| [data-validation-patterns](skills/coding/data-validation-patterns/SKILL.md) | Coding | Implements comprehensive data validation and sanitization (schema validation with pydantic, type coercion safety, input sanitization, output encoding, transformation pipelines) to ensure data integrity throughout software systems. | Implementation |
 | [data-versioning](skills/coding/data-versioning/SKILL.md) | Coding | "Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment tracking and governance" | Implementation |
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | Coding | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" | Implementation |
 | [database](skills/agent/database/SKILL.md) | Agent | Implements intelligent database with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2223,6 +2228,7 @@ MIT — All skills are freely available and redistributable.
 | [pr-writer](skills/agent/pr-writer/SKILL.md) | Agent | Implements intelligent pr writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" | Implementation |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | Implementation |
+| [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | Implementation |
 | [project](skills/cncf/project/SKILL.md) | Cncf | "Notary Project in Content Trust &amp; Security - cloud native architecture" patterns, pitfalls, and best practices | Reference |
 | [prometheus](skills/cncf/prometheus/SKILL.md) | Cncf | "Prometheus in Cloud-Native Engineering - The Prometheus monitoring system" and time series database. | Reference |
 | [prompt-engineer](skills/agent/prompt-engineer/SKILL.md) | Agent | Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
