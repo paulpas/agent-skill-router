@@ -43,6 +43,7 @@ export declare class Router {
     private executionPlanner;
     private safetyLayer;
     private logger;
+    private config;
     constructor(config: RouterConfig);
     /**
      * Initialize the router

@@ -21,6 +21,7 @@ class Router {
     executionPlanner;
     safetyLayer;
     logger;
+    config;
     constructor(config) {
         this.skillRegistry = new SkillRegistry_1.SkillRegistry({
             skillsDirectory: config.skillsDirectory,
@@ -49,6 +50,7 @@ class Router {
         this.logger = new Logger_1.Logger('Router', {
             level: config.observability?.level || 'info',
         });
+        this.config = config;
     }
     /**
      * Initialize the router
@@ -181,7 +183,10 @@ class Router {
             });
         }
         // Filter by max skills
-        const maxSkills = constraints?.maxSkills || 5;
+        // Config (from env var) takes priority over request constraints
+        const maxSkills = this.config.execution?.maxSkills
+            ?? constraints?.maxSkills
+            ?? 5;
         filtered = filtered.slice(0, maxSkills);
         // Filter by categories if specified
         if (constraints?.categories && constraints.categories.length > 0) {

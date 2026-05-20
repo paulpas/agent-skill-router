@@ -60,6 +60,7 @@ export class Router {
   private executionPlanner: ExecutionPlanner;
   private safetyLayer: SafetyLayer;
   private logger: Logger;
+  private config: RouterConfig;
 
   constructor(config: RouterConfig) {
     this.skillRegistry = new SkillRegistry({
@@ -95,6 +96,8 @@ export class Router {
     this.logger = new Logger('Router', {
       level: config.observability?.level || 'info',
     });
+
+    this.config = config;
   }
 
   /**

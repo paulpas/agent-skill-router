@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-19 23:57:03 UTC  
-> **Total skills:** 649
+> **Last updated:** 2026-05-19 19:42:19 UTC  
+> **Total skills:** 651
 
 ## Skills by Domain
 
@@ -693,7 +693,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (121 skills)
+### Coding (123 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -701,12 +701,14 @@ MIT — All skills are freely available and redistributable.
 | [advanced](skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | git rebase, git cherry-pick, git bisect, git reflog, worktrees, filter-branch, multi-repo, advanced git |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. | &, ampersand operator, bitwise AND, address of, flag checking, bitmask, pointer manipulation |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" | anomaly detection, outlier detection, isolation forest, LOF, one-class SVM, how do I detect anomalies |
+| [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. | anti-pattern, god object, leaky abstraction, feature envy, shotgun surgery, cargo cult, code smell, refactoring, bad design, harmful patterns |
 | [api-design](skills/coding/api-design/SKILL.md) | Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services. | api design, rest api, endpoint design, api architecture, resource modeling, error handling patterns, pagination strategy, rate limiting, api versioning, graphql design, web service design, http methods, idempotency |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
 | [association-rules](skills/coding/association-rules/SKILL.md) | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | association rules, market basket, apriori, frequent itemsets, recommendation, pattern mining |
 | [automation](skills/coding/automation/SKILL.md) | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | semantic versioning, semver, version bumping, conventional commits, semantic-release, changelog automation, release automation, git tags |
 | [base](skills/coding/base/SKILL.md) | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | abstract, initialization, pattern, strategy base, strategy-base |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" | bayesian inference, bayes, prior, posterior, probabilistic inference, how do i do bayesian |
+| [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. | behavioral patterns, observer pattern, state pattern, command pattern, strategy pattern, template method, mediator pattern, chain of responsibility, iterator pattern, object communication |
 | [best-practices](skills/coding/best-practices/SKILL.md) | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" | markdown best practices, markdown-best-practices, opencode, skills, syntax |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" | bias-variance, overfitting, underfitting, regularization, generalization, how do I prevent overfitting |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | git branching strategies, git repository, git-branching-strategies, github, including, models, version control |
@@ -969,7 +971,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (257 skills)
+### Implementation (Build Features) (258 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -988,6 +990,7 @@ MIT — All skills are freely available and redistributable.
 | [backfill-strategy](skills/trading/backfill-strategy/SKILL.md) | Trading | "Provides Strategic data backfill for populating historical data in trading systems" |
 | [base](skills/coding/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | Coding | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" |
+| [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Coding | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. |
 | [best-practices](skills/coding/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" |
 | [best-practices](skills/go/best-practices/SKILL.md) | Go | Enforces Go idioms and best practices including error handling, interface design, testing conventions, and code organization for maintainable applications. |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | Coding | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" |
@@ -1633,10 +1636,11 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Agent | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 
 
-### Review (Audit & Validate) (2 skills)
+### Review (Audit & Validate) (3 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
+| [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Coding | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. |
 | [humanizer](skills/coding/humanizer/SKILL.md) | Coding | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. |
 
@@ -1671,6 +1675,7 @@ MIT — All skills are freely available and redistributable.
 | [andruia-skill-smith](skills/agent/andruia-skill-smith/SKILL.md) | Agent | Implements intelligent andruia skill smith with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | Coding | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" | Implementation |
 | [anomaly-detection](skills/trading/anomaly-detection/SKILL.md) | Trading | "Provides Detect anomalous market behavior, outliers, and potential market manipulation" | Implementation |
+| [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Coding | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. | Review |
 | [antigravity-skill-orchestrator](skills/agent/antigravity-skill-orchestrator/SKILL.md) | Agent | Implements intelligent antigravity skill orchestrator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [antigravity-workflows](skills/agent/antigravity-workflows/SKILL.md) | Agent | Implements intelligent antigravity workflows with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services. | Implementation |
@@ -1707,6 +1712,7 @@ MIT — All skills are freely available and redistributable.
 | [bash-scripting](skills/agent/bash-scripting/SKILL.md) | Agent | Implements intelligent bash scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | Coding | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" | Implementation |
 | [bdistill-behavioral-xray](skills/agent/bdistill-behavioral-xray/SKILL.md) | Agent | Implements intelligent bdistill behavioral xray with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Coding | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. | Implementation |
 | [behavioral-modes](skills/agent/behavioral-modes/SKILL.md) | Agent | Implements intelligent behavioral modes with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [best-practices](skills/cncf/best-practices/SKILL.md) | Cncf | "Cloud Native Computing Foundation (CNCF) architecture best practices" for production-grade Kubernetes deployments. Covers service mesh, CNI, GitOps, CI/CD, observability, security, networking, and scaling patterns across the CNCF landscape. | Reference |
 | [best-practices](skills/coding/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" | Implementation |
