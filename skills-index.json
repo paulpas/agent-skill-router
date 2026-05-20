@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T08:01:23.328207Z",
-  "totalSkills": 672,
+  "generatedAt": "2026-05-20T08:32:11.795891Z",
+  "totalSkills": 674,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 140,
+    "coding": 142,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 277,
+    "implementation": 279,
     "reference": 161,
     "information": 1,
     "review": 4
@@ -4459,6 +4459,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/deployment-philosophy/SKILL.md"
+    },
+    {
+      "name": "design-pattern-selection",
+      "domain": "coding",
+      "description": "Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "design pattern",
+        "GoF pattern",
+        "factory method",
+        "strategy pattern",
+        "decorator pattern",
+        "observer pattern",
+        "how do i choose a pattern",
+        "structural pattern"
+      ],
+      "relatedSkills": [
+        "modular-design",
+        "refactoring-techniques",
+        "dependency-inversion-principle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/design-pattern-selection/SKILL.md"
     },
     {
       "name": "design-patterns-and-principles",
@@ -14150,6 +14175,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-time-series-forecasting/SKILL.md"
+    },
+    {
+      "name": "tool-evaluation-workflow",
+      "domain": "coding",
+      "description": "Applies a structured evaluation framework to select tools, libraries, and frameworks based on technical fit, community health, security posture, performance benchmarks, and total cost of ownership for software projects.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "analysis",
+      "triggers": [
+        "tool evaluation",
+        "library selection",
+        "framework comparison",
+        "proof of concept",
+        "technology assessment",
+        "how do i evaluate tools",
+        "build vs buy decision",
+        "dependency management"
+      ],
+      "relatedSkills": [
+        "dependency-inversion-principle",
+        "refactoring-techniques",
+        "modular-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/tool-evaluation-workflow/SKILL.md"
     },
     {
       "name": "topic-modeling",
