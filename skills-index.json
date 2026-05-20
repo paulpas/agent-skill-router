@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T15:18:03.752098Z",
-  "totalSkills": 689,
+  "generatedAt": "2026-05-20T16:00:48.497421Z",
+  "totalSkills": 691,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 154,
+    "coding": 156,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 290,
+    "implementation": 292,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -4245,6 +4245,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-data-quality/SKILL.md"
+    },
+    {
+      "name": "data-validation-patterns",
+      "domain": "coding",
+      "description": "Implements comprehensive data validation and sanitization (schema validation with pydantic, type coercion safety, input sanitization, output encoding, transformation pipelines) to ensure data integrity throughout software systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "data validation",
+        "schema validation",
+        "pydantic model",
+        "input sanitization",
+        "type coercion",
+        "data transformation",
+        "how do i validate data",
+        "output encoding"
+      ],
+      "relatedSkills": [
+        "input-validation",
+        "software-error-handling",
+        "pydantic-models",
+        "data-encoding"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/data-validation-patterns/SKILL.md"
     },
     {
       "name": "data-versioning",
@@ -11397,6 +11423,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-privacy-ml/SKILL.md"
+    },
+    {
+      "name": "production-logging",
+      "domain": "coding",
+      "description": "Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "production logging",
+        "structured logging",
+        "correlation ID",
+        "context propagation",
+        "log aggregation",
+        "how do i add logging to my app",
+        "sensitive data redaction",
+        "json logging"
+      ],
+      "relatedSkills": [
+        "observability-patterns",
+        "software-error-handling",
+        "engineering-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/production-logging/SKILL.md"
     },
     {
       "name": "project",
