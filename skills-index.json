@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T01:09:11.020756Z",
-  "totalSkills": 653,
+  "generatedAt": "2026-05-20T02:08:53.764904Z",
+  "totalSkills": 658,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 124,
+    "coding": 129,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 260,
+    "implementation": 265,
     "reference": 161,
     "information": 1,
     "review": 3
@@ -4202,6 +4202,35 @@
       "source": "skills/agent/dependency-graph-builder/SKILL.md"
     },
     {
+      "name": "dependency-inversion-principle",
+      "domain": "coding",
+      "description": "Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dependency inversion principle",
+        "DIP",
+        "dependency injection",
+        "inversion of control",
+        "IoC",
+        "loose coupling",
+        "high level low level abstraction",
+        "constructor injection",
+        "factory pattern",
+        "testable architecture"
+      ],
+      "relatedSkills": [
+        "single-responsibility",
+        "open-closed-principle",
+        "liskov-substitution-principle",
+        "interface-segregation-principle",
+        "hexagonal-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/dependency-inversion-principle/SKILL.md"
+    },
+    {
       "name": "dependency-management",
       "domain": "coding",
       "description": "\"Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil\"",
@@ -7199,6 +7228,35 @@
       "source": "skills/agent/intercom-automation/SKILL.md"
     },
     {
+      "name": "interface-segregation-principle",
+      "domain": "coding",
+      "description": "Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "interface segregation principle",
+        "ISP",
+        "fat interface",
+        "thin interface",
+        "client specific",
+        "Protocol",
+        "ABC",
+        "unused methods",
+        "stub implementation",
+        "NotImplementedError",
+        "duck typing"
+      ],
+      "relatedSkills": [
+        "single-responsibility",
+        "open-closed-principle",
+        "liskov-substitution-principle",
+        "dependency-inversion-principle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/interface-segregation-principle/SKILL.md"
+    },
+    {
       "name": "intermarket-analysis",
       "domain": "trading",
       "description": "\"Implements cross-market relationships and asset class correlations for risk management and algorithmic trading execution.\"",
@@ -8194,6 +8252,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/risk-liquidity-risk/SKILL.md"
+    },
+    {
+      "name": "liskov-substitution-principle",
+      "domain": "coding",
+      "description": "Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "liskov substitution principle",
+        "LSP",
+        "subtype contract",
+        "precondition",
+        "postcondition",
+        "invariant",
+        "is-a relationship",
+        "breaking subclass",
+        "type safety"
+      ],
+      "relatedSkills": [
+        "single-responsibility",
+        "open-closed-principle",
+        "interface-segregation-principle",
+        "dependency-inversion-principle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/liskov-substitution-principle/SKILL.md"
     },
     {
       "name": "litmus",
@@ -9947,6 +10032,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-online-experiments/SKILL.md"
+    },
+    {
+      "name": "open-closed-principle",
+      "domain": "coding",
+      "description": "Refactors conditional branching and if/else chains into extensible polymorphic designs using strategy injection, factory registration, and protocol-based interfaces so new behavior extends without modifying existing source.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "open closed principle",
+        "OCP",
+        "extensible design",
+        "polymorphism",
+        "strategy pattern",
+        "factory pattern",
+        "extension point",
+        "conditional refactoring"
+      ],
+      "relatedSkills": [
+        "single-responsibility",
+        "liskov-substitution-principle",
+        "interface-segregation-principle",
+        "dependency-inversion-principle",
+        "design-patterns-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/open-closed-principle/SKILL.md"
     },
     {
       "name": "opencost",
@@ -12231,6 +12343,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/single-letter-variables/SKILL.md"
+    },
+    {
+      "name": "single-responsibility",
+      "domain": "coding",
+      "description": "Detects and refactors classes that violate the Single Responsibility Principle by splitting multi-purpose modules into focused components with clear responsibility boundaries.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "single responsibility principle",
+        "SRP",
+        "god class",
+        "split class",
+        "cohesion",
+        "high coupling",
+        "module boundary",
+        "one reason to change",
+        "separation of concerns"
+      ],
+      "relatedSkills": [
+        "open-closed-principle",
+        "liskov-substitution-principle",
+        "interface-segregation-principle",
+        "dependency-inversion-principle",
+        "refactoring-techniques"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/single-responsibility/SKILL.md"
     },
     {
       "name": "skill-audit",
