@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-20T20:56:10.631129Z",
-  "totalSkills": 705,
+  "generatedAt": "2026-05-20T21:29:12.503594Z",
+  "totalSkills": 706,
   "domains": {
-    "agent": 248,
+    "agent": 249,
     "cncf": 169,
     "coding": 164,
     "go": 12,
@@ -13,7 +13,7 @@
     "writing": 2
   },
   "roles": {
-    "orchestration": 231,
+    "orchestration": 232,
     "implementation": 304,
     "reference": 164,
     "information": 1,
@@ -6277,6 +6277,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-lifecycle/SKILL.md"
+    },
+    {
+      "name": "framework-orchestration-routing",
+      "domain": "agent",
+      "description": "Orchestrates task routing across multiple AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen, MCP) by selecting the optimal framework for each subtask and composing cross-framework workflows with proper context bridges.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "framework orchestration routing",
+        "FOR",
+        "langchain",
+        "llamaindex",
+        "crewai",
+        "auto gen",
+        "multi agent orchestration",
+        "cross framework workflow",
+        "how do i choose ai framework",
+        "agent framework selection"
+      ],
+      "relatedSkills": [
+        "intelligent-skill-selection",
+        "confidence-based-selector",
+        "agent-architecture-patterns",
+        "workflow-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/framework-orchestration-routing/SKILL.md"
     },
     {
       "name": "framework-performance-tuning",
