@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 14:29:09 UTC  
-> **Total skills:** 688
+> **Last updated:** 2026-05-20 10:17:02 UTC  
+> **Total skills:** 689
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (154 skills)
+### Coding (155 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -748,6 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | design patterns, GoF, SOLID, DRY, factory pattern, software architecture, refactoring, SOLID principles |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. | design patterns, GoF, SOLID, DRY, YAGNI, architecture, creational patterns, structural patterns |
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" | dimensionality reduction, PCA, t-SNE, UMAP, feature extraction, how do i reduce dimensions |
+| [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. | distributed systems, consensus algorithm, CAP theorem, eventual consistency, data replication, partitioning strategy, Raft, Paxos, vector clocks, service discovery, two-phase commit, distributed transactions, clock synchronization, consistent hashing |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | distribution fitting, goodness-of-fit, fitting distributions, distribution selection, how do i fit |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | domain modeling, ubiquitous language, bounded context, subdomain classification, domain map, how do i understand the domain, strategic design |
@@ -1014,7 +1015,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (289 skills)
+### Implementation (Build Features) (290 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1091,6 +1092,7 @@ MIT — All skills are freely available and redistributable.
 | [digital-fabrication](skills/maker/digital-fabrication/SKILL.md) | Maker | Implements 3D printing slicing, laser cutting calibration, CNC toolpaths, and STL validation workflows for turning CAD models into fabrication-ready parts with optimized parameters. |
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | Coding | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" |
 | [disaster-recovery](skills/cncf/disaster-recovery/SKILL.md) | Cncf | Implements comprehensive disaster recovery planning for Kubernetes clusters with backup strategies, recovery procedures, cross-region replication, RPO/RTO planning, and validation workflows. |
+| [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Coding | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. |
@@ -1936,6 +1938,7 @@ MIT — All skills are freely available and redistributable.
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | Coding | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" | Implementation |
 | [disaster-recovery](skills/cncf/disaster-recovery/SKILL.md) | Cncf | Implements comprehensive disaster recovery planning for Kubernetes clusters with backup strategies, recovery procedures, cross-region replication, RPO/RTO planning, and validation workflows. | Implementation |
 | [dispatching-parallel-agents](skills/agent/dispatching-parallel-agents/SKILL.md) | Agent | Implements intelligent dispatching parallel agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Coding | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. | Implementation |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | Implementation |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization | Implementation |
 | [documentation](skills/agent/documentation/SKILL.md) | Agent | Implements intelligent documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
