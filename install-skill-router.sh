@@ -1444,10 +1444,15 @@ run_installation() {
     ENV_ARGS+=(-e "OPENAI_BASE_URL=$LLM_ENDPOINT_URL")
   fi
   ENV_ARGS+=(-e "LLM_PROVIDER=${LLM_PROVIDER:-openai}")
-  [[ -n "${LLM_MODEL:-}" ]]            && ENV_ARGS+=(-e "LLM_MODEL=$LLM_MODEL")
+  # For llamacpp, use local-model; otherwise use configured model
+  if [[ "$LLM_PROVIDER" == "llamacpp" ]]; then
+    ENV_ARGS+=(-e "LLM_MODEL=local-model")
+  elif [[ -n "${LLM_MODEL:-}" ]]; then
+    ENV_ARGS+=(-e "LLM_MODEL=$LLM_MODEL")
+  fi
   [[ -n "${EMBEDDING_MODEL:-}" ]]      && ENV_ARGS+=(-e "EMBEDDING_MODEL=$EMBEDDING_MODEL")
   [[ -n "${ANTHROPIC_API_KEY:-}" ]]    && ENV_ARGS+=(-e "ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY")
-  [[ -n "${LLAMACPP_URL:-}" ]]         && ENV_ARGS+=(-e "LLAMACPP_URL=$LLAMACPP_URL")
+  [[ -n "${LLAMACPP_URL:-}" ]]         && ENV_ARGS+=(-e "LLAMACPP_BASE_URL=$LLAMACPP_URL")
   ENV_ARGS+=(-e "EMBEDDING_PROVIDER=${EMBEDDING_PROVIDER:-openai}")
   ENV_ARGS+=(-e "GITHUB_SKILLS_ENABLED=${GITHUB_ENABLED:-true}")
   ENV_ARGS+=(-e "SKILL_SYNC_INTERVAL=${SYNC_INTERVAL:-3600}")

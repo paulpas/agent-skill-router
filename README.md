@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 11:06:19 UTC  
-> **Total skills:** 681
+> **Last updated:** 2026-05-20 06:58:02 UTC  
+> **Total skills:** 683
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (147 skills)
+### Coding (149 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -773,6 +773,7 @@ MIT — All skills are freely available and redistributable.
 | [humanizer](skills/coding/humanizer/SKILL.md) | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation, comments, technical writing, readability, code clarity |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | hypothesis testing, t-test, chi-square, p-value, statistical significance, how do i test hypotheses, unit tests, testing |
+| [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. | idempotency, idempotent, idempotency key, request deduplication, exactly once, duplicate detection, optimistic concurrency, idempotent handler, outbox pattern, race condition prevention |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | input validation, data sanitization, schema validation, input filtering, sanitize user input, prevent injection, OWASP, form validation, parse and validate |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | instrumental variables, IV, 2SLS, endogeneity, causal effect, how do i handle endogeneity |
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. | interface segregation principle, ISP, fat interface, thin interface, client specific, Protocol, ABC, unused methods, stub implementation, NotImplementedError, duck typing |
@@ -787,6 +788,7 @@ MIT — All skills are freely available and redistributable.
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models | maximum likelihood, MLE, likelihood estimation, likelihood function, optimization, performance, speed |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | memoization, cache pattern, LRU cache, LFU cache, cache invalidation, TTL strategy, write-through, cache stampede, function decorator, how do i speed up slow functions |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | metrics, KPI, key performance indicator, business metrics, metric definition, how do I choose metrics, cloudwatch, optimization |
+| [microservice-resilience-patterns](skills/coding/microservice-resilience-patterns/SKILL.md) | Implements production-ready resilience patterns (circuit breaker, retry with exponential backoff, bulkhead isolation, timeout enforcement, graceful fallback) to prevent cascading failures in distributed microservice systems. | circuit breaker, retry pattern, bulkhead pattern, resilience, fault tolerance, timeout handling, graceful degradation, fallback strategy, cascading failure, exponential backoff |
 | [microservices-architecture](skills/coding/microservices-architecture/SKILL.md) | Implements microservices architecture patterns (bounded contexts, API gateway, event-driven communication, saga orchestration) for decomposing monolithic applications into scalable, independent services. | microservices architecture, service decomposition, bounded context, how do i split a monolith, inter-service communication, event-driven messaging, API gateway, saga pattern |
 | [missing-data](skills/coding/missing-data/SKILL.md) | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" | missing data, imputation, NaN handling, missing values, how do i handle missing data, data gaps |
 | [model-fairness](skills/coding/model-fairness/SKILL.md) | "Evaluates and mitigates fairness issues including bias detection, fairness metrics, and debiasing strategies in machine learning" | model fairness, fairness metrics, bias detection, debiasing, fair machine learning, how do I check bias |
@@ -1007,7 +1009,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (282 skills)
+### Implementation (Build Features) (284 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1123,6 +1125,7 @@ MIT — All skills are freely available and redistributable.
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | Coding | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" |
 | [hyperparameter-tuning](skills/trading/hyperparameter-tuning/SKILL.md) | Trading | "Implements optimize model configurations for trading applications for risk management and algorithmic trading execution." |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions |
+| [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Coding | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. |
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. |
 | [indicator-confluence](skills/trading/indicator-confluence/SKILL.md) | Trading | "Provides Indicator Confluence Validation Systems for Confirming Trading Signals" |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. |
@@ -1160,6 +1163,7 @@ MIT — All skills are freely available and redistributable.
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Agent | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" |
+| [microservice-resilience-patterns](skills/coding/microservice-resilience-patterns/SKILL.md) | Coding | Implements production-ready resilience patterns (circuit breaker, retry with exponential backoff, bulkhead isolation, timeout enforcement, graceful fallback) to prevent cascading failures in distributed microservice systems. |
 | [microservices-architecture](skills/coding/microservices-architecture/SKILL.md) | Coding | Implements microservices architecture patterns (bounded contexts, API gateway, event-driven communication, saga orchestration) for decomposing monolithic applications into scalable, independent services. |
 | [missing-data](skills/coding/missing-data/SKILL.md) | Coding | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" |
 | [mobile-applications](skills/go/mobile-applications/SKILL.md) | Go | Develops cross-platform mobile applications with Go using Fyne and Go mobile for iOS and Android with platform-optimized UI patterns. |
@@ -2025,6 +2029,7 @@ MIT — All skills are freely available and redistributable.
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | Implementation |
 | [iam](skills/cncf/iam/SKILL.md) | Cncf | "Configures identity and access management with IAM users, roles, policies" and MFA for secure, least-privilege access control across AWS resources and services. | Reference |
 | [iam](skills/cncf/iam/SKILL.md) | Cncf | "Manages identity and access control with service accounts, roles, and" fine-grained permissions. | Reference |
+| [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Coding | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. | Implementation |
 | [incident-response](skills/cncf/incident-response/SKILL.md) | Cncf | "Creates or updates an incident response plan covering detection, triage" communication, and post-incident review for CNCF projects | Reference |
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. | Implementation |
 | [indicator-confluence](skills/trading/indicator-confluence/SKILL.md) | Trading | "Provides Indicator Confluence Validation Systems for Confirming Trading Signals" | Implementation |
@@ -2114,6 +2119,7 @@ MIT — All skills are freely available and redistributable.
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems | Implementation |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Agent | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution | Implementation |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | Implementation |
+| [microservice-resilience-patterns](skills/coding/microservice-resilience-patterns/SKILL.md) | Coding | Implements production-ready resilience patterns (circuit breaker, retry with exponential backoff, bulkhead isolation, timeout enforcement, graceful fallback) to prevent cascading failures in distributed microservice systems. | Implementation |
 | [microservices-architecture](skills/coding/microservices-architecture/SKILL.md) | Coding | Implements microservices architecture patterns (bounded contexts, API gateway, event-driven communication, saga orchestration) for decomposing monolithic applications into scalable, independent services. | Implementation |
 | [missing-data](skills/coding/missing-data/SKILL.md) | Coding | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" | Implementation |
 | [ml-pipeline-workflow](skills/agent/ml-pipeline-workflow/SKILL.md) | Agent | Implements intelligent ml pipeline workflow with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
