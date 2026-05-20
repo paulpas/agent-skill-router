@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 00:42:48 UTC  
-> **Total skills:** 651
+> **Last updated:** 2026-05-19 20:07:58 UTC  
+> **Total skills:** 653
 
 ## Skills by Domain
 
@@ -693,7 +693,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (123 skills)
+### Coding (125 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -723,6 +723,7 @@ MIT — All skills are freely available and redistributable.
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config |
 | [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" | correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships |
+| [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | creational patterns, factory method, builder pattern, singleton, abstract factory, prototype pattern, object creation, GoF design patterns |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | cross-validation, k-fold, stratified cross-validation, time-series cross-validation, validation |
 | [data-collection](skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data |
@@ -812,6 +813,7 @@ MIT — All skills are freely available and redistributable.
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | software engineering, modular design, separation of concerns, defensive programming, KISS principle, YAGNI, clean architecture |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | testing strategy, unit test, integration test, property-based testing, test coverage, mocking, assertion, pytest, test suite design, how do i write tests |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error |
+| [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. | structural patterns, adapter pattern, bridge pattern, composite pattern, decorator pattern, facade pattern, proxy pattern, flyweight, GoF design patterns |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" | support vector machines, SVM, kernel methods, support vectors, SVM classification |
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" | synthetic control, difference-in-differences, DiD, quasi-experiment, impact evaluation |
 | [system-architecture](skills/coding/system-architecture/SKILL.md) | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. | system architecture, software design, hexagonal architecture, ports and adapters, layered architecture, dependency injection, architectural boundaries, event-driven, microservices, monolith design, scalable systems, maintainable code |
@@ -971,7 +973,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (258 skills)
+### Implementation (Build Features) (260 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1020,6 +1022,7 @@ MIT — All skills are freely available and redistributable.
 | [correlation-risk](skills/trading/correlation-risk/SKILL.md) | Trading | "Implements correlation breakdown and portfolio diversification risk for risk management and algorithmic trading execution." |
 | [cost-optimization](skills/cncf/cost-optimization/SKILL.md) | Cncf | Implements cloud cost optimization strategies (right-sizing, reserved instances, spot instances, multi-cloud comparison) for Kubernetes and cloud-native deployments. |
 | [cost-optimization-analysis](skills/cncf/cost-optimization-analysis/SKILL.md) | Cncf | Cloud cost optimization analysis including AWS Cost Explorer, Azure Cost Management, and GCP Billing with right-sizing recommendations and optimization strategies for multi-cloud environments |
+| [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." |
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" |
@@ -1201,6 +1204,7 @@ MIT — All skills are freely available and redistributable.
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Linux | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. |
 | [stream-processing](skills/trading/stream-processing/SKILL.md) | Trading | "Provides Streaming data processing for real-time trading signals and analytics" |
 | [stress-testing](skills/trading/stress-testing/SKILL.md) | Trading | "Implements stress test scenarios and portfolio resilience analysis for risk management and algorithmic trading execution." |
+| [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Coding | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. |
 | [support-resistance](skills/trading/support-resistance/SKILL.md) | Trading | "Implements technical levels where price tends to pause or reverse for risk management and algorithmic trading execution." |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | Coding | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" |
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | Coding | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" |
@@ -1812,6 +1816,7 @@ MIT — All skills are freely available and redistributable.
 | [create-branch](skills/agent/create-branch/SKILL.md) | Agent | Implements intelligent create branch with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [create-issue-gate](skills/agent/create-issue-gate/SKILL.md) | Agent | Implements intelligent create issue gate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [create-pr](skills/agent/create-pr/SKILL.md) | Agent | Implements intelligent create pr with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | Implementation |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | Implementation |
 | [crossplane](skills/cncf/crossplane/SKILL.md) | Cncf | "Crossplane in Platform Engineering - Kubernetes-native control plane" for multi-cloud infrastructure | Reference |
 | [cubefs](skills/cncf/cubefs/SKILL.md) | Cncf | "Provides CubeFS in Storage - distributed, high-performance file system" | Reference |
@@ -2221,6 +2226,7 @@ MIT — All skills are freely available and redistributable.
 | [stress-testing](skills/trading/stress-testing/SKILL.md) | Trading | "Implements stress test scenarios and portfolio resilience analysis for risk management and algorithmic trading execution." | Implementation |
 | [strimzi](skills/cncf/strimzi/SKILL.md) | Cncf | "Provides Strimzi in Kafka on Kubernetes - Apache Kafka for cloud-native environments" | Reference |
 | [stripe-automation](skills/agent/stripe-automation/SKILL.md) | Agent | Implements intelligent stripe automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Coding | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. | Implementation |
 | [subagent-driven-development](skills/agent/subagent-driven-development/SKILL.md) | Agent | Implements intelligent subagent driven development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [support-resistance](skills/trading/support-resistance/SKILL.md) | Trading | "Implements technical levels where price tends to pause or reverse for risk management and algorithmic trading execution." | Implementation |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | Coding | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" | Implementation |
