@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T12:41:05.864320Z",
-  "totalSkills": 684,
+  "generatedAt": "2026-05-20T13:33:32.021251Z",
+  "totalSkills": 685,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 149,
+    "coding": 150,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 285,
+    "implementation": 286,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -4977,27 +4977,6 @@
       "source": "skills/trading/risk-drawdown-control/SKILL.md"
     },
     {
-      "name": "driven-architecture",
-      "domain": "coding",
-      "description": "\"'Event-driven architecture for real-time trading systems: pub/sub patterns\" event types, signal flow, strategy base, and common pitfalls'",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "event driven architecture",
-        "event-driven",
-        "event-driven-architecture",
-        "real-time",
-        "trading",
-        "eventbridge",
-        "event bus",
-        "event routing"
-      ],
-      "relatedSkills": [],
-      "version": "1.0.0",
-      "source": "skills/coding/event-driven-architecture/SKILL.md"
-    },
-    {
       "name": "dry-principles",
       "domain": "coding",
       "description": "Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases",
@@ -5375,6 +5354,31 @@
       "source": "skills/cncf/etcd/SKILL.md"
     },
     {
+      "name": "event-driven-architecture",
+      "domain": "coding",
+      "description": "Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "event-driven architecture",
+        "pub/sub messaging",
+        "saga pattern",
+        "dead letter queue",
+        "outbox pattern",
+        "how do i decouple services",
+        "async message processing",
+        "distributed messaging"
+      ],
+      "relatedSkills": [
+        "microservice-resilience-patterns",
+        "event-sourcing-pattern",
+        "observability-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/event-driven-architecture/SKILL.md"
+    },
+    {
       "name": "event-driven-patterns",
       "domain": "coding",
       "description": "Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems.",
@@ -5423,6 +5427,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/azure-event-hubs/SKILL.md"
+    },
+    {
+      "name": "event-sourcing-pattern",
+      "domain": "coding",
+      "description": "Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "event sourcing",
+        "event store",
+        "aggregate root",
+        "event replay",
+        "projections",
+        "snapshots",
+        "how do i track all changes",
+        "immutable audit trail",
+        "state reconstruction from events"
+      ],
+      "relatedSkills": [
+        "event-driven-architecture",
+        "cqrs-pattern",
+        "microservice-resilience-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/event-sourcing-pattern/SKILL.md"
     },
     {
       "name": "event-storming",
