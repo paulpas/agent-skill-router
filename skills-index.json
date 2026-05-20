@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T02:08:53.764904Z",
-  "totalSkills": 658,
+  "generatedAt": "2026-05-20T03:01:50.316554Z",
+  "totalSkills": 660,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 129,
+    "coding": 131,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,10 +14,10 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 265,
+    "implementation": 266,
     "reference": 161,
     "information": 1,
-    "review": 3
+    "review": 4
   },
   "skills": [
     {
@@ -45,6 +45,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-ab-testing/SKILL.md"
+    },
+    {
+      "name": "abstraction-design-patterns",
+      "domain": "coding",
+      "description": "Designs clean, maintainable abstractions using Protocols, ABCs, interfaces, and composition to reduce coupling while avoiding over-engineering and leaky abstractions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "abstraction design",
+        "interface design",
+        "Protocol pattern",
+        "over-abstraction",
+        "leaky abstraction",
+        "composition over inheritance",
+        "Rule of Three"
+      ],
+      "relatedSkills": [
+        "dry-principles",
+        "dependency-inversion-principle",
+        "design-patterns-architecture",
+        "solid-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/abstraction-design-patterns/SKILL.md"
     },
     {
       "name": "acceptance-orchestrator",
@@ -2920,6 +2945,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/code-correctness-verifier/SKILL.md"
+    },
+    {
+      "name": "code-duplication-detection",
+      "domain": "coding",
+      "description": "Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques.",
+      "role": "review",
+      "scope": "review",
+      "outputFormat": "report",
+      "triggers": [
+        "code duplication",
+        "duplicate code detection",
+        "copy-paste code",
+        "boilerplate removal",
+        "semantic duplication",
+        "radon metrics",
+        "pylint warnings",
+        "refactoring detection",
+        "DRY principle",
+        "code quality analysis"
+      ],
+      "relatedSkills": [
+        "dry-principles",
+        "refactoring-techniques",
+        "code-review",
+        "code-quality-policies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/code-duplication-detection/SKILL.md"
     },
     {
       "name": "commission-model",
