@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-05-20T19:02:39.488818Z",
-  "totalSkills": 699,
+  "generatedAt": "2026-05-20T19:50:26.360875Z",
+  "totalSkills": 702,
   "domains": {
     "agent": 246,
     "cncf": 169,
-    "coding": 161,
+    "coding": 163,
     "go": 12,
     "linux": 13,
     "maker": 3,
     "programming": 6,
-    "trading": 87,
+    "trading": 88,
     "writing": 2
   },
   "roles": {
     "orchestration": 230,
-    "implementation": 299,
+    "implementation": 302,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -3969,6 +3969,31 @@
       "source": "skills/cncf/cost-optimization-analysis/SKILL.md"
     },
     {
+      "name": "cqrs-pattern",
+      "domain": "coding",
+      "description": "Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "cqrs",
+        "command query segregation",
+        "write model",
+        "read model",
+        "projection",
+        "separate read write models",
+        "how do i separate reads from writes",
+        "event sourcing read side",
+        "eventual consistency"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "event-sourcing-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/cqrs-pattern/SKILL.md"
+    },
+    {
       "name": "create-branch",
       "domain": "agent",
       "description": "Implements intelligent create branch with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -5054,6 +5079,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/domain-driven-design/SKILL.md"
+    },
+    {
+      "name": "domain-events",
+      "domain": "coding",
+      "description": "Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "domain events",
+        "domain event",
+        "event publishing",
+        "event handler",
+        "event dispatcher",
+        "in-process event bus",
+        "how do i decouple aggregates",
+        "idempotent event handling"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "event-sourcing-pattern",
+        "event-driven-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/domain-events/SKILL.md"
     },
     {
       "name": "domain-modeling",
@@ -10895,6 +10945,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-order-flow-analysis/SKILL.md"
+    },
+    {
+      "name": "order-flow-analysis",
+      "domain": "trading",
+      "description": "Analyzes order flow imbalances, footprint data, and cumulative delta divergence to detect institutional accumulation/distribution zones for high-probability trade entries.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "order flow",
+        "footprint chart",
+        "cumulative delta",
+        "delta divergence",
+        "tape reading",
+        "iceberg orders",
+        "volume imbalance",
+        "liquidity detection"
+      ],
+      "relatedSkills": [
+        "trading-risk-stop-loss",
+        "trading-vwap-execution",
+        "trading-volume-profile"
+      ],
+      "version": "1.0.0",
+      "source": "skills/trading/order-flow-analysis/SKILL.md"
     },
     {
       "name": "order-flow-footprint",
