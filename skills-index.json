@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T17:31:09.297810Z",
-  "totalSkills": 695,
+  "generatedAt": "2026-05-20T18:16:25.626640Z",
+  "totalSkills": 697,
   "domains": {
     "agent": 244,
     "cncf": 169,
-    "coding": 159,
+    "coding": 161,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 230,
-    "implementation": 295,
+    "implementation": 297,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -815,6 +815,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/api-documentation/SKILL.md"
+    },
+    {
+      "name": "api-gateway-design",
+      "domain": "coding",
+      "description": "Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "API gateway",
+        "api-gateway",
+        "request routing",
+        "rate limiting",
+        "auth proxy",
+        "API aggregation",
+        "load balancing",
+        "backend for frontend",
+        "BFF pattern",
+        "how do i route requests"
+      ],
+      "relatedSkills": [
+        "integration-patterns",
+        "rest-api-patterns",
+        "microservice-resilience-patterns",
+        "grpc-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-gateway-design/SKILL.md"
     },
     {
       "name": "api-security-testing",
@@ -7572,6 +7600,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-instrumental-variables/SKILL.md"
+    },
+    {
+      "name": "integration-patterns",
+      "domain": "coding",
+      "description": "Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "integration patterns",
+        "service integration",
+        "adapter pattern",
+        "saga pattern",
+        "circuit breaker",
+        "API gateway",
+        "messaging",
+        "event-driven",
+        "system communication",
+        "how do i connect systems"
+      ],
+      "relatedSkills": [
+        "anti-corruption-layer",
+        "event-driven-patterns",
+        "rest-api-patterns",
+        "microservice-resilience-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/integration-patterns/SKILL.md"
     },
     {
       "name": "intelligent-skill-selection",
