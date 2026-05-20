@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 19:02:40 UTC  
-> **Total skills:** 699
+> **Last updated:** 2026-05-20 14:34:13 UTC  
+> **Total skills:** 701
 
 ## Skills by Domain
 
@@ -697,7 +697,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (162 skills)
+### Coding (164 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -735,6 +735,7 @@ MIT — All skills are freely available and redistributable.
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config |
 | [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" | correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships |
+| [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms. | cqrs, command query segregation, write model, read model, projection, separate read write models, how do i separate reads from writes, event sourcing read side, eventual consistency |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | creational patterns, factory method, builder pattern, singleton, abstract factory, prototype pattern, object creation, GoF design patterns |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | cross-validation, k-fold, stratified cross-validation, time-series cross-validation, validation |
 | [data-collection](skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data |
@@ -756,6 +757,7 @@ MIT — All skills are freely available and redistributable.
 | [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. | distributed systems, consensus algorithm, CAP theorem, eventual consistency, data replication, partitioning strategy, Raft, Paxos, vector clocks, service discovery, two-phase commit, distributed transactions, clock synchronization, consistent hashing |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | distribution fitting, goodness-of-fit, fitting distributions, distribution selection, how do i fit |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns |
+| [domain-events](skills/coding/domain-events/SKILL.md) | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | domain events, domain event, event publishing, event handler, event dispatcher, in-process event bus, how do i decouple aggregates, idempotent event handling |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | domain modeling, ubiquitous language, bounded context, subdomain classification, domain map, how do i understand the domain, strategic design |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | dry principle, don't repeat yourself, code duplication, refactoring, code duplication detection, refactoring guidance, maintainable code, code reuse |
 | [eda](skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data |
@@ -1025,7 +1027,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (299 skills)
+### Implementation (Build Features) (301 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1081,6 +1083,7 @@ MIT — All skills are freely available and redistributable.
 | [correlation-risk](skills/trading/correlation-risk/SKILL.md) | Trading | "Implements correlation breakdown and portfolio diversification risk for risk management and algorithmic trading execution." |
 | [cost-optimization](skills/cncf/cost-optimization/SKILL.md) | Cncf | Implements cloud cost optimization strategies (right-sizing, reserved instances, spot instances, multi-cloud comparison) for Kubernetes and cloud-native deployments. |
 | [cost-optimization-analysis](skills/cncf/cost-optimization-analysis/SKILL.md) | Cncf | Cloud cost optimization analysis including AWS Cost Explorer, Azure Cost Management, and GCP Billing with right-sizing recommendations and optimization strategies for multi-cloud environments |
+| [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms. |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." |
@@ -1110,6 +1113,7 @@ MIT — All skills are freely available and redistributable.
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. |
+| [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. |
 | [drawdown-analysis](skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." |
 | [drawdown-control](skills/trading/drawdown-control/SKILL.md) | Trading | "Implements maximum drawdown control and equity preservation for risk management and algorithmic trading execution." |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Coding | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases |
@@ -1921,6 +1925,7 @@ MIT — All skills are freely available and redistributable.
 | [cosmos-db](skills/cncf/cosmos-db/SKILL.md) | Cncf | Provides Global NoSQL database with multi-region distribution and guaranteed latency | Reference |
 | [cost-optimization](skills/cncf/cost-optimization/SKILL.md) | Cncf | Implements cloud cost optimization strategies (right-sizing, reserved instances, spot instances, multi-cloud comparison) for Kubernetes and cloud-native deployments. | Implementation |
 | [cost-optimization-analysis](skills/cncf/cost-optimization-analysis/SKILL.md) | Cncf | Cloud cost optimization analysis including AWS Cost Explorer, Azure Cost Management, and GCP Billing with right-sizing recommendations and optimization strategies for multi-cloud environments | Implementation |
+| [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms. | Implementation |
 | [create-branch](skills/agent/create-branch/SKILL.md) | Agent | Implements intelligent create branch with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [create-issue-gate](skills/agent/create-issue-gate/SKILL.md) | Agent | Implements intelligent create issue gate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [create-pr](skills/agent/create-pr/SKILL.md) | Agent | Implements intelligent create pr with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -1967,6 +1972,7 @@ MIT — All skills are freely available and redistributable.
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization | Implementation |
 | [documentation](skills/agent/documentation/SKILL.md) | Agent | Implements intelligent documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | Implementation |
+| [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | Implementation |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Coding | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | Reference |
 | [dragonfly](skills/cncf/dragonfly/SKILL.md) | Cncf | "Provides Dragonfly in Cloud-Native Engineering - P2P file distribution" | Reference |
 | [drawdown-analysis](skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." | Implementation |
