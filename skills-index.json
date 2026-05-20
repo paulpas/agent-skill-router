@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T11:06:18.123606Z",
-  "totalSkills": 681,
+  "generatedAt": "2026-05-20T11:58:29.437947Z",
+  "totalSkills": 683,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 146,
+    "coding": 148,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 282,
+    "implementation": 284,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -7197,6 +7197,34 @@
       "source": "skills/cncf/gcp-iam/SKILL.md"
     },
     {
+      "name": "idempotent-distributed-operations",
+      "domain": "coding",
+      "description": "Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "idempotency",
+        "idempotent",
+        "idempotency key",
+        "request deduplication",
+        "exactly once",
+        "duplicate detection",
+        "optimistic concurrency",
+        "idempotent handler",
+        "outbox pattern",
+        "race condition prevention"
+      ],
+      "relatedSkills": [
+        "microservice-resilience-patterns",
+        "microservices-architecture",
+        "event-driven-patterns",
+        "database-design-modeling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/idempotent-distributed-operations/SKILL.md"
+    },
+    {
       "name": "incident-response",
       "domain": "cncf",
       "description": "\"Creates or updates an incident response plan covering detection, triage\" communication, and post-incident review for CNCF projects",
@@ -9213,6 +9241,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-metrics-and-kpis/SKILL.md"
+    },
+    {
+      "name": "microservice-resilience-patterns",
+      "domain": "coding",
+      "description": "Implements production-ready resilience patterns (circuit breaker, retry with exponential backoff, bulkhead isolation, timeout enforcement, graceful fallback) to prevent cascading failures in distributed microservice systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "circuit breaker",
+        "retry pattern",
+        "bulkhead pattern",
+        "resilience",
+        "fault tolerance",
+        "timeout handling",
+        "graceful degradation",
+        "fallback strategy",
+        "cascading failure",
+        "exponential backoff"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "idempotent-distributed-operations",
+        "observability-patterns",
+        "event-driven-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/microservice-resilience-patterns/SKILL.md"
     },
     {
       "name": "microservices-architecture",
