@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 19:50:27 UTC  
-> **Total skills:** 702
+> **Last updated:** 2026-05-20 20:20:29 UTC  
+> **Total skills:** 704
 
 ## Skills by Domain
 
 
-### Agent (246 skills)
+### Agent (248 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -447,6 +447,7 @@ MIT — All skills are freely available and redistributable.
 | [parallel-skill-runner](skills/agent/parallel-skill-runner/SKILL.md) | Implements intelligent parallel skill runner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | parallel-skill-runner, parallel skill runner, how do i parallel-skill-runner, orchestrate parallel-skill-runner, automate parallel-skill-runner, agent parallel-skill-runner |
 | [performance-profiler](skills/agent/performance-profiler/SKILL.md) | Implements intelligent performance profiler with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | performance-profiler, performance profiler, how do i performance-profiler, orchestrate performance-profiler, automate performance-profiler, agent performance-profiler, optimization, performance |
 | [personal-workflow-framework](skills/agent/personal-workflow-framework/SKILL.md) | Designs personalized development workflows by mapping task types to optimized process patterns, enabling developers to choose structured approaches that match project complexity and team size. | personal workflow, developer workflow, structured approach, task methodology, how do i organize my work, development process, workflow customization, project methodology |
+| [personalized-behavior](skills/agent/personalized-behavior/SKILL.md) | Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses. | personalized behavior, adaptive agent, user preferences, communication style, expertise level, tailored responses, how do i customize ai agent, user profiling |
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | pipecat-friday-agent, pipecat friday agent, how do i pipecat-friday-agent, orchestrate pipecat-friday-agent, automate pipecat-friday-agent, agent pipecat-friday-agent |
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | plan-writing, plan writing, how do i plan-writing, orchestrate plan-writing, automate plan-writing, agent plan-writing |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | planning-with-files, planning with files, how do i planning-with-files, orchestrate planning-with-files, automate planning-with-files, agent planning-with-files |
@@ -468,6 +469,7 @@ MIT — All skills are freely available and redistributable.
 | [schema-inference-engine](skills/agent/schema-inference-engine/SKILL.md) | Implements intelligent schema inference engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | schema-inference-engine, schema inference engine, how do i schema-inference-engine, orchestrate schema-inference-engine, automate schema-inference-engine, agent schema-inference-engine |
 | [security-audit](skills/agent/security-audit/SKILL.md) | Implements intelligent security audit with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | security-audit, security audit, how do i security-audit, orchestrate security-audit, automate security-audit, agent security-audit, vulnerability scanning, security |
 | [self-critique-engine](skills/agent/self-critique-engine/SKILL.md) | Implements intelligent self critique engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | self-critique-engine, self critique engine, how do i self-critique-engine, orchestrate self-critique-engine, automate self-critique-engine, agent self-critique-engine |
+| [self-improvement](skills/agent/self-improvement/SKILL.md) | Enables AI agents to continuously improve through structured reflection cycles, feedback-driven strategy evolution, pattern recognition across experiences, and adaptive knowledge base management. | self improvement, agent reflection, feedback loop, strategy evolution, continuous improvement, how do i improve ai agent, experience-based learning, agent optimization |
 | [sendgrid-automation](skills/agent/sendgrid-automation/SKILL.md) | Implements intelligent sendgrid automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | sendgrid-automation, sendgrid automation, how do i sendgrid-automation, orchestrate sendgrid-automation, automate sendgrid-automation, agent sendgrid-automation |
 | [shopify-automation](skills/agent/shopify-automation/SKILL.md) | Implements intelligent shopify automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | shopify-automation, shopify automation, how do i shopify-automation, orchestrate shopify-automation, automate shopify-automation, agent shopify-automation |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. | skill audit, quality check, trigger effectiveness, skill assessment, stub detection, skill review, how do i evaluate a skill |
@@ -1028,7 +1030,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (302 skills)
+### Implementation (Build Features) (304 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1236,6 +1238,7 @@ MIT — All skills are freely available and redistributable.
 | [performance-optimization](skills/coding/performance-optimization/SKILL.md) | Coding | Identifies and eliminates performance bottlenecks through systematic profiling (cProfile, py-spy, memory_profiler), Big-O complexity analysis, algorithmic optimization, and benchmark-driven validation to reduce latency and resource usage. |
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Coding | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... |
+| [personalized-behavior](skills/agent/personalized-behavior/SKILL.md) | Agent | Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses. |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Coding | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. |
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' |
@@ -1267,6 +1270,7 @@ MIT — All skills are freely available and redistributable.
 | [rollback-strategy](skills/cncf/rollback-strategy/SKILL.md) | Cncf | Designs and implements rollback strategies with data-aware rollback procedures, partial rollback capabilities, and automated rollback triggers for safe deployment recovery. |
 | [scoring](skills/coding/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights |
 | [security-compliance](skills/cncf/security-compliance/SKILL.md) | Cncf | Implements security compliance frameworks (SOC2, HIPAA, PCI-DSS) with implementation patterns, audit procedures, and compliance automation for Kubernetes and cloud environments |
+| [self-improvement](skills/agent/self-improvement/SKILL.md) | Agent | Enables AI agents to continuously improve through structured reflection cycles, feedback-driven strategy evolution, pattern recognition across experiences, and adaptive knowledge base management. |
 | [sentiment-analysis](skills/trading/sentiment-analysis/SKILL.md) | Trading | "AI-powered sentiment analysis for news, social media, and political figures" in trading |
 | [sentiment-features](skills/trading/sentiment-features/SKILL.md) | Trading | "Provides Extract market sentiment from news, social media, and analyst reports" |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. |
@@ -2247,6 +2251,7 @@ MIT — All skills are freely available and redistributable.
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Coding | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. | Implementation |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | Implementation |
 | [personal-workflow-framework](skills/agent/personal-workflow-framework/SKILL.md) | Agent | Designs personalized development workflows by mapping task types to optimized process patterns, enabling developers to choose structured approaches that match project complexity and team size. | Orchestration |
+| [personalized-behavior](skills/agent/personalized-behavior/SKILL.md) | Agent | Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses. | Implementation |
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Agent | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Agent | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Agent | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2313,6 +2318,7 @@ MIT — All skills are freely available and redistributable.
 | [security-compliance](skills/cncf/security-compliance/SKILL.md) | Cncf | Implements security compliance frameworks (SOC2, HIPAA, PCI-DSS) with implementation patterns, audit procedures, and compliance automation for Kubernetes and cloud environments | Implementation |
 | [security-policy](skills/cncf/security-policy/SKILL.md) | Cncf | "Creates or updates SECURITY.md defining the vulnerability reporting process" disclosure timeline, and supported versions for CNCF projects | Reference |
 | [self-critique-engine](skills/agent/self-critique-engine/SKILL.md) | Agent | Implements intelligent self critique engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [self-improvement](skills/agent/self-improvement/SKILL.md) | Agent | Enables AI agents to continuously improve through structured reflection cycles, feedback-driven strategy evolution, pattern recognition across experiences, and adaptive knowledge base management. | Implementation |
 | [sendgrid-automation](skills/agent/sendgrid-automation/SKILL.md) | Agent | Implements intelligent sendgrid automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [sentiment-analysis](skills/trading/sentiment-analysis/SKILL.md) | Trading | "AI-powered sentiment analysis for news, social media, and political figures" in trading | Implementation |
 | [sentiment-features](skills/trading/sentiment-features/SKILL.md) | Trading | "Provides Extract market sentiment from news, social media, and analyst reports" | Implementation |

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-20T19:50:26.360875Z",
-  "totalSkills": 702,
+  "generatedAt": "2026-05-20T20:20:28.594321Z",
+  "totalSkills": 704,
   "domains": {
-    "agent": 246,
+    "agent": 248,
     "cncf": 169,
     "coding": 163,
     "go": 12,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 230,
-    "implementation": 302,
+    "implementation": 304,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -11397,6 +11397,31 @@
       "source": "skills/agent/personal-workflow-framework/SKILL.md"
     },
     {
+      "name": "personalized-behavior",
+      "domain": "agent",
+      "description": "Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "personalized behavior",
+        "adaptive agent",
+        "user preferences",
+        "communication style",
+        "expertise level",
+        "tailored responses",
+        "how do i customize ai agent",
+        "user profiling"
+      ],
+      "relatedSkills": [
+        "personal-workflow-framework",
+        "conversation-memory",
+        "hierarchical-agent-memory"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/personalized-behavior/SKILL.md"
+    },
+    {
       "name": "pipecat-friday-agent",
       "domain": "agent",
       "description": "Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -12911,6 +12936,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/self-critique-engine/SKILL.md"
+    },
+    {
+      "name": "self-improvement",
+      "domain": "agent",
+      "description": "Enables AI agents to continuously improve through structured reflection cycles, feedback-driven strategy evolution, pattern recognition across experiences, and adaptive knowledge base management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "self improvement",
+        "agent reflection",
+        "feedback loop",
+        "strategy evolution",
+        "continuous improvement",
+        "how do i improve ai agent",
+        "experience-based learning",
+        "agent optimization"
+      ],
+      "relatedSkills": [
+        "personal-workflow-framework",
+        "conversation-memory",
+        "confidence-based-selector"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/self-improvement/SKILL.md"
     },
     {
       "name": "sendgrid-automation",
