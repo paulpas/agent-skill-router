@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T14:08:48.452535Z",
-  "totalSkills": 686,
+  "generatedAt": "2026-05-20T14:29:09.134269Z",
+  "totalSkills": 688,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 151,
+    "coding": 153,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 287,
+    "implementation": 289,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -3143,6 +3143,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/component-architecture/SKILL.md"
+    },
+    {
+      "name": "composition-root",
+      "domain": "coding",
+      "description": "Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "composition root",
+        "dependency injection wiring",
+        "DI container",
+        "adapter registration",
+        "how do i wire my dependencies",
+        "service locator anti-pattern",
+        "object graph assembly",
+        "factory pattern",
+        "IoC container"
+      ],
+      "relatedSkills": [
+        "hexagonal-architecture",
+        "ports-patterns",
+        "dependency-inversion-principle",
+        "test-driven-development",
+        "error-handling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/composition-root/SKILL.md"
     },
     {
       "name": "compute-engine",
@@ -11156,6 +11184,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/open-policy-agent-opa/SKILL.md"
+    },
+    {
+      "name": "ports-patterns",
+      "domain": "coding",
+      "description": "Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "port interface",
+        "driving port",
+        "driven port",
+        "port contract",
+        "Protocol vs ABC",
+        "hexagonal ports",
+        "how do i define clean boundaries",
+        "dependency inversion",
+        "framework-agnostic interfaces"
+      ],
+      "relatedSkills": [
+        "hexagonal-architecture",
+        "composition-root",
+        "test-driven-development",
+        "anti-corruption-layer"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ports-patterns/SKILL.md"
     },
     {
       "name": "position-exits",

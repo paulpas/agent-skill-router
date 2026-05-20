@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 14:08:49 UTC  
-> **Total skills:** 686
+> **Last updated:** 2026-05-20 14:29:09 UTC  
+> **Total skills:** 688
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (152 skills)
+### Coding (154 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -726,6 +726,7 @@ MIT — All skills are freely available and redistributable.
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | code duplication, duplicate code detection, copy-paste code, boilerplate removal, semantic duplication, radon metrics, pylint warnings, refactoring detection, DRY principle, code quality analysis |
 | [community-detection](skills/coding/community-detection/SKILL.md) | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | community detection, graph clustering, modularity, spectral clustering, graph partitioning |
 | [component-architecture](skills/coding/component-architecture/SKILL.md) | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. | component architecture, compound components, headless ui, render props, component composition, container presentational pattern, component hooks, how do i design reusable components, component library design, UI composition |
+| [composition-root](skills/coding/composition-root/SKILL.md) | Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures. | composition root, dependency injection wiring, DI container, adapter registration, how do i wire my dependencies, service locator anti-pattern, object graph assembly, factory pattern, IoC container |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals |
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config |
 | [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
@@ -812,6 +813,7 @@ MIT — All skills are freely available and redistributable.
 | [patterns](skills/coding/patterns/SKILL.md) | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events | application, cloud infrastructure, fastapi patterns, fastapi-patterns, structure, typed |
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. | performance testing, load testing, stress test, p95 latency, bottleneck detection, how do i measure system performance, k6, locust |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain |
+| [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | port interface, driving port, driven port, port contract, Protocol vs ABC, hexagonal ports, how do i define clean boundaries, dependency inversion, framework-agnostic interfaces |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
@@ -1012,7 +1014,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (287 skills)
+### Implementation (Build Features) (289 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1055,6 +1057,7 @@ MIT — All skills are freely available and redistributable.
 | [commission-model](skills/trading/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" |
 | [component-architecture](skills/coding/component-architecture/SKILL.md) | Coding | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. |
+| [composition-root](skills/coding/composition-root/SKILL.md) | Coding | Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures. |
 | [concurrency-patterns](skills/go/concurrency-patterns/SKILL.md) | Go | Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications. |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" |
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton |
@@ -1208,6 +1211,7 @@ MIT — All skills are freely available and redistributable.
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading Strategy Decomposition" |
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Coding | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... |
+| [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Coding | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. |
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "Calculating optimal position sizes using Kelly criterion, volatility" adjustments, and edge-based sizing to maximize long-term growth while managing risk |
@@ -1859,6 +1863,7 @@ MIT — All skills are freely available and redistributable.
 | [commit](skills/agent/commit/SKILL.md) | Agent | Implements intelligent commit with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | Implementation |
 | [component-architecture](skills/coding/component-architecture/SKILL.md) | Coding | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. | Implementation |
+| [composition-root](skills/coding/composition-root/SKILL.md) | Coding | Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures. | Implementation |
 | [compute-engine](skills/cncf/compute-engine/SKILL.md) | Cncf | "Deploys and manages virtual machine instances with auto-scaling, instance groups, and integration with GCP services for IaaS workloads" | Reference |
 | [concise-planning](skills/agent/concise-planning/SKILL.md) | Agent | Implements intelligent concise planning with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [concurrency-patterns](skills/go/concurrency-patterns/SKILL.md) | Go | Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications. | Implementation |
@@ -2207,6 +2212,7 @@ MIT — All skills are freely available and redistributable.
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Agent | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Agent | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [policy-agent-opa](skills/cncf/policy-agent-opa/SKILL.md) | Cncf | "Open Policy Agent in Security &amp; Compliance - cloud native architecture" patterns, pitfalls, and best practices | Reference |
+| [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Coding | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | Implementation |
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. | Implementation |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' | Implementation |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "Calculating optimal position sizes using Kelly criterion, volatility" adjustments, and edge-based sizing to maximize long-term growth while managing risk | Implementation |
