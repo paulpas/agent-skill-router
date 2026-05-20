@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T06:52:48.335639Z",
-  "totalSkills": 669,
+  "generatedAt": "2026-05-20T07:17:18.362214Z",
+  "totalSkills": 670,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 139,
+    "coding": 140,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 274,
+    "implementation": 275,
     "reference": 161,
     "information": 1,
     "review": 4
@@ -8937,6 +8937,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/mcp-builder-ms/SKILL.md"
+    },
+    {
+      "name": "memoization-cache-patterns",
+      "domain": "coding",
+      "description": "Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "memoization",
+        "cache pattern",
+        "LRU cache",
+        "LFU cache",
+        "cache invalidation",
+        "TTL strategy",
+        "write-through",
+        "cache stampede",
+        "function decorator",
+        "how do i speed up slow functions"
+      ],
+      "relatedSkills": [
+        "framework-performance-tuning",
+        "software-error-handling",
+        "observability-patterns",
+        "pydantic-models"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/memoization-cache-patterns/SKILL.md"
     },
     {
       "name": "memory-systems",
