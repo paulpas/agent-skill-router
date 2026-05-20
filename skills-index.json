@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T10:44:20.929019Z",
-  "totalSkills": 680,
+  "generatedAt": "2026-05-20T11:06:18.123606Z",
+  "totalSkills": 681,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 145,
+    "coding": 146,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 281,
+    "implementation": 282,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -3116,6 +3116,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-community-detection/SKILL.md"
+    },
+    {
+      "name": "component-architecture",
+      "domain": "coding",
+      "description": "Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "component architecture",
+        "compound components",
+        "headless ui",
+        "render props",
+        "component composition",
+        "container presentational pattern",
+        "component hooks",
+        "how do i design reusable components",
+        "component library design",
+        "UI composition"
+      ],
+      "relatedSkills": [
+        "design-pattern-selection",
+        "abstraction-design-patterns",
+        "solid-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/component-architecture/SKILL.md"
     },
     {
       "name": "compute-engine",
