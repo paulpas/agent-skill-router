@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T00:42:48.251932Z",
-  "totalSkills": 651,
+  "generatedAt": "2026-05-20T01:09:11.020756Z",
+  "totalSkills": 653,
   "domains": {
     "agent": 242,
     "cncf": 169,
-    "coding": 122,
+    "coding": 124,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 228,
-    "implementation": 258,
+    "implementation": 260,
     "reference": 161,
     "information": 1,
     "review": 3
@@ -3767,6 +3767,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/create-pr/SKILL.md"
+    },
+    {
+      "name": "creational-design-patterns",
+      "domain": "coding",
+      "description": "Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "creational patterns",
+        "factory method",
+        "builder pattern",
+        "singleton",
+        "abstract factory",
+        "prototype pattern",
+        "object creation",
+        "GoF design patterns"
+      ],
+      "relatedSkills": [
+        "behavioral-design-patterns",
+        "design-patterns-architecture",
+        "refactoring-techniques",
+        "modular-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/creational-design-patterns/SKILL.md"
     },
     {
       "name": "cross-validation",
@@ -13117,6 +13143,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/stripe-automation/SKILL.md"
+    },
+    {
+      "name": "structural-design-patterns",
+      "domain": "coding",
+      "description": "Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "structural patterns",
+        "adapter pattern",
+        "bridge pattern",
+        "composite pattern",
+        "decorator pattern",
+        "facade pattern",
+        "proxy pattern",
+        "flyweight",
+        "GoF design patterns"
+      ],
+      "relatedSkills": [
+        "behavioral-design-patterns",
+        "design-patterns-architecture",
+        "refactoring-techniques",
+        "modular-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/structural-design-patterns/SKILL.md"
     },
     {
       "name": "subagent-driven-development",
