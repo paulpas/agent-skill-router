@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T06:15:32.019075Z",
-  "totalSkills": 668,
+  "generatedAt": "2026-05-20T06:52:48.335639Z",
+  "totalSkills": 669,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 138,
+    "coding": 139,
     "go": 12,
     "linux": 12,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 273,
+    "implementation": 274,
     "reference": 161,
     "information": 1,
     "review": 4
@@ -663,6 +663,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-anomaly-detection/SKILL.md"
+    },
+    {
+      "name": "anti-corruption-layer",
+      "domain": "coding",
+      "description": "Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "anti corruption layer",
+        "acl",
+        "foreign model translation",
+        "boundary adapter",
+        "external system isolation",
+        "how do i protect my domain from bad apis",
+        "legacy system integration",
+        "domain contamination"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "domain-modeling",
+        "monolith-architecture",
+        "microservices-architecture",
+        "software-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/anti-corruption-layer/SKILL.md"
     },
     {
       "name": "anti-patterns",
