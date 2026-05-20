@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T14:29:09.134269Z",
-  "totalSkills": 688,
+  "generatedAt": "2026-05-20T15:18:03.752098Z",
+  "totalSkills": 689,
   "domains": {
     "agent": 243,
     "cncf": 169,
-    "coding": 153,
+    "coding": 154,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 229,
-    "implementation": 289,
+    "implementation": 290,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -4823,6 +4823,38 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "name": "distributed-systems-architecture",
+      "domain": "coding",
+      "description": "Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "distributed systems",
+        "consensus algorithm",
+        "CAP theorem",
+        "eventual consistency",
+        "data replication",
+        "partitioning strategy",
+        "Raft",
+        "Paxos",
+        "vector clocks",
+        "service discovery",
+        "two-phase commit",
+        "distributed transactions",
+        "clock synchronization",
+        "consistent hashing"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "event-driven-patterns",
+        "domain-driven-design",
+        "software-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/distributed-systems-architecture/SKILL.md"
     },
     {
       "name": "distribution-fitting",
