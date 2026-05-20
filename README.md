@@ -265,7 +265,7 @@ MIT — All skills are freely available and redistributable.
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
 > **Last updated:** 2026-05-20 13:33:32 UTC  
-> **Total skills:** 685
+> **Total skills:** 686
 
 ## Skills by Domain
 
@@ -694,7 +694,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (151 skills)
+### Coding (152 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -810,6 +810,7 @@ MIT — All skills are freely available and redistributable.
 | [output-sanitization](skills/coding/output-sanitization/SKILL.md) | Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption. | output sanitization, html escaping, sql escaping, csv quoting, url encoding, shell argument escaping, log sanitization, xss prevention, output encoding, context-specific escaping |
 | [patterns](skills/coding/patterns/SKILL.md) | "Provides Software architecture patterns including MVC, MVVM, microservices, event-driven, CQRS, DDD, hexagonal architecture, layered architecture, and pattern" | architectural patterns, system design, architecture, microservices, design patterns, CQRS, DDD, hexagonal architecture |
 | [patterns](skills/coding/patterns/SKILL.md) | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events | application, cloud infrastructure, fastapi patterns, fastapi-patterns, structure, typed |
+| [performance-testing](skills/coding/performance-testing/SKILL.md) | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. | performance testing, load testing, stress test, p95 latency, bottleneck detection, how do i measure system performance, k6, locust |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports |
@@ -1011,7 +1012,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (286 skills)
+### Implementation (Build Features) (287 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1205,6 +1206,7 @@ MIT — All skills are freely available and redistributable.
 | [output-sanitization](skills/coding/output-sanitization/SKILL.md) | Coding | Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption. |
 | [patterns](skills/coding/patterns/SKILL.md) | Coding | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading Strategy Decomposition" |
+| [performance-testing](skills/coding/performance-testing/SKILL.md) | Coding | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... |
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' |
@@ -2198,6 +2200,7 @@ MIT — All skills are freely available and redistributable.
 | [patterns](skills/coding/patterns/SKILL.md) | Coding | "FastAPI application structure with typed error hierarchy, global exception" handlers, CORS middleware, request timing, and lifecycle events | Implementation |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | Trading | "Provides Performance Attribution Systems for Trading Strategy Decomposition" | Implementation |
 | [performance-profiler](skills/agent/performance-profiler/SKILL.md) | Agent | Implements intelligent performance profiler with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [performance-testing](skills/coding/performance-testing/SKILL.md) | Coding | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. | Implementation |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | Implementation |
 | [personal-workflow-framework](skills/agent/personal-workflow-framework/SKILL.md) | Agent | Designs personalized development workflows by mapping task types to optimized process patterns, enabling developers to choose structured approaches that match project complexity and team size. | Orchestration |
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Agent | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
