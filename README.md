@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 03:29:09 UTC  
-> **Total skills:** 723
+> **Last updated:** 2026-05-20 23:17:01 UTC  
+> **Total skills:** 725
 
 ## Skills by Domain
 
@@ -701,13 +701,14 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (181 skills)
+### Coding (183 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [ab-testing](skills/coding/ab-testing/SKILL.md) | Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation | A/B testing, A/B test, statistical test, power analysis, sample size, how do I design tests, unit tests, testing |
 | [abstraction-design-patterns](skills/coding/abstraction-design-patterns/SKILL.md) | Designs clean, maintainable abstractions using Protocols, ABCs, interfaces, and composition to reduce coupling while avoiding over-engineering and leaky abstractions. | abstraction design, interface design, Protocol pattern, over-abstraction, leaky abstraction, composition over inheritance, Rule of Three |
 | [advanced](skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | git rebase, git cherry-pick, git bisect, git reflog, worktrees, filter-branch, multi-repo, advanced git |
+| [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | ai-assisted engineering, AI pair programming, LLM code generation, prompt engineering for code, automated code review with AI, AI test generation, how do i use AI in software development, code generation guardrails |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. | &, ampersand operator, bitwise AND, address of, flag checking, bitmask, pointer manipulation |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" | anomaly detection, outlier detection, isolation forest, LOF, one-class SVM, how do I detect anomalies |
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. | anti corruption layer, acl, foreign model translation, boundary adapter, external system isolation, how do i protect my domain from bad apis, legacy system integration, domain contamination |
@@ -839,6 +840,7 @@ MIT — All skills are freely available and redistributable.
 | [performance-optimization](skills/coding/performance-optimization/SKILL.md) | Identifies and eliminates performance bottlenecks through systematic profiling (cProfile, py-spy, memory_profiler), Big-O complexity analysis, algorithmic optimization, and benchmark-driven validation to reduce latency and resource usage. | performance optimization, code profiling, bottleneck analysis, cProfile, py-spy, Big O complexity, memory leak detection, slow code, latency reduction, how do i make my code faster, benchmarking, time complexity, p95 latency |
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. | performance testing, load testing, stress test, p95 latency, bottleneck detection, how do i measure system performance, k6, locust |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain |
+| [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. | platform engineering, internal developer platform, IDP, golden paths, self-service infrastructure, Backstage.io, developer experience metrics, how do i build a developer platform |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | port interface, driving port, driven port, port contract, Protocol vs ABC, hexagonal ports, how do i define clean boundaries, dependency inversion, framework-agnostic interfaces |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging |
@@ -1049,7 +1051,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (321 skills)
+### Implementation (Build Features) (323 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1060,6 +1062,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-communication-patterns](skills/agent/agent-communication-patterns/SKILL.md) | Agent | Implements inter-agent communication patterns (message passing, event-driven coordination, shared memory protocols, RPC-style calls, structured JSON messaging) for reliable multi-agent systems. |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. |
+| [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. |
 | [alternative-data](skills/trading/alternative-data/SKILL.md) | Trading | "Alternative data ingestion pipelines for trading signals including news" social media, and on-chain data sources |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | Coding | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" |
@@ -1269,6 +1272,7 @@ MIT — All skills are freely available and redistributable.
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Coding | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... |
 | [personalized-behavior](skills/agent/personalized-behavior/SKILL.md) | Agent | Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses. |
+| [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Coding | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Coding | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. |
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' |
@@ -1814,6 +1818,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Agent | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. | Implementation |
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Agent | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | Implementation |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Agent | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Agent | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2306,6 +2311,7 @@ MIT — All skills are freely available and redistributable.
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Agent | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Agent | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Agent | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Coding | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. | Implementation |
 | [policy-agent-opa](skills/cncf/policy-agent-opa/SKILL.md) | Cncf | "Open Policy Agent in Security &amp; Compliance - cloud native architecture" patterns, pitfalls, and best practices | Reference |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Coding | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | Implementation |
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. | Implementation |
