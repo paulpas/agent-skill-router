@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T14:16:34.309705Z",
-  "totalSkills": 740,
+  "generatedAt": "2026-05-21T15:01:55.421894Z",
+  "totalSkills": 741,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 192,
+    "coding": 193,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 337,
+    "implementation": 338,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -4219,24 +4219,24 @@
     {
       "name": "cqrs-pattern",
       "domain": "coding",
-      "description": "Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms.",
+      "description": "Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "cqrs",
-        "command query segregation",
-        "write model",
-        "read model",
-        "projection",
-        "separate read write models",
-        "how do i separate reads from writes",
-        "event sourcing read side",
-        "eventual consistency"
+        "command query responsibility segregation",
+        "mediator pattern",
+        "outbox pattern",
+        "idempotent commands",
+        "saga pattern",
+        "read write separation",
+        "event bus"
       ],
       "relatedSkills": [
-        "domain-driven-design",
-        "event-sourcing-pattern"
+        "event-sourcing",
+        "saga-pattern",
+        "idempotency-patterns"
       ],
       "version": "1.0.0",
       "source": "skills/coding/cqrs-pattern/SKILL.md"
@@ -6091,6 +6091,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/azure-event-hubs/SKILL.md"
+    },
+    {
+      "name": "event-sourcing",
+      "domain": "coding",
+      "description": "Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "event sourcing",
+        "event store",
+        "aggregate",
+        "snapshots",
+        "optimistic concurrency",
+        "event versioning",
+        "projections",
+        "read models",
+        "replay events",
+        "domain events",
+        "event streams"
+      ],
+      "relatedSkills": [
+        "cqrs-pattern",
+        "saga-pattern",
+        "idempotency-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/event-sourcing/SKILL.md"
     },
     {
       "name": "event-sourcing-pattern",

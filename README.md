@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 14:16:35 UTC  
-> **Total skills:** 740
+> **Last updated:** 2026-05-21 15:01:56 UTC  
+> **Total skills:** 741
 
 ## Skills by Domain
 
@@ -705,7 +705,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (193 skills)
+### Coding (194 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -750,7 +750,7 @@ MIT — All skills are freely available and redistributable.
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config |
 | [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" | correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships |
-| [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms. | cqrs, command query segregation, write model, read model, projection, separate read write models, how do i separate reads from writes, event sourcing read side, eventual consistency |
+| [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. | cqrs, command query responsibility segregation, mediator pattern, outbox pattern, idempotent commands, saga pattern, read write separation, event bus |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | creational patterns, factory method, builder pattern, singleton, abstract factory, prototype pattern, object creation, GoF design patterns |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | cross-validation, k-fold, stratified cross-validation, time-series cross-validation, validation |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. | css architecture, css modules, bem naming, tailwind css v4, container queries, :has selector, css nesting, @layer cascade, how do i organize stylesheets, responsive components, utility-first css, scroll-driven animations, view transitions api, css custom properties, css specificity management |
@@ -787,6 +787,7 @@ MIT — All skills are freely available and redistributable.
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | ensemble methods, bagging, boosting, stacking, voting, blending, ensemble learning |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. | event-driven architecture, pub/sub messaging, saga pattern, dead letter queue, outbox pattern, how do i decouple services, async message processing, distributed messaging |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | event-driven, event driven architecture, pub/sub, event sourcing, CQRS, saga pattern, outbox pattern, message queue, eventual consistency |
+| [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. | event sourcing, event store, aggregate, snapshots, optimistic concurrency, event versioning, projections, read models, replay events, domain events, event streams |
 | [event-sourcing-pattern](skills/coding/event-sourcing-pattern/SKILL.md) | Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history. | event sourcing, event store, aggregate root, event replay, projections, snapshots, how do i track all changes, immutable audit trail, state reconstruction from events |
 | [event-storming](skills/coding/event-storming/SKILL.md) | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. | event storming, eventstorming, domain discovery, workshop facilitation, bounded context, domain events, sticky notes, collaborative modeling |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | experimental design, DOE, factorial design, randomization, blocking, how do I design experiments |
@@ -1066,7 +1067,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (337 skills)
+### Implementation (Build Features) (338 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1131,7 +1132,7 @@ MIT — All skills are freely available and redistributable.
 | [correlation-risk](skills/trading/correlation-risk/SKILL.md) | Trading | "Implements correlation breakdown and portfolio diversification risk for risk management and algorithmic trading execution." |
 | [cost-optimization](skills/cncf/cost-optimization/SKILL.md) | Cncf | Implements cloud cost optimization strategies (right-sizing, reserved instances, spot instances, multi-cloud comparison) for Kubernetes and cloud-native deployments. |
 | [cost-optimization-analysis](skills/cncf/cost-optimization-analysis/SKILL.md) | Cncf | Cloud cost optimization analysis including AWS Cost Explorer, Azure Cost Management, and GCP Billing with right-sizing recommendations and optimization strategies for multi-cloud environments |
-| [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms. |
+| [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Coding | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. |
@@ -1179,6 +1180,7 @@ MIT — All skills are freely available and redistributable.
 | [error-handling](skills/go/error-handling/SKILL.md) | Go | Designs robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery strategies for resilient applications. |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. |
+| [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Coding | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. |
 | [event-sourcing-pattern](skills/coding/event-sourcing-pattern/SKILL.md) | Coding | Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history. |
 | [event-storming](skills/coding/event-storming/SKILL.md) | Coding | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" |
@@ -2012,7 +2014,7 @@ MIT — All skills are freely available and redistributable.
 | [cosmos-db](skills/cncf/cosmos-db/SKILL.md) | Cncf | Provides Global NoSQL database with multi-region distribution and guaranteed latency | Reference |
 | [cost-optimization](skills/cncf/cost-optimization/SKILL.md) | Cncf | Implements cloud cost optimization strategies (right-sizing, reserved instances, spot instances, multi-cloud comparison) for Kubernetes and cloud-native deployments. | Implementation |
 | [cost-optimization-analysis](skills/cncf/cost-optimization-analysis/SKILL.md) | Cncf | Cloud cost optimization analysis including AWS Cost Explorer, Azure Cost Management, and GCP Billing with right-sizing recommendations and optimization strategies for multi-cloud environments | Implementation |
-| [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms. | Implementation |
+| [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. | Implementation |
 | [create-branch](skills/agent/create-branch/SKILL.md) | Agent | Implements intelligent create branch with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [create-issue-gate](skills/agent/create-issue-gate/SKILL.md) | Agent | Implements intelligent create issue gate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [create-pr](skills/agent/create-pr/SKILL.md) | Agent | Implements intelligent create pr with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2090,6 +2092,7 @@ MIT — All skills are freely available and redistributable.
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. | Implementation |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | Implementation |
 | [event-hubs](skills/cncf/event-hubs/SKILL.md) | Cncf | "Provides Event streaming platform for high-throughput data ingestion and processing" | Reference |
+| [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Coding | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. | Implementation |
 | [event-sourcing-pattern](skills/coding/event-sourcing-pattern/SKILL.md) | Coding | Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history. | Implementation |
 | [event-storming](skills/coding/event-storming/SKILL.md) | Coding | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. | Implementation |
 | [executing-plans](skills/agent/executing-plans/SKILL.md) | Agent | Implements intelligent executing plans with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
