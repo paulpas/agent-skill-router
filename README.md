@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 04:17:35 UTC  
-> **Total skills:** 725
+> **Last updated:** 2026-05-20 23:51:01 UTC  
+> **Total skills:** 726
 
 ## Skills by Domain
 
 
-### Agent (250 skills)
+### Agent (251 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -475,6 +475,7 @@ MIT — All skills are freely available and redistributable.
 | [sendgrid-automation](skills/agent/sendgrid-automation/SKILL.md) | Implements intelligent sendgrid automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | sendgrid-automation, sendgrid automation, how do i sendgrid-automation, orchestrate sendgrid-automation, automate sendgrid-automation, agent sendgrid-automation |
 | [shopify-automation](skills/agent/shopify-automation/SKILL.md) | Implements intelligent shopify automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | shopify-automation, shopify automation, how do i shopify-automation, orchestrate shopify-automation, automate shopify-automation, agent shopify-automation |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. | skill audit, quality check, trigger effectiveness, skill assessment, stub detection, skill review, how do i evaluate a skill |
+| [skill-composition](skills/agent/skill-composition/SKILL.md) | Composes multiple specialized skills into coherent workflows using sequential chains, parallel fan-out/fan-in, conditional branching, and error-isolation patterns for reliable multi-step task execution. | skill composition, skill chaining, multi-skill workflow, parallel fan-out, fan-in pattern, state management between skills, error handling between skills, orchestration patterns, how do i combine multiple skills |
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-creator, skill creator, how do i skill-creator, orchestrate skill-creator, automate skill-creator, agent skill-creator |
 | [skill-creator-ms](skills/agent/skill-creator-ms/SKILL.md) | Implements intelligent skill creator ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-creator-ms, skill creator ms, how do i skill-creator-ms, orchestrate skill-creator-ms, automate skill-creator-ms, agent skill-creator-ms |
 | [skill-developer](skills/agent/skill-developer/SKILL.md) | Implements intelligent skill developer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-developer, skill developer, how do i skill-developer, orchestrate skill-developer, automate skill-developer, agent skill-developer |
@@ -1051,7 +1052,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (323 skills)
+### Implementation (Build Features) (324 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1316,6 +1317,7 @@ MIT — All skills are freely available and redistributable.
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. |
 | [single-responsibility](skills/coding/single-responsibility/SKILL.md) | Coding | Detects and refactors classes that violate the Single Responsibility Principle by splitting multi-purpose modules into focused components with clear responsibility boundaries. |
+| [skill-composition](skills/agent/skill-composition/SKILL.md) | Agent | Composes multiple specialized skills into coherent workflows using sequential chains, parallel fan-out/fan-in, conditional branching, and error-isolation patterns for reliable multi-step task execution. |
 | [skill-development-workflow](skills/coding/skill-development-workflow/SKILL.md) | Coding | Implements the complete skill creation lifecycle from research through validation, including Python-based quality gates, stub detection, and automated compliance checking against SKILL_FORMAT_SPEC.md requirements. |
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Agent | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. |
 | [skill-lifecycle-management](skills/coding/skill-lifecycle-management/SKILL.md) | Coding | Manages the complete lifecycle of SKILL.md files including versioning strategies, deprecation workflows, retirement criteria, migration plans, and automated drift detection to keep skills current across the repository. |
@@ -2391,6 +2393,7 @@ MIT — All skills are freely available and redistributable.
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | Implementation |
 | [single-responsibility](skills/coding/single-responsibility/SKILL.md) | Coding | Detects and refactors classes that violate the Single Responsibility Principle by splitting multi-purpose modules into focused components with clear responsibility boundaries. | Implementation |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. | Review |
+| [skill-composition](skills/agent/skill-composition/SKILL.md) | Agent | Composes multiple specialized skills into coherent workflows using sequential chains, parallel fan-out/fan-in, conditional branching, and error-isolation patterns for reliable multi-step task execution. | Implementation |
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Agent | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-creator-ms](skills/agent/skill-creator-ms/SKILL.md) | Agent | Implements intelligent skill creator ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-developer](skills/agent/skill-developer/SKILL.md) | Agent | Implements intelligent skill developer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
