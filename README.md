@@ -264,13 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-<<<<<<< HEAD
-> **Last updated:** 2026-05-21 15:50:59 UTC  
-> **Total skills:** 743
-=======
-> **Last updated:** 2026-05-21 11:30:23 UTC  
+> **Last updated:** 2026-05-21 16:31:36 UTC  
 > **Total skills:** 746
->>>>>>> c9f5d5075 (feat: add three new software engineering skills — database-migrations, feature-flags-progressive-delivery, application-resilience-patterns)
 
 ## Skills by Domain
 

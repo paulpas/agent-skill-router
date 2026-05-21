@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T15:50:58.727462Z",
-  "totalSkills": 743,
+  "generatedAt": "2026-05-21T16:31:35.436942Z",
+  "totalSkills": 746,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 195,
+    "coding": 198,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 340,
+    "implementation": 343,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -1314,6 +1314,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/app-configuration-patterns/SKILL.md"
+    },
+    {
+      "name": "application-resilience-patterns",
+      "domain": "coding",
+      "description": "Implements application-layer resilience patterns including exponential backoff with jitter, circuit breakers, timeout management, fallback mechanisms, and rate limiters for handling external service failures gracefully.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "application resilience",
+        "retry with backoff",
+        "circuit breaker pattern",
+        "timeout management",
+        "fallback mechanism",
+        "rate limiter",
+        "token bucket",
+        "graceful degradation",
+        "external service failure",
+        "how do i handle API failures",
+        "idempotency keys"
+      ],
+      "relatedSkills": [
+        "microservice-resilience-patterns",
+        "systematic-debugging",
+        "distributed-systems-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/application-resilience-patterns/SKILL.md"
     },
     {
       "name": "architectural-review",
@@ -4812,6 +4840,32 @@
       "source": "skills/coding/database-design-modeling/SKILL.md"
     },
     {
+      "name": "database-migrations",
+      "domain": "coding",
+      "description": "Implements zero-downtime database migration strategies including expand/contract, dual-write, and backfill patterns for safe schema evolution across production environments.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "database migrations",
+        "schema evolution",
+        "zero downtime migrations",
+        "database deployment",
+        "expand contract pattern",
+        "dual write migration",
+        "database rollback",
+        "migration strategy",
+        "how do i change my database schema safely"
+      ],
+      "relatedSkills": [
+        "database-design-modeling",
+        "software-delivery-pipelines",
+        "secure-release-pipeline"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/database-migrations/SKILL.md"
+    },
+    {
       "name": "database-patterns",
       "domain": "go",
       "description": "Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies.",
@@ -6416,6 +6470,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-feature-engineering/SKILL.md"
+    },
+    {
+      "name": "feature-flags-progressive-delivery",
+      "domain": "coding",
+      "description": "Implements feature flag systems with progressive delivery, A/B testing, and gradual rollout strategies for safe application-level feature deployment without code changes.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "feature flags",
+        "progressive delivery",
+        "canary release",
+        "A/B testing",
+        "flag management",
+        "gradual rollout",
+        "feature toggle",
+        "percentage rollout",
+        "how do i safely roll out new features",
+        "experiment flags"
+      ],
+      "relatedSkills": [
+        "secure-release-pipeline",
+        "software-delivery-pipelines",
+        "microservice-resilience-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/feature-flags-progressive-delivery/SKILL.md"
     },
     {
       "name": "feature-interaction",
