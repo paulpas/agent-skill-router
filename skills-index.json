@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T01:58:53.776507Z",
-  "totalSkills": 719,
+  "generatedAt": "2026-05-21T02:44:06.938999Z",
+  "totalSkills": 721,
   "domains": {
     "agent": 250,
     "cncf": 169,
-    "coding": 176,
+    "coding": 178,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 317,
+    "implementation": 319,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -16261,6 +16261,62 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/exchange-websocket-handling/SKILL.md"
+    },
+    {
+      "name": "websocket-protocol",
+      "domain": "coding",
+      "description": "Implements WebSocket protocol-level patterns including frame parsing, subprotocol negotiation, permessage-deflate compression, text/binary framing, and backpressure management for real-time applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "websocket protocol",
+        "frame handling",
+        "subprotocol negotiation",
+        "permessage-deflate",
+        "binary framing",
+        "text messages",
+        "backpressure",
+        "wss://",
+        "ws upgrade",
+        "opcode",
+        "mask bit",
+        "close frame"
+      ],
+      "relatedSkills": [
+        "websocket-manager",
+        "websocket-security"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/websocket-protocol/SKILL.md"
+    },
+    {
+      "name": "websocket-security",
+      "domain": "coding",
+      "description": "Hardens WebSocket connections against cross-site hijacking, DoS attacks, and message flooding through origin validation, authentication, rate limiting, connection limits, and secure transport enforcement.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "websocket security",
+        "origin validation",
+        "cross-site WebSocket hijacking",
+        "CCoS",
+        "wss://",
+        "WebSocket authentication",
+        "rate limiting",
+        "message flooding",
+        "slowloris",
+        "connection limits",
+        "WebSocket auth",
+        "Sec-WebSocket-Origin"
+      ],
+      "relatedSkills": [
+        "websocket-manager",
+        "websocket-protocol"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/websocket-security/SKILL.md"
     },
     {
       "name": "websocket-streaming",
