@@ -1112,39 +1112,40 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       { total: allSkills.length }
     );
 
-    // Process in batches to avoid rate limiting
-    const BATCH_SIZE = 50;
+    // Build text entries with skill references (index maps to skill)
+    const textEntries: { skill: SkillDefinition; text: string }[] = skillsNeedingEmbeddings.map((skill) => ({
+      skill,
+      text: [
+        skill.metadata.name,
+        skill.metadata.description,
+        skill.metadata.tags?.join(' ') || '',
+      ]
+        .filter(Boolean)
+        .join(' '),
+    }));
+
+    // Process in large batches — each batch makes a SINGLE API call
+    // with all texts sent as an array (e.g., { input: ["text1", "text2", ...] })
+    // instead of N individual API calls
+    const BATCH_SIZE = 200;
     let completed = 0;
 
-    for (let i = 0; i < skillsNeedingEmbeddings.length; i += BATCH_SIZE) {
-      const batch = skillsNeedingEmbeddings.slice(i, i + BATCH_SIZE);
-      const batchPromises = batch.map(async (skill) => {
-        try {
-          // Combine key fields for embedding context
-          // Name, description, and tags provide the most semantic value
-          const text = [
-            skill.metadata.name,
-            skill.metadata.description,
-            skill.metadata.tags?.join(' ') || '',
-          ]
-            .filter(Boolean)
-            .join(' ');
+    for (let i = 0; i < textEntries.length; i += BATCH_SIZE) {
+      const batch = textEntries.slice(i, i + BATCH_SIZE);
+      const texts = batch.map((e) => e.text);
 
-          const embedding = await this.embeddingService.generateEmbedding(text);
-          skill.metadata.embedding = embedding.embedding;
-        } catch (error) {
-          this.logger.warn(`⚠️ Failed to embed ${skill.metadata.name}`, {
-            error: error instanceof Error ? error.message : String(error),
-          });
-        }
-      });
+      const batchStart = Date.now();
+      const results = await this.embeddingService.batchEmbeddingsPreservingOrder(texts);
 
-      await Promise.all(batchPromises);
+      for (let j = 0; j < batch.length; j++) {
+        batch[j].skill.metadata.embedding = results[j].embedding;
+      }
+
       completed += batch.length;
-
+      const elapsed = Date.now() - batchStart;
       const percentage = Math.round((completed / skillsNeedingEmbeddings.length) * 100);
       this.logger.info(
-        `  [${completed}/${skillsNeedingEmbeddings.length}] (${percentage}%)`
+        `  [${completed}/${skillsNeedingEmbeddings.length}] (${percentage}%) [${elapsed}ms]`
       );
     }
 

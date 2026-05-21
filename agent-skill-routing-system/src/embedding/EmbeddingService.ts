@@ -177,6 +177,56 @@ export class EmbeddingService {
   }
 
   /**
+   * Generate embeddings for multiple texts, preserving input order.
+   * Unlike batchEmbeddings(), which reorders results (cached items first),
+   * this method returns results in exactly the same order as the input texts.
+   * Uses a single batch API call per sub-batch for maximum throughput.
+   */
+  async batchEmbeddingsPreservingOrder(texts: string[]): Promise<EmbeddingResponse[]> {
+    const results: (EmbeddingResponse | undefined)[] = new Array(texts.length);
+    const uncachedTexts: string[] = [];
+    const uncachedIndices: number[] = [];
+
+    // Phase 1: Check cache and identify what needs API calls
+    for (let i = 0; i < texts.length; i++) {
+      const cached = this.cache.get(texts[i]);
+      if (cached) {
+        results[i] = cached;
+      } else {
+        uncachedTexts.push(texts[i]);
+        uncachedIndices.push(i);
+      }
+    }
+
+    if (uncachedTexts.length === 0) {
+      return results as EmbeddingResponse[];
+    }
+
+    // Phase 2: Process uncached texts in sub-batches via the API
+    const subBatchSize = this.config.batchSize; // default 100
+    for (let j = 0; j < uncachedTexts.length; j += subBatchSize) {
+      const subBatch = uncachedTexts.slice(j, j + subBatchSize);
+      const subIndices = uncachedIndices.slice(j, j + subBatchSize);
+
+      const apiResult = await this.generateEmbeddingsFromAPI(subBatch);
+
+      for (let k = 0; k < subBatch.length; k++) {
+        const response: EmbeddingResponse = {
+          embedding: apiResult.embeddings[k],
+          dimensions: this.config.dimensions,
+          model: this.config.model,
+          inputTokens: apiResult.inputTokens ? Math.floor(apiResult.inputTokens / subBatch.length) : undefined,
+        };
+        // Cache for future use
+        this.cache.set(subBatch[k], response);
+        results[subIndices[k]] = response;
+      }
+    }
+
+    return results as EmbeddingResponse[];
+  }
+
+  /**
    * Process a single batch of texts
    */
   private async processBatch(
