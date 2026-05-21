@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-20 23:51:01 UTC  
-> **Total skills:** 726
+> **Last updated:** 2026-05-21 00:39:10 UTC  
+> **Total skills:** 727
 
 ## Skills by Domain
 
@@ -527,7 +527,7 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | zoom-automation, zoom automation, how do i zoom-automation, orchestrate zoom-automation, automate zoom-automation, agent zoom-automation |
 
 
-### Cncf (169 skills)
+### Cncf (170 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -630,6 +630,7 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes](skills/cncf/kubernetes/SKILL.md) | "Kubernetes in Cloud-Native Engineering - Production-Grade Container Scheduling" and Management | cloud-native, container orchestration, engineering, k8s, production-grade, kubernetes |
 | [kubernetes-api-patterns](skills/cncf/kubernetes-api-patterns/SKILL.md) | Kubernetes API patterns including CRD development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions | kubernetes api, k8s api, crd development, api groups, subresources, watch api, admission webhooks, client libraries |
 | [kubernetes-debugging](skills/cncf/kubernetes-debugging/SKILL.md) | Implements comprehensive Kubernetes debugging workflow with pod inspection, log analysis, resource debugging, network troubleshooting, and common failure pattern diagnosis using kubectl commands. | kubernetes debugging, k8s troubleshooting, pod crashes, node failures, cluster debugging, kubectl debug, container logs, k8s errors |
+| [kubernetes-ingress](skills/cncf/kubernetes-ingress/SKILL.md) | Configures Kubernetes Ingress resources for external HTTP/HTTPS routing, TLS termination, host-based and path-based routing, with Nginx and Traefik controller integration. | ingress, kubernetes ingress, ingress controller, host-based routing, path-based routing, TLS termination, cert-manager, external access, load balancer, reverse proxy |
 | [kubescape](skills/cncf/kubescape/SKILL.md) | "Configures kubescape in cloud-native engineering - kubernetes security for cloud-native deployment and infrastructure management." | cloud-native, container orchestration, engineering, k8s, kubescape, kubernetes |
 | [kubevela](skills/cncf/kubevela/SKILL.md) | "Configures kubevela in cloud-native engineering - application platform for cloud-native deployment and infrastructure management." | application, cloud-native, engineering, kubevela |
 | [kubevirt](skills/cncf/kubevirt/SKILL.md) | "Provides KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes" | cloud-native, engineering, kubevirt, virtualization |
@@ -1382,7 +1383,7 @@ MIT — All skills are freely available and redistributable.
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 
 
-### Reference (Learn & Understand) (164 skills)
+### Reference (Learn & Understand) (165 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1483,6 +1484,7 @@ MIT — All skills are freely available and redistributable.
 | [kubeedge](skills/cncf/kubeedge/SKILL.md) | Cncf | "Configures kubeedge in cloud-native engineering - edge computing for cloud-native deployment and infrastructure management." |
 | [kubeflow](skills/cncf/kubeflow/SKILL.md) | Cncf | "Configures kubeflow in cloud-native engineering - ml on kubernetes for cloud-native deployment and infrastructure management." |
 | [kubernetes](skills/cncf/kubernetes/SKILL.md) | Cncf | "Kubernetes in Cloud-Native Engineering - Production-Grade Container Scheduling" and Management |
+| [kubernetes-ingress](skills/cncf/kubernetes-ingress/SKILL.md) | Cncf | Configures Kubernetes Ingress resources for external HTTP/HTTPS routing, TLS termination, host-based and path-based routing, with Nginx and Traefik controller integration. |
 | [kubescape](skills/cncf/kubescape/SKILL.md) | Cncf | "Configures kubescape in cloud-native engineering - kubernetes security for cloud-native deployment and infrastructure management." |
 | [kubevela](skills/cncf/kubevela/SKILL.md) | Cncf | "Configures kubevela in cloud-native engineering - application platform for cloud-native deployment and infrastructure management." |
 | [kubevirt](skills/cncf/kubevirt/SKILL.md) | Cncf | "Provides KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes" |
@@ -2181,6 +2183,7 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes-api-patterns](skills/cncf/kubernetes-api-patterns/SKILL.md) | Cncf | Kubernetes API patterns including CRD development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions | Implementation |
 | [kubernetes-debugging](skills/cncf/kubernetes-debugging/SKILL.md) | Cncf | Implements comprehensive Kubernetes debugging workflow with pod inspection, log analysis, resource debugging, network troubleshooting, and common failure pattern diagnosis using kubectl commands. | Implementation |
 | [kubernetes-deployment](skills/agent/kubernetes-deployment/SKILL.md) | Agent | Implements intelligent kubernetes deployment with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [kubernetes-ingress](skills/cncf/kubernetes-ingress/SKILL.md) | Cncf | Configures Kubernetes Ingress resources for external HTTP/HTTPS routing, TLS termination, host-based and path-based routing, with Nginx and Traefik controller integration. | Reference |
 | [kubescape](skills/cncf/kubescape/SKILL.md) | Cncf | "Configures kubescape in cloud-native engineering - kubernetes security for cloud-native deployment and infrastructure management." | Reference |
 | [kubevela](skills/cncf/kubevela/SKILL.md) | Cncf | "Configures kubevela in cloud-native engineering - application platform for cloud-native deployment and infrastructure management." | Reference |
 | [kubevirt](skills/cncf/kubevirt/SKILL.md) | Cncf | "Provides KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes" | Reference |
