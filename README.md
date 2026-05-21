@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 20:03:57 UTC  
-> **Total skills:** 754
+> **Last updated:** 2026-05-21 15:34:38 UTC  
+> **Total skills:** 756
 
 ## Skills by Domain
 
@@ -707,7 +707,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (205 skills)
+### Coding (207 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -853,8 +853,10 @@ MIT — All skills are freely available and redistributable.
 | [normalization](skills/coding/normalization/SKILL.md) | 'Provides Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization' | data normalization, data-normalization, exchange, layer, typed |
 | [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. | observability, structured logging, metrics, distributed tracing, open telemetry, prometheus, health checks, debug production |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" | observational studies, propensity score, matching, stratification, observational data, adjustment |
+| [of-shader-programming](skills/coding/of-shader-programming/SKILL.md) | Implements GLSL shader programming in OpenFrameworks including vertex/fragment shaders, uniform management, VBO rendering, post-processing effects, and shader compilation debugging for GPU-accelerated graphics. | of shader, glsl programming, vertex shader, fragment shader, ofShader, uniform management, post-processing, gpu rendering, vbo shader, openframeworks shaders |
 | [online-experiments](skills/coding/online-experiments/SKILL.md) | "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms" | multi-armed bandits, bandits, contextual bandits, exploration exploitation, online learning |
 | [open-closed-principle](skills/coding/open-closed-principle/SKILL.md) | Refactors conditional branching and if/else chains into extensible polymorphic designs using strategy injection, factory registration, and protocol-based interfaces so new behavior extends without modifying existing source. | open closed principle, OCP, extensible design, polymorphism, strategy pattern, factory pattern, extension point, conditional refactoring |
+| [openframeworks](skills/coding/openframeworks/SKILL.md) | Implements OpenFrameworks (C++ creative coding toolkit) application lifecycle, addon integration, drawing primitives, event handling, shader management, and data visualization patterns for cross-platform interactive applications. | openframeworks, ofx addons, creative coding, c++ graphics, interactive art, ofApp setup update draw, particle systems, cross-platform canvas |
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. | output formatting, structured output, json schema, response templating, deterministic output, data validation, prompt engineering |
 | [output-sanitization](skills/coding/output-sanitization/SKILL.md) | Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption. | output sanitization, html escaping, sql escaping, csv quoting, url encoding, shell argument escaping, log sanitization, xss prevention, output encoding, context-specific escaping |
 | [patterns](skills/coding/patterns/SKILL.md) | "Provides Software architecture patterns including MVC, MVVM, microservices, event-driven, CQRS, DDD, hexagonal architecture, layered architecture, and pattern" | architectural patterns, system design, architecture, microservices, design patterns, CQRS, DDD, hexagonal architecture |
@@ -1080,7 +1082,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (349 skills)
+### Implementation (Build Features) (351 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1300,9 +1302,11 @@ MIT — All skills are freely available and redistributable.
 | [observability](skills/linux/observability/SKILL.md) | Linux | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. |
 | [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Coding | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" |
+| [of-shader-programming](skills/coding/of-shader-programming/SKILL.md) | Coding | Implements GLSL shader programming in OpenFrameworks including vertex/fragment shaders, uniform management, VBO rendering, post-processing effects, and shader compilation debugging for GPU-accelerated graphics. |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Linux | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. |
 | [online-experiments](skills/coding/online-experiments/SKILL.md) | Coding | "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms" |
 | [open-closed-principle](skills/coding/open-closed-principle/SKILL.md) | Coding | Refactors conditional branching and if/else chains into extensible polymorphic designs using strategy injection, factory registration, and protocol-based interfaces so new behavior extends without modifying existing source. |
+| [openframeworks](skills/coding/openframeworks/SKILL.md) | Coding | Implements OpenFrameworks (C++ creative coding toolkit) application lifecycle, addon integration, drawing primitives, event handling, shader management, and data visualization patterns for cross-platform interactive applications. |
 | [order-book](skills/trading/order-book/SKILL.md) | Trading | "Order book data handling, spread calculation, liquidity measurement" and cross-exchange normalization |
 | [order-book-impact](skills/trading/order-book-impact/SKILL.md) | Trading | "Provides Order Book Impact Measurement and Market Microstructure Analysis" |
 | [order-book-sync](skills/trading/order-book-sync/SKILL.md) | Trading | "Provides Order book synchronization and state management for accurate trading" |
@@ -2352,12 +2356,14 @@ MIT — All skills are freely available and redistributable.
 | [observability](skills/linux/observability/SKILL.md) | Linux | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | Implementation |
 | [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Coding | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. | Implementation |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" | Implementation |
+| [of-shader-programming](skills/coding/of-shader-programming/SKILL.md) | Coding | Implements GLSL shader programming in OpenFrameworks including vertex/fragment shaders, uniform management, VBO rendering, post-processing effects, and shader compilation debugging for GPU-accelerated graphics. | Implementation |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Linux | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. | Implementation |
 | [online-experiments](skills/coding/online-experiments/SKILL.md) | Coding | "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms" | Implementation |
 | [open-closed-principle](skills/coding/open-closed-principle/SKILL.md) | Coding | Refactors conditional branching and if/else chains into extensible polymorphic designs using strategy injection, factory registration, and protocol-based interfaces so new behavior extends without modifying existing source. | Implementation |
 | [opencost](skills/cncf/opencost/SKILL.md) | Cncf | "OpenCost in Kubernetes Cost Monitoring - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [openfeature](skills/cncf/openfeature/SKILL.md) | Cncf | "OpenFeature in Feature Flagging - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [openfga](skills/cncf/openfga/SKILL.md) | Cncf | "OpenFGA in Security &amp; Compliance - cloud native architecture, patterns" pitfalls, and best practices | Reference |
+| [openframeworks](skills/coding/openframeworks/SKILL.md) | Coding | Implements OpenFrameworks (C++ creative coding toolkit) application lifecycle, addon integration, drawing primitives, event handling, shader management, and data visualization patterns for cross-platform interactive applications. | Implementation |
 | [openkruise](skills/cncf/openkruise/SKILL.md) | Cncf | "OpenKruise in Extended Kubernetes workload management with advanced deployment" strategies | Reference |
 | [opentelemetry](skills/cncf/opentelemetry/SKILL.md) | Cncf | "OpenTelemetry in Observability framework for tracing, metrics, and logs" with vendor-neutral APIs | Reference |
 | [openyurt](skills/cncf/openyurt/SKILL.md) | Cncf | ''Provides OpenYurt in Extending Kubernetes to edge computing scenarios with cloud-edgeu534F' u540C'' | Reference |
