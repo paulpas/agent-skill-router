@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-21T04:51:35.384687Z",
-  "totalSkills": 726,
+  "generatedAt": "2026-05-21T05:40:20.842694Z",
+  "totalSkills": 727,
   "domains": {
     "agent": 251,
-    "cncf": 169,
+    "cncf": 170,
     "coding": 182,
     "go": 12,
     "linux": 13,
@@ -15,7 +15,7 @@
   "roles": {
     "orchestration": 232,
     "implementation": 324,
-    "reference": 164,
+    "reference": 165,
     "information": 1,
     "review": 5
   },
@@ -8798,6 +8798,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/kubernetes-deployment/SKILL.md"
+    },
+    {
+      "name": "kubernetes-ingress",
+      "domain": "cncf",
+      "description": "Configures Kubernetes Ingress resources for external HTTP/HTTPS routing, TLS termination, host-based and path-based routing, with Nginx and Traefik controller integration.",
+      "role": "reference",
+      "scope": "infrastructure",
+      "outputFormat": "manifests",
+      "triggers": [
+        "ingress",
+        "kubernetes ingress",
+        "ingress controller",
+        "host-based routing",
+        "path-based routing",
+        "TLS termination",
+        "cert-manager",
+        "external access",
+        "load balancer",
+        "reverse proxy"
+      ],
+      "relatedSkills": [
+        "cncf-kubernetes",
+        "cncf-cert-manager",
+        "cncf-traefik",
+        "cncf-network-policies",
+        "cncf-service-mesh"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-ingress/SKILL.md"
     },
     {
       "name": "kubescape",
