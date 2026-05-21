@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T00:49:27.232325Z",
-  "totalSkills": 715,
+  "generatedAt": "2026-05-21T01:28:56.883385Z",
+  "totalSkills": 719,
   "domains": {
-    "agent": 249,
+    "agent": 250,
     "cncf": 169,
-    "coding": 173,
+    "coding": 176,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 313,
+    "implementation": 317,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -1323,6 +1323,32 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/argo/SKILL.md"
+    },
+    {
+      "name": "ascii-diagram",
+      "domain": "agent",
+      "description": "Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ascii diagram",
+        "excalidraw style",
+        "flowchart",
+        "sequence diagram",
+        "state diagram",
+        "diagram generation",
+        "visual explanation",
+        "process flow",
+        "system architecture"
+      ],
+      "relatedSkills": [
+        "code-review",
+        "documentation",
+        "feature-research"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/ascii-diagram/SKILL.md"
     },
     {
       "name": "ask-questions-if-underspecified",
@@ -7128,6 +7154,76 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/graphql-api-design/SKILL.md"
+    },
+    {
+      "name": "graphql-dataloader-pattern",
+      "domain": "coding",
+      "description": "Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dataloader",
+        "graphql n-plus-one",
+        "batch loading",
+        "aiodataloader",
+        "graphql performance",
+        "load per request",
+        "graphql batching"
+      ],
+      "relatedSkills": [
+        "graphql-schema-design",
+        "graphql-error-handling-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/graphql-dataloader-pattern/SKILL.md"
+    },
+    {
+      "name": "graphql-error-handling-validation",
+      "domain": "coding",
+      "description": "Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "graphql error handling",
+        "graphql validation",
+        "input validation",
+        "pydantic graphql",
+        "strawberry errors",
+        "graphql error codes",
+        "graphql middleware"
+      ],
+      "relatedSkills": [
+        "graphql-schema-design",
+        "graphql-dataloader-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/graphql-error-handling-validation/SKILL.md"
+    },
+    {
+      "name": "graphql-schema-design",
+      "domain": "coding",
+      "description": "Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "graphql schema design",
+        "SDL",
+        "type system",
+        "strawberry-graphql",
+        "interface",
+        "union type",
+        "graphql-input-object",
+        "graphql-deprecation"
+      ],
+      "relatedSkills": [
+        "graphql-dataloader-pattern",
+        "graphql-error-handling-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/graphql-schema-design/SKILL.md"
     },
     {
       "name": "grpc",
