@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 03:58:18 UTC  
-> **Total skills:** 731
+> **Last updated:** 2026-05-21 05:07:43 UTC  
+> **Total skills:** 733
 
 ## Skills by Domain
 
@@ -705,7 +705,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (185 skills)
+### Coding (187 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -735,6 +735,7 @@ MIT — All skills are freely available and redistributable.
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | git branching strategies, git repository, git-branching-strategies, github, including, models, version control |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | makefile testing, build validation, phony target tests, continuous integration for builds, incremental build verification, dependency graph analysis, build reproducibility, make test suite, artifact verification |
 | [bus](skills/coding/bus/SKILL.md) | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | async, event bus, event-bus, events, typed, eventbridge, event routing |
+| [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. | cache stampede, LRU eviction, write-through, TTL-based, cache invalidation, multi-tier cache, thundering herd, how do i speed up my app |
 | [categorical-encoding](skills/coding/categorical-encoding/SKILL.md) | "Provides Encodes categorical variables using one-hot encoding, target encoding, ordinal encoding, embeddings, and other encoding strategies" | categorical encoding, one-hot encoding, target encoding, ordinal encoding, categorical variables |
 | [causal-inference](skills/coding/causal-inference/SKILL.md) | Implements causal models, directed acyclic graphs (DAGs), confounding adjustment, and mediation analysis for causal discovery | causal inference, causality, causal models, DAG, confounding, how do i determine causation, airflow, data pipelines |
 | [classification-metrics](skills/coding/classification-metrics/SKILL.md) | "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics" | classification metrics, precision, recall, F1-score, ROC-AUC, confusion matrix |
@@ -862,6 +863,7 @@ MIT — All skills are freely available and redistributable.
 | [review](skills/coding/review/SKILL.md) | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback | analyzes, code review, code-review, diffs, files |
 | [review](skills/coding/review/SKILL.md) | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance | identifying, security review, security-focused, security-review, vulnerabilities, vulnerability scanning, security, security auditing |
 | [scoring](skills/coding/scoring/SKILL.md) | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | combining, conviction scoring, conviction-scoring, engine, multi-factor |
+| [security-architecture](skills/coding/security-architecture/SKILL.md) | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. | security architecture, threat modeling, STRIDE, defense in depth, zero trust, authentication architecture, authorization design, how do i secure a system |
 | [shop](skills/coding/shop/SKILL.md) | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | application, guide, juice shop, juice-shop, owasp, security best practices, security guidelines, vulnerability scanning |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | single letter variables, naming conventions, code readability, variable names, a b c d x y z, ambiguous identifiers, code review |
 | [single-responsibility](skills/coding/single-responsibility/SKILL.md) | Detects and refactors classes that violate the Single Responsibility Principle by splitting multi-purpose modules into focused components with clear responsibility boundaries. | single responsibility principle, SRP, god class, split class, cohesion, high coupling, module boundary, one reason to change, separation of concerns |
@@ -1057,7 +1059,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (328 skills)
+### Implementation (Build Features) (330 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1095,6 +1097,7 @@ MIT — All skills are freely available and redistributable.
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems |
+| [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Coding | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. |
 | [canary-deployment](skills/cncf/canary-deployment/SKILL.md) | Cncf | Orchestrates canary deployment strategies with gradual traffic promotion, automated health monitoring, and rollback triggers for progressive risk management. |
 | [candle-data](skills/trading/candle-data/SKILL.md) | Trading | "OHLCV candle data processing, timeframe management, and validation for" trading algorithms |
 | [categorical-encoding](skills/coding/categorical-encoding/SKILL.md) | Coding | "Provides Encodes categorical variables using one-hot encoding, target encoding, ordinal encoding, embeddings, and other encoding strategies" |
@@ -1313,6 +1316,7 @@ MIT — All skills are freely available and redistributable.
 | [rollback-procedures](skills/cncf/rollback-procedures/SKILL.md) | Cncf | Implements comprehensive rollback procedures including deployment rollback, version rollback, database rollback, and rollback testing for Kubernetes and cloud-native applications |
 | [rollback-strategy](skills/cncf/rollback-strategy/SKILL.md) | Cncf | Designs and implements rollback strategies with data-aware rollback procedures, partial rollback capabilities, and automated rollback triggers for safe deployment recovery. |
 | [scoring](skills/coding/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights |
+| [security-architecture](skills/coding/security-architecture/SKILL.md) | Coding | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. |
 | [security-compliance](skills/cncf/security-compliance/SKILL.md) | Cncf | Implements security compliance frameworks (SOC2, HIPAA, PCI-DSS) with implementation patterns, audit procedures, and compliance automation for Kubernetes and cloud environments |
 | [self-improvement](skills/agent/self-improvement/SKILL.md) | Agent | Enables AI agents to continuously improve through structured reflection cycles, feedback-driven strategy evolution, pattern recognition across experiences, and adaptive knowledge base management. |
 | [sentiment-analysis](skills/trading/sentiment-analysis/SKILL.md) | Trading | "AI-powered sentiment analysis for news, social media, and political figures" in trading |
@@ -1906,6 +1910,7 @@ MIT — All skills are freely available and redistributable.
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | Implementation |
 | [buildpacks](skills/cncf/buildpacks/SKILL.md) | Cncf | "Provides Buildpacks in Cloud-Native Engineering - Turn source code into container images without Dockerfiles" | Reference |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | Implementation |
+| [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Coding | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. | Implementation |
 | [calico](skills/cncf/calico/SKILL.md) | Cncf | "Calico in Cloud Native Security - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [canary-deployment](skills/cncf/canary-deployment/SKILL.md) | Cncf | Orchestrates canary deployment strategies with gradual traffic promotion, automated health monitoring, and rollback triggers for progressive risk management. | Implementation |
 | [candle-data](skills/trading/candle-data/SKILL.md) | Trading | "OHLCV candle data processing, timeframe management, and validation for" trading algorithms | Implementation |
@@ -2388,6 +2393,7 @@ MIT — All skills are freely available and redistributable.
 | [scoring](skills/coding/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | Implementation |
 | [secret-manager](skills/cncf/secret-manager/SKILL.md) | Cncf | "Provides Stores and rotates secrets with encryption and audit logging for sensitive data" | Reference |
 | [secrets-manager](skills/cncf/secrets-manager/SKILL.md) | Cncf | "Manages sensitive data with automatic encryption, rotation, and fine-grained" access control for database passwords, API keys, and credentials. | Reference |
+| [security-architecture](skills/coding/security-architecture/SKILL.md) | Coding | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. | Implementation |
 | [security-audit](skills/agent/security-audit/SKILL.md) | Agent | Implements intelligent security audit with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [security-compliance](skills/cncf/security-compliance/SKILL.md) | Cncf | Implements security compliance frameworks (SOC2, HIPAA, PCI-DSS) with implementation patterns, audit procedures, and compliance automation for Kubernetes and cloud environments | Implementation |
 | [security-policy](skills/cncf/security-policy/SKILL.md) | Cncf | "Creates or updates SECURITY.md defining the vulnerability reporting process" disclosure timeline, and supported versions for CNCF projects | Reference |
