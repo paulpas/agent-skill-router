@@ -45,7 +45,18 @@ declare \
   OPENAI_BASE_URL \
   GITHUB_RAW_BASE_URL \
   GITHUB_SKILLS_REPO \
-  SYNC_INTERVAL
+  SYNC_INTERVAL \
+  LINK_FOLLOWING_ENABLED \
+  ALLOW_EXTERNAL_LINKS \
+  MAX_LINK_DEPTH \
+  MAX_EXTERNAL_SIZE_KB \
+  EXTERNAL_COMPRESSION_MODE \
+  JS_RENDERING_ENABLED \
+  JS_RENDER_TIMEOUT_MS \
+  JS_RENDER_FALLBACK \
+  LINK_RESOLUTION_MODE \
+  SEMANTIC_TOP_K \
+  SEMANTIC_SIMILARITY_THRESHOLD
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Helper function to check if stdin is a terminal (interactive mode)
@@ -117,6 +128,19 @@ CONFIG FILE FORMAT:
     AUTO_SKILL_ENABLED=true
     AUTO_SKILL_CONTRIBUTE=true
     AUTO_SKILL_MODEL=gpt-4o-mini
+
+    # Link Following Configuration (Optional)
+    LINK_FOLLOWING_ENABLED=false
+    ALLOW_EXTERNAL_LINKS=false
+    MAX_LINK_DEPTH=2
+    MAX_EXTERNAL_SIZE_KB=10
+    EXTERNAL_COMPRESSION_MODE=brief
+    JS_RENDERING_ENABLED=false
+    JS_RENDER_TIMEOUT_MS=5000
+    JS_RENDER_FALLBACK=true
+    LINK_RESOLUTION_MODE=inline
+    SEMANTIC_TOP_K=3
+    SEMANTIC_SIMILARITY_THRESHOLD=0.3
 
   Required: OPENAI_API_KEY (unless using LLM_ENDPOINT_URL with no auth)
   Optional: All other settings have sensible defaults
@@ -330,7 +354,7 @@ parse_config_file() {
   
   # Track known variables for validation
   declare -A known_vars=()
-  for var in OPENAI_API_KEY PORT LLM_PROVIDER LLM_MODEL EMBEDDING_MODEL ANTHROPIC_API_KEY LLAMACPP_URL EMBEDDING_PROVIDER GITHUB_ENABLED GITHUB_TOKEN SSH_KEY_PATH SSH_AGENT_SOCKET SSH_KNOWN_HOSTS AUTO_SKILL_ENABLED AUTO_SKILL_CONTRIBUTE AUTO_SKILL_MODEL LLM_ENDPOINT_URL LLM_ENDPOINT_API_KEY OPENAI_BASE_URL GITHUB_RAW_BASE_URL GITHUB_SKILLS_REPO SYNC_INTERVAL MAX_SKILLS; do
+  for var in OPENAI_API_KEY PORT LLM_PROVIDER LLM_MODEL EMBEDDING_MODEL ANTHROPIC_API_KEY LLAMACPP_URL EMBEDDING_PROVIDER GITHUB_ENABLED GITHUB_TOKEN SSH_KEY_PATH SSH_AGENT_SOCKET SSH_KNOWN_HOSTS AUTO_SKILL_ENABLED AUTO_SKILL_CONTRIBUTE AUTO_SKILL_MODEL LLM_ENDPOINT_URL LLM_ENDPOINT_API_KEY OPENAI_BASE_URL GITHUB_RAW_BASE_URL GITHUB_SKILLS_REPO SYNC_INTERVAL MAX_SKILLS LINK_FOLLOWING_ENABLED ALLOW_EXTERNAL_LINKS MAX_LINK_DEPTH MAX_EXTERNAL_SIZE_KB EXTERNAL_COMPRESSION_MODE JS_RENDERING_ENABLED JS_RENDER_TIMEOUT_MS JS_RENDER_FALLBACK LINK_RESOLUTION_MODE SEMANTIC_TOP_K SEMANTIC_SIMILARITY_THRESHOLD; do
     known_vars[$var]=1
   done
   
@@ -1115,6 +1139,56 @@ configure_auto_skill() {
     "false"
 }
 
+configure_link_following() {
+  print_header
+  echo -e "${BOLD}Step 13: Link Following Configuration${RESET}"
+  echo ""
+  echo -e "Configure how external links in skill definitions are resolved."
+  echo ""
+
+  configure_variable "LINK_FOLLOWING_ENABLED" \
+    "Enable markdown link following in skills" \
+    "false" \
+    "false" \
+    "false"
+
+  configure_variable "ALLOW_EXTERNAL_LINKS" \
+    "Allow fetching external URLs (HTTPS only)" \
+    "false" \
+    "false" \
+    "false"
+
+  configure_variable "MAX_EXTERNAL_SIZE_KB" \
+    "Max external content size in KB before compression/skip" \
+    "10" \
+    "10" \
+    "false"
+
+  configure_variable "EXTERNAL_COMPRESSION_MODE" \
+    "Compression mode for oversized external content (brief, moderate, detailed)" \
+    "brief" \
+    "brief" \
+    "false"
+
+  configure_variable "JS_RENDERING_ENABLED" \
+    "Enable JavaScript rendering for dynamic pages (requires Puppeteer)" \
+    "false" \
+    "false" \
+    "false"
+
+  configure_variable "LINK_RESOLUTION_MODE" \
+    "How resolved content is embedded (inline, semantic, compressed)" \
+    "inline" \
+    "inline" \
+    "false"
+
+  configure_variable "SEMANTIC_TOP_K" \
+    "Number of top semantic chunks to return (when mode=semantic)" \
+    "3" \
+    "3" \
+    "false"
+}
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Summary and final confirmation
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1162,7 +1236,14 @@ print_summary() {
   
   echo -e "  ${BOLD}Auto-Skill:${RESET} enabled=$AUTO_SKILL_ENABLED, contribute=$AUTO_SKILL_CONTRIBUTE"
   echo -e "  ${BOLD}Auto-Skill Model:${RESET} $AUTO_SKILL_MODEL"
-  
+
+  echo -e "  ${BOLD}Link Following:${RESET} enabled=$LINK_FOLLOWING_ENABLED, external=$ALLOW_EXTERNAL_LINKS"
+  echo -e "  ${BOLD}Link Resolution:${RESET} mode=$LINK_RESOLUTION_MODE, max_size=${MAX_EXTERNAL_SIZE_KB}KB"
+  if [[ "$LINK_RESOLUTION_MODE" == "semantic" ]]; then
+    echo -e "  ${BOLD}Semantic:${RESET} top_k=$SEMANTIC_TOP_K"
+  fi
+  echo -e "  ${BOLD}JS Rendering:${RESET} enabled=$JS_RENDERING_ENABLED"
+
   echo ""
   echo "─────────────────────────────────────────────────────────────────────────────"
   echo ""
@@ -1468,6 +1549,19 @@ run_installation() {
   ENV_ARGS+=(-e "AUTO_SKILL_CONTRIBUTE=${AUTO_SKILL_CONTRIBUTE}")
   ENV_ARGS+=(-e "AUTO_SKILL_MODEL=${AUTO_SKILL_MODEL}")
   ENV_ARGS+=(-e "SKILL_CACHE_DIR=${SKILL_CACHE_DIR:-/cache/skills}")
+
+  # Link Following Configuration
+  ENV_ARGS+=(-e "LINK_FOLLOWING_ENABLED=${LINK_FOLLOWING_ENABLED:-false}")
+  ENV_ARGS+=(-e "ALLOW_EXTERNAL_LINKS=${ALLOW_EXTERNAL_LINKS:-false}")
+  ENV_ARGS+=(-e "MAX_LINK_DEPTH=${MAX_LINK_DEPTH:-2}")
+  ENV_ARGS+=(-e "MAX_EXTERNAL_SIZE_KB=${MAX_EXTERNAL_SIZE_KB:-10}")
+  ENV_ARGS+=(-e "EXTERNAL_COMPRESSION_MODE=${EXTERNAL_COMPRESSION_MODE:-brief}")
+  ENV_ARGS+=(-e "JS_RENDERING_ENABLED=${JS_RENDERING_ENABLED:-false}")
+  ENV_ARGS+=(-e "JS_RENDER_TIMEOUT_MS=${JS_RENDER_TIMEOUT_MS:-5000}")
+  ENV_ARGS+=(-e "JS_RENDER_FALLBACK=${JS_RENDER_FALLBACK:-true}")
+  ENV_ARGS+=(-e "LINK_RESOLUTION_MODE=${LINK_RESOLUTION_MODE:-inline}")
+  ENV_ARGS+=(-e "SEMANTIC_TOP_K=${SEMANTIC_TOP_K:-3}")
+  ENV_ARGS+=(-e "SEMANTIC_SIMILARITY_THRESHOLD=${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}")
   
   # Validate skills directory
   if [[ ! -d "${ROUTER_DIR%/agent-skill-routing-system}/skills" ]]; then
@@ -2015,6 +2109,17 @@ if [[ "$MODE" == "noninteractive" ]]; then
   AUTO_SKILL_ENABLED="${AUTO_SKILL_ENABLED:-true}"
   AUTO_SKILL_CONTRIBUTE="${AUTO_SKILL_CONTRIBUTE:-true}"
   AUTO_SKILL_MODEL="${AUTO_SKILL_MODEL:-gpt-4o-mini}"
+  LINK_FOLLOWING_ENABLED="${LINK_FOLLOWING_ENABLED:-false}"
+  ALLOW_EXTERNAL_LINKS="${ALLOW_EXTERNAL_LINKS:-false}"
+  MAX_LINK_DEPTH="${MAX_LINK_DEPTH:-2}"
+  MAX_EXTERNAL_SIZE_KB="${MAX_EXTERNAL_SIZE_KB:-10}"
+  EXTERNAL_COMPRESSION_MODE="${EXTERNAL_COMPRESSION_MODE:-brief}"
+  JS_RENDERING_ENABLED="${JS_RENDERING_ENABLED:-false}"
+  JS_RENDER_TIMEOUT_MS="${JS_RENDER_TIMEOUT_MS:-5000}"
+  JS_RENDER_FALLBACK="${JS_RENDER_FALLBACK:-true}"
+  LINK_RESOLUTION_MODE="${LINK_RESOLUTION_MODE:-inline}"
+  SEMANTIC_TOP_K="${SEMANTIC_TOP_K:-3}"
+  SEMANTIC_SIMILARITY_THRESHOLD="${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}"
 
   run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR"
 else
@@ -2042,7 +2147,18 @@ else
   AUTO_SKILL_ENABLED="${AUTO_SKILL_ENABLED:-true}"
   AUTO_SKILL_CONTRIBUTE="${AUTO_SKILL_CONTRIBUTE:-true}"
   AUTO_SKILL_MODEL="${AUTO_SKILL_MODEL:-gpt-4o-mini}"
-  
+  LINK_FOLLOWING_ENABLED="${LINK_FOLLOWING_ENABLED:-false}"
+  ALLOW_EXTERNAL_LINKS="${ALLOW_EXTERNAL_LINKS:-false}"
+  MAX_LINK_DEPTH="${MAX_LINK_DEPTH:-2}"
+  MAX_EXTERNAL_SIZE_KB="${MAX_EXTERNAL_SIZE_KB:-10}"
+  EXTERNAL_COMPRESSION_MODE="${EXTERNAL_COMPRESSION_MODE:-brief}"
+  JS_RENDERING_ENABLED="${JS_RENDERING_ENABLED:-false}"
+  JS_RENDER_TIMEOUT_MS="${JS_RENDER_TIMEOUT_MS:-5000}"
+  JS_RENDER_FALLBACK="${JS_RENDER_FALLBACK:-true}"
+  LINK_RESOLUTION_MODE="${LINK_RESOLUTION_MODE:-inline}"
+  SEMANTIC_TOP_K="${SEMANTIC_TOP_K:-3}"
+  SEMANTIC_SIMILARITY_THRESHOLD="${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}"
+
   # Interactive configuration
   configure_required_api
   configure_provider_selection
@@ -2056,7 +2172,8 @@ else
   configure_github_token
   configure_ssh
   configure_auto_skill
-  
+  configure_link_following
+
   # Final confirmation loop
   while true; do
     if get_final_confirmation; then
@@ -2078,9 +2195,10 @@ else
     echo "  10. GitHub Token"
     echo "  11. SSH Configuration"
     echo "  12. Auto-Skill Settings"
+    echo "  13. Link Following Configuration"
      echo ""
-     
-    prompt "Enter your choice (1-12) or 'q' to quit:"
+
+    prompt "Enter your choice (1-13) or 'q' to quit:"
       if ! is_interactive; then
         err "Cannot read input in non-interactive mode"
         exit 1
@@ -2100,6 +2218,7 @@ else
       10) configure_github_token ;;
       11) configure_ssh ;;
       12) configure_auto_skill ;;
+      13) configure_link_following ;;
       q|Q) 
         echo "Installation cancelled."
         exit 1

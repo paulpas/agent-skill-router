@@ -54,6 +54,22 @@ export interface SkillRegistryConfig {
     allowExternalLinks: boolean;
     /** Maximum depth to follow links (default: 2) */
     maxDepth: number;
+    /** Max external content size in KB before compression/skip (default: 10) */
+    maxExternalSizeKb?: number;
+    /** Compression mode for oversized external content (default: 'brief') */
+    compressionMode?: 'brief' | 'moderate' | 'skip';
+    /** Enable JavaScript rendering for dynamic pages (default: false) */
+    jsRenderingEnabled?: boolean;
+    /** JS render timeout in milliseconds (default: 5000) */
+    jsRenderTimeoutMs?: number;
+    /** Fall back to static fetch if JS rendering fails (default: true) */
+    jsRenderFallback?: boolean;
+    /** How resolved content is embedded (default: 'inline') */
+    resolutionMode?: 'inline' | 'semantic' | 'compressed';
+    /** Number of top semantic chunks to return (default: 3) */
+    semanticTopK?: number;
+    /** Minimum cosine similarity for semantic chunk selection (default: 0.3) */
+    semanticSimilarityThreshold?: number;
   };
 }
 
@@ -168,18 +184,30 @@ export class SkillRegistry implements SkillRegistryWithCompression {
 
     // Initialize markdown link following config with defaults
     const mlc = config.markdownLinkFollowing;
+    const envBool = (key: string, fallback: boolean) => {
+      const v = process.env[key];
+      return v !== undefined ? v === 'true' || v === '1' : fallback;
+    };
+    const envNum = (key: string, fallback: number) => {
+      const v = process.env[key];
+      if (v === undefined) return fallback;
+      const n = Number(v);
+      return isNaN(n) ? fallback : n;
+    };
+    const envStr = (key: string, fallback: string) => process.env[key] ?? fallback;
+
     this.markdownLinkConfig = {
-      enabled: mlc?.enabled ?? false,
-      allowExternalLinks: mlc?.allowExternalLinks ?? false,
-      maxDepth: mlc?.maxDepth ?? 2,
-      maxExternalSizeKb: 10,
-      compressionMode: 'brief',
-      jsRenderingEnabled: false,
-      jsRenderTimeoutMs: 5000,
-      jsRenderFallback: true,
-      resolutionMode: 'inline',
-      semanticTopK: 3,
-      semanticSimilarityThreshold: 0.3,
+      enabled: mlc?.enabled ?? envBool('LINK_FOLLOWING_ENABLED', false),
+      allowExternalLinks: mlc?.allowExternalLinks ?? envBool('ALLOW_EXTERNAL_LINKS', false),
+      maxDepth: mlc?.maxDepth ?? envNum('MAX_LINK_DEPTH', 2),
+      maxExternalSizeKb: mlc?.maxExternalSizeKb ?? envNum('MAX_EXTERNAL_SIZE_KB', 10),
+      compressionMode: mlc?.compressionMode ?? envStr('EXTERNAL_COMPRESSION_MODE', 'brief') as 'brief' | 'moderate' | 'skip',
+      jsRenderingEnabled: mlc?.jsRenderingEnabled ?? envBool('JS_RENDERING_ENABLED', false),
+      jsRenderTimeoutMs: mlc?.jsRenderTimeoutMs ?? envNum('JS_RENDER_TIMEOUT_MS', 5000),
+      jsRenderFallback: mlc?.jsRenderFallback ?? envBool('JS_RENDER_FALLBACK', true),
+      resolutionMode: mlc?.resolutionMode ?? envStr('LINK_RESOLUTION_MODE', 'inline') as 'inline' | 'semantic' | 'compressed',
+      semanticTopK: mlc?.semanticTopK ?? envNum('SEMANTIC_TOP_K', 3),
+      semanticSimilarityThreshold: mlc?.semanticSimilarityThreshold ?? envNum('SEMANTIC_SIMILARITY_THRESHOLD', 0.3),
     };
     this.maxCacheSizeBytes = this.config.maxCacheSizeBytes || (1024 * 1024 * 1024);
     this.compressor = new SkillCompressor();

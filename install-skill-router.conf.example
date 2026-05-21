@@ -125,3 +125,40 @@ AUTO_SKILL_CONTRIBUTE=true
 
 # LLM model for skill generation
 AUTO_SKILL_MODEL=gpt-4o-mini
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Link Following Configuration (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Enable markdown link following in skill definitions
+LINK_FOLLOWING_ENABLED=false
+
+# Allow fetching external URLs (HTTPS only)
+ALLOW_EXTERNAL_LINKS=false
+
+# Maximum link resolution depth
+MAX_LINK_DEPTH=2
+
+# Max external content size in KB before compression/skip (1-1000)
+MAX_EXTERNAL_SIZE_KB=10
+
+# Compression mode for oversized external content (brief, moderate, detailed)
+EXTERNAL_COMPRESSION_MODE=brief
+
+# Enable JavaScript rendering for dynamic pages (requires Puppeteer)
+JS_RENDERING_ENABLED=false
+
+# JS render timeout in milliseconds
+JS_RENDER_TIMEOUT_MS=5000
+
+# Fall back to static fetch if JS rendering fails
+JS_RENDER_FALLBACK=true
+
+# How resolved content is embedded (inline, semantic, compressed)
+LINK_RESOLUTION_MODE=inline
+
+# Number of top semantic chunks to return (when mode=semantic)
+SEMANTIC_TOP_K=3
+
+# Minimum cosine similarity for semantic chunk selection (0.0-1.0)
+SEMANTIC_SIMILARITY_THRESHOLD=0.3
