@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T22:40:42.782586Z",
-  "totalSkills": 759,
+  "generatedAt": "2026-05-21T23:04:25.365133Z",
+  "totalSkills": 761,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 209,
+    "coding": 211,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 354,
+    "implementation": 356,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -2033,6 +2033,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/bitbucket-automation/SKILL.md"
+    },
+    {
+      "name": "bitwise-masks",
+      "domain": "coding",
+      "description": "Implements bitwise operations (&, |, ^, <<, >>) for flag management, permission bitmasking, and state tracking across C++, Python, and Rust.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "bitwise operations",
+        "bit mask",
+        "flag enum",
+        "permission bits",
+        "bitwise AND",
+        "shift operator",
+        "bitmasking",
+        "flag management",
+        "state flags",
+        "permission mask",
+        "bitwise OR",
+        "XOR flag",
+        "bit shifting"
+      ],
+      "relatedSkills": [
+        "reference-operators",
+        "type-safety-enums"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/bitwise-masks/SKILL.md"
     },
     {
       "name": "blob-storage",
@@ -13285,6 +13314,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/refactoring-techniques/SKILL.md"
+    },
+    {
+      "name": "reference-operators",
+      "domain": "coding",
+      "description": "Implements reference (&) and address-of operators across C++, Rust, C#, and PHP for safe memory access, parameter passing, and pointer arithmetic.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "reference operator",
+        "address of",
+        "pass by reference",
+        "& operator",
+        "pointer",
+        "dangling reference",
+        "borrowed reference",
+        "mutable reference",
+        "C++ references",
+        "Rust lifetimes",
+        "PHP references",
+        "C# ref out",
+        "memory safety",
+        "rvalue reference"
+      ],
+      "relatedSkills": [
+        "bitwise-masks",
+        "smart-pointers",
+        "lifetime-annotation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/reference-operators/SKILL.md"
     },
     {
       "name": "regime-classification",

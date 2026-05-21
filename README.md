@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 22:40:43 UTC  
-> **Total skills:** 759
+> **Last updated:** 2026-05-21 23:04:26 UTC  
+> **Total skills:** 761
 
 ## Skills by Domain
 
@@ -707,7 +707,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (210 skills)
+### Coding (212 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -735,6 +735,7 @@ MIT — All skills are freely available and redistributable.
 | [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. | behavioral patterns, observer pattern, state pattern, command pattern, strategy pattern, template method, mediator pattern, chain of responsibility, iterator pattern, object communication |
 | [best-practices](skills/coding/best-practices/SKILL.md) | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" | markdown best practices, markdown-best-practices, opencode, skills, syntax |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" | bias-variance, overfitting, underfitting, regularization, generalization, how do I prevent overfitting |
+| [bitwise-masks](skills/coding/bitwise-masks/SKILL.md) | Implements bitwise operations (&, |, ^, <<, >>) for flag management, permission bitmasking, and state tracking across C++, Python, and Rust. | bitwise operations, bit mask, flag enum, permission bits, bitwise AND, shift operator, bitmasking, flag management, state flags, permission mask, bitwise OR, XOR flag, bit shifting |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | git branching strategies, git repository, git-branching-strategies, github, including, models, version control |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | makefile testing, build validation, phony target tests, continuous integration for builds, incremental build verification, dependency graph analysis, build reproducibility, make test suite, artifact verification |
 | [bus](skills/coding/bus/SKILL.md) | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | async, event bus, event-bus, events, typed, eventbridge, event routing |
@@ -875,6 +876,7 @@ MIT — All skills are freely available and redistributable.
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | randomized experiments, RCT, experimental design, randomization, blocking, sample size |
 | [refactoring-techniques](skills/coding/refactoring-techniques/SKILL.md) | Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity. | refactoring, clean up code, reduce complexity, extract method, rename variable, improve readability, how do i refactor legacy code, technical debt, code smell |
+| [reference-operators](skills/coding/reference-operators/SKILL.md) | Implements reference (&) and address-of operators across C++, Rust, C#, and PHP for safe memory access, parameter passing, and pointer arithmetic. | reference operator, address of, pass by reference, & operator, pointer, dangling reference, borrowed reference, mutable reference, C++ references, Rust lifetimes, PHP references, C# ref out, memory safety, rvalue reference |
 | [regression-evaluation](skills/coding/regression-evaluation/SKILL.md) | "Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared, and other metrics for assessing predictive accuracy" | regression evaluation, MSE, RMSE, MAE, R-squared, regression metrics, how do i evaluate |
 | [release-pipeline](skills/coding/release-pipeline/SKILL.md) | Implements comprehensive secure release pipeline with CVE scanning, security code review, semantic versioning for patches, and multi-stage quality gates for secure deployments. | secure release, CVE scanning, security audit, version management, quality gates, dependency security, semantic versioning, incident response |
 | [reproducible-research](skills/coding/reproducible-research/SKILL.md) | "Implements reproducible research practices including code organization, environment management, documentation, and experiment tracking" | reproducible research, reproducibility, code organization, environment, notebooks, how do I reproduce |
@@ -1085,7 +1087,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (354 skills)
+### Implementation (Build Features) (356 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1121,6 +1123,7 @@ MIT — All skills are freely available and redistributable.
 | [best-practices](skills/coding/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" |
 | [best-practices](skills/go/best-practices/SKILL.md) | Go | Enforces Go idioms and best practices including error handling, interface design, testing conventions, and code organization for maintainable applications. |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | Coding | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" |
+| [bitwise-masks](skills/coding/bitwise-masks/SKILL.md) | Coding | Implements bitwise operations (&, |, ^, <<, >>) for flag management, permission bitmasking, and state tracking across C++, Python, and Rust. |
 | [blue-green-deployment](skills/cncf/blue-green-deployment/SKILL.md) | Cncf | Implements blue-green deployment strategies with traffic switching, state management, and rollback capabilities to achieve zero-downtime releases. |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. |
@@ -1345,6 +1348,7 @@ MIT — All skills are freely available and redistributable.
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Provides Rate Limiting and Exchange API Management for Robust Trading Execution" |
 | [realistic-simulation](skills/trading/realistic-simulation/SKILL.md) | Trading | "Provides Realistic Paper Trading Simulation with Market Impact and Execution Fees" |
 | [refactoring-techniques](skills/coding/refactoring-techniques/SKILL.md) | Coding | Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity. |
+| [reference-operators](skills/coding/reference-operators/SKILL.md) | Coding | Implements reference (&) and address-of operators across C++, Rust, C#, and PHP for safe memory access, parameter passing, and pointer arithmetic. |
 | [regime-classification](skills/trading/regime-classification/SKILL.md) | Trading | "Provides Detect current market regime for adaptive trading strategies" |
 | [regime-detection](skills/trading/regime-detection/SKILL.md) | Trading | "Provides Market Regime Detection Systems for Adaptive Trading Strategies" |
 | [regression-evaluation](skills/coding/regression-evaluation/SKILL.md) | Coding | "Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared, and other metrics for assessing predictive accuracy" |
@@ -1956,6 +1960,7 @@ MIT — All skills are freely available and redistributable.
 | [best-practices](skills/go/best-practices/SKILL.md) | Go | Enforces Go idioms and best practices including error handling, interface design, testing conventions, and code organization for maintainable applications. | Implementation |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | Coding | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" | Implementation |
 | [bitbucket-automation](skills/agent/bitbucket-automation/SKILL.md) | Agent | Implements intelligent bitbucket automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [bitwise-masks](skills/coding/bitwise-masks/SKILL.md) | Coding | Implements bitwise operations (&, |, ^, <<, >>) for flag management, permission bitmasking, and state tracking across C++, Python, and Rust. | Implementation |
 | [blob-storage](skills/cncf/blob-storage/SKILL.md) | Cncf | Provides Object storage with versioning, lifecycle policies, and integration to other Azure services | Reference |
 | [blue-green-deployment](skills/cncf/blue-green-deployment/SKILL.md) | Cncf | Implements blue-green deployment strategies with traffic switching, state management, and rollback capabilities to achieve zero-downtime releases. | Implementation |
 | [blueprint](skills/agent/blueprint/SKILL.md) | Agent | Implements intelligent blueprint with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2436,6 +2441,7 @@ MIT — All skills are freely available and redistributable.
 | [recallmax](skills/agent/recallmax/SKILL.md) | Agent | Implements intelligent recallmax with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [receiving-code-review](skills/agent/receiving-code-review/SKILL.md) | Agent | Implements intelligent receiving code review with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [refactoring-techniques](skills/coding/refactoring-techniques/SKILL.md) | Coding | Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity. | Implementation |
+| [reference-operators](skills/coding/reference-operators/SKILL.md) | Coding | Implements reference (&) and address-of operators across C++, Rust, C#, and PHP for safe memory access, parameter passing, and pointer arithmetic. | Implementation |
 | [regime-classification](skills/trading/regime-classification/SKILL.md) | Trading | "Provides Detect current market regime for adaptive trading strategies" | Implementation |
 | [regime-detection](skills/trading/regime-detection/SKILL.md) | Trading | "Provides Market Regime Detection Systems for Adaptive Trading Strategies" | Implementation |
 | [regression-detector](skills/agent/regression-detector/SKILL.md) | Agent | Implements intelligent regression detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
