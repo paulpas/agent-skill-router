@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T10:36:26.224143Z",
-  "totalSkills": 734,
+  "generatedAt": "2026-05-21T11:23:16.497987Z",
+  "totalSkills": 736,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 186,
+    "coding": 188,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 331,
+    "implementation": 333,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -3439,6 +3439,41 @@
       "source": "skills/coding/component-architecture/SKILL.md"
     },
     {
+      "name": "component-testing-library",
+      "domain": "coding",
+      "description": "Tests React, Vue, and Svelte components using Testing Library query priorities, renderHook for hooks, Mock Service Worker API mocking, and async state patterns for reliable, user-facing component tests.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "component testing",
+        "react testing library",
+        "rtl",
+        "vue testing library",
+        "svelte testing library",
+        "renderhook",
+        "msw",
+        "mock service worker",
+        "api mocking",
+        "frontend testing",
+        "user event setup",
+        "test component",
+        "how do i test a react component",
+        "testing async ui",
+        "testing loading states",
+        "testing with hooks",
+        "vitest component test",
+        "form validation test"
+      ],
+      "relatedSkills": [
+        "testing-unit-integration-e2e",
+        "design-systems",
+        "code-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/component-testing-library/SKILL.md"
+    },
+    {
       "name": "composition-root",
       "domain": "coding",
       "description": "Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures.",
@@ -4340,6 +4375,38 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/crossplane/SKILL.md"
+    },
+    {
+      "name": "css-architecture",
+      "domain": "coding",
+      "description": "Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "css architecture",
+        "css modules",
+        "bem naming",
+        "tailwind css v4",
+        "container queries",
+        ":has selector",
+        "css nesting",
+        "@layer cascade",
+        "how do i organize stylesheets",
+        "responsive components",
+        "utility-first css",
+        "scroll-driven animations",
+        "view transitions api",
+        "css custom properties",
+        "css specificity management"
+      ],
+      "relatedSkills": [
+        "design-systems",
+        "component-architecture",
+        "frontend-philosophy"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/css-architecture/SKILL.md"
     },
     {
       "name": "cubefs",
