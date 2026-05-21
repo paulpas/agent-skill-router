@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 10:08:17 UTC  
-> **Total skills:** 733
+> **Last updated:** 2026-05-21 05:35:26 UTC  
+> **Total skills:** 734
 
 ## Skills by Domain
 
@@ -916,7 +916,7 @@ MIT — All skills are freely available and redistributable.
 | [web-applications](skills/go/web-applications/SKILL.md) | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. | go web, go http, go router, go middleware, go rest api, go templates, go websocket |
 
 
-### Linux (13 skills)
+### Linux (14 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -930,6 +930,7 @@ MIT — All skills are freely available and redistributable.
 | [observability](skills/linux/observability/SKILL.md) | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | linux observability, system metrics, log collection, performance profiling, eBPF, perf, capacity planning, monitoring |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. | IPMI, iLO, iDRAC, PXE boot, iSCSI, multipath, bare-metal provisioning, datacenter rack |
 | [resource-management](skills/linux/resource-management/SKILL.md) | Manages Linux system resources using cgroups v2, namespaces, and systemd for workload isolation and resource guarantees in cloud and on-prem environments. | cgroups, resource management, cpu limit, memory limit, systemd resource, OOM, workload isolation, resource quota |
+| [shell-command-chaining](skills/linux/shell-command-chaining/SKILL.md) | Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts. | shell command chaining, && operator, || operator, semicolon in bash, conditional command execution, fallback chain, AND list OR list, short-circuit evaluation, how do i chain commands reliably |
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. | bash parameter expansion, ${VAR:-default}, variable default value, shell variable substitution, pattern matching shell, case modification, how do i handle unset variables, bash safe defaults, ${##pattern}, ${VAR:?error}, shell scripting safety |
 | [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. | shell background processes, parallel execution, job control, fg bg jobs wait, xargs P flag, background shell, process management |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. | storage architecture, LVM, filesystem, XFS, ext4, btrfs, cloud storage, NVMe, mount options, storage monitoring |
@@ -1059,7 +1060,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (330 skills)
+### Implementation (Build Features) (331 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1323,6 +1324,7 @@ MIT — All skills are freely available and redistributable.
 | [sentiment-features](skills/trading/sentiment-features/SKILL.md) | Trading | "Provides Extract market sentiment from news, social media, and analyst reports" |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" |
+| [shell-command-chaining](skills/linux/shell-command-chaining/SKILL.md) | Linux | Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts. |
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Linux | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. |
 | [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Linux | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. |
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' |
@@ -2405,6 +2407,7 @@ MIT — All skills are freely available and redistributable.
 | [service-bus](skills/cncf/service-bus/SKILL.md) | Cncf | "Provides Messaging service with queues and topics for reliable communication" | Reference |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. | Implementation |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" | Implementation |
+| [shell-command-chaining](skills/linux/shell-command-chaining/SKILL.md) | Linux | Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts. | Implementation |
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Linux | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. | Implementation |
 | [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Linux | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. | Implementation |
 | [shop](skills/coding/shop/SKILL.md) | Coding | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | Implementation |
