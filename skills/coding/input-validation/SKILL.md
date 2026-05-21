@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
-  related-skills: security-review, error-handling, test-driven-development
+  related-skills: security-review, software-error-handling, test-driven-development
 ---
 
 # Input Validation and Sanitization Engineer
@@ -769,4 +769,4 @@ When implementing or reviewing input validation logic, produce:
 |---|---|
 | `security-review` | Comprehensive security audit catching input validation gaps alongside other vulnerabilities including authentication flaws, access control issues, and insecure configurations |
 | `test-driven-development` | Writing validation tests before implementation to ensure all edge cases are covered, boundary conditions pass, and adversarial inputs are caught early in the development cycle |
-| `error-handling` | Proper error response formatting for API consumers and structured logging practices that capture enough debug context without exposing sensitive data about internal system state |
+| `software-error-handling` | Proper error response formatting for API consumers, exception hierarchies, and structured logging practices that capture enough debug context without exposing sensitive data about internal system state |

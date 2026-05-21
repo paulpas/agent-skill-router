@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
-  related-skills: input-validation, security-review, error-handling
+  related-skills: input-validation, security-review, software-error-handling
 ---
 
 # Output Sanitization Engineer
@@ -795,6 +795,6 @@ When implementing or reviewing output sanitization logic, produce:
 |---|---|
 | `input-validation` | Validate and sanitize inbound data at system boundaries — output sanitization handles the complementary task of encoding data safely for outbound rendering |
 | `security-review` | Comprehensive security audit catching output sanitization gaps alongside authentication flaws, access control issues, and insecure configurations |
-| `error-handling` | Proper error response formatting and structured logging practices that prevent leaking sensitive internal information in error messages and stack traces |
+| `software-error-handling` | Proper error response formatting, exception hierarchies, and structured logging practices that prevent leaking sensitive internal information in error messages and stack traces |
 
 ---
