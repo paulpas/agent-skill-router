@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T05:55:55.926780Z",
+  "generatedAt": "2026-05-21T06:57:57.770165Z",
   "totalSkills": 728,
   "domains": {
     "agent": 251,
@@ -11379,24 +11379,24 @@
     {
       "name": "order-flow-analysis",
       "domain": "trading",
-      "description": "Analyzes order flow imbalances, footprint data, and cumulative delta divergence to detect institutional accumulation/distribution zones for high-probability trade entries.",
+      "description": "Analyzes tick-level order flow data to compute delta, volume profile, footprint patterns, absorption signatures, and conviction scoring for institutional activity detection.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "order flow",
-        "footprint chart",
+        "footprint charts",
+        "delta analysis",
         "cumulative delta",
-        "delta divergence",
-        "tape reading",
+        "volume profile",
+        "trade absorption",
         "iceberg orders",
-        "volume imbalance",
-        "liquidity detection"
+        "order book imbalance"
       ],
       "relatedSkills": [
-        "trading-risk-stop-loss",
-        "trading-vwap-execution",
-        "trading-volume-profile"
+        "risk-stop-loss",
+        "risk-position-sizing",
+        "signals-module"
       ],
       "version": "1.0.0",
       "source": "skills/trading/order-flow-analysis/SKILL.md"
