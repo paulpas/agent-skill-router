@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 10:36:27 UTC  
-> **Total skills:** 734
+> **Last updated:** 2026-05-21 06:22:50 UTC  
+> **Total skills:** 736
 
 ## Skills by Domain
 
@@ -705,7 +705,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (187 skills)
+### Coding (189 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -744,6 +744,7 @@ MIT — All skills are freely available and redistributable.
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | code duplication, duplicate code detection, copy-paste code, boilerplate removal, semantic duplication, radon metrics, pylint warnings, refactoring detection, DRY principle, code quality analysis |
 | [community-detection](skills/coding/community-detection/SKILL.md) | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | community detection, graph clustering, modularity, spectral clustering, graph partitioning |
 | [component-architecture](skills/coding/component-architecture/SKILL.md) | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. | component architecture, compound components, headless ui, render props, component composition, container presentational pattern, component hooks, how do i design reusable components, component library design, UI composition |
+| [component-testing-library](skills/coding/component-testing-library/SKILL.md) | Tests React, Vue, and Svelte components using Testing Library query priorities, renderHook for hooks, Mock Service Worker API mocking, and async state patterns for reliable, user-facing component tests. | component testing, react testing library, rtl, vue testing library, svelte testing library, renderhook, msw, mock service worker, api mocking, frontend testing, user event setup, test component, how do i test a react component, testing async ui, testing loading states... |
 | [composition-root](skills/coding/composition-root/SKILL.md) | Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures. | composition root, dependency injection wiring, DI container, adapter registration, how do i wire my dependencies, service locator anti-pattern, object graph assembly, factory pattern, IoC container |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals |
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config |
@@ -752,6 +753,7 @@ MIT — All skills are freely available and redistributable.
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms. | cqrs, command query segregation, write model, read model, projection, separate read write models, how do i separate reads from writes, event sourcing read side, eventual consistency |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | creational patterns, factory method, builder pattern, singleton, abstract factory, prototype pattern, object creation, GoF design patterns |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | cross-validation, k-fold, stratified cross-validation, time-series cross-validation, validation |
+| [css-architecture](skills/coding/css-architecture/SKILL.md) | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. | css architecture, css modules, bem naming, tailwind css v4, container queries, :has selector, css nesting, @layer cascade, how do i organize stylesheets, responsive components, utility-first css, scroll-driven animations, view transitions api, css custom properties, css specificity management |
 | [data-collection](skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | json serialization, xml parsing, base64 encoding, url encoding, yaml config, protocol buffers, data serialization, type coercion, character encoding, message encoding |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data |
@@ -1060,7 +1062,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (331 skills)
+### Implementation (Build Features) (333 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1114,6 +1116,7 @@ MIT — All skills are freely available and redistributable.
 | [commission-model](skills/trading/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" |
 | [component-architecture](skills/coding/component-architecture/SKILL.md) | Coding | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. |
+| [component-testing-library](skills/coding/component-testing-library/SKILL.md) | Coding | Tests React, Vue, and Svelte components using Testing Library query priorities, renderHook for hooks, Mock Service Worker API mocking, and async state patterns for reliable, user-facing component tests. |
 | [composition-root](skills/coding/composition-root/SKILL.md) | Coding | Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures. |
 | [concurrency-patterns](skills/go/concurrency-patterns/SKILL.md) | Go | Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications. |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" |
@@ -1127,6 +1130,7 @@ MIT — All skills are freely available and redistributable.
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Implements CQRS (Command Query Responsibility Segregation) with separate command handlers for writes, query handlers for reads, projection-based read models, and eventual consistency mechanisms. |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" |
+| [css-architecture](skills/coding/css-architecture/SKILL.md) | Coding | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." |
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. |
@@ -1966,6 +1970,7 @@ MIT — All skills are freely available and redistributable.
 | [commit](skills/agent/commit/SKILL.md) | Agent | Implements intelligent commit with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | Implementation |
 | [component-architecture](skills/coding/component-architecture/SKILL.md) | Coding | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. | Implementation |
+| [component-testing-library](skills/coding/component-testing-library/SKILL.md) | Coding | Tests React, Vue, and Svelte components using Testing Library query priorities, renderHook for hooks, Mock Service Worker API mocking, and async state patterns for reliable, user-facing component tests. | Implementation |
 | [composition-root](skills/coding/composition-root/SKILL.md) | Coding | Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures. | Implementation |
 | [compute-engine](skills/cncf/compute-engine/SKILL.md) | Cncf | "Deploys and manages virtual machine instances with auto-scaling, instance groups, and integration with GCP services for IaaS workloads" | Reference |
 | [concise-planning](skills/agent/concise-planning/SKILL.md) | Agent | Implements intelligent concise planning with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2006,6 +2011,7 @@ MIT — All skills are freely available and redistributable.
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | Implementation |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | Implementation |
 | [crossplane](skills/cncf/crossplane/SKILL.md) | Cncf | "Crossplane in Platform Engineering - Kubernetes-native control plane" for multi-cloud infrastructure | Reference |
+| [css-architecture](skills/coding/css-architecture/SKILL.md) | Coding | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. | Implementation |
 | [cubefs](skills/cncf/cubefs/SKILL.md) | Cncf | "Provides CubeFS in Storage - distributed, high-performance file system" | Reference |
 | [custodian](skills/cncf/custodian/SKILL.md) | Cncf | "Provides Cloud Custodian in Cloud-Native Engineering -/rules engine for cloud infrastructure management" | Reference |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." | Implementation |
