@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T16:31:35.436942Z",
-  "totalSkills": 746,
+  "generatedAt": "2026-05-21T17:21:55.729760Z",
+  "totalSkills": 748,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 198,
+    "coding": 200,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -13,9 +13,9 @@
     "writing": 2
   },
   "roles": {
-    "orchestration": 232,
+    "orchestration": 233,
     "implementation": 343,
-    "reference": 165,
+    "reference": 166,
     "information": 1,
     "review": 5
   },
@@ -5943,6 +5943,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/engineering-principles/SKILL.md"
+    },
+    {
+      "name": "engineering-tradeoffs",
+      "domain": "coding",
+      "description": "Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "engineering tradeoffs",
+        "decision making under constraints",
+        "build vs buy",
+        "speed vs quality",
+        "technology selection",
+        "weighted decision matrix",
+        "tradeoff analysis",
+        "two-way door decisions",
+        "CAP theorem software"
+      ],
+      "relatedSkills": [
+        "architecture-decision-records",
+        "design-pattern-selection",
+        "engineering-principles",
+        "technical-debt-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/engineering-tradeoffs/SKILL.md"
     },
     {
       "name": "enrichment",
@@ -12508,6 +12535,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/production-logging/SKILL.md"
+    },
+    {
+      "name": "production-readiness",
+      "domain": "coding",
+      "description": "Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment.",
+      "role": "reference",
+      "scope": "infrastructure",
+      "outputFormat": "analysis",
+      "triggers": [
+        "production readiness",
+        "SRE review",
+        "deployment criteria",
+        "observability setup",
+        "canary deployment",
+        "on-call coverage",
+        "SLO SLI",
+        "error budget",
+        "golden signals",
+        "how do i know my service is production ready",
+        "operational excellence",
+        "hypercare period"
+      ],
+      "relatedSkills": [
+        "observability-patterns",
+        "technical-debt-management",
+        "architecture-decision-records"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/production-readiness/SKILL.md"
     },
     {
       "name": "project",
