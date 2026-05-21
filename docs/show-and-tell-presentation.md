@@ -349,6 +349,123 @@ The `metadata.triggers` field is what makes auto-loading work. When OpenCode det
 
 ---
 
+## Link Following: Skills That Reference the Web
+
+Skill documents can contain markdown links — both to local files (`[details](implementation.md)`) and to external URLs (`[docs](https://example.com)`). When enabled, the **MarkdownLinkResolver** automatically resolves these links and inlines the referenced content directly into the skill.
+
+```ascii
+              ┌── MARKDOWN LINK RESOLVER ──┐
+              │                              │
+              │  Skill content with links     │
+              │  ---                          │
+              │  See [details](deep-dive.md)  │
+              │  Read [docs](example.com)     │
+              │  ---                          │
+              │         │                      │
+              │         ▼                      │
+              │  ┌─────────────────────┐       │
+              │  │ Parse markdown      │       │
+              │  │ links via regex     │       │
+              │  └────────┬────────────┘       │
+              │           │                      │
+              │     ┌─────┴──────┐               │
+              │     ▼            ▼                │
+              │  Local         External           │
+              │  ┌────────┐   ┌──────────────┐   │
+              │  │Read    │   │ Static HTTP  │   │
+              │  │file    │   │ (no JS)      │   │
+              │  └────────┘   ├──────────────┤   │
+              │               │ Puppeteer +  │   │
+              │               │ Chromium     │   │
+              │               │ (JS render)  │   │
+              │               └──────┬───────┘   │
+              │                      │            │
+              │                      ▼            │
+              │  ┌──────────────────────────┐     │
+              │  │ Content Processing        │     │
+              │  │                           │     │
+              │  │ 1. Under threshold → inline│    │
+              │  │ 2. Over threshold →        │    │
+              │  │    compress or truncate    │    │
+              │  │ 3. Semantic mode →         │    │
+              │  │    embed chunks, find top-K│    │
+              │  └──────────┬───────────────┘     │
+              │             │                      │
+              │             ▼                      │
+              │  ┌──────────────────────────┐     │
+              │  │ Inline as formatted      │     │
+              │  │ reference section         │     │
+              │  │ 📎 Reference: ...         │     │
+              │  │ > Source: url             │     │
+              │  └──────────────────────────┘     │
+              │                              │
+              └──────────────────────────────┘
+```
+
+### Resolution Modes
+
+| Mode | Description | When to Use |
+|---|---|---|
+| `inline` (default) | Full content inlined as-is | Small references under 10KB |
+| `semantic` | Chunk content → embed each chunk → find top-K most relevant excerpts via cosine similarity | Large docs; only want the parts relevant to the skill's context |
+| `compressed` | LLM-style regex-based compression (brief ~2KB or moderate ~5KB) | Token-efficient referencing of medium-sized docs |
+
+### External Fetch Strategies
+
+When a link points to an external URL, the resolver tries multiple strategies:
+
+1. **Static HTTP fetch** — Plain GET request with 5s timeout and 1MB hard limit. Always available.
+2. **Puppeteer + Chromium JS rendering** — When `JS_RENDERING_ENABLED=true`, launches headless Chromium, navigates to the URL, waits 1s for dynamic content, and extracts the rendered HTML. Useful for SPAs, documentation sites that load content via JavaScript.
+3. **JS fallback** — When `JS_RENDER_FALLBACK=true` (default), if JS rendering fails (Chromium not available, timeout, network error), it falls back to static fetch automatically.
+
+> **Chromium in the container:** The Docker image includes Chromium (148.x) installed as an Alpine system package. Puppeteer is configured to find it at `/usr/bin/chromium-browser` with `PUPPETEER_SKIP_DOWNLOAD=true` to avoid redundant downloads.
+
+### Local File References
+
+Links to local files (relative to the skill's directory) are resolved by:
+1. Resolving the path relative to the skill file's directory
+2. **Path traversal protection** — Blocks paths that escape the skill base directory (e.g., `../../etc/passwd`)
+3. **Circular reference detection** — Tracks visited paths per resolution call to prevent infinite loops
+4. Recursively resolving links in the referenced content (up to `maxDepth`)
+
+### Semantic Content Retrieval
+
+When `LINK_RESOLUTION_MODE=semantic`, the resolver doesn't just inline the entire document — it finds the most relevant excerpts:
+
+1. **Chunk** the external content into logical sections using the `ExternalContentChunker` (splits by headings, paragraphs, code blocks)
+2. **Embed** each chunk using the same `EmbeddingService` that powers skill search
+3. **Embed** the skill's own context (title + description + first 500 chars)
+4. **Cosine similarity** search — find the top-K chunks most relevant to the skill
+5. **Inline only those excerpts** — saving tokens while preserving meaning
+
+This is particularly useful for large documentation pages where only a small portion is relevant to the specific skill.
+
+### Safety & Limits
+
+| Control | Default | Purpose |
+|---|---|---|
+| Path traversal protection | — | Blocks `../../` escapes from skill base directory |
+| HTTPS-only | — | Only `https://` URLs allowed |
+| Hard size limit | 1MB | Any content over 1MB is skipped entirely |
+| Max depth | 2 | How deep to recursively resolve links |
+| Circular reference | — | Per-call visited set prevents infinite loops |
+
+### Configuration
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `LINK_FOLLOWING_ENABLED` | false | Master switch for link resolution |
+| `ALLOW_EXTERNAL_LINKS` | false | Allow fetching external URLs |
+| `MAX_LINK_DEPTH` | 2 | Max recursion depth for linked documents |
+| `MAX_EXTERNAL_SIZE_KB` | 10 | Size threshold before compression applies |
+| `EXTERNAL_COMPRESSION_MODE` | brief | brief / moderate / skip |
+| `JS_RENDERING_ENABLED` | false | Enable Chromium for JS-rendered pages |
+| `JS_RENDER_TIMEOUT_MS` | 5000 | Timeout per JS render attempt |
+| `JS_RENDER_FALLBACK` | true | Fall back to static fetch if JS rendering fails |
+| `LINK_RESOLUTION_MODE` | inline | inline / semantic / compressed |
+| `SEMANTIC_TOP_K` | 3 | Number of relevant excerpts to return in semantic mode |
+| `SEMANTIC_SIMILARITY_THRESHOLD` | 0.3 | Minimum cosine similarity for excerpt inclusion |
+
 ## MCP Integration: How OpenCode Talks to the Router
 
 The MCP (Model Context Protocol) bridge is the glue that connects OpenCode to the Skill Router. It's a stdio-based Node.js process (`skill-router-mcp.js`) that exposes two tools to the AI agent.
