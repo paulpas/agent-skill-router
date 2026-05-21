@@ -35,7 +35,7 @@ The Agent Skill Router is an intelligent skill routing system that automatically
 ### 🛠️ Developer Productivity Tools
 - **Skill Generator** — Create new skills programmatically using local LLMs
 - **Quality Fixer** — Detect and repair placeholder code in existing skills
-- **Auto Skill Creation** — Generate complete, compliant skills from natural language descriptions using skill-generate.sh
+- **Auto Skill Creation** — Generate complete, compliant skills from natural language descriptions with automatic git contribution control
 - **Domain-specific wrappers** — Optimized fixers for different skill types
 
 ## How It Works
@@ -123,16 +123,33 @@ The router handles uncertainty gracefully:
 
 ```
 User: "help with data processing"  (ambiguous request)
-     ↓
+      ↓
 Router evaluates: 
-   - coding-data-pipelines (confidence: 0.62)
-   - programming-algorithms (confidence: 0.58)
-   - trading-data-analysis (confidence: 0.45)
-     ↓
+    - coding-data-pipelines (confidence: 0.62)
+    - programming-algorithms (confidence: 0.58)
+    - trading-data-analysis (confidence: 0.45)
+      ↓
 Since top score < 0.65 threshold, applies fallback routing
-     ↓
+      ↓
 May ask clarifying questions or load multiple lower-confidence skills
 ```
+
+#### Automatic Skill Creation
+When the router detects no sufficiently matching skills, it can automatically create one:
+```
+User: "I need a skill for analyzing Rust ownership patterns"
+      ↓
+Router finds no skills with sufficient confidence (<0.65 threshold)
+      ↓
+Triggers automatic skill generation via the Skill Generation Tool
+      ↓
+LLM creates a complete SKILL.md for rust-ownership-analysis in programming domain
+      ↓
+Skill is validated, saved, and optionally contributed to git
+      ↓
+Router loads the newly created skill and provides expert guidance
+```
+This enables the system to expand its expertise organically based on user needs.
 
 ### Skill Compression Benefits
 

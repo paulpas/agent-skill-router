@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 00:49:28 UTC  
-> **Total skills:** 715
+> **Last updated:** 2026-05-20 20:28:31 UTC  
+> **Total skills:** 719
 
 ## Skills by Domain
 
 
-### Agent (249 skills)
+### Agent (250 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -310,6 +310,7 @@ MIT — All skills are freely available and redistributable.
 | [apify-market-research](skills/agent/apify-market-research/SKILL.md) | Implements intelligent apify market research with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-market-research, apify market research, how do i apify-market-research, orchestrate apify-market-research, automate apify-market-research, agent apify-market-research |
 | [apify-trend-analysis](skills/agent/apify-trend-analysis/SKILL.md) | Implements intelligent apify trend analysis with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-trend-analysis, apify trend analysis, how do i apify-trend-analysis, orchestrate apify-trend-analysis, automate apify-trend-analysis, agent apify-trend-analysis |
 | [apify-ultimate-scraper](skills/agent/apify-ultimate-scraper/SKILL.md) | Implements intelligent apify ultimate scraper with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-ultimate-scraper, apify ultimate scraper, how do i apify-ultimate-scraper, orchestrate apify-ultimate-scraper, automate apify-ultimate-scraper, agent apify-ultimate-scraper |
+| [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. | ascii diagram, excalidraw style, flowchart, sequence diagram, state diagram, diagram generation, visual explanation, process flow, system architecture |
 | [ask-questions-if-underspecified](skills/agent/ask-questions-if-underspecified/SKILL.md) | Implements intelligent ask questions if underspecified with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ask-questions-if-underspecified, ask questions if underspecified, how do i ask-questions-if-underspecified, orchestrate ask-questions-if-underspecified, automate ask-questions-if-underspecified, agent ask-questions-if-underspecified |
 | [audio-transcriber](skills/agent/audio-transcriber/SKILL.md) | Implements intelligent audio transcriber with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | audio-transcriber, audio transcriber, how do i audio-transcriber, orchestrate audio-transcriber, automate audio-transcriber, agent audio-transcriber |
 | [audit-context-building](skills/agent/audit-context-building/SKILL.md) | Implements intelligent audit context building with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | audit-context-building, audit context building, how do i audit-context-building, orchestrate audit-context-building, automate audit-context-building, agent audit-context-building |
@@ -700,7 +701,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (174 skills)
+### Coding (177 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -787,6 +788,9 @@ MIT — All skills are freely available and redistributable.
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | framework selection, tech stack evaluation, weighted scoring matrix, AHP decision, framework comparison, technology assessment, framework criteria, evaluate frameworks, choose framework, select technology, tech stack decision, framework trade-offs |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Integrates selected frameworks into applications using dependency injection, configuration management, extension mechanisms, lifecycle management, and testable architecture patterns to minimize coupling and maximize maintainability. | framework integration, dependency injection, middleware patterns, framework hooks, plugin architecture, framework lifecycle, framework configuration, extension points, framework testing, decouple framework, framework coupling, wire dependencies |
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. | graphql, apollo federation, dataloader, n+1 query, query complexity, graphql schema, graphql authorization, how do i design a graphql api |
+| [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. | dataloader, graphql n-plus-one, batch loading, aiodataloader, graphql performance, load per request, graphql batching |
+| [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. | graphql error handling, graphql validation, input validation, pydantic graphql, strawberry errors, graphql error codes, graphql middleware |
+| [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. | graphql schema design, SDL, type system, strawberry-graphql, interface, union type, graphql-input-object, graphql-deprecation |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices | grpc development, grpc debugging, protocol buffers, rpc services, grpc errors, stream handling, unary calls, grpc gateway |
 | [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. | hexagonal architecture, ports and adapters, clean architecture, dependency inversion, core business logic, how do i decouple my code, separate business logic from framework |
 | [humanizer](skills/coding/humanizer/SKILL.md) | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation, comments, technical writing, readability, code clarity |
@@ -1041,7 +1045,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (313 skills)
+### Implementation (Build Features) (317 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1061,6 +1065,7 @@ MIT — All skills are freely available and redistributable.
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Coding | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. |
+| [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Agent | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. |
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" |
 | [backfill-strategy](skills/trading/backfill-strategy/SKILL.md) | Trading | "Provides Strategic data backfill for populating historical data in trading systems" |
@@ -1163,6 +1168,9 @@ MIT — All skills are freely available and redistributable.
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Integrates selected frameworks into applications using dependency injection, configuration management, extension mechanisms, lifecycle management, and testable architecture patterns to minimize coupling and maximize maintainability. |
 | [gitops-troubleshooting](skills/agent/gitops-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves GitOps synchronization failures, drift detection issues, and reconciliation problems for ArgoCD and Flux deployments with actionable debugging commands. |
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Coding | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. |
+| [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Coding | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. |
+| [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Coding | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. |
+| [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Coding | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Linux | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. |
 | [health](skills/trading/health/SKILL.md) | Trading | "Provides Exchange system health monitoring and connectivity status tracking" |
@@ -1838,6 +1846,7 @@ MIT — All skills are freely available and redistributable.
 | [architecture](skills/cncf/architecture/SKILL.md) | Cncf | "Creates or updates ARCHITECTURE.md documenting the project's design" components, and technical decisions for CNCF projects | Reference |
 | [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Coding | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | Reference |
 | [argo](skills/cncf/argo/SKILL.md) | Cncf | "Argo in Cloud-Native Engineering - Kubernetes-Native Workflow, CI/CD" and Governance | Reference |
+| [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Agent | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. | Implementation |
 | [ask-questions-if-underspecified](skills/agent/ask-questions-if-underspecified/SKILL.md) | Agent | Implements intelligent ask questions if underspecified with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | Implementation |
 | [async-runtime](skills/programming/async-runtime/SKILL.md) | Programming | Implements and analyzes Rust async runtime patterns including tokio, async-std, and custom executors for high-performance concurrent systems. | Reference |
@@ -2087,6 +2096,9 @@ MIT — All skills are freely available and redistributable.
 | [google-drive-automation](skills/agent/google-drive-automation/SKILL.md) | Agent | Implements intelligent google drive automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [graph-traversal](skills/programming/graph-traversal/SKILL.md) | Programming | Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving. | Reference |
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Coding | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. | Implementation |
+| [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Coding | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. | Implementation |
+| [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Coding | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. | Implementation |
+| [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Coding | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. | Implementation |
 | [grpc](skills/cncf/grpc/SKILL.md) | Cncf | "gRPC in Remote Procedure Call - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices | Implementation |
 | [harbor](skills/cncf/harbor/SKILL.md) | Cncf | "Configures harbor in cloud-native engineering - container registry for cloud-native deployment and infrastructure management." | Reference |
