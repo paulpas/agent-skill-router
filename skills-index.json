@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-20T22:44:59.895401Z",
-  "totalSkills": 710,
+  "generatedAt": "2026-05-21T00:49:27.232325Z",
+  "totalSkills": 715,
   "domains": {
     "agent": 249,
     "cncf": 169,
-    "coding": 168,
+    "coding": 173,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 308,
+    "implementation": 313,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -896,6 +896,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/api-gateway-design/SKILL.md"
+    },
+    {
+      "name": "api-security-patterns",
+      "domain": "coding",
+      "description": "Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "api security",
+        "authentication middleware",
+        "JWT tokens",
+        "rate limiting",
+        "input sanitization",
+        "CORS",
+        "how do i secure my API",
+        "OWASP API"
+      ],
+      "relatedSkills": [
+        "rest-api-patterns",
+        "graphql-api-design",
+        "input-validation",
+        "fastapi-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-security-patterns/SKILL.md"
     },
     {
       "name": "api-security-testing",
@@ -7079,6 +7105,31 @@
       "source": "skills/programming/graph-traversal/SKILL.md"
     },
     {
+      "name": "graphql-api-design",
+      "domain": "coding",
+      "description": "Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "graphql",
+        "apollo federation",
+        "dataloader",
+        "n+1 query",
+        "query complexity",
+        "graphql schema",
+        "graphql authorization",
+        "how do i design a graphql api"
+      ],
+      "relatedSkills": [
+        "rest-api-patterns",
+        "api-security-patterns",
+        "input-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/graphql-api-design/SKILL.md"
+    },
+    {
       "name": "grpc",
       "domain": "cncf",
       "description": "\"gRPC in Remote Procedure Call - cloud native architecture, patterns\" pitfalls, and best practices",
@@ -12645,6 +12696,32 @@
       "source": "skills/agent/resource-optimizer/SKILL.md"
     },
     {
+      "name": "rest-api-caching",
+      "domain": "coding",
+      "description": "Implements HTTP caching strategies for REST APIs including Cache-Control header design, ETag/conditional GET, stale-while-revalidate patterns, cache key construction, Vary header configuration, and invalidation strategies to reduce latency and server load.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "http caching",
+        "cache-control",
+        "etag",
+        "conditional request",
+        "stale-while-revalidate",
+        "304 not modified",
+        "rest api caching",
+        "vary header"
+      ],
+      "relatedSkills": [
+        "fastapi-patterns",
+        "rest-api-patterns",
+        "system-design-fundamentals",
+        "performance-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rest-api-caching/SKILL.md"
+    },
+    {
       "name": "rest-api-patterns",
       "domain": "coding",
       "description": "Implements RESTful API design patterns including resource modeling, HTTP method dispatching, structured error responses per RFC 7807, pagination, filtering, versioning, and HATEOAS for production-quality APIs.",
@@ -12669,6 +12746,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/rest-api-patterns/SKILL.md"
+    },
+    {
+      "name": "rest-api-testing",
+      "domain": "coding",
+      "description": "Tests REST API endpoints comprehensively including unit tests, integration tests, contract validation against OpenAPI spec, idempotency checks, error-path coverage, pagination boundary conditions, and load testing with Locust.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "rest api testing",
+        "contract testing",
+        "openapi spec validation",
+        "pytest fastapi",
+        "http method testing",
+        "idempotency test",
+        "locust load test",
+        "api integration test",
+        "swagger schema validation",
+        "304 not modified test",
+        "rest endpoint test"
+      ],
+      "relatedSkills": [
+        "fastapi-patterns",
+        "rest-api-patterns",
+        "test-driven-development",
+        "code-validation",
+        "api-security-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rest-api-testing/SKILL.md"
     },
     {
       "name": "review",
@@ -14601,6 +14708,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/system-architecture/SKILL.md"
+    },
+    {
+      "name": "system-design-fundamentals",
+      "domain": "coding",
+      "description": "Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable distributed applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "system design",
+        "capacity planning",
+        "cache strategy",
+        "load balancing",
+        "rate limiting",
+        "CDN placement",
+        "database sharding",
+        "circuit breaker",
+        "how do i design a scalable system",
+        "request estimation",
+        "traffic scaling",
+        "horizontal scaling"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "distributed-systems-architecture",
+        "event-driven-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/system-design-fundamentals/SKILL.md"
     },
     {
       "name": "systematic-debugging",
