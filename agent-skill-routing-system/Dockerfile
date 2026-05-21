@@ -53,7 +53,7 @@ ARG SKILL_COMPRESSION_LAZY_WRITE_INTERVAL_MS=5000
 FROM node:24-alpine AS runtime
 
 # Install git and openssh-client for skill repository management with SSH support
-RUN apk add --no-cache git openssh-client
+RUN apk add --no-cache git openssh-client chromium
 
 WORKDIR /app
 
@@ -67,6 +67,7 @@ RUN adduser -D -s /bin/sh appuser && \
     chmod 755 /cache
 
 COPY --from=builder /app/dist ./dist
+ENV PUPPETEER_SKIP_DOWNLOAD=true
 COPY package*.json ./
 RUN npm ci --omit=dev
 COPY samples/ ./samples/
@@ -165,6 +166,7 @@ ENV JS_RENDERING_ENABLED=false
 ENV JS_RENDER_TIMEOUT_MS=5000
 ENV JS_RENDER_FALLBACK=true
 ENV LINK_RESOLUTION_MODE=inline
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 ENV SEMANTIC_TOP_K=3
 ENV SEMANTIC_SIMILARITY_THRESHOLD=0.3
 
