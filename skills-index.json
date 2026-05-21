@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T20:35:04.134302Z",
-  "totalSkills": 756,
+  "generatedAt": "2026-05-21T21:29:39.603438Z",
+  "totalSkills": 757,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 206,
+    "coding": 207,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 351,
+    "implementation": 352,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -7104,29 +7104,24 @@
     {
       "name": "framework-utilization",
       "domain": "coding",
-      "description": "Integrates selected frameworks into applications using dependency injection, configuration management, extension mechanisms, lifecycle management, and testable architecture patterns to minimize coupling and maximize maintainability.",
+      "description": "Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "framework integration",
-        "dependency injection",
-        "middleware patterns",
-        "framework hooks",
-        "plugin architecture",
-        "framework lifecycle",
-        "framework configuration",
-        "extension points",
-        "framework testing",
-        "decouple framework",
-        "framework coupling",
-        "wire dependencies"
+        "framework utilization",
+        "three-pass learning",
+        "leverage framework patterns",
+        "fight the framework",
+        "how do i learn a new framework",
+        "framework conventions",
+        "framework adoption"
       ],
       "relatedSkills": [
-        "framework-selection",
-        "hexagonal-architecture",
-        "pydantic-config",
-        "software-design-principles"
+        "requirement-driven-selection",
+        "dependency-inversion-principle",
+        "modular-design",
+        "test-driven-development"
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-utilization/SKILL.md"
@@ -13454,6 +13449,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/requesting-code-review/SKILL.md"
+    },
+    {
+      "name": "requirement-driven-selection",
+      "domain": "coding",
+      "description": "Evaluates technology candidates against measurable project requirements using weighted decision matrices, evidence-based validation, and ADR documentation to select the optimal framework or tool for a given context.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "requirement driven selection",
+        "ADR",
+        "weighted scoring matrix",
+        "how do i choose a framework",
+        "technology decision record",
+        "criteria based selection",
+        "tech stack choice"
+      ],
+      "relatedSkills": [
+        "dependency-inversion-principle",
+        "modular-design",
+        "test-driven-development",
+        "hexagonal-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/requirement-driven-selection/SKILL.md"
     },
     {
       "name": "resource-management",
