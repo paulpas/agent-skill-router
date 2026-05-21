@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T18:33:27.385795Z",
-  "totalSkills": 750,
+  "generatedAt": "2026-05-21T18:53:03.710033Z",
+  "totalSkills": 751,
   "domains": {
     "agent": 254,
     "cncf": 170,
-    "coding": 201,
+    "coding": 202,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 345,
+    "implementation": 346,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -8416,6 +8416,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/inngest/SKILL.md"
+    },
+    {
+      "name": "input-processing-pipelines",
+      "domain": "coding",
+      "description": "Builds composable data processing pipelines that validate, transform, filter, and aggregate structured or semi-structured input through typed stages with error handling and observability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "input processing pipeline",
+        "data transformation",
+        "ETL pipeline",
+        "stage processing",
+        "data validation pipeline",
+        "map filter reduce",
+        "data cleaning pipeline",
+        "input sanitization chain",
+        "structured data extraction",
+        "data flow architecture",
+        "pipeline composition"
+      ],
+      "relatedSkills": [
+        "input-validation",
+        "output-sanitization",
+        "performance-optimization",
+        "test-driven-development"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/input-processing-pipelines/SKILL.md"
     },
     {
       "name": "input-validation",
