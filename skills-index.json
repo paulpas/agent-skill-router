@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T11:23:16.497987Z",
-  "totalSkills": 736,
+  "generatedAt": "2026-05-21T12:08:46.256538Z",
+  "totalSkills": 738,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 188,
+    "coding": 190,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 333,
+    "implementation": 335,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -4835,6 +4835,60 @@
       ],
       "version": "1.0.0",
       "source": "skills/go/database-patterns/SKILL.md"
+    },
+    {
+      "name": "ddd-context-mapping",
+      "domain": "coding",
+      "description": "Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "context mapping",
+        "anticorruption layer",
+        "acl implementation",
+        "shared kernel",
+        "published language",
+        "customer supplier relationship",
+        "bounded context integration",
+        "ddd strategic patterns",
+        "conformist pattern",
+        "pipeline pattern",
+        "open host service"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "domain-modeling",
+        "ddd-tactical-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ddd-context-mapping/SKILL.md"
+    },
+    {
+      "name": "ddd-tactical-patterns",
+      "domain": "coding",
+      "description": "Implements DDD tactical patterns including repositories, domain services, specifications, factories, unit of work, and command/query separation for building robust domain models.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ddd tactical patterns",
+        "repository pattern",
+        "specification pattern",
+        "domain service",
+        "aggregate factory",
+        "unit of work",
+        "command query separation",
+        "CQRS within bounded context",
+        "composable business rules"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "domain-events",
+        "cqrs-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ddd-tactical-patterns/SKILL.md"
     },
     {
       "name": "dependency-graph-builder",
