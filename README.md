@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 07:48:16 UTC  
-> **Total skills:** 730
+> **Last updated:** 2026-05-21 08:41:33 UTC  
+> **Total skills:** 731
 
 ## Skills by Domain
 
@@ -705,7 +705,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (184 skills)
+### Coding (185 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -881,6 +881,7 @@ MIT — All skills are freely available and redistributable.
 | [system-design-fundamentals](skills/coding/system-design-fundamentals/SKILL.md) | Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable... | system design, capacity planning, cache strategy, load balancing, rate limiting, CDN placement, database sharding, circuit breaker, how do i design a scalable system, request estimation, traffic scaling, horizontal scaling |
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. | systematic debugging, root cause analysis, stack trace, binary search debugging, production outage, how do i debug systematically, five whys, bug isolation |
 | [technical-debt-management](skills/coding/technical-debt-management/SKILL.md) | Tracks, categorizes, and systematically reduces technical debt across codebases using quantitative scoring, prioritization matrices, and automated refactoring strategies. | technical debt, code quality, refactoring strategy, legacy code, debt tracking, interest rate, how do i reduce technical debt, debt inventory |
+| [technology-adoption](skills/coding/technology-adoption/SKILL.md) | Maps concrete project requirements to specific technology recommendations using domain-driven decision matrices, adoption risk scoring, and phased rollout strategies for selecting and leveraging technologies effectively. | technology adoption, tech stack choice, how do i choose technology, select framework for my project, pick the right tool, technology decision, framework recommendation, technology leverage, ecosystem navigation, adoption strategy |
 | [test-driven-development](skills/coding/test-driven-development/SKILL.md) | Implements test-driven development (TDD) cycle with red-green-refactor workflow, writing failing unit tests before implementation code to drive design and catch regressions early. | test-driven development, tdd, red-green-refactor, unit testing, how do i write tests first, test-first approach, behavior driven |
 | [testing-unit-integration-e2e](skills/coding/testing-unit-integration-e2e/SKILL.md) | Implements comprehensive testing strategies (unit, integration, contract, and end-to-end) with appropriate test doubles, isolation levels, and coverage thresholds for reliable software delivery. | unit testing, integration testing, contract testing, end-to-end testing, e2e, test doubles, test isolation, smoke tests |
 | [time-series-forecasting](skills/coding/time-series-forecasting/SKILL.md) | "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction" | time series forecasting, ARIMA, exponential smoothing, LSTM, forecasting, time series prediction |
@@ -1056,7 +1057,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (327 skills)
+### Implementation (Build Features) (328 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1351,6 +1352,7 @@ MIT — All skills are freely available and redistributable.
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Coding | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. |
 | [tail-risk](skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event protection for risk management and algorithmic trading execution." |
 | [technical-debt-management](skills/coding/technical-debt-management/SKILL.md) | Coding | Tracks, categorizes, and systematically reduces technical debt across codebases using quantitative scoring, prioritization matrices, and automated refactoring strategies. |
+| [technology-adoption](skills/coding/technology-adoption/SKILL.md) | Coding | Maps concrete project requirements to specific technology recommendations using domain-driven decision matrices, adoption risk scoring, and phased rollout strategies for selecting and leveraging technologies effectively. |
 | [terraform](skills/cncf/terraform/SKILL.md) | Cncf | Implements Terraform infrastructure as code for cloud provisioning with state management, modules, remote backends, and troubleshooting |
 | [test-driven-development](skills/coding/test-driven-development/SKILL.md) | Coding | Implements test-driven development (TDD) cycle with red-green-refactor workflow, writing failing unit tests before implementation code to drive design and catch regressions early. |
 | [testing-strategies](skills/go/testing-strategies/SKILL.md) | Go | Implements comprehensive testing strategies for Go including unit tests, integration tests, benchmarks, table-driven tests, and mock patterns. |
@@ -2463,6 +2465,7 @@ MIT — All skills are freely available and redistributable.
 | [task-intelligence](skills/agent/task-intelligence/SKILL.md) | Agent | Implements intelligent task intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [technical-debt-management](skills/coding/technical-debt-management/SKILL.md) | Coding | Tracks, categorizes, and systematically reduces technical debt across codebases using quantitative scoring, prioritization matrices, and automated refactoring strategies. | Implementation |
 | [technical-documentation](skills/writing/technical-documentation/SKILL.md) | Writing | Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices. | Reference |
+| [technology-adoption](skills/coding/technology-adoption/SKILL.md) | Coding | Maps concrete project requirements to specific technology recommendations using domain-driven decision matrices, adoption risk scoring, and phased rollout strategies for selecting and leveraging technologies effectively. | Implementation |
 | [tekton](skills/cncf/tekton/SKILL.md) | Cncf | "Provides Tekton in Cloud-Native Engineering - A cloud-native Pipeline resource" | Reference |
 | [telemetry](skills/cncf/telemetry/SKILL.md) | Cncf | "OpenTelemetry in Observability - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [temporal-golang-pro](skills/agent/temporal-golang-pro/SKILL.md) | Agent | Implements intelligent temporal golang pro with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

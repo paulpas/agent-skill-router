@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T07:48:15.751096Z",
-  "totalSkills": 730,
+  "generatedAt": "2026-05-21T08:41:32.505701Z",
+  "totalSkills": 731,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 183,
+    "coding": 184,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 327,
+    "implementation": 328,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -15192,6 +15192,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/writing/technical-documentation/SKILL.md"
+    },
+    {
+      "name": "technology-adoption",
+      "domain": "coding",
+      "description": "Maps concrete project requirements to specific technology recommendations using domain-driven decision matrices, adoption risk scoring, and phased rollout strategies for selecting and leveraging technologies effectively.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "technology adoption",
+        "tech stack choice",
+        "how do i choose technology",
+        "select framework for my project",
+        "pick the right tool",
+        "technology decision",
+        "framework recommendation",
+        "technology leverage",
+        "ecosystem navigation",
+        "adoption strategy"
+      ],
+      "relatedSkills": [
+        "framework-selection",
+        "framework-utilization",
+        "software-architecture",
+        "hexagonal-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/technology-adoption/SKILL.md"
     },
     {
       "name": "tekton",
