@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T22:07:16.040886Z",
-  "totalSkills": 758,
+  "generatedAt": "2026-05-21T22:40:42.782586Z",
+  "totalSkills": 759,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 208,
+    "coding": 209,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 353,
+    "implementation": 354,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -12536,6 +12536,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/open-policy-agent-opa/SKILL.md"
+    },
+    {
+      "name": "polyglot-development",
+      "domain": "coding",
+      "description": "Implements language selection heuristics, polyglot monorepo patterns, and cross-language communication protocols for multi-language software systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "polyglot",
+        "multi-language",
+        "language selection",
+        "go vs typescript",
+        "rust vs python",
+        "monorepo build",
+        "cross-language communication",
+        "protocol buffer",
+        "interop patterns",
+        "which language to use"
+      ],
+      "relatedSkills": [
+        "framework-selection",
+        "system-architecture",
+        "data-encoding",
+        "design-patterns-and-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/polyglot-development/SKILL.md"
     },
     {
       "name": "ports-patterns",
