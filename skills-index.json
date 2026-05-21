@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T19:34:51.809120Z",
-  "totalSkills": 752,
+  "generatedAt": "2026-05-21T20:03:56.246799Z",
+  "totalSkills": 754,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 202,
+    "coding": 204,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 347,
+    "implementation": 349,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -4975,6 +4975,31 @@
       "source": "skills/coding/ddd-context-mapping/SKILL.md"
     },
     {
+      "name": "ddd-refactoring",
+      "domain": "coding",
+      "description": "Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ddd refactoring",
+        "extract bounded context",
+        "split aggregate",
+        "god object refactor",
+        "primitive obsession",
+        "anticorruption layer",
+        "how do i move to ddd",
+        "legacy code to ddd"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "ddd-context-mapping",
+        "ddd-tactical-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ddd-refactoring/SKILL.md"
+    },
+    {
       "name": "ddd-tactical-patterns",
       "domain": "coding",
       "description": "Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management.",
@@ -5658,6 +5683,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/domain-modeling/SKILL.md"
+    },
+    {
+      "name": "domain-testing",
+      "domain": "coding",
+      "description": "Verifies DDD domain model correctness through invariant testing of aggregates and value objects, specification candidate tests, test double strategies, and domain event publishing assertions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "domain testing",
+        "aggregate testing",
+        "value object tests",
+        "specification patterns",
+        "ddd unit tests",
+        "invariant verification",
+        "how do i test domain models",
+        "domain layer testing"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "ddd-tactical-patterns",
+        "domain-events"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/domain-testing/SKILL.md"
     },
     {
       "name": "dragonfly",

@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 19:34:52 UTC  
-> **Total skills:** 752
+> **Last updated:** 2026-05-21 20:03:57 UTC  
+> **Total skills:** 754
 
 ## Skills by Domain
 
@@ -707,7 +707,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (203 skills)
+### Coding (205 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -771,6 +771,7 @@ MIT — All skills are freely available and redistributable.
 | [database-migrations](skills/coding/database-migrations/SKILL.md) | Implements zero-downtime database migration strategies including expand/contract, dual-write, and backfill patterns for safe schema evolution across production environments. | database migrations, schema evolution, zero downtime migrations, database deployment, expand contract pattern, dual write migration, database rollback, migration strategy, how do i change my database schema safely |
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. | command pattern, ddd command handler, command bus, how do i implement commands, use case orchestration, command validation, cqrs command side, write model handlers, transaction coordination |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems. | context mapping, anticorruption layer, acl implementation, shared kernel, published language, customer supplier relationship, bounded context integration, ddd strategic patterns, conformist pattern, pipeline pattern, open host service |
+| [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | ddd refactoring, extract bounded context, split aggregate, god object refactor, primitive obsession, anticorruption layer, how do i move to ddd, legacy code to ddd |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. | specification pattern, ddd tactical patterns, domain service, aggregate factory, unit of work, repository implementation, how do i implement specifications, cross-aggregate operations |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | dependency inversion principle, DIP, dependency injection, inversion of control, IoC, loose coupling, high level low level abstraction, constructor injection, factory pattern, testable architecture |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | CVE, dependency management, vulnerability scanning, dependency updates, security patching, SCA, software composition analysis, vulnerability remediation |
@@ -785,6 +786,7 @@ MIT — All skills are freely available and redistributable.
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | domain events, domain event, event publishing, event handler, event dispatcher, in-process event bus, how do i decouple aggregates, idempotent event handling |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | domain modeling, ubiquitous language, bounded context, subdomain classification, domain map, how do i understand the domain, strategic design |
+| [domain-testing](skills/coding/domain-testing/SKILL.md) | Verifies DDD domain model correctness through invariant testing of aggregates and value objects, specification candidate tests, test double strategies, and domain event publishing assertions. | domain testing, aggregate testing, value object tests, specification patterns, ddd unit tests, invariant verification, how do i test domain models, domain layer testing |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | dry principle, don't repeat yourself, code duplication, refactoring, code duplication detection, refactoring guidance, maintainable code, code reuse |
 | [eda](skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | engineering principles, SOLID, DRY, KISS, separation of concerns, code architecture, defensive programming, clean code |
@@ -1078,7 +1080,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (347 skills)
+### Implementation (Build Features) (349 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1166,6 +1168,7 @@ MIT — All skills are freely available and redistributable.
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. |
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Coding | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems. |
+| [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" |
@@ -1184,6 +1187,7 @@ MIT — All skills are freely available and redistributable.
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. |
+| [domain-testing](skills/coding/domain-testing/SKILL.md) | Coding | Verifies DDD domain model correctness through invariant testing of aggregates and value objects, specification candidate tests, test double strategies, and domain event publishing assertions. |
 | [drawdown-analysis](skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." |
 | [drawdown-control](skills/trading/drawdown-control/SKILL.md) | Trading | "Implements maximum drawdown control and equity preservation for risk management and algorithmic trading execution." |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Coding | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases |
@@ -2067,6 +2071,7 @@ MIT — All skills are freely available and redistributable.
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. | Implementation |
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Coding | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. | Implementation |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems. | Implementation |
+| [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | Implementation |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. | Implementation |
 | [dependency-graph-builder](skills/agent/dependency-graph-builder/SKILL.md) | Agent | Implements intelligent dependency graph builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | Implementation |
@@ -2095,6 +2100,7 @@ MIT — All skills are freely available and redistributable.
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | Implementation |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | Implementation |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Coding | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | Reference |
+| [domain-testing](skills/coding/domain-testing/SKILL.md) | Coding | Verifies DDD domain model correctness through invariant testing of aggregates and value objects, specification candidate tests, test double strategies, and domain event publishing assertions. | Implementation |
 | [dragonfly](skills/cncf/dragonfly/SKILL.md) | Cncf | "Provides Dragonfly in Cloud-Native Engineering - P2P file distribution" | Reference |
 | [drawdown-analysis](skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." | Implementation |
 | [drawdown-control](skills/trading/drawdown-control/SKILL.md) | Trading | "Implements maximum drawdown control and equity preservation for risk management and algorithmic trading execution." | Implementation |
