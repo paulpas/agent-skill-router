@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T03:29:08.671390Z",
-  "totalSkills": 723,
+  "generatedAt": "2026-05-21T04:17:34.065070Z",
+  "totalSkills": 725,
   "domains": {
     "agent": 250,
     "cncf": 169,
-    "coding": 180,
+    "coding": 182,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 321,
+    "implementation": 323,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -406,6 +406,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ai-agents-architect/SKILL.md"
+    },
+    {
+      "name": "ai-assisted-engineering",
+      "domain": "coding",
+      "description": "Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ai-assisted engineering",
+        "AI pair programming",
+        "LLM code generation",
+        "prompt engineering for code",
+        "automated code review with AI",
+        "AI test generation",
+        "how do i use AI in software development",
+        "code generation guardrails"
+      ],
+      "relatedSkills": [
+        "coding-code-quality-policies",
+        "coding-testing-strategy",
+        "coding-security-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ai-assisted-engineering/SKILL.md"
     },
     {
       "name": "ai-dev-jobs-mcp",
@@ -11840,6 +11865,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/planning-with-files/SKILL.md"
+    },
+    {
+      "name": "platform-engineering",
+      "domain": "coding",
+      "description": "Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "platform engineering",
+        "internal developer platform",
+        "IDP",
+        "golden paths",
+        "self-service infrastructure",
+        "Backstage.io",
+        "developer experience metrics",
+        "how do i build a developer platform"
+      ],
+      "relatedSkills": [
+        "coding-cloud-native-architecture",
+        "cncf-kubernetes",
+        "coding-software-delivery-pipelines",
+        "coding-security-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/platform-engineering/SKILL.md"
     },
     {
       "name": "policy-agent-opa",
