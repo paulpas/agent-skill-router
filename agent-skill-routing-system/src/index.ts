@@ -279,15 +279,16 @@ export class AgentSkillRoutingApp {
         try {
           // Phase 6: Call new compression-aware method with proper type
           const registry = this.router!.getRegistry() as SkillRegistryWithCompression;
-          const content = await registry.getSkillContentWithCompression?.(name, domain, compressionVersion) ||
-            await registry.getSkillContent(name);
+          const result = await registry.getSkillContentWithCompression?.(name, domain, compressionVersion);
+          const content = result?.content || await registry.getSkillContent(name);
+          const compressPercent = result?.compressPercent ?? 0;
 
           // Phase 6: Add compression response headers
           reply
             .header('Content-Type', 'text/plain; charset=utf-8')
             .header('X-Compression-Version', compressionVersion)
             .header('X-Compression-Tokens', '0') // TODO: track token count
-            .header('X-Compression-Ratio', '1.0') // TODO: calculate ratio
+            .header('X-Compression-Percent', String(compressPercent))
             .header('X-Compression-Source', 'original') // TODO: track source
             .send(content);
         } catch (error) {

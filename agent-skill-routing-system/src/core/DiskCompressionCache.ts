@@ -19,7 +19,7 @@ export interface CompressionMetadata {
     lastAccessed: string;
     accessCount: number;
     tokens: number;
-    compressionRatio: number;
+    compressPercent: number;
     status: 'fresh' | 'expired' | 'deferred_retry';
   }>;
   lastCleanup: string;
@@ -256,7 +256,7 @@ export class DiskCompressionCache {
       return {
         content,
         tokens: versionInfo.tokens,
-        compressionRatio: versionInfo.compressionRatio,
+        compressPercent: versionInfo.compressPercent,
         version,
         generatedAt: createdDate,
         isValid: true,
@@ -567,7 +567,7 @@ export class DiskCompressionCache {
           lastAccessed: versions.brief.generatedAt.toISOString(),
           accessCount: 0,
           tokens: versions.brief.tokens,
-          compressionRatio: versions.brief.compressionRatio,
+          compressPercent: versions.brief.compressPercent,
           status: 'fresh',
         },
         moderate: {
@@ -575,7 +575,7 @@ export class DiskCompressionCache {
           lastAccessed: versions.moderate.generatedAt.toISOString(),
           accessCount: 0,
           tokens: versions.moderate.tokens,
-          compressionRatio: versions.moderate.compressionRatio,
+          compressPercent: versions.moderate.compressPercent,
           status: 'fresh',
         },
         detailed: {
@@ -583,7 +583,7 @@ export class DiskCompressionCache {
           lastAccessed: versions.detailed.generatedAt.toISOString(),
           accessCount: 0,
           tokens: versions.detailed.tokens,
-          compressionRatio: versions.detailed.compressionRatio,
+          compressPercent: versions.detailed.compressPercent,
           status: 'fresh',
         },
       },

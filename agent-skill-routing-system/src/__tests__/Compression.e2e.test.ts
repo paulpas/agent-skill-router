@@ -154,7 +154,7 @@ Long content here that should be compressed.`;
     const version = {
       content: '# Brief\n\nShort',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief' as const,
       generatedAt: new Date(),
       isValid: true,
@@ -173,7 +173,7 @@ Long content here that should be compressed.`;
       brief: {
         content: '# Brief',
         tokens: 50,
-        compressionRatio: 0.1,
+        compressPercent: 10,
         version: 'brief' as const,
         generatedAt: new Date(),
         isValid: true,
@@ -182,7 +182,7 @@ Long content here that should be compressed.`;
       moderate: {
         content: '# Moderate',
         tokens: 100,
-        compressionRatio: 0.25,
+        compressPercent: 25,
         version: 'moderate' as const,
         generatedAt: new Date(),
         isValid: true,
@@ -191,7 +191,7 @@ Long content here that should be compressed.`;
       detailed: {
         content: '# Detailed',
         tokens: 200,
-        compressionRatio: 0.5,
+        compressPercent: 50,
         version: 'detailed' as const,
         generatedAt: new Date(),
         isValid: true,
@@ -213,7 +213,7 @@ Long content here that should be compressed.`;
     const version = {
       content: '# Test',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief' as const,
       generatedAt: new Date(),
       isValid: true,
@@ -233,7 +233,7 @@ Long content here that should be compressed.`;
     const version = {
       content: '# Test',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief' as const,
       generatedAt: new Date(),
       isValid: true,

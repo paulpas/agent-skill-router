@@ -30,7 +30,7 @@ export interface CompressedSkill {
   compressedLength: number;
   compressionLevel: number;
   tokensSaved: number;
-  ratio: number;
+  compressPercent: number;
   isCompressed: boolean;
 }
 
@@ -41,7 +41,7 @@ export interface TokenEstimate {
   before: number;
   after: number;
   saved: number;
-  ratio: number;
+  compressPercent: number;
 }
 
 /**
@@ -278,7 +278,7 @@ export class SkillCompressor {
         compressedLength: content.length,
         compressionLevel: 0,
         tokensSaved: 0,
-        ratio: 1,
+        compressPercent: 0,
         isCompressed: false,
       };
     }
@@ -291,7 +291,7 @@ export class SkillCompressor {
         compressedLength: content.length,
         compressionLevel: 0,
         tokensSaved: 0,
-        ratio: 1,
+        compressPercent: 0,
         isCompressed: false,
       };
     }
@@ -311,7 +311,7 @@ export class SkillCompressor {
       const originalTokens = this.estimateTokens(content);
       const compressedTokens = this.estimateTokens(compressed);
       const tokensSaved = Math.max(0, originalTokens - compressedTokens);
-      const ratio = originalTokens > 0 ? compressedTokens / originalTokens : 1;
+      const compressPercent = originalTokens > 0 ? Math.round((1 - compressedTokens / originalTokens) * 100) : 0;
 
       return {
         content: compressed,
@@ -319,7 +319,7 @@ export class SkillCompressor {
         compressedLength: compressed.length,
         compressionLevel: level,
         tokensSaved,
-        ratio,
+        compressPercent,
 isCompressed: true,
        };
      } catch {
@@ -330,7 +330,7 @@ isCompressed: true,
         compressedLength: content.length,
         compressionLevel: 0,
         tokensSaved: 0,
-        ratio: 1,
+        compressPercent: 0,
         isCompressed: false,
       };
     }
@@ -399,7 +399,7 @@ isCompressed: true,
       before: originalTokens,
       after: compressedTokens,
       saved: Math.max(0, originalTokens - compressedTokens),
-      ratio: originalTokens > 0 ? compressedTokens / originalTokens : 1,
+      compressPercent: originalTokens > 0 ? Math.round((1 - compressedTokens / originalTokens) * 100) : 0,
     };
   }
 

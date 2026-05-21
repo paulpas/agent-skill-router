@@ -61,13 +61,18 @@ export interface SkillRegistryConfig {
  * Extended SkillRegistry interface with compression methods
  * Used for type-safe access to compression-aware methods
  */
+interface CompressedResult {
+  content: string;
+  compressPercent: number;
+}
+
 export interface SkillRegistryWithCompression extends SkillRegistry {
   /** Get skill content with cache layering (memory → disk → original) */
   getSkillContentWithCompression(
     skillName: string,
     domain: string,
     versionHint?: 'brief' | 'moderate' | 'detailed'
-  ): Promise<string>;
+  ): Promise<CompressedResult>;
 }
 
 /**
@@ -525,7 +530,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
           compressionLevel: level,
           tokensBefore: compressed.originalLength,
           tokensAfter: compressed.compressedLength,
-          ratio: compressed.ratio,
+          compressPercent: compressed.compressPercent,
           cacheSize: this.currentCacheSizeBytes,
           error: null,
         });
@@ -535,7 +540,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
           level,
           originalBytes: compressed.originalLength,
           compressedBytes: compressed.compressedLength,
-          ratio: compressed.ratio.toFixed(2),
+          compressPercent: compressed.compressPercent,
           tokensSaved: compressed.tokensSaved,
           cacheSize: (this.currentCacheSizeBytes / 1024 / 1024).toFixed(1),
         });
@@ -1326,9 +1331,9 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       this.logger.debug('Pre-computed compressed versions', {
         skillName,
         domain,
-        briefRatio: compressed.brief.compressionRatio.toFixed(2),
-        moderateRatio: compressed.moderate.compressionRatio.toFixed(2),
-        detailedRatio: compressed.detailed.compressionRatio.toFixed(2),
+        briefPercent: compressed.brief.compressPercent,
+        moderatePercent: compressed.moderate.compressPercent,
+        detailedPercent: compressed.detailed.compressPercent,
       });
     } catch (error) {
       // Fail gracefully: log error and increment retry counter
@@ -1345,18 +1350,18 @@ export class SkillRegistry implements SkillRegistryWithCompression {
    * Get skill content with cache layering (memory → disk → original)
    * Implements versionHint for compression version selection
    */
-  async getSkillContentWithCompression(
+   async getSkillContentWithCompression(
     skillName: string,
     domain: string,
     versionHint?: 'brief' | 'moderate' | 'detailed'
-  ): Promise<string> {
+  ): Promise<CompressedResult> {
     // Guard: validate inputs
     if (!skillName || !domain) {
       this.logger.warn('Invalid input to getSkillContentWithCompression', {
         skillName,
         domain,
       });
-      return '';
+      return { content: '', compressPercent: 0 };
     }
 
     // Use moderate as default if not specified
@@ -1370,7 +1375,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
           skillName,
           version,
         });
-        return cached.content;
+        return { content: cached.content, compressPercent: cached.compressPercent };
       }
     }
 
@@ -1386,7 +1391,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
           skillName,
           version,
         });
-        return cached.content;
+        return { content: cached.content, compressPercent: cached.compressPercent };
       }
 
       // Check access count for deferred retry
@@ -1431,17 +1436,18 @@ export class SkillRegistry implements SkillRegistryWithCompression {
         version,
         compressionLevel,
         tokensSaved: compressed.tokensSaved,
-        ratio: compressed.ratio.toFixed(2),
+        compressPercent: compressed.compressPercent,
       });
       
-      return compressed.content;
+      return { content: compressed.content, compressPercent: compressed.compressPercent };
     } catch (error) {
       // Fail fast: if compression fails, return original content
       this.logger.warn('Compression failed, returning original content', {
         skillName,
         error: error instanceof Error ? error.message : String(error),
       });
-      return await this.getSkillContent(skillName, 0);
+      const originalContent = await this.getSkillContent(skillName, 0);
+      return { content: originalContent, compressPercent: 0 };
     }
   }
 

@@ -27,7 +27,7 @@ describe('DiskCompressionCache', () => {
       brief: {
         content: '# Brief\n\nShort version',
         tokens: 50,
-        compressionRatio: 0.1,
+        compressPercent: 10,
         version: 'brief',
         generatedAt: new Date(),
         isValid: true,
@@ -36,7 +36,7 @@ describe('DiskCompressionCache', () => {
       moderate: {
         content: '# Moderate\n\nMedium version',
         tokens: 100,
-        compressionRatio: 0.25,
+        compressPercent: 25,
         version: 'moderate',
         generatedAt: new Date(),
         isValid: true,
@@ -45,7 +45,7 @@ describe('DiskCompressionCache', () => {
       detailed: {
         content: '# Detailed\n\nFull version',
         tokens: 200,
-        compressionRatio: 0.5,
+        compressPercent: 50,
         version: 'detailed',
         generatedAt: new Date(),
         isValid: true,
@@ -67,7 +67,7 @@ describe('DiskCompressionCache', () => {
       brief: {
         content: '# Brief',
         tokens: 50,
-        compressionRatio: 0.1,
+        compressPercent: 10,
         version: 'brief',
         generatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), // 8 days old
         isValid: true,
@@ -76,7 +76,7 @@ describe('DiskCompressionCache', () => {
       moderate: {
         content: '# Moderate',
         tokens: 100,
-        compressionRatio: 0.25,
+        compressPercent: 25,
         version: 'moderate',
         generatedAt: new Date(),
         isValid: true,
@@ -85,7 +85,7 @@ describe('DiskCompressionCache', () => {
       detailed: {
         content: '# Detailed',
         tokens: 200,
-        compressionRatio: 0.5,
+        compressPercent: 50,
         version: 'detailed',
         generatedAt: new Date(),
         isValid: true,
@@ -117,7 +117,7 @@ describe('DiskCompressionCache', () => {
       brief: {
         content: '# Brief',
         tokens: 50,
-        compressionRatio: 0.1,
+        compressPercent: 10,
         version: 'brief',
         generatedAt: new Date(),
         isValid: true,
@@ -126,7 +126,7 @@ describe('DiskCompressionCache', () => {
       moderate: {
         content: '# Moderate',
         tokens: 100,
-        compressionRatio: 0.25,
+        compressPercent: 25,
         version: 'moderate',
         generatedAt: new Date(),
         isValid: true,
@@ -135,7 +135,7 @@ describe('DiskCompressionCache', () => {
       detailed: {
         content: '# Detailed',
         tokens: 200,
-        compressionRatio: 0.5,
+        compressPercent: 50,
         version: 'detailed',
         generatedAt: new Date(),
         isValid: true,
@@ -158,7 +158,7 @@ describe('DiskCompressionCache', () => {
       brief: {
         content: '# Brief',
         tokens: 50,
-        compressionRatio: 0.1,
+        compressPercent: 10,
         version: 'brief',
         generatedAt: new Date(),
         isValid: true,
@@ -167,7 +167,7 @@ describe('DiskCompressionCache', () => {
       moderate: {
         content: '# Moderate',
         tokens: 100,
-        compressionRatio: 0.25,
+        compressPercent: 25,
         version: 'moderate',
         generatedAt: new Date(),
         isValid: true,
@@ -176,7 +176,7 @@ describe('DiskCompressionCache', () => {
       detailed: {
         content: '# Detailed',
         tokens: 200,
-        compressionRatio: 0.5,
+        compressPercent: 50,
         version: 'detailed',
         generatedAt: new Date(),
         isValid: true,

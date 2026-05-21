@@ -17,7 +17,7 @@ describe('InMemoryCompressionCache', () => {
     const version: CompressedVersion = {
       content: '# Test\n\nContent',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief',
       generatedAt: new Date(),
       isValid: true,
@@ -40,7 +40,7 @@ describe('InMemoryCompressionCache', () => {
     const version: CompressedVersion = {
       content: '# Test',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief',
       generatedAt: new Date(),
       isValid: true,
@@ -62,7 +62,7 @@ describe('InMemoryCompressionCache', () => {
     const version: CompressedVersion = {
       content: '# Test',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief',
       generatedAt: new Date(),
       isValid: true,
@@ -80,7 +80,7 @@ describe('InMemoryCompressionCache', () => {
     const version: CompressedVersion = {
       content: '# Test',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief',
       generatedAt: new Date(),
       isValid: true,
@@ -102,7 +102,7 @@ describe('InMemoryCompressionCache', () => {
     const version: CompressedVersion = {
       content: '# Test',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief',
       generatedAt: new Date(),
       isValid: true,
@@ -121,7 +121,7 @@ describe('InMemoryCompressionCache', () => {
     const version: CompressedVersion = {
       content: '# Test',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief',
       generatedAt: new Date(),
       isValid: true,
@@ -142,7 +142,7 @@ describe('InMemoryCompressionCache', () => {
     const version: CompressedVersion = {
       content: '# Test',
       tokens: 50,
-      compressionRatio: 0.1,
+      compressPercent: 10,
       version: 'brief',
       generatedAt: new Date(),
       isValid: true,

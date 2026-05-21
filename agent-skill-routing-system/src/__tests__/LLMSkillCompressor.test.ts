@@ -255,14 +255,14 @@ Brief version of the skill content.`;
       expect(typeof result?.brief.tokens).toBe('number');
     });
 
-    test('calculates compression ratio accurately', async () => {
+    test('calculates compression percent accurately', async () => {
       mockLLMClient.setResponse('brief', '# Title\n\nSmall.');
 
       const result = await compressor.compressSkill('test-skill', sampleSkillContent);
 
       expect(result).toBeDefined();
-      expect(result?.brief.compressionRatio).toBeGreaterThan(0);
-      expect(result?.brief.compressionRatio).toBeLessThanOrEqual(1);
+      expect(result?.brief.compressPercent).toBeGreaterThanOrEqual(0);
+      expect(result?.brief.compressPercent).toBeLessThanOrEqual(100);
     });
 
     test('brief version has lowest token count', async () => {

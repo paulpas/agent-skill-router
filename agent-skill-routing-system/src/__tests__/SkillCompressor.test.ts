@@ -53,9 +53,9 @@ def review_code(content: str) -> dict:
       expect(result.compressionLevel).toBe(0);
     });
 
-    it('should have ratio 1.0 at level 0', () => {
+    it('should have compressPercent 0 at level 0', () => {
       const result = compressor.compress(sampleSkill, 0);
-      expect(result.ratio).toBe(1);
+      expect(result.compressPercent).toBe(0);
     });
   });
 
@@ -177,8 +177,8 @@ Normal **bold** text`;
       expect(estimate.after).toBeGreaterThan(0);
       expect(estimate.before).toBeGreaterThanOrEqual(estimate.after);
       expect(estimate.saved).toBeGreaterThanOrEqual(0);
-      expect(estimate.ratio).toBeGreaterThan(0);
-      expect(estimate.ratio).toBeLessThanOrEqual(1);
+      expect(estimate.compressPercent).toBeGreaterThanOrEqual(0);
+      expect(estimate.compressPercent).toBeLessThanOrEqual(100);
     });
 
     it('should save tokens proportional to compression level', () => {

@@ -11,7 +11,7 @@ export interface CompressionEvent {
   compressionLevel?: number;
   tokensBefore?: number;
   tokensAfter?: number;
-  ratio?: number;
+  compressPercent?: number;
   cacheHit?: boolean;
   ttlExpired?: boolean;
   error?: string | null;
@@ -30,7 +30,7 @@ export interface CompressionStats {
   cacheMisses: number;
   evictions: number;
   totalTokensSaved: number;
-  averageCompressionRatio: number;
+  averageCompressionPercent: number;
   maxCacheSizeBytes: number;
   currentCacheSizeBytes: number;
 }
@@ -56,7 +56,7 @@ export class CompressionMetrics {
   private cacheMisses = 0;
   private evictions = 0;
   private totalTokensSaved = 0;
-  private compressionRatios: number[] = [];
+  private compressionPercents: number[] = [];
   private currentCacheSizeBytes = 0;
   private maxCacheSizeBytes = 0;
 
@@ -98,8 +98,8 @@ export class CompressionMetrics {
           this.failedCompressions++;
         } else {
           this.successfulCompressions++;
-          if (event.ratio !== undefined) {
-            this.compressionRatios.push(event.ratio);
+          if (event.compressPercent !== undefined) {
+            this.compressionPercents.push(event.compressPercent);
           }
           if (event.tokensBefore !== undefined && event.tokensAfter !== undefined) {
             this.totalTokensSaved += event.tokensBefore - event.tokensAfter;
@@ -131,10 +131,10 @@ export class CompressionMetrics {
    * Get aggregated compression statistics
    */
   public getStats(): CompressionStats {
-    const averageRatio =
-      this.compressionRatios.length > 0
-        ? this.compressionRatios.reduce((a, b) => a + b, 0) / this.compressionRatios.length
-        : 1;
+    const averagePercent =
+      this.compressionPercents.length > 0
+        ? this.compressionPercents.reduce((a, b) => a + b, 0) / this.compressionPercents.length
+        : 0;
 
     return {
       totalOperations: this.totalOperations,
@@ -144,7 +144,7 @@ export class CompressionMetrics {
       cacheMisses: this.cacheMisses,
       evictions: this.evictions,
       totalTokensSaved: this.totalTokensSaved,
-      averageCompressionRatio: averageRatio,
+      averageCompressionPercent: averagePercent,
       maxCacheSizeBytes: this.maxCacheSizeBytes,
       currentCacheSizeBytes: this.currentCacheSizeBytes,
     };
@@ -183,7 +183,7 @@ export class CompressionMetrics {
     this.cacheMisses = 0;
     this.evictions = 0;
     this.totalTokensSaved = 0;
-    this.compressionRatios = [];
+    this.compressionPercents = [];
     this.currentCacheSizeBytes = 0;
   }
 
