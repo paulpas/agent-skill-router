@@ -1,523 +1,384 @@
 ---
 name: api-design
-description: Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services.
+description: Implements modern API design patterns (RESTful resource modeling, GraphQL schema design, gRPC service contracts) with consistent error handling, rate limiting, and versioning strategies for production backend systems.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: api design, rest api, endpoint design, api architecture, resource modeling, error handling patterns, pagination strategy, rate limiting, api versioning, graphql design, web service design, http methods, idempotency
+  triggers: api design, restful api, graphql schema, gRPC service, openapi specification, versioning strategy, rate limiting, backend architecture, API architecture, microservices interface
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, examples, do-dont]
-  related-skills: code-review, testing, security-review, documentation-writing
+  content-types: [code, guidance, do-dont, examples]
+  related-skills: async-programming, automated-testing
 ---
 
-# API Design Patterns
+# API Design Architect
 
-Designs and implements production-ready APIs that are consistent, versioned, well-documented, and resilient. Covers RESTful resource modeling, error handling contracts, pagination strategies, rate limiting, authentication integration, and API lifecycle management.
+I design and implement production-grade API interfaces across REST, GraphQL, and gRPC paradigms. When I am loaded, I enforce contract-first design, consistent error envelopes, structured validation, rate limiting, and versioning strategies that keep backend systems maintainable and developer-friendly.
 
 ## TL;DR Checklist
 
-- [ ] Use plural nouns for resource names (`/users`, not `/getUser`)
-- [ ] Return appropriate HTTP status codes (200, 201, 204, 400, 401, 403, 404, 409, 422, 429, 500)
-- [ ] Implement consistent error response envelope with `code`, `message`, and `details` fields
-- [ ] Apply cursor-based pagination for large datasets; offset-based for small bounded collections
-- [ ] Document rate limits using standard headers (`X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`)
-- [ ] Version the API via URL path prefix (`/api/v1/`) or Accept header negotiation
-- [ ] Ensure write operations are idempotent (PUT, DELETE) or clearly documented as non-idempotent (POST)
+- [ ] Write the API contract (OpenAPI, SDL, or Protobuf) before any handler code
+- [ ] Model resources around nouns with predictable plural paths (`/users`, `/orgs/{id}/projects`)
+- [ ] Return a unified error envelope: `{ "error": { "code": "...", "message": "...", "details": [] } }` on every failure path
+- [ ] Validate all inputs with Pydantic v2 models (or equivalent) before they reach business logic
+- [ ] Apply rate limiting headers (`X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`) to every response
+- [ ] Version APIs via URI prefix (`/v1/`) and emit `Deprecation` / `Sunset` headers when introducing new versions
+- [ ] Ensure write operations are idempotent (PUT, DELETE) or explicitly documented as non-idempotent (POST)
 
 ---
 
 ## When to Use
 
-- Designing a new RESTful web service or API from scratch
-- Refactoring an existing API to improve consistency and developer experience
-- Adding pagination, rate limiting, or versioning to an unversioned API
-- Creating API documentation standards for a team
-- Reviewing API design for adherence to REST principles
-- Defining error handling contracts across microservices
+Use this skill when:
+
+- Designing a new RESTful web service, GraphQL API, or gRPC microservice from scratch
+- Refactoring an existing API to improve consistency in error formats, naming conventions, or pagination
+- Adding missing concerns — rate limiting, structured validation, versioning — to an unversioned API
+- Conducting an API design review before a team ships new endpoints
+- Defining service contracts for inter-microservice communication via gRPC or internal REST
+- Writing OpenAPI / Protobuf specifications that multiple teams will implement against
 
 ---
 
 ## When NOT to Use
 
-- For gRPC/protobuf interface design — use protocol buffer design patterns instead
-- For CLI tool design — focus on argument parsing and output formatting conventions
-- For internal event-driven architectures — focus on message schema and event sourcing patterns
-- As a substitute for security review — always pair API design with `security-review`
+Avoid this skill for:
+
+- CLI argument parsing and terminal output formatting — use `markdown-best-practices` or domain-specific CLI patterns instead
+- Internal event-driven architectures (Kafka topics, message queues) — focus on schema registry and event sourcing patterns
+- Frontend component design or CSS styling — use the `frontend-philosophy` skill for UI concerns
 
 ---
 
 ## Core Workflow
 
-1. **Define Resource Model** — Identify domain entities, their relationships, and lifecycle states. Map each entity to a resource with a clear URI namespace.
+1. **Define Contract First** — Write the OpenAPI/Swagger YAML, GraphQL SDL, or Protobuf `.proto` file before writing any handler code. All teams implement against the contract. **Checkpoint:** Validate spec with `oapi-codegen`, `openapi-generator`, or `buf` to confirm no circular dependencies or type errors.
 
-   **Checkpoint:** Every resource has a unique identifier (UUID or integer), predictable plural path, and belongs to at most one top-level namespace.
+2. **Model Resources Around Nouns** — Never design endpoints around verbs. Use consistent plural resource names (`/users`, `/orders/{id}/line-items`). Nest only to express ownership boundaries, not for convenience. **Checkpoint:** Every HTTP method maps to a standard action: GET→read, POST→create, PUT→replace, PATCH→partial update, DELETE→remove.
 
-2. **Establish HTTP Method Semantics** — Assign GET for retrieval, POST for creation, PUT for full replacement, PATCH for partial updates, DELETE for removal. Enforce idempotency rules per method type.
+3. **Implement Consistent Error Format** — Define a single JSON schema for all error responses with `error_code` (machine-readable), `message` (human-readable), and optional `details` (field-level or contextual). Every endpoint — success or failure — must conform to this envelope. **Checkpoint:** Run a test suite that asserts every endpoint returns the same top-level error structure, regardless of exception type.
 
-3. **Design Error Response Contract** — Define a unified error envelope structure that all endpoints return. Include machine-readable codes alongside human-readable messages.
+4. **Add Validation & Serialization Layer** — Use Pydantic v2 `BaseModel` classes (Python) or equivalent typed structs (Go) for request/response schemas. Place validation at the boundary so handlers receive pre-validated data. **Checkpoint:** Invalid payloads are rejected by the middleware layer with 422 before any business logic executes.
 
-4. **Implement Pagination Strategy** — Choose offset-based (for bounded collections) or cursor-based (for unbounded/large datasets). Apply consistent query parameters (`cursor`, `limit`, `page`, `per_page`).
+5. **Apply Rate Limiting & Auth Middleware** — Per-client rate limits with sliding windows, JWT or API-key auth on protected routes. Always include `X-RateLimit-*` and `Retry-After` headers in responses. **Checkpoint:** Intercept a burst of 150 requests against a 100/60s limit and verify the 101st returns 429 with correct header values.
 
-5. **Add Rate Limiting Headers** — Every response must include rate limit headers. Implement per-client throttling with configurable windows. Return 429 Status when limits are exceeded.
-
-6. **Version and Document** — Apply versioning strategy (URL path preferred for public APIs). Generate OpenAPI/Swagger documentation from implementation annotations.
+6. **Version Strategically** — Prefer URI path versioning (`/v1/users`) for public APIs (discoverable, cache-friendly). For internal APIs, consider header-based versioning. Never break backward compatibility within a major version. Emit `Deprecation` and `Sunset` headers when deprecating old versions. **Checkpoint:** When introducing v2, the v1 routes continue serving production traffic with deprecation headers attached.
 
 ---
 
 ## Implementation Patterns
 
-### Pattern 1: RESTful Resource Naming
+### Pattern 1: RESTful Resource Modeling with FastAPI & Pydantic v2
 
-Use plural nouns for resource names. Keep paths flat where possible; nest only to show ownership relationships.
+Define resources as Pydantic models and map HTTP methods to CRUD operations using FastAPI route decorators. The spec drives generation of type-safe client SDKs.
 
 ```python
-# ❌ BAD — verb-based endpoints, singular resources, deeply nested
-@app.route("/getUser/<user_id>")
-def get_user(user_id):
-    return jsonify(User.get(user_id))
-
-@app.route("/createOrder")
-def create_order():
-    return jsonify(Order.create())
-
-@app.route("/organizations/<org_id>/departments/<dept_id>/employees/<emp_id>")
-# ❌ BAD — overly deep nesting makes URLs unwieldy and hard to bookmark
-
-
-# ✅ GOOD — noun-based, pluralized, shallow with optional nesting
-@app.route("/api/v1/users")
-def list_users():
-    return jsonify(UserCollection.paginate(request.args))
-
-@app.route("/api/v1/users/<user_id>")
-def get_user(user_id):
-    user = User.get(user_id)
-    if not user:
-        raise NotFoundError("User not found", code="USER_NOT_FOUND")
-    return jsonify(UserSchema().dump(user)), 200
-
-@app.route("/api/v1/organizations/<org_id>/employees")
-def list_org_employees(org_id):
-    """List employees belonging to an organization — nested for scope context."""
-    return jsonify(EmployeeCollection.for_organization(org_id).paginate(request.args))
-
-@app.route("/api/v1/orders", methods=["POST"])
-def create_order():
+# ❌ BAD — verb-based routes, no input validation, inconsistent error shapes
+@app.post("/createUser")
+def create_user():
     data = request.get_json()
-    order = Order.create(data)
-    return jsonify(OrderSchema().dump(order)), 201  # 201 Created, not 200
-```
+    if not data.get("email"):
+        return {"error": "Email required"}, 400
+    user = User(data)
+    db.save(user)
+    return user.to_dict(), 201
 
-### Pattern 2: Consistent Error Response Envelope
-
-All API errors return a standardized envelope with machine-readable codes, human-readable messages, and optional context.
-
-```python
-# ❌ BAD — inconsistent error responses across endpoints
-@app.route("/api/v1/users", methods=["POST"])
-def create_user_bad():
-    try:
-        data = request.get_json()
-        if not data.get("email"):
-            return jsonify({"error": "Email is required"}), 400  # Generic "error" key
-        user = User.create(data)
-        return jsonify(user), 201
-    except Exception as e:
-        return jsonify({"message": str(e)}), 500  # Exposes raw exception, no structure
+@app.get("/getUser")
+def get_user():
+    uid = request.args["id"]
+    user = db.query("SELECT * FROM users WHERE id = $1", uid).first()
+    if not user:
+        return {"message": "not found"}, 404   # Different key name — inconsistent
+    return user.to_dict(), 200
 
 
-# ✅ GOOD — unified error envelope with typed codes and context
-from dataclasses import dataclass, field, asdict
-from typing import Any, Optional
+# ✅ GOOD — noun-based resources, Pydantic v2 validation, unified error envelope
+from fastapi import FastAPI, HTTPException, Depends, Header
+from pydantic import BaseModel, EmailStr, Field
+from typing import Optional
 
-@dataclass
-class APIError:
-    """Standardized API error response envelope."""
-    code: str                    # Machine-readable error identifier
-    message: str                 # Human-readable description
-    status: int                  # HTTP status code
-    details: list[dict[str, Any]] = field(default_factory=list)
+app = FastAPI(title="Resource API", version="1.0.0")
+
+
+# --- Models (Contract-first: these would be generated from OpenAPI spec) ---
+class UserCreate(BaseModel):
+    """Request body for creating a new user."""
+    email: EmailStr
+    name: str = Field(min_length=1, max_length=128)
+    role: Optional[str] = Field(default="member", pattern=r"^(admin|member|viewer)$")
+
+
+class UserResponse(BaseModel):
+    """Standard response body for user resources."""
+    id: int
+    email: EmailStr
+    name: str
+    role: str
+    created_at: str  # ISO 8601
+
+    model_config = {"from_attributes": True}
+
+
+class ErrorDetail(BaseModel):
+    """Field-level or contextual error detail."""
+    field: Optional[str] = None
+    message: str
+
+
+class ErrorResponse(BaseModel):
+    """Unified error envelope returned by every endpoint on failure."""
+    error_code: str
+    message: str
+    details: list[ErrorDetail] = []
     request_id: Optional[str] = None
 
-    def to_dict(self) -> dict[str, Any]:
-        result = {"error": {
-            "code": self.code,
-            "message": self.message,
-            "status": self.status,
-        }}
-        if self.details:
-            result["error"]["details"] = self.details
-        if self.request_id:
-            result["error"]["request_id"] = self.request_id
-        return result
 
-class ValidationError(APIError):
-    """Field-level validation failures."""
-    def __init__(self, message: str, details: list[dict[str, Any]] | None = None, request_id: Optional[str] = None):
+# --- Routes (plural nouns, standard HTTP methods) ---
+@app.get("/v1/users/{user_id}", response_model=UserResponse, status_code=200)
+async def get_user(user_id: int):
+    """Retrieve a single user by ID."""
+    user = await db.fetch_user(user_id)
+    if not user:
+        raise HTTPException(
+            status_code=404,
+            detail={
+                "error_code": "USER_NOT_FOUND",
+                "message": f"No user exists with id={user_id}",
+                "details": [{"field": "user_id", "message": "Identifier does not match any record"}],
+            },
+        )
+    return user
+
+
+@app.post("/v1/users", response_model=UserResponse, status_code=201)
+async def create_user(body: UserCreate):
+    """Create a new user. Request body is validated by Pydantic v2 before handler runs."""
+    existing = await db.fetch_user_by_email(body.email)
+    if existing:
+        raise HTTPException(
+            status_code=409,
+            detail={
+                "error_code": "DUPLICATE_EMAIL",
+                "message": f"A user with email '{body.email}' already exists",
+                "details": [{"field": "email", "message": "Email must be unique"}],
+            },
+        )
+    user = await db.create_user(body.model_dump())
+    return user
+
+
+@app.put("/v1/users/{user_id}", response_model=UserResponse, status_code=200)
+async def update_user(user_id: int, body: UserCreate):
+    """Full replacement of a user resource (idempotent)."""
+    await db.fetch_user(user_id)  # 404 if not found
+    user = await db.update_user(user_id, body.model_dump())
+    return user
+
+
+@app.delete("/v1/users/{user_id}", status_code=204)
+async def delete_user(user_id: int):
+    """Remove a user resource. Returns 204 No Content on success."""
+    deleted = await db.delete_user(user_id)
+    if not deleted:
+        raise HTTPException(status_code=404, detail={"error_code": "USER_NOT_FOUND", "message": f"User {user_id} not found"})
+```
+
+### Pattern 2: Structured Error Handling Middleware
+
+Centralized exception handling ensures every endpoint returns the same error envelope shape regardless of which layer throws.
+
+```python
+# ❌ BAD — ad-hoc error responses scattered across handlers, inconsistent keys and status codes
+@app.route("/orders")
+def create_order():
+    try:
+        data = request.json
+        if not data.get("product_id"):
+            return json.dumps({"error": "missing product"}), 400
+        order = Order(data)
+        db.session.add(order)
+        db.session.commit()
+        return json.dumps({"id": order.id}), 201  # Returns 201 even though key is flat
+    except ValueError as e:
+        return json.dumps({"msg": str(e)}), 422   # Different key, different status
+    except Exception as e:
+        return json.dumps({"message": "something broke", "trace": str(e)}), 500  # Exposes internals
+
+
+# ✅ GOOD — centralized exception handler with unified envelope, no leak of internals
+from contextlib import suppress
+
+class AppError(Exception):
+    """Base class for application-level errors that map to HTTP responses."""
+    def __init__(self, error_code: str, message: str, status_code: int = 400, details: list[dict] | None = None):
+        self.error_code = error_code
+        self.message = message
+        self.status_code = status_code
+        self.details = details or []
+
+class NotFoundError(AppError):
+    def __init__(self, resource: str, identifier: str):
         super().__init__(
-            code="VALIDATION_ERROR",
-            message=message,
-            status=422,
-            details=details or [],
-            request_id=request_id,
+            error_code=f"{resource.upper()}_NOT_FOUND",
+            message=f"The requested {resource} was not found",
+            status_code=404,
+            details=[{"field": "id", "message": f"No {resource} with the given identifier"}],
         )
 
-# Usage in endpoint — all errors flow through the same envelope
-@app.route("/api/v1/users", methods=["POST"])
-def create_user_good():
-    data = request.get_json()
-    errors: list[dict[str, Any]] = []
+class ValidationAppError(AppError):
+    def __init__(self, field_errors: list[dict]):
+        super().__init__(
+            error_code="VALIDATION_ERROR",
+            message="Request validation failed",
+            status_code=422,
+            details=field_errors,
+        )
 
-    if not data or "email" not in data:
-        errors.append({"field": "email", "message": "Email is required"})
-    elif "@" not in data["email"]:
-        errors.append({"field": "email", "message": "Invalid email format"})
+class InternalAppError(AppError):
+    def __init__(self, cause: Exception | None = None):
+        super().__init__(
+            error_code="INTERNAL_ERROR",
+            message="An unexpected error occurred. Please contact support with the request ID.",
+            status_code=500,
+        )
+        if cause:
+            logger.exception("Unhandled exception in request handler", exc_info=cause)
 
-    if errors:
-        error = ValidationError("Request validation failed", errors, request_id=get_current_request_id())
-        return jsonify(error.to_dict()), error.status
+def build_error_response(app_error: AppError, request_id: str | None = None) -> tuple[dict, int]:
+    """Convert any AppError to the unified error envelope."""
+    response_body = {
+        "error_code": app_error.error_code,
+        "message": app_error.message,
+        "details": app_error.details,
+    }
+    if request_id:
+        response_body["request_id"] = request_id
+    return response_body, app_error.status_code
+
+# FastAPI exception handler registration
+@app.exception_handler(AppError)
+async def handle_app_error(request: Request, exc: AppError):
+    request_id = getattr(request.state, "request_id", None)
+    body, status = build_error_response(exc, str(request_id))
+    return JSONResponse(status_code=status, content=body)
+
+# Usage in endpoint — throw typed errors, let the handler format the response
+@app.post("/v1/orders")
+async def create_order(body: OrderCreate):
+    if not body.product_id:
+        raise ValidationAppError([{"field": "product_id", "message": "Product ID is required"}])
 
     try:
-        user = User.create(data)
-        return jsonify(UserSchema().dump(user)), 201
-    except IntegrityError as e:
-        error = APIError(
-            code="DUPLICATE_RESOURCE",
-            message=f"A resource with this identifier already exists: {data['email']}",
-            status=409,
-            request_id=get_current_request_id(),
-        )
-        return jsonify(error.to_dict()), 409
+        order = await order_service.create(body.model_dump())
+        return order, 201
+    except ProductNotFoundError as e:
+        raise NotFoundError("product", str(e.product_id))
+    except InventoryError as e:
+        raise ValidationAppError([{"field": "quantity", "message": f"Insufficient inventory: {e.available} available"}])
 ```
 
-### Pattern 3: Cursor-Based Pagination
+### Pattern 3: Rate Limiting & Auth Middleware
 
-Preferred for large or unbounded datasets. Cursors encode the last item's sort key, making pagination deterministic and efficient regardless of data mutations.
-
-```python
-# ❌ BAD — offset pagination breaks with concurrent inserts/updates
-@app.route("/api/v1/users")
-def list_users_bad():
-    page = request.args.get("page", 1, type=int)
-    per_page = request.args.get("per_page", 20, type=int)
-
-    # If a new user is inserted between requests, existing users shift pages
-    # User at offset 41 on page 2 could appear on page 1 if items were deleted
-    start = (page - 1) * per_page
-    users = db.query("SELECT * FROM users ORDER BY created_at DESC LIMIT %s OFFSET %s",
-                     per_page, start)
-    return jsonify({
-        "data": [serialize(u) for u in users],
-        "page": page,
-        "total_pages": None  # Often inaccurate with concurrent writes
-    })
-
-
-# ✅ GOOD — cursor-based pagination is mutation-resistant and efficient
-import base64
-import json
-
-class CursorPaginator:
-    """Cursor-based pagination that survives data mutations.
-
-    The cursor encodes the sort key value of the last returned item,
-    allowing deterministic re-queries without offset drift.
-    """
-    DEFAULT_LIMIT = 20
-    MAX_LIMIT = 100
-
-    @classmethod
-    def encode(cls, sort_value: str) -> str:
-        """Encode a cursor from the sort key value (e.g., timestamp, UUID)."""
-        return base64.b64encode(json.dumps({"v": sort_value}).encode()).decode()
-
-    @classmethod
-    def decode(cls, cursor_str: str) -> dict:
-        """Decode a cursor string back to its sort key value."""
-        decoded = json.loads(base64.b64decode(cursor_str.encode()).decode())
-        return decoded["v"]
-
-    @classmethod
-    def paginate(
-        cls,
-        query_func,
-        sort_column: str = "created_at",
-        sort_order: str = "DESC",
-        limit: int | None = None,
-        before: str | None = None,
-        after: str | None = None,
-    ) -> dict:
-        """Paginate results using cursor-based navigation.
-
-        Args:
-            query_func: Callable that accepts (sort_value, sort_order, limit) and returns rows.
-            sort_column: Column to use for pagination ordering.
-            sort_order: "ASC" or "DESC".
-            limit: Number of items per page (default 20, max 100).
-            before: Cursor — return items BEFORE this cursor (reverse direction).
-            after: Cursor — return items AFTER this cursor (forward direction).
-
-        Returns:
-            Dict with `data`, `next_cursor`, `prev_cursor`, and `has_more`.
-        """
-        limit = min(limit or cls.DEFAULT_LIMIT, cls.MAX_LIMIT)
-        has_before = before is not None
-        has_after = after is not None
-
-        if has_before and has_after:
-            raise ValueError("Cannot specify both 'before' and 'after' cursors")
-
-        # Decode cursor sort value
-        cursor_value = None
-        direction = sort_order
-        if has_after:
-            cursor_value = cls.decode(after)
-            direction = sort_order  # After means move forward in the given order
-        elif has_before:
-            cursor_value = cls.decode(before)
-            direction = "ASC" if sort_order == "DESC" else "DESC"  # Reverse for before
-
-        # Fetch items with boundary condition
-        extra_params = {}
-        if cursor_value is not None:
-            extra_params["cursor_value"] = cursor_value
-
-        rows, has_more = query_func(
-            sort_column=sort_column,
-            sort_order=direction,
-            limit=limit + 1,  # Fetch one extra to determine has_more
-            **extra_params,
-        )
-
-        # Trim the extra item
-        items = rows[:limit]
-        remaining = rows[limit:] if has_more else []
-
-        # Build cursors for next/prev pages
-        next_cursor = None
-        prev_cursor = None
-
-        if remaining:
-            last_item = items[-1]
-            next_cursor = cls.encode(str(getattr(last_item, sort_column)))
-
-        if items:
-            first_item = items[0]
-            prev_cursor = cls.encode(str(getattr(first_item, sort_column)))
-
-        return {
-            "data": [serialize(row) for row in items],
-            "next_cursor": next_cursor,
-            "prev_cursor": prev_cursor,
-            "has_more": bool(remaining),
-        }
-
-
-# Usage — clean endpoint with cursor pagination
-@app.route("/api/v1/users")
-def list_users_good():
-    paginator = CursorPaginator()
-
-    def query_func(sort_column, sort_order, limit, cursor_value=None):
-        if cursor_value:
-            if sort_order == "DESC":
-                rows = db.query(
-                    f"SELECT * FROM users WHERE {sort_column} < %s ORDER BY {sort_column} DESC LIMIT %s",
-                    cursor_value, limit
-                )
-            else:
-                rows = db.query(
-                    f"SELECT * FROM users WHERE {sort_column} > %s ORDER BY {sort_column} ASC LIMIT %s",
-                    cursor_value, limit
-                )
-        else:
-            rows = db.query(
-                f"SELECT * FROM users ORDER BY {sort_column} {sort_order} LIMIT %s",
-                limit
-            )
-        has_more = len(rows) > limit
-        return rows, has_more
-
-    result = paginator.paginate(
-        query_func=query_func,
-        sort_column="created_at",
-        sort_order="DESC",
-        limit=request.args.get("limit", 20, type=int),
-        after=request.args.get("after"),
-        before=request.args.get("before"),
-    )
-
-    return jsonify(result)
-```
-
-### Pattern 4: Rate Limiting Headers
-
-Every API response includes rate limit headers so clients can back off gracefully. Implement per-client throttling with configurable windows.
+Token-bucket rate limiter with Redis-style per-client tracking, integrated into the request lifecycle.
 
 ```python
-# ✅ GOOD — rate limiting with standard headers and 429 responses
+# ✅ GOOD — in-memory token bucket with sliding window and standard headers
 import time
+from dataclasses import dataclass, field
 from threading import Lock
 
-class InMemoryRateLimiter:
-    """Simple in-memory rate limiter using a sliding window algorithm."""
 
-    def __init__(self, max_requests: int = 100, window_seconds: int = 60):
-        self.max_requests = max_requests
-        self.window_seconds = window_seconds
-        self._requests: dict[str, list[float]] = {}
+@dataclass
+class RateLimitConfig:
+    max_requests: int = 100          # Allow this many requests per window
+    window_seconds: int = 60         # Window duration in seconds
+    burst_multiplier: float = 1.5    # Allow burst up to 1.5x the rate
+
+class TokenBucketLimiter:
+    """Token-bucket rate limiter for API endpoints."""
+
+    def __init__(self, config: RateLimitConfig | None = None):
+        self.config = config or RateLimitConfig()
+        self._buckets: dict[str, list[float]] = {}
         self._lock = Lock()
 
-    def is_allowed(self, client_id: str) -> tuple[bool, dict]:
-        """Check if request is allowed. Returns (allowed, rate_limit_info)."""
+    def _clean_bucket(self, client_id: str, now: float) -> None:
+        """Remove timestamps outside the current sliding window."""
+        cutoff = now - self.config.window_seconds
+        if client_id in self._buckets:
+            self._buckets[client_id] = [t for t in self._buckets[client_id] if t > cutoff]
+
+    def allow(self, client_id: str) -> tuple[bool, dict[str, str]]:
+        """Check whether a request is allowed and return rate limit headers."""
         now = time.time()
-        window_start = now - self.window_seconds
 
         with self._lock:
-            # Clean old entries
-            if client_id in self._requests:
-                self._requests[client_id] = [
-                    ts for ts in self._requests[client_id] if ts > window_start
-                ]
-            else:
-                self._requests[client_id] = []
+            self._clean_bucket(client_id, now)
+            bucket = self._buckets.setdefault(client_id, [])
 
-            request_count = len(self._requests[client_id])
-            remaining = max(0, self.max_requests - request_count)
-            reset_time = int(window_start + self.window_seconds)
+            max_burst = int(self.config.max_requests * self.config.burst_multiplier)
 
-            if request_count >= self.max_requests:
+            if len(bucket) >= max_burst:
+                reset_time = int((bucket[0] + self.config.window_seconds))
                 return False, {
-                    "X-RateLimit-Limit": str(self.max_requests),
+                    "X-RateLimit-Limit": str(self.config.max_requests),
                     "X-RateLimit-Remaining": "0",
                     "X-RateLimit-Reset": str(reset_time),
-                    "Retry-After": str(reset_time - int(now)),
+                    "Retry-After": str(max(1, reset_time - int(now))),
                 }
 
-            self._requests[client_id].append(now)
+            bucket.append(now)
+            remaining = max(0, self.config.max_requests - len(bucket))
+            reset_time = int(now + self.config.window_seconds)
+
             return True, {
-                "X-RateLimit-Limit": str(self.max_requests),
-                "X-RateLimit-Remaining": str(remaining - 1),
-                "X-RateLimit-Reset": str(reset_time),
-            }
-
-    def get_limit_headers(self, client_id: str) -> dict[str, str]:
-        """Get current rate limit headers without consuming a request."""
-        now = time.time()
-        window_start = now - self.window_seconds
-
-        with self._lock:
-            if client_id in self._requests:
-                self._requests[client_id] = [
-                    ts for ts in self._requests[client_id] if ts > window_start
-                ]
-                count = len(self._requests[client_id])
-            else:
-                count = 0
-
-            reset_time = int(window_start + self.window_seconds)
-            remaining = max(0, self.max_requests - count)
-
-            return {
-                "X-RateLimit-Limit": str(self.max_requests),
+                "X-RateLimit-Limit": str(self.config.max_requests),
                 "X-RateLimit-Remaining": str(remaining),
                 "X-RateLimit-Reset": str(reset_time),
             }
 
 
-# Usage in a Flask/FastAPI middleware — applies to every response
-@app.before_request
-def check_rate_limit():
-    client_id = request.headers.get("X-Client-ID") or request.remote_addr
-    allowed, headers = rate_limiter.is_allowed(client_id)
+# --- JWT Auth Dependency (FastAPI) ---
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+
+security = HTTPBearer(auto_error=False)
+
+async def verify_jwt(credentials: HTTPAuthorizationCredentials | None = Depends(security)) -> dict:
+    """Validate Bearer token and return decoded payload. Raises 401 on failure."""
+    if credentials is None or not credentials.credentials:
+        raise HTTPException(status_code=401, detail={"error_code": "UNAUTHORIZED", "message": "Missing authentication token"})
+
+    try:
+        import jwt
+        payload = jwt.decode(credentials.credentials, options={"verify_aud": False})
+        return payload
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(status_code=401, detail={"error_code": "TOKEN_EXPIRED", "message": "Authentication token has expired"})
+    except jwt.InvalidTokenError:
+        raise HTTPException(status_code=401, detail={"error_code": "INVALID_TOKEN", "message": "Malformed authentication token"})
+
+
+# --- Middleware integration ---
+limiter = TokenBucketLimiter(RateLimitConfig(max_requests=100, window_seconds=60))
+
+@app.middleware("http")
+async def rate_limit_middleware(request: Request, call_next):
+    client_id = request.headers.get("X-API-Key", request.client.host)
+    allowed, headers = limiter.allow(client_id)
 
     if not allowed:
-        error = APIError(
-            code="RATE_LIMIT_EXCEEDED",
-            message="Too many requests. Please retry after the window resets.",
-            status=429,
-            details=[{"field": "rate_limit", "message": headers.get("Retry-After", "60") + " seconds remaining"}],
+        raise HTTPException(
+            status_code=429,
+            detail={"error_code": "RATE_LIMIT_EXCEEDED", "message": "Too many requests. Retry after the window resets."},
+            headers=headers,
         )
-        return jsonify(error.to_dict()), 429, headers
 
-
-@app.after_request
-def add_rate_limit_headers(response):
-    """Attach rate limit headers to every successful response."""
-    client_id = request.headers.get("X-Client-ID") or request.remote_addr
-    limit_headers = rate_limiter.get_limit_headers(client_id)
-    for header_name, header_value in limit_headers.items():
-        response.headers[header_name] = header_value
-    return response
-```
-
-### Pattern 5: API Versioning Strategies
-
-Version the API to maintain backward compatibility while evolving. URL path versioning is most common and discoverable for public APIs.
-
-```python
-# ✅ GOOD — URL path versioning with clear v1/v2 prefixes
-# Version is part of the route, making it explicit and cacheable
-ROUTES = {
-    "v1": "/api/v1",   # /api/v1/users, /api/v1/orders
-    "v2": "/api/v2",   # /api/v2/users, /api/v2/orders
-}
-
-# Versioned API blueprint (Flask example)
-from flask import Blueprint
-
-api_v1 = Blueprint("api_v1", __name__, url_prefix="/api/v1")
-api_v2 = Blueprint("api_v2", __name__, url_prefix="/api/v2")
-
-@api_v1.route("/users/<user_id>")
-def get_user_v1(user_id):
-    """V1 returns a flat user object. Legacy structure maintained for compatibility."""
-    user = User.get(user_id)
-    return jsonify({
-        "id": user.id,
-        "name": user.name,
-        "email": user.email,
-        "created_at": str(user.created_at),  # V1: string dates
-    }), 200
-
-@api_v2.route("/users/<user_id>")
-def get_user_v2(user_id):
-    """V2 returns a structured user object with embedded metadata and ISO 8601 dates."""
-    user = User.get(user_id)
-    return jsonify({
-        "data": {
-            "id": user.id,
-            "attributes": {
-                "name": user.name,
-                "email": user.email,
-                "created_at": user.created_at.isoformat(),  # V2: ISO 8601
-            },
-            "metadata": {
-                "version": "2.0",
-                "links": {
-                    "self": f"/api/v2/users/{user.id}",
-                    "orders": f"/api/v2/users/{user.id}/orders",
-                }
-            }
-        }
-    }), 200
-
-# Accept header versioning alternative (less discoverable but cleaner URLs)
-# curl -H "Accept: application/vnd.myapi.v2+json" https://api.example.com/users
-
-
-# ✅ GOOD — deprecation notices for sunset planning
-@app.after_request
-def add_deprecation_header(response):
-    """Add Deprecation and Sunset headers when serving deprecated versions."""
-    if "/api/v1/" in request.path:
-        response.headers["Deprecation"] = "true"
-        response.headers["Sunset"] = "Sat, 01 Jun 2027 00:00:00 GMT"
-        response.headers["Link"] = '<https://docs.example.com/migration/v1-to-v2>; rel="successor-version"'
+    response = await call_next(request)
+    for key, value in headers.items():
+        response.headers[key] = value
     return response
 ```
 
@@ -526,37 +387,48 @@ def add_deprecation_header(response):
 ## Constraints
 
 ### MUST DO
-- Use plural nouns for all resource names (`/users`, `/orders`, not `/user` or `/getUser`)
-- Return HTTP status codes that match the operation outcome (201 for creation, 204 for deletion, 422 for validation)
-- Wrap all errors in a consistent envelope with `error.code`, `error.message`, and optional `error.details`
-- Include `X-RateLimit-*` headers on every response, including error responses
-- Implement cursor-based pagination for any collection exceeding 1,000 items
-- Version public APIs via URL path prefix (`/api/vN/`) with documented sunset dates
-- Support filtering via query parameters using a consistent convention (`?status=active&role=admin`)
-- Add `request_id` to every response for traceability and debugging
-- Write OpenAPI/Swagger documentation from code annotations — never maintain docs separately
+
+- Write the API contract (OpenAPI YAML, GraphQL SDL, or Protobuf) before implementing any handler code; generate type-safe clients from it
+- Model every resource around plural nouns with predictable paths (`/users`, `/orgs/{id}/projects`) and map HTTP methods to standard CRUD actions
+- Return a unified error envelope on every failure path containing `error_code`, `message`, and optional `details` fields — never ad-hoc JSON shapes
+- Validate all incoming request bodies with typed schema models (Pydantic v2, Zod, Go structs) before they reach business logic
+- Attach rate limiting headers (`X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`) to every single response, including errors
+- Version public APIs via URI path prefix (`/v1/`) and emit `Deprecation` / `Sunset` headers when introducing successor versions
+- Ensure DELETE and PUT operations are idempotent; document POST as non-idempotent with client-side deduplication keys
 
 ### MUST NOT DO
-- Expose raw exception messages or stack traces in API responses (security risk)
-- Use verb-based URLs (`/getUsers`, `/createOrder`) — REST is about resources, not actions
-- Return 200 for all success cases regardless of operation type
-- Implement pagination with `offset` + `limit` on unbounded collections (causes drift and performance degradation)
-- Embed API logic directly in route handlers without service/repository layer separation
-- Remove or skip rate limiting headers — clients depend on them for graceful backoff
-- Use date strings without timezone specification — always use ISO 8601 with timezone (`2025-06-15T14:30:00Z`)
+
+- Expose raw exception messages, stack traces, SQL queries, or file paths in any client-facing response
+- Design endpoints around verbs (`/getUser`, `/createOrder`) — REST is resource-oriented, not action-oriented
+- Return `200 OK` for all success cases regardless of operation type (use `201 Created`, `204 No Content` appropriately)
+- Use offset-based pagination on unbounded or frequently-mutated collections (causes item drift and N+1 performance problems)
+- Embed business logic directly in route handlers without a service/repository layer separation
+- Remove rate limiting headers from error responses — clients depend on them for graceful backoff strategies
+- Mix v1 and v2 route implementations; keep versions in separate blueprint modules with clear deprecation timelines
 
 ---
 
 ## Output Template
 
-When implementing or reviewing API design, produce:
+When implementing or reviewing API design, produce the following artifacts:
 
-1. **Resource Model** — List of resources with their URI paths and relationships (nested or flat)
-2. **Endpoint Specifications** — HTTP method, path, query params, request body schema, response status codes, and response body structure for each endpoint
-3. **Error Envelope Definition** — The exact JSON shape returned on errors including `code`, `message`, and `details` fields
-4. **Pagination Strategy** — Which pagination type is used (cursor or offset) and the query parameter contract
-5. **Rate Limit Configuration** — Window size, max requests per window, and which headers are returned
-6. **Versioning Plan** — Current version, deprecation schedule for older versions, and migration notes
+1. **API Contract Document** — OpenAPI 3.1 YAML, GraphQL SDL, or Protobuf `.proto` file with all endpoints, types, and error schemas defined before implementation
+2. **Resource Model Diagram** — ASCII art or structured list showing resources, their URIs, nested relationships, and ownership boundaries
+3. **Error Envelope Schema** — Exact JSON shape for success and error responses, including all `error_code` values with their business meaning
+4. **HTTP Method Mapping Table** — For each resource: which HTTP methods are supported, their semantics, idempotency guarantees, and expected status codes
+5. **Rate Limit & Auth Configuration** — Per-tier limits (anonymous, authenticated, premium), window sizes, header formats, and authentication mechanisms supported
+
+---
+
+## Live References
+
+| Resource | URL |
+|----------|-----|
+| FastAPI Documentation | https://fastapi.tiangolo.com/ |
+| Pydantic v2 Documentation | https://docs.pydantic.dev/latest/ |
+| OpenAPI Specification 3.1 | https://spec.openapis.org/oas/v3.1.0 |
+| HTTP Semantics RFC 9110 | https://www.rfc-editor.org/rfc/rfc9110 |
+| GraphQL Best Practices (Apollo) | https://the-guild.dev/blog/best-practices-for-designing-a-grpc-api |
 
 ---
 
@@ -564,7 +436,5 @@ When implementing or reviewing API design, produce:
 
 | Skill | Purpose |
 |---|---|
-| `code-review` | Review API implementation for correctness and adherence to design patterns |
-| `security-review` | Audit API endpoints for authentication, authorization, and injection vulnerabilities |
-| `testing` | Design test strategies including contract tests, integration tests, and load testing |
-| `documentation-writing` | Create comprehensive API reference documentation from OpenAPI specs |
+| `async-programming` | Implement async I/O patterns in API handlers for high-throughput endpoints |
+| `automated-testing` | Generate contract tests, integration tests, and load tests for API endpoints |
