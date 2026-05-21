@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 01:28:57 UTC  
-> **Total skills:** 720
+> **Last updated:** 2026-05-21 01:58:54 UTC  
+> **Total skills:** 719
 
 ## Skills by Domain
 
@@ -791,7 +791,7 @@ MIT — All skills are freely available and redistributable.
 | [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. | dataloader, graphql n-plus-one, batch loading, aiodataloader, graphql performance, load per request, graphql batching |
 | [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. | graphql error handling, graphql validation, input validation, pydantic graphql, strawberry errors, graphql error codes, graphql middleware |
 | [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. | graphql schema design, SDL, type system, strawberry-graphql, interface, union type, graphql-input-object, graphql-deprecation |
-| [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices | grpc development, grpc debugging, protocol buffers, rpc services, grpc errors, stream handling, unary calls, grpc gateway |
+| [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. | gRPC, protocol buffers, protobuf, RPC, streaming RPC, unary call, interceptor middleware, grpc service, stub generation, proto file design, bidirectional stream, client streaming, server streaming |
 | [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. | hexagonal architecture, ports and adapters, clean architecture, dependency inversion, core business logic, how do i decouple my code, separate business logic from framework |
 | [humanizer](skills/coding/humanizer/SKILL.md) | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation, comments, technical writing, readability, code clarity |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters |
@@ -1171,7 +1171,7 @@ MIT — All skills are freely available and redistributable.
 | [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Coding | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. |
 | [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Coding | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. |
 | [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Coding | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. |
-| [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices |
+| [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Linux | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. |
 | [health](skills/trading/health/SKILL.md) | Trading | "Provides Exchange system health monitoring and connectivity status tracking" |
 | [health-check-patterns](skills/cncf/health-check-patterns/SKILL.md) | Cncf | Implements comprehensive health check patterns for cloud-native applications including Kubernetes probes, HTTP health endpoints, database checks, and circuit breaker patterns |
@@ -2100,7 +2100,7 @@ MIT — All skills are freely available and redistributable.
 | [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Coding | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. | Implementation |
 | [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Coding | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. | Implementation |
 | [grpc](skills/cncf/grpc/SKILL.md) | Cncf | "gRPC in Remote Procedure Call - cloud native architecture, patterns" pitfalls, and best practices | Reference |
-| [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices | Implementation |
+| [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. | Implementation |
 | [harbor](skills/cncf/harbor/SKILL.md) | Cncf | "Configures harbor in cloud-native engineering - container registry for cloud-native deployment and infrastructure management." | Reference |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Linux | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. | Implementation |
 | [health](skills/trading/health/SKILL.md) | Trading | "Provides Exchange system health monitoring and connectivity status tracking" | Implementation |
