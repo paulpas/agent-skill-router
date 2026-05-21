@@ -35,6 +35,7 @@ The Agent Skill Router is an intelligent skill routing system that automatically
 ### 🛠️ Developer Productivity Tools
 - **Skill Generator** — Create new skills programmatically using local LLMs
 - **Quality Fixer** — Detect and repair placeholder code in existing skills
+- **Auto Skill Creation** — Generate complete, compliant skills from natural language descriptions using skill-generate.sh
 - **Domain-specific wrappers** — Optimized fixers for different skill types
 
 ## How It Works
