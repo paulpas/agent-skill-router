@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 13:48:41 UTC  
-> **Total skills:** 739
+> **Last updated:** 2026-05-21 14:16:35 UTC  
+> **Total skills:** 740
 
 ## Skills by Domain
 
@@ -705,7 +705,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (192 skills)
+### Coding (193 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -895,6 +895,7 @@ MIT — All skills are freely available and redistributable.
 | [tool-evaluation-workflow](skills/coding/tool-evaluation-workflow/SKILL.md) | Applies a structured evaluation framework to select tools, libraries, and frameworks based on technical fit, community health, security posture, performance benchmarks, and total cost of ownership for software projects. | tool evaluation, library selection, framework comparison, proof of concept, technology assessment, how do i evaluate tools, build vs buy decision, dependency management |
 | [topic-modeling](skills/coding/topic-modeling/SKILL.md) | "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods" | topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation, text analysis |
 | [tree-methods](skills/coding/tree-methods/SKILL.md) | "Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods for classification and regression | decision trees, random forest, gradient boosting, xgboost, lightgbm, how do i use trees |
+| [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. | type safety, type narrowing, strict mode, type guards, static typing, runtime validation, mypy, pyright, typescript strict, zod schema |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | intersection types, ampersand type, type merging, TypeScript & operator, props merging, mixin pattern, type conflicts, keyof T & K, generic constraints, ComponentProps & custom |
 | [validation](skills/coding/validation/SKILL.md) | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions | validation, code validation, pipeline validation, config status, input validation, validate pipeline, pipeline stages |
 | [websocket-protocol](skills/coding/websocket-protocol/SKILL.md) | Implements WebSocket protocol-level patterns including frame parsing, subprotocol negotiation, permessage-deflate compression, text/binary framing, and backpressure management for real-time applications. | websocket protocol, frame handling, subprotocol negotiation, permessage-deflate, binary framing, text messages, backpressure, wss://, ws upgrade, opcode, mask bit, close frame |
@@ -1065,7 +1066,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (336 skills)
+### Implementation (Build Features) (337 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1386,6 +1387,7 @@ MIT — All skills are freely available and redistributable.
 | [trend-analysis](skills/trading/trend-analysis/SKILL.md) | Trading | "Provides Trend identification, classification, and continuation analysis" |
 | [twap](skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large orders with" minimal market impact |
 | [twap-vwap](skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution''' |
+| [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Coding | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. |
 | [user-memory-system](skills/agent/user-memory-system/SKILL.md) | Agent | Implements multi-layer user memory systems (episodic, semantic, procedural) for AI agents to retain context across sessions, enable personalization, and build long-term relationships with individual users. |
 | [validation](skills/coding/validation/SKILL.md) | Coding | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions |
@@ -2520,6 +2522,7 @@ MIT — All skills are freely available and redistributable.
 | [trigger-dev](skills/agent/trigger-dev/SKILL.md) | Agent | Implements intelligent trigger dev with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [twap](skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large orders with" minimal market impact | Implementation |
 | [twap-vwap](skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution''' | Implementation |
+| [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Coding | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. | Implementation |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | Implementation |
 | [update-framework-tuf](skills/cncf/update-framework-tuf/SKILL.md) | Cncf | "The Update Framework (TUF) in Secure software update framework for protecting" software deliveries | Reference |
 | [upstash-qstash](skills/agent/upstash-qstash/SKILL.md) | Agent | Implements intelligent upstash qstash with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

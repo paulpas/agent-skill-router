@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T13:48:40.104829Z",
-  "totalSkills": 739,
+  "generatedAt": "2026-05-21T14:16:34.309705Z",
+  "totalSkills": 740,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 191,
+    "coding": 192,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 336,
+    "implementation": 337,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -16122,6 +16122,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/execution-twap-vwap/SKILL.md"
+    },
+    {
+      "name": "type-safety-enforcement",
+      "domain": "coding",
+      "description": "Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "type safety",
+        "type narrowing",
+        "strict mode",
+        "type guards",
+        "static typing",
+        "runtime validation",
+        "mypy",
+        "pyright",
+        "typescript strict",
+        "zod schema"
+      ],
+      "relatedSkills": [
+        "testing-error-handling",
+        "api-contract-testing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/type-safety-enforcement/SKILL.md"
     },
     {
       "name": "typescript-intersection-types",
