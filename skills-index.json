@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T02:44:06.938999Z",
-  "totalSkills": 721,
+  "generatedAt": "2026-05-21T03:04:57.588635Z",
+  "totalSkills": 722,
   "domains": {
     "agent": 250,
     "cncf": 169,
-    "coding": 178,
+    "coding": 179,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 319,
+    "implementation": 320,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -946,6 +946,38 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/api-security-testing/SKILL.md"
+    },
+    {
+      "name": "api-versioning-strategies",
+      "domain": "coding",
+      "description": "Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "api versioning",
+        "url path versioning",
+        "accept header",
+        "breaking changes",
+        "api deprecation",
+        "sunset header",
+        "backward compatibility",
+        "api migration",
+        "stripe api versioning",
+        "github api version",
+        "twilio api version",
+        "how do i version my api",
+        "rest api lifecycle",
+        "api contract stability"
+      ],
+      "relatedSkills": [
+        "api-design",
+        "input-validation",
+        "code-review",
+        "security-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-versioning-strategies/SKILL.md"
     },
     {
       "name": "apify-actor-development",
