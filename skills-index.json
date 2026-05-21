@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T17:49:37.150400Z",
-  "totalSkills": 749,
+  "generatedAt": "2026-05-21T18:11:43.464330Z",
+  "totalSkills": 750,
   "domains": {
     "agent": 254,
     "cncf": 170,
-    "coding": 200,
+    "coding": 201,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 344,
+    "implementation": 345,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -14672,6 +14672,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-sentinel/SKILL.md"
+    },
+    {
+      "name": "skill-testing-validation",
+      "domain": "coding",
+      "description": "Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "skill testing",
+        "validation",
+        "quality assurance",
+        "test automation",
+        "regression detection",
+        "trigger matching",
+        "how do i test skills",
+        "code review for skills",
+        "skill audit"
+      ],
+      "relatedSkills": [
+        "coding-code-review",
+        "agent-skill-ecosystem-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/skill-testing-validation/SKILL.md"
     },
     {
       "name": "skill-trigger-engineering",
