@@ -264,7 +264,7 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 14:34:18 UTC  
+> **Last updated:** 2026-05-21 19:34:52 UTC  
 > **Total skills:** 752
 
 ## Skills by Domain
