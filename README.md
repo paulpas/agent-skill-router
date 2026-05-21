@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 22:07:17 UTC  
-> **Total skills:** 758
+> **Last updated:** 2026-05-21 17:40:14 UTC  
+> **Total skills:** 759
 
 ## Skills by Domain
 
@@ -707,7 +707,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (209 skills)
+### Coding (210 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -866,6 +866,7 @@ MIT — All skills are freely available and redistributable.
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. | performance testing, load testing, stress test, p95 latency, bottleneck detection, how do i measure system performance, k6, locust |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain |
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. | platform engineering, internal developer platform, IDP, golden paths, self-service infrastructure, Backstage.io, developer experience metrics, how do i build a developer platform |
+| [polyglot-development](skills/coding/polyglot-development/SKILL.md) | Implements language selection heuristics, polyglot monorepo patterns, and cross-language communication protocols for multi-language software systems. | polyglot, multi-language, language selection, go vs typescript, rust vs python, monorepo build, cross-language communication, protocol buffer, interop patterns, which language to use |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | port interface, driving port, driven port, port contract, Protocol vs ABC, hexagonal ports, how do i define clean boundaries, dependency inversion, framework-agnostic interfaces |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging |
@@ -1084,7 +1085,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (353 skills)
+### Implementation (Build Features) (354 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1327,6 +1328,7 @@ MIT — All skills are freely available and redistributable.
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... |
 | [personalized-behavior](skills/agent/personalized-behavior/SKILL.md) | Agent | Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses. |
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Coding | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. |
+| [polyglot-development](skills/coding/polyglot-development/SKILL.md) | Coding | Implements language selection heuristics, polyglot monorepo patterns, and cross-language communication protocols for multi-language software systems. |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Coding | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. |
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' |
@@ -2402,6 +2404,7 @@ MIT — All skills are freely available and redistributable.
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Agent | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Coding | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. | Implementation |
 | [policy-agent-opa](skills/cncf/policy-agent-opa/SKILL.md) | Cncf | "Open Policy Agent in Security &amp; Compliance - cloud native architecture" patterns, pitfalls, and best practices | Reference |
+| [polyglot-development](skills/coding/polyglot-development/SKILL.md) | Coding | Implements language selection heuristics, polyglot monorepo patterns, and cross-language communication protocols for multi-language software systems. | Implementation |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Coding | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | Implementation |
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. | Implementation |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' | Implementation |
