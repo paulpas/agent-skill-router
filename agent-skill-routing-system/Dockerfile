@@ -143,12 +143,12 @@ ENV COMPRESSION_CACHE_TTL_HOURS="1"
 ENV COMPRESSION_RETRY_THRESHOLD="2"
 
 # Compression scaling for 1,827 skills
-# - Pre-warms 100 top skills (3.5s startup)
+# - Pre-warms 50 top skills (~1.7s startup)
 # - Batch compression: 10 skills/call (90% API call reduction)
 # - Adaptive TTL: 30min hot, 1hr cold skills
 # - LRU eviction protects frequently accessed skills
 # - 84% cache hit rate verified at full scale
-ENV COMPRESSION_WARMUP_SKILLS="100"
+ENV COMPRESSION_WARMUP_SKILLS="50"
 ENV COMPRESSION_WARMUP_ENABLED=${COMPRESSION_WARMUP_ENABLED:-true}
 ENV COMPRESSION_WARMUP_TIMEOUT_MS="30000"
 ENV COMPRESSION_BATCH_SIZE="10"
