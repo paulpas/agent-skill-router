@@ -441,6 +441,15 @@ Describe what the model's output must contain when this skill is active.
 | ---------- | --------------------------------------- |
 | `skill-name` | Why you'd use this instead or alongside |
 | `skill-name` | Complementary capability                |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://example.com/docs)
+- [API Reference](https://example.com/api)
 ```
 
 ### Section-by-Section Guidance
@@ -499,6 +508,28 @@ Number the steps. Add **Checkpoint** notes after steps where the model must veri
 #### Constraints (MUST DO / MUST NOT DO)
 
 Short, imperative sentences. No explanations needed here — those belong in the workflow. These are the non-negotiable rules.
+
+#### Live References
+
+Include 5-7 authoritative documentation links specific to the skill's domain. These links are resolved at load time by the markdown link following feature.
+
+```markdown
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Kubernetes API Reference](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/)
+- [Kubernetes Concepts](https://kubernetes.io/docs/concepts/)
+```
+
+**Guidelines:**
+- Include official project documentation first
+- Include API/reference docs if applicable
+- Include architecture or concepts pages
+- Include operational guides (deployment, configuration)
+- Include security or best practices guides
+- 5-7 links is the target range
+- All links must be real, stable URLs (no `example.com`)
 
 ---
 
@@ -838,6 +869,9 @@ Use this checklist when writing a new skill or auditing an existing one.
 - [ ] Related Skills table is present if `metadata.related-skills` is non-empty
 - [ ] No debug statements or placeholder text (e.g. "TODO", "FIXME", "example.com" links)
 - [ ] External links point to real, stable URLs (not placeholder `example.com`)
+- [ ] `## Live References` section present with 5-7 authoritative documentation links
+- [ ] Live References include official project docs, API reference, and operational guides
+- [ ] All Live References links are real, stable URLs (no `example.com`)
 
 ### Domain-Specific
 
