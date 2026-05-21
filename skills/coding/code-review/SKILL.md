@@ -14,7 +14,7 @@ metadata:
   author: https://github.com/Jeffallan
   domain: coding
   output-format: code
-  related-skills: dry-principles, humanizer, null, secure-release-pipeline
+  related-skills: dry-principles, humanizer, null, secure-release-pipeline, dependency-supply-chain-security
   role: implementation
   scope: implementation
   source: https://github.com/farmage/opencode-skills

@@ -595,3 +595,15 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [Containerd Documentation](https://containerd.io/docs/)
+- [Containerd Configuration](https://github.com/containerd/containerd/blob/main/docs/man/containerd-config.toml.5.md)
+- [Containerd CRI Plugin](https://github.com/containerd/containerd/blob/main/docs/cri/config.md)
+- [Containerd Namespace Management](https://github.com/containerd/containerd/blob/main/docs/namespaces.md)
+- [Containerd Image Management](https://github.com/containerd/containerd/blob/main/docs/getting-started.md)

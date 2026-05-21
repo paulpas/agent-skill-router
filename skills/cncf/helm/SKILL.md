@@ -992,3 +992,15 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [Helm Documentation](https://helm.sh/docs/)
+- [Helm Chart Template Guide](https://helm.sh/docs/chart_template_guide/)
+- [Helm Chart Best Practices](https://helm.sh/docs/chart_best_practices/)
+- [Artifact Hub - Helm Charts](https://artifacthub.io/packages/search?kind=0)
+- [Helm CLI Reference](https://helm.sh/docs/helm/helm/)

@@ -486,3 +486,15 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [KubeVela Documentation](https://kubevela.io/docs/)
+- [KubeVela Getting Started](https://kubevela.io/docs/quick-start)
+- [KubeVela Application Model](https://kubevela.io/docs/end-user/components/)
+- [KubeVela Traits](https://kubevela.io/docs/end-user/traits/)
+- [KubeVela Workflows](https://kubevela.io/docs/end-user/workflow/overview)

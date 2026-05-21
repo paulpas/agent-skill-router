@@ -486,3 +486,15 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [KubeEdge Documentation](https://kubeedge.io/en/docs/)
+- [KubeEdge Architecture](https://kubeedge.io/en/docs/architecture/)
+- [KubeEdge Setup Guide](https://kubeedge.io/en/docs/setup/)
+- [KubeEdge Device Management](https://kubeedge.io/en/docs/device/)
+- [KubeEdge Edge Application](https://kubeedge.io/en/docs/developer/developer_guide/)

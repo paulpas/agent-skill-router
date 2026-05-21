@@ -487,3 +487,15 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [Kubeflow Documentation](https://www.kubeflow.org/docs/)
+- [Kubeflow Pipelines](https://www.kubeflow.org/docs/components/pipelines/)
+- [Kubeflow Training Operator](https://www.kubeflow.org/docs/components/training/)
+- [Kubeflow Katib (Hyperparameter Tuning)](https://www.kubeflow.org/docs/components/katib/)
+- [Kubeflow KServe (Model Serving)](https://www.kubeflow.org/docs/components/kserve/)

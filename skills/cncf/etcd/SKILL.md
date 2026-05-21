@@ -576,3 +576,16 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [etcd Documentation](https://etcd.io/docs/)
+- [etcd Operations Guide](https://etcd.io/docs/latest/op-guide/)
+- [etcd API Reference](https://etcd.io/docs/latest/learning/api/)
+- [etcd Security Model](https://etcd.io/docs/latest/op-guide/security/)
+- [etcd Performance Tuning](https://etcd.io/docs/latest/tuning/)
+- [etcd Disaster Recovery](https://etcd.io/docs/latest/op-guide/recovery/)

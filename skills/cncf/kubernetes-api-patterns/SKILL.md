@@ -1297,3 +1297,16 @@ When implementing Kubernetes API patterns, include:
 - [API Versioning](https://kubernetes.io/docs/reference/using-api/#api-versioning)
 - [Client Libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/)
 - [Watching Resources](https://kubernetes.io/docs/reference/using-api/api-concepts/#watching)
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [Kubernetes API Reference](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/)
+- [Kubernetes API Concepts](https://kubernetes.io/docs/reference/using-api/)
+- [Kubernetes API Conventions](https://kubernetes.io/docs/reference/using-api/api-conventions/)
+- [Kubernetes API Machinery](https://kubernetes.io/docs/reference/using-api/api-conventions/#resources)
+- [Kubernetes Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
+- [Kubernetes CRD Reference](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/)

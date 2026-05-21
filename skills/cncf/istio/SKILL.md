@@ -1002,3 +1002,16 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [Istio Documentation](https://istio.io/latest/docs/)
+- [Istio Traffic Management](https://istio.io/latest/docs/tasks/traffic-management/)
+- [Istio Security](https://istio.io/latest/docs/tasks/security/)
+- [Istio VirtualService Reference](https://istio.io/latest/docs/reference/config/networking/virtual-service/)
+- [Istio DestinationRule Reference](https://istio.io/latest/docs/reference/config/networking/destination-rule/)
+- [Istio PeerAuthentication Reference](https://istio.io/latest/docs/reference/config/security/peer_authentication/)

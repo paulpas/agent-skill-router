@@ -1149,3 +1149,16 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [Prometheus Documentation](https://prometheus.io/docs/introduction/overview/)
+- [PromQL Reference](https://prometheus.io/docs/prometheus/latest/querying/basics/)
+- [Prometheus Configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/)
+- [Alerting Rules](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)
+- [Service Discovery](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config)
+- [Prometheus HTTP API](https://prometheus.io/docs/prometheus/latest/querying/api/)

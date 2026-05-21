@@ -653,3 +653,17 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [Kubernetes API Reference](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/)
+- [Kubernetes Concepts Overview](https://kubernetes.io/docs/concepts/)
+- [Kubernetes Tasks - Debug](https://kubernetes.io/docs/tasks/debug/)
+- [Kubernetes RBAC Reference](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+- [Kubernetes Networking](https://kubernetes.io/docs/concepts/services-networking/)
+- [Kubernetes Storage](https://kubernetes.io/docs/concepts/storage/)
+- [Kubernetes Security Best Practices](https://kubernetes.io/docs/concepts/security/overview/)

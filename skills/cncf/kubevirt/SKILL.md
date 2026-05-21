@@ -485,3 +485,15 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [KubeVirt Documentation](https://kubevirt.io/user-guide/)
+- [KubeVirt Getting Started](https://kubevirt.io/user-guide/getting-started/)
+- [KubeVirt Virtual Machines](https://kubevirt.io/user-guide/virtual_machines/virtual_machines/)
+- [KubeVirt Networking](https://kubevirt.io/user-guide/virtual_machines/network_reference/)
+- [KubeVirt Storage](https://kubevirt.io/user-guide/virtual_machines/disks_and_volumes/)

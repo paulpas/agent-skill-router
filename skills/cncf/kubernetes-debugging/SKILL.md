@@ -700,3 +700,16 @@ When debugging a Kubernetes cluster issue, the output must contain:
 ---
 
 *This skill provides comprehensive Kubernetes debugging workflows. Always start with the TL;DR Checklist for systematic debugging.*
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [Kubernetes Debugging Guide](https://kubernetes.io/docs/tasks/debug/)
+- [kubectl Debug Command](https://kubernetes.io/docs/reference/kubectl/generated/kubectl/kubectl_debug/)
+- [Debug Pods](https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/)
+- [Debug Init Containers](https://kubernetes.io/docs/tasks/debug/debug-application/debug-init-container/)
+- [Debug Services](https://kubernetes.io/docs/tasks/debug/debug-application/debug-service/)
+- [Kubernetes Events](https://kubernetes.io/docs/tasks/debug/debug-application/determine-reason-pod-failure/)

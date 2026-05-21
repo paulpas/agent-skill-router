@@ -487,3 +487,15 @@ Use this skill when:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> **These links are resolved at load time** — content is fetched and inlined to provide the latest documentation.
+
+- [Kubescape Documentation](https://hub.armosec.io/docs)
+- [Kubescape Controls](https://github.com/kubescape/regolibrary)
+- [Kubescape MITRE ATT&CK](https://github.com/kubescape/regolibrary/tree/master/controls)
+- [Kubescape Helm Chart](https://github.com/kubescape/helm-charts)
+- [Kubescape CLI Usage](https://github.com/kubescape/kubescape)
