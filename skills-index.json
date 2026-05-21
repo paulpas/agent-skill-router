@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T05:40:20.842694Z",
-  "totalSkills": 727,
+  "generatedAt": "2026-05-21T05:55:55.926780Z",
+  "totalSkills": 728,
   "domains": {
     "agent": 251,
     "cncf": 170,
-    "coding": 182,
+    "coding": 183,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 324,
+    "implementation": 325,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -844,30 +844,25 @@
     {
       "name": "api-design",
       "domain": "coding",
-      "description": "Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services.",
+      "description": "Implements modern API design patterns (RESTful resource modeling, GraphQL schema design, gRPC service contracts) with consistent error handling, rate limiting, and versioning strategies for production backend systems.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "api design",
-        "rest api",
-        "endpoint design",
-        "api architecture",
-        "resource modeling",
-        "error handling patterns",
-        "pagination strategy",
+        "restful api",
+        "graphql schema",
+        "gRPC service",
+        "openapi specification",
+        "versioning strategy",
         "rate limiting",
-        "api versioning",
-        "graphql design",
-        "web service design",
-        "http methods",
-        "idempotency"
+        "backend architecture",
+        "API architecture",
+        "microservices interface"
       ],
       "relatedSkills": [
-        "code-review",
-        "testing",
-        "security-review",
-        "documentation-writing"
+        "async-programming",
+        "automated-testing"
       ],
       "version": "1.0.0",
       "source": "skills/coding/api-design/SKILL.md"
@@ -1451,6 +1446,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-association-rules/SKILL.md"
+    },
+    {
+      "name": "async-programming",
+      "domain": "coding",
+      "description": "Implements asynchronous programming patterns (asyncio task groups, goroutine pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking systems across Python and Go runtimes.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "asynchronous programming",
+        "async await",
+        "asyncio",
+        "goroutine pool",
+        "concurrency patterns",
+        "event loop",
+        "structured concurrency",
+        "cancellation scope",
+        "parallel execution",
+        "race condition prevention",
+        "non-blocking I/O"
+      ],
+      "relatedSkills": [
+        "api-design",
+        "automated-testing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/async-programming/SKILL.md"
     },
     {
       "name": "async-runtime",
