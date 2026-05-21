@@ -58,7 +58,7 @@ ROUTE_RESPONSE=$(curl -s -X POST http://localhost:3000/route \
   -d '{"task": "Implement stop-loss strategies", "context": {}, "constraints": {"maxSkills": 3}}')
 echo "$ROUTE_RESPONSE"
 
-if echo "$ROUTE_RESPONSE" | grep -q '"topSkill"'; then
+if echo "$ROUTE_RESPONSE" | grep -q '"selectedSkills"' && echo "$ROUTE_RESPONSE" | grep -q '"name"'; then
     echo "✅ /route endpoint OK"
 else
     echo "❌ /route endpoint failed"

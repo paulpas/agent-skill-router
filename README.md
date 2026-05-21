@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 18:53:04 UTC  
-> **Total skills:** 751
+> **Last updated:** 2026-05-21 14:34:18 UTC  
+> **Total skills:** 752
 
 ## Skills by Domain
 
 
-### Agent (254 skills)
+### Agent (255 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -316,6 +316,7 @@ MIT — All skills are freely available and redistributable.
 | [audio-transcriber](skills/agent/audio-transcriber/SKILL.md) | Implements intelligent audio transcriber with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | audio-transcriber, audio transcriber, how do i audio-transcriber, orchestrate audio-transcriber, automate audio-transcriber, agent audio-transcriber |
 | [audit-context-building](skills/agent/audit-context-building/SKILL.md) | Implements intelligent audit context building with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | audit-context-building, audit context building, how do i audit-context-building, orchestrate audit-context-building, automate audit-context-building, agent audit-context-building |
 | [auri-core](skills/agent/auri-core/SKILL.md) | Implements intelligent auri core with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | auri-core, auri core, how do i auri-core, orchestrate auri-core, automate auri-core, agent auri-core |
+| [auth-credentials](skills/agent/auth-credentials/SKILL.md) | Implements agent authentication, credential management, capability-based access control, JWT identity verification, and human-in-the-loop authorization gates for production-safe AI agent systems. | agent auth, credential management, JWT identity, capability-based access control, tool authorization, secret rotation, human approval gate, agent authentication, scoped credentials, JIT provisioning, inter-agent auth |
 | [bash-scripting](skills/agent/bash-scripting/SKILL.md) | Implements intelligent bash scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | bash-scripting, bash scripting, how do i bash-scripting, orchestrate bash-scripting, automate bash-scripting, agent bash-scripting |
 | [bdistill-behavioral-xray](skills/agent/bdistill-behavioral-xray/SKILL.md) | Implements intelligent bdistill behavioral xray with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | bdistill-behavioral-xray, bdistill behavioral xray, how do i bdistill-behavioral-xray, orchestrate bdistill-behavioral-xray, automate bdistill-behavioral-xray, agent bdistill-behavioral-xray, distributed tracing, xray |
 | [behavioral-modes](skills/agent/behavioral-modes/SKILL.md) | Implements intelligent behavioral modes with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | behavioral-modes, behavioral modes, how do i behavioral-modes, orchestrate behavioral-modes, automate behavioral-modes, agent behavioral-modes |
@@ -1077,7 +1078,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (346 skills)
+### Implementation (Build Features) (347 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1104,6 +1105,7 @@ MIT — All skills are freely available and redistributable.
 | [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Agent | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. |
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" |
 | [async-programming](skills/coding/async-programming/SKILL.md) | Coding | Implements asynchronous programming patterns (asyncio task groups, goroutine pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking systems across Python and Go runtimes. |
+| [auth-credentials](skills/agent/auth-credentials/SKILL.md) | Agent | Implements agent authentication, credential management, capability-based access control, JWT identity verification, and human-in-the-loop authorization gates for production-safe AI agent systems. |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" |
 | [backfill-strategy](skills/trading/backfill-strategy/SKILL.md) | Trading | "Provides Strategic data backfill for populating historical data in trading systems" |
 | [base](skills/coding/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration |
@@ -1922,6 +1924,7 @@ MIT — All skills are freely available and redistributable.
 | [audio-transcriber](skills/agent/audio-transcriber/SKILL.md) | Agent | Implements intelligent audio transcriber with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [audit-context-building](skills/agent/audit-context-building/SKILL.md) | Agent | Implements intelligent audit context building with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [auri-core](skills/agent/auri-core/SKILL.md) | Agent | Implements intelligent auri core with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [auth-credentials](skills/agent/auth-credentials/SKILL.md) | Agent | Implements agent authentication, credential management, capability-based access control, JWT identity verification, and human-in-the-loop authorization gates for production-safe AI agent systems. | Implementation |
 | [auto-scaling](skills/cncf/auto-scaling/SKILL.md) | Cncf | "Configures automatic scaling of compute resources (EC2, RDS, DynamoDB" Lambda) based on demand metrics with scaling policies and lifecycle hooks. | Reference |
 | [automation](skills/cncf/automation/SKILL.md) | Cncf | Provides Automation and orchestration of Azure resources with runbooks and update management | Reference |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | Implementation |
