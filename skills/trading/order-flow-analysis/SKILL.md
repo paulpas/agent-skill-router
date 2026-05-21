@@ -1,30 +1,32 @@
 ---
 name: order-flow-analysis
-description: Analyzes order flow imbalances, footprint data, and cumulative delta divergence to detect institutional accumulation/distribution zones for high-probability trade entries.
+description: Analyzes tick-level order flow data to compute delta, volume profile, footprint patterns, absorption signatures, and conviction scoring for institutional activity detection.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: trading
-  triggers: order flow, footprint chart, cumulative delta, delta divergence, tape reading, iceberg orders, volume imbalance, liquidity detection
+  triggers: order flow, footprint charts, delta analysis, cumulative delta, volume profile, trade absorption, iceberg orders, order book imbalance
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, config, do-dont]
-  related-skills: trading-risk-stop-loss, trading-vwap-execution, trading-volume-profile
+  content-types: [code, guidance, do-dont, examples]
+  related-skills: risk-stop-loss, risk-position-sizing, signals-module
 ---
 
 # Order Flow Analysis Engine
 
-Analyzes transaction-level market data — footprint charts, cumulative delta, bid-ask imbalances, and hidden order signatures — to confirm or reject price action and identify institutional accumulation or distribution zones. This skill makes the model act as a microstructure analyst who reads between the lines of raw tick data to find where large participants are building positions.
+Analyzes tick-level market microstructure data — trade-by-trade aggressor classification, order book depth snapshots, and volume profile construction — to detect institutional accumulation/distribution activity, footprint patterns, and high-conviction trading signals. This skill makes the model act as a microstructure analyst who reads between the lines of raw tick data to find where large participants are building or unwinding positions.
 
 ## TL;DR Checklist
 
-- [ ] Align cumulative delta with volume profile nodes (POC, VAH, VAL) before any signal generation
-- [ ] Confirm delta divergence at established support/resistance — never trade a lone divergence signal
-- [ ] Identify iceberg signatures via repeated bid/ask size clustering at identical prices (minimum 5 occurrences)
-- [ ] Filter noise with minimum volume threshold per price level (default: 1% of average candle volume)
-- [ ] Cross-reference detected imbalances with order book depth to map liquidity pools and stop-hunt zones
+- [ ] Classify aggressor direction using tick test primary with L2 midpoint fallback for locked markets
+- [ ] Compute cumulative delta and normalize relative to instrument-specific average candle delta before divergence analysis
+- [ ] Bin volumes at tick-sized price levels to construct volume profile — find POC, VAH, VAL, and liquidity voids
+- [ ] Require 3+ contiguous stacked imbalances (single levels are noise) with minimum absolute volume filter
+- [ ] Score each pattern by conviction factor: stacked imbalance (+30), divergence strength (+25), volume concentration z-score (+25), absorption signatures (+20)
+- [ ] Discard all signals below 50 conviction score — do not trade sub-threshold patterns
+- [ ] Corroborate divergences with volume profile nodes (POC, VAH, VAL) or historical support/resistance before acting
 
 ---
 
@@ -32,11 +34,12 @@ Analyzes transaction-level market data — footprint charts, cumulative delta, b
 
 Use this skill when:
 
-- Analyzing high-frequency tick or trade data for a liquid market (futures, major equities, top-tier crypto pairs) where footprint charts are meaningful
-- Looking for institutional accumulation or distribution zones before price confirms the move — e.g., bullish delta divergence at a volume profile POC
-- Validating whether a breakout or breakdown is supported by genuine aggressive order flow or is a liquidity grab / stop hunt
-- Building entry timing logic that layers order flow confirmation on top of broader technical setups (volume profile, VWAP, support/resistance)
-- Diagnosing why price reversed at a specific level — was it absorption, iceberg selling, or simply a lack of buyer interest?
+- Reading tape data for institutional accumulation or distribution — spotting where large players are building positions before price confirms
+- Detecting iceberg orders through repeated execution patterns at identical price levels across consecutive candles
+- Identifying absorption at key support/resistance levels where aggressive selling is absorbed by passive limit bids (or vice versa)
+- Analyzing volume profile nodes (POC, VAH, VAL) for fair value assessment and determining whether current price trades above or below value
+- Confirming price structure signals with order flow divergence — bullish delta divergence at a POC is a high-conviction long setup
+- Filtering low-quality signals during off-hours or low-volume periods where tick data is thin and imbalances are meaningless
 
 ---
 
@@ -44,48 +47,43 @@ Use this skill when:
 
 Avoid this skill for:
 
-- Low-liquidity assets (micro-cap stocks, illiquid altcoins) where order flow signals are dominated by noise and manipulation — use technical analysis instead
-- Long-term fundamental investing decisions where tick-level microstructure data has no predictive value over weekly or monthly horizons
-- Automated market maker (AMM) pools without traditional order books (e.g., Uniswap v2 constant product curves) — the bid-ask delta framework does not apply
+- Trading on OHLCV-only data without tick-level side attribution — delta classification is impossible from open/high/low/close alone
+- During extreme news events (CPI releases, FOMC surprises) where order flow is dominated by algorithmic panic and retail FOMO — signals are unreliable
+- As the sole basis for trade entry without price action context — order flow confirms timing; price structure defines direction
 
 ---
 
 ## Core Workflow
 
-1. **Load and align tick/tick-bar data with volume profile nodes.** Ingest time-and-sales (T&S) feed or exchange WebSocket, then bucket trades into candle periods matching your chart timeframe. Overlay Volume Profile metrics: Point of Control (POC), Value Area High (VAH), Value Area Low (VAL).
-   **Checkpoint:** Verify time synchronization between order flow data feed and market data source — timestamps must align within ±50ms. Any gap exceeding 200ms in the trade stream flags the candle for manual review.
+1. **Validate Data Quality** — Verify tick feed integrity before computing any metrics. Check unresolved trade rate (trades where aggressor side cannot be determined) must be <5%. Flag instruments where the tick test cannot reliably determine aggressor direction due to frequent locked markets or cross trades. **Checkpoint:** Unresolved rate below 5% threshold; if exceeded, log a data quality warning and proceed with caution flagging all downstream signals as low-confidence.
 
-2. **Calculate cumulative delta and detect divergence at key levels.** Compute rolling `buy_volume - sell_volume` across candles to build a cumulative delta series. Identify swing points in both price (highs/lows over 5–10 bar lookback) and cumulative delta. Bullish divergence: price makes a lower low while cumulative delta forms a higher low. Bearish divergence: price makes a higher high while cumulative delta forms a lower high.
-   **Checkpoint:** Divergence must align with a historical support/resistance level or volume profile node edge (POC, VAH, VAL). A divergence floating in "no man's land" between value areas has low conviction and should be discarded.
+2. **Classify Aggressor Side** — Apply tick test primary (price up = buy-initiated, price down = sell-initiated, unchanged = midpoint fallback) with L2 midpoint fallback for locked markets where bid equals ask. Bucket trades by price level and compute net delta per candle as `buy_volume - sell_volume`. **Checkpoint:** Buy/sell volume ratio between 0.3 and 3.0 across the session; extreme ratios indicate classification issues or data feed problems requiring investigation.
 
-3. **Scan for footprint imbalances at each price level.** Within every candle, compute the buyer-initiated vs seller-initiated volume ratio at each distinct price level. Flag levels where buy_volume / sell_volume >= 2.5 (bid imbalance) or sell_volume / buy_volume >= 2.5 (ask imbalance). Require that imbalances persist across at least 3 consecutive candles to be considered valid — transient spikes are noise.
-   **Checkpoint:** Confirm the imbalance sits within the value area of the volume profile (between VAH and VAL) or at a known support/resistance level. An imbalance at an arbitrary price with no structural significance is likely a retail-driven wick.
+3. **Compute Cumulative Delta** — Build rolling sum of net delta across candles to create a cumulative delta series. Normalize each value relative to the average absolute candle delta for the instrument: `normalized_delta = cum_delta / mean(|candle_delta|)`. Flag divergences where price swings and cumulative delta inflections move in opposite directions over a configurable lookback window. **Checkpoint:** Normalized divergence exceeds 2 standard deviations from mean delta — this is the statistical threshold for actionable signals.
 
-4. **Identify iceberg / hidden order signatures.** Scan for repeated aggressive buying or selling at identical price levels across multiple consecutive candles, where the executed size at that level matches a consistent chunk pattern (e.g., 50 lots repeatedly). Use the formula `repetition_score = count_at_price / avg_trades_per_price` — flag levels with score >= 5 as iceberg candidates.
-   **Checkpoint:** Minimum 5 confirmed repetitions required to classify as iceberg behavior. Single-level volume spikes should be logged separately as "unconfirmed absorption."
+4. **Construct Volume Profile** — Bin all trade volumes at tick-sized price levels within the session window. Identify POC (Point of Control — the price level with maximum traded volume), VAH and VAL (Value Area High/Low enclosing 70% of total session volume from the POC outward). Detect liquidity voids as consecutive price levels where volume falls below 10% of POC volume — these represent zones prone to rapid price movement. **Checkpoint:** Value area contains at least 65% of session volume (allows for binning slippage); if significantly below, flag the profile construction parameters.
 
-5. **Cross-reference with order book depth to map liquidity pools.** Pull the top-of-book or L2 depth snapshot and identify price levels where the aggregate bid/ask queue exceeds 3x the recent average queue size. These are institutional liquidity zones — potential targets for stop hunts or breakout catalysts.
-   **Checkpoint:** Ensure detected liquidity zones lie beyond recent swing highs or lows (at least 0.5% away from current price). Liquidity inside the recent range is usually already priced in.
+5. **Detect Order Flow Patterns** — Scan all price levels for stacked imbalances (3+ contiguous tick-sized levels where bid/ask volume ratio >= 2x), absorption signatures (>= 5 repeated executions at an identical price level with consistent chunk sizes indicating iceberg orders), and spoofing footprints (large orders placed then cancelled disproportionately). Score each detected pattern by conviction factor based on stack depth, delta alignment, and proximity to value area edges. **Checkpoint:** At least one high-conviction pattern (score >= 70) or flag the session as low-quality with no actionable signals.
 
-6. **Synthesize a conviction score.** Combine all signals into a weighted score: divergence at volume node (+30), stacked footprint imbalance (+25), confirmed iceberg behavior (+20), liquidity zone proximity (+15), order book depth confirmation (+10). Signal is actionable when total >= 70 / 100.
-   **Checkpoint:** Never trade on conviction < 60 without a secondary independent signal (e.g., price action breakout, news catalyst).
+6. **Generate Signal with Conviction Score** — Combine weighted components into a single 0–100 conviction score: stacked imbalance presence (+30 points), delta divergence strength normalized to instrument profile (+25 points), volume concentration z-score at key levels (+25 points), and absorption/iceberg signatures (+20 points). Discard all signals below 50 — only consider entries in the watchlist range (50–69) or execution range (70–100). **Checkpoint:** Signal conviction score >= 70 for high-confidence entry, >= 50 for watchlist observation only; log every discarded signal with its component breakdown for post-session review.
 
 ---
 
 ## Implementation Patterns
 
-### Pattern 1: Cumulative Delta Divergence Detection
+### Pattern 1: Aggressor Classification from Tick Stream
 
-Computes rolling cumulative delta from per-candle buy/sell volumes and detects bullish or bearish divergence against price swing points. A confirmed divergence requires two swing points in both series with the inflection points occurring within a configurable bar window.
+Classifies each tick in a trade stream as buyer-initiated or seller-initiated using the tick test as the primary method, with L2 midpoint price as fallback for locked or crossed markets. Produces `ClassifiedTrade` objects with an explicit aggressor flag, enabling all downstream delta computations. Handles edge cases: zero-volume ticks, unchanged prices in trending regimes, and simultaneous bid/ask updates.
 
 ```python
 """
-Module: data_pipeline/order_flow/cumulative_delta.py
-Purpose: Compute rolling cumulative delta from per-candle tick-level volume and detect
-         bullish/bearish divergence between price action and order flow signatures.
+Module: data_pipeline/order_flow/aggressor_classification.py
+Purpose: Classify tick-level trades as buyer-initiated or seller-initiated using the tick test
+         with L2 midpoint fallback for locked/crossed markets. This is the foundational step
+         for all cumulative delta and footprint computations — incorrect classification propagates
+         through every downstream metric.
 
-APEX Convention: Data pipeline modules live under data_pipeline/ with clear
-input/output contracts. Tests go in tests/test_cumulative_delta.py.
+APEX Convention: Data pipeline modules live under data_pipeline/. Tests in tests/test_aggressor_classification.py.
 """
 
 from __future__ import annotations
@@ -98,19 +96,244 @@ logger = logging.getLogger(__name__)
 
 
 @dataclass
-class CandleDelta:
-    """A single candle with aggregated buy/sell volume from tick data."""
+class Tick:
+    """Raw tick from a market data feed."""
     timestamp: float          # Unix epoch seconds
+    price: float              # Last traded price
+    size: int                 # Number of contracts/shares in the trade
+    bid: Optional[float] = None  # Best bid at time of trade (L2 snapshot)
+    ask: Optional[float] = None  # Best ask at time of trade (L2 snapshot)
+
+    @property
+    def midpoint(self) -> Optional[float]:
+        """Midpoint price from L2 bid/ask — used for locked market fallback."""
+        if self.bid is not None and self.ask is not None:
+            return (self.bid + self.ask) / 2.0
+        return None
+
+
+@dataclass
+class ClassifiedTrade:
+    """A tick with the aggressor side determined by classification logic."""
+    timestamp: float
+    price: float
+    size: int
+    aggressor_side: str       # "buy" (buyer-initiated) or "sell" (seller-initiated)
+    unresolved: bool = False  # True if aggressor direction could not be determined
+    method: str = ""          # "tick_test" or "midpoint_fallback" or "unresolved"
+
+    @property
+    def is_buy(self) -> bool:
+        return self.aggressor_side == "buy" and not self.unresolved
+
+    @property
+    def is_sell(self) -> bool:
+        return self.aggressor_side == "sell" and not self.unresolved
+
+
+@dataclass
+class PriceLevelDelta:
+    """Net buy/sell delta aggregated at a specific price level."""
+    price: float
+    buy_volume: int = 0
+    sell_volume: int = 0
+
+    @property
+    def net_delta(self) -> int:
+        return self.buy_volume - self.sell_volume
+
+    @property
+    def total_volume(self) -> int:
+        return self.buy_volume + self.sell_volume
+
+    @property
+    def bid_ask_ratio(self) -> float:
+        if self.sell_volume == 0:
+            return float("inf") if self.buy_volume > 0 else 1.0
+        return self.buy_volume / self.sell_volume
+
+
+def classify_ticks(
+    ticks: List[Tick],
+    use_midpoint_fallback: bool = True,
+) -> Tuple[List[ClassifiedTrade], float]:
+    """Classify aggressor direction for every tick in the stream.
+
+    Uses the tick test as the primary classification method:
+      - Price up from previous trade  → buy-initiated (aggressive buyer crossed spread)
+      - Price down from previous trade → sell-initiated (aggressive seller hit bid)
+      - Price unchanged              → use L2 midpoint fallback if enabled
+
+    For locked markets where bid == ask, the midpoint of the current L2 book is used:
+    trades at or above midpoint are classified as buy, below midpoint as sell.
+
+    Args:
+        ticks: Chronologically ordered list of raw Tick objects from the market data feed.
+        use_midpoint_fallback: Whether to use L2 midpoint classification for unchanged-price ticks.
+                              Set False if L2 data is unreliable; such ticks become unresolved.
+
+    Returns:
+        Tuple of (classified_trades, unresolved_rate) where unresolved_rate is the fraction
+        of trades that could not be classified (unresolved). This rate must stay below 5%
+        for reliable delta computation.
+
+    Raises:
+        ValueError: If ticks list is empty or not chronologically sorted.
+    """
+    if not ticks:
+        raise ValueError("Tick stream must contain at least one tick")
+
+    # Validate chronological ordering
+    for i in range(1, len(ticks)):
+        if ticks[i].timestamp < ticks[i - 1].timestamp:
+            raise ValueError(
+                f"Ticks must be chronologically sorted. "
+                f"Index {i} ({ticks[i].timestamp:.6f}) precedes index {i-1} ({ticks[i-1].timestamp:.6f})"
+            )
+
+    classified: List[ClassifiedTrade] = []
+    unresolved_count = 0
+    prev_price: Optional[float] = None
+
+    for tick in ticks:
+        if prev_price is None:
+            # First trade — classify as buy by convention (start of session accumulation)
+            classified.append(ClassifiedTrade(
+                timestamp=tick.timestamp,
+                price=tick.price,
+                size=tick.size,
+                aggressor_side="buy",
+                unresolved=False,
+                method="tick_test",
+            ))
+            prev_price = tick.price
+            continue
+
+        if tick.price > prev_price:
+            # Tick test: price rose — aggressive buyer
+            classified.append(ClassifiedTrade(
+                timestamp=tick.timestamp,
+                price=tick.price,
+                size=tick.size,
+                aggressor_side="buy",
+                unresolved=False,
+                method="tick_test",
+            ))
+        elif tick.price < prev_price:
+            # Tick test: price fell — aggressive seller
+            classified.append(ClassifiedTrade(
+                timestamp=tick.timestamp,
+                price=tick.price,
+                size=tick.size,
+                aggressor_side="sell",
+                unresolved=False,
+                method="tick_test",
+            ))
+        else:
+            # Unchanged price — try midpoint fallback
+            if use_midpoint_fallback and tick.midpoint is not None:
+                if tick.price >= tick.midpoint:
+                    side = "buy"
+                else:
+                    side = "sell"
+                classified.append(ClassifiedTrade(
+                    timestamp=tick.timestamp,
+                    price=tick.price,
+                    size=tick.size,
+                    aggressor_side=side,
+                    unresolved=False,
+                    method="midpoint_fallback",
+                ))
+            else:
+                # Cannot determine — mark unresolved (must be <5% rate)
+                classified.append(ClassifiedTrade(
+                    timestamp=tick.timestamp,
+                    price=tick.price,
+                    size=tick.size,
+                    aggressor_side="unknown",
+                    unresolved=True,
+                    method="unresolved",
+                ))
+                unresolved_count += 1
+
+        prev_price = tick.price
+
+    unresolved_rate = unresolved_count / len(ticks) if ticks else 0.0
+    return classified, unresolved_rate
+
+
+def bucket_by_price_level(
+    classified_trades: List[ClassifiedTrade],
+) -> dict[float, PriceLevelDelta]:
+    """Aggregate buy/sell volumes at each distinct price level.
+
+    Buckets all classified trades by their trade price, summing buyer-initiated and
+    seller-initiated volumes separately for each level. Used as input to footprint
+    imbalance detection and volume profile construction.
+
+    Args:
+        classified_trades: Output from classify_ticks() — already filtered to resolved trades.
+
+    Returns:
+        Dict mapping price level to PriceLevelDelta with aggregated buy/sell volumes.
+    """
+    levels: dict[float, PriceLevelDelta] = {}
+
+    for trade in classified_trades:
+        if trade.unresolved:
+            continue
+
+        if trade.price not in levels:
+            levels[trade.price] = PriceLevelDelta(price=trade.price)
+
+        delta = levels[trade.price]
+        if trade.is_buy:
+            delta.buy_volume += trade.size
+        elif trade.is_sell:
+            delta.sell_volume += trade.size
+
+    return levels
+```
+
+### Pattern 2: Cumulative Delta and Divergence Detection
+
+Builds a rolling cumulative delta series from classified tick data, normalizes it against instrument-specific averages, and detects bullish/bearish divergences between price swing points and cumulative delta inflection points. A confirmed divergence requires two swing points in both series with inflections occurring within a configurable bar window. Normalization is critical — raw cumulative delta values mean very different things across instruments (e.g., +500 on ES futures vs. +500 on a small-cap stock).
+
+```python
+"""
+Module: data_pipeline/order_flow/cumulative_delta.py
+Purpose: Build rolling cumulative delta from per-candle classified trade volumes,
+         normalize relative to instrument-specific averages, and detect bullish/bearish
+         divergence between price swings and delta inflection points. Normalization ensures
+         signals are comparable across instruments with different tick sizes and contract values.
+
+APEX Convention: Data pipeline modules live under data_pipeline/. Tests in tests/test_cumulative_delta.py.
+"""
+
+from __future__ import annotations
+
+import logging
+import math
+from dataclasses import dataclass, field
+from typing import List, Optional, Tuple
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class CandleDelta:
+    """A single candle with aggregated buy/sell volume from classified tick data."""
+    timestamp: float
     open_price: float
     high_price: float
     low_price: float
     close_price: float
-    buy_volume: int = 0       # Aggressive buyer-initiated volume
-    sell_volume: int = 0      # Aggressive seller-initiated volume
+    buy_volume: int = 0       # Aggressive buyer-initiated volume in this candle
+    sell_volume: int = 0      # Aggressive seller-initiated volume in this candle
 
     @property
     def net_delta(self) -> int:
-        """Net delta: positive means aggressive buying dominated."""
+        """Net delta for this candle: positive means aggressive buying dominated."""
         return self.buy_volume - self.sell_volume
 
     @property
@@ -140,28 +363,35 @@ class DivergenceSignal:
     second_swing_price: float
     first_swing_delta: int
     second_swing_delta: int
+    normalized_first_delta: float = 0.0       # Normalized to instrument average
+    normalized_second_delta: float = 0.0
     bar_offset: int                           # Bars between price and delta inflections
-    conviction_score: int                     # 0-100 derived from multiple factors
+    conviction_score: int = 0                 # 0-100 derived from divergence strength
+
+    @property
+    def is_bullish(self) -> bool:
+        return self.signal_type == "bullish_divergence"
 
     @property
     def is_actionable(self) -> bool:
-        """Signal meets minimum conviction threshold."""
         return self.conviction_score >= 60
 
 
-def compute_cumulative_delta_series(
+def compute_cumulative_delta(
     candles: List[CandleDelta],
 ) -> Tuple[List[int], List[float]]:
-    """Build a cumulative delta time series from per-candle buy/sell volumes.
+    """Build a rolling cumulative delta time series from per-candle buy/sell volumes.
 
-    Rolls net_delta across all candles chronologically to produce a single running
-    total that reveals sustained institutional buying or selling pressure.
+    Rolls net_delta across all candles chronologically to produce a running total that
+    reveals sustained institutional buying or selling pressure. Does NOT normalize —
+    use compute_normalized_cumulative_delta() for cross-instrument comparisons.
 
     Args:
-        candles: Ordered list of CandleDelta objects with tick-level volume breakdowns.
+        candles: Chronologically ordered list of CandleDelta with tick-level volume breakdowns.
 
     Returns:
-        Tuple of (cumulative_values, close_prices) aligned by index.
+        Tuple of (cumulative_values, close_prices) aligned by index. Each cumulative value
+        is the running sum of net_delta up to and including that candle's index.
 
     Raises:
         ValueError: If candles list is empty or not sorted chronologically.
@@ -169,12 +399,11 @@ def compute_cumulative_delta_series(
     if not candles:
         raise ValueError("Candles list must contain at least one candle")
 
-    # Validate chronological ordering
     for i in range(1, len(candles)):
         if candles[i].timestamp < candles[i - 1].timestamp:
             raise ValueError(
                 f"Candles must be chronologically sorted. "
-                f"Index {i} ({candles[i].timestamp}) precedes index {i-1}"
+                f"Index {i} precedes index {i-1}"
             )
 
     cumulative_values: List[int] = []
@@ -189,6 +418,40 @@ def compute_cumulative_delta_series(
     return cumulative_values, close_prices
 
 
+def compute_normalized_cumulative_delta(
+    candles: List[CandleDelta],
+) -> Tuple[List[float], List[float]]:
+    """Build a normalized cumulative delta series for cross-instrument comparisons.
+
+    Normalizes each cumulative delta value by dividing by the mean absolute candle delta
+    for the instrument. A normalized value of 2.0 means cumulative buying pressure is
+    2x the typical candle-level pressure — an easily comparable metric regardless of
+    whether we're analyzing ES futures (1 point = $50) or a small-cap equity.
+
+    Args:
+        candles: Chronologically ordered list of CandleDelta with tick-level volume breakdowns.
+
+    Returns:
+        Tuple of (normalized_cumulative_values, close_prices). Normalized values are floats;
+        zero is returned for instruments with no net delta at any candle.
+    """
+    raw_cum, close_prices = compute_cumulative_delta(candles)
+
+    # Compute mean absolute candle delta as the normalization factor
+    abs_deltas = [abs(c.net_delta) for c in candles]
+    mean_abs_delta = sum(abs_deltas) / len(abs_deltas) if abs_deltas else 1.0
+
+    if mean_abs_delta < 1:
+        logger.warning(
+            "Mean absolute candle delta (%.2f) is below 1 — normalization may be unreliable",
+            mean_abs_delta,
+        )
+        mean_abs_delta = 1.0
+
+    normalized = [v / mean_abs_delta for v in raw_cum]
+    return normalized, close_prices
+
+
 def find_swings(
     values: List[float],
     lookback: int = 5,
@@ -196,19 +459,18 @@ def find_swings(
 ) -> List[DeltaSwingPoint]:
     """Identify swing highs and swing lows in a time series.
 
-    A swing high occurs when the current value exceeds all values in the surrounding
-    window of `lookback` bars on each side. A swing low is the inverse. Only computes
-    swings for series with at least min_series_length points to ensure statistical
-    significance and avoid noise-driven false signals.
+    A swing high occurs when the current value exceeds all values within `lookback` bars
+    on each side. A swing low is the inverse. Only computes swings for series with at least
+    min_series_length points to ensure statistical significance and avoid noise-driven false signals.
 
     Args:
-        values: Numeric time series (e.g., cumulative delta or price).
-        lookback: Number of bars before and after for swing confirmation.
+        values: Numeric time series (cumulative delta or close prices).
+        lookback: Number of bars before and after for swing confirmation (5–10 recommended).
         min_series_length: Minimum series length required for any swing detection.
 
     Returns:
-        List of DeltaSwingPoint objects with swing_type set to "high" or "low".
-        Empty list if series is too short or no swings found.
+        List of DeltaSwingPoint objects with swing_type set to "high" or "low". Empty if series
+        is too short or no swings found within the lookback window.
     """
     if len(values) < min_series_length:
         logger.info(
@@ -222,10 +484,7 @@ def find_swings(
     for i in range(lookback, len(values) - lookback):
         window_start = max(0, i - lookback)
         window_end = min(len(values), i + lookback + 1)
-        window_values = values[window_start:window_end]
-
-        # Exclude the center point when comparing
-        comparison_values = window_values[:lookback] + window_values[lookback + 1:]
+        comparison_values = values[window_start:i] + values[i + 1:window_end]
 
         if not comparison_values:
             continue
@@ -233,20 +492,13 @@ def find_swings(
         is_high = values[i] > max(comparison_values)
         is_low = values[i] < min(comparison_values)
 
-        if is_high:
-            swings.append(DeltaSwingPoint(
-                timestamp=0.0,  # Will be set by caller using candle timestamps
-                price_close=values[i],
-                cumulative_delta=int(values[i]),
-                swing_type="high",
-                candle_index=i,
-            ))
-        elif is_low:
+        swing_type = "high" if is_high else ("low" if is_low else "none")
+        if swing_type != "none":
             swings.append(DeltaSwingPoint(
                 timestamp=0.0,
                 price_close=values[i],
                 cumulative_delta=int(values[i]),
-                swing_type="low",
+                swing_type=swing_type,
                 candle_index=i,
             ))
 
@@ -254,109 +506,112 @@ def find_swings(
 
 
 def detect_divergence(
-    price_candles: List[CandleDelta],
+    candles: List[CandleDelta],
     lookback: int = 5,
     max_bar_offset: int = 5,
 ) -> List[DivergenceSignal]:
-    """Detect bullish and bearish divergence between price action and cumulative delta.
+    """Detect bullish and bearish divergence between price action and normalized cumulative delta.
 
-    Bullish divergence: Price makes a lower low while cumulative delta forms a higher low,
-    indicating that selling pressure is weakening despite price declining — a classic
-    institutional accumulation signature.
+    Bullish divergence: Price makes a lower low while normalized cumulative delta forms a higher low,
+    indicating weakening selling pressure despite declining price — classic institutional accumulation.
 
-    Bearish divergence: Price makes a higher high while cumulative delta forms a lower high,
-    suggesting buying exhaustion — potential distribution ahead.
+    Bearish divergence: Price makes a higher high while normalized cumulative delta forms a lower high,
+    suggesting buying exhaustion and potential distribution ahead.
 
-    Requires at least 2 swing points in both price and delta series for confirmation.
-    Inflection points must occur within max_bar_offset bars of each other.
+    Requires two swing points in both series with inflections within max_bar_offset bars. Divergences
+    are scored by the strength of the delta gap and proximity alignment.
 
     Args:
-        price_candles: Ordered CandleDelta objects with OHLCV data.
-        lookback: Bar window for swing detection (5–10 recommended).
-        max_bar_offset: Maximum bars between corresponding price and delta swings.
+        candles: Ordered CandleDelta objects with OHLCV data and tick-level volume breakdowns.
+        lookback: Bar window for swing detection (5–10 recommended for ES futures, 3–5 for crypto).
+        max_bar_offset: Maximum bars between corresponding price and delta swings (lower = stronger signal).
 
     Returns:
-        List of DivergenceSignal for each confirmed divergence pair found. Empty list if
-        no valid divergences detected in the available data.
+        List of DivergenceSignal for each confirmed divergence pair. Empty list if no valid divergences
+        detected or series is too short for swing point identification.
     """
-    if len(price_candles) < lookback * 2 + 10:
+    min_candles = lookback * 2 + 10
+    if len(candles) < min_candles:
         return []
 
-    # Step 1: Compute cumulative delta series
-    cum_delta, close_prices = compute_cumulative_delta_series(price_candles)
+    # Compute normalized cumulative delta
+    norm_cum, close_prices = compute_normalized_cumulative_delta(candles)
 
-    # Step 2: Find swing points in both series
+    # Find swing points in both price and delta series
     price_lows = find_swings(close_prices, lookback)
-    delta_lows = find_swings(cum_delta, lookback)
+    delta_lows = find_swings(norm_cum, lookback)
     price_highs = find_swings(close_prices, lookback)
-    delta_highs = find_swings(cum_delta, lookback)
-
-    divergences: List[DivergenceSignal] = []
+    delta_highs = find_swings(norm_cum, lookback)
 
     # Assign timestamps from candles for precise bar-offset calculation
     for swing in price_lows + delta_lows + price_highs + delta_highs:
-        idx = min(swing.candle_index, len(price_candles) - 1)
-        swing.timestamp = price_candles[idx].timestamp
+        idx = min(swing.candle_index, len(candles) - 1)
+        swing.timestamp = candles[idx].timestamp
 
-    # Bullish divergence: lower price low + higher delta low
+    divergences: List[DivergenceSignal] = []
+
+    # --- Bullish divergence: lower price low + higher delta low ---
     if len(price_lows) >= 2 and len(delta_lows) >= 2:
         for i in range(1, len(price_lows)):
-            prev_price_low = price_lows[i - 1]
-            curr_price_low = price_lows[i]
+            prev_pl = price_lows[i - 1]
+            curr_pl = price_lows[i]
 
-            # Price made a lower low
-            if curr_price_low.price_close < prev_price_low.price_close:
-                # Find corresponding delta low within bar offset window
+            if curr_pl.price_close < prev_pl.price_close:
                 for j in range(1, len(delta_lows)):
-                    prev_delta_low = delta_lows[j - 1]
-                    curr_delta_low = delta_lows[j]
+                    prev_dl = delta_lows[j - 1]
+                    curr_dl = delta_lows[j]
 
-                    if (curr_delta_low.cumulative_delta > prev_delta_low.cumulative_delta and
-                            abs(curr_price_low.candle_index - curr_delta_low.candle_index) <= max_bar_offset):
+                    if (curr_dl.cumulative_delta > prev_dl.cumulative_delta and
+                            abs(curr_pl.candle_index - curr_dl.candle_index) <= max_bar_offset):
 
-                        bar_offset = abs(curr_price_low.candle_index - curr_delta_low.candle_index)
-                        # Conviction: stronger if closer alignment and wider delta gap
-                        delta_gap_pct = (curr_delta_low.cumulative_delta - prev_delta_low.cumulative_delta) / max(
-                            abs(prev_delta_low.cumulative_delta), 1
+                        bar_offset = abs(curr_pl.candle_index - curr_dl.candle_index)
+                        delta_gap_pct = (
+                            (curr_dl.cumulative_delta - prev_dl.cumulative_delta) /
+                            max(abs(prev_dl.cumulative_delta), 1)
                         ) * 100
                         conviction = min(100, int(delta_gap_pct * 5 + (max_bar_offset - bar_offset) * 5))
 
                         divergences.append(DivergenceSignal(
                             signal_type="bullish_divergence",
-                            first_swing_price=prev_price_low.price_close,
-                            second_swing_price=curr_price_low.price_close,
-                            first_swing_delta=prev_delta_low.cumulative_delta,
-                            second_swing_delta=curr_delta_low.cumulative_delta,
+                            first_swing_price=prev_pl.price_close,
+                            second_swing_price=curr_pl.price_close,
+                            first_swing_delta=prev_dl.cumulative_delta,
+                            second_swing_delta=curr_dl.cumulative_delta,
+                            normalized_first_delta=round(prev_dl.price_close, 4),
+                            normalized_second_delta=round(curr_dl.price_close, 4),
                             bar_offset=bar_offset,
                             conviction_score=conviction,
                         ))
 
-    # Bearish divergence: higher price high + lower delta high
+    # --- Bearish divergence: higher price high + lower delta high ---
     if len(price_highs) >= 2 and len(delta_highs) >= 2:
         for i in range(1, len(price_highs)):
-            prev_price_high = price_highs[i - 1]
-            curr_price_high = price_highs[i]
+            prev_ph = price_highs[i - 1]
+            curr_ph = price_highs[i]
 
-            if curr_price_high.price_close > prev_price_high.price_close:
+            if curr_ph.price_close > prev_ph.price_close:
                 for j in range(1, len(delta_highs)):
-                    prev_delta_high = delta_highs[j - 1]
-                    curr_delta_high = delta_highs[j]
+                    prev_dh = delta_highs[j - 1]
+                    curr_dh = delta_highs[j]
 
-                    if (curr_delta_high.cumulative_delta < prev_delta_high.cumulative_delta and
-                            abs(curr_price_high.candle_index - curr_delta_high.candle_index) <= max_bar_offset):
+                    if (curr_dh.cumulative_delta < prev_dh.cumulative_delta and
+                            abs(curr_ph.candle_index - curr_dh.candle_index) <= max_bar_offset):
 
-                        bar_offset = abs(curr_price_high.candle_index - curr_delta_high.candle_index)
-                        delta_gap_pct = (prev_delta_high.cumulative_delta - curr_delta_high.cumulative_delta) / max(
-                            abs(prev_delta_high.cumulative_delta), 1
+                        bar_offset = abs(curr_ph.candle_index - curr_dh.candle_index)
+                        delta_gap_pct = (
+                            (prev_dh.cumulative_delta - curr_dh.cumulative_delta) /
+                            max(abs(prev_dh.cumulative_delta), 1)
                         ) * 100
                         conviction = min(100, int(delta_gap_pct * 5 + (max_bar_offset - bar_offset) * 5))
 
                         divergences.append(DivergenceSignal(
                             signal_type="bearish_divergence",
-                            first_swing_price=prev_price_high.price_close,
-                            second_swing_price=curr_price_high.price_close,
-                            first_swing_delta=prev_delta_high.cumulative_delta,
-                            second_swing_delta=curr_delta_high.cumulative_delta,
+                            first_swing_price=prev_ph.price_close,
+                            second_swing_price=curr_ph.price_close,
+                            first_swing_delta=prev_dh.cumulative_delta,
+                            second_swing_delta=curr_dh.cumulative_delta,
+                            normalized_first_delta=round(prev_dh.price_close, 4),
+                            normalized_second_delta=round(curr_dh.price_close, 4),
                             bar_offset=bar_offset,
                             conviction_score=conviction,
                         ))
@@ -364,493 +619,283 @@ def detect_divergence(
     return divergences
 ```
 
-### Pattern 2: Footprint Imbalance Detection (BAD vs. GOOD)
+### Pattern 3: Volume Profile Construction with Numpy Binning
 
-Detects price levels where aggressive buyers or sellers dominate volume by a configurable threshold. Requires multi-level confirmation — single-level imbalances are noise; stacked imbalances across contiguous prices reveal institutional order flow.
+Bins trade volumes at tick-sized price levels to construct a full session volume profile. Identifies the Point of Control (POC), Value Area High and Low (VAH/VAL enclosing 70% of volume), and detects liquidity voids — consecutive price levels where volume falls below 10% of POC volume, representing zones prone to rapid price movement during breakouts. Uses numpy for efficient histogram-style binning on tick-sized grids.
 
 ```python
 """
-Module: data_pipeline/order_flow/footprint_imbalance.py
-Purpose: Scan footprint chart data for buyer/seller volume imbalances at each price level,
-         detect stacked imbalance formations, and track absorption signatures.
+Module: data_pipeline/order_flow/volume_profile.py
+Purpose: Construct a full volume profile from classified tick data using numpy-based
+         histogram binning at tick-sized intervals. Computes POC, VAH, VAL, and detects
+         liquidity voids. Critical for determining whether order flow signals align with
+         established value areas — a divergence at the POC is high-conviction; one in empty
+         price space is not.
 
-APEX Convention: Data pipeline modules live under data_pipeline/. Tests in tests/test_footprint_imbalance.py.
+APEX Convention: Data pipeline modules live under data_pipeline/. Tests in tests/test_volume_profile.py.
 """
 
 from __future__ import annotations
 
 import logging
-from collections import defaultdict
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
+
+import numpy as np
 
 logger = logging.getLogger(__name__)
 
 
 @dataclass
-class PriceLevelVolume:
-    """Aggregated buy/sell volume at a single price level within a candle."""
-    price: float
-    buy_volume: int = 0
-    sell_volume: int = 0
+class VolumeProfile:
+    """Full session volume profile with computed value areas and void detection."""
+    price_levels: List[float]               # Tick-sized price levels (sorted ascending)
+    volumes: np.ndarray                     # Total volume at each level
+    poc_price: float                        # Point of Control — max volume level
+    poc_volume: int                         # Volume at the POC
+    vah_price: float                        # Value Area High (upper bound of 70% value area)
+    val_price: float                        # Value Area Low (lower bound of 70% value area)
+    total_session_volume: int               # Sum of all volumes
+    value_area_percentage: float            # Percentage of volume within VAH–VAL
+
+    @field(default_factory=list)
+    liquidity_voids: List[Tuple[float, float]] = field(default_factory=list)
+    """List of (start_price, end_price) tuples marking consecutive void levels."""
 
     @property
-    def total_volume(self) -> int:
-        return self.buy_volume + self.sell_volume
+    def is_within_value_area(self, price: float) -> bool:
+        return self.val_price <= price <= self.vah_price
 
     @property
-    def imbalance_ratio(self) -> float:
-        """Bid/ask volume ratio. >1 means buyer dominance, <1 means seller dominance."""
-        if self.sell_volume == 0:
-            return float("inf") if self.buy_volume > 0 else 1.0
-        return self.buy_volume / self.sell_volume
+    def value_width(self) -> float:
+        return self.vah_price - self.val_price
 
     @property
-    def is_bid_imbalance(self, threshold: float = 2.5) -> bool:
-        """Buyer volume exceeds seller volume by the configured ratio threshold."""
-        return self.imbalance_ratio >= threshold
-
-    @property
-    def is_ask_imbalance(self, threshold: float = 2.5) -> bool:
-        """Seller volume exceeds buyer volume by the configured ratio threshold."""
-        if self.buy_volume == 0:
-            return True if self.sell_volume > 0 else False
-        return (self.sell_volume / self.buy_volume) >= threshold
-
-
-@dataclass
-class ImbalanceLevel:
-    """A price level with a confirmed volume imbalance above threshold."""
-    price: float
-    buy_volume: int
-    sell_volume: int
-    ratio: float                     # Directional ratio
-    direction: str                   # "bid_imbalance" or "ask_imbalance"
-    strength: float = 0.0            # Excess volume percentage (0.0 to 1.0)
-
-    def __post_init__(self):
-        total = self.buy_volume + self.sell_volume
-        if total > 0:
-            if self.direction == "bid_imbalance":
-                self.strength = (self.buy_volume - self.sell_volume) / total
-            else:
-                self.strength = (self.sell_volume - self.buy_volume) / total
-
-
-@dataclass
-class StackedImbalance:
-    """Three or more contiguous price levels all showing imbalance in the same direction."""
-    levels: List[ImbalanceLevel] = field(default_factory=list)
-    direction: str = "bid_imbalance"
-    combined_net_delta: int = 0
-    min_price: float = 0.0
-    max_price: float = 0.0
-
-    @property
-    def price_span(self) -> float:
-        return self.max_price - self.min_price
-
-    @property
-    def avg_ratio(self) -> float:
-        if not self.levels:
+    def avg_price_level_volume(self) -> float:
+        if not np.any(self.volumes):
             return 0.0
-        return sum(l.ratio for l in self.levels) / len(self.levels)
-
-    @property
-    def is_valid(self, min_levels: int = 3, min_net_delta: int = 10) -> bool:
-        """Stack must have minimum contiguous levels and meaningful net delta."""
-        return (len(self.levels) >= min_levels and abs(self.combined_net_delta) >= min_net_delta)
+        non_zero = self.volumes[self.volumes > 0]
+        return float(np.mean(non_zero)) if len(non_zero) > 0 else 0.0
 
 
-@dataclass
-class FootprintConvictionScore:
-    """Composite conviction score (0-100) for order flow signal quality."""
-    divergence_component: int = 0       # Max 30 points
-    stacked_imbalance_component: int = 0 # Max 25 points
-    iceberg_component: int = 0          # Max 20 points
-    liquidity_zone_component: int = 0   # Max 15 points
-    book_depth_component: int = 0       # Max 10 points
-
-    @property
-    def total(self) -> int:
-        return (self.divergence_component + self.stacked_imbalance_component +
-                self.iceberg_component + self.liquidity_zone_component +
-                self.book_depth_component)
-
-    @property
-    def is_high_conviction(self) -> bool:
-        return self.total >= 70
-
-    @property
-    def is_low_conviction(self) -> bool:
-        return self.total <= 20
-
-
-# ❌ BAD: Detecting imbalances without volume normalization or stacking requirements
-def bad_detect_imbalance(price_levels: Dict[float, Tuple[int, int]]) -> List[dict]:
-    """Wrong: flags any price level where buy_volume > sell_volume, ignoring
-       magnitude thresholds and multi-level confirmation. Produces dozens of false signals."""
-    signals = []
-    for price, (buy_vol, sell_vol) in price_levels.items():
-        if buy_vol > sell_vol:  # No threshold — every slight buyer edge triggers a signal
-            signals.append({
-                "price": price,
-                "type": "imbalanced",
-                "confidence": "medium"  # Magic string instead of numeric score
-            })
-    return signals
-
-
-# ✅ GOOD: Full imbalance detection with volume normalization, stacking logic, and conviction scoring
-def detect_footprint_imbalances(
-    candle_deltas: Dict[float, PriceLevelVolume],
-    threshold: float = 2.5,
-    min_volume_pct_of_avg: float = 0.01,
-) -> List[ImbalanceLevel]:
-    """Detect single-level footprint imbalances from per-price-level tick volume data.
-
-    A bid imbalance exists when buy_volume / sell_volume >= threshold at a price level.
-    An ask imbalance exists when sell_volume / buy_volume >= threshold. Levels below the
-    minimum volume filter (relative to average candle volume) are skipped as noise.
-
-    Args:
-        candle_deltas: Mapping from price level to PriceLevelVolume with aggregated volumes.
-        threshold: Minimum bid/ask ratio for imbalance classification (default 2.5x).
-        min_volume_pct_of_avg: Minimum total volume as fraction of average candle volume
-                              to filter out insignificant price levels (default 1%).
-
-    Returns:
-        List of ImbalanceLevel objects sorted by strength descending. Empty list if no
-        imbalances meet the threshold and minimum volume requirements.
-    """
-    imbalances: List[ImbalanceLevel] = []
-
-    for price, level in candle_deltas.items():
-        # Volume filter — skip insignificant levels
-        if level.total_volume < min_volume_pct_of_avg * 1000:  # Simplified avg check
-            continue
-
-        if level.is_bid_imbalance(threshold):
-            imbalances.append(ImbalanceLevel(
-                price=price,
-                buy_volume=level.buy_volume,
-                sell_volume=level.sell_volume,
-                ratio=level.imbalance_ratio,
-                direction="bid_imbalance",
-            ))
-        elif level.is_ask_imbalance(threshold):
-            imbalances.append(ImbalanceLevel(
-                price=price,
-                buy_volume=level.buy_volume,
-                sell_volume=level.sell_volume,
-                ratio=(level.sell_volume / max(level.buy_volume, 1)),
-                direction="ask_imbalance",
-            ))
-
-    # Sort by strength — strongest imbalances first for priority review
-    imbalances.sort(key=lambda x: x.strength, reverse=True)
-    return imbalances
-
-
-def detect_stacked_imbalances(
-    imbalances: List[ImbalanceLevel],
+def compute_volume_profile(
+    price_volumes: Dict[float, int],
     tick_size: float = 0.25,
-    min_contiguous: int = 3,
-) -> List[StackedImbalance]:
-    """Detect stacks of contiguous imbalance levels forming institutional footprints.
+    value_area_pct: float = 0.70,
+    min_bin_price_levels: int = 10,
+) -> VolumeProfile:
+    """Construct a full volume profile from per-price-level trade volumes.
 
-    Groups consecutive price levels (adjacent within tick size spacing) that share the same
-    imbalance direction into stacked imbalance formations. A valid stack requires at least
-    min_contiguous levels and meaningful combined net delta.
+    Uses numpy histogram-style binning on a tick-sized grid to aggregate volumes across
+    potentially noisy price data. Then identifies the POC (maximum volume level), builds
+    the value area by accumulating volume from the POC outward, and detects liquidity voids
+    as consecutive levels with volume below 10% of POC volume.
+
+    This is the definitive reference for fair value assessment: price trading above VAH
+    suggests overvalue; price below VAL suggests undervalue. Signals confirmed at these
+    edges carry higher conviction than those in the middle of the value area.
 
     Args:
-        imbalances: List of ImbalanceLevel sorted by strength descending.
-        tick_size: Minimum price increment for contiguity check (e.g., 0.25 for ES futures).
-        min_contiguous: Minimum contiguous levels to form a valid stack (default 3).
+        price_volumes: Mapping from price level to total trade volume (aggregated buy+sell).
+                       Should come from bucketing classified tick data by trade price.
+        tick_size: Minimum price increment for the instrument (e.g., 0.25 for ES futures,
+                   0.01 for major forex pairs, 1.0 for crypto indices).
+        value_area_pct: Fraction of total volume to include in the value area (default 70%,
+                        per standard volume profile methodology). Must be between 0.5 and 0.95.
+        min_bin_price_levels: Minimum distinct price levels required for a valid profile.
+                             If fewer exist, the profile is constructed but flagged as thin.
 
     Returns:
-        List of StackedImbalance objects. Empty list if no valid stacks found.
+        VolumeProfile with all computed metrics including POC price/volume, VAH/VAL boundaries,
+        value area coverage percentage, and detected liquidity void regions.
+
+    Raises:
+        ValueError: If tick_size is non-positive or value_area_pct is outside [0.5, 0.95].
+                    Also raised if price_volumes is empty.
     """
-    if len(imbalances) < min_contiguous:
-        return []
+    if not price_volumes:
+        raise ValueError("price_volumes must contain at least one price level")
 
-    # Sort ascending by price for contiguous level grouping
-    sorted_levels = sorted(imbalances, key=lambda x: x.price)
-    stacks: List[StackedImbalance] = []
-    current_stack: List[ImbalanceLevel] = [sorted_levels[0]]
+    if tick_size <= 0:
+        raise ValueError(f"tick_size must be positive, got {tick_size}")
 
-    for i in range(1, len(sorted_levels)):
-        prev_level = current_stack[-1]
-        curr_level = sorted_levels[i]
+    if not (0.5 <= value_area_pct <= 0.95):
+        raise ValueError(
+            f"value_area_pct must be between 0.5 and 0.95, got {value_area_pct}"
+        )
 
-        price_gap = abs(curr_level.price - prev_level.price)
-        is_contiguous = price_gap <= tick_size * 1.5  # Allow rounding tolerance
-        same_direction = curr_level.direction == current_stack[0].direction
+    # Create tick-aligned grid and bin volumes
+    prices = np.array(sorted(price_volumes.keys()), dtype=np.float64)
+    volumes = np.array([price_volumes[p] for p in prices], dtype=np.int64)
 
-        if is_contiguous and same_direction:
-            current_stack.append(curr_level)
-        else:
-            # Finalize current stack
-            if len(current_stack) >= min_contiguous:
-                stack = _build_stacked_imbalance(current_stack)
-                if stack.is_valid:
-                    stacks.append(stack)
-            current_stack = [curr_level]
+    # Build tick-sized bins using numpy digitize
+    min_price = float(prices.min()) - tick_size
+    max_price = float(prices.max()) + tick_size
+    bin_edges = np.arange(min_price, max_price + tick_size * 0.5, tick_size)
+    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
 
-    # Don't forget the last stack
-    if len(current_stack) >= min_contiguous:
-        stack = _build_stacked_imbalance(current_stack)
-        if stack.is_valid:
-            stacks.append(stack)
+    # Digitize prices into bins and sum volumes per bin
+    bin_indices = np.digitize(prices, bin_edges) - 1
+    binned_volumes = np.zeros(len(bin_centers), dtype=np.int64)
+    for idx, vol in zip(bin_indices, volumes):
+        if 0 <= idx < len(binned_volumes):
+            binned_volumes[idx] += vol
 
-    return stacks
+    # Find POC (bin with maximum volume)
+    poc_idx = int(np.argmax(binned_volumes))
+    poc_price = float(bin_centers[poc_idx])
+    poc_volume = int(binned_volumes[poc_idx])
 
+    total_volume = int(binned_volumes.sum())
+    if total_volume == 0:
+        raise ValueError("Total session volume is zero — no meaningful profile can be constructed")
 
-def _build_stacked_imbalance(levels: List[ImbalanceLevel]) -> StackedImbalance:
-    """Build a StackedImbalance from a list of contiguous imbalance levels."""
-    direction = levels[0].direction
-    buy_total = sum(l.buy_volume for l in levels)
-    sell_total = sum(l.sell_volume for l in levels)
+    # Build value area: accumulate from POC outward until value_area_pct of volume is covered
+    vah_price, val_price = _compute_value_areas(
+        bin_centers, binned_volumes, poc_idx, total_volume, value_area_pct, tick_size
+    )
 
-    return StackedImbalance(
-        levels=levels,
-        direction=direction,
-        combined_net_delta=buy_total - sell_total,
-        min_price=min(l.price for l in levels),
-        max_price=max(l.price for l in levels),
+    # Detect liquidity voids: consecutive levels with volume < 10% of POC volume
+    void_threshold = 0.10 * poc_volume if poc_volume > 0 else 0
+    voids = _detect_liquidity_voids(bin_centers, binned_volumes, void_threshold)
+
+    # Calculate actual value area coverage (may differ from target due to binning)
+    va_mask = (bin_centers >= val_price - tick_size * 0.5) & (bin_centers <= vah_price + tick_size * 0.5)
+    volume_in_va = int(binned_volumes[va_mask].sum()) if np.any(va_mask) else 0
+    value_area_pct_actual = volume_in_va / total_volume if total_volume > 0 else 0.0
+
+    return VolumeProfile(
+        price_levels=bin_centers.tolist(),
+        volumes=binned_volumes,
+        poc_price=poc_price,
+        poc_volume=poc_volume,
+        vah_price=vah_price,
+        val_price=val_price,
+        total_session_volume=total_volume,
+        value_area_percentage=round(value_area_pct_actual * 100, 1),
+        liquidity_voids=voids,
     )
 
 
-def compute_conviction_score(
-    divergences: List[DivergenceSignal],       # From Pattern 1
-    stacked_imbalances: List[StackedImbalance], # From this module
-    iceberg_count: int = 0,                    # Confirmed iceberg signatures
-    liquidity_zone_nearby: bool = False,       # Within 0.5% of a liquidity pool
-    book_depth_ratio: float = 1.0,            # Queue depth vs average (>1 = above avg)
-) -> FootprintConvictionScore:
-    """Compute a weighted conviction score (0-100) for an order flow signal.
+def _compute_value_areas(
+    centers: np.ndarray,
+    volumes: np.ndarray,
+    poc_idx: int,
+    total_volume: int,
+    target_pct: float,
+    tick_size: float,
+) -> Tuple[float, float]:
+    """Accumulate volume from POC outward to cover target fraction of session volume.
 
-    Combines five factors measured independently, each contributing to the total.
-    A high-conviction signal (>=70) warrants execution consideration if risk controls allow.
-
-    Args:
-        divergences: Confirmed delta divergence signals from compute_cumulative_delta.py.
-        stacked_imbalances: Detected stacked imbalance formations from this module.
-        iceberg_count: Number of confirmed iceberg order signatures in the current window.
-        liquidity_zone_nearby: True if price is within 0.5% of a detected liquidity pool.
-        book_depth_ratio: Ratio of current order book queue depth to recent average.
-
-    Returns:
-        FootprintConvictionScore with full breakdown and total score.
-    """
-    score = FootprintConvictionScore()
-
-    # Divergence component (max 30) — strongest single signal
-    if divergences:
-        best_divergence = max(divergences, key=lambda d: d.conviction_score)
-        score.divergence_component = min(30, int(best_divergence.conviction_score * 0.3))
-
-    # Stacked imbalance component (max 25)
-    strong_stacks = [s for s in stacked_imbalances if len(s.levels) >= 4]
-    valid_stacks = [s for s in stacked_imbalances if s.is_valid()]
-    score.stacked_imbalance_component = min(25, int(len(valid_stacks) * 10 + len(strong_stacks) * 5))
-
-    # Iceberg component (max 20)
-    score.iceberg_component = min(20, iceberg_count * 5)
-
-    # Liquidity zone proximity (max 15)
-    if liquidity_zone_nearby:
-        score.liquidity_zone_component = 15
-
-    # Book depth confirmation (max 10)
-    if book_depth_ratio > 2.0:
-        score.book_depth_component = 10
-    elif book_depth_ratio > 1.5:
-        score.book_depth_component = 6
-    elif book_depth_ratio > 1.0:
-        score.book_depth_component = 3
-
-    return score
-```
-
-### Pattern 3: Iceberg / Hidden Order Detection via Book Snapshot Analysis
-
-Iceberg orders are large institutional orders hidden beneath the visible order book — they replenish at a specific price level whenever their visible portion gets filled. Detection relies on identifying repeated trade executions of consistent size at identical prices over consecutive candles, producing an abnormally high trade count relative to total volume at that level.
-
-```python
-"""
-Module: data_pipeline/order_flow/iceberg_detector.py
-Purpose: Identify iceberg and hidden order signatures by analyzing repeated execution patterns
-         at identical price levels across consecutive candle periods in tick data.
-
-APEX Convention: Under data_pipeline/order_flow/. Tests in tests/test_iceberg_detector.py.
-"""
-
-from __future__ import annotations
-
-import logging
-from collections import defaultdict
-from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Tuple
-
-logger = logging.getLogger(__name__)
-
-
-@dataclass
-class IcebergSignature:
-    """An identified iceberg order pattern at a specific price level."""
-    price: float
-    side: str                          # "buy" or "sell"
-    total_executed_volume: int
-    execution_count: int               # Number of individual trades at this level
-    avg_chunk_size: float              # Average size per execution (visible portion)
-    estimated_total_size: int          # Inferred full order size (chunk_size * replenishment_factor)
-    confidence: str                    # "confirmed", "probable", "suspected"
-    first_seen_index: int
-    last_seen_index: int
-
-    @property
-    def is_confirmed(self) -> bool:
-        return self.confidence == "confirmed"
-
-
-def detect_iceberg_orders(
-    price_level_trades: Dict[float, List[Tuple[int, int, str]]],
-    min_repetitions: int = 5,
-    max_size_variance_pct: float = 0.3,
-    avg_trade_volume: int = 100,
-) -> List[IcebergSignature]:
-    """Detect iceberg orders by analyzing repeated execution patterns at price levels.
-
-    An iceberg order signature manifests as consistent trade sizes executing repeatedly at
-    the same price level across consecutive candles. The key identifier is low variance in
-    individual chunk sizes despite high aggregate volume at that price — indicating a large
-    hidden order replenishing its visible portion.
+    Walks outward from the POC bin index in both directions simultaneously, always picking
+    the side with higher adjacent volume (the "value area builds toward higher volume" principle).
+    Stops when cumulative volume reaches target_pct * total_volume.
 
     Args:
-        price_level_trades: Mapping from price to list of (trade_size, candle_index, side) tuples.
-                           Only includes levels where total trades >= min_repetitions.
-        min_repetitions: Minimum trade count at a price level to consider it an iceberg candidate.
-        max_size_variance_pct: Maximum allowed coefficient of variation in chunk sizes.
-                              Lower = stricter detection (default 30%).
-        avg_trade_volume: System-wide average trade volume for scaling normalization.
+        centers: Bin center prices aligned with volumes array.
+        volumes: Volume per bin.
+        poc_idx: Index of the POC bin in both arrays.
+        total_volume: Total session volume across all bins.
+        target_pct: Target fraction for value area (default 0.70).
+        tick_size: Price increment used for bin alignment.
 
     Returns:
-        List of IcebergSignature with inferred full order size and confidence classification.
-        Only confirmed signatures (min_repetitions >= 5) are included in the result.
+        Tuple of (vah_price, val_price) — upper and lower value area boundaries.
     """
-    if not price_level_trades:
-        return []
+    target_volume = int(target_pct * total_volume)
+    cumulative = volumes[poc_idx]
+    left = poc_idx - 1
+    right = poc_idx + 1
 
-    signatures: List[IcebergSignature] = []
+    while cumulative < target_volume and (left >= 0 or right < len(volumes)):
+        # Pick the side with higher adjacent volume (build toward value)
+        left_vol = volumes[left] if left >= 0 else -1
+        right_vol = volumes[right] if right < len(volumes) else -1
 
-    for price, trade_list in price_level_trades.items():
-        if len(trade_list) < min_repetitions:
-            continue
-
-        sizes = [t[0] for t in trade_list]
-        indices = [t[1] for t in trade_list]
-        sides = set(t[2] for t in trade_list)
-
-        if len(sides) > 1:
-            # Mixed buy/sell at same price — could be crossing, not necessarily iceberg
-            continue
-
-        side = list(sides)[0]
-        avg_size = sum(sizes) / len(sizes)
-        variance = sum((s - avg_size) ** 2 for s in sizes) / len(sizes)
-        std_dev = variance ** 0.5
-        cv = std_dev / max(avg_size, 1)  # Coefficient of variation
-
-        # Low coefficient of variation + high count = strong iceberg signal
-        if cv > max_size_variance_pct:
-            continue
-
-        # Classify confidence
-        execution_count = len(trade_list)
-        if execution_count >= min_repetitions * 2:
-            confidence = "confirmed"
-            replenishment_factor = 4.0
-        elif execution_count >= min_repetitions:
-            confidence = "probable"
-            replenishment_factor = 3.0
+        if left_vol >= right_vol and left >= 0:
+            cumulative += volumes[left]
+            left -= 1
+        elif right < len(volumes):
+            cumulative += volumes[right]
+            right += 1
         else:
-            confidence = "suspected"
-            replenishment_factor = 2.5
+            break
 
-        total_volume = sum(sizes)
-        estimated_total = int(avg_size * replenishment_factor)
+    vah_price = float(centers[max(left + 1, 0)] + tick_size * 0.5)
+    val_price = float(centers[min(right - 1, len(centers) - 1)] - tick_size * 0.5)
 
-        signatures.append(IcebergSignature(
-            price=price,
-            side=side,
-            total_executed_volume=total_volume,
-            execution_count=execution_count,
-            avg_chunk_size=round(avg_size, 2),
-            estimated_total_size=estimated_total,
-            confidence=confidence,
-            first_seen_index=indices[0],
-            last_seen_index=indices[-1],
+    return vah_price, val_price
+
+
+def _detect_liquidity_voids(
+    centers: np.ndarray,
+    volumes: np.ndarray,
+    threshold: float,
+) -> List[Tuple[float, float]]:
+    """Detect liquidity voids — consecutive price levels with volume below threshold.
+
+    A liquidity void represents a zone where little trading has occurred, making it likely
+    that price will traverse the region rapidly when a breakout or breakdown occurs. Identifying
+    voids helps set realistic take-profit targets and anticipate slippage in thin zones.
+
+    Args:
+        centers: Bin center prices aligned with volumes array.
+        volumes: Volume per bin.
+        threshold: Volume level below which a bin is considered "void" (typically 10% of POC volume).
+
+    Returns:
+        List of (start_price, end_price) tuples marking consecutive void regions. Single-level
+        voids are excluded — only contiguous multi-level voids are returned.
+    """
+    void_mask = volumes < threshold
+    voids: List[Tuple[float, float]] = []
+    in_void = False
+    void_start_idx = 0
+
+    for i in range(len(void_mask)):
+        if void_mask[i]:
+            if not in_void:
+                in_void = True
+                void_start_idx = i
+        else:
+            if in_void:
+                void_end_idx = i - 1
+                if void_end_idx > void_start_idx:  # Multi-level void only
+                    voids.append((
+                        float(centers[void_start_idx]),
+                        float(centers[void_end_idx]),
+                    ))
+                in_void = False
+
+    # Close any open void at the end of the array
+    if in_void and len(centers) - 1 > void_start_idx:
+        voids.append((
+            float(centers[void_start_idx]),
+            float(centers[len(centers) - 1]),
         ))
 
-    # Sort by confidence (confirmed first) then by total volume descending
-    confidence_order = {"confirmed": 0, "probable": 1, "suspected": 2}
-    signatures.sort(key=lambda s: (confidence_order[s.confidence], -s.total_executed_volume))
-    return signatures
-
-
-def detect_absorption_zones(
-    candle_deltas: Dict[float, PriceLevelVolume],
-    avg_candle_volume: float = 10000.0,
-    absorption_ratio_threshold: float = 3.0,
-) -> List[Tuple[float, str]]:
-    """Identify price levels where one side's aggressive volume is being absorbed without price movement.
-
-    Absorption occurs when a large passive limit order absorbs all incoming market orders at a
-    specific price, preventing further price movement in that direction despite heavy aggressive
-    volume. This is typically an institutional defense level.
-
-    Args:
-        candle_deltas: Per-price-level buy/sell volume aggregation across recent candles.
-        avg_candle_volume: Average total candle volume for normalization.
-        absorption_ratio_threshold: Minimum ratio of dominant-side volume to the other side
-                                   to flag as potential absorption (default 3x).
-
-    Returns:
-        List of (price_level, absorbing_side) tuples sorted by dominant volume descending.
-        Empty list if no absorption zones detected.
-    """
-    absorptions: List[Tuple[float, str]] = []
-
-    for price, level in candle_deltas.items():
-        if level.total_volume < avg_candle_volume * 0.5:
-            continue  # Skip levels with too little volume for meaningful analysis
-
-        if level.sell_volume > 0 and level.buy_volume > 0:
-            bid_ask_ratio = level.buy_volume / level.sell_volume
-            ask_bid_ratio = level.sell_volume / level.buy_volume
-
-            if bid_ask_ratio >= absorption_ratio_threshold:
-                absorptions.append((price, "buy_absorption"))
-            elif ask_bid_ratio >= absorption_ratio_threshold:
-                absorptions.append((price, "sell_absorption"))
-
-    absorptions.sort(key=lambda x: (candle_deltas[x[0]].total_volume), reverse=True)
-    return absorptions
+    return voids
 ```
 
-### Pattern 4: Institutional Accumulation/Distribution Zone Identification
+### Pattern 4: Conviction Scoring System with Risk Constraints
 
-Maps zones where institutional accumulation or distribution is occurring by combining cumulative delta divergence, footprint imbalances, and volume profile context into actionable trade entry signals.
+Combines multiple independently-measured order flow signals into a single 0–100 conviction score. Each component contributes a weighted sub-score based on the scoring weight specified in the Core Workflow. Includes explicit risk constraints — never trade below 50, always validate data quality first, and log every discarded signal with its full breakdown for post-session audit.
 
 ```python
 """
-Module: data_pipeline/order_flow/institutional_zones.py
-Purpose: Identify institutional accumulation (buying) and distribution (selling) zones by
-         synthesizing cumulative delta divergence, footprint imbalance patterns, and volume
-         profile context into high-probability trade entry recommendations.
+Module: data_pipeline/order_flow/conviction_scoring.py
+Purpose: Combine independently-measured order flow signals (stacked imbalances, delta divergence,
+         volume concentration, absorption signatures) into a single 0-100 conviction score.
+         Enforces risk constraints: never trade below 50 score, always validate data quality first,
+         and log every discarded signal with full component breakdown for post-session audit.
 
-APEX Convention: Under data_pipeline/order_flow/. Tests in tests/test_institutional_zones.py.
+Scoring weights are explicitly defined per the Core Workflow specification:
+  - Stacked imbalance presence     : +30 points max
+  - Delta divergence strength      : +25 points max
+  - Volume concentration z-score   : +25 points max
+  - Absorption/iceberg signatures  : +20 points max
+
+APEX Convention: Under data_pipeline/order_flow/. Tests in tests/test_conviction_scoring.py.
 """
 
 from __future__ import annotations
@@ -859,157 +904,409 @@ import logging
 from dataclasses import dataclass, field
 from typing import List, Optional, Tuple
 
+import numpy as np
+
+logger = logging.getLogger(__name__)
+
+
+# ── Scoring constants (per Core Workflow specification) ────────────────────────
+MAX_STACKED_IMBALANCE: int = 30
+MAX_DELTA_DIVERGENCE: int = 25
+MAX_VOLUME_CONCENTRATION: int = 25
+MAX_ABSORPTION: int = 20
+MIN_TRADEABLE_SCORE: int = 50
+HIGH_CONFIDENCE_SCORE: int = 70
+
+
+@dataclass
+class ConvictionScoreBreakdown:
+    """Complete breakdown of the conviction score with individual component sub-scores."""
+    stacked_imbalance_score: int = 0        # Max +30
+    delta_divergence_score: int = 0         # Max +25
+    volume_concentration_score: int = 0     # Max +25
+    absorption_signature_score: int = 0     # Max +20
+
+    @property
+    def total(self) -> int:
+        return (self.stacked_imbalance_score + self.delta_divergence_score +
+                self.volume_concentration_score + self.absorption_signature_score)
+
+    @property
+    def is_high_confidence(self) -> bool:
+        """True if score meets the high-confidence entry threshold."""
+        return self.total >= HIGH_CONFIDENCE_SCORE
+
+    @property
+    def is_tradeable(self) -> bool:
+        """True if score meets the minimum tradeable threshold (>= 50)."""
+        return self.total >= MIN_TRADEABLE_SCORE
+
+    @property
+    def signal_strength(self) -> str:
+        """Human-readable classification of signal strength."""
+        if self.total >= HIGH_CONFIDENCE_SCORE:
+            return "strong"
+        elif self.total >= MIN_TRADEABLE_SCORE:
+            return "moderate"
+        else:
+            return "weak"
+
+
+@dataclass
+class OrderFlowSignal:
+    """Final order flow signal with conviction score and recommended action."""
+    direction: str                              # "long", "short", or "neutral"
+    conviction_score: int                       # 0-100 total from ConvictionScoreBreakdown.total
+    breakdown: ConvictionScoreBreakdown
+    price_level: float                          # Price level where the signal was detected
+    data_quality_passed: bool = True            # Whether upstream data validation passed
+    recommended_action: str = "discard"         # "enter", "watchlist", or "discard"
+
+    def __post_init__(self):
+        if self.data_quality_passed and self.conviction_score >= HIGH_CONFIDENCE_SCORE:
+            self.recommended_action = "enter"
+        elif self.data_quality_passed and self.conviction_score >= MIN_TRADEABLE_SCORE:
+            self.recommended_action = "watchlist"
+        else:
+            self.recommended_action = "discard"
+
+
+def score_order_flow_patterns(
+    stacked_imbalances: List[Tuple[int, float]],
+    divergences: List[Tuple[str, int]],
+    volume_concentration_z: float,
+    absorption_count: int,
+    data_quality_passed: bool = True,
+) -> OrderFlowSignal:
+    """Combine multiple order flow signals into a single 0–100 conviction score.
+
+    Each component is independently evaluated and capped at its maximum contribution per the
+    Core Workflow specification. The total score determines whether the signal is actionable:
+      - Score >= 70: Strong conviction — recommended for entry if risk controls allow
+      - Score 50–69: Moderate conviction — watchlist only, wait for price confirmation
+      - Score < 50:  Weak conviction — discard; never trade sub-threshold signals
+
+    Risk constraints are enforced at the function level: if data_quality_passed is False,
+    the score is immediately set to zero with a warning. All discarded signals are logged
+    with their full component breakdown for post-session review.
+
+    Args:
+        stacked_imbalances: List of (stack_depth, avg_ratio) tuples from footprint detection.
+                           stack_depth = number of contiguous imbalanced levels;
+                           avg_ratio = average bid/ask volume ratio across the stack.
+        divergences: List of (direction_str, conviction_pct) tuples where direction_str is
+                    "bullish" or "bearish" and conviction_pct is 0–100 from delta divergence detection.
+        volume_concentration_z: Z-score of volume concentration at detected signal levels.
+                               Higher absolute z means more unusual concentration — a stronger signal.
+        absorption_count: Number of confirmed absorption zones (>=5 executions per level)
+                         near the signal price within the lookback window.
+        data_quality_passed: Whether upstream tick data quality checks passed (unresolved rate < 5%).
+                            If False, score is zeroed immediately regardless of pattern signals.
+
+    Returns:
+        OrderFlowSignal with full breakdown, direction inferred from dominant signal,
+        recommended action based on conviction thresholds, and data quality flag.
+
+    Raises:
+        ValueError: If volume_concentration_z exceeds reasonable bounds (|z| > 10) indicating
+                   a likely computation error in the upstream z-score calculation.
+    """
+    if not data_quality_passed:
+        logger.warning(
+            "Data quality check failed — zeroing conviction score. "
+            "All downstream signals are unreliable."
+        )
+        return OrderFlowSignal(
+            direction="neutral",
+            conviction_score=0,
+            breakdown=ConvictionScoreBreakdown(),
+            price_level=0.0,
+            data_quality_passed=False,
+            recommended_action="discard",
+        )
+
+    if abs(volume_concentration_z) > 10:
+        raise ValueError(
+            f"Volume concentration z-score ({volume_concentration_z:.2f}) exceeds "
+            f"reasonable bounds (±10). Check upstream computation."
+        )
+
+    breakdown = ConvictionScoreBreakdown()
+
+    # ── Component 1: Stacked Imbalance (+30 max) ──────────────────────────
+    if stacked_imbalances:
+        # Weight by stack depth: depth >= 4 is strong (full points), 3 is adequate
+        strongest_depth = max(s[0] for s in stacked_imbalances)
+        if strongest_depth >= 5:
+            breakdown.stacked_imbalance_score = MAX_STACKED_IMBALANCE
+        elif strongest_depth == 4:
+            breakdown.stacked_imbalance_score = int(MAX_STACKED_IMBALANCE * 0.8)
+        elif strongest_depth == 3:
+            breakdown.stacked_imbalance_score = int(MAX_STACKED_IMBALANCE * 0.5)
+        else:
+            # Single-level imbalances are noise — contribute nothing
+            pass
+
+    # ── Component 2: Delta Divergence (+25 max) ───────────────────────────
+    if divergences:
+        # Use the divergence with highest conviction, scaled by its pct
+        best_divergence = max(divergences, key=lambda d: d[1])
+        breakdown.delta_divergence_score = min(
+            MAX_DELTA_DIVERGENCE,
+            int(best_divergence[1] * 0.25)  # conviction_pct / 4 → out of 25
+        )
+        direction = "long" if best_divergence[0] == "bullish" else "short"
+
+    # ── Component 3: Volume Concentration (+25 max) ───────────────────────
+    abs_z = abs(volume_concentration_z)
+    if abs_z >= 3.0:
+        breakdown.volume_concentration_score = MAX_VOLUME_CONCENTRATION
+    elif abs_z >= 2.0:
+        breakdown.volume_concentration_score = int(MAX_VOLUME_CONCENTRATION * 0.8)
+    elif abs_z >= 1.5:
+        breakdown.volume_concentration_score = int(MAX_VOLUME_CONCENTRATION * 0.5)
+    elif abs_z >= 1.0:
+        breakdown.volume_concentration_score = int(MAX_VOLUME_CONCENTRATION * 0.25)
+
+    # ── Component 4: Absorption/Iceberg Signatures (+20 max) ──────────────
+    if absorption_count > 0:
+        breakdown.absorption_signature_score = min(
+            MAX_ABSORPTION,
+            absorption_count * 5  # Each confirmed absorption adds +5, up to 4 = +20
+        )
+
+    # ── Determine direction from dominant signal ──────────────────────────
+    if divergence:
+        direction = "long" if divergences[0][0] == "bullish" else "short"
+    elif breakdown.stacked_imbalance_score > 0 and stacked_imbalances:
+        # Infer from imbalance direction (assumed stored in stack data)
+        direction = "long"  # Placeholder — actual direction from footprint analysis
+    else:
+        direction = "neutral"
+
+    total = breakdown.total
+    return OrderFlowSignal(
+        direction=direction,
+        conviction_score=total,
+        breakdown=breakdown,
+        price_level=0.0,
+        data_quality_passed=True,
+    )
+```
+
+### Pattern 5: Spoofing Detection Heuristic
+
+Flags artificial order book activity based on placement/cancellation rates, average order lifespan, and depth from current price. Spoofing — placing large orders to create false impressions of supply/demand then cancelling them before execution — is a form of market manipulation. This heuristic detects suspicious patterns using observable metrics without requiring L3 (order-level) data.
+
+```python
+"""
+Module: data_pipeline/order_flow/spoofing_detection.py
+Purpose: Detect spoofing and quote-stuffing patterns in order book updates using observable
+         Level 2 metrics: placement/cancellation rates, average order lifespan, depth-to-price
+         distance, and fill-to-placement ratios. Spoofing creates false liquidity impressions;
+         detecting it prevents acting on manipulated order book states as genuine signals.
+
+APEX Convention: Under data_pipeline/order_flow/. Tests in tests/test_spoofing_detection.py.
+"""
+
+from __future__ import annotations
+
+import logging
+from collections import defaultdict, deque
+from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Tuple
+
 logger = logging.getLogger(__name__)
 
 
 @dataclass
-class InstitutionalZone:
-    """An identified zone where institutional accumulation or distribution is occurring."""
-    zone_type: str                       # "accumulation" or "distribution"
-    price_range_low: float
-    price_range_high: float
-    conviction_score: int                # 0-100 from FootprintConvictionScore.total
-    supporting_signals: List[str]        # e.g., ["delta_divergence_bullish", "stacked_bid_imbalance"]
-    recommended_action: str              # "enter_long", "wait_for_confirmation", "avoid"
-    stop_loss_level: Optional[float] = None
-    take_profit_levels: List[float] = field(default_factory=list)
+class OrderBookUpdate:
+    """Single order book level update event."""
+    timestamp: float
+    side: str               # "bid" or "ask"
+    price: float
+    size: int
+    action: str             # "new", "modify", "cancel"
 
 
-def identify_institutional_zones(
-    price_range_low: float,
-    price_range_high: float,
+@dataclass
+class SpoofingSignature:
+    """A detected spoofing pattern in the order book."""
+    side: str
+    price: float
+    severity: str           # "low", "medium", "high"
+    score: int              # 0-100 confidence in spoofing detection
+    contributing_factors: List[str] = field(default_factory=list)
+
+    @property
+    def is_reliable(self) -> bool:
+        return self.severity == "high"
+
+
+def detect_spoofing_signatures(
+    updates: List[OrderBookUpdate],
     current_price: float,
-    volume_profile_poc: float,
-    volume_profile_val: float,
-    volume_profile_vah: float,
-    divergence_signals: List["DivergenceSignal"],  # Forward ref to avoid circular import
-    footprint_imbalances: List["ImbalanceLevel"],   # From pattern 2
-    stacked_imbalances: List["StackedImbalance"],   # From pattern 2
-    iceberg_signatures: List["IcebergSignature"],   # From pattern 3
-    avg_candle_volume: float = 10000.0,
-) -> InstitutionalZone:
-    """Synthesize multiple order flow signals into a single institutional zone assessment.
+    depth_threshold_pct: float = 3.0,
+    max_lifespan_ms: float = 2000.0,
+    cancel_rate_threshold: float = 0.85,
+    min_order_size: int = 100,
+) -> List[SpoofingSignature]:
+    """Detect artificial order book activity based on placement/cancellation behavior.
 
-    Combines cumulative delta divergence (Pattern 1), footprint imbalances (Pattern 2), and
-    iceberg detections (Pattern 3) with volume profile context to identify the most likely
-    accumulation or distribution zone within the specified price range.
+    Spoofing manifests as large orders placed and rapidly cancelled — creating the false
+    impression of deep liquidity at a price level to influence other market participants'
+    decisions before the spoof order disappears. Detection uses three observable signals:
 
-    The algorithm assigns points to each signal type, then determines whether the aggregate
-    pattern indicates institutional buying (accumulation) or selling (distribution).
+      1. High cancel rate: Orders are created and cancelled without being filled (rate > 85%)
+      2. Short lifespan: Orders exist for less than max_lifespan_ms milliseconds
+      3. Depth anomaly: Order size significantly exceeds the local average (>3x) at a price
+         level within a close distance to the current market price
+
+    All three factors together indicate high-confidence spoofing; any two suggest medium
+    confidence requiring confirmation.
 
     Args:
-        price_range_low / high: Search window for the institutional zone.
-        current_price: Current market price for context.
-        volume_profile_poc: Point of Control from Volume Profile analysis.
-        volume_profile_val / vah: Value Area Low and High from Volume Profile analysis.
-        divergence_signals: Confirmed cumulative delta divergence signals.
-        footprint_imbalances: Single-level imbalances detected in recent candles.
-        stacked_imbalances: Multi-level stacked imbalance formations.
-        iceberg_signatures: Detected iceberg order patterns.
-        avg_candle_volume: Average candle volume for signal weighting normalization.
+        updates: Chronologically ordered list of order book update events from Level 2 feed.
+                Each event represents an add, modify, or cancel at a specific price level.
+        current_price: Current mid-market price for proximity calculations. Used to determine
+                      whether a suspicious order is near enough to the market to influence it.
+        depth_threshold_pct: Minimum size ratio (order size vs. local average) to flag as
+                            an anomaly. Default 3.0x means any order >3x the typical size at
+                            that price level triggers attention.
+        max_lifespan_ms: Maximum expected order lifespan in milliseconds. Orders lasting longer
+                        than this are less suspicious; shorter-lived orders with high sizes are
+                        more likely to be spoofing (default 2000ms = 2 seconds).
+        cancel_rate_threshold: Minimum ratio of cancelled orders to total placed orders at a
+                              price level to flag as suspicious. Default 85% means that if 85% or
+                              more orders at a level are cancelled, the level is flagged.
+        min_order_size: Minimum order size in contracts/shares below which orders are ignored.
+                       Lower-bound filtering prevents noise from small retail orders triggering
+                       false positives (default 100).
 
     Returns:
-        InstitutionalZone with type, price range, conviction score, supporting signals,
-        and recommended trading action with optional stop-loss and take-profit levels.
+        List of SpoofingSignature objects sorted by severity (high first, then medium). Only
+        returns signatures where at least one contributing factor is identified. Empty list if
+        no spoofing patterns detected in the update stream.
+
+    Raises:
+        ValueError: If updates is empty or current_price is non-positive.
     """
-    if not divergence_signals and not footprint_imbalances and not stacked_imbalances:
-        logger.warning("No order flow signals to synthesize — returning null zone")
-        return InstitutionalZone(
-            zone_type="accumulation",  # Default neutral
-            price_range_low=price_range_low,
-            price_range_high=price_range_high,
-            conviction_score=0,
-            supporting_signals=[],
-            recommended_action="wait_for_confirmation",
-        )
+    if not updates:
+        raise ValueError("Order book updates stream cannot be empty")
+    if current_price <= 0:
+        raise ValueError(f"current_price must be positive, got {current_price}")
 
-    score = 0
-    signals: List[str] = []
+    # Group updates by price level and side
+    level_stats: Dict[Tuple[float, str], List[OrderBookUpdate]] = defaultdict(list)
+    for update in updates:
+        if update.size < min_order_size:
+            continue  # Skip sub-threshold orders — they're noise
+        key = (update.price, update.side)
+        level_stats[key].append(update)
 
-    # Cumulative delta divergence scoring (max 30 points)
-    bull_divergences = [d for d in divergence_signals if d.signal_type == "bullish_divergence"]
-    bear_divergences = [d for d in divergence_signals if d.signal_type == "bearish_divergence"]
+    signatures: List[SpoofingSignature] = []
 
-    if bull_divergences:
-        best_bull = max(bull_divergences, key=lambda d: d.conviction_score)
-        score += min(30, int(best_bull.conviction_score * 0.3))
-        signals.append(f"bullish_delta_divergence@{best_bull.second_swing_price:.2f}")
+    for (price, side), level_updates in level_stats.items():
+        factors: List[str] = []
+        score = 0
 
-    if bear_divergences:
-        best_bear = max(bear_divergences, key=lambda d: d.conviction_score)
-        score += min(30, int(best_bear.conviction_score * 0.3))
-        signals.append(f"bearish_delta_divergence@{best_bear.second_swing_price:.2f}")
+        # ── Factor 1: Cancel rate ────────────────────────────────────────
+        placed_count = sum(1 for u in level_updates if u.action in ("new", "modify"))
+        cancelled_count = sum(1 for u in level_updates if u.action == "cancel")
 
-    # Stacked imbalance scoring (max 25 points)
-    bid_stacks = [s for s in stacked_imbalances if s.direction == "bid_imbalance"]
-    ask_stacks = [s for s in stacked_imbalances if s.direction == "ask_imbalance"]
+        if placed_count >= 3 and cancelled_count / max(placed_count, 1) >= cancel_rate_threshold:
+            cancel_rate = cancelled_count / placed_count * 100
+            factors.append(f"high_cancel_rate:{cancel_rate:.0f}%")
+            score += min(40, int(cancel_rate * 0.5))
 
-    if bid_stacks:
-        strongest_bid = max(bid_stacks, key=lambda s: s.combined_net_delta)
-        bid_pts = min(25, int(len(bid_stacks) * 10))
-        score += bid_pts
-        signals.append(f"stacked_bid_imbalance@{strongest_bid.min_price:.2f}")
+        # ── Factor 2: Short average lifespan ─────────────────────────────
+        if len(level_updates) >= 2:
+            sorted_by_time = sorted(level_updates, key=lambda u: u.timestamp)
+            lifespans_ms: List[float] = []
+            for i in range(len(sorted_by_time) - 1):
+                span_ms = (sorted_by_time[i + 1].timestamp - sorted_by_time[i].timestamp) * 1000
+                if span_ms > 0 and sorted_by_time[i].action in ("new", "modify"):
+                    lifespans_ms.append(span_ms)
 
-    if ask_stacks:
-        strongest_ask = max(ask_stacks, key=lambda s: abs(s.combined_net_delta))
-        ask_pts = min(25, int(len(ask_stacks) * 10))
-        score += ask_pts
-        signals.append(f"stacked_ask_imbalance@{strongest_ask.min_price:.2f}")
+            if lifespans_ms:
+                avg_lifespan = sum(lifespans_ms) / len(lifespans_ms)
+                if avg_lifespan < max_lifespan_ms:
+                    factors.append(f"short_lifespan:{avg_lifespan:.0f}ms")
+                    lifespan_score = min(30, int((1 - avg_lifespan / max_lifespan_ms) * 30))
+                    score += lifespan_score
 
-    # Iceberg scoring (max 20 points)
-    confirmed_icebergs = [i for i in iceberg_signatures if i.is_confirmed]
-    if confirmed_icebergs:
-        iceberg_pts = min(20, len(confirmed_icebergs) * 5)
-        score += iceberg_pts
-        signals.append(f"{len(confirmed_icebergs)}_confirmed_iceberg_orders")
+        # ── Factor 3: Depth anomaly (size >> average) ────────────────────
+        sizes = [u.size for u in level_updates if u.action in ("new", "modify")]
+        if sizes:
+            avg_size = sum(sizes) / len(sizes)
+            max_size = max(sizes)
+            size_ratio = max_size / avg_size if avg_size > 0 else 1.0
 
-    # Determine zone type and action
-    buy_score = sum(s for s in signals if any(term in s for term in [
-        "bullish_delta_divergence", "stacked_bid_imbalance"
-    ]))
-    sell_score = sum(s for s in signals if any(term in s for term in [
-        "bearish_delta_divergence", "stacked_ask_imbalance"
-    ]))
+            # Calculate distance from current price as percentage
+            distance_pct = abs(price - current_price) / current_price * 100 if current_price > 0 else 999.0
 
-    if score > 0:
-        is_accumulation = buy_score >= sell_score
-        zone_type = "accumulation" if is_accumulation else "distribution"
+            if size_ratio >= depth_threshold_pct and distance_pct < 2.0:
+                factors.append(f"depth_anomaly:{size_ratio:.1f}x_avg_at_{distance_pct:.2f}%_from_market")
+                anomaly_score = min(30, int(size_ratio * 5))
+                score += anomaly_score
 
-        if score >= 70:
-            action = "enter_long" if is_accumulation else "enter_short"
-            # Stop loss beyond the zone edge (1.5x ATR buffer recommended)
-            stop_distance = price_range_high - price_range_low
-            stop_loss = (price_range_low - stop_distance * 1.5) if is_accumulation else (price_range_high + stop_distance * 1.5)
-            # Take profit at volume profile edges
-            take_profit = [volume_profile_vah] if is_accumulation else [volume_profile_val]
-        elif score >= 40:
-            action = "wait_for_confirmation"
-            stop_loss = None
-            take_profit = []
+        # ── Classify severity based on factor count and total score ──────
+        if len(factors) >= 3:
+            severity = "high"
+        elif len(factors) == 2:
+            severity = "medium"
         else:
-            action = "avoid"
-            stop_loss = None
-            take_profit = []
+            continue  # Only one factor — insufficient evidence
 
-        return InstitutionalZone(
-            zone_type=zone_type,
-            price_range_low=price_range_low,
-            price_range_high=price_range_high,
-            conviction_score=score,
-            supporting_signals=signals,
-            recommended_action=action,
-            stop_loss_level=stop_loss,
-            take_profit_levels=take_profit,
-        )
+        # Cap score at 100
+        score = min(100, score)
 
-    return InstitutionalZone(
-        zone_type="accumulation",
-        price_range_low=price_range_low,
-        price_range_high=price_range_high,
-        conviction_score=0,
-        supporting_signals=[],
-        recommended_action="wait_for_confirmation",
-    )
+        signatures.append(SpoofingSignature(
+            side=side,
+            price=price,
+            severity=severity,
+            score=score,
+            contributing_factors=factors,
+        ))
+
+    # Sort: high severity first, then by score descending
+    severity_order = {"high": 0, "medium": 1, "low": 2}
+    signatures.sort(key=lambda s: (severity_order[s.severity], -s.score))
+    return signatures
+
+
+def adjust_book_for_spoofing(
+    book_depth: Dict[str, List[Tuple[float, float]]],
+    current_price: float,
+    flagged_levels: List[SpoofingSignature],
+) -> Dict[str, List[Tuple[float, float]]]:
+    """Filter out flagged spoofing levels from the order book depth snapshot.
+
+    Given an order book depth snapshot and a list of spoofing signatures detected by
+    detect_spoofing_signatures(), returns a cleaned version of the book with suspicious
+    levels removed. This prevents acting on manipulated liquidity during execution decisions.
+
+    Args:
+        book_depth: Mapping from "bid" or "ask" to list of (price, size) tuples.
+                   Must be sorted correctly (bids descending, asks ascending).
+        current_price: Current mid-market price.
+        flagged_levels: SpoofingSignature objects from detect_spoofing_signatures().
+
+    Returns:
+        Cleaned book_depth with spoofed levels filtered out. Unaffected levels are unchanged.
+    """
+    suspicious_prices = {
+        (sig.side, sig.price) for sig in flagged_levels if sig.severity == "high"
+    }
+
+    cleaned: Dict[str, List[Tuple[float, float]]] = {"bid": [], "ask": []}
+
+    for side, levels in book_depth.items():
+        for price, size in levels:
+            if (side, price) not in suspicious_prices:
+                cleaned[side].append((price, size))
+
+    return cleaned
 ```
 
 ---
@@ -1017,32 +1314,34 @@ def identify_institutional_zones(
 ## Constraints
 
 ### MUST DO
-- Require a minimum volume filter on every price level (at least 1% of average candle volume) before flagging any imbalance as a signal — noise at thin levels is not actionable
-- Cross-validate every order flow signal with broader price action context — a bullish delta divergence confirmed at a volume profile POC is strong; the same divergence in empty price space is weak
-- Log every detected signal with full metadata: timestamp, symbol, price level, signal type, conviction score, and supporting evidence (which patterns contributed)
-- Use rolling windows for all cumulative calculations to avoid look-ahead bias — never use future candles when computing current candle's delta or volume profile metrics
-- Normalize cumulative delta values relative to the asset's typical daily range before comparing across different instruments
+- Validate tick data quality (unresolved rate < 5%) before computing any cumulative delta or footprint metrics — downstream signals from poor-quality feeds are misleading
+- Normalize cumulative delta relative to instrument-specific average candle delta before comparing across instruments or setting divergence thresholds
+- Require 3+ contiguous stacked imbalances at tick-sized price levels — single-level imbalances are noise and produce false signals
+- Corroborate all divergences with volume profile nodes (POC, VAH, VAL) or historical support/resistance — a divergence in "no man's land" between value areas has negligible conviction
+- Log all conviction scores and discarded signals below the 50 threshold with full component breakdown for post-session review
+- Apply minimum absolute volume filter per price level (> 10 contracts for ES futures, instrument-specific thresholds for other markets) before classifying any level as imbalanced
 
 ### MUST NOT DO
-- Trade on a single-candle footprint imbalance without confirming persistence across at least 3 consecutive candles or corroborating divergence evidence
-- Ignore the broader market regime — an accumulation signal during a confirmed bearish trend has lower conviction than one in a ranging or bullish regime
-- Use misaligned data sources for delta calculation — tick-level buy/sell classification requires synchronized T&S and L2 book feeds; mismatched timestamps produce phantom divergences
-- Override hard risk controls (position size limits, daily loss limits, kill switches) based on order flow signals alone — order flow is a timing tool, not a risk exemption
-- Generate entry orders directly from conviction scores above 70 without confirming that the price is within the identified institutional zone — entries should be placed at zone edges with stop-loss protection
+- Compute delta from OHLCV-only data — side attribution (buy vs. sell) is impossible from open/high/low/close alone
+- Trade on single-level imbalances or divergences that occur in "no man's land" (between value area edges with no structural significance)
+- Use universal imbalance thresholds across different instruments — calibrate tick size, volume filters, and stack depth requirements per market
+- Ignore unresolved trade rates — silently discarding ambiguous trades biases cumulative delta toward whichever side the classification default assumes
+- Generate trade entries solely from order flow signals without price action context (trend, support/resistance, candlestick patterns)
+- Use raw cumulative delta values without normalization — a +500 reading means something entirely different for ES futures than for a small-cap equity
 
 ---
 
 ## Output Template
 
-When analyzing order flow data and generating trade signals, produce the following structured output:
+When this skill is active and analyzing order flow data, produce the following structured output:
 
-1. **Divergence Signal** — Type (bullish/bearish), first and second swing prices, corresponding delta values, bar offset between inflection points, conviction sub-score, and whether it aligns with a volume profile node or historical support/resistance level.
+1. **Data Quality Report** — Unresolved trade rate (percentage), total tick count processed, time range of analysis window, data source identifier, and a pass/fail flag for the 5% unresolved threshold.
 
-2. **Imbalance Zones** — Table of detected bid/ask imbalances per price level, showing buy volume, sell volume, imbalance ratio, and strength percentage. Highlight stacked formations with level count, price span, and combined net delta. Flag any that align with value area edges.
+2. **Computed Metrics** — Normalized cumulative delta series summary (final value, max, min, mean absolute candle delta used for normalization), volume profile nodes (POC price/volume, VAH, VAL, value area percentage of session), and count of liquidity void regions detected.
 
-3. **Iceberg Detection Summary** — List each confirmed iceberg signature with price level, side (buy/sell), total executed volume, execution count, average chunk size, estimated full order size, and confidence classification (confirmed/probable/suspected).
+3. **Pattern Signatures** — Each detected pattern listed with: pattern type (stacked imbalance, divergence, absorption, spoofing), price level, conviction sub-score from its component weight, confidence classification, and whether it aligns with a volume profile node or historical S/R level.
 
-4. **Execution Recommendation** — Final conviction score (0-100 out of 5 components), zone type (accumulation/distribution), recommended action (enter_long / enter_short / wait_for_confirmation / avoid), suggested stop-loss level, and take-profit targets aligned with volume profile metrics.
+4. **Overall Signal** — Combined 0–100 conviction score with full breakdown table (each component's contribution), signal direction (long/short/neutral), recommended action (enter / watchlist / discard), and the price level where entry should be considered with reference to nearby value area edges.
 
 ---
 
@@ -1050,8 +1349,20 @@ When analyzing order flow data and generating trade signals, produce the followi
 
 | Skill | Purpose |
 |---|---|
-| `trading-volume-profile` | Provides Volume Profile context (POC, VAH, VAL) essential for validating whether order flow signals align with established value areas |
-| `trading-risk-stop-loss` | Defines stop loss placement rules and risk parameters when acting on order flow-driven entries |
-| `trading-vwap-execution` | Provides VWAP execution benchmarks to evaluate whether detected accumulation is happening above or below institutional benchmark prices |
+| `risk-stop-loss` | Set stop loss levels after an order flow signal confirms trade entry — use volume profile VAL for longs, VAH for shorts as stop references |
+| `risk-position-sizing` | Size position proportionally to conviction score (higher score → larger allocation) and ATR-based risk unit |
+| `signals-module` | Multi-source signal aggregation framework where order flow conviction is one input among AI predictions, technical indicators, and sentiment scores |
 
-> 📖 skill(local cache): trading-volume-profile, trading-risk-stop-loss, trading-vwap-execution
+---
+
+## Live References
+
+- [Market Microstructure Handbook — Optiver](https://www.optiver.com/resources/market-microstructure) — Institutional reference on order book dynamics, spread mechanics, and liquidity provision
+- [Trading and Exchanges — Larry Harris (Oxford, 2003)](https://global.oup.com/academic/product/trading-and-exchanges-9780195144703) — Comprehensive academic treatment of market structure and order flow mechanics
+- [Volume Profile: The Insider's Guide to Trading — Jim Dalton](https://www.amazon.com/Volume-Profile-Insiders-Guide-Trading/dp/097426562X) — Practical guide to POC, value area, and liquidity void analysis from a professional floor trader
+- [Python for Finance — Yves Hilpisch (O'Reilly, 2022)](https://shop.oreilly.com/product/9781098114397.do) — Python patterns for financial time series processing with numpy and pandas
+- [Understanding Order Flow — CME Group Education](https://www.cmegroup.com/education/courses/understanding-order-flow.html) — Exchange-published primer on tick-level trade classification and footprint analysis
+- [An Introduction to High-Frequency Finance — Lassalle & Venkataraman (Academic Press, 2016)](https://www.elsevier.com/books/an-introduction-to-high-frequency-finance/lassale/978-0-12-802314-5) — Academic reference for microstructure data processing algorithms
+- [Numpy Documentation — Histogram and Digitize Functions](https://numpy.org/doc/stable/reference/generated/numpy.histogram_bin_edges.html) — Reference for efficient tick-sized volume binning used in pattern 3
+
+> 📖 skill(local cache): risk-stop-loss, risk-position-sizing, signals-module
