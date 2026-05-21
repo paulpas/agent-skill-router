@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-21T10:08:16.592983Z",
-  "totalSkills": 733,
+  "generatedAt": "2026-05-21T10:36:26.224143Z",
+  "totalSkills": 734,
   "domains": {
     "agent": 253,
     "cncf": 170,
     "coding": 186,
     "go": 12,
-    "linux": 13,
+    "linux": 14,
     "maker": 3,
     "programming": 6,
     "trading": 88,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 330,
+    "implementation": 331,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -13689,6 +13689,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/backtest-sharpe-ratio/SKILL.md"
+    },
+    {
+      "name": "shell-command-chaining",
+      "domain": "linux",
+      "description": "Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "shell command chaining",
+        "&& operator",
+        "|| operator",
+        "semicolon in bash",
+        "conditional command execution",
+        "fallback chain",
+        "AND list OR list",
+        "short-circuit evaluation",
+        "how do i chain commands reliably"
+      ],
+      "relatedSkills": [
+        "linux-shell-process-management",
+        "shell-parameter-expansion"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/shell-command-chaining/SKILL.md"
     },
     {
       "name": "shell-parameter-expansion",
