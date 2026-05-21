@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 17:21:56 UTC  
-> **Total skills:** 748
+> **Last updated:** 2026-05-21 17:49:38 UTC  
+> **Total skills:** 749
 
 ## Skills by Domain
 
 
-### Agent (253 skills)
+### Agent (254 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -407,6 +407,7 @@ MIT — All skills are freely available and redistributable.
 | [hubspot-automation](skills/agent/hubspot-automation/SKILL.md) | Implements intelligent hubspot automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | hubspot-automation, hubspot automation, how do i hubspot-automation, orchestrate hubspot-automation, automate hubspot-automation, agent hubspot-automation |
 | [infra-drift-detector](skills/agent/infra-drift-detector/SKILL.md) | Implements intelligent infra drift detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | infra-drift-detector, infra drift detector, how do i infra-drift-detector, orchestrate infra-drift-detector, automate infra-drift-detector, agent infra-drift-detector |
 | [inngest](skills/agent/inngest/SKILL.md) | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | inngest, inngest, how do i inngest, orchestrate inngest, automate inngest, agent inngest |
+| [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. | instruction engineering, prompt design, skill instructions, how do i write better instructions, AI behavior guidance, constraint blocks, few-shot examples, guard clauses for skills, skill quality |
 | [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. | skill selection, task routing, choosing the right skill, semantic matching, confidence threshold, adaptive routing, agent dispatch, fallback strategy |
 | [intercom-automation](skills/agent/intercom-automation/SKILL.md) | Implements intelligent intercom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | intercom-automation, intercom automation, how do i intercom-automation, orchestrate intercom-automation, automate intercom-automation, agent intercom-automation |
 | [issues](skills/agent/issues/SKILL.md) | Implements intelligent issues with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | issues, issues, how do i issues, orchestrate issues, automate issues, agent issues |
@@ -1074,7 +1075,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (343 skills)
+### Implementation (Build Features) (344 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1229,6 +1230,7 @@ MIT — All skills are freely available and redistributable.
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. |
 | [indicator-confluence](skills/trading/indicator-confluence/SKILL.md) | Trading | "Provides Indicator Confluence Validation Systems for Confirming Trading Signals" |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. |
+| [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. |
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Coding | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. |
@@ -2206,6 +2208,7 @@ MIT — All skills are freely available and redistributable.
 | [ingress-controller](skills/cncf/ingress-controller/SKILL.md) | Cncf | "Kong Ingress Controller in Kubernetes - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [inngest](skills/agent/inngest/SKILL.md) | Agent | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | Implementation |
+| [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. | Implementation |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | Implementation |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. | Implementation |
 | [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Agent | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. | Orchestration |

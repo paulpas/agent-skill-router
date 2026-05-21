@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-21T17:21:55.729760Z",
-  "totalSkills": 748,
+  "generatedAt": "2026-05-21T17:49:37.150400Z",
+  "totalSkills": 749,
   "domains": {
-    "agent": 253,
+    "agent": 254,
     "cncf": 170,
     "coding": 200,
     "go": 12,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 343,
+    "implementation": 344,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -8442,6 +8442,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/input-validation/SKILL.md"
+    },
+    {
+      "name": "instruction-engineering",
+      "domain": "agent",
+      "description": "Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "instruction engineering",
+        "prompt design",
+        "skill instructions",
+        "how do i write better instructions",
+        "AI behavior guidance",
+        "constraint blocks",
+        "few-shot examples",
+        "guard clauses for skills",
+        "skill quality"
+      ],
+      "relatedSkills": [
+        "skill-composition",
+        "skill-ecosystem-design",
+        "agent-context-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/instruction-engineering/SKILL.md"
     },
     {
       "name": "instrumental-variables",
