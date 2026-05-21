@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 15:01:56 UTC  
-> **Total skills:** 741
+> **Last updated:** 2026-05-21 10:49:53 UTC  
+> **Total skills:** 743
 
 ## Skills by Domain
 
@@ -705,7 +705,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (194 skills)
+### Coding (196 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -796,6 +796,7 @@ MIT — All skills are freely available and redistributable.
 | [feature-interaction](skills/coding/feature-interaction/SKILL.md) | "Provides Discovers and engineers feature interactions including polynomial interactions, cross-features, and interaction detection methods" | feature interaction, interaction terms, polynomial features, cross-features, feature interactions |
 | [feature-scaling-normalization](skills/coding/feature-scaling-normalization/SKILL.md) | "Provides Scales and normalizes features using standardization, normalization, robust scaling, and other scaling methods for model compatibility" | feature scaling, normalization, standardization, robust scaling, scaling features, how do I scale |
 | [feature-selection](skills/coding/feature-selection/SKILL.md) | "Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based methods" | feature selection, feature importance, recursive elimination, univariate selection, feature selection methods |
+| [framework-adaptation](skills/coding/framework-adaptation/SKILL.md) | Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation. | framework adaptation, library integration, new framework, dependency evaluation, tech stack upgrade, adapter pattern, facade pattern, progressive migration |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | framework design, architectural blueprint, extension points, adapter pattern, interface contracts, composition root, framework integration |
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | framework lifecycle, framework decision, technology lifecycle, framework evaluation, framework rollback, tech stack lifecycle, framework governance |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | framework performance, performance tuning, optimize framework, profiling application, connection pooling, caching strategy, async optimization, memory management, reduce latency, increase throughput, framework benchmarking, slow endpoint |
@@ -899,6 +900,7 @@ MIT — All skills are freely available and redistributable.
 | [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. | type safety, type narrowing, strict mode, type guards, static typing, runtime validation, mypy, pyright, typescript strict, zod schema |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | intersection types, ampersand type, type merging, TypeScript & operator, props merging, mixin pattern, type conflicts, keyof T & K, generic constraints, ComponentProps & custom |
 | [validation](skills/coding/validation/SKILL.md) | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions | validation, code validation, pipeline validation, config status, input validation, validate pipeline, pipeline stages |
+| [version-migration](skills/coding/version-migration/SKILL.md) | Manages framework and library version upgrades through systematic breakage analysis, automated refactoring scripts, and progressive migration with zero-downtime rollback strategies. | version migration, major version upgrade, breaking changes, framework upgrade, deprecation migration, API breakage, automated refactoring, semver upgrade |
 | [websocket-protocol](skills/coding/websocket-protocol/SKILL.md) | Implements WebSocket protocol-level patterns including frame parsing, subprotocol negotiation, permessage-deflate compression, text/binary framing, and backpressure management for real-time applications. | websocket protocol, frame handling, subprotocol negotiation, permessage-deflate, binary framing, text messages, backpressure, wss://, ws upgrade, opcode, mask bit, close frame |
 | [websocket-security](skills/coding/websocket-security/SKILL.md) | Hardens WebSocket connections against cross-site hijacking, DoS attacks, and message flooding through origin validation, authentication, rate limiting, connection limits, and secure transport enforcement. | websocket security, origin validation, cross-site WebSocket hijacking, CCoS, wss://, WebSocket authentication, rate limiting, message flooding, slowloris, connection limits, WebSocket auth, Sec-WebSocket-Origin |
 | [yagni](skills/coding/yagni/SKILL.md) | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. | yagni, you aren't gonna need it, don't build it now, over-engineering, premature abstraction, speculative features, kill unused code, remove complexity |
@@ -1067,7 +1069,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (338 skills)
+### Implementation (Build Features) (340 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1195,6 +1197,7 @@ MIT — All skills are freely available and redistributable.
 | [feature-selection](skills/coding/feature-selection/SKILL.md) | Coding | "Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based methods" |
 | [feature-store](skills/trading/feature-store/SKILL.md) | Trading | "Provides Feature storage and management for machine learning trading models" |
 | [fill-simulation](skills/trading/fill-simulation/SKILL.md) | Trading | "Implements fill simulation models for order execution probability for risk management and algorithmic trading execution." |
+| [framework-adaptation](skills/coding/framework-adaptation/SKILL.md) | Coding | Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation. |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. |
@@ -1395,6 +1398,7 @@ MIT — All skills are freely available and redistributable.
 | [validation](skills/coding/validation/SKILL.md) | Coding | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions |
 | [validation](skills/trading/validation/SKILL.md) | Trading | "Provides Data validation and quality assurance for trading data pipelines" |
 | [value-at-risk](skills/trading/value-at-risk/SKILL.md) | Trading | "Implements value at risk calculations for portfolio risk management for risk management and algorithmic trading execution." |
+| [version-migration](skills/coding/version-migration/SKILL.md) | Coding | Manages framework and library version upgrades through systematic breakage analysis, automated refactoring scripts, and progressive migration with zero-downtime rollback strategies. |
 | [volatility-analysis](skills/trading/volatility-analysis/SKILL.md) | Trading | "Implements volatility measurement, forecasting, and risk assessment for risk management and algorithmic trading execution." |
 | [volatility-prediction](skills/trading/volatility-prediction/SKILL.md) | Trading | "Implements forecast volatility for risk management and option pricing for risk management and algorithmic trading execution." |
 | [volume-profile](skills/trading/volume-profile/SKILL.md) | Trading | "Provides Volume analysis techniques for understanding market structure" |
@@ -2119,6 +2123,7 @@ MIT — All skills are freely available and redistributable.
 | [flux](skills/cncf/flux/SKILL.md) | Cncf | "Configures flux in cloud-native engineering - gitops for kubernetes for cloud-native deployment and infrastructure management." | Reference |
 | [for-loop-iteration](skills/programming/for-loop-iteration/SKILL.md) | Programming | Teaches idiomatic for loop patterns across Python, JavaScript, Go, C/C++, Rust, and shell scripting with anti-patterns, common pitfalls, and best practices. | Reference |
 | [framework](skills/cncf/framework/SKILL.md) | Cncf | "Operator Framework in Tools to build and manage Kubernetes operators" with standardized patterns | Reference |
+| [framework-adaptation](skills/coding/framework-adaptation/SKILL.md) | Coding | Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation. | Implementation |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | Implementation |
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Coding | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | Orchestration |
 | [framework-orchestration-routing](skills/agent/framework-orchestration-routing/SKILL.md) | Agent | Orchestrates task routing across multiple AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen, MCP) by selecting the optimal framework for each subtask and composing cross-framework workflows with proper context bridges. | Orchestration |
@@ -2537,6 +2542,7 @@ MIT — All skills are freely available and redistributable.
 | [validation](skills/trading/validation/SKILL.md) | Trading | "Provides Data validation and quality assurance for trading data pipelines" | Implementation |
 | [value-at-risk](skills/trading/value-at-risk/SKILL.md) | Trading | "Implements value at risk calculations for portfolio risk management for risk management and algorithmic trading execution." | Implementation |
 | [verification-before-completion](skills/agent/verification-before-completion/SKILL.md) | Agent | Implements intelligent verification before completion with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [version-migration](skills/coding/version-migration/SKILL.md) | Coding | Manages framework and library version upgrades through systematic breakage analysis, automated refactoring scripts, and progressive migration with zero-downtime rollback strategies. | Implementation |
 | [viboscope](skills/agent/viboscope/SKILL.md) | Agent | Implements intelligent viboscope with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [virtual-machines](skills/cncf/virtual-machines/SKILL.md) | Cncf | "Deploys and manages VMs with auto-scaling, availability sets, and integration" with Azure services. | Reference |
 | [virtual-networks](skills/cncf/virtual-networks/SKILL.md) | Cncf | "Provides Networking with subnets, network security groups, and VPN connectivity" | Reference |
