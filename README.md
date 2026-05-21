@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 06:57:58 UTC  
-> **Total skills:** 728
+> **Last updated:** 2026-05-21 07:48:16 UTC  
+> **Total skills:** 730
 
 ## Skills by Domain
 
 
-### Agent (251 skills)
+### Agent (253 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -288,6 +288,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-agents-architect, ai agents architect, how do i ai-agents-architect, orchestrate ai-agents-architect, automate ai-agents-architect, agent ai-agents-architect |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-dev-jobs-mcp, ai dev jobs mcp, how do i ai-dev-jobs-mcp, orchestrate ai-dev-jobs-mcp, automate ai-dev-jobs-mcp, agent ai-dev-jobs-mcp |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-ml, ai ml, how do i ai-ml, orchestrate ai-ml, automate ai-ml, agent ai-ml |
+| [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | ai persona, first-person identity, agent voice, personality design, consistent tone, how do i make my ai feel personal, authentic AI, self-expression, character design, brand voice AI |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | airflow-dag-patterns, airflow dag patterns, how do i airflow-dag-patterns, orchestrate airflow-dag-patterns, automate airflow-dag-patterns, agent airflow-dag-patterns, workflow orchestration, airflow |
 | [airtable-automation](skills/agent/airtable-automation/SKILL.md) | Implements intelligent airtable automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | airtable-automation, airtable automation, how do i airtable-automation, orchestrate airtable-automation, automate airtable-automation, agent airtable-automation |
 | [analyze-project](skills/agent/analyze-project/SKILL.md) | Implements intelligent analyze project with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | analyze-project, analyze project, how do i analyze-project, orchestrate analyze-project, automate analyze-project, agent analyze-project |
@@ -507,6 +508,7 @@ MIT — All skills are freely available and redistributable.
 | [track-management](skills/agent/track-management/SKILL.md) | Implements intelligent track management with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | track-management, track management, how do i track-management, orchestrate track-management, automate track-management, agent track-management |
 | [trigger-dev](skills/agent/trigger-dev/SKILL.md) | Implements intelligent trigger dev with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | trigger-dev, trigger dev, how do i trigger-dev, orchestrate trigger-dev, automate trigger-dev, agent trigger-dev |
 | [upstash-qstash](skills/agent/upstash-qstash/SKILL.md) | Implements intelligent upstash qstash with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | upstash-qstash, upstash qstash, how do i upstash-qstash, orchestrate upstash-qstash, automate upstash-qstash, agent upstash-qstash |
+| [user-memory-system](skills/agent/user-memory-system/SKILL.md) | Implements multi-layer user memory systems (episodic, semantic, procedural) for AI agents to retain context across sessions, enable personalization, and build long-term relationships with individual users. | user memory, long-term memory, episodic memory, semantic memory, procedural memory, session persistence, memory retrieval, how do i remember user context, persistent AI, cross-session memory |
 | [using-superpowers](skills/agent/using-superpowers/SKILL.md) | Implements intelligent using superpowers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | using-superpowers, using superpowers, how do i using-superpowers, orchestrate using-superpowers, automate using-superpowers, agent using-superpowers |
 | [verification-before-completion](skills/agent/verification-before-completion/SKILL.md) | Implements intelligent verification before completion with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | verification-before-completion, verification before completion, how do i verification-before-completion, orchestrate verification-before-completion, automate verification-before-completion, agent verification-before-completion |
 | [viboscope](skills/agent/viboscope/SKILL.md) | Implements intelligent viboscope with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | viboscope, viboscope, how do i viboscope, orchestrate viboscope, automate viboscope, agent viboscope |
@@ -1054,7 +1056,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (325 skills)
+### Implementation (Build Features) (327 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1066,6 +1068,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. |
+| [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. |
 | [alternative-data](skills/trading/alternative-data/SKILL.md) | Trading | "Alternative data ingestion pipelines for trading signals including news" social media, and on-chain data sources |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | Coding | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" |
@@ -1366,6 +1369,7 @@ MIT — All skills are freely available and redistributable.
 | [twap](skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large orders with" minimal market impact |
 | [twap-vwap](skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution''' |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. |
+| [user-memory-system](skills/agent/user-memory-system/SKILL.md) | Agent | Implements multi-layer user memory systems (episodic, semantic, procedural) for AI agents to retain context across sessions, enable personalization, and build long-term relationships with individual users. |
 | [validation](skills/coding/validation/SKILL.md) | Coding | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions |
 | [validation](skills/trading/validation/SKILL.md) | Trading | "Provides Data validation and quality assurance for trading data pipelines" |
 | [value-at-risk](skills/trading/value-at-risk/SKILL.md) | Trading | "Implements value at risk calculations for portfolio risk management for risk management and algorithmic trading execution." |
@@ -1827,6 +1831,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | Implementation |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Agent | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | Implementation |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Agent | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [airtable-automation](skills/agent/airtable-automation/SKILL.md) | Agent | Implements intelligent airtable automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [aks](skills/cncf/aks/SKILL.md) | Cncf | "Provides Managed Kubernetes cluster with automatic scaling and Azure service integration" | Reference |
@@ -2491,6 +2496,7 @@ MIT — All skills are freely available and redistributable.
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | Implementation |
 | [update-framework-tuf](skills/cncf/update-framework-tuf/SKILL.md) | Cncf | "The Update Framework (TUF) in Secure software update framework for protecting" software deliveries | Reference |
 | [upstash-qstash](skills/agent/upstash-qstash/SKILL.md) | Agent | Implements intelligent upstash qstash with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [user-memory-system](skills/agent/user-memory-system/SKILL.md) | Agent | Implements multi-layer user memory systems (episodic, semantic, procedural) for AI agents to retain context across sessions, enable personalization, and build long-term relationships with individual users. | Implementation |
 | [using-superpowers](skills/agent/using-superpowers/SKILL.md) | Agent | Implements intelligent using superpowers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [v10-learning](skills/programming/v10-learning/SKILL.md) | Programming | "Reference guide for Progress OpenEdge ABL 10.1A (2005) — data types" variable declaration, procedures, functions, OOP basics, error handling, database access, transaction handling, control flow | Reference |
 | [v12-learning](skills/programming/v12-learning/SKILL.md) | Programming | "Reference guide for Progress OpenEdge ABL 12.7 (2023) — v10→v12 migration" INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic collections, safe navigation operator, server-side joins | Reference |

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-21T06:57:57.770165Z",
-  "totalSkills": 728,
+  "generatedAt": "2026-05-21T07:48:15.751096Z",
+  "totalSkills": 730,
   "domains": {
-    "agent": 251,
+    "agent": 253,
     "cncf": 170,
     "coding": 183,
     "go": 12,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 325,
+    "implementation": 327,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -475,6 +475,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ai-ml/SKILL.md"
+    },
+    {
+      "name": "ai-persona-design",
+      "domain": "agent",
+      "description": "Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ai persona",
+        "first-person identity",
+        "agent voice",
+        "personality design",
+        "consistent tone",
+        "how do i make my ai feel personal",
+        "authentic AI",
+        "self-expression",
+        "character design",
+        "brand voice AI"
+      ],
+      "relatedSkills": [
+        "personalized-behavior",
+        "user-memory-system",
+        "conversation-memory"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/ai-persona-design/SKILL.md"
     },
     {
       "name": "airflow-dag-patterns",
@@ -15911,6 +15938,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/upstash-qstash/SKILL.md"
+    },
+    {
+      "name": "user-memory-system",
+      "domain": "agent",
+      "description": "Implements multi-layer user memory systems (episodic, semantic, procedural) for AI agents to retain context across sessions, enable personalization, and build long-term relationships with individual users.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "user memory",
+        "long-term memory",
+        "episodic memory",
+        "semantic memory",
+        "procedural memory",
+        "session persistence",
+        "memory retrieval",
+        "how do i remember user context",
+        "persistent AI",
+        "cross-session memory"
+      ],
+      "relatedSkills": [
+        "ai-persona-design",
+        "personalized-behavior",
+        "conversation-memory"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/user-memory-system/SKILL.md"
     },
     {
       "name": "using-superpowers",
