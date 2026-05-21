@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T15:01:55.421894Z",
-  "totalSkills": 741,
+  "generatedAt": "2026-05-21T15:50:58.727462Z",
+  "totalSkills": 743,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 193,
+    "coding": 195,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 338,
+    "implementation": 340,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -6701,6 +6701,31 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/operator-framework/SKILL.md"
+    },
+    {
+      "name": "framework-adaptation",
+      "domain": "coding",
+      "description": "Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework adaptation",
+        "library integration",
+        "new framework",
+        "dependency evaluation",
+        "tech stack upgrade",
+        "adapter pattern",
+        "facade pattern",
+        "progressive migration"
+      ],
+      "relatedSkills": [
+        "version-migration",
+        "dependency-conflict-resolution",
+        "architecture-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-adaptation/SKILL.md"
     },
     {
       "name": "framework-design",
@@ -16426,6 +16451,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/verification-before-completion/SKILL.md"
+    },
+    {
+      "name": "version-migration",
+      "domain": "coding",
+      "description": "Manages framework and library version upgrades through systematic breakage analysis, automated refactoring scripts, and progressive migration with zero-downtime rollback strategies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "version migration",
+        "major version upgrade",
+        "breaking changes",
+        "framework upgrade",
+        "deprecation migration",
+        "API breakage",
+        "automated refactoring",
+        "semver upgrade"
+      ],
+      "relatedSkills": [
+        "framework-adaptation",
+        "dependency-conflict-resolution",
+        "architecture-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/version-migration/SKILL.md"
     },
     {
       "name": "viboscope",
