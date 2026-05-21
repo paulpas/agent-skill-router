@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T12:08:46.256538Z",
-  "totalSkills": 738,
+  "generatedAt": "2026-05-21T13:48:40.104829Z",
+  "totalSkills": 739,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 190,
+    "coding": 191,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 335,
+    "implementation": 336,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -4837,6 +4837,33 @@
       "source": "skills/go/database-patterns/SKILL.md"
     },
     {
+      "name": "ddd-command-pattern",
+      "domain": "coding",
+      "description": "Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "command pattern",
+        "ddd command handler",
+        "command bus",
+        "how do i implement commands",
+        "use case orchestration",
+        "command validation",
+        "cqrs command side",
+        "write model handlers",
+        "transaction coordination"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "ddd-tactical-patterns",
+        "cqrs-pattern",
+        "event-sourcing-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ddd-command-pattern/SKILL.md"
+    },
+    {
       "name": "ddd-context-mapping",
       "domain": "coding",
       "description": "Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems.",
@@ -4867,25 +4894,25 @@
     {
       "name": "ddd-tactical-patterns",
       "domain": "coding",
-      "description": "Implements DDD tactical patterns including repositories, domain services, specifications, factories, unit of work, and command/query separation for building robust domain models.",
+      "description": "Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "ddd tactical patterns",
-        "repository pattern",
         "specification pattern",
+        "ddd tactical patterns",
         "domain service",
         "aggregate factory",
         "unit of work",
-        "command query separation",
-        "CQRS within bounded context",
-        "composable business rules"
+        "repository implementation",
+        "how do i implement specifications",
+        "cross-aggregate operations"
       ],
       "relatedSkills": [
         "domain-driven-design",
-        "domain-events",
-        "cqrs-pattern"
+        "ddd-context-mapping",
+        "cqrs-pattern",
+        "event-sourcing-pattern"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ddd-tactical-patterns/SKILL.md"
