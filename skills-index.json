@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T03:04:57.588635Z",
-  "totalSkills": 722,
+  "generatedAt": "2026-05-21T03:29:08.671390Z",
+  "totalSkills": 723,
   "domains": {
     "agent": 250,
     "cncf": 169,
-    "coding": 179,
+    "coding": 180,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 320,
+    "implementation": 321,
     "reference": 164,
     "information": 1,
     "review": 5
@@ -4740,10 +4740,35 @@
       ],
       "relatedSkills": [
         "security-review",
-        "semver-automation"
+        "semver-automation",
+        "dependency-supply-chain-security"
       ],
       "version": "1.0.0",
       "source": "skills/coding/cve-dependency-management/SKILL.md"
+    },
+    {
+      "name": "dependency-supply-chain-security",
+      "domain": "coding",
+      "description": "Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and reproducible build patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "SBOM",
+        "SLSA",
+        "sigstore",
+        "cosign",
+        "supply chain attack",
+        "dependency pinning",
+        "how do i secure my dependencies",
+        "package signing"
+      ],
+      "relatedSkills": [
+        "dependency-management",
+        "review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/dependency-supply-chain-security/SKILL.md"
     },
     {
       "name": "deployment-manager",
@@ -12928,7 +12953,8 @@
         "dry-principles",
         "humanizer",
         "null",
-        "secure-release-pipeline"
+        "secure-release-pipeline",
+        "dependency-supply-chain-security"
       ],
       "version": "1.1.0",
       "source": "skills/coding/code-review/SKILL.md"
