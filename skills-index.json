@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T20:03:56.246799Z",
-  "totalSkills": 754,
+  "generatedAt": "2026-05-21T20:35:04.134302Z",
+  "totalSkills": 756,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 204,
+    "coding": 206,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 349,
+    "implementation": 351,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -11548,6 +11548,32 @@
       "source": "skills/coding/ds-observational-studies/SKILL.md"
     },
     {
+      "name": "of-shader-programming",
+      "domain": "coding",
+      "description": "Implements GLSL shader programming in OpenFrameworks including vertex/fragment shaders, uniform management, VBO rendering, post-processing effects, and shader compilation debugging for GPU-accelerated graphics.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "of shader",
+        "glsl programming",
+        "vertex shader",
+        "fragment shader",
+        "ofShader",
+        "uniform management",
+        "post-processing",
+        "gpu rendering",
+        "vbo shader",
+        "openframeworks shaders"
+      ],
+      "relatedSkills": [
+        "openframeworks",
+        "performance-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/of-shader-programming/SKILL.md"
+    },
+    {
       "name": "on-prem-infrastructure",
       "domain": "linux",
       "description": "Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems.",
@@ -11698,6 +11724,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/openfga/SKILL.md"
+    },
+    {
+      "name": "openframeworks",
+      "domain": "coding",
+      "description": "Implements OpenFrameworks (C++ creative coding toolkit) application lifecycle, addon integration, drawing primitives, event handling, shader management, and data visualization patterns for cross-platform interactive applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "openframeworks",
+        "ofx addons",
+        "creative coding",
+        "c++ graphics",
+        "interactive art",
+        "ofApp setup update draw",
+        "particle systems",
+        "cross-platform canvas"
+      ],
+      "relatedSkills": [
+        "of-shader-programming",
+        "performance-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/openframeworks/SKILL.md"
     },
     {
       "name": "openkruise",
