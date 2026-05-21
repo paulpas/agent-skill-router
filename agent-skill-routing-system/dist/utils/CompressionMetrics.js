@@ -23,7 +23,7 @@ class CompressionMetrics {
     cacheMisses = 0;
     evictions = 0;
     totalTokensSaved = 0;
-    compressionRatios = [];
+    compressionPercents = [];
     currentCacheSizeBytes = 0;
     maxCacheSizeBytes = 0;
     constructor() {
@@ -61,8 +61,8 @@ class CompressionMetrics {
                 }
                 else {
                     this.successfulCompressions++;
-                    if (event.ratio !== undefined) {
-                        this.compressionRatios.push(event.ratio);
+                    if (event.compressPercent !== undefined) {
+                        this.compressionPercents.push(event.compressPercent);
                     }
                     if (event.tokensBefore !== undefined && event.tokensAfter !== undefined) {
                         this.totalTokensSaved += event.tokensBefore - event.tokensAfter;
@@ -92,9 +92,9 @@ class CompressionMetrics {
      * Get aggregated compression statistics
      */
     getStats() {
-        const averageRatio = this.compressionRatios.length > 0
-            ? this.compressionRatios.reduce((a, b) => a + b, 0) / this.compressionRatios.length
-            : 1;
+        const averagePercent = this.compressionPercents.length > 0
+            ? this.compressionPercents.reduce((a, b) => a + b, 0) / this.compressionPercents.length
+            : 0;
         return {
             totalOperations: this.totalOperations,
             successfulCompressions: this.successfulCompressions,
@@ -103,7 +103,7 @@ class CompressionMetrics {
             cacheMisses: this.cacheMisses,
             evictions: this.evictions,
             totalTokensSaved: this.totalTokensSaved,
-            averageCompressionRatio: averageRatio,
+            averageCompressionPercent: averagePercent,
             maxCacheSizeBytes: this.maxCacheSizeBytes,
             currentCacheSizeBytes: this.currentCacheSizeBytes,
         };
@@ -138,7 +138,7 @@ class CompressionMetrics {
         this.cacheMisses = 0;
         this.evictions = 0;
         this.totalTokensSaved = 0;
-        this.compressionRatios = [];
+        this.compressionPercents = [];
         this.currentCacheSizeBytes = 0;
     }
     /**

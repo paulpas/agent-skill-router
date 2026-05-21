@@ -146,11 +146,11 @@ class LLMSkillCompressor {
             // Estimate tokens
             const originalTokens = this.estimateTokens(originalContent);
             const compressedTokens = this.estimateTokens(finalContent);
-            const compressionRatio = originalTokens > 0 ? compressedTokens / originalTokens : 1;
+            const compressPercent = originalTokens > 0 ? Math.round((1 - compressedTokens / originalTokens) * 100) : 0;
             return {
                 content: finalContent,
                 tokens: compressedTokens,
-                compressionRatio,
+                compressPercent,
                 version: targetStyle,
                 generatedAt: new Date(),
                 isValid: validation.valid,
@@ -291,7 +291,7 @@ Return ONLY the compressed Markdown content (including YAML frontmatter if prese
         return {
             content: originalContent,
             tokens,
-            compressionRatio: 1,
+            compressPercent: 0,
             version,
             generatedAt: new Date(),
             isValid: false,

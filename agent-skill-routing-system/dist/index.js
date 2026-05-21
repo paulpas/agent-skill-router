@@ -235,14 +235,15 @@ class AgentSkillRoutingApp {
             try {
                 // Phase 6: Call new compression-aware method with proper type
                 const registry = this.router.getRegistry();
-                const content = await registry.getSkillContentWithCompression?.(name, domain, compressionVersion) ||
-                    await registry.getSkillContent(name);
+                const result = await registry.getSkillContentWithCompression?.(name, domain, compressionVersion);
+                const content = result?.content || await registry.getSkillContent(name);
+                const compressPercent = result?.compressPercent ?? 0;
                 // Phase 6: Add compression response headers
                 reply
                     .header('Content-Type', 'text/plain; charset=utf-8')
                     .header('X-Compression-Version', compressionVersion)
                     .header('X-Compression-Tokens', '0') // TODO: track token count
-                    .header('X-Compression-Ratio', '1.0') // TODO: calculate ratio
+                    .header('X-Compression-Percent', String(compressPercent))
                     .header('X-Compression-Source', 'original') // TODO: track source
                     .send(content);
             }
@@ -274,6 +275,14 @@ class AgentSkillRoutingApp {
                         max_depth: { type: 'number', minimum: 1, maximum: 10 },
                         link_following_enabled: { type: 'boolean' },
                         allow_external_links: { type: 'boolean' },
+                        max_external_size_kb: { type: 'number', minimum: 1, maximum: 1000 },
+                        compression_mode: { type: 'string', enum: ['brief', 'moderate', 'skip'] },
+                        js_rendering_enabled: { type: 'boolean' },
+                        js_render_timeout_ms: { type: 'number', minimum: 1000, maximum: 30000 },
+                        js_render_fallback: { type: 'boolean' },
+                        resolution_mode: { type: 'string', enum: ['inline', 'semantic', 'compressed'] },
+                        semantic_top_k: { type: 'number', minimum: 1, maximum: 20 },
+                        semantic_similarity_threshold: { type: 'number', minimum: 0, maximum: 1 },
                     },
                     additionalProperties: false,
                 },
@@ -284,8 +293,17 @@ class AgentSkillRoutingApp {
                             enabled: { type: 'boolean' },
                             allowExternalLinks: { type: 'boolean' },
                             maxDepth: { type: 'number' },
+                            maxExternalSizeKb: { type: 'number' },
+                            compressionMode: { type: 'string' },
+                            jsRenderingEnabled: { type: 'boolean' },
+                            jsRenderTimeoutMs: { type: 'number' },
+                            jsRenderFallback: { type: 'boolean' },
+                            resolutionMode: { type: 'string' },
+                            semanticTopK: { type: 'number' },
+                            semanticSimilarityThreshold: { type: 'number' },
+                            updatedAt: { type: 'string' },
                         },
-                        required: ['enabled', 'allowExternalLinks', 'maxDepth'],
+                        required: ['enabled', 'allowExternalLinks', 'maxDepth', 'maxExternalSizeKb', 'compressionMode', 'jsRenderingEnabled', 'jsRenderTimeoutMs', 'jsRenderFallback', 'resolutionMode', 'semanticTopK', 'semanticSimilarityThreshold', 'updatedAt'],
                     },
                 },
             },
@@ -294,7 +312,7 @@ class AgentSkillRoutingApp {
                 return reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
             }
             try {
-                const { max_depth, link_following_enabled, allow_external_links } = request.body;
+                const { max_depth, link_following_enabled, allow_external_links, max_external_size_kb, compression_mode, js_rendering_enabled, js_render_timeout_ms, js_render_fallback, resolution_mode, semantic_top_k, semantic_similarity_threshold, } = request.body;
                 // Guard: validate request body structure (fail fast)
                 if (!request.body || typeof request.body !== 'object' || Array.isArray(request.body)) {
                     return reply.code(400).send({ error: 'Invalid request', message: 'Request body must be a JSON object', updatedAt: new Date().toISOString() });
@@ -335,6 +353,102 @@ class AgentSkillRoutingApp {
                     });
                     return;
                 }
+                if (max_external_size_kb !== undefined && typeof max_external_size_kb !== 'number') {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `max_external_size_kb must be a number, got: ${typeof max_external_size_kb}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (max_external_size_kb !== undefined && (max_external_size_kb < 1 || max_external_size_kb > 1000)) {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `max_external_size_kb must be between 1 and 1000 (inclusive), got: ${max_external_size_kb}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (compression_mode !== undefined && !['brief', 'moderate', 'skip'].includes(compression_mode)) {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `compression_mode must be one of: brief, moderate, skip. Got: ${compression_mode}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (js_rendering_enabled !== undefined && typeof js_rendering_enabled !== 'boolean') {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: 'js_rendering_enabled must be a boolean value',
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (js_render_timeout_ms !== undefined && typeof js_render_timeout_ms !== 'number') {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `js_render_timeout_ms must be a number, got: ${typeof js_render_timeout_ms}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (js_render_timeout_ms !== undefined && (js_render_timeout_ms < 1000 || js_render_timeout_ms > 30000)) {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `js_render_timeout_ms must be between 1000 and 30000 (inclusive), got: ${js_render_timeout_ms}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (js_render_fallback !== undefined && typeof js_render_fallback !== 'boolean') {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: 'js_render_fallback must be a boolean value',
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (resolution_mode !== undefined && !['inline', 'semantic', 'compressed'].includes(resolution_mode)) {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `resolution_mode must be one of: inline, semantic, compressed. Got: ${resolution_mode}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (semantic_top_k !== undefined && typeof semantic_top_k !== 'number') {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `semantic_top_k must be a number, got: ${typeof semantic_top_k}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (semantic_top_k !== undefined && (semantic_top_k < 1 || semantic_top_k > 20)) {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `semantic_top_k must be between 1 and 20 (inclusive), got: ${semantic_top_k}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (semantic_similarity_threshold !== undefined && typeof semantic_similarity_threshold !== 'number') {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `semantic_similarity_threshold must be a number, got: ${typeof semantic_similarity_threshold}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
+                if (semantic_similarity_threshold !== undefined && (semantic_similarity_threshold < 0 || semantic_similarity_threshold > 1)) {
+                    reply.code(400).send({
+                        error: 'Invalid request',
+                        message: `semantic_similarity_threshold must be between 0 and 1 (inclusive), got: ${semantic_similarity_threshold}`,
+                        updatedAt: new Date().toISOString(),
+                    });
+                    return;
+                }
                 // Build partial config from request body
                 const partialConfig = {};
                 if (max_depth !== undefined) {
@@ -345,6 +459,30 @@ class AgentSkillRoutingApp {
                 }
                 if (allow_external_links !== undefined) {
                     partialConfig.allowExternalLinks = allow_external_links;
+                }
+                if (max_external_size_kb !== undefined) {
+                    partialConfig.maxExternalSizeKb = max_external_size_kb;
+                }
+                if (compression_mode !== undefined) {
+                    partialConfig.compressionMode = compression_mode;
+                }
+                if (js_rendering_enabled !== undefined) {
+                    partialConfig.jsRenderingEnabled = js_rendering_enabled;
+                }
+                if (js_render_timeout_ms !== undefined) {
+                    partialConfig.jsRenderTimeoutMs = js_render_timeout_ms;
+                }
+                if (js_render_fallback !== undefined) {
+                    partialConfig.jsRenderFallback = js_render_fallback;
+                }
+                if (resolution_mode !== undefined) {
+                    partialConfig.resolutionMode = resolution_mode;
+                }
+                if (semantic_top_k !== undefined) {
+                    partialConfig.semanticTopK = semantic_top_k;
+                }
+                if (semantic_similarity_threshold !== undefined) {
+                    partialConfig.semanticSimilarityThreshold = semantic_similarity_threshold;
                 }
                 // Update the configuration
                 this.router.getRegistry().updateMarkdownLinkConfig(partialConfig);
@@ -367,6 +505,34 @@ class AgentSkillRoutingApp {
                     error: 'Configuration update failed',
                     message: error instanceof Error ? error.message : String(error),
                     updatedAt: new Date().toISOString(),
+                });
+            }
+        });
+        // ── GET /config/link-following — read current link following configuration ──
+        /**
+         * Get the current markdown link following configuration
+         *
+         * @remarks
+         * Returns the current configuration for following markdown links in skill definitions.
+         *
+         * @returns Current configuration object with maxDepth, enabled, and allowExternalLinks fields
+         * @throws 503 Service Unavailable - if skills are still loading
+         */
+        this.app.get('/config/link-following', async (_request, reply) => {
+            if (!this.ready) {
+                return reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
+            }
+            try {
+                const config = this.router.getRegistry().getMarkdownLinkConfig();
+                reply.code(200).send(config);
+            }
+            catch (error) {
+                this.logger.error('Failed to get link config', {
+                    error: error instanceof Error ? error.message : String(error),
+                });
+                reply.code(500).send({
+                    error: 'Failed to get configuration',
+                    message: error instanceof Error ? error.message : String(error),
                 });
             }
         });

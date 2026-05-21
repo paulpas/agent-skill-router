@@ -225,7 +225,7 @@ class SkillCompressor {
                 compressedLength: content.length,
                 compressionLevel: 0,
                 tokensSaved: 0,
-                ratio: 1,
+                compressPercent: 0,
                 isCompressed: false,
             };
         }
@@ -237,7 +237,7 @@ class SkillCompressor {
                 compressedLength: content.length,
                 compressionLevel: 0,
                 tokensSaved: 0,
-                ratio: 1,
+                compressPercent: 0,
                 isCompressed: false,
             };
         }
@@ -254,14 +254,14 @@ class SkillCompressor {
             const originalTokens = this.estimateTokens(content);
             const compressedTokens = this.estimateTokens(compressed);
             const tokensSaved = Math.max(0, originalTokens - compressedTokens);
-            const ratio = originalTokens > 0 ? compressedTokens / originalTokens : 1;
+            const compressPercent = originalTokens > 0 ? Math.round((1 - compressedTokens / originalTokens) * 100) : 0;
             return {
                 content: compressed,
                 originalLength: content.length,
                 compressedLength: compressed.length,
                 compressionLevel: level,
                 tokensSaved,
-                ratio,
+                compressPercent,
                 isCompressed: true,
             };
         }
@@ -273,7 +273,7 @@ class SkillCompressor {
                 compressedLength: content.length,
                 compressionLevel: 0,
                 tokensSaved: 0,
-                ratio: 1,
+                compressPercent: 0,
                 isCompressed: false,
             };
         }
@@ -333,7 +333,7 @@ class SkillCompressor {
             before: originalTokens,
             after: compressedTokens,
             saved: Math.max(0, originalTokens - compressedTokens),
-            ratio: originalTokens > 0 ? compressedTokens / originalTokens : 1,
+            compressPercent: originalTokens > 0 ? Math.round((1 - compressedTokens / originalTokens) * 100) : 0,
         };
     }
     /**

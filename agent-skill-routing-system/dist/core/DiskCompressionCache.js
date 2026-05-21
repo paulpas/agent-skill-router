@@ -194,7 +194,7 @@ class DiskCompressionCache {
             return {
                 content,
                 tokens: versionInfo.tokens,
-                compressionRatio: versionInfo.compressionRatio,
+                compressPercent: versionInfo.compressPercent,
                 version,
                 generatedAt: createdDate,
                 isValid: true,
@@ -455,7 +455,7 @@ class DiskCompressionCache {
                     lastAccessed: versions.brief.generatedAt.toISOString(),
                     accessCount: 0,
                     tokens: versions.brief.tokens,
-                    compressionRatio: versions.brief.compressionRatio,
+                    compressPercent: versions.brief.compressPercent,
                     status: 'fresh',
                 },
                 moderate: {
@@ -463,7 +463,7 @@ class DiskCompressionCache {
                     lastAccessed: versions.moderate.generatedAt.toISOString(),
                     accessCount: 0,
                     tokens: versions.moderate.tokens,
-                    compressionRatio: versions.moderate.compressionRatio,
+                    compressPercent: versions.moderate.compressPercent,
                     status: 'fresh',
                 },
                 detailed: {
@@ -471,7 +471,7 @@ class DiskCompressionCache {
                     lastAccessed: versions.detailed.generatedAt.toISOString(),
                     accessCount: 0,
                     tokens: versions.detailed.tokens,
-                    compressionRatio: versions.detailed.compressionRatio,
+                    compressPercent: versions.detailed.compressPercent,
                     status: 'fresh',
                 },
             },

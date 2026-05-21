@@ -821,6 +821,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
    * Load all skills from one or more skill directories.
    * Directories are processed in order; first directory wins on name collision
    * so local skills always override remote ones.
+   * Within each directory, files are processed in parallel batches for improved performance.
    */
   async loadSkills(): Promise<void> {
     const dirs = Array.isArray(this.config.skillsDirectory)
@@ -828,6 +829,9 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       : [this.config.skillsDirectory];
 
     this.logger.info('Loading skills from directories', { directories: dirs });
+
+    // Process files in parallel batches of 20 for better performance
+    const BATCH_SIZE = 20;
 
     for (const dir of dirs) {
       let successCount = 0;
@@ -838,10 +842,32 @@ export class SkillRegistry implements SkillRegistryWithCompression {
         const files = await glob(pattern);
         this.logger.debug(`Found ${files.length} SKILL.md files in ${dir}`);
 
-        for (const file of files) {
-          try {
-            const skill = await this.loadSkillFromFile(file);
-            if (skill) {
+        // Process files in batches to maintain directory order while enabling parallelism within batch
+        for (let i = 0; i < files.length; i += BATCH_SIZE) {
+          const batch = files.slice(i, i + BATCH_SIZE);
+          
+          // Process batch in parallel
+          const batchPromises = batch.map(async (file) => {
+            try {
+              const skill = await this.loadSkillFromFile(file);
+              return { skill, file, error: null };
+            } catch (error) {
+              return { skill: null, file, error };
+            }
+          });
+
+          const batchResults = await Promise.all(batchPromises);
+
+          // Process results sequentially to maintain local-first semantics
+          for (const result of batchResults) {
+            const { skill, file, error } = result;
+            
+            if (error) {
+              errorCount++;
+              this.logger.error(`Failed to load skill from ${file}`, {
+                error: error instanceof Error ? error.message : String(error),
+              });
+            } else if (skill) {
               // Local-first: first directory wins on name collision
               if (!this.skills.has(skill.metadata.name)) {
                 this.addSkill(skill);
@@ -857,11 +883,6 @@ export class SkillRegistry implements SkillRegistryWithCompression {
             } else {
               errorCount++;
             }
-          } catch (error) {
-            errorCount++;
-            this.logger.error(`Failed to load skill from ${file}`, {
-              error: error instanceof Error ? error.message : String(error),
-            });
           }
         }
       } catch (error) {

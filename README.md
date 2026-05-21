@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 17:21:56 UTC  
-> **Total skills:** 748
+> **Last updated:** 2026-05-21 13:09:49 UTC  
+> **Total skills:** 750
 
 ## Skills by Domain
 
 
-### Agent (253 skills)
+### Agent (254 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -407,6 +407,7 @@ MIT — All skills are freely available and redistributable.
 | [hubspot-automation](skills/agent/hubspot-automation/SKILL.md) | Implements intelligent hubspot automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | hubspot-automation, hubspot automation, how do i hubspot-automation, orchestrate hubspot-automation, automate hubspot-automation, agent hubspot-automation |
 | [infra-drift-detector](skills/agent/infra-drift-detector/SKILL.md) | Implements intelligent infra drift detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | infra-drift-detector, infra drift detector, how do i infra-drift-detector, orchestrate infra-drift-detector, automate infra-drift-detector, agent infra-drift-detector |
 | [inngest](skills/agent/inngest/SKILL.md) | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | inngest, inngest, how do i inngest, orchestrate inngest, automate inngest, agent inngest |
+| [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. | instruction engineering, prompt design, skill instructions, how do i write better instructions, AI behavior guidance, constraint blocks, few-shot examples, guard clauses for skills, skill quality |
 | [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. | skill selection, task routing, choosing the right skill, semantic matching, confidence threshold, adaptive routing, agent dispatch, fallback strategy |
 | [intercom-automation](skills/agent/intercom-automation/SKILL.md) | Implements intelligent intercom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | intercom-automation, intercom automation, how do i intercom-automation, orchestrate intercom-automation, automate intercom-automation, agent intercom-automation |
 | [issues](skills/agent/issues/SKILL.md) | Implements intelligent issues with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | issues, issues, how do i issues, orchestrate issues, automate issues, agent issues |
@@ -705,7 +706,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (201 skills)
+### Coding (202 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -881,6 +882,7 @@ MIT — All skills are freely available and redistributable.
 | [single-responsibility](skills/coding/single-responsibility/SKILL.md) | Detects and refactors classes that violate the Single Responsibility Principle by splitting multi-purpose modules into focused components with clear responsibility boundaries. | single responsibility principle, SRP, god class, split class, cohesion, high coupling, module boundary, one reason to change, separation of concerns |
 | [skill-development-workflow](skills/coding/skill-development-workflow/SKILL.md) | Implements the complete skill creation lifecycle from research through validation, including Python-based quality gates, stub detection, and automated compliance checking against SKILL_FORMAT_SPEC.md requirements. | skill creation workflow, skill development, skill lifecycle, quality gate validation, skill validator, stub detection, skill compliance check, how do i create a skill, SKILL.md format, skill generation pipeline |
 | [skill-lifecycle-management](skills/coding/skill-lifecycle-management/SKILL.md) | Manages the complete lifecycle of SKILL.md files including versioning strategies, deprecation workflows, retirement criteria, migration plans, and automated drift detection to keep skills current across the repository. | skill lifecycle, skill versioning, skill deprecation, skill retirement, how do i manage skills, skill migration, deprecated skills, skill health monitoring, skill drift detection, maturity tracking |
+| [skill-testing-validation](skills/coding/skill-testing-validation/SKILL.md) | Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection. | skill testing, validation, quality assurance, test automation, regression detection, trigger matching, how do i test skills, code review for skills, skill audit |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | software architecture, system design, layered architecture, hexagonal architecture, clean architecture, separation of concerns, scalable design, architectural patterns |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design |
@@ -1074,7 +1076,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (343 skills)
+### Implementation (Build Features) (345 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1229,6 +1231,7 @@ MIT — All skills are freely available and redistributable.
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. |
 | [indicator-confluence](skills/trading/indicator-confluence/SKILL.md) | Trading | "Provides Indicator Confluence Validation Systems for Confirming Trading Signals" |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. |
+| [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. |
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Coding | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. |
@@ -1358,6 +1361,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-development-workflow](skills/coding/skill-development-workflow/SKILL.md) | Coding | Implements the complete skill creation lifecycle from research through validation, including Python-based quality gates, stub detection, and automated compliance checking against SKILL_FORMAT_SPEC.md requirements. |
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Agent | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. |
 | [skill-lifecycle-management](skills/coding/skill-lifecycle-management/SKILL.md) | Coding | Manages the complete lifecycle of SKILL.md files including versioning strategies, deprecation workflows, retirement criteria, migration plans, and automated drift detection to keep skills current across the repository. |
+| [skill-testing-validation](skills/coding/skill-testing-validation/SKILL.md) | Coding | Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection. |
 | [slippage-model](skills/trading/slippage-model/SKILL.md) | Trading | "Implements slippage modeling and execution simulation for risk management and algorithmic trading execution." |
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. |
@@ -2206,6 +2210,7 @@ MIT — All skills are freely available and redistributable.
 | [ingress-controller](skills/cncf/ingress-controller/SKILL.md) | Cncf | "Kong Ingress Controller in Kubernetes - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [inngest](skills/agent/inngest/SKILL.md) | Agent | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | Implementation |
+| [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. | Implementation |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | Implementation |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. | Implementation |
 | [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Agent | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. | Orchestration |
@@ -2473,6 +2478,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-scanner](skills/agent/skill-scanner/SKILL.md) | Agent | Implements intelligent skill scanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-seekers](skills/agent/skill-seekers/SKILL.md) | Agent | Implements intelligent skill seekers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-sentinel](skills/agent/skill-sentinel/SKILL.md) | Agent | Implements intelligent skill sentinel with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [skill-testing-validation](skills/coding/skill-testing-validation/SKILL.md) | Coding | Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection. | Implementation |
 | [skill-trigger-engineering](skills/agent/skill-trigger-engineering/SKILL.md) | Agent | Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives. | Orchestration |
 | [skill-writer](skills/agent/skill-writer/SKILL.md) | Agent | Implements intelligent skill writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [slack-automation](skills/agent/slack-automation/SKILL.md) | Agent | Implements intelligent slack automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

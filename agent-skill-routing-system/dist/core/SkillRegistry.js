@@ -19,6 +19,7 @@ const InMemoryCompressionCache_1 = require("./InMemoryCompressionCache");
 const CompressionDeduplicator_1 = require("./CompressionDeduplicator");
 const EmbeddingService_1 = require("../embedding/EmbeddingService");
 const DomainRegistry_1 = require("./DomainRegistry");
+const MarkdownLinkResolver_1 = require("./MarkdownLinkResolver");
 /**
  * Skill Registry - manages all available skills
  * Implements SkillRegistryWithCompression interface for type-safe access to compression methods
@@ -52,6 +53,30 @@ class SkillRegistry {
     embeddingService;
     // Runtime markdown link following configuration
     markdownLinkConfig;
+    // Lazy-initialized markdown link resolver (hoisted to avoid per-call instantiation)
+    linkResolver = null;
+    /**
+     * Get the base skills directory path for link resolution safety checks.
+     */
+    getSkillsBasePath() {
+        const dirs = Array.isArray(this.config.skillsDirectory)
+            ? this.config.skillsDirectory
+            : [this.config.skillsDirectory];
+        return path_1.default.resolve(dirs[0]);
+    }
+    /**
+     * Get or create the markdown link resolver instance.
+     * Lazily initialized to avoid overhead when link following is disabled.
+     */
+    getLinkResolver() {
+        if (!this.linkResolver) {
+            this.linkResolver = new MarkdownLinkResolver_1.MarkdownLinkResolver({
+                ...this.markdownLinkConfig,
+                skillBasePath: this.getSkillsBasePath(),
+            }, this.logger, this.embeddingService);
+        }
+        return this.linkResolver;
+    }
     constructor(config) {
         this.config = {
             cacheDirectory: './.skill-cache',
@@ -65,10 +90,30 @@ class SkillRegistry {
         };
         // Initialize markdown link following config with defaults
         const mlc = config.markdownLinkFollowing;
+        const envBool = (key, fallback) => {
+            const v = process.env[key];
+            return v !== undefined ? v === 'true' || v === '1' : fallback;
+        };
+        const envNum = (key, fallback) => {
+            const v = process.env[key];
+            if (v === undefined)
+                return fallback;
+            const n = Number(v);
+            return isNaN(n) ? fallback : n;
+        };
+        const envStr = (key, fallback) => process.env[key] ?? fallback;
         this.markdownLinkConfig = {
-            enabled: mlc?.enabled ?? false,
-            allowExternalLinks: mlc?.allowExternalLinks ?? false,
-            maxDepth: mlc?.maxDepth ?? 2,
+            enabled: mlc?.enabled ?? envBool('LINK_FOLLOWING_ENABLED', false),
+            allowExternalLinks: mlc?.allowExternalLinks ?? envBool('ALLOW_EXTERNAL_LINKS', false),
+            maxDepth: mlc?.maxDepth ?? envNum('MAX_LINK_DEPTH', 2),
+            maxExternalSizeKb: mlc?.maxExternalSizeKb ?? envNum('MAX_EXTERNAL_SIZE_KB', 10),
+            compressionMode: mlc?.compressionMode ?? envStr('EXTERNAL_COMPRESSION_MODE', 'brief'),
+            jsRenderingEnabled: mlc?.jsRenderingEnabled ?? envBool('JS_RENDERING_ENABLED', false),
+            jsRenderTimeoutMs: mlc?.jsRenderTimeoutMs ?? envNum('JS_RENDER_TIMEOUT_MS', 5000),
+            jsRenderFallback: mlc?.jsRenderFallback ?? envBool('JS_RENDER_FALLBACK', true),
+            resolutionMode: mlc?.resolutionMode ?? envStr('LINK_RESOLUTION_MODE', 'inline'),
+            semanticTopK: mlc?.semanticTopK ?? envNum('SEMANTIC_TOP_K', 3),
+            semanticSimilarityThreshold: mlc?.semanticSimilarityThreshold ?? envNum('SEMANTIC_SIMILARITY_THRESHOLD', 0.3),
         };
         this.maxCacheSizeBytes = this.config.maxCacheSizeBytes || (1024 * 1024 * 1024);
         this.compressor = new SkillCompressor_1.SkillCompressor();
@@ -208,7 +253,11 @@ class SkillRegistry {
             for (const domain of domains) {
                 const localFile = path_1.default.join(dir, domain, name, 'SKILL.md');
                 try {
-                    const content = await fs_1.default.promises.readFile(localFile, 'utf-8');
+                    let content = await fs_1.default.promises.readFile(localFile, 'utf-8');
+                    // Apply markdown link resolution if enabled
+                    if (this.markdownLinkConfig.enabled) {
+                        content = await this.getLinkResolver().resolveLinks(content, localFile, 0);
+                    }
                     this.contentCache.set(name, content);
                     this.logger.info('[ON-DEMAND] skill served from local disk', { name, file: localFile });
                     return level > 0 ? this.applyCompressionAndCache(name, content, level) : content;
@@ -220,7 +269,11 @@ class SkillRegistry {
             // Fallback to flat structure for backwards compatibility
             const localFile = path_1.default.join(dir, name, 'SKILL.md');
             try {
-                const content = await fs_1.default.promises.readFile(localFile, 'utf-8');
+                let content = await fs_1.default.promises.readFile(localFile, 'utf-8');
+                // Apply markdown link resolution if enabled
+                if (this.markdownLinkConfig.enabled) {
+                    content = await this.getLinkResolver().resolveLinks(content, localFile, 0);
+                }
                 this.contentCache.set(name, content);
                 this.logger.info('[ON-DEMAND] skill served from local disk (flat)', { name, file: localFile });
                 return level > 0 ? this.applyCompressionAndCache(name, content, level) : content;
@@ -253,11 +306,20 @@ class SkillRegistry {
         const content = await response.text();
         const durationMs = Date.now() - t0;
         this.logger.info('[ON-DEMAND] skill fetched from GitHub', { name, durationMs, bytes: content.length });
+        // Apply markdown link resolution if enabled
+        let processedContent = content;
+        if (this.markdownLinkConfig.enabled) {
+            // For GitHub-sourced skills, use the sourceFile path for relative resolution
+            const resolvedSkillPath = skill?.sourceFile
+                ? path_1.default.join(this.getSkillsBasePath(), skill.sourceFile)
+                : path_1.default.join(this.getSkillsBasePath(), cleanPath);
+            processedContent = await this.getLinkResolver().resolveLinks(content, resolvedSkillPath, 0);
+        }
         // Cache in memory for the lifetime of this process
-        this.contentCache.set(name, content);
+        this.contentCache.set(name, processedContent);
         // Persist to disk so next restart skips the GitHub fetch
-        await this.persistSkillContent(name, content);
-        return level > 0 ? this.applyCompressionAndCache(name, content, level) : content;
+        await this.persistSkillContent(name, processedContent);
+        return level > 0 ? this.applyCompressionAndCache(name, processedContent, level) : processedContent;
     }
     /**
      * Get skill content from compression cache if valid (not expired)
@@ -353,7 +415,7 @@ class SkillRegistry {
                     compressionLevel: level,
                     tokensBefore: compressed.originalLength,
                     tokensAfter: compressed.compressedLength,
-                    ratio: compressed.ratio,
+                    compressPercent: compressed.compressPercent,
                     cacheSize: this.currentCacheSizeBytes,
                     error: null,
                 });
@@ -362,7 +424,7 @@ class SkillRegistry {
                     level,
                     originalBytes: compressed.originalLength,
                     compressedBytes: compressed.compressedLength,
-                    ratio: compressed.ratio.toFixed(2),
+                    compressPercent: compressed.compressPercent,
                     tokensSaved: compressed.tokensSaved,
                     cacheSize: (this.currentCacheSizeBytes / 1024 / 1024).toFixed(1),
                 });
@@ -590,12 +652,15 @@ class SkillRegistry {
      * Load all skills from one or more skill directories.
      * Directories are processed in order; first directory wins on name collision
      * so local skills always override remote ones.
+     * Within each directory, files are processed in parallel batches for improved performance.
      */
     async loadSkills() {
         const dirs = Array.isArray(this.config.skillsDirectory)
             ? this.config.skillsDirectory
             : [this.config.skillsDirectory];
         this.logger.info('Loading skills from directories', { directories: dirs });
+        // Process files in parallel batches of 20 for better performance
+        const BATCH_SIZE = 20;
         for (const dir of dirs) {
             let successCount = 0;
             let errorCount = 0;
@@ -603,10 +668,30 @@ class SkillRegistry {
                 const pattern = path_1.default.join(dir, '**/SKILL.md');
                 const files = await (0, glob_1.glob)(pattern);
                 this.logger.debug(`Found ${files.length} SKILL.md files in ${dir}`);
-                for (const file of files) {
-                    try {
-                        const skill = await this.loadSkillFromFile(file);
-                        if (skill) {
+                // Process files in batches to maintain directory order while enabling parallelism within batch
+                for (let i = 0; i < files.length; i += BATCH_SIZE) {
+                    const batch = files.slice(i, i + BATCH_SIZE);
+                    // Process batch in parallel
+                    const batchPromises = batch.map(async (file) => {
+                        try {
+                            const skill = await this.loadSkillFromFile(file);
+                            return { skill, file, error: null };
+                        }
+                        catch (error) {
+                            return { skill: null, file, error };
+                        }
+                    });
+                    const batchResults = await Promise.all(batchPromises);
+                    // Process results sequentially to maintain local-first semantics
+                    for (const result of batchResults) {
+                        const { skill, file, error } = result;
+                        if (error) {
+                            errorCount++;
+                            this.logger.error(`Failed to load skill from ${file}`, {
+                                error: error instanceof Error ? error.message : String(error),
+                            });
+                        }
+                        else if (skill) {
                             // Local-first: first directory wins on name collision
                             if (!this.skills.has(skill.metadata.name)) {
                                 this.addSkill(skill);
@@ -624,12 +709,6 @@ class SkillRegistry {
                         else {
                             errorCount++;
                         }
-                    }
-                    catch (error) {
-                        errorCount++;
-                        this.logger.error(`Failed to load skill from ${file}`, {
-                            error: error instanceof Error ? error.message : String(error),
-                        });
                     }
                 }
             }
@@ -1044,9 +1123,9 @@ class SkillRegistry {
             this.logger.debug('Pre-computed compressed versions', {
                 skillName,
                 domain,
-                briefRatio: compressed.brief.compressionRatio.toFixed(2),
-                moderateRatio: compressed.moderate.compressionRatio.toFixed(2),
-                detailedRatio: compressed.detailed.compressionRatio.toFixed(2),
+                briefPercent: compressed.brief.compressPercent,
+                moderatePercent: compressed.moderate.compressPercent,
+                detailedPercent: compressed.detailed.compressPercent,
             });
         }
         catch (error) {
@@ -1070,7 +1149,7 @@ class SkillRegistry {
                 skillName,
                 domain,
             });
-            return '';
+            return { content: '', compressPercent: 0 };
         }
         // Use moderate as default if not specified
         const version = versionHint || 'moderate';
@@ -1082,7 +1161,7 @@ class SkillRegistry {
                     skillName,
                     version,
                 });
-                return cached.content;
+                return { content: cached.content, compressPercent: cached.compressPercent };
             }
         }
         // 2. Check disk cache (fresh only, 7-day max age)
@@ -1097,7 +1176,7 @@ class SkillRegistry {
                     skillName,
                     version,
                 });
-                return cached.content;
+                return { content: cached.content, compressPercent: cached.compressPercent };
             }
             // Check access count for deferred retry
             const accessInfo = this.accessCounter.get(skillName);
@@ -1136,9 +1215,9 @@ class SkillRegistry {
                 version,
                 compressionLevel,
                 tokensSaved: compressed.tokensSaved,
-                ratio: compressed.ratio.toFixed(2),
+                compressPercent: compressed.compressPercent,
             });
-            return compressed.content;
+            return { content: compressed.content, compressPercent: compressed.compressPercent };
         }
         catch (error) {
             // Fail fast: if compression fails, return original content
@@ -1146,7 +1225,8 @@ class SkillRegistry {
                 skillName,
                 error: error instanceof Error ? error.message : String(error),
             });
-            return await this.getSkillContent(skillName, 0);
+            const originalContent = await this.getSkillContent(skillName, 0);
+            return { content: originalContent, compressPercent: 0 };
         }
     }
     /**
@@ -1189,8 +1269,8 @@ class SkillRegistry {
             this.logger.warn('Markdown link config update ignored: empty config');
             return;
         }
-        const { enabled, allowExternalLinks, maxDepth } = partialConfig;
-        const { enabled: currentEnabled, allowExternalLinks: currentAllowExternalLinks, maxDepth: currentMaxDepth } = this.markdownLinkConfig;
+        const { enabled, allowExternalLinks, maxDepth, maxExternalSizeKb, compressionMode, jsRenderingEnabled, jsRenderTimeoutMs, jsRenderFallback, resolutionMode, semanticTopK, semanticSimilarityThreshold, } = partialConfig;
+        const { enabled: currentEnabled, allowExternalLinks: currentAllowExternalLinks, maxDepth: currentMaxDepth, maxExternalSizeKb: currentMaxExternalSizeKb, compressionMode: currentCompressionMode, jsRenderingEnabled: currentJsRenderingEnabled, jsRenderTimeoutMs: currentJsRenderTimeoutMs, jsRenderFallback: currentJsRenderFallback, resolutionMode: currentResolutionMode, semanticTopK: currentSemanticTopK, semanticSimilarityThreshold: currentSemanticSimilarityThreshold, } = this.markdownLinkConfig;
         // Guard: explicit type check before bounds validation (fail fast, fail loud)
         if (maxDepth !== undefined) {
             if (typeof maxDepth !== 'number') {
@@ -1200,14 +1280,83 @@ class SkillRegistry {
                 throw new Error(`Invalid maxDepth: ${maxDepth}. Must be between 1 and 10 (inclusive).`);
             }
         }
+        if (maxExternalSizeKb !== undefined) {
+            if (typeof maxExternalSizeKb !== 'number') {
+                throw new Error(`Invalid maxExternalSizeKb: ${maxExternalSizeKb}. Must be a number.`);
+            }
+            if (maxExternalSizeKb < 1 || maxExternalSizeKb > 1000) {
+                throw new Error(`Invalid maxExternalSizeKb: ${maxExternalSizeKb}. Must be between 1 and 1000 (inclusive).`);
+            }
+        }
+        if (compressionMode !== undefined) {
+            const validModes = ['brief', 'moderate', 'skip'];
+            if (!validModes.includes(compressionMode)) {
+                throw new Error(`Invalid compressionMode: ${compressionMode}. Must be one of: brief, moderate, skip.`);
+            }
+        }
+        if (jsRenderTimeoutMs !== undefined) {
+            if (typeof jsRenderTimeoutMs !== 'number') {
+                throw new Error(`Invalid jsRenderTimeoutMs: ${jsRenderTimeoutMs}. Must be a number.`);
+            }
+            if (jsRenderTimeoutMs < 1000 || jsRenderTimeoutMs > 30000) {
+                throw new Error(`Invalid jsRenderTimeoutMs: ${jsRenderTimeoutMs}. Must be between 1000 and 30000 (inclusive).`);
+            }
+        }
+        if (jsRenderFallback !== undefined) {
+            if (typeof jsRenderFallback !== 'boolean') {
+                throw new Error(`Invalid jsRenderFallback: ${jsRenderFallback}. Must be a boolean.`);
+            }
+        }
+        if (resolutionMode !== undefined) {
+            const validModes = ['inline', 'semantic', 'compressed'];
+            if (!validModes.includes(resolutionMode)) {
+                throw new Error(`Invalid resolutionMode: ${resolutionMode}. Must be one of: inline, semantic, compressed.`);
+            }
+        }
+        if (semanticTopK !== undefined) {
+            if (typeof semanticTopK !== 'number') {
+                throw new Error(`Invalid semanticTopK: ${semanticTopK}. Must be a number.`);
+            }
+            if (semanticTopK < 1 || semanticTopK > 20) {
+                throw new Error(`Invalid semanticTopK: ${semanticTopK}. Must be between 1 and 20 (inclusive).`);
+            }
+        }
+        if (semanticSimilarityThreshold !== undefined) {
+            if (typeof semanticSimilarityThreshold !== 'number') {
+                throw new Error(`Invalid semanticSimilarityThreshold: ${semanticSimilarityThreshold}. Must be a number.`);
+            }
+            if (semanticSimilarityThreshold < 0 || semanticSimilarityThreshold > 1) {
+                throw new Error(`Invalid semanticSimilarityThreshold: ${semanticSimilarityThreshold}. Must be between 0 and 1 (inclusive).`);
+            }
+        }
         // Immutable update: create new config object instead of mutating
         const newConfig = {
             enabled: enabled !== undefined ? enabled : currentEnabled,
             allowExternalLinks: allowExternalLinks !== undefined ? allowExternalLinks : currentAllowExternalLinks,
             maxDepth: maxDepth !== undefined ? maxDepth : currentMaxDepth,
+            maxExternalSizeKb: maxExternalSizeKb !== undefined ? maxExternalSizeKb : currentMaxExternalSizeKb,
+            compressionMode: compressionMode !== undefined ? compressionMode : currentCompressionMode,
+            jsRenderingEnabled: jsRenderingEnabled !== undefined ? jsRenderingEnabled : currentJsRenderingEnabled,
+            jsRenderTimeoutMs: jsRenderTimeoutMs !== undefined ? jsRenderTimeoutMs : currentJsRenderTimeoutMs,
+            jsRenderFallback: jsRenderFallback !== undefined ? jsRenderFallback : currentJsRenderFallback,
+            resolutionMode: resolutionMode !== undefined ? resolutionMode : currentResolutionMode,
+            semanticTopK: semanticTopK !== undefined ? semanticTopK : currentSemanticTopK,
+            semanticSimilarityThreshold: semanticSimilarityThreshold !== undefined ? semanticSimilarityThreshold : currentSemanticSimilarityThreshold,
         };
         // Update the instance with the new config
         this.markdownLinkConfig = newConfig;
+        // Invalidate content cache when link following state changes or resolution mode changes
+        // Resolved content differs from raw content, so cached entries become stale
+        if (enabled !== undefined || allowExternalLinks !== undefined || resolutionMode !== undefined) {
+            const invalidatedCount = this.contentCache.size;
+            this.contentCache.clear();
+            this.logger.info('Content cache invalidated due to link config change', {
+                invalidatedEntries: invalidatedCount,
+                newConfig: this.markdownLinkConfig,
+            });
+        }
+        // Reset the resolver instance so it picks up new config on next use
+        this.linkResolver = null;
         this.logger.info('Markdown link following config updated', {
             config: this.markdownLinkConfig,
         });

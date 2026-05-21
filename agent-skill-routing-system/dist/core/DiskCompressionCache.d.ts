@@ -10,7 +10,7 @@ export interface CompressionMetadata {
         lastAccessed: string;
         accessCount: number;
         tokens: number;
-        compressionRatio: number;
+        compressPercent: number;
         status: 'fresh' | 'expired' | 'deferred_retry';
     }>;
     lastCleanup: string;

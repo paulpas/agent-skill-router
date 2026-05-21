@@ -35,15 +35,35 @@ export interface SkillRegistryConfig {
         allowExternalLinks: boolean;
         /** Maximum depth to follow links (default: 2) */
         maxDepth: number;
+        /** Max external content size in KB before compression/skip (default: 10) */
+        maxExternalSizeKb?: number;
+        /** Compression mode for oversized external content (default: 'brief') */
+        compressionMode?: 'brief' | 'moderate' | 'skip';
+        /** Enable JavaScript rendering for dynamic pages (default: false) */
+        jsRenderingEnabled?: boolean;
+        /** JS render timeout in milliseconds (default: 5000) */
+        jsRenderTimeoutMs?: number;
+        /** Fall back to static fetch if JS rendering fails (default: true) */
+        jsRenderFallback?: boolean;
+        /** How resolved content is embedded (default: 'inline') */
+        resolutionMode?: 'inline' | 'semantic' | 'compressed';
+        /** Number of top semantic chunks to return (default: 3) */
+        semanticTopK?: number;
+        /** Minimum cosine similarity for semantic chunk selection (default: 0.3) */
+        semanticSimilarityThreshold?: number;
     };
 }
 /**
  * Extended SkillRegistry interface with compression methods
  * Used for type-safe access to compression-aware methods
  */
+interface CompressedResult {
+    content: string;
+    compressPercent: number;
+}
 export interface SkillRegistryWithCompression extends SkillRegistry {
     /** Get skill content with cache layering (memory → disk → original) */
-    getSkillContentWithCompression(skillName: string, domain: string, versionHint?: 'brief' | 'moderate' | 'detailed'): Promise<string>;
+    getSkillContentWithCompression(skillName: string, domain: string, versionHint?: 'brief' | 'moderate' | 'detailed'): Promise<CompressedResult>;
 }
 /**
  * Skill Registry - manages all available skills
@@ -74,6 +94,16 @@ export declare class SkillRegistry implements SkillRegistryWithCompression {
     private readonly COLD_SKILL_TTL_MS;
     private embeddingService;
     private markdownLinkConfig;
+    private linkResolver;
+    /**
+     * Get the base skills directory path for link resolution safety checks.
+     */
+    private getSkillsBasePath;
+    /**
+     * Get or create the markdown link resolver instance.
+     * Lazily initialized to avoid overhead when link following is disabled.
+     */
+    private getLinkResolver;
     constructor(config: SkillRegistryConfig);
     /**
      * Quality gate: detect if a skill is a stub/template with minimal actionable content.
@@ -135,6 +165,7 @@ export declare class SkillRegistry implements SkillRegistryWithCompression {
      * Load all skills from one or more skill directories.
      * Directories are processed in order; first directory wins on name collision
      * so local skills always override remote ones.
+     * Within each directory, files are processed in parallel batches for improved performance.
      */
     loadSkills(): Promise<void>;
     /**
@@ -223,7 +254,7 @@ export declare class SkillRegistry implements SkillRegistryWithCompression {
      * Get skill content with cache layering (memory → disk → original)
      * Implements versionHint for compression version selection
      */
-    getSkillContentWithCompression(skillName: string, domain: string, versionHint?: 'brief' | 'moderate' | 'detailed'): Promise<string>;
+    getSkillContentWithCompression(skillName: string, domain: string, versionHint?: 'brief' | 'moderate' | 'detailed'): Promise<CompressedResult>;
     /**
      * Increment access counter for smart retry tracking
      * Tracks access within 30-minute windows
@@ -240,6 +271,14 @@ export declare class SkillRegistry implements SkillRegistryWithCompression {
         enabled?: boolean;
         allowExternalLinks?: boolean;
         maxDepth?: number;
+        maxExternalSizeKb?: number;
+        compressionMode?: 'brief' | 'moderate' | 'skip';
+        jsRenderingEnabled?: boolean;
+        jsRenderTimeoutMs?: number;
+        jsRenderFallback?: boolean;
+        resolutionMode?: 'inline' | 'semantic' | 'compressed';
+        semanticTopK?: number;
+        semanticSimilarityThreshold?: number;
     }): void;
     /**
      * Get the current markdown link following configuration
@@ -250,6 +289,15 @@ export declare class SkillRegistry implements SkillRegistryWithCompression {
         enabled: boolean;
         allowExternalLinks: boolean;
         maxDepth: number;
+        maxExternalSizeKb: number;
+        compressionMode: 'brief' | 'moderate' | 'skip';
+        jsRenderingEnabled: boolean;
+        jsRenderTimeoutMs: number;
+        jsRenderFallback: boolean;
+        resolutionMode: 'inline' | 'semantic' | 'compressed';
+        semanticTopK: number;
+        semanticSimilarityThreshold: number;
     };
 }
+export {};
 //# sourceMappingURL=SkillRegistry.d.ts.map

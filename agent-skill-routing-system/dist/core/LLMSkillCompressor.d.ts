@@ -24,7 +24,7 @@ export interface LLMClient {
 export interface CompressedVersion {
     content: string;
     tokens: number;
-    compressionRatio: number;
+    compressPercent: number;
     version: 'brief' | 'moderate' | 'detailed';
     generatedAt: Date;
     isValid: boolean;

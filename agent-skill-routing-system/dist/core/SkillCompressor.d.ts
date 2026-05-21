@@ -24,7 +24,7 @@ export interface CompressedSkill {
     compressedLength: number;
     compressionLevel: number;
     tokensSaved: number;
-    ratio: number;
+    compressPercent: number;
     isCompressed: boolean;
 }
 /**
@@ -34,7 +34,7 @@ export interface TokenEstimate {
     before: number;
     after: number;
     saved: number;
-    ratio: number;
+    compressPercent: number;
 }
 /**
  * SkillCompressor - applies progressive compression to skill content

@@ -8,7 +8,7 @@ export interface CompressionEvent {
     compressionLevel?: number;
     tokensBefore?: number;
     tokensAfter?: number;
-    ratio?: number;
+    compressPercent?: number;
     cacheHit?: boolean;
     ttlExpired?: boolean;
     error?: string | null;
@@ -26,7 +26,7 @@ export interface CompressionStats {
     cacheMisses: number;
     evictions: number;
     totalTokensSaved: number;
-    averageCompressionRatio: number;
+    averageCompressionPercent: number;
     maxCacheSizeBytes: number;
     currentCacheSizeBytes: number;
 }
@@ -49,7 +49,7 @@ export declare class CompressionMetrics {
     private cacheMisses;
     private evictions;
     private totalTokensSaved;
-    private compressionRatios;
+    private compressionPercents;
     private currentCacheSizeBytes;
     private maxCacheSizeBytes;
     private constructor();
