@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 11:23:17 UTC  
-> **Total skills:** 736
+> **Last updated:** 2026-05-21 07:08:14 UTC  
+> **Total skills:** 738
 
 ## Skills by Domain
 
@@ -705,7 +705,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (189 skills)
+### Coding (191 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -765,6 +765,8 @@ MIT — All skills are freely available and redistributable.
 | [data-versioning](skills/coding/data-versioning/SKILL.md) | "Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment tracking and governance" | data versioning, data lineage, provenance, reproducibility, data governance, how do i track data |
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" | data visualization, plotting, dashboards, charts, matplotlib, seaborn, plotly, how do i visualize data |
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | database design, schema design, data modeling, sql migrations, indexing strategy, database normalization, foreign keys, entity relationship |
+| [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems. | context mapping, anticorruption layer, acl implementation, shared kernel, published language, customer supplier relationship, bounded context integration, ddd strategic patterns, conformist pattern, pipeline pattern, open host service |
+| [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Implements DDD tactical patterns including repositories, domain services, specifications, factories, unit of work, and command/query separation for building robust domain models. | ddd tactical patterns, repository pattern, specification pattern, domain service, aggregate factory, unit of work, command query separation, CQRS within bounded context, composable business rules |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | dependency inversion principle, DIP, dependency injection, inversion of control, IoC, loose coupling, high level low level abstraction, constructor injection, factory pattern, testable architecture |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | CVE, dependency management, vulnerability scanning, dependency updates, security patching, SCA, software composition analysis, vulnerability remediation |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... | SBOM, SLSA, sigstore, cosign, supply chain attack, dependency pinning, how do i secure my dependencies, package signing |
@@ -1062,7 +1064,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (333 skills)
+### Implementation (Build Features) (335 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1145,6 +1147,8 @@ MIT — All skills are freely available and redistributable.
 | [database-admin](skills/agent/database-admin/SKILL.md) | Agent | Implements database administration best practices (PostgreSQL tuning, MySQL replication, MongoDB sharding, Redis optimization) with real operational commands and query analysis patterns. |
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Coding | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. |
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. |
+| [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems. |
+| [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical patterns including repositories, domain services, specifications, factories, unit of work, and command/query separation for building robust domain models. |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Coding | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... |
@@ -2030,6 +2034,8 @@ MIT — All skills are freely available and redistributable.
 | [database-admin](skills/agent/database-admin/SKILL.md) | Agent | Implements database administration best practices (PostgreSQL tuning, MySQL replication, MongoDB sharding, Redis optimization) with real operational commands and query analysis patterns. | Implementation |
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Coding | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | Implementation |
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. | Implementation |
+| [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems. | Implementation |
+| [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical patterns including repositories, domain services, specifications, factories, unit of work, and command/query separation for building robust domain models. | Implementation |
 | [dependency-graph-builder](skills/agent/dependency-graph-builder/SKILL.md) | Agent | Implements intelligent dependency graph builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | Implementation |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | Implementation |
