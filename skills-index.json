@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T08:41:32.505701Z",
-  "totalSkills": 731,
+  "generatedAt": "2026-05-21T10:08:16.592983Z",
+  "totalSkills": 733,
   "domains": {
     "agent": 253,
     "cncf": 170,
-    "coding": 184,
+    "coding": 186,
     "go": 12,
     "linux": 13,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 232,
-    "implementation": 328,
+    "implementation": 330,
     "reference": 165,
     "information": 1,
     "review": 5
@@ -2157,6 +2157,31 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/event-bus/SKILL.md"
+    },
+    {
+      "name": "caching-strategies",
+      "domain": "coding",
+      "description": "Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "cache stampede",
+        "LRU eviction",
+        "write-through",
+        "TTL-based",
+        "cache invalidation",
+        "multi-tier cache",
+        "thundering herd",
+        "how do i speed up my app"
+      ],
+      "relatedSkills": [
+        "system-design-fundamentals",
+        "data-intensive-systems",
+        "performance-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/caching-strategies/SKILL.md"
     },
     {
       "name": "calico",
@@ -13384,6 +13409,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/aws-secrets-manager/SKILL.md"
+    },
+    {
+      "name": "security-architecture",
+      "domain": "coding",
+      "description": "Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "security architecture",
+        "threat modeling",
+        "STRIDE",
+        "defense in depth",
+        "zero trust",
+        "authentication architecture",
+        "authorization design",
+        "how do i secure a system"
+      ],
+      "relatedSkills": [
+        "coding-api-security-patterns",
+        "coding-code-review",
+        "coding-dependency-supply-chain-security"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/security-architecture/SKILL.md"
     },
     {
       "name": "security-audit",
