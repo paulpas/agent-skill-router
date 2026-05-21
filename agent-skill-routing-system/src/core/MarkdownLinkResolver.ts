@@ -44,6 +44,9 @@ export class MarkdownLinkResolver {
       return content;
     }
 
+    // Clear visited paths for per-call isolation (resolver is hoisted on SkillRegistry)
+    this.visitedPaths.clear();
+
     // Law 2: Parse at boundary - extract all links upfront
     const links = this.parseMarkdownLinks(content);
     if (links.length === 0) {
@@ -212,10 +215,15 @@ export class MarkdownLinkResolver {
       }
 
       // Law 1: Guard clause - size limit (100KB)
-      const contentLength = parseInt(response.headers.get('content-length') || '0');
-      if (contentLength > 100_000) {
-        this.logger.warn('External content too large, skipping', { url, size: contentLength });
-        return null;
+      const contentLengthHeader = response.headers.get('content-length');
+      if (contentLengthHeader) {
+        const contentLength = parseInt(contentLengthHeader, 10);
+        if (contentLength > 100_000) {
+          this.logger.warn('External content too large, skipping', { url, size: contentLength });
+          return null;
+        }
+      } else {
+        this.logger.debug('Content-Length header absent, skipping pre-fetch size check', { url });
       }
 
       const text = await response.text();
@@ -243,6 +251,11 @@ export class MarkdownLinkResolver {
   /**
    * Transform external HTML/content to markdown-like format suitable for skills.
    * Strips HTML tags, preserves structure, adds source attribution.
+   * 
+   * NOTE: This is a best-effort regex-based transformation. It handles common cases
+   * but may fail on complex HTML (nested tags, attributes with > in values, etc.).
+   * For production use with untrusted external content, consider using a proper
+   * HTML parser like cheerio or node-html-parser.
    */
   private transformExternalContent(html: string, _sourceUrl: string): string {
     // Simple HTML-to-text transformation
@@ -286,16 +299,11 @@ export class MarkdownLinkResolver {
     let result = content;
     
     for (const [original, replacement] of replacements) {
-      result = result.replace(original, replacement);
+      // Use split/join to avoid String.replace interpreting $ characters specially
+      result = result.split(original).join(replacement);
     }
     
     return result;
   }
 
-  /**
-   * Clear visited paths cache (for testing or config changes).
-   */
-  reset(): void {
-    this.visitedPaths.clear();
-  }
 }

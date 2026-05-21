@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 02:44:07 UTC  
-> **Total skills:** 721
+> **Last updated:** 2026-05-20 22:04:30 UTC  
+> **Total skills:** 722
 
 ## Skills by Domain
 
@@ -701,7 +701,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (179 skills)
+### Coding (180 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -715,6 +715,7 @@ MIT — All skills are freely available and redistributable.
 | [api-design](skills/coding/api-design/SKILL.md) | Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services. | api design, rest api, endpoint design, api architecture, resource modeling, error handling patterns, pagination strategy, rate limiting, api versioning, graphql design, web service design, http methods, idempotency |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | API gateway, api-gateway, request routing, rate limiting, auth proxy, API aggregation, load balancing, backend for frontend, BFF pattern, how do i route requests |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. | api security, authentication middleware, JWT tokens, rate limiting, input sanitization, CORS, how do i secure my API, OWASP API |
+| [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. | api versioning, url path versioning, accept header, breaking changes, api deprecation, sunset header, backward compatibility, api migration, stripe api versioning, github api version, twilio api version, how do i version my api, rest api lifecycle, api contract stability |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
 | [architectural-review](skills/coding/architectural-review/SKILL.md) | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. | architectural review, architecture assessment, system quality evaluation, technical debt audit, how do i evaluate my architecture, codebase health check, coupling analysis, cohesion metrics |
 | [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | architecture decision records, ADR, architectural decisions, how do i document architectural choices, design rationale, technology selection, system trade-offs, decision log |
@@ -1047,7 +1048,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (319 skills)
+### Implementation (Build Features) (320 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1066,6 +1067,7 @@ MIT — All skills are freely available and redistributable.
 | [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements production-ready API design patterns including RESTful resource modeling, consistent error handling, pagination strategies, rate limiting, authentication integration, and comprehensive documentation for web services. |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Coding | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. |
+| [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. |
 | [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Agent | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. |
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" |
@@ -1833,6 +1835,7 @@ MIT — All skills are freely available and redistributable.
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | Implementation |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Coding | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. | Implementation |
 | [api-security-testing](skills/agent/api-security-testing/SKILL.md) | Agent | Implements intelligent api security testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. | Implementation |
 | [apify-actor-development](skills/agent/apify-actor-development/SKILL.md) | Agent | Implements intelligent apify actor development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [apify-actorization](skills/agent/apify-actorization/SKILL.md) | Agent | Implements intelligent apify actorization with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [apify-audience-analysis](skills/agent/apify-audience-analysis/SKILL.md) | Agent | Implements intelligent apify audience analysis with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

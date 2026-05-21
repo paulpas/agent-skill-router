@@ -158,8 +158,8 @@ This is a test skill for integration testing.
   describe('Markdown Link Resolution', () => {
     it('resolves local references when link following is enabled', async () => {
       // Create skill with reference
-      const skillPath = path.join(skillsDir, 'test-skill', 'SKILL.md');
-      const refDir = path.join(skillsDir, 'test-skill', 'references');
+      const skillPath = path.join(skillsDir, 'test-skill-link-resolve', 'SKILL.md');
+      const refDir = path.join(skillsDir, 'test-skill-link-resolve', 'references');
       fs.mkdirSync(refDir, { recursive: true });
 
       fs.writeFileSync(
@@ -170,7 +170,7 @@ This is a test skill for integration testing.
       fs.writeFileSync(
         skillPath,
         `---
-name: test-skill
+name: test-skill-link-resolve
 description: Test skill with references
 metadata:
   domain: programming
@@ -196,7 +196,7 @@ See the [pattern reference](references/patterns.md) for details.
       });
 
       await linkRegistry.loadSkills();
-      const content = await linkRegistry.getSkillContent('test-skill');
+      const content = await linkRegistry.getSkillContent('test-skill-link-resolve');
 
       expect(content).toContain('## 📎 Reference: pattern reference');
       expect(content).toContain('Pattern 1: Observer');
@@ -204,8 +204,8 @@ See the [pattern reference](references/patterns.md) for details.
     });
 
     it('does not resolve references when link following is disabled', async () => {
-      const skillPath = path.join(skillsDir, 'test-skill', 'SKILL.md');
-      const refDir = path.join(skillsDir, 'test-skill', 'references');
+      const skillPath = path.join(skillsDir, 'test-skill-link-disabled', 'SKILL.md');
+      const refDir = path.join(skillsDir, 'test-skill-link-disabled', 'references');
       fs.mkdirSync(refDir, { recursive: true });
 
       fs.writeFileSync(
@@ -216,7 +216,7 @@ See the [pattern reference](references/patterns.md) for details.
       fs.writeFileSync(
         skillPath,
         `---
-name: test-skill
+name: test-skill-link-disabled
 description: Test skill with references
 metadata:
   domain: programming
@@ -231,7 +231,7 @@ See the [pattern reference](references/patterns.md) for details.
 
       // Default: link following disabled
       await registry.loadSkills();
-      const content = await registry.getSkillContent('test-skill');
+      const content = await registry.getSkillContent('test-skill-link-disabled');
 
       // Link should remain unchanged
       expect(content).toContain('[pattern reference](references/patterns.md)');
@@ -239,27 +239,64 @@ See the [pattern reference](references/patterns.md) for details.
     });
 
     it('invalidates cache when link config changes', async () => {
-      // First get content with links disabled
+      // Create skill with reference
+      const skillPath = path.join(skillsDir, 'test-skill-link-cache', 'SKILL.md');
+      const refDir = path.join(skillsDir, 'test-skill-link-cache', 'references');
+      fs.mkdirSync(refDir, { recursive: true });
+
+      fs.writeFileSync(
+        path.join(refDir, 'patterns.md'),
+        `# Reference Patterns\n\nPattern 1: Observer\nPattern 2: Strategy`
+      );
+
+      fs.writeFileSync(
+        skillPath,
+        `---
+name: test-skill-link-cache
+description: Test skill with references
+metadata:
+  domain: programming
+  version: "1.0.0"
+---
+
+# Test Skill
+
+See the [pattern reference](references/patterns.md) for details.
+`
+      );
+
+      // First get content with links disabled (default)
       await registry.loadSkills();
-      const content1 = await registry.getSkillContent('test-skill');
+      const content1 = await registry.getSkillContent('test-skill-link-cache');
+
+      // Verify link is NOT resolved initially
+      expect(content1).toContain('[pattern reference](references/patterns.md)');
+      expect(content1).not.toContain('## 📎 Reference:');
 
       // Enable link following
       registry.updateMarkdownLinkConfig({ enabled: true });
 
       // Get content again - should be different (resolved)
-      const content2 = await registry.getSkillContent('test-skill');
+      const content2 = await registry.getSkillContent('test-skill-link-cache');
 
       // Content should now have resolved references
+      expect(content2).toContain('## 📎 Reference: pattern reference');
+      expect(content2).toContain('Pattern 1: Observer');
+      expect(content2).toContain('Pattern 2: Strategy');
+
+      // Verify content changed
       expect(content2).not.toBe(content1);
     });
 
     it('blocks path traversal in skill references', async () => {
-      const skillPath = path.join(skillsDir, 'test-skill', 'SKILL.md');
+      const skillDir = path.join(skillsDir, 'test-skill-link-traversal');
+      fs.mkdirSync(skillDir, { recursive: true });
+      const skillPath = path.join(skillDir, 'SKILL.md');
 
       fs.writeFileSync(
         skillPath,
         `---
-name: test-skill
+name: test-skill-link-traversal
 description: Test skill with malicious reference
 metadata:
   domain: programming
@@ -284,7 +321,7 @@ See the [evil](../../etc/passwd) for details.
       });
 
       await linkRegistry.loadSkills();
-      const content = await linkRegistry.getSkillContent('test-skill');
+      const content = await linkRegistry.getSkillContent('test-skill-link-traversal');
 
       // Path traversal link should remain unchanged (blocked)
       expect(content).toContain('[evil](../../etc/passwd)');

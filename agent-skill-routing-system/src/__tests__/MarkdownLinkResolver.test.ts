@@ -202,11 +202,11 @@ describe('MarkdownLinkResolver', () => {
         await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
         expect(mockFs.readFile).toHaveBeenCalledTimes(1);
 
-        // Reset and call again — should read the file again
-        resolver.reset();
+        // Create a new resolver instance (simulates hoisted resolver with per-call isolation)
+        const resolver2 = new MarkdownLinkResolver(baseConfig, mockLogger);
         mockFs.readFile.mockResolvedValueOnce('# A v2');
 
-        await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
+        await resolver2.resolveLinks(content, '/skills/test/SKILL.md', 0);
         expect(mockFs.readFile).toHaveBeenCalledTimes(2);
       });
     });
@@ -481,7 +481,7 @@ describe('MarkdownLinkResolver', () => {
         expect(mockFs.readFile).toHaveBeenCalledTimes(2);
       });
 
-      it('deduplicates identical links (only first occurrence replaced)', async () => {
+      it('deduplicates identical links (all occurrences replaced)', async () => {
         const resolver = new MarkdownLinkResolver(baseConfig, mockLogger);
         const content =
           'First [ref](references/a.md) and second [ref](references/a.md) mention the same file.';
@@ -492,10 +492,10 @@ describe('MarkdownLinkResolver', () => {
 
         // Only one file read for duplicate links (deduped by replacements Map)
         expect(mockFs.readFile).toHaveBeenCalledTimes(1);
-        // String.replace() only replaces the first occurrence
-        expect(result).toContain('## \ud83d\udcce Reference: ref');
-        // Second occurrence remains as original link
-        expect(result).toContain('and second [ref](references/a.md) mention');
+        // split/join replaces ALL occurrences of the same link
+        expect(result).toContain('## 📎 Reference: ref');
+        // Both occurrences are replaced (split/join replaces all)
+        expect(result).not.toContain('[ref](references/a.md)');
       });
 
       it('resolves mix of local and external links', async () => {
@@ -544,7 +544,7 @@ describe('MarkdownLinkResolver', () => {
     // resolveLinks — cache behavior / statelessness
     // -------------------------------------------------------------------------
     describe('cache behavior', () => {
-      it('resolver tracks visited paths across calls (stateful)', async () => {
+      it('visited paths are cleared per call (per-call isolation)', async () => {
         const resolver = new MarkdownLinkResolver(baseConfig, mockLogger);
         const content1 = 'See [a](references/a.md)';
         const content2 = 'See [a](references/a.md)';
@@ -554,10 +554,11 @@ describe('MarkdownLinkResolver', () => {
         await resolver.resolveLinks(content1, '/skills/test/SKILL.md', 0);
         expect(mockFs.readFile).toHaveBeenCalledTimes(1);
 
-        // Second call with same link — visitedPaths prevents re-reading
+        // Second call with same link — visitedPaths is cleared at start of resolveLinks,
+        // so the file is read again (per-call isolation for hoisted resolver)
+        mockFs.readFile.mockResolvedValue('# A');
         await resolver.resolveLinks(content2, '/skills/test/SKILL.md', 0);
-        // Still 1 call because visitedPaths blocks the duplicate path
-        expect(mockFs.readFile).toHaveBeenCalledTimes(1);
+        expect(mockFs.readFile).toHaveBeenCalledTimes(2);
       });
 
       it('reset() clears visited paths enabling re-resolution', async () => {
@@ -569,9 +570,11 @@ describe('MarkdownLinkResolver', () => {
         await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
         expect(mockFs.readFile).toHaveBeenCalledTimes(1);
 
-        resolver.reset();
+        // Create a new resolver instance (simulates hoisted resolver with per-call isolation)
+        const resolver2 = new MarkdownLinkResolver(baseConfig, mockLogger);
+        mockFs.readFile.mockResolvedValue('# A');
 
-        await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
+        await resolver2.resolveLinks(content, '/skills/test/SKILL.md', 0);
         expect(mockFs.readFile).toHaveBeenCalledTimes(2);
       });
 

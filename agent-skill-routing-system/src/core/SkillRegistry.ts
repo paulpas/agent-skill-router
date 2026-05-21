@@ -114,6 +114,9 @@ export class SkillRegistry implements SkillRegistryWithCompression {
     maxDepth: number;
   };
 
+  // Lazy-initialized markdown link resolver (hoisted to avoid per-call instantiation)
+  private linkResolver: MarkdownLinkResolver | null = null;
+
   /**
    * Get the base skills directory path for link resolution safety checks.
    */
@@ -122,6 +125,20 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       ? this.config.skillsDirectory
       : [this.config.skillsDirectory];
     return path.resolve(dirs[0]);
+  }
+
+  /**
+   * Get or create the markdown link resolver instance.
+   * Lazily initialized to avoid overhead when link following is disabled.
+   */
+  private getLinkResolver(): MarkdownLinkResolver {
+    if (!this.linkResolver) {
+      this.linkResolver = new MarkdownLinkResolver({
+        ...this.markdownLinkConfig,
+        skillBasePath: this.getSkillsBasePath(),
+      }, this.logger);
+    }
+    return this.linkResolver;
   }
 
   constructor(config: SkillRegistryConfig) {
@@ -307,12 +324,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
 
           // Apply markdown link resolution if enabled
           if (this.markdownLinkConfig.enabled) {
-            const resolver = new MarkdownLinkResolver({
-              ...this.markdownLinkConfig,
-              skillBasePath: this.getSkillsBasePath(),
-            }, this.logger);
-
-            content = await resolver.resolveLinks(content, localFile, 0);
+            content = await this.getLinkResolver().resolveLinks(content, localFile, 0);
           }
 
           this.contentCache.set(name, content);
@@ -330,12 +342,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
 
         // Apply markdown link resolution if enabled
         if (this.markdownLinkConfig.enabled) {
-          const resolver = new MarkdownLinkResolver({
-            ...this.markdownLinkConfig,
-            skillBasePath: this.getSkillsBasePath(),
-          }, this.logger);
-
-          content = await resolver.resolveLinks(content, localFile, 0);
+          content = await this.getLinkResolver().resolveLinks(content, localFile, 0);
         }
 
         this.contentCache.set(name, content);
@@ -376,17 +383,12 @@ export class SkillRegistry implements SkillRegistryWithCompression {
     // Apply markdown link resolution if enabled
     let processedContent = content;
     if (this.markdownLinkConfig.enabled) {
-      const resolver = new MarkdownLinkResolver({
-        ...this.markdownLinkConfig,
-        skillBasePath: this.getSkillsBasePath(),
-      }, this.logger);
-
       // For GitHub-sourced skills, use the sourceFile path for relative resolution
       const resolvedSkillPath = skill?.sourceFile
         ? path.join(this.getSkillsBasePath(), skill.sourceFile)
         : path.join(this.getSkillsBasePath(), cleanPath);
 
-      processedContent = await resolver.resolveLinks(content, resolvedSkillPath, 0);
+      processedContent = await this.getLinkResolver().resolveLinks(content, resolvedSkillPath, 0);
     }
 
     // Cache in memory for the lifetime of this process
@@ -1507,6 +1509,9 @@ export class SkillRegistry implements SkillRegistryWithCompression {
         newConfig: this.markdownLinkConfig,
       });
     }
+
+    // Reset the resolver instance so it picks up new config on next use
+    this.linkResolver = null;
 
     this.logger.info('Markdown link following config updated', {
       config: this.markdownLinkConfig,
