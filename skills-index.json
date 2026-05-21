@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T18:11:43.464330Z",
+  "generatedAt": "2026-05-21T18:33:27.385795Z",
   "totalSkills": 750,
   "domains": {
     "agent": 254,
@@ -8437,7 +8437,7 @@
       ],
       "relatedSkills": [
         "security-review",
-        "error-handling",
+        "software-error-handling",
         "test-driven-development"
       ],
       "version": "1.0.0",
@@ -11969,7 +11969,7 @@
       "relatedSkills": [
         "input-validation",
         "security-review",
-        "error-handling"
+        "software-error-handling"
       ],
       "version": "1.0.0",
       "source": "skills/coding/output-sanitization/SKILL.md"
