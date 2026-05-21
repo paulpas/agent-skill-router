@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T01:28:56.883385Z",
+  "generatedAt": "2026-05-21T01:58:53.776507Z",
   "totalSkills": 719,
   "domains": {
     "agent": 250,
@@ -7249,24 +7249,29 @@
     {
       "name": "grpc-patterns",
       "domain": "coding",
-      "description": "Implements gRPC development patterns including protocol buffer definitions, unary/streaming RPCs, error handling, and debugging techniques for cloud-native microservices",
+      "description": "Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "grpc development",
-        "grpc debugging",
+        "gRPC",
         "protocol buffers",
-        "rpc services",
-        "grpc errors",
-        "stream handling",
-        "unary calls",
-        "grpc gateway"
+        "protobuf",
+        "RPC",
+        "streaming RPC",
+        "unary call",
+        "interceptor middleware",
+        "grpc service",
+        "stub generation",
+        "proto file design",
+        "bidirectional stream",
+        "client streaming",
+        "server streaming"
       ],
       "relatedSkills": [
-        "agent-docker-debugging",
-        "coding-fastapi-patterns",
-        "coding-rest-api-patterns"
+        "grpc",
+        "rest-api-patterns",
+        "fastapi-patterns"
       ],
       "version": "1.0.0",
       "source": "skills/coding/grpc-patterns/SKILL.md"
