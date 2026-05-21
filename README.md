@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 21:29:40 UTC  
-> **Total skills:** 757
+> **Last updated:** 2026-05-21 22:07:17 UTC  
+> **Total skills:** 758
 
 ## Skills by Domain
 
@@ -707,7 +707,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (208 skills)
+### Coding (209 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -809,6 +809,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | framework lifecycle, framework decision, technology lifecycle, framework evaluation, framework rollback, tech stack lifecycle, framework governance |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | framework performance, performance tuning, optimize framework, profiling application, connection pooling, caching strategy, async optimization, memory management, reduce latency, increase throughput, framework benchmarking, slow endpoint |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. | framework setup, project scaffolding, dependency configuration, boilerplate generation, environment validation, starter kits, tech stack selection |
+| [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Validates code against framework conventions (React Hooks rules, Next.js App Router patterns, Django checks) and enforces build tool configuration compliance through automated linting pipelines and CI integration. | framework validation, eslint plugin react hooks, next.js linting rules, django check command, framework compliance, build tool config validation, biome linting, vite config check, tsconfig patterns, code conventions checker |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | framework selection, tech stack evaluation, weighted scoring matrix, AHP decision, framework comparison, technology assessment, framework criteria, evaluate frameworks, choose framework, select technology, tech stack decision, framework trade-offs |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. | framework utilization, three-pass learning, leverage framework patterns, fight the framework, how do i learn a new framework, framework conventions, framework adoption |
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. | graphql, apollo federation, dataloader, n+1 query, query complexity, graphql schema, graphql authorization, how do i design a graphql api |
@@ -1083,7 +1084,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (352 skills)
+### Implementation (Build Features) (353 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1221,6 +1222,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. |
+| [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Coding | Validates code against framework conventions (React Hooks rules, Next.js App Router patterns, Django checks) and enforces build tool configuration compliance through automated linting pipelines and CI integration. |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Coding | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. |
 | [gitops-troubleshooting](skills/agent/gitops-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves GitOps synchronization failures, drift detection issues, and reconciliation problems for ArgoCD and Flux deployments with actionable debugging commands. |
@@ -2164,6 +2166,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-orchestration-routing](skills/agent/framework-orchestration-routing/SKILL.md) | Agent | Orchestrates task routing across multiple AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen, MCP) by selecting the optimal framework for each subtask and composing cross-framework workflows with proper context bridges. | Orchestration |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | Implementation |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. | Implementation |
+| [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Coding | Validates code against framework conventions (React Hooks rules, Next.js App Router patterns, Django checks) and enforces build tool configuration compliance through automated linting pipelines and CI integration. | Implementation |
 | [framework-selection](skills/agent/framework-selection/SKILL.md) | Agent | Applies structured decision-making frameworks (weighted scoring, RICE, MoSCoW, decision matrices) to evaluate options against requirements and select optimal solutions. | Orchestration |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Coding | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | Implementation |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. | Implementation |
