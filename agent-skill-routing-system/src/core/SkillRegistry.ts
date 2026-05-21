@@ -15,6 +15,7 @@ import { InMemoryCompressionCache } from './InMemoryCompressionCache';
 import { CompressionDeduplicator } from './CompressionDeduplicator';
 import { EmbeddingService } from '../embedding/EmbeddingService';
 import { DomainRegistry } from './DomainRegistry';
+import { MarkdownLinkResolver } from './MarkdownLinkResolver';
 
 /**
  * Cached skill content entry with LRU metadata
@@ -112,6 +113,16 @@ export class SkillRegistry implements SkillRegistryWithCompression {
     allowExternalLinks: boolean;
     maxDepth: number;
   };
+
+  /**
+   * Get the base skills directory path for link resolution safety checks.
+   */
+  private getSkillsBasePath(): string {
+    const dirs = Array.isArray(this.config.skillsDirectory)
+      ? this.config.skillsDirectory
+      : [this.config.skillsDirectory];
+    return path.resolve(dirs[0]);
+  }
 
   constructor(config: SkillRegistryConfig) {
     this.config = {
@@ -292,7 +303,18 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       for (const domain of domains) {
         const localFile = path.join(dir, domain, name, 'SKILL.md');
         try {
-          const content = await fs.promises.readFile(localFile, 'utf-8');
+          let content = await fs.promises.readFile(localFile, 'utf-8');
+
+          // Apply markdown link resolution if enabled
+          if (this.markdownLinkConfig.enabled) {
+            const resolver = new MarkdownLinkResolver({
+              ...this.markdownLinkConfig,
+              skillBasePath: this.getSkillsBasePath(),
+            }, this.logger);
+
+            content = await resolver.resolveLinks(content, localFile, 0);
+          }
+
           this.contentCache.set(name, content);
           this.logger.info('[ON-DEMAND] skill served from local disk', { name, file: localFile });
           return level > 0 ? this.applyCompressionAndCache(name, content, level) : content;
@@ -304,7 +326,18 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       // Fallback to flat structure for backwards compatibility
       const localFile = path.join(dir, name, 'SKILL.md');
       try {
-        const content = await fs.promises.readFile(localFile, 'utf-8');
+        let content = await fs.promises.readFile(localFile, 'utf-8');
+
+        // Apply markdown link resolution if enabled
+        if (this.markdownLinkConfig.enabled) {
+          const resolver = new MarkdownLinkResolver({
+            ...this.markdownLinkConfig,
+            skillBasePath: this.getSkillsBasePath(),
+          }, this.logger);
+
+          content = await resolver.resolveLinks(content, localFile, 0);
+        }
+
         this.contentCache.set(name, content);
         this.logger.info('[ON-DEMAND] skill served from local disk (flat)', { name, file: localFile });
         return level > 0 ? this.applyCompressionAndCache(name, content, level) : content;
@@ -340,13 +373,29 @@ export class SkillRegistry implements SkillRegistryWithCompression {
     const durationMs = Date.now() - t0;
     this.logger.info('[ON-DEMAND] skill fetched from GitHub', { name, durationMs, bytes: content.length });
 
+    // Apply markdown link resolution if enabled
+    let processedContent = content;
+    if (this.markdownLinkConfig.enabled) {
+      const resolver = new MarkdownLinkResolver({
+        ...this.markdownLinkConfig,
+        skillBasePath: this.getSkillsBasePath(),
+      }, this.logger);
+
+      // For GitHub-sourced skills, use the sourceFile path for relative resolution
+      const resolvedSkillPath = skill?.sourceFile
+        ? path.join(this.getSkillsBasePath(), skill.sourceFile)
+        : path.join(this.getSkillsBasePath(), cleanPath);
+
+      processedContent = await resolver.resolveLinks(content, resolvedSkillPath, 0);
+    }
+
     // Cache in memory for the lifetime of this process
-    this.contentCache.set(name, content);
+    this.contentCache.set(name, processedContent);
 
     // Persist to disk so next restart skips the GitHub fetch
-    await this.persistSkillContent(name, content);
+    await this.persistSkillContent(name, processedContent);
 
-    return level > 0 ? this.applyCompressionAndCache(name, content, level) : content;
+    return level > 0 ? this.applyCompressionAndCache(name, processedContent, level) : processedContent;
   }
 
   /**
@@ -1447,6 +1496,17 @@ export class SkillRegistry implements SkillRegistryWithCompression {
 
     // Update the instance with the new config
     this.markdownLinkConfig = newConfig;
+
+    // Invalidate content cache when link following state changes
+    // Resolved content differs from raw content, so cached entries become stale
+    if (enabled !== undefined || allowExternalLinks !== undefined) {
+      const invalidatedCount = this.contentCache.size;
+      this.contentCache.clear();
+      this.logger.info('Content cache invalidated due to link config change', {
+        invalidatedEntries: invalidatedCount,
+        newConfig: this.markdownLinkConfig,
+      });
+    }
 
     this.logger.info('Markdown link following config updated', {
       config: this.markdownLinkConfig,

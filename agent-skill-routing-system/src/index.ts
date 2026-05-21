@@ -419,6 +419,37 @@ export class AgentSkillRoutingApp {
       }
     );
 
+    // ── GET /config/link-following — read current link following configuration ──
+    /**
+     * Get the current markdown link following configuration
+     * 
+     * @remarks
+     * Returns the current configuration for following markdown links in skill definitions.
+     * 
+     * @returns Current configuration object with maxDepth, enabled, and allowExternalLinks fields
+     * @throws 503 Service Unavailable - if skills are still loading
+     */
+    this.app.get(
+      '/config/link-following',
+      async (_request, reply) => {
+        if (!this.ready) {
+          return reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
+        }
+        try {
+          const config = this.router!.getRegistry().getMarkdownLinkConfig();
+          reply.code(200).send(config);
+        } catch (error) {
+          this.logger.error('Failed to get link config', {
+            error: error instanceof Error ? error.message : String(error),
+          });
+          reply.code(500).send({
+            error: 'Failed to get configuration',
+            message: error instanceof Error ? error.message : String(error),
+          });
+        }
+      }
+    );
+
     // ── /access-log ────────────────────────────────────────────────────────
     this.app.get('/access-log', async (_request, reply) => {
       if (!this.ready) {

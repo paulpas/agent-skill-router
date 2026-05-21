@@ -154,4 +154,141 @@ This is a test skill for integration testing.
     
     expect(Array.isArray(results)).toBe(true);
   });
+
+  describe('Markdown Link Resolution', () => {
+    it('resolves local references when link following is enabled', async () => {
+      // Create skill with reference
+      const skillPath = path.join(skillsDir, 'test-skill', 'SKILL.md');
+      const refDir = path.join(skillsDir, 'test-skill', 'references');
+      fs.mkdirSync(refDir, { recursive: true });
+
+      fs.writeFileSync(
+        path.join(refDir, 'patterns.md'),
+        `# Reference Patterns\n\nPattern 1: Observer\nPattern 2: Strategy`
+      );
+
+      fs.writeFileSync(
+        skillPath,
+        `---
+name: test-skill
+description: Test skill with references
+metadata:
+  domain: programming
+  version: "1.0.0"
+---
+
+# Test Skill
+
+See the [pattern reference](references/patterns.md) for details.
+`
+      );
+
+      // Create registry with link following enabled
+      const linkRegistry = new SkillRegistry({
+        skillsDirectory: skillsDir,
+        generateEmbeddings: false,
+        compressionLevel: 0,
+        markdownLinkFollowing: {
+          enabled: true,
+          allowExternalLinks: false,
+          maxDepth: 2,
+        },
+      });
+
+      await linkRegistry.loadSkills();
+      const content = await linkRegistry.getSkillContent('test-skill');
+
+      expect(content).toContain('## 📎 Reference: pattern reference');
+      expect(content).toContain('Pattern 1: Observer');
+      expect(content).toContain('Pattern 2: Strategy');
+    });
+
+    it('does not resolve references when link following is disabled', async () => {
+      const skillPath = path.join(skillsDir, 'test-skill', 'SKILL.md');
+      const refDir = path.join(skillsDir, 'test-skill', 'references');
+      fs.mkdirSync(refDir, { recursive: true });
+
+      fs.writeFileSync(
+        path.join(refDir, 'patterns.md'),
+        `# Reference Patterns`
+      );
+
+      fs.writeFileSync(
+        skillPath,
+        `---
+name: test-skill
+description: Test skill with references
+metadata:
+  domain: programming
+  version: "1.0.0"
+---
+
+# Test Skill
+
+See the [pattern reference](references/patterns.md) for details.
+`
+      );
+
+      // Default: link following disabled
+      await registry.loadSkills();
+      const content = await registry.getSkillContent('test-skill');
+
+      // Link should remain unchanged
+      expect(content).toContain('[pattern reference](references/patterns.md)');
+      expect(content).not.toContain('## 📎 Reference:');
+    });
+
+    it('invalidates cache when link config changes', async () => {
+      // First get content with links disabled
+      await registry.loadSkills();
+      const content1 = await registry.getSkillContent('test-skill');
+
+      // Enable link following
+      registry.updateMarkdownLinkConfig({ enabled: true });
+
+      // Get content again - should be different (resolved)
+      const content2 = await registry.getSkillContent('test-skill');
+
+      // Content should now have resolved references
+      expect(content2).not.toBe(content1);
+    });
+
+    it('blocks path traversal in skill references', async () => {
+      const skillPath = path.join(skillsDir, 'test-skill', 'SKILL.md');
+
+      fs.writeFileSync(
+        skillPath,
+        `---
+name: test-skill
+description: Test skill with malicious reference
+metadata:
+  domain: programming
+  version: "1.0.0"
+---
+
+# Test Skill
+
+See the [evil](../../etc/passwd) for details.
+`
+      );
+
+      const linkRegistry = new SkillRegistry({
+        skillsDirectory: skillsDir,
+        generateEmbeddings: false,
+        compressionLevel: 0,
+        markdownLinkFollowing: {
+          enabled: true,
+          allowExternalLinks: false,
+          maxDepth: 2,
+        },
+      });
+
+      await linkRegistry.loadSkills();
+      const content = await linkRegistry.getSkillContent('test-skill');
+
+      // Path traversal link should remain unchanged (blocked)
+      expect(content).toContain('[evil](../../etc/passwd)');
+      expect(content).not.toContain('## 📎 Reference: evil');
+    });
+  });
 });
