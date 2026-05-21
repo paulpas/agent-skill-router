@@ -112,6 +112,14 @@ export class SkillRegistry implements SkillRegistryWithCompression {
     enabled: boolean;
     allowExternalLinks: boolean;
     maxDepth: number;
+    maxExternalSizeKb: number;
+    compressionMode: 'brief' | 'moderate' | 'skip';
+    jsRenderingEnabled: boolean;
+    jsRenderTimeoutMs: number;
+    jsRenderFallback: boolean;
+    resolutionMode: 'inline' | 'semantic' | 'compressed';
+    semanticTopK: number;
+    semanticSimilarityThreshold: number;
   };
 
   // Lazy-initialized markdown link resolver (hoisted to avoid per-call instantiation)
@@ -136,7 +144,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       this.linkResolver = new MarkdownLinkResolver({
         ...this.markdownLinkConfig,
         skillBasePath: this.getSkillsBasePath(),
-      }, this.logger);
+      }, this.logger, this.embeddingService);
     }
     return this.linkResolver;
   }
@@ -159,6 +167,14 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       enabled: mlc?.enabled ?? false,
       allowExternalLinks: mlc?.allowExternalLinks ?? false,
       maxDepth: mlc?.maxDepth ?? 2,
+      maxExternalSizeKb: 10,
+      compressionMode: 'brief',
+      jsRenderingEnabled: false,
+      jsRenderTimeoutMs: 5000,
+      jsRenderFallback: true,
+      resolutionMode: 'inline',
+      semanticTopK: 3,
+      semanticSimilarityThreshold: 0.3,
     };
     this.maxCacheSizeBytes = this.config.maxCacheSizeBytes || (1024 * 1024 * 1024);
     this.compressor = new SkillCompressor();
@@ -1469,6 +1485,14 @@ export class SkillRegistry implements SkillRegistryWithCompression {
     enabled?: boolean;
     allowExternalLinks?: boolean;
     maxDepth?: number;
+    maxExternalSizeKb?: number;
+    compressionMode?: 'brief' | 'moderate' | 'skip';
+    jsRenderingEnabled?: boolean;
+    jsRenderTimeoutMs?: number;
+    jsRenderFallback?: boolean;
+    resolutionMode?: 'inline' | 'semantic' | 'compressed';
+    semanticTopK?: number;
+    semanticSimilarityThreshold?: number;
   }): void {
     // Guard: early exit on empty config (fail fast, fail loud)
     if (!partialConfig || Object.keys(partialConfig).length === 0) {
@@ -1476,8 +1500,32 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       return;
     }
 
-    const { enabled, allowExternalLinks, maxDepth } = partialConfig;
-    const { enabled: currentEnabled, allowExternalLinks: currentAllowExternalLinks, maxDepth: currentMaxDepth } = this.markdownLinkConfig;
+    const {
+      enabled,
+      allowExternalLinks,
+      maxDepth,
+      maxExternalSizeKb,
+      compressionMode,
+      jsRenderingEnabled,
+      jsRenderTimeoutMs,
+      jsRenderFallback,
+      resolutionMode,
+      semanticTopK,
+      semanticSimilarityThreshold,
+    } = partialConfig;
+    const {
+      enabled: currentEnabled,
+      allowExternalLinks: currentAllowExternalLinks,
+      maxDepth: currentMaxDepth,
+      maxExternalSizeKb: currentMaxExternalSizeKb,
+      compressionMode: currentCompressionMode,
+      jsRenderingEnabled: currentJsRenderingEnabled,
+      jsRenderTimeoutMs: currentJsRenderTimeoutMs,
+      jsRenderFallback: currentJsRenderFallback,
+      resolutionMode: currentResolutionMode,
+      semanticTopK: currentSemanticTopK,
+      semanticSimilarityThreshold: currentSemanticSimilarityThreshold,
+    } = this.markdownLinkConfig;
 
     // Guard: explicit type check before bounds validation (fail fast, fail loud)
     if (maxDepth !== undefined) {
@@ -1489,19 +1537,83 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       }
     }
 
+    if (maxExternalSizeKb !== undefined) {
+      if (typeof maxExternalSizeKb !== 'number') {
+        throw new Error(`Invalid maxExternalSizeKb: ${maxExternalSizeKb}. Must be a number.`);
+      }
+      if (maxExternalSizeKb < 1 || maxExternalSizeKb > 1000) {
+        throw new Error(`Invalid maxExternalSizeKb: ${maxExternalSizeKb}. Must be between 1 and 1000 (inclusive).`);
+      }
+    }
+
+    if (compressionMode !== undefined) {
+      const validModes = ['brief', 'moderate', 'skip'] as const;
+      if (!validModes.includes(compressionMode)) {
+        throw new Error(`Invalid compressionMode: ${compressionMode}. Must be one of: brief, moderate, skip.`);
+      }
+    }
+
+    if (jsRenderTimeoutMs !== undefined) {
+      if (typeof jsRenderTimeoutMs !== 'number') {
+        throw new Error(`Invalid jsRenderTimeoutMs: ${jsRenderTimeoutMs}. Must be a number.`);
+      }
+      if (jsRenderTimeoutMs < 1000 || jsRenderTimeoutMs > 30000) {
+        throw new Error(`Invalid jsRenderTimeoutMs: ${jsRenderTimeoutMs}. Must be between 1000 and 30000 (inclusive).`);
+      }
+    }
+
+    if (jsRenderFallback !== undefined) {
+      if (typeof jsRenderFallback !== 'boolean') {
+        throw new Error(`Invalid jsRenderFallback: ${jsRenderFallback}. Must be a boolean.`);
+      }
+    }
+
+    if (resolutionMode !== undefined) {
+      const validModes = ['inline', 'semantic', 'compressed'] as const;
+      if (!validModes.includes(resolutionMode)) {
+        throw new Error(`Invalid resolutionMode: ${resolutionMode}. Must be one of: inline, semantic, compressed.`);
+      }
+    }
+
+    if (semanticTopK !== undefined) {
+      if (typeof semanticTopK !== 'number') {
+        throw new Error(`Invalid semanticTopK: ${semanticTopK}. Must be a number.`);
+      }
+      if (semanticTopK < 1 || semanticTopK > 20) {
+        throw new Error(`Invalid semanticTopK: ${semanticTopK}. Must be between 1 and 20 (inclusive).`);
+      }
+    }
+
+    if (semanticSimilarityThreshold !== undefined) {
+      if (typeof semanticSimilarityThreshold !== 'number') {
+        throw new Error(`Invalid semanticSimilarityThreshold: ${semanticSimilarityThreshold}. Must be a number.`);
+      }
+      if (semanticSimilarityThreshold < 0 || semanticSimilarityThreshold > 1) {
+        throw new Error(`Invalid semanticSimilarityThreshold: ${semanticSimilarityThreshold}. Must be between 0 and 1 (inclusive).`);
+      }
+    }
+
     // Immutable update: create new config object instead of mutating
     const newConfig = {
       enabled: enabled !== undefined ? enabled : currentEnabled,
       allowExternalLinks: allowExternalLinks !== undefined ? allowExternalLinks : currentAllowExternalLinks,
       maxDepth: maxDepth !== undefined ? maxDepth : currentMaxDepth,
+      maxExternalSizeKb: maxExternalSizeKb !== undefined ? maxExternalSizeKb : currentMaxExternalSizeKb,
+      compressionMode: compressionMode !== undefined ? compressionMode : currentCompressionMode,
+      jsRenderingEnabled: jsRenderingEnabled !== undefined ? jsRenderingEnabled : currentJsRenderingEnabled,
+      jsRenderTimeoutMs: jsRenderTimeoutMs !== undefined ? jsRenderTimeoutMs : currentJsRenderTimeoutMs,
+      jsRenderFallback: jsRenderFallback !== undefined ? jsRenderFallback : currentJsRenderFallback,
+      resolutionMode: resolutionMode !== undefined ? resolutionMode : currentResolutionMode,
+      semanticTopK: semanticTopK !== undefined ? semanticTopK : currentSemanticTopK,
+      semanticSimilarityThreshold: semanticSimilarityThreshold !== undefined ? semanticSimilarityThreshold : currentSemanticSimilarityThreshold,
     };
 
     // Update the instance with the new config
     this.markdownLinkConfig = newConfig;
 
-    // Invalidate content cache when link following state changes
+    // Invalidate content cache when link following state changes or resolution mode changes
     // Resolved content differs from raw content, so cached entries become stale
-    if (enabled !== undefined || allowExternalLinks !== undefined) {
+    if (enabled !== undefined || allowExternalLinks !== undefined || resolutionMode !== undefined) {
       const invalidatedCount = this.contentCache.size;
       this.contentCache.clear();
       this.logger.info('Content cache invalidated due to link config change', {
@@ -1527,6 +1639,14 @@ export class SkillRegistry implements SkillRegistryWithCompression {
     enabled: boolean;
     allowExternalLinks: boolean;
     maxDepth: number;
+    maxExternalSizeKb: number;
+    compressionMode: 'brief' | 'moderate' | 'skip';
+    jsRenderingEnabled: boolean;
+    jsRenderTimeoutMs: number;
+    jsRenderFallback: boolean;
+    resolutionMode: 'inline' | 'semantic' | 'compressed';
+    semanticTopK: number;
+    semanticSimilarityThreshold: number;
   } {
     return this.markdownLinkConfig;
   }

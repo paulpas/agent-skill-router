@@ -38,6 +38,14 @@ interface LinkFollowingConfigUpdate {
   max_depth?: number;
   link_following_enabled?: boolean;
   allow_external_links?: boolean;
+  max_external_size_kb?: number;
+  compression_mode?: 'brief' | 'moderate' | 'skip';
+  js_rendering_enabled?: boolean;
+  js_render_timeout_ms?: number;
+  js_render_fallback?: boolean;
+  resolution_mode?: 'inline' | 'semantic' | 'compressed';
+  semantic_top_k?: number;
+  semantic_similarity_threshold?: number;
 }
 
 export * from './core/types';
@@ -304,120 +312,269 @@ export class AgentSkillRoutingApp {
      * @throws 400 Bad Request - if max_depth is outside valid range (1-10)
      * @throws 500 Internal Server Error - if configuration update fails
      */
-    this.app.post<{ Body: LinkFollowingConfigUpdate }>(
-      '/config/link-following',
-      {
-        schema: {
-          body: {
-            type: 'object',
-            properties: {
-              max_depth: { type: 'number', minimum: 1, maximum: 10 },
-              link_following_enabled: { type: 'boolean' },
-              allow_external_links: { type: 'boolean' },
-            },
-            additionalProperties: false,
-          },
-          response: {
-            200: {
-              type: 'object',
+     this.app.post<{ Body: LinkFollowingConfigUpdate }>(
+       '/config/link-following',
+       {
+         schema: {
+           body: {
+             type: 'object',
               properties: {
-                enabled: { type: 'boolean' },
-                allowExternalLinks: { type: 'boolean' },
-                maxDepth: { type: 'number' },
+                max_depth: { type: 'number', minimum: 1, maximum: 10 },
+                link_following_enabled: { type: 'boolean' },
+                allow_external_links: { type: 'boolean' },
+                max_external_size_kb: { type: 'number', minimum: 1, maximum: 1000 },
+                compression_mode: { type: 'string', enum: ['brief', 'moderate', 'skip'] },
+                js_rendering_enabled: { type: 'boolean' },
+                js_render_timeout_ms: { type: 'number', minimum: 1000, maximum: 30000 },
+                js_render_fallback: { type: 'boolean' },
+                resolution_mode: { type: 'string', enum: ['inline', 'semantic', 'compressed'] },
+                semantic_top_k: { type: 'number', minimum: 1, maximum: 20 },
+                semantic_similarity_threshold: { type: 'number', minimum: 0, maximum: 1 },
               },
-              required: ['enabled', 'allowExternalLinks', 'maxDepth'],
-            },
-          },
-        },
-      },
-      async (request, reply) => {
-        if (!this.ready) {
-          return reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
-        }
-        try {
-           const { max_depth, link_following_enabled, allow_external_links } = request.body;
-           
-           // Guard: validate request body structure (fail fast)
-           if (!request.body || typeof request.body !== 'object' || Array.isArray(request.body)) {
-             return reply.code(400).send({ error: 'Invalid request', message: 'Request body must be a JSON object', updatedAt: new Date().toISOString() });
-           }
+             additionalProperties: false,
+           },
+           response: {
+              200: {
+                type: 'object',
+                properties: {
+                  enabled: { type: 'boolean' },
+                  allowExternalLinks: { type: 'boolean' },
+                  maxDepth: { type: 'number' },
+                  maxExternalSizeKb: { type: 'number' },
+                  compressionMode: { type: 'string' },
+                  jsRenderingEnabled: { type: 'boolean' },
+                  jsRenderTimeoutMs: { type: 'number' },
+                  jsRenderFallback: { type: 'boolean' },
+                  resolutionMode: { type: 'string' },
+                  semanticTopK: { type: 'number' },
+                  semanticSimilarityThreshold: { type: 'number' },
+                  updatedAt: { type: 'string' },
+                },
+                required: ['enabled', 'allowExternalLinks', 'maxDepth', 'maxExternalSizeKb', 'compressionMode', 'jsRenderingEnabled', 'jsRenderTimeoutMs', 'jsRenderFallback', 'resolutionMode', 'semanticTopK', 'semanticSimilarityThreshold', 'updatedAt'],
+              },
+           },
+         },
+       },
+       async (request, reply) => {
+         if (!this.ready) {
+           return reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
+         }
+         try {
+             const {
+               max_depth,
+               link_following_enabled,
+               allow_external_links,
+               max_external_size_kb,
+               compression_mode,
+               js_rendering_enabled,
+               js_render_timeout_ms,
+               js_render_fallback,
+               resolution_mode,
+               semantic_top_k,
+               semantic_similarity_threshold,
+             } = request.body;
 
-           // Guard: explicit type check before bounds validation (fail fast, fail loud)
+            // Guard: validate request body structure (fail fast)
+            if (!request.body || typeof request.body !== 'object' || Array.isArray(request.body)) {
+              return reply.code(400).send({ error: 'Invalid request', message: 'Request body must be a JSON object', updatedAt: new Date().toISOString() });
+            }
+
+            // Guard: explicit type check before bounds validation (fail fast, fail loud)
+            if (max_depth !== undefined) {
+              if (typeof max_depth !== 'number') {
+                reply.code(400).send({
+                  error: 'Invalid request',
+                  message: `max_depth must be a number, got: ${typeof max_depth}`,
+                  updatedAt: new Date().toISOString(),
+                });
+                return;
+              }
+              if (max_depth < 1 || max_depth > 10) {
+                reply.code(400).send({
+                  error: 'Invalid request',
+                  message: `max_depth must be between 1 and 10 (inclusive), got: ${max_depth}`,
+                  updatedAt: new Date().toISOString(),
+                });
+                return;
+              }
+            }
+
+            // Guard: validate boolean types for other fields with timestamp
+            if (link_following_enabled !== undefined && typeof link_following_enabled !== 'boolean') {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: 'link_following_enabled must be a boolean value',
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (allow_external_links !== undefined && typeof allow_external_links !== 'boolean') {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: 'allow_external_links must be a boolean value',
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (max_external_size_kb !== undefined && typeof max_external_size_kb !== 'number') {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `max_external_size_kb must be a number, got: ${typeof max_external_size_kb}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (max_external_size_kb !== undefined && (max_external_size_kb < 1 || max_external_size_kb > 1000)) {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `max_external_size_kb must be between 1 and 1000 (inclusive), got: ${max_external_size_kb}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (compression_mode !== undefined && !['brief', 'moderate', 'skip'].includes(compression_mode)) {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `compression_mode must be one of: brief, moderate, skip. Got: ${compression_mode}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (js_rendering_enabled !== undefined && typeof js_rendering_enabled !== 'boolean') {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: 'js_rendering_enabled must be a boolean value',
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (js_render_timeout_ms !== undefined && typeof js_render_timeout_ms !== 'number') {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `js_render_timeout_ms must be a number, got: ${typeof js_render_timeout_ms}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (js_render_timeout_ms !== undefined && (js_render_timeout_ms < 1000 || js_render_timeout_ms > 30000)) {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `js_render_timeout_ms must be between 1000 and 30000 (inclusive), got: ${js_render_timeout_ms}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (js_render_fallback !== undefined && typeof js_render_fallback !== 'boolean') {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: 'js_render_fallback must be a boolean value',
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (resolution_mode !== undefined && !['inline', 'semantic', 'compressed'].includes(resolution_mode)) {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `resolution_mode must be one of: inline, semantic, compressed. Got: ${resolution_mode}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (semantic_top_k !== undefined && typeof semantic_top_k !== 'number') {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `semantic_top_k must be a number, got: ${typeof semantic_top_k}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (semantic_top_k !== undefined && (semantic_top_k < 1 || semantic_top_k > 20)) {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `semantic_top_k must be between 1 and 20 (inclusive), got: ${semantic_top_k}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (semantic_similarity_threshold !== undefined && typeof semantic_similarity_threshold !== 'number') {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `semantic_similarity_threshold must be a number, got: ${typeof semantic_similarity_threshold}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+            if (semantic_similarity_threshold !== undefined && (semantic_similarity_threshold < 0 || semantic_similarity_threshold > 1)) {
+              reply.code(400).send({
+                error: 'Invalid request',
+                message: `semantic_similarity_threshold must be between 0 and 1 (inclusive), got: ${semantic_similarity_threshold}`,
+                updatedAt: new Date().toISOString(),
+              });
+              return;
+            }
+
+           // Build partial config from request body
+           const partialConfig: Record<string, unknown> = {};
+
            if (max_depth !== undefined) {
-             if (typeof max_depth !== 'number') {
-               reply.code(400).send({
-                 error: 'Invalid request',
-                 message: `max_depth must be a number, got: ${typeof max_depth}`,
-                 updatedAt: new Date().toISOString(),
-               });
-               return;
-             }
-             if (max_depth < 1 || max_depth > 10) {
-               reply.code(400).send({
-                 error: 'Invalid request',
-                 message: `max_depth must be between 1 and 10 (inclusive), got: ${max_depth}`,
-                 updatedAt: new Date().toISOString(),
-               });
-               return;
-             }
+             partialConfig.maxDepth = max_depth;
+           }
+           if (link_following_enabled !== undefined) {
+             partialConfig.enabled = link_following_enabled;
+           }
+           if (allow_external_links !== undefined) {
+             partialConfig.allowExternalLinks = allow_external_links;
+           }
+           if (max_external_size_kb !== undefined) {
+             partialConfig.maxExternalSizeKb = max_external_size_kb;
+           }
+           if (compression_mode !== undefined) {
+             partialConfig.compressionMode = compression_mode;
+           }
+           if (js_rendering_enabled !== undefined) {
+             partialConfig.jsRenderingEnabled = js_rendering_enabled;
+           }
+           if (js_render_timeout_ms !== undefined) {
+             partialConfig.jsRenderTimeoutMs = js_render_timeout_ms;
+           }
+           if (js_render_fallback !== undefined) {
+             partialConfig.jsRenderFallback = js_render_fallback;
+           }
+           if (resolution_mode !== undefined) {
+             partialConfig.resolutionMode = resolution_mode;
+           }
+           if (semantic_top_k !== undefined) {
+             partialConfig.semanticTopK = semantic_top_k;
+           }
+           if (semantic_similarity_threshold !== undefined) {
+             partialConfig.semanticSimilarityThreshold = semantic_similarity_threshold;
            }
 
-           // Guard: validate boolean types for other fields with timestamp
-           if (link_following_enabled !== undefined && typeof link_following_enabled !== 'boolean') {
-             reply.code(400).send({
-               error: 'Invalid request',
-               message: 'link_following_enabled must be a boolean value',
-               updatedAt: new Date().toISOString(),
-             });
-             return;
-           }
-           if (allow_external_links !== undefined && typeof allow_external_links !== 'boolean') {
-             reply.code(400).send({
-               error: 'Invalid request',
-               message: 'allow_external_links must be a boolean value',
-               updatedAt: new Date().toISOString(),
-             });
-             return;
-           }
+           // Update the configuration
+           this.router!.getRegistry().updateMarkdownLinkConfig(partialConfig);
 
-          // Build partial config from request body
-          const partialConfig: Record<string, unknown> = {};
-          
-          if (max_depth !== undefined) {
-            partialConfig.maxDepth = max_depth;
-          }
-          if (link_following_enabled !== undefined) {
-            partialConfig.enabled = link_following_enabled;
-          }
-          if (allow_external_links !== undefined) {
-            partialConfig.allowExternalLinks = allow_external_links;
-          }
-
-          // Update the configuration
-          this.router!.getRegistry().updateMarkdownLinkConfig(partialConfig);
-
-          // Get and return the updated configuration with timestamp
-          const updatedConfig = this.router!.getRegistry().getMarkdownLinkConfig();
-          reply.code(200).send({
-            ...updatedConfig,
-            updatedAt: new Date().toISOString(),
-          });
-        } catch (error) {
-          this.logger.error('Config update failed', {
-            error: error instanceof Error ? error.message : String(error),
-            request: {
-              body: request.body,
-              timestamp: new Date().toISOString(),
-            },
-          });
-          reply.code(500).send({
-            error: 'Configuration update failed',
-            message: error instanceof Error ? error.message : String(error),
-            updatedAt: new Date().toISOString(),
-          });
-        }
-      }
-    );
+           // Get and return the updated configuration with timestamp
+           const updatedConfig = this.router!.getRegistry().getMarkdownLinkConfig();
+           reply.code(200).send({
+             ...updatedConfig,
+             updatedAt: new Date().toISOString(),
+           });
+         } catch (error) {
+           this.logger.error('Config update failed', {
+             error: error instanceof Error ? error.message : String(error),
+             request: {
+               body: request.body,
+               timestamp: new Date().toISOString(),
+             },
+           });
+           reply.code(500).send({
+             error: 'Configuration update failed',
+             message: error instanceof Error ? error.message : String(error),
+             updatedAt: new Date().toISOString(),
+           });
+         }
+       }
+     );
 
     // ── GET /config/link-following — read current link following configuration ──
     /**

@@ -346,27 +346,7 @@ describe('MarkdownLinkResolver', () => {
         expect(result).toContain('[404](https://example.com/not-found)');
       });
 
-      it('rejects external content exceeding size limit (Content-Length header)', async () => {
-        const resolver = new MarkdownLinkResolver(
-          { ...baseConfig, allowExternalLinks: true },
-          mockLogger,
-        );
-        const content = 'See [large](https://example.com/huge)';
-
-        const mockFetch = jest.fn().mockResolvedValue({
-          ok: true,
-          headers: { get: jest.fn().mockReturnValue('200000') }, // 200KB > 100KB limit
-          text: jest.fn().mockResolvedValue('too big'),
-        });
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (globalThis as any).fetch = mockFetch;
-
-        const result = await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
-
-        expect(result).toContain('[large](https://example.com/huge)');
-      });
-
-      it('rejects external content exceeding size limit (after fetch)', async () => {
+      it('truncates external content exceeding size threshold (after fetch)', async () => {
         const resolver = new MarkdownLinkResolver(
           { ...baseConfig, allowExternalLinks: true },
           mockLogger,
@@ -376,14 +356,40 @@ describe('MarkdownLinkResolver', () => {
         const mockFetch = jest.fn().mockResolvedValue({
           ok: true,
           headers: { get: jest.fn().mockReturnValue('0') }, // No Content-Length header
-          text: jest.fn().mockResolvedValue('x'.repeat(100_001)), // > 100KB after fetch
+          text: jest.fn().mockResolvedValue('x'.repeat(100_001)), // > 10KB default threshold
         });
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (globalThis as any).fetch = mockFetch;
 
         const result = await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
 
-        expect(result).toContain('[large](https://example.com/huge)');
+        // Content exceeds threshold → compressed/truncated, link replaced with reference
+        expect(result).toContain('Reference: External: https://example.com/huge');
+        expect(result).toContain('[content compressed - excerpt shown]');
+        expect(result).not.toContain('[large](https://example.com/huge)');
+      });
+
+      it('inlines external content under size threshold', async () => {
+        const resolver = new MarkdownLinkResolver(
+          { ...baseConfig, allowExternalLinks: true },
+          mockLogger,
+        );
+        const content = 'See [small](https://example.com/tiny)';
+
+        const mockFetch = jest.fn().mockResolvedValue({
+          ok: true,
+          headers: { get: jest.fn().mockReturnValue('500') }, // 500 bytes — under threshold
+          text: jest.fn().mockResolvedValue('small content here'),
+        });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (globalThis as any).fetch = mockFetch;
+
+        const result = await resolver.resolveLinks(content, '/skills/test/SKILL.md', 0);
+
+        // Content under threshold → inlined as-is
+        expect(result).toContain('Reference: External: https://example.com/tiny');
+        expect(result).toContain('small content here');
+        expect(result).not.toContain('[small](https://example.com/tiny)');
       });
     });
 
