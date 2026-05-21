@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 16:31:36 UTC  
-> **Total skills:** 746
+> **Last updated:** 2026-05-21 12:21:19 UTC  
+> **Total skills:** 748
 
 ## Skills by Domain
 
@@ -705,7 +705,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (199 skills)
+### Coding (201 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -786,6 +786,7 @@ MIT — All skills are freely available and redistributable.
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | dry principle, don't repeat yourself, code duplication, refactoring, code duplication detection, refactoring guidance, maintainable code, code reuse |
 | [eda](skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | engineering principles, SOLID, DRY, KISS, separation of concerns, code architecture, defensive programming, clean code |
+| [engineering-tradeoffs](skills/coding/engineering-tradeoffs/SKILL.md) | Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints. | engineering tradeoffs, decision making under constraints, build vs buy, speed vs quality, technology selection, weighted decision matrix, tradeoff analysis, two-way door decisions, CAP theorem software |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | ensemble methods, bagging, boosting, stacking, voting, blending, ensemble learning |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. | event-driven architecture, pub/sub messaging, saga pattern, dead letter queue, outbox pattern, how do i decouple services, async message processing, distributed messaging |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | event-driven, event driven architecture, pub/sub, event sourcing, CQRS, saga pattern, outbox pattern, message queue, eventual consistency |
@@ -860,6 +861,7 @@ MIT — All skills are freely available and redistributable.
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | port interface, driving port, driven port, port contract, Protocol vs ABC, hexagonal ports, how do i define clean boundaries, dependency inversion, framework-agnostic interfaces |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging |
+| [production-readiness](skills/coding/production-readiness/SKILL.md) | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | production readiness, SRE review, deployment criteria, observability setup, canary deployment, on-call coverage, SLO SLI, error budget, golden signals, how do i know my service is production ready, operational excellence, hypercare period |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | randomized experiments, RCT, experimental design, randomization, blocking, sample size |
@@ -1421,7 +1423,7 @@ MIT — All skills are freely available and redistributable.
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 
 
-### Reference (Learn & Understand) (165 skills)
+### Reference (Learn & Understand) (166 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1550,6 +1552,7 @@ MIT — All skills are freely available and redistributable.
 | [osi](skills/cncf/osi/SKILL.md) | Cncf | "OSI Model Networking for Cloud-Native - All 7 layers with CNCF project" mappings, Kubernetes networking, and troubleshooting patterns. |
 | [patterns](skills/coding/patterns/SKILL.md) | Coding | "Provides Software architecture patterns including MVC, MVVM, microservices, event-driven, CQRS, DDD, hexagonal architecture, layered architecture, and pattern" |
 | [policy-agent-opa](skills/cncf/policy-agent-opa/SKILL.md) | Cncf | "Open Policy Agent in Security &amp; Compliance - cloud native architecture" patterns, pitfalls, and best practices |
+| [production-readiness](skills/coding/production-readiness/SKILL.md) | Coding | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. |
 | [project](skills/cncf/project/SKILL.md) | Cncf | "Notary Project in Content Trust &amp; Security - cloud native architecture" patterns, pitfalls, and best practices |
 | [prometheus](skills/cncf/prometheus/SKILL.md) | Cncf | "Prometheus in Cloud-Native Engineering - The Prometheus monitoring system" and time series database. |
 | [rbac](skills/cncf/rbac/SKILL.md) | Cncf | "Manages identity and access with roles, service principals, and fine-grained" permissions. |
@@ -1592,7 +1595,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (232 skills)
+### Orchestration (Manage AI Agents) (233 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1681,6 +1684,7 @@ MIT — All skills are freely available and redistributable.
 | [documentation](skills/agent/documentation/SKILL.md) | Agent | Implements intelligent documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [dynamic-replanner](skills/agent/dynamic-replanner/SKILL.md) | Agent | Implements intelligent dynamic replanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [e2e-testing](skills/agent/e2e-testing/SKILL.md) | Agent | Implements intelligent e2e testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [engineering-tradeoffs](skills/coding/engineering-tradeoffs/SKILL.md) | Coding | Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints. |
 | [error-trace-explainer](skills/agent/error-trace-explainer/SKILL.md) | Agent | Implements intelligent error trace explainer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [executing-plans](skills/agent/executing-plans/SKILL.md) | Agent | Implements intelligent executing plans with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [failure-mode-analysis](skills/agent/failure-mode-analysis/SKILL.md) | Agent | Implements intelligent failure mode analysis with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -2095,6 +2099,7 @@ MIT — All skills are freely available and redistributable.
 | [eks](skills/cncf/eks/SKILL.md) | Cncf | "Deploys managed Kubernetes clusters with EKS for container orchestration" auto-scaling, networking, and integrations with AWS services for production Kubernetes workloads. | Reference |
 | [elb](skills/cncf/elb/SKILL.md) | Cncf | "Configures Elastic Load Balancing (ALB, NLB, Classic) for distributing" traffic across instances with health checks, SSL termination, and cross-AZ failover. | Reference |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Coding | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | Implementation |
+| [engineering-tradeoffs](skills/coding/engineering-tradeoffs/SKILL.md) | Coding | Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints. | Orchestration |
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" | Implementation |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | Implementation |
 | [envoy](skills/cncf/envoy/SKILL.md) | Cncf | "Envoy in Cloud-Native Engineering - Cloud-native high-performance edge/middle/service" proxy | Reference |
@@ -2378,6 +2383,7 @@ MIT — All skills are freely available and redistributable.
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" | Implementation |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | Implementation |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | Implementation |
+| [production-readiness](skills/coding/production-readiness/SKILL.md) | Coding | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | Reference |
 | [project](skills/cncf/project/SKILL.md) | Cncf | "Notary Project in Content Trust &amp; Security - cloud native architecture" patterns, pitfalls, and best practices | Reference |
 | [prometheus](skills/cncf/prometheus/SKILL.md) | Cncf | "Prometheus in Cloud-Native Engineering - The Prometheus monitoring system" and time series database. | Reference |
 | [prompt-engineer](skills/agent/prompt-engineer/SKILL.md) | Agent | Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
