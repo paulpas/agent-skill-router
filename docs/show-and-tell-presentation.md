@@ -419,6 +419,95 @@ The VectorDatabase class manages semantic search using a custom KD-tree implemen
 3. All vectors are normalized to unit length (L2 normalization)
 4. For unit vectors: **Euclidean distance = cosine distance** (the math works out: `||a-b||² = 2 - 2·cos(θ)`)
 
+### Embedding Resilience: Fallback & Emulation
+
+The EmbeddingService uses a three-tier strategy to guarantee the system works without any API keys.
+
+```
+                                          EMBEDDING GENERATION TIERS
+                                                  
+                    ┌─ TIER 1 ──────────────────────────────┐
+                    │  OpenAI / llama.cpp Embeddings API     │
+                    │  (/v1/embeddings)                      │
+                    │  text-embedding-3-small (1536d)        │
+                    └──────────────┬────────────────────────┘
+                                   │ failed?
+                                   ▼
+                    ┌─ TIER 2 ──────────────────────────────┐
+                    │  LLM Embedding Emulation              │
+                    │  Ask ANY chat LLM to produce a         │
+                    │  JSON array of floats via text prompt  │
+                    │  (64 dimensions, parse + validate)     │
+                    │  Retries: 3 with exponential backoff   │
+                    └──────────────┬────────────────────────┘
+                                   │ failed?
+                                   ▼
+                    ┌─ TIER 3 ──────────────────────────────┐
+                    │  Deterministic Hash-Based Fallback     │
+                    │  Always works, no external deps        │
+                    │  Algorithmic: hash → LCG → normalize   │
+                    │  Consistent across restarts            │
+                    └────────────────────────────────────────┘
+```
+
+**Tier 1: Direct Embeddings API (Default)**
+
+The router first tries the standard embeddings endpoint:
+- **OpenAI** — `text-embedding-3-small` (1536 dimensions) via `POST /v1/embeddings`
+- **llama.cpp** — any local embedding model via the same endpoint format
+
+Texts are processed in batches of up to 100 (configurable via `batchSize`) per API call, dramatically reducing round-trips.
+
+**Tier 2: LLM Embedding Emulation**
+
+When no embeddings-specific API is available but a chat LLM is, set `EMBEDDING_PROVIDER=emulation`. This asks **any LLM** (OpenAI, Anthropic, llama.cpp, vLLM, LiteLLM, ollama...) to generate embeddings through a carefully engineered text prompt:
+
+```
+System prompt: "You are an embedding generator. Output ONLY a JSON array of floats."
+User prompt: "Represent the following text as a JSON array of 64 floats
+capturing its semantic meaning. Output only the array, no additional text.
+
+Text to embed: \"deploy a kubernetes cluster to production\""
+```
+
+**How it works:**
+
+1. Sends the prompt + text to the configured LLM's `/v1/chat/completions` endpoint
+2. The LLM returns a JSON array of 64 floating-point numbers
+3. The service parses the response, validates exactly 64 floats, all within [-1, 1]
+4. **If JSON parsing fails**: attempts regex extraction to find the array in the text
+5. **If all parsing fails**: falls through to Tier 3 (deterministic fallback)
+6. **Retries**: up to 3 attempts with exponential backoff (100ms → 200ms → 400ms)
+
+**Why 64 dimensions instead of 1536?** LLMs struggle to reliably output 1536 numbers in a single response — the output frequently gets truncated or malformed. 64 dimensions is a practical compromise: small enough for consistent generation, large enough for meaningful semantic comparisons.
+
+**Tier 3: Deterministic Hash-Based Fallback**
+
+If all else fails (no API key, network error, LLM timeout), the router generates embeddings using a purely algorithmic method:
+
+```
+hash = 0
+for each character:  hash = (hash << 5) - hash + charCode
+seed = |hash|
+LCG loop: value = (value × 9301 + 49297) % 233280  →  normalize to [-1, 1]
+L2 normalize the entire vector
+```
+
+This produces a **consistent, deterministic embedding** for the same text across restarts. It's not semantically meaningful, but it guarantees:
+- The router starts and runs with zero configuration
+- Similar texts get similar vectors (good enough for basic routing)
+- Zero external dependencies, network calls, or API keys required
+
+**Emulation Configuration:**
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `EMBEDDING_PROVIDER` | openai | Set to `emulation` to enable LLM-based embedding |
+| `EMBEDDING_MODEL` | gpt-4o-mini | Which chat LLM to ask for embeddings |
+| `EMBEDDING_PROMPT_TEMPLATE` | (built-in) | Custom prompt template for emulation |
+| `EMBEDDING_MAX_RETRIES` | 3 | Retries before deterministic fallback |
+| `EMBEDDING_DIMENSIONS` | 1536 | Embedding dimensions (64 in emulation mode) |
+
 ### The KD-Tree
 
 A k-dimensional tree partitions the vector space recursively, splitting on alternating dimensions at the median point. This creates a balanced binary tree that supports O(log n) nearest-neighbor search.
@@ -492,13 +581,29 @@ Return ONLY this JSON:
 | **Anthropic** | Claude 3.5 Haiku | Cloud, different pricing |
 | **llama.cpp** | Local model (e.g., Qwen3) | Offline, no API key |
 
+### Fallback
+
+If the LLM is unavailable (network error, API outage), the router stays operational:
+
+1. **Fallback ranking**: Returns the top vector search candidate with score 0.3 and reason "LLM unavailable, using default"
+2. **No panic**: The deterministic filter ensures at least one skill is always returned
+
+### Reasoning Model Support
+
+When using reasoning models like Qwen3 or DeepSeek (which output thinking/reasoning tokens before the answer), the LLMRanker uses **brace-counting JSON extraction**:
+
+```
+scan response character by character
+track brace depth { } and string state "..."
+find matching closing brace for the outermost object
+extract complete JSON even with thinking text prepended
+```
+
+This means you can route through Qwen3 or Claude 3.5 Sonnet and the router correctly strips the reasoning tokens, extracting only the JSON ranking response. If JSON extraction fails entirely, it falls back to line-by-line regex parsing of the raw text.
+
 ### Caching
 
 Ranking results are cached by a deterministic hash of the task + candidate set. This prevents redundant LLM calls when the same task (or a very similar one) arrives again. Cache hit response: microseconds instead of ~3 seconds.
-
-### Fallback
-
-If the LLM is unavailable (network error, API outage), the router falls back to using the top vector search candidate with a score of 0.3 and reason "LLM unavailable, using default." The system stays operational even without the LLM.
 
 ---
 
