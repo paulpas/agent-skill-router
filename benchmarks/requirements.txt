@@ -13,7 +13,7 @@ groq>=1.2.0
 tiktoken>=0.13.0
 
 # HTTP requests (for Ollama and general use)
-requests>=2.34.0
+requests>=2.34.2
 
 # Data serialization
 pydantic>=2.13.4
