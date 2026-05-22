@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T01:20:41.648390Z",
-  "totalSkills": 767,
+  "generatedAt": "2026-05-22T01:48:29.148160Z",
+  "totalSkills": 768,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 216,
+    "coding": 217,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 361,
+    "implementation": 362,
     "reference": 167,
     "information": 1,
     "review": 5
@@ -15485,6 +15485,38 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/spire/SKILL.md"
+    },
+    {
+      "name": "spring-boot-core",
+      "domain": "coding",
+      "description": "Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "spring boot",
+        "spring framework",
+        "dependency injection",
+        "auto configuration",
+        "rest controller",
+        "record dto",
+        "profile configuration",
+        "actuator",
+        "java 21",
+        "virtual threads",
+        "@service",
+        "@component",
+        "@autowired",
+        "how do i build a spring app"
+      ],
+      "relatedSkills": [
+        "coding-spring-security",
+        "coding-spring-data-jpa",
+        "coding-framework-performance-tuning",
+        "coding-observability-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/spring-boot-core/SKILL.md"
     },
     {
       "name": "sql-database",
