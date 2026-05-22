@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 03:28:03 UTC  
-> **Total skills:** 773
+> **Last updated:** 2026-05-21 23:15:29 UTC  
+> **Total skills:** 775
 
 ## Skills by Domain
 
@@ -707,7 +707,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (221 skills)
+### Coding (223 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -839,6 +839,7 @@ MIT — All skills are freely available and redistributable.
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | kotlin coroutines, structured concurrency, coroutine scope, SupervisorJob, Flow API, StateFlow, kotlinx-coroutines |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" | linear regression, OLS, ridge regression, lasso, elastic net, regularization |
 | [liskov-substitution-principle](skills/coding/liskov-substitution-principle/SKILL.md) | Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability. | liskov substitution principle, LSP, subtype contract, precondition, postcondition, invariant, is-a relationship, breaking subclass, type safety |
+| [llm-fine-tuning](skills/coding/llm-fine-tuning/SKILL.md) | Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoRA, AdaLoRA), DPO alignment, instruction tuning with unsloth and axolotl, plus evaluation against MMLU, GSM8K, and HumanEval benchmarks. | fine-tuning LLM, LoRA, QLoRA, PEFT, DPO alignment, instruction tuning, unsloth, parameter-efficient fine-tuning |
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" | logistic regression, classification, binary classification, multinomial, how do i classify |
 | [make](skills/coding/make/SKILL.md) | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. | make, build system, makefile, compilation, incremental build, build automation, justfile, phony targets |
 | [makefile](skills/coding/makefile/SKILL.md) | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. | makefile, make, build automation, phony targets, pattern rules, build system, make command, cross-platform make |
@@ -877,6 +878,7 @@ MIT — All skills are freely available and redistributable.
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. | platform engineering, internal developer platform, IDP, golden paths, self-service infrastructure, Backstage.io, developer experience metrics, how do i build a developer platform |
 | [polyglot-development](skills/coding/polyglot-development/SKILL.md) | Implements language selection heuristics, polyglot monorepo patterns, and cross-language communication protocols for multi-language software systems. | polyglot, multi-language, language selection, go vs typescript, rust vs python, monorepo build, cross-language communication, protocol buffer, interop patterns, which language to use |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | port interface, driving port, driven port, port contract, Protocol vs ABC, hexagonal ports, how do i define clean boundaries, dependency inversion, framework-agnostic interfaces |
+| [postgresql-performance-tuning](skills/coding/postgresql-performance-tuning/SKILL.md) | Diagnoses and optimizes PostgreSQL performance through execution plan analysis, index strategies, configuration tuning, autovacuum management, partitioning, and monitoring with pg_stat_statements. | postgresql performance tuning, psql query optimization, index strategy, slow queries, pgbouncer, autovacuum tuning, pg_stat_statements, how do i make postgresql faster |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging |
 | [production-readiness](skills/coding/production-readiness/SKILL.md) | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | production readiness, SRE review, deployment criteria, observability setup, canary deployment, on-call coverage, SLO SLI, error budget, golden signals, how do i know my service is production ready, operational excellence, hypercare period |
@@ -1099,7 +1101,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (367 skills)
+### Implementation (Build Features) (369 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1285,6 +1287,7 @@ MIT — All skills are freely available and redistributable.
 | [liquidity-risk](skills/trading/liquidity-risk/SKILL.md) | Trading | "Implements liquidity assessment and trade execution risk for risk management and algorithmic trading execution." |
 | [liskov-substitution-principle](skills/coding/liskov-substitution-principle/SKILL.md) | Coding | Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability. |
 | [live-model-monitoring](skills/trading/live-model-monitoring/SKILL.md) | Trading | "Provides Monitor production ML models for drift, decay, and performance degradation" |
+| [llm-fine-tuning](skills/coding/llm-fine-tuning/SKILL.md) | Coding | Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoRA, AdaLoRA), DPO alignment, instruction tuning with unsloth and axolotl, plus evaluation against MMLU, GSM8K, and HumanEval benchmarks. |
 | [llm-orchestration](skills/trading/llm-orchestration/SKILL.md) | Trading | "Large Language Model orchestration for trading analysis with structured" output using instructor/pydantic |
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | Coding | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" |
 | [lookahead-bias](skills/trading/lookahead-bias/SKILL.md) | Trading | "Preventing lookahead bias in backtesting through strict causality enforcement" time-based validation, and comprehensive detection frameworks. |
@@ -1357,6 +1360,7 @@ MIT — All skills are freely available and redistributable.
 | [position-exits](skills/trading/position-exits/SKILL.md) | Trading | "Exit strategies, trailing stops, and take-profit mechanisms for trading" systems. |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "Calculating optimal position sizes using Kelly criterion, volatility" adjustments, and edge-based sizing to maximize long-term growth while managing risk |
+| [postgresql-performance-tuning](skills/coding/postgresql-performance-tuning/SKILL.md) | Coding | Diagnoses and optimizes PostgreSQL performance through execution plan analysis, index strategies, configuration tuning, autovacuum management, partitioning, and monitoring with pg_stat_statements. |
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. |
@@ -2325,6 +2329,7 @@ MIT — All skills are freely available and redistributable.
 | [liskov-substitution-principle](skills/coding/liskov-substitution-principle/SKILL.md) | Coding | Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability. | Implementation |
 | [litmus](skills/cncf/litmus/SKILL.md) | Cncf | "Litmus in Chaos Engineering - cloud native architecture, patterns, pits" and best practices | Reference |
 | [live-model-monitoring](skills/trading/live-model-monitoring/SKILL.md) | Trading | "Provides Monitor production ML models for drift, decay, and performance degradation" | Implementation |
+| [llm-fine-tuning](skills/coding/llm-fine-tuning/SKILL.md) | Coding | Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoRA, AdaLoRA), DPO alignment, instruction tuning with unsloth and axolotl, plus evaluation against MMLU, GSM8K, and HumanEval benchmarks. | Implementation |
 | [llm-orchestration](skills/trading/llm-orchestration/SKILL.md) | Trading | "Large Language Model orchestration for trading analysis with structured" output using instructor/pydantic | Implementation |
 | [load-balancer](skills/cncf/load-balancer/SKILL.md) | Cncf | Provides Distributes traffic across VMs with health probes and rule-based routing | Reference |
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | Coding | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" | Implementation |
@@ -2449,6 +2454,7 @@ MIT — All skills are freely available and redistributable.
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "'Position Sizing Algorithms: Fixed Fractional, Kelly Criterion, and Volatility" Adjustment' | Implementation |
 | [position-sizing](skills/trading/position-sizing/SKILL.md) | Trading | "Calculating optimal position sizes using Kelly criterion, volatility" adjustments, and edge-based sizing to maximize long-term growth while managing risk | Implementation |
 | [postgresql-optimization](skills/agent/postgresql-optimization/SKILL.md) | Agent | Implements intelligent postgresql optimization with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [postgresql-performance-tuning](skills/coding/postgresql-performance-tuning/SKILL.md) | Coding | Diagnoses and optimizes PostgreSQL performance through execution plan analysis, index strategies, configuration tuning, autovacuum management, partitioning, and monitoring with pg_stat_statements. | Implementation |
 | [pr-writer](skills/agent/pr-writer/SKILL.md) | Agent | Implements intelligent pr writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" | Implementation |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | Implementation |
