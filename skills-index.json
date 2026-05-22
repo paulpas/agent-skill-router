@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T19:34:20.530200Z",
-  "totalSkills": 805,
+  "generatedAt": "2026-05-22T19:46:22.829927Z",
+  "totalSkills": 807,
   "domains": {
     "agent": 258,
     "cncf": 173,
-    "coding": 242,
+    "coding": 244,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 393,
+    "implementation": 395,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -13995,6 +13995,32 @@
       "source": "skills/coding/python-module-structure/SKILL.md"
     },
     {
+      "name": "python-typing-patterns",
+      "domain": "coding",
+      "description": "Implements advanced Python typing patterns including generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, and composite type construction for robust static analysis.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "python generics",
+        "typing patterns",
+        "Protocol structural subtyping",
+        "TypeVar bounds",
+        "Generic classes",
+        "covariance contravariance",
+        "TypeAliasType",
+        "runtime type inspection",
+        "mypy advanced typing",
+        "pyright protocols"
+      ],
+      "relatedSkills": [
+        "python-modern-development",
+        "type-safety-enforcement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/python-typing-patterns/SKILL.md"
+    },
+    {
       "name": "quality-policies",
       "domain": "coding",
       "description": "\"Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi\"",
@@ -17876,6 +17902,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/type-safety-enforcement/SKILL.md"
+    },
+    {
+      "name": "typescript-generics-types",
+      "domain": "coding",
+      "description": "Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "generics",
+        "type parameters",
+        "conditional types",
+        "infer keyword",
+        "mapped types",
+        "template literal types",
+        "keyof"
+      ],
+      "relatedSkills": [
+        "typescript-intersection-types",
+        "type-safety-enforcement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/typescript-generics-types/SKILL.md"
     },
     {
       "name": "typescript-intersection-types",
