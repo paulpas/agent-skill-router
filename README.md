@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 08:33:59 UTC  
-> **Total skills:** 786
+> **Last updated:** 2026-05-22 09:13:14 UTC  
+> **Total skills:** 787
 
 ## Skills by Domain
 
@@ -711,7 +711,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (228 skills)
+### Coding (229 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -733,6 +733,7 @@ MIT — All skills are freely available and redistributable.
 | [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | architecture decision records, ADR, architectural decisions, how do i document architectural choices, design rationale, technology selection, system trade-offs, decision log |
 | [association-rules](skills/coding/association-rules/SKILL.md) | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | association rules, market basket, apriori, frequent itemsets, recommendation, pattern mining |
 | [async-programming](skills/coding/async-programming/SKILL.md) | Implements asynchronous programming patterns (asyncio task groups, goroutine pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking systems across Python and Go runtimes. | asynchronous programming, async await, asyncio, goroutine pool, concurrency patterns, event loop, structured concurrency, cancellation scope, parallel execution, race condition prevention, non-blocking I/O |
+| [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. | authentication, password hashing, JWT token, OAuth PKCE, session management, MFA, TOTP, two-factor, passkeys, login system, how do i implement auth, secure login, user authentication, token validation, webauthn |
 | [automation](skills/coding/automation/SKILL.md) | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | semantic versioning, semver, version bumping, conventional commits, semantic-release, changelog automation, release automation, git tags |
 | [base](skills/coding/base/SKILL.md) | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | abstract, initialization, pattern, strategy base, strategy-base |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" | bayesian inference, bayes, prior, posterior, probabilistic inference, how do i do bayesian |
@@ -1118,7 +1119,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (378 skills)
+### Implementation (Build Features) (379 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1146,6 +1147,7 @@ MIT — All skills are freely available and redistributable.
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" |
 | [async-programming](skills/coding/async-programming/SKILL.md) | Coding | Implements asynchronous programming patterns (asyncio task groups, goroutine pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking systems across Python and Go runtimes. |
 | [auth-credentials](skills/agent/auth-credentials/SKILL.md) | Agent | Implements agent authentication, credential management, capability-based access control, JWT identity verification, and human-in-the-loop authorization gates for production-safe AI agent systems. |
+| [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Coding | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" |
 | [backfill-strategy](skills/trading/backfill-strategy/SKILL.md) | Trading | "Provides Strategic data backfill for populating historical data in trading systems" |
 | [base](skills/coding/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration |
@@ -1999,6 +2001,7 @@ MIT — All skills are freely available and redistributable.
 | [audit-context-building](skills/agent/audit-context-building/SKILL.md) | Agent | Implements intelligent audit context building with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [auri-core](skills/agent/auri-core/SKILL.md) | Agent | Implements intelligent auri core with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [auth-credentials](skills/agent/auth-credentials/SKILL.md) | Agent | Implements agent authentication, credential management, capability-based access control, JWT identity verification, and human-in-the-loop authorization gates for production-safe AI agent systems. | Implementation |
+| [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Coding | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. | Implementation |
 | [auto-scaling](skills/cncf/auto-scaling/SKILL.md) | Cncf | "Configures automatic scaling of compute resources (EC2, RDS, DynamoDB" Lambda) based on demand metrics with scaling policies and lifecycle hooks. | Reference |
 | [automation](skills/cncf/automation/SKILL.md) | Cncf | Provides Automation and orchestration of Azure resources with runbooks and update management | Reference |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | Implementation |

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T08:33:58.003133Z",
-  "totalSkills": 786,
+  "generatedAt": "2026-05-22T09:13:13.207418Z",
+  "totalSkills": 787,
   "domains": {
     "agent": 256,
     "cncf": 173,
-    "coding": 227,
+    "coding": 228,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 378,
+    "implementation": 379,
     "reference": 169,
     "information": 1,
     "review": 5
@@ -1648,6 +1648,38 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/auth-credentials/SKILL.md"
+    },
+    {
+      "name": "authentication-patterns",
+      "domain": "coding",
+      "description": "Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "authentication",
+        "password hashing",
+        "JWT token",
+        "OAuth PKCE",
+        "session management",
+        "MFA",
+        "TOTP",
+        "two-factor",
+        "passkeys",
+        "login system",
+        "how do i implement auth",
+        "secure login",
+        "user authentication",
+        "token validation",
+        "webauthn"
+      ],
+      "relatedSkills": [
+        "coding-security-review",
+        "coding-input-validation",
+        "coding-security-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/authentication-patterns/SKILL.md"
     },
     {
       "name": "auto-scaling",
