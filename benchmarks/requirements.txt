@@ -1,7 +1,7 @@
 # LLM Benchmark Requirements
 
 # OpenAI API support
-openai>=2.36.0
+openai>=2.37.0
 
 # Anthropic API support
 anthropic>=0.101.0
