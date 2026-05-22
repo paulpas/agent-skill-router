@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 792 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 793 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **792 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **793 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -87,7 +87,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 257 | AI orchestration, routing, task decomposition |
+| Agent | 258 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 232 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -265,14 +265,14 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 08:24:32 UTC  
-> **Total skills:** 792  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (792 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 08:46:00 UTC  
+> **Total skills:** 793  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (793 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
 
-### Agent (257 skills)
+### Agent (258 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -289,6 +289,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. | ai agent safety, hallucination detection, prompt injection, output validation, tool call safety, guardrails, autonomous agent safety, AI safety |
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-agents-architect, ai agents architect, how do i ai-agents-architect, orchestrate ai-agents-architect, automate ai-agents-architect, agent ai-agents-architect |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-dev-jobs-mcp, ai dev jobs mcp, how do i ai-dev-jobs-mcp, orchestrate ai-dev-jobs-mcp, automate ai-dev-jobs-mcp, agent ai-dev-jobs-mcp |
+| [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. | ai framework selection, which ai framework to use, langchain vs crewai, choose ai agent framework, framework comparison, build custom vs use framework, AI agent tooling, how do i pick an ai framework, LLM framework evaluation |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-ml, ai ml, how do i ai-ml, orchestrate ai-ml, automate ai-ml, agent ai-ml |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | ai persona, first-person identity, agent voice, personality design, consistent tone, how do i make my ai feel personal, authentic AI, self-expression, character design, brand voice AI |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | airflow-dag-patterns, airflow dag patterns, how do i airflow-dag-patterns, orchestrate airflow-dag-patterns, automate airflow-dag-patterns, agent airflow-dag-patterns, workflow orchestration, airflow |
@@ -1690,7 +1691,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (234 skills)
+### Orchestration (Manage AI Agents) (235 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1703,6 +1704,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Agent | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Agent | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Agent | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Agent | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Agent | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [airtable-automation](skills/agent/airtable-automation/SKILL.md) | Agent | Implements intelligent airtable automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -1962,6 +1964,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Agent | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | Implementation |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Agent | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. | Orchestration |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Agent | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | Implementation |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Agent | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
