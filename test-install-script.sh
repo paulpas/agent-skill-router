@@ -84,7 +84,7 @@ EOF
     cat > "$TEST_DIR/special.conf" << 'EOF'
 OPENAI_API_KEY=sk-test&special$chars"quotes
 PORT=3000
-LLM_ENDPOINT_URL=https://api.example.com/v1?token=abc123
+OPENAI_BASE_URL=https://api.example.com/v1?token=abc123
 EOF
 
     (

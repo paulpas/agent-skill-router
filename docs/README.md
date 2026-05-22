@@ -66,8 +66,8 @@ EMBEDDING_PROVIDER=anthropic
 
 ```bash
 # In install-skill-router.conf
-LLM_ENDPOINT_URL=http://localhost:8000/v1
-LLM_ENDPOINT_API_KEY=dummy
+OPENAI_BASE_URL=http://localhost:8000/v1
+OPENAI_API_KEY=dummy
 LLM_PROVIDER=openai
 EMBEDDING_PROVIDER=openai
 EMBEDDING_MODEL=text-embedding-3-small

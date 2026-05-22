@@ -10,7 +10,7 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Your OpenAI API key for embeddings and LLM access
-# Required if not using LLM_ENDPOINT_URL
+# Required (for all providers: OpenAI, LiteLLM, ollama, vLLM, etc.)
 OPENAI_API_KEY=sk-...
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -32,19 +32,19 @@ LLM_MODEL=gpt-4o-mini
 # ─────────────────────────────────────────────────────────────────────────────
 
 # If you want to use a custom LLM endpoint (like LiteLLM or ollama):
-# Set LLM_ENDPOINT_URL to your endpoint base URL
-# LLM_ENDPOINT_API_KEY is required but not validated (use 'dummy' for no-key endpoints like ollama)
+# Set OPENAI_BASE_URL to your endpoint base URL.
+# OPENAI_API_KEY is used for ALL endpoints (OpenAI, LiteLLM, ollama, etc.)
+# Use 'dummy' as the key for no-auth endpoints like ollama.
 
 # Example for ollama (no authentication):
-# LLM_ENDPOINT_URL=http://localhost:11434/v1
-# LLM_ENDPOINT_API_KEY=dummy
+# OPENAI_BASE_URL=http://localhost:11434/v1
+# OPENAI_API_KEY=dummy
 
 # Example for LiteLLM:
-# LLM_ENDPOINT_URL=https://api.litellm.com/v1
-# LLM_ENDPOINT_API_KEY=sk-...
+# OPENAI_BASE_URL=https://api.litellm.com/v1
+# OPENAI_API_KEY=sk-...
 
-LLM_ENDPOINT_URL=
-LLM_ENDPOINT_API_KEY=
+OPENAI_BASE_URL=
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Embedding Provider Configuration

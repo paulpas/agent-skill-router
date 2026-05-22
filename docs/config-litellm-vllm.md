@@ -36,8 +36,8 @@ Self-hosted LLM providers offer:
 
 ```bash
 # Self-Hosted LLM Configuration
-LLM_ENDPOINT_URL=http://localhost:8000/v1
-LLM_ENDPOINT_API_KEY=dummy
+OPENAI_BASE_URL=http://localhost:8000/v1
+OPENAI_API_KEY=dummy
 
 # Provider selection
 LLM_PROVIDER=openai
@@ -52,8 +52,8 @@ EMBEDDING_PROVIDER=openai
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Your custom LLM endpoint URL
-LLM_ENDPOINT_URL=http://localhost:8000/v1
-LLM_ENDPOINT_API_KEY=dummy
+OPENAI_BASE_URL=http://localhost:8000/v1
+OPENAI_API_KEY=dummy
 
 # LLM Provider Selection (use 'openai' for OpenAI-compatible endpoints)
 LLM_PROVIDER=openai
@@ -143,8 +143,8 @@ vLLM is an OpenAI-compatible server, so configure it like this:
 
 ```bash
 # vLLM Configuration
-LLM_ENDPOINT_URL=http://localhost:8000/v1
-LLM_ENDPOINT_API_KEY=dummy
+OPENAI_BASE_URL=http://localhost:8000/v1
+OPENAI_API_KEY=dummy
 LLM_MODEL=meta-llama/Meta-Llama-3-8B-Instruct
 
 # Embeddings (OpenAI-compatible, 1536-dim)
@@ -157,8 +157,8 @@ LiteLLM provides a unified API for multiple providers:
 
 ```bash
 # LiteLLM Configuration
-LLM_ENDPOINT_URL=https://api.litellm.com/v1
-LLM_ENDPOINT_API_KEY=your-litellm-key
+OPENAI_BASE_URL=https://api.litellm.com/v1
+OPENAI_API_KEY=your-litellm-key
 LLM_MODEL=claude-4-sonnet
 
 # Embeddings (use native if available)
@@ -172,8 +172,8 @@ Ollama runs local LLMs with simple configuration:
 
 ```bash
 # Ollama Configuration
-LLM_ENDPOINT_URL=http://localhost:11434/v1
-LLM_ENDPOINT_API_KEY=dummy
+OPENAI_BASE_URL=http://localhost:11434/v1
+OPENAI_API_KEY=dummy
 LLM_MODEL=llama3:8b
 
 # Embeddings (Ollama supports native embeddings)
@@ -187,8 +187,8 @@ For the popular Text Generation WebUI:
 
 ```bash
 # Text Generation WebUI Configuration
-LLM_ENDPOINT_URL=http://localhost:5000/v1
-LLM_ENDPOINT_API_KEY=dummy
+OPENAI_BASE_URL=http://localhost:5000/v1
+OPENAI_API_KEY=dummy
 LLM_MODEL=your-model-name
 
 # Embeddings (configure native embedding model)
@@ -228,10 +228,10 @@ For self-hosted endpoints:
 
 ```bash
 # If your endpoint requires authentication
-LLM_ENDPOINT_API_KEY=your-api-key-here
+OPENAI_API_KEY=your-api-key-here
 
 # If no authentication (like Ollama)
-LLM_ENDPOINT_API_KEY=dummy
+OPENAI_API_KEY=dummy
 ```
 
 **Important**: If your self-hosted endpoint is exposed to the internet:
@@ -287,8 +287,8 @@ After configuring, test your setup:
 ```bash
 # Test the Skill Router with self-hosted LLM
 docker run --rm \
-  -e LLM_ENDPOINT_URL="http://host.docker.internal:8000/v1" \
-  -e LLM_ENDPOINT_API_KEY="dummy" \
+  -e OPENAI_BASE_URL="http://host.docker.internal:8000/v1" \
+  -e OPENAI_API_KEY="dummy" \
   -e LLM_MODEL="llama3:8b" \
   -e EMBEDDING_MODEL="text-embedding-3-small" \
   -p 3000:3000 \

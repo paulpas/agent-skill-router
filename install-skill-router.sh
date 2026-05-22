@@ -40,8 +40,6 @@ declare \
   AUTO_SKILL_ENABLED \
   AUTO_SKILL_CONTRIBUTE \
   AUTO_SKILL_MODEL \
-  LLM_ENDPOINT_URL \
-  LLM_ENDPOINT_API_KEY \
   OPENAI_BASE_URL \
   GITHUB_RAW_BASE_URL \
   GITHUB_SKILLS_REPO \
@@ -105,8 +103,8 @@ CONFIG FILE FORMAT:
     LLM_MODEL=gpt-4o             # Model ID (defaults to provider default)
     
     # Optional: Custom LLM Endpoint (LiteLLM, ollama, vLLM, etc.)
-    LLM_ENDPOINT_URL=https://api.openai.com/v1
-    LLM_ENDPOINT_API_KEY=sk-...  # Optional: omit for no-key endpoints like ollama
+    OPENAI_BASE_URL=https://api.openai.com/v1
+    OPENAI_API_KEY=sk-...  # Use OPENAI_API_KEY for all endpoints (OpenAI, LiteLLM, ollama, etc.)
     
     # Embedding Configuration
     EMBEDDING_PROVIDER=openai    # Options: openai, anthropic, llamacpp
@@ -142,7 +140,7 @@ CONFIG FILE FORMAT:
     SEMANTIC_TOP_K=3
     SEMANTIC_SIMILARITY_THRESHOLD=0.3
 
-  Required: OPENAI_API_KEY (unless using LLM_ENDPOINT_URL with no auth)
+  Required: OPENAI_API_KEY
   Optional: All other settings have sensible defaults
 
 EXAMPLES:
@@ -152,12 +150,6 @@ EXAMPLES:
   Non-interactive with config file:
     $0 --config install-skill-router.conf
     $0 -c /path/to/config
-
-  Custom endpoint (no-key mode like ollama):
-    $0 -c install-skill-router.conf
-    # In config file:
-    # LLM_ENDPOINT_URL=http://localhost:11434/v1
-    # LLM_ENDPOINT_API_KEY=dummy  # Required but not validated
 
 EOF
 }
@@ -354,7 +346,7 @@ parse_config_file() {
   
   # Track known variables for validation
   declare -A known_vars=()
-  for var in OPENAI_API_KEY PORT LLM_PROVIDER LLM_MODEL EMBEDDING_MODEL ANTHROPIC_API_KEY LLAMACPP_URL EMBEDDING_PROVIDER GITHUB_ENABLED GITHUB_TOKEN SSH_KEY_PATH SSH_AGENT_SOCKET SSH_KNOWN_HOSTS AUTO_SKILL_ENABLED AUTO_SKILL_CONTRIBUTE AUTO_SKILL_MODEL LLM_ENDPOINT_URL LLM_ENDPOINT_API_KEY OPENAI_BASE_URL GITHUB_RAW_BASE_URL GITHUB_SKILLS_REPO SYNC_INTERVAL MAX_SKILLS LINK_FOLLOWING_ENABLED ALLOW_EXTERNAL_LINKS MAX_LINK_DEPTH MAX_EXTERNAL_SIZE_KB EXTERNAL_COMPRESSION_MODE JS_RENDERING_ENABLED JS_RENDER_TIMEOUT_MS JS_RENDER_FALLBACK LINK_RESOLUTION_MODE SEMANTIC_TOP_K SEMANTIC_SIMILARITY_THRESHOLD; do
+  for var in OPENAI_API_KEY PORT LLM_PROVIDER LLM_MODEL EMBEDDING_MODEL ANTHROPIC_API_KEY LLAMACPP_URL EMBEDDING_PROVIDER GITHUB_ENABLED GITHUB_TOKEN SSH_KEY_PATH SSH_AGENT_SOCKET SSH_KNOWN_HOSTS AUTO_SKILL_ENABLED AUTO_SKILL_CONTRIBUTE AUTO_SKILL_MODEL OPENAI_BASE_URL GITHUB_RAW_BASE_URL GITHUB_SKILLS_REPO SYNC_INTERVAL MAX_SKILLS LINK_FOLLOWING_ENABLED ALLOW_EXTERNAL_LINKS MAX_LINK_DEPTH MAX_EXTERNAL_SIZE_KB EXTERNAL_COMPRESSION_MODE JS_RENDERING_ENABLED JS_RENDER_TIMEOUT_MS JS_RENDER_FALLBACK LINK_RESOLUTION_MODE SEMANTIC_TOP_K SEMANTIC_SIMILARITY_THRESHOLD; do
     known_vars[$var]=1
   done
   
@@ -563,13 +555,13 @@ select_model_interactive() {
     
     # Get user selection
      prompt "Select a model by number (or 0 to enter custom): "
-     read -r -t 0 choice || choice=""
+     read -r choice || choice=""
      
      if [[ "$choice" =~ ^[0-9]+$ ]]; then
        if [[ "$choice" -eq 0 ]]; then
          # Custom model entry
          prompt "Enter custom ${model_type} model name (default: $default_model): "
-         read -r -t 0 custom_model || custom_model=""
+         read -r custom_model || custom_model=""
          echo "${custom_model:-$default_model}"
          return 0
        elif [[ "$choice" -ge 1 && "$choice" -le ${#models[@]} ]]; then
@@ -579,7 +571,7 @@ select_model_interactive() {
          echo ""
          echo -e "  ${CYAN}Selected:${RESET} $selected_model"
          prompt "Confirm this selection? (Y/n)"
-         read -r -t 0 response || response=""
+         read -r response || response=""
          response="${response:-Y}"
         
         if [[ "$response" =~ ^[Yy]$ ]]; then
@@ -599,7 +591,7 @@ select_model_interactive() {
   echo -e "  ${YELLOW}Ensure your API key is valid and you have internet connectivity.${RESET}"
   echo ""
   prompt "Enter ${model_type} model name (default: $default_model): "
-   read -r -t 0 custom_model || custom_model=""
+   read -r custom_model || custom_model=""
    local result="${custom_model:-$default_model}"
   echo "$result"
   echo -e "${BLUE}[DEBUG] select_model_interactive returning: '$result'${RESET}" >&2
@@ -619,25 +611,26 @@ print_header() {
 }
 
 show_intro() {
+  local mode="${1:-interactive}"
+  
   print_header
-  echo -e "${BOLD}Welcome!${RESET} This interactive installer will help you configure the Skill Router."
   echo ""
+  echo "Welcome to the Skill Router installation script!"
   echo "This script will:"
   echo "  1. Ask you to configure your API keys and settings"
   echo "  2. Build and start the Skill Router Docker container"
   echo "  3. Optionally integrate with OpenCode or Claude"
   echo ""
-  echo -e "${CYAN}Press Enter to begin...${RESET}"
   
-  # Debug: Check if running in interactive mode
-  if is_interactive; then
-    echo -e "${BLUE}[DEBUG] Interactive mode detected${RESET}" >&2
-  else
-    err "[DEBUG] Non-interactive mode detected (no stdin terminal)"
-    err "Cannot read input in non-interactive mode"
-    exit 1
+  if ! is_interactive; then
+    err "Non-interactive mode detected (no stdin terminal)."
+    err "Skipping intro — proceeding with defaults. Use --config or -c for fully automated setup."
+    sleep 1
+    return 0
   fi
-  read -r -t 0 || true
+  
+  echo -e "${CYAN}Press Enter to begin...${RESET}"
+  read -r || true
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -735,7 +728,7 @@ configure_variable() {
   
  # Ask user
    prompt "Keep current value? (Y/n)"
-   read -r -t 0 response || response=""
+   read -r response || response=""
    response="${response:-Y}"
    
    if [[ "$response" =~ ^[Yy]$ ]]; then
@@ -750,7 +743,7 @@ configure_variable() {
      prompt "Enter new value:"
    fi
    
-   read -r -t 0 new_value || new_value=""
+   read -r new_value || new_value=""
    new_value="${new_value:-$default_value}"
   
   # NOTE: Do not escape $/`/" here. Values flow into `declare -g` (no expansion)
@@ -878,7 +871,7 @@ configure_llm_model() {
          err "Cannot read input in non-interactive mode"
          exit 1
        fi
-       read -r -t 0 retry_response || retry_response=""
+       read -r retry_response || retry_response=""
        retry_response="${retry_response:-Y}"
       
       if [[ ! "$retry_response" =~ ^[Yy]$ ]]; then
@@ -969,7 +962,7 @@ configure_embedding_model() {
          err "Cannot read input in non-interactive mode"
          exit 1
        fi
-       read -r -t 0 retry_response || retry_response=""
+       read -r retry_response || retry_response=""
        retry_response="${retry_response:-Y}"
       
       if [[ ! "$retry_response" =~ ^[Yy]$ ]]; then
@@ -1259,7 +1252,7 @@ get_final_confirmation() {
       err "Cannot read input in non-interactive mode"
       exit 1
     fi
-    read -r -t 0 response || response=""
+    read -r response || response=""
     response="${response:-Y}"
   
   if [[ "$response" =~ ^[Yy]$ ]]; then
@@ -1518,12 +1511,7 @@ run_installation() {
   # no literal quote characters, no shell escaping artifacts)
   ENV_ARGS=()
   ENV_ARGS+=(-e "OPENAI_API_KEY=${OPENAI_API_KEY:-}")
-  # OPENAI_BASE_URL takes precedence; fall back to LLM_ENDPOINT_URL for backward compat
-  if [[ -n "${OPENAI_BASE_URL:-}" ]]; then
-    ENV_ARGS+=(-e "OPENAI_BASE_URL=$OPENAI_BASE_URL")
-  elif [[ -n "${LLM_ENDPOINT_URL:-}" ]]; then
-    ENV_ARGS+=(-e "OPENAI_BASE_URL=$LLM_ENDPOINT_URL")
-  fi
+  [[ -n "${OPENAI_BASE_URL:-}" ]] && ENV_ARGS+=(-e "OPENAI_BASE_URL=$OPENAI_BASE_URL")
   ENV_ARGS+=(-e "LLM_PROVIDER=${LLM_PROVIDER:-openai}")
   # For llamacpp, use local-model; otherwise use configured model
   if [[ "$LLM_PROVIDER" == "llamacpp" ]]; then
@@ -2068,15 +2056,13 @@ if [[ "$MODE" == "noninteractive" ]]; then
   fi
   
   # Validate required settings for non-interactive mode
-  if [[ -z "$OPENAI_API_KEY" && -z "$LLM_ENDPOINT_URL" && -z "${OPENAI_BASE_URL:-}" ]]; then
-    err "OPENAI_API_KEY, OPENAI_BASE_URL, or LLM_ENDPOINT_URL is required in non-interactive mode"
+  if [[ -z "$OPENAI_API_KEY" && -z "${OPENAI_BASE_URL:-}" ]]; then
+    err "OPENAI_API_KEY or OPENAI_BASE_URL is required in non-interactive mode"
     echo "See: $0 --help"
     exit 1
   fi
-  
-  # Validate URLs if set
-  if [[ -n "${LLM_ENDPOINT_URL:-}" ]]; then
-    if ! validate_url "$LLM_ENDPOINT_URL" "LLM_ENDPOINT_URL"; then
+  if [[ -n "${OPENAI_BASE_URL:-}" ]]; then
+    if ! validate_url "$OPENAI_BASE_URL" "OPENAI_BASE_URL"; then
       echo "See: $0 --help"
       exit 1
     fi
@@ -2090,7 +2076,7 @@ if [[ "$MODE" == "noninteractive" ]]; then
   # Default values for non-interactive mode (must be set before run_installation
   # because set -euo pipefail requires all variables to be bound)
   OPENAI_API_KEY="${OPENAI_API_KEY:-}"
-  OPENAI_BASE_URL="${OPENAI_BASE_URL:-${LLM_ENDPOINT_URL:-}}"
+  OPENAI_BASE_URL="${OPENAI_BASE_URL:-}"
   PORT="${PORT:-3000}"
   LLM_PROVIDER="${LLM_PROVIDER:-openai}"
   LLM_MODEL="${LLM_MODEL:-}"
@@ -2128,7 +2114,7 @@ else
   
   # Default values for interactive mode
   OPENAI_API_KEY="${OPENAI_API_KEY:-}"
-  OPENAI_BASE_URL="${OPENAI_BASE_URL:-${LLM_ENDPOINT_URL:-}}"
+  OPENAI_BASE_URL="${OPENAI_BASE_URL:-}"
   PORT="${PORT:-3000}"
   LLM_PROVIDER="${LLM_PROVIDER:-openai}"
   LLM_MODEL="${LLM_MODEL:-}"
@@ -2203,7 +2189,7 @@ else
         err "Cannot read input in non-interactive mode"
         exit 1
       fi
-      read -r -t 0 choice || choice=""
+      read -r choice || choice=""
      
      case "$choice" in
       1) configure_required_api ;;
