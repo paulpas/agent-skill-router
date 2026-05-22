@@ -303,7 +303,7 @@ flowchart LR
 Vector search finds semantically similar skills, but it can't distinguish subtleties. The LLM ranker understands that "SQL injection in Python code" is primarily a **security** concern, not just a **code review** concern — and scores `coding-security-review` higher than `coding-code-review`.
 
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph Vector["Vector Search Results"]
         direction TB
         V1["coding-code-review: 0.87"]
@@ -311,20 +311,18 @@ flowchart LR
         V3["coding-python-practices: 0.79"]
         V4["coding-sql-patterns: 0.71"]
     end
-    
-    subgraph ReRank["LLM Ranker Output"]
+
+    Vector -->|"Re-rank with LLM"| ReRank
+
+    subgraph ReRank["LLM Ranker Output (Re-ordered)"]
         direction TB
-        R1["coding-security-review"]
-        R2["0.95 — 'SQL injection is"]
-        R3["a security issue'"]
-        R4["coding-code-review"]
-        R5["0.72 — 'general review"]
-        R6["practices apply'"]
-        R7["coding-sql-patterns"]
-        R8["0.45 — 'too general'"]
+        R1["1. coding-security-review — 0.95"]
+        R2["    'SQL injection is a security concern'"]
+        R3["2. coding-code-review — 0.72"]
+        R4["    'general review practices apply'"]
+        R5["3. coding-sql-patterns — 0.45"]
+        R6["    'too general for this task'"]
     end
-    
-    Vector --> ReRank
 ```
 
 ### 3. Token-Efficient Compression
@@ -342,23 +340,26 @@ Skills are loaded at progressive compression levels (0–10+), saving 5–85% of
 ### 4. Multi-Tier Loading Eliminates Single Points of Failure
 
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph Standard["Industry Standard"]
         direction TB
-        S1["Loading path:"] --> S2["GitHub raw URL"]
+        S1["Single loading path:"] --> S2["GitHub raw URL"]
         S2 --> S3["▼"]
-        S3 --> S4["[Single point of failure]"]
-        S4 --> S5["GitHub down →<br/>No skills loaded"]
+        S3 --> S4["⚠ Single point of failure"]
+        S4 --> S5["GitHub down = No skills loaded"]
     end
-    
+
     subgraph Router["Agent-Skill-Router"]
         direction TB
-        R0["Loading tiers:"]
-        R1["1. Memory cache (~0ms, 84% hit)"]
-        R2["2. Disk cache (~5ms)"]
-        R3["3. GitHub raw URL (~200ms)"]
-        R4["4. Git clone (~2s, fallback)"]
-        R5["Any tier down → Next tier takes over"]
+        R0["Four-tier cascading fallback:"]
+        R1["Tier 1: Memory cache (~0ms, 84% hit)"]
+        R2["Tier 2: Disk cache (~5ms)"]
+        R3["Tier 3: GitHub raw URL (~200ms)"]
+        R4["Tier 4: Git clone (~2s)"]
+        R1 -->|"cache miss"| R2
+        R2 -->|"disk miss"| R3
+        R3 -->|"network fail"| R4
+        R4 --> R5["✓ Skills always load"]
     end
 ```
 
@@ -515,21 +516,24 @@ The agent-skill-router project doesn't replace SKILL.md. It **supercharges** it.
 The result: an AI agent that goes from helpful generalist to **domain specialist on demand** — without the user knowing a skill system even exists. That's the evolution from static skills to intelligent routing.
 
 ```mermaid
-flowchart LR
-    subgraph Before["Before"]
+flowchart TD
+    subgraph Before["Before: Industry Standard"]
         direction TB
-        B1["SKILL.md file"] --> B2["Trigger matching<br/>(keywords)"]
-        B2 --> B3["Full content injected<br/>into agent context"]
+        B1["SKILL.md file"] --> B2["Trigger matching (keywords)"]
+        B2 --> B3["Full content injected into agent context"]
     end
-    
-    subgraph After["After"]
+
+    Before -->|"↓ evolves to"| After
+
+    subgraph After["After: Agent-Skill-Router"]
         direction TB
-        A1["SKILL.md file<br/>(same, zero changes)"]
-        A1 --> A2["6-stage pipeline<br/>Safety→Embed→Vector<br/>→LLM→Filter→Plan"]
+        A1["Same SKILL.md file (zero changes)"]
+        A1 --> A2["6-stage pipeline<br/>Safety→Embed→Vector→<br/>LLM→Filter→Plan"]
         A2 --> A3["Compressed, ranked,<br/>planned skill content<br/>injected into context"]
     end
-    
-    After -.->|"Richer, smarter loading<br/>with zero user effort"| After
+
+    Outcome["Richer, smarter loading<br/>with zero user effort"]
+    After --> Outcome
 ```
 
 ---
