@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T09:13:13.207418Z",
-  "totalSkills": 787,
+  "generatedAt": "2026-05-22T10:11:59.739390Z",
+  "totalSkills": 789,
   "domains": {
     "agent": 256,
     "cncf": 173,
-    "coding": 228,
+    "coding": 230,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 379,
+    "implementation": 381,
     "reference": 169,
     "information": 1,
     "review": 5
@@ -4517,6 +4517,35 @@
       "source": "skills/coding/creational-design-patterns/SKILL.md"
     },
     {
+      "name": "cross-domain-workflow-sagas",
+      "domain": "coding",
+      "description": "Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns — compensating actions, timeout handling, distributed state persistence, and failure recovery in domain-driven systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "saga pattern",
+        "saga orchestration",
+        "saga choreography",
+        "cross-domain workflow",
+        "compensating action",
+        "distributed transaction",
+        "how do i coordinate across bounded contexts",
+        "business transaction consistency",
+        "eventual consistency",
+        "multi-context workflow"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "ddd-context-mapping",
+        "event-driven-patterns",
+        "cqrs-pattern",
+        "domain-events"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/cross-domain-workflow-sagas/SKILL.md"
+    },
+    {
       "name": "cross-validation",
       "domain": "coding",
       "description": "\"Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies\"",
@@ -5766,6 +5795,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/documentation/SKILL.md"
+    },
+    {
+      "name": "domain-architecture-project-structure",
+      "domain": "coding",
+      "description": "Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "project structure",
+        "module organization",
+        "vertical slice",
+        "modular monolith",
+        "DDD layout",
+        "how do i organize a ddd project",
+        "domain driven architecture",
+        "clean directory structure",
+        "layer separation"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "hexagonal-architecture",
+        "ports-patterns",
+        "monolith-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/domain-architecture-project-structure/SKILL.md"
     },
     {
       "name": "domain-driven-design",
