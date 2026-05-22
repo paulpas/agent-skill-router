@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
-  related-skills: python-testing-strategies, go-concurrency-patterns
+  related-skills: python-testing-strategies, go-concurrency-patterns, python-package-publishing
 ---
 
 # Modern Python Development (3.10+)

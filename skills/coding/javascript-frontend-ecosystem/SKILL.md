@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, examples, do-dont]
-  related-skills: coding-frontend-testing-patterns, coding-package-publishing-workflows, agent-task-routing
+  related-skills: coding-frontend-testing-patterns, javascript-package-workflows, agent-task-routing
 ---
 
 # JavaScript Frontend Ecosystem Architect

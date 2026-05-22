@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
-  related-skills: framework-requirements, engineering-principles, dry-principles, code-quality-policies, pydantic-models
+  related-skills: framework-requirements, engineering-principles, dry-principles, code-quality-policies, pydantic-models, python-package-publishing
 ---
 
 # Python Module & Package Structure Manager

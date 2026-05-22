@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
-  related-skills: secure-release-pipeline, test-driven-development, semver-automation, git-branching-strategies
+  related-skills: secure-release-pipeline, test-driven-development, semver-automation, git-branching-strategies, python-package-publishing, javascript-package-workflows
 ---
 
 # Software Delivery Pipeline Manager

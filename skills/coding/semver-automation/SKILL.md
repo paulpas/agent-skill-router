@@ -13,7 +13,7 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: cve-dependency-management, git-advanced, git-branching-strategies
+  related-skills: cve-dependency-management, git-advanced, git-branching-strategies, javascript-package-workflows
   role: implementation
   scope: implementation
   triggers: semantic versioning, semver, version bumping, conventional commits, semantic-release, changelog automation, release
