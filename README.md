@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 801 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 803 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 801 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 803 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> 55656550b (feat: add new skill - rag-architecture)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **801 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **803 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 =======
-- 🎯 **801 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **803 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 >>>>>>> 55656550b (feat: add new skill - rag-architecture)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 258 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 239 | Software patterns, security, testing, data science |
+| Coding | 241 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -285,9 +285,15 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 13:05:32 UTC  
+<<<<<<< HEAD
+> **Last updated:** 2026-05-22 18:06:04 UTC  
 > **Total skills:** 801  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (801 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+=======
+> **Last updated:** 2026-05-22 13:38:35 UTC  
+> **Total skills:** 803  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (803 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+>>>>>>> b5074393f (feat: add Django best practices and FastAPI development skills)
 
 ## Skills by Domain
 
@@ -735,7 +741,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (239 skills)
+### Coding (241 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -818,6 +824,7 @@ MIT — All skills are freely available and redistributable.
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" | dimensionality reduction, PCA, t-SNE, UMAP, feature extraction, how do i reduce dimensions |
 | [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. | distributed systems, consensus algorithm, CAP theorem, eventual consistency, data replication, partitioning strategy, Raft, Paxos, vector clocks, service discovery, two-phase commit, distributed transactions, clock synchronization, consistent hashing |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | distribution fitting, goodness-of-fit, fitting distributions, distribution selection, how do i fit |
+| [django-best-practices](skills/coding/django-best-practices/SKILL.md) | Implements Django 5.x application patterns including modern project structure, ORM optimization, class-based and function views, DRF integration, async views, caching strategies, and settings management for production-ready web applications. | django, django best practices, django project structure, orm optimization, class-based views, drf, django rest framework, django async, django caching, settings management, production django |
 | [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. | project structure, module organization, vertical slice, modular monolith, DDD layout, how do i organize a ddd project, domain driven architecture, clean directory structure, layer separation |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | domain events, domain event, event publishing, event handler, event dispatcher, in-process event bus, how do i decouple aggregates, idempotent event handling |
@@ -835,6 +842,7 @@ MIT — All skills are freely available and redistributable.
 | [event-storming](skills/coding/event-storming/SKILL.md) | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. | event storming, eventstorming, domain discovery, workshop facilitation, bounded context, domain events, sticky notes, collaborative modeling |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | experimental design, DOE, factorial design, randomization, blocking, how do I design experiments |
 | [explainability](skills/coding/explainability/SKILL.md) | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" | explainability, interpretability, transparency, understanding models, how do I explain predictions |
+| [fastapi-development](skills/coding/fastapi-development/SKILL.md) | Implements FastAPI application patterns including dependency injection, Pydantic v2 models, async handlers, JWT authentication, middleware chains, background tasks, and production deployment strategies for high-performance Python web services. | fastapi, fastapi development, dependency injection, pydantic v2, async endpoints, jwt authentication, fastapi middleware, background tasks, starlette, uvicorn, python web framework, fastapi production |
 | [feature-engineering](skills/coding/feature-engineering/SKILL.md) | "Creates and transforms features including polynomial features, interactions, domain-specific features, and feature transformations" | feature engineering, feature creation, feature transformation, how do I engineer features, feature design |
 | [feature-flags-progressive-delivery](skills/coding/feature-flags-progressive-delivery/SKILL.md) | Implements feature flag systems with progressive delivery, A/B testing, and gradual rollout strategies for safe application-level feature deployment without code changes. | feature flags, progressive delivery, canary release, A/B testing, flag management, gradual rollout, feature toggle, percentage rollout, how do i safely roll out new features, experiment flags |
 | [feature-interaction](skills/coding/feature-interaction/SKILL.md) | "Provides Discovers and engineers feature interactions including polynomial interactions, cross-features, and interaction detection methods" | feature interaction, interaction terms, polynomial features, cross-features, feature interactions |
@@ -1155,7 +1163,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (389 skills)
+### Implementation (Build Features) (391 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1266,6 +1274,7 @@ MIT — All skills are freely available and redistributable.
 | [disaster-recovery](skills/cncf/disaster-recovery/SKILL.md) | Cncf | Implements comprehensive disaster recovery planning for Kubernetes clusters with backup strategies, recovery procedures, cross-region replication, RPO/RTO planning, and validation workflows. |
 | [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Coding | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" |
+| [django-best-practices](skills/coding/django-best-practices/SKILL.md) | Coding | Implements Django 5.x application patterns including modern project structure, ORM optimization, class-based and function views, DRF integration, async views, caching strategies, and settings management for production-ready web applications. |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization |
 | [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Coding | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. |
@@ -1289,6 +1298,7 @@ MIT — All skills are freely available and redistributable.
 | [explainable-ai](skills/trading/explainable-ai/SKILL.md) | Trading | "Provides Explainable AI for understanding and trusting trading model decisions" |
 | [failover-handling](skills/trading/failover-handling/SKILL.md) | Trading | "Provides Automated failover and redundancy management for exchange connectivity" |
 | [false-signal-filtering](skills/trading/false-signal-filtering/SKILL.md) | Trading | "Provides False Signal Filtering Techniques for Robust Technical Analysis" |
+| [fastapi-development](skills/coding/fastapi-development/SKILL.md) | Coding | Implements FastAPI application patterns including dependency injection, Pydantic v2 models, async handlers, JWT authentication, middleware chains, background tasks, and production deployment strategies for high-performance Python web services. |
 | [feature-engineering](skills/coding/feature-engineering/SKILL.md) | Coding | "Creates and transforms features including polynomial features, interactions, domain-specific features, and feature transformations" |
 | [feature-engineering](skills/trading/feature-engineering/SKILL.md) | Trading | "Implements create actionable trading features from raw market data for risk management and algorithmic trading execution." |
 | [feature-flags-progressive-delivery](skills/coding/feature-flags-progressive-delivery/SKILL.md) | Coding | Implements feature flag systems with progressive delivery, A/B testing, and gradual rollout strategies for safe application-level feature deployment without code changes. |
@@ -2225,6 +2235,7 @@ MIT — All skills are freely available and redistributable.
 | [dispatching-parallel-agents](skills/agent/dispatching-parallel-agents/SKILL.md) | Agent | Implements intelligent dispatching parallel agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Coding | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. | Implementation |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | Implementation |
+| [django-best-practices](skills/coding/django-best-practices/SKILL.md) | Coding | Implements Django 5.x application patterns including modern project structure, ORM optimization, class-based and function views, DRF integration, async views, caching strategies, and settings management for production-ready web applications. | Implementation |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization | Implementation |
 | [documentation](skills/agent/documentation/SKILL.md) | Agent | Implements intelligent documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Coding | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. | Implementation |
@@ -2268,6 +2279,7 @@ MIT — All skills are freely available and redistributable.
 | [fal-audio](skills/agent/fal-audio/SKILL.md) | Agent | Implements intelligent fal audio with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [falco](skills/cncf/falco/SKILL.md) | Cncf | "Provides Falco in Cloud-Native Engineering - Cloud Native Runtime Security" | Reference |
 | [false-signal-filtering](skills/trading/false-signal-filtering/SKILL.md) | Trading | "Provides False Signal Filtering Techniques for Robust Technical Analysis" | Implementation |
+| [fastapi-development](skills/coding/fastapi-development/SKILL.md) | Coding | Implements FastAPI application patterns including dependency injection, Pydantic v2 models, async handlers, JWT authentication, middleware chains, background tasks, and production deployment strategies for high-performance Python web services. | Implementation |
 | [feature-engineering](skills/coding/feature-engineering/SKILL.md) | Coding | "Creates and transforms features including polynomial features, interactions, domain-specific features, and feature transformations" | Implementation |
 | [feature-engineering](skills/trading/feature-engineering/SKILL.md) | Trading | "Implements create actionable trading features from raw market data for risk management and algorithmic trading execution." | Implementation |
 | [feature-flags-progressive-delivery](skills/coding/feature-flags-progressive-delivery/SKILL.md) | Coding | Implements feature flag systems with progressive delivery, A/B testing, and gradual rollout strategies for safe application-level feature deployment without code changes. | Implementation |

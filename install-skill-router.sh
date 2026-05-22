@@ -1263,6 +1263,219 @@ get_final_confirmation() {
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
+# TUI-based Configuration System
+# ─────────────────────────────────────────────────────────────────────────────
+
+# TUI state variables
+tui_current_field=0
+tui_exit=false
+
+# Field definitions: label|var_name|type|default|options
+# Types: text, password, toggle, select
+tui_fields=(
+    "OpenAI API Key|OPENAI_API_KEY|password|"
+    "LLM Provider|LLM_PROVIDER|select|openai,anthropic,llamacpp"
+    "LLM Model|LLM_MODEL|text|gpt-4o-mini"
+    "OpenAI Base URL|OPENAI_BASE_URL|text|"
+    "Embedding Provider|EMBEDDING_PROVIDER|select|openai,llamacpp"
+    "Embedding Model|EMBEDDING_MODEL|text|text-embedding-3-small"
+    "Anthropic API Key|ANTHROPIC_API_KEY|password|"
+    "LlamaCPP URL|LLAMACPP_URL|text|http://host.docker.internal:8080"
+    "Port|PORT|text|3000"
+    "GitHub Integration|GITHUB_ENABLED|toggle|true"
+    "GitHub Token|GITHUB_TOKEN|password|"
+    "Auto-Skill Generation|AUTO_SKILL_ENABLED|toggle|true"
+    "Auto-Skill Contribute|AUTO_SKILL_CONTRIBUTE|toggle|true"
+    "Auto-Skill Model|AUTO_SKILL_MODEL|text|gpt-4o-mini"
+    "Link Following|LINK_FOLLOWING_ENABLED|toggle|false"
+    "Allow External Links|ALLOW_EXTERNAL_LINKS|toggle|false"
+    "Max External Size (KB)|MAX_EXTERNAL_SIZE_KB|text|10"
+    "Compression Mode|EXTERNAL_COMPRESSION_MODE|select|brief,moderate,detailed"
+    "JS Rendering|JS_RENDERING_ENABLED|toggle|false"
+    "Link Resolution Mode|LINK_RESOLUTION_MODE|select|inline,semantic,compressed"
+)
+
+tui_draw_header() {
+    clear
+    tput cup 0 0
+    echo -e "${BOLD}${CYAN}╔══════════════════════════════════════════════════════════════════════════════╗${RESET}"
+    echo -e "${BOLD}${CYAN}║                     Skill Router Configuration TUI                           ║${RESET}"
+    echo -e "${BOLD}${CYAN}╚══════════════════════════════════════════════════════════════════════════════╝${RESET}"
+    echo -e " ${BOLD}Navigation:${RESET} [↑↓] Move  [Tab] Next  [Enter] Edit/Toggle  [Ctrl+S] Save  [Esc] Quit"
+    echo " ──────────────────────────────────────────────────────────────────────────────"
+}
+
+tui_draw_field() {
+    local idx="$1"
+    local highlighted="$2"
+    local field_data="${tui_fields[$idx]}"
+    
+    local OLDIFS="$IFS"
+    IFS='|' read -r label var_name type extra <<< "$field_data"
+    IFS="$OLDIFS"
+    
+    local value="${!var_name:-}"
+    
+    tput cup $((idx + 5)) 2
+    
+    if [[ "$highlighted" == "true" ]]; then
+        echo -ne "${BOLD}${YELLOW}> ${RESET}"
+        tput rev
+    else
+        echo -ne "  "
+    fi
+    
+    printf "%-25s : " "$label"
+    
+    case "$type" in
+        password)
+            if [[ -n "$value" ]]; then
+                echo -n "********"
+            else
+                echo -ne "${YELLOW}(empty)${RESET}"
+            fi
+            ;;
+        toggle)
+            if [[ "$value" == "true" ]]; then
+                echo -ne "${GREEN}[Enabled]${RESET}"
+            else
+                echo -ne "${RED}[Disabled]${RESET}"
+            fi
+            ;;
+        select|text)
+            if [[ -n "$value" ]]; then
+                echo -n "$value"
+            else
+                echo -ne "${YELLOW}(empty)${RESET}"
+            fi
+            ;;
+    esac
+    
+    tput sgr0
+    echo " "
+}
+
+tui_handle_selection() {
+    local idx="$tui_current_field"
+    local field_data="${tui_fields[$idx]}"
+    
+    local OLDIFS="$IFS"
+    IFS='|' read -r label var_name type extra <<< "$field_data"
+    IFS="$OLDIFS"
+    
+    case "$type" in
+        toggle)
+            if [[ "${!var_name:-}" == "true" ]]; then
+                declare -g "$var_name=false"
+            else
+                declare -g "$var_name=true"
+            fi
+            ;;
+        text|password)
+            tui_edit_text "$label" "$var_name" "$type"
+            ;;
+        select)
+            tui_select_option "$label" "$var_name" "$extra"
+            ;;
+    esac
+}
+
+tui_edit_text() {
+    local label="$1"
+    local var_name="$2"
+    local type="$3"
+    
+    tput cnorm
+    stty echo
+    
+    tput cup $((tui_current_field + 5)) 30
+    tput el
+    echo -n "Edit: "
+    read -r val
+    
+    if [[ -n "$val" ]]; then
+        declare -g "$var_name=$val"
+    fi
+    
+    stty -echo
+    tput civis
+}
+
+tui_select_option() {
+    local label="$1"
+    local var_name="$2"
+    local options_str="$3"
+    
+    local OLDIFS="$IFS"
+    IFS=',' read -r -a options <<< "$options_str"
+    IFS="$OLDIFS"
+    
+    local current_val="${!var_name:-${options[0]}}"
+    local current_idx=0
+    
+    for i in "${!options[@]}"; do
+        if [[ "${options[$i]}" == "$current_val" ]]; then
+            current_idx=$i
+            break
+        fi
+    done
+    
+    current_idx=$(( (current_idx + 1) % ${#options[@]} ))
+    declare -g "$var_name=${options[$current_idx]}"
+}
+
+tui_main_menu() {
+    if ! command -v tput &>/dev/null || ! command -v stty &>/dev/null; then
+        err "TUI requires 'tput' and 'stty'. Falling back to non-interactive mode."
+        return 0
+    fi
+
+    local old_stty_cfg
+    old_stty_cfg=$(stty -g)
+    
+    trap 'tput cnorm; stty "$old_stty_cfg"; exit' INT TERM
+    
+    stty -echo -icanon
+    tput civis
+    
+    while ! $tui_exit; do
+        tui_draw_header
+        
+        for i in "${!tui_fields[@]}"; do
+            tui_draw_field "$i" "$([[ $i -eq $tui_current_field ]] && echo 'true' || echo 'false')"
+        done
+        
+        local key
+        read -rsn1 key
+        if [[ "$key" == $'\x1b' ]]; then
+            read -rsn2 -t 0.01 key
+            case "$key" in
+                '[A') ((tui_current_field--)) ;;
+                '[B') ((tui_current_field++)) ;;
+                '[Z') ((tui_current_field--)) ;;
+            esac
+        else
+            case "$key" in
+                "k") ((tui_current_field--)) ;;
+                "j") ((tui_current_field++)) ;;
+                $'\t') ((tui_current_field++)) ;;
+                "") tui_handle_selection ;;
+                $'\x13') tui_exit=true ;;
+                $'\x1b') tui_exit=true ;;
+                $'\x03') tput cnorm; stty "$old_stty_cfg"; exit 0 ;;
+            esac
+        fi
+        
+        if [[ $tui_current_field -lt 0 ]]; then tui_current_field=$((${#tui_fields[@]} - 1)); fi
+        if [[ $tui_current_field -ge ${#tui_fields[@]} ]]; then tui_current_field=0; fi
+    done
+    
+    tput cnorm
+    stty "$old_stty_cfg"
+    clear
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Main installation functions (preserving original functionality)
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -2109,117 +2322,49 @@ if [[ "$MODE" == "noninteractive" ]]; then
 
   run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR"
 else
-  # Interactive mode (existing behavior)
-  show_intro
-  
-  # Default values for interactive mode
-  OPENAI_API_KEY="${OPENAI_API_KEY:-}"
-  OPENAI_BASE_URL="${OPENAI_BASE_URL:-}"
-  PORT="${PORT:-3000}"
-  LLM_PROVIDER="${LLM_PROVIDER:-openai}"
-  LLM_MODEL="${LLM_MODEL:-}"
-  EMBEDDING_MODEL="${EMBEDDING_MODEL:-}"
-  ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
-  LLAMACPP_URL="${LLAMACPP_URL:-http://host.docker.internal:8080}"
-  EMBEDDING_PROVIDER="${EMBEDDING_PROVIDER:-openai}"
-  GITHUB_ENABLED="${GITHUB_ENABLED:-true}"
-  GITHUB_TOKEN="${GITHUB_TOKEN:-}"
-  GITHUB_RAW_BASE_URL="${GITHUB_RAW_BASE_URL:-https://raw.githubusercontent.com/paulpas/skills/main}"
-  GITHUB_SKILLS_REPO="${GITHUB_SKILLS_REPO:-https://github.com/paulpas/skills}"
-  SYNC_INTERVAL="${SYNC_INTERVAL:-3600}"
-  SSH_KEY_PATH="${SSH_KEY_PATH:-}"
-  SSH_AGENT_SOCKET="${SSH_AGENT_SOCKET:-}"
-  SSH_KNOWN_HOSTS="${SSH_KNOWN_HOSTS:-}"
-  AUTO_SKILL_ENABLED="${AUTO_SKILL_ENABLED:-true}"
-  AUTO_SKILL_CONTRIBUTE="${AUTO_SKILL_CONTRIBUTE:-true}"
-  AUTO_SKILL_MODEL="${AUTO_SKILL_MODEL:-gpt-4o-mini}"
-  LINK_FOLLOWING_ENABLED="${LINK_FOLLOWING_ENABLED:-false}"
-  ALLOW_EXTERNAL_LINKS="${ALLOW_EXTERNAL_LINKS:-false}"
-  MAX_LINK_DEPTH="${MAX_LINK_DEPTH:-2}"
-  MAX_EXTERNAL_SIZE_KB="${MAX_EXTERNAL_SIZE_KB:-10}"
-  EXTERNAL_COMPRESSION_MODE="${EXTERNAL_COMPRESSION_MODE:-brief}"
-  JS_RENDERING_ENABLED="${JS_RENDERING_ENABLED:-false}"
-  JS_RENDER_TIMEOUT_MS="${JS_RENDER_TIMEOUT_MS:-5000}"
-  JS_RENDER_FALLBACK="${JS_RENDER_FALLBACK:-true}"
-  LINK_RESOLUTION_MODE="${LINK_RESOLUTION_MODE:-inline}"
-  SEMANTIC_TOP_K="${SEMANTIC_TOP_K:-3}"
-  SEMANTIC_SIMILARITY_THRESHOLD="${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}"
+   # TUI-based interactive mode
+   show_intro
+   
+   # Default values for interactive mode
+   OPENAI_API_KEY="${OPENAI_API_KEY:-}"
+   OPENAI_BASE_URL="${OPENAI_BASE_URL:-}"
+   PORT="${PORT:-3000}"
+   LLM_PROVIDER="${LLM_PROVIDER:-openai}"
+   LLM_MODEL="${LLM_MODEL:-gpt-4o-mini}"
+   EMBEDDING_MODEL="${EMBEDDING_MODEL:-text-embedding-3-small}"
+   ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
+   LLAMACPP_URL="${LLAMACPP_URL:-http://host.docker.internal:8080}"
+   EMBEDDING_PROVIDER="${EMBEDDING_PROVIDER:-openai}"
+   GITHUB_ENABLED="${GITHUB_ENABLED:-true}"
+   GITHUB_TOKEN="${GITHUB_TOKEN:-}"
+   GITHUB_RAW_BASE_URL="${GITHUB_RAW_BASE_URL:-https://raw.githubusercontent.com/paulpas/skills/main}"
+   GITHUB_SKILLS_REPO="${GITHUB_SKILLS_REPO:-https://github.com/paulpas/skills}"
+   SYNC_INTERVAL="${SYNC_INTERVAL:-3600}"
+   SSH_KEY_PATH="${SSH_KEY_PATH:-}"
+   SSH_AGENT_SOCKET="${SSH_AGENT_SOCKET:-}"
+   SSH_KNOWN_HOSTS="${SSH_KNOWN_HOSTS:-}"
+   AUTO_SKILL_ENABLED="${AUTO_SKILL_ENABLED:-true}"
+   AUTO_SKILL_CONTRIBUTE="${AUTO_SKILL_CONTRIBUTE:-true}"
+   AUTO_SKILL_MODEL="${AUTO_SKILL_MODEL:-gpt-4o-mini}"
+   LINK_FOLLOWING_ENABLED="${LINK_FOLLOWING_ENABLED:-false}"
+   ALLOW_EXTERNAL_LINKS="${ALLOW_EXTERNAL_LINKS:-false}"
+   MAX_LINK_DEPTH="${MAX_LINK_DEPTH:-2}"
+   MAX_EXTERNAL_SIZE_KB="${MAX_EXTERNAL_SIZE_KB:-10}"
+   EXTERNAL_COMPRESSION_MODE="${EXTERNAL_COMPRESSION_MODE:-brief}"
+   JS_RENDERING_ENABLED="${JS_RENDERING_ENABLED:-false}"
+   JS_RENDER_TIMEOUT_MS="${JS_RENDER_TIMEOUT_MS:-5000}"
+   JS_RENDER_FALLBACK="${JS_RENDER_FALLBACK:-true}"
+   LINK_RESOLUTION_MODE="${LINK_RESOLUTION_MODE:-inline}"
+   SEMANTIC_TOP_K="${SEMANTIC_TOP_K:-3}"
+   SEMANTIC_SIMILARITY_THRESHOLD="${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}"
 
-  # Interactive configuration
-  configure_required_api
-  configure_provider_selection
-  configure_llm_model
-  configure_embedding_provider
-  configure_embedding_model
-  configure_anthropic_key
-  configure_llamacpp_url
-  configure_networking
-  configure_github
-  configure_github_token
-  configure_ssh
-  configure_auto_skill
-  configure_link_following
+   # TUI-based configuration
+   tui_main_menu
 
-  # Final confirmation loop
-  while true; do
-    if get_final_confirmation; then
-      break
-    fi
-    
-    # User wants to go back - which section to modify?
-    echo ""
-    echo "Which setting would you like to modify?"
-    echo "  1. OpenAI API Key"
-    echo "  2. LLM Provider"
-    echo "  3. LLM Model"
-    echo "  4. Embedding Provider"
-    echo "  5. Embedding Model"
-    echo "  6. Anthropic API Key"
-    echo "  7. llamacpp URL"
-    echo "  8. Port"
-    echo "  9. GitHub Integration"
-    echo "  10. GitHub Token"
-    echo "  11. SSH Configuration"
-    echo "  12. Auto-Skill Settings"
-    echo "  13. Link Following Configuration"
-     echo ""
-
-    prompt "Enter your choice (1-13) or 'q' to quit:"
-      if ! is_interactive; then
-        err "Cannot read input in non-interactive mode"
-        exit 1
-      fi
-      read -r choice || choice=""
-     
-     case "$choice" in
-      1) configure_required_api ;;
-      2) configure_provider_selection ;;
-      3) configure_llm_model ;;
-      4) configure_embedding_provider ;;
-      5) configure_embedding_model ;;
-      6) configure_anthropic_key ;;
-      7) configure_llamacpp_url ;;
-      8) configure_networking ;;
-      9) configure_github ;;
-      10) configure_github_token ;;
-      11) configure_ssh ;;
-      12) configure_auto_skill ;;
-      13) configure_link_following ;;
-      q|Q) 
-        echo "Installation cancelled."
-        exit 1
-        ;;
-      *) 
-        err "Invalid choice. Please try again."
-        sleep 1
-        ;;
-    esac
-  done
-  
-  # Run the actual installation
-  print_header
-  echo -e "${BOLD}Starting installation...${RESET}"
-  echo ""
-  
-  run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR"
+   # Run the actual installation
+   print_header
+   echo -e "${BOLD}Starting installation...${RESET}"
+   echo ""
+   
+   run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR"
 fi
