@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 796 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 797 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **796 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **797 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -96,7 +96,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Maker | 3 | DIY projects, IoT, home automation, 3D printing |
 | Programming | 6 | Algorithms, frameworks, language references |
 | Trading | 89 | Execution, risk management, ML models |
-| Writing | 2 | Technical writing, style guidance |
+| Writing | 3 | Technical writing, style guidance |
 ---
 
 ## Scripts
@@ -266,8 +266,8 @@ MIT — All skills are freely available and redistributable.
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
 > **Last updated:** 2026-05-22 15:28:19 UTC  
-> **Total skills:** 796  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (796 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Total skills:** 797  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (797 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -1120,11 +1120,12 @@ MIT — All skills are freely available and redistributable.
 | [your-routine](skills/trading/your-routine/SKILL.md) | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. | trading routine, pre-market prep, post-market review, daily trading checklist, execution discipline, trading habits, trade journal, market preparation, your routine, routine design |
 
 
-### Writing (2 skills)
+### Writing (3 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [em-dash-guide](skills/writing/em-dash-guide/SKILL.md) | Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation. | em dash, en dash, hyphen, dash typography, how do i type dashes, long dash, range notation, compound modifier, —, – |
+| [mermaid-diagrams](skills/writing/mermaid-diagrams/SKILL.md) | Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams, Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub. | mermaid, mermaidjs, diagram, flowchart, sequence diagram, how do i create a diagram, github markdown diagram, architecture diagram, diagram best practices |
 | [technical-documentation](skills/writing/technical-documentation/SKILL.md) | Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices. | technical documentation, how do i write docs, README, API documentation, getting started guide, architecture overview, developer experience, docs-as-code, documentation structure, markdown docs |
 
 ## Skills by Role
@@ -1521,7 +1522,7 @@ MIT — All skills are freely available and redistributable.
 | [your-routine](skills/trading/your-routine/SKILL.md) | Trading | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. |
 
 
-### Reference (Learn & Understand) (170 skills)
+### Reference (Learn & Understand) (171 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1637,6 +1638,7 @@ MIT — All skills are freely available and redistributable.
 | [load-balancer](skills/cncf/load-balancer/SKILL.md) | Cncf | Provides Distributes traffic across VMs with health probes and rule-based routing |
 | [longhorn](skills/cncf/longhorn/SKILL.md) | Cncf | "Longhorn in Cloud Native Storage - cloud native architecture, patterns" pitfalls, and best practices |
 | [manager](skills/cncf/manager/SKILL.md) | Cncf | "cert-manager in Cloud-Native Engineering - Certificate Management for" Kubernetes |
+| [mermaid-diagrams](skills/writing/mermaid-diagrams/SKILL.md) | Writing | Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams, Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub. |
 | [microprofile](skills/cncf/microprofile/SKILL.md) | Cncf | MicroProfile specification reference covering Config, OpenAPI, Fault Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events for cloud-native Java microservices. |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Coding | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. |
 | [monitor](skills/cncf/monitor/SKILL.md) | Cncf | "Provides Monitoring and logging for Azure resources with alerting and observability" |
@@ -2418,6 +2420,7 @@ MIT — All skills are freely available and redistributable.
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Coding | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | Implementation |
 | [memory-systems](skills/agent/memory-systems/SKILL.md) | Agent | Implements intelligent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [memory-usage-analyzer](skills/agent/memory-usage-analyzer/SKILL.md) | Agent | Implements intelligent memory usage analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [mermaid-diagrams](skills/writing/mermaid-diagrams/SKILL.md) | Writing | Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams, Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub. | Reference |
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems | Implementation |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Agent | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution | Implementation |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | Implementation |
