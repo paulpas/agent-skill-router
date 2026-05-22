@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T00:22:02.667639Z",
-  "totalSkills": 764,
+  "generatedAt": "2026-05-22T00:56:27.440123Z",
+  "totalSkills": 766,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 214,
+    "coding": 216,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 359,
+    "implementation": 361,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -8972,6 +8972,30 @@
       "source": "skills/cncf/jaeger/SKILL.md"
     },
     {
+      "name": "java-virtual-threads",
+      "domain": "coding",
+      "description": "Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "virtual threads",
+        "Project Loom",
+        "JEP 444",
+        "sealed classes",
+        "pattern matching switch",
+        "thread-per-request",
+        "Java concurrency"
+      ],
+      "relatedSkills": [
+        "async-programming",
+        "framework-performance-tuning",
+        "design-patterns-and-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/java-virtual-threads/SKILL.md"
+    },
+    {
       "name": "k8s-debugger",
       "domain": "agent",
       "description": "Implements intelligent k8s debugger with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -9234,6 +9258,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/kong/SKILL.md"
+    },
+    {
+      "name": "kotlin-coroutines",
+      "domain": "coding",
+      "description": "Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "kotlin coroutines",
+        "structured concurrency",
+        "coroutine scope",
+        "SupervisorJob",
+        "Flow API",
+        "StateFlow",
+        "kotlinx-coroutines"
+      ],
+      "relatedSkills": [
+        "async-programming",
+        "testing-best-practices",
+        "error-handling-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/kotlin-coroutines/SKILL.md"
     },
     {
       "name": "kratos",
