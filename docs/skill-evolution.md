@@ -149,6 +149,7 @@ As the skill library grows from dozens to hundreds to thousands, the basic trigg
 | 8 | **No compression** | Every skill is loaded in full, wasting tokens on boilerplate and rarely-needed detail. |
 | 9 | **No fallback** | If GitHub is unreachable, no skills load at all. |
 | 10 | **No execution planning** | The agent receives skill content but no guidance on how to sequence multiple skills. |
+| 11 | **No external reference resolution** | Skills are fully static — links to external docs, reference implementations, or related sources are ignored. The agent gets only what's in the file. |
 
 ### The Failure Mode at 750+ Skills
 
@@ -378,6 +379,110 @@ Two MCP tools — `route_to_skill` and `list_skills` — are called automaticall
 
 A periodic timer (default: 1 hour) re-fetches the GitHub skills index, so newly pushed skills are automatically discovered. The industry standard requires a manual restart or clone.
 
+### 7. Link Following: Skills That Reference the Web
+
+The industry standard SKILL.md treats every skill as a fully self-contained document. If a skill author wants to reference external documentation, a related paper, or a local reference file, the agent never sees it — those links are just text inside the skill body.
+
+The agent-skill-router **extends the SKILL.md format** with the MarkdownLinkResolver, an intelligent link-following engine that automatically resolves markdown links and semantically inlines referenced content into the skill.
+
+```ascii
+              ┌── MARKDOWN LINK RESOLVER ──┐
+              │                              │
+              │  Skill content with links     │
+              │  ---                          │
+              │  See [details](deep-dive.md)  │
+              │  Read [docs](example.com)     │
+              │  ---                          │
+              │         │                      │
+              │         ▼                      │
+              │  ┌─────────────────────┐       │
+              │  │ Parse markdown      │       │
+              │  │ links via regex     │       │
+              │  └────────┬────────────┘       │
+              │           │                      │
+              │     ┌─────┴──────┐               │
+              │     ▼            ▼                │
+              │  Local         External           │
+              │  ┌────────┐   ┌──────────────┐   │
+              │  │Read    │   │ Static HTTP  │   │
+              │  │file    │   │ (no JS)      │   │
+              │  └────────┘   ├──────────────┤   │
+              │               │ Puppeteer +  │   │
+              │               │ Chromium     │   │
+              │               │ (JS render)  │   │
+              │               └──────┬───────┘   │
+              │                      │            │
+              │                      ▼            │
+              │  ┌──────────────────────────┐     │
+              │  │ Content Processing        │     │
+              │  │                           │     │
+              │  │ 1. Under threshold → inline│    │
+              │  │ 2. Over threshold →        │    │
+              │  │    compress or truncate    │    │
+              │  │ 3. Semantic mode →         │    │
+              │  │    embed chunks, find top-K│    │
+              │  └──────────┬───────────────┘     │
+              │             │                      │
+              │             ▼                      │
+              │  ┌──────────────────────────┐     │
+              │  │ Inline as formatted      │     │
+              │  │ reference section         │     │
+              │  │ 📎 Reference: ...         │     │
+              │  │ > Source: url             │     │
+              │  └──────────────────────────┘     │
+              │                              │
+              └──────────────────────────────┘
+```
+
+#### Three Resolution Modes
+
+| Mode | Description | When to Use |
+|------|-------------|-------------|
+| `inline` (default) | Full content inlined as-is | Small references under 10KB |
+| `semantic` | Chunk content → embed each chunk → find top-K most relevant excerpts via cosine similarity | Large docs; only want the parts relevant to the skill's context |
+| `compressed` | LLM-style regex-based compression (brief ~2KB or moderate ~5KB) | Token-efficient referencing of medium-sized docs |
+
+#### Semantic Content Retrieval
+
+When `LINK_RESOLUTION_MODE=semantic`, the resolver doesn't just inline the entire document — it finds the most relevant excerpts:
+
+1. **Chunk** the external content into logical sections (splits by headings, paragraphs, code blocks)
+2. **Embed** each chunk using the same EmbeddingService that powers skill search
+3. **Embed** the skill's own context (title + description + first 500 chars)
+4. **Cosine similarity** search — find the top-K chunks most relevant to the skill
+5. **Inline only those excerpts** — saving tokens while preserving meaning
+
+This is particularly useful for large documentation pages where only a small portion is relevant to the specific skill.
+
+#### Local File References
+
+Links to local files (relative to the skill's directory) are resolved safely:
+
+1. Path resolved relative to the skill file's directory
+2. **Path traversal protection** — blocks paths that escape the skill base directory (e.g., `../../etc/passwd`)
+3. **Circular reference detection** — tracks visited paths per resolution call to prevent infinite loops
+4. Recursively resolves links in referenced content (up to `maxDepth` of 2)
+
+#### External Fetch Strategies
+
+When a link points to an external URL, the resolver tries multiple strategies:
+
+1. **Static HTTP fetch** — Plain GET request with 5s timeout and 1MB hard limit. Always available.
+2. **Puppeteer + Chromium JS rendering** — When `JS_RENDERING_ENABLED=true`, launches headless Chromium for SPAs and JS-heavy documentation sites.
+3. **JS fallback** — When `JS_RENDER_FALLBACK=true`, if JS rendering fails it falls back to static fetch automatically.
+
+| Safety Control | Default | Purpose |
+|----------------|---------|---------|
+| Path traversal protection | — | Blocks `../../` escapes from skill base directory |
+| HTTPS-only | — | Only `https://` URLs allowed |
+| Hard size limit | 1MB | Any content over 1MB is skipped entirely |
+| Max depth | 2 | How deep to recursively resolve links |
+| Circular reference | — | Per-call visited set prevents infinite loops |
+
+#### What This Means for the SKILL.md Standard
+
+In the standard model, a SKILL.md is limited to what its author can fit in one file. With the agent-skill-router extension, skills become **living documents** that can reference the full breadth of external knowledge — API docs, reference papers, related implementations — and only the semantically relevant portions are injected. This is a fundamental extension of the SKILL.md contract: from static expertise to **connected, contextual knowledge graphs**.
+
 ---
 
 ## Side-by-Side Comparison Table
@@ -401,6 +506,9 @@ A periodic timer (default: 1 hour) re-fetches the GitHub skills index, so newly 
 | **Compression** | None | Regex (10 levels) + LLM (brief/moderate/detailed) + adaptive TTL caching |
 | **Embedding fallback** | N/A | 3 tiers: API → LLM emulation → deterministic hash |
 | **LLM ranking options** | N/A | OpenAI / Anthropic / llama.cpp with automatic fallback |
+| **Link following** | Skills are fully static — links are just text | MarkdownLinkResolver auto-resolves links and inlines content inline/semantically |
+| **External content fetching** | None | 3 strategies: Static HTTP → Puppeteer/Chromium JS rendering → Fallback |
+| **Semantic content inlining** | N/A | Chunk → embed → cosine similarity → inline only top-K relevant excerpts |
 | **Domain coverage** | Varies by repository | 8 domains: agent (255), cncf (171), coding (82), go (12), linux (10), programming (4), trading (83), writing (1) — 758+ total |
 
 ---
