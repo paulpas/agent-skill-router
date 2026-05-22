@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T20:52:25.987609Z",
-  "totalSkills": 809,
+  "generatedAt": "2026-05-22T21:49:35.511800Z",
+  "totalSkills": 811,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 245,
+    "coding": 247,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 397,
+    "implementation": 399,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -1831,7 +1831,8 @@
       "relatedSkills": [
         "cve-dependency-management",
         "git-advanced",
-        "git-branching-strategies"
+        "git-branching-strategies",
+        "javascript-package-workflows"
       ],
       "version": "1.0.0",
       "source": "skills/coding/semver-automation/SKILL.md"
@@ -9541,11 +9542,38 @@
       ],
       "relatedSkills": [
         "coding-frontend-testing-patterns",
-        "coding-package-publishing-workflows",
+        "javascript-package-workflows",
         "agent-task-routing"
       ],
       "version": "1.0.0",
       "source": "skills/coding/javascript-frontend-ecosystem/SKILL.md"
+    },
+    {
+      "name": "javascript-package-workflows",
+      "domain": "coding",
+      "description": "Automates JavaScript/TypeScript package publishing with semantic-release, conventional commits, CI/CD workflows, and private registry configuration for npm.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "semantic-release",
+        "conventional commits",
+        "npm publish workflow",
+        "how do i publish a npm package",
+        "changelog automation",
+        "private npm registry",
+        ".npmrc setup",
+        "changesets",
+        "monorepo publishing",
+        "release automation"
+      ],
+      "relatedSkills": [
+        "coding-javascript-frontend-ecosystem",
+        "coding-semver-automation",
+        "coding-software-delivery-pipelines"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/javascript-package-workflows/SKILL.md"
     },
     {
       "name": "jvm-engineering",
@@ -11664,7 +11692,8 @@
       ],
       "relatedSkills": [
         "python-testing-strategies",
-        "go-concurrency-patterns"
+        "go-concurrency-patterns",
+        "python-package-publishing"
       ],
       "version": "1.0.0",
       "source": "skills/coding/modern-python-development/SKILL.md"
@@ -14015,10 +14044,36 @@
         "engineering-principles",
         "dry-principles",
         "code-quality-policies",
-        "pydantic-models"
+        "pydantic-models",
+        "python-package-publishing"
       ],
       "version": "1.0.0",
       "source": "skills/coding/python-module-structure/SKILL.md"
+    },
+    {
+      "name": "python-package-publishing",
+      "domain": "coding",
+      "description": "Builds, verifies, and publishes Python packages with hatchling, hatch-vcs dynamic versioning, twine checks, test pypi, and GitHub Actions release CI/CD.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "python package",
+        "publish to pypi",
+        "how do i publish a python package",
+        "build wheel sdist",
+        "pyproject.toml hatchling",
+        "twine check",
+        "test pypi",
+        "github actions release"
+      ],
+      "relatedSkills": [
+        "coding/python-module-structure",
+        "modern-python-development",
+        "coding/software-delivery-pipelines"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/python-package-publishing/SKILL.md"
     },
     {
       "name": "python-typing-patterns",
@@ -16308,7 +16363,9 @@
         "secure-release-pipeline",
         "test-driven-development",
         "semver-automation",
-        "git-branching-strategies"
+        "git-branching-strategies",
+        "python-package-publishing",
+        "javascript-package-workflows"
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-delivery-pipelines/SKILL.md"

@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 809 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 811 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **809 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **811 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 245 | Software patterns, security, testing, data science |
+| Coding | 247 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,9 +265,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 20:52:27 UTC  
-> **Total skills:** 809  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (809 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 16:50:15 UTC  
+> **Total skills:** 811  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (811 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -716,7 +716,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (245 skills)
+### Coding (247 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -856,6 +856,7 @@ MIT — All skills are freely available and redistributable.
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" | treatment effects, intervention analysis, CATE, heterogeneous effects, treatment response |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. | virtual threads, Project Loom, JEP 444, sealed classes, pattern matching switch, thread-per-request, Java concurrency |
 | [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. | monorepo setup, how do i set up a monorepo, module federation, micro-frontends, build toolchain migration, webpack to vite, turborepo vs nx |
+| [javascript-package-workflows](skills/coding/javascript-package-workflows/SKILL.md) | Automates JavaScript/TypeScript package publishing with semantic-release, conventional commits, CI/CD workflows, and private registry configuration for npm. | semantic-release, conventional commits, npm publish workflow, how do i publish a npm package, changelog automation, private npm registry, .npmrc setup, changesets, monorepo publishing, release automation |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | jvm tuning, garbage collection, GC tuning, zgc, shenandoah, jfr, jcmd, heap dump, memory leak, java performance, oom error, out of memory, thread deadlock, jstack, async-profiler... |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" | kernel density estimation, KDE, non-parametric, density estimation, bandwidth selection |
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | kotlin coroutines, structured concurrency, coroutine scope, SupervisorJob, Flow API, StateFlow, kotlinx-coroutines |
@@ -909,6 +910,7 @@ MIT — All skills are freely available and redistributable.
 | [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging |
 | [production-readiness](skills/coding/production-readiness/SKILL.md) | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | production readiness, SRE review, deployment criteria, observability setup, canary deployment, on-call coverage, SLO SLI, error budget, golden signals, how do i know my service is production ready, operational excellence, hypercare period |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports |
+| [python-package-publishing](skills/coding/python-package-publishing/SKILL.md) | Builds, verifies, and publishes Python packages with hatchling, hatch-vcs dynamic versioning, twine checks, test pypi, and GitHub Actions release CI/CD. | python package, publish to pypi, how do i publish a python package, build wheel sdist, pyproject.toml hatchling, twine check, test pypi, github actions release |
 | [python-typing-patterns](skills/coding/python-typing-patterns/SKILL.md) | Implements advanced Python typing patterns including generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, and composite type construction for robust static analysis. | python generics, typing patterns, Protocol structural subtyping, TypeVar bounds, Generic classes, covariance contravariance, TypeAliasType, runtime type inspection, mypy advanced typing, pyright protocols |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
 | [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. | rag, retrieval augmented generation, vector search, embedding pipeline, document chunking, semantic search, re-ranking, hybrid search, llm context injection, knowledge grounding, cross-encoder, graphrag |
@@ -1143,7 +1145,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (397 skills)
+### Implementation (Build Features) (399 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1330,6 +1332,7 @@ MIT — All skills are freely available and redistributable.
 | [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Cncf | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. |
 | [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Coding | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. |
+| [javascript-package-workflows](skills/coding/javascript-package-workflows/SKILL.md) | Coding | Automates JavaScript/TypeScript package publishing with semantic-release, conventional commits, CI/CD workflows, and private registry configuration for npm. |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Linux | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. |
@@ -1427,6 +1430,7 @@ MIT — All skills are freely available and redistributable.
 | [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. |
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. |
+| [python-package-publishing](skills/coding/python-package-publishing/SKILL.md) | Coding | Builds, verifies, and publishes Python packages with hatchling, hatch-vcs dynamic versioning, twine checks, test pypi, and GitHub Actions release CI/CD. |
 | [python-typing-patterns](skills/coding/python-typing-patterns/SKILL.md) | Coding | Implements advanced Python typing patterns including generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, and composite type construction for robust static analysis. |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" |
 | [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Coding | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. |
@@ -2378,6 +2382,7 @@ MIT — All skills are freely available and redistributable.
 | [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Cncf | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. | Implementation |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. | Implementation |
 | [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Coding | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. | Implementation |
+| [javascript-package-workflows](skills/coding/javascript-package-workflows/SKILL.md) | Coding | Automates JavaScript/TypeScript package publishing with semantic-release, conventional commits, CI/CD workflows, and private registry configuration for npm. | Implementation |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | Implementation |
 | [k8s-debugger](skills/agent/k8s-debugger/SKILL.md) | Agent | Implements intelligent k8s debugger with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [karmada](skills/cncf/karmada/SKILL.md) | Cncf | "Provides Karmada in Cloud-Native Engineering - multi-cluster orchestration" | Reference |
@@ -2568,6 +2573,7 @@ MIT — All skills are freely available and redistributable.
 | [pydantic-ai](skills/agent/pydantic-ai/SKILL.md) | Agent | Implements intelligent pydantic ai with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [python-fastapi-development](skills/agent/python-fastapi-development/SKILL.md) | Agent | Implements intelligent python fastapi development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | Implementation |
+| [python-package-publishing](skills/coding/python-package-publishing/SKILL.md) | Coding | Builds, verifies, and publishes Python packages with hatchling, hatch-vcs dynamic versioning, twine checks, test pypi, and GitHub Actions release CI/CD. | Implementation |
 | [python-typing-patterns](skills/coding/python-typing-patterns/SKILL.md) | Coding | Implements advanced Python typing patterns including generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, and composite type construction for robust static analysis. | Implementation |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | Implementation |
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Agent | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
