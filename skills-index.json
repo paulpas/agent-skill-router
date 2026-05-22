@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T18:40:43.760020Z",
-  "totalSkills": 803,
+  "generatedAt": "2026-05-22T19:04:26.326342Z",
+  "totalSkills": 805,
   "domains": {
     "agent": 258,
     "cncf": 173,
-    "coding": 240,
+    "coding": 242,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 391,
+    "implementation": 393,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -1608,6 +1608,33 @@
       "source": "skills/programming/async-runtime/SKILL.md"
     },
     {
+      "name": "asyncio-patterns",
+      "domain": "coding",
+      "description": "Implements Python asyncio patterns (TaskGroup, semaphores, queues, context management) with typed coroutines, proper error handling, and structured concurrency for production-grade async applications in Python 3.12+.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "asyncio",
+        "async await",
+        "coroutine",
+        "event loop",
+        "TaskGroup",
+        "async context manager",
+        "aiohttp",
+        "structured concurrency",
+        "python async",
+        "asyncio.timeout",
+        "gather as_completed"
+      ],
+      "relatedSkills": [
+        "async-programming",
+        "automated-testing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/asyncio-patterns/SKILL.md"
+    },
+    {
       "name": "audio-transcriber",
       "domain": "agent",
       "description": "Implements intelligent audio transcriber with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -1910,6 +1937,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/bash-scripting/SKILL.md"
+    },
+    {
+      "name": "bash-tui-menu",
+      "domain": "coding",
+      "description": "Implements robust interactive Bash TUI menus with dialog widgets, safe selection handling, cancel paths, and non-interactive fallbacks.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "bash tui menu",
+        "dialog command",
+        "interactive shell script",
+        "terminal menu",
+        "checklist radiolist",
+        "how do i make bash menus",
+        "ncurses dialog"
+      ],
+      "relatedSkills": [
+        "shell-parameter-expansion",
+        "shell-command-chaining",
+        "shell-process-management",
+        "output-formatting"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/bash-tui-menu/SKILL.md"
     },
     {
       "name": "bayesian-inference",

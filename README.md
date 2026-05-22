@@ -1,10 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-<<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 803 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-=======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 803 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
->>>>>>> 55656550b (feat: add new skill - rag-architecture)
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 805 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -15,11 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-<<<<<<< HEAD
-- 🎯 **803 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
-=======
-- 🎯 **803 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
->>>>>>> 55656550b (feat: add new skill - rag-architecture)
+- 🎯 **805 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -97,19 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 258 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 241 | Software patterns, security, testing, data science |
-| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
-| Go | 12 | Go idioms, concurrency patterns, error handling |
-| Linux | 16 | System administration, kernel tuning, security, networking |
-| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
-| Programming | 6 | Algorithms, frameworks, language references |
-| Trading | 89 | Execution, risk management, ML models |
-| Writing | 3 | Technical writing, style guidance |
-<<<<<<< HEAD
-| Coding | 238 | Software patterns, security, testing, data science |
-=======
-| Coding | 239 | Software patterns, security, testing, data science |
->>>>>>> 55656550b (feat: add new skill - rag-architecture)
+| Coding | 243 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -285,9 +265,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 18:40:44 UTC  
-> **Total skills:** 803  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (803 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 14:06:32 UTC  
+> **Total skills:** 805  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (805 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -735,7 +715,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (241 skills)
+### Coding (243 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -758,9 +738,11 @@ MIT — All skills are freely available and redistributable.
 | [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | architecture decision records, ADR, architectural decisions, how do i document architectural choices, design rationale, technology selection, system trade-offs, decision log |
 | [association-rules](skills/coding/association-rules/SKILL.md) | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | association rules, market basket, apriori, frequent itemsets, recommendation, pattern mining |
 | [async-programming](skills/coding/async-programming/SKILL.md) | Implements asynchronous programming patterns (asyncio task groups, goroutine pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking systems across Python and Go runtimes. | asynchronous programming, async await, asyncio, goroutine pool, concurrency patterns, event loop, structured concurrency, cancellation scope, parallel execution, race condition prevention, non-blocking I/O |
+| [asyncio-patterns](skills/coding/asyncio-patterns/SKILL.md) | Implements Python asyncio patterns (TaskGroup, semaphores, queues, context management) with typed coroutines, proper error handling, and structured concurrency for production-grade async applications in Python 3.12+. | asyncio, async await, coroutine, event loop, TaskGroup, async context manager, aiohttp, structured concurrency, python async, asyncio.timeout, gather as_completed |
 | [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. | authentication, password hashing, JWT token, OAuth PKCE, session management, MFA, TOTP, two-factor, passkeys, login system, how do i implement auth, secure login, user authentication, token validation, webauthn |
 | [automation](skills/coding/automation/SKILL.md) | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | semantic versioning, semver, version bumping, conventional commits, semantic-release, changelog automation, release automation, git tags |
 | [base](skills/coding/base/SKILL.md) | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | abstract, initialization, pattern, strategy base, strategy-base |
+| [bash-tui-menu](skills/coding/bash-tui-menu/SKILL.md) | Implements robust interactive Bash TUI menus with dialog widgets, safe selection handling, cancel paths, and non-interactive fallbacks. | bash tui menu, dialog command, interactive shell script, terminal menu, checklist radiolist, how do i make bash menus, ncurses dialog |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" | bayesian inference, bayes, prior, posterior, probabilistic inference, how do i do bayesian |
 | [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. | behavioral patterns, observer pattern, state pattern, command pattern, strategy pattern, template method, mediator pattern, chain of responsibility, iterator pattern, object communication |
 | [best-practices](skills/coding/best-practices/SKILL.md) | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" | markdown best practices, markdown-best-practices, opencode, skills, syntax |
@@ -1157,7 +1139,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (391 skills)
+### Implementation (Build Features) (393 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1185,11 +1167,13 @@ MIT — All skills are freely available and redistributable.
 | [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Agent | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. |
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" |
 | [async-programming](skills/coding/async-programming/SKILL.md) | Coding | Implements asynchronous programming patterns (asyncio task groups, goroutine pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking systems across Python and Go runtimes. |
+| [asyncio-patterns](skills/coding/asyncio-patterns/SKILL.md) | Coding | Implements Python asyncio patterns (TaskGroup, semaphores, queues, context management) with typed coroutines, proper error handling, and structured concurrency for production-grade async applications in Python 3.12+. |
 | [auth-credentials](skills/agent/auth-credentials/SKILL.md) | Agent | Implements agent authentication, credential management, capability-based access control, JWT identity verification, and human-in-the-loop authorization gates for production-safe AI agent systems. |
 | [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Coding | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" |
 | [backfill-strategy](skills/trading/backfill-strategy/SKILL.md) | Trading | "Provides Strategic data backfill for populating historical data in trading systems" |
 | [base](skills/coding/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration |
+| [bash-tui-menu](skills/coding/bash-tui-menu/SKILL.md) | Coding | Implements robust interactive Bash TUI menus with dialog widgets, safe selection handling, cancel paths, and non-interactive fallbacks. |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | Coding | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" |
 | [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Coding | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. |
 | [best-practices](skills/coding/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" |
@@ -2053,6 +2037,7 @@ MIT — All skills are freely available and redistributable.
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" | Implementation |
 | [async-programming](skills/coding/async-programming/SKILL.md) | Coding | Implements asynchronous programming patterns (asyncio task groups, goroutine pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking systems across Python and Go runtimes. | Implementation |
 | [async-runtime](skills/programming/async-runtime/SKILL.md) | Programming | Implements and analyzes Rust async runtime patterns including tokio, async-std, and custom executors for high-performance concurrent systems. | Reference |
+| [asyncio-patterns](skills/coding/asyncio-patterns/SKILL.md) | Coding | Implements Python asyncio patterns (TaskGroup, semaphores, queues, context management) with typed coroutines, proper error handling, and structured concurrency for production-grade async applications in Python 3.12+. | Implementation |
 | [audio-transcriber](skills/agent/audio-transcriber/SKILL.md) | Agent | Implements intelligent audio transcriber with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [audit-context-building](skills/agent/audit-context-building/SKILL.md) | Agent | Implements intelligent audit context building with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [auri-core](skills/agent/auri-core/SKILL.md) | Agent | Implements intelligent auri core with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2066,6 +2051,7 @@ MIT — All skills are freely available and redistributable.
 | [backstage](skills/cncf/backstage/SKILL.md) | Cncf | "Provides Backstage in Cloud-Native Engineering - Developer Portal for Microservices" | Reference |
 | [base](skills/coding/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | Implementation |
 | [bash-scripting](skills/agent/bash-scripting/SKILL.md) | Agent | Implements intelligent bash scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [bash-tui-menu](skills/coding/bash-tui-menu/SKILL.md) | Coding | Implements robust interactive Bash TUI menus with dialog widgets, safe selection handling, cancel paths, and non-interactive fallbacks. | Implementation |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | Coding | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" | Implementation |
 | [bdistill-behavioral-xray](skills/agent/bdistill-behavioral-xray/SKILL.md) | Agent | Implements intelligent bdistill behavioral xray with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Coding | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. | Implementation |
