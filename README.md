@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 08:03:23 UTC  
-> **Total skills:** 785
+> **Last updated:** 2026-05-22 08:33:59 UTC  
+> **Total skills:** 786
 
 ## Skills by Domain
 
@@ -711,7 +711,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (227 skills)
+### Coding (228 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -832,6 +832,7 @@ MIT — All skills are freely available and redistributable.
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | hypothesis testing, t-test, chi-square, p-value, statistical significance, how do i test hypotheses, unit tests, testing |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. | idempotency, idempotent, idempotency key, request deduplication, exactly once, duplicate detection, optimistic concurrency, idempotent handler, outbox pattern, race condition prevention |
 | [incident-response](skills/coding/incident-response/SKILL.md) | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. | incident response, production outage, on-call procedures, postmortem, blameless postmortem, RCA root cause analysis, service degradation, how do i handle a production incident, incident command, severity classification, rollback procedure, escalation path |
+| [input-normalization](skills/coding/input-normalization/SKILL.md) | Normalizes and standardizes inconsistent inbound data into uniform internal formats using typed normalizers, locale-aware converters, and deterministic transformation pipelines for reliable downstream processing. | input normalization, data standardization, date parsing, currency conversion, phone number format, address normalization, text normalization, how do i normalize data, data cleaning, convert formats |
 | [input-processing-pipelines](skills/coding/input-processing-pipelines/SKILL.md) | Builds composable data processing pipelines that validate, transform, filter, and aggregate structured or semi-structured input through typed stages with error handling and observability. | input processing pipeline, data transformation, ETL pipeline, stage processing, data validation pipeline, map filter reduce, data cleaning pipeline, input sanitization chain, structured data extraction, data flow architecture, pipeline composition |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | input validation, data sanitization, schema validation, input filtering, sanitize user input, prevent injection, OWASP, form validation, parse and validate |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | instrumental variables, IV, 2SLS, endogeneity, causal effect, how do i handle endogeneity |
@@ -1117,7 +1118,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (377 skills)
+### Implementation (Build Features) (378 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1281,6 +1282,7 @@ MIT — All skills are freely available and redistributable.
 | [incident-response](skills/coding/incident-response/SKILL.md) | Coding | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. |
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. |
 | [indicator-confluence](skills/trading/indicator-confluence/SKILL.md) | Trading | "Provides Indicator Confluence Validation Systems for Confirming Trading Signals" |
+| [input-normalization](skills/coding/input-normalization/SKILL.md) | Coding | Normalizes and standardizes inconsistent inbound data into uniform internal formats using typed normalizers, locale-aware converters, and deterministic transformation pipelines for reliable downstream processing. |
 | [input-processing-pipelines](skills/coding/input-processing-pipelines/SKILL.md) | Coding | Builds composable data processing pipelines that validate, transform, filter, and aggregate structured or semi-structured input through typed stages with error handling and observability. |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. |
 | [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. |
@@ -2296,6 +2298,7 @@ MIT — All skills are freely available and redistributable.
 | [ingress](skills/cncf/ingress/SKILL.md) | Cncf | "Provides Emissary-Ingress in Cloud-Native Engineering - Kubernetes ingress controller" | Reference |
 | [ingress-controller](skills/cncf/ingress-controller/SKILL.md) | Cncf | "Kong Ingress Controller in Kubernetes - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [inngest](skills/agent/inngest/SKILL.md) | Agent | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [input-normalization](skills/coding/input-normalization/SKILL.md) | Coding | Normalizes and standardizes inconsistent inbound data into uniform internal formats using typed normalizers, locale-aware converters, and deterministic transformation pipelines for reliable downstream processing. | Implementation |
 | [input-processing-pipelines](skills/coding/input-processing-pipelines/SKILL.md) | Coding | Builds composable data processing pipelines that validate, transform, filter, and aggregate structured or semi-structured input through typed stages with error handling and observability. | Implementation |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | Implementation |
 | [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. | Implementation |

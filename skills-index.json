@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T08:03:21.994459Z",
-  "totalSkills": 785,
+  "generatedAt": "2026-05-22T08:33:58.003133Z",
+  "totalSkills": 786,
   "domains": {
     "agent": 256,
     "cncf": 173,
-    "coding": 226,
+    "coding": 227,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 377,
+    "implementation": 378,
     "reference": 169,
     "information": 1,
     "review": 5
@@ -8724,6 +8724,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/inngest/SKILL.md"
+    },
+    {
+      "name": "input-normalization",
+      "domain": "coding",
+      "description": "Normalizes and standardizes inconsistent inbound data into uniform internal formats using typed normalizers, locale-aware converters, and deterministic transformation pipelines for reliable downstream processing.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "input normalization",
+        "data standardization",
+        "date parsing",
+        "currency conversion",
+        "phone number format",
+        "address normalization",
+        "text normalization",
+        "how do i normalize data",
+        "data cleaning",
+        "convert formats"
+      ],
+      "relatedSkills": [
+        "input-validation",
+        "data-encoding",
+        "input-processing-pipelines",
+        "type-safety-enforcement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/input-normalization/SKILL.md"
     },
     {
       "name": "input-processing-pipelines",
