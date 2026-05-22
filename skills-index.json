@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T07:21:01.518033Z",
-  "totalSkills": 783,
+  "generatedAt": "2026-05-22T08:03:21.994459Z",
+  "totalSkills": 785,
   "domains": {
-    "agent": 255,
+    "agent": 256,
     "cncf": 173,
-    "coding": 225,
+    "coding": 226,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 375,
+    "implementation": 377,
     "reference": 169,
     "information": 1,
     "review": 5
@@ -15320,6 +15320,33 @@
       "source": "skills/coding/skill-lifecycle-management/SKILL.md"
     },
     {
+      "name": "skill-observability",
+      "domain": "agent",
+      "description": "Collects telemetry on skill usage patterns, measures trigger-to-action fidelity, gathers user feedback signals, and produces dashboards for continuous skill improvement in agent orchestration systems.",
+      "role": "implementation",
+      "scope": "orchestration",
+      "outputFormat": "code",
+      "triggers": [
+        "skill observability",
+        "usage telemetry",
+        "how do i track skill usage",
+        "skill analytics",
+        "feedback collection",
+        "skill performance monitoring",
+        "trigger fidelity",
+        "skill dashboard",
+        "skill measurement",
+        "skill adoption metrics"
+      ],
+      "relatedSkills": [
+        "coding-skill-quality-metrics",
+        "agent-skill-trigger-engineering",
+        "agent-skill-lifecycle-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/skill-observability/SKILL.md"
+    },
+    {
       "name": "skill-optimizer",
       "domain": "agent",
       "description": "Implements intelligent skill optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -15340,6 +15367,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-optimizer/SKILL.md"
+    },
+    {
+      "name": "skill-quality-metrics",
+      "domain": "coding",
+      "description": "Scores SKILL.md files across seven dimensions (content depth, code quality, trigger design, structural completeness, constraint specificity, domain compliance, stub resistance) using a Python-based calculator for objective quality assessment.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "skill quality metrics",
+        "skill scoring",
+        "quality rubric",
+        "skill evaluation framework",
+        "skill health score",
+        "how do i measure skill quality",
+        "skill audit checklist",
+        "skill grading system"
+      ],
+      "relatedSkills": [
+        "coding-skill-testing-validation",
+        "coding-skill-lifecycle-management",
+        "agent-skill-optimizer"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/skill-quality-metrics/SKILL.md"
     },
     {
       "name": "skill-rails-upgrade",
