@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-21T23:04:25.365133Z",
-  "totalSkills": 761,
+  "generatedAt": "2026-05-22T00:22:02.667639Z",
+  "totalSkills": 764,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 211,
+    "coding": 214,
     "go": 12,
     "linux": 14,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 356,
+    "implementation": 359,
     "reference": 166,
     "information": 1,
     "review": 5
@@ -2964,6 +2964,38 @@
       "source": "skills/cncf/gcp-cloud-dns/SKILL.md"
     },
     {
+      "name": "cloud-ecosystem-strategy",
+      "domain": "coding",
+      "description": "Strategizes cross-cloud ecosystem navigation (AWS, Azure, GCP) with vendor lock-in analysis, interoperability patterns, cost optimization frameworks, and multi-cloud architecture decision making.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "cloud ecosystem",
+        "aws",
+        "azure",
+        "gcp",
+        "multi-cloud",
+        "hybrid cloud",
+        "vendor lock-in",
+        "cloud migration",
+        "cross-cloud",
+        "how do i choose cloud provider",
+        "cloud strategy",
+        "cloud interoperability",
+        "cost optimization",
+        "cloud architecture decision"
+      ],
+      "relatedSkills": [
+        "coding-cloud-native-architecture",
+        "coding-platform-engineering",
+        "coding-technology-adoption",
+        "coding-cost-optimization-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/cloud-ecosystem-strategy/SKILL.md"
+    },
+    {
       "name": "cloud-functions",
       "domain": "cncf",
       "description": "Deploys serverless functions triggered by events with automatic scaling and GCP service integration",
@@ -5381,6 +5413,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/developer-pattern-library/SKILL.md"
+    },
+    {
+      "name": "developer-toolchain-composition",
+      "domain": "coding",
+      "description": "Composes integrated developer toolchains by evaluating tool interoperability, dependency management, workflow automation, and friction reduction across the development lifecycle from code to production.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "developer toolchain",
+        "dev toolchain",
+        "how do i set up dev tools",
+        "tool interoperability",
+        "build system",
+        "ci cd pipeline",
+        "development workflow",
+        "tool integration",
+        "code to production",
+        "developer experience",
+        "makefile",
+        "justfile",
+        "pre-commit hooks"
+      ],
+      "relatedSkills": [
+        "coding-software-delivery-pipelines",
+        "coding-framework-requirements-validation",
+        "coding-tool-evaluation-workflow",
+        "coding-observability-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/developer-toolchain-composition/SKILL.md"
     },
     {
       "name": "development",
@@ -12183,6 +12246,40 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/output-sanitization/SKILL.md"
+    },
+    {
+      "name": "package-ecosystem-navigator",
+      "domain": "coding",
+      "description": "Navigates package manager ecosystems (npm, PyPI, crates.io, Maven, Go modules) with health assessment, dependency auditing, registry configuration, and cross-platform migration strategies for making informed packaging decisions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "package manager",
+        "npm",
+        "pypi",
+        "crates.io",
+        "maven",
+        "go modules",
+        "cargo",
+        "pip",
+        "poetry",
+        "dependency management",
+        "registry health",
+        "how do i find packages",
+        "package ecosystem",
+        "lockfile",
+        "semver",
+        "version resolution"
+      ],
+      "relatedSkills": [
+        "coding-dependency-supply-chain-security",
+        "coding-version-migration",
+        "coding-framework-requirements-validation",
+        "coding-tool-evaluation-workflow"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/package-ecosystem-navigator/SKILL.md"
     },
     {
       "name": "parallel-agents",
