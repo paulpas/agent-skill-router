@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T02:48:17.927593Z",
+  "generatedAt": "2026-05-22T03:08:05.152674Z",
   "totalSkills": 772,
   "domains": {
     "agent": 255,
@@ -7800,7 +7800,8 @@
         "version catalog",
         "configuration cache",
         "kotlin dsl",
-        "gradlew",
+        "how do i fix gradle conflicts",
+        "how do i set up java project build",
         "buildSrc",
         "incremental builds"
       ],
@@ -10512,10 +10513,11 @@
         "pom.xml",
         "mvn command",
         "dependency management",
+        "how do i fix maven conflicts",
+        "how do i manage java dependencies",
         "reactor build",
         "BOM",
-        "plugin management",
-        "dependency mediation"
+        "plugin management"
       ],
       "relatedSkills": [
         "gradle-build-tool",
