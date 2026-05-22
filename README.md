@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 02:20:48 UTC  
-> **Total skills:** 770
+> **Last updated:** 2026-05-22 02:48:19 UTC  
+> **Total skills:** 772
 
 ## Skills by Domain
 
@@ -707,7 +707,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (218 skills)
+### Coding (220 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -815,6 +815,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Validates code against framework conventions (React Hooks rules, Next.js App Router patterns, Django checks) and enforces build tool configuration compliance through automated linting pipelines and CI integration. | framework validation, eslint plugin react hooks, next.js linting rules, django check command, framework compliance, build tool config validation, biome linting, vite config check, tsconfig patterns, code conventions checker |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | framework selection, tech stack evaluation, weighted scoring matrix, AHP decision, framework comparison, technology assessment, framework criteria, evaluate frameworks, choose framework, select technology, tech stack decision, framework trade-offs |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. | framework utilization, three-pass learning, leverage framework patterns, fight the framework, how do i learn a new framework, framework conventions, framework adoption |
+| [gradle-build-tool](skills/coding/gradle-build-tool/SKILL.md) | Implements Gradle build configurations including Kotlin DSL, version catalogs, configuration cache, multi-project builds, convention plugins, and dependency management for Java/Kotlin/Android applications. | gradle, build.gradle.kts, version catalog, configuration cache, kotlin dsl, gradlew, buildSrc, incremental builds |
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. | graphql, apollo federation, dataloader, n+1 query, query complexity, graphql schema, graphql authorization, how do i design a graphql api |
 | [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. | dataloader, graphql n-plus-one, batch loading, aiodataloader, graphql performance, load per request, graphql batching |
 | [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. | graphql error handling, graphql validation, input validation, pydantic graphql, strawberry errors, graphql error codes, graphql middleware |
@@ -841,6 +842,7 @@ MIT — All skills are freely available and redistributable.
 | [make](skills/coding/make/SKILL.md) | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. | make, build system, makefile, compilation, incremental build, build automation, justfile, phony targets |
 | [makefile](skills/coding/makefile/SKILL.md) | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. | makefile, make, build automation, phony targets, pattern rules, build system, make command, cross-platform make |
 | [manager](skills/coding/manager/SKILL.md) | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing | connection, machine, ml, state, websocket manager, websocket-manager, machine learning, ai |
+| [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. | maven, pom.xml, mvn command, dependency management, reactor build, BOM, plugin management, dependency mediation |
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models | maximum likelihood, MLE, likelihood estimation, likelihood function, optimization, performance, speed |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | memoization, cache pattern, LRU cache, LFU cache, cache invalidation, TTL strategy, write-through, cache stampede, function decorator, how do i speed up slow functions |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | metrics, KPI, key performance indicator, business metrics, metric definition, how do I choose metrics, cloudwatch, optimization |
@@ -1096,7 +1098,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (364 skills)
+### Implementation (Build Features) (366 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1241,6 +1243,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Coding | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. |
 | [gitops-troubleshooting](skills/agent/gitops-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves GitOps synchronization failures, drift detection issues, and reconciliation problems for ArgoCD and Flux deployments with actionable debugging commands. |
+| [gradle-build-tool](skills/coding/gradle-build-tool/SKILL.md) | Coding | Implements Gradle build configurations including Kotlin DSL, version catalogs, configuration cache, multi-project builds, convention plugins, and dependency management for Java/Kotlin/Android applications. |
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Coding | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. |
 | [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Coding | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. |
 | [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Coding | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. |
@@ -1293,6 +1296,7 @@ MIT — All skills are freely available and redistributable.
 | [market-microstructure](skills/trading/market-microstructure/SKILL.md) | Trading | "Implements order book dynamics and order flow analysis for risk management and algorithmic trading execution." |
 | [market-regimes](skills/trading/market-regimes/SKILL.md) | Trading | "Market regime detection and adaptation for trading systems across changing" market conditions. |
 | [market-structure](skills/trading/market-structure/SKILL.md) | Trading | "Implements market structure and trading participants analysis for risk management and algorithmic trading execution." |
+| [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Coding | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. |
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Coding | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. |
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems |
@@ -2221,6 +2225,7 @@ MIT — All skills are freely available and redistributable.
 | [google-analytics-automation](skills/agent/google-analytics-automation/SKILL.md) | Agent | Implements intelligent google analytics automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [google-docs-automation](skills/agent/google-docs-automation/SKILL.md) | Agent | Implements intelligent google docs automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [google-drive-automation](skills/agent/google-drive-automation/SKILL.md) | Agent | Implements intelligent google drive automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [gradle-build-tool](skills/coding/gradle-build-tool/SKILL.md) | Coding | Implements Gradle build configurations including Kotlin DSL, version catalogs, configuration cache, multi-project builds, convention plugins, and dependency management for Java/Kotlin/Android applications. | Implementation |
 | [graph-traversal](skills/programming/graph-traversal/SKILL.md) | Programming | Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving. | Reference |
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Coding | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. | Implementation |
 | [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Coding | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. | Implementation |
@@ -2337,6 +2342,7 @@ MIT — All skills are freely available and redistributable.
 | [market-microstructure](skills/trading/market-microstructure/SKILL.md) | Trading | "Implements order book dynamics and order flow analysis for risk management and algorithmic trading execution." | Implementation |
 | [market-regimes](skills/trading/market-regimes/SKILL.md) | Trading | "Market regime detection and adaptation for trading systems across changing" market conditions. | Implementation |
 | [market-structure](skills/trading/market-structure/SKILL.md) | Trading | "Implements market structure and trading participants analysis for risk management and algorithmic trading execution." | Implementation |
+| [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Coding | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. | Implementation |
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models | Implementation |
 | [mcp-builder](skills/agent/mcp-builder/SKILL.md) | Agent | Implements intelligent mcp builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mcp-builder-ms](skills/agent/mcp-builder-ms/SKILL.md) | Agent | Implements intelligent mcp builder ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

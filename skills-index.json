@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T02:20:47.887942Z",
-  "totalSkills": 770,
+  "generatedAt": "2026-05-22T02:48:17.927593Z",
+  "totalSkills": 772,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 217,
+    "coding": 219,
     "go": 12,
     "linux": 16,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 364,
+    "implementation": 366,
     "reference": 167,
     "information": 1,
     "review": 5
@@ -7788,6 +7788,31 @@
       "source": "skills/agent/google-drive-automation/SKILL.md"
     },
     {
+      "name": "gradle-build-tool",
+      "domain": "coding",
+      "description": "Implements Gradle build configurations including Kotlin DSL, version catalogs, configuration cache, multi-project builds, convention plugins, and dependency management for Java/Kotlin/Android applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "gradle",
+        "build.gradle.kts",
+        "version catalog",
+        "configuration cache",
+        "kotlin dsl",
+        "gradlew",
+        "buildSrc",
+        "incremental builds"
+      ],
+      "relatedSkills": [
+        "maven-build-tool",
+        "coding-testing",
+        "coding-security-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/gradle-build-tool/SKILL.md"
+    },
+    {
       "name": "graph-traversal",
       "domain": "programming",
       "description": "Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving.",
@@ -10474,6 +10499,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/fundamentals-market-structure/SKILL.md"
+    },
+    {
+      "name": "maven-build-tool",
+      "domain": "coding",
+      "description": "Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "maven",
+        "pom.xml",
+        "mvn command",
+        "dependency management",
+        "reactor build",
+        "BOM",
+        "plugin management",
+        "dependency mediation"
+      ],
+      "relatedSkills": [
+        "gradle-build-tool",
+        "coding-testing",
+        "coding-security-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/maven-build-tool/SKILL.md"
     },
     {
       "name": "maximum-likelihood",
