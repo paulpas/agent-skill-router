@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 00:44:50 UTC  
-> **Total skills:** 780
+> **Last updated:** 2026-05-22 01:27:08 UTC  
+> **Total skills:** 782
 
 ## Skills by Domain
 
@@ -710,7 +710,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (223 skills)
+### Coding (225 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -750,6 +750,7 @@ MIT — All skills are freely available and redistributable.
 | [cloud-native-architecture](skills/coding/cloud-native-architecture/SKILL.md) | Implements cloud-native architecture patterns including Kubernetes-native design, service mesh integration, GitOps workflows, serverless compute, immutable infrastructure, and platform engineering for resilient distributed systems. | cloud native architecture, kubernetes design, container orchestration, service mesh, GitOps, serverless architecture, immutable infrastructure, platform engineering, internal developer platform, how do i design cloud-native systems, declarative configuration, ephemerality |
 | [clustering](skills/coding/clustering/SKILL.md) | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" | clustering, k-means, hierarchical clustering, DBSCAN, mixture models, how do I cluster data |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | code duplication, duplicate code detection, copy-paste code, boilerplate removal, semantic duplication, radon metrics, pylint warnings, refactoring detection, DRY principle, code quality analysis |
+| [code-quality-metrics](skills/coding/code-quality-metrics/SKILL.md) | Analyzes software quality using static analysis metrics including cyclomatic complexity, maintainability index, code duplication detection, technical debt estimation, and coverage thresholds for engineering teams. | code quality metrics, cyclomatic complexity, maintainability index, code duplication, static analysis, technical debt, sonarqube, pylint metrics, flake8, mypy strict, coverage thresholds, dead code detection, how do i measure code quality, complexity analysis |
 | [community-detection](skills/coding/community-detection/SKILL.md) | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | community detection, graph clustering, modularity, spectral clustering, graph partitioning |
 | [component-architecture](skills/coding/component-architecture/SKILL.md) | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. | component architecture, compound components, headless ui, render props, component composition, container presentational pattern, component hooks, how do i design reusable components, component library design, UI composition |
 | [component-testing-library](skills/coding/component-testing-library/SKILL.md) | Tests React, Vue, and Svelte components using Testing Library query priorities, renderHook for hooks, Mock Service Worker API mocking, and async state patterns for reliable, user-facing component tests. | component testing, react testing library, rtl, vue testing library, svelte testing library, renderhook, msw, mock service worker, api mocking, frontend testing, user event setup, test component, how do i test a react component, testing async ui, testing loading states... |
@@ -910,6 +911,7 @@ MIT — All skills are freely available and redistributable.
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | software architecture, system design, layered architecture, hexagonal architecture, clean architecture, separation of concerns, scalable design, architectural patterns |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design |
+| [software-documentation](skills/coding/software-documentation/SKILL.md) | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | software documentation, API docs, docstrings, README writing, developer guides, OpenAPI, MkDocs, Docusaurus, technical writing for developers, how do i document code, Sphinx, type stubs, mypy stubs, py.typed |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | software engineering, modular design, separation of concerns, defensive programming, KISS principle, YAGNI, clean architecture |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. | error handling, exception design, retry logic, circuit breaker, graceful degradation, error recovery, resilience patterns, how do i handle errors in software |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | testing strategy, unit test, integration test, property-based testing, test coverage, mocking, assertion, pytest, test suite design, how do i write tests |
@@ -1112,7 +1114,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (372 skills)
+### Implementation (Build Features) (374 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1167,6 +1169,7 @@ MIT — All skills are freely available and redistributable.
 | [cloud-linux-engineering](skills/linux/cloud-linux-engineering/SKILL.md) | Linux | Engineers Linux systems for cloud-native environments with cloud-init bootstrapping, IMDSv2 security, ephemeral lifecycle management, spot instance handling, and cloud observability integration. |
 | [cloud-native-architecture](skills/coding/cloud-native-architecture/SKILL.md) | Coding | Implements cloud-native architecture patterns including Kubernetes-native design, service mesh integration, GitOps workflows, serverless compute, immutable infrastructure, and platform engineering for resilient distributed systems. |
 | [clustering](skills/coding/clustering/SKILL.md) | Coding | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" |
+| [code-quality-metrics](skills/coding/code-quality-metrics/SKILL.md) | Coding | Analyzes software quality using static analysis metrics including cyclomatic complexity, maintainability index, code duplication detection, technical debt estimation, and coverage thresholds for engineering teams. |
 | [commission-model](skills/trading/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" |
 | [component-architecture](skills/coding/component-architecture/SKILL.md) | Coding | Designs reusable component architectures using compound components, headless UI patterns, render props, and composition over inheritance for maintainable, testable codebases. |
@@ -1426,6 +1429,7 @@ MIT — All skills are freely available and redistributable.
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. |
+| [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Coding | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. |
@@ -2064,6 +2068,7 @@ MIT — All skills are freely available and redistributable.
 | [cni](skills/cncf/cni/SKILL.md) | Cncf | "Cni in Cloud-Native Engineering - Container Network Interface - networking" for Linux containers | Reference |
 | [code-correctness-verifier](skills/agent/code-correctness-verifier/SKILL.md) | Agent | Implements intelligent code correctness verifier with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Coding | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | Review |
+| [code-quality-metrics](skills/coding/code-quality-metrics/SKILL.md) | Coding | Analyzes software quality using static analysis metrics including cyclomatic complexity, maintainability index, code duplication detection, technical debt estimation, and coverage thresholds for engineering teams. | Implementation |
 | [commission-model](skills/trading/commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." | Implementation |
 | [commit](skills/agent/commit/SKILL.md) | Agent | Implements intelligent commit with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [community-detection](skills/coding/community-detection/SKILL.md) | Coding | "Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms" | Implementation |
@@ -2581,6 +2586,7 @@ MIT — All skills are freely available and redistributable.
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Coding | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | Reference |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | Implementation |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | Implementation |
+| [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | Implementation |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | Implementation |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Coding | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. | Implementation |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | Implementation |
