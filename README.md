@@ -1,6 +1,10 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 800 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+<<<<<<< HEAD
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 801 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 801 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+>>>>>>> 55656550b (feat: add new skill - rag-architecture)
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +15,11 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **800 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+<<<<<<< HEAD
+- 🎯 **801 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+=======
+- 🎯 **801 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+>>>>>>> 55656550b (feat: add new skill - rag-architecture)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +97,19 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 258 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
+| Coding | 239 | Software patterns, security, testing, data science |
+| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
+| Go | 12 | Go idioms, concurrency patterns, error handling |
+| Linux | 16 | System administration, kernel tuning, security, networking |
+| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
+| Programming | 6 | Algorithms, frameworks, language references |
+| Trading | 89 | Execution, risk management, ML models |
+| Writing | 3 | Technical writing, style guidance |
+<<<<<<< HEAD
 | Coding | 238 | Software patterns, security, testing, data science |
+=======
+| Coding | 239 | Software patterns, security, testing, data science |
+>>>>>>> 55656550b (feat: add new skill - rag-architecture)
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,9 +285,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 17:41:23 UTC  
-> **Total skills:** 800  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (800 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 13:05:32 UTC  
+> **Total skills:** 801  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (801 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -715,7 +735,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (238 skills)
+### Coding (239 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -905,6 +925,7 @@ MIT — All skills are freely available and redistributable.
 | [production-readiness](skills/coding/production-readiness/SKILL.md) | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | production readiness, SRE review, deployment criteria, observability setup, canary deployment, on-call coverage, SLO SLI, error budget, golden signals, how do i know my service is production ready, operational excellence, hypercare period |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
+| [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. | rag, retrieval augmented generation, vector search, embedding pipeline, document chunking, semantic search, re-ranking, hybrid search, llm context injection, knowledge grounding, cross-encoder, graphrag |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | randomized experiments, RCT, experimental design, randomization, blocking, sample size |
 | [refactoring-techniques](skills/coding/refactoring-techniques/SKILL.md) | Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity. | refactoring, clean up code, reduce complexity, extract method, rename variable, improve readability, how do i refactor legacy code, technical debt, code smell |
 | [reference-operators](skills/coding/reference-operators/SKILL.md) | Implements reference (&) and address-of operators across C++, Rust, C#, and PHP for safe memory access, parameter passing, and pointer arithmetic. | reference operator, address of, pass by reference, & operator, pointer, dangling reference, borrowed reference, mutable reference, C++ references, Rust lifetimes, PHP references, C# ref out, memory safety, rvalue reference |
@@ -1134,7 +1155,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (388 skills)
+### Implementation (Build Features) (389 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1414,6 +1435,7 @@ MIT — All skills are freely available and redistributable.
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" |
+| [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Coding | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" |
 | [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Maker | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. |
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API" Integration |
@@ -2547,6 +2569,7 @@ MIT — All skills are freely available and redistributable.
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | Implementation |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | Implementation |
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Agent | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Coding | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. | Implementation |
 | [rag-implementation](skills/agent/rag-implementation/SKILL.md) | Agent | Implements intelligent rag implementation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | Implementation |
 | [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Maker | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. | Implementation |
