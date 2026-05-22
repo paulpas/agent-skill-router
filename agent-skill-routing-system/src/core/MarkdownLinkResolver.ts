@@ -212,6 +212,12 @@ export class MarkdownLinkResolver {
       return null;
     }
 
+    this.logger.info('Fetching external web content', {
+      url,
+      depth: _depth,
+      mode: this.config.jsRenderingEnabled ? 'js-rendered' : 'static'
+    });
+
     // Step 1: Fetch content (with optional JS rendering)
     let rawContent: string | null = null;
 
