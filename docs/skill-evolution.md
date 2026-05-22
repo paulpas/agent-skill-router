@@ -189,71 +189,76 @@ flowchart TD
 The agent-skill-router system replaces fragile keyword matching with a **six-stage semantic pipeline** that understands intent, ranks by relevance, plans execution, and compresses intelligently.
 
 ```mermaid
-flowchart LR
-    Input["'deploy containers to multiple machines'"] --> Stage1
-    
+flowchart TD
+    %% Input
+    Input(["User says: 'deploy containers to multiple machines'"]) --> Stage1
+
+    %% Stage 1: Safety
     subgraph Stage1["1. Safety Layer · ~0.1ms"]
         direction TB
-        S1a["Prompt injection detection"]
-        S1b["Task length validation"]
-        S1c["Skill allowlist check"]
-        S1d["Schema validation"]
+        S1a["✓ Prompt injection detection"]
+        S1b["✓ Task length validation"]
+        S1c["✓ Skill allowlist check"]
+        S1d["✓ Schema validation"]
     end
-    
+
     Stage1 --> Stage2
-    
+
+    %% Stage 2: Embedding
     subgraph Stage2["2. Embedding Service · ~200ms"]
         direction TB
         S2a["text-embedding-3-small"]
         S2b["'deploy containers to multiple machines'"]
         S2c["→ 1536-dim vector"]
     end
-    
+
     Stage2 --> Stage3
-    
+
+    %% Stage 3: Vector DB
     subgraph Stage3["3. Vector Database (KD-tree) · ~0.1ms"]
         direction TB
         S3a["O(log n) nearest-neighbor search"]
-        S3b["top 20 candidates"]
-        S3c["Semantic: 'multiple machines' ≈"]
-        S3d["cncf-kubernetes: 0.89"]
-        S3e["cncf-docker: 0.72"]
-        S3f["cncf-nomad: 0.55"]
+        S3b["Top 20 candidates"]
+        S3c["cncf-kubernetes — 0.89"]
+        S3d["cncf-docker — 0.72"]
+        S3e["cncf-nomad — 0.55"]
     end
-    
+
     Stage3 --> Stage4
-    
+
+    %% Stage 4: LLM Ranker
     subgraph Stage4["4. LLM Ranker · ~3s"]
         direction TB
         S4a["GPT-4o / Claude / llama.cpp"]
-        S4b["LLM nuanced re-ranking"]
-        S4c["'User wants orchestration,"]
-        S4d["not just containerization."]
-        S4e["Kubernetes scores higher."]
+        S4b["'User wants orchestration,"]
+        S4c["not just containerization.'"]
+        S4d["← Kubernetes re-ranked higher"]
     end
-    
+
     Stage4 --> Stage5
-    
+
+    %% Stage 5: Filter
     subgraph Stage5["5. Deterministic Filter · ~0.1ms"]
         direction TB
-        S5a["Remove drafts"]
+        S5a["Remove draft skills"]
         S5b["Enforce score ≥ 0.5"]
-        S5c["Cap at maxSkills (default 5)"]
+        S5c["Cap at maxSkills: 5"]
     end
-    
+
     Stage5 --> Stage6
-    
+
+    %% Stage 6: Planner
     subgraph Stage6["6. Execution Planner · ~0.1ms"]
         direction TB
-        S6a["Sequential: cncf-kubernetes only"]
-        S6b["(other skills below threshold)"]
-        S6c["Strategy: run container orchestration"]
-        S6d["→ then monitor with Prometheus"]
+        S6a["Selected: cncf-kubernetes"]
+        S6b["Strategy: sequential"]
+        S6c["Plan: orchestrate → monitor"]
     end
-    
+
     Stage6 --> Output
-    
-    Output["Response<br/>{<br/>  skills: [{name: cncf-kubernetes,<br/>            score: 0.94,<br/>            reason: 'Task describes container deployment'}],<br/>  executionPlan: {strategy: 'sequential'}<br/>}"]
+
+    %% Output
+    Output[("{ skills: [{name: cncf-kubernetes, score: 0.94}], executionPlan: 'sequential' }")]
 ```
 
 ### What Each Stage Does
