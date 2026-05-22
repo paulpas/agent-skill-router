@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 793 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 794 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **793 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **794 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 258 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 232 | Software patterns, security, testing, data science |
+| Coding | 233 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,9 +265,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 08:46:00 UTC  
-> **Total skills:** 793  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (793 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 09:25:52 UTC  
+> **Total skills:** 794  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (794 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -715,7 +715,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (232 skills)
+### Coding (233 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -870,6 +870,7 @@ MIT — All skills are freely available and redistributable.
 | [model-robustness](skills/coding/model-robustness/SKILL.md) | Improves model robustness including adversarial robustness, out-of-distribution detection, and uncertainty quantification | model robustness, adversarial robustness, out-of-distribution, OOD detection, robustness testing, unit tests, testing, test automation |
 | [model-selection](skills/coding/model-selection/SKILL.md) | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" | model selection, AIC, BIC, validation curves, learning curves, model comparison |
 | [models](skills/coding/models/SKILL.md) | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | enums, frozen, pydantic models, pydantic-models, trading |
+| [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | programming language comparison, rust vs go, typescript vs python, which language to use, language selection, zig vs c++, language benchmark, developer experience, runtime comparison, language ecosystem maturity |
 | [monolith-architecture](skills/coding/monolith-architecture/SKILL.md) | Implements modular monolith patterns (bounded-context layering, hexagonal ports, database-per-module, interface-based inter-module communication) to build cleanly structured single-deployable applications. | monolith, monolithic architecture, modular monolith, how do i structure a monolith, code organization, layered architecture, hexagonal architecture in monolith, single deployable unit |
 | [monolith-refactoring](skills/coding/monolith-refactoring/SKILL.md) | Refactors legacy monolithic "big ball of mud" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition. | monolith refactoring, big ball of mud, how do i untangle legacy code, spaghetti code cleanup, module extraction, strangler fig pattern, codebase restructuring, technical debt refactoring, god class decomposition, dependency analysis |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" | monte carlo, sampling, simulation, stochastic, markov chain, mcmc, how do i simulate |
@@ -1516,7 +1517,7 @@ MIT — All skills are freely available and redistributable.
 | [your-routine](skills/trading/your-routine/SKILL.md) | Trading | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. |
 
 
-### Reference (Learn & Understand) (169 skills)
+### Reference (Learn & Understand) (170 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1633,6 +1634,7 @@ MIT — All skills are freely available and redistributable.
 | [longhorn](skills/cncf/longhorn/SKILL.md) | Cncf | "Longhorn in Cloud Native Storage - cloud native architecture, patterns" pitfalls, and best practices |
 | [manager](skills/cncf/manager/SKILL.md) | Cncf | "cert-manager in Cloud-Native Engineering - Certificate Management for" Kubernetes |
 | [microprofile](skills/cncf/microprofile/SKILL.md) | Cncf | MicroProfile specification reference covering Config, OpenAPI, Fault Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events for cloud-native Java microservices. |
+| [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Coding | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. |
 | [monitor](skills/cncf/monitor/SKILL.md) | Cncf | "Provides Monitoring and logging for Azure resources with alerting and observability" |
 | [multi-stage-deployment](skills/cncf/multi-stage-deployment/SKILL.md) | Cncf | Designs multi-stage deployment pipelines that reduce risk through progressive disclosure, environment parity, and quality-gated stage transitions from development to production. |
 | [nats](skills/cncf/nats/SKILL.md) | Cncf | "NATS in Cloud Native Messaging - cloud native architecture, patterns" pitfalls, and best practices |
@@ -2426,6 +2428,7 @@ MIT — All skills are freely available and redistributable.
 | [model-robustness](skills/coding/model-robustness/SKILL.md) | Coding | Improves model robustness including adversarial robustness, out-of-distribution detection, and uncertainty quantification | Implementation |
 | [model-selection](skills/coding/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" | Implementation |
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | Implementation |
+| [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Coding | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | Reference |
 | [modular-design](skills/go/modular-design/SKILL.md) | Go | Designs modular Go applications with clean architecture, dependency injection, package boundaries, and interface-based design for maintainable codebases. | Implementation |
 | [momentum-indicators](skills/trading/momentum-indicators/SKILL.md) | Trading | "Implements rsi, macd, stochastic oscillators and momentum analysis for risk management and algorithmic trading execution." | Implementation |
 | [monitor](skills/cncf/monitor/SKILL.md) | Cncf | "Provides Monitoring and logging for Azure resources with alerting and observability" | Reference |
