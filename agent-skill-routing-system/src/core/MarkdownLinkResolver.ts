@@ -380,7 +380,9 @@ export class MarkdownLinkResolver {
         return this.extractKeyContent(content, 5000); // ~5000 char target
       }
 
-      return null;
+      // Unknown mode — fall back to brief instead of returning null
+      this.logger.warn('Unknown compression mode, falling back to brief', { mode, url });
+      return this.extractKeyContent(content, 2000);
     } catch (error) {
       this.logger.error('External content compression failed', {
         url,

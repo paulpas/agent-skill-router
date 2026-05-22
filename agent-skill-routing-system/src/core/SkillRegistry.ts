@@ -779,32 +779,41 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       }
     }
 
-    // Compress skills in batches (non-blocking with delays)
-    const batchSize = this.config.compressionBatchSize ?? 10;
-    for (let i = 0; i < skillsToWarm.length; i += batchSize) {
-      const batch = skillsToWarm.slice(i, i + batchSize);
+    // Save original link following state and disable during warmup
+    const originalLinkFollowing = this.markdownLinkConfig.enabled;
+    this.markdownLinkConfig.enabled = false;
 
-      // Process batch in parallel
-      const batchPromises = batch.map((skillName) =>
-        this.getSkillContent(skillName, this.config.compressionLevel ?? 0)
-          .then(() => {
-            successCount++;
-          })
-          .catch((err) => {
-            skippedCount++;
-            this.logger.debug('[COMPRESSION-WARMUP] failed for skill', {
-              skillName,
-              error: err instanceof Error ? err.message : String(err),
-            });
-          })
-      );
+    try {
+      // Compress skills in batches (non-blocking with delays)
+      const batchSize = this.config.compressionBatchSize ?? 10;
+      for (let i = 0; i < skillsToWarm.length; i += batchSize) {
+        const batch = skillsToWarm.slice(i, i + batchSize);
 
-      await Promise.all(batchPromises);
+        // Process batch in parallel
+        const batchPromises = batch.map((skillName) =>
+          this.getSkillContent(skillName, this.config.compressionLevel ?? 0)
+            .then(() => {
+              successCount++;
+            })
+            .catch((err) => {
+              skippedCount++;
+              this.logger.debug('[COMPRESSION-WARMUP] failed for skill', {
+                skillName,
+                error: err instanceof Error ? err.message : String(err),
+              });
+            })
+        );
 
-      // Small delay between batches to avoid overwhelming the system
-      if (i + batchSize < skillsToWarm.length) {
-        await new Promise((resolve) => setTimeout(resolve, 100));
+        await Promise.all(batchPromises);
+
+        // Small delay between batches to avoid overwhelming the system
+        if (i + batchSize < skillsToWarm.length) {
+          await new Promise((resolve) => setTimeout(resolve, 100));
+        }
       }
+    } finally {
+      // Restore original link following state
+      this.markdownLinkConfig.enabled = originalLinkFollowing;
     }
 
     const durationMs = Date.now() - t0;

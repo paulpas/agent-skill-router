@@ -131,34 +131,67 @@ AUTO_SKILL_MODEL=gpt-4o-mini
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Enable markdown link following in skill definitions
+# When on, the router will fetch and inline content from links found inside skill files.
+# Tradeoff: more informative skills vs. slower startup/warmup (each link = HTTP fetch).
+# If you enable this, also consider reducing JS_RENDERING_ENABLED for speed.
 LINK_FOLLOWING_ENABLED=false
 
 # Allow fetching external URLs (HTTPS only)
+# External = not relative to the skill file itself (e.g. github.com links).
+# Set to false to restrict link following to relative file references only.
 ALLOW_EXTERNAL_LINKS=false
 
 # Maximum link resolution depth
+# How many levels of nested links to follow (0 = disabled, 1 = direct links only).
+# Depth 2 means: skill links to page A, page A links to page B → both fetched.
+# Each additional depth multiplies fetch count by average links per page.
+# RECOMMENDATION: Keep at 2 unless you have simple skills with no nested references.
 MAX_LINK_DEPTH=2
 
-# Max external content size in KB before compression/skip (1-1000)
+# Max external content size in KB before compression is applied (1-1000)
+# Content UNDER this threshold is inlined as-is (fast).
+# Content OVER this threshold is compressed or skipped per EXTERNAL_COMPRESSION_MODE.
+# Increase if you want full content from documentation pages (at the cost of context tokens).
 MAX_EXTERNAL_SIZE_KB=10
 
-# Compression mode for oversized external content (brief, moderate, detailed)
+# Compression mode for oversized external content (brief, moderate, skip)
+#   brief    → Extract ~2KB (title, headings, first paragraphs, code blocks)
+#   moderate → Extract ~5KB (more complete section content)
+#   skip     → Don't compress, just truncate at MAX_EXTERNAL_SIZE_KB
+# RECOMMENDATION: Start with 'moderate' for a balance of detail vs. tokens.
 EXTERNAL_COMPRESSION_MODE=brief
 
-# Enable JavaScript rendering for dynamic pages (requires Puppeteer)
+# Enable JavaScript rendering for dynamic pages (requires Puppeteer/Chromium)
+# When false: uses static HTTP fetch only (faster, works for docs/markdown pages).
+# When true: uses headless Chromium to render JS-heavy pages (SPAs, dashboards).
+# TRADEOFF: Static fetch ~200ms per URL. JS rendering ~1-5s per URL.
+# If you enable this, warmup will be significantly slower.
 JS_RENDERING_ENABLED=false
 
 # JS render timeout in milliseconds
+# How long to wait for Chromium to render a page before falling back.
+# Increase for slow SPAs, decrease to fail fast.
 JS_RENDER_TIMEOUT_MS=5000
 
 # Fall back to static fetch if JS rendering fails
+# If true: JS rendering fails → try static HTTP fetch instead.
+# If false: JS rendering fails → skip the link entirely.
 JS_RENDER_FALLBACK=true
 
-# How resolved content is embedded (inline, semantic, compressed)
+# How resolved content is embedded into the skill context (inline, semantic, compressed)
+#   inline     → Full content is embedded as-is (rich context, high token cost)
+#   semantic   → Embedder selects top-K semantically relevant chunks (efficient, requires embedding service)
+#   compressed → Always compress via EXTERNAL_COMPRESSION_MODE rules (balanced)
+# RECOMMENDATION: 'inline' is simplest. Use 'semantic' for large documentation pages.
 LINK_RESOLUTION_MODE=inline
 
-# Number of top semantic chunks to return (when mode=semantic)
+# Number of top semantic chunks to return (only used when LINK_RESOLUTION_MODE=semantic)
+# Higher = more context but more tokens. Each chunk is ~200-500 chars.
 SEMANTIC_TOP_K=3
 
-# Minimum cosine similarity for semantic chunk selection (0.0-1.0)
+# Minimum cosine similarity for semantic chunk selection (0.0-1.0, only used when LINK_RESOLUTION_MODE=semantic)
+#   0.0 → Include everything (no filter)
+#   0.3 → Default — reasonable cutoff for relevant content
+#   0.7 → Strict — only highly relevant chunks
+# Raise this to reduce noise, lower to capture tangential but useful context.
 SEMANTIC_SIMILARITY_THRESHOLD=0.3
