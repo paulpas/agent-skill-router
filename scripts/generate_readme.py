@@ -256,6 +256,43 @@ def generate_skills_index(skills: List[Dict]) -> str:
     return "\n".join(lines)
 
 
+def generate_domains_table(skills: List[Dict]) -> str:
+    """Generate the Domains count table from actual skill data."""
+    # Group by domain
+    by_domain: Dict[str, int] = {}
+    for skill in skills:
+        domain = skill["domain"]
+        by_domain[domain] = by_domain.get(domain, 0) + 1
+
+    # Domain focus descriptions
+    domain_focus = {
+        "agent": "AI orchestration, routing, task decomposition",
+        "cncf": "Kubernetes, cloud-native, DevOps, service mesh",
+        "coding": "Software patterns, security, testing, data science",
+        "electrical-engineering": "Hardware design, embedded systems, circuit analysis",
+        "go": "Go idioms, concurrency patterns, error handling",
+        "linux": "System administration, kernel tuning, security, networking",
+        "maker": "DIY projects, IoT, home automation, 3D printing",
+        "programming": "Algorithms, frameworks, language references",
+        "trading": "Execution, risk management, ML models",
+        "writing": "Technical writing, style guidance",
+    }
+
+    # Domain display name overrides (for acronyms casing)
+    domain_display = {
+        "cncf": "CNCF",
+    }
+
+    lines = ["| Domain | Count | Focus |", "|--------|-------|-------|"]
+    for domain in sorted(by_domain.keys()):
+        count = by_domain[domain]
+        focus = domain_focus.get(domain, "")
+        display = domain_display.get(domain, domain.replace("-", " ").title())
+        lines.append(f"| {display} | {count} | {focus} |")
+
+    return "\n".join(lines) + "\n"
+
+
 def generate_content(skills: List[Dict]) -> str:
     """Generate complete auto-generated content."""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
@@ -275,8 +312,8 @@ def generate_content(skills: List[Dict]) -> str:
     return content
 
 
-def update_readme(readme_path: Path, generated_content: str) -> bool:
-    """Update README with generated content between markers."""
+def update_readme(readme_path: Path, generated_content: str, skills: List[Dict]) -> bool:
+    """Update README with generated content between markers and update static intro counts."""
     if not readme_path.exists():
         print(
             f"{Colors.RED}✗ README not found: {readme_path}{Colors.RESET}",
@@ -286,7 +323,7 @@ def update_readme(readme_path: Path, generated_content: str) -> bool:
 
     content = readme_path.read_text(encoding="utf-8")
 
-    # Check for markers
+    # ── Replace auto-generated block ─────────────────────────────────────────────
     start_marker = "<!-- AUTO-GENERATED SKILLS INDEX START -->"
     end_marker = "<!-- AUTO-GENERATED SKILLS INDEX END -->"
 
@@ -297,9 +334,36 @@ def update_readme(readme_path: Path, generated_content: str) -> bool:
         )
         content = content.rstrip() + "\n\n" + generated_content
     else:
-        # Replace content between markers
         pattern = f"{re.escape(start_marker)}.*?{re.escape(end_marker)}"
         content = re.sub(pattern, generated_content, content, flags=re.DOTALL)
+
+    # ── Update static intro counts ────────────────────────────────────────────────
+    total_skills = len(skills)
+    unique_domains = len(set(skill["domain"] for skill in skills))
+
+    # Update "With N skills across M domains" in the intro paragraph
+    content = re.sub(
+        r'With \d+ skills across \d+ domains',
+        f'With {total_skills} skills across {unique_domains} domains',
+        content,
+    )
+
+    # Update "🎯 **N Skills**" in the feature bullet
+    content = re.sub(
+        r'🎯 \*\*\d+ Skills\*\*',
+        f'🎯 **{total_skills} Skills**',
+        content,
+    )
+
+    # ── Update Domains table ──────────────────────────────────────────────────────
+    domains_table = generate_domains_table(skills)
+    # Match the full domains table block: header + separator + data rows
+    content = re.sub(
+        r'\| Domain \| Count \| Focus \|\n\|--------\|-------\|-------\|\n(?:\| .+ \| \d+ \| .* \|\n?)*',
+        domains_table,
+        content,
+        count=1,
+    )
 
     readme_path.write_text(content, encoding="utf-8")
 
@@ -354,7 +418,7 @@ def main():
         output_path.write_text(generated_content, encoding="utf-8")
         print(f"{Colors.GREEN}✓ Wrote to {output_path}{Colors.RESET}")
     else:
-        if update_readme(readme_path, generated_content):
+        if update_readme(readme_path, generated_content, skills):
             print(f"{Colors.GREEN}✓ Updated {readme_path}{Colors.RESET}")
         else:
             return 1
