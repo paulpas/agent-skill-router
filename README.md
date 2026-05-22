@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-21 20:23:47 UTC  
-> **Total skills:** 767
+> **Last updated:** 2026-05-21 20:48:00 UTC  
+> **Total skills:** 768
 
 ## Skills by Domain
 
@@ -707,7 +707,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (217 skills)
+### Coding (218 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -905,6 +905,7 @@ MIT — All skills are freely available and redistributable.
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | software engineering, modular design, separation of concerns, defensive programming, KISS principle, YAGNI, clean architecture |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. | error handling, exception design, retry logic, circuit breaker, graceful degradation, error recovery, resilience patterns, how do i handle errors in software |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | testing strategy, unit test, integration test, property-based testing, test coverage, mocking, assertion, pytest, test suite design, how do i write tests |
+| [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | spring boot, spring framework, dependency injection, auto configuration, rest controller, record dto, profile configuration, actuator, java 21, virtual threads, @service, @component, @autowired, how do i build a spring app |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. | structural patterns, adapter pattern, bridge pattern, composite pattern, decorator pattern, facade pattern, proxy pattern, flyweight, GoF design patterns |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" | support vector machines, SVM, kernel methods, support vectors, SVM classification |
@@ -1093,7 +1094,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (361 skills)
+### Implementation (Build Features) (362 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1402,6 +1403,7 @@ MIT — All skills are freely available and redistributable.
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Coding | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. |
+| [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. |
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. |
 | [statistical-arbitrage](skills/trading/statistical-arbitrage/SKILL.md) | Trading | "Implements pair trading and cointegration-based arbitrage strategies for risk management and algorithmic trading execution." |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | Coding | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" |
@@ -2544,6 +2546,7 @@ MIT — All skills are freely available and redistributable.
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | Implementation |
 | [spiffe](skills/cncf/spiffe/SKILL.md) | Cncf | "Provides SPIFFE in Secure Product Identity Framework for Applications" | Reference |
 | [spire](skills/cncf/spire/SKILL.md) | Cncf | "Configures spire in spiffe implementation for real-world deployments for cloud-native deployment and infrastructure management." | Reference |
+| [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | Implementation |
 | [sql-database](skills/cncf/sql-database/SKILL.md) | Cncf | Provides Managed relational database with elastic pools, geo-replication, and automatic backups | Reference |
 | [sqs](skills/cncf/sqs/SKILL.md) | Cncf | "Deploys managed message queues with SQS for asynchronous processing" decoupling services, and reliable message delivery with visibility timeout and dead-letter queues. | Reference |
 | [ssm](skills/cncf/ssm/SKILL.md) | Cncf | "Manages EC2 instances and on-premises servers with AWS Systems Manager" for configuration management, patch management, and secure shell access without SSH keys. | Reference |
