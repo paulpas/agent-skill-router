@@ -294,10 +294,10 @@ export class MarkdownLinkResolver {
         return null;
       }
 
-      // 1MB hard limit as safety net
+      // 8MB hard limit as safety net
       const text = await response.text();
-      if (text.length > 1_000_000) {
-        this.logger.warn('External content exceeds 1MB hard limit, skipping', { url, size: text.length });
+      if (text.length > 8_000_000) {
+        this.logger.warn('External content exceeds 8MB hard limit, skipping', { url, size: text.length });
         return null;
       }
 
@@ -351,9 +351,9 @@ export class MarkdownLinkResolver {
 
       await browser.close();
 
-      // 1MB hard limit
-      if (html.length > 1_000_000) {
-        this.logger.warn('JS-rendered content exceeds 1MB hard limit', { url, size: html.length });
+      // 8MB hard limit
+      if (html.length > 8_000_000) {
+        this.logger.warn('JS-rendered content exceeds 8MB hard limit', { url, size: html.length });
         return null;
       }
 
