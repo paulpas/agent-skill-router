@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 811 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 813 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **811 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **813 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 247 | Software patterns, security, testing, data science |
+| Coding | 249 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,9 +265,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 16:50:15 UTC  
-> **Total skills:** 811  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (811 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 17:36:05 UTC  
+> **Total skills:** 813  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (813 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -716,7 +716,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (247 skills)
+### Coding (249 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -902,6 +902,7 @@ MIT — All skills are freely available and redistributable.
 | [performance-testing](skills/coding/performance-testing/SKILL.md) | Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. | performance testing, load testing, stress test, p95 latency, bottleneck detection, how do i measure system performance, k6, locust |
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... | personal knowledge management, PKM, Zettelkasten, PARA framework, note taking, how do i organize my notes, knowledge base, second brain |
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. | platform engineering, internal developer platform, IDP, golden paths, self-service infrastructure, Backstage.io, developer experience metrics, how do i build a developer platform |
+| [poetry](skills/coding/poetry/SKILL.md) | Manages Python project dependencies, virtual environments, building, and publishing using Poetry — covering dependency resolution, lockfiles, workspaces, plugin system, and migration from pip. | poetry, python package manager, pyproject.toml, poetry lock, virtual environment, dependency management, Python publishing, PyPI upload, poetry workspaces, how do i manage python dependencies, pip migration, lockfile, python packaging |
 | [polyglot-developer-patterns](skills/coding/polyglot-developer-patterns/SKILL.md) | Equips individual developers with learning strategies, code review techniques, and pattern translation methods to build fluency across multiple programming languages without losing productivity. | polyglot developer, multi-language productivity, learn new language, code review in different language, language translation, context switching between languages, programming language learning, how do i become proficient in multiple languages, cross-paradigm coding |
 | [polyglot-development](skills/coding/polyglot-development/SKILL.md) | Implements language selection heuristics, polyglot monorepo patterns, and cross-language communication protocols for multi-language software systems. | polyglot, multi-language, language selection, go vs typescript, rust vs python, monorepo build, cross-language communication, protocol buffer, interop patterns, which language to use |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. | port interface, driving port, driven port, port contract, Protocol vs ABC, hexagonal ports, how do i define clean boundaries, dependency inversion, framework-agnostic interfaces |
@@ -912,6 +913,7 @@ MIT — All skills are freely available and redistributable.
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports |
 | [python-package-publishing](skills/coding/python-package-publishing/SKILL.md) | Builds, verifies, and publishes Python packages with hatchling, hatch-vcs dynamic versioning, twine checks, test pypi, and GitHub Actions release CI/CD. | python package, publish to pypi, how do i publish a python package, build wheel sdist, pyproject.toml hatchling, twine check, test pypi, github actions release |
 | [python-typing-patterns](skills/coding/python-typing-patterns/SKILL.md) | Implements advanced Python typing patterns including generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, and composite type construction for robust static analysis. | python generics, typing patterns, Protocol structural subtyping, TypeVar bounds, Generic classes, covariance contravariance, TypeAliasType, runtime type inspection, mypy advanced typing, pyright protocols |
+| [python-uv](skills/coding/python-uv/SKILL.md) | Manages Python projects with uv by Astral — ultra-fast dependency resolution, virtual environments, workspace/multirepo setup, build tools, and pip compatibility for modern Python development workflows. | uv, astral uv, python package manager, uv sync, uv lock, python project management, ultra-fast dependency resolution, pip compatibility, how do i manage python projects with uv, uv workspace, python virtual environment, uv init add run |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | code quality, clean code, linting, code formatting, testing policies, cyclomatic complexity, code standards, automated enforcement |
 | [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. | rag, retrieval augmented generation, vector search, embedding pipeline, document chunking, semantic search, re-ranking, hybrid search, llm context injection, knowledge grounding, cross-encoder, graphrag |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | randomized experiments, RCT, experimental design, randomization, blocking, sample size |
@@ -1145,7 +1147,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (399 skills)
+### Implementation (Build Features) (401 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1418,6 +1420,7 @@ MIT — All skills are freely available and redistributable.
 | [personal-knowledge-management](skills/coding/personal-knowledge-management/SKILL.md) | Coding | Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficient... |
 | [personalized-behavior](skills/agent/personalized-behavior/SKILL.md) | Agent | Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses. |
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Coding | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. |
+| [poetry](skills/coding/poetry/SKILL.md) | Coding | Manages Python project dependencies, virtual environments, building, and publishing using Poetry — covering dependency resolution, lockfiles, workspaces, plugin system, and migration from pip. |
 | [polyglot-developer-patterns](skills/coding/polyglot-developer-patterns/SKILL.md) | Coding | Equips individual developers with learning strategies, code review techniques, and pattern translation methods to build fluency across multiple programming languages without losing productivity. |
 | [polyglot-development](skills/coding/polyglot-development/SKILL.md) | Coding | Implements language selection heuristics, polyglot monorepo patterns, and cross-language communication protocols for multi-language software systems. |
 | [ports-patterns](skills/coding/ports-patterns/SKILL.md) | Coding | Defines and manages port interfaces (driving/driven) in hexagonal architecture using Python Protocols, abc.ABC classes, and explicit contract patterns for framework-agnostic boundaries. |
@@ -1432,6 +1435,7 @@ MIT — All skills are freely available and redistributable.
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. |
 | [python-package-publishing](skills/coding/python-package-publishing/SKILL.md) | Coding | Builds, verifies, and publishes Python packages with hatchling, hatch-vcs dynamic versioning, twine checks, test pypi, and GitHub Actions release CI/CD. |
 | [python-typing-patterns](skills/coding/python-typing-patterns/SKILL.md) | Coding | Implements advanced Python typing patterns including generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, and composite type construction for robust static analysis. |
+| [python-uv](skills/coding/python-uv/SKILL.md) | Coding | Manages Python projects with uv by Astral — ultra-fast dependency resolution, virtual environments, workspace/multirepo setup, build tools, and pip compatibility for modern Python development workflows. |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" |
 | [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Coding | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" |
@@ -2552,6 +2556,7 @@ MIT — All skills are freely available and redistributable.
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Agent | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Agent | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Coding | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. | Implementation |
+| [poetry](skills/coding/poetry/SKILL.md) | Coding | Manages Python project dependencies, virtual environments, building, and publishing using Poetry — covering dependency resolution, lockfiles, workspaces, plugin system, and migration from pip. | Implementation |
 | [policy-agent-opa](skills/cncf/policy-agent-opa/SKILL.md) | Cncf | "Open Policy Agent in Security &amp; Compliance - cloud native architecture" patterns, pitfalls, and best practices | Reference |
 | [polyglot-developer-patterns](skills/coding/polyglot-developer-patterns/SKILL.md) | Coding | Equips individual developers with learning strategies, code review techniques, and pattern translation methods to build fluency across multiple programming languages without losing productivity. | Implementation |
 | [polyglot-development](skills/coding/polyglot-development/SKILL.md) | Coding | Implements language selection heuristics, polyglot monorepo patterns, and cross-language communication protocols for multi-language software systems. | Implementation |
@@ -2575,6 +2580,7 @@ MIT — All skills are freely available and redistributable.
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | Implementation |
 | [python-package-publishing](skills/coding/python-package-publishing/SKILL.md) | Coding | Builds, verifies, and publishes Python packages with hatchling, hatch-vcs dynamic versioning, twine checks, test pypi, and GitHub Actions release CI/CD. | Implementation |
 | [python-typing-patterns](skills/coding/python-typing-patterns/SKILL.md) | Coding | Implements advanced Python typing patterns including generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, and composite type construction for robust static analysis. | Implementation |
+| [python-uv](skills/coding/python-uv/SKILL.md) | Coding | Manages Python projects with uv by Astral — ultra-fast dependency resolution, virtual environments, workspace/multirepo setup, build tools, and pip compatibility for modern Python development workflows. | Implementation |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | Implementation |
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Agent | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Coding | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. | Implementation |
