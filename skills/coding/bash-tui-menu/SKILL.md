@@ -487,6 +487,20 @@ When generating or reviewing a Bash TUI menu script, return:
 
 ---
 
+## Live References
+
+> Repository-standard links checked against the local `SKILL_FORMAT_SPEC.md`; these links preserve the Bash-Dialog research trail without treating Bash-Dialog as a sourceable library.
+
+- [Bash-Dialog repository](https://github.com/RileyMeta/Bash-Dialog)
+- [Bash-Dialog README](https://github.com/RileyMeta/Bash-Dialog/blob/main/README.md)
+- [All Menus example](https://github.com/RileyMeta/Bash-Dialog/blob/main/Examples/All_Menus/All_Menus.sh)
+- [Advanced menu example](https://github.com/RileyMeta/Bash-Dialog/blob/main/Examples/Advanced_Examples/Advanced_Example.sh)
+- [Advanced Extra Button example](https://github.com/RileyMeta/Bash-Dialog/blob/main/Examples/Extra_Button/Advanced_Extra_Button.sh)
+- [Dynamic Extra Button example](https://github.com/RileyMeta/Bash-Dialog/blob/main/Examples/Extra_Button/Dynamic_Extra.sh)
+- [User Creation form example](https://github.com/RileyMeta/Bash-Dialog/blob/main/Examples/Advanced_Examples/User_Creation.sh)
+
+---
+
 ## Reference Notes
 
 ### Verified from `https://github.com/RileyMeta/Bash-Dialog`

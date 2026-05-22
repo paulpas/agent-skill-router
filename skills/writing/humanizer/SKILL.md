@@ -9,7 +9,7 @@ description: Detects and removes AI writing patterns to produce natural human wr
 license: MIT
 maturity: stable
 metadata:
-  domain: coding
+  domain: writing
   output-format: analysis
   related-skills: code-review, markdown-best-practices
   role: review

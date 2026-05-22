@@ -89,14 +89,14 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 258 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 243 | Software patterns, security, testing, data science |
+| Coding | 242 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
 | Maker | 3 | DIY projects, IoT, home automation, 3D printing |
 | Programming | 6 | Algorithms, frameworks, language references |
 | Trading | 89 | Execution, risk management, ML models |
-| Writing | 3 | Technical writing, style guidance |
+| Writing | 4 | Technical writing, style guidance |
 ---
 
 ## Scripts
@@ -265,7 +265,7 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 19:06:54 UTC  
+> **Last updated:** 2026-05-22 14:33:21 UTC  
 > **Total skills:** 805  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (805 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
@@ -715,7 +715,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (243 skills)
+### Coding (242 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -841,7 +841,6 @@ MIT — All skills are freely available and redistributable.
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. | gRPC, protocol buffers, protobuf, RPC, streaming RPC, unary call, interceptor middleware, grpc service, stub generation, proto file design, bidirectional stream, client streaming, server streaming |
 | [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. | hexagonal architecture, ports and adapters, clean architecture, dependency inversion, core business logic, how do i decouple my code, separate business logic from framework |
 | [html-entity-encoding](skills/coding/html-entity-encoding/SKILL.md) | Encodes HTML special characters (&lt; &gt; &amp; &quot; &#39;) into safe entity references to prevent XSS, ensure correct rendering, and handle character data safely across web frameworks and output contexts. | html entities, entity encoding, html escaping, &amp; ampersand, &lt; less than, &gt; greater than, character references, HTML5 entities, XSS prevention, framework escaping, dangerouslySetInnerHTML, innerHTML, DOMPurify |
-| [humanizer](skills/coding/humanizer/SKILL.md) | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation, comments, technical writing, readability, code clarity |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | hypothesis testing, t-test, chi-square, p-value, statistical significance, how do i test hypotheses, unit tests, testing |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. | idempotency, idempotent, idempotency key, request deduplication, exactly once, duplicate detection, optimistic concurrency, idempotent handler, outbox pattern, race condition prevention |
@@ -1128,11 +1127,12 @@ MIT — All skills are freely available and redistributable.
 | [your-routine](skills/trading/your-routine/SKILL.md) | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. | trading routine, pre-market prep, post-market review, daily trading checklist, execution discipline, trading habits, trade journal, market preparation, your routine, routine design |
 
 
-### Writing (3 skills)
+### Writing (4 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [em-dash-guide](skills/writing/em-dash-guide/SKILL.md) | Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation. | em dash, en dash, hyphen, dash typography, how do i type dashes, long dash, range notation, compound modifier, —, – |
+| [humanizer](skills/writing/humanizer/SKILL.md) | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation, comments, technical writing, readability, code clarity |
 | [mermaid-diagrams](skills/writing/mermaid-diagrams/SKILL.md) | Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams, Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub. | mermaid, mermaidjs, diagram, flowchart, sequence diagram, how do i create a diagram, github markdown diagram, architecture diagram, diagram best practices |
 | [technical-documentation](skills/writing/technical-documentation/SKILL.md) | Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices. | technical documentation, how do i write docs, README, API documentation, getting started guide, architecture overview, developer experience, docs-as-code, documentation structure, markdown docs |
 
@@ -1963,7 +1963,7 @@ MIT — All skills are freely available and redistributable.
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Coding | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. |
 | [architectural-review](skills/coding/architectural-review/SKILL.md) | Coding | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Coding | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. |
-| [humanizer](skills/coding/humanizer/SKILL.md) | Coding | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process |
+| [humanizer](skills/writing/humanizer/SKILL.md) | Writing | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. |
 
 ## Complete Skills Index
@@ -2333,7 +2333,7 @@ MIT — All skills are freely available and redistributable.
 | [html-entity-encoding](skills/coding/html-entity-encoding/SKILL.md) | Coding | Encodes HTML special characters (&lt; &gt; &amp; &quot; &#39;) into safe entity references to prevent XSS, ensure correct rendering, and handle character data safely across web frameworks and output contexts. | Implementation |
 | [hub](skills/cncf/hub/SKILL.md) | Cncf | "Provides Artifact Hub in Cloud-Native Engineering - Repository for Kubernetes Helm, Falco, OPA, and more" | Reference |
 | [hubspot-automation](skills/agent/hubspot-automation/SKILL.md) | Agent | Implements intelligent hubspot automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
-| [humanizer](skills/coding/humanizer/SKILL.md) | Coding | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | Review |
+| [humanizer](skills/writing/humanizer/SKILL.md) | Writing | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process | Review |
 | [hydra](skills/cncf/hydra/SKILL.md) | Cncf | "ORY Hydra in Security & Compliance - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | Coding | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | Implementation |
 | [hyperparameter-tuning](skills/trading/hyperparameter-tuning/SKILL.md) | Trading | "Implements optimize model configurations for trading applications for risk management and algorithmic trading execution." | Implementation |

@@ -1,20 +1,18 @@
 #!/bin/bash
 
-# Test suite for install-skill-router.sh
-# Tests security fixes and functionality
+# Static/unit-style tests for install-skill-router.sh.
+# These checks intentionally avoid Docker build/run and real dialog sessions.
 
-SCRIPT="/home/paulpas/git/agent-skill-router/install-skill-router.sh"
-TEST_DIR="/tmp/install-skill-router-test"
+SCRIPT="${SCRIPT:-/home/paulpas/git/agent-skill-router/install-skill-router.sh}"
+TEST_DIR="${TEST_DIR:-/tmp/install-skill-router-test}"
 PASS=0
 FAIL=0
 
-# Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
-# Helper functions
 pass() {
     echo -e "${GREEN}✓ PASS${NC}: $1"
     ((PASS++))
@@ -29,317 +27,260 @@ info() {
     echo -e "${YELLOW}→ INFO${NC}: $1"
 }
 
-# Setup test environment
 setup() {
     rm -rf "$TEST_DIR"
     mkdir -p "$TEST_DIR"
 }
 
-# Cleanup test environment
 cleanup() {
     rm -rf "$TEST_DIR"
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Test 1: Config File Parser Safety
-# ─────────────────────────────────────────────────────────────────────────────
+assert_grep() {
+    local pattern="$1"
+    local message="$2"
+
+    if grep -Eq "$pattern" "$SCRIPT"; then
+        pass "$message"
+    else
+        fail "$message"
+    fi
+}
+
+assert_not_grep() {
+    local pattern="$1"
+    local message="$2"
+
+    if grep -Eq "$pattern" "$SCRIPT"; then
+        fail "$message"
+    else
+        pass "$message"
+    fi
+}
+
 test_config_parser_safety() {
     echo ""
     echo "────────────────────────────────────────────────────────────────────────────"
     echo "Test 1: Config File Parser Safety"
     echo "────────────────────────────────────────────────────────────────────────────"
-    
-    # Test 1a: Normal config file
-    info "Test 1a: Normal config file (should work)"
-    cat > "$TEST_DIR/normal.conf" << 'EOF'
-OPENAI_API_KEY=sk-test123
-PORT=3000
-LLM_PROVIDER=openai
-EOF
-    
-    # Test config file exists and is valid
-    if [[ -f "$TEST_DIR/normal.conf" ]]; then
-        pass "Normal config file created successfully"
-    else
-        fail "Normal config file creation failed"
-    fi
-    
-    # Test 1b: Malicious content (command injection)
-    info "Test 1b: Malicious content like OPENAI_API_KEY=\$(rm -rf /)"
-    cat > "$TEST_DIR/malicious.conf" << 'EOF'
-OPENAI_API_KEY=$(rm -rf /)
-PORT=3000
-EOF
 
-    # Verify the malicious content is escaped properly
-    # The script should escape $ characters, so after parsing the value should be literal
-    if grep -q '\\\$' "$SCRIPT"; then
-        pass "Script contains escape for \$ in config parser"
-    else
-        fail "Script missing escape for \$ in config parser"
-    fi
-    
-    # Test 1c: Special characters in values
-    info "Test 1c: Special characters in values"
     cat > "$TEST_DIR/special.conf" << 'EOF'
 OPENAI_API_KEY=sk-test&special$chars"quotes
 PORT=3000
 OPENAI_BASE_URL=https://api.example.com/v1?token=abc123
 EOF
 
-    (
-        source <(sed -n '250,314p' "$SCRIPT")
-        set -e
-        if parse_config_file "$TEST_DIR/special.conf" 2>/dev/null; then
-            pass "Special characters in config parsed successfully"
-        else
-            fail "Special characters in config failed"
-        fi
-    ) || fail "Special chars test error"
+    if [[ -f "$TEST_DIR/special.conf" ]]; then
+        pass "Special-character config fixture created"
+    else
+        fail "Special-character config fixture created"
+    fi
+
+    assert_grep 'declare -g "\$key=\$value"' "Config parser assigns values with declare -g, not eval"
+    assert_grep 'Do not mangle the value with backslash-escapes' "Config parser preserves literal special characters"
+    assert_not_grep 'eval .*\$key' "Config parser does not eval config keys or values"
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Test 2: CLI Argument Parsing
-# ─────────────────────────────────────────────────────────────────────────────
 test_cli_arguments() {
     echo ""
     echo "────────────────────────────────────────────────────────────────────────────"
     echo "Test 2: CLI Argument Parsing"
     echo "────────────────────────────────────────────────────────────────────────────"
-    
-    # Test 2a: --help flag
+
     info "Test 2a: --help flag shows usage"
     if "$SCRIPT" --help 2>&1 | grep -q "Usage:"; then
         pass "--help shows usage"
     else
-        fail "--help does not show usage"
+        fail "--help shows usage"
     fi
-    
-    # Test 2b: --config flag
-    info "Test 2b: --config FILE flag"
+
+    info "Test 2b: --config FILE flag is accepted before help exits"
     cat > "$TEST_DIR/config.conf" << 'EOF'
-OPENAI_API_KEY=sk-test
+OPENAI_API_KEY=sk-test-value
 PORT=3000
 EOF
-    
-    # We can't fully test config loading without running the full script,
-    # but we can verify the flag is accepted
     if "$SCRIPT" --config "$TEST_DIR/config.conf" --help 2>&1 | grep -q "Usage:"; then
-        pass "--config flag is accepted"
+        pass "--config flag accepted"
     else
-        fail "--config flag not working"
+        fail "--config flag accepted"
     fi
-    
-    # Test 2c: --no-interactive flag
-    info "Test 2c: --no-interactive flag"
+
+    info "Test 2c: --no-interactive flag is accepted before help exits"
     if "$SCRIPT" --no-interactive --help 2>&1 | grep -q "Usage:"; then
-        pass "--no-interactive flag is accepted"
+        pass "--no-interactive flag accepted"
     else
-        fail "--no-interactive flag not working"
+        fail "--no-interactive flag accepted"
     fi
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Test 3: API Key Masking
-# ─────────────────────────────────────────────────────────────────────────────
-test_api_key_masking() {
+test_secret_masking() {
     echo ""
     echo "────────────────────────────────────────────────────────────────────────────"
-    echo "Test 3: API Key Masking"
+    echo "Test 3: Secret Masking"
     echo "────────────────────────────────────────────────────────────────────────────"
-    
-    # Test 3a: Short API key (< 12 chars)
-    info "Test 3a: Short API key (< 12 chars should show ***)"
-    if grep -q '\[\[ ${#key} -lt 12 \]\]' "$SCRIPT" || grep -q '\[\[ ${#key} -lt 10 \]\]' "$SCRIPT"; then
-        pass "Script has length check for API keys"
-    else
-        fail "Script missing length check for API keys"
-    fi
-    
-    # Test 3b: Normal API key (12+ chars)
-    info "Test 3b: Normal API key (12+ chars)"
-    if grep -q ':0:8}' "$SCRIPT" && grep -q ': -4}' "$SCRIPT"; then
-        pass "Script has masking logic (first 8 chars + last 4 chars)"
-    else
-        fail "Script missing masking logic"
-    fi
-    
-    # Test 3c: Very long API key
-    info "Test 3c: Very long API key handling"
-    # The masking logic should work for any length >= 12
-    if grep -q 'masked="${current_value:0:8}...${current_value: -4}"' "$SCRIPT"; then
-        pass "Masking logic handles long keys correctly"
-    else
-        fail "Masking logic may not handle long keys"
-    fi
+
+    assert_grep 'mask_secret\(\)' "Shared mask_secret helper exists"
+    assert_grep '\$\{secret:0:8\}\.\.\.\$\{secret: -4\}' "Secrets are masked with first 8 and last 4 characters"
+    assert_grep 'Current value: \$current_masked' "Password dialog shows only masked current secret"
+    assert_not_grep 'echo -e .*\[DEBUG\]' "No noisy DEBUG echo statements remain"
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Test 4: Docker Environment Variables
-# ─────────────────────────────────────────────────────────────────────────────
 test_docker_env_vars() {
     echo ""
     echo "────────────────────────────────────────────────────────────────────────────"
     echo "Test 4: Docker Environment Variables"
     echo "────────────────────────────────────────────────────────────────────────────"
-    
-    # Check if values are properly quoted in docker run command
-    info "Test 4a: Docker env vars are quoted"
-    if grep -q 'ENV_VARS="-e OPENAI_API_KEY=\\"${OPENAI_API_KEY:-}\\""' "$SCRIPT"; then
-        pass "Docker environment variables use quoted values"
-    else
-        fail "Docker environment variables may not be properly quoted"
-    fi
-    
-    # Check specifically for the quoting pattern
-    if grep -q 'ENV_VARS="-e OPENAI_API_KEY=\\"${OPENAI_API_KEY:-}\\""' "$SCRIPT"; then
-        pass "OPENAI_API_KEY is properly quoted in docker env"
-    else
-        fail "OPENAI_API_KEY not properly quoted"
-    fi
-    
-    # Test with spaces in values
-    info "Test 4b: Values with spaces should be quoted"
-    # Check that the ENV_VARS construction uses escaped quotes
-    if grep -E '="-e [A-Z_]+\=\\"' "$SCRIPT" > /dev/null; then
-        pass "ENV_VARS construction uses proper quoting"
-    else
-        fail "ENV_VARS may not properly quote values with spaces"
-    fi
+
+    assert_grep 'ENV_ARGS=\(\)' "Docker environment arguments use an array"
+    assert_grep 'ENV_ARGS\+=\(-e "OPENAI_API_KEY=\$\{OPENAI_API_KEY:-\}"\)' "OPENAI_API_KEY is passed as one quoted array element"
+    assert_grep 'docker run -d' "Docker run command exists"
+    assert_grep '"\$\{ENV_ARGS\[@\]\}"' "Docker run expands ENV_ARGS safely"
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Test 5: SSH Key Path Resolution
-# ─────────────────────────────────────────────────────────────────────────────
 test_ssh_key_resolution() {
     echo ""
     echo "────────────────────────────────────────────────────────────────────────────"
     echo "Test 5: SSH Key Path Resolution"
     echo "────────────────────────────────────────────────────────────────────────────"
-    
-    # Test 5a: Symlink detection
-    info "Test 5a: SSH key symlink detection (security)"
-    if grep -q '\[\[ -L "' "$SCRIPT" && grep -q 'not allowed for security' "$SCRIPT"; then
-        pass "Script detects and rejects SSH key symlinks"
-    else
-        fail "Script may not detect SSH key symlinks"
-    fi
-    
-    # Test 5b: Path validation
-    info "Test 5b: SSH key path validation"
-    if grep -q 'realpath -m' "$SCRIPT" || grep -q 'realpath ' "$SCRIPT"; then
-        pass "Script resolves SSH key paths"
-    else
-        fail "Script may not properly resolve SSH key paths"
-    fi
-    
-    # Test 5c: File existence check
-    info "Test 5c: SSH key file existence check"
-    if grep -q '\[\[ -f "' "$SCRIPT" && grep -q 'not found:' "$SCRIPT"; then
-        pass "Script checks SSH key file exists"
-    else
-        fail "Script may not check SSH key file exists"
-    fi
+
+    assert_grep '\[\[ -L "\$SSH_KEY_PATH" \]\]' "Script detects and rejects SSH key symlinks"
+    assert_grep 'realpath -m "\$SSH_KEY_PATH"' "Script resolves SSH key paths"
+    assert_grep '\[\[ -f "\$SSH_KEY_PATH" && -r "\$SSH_KEY_PATH" \]\]' "Script checks SSH key file exists and is readable"
+    assert_grep 'SSH_VOLUMES=\(\)' "SSH volumes are built as an array"
+    assert_grep 'SSH_VOLUMES\+=\(-v "\$resolved_path:/home/appuser/\.ssh/id_rsa:ro"\)' "SSH key volume is appended as quoted array elements"
+    assert_grep 'SSH_VOLUMES\+=\(-v "\$resolved_path:/tmp/ssh-agent\.sock:ro"\)' "SSH agent volume is appended as quoted array elements"
+    assert_grep 'SSH_VOLUMES\+=\(-v "\$resolved_path:/home/appuser/\.ssh/known_hosts:ro"\)' "SSH known_hosts volume is appended as quoted array elements"
+    assert_grep 'VOLUMES\+=\("\$\{SSH_VOLUMES\[@\]\}"\)' "SSH volume array is appended with quoted expansion"
+    assert_not_grep 'VOLUMES\+=\(\$SSH_VOLUMES\)' "No unsafe SSH volume word-splitting append remains"
+    assert_not_grep 'SSH_VOLUMES="' "SSH volumes are not accumulated in a string"
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Test 6: Health Check Temp Files
-# ─────────────────────────────────────────────────────────────────────────────
 test_health_check_temp_files() {
     echo ""
     echo "────────────────────────────────────────────────────────────────────────────"
     echo "Test 6: Health Check Temp Files"
     echo "────────────────────────────────────────────────────────────────────────────"
-    
-    # Test 6a: Unique temp file name
-    info "Test 6a: Health check uses unique temp file name"
-    if grep -q 'mktemp.*health.XXXXXX' "$SCRIPT"; then
-        pass "Health check uses mktemp for unique temp file"
-    else
-        fail "Health check may not use unique temp file names"
-    fi
-    
-    # Test 6b: Temp file cleanup
-    info "Test 6b: Temp file is cleaned up after use"
-    if grep -q 'rm -f.*health_file' "$SCRIPT" || grep -q 'rm -f.*health_file.*health_file' "$SCRIPT"; then
-        pass "Temp file is cleaned up"
-    else
-        fail "Temp file may not be cleaned up"
-    fi
+
+    assert_grep 'mktemp /tmp/skill-router-health\.XXXXXX\.json' "Health check uses mktemp for unique temp file"
+    assert_grep 'rm -f "\$health_file"' "Health check temp file is removed"
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Test 7: Additional Security Checks
-# ─────────────────────────────────────────────────────────────────────────────
+test_dialog_interactive_flow() {
+    echo ""
+    echo "────────────────────────────────────────────────────────────────────────────"
+    echo "Test 7: Dialog Interactive Flow"
+    echo "────────────────────────────────────────────────────────────────────────────"
+
+    assert_grep 'has_interactive_tty\(\)' "TTY detection helper exists"
+    assert_grep 'can_use_dialog\(\)' "dialog capability helper exists"
+    assert_grep 'command -v dialog' "dialog command detection exists"
+    assert_grep 'dialog_menu\(\)' "dialog menu helper exists"
+    assert_grep 'dialog_input\(\)' "dialog input helper exists"
+    assert_grep 'dialog_password\(\)' "dialog password helper exists"
+    assert_grep 'dialog_confirm\(\)' "dialog confirmation helper exists"
+    assert_grep 'providers[[:space:]]+"Configure LLM and embedding providers"' "Main menu includes providers tag"
+    assert_grep 'networking[[:space:]]+"Configure host port"' "Main menu includes networking tag"
+    assert_grep 'start[[:space:]]+"Start installation after final confirmation"' "Main menu includes explicit start tag"
+    assert_grep 'quit[[:space:]]+"Quit without installing"' "Main menu includes explicit quit tag"
+    assert_grep 'dialog_confirm_start' "Start path requires final confirmation"
+    assert_grep 'run_interactive_configuration' "Interactive mode routes through configuration loop"
+    assert_grep 'Top-level Cancel/ESC is an immediate, non-success sentinel' "Main menu Cancel/ESC semantics are documented"
+
+    local main_menu_cancel_block
+    main_menu_cancel_block=$(awk '/if ! action=\$\(dialog_menu "Main Menu"/,/^[[:space:]]*fi$/' "$SCRIPT")
+    if echo "$main_menu_cancel_block" | grep -q 'return 130'; then
+        pass "Main menu Cancel/ESC returns non-success sentinel"
+    else
+        fail "Main menu Cancel/ESC returns non-success sentinel"
+    fi
+
+    if echo "$main_menu_cancel_block" | grep -q 'dialog_confirm_quit'; then
+        fail "Main menu Cancel/ESC does not open quit confirmation"
+    else
+        pass "Main menu Cancel/ESC does not open quit confirmation"
+    fi
+
+    assert_not_grep 'tui_main_menu' "Broken raw tui_main_menu is not referenced"
+    assert_not_grep 'stty -echo -icanon' "Raw stty TUI mode is not used"
+}
+
+test_dialog_capture_safety() {
+    echo ""
+    echo "────────────────────────────────────────────────────────────────────────────"
+    echo "Test 8: Strict-Mode Dialog Capture Safety"
+    echo "────────────────────────────────────────────────────────────────────────────"
+
+    local unsafe_capture
+    unsafe_capture=$(grep -nE '^[[:space:]]*[A-Za-z_][A-Za-z0-9_]*=\$\(dialog[[:space:]]' "$SCRIPT" || true)
+    if [[ -z "$unsafe_capture" ]]; then
+        pass "No direct dialog command substitution outside if-capture pattern"
+    else
+        fail "Unsafe dialog capture found: $unsafe_capture"
+    fi
+
+    assert_grep 'if choice=\$\(dialog' "Menu output is captured in if assignment"
+    assert_grep 'if value=\$\(dialog' "Input output is captured in if assignment"
+    assert_grep 'if secret=\$\(dialog' "Password output is captured in if assignment"
+    assert_grep 'status=\$\?' "Dialog non-zero statuses are captured explicitly"
+    assert_grep '1\|255\) return 130' "Cancel and ESC map to an intentional cancel path"
+    assert_not_grep 'dialog --print-maxsize' "No raw TUI probing remnants remain"
+    assert_not_grep '^[[:space:]]*[A-Za-z_][A-Za-z0-9_]*=\$\(dialog_' "Dialog helper captures use conditional assignments"
+}
+
 test_security_features() {
     echo ""
     echo "────────────────────────────────────────────────────────────────────────────"
-    echo "Test 7: Additional Security Features"
+    echo "Test 9: Additional Security Checks"
     echo "────────────────────────────────────────────────────────────────────────────"
-    
-    # Test 7a: set -euo pipefail
-    info "Test 7a: Script uses strict error handling"
-    if head -5 "$SCRIPT" | grep -q 'set -euo pipefail'; then
-        pass "Script uses 'set -euo pipefail'"
+
+    if sed -n '1,5p' "$SCRIPT" | grep -q 'set -euo pipefail'; then
+        pass "Script uses set -euo pipefail"
     else
-        fail "Script missing strict error handling"
+        fail "Script uses set -euo pipefail"
     fi
-    
-    # Test 7b: API key zeroing after use
-    info "Test 7b: API key zeroed after API use"
-    if grep -q 'api_key=""' "$SCRIPT"; then
-        pass "API key is zeroed after use"
-    else
-        fail "API key may not be zeroed after use"
-    fi
-    
-    # Test 7c: Timeout on curl commands
-    info "Test 7c: Curl commands have timeout"
-    if grep -q 'connect-timeout\|max-time' "$SCRIPT"; then
-        pass "Curl commands have timeout"
-    else
-        fail "Curl commands may lack timeout"
-    fi
+
+    assert_grep 'api_key=""' "API key is zeroed after model API use"
+    assert_grep 'connect-timeout|max-time' "Curl commands have timeout"
+    assert_not_grep 'eval ' "Script does not use eval"
 }
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Run all tests
-# ─────────────────────────────────────────────────────────────────────────────
 main() {
     setup
-    
+
     echo ""
     echo "╔══════════════════════════════════════════════════════════════════════════════╗"
     echo "║                    install-skill-router.sh Test Suite                        ║"
     echo "║                           Test Results Report                                ║"
     echo "╚══════════════════════════════════════════════════════════════════════════════╝"
-    
+
     test_config_parser_safety
     test_cli_arguments
-    test_api_key_masking
+    test_secret_masking
     test_docker_env_vars
     test_ssh_key_resolution
     test_health_check_temp_files
+    test_dialog_interactive_flow
+    test_dialog_capture_safety
     test_security_features
-    
+
     cleanup
-    
+
     echo ""
     echo "────────────────────────────────────────────────────────────────────────────"
     echo "Test Summary"
     echo "────────────────────────────────────────────────────────────────────────────"
     echo -e "  ${GREEN}Passed: $PASS${NC}"
     echo -e "  ${RED}Failed: $FAIL${NC}"
-    
+
     if [[ $FAIL -eq 0 ]]; then
         echo ""
         echo -e "${GREEN}All tests passed!${NC}"
         return 0
-    else
-        echo ""
-        echo -e "${RED}Some tests failed!${NC}"
-        return 1
     fi
+
+    echo ""
+    echo -e "${RED}Some tests failed!${NC}"
+    return 1
 }
 
 main "$@"

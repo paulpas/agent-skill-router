@@ -57,13 +57,42 @@ declare \
   SEMANTIC_SIMILARITY_THRESHOLD
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Helper function to check if stdin is a terminal (interactive mode)
+# Helper functions to check whether interactive rendering is safe
 # ─────────────────────────────────────────────────────────────────────────────
+has_interactive_tty() {
+  [[ -t 0 && -t 1 ]]
+}
+
 is_interactive() {
-  if [[ -t 0 ]]; then
-    return 0  # Terminal is available, interactive mode
-  else
-    return 1  # Terminal not available, non-interactive mode
+  if [[ "${NONINTERACTIVE:-0}" == "1" || "${CI:-false}" == "true" ]]; then
+    return 1
+  fi
+
+  has_interactive_tty
+}
+
+can_use_dialog() {
+  if ! is_interactive; then
+    return 1
+  fi
+
+  command -v dialog >/dev/null 2>&1
+}
+
+explain_dialog_fallback() {
+  if ! has_interactive_tty; then
+    warn "No attached stdin/stdout TTY; use --config or --no-interactive for automation."
+    return 0
+  fi
+
+  if [[ "${NONINTERACTIVE:-0}" == "1" || "${CI:-false}" == "true" ]]; then
+    warn "Interactive dialogs disabled by NONINTERACTIVE/CI environment."
+    return 0
+  fi
+
+  if ! command -v dialog >/dev/null 2>&1; then
+    warn "dialog is not installed; falling back to line prompts."
+    warn "Install dialog for the full menu UI (for example: apt install dialog, dnf install dialog, or brew install dialog)."
   fi
 }
 
@@ -261,7 +290,7 @@ fi
 
 validate_api_key() {
   local key="$1"
-  local name="$2"
+  local name="${2:-API key}"
   if [[ -z "$key" ]]; then
     err "$name is required"
     return 1
@@ -300,9 +329,58 @@ validate_provider() {
   esac
 }
 
+validate_embedding_provider() {
+  local provider="$1"
+  case "$provider" in
+    openai|llamacpp) return 0 ;;
+    *) err "Embedding provider must be: openai or llamacpp"; return 1 ;;
+  esac
+}
+
+validate_boolean() {
+  local value="$1"
+  case "$value" in
+    true|false) return 0 ;;
+    *) err "Value must be true or false"; return 1 ;;
+  esac
+}
+
+validate_positive_integer() {
+  local value="$1"
+  local name="${2:-Value}"
+
+  if [[ ! "$value" =~ ^[0-9]+$ ]]; then
+    err "$name must be a positive integer"
+    return 1
+  fi
+
+  if [[ "$value" -lt 1 ]]; then
+    err "$name must be greater than 0"
+    return 1
+  fi
+
+  return 0
+}
+
+validate_compression_mode() {
+  local mode="$1"
+  case "$mode" in
+    brief|moderate|detailed) return 0 ;;
+    *) err "Compression mode must be: brief, moderate, or detailed"; return 1 ;;
+  esac
+}
+
+validate_link_resolution_mode() {
+  local mode="$1"
+  case "$mode" in
+    inline|semantic|compressed) return 0 ;;
+    *) err "Link resolution mode must be: inline, semantic, or compressed"; return 1 ;;
+  esac
+}
+
 validate_file_exists() {
   local path="$1"
-  local name="$2"
+  local name="${2:-File}"
   if [[ -n "$path" && ! -e "$path" ]]; then
     err "$name not found: $path"
     return 1
@@ -312,7 +390,7 @@ validate_file_exists() {
 
 validate_url() {
   local url="$1"
-  local name="$2"
+  local name="${2:-URL}"
   
   # Check if URL starts with http:// or https://
   if [[ ! "$url" =~ ^https?:// ]]; then
@@ -501,27 +579,20 @@ select_model_interactive() {
   local selected_model=""
   local model_source=""
   
-  echo -e "${BLUE}[DEBUG] select_model_interactive started: type=$model_type provider=$provider default=$default_model${RESET}" >&2
-  echo -e "${BLUE}[DEBUG] is_interactive: $(is_interactive && echo 'true' || echo 'false')${RESET}" >&2
-  
   # Non-interactive mode: use default model immediately (Fail Fast)
   if ! is_interactive; then
     echo "$default_model"
-    echo -e "${BLUE}[DEBUG] Non-interactive: returning default model '$default_model'${RESET}" >&2
     return 0
   fi
   
   # Try to fetch models from API
   if [[ "$provider" == "openai" ]]; then
-    echo -e "${BLUE}[DEBUG] Fetching OpenAI models...${RESET}" >&2
     mapfile -t models < <(get_openai_models 2>/dev/null) || true
     model_source="OpenAI"
   elif [[ "$provider" == "anthropic" ]]; then
-    echo -e "${BLUE}[DEBUG] Fetching Anthropic models...${RESET}" >&2
     mapfile -t models < <(get_anthropic_models 2>/dev/null) || true
     model_source="Anthropic"
   fi
-  echo -e "${BLUE}[DEBUG] Retrieved ${#models[@]} models from API${RESET}" >&2
   
   print_header
   
@@ -584,7 +655,6 @@ select_model_interactive() {
   fi
   
   # Fallback if API failed or no valid models found
-  echo -e "${BLUE}[DEBUG] Fallback path: no valid models found in interactive mode${RESET}" >&2
   echo ""
   warn "Could not fetch models from ${provider^} API (or no matching models found)"
   echo -e "  ${YELLOW}Note:${RESET} Network errors or API authentication failures may have occurred."
@@ -593,8 +663,7 @@ select_model_interactive() {
   prompt "Enter ${model_type} model name (default: $default_model): "
    read -r custom_model || custom_model=""
    local result="${custom_model:-$default_model}"
-  echo "$result"
-  echo -e "${BLUE}[DEBUG] select_model_interactive returning: '$result'${RESET}" >&2
+   echo "$result"
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -646,12 +715,8 @@ configure_variable() {
   local is_required="${5:-false}"
   local validation_func="${6:-}"
   
-  echo -e "${BLUE}[DEBUG] configure_variable called for $var_name${RESET}" >&2
-  echo -e "${BLUE}[DEBUG] is_interactive: $(is_interactive && echo 'true' || echo 'false')${RESET}" >&2
-  
   # Non-interactive mode: use current value if set, otherwise use default (Fail Fast)
   if ! is_interactive; then
-    echo -e "${BLUE}[DEBUG] Non-interactive mode - using default${RESET}" >&2
     local current_value="${!var_name:-$default_value}"
     if [[ -z "$current_value" ]]; then
       current_value="Not set"
@@ -687,7 +752,6 @@ configure_variable() {
     if [[ -z "${!var_name:-}" && -n "$default_value" ]]; then
       declare -g "$var_name=$default_value"
     fi
-    echo -e "${BLUE}[DEBUG] configure_variable exiting non-interactive${RESET}" >&2
     return 0
   fi
   
@@ -732,7 +796,7 @@ configure_variable() {
    response="${response:-Y}"
    
    if [[ "$response" =~ ^[Yy]$ ]]; then
-     # Keep current value (already set, no eval needed)
+     # Keep current value (already set, no shell evaluation needed)
      return 0
    fi
    
@@ -758,7 +822,7 @@ configure_variable() {
     fi
   fi
   
-  # Use declare -g instead of eval to set variable safely (global scope)
+  # Use declare -g to set variable safely (global scope)
   declare -g "$var_name=$new_value"
   return 0
 }
@@ -784,7 +848,6 @@ configure_required_api() {
 }
 
 configure_provider_selection() {
-  echo -e "${BLUE}[DEBUG] configure_provider_selection started${RESET}" >&2
   print_header
   echo -e "${BOLD}Step 2: LLM Provider Selection${RESET}"
   echo ""
@@ -798,15 +861,10 @@ configure_provider_selection() {
     "false" \
     "validate_provider"
   
-  echo -e "${BLUE}[DEBUG] LLM_PROVIDER set to: $LLM_PROVIDER${RESET}" >&2
 }
 
 configure_llm_model() {
   local provider="${LLM_PROVIDER:-openai}"
-  
-  # Debug: Log function entry
-  echo -e "${BLUE}[DEBUG] configure_llm_model started${RESET}" >&2
-  echo -e "${BLUE}[DEBUG] Provider: $provider${RESET}" >&2
   
   # Skip for llamacpp (uses local endpoint)
   if [[ "$provider" == "llamacpp" ]]; then
@@ -827,8 +885,6 @@ configure_llm_model() {
     anthropic) default_model="claude-3-5-haiku-20241022" ;;
   esac
   
-  echo -e "${BLUE}[DEBUG] Default model for $provider: $default_model${RESET}" >&2
-  
   # Iterative model selection with retry limit (max 5 attempts)
   local max_attempts=5
   local attempt=0
@@ -846,9 +902,7 @@ configure_llm_model() {
     fi
     
     # Interactive model selection
-    echo -e "${BLUE}[DEBUG] Calling select_model_interactive (attempt $attempt)${RESET}" >&2
     selected_model=$(select_model_interactive "llm" "$provider" "$default_model")
-    echo -e "${BLUE}[DEBUG] Returned selected_model: '$selected_model'${RESET}" >&2
     
     if [[ -n "$selected_model" && "$selected_model" != "$default_model" ]]; then
       LLM_MODEL="$selected_model"
@@ -867,8 +921,7 @@ configure_llm_model() {
       warn "Model selection cancelled or invalid."
      prompt "Try again? (Y/n) "
        if ! is_interactive; then
-         err "[DEBUG] Non-interactive mode detected in retry loop - exiting"
-         err "Cannot read input in non-interactive mode"
+          err "Cannot read input in non-interactive mode"
          exit 1
        fi
        read -r retry_response || retry_response=""
@@ -887,7 +940,6 @@ configure_llm_model() {
     echo -e "  ${YELLOW}Using default after $attempt attempts:${RESET} $LLM_MODEL"
   fi
   
-  echo -e "${BLUE}[DEBUG] Final LLM_MODEL: $LLM_MODEL${RESET}" >&2
 }
 
 configure_embedding_provider() {
@@ -902,7 +954,7 @@ configure_embedding_provider() {
     "openai" \
     "openai" \
     "false" \
-    "validate_provider"
+    "validate_embedding_provider"
 }
 
 configure_embedding_model() {
@@ -1192,7 +1244,8 @@ print_summary() {
   echo ""
   
   # Mask sensitive values
-  local openai_masked="${OPENAI_API_KEY:0:8}...${OPENAI_API_KEY: -4}"
+  local openai_masked
+  openai_masked=$(mask_secret "${OPENAI_API_KEY:-}")
   echo -e "  ${BOLD}OpenAI API Key:${RESET} $openai_masked"
   echo -e "  ${BOLD}Port:${RESET} $PORT"
   echo -e "  ${BOLD}LLM Provider:${RESET} $LLM_PROVIDER"
@@ -1201,7 +1254,8 @@ print_summary() {
   echo -e "  ${BOLD}Embedding Model:${RESET} ${EMBEDDING_MODEL:-provider default}"
   
   if [[ "$LLM_PROVIDER" == "anthropic" ]]; then
-    local anthropic_masked="${ANTHROPIC_API_KEY:0:8}...${ANTHROPIC_API_KEY: -4}"
+    local anthropic_masked
+    anthropic_masked=$(mask_secret "${ANTHROPIC_API_KEY:-}")
     echo -e "  ${BOLD}Anthropic API Key:${RESET} $anthropic_masked"
   fi
   
@@ -1211,7 +1265,8 @@ print_summary() {
   
   echo -e "  ${BOLD}GitHub Enabled:${RESET} $GITHUB_ENABLED"
   if [[ "$GITHUB_ENABLED" == "true" && -n "$GITHUB_TOKEN" ]]; then
-    local github_masked="${GITHUB_TOKEN:0:8}...${GITHUB_TOKEN: -4}"
+    local github_masked
+    github_masked=$(mask_secret "${GITHUB_TOKEN:-}")
     echo -e "  ${BOLD}GitHub Token:${RESET} $github_masked"
   else
     echo -e "  ${BOLD}GitHub Token:${RESET} Not set"
@@ -1263,216 +1318,532 @@ get_final_confirmation() {
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
-# TUI-based Configuration System
+# Dialog-based interactive configuration system
 # ─────────────────────────────────────────────────────────────────────────────
 
-# TUI state variables
-tui_current_field=0
-tui_exit=false
+readonly DIALOG_BACKTITLE="Skill Router Installer"
 
-# Field definitions: label|var_name|type|default|options
-# Types: text, password, toggle, select
-tui_fields=(
-    "OpenAI API Key|OPENAI_API_KEY|password|"
-    "LLM Provider|LLM_PROVIDER|select|openai,anthropic,llamacpp"
-    "LLM Model|LLM_MODEL|text|gpt-4o-mini"
-    "OpenAI Base URL|OPENAI_BASE_URL|text|"
-    "Embedding Provider|EMBEDDING_PROVIDER|select|openai,llamacpp"
-    "Embedding Model|EMBEDDING_MODEL|text|text-embedding-3-small"
-    "Anthropic API Key|ANTHROPIC_API_KEY|password|"
-    "LlamaCPP URL|LLAMACPP_URL|text|http://host.docker.internal:8080"
-    "Port|PORT|text|3000"
-    "GitHub Integration|GITHUB_ENABLED|toggle|true"
-    "GitHub Token|GITHUB_TOKEN|password|"
-    "Auto-Skill Generation|AUTO_SKILL_ENABLED|toggle|true"
-    "Auto-Skill Contribute|AUTO_SKILL_CONTRIBUTE|toggle|true"
-    "Auto-Skill Model|AUTO_SKILL_MODEL|text|gpt-4o-mini"
-    "Link Following|LINK_FOLLOWING_ENABLED|toggle|false"
-    "Allow External Links|ALLOW_EXTERNAL_LINKS|toggle|false"
-    "Max External Size (KB)|MAX_EXTERNAL_SIZE_KB|text|10"
-    "Compression Mode|EXTERNAL_COMPRESSION_MODE|select|brief,moderate,detailed"
-    "JS Rendering|JS_RENDERING_ENABLED|toggle|false"
-    "Link Resolution Mode|LINK_RESOLUTION_MODE|select|inline,semantic,compressed"
-)
+mask_secret() {
+  local secret="${1:-}"
 
-tui_draw_header() {
-    clear
-    tput cup 0 0
-    echo -e "${BOLD}${CYAN}╔══════════════════════════════════════════════════════════════════════════════╗${RESET}"
-    echo -e "${BOLD}${CYAN}║                     Skill Router Configuration TUI                           ║${RESET}"
-    echo -e "${BOLD}${CYAN}╚══════════════════════════════════════════════════════════════════════════════╝${RESET}"
-    echo -e " ${BOLD}Navigation:${RESET} [↑↓] Move  [Tab] Next  [Enter] Edit/Toggle  [Ctrl+S] Save  [Esc] Quit"
-    echo " ──────────────────────────────────────────────────────────────────────────────"
+  if [[ -z "$secret" ]]; then
+    printf '%s\n' "Not set"
+    return 0
+  fi
+
+  if [[ ${#secret} -lt 12 ]]; then
+    printf '%s\n' "***"
+    return 0
+  fi
+
+  printf '%s\n' "${secret:0:8}...${secret: -4}"
 }
 
-tui_draw_field() {
-    local idx="$1"
-    local highlighted="$2"
-    local field_data="${tui_fields[$idx]}"
-    
-    local OLDIFS="$IFS"
-    IFS='|' read -r label var_name type extra <<< "$field_data"
-    IFS="$OLDIFS"
-    
-    local value="${!var_name:-}"
-    
-    tput cup $((idx + 5)) 2
-    
-    if [[ "$highlighted" == "true" ]]; then
-        echo -ne "${BOLD}${YELLOW}> ${RESET}"
-        tput rev
-    else
-        echo -ne "  "
+dialog_msgbox() {
+  local title="$1"
+  local message="$2"
+
+  dialog --clear --backtitle "$DIALOG_BACKTITLE" --title "$title" --msgbox "$message" 12 72
+}
+
+dialog_menu() {
+  local title="$1"
+  local message="$2"
+  local menu_height="$3"
+  shift 3
+  local options=("$@")
+  local choice status
+
+  if choice=$(dialog --clear \
+      --backtitle "$DIALOG_BACKTITLE" \
+      --title "$title" \
+      --cancel-label "Cancel" \
+      --stdout \
+      --menu "$message" 0 0 "$menu_height" \
+      "${options[@]}"); then
+    status=0
+  else
+    status=$?
+  fi
+
+  case "$status" in
+    0) printf '%s\n' "$choice" ;;
+    1|255) return 130 ;;
+    3) return 3 ;;
+    *) err "dialog menu failed with exit code $status"; return 1 ;;
+  esac
+}
+
+dialog_input() {
+  local title="$1"
+  local message="$2"
+  local current_value="${3:-}"
+  local value status
+
+  if value=$(dialog --clear \
+      --backtitle "$DIALOG_BACKTITLE" \
+      --title "$title" \
+      --stdout \
+      --inputbox "$message" 10 72 "$current_value"); then
+    status=0
+  else
+    status=$?
+  fi
+
+  case "$status" in
+    0) printf '%s\n' "$value" ;;
+    1|255) return 130 ;;
+    *) err "dialog input failed with exit code $status"; return 1 ;;
+  esac
+}
+
+dialog_password() {
+  local title="$1"
+  local message="$2"
+  local secret status
+
+  if secret=$(dialog --clear \
+      --backtitle "$DIALOG_BACKTITLE" \
+      --title "$title" \
+      --stdout \
+      --passwordbox "$message" 10 72); then
+    status=0
+  else
+    status=$?
+  fi
+
+  case "$status" in
+    0) printf '%s\n' "$secret" ;;
+    1|255) return 130 ;;
+    *) err "dialog password prompt failed with exit code $status"; return 1 ;;
+  esac
+}
+
+dialog_confirm() {
+  local title="$1"
+  local message="$2"
+  local yes_label="${3:-Yes}"
+  local no_label="${4:-No}"
+  local status
+
+  if dialog --clear \
+      --backtitle "$DIALOG_BACKTITLE" \
+      --title "$title" \
+      --yes-label "$yes_label" \
+      --no-label "$no_label" \
+      --yesno "$message" 12 72; then
+    status=0
+  else
+    status=$?
+  fi
+
+  case "$status" in
+    0) return 0 ;;
+    1|255) return 1 ;;
+    *) err "dialog confirmation failed with exit code $status"; return 2 ;;
+  esac
+}
+
+set_config_value() {
+  local var_name="$1"
+  local value="$2"
+  local validation_func="${3:-}"
+
+  if [[ -n "$validation_func" ]]; then
+    "$validation_func" "$value" || return 1
+  fi
+
+  declare -g "$var_name=$value"
+}
+
+dialog_invalid_value() {
+  local title="$1"
+  dialog_msgbox "Invalid Value" "$title was not updated. The entered value did not pass validation."
+}
+
+dialog_edit_text_setting() {
+  local var_name="$1"
+  local title="$2"
+  local message="$3"
+  local default_value="${4:-}"
+  local validation_func="${5:-}"
+  local current_value="${!var_name:-$default_value}"
+  local new_value
+
+  if ! new_value=$(dialog_input "$title" "$message" "$current_value"); then
+    return 0
+  fi
+
+  if ! set_config_value "$var_name" "$new_value" "$validation_func"; then
+    dialog_invalid_value "$title"
+  fi
+}
+
+dialog_edit_secret_setting() {
+  local var_name="$1"
+  local title="$2"
+  local message="$3"
+  local validation_func="${4:-}"
+  local current_masked
+  local new_value
+
+  current_masked=$(mask_secret "${!var_name:-}")
+  if ! new_value=$(dialog_password "$title" "$message\n\nCurrent value: $current_masked\nLeave blank to keep the current value."); then
+    return 0
+  fi
+
+  if [[ -z "$new_value" ]]; then
+    return 0
+  fi
+
+  if ! set_config_value "$var_name" "$new_value" "$validation_func"; then
+    dialog_invalid_value "$title"
+  fi
+}
+
+dialog_select_setting() {
+  local var_name="$1"
+  local title="$2"
+  local message="$3"
+  local validation_func="$4"
+  shift 4
+  local options=("$@")
+  local selected
+
+  if ! selected=$(dialog_menu "$title" "$message" 8 "${options[@]}"); then
+    return 0
+  fi
+
+  if ! set_config_value "$var_name" "$selected" "$validation_func"; then
+    dialog_invalid_value "$title"
+  fi
+}
+
+dialog_select_boolean_setting() {
+  local var_name="$1"
+  local title="$2"
+  local message="$3"
+  local current_value="${!var_name:-false}"
+  local options=(
+    true  "Enabled"
+    false "Disabled"
+  )
+
+  dialog_select_setting "$var_name" "$title" "$message\n\nCurrent: $current_value" "validate_boolean" "${options[@]}"
+}
+
+dialog_select_model() {
+  local model_type="$1"
+  local provider="$2"
+  local default_model="$3"
+  local models=()
+  local options=()
+  local selected custom_model
+
+  case "$provider" in
+    openai) mapfile -t models < <(get_openai_models 2>/dev/null) || true ;;
+    anthropic) mapfile -t models < <(get_anthropic_models 2>/dev/null) || true ;;
+    llamacpp) printf '%s\n' "$default_model"; return 0 ;;
+    *) err "Unsupported provider for model selection: $provider"; return 1 ;;
+  esac
+
+  for model in "${models[@]}"; do
+    if [[ "$model_type" == "llm" && ( "$model" == *"gpt-"* || "$model" == *"claude-"* ) ]]; then
+      options+=("$model" "Use $model")
+    elif [[ "$model_type" == "embedding" && "$model" == *"embedding"* ]]; then
+      options+=("$model" "Use $model")
     fi
-    
-    printf "%-25s : " "$label"
-    
-    case "$type" in
-        password)
-            if [[ -n "$value" ]]; then
-                echo -n "********"
-            else
-                echo -ne "${YELLOW}(empty)${RESET}"
-            fi
-            ;;
-        toggle)
-            if [[ "$value" == "true" ]]; then
-                echo -ne "${GREEN}[Enabled]${RESET}"
-            else
-                echo -ne "${RED}[Disabled]${RESET}"
-            fi
-            ;;
-        select|text)
-            if [[ -n "$value" ]]; then
-                echo -n "$value"
-            else
-                echo -ne "${YELLOW}(empty)${RESET}"
-            fi
-            ;;
-    esac
-    
-    tput sgr0
-    echo " "
-}
+  done
+  options+=(custom "Enter a custom model")
 
-tui_handle_selection() {
-    local idx="$tui_current_field"
-    local field_data="${tui_fields[$idx]}"
-    
-    local OLDIFS="$IFS"
-    IFS='|' read -r label var_name type extra <<< "$field_data"
-    IFS="$OLDIFS"
-    
-    case "$type" in
-        toggle)
-            if [[ "${!var_name:-}" == "true" ]]; then
-                declare -g "$var_name=false"
-            else
-                declare -g "$var_name=true"
-            fi
-            ;;
-        text|password)
-            tui_edit_text "$label" "$var_name" "$type"
-            ;;
-        select)
-            tui_select_option "$label" "$var_name" "$extra"
-            ;;
-    esac
-}
-
-tui_edit_text() {
-    local label="$1"
-    local var_name="$2"
-    local type="$3"
-    
-    tput cnorm
-    stty echo
-    
-    tput cup $((tui_current_field + 5)) 30
-    tput el
-    echo -n "Edit: "
-    read -r val
-    
-    if [[ -n "$val" ]]; then
-        declare -g "$var_name=$val"
+  if [[ ${#options[@]} -gt 2 ]]; then
+    if selected=$(dialog_menu "${model_type^} Model" "Choose a model or enter a custom value." 12 "${options[@]}"); then
+      case "$selected" in
+        custom) ;;
+        *) printf '%s\n' "$selected"; return 0 ;;
+      esac
     fi
-    
-    stty -echo
-    tput civis
+  else
+    dialog_msgbox "Model List Unavailable" "Could not fetch models for $provider. You can enter a model ID manually."
+  fi
+
+  if custom_model=$(dialog_input "${model_type^} Model" "Enter ${model_type} model ID:" "$default_model"); then
+    printf '%s\n' "${custom_model:-$default_model}"
+    return 0
+  fi
+
+  printf '%s\n' "$default_model"
 }
 
-tui_select_option() {
-    local label="$1"
-    local var_name="$2"
-    local options_str="$3"
-    
-    local OLDIFS="$IFS"
-    IFS=',' read -r -a options <<< "$options_str"
-    IFS="$OLDIFS"
-    
-    local current_val="${!var_name:-${options[0]}}"
-    local current_idx=0
-    
-    for i in "${!options[@]}"; do
-        if [[ "${options[$i]}" == "$current_val" ]]; then
-            current_idx=$i
-            break
+configuration_summary_text() {
+  cat <<EOF
+OpenAI API Key: $(mask_secret "${OPENAI_API_KEY:-}")
+Port: ${PORT:-3000}
+LLM Provider: ${LLM_PROVIDER:-openai}
+LLM Model: ${LLM_MODEL:-provider default}
+Embedding Provider: ${EMBEDDING_PROVIDER:-openai}
+Embedding Model: ${EMBEDDING_MODEL:-provider default}
+Anthropic API Key: $(mask_secret "${ANTHROPIC_API_KEY:-}")
+llamacpp URL: ${LLAMACPP_URL:-}
+
+GitHub Enabled: ${GITHUB_ENABLED:-true}
+GitHub Token: $(mask_secret "${GITHUB_TOKEN:-}")
+GitHub Raw Base URL: ${GITHUB_RAW_BASE_URL:-}
+GitHub Skills Repo: ${GITHUB_SKILLS_REPO:-}
+Sync Interval: ${SYNC_INTERVAL:-3600}
+
+SSH Key: ${SSH_KEY_PATH:-Not set}
+SSH Agent: ${SSH_AGENT_SOCKET:-Not set}
+SSH Known Hosts: ${SSH_KNOWN_HOSTS:-Not set}
+
+Auto-Skill: enabled=${AUTO_SKILL_ENABLED:-true}, contribute=${AUTO_SKILL_CONTRIBUTE:-true}
+Auto-Skill Model: ${AUTO_SKILL_MODEL:-gpt-4o-mini}
+
+Link Following: enabled=${LINK_FOLLOWING_ENABLED:-false}, external=${ALLOW_EXTERNAL_LINKS:-false}
+Link Resolution: mode=${LINK_RESOLUTION_MODE:-inline}, max_size=${MAX_EXTERNAL_SIZE_KB:-10}KB
+Max Link Depth: ${MAX_LINK_DEPTH:-2}
+JS Rendering: enabled=${JS_RENDERING_ENABLED:-false}, timeout=${JS_RENDER_TIMEOUT_MS:-5000}ms, fallback=${JS_RENDER_FALLBACK:-true}
+Semantic: top_k=${SEMANTIC_TOP_K:-3}, threshold=${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}
+EOF
+}
+
+dialog_configure_providers() {
+  local llm_options=(
+    openai    "OpenAI-compatible APIs"
+    anthropic "Anthropic Claude API"
+    llamacpp  "Local llama.cpp server"
+  )
+  local embedding_options=(
+    openai   "OpenAI-compatible embeddings"
+    llamacpp "Local llama.cpp embeddings"
+  )
+
+  dialog_select_setting "LLM_PROVIDER" "Providers" "Choose the LLM provider.\nCurrent: ${LLM_PROVIDER:-openai}" "validate_provider" "${llm_options[@]}"
+  dialog_select_setting "EMBEDDING_PROVIDER" "Providers" "Choose the embedding provider.\nCurrent: ${EMBEDDING_PROVIDER:-openai}" "validate_embedding_provider" "${embedding_options[@]}"
+  dialog_edit_text_setting "OPENAI_BASE_URL" "OpenAI Base URL" "Optional custom OpenAI-compatible base URL. Leave blank for OpenAI default." "${OPENAI_BASE_URL:-}"
+
+  if [[ "${LLM_PROVIDER:-openai}" == "llamacpp" || "${EMBEDDING_PROVIDER:-openai}" == "llamacpp" ]]; then
+    dialog_edit_text_setting "LLAMACPP_URL" "llama.cpp URL" "Base URL for your local llama.cpp server." "http://host.docker.internal:8080" "validate_url"
+  fi
+}
+
+dialog_configure_models() {
+  local selected_model
+
+  case "${LLM_PROVIDER:-openai}" in
+    openai)
+      if ! selected_model=$(dialog_select_model "llm" "openai" "${LLM_MODEL:-gpt-4o-mini}"); then
+        selected_model="${LLM_MODEL:-gpt-4o-mini}"
+      fi
+      ;;
+    anthropic)
+      if ! selected_model=$(dialog_select_model "llm" "anthropic" "${LLM_MODEL:-claude-3-5-haiku-20241022}"); then
+        selected_model="${LLM_MODEL:-claude-3-5-haiku-20241022}"
+      fi
+      ;;
+    llamacpp) selected_model="local-model" ;;
+    *) err "Invalid LLM provider: ${LLM_PROVIDER:-}"; return 1 ;;
+  esac
+  LLM_MODEL="$selected_model"
+
+  if [[ "${EMBEDDING_PROVIDER:-openai}" == "llamacpp" ]]; then
+    EMBEDDING_MODEL="local-embedding"
+    return 0
+  fi
+
+  if ! selected_model=$(dialog_select_model "embedding" "openai" "${EMBEDDING_MODEL:-text-embedding-3-small}"); then
+    selected_model="${EMBEDDING_MODEL:-text-embedding-3-small}"
+  fi
+  EMBEDDING_MODEL="$selected_model"
+}
+
+dialog_configure_api_keys() {
+  if [[ "${LLM_PROVIDER:-openai}" != "llamacpp" || "${EMBEDDING_PROVIDER:-openai}" != "llamacpp" ]]; then
+    dialog_edit_secret_setting "OPENAI_API_KEY" "OpenAI API Key" "Enter the OpenAI or OpenAI-compatible API key." "validate_api_key"
+  fi
+
+  if [[ "${LLM_PROVIDER:-openai}" == "anthropic" ]]; then
+    dialog_edit_secret_setting "ANTHROPIC_API_KEY" "Anthropic API Key" "Enter the Anthropic API key." "validate_api_key"
+  fi
+}
+
+dialog_configure_github() {
+  dialog_select_boolean_setting "GITHUB_ENABLED" "GitHub" "Enable remote skill loading from GitHub?"
+  if [[ "${GITHUB_ENABLED:-true}" == "true" ]]; then
+    dialog_edit_secret_setting "GITHUB_TOKEN" "GitHub Token" "Optional GitHub token for higher rate limits or private repos."
+    dialog_edit_text_setting "GITHUB_RAW_BASE_URL" "GitHub Raw Base URL" "Raw content base URL for skills." "https://raw.githubusercontent.com/paulpas/skills/main" "validate_url"
+    dialog_edit_text_setting "GITHUB_SKILLS_REPO" "GitHub Skills Repo" "Skills repository URL." "https://github.com/paulpas/skills" "validate_url"
+    dialog_edit_text_setting "SYNC_INTERVAL" "Sync Interval" "Skill sync interval in seconds." "3600" "validate_positive_integer"
+  fi
+}
+
+dialog_configure_ssh() {
+  dialog_edit_text_setting "SSH_KEY_PATH" "SSH Key" "Optional path to SSH private key." "" "validate_file_exists"
+  dialog_edit_text_setting "SSH_AGENT_SOCKET" "SSH Agent" "Optional path to SSH agent socket." ""
+  dialog_edit_text_setting "SSH_KNOWN_HOSTS" "SSH Known Hosts" "Optional path to known_hosts file." "" "validate_file_exists"
+}
+
+dialog_configure_auto_skill() {
+  dialog_select_boolean_setting "AUTO_SKILL_ENABLED" "Auto-Skill" "Enable automatic skill generation?"
+  dialog_select_boolean_setting "AUTO_SKILL_CONTRIBUTE" "Auto-Skill" "Allow auto-skill contribution to git?"
+  dialog_edit_text_setting "AUTO_SKILL_MODEL" "Auto-Skill Model" "Model used for auto-skill generation." "gpt-4o-mini"
+}
+
+dialog_configure_link_following() {
+  local compression_options=(
+    brief    "Short summaries for oversized content"
+    moderate "Balanced summaries for oversized content"
+    detailed "Detailed summaries for oversized content"
+  )
+  local resolution_options=(
+    inline     "Embed resolved content inline"
+    semantic   "Return top semantic chunks"
+    compressed "Compress resolved content"
+  )
+
+  dialog_select_boolean_setting "LINK_FOLLOWING_ENABLED" "Link Following" "Enable markdown link following in skills?"
+  dialog_select_boolean_setting "ALLOW_EXTERNAL_LINKS" "External Links" "Allow fetching external HTTPS URLs?"
+  dialog_edit_text_setting "MAX_LINK_DEPTH" "Max Link Depth" "Maximum link-following depth." "2" "validate_positive_integer"
+  dialog_edit_text_setting "MAX_EXTERNAL_SIZE_KB" "Max External Size" "Maximum external content size in KB." "10" "validate_positive_integer"
+  dialog_select_setting "EXTERNAL_COMPRESSION_MODE" "Compression Mode" "Choose compression mode." "validate_compression_mode" "${compression_options[@]}"
+  dialog_select_boolean_setting "JS_RENDERING_ENABLED" "JavaScript Rendering" "Enable JS rendering for dynamic pages?"
+  dialog_edit_text_setting "JS_RENDER_TIMEOUT_MS" "JS Render Timeout" "JavaScript render timeout in milliseconds." "5000" "validate_positive_integer"
+  dialog_select_boolean_setting "JS_RENDER_FALLBACK" "JS Render Fallback" "Use non-JS fallback if rendering fails?"
+  dialog_select_setting "LINK_RESOLUTION_MODE" "Link Resolution" "Choose how resolved content is embedded." "validate_link_resolution_mode" "${resolution_options[@]}"
+  dialog_edit_text_setting "SEMANTIC_TOP_K" "Semantic Top K" "Number of semantic chunks when mode=semantic." "3" "validate_positive_integer"
+  dialog_edit_text_setting "SEMANTIC_SIMILARITY_THRESHOLD" "Semantic Threshold" "Similarity threshold for semantic mode." "0.3"
+}
+
+dialog_configure_networking() {
+  dialog_edit_text_setting "PORT" "Networking" "Host port to bind the container to." "3000" "validate_port"
+}
+
+dialog_show_summary() {
+  local summary
+  summary=$(configuration_summary_text)
+  dialog_msgbox "Configuration Summary" "$summary"
+}
+
+dialog_confirm_start() {
+  local summary
+  summary=$(configuration_summary_text)
+  dialog_confirm "Start Installation" "Review this configuration before Docker build/run:\n\n$summary\n\nProceed with installation?" "Start" "Back"
+}
+
+dialog_confirm_quit() {
+  dialog_confirm "Quit Installer" "Exit without installing Skill Router?" "Quit" "Back"
+}
+
+dialog_configuration_loop() {
+  local options=(
+    providers      "Configure LLM and embedding providers"
+    models         "Choose LLM and embedding models"
+    api_keys       "Enter OpenAI and Anthropic API keys"
+    github         "Configure GitHub skill loading"
+    ssh            "Configure optional SSH access"
+    auto_skill     "Configure auto-skill generation"
+    link_following "Configure markdown link following"
+    networking     "Configure host port"
+    summary        "Review current configuration"
+    start          "Start installation after final confirmation"
+    quit           "Quit without installing"
+  )
+  local action
+
+  dialog_msgbox "Skill Router Installer" "Configure Skill Router, then choose Start Installation. Cancel, ESC, or Quit exits without installing."
+
+  while true; do
+    if ! action=$(dialog_menu "Main Menu" "Choose a configuration section. Installation only starts from the explicit Start option." 12 "${options[@]}"); then
+      # Top-level Cancel/ESC is an immediate, non-success sentinel. Do not ask
+      # another question here: bouncing back to the menu can accidentally lead
+      # into Start later. Section dialogs may cancel back to this menu, but the
+      # main menu itself exits without installation.
+      return 130
+    fi
+
+    case "$action" in
+      providers) dialog_configure_providers || dialog_msgbox "Section Error" "Provider configuration did not complete." ;;
+      models) dialog_configure_models || dialog_msgbox "Section Error" "Model configuration did not complete." ;;
+      api_keys) dialog_configure_api_keys || dialog_msgbox "Section Error" "API key configuration did not complete." ;;
+      github) dialog_configure_github || dialog_msgbox "Section Error" "GitHub configuration did not complete." ;;
+      ssh) dialog_configure_ssh || dialog_msgbox "Section Error" "SSH configuration did not complete." ;;
+      auto_skill) dialog_configure_auto_skill || dialog_msgbox "Section Error" "Auto-skill configuration did not complete." ;;
+      link_following) dialog_configure_link_following || dialog_msgbox "Section Error" "Link-following configuration did not complete." ;;
+      networking) dialog_configure_networking || dialog_msgbox "Section Error" "Networking configuration did not complete." ;;
+      summary) dialog_show_summary || true ;;
+      start)
+        if dialog_confirm_start; then
+          return 0
         fi
-    done
-    
-    current_idx=$(( (current_idx + 1) % ${#options[@]} ))
-    declare -g "$var_name=${options[$current_idx]}"
+        ;;
+      quit)
+        if dialog_confirm_quit; then
+          return 130
+        fi
+        ;;
+      *) err "Invalid menu action: $action"; return 1 ;;
+    esac
+  done
 }
 
-tui_main_menu() {
-    if ! command -v tput &>/dev/null || ! command -v stty &>/dev/null; then
-        err "TUI requires 'tput' and 'stty'. Falling back to non-interactive mode."
-        return 0
+line_prompt_configuration_loop() {
+  explain_dialog_fallback
+  show_intro
+  configure_required_api || true
+  configure_provider_selection || true
+  configure_llm_model || true
+  configure_embedding_provider || true
+  configure_embedding_model || true
+  configure_anthropic_key || true
+  configure_llamacpp_url || true
+  configure_networking || true
+  configure_github || true
+  configure_github_token || true
+  configure_ssh || true
+  configure_auto_skill || true
+  configure_link_following || true
+
+  while true; do
+    if get_final_confirmation; then
+      return 0
     fi
 
-    local old_stty_cfg
-    old_stty_cfg=$(stty -g)
-    
-    trap 'tput cnorm; stty "$old_stty_cfg"; exit' INT TERM
-    
-    stty -echo -icanon
-    tput civis
-    
-    while ! $tui_exit; do
-        tui_draw_header
-        
-        for i in "${!tui_fields[@]}"; do
-            tui_draw_field "$i" "$([[ $i -eq $tui_current_field ]] && echo 'true' || echo 'false')"
-        done
-        
-        local key
-        read -rsn1 key
-        if [[ "$key" == $'\x1b' ]]; then
-            read -rsn2 -t 0.01 key
-            case "$key" in
-                '[A') ((tui_current_field--)) ;;
-                '[B') ((tui_current_field++)) ;;
-                '[Z') ((tui_current_field--)) ;;
-            esac
-        else
-            case "$key" in
-                "k") ((tui_current_field--)) ;;
-                "j") ((tui_current_field++)) ;;
-                $'\t') ((tui_current_field++)) ;;
-                "") tui_handle_selection ;;
-                $'\x13') tui_exit=true ;;
-                $'\x1b') tui_exit=true ;;
-                $'\x03') tput cnorm; stty "$old_stty_cfg"; exit 0 ;;
-            esac
-        fi
-        
-        if [[ $tui_current_field -lt 0 ]]; then tui_current_field=$((${#tui_fields[@]} - 1)); fi
-        if [[ $tui_current_field -ge ${#tui_fields[@]} ]]; then tui_current_field=0; fi
-    done
-    
-    tput cnorm
-    stty "$old_stty_cfg"
-    clear
+    prompt "Return to line prompts and edit settings? (Y/n)"
+    local response
+    read -r response || response=""
+    response="${response:-Y}"
+    if [[ ! "$response" =~ ^[Yy]$ ]]; then
+      return 130
+    fi
+
+    configure_provider_selection || true
+    configure_llm_model || true
+    configure_embedding_provider || true
+    configure_embedding_model || true
+    configure_anthropic_key || true
+    configure_llamacpp_url || true
+    configure_networking || true
+    configure_github || true
+    configure_github_token || true
+    configure_ssh || true
+    configure_auto_skill || true
+    configure_link_following || true
+  done
+}
+
+run_interactive_configuration() {
+  if can_use_dialog; then
+    dialog_configuration_loop
+    return $?
+  fi
+
+  if is_interactive; then
+    line_prompt_configuration_loop
+    return $?
+  fi
+
+  err "Interactive mode requires an attached TTY. Use --config FILE or --no-interactive for automation."
+  return 1
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1679,46 +2050,59 @@ run_installation() {
   docker stop skill-router 2>/dev/null && ok "Stopped existing skill-router container" || true
   docker rm   skill-router 2>/dev/null && ok "Removed existing skill-router container" || true
   
-  # Build SSH volume mounts
-   SSH_VOLUMES=""
-   if [[ -n "$SSH_KEY_PATH" ]]; then
-     # Resolve symlink safely using realpath -m (Fail Fast)
-     local resolved_path
-     resolved_path=$(realpath -m "$SSH_KEY_PATH" 2>/dev/null) || {
-       err "Invalid path: $SSH_KEY_PATH"
-       return 1
-     }
-     if [[ -L "$SSH_KEY_PATH" ]]; then
-       err "SSH key path is a symlink (not allowed for security): $SSH_KEY_PATH"
-       exit 1
-     fi
-     if [[ -f "$SSH_KEY_PATH" && -r "$SSH_KEY_PATH" ]]; then
-       SSH_VOLUMES="$SSH_VOLUMES -v $(realpath "$SSH_KEY_PATH"):/home/appuser/.ssh/id_rsa:ro"
-     else
-       err "SSH key path is not a regular file or not readable: $SSH_KEY_PATH"
-       exit 1
-     fi
-   fi
-   if [[ -n "$SSH_AGENT_SOCKET" ]]; then
-     # Resolve symlink safely using realpath -m (Fail Fast)
-     resolved_path=$(realpath -m "$SSH_AGENT_SOCKET" 2>/dev/null) || {
-       err "Invalid path: $SSH_AGENT_SOCKET"
-       return 1
-     }
-     if [[ -L "$SSH_AGENT_SOCKET" ]]; then
-       err "SSH agent socket is a symlink (not allowed for security): $SSH_AGENT_SOCKET"
-       exit 1
-     fi
-     if [[ -S "$SSH_AGENT_SOCKET" && -r "$SSH_AGENT_SOCKET" ]]; then
-       SSH_VOLUMES="$SSH_VOLUMES -v $(realpath "$SSH_AGENT_SOCKET"):/tmp/ssh-agent.sock:ro"
-     else
-       err "SSH agent socket is not a socket or not readable: $SSH_AGENT_SOCKET"
-       exit 1
-     fi
-   fi
-   if [[ -n "$SSH_KNOWN_HOSTS" ]]; then
-     SSH_VOLUMES="$SSH_VOLUMES -v $(realpath "$SSH_KNOWN_HOSTS"):/home/appuser/.ssh/known_hosts:ro"
-   fi
+  # Build SSH volume mounts as array elements. Each -v flag and its value remain
+  # separate quoted words so user-provided paths cannot be split or globbed.
+  local resolved_path
+  SSH_VOLUMES=()
+  if [[ -n "$SSH_KEY_PATH" ]]; then
+    # Resolve symlink safely using realpath -m (Fail Fast)
+    resolved_path=$(realpath -m "$SSH_KEY_PATH" 2>/dev/null) || {
+      err "Invalid path: $SSH_KEY_PATH"
+      return 1
+    }
+    if [[ -L "$SSH_KEY_PATH" ]]; then
+      err "SSH key path is a symlink (not allowed for security): $SSH_KEY_PATH"
+      exit 1
+    fi
+    if [[ -f "$SSH_KEY_PATH" && -r "$SSH_KEY_PATH" ]]; then
+      resolved_path=$(realpath "$SSH_KEY_PATH") || {
+        err "Could not resolve SSH key path: $SSH_KEY_PATH"
+        return 1
+      }
+      SSH_VOLUMES+=(-v "$resolved_path:/home/appuser/.ssh/id_rsa:ro")
+    else
+      err "SSH key path is not a regular file or not readable: $SSH_KEY_PATH"
+      exit 1
+    fi
+  fi
+  if [[ -n "$SSH_AGENT_SOCKET" ]]; then
+    # Resolve symlink safely using realpath -m (Fail Fast)
+    resolved_path=$(realpath -m "$SSH_AGENT_SOCKET" 2>/dev/null) || {
+      err "Invalid path: $SSH_AGENT_SOCKET"
+      return 1
+    }
+    if [[ -L "$SSH_AGENT_SOCKET" ]]; then
+      err "SSH agent socket is a symlink (not allowed for security): $SSH_AGENT_SOCKET"
+      exit 1
+    fi
+    if [[ -S "$SSH_AGENT_SOCKET" && -r "$SSH_AGENT_SOCKET" ]]; then
+      resolved_path=$(realpath "$SSH_AGENT_SOCKET") || {
+        err "Could not resolve SSH agent socket: $SSH_AGENT_SOCKET"
+        return 1
+      }
+      SSH_VOLUMES+=(-v "$resolved_path:/tmp/ssh-agent.sock:ro")
+    else
+      err "SSH agent socket is not a socket or not readable: $SSH_AGENT_SOCKET"
+      exit 1
+    fi
+  fi
+  if [[ -n "$SSH_KNOWN_HOSTS" ]]; then
+    resolved_path=$(realpath "$SSH_KNOWN_HOSTS") || {
+      err "Could not resolve SSH known_hosts path: $SSH_KNOWN_HOSTS"
+      return 1
+    }
+    SSH_VOLUMES+=(-v "$resolved_path:/home/appuser/.ssh/known_hosts:ro")
+  fi
   
   # Build environment variables as an array (each value passes through cleanly,
   # no literal quote characters, no shell escaping artifacts)
@@ -1772,8 +2156,8 @@ run_installation() {
   SKILLS_PATH="${ROUTER_DIR%/agent-skill-routing-system}/skills"
   VOLUMES=(-v "$SKILLS_PATH:/app/skills:ro")
   VOLUMES+=(-v "skill-router-cache:/cache")
-  if [[ -n "$SSH_VOLUMES" ]]; then
-    VOLUMES+=($SSH_VOLUMES)
+  if [[ ${#SSH_VOLUMES[@]} -gt 0 ]]; then
+    VOLUMES+=("${SSH_VOLUMES[@]}")
   fi
   
   # Run container
@@ -1806,15 +2190,16 @@ run_installation() {
      HTTP_CODE=$(curl -s -o "$health_file" -w "%{http_code}" \
        "http://localhost:$PORT/health" 2>/dev/null || echo "000")
      
-     if [[ "$HTTP_CODE" == "200" ]]; then
-       HEALTH_RESPONSE=$(cat "$health_file")
-       # Clean up temp file immediately (Fail Fast)
-       rm -f "$health_file"
-      if echo "$HEALTH_RESPONSE" | grep -q '"healthy"'; then
-        HEALTHY=true
-        break
+      if [[ "$HTTP_CODE" == "200" ]]; then
+        HEALTH_RESPONSE=$(cat "$health_file")
+        if echo "$HEALTH_RESPONSE" | grep -q '"healthy"'; then
+          HEALTHY=true
+          rm -f "$health_file"
+          break
+        fi
       fi
-    fi
+      # Clean up temp file immediately on every polling path (Fail Fast)
+      rm -f "$health_file"
   done
   
   echo ""
@@ -2322,49 +2707,47 @@ if [[ "$MODE" == "noninteractive" ]]; then
 
   run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR"
 else
-   # TUI-based interactive mode
-   show_intro
-   
-   # Default values for interactive mode
-   OPENAI_API_KEY="${OPENAI_API_KEY:-}"
-   OPENAI_BASE_URL="${OPENAI_BASE_URL:-}"
-   PORT="${PORT:-3000}"
-   LLM_PROVIDER="${LLM_PROVIDER:-openai}"
-   LLM_MODEL="${LLM_MODEL:-gpt-4o-mini}"
-   EMBEDDING_MODEL="${EMBEDDING_MODEL:-text-embedding-3-small}"
-   ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
-   LLAMACPP_URL="${LLAMACPP_URL:-http://host.docker.internal:8080}"
-   EMBEDDING_PROVIDER="${EMBEDDING_PROVIDER:-openai}"
-   GITHUB_ENABLED="${GITHUB_ENABLED:-true}"
-   GITHUB_TOKEN="${GITHUB_TOKEN:-}"
-   GITHUB_RAW_BASE_URL="${GITHUB_RAW_BASE_URL:-https://raw.githubusercontent.com/paulpas/skills/main}"
-   GITHUB_SKILLS_REPO="${GITHUB_SKILLS_REPO:-https://github.com/paulpas/skills}"
-   SYNC_INTERVAL="${SYNC_INTERVAL:-3600}"
-   SSH_KEY_PATH="${SSH_KEY_PATH:-}"
-   SSH_AGENT_SOCKET="${SSH_AGENT_SOCKET:-}"
-   SSH_KNOWN_HOSTS="${SSH_KNOWN_HOSTS:-}"
-   AUTO_SKILL_ENABLED="${AUTO_SKILL_ENABLED:-true}"
-   AUTO_SKILL_CONTRIBUTE="${AUTO_SKILL_CONTRIBUTE:-true}"
-   AUTO_SKILL_MODEL="${AUTO_SKILL_MODEL:-gpt-4o-mini}"
-   LINK_FOLLOWING_ENABLED="${LINK_FOLLOWING_ENABLED:-false}"
-   ALLOW_EXTERNAL_LINKS="${ALLOW_EXTERNAL_LINKS:-false}"
-   MAX_LINK_DEPTH="${MAX_LINK_DEPTH:-2}"
-   MAX_EXTERNAL_SIZE_KB="${MAX_EXTERNAL_SIZE_KB:-10}"
-   EXTERNAL_COMPRESSION_MODE="${EXTERNAL_COMPRESSION_MODE:-brief}"
-   JS_RENDERING_ENABLED="${JS_RENDERING_ENABLED:-false}"
-   JS_RENDER_TIMEOUT_MS="${JS_RENDER_TIMEOUT_MS:-5000}"
-   JS_RENDER_FALLBACK="${JS_RENDER_FALLBACK:-true}"
-   LINK_RESOLUTION_MODE="${LINK_RESOLUTION_MODE:-inline}"
-   SEMANTIC_TOP_K="${SEMANTIC_TOP_K:-3}"
-   SEMANTIC_SIMILARITY_THRESHOLD="${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}"
+  # Dialog-based interactive mode with line-prompt fallback
+  OPENAI_API_KEY="${OPENAI_API_KEY:-}"
+  OPENAI_BASE_URL="${OPENAI_BASE_URL:-}"
+  PORT="${PORT:-3000}"
+  LLM_PROVIDER="${LLM_PROVIDER:-openai}"
+  LLM_MODEL="${LLM_MODEL:-gpt-4o-mini}"
+  EMBEDDING_MODEL="${EMBEDDING_MODEL:-text-embedding-3-small}"
+  ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
+  LLAMACPP_URL="${LLAMACPP_URL:-http://host.docker.internal:8080}"
+  EMBEDDING_PROVIDER="${EMBEDDING_PROVIDER:-openai}"
+  GITHUB_ENABLED="${GITHUB_ENABLED:-true}"
+  GITHUB_TOKEN="${GITHUB_TOKEN:-}"
+  GITHUB_RAW_BASE_URL="${GITHUB_RAW_BASE_URL:-https://raw.githubusercontent.com/paulpas/skills/main}"
+  GITHUB_SKILLS_REPO="${GITHUB_SKILLS_REPO:-https://github.com/paulpas/skills}"
+  SYNC_INTERVAL="${SYNC_INTERVAL:-3600}"
+  SSH_KEY_PATH="${SSH_KEY_PATH:-}"
+  SSH_AGENT_SOCKET="${SSH_AGENT_SOCKET:-}"
+  SSH_KNOWN_HOSTS="${SSH_KNOWN_HOSTS:-}"
+  AUTO_SKILL_ENABLED="${AUTO_SKILL_ENABLED:-true}"
+  AUTO_SKILL_CONTRIBUTE="${AUTO_SKILL_CONTRIBUTE:-true}"
+  AUTO_SKILL_MODEL="${AUTO_SKILL_MODEL:-gpt-4o-mini}"
+  LINK_FOLLOWING_ENABLED="${LINK_FOLLOWING_ENABLED:-false}"
+  ALLOW_EXTERNAL_LINKS="${ALLOW_EXTERNAL_LINKS:-false}"
+  MAX_LINK_DEPTH="${MAX_LINK_DEPTH:-2}"
+  MAX_EXTERNAL_SIZE_KB="${MAX_EXTERNAL_SIZE_KB:-10}"
+  EXTERNAL_COMPRESSION_MODE="${EXTERNAL_COMPRESSION_MODE:-brief}"
+  JS_RENDERING_ENABLED="${JS_RENDERING_ENABLED:-false}"
+  JS_RENDER_TIMEOUT_MS="${JS_RENDER_TIMEOUT_MS:-5000}"
+  JS_RENDER_FALLBACK="${JS_RENDER_FALLBACK:-true}"
+  LINK_RESOLUTION_MODE="${LINK_RESOLUTION_MODE:-inline}"
+  SEMANTIC_TOP_K="${SEMANTIC_TOP_K:-3}"
+  SEMANTIC_SIMILARITY_THRESHOLD="${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}"
 
-   # TUI-based configuration
-   tui_main_menu
+  if ! run_interactive_configuration; then
+    info "Installation cancelled. No Docker build or container changes were made."
+    exit 0
+  fi
 
-   # Run the actual installation
-   print_header
-   echo -e "${BOLD}Starting installation...${RESET}"
-   echo ""
-   
-   run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR"
+  print_header
+  echo -e "${BOLD}Starting installation...${RESET}"
+  echo ""
+
+  run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR"
 fi
