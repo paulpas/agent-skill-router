@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 807 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 809 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **807 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **809 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -87,9 +87,9 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 258 | AI orchestration, routing, task decomposition |
+| Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 244 | Software patterns, security, testing, data science |
+| Coding | 245 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,14 +265,14 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 19:46:23 UTC  
-> **Total skills:** 807  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (807 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 15:52:04 UTC  
+> **Total skills:** 809  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (809 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
 
-### Agent (258 skills)
+### Agent (259 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -505,6 +505,7 @@ MIT — All skills are freely available and redistributable.
 | [stacktrace-root-cause](skills/agent/stacktrace-root-cause/SKILL.md) | Implements intelligent stacktrace root cause with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | stacktrace-root-cause, stacktrace root cause, how do i stacktrace-root-cause, orchestrate stacktrace-root-cause, automate stacktrace-root-cause, agent stacktrace-root-cause |
 | [stripe-automation](skills/agent/stripe-automation/SKILL.md) | Implements intelligent stripe automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | stripe-automation, stripe automation, how do i stripe-automation, orchestrate stripe-automation, automate stripe-automation, agent stripe-automation |
 | [subagent-driven-development](skills/agent/subagent-driven-development/SKILL.md) | Implements intelligent subagent driven development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | subagent-driven-development, subagent driven development, how do i subagent-driven-development, orchestrate subagent-driven-development, automate subagent-driven-development, agent subagent-driven-development |
+| [system-hints-design](skills/agent/system-hints-design/SKILL.md) | Constructs layered system hints for agent architectures — identity, context, constraint, and behavioral hint layers — with provider-specific patterns for Anthropic, OpenAI, and Google Gemini. | system hints, system prompt design, agent behavior control, context layering, hint architecture, how do i design better system prompts, tool-use hints, multi-agent hints |
 | [task-decomposition-engine](skills/agent/task-decomposition-engine/SKILL.md) | Implements intelligent task decomposition engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | task-decomposition-engine, task decomposition engine, how do i task-decomposition-engine, orchestrate task-decomposition-engine, automate task-decomposition-engine, agent task-decomposition-engine |
 | [task-intelligence](skills/agent/task-intelligence/SKILL.md) | Implements intelligent task intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | task-intelligence, task intelligence, how do i task-intelligence, orchestrate task-intelligence, automate task-intelligence, agent task-intelligence |
 | [temporal-golang-pro](skills/agent/temporal-golang-pro/SKILL.md) | Implements intelligent temporal golang pro with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | temporal-golang-pro, temporal golang pro, how do i temporal-golang-pro, orchestrate temporal-golang-pro, automate temporal-golang-pro, agent temporal-golang-pro |
@@ -715,7 +716,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (244 skills)
+### Coding (245 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -840,6 +841,7 @@ MIT — All skills are freely available and redistributable.
 | [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. | graphql schema design, SDL, type system, strawberry-graphql, interface, union type, graphql-input-object, graphql-deprecation |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. | gRPC, protocol buffers, protobuf, RPC, streaming RPC, unary call, interceptor middleware, grpc service, stub generation, proto file design, bidirectional stream, client streaming, server streaming |
 | [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. | hexagonal architecture, ports and adapters, clean architecture, dependency inversion, core business logic, how do i decouple my code, separate business logic from framework |
+| [hint-based-prompting](skills/coding/hint-based-prompting/SKILL.md) | Applies subtle contextual hints instead of explicit step-by-step instructions to guide LLM output naturally, reducing token overhead and improving generation quality through framing rather than commanding. | hints, hint-based prompting, system hints, contextual guidance, token efficiency, prompt framing, how do i use hints in prompts, subtle prompting |
 | [html-entity-encoding](skills/coding/html-entity-encoding/SKILL.md) | Encodes HTML special characters (&lt; &gt; &amp; &quot; &#39;) into safe entity references to prevent XSS, ensure correct rendering, and handle character data safely across web frameworks and output contexts. | html entities, entity encoding, html escaping, &amp; ampersand, &lt; less than, &gt; greater than, character references, HTML5 entities, XSS prevention, framework escaping, dangerouslySetInnerHTML, innerHTML, DOMPurify |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | hypothesis testing, t-test, chi-square, p-value, statistical significance, how do i test hypotheses, unit tests, testing |
@@ -1141,7 +1143,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (395 skills)
+### Implementation (Build Features) (397 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1307,6 +1309,7 @@ MIT — All skills are freely available and redistributable.
 | [health](skills/trading/health/SKILL.md) | Trading | "Provides Exchange system health monitoring and connectivity status tracking" |
 | [health-check-patterns](skills/cncf/health-check-patterns/SKILL.md) | Cncf | Implements comprehensive health check patterns for cloud-native applications including Kubernetes probes, HTTP health endpoints, database checks, and circuit breaker patterns |
 | [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Coding | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. |
+| [hint-based-prompting](skills/coding/hint-based-prompting/SKILL.md) | Coding | Applies subtle contextual hints instead of explicit step-by-step instructions to guide LLM output naturally, reducing token overhead and improving generation quality through framing rather than commanding. |
 | [html-entity-encoding](skills/coding/html-entity-encoding/SKILL.md) | Coding | Encodes HTML special characters (&lt; &gt; &amp; &quot; &#39;) into safe entity references to prevent XSS, ensure correct rendering, and handle character data safely across web frameworks and output contexts. |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | Coding | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" |
 | [hyperparameter-tuning](skills/trading/hyperparameter-tuning/SKILL.md) | Trading | "Implements optimize model configurations for trading applications for risk management and algorithmic trading execution." |
@@ -1495,6 +1498,7 @@ MIT — All skills are freely available and redistributable.
 | [synthetic-data](skills/trading/synthetic-data/SKILL.md) | Trading | "Provides Generate synthetic financial data for training and testing trading models" |
 | [system-architecture](skills/coding/system-architecture/SKILL.md) | Coding | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. |
 | [system-design-fundamentals](skills/coding/system-design-fundamentals/SKILL.md) | Coding | Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable... |
+| [system-hints-design](skills/agent/system-hints-design/SKILL.md) | Agent | Constructs layered system hints for agent architectures — identity, context, constraint, and behavioral hint layers — with provider-specific patterns for Anthropic, OpenAI, and Google Gemini. |
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Coding | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. |
 | [systemd-boot](skills/linux/systemd-boot/SKILL.md) | Linux | Analyzes and optimizes the systemd boot process including target management, boot time profiling with systemd-analyze, initramfs configuration, and custom boot-time unit creation for Linux systems. |
 | [tail-risk](skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event protection for risk management and algorithmic trading execution." |
@@ -2331,6 +2335,7 @@ MIT — All skills are freely available and redistributable.
 | [helpdesk-automation](skills/agent/helpdesk-automation/SKILL.md) | Agent | Implements intelligent helpdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Coding | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. | Implementation |
 | [hierarchical-agent-memory](skills/agent/hierarchical-agent-memory/SKILL.md) | Agent | Implements intelligent hierarchical agent memory with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [hint-based-prompting](skills/coding/hint-based-prompting/SKILL.md) | Coding | Applies subtle contextual hints instead of explicit step-by-step instructions to guide LLM output naturally, reducing token overhead and improving generation quality through framing rather than commanding. | Implementation |
 | [hosted-agents](skills/agent/hosted-agents/SKILL.md) | Agent | Implements intelligent hosted agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [hosted-agents-v2-py](skills/agent/hosted-agents-v2-py/SKILL.md) | Agent | Implements intelligent hosted agents v2 py with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [hot-path-detector](skills/agent/hot-path-detector/SKILL.md) | Agent | Implements intelligent hot path detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2690,6 +2695,7 @@ MIT — All skills are freely available and redistributable.
 | [synthetic-data](skills/trading/synthetic-data/SKILL.md) | Trading | "Provides Generate synthetic financial data for training and testing trading models" | Implementation |
 | [system-architecture](skills/coding/system-architecture/SKILL.md) | Coding | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. | Implementation |
 | [system-design-fundamentals](skills/coding/system-design-fundamentals/SKILL.md) | Coding | Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable... | Implementation |
+| [system-hints-design](skills/agent/system-hints-design/SKILL.md) | Agent | Constructs layered system hints for agent architectures — identity, context, constraint, and behavioral hint layers — with provider-specific patterns for Anthropic, OpenAI, and Google Gemini. | Implementation |
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Coding | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. | Implementation |
 | [systemd-boot](skills/linux/systemd-boot/SKILL.md) | Linux | Analyzes and optimizes the systemd boot process including target management, boot time profiling with systemd-analyze, initramfs configuration, and custom boot-time unit creation for Linux systems. | Implementation |
 | [tail-risk](skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event protection for risk management and algorithmic trading execution." | Implementation |
