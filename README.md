@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 04:55:03 UTC  
-> **Total skills:** 778
+> **Last updated:** 2026-05-22 00:44:50 UTC  
+> **Total skills:** 780
 
 ## Skills by Domain
 
@@ -939,6 +939,14 @@ MIT — All skills are freely available and redistributable.
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | yaml anchor, yaml alias, config deduplication, merge key, helm template, ansible common config, kubernetes shared spec, how do i reduce yaml repetition, <<:, &label, *alias |
 
 
+### Electrical-engineering (2 skills)
+
+| Skill Name | Description | Triggers |
+|---|---|---|
+| [kicad-pcb-design](skills/electrical-engineering/kicad-pcb-design/SKILL.md) | Implements modern KiCad 9+ PCB design workflows covering schematic capture, component library management, controlled-impedance layout, EMC-aware routing, DRC validation, and fabrication file generation. | PCB design, KiCad, printed circuit board, schematic capture, signal integrity, impedance control, how do i design a circuit board, EMC compliance |
+| [stm32-embedded-systems](skills/electrical-engineering/stm32-embedded-systems/SKILL.md) | Implements STM32 firmware development using HAL/LL drivers, DMA peripheral programming, FreeRTOS task architecture, clock tree configuration, and power management for production embedded systems on Cortex-M microcontrollers. | STM32, embedded systems, firmware development, microcontroller programming, HAL driver, FreeRTOS on STM32, how do i program a microcontroller, clock tree configuration |
+
+
 ### Go (12 skills)
 
 | Skill Name | Description | Triggers |
@@ -1104,7 +1112,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (370 skills)
+### Implementation (Build Features) (372 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1280,6 +1288,7 @@ MIT — All skills are freely available and redistributable.
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Linux | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. |
+| [kicad-pcb-design](skills/electrical-engineering/kicad-pcb-design/SKILL.md) | Electrical-engineering | Implements modern KiCad 9+ PCB design workflows covering schematic capture, component library management, controlled-impedance layout, EMC-aware routing, DRC validation, and fabrication file generation. |
 | [kill-switches](skills/trading/kill-switches/SKILL.md) | Trading | "Implementing multi-layered kill switches at account, strategy, market" and infrastructure levels to prevent catastrophic losses and system failures |
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Coding | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. |
 | [kubernetes-api-patterns](skills/cncf/kubernetes-api-patterns/SKILL.md) | Cncf | Kubernetes API patterns including CRD development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions |
@@ -1424,6 +1433,7 @@ MIT — All skills are freely available and redistributable.
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. |
 | [statistical-arbitrage](skills/trading/statistical-arbitrage/SKILL.md) | Trading | "Implements pair trading and cointegration-based arbitrage strategies for risk management and algorithmic trading execution." |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | Coding | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" |
+| [stm32-embedded-systems](skills/electrical-engineering/stm32-embedded-systems/SKILL.md) | Electrical-engineering | Implements STM32 firmware development using HAL/LL drivers, DMA peripheral programming, FreeRTOS task architecture, clock tree configuration, and power management for production embedded systems on Cortex-M microcontrollers. |
 | [stop-loss](skills/trading/stop-loss/SKILL.md) | Trading | "Implements stop loss strategies for risk management for risk management and algorithmic trading execution." |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Linux | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. |
 | [stream-processing](skills/trading/stream-processing/SKILL.md) | Trading | "Provides Streaming data processing for real-time trading signals and analytics" |
@@ -2302,6 +2312,7 @@ MIT — All skills are freely available and redistributable.
 | [key-vault](skills/cncf/key-vault/SKILL.md) | Cncf | "Manages encryption keys, secrets, and certificates with access control" and auditing. | Reference |
 | [keycloak](skills/cncf/keycloak/SKILL.md) | Cncf | "Provides Keycloak in Cloud-Native Engineering - identity and access management" | Reference |
 | [keyvault-secrets](skills/cncf/keyvault-secrets/SKILL.md) | Cncf | "Provides Secret management and rotation for sensitive credentials and configuration" | Reference |
+| [kicad-pcb-design](skills/electrical-engineering/kicad-pcb-design/SKILL.md) | Electrical-engineering | Implements modern KiCad 9+ PCB design workflows covering schematic capture, component library management, controlled-impedance layout, EMC-aware routing, DRC validation, and fabrication file generation. | Implementation |
 | [kill-switches](skills/trading/kill-switches/SKILL.md) | Trading | "Implementing multi-layered kill switches at account, strategy, market" and infrastructure levels to prevent catastrophic losses and system failures | Implementation |
 | [kms](skills/cncf/kms/SKILL.md) | Cncf | "Manages encryption keys with AWS KMS for data protection at rest and" in transit, key rotation, and compliance with encryption standards across all AWS services. | Reference |
 | [knative](skills/cncf/knative/SKILL.md) | Cncf | "Provides Knative in Cloud-Native Engineering - serverless on Kubernetes" | Reference |
@@ -2583,6 +2594,7 @@ MIT — All skills are freely available and redistributable.
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. | Implementation |
 | [statistical-arbitrage](skills/trading/statistical-arbitrage/SKILL.md) | Trading | "Implements pair trading and cointegration-based arbitrage strategies for risk management and algorithmic trading execution." | Implementation |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | Coding | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | Implementation |
+| [stm32-embedded-systems](skills/electrical-engineering/stm32-embedded-systems/SKILL.md) | Electrical-engineering | Implements STM32 firmware development using HAL/LL drivers, DMA peripheral programming, FreeRTOS task architecture, clock tree configuration, and power management for production embedded systems on Cortex-M microcontrollers. | Implementation |
 | [stop-loss](skills/trading/stop-loss/SKILL.md) | Trading | "Implements stop loss strategies for risk management for risk management and algorithmic trading execution." | Implementation |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Linux | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. | Implementation |
 | [stream-processing](skills/trading/stream-processing/SKILL.md) | Trading | "Provides Streaming data processing for real-time trading signals and analytics" | Implementation |
