@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 00:56:28 UTC  
-> **Total skills:** 766
+> **Last updated:** 2026-05-22 01:20:42 UTC  
+> **Total skills:** 767
 
 ## Skills by Domain
 
@@ -1083,10 +1083,11 @@ MIT — All skills are freely available and redistributable.
 | [your-position](skills/trading/your-position/SKILL.md) | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. | position management, mental accounting, home bias, disposition effect, portfolio impact, position thesis, behavioral bias, sunk cost fallacy, your position |
 
 
-### Writing (1 skills)
+### Writing (2 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
+| [em-dash-guide](skills/writing/em-dash-guide/SKILL.md) | Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation. | em dash, en dash, hyphen, dash typography, how do i type dashes, long dash, range notation, compound modifier, —, – |
 | [technical-documentation](skills/writing/technical-documentation/SKILL.md) | Writes clear, structured technical documentation including READMEs, API docs, getting-started guides, and architectural overviews following industry conventions and developer experience best practices. | technical documentation, how do i write docs, README, API documentation, getting started guide, architecture overview, developer experience, docs-as-code, documentation structure, markdown docs |
 
 ## Skills by Role
@@ -1459,7 +1460,7 @@ MIT — All skills are freely available and redistributable.
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 
 
-### Reference (Learn & Understand) (166 skills)
+### Reference (Learn & Understand) (167 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1520,6 +1521,7 @@ MIT — All skills are freely available and redistributable.
 | [ecr](skills/cncf/ecr/SKILL.md) | Cncf | "Manages container image repositories with ECR for secure storage, scanning" replication, and integration with EKS, ECS, and Lambda for container deployments. |
 | [eks](skills/cncf/eks/SKILL.md) | Cncf | "Deploys managed Kubernetes clusters with EKS for container orchestration" auto-scaling, networking, and integrations with AWS services for production Kubernetes workloads. |
 | [elb](skills/cncf/elb/SKILL.md) | Cncf | "Configures Elastic Load Balancing (ALB, NLB, Classic) for distributing" traffic across instances with health checks, SSL termination, and cross-AZ failover. |
+| [em-dash-guide](skills/writing/em-dash-guide/SKILL.md) | Writing | Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation. |
 | [envoy](skills/cncf/envoy/SKILL.md) | Cncf | "Envoy in Cloud-Native Engineering - Cloud-native high-performance edge/middle/service" proxy |
 | [etcd](skills/cncf/etcd/SKILL.md) | Cncf | "Provides etcd in Cloud-Native Engineering - distributed key-value store" |
 | [event-hubs](skills/cncf/event-hubs/SKILL.md) | Cncf | "Provides Event streaming platform for high-throughput data ingestion and processing" |
@@ -2140,6 +2142,7 @@ MIT — All skills are freely available and redistributable.
 | [eda](skills/coding/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | Implementation |
 | [eks](skills/cncf/eks/SKILL.md) | Cncf | "Deploys managed Kubernetes clusters with EKS for container orchestration" auto-scaling, networking, and integrations with AWS services for production Kubernetes workloads. | Reference |
 | [elb](skills/cncf/elb/SKILL.md) | Cncf | "Configures Elastic Load Balancing (ALB, NLB, Classic) for distributing" traffic across instances with health checks, SSL termination, and cross-AZ failover. | Reference |
+| [em-dash-guide](skills/writing/em-dash-guide/SKILL.md) | Writing | Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation. | Reference |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Coding | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | Implementation |
 | [engineering-tradeoffs](skills/coding/engineering-tradeoffs/SKILL.md) | Coding | Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints. | Orchestration |
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" | Implementation |

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-22T00:56:27.440123Z",
-  "totalSkills": 766,
+  "generatedAt": "2026-05-22T01:20:41.648390Z",
+  "totalSkills": 767,
   "domains": {
     "agent": 255,
     "cncf": 170,
@@ -10,12 +10,12 @@
     "maker": 3,
     "programming": 6,
     "trading": 88,
-    "writing": 2
+    "writing": 3
   },
   "roles": {
     "orchestration": 233,
     "implementation": 361,
-    "reference": 166,
+    "reference": 167,
     "information": 1,
     "review": 5
   },
@@ -6089,6 +6089,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/aws-elb/SKILL.md"
+    },
+    {
+      "name": "em-dash-guide",
+      "domain": "writing",
+      "description": "Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "report",
+      "triggers": [
+        "em dash",
+        "en dash",
+        "hyphen",
+        "dash typography",
+        "how do i type dashes",
+        "long dash",
+        "range notation",
+        "compound modifier",
+        "—",
+        "–"
+      ],
+      "relatedSkills": [
+        "technical-documentation",
+        "style-guide"
+      ],
+      "version": "1.0.0",
+      "source": "skills/writing/em-dash-guide/SKILL.md"
     },
     {
       "name": "engineering-principles",
