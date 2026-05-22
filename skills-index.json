@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-22T10:25:57.533573Z",
-  "totalSkills": 790,
+  "generatedAt": "2026-05-22T11:11:53.789103Z",
+  "totalSkills": 791,
   "domains": {
     "agent": 257,
     "cncf": 173,
@@ -10,12 +10,12 @@
     "linux": 16,
     "maker": 3,
     "programming": 6,
-    "trading": 88,
+    "trading": 89,
     "writing": 3
   },
   "roles": {
     "orchestration": 234,
-    "implementation": 381,
+    "implementation": 382,
     "reference": 169,
     "information": 1,
     "review": 5
@@ -18540,6 +18540,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/your-position/SKILL.md"
+    },
+    {
+      "name": "your-routine",
+      "domain": "trading",
+      "description": "Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "trading routine",
+        "pre-market prep",
+        "post-market review",
+        "daily trading checklist",
+        "execution discipline",
+        "trading habits",
+        "trade journal",
+        "market preparation",
+        "your routine",
+        "routine design"
+      ],
+      "relatedSkills": [
+        "fundamentals-trading-plan",
+        "your-edge",
+        "your-position",
+        "fundamentals-trading-psychology",
+        "paper-performance-attribution"
+      ],
+      "version": "1.0.0",
+      "source": "skills/trading/your-routine/SKILL.md"
     },
     {
       "name": "zapier-make-patterns",
