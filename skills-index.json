@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T15:48:03.243307Z",
-  "totalSkills": 797,
+  "generatedAt": "2026-05-22T16:35:52.010376Z",
+  "totalSkills": 799,
   "domains": {
     "agent": 258,
     "cncf": 173,
-    "coding": 234,
+    "coding": 236,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 385,
+    "implementation": 387,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -481,6 +481,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ai-framework-selector/SKILL.md"
+    },
+    {
+      "name": "ai-llm-framework-ecosystem",
+      "domain": "coding",
+      "description": "Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ai framework selection",
+        "llm orchestration",
+        "langchain vs llamaindex",
+        "agentic workflow",
+        "how do i choose an ai framework",
+        "prompt engineering framework",
+        "AI agent platform",
+        "RAG architecture"
+      ],
+      "relatedSkills": [
+        "coding-architecture-patterns",
+        "coding-design-patterns",
+        "coding-testing-strategies",
+        "coding-dependency-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ai-llm-framework-ecosystem/SKILL.md"
     },
     {
       "name": "ai-ml",
@@ -9365,6 +9391,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/java-virtual-threads/SKILL.md"
+    },
+    {
+      "name": "javascript-frontend-ecosystem",
+      "domain": "coding",
+      "description": "Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "monorepo setup",
+        "how do i set up a monorepo",
+        "module federation",
+        "micro-frontends",
+        "build toolchain migration",
+        "webpack to vite",
+        "turborepo vs nx"
+      ],
+      "relatedSkills": [
+        "coding-frontend-testing-patterns",
+        "coding-package-publishing-workflows",
+        "agent-task-routing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/javascript-frontend-ecosystem/SKILL.md"
     },
     {
       "name": "jvm-engineering",
