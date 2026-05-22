@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T05:45:19.243043Z",
-  "totalSkills": 780,
+  "generatedAt": "2026-05-22T06:28:26.196880Z",
+  "totalSkills": 782,
   "domains": {
     "agent": 255,
     "cncf": 173,
-    "coding": 222,
+    "coding": 224,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 372,
+    "implementation": 374,
     "reference": 169,
     "information": 1,
     "review": 5
@@ -3463,6 +3463,38 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/code-duplication-detection/SKILL.md"
+    },
+    {
+      "name": "code-quality-metrics",
+      "domain": "coding",
+      "description": "Analyzes software quality using static analysis metrics including cyclomatic complexity, maintainability index, code duplication detection, technical debt estimation, and coverage thresholds for engineering teams.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "code quality metrics",
+        "cyclomatic complexity",
+        "maintainability index",
+        "code duplication",
+        "static analysis",
+        "technical debt",
+        "sonarqube",
+        "pylint metrics",
+        "flake8",
+        "mypy strict",
+        "coverage thresholds",
+        "dead code detection",
+        "how do i measure code quality",
+        "complexity analysis"
+      ],
+      "relatedSkills": [
+        "coding-static-analysis-tools",
+        "coding-code-review",
+        "coding-refactoring-techniques",
+        "coding-type-safety-enforcement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/code-quality-metrics/SKILL.md"
     },
     {
       "name": "commission-model",
@@ -15652,6 +15684,38 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-design-principles/SKILL.md"
+    },
+    {
+      "name": "software-documentation",
+      "domain": "coding",
+      "description": "Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "software documentation",
+        "API docs",
+        "docstrings",
+        "README writing",
+        "developer guides",
+        "OpenAPI",
+        "MkDocs",
+        "Docusaurus",
+        "technical writing for developers",
+        "how do i document code",
+        "Sphinx",
+        "type stubs",
+        "mypy stubs",
+        "py.typed"
+      ],
+      "relatedSkills": [
+        "coding-api-design",
+        "coding-code-review",
+        "coding-type-safety-enforcement",
+        "coding-static-analysis-tools"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-documentation/SKILL.md"
     },
     {
       "name": "software-engineering-principles",
