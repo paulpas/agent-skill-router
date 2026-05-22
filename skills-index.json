@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-22T01:48:29.148160Z",
-  "totalSkills": 768,
+  "generatedAt": "2026-05-22T02:20:47.887942Z",
+  "totalSkills": 770,
   "domains": {
     "agent": 255,
     "cncf": 170,
     "coding": 217,
     "go": 12,
-    "linux": 14,
+    "linux": 16,
     "maker": 3,
     "programming": 6,
     "trading": 88,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 362,
+    "implementation": 364,
     "reference": 167,
     "information": 1,
     "review": 5
@@ -7960,6 +7960,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/grpc-patterns/SKILL.md"
+    },
+    {
+      "name": "grub-uefi-bootloader",
+      "domain": "linux",
+      "description": "Configures GRUB2 bootloader for UEFI firmware boot processes including ESP management, Secure Boot signing, multi-boot setups, kernel parameters, and bootloader recovery procedures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "grub2",
+        "UEFI boot",
+        "Secure Boot",
+        "EFI System Partition",
+        "bootloader recovery",
+        "how do i repair bootloader",
+        "efibootmgr",
+        "GRUB configuration",
+        "dual boot",
+        "shim signing"
+      ],
+      "relatedSkills": [
+        "linux-services",
+        "linux-security",
+        "kernel-tuning",
+        "shell-process-management",
+        "cloud-linux-engineering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/grub-uefi-bootloader/SKILL.md"
     },
     {
       "name": "harbor",
@@ -16038,6 +16067,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/systematic-debugging/SKILL.md"
+    },
+    {
+      "name": "systemd-boot",
+      "domain": "linux",
+      "description": "Analyzes and optimizes the systemd boot process including target management, boot time profiling with systemd-analyze, initramfs configuration, and custom boot-time unit creation for Linux systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "systemd boot",
+        "boot time optimization",
+        "systemd-analyze",
+        "target management",
+        "how do i speed up boot",
+        "dracut initramfs",
+        "rescue mode",
+        "boot logging"
+      ],
+      "relatedSkills": [
+        "linux-services",
+        "kernel-tuning",
+        "shell-process-management",
+        "linux-security"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/systemd-boot/SKILL.md"
     },
     {
       "name": "tail-risk",

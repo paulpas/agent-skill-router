@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 01:48:30 UTC  
-> **Total skills:** 768
+> **Last updated:** 2026-05-22 02:20:48 UTC  
+> **Total skills:** 770
 
 ## Skills by Domain
 
@@ -949,11 +949,12 @@ MIT — All skills are freely available and redistributable.
 | [web-applications](skills/go/web-applications/SKILL.md) | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. | go web, go http, go router, go middleware, go rest api, go templates, go websocket |
 
 
-### Linux (14 skills)
+### Linux (16 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [cloud-linux-engineering](skills/linux/cloud-linux-engineering/SKILL.md) | Engineers Linux systems for cloud-native environments with cloud-init bootstrapping, IMDSv2 security, ephemeral lifecycle management, spot instance handling, and cloud observability integration. | cloud-init, IMDSv2, ephemeral instance, cloud metadata, spot instance, user-data, instance metadata, cloud observability, cloud SSH keys, instance lifecycle |
+| [grub-uefi-bootloader](skills/linux/grub-uefi-bootloader/SKILL.md) | Configures GRUB2 bootloader for UEFI firmware boot processes including ESP management, Secure Boot signing, multi-boot setups, kernel parameters, and bootloader recovery procedures. | grub2, UEFI boot, Secure Boot, EFI System Partition, bootloader recovery, how do i repair bootloader, efibootmgr, GRUB configuration, dual boot, shim signing |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. | hardware provisioning, instance sizing, RAID configuration, SSD, cloud instance, on-prem hardware, disk sizing, CPU architecture |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. | kernel tuning, sysctl, NUMA, interrupt affinity, page cache, TCP tuning, kernel parameters, performance tuning |
 | [linux-security](skills/linux/linux-security/SKILL.md) | Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments. | linux security, hardening, CIS benchmark, SELinux, AppArmor, SSH hardening, file integrity, audit framework |
@@ -967,6 +968,7 @@ MIT — All skills are freely available and redistributable.
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. | bash parameter expansion, ${VAR:-default}, variable default value, shell variable substitution, pattern matching shell, case modification, how do i handle unset variables, bash safe defaults, ${##pattern}, ${VAR:?error}, shell scripting safety |
 | [shell-process-management](skills/linux/shell-process-management/SKILL.md) | Manages Linux background processes, parallel execution, and job control using &, jobs, fg, bg, wait, xargs -P, and GNU parallel for shell scripting. | shell background processes, parallel execution, job control, fg bg jobs wait, xargs P flag, background shell, process management |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. | storage architecture, LVM, filesystem, XFS, ext4, btrfs, cloud storage, NVMe, mount options, storage monitoring |
+| [systemd-boot](skills/linux/systemd-boot/SKILL.md) | Analyzes and optimizes the systemd boot process including target management, boot time profiling with systemd-analyze, initramfs configuration, and custom boot-time unit creation for Linux systems. | systemd boot, boot time optimization, systemd-analyze, target management, how do i speed up boot, dracut initramfs, rescue mode, boot logging |
 
 
 ### Maker (3 skills)
@@ -1094,7 +1096,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (362 skills)
+### Implementation (Build Features) (364 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1244,6 +1246,7 @@ MIT — All skills are freely available and redistributable.
 | [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Coding | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. |
 | [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Coding | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. |
+| [grub-uefi-bootloader](skills/linux/grub-uefi-bootloader/SKILL.md) | Linux | Configures GRUB2 bootloader for UEFI firmware boot processes including ESP management, Secure Boot signing, multi-boot setups, kernel parameters, and bootloader recovery procedures. |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Linux | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. |
 | [health](skills/trading/health/SKILL.md) | Trading | "Provides Exchange system health monitoring and connectivity status tracking" |
 | [health-check-patterns](skills/cncf/health-check-patterns/SKILL.md) | Cncf | Implements comprehensive health check patterns for cloud-native applications including Kubernetes probes, HTTP health endpoints, database checks, and circuit breaker patterns |
@@ -1419,6 +1422,7 @@ MIT — All skills are freely available and redistributable.
 | [system-architecture](skills/coding/system-architecture/SKILL.md) | Coding | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. |
 | [system-design-fundamentals](skills/coding/system-design-fundamentals/SKILL.md) | Coding | Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable... |
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Coding | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. |
+| [systemd-boot](skills/linux/systemd-boot/SKILL.md) | Linux | Analyzes and optimizes the systemd boot process including target management, boot time profiling with systemd-analyze, initramfs configuration, and custom boot-time unit creation for Linux systems. |
 | [tail-risk](skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event protection for risk management and algorithmic trading execution." |
 | [technical-debt-management](skills/coding/technical-debt-management/SKILL.md) | Coding | Tracks, categorizes, and systematically reduces technical debt across codebases using quantitative scoring, prioritization matrices, and automated refactoring strategies. |
 | [technology-adoption](skills/coding/technology-adoption/SKILL.md) | Coding | Maps concrete project requirements to specific technology recommendations using domain-driven decision matrices, adoption risk scoring, and phased rollout strategies for selecting and leveraging technologies effectively. |
@@ -2224,6 +2228,7 @@ MIT — All skills are freely available and redistributable.
 | [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Coding | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. | Implementation |
 | [grpc](skills/cncf/grpc/SKILL.md) | Cncf | "gRPC in Remote Procedure Call - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. | Implementation |
+| [grub-uefi-bootloader](skills/linux/grub-uefi-bootloader/SKILL.md) | Linux | Configures GRUB2 bootloader for UEFI firmware boot processes including ESP management, Secure Boot signing, multi-boot setups, kernel parameters, and bootloader recovery procedures. | Implementation |
 | [harbor](skills/cncf/harbor/SKILL.md) | Cncf | "Configures harbor in cloud-native engineering - container registry for cloud-native deployment and infrastructure management." | Reference |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Linux | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. | Implementation |
 | [health](skills/trading/health/SKILL.md) | Trading | "Provides Exchange system health monitoring and connectivity status tracking" | Implementation |
@@ -2569,6 +2574,7 @@ MIT — All skills are freely available and redistributable.
 | [system-architecture](skills/coding/system-architecture/SKILL.md) | Coding | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. | Implementation |
 | [system-design-fundamentals](skills/coding/system-design-fundamentals/SKILL.md) | Coding | Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable... | Implementation |
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Coding | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. | Implementation |
+| [systemd-boot](skills/linux/systemd-boot/SKILL.md) | Linux | Analyzes and optimizes the systemd boot process including target management, boot time profiling with systemd-analyze, initramfs configuration, and custom boot-time unit creation for Linux systems. | Implementation |
 | [tail-risk](skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event protection for risk management and algorithmic trading execution." | Implementation |
 | [task-decomposition-engine](skills/agent/task-decomposition-engine/SKILL.md) | Agent | Implements intelligent task decomposition engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [task-intelligence](skills/agent/task-intelligence/SKILL.md) | Agent | Implements intelligent task intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
