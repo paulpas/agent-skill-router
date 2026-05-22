@@ -90,45 +90,48 @@ SKILL.md files load into agent context through two mechanisms:
 
 Auto-loading is the primary discovery mechanism. Here's how it works:
 
-```ascii
-                 ┌── INDUSTRY STANDARD: TRIGGER AUTO-LOADING ──┐
-                 │                                                │
-   User says:    │   Agent scans all skill triggers:              │
-   "help me      │                                                │
-    deploy       │   ┌───────────────────────────────┐            │
-    containers"  │   │ kubernetes triggers:           │            │
-                 │   │   kubernetes, k8s, deployment  │   ❌ NO   │
-                 │   │   container orchestration      │   MATCH   │
-                 │   ├───────────────────────────────┤            │
-                 │   │ docker triggers:               │            │
-                 │   │   docker, container, image     │   ❌ NO   │
-                 │   ├───────────────────────────────┤   MATCH   │
-                 │   │ prometheus triggers:           │            │
-                 │   │   prometheus, promql, metrics  │   ❌ NO   │
-                 │   │   alerting, monitoring         │   MATCH   │
-                 │   └───────────────────────────────┘            │
-                 │            ↓                                   │
-                 │   No trigger matched.                          │
-                 │   No skill loaded.                             │
-                 │   Agent proceeds as generalist.                │
-                 └────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph "Industry Standard: Trigger Auto-Loading"
+        A["User says:<br/>'help me deploy containers'"]
+        B["Agent scans all skill triggers:"]
+        A --> B
+        
+        C["kubernetes triggers:<br/>kubernetes, k8s, deployment,<br/>container orchestration, pod management"]
+        D["docker triggers:<br/>docker, container, image"]
+        E["prometheus triggers:<br/>prometheus, promql, metrics,<br/>alerting, monitoring"]
+        B --> C
+        B --> D
+        B --> E
+        
+        F["❌ No trigger matched<br/>❌ No skill loaded<br/>Agent proceeds as generalist"]
+        C -->|❌ NO MATCH| F
+        D -->|❌ NO MATCH| F
+        E -->|❌ NO MATCH| F
+    end
 ```
 
 The critical flaw: **"help me deploy containers"** should clearly match the Kubernetes skill, but since none of the trigger keywords (`kubernetes`, `k8s`, `deployment`, `container orchestration`, `pod management`) appear as substrings, the match fails.
 
-```ascii
-   "help me deploy containers"
-        ↓
-   tokenized: ["help", "me", "deploy", "containers"]
-        ↓
-   checked against triggers:  kubernetes ✗   k8s ✗
-                              deployment ✓   container orchestration ✗
-                              pod management ✗
-        ↓
-   "deployment" is a substring match? No — "deploy" ≠ "deployment"
-   "containers" is a substring match? No — "containers" ≠ "container"
-        ↓
-   ❌ False negative — user has to know the exact trigger vocabulary
+```mermaid
+flowchart TD
+    A["'help me deploy containers'"] --> B["Tokenized:<br/>['help', 'me', 'deploy', 'containers']"]
+    B --> C["Checked against triggers:"]
+    C --> D["kubernetes ✗"]
+    C --> E["k8s ✗"]
+    C --> F["deployment ✓"]
+    C --> G["container orchestration ✗"]
+    C --> H["pod management ✗"]
+    
+    D --> I["'deploy' ≠ 'deployment'<br/>Not a substring match"]
+    F --> I
+    E --> J["'containers' ≠ 'container'<br/>Not a substring match"]
+    H --> J
+    
+    I --> K["❌ False negative"]
+    J --> K
+    
+    K --> L["User has to know exact trigger vocabulary"]
 ```
 
 ---
@@ -153,26 +156,30 @@ As the skill library grows from dozens to hundreds to thousands, the basic trigg
 
 ### The Failure Mode at 750+ Skills
 
-```ascii
-   THE SCALING PROBLEM AT 750+ SKILLS
-
-   User says: "check this code for data handling issues"
-        ↓
-   Trigger matching attempts against 750 skills...
-        ↓
-   Mismatches:
-   ┌─────────────────────────────────────────────┐
-   │  coding-code-review: "code" ✓ BUT "review"  │ ← partial match
-   │                     ≠ "check"                │
-   │  coding-security: "code" ✓ BUT "security"   │ ← partial match  
-   │                  ≠ "data handling"           │
-   │  trading-data: "data" ✓ BUT for market data  │ ← wrong domain!
-   │  linux-storage: "data" ✓ but about disks     │ ← wrong domain!
-   │  programming-algorithms: "data" ✓ structures │ ← wrong context!
-   └─────────────────────────────────────────────┘
-        ↓
-   Result: Multiple low-quality partial matches,
-   no clear winner, possibly misleading skills loaded
+```mermaid
+flowchart TD
+    A["User says:<br/>'check this code for data handling issues'"] --> B["Trigger matching against 750 skills..."]
+    
+    subgraph "Partial Matches"
+        C["coding-code-review<br/>'code' ✓ BUT 'review' ≠ 'check'<br/>← partial match"]
+        D["coding-security<br/>'code' ✓ BUT 'security' ≠ 'data handling'<br/>← partial match"]
+        E["trading-data<br/>'data' ✓ but for market data<br/>← wrong domain!"]
+        F["linux-storage<br/>'data' ✓ but about disks<br/>← wrong domain!"]
+        G["programming-algorithms<br/>'data' ✓ but data structures<br/>← wrong context!"]
+    end
+    
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+    B --> G
+    
+    H["Result:<br/>Multiple low-quality partial matches<br/>No clear winner<br/>Possibly misleading skills loaded"]
+    C --> H
+    D --> H
+    E --> H
+    F --> H
+    G --> H
 ```
 
 ---
@@ -181,77 +188,72 @@ As the skill library grows from dozens to hundreds to thousands, the basic trigg
 
 The agent-skill-router system replaces fragile keyword matching with a **six-stage semantic pipeline** that understands intent, ranks by relevance, plans execution, and compresses intelligently.
 
-```ascii
-         ┌── THE SIX-STAGE ROUTING PIPELINE ──────────────────────────────┐
-         │                                                                │
-         │  "deploy containers to multiple machines"                      │
-         │                                                                │
-         ▼                                                                │
-   ┌──────────┐  ~0.1ms  ┌────────────────────────────────────────┐       │
-   │ 1. Safety│─────────▶│  Prompt injection detection             │       │
-   │  Layer   │          │  Task length validation                 │       │
-   └──────────┘          │  Skill allowlist check                  │       │
-         │               │  Schema validation                      │       │
-         ▼               └───────────────────┬────────────────────┘       │
-   ┌──────────┐  ~200ms                      │                             │
-   │ 2. Embed-│           ┌────────────────────────────────────────┐       │
-   │  ding    │──────────▶│  text-embedding-3-small                │       │
-   │  Service │           │  "deploy containers to multiple        │       │
-   └──────────┘           │   machines" → 1536-dim vector          │       │
-         │                └───────────────────┬────────────────────┘       │
-         ▼                                  │                             │
-   ┌──────────┐  ~0.1ms                     │                             │
-   │ 3. Vector│           ┌────────────────────────────────────────┐       │
-   │  Database│──────────▶│  KD-tree nearest-neighbor search       │       │
-   │  (KD-tree)│          │  O(log n) → top 20 candidates          │       │
-   └──────────┘          │  Semantic: "multiple machines" ≈ {     │       │
-         │               │    cncf-kubernetes: 0.89                │       │
-         ▼               │    cncf-docker: 0.72                    │       │
-   ┌──────────┐  ~3s     │    cncf-nomad: 0.55                     │       │
-   │ 4. LLM   │          │    linux-ssh: 0.31                      │       │
-   │  Ranker  │──────────▶│  }                                      │       │
-   │          │          │                                         │       │
-   │ GPT-4o   │          │  LLM nuanced re-ranking:                │       │
-   │ Claude   │          │  "User wants orchestration, not just    │       │
-   │ llama.cpp│          │   containerization. Kubernetes scores   │       │
-   └──────────┘          │   higher than Docker."                  │       │
-         │               └───────────────────┬────────────────────┘       │
-         ▼                                  │                             │
-   ┌──────────┐  ~0.1ms                     │                             │
-   │ 5. Deter-│           ┌────────────────────────────────────────┐       │
-   │  ministic│──────────▶│  Remove drafts                         │       │
-   │  Filter  │           │  Enforce score ≥ 0.5                   │       │
-   └──────────┘          │  Cap at maxSkills (default 5)          │       │
-         │               └───────────────────┬────────────────────┘       │
-         ▼                                  │                             │
-   ┌──────────┐  ~0.1ms                     │                             │
-   │ 6. Execu-│           ┌────────────────────────────────────────┐       │
-   │  tion    │──────────▶│  Sequential: cncf-kubernetes only      │       │
-   │  Planner │           │  (other skills below threshold)        │       │
-   └──────────┘          │  Strategy: "run container orchestration │       │
-         │               │   skill, then monitor with prometheus"  │       │
-         ▼               └────────────────────────────────────────┘       │
-   ┌──────────────────┐                                                  │
-   │  Response         │                                                  │
-   │  {                │                                                  │
-   │   skills: [       │                                                  │
-   │    {name: cncf-   │                                                  │
-   │     kubernetes,   │                                                  │
-   │     score: 0.94,  │                                                  │
-   │     reason: "Task │                                                  │
-   │     explicitly    │                                                  │
-   │     describes     │                                                  │
-   │     container     │                                                  │
-   │     deployment"   │                                                  │
-   │    }              │                                                  │
-   │   ],              │                                                  │
-   │   executionPlan:  │                                                  │
-   │   { strategy:     │                                                  │
-   │    "sequential" } │                                                  │
-   │  }                │                                                  │
-   └──────────────────┘                                                  │
-                                                                         │
-   └─────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    Input["'deploy containers to multiple machines'"] --> Stage1
+    
+    subgraph Stage1["1. Safety Layer · ~0.1ms"]
+        direction TB
+        S1a["Prompt injection detection"]
+        S1b["Task length validation"]
+        S1c["Skill allowlist check"]
+        S1d["Schema validation"]
+    end
+    
+    Stage1 --> Stage2
+    
+    subgraph Stage2["2. Embedding Service · ~200ms"]
+        direction TB
+        S2a["text-embedding-3-small"]
+        S2b["'deploy containers to multiple machines'"]
+        S2c["→ 1536-dim vector"]
+    end
+    
+    Stage2 --> Stage3
+    
+    subgraph Stage3["3. Vector Database (KD-tree) · ~0.1ms"]
+        direction TB
+        S3a["O(log n) nearest-neighbor search"]
+        S3b["top 20 candidates"]
+        S3c["Semantic: 'multiple machines' ≈"]
+        S3d["cncf-kubernetes: 0.89"]
+        S3e["cncf-docker: 0.72"]
+        S3f["cncf-nomad: 0.55"]
+    end
+    
+    Stage3 --> Stage4
+    
+    subgraph Stage4["4. LLM Ranker · ~3s"]
+        direction TB
+        S4a["GPT-4o / Claude / llama.cpp"]
+        S4b["LLM nuanced re-ranking"]
+        S4c["'User wants orchestration,"]
+        S4d["not just containerization."]
+        S4e["Kubernetes scores higher."]
+    end
+    
+    Stage4 --> Stage5
+    
+    subgraph Stage5["5. Deterministic Filter · ~0.1ms"]
+        direction TB
+        S5a["Remove drafts"]
+        S5b["Enforce score ≥ 0.5"]
+        S5c["Cap at maxSkills (default 5)"]
+    end
+    
+    Stage5 --> Stage6
+    
+    subgraph Stage6["6. Execution Planner · ~0.1ms"]
+        direction TB
+        S6a["Sequential: cncf-kubernetes only"]
+        S6b["(other skills below threshold)"]
+        S6c["Strategy: run container orchestration"]
+        S6d["→ then monitor with Prometheus"]
+    end
+    
+    Stage6 --> Output
+    
+    Output["Response<br/>{<br/>  skills: [{name: cncf-kubernetes,<br/>            score: 0.94,<br/>            reason: 'Task describes container deployment'}],<br/>  executionPlan: {strategy: 'sequential'}<br/>}"]
 ```
 
 ### What Each Stage Does
@@ -273,50 +275,51 @@ The agent-skill-router system replaces fragile keyword matching with a **six-sta
 
 Instead of checking "does this word appear in triggers?", the router converts the entire task into a **1536-dimensional embedding vector** that captures meaning. "Deploy containers to multiple machines" and "kubernetes" are semantically close, even though they share zero substrings.
 
-```ascii
-   INDUSTRY STANDARD                          AGENT-SKILL-ROUTER
-   ┌──────────────────────┐                   ┌──────────────────────┐
-   │  "deploy containers"  │                   │  "deploy containers"  │
-   │         │              │                   │         │              │
-   │         ▼              │                   │         ▼              │
-   │  Substring matching    │                   │  text-embedding-3-    │
-   │  against triggers     │                   │  small → 1536-dim    │
-   │         │              │                   │         │              │
-   │         ▼              │                   │         ▼              │
-   │  kubernetes ✗          │                   │  ┌─────────────────┐  │
-   │  k8s ✗                 │                   │  │ [0.23, -0.45,   │  │
-   │  deployment ✗          │                   │  │  0.78, ...,     │  │
-   │  (substrings not       │                   │  │  0.12]          │  │
-   │   found in query)      │                   │  └─────────────────┘  │
-   │         │              │                   │         │              │
-   │         ▼              │                   │         ▼              │
-   │  ❌ No skill loaded    │                   │  KD-tree → top 20     │
-   │                       │                   │  LLM → final rank     │
-   │                       │                   │         │              │
-   │                       │                   │         ▼              │
-   │                       │                   │  ✅ Kubernetes (0.94)  │
-   │                       │                   │  ✅ Docker (0.72)      │
-   └──────────────────────┘                   └──────────────────────┘
+```mermaid
+flowchart LR
+    subgraph Industry["Industry Standard"]
+        direction TB
+        I1["'deploy containers'"] --> I2["Substring matching against triggers"]
+        I2 --> I3["kubernetes ✗<br/>k8s ✗<br/>deployment ✗"]
+        I3 --> I4["❌ No skill loaded"]
+    end
+    
+    subgraph Router["Agent-Skill-Router"]
+        direction TB
+        R1["'deploy containers'"] --> R2["text-embedding-3-small<br/>→ 1536-dim vector"]
+        R2 --> R3["[0.23, -0.45, 0.78, ..., 0.12]"]
+        R3 --> R4["KD-tree → top 20<br/>LLM → final rank"]
+        R4 --> R5["✅ Kubernetes (0.94)<br/>✅ Docker (0.72)"]
+    end
 ```
 
 ### 2. LLM-Powered Ranking Adds Nuance
 
 Vector search finds semantically similar skills, but it can't distinguish subtleties. The LLM ranker understands that "SQL injection in Python code" is primarily a **security** concern, not just a **code review** concern — and scores `coding-security-review` higher than `coding-code-review`.
 
-```ascii
-   VECTOR SEARCH RESULTS              LLM RANKER OUTPUT
-   ┌────────────────────────┐         ┌────────────────────────┐
-   │ coding-code-review     │         │ coding-security-review │ 0.95
-   │     0.87               │         │   "SQL injection is   │
-   │ coding-security-review │         │    a security issue"   │
-   │     0.84               │         ├────────────────────────┤
-   │ coding-python-practices│         │ coding-code-review     │ 0.72
-   │     0.79               │         │   "general review      │
-   │ coding-sql-patterns    │         │    practices apply"    │
-   │     0.71               │         ├────────────────────────┤
-   └────────────────────────┘         │ coding-sql-patterns    │ 0.45
-                                      │   "too general"        │
-                                      └────────────────────────┘
+```mermaid
+flowchart LR
+    subgraph Vector["Vector Search Results"]
+        direction TB
+        V1["coding-code-review: 0.87"]
+        V2["coding-security-review: 0.84"]
+        V3["coding-python-practices: 0.79"]
+        V4["coding-sql-patterns: 0.71"]
+    end
+    
+    subgraph ReRank["LLM Ranker Output"]
+        direction TB
+        R1["coding-security-review"]
+        R2["0.95 — 'SQL injection is"]
+        R3["a security issue'"]
+        R4["coding-code-review"]
+        R5["0.72 — 'general review"]
+        R6["practices apply'"]
+        R7["coding-sql-patterns"]
+        R8["0.45 — 'too general'"]
+    end
+    
+    Vector --> ReRank
 ```
 
 ### 3. Token-Efficient Compression
@@ -333,46 +336,45 @@ Skills are loaded at progressive compression levels (0–10+), saving 5–85% of
 
 ### 4. Multi-Tier Loading Eliminates Single Points of Failure
 
-```ascii
-   INDUSTRY STANDARD                          AGENT-SKILL-ROUTER
-   ┌──────────────────────┐                   ┌──────────────────────┐
-   │  Loading path:        │                   │  Loading tiers:       │
-   │                       │                   │                       │
-   │  GitHub raw URL       │                   │  1. Memory cache      │
-   │       │                │                   │     (~0ms, 84% hit)  │
-   │       ▼                │                   │                       │
-   │  [single point of     │                   │  2. Disk cache        │
-   │   failure]            │                   │     (~5ms)            │
-   │                       │                   │                       │
-   │  GitHub down →        │                   │  3. GitHub raw URL    │
-   │  No skills loaded     │                   │     (~200ms)          │
-   │                       │                   │                       │
-   │                       │                   │  4. Git clone         │
-   │                       │                   │     (~2s, fallback)   │
-   │                       │                   │                       │
-   │                       │                   │  Any tier down →      │
-   │                       │                   │  Next tier takes over │
-   └──────────────────────┘                   └──────────────────────┘
+```mermaid
+flowchart LR
+    subgraph Standard["Industry Standard"]
+        direction TB
+        S1["Loading path:"] --> S2["GitHub raw URL"]
+        S2 --> S3["▼"]
+        S3 --> S4["[Single point of failure]"]
+        S4 --> S5["GitHub down →<br/>No skills loaded"]
+    end
+    
+    subgraph Router["Agent-Skill-Router"]
+        direction TB
+        R0["Loading tiers:"]
+        R1["1. Memory cache (~0ms, 84% hit)"]
+        R2["2. Disk cache (~5ms)"]
+        R3["3. GitHub raw URL (~200ms)"]
+        R4["4. Git clone (~2s, fallback)"]
+        R5["Any tier down → Next tier takes over"]
+    end
 ```
 
 ### 5. MCP Integration Makes Routing Automatic
 
 Two MCP tools — `route_to_skill` and `list_skills` — are called automatically at the start of every task. The agent doesn't need to know skills exist; the routing happens transparently.
 
-```ascii
-   INDUSTRY STANDARD:                       AGENT-SKILL-ROUTER:
-   Manual /skill commands                  Automatic MCP routing
-
-   User types:                             User types:
-   "/skill kubernetes"                     "deploy my app to K8s"
-        ↓                                        ↓
-   Skill loads manually                    OpenCode calls route_to_skill
-   (user must know skill exists)           ("deploy my app to K8s")
-                                                 ↓
-                                           Router returns kubernetes skill
-                                           Agent loads it automatically
-                                                 ↓
-                                           User never types /skill once
+```mermaid
+sequenceDiagram
+    participant User
+    participant Agent as OpenCode Agent
+    participant Router as Skill Router
+    
+    Note over User,Router: Automatic MCP Routing
+    
+    User->>Agent: "deploy my app to K8s"
+    Agent->>Router: route_to_skill("deploy my app to K8s")
+    Router-->>Agent: Returns kubernetes skill
+    Agent->>Agent: Loads skill automatically
+    
+    Note over User,Agent: User never types /skill once
 ```
 
 ### 6. Self-Updating Skills
@@ -385,53 +387,33 @@ The industry standard SKILL.md treats every skill as a fully self-contained docu
 
 The agent-skill-router **extends the SKILL.md format** with the MarkdownLinkResolver, an intelligent link-following engine that automatically resolves markdown links and semantically inlines referenced content into the skill.
 
-```ascii
-              ┌── MARKDOWN LINK RESOLVER ──┐
-              │                              │
-              │  Skill content with links     │
-              │  ---                          │
-              │  See [details](deep-dive.md)  │
-              │  Read [docs](example.com)     │
-              │  ---                          │
-              │         │                      │
-              │         ▼                      │
-              │  ┌─────────────────────┐       │
-              │  │ Parse markdown      │       │
-              │  │ links via regex     │       │
-              │  └────────┬────────────┘       │
-              │           │                      │
-              │     ┌─────┴──────┐               │
-              │     ▼            ▼                │
-              │  Local         External           │
-              │  ┌────────┐   ┌──────────────┐   │
-              │  │Read    │   │ Static HTTP  │   │
-              │  │file    │   │ (no JS)      │   │
-              │  └────────┘   ├──────────────┤   │
-              │               │ Puppeteer +  │   │
-              │               │ Chromium     │   │
-              │               │ (JS render)  │   │
-              │               └──────┬───────┘   │
-              │                      │            │
-              │                      ▼            │
-              │  ┌──────────────────────────┐     │
-              │  │ Content Processing        │     │
-              │  │                           │     │
-              │  │ 1. Under threshold → inline│    │
-              │  │ 2. Over threshold →        │    │
-              │  │    compress or truncate    │    │
-              │  │ 3. Semantic mode →         │    │
-              │  │    embed chunks, find top-K│    │
-              │  └──────────┬───────────────┘     │
-              │             │                      │
-              │             ▼                      │
-              │  ┌──────────────────────────┐     │
-              │  │ Inline as formatted      │     │
-              │  │ reference section         │     │
-              │  │ 📎 Reference: ...         │     │
-              │  │ > Source: url             │     │
-              │  └──────────────────────────┘     │
-              │                              │
-              └──────────────────────────────┘
+```mermaid
+flowchart TD
+    Input["Skill content with links<br/>---<br/>See [details](deep-dive.md)<br/>Read [docs](example.com)"] --> Parse["Parse markdown links via regex"]
+    
+    Parse --> Local["Local file reference"]
+    Local --> L1["1. Path resolved relative to skill dir"]
+    L1 --> L2["2. Path traversal protection"]
+    L2 --> L3["3. Circular reference detection"]
+    L3 --> L4["4. Recursive resolve (maxDepth: 2)"]
+    
+    Parse --> External["External URL"]
+    External --> E1["Static HTTP<br/>(5s timeout, 1MB hard limit)"]
+    External --> E2["Puppeteer + Chromium<br/>(JS rendering if enabled)"]
+    External --> E3["JS fallback<br/>(auto fallback to static)"]
+    
+    L4 --> Process["Content Processing"]
+    E1 --> Process
+    E2 --> Process
+    E3 --> Process
+    
+    Process --> P1["1. Under threshold → inline full"]
+    Process --> P2["2. Over threshold → compress"]
+    Process --> P3["3. Semantic mode → chunk → embed → cosine similarity → top-K excerpts"]
+    
+    P1 --> Output["Inline as formatted reference section<br/>📎 Reference: ...<br/>> Source: url"]
+    P2 --> Output
+    P3 --> Output
 ```
 
 #### Three Resolution Modes
@@ -527,26 +509,22 @@ The agent-skill-router project doesn't replace SKILL.md. It **supercharges** it.
 
 The result: an AI agent that goes from helpful generalist to **domain specialist on demand** — without the user knowing a skill system even exists. That's the evolution from static skills to intelligent routing.
 
-```ascii
-   THE EVOLUTION IN ONE DIAGRAM
-
-   ┌──────────┐    ┌──────────────┐    ┌──────────────────┐
-   │  SKILL.md │    │  Trigger     │    │  Full content    │
-   │  file     │───▶│  matching    │───▶│  injected into   │
-   │           │    │  (keywords)  │    │  agent context   │
-   └──────────┘    └──────────────┘    └──────────────────┘
-         ↓
-   ┌──────────┐    ┌──────────────────┐    ┌──────────────────┐
-   │  SKILL.md │    │  6-stage pipeline│    │  Compressed,     │
-   │  file     │───▶│  Safety → Embed  │───▶│  ranked, planned │
-   │  (same!)  │    │  → Vector → LLM  │    │  skill content   │
-   │           │    │  → Filter → Plan │    │  injected into   │
-   └──────────┘    └──────────────────┘    │  agent context   │
-                                           └──────────────────┘
-         ▲                                                 ▲
-         │                                                 │
-   Same SKILL.md files,                   Richer, smarter loading
-   zero changes required                  with zero user effort
+```mermaid
+flowchart LR
+    subgraph Before["Before"]
+        direction TB
+        B1["SKILL.md file"] --> B2["Trigger matching<br/>(keywords)"]
+        B2 --> B3["Full content injected<br/>into agent context"]
+    end
+    
+    subgraph After["After"]
+        direction TB
+        A1["SKILL.md file<br/>(same, zero changes)"]
+        A1 --> A2["6-stage pipeline<br/>Safety→Embed→Vector<br/>→LLM→Filter→Plan"]
+        A2 --> A3["Compressed, ranked,<br/>planned skill content<br/>injected into context"]
+    end
+    
+    After -.->|"Richer, smarter loading<br/>with zero user effort"| After
 ```
 
 ---
