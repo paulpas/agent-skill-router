@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T22:36:28.044214Z",
-  "totalSkills": 813,
+  "generatedAt": "2026-05-22T23:24:56.090531Z",
+  "totalSkills": 815,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 249,
+    "coding": 251,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 401,
+    "implementation": 403,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -947,6 +947,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/api-design/SKILL.md"
+    },
+    {
+      "name": "api-development-patterns",
+      "domain": "coding",
+      "description": "Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "api development",
+        "REST API design",
+        "GraphQL schema design",
+        "API error handling",
+        "OpenAPI spec",
+        "API versioning strategy",
+        "how do i build a production API",
+        "API conventions"
+      ],
+      "relatedSkills": [
+        "api-design",
+        "rest-api-patterns",
+        "graphql-schema-design",
+        "api-security-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-development-patterns/SKILL.md"
     },
     {
       "name": "api-documentation",
@@ -16535,6 +16561,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-error-handling/SKILL.md"
+    },
+    {
+      "name": "software-maintainability",
+      "domain": "coding",
+      "description": "Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "software maintainability",
+        "codebase health",
+        "technical debt strategy",
+        "refactoring cadence",
+        "cyclomatic complexity budget",
+        "dependency freshness",
+        "how do i keep my codebase clean over time",
+        "sustainable development velocity"
+      ],
+      "relatedSkills": [
+        "technical-debt-management",
+        "refactoring-techniques",
+        "code-quality-metrics",
+        "performance-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-maintainability/SKILL.md"
     },
     {
       "name": "software-testing-strategy",
