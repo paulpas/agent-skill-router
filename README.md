@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 11:11:54 UTC  
-> **Total skills:** 791
+> **Last updated:** 2026-05-22 12:44:51 UTC  
+> **Total skills:** 792
 
 ## Skills by Domain
 
@@ -712,7 +712,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (231 skills)
+### Coding (232 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -817,6 +817,7 @@ MIT — All skills are freely available and redistributable.
 | [feature-scaling-normalization](skills/coding/feature-scaling-normalization/SKILL.md) | "Provides Scales and normalizes features using standardization, normalization, robust scaling, and other scaling methods for model compatibility" | feature scaling, normalization, standardization, robust scaling, scaling features, how do I scale |
 | [feature-selection](skills/coding/feature-selection/SKILL.md) | "Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based methods" | feature selection, feature importance, recursive elimination, univariate selection, feature selection methods |
 | [framework-adaptation](skills/coding/framework-adaptation/SKILL.md) | Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation. | framework adaptation, library integration, new framework, dependency evaluation, tech stack upgrade, adapter pattern, facade pattern, progressive migration |
+| [framework-adoption-strategy](skills/coding/framework-adoption-strategy/SKILL.md) | Orchestrates structured framework adoption through phased rollout planning, migration strategies, acceptance criteria definition, rollback procedures, and success metrics to ensure teams transition smoothly from selection to production utilization. | framework adoption strategy, phased rollout, framework migration plan, how do i adopt a new framework in production, framework transition planning, rollback strategy, acceptance criteria, framework success metrics |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | framework design, architectural blueprint, extension points, adapter pattern, interface contracts, composition root, framework integration |
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | framework lifecycle, framework decision, technology lifecycle, framework evaluation, framework rollback, tech stack lifecycle, framework governance |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | framework performance, performance tuning, optimize framework, profiling application, connection pooling, caching strategy, async optimization, memory management, reduce latency, increase throughput, framework benchmarking, slow endpoint |
@@ -1123,7 +1124,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (382 skills)
+### Implementation (Build Features) (383 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1265,6 +1266,7 @@ MIT — All skills are freely available and redistributable.
 | [feature-store](skills/trading/feature-store/SKILL.md) | Trading | "Provides Feature storage and management for machine learning trading models" |
 | [fill-simulation](skills/trading/fill-simulation/SKILL.md) | Trading | "Implements fill simulation models for order execution probability for risk management and algorithmic trading execution." |
 | [framework-adaptation](skills/coding/framework-adaptation/SKILL.md) | Coding | Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation. |
+| [framework-adoption-strategy](skills/coding/framework-adoption-strategy/SKILL.md) | Coding | Orchestrates structured framework adoption through phased rollout planning, migration strategies, acceptance criteria definition, rollback procedures, and success metrics to ensure teams transition smoothly from selection to production utilization. |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration. |
@@ -2241,6 +2243,7 @@ MIT — All skills are freely available and redistributable.
 | [for-loop-iteration](skills/programming/for-loop-iteration/SKILL.md) | Programming | Teaches idiomatic for loop patterns across Python, JavaScript, Go, C/C++, Rust, and shell scripting with anti-patterns, common pitfalls, and best practices. | Reference |
 | [framework](skills/cncf/framework/SKILL.md) | Cncf | "Operator Framework in Tools to build and manage Kubernetes operators" with standardized patterns | Reference |
 | [framework-adaptation](skills/coding/framework-adaptation/SKILL.md) | Coding | Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation. | Implementation |
+| [framework-adoption-strategy](skills/coding/framework-adoption-strategy/SKILL.md) | Coding | Orchestrates structured framework adoption through phased rollout planning, migration strategies, acceptance criteria definition, rollback procedures, and success metrics to ensure teams transition smoothly from selection to production utilization. | Implementation |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | Implementation |
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Coding | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | Orchestration |
 | [framework-orchestration-routing](skills/agent/framework-orchestration-routing/SKILL.md) | Agent | Orchestrates task routing across multiple AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen, MCP) by selecting the optimal framework for each subtask and composing cross-framework workflows with proper context bridges. | Orchestration |

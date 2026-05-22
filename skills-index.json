@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T11:11:53.789103Z",
-  "totalSkills": 791,
+  "generatedAt": "2026-05-22T12:44:49.924076Z",
+  "totalSkills": 792,
   "domains": {
     "agent": 257,
     "cncf": 173,
-    "coding": 230,
+    "coding": 231,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 234,
-    "implementation": 382,
+    "implementation": 383,
     "reference": 169,
     "information": 1,
     "review": 5
@@ -7152,6 +7152,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-adaptation/SKILL.md"
+    },
+    {
+      "name": "framework-adoption-strategy",
+      "domain": "coding",
+      "description": "Orchestrates structured framework adoption through phased rollout planning, migration strategies, acceptance criteria definition, rollback procedures, and success metrics to ensure teams transition smoothly from selection to production utilization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework adoption strategy",
+        "phased rollout",
+        "framework migration plan",
+        "how do i adopt a new framework in production",
+        "framework transition planning",
+        "rollback strategy",
+        "acceptance criteria",
+        "framework success metrics"
+      ],
+      "relatedSkills": [
+        "framework-selection",
+        "framework-utilization",
+        "framework-requirements",
+        "version-migration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-adoption-strategy/SKILL.md"
     },
     {
       "name": "framework-design",
