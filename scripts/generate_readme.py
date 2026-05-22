@@ -263,7 +263,8 @@ def generate_content(skills: List[Dict]) -> str:
     content = f"""<!-- AUTO-GENERATED SKILLS INDEX START -->
 
 > **Last updated:** {timestamp}  
-> **Total skills:** {len(skills)}
+> **Total skills:** {len(skills)}  
+> **Machine-readable index:** [`skills-index.json`](skills-index.json) ({len(skills)} entries, JSON — the router's primary source of truth)
 
 {generate_skills_by_domain(skills)}
 {generate_skills_by_role(skills)}

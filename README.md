@@ -265,7 +265,8 @@ MIT — All skills are freely available and redistributable.
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
 > **Last updated:** 2026-05-22 12:44:51 UTC  
-> **Total skills:** 792
+> **Total skills:** 792  
+> **Machine-readable index:** [`skills-index.json`](skills-index.json) (792 entries, JSON — the router's primary source of truth)
 
 ## Skills by Domain
 
