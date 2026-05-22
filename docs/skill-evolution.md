@@ -54,7 +54,7 @@ Implements production-grade Kubernetes deployment patterns.
 
 ## Core Workflow
 1. **Define the Deployment** — Specify replicas, selector, template
-2. **Configure Strategy** — RollingUpdate, recreare, or blue/green
+2. **Configure Strategy** — RollingUpdate, recreate, or blue/green
 3. **Set Resource Limits** — CPU/memory requests and limits
 
 ## Constraints
