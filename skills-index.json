@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-22T15:28:18.001834Z",
-  "totalSkills": 796,
+  "generatedAt": "2026-05-22T15:48:03.243307Z",
+  "totalSkills": 797,
   "domains": {
     "agent": 258,
     "cncf": 173,
@@ -11,12 +11,12 @@
     "maker": 3,
     "programming": 6,
     "trading": 89,
-    "writing": 3
+    "writing": 4
   },
   "roles": {
     "orchestration": 235,
     "implementation": 385,
-    "reference": 170,
+    "reference": 171,
     "information": 1,
     "review": 5
   },
@@ -11042,6 +11042,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/memory-usage-analyzer/SKILL.md"
+    },
+    {
+      "name": "mermaid-diagrams",
+      "domain": "writing",
+      "description": "Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams, Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "report",
+      "triggers": [
+        "mermaid",
+        "mermaidjs",
+        "diagram",
+        "flowchart",
+        "sequence diagram",
+        "how do i create a diagram",
+        "github markdown diagram",
+        "architecture diagram",
+        "diagram best practices"
+      ],
+      "relatedSkills": [
+        "technical-documentation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/writing/mermaid-diagrams/SKILL.md"
     },
     {
       "name": "message-queue-debugging",
