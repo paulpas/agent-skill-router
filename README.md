@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 06:28:27 UTC  
-> **Total skills:** 782
+> **Last updated:** 2026-05-22 02:20:32 UTC  
+> **Total skills:** 783
 
 ## Skills by Domain
 
@@ -710,7 +710,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (225 skills)
+### Coding (226 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -865,6 +865,7 @@ MIT — All skills are freely available and redistributable.
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" | monte carlo, sampling, simulation, stochastic, markov chain, mcmc, how do i simulate |
 | [neural-networks](skills/coding/neural-networks/SKILL.md) | "Implements deep neural networks, backpropagation, activation functions, architectures (CNN, RNN, Transformers), and training strategies" | neural networks, deep learning, backpropagation, CNN, RNN, transformers, how do i use deep learning, hugging face |
 | [normalization](skills/coding/normalization/SKILL.md) | 'Provides Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization' | data normalization, data-normalization, exchange, layer, typed |
+| [observability-engineering](skills/coding/observability-engineering/SKILL.md) | Designs observability engineering systems with SLO-driven instrumentation, multi-window burn rate alerting, OpenTelemetry patterns, signal correlation, and cost governance for production reliability. | observability engineering, SLO SLI error budget, burn rate alerting, open telemetry instrumentation, distributed tracing strategy, signal correlation, observability cost management, how do i design observability, multi-window burn rate, OTel collector architecture |
 | [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. | observability, structured logging, metrics, distributed tracing, open telemetry, prometheus, health checks, debug production |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" | observational studies, propensity score, matching, stratification, observational data, adjustment |
 | [of-shader-programming](skills/coding/of-shader-programming/SKILL.md) | Implements GLSL shader programming in OpenFrameworks including vertex/fragment shaders, uniform management, VBO rendering, post-processing effects, and shader compilation debugging for GPU-accelerated graphics. | of shader, glsl programming, vertex shader, fragment shader, ofShader, uniform management, post-processing, gpu rendering, vbo shader, openframeworks shaders |
@@ -1114,7 +1115,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (374 skills)
+### Implementation (Build Features) (375 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1346,6 +1347,7 @@ MIT — All skills are freely available and redistributable.
 | [news-embedding](skills/trading/news-embedding/SKILL.md) | Trading | "Implements process news text using nlp embeddings for trading signals for risk management and algorithmic trading execution." |
 | [normalization](skills/coding/normalization/SKILL.md) | Coding | 'Provides Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization' |
 | [observability](skills/linux/observability/SKILL.md) | Linux | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. |
+| [observability-engineering](skills/coding/observability-engineering/SKILL.md) | Coding | Designs observability engineering systems with SLO-driven instrumentation, multi-window burn rate alerting, OpenTelemetry patterns, signal correlation, and cost governance for production reliability. |
 | [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Coding | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" |
 | [of-shader-programming](skills/coding/of-shader-programming/SKILL.md) | Coding | Implements GLSL shader programming in OpenFrameworks including vertex/fragment shaders, uniform management, VBO rendering, post-processing effects, and shader compilation debugging for GPU-accelerated graphics. |
@@ -2429,6 +2431,7 @@ MIT — All skills are freely available and redistributable.
 | [o](skills/cncf/o/SKILL.md) | Cncf | "Provides CRI-O in Container Runtime - OCI-compliant container runtime for Kubernetes" | Reference |
 | [oathkeeper](skills/cncf/oathkeeper/SKILL.md) | Cncf | "Oathkeeper in Identity & Access - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [observability](skills/linux/observability/SKILL.md) | Linux | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | Implementation |
+| [observability-engineering](skills/coding/observability-engineering/SKILL.md) | Coding | Designs observability engineering systems with SLO-driven instrumentation, multi-window burn rate alerting, OpenTelemetry patterns, signal correlation, and cost governance for production reliability. | Implementation |
 | [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Coding | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. | Implementation |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" | Implementation |
 | [of-shader-programming](skills/coding/of-shader-programming/SKILL.md) | Coding | Implements GLSL shader programming in OpenFrameworks including vertex/fragment shaders, uniform management, VBO rendering, post-processing effects, and shader compilation debugging for GPU-accelerated graphics. | Implementation |
