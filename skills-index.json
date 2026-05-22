@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T12:44:49.924076Z",
-  "totalSkills": 792,
+  "generatedAt": "2026-05-22T14:26:43.766109Z",
+  "totalSkills": 794,
   "domains": {
-    "agent": 257,
+    "agent": 258,
     "cncf": 173,
-    "coding": 231,
+    "coding": 232,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -14,9 +14,9 @@
     "writing": 3
   },
   "roles": {
-    "orchestration": 234,
+    "orchestration": 235,
     "implementation": 383,
-    "reference": 169,
+    "reference": 170,
     "information": 1,
     "review": 5
   },
@@ -454,6 +454,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ai-dev-jobs-mcp/SKILL.md"
+    },
+    {
+      "name": "ai-framework-selector",
+      "domain": "agent",
+      "description": "Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "ai framework selection",
+        "which ai framework to use",
+        "langchain vs crewai",
+        "choose ai agent framework",
+        "framework comparison",
+        "build custom vs use framework",
+        "AI agent tooling",
+        "how do i pick an ai framework",
+        "LLM framework evaluation"
+      ],
+      "relatedSkills": [
+        "framework-selection",
+        "framework-orchestration-routing",
+        "orchestration-frameworks",
+        "agent-architecture-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/ai-framework-selector/SKILL.md"
     },
     {
       "name": "ai-ml",
@@ -11347,6 +11374,34 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/pydantic-models/SKILL.md"
+    },
+    {
+      "name": "modern-language-comparison",
+      "domain": "coding",
+      "description": "Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "analysis",
+      "triggers": [
+        "programming language comparison",
+        "rust vs go",
+        "typescript vs python",
+        "which language to use",
+        "language selection",
+        "zig vs c++",
+        "language benchmark",
+        "developer experience",
+        "runtime comparison",
+        "language ecosystem maturity"
+      ],
+      "relatedSkills": [
+        "polyglot-development",
+        "framework-selection",
+        "technology-adoption",
+        "performance-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/modern-language-comparison/SKILL.md"
     },
     {
       "name": "modular-design",
