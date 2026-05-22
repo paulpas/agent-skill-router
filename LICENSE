@@ -1,4 +1,6 @@
-MIT License
+SPDX-License-Identifier: MIT
+
+# Agent Skill Router
 
 Copyright (c) 2026 Paul Pasika (paulpas@petabyt.es)
 
@@ -19,3 +21,22 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Additional Legal Notices
+
+### Contributions
+Any contribution intentionally submitted for inclusion in this project by you
+shall be licensed under the same MIT License terms as this project, without any
+additional terms or conditions.
+
+### Trademarks
+This license does not grant any rights to use the trademarks, service marks,
+or logos of the copyright holder.
+
+### Third-Party Components
+This project may include third-party libraries and components that are
+distributed under their own respective licenses. Such components are identified
+in the project's dependency manifests (package.json, etc.) and their license
+terms apply to their use.
