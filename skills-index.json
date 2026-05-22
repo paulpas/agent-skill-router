@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2026-05-22T04:55:03.035133Z",
-  "totalSkills": 778,
+  "generatedAt": "2026-05-22T05:45:19.243043Z",
+  "totalSkills": 780,
   "domains": {
     "agent": 255,
     "cncf": 173,
     "coding": 222,
+    "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
     "maker": 3,
@@ -14,7 +15,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 370,
+    "implementation": 372,
     "reference": 169,
     "information": 1,
     "review": 5
@@ -9346,6 +9347,30 @@
       "source": "skills/cncf/azure-keyvault-secrets/SKILL.md"
     },
     {
+      "name": "kicad-pcb-design",
+      "domain": "electrical-engineering",
+      "description": "Implements modern KiCad 9+ PCB design workflows covering schematic capture, component library management, controlled-impedance layout, EMC-aware routing, DRC validation, and fabrication file generation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "PCB design",
+        "KiCad",
+        "printed circuit board",
+        "schematic capture",
+        "signal integrity",
+        "impedance control",
+        "how do i design a circuit board",
+        "EMC compliance"
+      ],
+      "relatedSkills": [
+        "electrical-engineering-hardware-debugging",
+        "electrical-engineering-component-selection"
+      ],
+      "version": "1.0.0",
+      "source": "skills/electrical-engineering/kicad-pcb-design/SKILL.md"
+    },
+    {
       "name": "kill-switches",
       "domain": "trading",
       "description": "\"Implementing multi-layered kill switches at account, strategy, market\" and infrastructure levels to prevent catastrophic losses and system failures",
@@ -15937,6 +15962,27 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-statistical-power/SKILL.md"
+    },
+    {
+      "name": "stm32-embedded-systems",
+      "domain": "electrical-engineering",
+      "description": "Implements STM32 firmware development using HAL/LL drivers, DMA peripheral programming, FreeRTOS task architecture, clock tree configuration, and power management for production embedded systems on Cortex-M microcontrollers.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "STM32",
+        "embedded systems",
+        "firmware development",
+        "microcontroller programming",
+        "HAL driver",
+        "FreeRTOS on STM32",
+        "how do i program a microcontroller",
+        "clock tree configuration"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/electrical-engineering/stm32-embedded-systems/SKILL.md"
     },
     {
       "name": "stop-loss",
