@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 797 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 799 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **797 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **799 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 258 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 235 | Software patterns, security, testing, data science |
+| Coding | 237 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,9 +265,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 15:48:04 UTC  
-> **Total skills:** 797  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (797 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 11:35:22 UTC  
+> **Total skills:** 799  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (799 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -715,7 +715,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (235 skills)
+### Coding (237 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -723,6 +723,7 @@ MIT — All skills are freely available and redistributable.
 | [abstraction-design-patterns](skills/coding/abstraction-design-patterns/SKILL.md) | Designs clean, maintainable abstractions using Protocols, ABCs, interfaces, and composition to reduce coupling while avoiding over-engineering and leaky abstractions. | abstraction design, interface design, Protocol pattern, over-abstraction, leaky abstraction, composition over inheritance, Rule of Three |
 | [advanced](skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | git rebase, git cherry-pick, git bisect, git reflog, worktrees, filter-branch, multi-repo, advanced git |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | ai-assisted engineering, AI pair programming, LLM code generation, prompt engineering for code, automated code review with AI, AI test generation, how do i use AI in software development, code generation guardrails |
+| [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. | ai framework selection, llm orchestration, langchain vs llamaindex, agentic workflow, how do i choose an ai framework, prompt engineering framework, AI agent platform, RAG architecture |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. | &, ampersand operator, bitwise AND, address of, flag checking, bitmask, pointer manipulation |
 | [anomaly-detection](skills/coding/anomaly-detection/SKILL.md) | "Detects anomalies and outliers using isolation forests, local outlier factor (LOF), one-class SVM, and isolation-based methods" | anomaly detection, outlier detection, isolation forest, LOF, one-class SVM, how do I detect anomalies |
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. | anti corruption layer, acl, foreign model translation, boundary adapter, external system isolation, how do i protect my domain from bad apis, legacy system integration, domain contamination |
@@ -849,6 +850,7 @@ MIT — All skills are freely available and redistributable.
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. | interface segregation principle, ISP, fat interface, thin interface, client specific, Protocol, ABC, unused methods, stub implementation, NotImplementedError, duck typing |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" | treatment effects, intervention analysis, CATE, heterogeneous effects, treatment response |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. | virtual threads, Project Loom, JEP 444, sealed classes, pattern matching switch, thread-per-request, Java concurrency |
+| [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. | monorepo setup, how do i set up a monorepo, module federation, micro-frontends, build toolchain migration, webpack to vite, turborepo vs nx |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | jvm tuning, garbage collection, GC tuning, zgc, shenandoah, jfr, jcmd, heap dump, memory leak, java performance, oom error, out of memory, thread deadlock, jstack, async-profiler... |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" | kernel density estimation, KDE, non-parametric, density estimation, bandwidth selection |
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | kotlin coroutines, structured concurrency, coroutine scope, SupervisorJob, Flow API, StateFlow, kotlinx-coroutines |
@@ -1131,7 +1133,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (385 skills)
+### Implementation (Build Features) (387 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1143,6 +1145,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. |
+| [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Coding | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. |
 | [alternative-data](skills/trading/alternative-data/SKILL.md) | Trading | "Alternative data ingestion pipelines for trading signals including news" social media, and on-chain data sources |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. |
@@ -1311,6 +1314,7 @@ MIT — All skills are freely available and redistributable.
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | Coding | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" |
 | [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Cncf | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. |
+| [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Coding | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Linux | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. |
@@ -1973,6 +1977,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | Implementation |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Agent | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. | Orchestration |
+| [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Coding | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. | Implementation |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Agent | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | Implementation |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Agent | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2347,6 +2352,7 @@ MIT — All skills are freely available and redistributable.
 | [jakarta-ee](skills/cncf/jakarta-ee/SKILL.md) | Cncf | Jakarta EE platform reference covering specifications, APIs, reference implementations, build configuration, and architecture patterns for enterprise Java development. | Reference |
 | [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Cncf | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. | Implementation |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. | Implementation |
+| [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Coding | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. | Implementation |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | Implementation |
 | [k8s-debugger](skills/agent/k8s-debugger/SKILL.md) | Agent | Implements intelligent k8s debugger with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [karmada](skills/cncf/karmada/SKILL.md) | Cncf | "Provides Karmada in Cloud-Native Engineering - multi-cluster orchestration" | Reference |
