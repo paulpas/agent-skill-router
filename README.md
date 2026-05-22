@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 09:13:14 UTC  
-> **Total skills:** 787
+> **Last updated:** 2026-05-22 05:11:32 UTC  
+> **Total skills:** 789
 
 ## Skills by Domain
 
@@ -711,7 +711,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (229 skills)
+### Coding (231 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -763,6 +763,7 @@ MIT — All skills are freely available and redistributable.
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" | correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships |
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. | cqrs, command query responsibility segregation, mediator pattern, outbox pattern, idempotent commands, saga pattern, read write separation, event bus |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | creational patterns, factory method, builder pattern, singleton, abstract factory, prototype pattern, object creation, GoF design patterns |
+| [cross-domain-workflow-sagas](skills/coding/cross-domain-workflow-sagas/SKILL.md) | Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns — compensating actions, timeout handling, distributed state persistence, and failure recovery in domain-driven systems. | saga pattern, saga orchestration, saga choreography, cross-domain workflow, compensating action, distributed transaction, how do i coordinate across bounded contexts, business transaction consistency, eventual consistency, multi-context workflow |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | cross-validation, k-fold, stratified cross-validation, time-series cross-validation, validation |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. | css architecture, css modules, bem naming, tailwind css v4, container queries, :has selector, css nesting, @layer cascade, how do i organize stylesheets, responsive components, utility-first css, scroll-driven animations, view transitions api, css custom properties, css specificity management |
 | [data-collection](skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data |
@@ -792,6 +793,7 @@ MIT — All skills are freely available and redistributable.
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" | dimensionality reduction, PCA, t-SNE, UMAP, feature extraction, how do i reduce dimensions |
 | [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. | distributed systems, consensus algorithm, CAP theorem, eventual consistency, data replication, partitioning strategy, Raft, Paxos, vector clocks, service discovery, two-phase commit, distributed transactions, clock synchronization, consistent hashing |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | distribution fitting, goodness-of-fit, fitting distributions, distribution selection, how do i fit |
+| [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. | project structure, module organization, vertical slice, modular monolith, DDD layout, how do i organize a ddd project, domain driven architecture, clean directory structure, layer separation |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | domain events, domain event, event publishing, event handler, event dispatcher, in-process event bus, how do i decouple aggregates, idempotent event handling |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | domain modeling, ubiquitous language, bounded context, subdomain classification, domain map, how do i understand the domain, strategic design |
@@ -1119,7 +1121,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (379 skills)
+### Implementation (Build Features) (381 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1192,6 +1194,7 @@ MIT — All skills are freely available and redistributable.
 | [cost-optimization-analysis](skills/cncf/cost-optimization-analysis/SKILL.md) | Cncf | Cloud cost optimization analysis including AWS Cost Explorer, Azure Cost Management, and GCP Billing with right-sizing recommendations and optimization strategies for multi-cloud environments |
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. |
+| [cross-domain-workflow-sagas](skills/coding/cross-domain-workflow-sagas/SKILL.md) | Coding | Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns — compensating actions, timeout handling, distributed state persistence, and failure recovery in domain-driven systems. |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Coding | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." |
@@ -1229,6 +1232,7 @@ MIT — All skills are freely available and redistributable.
 | [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Coding | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization |
+| [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Coding | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. |
 | [domain-testing](skills/coding/domain-testing/SKILL.md) | Coding | Verifies DDD domain model correctness through invariant testing of aggregates and value objects, specification candidate tests, test double strategies, and domain event publishing assertions. |
@@ -2123,6 +2127,7 @@ MIT — All skills are freely available and redistributable.
 | [create-issue-gate](skills/agent/create-issue-gate/SKILL.md) | Agent | Implements intelligent create issue gate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [create-pr](skills/agent/create-pr/SKILL.md) | Agent | Implements intelligent create pr with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | Implementation |
+| [cross-domain-workflow-sagas](skills/coding/cross-domain-workflow-sagas/SKILL.md) | Coding | Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns — compensating actions, timeout handling, distributed state persistence, and failure recovery in domain-driven systems. | Implementation |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | Implementation |
 | [crossplane](skills/cncf/crossplane/SKILL.md) | Cncf | "Crossplane in Platform Engineering - Kubernetes-native control plane" for multi-cloud infrastructure | Reference |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Coding | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. | Implementation |
@@ -2174,6 +2179,7 @@ MIT — All skills are freely available and redistributable.
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | Implementation |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization | Implementation |
 | [documentation](skills/agent/documentation/SKILL.md) | Agent | Implements intelligent documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Coding | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. | Implementation |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | Implementation |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | Implementation |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Coding | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | Reference |
