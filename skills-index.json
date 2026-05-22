@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T16:35:52.010376Z",
-  "totalSkills": 799,
+  "generatedAt": "2026-05-22T17:41:21.970064Z",
+  "totalSkills": 800,
   "domains": {
     "agent": 258,
     "cncf": 173,
-    "coding": 236,
+    "coding": 237,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 387,
+    "implementation": 388,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -11506,6 +11506,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/modern-language-comparison/SKILL.md"
+    },
+    {
+      "name": "modern-python-development",
+      "domain": "coding",
+      "description": "Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "python typing",
+        "python 3.12",
+        "python 3.11",
+        "TypeAlias",
+        "ParamSpec",
+        "asyncio TaskGroup",
+        "structured concurrency",
+        "pyproject.toml",
+        "uv package manager",
+        "httpx async",
+        "python project structure",
+        "self type",
+        "override decorator",
+        "modern python",
+        "python best practices 2026"
+      ],
+      "relatedSkills": [
+        "python-testing-strategies",
+        "go-concurrency-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/modern-python-development/SKILL.md"
     },
     {
       "name": "modular-design",

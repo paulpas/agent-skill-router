@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 799 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 800 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **799 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **800 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 258 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 237 | Software patterns, security, testing, data science |
+| Coding | 238 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,9 +265,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 16:35:53 UTC  
-> **Total skills:** 799  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (799 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 17:41:23 UTC  
+> **Total skills:** 800  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (800 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -715,7 +715,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (237 skills)
+### Coding (238 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -874,6 +874,7 @@ MIT — All skills are freely available and redistributable.
 | [model-selection](skills/coding/model-selection/SKILL.md) | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" | model selection, AIC, BIC, validation curves, learning curves, model comparison |
 | [models](skills/coding/models/SKILL.md) | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | enums, frozen, pydantic models, pydantic-models, trading |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | programming language comparison, rust vs go, typescript vs python, which language to use, language selection, zig vs c++, language benchmark, developer experience, runtime comparison, language ecosystem maturity |
+| [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. | python typing, python 3.12, python 3.11, TypeAlias, ParamSpec, asyncio TaskGroup, structured concurrency, pyproject.toml, uv package manager, httpx async, python project structure, self type, override decorator, modern python, python best practices 2026 |
 | [monolith-architecture](skills/coding/monolith-architecture/SKILL.md) | Implements modular monolith patterns (bounded-context layering, hexagonal ports, database-per-module, interface-based inter-module communication) to build cleanly structured single-deployable applications. | monolith, monolithic architecture, modular monolith, how do i structure a monolith, code organization, layered architecture, hexagonal architecture in monolith, single deployable unit |
 | [monolith-refactoring](skills/coding/monolith-refactoring/SKILL.md) | Refactors legacy monolithic "big ball of mud" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition. | monolith refactoring, big ball of mud, how do i untangle legacy code, spaghetti code cleanup, module extraction, strangler fig pattern, codebase restructuring, technical debt refactoring, god class decomposition, dependency analysis |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" | monte carlo, sampling, simulation, stochastic, markov chain, mcmc, how do i simulate |
@@ -1133,7 +1134,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (387 skills)
+### Implementation (Build Features) (388 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1360,6 +1361,7 @@ MIT — All skills are freely available and redistributable.
 | [model-robustness](skills/coding/model-robustness/SKILL.md) | Coding | Improves model robustness including adversarial robustness, out-of-distribution detection, and uncertainty quantification |
 | [model-selection](skills/coding/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" |
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' |
+| [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. |
 | [modular-design](skills/go/modular-design/SKILL.md) | Go | Designs modular Go applications with clean architecture, dependency injection, package boundaries, and interface-based design for maintainable codebases. |
 | [momentum-indicators](skills/trading/momentum-indicators/SKILL.md) | Trading | "Implements rsi, macd, stochastic oscillators and momentum analysis for risk management and algorithmic trading execution." |
 | [monolith-architecture](skills/coding/monolith-architecture/SKILL.md) | Coding | Implements modular monolith patterns (bounded-context layering, hexagonal ports, database-per-module, interface-based inter-module communication) to build cleanly structured single-deployable applications. |
@@ -2443,6 +2445,7 @@ MIT — All skills are freely available and redistributable.
 | [model-selection](skills/coding/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" | Implementation |
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | Implementation |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Coding | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | Reference |
+| [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. | Implementation |
 | [modular-design](skills/go/modular-design/SKILL.md) | Go | Designs modular Go applications with clean architecture, dependency injection, package boundaries, and interface-based design for maintainable codebases. | Implementation |
 | [momentum-indicators](skills/trading/momentum-indicators/SKILL.md) | Trading | "Implements rsi, macd, stochastic oscillators and momentum analysis for risk management and algorithmic trading execution." | Implementation |
 | [monitor](skills/cncf/monitor/SKILL.md) | Cncf | "Provides Monitoring and logging for Azure resources with alerting and observability" | Reference |
