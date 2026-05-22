@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 07:21:02 UTC  
-> **Total skills:** 783
+> **Last updated:** 2026-05-22 03:02:55 UTC  
+> **Total skills:** 785
 
 ## Skills by Domain
 
 
-### Agent (255 skills)
+### Agent (256 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -487,6 +487,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-improver](skills/agent/skill-improver/SKILL.md) | Implements intelligent skill improver with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-improver, skill improver, how do i skill-improver, orchestrate skill-improver, automate skill-improver, agent skill-improver |
 | [skill-installer](skills/agent/skill-installer/SKILL.md) | Implements intelligent skill installer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-installer, skill installer, how do i skill-installer, orchestrate skill-installer, automate skill-installer, agent skill-installer |
 | [skill-lifecycle-management](skills/agent/skill-lifecycle-management/SKILL.md) | Manages the full lifecycle of OpenCode AI skills including versioning strategies, deprecation workflows, backward compatibility checks, and retirement procedures for the agent-skill-router system. | skill lifecycle, versioning strategy, skill deprecation, backward compatibility, skill retirement, migration guide, how do i sunset a skill |
+| [skill-observability](skills/agent/skill-observability/SKILL.md) | Collects telemetry on skill usage patterns, measures trigger-to-action fidelity, gathers user feedback signals, and produces dashboards for continuous skill improvement in agent orchestration systems. | skill observability, usage telemetry, how do i track skill usage, skill analytics, feedback collection, skill performance monitoring, trigger fidelity, skill dashboard, skill measurement, skill adoption metrics |
 | [skill-optimizer](skills/agent/skill-optimizer/SKILL.md) | Implements intelligent skill optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-optimizer, skill optimizer, how do i skill-optimizer, orchestrate skill-optimizer, automate skill-optimizer, agent skill-optimizer |
 | [skill-rails-upgrade](skills/agent/skill-rails-upgrade/SKILL.md) | Implements intelligent skill rails upgrade with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-rails-upgrade, skill rails upgrade, how do i skill-rails-upgrade, orchestrate skill-rails-upgrade, automate skill-rails-upgrade, agent skill-rails-upgrade |
 | [skill-router](skills/agent/skill-router/SKILL.md) | Implements intelligent skill router with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-router, skill router, how do i skill-router, orchestrate skill-router, automate skill-router, agent skill-router |
@@ -710,7 +711,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (226 skills)
+### Coding (227 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -908,6 +909,7 @@ MIT — All skills are freely available and redistributable.
 | [single-responsibility](skills/coding/single-responsibility/SKILL.md) | Detects and refactors classes that violate the Single Responsibility Principle by splitting multi-purpose modules into focused components with clear responsibility boundaries. | single responsibility principle, SRP, god class, split class, cohesion, high coupling, module boundary, one reason to change, separation of concerns |
 | [skill-development-workflow](skills/coding/skill-development-workflow/SKILL.md) | Implements the complete skill creation lifecycle from research through validation, including Python-based quality gates, stub detection, and automated compliance checking against SKILL_FORMAT_SPEC.md requirements. | skill creation workflow, skill development, skill lifecycle, quality gate validation, skill validator, stub detection, skill compliance check, how do i create a skill, SKILL.md format, skill generation pipeline |
 | [skill-lifecycle-management](skills/coding/skill-lifecycle-management/SKILL.md) | Manages the complete lifecycle of SKILL.md files including versioning strategies, deprecation workflows, retirement criteria, migration plans, and automated drift detection to keep skills current across the repository. | skill lifecycle, skill versioning, skill deprecation, skill retirement, how do i manage skills, skill migration, deprecated skills, skill health monitoring, skill drift detection, maturity tracking |
+| [skill-quality-metrics](skills/coding/skill-quality-metrics/SKILL.md) | Scores SKILL.md files across seven dimensions (content depth, code quality, trigger design, structural completeness, constraint specificity, domain compliance, stub resistance) using a Python-based calculator for objective quality assessment. | skill quality metrics, skill scoring, quality rubric, skill evaluation framework, skill health score, how do i measure skill quality, skill audit checklist, skill grading system |
 | [skill-testing-validation](skills/coding/skill-testing-validation/SKILL.md) | Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection. | skill testing, validation, quality assurance, test automation, regression detection, trigger matching, how do i test skills, code review for skills, skill audit |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | software architecture, system design, layered architecture, hexagonal architecture, clean architecture, separation of concerns, scalable design, architectural patterns |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD |
@@ -1115,7 +1117,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (375 skills)
+### Implementation (Build Features) (377 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1426,6 +1428,8 @@ MIT — All skills are freely available and redistributable.
 | [skill-development-workflow](skills/coding/skill-development-workflow/SKILL.md) | Coding | Implements the complete skill creation lifecycle from research through validation, including Python-based quality gates, stub detection, and automated compliance checking against SKILL_FORMAT_SPEC.md requirements. |
 | [skill-engineering](skills/agent/skill-engineering/SKILL.md) | Agent | Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns for the agent-skill-router system. |
 | [skill-lifecycle-management](skills/coding/skill-lifecycle-management/SKILL.md) | Coding | Manages the complete lifecycle of SKILL.md files including versioning strategies, deprecation workflows, retirement criteria, migration plans, and automated drift detection to keep skills current across the repository. |
+| [skill-observability](skills/agent/skill-observability/SKILL.md) | Agent | Collects telemetry on skill usage patterns, measures trigger-to-action fidelity, gathers user feedback signals, and produces dashboards for continuous skill improvement in agent orchestration systems. |
+| [skill-quality-metrics](skills/coding/skill-quality-metrics/SKILL.md) | Coding | Scores SKILL.md files across seven dimensions (content depth, code quality, trigger design, structural completeness, constraint specificity, domain compliance, stub resistance) using a Python-based calculator for objective quality assessment. |
 | [skill-testing-validation](skills/coding/skill-testing-validation/SKILL.md) | Coding | Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection. |
 | [slippage-model](skills/trading/slippage-model/SKILL.md) | Trading | "Implements slippage modeling and execution simulation for risk management and algorithmic trading execution." |
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis |
@@ -2572,7 +2576,9 @@ MIT — All skills are freely available and redistributable.
 | [skill-installer](skills/agent/skill-installer/SKILL.md) | Agent | Implements intelligent skill installer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-lifecycle-management](skills/agent/skill-lifecycle-management/SKILL.md) | Agent | Manages the full lifecycle of OpenCode AI skills including versioning strategies, deprecation workflows, backward compatibility checks, and retirement procedures for the agent-skill-router system. | Orchestration |
 | [skill-lifecycle-management](skills/coding/skill-lifecycle-management/SKILL.md) | Coding | Manages the complete lifecycle of SKILL.md files including versioning strategies, deprecation workflows, retirement criteria, migration plans, and automated drift detection to keep skills current across the repository. | Implementation |
+| [skill-observability](skills/agent/skill-observability/SKILL.md) | Agent | Collects telemetry on skill usage patterns, measures trigger-to-action fidelity, gathers user feedback signals, and produces dashboards for continuous skill improvement in agent orchestration systems. | Implementation |
 | [skill-optimizer](skills/agent/skill-optimizer/SKILL.md) | Agent | Implements intelligent skill optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [skill-quality-metrics](skills/coding/skill-quality-metrics/SKILL.md) | Coding | Scores SKILL.md files across seven dimensions (content depth, code quality, trigger design, structural completeness, constraint specificity, domain compliance, stub resistance) using a Python-based calculator for objective quality assessment. | Implementation |
 | [skill-rails-upgrade](skills/agent/skill-rails-upgrade/SKILL.md) | Agent | Implements intelligent skill rails upgrade with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-router](skills/agent/skill-router/SKILL.md) | Agent | Implements intelligent skill router with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-router-system](skills/agent/skill-router-system/SKILL.md) | Agent | Implements and configures the AI agent skill routing system for auto-loading, trigger matching, confidence scoring, and skills-index generation across orchestration layers. | Orchestration |
