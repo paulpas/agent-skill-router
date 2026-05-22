@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 813 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 815 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **813 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **815 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 249 | Software patterns, security, testing, data science |
+| Coding | 251 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,9 +265,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 22:36:29 UTC  
-> **Total skills:** 813  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (813 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 18:24:27 UTC  
+> **Total skills:** 815  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (815 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -716,7 +716,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (249 skills)
+### Coding (251 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -730,6 +730,7 @@ MIT — All skills are freely available and redistributable.
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. | anti corruption layer, acl, foreign model translation, boundary adapter, external system isolation, how do i protect my domain from bad apis, legacy system integration, domain contamination |
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. | anti-pattern, god object, leaky abstraction, feature envy, shotgun surgery, cargo cult, code smell, refactoring, bad design, harmful patterns |
 | [api-design](skills/coding/api-design/SKILL.md) | Implements modern API design patterns (RESTful resource modeling, GraphQL schema design, gRPC service contracts) with consistent error handling, rate limiting, and versioning strategies for production backend systems. | api design, restful api, graphql schema, gRPC service, openapi specification, versioning strategy, rate limiting, backend architecture, API architecture, microservices interface |
+| [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. | api development, REST API design, GraphQL schema design, API error handling, OpenAPI spec, API versioning strategy, how do i build a production API, API conventions |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | API gateway, api-gateway, request routing, rate limiting, auth proxy, API aggregation, load balancing, backend for frontend, BFF pattern, how do i route requests |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. | api security, authentication middleware, JWT tokens, rate limiting, input sanitization, CORS, how do i secure my API, OWASP API |
 | [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. | api versioning, url path versioning, accept header, breaking changes, api deprecation, sunset header, backward compatibility, api migration, stripe api versioning, github api version, twilio api version, how do i version my api, rest api lifecycle, api contract stability |
@@ -943,6 +944,7 @@ MIT — All skills are freely available and redistributable.
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | software documentation, API docs, docstrings, README writing, developer guides, OpenAPI, MkDocs, Docusaurus, technical writing for developers, how do i document code, Sphinx, type stubs, mypy stubs, py.typed |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | software engineering, modular design, separation of concerns, defensive programming, KISS principle, YAGNI, clean architecture |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. | error handling, exception design, retry logic, circuit breaker, graceful degradation, error recovery, resilience patterns, how do i handle errors in software |
+| [software-maintainability](skills/coding/software-maintainability/SKILL.md) | Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay. | software maintainability, codebase health, technical debt strategy, refactoring cadence, cyclomatic complexity budget, dependency freshness, how do i keep my codebase clean over time, sustainable development velocity |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | testing strategy, unit test, integration test, property-based testing, test coverage, mocking, assertion, pytest, test suite design, how do i write tests |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | spring boot, spring framework, dependency injection, auto configuration, rest controller, record dto, profile configuration, actuator, java 21, virtual threads, @service, @component, @autowired, how do i build a spring app |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error |
@@ -1147,7 +1149,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (401 skills)
+### Implementation (Build Features) (403 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1167,6 +1169,7 @@ MIT — All skills are freely available and redistributable.
 | [anomaly-detection](skills/trading/anomaly-detection/SKILL.md) | Trading | "Provides Detect anomalous market behavior, outliers, and potential market manipulation" |
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Coding | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. |
 | [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements modern API design patterns (RESTful resource modeling, GraphQL schema design, gRPC service contracts) with consistent error handling, rate limiting, and versioning strategies for production backend systems. |
+| [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Coding | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Coding | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. |
 | [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. |
@@ -1489,6 +1492,7 @@ MIT — All skills are freely available and redistributable.
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Coding | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. |
+| [software-maintainability](skills/coding/software-maintainability/SKILL.md) | Coding | Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay. |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. |
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. |
@@ -2025,6 +2029,7 @@ MIT — All skills are freely available and redistributable.
 | [antigravity-skill-orchestrator](skills/agent/antigravity-skill-orchestrator/SKILL.md) | Agent | Implements intelligent antigravity skill orchestrator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [antigravity-workflows](skills/agent/antigravity-workflows/SKILL.md) | Agent | Implements intelligent antigravity workflows with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements modern API design patterns (RESTful resource modeling, GraphQL schema design, gRPC service contracts) with consistent error handling, rate limiting, and versioning strategies for production backend systems. | Implementation |
+| [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Coding | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. | Implementation |
 | [api-documentation](skills/agent/api-documentation/SKILL.md) | Agent | Implements intelligent api documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | Implementation |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Coding | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. | Implementation |
@@ -2681,6 +2686,7 @@ MIT — All skills are freely available and redistributable.
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | Implementation |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | Implementation |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Coding | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. | Implementation |
+| [software-maintainability](skills/coding/software-maintainability/SKILL.md) | Coding | Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay. | Implementation |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | Implementation |
 | [spiffe](skills/cncf/spiffe/SKILL.md) | Cncf | "Provides SPIFFE in Secure Product Identity Framework for Applications" | Reference |
 | [spire](skills/cncf/spire/SKILL.md) | Cncf | "Configures spire in spiffe implementation for real-world deployments for cloud-native deployment and infrastructure management." | Reference |
