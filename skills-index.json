@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T03:28:02.344904Z",
-  "totalSkills": 773,
+  "generatedAt": "2026-05-22T04:15:53.428082Z",
+  "totalSkills": 775,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 220,
+    "coding": 222,
     "go": 12,
     "linux": 16,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 367,
+    "implementation": 369,
     "reference": 167,
     "information": 1,
     "review": 5
@@ -10080,6 +10080,31 @@
       "source": "skills/trading/ai-live-model-monitoring/SKILL.md"
     },
     {
+      "name": "llm-fine-tuning",
+      "domain": "coding",
+      "description": "Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoRA, AdaLoRA), DPO alignment, instruction tuning with unsloth and axolotl, plus evaluation against MMLU, GSM8K, and HumanEval benchmarks.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "fine-tuning LLM",
+        "LoRA",
+        "QLoRA",
+        "PEFT",
+        "DPO alignment",
+        "instruction tuning",
+        "unsloth",
+        "parameter-efficient fine-tuning"
+      ],
+      "relatedSkills": [
+        "coding-ds-hyperparameter-tuning",
+        "coding-performance-optimization",
+        "coding-prompt-engineering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/llm-fine-tuning/SKILL.md"
+    },
+    {
       "name": "llm-orchestration",
       "domain": "trading",
       "description": "\"Large Language Model orchestration for trading analysis with structured\" output using instructor/pydantic",
@@ -12997,6 +13022,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/postgresql-optimization/SKILL.md"
+    },
+    {
+      "name": "postgresql-performance-tuning",
+      "domain": "coding",
+      "description": "Diagnoses and optimizes PostgreSQL performance through execution plan analysis, index strategies, configuration tuning, autovacuum management, partitioning, and monitoring with pg_stat_statements.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "postgresql performance tuning",
+        "psql query optimization",
+        "index strategy",
+        "slow queries",
+        "pgbouncer",
+        "autovacuum tuning",
+        "pg_stat_statements",
+        "how do i make postgresql faster"
+      ],
+      "relatedSkills": [
+        "coding-database-design-modeling",
+        "coding-caching-strategies",
+        "coding-performance-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/postgresql-performance-tuning/SKILL.md"
     },
     {
       "name": "pr-writer",
