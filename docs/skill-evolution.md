@@ -90,6 +90,8 @@ SKILL.md files load into agent context through two mechanisms:
 
 Auto-loading is the primary discovery mechanism. Here's how it works:
 
+*A TD flowchart showing the trigger auto-loading failure mode when no keywords match the user's query. The user says "help me deploy containers", the agent scans all skill triggers, but none match, resulting in no skill loaded.*
+
 ```mermaid
 flowchart TD
     subgraph "Industry Standard: Trigger Auto-Loading"
@@ -104,31 +106,33 @@ flowchart TD
         B --> D
         B --> E
         
-        F["❌ No trigger matched<br/>❌ No skill loaded<br/>Agent proceeds as generalist"]
-        C -->|❌ NO MATCH| F
-        D -->|❌ NO MATCH| F
-        E -->|❌ NO MATCH| F
+        F["x No trigger matched<br/>x No skill loaded<br/>Agent proceeds as generalist"]
+        C -->|"x NO MATCH"| F
+        D -->|"x NO MATCH"| F
+        E -->|"x NO MATCH"| F
     end
 ```
 
 The critical flaw: **"help me deploy containers"** should clearly match the Kubernetes skill, but since none of the trigger keywords (`kubernetes`, `k8s`, `deployment`, `container orchestration`, `pod management`) appear as substrings, the match fails.
 
+*A TD flowchart showing the tokenization and substring matching failure. The query "help me deploy containers" is tokenized and checked against each trigger keyword, but only "deployment" partially matches, leading to false negatives.*
+
 ```mermaid
 flowchart TD
-    A["'help me deploy containers'"] --> B["Tokenized:<br/>['help', 'me', 'deploy', 'containers']"]
-    B --> C["Checked against triggers:"]
-    C --> D["kubernetes ✗"]
-    C --> E["k8s ✗"]
-    C --> F["deployment ✓"]
-    C --> G["container orchestration ✗"]
-    C --> H["pod management ✗"]
+    A["'help me deploy containers'"] -->|"tokenizes to"| B["Tokenized:<br/>['help', 'me', 'deploy', 'containers']"]
+    B -->|"checked against"| C["Checked against triggers:"]
+    C --> D["kubernetes x"]
+    C --> E["k8s x"]
+    C --> F["deployment v"]
+    C --> G["container orchestration x"]
+    C --> H["pod management x"]
     
-    D --> I["'deploy' ≠ 'deployment'<br/>Not a substring match"]
+    D --> I["'deploy' != 'deployment'<br/>Not a substring match"]
     F --> I
-    E --> J["'containers' ≠ 'container'<br/>Not a substring match"]
+    E --> J["'containers' != 'container'<br/>Not a substring match"]
     H --> J
     
-    I --> K["❌ False negative"]
+    I --> K["x False negative"]
     J --> K
     
     K --> L["User has to know exact trigger vocabulary"]
@@ -156,30 +160,32 @@ As the skill library grows from dozens to hundreds to thousands, the basic trigg
 
 ### The Failure Mode at 750+ Skills
 
+*A TD flowchart demonstrating the failure mode at 750+ skills. A user query for "data handling issues" triggers partial keyword matches across five different domains, but none are truly relevant, producing low-quality results.*
+
 ```mermaid
 flowchart TD
     A["User says:<br/>'check this code for data handling issues'"] --> B["Trigger matching against 750 skills..."]
     
     subgraph "Partial Matches"
-        C["coding-code-review<br/>'code' ✓ BUT 'review' ≠ 'check'<br/>← partial match"]
-        D["coding-security<br/>'code' ✓ BUT 'security' ≠ 'data handling'<br/>← partial match"]
-        E["trading-data<br/>'data' ✓ but for market data<br/>← wrong domain!"]
-        F["linux-storage<br/>'data' ✓ but about disks<br/>← wrong domain!"]
-        G["programming-algorithms<br/>'data' ✓ but data structures<br/>← wrong context!"]
+        C["coding-code-review<br/>'code' v BUT 'review' != 'check'<br/><- partial match"]
+        D["coding-security<br/>'code' v BUT 'security' != 'data handling'<br/><- partial match"]
+        E["trading-data<br/>'data' v but for market data<br/><- wrong domain!"]
+        F["linux-storage<br/>'data' v but about disks<br/><- wrong domain!"]
+        G["programming-algorithms<br/>'data' v but data structures<br/><- wrong context!"]
     end
     
-    B --> C
-    B --> D
-    B --> E
-    B --> F
-    B --> G
+    B -->|"partial match"| C
+    B -->|"partial match"| D
+    B -->|"partial match"| E
+    B -->|"partial match"| F
+    B -->|"partial match"| G
     
     H["Result:<br/>Multiple low-quality partial matches<br/>No clear winner<br/>Possibly misleading skills loaded"]
-    C --> H
-    D --> H
-    E --> H
-    F --> H
-    G --> H
+    C -->|"low quality"| H
+    D -->|"low quality"| H
+    E -->|"wrong domain"| H
+    F -->|"wrong domain"| H
+    G -->|"wrong context"| H
 ```
 
 ---
@@ -188,74 +194,80 @@ flowchart TD
 
 The agent-skill-router system replaces fragile keyword matching with a **six-stage semantic pipeline** that understands intent, ranks by relevance, plans execution, and compresses intelligently.
 
+*A comprehensive TD flowchart of the six-stage agent-skill-router pipeline. Input passes through safety, embedding, vector search, LLM ranking, deterministic filtering, and execution planning to produce a ranked, planned skill output.*
+
 ```mermaid
+---
+config:
+  theme: neutral
+---
 flowchart TD
     %% Input
-    Input(["User says: 'deploy containers to multiple machines'"]) --> Stage1
+    Input(["User says: 'deploy containers to multiple machines'"]) -->|"route task"| Stage1
 
     %% Stage 1: Safety
-    subgraph Stage1["1. Safety Layer · ~0.1ms"]
+    subgraph Stage1["1. Safety Layer ~ 0.1ms"]
         direction TB
-        S1a["✓ Prompt injection detection"]
-        S1b["✓ Task length validation"]
-        S1c["✓ Skill allowlist check"]
-        S1d["✓ Schema validation"]
+        S1a["v Prompt injection detection"]
+        S1b["v Task length validation"]
+        S1c["v Skill allowlist check"]
+        S1d["v Schema validation"]
     end
 
-    Stage1 --> Stage2
+    Stage1 -->|"passes safety"| Stage2
 
     %% Stage 2: Embedding
-    subgraph Stage2["2. Embedding Service · ~200ms"]
+    subgraph Stage2["2. Embedding Service ~ 200ms"]
         direction TB
         S2a["text-embedding-3-small"]
         S2b["'deploy containers to multiple machines'"]
-        S2c["→ 1536-dim vector"]
+        S2c["> 1536-dim vector"]
     end
 
-    Stage2 --> Stage3
+    Stage2 -->|"embeds query"| Stage3
 
     %% Stage 3: Vector DB
-    subgraph Stage3["3. Vector Database (KD-tree) · ~0.1ms"]
+    subgraph Stage3["3. Vector Database (KD-tree) ~ 0.1ms"]
         direction TB
         S3a["O(log n) nearest-neighbor search"]
         S3b["Top 20 candidates"]
-        S3c["cncf-kubernetes — 0.89"]
-        S3d["cncf-docker — 0.72"]
-        S3e["cncf-nomad — 0.55"]
+        S3c["cncf-kubernetes ~ 0.89"]
+        S3d["cncf-docker ~ 0.72"]
+        S3e["cncf-nomad ~ 0.55"]
     end
 
-    Stage3 --> Stage4
+    Stage3 -->|"top candidates"| Stage4
 
     %% Stage 4: LLM Ranker
-    subgraph Stage4["4. LLM Ranker · ~3s"]
+    subgraph Stage4["4. LLM Ranker ~ 3s"]
         direction TB
         S4a["GPT-4o / Claude / llama.cpp"]
         S4b["'User wants orchestration,"]
         S4c["not just containerization.'"]
-        S4d["← Kubernetes re-ranked higher"]
+        S4d["<- Kubernetes re-ranked higher"]
     end
 
-    Stage4 --> Stage5
+    Stage4 -->|"ranked results"| Stage5
 
     %% Stage 5: Filter
-    subgraph Stage5["5. Deterministic Filter · ~0.1ms"]
+    subgraph Stage5["5. Deterministic Filter ~ 0.1ms"]
         direction TB
         S5a["Remove draft skills"]
-        S5b["Enforce score ≥ 0.5"]
+        S5b["Enforce score >= 0.5"]
         S5c["Cap at maxSkills: 5"]
     end
 
-    Stage5 --> Stage6
+    Stage5 -->|"filtered skills"| Stage6
 
     %% Stage 6: Planner
-    subgraph Stage6["6. Execution Planner · ~0.1ms"]
+    subgraph Stage6["6. Execution Planner ~ 0.1ms"]
         direction TB
         S6a["Selected: cncf-kubernetes"]
         S6b["Strategy: sequential"]
-        S6c["Plan: orchestrate → monitor"]
+        S6c["Plan: orchestrate > monitor"]
     end
 
-    Stage6 --> Output
+    Stage6 -->|"execution plan"| Output
 
     %% Output
     Output[("{ skills: [{name: cncf-kubernetes, score: 0.94}], executionPlan: 'sequential' }")]
@@ -280,21 +292,23 @@ flowchart TD
 
 Instead of checking "does this word appear in triggers?", the router converts the entire task into a **1536-dimensional embedding vector** that captures meaning. "Deploy containers to multiple machines" and "kubernetes" are semantically close, even though they share zero substrings.
 
+*A side-by-side LR comparison flowchart. The industry standard (left) fails with keyword substring matching, while the agent-skill-router (right) succeeds with semantic embedding to find Kubernetes and Docker skills.*
+
 ```mermaid
 flowchart LR
     subgraph Industry["Industry Standard"]
         direction TB
         I1["'deploy containers'"] --> I2["Substring matching against triggers"]
-        I2 --> I3["kubernetes ✗<br/>k8s ✗<br/>deployment ✗"]
-        I3 --> I4["❌ No skill loaded"]
+        I2 -->|"no match"| I3["kubernetes x<br/>k8s x<br/>deployment x"]
+        I3 -->|"fails"| I4["x No skill loaded"]
     end
     
     subgraph Router["Agent-Skill-Router"]
         direction TB
-        R1["'deploy containers'"] --> R2["text-embedding-3-small<br/>→ 1536-dim vector"]
+        R1["'deploy containers'"] --> R2["text-embedding-3-small<br/>> 1536-dim vector"]
         R2 --> R3["[0.23, -0.45, 0.78, ..., 0.12]"]
-        R3 --> R4["KD-tree → top 20<br/>LLM → final rank"]
-        R4 --> R5["✅ Kubernetes (0.94)<br/>✅ Docker (0.72)"]
+        R3 -->|"KD-tree search"| R4["KD-tree > top 20<br/>LLM > final rank"]
+        R4 -->|"matched"| R5["v Kubernetes (0.94)<br/>v Docker (0.72)"]
     end
 ```
 
@@ -302,7 +316,13 @@ flowchart LR
 
 Vector search finds semantically similar skills, but it can't distinguish subtleties. The LLM ranker understands that "SQL injection in Python code" is primarily a **security** concern, not just a **code review** concern — and scores `coding-security-review` higher than `coding-code-review`.
 
+*A TD flowchart showing how the LLM ranker re-orders vector search results by semantic nuance. Security review (0.95) is promoted above general code review (0.72) because "SQL injection" is a security concern.*
+
 ```mermaid
+---
+config:
+  theme: neutral
+---
 flowchart TD
     subgraph Vector["Vector Search Results"]
         direction TB
@@ -316,11 +336,11 @@ flowchart TD
 
     subgraph ReRank["LLM Ranker Output (Re-ordered)"]
         direction TB
-        R1["1. coding-security-review — 0.95"]
+        R1["1. coding-security-review ~ 0.95"]
         R2["    'SQL injection is a security concern'"]
-        R3["2. coding-code-review — 0.72"]
+        R3["2. coding-code-review ~ 0.72"]
         R4["    'general review practices apply'"]
-        R5["3. coding-sql-patterns — 0.45"]
+        R5["3. coding-sql-patterns ~ 0.45"]
         R6["    'too general for this task'"]
     end
 ```
@@ -339,13 +359,19 @@ Skills are loaded at progressive compression levels (0–10+), saving 5–85% of
 
 ### 4. Multi-Tier Loading Eliminates Single Points of Failure
 
+*A TD flowchart comparing the industry standard single-point-of-failure loading (GitHub-only) against the agent-skill-router's four-tier cascading fallback strategy (memory cache, disk cache, GitHub raw URL, git clone).*
+
 ```mermaid
+---
+config:
+  theme: neutral
+---
 flowchart TD
     subgraph Standard["Industry Standard"]
         direction TB
         S1["Single loading path:"] --> S2["GitHub raw URL"]
-        S2 --> S3["▼"]
-        S3 --> S4["⚠ Single point of failure"]
+        S2 --> S3["v"]
+        S3 --> S4["! Single point of failure"]
         S4 --> S5["GitHub down = No skills loaded"]
     end
 
@@ -359,13 +385,15 @@ flowchart TD
         R1 -->|"cache miss"| R2
         R2 -->|"disk miss"| R3
         R3 -->|"network fail"| R4
-        R4 --> R5["✓ Skills always load"]
+        R4 --> R5["v Skills always load"]
     end
 ```
 
 ### 5. MCP Integration Makes Routing Automatic
 
 Two MCP tools — `route_to_skill` and `list_skills` — are called automatically at the start of every task. The agent doesn't need to know skills exist; the routing happens transparently.
+
+*A Mermaid sequence diagram showing automatic MCP routing. The user deploys an app, the agent calls route_to_skill on the skill router, which returns the Kubernetes skill, and the agent loads it automatically without manual /skill commands.*
 
 ```mermaid
 sequenceDiagram
@@ -393,17 +421,23 @@ The industry standard SKILL.md treats every skill as a fully self-contained docu
 
 The agent-skill-router **extends the SKILL.md format** with the MarkdownLinkResolver, an intelligent link-following engine that automatically resolves markdown links and semantically inlines referenced content into the skill.
 
+*A TD flowchart of the Markdown Link Resolver architecture. Skill links are parsed and resolved through two paths: local file references (with path traversal protection, circular reference detection, and recursive resolution) and external URLs (with HTTP/Puppeteer/fallback strategies), then processed into inlined, compressed, or semantically-selected excerpts.*
+
 ```mermaid
+---
+config:
+  theme: neutral
+---
 flowchart TD
-    Input["Skill content with links<br/>---<br/>See [details](deep-dive.md)<br/>Read [docs](example.com)"] --> Parse["Parse markdown links via regex"]
+    Input["Skill content with links<br/>---<br/>See [details](deep-dive.md)<br/>Read [docs](example.com)"] -->|"parse"| Parse["Parse markdown links via regex"]
     
-    Parse --> Local["Local file reference"]
+    Parse -->|"local path"| Local["Local file reference"]
     Local --> L1["1. Path resolved relative to skill dir"]
     L1 --> L2["2. Path traversal protection"]
     L2 --> L3["3. Circular reference detection"]
     L3 --> L4["4. Recursive resolve (maxDepth: 2)"]
     
-    Parse --> External["External URL"]
+    Parse -->|"external URL"| External["External URL"]
     External --> E1["Static HTTP<br/>(5s timeout, 1MB hard limit)"]
     External --> E2["Puppeteer + Chromium<br/>(JS rendering if enabled)"]
     External --> E3["JS fallback<br/>(auto fallback to static)"]
@@ -413,11 +447,11 @@ flowchart TD
     E2 --> Process
     E3 --> Process
     
-    Process --> P1["1. Under threshold → inline full"]
-    Process --> P2["2. Over threshold → compress"]
-    Process --> P3["3. Semantic mode → chunk → embed → cosine similarity → top-K excerpts"]
+    Process --> P1["1. Under threshold > inline full"]
+    Process --> P2["2. Over threshold > compress"]
+    Process --> P3["3. Semantic mode > chunk > embed > cosine similarity > top-K excerpts"]
     
-    P1 --> Output["Inline as formatted reference section<br/>📎 Reference: ...<br/>> Source: url"]
+    P1 --> Output["Inline as formatted reference section<br/>[*] Reference: ...<br/>> Source: url"]
     P2 --> Output
     P3 --> Output
 ```
@@ -515,7 +549,13 @@ The agent-skill-router project doesn't replace SKILL.md. It **supercharges** it.
 
 The result: an AI agent that goes from helpful generalist to **domain specialist on demand** — without the user knowing a skill system even exists. That's the evolution from static skills to intelligent routing.
 
+*A TD flowchart showing the evolution from the industry standard SKILL.md approach (trigger matching, full content injection) to the agent-skill-router approach (same SKILL.md, six-stage pipeline, compressed ranked output) — producing richer, smarter loading with zero user effort.*
+
 ```mermaid
+---
+config:
+  theme: neutral
+---
 flowchart TD
     subgraph Before["Before: Industry Standard"]
         direction TB
@@ -523,12 +563,12 @@ flowchart TD
         B2 --> B3["Full content injected into agent context"]
     end
 
-    Before -->|"↓ evolves to"| After
+    Before -->|"v evolves to"| After
 
     subgraph After["After: Agent-Skill-Router"]
         direction TB
         A1["Same SKILL.md file (zero changes)"]
-        A1 --> A2["6-stage pipeline<br/>Safety→Embed→Vector→<br/>LLM→Filter→Plan"]
+        A1 --> A2["6-stage pipeline<br/>Safety>Embed>Vector><br/>LLM>Filter>Plan"]
         A2 --> A3["Compressed, ranked,<br/>planned skill content<br/>injected into context"]
     end
 
