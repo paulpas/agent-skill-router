@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T14:37:44.409834Z",
-  "totalSkills": 795,
+  "generatedAt": "2026-05-22T15:28:18.001834Z",
+  "totalSkills": 796,
   "domains": {
     "agent": 258,
     "cncf": 173,
-    "coding": 233,
+    "coding": 234,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 384,
+    "implementation": 385,
     "reference": 170,
     "information": 1,
     "review": 5
@@ -8438,6 +8438,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/hot-path-detector/SKILL.md"
+    },
+    {
+      "name": "html-entity-encoding",
+      "domain": "coding",
+      "description": "Encodes HTML special characters (&lt; &gt; &amp; &quot; &#39;) into safe entity references to prevent XSS, ensure correct rendering, and handle character data safely across web frameworks and output contexts.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "html entities",
+        "entity encoding",
+        "html escaping",
+        "&amp; ampersand",
+        "&lt; less than",
+        "&gt; greater than",
+        "character references",
+        "HTML5 entities",
+        "XSS prevention",
+        "framework escaping",
+        "dangerouslySetInnerHTML",
+        "innerHTML",
+        "DOMPurify"
+      ],
+      "relatedSkills": [
+        "output-sanitization",
+        "input-validation",
+        "api-security-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/html-entity-encoding/SKILL.md"
     },
     {
       "name": "hub",
