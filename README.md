@@ -285,15 +285,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-<<<<<<< HEAD
-> **Last updated:** 2026-05-22 18:06:04 UTC  
-> **Total skills:** 801  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (801 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
-=======
-> **Last updated:** 2026-05-22 13:38:35 UTC  
+> **Last updated:** 2026-05-22 18:40:44 UTC  
 > **Total skills:** 803  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (803 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
->>>>>>> b5074393f (feat: add Django best practices and FastAPI development skills)
 
 ## Skills by Domain
 

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T18:06:03.276983Z",
-  "totalSkills": 801,
+  "generatedAt": "2026-05-22T18:40:43.760020Z",
+  "totalSkills": 803,
   "domains": {
     "agent": 258,
     "cncf": 173,
-    "coding": 238,
+    "coding": 240,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 389,
+    "implementation": 391,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -5805,6 +5805,32 @@
       "source": "skills/coding/ds-distribution-fitting/SKILL.md"
     },
     {
+      "name": "django-best-practices",
+      "domain": "coding",
+      "description": "Implements Django 5.x application patterns including modern project structure, ORM optimization, class-based and function views, DRF integration, async views, caching strategies, and settings management for production-ready web applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "django",
+        "django best practices",
+        "django project structure",
+        "orm optimization",
+        "class-based views",
+        "drf",
+        "django rest framework",
+        "django async",
+        "django caching",
+        "settings management",
+        "production django"
+      ],
+      "relatedSkills": [
+        "fastapi-development"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/django-best-practices/SKILL.md"
+    },
+    {
       "name": "docker-debugging",
       "domain": "agent",
       "description": "Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization",
@@ -6824,6 +6850,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/technical-false-signal-filtering/SKILL.md"
+    },
+    {
+      "name": "fastapi-development",
+      "domain": "coding",
+      "description": "Implements FastAPI application patterns including dependency injection, Pydantic v2 models, async handlers, JWT authentication, middleware chains, background tasks, and production deployment strategies for high-performance Python web services.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "fastapi",
+        "fastapi development",
+        "dependency injection",
+        "pydantic v2",
+        "async endpoints",
+        "jwt authentication",
+        "fastapi middleware",
+        "background tasks",
+        "starlette",
+        "uvicorn",
+        "python web framework",
+        "fastapi production"
+      ],
+      "relatedSkills": [
+        "django-best-practices"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/fastapi-development/SKILL.md"
     },
     {
       "name": "feature-engineering",
