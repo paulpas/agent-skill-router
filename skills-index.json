@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T14:26:43.766109Z",
-  "totalSkills": 794,
+  "generatedAt": "2026-05-22T14:37:44.409834Z",
+  "totalSkills": 795,
   "domains": {
     "agent": 258,
     "cncf": 173,
-    "coding": 232,
+    "coding": 233,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 383,
+    "implementation": 384,
     "reference": 170,
     "information": 1,
     "review": 5
@@ -13273,6 +13273,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/open-policy-agent-opa/SKILL.md"
+    },
+    {
+      "name": "polyglot-developer-patterns",
+      "domain": "coding",
+      "description": "Equips individual developers with learning strategies, code review techniques, and pattern translation methods to build fluency across multiple programming languages without losing productivity.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "polyglot developer",
+        "multi-language productivity",
+        "learn new language",
+        "code review in different language",
+        "language translation",
+        "context switching between languages",
+        "programming language learning",
+        "how do i become proficient in multiple languages",
+        "cross-paradigm coding"
+      ],
+      "relatedSkills": [
+        "polyglot-development",
+        "framework-selection",
+        "version-migration",
+        "single-letter-variables"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/polyglot-developer-patterns/SKILL.md"
     },
     {
       "name": "polyglot-development",
