@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T03:08:05.152674Z",
-  "totalSkills": 772,
+  "generatedAt": "2026-05-22T03:28:02.344904Z",
+  "totalSkills": 773,
   "domains": {
     "agent": 255,
     "cncf": 170,
-    "coding": 219,
+    "coding": 220,
     "go": 12,
     "linux": 16,
     "maker": 3,
@@ -14,7 +14,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 366,
+    "implementation": 367,
     "reference": 167,
     "information": 1,
     "review": 5
@@ -9075,6 +9075,42 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/java-virtual-threads/SKILL.md"
+    },
+    {
+      "name": "jvm-engineering",
+      "domain": "coding",
+      "description": "Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "jvm tuning",
+        "garbage collection",
+        "GC tuning",
+        "zgc",
+        "shenandoah",
+        "jfr",
+        "jcmd",
+        "heap dump",
+        "memory leak",
+        "java performance",
+        "oom error",
+        "out of memory",
+        "thread deadlock",
+        "jstack",
+        "async-profiler",
+        "cpu profiling",
+        "jstat",
+        "jit compilation",
+        "metaspace"
+      ],
+      "relatedSkills": [
+        "framework-performance-tuning",
+        "design-patterns-and-principles",
+        "async-programming"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/jvm-engineering/SKILL.md"
     },
     {
       "name": "k8s-debugger",
