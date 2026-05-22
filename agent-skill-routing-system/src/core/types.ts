@@ -61,6 +61,8 @@ export interface ToolSpec {
   name: string;
   description: string;
   parameters: Record<string, unknown>;
+  /** Code generation methodology instructions for AI agents using this tool */
+  methodology?: string;
 }
 
 /**

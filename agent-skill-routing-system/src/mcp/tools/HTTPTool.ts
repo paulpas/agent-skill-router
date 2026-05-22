@@ -30,6 +30,8 @@ interface ToolSpec {
   name: string;
   description: string;
   parameters: Record<string, unknown>;
+  /** Code generation methodology instructions for AI agents using this tool */
+  methodology?: string;
 }
 
 /**
@@ -101,7 +103,7 @@ export class HTTPTool extends BaseMCPTool implements IMCPTool {
    * Get tool specification
    */
   getSpecification(): ToolSpec {
-    return {
+    const spec: ToolSpec = {
       name: this.name,
       description: this.description,
       parameters: {
@@ -129,5 +131,9 @@ export class HTTPTool extends BaseMCPTool implements IMCPTool {
         required: ['url', 'method'],
       },
     };
+    if (this.methodology) {
+      spec.methodology = this.methodology;
+    }
+    return spec;
   }
 }

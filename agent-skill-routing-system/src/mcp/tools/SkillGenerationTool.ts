@@ -53,6 +53,8 @@ interface ToolSpec {
   name: string;
   description: string;
   parameters: Record<string, unknown>;
+  /** Code generation methodology instructions for AI agents using this tool */
+  methodology?: string;
 }
 
 /**
@@ -810,7 +812,7 @@ Generate the complete SKILL.md file content. Start with --- for YAML frontmatter
    * Get tool specification
    */
 getSpecification(): ToolSpec {
-    return {
+    const spec: ToolSpec = {
       name: this.name,
       description: this.description,
       parameters: {
@@ -840,5 +842,9 @@ getSpecification(): ToolSpec {
         required: ['task'],
       },
     };
+    if (this.methodology) {
+      spec.methodology = this.methodology;
+    }
+    return spec;
   }
 }

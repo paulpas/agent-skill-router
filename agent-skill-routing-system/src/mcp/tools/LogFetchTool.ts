@@ -21,6 +21,8 @@ interface ToolSpec {
   name: string;
   description: string;
   parameters: Record<string, unknown>;
+  /** Code generation methodology instructions for AI agents using this tool */
+  methodology?: string;
 }
 
 /**
@@ -95,7 +97,7 @@ export class LogFetchTool extends BaseMCPTool implements IMCPTool {
    * Get tool specification
    */
   getSpecification(): ToolSpec {
-    return {
+    const spec: ToolSpec = {
       name: this.name,
       description: this.description,
       parameters: {
@@ -123,5 +125,9 @@ export class LogFetchTool extends BaseMCPTool implements IMCPTool {
         required: ['filepath'],
       },
     };
+    if (this.methodology) {
+      spec.methodology = this.methodology;
+    }
+    return spec;
   }
 }

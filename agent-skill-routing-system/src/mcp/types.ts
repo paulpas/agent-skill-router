@@ -22,6 +22,11 @@ export interface IMCPTool {
   execute(args: Record<string, unknown>): Promise<ToolResult>;
 
   /**
+   * Set the code generation methodology for this tool
+   */
+  setMethodology(methodology: string): void;
+
+  /**
    * Get the tool specification (for LLM)
    */
   getSpecification(): ToolSpec;
@@ -36,6 +41,18 @@ export abstract class BaseMCPTool implements IMCPTool {
     public description: string,
     protected timeoutMs: number = 30000
   ) {}
+
+  /** Code generation methodology for AI agents (e.g., TDD instructions) */
+  protected methodology: string = '';
+
+  /**
+   * Set the code generation methodology for this tool.
+   * When set, the methodology is included in the tool specification
+   * so AI agents see it as a system-level instruction.
+   */
+  setMethodology(methodology: string): void {
+    this.methodology = methodology;
+  }
 
   /**
    * Validate arguments against expected schema
