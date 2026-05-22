@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 04:15:54 UTC  
-> **Total skills:** 775
+> **Last updated:** 2026-05-22 04:55:03 UTC  
+> **Total skills:** 778
 
 ## Skills by Domain
 
@@ -531,7 +531,7 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | zoom-automation, zoom automation, how do i zoom-automation, orchestrate zoom-automation, automate zoom-automation, agent zoom-automation |
 
 
-### Cncf (170 skills)
+### Cncf (173 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -618,6 +618,8 @@ MIT — All skills are freely available and redistributable.
 | [io](skills/cncf/io/SKILL.md) | "metal3.io in Bare Metal Provisioning - cloud native architecture, patterns" pitfalls, and best practices | cdn, infrastructure as code, metal, metal3 io, metal3-io, monitoring, provisioning, cloudformation |
 | [istio](skills/cncf/istio/SKILL.md) | "Istio in Cloud-Native Engineering - Connect, secure, control, and observe" services. | cloud-native, connect, engineering, istio, service mesh, traffic management, kubernetes service, container orchestration |
 | [jaeger](skills/cncf/jaeger/SKILL.md) | "Configures jaeger in cloud-native engineering - distributed tracing for cloud-native deployment and infrastructure management." | cloud-native, distributed, distributed tracing, engineering, jaeger, tracing, request tracing, xray |
+| [jakarta-ee](skills/cncf/jakarta-ee/SKILL.md) | Jakarta EE platform reference covering specifications, APIs, reference implementations, build configuration, and architecture patterns for enterprise Java development. | jakarta ee, jakarta-ee, enterprise java, servlet, jax-rs, cdi, jsf, ejb, javanamespace migration, javax to jakarta, payara, wildfly, openliberty, tomcat, maven build |
+| [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. | java ee migration, javax to jakarta, java ee to jakarta ee, namespace change, jakartaee-api, javax.servlet, javax.persistence, migration tool, eclipse migration, batch rename, java ee 8 upgrade |
 | [karmada](skills/cncf/karmada/SKILL.md) | "Provides Karmada in Cloud-Native Engineering - multi-cluster orchestration" | cloud-native, engineering, karmada, multi-cluster |
 | [keda](skills/cncf/keda/SKILL.md) | "Configures keda in cloud-native engineering - event-driven autoscaling for cloud-native deployment and infrastructure management." | cloud-native, engineering, event-driven, keda, eventbridge, event bus, event routing |
 | [key-vault](skills/cncf/key-vault/SKILL.md) | "Manages encryption keys, secrets, and certificates with access control" and auditing. | key vault, key management, secrets, certificate management, encryption keys, acm, kms, secrets management |
@@ -647,6 +649,7 @@ MIT — All skills are freely available and redistributable.
 | [load-balancer](skills/cncf/load-balancer/SKILL.md) | Provides Distributes traffic across VMs with health probes and rule-based routing | load balancer, load balancing, traffic distribution, health checks, routing, elb, route53, dns |
 | [longhorn](skills/cncf/longhorn/SKILL.md) | "Longhorn in Cloud Native Storage - cloud native architecture, patterns" pitfalls, and best practices | cdn, infrastructure as code, longhorn, monitoring, native, storage, cloudformation, cloudfront |
 | [manager](skills/cncf/manager/SKILL.md) | "cert-manager in Cloud-Native Engineering - Certificate Management for" Kubernetes | cert manager, cert-manager, cloud-native, engineering |
+| [microprofile](skills/cncf/microprofile/SKILL.md) | MicroProfile specification reference covering Config, OpenAPI, Fault Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events for cloud-native Java microservices. | microprofile, fault tolerance, service mesh, openapi spec, health checks, metrics endpoint, config source, jwt security, open telemetry, server sent events, cloud native java, smallrye, quarkus integration |
 | [monitor](skills/cncf/monitor/SKILL.md) | "Provides Monitoring and logging for Azure resources with alerting and observability" | azure monitor, monitoring, logging, observability, metrics, alerts, cloudwatch |
 | [multi-stage-deployment](skills/cncf/multi-stage-deployment/SKILL.md) | Designs multi-stage deployment pipelines that reduce risk through progressive disclosure, environment parity, and quality-gated stage transitions from development to production. | multi-stage deployment, deployment stages, environment parity, deployment pipeline, stage gates, dev staging pre-prod, deployment readiness, progressive delivery |
 | [nats](skills/cncf/nats/SKILL.md) | "NATS in Cloud Native Messaging - cloud native architecture, patterns" pitfalls, and best practices | cdn, infrastructure as code, messaging, monitoring, native, nats, cloudformation, cloudfront |
@@ -1101,7 +1104,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (369 skills)
+### Implementation (Build Features) (370 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1272,6 +1275,7 @@ MIT — All skills are freely available and redistributable.
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Coding | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. |
 | [intermarket-analysis](skills/trading/intermarket-analysis/SKILL.md) | Trading | "Implements cross-market relationships and asset class correlations for risk management and algorithmic trading execution." |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | Coding | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" |
+| [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Cncf | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" |
@@ -1476,7 +1480,7 @@ MIT — All skills are freely available and redistributable.
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 
 
-### Reference (Learn & Understand) (167 skills)
+### Reference (Learn & Understand) (169 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1564,6 +1568,7 @@ MIT — All skills are freely available and redistributable.
 | [io](skills/cncf/io/SKILL.md) | Cncf | "metal3.io in Bare Metal Provisioning - cloud native architecture, patterns" pitfalls, and best practices |
 | [istio](skills/cncf/istio/SKILL.md) | Cncf | "Istio in Cloud-Native Engineering - Connect, secure, control, and observe" services. |
 | [jaeger](skills/cncf/jaeger/SKILL.md) | Cncf | "Configures jaeger in cloud-native engineering - distributed tracing for cloud-native deployment and infrastructure management." |
+| [jakarta-ee](skills/cncf/jakarta-ee/SKILL.md) | Cncf | Jakarta EE platform reference covering specifications, APIs, reference implementations, build configuration, and architecture patterns for enterprise Java development. |
 | [karmada](skills/cncf/karmada/SKILL.md) | Cncf | "Provides Karmada in Cloud-Native Engineering - multi-cluster orchestration" |
 | [keda](skills/cncf/keda/SKILL.md) | Cncf | "Configures keda in cloud-native engineering - event-driven autoscaling for cloud-native deployment and infrastructure management." |
 | [key-vault](skills/cncf/key-vault/SKILL.md) | Cncf | "Manages encryption keys, secrets, and certificates with access control" and auditing. |
@@ -1591,6 +1596,7 @@ MIT — All skills are freely available and redistributable.
 | [load-balancer](skills/cncf/load-balancer/SKILL.md) | Cncf | Provides Distributes traffic across VMs with health probes and rule-based routing |
 | [longhorn](skills/cncf/longhorn/SKILL.md) | Cncf | "Longhorn in Cloud Native Storage - cloud native architecture, patterns" pitfalls, and best practices |
 | [manager](skills/cncf/manager/SKILL.md) | Cncf | "cert-manager in Cloud-Native Engineering - Certificate Management for" Kubernetes |
+| [microprofile](skills/cncf/microprofile/SKILL.md) | Cncf | MicroProfile specification reference covering Config, OpenAPI, Fault Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events for cloud-native Java microservices. |
 | [monitor](skills/cncf/monitor/SKILL.md) | Cncf | "Provides Monitoring and logging for Azure resources with alerting and observability" |
 | [multi-stage-deployment](skills/cncf/multi-stage-deployment/SKILL.md) | Cncf | Designs multi-stage deployment pipelines that reduce risk through progressive disclosure, environment parity, and quality-gated stage transitions from development to production. |
 | [nats](skills/cncf/nats/SKILL.md) | Cncf | "NATS in Cloud Native Messaging - cloud native architecture, patterns" pitfalls, and best practices |
@@ -2284,6 +2290,8 @@ MIT — All skills are freely available and redistributable.
 | [istio](skills/cncf/istio/SKILL.md) | Cncf | "Istio in Cloud-Native Engineering - Connect, secure, control, and observe" services. | Reference |
 | [iterate-pr](skills/agent/iterate-pr/SKILL.md) | Agent | Implements intelligent iterate pr with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [jaeger](skills/cncf/jaeger/SKILL.md) | Cncf | "Configures jaeger in cloud-native engineering - distributed tracing for cloud-native deployment and infrastructure management." | Reference |
+| [jakarta-ee](skills/cncf/jakarta-ee/SKILL.md) | Cncf | Jakarta EE platform reference covering specifications, APIs, reference implementations, build configuration, and architecture patterns for enterprise Java development. | Reference |
+| [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Cncf | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. | Implementation |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. | Implementation |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | Implementation |
 | [k8s-debugger](skills/agent/k8s-debugger/SKILL.md) | Agent | Implements intelligent k8s debugger with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2360,6 +2368,7 @@ MIT — All skills are freely available and redistributable.
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems | Implementation |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Agent | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution | Implementation |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | Implementation |
+| [microprofile](skills/cncf/microprofile/SKILL.md) | Cncf | MicroProfile specification reference covering Config, OpenAPI, Fault Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events for cloud-native Java microservices. | Reference |
 | [microservice-resilience-patterns](skills/coding/microservice-resilience-patterns/SKILL.md) | Coding | Implements production-ready resilience patterns (circuit breaker, retry with exponential backoff, bulkhead isolation, timeout enforcement, graceful fallback) to prevent cascading failures in distributed microservice systems. | Implementation |
 | [microservices-architecture](skills/coding/microservices-architecture/SKILL.md) | Coding | Implements microservices architecture patterns (bounded contexts, API gateway, event-driven communication, saga orchestration) for decomposing monolithic applications into scalable, independent services. | Implementation |
 | [missing-data](skills/coding/missing-data/SKILL.md) | Coding | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" | Implementation |

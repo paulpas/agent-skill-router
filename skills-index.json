@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-22T04:15:53.428082Z",
-  "totalSkills": 775,
+  "generatedAt": "2026-05-22T04:55:03.035133Z",
+  "totalSkills": 778,
   "domains": {
     "agent": 255,
-    "cncf": 170,
+    "cncf": 173,
     "coding": 222,
     "go": 12,
     "linux": 16,
@@ -14,8 +14,8 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 369,
-    "reference": 167,
+    "implementation": 370,
+    "reference": 169,
     "information": 1,
     "review": 5
   },
@@ -9053,6 +9053,64 @@
       "source": "skills/cncf/jaeger/SKILL.md"
     },
     {
+      "name": "jakarta-ee",
+      "domain": "cncf",
+      "description": "Jakarta EE platform reference covering specifications, APIs, reference implementations, build configuration, and architecture patterns for enterprise Java development.",
+      "role": "reference",
+      "scope": "infrastructure",
+      "outputFormat": "manifests",
+      "triggers": [
+        "jakarta ee",
+        "jakarta-ee",
+        "enterprise java",
+        "servlet",
+        "jax-rs",
+        "cdi",
+        "jsf",
+        "ejb",
+        "javanamespace migration",
+        "javax to jakarta",
+        "payara",
+        "wildfly",
+        "openliberty",
+        "tomcat",
+        "maven build"
+      ],
+      "relatedSkills": [
+        "microprofile",
+        "jakarta-migration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/jakarta-ee/SKILL.md"
+    },
+    {
+      "name": "jakarta-migration",
+      "domain": "cncf",
+      "description": "Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "java ee migration",
+        "javax to jakarta",
+        "java ee to jakarta ee",
+        "namespace change",
+        "jakartaee-api",
+        "javax.servlet",
+        "javax.persistence",
+        "migration tool",
+        "eclipse migration",
+        "batch rename",
+        "java ee 8 upgrade"
+      ],
+      "relatedSkills": [
+        "jakarta-ee",
+        "microprofile"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/jakarta-migration/SKILL.md"
+    },
+    {
       "name": "java-virtual-threads",
       "domain": "coding",
       "description": "Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development.",
@@ -10802,6 +10860,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-metrics-and-kpis/SKILL.md"
+    },
+    {
+      "name": "microprofile",
+      "domain": "cncf",
+      "description": "MicroProfile specification reference covering Config, OpenAPI, Fault Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events for cloud-native Java microservices.",
+      "role": "reference",
+      "scope": "infrastructure",
+      "outputFormat": "manifests",
+      "triggers": [
+        "microprofile",
+        "fault tolerance",
+        "service mesh",
+        "openapi spec",
+        "health checks",
+        "metrics endpoint",
+        "config source",
+        "jwt security",
+        "open telemetry",
+        "server sent events",
+        "cloud native java",
+        "smallrye",
+        "quarkus integration"
+      ],
+      "relatedSkills": [
+        "jakarta-ee",
+        "jakarta-migration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/microprofile/SKILL.md"
     },
     {
       "name": "microservice-resilience-patterns",
