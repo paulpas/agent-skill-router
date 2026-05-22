@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T06:28:26.196880Z",
-  "totalSkills": 782,
+  "generatedAt": "2026-05-22T07:21:01.518033Z",
+  "totalSkills": 783,
   "domains": {
     "agent": 255,
     "cncf": 173,
-    "coding": 224,
+    "coding": 225,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 233,
-    "implementation": 374,
+    "implementation": 375,
     "reference": 169,
     "information": 1,
     "review": 5
@@ -11972,6 +11972,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/linux/observability/SKILL.md"
+    },
+    {
+      "name": "observability-engineering",
+      "domain": "coding",
+      "description": "Designs observability engineering systems with SLO-driven instrumentation, multi-window burn rate alerting, OpenTelemetry patterns, signal correlation, and cost governance for production reliability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "observability engineering",
+        "SLO SLI error budget",
+        "burn rate alerting",
+        "open telemetry instrumentation",
+        "distributed tracing strategy",
+        "signal correlation",
+        "observability cost management",
+        "how do i design observability",
+        "multi-window burn rate",
+        "OTel collector architecture"
+      ],
+      "relatedSkills": [
+        "coding-observability-patterns",
+        "coding-production-readiness",
+        "cncf-open-telemetry"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/observability-engineering/SKILL.md"
     },
     {
       "name": "observability-patterns",
