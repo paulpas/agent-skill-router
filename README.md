@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 00:22:03 UTC  
-> **Total skills:** 764
+> **Last updated:** 2026-05-21 19:55:55 UTC  
+> **Total skills:** 766
 
 ## Skills by Domain
 
@@ -707,7 +707,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (215 skills)
+### Coding (217 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -832,7 +832,9 @@ MIT — All skills are freely available and redistributable.
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. | integration patterns, service integration, adapter pattern, saga pattern, circuit breaker, API gateway, messaging, event-driven, system communication, how do i connect systems |
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. | interface segregation principle, ISP, fat interface, thin interface, client specific, Protocol, ABC, unused methods, stub implementation, NotImplementedError, duck typing |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" | treatment effects, intervention analysis, CATE, heterogeneous effects, treatment response |
+| [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. | virtual threads, Project Loom, JEP 444, sealed classes, pattern matching switch, thread-per-request, Java concurrency |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" | kernel density estimation, KDE, non-parametric, density estimation, bandwidth selection |
+| [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | kotlin coroutines, structured concurrency, coroutine scope, SupervisorJob, Flow API, StateFlow, kotlinx-coroutines |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" | linear regression, OLS, ridge regression, lasso, elastic net, regularization |
 | [liskov-substitution-principle](skills/coding/liskov-substitution-principle/SKILL.md) | Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability. | liskov substitution principle, LSP, subtype contract, precondition, postcondition, invariant, is-a relationship, breaking subclass, type safety |
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" | logistic regression, classification, binary classification, multinomial, how do i classify |
@@ -1090,7 +1092,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (359 skills)
+### Implementation (Build Features) (361 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1259,9 +1261,11 @@ MIT — All skills are freely available and redistributable.
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Coding | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. |
 | [intermarket-analysis](skills/trading/intermarket-analysis/SKILL.md) | Trading | "Implements cross-market relationships and asset class correlations for risk management and algorithmic trading execution." |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | Coding | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" |
+| [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Linux | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. |
 | [kill-switches](skills/trading/kill-switches/SKILL.md) | Trading | "Implementing multi-layered kill switches at account, strategy, market" and infrastructure levels to prevent catastrophic losses and system failures |
+| [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Coding | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. |
 | [kubernetes-api-patterns](skills/cncf/kubernetes-api-patterns/SKILL.md) | Cncf | Kubernetes API patterns including CRD development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions |
 | [kubernetes-debugging](skills/cncf/kubernetes-debugging/SKILL.md) | Cncf | Implements comprehensive Kubernetes debugging workflow with pod inspection, log analysis, resource debugging, network troubleshooting, and common failure pattern diagnosis using kubectl commands. |
 | [lake](skills/trading/lake/SKILL.md) | Trading | "Provides Data lake architecture and management for trading data storage" |
@@ -2259,6 +2263,7 @@ MIT — All skills are freely available and redistributable.
 | [istio](skills/cncf/istio/SKILL.md) | Cncf | "Istio in Cloud-Native Engineering - Connect, secure, control, and observe" services. | Reference |
 | [iterate-pr](skills/agent/iterate-pr/SKILL.md) | Agent | Implements intelligent iterate pr with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [jaeger](skills/cncf/jaeger/SKILL.md) | Cncf | "Configures jaeger in cloud-native engineering - distributed tracing for cloud-native deployment and infrastructure management." | Reference |
+| [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. | Implementation |
 | [k8s-debugger](skills/agent/k8s-debugger/SKILL.md) | Agent | Implements intelligent k8s debugger with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [karmada](skills/cncf/karmada/SKILL.md) | Cncf | "Provides Karmada in Cloud-Native Engineering - multi-cluster orchestration" | Reference |
 | [keda](skills/cncf/keda/SKILL.md) | Cncf | "Configures keda in cloud-native engineering - event-driven autoscaling for cloud-native deployment and infrastructure management." | Reference |
@@ -2271,6 +2276,7 @@ MIT — All skills are freely available and redistributable.
 | [kms](skills/cncf/kms/SKILL.md) | Cncf | "Manages encryption keys with AWS KMS for data protection at rest and" in transit, key rotation, and compliance with encryption standards across all AWS services. | Reference |
 | [knative](skills/cncf/knative/SKILL.md) | Cncf | "Provides Knative in Cloud-Native Engineering - serverless on Kubernetes" | Reference |
 | [kong](skills/cncf/kong/SKILL.md) | Cncf | "Kong in API Gateway - cloud native architecture, patterns, pitfalls" and best practices | Reference |
+| [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Coding | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | Implementation |
 | [kratos](skills/cncf/kratos/SKILL.md) | Cncf | "ORY Kratos in Identity & Access - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [krustlet](skills/cncf/krustlet/SKILL.md) | Cncf | "Krustlet in Kubernetes Runtime - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [kserve](skills/cncf/kserve/SKILL.md) | Cncf | "Configures kserve in cloud-native engineering - model serving for cloud-native deployment and infrastructure management." | Reference |

@@ -29,6 +29,7 @@ The Agent Skill Router is a smart routing engine that matches user tasks to spec
 
 - [What Is This Thing?](#what-is-this-thing)
 - [How It Works: The Routing Pipeline](#how-it-works-the-routing-pipeline)
+- [Stage 1: Safety Layer — Prompt Injection Defense](#stage-1-safety-layer--prompt-injection-defense)
 - [Skill Loading: Where Skills Come From](#skill-loading-where-skills-come-from)
 - [Skills: What They Are and How They're Organized](#skills-what-they-are-and-how-theyre-organized)
 - [MCP Integration: How OpenCode Talks to the Router](#mcp-integration-how-opencode-talks-to-the-router)
@@ -153,7 +154,100 @@ The core routing logic lives in `src/core/Router.ts`. When you send a task to `/
 
 ### Stage-by-Stage Breakdown
 
-**1. Safety Layer** — Before anything else, the router checks for prompt injection attacks. If the task text looks like it's trying to trick the system, the request is rejected immediately. This is the bouncer at the door.
+### Stage 1: Safety Layer — Prompt Injection Defense
+
+The safety layer lives in `src/core/SafetyLayer.ts` (424 lines) and is invoked as Stage 1 in `src/core/Router.ts` — before embeddings are generated, before skill search begins, before anything else touches the request. If the task is malicious, it never reaches the rest of the pipeline.
+
+```ascii
+                        SAFETY LAYER FLOW
+
+    POST /route  ──▶  ┌─────────────────────────────────────┐
+    { "task" }        │  1. Task length check (max 10K)      │
+                      │  2. Prompt injection scan (Tier 1)   │
+                      │  3. Skill allowlist check            │
+                      │  4. Schema validation                 │
+                      └──────────┬──────────────────────────┘
+                                 │
+                    ┌────────────┴────────────┐
+                    ▼                         ▼
+               Safe                        Unsafe
+               → Stage 2                   → 403 Rejected
+                 (Embedding)                 + error message
+```
+
+#### Two-Tier Detection Architecture
+
+**Tier 1: Regex Pattern Matching (always-on)** — Three independent categories of high-specificity patterns. Each category is self-contained: one match per category counts as one signal. No single category is enough to block on its own (unless `SAFETY_STRICT=true`).
+
+- **Prompt Hijacking** — Detects instruction override attempts:
+  - `ignore all previous instructions`, `disregard prior instructions`
+  - `you are now DAN mode`, `you are now a different AI`
+  - `override system prompt`, `bypass safety filter`
+  - `pretend you have no restrictions`, `pretend there are no limits`
+  - `your new instructions are...`, `your new role is...`
+
+- **Command Injection** — Catches shell metacharacters in execution context:
+  - Backtick substitution: `` `rm -rf /` ``, `` `wget evil.com` ``
+  - `$(...)` command substitution: `$(curl malicious.com)`
+  - Pipe-to-shell: `... | sh`, `... | bash`
+  - Chained destructive commands: `&& rm -rf /`, `&& wget`, `&& curl`
+
+- **Credential Harvesting** — Spots requests for secrets:
+  - `output your API key`, `reveal your password`
+  - `verify your credentials`, `verify the token`
+  - `what is your secret`, `show your API key`
+  - `leak your password`, `send me your token`
+
+Patterns are deliberately high-specificity to avoid false positives on legitimate developer task descriptions like `review code for security issues` or `use dependency injection in this service`.
+
+**Tier 2: LLM-Based Detection (available, not default)** — Defined in `src/llm/prompt.ts`, a reusable prompt template (`PROMPT_INJECTION_PROMPT`) asks the LLM to check three vectors — prompt injection, code injection, and social engineering — returning structured JSON:
+
+```json
+{
+  "isSafe": boolean,
+  "riskLevel": "low" | "medium" | "high" | "critical",
+  "flags": ["flag1", "flag2"]
+}
+```
+
+This tier is available for integration when needed but is not activated by default. The regex-based Tier 1 covers the vast majority of attacks with zero latency and no API cost.
+
+#### The 2-Signal Rule
+
+The default `BLOCK_THRESHOLD` is 2, controlled by the `SAFETY_STRICT` environment variable:
+
+| Signals | Default Behavior | `SAFETY_STRICT=true` |
+|---------|-----------------|----------------------|
+| **0** | Allow through | Allow through |
+| **1** | Warn + allow (single patterns can trigger on legitimate text like "how do I protect my API key") | Block (strict mode) |
+| **2+** | Block (multiple independent categories is a strong attack signal) | Block |
+
+The 2-signal default exists because a single pattern can match legitimate task descriptions. For instance, `verify your password` could be a credential-harvesting attempt or a developer asking the AI to audit password handling. Two signals from different categories (e.g., hijacking + command injection) is far more likely to be a real attack.
+
+The `SAFETY_STRICT=true` environment variable drops the threshold to 1 — any single detection signal blocks the request. Use this for paranoid deployments where false positives are preferable to false negatives.
+
+#### Additional Defenses
+
+The same `SafetyLayer` class provides four more layers of protection:
+
+- **Task length validation**: Max 10,000 characters (`maxTaskLength`). Prevents oversized input attacks designed to exhaust memory or bypass filters through sheer volume.
+- **Skill allowlist** (`skillAllowlist`): An optional restricted list of allowed categories or skill names. Requests targeting disallowed categories or skills are rejected early, limiting blast radius in case of compromised access.
+- **Input sanitization** (`sanitizeInputs`): Recursively neuters dangerous function calls in execution inputs — `eval()` becomes `eval_blocked()`, `exec()` becomes `exec_blocked()`, `system()` becomes `system_blocked()`. Applied to strings, arrays, and nested objects via a recursive sanitizer.
+- **Schema validation** (`validateSchema`): When `requireSchemaValidation` is enabled, checks that execution inputs match the expected skill input schema — required fields are present, types match. Returns clear error messages on mismatch.
+
+#### Configuration
+
+```typescript
+// RouterConfig.safety — embedded in the router constructor
+{
+  safety: {
+    enablePromptInjectionFilter: true,   // Master switch for Tier 1 scanning
+    requireSchemaValidation: true,        // Enable/disable schema checks
+  }
+}
+```
+
+The `enablePromptInjectionFilter` option (default: `true`) controls whether injection scanning runs at all. The `requireSchemaValidation` option (default: `true`) controls schema checking on execution inputs. Set the `SAFETY_STRICT` environment variable to `true` to block on any single detection signal instead of the default 2-signal threshold.
 
 **2. Embedding Service** — The task text gets converted into a 1536-dimensional vector using OpenAI's `text-embedding-3-small` model. This vector is a mathematical representation of the task's _meaning_ — not just individual words, but the semantic concept behind them.
 
