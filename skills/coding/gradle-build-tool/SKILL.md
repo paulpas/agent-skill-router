@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: gradle, build.gradle.kts, version catalog, configuration cache, kotlin dsl, gradlew, buildSrc, incremental builds
+  triggers: gradle, build.gradle.kts, version catalog, configuration cache, kotlin dsl, how do i fix gradle conflicts, how do i set up java project build, buildSrc, incremental builds
   role: implementation
   scope: implementation
   output-format: code
@@ -368,6 +368,51 @@ org.gradle.kotlin.dsl.allWarningsAsErrors=false
 # ── JVM Toolchain (optional — managed by foojay-resolver) ────────
 # Automatically download and manage Java toolchains
 org.gradle.java.installations.auto-download=true
+```
+
+### Pattern 5: Version Management — BAD vs. GOOD
+
+Version catalogs (`libs.versions.toml`) eliminate hardcoded version strings from build scripts. Every module references catalog aliases instead of inline versions.
+
+```kotlin
+// ❌ BAD — Hardcoded version strings directly in build.gradle.kts dependencies blocks
+// my-service/build.gradle.kts
+dependencies {
+    implementation("org.slf4j:slf4j-api:2.0.16")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.2")
+    implementation("com.google.guava:guava:33.3.1-jre")
+    
+    // Another module might use different versions
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+}
+
+// my-api/build.gradle.kts — Same dependencies, different Jackson version
+dependencies {
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")  // Conflict!
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")           // Different JUnit too!
+}
+
+// ✅ GOOD — All versions in libs.versions.toml, using catalog aliases like libs.jackson.databind
+// gradle/libs.versions.toml
+// [versions]
+// jackson = "2.18.2"
+// junit-jupiter = "5.11.4"
+//
+// [libraries]
+// jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+// junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+
+// my-service/build.gradle.kts — Clean, no hardcoded versions
+dependencies {
+    implementation(libs.jackson.databind)
+    testImplementation(libs.junit.jupiter)
+}
+
+// my-api/build.gradle.kts — Same aliases, guaranteed same versions
+dependencies {
+    implementation(libs.jackson.databind)
+    testImplementation(libs.junit.jupiter)
+}
 ```
 
 ---

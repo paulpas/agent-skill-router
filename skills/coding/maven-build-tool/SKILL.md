@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: maven, pom.xml, mvn command, dependency management, reactor build, BOM, plugin management, dependency mediation
+  triggers: maven, pom.xml, mvn command, dependency management, how do i fix maven conflicts, how do i manage java dependencies, reactor build, BOM, plugin management
   role: implementation
   scope: implementation
   output-format: code
@@ -425,6 +425,76 @@ my-service (our module)
 </dependency>
 ```
 
+### Pattern 6: Dependency Management — BAD vs. GOOD
+
+Centralizing versions in the parent POM (or BOM) prevents version drift and eliminates the need for children to specify versions.
+
+```xml
+<!-- ❌ BAD — Hardcoded versions scattered across child POMs, no dependencyManagement in parent -->
+<!-- my-core/pom.xml -->
+<dependencies>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>2.0.16</version>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.17.0</version>  <!-- Different version from what my-api uses -->
+    </dependency>
+</dependencies>
+
+<!-- my-api/pom.xml --><dependencies>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.18.2</version>  <!-- Conflicts with my-core's 2.17.0 -->
+    </dependency>
+</dependencies>
+
+<!-- ✅ GOOD — Parent declares all versions in dependencyManagement using properties, children inherit without versions -->
+<!-- parent/pom.xml -->
+<dependencyManagement>
+    <properties>
+        <slf4j.version>2.0.16</slf4j.version>
+        <jackson.version>2.18.2</jackson.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+<!-- my-core/pom.xml — No version needed; inherited from parent -->
+<dependencies>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+    </dependency>
+</dependencies>
+
+<!-- my-api/pom.xml — Same; no version, no conflict possible -->
+<dependencies>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+    </dependency>
+</dependencies>
+```
+
 ---
 
 ## Key Maven Diagnostic Commands
@@ -509,7 +579,7 @@ When implementing or reviewing a Maven build configuration, produce:
 > Authoritative documentation links for Maven build tooling. The model follows markdown links at load time to resolve external references and inline content.
 
 - [Apache Maven Documentation](https://maven.apache.org/guides/index.html)
-- [Maven POM Reference — dependencyManagement](https://maven.apache.org/pom.html#Dependency_Mediaction)
+- [Maven POM Reference — dependencyManagement](https://maven.apache.org/pom.html#Dependency_Management)
 - [Maven Enforcer Plugin Documentation](https://maven.apache.org/enforcer/maven-enforcer-plugin/)
 - [Maven Dependency Plugin — Tree Analysis](https://maven.apache.org/plugins/maven-dependency-plugin/tree-mojo.html)
 - [Maven Multi-Module Project Guide](https://maven.apache.org/guides/mini/guide-multiple-modules.html)
