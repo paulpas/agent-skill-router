@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T19:46:22.829927Z",
-  "totalSkills": 807,
+  "generatedAt": "2026-05-22T20:52:25.987609Z",
+  "totalSkills": 809,
   "domains": {
-    "agent": 258,
+    "agent": 259,
     "cncf": 173,
-    "coding": 244,
+    "coding": 245,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 395,
+    "implementation": 397,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -8503,6 +8503,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/hierarchical-agent-memory/SKILL.md"
+    },
+    {
+      "name": "hint-based-prompting",
+      "domain": "coding",
+      "description": "Applies subtle contextual hints instead of explicit step-by-step instructions to guide LLM output naturally, reducing token overhead and improving generation quality through framing rather than commanding.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "hints",
+        "hint-based prompting",
+        "system hints",
+        "contextual guidance",
+        "token efficiency",
+        "prompt framing",
+        "how do i use hints in prompts",
+        "subtle prompting"
+      ],
+      "relatedSkills": [
+        "prompt-engineer",
+        "instruction-engineering",
+        "agent-context-management",
+        "output-formatting"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/hint-based-prompting/SKILL.md"
     },
     {
       "name": "hosted-agents",
@@ -17003,6 +17029,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/system-design-fundamentals/SKILL.md"
+    },
+    {
+      "name": "system-hints-design",
+      "domain": "agent",
+      "description": "Constructs layered system hints for agent architectures — identity, context, constraint, and behavioral hint layers — with provider-specific patterns for Anthropic, OpenAI, and Google Gemini.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "system hints",
+        "system prompt design",
+        "agent behavior control",
+        "context layering",
+        "hint architecture",
+        "how do i design better system prompts",
+        "tool-use hints",
+        "multi-agent hints"
+      ],
+      "relatedSkills": [
+        "hint-based-prompting",
+        "instruction-engineering",
+        "ai-agent-safety",
+        "agent-context-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/system-hints-design/SKILL.md"
     },
     {
       "name": "systematic-debugging",
