@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-22T10:11:59.739390Z",
-  "totalSkills": 789,
+  "generatedAt": "2026-05-22T10:25:57.533573Z",
+  "totalSkills": 790,
   "domains": {
-    "agent": 256,
+    "agent": 257,
     "cncf": 173,
     "coding": 230,
     "electrical-engineering": 2,
@@ -14,7 +14,7 @@
     "writing": 3
   },
   "roles": {
-    "orchestration": 233,
+    "orchestration": 234,
     "implementation": 381,
     "reference": 169,
     "information": 1,
@@ -12425,6 +12425,33 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/openyurt/SKILL.md"
+    },
+    {
+      "name": "orchestration-frameworks",
+      "domain": "agent",
+      "description": "Designs and implements orchestration frameworks for multi-agent systems including LangGraph, AutoGen, CrewAI, Temporal, and Prefect with workflow patterns, state management, and fault tolerance.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "orchestration framework",
+        "multi-agent system",
+        "agent coordination",
+        "workflow engine",
+        "langgraph",
+        "autogen",
+        "crewai",
+        "temporal",
+        "task orchestration",
+        "agent routing"
+      ],
+      "relatedSkills": [
+        "task-decomposition-engine",
+        "parallel-skill-runner",
+        "confidence-based-selector"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/orchestration-frameworks/SKILL.md"
     },
     {
       "name": "order-book",

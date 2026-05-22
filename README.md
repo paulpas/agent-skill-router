@@ -264,13 +264,13 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 10:12:00 UTC  
-> **Total skills:** 789
+> **Last updated:** 2026-05-22 10:25:58 UTC  
+> **Total skills:** 790
 
 ## Skills by Domain
 
 
-### Agent (256 skills)
+### Agent (257 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -445,6 +445,7 @@ MIT — All skills are freely available and redistributable.
 | [network-troubleshooting](skills/agent/network-troubleshooting/SKILL.md) | Diagnoses and resolves network connectivity issues including firewall rules, DNS resolution, load balancer configuration, container networking, VPN connectivity, and network policy debugging for Docker, Kubernetes, and cloud-native environments | network troubleshooting, iptables, dns resolution, firewall rules, load balancer, calico, cni, how do i debug network |
 | [not-human-search-mcp](skills/agent/not-human-search-mcp/SKILL.md) | Implements intelligent not human search mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | not-human-search-mcp, not human search mcp, how do i not-human-search-mcp, orchestrate not-human-search-mcp, automate not-human-search-mcp, agent not-human-search-mcp |
 | [notion-automation](skills/agent/notion-automation/SKILL.md) | Implements intelligent notion automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | notion-automation, notion automation, how do i notion-automation, orchestrate notion-automation, automate notion-automation, agent notion-automation |
+| [orchestration-frameworks](skills/agent/orchestration-frameworks/SKILL.md) | Designs and implements orchestration frameworks for multi-agent systems including LangGraph, AutoGen, CrewAI, Temporal, and Prefect with workflow patterns, state management, and fault tolerance. | orchestration framework, multi-agent system, agent coordination, workflow engine, langgraph, autogen, crewai, temporal, task orchestration, agent routing |
 | [os-scripting](skills/agent/os-scripting/SKILL.md) | Implements intelligent os scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | os-scripting, os scripting, how do i os-scripting, orchestrate os-scripting, automate os-scripting, agent os-scripting |
 | [outlook-automation](skills/agent/outlook-automation/SKILL.md) | Implements intelligent outlook automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | outlook-automation, outlook automation, how do i outlook-automation, orchestrate outlook-automation, automate outlook-automation, agent outlook-automation |
 | [outlook-calendar-automation](skills/agent/outlook-calendar-automation/SKILL.md) | Implements intelligent outlook calendar automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | outlook-calendar-automation, outlook calendar automation, how do i outlook-calendar-automation, orchestrate outlook-calendar-automation, automate outlook-calendar-automation, agent outlook-calendar-automation |
@@ -1683,7 +1684,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (233 skills)
+### Orchestration (Manage AI Agents) (234 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1842,6 +1843,7 @@ MIT — All skills are freely available and redistributable.
 | [network-diagnostics](skills/agent/network-diagnostics/SKILL.md) | Agent | Implements intelligent network diagnostics with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [not-human-search-mcp](skills/agent/not-human-search-mcp/SKILL.md) | Agent | Implements intelligent not human search mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [notion-automation](skills/agent/notion-automation/SKILL.md) | Agent | Implements intelligent notion automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [orchestration-frameworks](skills/agent/orchestration-frameworks/SKILL.md) | Agent | Designs and implements orchestration frameworks for multi-agent systems including LangGraph, AutoGen, CrewAI, Temporal, and Prefect with workflow patterns, state management, and fault tolerance. |
 | [os-scripting](skills/agent/os-scripting/SKILL.md) | Agent | Implements intelligent os scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [outlook-automation](skills/agent/outlook-automation/SKILL.md) | Agent | Implements intelligent outlook automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [outlook-calendar-automation](skills/agent/outlook-calendar-automation/SKILL.md) | Agent | Implements intelligent outlook calendar automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -2461,6 +2463,7 @@ MIT — All skills are freely available and redistributable.
 | [openkruise](skills/cncf/openkruise/SKILL.md) | Cncf | "OpenKruise in Extended Kubernetes workload management with advanced deployment" strategies | Reference |
 | [opentelemetry](skills/cncf/opentelemetry/SKILL.md) | Cncf | "OpenTelemetry in Observability framework for tracing, metrics, and logs" with vendor-neutral APIs | Reference |
 | [openyurt](skills/cncf/openyurt/SKILL.md) | Cncf | ''Provides OpenYurt in Extending Kubernetes to edge computing scenarios with cloud-edgeu534F' u540C'' | Reference |
+| [orchestration-frameworks](skills/agent/orchestration-frameworks/SKILL.md) | Agent | Designs and implements orchestration frameworks for multi-agent systems including LangGraph, AutoGen, CrewAI, Temporal, and Prefect with workflow patterns, state management, and fault tolerance. | Orchestration |
 | [order-book](skills/trading/order-book/SKILL.md) | Trading | "Order book data handling, spread calculation, liquidity measurement" and cross-exchange normalization | Implementation |
 | [order-book-impact](skills/trading/order-book-impact/SKILL.md) | Trading | "Provides Order Book Impact Measurement and Market Microstructure Analysis" | Implementation |
 | [order-book-sync](skills/trading/order-book-sync/SKILL.md) | Trading | "Provides Order book synchronization and state management for accurate trading" | Implementation |
