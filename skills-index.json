@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T21:49:35.511800Z",
-  "totalSkills": 811,
+  "generatedAt": "2026-05-22T22:36:28.044214Z",
+  "totalSkills": 813,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 247,
+    "coding": 249,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 399,
+    "implementation": 401,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -13544,6 +13544,36 @@
       "source": "skills/coding/platform-engineering/SKILL.md"
     },
     {
+      "name": "poetry",
+      "domain": "coding",
+      "description": "Manages Python project dependencies, virtual environments, building, and publishing using Poetry — covering dependency resolution, lockfiles, workspaces, plugin system, and migration from pip.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "poetry",
+        "python package manager",
+        "pyproject.toml",
+        "poetry lock",
+        "virtual environment",
+        "dependency management",
+        "Python publishing",
+        "PyPI upload",
+        "poetry workspaces",
+        "how do i manage python dependencies",
+        "pip migration",
+        "lockfile",
+        "python packaging"
+      ],
+      "relatedSkills": [
+        "coding-python-uv",
+        "coding-package-ecosystem-navigator",
+        "coding-dependency-supply-chain-security"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/poetry/SKILL.md"
+    },
+    {
       "name": "policy-agent-opa",
       "domain": "cncf",
       "description": "\"Open Policy Agent in Security &amp; Compliance - cloud native architecture\" patterns, pitfalls, and best practices",
@@ -14100,6 +14130,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/python-typing-patterns/SKILL.md"
+    },
+    {
+      "name": "python-uv",
+      "domain": "coding",
+      "description": "Manages Python projects with uv by Astral — ultra-fast dependency resolution, virtual environments, workspace/multirepo setup, build tools, and pip compatibility for modern Python development workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "uv",
+        "astral uv",
+        "python package manager",
+        "uv sync",
+        "uv lock",
+        "python project management",
+        "ultra-fast dependency resolution",
+        "pip compatibility",
+        "how do i manage python projects with uv",
+        "uv workspace",
+        "python virtual environment",
+        "uv init add run"
+      ],
+      "relatedSkills": [
+        "coding-poetry",
+        "coding-package-ecosystem-navigator",
+        "coding-dependency-supply-chain-security"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/python-uv/SKILL.md"
     },
     {
       "name": "quality-policies",
