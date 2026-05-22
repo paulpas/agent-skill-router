@@ -264,8 +264,8 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 10:25:58 UTC  
-> **Total skills:** 790
+> **Last updated:** 2026-05-22 06:11:07 UTC  
+> **Total skills:** 791
 
 ## Skills by Domain
 
@@ -1018,7 +1018,7 @@ MIT — All skills are freely available and redistributable.
 | [v12-learning](skills/programming/v12-learning/SKILL.md) | "Reference guide for Progress OpenEdge ABL 12.7 (2023) — v10→v12 migration" INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic collections, safe navigation operator, server-side joins | abl v12, openedge 12, abl 12.7, v10 to v12 migration, abl migration, catch throw, jsonobject, read-json |
 
 
-### Trading (88 skills)
+### Trading (89 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1110,6 +1110,7 @@ MIT — All skills are freely available and redistributable.
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." | exchange websocket streaming, exchange-websocket-streaming, market, processing, real-time |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. | trading edge, edge discovery, alpha generation, edge validation, statistical advantage, walk forward test, monte carlo simulation, performance decay, competitive moat, your edge |
 | [your-position](skills/trading/your-position/SKILL.md) | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. | position management, mental accounting, home bias, disposition effect, portfolio impact, position thesis, behavioral bias, sunk cost fallacy, your position |
+| [your-routine](skills/trading/your-routine/SKILL.md) | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. | trading routine, pre-market prep, post-market review, daily trading checklist, execution discipline, trading habits, trade journal, market preparation, your routine, routine design |
 
 
 ### Writing (2 skills)
@@ -1122,7 +1123,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (381 skills)
+### Implementation (Build Features) (382 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1507,6 +1508,7 @@ MIT — All skills are freely available and redistributable.
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. |
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
+| [your-routine](skills/trading/your-routine/SKILL.md) | Trading | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. |
 
 
 ### Reference (Learn & Understand) (169 skills)
@@ -2723,6 +2725,7 @@ MIT — All skills are freely available and redistributable.
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | Implementation |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. | Implementation |
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. | Implementation |
+| [your-routine](skills/trading/your-routine/SKILL.md) | Trading | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. | Implementation |
 | [zapier-make-patterns](skills/agent/zapier-make-patterns/SKILL.md) | Agent | Implements intelligent zapier make patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [zendesk-automation](skills/agent/zendesk-automation/SKILL.md) | Agent | Implements intelligent zendesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [zipai-optimizer](skills/agent/zipai-optimizer/SKILL.md) | Agent | Implements intelligent zipai optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
