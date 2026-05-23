@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-23T23:20:47.916557Z",
-  "totalSkills": 910,
+  "generatedAt": "2026-05-23T23:52:14.020433Z",
+  "totalSkills": 911,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 346,
+    "coding": 347,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 498,
+    "implementation": 499,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -13166,6 +13166,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/modern-python-development/SKILL.md"
+    },
+    {
+      "name": "modern-software-development-workflows",
+      "domain": "coding",
+      "description": "Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "software development",
+        "CI/CD pipeline",
+        "continuous integration",
+        "automated testing",
+        "code quality gates",
+        "deployment strategy",
+        "release management",
+        "DevOps workflow"
+      ],
+      "relatedSkills": [
+        "coding-test-driven-development",
+        "coding-code-review",
+        "coding-performance-optimization",
+        "coding-security-review",
+        "coding-observability-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/modern-software-development-workflows/SKILL.md"
     },
     {
       "name": "modular-design",
