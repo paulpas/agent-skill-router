@@ -50,9 +50,12 @@ describe('DomainRegistry', () => {
       const registry = DomainRegistry.getInstance();
       registry.loadDomainsConfig();
 
-      expect(registry.getDomainCount()).toBe(5);
+      expect(registry.getDomainCount()).toBe(8);
       expect(registry.hasDomainConfig('agent')).toBe(true);
       expect(registry.hasDomainConfig('trading')).toBe(true);
+      expect(registry.hasDomainConfig('go')).toBe(true);
+      expect(registry.hasDomainConfig('linux')).toBe(true);
+      expect(registry.hasDomainConfig('writing')).toBe(true);
     });
 
     it('should load a specific domain config with correct properties', () => {
@@ -211,11 +214,11 @@ describe('DomainRegistry', () => {
       fs.rmSync(overlappingDir, { recursive: true, force: true });
     });
 
-    it('should return all 5 config domains plus 3 discovered domains', async () => {
+    it('should return all 8 config domains plus 3 discovered domains', async () => {
       const registry = DomainRegistry.getInstance();
       const allDomains = await registry.getAllDomains(skillsDir);
 
-      expect(allDomains.length).toBe(8); // 5 config + 3 discovered
+      expect(allDomains.length).toBe(11); // 8 config + 3 discovered
     });
   });
 
@@ -229,7 +232,7 @@ describe('DomainRegistry', () => {
       const registry = DomainRegistry.getInstance();
       const names = registry.getConfigDomainNames();
 
-      expect(names).toEqual(['agent', 'cncf', 'coding', 'programming', 'trading']);
+      expect(names).toEqual(['agent', 'cncf', 'coding', 'go', 'linux', 'programming', 'trading', 'writing']);
     });
 
     it('should return sorted domain names', () => {
@@ -262,6 +265,9 @@ describe('DomainRegistry', () => {
       expect(registry.hasDomainConfig('coding')).toBe(true);
       expect(registry.hasDomainConfig('programming')).toBe(true);
       expect(registry.hasDomainConfig('trading')).toBe(true);
+      expect(registry.hasDomainConfig('go')).toBe(true);
+      expect(registry.hasDomainConfig('linux')).toBe(true);
+      expect(registry.hasDomainConfig('writing')).toBe(true);
     });
 
     it('should return false for domains without config entries', () => {
@@ -282,7 +288,7 @@ describe('DomainRegistry', () => {
       const registry = DomainRegistry.getInstance();
       registry.loadDomainsConfig();
 
-      expect(registry.getDomainCount()).toBe(5);
+      expect(registry.getDomainCount()).toBe(8);
     });
   });
 });
