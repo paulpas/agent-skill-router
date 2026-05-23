@@ -6,21 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics
-  for decision-making"'
+description: '"Defines, selects, and monitors key performance indicators (KPIs), business
+  metrics, and evaluation metrics for decision-making"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-ab-testing, ds-classification-metrics, ds-online-experiments, ds-regression-evaluation ds-regression-evaluation
+  related-skills: ds-ab-testing, ds-classification-metrics, ds-online-experiments,
+    ds-regression-evaluation ds-regression-evaluation
   role: implementation
   scope: implementation
-  triggers: metrics, KPI, key performance indicator, business metrics, metric definition, how do I choose metrics, cloudwatch,
-    optimization
+  triggers: metrics, KPI, key performance indicator, business metrics, metric definition,
+    how do I choose metrics, cloudwatch, optimization
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: metrics-and-kpis
----
+------
 # Metrics and KPIs
 
 Comprehensive guide to metrics and kpis in machine learning and data science workflows.
@@ -174,134 +187,4 @@ class MetricsAndKPIs:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from typing import Dict, Any
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-
-def implement_kpis(data: pd.DataFrame, target_col: str = "target", feature_cols: list = None) -> Dict[str, Any]:
-    """
-    Complete implementation of Metrics and KPIs.
-    
-    This example demonstrates:
-    - Proper input validation
-    - Core algorithm implementation
-    - Error handling
-    - Result formatting
-    
-    Args:
-        data: Input DataFrame with required columns
-        target_col: Name of the target column
-        feature_cols: List of feature column names (auto-detected if None)
-        
-    Returns:
-        Dictionary with results and metadata
-        
-    Raises:
-        ValueError: If input data is invalid
-        
-    Example:
-        >>> df = pd.DataFrame({'x': [1, 2, 3], 'y': [4, 5, 6]})
-        >>> results = implement_kpis(df)
-        >>> print(results)
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if target_col not in data.columns:
-        raise ValueError(f"Target column '{target_col}' not found in data")
-        
-    feature_cols = feature_cols or [c for c in data.columns if c != target_col]
-    X = data[feature_cols]
-    y = data[target_col]
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    model = RandomForestClassifier(n_estimators=100, random_state=42)
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    
-    metrics = {
-        "accuracy": accuracy_score(y_test, y_pred),
-        "precision": precision_score(y_test, y_pred, average="weighted", zero_division=0),
-        "recall": recall_score(y_test, y_pred, average="weighted", zero_division=0),
-        "f1": f1_score(y_test, y_pred, average="weighted", zero_division=0)
-    }
-    
-    business_kpis = {
-        "estimated_conversion_lift": metrics["f1"] * 0.15,
-        "cost_per_prediction": 0.002,
-        "projected_roi": metrics["accuracy"] * 1200
-    }
-    
-    results = {
-        'status': 'success',
-        'model_metrics': metrics,
-        'business_kpis': business_kpis,
-        'metadata': {
-            'train_size': len(X_train),
-            'test_size': len(X_test),
-            'features': len(feature_cols),
-            'timestamp': pd.Timestamp.now().isoformat()
-        }
-    }
-    
-    return results
-
-# Usage and testing
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=1000, n_features=10, n_informative=5, random_state=42)
-    sample_data = pd.DataFrame(X, columns=[f'feature_{i}' for i in range(10)])
-    sample_data['target'] = y
-    
-    results = implement_kpis(sample_data, target_col='target')
-    print(f"Status: {results['status']}")
-    print(f"Model Metrics: {results['model_metrics']}")
-    print(f"Business KPIs: {results['business_kpis']}")
-    print(f"Processed {results['metadata']['train_size']} train, {results['metadata']['test_size']} test samples")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-ab-testing` | Ab Testing techniques | Complementary to this skill |
-| `coding-ds-classification-metrics` | Classification Metrics techniques | Complementary to this skill |
-| `coding-ds-regression-evaluation` | Regression Evaluation techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Metrics and KPIs
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

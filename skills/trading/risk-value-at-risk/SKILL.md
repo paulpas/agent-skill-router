@@ -6,8 +6,8 @@ content-types:
 - guidance
 - config
 - do-dont
-description: '"Implements value at risk calculations for portfolio risk management for risk management and algorithmic trading
-  execution."'
+description: '"Implements value at risk calculations for portfolio risk management
+  for risk management and algorithmic trading execution."'
 license: MIT
 maturity: stable
 metadata:
@@ -17,9 +17,19 @@ metadata:
   role: implementation
   scope: implementation
   triggers: calculations, management, portfolio, risk value at risk, risk-value-at-risk
+  archetypes:
+  - tactical
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - no risk management
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: value-at-risk
----
+------
 **Role:** Quantify potential losses in portfolio value over specified time horizons
 
 **Philosophy:** VaR provides a common language for risk comparison; different methods suit different market regimes
@@ -198,37 +208,3 @@ class ValueAtRiskCalculator:
             'acceptable': abs(z_score) < 2
         }
 ```
----
-
-## When to Use
-
-Use this skill when:
-
-- **Implementing position risk controls** — You need to add stop losses, position sizing, or drawdown limits to a trading algorithm
-- **Designing or reviewing trading system components** — You are building or auditing order execution, market data processing, or exchange connectivity
-- **Building market analysis or signal generation logic** — You need to create indicators, signals, or prediction models for trading decisions
----
-
-## Core Workflow
-
-1. **Analyze Requirements** — Understand the trading scenario, market conditions, data sources, and risk constraints. **Checkpoint:** Clearly document inputs, outputs, edge cases, and failure modes.
-
-2. **Design Implementation** — Choose appropriate algorithms, data structures, and risk constraints following APEX platform conventions. **Checkpoint:** Verify the design includes proper error handling and risk enforcement at every step.
-
-3. **Implement & Test** — Write Python code with typed signatures, docstrings, and comprehensive tests including edge cases. **Checkpoint:** All risk constraints are enforced, tested, and documented. Emergency layers are independent.
-
-4. **Validate & Review** — Run all tests, verify risk controls under simulated conditions, and review against best practices. **Checkpoint:** All edge cases handled, emergency stops functional, and code follows APEX platform patterns.
-
----
-
-## Constraints
-
-### MUST DO
-- Use Python with typed signatures and docstrings
-- Implement emergency stops as an independent layer
-- Follow APEX platform file path conventions (risk_engine/, data_pipeline/, execution/)
-
-### MUST NOT DO
-- Disable or bypass emergency stops under any circumstance
-- Place stops at round numbers (attracts stop hunting)
-- Use the same risk parameters across all market regimes without adjustment

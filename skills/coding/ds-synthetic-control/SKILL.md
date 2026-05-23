@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs
-  for impact evaluation"'
+description: '"Implements synthetic control methods, difference-in-differences estimation,
+  and quasi-experimental designs for impact evaluation"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-causal-inference, ds-intervention-analysis, ds-observational-studies
   role: implementation
   scope: implementation
-  triggers: synthetic control, difference-in-differences, DiD, quasi-experiment, impact evaluation
+  triggers: synthetic control, difference-in-differences, DiD, quasi-experiment, impact
+    evaluation
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: synthetic-control
----
+------
 # Synthetic Control Methods
 
 Comprehensive guide to synthetic control methods in machine learning and data science workflows.
@@ -220,133 +233,4 @@ def good_scm(
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from typing import Dict, Any
-from scipy.optimize import minimize
-
-class SyntheticControlMethod:
-    """Implements Abadie et al. synthetic control with post-treatment impact estimation."""
-    
-    def __init__(self, regularization: float = 1e-3) -> None:
-        self.regularization = regularization
-        self.weights_: Optional[np.ndarray] = None
-        
-    def fit(self, X_donor: np.ndarray, X_treated: np.ndarray) -> 'SyntheticControlMethod':
-        def objective(w: np.ndarray) -> float:
-            return float(np.sum((X_treated - X_donor @ w)**2) + self.regularization * np.sum(w**2))
-        constraints = (
-            {'type': 'eq', 'fun': lambda w: np.sum(w) - 1.0},
-            {'type': 'ineq', 'fun': lambda w: w}
-        )
-        res = minimize(objective, np.ones(X_donor.shape[0])/X_donor.shape[0], 
-                       constraints=constraints, method='SLSQP')
-        if not res.success:
-            raise RuntimeError(f"Optimization failed: {res.message}")
-        self.weights_ = res.x
-        return self
-        
-    def predict(self, X_donor_post: np.ndarray) -> np.ndarray:
-        return X_donor_post @ self.weights_
-
-def generate_synthetic_data(
-    n_donors: int = 20, 
-    n_pre: int = 10, 
-    n_post: int = 10, 
-    treatment_effect: float = 5.0
-) -> pd.DataFrame:
-    np.random.seed(42)
-    periods = list(range(-n_pre, 0)) + list(range(0, n_post))
-    data = []
-    for i in range(n_donors):
-        for p in periods:
-            noise = np.random.normal(0, 0.5)
-            trend = 0.1 * p
-            data.append({'unit': f'donor_{i}', 'period': p, 'value': trend + noise})
-    for p in periods:
-        noise = np.random.normal(0, 0.5)
-        trend = 0.1 * p
-        effect = treatment_effect if p >= 0 else 0
-        data.append({'unit': 'treated', 'period': p, 'value': trend + noise + effect})
-    return pd.DataFrame(data)
-
-def evaluate_scm(df: pd.DataFrame) -> Dict[str, Any]:
-    donor_df = df[df['unit'] != 'treated']
-    treated_df = df[df['unit'] == 'treated']
-    
-    donor_pre = donor_df[donor_df['period'] < 0].pivot(index='period', columns='unit', values='value').T
-    treated_pre = treated_df[treated_df['period'] < 0].set_index('period')['value']
-    
-    scm = SyntheticControlMethod(regularization=1e-3)
-    scm.fit(donor_pre.values, treated_pre.values)
-    
-    donor_post = donor_df[donor_df['period'] >= 0].pivot(index='period', columns='unit', values='value').T
-    counterfactual = scm.predict(donor_post.values)
-    actual_post = treated_df[treated_df['period'] >= 0].set_index('period')['value'].values
-    
-    impact = actual_post - counterfactual
-    return {
-        'weights': scm.weights_,
-        'pre_mse': float(np.mean((treated_pre.values - donor_pre.values @ scm.weights_)**2)),
-        'post_impact': impact,
-        'mean_impact': float(np.mean(impact))
-    }
-
-if __name__ == "__main__":
-    df = generate_synthetic_data()
-    results = evaluate_scm(df)
-    print(f"Pre-treatment MSE: {results['pre_mse']:.4f}")
-    print(f"Mean Post-treatment Impact: {results['mean_impact']:.4f}")
-    
-    plt.figure(figsize=(10, 5))
-    plt.plot(df[df['unit']=='treated']['period'], df[df['unit']=='treated']['value'], 'k-', label='Treated')
-    plt.plot(df[df['unit']!='treated']['period'], df[df['unit']!='treated']['value'], 'b--', alpha=0.3, label='Donors')
-    plt.axvline(x=0, color='r', linestyle=':', label='Treatment')
-    plt.legend()
-    plt.title('Synthetic Control Method: Treated vs Donor Pool')
-    plt.show()
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-causal-inference` | Causal Inference techniques | Complementary to this skill |
-| `coding-ds-intervention-analysis` | Intervention Analysis techniques | Complementary to this skill |
-| `coding-ds-observational-studies` | Observational Studies techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Synthetic Control Methods
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-- DRY (Don't Repeat Yourself) and SOLID principles for maintainable causal inference code
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning
-  algorithms"'
+description: '"Detects communities and clusters in graphs using modularity optimization,
+  spectral methods, and graph partitioning algorithms"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-association-rules, ds-clustering, ds-dimensionality-reduction
   role: implementation
   scope: implementation
-  triggers: community detection, graph clustering, modularity, spectral clustering, graph partitioning
+  triggers: community detection, graph clustering, modularity, spectral clustering,
+    graph partitioning
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: community-detection
----
+------
 # Community Detection
 
 Comprehensive guide to community detection in machine learning and data science workflows.
@@ -177,117 +190,4 @@ def good_detection(graph: nx.Graph, n_clusters: int = 4) -> list[int]:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import networkx as nx
-import numpy as np
-import matplotlib.pyplot as plt
-from typing import Dict, Any
-from sklearn.cluster import SpectralClustering
-
-def implement_detection(data: nx.Graph) -> Dict[str, Any]:
-    """
-    Complete implementation of Community Detection.
-    
-    This example demonstrates:
-    - Proper input validation
-    - Core algorithm implementation (Spectral Clustering)
-    - Error handling
-    - Result formatting and visualization
-    
-    Args:
-        data: Input NetworkX graph with nodes and edges
-        
-    Returns:
-        Dictionary with results and metadata
-        
-    Raises:
-        ValueError: If input data is invalid
-    """
-    if data is None or not isinstance(data, nx.Graph):
-        raise ValueError("Input data must be a NetworkX graph")
-    if data.number_of_nodes() == 0:
-        raise ValueError("Graph cannot be empty")
-        
-    n_communities = 4
-    adj_matrix = nx.to_numpy_array(data)
-    
-    # Run spectral clustering
-    sc = SpectralClustering(n_clusters=n_communities, affinity='precomputed', random_state=42)
-    labels = sc.fit_predict(adj_matrix)
-    
-    # Organize results
-    communities = {int(i): list(np.where(labels == i)[0]) for i in range(n_communities)}
-    modularity = nx.community.modularity(data, communities.values())
-    
-    # Visualization
-    pos = nx.spring_layout(data, seed=42)
-    plt.figure(figsize=(10, 8))
-    colors = plt.cm.tab10(labels)
-    nx.draw_networkx_nodes(data, pos, node_color=colors, node_size=500, alpha=0.8)
-    nx.draw_networkx_edges(data, pos, alpha=0.5)
-    nx.draw_networkx_labels(data, pos, font_size=8)
-    plt.title(f"Community Detection (Q={modularity:.3f})")
-    plt.axis('off')
-    plt.tight_layout()
-    plt.show()
-    
-    return {
-        'status': 'success',
-        'communities': communities,
-        'labels': labels.tolist(),
-        'modularity': float(modularity),
-        'metadata': {'nodes': data.number_of_nodes(), 'edges': data.number_of_edges()}
-    }
-
-# Usage and testing
-if __name__ == "__main__":
-    # Create sample graph with community structure
-    sample_graph = nx.karate_club_graph()
-    
-    # Run implementation
-    results = implement_detection(sample_graph)
-    print(f"Status: {results['status']}")
-    print(f"Detected {len(results['communities'])} communities")
-    print(f"Modularity Score: {results['modularity']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-clustering` | Clustering techniques | Complementary to this skill |
-| `coding-ds-association-rules` | Association Rules techniques | Complementary to this skill |
-| `coding-ds-dimensionality-reduction` | Dimensionality Reduction techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Community Detection
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

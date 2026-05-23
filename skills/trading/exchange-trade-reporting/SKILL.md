@@ -6,7 +6,8 @@ content-types:
 - guidance
 - config
 - do-dont
-description: '"Real-time trade reporting and execution analytics for monitoring and" optimization'
+description: '"Real-time trade reporting and execution analytics for monitoring and"
+  optimization'
 license: MIT
 maturity: stable
 metadata:
@@ -15,10 +16,21 @@ metadata:
   related-skills: exchange-order-book-sync, technical-false-signal-filtering
   role: implementation
   scope: implementation
-  triggers: analytics, exchange trade reporting, exchange-trade-reporting, execution, real-time
+  triggers: analytics, exchange trade reporting, exchange-trade-reporting, execution,
+    real-time
+  archetypes:
+  - tactical
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - no risk management
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: trade-reporting
----
+------
 **Role:** Generate and analyze trade reports for performance monitoring and regulatory compliance
 
 **Philosophy:** Execution quality directly impacts PnL; trade reporting provides the feedback loop for continuous improvement
@@ -380,37 +392,3 @@ class PerformanceTracker:
             "vwap_by_hour": dict(sorted(self.vwap_by_time.items()))
         }
 ```
----
-
-## When to Use
-
-Use this skill when:
-
-- **Implementing position risk controls** — You need to add stop losses, position sizing, or drawdown limits to a trading algorithm
-- **Designing or reviewing trading system components** — You are building or auditing order execution, market data processing, or exchange connectivity
-- **Building market analysis or signal generation logic** — You need to create indicators, signals, or prediction models for trading decisions
----
-
-## Core Workflow
-
-1. **Analyze Requirements** — Understand the trading scenario, market conditions, data sources, and risk constraints. **Checkpoint:** Clearly document inputs, outputs, edge cases, and failure modes.
-
-2. **Design Implementation** — Choose appropriate algorithms, data structures, and risk constraints following APEX platform conventions. **Checkpoint:** Verify the design includes proper error handling and risk enforcement at every step.
-
-3. **Implement & Test** — Write Python code with typed signatures, docstrings, and comprehensive tests including edge cases. **Checkpoint:** All risk constraints are enforced, tested, and documented. Emergency layers are independent.
-
-4. **Validate & Review** — Run all tests, verify risk controls under simulated conditions, and review against best practices. **Checkpoint:** All edge cases handled, emergency stops functional, and code follows APEX platform patterns.
-
----
-
-## Constraints
-
-### MUST DO
-- Use Python with typed signatures and docstrings
-- Implement emergency stops as an independent layer
-- Follow APEX platform file path conventions (risk_engine/, data_pipeline/, execution/)
-
-### MUST NOT DO
-- Disable or bypass emergency stops under any circumstance
-- Place stops at round numbers (attracts stop hunting)
-- Use the same risk parameters across all market regimes without adjustment

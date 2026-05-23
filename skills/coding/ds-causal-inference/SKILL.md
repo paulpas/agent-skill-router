@@ -6,21 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: Implements causal models, directed acyclic graphs (DAGs), confounding adjustment, and mediation analysis for
-  causal discovery
+description: Implements causal models, directed acyclic graphs (DAGs), confounding
+  adjustment, and mediation analysis for causal discovery
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-instrumental-variables, ds-intervention-analysis, ds-observational-studies, ds-randomized-experiments
-    ds-synthetic-control
+  related-skills: ds-instrumental-variables, ds-intervention-analysis, ds-observational-studies,
+    ds-randomized-experiments ds-synthetic-control
   role: implementation
   scope: implementation
-  triggers: causal inference, causality, causal models, DAG, confounding, how do i determine causation, airflow, data pipelines
+  triggers: causal inference, causality, causal models, DAG, confounding, how do i
+    determine causation, airflow, data pipelines
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: causal-inference
----
+------
 # Causal Inference
 
 Comprehensive guide to causal inference in machine learning and data science workflows.
@@ -177,124 +190,4 @@ class CausalInference:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from typing import Dict, Any
-from sklearn.datasets import make_regression
-from sklearn.linear_model import LogisticRegression, LinearRegression
-from sklearn.model_selection import train_test_split
-import warnings
-warnings.filterwarnings('ignore')
-
-def implement_causal_inference(data: pd.DataFrame, treatment_col: str, outcome_col: str, confounders: list) -> Dict[str, Any]:
-    """
-    Complete implementation of Causal Inference using Double Machine Learning approach.
-    
-    Args:
-        data: Input DataFrame with treatment, outcome, and confounder columns
-        treatment_col: Name of the binary treatment variable
-        outcome_col: Name of the continuous outcome variable
-        confounders: List of confounding variable column names
-        
-    Returns:
-        Dictionary with causal estimates, diagnostics, and metadata
-        
-    Raises:
-        ValueError: If input data is invalid or columns missing
-    """
-    required_cols = [treatment_col, outcome_col] + confounders
-    if not all(col in data.columns for col in required_cols):
-        raise ValueError(f"DataFrame must contain columns: {required_cols}")
-        
-    X = data[confounders].values
-    T = data[treatment_col].values
-    Y = data[outcome_col].values
-    
-    # Step 1: Estimate Propensity Scores
-    ps_model = LogisticRegression(max_iter=1000)
-    ps_model.fit(X, T)
-    ps = ps_model.predict_proba(X)[:, 1]
-    
-    # Step 2: Calculate Inverse Probability Weights
-    ps = np.clip(ps, 0.01, 0.99)
-    ipw = T / ps + (1 - T) / (1 - ps)
-    
-    # Step 3: Estimate Outcome Model & Residuals
-    outcome_model = LinearRegression()
-    outcome_model.fit(X, Y)
-    residuals = Y - outcome_model.predict(X)
-    
-    # Step 4: Compute ATE via IPW on residuals
-    ate = np.mean(ipw * residuals)
-    se = np.std(ipw * residuals) / np.sqrt(len(Y))
-    
-    # Step 5: Cross-validated performance check
-    X_train, X_test, T_train, T_test, Y_train, Y_test = train_test_split(X, T, Y, test_size=0.2, random_state=42)
-    cv_score = np.mean(cross_val_score(outcome_model, X_train, Y_train, cv=5, scoring='r2'))
-    
-    return {
-        'status': 'success',
-        'average_treatment_effect': float(ate),
-        'standard_error': float(se),
-        'confidence_interval_95': (float(ate - 1.96 * se), float(ate + 1.96 * se)),
-        'p_value': float(2 * (1 - __import__('scipy.stats').norm.cdf(abs(ate / se)))),
-        'outcome_model_r2': float(outcome_model.score(X, Y)),
-        'cv_r2_score': float(cv_score),
-        'metadata': {'rows': len(data), 'confounders': confounders, 'treatment_rate': float(np.mean(T))}
-    }
-
-if __name__ == "__main__":
-    np.random.seed(42)
-    n_samples = 1000
-    X1, X2 = np.random.randn(n_samples), np.random.randn(n_samples)
-    T = (0.5 * X1 + 0.3 * X2 + np.random.randn(n_samples) * 0.5 > 0).astype(int)
-    Y = 2.5 * T + 1.0 * X1 - 0.5 * X2 + np.random.randn(n_samples) * 0.8
-    
-    df = pd.DataFrame({'conf1': X1, 'conf2': X2, 'treatment': T, 'outcome': Y})
-    results = implement_causal_inference(df, 'treatment', 'outcome', ['conf1', 'conf2'])
-    print(f"Estimated ATE: {results['average_treatment_effect']:.4f}")
-    print(f"95% CI: {results['confidence_interval_95']}")
-    print(f"Model R2: {results['outcome_model_r2']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-observational-studies` | Observational Studies techniques | Complementary to this skill |
-| `coding-ds-intervention-analysis` | Intervention Analysis techniques | Complementary to this skill |
-| `coding-ds-randomized-experiments` | Randomized Experiments techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Causal Inference
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

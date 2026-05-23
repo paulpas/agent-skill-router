@@ -24,6 +24,12 @@ export interface SkillMetadata {
     successRate: number;
     lastUpdated: string;
   };
+  /** Archetypes describing the skill's primary role patterns */
+  archetypes?: Archetype[];
+  /** Anti-triggers — topics/phrases that indicate the user should NOT use this skill */
+  antiTriggers?: string[];
+  /** Response profile shaping tone, depth, and abstraction of outputs */
+  responseProfile?: ResponseProfile;
 }
 
 /**
@@ -83,6 +89,8 @@ export interface SelectedSkill {
   score: number;
   role: 'primary' | 'supporting' | 'fallback';
   reasoning?: string;
+  /** Per-component hybrid scoring breakdown for observability */
+  scoreBreakdown?: ScoreBreakdown;
 }
 
 /**
@@ -137,7 +145,24 @@ export interface RouteRequest {
     categories?: string[];
     maxSkills?: number;
     latencyBudgetMs?: number;
+    /** When true, populate scoreExplanations in the response */
+    includeScoreBreakdown?: boolean;
   };
+}
+
+/**
+ * Per-skill scoring breakdown in hybrid pipeline.
+ */
+export interface ScoreBreakdown {
+  finalScore: number;
+  vectorScore?: number;
+  bm25Score?: number;
+  triggerMatchScore?: number;
+  archetypeScore?: number;
+  specificityScore?: number;
+  concisenessScore?: number;
+  /** MMR diversity penalty applied during selection (negative value) */
+  mmerPenalty?: number;
 }
 
 /**
@@ -150,9 +175,11 @@ export interface RouteResponse {
   confidence: number;
   reasoningSummary: string;
   candidatePool: string[];
-  routingScores: Record<string, number>;
+  routingScores: Record<string, ScoreBreakdown | number>;
   latencyMs: number;
   attributionFooter?: string;
+  /** Human-readable score explanations per skill (only when requested) */
+  scoreExplanations?: Record<string, string[]>;
 }
 
 
@@ -225,6 +252,27 @@ export interface EmbeddingResponse {
  * Content types that a skill may produce
  */
 export type ContentType = 'guidance' | 'examples' | 'do-dont' | 'config' | 'code' | 'diagrams';
+
+/**
+ * Archetype categories for skill classification
+ */
+export type Archetype =
+  | 'tactical'
+  | 'strategic'
+  | 'diagnostic'
+  | 'orchestration'
+  | 'educational'
+  | 'enforcement'
+  | 'generation';
+
+/**
+ * Response profile — how a skill should shape its output tone and depth
+ */
+export interface ResponseProfile {
+  verbosity: 'low' | 'medium' | 'high';
+  directiveStrength: 'low' | 'medium' | 'high';
+  abstractionLevel: 'operational' | 'tactical' | 'strategic';
+}
 
 /**
  * Domain configuration defaults from domains.json

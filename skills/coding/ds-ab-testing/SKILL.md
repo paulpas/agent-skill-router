@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation,
-  and statistical significance evaluation
+description: Provides Designs and analyzes A/B tests including hypothesis testing,
+  power analysis, sample size calculation, and statistical significance evaluation
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-classification-metrics, ds-experimental-design, ds-hypothesis-testing, ds-metrics-and-kpis ds-statistical-power
+  related-skills: ds-classification-metrics, ds-experimental-design, ds-hypothesis-testing,
+    ds-metrics-and-kpis ds-statistical-power
   role: implementation
   scope: implementation
-  triggers: A/B testing, A/B test, statistical test, power analysis, sample size, how do I design tests, unit tests, testing
+  triggers: A/B testing, A/B test, statistical test, power analysis, sample size,
+    how do I design tests, unit tests, testing
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: ab-testing
----
+------
 # A/B Testing
 
 Comprehensive guide to a/b testing in machine learning and data science workflows.
@@ -160,128 +174,4 @@ class ABTestAnalyzer:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy import stats
-from statsmodels.stats.power import TTestIndPower
-import logging
-
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-
-def generate_synthetic_ab_data(n_per_group: int = 500, 
-                               mean_a: float = 100.0, 
-                               mean_b: float = 105.0, 
-                               std: float = 25.0) -> pd.DataFrame:
-    """Generate synthetic A/B test data with known parameters."""
-    np.random.seed(42)
-    group_a = np.random.normal(mean_a, std, n_per_group)
-    group_b = np.random.normal(mean_b, std, n_per_group)
-    df = pd.DataFrame({
-        'group': [0] * n_per_group + [1] * n_per_group,
-        'metric': np.concatenate([group_a, group_b])
-    })
-    return df
-
-def run_ab_test(df: pd.DataFrame, group_col: str = 'group', metric_col: str = 'metric', alpha: float = 0.05) -> dict:
-    """Execute A/B test analysis and return comprehensive results."""
-    group_a = df.loc[df[group_col] == 0, metric_col].dropna()
-    group_b = df.loc[df[group_col] == 1, metric_col].dropna()
-    
-    t_stat, p_value = stats.ttest_ind(group_a, group_b, equal_var=False)
-    mean_diff = group_b.mean() - group_a.mean()
-    pooled_std = np.sqrt(((len(group_a) - 1) * group_a.var() + (len(group_b) - 1) * group_b.var()) / (len(group_a) + len(group_b) - 2))
-    cohens_d = mean_diff / pooled_std if pooled_std > 0 else 0.0
-    
-    power = TTestIndPower()
-    required_n = power.solve_power(effect_size=abs(cohens_d), alpha=alpha, power=0.8, ratio=1.0)
-    
-    return {
-        "p_value": float(p_value),
-        "significant": bool(p_value < alpha),
-        "mean_difference": float(mean_diff),
-        "effect_size": float(cohens_d),
-        "required_n_per_group": int(np.ceil(required_n)),
-        "actual_n": {"a": len(group_a), "b": len(group_b)}
-    }
-
-def visualize_results(df: pd.DataFrame, results: dict, save_path: str = "ab_test_results.png"):
-    """Plot distribution of both groups and highlight significance."""
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-    
-    axes[0].hist(df.loc[df['group'] == 0, 'metric'], bins=30, alpha=0.5, label='Control (A)', color='blue')
-    axes[0].hist(df.loc[df['group'] == 1, 'metric'], bins=30, alpha=0.5, label='Variant (B)', color='orange')
-    axes[0].set_title('Metric Distribution by Group')
-    axes[0].set_xlabel('Metric Value')
-    axes[0].set_ylabel('Frequency')
-    axes[0].legend()
-    
-    axes[1].bar(['Control Mean', 'Variant Mean', 'Difference'], 
-                [df.loc[df['group']==0, 'metric'].mean(), 
-                 df.loc[df['group']==1, 'metric'].mean(), 
-                 results['mean_difference']], 
-                color=['blue', 'orange', 'green'])
-    axes[1].set_title('Group Means & Difference')
-    axes[1].set_ylabel('Metric Value')
-    
-    plt.tight_layout()
-    plt.savefig(save_path, dpi=150)
-    plt.show()
-    logging.info(f"Visualization saved to {save_path}")
-
-if __name__ == "__main__":
-    # 1. Generate data
-    df = generate_synthetic_ab_data(n_per_group=500, mean_a=100.0, mean_b=105.0, std=25.0)
-    logging.info(f"Generated {len(df)} samples")
-    
-    # 2. Run analysis
-    results = run_ab_test(df)
-    logging.info(f"P-value: {results['p_value']:.4f} | Significant: {results['significant']}")
-    logging.info(f"Effect Size (Cohen's d): {results['effect_size']:.3f}")
-    logging.info(f"Required sample size per group for 80% power: {results['required_n_per_group']}")
-    
-    # 3. Visualize
-    visualize_results(df, results)
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-hypothesis-testing` | Hypothesis Testing techniques | Complementary to this skill |
-| `coding-ds-experimental-design` | Experimental Design techniques | Complementary to this skill |
-| `coding-ds-statistical-power` | Statistical Power techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on A/B Testing
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

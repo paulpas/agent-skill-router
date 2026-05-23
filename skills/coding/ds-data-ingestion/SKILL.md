@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline
-  orchestration for reliable data flow"'
+description: '"Provides Designs and implements ETL pipelines, streaming data ingestion,
+  batch processing, and data pipeline orchestration for reliable data flow"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-data-collection, ds-data-quality, ds-data-versioning
   role: implementation
   scope: implementation
-  triggers: ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data
+  triggers: ETL pipeline, data ingestion, streaming data, batch processing, pipeline,
+    how do i ingest data
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: data-ingestion
----
+------
 # Data Ingestion
 
 Comprehensive guide to data ingestion in machine learning and data science workflows.
@@ -183,102 +196,4 @@ def good_ingestion(df: pd.DataFrame, fill_strategy: str = "median") -> pd.DataFr
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report
-from typing import Dict, Any
-
-def implement_ingestion_pipeline(raw_data: pd.DataFrame) -> Dict[str, Any]:
-    """
-    Complete ML data ingestion pipeline.
-    Demonstrates validation, cleaning, scaling, and train/test split.
-    """
-    if raw_data is None or raw_data.empty:
-        raise ValueError("Input data cannot be None or empty")
-        
-    # Step 1: Validate and clean
-    df = raw_data.copy()
-    numeric_features = df.select_dtypes(include=[np.number]).columns
-    df[numeric_features] = df[numeric_features].fillna(df[numeric_features].median())
-    
-    # Step 2: Feature engineering & scaling
-    X = df.drop(columns=['target'], errors='ignore')
-    y = df['target'] if 'target' in df.columns else None
-    scaler = StandardScaler()
-    X_scaled = pd.DataFrame(scaler.fit_transform(X), columns=X.columns)
-    
-    # Step 3: Train/test split
-    X_train, X_test, y_train, y_test = train_test_split(
-        X_scaled, y, test_size=0.2, random_state=42, stratify=y if y is not None else None
-    )
-    
-    # Step 4: Model training & evaluation
-    model = LogisticRegression(max_iter=1000)
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    
-    return {
-        'train_shape': X_train.shape,
-        'test_shape': X_test.shape,
-        'model_accuracy': model.score(X_test, y_test),
-        'classification_report': classification_report(y_test, y_pred, output_dict=True),
-        'scaler_mean': scaler.mean_.tolist(),
-        'status': 'success'
-    }
-
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=1000, n_features=10, n_informative=5, random_state=42)
-    sample_df = pd.DataFrame(X, columns=[f'feat_{i}' for i in range(10)])
-    sample_df['target'] = y
-    
-    results = implement_ingestion_pipeline(sample_df)
-    print(f"Status: {results['status']}")
-    print(f"Accuracy: {results['model_accuracy']:.4f}")
-    print(f"Train/Test Split: {results['train_shape']} / {results['test_shape']}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-data-collection` | Data Collection techniques | Complementary to this skill |
-| `coding-ds-data-quality` | Data Quality techniques | Complementary to this skill |
-| `coding-ds-data-versioning` | Data Versioning techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Data Ingestion
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

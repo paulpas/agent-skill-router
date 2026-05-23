@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation
-  in probabilistic models
+description: Implements maximum likelihood estimation, likelihood functions, and optimization
+  methods for parameter estimation in probabilistic models
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-bayesian-inference, ds-distribution-fitting, ds-hypothesis-testing, ds-linear-regression ds-monte-carlo
+  related-skills: ds-bayesian-inference, ds-distribution-fitting, ds-hypothesis-testing,
+    ds-linear-regression ds-monte-carlo
   role: implementation
   scope: implementation
-  triggers: maximum likelihood, MLE, likelihood estimation, likelihood function, optimization, performance, speed
+  triggers: maximum likelihood, MLE, likelihood estimation, likelihood function, optimization,
+    performance, speed
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: maximum-likelihood
----
+------
 # Maximum Likelihood Estimation
 
 Comprehensive guide to maximum likelihood estimation in machine learning and data science workflows.
@@ -202,104 +216,4 @@ def good_mle(data: np.ndarray) -> Dict[str, float]:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from scipy.optimize import minimize
-from scipy.stats import norm
-from typing import Dict, Any
-import warnings
-
-def implement_likelihood(data: pd.DataFrame, target_col: str = 'value') -> Dict[str, Any]:
-    """
-    Complete implementation of Maximum Likelihood Estimation.
-    Estimates parameters for a Gaussian distribution using scipy.optimize.
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if target_col not in data.columns:
-        raise ValueError(f"Target column '{target_col}' not found")
-        
-    values = data[target_col].dropna().values
-    if len(values) < 2:
-        raise ValueError("Insufficient data points for estimation")
-        
-    def nll(params):
-        mu, sigma = params
-        if sigma <= 0: return np.inf
-        return -np.sum(norm.logpdf(values, loc=mu, scale=sigma))
-        
-    initial_params = [np.mean(values), np.std(values)]
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        opt_result = minimize(nll, initial_params, method='L-BFGS-B', bounds=[(None, (0, None))])
-        
-    if not opt_result.success:
-        raise RuntimeError(f"Optimization failed: {opt_result.message}")
-        
-    estimated_mu, estimated_sigma = opt_result.x
-    true_log_likelihood = -opt_result.fun
-    
-    # Compare with scipy.stats baseline
-    scipy_mu, scipy_sigma = norm.fit(values)
-    scipy_ll = np.sum(norm.logpdf(values, loc=scipy_mu, scale=scipy_sigma))
-    
-    return {
-        'status': 'success',
-        'estimated_parameters': {'mu': estimated_mu, 'sigma': estimated_sigma},
-        'log_likelihood': true_log_likelihood,
-        'scipy_baseline': {'mu': scipy_mu, 'sigma': scipy_sigma, 'log_likelihood': scipy_ll},
-        'metadata': {'rows_processed': len(values), 'optimization_success': opt_result.success}
-    }
-
-if __name__ == "__main__":
-    np.random.seed(42)
-    sample_data = pd.DataFrame({
-        'value': np.random.normal(loc=10.0, scale=3.0, size=500)
-    })
-    results = implement_likelihood(sample_data)
-    print(f"Status: {results['status']}")
-    print(f"Estimated mu: {results['estimated_parameters']['mu']:.4f}")
-    print(f"Log-Likelihood: {results['log_likelihood']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-bayesian-inference` | Bayesian Inference techniques | Complementary to this skill |
-| `coding-ds-monte-carlo` | Monte Carlo techniques | Complementary to this skill |
-| `coding-ds-linear-regression` | Linear Regression techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Maximum Likelihood Estimation
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

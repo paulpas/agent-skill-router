@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model
-  generalization"'
+description: '"Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization
+  strategies for improving model generalization"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-cross-validation, ds-hyperparameter-tuning, ds-model-selection
   role: implementation
   scope: implementation
-  triggers: bias-variance, overfitting, underfitting, regularization, generalization, how do I prevent overfitting
+  triggers: bias-variance, overfitting, underfitting, regularization, generalization,
+    how do I prevent overfitting
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: bias-variance-tradeoff
----
+------
 # Bias-Variance Tradeoff
 
 Comprehensive guide to bias-variance tradeoff in machine learning and data science workflows.
@@ -173,100 +186,4 @@ class BiasVarianceTradeoff:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-from sklearn.model_selection import learning_curve, cross_val_score
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import Ridge
-from sklearn.pipeline import make_pipeline
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.datasets import make_regression
-import matplotlib.pyplot as plt
-
-def demonstrate_bias_variance_tradeoff():
-    """Demonstrate bias-variance tradeoff with synthetic data and polynomial regression."""
-    X, y = make_regression(n_samples=300, n_features=1, noise=0.3, random_state=42)
-    degrees = [1, 3, 10]
-    results = {}
-    
-    for degree in degrees:
-        model = make_pipeline(PolynomialFeatures(degree, include_bias=False), Ridge(alpha=1.0))
-        model.fit(X, y)
-        
-        train_preds = model.predict(X)
-        train_mse = mean_squared_error(y, train_preds)
-        cv_scores = cross_val_score(model, X, y, cv=5, scoring='r2')
-        
-        results[degree] = {
-            'train_mse': train_mse,
-            'cv_r2_mean': np.mean(cv_scores),
-            'cv_r2_std': np.std(cv_scores),
-            'bias': 1 - np.mean(cv_scores),
-            'variance': np.var(cv_scores)
-        }
-        
-    plt.figure(figsize=(10, 6))
-    for degree in degrees:
-        model = make_pipeline(PolynomialFeatures(degree, include_bias=False), Ridge(alpha=1.0))
-        train_sizes, train_scores, val_scores = learning_curve(
-            model, X, y, train_sizes=np.linspace(0.1, 1.0, 10), cv=5, scoring='r2', random_state=42
-        )
-        plt.plot(train_sizes, np.mean(train_scores, axis=1), label=f'Degree {degree} (Train)')
-        plt.plot(train_sizes, np.mean(val_scores, axis=1), label=f'Degree {degree} (Val)')
-        
-    plt.title('Bias-Variance Tradeoff: Learning Curves')
-    plt.xlabel('Training Set Size')
-    plt.ylabel('R² Score')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
-    
-    return results
-
-if __name__ == "__main__":
-    results = demonstrate_bias_variance_tradeoff()
-    for degree, metrics in results.items():
-        print(f"Degree {degree}: Train MSE={metrics['train_mse']:.4f}, CV R²={metrics['cv_r2_mean']:.4f} ± {metrics['cv_r2_std']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-hyperparameter-tuning` | Hyperparameter Tuning techniques | Complementary to this skill |
-| `coding-ds-model-selection` | Model Selection techniques | Complementary to this skill |
-| `coding-ds-cross-validation` | Cross Validation techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Bias-Variance Tradeoff
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

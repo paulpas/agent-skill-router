@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution
-  selection methods"'
+description: '"Provides Fits statistical distributions to data using goodness-of-fit
+  tests, parameter estimation, and distribution selection methods"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-kernel-density, ds-maximum-likelihood, ds-monte-carlo
   role: implementation
   scope: implementation
-  triggers: distribution fitting, goodness-of-fit, fitting distributions, distribution selection, how do i fit
+  triggers: distribution fitting, goodness-of-fit, fitting distributions, distribution
+    selection, how do i fit
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: distribution-fitting
----
+------
 # Distribution Fitting
 
 Comprehensive guide to distribution fitting in machine learning and data science workflows.
@@ -171,123 +184,4 @@ class DistributionFitting:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from scipy import stats
-from typing import Dict, Any
-import matplotlib.pyplot as plt
-
-def implement_fitting(data: pd.DataFrame, target_col: str = "values") -> Dict[str, Any]:
-    """
-    Complete implementation of Distribution Fitting.
-    Demonstrates input validation, MLE fitting, KS testing, and visualization.
-    Follows DRY and KISS principles for maintainable statistical code.
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if target_col not in data.columns:
-        raise ValueError(f"Column '{target_col}' not found in DataFrame")
-
-    series = data[target_col].dropna()
-    if series.empty:
-        raise ValueError("Target column contains no valid data")
-
-    # Fit Normal Distribution via MLE
-    mu, std = stats.norm.fit(series)
-    ks_stat, p_value = stats.kstest(series, 'norm', args=(mu, std))
-
-    # Generate fitted curve for plotting
-    x = np.linspace(series.min(), series.max(), 100)
-    pdf = stats.norm.pdf(x, mu, std)
-
-    # Create visualization
-    fig, ax = plt.subplots()
-    ax.hist(series, bins=30, density=True, alpha=0.6, color='g', label='Data Histogram')
-    ax.plot(x, pdf, 'r-', linewidth=2, label=f'Fitted Normal (μ={mu:.2f}, σ={std:.2f})')
-    ax.set_title(f'Distribution Fit: KS p-value = {p_value:.4f}')
-    ax.legend()
-    plt.tight_layout()
-    plt.savefig("distribution_fit.png")
-    plt.close()
-
-    return {
-        'status': 'success',
-        'parameters': {'mu': mu, 'sigma': std},
-        'goodness_of_fit': {'ks_statistic': ks_stat, 'p_value': p_value},
-        'plot_saved': 'distribution_fit.png',
-        'metadata': {'rows': len(series), 'columns': data.shape[1]}
-    }
-
-# BAD vs GOOD Example Pair
-# BAD: Ignoring distribution assumptions and skipping validation
-def bad_fitting_approach(data: pd.DataFrame) -> Dict[str, Any]:
-    # Assumes data is always normal without testing
-    # No error handling for missing values or empty columns
-    mu = data.mean()
-    std = data.std()
-    return {"mu": mu, "std": std}  # Returns summary stats, not a fitted distribution
-
-# GOOD: Validates data, tests assumptions, and returns comprehensive fit metrics
-def good_fitting_approach(data: pd.DataFrame, col: str = "values") -> Dict[str, Any]:
-    if col not in data.columns or data[col].isna().all():
-        raise ValueError("Invalid or empty target column")
-    series = data[col].dropna()
-    mu, std = stats.norm.fit(series)
-    _, p_val = stats.kstest(series, 'norm', args=(mu, std))
-    if p_val < 0.05:
-        raise RuntimeError("Normality assumption rejected by KS test")
-    return {"mu": mu, "sigma": std, "ks_p_value": p_val, "assumption_valid": True}
-
-# Usage and testing
-if __name__ == "__main__":
-    np.random.seed(42)
-    sample_data = pd.DataFrame({
-        'values': np.random.normal(loc=5.0, scale=2.0, size=500)
-    })
-    results = implement_fitting(sample_data)
-    print(f"Status: {results['status']}")
-    print(f"Fitted parameters: {results['parameters']}")
-    print(f"KS Test p-value: {results['goodness_of_fit']['p_value']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-kernel-density` | Kernel Density techniques | Complementary to this skill |
-| `coding-ds-maximum-likelihood` | Maximum Likelihood techniques | Complementary to this skill |
-| `coding-ds-monte-carlo` | Monte Carlo techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Distribution Fitting
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

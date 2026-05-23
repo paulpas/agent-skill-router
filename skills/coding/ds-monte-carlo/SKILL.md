@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation
-  and numerical integration"'
+description: '"Implements Monte Carlo sampling, simulation methods, and stochastic
+  approximation for uncertainty estimation and numerical integration"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-bayesian-inference, ds-confidence-intervals, ds-distribution-fitting, ds-kernel-density ds-kernel-density
+  related-skills: ds-bayesian-inference, ds-confidence-intervals, ds-distribution-fitting,
+    ds-kernel-density ds-kernel-density
   role: implementation
   scope: implementation
-  triggers: monte carlo, sampling, simulation, stochastic, markov chain, mcmc, how do i simulate
+  triggers: monte carlo, sampling, simulation, stochastic, markov chain, mcmc, how
+    do i simulate
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: monte-carlo
----
+------
 # Monte Carlo Methods
 
 Comprehensive guide to monte carlo methods in machine learning and data science workflows.
@@ -151,106 +165,4 @@ if __name__ == "__main__":
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_regression
-from sklearn.linear_model import LinearRegression
-from typing import Dict, Any
-
-def monte_carlo_prediction_uncertainty(n_samples: int = 10000, seed: int = 42) -> Dict[str, Any]:
-    """
-    Estimate prediction uncertainty using Monte Carlo sampling on a regression model.
-    
-    Args:
-        n_samples: Number of Monte Carlo iterations
-        seed: Random seed for reproducibility
-        
-    Returns:
-        Dictionary with model metrics, uncertainty bounds, and plot data
-    """
-    np.random.seed(seed)
-    
-    # Generate real dataset
-    X, y = make_regression(n_samples=500, n_features=3, noise=10.0, random_state=seed)
-    
-    # Train base model
-    model = LinearRegression()
-    model.fit(X, y)
-    
-    # Monte Carlo simulation: add noise to predictions to estimate uncertainty
-    predictions = model.predict(X)
-    noise_std = np.std(y - predictions)
-    
-    mc_predictions = np.random.normal(predictions, noise_std, size=(n_samples, len(y)))
-    uncertainty_lower = np.percentile(mc_predictions, 2.5, axis=0)
-    uncertainty_upper = np.percentile(mc_predictions, 97.5, axis=0)
-    
-    results = {
-        'r2_score': float(model.score(X, y)),
-        'mean_prediction': float(np.mean(predictions)),
-        'uncertainty_mean': float(np.mean(uncertainty_upper - uncertainty_lower)),
-        'hist_lower': uncertainty_lower[:100],
-        'hist_upper': uncertainty_upper[:100],
-        'hist_y': y[:100]
-    }
-    return results
-
-if __name__ == "__main__":
-    results = monte_carlo_prediction_uncertainty()
-    print(f"Model R²: {results['r2_score']:.4f}")
-    print(f"Mean Uncertainty Width: {results['uncertainty_mean']:.4f}")
-    
-    plt.figure(figsize=(10, 6))
-    plt.scatter(results['hist_y'], results['hist_lower'], color='blue', alpha=0.5, label='Lower Bound')
-    plt.scatter(results['hist_y'], results['hist_upper'], color='red', alpha=0.5, label='Upper Bound')
-    plt.plot(results['hist_y'], results['hist_y'], color='green', linestyle='--', label='True Values')
-    plt.title('Monte Carlo Prediction Uncertainty Bands')
-    plt.xlabel('True Target Values')
-    plt.ylabel('Predicted Values')
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-    plt.show()
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-bayesian-inference` | Bayesian Inference techniques | Complementary to this skill |
-| `coding-ds-confidence-intervals` | Confidence Intervals techniques | Complementary to this skill |
-| `coding-ds-distribution-fitting` | Distribution Fitting techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Monte Carlo Methods
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

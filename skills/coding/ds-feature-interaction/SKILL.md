@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Discovers and engineers feature interactions including polynomial interactions, cross-features, and
-  interaction detection methods"'
+description: '"Provides Discovers and engineers feature interactions including polynomial
+  interactions, cross-features, and interaction detection methods"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-correlation-analysis, ds-feature-engineering, ds-feature-selection
   role: implementation
   scope: implementation
-  triggers: feature interaction, interaction terms, polynomial features, cross-features, feature interactions
+  triggers: feature interaction, interaction terms, polynomial features, cross-features,
+    feature interactions
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: feature-interaction
----
+------
 # Feature Interaction
 
 Comprehensive guide to feature interaction in machine learning and data science workflows.
@@ -206,133 +219,4 @@ if __name__ == "__main__":
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.datasets import make_regression
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score
-from typing import Dict, Any
-
-def implement_interaction(data: pd.DataFrame, target_col: str = 'target') -> Dict[str, Any]:
-    """
-    Complete implementation of Feature Interaction with model training and evaluation.
-    
-    This example demonstrates:
-    - Proper input validation
-    - Core algorithm implementation (polynomial & cross features)
-    - Error handling
-    - Result formatting and metrics
-    
-    Args:
-        data: Input DataFrame with numerical features and target column
-        target_col: Name of the target variable
-        
-    Returns:
-        Dictionary with results, metrics, and metadata
-        
-    Raises:
-        ValueError: If input data is invalid or missing target
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if target_col not in data.columns:
-        raise ValueError(f"Target column '{target_col}' not found in data")
-        
-    # Separate features and target
-    X = data.drop(columns=[target_col])
-    y = data[target_col]
-    
-    # Validate numerical features
-    numerical_cols = X.select_dtypes(include=[np.number]).columns.tolist()
-    if len(numerical_cols) < 2:
-        raise ValueError("At least two numerical features required for interactions")
-        
-    # Generate polynomial interactions
-    poly = PolynomialFeatures(degree=2, include_bias=False)
-    X_poly = poly.fit_transform(X[numerical_cols])
-    poly_names = poly.get_feature_names_out(numerical_cols)
-    X_interacted = pd.DataFrame(X_poly, columns=poly_names, index=X.index)
-    
-    # Add specific cross-feature
-    if len(numerical_cols) >= 2:
-        X_interacted[f'{numerical_cols[0]}_x_{numerical_cols[1]}'] = X[numerical_cols[0]] * X[numerical_cols[1]]
-        
-    # Train/test split
-    X_train, X_test, y_train, y_test = train_test_split(X_interacted, y, test_size=0.2, random_state=42)
-    
-    # Train model
-    model = LinearRegression()
-    model.fit(X_train, y_train)
-    
-    # Predict and evaluate
-    y_pred = model.predict(X_test)
-    mse = mean_squared_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-    
-    results = {
-        'status': 'success',
-        'model_type': 'LinearRegression',
-        'metrics': {'mse': float(mse), 'r2': float(r2)},
-        'feature_count': X_interacted.shape[1],
-        'train_size': len(X_train),
-        'test_size': len(X_test)
-    }
-    return results
-
-# Usage and testing
-if __name__ == "__main__":
-    # Create realistic sample data with underlying interaction
-    X_sample, y_sample = make_regression(n_samples=500, n_features=3, noise=10, random_state=42)
-    sample_data = pd.DataFrame(X_sample, columns=['feat_a', 'feat_b', 'feat_c'])
-    sample_data['target'] = y_sample + (X_sample[:, 0] * X_sample[:, 1]) * 5  # Add true interaction
-    
-    # Run implementation
-    results = implement_interaction(sample_data, target_col='target')
-    print(f"Status: {results['status']}")
-    print(f"Metrics: MSE={results['metrics']['mse']:.4f}, R2={results['metrics']['r2']:.4f}")
-    print(f"Processed {results['train_size']} train, {results['test_size']} test samples")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-feature-engineering` | Feature Engineering techniques | Complementary to this skill |
-| `coding-ds-feature-selection` | Feature Selection techniques | Complementary to this skill |
-| `coding-ds-correlation-analysis` | Correlation Analysis techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Feature Interaction
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

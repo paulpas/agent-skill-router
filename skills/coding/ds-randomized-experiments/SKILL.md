@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample
-  size calculations"'
+description: '"Provides Designs and analyzes randomized controlled trials (RCTs),
+  A/B tests, experimental blocking, and sample size calculations"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-ab-testing, ds-causal-inference, ds-intervention-analysis, ds-observational-studies
   role: implementation
   scope: implementation
-  triggers: randomized experiments, RCT, experimental design, randomization, blocking, sample size
+  triggers: randomized experiments, RCT, experimental design, randomization, blocking,
+    sample size
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: randomized-experiments
----
+------
 # Randomized Experiments
 
 Comprehensive guide to randomized experiments in machine learning and data science workflows.
@@ -228,99 +241,4 @@ def good_experiment(data: pd.DataFrame, group_col: str, value_col: str) -> Dict[
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from typing import Dict, Any
-from sklearn.datasets import make_classification
-
-def run_ab_test_workflow(n_samples: int = 1000, effect: float = 0.3) -> Dict[str, Any]:
-    """
-    Complete working example demonstrating an A/B test workflow.
-    Includes data generation, randomization, analysis, and visualization.
-    """
-    np.random.seed(42)
-    df = pd.DataFrame({
-        'user_id': range(n_samples),
-        'baseline_metric': np.random.normal(50, 10, n_samples),
-        'segment': np.random.choice(['A', 'B', 'C'], n_samples)
-    })
-    
-    df['treatment'] = 0
-    for seg in df['segment'].unique():
-        mask = df['segment'] == seg
-        df.loc[mask, 'treatment'] = np.random.binomial(1, 0.5, mask.sum())
-        
-    df['outcome'] = df['baseline_metric'] + df['treatment'] * effect + np.random.normal(0, 5, n_samples)
-    
-    treatment_out = df[df['treatment'] == 1]['outcome']
-    control_out = df[df['treatment'] == 0]['outcome']
-    
-    t_stat, p_val = stats.ttest_ind(treatment_out, control_out, equal_var=False)
-    effect_size = float(np.mean(treatment_out) - np.mean(control_out))
-    
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4))
-    axes[0].hist(control_out, bins=20, alpha=0.5, label='Control', color='blue')
-    axes[0].hist(treatment_out, bins=20, alpha=0.5, label='Treatment', color='orange')
-    axes[0].set_title('Outcome Distribution')
-    axes[0].legend()
-    
-    axes[1].bar(['Control', 'Treatment'], [np.mean(control_out), np.mean(treatment_out)], color=['blue', 'orange'])
-    axes[1].set_title('Mean Outcome Comparison')
-    plt.tight_layout()
-    
-    return {
-        "t_statistic": float(t_stat),
-        "p_value": float(p_val),
-        "observed_effect": effect_size,
-        "significant": bool(p_val < 0.05),
-        "plot_saved": False
-    }
-
-if __name__ == "__main__":
-    results = run_ab_test_workflow()
-    print(f"Experiment Results: {results}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-causal-inference` | Causal Inference techniques | Complementary to this skill |
-| `coding-ds-ab-testing` | Ab Testing techniques | Complementary to this skill |
-| `coding-ds-observational-studies` | Observational Studies techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Randomized Experiments
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-- DRY (Don't Repeat Yourself) and SOLID principles for maintainable experimental code
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50
+|

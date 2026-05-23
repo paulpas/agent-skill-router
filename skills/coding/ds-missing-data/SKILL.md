@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete
-  datasets while preserving information"'
+description: '"Handles missing data using imputation strategies, deletion methods,
+  and techniques for dealing with incomplete datasets while preserving information"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-data-quality, ds-eda, ds-feature-engineering
   role: implementation
   scope: implementation
-  triggers: missing data, imputation, NaN handling, missing values, how do i handle missing data, data gaps
+  triggers: missing data, imputation, NaN handling, missing values, how do i handle
+    missing data, data gaps
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: missing-data
----
+------
 # Missing Data Handling
 
 Comprehensive guide to missing data handling in machine learning and data science workflows.
@@ -190,105 +203,4 @@ else:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from typing import Dict, Any
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.impute import SimpleImputer
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report
-
-def handle_missing_data_pipeline(data: pd.DataFrame, target_col: str) -> Dict[str, Any]:
-    """
-    Complete pipeline for handling missing data and evaluating impact.
-    """
-    if data.empty or target_col not in data.columns:
-        raise ValueError("Invalid input data or target column")
-        
-    X = data.drop(columns=[target_col])
-    y = data[target_col]
-    
-    np.random.seed(42)
-    missing_mask = np.random.random(X.shape) < 0.2
-    X_missing = X.copy()
-    X_missing.values[missing_mask] = np.nan
-    
-    X_dropped = X_missing.dropna()
-    y_dropped = y.loc[X_dropped.index]
-    
-    imputer = SimpleImputer(strategy="median")
-    X_imputed = pd.DataFrame(imputer.fit_transform(X_missing), columns=X_missing.columns, index=X_missing.index)
-    
-    X_train_d, X_test_d, y_train_d, y_test_d = train_test_split(X_dropped, y_dropped, test_size=0.2, random_state=42)
-    X_train_i, X_test_i, y_train_i, y_test_i = train_test_split(X_imputed, y, test_size=0.2, random_state=42)
-    
-    clf_d = RandomForestClassifier(n_estimators=10, random_state=42)
-    clf_d.fit(X_train_d, y_train_d)
-    pred_d = clf_d.predict(X_test_d)
-    
-    clf_i = RandomForestClassifier(n_estimators=10, random_state=42)
-    clf_i.fit(X_train_i, y_train_i)
-    pred_i = clf_i.predict(X_test_i)
-    
-    return {
-        "dropped_data_shape": X_dropped.shape,
-        "imputed_data_shape": X_imputed.shape,
-        "dropped_model_report": classification_report(y_test_d, pred_d, output_dict=True),
-        "imputed_model_report": classification_report(y_test_i, pred_i, output_dict=True),
-        "status": "success"
-    }
-
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=500, n_features=10, n_informative=5, random_state=42)
-    df = pd.DataFrame(X, columns=[f"feat_{i}" for i in range(10)])
-    df["target"] = y
-    results = handle_missing_data_pipeline(df, "target")
-    print(f"Status: {results['status']}")
-    print(f"Dropped shape: {results['dropped_data_shape']}")
-    print(f"Imputed shape: {results['imputed_data_shape']}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-data-quality` | Data Quality techniques | Complementary to this skill |
-| `coding-ds-eda` | Eda techniques | Complementary to this skill |
-| `coding-ds-feature-engineering` | Feature Engineering techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Missing Data Handling
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-- ISO 8000 (Data Quality) standard for handling incomplete datasets
-- DRY and KISS principles for maintainable data pipelines
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

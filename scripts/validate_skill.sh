@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Validates a SKILL.md file against the stub detection rules.
 # Usage:
-#   ./scripts/validate_skill.sh skills/coding/my-skill/SKILL.md        # static checks only
+#   ./scripts/validate_skill.sh skills/coding/my-skill/SKILL.md        # static checks (includes routing metadata)
 #   ./scripts/validate_skill.sh --llm skills/coding/my-skill/SKILL.md  # + LLM quality check
 # Exit codes: 0=PASS, 1=FAIL
 
@@ -69,6 +69,22 @@ if [ "$generic_count" -ge 2 ]; then
     REASONS+=("Generic Core Workflow detected (${generic_count}/4 stub phrases found)")
 fi
 
+# ── Static Check 5: Advanced routing metadata presence ────────────────────────
+if ! grep -q "archetypes:" "$SKILL_FILE" 2>/dev/null; then
+    PASS=false
+    REASONS+=("Missing archetypes in metadata — required for intent-aware skill selection")
+fi
+
+if ! grep -q "anti_triggers:" "$SKILL_FILE" 2>/dev/null; then
+    PASS=false
+    REASONS+=("Missing anti_triggers in metadata — required to prevent generic skill dominance")
+fi
+
+if ! grep -q "response_profile:" "$SKILL_FILE" 2>/dev/null; then
+    PASS=false
+    REASONS+=("Missing response_profile in metadata — required for output quality matching")
+fi
+
 # ── Report static check results ───────────────────────────────────────────────
 if [ "$PASS" = false ]; then
     echo "❌ FAIL: $SKILL_FILE" >&2
@@ -76,7 +92,7 @@ if [ "$PASS" = false ]; then
         echo "   • $reason" >&2
     done
     echo "" >&2
-    echo "   See SKILL_FORMAT_SPEC.md for requirements." >&2
+    echo "   See SKILL_FORMAT_SPEC.md for requirements (routing metadata is mandatory)." >&2
     exit 1
 fi
 
@@ -86,7 +102,7 @@ if [ "$LLM_CHECK" = true ]; then
 
     if [ ! -x "$OPENCODE" ]; then
         echo "⚠️  opencode not found at $OPENCODE — skipping LLM check" >&2
-        echo "✅ PASS (static only): $SKILL_FILE"
+        echo "✅ PASS (static — stub-free, routing-metadata present): $SKILL_FILE"
         exit 0
     fi
 
@@ -136,16 +152,16 @@ print(verdict)
         echo "❌ LLM FAIL: $SKILL_FILE" >&2
         echo "   $llm_verdict" >&2
         echo "" >&2
-        echo "   See SKILL_FORMAT_SPEC.md for requirements." >&2
+        echo "   See SKILL_FORMAT_SPEC.md for requirements (routing metadata is mandatory)." >&2
         exit 1
     elif echo "$llm_verdict" | grep -qE "^PASS"; then
-        echo "✅ PASS (static + LLM): $SKILL_FILE"
+        echo "✅ PASS (static + LLM — stub-free, routing-metadata present): $SKILL_FILE"
     else
         echo "⚠️  LLM verdict unclear ('$llm_verdict') — treating as PASS" >&2
-        echo "✅ PASS (static, LLM unclear): $SKILL_FILE"
+        echo "✅ PASS (static, LLM unclear — stub-free, routing-metadata present): $SKILL_FILE"
     fi
 else
-    echo "✅ PASS (static): $SKILL_FILE"
+    echo "✅ PASS (static — stub-free, routing-metadata present): $SKILL_FILE"
 fi
 
 exit 0

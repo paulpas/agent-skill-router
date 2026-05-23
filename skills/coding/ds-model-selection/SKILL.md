@@ -6,20 +6,33 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison
-  techniques"'
+description: '"Provides Compares and selects models using AIC, BIC, validation curves,
+  learning curves, and model comparison techniques"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-bias-variance-tradeoff, ds-cross-validation, ds-ensemble-methods, ds-hyperparameter-tuning ds-regression-evaluation
+  related-skills: ds-bias-variance-tradeoff, ds-cross-validation, ds-ensemble-methods,
+    ds-hyperparameter-tuning ds-regression-evaluation
   role: implementation
   scope: implementation
   triggers: model selection, AIC, BIC, validation curves, learning curves, model comparison
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: model-selection
----
+------
 # Model Selection
 
 Comprehensive guide to model selection in machine learning and data science workflows.
@@ -224,73 +237,4 @@ def good_selection(X: np.ndarray, y: np.ndarray) -> float:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from typing import Dict, Any
-from sklearn.model_selection import train_test_split, learning_curve
-from sklearn.linear_model import LinearRegression, Ridge
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.datasets import make_regression
-
-def calculate_aic_bic(n: int, rss: float, k: int) -> tuple:
-    """Calculate AIC and BIC for linear regression models."""
-    if rss <= 0:
-        raise ValueError("Residual sum of squares must be positive")
-    aic = n * np.log(rss / n) + 2 * k
-    bic = n * np.log(rss / n) + k * np.log(n)
-    return float(aic), float(bic)
-
-def run_model_selection_workflow() -> pd.DataFrame:
-    X, y = make_regression(n_samples=800, n_features=5, noise=0.2, random_state=42)
-    df = pd.DataFrame(X, columns=[f'feature_{i}' for i in range(X.shape[1])])
-    df['target'] = y
-
-    X_train, X_test, y_train, y_test = train_test_split(
-        df.drop('target', axis=1), df['target'], test_size=0.2, random_state=42
-    )
-
-    models: Dict[str, Any] = {
-        'OLS': LinearRegression(),
-        'Ridge (alpha=1.0)': Ridge(alpha=1.0),
-        'Ridge (alpha=10.0)': Ridge(alpha=10.0)
-    }
-
-    comparison_results = []
-    for name, model in models.items():
-        model.fit(X_train, y_train)
-        y_pred = model.predict(X_test)
-        rss = np.sum((y_test - y_pred) ** 2)
-        k = model.n_features_in_ + 1 if hasattr(model, 'n_features_in_') else X_train.shape[1] + 1
-        aic, bic = calculate_aic_bic(len(y_test), rss, k)
-        r2 = r2_score(y_test, y_pred)
-        mse = mean_squared_error(y_test, y_pred)
-
-        comparison_results.append({
-            'model': name,
-            'r2_score': float(r2),
-            'mse': float(mse),
-            'aic': float(aic),
-            'bic': float(bic)
-        })
-
-    results_df = pd.DataFrame(comparison_results)
-    print("Model Comparison Results:")
-    print(results_df.to_string(index=False))
-
-    best_model = models['OLS']
-    train_sizes, train_scores, val_scores = learning_curve(
-        best_model, X_train, y_train, cv=5, scoring='r2', train_sizes=np.linspace(0.1, 1.0, 10)
-    )
-    train_mean = np.mean(train_scores, axis=1)
-    val_mean = np.mean
+|

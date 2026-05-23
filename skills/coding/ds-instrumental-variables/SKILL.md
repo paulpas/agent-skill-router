@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal
-  effects in observational data"'
+description: '"Provides Uses instrumental variables (IV), two-stage least squares
+  (2SLS), and IV estimation to identify causal effects in observational data"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-causal-inference, ds-linear-regression, ds-observational-studies
   role: implementation
   scope: implementation
-  triggers: instrumental variables, IV, 2SLS, endogeneity, causal effect, how do i handle endogeneity
+  triggers: instrumental variables, IV, 2SLS, endogeneity, causal effect, how do i
+    handle endogeneity
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: instrumental-variables
----
+------
 # Instrumental Variables
 
 Comprehensive guide to instrumental variables in machine learning and data science workflows.
@@ -223,92 +236,4 @@ def good_iv_implementation(df: pd.DataFrame, z_col: str, x_col: str, y_col: str)
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import statsmodels.api as sm
-from sklearn.metrics import mean_squared_error, r2_score
-from typing import Dict, Any
-
-def implement_iv_analysis(data: pd.DataFrame, instrument_cols: list, 
-                          endog_cols: list, exog_cols: list = None) -> Dict[str, Any]:
-    """
-    Complete implementation of Instrumental Variables analysis.
-    Demonstrates data validation, 2SLS fitting, OLS comparison, and evaluation.
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    
-    required = instrument_cols + endog_cols + exog_cols + ['target']
-    missing = [c for c in required if c not in data.columns]
-    if missing:
-        raise ValueError(f"Missing required columns: {missing}")
-        
-    X_endog = data[endog_cols]
-    X_exog = data[exog_cols] if exog_cols else pd.DataFrame(index=data.index)
-    Z = data[instrument_cols]
-    y = data['target']
-    
-    # Stage 1: Predict endogenous variables with instruments
-    X_combined = pd.concat([X_endog, X_exog], axis=1)
-    Z_combined = pd.concat([Z, X_exog], axis=1)
-    X_const = sm.add_constant(X_combined)
-    Z_const = sm.add_constant(Z_combined)
-    
-    stage1 = sm.OLS(X_const, Z_const).fit()
-    X_hat = stage1.fittedvalues
-    
-    # Stage 2: IV Estimation
-    iv_results = sm.OLS(y, X_hat).fit()
-    
-    # OLS for comparison (biased due to endogeneity)
-    ols_results = sm.OLS(y, X_const).fit()
-    
-    # Evaluation
-    iv_preds = iv_results.predict(X_hat)
-    ols_preds = ols_results.predict(X_const)
-    
-    return {
-        'status': 'success',
-        'iv_coefficients': iv_results.params.to_dict(),
-        'iv_pvalues': iv_results.pvalues.to_dict(),
-        'iv_r_squared': iv_results.rsquared,
-        'ols_coefficients': ols_results.params.to_dict(),
-        'ols_r_squared': ols_results.rsquared,
-        'iv_rmse': np.sqrt(mean_squared_error(y, iv_preds)),
-        'ols_rmse': np.sqrt(mean_squared_error(y, ols_preds)),
-        'stage1_f_statistic': stage1.fvalue,
-        'metadata': {'rows': len(data), 'columns': data.shape[1]}
-    }
-
-if __name__ == "__main__":
-    np.random.seed(42)
-    n = 1000
-    Z = np.random.randn(n, 2)
-    X = 0.8 * Z[:, 0] + 0.5 * Z[:, 1] + np.random.randn(n) * 0.3
-    u = np.random.randn(n) * 0.4
-    y = 2.5 * X + 1.2 * Z[:, 0] + u
-    
-    df = pd.DataFrame({'x1': X, 'z1': Z[:, 0], 'z2': Z[:, 1], 'target': y})
-    results = implement_iv_analysis(df, instrument_cols=['z1', 'z2'], 
-                                    endog_cols=['x1'], exog_cols=[])
-    print(f"IV Coeff: {results['iv_coefficients']['x1']:.3f}")
-    print(f"OLS Coeff: {results['ols_coefficients']['x1']:.3f}")
-    print(f"IV RMSE: {results['iv_rmse']:.3f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-causal-inference` | Causal Inference techniques | Complementary to this skill |
-| `coding-ds-linear-regression` | Linear Regression techniques | Complementary to this skill
+|

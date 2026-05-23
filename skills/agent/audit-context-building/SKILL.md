@@ -5,8 +5,8 @@ content-types:
 - guidance
 - examples
 - do-dont
-description: Implements intelligent audit context building with multi-factor skill selection, fallback chains, and adherence
-  to the 5 Laws of Elegant Defense
+description: Implements intelligent audit context building with multi-factor skill
+  selection, fallback chains, and adherence to the 5 Laws of Elegant Defense
 license: MIT
 maturity: stable
 metadata:
@@ -15,11 +15,22 @@ metadata:
   related-skills: agent-confidence-based-selector, agent-task-routing
   role: orchestration
   scope: orchestration
-  triggers: audit-context-building, audit context building, how do i audit-context-building, orchestrate audit-context-building,
-    automate audit-context-building, agent audit-context-building
+  triggers: audit-context-building, audit context building, how do i audit-context-building,
+    orchestrate audit-context-building, automate audit-context-building, agent audit-context-building
+  archetypes:
+  - orchestration
+  - strategic
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - single-agent monolith
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: tactical
   version: 1.0.0
 name: audit-context-building
----
+------
 # Audit Context Building
 
 Orchestrates intelligent skill selection and execution for audit context building workflows. Applies the 5 Laws of Elegant Defense to guide data naturally through the orchestration pipeline, preventing errors before they occur. Selects optimal skills based on multi-factor scoring including text similarity, historical performance, and system availability.
@@ -310,23 +321,4 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `agent-dynamic-replanner` | Replans execution when conditions change |
-| `agent-parallel-skill-runner` | Executes independent skills in parallel |
-| `agent-dependency-graph-builder` | Builds and resolves skill dependency graphs |
-| `agent-task-decomposer` | Breaks complex tasks into delegable subtasks |
-| `agent-confidence-based-selector` | Alternative confidence-based routing approach
-
----
-
-## Constraints
-
-### MUST DO
-- Ensure each agent handles a single responsibility
-- Include explicit fallback/error routing for every branching point
-- Reference code-philosophy (5 Laws of Elegant Defense)
-
-### MUST NOT DO
-- Use fixed thresholds without adaptive tuning
-- Ignore low-confidence fallback scenarios
-- Skip execution history tracking
+|

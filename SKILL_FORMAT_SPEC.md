@@ -146,6 +146,75 @@ The `metadata` block enables auto-loading, categorization, and skill discovery. 
 | `metadata.completeness`   | number | 0–100 quality completeness score                                                |
 | `metadata.exampleCount`   | number | Number of code examples included                                                |
 
+### Advanced Routing Fields (Optional)
+
+These fields enhance the router's intent-aware skill selection. Skills that include them enable more precise routing through archetype matching, anti-trigger penalties, and response profile scoring.
+
+| Field | Type | Purpose |
+|---|---|---|
+| `metadata.archetypes` | string or YAML array | Comma-separated or list of archetypes the skill serves. Values: `tactical`, `strategic`, `diagnostic`, `orchestration`, `educational`, `enforcement`, `generation`. Helps router match query intent to skill purpose. |
+| `metadata.anti_triggers` | string or YAML array | Comma-separated or list of terms that indicate the skill should be penalized for certain queries. Prevents generic skills from dominating specific task queries. |
+| `metadata.response_profile.verbosity` | string | One of: `low`, `medium`, `high`. Indicates how concise the skill's output is. |
+| `metadata.response_profile.directive_strength` | string | One of: `low`, `medium`, `high`. How strongly directive/procedural the skill is. |
+| `metadata.response_profile.abstraction_level` | string | One of: `operational`, `tactical`, `strategic`. Whether the skill operates at implementation level or planning level. |
+
+#### Example with All Fields
+
+```yaml
+---
+name: risk-stop-loss
+description: Implements stop-loss strategies to limit position losses in algorithmic trading systems.
+archetypes:
+  - tactical
+  - diagnostic
+anti_triggers:
+  - brainstorming
+  - vague ideation
+response_profile:
+  verbosity: low
+  directive_strength: high
+  abstraction_level: operational
+metadata:
+  version: "1.0.0"
+  domain: trading
+  triggers: stop loss, trailing stop, ATR stop, stop placement, position protection, emergency stop, stop-loss
+  role: implementation
+  scope: implementation
+  output-format: code
+---
+```
+
+#### How Archetypes Affect Routing
+
+The router uses archetype matching to boost or penalize skills during ranking:
+
+| Match Level | Scoring Effect |
+|---|---|
+| **Full match** (all query archetypes found in skill) | +30% score boost |
+| **Partial match** (at least one overlap) | +10% score boost |
+| **No overlap** | Neutral (1.0x factor) |
+| **Mismatch penalty** (tactical query on purely educational/strategic skills) | -20% |
+
+#### How Anti-Triggers Work
+
+When a query contains terms listed in a skill's `anti_triggers`, that skill receives a ranking penalty of **-0.15 per match** (cumulative, max -0.5). This prevents large generic skills from dominating specific task queries.
+
+Example: If a skill has `anti_triggers: brainstorming, vague ideation` and the query contains "brainstorming", that skill is penalized by 0.15 points in its final ranking score.
+
+#### How Response Profile Affects Scoring
+
+The router analyzes conciseness and directiveness to match skills with query intent:
+
+| Profile | Preferred For |
+|---|---|
+| Low verbosity + high directive strength | Tactical queries, implementation tasks |
+| High verbosity + low directive strength | Strategic/educational queries, planning |
+| Medium across all dimensions | General-purpose queries |
+
+Skills whose response profile matches the inferred query intent receive a ranking boost. Skills with mismatched profiles are deprioritized.
+
+---
+
 ### Complete Frontmatter Examples by Domain
 
 #### `agent/*` Skill

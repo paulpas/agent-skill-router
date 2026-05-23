@@ -5,8 +5,8 @@ content-types:
 - guidance
 - examples
 - do-dont
-description: Implements intelligent m365 agents ts with multi-factor skill selection, fallback chains, and adherence to the
-  5 Laws of Elegant Defense
+description: Implements intelligent m365 agents ts with multi-factor skill selection,
+  fallback chains, and adherence to the 5 Laws of Elegant Defense
 license: MIT
 maturity: stable
 metadata:
@@ -15,11 +15,22 @@ metadata:
   related-skills: agent-confidence-based-selector, agent-task-routing
   role: orchestration
   scope: orchestration
-  triggers: m365-agents-ts, m365 agents ts, how do i m365-agents-ts, orchestrate m365-agents-ts, automate m365-agents-ts,
-    agent m365-agents-ts
+  triggers: m365-agents-ts, m365 agents ts, how do i m365-agents-ts, orchestrate m365-agents-ts,
+    automate m365-agents-ts, agent m365-agents-ts
+  archetypes:
+  - orchestration
+  - strategic
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - single-agent monolith
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: tactical
   version: 1.0.0
 name: m365-agents-ts
----
+------
 # M365 Agents Ts
 
 Orchestrates intelligent skill selection and execution for m365 agents ts workflows. Applies the 5 Laws of Elegant Defense to guide data naturally through the orchestration pipeline, preventing errors before they occur. Selects optimal skills based on multi-factor scoring including text similarity, historical performance, and system availability.
@@ -292,23 +303,4 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `agent-dynamic-replanner` | Replans execution when conditions change |
-| `agent-parallel-skill-runner` | Executes independent skills in parallel |
-| `agent-dependency-graph-builder` | Builds and resolves skill dependency graphs |
-| `agent-task-decomposer` | Breaks complex tasks into delegable subtasks |
-| `agent-confidence-based-selector` | Alternative confidence-based routing approach
-
----
-
-## Constraints
-
-### MUST DO
-- Ensure each agent handles a single responsibility
-- Include explicit fallback/error routing for every branching point
-- Reference code-philosophy (5 Laws of Elegant Defense)
-
-### MUST NOT DO
-- Use fixed thresholds without adaptive tuning
-- Ignore low-confidence fallback scenarios
-- Skip execution history tracking
+|

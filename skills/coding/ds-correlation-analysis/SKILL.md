@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods
-  and visualization techniques"'
+description: '"Analyzes correlation, covariance, and multivariate relationships between
+  variables using statistical methods and visualization techniques"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-data-visualization, ds-eda, ds-feature-engineering, ds-feature-interaction
   role: implementation
   scope: implementation
-  triggers: correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships
+  triggers: correlation analysis, covariance, multivariate analysis, correlation,
+    pearson, spearman, feature relationships
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: correlation-analysis
----
+------
 # Correlation Analysis
 
 Comprehensive guide to correlation analysis in machine learning and data science workflows.
@@ -207,90 +220,4 @@ def good_correlation(df: pd.DataFrame, method: str = 'pearson') -> Dict[str, Any
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.datasets import load_breast_cancer
-from typing import Dict, Any
-import warnings
-warnings.filterwarnings('ignore')
-
-def run_correlation_analysis(data: pd.DataFrame, method: str = 'pearson') -> Dict[str, Any]:
-    """
-    Complete implementation of Correlation Analysis.
-    
-    This example demonstrates:
-    - Proper input validation
-    - Core algorithm implementation
-    - Error handling
-    - Result formatting
-    - Visualization generation
-    
-    Args:
-        data: Input DataFrame with required columns
-        method: Correlation method ('pearson', 'spearman', 'kendall')
-        
-    Returns:
-        Dictionary with results and metadata
-        
-    Raises:
-        ValueError: If input data is invalid
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-        
-    numeric_data = data.select_dtypes(include=[np.number])
-    if numeric_data.shape[1] < 2:
-        raise ValueError("At least two numeric columns are required for correlation analysis")
-        
-    # Compute correlation matrix
-    corr_matrix = numeric_data.corr(method=method)
-    
-    # Generate visualization
-    plt.figure(figsize=(10, 8))
-    mask = np.triu(np.ones_like(corr_matrix, dtype=bool))
-    sns.heatmap(corr_matrix, mask=mask, annot=True, cmap='coolwarm', 
-                fmt='.2f', linewidths=0.5, square=True)
-    plt.title(f'{method.capitalize()} Correlation Matrix')
-    plt.tight_layout()
-    viz_path = 'correlation_heatmap.png'
-    plt.savefig(viz_path, dpi=150)
-    plt.close()
-    
-    # Identify multicollinearity (high correlation pairs)
-    high_corr_pairs = []
-    for i in range(len(corr_matrix)):
-        for j in range(i + 1, len(corr_matrix)):
-            col_i = corr_matrix.columns[i]
-            col_j = corr_matrix.columns[j]
-            r = corr_matrix.iloc[i, j]
-            if abs(r) > 0.8:
-                high_corr_pairs.append({'features': [col_i, col_j], 'correlation': r})
-                
-    results = {
-        'status': 'success',
-        'correlation_matrix': corr_matrix,
-        'high_correlation_pairs': high_corr_pairs,
-        'visualization_path': viz_path,
-        'metadata': {
-            'rows': len(data),
-            'columns': len(numeric_data.columns),
-            'method': method,
-            'timestamp': pd.Timestamp.now().isoformat()
-        }
-    }
-    return results
-
-# Usage and testing
-if __name
+|

@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis
-  for pattern mining"'
+description: '"Provides Discovers association rules and frequent itemsets using Apriori,
+  Eclat, and market basket analysis for pattern mining"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-clustering, ds-community-detection, ds-topic-modeling
   role: implementation
   scope: implementation
-  triggers: association rules, market basket, apriori, frequent itemsets, recommendation, pattern mining
+  triggers: association rules, market basket, apriori, frequent itemsets, recommendation,
+    pattern mining
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: association-rules
----
+------
 # Association Rules
 
 Comprehensive guide to association rules in machine learning and data science workflows.
@@ -203,50 +216,4 @@ def good_rule_mining(transactions: List[Set[str]], min_support: float = 0.1, min
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from typing import Dict, Any, List, Set
-
-def generate_market_basket_data(n_transactions: int = 1000) -> List[Set[str]]:
-    """Generate synthetic market basket data."""
-    products = ['Bread', 'Butter', 'Milk', 'Eggs', 'Coffee', 'Sugar', 'Flour', 'Cheese']
-    data = []
-    for _ in range(n_transactions):
-        txn = set()
-        if np.random.random() < 0.6: txn.add('Bread')
-        if np.random.random() < 0.5: txn.add('Butter')
-        if np.random.random() < 0.7: txn.add('Milk')
-        if np.random.random() < 0.4: txn.add('Eggs')
-        if np.random.random() < 0.3: txn.add('Coffee')
-        if np.random.random() < 0.2: txn.add('Sugar')
-        if np.random.random() < 0.25: txn.add('Flour')
-        if np.random.random() < 0.35: txn.add('Cheese')
-        if 'Bread' in txn and np.random.random() < 0.8: txn.add('Butter')
-        if 'Milk' in txn and np.random.random() < 0.7: txn.add('Eggs')
-        if txn: data.append(txn)
-    return data
-
-def implement_rules(data: List[Set[str]], min_support: float = 0.1, min_confidence: float = 0.5) -> Dict[str, Any]:
-    """
-    Complete implementation of Association Rules.
-    
-    Args:
-        data: List of sets representing transactions
-        min_support: Minimum support threshold
-        min_confidence: Minimum confidence threshold
-        
-    Returns:
-        Dictionary with rules, metrics, and visualization data
-    """
-    if not data:
+|

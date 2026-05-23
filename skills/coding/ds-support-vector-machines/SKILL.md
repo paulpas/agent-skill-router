@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for
-  classification and regression"'
+description: '"Implements support vector machines (SVM) with kernel methods, support
+  vectors, and margin maximization for classification and regression"'
 license: MIT
 maturity: stable
 metadata:
@@ -17,9 +17,21 @@ metadata:
   role: implementation
   scope: implementation
   triggers: support vector machines, SVM, kernel methods, support vectors, SVM classification
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: support-vector-machines
----
+------
 # Support Vector Machines
 
 Comprehensive guide to support vector machines in machine learning and data science workflows.
@@ -178,110 +190,4 @@ def train_svm_proper(X: pd.DataFrame, y: pd.Series) -> Dict[str, Any]:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, confusion_matrix
-from typing import Dict, Any
-
-def implement_svm_workflow(data: pd.DataFrame, target_col: str = 'target') -> Dict[str, Any]:
-    """
-    Complete SVM workflow with training, evaluation, and visualization.
-    
-    Args:
-        data: Input DataFrame containing features and target column
-        target_col: Name of the target column
-        
-    Returns:
-        Dictionary with metrics, model, scaler, and plot figure
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if target_col not in data.columns:
-        raise ValueError(f"Target column '{target_col}' not found in data")
-        
-    X = data.drop(columns=[target_col])
-    y = data[target_col]
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    scaler = StandardScaler()
-    X_train_scaled = scaler.fit_transform(X_train)
-    X_test_scaled = scaler.transform(X_test)
-    
-    model = SVC(kernel='rbf', C=1.0, gamma='scale', random_state=42)
-    model.fit(X_train_scaled, y_train)
-    
-    y_pred = model.predict(X_test_scaled)
-    acc = accuracy_score(y_test, y_pred)
-    cm = confusion_matrix(y_test, y_pred)
-    
-    fig, ax = plt.subplots()
-    ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
-    ax.set_title('Confusion Matrix')
-    ax.set_xlabel('Predicted')
-    ax.set_ylabel('True')
-    plt.tight_layout()
-    
-    return {
-        'accuracy': float(acc),
-        'confusion_matrix': cm.tolist(),
-        'model': model,
-        'scaler': scaler,
-        'figure': fig
-    }
-
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=300, n_features=2, n_informative=2, n_redundant=0, random_state=42)
-    sample_data = pd.DataFrame(X, columns=['feat_1', 'feat_2'])
-    sample_data['target'] = y
-    results = implement_svm_workflow(sample_data)
-    print(f"Accuracy: {results['accuracy']:.4f}")
-    results['figure'].show()
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-tree-methods` | Tree Methods techniques | Complementary to this skill |
-| `coding-ds-neural-networks` | Neural Networks techniques | Complementary to this skill |
-| `coding-ds-hyperparameter-tuning` | Hyperparameter Tuning techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Support Vector Machines
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

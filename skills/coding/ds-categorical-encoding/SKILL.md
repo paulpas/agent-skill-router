@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Encodes categorical variables using one-hot encoding, target encoding, ordinal encoding, embeddings,
-  and other encoding strategies"'
+description: '"Provides Encodes categorical variables using one-hot encoding, target
+  encoding, ordinal encoding, embeddings, and other encoding strategies"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-feature-engineering, ds-feature-scaling-normalization, ds-neural-networks
   role: implementation
   scope: implementation
-  triggers: categorical encoding, one-hot encoding, target encoding, ordinal encoding, categorical variables
+  triggers: categorical encoding, one-hot encoding, target encoding, ordinal encoding,
+    categorical variables
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: categorical-encoding
----
+------
 # Categorical Encoding
 
 Comprehensive guide to categorical encoding in machine learning and data science workflows.
@@ -185,85 +198,4 @@ class CategoricalEncodingPipeline:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, confusion_matrix
-from typing import Dict, Any, List
-import warnings
-warnings.filterwarnings('ignore')
-
-def implement_encoding(data: pd.DataFrame, categorical_cols: List[str], target_col: str) -> Dict[str, Any]:
-    """
-    Complete implementation of Categorical Encoding with model training and evaluation.
-    
-    Args:
-        data: Input DataFrame with categorical and numerical features
-        categorical_cols: List of column names to encode
-        target_col: Name of the target variable
-        
-    Returns:
-        Dictionary with encoded data, trained model, and evaluation metrics
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if target_col not in data.columns:
-        raise ValueError(f"Target column '{target_col}' not found in data")
-        
-    X = data.drop(target_col, axis=1)
-    y = data[target_col]
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    numeric_features = X.select_dtypes(include=[np.number]).columns.tolist()
-    preprocessor = ColumnTransformer(
-        transformers=[
-            ('num', StandardScaler(), numeric_features),
-            ('cat', OneHotEncoder(handle_unknown='ignore', sparse_output=False), categorical_cols)
-        ]
-    )
-    
-    pipeline = Pipeline(steps=[
-        ('preprocessor', preprocessor),
-        ('classifier', RandomForestClassifier(n_estimators=100, random_state=42))
-    ])
-    
-    pipeline.fit(X_train, y_train)
-    y_pred = pipeline.predict(X_test)
-    
-    metrics = {
-        'accuracy': pipeline.score(X_test, y_test),
-        'classification_report': classification_report(y_test, y_pred, output_dict=True),
-        'confusion_matrix': confusion_matrix(y_test, y_pred).tolist(),
-        'feature_names': pipeline.named_steps['preprocessor'].get_feature_names_out().tolist()
-    }
-    
-    return {
-        'status': 'success',
-        'pipeline': pipeline,
-        'metrics': metrics,
-        'metadata': {'train_size': len(X_train), 'test_size': len(X_test)}
-    }
-
-if __name__ == "__main__":
-    X_sample, y_sample = make_classification(n_samples=1000, n_features=5, n_informative=3, 
-                                             n_redundant=1, n_classes=2, random_state=42)
-    df_sample = pd.DataFrame(X_sample, columns=['num1', 'num2', 'num3', 'cat1', 'cat2'])
-    df_sample['target'] = y_sample
-    
-    results = implement_encoding(df_sample, categorical_cols=['cat1', 'cat2'], target_col='target')
-    print(f"Status: {results['status']}
+|

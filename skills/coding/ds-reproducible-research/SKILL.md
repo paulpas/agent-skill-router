@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements reproducible research practices including code organization, environment management, documentation,
-  and experiment tracking"'
+description: '"Implements reproducible research practices including code organization,
+  environment management, documentation, and experiment tracking"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-data-versioning, ds-explainability, ds-model-robustness, ds-privacy-ml
   role: implementation
   scope: implementation
-  triggers: reproducible research, reproducibility, code organization, environment, notebooks, how do I reproduce
+  triggers: reproducible research, reproducibility, code organization, environment,
+    notebooks, how do I reproduce
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: reproducible-research
----
+------
 # Reproducible Research
 
 Comprehensive guide to reproducible research in machine learning and data science workflows.
@@ -175,111 +188,4 @@ def good_pipeline(data: pd.DataFrame, seed: int = 42) -> float:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import os
-import json
-import logging
-import pandas as pd
-import numpy as np
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, accuracy_score
-from typing import Dict, Any, Tuple
-from pathlib import Path
-
-logger = logging.getLogger(__name__)
-
-def run_reproducible_pipeline(
-    data: pd.DataFrame, 
-    target_col: str, 
-    output_dir: str = "./results"
-) -> Dict[str, Any]:
-    """
-    Executes a fully reproducible ML pipeline with data splitting, training, 
-    evaluation, and artifact persistence. Follows KISS and DRY principles.
-    """
-    os.makedirs(output_dir, exist_ok=True)
-    seed = 42
-    np.random.seed(seed)
-    
-    if target_col not in data.columns:
-        raise ValueError(f"Target column '{target_col}' not found in data")
-        
-    X = data.drop(columns=[target_col])
-    y = data[target_col]
-    
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=seed, stratify=y
-    )
-    
-    model = RandomForestClassifier(n_estimators=100, random_state=seed)
-    model.fit(X_train, y_train)
-    
-    y_pred = model.predict(X_test)
-    acc = accuracy_score(y_test, y_pred)
-    report = classification_report(y_test, y_pred, output_dict=True)
-    
-    results = {
-        'accuracy': acc,
-        'classification_report': report,
-        'train_size': len(X_train),
-        'test_size': len(X_test),
-        'seed': seed
-    }
-    
-    with open(os.path.join(output_dir, "results.json"), "w") as f:
-        json.dump(results, f, indent=2)
-        
-    logger.info(f"Pipeline completed. Accuracy: {acc:.4f}")
-    return results
-
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=1000, n_features=10, random_state=42)
-    df = pd.DataFrame(X, columns=[f"feat_{i}" for i in range(10)])
-    df['target'] = y
-    res = run_reproducible_pipeline(df, 'target')
-    print(f"Final Accuracy: {res['accuracy']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-data-versioning` | Data Versioning techniques | Complementary to this skill |
-| `coding-ds-explainability` | Explainability techniques | Complementary to this skill |
-| `coding-ds-model-robustness` | Model Robustness techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Reproducible Research
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-- DRY (Don't Repeat Yourself) and KISS (Keep It Simple, Stupid) software engineering principles
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

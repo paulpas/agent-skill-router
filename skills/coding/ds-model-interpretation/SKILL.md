@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Interprets models using SHAP values, LIME, feature importance, permutation importance, and other explainability
-  techniques"'
+description: '"Provides Interprets models using SHAP values, LIME, feature importance,
+  permutation importance, and other explainability techniques"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-explainability, ds-feature-selection, ds-model-fairness
   role: implementation
   scope: implementation
-  triggers: model interpretation, SHAP, LIME, feature importance, explainability, how do I explain models
+  triggers: model interpretation, SHAP, LIME, feature importance, explainability,
+    how do I explain models
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: model-interpretation
----
+------
 # Model Interpretation
 
 Comprehensive guide to model interpretation in machine learning and data science workflows.
@@ -179,119 +192,4 @@ if __name__ == "__main__":
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.datasets import load_diabetes
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-from typing import Dict, Any
-
-def implement_interpretation(data: pd.DataFrame, target_col: str) -> Dict[str, Any]:
-    """
-    Complete implementation of Model Interpretation.
-    
-    This example demonstrates:
-    - Proper input validation
-    - Core algorithm implementation
-    - Error handling
-    - Result formatting
-    
-    Args:
-        data: Input DataFrame with required columns
-        target_col: Name of the target variable
-        
-    Returns:
-        Dictionary with results and metadata
-        
-    Raises:
-        ValueError: If input data is invalid
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if target_col not in data.columns:
-        raise ValueError(f"Target column '{target_col}' not found in data")
-        
-    X = data.drop(columns=[target_col])
-    y = data[target_col]
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    model = RandomForestRegressor(n_estimators=100, random_state=42)
-    model.fit(X_train, y_train)
-    
-    y_pred = model.predict(X_test)
-    mse = mean_squared_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-    
-    importances = model.feature_importances_
-    feature_names = X.columns.tolist()
-    sorted_idx = np.argsort(importances)[::-1]
-    
-    plt.figure(figsize=(8, 5))
-    plt.barh(range(len(importances)), importances[sorted_idx])
-    plt.yticks(range(len(importances)), [feature_names[i] for i in sorted_idx])
-    plt.xlabel("Mean Decrease in Impurity")
-    plt.title("Feature Importance (Random Forest)")
-    plt.tight_layout()
-    plt.show()
-    
-    return {
-        "status": "success",
-        "metrics": {"mse": float(mse), "r2": float(r2)},
-        "feature_importances": dict(zip(feature_names, importances)),
-        "top_features": [feature_names[i] for i in sorted_idx[:3]]
-    }
-
-if __name__ == "__main__":
-    diabetes = load_diabetes()
-    sample_data = pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
-    sample_data["target"] = diabetes.target
-    results = implement_interpretation(sample_data, "target")
-    print(f"Status: {results['status']}")
-    print(f"R2 Score: {results['metrics']['r2']:.4f}")
-    print(f"Top 3 Features: {results['top_features']}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-feature-selection` | Feature Selection techniques | Complementary to this skill |
-| `coding-ds-explainability` | Explainability techniques | Complementary to this skill |
-| `coding-ds-model-fairness` | Model Fairness techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Model Interpretation
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

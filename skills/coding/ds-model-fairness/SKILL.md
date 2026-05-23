@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Evaluates and mitigates fairness issues including bias detection, fairness metrics, and debiasing strategies
-  in machine learning"'
+description: '"Evaluates and mitigates fairness issues including bias detection, fairness
+  metrics, and debiasing strategies in machine learning"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-explainability, ds-model-interpretation, ds-model-robustness, ds-privacy-ml ds-privacy-ml
+  related-skills: ds-explainability, ds-model-interpretation, ds-model-robustness,
+    ds-privacy-ml ds-privacy-ml
   role: implementation
   scope: implementation
-  triggers: model fairness, fairness metrics, bias detection, debiasing, fair machine learning, how do I check bias
+  triggers: model fairness, fairness metrics, bias detection, debiasing, fair machine
+    learning, how do I check bias
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: model-fairness
----
+------
 # Model Fairness
 
 Comprehensive guide to model fairness in machine learning and data science workflows.
@@ -181,119 +195,4 @@ class ModelFairnessAuditor:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report
-from typing import Dict, Any
-
-def implement_fairness_pipeline(data: pd.DataFrame, sensitive_col: str, target_col: str) -> Dict[str, Any]:
-    """
-    Complete fairness-aware ML pipeline.
-    Demonstrates bias detection, metric calculation, and simple reweighting debiasing.
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if sensitive_col not in data.columns or target_col not in data.columns:
-        raise ValueError(f"Columns '{sensitive_col}' and '{target_col}' must exist in data")
-
-    X = data.drop(columns=[target_col, sensitive_col])
-    y = data[target_col]
-    sensitive = data[sensitive_col]
-
-    X_train, X_test, y_train, y_test, s_train, s_test = train_test_split(
-        X, y, sensitive, test_size=0.2, random_state=42, stratify=y
-    )
-
-    # Train baseline model
-    baseline_model = LogisticRegression(random_state=42)
-    baseline_model.fit(X_train, y_train)
-    y_pred_base = baseline_model.predict(X_test)
-
-    # Calculate baseline fairness metrics
-    def fairness_diff(y_true, y_pred, sensitive):
-        groups = np.unique(sensitive)
-        rates = [np.mean(y_pred[sensitive == g]) for g in groups]
-        return max(rates) - min(rates)
-
-    dp_diff_base = fairness_diff(y_test, y_pred_base, s_test)
-
-    # Simple Reweighting Debiasing: Adjust sample weights based on sensitive attribute
-    # Groups with lower positive rate get higher weight
-    group_weights = {}
-    for g in np.unique(s_train):
-        mask = s_train == g
-        pos_rate = np.mean(y_train[mask])
-        group_weights[g] = 1.0 / max(pos_rate, 1e-6)
-    
-    weights = np.array([group_weights[s] for s in s_train])
-    
-    # Train debiased model
-    debiased_model = LogisticRegression(random_state=42)
-    debiased_model.fit(X_train, y_train, sample_weight=weights)
-    y_pred_debiased = debiased_model.predict(X_test)
-    dp_diff_debiased = fairness_diff(y_test, y_pred_debiased, s_test)
-
-    return {
-        "baseline_accuracy": accuracy_score(y_test, y_pred_base),
-        "baseline_dp_diff": dp_diff_base,
-        "debiased_accuracy": accuracy_score(y_test, y_pred_debiased),
-        "debiased_dp_diff": dp_diff_debiased,
-        "status": "success"
-    }
-
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=2000, n_features=10, n_informative=5, random_state=42)
-    sensitive = np.random.randint(0, 2, size=2000)
-    df = pd.DataFrame(X, columns=[f'feat_{i}' for i in range(10)])
-    df['target'] = y
-    df['sensitive'] = sensitive
-    
-    results = implement_fairness_pipeline(df, sensitive_col='sensitive', target_col='target')
-    print(f"Baseline DP Diff: {results['baseline_dp_diff']:.4f}")
-    print(f"Debiased DP Diff: {results['debiased_dp_diff']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-explainability` | Explainability techniques | Complementary to this skill |
-| `coding-ds-model-robustness` | Model Robustness techniques | Complementary to this skill |
-| `coding-ds-privacy-ml` | Privacy Ml techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Model Fairness
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based
-  methods"'
+description: '"Selects relevant features using univariate selection, recursive elimination,
+  stability selection, and importance-based methods"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-feature-engineering, ds-feature-interaction, ds-hyperparameter-tuning, ds-model-interpretation ds-model-interpretation
+  related-skills: ds-feature-engineering, ds-feature-interaction, ds-hyperparameter-tuning,
+    ds-model-interpretation ds-model-interpretation
   role: implementation
   scope: implementation
-  triggers: feature selection, feature importance, recursive elimination, univariate selection, feature selection methods
+  triggers: feature selection, feature importance, recursive elimination, univariate
+    selection, feature selection methods
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: feature-selection
----
+------
 # Feature Selection
 
 Comprehensive guide to feature selection in machine learning and data science workflows.
@@ -155,114 +169,4 @@ class FeatureSelectionPipeline:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.feature_selection import SelectKBest, f_classif, RFECV
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, accuracy_score
-from sklearn.pipeline import Pipeline
-
-def run_comprehensive_feature_selection() -> Dict[str, Any]:
-    """Demonstrates multiple feature selection strategies on a synthetic dataset."""
-    # Generate realistic classification dataset
-    X, y = make_classification(
-        n_samples=500, n_features=20, n_informative=5, 
-        n_redundant=3, n_classes=2, random_state=42
-    )
-    feature_names = [f"feature_{i}" for i in range(X.shape[1])]
-    df = pd.DataFrame(X, columns=feature_names)
-    df['target'] = y
-    
-    X_train, X_test, y_train, y_test = train_test_split(
-        df.drop('target', axis=1), df['target'], test_size=0.2, random_state=42
-    )
-    
-    # Method 1: Univariate Selection (SelectKBest)
-    selector_kbest = SelectKBest(score_func=f_classif, k=5)
-    X_train_kbest = selector_kbest.fit_transform(X_train, y_train)
-    X_test_kbest = selector_kbest.transform(X_test)
-    
-    clf_kbest = RandomForestClassifier(n_estimators=100, random_state=42)
-    clf_kbest.fit(X_train_kbest, y_train)
-    y_pred_kbest = clf_kbest.predict(X_test_kbest)
-    acc_kbest = accuracy_score(y_test, y_pred_kbest)
-    print(f"SelectKBest Accuracy: {acc_kbest:.4f}")
-    
-    # Method 2: Recursive Feature Elimination with Cross-Validation
-    rf = RandomForestClassifier(n_estimators=100, random_state=42)
-    rfecv = RFECV(estimator=rf, step=1, cv=5, scoring='accuracy')
-    rfecv.fit(X_train, y_train)
-    X_train_rfecv = rfecv.transform(X_train)
-    X_test_rfecv = rfecv.transform(X_test)
-    
-    clf_rfecv = RandomForestClassifier(n_estimators=100, random_state=42)
-    clf_rfecv.fit(X_train_rfecv, y_train)
-    y_pred_rfecv = clf_rfecv.predict(X_test_rfecv)
-    acc_rfecv = accuracy_score(y_test, y_pred_rfecv)
-    print(f"RFECV Accuracy: {acc_rfecv:.4f} (Selected {rfecv.n_features_} features)")
-    
-    # Method 3: Importance-Based Selection via Pipeline
-    pipeline = Pipeline([
-        ('selector', SelectKBest(f_classif, k=8)),
-        ('classifier', RandomForestClassifier(n_estimators=100, random_state=42))
-    ])
-    pipeline.fit(X_train, y_train)
-    y_pred_pipe = pipeline.predict(X_test)
-    acc_pipe = accuracy_score(y_test, y_pred_pipe)
-    print(f"Pipeline Accuracy: {acc_pipe:.4f}")
-    
-    return {
-        'kbest_acc': acc_kbest,
-        'rfecv_acc': acc_rfecv,
-        'pipeline_acc': acc_pipe,
-        'rfecv_selected_features': rfecv.support_
-    }
-
-if __name__ == "__main__":
-    results = run_comprehensive_feature_selection()
-    print("\nFinal Results:", results)
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-feature-engineering` | Feature Engineering techniques | Complementary to this skill |
-| `coding-ds-model-interpretation` | Model Interpretation techniques | Complementary to this skill |
-| `coding-ds-hyperparameter-tuning` | Hyperparameter Tuning techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Feature Selection
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|
