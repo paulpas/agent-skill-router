@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-23T00:25:21.620525Z",
-  "totalSkills": 816,
+  "generatedAt": "2026-05-23T21:31:05.674864Z",
+  "totalSkills": 908,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 252,
+    "coding": 344,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 404,
+    "implementation": 496,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -165,6 +165,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/go/advanced-patterns/SKILL.md"
+    },
+    {
+      "name": "adyen-api",
+      "domain": "coding",
+      "description": "Implements Adyen API integration (Payments, Checkout, Marketplaces, Risk, Reporting) using adyen Python SDK with 3D Secure 2 authentication flow, webhook signature verification, idempotency keys, and global enterprise payment processing patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "adyen",
+        "adyen checkout api",
+        "adyen payments",
+        "3d secure 2",
+        "adyen webhook verification",
+        "adyen marketplaces",
+        "adyen risk management",
+        "how do i integrate adyen payments",
+        "global payment processing"
+      ],
+      "relatedSkills": [
+        "coding-stripe-api",
+        "coding-paypal-api",
+        "coding-braintree-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/adyen-api/SKILL.md"
     },
     {
       "name": "agent-architecture-patterns",
@@ -582,6 +608,30 @@
       "source": "skills/agent/airflow-dag-patterns/SKILL.md"
     },
     {
+      "name": "airtable-api",
+      "domain": "coding",
+      "description": "Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "airtable api",
+        "pyairtable",
+        "airtable records",
+        "airtable bases",
+        "airtable python",
+        "airtable automation",
+        "airtable webhooks"
+      ],
+      "relatedSkills": [
+        "coding-google-workspace-api",
+        "coding-notion-api",
+        "coding-asana-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/airtable-api/SKILL.md"
+    },
+    {
       "name": "airtable-automation",
       "domain": "agent",
       "description": "Implements intelligent airtable automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -688,6 +738,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ampersand-operator/SKILL.md"
+    },
+    {
+      "name": "amplitude-api",
+      "domain": "coding",
+      "description": "Implements Amplitude analytics integration (event tracking, user profiles, identify API, cohort analysis, dashboard export) using amplitude-analytics Python SDK with event batching, user properties, group identify, revenue tracking, and Amplitude HTTP API v2 patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "amplitude",
+        "event tracking",
+        "user analytics",
+        "amplitude events",
+        "identify api",
+        "cohort analysis",
+        "how do i track user events in amplitude",
+        "product analytics"
+      ],
+      "relatedSkills": [
+        "coding-mixpanel-api",
+        "coding-segment-api",
+        "coding-salesforce-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/amplitude-api/SKILL.md"
     },
     {
       "name": "analyze-project",
@@ -822,6 +897,56 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-anomaly-detection/SKILL.md"
+    },
+    {
+      "name": "ansible-api",
+      "domain": "coding",
+      "description": "Integrates with Ansible via ansible-runner, the AWX/Tower API, and the Ansible Python API to manage playbooks, inventory, job templates, collections, and automation workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ansible api",
+        "ansible-runner",
+        "ansible tower",
+        "awx api",
+        "ansible playbook",
+        "ansible inventory",
+        "ansible collections",
+        "automation controller"
+      ],
+      "relatedSkills": [
+        "coding-terraform-sdk",
+        "coding-kubernetes-api",
+        "coding-docker-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ansible-api/SKILL.md"
+    },
+    {
+      "name": "anthropic-api",
+      "domain": "coding",
+      "description": "Integrates Anthropic Claude API (Messages API, Tool Use, MCP Connector, Computer Use, Batches) using the anthropic Python SDK with streaming and error handling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "anthropic",
+        "claude",
+        "claude api",
+        "messages api",
+        "tool use",
+        "mcp connector",
+        "how do i use claude api",
+        "anthropic bedrock"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-aws-bedrock",
+        "coding-mcp-protocol"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/anthropic-api/SKILL.md"
     },
     {
       "name": "anti-corruption-layer",
@@ -1512,6 +1637,30 @@
       "source": "skills/cncf/argo/SKILL.md"
     },
     {
+      "name": "asana-api",
+      "domain": "coding",
+      "description": "Integrates with Asana API to manage tasks, projects, workspaces, goals, portfolios, and webhooks using the official asana Python SDK for work management automation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "asana api",
+        "asana python",
+        "asana tasks",
+        "asana projects",
+        "asana webhooks",
+        "asana sdk",
+        "asana automation"
+      ],
+      "relatedSkills": [
+        "coding-clickup-api",
+        "coding-monday-api",
+        "coding-atlassian-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/asana-api/SKILL.md"
+    },
+    {
       "name": "ascii-diagram",
       "domain": "agent",
       "description": "Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states.",
@@ -1661,6 +1810,30 @@
       "source": "skills/coding/asyncio-patterns/SKILL.md"
     },
     {
+      "name": "atlassian-api",
+      "domain": "coding",
+      "description": "Integrates with Atlassian suite (Jira, Confluence, Bitbucket, Rovo, Forge) using atlassian-python-api to automate issue tracking, documentation, and code management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "jira api",
+        "confluence api",
+        "bitbucket api",
+        "atlassian python",
+        "jira automation",
+        "confluence pages",
+        "atlassian forge"
+      ],
+      "relatedSkills": [
+        "coding-microsoft-graph-api",
+        "coding-google-workspace-api",
+        "coding-asana-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/atlassian-api/SKILL.md"
+    },
+    {
       "name": "audio-transcriber",
       "domain": "agent",
       "description": "Implements intelligent audio transcriber with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -1754,6 +1927,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/auth-credentials/SKILL.md"
+    },
+    {
+      "name": "auth0-api",
+      "domain": "coding",
+      "description": "Implements Auth0 API integration (Authentication, Management API, Actions, Organizations, Universal Login) using auth0-python SDK v5.4+ with ManagementClient, async support, automatic token management, pagination, and CIAM workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "auth0 api",
+        "auth0 management",
+        "auth0 authentication",
+        "auth0 universal login",
+        "auth0 actions",
+        "auth0 organizations",
+        "how do i integrate auth0",
+        "ciam"
+      ],
+      "relatedSkills": [
+        "coding-okta-api",
+        "coding-entra-id-api",
+        "coding-aws-iam"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/auth0-api/SKILL.md"
     },
     {
       "name": "authentication-patterns",
@@ -1885,6 +2083,130 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/gcp-autoscaling/SKILL.md"
+    },
+    {
+      "name": "aws-bedrock",
+      "domain": "coding",
+      "description": "Integrates AWS Bedrock (Claude, Llama, Titan, Nova, Converse API, Knowledge Bases, Agents) using Boto3 with cross-model patterns and IAM auth.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "aws bedrock",
+        "boto3 bedrock",
+        "amazon nova",
+        "converse api",
+        "bedrock knowledge base",
+        "bedrock agent",
+        "how do i use bedrock",
+        "invoke model bedrock"
+      ],
+      "relatedSkills": [
+        "coding-anthropic-api",
+        "coding-openai-api",
+        "coding-langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/aws-bedrock/SKILL.md"
+    },
+    {
+      "name": "aws-iam",
+      "domain": "coding",
+      "description": "Implements AWS IAM (Identity and Access Management) integration (Users, Roles, Policies, Groups, Access Keys, MFA, STS, Identity Center) using boto3 SDK with proper credential chain, policy validation, least privilege principle, and temporary credentials.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "aws iam",
+        "boto3 iam",
+        "aws roles",
+        "iam policies",
+        "sts assume role",
+        "aws access keys",
+        "aws mfa",
+        "how do i manage aws iam"
+      ],
+      "relatedSkills": [
+        "coding-entra-id-api",
+        "coding-okta-api",
+        "coding-vault-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/aws-iam/SKILL.md"
+    },
+    {
+      "name": "aws-sdk",
+      "domain": "coding",
+      "description": "Integrates AWS services (EC2, S3, Lambda, DynamoDB, RDS) using Boto3 SDK with patterns for resource management, error handling, pagination, and IAM authentication.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "aws sdk",
+        "boto3",
+        "amazon web services",
+        "s3 bucket",
+        "ec2 instance",
+        "dynamodb table",
+        "lambda function",
+        "how do i use aws from python"
+      ],
+      "relatedSkills": [
+        "azure-sdk",
+        "google-cloud-sdk",
+        "oci-sdk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/aws-sdk/SKILL.md"
+    },
+    {
+      "name": "azure-openai",
+      "domain": "coding",
+      "description": "Integrates Azure OpenAI Service (GPT deployments, Responses API, Content Filters, Entra ID auth, Assistants) using the OpenAI SDK with Azure v1 endpoint patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "azure openai",
+        "azure openai service",
+        "azure gpt",
+        "azure responses api",
+        "content filters",
+        "azure openai deployment",
+        "how do i use azure openai",
+        "microsoft foundry"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-aws-bedrock",
+        "coding-langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/azure-openai/SKILL.md"
+    },
+    {
+      "name": "azure-sdk",
+      "domain": "coding",
+      "description": "Integrates Azure services (Resource Manager, Blob Storage, Cosmos DB, Functions, AKS, Key Vault) using the Azure SDK for Python with authentication and management patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "azure sdk",
+        "microsoft azure",
+        "azure blob storage",
+        "cosmos db",
+        "azure functions",
+        "resource management",
+        "how do i use azure from python"
+      ],
+      "relatedSkills": [
+        "aws-sdk",
+        "google-cloud-sdk",
+        "oci-sdk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/azure-sdk/SKILL.md"
     },
     {
       "name": "backfill-strategy",
@@ -2178,6 +2500,56 @@
       "source": "skills/coding/ds-bias-variance-tradeoff/SKILL.md"
     },
     {
+      "name": "bigquery-sdk",
+      "domain": "coding",
+      "description": "Integrates Google BigQuery using google-cloud-bigquery 3.x with patterns for SQL queries, dataset/table management, streaming inserts, BI Engine, and load jobs from GCS.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "bigquery",
+        "google cloud bigquery",
+        "bigquery sql",
+        "how do i query bigquery from python",
+        "bigquery streaming",
+        "google-cloud-bigquery",
+        "bi engine",
+        "bigquery load job"
+      ],
+      "relatedSkills": [
+        "coding-snowflake-sdk",
+        "coding-databricks-sdk",
+        "coding-google-cloud-sdk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/bigquery-sdk/SKILL.md"
+    },
+    {
+      "name": "bitbucket-api",
+      "domain": "coding",
+      "description": "Integrates with Bitbucket Cloud and Bitbucket Data Center REST APIs via atlassian-python-api to manage repositories, pull requests, pipelines, webhooks, and workspace settings.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "bitbucket api",
+        "atlassian-python-api",
+        "bitbucket cloud",
+        "bitbucket pipelines",
+        "pull request bitbucket",
+        "bitbucket webhooks",
+        "manage bitbucket repos",
+        "bitbucket data center"
+      ],
+      "relatedSkills": [
+        "coding-github-api",
+        "coding-gitlab-api",
+        "coding-jenkins-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/bitbucket-api/SKILL.md"
+    },
+    {
       "name": "bitbucket-automation",
       "domain": "agent",
       "description": "Implements intelligent bitbucket automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -2300,6 +2672,57 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/blueprint/SKILL.md"
+    },
+    {
+      "name": "box-api",
+      "domain": "coding",
+      "description": "Integrates with Box API to manage files, folders, collaborations, metadata, signatures, hubs, and AI features using the boxsdk Python SDK.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "box api",
+        "box python",
+        "box sdk",
+        "box files",
+        "box folders",
+        "box collaboration",
+        "box sign",
+        "box metadata"
+      ],
+      "relatedSkills": [
+        "coding-microsoft-graph-api",
+        "coding-google-workspace-api",
+        "coding-dropbox-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/box-api/SKILL.md"
+    },
+    {
+      "name": "braintree-api",
+      "domain": "coding",
+      "description": "Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "braintree",
+        "braintree transactions",
+        "braintree vault",
+        "braintree subscriptions",
+        "braintree marketplace",
+        "3d secure",
+        "braintree webhooks",
+        "how do i integrate braintree payments",
+        "paypal venmo integration"
+      ],
+      "relatedSkills": [
+        "coding-stripe-api",
+        "coding-paypal-api",
+        "coding-adyen-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/braintree-api/SKILL.md"
     },
     {
       "name": "branching-strategies",
@@ -2817,6 +3240,33 @@
       "source": "skills/cncf/chaosmesh/SKILL.md"
     },
     {
+      "name": "chroma",
+      "domain": "coding",
+      "description": "Integrates Chroma vector database (collections, embeddings, query, metadata filtering, persistence) using the chromadb Python SDK for local and server-based vector search.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "chroma",
+        "chromadb",
+        "vector database",
+        "embedding store",
+        "similarity search",
+        "chroma collection",
+        "how do i use chroma",
+        "local vector search"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-pinecone-api",
+        "coding-weaviate-api",
+        "coding-langchain",
+        "coding-llamaindex"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/chroma/SKILL.md"
+    },
+    {
       "name": "ci-cd-pipeline-analyzer",
       "domain": "agent",
       "description": "Implements intelligent ci cd pipeline analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -2938,6 +3388,31 @@
       "source": "skills/cncf/cilium/SKILL.md"
     },
     {
+      "name": "circleci-api",
+      "domain": "coding",
+      "description": "Integrates with the CircleCI REST API v2 to manage pipelines, workflows, jobs, contexts, environment variables, project settings, and orb configurations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "circleci api",
+        "circleci python",
+        "circleci pipelines",
+        "circleci workflows",
+        "circleci orb",
+        "circleci contexts",
+        "circleci jobs",
+        "circleci v2 api"
+      ],
+      "relatedSkills": [
+        "coding-github-api",
+        "coding-jenkins-api",
+        "coding-gitlab-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/circleci-api/SKILL.md"
+    },
+    {
       "name": "circleci-automation",
       "domain": "agent",
       "description": "Implements intelligent circleci automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -2984,6 +3459,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-classification-metrics/SKILL.md"
+    },
+    {
+      "name": "clickup-api",
+      "domain": "coding",
+      "description": "Integrates with ClickUp API v2 to manage tasks, lists, spaces, folders, goals, time tracking, dashboards, and teams using clickup-python-sdk.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "clickup api",
+        "clickup tasks",
+        "clickup lists",
+        "clickup python",
+        "clickup automation",
+        "clickup time tracking",
+        "clickup custom fields"
+      ],
+      "relatedSkills": [
+        "coding-asana-api",
+        "coding-monday-api",
+        "coding-atlassian-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/clickup-api/SKILL.md"
     },
     {
       "name": "clickup-automation",
@@ -3462,6 +3961,31 @@
       "source": "skills/cncf/cloudevents/SKILL.md"
     },
     {
+      "name": "cloudflare-api",
+      "domain": "coding",
+      "description": "Integrates Cloudflare services (DNS, Workers, R2, KV, Pages, Zero Trust, WAF) using the official Cloudflare Python SDK with API token authentication and resource management patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "cloudflare api",
+        "cloudflare python",
+        "workers ai",
+        "cloudflare dns",
+        "r2 object storage",
+        "kv namespace",
+        "zero trust",
+        "how do i use cloudflare api from python"
+      ],
+      "relatedSkills": [
+        "aws-sdk",
+        "vercel-api",
+        "google-cloud-sdk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/cloudflare-api/SKILL.md"
+    },
+    {
       "name": "cloudformation",
       "domain": "cncf",
       "description": "\"Creates Infrastructure as Code templates with CloudFormation for reproducible\" versioned, automated deployments of entire AWS infrastructure stacks.",
@@ -3659,6 +4183,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/code-quality-metrics/SKILL.md"
+    },
+    {
+      "name": "cohere-api",
+      "domain": "coding",
+      "description": "Integrates Cohere API (Generate, Embed, Rerank, Classify, Chat, Tool Use) using the cohere Python SDK for NLP, search, and RAG applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "cohere",
+        "cohere api",
+        "cohere embed",
+        "cohere rerank",
+        "cohere generate",
+        "cohere chat",
+        "how do i use cohere",
+        "cohere classify"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-mistral-api",
+        "coding-pinecone-api",
+        "coding-langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/cohere-api/SKILL.md"
     },
     {
       "name": "commission-model",
@@ -5248,6 +5798,57 @@
       "source": "skills/go/database-patterns/SKILL.md"
     },
     {
+      "name": "databricks-sdk",
+      "domain": "coding",
+      "description": "Integrates Databricks using databricks-sdk with patterns for job orchestration, cluster management, SQL warehouses, Unity Catalog, MLflow, and Delta Lake operations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "databricks",
+        "databricks sdk",
+        "unity catalog",
+        "databricks jobs",
+        "databricks sql warehouse",
+        "how do i use databricks from python",
+        "mlflow",
+        "delta lake"
+      ],
+      "relatedSkills": [
+        "coding-snowflake-sdk",
+        "coding-bigquery-sdk",
+        "coding-mlflow-integration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/databricks-sdk/SKILL.md"
+    },
+    {
+      "name": "datadog-api",
+      "domain": "coding",
+      "description": "Implements Datadog API integration (metrics, traces, logs, dashboards, monitors, synthetic tests) using datadog-api-client Python SDK v2+ with API key auth, async metrics submission, monitor creation, and Datadog APM tracing patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "datadog",
+        "metrics submission",
+        "datadog monitors",
+        "APM tracing",
+        "custom metrics",
+        "datadog dashboards",
+        "how do i send metrics to datadog",
+        "monitoring alerts"
+      ],
+      "relatedSkills": [
+        "coding-newrelic-api",
+        "coding-grafana-prometheus",
+        "coding-sentry-api",
+        "coding-pagerduty-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/datadog-api/SKILL.md"
+    },
+    {
       "name": "ddd-command-pattern",
       "domain": "coding",
       "description": "Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts.",
@@ -5802,6 +6403,31 @@
       "source": "skills/maker/digital-fabrication/SKILL.md"
     },
     {
+      "name": "digitalocean-api",
+      "domain": "coding",
+      "description": "Integrates DigitalOcean services (Droplets, Spaces, Kubernetes, App Platform, Databases) using the PyDo Python client with token-based authentication and resource management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "digitalocean api",
+        "pydo",
+        "digitalocean python",
+        "droplets",
+        "spaces object storage",
+        "digitalocean kubernetes",
+        "app platform",
+        "how do i use digitalocean from python"
+      ],
+      "relatedSkills": [
+        "aws-sdk",
+        "linode-api",
+        "cloudflare-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/digitalocean-api/SKILL.md"
+    },
+    {
       "name": "dimensionality-reduction",
       "domain": "coding",
       "description": "\"Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency\"",
@@ -5847,6 +6473,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/disaster-recovery/SKILL.md"
+    },
+    {
+      "name": "discord-api",
+      "domain": "coding",
+      "description": "Integrates Discord API (Gateway, REST, Slash Commands, Webhooks, Voice) using discord.py v2.7+ with proper intent configuration, cog structuring, slash command patterns, and rate-limit handling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "discord",
+        "discord bot",
+        "discord.py",
+        "slash commands",
+        "discord api",
+        "discord webhook",
+        "discord gateway",
+        "how do i make a discord bot"
+      ],
+      "relatedSkills": [
+        "coding-slack-api",
+        "coding-twilio-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/discord-api/SKILL.md"
     },
     {
       "name": "dispatching-parallel-agents",
@@ -5949,6 +6599,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/django-best-practices/SKILL.md"
+    },
+    {
+      "name": "docker-api",
+      "domain": "coding",
+      "description": "Integrates with the Docker Engine API via the docker-py SDK to manage containers, images, networks, volumes, and Swarm clusters from Python applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "docker api",
+        "docker-py",
+        "docker sdk python",
+        "docker engine api",
+        "container management",
+        "docker swarm",
+        "manage docker containers",
+        "docker compose"
+      ],
+      "relatedSkills": [
+        "coding-kubernetes-api",
+        "coding-github-api",
+        "coding-ansible-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/docker-api/SKILL.md"
     },
     {
       "name": "docker-debugging",
@@ -6186,6 +6861,30 @@
       "source": "skills/trading/risk-drawdown-control/SKILL.md"
     },
     {
+      "name": "dropbox-api",
+      "domain": "coding",
+      "description": "Integrates with Dropbox API to manage files, folders, sharing, Paper documents, and Sign requests using the official dropbox Python SDK v12.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dropbox api",
+        "dropbox python",
+        "dropbox files",
+        "dropbox sharing",
+        "dropbox paper",
+        "dropbox sign",
+        "dropbox sdk"
+      ],
+      "relatedSkills": [
+        "coding-box-api",
+        "coding-microsoft-graph-api",
+        "coding-google-workspace-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/dropbox-api/SKILL.md"
+    },
+    {
       "name": "dry-principles",
       "domain": "coding",
       "description": "Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases",
@@ -6385,6 +7084,31 @@
       "source": "skills/cncf/aws-eks/SKILL.md"
     },
     {
+      "name": "elasticsearch-sdk",
+      "domain": "coding",
+      "description": "Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "elasticsearch",
+        "elasticsearch-py",
+        "opensearch",
+        "full-text search",
+        "elastic aggregations",
+        "how do i search data from python",
+        "elk stack",
+        "vector search"
+      ],
+      "relatedSkills": [
+        "coding-mongodb-driver",
+        "coding-postgresql-sdk",
+        "coding-rag-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/elasticsearch-sdk/SKILL.md"
+    },
+    {
       "name": "elb",
       "domain": "cncf",
       "description": "\"Configures Elastic Load Balancing (ALB, NLB, Classic) for distributing\" traffic across instances with health checks, SSL termination, and cross-AZ failover.",
@@ -6409,6 +7133,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/aws-elb/SKILL.md"
+    },
+    {
+      "name": "elevenlabs-api",
+      "domain": "coding",
+      "description": "Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "elevenlabs",
+        "eleven labs",
+        "tts",
+        "text to speech",
+        "voice cloning",
+        "elevenlabs api",
+        "how do i use elevenlabs",
+        "AI voice"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-stabilityai-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/elevenlabs-api/SKILL.md"
     },
     {
       "name": "em-dash-guide",
@@ -6532,6 +7280,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-ensemble-methods/SKILL.md"
+    },
+    {
+      "name": "entra-id-api",
+      "domain": "coding",
+      "description": "Implements Microsoft Entra ID (Azure AD) API integration (Users, Groups, Applications, Service Principals, Conditional Access, B2C) using msgraph-sdk Python + azure.identity with MSAL authentication patterns, Graph API batches, delta queries, and RBAC.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "microsoft entra id",
+        "azure active directory",
+        "ms graph api",
+        "azure ad users",
+        "azure ad groups",
+        "microsoft graph",
+        "how do i integrate azure ad",
+        "conditional access"
+      ],
+      "relatedSkills": [
+        "coding-okta-api",
+        "coding-auth0-api",
+        "coding-aws-iam"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/entra-id-api/SKILL.md"
     },
     {
       "name": "envoy",
@@ -7227,6 +8000,31 @@
       "source": "skills/agent/finishing-a-development-branch/SKILL.md"
     },
     {
+      "name": "firebase-sdk",
+      "domain": "coding",
+      "description": "Integrates Firebase using firebase-admin 7.x with patterns for Firestore CRUD, Realtime Database, Auth (token verification, user management), Cloud Messaging, and hosting.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "firebase",
+        "firebase admin",
+        "firestore",
+        "firebase auth",
+        "how do i use firebase from python",
+        "firebase realtime database",
+        "fcm",
+        "firebase cloud messaging"
+      ],
+      "relatedSkills": [
+        "coding-supabase-sdk",
+        "coding-postgresql-sdk",
+        "coding-authentication-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/firebase-sdk/SKILL.md"
+    },
+    {
       "name": "firestore",
       "domain": "cncf",
       "description": "Provides NoSQL document database with real-time sync, offline support, and automatic scaling",
@@ -7716,6 +8514,31 @@
       "source": "skills/cncf/azure-functions/SKILL.md"
     },
     {
+      "name": "gemini-api",
+      "domain": "coding",
+      "description": "Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "gemini",
+        "gemini api",
+        "vertex ai",
+        "google genai",
+        "function calling",
+        "gemini 2.5 flash",
+        "how do i use gemini api",
+        "grounding"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-anthropic-api",
+        "coding-langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/gemini-api/SKILL.md"
+    },
+    {
       "name": "gemini-api-integration",
       "domain": "agent",
       "description": "Implements intelligent gemini api integration with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -7937,6 +8760,31 @@
       "source": "skills/agent/github-actions-templates/SKILL.md"
     },
     {
+      "name": "github-api",
+      "domain": "coding",
+      "description": "Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "github api",
+        "octokit",
+        "pygithub",
+        "github rest api",
+        "github graphql",
+        "manage repositories",
+        "github actions",
+        "pull request automation"
+      ],
+      "relatedSkills": [
+        "coding-gitlab-api",
+        "coding-bitbucket-api",
+        "coding-jenkins-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/github-api/SKILL.md"
+    },
+    {
       "name": "github-automation",
       "domain": "agent",
       "description": "Implements intelligent github automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -7979,6 +8827,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/github-workflow-automation/SKILL.md"
+    },
+    {
+      "name": "gitlab-api",
+      "domain": "coding",
+      "description": "Integrates with the GitLab REST API v4 and GraphQL API via python-gitlab to automate projects, merge requests, CI/CD pipelines, runners, and container registry management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "gitlab api",
+        "python-gitlab",
+        "gitlab ci/cd",
+        "merge request automation",
+        "gitlab pipelines",
+        "gitlab runner",
+        "gitlab graphql",
+        "manage projects"
+      ],
+      "relatedSkills": [
+        "coding-github-api",
+        "coding-bitbucket-api",
+        "coding-kubernetes-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/gitlab-api/SKILL.md"
     },
     {
       "name": "gitlab-automation",
@@ -8117,6 +8990,30 @@
       "source": "skills/agent/google-analytics-automation/SKILL.md"
     },
     {
+      "name": "google-cloud-sdk",
+      "domain": "coding",
+      "description": "Integrates Google Cloud services (Compute Engine, Cloud Storage, BigQuery, Cloud Functions, GKE, Pub/Sub) using the Google Cloud Python client libraries with authentication and resource patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "google cloud sdk",
+        "gcp python",
+        "cloud storage",
+        "bigquery",
+        "compute engine",
+        "pub sub",
+        "how do i use google cloud from python"
+      ],
+      "relatedSkills": [
+        "aws-sdk",
+        "azure-sdk",
+        "cloudflare-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/google-cloud-sdk/SKILL.md"
+    },
+    {
       "name": "google-docs-automation",
       "domain": "agent",
       "description": "Implements intelligent google docs automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -8161,6 +9058,55 @@
       "source": "skills/agent/google-drive-automation/SKILL.md"
     },
     {
+      "name": "google-maps-api",
+      "domain": "coding",
+      "description": "Implements Google Maps Platform API integration (Geocoding, Directions, Places, Distance Matrix, Time Zone, Elevation, using googlemaps Python SDK with API key authentication, address geocoding, route calculation, place search, distance matrix, and Google Maps REST API patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "google maps",
+        "google maps api",
+        "googlemaps",
+        "geocoding",
+        "directions api",
+        "places api",
+        "distance matrix",
+        "how do i integrate with google maps",
+        "map integration"
+      ],
+      "relatedSkills": [
+        "coding-mapbox-api",
+        "coding-aws-route-53"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/google-maps-api/SKILL.md"
+    },
+    {
+      "name": "google-workspace-api",
+      "domain": "coding",
+      "description": "Integrates with Google Workspace APIs (Gmail, Drive, Calendar, Docs, Sheets, Admin) using google-api-python-client for programmatic access and automation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "google workspace",
+        "gmail api",
+        "google drive api",
+        "google calendar",
+        "google sheets api",
+        "google api client",
+        "service account"
+      ],
+      "relatedSkills": [
+        "coding-microsoft-graph-api",
+        "coding-atlassian-api",
+        "coding-airtable-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/google-workspace-api/SKILL.md"
+    },
+    {
       "name": "gradle-build-tool",
       "domain": "coding",
       "description": "Implements Gradle build configurations including Kotlin DSL, version catalogs, configuration cache, multi-project builds, convention plugins, and dependency management for Java/Kotlin/Android applications.",
@@ -8185,6 +9131,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/gradle-build-tool/SKILL.md"
+    },
+    {
+      "name": "grafana-prometheus",
+      "domain": "coding",
+      "description": "Implements Grafana and Prometheus integration (metrics collection, querying, alerting rules, Grafana dashboards as code, PromQL patterns, and Grafana HTTP API for dashboard management, using prometheus-api-client and grafana-api Python SDKs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "prometheus",
+        "promql queries",
+        "grafana dashboards",
+        "alerting rules",
+        "prometheus metrics",
+        "grafana api",
+        "how do i query prometheus metrics",
+        "monitoring as code"
+      ],
+      "relatedSkills": [
+        "coding-datadog-api",
+        "coding-newrelic-api",
+        "coding-sentry-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/grafana-prometheus/SKILL.md"
     },
     {
       "name": "graph-traversal",
@@ -8713,6 +9684,32 @@
       "source": "skills/cncf/artifact-hub/SKILL.md"
     },
     {
+      "name": "hubspot-api",
+      "domain": "coding",
+      "description": "Implements HubSpot API integration (CRM, Contacts, Companies, Deals, Tickets, using hubspot-api-client Python SDK with OAuth 2.0, private apps, CRM objects, associations, search, and HubSpot REST API patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "hubspot",
+        "hubspot api",
+        "hubspot crm",
+        "hubspot-api-client",
+        "hubspot contacts",
+        "hubspot companies",
+        "hubspot deals",
+        "how do i integrate with hubspot",
+        "crm integration"
+      ],
+      "relatedSkills": [
+        "coding-salesforce-api",
+        "coding-marketo-api",
+        "coding-zendesk-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/hubspot-api/SKILL.md"
+    },
+    {
       "name": "hubspot-automation",
       "domain": "agent",
       "description": "Implements intelligent hubspot automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -8733,6 +9730,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/hubspot-automation/SKILL.md"
+    },
+    {
+      "name": "huggingface-api",
+      "domain": "coding",
+      "description": "Integrates Hugging Face APIs (Inference Client, Inference Endpoints, Transformers Pipeline, Datasets) for serverless and dedicated model inference with Python.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "hugging face",
+        "huggingface",
+        "transformers",
+        "inference api",
+        "inference endpoints",
+        "pipelines",
+        "how do i use hugging face models",
+        "hf inference client"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-replicate-api",
+        "coding-langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/huggingface-api/SKILL.md"
     },
     {
       "name": "humanizer",
@@ -8908,6 +9930,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/gcp-iam/SKILL.md"
+    },
+    {
+      "name": "ibm-cloud-api",
+      "domain": "coding",
+      "description": "Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes Service, Cloud Object Storage) using IBM Cloud SDK for Python with IAM authentication and service patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ibm cloud",
+        "watson api",
+        "ibm cloud sdk",
+        "cloud object storage",
+        "ibm kubernetes",
+        "cloud foundry",
+        "how do i use ibm cloud from python"
+      ],
+      "relatedSkills": [
+        "aws-sdk",
+        "azure-sdk",
+        "oci-sdk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ibm-cloud-api/SKILL.md"
     },
     {
       "name": "idempotent-distributed-operations",
@@ -9643,6 +10689,31 @@
       "source": "skills/coding/javascript-package-workflows/SKILL.md"
     },
     {
+      "name": "jenkins-api",
+      "domain": "coding",
+      "description": "Integrates with the Jenkins REST API via python-jenkins and JenkinsAPI to manage jobs, builds, pipelines, credentials, plugins, nodes, and folder organization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "jenkins api",
+        "python-jenkins",
+        "jenkinsapi",
+        "jenkins job",
+        "jenkins pipeline",
+        "jenkins build",
+        "jenkins plugin",
+        "jenkins credentials"
+      ],
+      "relatedSkills": [
+        "coding-github-api",
+        "coding-gitlab-api",
+        "coding-circleci-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/jenkins-api/SKILL.md"
+    },
+    {
       "name": "jvm-engineering",
       "domain": "coding",
       "description": "Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications.",
@@ -10113,6 +11184,31 @@
       "source": "skills/cncf/kubernetes/SKILL.md"
     },
     {
+      "name": "kubernetes-api",
+      "domain": "coding",
+      "description": "Integrates with the Kubernetes API via the official client-python SDK to manage pods, deployments, services, ConfigMaps, Secrets, CRDs, and cluster resources programmatically.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "kubernetes api",
+        "k8s python client",
+        "client-python",
+        "kubectl python",
+        "kubernetes pods",
+        "kubernetes deployments",
+        "k8s custom resources",
+        "kubernetes operations"
+      ],
+      "relatedSkills": [
+        "coding-docker-api",
+        "coding-terraform-sdk",
+        "coding-ansible-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/kubernetes-api/SKILL.md"
+    },
+    {
       "name": "kubernetes-api-patterns",
       "domain": "cncf",
       "description": "Kubernetes API patterns including CRD development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions",
@@ -10387,6 +11483,32 @@
       "source": "skills/agent/lambda-lang/SKILL.md"
     },
     {
+      "name": "langchain",
+      "domain": "coding",
+      "description": "Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "langchain",
+        "langgraph",
+        "create agent",
+        "llm orchestration",
+        "rag chain",
+        "langchain agent",
+        "how do i use langchain",
+        "agent middleware"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-anthropic-api",
+        "coding-llamaindex",
+        "coding-mcp-protocol"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/langchain/SKILL.md"
+    },
+    {
       "name": "langgraph",
       "domain": "agent",
       "description": "Implements intelligent langgraph with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -10483,6 +11605,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/linkerd/SKILL.md"
+    },
+    {
+      "name": "linode-api",
+      "domain": "coding",
+      "description": "Integrates Linode/Akamai Cloud services (Instances, Object Storage, LKE Kubernetes, NodeBalancers) using the linode_api4 Python SDK with token-based authentication and model-driven resource patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "linode api",
+        "akamai cloud",
+        "linode python",
+        "linode instances",
+        "linode kubernetes",
+        "nodebalancer",
+        "object storage",
+        "how do i use linode api from python"
+      ],
+      "relatedSkills": [
+        "digitalocean-api",
+        "aws-sdk",
+        "cloudflare-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/linode-api/SKILL.md"
     },
     {
       "name": "lint-and-validate",
@@ -10668,6 +11815,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-live-model-monitoring/SKILL.md"
+    },
+    {
+      "name": "llamaindex",
+      "domain": "coding",
+      "description": "Integrates LlamaIndex (indexes, query engines, agents, workflows, document parsing, RAG pipelines) for building data-aware LLM applications in Python.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "llamaindex",
+        "llama index",
+        "rag pipeline",
+        "query engine",
+        "vector store index",
+        "llama parse",
+        "how do i use llamaindex",
+        "document agents"
+      ],
+      "relatedSkills": [
+        "coding-langchain",
+        "coding-openai-api",
+        "coding-pinecone-api",
+        "coding-chroma"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/llamaindex/SKILL.md"
     },
     {
       "name": "llm-fine-tuning",
@@ -10860,6 +12033,31 @@
       "source": "skills/agent/m365-agents-ts/SKILL.md"
     },
     {
+      "name": "mailgun-api",
+      "domain": "coding",
+      "description": "Integrates Mailgun API (Messages, Routes, Email Validation, Suppression List, Analytics) using the official mailgun-python SDK v1.7+ with proper REST patterns, MIME handling, and deliverability optimization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mailgun",
+        "mailgun api",
+        "send email",
+        "email validation",
+        "email routing",
+        "transactional email",
+        "inbound email",
+        "mailgun python"
+      ],
+      "relatedSkills": [
+        "coding-sendgrid-api",
+        "coding-twilio-api",
+        "coding-slack-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mailgun-api/SKILL.md"
+    },
+    {
       "name": "make",
       "domain": "coding",
       "description": "Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction.",
@@ -11042,6 +12240,31 @@
       "source": "skills/coding/websocket-manager/SKILL.md"
     },
     {
+      "name": "mapbox-api",
+      "domain": "coding",
+      "description": "Implements Mapbox API integration (Geocoding, Directions, Maps, Search, using mapbox-sdk Python SDK with access token authentication, forward/reverse geocoding, route calculation, static maps, isochrones, map tiles, and Mapbox REST API patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mapbox",
+        "mapbox api",
+        "mapbox-sdk",
+        "mapbox geocoding",
+        "mapbox directions",
+        "mapbox static maps",
+        "mapbox isochrones",
+        "how do i integrate with mapbox",
+        "map integration"
+      ],
+      "relatedSkills": [
+        "coding-google-maps-api",
+        "coding-aws-route-53"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mapbox-api/SKILL.md"
+    },
+    {
       "name": "market-data-cache",
       "domain": "trading",
       "description": "\"High-performance caching layer for market data with low latency and high\" throughput",
@@ -11153,6 +12376,32 @@
       "source": "skills/trading/fundamentals-market-structure/SKILL.md"
     },
     {
+      "name": "marketo-api",
+      "domain": "coding",
+      "description": "Implements Marketo API integration (REST, SOAP, Lead Database, Activities, Campaigns, using requests with OAuth 2.0 authentication, lead CRUD, bulk import/export, trigger campaigns, and Marketo REST API patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "marketo",
+        "marketo api",
+        "marketo rest",
+        "adobe marketo",
+        "marketo leads",
+        "marketo activities",
+        "marketo campaigns",
+        "how do i integrate with marketo",
+        "marketing automation"
+      ],
+      "relatedSkills": [
+        "coding-salesforce-api",
+        "coding-hubspot-api",
+        "coding-hubspot-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/marketo-api/SKILL.md"
+    },
+    {
       "name": "maven-build-tool",
       "domain": "coding",
       "description": "Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications.",
@@ -11246,6 +12495,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/mcp-builder-ms/SKILL.md"
+    },
+    {
+      "name": "mcp-protocol",
+      "domain": "coding",
+      "description": "Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mcp",
+        "model context protocol",
+        "mcp server",
+        "fastmcp",
+        "mcp tools",
+        "mcp resources",
+        "how do i build an mcp server",
+        "mcp python sdk"
+      ],
+      "relatedSkills": [
+        "coding-anthropic-api",
+        "coding-langchain",
+        "coding-openai-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mcp-protocol/SKILL.md"
     },
     {
       "name": "memoization-cache-patterns",
@@ -11501,6 +12775,30 @@
       "source": "skills/coding/microservices-architecture/SKILL.md"
     },
     {
+      "name": "microsoft-graph-api",
+      "domain": "coding",
+      "description": "Integrates with Microsoft Graph API to manage mail, calendar, OneDrive files, Teams messages, SharePoint sites, and Excel workbooks using msgraph-sdk for Python.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "microsoft graph",
+        "msgraph",
+        "outlook api",
+        "teams api",
+        "sharepoint api",
+        "office 365 api",
+        "entra id graph",
+        "msgraph-sdk"
+      ],
+      "relatedSkills": [
+        "coding-google-workspace-api",
+        "coding-atlassian-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/microsoft-graph-api/SKILL.md"
+    },
+    {
       "name": "missing-data",
       "domain": "coding",
       "description": "\"Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information\"",
@@ -11522,6 +12820,56 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-missing-data/SKILL.md"
+    },
+    {
+      "name": "mistral-api",
+      "domain": "coding",
+      "description": "Integrates Mistral AI API (Chat, Embeddings, Function Calling, Codestral, Agents) using the mistralai Python SDK for LLM and code generation applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mistral",
+        "mistral ai",
+        "mistral api",
+        "codestral",
+        "mistral chat",
+        "mistral embeddings",
+        "how do i use mistral",
+        "le chat"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-cohere-api",
+        "coding-langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mistral-api/SKILL.md"
+    },
+    {
+      "name": "mixpanel-api",
+      "domain": "coding",
+      "description": "Implements Mixpanel analytics integration (event tracking, user profiles, JQL queries, funnel analysis, cohort export) using mixpanel Python SDK with event batching, distinct_id management, engage updates, export API, and ingestion API patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mixpanel",
+        "event tracking",
+        "user profiles",
+        "jql queries",
+        "mixpanel funnels",
+        "cohort analysis",
+        "how do i track events in mixpanel",
+        "product analytics"
+      ],
+      "relatedSkills": [
+        "coding-amplitude-api",
+        "coding-segment-api",
+        "coding-hubspot-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mixpanel-api/SKILL.md"
     },
     {
       "name": "ml-pipeline-workflow",
@@ -11809,6 +13157,55 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/technical-momentum-indicators/SKILL.md"
+    },
+    {
+      "name": "monday-api",
+      "domain": "coding",
+      "description": "Integrates with monday.com API using GraphQL queries to manage boards, items, groups, columns, updates, workspaces, and webhooks via monday-api-python-sdk.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "monday api",
+        "monday.com",
+        "monday boards",
+        "monday items",
+        "monday graphql",
+        "monday python",
+        "monday automation"
+      ],
+      "relatedSkills": [
+        "coding-asana-api",
+        "coding-clickup-api",
+        "coding-notion-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/monday-api/SKILL.md"
+    },
+    {
+      "name": "mongodb-driver",
+      "domain": "coding",
+      "description": "Integrates MongoDB using PyMongo 4.x with patterns for CRUD operations, aggregation pipelines, change streams, Atlas Search, and replica set connections.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mongodb",
+        "pymongo",
+        "mongo aggregation",
+        "change streams",
+        "mongodb atlas",
+        "how do i query mongodb from python",
+        "document database",
+        "bson"
+      ],
+      "relatedSkills": [
+        "coding-postgresql-sdk",
+        "coding-elasticsearch-sdk",
+        "coding-asyncio-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mongodb-driver/SKILL.md"
     },
     {
       "name": "monitor",
@@ -12234,6 +13631,30 @@
       "source": "skills/cncf/nats/SKILL.md"
     },
     {
+      "name": "netlify-api",
+      "domain": "coding",
+      "description": "Integrates Netlify services (Sites, Builds, Functions, Forms, Identity) using the Netlify REST API with Python, covering token-based authentication, site management, deployment workflows, and serverless function deployment.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "netlify api",
+        "netlify python",
+        "netlify deployments",
+        "netlify functions",
+        "netlify forms",
+        "netlify sites",
+        "how do i use netlify api from python"
+      ],
+      "relatedSkills": [
+        "vercel-api",
+        "cloudflare-api",
+        "aws-sdk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/netlify-api/SKILL.md"
+    },
+    {
       "name": "network-diagnostics",
       "domain": "agent",
       "description": "Implements intelligent network diagnostics with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -12383,6 +13804,31 @@
       "source": "skills/coding/ds-neural-networks/SKILL.md"
     },
     {
+      "name": "newrelic-api",
+      "domain": "coding",
+      "description": "Implements New Relic API integration (metrics, traces, logs, NRDB queries, dashboards, alert policies) using newrelic Python SDK v8+ with NerdGraph GraphQL API, NRQL queries, custom events, and distributed tracing patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "new relic",
+        "nrql queries",
+        "nerdgraph",
+        "custom events",
+        "new relic alerts",
+        "apm tracing",
+        "how do i send data to new relic",
+        "observability platform"
+      ],
+      "relatedSkills": [
+        "coding-datadog-api",
+        "coding-grafana-prometheus",
+        "coding-sentry-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/newrelic-api/SKILL.md"
+    },
+    {
       "name": "news-embedding",
       "domain": "trading",
       "description": "\"Implements process news text using nlp embeddings for trading signals for risk management and algorithmic trading execution.\"",
@@ -12442,6 +13888,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/not-human-search-mcp/SKILL.md"
+    },
+    {
+      "name": "notion-api",
+      "domain": "coding",
+      "description": "Integrates with Notion API to manage pages, databases, blocks, search, and comments using notion-client for Python with typed property access and pagination.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "notion api",
+        "notion pages",
+        "notion databases",
+        "notion-client",
+        "notion python",
+        "notion integration",
+        "notion blocks"
+      ],
+      "relatedSkills": [
+        "coding-google-workspace-api",
+        "coding-atlassian-api",
+        "coding-airtable-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/notion-api/SKILL.md"
     },
     {
       "name": "notion-automation",
@@ -12609,6 +14079,30 @@
       "source": "skills/coding/ds-observational-studies/SKILL.md"
     },
     {
+      "name": "oci-sdk",
+      "domain": "coding",
+      "description": "Integrates Oracle Cloud Infrastructure services (Compute, Object Storage, Autonomous DB, Functions) using the OCI Python SDK with config-based authentication and resource management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "oracle cloud",
+        "oci sdk",
+        "oci python",
+        "oracle cloud infrastructure",
+        "autonomous database",
+        "object storage",
+        "how do i use oci from python"
+      ],
+      "relatedSkills": [
+        "aws-sdk",
+        "azure-sdk",
+        "ibm-cloud-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/oci-sdk/SKILL.md"
+    },
+    {
       "name": "of-shader-programming",
       "domain": "coding",
       "description": "Implements GLSL shader programming in OpenFrameworks including vertex/fragment shaders, uniform management, VBO rendering, post-processing effects, and shader compilation debugging for GPU-accelerated graphics.",
@@ -12635,6 +14129,31 @@
       "source": "skills/coding/of-shader-programming/SKILL.md"
     },
     {
+      "name": "okta-api",
+      "domain": "coding",
+      "description": "Implements Okta API integration (Users, Groups, Applications, MFA, OAuth, Workflows) using okta Python SDK v3.4+ with async client patterns, pagination support, DPoP authentication, and SCIM provisioning workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "okta api",
+        "okta users",
+        "okta groups",
+        "okta mfa",
+        "okta sso",
+        "how do i integrate okta",
+        "okta scim",
+        "user provisioning"
+      ],
+      "relatedSkills": [
+        "coding-auth0-api",
+        "coding-entra-id-api",
+        "coding-aws-iam"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/okta-api/SKILL.md"
+    },
+    {
       "name": "on-prem-infrastructure",
       "domain": "linux",
       "description": "Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems.",
@@ -12659,6 +14178,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/linux/on-prem-infrastructure/SKILL.md"
+    },
+    {
+      "name": "onepassword-api",
+      "domain": "coding",
+      "description": "Implements 1Password Connect/SCIM API integration (Vaults, Items, Fields, Provisioning, Service Accounts) using onepasswordconnectsdk Python SDK with Connect server authentication, item CRUD, SCIM user/group provisioning, and secret reference patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "1password",
+        "onepassword connect",
+        "op cli",
+        "1password vaults",
+        "1password items",
+        "secret references",
+        "how do i use 1password api",
+        "scim provisioning"
+      ],
+      "relatedSkills": [
+        "coding-vault-api",
+        "coding-aws-iam",
+        "coding-entra-id-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/onepassword-api/SKILL.md"
     },
     {
       "name": "online-experiments",
@@ -12708,6 +14252,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/open-closed-principle/SKILL.md"
+    },
+    {
+      "name": "openai-api",
+      "domain": "coding",
+      "description": "Integrates OpenAI API (GPT-5, Responses API, Embeddings, DALL-E 3, Whisper, Realtime) using the openai Python SDK v2.38+ with proper error handling and async patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "openai",
+        "gpt-5",
+        "responses api",
+        "chat completions",
+        "function calling",
+        "openai embeddings",
+        "how do i use the openai api",
+        "text-embedding-3-large"
+      ],
+      "relatedSkills": [
+        "coding-anthropic-api",
+        "coding-azure-openai",
+        "coding-langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/openai-api/SKILL.md"
     },
     {
       "name": "opencost",
@@ -13255,6 +14824,31 @@
       "source": "skills/coding/package-ecosystem-navigator/SKILL.md"
     },
     {
+      "name": "pagerduty-api",
+      "domain": "coding",
+      "description": "Implements PagerDuty API integration (incident management, on-call schedules, escalation policies, alerts, events API v2) using pdpyras Python SDK with event ingestion, incident querying, on-call retrieval, and maintenance windows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "pagerduty",
+        "incidents",
+        "on-call schedules",
+        "escalation policies",
+        "events api v2",
+        "pagerduty alerts",
+        "how do i trigger pagerduty alerts",
+        "incident management"
+      ],
+      "relatedSkills": [
+        "coding-datadog-api",
+        "coding-sentry-api",
+        "coding-grafana-prometheus"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/pagerduty-api/SKILL.md"
+    },
+    {
       "name": "parallel-agents",
       "domain": "agent",
       "description": "Implements intelligent parallel agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -13339,6 +14933,31 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/fastapi-patterns/SKILL.md"
+    },
+    {
+      "name": "paypal-api",
+      "domain": "coding",
+      "description": "Implements PayPal API integration (Orders, Payments, Subscriptions, Payouts, Disputes) using paypal-checkout-serversdk or paypalrestsdk with webhook verification, payment capture, and subscription lifecycle management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "paypal",
+        "paypal orders api",
+        "paypal subscriptions",
+        "paypal payouts",
+        "paypal webhook verification",
+        "capture payment",
+        "how do i integrate paypal payments",
+        "paypal checkout"
+      ],
+      "relatedSkills": [
+        "coding-stripe-api",
+        "coding-braintree-api",
+        "coding-square-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/paypal-api/SKILL.md"
     },
     {
       "name": "performance-attribution",
@@ -13444,6 +15063,31 @@
       "source": "skills/coding/performance-testing/SKILL.md"
     },
     {
+      "name": "perplexity-api",
+      "domain": "coding",
+      "description": "Integrates Perplexity AI API (Sonar chat completions, online search, multi-step queries) using the perplexity-openai Python SDK for real-time web-connected LLM responses.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "perplexity",
+        "perplexity ai",
+        "sonar",
+        "perplexity api",
+        "perplexity sonar",
+        "online LLM",
+        "how do i use perplexity",
+        "real-time search LLM"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-anthropic-api",
+        "coding-pinecone-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/perplexity-api/SKILL.md"
+    },
+    {
       "name": "personal-knowledge-management",
       "domain": "coding",
       "description": "Implements a complete personal knowledge management system for developers including capture workflows, PARA organization framework, Zettelkasten linking patterns, and searchable reference libraries to retain and retrieve technical knowledge efficiently.",
@@ -13519,6 +15163,33 @@
       "source": "skills/agent/personalized-behavior/SKILL.md"
     },
     {
+      "name": "pinecone-api",
+      "domain": "coding",
+      "description": "Integrates Pinecone vector database (serverless/pod indexes, upsert, query, hybrid search, inference, gRPC) using the pinecone Python SDK v9 for production vector search.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "pinecone",
+        "vector database",
+        "vector search",
+        "pinecone index",
+        "hybrid search",
+        "upsert vectors",
+        "how do i use pinecone",
+        "semantic search"
+      ],
+      "relatedSkills": [
+        "coding-openai-api",
+        "coding-langchain",
+        "coding-llamaindex",
+        "coding-chroma",
+        "coding-weaviate-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/pinecone-api/SKILL.md"
+    },
+    {
       "name": "pipecat-friday-agent",
       "domain": "agent",
       "description": "Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -13541,6 +15212,32 @@
       "source": "skills/agent/pipecat-friday-agent/SKILL.md"
     },
     {
+      "name": "plaid-api",
+      "domain": "coding",
+      "description": "Implements Plaid API integration (Auth, Transactions, Identity, Investments, Income) using plaid-python SDK with Link token flow, webhook verification, access token storage security, and financial data synchronization patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "plaid",
+        "plaid link",
+        "plaid auth",
+        "plaid transactions",
+        "plaid identity",
+        "plaid investments",
+        "plaid income verification",
+        "how do i integrate plaid",
+        "bank account linking"
+      ],
+      "relatedSkills": [
+        "coding-stripe-api",
+        "coding-shopify-api",
+        "coding-paypal-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/plaid-api/SKILL.md"
+    },
+    {
       "name": "plan-writing",
       "domain": "agent",
       "description": "Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -13561,6 +15258,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/plan-writing/SKILL.md"
+    },
+    {
+      "name": "planetscale-sdk",
+      "domain": "coding",
+      "description": "Integrates PlanetScale using mysql-connector-python with patterns for database branching, deploy requests, schema management, connection pooling, and insights for serverless MySQL.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "planetscale",
+        "mysql connector",
+        "database branching",
+        "planetscale api",
+        "how do i connect to planetscale from python",
+        "serverless mysql",
+        "deploy request",
+        "vitess"
+      ],
+      "relatedSkills": [
+        "coding-postgresql-sdk",
+        "coding-supabase-sdk",
+        "coding-database-migrations"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/planetscale-sdk/SKILL.md"
     },
     {
       "name": "planning-with-files",
@@ -13863,6 +15585,31 @@
       "source": "skills/coding/postgresql-performance-tuning/SKILL.md"
     },
     {
+      "name": "postgresql-sdk",
+      "domain": "coding",
+      "description": "Integrates PostgreSQL databases using psycopg2 2.9.x and asyncpg 0.31.x with patterns for connection pooling, replication, COPY, and query parameterization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "postgresql",
+        "psycopg2",
+        "asyncpg",
+        "postgres connection pool",
+        "sql parameterization",
+        "how do i query postgres from python",
+        "database replication",
+        "libpq"
+      ],
+      "relatedSkills": [
+        "coding-database-design-modeling",
+        "coding-database-migrations",
+        "coding-asyncio-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/postgresql-sdk/SKILL.md"
+    },
+    {
       "name": "pr-writer",
       "domain": "agent",
       "description": "Implements intelligent pr writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -14074,6 +15821,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/pulumi/SKILL.md"
+    },
+    {
+      "name": "pulumi",
+      "domain": "coding",
+      "description": "Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "pulumi python",
+        "pulumi automation api",
+        "pulumi sdk",
+        "pulumi stacks",
+        "pulumi esc",
+        "infrastructure as code python",
+        "pulumi program",
+        "pulumi deploy"
+      ],
+      "relatedSkills": [
+        "coding-terraform-sdk",
+        "coding-kubernetes-api",
+        "coding-docker-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/pulumi/SKILL.md"
     },
     {
       "name": "pydantic-ai",
@@ -14553,6 +16325,31 @@
       "source": "skills/agent/receiving-code-review/SKILL.md"
     },
     {
+      "name": "redis-sdk",
+      "domain": "coding",
+      "description": "Integrates Redis using redis-py 5.x with patterns for caching, streams, pub/sub, sorted sets, Redis Stack modules (JSON, Search, TimeSeries), and cluster connections.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "redis",
+        "redis-py",
+        "redis cache",
+        "redis streams",
+        "redis pub/sub",
+        "how do i use redis from python",
+        "redis stack",
+        "redis cluster"
+      ],
+      "relatedSkills": [
+        "coding-postgresql-sdk",
+        "coding-mongodb-driver",
+        "coding-caching-strategies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/redis-sdk/SKILL.md"
+    },
+    {
       "name": "refactoring-techniques",
       "domain": "coding",
       "description": "Applies systematic refactoring techniques (extract method, introduce parameter object, replace conditional with polymorphism) to improve code readability and reduce complexity.",
@@ -14782,6 +16579,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/render-automation/SKILL.md"
+    },
+    {
+      "name": "replicate-api",
+      "domain": "coding",
+      "description": "Integrates Replicate API (models, predictions, trainings, webhooks) using the replicate Python SDK for running and fine-tuning open-source AI models in the cloud.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "replicate",
+        "replicate api",
+        "replicate predictions",
+        "replicate training",
+        "replicate webhook",
+        "how do i use replicate",
+        "run open source models"
+      ],
+      "relatedSkills": [
+        "coding-huggingface-api",
+        "coding-openai-api",
+        "coding-stabilityai-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/replicate-api/SKILL.md"
     },
     {
       "name": "reproducible-research",
@@ -15223,6 +17044,31 @@
       "source": "skills/cncf/aws-s3/SKILL.md"
     },
     {
+      "name": "salesforce-api",
+      "domain": "coding",
+      "description": "Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "salesforce",
+        "soql",
+        "salesforce api",
+        "simple salesforce",
+        "salesforce objects",
+        "salesforce bulk api",
+        "how do i integrate with salesforce",
+        "crm integration"
+      ],
+      "relatedSkills": [
+        "coding-hubspot-api",
+        "coding-marketo-api",
+        "coding-zendesk-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/salesforce-api/SKILL.md"
+    },
+    {
       "name": "scale-sets",
       "domain": "cncf",
       "description": "\"Manages auto-scaling VM groups with load balancing and health management\"",
@@ -15427,6 +17273,31 @@
       "source": "skills/cncf/process-security-policy/SKILL.md"
     },
     {
+      "name": "segment-api",
+      "domain": "coding",
+      "description": "Implements Segment (CDP) integration (track, identify, group, page, screen, alias) using analytics-python SDK with event batching, user traits, group traits, page properties, Segment Spec compliance, and HTTP API fallback patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "segment",
+        "cdp",
+        "customer data platform",
+        "segment track identify",
+        "segment spec",
+        "how do i integrate segment tracking",
+        "rudderstack",
+        "customer data infrastructure"
+      ],
+      "relatedSkills": [
+        "coding-amplitude-api",
+        "coding-mixpanel-api",
+        "coding-hubspot-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/segment-api/SKILL.md"
+    },
+    {
       "name": "self-critique-engine",
       "domain": "agent",
       "description": "Implements intelligent self critique engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -15472,6 +17343,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/self-improvement/SKILL.md"
+    },
+    {
+      "name": "sendgrid-api",
+      "domain": "coding",
+      "description": "Integrates Twilio SendGrid API (Mail Send, Dynamic Templates, Marketing Campaigns, Inbound Parse, Event Webhooks) using the sendgrid Python SDK v6.x with proper mail construction and deliverability patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "sendgrid",
+        "send email",
+        "transactional email",
+        "sendgrid api",
+        "email templates",
+        "dynamic templates",
+        "email delivery",
+        "marketing campaigns"
+      ],
+      "relatedSkills": [
+        "coding-twilio-api",
+        "coding-mailgun-api",
+        "coding-slack-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/sendgrid-api/SKILL.md"
     },
     {
       "name": "sendgrid-automation",
@@ -15536,6 +17432,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-sentiment-features/SKILL.md"
+    },
+    {
+      "name": "sentry-api",
+      "domain": "coding",
+      "description": "Implements Sentry API integration (error tracking, performance monitoring, issue management, release tracking, event ingestion) using sentry-sdk Python SDK with error capture, performance tracing, breadcrumbs, issue querying, and release management via Sentry REST API.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "sentry",
+        "error tracking",
+        "performance monitoring",
+        "sentry issues",
+        "sentry sdk",
+        "exception capture",
+        "how do i integrate sentry error tracking",
+        "application monitoring"
+      ],
+      "relatedSkills": [
+        "coding-datadog-api",
+        "coding-grafana-prometheus",
+        "coding-pagerduty-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/sentry-api/SKILL.md"
     },
     {
       "name": "service-bus",
@@ -15707,6 +17628,32 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/juice-shop/SKILL.md"
+    },
+    {
+      "name": "shopify-api",
+      "domain": "coding",
+      "description": "Implements Shopify API integration (Products, Orders, Customers, Storefront GraphQL, Admin REST) using shopifyapi Python SDK with OAuth 2.0 flow, webhook HMAC verification, cursor pagination, and ecommerce platform data synchronization patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "shopify",
+        "shopify admin api",
+        "shopify storefront graphql",
+        "shopify products",
+        "shopify orders",
+        "shopify webhooks",
+        "shopify oauth",
+        "how do i integrate shopify api",
+        "ecommerce platform"
+      ],
+      "relatedSkills": [
+        "coding-stripe-api",
+        "coding-square-api",
+        "coding-paypal-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/shopify-api/SKILL.md"
     },
     {
       "name": "shopify-automation",
@@ -16357,6 +18304,31 @@
       "source": "skills/agent/skill-writer/SKILL.md"
     },
     {
+      "name": "slack-api",
+      "domain": "coding",
+      "description": "Integrates Slack API (Web API, Events API, Bolt Framework, Incoming Webhooks, Block Kit) using the slack-sdk Python v3.x with proper event handling, Block Kit construction, and OAuth patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "slack",
+        "slack api",
+        "slack bot",
+        "slack webhook",
+        "block kit",
+        "slack events",
+        "bolt python",
+        "send message to slack"
+      ],
+      "relatedSkills": [
+        "coding-discord-api",
+        "coding-twilio-api",
+        "coding-sendgrid-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/slack-api/SKILL.md"
+    },
+    {
       "name": "slack-automation",
       "domain": "agent",
       "description": "Implements intelligent slack automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -16419,6 +18391,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/execution-slippage-modeling/SKILL.md"
+    },
+    {
+      "name": "snowflake-sdk",
+      "domain": "coding",
+      "description": "Integrates Snowflake using snowflake-connector-python 4.x with patterns for SQL execution, Snowpark DataFrames, Cortex AI, streams, tasks, stages, and warehouse management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "snowflake",
+        "snowflake connector",
+        "snowpark",
+        "snowflake sql",
+        "snowflake cortex",
+        "how do i query snowflake from python",
+        "data warehouse",
+        "snowpipe"
+      ],
+      "relatedSkills": [
+        "coding-databricks-sdk",
+        "coding-bigquery-sdk",
+        "coding-postgresql-sdk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/snowflake-sdk/SKILL.md"
     },
     {
       "name": "sns",
@@ -16691,6 +18688,31 @@
       "source": "skills/cncf/spire/SKILL.md"
     },
     {
+      "name": "splunk-api",
+      "domain": "coding",
+      "description": "Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "splunk",
+        "splunk search",
+        "hec",
+        "http event collector",
+        "splunk sdk",
+        "splunk alerts",
+        "how do i send logs to splunk",
+        "log management"
+      ],
+      "relatedSkills": [
+        "coding-datadog-api",
+        "coding-grafana-prometheus",
+        "coding-newrelic-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/splunk-api/SKILL.md"
+    },
+    {
       "name": "spring-boot-core",
       "domain": "coding",
       "description": "Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications.",
@@ -16772,6 +18794,32 @@
       "source": "skills/cncf/aws-sqs/SKILL.md"
     },
     {
+      "name": "square-api",
+      "domain": "coding",
+      "description": "Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "square",
+        "square payments api",
+        "square catalog",
+        "square inventory",
+        "square orders",
+        "square webhooks",
+        "square terminal",
+        "how do i integrate square payments",
+        "retail pos"
+      ],
+      "relatedSkills": [
+        "coding-stripe-api",
+        "coding-paypal-api",
+        "coding-shopify-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/square-api/SKILL.md"
+    },
+    {
       "name": "ssm",
       "domain": "cncf",
       "description": "\"Manages EC2 instances and on-premises servers with AWS Systems Manager\" for configuration management, patch management, and secure shell access without SSH keys.",
@@ -16795,6 +18843,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/aws-ssm/SKILL.md"
+    },
+    {
+      "name": "stabilityai-api",
+      "domain": "coding",
+      "description": "Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "stability ai",
+        "stabilityai",
+        "stable diffusion",
+        "sd3",
+        "stable image",
+        "core",
+        "stability api",
+        "how do i generate images",
+        "text to image",
+        "image generation"
+      ],
+      "relatedSkills": [
+        "coding-replicate-api",
+        "coding-openai-api",
+        "coding-elevenlabs-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/stabilityai-api/SKILL.md"
     },
     {
       "name": "stacktrace-root-cause",
@@ -17024,6 +19099,31 @@
       "source": "skills/cncf/strimzi/SKILL.md"
     },
     {
+      "name": "stripe-api",
+      "domain": "coding",
+      "description": "Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "stripe",
+        "payment intents",
+        "checkout sessions",
+        "stripe subscriptions",
+        "stripe connect",
+        "webhook signature",
+        "how do i integrate stripe payments",
+        "payment processing"
+      ],
+      "relatedSkills": [
+        "coding-paypal-api",
+        "coding-square-api",
+        "coding-braintree-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/stripe-api/SKILL.md"
+    },
+    {
       "name": "stripe-automation",
       "domain": "agent",
       "description": "Implements intelligent stripe automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -17093,6 +19193,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/subagent-driven-development/SKILL.md"
+    },
+    {
+      "name": "supabase-sdk",
+      "domain": "coding",
+      "description": "Integrates Supabase using supabase-py 2.x with patterns for database queries (PostgREST), auth management, storage operations, real-time subscriptions, and Edge Functions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "supabase",
+        "supabase-py",
+        "postgrest",
+        "supabase auth",
+        "supabase storage",
+        "how do i use supabase from python",
+        "supabase realtime",
+        "edge functions"
+      ],
+      "relatedSkills": [
+        "coding-postgresql-sdk",
+        "coding-firebase-sdk",
+        "coding-authentication-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/supabase-sdk/SKILL.md"
     },
     {
       "name": "support-resistance",
@@ -17594,6 +19719,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/terraform-infrastructure/SKILL.md"
+    },
+    {
+      "name": "terraform-sdk",
+      "domain": "coding",
+      "description": "Integrates with Terraform and OpenTofu via the HCP Terraform API (pyTFE), CDKTF Python bindings, and the Terraform Cloud API to manage providers, resources, state, and modules.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "terraform api",
+        "terraform cloud",
+        "cdktf python",
+        "terraform provider",
+        "opentofu",
+        "terraform state",
+        "terraform modules",
+        "hcp terraform"
+      ],
+      "relatedSkills": [
+        "coding-kubernetes-api",
+        "coding-pulumi",
+        "coding-ansible-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/terraform-sdk/SKILL.md"
     },
     {
       "name": "test-driven-development",
@@ -18139,6 +20289,31 @@
       "source": "skills/trading/execution-twap-vwap/SKILL.md"
     },
     {
+      "name": "twilio-api",
+      "domain": "coding",
+      "description": "Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "twilio",
+        "sms api",
+        "send sms",
+        "whatsapp api",
+        "twilio verify",
+        "phone verification",
+        "twilio voice",
+        "twilio webhooks"
+      ],
+      "relatedSkills": [
+        "coding-sendgrid-api",
+        "coding-slack-api",
+        "coding-mailgun-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/twilio-api/SKILL.md"
+    },
+    {
       "name": "type-safety-enforcement",
       "domain": "coding",
       "description": "Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors.",
@@ -18414,6 +20589,55 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/risk-value-at-risk/SKILL.md"
+    },
+    {
+      "name": "vault-api",
+      "domain": "coding",
+      "description": "Implements HashiCorp Vault API integration (KV Secrets Engine, PKI, Transit, Auth Methods, Leasing & Renewal) using hvac Python SDK v2.4+ with proper authentication, secret leasing, TTL management, and encryption as a service patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "hashicorp vault",
+        "hvac python",
+        "vault kv secrets",
+        "vault pki",
+        "vault transit",
+        "how do i use vault",
+        "vault leasing",
+        "secret management"
+      ],
+      "relatedSkills": [
+        "coding-aws-iam",
+        "coding-onepassword-api",
+        "coding-entra-id-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/vault-api/SKILL.md"
+    },
+    {
+      "name": "vercel-api",
+      "domain": "coding",
+      "description": "Integrates Vercel services (Deployments, Projects, Edge Functions, Domains, Analytics) using the Vercel REST API and Python SDK with token-based authentication and deployment automation patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "vercel api",
+        "vercel python",
+        "vercel deployments",
+        "vercel edge functions",
+        "vercel projects",
+        "vercel domains",
+        "how do i use vercel api from python"
+      ],
+      "relatedSkills": [
+        "cloudflare-api",
+        "netlify-api",
+        "aws-sdk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/vercel-api/SKILL.md"
     },
     {
       "name": "verification-before-completion",
@@ -18772,6 +20996,32 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/wasmcloud/SKILL.md"
+    },
+    {
+      "name": "weaviate-api",
+      "domain": "coding",
+      "description": "Integrates Weaviate vector database (v4 Python client, collections, vector search, hybrid, generative modules, GraphQL) for AI-powered search applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "weaviate",
+        "vector database",
+        "weaviate client",
+        "hybrid search",
+        "generative search",
+        "weaviate graphql",
+        "how do i use weaviate",
+        "vector collections"
+      ],
+      "relatedSkills": [
+        "coding-pinecone-api",
+        "coding-chroma",
+        "coding-openai-api",
+        "coding-langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/weaviate-api/SKILL.md"
     },
     {
       "name": "web-applications",
@@ -19281,6 +21531,32 @@
       "source": "skills/agent/zapier-make-patterns/SKILL.md"
     },
     {
+      "name": "zendesk-api",
+      "domain": "coding",
+      "description": "Implements Zendesk API integration (Support API, Tickets, Users, Organizations, using zenpy Python SDK with OAuth 2.0, API token auth, ticket CRUD, user management, search, macros, triggers, and Zendesk REST API patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "zendesk",
+        "zendesk api",
+        "zenpy",
+        "zendesk support",
+        "zendesk tickets",
+        "zendesk users",
+        "zendesk organizations",
+        "how do i integrate with zendesk",
+        "support ticketing"
+      ],
+      "relatedSkills": [
+        "coding-salesforce-api",
+        "coding-hubspot-api",
+        "coding-marketo-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/zendesk-api/SKILL.md"
+    },
+    {
       "name": "zendesk-automation",
       "domain": "agent",
       "description": "Implements intelligent zendesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -19323,6 +21599,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/zipai-optimizer/SKILL.md"
+    },
+    {
+      "name": "zoom-api",
+      "domain": "coding",
+      "description": "Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users) using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination, and rate-limit handling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "zoom",
+        "zoom api",
+        "zoom meetings",
+        "create zoom meeting",
+        "zoom sdk",
+        "zoom webinars",
+        "zoom recording",
+        "zoom-python"
+      ],
+      "relatedSkills": [
+        "coding-twilio-api",
+        "coding-slack-api",
+        "coding-sendgrid-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/zoom-api/SKILL.md"
     },
     {
       "name": "zoom-automation",
