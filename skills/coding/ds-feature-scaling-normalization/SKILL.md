@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Scales and normalizes features using standardization, normalization, robust scaling, and other scaling
-  methods for model compatibility"'
+description: '"Provides Scales and normalizes features using standardization, normalization,
+  robust scaling, and other scaling methods for model compatibility"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-categorical-encoding, ds-feature-engineering, ds-linear-regression
   role: implementation
   scope: implementation
-  triggers: feature scaling, normalization, standardization, robust scaling, scaling features, how do I scale
+  triggers: feature scaling, normalization, standardization, robust scaling, scaling
+    features, how do I scale
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: feature-scaling-normalization
----
+------
 # Feature Scaling
 
 Comprehensive guide to feature scaling in machine learning and data science workflows.
@@ -166,182 +179,4 @@ class FeatureScaling:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
-from typing import Dict, Any, List, Tuple
-import warnings
-
-# BAD PRACTICE: Manual scaling without validation or vectorization
-def bad_scaling_approach(df: pd.DataFrame) -> pd.DataFrame:
-    """Inefficient and error-prone manual scaling."""
-    result = df.copy()
-    for col in result.columns:
-        mean = sum(result[col]) / len(result[col])
-        std = (sum((x - mean)**2 for x in result[col]) / len(result[col]))**0.5
-        result[col] = (result[col] - mean) / std
-    return result
-
-# GOOD PRACTICE: Vectorized, validated, and using established libraries
-def good_scaling_approach(df: pd.DataFrame, method: str = "standard") -> pd.DataFrame:
-    """Efficient scaling following scikit-learn API design principles (DRY & KISS)."""
-    if not isinstance(df, pd.DataFrame):
-        raise TypeError("Input must be a pandas DataFrame")
-    numeric_cols = df.select_dtypes(include=[np.number]).columns
-    if method == "standard":
-        scaler = StandardScaler()
-    elif method == "minmax":
-        scaler = MinMaxScaler()
-    elif method == "robust":
-        scaler = RobustScaler()
-    else:
-        raise ValueError("Method must be 'standard', 'minmax', or 'robust'")
-    df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
-    return df
-
-def _validate_and_select_scaler(method: str) -> object:
-    """Helper to validate method and instantiate appropriate scaler."""
-    scaler_map = {
-        "standard": StandardScaler,
-        "minmax": MinMaxScaler,
-        "robust": RobustScaler
-    }
-    if method not in scaler_map:
-        raise ValueError(f"Unsupported scaling method: {method}")
-    return scaler_map[method]()
-
-def implement_feature_scaling(data: pd.DataFrame, scaling_method: str = "standard", 
-                              exclude_columns: List[str] = None) -> Dict[str, Any]:
-    """
-    Complete implementation of Feature Scaling.
-    
-    This example demonstrates:
-    - Proper input validation and type checking
-    - Vectorized algorithm implementation using scikit-learn
-    - Comprehensive error handling and logging
-    - Result formatting with metadata
-    
-    Args:
-        data: Input DataFrame with numeric and categorical columns
-        scaling_method: One of 'standard', 'minmax', or 'robust'
-        exclude_columns: List of column names to exclude from scaling
-        
-    Returns:
-        Dictionary with scaled data, scaler objects, and metadata
-        
-    Raises:
-        ValueError: If input data is invalid or method is unsupported
-        TypeError: If input is not a DataFrame
-        
-    Example:
-        >>> df = pd.DataFrame({'x': [1, 2, 3, 4, 5], 'y': [10, 20, 30, 40, 50], 'cat': ['a', 'b', 'c', 'd', 'e']})
-        >>> results = implement_feature_scaling(df)
-        >>> print(results['status'])
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if not isinstance(data, pd.DataFrame):
-        raise TypeError("Input data must be a pandas DataFrame")
-        
-    exclude_columns = exclude_columns or []
-    numeric_cols = [col for col in data.select_dtypes(include=[np.number]).columns if col not in exclude_columns]
-    
-    if not numeric_cols:
-        raise ValueError("No numeric columns available for scaling after exclusions")
-        
-    try:
-        scaler = _validate_and_select_scaler(scaling_method)
-        scaled_numeric = scaler.fit_transform(data[numeric_cols])
-        result_df = data.copy()
-        result_df[numeric_cols] = scaled_numeric
-        
-        stats = {col: {'mean': float(np.mean(result_df[col])), 'std': float(np.std(result_df[col]))} 
-                 for col in numeric_cols}
-                 
-        return {
-            'status': 'success',
-            'scaled_data': result_df,
-            'scaler': scaler,
-            'metadata': {
-                'method': scaling_method,
-                'columns_scaled': numeric_cols,
-                'original_shape': data.shape,
-                'scaled_shape': result_df.shape,
-                'post_scaling_stats': stats
-            }
-        }
-    except Exception as e:
-        warnings.warn(f"Scaling operation encountered an issue: {str(e)}")
-        return {'status': 'error', 'message': str(e)}
-
-# Usage and testing
-if __name__ == "__main__":
-    # Create realistic sample data with mixed types and scales
-    np.random.seed(42)
-    sample_data = pd.DataFrame({
-        'age': np.random.normal(loc=35, scale=10, size=100),
-        'income': np.random.exponential(scale=50000, size=100),
-        'score': np.random.uniform(0, 100, size=100),
-        'category': np.random.choice(['A', 'B', 'C'], size=100)
-    })
-    
-    print("=== BAD APPROACH (Manual) ===")
-    try:
-        bad_result = bad_scaling_approach(sample_data[['age', 'income', 'score']])
-        print("Bad approach completed (note: non-vectorized and lacks validation)")
-    except Exception as e:
-        print(f"Bad approach failed: {e}")
-        
-    print("\n=== GOOD APPROACH (Vectorized) ===")
-    good_result = good_scaling_approach(sample_data[['age', 'income', 'score']], method="standard")
-    print("Good approach completed successfully")
-    
-    print("\n=== FULL IMPLEMENTATION ===")
-    results = implement_feature_scaling(sample_data, scaling_method="robust", exclude_columns=['category'])
-    print(f"Status: {results['status']}")
-    print(f"Processed {results['metadata']['original_shape'][0]} rows, {results['metadata']['original_shape'][1]} columns")
-    print(f"Scaled columns: {results['metadata']['columns_scaled']}")
-    print(f"Post-scaling stats for 'income': {results['metadata']['post_scaling_stats']['income']}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-feature-engineering` | Feature Engineering techniques | Complementary to this skill |
-| `coding-ds-categorical-encoding` | Categorical Encoding techniques | Complementary to this skill |
-| `coding-ds-linear-regression` | Linear Regression techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Feature Scaling
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

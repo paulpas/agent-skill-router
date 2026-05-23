@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment
-  tracking and governance"'
+description: '"Implements data versioning, lineage tracking, provenance management,
+  and reproducible data pipelines for experiment tracking and governance"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-data-collection, ds-data-ingestion, ds-data-privacy, ds-reproducible-research
   role: implementation
   scope: implementation
-  triggers: data versioning, data lineage, provenance, reproducibility, data governance, how do i track data
+  triggers: data versioning, data lineage, provenance, reproducibility, data governance,
+    how do i track data
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: data-versioning
----
+------
 # Data Versioning
 
 Comprehensive guide to data versioning in machine learning and data science workflows.
@@ -220,106 +233,4 @@ def good_versioning(df: pd.DataFrame, manager: DataVersionManager) -> Dict[str, 
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import logging
-from typing import Dict, Any
-from data_versioning_manager import DataVersionManager  # Assumes Pattern 2 is saved as data_versioning_manager.py
-
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
-
-def run_data_versioning_workflow() -> Dict[str, Any]:
-    """
-    End-to-end data versioning workflow demonstrating lineage tracking,
-    reproducibility validation, and metadata management.
-    """
-    # Initialize manager
-    manager = DataVersionManager(storage_path="./experiment_versions")
-    
-    # Generate reproducible sample dataset
-    np.random.seed(42)
-    raw_data = pd.DataFrame({
-        'user_id': np.arange(1000),
-        'age': np.random.randint(18, 70, 1000),
-        'income': np.random.normal(50000, 15000, 1000),
-        'purchase_flag': np.random.choice([0, 1], 1000, p=[0.7, 0.3])
-    })
-    
-    # Step 1: Create initial version
-    v1 = manager.create_version(raw_data, name="raw_data_v1")
-    print(f"Version 1 created: {v1['version_id'][:16]}...")
-    
-    # Step 2: Simulate data transformation
-    transformed_data = raw_data.copy()
-    transformed_data['age_group'] = pd.cut(transformed_data['age'], bins=[0, 25, 40, 60, 100], labels=['young', 'mid', 'senior', 'elder'])
-    transformed_data['income_log'] = np.log1p(transformed_data['income'])
-    
-    # Step 3: Create transformed version (lineage automatically links to v1)
-    v2 = manager.create_version(transformed_data, name="transformed_data_v1")
-    print(f"Version 2 created: {v2['version_id'][:16]}...")
-    print(f"Lineage: {v2['lineage']}")
-    
-    # Step 4: Validate reproducibility
-    is_reproducible = manager.validate_reproducibility(transformed_data, v2['version_id'])
-    print(f"Reproducibility check: {'PASSED' if is_reproducible else 'FAILED'}")
-    
-    # Step 5: Verify failure case
-    corrupted_data = transformed_data.copy()
-    corrupted_data.loc[0, 'income_log'] = 999.0
-    is_corrupted = manager.validate_reproducibility(corrupted_data, v2['version_id'])
-    print(f"Corruption detection: {'PASSED' if not is_corrupted else 'FAILED'}")
-    
-    return {
-        'v1_id': v1['version_id'],
-        'v2_id': v2['version_id'],
-        'lineage': v2['lineage'],
-        'reproducible': is_reproducible,
-        'corruption_detected': not is_corrupted
-    }
-
-if __name__ == "__main__":
-    results = run_data_versioning_workflow()
-    print("\nWorkflow Results:", results)
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-reproducible-research` | Reproducible Research techniques | Complementary to this skill |
-| `coding-ds-data-collection` | Data Collection techniques | Complementary to this skill |
-| `coding-ds-data-ingestion` | Data Ingestion techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Data Versioning
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

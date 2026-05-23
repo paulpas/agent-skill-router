@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal
-  prediction"'
+description: '"Implements ARIMA, exponential smoothing, state-space models, LSTM networks,
+  and deep learning methods for temporal prediction"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-feature-engineering, ds-neural-networks, ds-regression-evaluation
   role: implementation
   scope: implementation
-  triggers: time series forecasting, ARIMA, exponential smoothing, LSTM, forecasting, time series prediction
+  triggers: time series forecasting, ARIMA, exponential smoothing, LSTM, forecasting,
+    time series prediction
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: time-series-forecasting
----
+------
 # Time Series Forecasting
 
 Comprehensive guide to time series forecasting in machine learning and data science workflows.
@@ -173,18 +186,4 @@ class TimeSeriesForecasting:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from typing import Dict, Any
-from statsmodels.tsa.holtwinters
+|

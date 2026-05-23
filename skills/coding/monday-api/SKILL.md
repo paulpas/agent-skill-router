@@ -1,18 +1,36 @@
 ---
 name: monday-api
-description: Integrates with monday.com API using GraphQL queries to manage boards, items, groups, columns, updates, workspaces, and webhooks via monday-api-python-sdk.
+description: Integrates with monday.com API using GraphQL queries to manage boards,
+  items, groups, columns, updates, workspaces, and webhooks via monday-api-python-sdk.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: monday api, monday.com, monday boards, monday items, monday graphql, monday python, monday automation
+  triggers: monday api, monday.com, monday boards, monday items, monday graphql, monday
+    python, monday automation
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-asana-api, coding-clickup-api, coding-notion-api
----
+------
 
 # Monday.com API Integration
 
@@ -220,18 +238,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-asana-api` | Alternative work management platform |
-| `coding-clickup-api` | Task management with ClickUp |
-| `coding-notion-api` | Knowledge management alongside monday.com |
-| `coding-airtable-api` | Database-backed alternative for structured data |
-
-## References
-
-- [monday-api-python-sdk on PyPI](https://pypi.org/project/monday-api-python-sdk/)
-- [monday.com Python SDK (GitHub)](https://github.com/mondaycom/monday-api-python-sdk)
-- [monday.com API Reference](https://developer.monday.com/api-reference/docs)
-- [monday.com Python SDK Docs](https://developer.monday.com/api-reference/docs/python-sdk)
-- [monday.com API Versioning](https://developer.monday.com/api-reference/docs/api-versioning)
-- [monday.com Complexity Limits](https://developer.monday.com/api-reference/docs/complexity)
-- [monday.com Developer Portal](https://developer.monday.com/)
+|

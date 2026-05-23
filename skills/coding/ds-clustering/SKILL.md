@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models,
-  and spectral clustering"'
+description: '"Implements clustering algorithms including K-means, hierarchical clustering,
+  DBSCAN, Gaussian mixture models, and spectral clustering"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-anomaly-detection, ds-association-rules, ds-community-detection, ds-dimensionality-reduction ds-dimensionality-reduction
+  related-skills: ds-anomaly-detection, ds-association-rules, ds-community-detection,
+    ds-dimensionality-reduction ds-dimensionality-reduction
   role: implementation
   scope: implementation
-  triggers: clustering, k-means, hierarchical clustering, DBSCAN, mixture models, how do I cluster data
+  triggers: clustering, k-means, hierarchical clustering, DBSCAN, mixture models,
+    how do I cluster data
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: clustering
----
+------
 # Clustering
 
 Comprehensive guide to clustering in machine learning and data science workflows.
@@ -188,117 +202,4 @@ def good_clustering(data: pd.DataFrame, n_clusters: int = 3) -> Dict[str, Any]:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_classification
-from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import KMeans, DBSCAN
-from sklearn.metrics import silhouette_score, calinski_harabasz_score
-from typing import Dict, Any, Tuple
-import warnings
-
-def comprehensive_clustering_pipeline(
-    n_samples: int = 500, 
-    n_features: int = 2, 
-    n_clusters: int = 3
-) -> Dict[str, Any]:
-    """
-    Comprehensive clustering pipeline with validation, multiple algorithms, 
-    evaluation metrics, and visualization. Follows SOLID principles for extensibility.
-    """
-    warnings.filterwarnings("ignore", category=UserWarning)
-    
-    X, y_true = make_classification(
-        n_samples=n_samples, 
-        n_features=n_features, 
-        n_informative=2, 
-        n_redundant=0, 
-        n_clusters_per_class=1, 
-        random_state=42
-    )
-    
-    if X.shape[0] < n_clusters:
-        raise ValueError("Not enough samples for requested clusters")
-        
-    scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)
-    
-    kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
-    kmeans_labels = kmeans.fit_predict(X_scaled)
-    
-    eps_threshold: float = 0.5
-    dbscan = DBSCAN(eps=eps_threshold, min_samples=5)
-    dbscan_labels = dbscan.fit_predict(X_scaled)
-    
-    metrics = {
-        "kmeans_silhouette": float(silhouette_score(X_scaled, kmeans_labels)),
-        "kmeans_inertia": float(kmeans.inertia_),
-        "kmeans_ch_score": float(calinski_harabasz_score(X_scaled, kmeans_labels)),
-        "dbscan_silhouette": float(silhouette_score(X_scaled, dbscan_labels, sample_size=min(1000, len(X_scaled)))),
-        "dbscan_n_clusters": int(len(set(dbscan_labels)) - (1 if -1 in dbscan_labels else 0))
-    }
-    
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-    axes[0].scatter(X_scaled[:, 0], X_scaled[:, 1], c=kmeans_labels, cmap='viridis', alpha=0.7)
-    axes[0].set_title(f"KMeans (Silhouette: {metrics['kmeans_silhouette']:.3f})")
-    axes[1].scatter(X_scaled[:, 0], X_scaled[:, 1], c=dbscan_labels, cmap='viridis', alpha=0.7)
-    axes[1].set_title(f"DBSCAN (Clusters: {metrics['dbscan_n_clusters']})")
-    plt.tight_layout()
-    
-    return {
-        "kmeans_labels": kmeans_labels,
-        "dbscan_labels": dbscan_labels,
-        "metrics": metrics,
-        "models": {"kmeans": kmeans, "dbscan": dbscan},
-        "plot": fig
-    }
-
-if __name__ == "__main__":
-    results = comprehensive_clustering_pipeline()
-    print(f"KMeans Silhouette: {results['metrics']['kmeans_silhouette']:.4f}")
-    print(f"DBSCAN Clusters: {results['metrics']['dbscan_n_clusters']}")
-    results['plot'].show()
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-dimensionality-reduction` | Dimensionality Reduction techniques | Complementary to this skill |
-| `coding-ds-anomaly-detection` | Anomaly Detection techniques | Complementary to this skill |
-| `coding-ds-community-detection` | Community Detection techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Clustering
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

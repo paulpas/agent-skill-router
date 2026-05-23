@@ -121,6 +121,41 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   # ----------------------------------------------------------------------
+  # Skill routing metadata validation (archetypes, anti_triggers, response_profile)
+  # ----------------------------------------------------------------------
+  skill-routes:
+    name: Skill Routing Metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Validate routing metadata on all SKILL.md files
+        run: |
+          FAILED=0
+          for skill_md in skills/*/SKILL.md; do
+            [ -f "$skill_md" ] || continue
+            if ! grep -q "archetypes:" "$skill_md"; then
+              echo "❌ $skill_md missing archetypes"
+              ((FAILED++)) || true
+            fi
+            if ! grep -q "anti_triggers:" "$skill_md"; then
+              echo "❌ $skill_md missing anti_triggers"
+              ((FAILED++)) || true
+            fi
+            if ! grep -q "response_profile:" "$skill_md"; then
+              echo "❌ $skill_md missing response_profile"
+              ((FAILED++)) || true
+            fi
+          done
+          if [ "$FAILED" -gt 0 ]; then
+            echo "::error::$FAILED routing metadata checks failed"
+            exit 1
+          fi
+          echo "✅ All skills have required routing metadata fields"
+
+  # ----------------------------------------------------------------------
   # npm audit + Snyk
   # ----------------------------------------------------------------------
   security:
@@ -185,7 +220,7 @@ jobs:
     name: CI Status
     runs-on: ubuntu-latest
     if: always()
-    needs: [lint, format, typecheck, test-unit, test-integration, coverage, security, build]
+    needs: [lint, format, typecheck, test-unit, test-integration, coverage, skill-routes, security, build]
     steps:
       - name: Verify all required jobs passed
         run: |

@@ -5,8 +5,8 @@ content-types:
 - guidance
 - examples
 - do-dont
-description: Implements intelligent n8n expression syntax with multi-factor skill selection, fallback chains, and adherence
-  to the 5 Laws of Elegant Defense
+description: Implements intelligent n8n expression syntax with multi-factor skill
+  selection, fallback chains, and adherence to the 5 Laws of Elegant Defense
 license: MIT
 maturity: stable
 metadata:
@@ -15,11 +15,22 @@ metadata:
   related-skills: agent-confidence-based-selector, agent-task-routing
   role: orchestration
   scope: orchestration
-  triggers: n8n-expression-syntax, n8n expression syntax, how do i n8n-expression-syntax, orchestrate n8n-expression-syntax,
-    automate n8n-expression-syntax, agent n8n-expression-syntax
+  triggers: n8n-expression-syntax, n8n expression syntax, how do i n8n-expression-syntax,
+    orchestrate n8n-expression-syntax, automate n8n-expression-syntax, agent n8n-expression-syntax
+  archetypes:
+  - orchestration
+  - strategic
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - single-agent monolith
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: tactical
   version: 1.0.0
 name: n8n-expression-syntax
----
+------
 # N8N Expression Syntax
 
 Orchestrates intelligent skill selection and execution for n8n expression syntax workflows. Applies the 5 Laws of Elegant Defense to guide data naturally through the orchestration pipeline, preventing errors before they occur. Selects optimal skills based on multi-factor scoring including text similarity, historical performance, and system availability.
@@ -317,23 +328,4 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `agent-dynamic-replanner` | Replans execution when conditions change |
-| `agent-parallel-skill-runner` | Executes independent skills in parallel |
-| `agent-dependency-graph-builder` | Builds and resolves skill dependency graphs |
-| `agent-task-decomposer` | Breaks complex tasks into delegable subtasks |
-| `agent-confidence-based-selector` | Alternative confidence-based routing approach
-
----
-
-## Constraints
-
-### MUST DO
-- Ensure each agent handles a single responsibility
-- Include explicit fallback/error routing for every branching point
-- Reference code-philosophy (5 Laws of Elegant Defense)
-
-### MUST NOT DO
-- Use fixed thresholds without adaptive tuning
-- Ignore low-confidence fallback scenarios
-- Skip execution history tracking
+|

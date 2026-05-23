@@ -1,18 +1,36 @@
 ---
 name: airtable-api
-description: Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python.
+description: Integrates with Airtable API to manage bases, tables, records, attachments,
+  webhooks, and automations using pyairtable for Python.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: airtable api, pyairtable, airtable records, airtable bases, airtable python, airtable automation, airtable webhooks
+  triggers: airtable api, pyairtable, airtable records, airtable bases, airtable python,
+    airtable automation, airtable webhooks
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-google-workspace-api, coding-notion-api, coding-asana-api
----
+------
 
 # Airtable API Integration
 
@@ -237,18 +255,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-google-workspace-api` | Google Sheets as an alternative to Airtable |
-| `coding-notion-api` | Notion databases as a knowledge-management alternative |
-| `coding-asana-api` | Task management with Airtable-like record flexibility |
-| `coding-atlassian-api` | Confluence + Jira for documentation and issue tracking |
-
-## References
-
-- [pyairtable on PyPI](https://pypi.org/project/pyairtable/)
-- [pyairtable Documentation](https://pyairtable.readthedocs.io/)
-- [pyairtable (GitHub)](https://github.com/gtalarico/pyairtable)
-- [Airtable API Reference](https://airtable.com/developers/web/api/introduction)
-- [Airtable Formula Field Reference](https://support.airtable.com/docs/formula-field-reference)
-- [Airtable Personal Access Tokens](https://airtable.com/create/tokens)
-- [Airtable Webhooks API](https://airtable.com/developers/web/api/webhooks-overview)
+|

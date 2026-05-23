@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance
-  for sensitive data"'
+description: '"Applies privacy-preserving techniques including anonymization, differential
+  privacy, encryption, and GDPR compliance for sensitive data"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-data-versioning, ds-privacy-ml
   role: implementation
   scope: implementation
-  triggers: data privacy, anonymization, differential privacy, GDPR, PII protection, privacy-preserving, sensitive data
+  triggers: data privacy, anonymization, differential privacy, GDPR, PII protection,
+    privacy-preserving, sensitive data
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: data-privacy
----
+------
 # Data Privacy
 
 Comprehensive guide to data privacy in machine learning and data science workflows.
@@ -159,102 +172,4 @@ class DataPrivacyEngine:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from typing import Dict, Any
-import logging
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-# BAD: Directly exposing raw PII without transformation
-def bad_privacy_implementation(df: pd.DataFrame) -> pd.DataFrame:
-    """Returns data unchanged, violating GDPR Article 5(1)(f)"""
-    return df  # Fails to anonymize or protect sensitive fields
-
-# GOOD: Implements OWASP Data Security Cheat Sheet & GDPR compliance
-def good_privacy_implementation(df: pd.DataFrame, epsilon: float = 1.0) -> Dict[str, Any]:
-    """
-    Applies tokenization and differential privacy noise.
-    Follows NIST SP 800-122 guidelines for PII protection.
-    """
-    if df.empty:
-        raise ValueError("DataFrame cannot be empty")
-
-    protected: pd.DataFrame = df.copy()
-    metrics: Dict[str, int] = {"rows_processed": len(df), "columns_protected": 0}
-
-    for col in protected.columns:
-        if protected[col].dtype == "object":
-            protected[col] = protected[col].apply(
-                lambda x: f"pii_{abs(hash(str(x))) % 10000}" if pd.notna(x) else x
-            )
-            metrics["columns_protected"] += 1
-        elif np.issubdtype(protected[col].dtype, np.number):
-            sensitivity: float = protected[col].max() - protected[col].min()
-            scale: float = sensitivity / epsilon
-            noise: np.ndarray = np.random.laplace(0, scale, size=len(protected))
-            protected[col] = protected[col] + noise
-            metrics["columns_protected"] += 1
-
-    return {"protected_data": protected, "compliance_metrics": metrics}
-
-if __name__ == "__main__":
-    np.random.seed(42)
-    sample_df: pd.DataFrame = pd.DataFrame({
-        "user_id": np.arange(100),
-        "age": np.random.randint(18, 70, 100),
-        "income": np.random.normal(50000, 15000, 100),
-        "email": [f"user{i}@example.com" for i in range(100)]
-    })
-
-    logger.info("Running BAD implementation (for comparison)...")
-    bad_result: pd.DataFrame = bad_privacy_implementation(sample_df)
-    logger.info(f"BAD: Raw data exposed. Rows: {len(bad_result)}")
-
-    logger.info("Running GOOD implementation...")
-    good_result: Dict[str, Any] = good_privacy_implementation(sample_df, epsilon=0.5)
-    logger.info(f"GOOD: Protected {good_result['compliance_metrics']['columns_protected']} columns")
-    logger.info(f"Sample protected row:\n{good_result['protected_data'].iloc[0]}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-privacy-ml` | Privacy Ml techniques | Complementary to this skill |
-| `coding-ds-data-versioning` | Data Versioning techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Data Privacy
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

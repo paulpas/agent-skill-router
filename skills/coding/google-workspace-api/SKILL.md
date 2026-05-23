@@ -1,18 +1,36 @@
 ---
 name: google-workspace-api
-description: Integrates with Google Workspace APIs (Gmail, Drive, Calendar, Docs, Sheets, Admin) using google-api-python-client for programmatic access and automation.
+description: Integrates with Google Workspace APIs (Gmail, Drive, Calendar, Docs,
+  Sheets, Admin) using google-api-python-client for programmatic access and automation.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: google workspace, gmail api, google drive api, google calendar, google sheets api, google api client, service account
+  triggers: google workspace, gmail api, google drive api, google calendar, google
+    sheets api, google api client, service account
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-microsoft-graph-api, coding-atlassian-api, coding-airtable-api
----
+------
 
 # Google Workspace API Integration
 
@@ -205,19 +223,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-microsoft-graph-api` | Microsoft 365 equivalent (Outlook, OneDrive, Teams) |
-| `coding-atlassian-api` | Atlassian suite (Jira, Confluence) — complementary project tracking |
-| `coding-airtable-api` | Spreadsheet-database hybrid alternative to Google Sheets |
-| `coding-notion-api` | Knowledge management alternative to Google Docs |
-
-## References
-
-- [google-api-python-client on PyPI](https://pypi.org/project/google-api-python-client/)
-- [Google API Python Client (GitHub)](https://github.com/googleapis/google-api-python-client)
-- [Google Workspace APIs Overview](https://developers.google.com/workspace/overview)
-- [Gmail API Python Guide](https://developers.google.com/gmail/api/quickstart/python)
-- [Google Drive API Python Guide](https://developers.google.com/drive/api/quickstart/python)
-- [Google Sheets API Python Guide](https://developers.google.com/sheets/api/quickstart/python)
-- [Google Calendar API Python Guide](https://developers.google.com/calendar/api/quickstart/python)
-- [Google Auth Python Library](https://google-auth.readthedocs.io/)
+|

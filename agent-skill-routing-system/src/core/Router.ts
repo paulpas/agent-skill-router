@@ -456,7 +456,7 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       }
 
       // For each candidate, compute hybrid score using LLM similarity as vectorSimilarity fallback
-      const hybridResults: Array<{ skill: typeof candidates[0]; hybridScore: number; components: ScoreComponents }> = [];
+      const hybridResults: Array<{ skill: typeof candidates[0]; hybridScore: number; components: ScoreComponents; breakdown?: ObsScoreBreakdown }> = [];
 
       for (const candidate of candidates) {
         const llmScore = llmScoreMap.get(candidate.metadata.name) ?? 0;
@@ -517,7 +517,21 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
           historicalSuccessRate: historicalRate !== undefined ? historicalRate / 100 : undefined,
         };
 
-        hybridResults.push({ skill: candidate, hybridScore: this.hybridScorer.compute(components), components });
+        const finalScore = this.hybridScorer.compute(components);
+        // Convert ScoreComponents → ScoreBreakdown for observability
+        const breakdown: ObsScoreBreakdown = {
+          finalScore,
+          vectorScore: components.vectorSimilarity,
+          bm25Score: components.bm25Score,
+          triggerMatchScore: components.triggerMatchScore,
+          specificityScore: components.specificityScore,
+          concisenessScore: components.concisenessScore,
+        };
+        // Normalize archetypeBoost from [0.5,1.3] to [0,1] range for display
+        const archetypeNormalized = (components.archetypeBoost - 1.0) / 0.3;
+        breakdown.archetypeScore = Math.max(0, Math.min(1, archetypeNormalized));
+
+        hybridResults.push({ skill: candidate, hybridScore: finalScore, components, breakdown });
       }
 
       // Sort by hybrid score descending and convert to SelectedSkill[]
@@ -526,11 +540,12 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         name: r.skill.metadata.name,
         score: r.hybridScore,
         role: i === 0 ? 'primary' : 'supporting',
+        scoreBreakdown: r.breakdown,
       }));
     }
 
     // --- No LLM fallback: compute all scores directly ---
-    const hybridResults: Array<{ skill: typeof candidates[0]; hybridScore: number }> = [];
+    const hybridResults: Array<{ skill: typeof candidates[0]; hybridScore: number; components: ScoreComponents; breakdown?: ObsScoreBreakdown }> = [];
 
     for (const candidate of candidates) {
       // BM25 scoring
@@ -589,7 +604,21 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         historicalSuccessRate: historicalRate !== undefined ? historicalRate / 100 : undefined,
       };
 
-      hybridResults.push({ skill: candidate, hybridScore: this.hybridScorer.compute(components) });
+      const finalScore = this.hybridScorer.compute(components);
+      // Convert ScoreComponents → ScoreBreakdown for observability
+      const breakdown: ObsScoreBreakdown = {
+        finalScore,
+        vectorScore: components.vectorSimilarity,
+        bm25Score: components.bm25Score,
+        triggerMatchScore: components.triggerMatchScore,
+        specificityScore: components.specificityScore,
+        concisenessScore: components.concisenessScore,
+      };
+      // Normalize archetypeBoost from [0.5,1.3] to [0,1] range for display
+      const archetypeNormalized = (components.archetypeBoost - 1.0) / 0.3;
+      breakdown.archetypeScore = Math.max(0, Math.min(1, archetypeNormalized));
+
+      hybridResults.push({ skill: candidate, hybridScore: finalScore, components, breakdown });
     }
 
     // Sort by hybrid score descending
@@ -598,6 +627,7 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       name: r.skill.metadata.name,
       score: r.hybridScore,
       role: i === 0 ? 'primary' : 'supporting',
+      scoreBreakdown: r.breakdown,
     }));
   }
 
@@ -627,21 +657,27 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       return scores;
     }
 
-  /**
-     * Extract routing scores as ScoreBreakdown objects for each selected skill.
-     */
+ /**
+      * Extract routing scores as ScoreBreakdown objects for each selected skill.
+      */
     private extractRoutingScoresAsBreakdown(
       skills: SelectedSkill[]
     ): Record<string, ObsScoreBreakdown> {
       const map: Record<string, ObsScoreBreakdown> = {};
       for (const skill of skills) {
-        const breakdown: ObsScoreBreakdown = { finalScore: skill.score };
+        // Use stored breakdown if available (from hybrid scorer), otherwise build minimal
+        if (skill.scoreBreakdown) {
+          const breakdown: ObsScoreBreakdown = { ...skill.scoreBreakdown };
+          map[skill.name] = breakdown;
+        } else {
+          const breakdown: ObsScoreBreakdown = { finalScore: skill.score };
+          map[skill.name] = breakdown;
+        }
         // Add MMR penalty if this skill was diversified
         const mmrPenalty = this.mmrPenalties.get(skill.name);
         if (mmrPenalty !== undefined) {
-          breakdown.mmerPenalty = mmrPenalty;
+          map[skill.name].mmerPenalty = mmrPenalty;
         }
-        map[skill.name] = breakdown;
       }
       return map;
     }

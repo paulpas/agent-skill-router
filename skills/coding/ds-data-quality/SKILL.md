@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable
-  datasets for model training"'
+description: '"Implements data validation, cleaning, outlier detection, and quality
+  assurance techniques to ensure reliable datasets for model training"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-anomaly-detection, ds-data-collection, ds-data-profiling, ds-missing-data
   role: implementation
   scope: implementation
-  triggers: data validation, data cleaning, outlier detection, data quality, how do i clean data, missing values
+  triggers: data validation, data cleaning, outlier detection, data quality, how do
+    i clean data, missing values
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: data-quality
----
+------
 # Data Quality
 
 Comprehensive guide to data quality in machine learning and data science workflows.
@@ -191,103 +204,4 @@ def good_quality_check(df: pd.DataFrame, threshold: float = 0.5) -> pd.DataFrame
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from typing import Dict, Any
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-
-def run_data_quality_pipeline(raw_data: pd.DataFrame) -> Dict[str, Any]:
-    """
-    Complete data quality pipeline with validation, cleaning, and reporting.
-    Follows KISS principle by keeping steps explicit and modular.
-    """
-    if raw_data is None or raw_data.empty:
-        raise ValueError("Raw data cannot be None or empty")
-
-    report = {
-        "original_shape": raw_data.shape,
-        "missing_counts": {},
-        "duplicate_count": 0,
-        "outlier_count": 0,
-        "cleaned_shape": (0, 0),
-        "status": "success"
-    }
-
-    if not isinstance(raw_data, pd.DataFrame):
-        raise TypeError("Expected pandas DataFrame")
-
-    missing = raw_data.isnull().sum()
-    report["missing_counts"] = missing[missing > 0].to_dict()
-
-    report["duplicate_count"] = int(raw_data.duplicated().sum())
-
-    cleaned = raw_data.dropna().drop_duplicates()
-
-    numeric_cols = cleaned.select_dtypes(include=[np.number]).columns
-    for col in numeric_cols:
-        q1, q3 = cleaned[col].quantile(0.25), cleaned[col].quantile(0.75)
-        iqr = q3 - q1
-        lower, upper = q1 - 1.5 * iqr, q3 + 1.5 * iqr
-        outliers = ((cleaned[col] < lower) | (cleaned[col] > upper)).sum()
-        report["outlier_count"] += int(outliers)
-        cleaned[col] = cleaned[col].clip(lower=lower, upper=upper)
-
-    report["cleaned_shape"] = cleaned.shape
-    return report
-
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=500, n_features=5, n_informative=3, random_state=42)
-    df = pd.DataFrame(X, columns=[f"feature_{i}" for i in range(5)])
-    df["target"] = y
-
-    df.loc[:10, "feature_0"] = np.nan
-    df.loc[:5] = df.loc[0]
-
-    results = run_data_quality_pipeline(df)
-    print("Data Quality Report:")
-    for key, value in results.items():
-        print(f"  {key}: {value}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-data-collection` | Data Collection techniques | Complementary to this skill |
-| `coding-ds-missing-data` | Missing Data techniques | Complementary to this skill |
-| `coding-ds-data-profiling` | Data Profiling techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Data Quality
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

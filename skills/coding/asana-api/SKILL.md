@@ -1,18 +1,37 @@
 ---
 name: asana-api
-description: Integrates with Asana API to manage tasks, projects, workspaces, goals, portfolios, and webhooks using the official asana Python SDK for work management automation.
+description: Integrates with Asana API to manage tasks, projects, workspaces, goals,
+  portfolios, and webhooks using the official asana Python SDK for work management
+  automation.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: asana api, asana python, asana tasks, asana projects, asana webhooks, asana sdk, asana automation
+  triggers: asana api, asana python, asana tasks, asana projects, asana webhooks,
+    asana sdk, asana automation
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-clickup-api, coding-monday-api, coding-atlassian-api
----
+------
 
 # Asana API Integration
 
@@ -216,18 +235,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-clickup-api` | Alternative task management with ClickUp |
-| `coding-monday-api` | Alternative work management with monday.com |
-| `coding-atlassian-api` | Jira for software development issue tracking |
-| `coding-airtable-api` | Spreadsheet-database hybrid for reporting alongside Asana |
-
-## References
-
-- [asana Python SDK on PyPI](https://pypi.org/project/asana/)
-- [Asana Python SDK (GitHub)](https://github.com/Asana/python-asana)
-- [Asana API Reference](https://developers.asana.com/reference)
-- [Asana Python SDK Docs](https://developers.asana.com/docs/python)
-- [Asana Developer Console](https://app.asana.com/0/developer-console)
-- [Asana Webhooks Guide](https://developers.asana.com/docs/webhooks)
-- [Asana Custom Fields](https://developers.asana.com/docs/custom-fields)
+|

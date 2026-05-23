@@ -1,18 +1,37 @@
 ---
 name: microsoft-graph-api
-description: Integrates with Microsoft Graph API to manage mail, calendar, OneDrive files, Teams messages, SharePoint sites, and Excel workbooks using msgraph-sdk for Python.
+description: Integrates with Microsoft Graph API to manage mail, calendar, OneDrive
+  files, Teams messages, SharePoint sites, and Excel workbooks using msgraph-sdk for
+  Python.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: microsoft graph, msgraph, outlook api, teams api, sharepoint api, office 365 api, entra id graph, msgraph-sdk
+  triggers: microsoft graph, msgraph, outlook api, teams api, sharepoint api, office
+    365 api, entra id graph, msgraph-sdk
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-google-workspace-api, coding-atlassian-api
----
+------
 
 # Microsoft Graph API Integration
 
@@ -186,17 +205,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-google-workspace-api` | Integrates with Gmail, Drive, Calendar APIs (alternative productivity platform) |
-| `coding-atlassian-api` | Integrates with Jira, Confluence, Bitbucket (complementary DevEx platform) |
-| `coding-notion-api` | Knowledge management alongside Microsoft 365 |
-
-## References
-
-- [Microsoft Graph Python SDK (GitHub)](https://github.com/microsoftgraph/msgraph-sdk-python)
-- [msgraph-sdk on PyPI](https://pypi.org/project/msgraph-sdk/)
-- [Microsoft Graph API v1.0 Reference](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0)
-- [Azure Identity SDK for Python](https://pypi.org/project/azure-identity/)
-- [Graph API batching](https://learn.microsoft.com/en-us/graph/json-batching)
-- [Microsoft Graph permissions reference](https://learn.microsoft.com/en-us/graph/permissions-reference)
-- [Graph Explorer (interactive testing)](https://developer.microsoft.com/en-us/graph/graph-explorer)
+|

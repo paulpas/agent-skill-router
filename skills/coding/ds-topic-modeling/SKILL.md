@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF),
-  and other topic extraction methods"'
+description: '"Implements topic modeling using Latent Dirichlet Allocation (LDA),
+  Non-negative Matrix Factorization (NMF), and other topic extraction methods"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-association-rules, ds-clustering, ds-dimensionality-reduction
   role: implementation
   scope: implementation
-  triggers: topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation, text analysis
+  triggers: topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation,
+    text analysis
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: topic-modeling
----
+------
 # Topic Modeling
 
 Comprehensive guide to topic modeling in machine learning and data science workflows.
@@ -197,79 +210,4 @@ class TopicModeling:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.decomposition import LatentDirichletAllocation
-from typing import Dict, Any, List
-
-def _preprocess_texts(data: pd.DataFrame, text_col: str) -> List[str]:
-    if text_col not in data.columns:
-        raise ValueError(f"Column '{text_col}' not found")
-    return data[text_col].dropna().astype(str).tolist()
-
-def _build_vectorizer() -> CountVectorizer:
-    return CountVectorizer(max_df=0.95, min_df=2, stop_words='english')
-
-def _train_lda(doc_term_matrix: np.ndarray, n_topics: int) -> LatentDirichletAllocation:
-    return LatentDirichletAllocation(
-        n_components=n_topics, max_iter=10, random_state=42, evaluate_every=-1
-    ).fit(doc_term_matrix)
-
-def implement_modeling(data: pd.DataFrame, text_col: str = 'text', n_topics: int = 5) -> Dict[str, Any]:
-    """
-    Complete implementation of Topic Modeling with validation and evaluation.
-    
-    Args:
-        data: Input DataFrame containing text documents
-        text_col: Column name containing raw text
-        n_topics: Number of latent topics to discover
-        
-    Returns:
-        Dictionary with model artifacts, topic distributions, and evaluation metrics
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-        
-    texts = _preprocess_texts(data, text_col)
-    if len(texts) < n_topics:
-        raise ValueError("Dataset must contain more documents than requested topics")
-        
-    vectorizer = _build_vectorizer()
-    doc_term_matrix = vectorizer.fit_transform(texts)
-    
-    lda = _train_lda(doc_term_matrix, n_topics)
-    
-    feature_names = vectorizer.get_feature_names_out()
-    topics = {
-        f'topic_{idx}': [feature_names[i] for i in topic.argsort()[:-10:-1]]
-        for idx, topic in enumerate(lda.components_)
-    }
-    
-    doc_topic_dist = lda.transform(doc_term_matrix)
-    perplexity = float(np.exp(-lda.score(doc_term_matrix) / doc_term_matrix.shape[0]))
-    
-    return {
-        'status': 'success', 'topics': topics, 'perplexity': perplexity,
-        'doc_topic_distribution': doc_topic_dist, 'vectorizer': vectorizer,
-        'model': lda, 'metadata': {'documents_processed': len(texts), 'topics_found': n_topics}
-    }
-
-if __name__ == "__main__":
-    sample_data = fetch_20newsgroups(subset='all', remove=('headers', 'footers', 'quotes'))
-    df = pd.DataFrame({'text': sample_data.data, 'category': sample_data.target})
-    
-    results = implement_modeling(df, text_col='text', n_topics=5)
-    print(f"Status: {results['status']}")
-    print(f"
+|

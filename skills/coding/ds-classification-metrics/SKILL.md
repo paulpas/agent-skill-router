@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification
-  metrics"'
+description: '"Evaluates classification models using precision, recall, F1-score,
+  ROC-AUC, confusion matrix, and other classification metrics"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-ab-testing, ds-cross-validation, ds-metrics-and-kpis, ds-model-selection
   role: implementation
   scope: implementation
-  triggers: classification metrics, precision, recall, F1-score, ROC-AUC, confusion matrix
+  triggers: classification metrics, precision, recall, F1-score, ROC-AUC, confusion
+    matrix
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: classification-metrics
----
+------
 # Classification Metrics
 
 Comprehensive guide to classification metrics in machine learning and data science workflows.
@@ -178,121 +191,4 @@ def good_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float]:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import (
-    accuracy_score, precision_score, recall_score, f1_score,
-    roc_curve, auc, confusion_matrix, ConfusionMatrixDisplay
-)
-from typing import Dict, Tuple, Any
-
-def evaluate_classification_model(
-    X: np.ndarray, 
-    y: np.ndarray, 
-    model: Any, 
-    test_size: float = 0.2, 
-    random_state: int = 42
-) -> Dict[str, Any]:
-    """
-    Comprehensive evaluation of a classification model.
-    
-    Args:
-        X: Feature matrix
-        y: Target vector
-        model: Trained sklearn-compatible classifier
-        test_size: Proportion of data for testing
-        random_state: Random seed for reproducibility
-        
-    Returns:
-        Dictionary containing metrics, predictions, and visualization data
-    """
-    if X.shape[0] != y.shape[0]:
-        raise ValueError("Feature matrix and target vector must have matching row counts")
-        
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
-    model.fit(X_train, y_train)
-    
-    y_pred = model.predict(X_test)
-    y_prob = model.predict_proba(X_test)[:, 1]
-    
-    metrics = {
-        'accuracy': accuracy_score(y_test, y_pred),
-        'precision': precision_score(y_test, y_pred),
-        'recall': recall_score(y_test, y_pred),
-        'f1': f1_score(y_test, y_pred),
-        'roc_auc': auc(*roc_curve(y_test, y_prob)[:2]),
-        'confusion_matrix': confusion_matrix(y_test, y_pred).tolist()
-    }
-    
-    return {
-        'metrics': metrics,
-        'y_test': y_test,
-        'y_pred': y_pred,
-        'y_prob': y_prob
-    }
-
-if __name__ == "__main__":
-    # Generate dataset
-    X, y = make_classification(n_samples=2000, n_features=8, n_classes=2, random_state=123)
-    
-    # Initialize and evaluate
-    clf = RandomForestClassifier(n_estimators=100, random_state=42)
-    results = evaluate_classification_model(X, y, clf)
-    
-    # Print metrics
-    for k, v in results['metrics'].items():
-        print(f"{k}: {v:.4f}")
-        
-    # Visualize confusion matrix
-    cm = confusion_matrix(results['y_test'], results['y_pred'])
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Class 0', 'Class 1'])
-    disp.plot(cmap='Blues')
-    plt.title('Confusion Matrix')
-    plt.show()
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-cross-validation` | Cross Validation techniques | Complementary to this skill |
-| `coding-ds-model-selection` | Model Selection techniques | Complementary to this skill |
-| `coding-ds-ab-testing` | Ab Testing techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Classification Metrics
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

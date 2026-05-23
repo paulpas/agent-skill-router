@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared, and other metrics for assessing predictive
-  accuracy"'
+description: '"Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared,
+  and other metrics for assessing predictive accuracy"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-cross-validation, ds-linear-regression, ds-metrics-and-kpis, ds-time-series-forecasting ds-model-selection
+  related-skills: ds-cross-validation, ds-linear-regression, ds-metrics-and-kpis,
+    ds-time-series-forecasting ds-model-selection
   role: implementation
   scope: implementation
-  triggers: regression evaluation, MSE, RMSE, MAE, R-squared, regression metrics, how do i evaluate
+  triggers: regression evaluation, MSE, RMSE, MAE, R-squared, regression metrics,
+    how do i evaluate
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: regression-evaluation
----
+------
 # Regression Evaluation
 
 Comprehensive guide to regression evaluation in machine learning and data science workflows.
@@ -208,88 +222,4 @@ def good_evaluation(X: pd.DataFrame, y: pd.Series) -> Dict[str, float]:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_regression
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import Ridge
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-from typing import Dict, Tuple
-
-def run_regression_evaluation() -> Dict[str, float]:
-    """Generate synthetic data, train a model, evaluate, and visualize results."""
-    X, y = make_regression(n_samples=500, n_features=3, noise=10, random_state=42)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    alpha: float = 1.0
-    model = Ridge(alpha=alpha)
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    
-    metrics: Dict[str, float] = {
-        'mse': float(mean_squared_error(y_test, y_pred)),
-        'rmse': float(np.sqrt(mean_squared_error(y_test, y_pred))),
-        'mae': float(mean_absolute_error(y_test, y_pred)),
-        'r2': float(r2_score(y_test, y_pred))
-    }
-    
-    plt.figure(figsize=(8, 6))
-    plt.scatter(y_test, y_pred, alpha=0.5, color='blue', label='Predictions')
-    plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2, label='Perfect Fit')
-    plt.xlabel('Actual Values')
-    plt.ylabel('Predicted Values')
-    plt.title('Regression Evaluation: Actual vs Predicted')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
-    
-    return metrics
-
-if __name__ == "__main__":
-    results = run_regression_evaluation()
-    for metric, value in results.items():
-        print(f"{metric.upper()}: {value:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-linear-regression` | Linear Regression techniques | Complementary to this skill |
-| `coding-ds-cross-validation` | Cross Validation techniques | Complementary to this skill |
-| `coding-ds-model-selection` | Model Selection techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Regression Evaluation
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

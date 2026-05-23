@@ -1,18 +1,36 @@
 ---
 name: atlassian-api
-description: Integrates with Atlassian suite (Jira, Confluence, Bitbucket, Rovo, Forge) using atlassian-python-api to automate issue tracking, documentation, and code management.
+description: Integrates with Atlassian suite (Jira, Confluence, Bitbucket, Rovo, Forge)
+  using atlassian-python-api to automate issue tracking, documentation, and code management.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: jira api, confluence api, bitbucket api, atlassian python, jira automation, confluence pages, atlassian forge
+  triggers: jira api, confluence api, bitbucket api, atlassian python, jira automation,
+    confluence pages, atlassian forge
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-microsoft-graph-api, coding-google-workspace-api, coding-asana-api
----
+------
 
 # Atlassian API Integration
 
@@ -210,18 +228,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-microsoft-graph-api` | Access Outlook, Teams, SharePoint alongside Atlassian tools |
-| `coding-google-workspace-api` | Use Google Sheets as data source for Jira reports |
-| `coding-asana-api` | Task management alternative to Jira |
-| `coding-bitbucket-api` | Direct Bitbucket integration (pipelines, PRs, repos) |
-
-## References
-
-- [atlassian-python-api on PyPI](https://pypi.org/project/atlassian-python-api/)
-- [atlassian-python-api (GitHub)](https://github.com/atlassian-api/atlassian-python-api)
-- [atlassian-python-api Documentation](https://atlassian-python-api.readthedocs.io/)
-- [Jira Cloud API Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/)
-- [Confluence Cloud API Reference](https://developer.atlassian.com/cloud/confluence/rest/v2/)
-- [Bitbucket Cloud API Reference](https://developer.atlassian.com/cloud/bitbucket/rest/)
-- [Atlassian API Tokens](https://id.atlassian.com/manage/api-tokens)
+|

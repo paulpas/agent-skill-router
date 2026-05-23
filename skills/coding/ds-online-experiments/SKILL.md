@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning
-  algorithms"'
+description: '"Implements multi-armed bandits, contextual bandits, exploration-exploitation
+  tradeoff, and online learning algorithms"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-ab-testing, ds-experimental-design, ds-metrics-and-kpis
   role: implementation
   scope: implementation
-  triggers: multi-armed bandits, bandits, contextual bandits, exploration exploitation, online learning
+  triggers: multi-armed bandits, bandits, contextual bandits, exploration exploitation,
+    online learning
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: online-experiments
----
+------
 # Online Experiments
 
 Comprehensive guide to online experiments in machine learning and data science workflows.
@@ -213,65 +226,4 @@ def good_bandit(rewards: List[float], n_arms: int = 3, alpha: float = 0.1) -> Di
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from typing import Dict, Any
-from sklearn.datasets import make_classification
-
-def contextual_bandit_simulation(n_samples: int = 1000, n_features: int = 5, n_arms: int = 3) -> Dict[str, Any]:
-    """
-    Simulates a contextual bandit experiment using synthetic classification data.
-    
-    Args:
-        n_samples: Number of contextual observations
-        n_features: Number of contextual features
-        n_arms: Number of available actions
-        
-    Returns:
-        Dictionary with simulation metrics, regret trajectory, and plot data
-    """
-    X, _ = make_classification(n_samples=n_samples, n_features=n_features, 
-                               n_informative=3, n_redundant=1, random_state=42)
-    true_rewards = np.random.uniform(0.5, 1.5, size=(n_samples, n_arms))
-    
-    q_estimates = np.zeros(n_arms)
-    arm_counts = np.zeros(n_arms)
-    cumulative_regret = []
-    best_arm_idx = np.argmax(np.mean(true_rewards, axis=0))
-    
-    for t in range(n_samples):
-        context = X[t]
-        scores = q_estimates + 0.1 * np.random.randn(n_arms)
-        arm = int(np.argmax(scores))
-        
-        reward = true_rewards[t, arm]
-        arm_counts[arm] += 1
-        n = arm_counts[arm]
-        q_estimates[arm] += (1.0 / n) * (reward - q_estimates[arm])
-        
-        regret = np.mean(true_rewards[t, best_arm_idx]) - np.mean(true_rewards[t, arm])
-        cumulative_regret.append(np.sum(cumulative_regret) + regret)
-        
-    return {
-        'context_shape': X.shape,
-        'arm_counts': arm_counts.tolist(),
-        'estimated_q': q_estimates.tolist(),
-        'cumulative_regret': cumulative_regret
-    }
-
-def plot_bandit_results(results: Dict[str, Any]) -> None:
-    """Generates convergence and regret visualization."""
-    regret = np.array(results['cumulative_regret'])
-    plt.figure(figsize=(10, 6))
-    plt.plot(regret, label='Cumulative Reg
+|

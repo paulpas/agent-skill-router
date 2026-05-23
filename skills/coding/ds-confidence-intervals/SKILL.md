@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification
-  for parameter estimation"'
+description: '"Provides Constructs confidence intervals using bootstrap, analytical
+  methods, and uncertainty quantification for parameter estimation"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-bayesian-inference, ds-hypothesis-testing, ds-monte-carlo
   role: implementation
   scope: implementation
-  triggers: confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals
+  triggers: confidence intervals, bootstrap, uncertainty quantification, confidence
+    bounds, credible intervals
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: confidence-intervals
----
+------
 # Confidence Intervals
 
 Comprehensive guide to confidence intervals in machine learning and data science workflows.
@@ -160,90 +173,4 @@ class ConfidenceIntervalCalculator:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_regression
-from scipy import stats
-from typing import Dict, Any
-
-def compute_and_visualize_ci(data: pd.DataFrame, target_col: str, confidence: float = 0.95) -> Dict[str, Any]:
-    """Compute analytical CI and visualize results."""
-    values = data[target_col].dropna().values
-    if len(values) < 2:
-        raise ValueError("Insufficient data for CI calculation")
-        
-    n = len(values)
-    mean = np.mean(values)
-    std_err = stats.sem(values)
-    margin = stats.t.ppf((1 + confidence) / 2, df=n - 1) * std_err
-    lower, upper = mean - margin, mean + margin
-    
-    plt.figure(figsize=(8, 5))
-    plt.errorbar(1, mean, yerr=[[mean - lower], [upper - mean]], fmt='o', capsize=5, label=f'{confidence*100}% CI')
-    plt.axhline(mean, color='r', linestyle='--', label='Mean')
-    plt.title(f'Confidence Interval for {target_col}')
-    plt.ylabel('Value')
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-    plt.tight_layout()
-    plt.show()
-    
-    return {
-        'mean': float(mean),
-        'lower_bound': float(lower),
-        'upper_bound': float(upper),
-        'margin_of_error': float(margin),
-        'sample_size': n
-    }
-
-if __name__ == "__main__":
-    X, y = make_regression(n_samples=200, n_features=1, noise=10.0, random_state=42)
-    df = pd.DataFrame({'feature': X.flatten(), 'target': y})
-    results = compute_and_visualize_ci(df, 'target')
-    print(f"CI Results: {results}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-hypothesis-testing` | Hypothesis Testing techniques | Complementary to this skill |
-| `coding-ds-bayesian-inference` | Bayesian Inference techniques | Complementary to this skill |
-| `coding-ds-monte-carlo` | Monte Carlo techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Confidence Intervals
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-- NIST/SEMATECH e-Handbook of Statistical Methods for uncertainty quantification
-- PEP 8 Style Guide for Python Code
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

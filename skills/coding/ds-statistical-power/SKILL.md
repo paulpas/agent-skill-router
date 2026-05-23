@@ -6,7 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control"'
+description: '"Analyzes statistical power, sample size determination, effect size
+  estimation, and Type I/Type II error control"'
 license: MIT
 maturity: stable
 metadata:
@@ -15,10 +16,23 @@ metadata:
   related-skills: ds-ab-testing, ds-experimental-design, ds-hypothesis-testing
   role: implementation
   scope: implementation
-  triggers: statistical power, power analysis, sample size, effect size, Type I error, Type II error
+  triggers: statistical power, power analysis, sample size, effect size, Type I error,
+    Type II error
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: statistical-power
----
+------
 # Statistical Power
 
 Comprehensive guide to statistical power in machine learning and data science workflows.
@@ -165,117 +179,4 @@ def good_power_calc(effect_size: float, n: int, alpha: float = 0.05) -> float:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from typing import Dict, Any
-from sklearn.datasets import make_classification
-from statsmodels.stats.power import TTestPower
-import matplotlib.pyplot as plt
-
-def perform_power_analysis(data: pd.DataFrame, target_power: float = 0.8, alpha: float = 0.05) -> Dict[str, Any]:
-    """
-    Complete implementation of Statistical Power analysis.
-    
-    Args:
-        data: DataFrame with 'feature' and 'target' columns
-        target_power: Desired statistical power (default 0.8)
-        alpha: Significance level (default 0.05)
-        
-    Returns:
-        Dictionary with power metrics and recommendations
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if 'feature' not in data.columns or 'target' not in data.columns:
-        raise ValueError("DataFrame must contain 'feature' and 'target' columns")
-        
-    group_0: pd.Series = data.loc[data['target'] == 0, 'feature']
-    group_1: pd.Series = data.loc[data['target'] == 1, 'feature']
-    
-    pooled_std: float = np.sqrt(((len(group_0) - 1) * group_0.var() + (len(group_1) - 1) * group_1.var()) / (len(group_0) + len(group_1) - 2))
-    effect_size: float = abs(group_0.mean() - group_1.mean()) / pooled_std if pooled_std > 0 else 0.0
-    
-    power_calc: TTestPower = TTestPower()
-    current_power: float = power_calc.power(effect_size=effect_size, nobs=len(group_0), alpha=alpha)
-    required_n: int = int(np.ceil(power_calc.solve_power(effect_size=effect_size, power=target_power, alpha=alpha)))
-    
-    return {
-        'effect_size': float(effect_size),
-        'current_power': float(current_power),
-        'required_sample_size': required_n,
-        'current_sample_size': len(group_0),
-        'alpha': alpha,
-        'target_power': target_power
-    }
-
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=200, n_features=1, n_informative=1, 
-                               n_redundant=0, n_classes=2, random_state=42, flip_y=0.1)
-    df: pd.DataFrame = pd.DataFrame({'feature': X.flatten(), 'target': y})
-    
-    results: Dict[str, Any] = perform_power_analysis(df)
-    print(f"Effect Size (Cohen's d): {results['effect_size']:.4f}")
-    print(f"Current Power: {results['current_power']:.4f}")
-    print(f"Required Sample Size for 80% Power: {results['required_sample_size']}")
-    
-    powers: list[float] = []
-    sample_sizes: range = range(20, 200, 5)
-    for n in sample_sizes:
-        p: float = TTestPower().power(effect_size=results['effect_size'], nobs=n, alpha=results['alpha'])
-        powers.append(p)
-        
-    plt.figure(figsize=(8, 5))
-    plt.plot(sample_sizes, powers, marker='o', label='Power Curve')
-    plt.axhline(y=0.8, color='r', linestyle='--', label='Target Power (0.8)')
-    plt.axvline(x=results['required_sample_size'], color='g', linestyle='--', label=f'Required N ({results["required_sample_size"]})')
-    plt.xlabel('Sample Size per Group')
-    plt.ylabel('Statistical Power')
-    plt.title('Statistical Power Analysis')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-ab-testing` | Ab Testing techniques | Complementary to this skill |
-| `coding-ds-hypothesis-testing` | Hypothesis Testing techniques | Complementary to this skill |
-| `coding-ds-experimental-design` | Experimental Design techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Statistical Power
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-- Statistical Power Analysis for the Behavioral Sciences (Cohen, 1988)
-- APA Publication Manual guidelines for reporting effect sizes and power
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

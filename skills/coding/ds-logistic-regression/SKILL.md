@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements logistic regression for binary and multinomial classification with probability estimation and odds
-  ratio interpretation"'
+description: '"Implements logistic regression for binary and multinomial classification
+  with probability estimation and odds ratio interpretation"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-classification-metrics, ds-feature-engineering, ds-linear-regression
   role: implementation
   scope: implementation
-  triggers: logistic regression, classification, binary classification, multinomial, how do i classify
+  triggers: logistic regression, classification, binary classification, multinomial,
+    how do i classify
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: logistic-regression
----
+------
 # Logistic Regression
 
 Comprehensive guide to logistic regression in machine learning and data science workflows.
@@ -157,125 +170,4 @@ class LogisticRegressionPipeline:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, confusion_matrix, roc_curve, auc
-from typing import Dict, Any
-
-def train_and_evaluate_logistic_regression(
-    n_samples: int = 1000, 
-    n_features: int = 5, 
-    test_size: float = 0.2
-) -> Dict[str, Any]:
-    """Train logistic regression on synthetic data and return evaluation metrics."""
-    X, y = make_classification(n_samples=n_samples, n_features=n_features, random_state=42)
-    df = pd.DataFrame(X, columns=[f'feat_{i}' for i in range(n_features)])
-    df['label'] = y
-    
-    X_train, X_test, y_train, y_test = train_test_split(
-        df.drop('label', axis=1), df['label'], test_size=test_size, random_state=42
-    )
-    
-    model = LogisticRegression(max_iter=1000, random_state=42)
-    model.fit(X_train, y_train)
-    
-    y_pred = model.predict(X_test)
-    y_prob = model.predict_proba(X_test)[:, 1]
-    
-    acc = accuracy_score(y_test, y_pred)
-    cm = confusion_matrix(y_test, y_pred)
-    fpr, tpr, _ = roc_curve(y_test, y_prob)
-    roc_auc = auc(fpr, tpr)
-    
-    plt.figure(figsize=(6, 4))
-    plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (AUC = {roc_auc:.2f})')
-    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver Operating Characteristic')
-    plt.legend(loc='lower right')
-    plt.grid(True)
-    plt.show()
-    
-    return {
-        'accuracy': acc,
-        'confusion_matrix': cm.tolist(),
-        'roc_auc': roc_auc,
-        'coefficients': model.coef_.tolist(),
-        'intercept': model.intercept_.tolist()
-    }
-
-if __name__ == "__main__":
-    results = train_and_evaluate_logistic_regression()
-    print(f"Model Accuracy: {results['accuracy']:.4f}")
-    print(f"ROC AUC: {results['roc_auc']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-linear-regression` | Linear Regression techniques | Complementary to this skill |
-| `coding-ds-classification-metrics` | Classification Metrics techniques | Complementary to this skill |
-| `coding-ds-feature-engineering` | Feature Engineering techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Logistic Regression
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
-
-### BAD vs GOOD Example Pair
-```python
-# BAD: Hardcoded values, no type hints, bypasses validation, violates DRY
-def train_model(data):
-    m = LogisticRegression()
-    m.fit(data.drop('y', axis=1), data['y'])
-    return m.predict(data.drop('y', axis=1))
-
-# GOOD: Type hints, validation, configurable parameters, follows DRY principle
-def train_model(data: pd.DataFrame, test_size: float = 0.2) -> np.ndarray:
-    if data.empty:
-        raise ValueError("Data cannot be empty")
-    X_train, X_test, y_train, y_test = train_test_split(
-        data.drop('y', axis=1), data['y'], test_size=test_size, random_state=42
-    )
-    model = LogisticRegression(max_iter=1000, random_state=42)
-    model.fit(X_train, y_train)
-    return model.predict(X_test)
-```
-
-### Standard Reference
-This implementation adheres to the **DRY (Don't Repeat Yourself)** and **KISS (Keep It Simple, Stupid)** principles, ensuring modular, maintainable code. It also follows scikit-learn's consistent estimator API design pattern for predictability and interoperability.
+|

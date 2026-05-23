@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine
-  learning models"'
+description: '"Applies Bayesian methods for prior selection, posterior estimation,
+  and probabilistic inference in machine learning models"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-confidence-intervals, ds-hypothesis-testing, ds-maximum-likelihood, ds-monte-carlo ds-monte-carlo
+  related-skills: ds-confidence-intervals, ds-hypothesis-testing, ds-maximum-likelihood,
+    ds-monte-carlo ds-monte-carlo
   role: implementation
   scope: implementation
-  triggers: bayesian inference, bayes, prior, posterior, probabilistic inference, how do i do bayesian
+  triggers: bayesian inference, bayes, prior, posterior, probabilistic inference,
+    how do i do bayesian
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: bayesian-inference
----
+------
 # Bayesian Inference
 
 Comprehensive guide to bayesian inference in machine learning and data science workflows.
@@ -191,113 +205,4 @@ class BayesianInferenceEngine:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_regression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score
-from scipy import stats
-from typing import Dict, Any
-
-def run_bayesian_regression_workflow() -> Dict[str, Any]:
-    """Complete workflow: generate data, fit Bayesian model, evaluate, and visualize."""
-    # 1. Generate synthetic regression dataset
-    X, y = make_regression(n_samples=200, n_features=1, noise=10.0, random_state=42)
-    df = pd.DataFrame({'feature': X.flatten(), 'target': y})
-    
-    # 2. Split data
-    train_df, test_df = train_test_split(df, test_size=0.2, random_state=42)
-    
-    # 3. Bayesian Linear Regression Implementation
-    X_train = train_df['feature'].values.reshape(-1, 1)
-    y_train = train_df['target'].values
-    X_test = test_df['feature'].values.reshape(-1, 1)
-    y_test = test_df['target'].values
-    
-    n_train = len(y_train)
-    X_b_train = np.column_stack([np.ones(n_train), X_train])
-    
-    prior_precision = 1.0
-    prior_cov = np.eye(2) / prior_precision
-    sigma2_init = np.var(y_train)
-    
-    post_prec = np.linalg.inv(prior_cov) + (1.0 / sigma2_init) * (X_b_train.T @ X_b_train)
-    post_cov = np.linalg.inv(post_prec)
-    post_mean = post_cov @ (np.linalg.inv(prior_cov) @ np.zeros(2) + 
-                            (1.0 / sigma2_init) * (X_b_train.T @ y_train))
-    
-    # 4. Predictions and Metrics
-    X_b_test = np.column_stack([np.ones(len(y_test)), X_test])
-    y_pred = X_b_test @ post_mean
-    
-    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-    r2 = r2_score(y_test, y_pred)
-    
-    # 5. Visualization
-    plt.figure(figsize=(8, 6))
-    plt.scatter(X_train, y_train, alpha=0.5, label='Training Data')
-    plt.scatter(X_test, y_test, alpha=0.5, label='Test Data')
-    plt.plot(X_test, y_pred, color='red', linewidth=2, label='Bayesian Fit')
-    
-    # Credible intervals
-    pred_var = sigma2_init * (1 + np.sum(X_b_test * (post_cov @ X_b_test.T), axis=1))
-    ci = stats.norm.ppf(0.975) * np.sqrt(pred_var)
-    plt.fill_between(X_test.flatten(), y_pred - ci, y_pred + ci, 
-                     color='red', alpha=0.2, label='95% Credible Interval')
-    
-    plt.xlabel('Feature')
-    plt.ylabel('Target')
-    plt.title(f'Bayesian Linear Regression (RMSE: {rmse:.2f}, R²: {r2:.2f})')
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-    plt.show()
-    
-    return {'rmse': rmse, 'r2': r2, 'posterior_mean': post_mean}
-
-if __name__ == "__main__":
-    results = run_bayesian_regression_workflow()
-    print(f"Model Evaluation - RMSE: {results['rmse']:.4f}, R²: {results['r2']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-maximum-likelihood` | Maximum Likelihood techniques | Complementary to this skill |
-| `coding-ds-monte-carlo` | Monte Carlo techniques | Complementary to this skill |
-| `coding-ds-hypothesis-testing` | Hypothesis Testing techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Bayesian Inference
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

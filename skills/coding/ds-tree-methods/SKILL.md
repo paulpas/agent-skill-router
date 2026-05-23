@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods
-  for classification and regression'
+description: '"Implements decision trees, random forests, gradient boosting (XGBoost"
+  LightGBM), and tree ensemble methods for classification and regression'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-ensemble-methods, ds-hyperparameter-tuning, ds-neural-networks, ds-support-vector-machines ds-support-vector-machines
+  related-skills: ds-ensemble-methods, ds-hyperparameter-tuning, ds-neural-networks,
+    ds-support-vector-machines ds-support-vector-machines
   role: implementation
   scope: implementation
-  triggers: decision trees, random forest, gradient boosting, xgboost, lightgbm, how do i use trees
+  triggers: decision trees, random forest, gradient boosting, xgboost, lightgbm, how
+    do i use trees
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: tree-methods
----
+------
 # Tree-Based Methods
 
 Comprehensive guide to tree-based methods in machine learning and data science workflows.
@@ -173,132 +187,4 @@ class TreeBasedMethods:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_regression
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-from typing import Dict, Any
-
-def implement_tree_methods(data: pd.DataFrame, target_col: str = 'target') -> Dict[str, Any]:
-    """
-    Complete implementation of Tree-Based Regression.
-    
-    This example demonstrates:
-    - Proper input validation
-    - Core algorithm implementation
-    - Error handling
-    - Result formatting
-    
-    Args:
-        data: Input DataFrame with required columns
-        target_col: Name of the target variable
-        
-    Returns:
-        Dictionary with results and metadata
-        
-    Raises:
-        ValueError: If input data is invalid
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if target_col not in data.columns:
-        raise ValueError(f"Target column '{target_col}' not found in data")
-        
-    X = data.drop(columns=[target_col])
-    y = data[target_col]
-    
-    # Validate numeric types
-    if not np.issubdtype(X.select_dtypes(include='number').dtypes, np.number).all():
-        raise ValueError("All features must be numeric for tree-based methods")
-        
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    model = RandomForestRegressor(n_estimators=100, max_depth=10, random_state=42)
-    model.fit(X_train, y_train)
-    
-    y_pred = model.predict(X_test)
-    
-    mse = mean_squared_error(y_test, y_pred)
-    rmse = np.sqrt(mse)
-    mae = mean_absolute_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-    
-    # Cross-validation
-    cv_scores = cross_val_score(model, X_train, y_train, cv=5, scoring='r2')
-    
-    # Visualization
-    plt.figure(figsize=(8, 6))
-    plt.scatter(y_test, y_pred, alpha=0.7, color='steelblue', edgecolor='k')
-    plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)
-    plt.xlabel('Actual Values')
-    plt.ylabel('Predicted Values')
-    plt.title('Random Forest Regression: Predicted vs Actual')
-    plt.tight_layout()
-    plt.savefig('regression_plot.png', dpi=150)
-    plt.close()
-    
-    return {
-        'status': 'success',
-        'metrics': {'mse': mse, 'rmse': rmse, 'mae': mae, 'r2': r2},
-        'cv_r2_mean': cv_scores.mean(),
-        'cv_r2_std': cv_scores.std(),
-        'feature_importances': dict(zip(X.columns, model.feature_importances_)),
-        'predictions': y_pred.tolist()
-    }
-
-if __name__ == "__main__":
-    X, y = make_regression(n_samples=500, n_features=8, noise=0.1, random_state=42)
-    sample_data = pd.DataFrame(X, columns=[f'feature_{i}' for i in range(X.shape[1])])
-    sample_data['target'] = y
-    
-    results = implement_tree_methods(sample_data)
-    print(f"Status: {results['status']}")
-    print(f"R2 Score: {results['metrics']['r2']:.4f}")
-    print(f"RMSE: {results['metrics']['rmse']:.4f}")
-    print(f"Top Feature: {max(results['feature_importances'], key=results['feature_importances'].get)}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-ensemble-methods` | Ensemble Methods techniques | Complementary to this skill |
-| `coding-ds-feature-importance` | Feature Importance techniques | Complementary to this skill |
-| `coding-ds-hyperparameter-tuning` | Hyperparameter Tuning techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Tree-Based Methods
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

@@ -6,19 +6,32 @@ content-types:
 - guidance
 - config
 - do-dont
-description: '"Position sizing, stop-loss implementation, and system-level risk controls" to preserve capital'
+description: '"Position sizing, stop-loss implementation, and system-level risk controls"
+  to preserve capital'
 license: MIT
 maturity: stable
 metadata:
   domain: trading
   output-format: code
-  related-skills: backtest-drawdown-analysis, backtest-position-sizing, exchange-order-execution-api, risk-correlation-risk
+  related-skills: backtest-drawdown-analysis, backtest-position-sizing, exchange-order-execution-api,
+    risk-correlation-risk
   role: implementation
   scope: implementation
-  triggers: fundamentals risk management basics, fundamentals-risk-management-basics, position, sizing, stop-loss
+  triggers: fundamentals risk management basics, fundamentals-risk-management-basics,
+    position, sizing, stop-loss
+  archetypes:
+  - tactical
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - no risk management
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: risk-management-basics
----
+------
 **Role:** Guide an AI coding assistant to implement robust risk management that prevents catastrophic losses while allowing trading opportunities to breathe
 
 **Philosophy:** Risk management is not about avoiding risk but about optimizing the risk-reward ratio to ensure survival. Capital preservation comes first; without it, no amount of profitable trading matters. Systems must have multiple layers of protection and clear kill-switch mechanisms.
@@ -400,37 +413,3 @@ def calculate_expected_shortfall(returns: np.ndarray, confidence: float = 0.95) 
 ```
 ```
 ```
----
-
-## When to Use
-
-Use this skill when:
-
-- **Implementing position risk controls** — You need to add stop losses, position sizing, or drawdown limits to a trading algorithm
-- **Designing or reviewing trading system components** — You are building or auditing order execution, market data processing, or exchange connectivity
-- **Building market analysis or signal generation logic** — You need to create indicators, signals, or prediction models for trading decisions
----
-
-## Core Workflow
-
-1. **Analyze Requirements** — Understand the trading scenario, market conditions, data sources, and risk constraints. **Checkpoint:** Clearly document inputs, outputs, edge cases, and failure modes.
-
-2. **Design Implementation** — Choose appropriate algorithms, data structures, and risk constraints following APEX platform conventions. **Checkpoint:** Verify the design includes proper error handling and risk enforcement at every step.
-
-3. **Implement & Test** — Write Python code with typed signatures, docstrings, and comprehensive tests including edge cases. **Checkpoint:** All risk constraints are enforced, tested, and documented. Emergency layers are independent.
-
-4. **Validate & Review** — Run all tests, verify risk controls under simulated conditions, and review against best practices. **Checkpoint:** All edge cases handled, emergency stops functional, and code follows APEX platform patterns.
-
----
-
-## Constraints
-
-### MUST DO
-- Use Python with typed signatures and docstrings
-- Implement emergency stops as an independent layer
-- Follow APEX platform file path conventions (risk_engine/, data_pipeline/, execution/)
-
-### MUST NOT DO
-- Disable or bypass emergency stops under any circumstance
-- Place stops at round numbers (attracts stop hunting)
-- Use the same risk parameters across all market regimes without adjustment

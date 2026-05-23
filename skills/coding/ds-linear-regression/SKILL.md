@@ -6,21 +6,33 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear
-  models for prediction"'
+description: '"Implements linear regression including OLS, ridge regression, lasso,
+  elastic net, and other regularized linear models for prediction"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-feature-engineering, ds-feature-scaling-normalization, ds-instrumental-variables, ds-logistic-regression
-    ds-regression-evaluation
+  related-skills: ds-feature-engineering, ds-feature-scaling-normalization, ds-instrumental-variables,
+    ds-logistic-regression ds-regression-evaluation
   role: implementation
   scope: implementation
   triggers: linear regression, OLS, ridge regression, lasso, elastic net, regularization
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: linear-regression
----
+------
 # Linear Regression
 
 Comprehensive guide to linear regression in machine learning and data science workflows.
@@ -191,116 +203,4 @@ def good_regression(df: pd.DataFrame, target: str = 'target') -> Dict[str, Any]:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from typing import Dict, Any
-from sklearn.datasets import make_regression
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
-from sklearn.metrics import mean_squared_error, r2_score
-import matplotlib.pyplot as plt
-
-def prepare_data(data: pd.DataFrame, target_col: str = 'target') -> tuple:
-    """Split data into training and testing sets."""
-    X = data.drop(columns=[target_col])
-    y = data[target_col]
-    return train_test_split(X, y, test_size=0.2, random_state=42)
-
-def train_and_evaluate(X_train: pd.DataFrame, X_test: pd.DataFrame, 
-                       y_train: np.ndarray, y_test: np.ndarray) -> Dict[str, Any]:
-    """Train multiple regression models and compute metrics."""
-    models = {
-        'OLS': LinearRegression(),
-        'Ridge': Ridge(alpha=1.0),
-        'Lasso': Lasso(alpha=0.1),
-        'ElasticNet': ElasticNet(alpha=0.1, l1_ratio=0.5)
-    }
-    results = {'models': {}, 'test_predictions': {}}
-    
-    for name, model in models.items():
-        model.fit(X_train, y_train)
-        y_pred = model.predict(X_test)
-        mse = mean_squared_error(y_test, y_pred)
-        r2 = r2_score(y_test, y_pred)
-        cv_scores = cross_val_score(model, X_train, y_train, cv=5, scoring='r2')
-        
-        results['models'][name] = {
-            'mse': float(mse), 'r2': float(r2),
-            'cv_r2_mean': float(cv_scores.mean()), 'cv_r2_std': float(cv_scores.std()),
-            'coefficients': model.coef_.tolist()
-        }
-        results['test_predictions'][name] = y_pred.tolist()
-    return results
-
-def visualize_results(y_test: np.ndarray, predictions: Dict[str, list]) -> None:
-    """Generate comparison scatter plot for model predictions."""
-    plt.figure(figsize=(8, 5))
-    for name, preds in predictions.items():
-        plt.scatter(y_test, preds, alpha=0.6, label=name)
-    plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=2)
-    plt.xlabel('Actual Values')
-    plt.ylabel('Predicted Values')
-    plt.title('Linear Regression Model Comparison')
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig('regression_comparison.png')
-
-def run_pipeline(data: pd.DataFrame, target_col: str = 'target') -> Dict[str, Any]:
-    """Orchestrate data preparation, training, and visualization."""
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    X_train, X_test, y_train, y_test = prepare_data(data, target_col)
-    results = train_and_evaluate(X_train, X_test, y_train, y_test)
-    visualize_results(y_test, results['test_predictions'])
-    return results
-
-if __name__ == "__main__":
-    X, y = make_regression(n_samples=1000, n_features=10, noise=0.1, random_state=42)
-    sample_data = pd.DataFrame(X, columns=[f'feat_{i}' for i in range(10)])
-    sample_data['target'] = y
-    results = run_pipeline(sample_data)
-    for model_name, metrics in results['models'].items():
-        print(f"{model_name} - MSE: {metrics['mse']:.4f}, R²: {metrics['r2']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-logistic-regression` | Logistic Regression techniques | Complementary to this skill |
-| `coding-ds-regression-evaluation` | Regression Evaluation techniques | Complementary to this skill |
-| `coding-ds-feature-engineering` | Feature Engineering techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Linear Regression
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

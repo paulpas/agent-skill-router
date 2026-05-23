@@ -89,6 +89,8 @@ export interface SelectedSkill {
   score: number;
   role: 'primary' | 'supporting' | 'fallback';
   reasoning?: string;
+  /** Per-component hybrid scoring breakdown for observability */
+  scoreBreakdown?: ScoreBreakdown;
 }
 
 /**

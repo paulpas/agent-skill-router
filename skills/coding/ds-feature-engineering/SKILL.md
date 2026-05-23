@@ -6,21 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Creates and transforms features including polynomial features, interactions, domain-specific features, and
-  feature transformations"'
+description: '"Creates and transforms features including polynomial features, interactions,
+  domain-specific features, and feature transformations"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-categorical-encoding, ds-dimensionality-reduction, ds-feature-scaling-normalization, ds-feature-selection
-    ds-missing-data
+  related-skills: ds-categorical-encoding, ds-dimensionality-reduction, ds-feature-scaling-normalization,
+    ds-feature-selection ds-missing-data
   role: implementation
   scope: implementation
-  triggers: feature engineering, feature creation, feature transformation, how do I engineer features, feature design
+  triggers: feature engineering, feature creation, feature transformation, how do
+    I engineer features, feature design
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: feature-engineering
----
+------
 # Feature Engineering
 
 Comprehensive guide to feature engineering in machine learning and data science workflows.
@@ -198,110 +211,4 @@ class FeatureEngineering:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_regression
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, PolynomialFeatures
-from sklearn.linear_model import Ridge
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.pipeline import Pipeline
-import warnings
-warnings.filterwarnings('ignore')
-
-def run_complete_feature_engineering_example():
-    """
-    Demonstrates a complete feature engineering workflow with real data,
-    model training, evaluation, and visualization.
-    """
-    # 1. Generate synthetic regression data
-    X, y = make_regression(n_samples=500, n_features=4, noise=0.1, random_state=42)
-    df = pd.DataFrame(X, columns=['feat_1', 'feat_2', 'feat_3', 'feat_4'])
-    df['target'] = y
-    
-    # 2. Split data
-    train_df, test_df = train_test_split(df, test_size=0.2, random_state=42)
-    
-    # 3. Define feature engineering pipeline
-    fe_pipeline = Pipeline([
-        ('poly', PolynomialFeatures(degree=2, include_bias=False, interaction_only=False)),
-        ('scaler', StandardScaler())
-    ])
-    
-    # 4. Apply transformations
-    X_train_fe = fe_pipeline.fit_transform(train_df.drop(columns=['target']))
-    X_test_fe = fe_pipeline.transform(test_df.drop(columns=['target']))
-    
-    # 5. Train model
-    model = Ridge(alpha=1.0)
-    model.fit(X_train_fe, train_df['target'].values)
-    
-    # 6. Evaluate
-    y_pred = model.predict(X_test_fe)
-    mse = mean_squared_error(test_df['target'].values, y_pred)
-    r2 = r2_score(test_df['target'].values, y_pred)
-    
-    print(f"Mean Squared Error: {mse:.4f}")
-    print(f"R² Score: {r2:.4f}")
-    
-    # 7. Visualization
-    plt.figure(figsize=(8, 6))
-    plt.scatter(test_df['target'].values, y_pred, alpha=0.6, color='steelblue')
-    plt.plot([test_df['target'].min(), test_df['target'].max()], 
-             [test_df['target'].min(), test_df['target'].max()], 'r--', lw=2)
-    plt.xlabel('Actual Values')
-    plt.ylabel('Predicted Values')
-    plt.title(f'Feature Engineering Pipeline Performance (R²={r2:.2f})')
-    plt.grid(True, linestyle='--', alpha=0.5)
-    plt.tight_layout()
-    plt.show()
-    
-    return {'mse': mse, 'r2': r2, 'pipeline': fe_pipeline, 'model': model}
-
-if __name__ == "__main__":
-    results = run_complete_feature_engineering_example()
-    print(f"Pipeline completed successfully. Metrics: {results}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-feature-selection` | Feature Selection techniques | Complementary to this skill |
-| `coding-ds-categorical-encoding` | Categorical Encoding techniques | Complementary to this skill |
-| `coding-ds-feature-scaling-normalization` | Feature Scaling Normalization techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Feature Engineering
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

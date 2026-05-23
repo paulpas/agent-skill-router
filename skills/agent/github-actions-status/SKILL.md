@@ -5,8 +5,9 @@ content-types:
 - guidance
 - examples
 - do-dont
-description: View and monitor GitHub Actions workflow runs, statuses, and logs using the gh CLI. Lists workflows, inspects
-  run details, follows logs, checks commit statuses, and triggers new runs.
+description: View and monitor GitHub Actions workflow runs, statuses, and logs using
+  the gh CLI. Lists workflows, inspects run details, follows logs, checks commit statuses,
+  and triggers new runs.
 license: MIT
 maturity: stable
 metadata:
@@ -17,11 +18,21 @@ metadata:
   role: information
   scope: implementation
   source: local
-  triggers: github actions, ci/cd, workflow, gh run, gh workflow, pipeline, build status, ci status, action status, check
-    runs
+  triggers: github actions, ci/cd, workflow, gh run, gh workflow, pipeline, build
+    status, ci status, action status, check runs
+  archetypes:
+  - educational
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - single-agent monolith
+  response_profile:
+    verbosity: medium
+    directive_strength: medium
+    abstraction_level: tactical
   version: 1.0.0
 name: github-actions-status
----
+------
 # GitHub Actions Status
 
 View, monitor, and manage GitHub Actions workflows and their run statuses using the `gh` CLI.
@@ -135,145 +146,4 @@ The `--ref` flag specifies which branch/tag to run against (defaults to the defa
 ### All Commands
 
 | Action | Command |
-|--------|---------|
-| List workflows | `gh workflow list --repo <owner>/<repo>` |
-| List workflow runs | `gh run list --repo <owner>/<repo> [--limit N] [--status <state>]` |
-| View run details | `gh run view <run-id> --repo <owner>/<repo>` |
-| List jobs in a run | `gh run view <run-id> --repo <owner>/<repo> --jobs` |
-| View run logs | `gh run view <run-id> --repo <owner>/<repo> --log [--job <job-id>]` |
-| Watch a run | `gh run watch <run-id> --repo <owner>/<repo>` |
-| Trigger workflow | `gh workflow run <name> --repo <owner>/<repo> [--ref <ref>]` |
-| Commit check runs | `gh api repos/<owner>/<repo>/commits/<sha>/check-runs` |
-
-### Useful Flags
-
-| Flag | Description |
-|------|-------------|
-| `--limit N` | Number of runs to return (default varies, max typically 100) |
-| `--status STATE` | Filter runs by status (see Step 3 for valid states) |
-| `--json FIELDS` | Output selected fields as JSON for programmatic use |
-| `--log` | Download and display full run logs |
-| `--job JOB` | Filter logs to a specific job ID |
-| `--ref REF` | Branch, tag, or commit SHA to trigger on |
-
-### JSON Output for Programmatic Use
-
-For scripts or structured parsing, use `--json` to select specific fields:
-
-```bash
-gh run list --repo <owner>/<repo> --limit 5 --json id,workflowName,status,conclusion,createdAt,durationMs,headBranch,headCommit
-```
-
-## Examples
-
-### List recent runs for paulpas/agent-skill-router
-
-```bash
-gh run list --repo paulpas/agent-skill-router --limit 10
-```
-
-### View details of a specific run
-
-```bash
-gh run view 1234567890 --repo paulpas/agent-skill-router
-```
-
-### Watch a run until completion
-
-```bash
-gh run watch 1234567890 --repo paulpas/agent-skill-router
-```
-
-### List all workflows and their last run status
-
-```bash
-gh workflow list --repo paulpas/agent-skill-router
-```
-
-### Filter to only failed runs
-
-```bash
-gh run list --repo paulpas/agent-skill-router --status failed --limit 20
-```
-
-### View logs for a specific job in a run
-
-```bash
-gh run view 1234567890 --repo paulpas/agent-skill-router --log --job 9876543210
-```
-
-### Trigger a workflow on a specific branch
-
-```bash
-gh workflow run "CI" --repo paulpas/agent-skill-router --ref feature/my-branch
-```
-
-### Check commit-level check runs
-
-```bash
-gh api repos/paulpas/agent-skill-router/commits/abc1234/check-runs
-```
-
-### Get structured JSON of recent runs
-
-```bash
-gh run list --repo paulpas/agent-skill-router --limit 5 --json id,workflowName,status,conclusion,createdAt,durationMs,headBranch
-```
-
-## Output Format
-
-Present GitHub Actions status results in the following structured format:
-
-### Run Summary Table
-
-| Run ID | Workflow | Status | Branch | Duration | Started |
-|--------|----------|--------|--------|----------|---------|
-| `12345` | CI | ✅ passed | main | `2m 34s` | 2 hours ago |
-| `12344` | CI | ❌ failed | feature/x | `45s` | 3 hours ago |
-
-### Status Indicators
-
-- `✅ passed` — Run completed successfully
-- `❌ failed` — Run completed with errors
-- `🔄 in_progress` — Run currently executing
-- `⏳ pending` — Run queued, not yet started
-- `⛔ cancelled` — Run was manually cancelled
-- `⚠️ timed_out` — Run exceeded the allowed duration
-- `🔶 action_required` — Run requires manual intervention
-- `⏭️ skipped` — Run was skipped by conditions
-- `🟡 neutral` — Run concluded with neutral status
-
-### Per-Run Detail Format
-
-For each failed or in-progress run, include:
-
-1. **Run header** — workflow name, run ID, status badge, duration
-2. **Trigger info** — how the run was triggered (push, PR, manual, etc.)
-3. **Branch & commit** — source branch and commit SHA/message
-4. **Jobs breakdown** — list each job with its status
-5. **Failure reason** — if failed, include the error from the job logs
-6. **Duration** — total run time and per-job breakdown
-
-### Failure Reason Extraction
-
-When a run has failed, extract the root cause from logs:
-
-```bash
-gh run view <run-id> --repo <owner>/<repo> --log --job <failed-job-id> 2>&1 | grep -iE 'error|fail|exception|failed' | tail -5
-```
-
-Present the most relevant error lines (up to 5) as the failure reason.
-
----
-
-## Constraints
-
-### MUST DO
-- Ensure each agent handles a single responsibility
-- Include explicit fallback/error routing for every branching point
-- Reference code-philosophy (5 Laws of Elegant Defense)
-
-### MUST NOT DO
-- Use fixed thresholds without adaptive tuning
-- Ignore low-confidence fallback scenarios
-- Skip execution history tracking
+|

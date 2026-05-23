@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods
-  for visualization and efficiency"'
+description: '"Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders,
+  and other feature extraction methods for visualization and efficiency"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-clustering, ds-community-detection, ds-eda, ds-feature-engineering
   role: implementation
   scope: implementation
-  triggers: dimensionality reduction, PCA, t-SNE, UMAP, feature extraction, how do i reduce dimensions
+  triggers: dimensionality reduction, PCA, t-SNE, UMAP, feature extraction, how do
+    i reduce dimensions
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: dimensionality-reduction
----
+------
 # Dimensionality Reduction
 
 Comprehensive guide to dimensionality reduction in machine learning and data science workflows.
@@ -168,158 +181,4 @@ if __name__ == "__main__":
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_classification
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
-from sklearn.manifold import TSNE
-from typing import Dict, Any
-
-def complete_dimensionality_reduction_workflow(data: pd.DataFrame, target: pd.Series = None, n_components: int = 2) -> Dict[str, Any]:
-    """
-    Complete workflow for dimensionality reduction with validation and visualization.
-    """
-    if data.empty or (target is not None and len(target) != len(data)):
-        raise ValueError("Data and target must be aligned and non-empty")
-    
-    scaler = StandardScaler()
-    scaled_data = scaler.fit_transform(data)
-    
-    pca = PCA(n_components=n_components)
-    pca_result = pca.fit_transform(scaled_data)
-    
-    tsne = TSNE(n_components=n_components, random_state=42, perplexity=min(30, len(data)-1))
-    tsne_result = tsne.fit_transform(scaled_data)
-    
-    explained_var = pca.explained_variance_ratio_.sum()
-    
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-    if target is not None:
-        for label in target.unique():
-            mask = target == label
-            axes[0].scatter(pca_result[mask, 0], pca_result[mask, 1], label=str(label))
-            axes[1].scatter(tsne_result[mask, 0], tsne_result[mask, 1], label=str(label))
-        axes[0].legend()
-        axes[1].legend()
-    
-    axes[0].set_title(f"PCA (Explained Var: {explained_var:.2%})")
-    axes[1].set_title("t-SNE")
-    plt.tight_layout()
-    plt.show()
-    
-    return {
-        "pca_transform": pca_result,
-        "tsne_transform": tsne_result,
-        "explained_variance_ratio": explained_var,
-        "scaler": scaler,
-        "pca_model": pca,
-        "tsne_model": tsne
-    }
-
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=500, n_features=20, n_informative=10, random_state=42)
-    df = pd.DataFrame(X, columns=[f"feature_{i}" for i in range(20)])
-    results = complete_dimensionality_reduction_workflow(df, y, n_components=2)
-    print(f"PCA Explained Variance: {results['explained_variance_ratio']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-clustering` | Clustering techniques | Complementary to this skill |
-| `coding-ds-eda` | Eda techniques | Complementary to this skill |
-| `coding-ds-feature-engineering` | Feature Engineering techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Dimensionality Reduction
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
-## BAD vs GOOD Examples
-
-### BAD: Ignoring Data Scaling and Validation
-```python
-import pandas as pd
-from sklearn.decomposition import PCA
-
-def bad_reduction(df: pd.DataFrame) -> pd.DataFrame:
-    """Naive implementation that fails on unscaled or empty data."""
-    pca = PCA(n_components=2)
-    # Ignores feature scaling; high-magnitude features dominate variance
-    # No validation for empty DataFrames or non-numeric columns
-    # Violates DRY principle by duplicating scaling logic in downstream code
-    return pca.fit_transform(df)
-
-# This will produce misleading results if features have different scales
-# and will crash if the input DataFrame is empty or contains strings
-```
-
-### GOOD: Proper Scaling, Validation, and Modular Design
-```python
-import pandas as pd
-import numpy as np
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
-from typing import Dict, Any
-
-def good_reduction(df: pd.DataFrame, n_components: int = 2) -> Dict[str, Any]:
-    """Robust implementation following DRY and KISS principles."""
-    if df.empty:
-        raise ValueError("DataFrame cannot be empty")
-    
-    numeric_cols = df.select_dtypes(include=[np.number])
-    if numeric_cols.empty:
-        raise ValueError("No numeric columns found for dimensionality reduction")
-    
-    scaler = StandardScaler()
-    scaled = scaler.fit_transform(numeric_cols)
-    
-    pca = PCA(n_components=n_components)
-    reduced = pca.fit_transform(scaled)
-    
-    return {
-        "reduced_data": reduced,
-        "explained_variance": pca.explained_variance_ratio_.sum(),
-        "scaler": scaler,
-        "pca_model": pca,
-        "original_columns": numeric_cols.columns.tolist()
-    }
-
-# Usage demonstrates proper error handling and modular component reuse
-if __name__ == "__main__":
-    sample = pd.DataFrame({"a": [1, 2, 3], "b": [100, 200, 300], "c": ["x", "y", "z"]})
-    output = good_reduction(sample, n_components=2)
-    print(f"Explained variance: {output['explained_variance']:.4f}")
-```
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
-
----
-
-*Last updated: 2026-04-24*
-
----
+|

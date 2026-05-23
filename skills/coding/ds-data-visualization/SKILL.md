@@ -12,8 +12,20 @@ metadata:
   output-format: code
   triggers: data visualization, plotting, dashboards, charts, matplotlib, seaborn,
     plotly, how do i visualize data
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   related-skills: ds-correlation-analysis, ds-data-profiling, ds-eda
----
+------
 
 
 
@@ -181,137 +193,4 @@ class DataVisualization:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.datasets import make_classification
-from typing import Dict, Any
-import warnings
-import os
-warnings.filterwarnings('ignore')
-
-def implement_visualization(data: pd.DataFrame, output_dir: str = "viz_results") -> Dict[str, Any]:
-    """
-    Complete implementation of Data Visualization.
-    
-    This example demonstrates:
-    - Proper input validation
-    - Core algorithm implementation
-    - Error handling
-    - Result formatting
-    
-    Args:
-        data: Input DataFrame with required columns
-        output_dir: Directory to save generated plots
-        
-    Returns:
-        Dictionary with results and metadata
-        
-    Raises:
-        ValueError: If input data is invalid
-        
-    Example:
-        >>> df = pd.DataFrame({'x': [1, 2, 3], 'y': [4, 5, 6]})
-        >>> results = implement_visualization(df)
-        >>> print(results)
-    """
-    os.makedirs(output_dir, exist_ok=True)
-    
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-        
-    numeric_cols = data.select_dtypes(include=[np.number]).columns.tolist()
-    if len(numeric_cols) < 2:
-        raise ValueError("At least two numeric columns are required for visualization")
-        
-    results = {
-        'status': 'success',
-        'plots_saved': [],
-        'metadata': {'rows': len(data), 'columns': data.shape[1], 'numeric_cols': numeric_cols}
-    }
-    
-    try:
-        # 1. Scatter plot of first two numeric columns
-        fig1, ax1 = plt.subplots(figsize=(8, 6))
-        sns.scatterplot(x=data[numeric_cols[0]], y=data[numeric_cols[1]], ax=ax1, alpha=0.6, color='steelblue')
-        ax1.set_title(f'{numeric_cols[0]} vs {numeric_cols[1]}')
-        ax1.set_xlabel(numeric_cols[0])
-        ax1.set_ylabel(numeric_cols[1])
-        plt.tight_layout()
-        path1 = os.path.join(output_dir, 'scatter_plot.png')
-        fig1.savefig(path1, dpi=150)
-        plt.close(fig1)
-        results['plots_saved'].append(path1)
-        
-        # 2. Pairwise correlation heatmap
-        fig2, ax2 = plt.subplots(figsize=(10, 8))
-        corr = data[numeric_cols].corr()
-        sns.heatmap(corr, annot=True, cmap='viridis', ax=ax2, fmt='.2f', linewidths=0.5)
-        ax2.set_title('Correlation Heatmap')
-        plt.tight_layout()
-        path2 = os.path.join(output_dir, 'correlation_heatmap.png')
-        fig2.savefig(path2, dpi=150)
-        plt.close(fig2)
-        results['plots_saved'].append(path2)
-        
-        # 3. Boxplots for outlier detection
-        fig3, ax3 = plt.subplots(figsize=(10, 6))
-        data[numeric_cols].plot.box(ax=ax3, grid=False)
-        ax3.set_title('Feature Boxplots for Outlier Detection')
-        ax3.set_ylabel('Value')
-        plt.tight_layout()
-        path3 = os.path.join(output_dir, 'boxplots.png')
-        fig3.savefig(path3, dpi=150)
-        plt.close(fig3)
-        results['plots_saved'].append(path3)
-        
-    except Exception as e:
-        results['status'] = 'failed'
-        results['error'] = str(e)
-        
-    return results
-
-# Usage and testing
-if __name__ == "__main__":
-    # Create sample data
-    X, y = make_classification(n_samples=500, n_features=4, n_informative=3, n_redundant=1, random_state=42)
-    sample_data = pd.DataFrame(X, columns=['feature_a', 'feature_b', 'feature_c', 'feature_d'])
-    sample_data['target'] = y
-    
-    # Run implementation
-    results = implement_visualization(sample_data, output_dir="viz_results")
-    print(f"Status: {results['status']}")
-    print(f"Processed {results['metadata']['rows']} rows")
-    print(f"Generated {len(results['plots_saved'])} plots:")
-    for p in results['plots_saved']:
-        print(f"  - {p}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-eda` | Eda techniques | Complementary to this skill |
-| `coding-ds-correlation-analysis` | Correlation Analysis techniques | Complementary to this skill |
-| `coding-ds-data-profiling` | Data Profiling techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Data Visualization
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
+|

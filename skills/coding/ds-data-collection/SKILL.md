@@ -6,8 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries
-  for building machine learning datasets"'
+description: '"Implements data gathering strategies including APIs, web scraping,
+  sensor data collection, and database queries for building machine learning datasets"'
 license: MIT
 maturity: stable
 metadata:
@@ -16,10 +16,23 @@ metadata:
   related-skills: ds-data-ingestion, ds-data-quality, ds-data-versioning
   role: implementation
   scope: implementation
-  triggers: data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data
+  triggers: data collection, web scraping, API integration, data gathering, data acquisition,
+    ETL, how do i collect data
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: data-collection
----
+------
 # Data Collection
 
 Comprehensive guide to data collection in machine learning and data science workflows.
@@ -163,124 +176,4 @@ class ProductionDataCollector:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import requests
-import logging
-import os
-import numpy as np
-from typing import Dict, Any, List
-from datetime import datetime
-
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-logger = logging.getLogger(__name__)
-
-def collect_and_validate_data(source_url: str, output_path: str = "collected_data.csv") -> Dict[str, Any]:
-    """
-    Comprehensive data collection pipeline with validation and persistence.
-    
-    Args:
-        source_url: REST API endpoint to fetch data from
-        output_path: Local file path to save collected data
-        
-    Returns:
-        Dictionary containing collection metrics and validation results
-    """
-    logger.info(f"Initiating data collection from {source_url}")
-    
-    try:
-        response = requests.get(source_url, timeout=10)
-        response.raise_for_status()
-        raw_records = response.json()
-        
-        if not isinstance(raw_records, list):
-            raw_records = [raw_records]
-            
-        df = pd.DataFrame(raw_records)
-        
-        # Data validation and cleaning
-        initial_count = len(df)
-        df = df.dropna(subset=['id', 'title'])
-        df = df[df['id'].apply(lambda x: isinstance(x, (int, float)))]
-        df = df.reset_index(drop=True)
-        
-        validation_results = {
-            'initial_records': initial_count,
-            'valid_records': len(df),
-            'dropped_records': initial_count - len(df),
-            'columns': list(df.columns),
-            'data_types': df.dtypes.to_dict(),
-            'collection_timestamp': datetime.now().isoformat()
-        }
-        
-        # Persist to disk
-        if output_path:
-            df.to_csv(output_path, index=False)
-            logger.info(f"Saved {len(df)} records to {output_path}")
-            
-        return {
-            'status': 'success',
-            'metrics': validation_results,
-            'dataframe': df
-        }
-        
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Network error during collection: {e}")
-        return {'status': 'failed', 'error': str(e), 'dataframe': pd.DataFrame()}
-    except Exception as e:
-        logger.error(f"Unexpected error: {e}")
-        return {'status': 'failed', 'error': str(e), 'dataframe': pd.DataFrame()}
-
-if __name__ == "__main__":
-    # Using a reliable public API for demonstration
-    API_URL = "https://jsonplaceholder.typicode.com/posts"
-    results = collect_and_validate_data(API_URL, "sample_posts.csv")
-    
-    if results['status'] == 'success':
-        print(f"✅ Collection successful: {results['metrics']['valid_records']} records")
-        print(f"📊 Columns: {results['metrics']['columns']}")
-        print(results['dataframe'].head())
-    else:
-        print(f"❌ Collection failed: {results['error']}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-data-ingestion` | Data Ingestion techniques | Complementary to this skill |
-| `coding-ds-data-quality` | Data Quality techniques | Complementary to this skill |
-| `coding-ds-data-versioning` | Data Versioning techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Data Collection
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

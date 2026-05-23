@@ -1,18 +1,36 @@
 ---
 name: box-api
-description: Integrates with Box API to manage files, folders, collaborations, metadata, signatures, hubs, and AI features using the boxsdk Python SDK.
+description: Integrates with Box API to manage files, folders, collaborations, metadata,
+  signatures, hubs, and AI features using the boxsdk Python SDK.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: box api, box python, box sdk, box files, box folders, box collaboration, box sign, box metadata
+  triggers: box api, box python, box sdk, box files, box folders, box collaboration,
+    box sign, box metadata
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-microsoft-graph-api, coding-google-workspace-api, coding-dropbox-api
----
+------
 
 # Box API Integration
 
@@ -234,19 +252,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-microsoft-graph-api` | OneDrive and SharePoint as alternative content platforms |
-| `coding-google-workspace-api` | Google Drive as alternative content platform |
-| `coding-dropbox-api` | Dropbox as alternative file storage platform |
-| `coding-airtable-api` | Attachment management syncing with Box files |
-
-## References
-
-- [boxsdk on PyPI](https://pypi.org/project/boxsdk/)
-- [Box Python SDK (GitHub)](https://github.com/box/box-python-sdk)
-- [Box Developer Documentation](https://developer.box.com/)
-- [Box API Reference](https://developer.box.com/reference)
-- [Box SDK Authentication Guide](https://developer.box.com/guides/authentication/)
-- [Box Metadata API](https://developer.box.com/guides/metadata/)
-- [Box Sign API](https://developer.box.com/guides/sign/)
-- [Box Events and Webhooks](https://developer.box.com/guides/webhooks/)
+|

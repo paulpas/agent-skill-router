@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements explainability and interpretability techniques for model transparency, understanding decisions,
-  and building trust"'
+description: '"Implements explainability and interpretability techniques for model
+  transparency, understanding decisions, and building trust"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-model-fairness, ds-model-interpretation, ds-model-robustness, ds-reproducible-research ds-reproducible-research
+  related-skills: ds-model-fairness, ds-model-interpretation, ds-model-robustness,
+    ds-reproducible-research ds-reproducible-research
   role: implementation
   scope: implementation
-  triggers: explainability, interpretability, transparency, understanding models, how do I explain predictions
+  triggers: explainability, interpretability, transparency, understanding models,
+    how do I explain predictions
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: explainability
----
+------
 # Explainability
 
 Comprehensive guide to explainability in machine learning and data science workflows.
@@ -156,120 +170,4 @@ class ExplainabilityEngine:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report
-import shap
-from typing import Dict, Any
-
-def implement_explainability(data: pd.DataFrame, target_col: str = 'target') -> Dict[str, Any]:
-    """
-    Complete implementation of Explainability with model training and SHAP analysis.
-    
-    This example demonstrates:
-    - Proper input validation
-    - Core algorithm implementation
-    - Error handling
-    - Result formatting
-    
-    Args:
-        data: Input DataFrame with required columns
-        target_col: Name of the target column
-        
-    Returns:
-        Dictionary with results and metadata
-        
-    Raises:
-        ValueError: If input data is invalid
-        
-    Example:
-        >>> df = pd.DataFrame({'x': [1, 2, 3], 'y': [4, 5, 6]})
-        >>> results = implement_explainability(df)
-        >>> print(results)
-    """
-    if data is None or data.empty:
-        raise ValueError("Input data cannot be None or empty")
-    if target_col not in data.columns:
-        raise ValueError(f"Target column '{target_col}' not found in data")
-        
-    X = data.drop(columns=[target_col])
-    y = data[target_col]
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    model = RandomForestClassifier(n_estimators=100, random_state=42)
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    
-    accuracy = accuracy_score(y_test, y_pred)
-    report = classification_report(y_test, y_pred, output_dict=True)
-    
-    explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(X_test)
-    mean_abs_shap = np.abs(shap_values).mean(axis=0)
-    
-    return {
-        'accuracy': accuracy,
-        'classification_report': report,
-        'feature_importance': mean_abs_shap,
-        'shap_values': shap_values
-    }
-
-# Usage and testing
-if __name__ == "__main__":
-    # Create sample data
-    iris = load_iris()
-    sample_data = pd.DataFrame(iris.data, columns=iris.feature_names)
-    sample_data['target'] = iris.target
-    
-    # Run implementation
-    results = implement_explainability(sample_data)
-    print(f"Status: success")
-    print(f"Accuracy: {results['accuracy']:.4f}")
-    print(f"Top Feature Importance: {np.max(results['feature_importance']):.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-model-interpretation` | Model Interpretation techniques | Complementary to this skill |
-| `coding-ds-model-fairness` | Model Fairness techniques | Complementary to this skill |
-| `coding-ds-model-robustness` | Model Robustness techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Explainability
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one BAD/GOOD code example pair
-- Reference a relevant standard (OWASP, SOLID, DRY, KISS, etc.)
-- Use type hints on all function signatures
-
-### MUST NOT DO
-- Use magic numbers or hardcoded configuration values
-- Bypass error handling for assumed-valid inputs
-- Write functions longer than 50 lines without decomposition
+|

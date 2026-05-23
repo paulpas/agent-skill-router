@@ -6,20 +6,34 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements deep neural networks, backpropagation, activation functions, architectures (CNN, RNN, Transformers),
-  and training strategies"'
+description: '"Implements deep neural networks, backpropagation, activation functions,
+  architectures (CNN, RNN, Transformers), and training strategies"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-categorical-encoding, ds-ensemble-methods, ds-hyperparameter-tuning, ds-support-vector-machines ds-tree-methods
+  related-skills: ds-categorical-encoding, ds-ensemble-methods, ds-hyperparameter-tuning,
+    ds-support-vector-machines ds-tree-methods
   role: implementation
   scope: implementation
-  triggers: neural networks, deep learning, backpropagation, CNN, RNN, transformers, how do i use deep learning, hugging face
+  triggers: neural networks, deep learning, backpropagation, CNN, RNN, transformers,
+    how do i use deep learning, hugging face
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: neural-networks
----
+------
 # Neural Networks
 
 Comprehensive guide to neural networks in machine learning and data science workflows.
@@ -209,107 +223,4 @@ def good_nn_implementation(X: pd.DataFrame, y: pd.Series) -> Dict[str, Any]:
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.neural_network import MLPClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
-from sklearn.datasets import load_breast_cancer
-from typing import Dict, Any, Tuple
-
-def train_and_evaluate_nn(X: pd.DataFrame, y: pd.Series) -> Dict[str, Any]:
-    """
-    Complete working example: Train, evaluate, and visualize a neural network.
-    Demonstrates proper scaling, early stopping, metric tracking, and visualization.
-    """
-    # 1. Data Preparation
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42, stratify=y
-    )
-    
-    scaler = StandardScaler()
-    X_train_scaled = scaler.fit_transform(X_train)
-    X_test_scaled = scaler.transform(X_test)
-    
-    # 2. Model Initialization & Training
-    model = MLPClassifier(
-        hidden_layer_sizes=(100, 50),
-        activation='relu',
-        solver='adam',
-        alpha=0.0001,
-        learning_rate='adaptive',
-        max_iter=1000,
-        early_stopping=True,
-        validation_fraction=0.2,
-        random_state=42,
-        verbose=True
-    )
-    
-    model.fit(X_train_scaled, y_train)
-    
-    # 3. Evaluation
-    y_pred = model.predict(X_test_scaled)
-    metrics = {
-        'accuracy': accuracy_score(y_test, y_pred),
-        'confusion_matrix': confusion_matrix(y_test, y_pred).tolist(),
-        'report': classification_report(y_test, y_pred, output_dict=True)
-    }
-    
-    # 4. Visualization
-    plt.figure(figsize=(10, 4))
-    plt.subplot(1, 2, 1)
-    plt.plot(model.loss_curve_, label='Training Loss', color='blue')
-    plt.title('Training Loss Over Epochs')
-    plt.xlabel('Epochs')
-    plt.ylabel('Loss')
-    plt.legend()
-    
-    plt.subplot(1, 2, 2)
-    cm = confusion_matrix(y_test, y_pred)
-    plt.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
-    plt.title('Confusion Matrix')
-    plt.colorbar()
-    plt.tight_layout()
-    plt.show()
-    
-    return metrics
-
-if __name__ == "__main__":
-    data = load_breast_cancer(as_frame=True)
-    results = train_and_evaluate_nn(data.frame, data.target)
-    print(f"Final Accuracy: {results['accuracy']:.4f}")
-```
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `coding-ds-tree-methods` | Tree Methods techniques | Complementary to this skill |
-| `coding-ds-ensemble-methods` | Ensemble Methods techniques | Complementary to this skill |
-| `coding-ds-hyperparameter-tuning` | Hyperparameter Tuning techniques | Complementary to this skill |
-
-## References
-
-- Official documentation and papers on Neural Networks
-- Industry best practices and standards
-- Implementation examples from the scikit-learn, TensorFlow, and PyTorch libraries
-
----
-
-*Last updated: 2026-04-24*
-
----
-
-## Constraints
+|

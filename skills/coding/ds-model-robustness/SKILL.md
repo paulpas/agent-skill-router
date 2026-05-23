@@ -6,7 +6,8 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: Improves model robustness including adversarial robustness, out-of-distribution detection, and uncertainty quantification
+description: Improves model robustness including adversarial robustness, out-of-distribution
+  detection, and uncertainty quantification
 license: MIT
 maturity: stable
 metadata:
@@ -15,11 +16,23 @@ metadata:
   related-skills: ds-anomaly-detection, ds-explainability, ds-model-fairness, ds-reproducible-research
   role: implementation
   scope: implementation
-  triggers: model robustness, adversarial robustness, out-of-distribution, OOD detection, robustness testing, unit tests,
-    testing, test automation
+  triggers: model robustness, adversarial robustness, out-of-distribution, OOD detection,
+    robustness testing, unit tests, testing, test automation
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   version: 1.0.0
 name: model-robustness
----
+------
 # Model Robustness
 
 Comprehensive guide to model robustness in machine learning and data science workflows.
@@ -223,98 +236,4 @@ def good_predict_with_robustness(model, X_test, scaler, threshold: float = 0.85)
 ## Common Pitfalls
 
 | Pitfall | Problem | Solution |
-|---------|---------|----------|
-| Not validating assumptions | Can lead to incorrect results | Implement comprehensive checks |
-| Ignoring edge cases | Models fail in production | Test with diverse data |
-| Over-engineering | Unnecessary complexity | Keep solutions simple initially |
-| Skipping documentation | Hard to maintain later | Document as you code |
-| Insufficient testing | Bugs in production | Write unit and integration tests |
-
-## Complete Working Example
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix
-from typing import Dict, Any, Tuple
-
-def train_and_evaluate_robustness(
-    X: np.ndarray, 
-    y: np.ndarray, 
-    noise_level: float = 0.1
-) -> Dict[str, Any]:
-    """
-    Train a classifier and evaluate robustness against noise and OOD samples.
-    
-    Args:
-        X: Feature matrix
-        y: Target labels
-        noise_level: Standard deviation for adversarial noise injection
-        
-    Returns:
-        Dictionary containing metrics, predictions, and visualization data
-    """
-    if X.shape[0] != y.shape[0]:
-        raise ValueError("X and y must have the same number of samples")
-        
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-    
-    model = RandomForestClassifier(n_estimators=100, random_state=42)
-    model.fit(X_train, y_train)
-    
-    # Clean predictions
-    y_clean_pred = model.predict(X_test)
-    clean_acc = accuracy_score(y_test, y_clean_pred)
-    
-    # Adversarial noise injection
-    X_noisy = X_test + np.random.normal(0, noise_level, X_test.shape)
-    y_noisy_pred = model.predict(X_noisy)
-    noisy_acc = accuracy_score(y_test, y_noisy_pred)
-    
-    # Uncertainty quantification via ensemble variance
-    y_proba = model.predict_proba(X_noisy)
-    entropy = -np.sum(y_proba * np.log(y_proba + 1e-10), axis=1)
-    high_uncertainty_mask = entropy > np.percentile(entropy, 90)
-    
-    # OOD detection via distance to training mean
-    train_mean = np.mean(X_train, axis=0)
-    dists = np.linalg.norm(X_noisy - train_mean, axis=1)
-    ood_threshold = np.percentile(np.linalg.norm(X_train - train_mean, axis=1), 95)
-    ood_mask = dists > ood_threshold
-    
-    return {
-        'clean_accuracy': clean_acc,
-        'noisy_accuracy': noisy_acc,
-        'accuracy_drop': clean_acc - noisy_acc,
-        'high_uncertainty_count': int(np.sum(high_uncertainty_mask)),
-        'ood_samples_count': int(np.sum(ood_mask)),
-        'confusion_matrix': confusion_matrix(y_test, y_noisy_pred).tolist(),
-        'entropy_values': entropy.tolist(),
-        'distances': dists.tolist()
-    }
-
-if __name__ == "__main__":
-    # Generate dataset
-    X, y = make_classification(n_samples=1000, n_features=5, n_informative=3, random_state=42)
-    
-    # Run robustness evaluation
-    results = train_and_evaluate_robustness(X, y, noise_level=0.2)
-    
-    print(f"Clean Accuracy: {results['clean_accuracy']:.4f}")
-    print(f"Noisy Accuracy: {results['noisy_accuracy']:.4f}")
-    print(f"Accuracy Drop: {results['accuracy_drop']:.4f}")
-    print(f"OOD Samples Detected: {results['ood_samples_count']}")
-    
-    # Visualization
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-    axes[0].hist(results['entropy_values'], bins=30, color='steelblue', edgecolor='black')
-    axes[0].set_title('Predictive Entropy Distribution')
-    axes[0].set_xlabel('Entropy')
-    axes[0].set_ylabel('Frequency')
-    
-    axes[1].hist(results['distances'], bins=30, color='coral', edgecolor='black')
-    axes[1].axvline(x=np.percentile(np.linalg.norm(X[:300] - np.mean(X[:300], axis=0), axis=1
+|

@@ -1,18 +1,36 @@
 ---
 name: dropbox-api
-description: Integrates with Dropbox API to manage files, folders, sharing, Paper documents, and Sign requests using the official dropbox Python SDK v12.
+description: Integrates with Dropbox API to manage files, folders, sharing, Paper
+  documents, and Sign requests using the official dropbox Python SDK v12.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: dropbox api, dropbox python, dropbox files, dropbox sharing, dropbox paper, dropbox sign, dropbox sdk
+  triggers: dropbox api, dropbox python, dropbox files, dropbox sharing, dropbox paper,
+    dropbox sign, dropbox sdk
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-box-api, coding-microsoft-graph-api, coding-google-workspace-api
----
+------
 
 # Dropbox API Integration
 
@@ -241,17 +259,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-box-api` | Box as an alternative enterprise content platform |
-| `coding-microsoft-graph-api` | OneDrive for Business as a Microsoft-centric alternative |
-| `coding-google-workspace-api` | Google Drive as a Google-centric alternative |
-
-## References
-
-- [dropbox on PyPI](https://pypi.org/project/dropbox/)
-- [Dropbox Python SDK (GitHub)](https://github.com/dropbox/dropbox-sdk-python)
-- [Dropbox API v2 Reference](https://www.dropbox.com/developers/documentation/http/documentation)
-- [Dropbox SDK Documentation](https://dropbox-sdk-python.readthedocs.io/)
-- [Dropbox OAuth Guide](https://www.dropbox.com/developers/reference/oauth-guide)
-- [Dropbox Developer Console](https://www.dropbox.com/developers/apps)
-- [Dropbox Scopes Reference](https://www.dropbox.com/developers/reference/scopes)
+|

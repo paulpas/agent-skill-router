@@ -1,18 +1,36 @@
 ---
 name: notion-api
-description: Integrates with Notion API to manage pages, databases, blocks, search, and comments using notion-client for Python with typed property access and pagination.
+description: Integrates with Notion API to manage pages, databases, blocks, search,
+  and comments using notion-client for Python with typed property access and pagination.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: notion api, notion pages, notion databases, notion-client, notion python, notion integration, notion blocks
+  triggers: notion api, notion pages, notion databases, notion-client, notion python,
+    notion integration, notion blocks
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-google-workspace-api, coding-atlassian-api, coding-airtable-api
----
+------
 
 # Notion API Integration
 
@@ -210,18 +228,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-google-workspace-api` | Google Docs as an alternative documentation platform |
-| `coding-atlassian-api` | Confluence as a more structured alternative to Notion |
-| `coding-airtable-api` | Spreadsheet-database hybrid useful alongside Notion |
-| `coding-asana-api` | Task management that can sync with Notion databases |
-
-## References
-
-- [notion-client on PyPI](https://pypi.org/project/notion-client/)
-- [notion-sdk-py (GitHub)](https://github.com/ramnes/notion-sdk-py)
-- [Notion API Reference](https://developers.notion.com/reference/intro)
-- [Notion Integrations Dashboard](https://www.notion.so/my-integrations)
-- [Notion Database Filter & Sort Guide](https://developers.notion.com/reference/post-database-query)
-- [Notion API Rate Limits](https://developers.notion.com/reference/errors-and-status-codes)
-- [Notion Property Types Reference](https://developers.notion.com/reference/page-property-values)
+|

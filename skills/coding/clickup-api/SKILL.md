@@ -1,18 +1,36 @@
 ---
 name: clickup-api
-description: Integrates with ClickUp API v2 to manage tasks, lists, spaces, folders, goals, time tracking, dashboards, and teams using clickup-python-sdk.
+description: Integrates with ClickUp API v2 to manage tasks, lists, spaces, folders,
+  goals, time tracking, dashboards, and teams using clickup-python-sdk.
 license: MIT
 compatibility: opencode
 metadata:
-  version: "1.0.0"
+  version: 1.0.0
   domain: coding
-  triggers: clickup api, clickup tasks, clickup lists, clickup python, clickup automation, clickup time tracking, clickup custom fields
+  triggers: clickup api, clickup tasks, clickup lists, clickup python, clickup automation,
+    clickup time tracking, clickup custom fields
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, do-dont, examples]
+  content-types:
+  - code
+  - guidance
+  - do-dont
+  - examples
   related-skills: coding-asana-api, coding-monday-api, coding-atlassian-api
----
+------
 
 # ClickUp API Integration
 
@@ -227,18 +245,4 @@ Every integration function should expose:
 ## Related Skills
 
 | Skill | Purpose |
-|---|---|
-| `coding-asana-api` | Alternative task management platform |
-| `coding-monday-api` | Alternative work management platform |
-| `coding-atlassian-api` | Jira for developer-focused issue tracking |
-| `coding-google-workspace-api` | Google Calendar integration for ClickUp task deadlines |
-
-## References
-
-- [clickup-python-sdk on PyPI](https://pypi.org/project/clickup-python-sdk/)
-- [ClickUp Python SDK (GitHub)](https://github.com/michaelbroyles/clickup-python-sdk)
-- [ClickUp API v2 Reference](https://developer.clickup.com/reference)
-- [ClickUp API Authentication](https://developer.clickup.com/reference#authentication)
-- [ClickUp Custom Fields API](https://developer.clickup.com/reference#custom-fields)
-- [ClickUp Time Tracking API](https://developer.clickup.com/reference#time-tracking)
-- [ClickUp Webhooks Guide](https://developer.clickup.com/reference#webhooks)
+|
