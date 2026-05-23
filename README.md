@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 815 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 816 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **815 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **816 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 251 | Software patterns, security, testing, data science |
+| Coding | 252 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,9 +265,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-22 23:24:57 UTC  
-> **Total skills:** 815  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (815 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-22 19:24:49 UTC  
+> **Total skills:** 816  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (816 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Skills by Domain
 
@@ -716,7 +716,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront |
 
 
-### Coding (251 skills)
+### Coding (252 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -768,7 +768,7 @@ MIT — All skills are freely available and redistributable.
 | [composition-root](skills/coding/composition-root/SKILL.md) | Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures. | composition root, dependency injection wiring, DI container, adapter registration, how do i wire my dependencies, service locator anti-pattern, object graph assembly, factory pattern, IoC container |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals |
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config |
-| [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay |
+| [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements production configuration management with layered config resolution, secret rotation, dynamic reloading without downtime, drift detection, and validated environment-specific configuration trees for application systems. | configuration management, config tree, layered config, secret rotation, Vault integration, dynamic reloading, hot reload, configuration drift, environment configs, config validation, sealed secrets, how do i manage application config, configuration drift detection, runtime config changes |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" | correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships |
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. | cqrs, command query responsibility segregation, mediator pattern, outbox pattern, idempotent commands, saga pattern, read write separation, event bus |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | creational patterns, factory method, builder pattern, singleton, abstract factory, prototype pattern, object creation, GoF design patterns |
@@ -779,6 +779,7 @@ MIT — All skills are freely available and redistributable.
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | json serialization, xml parsing, base64 encoding, url encoding, yaml config, protocol buffers, data serialization, type coercion, character encoding, message encoding |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | data architecture, stream processing, kafka, change data capture, CDC, event sourcing, lakehouse, data mesh, real-time analytics, batch processing, data pipeline design, how do i build a data pipeline, data streaming, Flink, Spark Streaming |
+| [data-pipeline-engineering](skills/coding/data-pipeline-engineering/SKILL.md) | Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure. | data pipeline, ETL, ELT, data ingestion, schema evolution, data validation, idempotent processing, data quality, Apache Kafka, Airflow DAG, batch processing, streaming pipeline, how do i build a data pipeline, data engineering, backpressure handling... |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | data privacy, anonymization, differential privacy, GDPR, PII protection, privacy-preserving, sensitive data |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale | data profiling, metadata extraction, schema analysis, data schema, how do i profile data, data structure, performance analysis, optimization |
 | [data-quality](skills/coding/data-quality/SKILL.md) | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" | data validation, data cleaning, outlier detection, data quality, how do i clean data, missing values |
@@ -1149,7 +1150,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (403 skills)
+### Implementation (Build Features) (404 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1218,7 +1219,7 @@ MIT — All skills are freely available and redistributable.
 | [concurrency-patterns](skills/go/concurrency-patterns/SKILL.md) | Go | Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications. |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" |
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton |
-| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. |
+| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements production configuration management with layered config resolution, secret rotation, dynamic reloading without downtime, drift detection, and validated environment-specific configuration trees for application systems. |
 | [configuration-management](skills/go/configuration-management/SKILL.md) | Go | Manages application configuration in Go with environment variables, YAML/JSON parsing, validation, defaults, and hierarchy for multi-environment deployments. |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | Coding | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" |
 | [correlation-risk](skills/trading/correlation-risk/SKILL.md) | Trading | "Implements correlation breakdown and portfolio diversification risk for risk management and algorithmic trading execution." |
@@ -1234,6 +1235,7 @@ MIT — All skills are freely available and redistributable.
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. |
+| [data-pipeline-engineering](skills/coding/data-pipeline-engineering/SKILL.md) | Coding | Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure. |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale |
 | [data-quality](skills/coding/data-quality/SKILL.md) | Coding | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" |
@@ -2162,7 +2164,7 @@ MIT — All skills are freely available and redistributable.
 | [confidence-based-selector](skills/agent/confidence-based-selector/SKILL.md) | Agent | Implements intelligent confidence based selector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | Implementation |
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | Implementation |
-| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | Implementation |
+| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements production configuration management with layered config resolution, secret rotation, dynamic reloading without downtime, drift detection, and validated environment-specific configuration trees for application systems. | Implementation |
 | [configuration-management](skills/go/configuration-management/SKILL.md) | Go | Manages application configuration in Go with environment variables, YAML/JSON parsing, validation, defaults, and hierarchy for multi-environment deployments. | Implementation |
 | [container-inspector](skills/agent/container-inspector/SKILL.md) | Agent | Implements intelligent container inspector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [container-linux](skills/cncf/container-linux/SKILL.md) | Cncf | "Provides Flatcar Container Linux in Cloud-Native Engineering - container Linux" | Reference |
@@ -2198,6 +2200,7 @@ MIT — All skills are freely available and redistributable.
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | Implementation |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | Implementation |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | Implementation |
+| [data-pipeline-engineering](skills/coding/data-pipeline-engineering/SKILL.md) | Coding | Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure. | Implementation |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | Implementation |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale | Implementation |
 | [data-quality](skills/coding/data-quality/SKILL.md) | Coding | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" | Implementation |
