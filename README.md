@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 910 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 911 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **910 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **911 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 346 | Software patterns, security, testing, data science |
+| Coding | 347 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-23 23:20:49 UTC  
-> **Total skills:** 910  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (910 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-23 18:51:46 UTC  
+> **Total skills:** 911  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (911 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 910 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 910 | Ranking penalty for conflicting query terms |
-| Response Profile | 910 | Verbosity, directive strength, abstraction level |
+| Archetypes | 911 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 911 | Ranking penalty for conflicting query terms |
+| Response Profile | 911 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (346 skills)
+### Coding (347 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -947,6 +947,7 @@ MIT — All skills are freely available and redistributable.
 | [models](skills/coding/models/SKILL.md) | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | enums, frozen, pydantic models, pydantic-models, trading [tactical, generation] |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | programming language comparison, rust vs go, typescript vs python, which language to use, language selection, zig vs c++, language benchmark, developer experience, runtime comparison, language ecosystem maturity [diagnostic, educational] |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. | python typing, python 3.12, python 3.11, TypeAlias, ParamSpec, asyncio TaskGroup, structured concurrency, pyproject.toml, uv package manager, httpx async, python project structure, self type, override decorator, modern python, python best practices 2026 [tactical, generation] |
+| [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. | software development, CI/CD pipeline, continuous integration, automated testing, code quality gates, deployment strategy, release management, DevOps workflow [orchestration, tactical] |
 | [monday-api](skills/coding/monday-api/SKILL.md) | Integrates with monday.com API using GraphQL queries to manage boards, items, groups, columns, updates, workspaces, and webhooks via monday-api-python-sdk. | monday api, monday.com, monday boards, monday items, monday graphql, monday python, monday automation [tactical, generation] |
 | [mongodb-driver](skills/coding/mongodb-driver/SKILL.md) | Integrates MongoDB using PyMongo 4.x with patterns for CRUD operations, aggregation pipelines, change streams, Atlas Search, and replica set connections. | mongodb, pymongo, mongo aggregation, change streams, mongodb atlas, how do i query mongodb from python, document database, bson [tactical, generation] |
 | [monolith-architecture](skills/coding/monolith-architecture/SKILL.md) | Implements modular monolith patterns (bounded-context layering, hexagonal ports, database-per-module, interface-based inter-module communication) to build cleanly structured single-deployable applications. | monolith, monolithic architecture, modular monolith, how do i structure a monolith, code organization, layered architecture, hexagonal architecture in monolith, single deployable unit [tactical, generation] |
@@ -1252,7 +1253,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (498 skills)
+### Implementation (Build Features) (499 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1544,6 +1545,7 @@ MIT — All skills are freely available and redistributable.
 | [model-selection](skills/coding/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" |
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. |
+| [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Coding | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. |
 | [modular-design](skills/go/modular-design/SKILL.md) | Go | Designs modular Go applications with clean architecture, dependency injection, package boundaries, and interface-based design for maintainable codebases. |
 | [momentum-indicators](skills/trading/momentum-indicators/SKILL.md) | Trading | "Implements rsi, macd, stochastic oscillators and momentum analysis for risk management and algorithmic trading execution." |
 | [monday-api](skills/coding/monday-api/SKILL.md) | Coding | Integrates with monday.com API using GraphQL queries to manage boards, items, groups, columns, updates, workspaces, and webhooks via monday-api-python-sdk. |
@@ -2738,6 +2740,7 @@ MIT — All skills are freely available and redistributable.
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | Implementation |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Coding | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | Reference |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. | Implementation |
+| [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Coding | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. | Implementation |
 | [modular-design](skills/go/modular-design/SKILL.md) | Go | Designs modular Go applications with clean architecture, dependency injection, package boundaries, and interface-based design for maintainable codebases. | Implementation |
 | [momentum-indicators](skills/trading/momentum-indicators/SKILL.md) | Trading | "Implements rsi, macd, stochastic oscillators and momentum analysis for risk management and algorithmic trading execution." | Implementation |
 | [monday-api](skills/coding/monday-api/SKILL.md) | Coding | Integrates with monday.com API using GraphQL queries to manage boards, items, groups, columns, updates, workspaces, and webhooks via monday-api-python-sdk. | Implementation |
