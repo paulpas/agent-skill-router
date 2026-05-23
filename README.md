@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 908 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 910 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **908 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **910 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 344 | Software patterns, security, testing, data science |
+| Coding | 346 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-23 21:31:06 UTC  
-> **Total skills:** 908  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (908 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-23 18:20:23 UTC  
+> **Total skills:** 910  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (910 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 908 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 908 | Ranking penalty for conflicting query terms |
-| Response Profile | 908 | Verbosity, directive strength, abstraction level |
+| Archetypes | 910 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 910 | Ranking penalty for conflicting query terms |
+| Response Profile | 910 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (344 skills)
+### Coding (346 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -910,6 +910,7 @@ MIT — All skills are freely available and redistributable.
 | [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. | monorepo setup, how do i set up a monorepo, module federation, micro-frontends, build toolchain migration, webpack to vite, turborepo vs nx [tactical, generation] |
 | [javascript-package-workflows](skills/coding/javascript-package-workflows/SKILL.md) | Automates JavaScript/TypeScript package publishing with semantic-release, conventional commits, CI/CD workflows, and private registry configuration for npm. | semantic-release, conventional commits, npm publish workflow, how do i publish a npm package, changelog automation, private npm registry, .npmrc setup, changesets, monorepo publishing, release automation [tactical, generation] |
 | [jenkins-api](skills/coding/jenkins-api/SKILL.md) | Integrates with the Jenkins REST API via python-jenkins and JenkinsAPI to manage jobs, builds, pipelines, credentials, plugins, nodes, and folder organization. | jenkins api, python-jenkins, jenkinsapi, jenkins job, jenkins pipeline, jenkins build, jenkins plugin, jenkins credentials [tactical, generation] |
+| [just-task-runner](skills/coding/just-task-runner/SKILL.md) | Implements the Just task runner as a modern alternative to GNU Make with named arguments, subcommands, runsets, environment file support, and cross-platform portability for developer workflow automation. | justfile, just task runner, task runner, casey just, how do i replace make, named arguments, runsets, recipe variables, dotenv, cross-platform make alternative [tactical, generation] |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | jvm tuning, garbage collection, GC tuning, zgc, shenandoah, jfr, jcmd, heap dump, memory leak, java performance, oom error, out of memory, thread deadlock, jstack, async-profiler... [tactical, generation] |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" | kernel density estimation, KDE, non-parametric, density estimation, bandwidth selection [tactical, generation] |
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | kotlin coroutines, structured concurrency, coroutine scope, SupervisorJob, Flow API, StateFlow, kotlinx-coroutines [tactical, generation] |
@@ -921,6 +922,7 @@ MIT — All skills are freely available and redistributable.
 | [llamaindex](skills/coding/llamaindex/SKILL.md) | Integrates LlamaIndex (indexes, query engines, agents, workflows, document parsing, RAG pipelines) for building data-aware LLM applications in Python. | llamaindex, llama index, rag pipeline, query engine, vector store index, llama parse, how do i use llamaindex, document agents [tactical, generation] |
 | [llm-fine-tuning](skills/coding/llm-fine-tuning/SKILL.md) | Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoRA, AdaLoRA), DPO alignment, instruction tuning with unsloth and axolotl, plus evaluation against MMLU, GSM8K, and HumanEval benchmarks. | fine-tuning LLM, LoRA, QLoRA, PEFT, DPO alignment, instruction tuning, unsloth, parameter-efficient fine-tuning [tactical, generation] |
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" | logistic regression, classification, binary classification, multinomial, how do i classify [tactical, generation] |
+| [mage-build-tool](skills/coding/mage-build-tool/SKILL.md) | Implements Mage build automation using Go code as build scripts, providing type-safe targets, aliases, build flags, environment-aware builds, and cross-compilation for development workflows. | mage, magefile, go build tool, mg package, main.go targets, how do i write build scripts in go, golang build automation, type-safe makefile, cross-compilation go [tactical, generation] |
 | [mailgun-api](skills/coding/mailgun-api/SKILL.md) | Integrates Mailgun API (Messages, Routes, Email Validation, Suppression List, Analytics) using the official mailgun-python SDK v1.7+ with proper REST patterns, MIME handling, and deliverability optimization. | mailgun, mailgun api, send email, email validation, email routing, transactional email, inbound email, mailgun python [tactical, generation] |
 | [make](skills/coding/make/SKILL.md) | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. | make, build system, makefile, compilation, incremental build, build automation, justfile, phony targets [tactical, generation] |
 | [makefile](skills/coding/makefile/SKILL.md) | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. | makefile, make, build automation, phony targets, pattern rules, build system, make command, cross-platform make [tactical, generation] |
@@ -1250,7 +1252,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (496 skills)
+### Implementation (Build Features) (498 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1483,6 +1485,7 @@ MIT — All skills are freely available and redistributable.
 | [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Coding | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. |
 | [javascript-package-workflows](skills/coding/javascript-package-workflows/SKILL.md) | Coding | Automates JavaScript/TypeScript package publishing with semantic-release, conventional commits, CI/CD workflows, and private registry configuration for npm. |
 | [jenkins-api](skills/coding/jenkins-api/SKILL.md) | Coding | Integrates with the Jenkins REST API via python-jenkins and JenkinsAPI to manage jobs, builds, pipelines, credentials, plugins, nodes, and folder organization. |
+| [just-task-runner](skills/coding/just-task-runner/SKILL.md) | Coding | Implements the Just task runner as a modern alternative to GNU Make with named arguments, subcommands, runsets, environment file support, and cross-platform portability for developer workflow automation. |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Linux | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. |
@@ -1506,6 +1509,7 @@ MIT — All skills are freely available and redistributable.
 | [llm-orchestration](skills/trading/llm-orchestration/SKILL.md) | Trading | "Large Language Model orchestration for trading analysis with structured" output using instructor/pydantic |
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | Coding | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" |
 | [lookahead-bias](skills/trading/lookahead-bias/SKILL.md) | Trading | "Preventing lookahead bias in backtesting through strict causality enforcement" time-based validation, and comprehensive detection frameworks. |
+| [mage-build-tool](skills/coding/mage-build-tool/SKILL.md) | Coding | Implements Mage build automation using Go code as build scripts, providing type-safe targets, aliases, build flags, environment-aware builds, and cross-compilation for development workflows. |
 | [mailgun-api](skills/coding/mailgun-api/SKILL.md) | Coding | Integrates Mailgun API (Messages, Routes, Email Validation, Suppression List, Analytics) using the official mailgun-python SDK v1.7+ with proper REST patterns, MIME handling, and deliverability optimization. |
 | [make](skills/coding/make/SKILL.md) | Coding | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. |
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, and cross-compilation for reproducible software builds. |
@@ -2630,6 +2634,7 @@ MIT — All skills are freely available and redistributable.
 | [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Coding | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. | Implementation |
 | [javascript-package-workflows](skills/coding/javascript-package-workflows/SKILL.md) | Coding | Automates JavaScript/TypeScript package publishing with semantic-release, conventional commits, CI/CD workflows, and private registry configuration for npm. | Implementation |
 | [jenkins-api](skills/coding/jenkins-api/SKILL.md) | Coding | Integrates with the Jenkins REST API via python-jenkins and JenkinsAPI to manage jobs, builds, pipelines, credentials, plugins, nodes, and folder organization. | Implementation |
+| [just-task-runner](skills/coding/just-task-runner/SKILL.md) | Coding | Implements the Just task runner as a modern alternative to GNU Make with named arguments, subcommands, runsets, environment file support, and cross-platform portability for developer workflow automation. | Implementation |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | Implementation |
 | [k8s-debugger](skills/agent/k8s-debugger/SKILL.md) | Agent | Implements intelligent k8s debugger with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [karmada](skills/cncf/karmada/SKILL.md) | Cncf | "Provides Karmada in Cloud-Native Engineering - multi-cluster orchestration" | Reference |
@@ -2687,6 +2692,7 @@ MIT — All skills are freely available and redistributable.
 | [lookahead-bias](skills/trading/lookahead-bias/SKILL.md) | Trading | "Preventing lookahead bias in backtesting through strict causality enforcement" time-based validation, and comprehensive detection frameworks. | Implementation |
 | [m365-agents-dotnet](skills/agent/m365-agents-dotnet/SKILL.md) | Agent | Implements intelligent m365 agents dotnet with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [m365-agents-ts](skills/agent/m365-agents-ts/SKILL.md) | Agent | Implements intelligent m365 agents ts with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [mage-build-tool](skills/coding/mage-build-tool/SKILL.md) | Coding | Implements Mage build automation using Go code as build scripts, providing type-safe targets, aliases, build flags, environment-aware builds, and cross-compilation for development workflows. | Implementation |
 | [mailgun-api](skills/coding/mailgun-api/SKILL.md) | Coding | Integrates Mailgun API (Messages, Routes, Email Validation, Suppression List, Analytics) using the official mailgun-python SDK v1.7+ with proper REST patterns, MIME handling, and deliverability optimization. | Implementation |
 | [make](skills/coding/make/SKILL.md) | Coding | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. | Implementation |
 | [make-automation](skills/agent/make-automation/SKILL.md) | Agent | Implements intelligent make automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
