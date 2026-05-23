@@ -232,45 +232,59 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         score: c.score,
       }));
 
-      const queryEmbedding = taskEmbeddingResponse.embedding;
-      const diverseResults = this.mmrDiversifier.select(queryEmbedding, mmrInput);
+      // Bug fix: Early-exit when similarity spread is too low (e.g., emulation mode with near-zero vectors).
+      // When all candidates have nearly identical similarity scores, MMR's diversity penalty will eliminate everything.
+      const scores = candidates.map((c) => c.score);
+      const meanScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+      const variance = scores.reduce((sum, s) => sum + Math.pow(s - meanScore, 2), 0) / scores.length;
+      const stdDev = Math.sqrt(variance);
 
-      // Store MMR penalties for observability
-      this.mmrPenalties.clear();
-      for (const dr of diverseResults) {
-        if (dr.mmrPenalty !== undefined) {
-          this.mmrPenalties.set(dr.id, dr.mmrPenalty);
-        }
-      }
-
-      // Map diversified results back to full SkillSearchResult objects
-      const candidateIdSet = new Set(candidates.map((c) => c.skill.metadata.name));
-      const idToSkill = new Map(
-        candidates.map((c) => [c.skill.metadata.name, c] as const)
-      );
-
-      diverseCandidates = diverseResults
-        .filter((dr) => candidateIdSet.has(dr.id))
-        .map((dr) => {
-          const base = idToSkill.get(dr.id)!;
-          return {
-            ...base,
-            score: dr.score,
-          };
+      if (stdDev < 0.05) {
+        this.logger.debug('Skipping MMR: similarity variance too low', {
+          taskId,
+          stdDev,
         });
+      } else {
+        const queryEmbedding = taskEmbeddingResponse.embedding;
+        const diverseResults = this.mmrDiversifier.select(queryEmbedding, mmrInput);
 
-      this.logger.info('MMR diversification applied', {
-        taskId,
-        inputCount: candidates.length,
-        outputCount: diverseCandidates.length,
-      });
+        // Store MMR penalties for observability
+        this.mmrPenalties.clear();
+        for (const dr of diverseResults) {
+          if (dr.mmrPenalty !== undefined) {
+            this.mmrPenalties.set(dr.id, dr.mmrPenalty);
+          }
+        }
+
+        // Map diversified results back to full SkillSearchResult objects
+        const candidateIdSet = new Set(candidates.map((c) => c.skill.metadata.name));
+        const idToSkill = new Map(
+          candidates.map((c) => [c.skill.metadata.name, c] as const)
+        );
+
+        diverseCandidates = diverseResults
+          .filter((dr) => candidateIdSet.has(dr.id))
+          .map((dr) => {
+            const base = idToSkill.get(dr.id)!;
+            return {
+              ...base,
+              score: dr.score,
+            };
+          });
+
+        this.logger.info('MMR diversification applied', {
+          taskId,
+          inputCount: candidates.length,
+          outputCount: diverseCandidates.length,
+        });
+      }
     }
 
     // --- Phase 2 Hybrid Scoring Pipeline ---
     // Pass vector DB scores alongside skill data for the no-LLM fallback path
     const rankedSkills = await this.applyHybridScoring(
       request.task,
-      candidates.map((c) => ({
+      diverseCandidates.map((c) => ({
         metadata: c.skill.metadata,
         rawContent: c.skill.rawContent,
         responseProfile: (c.skill.metadata as any).responseProfile,
