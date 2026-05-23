@@ -877,8 +877,21 @@ export class SkillRegistry implements SkillRegistryWithCompression {
                 error: error instanceof Error ? error.message : String(error),
               });
             } else if (skill) {
-              // Local-first: first directory wins on name collision
-              if (!this.skills.has(skill.metadata.name)) {
+              // Local-first: overwrite metadata-only entries with full-content local skills
+              if (this.skills.has(skill.metadata.name)) {
+                const existing = this.skills.get(skill.metadata.name)!;
+                // If the existing skill has no content but the local one does, update it
+                if (!existing.rawContent && skill.rawContent) {
+                  existing.rawContent = skill.rawContent;
+                  this.logger.debug(`Updated local content for: ${skill.metadata.name}`, {
+                    file,
+                  });
+                  successCount++;
+                  continue;
+                }
+                // If both have content, keep the first one (already loaded)
+                this.logger.debug(`Skipping duplicate skill from remote: ${skill.metadata.name}`);
+              } else {
                 this.addSkill(skill);
                 this.logger.debug(`Loaded skill: ${skill.metadata.name}`, {
                   file,
@@ -886,8 +899,6 @@ export class SkillRegistry implements SkillRegistryWithCompression {
                   tags: skill.metadata.tags,
                 });
                 successCount++;
-              } else {
-                this.logger.debug(`Skipping duplicate skill from remote: ${skill.metadata.name}`);
               }
             } else {
               errorCount++;

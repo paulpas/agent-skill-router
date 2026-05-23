@@ -7,6 +7,7 @@ import type {
   RouteResponse,
   SelectedSkill,
   EmbeddingResponse,
+  ScoreBreakdown,
 } from '../core/types';
 import { SkillRegistry } from '../core/SkillRegistry';
 import { VectorDatabase } from '../embedding/VectorDatabase';
@@ -266,9 +267,15 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
     }
 
     // --- Phase 2 Hybrid Scoring Pipeline ---
+    // Pass vector DB scores alongside skill data for the no-LLM fallback path
     const rankedSkills = await this.applyHybridScoring(
       request.task,
-      candidates.map((c) => c.skill),
+      candidates.map((c) => ({
+        metadata: c.skill.metadata,
+        rawContent: c.skill.rawContent,
+        responseProfile: (c.skill.metadata as any).responseProfile,
+        vectorScore: c.score,  // Pass the actual vector DB similarity score
+      })),
     );
 
     // Apply deterministic filtering (quality gates, max skills, etc.)
@@ -437,7 +444,7 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
     */
   private async applyHybridScoring(
     query: string,
-    candidates: Array<{ metadata: ReturnType<SkillRegistry['getAllSkills']>[number]['metadata']; rawContent: string; responseProfile?: unknown }>
+    candidates: Array<{ metadata: ReturnType<SkillRegistry['getAllSkills']>[number]['metadata']; rawContent: string; responseProfile?: unknown; vectorScore?: number }>
   ): Promise<SelectedSkill[]> {
     // LLM ranking enabled via env var — use as fallback/backup for nuanced understanding
     const llmRankingEnabled = process.env.LLM_RANKING_ENABLED === 'true';
@@ -506,8 +513,10 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         // Historical success rate (from metadata if available)
         const historicalRate = candidate.metadata.performance?.successRate ?? undefined;
 
+        // Use actual vector DB score from candidate (not LLM ranker output)
+        // The LLM ranker is a fallback for nuanced understanding only
         const components: ScoreComponents = {
-          vectorSimilarity: llmScore,
+          vectorSimilarity: candidate.vectorScore ?? llmScore,
           bm25Score,
           triggerMatchScore: triggerScore,
           archetypeBoost,
@@ -593,8 +602,10 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       // Historical success rate
       const historicalRate = candidate.metadata.performance?.successRate ?? undefined;
 
+      // Use vector DB score from candidate (set in routeTask), not the LLM ranker
+      // In the no-LLM branch, the actual semantic similarity comes from the vector DB search
       const components: ScoreComponents = {
-        vectorSimilarity: 0, // No LLM similarity — will be overridden by actual vector DB score below
+        vectorSimilarity: candidate.vectorScore ?? 0,
         bm25Score,
         triggerMatchScore: triggerScore,
         archetypeBoost,
@@ -639,7 +650,6 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       fieldTexts: {
         description: skill.metadata.description || '',
         tags: (skill.metadata.tags || []).join(' '),
-        triggers: (skill.metadata as any).triggers?.join(' ') ?? '',
         rawContent: skill.rawContent || '',
       },
     }));
@@ -647,15 +657,22 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
   }
 
 /**
-     * Extract routing scores for response — now includes per-component breakdowns
-     */
-    private extractRoutingScores(skills: SelectedSkill[]): Record<string, number> {
-      const scores: Record<string, number> = {};
-      for (const skill of skills) {
-        scores[skill.name] = skill.score;
-      }
-      return scores;
-    }
+      * Extract routing scores for response — returns per-component breakdown objects.
+      * Uses stored scoreBreakdown when available (from hybrid scorer), otherwise falls back to scalar.
+      */
+     private extractRoutingScores(skills: SelectedSkill[]): Record<string, ScoreBreakdown | number> {
+       const scores: Record<string, ScoreBreakdown | number> = {};
+       for (const skill of skills) {
+         if (skill.scoreBreakdown) {
+           // Use the full component breakdown from the hybrid scorer
+           scores[skill.name] = skill.scoreBreakdown;
+         } else {
+           // Fallback: scalar score for skills without breakdown data
+           scores[skill.name] = skill.score;
+         }
+       }
+       return scores;
+     }
 
  /**
       * Extract routing scores as ScoreBreakdown objects for each selected skill.
