@@ -52,9 +52,11 @@ export class MMRDiversifier {
   private topK: number;
 
   constructor(config?: MMRConfig) {
-    const c = { ...DEFAULT_CONFIG, ...config };
-    this.lambda = clamp(c.lambda, 0, 1);
-    this.topK = Math.max(1, Math.round(c.topK ?? DEFAULT_CONFIG.topK));
+    // Use explicit fallback defaults instead of spread — prevents undefined values from overwriting defaults.
+    const lambda = config?.lambda ?? DEFAULT_CONFIG.lambda;
+    const topK = config?.topK ?? DEFAULT_CONFIG.topK;
+    this.lambda = clamp(lambda, 0, 1);
+    this.topK = Math.max(1, Math.round(topK));
   }
 
   /**

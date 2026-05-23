@@ -149,7 +149,7 @@ export class Router {
     const diversityEnabled = config.diversity?.enabled ?? true;
     if (diversityEnabled) {
       this.mmrDiversifier = new MMRDiversifier({
-        lambda: config.diversity?.lambda,
+        ...(config.diversity != null ? { lambda: config.diversity.lambda } : {}),
       });
     }
 
@@ -271,6 +271,16 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
               score: dr.score,
             };
           });
+
+        // Safety fallback: if MMR returned no results (e.g., NaN scores due to config issue),
+        // fall back to original candidates to avoid empty routing.
+        if (diverseCandidates.length === 0 && candidates.length > 0) {
+          this.logger.warn('MMR diversification returned empty set, falling back to original candidates', {
+            taskId,
+            candidateCount: candidates.length,
+          });
+          diverseCandidates = candidates;
+        }
 
         this.logger.info('MMR diversification applied', {
           taskId,
@@ -418,9 +428,9 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
     }
 
     // Filter by minimum score
-    // Use 0.3 threshold when we have fallback skills (LLM unavailable)
+    // Use lower threshold when no LLM ranking is active (emulation mode scores are naturally lower).
     const hasFallback = rankedSkills.some(s => s.reasoning?.includes('fallback'));
-    const minScore = hasFallback ? 0.3 : 0.5;
+    const minScore = hasFallback ? 0.3 : 0.25;
     filtered = filtered.filter((skill) => skill.score >= minScore);
 
     // Ensure at least one skill is returned (fallback behavior)
