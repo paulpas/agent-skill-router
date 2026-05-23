@@ -9,6 +9,7 @@ This guide explains how to create new skills for the agent-skill-router reposito
 ## Table of Contents
 
 - [Overview](#overview)
+- [Advanced Routing System (v2)](#advanced-routing-system-v2)
 - [Skill Repository Structure](#skill-repository-structure)
 - [Domain Categories](#domain-categories)
 - [Zero-Tolerance Stub Policy](#zero-tolerance-stub-policy)
@@ -56,6 +57,107 @@ Match found → skill content injected into context
         ↓
 Model reads skill and applies its constraints
 ```
+
+**Enhanced routing note:** Skills that declare `archetypes`, `anti_triggers`, or `response_profile` in their frontmatter receive enhanced routing behavior — see the [Advanced Routing System (v2)](#advanced-routing-system-v2) section below for details on hybrid scoring, query archetypes, and explainable skill selection.
+
+---
+
+## Advanced Routing System (v2)
+
+The router now uses hybrid scoring with multiple signal sources instead of pure LLM-based semantic ranking. This produces faster, more consistent, and more explainable skill selection.
+
+### Hybrid Scoring Pipeline
+
+The final routing score combines five independent signals:
+
+| Signal | Weight | Purpose |
+|--------|--------|---------|
+| Vector similarity (semantic) | 50% | Finds semantically related skills via embeddings |
+| BM25 (exact term match) | 20% | Handles exact technical terms, acronyms, and short queries |
+| Trigger match | 15% | Matches query words against configured skill triggers/tags |
+| Archetype match | 10% | Aligns query intent type with skill purpose |
+| Historical success | 5% | Adaptive learning from past routing effectiveness |
+
+Additional modifiers:
+- **Specificity boost**: Specialized skills outrank generic orchestration skills (multiplicative factor 0.7–1.0)
+- **Anti-trigger penalty**: -0.15 per conflicting trigger (max -0.5), prevents generic skill dominance
+- **MMR diversification**: Reduces near-duplicate skill retrieval
+- **Conciseness nudge**: Prefers actionable, procedural skills
+
+### Query Archetypes
+
+Skills can now declare which query archetypes they serve:
+
+| Archetype | When to Use | Example Queries |
+|-----------|-------------|-----------------|
+| `tactical` | Specific implementation/debugging tasks | "fix this ingress timeout", "implement a stop loss" |
+| `strategic` | Design, architecture, planning | "design a scalable event bus", "plan a migration" |
+| `diagnostic` | Root cause analysis, troubleshooting | "why is my pod crashing", "debug latency issue" |
+| `orchestration` | Multi-step workflows, automation | "automate CI/CD pipeline", "coordinate microservices" |
+| `educational` | Learning, explanation, tutorials | "teach me kubernetes networking" |
+| `enforcement` | Compliance, security, policy | "security audit required", "compliance check" |
+| `generation` | Code generation, scaffolding | "generate boilerplate", "scaffold new service" |
+
+Query archetype inference is keyword-based: the router analyzes query terms and maps them to one or more archetypes. Skills with matching archetypes receive a +30% score boost (full match) or +10% (partial match).
+
+### Anti-Triggers
+
+Skills can declare anti-triggers — terms that indicate the skill should NOT be used for certain queries. This prevents large generic skills from dominating specific task queries:
+
+```yaml
+anti_triggers:
+  - brainstorming
+  - vague ideation
+  - long-form architecture
+```
+
+If a query contains any anti-trigger term, the skill receives a ranking penalty (-0.15 per match).
+
+### Response Profile
+
+Skills can declare their output characteristics:
+
+```yaml
+response_profile:
+  verbosity: low        # low | medium | high
+  directive_strength: high  # low | medium | high  
+  abstraction_level: operational  # operational | tactical | strategic
+```
+
+The router uses this to prefer concise, actionable skills for tactical queries and detailed, explanatory skills for strategic/educational queries.
+
+### Score Explanations
+
+Enable debug output by setting `includeScoreBreakdown: true` in your routing request or `DEBUG_ROUTING=true` environment variable. Each routed skill includes a per-component breakdown:
+
+```json
+{
+  "scoreExplanations": {
+    "kubernetes-deployment": [
+      "Strong semantic match to your query intent (vector: 0.82)",
+      "Exact term matches found (BM25: 0.64)",
+      "Trigger keyword matched: kubernetes, deployment",
+      "Archetype alignment: tactical + diagnostic → boost applied",
+      "High specificity detected — specialized skill preferred",
+      "Action-oriented content with numbered steps"
+    ]
+  }
+}
+```
+
+### Configuration
+
+Routing weights are configurable via environment variables or the `retrieval` config object:
+
+| Config | Default | Description |
+|--------|---------|-------------|
+| `RETRIEVAL_VECTOR_WEIGHT` | 0.50 | Weight for semantic vector similarity |
+| `RETRIEVAL_BM25_WEIGHT` | 0.20 | Weight for BM25 exact-term matching |
+| `RETRIEVAL_TRIGGER_MATCH_WEIGHT` | 0.15 | Weight for trigger/tag keyword matching |
+| `RETRIEVAL_ARCHETYPE_WEIGHT` | 0.10 | Weight for archetype alignment |
+| `RETRIEVAL_HISTORICAL_WEIGHT` | 0.05 | Weight for historical success rate |
+| `MMR_LAMBDA` | 0.7 | MMR diversity tradeoff (0=diverse, 1=relevant) |
+| `LLM_RANKING_ENABLED` | true | Keep LLM ranking as optional fallback |
 
 ---
 

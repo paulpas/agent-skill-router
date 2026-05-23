@@ -99,6 +99,44 @@ def parse_skill(skill_dir: Path) -> Optional[Dict]:
     role = metadata.get("role", "unknown")
     triggers = metadata.get("triggers", "")
 
+    # Extract archetypes from frontmatter (supports both YAML array and comma-separated string)
+    archetypes_raw = metadata.get("archetypes", "")
+    if isinstance(archetypes_raw, list):
+        archetype_list = [str(a).strip() for a in archetypes_raw if str(a).strip()]
+    elif isinstance(archetypes_raw, str) and archetypes_raw.strip():
+        archetype_list = [a.strip() for a in archetypes_raw.split(",") if a.strip()]
+    else:
+        archetype_list = []
+
+    # Extract anti_triggers from frontmatter (supports both YAML array and comma-separated string)
+    anti_triggers_raw = metadata.get("anti_triggers", "")
+    if isinstance(anti_triggers_raw, list):
+        anti_trigger_list = [str(a).strip() for a in anti_triggers_raw if str(a).strip()]
+    elif isinstance(anti_triggers_raw, str) and anti_triggers_raw.strip():
+        anti_trigger_list = [a.strip() for a in anti_triggers_raw.split(",") if a.strip()]
+    else:
+        anti_trigger_list = []
+
+    # Extract response_profile from frontmatter (nested object or flat keys)
+    response_profile = {}
+    profile = metadata.get("response_profile", {})
+    if isinstance(profile, dict):
+        # Nested object: {verbosity: low, directive_strength: high, abstraction_level: operational}
+        for key in ["verbosity", "directive_strength", "abstraction_level"]:
+            val = profile.get(key)
+            if val:
+                response_profile[key] = str(val).lower()
+    elif isinstance(profile, str) and profile.strip():
+        # Fallback: try comma-separated or pipe-separated values for each known key
+        parts = [p.strip() for p in profile.split(",") if p.strip()]
+        for part in parts:
+            if ":" in part:
+                k, v = part.split(":", 1)
+                response_profile[k.strip().lower().replace("-", "_")] = v.strip().lower()
+
+    # Extract version from frontmatter
+    version = metadata.get("version", "1.0.0")
+
     # Extract H1 title from markdown content
     title = extract_h1_title(markdown_content)
     if not title:
@@ -112,6 +150,10 @@ def parse_skill(skill_dir: Path) -> Optional[Dict]:
         "role": role,
         "triggers": triggers,
         "trigger_list": [t.strip() for t in triggers.split(",") if t.strip()],
+        "archetypes": archetype_list,
+        "anti_triggers": anti_trigger_list,
+        "response_profile": response_profile,
+        "version": version,
     }
 
 
@@ -171,7 +213,15 @@ def generate_skills_by_domain(skills: List[Dict]) -> str:
             # Format triggers for README (up to 15 triggers)
             triggers = format_triggers_for_readme(skill["trigger_list"], max_count=15)
 
-            lines.append(f"| {skill_link} | {desc} | {triggers} |")
+            # Format archetypes for README (show as inline annotation)
+            archetypes_display = ""
+            if skill.get("archetypes"):
+                arch_text = ", ".join(skill["archetypes"])
+                archetypes_display = f" [{arch_text}]"
+
+            # Build triggers column - add archetype info if present
+            triggers_with_arch = f"{triggers}{archetypes_display}"
+            lines.append(f"| {skill_link} | {desc} | {triggers_with_arch} |")
 
         lines.append("")
 
@@ -293,6 +343,25 @@ def generate_domains_table(skills: List[Dict]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def generate_routing_field_summary(skills: List[Dict]) -> str:
+    """Generate a summary of advanced routing field adoption across all skills."""
+    with_archetypes = sum(1 for s in skills if s.get("archetypes"))
+    with_anti_triggers = sum(1 for s in skills if s.get("anti_triggers"))
+    with_profile = sum(1 for s in skills if s.get("response_profile"))
+
+    lines = [
+        "## Advanced Routing Field Coverage",
+        "",
+        "| Field | Skills Configured | Description |",
+        "|-------|-------------------|-------------|",
+        f"| Archetypes | {with_archetypes} | Query intent matching (tactical, strategic, diagnostic, etc.) |",
+        f"| Anti-Triggers | {with_anti_triggers} | Ranking penalty for conflicting query terms |",
+        f"| Response Profile | {with_profile} | Verbosity, directive strength, abstraction level |",
+        "",
+    ]
+    return "\n".join(lines)
+
+
 def generate_content(skills: List[Dict]) -> str:
     """Generate complete auto-generated content."""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
@@ -303,6 +372,7 @@ def generate_content(skills: List[Dict]) -> str:
 > **Total skills:** {len(skills)}  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) ({len(skills)} entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
+{generate_routing_field_summary(skills)}
 {generate_skills_by_domain(skills)}
 {generate_skills_by_role(skills)}
 {generate_skills_index(skills)}
