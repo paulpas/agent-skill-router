@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-22T23:24:56.090531Z",
-  "totalSkills": 815,
+  "generatedAt": "2026-05-23T00:25:21.620525Z",
+  "totalSkills": 816,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 251,
+    "coding": 252,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 403,
+    "implementation": 404,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -4105,24 +4105,31 @@
     {
       "name": "configuration-management",
       "domain": "coding",
-      "description": "Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications.",
+      "description": "Implements production configuration management with layered config resolution, secret rotation, dynamic reloading without downtime, drift detection, and validated environment-specific configuration trees for application systems.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "configuration management",
-        "environment variables",
-        "feature flags",
-        "secrets management",
+        "config tree",
+        "layered config",
+        "secret rotation",
+        "Vault integration",
+        "dynamic reloading",
+        "hot reload",
+        "configuration drift",
+        "environment configs",
         "config validation",
-        ".env files",
-        "yaml configuration",
-        "config overlay"
+        "sealed secrets",
+        "how do i manage application config",
+        "configuration drift detection",
+        "runtime config changes"
       ],
       "relatedSkills": [
-        "security-review",
-        "deployment-patterns",
-        "software-design-principles"
+        "coding-production-readiness",
+        "linux-configuration-management",
+        "cncf-consul",
+        "coding-security-review"
       ],
       "version": "1.0.0",
       "source": "skills/coding/configuration-management/SKILL.md"
@@ -4936,6 +4943,40 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/data-intensive-systems/SKILL.md"
+    },
+    {
+      "name": "data-pipeline-engineering",
+      "domain": "coding",
+      "description": "Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "data pipeline",
+        "ETL",
+        "ELT",
+        "data ingestion",
+        "schema evolution",
+        "data validation",
+        "idempotent processing",
+        "data quality",
+        "Apache Kafka",
+        "Airflow DAG",
+        "batch processing",
+        "streaming pipeline",
+        "how do i build a data pipeline",
+        "data engineering",
+        "backpressure handling",
+        "deduplication"
+      ],
+      "relatedSkills": [
+        "ds-feature-engineering",
+        "production-logging",
+        "software-error-handling",
+        "coding-production-readiness"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/data-pipeline-engineering/SKILL.md"
     },
     {
       "name": "data-privacy",
