@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-23T21:31:05.674864Z",
-  "totalSkills": 908,
+  "generatedAt": "2026-05-23T23:20:47.916557Z",
+  "totalSkills": 910,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 344,
+    "coding": 346,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 496,
+    "implementation": 498,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -10714,6 +10714,33 @@
       "source": "skills/coding/jenkins-api/SKILL.md"
     },
     {
+      "name": "just-task-runner",
+      "domain": "coding",
+      "description": "Implements the Just task runner as a modern alternative to GNU Make with named arguments, subcommands, runsets, environment file support, and cross-platform portability for developer workflow automation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "justfile",
+        "just task runner",
+        "task runner",
+        "casey just",
+        "how do i replace make",
+        "named arguments",
+        "runsets",
+        "recipe variables",
+        "dotenv",
+        "cross-platform make alternative"
+      ],
+      "relatedSkills": [
+        "makefile",
+        "linux-make-build-system",
+        "coding-mage-build-tool"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/just-task-runner/SKILL.md"
+    },
+    {
       "name": "jvm-engineering",
       "domain": "coding",
       "description": "Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications.",
@@ -12031,6 +12058,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/m365-agents-ts/SKILL.md"
+    },
+    {
+      "name": "mage-build-tool",
+      "domain": "coding",
+      "description": "Implements Mage build automation using Go code as build scripts, providing type-safe targets, aliases, build flags, environment-aware builds, and cross-compilation for development workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mage",
+        "magefile",
+        "go build tool",
+        "mg package",
+        "main.go targets",
+        "how do i write build scripts in go",
+        "golang build automation",
+        "type-safe makefile",
+        "cross-compilation go"
+      ],
+      "relatedSkills": [
+        "makefile",
+        "just-task-runner",
+        "coding-make",
+        "linux-make-build-system"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/mage-build-tool/SKILL.md"
     },
     {
       "name": "mailgun-api",
