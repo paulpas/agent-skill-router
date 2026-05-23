@@ -1,4 +1,5 @@
 // Router - main routing engine that orchestrates the skill routing pipeline
+// Phase 2: Hybrid retrieval pipeline with BM25 + scorer combination
 
 import { v4 as uuidv4 } from 'uuid';
 import type {
@@ -14,6 +15,25 @@ import { LLMRanker } from '../llm/LLMRanker';
 import { ExecutionPlanner } from '../core/ExecutionPlanner';
 import { SafetyLayer } from '../core/SafetyLayer';
 import { Logger } from '../observability/Logger';
+import { BM25Indexer, BM25Document } from '../retrieval/BM25Indexer';
+import { TriggerMatchScorer } from '../retrieval/TriggerMatchScorer';
+import { SpecificityScorer } from '../retrieval/SpecificityScorer';
+import { ConcisenessScorer } from '../retrieval/ConcisenessScorer';
+import { HybridScorer, HybridScoreConfig, ScoreComponents } from '../retrieval/HybridScorer';
+import { QueryArchetypeInferencer } from './QueryArchetypeInferencer';
+import { ArchetypeRankingBoost } from './ArchetypeRankingBoost';
+import { AntiTriggerScorer } from './AntiTriggerScorer';
+
+/**
+ * Hybrid retrieval weight configuration for the Router.
+ */
+export interface RetrievalConfig {
+  vectorWeight?: number;
+  bm25Weight?: number;
+  triggerMatchWeight?: number;
+  archetypeWeight?: number;
+  historicalWeight?: number;
+}
 
 /**
  * Configuration for the Router
@@ -47,6 +67,8 @@ export interface RouterConfig {
     compressionBatchSize?: number;
     adaptiveTTL?: boolean;
   };
+  // Hybrid retrieval scoring weights (Phase 2)
+  retrieval?: RetrievalConfig;
 }
 
 /**
@@ -59,6 +81,8 @@ export class Router {
   private llmRanker: LLMRanker;
   private executionPlanner: ExecutionPlanner;
   private safetyLayer: SafetyLayer;
+  private bm25Indexer: BM25Indexer;
+  private hybridScorer: HybridScorer;
   private logger: Logger;
   private config: RouterConfig;
 
@@ -93,9 +117,20 @@ export class Router {
       requireSchemaValidation: config.safety?.requireSchemaValidation ?? true,
     });
 
-    this.logger = new Logger('Router', {
+  this.logger = new Logger('Router', {
       level: config.observability?.level || 'info',
     });
+
+    // Hybrid retrieval initialization (Phase 2)
+    const scoreConfig: HybridScoreConfig = {
+      vectorWeight: config.retrieval?.vectorWeight ?? 0.50,
+      bm25Weight: config.retrieval?.bm25Weight ?? 0.20,
+      triggerMatchWeight: config.retrieval?.triggerMatchWeight ?? 0.15,
+      archetypeWeight: config.retrieval?.archetypeWeight ?? 0.10,
+      historicalWeight: config.retrieval?.historicalWeight ?? 0.05,
+    };
+    this.hybridScorer = new HybridScorer(scoreConfig);
+    this.bm25Indexer = BM25Indexer.buildIndex([]); // Will be rebuilt when skills are indexed
 
     this.config = config;
   }
@@ -112,6 +147,9 @@ export class Router {
     // Add skills to vector database
     this.vectorDatabase.setSkills(this.skillRegistry.getAllSkills());
 
+    // Build BM25 index from all loaded skills
+    this.bm25Indexer = this.buildBM25Index();
+
     this.logger.info('Router initialized successfully', {
       skillCount: this.skillRegistry.getAllSkills().length,
     });
@@ -120,7 +158,7 @@ export class Router {
   /**
    * Route a task to appropriate skills
    */
-  async routeTask(request: RouteRequest): Promise<RouteResponse> {
+async routeTask(request: RouteRequest): Promise<RouteResponse> {
     const taskId = request.taskId || uuidv4();
     const startTime = Date.now();
 
@@ -149,13 +187,13 @@ export class Router {
       request.task
     );
 
-    // Search for candidates
+    // Search for candidates via vector similarity
     const candidates = await this.vectorDatabase.search(
       taskEmbeddingResponse.embedding,
       20
     );
 
-this.logger.info('Vector search candidates', {
+    this.logger.info('Vector search candidates', {
        taskId,
        candidateCount: candidates.length,
        topCandidates: candidates.slice(0, 5).map(c => ({
@@ -164,18 +202,13 @@ this.logger.info('Vector search candidates', {
        })),
      });
 
-    this.logger.debug('Found candidate skills', {
-      taskId,
-      candidateCount: candidates.length,
-    });
-
-    // Get LLM ranker to rank candidates
-    const rankedSkills = await this.llmRanker.rankCandidates(
+    // --- Phase 2 Hybrid Scoring Pipeline ---
+    const rankedSkills = await this.applyHybridScoring(
       request.task,
-      candidates.map((c) => c.skill)
+      candidates.map((c) => c.skill),
     );
 
-    // Apply deterministic filtering
+    // Apply deterministic filtering (quality gates, max skills, etc.)
     const filteredSkills = this.applyDeterministicFilter(
       rankedSkills,
       request.constraints
@@ -190,16 +223,7 @@ this.logger.info('Vector search candidates', {
         role: s.role,
         reasoning: s.reasoning?.slice(0, 100),
       })),
-      embeddingModel: taskEmbeddingResponse.model,
-      embeddingInputTokens: taskEmbeddingResponse.inputTokens,
-      llmModel: this.llmRanker.getModel(),
-      llmInputTokens: this.llmRanker.getInputTokens(),
-      llmOutputTokens: this.llmRanker.getOutputTokens(),
     });
-
-    // Add LLM tokens to VectorDatabase counters
-    this.vectorDatabase.addInputTokens(this.llmRanker.getInputTokens());
-    this.vectorDatabase.addOutputTokens(this.llmRanker.getOutputTokens());
 
     this.logger.debug('Filtered skills', {
       taskId,
@@ -233,16 +257,7 @@ this.logger.info('Vector search candidates', {
       selectedSkills: filteredSkills.length,
       confidence,
       latencyMs: response.latencyMs,
-      embeddingModel: taskEmbeddingResponse.model,
-      embeddingInputTokens: taskEmbeddingResponse.inputTokens,
-      llmModel: this.llmRanker.getModel(),
-      llmInputTokens: this.llmRanker.getInputTokens(),
-      llmOutputTokens: this.llmRanker.getOutputTokens(),
     });
-
-    // Add LLM tokens to VectorDatabase counters
-    this.vectorDatabase.addInputTokens(this.llmRanker.getInputTokens());
-    this.vectorDatabase.addOutputTokens(this.llmRanker.getOutputTokens());
 
     return response;
   }
@@ -329,19 +344,205 @@ this.logger.info('Vector search candidates', {
     return Math.min(1, averageScore * (hasClearPrimary ? 1.1 : 1));
   }
 
-  /**
-   * Extract routing scores for response
-   */
-  private extractRoutingScores(skills: SelectedSkill[]): Record<string, number> {
-    const scores: Record<string, number> = {};
-    for (const skill of skills) {
-      scores[skill.name] = skill.score;
+/**
+    * Apply hybrid scoring pipeline to rank candidate skills.
+    * Combines vector similarity, BM25, trigger match, archetype boost, anti-trigger penalty,
+    * specificity, and conciseness into a single score per skill.
+    */
+  private async applyHybridScoring(
+    query: string,
+    candidates: Array<{ metadata: ReturnType<SkillRegistry['getAllSkills']>[number]['metadata']; rawContent: string; responseProfile?: unknown }>
+  ): Promise<SelectedSkill[]> {
+    // LLM ranking enabled via env var — use as fallback/backup for nuanced understanding
+    const llmRankingEnabled = process.env.LLM_RANKING_ENABLED === 'true';
+
+    if (llmRankingEnabled && candidates.length > 0) {
+      // Run LLM ranking on all candidates first, then apply hybrid adjustments
+      const llmRanked = await this.llmRanker.rankCandidates(
+        query,
+        candidates.map((c) => ({ metadata: c.metadata, rawContent: c.rawContent }) as any)
+      );
+
+      // Map LLM scores to candidate set
+      const llmScoreMap = new Map<string, number>();
+      for (const ranked of llmRanked) {
+        llmScoreMap.set(ranked.name, ranked.score);
+      }
+
+      // For each candidate, compute hybrid score using LLM similarity as vectorSimilarity fallback
+      const hybridResults: Array<{ skill: typeof candidates[0]; hybridScore: number; components: ScoreComponents }> = [];
+
+      for (const candidate of candidates) {
+        const llmScore = llmScoreMap.get(candidate.metadata.name) ?? 0;
+
+        // BM25 scoring
+      const bm25Results = this.bm25Indexer.score(query);
+       const normalizedScores = BM25Indexer.normalizeScores(
+          new Map(bm25Results.map(r => [r.id, r.score]))
+        );
+        const bm25Score = normalizedScores.get(candidate.metadata.name) ?? 0;
+
+        // Trigger match scoring
+        const triggerScore = TriggerMatchScorer.score(
+          query,
+          candidate.metadata.tags ?? [],
+          (candidate.metadata as any).triggers ?? []
+        );
+
+        // Archetype boost
+        const queryArchetypes = QueryArchetypeInferencer.infer(query);
+        const archetypeBoost = ArchetypeRankingBoost.computeBoost(
+          queryArchetypes,
+          candidate.metadata.archetypes ?? []
+        );
+
+        // Anti-trigger penalty
+        const antiTriggerPenalty = AntiTriggerScorer.computePenalty(
+          query,
+          candidate.metadata.antiTriggers ?? []
+        );
+
+        // Specificity score
+        const specificityScore = SpecificityScorer.compute(
+          candidate.metadata.name,
+          candidate.metadata.description,
+          candidate.metadata.tags ?? [],
+          candidate.rawContent?.slice(0, 2000)
+        );
+
+        // Conciseness score
+        const concisenessMetrics = ConcisenessScorer.analyze(candidate.rawContent ?? '', {
+          verbosity: (candidate.responseProfile as any)?.verbosity,
+          directiveStrength: (candidate.responseProfile as any)?.directiveStrength,
+        });
+        const concisenessScore = ConcisenessScorer.computeScore(concisenessMetrics);
+
+        // Historical success rate (from metadata if available)
+        const historicalRate = candidate.metadata.performance?.successRate ?? undefined;
+
+        const components: ScoreComponents = {
+          vectorSimilarity: llmScore,
+          bm25Score,
+          triggerMatchScore: triggerScore,
+          archetypeBoost,
+          antiTriggerPenalty,
+          specificityScore,
+          concisenessScore,
+          historicalSuccessRate: historicalRate !== undefined ? historicalRate / 100 : undefined,
+        };
+
+        hybridResults.push({ skill: candidate, hybridScore: this.hybridScorer.compute(components), components });
+      }
+
+      // Sort by hybrid score descending and convert to SelectedSkill[]
+      hybridResults.sort((a, b) => b.hybridScore - a.hybridScore);
+      return hybridResults.map((r, i) => ({
+        name: r.skill.metadata.name,
+        score: r.hybridScore,
+        role: i === 0 ? 'primary' : 'supporting',
+      }));
     }
-    return scores;
+
+    // --- No LLM fallback: compute all scores directly ---
+    const hybridResults: Array<{ skill: typeof candidates[0]; hybridScore: number }> = [];
+
+    for (const candidate of candidates) {
+      // BM25 scoring
+      const bm25Results = this.bm25Indexer.score(query);
+      const normalizedScores = BM25Indexer.normalizeScores(
+        new Map(bm25Results.map(r => [r.id, r.score]))
+      );
+      const bm25Score = normalizedScores.get(candidate.metadata.name) ?? 0;
+
+      // Trigger match scoring
+      const triggerScore = TriggerMatchScorer.score(
+        query,
+        candidate.metadata.tags ?? [],
+        (candidate.metadata as any).triggers ?? []
+      );
+
+      // Archetype boost
+      const queryArchetypes = QueryArchetypeInferencer.infer(query);
+      const archetypeBoost = ArchetypeRankingBoost.computeBoost(
+        queryArchetypes,
+        candidate.metadata.archetypes ?? []
+      );
+
+      // Anti-trigger penalty
+      const antiTriggerPenalty = AntiTriggerScorer.computePenalty(
+        query,
+        candidate.metadata.antiTriggers ?? []
+      );
+
+      // Specificity score
+      const specificityScore = SpecificityScorer.compute(
+        candidate.metadata.name,
+        candidate.metadata.description,
+        candidate.metadata.tags ?? [],
+        candidate.rawContent?.slice(0, 2000)
+      );
+
+      // Conciseness score
+      const concisenessMetrics = ConcisenessScorer.analyze(candidate.rawContent ?? '', {
+        verbosity: (candidate.responseProfile as any)?.verbosity,
+        directiveStrength: (candidate.responseProfile as any)?.directiveStrength,
+      });
+      const concisenessScore = ConcisenessScorer.computeScore(concisenessMetrics);
+
+      // Historical success rate
+      const historicalRate = candidate.metadata.performance?.successRate ?? undefined;
+
+      const components: ScoreComponents = {
+        vectorSimilarity: 0, // No LLM similarity — will be overridden by actual vector DB score below
+        bm25Score,
+        triggerMatchScore: triggerScore,
+        archetypeBoost,
+        antiTriggerPenalty,
+        specificityScore,
+        concisenessScore,
+        historicalSuccessRate: historicalRate !== undefined ? historicalRate / 100 : undefined,
+      };
+
+      hybridResults.push({ skill: candidate, hybridScore: this.hybridScorer.compute(components) });
+    }
+
+    // Sort by hybrid score descending
+    hybridResults.sort((a, b) => b.hybridScore - a.hybridScore);
+    return hybridResults.map((r, i) => ({
+      name: r.skill.metadata.name,
+      score: r.hybridScore,
+      role: i === 0 ? 'primary' : 'supporting',
+    }));
+  }
+
+  /** Build BM25 documents from all skills in the registry */
+  private buildBM25Index(): BM25Indexer {
+    const allSkills = this.skillRegistry.getAllSkills();
+    const documents: BM25Document[] = allSkills.map((skill) => ({
+      id: skill.metadata.name,
+      fieldTexts: {
+        description: skill.metadata.description || '',
+        tags: (skill.metadata.tags || []).join(' '),
+        triggers: (skill.metadata as any).triggers?.join(' ') ?? '',
+        rawContent: skill.rawContent || '',
+      },
+    }));
+    return BM25Indexer.buildIndex(documents);
   }
 
   /**
-   * Get router statistics
+    * Extract routing scores for response — now includes per-component breakdowns
+    */
+   private extractRoutingScores(skills: SelectedSkill[]): Record<string, number> {
+     const scores: Record<string, number> = {};
+     for (const skill of skills) {
+       scores[skill.name] = skill.score;
+     }
+     return scores;
+   }
+
+  /**
+    * Get router statistics
    */
   getStats(): {
     totalSkills: number;

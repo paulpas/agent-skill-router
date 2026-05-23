@@ -147,6 +147,19 @@ export interface RouteRequest {
 }
 
 /**
+ * Per-skill scoring breakdown in hybrid pipeline.
+ */
+export interface ScoreBreakdown {
+  finalScore: number;
+  vectorScore?: number;
+  bm25Score?: number;
+  triggerMatchScore?: number;
+  archetypeScore?: number;
+  specificityScore?: number;
+  concisenessScore?: number;
+}
+
+/**
  * Skill routing response
  */
 export interface RouteResponse {
@@ -156,7 +169,7 @@ export interface RouteResponse {
   confidence: number;
   reasoningSummary: string;
   candidatePool: string[];
-  routingScores: Record<string, number>;
+  routingScores: Record<string, ScoreBreakdown | number>;
   latencyMs: number;
   attributionFooter?: string;
 }
