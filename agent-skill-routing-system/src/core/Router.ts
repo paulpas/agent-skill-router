@@ -462,18 +462,22 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         llmScoreMap.set(ranked.name, ranked.score);
       }
 
-      // For each candidate, compute hybrid score using LLM similarity as vectorSimilarity fallback
+     // For each candidate, compute hybrid score using LLM similarity as vectorSimilarity fallback
+
+      // Compute query-wide scorers ONCE outside the loop (performance optimization)
+      const bm25Results = this.bm25Indexer.score(query);
+      const normalizedBm25Scores = BM25Indexer.normalizeScores(
+        new Map(bm25Results.map(r => [r.id, r.score]))
+      );
+      const queryArchetypes = QueryArchetypeInferencer.infer(query);
+
       const hybridResults: Array<{ skill: typeof candidates[0]; hybridScore: number; components: ScoreComponents; breakdown?: ObsScoreBreakdown }> = [];
 
       for (const candidate of candidates) {
         const llmScore = llmScoreMap.get(candidate.metadata.name) ?? 0;
 
-        // BM25 scoring
-      const bm25Results = this.bm25Indexer.score(query);
-       const normalizedScores = BM25Indexer.normalizeScores(
-          new Map(bm25Results.map(r => [r.id, r.score]))
-        );
-        const bm25Score = normalizedScores.get(candidate.metadata.name) ?? 0;
+        // BM25 scoring (from precomputed results)
+        const bm25Score = normalizedBm25Scores.get(candidate.metadata.name) ?? 0;
 
         // Trigger match scoring
         const triggerScore = TriggerMatchScorer.score(
@@ -482,8 +486,7 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
           (candidate.metadata as any).triggers ?? []
         );
 
-        // Archetype boost
-        const queryArchetypes = QueryArchetypeInferencer.infer(query);
+        // Archetype boost (from precomputed query archetypes)
         const archetypeBoost = ArchetypeRankingBoost.computeBoost(
           queryArchetypes,
           candidate.metadata.archetypes ?? []
@@ -554,15 +557,19 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
     }
 
     // --- No LLM fallback: compute all scores directly ---
+
+    // Compute query-wide scorers ONCE outside the loop (performance optimization)
+    const bm25Results = this.bm25Indexer.score(query);
+    const normalizedBm25Scores = BM25Indexer.normalizeScores(
+      new Map(bm25Results.map(r => [r.id, r.score]))
+    );
+    const queryArchetypes = QueryArchetypeInferencer.infer(query);
+
     const hybridResults: Array<{ skill: typeof candidates[0]; hybridScore: number; components: ScoreComponents; breakdown?: ObsScoreBreakdown }> = [];
 
     for (const candidate of candidates) {
-      // BM25 scoring
-      const bm25Results = this.bm25Indexer.score(query);
-      const normalizedScores = BM25Indexer.normalizeScores(
-        new Map(bm25Results.map(r => [r.id, r.score]))
-      );
-      const bm25Score = normalizedScores.get(candidate.metadata.name) ?? 0;
+      // BM25 scoring (from precomputed results)
+      const bm25Score = normalizedBm25Scores.get(candidate.metadata.name) ?? 0;
 
       // Trigger match scoring
       const triggerScore = TriggerMatchScorer.score(
@@ -571,8 +578,7 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         (candidate.metadata as any).triggers ?? []
       );
 
-      // Archetype boost
-      const queryArchetypes = QueryArchetypeInferencer.infer(query);
+      // Archetype boost (from precomputed query archetypes)
       const archetypeBoost = ArchetypeRankingBoost.computeBoost(
         queryArchetypes,
         candidate.metadata.archetypes ?? []

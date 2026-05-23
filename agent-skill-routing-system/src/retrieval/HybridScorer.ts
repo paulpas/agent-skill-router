@@ -11,6 +11,7 @@ export interface HybridScoreConfig {
   triggerMatchWeight: number; // default 0.15
   archetypeWeight: number;   // default 0.10
   historicalWeight: number;  // default 0.05
+  antiTriggerWeight?: number; // default 0.15 — dedicated weight for anti-trigger penalty
 }
 
 /**
@@ -34,6 +35,7 @@ const DEFAULT_CONFIG: HybridScoreConfig = {
   triggerMatchWeight: 0.15,
   archetypeWeight: 0.10,
   historicalWeight: 0.05,
+  antiTriggerWeight: 0.15,
 };
 
 /**
@@ -73,9 +75,9 @@ export class HybridScorer {
     const historicalRate = components.historicalSuccessRate ?? 0;
     weightedSum += historicalRate * c.historicalWeight;
 
-    // Anti-trigger penalty: already negative, so it reduces the score
-    // e.g., -0.5 * 0.05 = -0.025 (small reduction from historical weight)
-    weightedSum += components.antiTriggerPenalty * c.historicalWeight;
+    // Anti-trigger penalty: already negative, uses dedicated weight for meaningful impact
+    // e.g., -0.5 * 0.15 = -0.075 (sufficient to prevent generic skill dominance)
+    weightedSum += components.antiTriggerPenalty * (c.antiTriggerWeight ?? 0.15);
 
     // 2. Specificity multiplicative boost: [0.7, 1.0] range
     const specificityFactor = 0.7 + 0.3 * components.specificityScore;
@@ -102,7 +104,7 @@ export class HybridScorer {
       bm25Score: components.bm25Score * c.bm25Weight,
       triggerMatchScore: components.triggerMatchScore * c.triggerMatchWeight,
       archetypeBoost: Math.max(0, Math.min(1, archetypeNormalized)) * c.archetypeWeight,
-      antiTriggerPenalty: components.antiTriggerPenalty * c.historicalWeight, // negative → score reduction
+      antiTriggerPenalty: components.antiTriggerPenalty * (c.antiTriggerWeight ?? 0.15), // negative → score reduction
       specificityScore: components.specificityScore, // raw value (used as multiplicative factor)
       concisenessScore: components.concisenessScore,  // raw value (used as additive nudge)
       historicalSuccessRate: components.historicalSuccessRate ?? 0,
