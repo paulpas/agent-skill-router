@@ -20,6 +20,8 @@ import { TriggerMatchScorer } from '../retrieval/TriggerMatchScorer';
 import { SpecificityScorer } from '../retrieval/SpecificityScorer';
 import { ConcisenessScorer } from '../retrieval/ConcisenessScorer';
 import { HybridScorer, HybridScoreConfig, ScoreComponents } from '../retrieval/HybridScorer';
+import { MMRDiversifier, MMRCandidate } from '../retrieval/MMRDiversifier';
+import { ScoreExplanationBuilder, ScoreBreakdown as ObsScoreBreakdown } from '../observability/ScoreExplanation';
 import { QueryArchetypeInferencer } from './QueryArchetypeInferencer';
 import { ArchetypeRankingBoost } from './ArchetypeRankingBoost';
 import { AntiTriggerScorer } from './AntiTriggerScorer';
@@ -69,6 +71,13 @@ export interface RouterConfig {
   };
   // Hybrid retrieval scoring weights (Phase 2)
   retrieval?: RetrievalConfig;
+  // MMR diversification configuration (Phase 3)
+  diversity?: {
+    /** Relevance vs diversity tradeoff. Default: 0.7 */
+    lambda?: number;
+    /** Whether to enable MMR diversification. Default: true */
+    enabled?: boolean;
+  };
 }
 
 /**
@@ -83,6 +92,9 @@ export class Router {
   private safetyLayer: SafetyLayer;
   private bm25Indexer: BM25Indexer;
   private hybridScorer: HybridScorer;
+  private mmrDiversifier: MMRDiversifier | null = null;
+  /** Tracks MMR diversity penalties by skill name for observability */
+  private mmrPenalties = new Map<string, number>();
   private logger: Logger;
   private config: RouterConfig;
 
@@ -131,6 +143,14 @@ export class Router {
     };
     this.hybridScorer = new HybridScorer(scoreConfig);
     this.bm25Indexer = BM25Indexer.buildIndex([]); // Will be rebuilt when skills are indexed
+
+    // MMR diversifier (Phase 3)
+    const diversityEnabled = config.diversity?.enabled ?? true;
+    if (diversityEnabled) {
+      this.mmrDiversifier = new MMRDiversifier({
+        lambda: config.diversity?.lambda,
+      });
+    }
 
     this.config = config;
   }
@@ -193,14 +213,57 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       20
     );
 
-    this.logger.info('Vector search candidates', {
+   this.logger.info('Vector search candidates', {
        taskId,
        candidateCount: candidates.length,
        topCandidates: candidates.slice(0, 5).map(c => ({
-         name: c.skill.metadata.name,
-         similarity: 'score' in c ? (c as { score: number }).score : null,
-       })),
-     });
+          name: c.skill.metadata.name,
+          similarity: 'score' in c ? (c as { score: number }).score : null,
+        })),
+      });
+
+    // --- Phase 3 MMR Diversification ---
+    let diverseCandidates = candidates;
+    if (this.mmrDiversifier && candidates.length > 1) {
+      const mmrInput: MMRCandidate[] = candidates.map((c) => ({
+        id: c.skill.metadata.name,
+        embedding: c.skill.metadata.embedding ?? [],
+        score: c.score,
+      }));
+
+      const queryEmbedding = taskEmbeddingResponse.embedding;
+      const diverseResults = this.mmrDiversifier.select(queryEmbedding, mmrInput);
+
+      // Store MMR penalties for observability
+      this.mmrPenalties.clear();
+      for (const dr of diverseResults) {
+        if (dr.mmrPenalty !== undefined) {
+          this.mmrPenalties.set(dr.id, dr.mmrPenalty);
+        }
+      }
+
+      // Map diversified results back to full SkillSearchResult objects
+      const candidateIdSet = new Set(candidates.map((c) => c.skill.metadata.name));
+      const idToSkill = new Map(
+        candidates.map((c) => [c.skill.metadata.name, c] as const)
+      );
+
+      diverseCandidates = diverseResults
+        .filter((dr) => candidateIdSet.has(dr.id))
+        .map((dr) => {
+          const base = idToSkill.get(dr.id)!;
+          return {
+            ...base,
+            score: dr.score,
+          };
+        });
+
+      this.logger.info('MMR diversification applied', {
+        taskId,
+        inputCount: candidates.length,
+        outputCount: diverseCandidates.length,
+      });
+    }
 
     // --- Phase 2 Hybrid Scoring Pipeline ---
     const rankedSkills = await this.applyHybridScoring(
@@ -251,6 +314,29 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       routingScores: this.extractRoutingScores(filteredSkills),
       latencyMs: Date.now() - startTime,
     };
+
+    // Add score explanations if requested (Phase 5)
+    const explainRequested =
+      request.constraints?.includeScoreBreakdown === true ||
+      process.env.DEBUG_ROUTING === 'true';
+
+    if (explainRequested && filteredSkills.length > 0) {
+      // Build breakdowns and explanations for selected skills
+      const explanations: Record<string, string[]> = {};
+      const breakdownMap = this.extractRoutingScoresAsBreakdown(filteredSkills);
+
+      for (const skill of filteredSkills) {
+        const breakdown = breakdownMap[skill.name];
+        if (breakdown) {
+          explanations[skill.name] = ScoreExplanationBuilder.generateExplanation(
+            skill.name,
+            breakdown
+          );
+        }
+      }
+
+      response.scoreExplanations = explanations;
+    }
 
     this.logger.info('Routing completed', {
       taskId,
@@ -530,16 +616,35 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
     return BM25Indexer.buildIndex(documents);
   }
 
+/**
+     * Extract routing scores for response — now includes per-component breakdowns
+     */
+    private extractRoutingScores(skills: SelectedSkill[]): Record<string, number> {
+      const scores: Record<string, number> = {};
+      for (const skill of skills) {
+        scores[skill.name] = skill.score;
+      }
+      return scores;
+    }
+
   /**
-    * Extract routing scores for response — now includes per-component breakdowns
-    */
-   private extractRoutingScores(skills: SelectedSkill[]): Record<string, number> {
-     const scores: Record<string, number> = {};
-     for (const skill of skills) {
-       scores[skill.name] = skill.score;
-     }
-     return scores;
-   }
+     * Extract routing scores as ScoreBreakdown objects for each selected skill.
+     */
+    private extractRoutingScoresAsBreakdown(
+      skills: SelectedSkill[]
+    ): Record<string, ObsScoreBreakdown> {
+      const map: Record<string, ObsScoreBreakdown> = {};
+      for (const skill of skills) {
+        const breakdown: ObsScoreBreakdown = { finalScore: skill.score };
+        // Add MMR penalty if this skill was diversified
+        const mmrPenalty = this.mmrPenalties.get(skill.name);
+        if (mmrPenalty !== undefined) {
+          breakdown.mmerPenalty = mmrPenalty;
+        }
+        map[skill.name] = breakdown;
+      }
+      return map;
+    }
 
   /**
     * Get router statistics

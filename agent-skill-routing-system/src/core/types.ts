@@ -143,6 +143,8 @@ export interface RouteRequest {
     categories?: string[];
     maxSkills?: number;
     latencyBudgetMs?: number;
+    /** When true, populate scoreExplanations in the response */
+    includeScoreBreakdown?: boolean;
   };
 }
 
@@ -157,6 +159,8 @@ export interface ScoreBreakdown {
   archetypeScore?: number;
   specificityScore?: number;
   concisenessScore?: number;
+  /** MMR diversity penalty applied during selection (negative value) */
+  mmerPenalty?: number;
 }
 
 /**
@@ -172,6 +176,8 @@ export interface RouteResponse {
   routingScores: Record<string, ScoreBreakdown | number>;
   latencyMs: number;
   attributionFooter?: string;
+  /** Human-readable score explanations per skill (only when requested) */
+  scoreExplanations?: Record<string, string[]>;
 }
 
 
