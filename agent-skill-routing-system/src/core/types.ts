@@ -24,6 +24,12 @@ export interface SkillMetadata {
     successRate: number;
     lastUpdated: string;
   };
+  /** Archetypes describing the skill's primary role patterns */
+  archetypes?: Archetype[];
+  /** Anti-triggers — topics/phrases that indicate the user should NOT use this skill */
+  antiTriggers?: string[];
+  /** Response profile shaping tone, depth, and abstraction of outputs */
+  responseProfile?: ResponseProfile;
 }
 
 /**
@@ -225,6 +231,27 @@ export interface EmbeddingResponse {
  * Content types that a skill may produce
  */
 export type ContentType = 'guidance' | 'examples' | 'do-dont' | 'config' | 'code' | 'diagrams';
+
+/**
+ * Archetype categories for skill classification
+ */
+export type Archetype =
+  | 'tactical'
+  | 'strategic'
+  | 'diagnostic'
+  | 'orchestration'
+  | 'educational'
+  | 'enforcement'
+  | 'generation';
+
+/**
+ * Response profile — how a skill should shape its output tone and depth
+ */
+export interface ResponseProfile {
+  verbosity: 'low' | 'medium' | 'high';
+  directiveStrength: 'low' | 'medium' | 'high';
+  abstractionLevel: 'operational' | 'tactical' | 'strategic';
+}
 
 /**
  * Domain configuration defaults from domains.json

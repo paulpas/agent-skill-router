@@ -950,7 +950,11 @@ export class SkillRegistry implements SkillRegistryWithCompression {
    * Parse skill metadata from a SKILL.md file with YAML frontmatter
    * Maps OpenCode skill frontmatter fields to SkillMetadata schema
    */
-  private parseSkillFromMarkdown(content: string, filePath: string): SkillMetadata {
+  /**
+   * Parse skill metadata from a SKILL.md file with YAML frontmatter.
+   * Public for testability; callers should not rely on internal parsing details.
+   */
+  public parseSkillFromMarkdown(content: string, filePath: string): SkillMetadata {
     // Extract YAML frontmatter between --- delimiters
     const fmMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
     if (!fmMatch) {
@@ -1040,6 +1044,67 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       this.logger.debug(`Skill ${name}: 'output-format' is deprecated, use 'content-types' instead`);
     }
 
+    // --- Archetypes: from metadata.archetypes (YAML array or comma-separated string) ---
+    let archetypes: import('./types').Archetype[] | undefined;
+    const archRaw = nestedMeta.archetypes;
+    if (Array.isArray(archRaw)) {
+      archetypes = archRaw
+        .map((a) => String(a).trim().toLowerCase() as import('./types').Archetype)
+        .filter(Boolean);
+    } else if (typeof archRaw === 'string') {
+      archetypes = archRaw
+        .split(',')
+        .map((a) => a.trim().toLowerCase())
+        .filter((a) => a.length > 0) as import('./types').Archetype[];
+    }
+
+    // --- AntiTriggers: from metadata.anti_triggers (YAML array or comma-separated string) ---
+    let antiTriggers: string[] | undefined;
+    const antiRaw = (nestedMeta as Record<string, unknown>).anti_triggers;
+    if (Array.isArray(antiRaw)) {
+      antiTriggers = antiRaw.map((t) => String(t).trim()).filter((t) => t.length > 0);
+    } else if (typeof antiRaw === 'string') {
+      antiTriggers = antiRaw
+        .split(',')
+        .map((t) => t.trim())
+        .filter((t) => t.length > 0);
+    }
+
+    // --- ResponseProfile: from metadata.response_profile.* ---
+    let responseProfile: import('./types').ResponseProfile | undefined;
+    const rpRaw = nestedMeta.response_profile as Record<string, unknown> | undefined;
+    if (rpRaw && typeof rpRaw === 'object') {
+      const verbosityRaw = String(rpRaw.verbosity || '').trim().toLowerCase();
+      const directiveRaw = String(rpRaw.directive_strength || rpRaw.directiveness || '')
+        .trim()
+        .toLowerCase();
+      const abstractRaw = String(rpRaw.abstraction_level || rpRaw.abstraction || '')
+        .trim()
+        .toLowerCase();
+
+      const validVerbosity =
+        ['low', 'medium', 'high'].includes(verbosityRaw)
+          ? (verbosityRaw as import('./types').ResponseProfile['verbosity'])
+          : null;
+      const validDirective =
+        ['low', 'medium', 'high'].includes(directiveRaw)
+          ? (directiveRaw as import('./types').ResponseProfile['directiveStrength'])
+          : null;
+      const validAbstraction =
+        ['operational', 'tactical', 'strategic'].includes(abstractRaw)
+          ? (abstractRaw as import('./types').ResponseProfile['abstractionLevel'])
+          : null;
+
+      // Only build ResponseProfile if at least verbosity is known
+      if (validVerbosity) {
+        responseProfile = {
+          verbosity: validVerbosity,
+          directiveStrength: validDirective ?? ('medium' as import('./types').ResponseProfile['directiveStrength']),
+          abstractionLevel: validAbstraction ?? ('tactical' as import('./types').ResponseProfile['abstractionLevel']),
+        };
+      }
+    }
+
     return {
       name,
       category,
@@ -1047,6 +1112,9 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       tags: tags.length > 0 ? tags : [category],
       version: (nestedMeta.version as string) || '1.0.0',
       contentTypes: validContentTypes,
+      archetypes: archetypes?.length ? archetypes : undefined,
+      antiTriggers: antiTriggers?.length ? antiTriggers : undefined,
+      responseProfile,
       input_schema: { type: 'object', properties: {}, required: [] },
       output_schema: { type: 'object', properties: {}, required: [] },
     };
@@ -1290,8 +1358,8 @@ export class SkillRegistry implements SkillRegistryWithCompression {
         const metaMatch = trimmed.match(/^([a-zA-Z0-9_-]+)\s*:\s*(.*)/);
         if (metaMatch) {
           const rawValue = this.unquoteFrontmatterValue(metaMatch[2].trim());
-          // content-types can be YAML array [code, guidance] or comma-separated string
-          if (metaMatch[1] === 'content-types' && rawValue.startsWith('[')) {
+          // YAML array: [tactical, diagnostic] — parse as JSON-like array
+          if (rawValue.startsWith('[') && rawValue.endsWith(']')) {
             try {
               metadataBlock[metaMatch[1]] = YAML.parse(rawValue);
             } catch {
