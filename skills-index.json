@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T15:31:28.275506Z",
+  "generatedAt": "2026-05-24T17:50:46.840137Z",
   "totalSkills": 941,
   "domains": {
     "agent": 259,
@@ -12639,7 +12639,7 @@
     {
       "name": "make-build-system",
       "domain": "linux",
-      "description": "Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, and cross-compilation for reproducible software builds.",
+      "description": "Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, automatic variables, cross-compilation, and CI/CD integration for reproducible software builds.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -12651,13 +12651,22 @@
         "phony targets",
         "make variables",
         "dependency graph",
-        "cross-compilation"
+        "cross-compilation",
+        "pattern rules",
+        "automatic variables",
+        "vpath",
+        "order-only prerequisites",
+        "make command",
+        "how do i automate builds with make",
+        "make clean all install"
       ],
       "relatedSkills": [
-        "linux-services",
+        "coding-just-task-runner",
+        "coding-mage-build-tool",
+        "linux-systemd-services",
         "coding-test-driven-development"
       ],
-      "version": "1.0.0",
+      "version": "2.0.0",
       "source": "skills/linux/make-build-system/SKILL.md"
     },
     {
