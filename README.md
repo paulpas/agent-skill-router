@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 947 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 950 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 947 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 950 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 947 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 950 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 947 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 950 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
 >>>>>>> origin/main
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **947 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **950 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **947 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **950 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **947 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **950 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **947 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **950 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
 >>>>>>> origin/main
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -109,7 +109,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 382 | Software patterns, security, testing, data science |
+| Coding | 385 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -309,17 +309,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 21:00:48 UTC  
-> **Total skills:** 947  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (947 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 16:43:39 UTC  
+> **Total skills:** 950  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (950 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 944 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 944 | Ranking penalty for conflicting query terms |
-| Response Profile | 944 | Verbosity, directive strength, abstraction level |
+| Archetypes | 947 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 947 | Ranking penalty for conflicting query terms |
+| Response Profile | 947 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -768,7 +768,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (382 skills)
+### Coding (385 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -807,6 +807,7 @@ MIT — All skills are freely available and redistributable.
 | [atomic-skills-spec](skills/coding/atomic-skills-spec/SKILL.md) | Defines criteria, thresholds, and migration patterns for splitting monolithic skills into focused atomic skills — including split heuristics, trigger engineering for new sub-skills, and gradual migration strategy. | atomic skills, skill granularity, monolithic skill, skill splitting, refactoring skills, trigger calibration, skill architecture [strategic, orchestration] |
 | [auth0-api](skills/coding/auth0-api/SKILL.md) | Implements Auth0 API integration (Authentication, Management API, Actions, Organizations, Universal Login) using auth0-python SDK v5.4+ with ManagementClient, async support, automatic token management, pagination, and CIAM workflows. | auth0 api, auth0 management, auth0 authentication, auth0 universal login, auth0 actions, auth0 organizations, how do i integrate auth0, ciam [tactical, generation] |
 | [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. | authentication, password hashing, JWT token, OAuth PKCE, session management, MFA, TOTP, two-factor, passkeys, login system, how do i implement auth, secure login, user authentication, token validation, webauthn [tactical, generation] |
+| [autogen-conversational-patterns](skills/coding/autogen-conversational-patterns/SKILL.md) | Implements AutoGen conversational multi-agent workflows including group chat orchestration, code execution groups, termination conditions, and human-in-the-loop patterns for solving complex problems through agent dialogue. | autogen, multi-agent conversation, group chat agents, code execution group, agent termination condition, how do i build conversational ai agents [tactical, generation] |
 | [automation](skills/coding/automation/SKILL.md) | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | semantic versioning, semver, version bumping, conventional commits, semantic-release, changelog automation, release automation, git tags [tactical, generation] |
 | [aws-bedrock](skills/coding/aws-bedrock/SKILL.md) | Integrates AWS Bedrock (Claude, Llama, Titan, Nova, Converse API, Knowledge Bases, Agents) using Boto3 with cross-model patterns and IAM auth. | aws bedrock, boto3 bedrock, amazon nova, converse api, bedrock knowledge base, bedrock agent, how do i use bedrock, invoke model bedrock [tactical, generation] |
 | [aws-iam](skills/coding/aws-iam/SKILL.md) | Implements AWS IAM (Identity and Access Management) integration (Users, Roles, Policies, Groups, Access Keys, MFA, STS, Identity Center) using boto3 SDK with proper credential chain, policy validation, least privilege principle, and temporary credent... | aws iam, boto3 iam, aws roles, iam policies, sts assume role, aws access keys, aws mfa, how do i manage aws iam [tactical, generation] |
@@ -852,6 +853,7 @@ MIT — All skills are freely available and redistributable.
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" | correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships [tactical, generation] |
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. | cqrs, command query responsibility segregation, mediator pattern, outbox pattern, idempotent commands, saga pattern, read write separation, event bus [tactical, generation] |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | creational patterns, factory method, builder pattern, singleton, abstract factory, prototype pattern, object creation, GoF design patterns [tactical, generation] |
+| [crewai-agent-workflows](skills/coding/crewai-agent-workflows/SKILL.md) | Implements CrewAI multi-agent collaboration patterns including role-based agents, task delegation, tool sharing, sequential and hierarchical workflows, and autonomous agent coordination for production AI applications. | crewai, multi-agent collaboration, role based agents, agent task delegation, how do i coordinate ai agents, sequential agent workflow, hierarchical agent team [tactical, generation] |
 | [cross-domain-workflow-sagas](skills/coding/cross-domain-workflow-sagas/SKILL.md) | Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns — compensating actions, timeout handling, distributed state persistence, and failure recovery in domain-driven systems. | saga pattern, saga orchestration, saga choreography, cross-domain workflow, compensating action, distributed transaction, how do i coordinate across bounded contexts, business transaction consistency, eventual consistency, multi-context workflow [tactical, generation] |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | cross-validation, k-fold, stratified cross-validation, time-series cross-validation, validation [tactical, generation] |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. | css architecture, css modules, bem naming, tailwind css v4, container queries, :has selector, css nesting, @layer cascade, how do i organize stylesheets, responsive components, utility-first css, scroll-driven animations, view transitions api, css custom properties, css specificity management [tactical, generation] |
@@ -981,6 +983,7 @@ MIT — All skills are freely available and redistributable.
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | kotlin coroutines, structured concurrency, coroutine scope, SupervisorJob, Flow API, StateFlow, kotlinx-coroutines [tactical, generation] |
 | [kubernetes-api](skills/coding/kubernetes-api/SKILL.md) | Integrates with the Kubernetes API via the official client-python SDK to manage pods, deployments, services, ConfigMaps, Secrets, CRDs, and cluster resources programmatically. | kubernetes api, k8s python client, client-python, kubectl python, kubernetes pods, kubernetes deployments, k8s custom resources, kubernetes operations [tactical, generation] |
 | [langchain](skills/coding/langchain/SKILL.md) | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. | langchain, langgraph, create agent, llm orchestration, rag chain, langchain agent, how do i use langchain, agent middleware [tactical, generation] |
+| [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. | langgraph, state graph, agent workflow, conditional routing, human in the loop, checkpointing, langchain graph, persistent agent, how do i build an ai agent workflow [tactical, generation] |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" | linear regression, OLS, ridge regression, lasso, elastic net, regularization [tactical, generation] |
 | [linode-api](skills/coding/linode-api/SKILL.md) | Integrates Linode/Akamai Cloud services (Instances, Object Storage, LKE Kubernetes, NodeBalancers) using the linode_api4 Python SDK with token-based authentication and model-driven resource patterns. | linode api, akamai cloud, linode python, linode instances, linode kubernetes, nodebalancer, object storage, how do i use linode api from python [tactical, generation] |
 | [liskov-substitution-principle](skills/coding/liskov-substitution-principle/SKILL.md) | Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability. | liskov substitution principle, LSP, subtype contract, precondition, postcondition, invariant, is-a relationship, breaking subclass, type safety [tactical, generation] |
@@ -1333,7 +1336,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (532 skills)
+### Implementation (Build Features) (535 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1377,6 +1380,7 @@ MIT — All skills are freely available and redistributable.
 | [auth-credentials](skills/agent/auth-credentials/SKILL.md) | Agent | Implements agent authentication, credential management, capability-based access control, JWT identity verification, and human-in-the-loop authorization gates for production-safe AI agent systems. |
 | [auth0-api](skills/coding/auth0-api/SKILL.md) | Coding | Implements Auth0 API integration (Authentication, Management API, Actions, Organizations, Universal Login) using auth0-python SDK v5.4+ with ManagementClient, async support, automatic token management, pagination, and CIAM workflows. |
 | [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Coding | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. |
+| [autogen-conversational-patterns](skills/coding/autogen-conversational-patterns/SKILL.md) | Coding | Implements AutoGen conversational multi-agent workflows including group chat orchestration, code execution groups, termination conditions, and human-in-the-loop patterns for solving complex problems through agent dialogue. |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" |
 | [aws-bedrock](skills/coding/aws-bedrock/SKILL.md) | Coding | Integrates AWS Bedrock (Claude, Llama, Titan, Nova, Converse API, Knowledge Bases, Agents) using Boto3 with cross-model patterns and IAM auth. |
 | [aws-iam](skills/coding/aws-iam/SKILL.md) | Coding | Implements AWS IAM (Identity and Access Management) integration (Users, Roles, Policies, Groups, Access Keys, MFA, STS, Identity Center) using boto3 SDK with proper credential chain, policy validation, least privilege principle, and temporary credent... |
@@ -1437,6 +1441,7 @@ MIT — All skills are freely available and redistributable.
 | [cost-optimization-analysis](skills/cncf/cost-optimization-analysis/SKILL.md) | Cncf | Cloud cost optimization analysis including AWS Cost Explorer, Azure Cost Management, and GCP Billing with right-sizing recommendations and optimization strategies for multi-cloud environments |
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. |
+| [crewai-agent-workflows](skills/coding/crewai-agent-workflows/SKILL.md) | Coding | Implements CrewAI multi-agent collaboration patterns including role-based agents, task delegation, tool sharing, sequential and hierarchical workflows, and autonomous agent coordination for production AI applications. |
 | [cross-domain-workflow-sagas](skills/coding/cross-domain-workflow-sagas/SKILL.md) | Coding | Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns — compensating actions, timeout handling, distributed state persistence, and failure recovery in domain-driven systems. |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Coding | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. |
@@ -1597,6 +1602,7 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes-debugging](skills/cncf/kubernetes-debugging/SKILL.md) | Cncf | Implements comprehensive Kubernetes debugging workflow with pod inspection, log analysis, resource debugging, network troubleshooting, and common failure pattern diagnosis using kubectl commands. |
 | [lake](skills/trading/lake/SKILL.md) | Trading | "Provides Data lake architecture and management for trading data storage" |
 | [langchain](skills/coding/langchain/SKILL.md) | Coding | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. |
+| [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Coding | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | Coding | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" |
 | [linode-api](skills/coding/linode-api/SKILL.md) | Coding | Integrates Linode/Akamai Cloud services (Instances, Object Storage, LKE Kubernetes, NodeBalancers) using the linode_api4 Python SDK with token-based authentication and model-driven resource patterns. |
 | [linux-security](skills/linux/linux-security/SKILL.md) | Linux | Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments. |
@@ -2394,6 +2400,7 @@ MIT — All skills are freely available and redistributable.
 | [auth0-api](skills/coding/auth0-api/SKILL.md) | Coding | Implements Auth0 API integration (Authentication, Management API, Actions, Organizations, Universal Login) using auth0-python SDK v5.4+ with ManagementClient, async support, automatic token management, pagination, and CIAM workflows. | Implementation |
 | [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Coding | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. | Implementation |
 | [auto-scaling](skills/cncf/auto-scaling/SKILL.md) | Cncf | "Configures automatic scaling of compute resources (EC2, RDS, DynamoDB" Lambda) based on demand metrics with scaling policies and lifecycle hooks. | Reference |
+| [autogen-conversational-patterns](skills/coding/autogen-conversational-patterns/SKILL.md) | Coding | Implements AutoGen conversational multi-agent workflows including group chat orchestration, code execution groups, termination conditions, and human-in-the-loop patterns for solving complex problems through agent dialogue. | Implementation |
 | [automation](skills/cncf/automation/SKILL.md) | Cncf | Provides Automation and orchestration of Azure resources with runbooks and update management | Reference |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | Implementation |
 | [autoscaling](skills/cncf/autoscaling/SKILL.md) | Cncf | "Provides Automatically scales compute resources based on metrics like CPU and custom signals" | Reference |
@@ -2530,6 +2537,7 @@ MIT — All skills are freely available and redistributable.
 | [create-issue-gate](skills/agent/create-issue-gate/SKILL.md) | Agent | Implements intelligent create issue gate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [create-pr](skills/agent/create-pr/SKILL.md) | Agent | Implements intelligent create pr with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Coding | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | Implementation |
+| [crewai-agent-workflows](skills/coding/crewai-agent-workflows/SKILL.md) | Coding | Implements CrewAI multi-agent collaboration patterns including role-based agents, task delegation, tool sharing, sequential and hierarchical workflows, and autonomous agent coordination for production AI applications. | Implementation |
 | [cross-domain-workflow-sagas](skills/coding/cross-domain-workflow-sagas/SKILL.md) | Coding | Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns — compensating actions, timeout handling, distributed state persistence, and failure recovery in domain-driven systems. | Implementation |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | Implementation |
 | [crossplane](skills/cncf/crossplane/SKILL.md) | Cncf | "Crossplane in Platform Engineering - Kubernetes-native control plane" for multi-cloud infrastructure | Reference |
@@ -2811,6 +2819,7 @@ MIT — All skills are freely available and redistributable.
 | [lambda-lang](skills/agent/lambda-lang/SKILL.md) | Agent | Implements intelligent lambda lang with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [langchain](skills/coding/langchain/SKILL.md) | Coding | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. | Implementation |
 | [langgraph](skills/agent/langgraph/SKILL.md) | Agent | Implements intelligent langgraph with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Coding | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. | Implementation |
 | [lima](skills/cncf/lima/SKILL.md) | Cncf | "Lima in Container Runtime - cloud native architecture, patterns, pitfalls" and best practices | Reference |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | Coding | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" | Implementation |
 | [linkerd](skills/cncf/linkerd/SKILL.md) | Cncf | "Linkerd in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | Reference |
