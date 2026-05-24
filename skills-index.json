@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T11:23:52.703104Z",
-  "totalSkills": 935,
+  "generatedAt": "2026-05-24T12:19:35.028215Z",
+  "totalSkills": 937,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 370,
+    "coding": 372,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 521,
+    "implementation": 523,
     "reference": 172,
     "information": 1,
     "review": 6
@@ -5524,6 +5524,35 @@
       "source": "skills/coding/ds-data-collection/SKILL.md"
     },
     {
+      "name": "data-deduplication",
+      "domain": "coding",
+      "description": "Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "data deduplication",
+        "schema normalization",
+        "ETL pipeline dedup",
+        "API response standardization",
+        "query abstraction",
+        "configuration centralization",
+        "canonical data source",
+        "data model reuse",
+        "duplicate schema definitions",
+        "data layer DRY"
+      ],
+      "relatedSkills": [
+        "deduplication-patterns",
+        "data-modeling",
+        "dry-principles",
+        "refactoring-techniques",
+        "code-quality-metrics"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/data-deduplication/SKILL.md"
+    },
+    {
       "name": "data-encoding",
       "domain": "coding",
       "description": "Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness.",
@@ -6121,6 +6150,39 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/debugging-methodology/SKILL.md"
+    },
+    {
+      "name": "deduplication-patterns",
+      "domain": "coding",
+      "description": "Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dry principle",
+        "don't repeat yourself",
+        "code deduplication",
+        "extract method",
+        "reduce duplication",
+        "boilerplate removal",
+        "code reuse pattern",
+        "abstraction",
+        "refactoring duplicate code",
+        "shared logic",
+        "common function",
+        "parameter object",
+        "template method",
+        "strategy pattern"
+      ],
+      "relatedSkills": [
+        "refactoring-techniques",
+        "code-duplication-detection",
+        "yagni",
+        "dry-principles",
+        "single-responsibility"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/deduplication-patterns/SKILL.md"
     },
     {
       "name": "dependency-graph-builder",
