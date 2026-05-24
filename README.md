@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 914 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 915 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **914 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **915 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 350 | Software patterns, security, testing, data science |
+| Coding | 351 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-23 19:51:12 UTC  
-> **Total skills:** 914  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (914 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 01:33:06 UTC  
+> **Total skills:** 915  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (915 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 913 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 913 | Ranking penalty for conflicting query terms |
-| Response Profile | 913 | Verbosity, directive strength, abstraction level |
+| Archetypes | 914 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 914 | Ranking penalty for conflicting query terms |
+| Response Profile | 914 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (350 skills)
+### Coding (351 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1030,6 +1030,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-lifecycle-management](skills/coding/skill-lifecycle-management/SKILL.md) | Manages the complete lifecycle of SKILL.md files including versioning strategies, deprecation workflows, retirement criteria, migration plans, and automated drift detection to keep skills current across the repository. | skill lifecycle, skill versioning, skill deprecation, skill retirement, how do i manage skills, skill migration, deprecated skills, skill health monitoring, skill drift detection, maturity tracking [tactical, generation] |
 | [skill-quality-metrics](skills/coding/skill-quality-metrics/SKILL.md) | Scores SKILL.md files across seven dimensions (content depth, code quality, trigger design, structural completeness, constraint specificity, domain compliance, stub resistance) using a Python-based calculator for objective quality assessment. | skill quality metrics, skill scoring, quality rubric, skill evaluation framework, skill health score, how do i measure skill quality, skill audit checklist, skill grading system [tactical, generation] |
 | [skill-testing-validation](skills/coding/skill-testing-validation/SKILL.md) | Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection. | skill testing, validation, quality assurance, test automation, regression detection, trigger matching, how do i test skills, code review for skills, skill audit [tactical, generation] |
+| [skill-trigger-engineering](skills/coding/skill-trigger-engineering/SKILL.md) | Implements comprehensive trigger engineering for AI skills with two-tier keyword design, domain-specific patterns, and automated validation scripts to maximize conversational discoverability. | trigger engineering, skill discovery, keyword matching, auto-loading triggers, two-tier strategy, trigger calibration, how do i design triggers, conversational keywords [tactical, generation] |
 | [slack-api](skills/coding/slack-api/SKILL.md) | Integrates Slack API (Web API, Events API, Bolt Framework, Incoming Webhooks, Block Kit) using the slack-sdk Python v3.x with proper event handling, Block Kit construction, and OAuth patterns. | slack, slack api, slack bot, slack webhook, block kit, slack events, bolt python, send message to slack [tactical, generation] |
 | [snowflake-sdk](skills/coding/snowflake-sdk/SKILL.md) | Integrates Snowflake using snowflake-connector-python 4.x with patterns for SQL execution, Snowpark DataFrames, Cortex AI, streams, tasks, stages, and warehouse management. | snowflake, snowflake connector, snowpark, snowflake sql, snowflake cortex, how do i query snowflake from python, data warehouse, snowpipe [tactical, generation] |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | software architecture, system design, layered architecture, hexagonal architecture, clean architecture, separation of concerns, scalable design, architectural patterns [diagnostic, educational] |
@@ -1256,7 +1257,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (502 skills)
+### Implementation (Build Features) (503 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1676,6 +1677,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-observability](skills/agent/skill-observability/SKILL.md) | Agent | Collects telemetry on skill usage patterns, measures trigger-to-action fidelity, gathers user feedback signals, and produces dashboards for continuous skill improvement in agent orchestration systems. |
 | [skill-quality-metrics](skills/coding/skill-quality-metrics/SKILL.md) | Coding | Scores SKILL.md files across seven dimensions (content depth, code quality, trigger design, structural completeness, constraint specificity, domain compliance, stub resistance) using a Python-based calculator for objective quality assessment. |
 | [skill-testing-validation](skills/coding/skill-testing-validation/SKILL.md) | Coding | Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection. |
+| [skill-trigger-engineering](skills/coding/skill-trigger-engineering/SKILL.md) | Coding | Implements comprehensive trigger engineering for AI skills with two-tier keyword design, domain-specific patterns, and automated validation scripts to maximize conversational discoverability. |
 | [slack-api](skills/coding/slack-api/SKILL.md) | Coding | Integrates Slack API (Web API, Events API, Bolt Framework, Incoming Webhooks, Block Kit) using the slack-sdk Python v3.x with proper event handling, Block Kit construction, and OAuth patterns. |
 | [slippage-model](skills/trading/slippage-model/SKILL.md) | Trading | "Implements slippage modeling and execution simulation for risk management and algorithmic trading execution." |
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis |
@@ -2965,6 +2967,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-sentinel](skills/agent/skill-sentinel/SKILL.md) | Agent | Implements intelligent skill sentinel with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-testing-validation](skills/coding/skill-testing-validation/SKILL.md) | Coding | Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection. | Implementation |
 | [skill-trigger-engineering](skills/agent/skill-trigger-engineering/SKILL.md) | Agent | Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives. | Orchestration |
+| [skill-trigger-engineering](skills/coding/skill-trigger-engineering/SKILL.md) | Coding | Implements comprehensive trigger engineering for AI skills with two-tier keyword design, domain-specific patterns, and automated validation scripts to maximize conversational discoverability. | Implementation |
 | [skill-writer](skills/agent/skill-writer/SKILL.md) | Agent | Implements intelligent skill writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [slack-api](skills/coding/slack-api/SKILL.md) | Coding | Integrates Slack API (Web API, Events API, Bolt Framework, Incoming Webhooks, Block Kit) using the slack-sdk Python v3.x with proper event handling, Block Kit construction, and OAuth patterns. | Implementation |
 | [slack-automation](skills/agent/slack-automation/SKILL.md) | Agent | Implements intelligent slack automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T00:48:38.109693Z",
-  "totalSkills": 914,
+  "generatedAt": "2026-05-24T01:33:05.329858Z",
+  "totalSkills": 915,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 350,
+    "coding": 351,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 502,
+    "implementation": 503,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -18412,6 +18412,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-trigger-engineering/SKILL.md"
+    },
+    {
+      "name": "skill-trigger-engineering",
+      "domain": "coding",
+      "description": "Implements comprehensive trigger engineering for AI skills with two-tier keyword design, domain-specific patterns, and automated validation scripts to maximize conversational discoverability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "trigger engineering",
+        "skill discovery",
+        "keyword matching",
+        "auto-loading triggers",
+        "two-tier strategy",
+        "trigger calibration",
+        "how do i design triggers",
+        "conversational keywords"
+      ],
+      "relatedSkills": [
+        "coding-skill-development-workflow",
+        "agent-skill-engineering",
+        "coding-skill-testing-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/skill-trigger-engineering/SKILL.md"
     },
     {
       "name": "skill-writer",
