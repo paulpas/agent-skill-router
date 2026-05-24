@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T08:47:14.009231Z",
-  "totalSkills": 929,
+  "generatedAt": "2026-05-24T09:36:27.936198Z",
+  "totalSkills": 931,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 364,
+    "coding": 366,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 516,
+    "implementation": 518,
     "reference": 172,
     "information": 1,
     "review": 5
@@ -6424,6 +6424,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/design-systems/SKILL.md"
+    },
+    {
+      "name": "design-systems-atomic",
+      "domain": "coding",
+      "description": "Implements Atomic Design methodology with design tokens, component-driven development in Storybook, accessibility-first patterns, and modern CSS architecture for production design systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "atomic design",
+        "design tokens",
+        "component-driven development",
+        "storybook workflow",
+        "css custom properties",
+        "wcag accessibility",
+        "responsive design system"
+      ],
+      "relatedSkills": [
+        "css-nesting",
+        "css-architecture",
+        "component-testing-library",
+        "code-review",
+        "frontend-philosophy"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/design-systems-atomic/SKILL.md"
     },
     {
       "name": "developer-pattern-library",
@@ -18928,6 +18954,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-architecture/SKILL.md"
+    },
+    {
+      "name": "software-architecture-design",
+      "domain": "coding",
+      "description": "Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "software architecture",
+        "hexagonal architecture",
+        "ddd tactical patterns",
+        "cqrs pattern",
+        "event sourcing",
+        "clean architecture",
+        "ports and adapters",
+        "aggregate root"
+      ],
+      "relatedSkills": [
+        "software-architecture",
+        "ddd-context-mapping",
+        "cqrs-pattern",
+        "domain-events",
+        "microservices-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-architecture-design/SKILL.md"
     },
     {
       "name": "software-delivery-pipelines",
