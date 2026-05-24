@@ -98,76 +98,51 @@ flowchart LR
 
 ## How It Works: The Routing Pipeline
 
-The core routing logic lives in `src/core/Router.ts`. When you send a task to `/route`, it goes through a multi-signal hybrid scoring pipeline:
+The core routing logic lives in `src/core/Router.ts`. When you send a task to `/route`, it passes through six stages — each feeding into the next:
 
 ```mermaid
 ---
 config:
   theme: neutral
 ---
-flowchart TD
-    Input["POST /route<br/>{ 'task': '...' }"] --> S1
-
-    subgraph S1Box["1. Safety Layer ~0.1ms"]
+flowchart LR
+    Input["POST /route"] --> S1
+    subgraph S1["1. Safety<br/>~0.1ms"]
         direction TB
-        S1["Check prompt injection<br/>Validate task length<br/>Enforce allowlists"]
     end
-
     S1 --> S2
-
-    subgraph S2Box["2. Hybrid Retrieval ~200ms"]
+    subgraph S2["2. Hybrid Retrieval<br/>~200ms"]
         direction TB
-        S2a["Vector embedding (50%)"]
-        S2b["BM25 exact-term (20%)"]
     end
-
     S2 --> S3
-
-    subgraph S3Box["3. Archetype + Trigger ~0.1ms"]
+    subgraph S3["3. Archetype+Trigger<br/>~0.1ms"]
         direction TB
-        S3a["Trigger match (15%)"]
-        S3b["Archetype alignment (10%)"]
-        S3c["Anti-trigger penalty"]
     end
-
     S3 --> S4
-
-    subgraph S4Box["4. MMR Diversify ~0.1ms"]
+    subgraph S4["4. MMR Diversify<br/>~0.1ms"]
         direction TB
-        S4["Reduce near-duplicate skills<br/>lambda=0.7"]
     end
-
     S4 --> S5
-
-    subgraph S5Box["5. LLM Ranker ~3s (optional)"]
+    subgraph S5["5. LLM Ranker<br/>~3s (optional)"]
         direction TB
-        S5["Re-rank when<br/>LLM_RANKING_ENABLED=true"]
     end
-
     S5 --> S6
-
-    subgraph S6Box["6. Filter + Plan ~0.1ms"]
+    subgraph S6["6. Filter+Plan<br/>~0.1ms"]
         direction TB
-        S6a["Score >= 0.5"]
-        S6b["Cap at maxSkills"]
-        S6c["Strategy: seq/par/hy"]
     end
-
-    S6 --> Output["Selected: hybrid scored + diversified skills<br/>with score breakdown"]
+    S6 --> Output["Selected skills"]
 ```
 
-> 💡 **Reading guide:** The hybrid scoring pipeline above is the heart of the router. Each stage has a deep-dive section later in this document. Stick around for the high level, or jump to any stage that interests you.
+Each stage is explained below — click the deep-dive links for full details.
 
-### What Each Stage Does (brief)
-
-Use this as a roadmap — each stage has its own deep-dive section below.
-
-1. **Safety Layer** — Checks for prompt injection, validates task length, enforces allowlists. [→ Full deep-dive](#stage-1-safety-layer--prompt-injection-defense)
-2. **Embedding Service** — Converts the task into a 1536-dimension vector capturing semantic meaning. [→ Full deep-dive](#vector-search-the-semantics-engine)
-3. **Vector Database** — Searches an HNSW approximate nearest neighbor graph for the 20 most similar skills (~1ms). [→ Full deep-dive](#vector-search-the-semantics-engine)
-4. **LLM Ranker** — An LLM intelligently re-ranks the top candidates with relevance scores. [→ Full deep-dive](#llm-ranking-the-final-arbiter)
-5. **Deterministic Filter** — Applies hard rules: remove drafts, cap at maxSkills, enforce score thresholds.
-6. **Execution Planner** — Decides sequential, parallel, or hybrid execution.
+| # | Stage | Timing | What It Does | Deep Dive |
+|---|-------|--------|-------------|-----------|
+| 1 | **Safety Layer** | ~0.1ms | Checks for prompt injection, validates task length, enforces allowlists | [→ Full deep-dive](#stage-1-safety-layer--prompt-injection-defense) |
+| 2 | **Hybrid Retrieval** | ~200ms | Converts task to 1536-dim vector (50% weight) + BM25 exact-term scoring (20% weight) | [→ Vector search deep-dive](#vector-search-the-semantics-engine) |
+| 3 | **Archetype + Trigger Scoring** | ~0.1ms | Matches trigger keywords (15%), aligns query archetypes (10%), applies anti-trigger penalties (-0.15 each) | [→ Vector search deep-dive](#vector-search-the-semantics-engine) |
+| 4 | **MMR Diversification** | ~0.1ms | Reduces near-duplicate skill retrieval (lambda=0.7) | — |
+| 5 | **LLM Ranker** (optional) | ~3s | Re-ranks candidates by semantic nuance when `LLM_RANKING_ENABLED=true` | [→ LLM ranking deep-dive](#llm-ranking-the-final-arbiter) |
+| 6 | **Filter + Execution Planner** | ~0.1ms | Enforces score ≥ 0.5, caps at maxSkills, decides sequential / parallel / hybrid strategy | — |
 
 ---
 
