@@ -1,4 +1,4 @@
-------
+---
 name: debugging-methodology
 description: Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments.
 license: MIT
@@ -27,7 +27,7 @@ metadata:
   - do-dont
   - examples
   related-skills: systematic-debugging, incident-response, sre-engineering
-------
+---
 
 # Systematic Debugging Methodology
 

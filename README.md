@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 917 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 918 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **917 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **918 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 352 | Software patterns, security, testing, data science |
+| Coding | 353 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 03:03:57 UTC  
-> **Total skills:** 917  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (917 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-23 22:09:20 UTC  
+> **Total skills:** 918  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (918 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 916 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 916 | Ranking penalty for conflicting query terms |
-| Response Profile | 916 | Verbosity, directive strength, abstraction level |
+| Archetypes | 917 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 917 | Ranking penalty for conflicting query terms |
+| Response Profile | 917 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (352 skills)
+### Coding (353 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -824,6 +824,7 @@ MIT — All skills are freely available and redistributable.
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems. | context mapping, anticorruption layer, acl implementation, shared kernel, published language, customer supplier relationship, bounded context integration, ddd strategic patterns, conformist pattern, pipeline pattern, open host service [tactical, generation] |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | ddd refactoring, extract bounded context, split aggregate, god object refactor, primitive obsession, anticorruption layer, how do i move to ddd, legacy code to ddd [tactical, generation] |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. | specification pattern, ddd tactical patterns, domain service, aggregate factory, unit of work, repository implementation, how do i implement specifications, cross-aggregate operations [tactical, generation] |
+| [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. | debugging, root cause analysis, binary search debugging, bisect, rubber ducking, stack trace analysis, log debugging, production debug [tactical, diagnostic] |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | dependency inversion principle, DIP, dependency injection, inversion of control, IoC, loose coupling, high level low level abstraction, constructor injection, factory pattern, testable architecture [tactical, generation] |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | CVE, dependency management, vulnerability scanning, dependency updates, security patching, SCA, software composition analysis, vulnerability remediation [tactical, generation] |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... | SBOM, SLSA, sigstore, cosign, supply chain attack, dependency pinning, how do i secure my dependencies, package signing [tactical, generation] |
@@ -1259,7 +1260,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (504 skills)
+### Implementation (Build Features) (505 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1383,6 +1384,7 @@ MIT — All skills are freely available and redistributable.
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems. |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. |
+| [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Coding | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Coding | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... |
@@ -2451,6 +2453,7 @@ MIT — All skills are freely available and redistributable.
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems. | Implementation |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | Implementation |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. | Implementation |
+| [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Coding | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. | Implementation |
 | [dependency-graph-builder](skills/agent/dependency-graph-builder/SKILL.md) | Agent | Implements intelligent dependency graph builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | Implementation |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | Implementation |
