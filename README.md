@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 933 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 935 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **933 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **935 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 368 | Software patterns, security, testing, data science |
+| Coding | 370 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 10:28:40 UTC  
-> **Total skills:** 933  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (933 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 06:23:28 UTC  
+> **Total skills:** 935  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (935 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 931 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 931 | Ranking penalty for conflicting query terms |
-| Response Profile | 931 | Verbosity, directive strength, abstraction level |
+| Archetypes | 933 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 933 | Ranking penalty for conflicting query terms |
+| Response Profile | 933 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (368 skills)
+### Coding (370 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -832,6 +832,7 @@ MIT — All skills are freely available and redistributable.
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | dependency inversion principle, DIP, dependency injection, inversion of control, IoC, loose coupling, high level low level abstraction, constructor injection, factory pattern, testable architecture [tactical, generation] |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | CVE, dependency management, vulnerability scanning, dependency updates, security patching, SCA, software composition analysis, vulnerability remediation [tactical, generation] |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... | SBOM, SLSA, sigstore, cosign, supply chain attack, dependency pinning, how do i secure my dependencies, package signing [tactical, generation] |
+| [design-pattern-anti-patterns](skills/coding/design-pattern-anti-patterns/SKILL.md) | Identifies and remediates anti-patterns arising from misuse of GoF design patterns including over-engineering, gold plating, dependency inversion violations, and structural code smells in Python systems. | anti-patterns, design pattern abuse, over-engineering, gold plating, dependency inversion violation, SOLID violation, code smell, refactor patterns, YAGNI, premature abstraction, GoF misuse, factory explosion, singleton abuse, strategy proliferation, template method rigidity [diagnostic, tactical] |
 | [design-pattern-selection](skills/coding/design-pattern-selection/SKILL.md) | Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics. | design pattern, GoF pattern, factory method, strategy pattern, decorator pattern, observer pattern, how do i choose a pattern, structural pattern [tactical, generation] |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | design patterns, GoF, SOLID, DRY, factory pattern, software architecture, refactoring, SOLID principles [tactical, generation] |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. | design patterns, GoF, SOLID, DRY, YAGNI, architecture, creational patterns, structural patterns [tactical, generation] |
@@ -886,6 +887,7 @@ MIT — All skills are freely available and redistributable.
 | [gemini-api](skills/coding/gemini-api/SKILL.md) | Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding. | gemini, gemini api, vertex ai, google genai, function calling, gemini 2.5 flash, how do i use gemini api, grounding [tactical, generation] |
 | [github-api](skills/coding/github-api/SKILL.md) | Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics. | github api, octokit, pygithub, github rest api, github graphql, manage repositories, github actions, pull request automation [tactical, generation] |
 | [gitlab-api](skills/coding/gitlab-api/SKILL.md) | Integrates with the GitLab REST API v4 and GraphQL API via python-gitlab to automate projects, merge requests, CI/CD pipelines, runners, and container registry management. | gitlab api, python-gitlab, gitlab ci/cd, merge request automation, gitlab pipelines, gitlab runner, gitlab graphql, manage projects [tactical, generation] |
+| [gof-design-patterns-catalog](skills/coding/gof-design-patterns-catalog/SKILL.md) | Comprehensive catalog of all 23 GoF design patterns with Python implementations covering creational, structural, and behavioral patterns for decoupling and extensible software design. | gof design patterns, gang of four, factory method, strategy pattern, decorator pattern, observer pattern, singleton, builder pattern, creational patterns, structural patterns, behavioral patterns, design catalog, SOLID principles, GoF catalog [tactical, generation, educational] |
 | [google-cloud-sdk](skills/coding/google-cloud-sdk/SKILL.md) | Integrates Google Cloud services (Compute Engine, Cloud Storage, BigQuery, Cloud Functions, GKE, Pub/Sub) using the Google Cloud Python client libraries with authentication and resource patterns. | google cloud sdk, gcp python, cloud storage, bigquery, compute engine, pub sub, how do i use google cloud from python [tactical, generation] |
 | [google-maps-api](skills/coding/google-maps-api/SKILL.md) | Implements Google Maps Platform API integration (Geocoding, Directions, Places, Distance Matrix, Time Zone, Elevation, using googlemaps Python SDK with API key authentication, address geocoding, route calculation, place search, distance matrix, and G... | google maps, google maps api, googlemaps, geocoding, directions api, places api, distance matrix, how do i integrate with google maps, map integration [tactical, generation] |
 | [google-workspace-api](skills/coding/google-workspace-api/SKILL.md) | Integrates with Google Workspace APIs (Gmail, Drive, Calendar, Docs, Sheets, Admin) using google-api-python-client for programmatic access and automation. | google workspace, gmail api, google drive api, google calendar, google sheets api, google api client, service account [tactical, generation] |
@@ -1275,7 +1277,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (520 skills)
+### Implementation (Build Features) (521 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1474,6 +1476,7 @@ MIT — All skills are freely available and redistributable.
 | [github-api](skills/coding/github-api/SKILL.md) | Coding | Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics. |
 | [gitlab-api](skills/coding/gitlab-api/SKILL.md) | Coding | Integrates with the GitLab REST API v4 and GraphQL API via python-gitlab to automate projects, merge requests, CI/CD pipelines, runners, and container registry management. |
 | [gitops-troubleshooting](skills/agent/gitops-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves GitOps synchronization failures, drift detection issues, and reconciliation problems for ArgoCD and Flux deployments with actionable debugging commands. |
+| [gof-design-patterns-catalog](skills/coding/gof-design-patterns-catalog/SKILL.md) | Coding | Comprehensive catalog of all 23 GoF design patterns with Python implementations covering creational, structural, and behavioral patterns for decoupling and extensible software design. |
 | [google-cloud-sdk](skills/coding/google-cloud-sdk/SKILL.md) | Coding | Integrates Google Cloud services (Compute Engine, Cloud Storage, BigQuery, Cloud Functions, GKE, Pub/Sub) using the Google Cloud Python client libraries with authentication and resource patterns. |
 | [google-maps-api](skills/coding/google-maps-api/SKILL.md) | Coding | Implements Google Maps Platform API integration (Geocoding, Directions, Places, Distance Matrix, Time Zone, Elevation, using googlemaps Python SDK with API key authentication, address geocoding, route calculation, place search, distance matrix, and G... |
 | [google-workspace-api](skills/coding/google-workspace-api/SKILL.md) | Coding | Integrates with Google Workspace APIs (Gmail, Drive, Calendar, Docs, Sheets, Admin) using google-api-python-client for programmatic access and automation. |
@@ -2220,13 +2223,14 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Agent | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 
 
-### Review (Audit & Validate) (5 skills)
+### Review (Audit & Validate) (6 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Coding | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. |
 | [architectural-review](skills/coding/architectural-review/SKILL.md) | Coding | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Coding | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. |
+| [design-pattern-anti-patterns](skills/coding/design-pattern-anti-patterns/SKILL.md) | Coding | Identifies and remediates anti-patterns arising from misuse of GoF design patterns including over-engineering, gold plating, dependency inversion violations, and structural code smells in Python systems. |
 | [humanizer](skills/writing/humanizer/SKILL.md) | Writing | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. |
 
@@ -2496,6 +2500,7 @@ MIT — All skills are freely available and redistributable.
 | [deployment-orchestration](skills/cncf/deployment-orchestration/SKILL.md) | Cncf | Orchestrates complex multi-stage deployments with dependency management, sequencing rules, and failure handling across interconnected services. | Implementation |
 | [deployment-patterns](skills/go/deployment-patterns/SKILL.md) | Go | Deploys Go applications with build optimization, multi-stage Docker builds, binary sizing, and deployment strategies for cloud and on-prem. | Implementation |
 | [deployment-philosophy](skills/cncf/deployment-philosophy/SKILL.md) | Cncf | Architects multi-stage deployment strategies that balance speed, safety, and reliability through systematic risk assessment and controlled change delivery. | Reference |
+| [design-pattern-anti-patterns](skills/coding/design-pattern-anti-patterns/SKILL.md) | Coding | Identifies and remediates anti-patterns arising from misuse of GoF design patterns including over-engineering, gold plating, dependency inversion violations, and structural code smells in Python systems. | Review |
 | [design-pattern-selection](skills/coding/design-pattern-selection/SKILL.md) | Coding | Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics. | Implementation |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Coding | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | Implementation |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Coding | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. | Implementation |
@@ -2616,6 +2621,7 @@ MIT — All skills are freely available and redistributable.
 | [gitops-troubleshooting](skills/agent/gitops-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves GitOps synchronization failures, drift detection issues, and reconciliation problems for ArgoCD and Flux deployments with actionable debugging commands. | Implementation |
 | [gke](skills/cncf/gke/SKILL.md) | Cncf | "Provides Managed Kubernetes cluster with automatic scaling, networking, and GCP service integration" | Reference |
 | [goal-to-milestones](skills/agent/goal-to-milestones/SKILL.md) | Agent | Implements intelligent goal to milestones with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [gof-design-patterns-catalog](skills/coding/gof-design-patterns-catalog/SKILL.md) | Coding | Comprehensive catalog of all 23 GoF design patterns with Python implementations covering creational, structural, and behavioral patterns for decoupling and extensible software design. | Implementation |
 | [google-analytics-automation](skills/agent/google-analytics-automation/SKILL.md) | Agent | Implements intelligent google analytics automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [google-cloud-sdk](skills/coding/google-cloud-sdk/SKILL.md) | Coding | Integrates Google Cloud services (Compute Engine, Cloud Storage, BigQuery, Cloud Functions, GKE, Pub/Sub) using the Google Cloud Python client libraries with authentication and resource patterns. | Implementation |
 | [google-docs-automation](skills/agent/google-docs-automation/SKILL.md) | Agent | Implements intelligent google docs automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
