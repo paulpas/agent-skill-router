@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 941 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 943 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 941 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 943 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> origin/main
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **941 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **943 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **941 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **943 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> origin/main
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 376 | Software patterns, security, testing, data science |
+| Coding | 378 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -285,17 +285,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 18:36:13 UTC  
-> **Total skills:** 941  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (941 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 14:12:12 UTC  
+> **Total skills:** 943  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (943 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 939 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 939 | Ranking penalty for conflicting query terms |
-| Response Profile | 939 | Verbosity, directive strength, abstraction level |
+| Archetypes | 941 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 941 | Ranking penalty for conflicting query terms |
+| Response Profile | 941 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -744,7 +744,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (376 skills)
+### Coding (378 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -879,6 +879,8 @@ MIT — All skills are freely available and redistributable.
 | [eda](skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data [tactical, generation] |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. | elasticsearch, elasticsearch-py, opensearch, full-text search, elastic aggregations, how do i search data from python, elk stack, vector search [tactical, generation] |
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. | elevenlabs, eleven labs, tts, text to speech, voice cloning, elevenlabs api, how do i use elevenlabs, AI voice [tactical, generation] |
+| [engineering-api-design](skills/coding/engineering-api-design/SKILL.md) | Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces. | api design, REST API, GraphQL schema, OpenAPI spec, API versioning, pagination, rate limiting, endpoint design, API authentication, how do i design an API, API documentation, Swagger [tactical, generation] |
+| [engineering-error-handling](skills/coding/engineering-error-handling/SKILL.md) | Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems. | error handling, exception hierarchy, retry strategy, exponential backoff, circuit breaker, graceful degradation, structured logging, panic prevention, how do i handle errors, error wrapping, sentinel errors [tactical, diagnostic] |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | engineering principles, SOLID, DRY, KISS, separation of concerns, code architecture, defensive programming, clean code [tactical, generation] |
 | [engineering-tradeoffs](skills/coding/engineering-tradeoffs/SKILL.md) | Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints. | engineering tradeoffs, decision making under constraints, build vs buy, speed vs quality, technology selection, weighted decision matrix, tradeoff analysis, two-way door decisions, CAP theorem software [orchestration] |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | ensemble methods, bagging, boosting, stacking, voting, blending, ensemble learning [tactical, generation] |
@@ -1107,7 +1109,7 @@ MIT — All skills are freely available and redistributable.
 | [topic-modeling](skills/coding/topic-modeling/SKILL.md) | "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods" | topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation, text analysis [tactical, generation] |
 | [tree-methods](skills/coding/tree-methods/SKILL.md) | "Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods for classification and regression | decision trees, random forest, gradient boosting, xgboost, lightgbm, how do i use trees [tactical, generation] |
 | [twilio-api](skills/coding/twilio-api/SKILL.md) | Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation. | twilio, sms api, send sms, whatsapp api, twilio verify, phone verification, twilio voice, twilio webhooks [tactical, generation] |
-| [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. | type safety, type narrowing, strict mode, type guards, static typing, runtime validation, mypy, pyright, typescript strict, zod schema [tactical, generation] |
+| [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Enforces strong type safety across software systems using static typing, generics, custom types, strict null checking, and compile-time validation to eliminate entire categories of runtime errors. | type safety, static typing, strict null check, generics, type annotations, type checking, mypy, TypeScript, how do i enforce types, compile-time errors, nominal typing, structural typing [tactical, generation] |
 | [typescript-generics-types](skills/coding/typescript-generics-types/SKILL.md) | Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations. | generics, type parameters, conditional types, infer keyword, mapped types, template literal types, keyof [tactical, generation] |
 | [typescript-intersection](skills/coding/typescript-intersection/SKILL.md) | Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls. | typescript intersection, & type operator, intersection types, TypeScript type composition, never type conflict, TypeScript extends vs intersection, combining types [tactical, generation] |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | intersection types, ampersand type, type merging, TypeScript & operator, props merging, mixin pattern, type conflicts, keyof T & K, generic constraints, ComponentProps & custom [tactical, generation] |
@@ -1303,7 +1305,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (526 skills)
+### Implementation (Build Features) (528 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1466,6 +1468,8 @@ MIT — All skills are freely available and redistributable.
 | [eda](skills/coding/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Coding | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. |
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Coding | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. |
+| [engineering-api-design](skills/coding/engineering-api-design/SKILL.md) | Coding | Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces. |
+| [engineering-error-handling](skills/coding/engineering-error-handling/SKILL.md) | Coding | Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems. |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Coding | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. |
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" |
@@ -1802,7 +1806,7 @@ MIT — All skills are freely available and redistributable.
 | [twap](skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large orders with" minimal market impact |
 | [twap-vwap](skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution''' |
 | [twilio-api](skills/coding/twilio-api/SKILL.md) | Coding | Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation. |
-| [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Coding | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. |
+| [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Coding | Enforces strong type safety across software systems using static typing, generics, custom types, strict null checking, and compile-time validation to eliminate entire categories of runtime errors. |
 | [typescript-generics-types](skills/coding/typescript-generics-types/SKILL.md) | Coding | Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations. |
 | [typescript-intersection](skills/coding/typescript-intersection/SKILL.md) | Coding | Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls. |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. |
@@ -2579,6 +2583,8 @@ MIT — All skills are freely available and redistributable.
 | [elb](skills/cncf/elb/SKILL.md) | Cncf | "Configures Elastic Load Balancing (ALB, NLB, Classic) for distributing" traffic across instances with health checks, SSL termination, and cross-AZ failover. | Reference |
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Coding | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. | Implementation |
 | [em-dash-guide](skills/writing/em-dash-guide/SKILL.md) | Writing | Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation. | Reference |
+| [engineering-api-design](skills/coding/engineering-api-design/SKILL.md) | Coding | Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces. | Implementation |
+| [engineering-error-handling](skills/coding/engineering-error-handling/SKILL.md) | Coding | Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems. | Implementation |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Coding | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | Implementation |
 | [engineering-tradeoffs](skills/coding/engineering-tradeoffs/SKILL.md) | Coding | Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints. | Orchestration |
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" | Implementation |
@@ -3150,7 +3156,7 @@ MIT — All skills are freely available and redistributable.
 | [twap](skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large orders with" minimal market impact | Implementation |
 | [twap-vwap](skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution''' | Implementation |
 | [twilio-api](skills/coding/twilio-api/SKILL.md) | Coding | Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation. | Implementation |
-| [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Coding | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. | Implementation |
+| [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Coding | Enforces strong type safety across software systems using static typing, generics, custom types, strict null checking, and compile-time validation to eliminate entire categories of runtime errors. | Implementation |
 | [typescript-generics-types](skills/coding/typescript-generics-types/SKILL.md) | Coding | Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations. | Implementation |
 | [typescript-intersection](skills/coding/typescript-intersection/SKILL.md) | Coding | Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls. | Implementation |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | Implementation |
