@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T03:09:48.713492Z",
-  "totalSkills": 918,
+  "generatedAt": "2026-05-24T03:47:04.671535Z",
+  "totalSkills": 920,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 353,
+    "coding": 355,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 505,
+    "implementation": 507,
     "reference": 172,
     "information": 1,
     "review": 5
@@ -1148,6 +1148,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/api-gateway-design/SKILL.md"
+    },
+    {
+      "name": "api-gateway-domain-routing",
+      "domain": "coding",
+      "description": "Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "API gateway",
+        "domain routing",
+        "subdomain routing",
+        "Kong plugin",
+        "NGINX server block",
+        "Envoy routing",
+        "host header routing",
+        "how do i route requests by domain",
+        "bounded context routing"
+      ],
+      "relatedSkills": [
+        "multi-tenant-domain-isolation",
+        "api-gateway-design",
+        "domain-driven-design",
+        "event-driven-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-gateway-domain-routing/SKILL.md"
     },
     {
       "name": "api-security-patterns",
@@ -13636,6 +13663,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/multi-stage-deployment/SKILL.md"
+    },
+    {
+      "name": "multi-tenant-domain-isolation",
+      "domain": "coding",
+      "description": "Implements multi-tenant domain isolation patterns (schema-per-tenant, row-level tenant scoping, isolated bounded contexts) to prevent data leakage and enforce strict tenant boundaries in SaaS applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "multi-tenant",
+        "tenant isolation",
+        "schema per tenant",
+        "row-level security",
+        "tenant boundary",
+        "saas architecture",
+        "how do i isolate tenants",
+        "data partitioning",
+        "bounded context per tenant"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "monolith-architecture",
+        "api-gateway-domain-routing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/multi-tenant-domain-isolation/SKILL.md"
     },
     {
       "name": "n8n-code-javascript",
