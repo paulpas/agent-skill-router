@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 931 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 933 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **931 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **933 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 366 | Software patterns, security, testing, data science |
+| Coding | 368 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 09:36:29 UTC  
-> **Total skills:** 931  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (931 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 05:28:15 UTC  
+> **Total skills:** 933  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (933 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 930 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 930 | Ranking penalty for conflicting query terms |
-| Response Profile | 930 | Verbosity, directive strength, abstraction level |
+| Archetypes | 931 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 931 | Ranking penalty for conflicting query terms |
+| Response Profile | 931 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (366 skills)
+### Coding (368 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -956,6 +956,7 @@ MIT — All skills are freely available and redistributable.
 | [model-robustness](skills/coding/model-robustness/SKILL.md) | Improves model robustness including adversarial robustness, out-of-distribution detection, and uncertainty quantification | model robustness, adversarial robustness, out-of-distribution, OOD detection, robustness testing, unit tests, testing, test automation [tactical, generation] |
 | [model-selection](skills/coding/model-selection/SKILL.md) | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" | model selection, AIC, BIC, validation curves, learning curves, model comparison [tactical, generation] |
 | [models](skills/coding/models/SKILL.md) | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | enums, frozen, pydantic models, pydantic-models, trading [tactical, generation] |
+| [modern-architecture-patterns](skills/coding/modern-architecture-patterns/SKILL.md) | Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems. | hexagonal architecture, ports and adapters, backends-for-frontends, bff pattern, feature flags, CQRS event sourcing, sidecar pattern, how do i design scalable systems |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | programming language comparison, rust vs go, typescript vs python, which language to use, language selection, zig vs c++, language benchmark, developer experience, runtime comparison, language ecosystem maturity [diagnostic, educational] |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. | python typing, python 3.12, python 3.11, TypeAlias, ParamSpec, asyncio TaskGroup, structured concurrency, pyproject.toml, uv package manager, httpx async, python project structure, self type, override decorator, modern python, python best practices 2026 [tactical, generation] |
 | [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. | software development, CI/CD pipeline, continuous integration, automated testing, code quality gates, deployment strategy, release management, DevOps workflow [orchestration, tactical] |
@@ -1060,6 +1061,7 @@ MIT — All skills are freely available and redistributable.
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. | stability ai, stabilityai, stable diffusion, sd3, stable image, core, stability api, how do i generate images, text to image, image generation [tactical, generation] |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error [tactical, generation] |
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. | stripe, payment intents, checkout sessions, stripe subscriptions, stripe connect, webhook signature, how do i integrate stripe payments, payment processing [tactical, generation] |
+| [structural-behavioral-patterns](skills/coding/structural-behavioral-patterns/SKILL.md) | Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities. | structural patterns, behavioral patterns, adapter pattern, observer pattern, strategy pattern, command pattern, facade pattern, how do i decouple code [tactical, generation] |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. | structural patterns, adapter pattern, bridge pattern, composite pattern, decorator pattern, facade pattern, proxy pattern, flyweight, GoF design patterns [tactical, generation] |
 | [supabase-sdk](skills/coding/supabase-sdk/SKILL.md) | Integrates Supabase using supabase-py 2.x with patterns for database queries (PostgREST), auth management, storage operations, real-time subscriptions, and Edge Functions. | supabase, supabase-py, postgrest, supabase auth, supabase storage, how do i use supabase from python, supabase realtime, edge functions [tactical, generation] |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" | support vector machines, SVM, kernel methods, support vectors, SVM classification [tactical, generation] |
@@ -1273,7 +1275,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (518 skills)
+### Implementation (Build Features) (520 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1575,6 +1577,7 @@ MIT — All skills are freely available and redistributable.
 | [model-robustness](skills/coding/model-robustness/SKILL.md) | Coding | Improves model robustness including adversarial robustness, out-of-distribution detection, and uncertainty quantification |
 | [model-selection](skills/coding/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" |
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' |
+| [modern-architecture-patterns](skills/coding/modern-architecture-patterns/SKILL.md) | Coding | Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems. |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. |
 | [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Coding | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. |
 | [modular-design](skills/go/modular-design/SKILL.md) | Go | Designs modular Go applications with clean architecture, dependency injection, package boundaries, and interface-based design for maintainable codebases. |
@@ -1731,6 +1734,7 @@ MIT — All skills are freely available and redistributable.
 | [stream-processing](skills/trading/stream-processing/SKILL.md) | Trading | "Provides Streaming data processing for real-time trading signals and analytics" |
 | [stress-testing](skills/trading/stress-testing/SKILL.md) | Trading | "Implements stress test scenarios and portfolio resilience analysis for risk management and algorithmic trading execution." |
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Coding | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. |
+| [structural-behavioral-patterns](skills/coding/structural-behavioral-patterns/SKILL.md) | Coding | Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities. |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Coding | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. |
 | [supabase-sdk](skills/coding/supabase-sdk/SKILL.md) | Coding | Integrates Supabase using supabase-py 2.x with patterns for database queries (PostgREST), auth management, storage operations, real-time subscriptions, and Edge Functions. |
 | [support-resistance](skills/trading/support-resistance/SKILL.md) | Trading | "Implements technical levels where price tends to pause or reverse for risk management and algorithmic trading execution." |
@@ -2790,6 +2794,7 @@ MIT — All skills are freely available and redistributable.
 | [model-robustness](skills/coding/model-robustness/SKILL.md) | Coding | Improves model robustness including adversarial robustness, out-of-distribution detection, and uncertainty quantification | Implementation |
 | [model-selection](skills/coding/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" | Implementation |
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | Implementation |
+| [modern-architecture-patterns](skills/coding/modern-architecture-patterns/SKILL.md) | Coding | Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems. | Implementation |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Coding | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | Reference |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. | Implementation |
 | [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Coding | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. | Implementation |
@@ -3050,6 +3055,7 @@ MIT — All skills are freely available and redistributable.
 | [strimzi](skills/cncf/strimzi/SKILL.md) | Cncf | "Provides Strimzi in Kafka on Kubernetes - Apache Kafka for cloud-native environments" | Reference |
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Coding | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. | Implementation |
 | [stripe-automation](skills/agent/stripe-automation/SKILL.md) | Agent | Implements intelligent stripe automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [structural-behavioral-patterns](skills/coding/structural-behavioral-patterns/SKILL.md) | Coding | Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities. | Implementation |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Coding | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. | Implementation |
 | [subagent-driven-development](skills/agent/subagent-driven-development/SKILL.md) | Agent | Implements intelligent subagent driven development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [supabase-sdk](skills/coding/supabase-sdk/SKILL.md) | Coding | Integrates Supabase using supabase-py 2.x with patterns for database queries (PostgREST), auth management, storage operations, real-time subscriptions, and Edge Functions. | Implementation |
