@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T13:33:40.648743Z",
-  "totalSkills": 940,
+  "generatedAt": "2026-05-24T15:31:28.275506Z",
+  "totalSkills": 941,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 375,
+    "coding": 376,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -16,7 +16,7 @@
   "roles": {
     "orchestration": 235,
     "implementation": 526,
-    "reference": 172,
+    "reference": 173,
     "information": 1,
     "review": 6
   },
@@ -1889,6 +1889,26 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/atlassian-api/SKILL.md"
+    },
+    {
+      "name": "atomic-skills-spec",
+      "domain": "coding",
+      "description": "Defines criteria, thresholds, and migration patterns for splitting monolithic skills into focused atomic skills — including split heuristics, trigger engineering for new sub-skills, and gradual migration strategy.",
+      "role": "reference",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "atomic skills",
+        "skill granularity",
+        "monolithic skill",
+        "skill splitting",
+        "refactoring skills",
+        "trigger calibration",
+        "skill architecture"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/atomic-skills-spec/SKILL.md"
     },
     {
       "name": "audio-transcriber",
