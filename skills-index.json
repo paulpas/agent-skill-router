@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T01:33:05.329858Z",
-  "totalSkills": 915,
+  "generatedAt": "2026-05-24T02:12:03.091820Z",
+  "totalSkills": 916,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 351,
+    "coding": 352,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 503,
+    "implementation": 504,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -10351,6 +10351,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/integration-patterns/SKILL.md"
+    },
+    {
+      "name": "integration-testing-patterns",
+      "domain": "coding",
+      "description": "Implements integration testing strategies (database, HTTP API, event-driven, message queue) with test isolation, fixture management, and real infrastructure validation for production-quality software systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "integration testing",
+        "API testing",
+        "database integration",
+        "test container",
+        "fixture management",
+        "contract testing",
+        "system boundary testing",
+        "service integration"
+      ],
+      "relatedSkills": [
+        "testing-unit-integration-e2e",
+        "rest-api-testing",
+        "software-testing-strategy"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/integration-testing-patterns/SKILL.md"
     },
     {
       "name": "intelligent-skill-selection",
