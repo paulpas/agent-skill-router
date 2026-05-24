@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 938 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 940 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **938 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **940 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 373 | Software patterns, security, testing, data science |
+| Coding | 375 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 12:34:58 UTC  
-> **Total skills:** 938  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (938 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 13:33:42 UTC  
+> **Total skills:** 940  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (940 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 936 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 936 | Ranking penalty for conflicting query terms |
-| Response Profile | 936 | Verbosity, directive strength, abstraction level |
+| Archetypes | 938 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 938 | Ranking penalty for conflicting query terms |
+| Response Profile | 938 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (373 skills)
+### Coding (375 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1053,10 +1053,12 @@ MIT — All skills are freely available and redistributable.
 | [software-architecture-design](skills/coding/software-architecture-design/SKILL.md) | Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations. | software architecture, hexagonal architecture, ddd tactical patterns, cqrs pattern, event sourcing, clean architecture, ports and adapters, aggregate root [tactical, strategic] |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD [tactical, generation] |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design [tactical, generation] |
+| [software-development-lifecycle](skills/coding/software-development-lifecycle/SKILL.md) | Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems. | software development lifecycle, SDLC, requirements engineering, design documentation, iterative development, branching strategy, code review process, user stories, acceptance criteria, feature branches, trunk-based development, how do i manage a software project [orchestration, tactical, generation] |
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | software documentation, API docs, docstrings, README writing, developer guides, OpenAPI, MkDocs, Docusaurus, technical writing for developers, how do i document code, Sphinx, type stubs, mypy stubs, py.typed [tactical, generation] |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | software engineering, modular design, separation of concerns, defensive programming, KISS principle, YAGNI, clean architecture [tactical, generation] |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. | error handling, exception design, retry logic, circuit breaker, graceful degradation, error recovery, resilience patterns, how do i handle errors in software [tactical, generation] |
 | [software-maintainability](skills/coding/software-maintainability/SKILL.md) | Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay. | software maintainability, codebase health, technical debt strategy, refactoring cadence, cyclomatic complexity budget, dependency freshness, how do i keep my codebase clean over time, sustainable development velocity [tactical, generation] |
+| [software-quality-assurance](skills/coding/software-quality-assurance/SKILL.md) | Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds. | software quality assurance, SQA, static analysis, code fuzzing, load testing, performance testing, security scanning, dependency audit, compliance validation, code quality gates, how do i ensure software quality, quality gates, vulnerability scanning [tactical, diagnostic, enforcement] |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | testing strategy, unit test, integration test, property-based testing, test coverage, mocking, assertion, pytest, test suite design, how do i write tests [tactical, generation] |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. | splunk, splunk search, hec, http event collector, splunk sdk, splunk alerts, how do i send logs to splunk, log management [tactical, generation] |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | spring boot, spring framework, dependency injection, auto configuration, rest controller, record dto, profile configuration, actuator, java 21, virtual threads, @service, @component, @autowired, how do i build a spring app [tactical, generation] |
@@ -1280,7 +1282,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (524 skills)
+### Implementation (Build Features) (526 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1723,10 +1725,12 @@ MIT — All skills are freely available and redistributable.
 | [software-architecture-design](skills/coding/software-architecture-design/SKILL.md) | Coding | Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations. |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. |
+| [software-development-lifecycle](skills/coding/software-development-lifecycle/SKILL.md) | Coding | Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems. |
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Coding | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. |
 | [software-maintainability](skills/coding/software-maintainability/SKILL.md) | Coding | Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay. |
+| [software-quality-assurance](skills/coding/software-quality-assurance/SKILL.md) | Coding | Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds. |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Coding | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. |
@@ -3042,10 +3046,12 @@ MIT — All skills are freely available and redistributable.
 | [software-architecture-design](skills/coding/software-architecture-design/SKILL.md) | Coding | Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations. | Implementation |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | Implementation |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | Implementation |
+| [software-development-lifecycle](skills/coding/software-development-lifecycle/SKILL.md) | Coding | Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems. | Implementation |
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | Implementation |
 | [software-engineering-principles](skills/coding/software-engineering-principles/SKILL.md) | Coding | Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code. | Implementation |
 | [software-error-handling](skills/coding/software-error-handling/SKILL.md) | Coding | Implements structured error handling (custom exception hierarchies, retry with backoff, circuit breaker, graceful degradation) for resilient, diagnosable, and recoverable software systems. | Implementation |
 | [software-maintainability](skills/coding/software-maintainability/SKILL.md) | Coding | Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay. | Implementation |
+| [software-quality-assurance](skills/coding/software-quality-assurance/SKILL.md) | Coding | Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds. | Implementation |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | Implementation |
 | [spiffe](skills/cncf/spiffe/SKILL.md) | Cncf | "Provides SPIFFE in Secure Product Identity Framework for Applications" | Reference |
 | [spire](skills/cncf/spire/SKILL.md) | Cncf | "Configures spire in spiffe implementation for real-world deployments for cloud-native deployment and infrastructure management." | Reference |
