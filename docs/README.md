@@ -86,6 +86,7 @@ EMBEDDING_MODEL=text-embedding-3-small
 - [Full Installation Guide](../README.md#installation)
 - [API Documentation](../API.md)
 - [Architecture Overview](../ARCHITECTURE.md)
+- [Advanced Routing System](../AGENTS.md#advanced-routing-system-v2) — Hybrid scoring, archetypes, MMR, anti-triggers, and score explanations
 
 ## Need Help?
 

@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 911 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 913 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **911 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **913 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -79,7 +79,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 ## Common Questions
 
-**Have questions?** See the **[README.md](./README.md)** sections above, or check **[AGENTS.md](./AGENTS.md)** for skill documentation guidelines.
+**Have questions?** See the **[FAQ.md](./FAQ.md)** for common questions, or check **[AGENTS.md](./AGENTS.md)** for skill documentation guidelines.
 
 ---
 
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 347 | Software patterns, security, testing, data science |
+| Coding | 349 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-23 23:52:15 UTC  
-> **Total skills:** 911  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (911 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-23 19:32:16 UTC  
+> **Total skills:** 913  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (913 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 911 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 911 | Ranking penalty for conflicting query terms |
-| Response Profile | 911 | Verbosity, directive strength, abstraction level |
+| Archetypes | 912 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 912 | Ranking penalty for conflicting query terms |
+| Response Profile | 912 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (347 skills)
+### Coding (349 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1017,6 +1017,7 @@ MIT — All skills are freely available and redistributable.
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. | salesforce, soql, salesforce api, simple salesforce, salesforce objects, salesforce bulk api, how do i integrate with salesforce, crm integration [tactical, generation] |
 | [scoring](skills/coding/scoring/SKILL.md) | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | combining, conviction scoring, conviction-scoring, engine, multi-factor [tactical, generation] |
 | [security-architecture](skills/coding/security-architecture/SKILL.md) | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. | security architecture, threat modeling, STRIDE, defense in depth, zero trust, authentication architecture, authorization design, how do i secure a system [tactical, generation] |
+| [security-engineering](skills/coding/security-engineering/SKILL.md) | Implements end-to-end secure development lifecycle practices including threat modeling (STRIDE/DREAD), OWASP Top 10 vulnerability prevention, zero-trust architecture patterns, supply chain security, and automated security pipeline integration for pro... | threat modeling, STRIDE, secure coding standards, OWASP Top 10, supply chain security, zero trust architecture, SAST DAST security pipeline, how do i secure my app [tactical, strategic, enforcement] |
 | [segment-api](skills/coding/segment-api/SKILL.md) | Implements Segment (CDP) integration (track, identify, group, page, screen, alias) using analytics-python SDK with event batching, user traits, group traits, page properties, Segment Spec compliance, and HTTP API fallback patterns. | segment, cdp, customer data platform, segment track identify, segment spec, how do i integrate segment tracking, rudderstack, customer data infrastructure [tactical, generation] |
 | [sendgrid-api](skills/coding/sendgrid-api/SKILL.md) | Integrates Twilio SendGrid API (Mail Send, Dynamic Templates, Marketing Campaigns, Inbound Parse, Event Webhooks) using the sendgrid Python SDK v6.x with proper mail construction and deliverability patterns. | sendgrid, send email, transactional email, sendgrid api, email templates, dynamic templates, email delivery, marketing campaigns [tactical, generation] |
 | [sentry-api](skills/coding/sentry-api/SKILL.md) | Implements Sentry API integration (error tracking, performance monitoring, issue management, release tracking, event ingestion) using sentry-sdk Python SDK with error capture, performance tracing, breadcrumbs, issue querying, and release management v... | sentry, error tracking, performance monitoring, sentry issues, sentry sdk, exception capture, how do i integrate sentry error tracking, application monitoring [tactical, generation] |
@@ -1041,6 +1042,7 @@ MIT — All skills are freely available and redistributable.
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. | splunk, splunk search, hec, http event collector, splunk sdk, splunk alerts, how do i send logs to splunk, log management [tactical, generation] |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | spring boot, spring framework, dependency injection, auto configuration, rest controller, record dto, profile configuration, actuator, java 21, virtual threads, @service, @component, @autowired, how do i build a spring app [tactical, generation] |
 | [square-api](skills/coding/square-api/SKILL.md) | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. | square, square payments api, square catalog, square inventory, square orders, square webhooks, square terminal, how do i integrate square payments, retail pos [tactical, generation] |
+| [sre-engineering](skills/coding/sre-engineering/SKILL.md) | Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability. | sre, site reliability, SLO monitoring, error budget, incident management, capacity planning, chaos engineering, blameless postmortem |
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. | stability ai, stabilityai, stable diffusion, sd3, stable image, core, stability api, how do i generate images, text to image, image generation [tactical, generation] |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error [tactical, generation] |
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. | stripe, payment intents, checkout sessions, stripe subscriptions, stripe connect, webhook signature, how do i integrate stripe payments, payment processing [tactical, generation] |
@@ -1253,7 +1255,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (499 skills)
+### Implementation (Build Features) (501 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1649,6 +1651,7 @@ MIT — All skills are freely available and redistributable.
 | [scoring](skills/coding/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights |
 | [security-architecture](skills/coding/security-architecture/SKILL.md) | Coding | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. |
 | [security-compliance](skills/cncf/security-compliance/SKILL.md) | Cncf | Implements security compliance frameworks (SOC2, HIPAA, PCI-DSS) with implementation patterns, audit procedures, and compliance automation for Kubernetes and cloud environments |
+| [security-engineering](skills/coding/security-engineering/SKILL.md) | Coding | Implements end-to-end secure development lifecycle practices including threat modeling (STRIDE/DREAD), OWASP Top 10 vulnerability prevention, zero-trust architecture patterns, supply chain security, and automated security pipeline integration for pro... |
 | [segment-api](skills/coding/segment-api/SKILL.md) | Coding | Implements Segment (CDP) integration (track, identify, group, page, screen, alias) using analytics-python SDK with event batching, user traits, group traits, page properties, Segment Spec compliance, and HTTP API fallback patterns. |
 | [self-improvement](skills/agent/self-improvement/SKILL.md) | Agent | Enables AI agents to continuously improve through structured reflection cycles, feedback-driven strategy evolution, pattern recognition across experiences, and adaptive knowledge base management. |
 | [sendgrid-api](skills/coding/sendgrid-api/SKILL.md) | Coding | Integrates Twilio SendGrid API (Mail Send, Dynamic Templates, Marketing Campaigns, Inbound Parse, Event Webhooks) using the sendgrid Python SDK v6.x with proper mail construction and deliverability patterns. |
@@ -1685,6 +1688,7 @@ MIT — All skills are freely available and redistributable.
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Coding | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. |
 | [square-api](skills/coding/square-api/SKILL.md) | Coding | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. |
+| [sre-engineering](skills/coding/sre-engineering/SKILL.md) | Coding | Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability. |
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Coding | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. |
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. |
 | [statistical-arbitrage](skills/trading/statistical-arbitrage/SKILL.md) | Trading | "Implements pair trading and cointegration-based arbitrage strategies for risk management and algorithmic trading execution." |
@@ -2914,6 +2918,7 @@ MIT — All skills are freely available and redistributable.
 | [security-architecture](skills/coding/security-architecture/SKILL.md) | Coding | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. | Implementation |
 | [security-audit](skills/agent/security-audit/SKILL.md) | Agent | Implements intelligent security audit with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [security-compliance](skills/cncf/security-compliance/SKILL.md) | Cncf | Implements security compliance frameworks (SOC2, HIPAA, PCI-DSS) with implementation patterns, audit procedures, and compliance automation for Kubernetes and cloud environments | Implementation |
+| [security-engineering](skills/coding/security-engineering/SKILL.md) | Coding | Implements end-to-end secure development lifecycle practices including threat modeling (STRIDE/DREAD), OWASP Top 10 vulnerability prevention, zero-trust architecture patterns, supply chain security, and automated security pipeline integration for pro... | Implementation |
 | [security-policy](skills/cncf/security-policy/SKILL.md) | Cncf | "Creates or updates SECURITY.md defining the vulnerability reporting process" disclosure timeline, and supported versions for CNCF projects | Reference |
 | [segment-api](skills/coding/segment-api/SKILL.md) | Coding | Implements Segment (CDP) integration (track, identify, group, page, screen, alias) using analytics-python SDK with event batching, user traits, group traits, page properties, Segment Spec compliance, and HTTP API fallback patterns. | Implementation |
 | [self-critique-engine](skills/agent/self-critique-engine/SKILL.md) | Agent | Implements intelligent self critique engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2979,6 +2984,7 @@ MIT — All skills are freely available and redistributable.
 | [sql-database](skills/cncf/sql-database/SKILL.md) | Cncf | Provides Managed relational database with elastic pools, geo-replication, and automatic backups | Reference |
 | [sqs](skills/cncf/sqs/SKILL.md) | Cncf | "Deploys managed message queues with SQS for asynchronous processing" decoupling services, and reliable message delivery with visibility timeout and dead-letter queues. | Reference |
 | [square-api](skills/coding/square-api/SKILL.md) | Coding | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. | Implementation |
+| [sre-engineering](skills/coding/sre-engineering/SKILL.md) | Coding | Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability. | Implementation |
 | [ssm](skills/cncf/ssm/SKILL.md) | Cncf | "Manages EC2 instances and on-premises servers with AWS Systems Manager" for configuration management, patch management, and secure shell access without SSH keys. | Reference |
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Coding | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. | Implementation |
 | [stacktrace-root-cause](skills/agent/stacktrace-root-cause/SKILL.md) | Agent | Implements intelligent stacktrace root cause with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

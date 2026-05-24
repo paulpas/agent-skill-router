@@ -78,7 +78,7 @@ The Agent Skill Router is a smart routing engine that matches user tasks to spec
 
 ## What Is This Thing?
 
-The Skill Router is a TypeScript application that runs in a Docker container and acts as a **middleman between AI agents and specialized knowledge**. It manages a library of 750+ "skill" documents — markdown files that each contain expert instructions for a specific domain.
+The Skill Router is a TypeScript application that runs in a Docker container and acts as a **middleman between AI agents and specialized knowledge**. It manages a library of 911 "skill" documents — markdown files that each contain expert instructions for a specific domain.
 
 When an AI agent receives a task (like "review this code for security issues"), the router:
 
@@ -104,7 +104,7 @@ The result: the AI agent suddenly _knows_ how to be a security code reviewer, a 
                                                                       │  │security      │ │
                                                                       │  │kubernetes    │ │
                                                                       │  │vwap          │ │
-                                                                      │  │... 750+ more  │ │
+                                                                      │  │... 900+ more  │ │
                                                                       │  └──────────────┘ │
                                                                       └──────────────────┘
 ```
@@ -129,65 +129,69 @@ The result: the AI agent suddenly _knows_ how to be a security code reviewer, a 
 
 ## How It Works: The Routing Pipeline
 
-The core routing logic lives in `src/core/Router.ts`. When you send a task to `/route`, it goes through a six-stage pipeline:
+The core routing logic lives in `src/core/Router.ts`. When you send a task to `/route`, it goes through a multi-signal hybrid scoring pipeline:
 
 ```ascii
-                        ┌───────── ROUTING PIPELINE ──────────┐
-                        │                                       │
-   POST /route          │                                       │
-   { "task": "..." }    │                                       │
-        │               │                                       │
-        ▼               │                                       │
-   ┌──────────┐  ~0.1ms │   ┌─────────────────────┐             │
-   │ 1. Safety│         │   │  SafetyLayer checks │             │
-   │  Layer   │─────────┼──▶│  for prompt         │             │
-   └──────────┘         │   │  injection attacks  │             │
-        │               │   └──────────┬──────────┘             │
-        ▼               │              │                         │
-   ┌──────────┐  ~200ms │              ▼                         │
-   │ 2. Embed-│         │   ┌─────────────────────┐             │
-   │  ding    │─────────┼──▶│  Convert task to    │             │
-   │  Service │         │   │  1536-dim vector    │             │
-   └──────────┘         │   └──────────┬──────────┘             │
-        │               │              │                         │
-        ▼               │              ▼                         │
-   ┌──────────┐  ~0.1ms │   ┌─────────────────────┐             │
-   │ 3. Vector│         │   │  KD-tree nearest    │             │
-   │  Database│─────────┼──▶│  neighbor search    │             │
-   │          │         │   │  → top 20 candidates│             │
-   └──────────┘         │   └──────────┬──────────┘             │
-        │               │              │                         │
-        ▼               │              ▼                         │
-   ┌──────────┐  ~3s    │   ┌─────────────────────┐             │
-   │ 4. LLM   │         │   │  GPT-4o-mini (or    │             │
-   │  Ranker  │─────────┼──▶│  Claude/llama.cpp)  │             │
-   │          │         │   │  re-ranks top 10    │             │
-   └──────────┘         │   │  results with scores│             │
-        │               │   └──────────┬──────────┘             │
-        ▼               │              │                         │
-   ┌──────────┐  ~0.1ms │              ▼                         │
-   │ 5. Deter-│         │   ┌─────────────────────┐             │
-   │  ministic│─────────┼──▶│  Remove drafts,     │             │
-   │  Filter  │         │   │  apply constraints  │             │
-   └──────────┘         │   │  score ≥ 0.5, max 5 │             │
-        │               │   └──────────┬──────────┘             │
-        ▼               │              │                         │
-   ┌──────────┐  ~0.1ms │              ▼                         │
-   │ 6. Execu-│         │   ┌─────────────────────┐             │
-   │  tion    │─────────┼──▶│  Sequential /       │             │
-   │  Planner │         │   │  Parallel / Hybrid  │             │
-   └──────────┘         │   └─────────────────────┘             │
-        │               │                                       │
-        ▼               └───────────────────────────────────────┘
-   Response
-   {
-     selectedSkills: [...],
-     executionPlan: { strategy, steps },
-     confidence: 0.92
-   }
-```
+                        ┌─────── HYBRID SCORING PIPELINE ────────┐
+                        │                                          │
+   POST /route          │                                          │
+   { "task": "..." }    │                                          │
+        │               │                                          │
+        ▼               │                                          │
+   ┌──────────┐  ~0.1ms │   ┌──────────────────────┐               │
+   │ 1. Safety│         │   │  SafetyLayer checks  │               │
+   │  Layer   │─────────┼──▶│  for prompt          │               │
+   └──────────┘         │   │  injection attacks   │               │
+        │               │   └──────────┬───────────┘               │
+        ▼               │              │                            │
+   ┌──────────┐  ~200ms │              ▼                            │
+   │ 2. Hybrid│         │   ┌──────────────────────┐               │
+   │ Retrieval│─────────┼──▶│  Vector embedding    │               │
+   │          │         │   │  (50% weight) +      │               │
+   │          │         │   │  BM25 exact-term     │               │
+   │          │         │   │  (20% weight)        │               │
+   └──────────┘         │   └──────────┬───────────┘               │
+        │               │              │                            │
+        ▼               │              ▼                            │
+   ┌──────────┐  ~0.1ms │   ┌──────────────────────┐               │
+   │ 3. Arche-│         │   │  Trigger match (15%)  │               │
+   │  type +  │─────────┼──▶│  Archetype alignment  │               │
+   │ Trigger  │         │   │  (10%) + Penalty for  │               │
+   │ Scoring  │         │   │  anti-trigger matches │               │
+   └──────────┘         │   └──────────┬───────────┘               │
+        │               │              │                            │
+        ▼               │              ▼                            │
+   ┌──────────┐  ~0.1ms │   ┌──────────────────────┐               │
+   │ 4. MMR   │         │   │  Maximal Marginal    │               │
+   │ Diversify│─────────┼──▶│  Relevance reduces   │               │
+   │          │         │   │  near-duplicate      │               │
+   │          │         │   │  skill results       │               │
+   └──────────┘         │   └──────────┬───────────┘               │
+        │               │              │                            │
+        ▼               │              ▼                            │
+   ┌──────────┐  ~3s    │   ┌──────────────────────┐               │
+   │ 5. LLM   │         │   │  Optional re-ranking │               │
+   │  Ranker  │─────────┼──▶│  when                │               │
+   │ (opt.)   │         │   │  LLM_RANKING_ENABLED │               │
+   └──────────┘         │   └──────────┬───────────┘               │
+        │               │              │                            │
+        ▼               │              ▼                            │
+   ┌──────────┐  ~0.1ms │   ┌──────────────────────┐               │
+   │ 6. Filter│         │   │  Enforce score ≥ 0.5 │               │
+   │  + Plan  │─────────┼──▶│  Cap at maxSkills    │               │
+   │          │         │   │  Strategy: seq/par/hy │               │
+   └──────────┘         │   └──────────────────────┘               │
+        │               │                                          │
+        ▼               └──────────────────────────────────────────┘
+   ┌──────────────────────┐
+   │  Selected: hybrid    │
+   │  scored + diversified│
+   │  skills with score   │
+   │  breakdown           │
+   └──────────────────────┘
+ ```
 
-> 💡 **Reading guide:** The 6 stages above are the heart of the router. Each stage has a deep-dive section later in this document. Stick around for the high level, or jump to any stage that interests you.
+> 💡 **Reading guide:** The hybrid scoring pipeline above is the heart of the router. Each stage has a deep-dive section later in this document. Stick around for the high level, or jump to any stage that interests you.
 
 ### What Each Stage Does (brief)
 
@@ -210,7 +214,7 @@ The router gives AI agents **just-in-time expertise**:
 
 - **No manual commands needed** — trigger keywords auto-detect what you're working on
 - **Semantic understanding** — you don't need to know the exact skill name, just describe what you want to do
-- **750+ domains covered** — from Kubernetes to algorithmic trading to code review
+- **900+ domains covered** — from Kubernetes to algorithmic trading to code review
 - **Token-efficient** — compression saves 28-85% on skill content
 - **Fault-tolerant** — falls back gracefully if LLM, network, or GitHub are unavailable
 - **Self-updating** — periodic sync discovers new skills automatically
@@ -594,9 +598,9 @@ A k-dimensional tree partitions the vector space recursively, splitting on alter
 
 ### Why KD-Tree Over Brute Force?
 
-| Approach | Time | At 750 skills | At 1,800 skills |
+| Approach | Time | At 900+ skills | At 911 skills |
 |---|---|---|---|
-| Brute force (linear scan) | O(n) | 750 comparisons | 1,800 comparisons |
+| Brute force (linear scan) | O(n) | 900+ comparisons | 911 comparisons |
 | KD-tree | O(log n) | ~10 comparisons | ~11 comparisons |
 
 The KD-tree returns 20 candidates, which are then re-ranked by the LLM. This hybrid approach gives you the speed of vector search with the intelligence of LLM judgment.

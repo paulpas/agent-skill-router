@@ -2,7 +2,7 @@
 
 > One source of truth for every environment variable in the agent-skill-router system.
 >
-> **Total: 69 environment variables** (68 unique + 1 alias) across 12 categories
+> **Total: 71 environment variables** (70 unique + 1 alias) across 13 categories
 
 ## Quick Start
 
@@ -41,6 +41,7 @@ All variables in alphabetical order:
 | `COMPRESSION_WARMUP_ENABLED` | `true` | Compression Advanced |
 | `COMPRESSION_WARMUP_SKILLS` | `100` | Skill Compression |
 | `COMPRESSION_WARMUP_TIMEOUT_MS` | `30000` | Skill Compression |
+| `DEBUG_ROUTING` | `false` | Advanced Routing |
 | `EMBEDDING_DIMENSIONS` | `1536` | Embeddings |
 | `EMBEDDING_MAX_RETRIES` | `3` | Embeddings |
 | `EMBEDDING_MODEL` | `text-embedding-3-small` | Embeddings |
@@ -64,6 +65,7 @@ All variables in alphabetical order:
 | `LLAMACPP_BASE_URL` | `http://localhost:8080` | LLM Provider |
 | `LLM_MODEL` | *provider-specific* | LLM Provider |
 | `LLM_PROVIDER` | `openai` | LLM Provider |
+| `LLM_RANKING_ENABLED` | `false` | Advanced Routing |
 | `LOG_LEVEL` | `info` | Logging |
 | `MAX_EXTERNAL_SIZE_KB` | `10` | Link Following |
 | `MAX_LINK_DEPTH` | `2` | Link Following |
@@ -311,7 +313,7 @@ RUN apk add --no-cache chromium
 
 ---
 
-### 11. MCP Bridge (5 vars)
+### 12. MCP Bridge (5 vars)
 
 Configures the stdio MCP bridge (`skill-router-mcp.js`) that connects OpenCode to the skill router via the Model Context Protocol.
 
@@ -334,7 +336,22 @@ Configures the stdio MCP bridge (`skill-router-mcp.js`) that connects OpenCode t
 
 ---
 
-### 12. Docker & Git Config (10 vars)
+### 13. Advanced Routing (2 vars)
+
+Controls the hybrid scoring pipeline, MMR diversification, and score explanations for the routing system.
+
+| Variable | Type | Default | Valid Values | Description |
+|---|---|---|---|---|
+| `DEBUG_ROUTING` | boolean | `false` | `true`, `false` | When enabled, each routed skill includes a per-component breakdown with human-readable explanations. Useful for debugging routing decisions. |
+| `LLM_RANKING_ENABLED` | boolean | `false` | `true`, `false` | When enabled, uses LLM-based ranking as an optional fallback after hybrid scoring. Default is `false` (hybrid scoring only). |
+
+**Source:** `src/core/Router.ts` lines 352, 474.
+
+> **Note:** The hybrid scoring weights (`RETRIEVAL_VECTOR_WEIGHT`, `RETRIEVAL_BM25_WEIGHT`, etc.) are configured via TypeScript `RouterConfig` interface, not environment variables. See [AGENTS.md#advanced-routing-system-v2](../AGENTS.md#advanced-routing-system-v2) for the full configuration reference.
+
+---
+
+### 14. Docker & Git Config (10 vars)
 
 Container-level configuration for git operations (required for skill contribution and SSH-based repository access).
 
@@ -364,7 +381,7 @@ Container-level configuration for git operations (required for skill contributio
 
 ---
 
-### 13. Compression Advanced (9 vars)
+### 15. Compression Advanced (9 vars)
 
 Docker-level tuning variables for the LLM-based skill compression subsystem. These control the caching, batching, and storage behavior at scale (1,800+ skills).
 
