@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T12:19:35.028215Z",
-  "totalSkills": 937,
+  "generatedAt": "2026-05-24T12:34:57.073844Z",
+  "totalSkills": 938,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 372,
+    "coding": 373,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 523,
+    "implementation": 524,
     "reference": 172,
     "information": 1,
     "review": 6
@@ -22168,6 +22168,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/yagni/SKILL.md"
+    },
+    {
+      "name": "yagni-principle",
+      "domain": "coding",
+      "description": "Applies the YAGNI principle to prevent over-engineering by eliminating premature abstractions, unused features, and speculative complexity from codebases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "yagni",
+        "you aren't gonna need it",
+        "don't build it now",
+        "over-engineering",
+        "premature abstraction",
+        "speculative features",
+        "remove unused code",
+        "kill dead code"
+      ],
+      "relatedSkills": [
+        "kiss-principle",
+        "technical-debt-management",
+        "refactoring-techniques",
+        "engineering-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/yagni-principle/SKILL.md"
     },
     {
       "name": "yaml-anchor-alias",
