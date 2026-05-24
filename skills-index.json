@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T20:28:40.634267Z",
-  "totalSkills": 946,
+  "generatedAt": "2026-05-24T21:00:46.322600Z",
+  "totalSkills": 947,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 381,
+    "coding": 382,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 531,
+    "implementation": 532,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -6093,6 +6093,33 @@
       "source": "skills/coding/datadog-api/SKILL.md"
     },
     {
+      "name": "ddd-aggregate-lifecycle",
+      "domain": "coding",
+      "description": "Implements aggregate lifecycle management patterns — snapshotting, schema versioning, optimistic concurrency control, aggregate root splitting strategies, and consistency boundary enforcement for high-throughput domain-driven systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "aggregate lifecycle",
+        "aggregate snapshotting",
+        "aggregate versioning",
+        "optimistic concurrency",
+        "aggregate root splitting",
+        "event sourcing snapshot",
+        "how do i scale aggregates",
+        "aggregate consistency at scale",
+        "ddd performance"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "ddd-context-mapping",
+        "event-sourcing-pattern",
+        "cqrs-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ddd-aggregate-lifecycle/SKILL.md"
+    },
+    {
       "name": "ddd-command-pattern",
       "domain": "coding",
       "description": "Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts.",
@@ -6122,27 +6149,27 @@
     {
       "name": "ddd-context-mapping",
       "domain": "coding",
-      "description": "Implements practical context mapping patterns including anticorruption layers, shared kernels, published language contracts, and customer-supplier relationships for multi-bounded-context systems.",
+      "description": "Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "context mapping",
         "anticorruption layer",
-        "acl implementation",
+        "acl",
         "shared kernel",
-        "published language",
         "customer supplier relationship",
-        "bounded context integration",
-        "ddd strategic patterns",
         "conformist pattern",
-        "pipeline pattern",
-        "open host service"
+        "publication language",
+        "bounded context integration",
+        "strategic ddd",
+        "how do i integrate bounded contexts"
       ],
       "relatedSkills": [
         "domain-driven-design",
         "domain-modeling",
-        "ddd-tactical-patterns"
+        "domain-events",
+        "microservices-architecture"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ddd-context-mapping/SKILL.md"
