@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-05-24T02:12:03.091820Z",
-  "totalSkills": 916,
+  "generatedAt": "2026-05-24T03:03:55.862050Z",
+  "totalSkills": 917,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 352,
+    "coding": 353,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
     "maker": 3,
-    "programming": 6,
+    "programming": 7,
     "trading": 89,
     "writing": 4
   },
   "roles": {
     "orchestration": 235,
     "implementation": 504,
-    "reference": 171,
+    "reference": 172,
     "information": 1,
     "review": 5
   },
@@ -5599,6 +5599,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-data-quality/SKILL.md"
+    },
+    {
+      "name": "data-structures",
+      "domain": "programming",
+      "description": "Implements and compares fundamental data structures (hash tables, balanced BSTs, tries, heaps, linked lists, graphs) with O(1) through O(n log n) complexity analysis for optimal algorithm selection.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "data structures",
+        "hash table",
+        "balanced tree",
+        "AVL tree",
+        "red-black tree",
+        "trie",
+        "heap priority queue",
+        "linked list",
+        "graph traversal",
+        "binary search tree",
+        "b-tree",
+        "complexity analysis",
+        "time complexity",
+        "space complexity"
+      ],
+      "relatedSkills": [
+        "algorithms",
+        "graph-traversal",
+        "for-loop-iteration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/programming/data-structures/SKILL.md"
     },
     {
       "name": "data-validation-patterns",
