@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T00:33:05.349909Z",
-  "totalSkills": 913,
+  "generatedAt": "2026-05-24T00:48:38.109693Z",
+  "totalSkills": 914,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 349,
+    "coding": 350,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 501,
+    "implementation": 502,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -9878,6 +9878,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-hypothesis-testing/SKILL.md"
+    },
+    {
+      "name": "iac-engineering",
+      "domain": "coding",
+      "description": "Implements advanced IaC engineering patterns including modular Terraform architecture, policy-as-code with OPA, GitOps with ArgoCD, Terratest-driven testing, and cross-cloud multi-account resource management for production infrastructure.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "Terraform modules",
+        "policy as code",
+        "OPA Conftest",
+        "GitOps ArgoCD",
+        "IaC testing",
+        "Terratest",
+        "how do i manage terraform state"
+      ],
+      "relatedSkills": [
+        "coding-platform-engineering",
+        "cncf-kubernetes",
+        "coding-software-delivery-pipelines",
+        "cncf-terraform"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/iac-engineering/SKILL.md"
     },
     {
       "name": "iam",
