@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T18:36:11.446466Z",
-  "totalSkills": 941,
+  "generatedAt": "2026-05-24T19:12:52.499602Z",
+  "totalSkills": 943,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 376,
+    "coding": 378,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 526,
+    "implementation": 528,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -7491,6 +7491,65 @@
       ],
       "version": "1.0.0",
       "source": "skills/writing/em-dash-guide/SKILL.md"
+    },
+    {
+      "name": "engineering-api-design",
+      "domain": "coding",
+      "description": "Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "api design",
+        "REST API",
+        "GraphQL schema",
+        "OpenAPI spec",
+        "API versioning",
+        "pagination",
+        "rate limiting",
+        "endpoint design",
+        "API authentication",
+        "how do i design an API",
+        "API documentation",
+        "Swagger"
+      ],
+      "relatedSkills": [
+        "framework-utilization",
+        "software-documentation",
+        "engineering-principles",
+        "testing-unit-integration-e2e"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/engineering-api-design/SKILL.md"
+    },
+    {
+      "name": "engineering-error-handling",
+      "domain": "coding",
+      "description": "Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "error handling",
+        "exception hierarchy",
+        "retry strategy",
+        "exponential backoff",
+        "circuit breaker",
+        "graceful degradation",
+        "structured logging",
+        "panic prevention",
+        "how do i handle errors",
+        "error wrapping",
+        "sentinel errors"
+      ],
+      "relatedSkills": [
+        "engineering-principles",
+        "testing-unit-integration-e2e",
+        "software-documentation",
+        "framework-utilization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/engineering-error-handling/SKILL.md"
     },
     {
       "name": "engineering-principles",
@@ -21159,25 +21218,29 @@
     {
       "name": "type-safety-enforcement",
       "domain": "coding",
-      "description": "Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors.",
+      "description": "Enforces strong type safety across software systems using static typing, generics, custom types, strict null checking, and compile-time validation to eliminate entire categories of runtime errors.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "type safety",
-        "type narrowing",
-        "strict mode",
-        "type guards",
         "static typing",
-        "runtime validation",
+        "strict null check",
+        "generics",
+        "type annotations",
+        "type checking",
         "mypy",
-        "pyright",
-        "typescript strict",
-        "zod schema"
+        "TypeScript",
+        "how do i enforce types",
+        "compile-time errors",
+        "nominal typing",
+        "structural typing"
       ],
       "relatedSkills": [
-        "testing-error-handling",
-        "api-contract-testing"
+        "engineering-principles",
+        "software-documentation",
+        "testing-unit-integration-e2e",
+        "static-analysis-tools"
       ],
       "version": "1.0.0",
       "source": "skills/coding/type-safety-enforcement/SKILL.md"
