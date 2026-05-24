@@ -332,7 +332,7 @@ curl http://localhost:3000/embeddings \
 - [Full Installation Guide](../README.md#installation)
 - [OpenAI Provider Configuration](config-openai.md)
 - [Anthropic Provider Configuration](config-anthropic.md)
-- [API Documentation](../API.md)
+- [API Reference](../agent-skill-routing-system/skill-router-api.md)
 
 ## Support
 

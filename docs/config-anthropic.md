@@ -252,7 +252,7 @@ curl https://api.anthropic.com/v1/embeddings \
 - [Full Installation Guide](../README.md#installation)
 - [OpenAI Provider Configuration](config-openai.md)
 - [Self-Hosted LLM Configuration](config-litellm-vllm.md)
-- [API Documentation](../API.md)
+- [API Reference](../agent-skill-routing-system/skill-router-api.md)
 
 ## Support
 

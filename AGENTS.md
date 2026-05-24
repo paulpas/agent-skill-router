@@ -25,7 +25,7 @@ This guide explains how to create new skills for the agent-skill-router reposito
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
 - [Quality Checklist](#quality-checklist)
 - [Related Documentation](#related-documentation)
-- **[See FAQ.md for Common Questions](../FAQ.md)** ← Comprehensive FAQ with 27 Q&A
+
 
 ---
 

@@ -84,12 +84,11 @@ EMBEDDING_MODEL=text-embedding-3-small
 ## Related Documentation
 
 - [Full Installation Guide](../README.md#installation)
-- [API Documentation](../API.md)
-- [Architecture Overview](../ARCHITECTURE.md)
+- [API Reference](../agent-skill-routing-system/skill-router-api.md)
+- [Architecture Deep Dive](../agent-skill-routing-system/README.md)
 - [Advanced Routing System](../AGENTS.md#advanced-routing-system-v2) — Hybrid scoring, archetypes, MMR, anti-triggers, and score explanations
 
 ## Need Help?
 
-1. Check the [FAQ.md](../FAQ.md) for common questions
-2. Review the [API.md](../API.md) for endpoint details
-3. Visit the [Agent MCP documentation](../AGENT-MCP.md) for advanced configuration
+1. Review the [API Reference](../agent-skill-routing-system/skill-router-api.md) for endpoint details
+2. Visit the [Routing System Docs](../agent-skill-routing-system/README.md) for architecture and configuration

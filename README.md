@@ -5,14 +5,14 @@
 ```
 You → "review this Python code for security issues"
       ↓
-skill-router auto-fires → embeds task → vector search → LLM ranks → loads skills
+skill-router auto-fires → hybrid retrieval (vector + BM25) → archetype/trigger scoring → MMR diversify → LLM ranks (opt) → loads skills
       ↓
 Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **914 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
-- 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
+- 🎯 **914 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -37,7 +37,7 @@ cd agent-skill-router
 - Optionally integrates with OpenCode or Claude
 - Full configuration summary before installation begins
 
-**Full installation instructions:** [AGENT-MCP.md](./AGENT-MCP.md)
+**Full installation instructions:** [Routing System Docs](./agent-skill-routing-system/README.md)
 
 ---
 
@@ -45,10 +45,11 @@ cd agent-skill-router
 
 The skill router is an **MCP (Model Context Protocol) server** that routes tasks to the most relevant skills using:
 
-1. **Semantic Search** — OpenAI embeddings + cosine similarity for candidate retrieval
-2. **LLM Ranking** — Intelligent selection and reasoning with gpt-4o-mini (or Anthropic/Claude)
-3. **Caching** — Multi-layer cache for optimal performance
-4. **Compression** — SkillCompressor reduces token overhead by 28-65%
+1. **Hybrid Retrieval** — Vector similarity + BM25 exact-term matching for candidate retrieval
+2. **Archetype & Trigger Scoring** — Query intent alignment and keyword matching boost relevance
+3. **MMR Diversification** — Maximum Marginal Relevance ensures diverse, non-redundant results
+4. **LLM Ranking (optional)** — Configurable LLM re-ranks top candidates for final selection
+5. **Caching & Compression** — Multi-layer cache + SkillCompressor reduces token overhead by 28-65%
 
 **Result:** Only the top 1-3 most relevant skills are loaded per request, saving tokens and improving response quality.
 
@@ -58,9 +59,8 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | File | Purpose |
 |------|---------|
-| **[AGENT-MCP.md](./AGENT-MCP.md)** | Installation and setup guide for OpenCode, Claude, and other MCP clients |
-| **[ARCHITECTURE.md](./ARCHITECTURE.md)** | Deep dive into system architecture, components, and design patterns |
-| **[API.md](./API.md)** | Complete API documentation with curl examples for all endpoints |
+| **[Routing System Docs](./agent-skill-routing-system/README.md)** | Installation, architecture, provider configuration, and request flow |
+| **[API Reference](./agent-skill-routing-system/skill-router-api.md)** | Complete API documentation with curl examples for all endpoints |
 | **[SKILL_FORMAT_SPEC.md](./SKILL_FORMAT_SPEC.md)** | Formal skill file specification for creating new skills |
 
 ---
@@ -79,7 +79,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 ## Common Questions
 
-**Have questions?** See the **[FAQ.md](./FAQ.md)** for common questions, or check **[AGENTS.md](./AGENTS.md)** for skill documentation guidelines.
+**Have questions?** See the **[AGENTS.md](./AGENTS.md)** for skill documentation guidelines.
 
 ---
 
