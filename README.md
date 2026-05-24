@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 943 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 946 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 943 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 946 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> origin/main
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **943 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **946 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **943 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **946 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> origin/main
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 378 | Software patterns, security, testing, data science |
+| Coding | 381 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -285,17 +285,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 19:12:54 UTC  
-> **Total skills:** 943  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (943 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 20:28:42 UTC  
+> **Total skills:** 946  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (946 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 941 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 941 | Ranking penalty for conflicting query terms |
-| Response Profile | 941 | Verbosity, directive strength, abstraction level |
+| Archetypes | 943 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 943 | Ranking penalty for conflicting query terms |
+| Response Profile | 943 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -744,7 +744,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (378 skills)
+### Coding (381 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -752,6 +752,7 @@ MIT — All skills are freely available and redistributable.
 | [abstraction-design-patterns](skills/coding/abstraction-design-patterns/SKILL.md) | Designs clean, maintainable abstractions using Protocols, ABCs, interfaces, and composition to reduce coupling while avoiding over-engineering and leaky abstractions. | abstraction design, interface design, Protocol pattern, over-abstraction, leaky abstraction, composition over inheritance, Rule of Three [tactical, generation] |
 | [advanced](skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | git rebase, git cherry-pick, git bisect, git reflog, worktrees, filter-branch, multi-repo, advanced git [educational, diagnostic] |
 | [adyen-api](skills/coding/adyen-api/SKILL.md) | Implements Adyen API integration (Payments, Checkout, Marketplaces, Risk, Reporting) using adyen Python SDK with 3D Secure 2 authentication flow, webhook signature verification, idempotency keys, and global enterprise payment processing patterns. | adyen, adyen checkout api, adyen payments, 3d secure 2, adyen webhook verification, adyen marketplaces, adyen risk management, how do i integrate adyen payments, global payment processing [tactical, generation] |
+| [agent-evaluation-testing](skills/coding/agent-evaluation-testing/SKILL.md) | Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python. | agent evaluation, LLM testing, promptfoo, tool-use accuracy, hallucination detection, how do i test my agent, evaluate AI responses, agent quality assurance [tactical, diagnostic] |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | ai-assisted engineering, AI pair programming, LLM code generation, prompt engineering for code, automated code review with AI, AI test generation, how do i use AI in software development, code generation guardrails [tactical, generation] |
 | [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. | ai framework selection, llm orchestration, langchain vs llamaindex, agentic workflow, how do i choose an ai framework, prompt engineering framework, AI agent platform, RAG architecture [tactical, generation] |
 | [airtable-api](skills/coding/airtable-api/SKILL.md) | Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python. | airtable api, pyairtable, airtable records, airtable bases, airtable python, airtable automation, airtable webhooks [tactical, generation] |
@@ -764,6 +765,7 @@ MIT — All skills are freely available and redistributable.
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. | anti-pattern, god object, leaky abstraction, feature envy, shotgun surgery, cargo cult, code smell, refactoring, bad design, harmful patterns [educational] |
 | [api-architecture](skills/coding/api-architecture/SKILL.md) | Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces. | api architecture, RESTful API, GraphQL, gRPC, API versioning, OpenAPI specification, rate limiting, authentication patterns, how do i design an API, API gateway, microservice communication, API design [tactical, generation, strategic] |
 | [api-design](skills/coding/api-design/SKILL.md) | Implements production REST API design patterns: resource modeling, unified error envelopes, Pydantic validation, rate limiting, OpenAPI docs, and versioning for maintainable backend systems. | api design, restful api, resource modeling, pydantic validation, error envelope, api versioning, fastapi patterns, how do i design an api [tactical, generation] |
+| [api-design-principles](skills/coding/api-design-principles/SKILL.md) | Implements modern API design principles (REST resource modeling, GraphQL schema design, standardized error responses, versioning strategies, and security best practices) for production-grade backend services. | api design, REST API, GraphQL, API versioning, error handling, OpenAPI, hypermedia, HATEOAS, API security, rate limiting, JSON:API |
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. | api development, REST API design, GraphQL schema design, API error handling, OpenAPI spec, API versioning strategy, how do i build a production API, API conventions [tactical, generation] |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | API gateway, api-gateway, request routing, rate limiting, auth proxy, API aggregation, load balancing, backend for frontend, BFF pattern, how do i route requests [tactical, generation] |
 | [api-gateway-domain-routing](skills/coding/api-gateway-domain-routing/SKILL.md) | Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services. | API gateway, domain routing, subdomain routing, Kong plugin, NGINX server block, Envoy routing, host header routing, how do i route requests by domain, bounded context routing [tactical, generation] |
@@ -1033,6 +1035,7 @@ MIT — All skills are freely available and redistributable.
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving [tactical, generation] |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging [tactical, generation] |
 | [production-readiness](skills/coding/production-readiness/SKILL.md) | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | production readiness, SRE review, deployment criteria, observability setup, canary deployment, on-call coverage, SLO SLI, error budget, golden signals, how do i know my service is production ready, operational excellence, hypercare period [diagnostic, educational] |
+| [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. | prompt optimization, prompt tuning, A/B test prompts, how do i improve my prompt, few-shot selection, prompt versioning, prompt regression testing, adversarial prompt testing [tactical, diagnostic] |
 | [pulumi](skills/coding/pulumi/SKILL.md) | Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration. | pulumi python, pulumi automation api, pulumi sdk, pulumi stacks, pulumi esc, infrastructure as code python, pulumi program, pulumi deploy [tactical, generation] |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports [tactical, generation] |
 | [python-package-publishing](skills/coding/python-package-publishing/SKILL.md) | Builds, verifies, and publishes Python packages with hatchling, hatch-vcs dynamic versioning, twine checks, test pypi, and GitHub Actions release CI/CD. | python package, publish to pypi, how do i publish a python package, build wheel sdist, pyproject.toml hatchling, twine check, test pypi, github actions release [tactical, generation] |
@@ -1305,7 +1308,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (528 skills)
+### Implementation (Build Features) (531 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1315,6 +1318,7 @@ MIT — All skills are freely available and redistributable.
 | [adyen-api](skills/coding/adyen-api/SKILL.md) | Coding | Implements Adyen API integration (Payments, Checkout, Marketplaces, Risk, Reporting) using adyen Python SDK with 3D Secure 2 authentication flow, webhook signature verification, idempotency keys, and global enterprise payment processing patterns. |
 | [agent-architecture-patterns](skills/agent/agent-architecture-patterns/SKILL.md) | Agent | Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives. |
 | [agent-communication-patterns](skills/agent/agent-communication-patterns/SKILL.md) | Agent | Implements inter-agent communication patterns (message passing, event-driven coordination, shared memory protocols, RPC-style calls, structured JSON messaging) for reliable multi-agent systems. |
+| [agent-evaluation-testing](skills/coding/agent-evaluation-testing/SKILL.md) | Coding | Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python. |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. |
@@ -1331,6 +1335,7 @@ MIT — All skills are freely available and redistributable.
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Coding | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. |
 | [api-architecture](skills/coding/api-architecture/SKILL.md) | Coding | Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces. |
 | [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements production REST API design patterns: resource modeling, unified error envelopes, Pydantic validation, rate limiting, OpenAPI docs, and versioning for maintainable backend systems. |
+| [api-design-principles](skills/coding/api-design-principles/SKILL.md) | Coding | Implements modern API design principles (REST resource modeling, GraphQL schema design, standardized error responses, versioning strategies, and security best practices) for production-grade backend services. |
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Coding | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. |
 | [api-gateway-domain-routing](skills/coding/api-gateway-domain-routing/SKILL.md) | Coding | Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services. |
@@ -1682,6 +1687,7 @@ MIT — All skills are freely available and redistributable.
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. |
+| [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Coding | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. |
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning |
 | [pulumi](skills/coding/pulumi/SKILL.md) | Coding | Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration. |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. |
@@ -2285,6 +2291,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-communication-patterns](skills/agent/agent-communication-patterns/SKILL.md) | Agent | Implements inter-agent communication patterns (message passing, event-driven coordination, shared memory protocols, RPC-style calls, structured JSON messaging) for reliable multi-agent systems. | Implementation |
 | [agent-context-management](skills/agent/agent-context-management/SKILL.md) | Agent | Implements context window management, sliding window strategies, and persistent memory patterns to maintain AI agent coherence across long interactions. | Orchestration |
 | [agent-evaluation](skills/agent/agent-evaluation/SKILL.md) | Agent | Implements intelligent agent evaluation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [agent-evaluation-testing](skills/coding/agent-evaluation-testing/SKILL.md) | Coding | Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python. | Implementation |
 | [agent-manager-skill](skills/agent/agent-manager-skill/SKILL.md) | Agent | Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [agent-memory-systems](skills/agent/agent-memory-systems/SKILL.md) | Agent | Implements intelligent agent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. | Implementation |
@@ -2319,6 +2326,7 @@ MIT — All skills are freely available and redistributable.
 | [antigravity-workflows](skills/agent/antigravity-workflows/SKILL.md) | Agent | Implements intelligent antigravity workflows with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-architecture](skills/coding/api-architecture/SKILL.md) | Coding | Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces. | Implementation |
 | [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements production REST API design patterns: resource modeling, unified error envelopes, Pydantic validation, rate limiting, OpenAPI docs, and versioning for maintainable backend systems. | Implementation |
+| [api-design-principles](skills/coding/api-design-principles/SKILL.md) | Coding | Implements modern API design principles (REST resource modeling, GraphQL schema design, standardized error responses, versioning strategies, and security best practices) for production-grade backend services. | Implementation |
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Coding | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. | Implementation |
 | [api-documentation](skills/agent/api-documentation/SKILL.md) | Agent | Implements intelligent api documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | Implementation |
@@ -2958,6 +2966,7 @@ MIT — All skills are freely available and redistributable.
 | [project](skills/cncf/project/SKILL.md) | Cncf | "Notary Project in Content Trust &amp; Security - cloud native architecture" patterns, pitfalls, and best practices | Reference |
 | [prometheus](skills/cncf/prometheus/SKILL.md) | Cncf | "Prometheus in Cloud-Native Engineering - The Prometheus monitoring system" and time series database. | Reference |
 | [prompt-engineer](skills/agent/prompt-engineer/SKILL.md) | Agent | Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Coding | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. | Implementation |
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning | Implementation |
 | [pulumi](skills/coding/pulumi/SKILL.md) | Coding | Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration. | Implementation |
 | [pydantic-ai](skills/agent/pydantic-ai/SKILL.md) | Agent | Implements intelligent pydantic ai with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |

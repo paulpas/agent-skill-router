@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T19:12:52.499602Z",
-  "totalSkills": 943,
+  "generatedAt": "2026-05-24T20:28:40.634267Z",
+  "totalSkills": 946,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 378,
+    "coding": 381,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 528,
+    "implementation": 531,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -293,6 +293,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-evaluation/SKILL.md"
+    },
+    {
+      "name": "agent-evaluation-testing",
+      "domain": "coding",
+      "description": "Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "agent evaluation",
+        "LLM testing",
+        "promptfoo",
+        "tool-use accuracy",
+        "hallucination detection",
+        "how do i test my agent",
+        "evaluate AI responses",
+        "agent quality assurance"
+      ],
+      "relatedSkills": [
+        "coding-software-quality-assurance",
+        "coding-test-driven-development",
+        "agent-skill-testing-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/agent-evaluation-testing/SKILL.md"
     },
     {
       "name": "agent-manager-skill",
@@ -1101,6 +1126,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/api-design/SKILL.md"
+    },
+    {
+      "name": "api-design-principles",
+      "domain": "coding",
+      "description": "Implements modern API design principles (REST resource modeling, GraphQL schema design, standardized error responses, versioning strategies, and security best practices) for production-grade backend services.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "api design",
+        "REST API",
+        "GraphQL",
+        "API versioning",
+        "error handling",
+        "OpenAPI",
+        "hypermedia",
+        "HATEOAS",
+        "API security",
+        "rate limiting",
+        "JSON:API"
+      ],
+      "relatedSkills": [
+        "coding-api-gateway",
+        "coding-rate-limiting",
+        "coding-openapi-specification"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-design-principles/SKILL.md"
     },
     {
       "name": "api-development-patterns",
@@ -16475,6 +16528,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/prompt-engineer/SKILL.md"
+    },
+    {
+      "name": "prompt-optimization",
+      "domain": "coding",
+      "description": "Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "prompt optimization",
+        "prompt tuning",
+        "A/B test prompts",
+        "how do i improve my prompt",
+        "few-shot selection",
+        "prompt versioning",
+        "prompt regression testing",
+        "adversarial prompt testing"
+      ],
+      "relatedSkills": [
+        "coding-agent-evaluation-testing",
+        "agent-prompt-engineer",
+        "coding-software-quality-assurance"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/prompt-optimization/SKILL.md"
     },
     {
       "name": "pulumi",
