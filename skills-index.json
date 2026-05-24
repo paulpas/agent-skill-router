@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-24T21:44:04.854565Z",
-  "totalSkills": 950,
+  "generatedAt": "2026-05-24T22:25:27.390800Z",
+  "totalSkills": 953,
   "domains": {
-    "agent": 259,
+    "agent": 262,
     "cncf": 173,
     "coding": 385,
     "electrical-engineering": 2,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 535,
+    "implementation": 538,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -505,6 +505,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ai-dev-jobs-mcp/SKILL.md"
+    },
+    {
+      "name": "ai-framework-comparison",
+      "domain": "agent",
+      "description": "Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ai framework comparison",
+        "framework evaluation",
+        "LangGraph vs CrewAI",
+        "agent framework scoring",
+        "LLM framework selection",
+        "AI framework matrix",
+        "model routing framework"
+      ],
+      "relatedSkills": [
+        "protocol-first-agent-design",
+        "ai-framework-selection",
+        "observability-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/ai-framework-comparison/SKILL.md"
     },
     {
       "name": "ai-framework-selector",
@@ -14863,6 +14887,32 @@
     },
     {
       "name": "observability-patterns",
+      "domain": "agent",
+      "description": "Implements tracing, cost tracking, and latency monitoring patterns for AI agent systems to debug failures, control token spend, and optimize response times across multi-agent workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "agent observability",
+        "AI tracing",
+        "LLM cost tracking",
+        "token spend monitoring",
+        "latency monitoring",
+        "agent debugging",
+        "OpenTelemetry agents",
+        "Phoenix tracing",
+        "LangSmith tracing"
+      ],
+      "relatedSkills": [
+        "ai-framework-comparison",
+        "protocol-first-agent-design",
+        "framework-utilization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/observability-patterns/SKILL.md"
+    },
+    {
+      "name": "observability-patterns",
       "domain": "coding",
       "description": "Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response.",
       "role": "implementation",
@@ -16653,6 +16703,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/prompt-optimization/SKILL.md"
+    },
+    {
+      "name": "protocol-first-agent-design",
+      "domain": "agent",
+      "description": "Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "MCP protocol",
+        "A2A agent protocol",
+        "model context protocol",
+        "agent interoperability",
+        "protocol-first design",
+        "vendor lock-in prevention",
+        "agent communication patterns",
+        "MCP server"
+      ],
+      "relatedSkills": [
+        "ai-framework-comparison",
+        "observability-patterns",
+        "framework-utilization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/protocol-first-agent-design/SKILL.md"
     },
     {
       "name": "pulumi",
