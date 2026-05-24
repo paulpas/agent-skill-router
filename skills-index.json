@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T17:50:46.840137Z",
+  "generatedAt": "2026-05-24T18:36:11.446466Z",
   "totalSkills": 941,
   "domains": {
     "agent": 259,
@@ -1080,25 +1080,24 @@
     {
       "name": "api-design",
       "domain": "coding",
-      "description": "Implements modern API design patterns (RESTful resource modeling, GraphQL schema design, gRPC service contracts) with consistent error handling, rate limiting, and versioning strategies for production backend systems.",
+      "description": "Implements production REST API design patterns: resource modeling, unified error envelopes, Pydantic validation, rate limiting, OpenAPI docs, and versioning for maintainable backend systems.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "api design",
         "restful api",
-        "graphql schema",
-        "gRPC service",
-        "openapi specification",
-        "versioning strategy",
-        "rate limiting",
-        "backend architecture",
-        "API architecture",
-        "microservices interface"
+        "resource modeling",
+        "pydantic validation",
+        "error envelope",
+        "api versioning",
+        "fastapi patterns",
+        "how do i design an api"
       ],
       "relatedSkills": [
-        "async-programming",
-        "automated-testing"
+        "coding-code-review",
+        "coding-rest-api-testing",
+        "coding-fastapi-patterns"
       ],
       "version": "1.0.0",
       "source": "skills/coding/api-design/SKILL.md"
@@ -20591,7 +20590,7 @@
     {
       "name": "test-driven-development",
       "domain": "coding",
-      "description": "Implements test-driven development (TDD) cycle with red-green-refactor workflow, writing failing unit tests before implementation code to drive design and catch regressions early.",
+      "description": "Implements test-driven development with red-green-refactor cycle, property-based testing, mocking strategies, and the test pyramid for behavior-first software design.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -20599,15 +20598,16 @@
         "test-driven development",
         "tdd",
         "red-green-refactor",
-        "unit testing",
+        "property-based testing",
+        "mocking strategies",
+        "test pyramid",
         "how do i write tests first",
-        "test-first approach",
-        "behavior driven"
+        "behavior-driven design"
       ],
       "relatedSkills": [
-        "mocking",
-        "test-coverage-analysis",
-        "refactoring"
+        "code-review",
+        "refactoring-techniques",
+        "software-testing-strategy"
       ],
       "version": "1.0.0",
       "source": "skills/coding/test-driven-development/SKILL.md"
