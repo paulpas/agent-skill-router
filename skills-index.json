@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-24T03:03:55.862050Z",
-  "totalSkills": 917,
+  "generatedAt": "2026-05-24T03:09:48.713492Z",
+  "totalSkills": 918,
   "domains": {
     "agent": 259,
     "cncf": 173,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 504,
+    "implementation": 505,
     "reference": 172,
     "information": 1,
     "review": 5
@@ -5984,6 +5984,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ddd-tactical-patterns/SKILL.md"
+    },
+    {
+      "name": "debugging-methodology",
+      "domain": "coding",
+      "description": "Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "debugging",
+        "root cause analysis",
+        "binary search debugging",
+        "bisect",
+        "rubber ducking",
+        "stack trace analysis",
+        "log debugging",
+        "production debug"
+      ],
+      "relatedSkills": [
+        "systematic-debugging",
+        "incident-response",
+        "sre-engineering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/debugging-methodology/SKILL.md"
     },
     {
       "name": "dependency-graph-builder",
