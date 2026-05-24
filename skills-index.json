@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T04:19:46.923580Z",
-  "totalSkills": 922,
+  "generatedAt": "2026-05-24T07:28:39.754107Z",
+  "totalSkills": 924,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 357,
+    "coding": 359,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 509,
+    "implementation": 511,
     "reference": 172,
     "information": 1,
     "review": 5
@@ -1046,6 +1046,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/antigravity-workflows/SKILL.md"
+    },
+    {
+      "name": "api-architecture",
+      "domain": "coding",
+      "description": "Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "api architecture",
+        "RESTful API",
+        "GraphQL",
+        "gRPC",
+        "API versioning",
+        "OpenAPI specification",
+        "rate limiting",
+        "authentication patterns",
+        "how do i design an API",
+        "API gateway",
+        "microservice communication",
+        "API design"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "event-driven-architecture",
+        "architecture-decision-records",
+        "security-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-architecture/SKILL.md"
     },
     {
       "name": "api-design",
@@ -8421,7 +8451,7 @@
     {
       "name": "framework-requirements-validation",
       "domain": "coding",
-      "description": "Validates code against framework conventions (React Hooks rules, Next.js App Router patterns, Django checks) and enforces build tool configuration compliance through automated linting pipelines and CI integration.",
+      "description": "Validates code against framework conventions and enforces build tool configuration compliance through automated linting pipelines, schema validation, and CI integration.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -8435,7 +8465,9 @@
         "biome linting",
         "vite config check",
         "tsconfig patterns",
-        "code conventions checker"
+        "code conventions checker",
+        "schema validation",
+        "ci linting pipeline"
       ],
       "relatedSkills": [
         "framework-utilization",
@@ -8504,7 +8536,7 @@
     {
       "name": "framework-utilization",
       "domain": "coding",
-      "description": "Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering.",
+      "description": "Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value while avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -8515,7 +8547,8 @@
         "fight the framework",
         "how do i learn a new framework",
         "framework conventions",
-        "framework adoption"
+        "framework adoption",
+        "framework best practices"
       ],
       "relatedSkills": [
         "requirement-driven-selection",
@@ -19762,6 +19795,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/system-hints-design/SKILL.md"
+    },
+    {
+      "name": "system-reliability-architecture",
+      "domain": "coding",
+      "description": "Implements production reliability patterns (circuit breakers, retry with exponential backoff, bulkhead isolation, health checks, graceful degradation, distributed tracing) to build fault-tolerant distributed systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "system reliability",
+        "circuit breaker",
+        "bulkhead isolation",
+        "distributed tracing",
+        "chaos engineering",
+        "fault tolerance",
+        "how do i make my system resilient",
+        "graceful degradation"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "event-driven-architecture",
+        "microservice-resilience-patterns",
+        "api-architecture",
+        "architectural-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/system-reliability-architecture/SKILL.md"
     },
     {
       "name": "systematic-debugging",

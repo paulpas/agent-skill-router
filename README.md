@@ -265,7 +265,7 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 02:28:18 UTC  
+> **Last updated:** 2026-05-24 07:28:41 UTC  
 > **Total skills:** 924  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (924 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
