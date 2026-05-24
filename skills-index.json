@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T21:00:46.322600Z",
-  "totalSkills": 947,
+  "generatedAt": "2026-05-24T21:44:04.854565Z",
+  "totalSkills": 950,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 382,
+    "coding": 385,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 532,
+    "implementation": 535,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -2137,6 +2137,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/aws-auto-scaling/SKILL.md"
+    },
+    {
+      "name": "autogen-conversational-patterns",
+      "domain": "coding",
+      "description": "Implements AutoGen conversational multi-agent workflows including group chat orchestration, code execution groups, termination conditions, and human-in-the-loop patterns for solving complex problems through agent dialogue.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "autogen",
+        "multi-agent conversation",
+        "group chat agents",
+        "code execution group",
+        "agent termination condition",
+        "how do i build conversational ai agents"
+      ],
+      "relatedSkills": [
+        "langgraph-implementation",
+        "crewai-agent-workflows",
+        "framework-utilization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/autogen-conversational-patterns/SKILL.md"
     },
     {
       "name": "automation",
@@ -5363,6 +5386,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/creational-design-patterns/SKILL.md"
+    },
+    {
+      "name": "crewai-agent-workflows",
+      "domain": "coding",
+      "description": "Implements CrewAI multi-agent collaboration patterns including role-based agents, task delegation, tool sharing, sequential and hierarchical workflows, and autonomous agent coordination for production AI applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "crewai",
+        "multi-agent collaboration",
+        "role based agents",
+        "agent task delegation",
+        "how do i coordinate ai agents",
+        "sequential agent workflow",
+        "hierarchical agent team"
+      ],
+      "relatedSkills": [
+        "langgraph-implementation",
+        "autogen-conversational-patterns",
+        "framework-utilization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/crewai-agent-workflows/SKILL.md"
     },
     {
       "name": "cross-domain-workflow-sagas",
@@ -12172,6 +12219,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/langgraph/SKILL.md"
+    },
+    {
+      "name": "langgraph-implementation",
+      "domain": "coding",
+      "description": "Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "langgraph",
+        "state graph",
+        "agent workflow",
+        "conditional routing",
+        "human in the loop",
+        "checkpointing",
+        "langchain graph",
+        "persistent agent",
+        "how do i build an ai agent workflow"
+      ],
+      "relatedSkills": [
+        "crewai-agent-workflows",
+        "autogen-conversational-patterns",
+        "framework-utilization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/langgraph-implementation/SKILL.md"
     },
     {
       "name": "lima",
