@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-23T23:52:14.020433Z",
-  "totalSkills": 911,
+  "generatedAt": "2026-05-24T00:33:05.349909Z",
+  "totalSkills": 913,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 347,
+    "coding": 349,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 499,
+    "implementation": 501,
     "reference": 171,
     "information": 1,
     "review": 5
@@ -17333,6 +17333,32 @@
       "source": "skills/cncf/security-compliance/SKILL.md"
     },
     {
+      "name": "security-engineering",
+      "domain": "coding",
+      "description": "Implements end-to-end secure development lifecycle practices including threat modeling (STRIDE/DREAD), OWASP Top 10 vulnerability prevention, zero-trust architecture patterns, supply chain security, and automated security pipeline integration for production systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "threat modeling",
+        "STRIDE",
+        "secure coding standards",
+        "OWASP Top 10",
+        "supply chain security",
+        "zero trust architecture",
+        "SAST DAST security pipeline",
+        "how do i secure my app"
+      ],
+      "relatedSkills": [
+        "coding-security-review",
+        "cncf-open-telemetry",
+        "coding-software-delivery-pipelines",
+        "coding-dependency-supply-chain-security"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/security-engineering/SKILL.md"
+    },
+    {
       "name": "security-policy",
       "domain": "cncf",
       "description": "\"Creates or updates SECURITY.md defining the vulnerability reporting process\" disclosure timeline, and supported versions for CNCF projects",
@@ -18899,6 +18925,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/square-api/SKILL.md"
+    },
+    {
+      "name": "sre-engineering",
+      "domain": "coding",
+      "description": "Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "sre",
+        "site reliability",
+        "SLO monitoring",
+        "error budget",
+        "incident management",
+        "capacity planning",
+        "chaos engineering",
+        "blameless postmortem"
+      ],
+      "relatedSkills": [
+        "coding-observability-engineering",
+        "coding-production-readiness",
+        "cncf-kubernetes",
+        "agent-incident-response"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/sre-engineering/SKILL.md"
     },
     {
       "name": "ssm",
