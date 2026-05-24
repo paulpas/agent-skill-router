@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T09:36:27.936198Z",
-  "totalSkills": 931,
+  "generatedAt": "2026-05-24T10:28:38.936185Z",
+  "totalSkills": 933,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 366,
+    "coding": 368,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 518,
+    "implementation": 520,
     "reference": 172,
     "information": 1,
     "review": 5
@@ -13439,6 +13439,33 @@
       "source": "skills/coding/pydantic-models/SKILL.md"
     },
     {
+      "name": "modern-architecture-patterns",
+      "domain": "coding",
+      "description": "Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "hexagonal architecture",
+        "ports and adapters",
+        "backends-for-frontends",
+        "bff pattern",
+        "feature flags",
+        "CQRS event sourcing",
+        "sidecar pattern",
+        "how do i design scalable systems"
+      ],
+      "relatedSkills": [
+        "structural-design-patterns",
+        "cqrs-pattern",
+        "microservice-resilience-patterns",
+        "domain-driven-design",
+        "clean-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/modern-architecture-patterns/SKILL.md"
+    },
+    {
       "name": "modern-language-comparison",
       "domain": "coding",
       "description": "Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions.",
@@ -19686,6 +19713,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/stripe-automation/SKILL.md"
+    },
+    {
+      "name": "structural-behavioral-patterns",
+      "domain": "coding",
+      "description": "Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "structural patterns",
+        "behavioral patterns",
+        "adapter pattern",
+        "observer pattern",
+        "strategy pattern",
+        "command pattern",
+        "facade pattern",
+        "how do i decouple code"
+      ],
+      "relatedSkills": [
+        "structural-design-patterns",
+        "behavioral-design-patterns",
+        "creational-design-patterns",
+        "design-patterns-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/structural-behavioral-patterns/SKILL.md"
     },
     {
       "name": "structural-design-patterns",
