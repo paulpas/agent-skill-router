@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T03:47:04.671535Z",
-  "totalSkills": 920,
+  "generatedAt": "2026-05-24T04:19:46.923580Z",
+  "totalSkills": 922,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 355,
+    "coding": 357,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 507,
+    "implementation": 509,
     "reference": 172,
     "information": 1,
     "review": 5
@@ -8571,6 +8571,35 @@
       "source": "skills/agent/full-stack-orchestration-full-stack-feature/SKILL.md"
     },
     {
+      "name": "functional-programming-patterns",
+      "domain": "coding",
+      "description": "Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "functional programming",
+        "pure function",
+        "immutable transform",
+        "function composition",
+        "currying",
+        "Option type",
+        "Either type",
+        "data pipeline",
+        "map filter reduce",
+        "referential transparency",
+        "how do i eliminate side effects",
+        "chain transformations"
+      ],
+      "relatedSkills": [
+        "immutable-data-patterns",
+        "software-error-handling",
+        "dependency-inversion-principle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/functional-programming-patterns/SKILL.md"
+    },
+    {
       "name": "functions",
       "domain": "cncf",
       "description": "Provides Serverless computing with event-driven functions and automatic scaling",
@@ -10090,6 +10119,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/idempotent-distributed-operations/SKILL.md"
+    },
+    {
+      "name": "immutable-data-patterns",
+      "domain": "coding",
+      "description": "Implements immutable data patterns (value objects, pure functions, structural updates, copy-on-write collections, domain events) to eliminate mutation bugs and enable safe concurrent data processing.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "immutable data",
+        "value object",
+        "pure function",
+        "structural update",
+        "copy-on-write",
+        "data immutability",
+        "frozen dataclass",
+        "readonly types",
+        "how do i prevent mutation bugs",
+        "safe concurrent data"
+      ],
+      "relatedSkills": [
+        "software-error-handling",
+        "functional-programming-patterns",
+        "dependency-inversion-principle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/immutable-data-patterns/SKILL.md"
     },
     {
       "name": "incident-response",

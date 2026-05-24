@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 920 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 922 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **920 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **922 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 355 | Software patterns, security, testing, data science |
+| Coding | 357 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 03:47:06 UTC  
-> **Total skills:** 920  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (920 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 04:19:48 UTC  
+> **Total skills:** 922  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (922 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 919 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 919 | Ranking penalty for conflicting query terms |
-| Response Profile | 919 | Verbosity, directive strength, abstraction level |
+| Archetypes | 921 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 921 | Ranking penalty for conflicting query terms |
+| Response Profile | 921 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (355 skills)
+### Coding (357 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -878,6 +878,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Validates code against framework conventions (React Hooks rules, Next.js App Router patterns, Django checks) and enforces build tool configuration compliance through automated linting pipelines and CI integration. | framework validation, eslint plugin react hooks, next.js linting rules, django check command, framework compliance, build tool config validation, biome linting, vite config check, tsconfig patterns, code conventions checker [tactical, generation] |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | framework selection, tech stack evaluation, weighted scoring matrix, AHP decision, framework comparison, technology assessment, framework criteria, evaluate frameworks, choose framework, select technology, tech stack decision, framework trade-offs [tactical, generation] |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. | framework utilization, three-pass learning, leverage framework patterns, fight the framework, how do i learn a new framework, framework conventions, framework adoption [tactical, generation] |
+| [functional-programming-patterns](skills/coding/functional-programming-patterns/SKILL.md) | Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code. | functional programming, pure function, immutable transform, function composition, currying, Option type, Either type, data pipeline, map filter reduce, referential transparency, how do i eliminate side effects, chain transformations [tactical, generation] |
 | [gemini-api](skills/coding/gemini-api/SKILL.md) | Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding. | gemini, gemini api, vertex ai, google genai, function calling, gemini 2.5 flash, how do i use gemini api, grounding [tactical, generation] |
 | [github-api](skills/coding/github-api/SKILL.md) | Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics. | github api, octokit, pygithub, github rest api, github graphql, manage repositories, github actions, pull request automation [tactical, generation] |
 | [gitlab-api](skills/coding/gitlab-api/SKILL.md) | Integrates with the GitLab REST API v4 and GraphQL API via python-gitlab to automate projects, merge requests, CI/CD pipelines, runners, and container registry management. | gitlab api, python-gitlab, gitlab ci/cd, merge request automation, gitlab pipelines, gitlab runner, gitlab graphql, manage projects [tactical, generation] |
@@ -901,6 +902,7 @@ MIT — All skills are freely available and redistributable.
 | [iac-engineering](skills/coding/iac-engineering/SKILL.md) | Implements advanced IaC engineering patterns including modular Terraform architecture, policy-as-code with OPA, GitOps with ArgoCD, Terratest-driven testing, and cross-cloud multi-account resource management for production infrastructure. | Terraform modules, policy as code, OPA Conftest, GitOps ArgoCD, IaC testing, Terratest, how do i manage terraform state [tactical, orchestration] |
 | [ibm-cloud-api](skills/coding/ibm-cloud-api/SKILL.md) | Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes Service, Cloud Object Storage) using IBM Cloud SDK for Python with IAM authentication and service patterns. | ibm cloud, watson api, ibm cloud sdk, cloud object storage, ibm kubernetes, cloud foundry, how do i use ibm cloud from python [tactical, generation] |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. | idempotency, idempotent, idempotency key, request deduplication, exactly once, duplicate detection, optimistic concurrency, idempotent handler, outbox pattern, race condition prevention [tactical, generation] |
+| [immutable-data-patterns](skills/coding/immutable-data-patterns/SKILL.md) | Implements immutable data patterns (value objects, pure functions, structural updates, copy-on-write collections, domain events) to eliminate mutation bugs and enable safe concurrent data processing. | immutable data, value object, pure function, structural update, copy-on-write, data immutability, frozen dataclass, readonly types, how do i prevent mutation bugs, safe concurrent data [tactical, generation] |
 | [incident-response](skills/coding/incident-response/SKILL.md) | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. | incident response, production outage, on-call procedures, postmortem, blameless postmortem, RCA root cause analysis, service degradation, how do i handle a production incident, incident command, severity classification, rollback procedure, escalation path [tactical, generation] |
 | [input-normalization](skills/coding/input-normalization/SKILL.md) | Normalizes and standardizes inconsistent inbound data into uniform internal formats using typed normalizers, locale-aware converters, and deterministic transformation pipelines for reliable downstream processing. | input normalization, data standardization, date parsing, currency conversion, phone number format, address normalization, text normalization, how do i normalize data, data cleaning, convert formats [tactical, generation] |
 | [input-processing-pipelines](skills/coding/input-processing-pipelines/SKILL.md) | Builds composable data processing pipelines that validate, transform, filter, and aggregate structured or semi-structured input through typed stages with error handling and observability. | input processing pipeline, data transformation, ETL pipeline, stage processing, data validation pipeline, map filter reduce, data cleaning pipeline, input sanitization chain, structured data extraction, data flow architecture, pipeline composition [tactical, generation] |
@@ -1262,7 +1264,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (507 skills)
+### Implementation (Build Features) (509 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1452,6 +1454,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Coding | Validates code against framework conventions (React Hooks rules, Next.js App Router patterns, Django checks) and enforces build tool configuration compliance through automated linting pipelines and CI integration. |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Coding | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. |
+| [functional-programming-patterns](skills/coding/functional-programming-patterns/SKILL.md) | Coding | Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code. |
 | [gemini-api](skills/coding/gemini-api/SKILL.md) | Coding | Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding. |
 | [github-api](skills/coding/github-api/SKILL.md) | Coding | Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics. |
 | [gitlab-api](skills/coding/gitlab-api/SKILL.md) | Coding | Integrates with the GitLab REST API v4 and GraphQL API via python-gitlab to automate projects, merge requests, CI/CD pipelines, runners, and container registry management. |
@@ -1481,6 +1484,7 @@ MIT — All skills are freely available and redistributable.
 | [iac-engineering](skills/coding/iac-engineering/SKILL.md) | Coding | Implements advanced IaC engineering patterns including modular Terraform architecture, policy-as-code with OPA, GitOps with ArgoCD, Terratest-driven testing, and cross-cloud multi-account resource management for production infrastructure. |
 | [ibm-cloud-api](skills/coding/ibm-cloud-api/SKILL.md) | Coding | Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes Service, Cloud Object Storage) using IBM Cloud SDK for Python with IAM authentication and service patterns. |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Coding | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. |
+| [immutable-data-patterns](skills/coding/immutable-data-patterns/SKILL.md) | Coding | Implements immutable data patterns (value objects, pure functions, structural updates, copy-on-write collections, domain events) to eliminate mutation bugs and enable safe concurrent data processing. |
 | [incident-response](skills/coding/incident-response/SKILL.md) | Coding | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. |
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. |
 | [indicator-confluence](skills/trading/indicator-confluence/SKILL.md) | Trading | "Provides Indicator Confluence Validation Systems for Confirming Trading Signals" |
@@ -2564,6 +2568,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value, avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. | Implementation |
 | [freshdesk-automation](skills/agent/freshdesk-automation/SKILL.md) | Agent | Implements intelligent freshdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [full-stack-orchestration-full-stack-feature](skills/agent/full-stack-orchestration-full-stack-feature/SKILL.md) | Agent | Implements intelligent full stack orchestration full stack feature with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [functional-programming-patterns](skills/coding/functional-programming-patterns/SKILL.md) | Coding | Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code. | Implementation |
 | [functions](skills/cncf/functions/SKILL.md) | Cncf | Provides Serverless computing with event-driven functions and automatic scaling | Reference |
 | [gemini-api](skills/coding/gemini-api/SKILL.md) | Coding | Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding. | Implementation |
 | [gemini-api-integration](skills/agent/gemini-api-integration/SKILL.md) | Agent | Implements intelligent gemini api integration with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2628,6 +2633,7 @@ MIT — All skills are freely available and redistributable.
 | [iam](skills/cncf/iam/SKILL.md) | Cncf | "Manages identity and access control with service accounts, roles, and" fine-grained permissions. | Reference |
 | [ibm-cloud-api](skills/coding/ibm-cloud-api/SKILL.md) | Coding | Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes Service, Cloud Object Storage) using IBM Cloud SDK for Python with IAM authentication and service patterns. | Implementation |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Coding | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. | Implementation |
+| [immutable-data-patterns](skills/coding/immutable-data-patterns/SKILL.md) | Coding | Implements immutable data patterns (value objects, pure functions, structural updates, copy-on-write collections, domain events) to eliminate mutation bugs and enable safe concurrent data processing. | Implementation |
 | [incident-response](skills/cncf/incident-response/SKILL.md) | Cncf | "Creates or updates an incident response plan covering detection, triage" communication, and post-incident review for CNCF projects | Reference |
 | [incident-response](skills/coding/incident-response/SKILL.md) | Coding | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. | Implementation |
 | [incident-response-runbooks](skills/cncf/incident-response-runbooks/SKILL.md) | Cncf | Implements incident response runbooks with detection, triage, communication, resolution, and post-incident procedures for Kubernetes and cloud-native environments. | Implementation |
