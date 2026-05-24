@@ -1,0 +1,20 @@
+---
+config:
+  theme: neutral
+---
+flowchart LR
+    subgraph Without["Without Router"]
+        direction TB
+        W1["User: 'review this code'"]
+        W2["AI: 'I'll do my best<br/>but I'm not a security expert'"]
+        W3["Result: generic advice<br/>Confidence: 60%<br/>━━━━░░░░░░░░░░░░░░"]
+        W1 --> W2 --> W3
+    end
+
+    subgraph With["With Router"]
+        direction TB
+        R1["User: 'review this code'"]
+        R2["OpenCode routes to<br/>code-review skill"]
+        R3["Result: OWASP-grounded<br/>analysis with CWE refs<br/>Confidence: 95%<br/>━━━━━━━━━━━━━━━━━━━━"]
+        R1 --> R2 --> R3
+    end

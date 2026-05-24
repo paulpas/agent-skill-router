@@ -1,0 +1,14 @@
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    subgraph Docker["Docker Container"]
+        direction TB
+        App["skill-router<br/>Port 3000"] --> Sources
+        Sources --> GitHub["GitHub raw (remote)<br/>Primary: lightweight index"]
+        Sources --> LocalDisk["Local disk (mounted)<br/>Fallback: git clone"]
+        App --> Caches["Caches<br/>/cache (persisted compressions)<br/>/app/cache/compressed"]
+        App --> SSH["SSH agent forwarding<br/>for private repos"]
+    end
+    Docker -->|"HTTP :3000"| API["HTTP API"]

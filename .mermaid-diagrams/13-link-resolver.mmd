@@ -1,0 +1,19 @@
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    Input["Skill content with links<br/>See [details](deep-dive.md)<br/>Read [docs](example.com)"] --> Parse["Parse markdown links via regex"]
+    Parse --> Local["Local file reference<br/>Read file safely<br/>Path traversal protection"]
+    Parse --> External["External URL"]
+    External --> E1["Static HTTP<br/>5s timeout, 1MB limit"]
+    External --> E2["Puppeteer + Chromium<br/>JS rendering if enabled"]
+    Local --> Process["Content Processing"]
+    E1 --> Process
+    E2 --> Process
+    Process --> P1["1. Under threshold → inline full"]
+    Process --> P2["2. Over threshold → compress"]
+    Process --> P3["3. Semantic mode → chunk → embed → top-K"]
+    P1 --> Output["Inline as formatted reference section<br/>[*] Reference: ..."]
+    P2 --> Output
+    P3 --> Output

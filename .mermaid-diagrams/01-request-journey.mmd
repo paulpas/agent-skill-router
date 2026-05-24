@@ -1,0 +1,17 @@
+---
+config:
+  theme: neutral
+---
+sequenceDiagram
+    participant User
+    participant OC as OpenCode Agent
+    participant Router as Skill Router :3000
+    participant Skills as Skill Library
+
+    User->>OC: "review this Python code for SQL injection"
+    OC->>Router: route_to_skill("review this code")
+    Router->>Skills: Query HNSW index
+    Skills-->>Router: Top matching skills
+    Router-->>OC: code-review (0.95), security-review (0.88)
+    OC->>OC: Inject skills into context
+    Note over OC: # Skill: coding-security-review<br/>OWASP Top 10 patterns<br/>SQL injection detection

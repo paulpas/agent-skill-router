@@ -1,0 +1,16 @@
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    Input["POST /route<br/>{ 'task' }"] --> Checks
+    subgraph Checks["Safety Layer Checks"]
+        direction TB
+        C1["1. Task length check (max 10K)"]
+        C2["2. Prompt injection scan (Tier 1)"]
+        C3["3. Skill allowlist check"]
+        C4["4. Schema validation"]
+    end
+    Checks --> Decision{"Safe?"}
+    Decision -->|"Yes"| Safe["→ Stage 2: Embedding"]
+    Decision -->|"No"| Unsafe["→ 403 Rejected + error message"]

@@ -1,0 +1,12 @@
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    subgraph Cache["Compression Cache Layers"]
+        direction TB
+        L1["In-Memory (LRU)<br/>84% hit rate, 1GB max<br/>1hr TTL (cold) / 30min (hot)"]
+        L1 -->|"miss"| L2["Disk Cache<br/>7-day TTL<br/>Lazy-write every 5s"]
+        L2 -->|"miss"| L3["Original Content<br/>From GitHub / disk"]
+    end
+    Note["Adaptive TTL: hot skills (top 100) get 30min TTL,<br/>cold skills get 1hr. Hot skills protected from eviction."]

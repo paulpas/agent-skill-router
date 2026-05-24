@@ -1,0 +1,23 @@
+---
+config:
+  theme: neutral
+---
+flowchart LR
+    subgraph Build["HNSW Building"]
+        direction TB
+        B1["Insert one-by-one"]
+        B2["Assign layer via<br/>exponential decay"]
+        B3["Connect to M nearest"]
+        B4["Shrink excess edges"]
+    end
+
+    subgraph Search["HNSW Searching"]
+        direction TB
+        S1["Enter at top layer"]
+        S2["Greedy descent"]
+        S3["Beam search ef"]
+        S4["Return top k"]
+    end
+
+    Build -->|"graph ready"| Search
+    Note["Key insight: HNSW achieves ~1ms search<br/>with 96%+ recall at 1536d<br/>18× faster than brute-force"]

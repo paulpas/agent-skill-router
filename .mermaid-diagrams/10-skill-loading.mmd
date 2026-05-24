@@ -1,0 +1,14 @@
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    subgraph Loading["Skill Loading Pipeline"]
+        direction TB
+        L1["1. Remote Index<br/>Fetches skills-index.json<br/>from GitHub (lightweight)"]
+        L2["2. On-Demand Content Fetch<br/>Memory cache → Disk cache →<br/>GitHub raw URL"]
+        L3["3. Fallback: Git Clone<br/>If index fails"]
+        L4["4. Embedding Generation<br/>Batched, 200/call"]
+        L5["5. HNSW Build<br/>~1ms search, ready"]
+        L1 --> L2 --> L3 --> L4 --> L5
+    end

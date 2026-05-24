@@ -1,0 +1,53 @@
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    Input["POST /route<br/>{ 'task': '...' }"] --> S1
+
+    subgraph S1Box["1. Safety Layer ~0.1ms"]
+        direction TB
+        S1["Check prompt injection<br/>Validate task length<br/>Enforce allowlists"]
+    end
+
+    S1 --> S2
+
+    subgraph S2Box["2. Hybrid Retrieval ~200ms"]
+        direction TB
+        S2a["Vector embedding (50%)"]
+        S2b["BM25 exact-term (20%)"]
+    end
+
+    S2 --> S3
+
+    subgraph S3Box["3. Archetype + Trigger ~0.1ms"]
+        direction TB
+        S3a["Trigger match (15%)"]
+        S3b["Archetype alignment (10%)"]
+        S3c["Anti-trigger penalty"]
+    end
+
+    S3 --> S4
+
+    subgraph S4Box["4. MMR Diversify ~0.1ms"]
+        direction TB
+        S4["Reduce near-duplicate skills<br/>lambda=0.7"]
+    end
+
+    S4 --> S5
+
+    subgraph S5Box["5. LLM Ranker ~3s (optional)"]
+        direction TB
+        S5["Re-rank when<br/>LLM_RANKING_ENABLED=true"]
+    end
+
+    S5 --> S6
+
+    subgraph S6Box["6. Filter + Plan ~0.1ms"]
+        direction TB
+        S6a["Score >= 0.5"]
+        S6b["Cap at maxSkills"]
+        S6c["Strategy: seq/par/hy"]
+    end
+
+    S6 --> Output["Selected: hybrid scored + diversified skills<br/>with score breakdown"]

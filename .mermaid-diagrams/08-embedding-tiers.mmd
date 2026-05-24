@@ -1,0 +1,26 @@
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    Start["Embedding Request"] --> T1
+
+    subgraph T1Box["Tier 1: Embeddings API"]
+        T1["OpenAI / llama.cpp<br/>text-embedding-3-small (1536d)<br/>POST /v1/embeddings"]
+    end
+
+    T1 -->|"fails?"| T2
+
+    subgraph T2Box["Tier 2: LLM Emulation"]
+        T2["Ask LLM for JSON array of floats<br/>64 dimensions<br/>Retries: 3 with backoff"]
+    end
+
+    T2 -->|"fails?"| T3
+
+    subgraph T3Box["Tier 3: Deterministic Hash"]
+        T3["hash → LCG → normalize<br/>Always works, no external deps<br/>Consistent across restarts"]
+    end
+
+    T3 --> Output["Embedding ready"]
+    T1 -->|"succeeds"| Output
+    T2 -->|"succeeds"| Output

@@ -1,0 +1,11 @@
+---
+config:
+  theme: neutral
+---
+flowchart LR
+    subgraph MCP["MCP Integration Flow"]
+        direction LR
+        OC["OpenCode<br/>Agent"] <-->|"Stdio<br/>JSON-RPC 2.0"| Bridge["skill-router-mcp.js<br/>tools/list<br/>tools/call"]
+        Bridge <-->|"HTTP :3000"| Router["Skill Router<br/>Fastify<br/>POST /route<br/>GET /skill/:name"]
+        OC --> Inject["Skill content injected<br/>into agent context<br/># Skill: coding-security-review<br/>..."]
+    end

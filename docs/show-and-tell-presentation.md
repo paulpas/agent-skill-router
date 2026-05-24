@@ -4,46 +4,24 @@
 
 The Agent Skill Router is a smart routing engine that matches user tasks to specialized "skill" documents loaded by OpenCode AI agents. Think of it as a GPS for AI expertise: you tell the router what you want to do, and it finds the right set of instructions to make the AI an expert in that domain.
 
-```ascii
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    THE REQUEST JOURNEY (HIGH-LEVEL)                          │
-│                                                                              │
-│  You type...                        OpenCode sees...                        │
-│  ┌──────────────────┐              ┌──────────────────────┐                 │
-│  │ "review this     │              │ Task detected!       │                 │
-│  │  Python code for │─────────────▶│ Calling route_to_skill│                 │
-│  │  SQL injection"  │              │ ("review this code") │                 │
-│  └──────────────────┘              └──────────┬───────────┘                 │
-│                                                │                              │
-│                                                ▼                              │
-│                               ┌──────────────────────────────────────┐       │
-│                               │      Skill Router (localhost:3000)     │       │
-│                               │  ┌────── 6-STAGE PIPELINE ───────┐   │       │
-│                               │  │ [Safety] → [Embed] → [Vector] │   │       │
-│                               │  │    [LLM]   → [Filter] → [Plan]│   │       │
-│                               │  └─────────────┬─────────────────┘   │       │
-│                               └─────────────────┼────────────────────┘       │
-│                                                  │                            │
-│                                                  ▼                            │
-│                               ┌──────────────────────────────────────┐       │
-│                               │    Router returns:                    │       │
-│                               │    ┌ code-review (0.95)               │       │
-│                               │    └ security-review (0.88)           │       │
-│                               └──────────────────┬───────────────────┘       │
-│                                                  │                            │
-│                                                  ▼                            │
-│                               ┌──────────────────────────────────────┐       │
-│                               │    Skills injected into AI context    │       │
-│                               │    ──────────────────────             │       │
-│                               │    # Skill: coding-security-review    │       │
-│                               │    # Skill: coding-code-review       │       │
-│                               │                                       │       │
-│                               │    AI now knows:                      │       │
-│                               │    • OWASP Top 10 patterns            │       │
-│                               │    • SQL injection detection          │       │
-│                               │    • Secure code review workflow      │       │
-│                               └──────────────────────────────────────┘       │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+sequenceDiagram
+    participant User
+    participant OC as OpenCode Agent
+    participant Router as Skill Router :3000
+    participant Skills as Skill Library
+
+    User->>OC: "review this Python code for SQL injection"
+    OC->>Router: route_to_skill("review this code")
+    Router->>Skills: Query HNSW index
+    Skills-->>Router: Top matching skills
+    Router-->>OC: code-review (0.95), security-review (0.88)
+    OC->>OC: Inject skills into context
+    Note over OC: # Skill: coding-security-review<br/>OWASP Top 10 patterns<br/>SQL injection detection
 ```
 
 ---
@@ -89,24 +67,15 @@ When an AI agent receives a task (like "review this code for security issues"), 
 
 The result: the AI agent suddenly _knows_ how to be a security code reviewer, a Kubernetes deployment expert, or an algorithmic trading developer — all without you needing to load anything manually.
 
-```ascii
-  ┌──────────────┐     "review this Python code for SQL injection"     ┌──────────────┐
-  │              │ ──────────────────────────────────────────────────▶  │              │
-  │    You       │                                                     │    Router    │
-  │              │ ◀──────────────────────────────────────────────────  │   :3000      │
-  └──────────────┘     Full expert skill content injected              └──────────────┘
-                                                                               │
-                                                                               ▼
-                                                                      ┌──────────────────┐
-                                                                      │  Skill Library    │
-                                                                      │  ┌──────────────┐ │
-                                                                      │  │code-review   │ │
-                                                                      │  │security      │ │
-                                                                      │  │kubernetes    │ │
-                                                                      │  │vwap          │ │
-                                                                      │  │... 900+ more  │ │
-                                                                      │  └──────────────┘ │
-                                                                      └──────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart LR
+    User["You"] -->|"review this Python code for SQL injection"| Router["Router :3000"]
+    Router --> Skills["Skill Library<br/>code-review<br/>security-review<br/>kubernetes<br/>vwap<br/>... 900+ more"]
+    Router -->|"Full expert skill content injected"| User
 ```
 
 ### Where It Lives
@@ -131,65 +100,61 @@ The result: the AI agent suddenly _knows_ how to be a security code reviewer, a 
 
 The core routing logic lives in `src/core/Router.ts`. When you send a task to `/route`, it goes through a multi-signal hybrid scoring pipeline:
 
-```ascii
-                        ┌─────── HYBRID SCORING PIPELINE ────────┐
-                        │                                          │
-   POST /route          │                                          │
-   { "task": "..." }    │                                          │
-        │               │                                          │
-        ▼               │                                          │
-   ┌──────────┐  ~0.1ms │   ┌──────────────────────┐               │
-   │ 1. Safety│         │   │  SafetyLayer checks  │               │
-   │  Layer   │─────────┼──▶│  for prompt          │               │
-   └──────────┘         │   │  injection attacks   │               │
-        │               │   └──────────┬───────────┘               │
-        ▼               │              │                            │
-   ┌──────────┐  ~200ms │              ▼                            │
-   │ 2. Hybrid│         │   ┌──────────────────────┐               │
-   │ Retrieval│─────────┼──▶│  Vector embedding    │               │
-   │          │         │   │  (50% weight) +      │               │
-   │          │         │   │  BM25 exact-term     │               │
-   │          │         │   │  (20% weight)        │               │
-   └──────────┘         │   └──────────┬───────────┘               │
-        │               │              │                            │
-        ▼               │              ▼                            │
-   ┌──────────┐  ~0.1ms │   ┌──────────────────────┐               │
-   │ 3. Arche-│         │   │  Trigger match (15%)  │               │
-   │  type +  │─────────┼──▶│  Archetype alignment  │               │
-   │ Trigger  │         │   │  (10%) + Penalty for  │               │
-   │ Scoring  │         │   │  anti-trigger matches │               │
-   └──────────┘         │   └──────────┬───────────┘               │
-        │               │              │                            │
-        ▼               │              ▼                            │
-   ┌──────────┐  ~0.1ms │   ┌──────────────────────┐               │
-   │ 4. MMR   │         │   │  Maximal Marginal    │               │
-   │ Diversify│─────────┼──▶│  Relevance reduces   │               │
-   │          │         │   │  near-duplicate      │               │
-   │          │         │   │  skill results       │               │
-   └──────────┘         │   └──────────┬───────────┘               │
-        │               │              │                            │
-        ▼               │              ▼                            │
-   ┌──────────┐  ~3s    │   ┌──────────────────────┐               │
-   │ 5. LLM   │         │   │  Optional re-ranking │               │
-   │  Ranker  │─────────┼──▶│  when                │               │
-   │ (opt.)   │         │   │  LLM_RANKING_ENABLED │               │
-   └──────────┘         │   └──────────┬───────────┘               │
-        │               │              │                            │
-        ▼               │              ▼                            │
-   ┌──────────┐  ~0.1ms │   ┌──────────────────────┐               │
-   │ 6. Filter│         │   │  Enforce score ≥ 0.5 │               │
-   │  + Plan  │─────────┼──▶│  Cap at maxSkills    │               │
-   │          │         │   │  Strategy: seq/par/hy │               │
-   └──────────┘         │   └──────────────────────┘               │
-        │               │                                          │
-        ▼               └──────────────────────────────────────────┘
-   ┌──────────────────────┐
-   │  Selected: hybrid    │
-   │  scored + diversified│
-   │  skills with score   │
-   │  breakdown           │
-   └──────────────────────┘
- ```
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    Input["POST /route<br/>{ 'task': '...' }"] --> S1
+
+    subgraph S1Box["1. Safety Layer ~0.1ms"]
+        direction TB
+        S1["Check prompt injection<br/>Validate task length<br/>Enforce allowlists"]
+    end
+
+    S1 --> S2
+
+    subgraph S2Box["2. Hybrid Retrieval ~200ms"]
+        direction TB
+        S2a["Vector embedding (50%)"]
+        S2b["BM25 exact-term (20%)"]
+    end
+
+    S2 --> S3
+
+    subgraph S3Box["3. Archetype + Trigger ~0.1ms"]
+        direction TB
+        S3a["Trigger match (15%)"]
+        S3b["Archetype alignment (10%)"]
+        S3c["Anti-trigger penalty"]
+    end
+
+    S3 --> S4
+
+    subgraph S4Box["4. MMR Diversify ~0.1ms"]
+        direction TB
+        S4["Reduce near-duplicate skills<br/>lambda=0.7"]
+    end
+
+    S4 --> S5
+
+    subgraph S5Box["5. LLM Ranker ~3s (optional)"]
+        direction TB
+        S5["Re-rank when<br/>LLM_RANKING_ENABLED=true"]
+    end
+
+    S5 --> S6
+
+    subgraph S6Box["6. Filter + Plan ~0.1ms"]
+        direction TB
+        S6a["Score >= 0.5"]
+        S6b["Cap at maxSkills"]
+        S6c["Strategy: seq/par/hy"]
+    end
+
+    S6 --> Output["Selected: hybrid scored + diversified skills<br/>with score breakdown"]
+```
 
 > 💡 **Reading guide:** The hybrid scoring pipeline above is the heart of the router. Each stage has a deep-dive section later in this document. Stick around for the high level, or jump to any stage that interests you.
 
@@ -220,20 +185,27 @@ The router gives AI agents **just-in-time expertise**:
 - **Self-updating** — periodic sync discovers new skills automatically
 - **Trivially extensible** — add a markdown file and it's instantly available
 
-```ascii
-   WITHOUT ROUTER                           WITH ROUTER
-   ┌─────────────────────────┐             ┌─────────────────────────┐
-   │  "review this code"      │             │  "review this code"      │
-   │                         │             │                         │
-   │  AI: "I'll do my best   │             │  OpenCode routes →      │
-   │  but I'm not a security │             │  code-review skill      │
-   │  expert"                 │             │  loads expert workflow  │
-   │                         │             │                         │
-   │  Result: generic advice  │             │  Result: OWASP-grounded │
-   │  Confidence: 60%        │             │  analysis with CWE refs │
-   │  ━━━━━━░░░░░░░░░░░░░░   │             │  Confidence: 95%        │
-   │                         │             │  ━━━━━━━━━━━━━━━━━━━━━━ │
-   └─────────────────────────┘             └─────────────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart LR
+    subgraph Without["Without Router"]
+        direction TB
+        W1["User: 'review this code'"]
+        W2["AI: 'I'll do my best<br/>but I'm not a security expert'"]
+        W3["Result: generic advice<br/>Confidence: 60%"]
+        W1 --> W2 --> W3
+    end
+
+    subgraph With["With Router"]
+        direction TB
+        R1["User: 'review this code'"]
+        R2["OpenCode routes to<br/>code-review skill"]
+        R3["Result: OWASP-grounded<br/>analysis with CWE refs<br/>Confidence: 95%"]
+        R1 --> R2 --> R3
+    end
 ```
 
 The Agent Skill Router transforms an LLM from a helpful generalist into a domain specialist — on demand, automatically, and at scale.
@@ -263,31 +235,22 @@ Because engineers love benchmarks:
 
 Skills are the heart of the system — self-contained Markdown documents that each contain specialized expertise for an AI agent.
 
-```ascii
-                    ┌── SKILL DIRECTORY STRUCTURE ──┐
-                    │                                │
-                    │ skills/                        │
-                    │ ├── agent/          (255)      │
-                    │ │   ├── confidence-based-      │
-                    │ │   │   selector/SKILL.md      │
-                    │ │   ├── task-decomposition/    │
-                    │ │   │   SKILL.md               │
-                    │ │   └── ...                    │
-                    │ ├── cncf/           (171)      │
-                    │ │   ├── kubernetes/SKILL.md    │
-                    │ │   ├── prometheus/SKILL.md    │
-                    │ │   └── ...                    │
-                    │ ├── coding/          (82)       │
-                    │ ├── go/              (12)       │
-                    │ ├── linux/           (10)       │
-                    │ ├── programming/      (4)       │
-                    │ ├── trading/         (83)       │
-                    │ └── writing/          (1)       │
-                    │                                │
-                    │        Total: 758 skills        │
-                    └────────────────────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    Root["skills/"] --> Agent["agent/ (255)"]
+    Root --> Cncf["cncf/ (171)"]
+    Root --> Coding["coding/ (82)"]
+    Root --> Go["go/ (12)"]
+    Root --> Linux["linux/ (10)"]
+    Root --> Prog["programming/ (4)"]
+    Root --> Trading["trading/ (83)"]
+    Root --> Writing["writing/ (1)"]
+    Total["Total: 758 skills"] -.-> Root
 ```
-
 ### Anatomy of a Skill
 
 Every SKILL.md file follows a strict format:
@@ -345,24 +308,17 @@ Implements stop loss mechanisms to limit losses and protect capital.
 
 The `metadata.triggers` field is what makes auto-loading work. When OpenCode detects trigger keywords in conversation, the matching skill is automatically injected into context — no manual `/skill` command needed.
 
-```ascii
-                ┌── TRIGGER AUTO-DISCOVERY ──┐
-                │                              │
-   User says:   │   Router scans metadata:     │
-   "help with   │                              │
-    stop loss"  │   trading-risk-stop-loss     │
-                │   triggers: stop loss,       │
-                │   trailing stop, emergency   │
-                │   stop, ATR, position prot.  │
-                │                ↓              │
-                │   MATCH: "stop loss" found!  │
-                │   Auto-loading skill...      │
-                │                ↓              │
-                │   Skill injected into        │
-                │   agent context              │
-                └──────────────────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart LR
+    User["User says:<br/>'help with stop loss'"] --> Router["Router scans metadata:"]
+    Router --> Match["trading-risk-stop-loss<br/>triggers: stop loss, trailing stop,<br/>emergency stop, ATR, position prot."]
+    Match -->|"MATCH: 'stop loss' found!"| Load["Auto-loading skill..."]
+    Load --> Inject["Skill injected into agent context"]
 ```
-
 | Trigger Style | Example | Catches |
 |---|---|---|
 | Technical term | `stop loss` | Domain experts |
@@ -376,23 +332,24 @@ The `metadata.triggers` field is what makes auto-loading work. When OpenCode det
 
 The safety layer lives in `src/core/SafetyLayer.ts` (424 lines) and is invoked as Stage 1 in `src/core/Router.ts` — before embeddings are generated, before skill search begins, before anything else touches the request. If the task is malicious, it never reaches the rest of the pipeline.
 
-```ascii
-                        SAFETY LAYER FLOW
-
-    POST /route  ──▶  ┌─────────────────────────────────────┐
-    { "task" }        │  1. Task length check (max 10K)      │
-                      │  2. Prompt injection scan (Tier 1)   │
-                      │  3. Skill allowlist check            │
-                      │  4. Schema validation                 │
-                      └──────────┬──────────────────────────┘
-                                 │
-                    ┌────────────┴────────────┐
-                    ▼                         ▼
-               Safe                        Unsafe
-               → Stage 2                   → 403 Rejected
-                 (Embedding)                 + error message
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    Input["POST /route<br/>{ 'task' }"] --> Checks
+    subgraph Checks["Safety Layer Checks"]
+        direction TB
+        C1["1. Task length check (max 10K)"]
+        C2["2. Prompt injection scan (Tier 1)"]
+        C3["3. Skill allowlist check"]
+        C4["4. Schema validation"]
+    end
+    Checks --> Decision{"Safe?"}
+    Decision -->|"Yes"| Safe["-> Stage 2: Embedding"]
+    Decision -->|"No"| Unsafe["-> 403 Rejected + error message"]
 ```
-
 ### Two-Tier Detection Architecture
 
 **Tier 1: Regex Pattern Matching (always-on)** — Three independent categories of high-specificity patterns. Each category is self-contained: one match per category counts as one signal. No single category is enough to block on its own (unless `SAFETY_STRICT=true`).
@@ -486,33 +443,34 @@ The VectorDatabase class manages semantic search using an HNSW (Hierarchical Nav
 
 The EmbeddingService uses a three-tier strategy to guarantee the system works without any API keys.
 
-```ascii
-                                          EMBEDDING GENERATION TIERS
-                                                   
-                    ┌─ TIER 1 ──────────────────────────────┐
-                    │  OpenAI / llama.cpp Embeddings API     │
-                    │  (/v1/embeddings)                      │
-                    │  text-embedding-3-small (1536d)        │
-                    └──────────────┬────────────────────────┘
-                                   │ failed?
-                                   ▼
-                    ┌─ TIER 2 ──────────────────────────────┐
-                    │  LLM Embedding Emulation              │
-                    │  Ask ANY chat LLM to produce a         │
-                    │  JSON array of floats via text prompt  │
-                    │  (64 dimensions, parse + validate)     │
-                    │  Retries: 3 with exponential backoff   │
-                    └──────────────┬────────────────────────┘
-                                   │ failed?
-                                   ▼
-                    ┌─ TIER 3 ──────────────────────────────┐
-                    │  Deterministic Hash-Based Fallback     │
-                    │  Always works, no external deps        │
-                    │  Algorithmic: hash → LCG → normalize   │
-                    │  Consistent across restarts            │
-                    └────────────────────────────────────────┘
-```
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    Start["Embedding Request"] --> T1
 
+    subgraph T1Box["Tier 1: Embeddings API"]
+        T1["OpenAI / llama.cpp<br/>text-embedding-3-small (1536d)<br/>POST /v1/embeddings"]
+    end
+
+    T1 -->|"fails?"| T2
+
+    subgraph T2Box["Tier 2: LLM Emulation"]
+        T2["Ask LLM for JSON array of floats<br/>64 dimensions<br/>Retries: 3 with backoff"]
+    end
+
+    T2 -->|"fails?"| T3
+
+    subgraph T3Box["Tier 3: Deterministic Hash"]
+        T3["hash -> LCG -> normalize<br/>Always works, no external deps<br/>Consistent across restarts"]
+    end
+
+    T3 --> Output["Embedding ready"]
+    T1 -->|"succeeds"| Output
+    T2 -->|"succeeds"| Output
+```
 **Tier 1: Direct Embeddings API (Default)**
 
 The router first tries the standard embeddings endpoint:
@@ -575,27 +533,31 @@ This produces a **consistent, deterministic embedding** for the same text across
 
 HNSW (Hierarchical Navigable Small World) builds a multi-layer graph where the top layer has a few long-range connections (fast routing) and the bottom layer has many short-range connections (accurate neighbors). Search descends greedily through layers, then does a beam search (ef) on the bottom layer.
 
-```ascii
-                ┌── HNSW SEARCH ────┐
-                │                     │
-   Building:    │   insert one-by-one │
-                │   assign layer via  │
-                │   exponential decay  │
-                │   connect to M nearest│
-                │   shrink excess edges │
-                │                     │
-   Searching:   │   enter at top layer│
-                │   greedy descent    │
-                │   beam search ef    │
-                │   return top k      │
-                │                     │
-                └─────────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart LR
+    subgraph Build["HNSW Building"]
+        direction TB
+        B1["Insert one-by-one"]
+        B2["Assign layer via<br/>exponential decay"]
+        B3["Connect to M nearest"]
+        B4["Shrink excess edges"]
+    end
 
-   Key insight: HNSW handles high-dimensional data far better
-   than tree-based structures. At 1536d, it achieves ~1ms search
-   with 96%+ recall — 18× faster than brute-force.
+    subgraph Search["HNSW Searching"]
+        direction TB
+        S1["Enter at top layer"]
+        S2["Greedy descent"]
+        S3["Beam search ef"]
+        S4["Return top k"]
+    end
+
+    Build -->|"graph ready"| Search
+    Note["Key insight: HNSW achieves ~1ms search<br/>with 96%+ recall at 1536d<br/>18x faster than brute-force"]
 ```
-
 ### Performance & Recall
 
 | Metric | Brute Force | HNSW (ef=50) | HNSW (ef=200) |
@@ -675,55 +637,22 @@ Ranking results are cached by a deterministic hash of the task + candidate set. 
 
 The router has a two-tier skill loading system designed for scale.
 
-```ascii
-                    ┌─── SKILL LOADING PIPELINE ───┐
-                    │                                │
-                    │     ┌──────────────────┐       │
-                    │     │  1. Remote Index │       │
-                    │     │  (Primary path)  │       │
-                    │     │                  │       │
-                    │     │  Fetches         │       │
-                    │     │  skills-index.json│      │
-                    │     │  from GitHub     │       │
-                    │     │  ← lightweight   │       │
-                    │     │  (no git clone)  │       │
-                    │     └────────┬─────────┘       │
-                    │              │                  │
-                    │              ▼                  │
-                    │     ┌──────────────────┐       │
-                    │     │ 2. On-Demand     │       │
-                    │     │  Content Fetch   │       │
-                    │     │                  │       │
-                    │     │  Memory cache →  │       │
-                    │     │  Local disk →    │       │
-                    │     │  GitHub raw URL  │       │
-                    │     └────────┬─────────┘       │
-                    │              │                  │
-                    │              ▼                  │
-                    │     ┌──────────────────┐       │
-                    │     │ 3. Fallback:     │       │
-                    │     │  Git Clone       │       │
-                    │     │  (if index fails)│       │
-                    │     └────────┬─────────┘       │
-                    │              │                  │
-                    │              ▼                  │
-                    │     ┌──────────────────┐       │
-                    │     │ 4. Embedding     │       │
-                    │     │  Generation      │       │
-                    │     │  (batched, 200/  │       │
-                    │     │   call)          │       │
-                    │     └────────┬─────────┘       │
-                    │              │                  │
-                    │              ▼                  │
-                    │     ┌──────────────────┐       │
-                    │     │ 5. HNSW Build   │       │
-                    │     │  O(log n) search │       │
-                    │     │  ready            │       │
-                    │     └──────────────────┘       │
-                    │                                │
-                    └────────────────────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    subgraph Loading["Skill Loading Pipeline"]
+        direction TB
+        L1["1. Remote Index<br/>Fetches skills-index.json<br/>from GitHub (lightweight)"]
+        L2["2. On-Demand Content Fetch<br/>Memory cache -> Disk cache -><br/>GitHub raw URL"]
+        L3["3. Fallback: Git Clone<br/>If index fails"]
+        L4["4. Embedding Generation<br/>Batched, 200/call"]
+        L5["5. HNSW Build<br/>~1ms search, ready"]
+        L1 --> L2 --> L3 --> L4 --> L5
+    end
 ```
-
 ### Primary Path: Remote Index
 
 1. On startup, the router fetches `skills-index.json` from GitHub raw content — a lightweight file containing metadata for every skill (name, description, domain, triggers).
@@ -751,41 +680,19 @@ Once skills are loaded, the router generates embeddings in batches of 200. The H
 
 The MCP (Model Context Protocol) bridge is the glue that connects OpenCode to the Skill Router. It's a stdio-based Node.js process (`skill-router-mcp.js`) that exposes two tools to the AI agent.
 
-```ascii
-                 ┌── MCP INTEGRATION FLOW ──┐
-                 │                           │
-   ┌─────────┐   │                           │   ┌──────────────┐
-   │         │   │   Stdio (JSON-RPC 2.0)    │   │              │
-   │ OpenCode├───┼──────────────────────────▶│   │  skill-      │
-   │  Agent  │   │   tools/list              │   │  router-mcp  │
-   │         │   │   tools/call              │   │  .js         │
-   └────┬────┘   │                           │   └──────┬───────┘
-        │        │                           │          │
-        │        └───────────────────────────┘          │
-        │                                               │ HTTP
-        │                                               │ :3000
-        │                                               ▼
-        │                                       ┌──────────────┐
-        │                                       │  Skill Router│
-        │                                       │  (Fastify)   │
-        │                                       │              │
-        │                                       │  POST /route │
-        │                                       │  GET /skill/ │
-        │                                       │  :name       │
-        │                                       └──────────────┘
-        │
-        ▼
-   Skill content injected
-   into agent's context
-   ───────────────────────
-   # Skill: coding-
-   security-review
-   ...
-   # Skill: coding-
-   code-review
-   ...
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart LR
+    subgraph MCP["MCP Integration Flow"]
+        direction LR
+        OC["OpenCode<br/>Agent"] <-->|"Stdio<br/>JSON-RPC 2.0"| Bridge["skill-router-mcp.js<br/>tools/list<br/>tools/call"]
+        Bridge <-->|"HTTP :3000"| Router["Skill Router<br/>Fastify<br/>POST /route<br/>GET /skill/:name"]
+        OC --> Inject["Skill content injected<br/>into agent context<br/># Skill: coding-security-review<br/>..."]
+    end
 ```
-
 ### The Two MCP Tools
 
 **`route_to_skill(task)`** — Called at the beginning of every task:
@@ -840,87 +747,47 @@ An LLM intelligently summarizes skill content while preserving key instructions.
 
 ### Cache Architecture
 
-```ascii
-┌─────────────────────────────────────────────┐
-│           COMPRESSION CACHE LAYERS            │
-│                                               │
-│  ┌──────────────────┐  84% hit rate           │
-│  │ In-Memory (LRU)  │  1GB max               │
-│  │  1hr TTL (cold)  │                        │
-│  │  30min TTL (hot) │                        │
-│  └────────┬─────────┘                        │
-│           │ miss                               │
-│           ▼                                   │
-│  ┌──────────────────┐  7-day TTL             │
-│  │ Disk Cache       │  Lazy-write every 5s   │
-│  └────────┬─────────┘                        │
-│           │ miss                               │
-│           ▼                                   │
-│  ┌──────────────────┐                        │
-│  │ Original Content  │  From GitHub / disk    │
-│  └──────────────────┘                        │
-│                                               │
-│  Adaptive TTL: hot skills (top 100) get       │
-│  30min TTL, cold skills get 1hr. Hot skills   │
-│  are protected from LRU eviction.             │
-└─────────────────────────────────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    subgraph Cache["Compression Cache Layers"]
+        direction TB
+        L1["In-Memory (LRU)<br/>84% hit rate, 1GB max<br/>1hr TTL (cold) / 30min (hot)"]
+        L1 -->|"miss"| L2["Disk Cache<br/>7-day TTL<br/>Lazy-write every 5s"]
+        L2 -->|"miss"| L3["Original Content<br/>From GitHub / disk"]
+    end
+    Note["Adaptive TTL: hot skills (top 100) get 30min TTL,<br/>cold skills get 1hr. Hot skills protected from eviction."]
 ```
-
 ---
 
 ## Link Following: Skills That Reference the Web
 
 Skill documents can contain markdown links — both to local files (`[details](implementation.md)`) and to external URLs (`[docs](https://example.com)`). When enabled, the **MarkdownLinkResolver** automatically resolves these links and inlines the referenced content directly into the skill.
 
-```ascii
-              ┌── MARKDOWN LINK RESOLVER ──┐
-              │                              │
-              │  Skill content with links     │
-              │  ---                          │
-              │  See [details](deep-dive.md)  │
-              │  Read [docs](example.com)     │
-              │  ---                          │
-              │         │                      │
-              │         ▼                      │
-              │  ┌─────────────────────┐       │
-              │  │ Parse markdown      │       │
-              │  │ links via regex     │       │
-              │  └────────┬────────────┘       │
-              │           │                      │
-              │     ┌─────┴──────┐               │
-              │     ▼            ▼                │
-              │  Local         External           │
-              │  ┌────────┐   ┌──────────────┐   │
-              │  │Read    │   │ Static HTTP  │   │
-              │  │file    │   │ (no JS)      │   │
-              │  └────────┘   ├──────────────┤   │
-              │               │ Puppeteer +  │   │
-              │               │ Chromium     │   │
-              │               │ (JS render)  │   │
-              │               └──────┬───────┘   │
-              │                      │            │
-              │                      ▼            │
-              │  ┌──────────────────────────┐     │
-              │  │ Content Processing        │     │
-              │  │                           │     │
-              │  │ 1. Under threshold → inline│    │
-              │  │ 2. Over threshold →        │    │
-              │  │    compress or truncate    │    │
-              │  │ 3. Semantic mode →         │    │
-              │  │    embed chunks, find top-K│    │
-              │  └──────────┬───────────────┘     │
-              │             │                      │
-              │             ▼                      │
-              │  ┌──────────────────────────┐     │
-              │  │ Inline as formatted      │     │
-              │  │ reference section         │     │
-              │  │ 📎 Reference: ...         │     │
-              │  │ > Source: url             │     │
-              │  └──────────────────────────┘     │
-              │                              │
-              └──────────────────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    Input["Skill content with links<br/>See [details](deep-dive.md)<br/>Read [docs](example.com)"] --> Parse["Parse markdown links via regex"]
+    Parse --> Local["Local file reference<br/>Read file safely<br/>Path traversal protection"]
+    Parse --> External["External URL"]
+    External --> E1["Static HTTP<br/>5s timeout, 1MB limit"]
+    External --> E2["Puppeteer + Chromium<br/>JS rendering if enabled"]
+    Local --> Process["Content Processing"]
+    E1 --> Process
+    E2 --> Process
+    Process --> P1["1. Under threshold -> inline full"]
+    Process --> P2["2. Over threshold -> compress"]
+    Process --> P3["3. Semantic mode -> chunk -> embed -> top-K"]
+    P1 --> Output["Inline as formatted reference section<br/>[*] Reference: ..."]
+    P2 --> Output
+    P3 --> Output
 ```
-
 ### Resolution Modes
 
 | Mode | Description | When to Use |
@@ -1068,34 +935,22 @@ curl -X POST http://localhost:3000/config/link-following \
 
 ## Docker Deployment: Running the Router
 
-```ascii
-                ┌── DOCKER SETUP ──┐
-                │                   │
-                │  docker run       │
-                │  skill-router     │
-                │                   │
-                │  Port 3000 ───────┤──► HTTP API
-                │                   │
-                │  Skills from:     │
-                │  ┌─────────────┐  │
-                │  │ GitHub raw  │  │  ← Primary (lightweight index)
-                │  │ (remote)    │  │
-                │  ├─────────────┤  │
-                │  │ Local disk  │  │  ← Fallback (git clone)
-                │  │ (mounted)   │  │
-                │  └─────────────┘  │
-                │                   │
-                │  Caches:          │
-                │  /cache           │  ← Persisted compressions
-                │  /app/cache/      │
-                │   compressed      │
-                │                   │
-                │  SSH agent        │
-                │  forwarding for   │
-                │  private repos    │
-                └───────────────────┘
+```mermaid
+---
+config:
+  theme: neutral
+---
+flowchart TD
+    subgraph Docker["Docker Container"]
+        direction TB
+        App["skill-router<br/>Port 3000"] --> Sources
+        Sources --> GitHub["GitHub raw (remote)<br/>Primary: lightweight index"]
+        Sources --> LocalDisk["Local disk (mounted)<br/>Fallback: git clone"]
+        App --> Caches["Caches<br/>/cache (persisted compressions)<br/>/app/cache/compressed"]
+        App --> SSH["SSH agent forwarding<br/>for private repos"]
+    end
+    Docker -->|"HTTP :3000"| API["HTTP API"]
 ```
-
 ### Quick Start
 
 ```bash

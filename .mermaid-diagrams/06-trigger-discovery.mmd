@@ -1,0 +1,9 @@
+---
+config:
+  theme: neutral
+---
+flowchart LR
+    User["User says:<br/>'help with stop loss'"] --> Router["Router scans metadata:"]
+    Router --> Match["trading-risk-stop-loss<br/>triggers: stop loss, trailing stop,<br/>emergency stop, ATR, position prot."]
+    Match -->|"MATCH: 'stop loss' found!"| Load["Auto-loading skill..."]
+    Load --> Inject["Skill injected into agent context"]
