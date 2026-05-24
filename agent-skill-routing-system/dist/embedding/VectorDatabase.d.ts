@@ -6,8 +6,10 @@ export interface VectorDatabaseConfig {
     cacheDirectory?: string;
     maxResults?: number;
     similarityThreshold?: number;
-    useKDTree?: boolean;
-    kdTreeDimensionThreshold?: number;
+    useHNSW?: boolean;
+    hnswM?: number;
+    hnswEfConstruction?: number;
+    hnswEfSearch?: number;
 }
 /**
  * Vector database for skill retrieval
@@ -17,7 +19,7 @@ export declare class VectorDatabase {
     private config;
     private indexLoaded;
     private logger;
-    private kdTree;
+    private hnsw;
     private embeddingDimension;
     private totalInputTokens;
     private totalOutputTokens;
@@ -35,9 +37,9 @@ export declare class VectorDatabase {
      */
     search(queryEmbedding: number[], topN?: number): Promise<SkillSearchResult[]>;
     /**
-     * Search using KD-tree for O(log n) nearest neighbor search
+     * Search using HNSW for approximate nearest neighbor search
      */
-    private searchWithKDTree;
+    private searchWithHNSW;
     /**
      * Calculate similarity between query and all skills
      */
@@ -53,16 +55,16 @@ export declare class VectorDatabase {
      */
     private normalizeVector;
     /**
-     * Rebuild KD-tree from skill embeddings
+     * Rebuild HNSW index from skill embeddings.
      * Normalizes embeddings to unit vectors before building.
      *
-     * For unit vectors, Euclidean distance is equivalent to cosine distance:
+     * For unit vectors, squared Euclidean distance is equivalent to cosine distance:
      * ||a - b||^2 = ||a||^2 + ||b||^2 - 2*a.b = 2 - 2*cos(theta) when ||a||=||b||=1
      *
-     * This means ranking by Euclidean distance on normalized vectors gives the same
-     * result as ranking by cosine similarity, but KD-tree is optimized for Euclidean.
+     * This means ranking by squared Euclidean distance on normalized vectors gives the
+     * same result as ranking by cosine similarity.
      */
-    private rebuildKDTree;
+    private rebuildHNSW;
     /**
      * Add input tokens to the tracker
      */

@@ -8,7 +8,7 @@ exports.VectorDatabase = void 0;
 const fs_1 = require("fs");
 const path_1 = __importDefault(require("path"));
 const Logger_1 = require("../observability/Logger");
-const KDTree_1 = require("./KDTree");
+const HNSW_1 = require("./HNSW");
 /**
  * Vector database for skill retrieval
  */
@@ -17,7 +17,7 @@ class VectorDatabase {
     config;
     indexLoaded = false;
     logger;
-    kdTree = null;
+    hnsw = null;
     embeddingDimension = 1536;
     totalInputTokens = 0;
     totalOutputTokens = 0;
@@ -26,8 +26,10 @@ class VectorDatabase {
             cacheDirectory: './.vector-cache',
             maxResults: 20,
             similarityThreshold: 0.3,
-            useKDTree: true,
-            kdTreeDimensionThreshold: 128,
+            useHNSW: true,
+            hnswM: parseInt(process.env.HNSW_M || '16', 10),
+            hnswEfConstruction: parseInt(process.env.HNSW_EF_CONSTRUCTION || '200', 10),
+            hnswEfSearch: parseInt(process.env.HNSW_EF_SEARCH || '100', 10),
             ...config,
         };
         this.logger = new Logger_1.Logger('VectorDatabase', {
@@ -41,8 +43,8 @@ class VectorDatabase {
     addSkills(skills) {
         this.skills.push(...skills);
         this.indexLoaded = true;
-        // Rebuild KD-tree for efficient nearest neighbor search
-        this.rebuildKDTree();
+        // Rebuild HNSW for efficient approximate nearest neighbor search
+        this.rebuildHNSW();
     }
     /**
      * Set skills from an array
@@ -50,8 +52,8 @@ class VectorDatabase {
     setSkills(skills) {
         this.skills = skills;
         this.indexLoaded = true;
-        // Rebuild KD-tree for efficient nearest neighbor search
-        this.rebuildKDTree();
+        // Rebuild HNSW for efficient approximate nearest neighbor search
+        this.rebuildHNSW();
     }
     /**
      * Search for similar skills based on embedding
@@ -60,60 +62,41 @@ class VectorDatabase {
         if (!this.indexLoaded) {
             return [];
         }
-        // Use KD-tree for efficient search if enabled and available
-        if (this.config.useKDTree && this.kdTree) {
-            return this.searchWithKDTree(queryEmbedding, topN);
+        // Use HNSW for efficient approximate search if enabled and available
+        if (this.config.useHNSW && this.hnsw) {
+            return this.searchWithHNSW(queryEmbedding, topN);
         }
+        // Fallthrough: brute-force O(n)
         const results = await this.calculateSimilarity(queryEmbedding);
         const sorted = results.sort((a, b) => b.score - a.score);
         const limited = sorted.slice(0, topN ?? this.config.maxResults);
         return limited.filter((result) => result.score >= this.config.similarityThreshold);
     }
     /**
-     * Search using KD-tree for O(log n) nearest neighbor search
+     * Search using HNSW for approximate nearest neighbor search
      */
-    async searchWithKDTree(queryEmbedding, topN) {
-        // Fail fast: validate query dimension matches KD-tree dimension
-        if (queryEmbedding.length !== this.embeddingDimension) {
-            this.logger.error('Query embedding dimension mismatch', {
-                queryDimension: queryEmbedding.length,
-                expectedDimension: this.embeddingDimension,
-            });
+    async searchWithHNSW(queryEmbedding, topN) {
+        if (!this.hnsw || this.skills.length === 0) {
             return [];
         }
-        // Early exit: empty KD-tree
-        if (!this.kdTree || this.skills.length === 0) {
-            return [];
-        }
-        // Normalize query embedding to unit vector for consistent distance calculation
+        // Normalize query embedding to unit vector
         const normalizedQuery = this.normalizeVector(queryEmbedding);
         if (!normalizedQuery) {
-            this.logger.error('Failed to normalize query embedding (zero magnitude)', {
-                queryLength: queryEmbedding.length,
-            });
+            this.logger.error('Failed to normalize query embedding (zero magnitude)');
             return [];
         }
-        // Find nearest neighbors using KD-tree
-        // KD-tree was built with normalized unit vectors, so Euclidean distance
-        // is equivalent to cosine distance. The ranking is already correct.
         const k = topN ?? this.config.maxResults;
-        const nearestResults = this.kdTree.nearest(normalizedQuery, k);
-        // Map KD-tree indices back to skill search results
+        const nearestResults = this.hnsw.search(normalizedQuery, k);
+        // Map HNSW indices back to skill search results
         const results = [];
         for (const result of nearestResults) {
             const skill = this.skills[result.index];
-            if (!skill || !skill.metadata.embedding) {
+            if (!skill || !skill.metadata.embedding)
                 continue;
-            }
-            // Calculate cosine similarity for the final score
-            // Using the original (non-normalized) embedding for accurate cosine value
+            // Calculate exact cosine similarity for final score
             const score = this.cosineSimilarity(queryEmbedding, skill.metadata.embedding);
-            results.push({
-                skill,
-                score,
-            });
+            results.push({ skill, score });
         }
-        // Sort by score (descending) for consistent output
         return results.sort((a, b) => b.score - a.score);
     }
     /**
@@ -187,42 +170,31 @@ class VectorDatabase {
         return normalized;
     }
     /**
-     * Rebuild KD-tree from skill embeddings
+     * Rebuild HNSW index from skill embeddings.
      * Normalizes embeddings to unit vectors before building.
      *
-     * For unit vectors, Euclidean distance is equivalent to cosine distance:
+     * For unit vectors, squared Euclidean distance is equivalent to cosine distance:
      * ||a - b||^2 = ||a||^2 + ||b||^2 - 2*a.b = 2 - 2*cos(theta) when ||a||=||b||=1
      *
-     * This means ranking by Euclidean distance on normalized vectors gives the same
-     * result as ranking by cosine similarity, but KD-tree is optimized for Euclidean.
+     * This means ranking by squared Euclidean distance on normalized vectors gives the
+     * same result as ranking by cosine similarity.
      */
-    rebuildKDTree() {
-        // Early exit: KD-tree disabled
-        if (!this.config.useKDTree) {
-            this.kdTree = null;
+    rebuildHNSW() {
+        // Early exit: HNSW disabled
+        if (!this.config.useHNSW) {
+            this.hnsw = null;
             return;
         }
         // Early exit: no skills to index
         if (this.skills.length === 0) {
-            this.kdTree = null;
-            return;
-        }
-        // Early exit: KD-tree is ineffective at high dimensions (curse of dimensionality)
-        if (this.embeddingDimension > (this.config.kdTreeDimensionThreshold ?? 128)) {
-            this.logger.info('KD-tree disabled for high-dimensional embeddings', {
-                dimension: this.embeddingDimension,
-                threshold: this.config.kdTreeDimensionThreshold,
-            });
-            this.kdTree = null;
+            this.hnsw = null;
             return;
         }
         // Parse and validate embeddings at boundary, normalize to unit vectors
         const points = [];
-        let validatedDimension = this.embeddingDimension;
         for (const skill of this.skills) {
-            if (!skill.metadata.embedding) {
+            if (!skill.metadata.embedding)
                 continue;
-            }
             const embedding = skill.metadata.embedding;
             // Validate embedding is array
             if (!Array.isArray(embedding)) {
@@ -231,70 +203,60 @@ class VectorDatabase {
                 });
                 continue;
             }
-            // Validate dimension consistency - fail fast on mismatch
-            if (embedding.length !== validatedDimension) {
+            // Validate dimension consistency
+            if (embedding.length !== this.embeddingDimension) {
                 this.logger.warn('Dimension mismatch in embedding, skipping skill', {
                     skillName: skill.metadata.name,
-                    expectedDimension: validatedDimension,
+                    expectedDimension: this.embeddingDimension,
                     actualDimension: embedding.length,
                 });
                 continue;
             }
-            // Validate all coordinates are valid numbers
-            let isValid = true;
+            // Validate all coordinates are valid numbers and compute magnitude
             let magnitude = 0;
+            let valid = true;
             for (let i = 0; i < embedding.length; i++) {
                 if (typeof embedding[i] !== 'number' || isNaN(embedding[i])) {
-                    this.logger.warn('Invalid coordinate in embedding, skipping skill', {
-                        skillName: skill.metadata.name,
-                        dimension: i,
-                    });
-                    isValid = false;
+                    valid = false;
                     break;
                 }
                 magnitude += embedding[i] * embedding[i];
             }
-            if (!isValid) {
+            if (!valid)
                 continue;
-            }
-            // Calculate magnitude and normalize to unit vector
             magnitude = Math.sqrt(magnitude);
-            if (magnitude === 0) {
-                this.logger.warn('Zero-magnitude embedding, skipping skill', {
-                    skillName: skill.metadata.name,
-                });
+            if (magnitude === 0)
                 continue;
-            }
-            // Store normalized (unit vector) copy
-            const normalizedPoint = [];
+            // Normalize to unit vector
+            const normalized = [];
             for (let i = 0; i < embedding.length; i++) {
-                normalizedPoint.push(embedding[i] / magnitude);
+                normalized.push(embedding[i] / magnitude);
             }
-            points.push(normalizedPoint);
+            points.push(normalized);
         }
         // Fail fast: no valid embeddings found
         if (points.length === 0) {
-            this.kdTree = null;
-            this.logger.warn('No valid embeddings found for KD-tree build');
+            this.hnsw = null;
+            this.logger.warn('No valid embeddings found for HNSW build');
             return;
         }
-        // Update embedding dimension based on validated data
-        this.embeddingDimension = validatedDimension;
         try {
-            // Build KD-tree with normalized unit vectors
-            this.kdTree = new KDTree_1.KDTree(this.embeddingDimension);
-            this.kdTree.build(points);
-            this.logger.info('KD-tree built successfully', {
+            this.hnsw = new HNSW_1.HNSWIndex(this.config.hnswM, this.config.hnswEfConstruction, this.config.hnswEfSearch);
+            const t0 = performance.now();
+            this.hnsw.build(points);
+            const elapsed = performance.now() - t0;
+            this.logger.info('HNSW index built successfully', {
                 skillCount: points.length,
                 dimension: this.embeddingDimension,
-                normalization: 'unit vectors (cosine equivalence)',
+                config: this.hnsw.getConfig(),
+                buildTimeMs: Math.round(elapsed),
             });
         }
         catch (error) {
-            this.logger.error('Failed to build KD-tree', {
+            this.logger.error('Failed to build HNSW index', {
                 error: error instanceof Error ? error.message : String(error),
             });
-            this.kdTree = null;
+            this.hnsw = null;
         }
     }
     /**
@@ -384,8 +346,8 @@ class VectorDatabase {
                 this.totalOutputTokens = indexData.tokenStats.outputTokens || 0;
             }
             this.indexLoaded = true;
-            // Rebuild KD-tree after loading
-            this.rebuildKDTree();
+            // Rebuild HNSW after loading
+            this.rebuildHNSW();
         }
         catch (error) {
             this.logger.error('Failed to load vector index:', {
@@ -411,7 +373,7 @@ class VectorDatabase {
     clear() {
         this.skills = [];
         this.indexLoaded = false;
-        this.kdTree = null;
+        this.hnsw = null;
         this.totalInputTokens = 0;
         this.totalOutputTokens = 0;
     }

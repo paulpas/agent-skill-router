@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 915 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 916 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **915 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **916 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 351 | Software patterns, security, testing, data science |
+| Coding | 352 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 01:33:06 UTC  
-> **Total skills:** 915  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (915 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-23 21:11:41 UTC  
+> **Total skills:** 916  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (916 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 914 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 914 | Ranking penalty for conflicting query terms |
-| Response Profile | 914 | Verbosity, directive strength, abstraction level |
+| Archetypes | 915 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 915 | Ranking penalty for conflicting query terms |
+| Response Profile | 915 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (351 skills)
+### Coding (352 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -905,6 +905,7 @@ MIT — All skills are freely available and redistributable.
 | [input-validation](skills/coding/input-validation/SKILL.md) | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | input validation, data sanitization, schema validation, input filtering, sanitize user input, prevent injection, OWASP, form validation, parse and validate [tactical, generation] |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | instrumental variables, IV, 2SLS, endogeneity, causal effect, how do i handle endogeneity [tactical, generation] |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. | integration patterns, service integration, adapter pattern, saga pattern, circuit breaker, API gateway, messaging, event-driven, system communication, how do i connect systems [tactical, generation] |
+| [integration-testing-patterns](skills/coding/integration-testing-patterns/SKILL.md) | Implements integration testing strategies (database, HTTP API, event-driven, message queue) with test isolation, fixture management, and real infrastructure validation for production-quality software systems. | integration testing, API testing, database integration, test container, fixture management, contract testing, system boundary testing, service integration [tactical, generation] |
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. | interface segregation principle, ISP, fat interface, thin interface, client specific, Protocol, ABC, unused methods, stub implementation, NotImplementedError, duck typing [tactical, generation] |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" | treatment effects, intervention analysis, CATE, heterogeneous effects, treatment response [tactical, generation] |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. | virtual threads, Project Loom, JEP 444, sealed classes, pattern matching switch, thread-per-request, Java concurrency [tactical, generation] |
@@ -1257,7 +1258,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (503 skills)
+### Implementation (Build Features) (504 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1483,6 +1484,7 @@ MIT — All skills are freely available and redistributable.
 | [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. |
+| [integration-testing-patterns](skills/coding/integration-testing-patterns/SKILL.md) | Coding | Implements integration testing strategies (database, HTTP API, event-driven, message queue) with test isolation, fixture management, and real infrastructure validation for production-quality software systems. |
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Coding | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. |
 | [intermarket-analysis](skills/trading/intermarket-analysis/SKILL.md) | Trading | "Implements cross-market relationships and asset class correlations for risk management and algorithmic trading execution." |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | Coding | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" |
@@ -2629,6 +2631,7 @@ MIT — All skills are freely available and redistributable.
 | [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. | Implementation |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | Implementation |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. | Implementation |
+| [integration-testing-patterns](skills/coding/integration-testing-patterns/SKILL.md) | Coding | Implements integration testing strategies (database, HTTP API, event-driven, message queue) with test isolation, fixture management, and real infrastructure validation for production-quality software systems. | Implementation |
 | [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Agent | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. | Orchestration |
 | [intercom-automation](skills/agent/intercom-automation/SKILL.md) | Agent | Implements intelligent intercom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [interface-segregation-principle](skills/coding/interface-segregation-principle/SKILL.md) | Coding | Detects fat interfaces that force implementors to provide unused methods and refactors them into narrow, client-specific contracts using Python Protocols and targeted ABCs. | Implementation |

@@ -2,7 +2,7 @@
 
 > One source of truth for every environment variable in the agent-skill-router system.
 >
-> **Total: 77 environment variables** (76 unique + 1 alias) across 13 categories
+> **Total: 80 environment variables** (79 unique + 1 alias) across 13 categories
 
 ## Quick Start
 
@@ -57,6 +57,9 @@ All variables in alphabetical order:
 | `GITHUB_SKILLS_REPO` | `https://github.com/paulpas/skills` | GitHub Sync |
 | `GITHUB_SKILLS_REPO_SSH` | `git@github.com:paulpas/skills.git` | Docker & Git Config |
 | `GITHUB_TOKEN` | — | GitHub Sync |
+| `HNSW_EF_CONSTRUCTION` | `200` | Advanced Routing |
+| `HNSW_EF_SEARCH` | `100` | Advanced Routing |
+| `HNSW_M` | `16` | Advanced Routing |
 | `JS_RENDER_FALLBACK` | `true` | Link Following |
 | `JS_RENDER_TIMEOUT_MS` | `5000` | Link Following |
 | `JS_RENDERING_ENABLED` | `false` | Link Following |
@@ -342,13 +345,16 @@ Configures the stdio MCP bridge (`skill-router-mcp.js`) that connects OpenCode t
 
 ---
 
-### 13. Advanced Routing (8 vars)
+### 13. Advanced Routing (11 vars)
 
 Controls the hybrid scoring pipeline, MMR diversification, and score explanations for the routing system.
 
 | Variable | Type | Default | Valid Values | Description |
 |---|---|---|---|---|---|
 | `DEBUG_ROUTING` | boolean | `false` | `true`, `false` | When enabled, each routed skill includes a per-component breakdown with human-readable explanations. Useful for debugging routing decisions. |
+| `HNSW_EF_CONSTRUCTION` | number | `200` | 1–1000 | Candidate list size during HNSW index construction. Higher values = better recall, slower build. Set lower (e.g. 50) for faster development builds. |
+| `HNSW_EF_SEARCH` | number | `100` | 1–1000 | Candidate list size during HNSW search. Higher values = better recall, slower queries. |
+| `HNSW_M` | number | `16` | 4–128 | Maximum number of bidirectional connections per HNSW graph element per layer. Higher values improve recall at the cost of memory. |
 | `LLM_RANKING_ENABLED` | boolean | `false` | `true`, `false` | When enabled, uses LLM-based ranking as an optional fallback after hybrid scoring. Default is `false` (hybrid scoring only). |
 | `MMR_LAMBDA` | float | `0.7` | `0.0` – `1.0` | MMR diversity tradeoff. `0.0` = maximum diversity, `1.0` = pure relevance. The default `0.7` favors relevance while still penalizing near-duplicate skills. |
 | `RETRIEVAL_ARCHETYPE_WEIGHT` | float | `0.10` | `0.0` – `1.0` | Weight for archetype alignment signal. Higher values prioritize skills matching the query's archetype (tactical, strategic, diagnostic, etc.). |
@@ -357,7 +363,7 @@ Controls the hybrid scoring pipeline, MMR diversification, and score explanation
 | `RETRIEVAL_TRIGGER_MATCH_WEIGHT` | float | `0.15` | `0.0` – `1.0` | Weight for trigger keyword matching signal. Higher values prioritize skills whose configured triggers match query terms. |
 | `RETRIEVAL_VECTOR_WEIGHT` | float | `0.50` | `0.0` – `1.0` | Weight for semantic vector similarity signal. Higher values prioritize skills semantically closest to the query. This is the primary signal. |
 
-**Source:** `src/core/Router.ts` lines 352, 474.
+**Source:** `src/core/Router.ts` lines 352, 474, `src/embedding/VectorDatabase.ts` lines 41–43.
 
 > **Note:** All weights now support environment variable configuration. The priority order is: programmatic `RouterConfig` > environment variable > code default. See [AGENTS.md#advanced-routing-system-v2](../AGENTS.md#advanced-routing-system-v2) for the full configuration reference.
 
