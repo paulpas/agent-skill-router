@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 927 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 929 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **927 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **929 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 362 | Software patterns, security, testing, data science |
+| Coding | 364 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 08:09:53 UTC  
-> **Total skills:** 927  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (927 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 08:47:15 UTC  
+> **Total skills:** 929  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (929 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 926 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 926 | Ranking penalty for conflicting query terms |
-| Response Profile | 926 | Verbosity, directive strength, abstraction level |
+| Archetypes | 928 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 928 | Ranking penalty for conflicting query terms |
+| Response Profile | 928 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (362 skills)
+### Coding (364 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -786,6 +786,7 @@ MIT — All skills are freely available and redistributable.
 | [chroma](skills/coding/chroma/SKILL.md) | Integrates Chroma vector database (collections, embeddings, query, metadata filtering, persistence) using the chromadb Python SDK for local and server-based vector search. | chroma, chromadb, vector database, embedding store, similarity search, chroma collection, how do i use chroma, local vector search [tactical, generation] |
 | [circleci-api](skills/coding/circleci-api/SKILL.md) | Integrates with the CircleCI REST API v2 to manage pipelines, workflows, jobs, contexts, environment variables, project settings, and orb configurations. | circleci api, circleci python, circleci pipelines, circleci workflows, circleci orb, circleci contexts, circleci jobs, circleci v2 api [tactical, generation] |
 | [classification-metrics](skills/coding/classification-metrics/SKILL.md) | "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics" | classification metrics, precision, recall, F1-score, ROC-AUC, confusion matrix [tactical, generation] |
+| [clean-architecture](skills/coding/clean-architecture/SKILL.md) | Designs software using Robert C. Martin's Clean Architecture concentric layers (Entities, Use Cases, Interface Adapters, Frameworks) with strict dependency rules and boundary contracts for framework-independent business logic. | clean architecture, robert martin, uncle bob, entity layer, use case layer, interface adapter, dependency rule, framework independence, hexagonal vs clean, bounded entities, port architecture [strategic, tactical] |
 | [clickup-api](skills/coding/clickup-api/SKILL.md) | Integrates with ClickUp API v2 to manage tasks, lists, spaces, folders, goals, time tracking, dashboards, and teams using clickup-python-sdk. | clickup api, clickup tasks, clickup lists, clickup python, clickup automation, clickup time tracking, clickup custom fields [tactical, generation] |
 | [cloud-ecosystem-strategy](skills/coding/cloud-ecosystem-strategy/SKILL.md) | Strategizes cross-cloud ecosystem navigation (AWS, Azure, GCP) with vendor lock-in analysis, interoperability patterns, cost optimization frameworks, and multi-cloud architecture decision making. | cloud ecosystem, aws, azure, gcp, multi-cloud, hybrid cloud, vendor lock-in, cloud migration, cross-cloud, how do i choose cloud provider, cloud strategy, cloud interoperability, cost optimization, cloud architecture decision [tactical, generation] |
 | [cloud-native-architecture](skills/coding/cloud-native-architecture/SKILL.md) | Implements cloud-native architecture patterns including Kubernetes-native design, service mesh integration, GitOps workflows, serverless compute, immutable infrastructure, and platform engineering for resilient distributed systems. | cloud native architecture, kubernetes design, container orchestration, service mesh, GitOps, serverless architecture, immutable infrastructure, platform engineering, internal developer platform, how do i design cloud-native systems, declarative configuration, ephemerality [tactical, generation] |
@@ -921,6 +922,7 @@ MIT — All skills are freely available and redistributable.
 | [just-task-runner](skills/coding/just-task-runner/SKILL.md) | Implements the Just task runner as a modern alternative to GNU Make with named arguments, subcommands, runsets, environment file support, and cross-platform portability for developer workflow automation. | justfile, just task runner, task runner, casey just, how do i replace make, named arguments, runsets, recipe variables, dotenv, cross-platform make alternative [tactical, generation] |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | jvm tuning, garbage collection, GC tuning, zgc, shenandoah, jfr, jcmd, heap dump, memory leak, java performance, oom error, out of memory, thread deadlock, jstack, async-profiler... [tactical, generation] |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" | kernel density estimation, KDE, non-parametric, density estimation, bandwidth selection [tactical, generation] |
+| [kiss-principle](skills/coding/kiss-principle/SKILL.md) | Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions. | kiss principle, keep it simple stupid, over-engineering, simplicity, avoid complexity, simple solution, unnecessary abstraction, how do i simplify my code, reduce boilerplate [tactical, diagnostic] |
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | kotlin coroutines, structured concurrency, coroutine scope, SupervisorJob, Flow API, StateFlow, kotlinx-coroutines [tactical, generation] |
 | [kubernetes-api](skills/coding/kubernetes-api/SKILL.md) | Integrates with the Kubernetes API via the official client-python SDK to manage pods, deployments, services, ConfigMaps, Secrets, CRDs, and cluster resources programmatically. | kubernetes api, k8s python client, client-python, kubectl python, kubernetes pods, kubernetes deployments, k8s custom resources, kubernetes operations [tactical, generation] |
 | [langchain](skills/coding/langchain/SKILL.md) | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. | langchain, langgraph, create agent, llm orchestration, rag chain, langchain agent, how do i use langchain, agent middleware [tactical, generation] |
@@ -1269,7 +1271,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (514 skills)
+### Implementation (Build Features) (516 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1345,6 +1347,7 @@ MIT — All skills are freely available and redistributable.
 | [cicd-pipeline-troubleshooting](skills/agent/cicd-pipeline-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves CI/CD pipeline failures with actionable debugging commands for GitHub Actions, GitLab CI, and build optimization patterns. |
 | [circleci-api](skills/coding/circleci-api/SKILL.md) | Coding | Integrates with the CircleCI REST API v2 to manage pipelines, workflows, jobs, contexts, environment variables, project settings, and orb configurations. |
 | [classification-metrics](skills/coding/classification-metrics/SKILL.md) | Coding | "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics" |
+| [clean-architecture](skills/coding/clean-architecture/SKILL.md) | Coding | Designs software using Robert C. Martin's Clean Architecture concentric layers (Entities, Use Cases, Interface Adapters, Frameworks) with strict dependency rules and boundary contracts for framework-independent business logic. |
 | [clickup-api](skills/coding/clickup-api/SKILL.md) | Coding | Integrates with ClickUp API v2 to manage tasks, lists, spaces, folders, goals, time tracking, dashboards, and teams using clickup-python-sdk. |
 | [cloud-development](skills/go/cloud-development/SKILL.md) | Go | Develops cloud-native Go applications with context propagation, graceful shutdown, health checks, and configuration management for production. |
 | [cloud-ecosystem-strategy](skills/coding/cloud-ecosystem-strategy/SKILL.md) | Coding | Strategizes cross-cloud ecosystem navigation (AWS, Azure, GCP) with vendor lock-in analysis, interoperability patterns, cost optimization frameworks, and multi-cloud architecture decision making. |
@@ -1516,6 +1519,7 @@ MIT — All skills are freely available and redistributable.
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Linux | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. |
 | [kicad-pcb-design](skills/electrical-engineering/kicad-pcb-design/SKILL.md) | Electrical-engineering | Implements modern KiCad 9+ PCB design workflows covering schematic capture, component library management, controlled-impedance layout, EMC-aware routing, DRC validation, and fabrication file generation. |
 | [kill-switches](skills/trading/kill-switches/SKILL.md) | Trading | "Implementing multi-layered kill switches at account, strategy, market" and infrastructure levels to prevent catastrophic losses and system failures |
+| [kiss-principle](skills/coding/kiss-principle/SKILL.md) | Coding | Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions. |
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Coding | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. |
 | [kubernetes-api](skills/coding/kubernetes-api/SKILL.md) | Coding | Integrates with the Kubernetes API via the official client-python SDK to manage pods, deployments, services, ConfigMaps, Secrets, CRDs, and cluster resources programmatically. |
 | [kubernetes-api-patterns](skills/cncf/kubernetes-api-patterns/SKILL.md) | Cncf | Kubernetes API patterns including CRD development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions |
@@ -2369,6 +2373,7 @@ MIT — All skills are freely available and redistributable.
 | [circleci-api](skills/coding/circleci-api/SKILL.md) | Coding | Integrates with the CircleCI REST API v2 to manage pipelines, workflows, jobs, contexts, environment variables, project settings, and orb configurations. | Implementation |
 | [circleci-automation](skills/agent/circleci-automation/SKILL.md) | Agent | Implements intelligent circleci automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [classification-metrics](skills/coding/classification-metrics/SKILL.md) | Coding | "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics" | Implementation |
+| [clean-architecture](skills/coding/clean-architecture/SKILL.md) | Coding | Designs software using Robert C. Martin's Clean Architecture concentric layers (Entities, Use Cases, Interface Adapters, Frameworks) with strict dependency rules and boundary contracts for framework-independent business logic. | Implementation |
 | [clickup-api](skills/coding/clickup-api/SKILL.md) | Coding | Integrates with ClickUp API v2 to manage tasks, lists, spaces, folders, goals, time tracking, dashboards, and teams using clickup-python-sdk. | Implementation |
 | [clickup-automation](skills/agent/clickup-automation/SKILL.md) | Agent | Implements intelligent clickup automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [closed-loop-delivery](skills/agent/closed-loop-delivery/SKILL.md) | Agent | Implements intelligent closed loop delivery with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2689,6 +2694,7 @@ MIT — All skills are freely available and redistributable.
 | [keyvault-secrets](skills/cncf/keyvault-secrets/SKILL.md) | Cncf | "Provides Secret management and rotation for sensitive credentials and configuration" | Reference |
 | [kicad-pcb-design](skills/electrical-engineering/kicad-pcb-design/SKILL.md) | Electrical-engineering | Implements modern KiCad 9+ PCB design workflows covering schematic capture, component library management, controlled-impedance layout, EMC-aware routing, DRC validation, and fabrication file generation. | Implementation |
 | [kill-switches](skills/trading/kill-switches/SKILL.md) | Trading | "Implementing multi-layered kill switches at account, strategy, market" and infrastructure levels to prevent catastrophic losses and system failures | Implementation |
+| [kiss-principle](skills/coding/kiss-principle/SKILL.md) | Coding | Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions. | Implementation |
 | [kms](skills/cncf/kms/SKILL.md) | Cncf | "Manages encryption keys with AWS KMS for data protection at rest and" in transit, key rotation, and compliance with encryption standards across all AWS services. | Reference |
 | [knative](skills/cncf/knative/SKILL.md) | Cncf | "Provides Knative in Cloud-Native Engineering - serverless on Kubernetes" | Reference |
 | [kong](skills/cncf/kong/SKILL.md) | Cncf | "Kong in API Gateway - cloud native architecture, patterns, pitfalls" and best practices | Reference |

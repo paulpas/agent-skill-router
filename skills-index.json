@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T08:09:51.587329Z",
-  "totalSkills": 927,
+  "generatedAt": "2026-05-24T08:47:14.009231Z",
+  "totalSkills": 929,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 362,
+    "coding": 364,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 514,
+    "implementation": 516,
     "reference": 172,
     "information": 1,
     "review": 5
@@ -3516,6 +3516,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-classification-metrics/SKILL.md"
+    },
+    {
+      "name": "clean-architecture",
+      "domain": "coding",
+      "description": "Designs software using Robert C. Martin's Clean Architecture concentric layers (Entities, Use Cases, Interface Adapters, Frameworks) with strict dependency rules and boundary contracts for framework-independent business logic.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "clean architecture",
+        "robert martin",
+        "uncle bob",
+        "entity layer",
+        "use case layer",
+        "interface adapter",
+        "dependency rule",
+        "framework independence",
+        "hexagonal vs clean",
+        "bounded entities",
+        "port architecture"
+      ],
+      "relatedSkills": [
+        "hexagonal-architecture",
+        "ports-patterns",
+        "dependency-inversion-principle",
+        "domain-driven-design",
+        "architectural-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/clean-architecture/SKILL.md"
     },
     {
       "name": "clickup-api",
@@ -11242,6 +11272,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/risk-kill-switches/SKILL.md"
+    },
+    {
+      "name": "kiss-principle",
+      "domain": "coding",
+      "description": "Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "kiss principle",
+        "keep it simple stupid",
+        "over-engineering",
+        "simplicity",
+        "avoid complexity",
+        "simple solution",
+        "unnecessary abstraction",
+        "how do i simplify my code",
+        "reduce boilerplate"
+      ],
+      "relatedSkills": [
+        "yagni",
+        "dry-principles",
+        "single-responsibility",
+        "open-closed-principle",
+        "abstraction-design-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/kiss-principle/SKILL.md"
     },
     {
       "name": "kms",
