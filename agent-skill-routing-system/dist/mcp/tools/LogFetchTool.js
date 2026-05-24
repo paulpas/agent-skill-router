@@ -58,7 +58,7 @@ class LogFetchTool extends types_1.BaseMCPTool {
      * Get tool specification
      */
     getSpecification() {
-        return {
+        const spec = {
             name: this.name,
             description: this.description,
             parameters: {
@@ -86,6 +86,10 @@ class LogFetchTool extends types_1.BaseMCPTool {
                 required: ['filepath'],
             },
         };
+        if (this.methodology) {
+            spec.methodology = this.methodology;
+        }
+        return spec;
     }
 }
 exports.LogFetchTool = LogFetchTool;

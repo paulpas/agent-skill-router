@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 913 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 914 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **913 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
+- 🎯 **914 Skills** across Agent, CNCF, Coding, Go, Linux, Programming, Trading, and Writing domains
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via semantic search + LLM ranking
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 349 | Software patterns, security, testing, data science |
+| Coding | 350 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -266,16 +266,16 @@ MIT — All skills are freely available and redistributable.
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
 > **Last updated:** 2026-05-24 00:33:06 UTC  
-> **Total skills:** 913  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (913 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Total skills:** 914  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (914 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 912 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 912 | Ranking penalty for conflicting query terms |
-| Response Profile | 912 | Verbosity, directive strength, abstraction level |
+| Archetypes | 913 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 913 | Ranking penalty for conflicting query terms |
+| Response Profile | 913 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (349 skills)
+### Coding (350 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -896,6 +896,7 @@ MIT — All skills are freely available and redistributable.
 | [huggingface-api](skills/coding/huggingface-api/SKILL.md) | Integrates Hugging Face APIs (Inference Client, Inference Endpoints, Transformers Pipeline, Datasets) for serverless and dedicated model inference with Python. | hugging face, huggingface, transformers, inference api, inference endpoints, pipelines, how do i use hugging face models, hf inference client [tactical, generation] |
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | hyperparameter tuning, grid search, random search, bayesian optimization, how do I tune parameters [tactical, generation] |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | hypothesis testing, t-test, chi-square, p-value, statistical significance, how do i test hypotheses, unit tests, testing [tactical, generation] |
+| [iac-engineering](skills/coding/iac-engineering/SKILL.md) | Implements advanced IaC engineering patterns including modular Terraform architecture, policy-as-code with OPA, GitOps with ArgoCD, Terratest-driven testing, and cross-cloud multi-account resource management for production infrastructure. | Terraform modules, policy as code, OPA Conftest, GitOps ArgoCD, IaC testing, Terratest, how do i manage terraform state [tactical, orchestration] |
 | [ibm-cloud-api](skills/coding/ibm-cloud-api/SKILL.md) | Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes Service, Cloud Object Storage) using IBM Cloud SDK for Python with IAM authentication and service patterns. | ibm cloud, watson api, ibm cloud sdk, cloud object storage, ibm kubernetes, cloud foundry, how do i use ibm cloud from python [tactical, generation] |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. | idempotency, idempotent, idempotency key, request deduplication, exactly once, duplicate detection, optimistic concurrency, idempotent handler, outbox pattern, race condition prevention [tactical, generation] |
 | [incident-response](skills/coding/incident-response/SKILL.md) | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. | incident response, production outage, on-call procedures, postmortem, blameless postmortem, RCA root cause analysis, service degradation, how do i handle a production incident, incident command, severity classification, rollback procedure, escalation path [tactical, generation] |
@@ -1255,7 +1256,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (501 skills)
+### Implementation (Build Features) (502 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1469,6 +1470,7 @@ MIT — All skills are freely available and redistributable.
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | Coding | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" |
 | [hyperparameter-tuning](skills/trading/hyperparameter-tuning/SKILL.md) | Trading | "Implements optimize model configurations for trading applications for risk management and algorithmic trading execution." |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions |
+| [iac-engineering](skills/coding/iac-engineering/SKILL.md) | Coding | Implements advanced IaC engineering patterns including modular Terraform architecture, policy-as-code with OPA, GitOps with ArgoCD, Terratest-driven testing, and cross-cloud multi-account resource management for production infrastructure. |
 | [ibm-cloud-api](skills/coding/ibm-cloud-api/SKILL.md) | Coding | Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes Service, Cloud Object Storage) using IBM Cloud SDK for Python with IAM authentication and service patterns. |
 | [idempotent-distributed-operations](skills/coding/idempotent-distributed-operations/SKILL.md) | Coding | Implements idempotency patterns for distributed microservice systems including idempotency keys, request deduplication, optimistic concurrency control, and idempotent handlers to ensure exactly-once semantics in event-driven architectures. |
 | [incident-response](skills/coding/incident-response/SKILL.md) | Coding | Orchestrates production incident response including severity classification, on-call escalation procedures, blameless postmortem analysis, and root cause remediation to minimize downtime and prevent recurrence. |
@@ -2606,6 +2608,7 @@ MIT — All skills are freely available and redistributable.
 | [hyperparameter-tuning](skills/coding/hyperparameter-tuning/SKILL.md) | Coding | "Optimizes hyperparameters using grid search, random search, Bayesian optimization, and evolutionary methods for model improvement" | Implementation |
 | [hyperparameter-tuning](skills/trading/hyperparameter-tuning/SKILL.md) | Trading | "Implements optimize model configurations for trading applications for risk management and algorithmic trading execution." | Implementation |
 | [hypothesis-testing](skills/coding/hypothesis-testing/SKILL.md) | Coding | Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions | Implementation |
+| [iac-engineering](skills/coding/iac-engineering/SKILL.md) | Coding | Implements advanced IaC engineering patterns including modular Terraform architecture, policy-as-code with OPA, GitOps with ArgoCD, Terratest-driven testing, and cross-cloud multi-account resource management for production infrastructure. | Implementation |
 | [iam](skills/cncf/iam/SKILL.md) | Cncf | "Configures identity and access management with IAM users, roles, policies" and MFA for secure, least-privilege access control across AWS resources and services. | Reference |
 | [iam](skills/cncf/iam/SKILL.md) | Cncf | "Manages identity and access control with service accounts, roles, and" fine-grained permissions. | Reference |
 | [ibm-cloud-api](skills/coding/ibm-cloud-api/SKILL.md) | Coding | Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes Service, Cloud Object Storage) using IBM Cloud SDK for Python with IAM authentication and service patterns. | Implementation |

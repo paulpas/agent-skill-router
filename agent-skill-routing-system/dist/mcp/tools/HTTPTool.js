@@ -60,7 +60,7 @@ class HTTPTool extends types_1.BaseMCPTool {
      * Get tool specification
      */
     getSpecification() {
-        return {
+        const spec = {
             name: this.name,
             description: this.description,
             parameters: {
@@ -88,6 +88,10 @@ class HTTPTool extends types_1.BaseMCPTool {
                 required: ['url', 'method'],
             },
         };
+        if (this.methodology) {
+            spec.methodology = this.methodology;
+        }
+        return spec;
     }
 }
 exports.HTTPTool = HTTPTool;

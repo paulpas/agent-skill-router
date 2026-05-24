@@ -617,27 +617,36 @@ class SkillRegistry {
                 }
             }
         }
-        // Compress skills in batches (non-blocking with delays)
-        const batchSize = this.config.compressionBatchSize ?? 10;
-        for (let i = 0; i < skillsToWarm.length; i += batchSize) {
-            const batch = skillsToWarm.slice(i, i + batchSize);
-            // Process batch in parallel
-            const batchPromises = batch.map((skillName) => this.getSkillContent(skillName, this.config.compressionLevel ?? 0)
-                .then(() => {
-                successCount++;
-            })
-                .catch((err) => {
-                skippedCount++;
-                this.logger.debug('[COMPRESSION-WARMUP] failed for skill', {
-                    skillName,
-                    error: err instanceof Error ? err.message : String(err),
-                });
-            }));
-            await Promise.all(batchPromises);
-            // Small delay between batches to avoid overwhelming the system
-            if (i + batchSize < skillsToWarm.length) {
-                await new Promise((resolve) => setTimeout(resolve, 100));
+        // Save original link following state and disable during warmup
+        const originalLinkFollowing = this.markdownLinkConfig.enabled;
+        this.markdownLinkConfig.enabled = false;
+        try {
+            // Compress skills in batches (non-blocking with delays)
+            const batchSize = this.config.compressionBatchSize ?? 10;
+            for (let i = 0; i < skillsToWarm.length; i += batchSize) {
+                const batch = skillsToWarm.slice(i, i + batchSize);
+                // Process batch in parallel
+                const batchPromises = batch.map((skillName) => this.getSkillContent(skillName, this.config.compressionLevel ?? 0)
+                    .then(() => {
+                    successCount++;
+                })
+                    .catch((err) => {
+                    skippedCount++;
+                    this.logger.debug('[COMPRESSION-WARMUP] failed for skill', {
+                        skillName,
+                        error: err instanceof Error ? err.message : String(err),
+                    });
+                }));
+                await Promise.all(batchPromises);
+                // Small delay between batches to avoid overwhelming the system
+                if (i + batchSize < skillsToWarm.length) {
+                    await new Promise((resolve) => setTimeout(resolve, 100));
+                }
             }
+        }
+        finally {
+            // Restore original link following state
+            this.markdownLinkConfig.enabled = originalLinkFollowing;
         }
         const durationMs = Date.now() - t0;
         this.logger.info('[COMPRESSION-WARMUP] complete', {
@@ -692,8 +701,22 @@ class SkillRegistry {
                             });
                         }
                         else if (skill) {
-                            // Local-first: first directory wins on name collision
-                            if (!this.skills.has(skill.metadata.name)) {
+                            // Local-first: overwrite metadata-only entries with full-content local skills
+                            if (this.skills.has(skill.metadata.name)) {
+                                const existing = this.skills.get(skill.metadata.name);
+                                // If the existing skill has no content but the local one does, update it
+                                if (!existing.rawContent && skill.rawContent) {
+                                    existing.rawContent = skill.rawContent;
+                                    this.logger.debug(`Updated local content for: ${skill.metadata.name}`, {
+                                        file,
+                                    });
+                                    successCount++;
+                                    continue;
+                                }
+                                // If both have content, keep the first one (already loaded)
+                                this.logger.debug(`Skipping duplicate skill from remote: ${skill.metadata.name}`);
+                            }
+                            else {
                                 this.addSkill(skill);
                                 this.logger.debug(`Loaded skill: ${skill.metadata.name}`, {
                                     file,
@@ -701,9 +724,6 @@ class SkillRegistry {
                                     tags: skill.metadata.tags,
                                 });
                                 successCount++;
-                            }
-                            else {
-                                this.logger.debug(`Skipping duplicate skill from remote: ${skill.metadata.name}`);
                             }
                         }
                         else {
@@ -760,6 +780,10 @@ class SkillRegistry {
     /**
      * Parse skill metadata from a SKILL.md file with YAML frontmatter
      * Maps OpenCode skill frontmatter fields to SkillMetadata schema
+     */
+    /**
+     * Parse skill metadata from a SKILL.md file with YAML frontmatter.
+     * Public for testability; callers should not rely on internal parsing details.
      */
     parseSkillFromMarkdown(content, filePath) {
         // Extract YAML frontmatter between --- delimiters
@@ -841,6 +865,61 @@ class SkillRegistry {
         if (outputFormat && !contentTypes) {
             this.logger.debug(`Skill ${name}: 'output-format' is deprecated, use 'content-types' instead`);
         }
+        // --- Archetypes: from metadata.archetypes (YAML array or comma-separated string) ---
+        let archetypes;
+        const archRaw = nestedMeta.archetypes;
+        if (Array.isArray(archRaw)) {
+            archetypes = archRaw
+                .map((a) => String(a).trim().toLowerCase())
+                .filter(Boolean);
+        }
+        else if (typeof archRaw === 'string') {
+            archetypes = archRaw
+                .split(',')
+                .map((a) => a.trim().toLowerCase())
+                .filter((a) => a.length > 0);
+        }
+        // --- AntiTriggers: from metadata.anti_triggers (YAML array or comma-separated string) ---
+        let antiTriggers;
+        const antiRaw = nestedMeta.anti_triggers;
+        if (Array.isArray(antiRaw)) {
+            antiTriggers = antiRaw.map((t) => String(t).trim()).filter((t) => t.length > 0);
+        }
+        else if (typeof antiRaw === 'string') {
+            antiTriggers = antiRaw
+                .split(',')
+                .map((t) => t.trim())
+                .filter((t) => t.length > 0);
+        }
+        // --- ResponseProfile: from metadata.response_profile.* ---
+        let responseProfile;
+        const rpRaw = nestedMeta.response_profile;
+        if (rpRaw && typeof rpRaw === 'object') {
+            const verbosityRaw = String(rpRaw.verbosity || '').trim().toLowerCase();
+            const directiveRaw = String(rpRaw.directive_strength || rpRaw.directiveness || '')
+                .trim()
+                .toLowerCase();
+            const abstractRaw = String(rpRaw.abstraction_level || rpRaw.abstraction || '')
+                .trim()
+                .toLowerCase();
+            const validVerbosity = ['low', 'medium', 'high'].includes(verbosityRaw)
+                ? verbosityRaw
+                : null;
+            const validDirective = ['low', 'medium', 'high'].includes(directiveRaw)
+                ? directiveRaw
+                : null;
+            const validAbstraction = ['operational', 'tactical', 'strategic'].includes(abstractRaw)
+                ? abstractRaw
+                : null;
+            // Only build ResponseProfile if at least verbosity is known
+            if (validVerbosity) {
+                responseProfile = {
+                    verbosity: validVerbosity,
+                    directiveStrength: validDirective ?? 'medium',
+                    abstractionLevel: validAbstraction ?? 'tactical',
+                };
+            }
+        }
         return {
             name,
             category,
@@ -848,6 +927,9 @@ class SkillRegistry {
             tags: tags.length > 0 ? tags : [category],
             version: nestedMeta.version || '1.0.0',
             contentTypes: validContentTypes,
+            archetypes: archetypes?.length ? archetypes : undefined,
+            antiTriggers: antiTriggers?.length ? antiTriggers : undefined,
+            responseProfile,
             input_schema: { type: 'object', properties: {}, required: [] },
             output_schema: { type: 'object', properties: {}, required: [] },
         };
@@ -905,35 +987,34 @@ class SkillRegistry {
             return;
         }
         this.logger.info(`📊 Generating embeddings for ${skillsNeedingEmbeddings.length} skills...`, { total: allSkills.length });
-        // Process in batches to avoid rate limiting
-        const BATCH_SIZE = 50;
+        // Build text entries with skill references (index maps to skill)
+        const textEntries = skillsNeedingEmbeddings.map((skill) => ({
+            skill,
+            text: [
+                skill.metadata.name,
+                skill.metadata.description,
+                skill.metadata.tags?.join(' ') || '',
+            ]
+                .filter(Boolean)
+                .join(' '),
+        }));
+        // Process in large batches — each batch makes a SINGLE API call
+        // with all texts sent as an array (e.g., { input: ["text1", "text2", ...] })
+        // instead of N individual API calls
+        const BATCH_SIZE = 200;
         let completed = 0;
-        for (let i = 0; i < skillsNeedingEmbeddings.length; i += BATCH_SIZE) {
-            const batch = skillsNeedingEmbeddings.slice(i, i + BATCH_SIZE);
-            const batchPromises = batch.map(async (skill) => {
-                try {
-                    // Combine key fields for embedding context
-                    // Name, description, and tags provide the most semantic value
-                    const text = [
-                        skill.metadata.name,
-                        skill.metadata.description,
-                        skill.metadata.tags?.join(' ') || '',
-                    ]
-                        .filter(Boolean)
-                        .join(' ');
-                    const embedding = await this.embeddingService.generateEmbedding(text);
-                    skill.metadata.embedding = embedding.embedding;
-                }
-                catch (error) {
-                    this.logger.warn(`⚠️ Failed to embed ${skill.metadata.name}`, {
-                        error: error instanceof Error ? error.message : String(error),
-                    });
-                }
-            });
-            await Promise.all(batchPromises);
+        for (let i = 0; i < textEntries.length; i += BATCH_SIZE) {
+            const batch = textEntries.slice(i, i + BATCH_SIZE);
+            const texts = batch.map((e) => e.text);
+            const batchStart = Date.now();
+            const results = await this.embeddingService.batchEmbeddingsPreservingOrder(texts);
+            for (let j = 0; j < batch.length; j++) {
+                batch[j].skill.metadata.embedding = results[j].embedding;
+            }
             completed += batch.length;
+            const elapsed = Date.now() - batchStart;
             const percentage = Math.round((completed / skillsNeedingEmbeddings.length) * 100);
-            this.logger.info(`  [${completed}/${skillsNeedingEmbeddings.length}] (${percentage}%)`);
+            this.logger.info(`  [${completed}/${skillsNeedingEmbeddings.length}] (${percentage}%) [${elapsed}ms]`);
         }
         this.logger.info('✅ Embedding generation complete', {
             generated: skillsNeedingEmbeddings.length,
@@ -1037,8 +1118,8 @@ class SkillRegistry {
                 const metaMatch = trimmed.match(/^([a-zA-Z0-9_-]+)\s*:\s*(.*)/);
                 if (metaMatch) {
                     const rawValue = this.unquoteFrontmatterValue(metaMatch[2].trim());
-                    // content-types can be YAML array [code, guidance] or comma-separated string
-                    if (metaMatch[1] === 'content-types' && rawValue.startsWith('[')) {
+                    // YAML array: [tactical, diagnostic] — parse as JSON-like array
+                    if (rawValue.startsWith('[') && rawValue.endsWith(']')) {
                         try {
                             metadataBlock[metaMatch[1]] = yaml_1.default.parse(rawValue);
                         }

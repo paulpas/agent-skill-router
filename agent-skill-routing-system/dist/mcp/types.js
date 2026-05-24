@@ -14,6 +14,16 @@ class BaseMCPTool {
         this.description = description;
         this.timeoutMs = timeoutMs;
     }
+    /** Code generation methodology for AI agents (e.g., TDD instructions) */
+    methodology = '';
+    /**
+     * Set the code generation methodology for this tool.
+     * When set, the methodology is included in the tool specification
+     * so AI agents see it as a system-level instruction.
+     */
+    setMethodology(methodology) {
+        this.methodology = methodology;
+    }
     /**
      * Validate arguments against expected schema
      */

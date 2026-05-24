@@ -25,6 +25,19 @@ class MCPBridge {
             enabledTools: [],
             disableTools: [],
             defaultTimeoutMs: 30000,
+            methodology: 'CODE GENERATION METHODOLOGY: Test-Driven Development (TDD)\n' +
+                'Follow the RED-GREEN-REFACTOR cycle for ALL code:\n' +
+                '- RED: Write a failing test before any implementation code.\n' +
+                '- GREEN: Write minimal code to pass the test.\n' +
+                '- REFACTOR: Clean up while keeping all tests green.\n' +
+                '\n' +
+                'REQUIREMENTS:\n' +
+                '- Minimum 95% test coverage for all production code.\n' +
+                '- Write isolated, deterministic unit tests with mocked external dependencies.\n' +
+                '- Test edge cases (empty, boundary, error) before happy path.\n' +
+                '- Run full test suite after every REFACTOR phase.\n' +
+                '- Language-agnostic: applies to Python, TypeScript, Go, Rust, etc.\n' +
+                '- Reference skill: test-driven-development (available via skill router)',
             ...(config || {}),
         };
         // Merge disableTools properly
@@ -56,6 +69,9 @@ class MCPBridge {
             if (enabledTools.includes(name)) {
                 try {
                     const tool = factory();
+                    if (this.config.methodology) {
+                        tool.setMethodology(this.config.methodology);
+                    }
                     this.tools.set(tool.name, tool);
                 }
                 catch (error) {

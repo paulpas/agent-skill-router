@@ -195,3 +195,30 @@ SEMANTIC_TOP_K=3
 #   0.7 → Strict — only highly relevant chunks
 # Raise this to reduce noise, lower to capture tangential but useful context.
 SEMANTIC_SIMILARITY_THRESHOLD=0.3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Advanced Routing Configuration (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Enable score breakdown explanations in routing responses (default: false)
+# When enabled, each routed skill includes a per-component breakdown with
+# human-readable explanations for why it was selected.
+# DEBUG_ROUTING=false
+
+# Enable optional LLM ranking as fallback after hybrid scoring (default: false)
+# When true, the router uses an LLM to re-rank the top candidates for
+# nuanced relevance understanding.
+# LLM_RANKING_ENABLED=false
+
+# Hybrid scoring weights
+# These control how much each signal contributes to the final routing score.
+# Weights should sum to approximately 1.0. If unset, code defaults apply.
+# RETRIEVAL_VECTOR_WEIGHT=0.50
+# RETRIEVAL_BM25_WEIGHT=0.20
+# RETRIEVAL_TRIGGER_MATCH_WEIGHT=0.15
+# RETRIEVAL_ARCHETYPE_WEIGHT=0.10
+# RETRIEVAL_HISTORICAL_WEIGHT=0.05
+
+# MMR diversity tradeoff (default: 0.7)
+# 0.0 = maximum diversity, 1.0 = pure relevance
+# MMR_LAMBDA=0.7

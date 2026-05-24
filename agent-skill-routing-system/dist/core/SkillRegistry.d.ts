@@ -1,4 +1,4 @@
-import type { SkillDefinition } from './types';
+import type { SkillMetadata, SkillDefinition } from './types';
 /**
  * Cached skill content entry with LRU metadata
  */
@@ -176,7 +176,11 @@ export declare class SkillRegistry implements SkillRegistryWithCompression {
      * Parse skill metadata from a SKILL.md file with YAML frontmatter
      * Maps OpenCode skill frontmatter fields to SkillMetadata schema
      */
-    private parseSkillFromMarkdown;
+    /**
+     * Parse skill metadata from a SKILL.md file with YAML frontmatter.
+     * Public for testability; callers should not rely on internal parsing details.
+     */
+    parseSkillFromMarkdown(content: string, filePath: string): SkillMetadata;
     /**
      * Validate skill metadata against expected schema
      */

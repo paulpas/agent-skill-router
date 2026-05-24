@@ -2,7 +2,7 @@
 
 > One source of truth for every environment variable in the agent-skill-router system.
 >
-> **Total: 71 environment variables** (70 unique + 1 alias) across 13 categories
+> **Total: 77 environment variables** (76 unique + 1 alias) across 13 categories
 
 ## Quick Start
 
@@ -70,6 +70,7 @@ All variables in alphabetical order:
 | `MAX_EXTERNAL_SIZE_KB` | `10` | Link Following |
 | `MAX_LINK_DEPTH` | `2` | Link Following |
 | `MAX_SKILLS` | `5` | LLM Provider |
+| `MMR_LAMBDA` | `0.7` | Advanced Routing |
 | `NODE_ENV` | `production` | Core Server |
 | `OPENAI_API_BASE` | — *(alias for `OPENAI_BASE_URL`)* | LLM Provider |
 | `OPENAI_API_KEY` | — | LLM Provider |
@@ -77,6 +78,11 @@ All variables in alphabetical order:
 | `PORT` | `3000` | Core Server |
 | `PUPPETEER_EXECUTABLE_PATH` | `/usr/bin/chromium-browser` | Puppeteer / Chrome |
 | `PUPPETEER_SKIP_DOWNLOAD` | `false` | Puppeteer / Chrome |
+| `RETRIEVAL_ARCHETYPE_WEIGHT` | `0.10` | Advanced Routing |
+| `RETRIEVAL_BM25_WEIGHT` | `0.20` | Advanced Routing |
+| `RETRIEVAL_HISTORICAL_WEIGHT` | `0.05` | Advanced Routing |
+| `RETRIEVAL_TRIGGER_MATCH_WEIGHT` | `0.15` | Advanced Routing |
+| `RETRIEVAL_VECTOR_WEIGHT` | `0.50` | Advanced Routing |
 | `SAFETY_STRICT` | `false` | Safety |
 | `SEMANTIC_SIMILARITY_THRESHOLD` | `0.3` | Link Following |
 | `SEMANTIC_TOP_K` | `3` | Link Following |
@@ -336,18 +342,24 @@ Configures the stdio MCP bridge (`skill-router-mcp.js`) that connects OpenCode t
 
 ---
 
-### 13. Advanced Routing (2 vars)
+### 13. Advanced Routing (8 vars)
 
 Controls the hybrid scoring pipeline, MMR diversification, and score explanations for the routing system.
 
 | Variable | Type | Default | Valid Values | Description |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | `DEBUG_ROUTING` | boolean | `false` | `true`, `false` | When enabled, each routed skill includes a per-component breakdown with human-readable explanations. Useful for debugging routing decisions. |
 | `LLM_RANKING_ENABLED` | boolean | `false` | `true`, `false` | When enabled, uses LLM-based ranking as an optional fallback after hybrid scoring. Default is `false` (hybrid scoring only). |
+| `MMR_LAMBDA` | float | `0.7` | `0.0` – `1.0` | MMR diversity tradeoff. `0.0` = maximum diversity, `1.0` = pure relevance. The default `0.7` favors relevance while still penalizing near-duplicate skills. |
+| `RETRIEVAL_ARCHETYPE_WEIGHT` | float | `0.10` | `0.0` – `1.0` | Weight for archetype alignment signal. Higher values prioritize skills matching the query's archetype (tactical, strategic, diagnostic, etc.). |
+| `RETRIEVAL_BM25_WEIGHT` | float | `0.20` | `0.0` – `1.0` | Weight for BM25 exact-term matching signal. Higher values prioritize skills with exact keyword matches. |
+| `RETRIEVAL_HISTORICAL_WEIGHT` | float | `0.05` | `0.0` – `1.0` | Weight for historical success rate signal. Higher values prioritize skills with proven routing success. |
+| `RETRIEVAL_TRIGGER_MATCH_WEIGHT` | float | `0.15` | `0.0` – `1.0` | Weight for trigger keyword matching signal. Higher values prioritize skills whose configured triggers match query terms. |
+| `RETRIEVAL_VECTOR_WEIGHT` | float | `0.50` | `0.0` – `1.0` | Weight for semantic vector similarity signal. Higher values prioritize skills semantically closest to the query. This is the primary signal. |
 
 **Source:** `src/core/Router.ts` lines 352, 474.
 
-> **Note:** The hybrid scoring weights (`RETRIEVAL_VECTOR_WEIGHT`, `RETRIEVAL_BM25_WEIGHT`, etc.) are configured via TypeScript `RouterConfig` interface, not environment variables. See [AGENTS.md#advanced-routing-system-v2](../AGENTS.md#advanced-routing-system-v2) for the full configuration reference.
+> **Note:** All weights now support environment variable configuration. The priority order is: programmatic `RouterConfig` > environment variable > code default. See [AGENTS.md#advanced-routing-system-v2](../AGENTS.md#advanced-routing-system-v2) for the full configuration reference.
 
 ---
 

@@ -48,6 +48,13 @@ export declare class EmbeddingService {
      */
     batchEmbeddings(texts: string[], cacheKey?: string): Promise<EmbeddingResponse[]>;
     /**
+     * Generate embeddings for multiple texts, preserving input order.
+     * Unlike batchEmbeddings(), which reorders results (cached items first),
+     * this method returns results in exactly the same order as the input texts.
+     * Uses a single batch API call per sub-batch for maximum throughput.
+     */
+    batchEmbeddingsPreservingOrder(texts: string[]): Promise<EmbeddingResponse[]>;
+    /**
      * Process a single batch of texts
      */
     private processBatch;

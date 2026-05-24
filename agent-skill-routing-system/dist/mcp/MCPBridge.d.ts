@@ -7,6 +7,8 @@ export interface MCPBridgeConfig {
     enabledTools?: string[];
     disableTools?: string[];
     defaultTimeoutMs: number;
+    /** Code generation methodology instructions (e.g., TDD) for AI agents using MCP tools */
+    methodology?: string;
 }
 /**
  * MCP Bridge - manages all MCP tools

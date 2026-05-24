@@ -134,23 +134,34 @@ export class Router {
       level: config.observability?.level || 'info',
     });
 
+    // Helper: parse env var as float with safe fallback (NaN-safe)
+    const envWeight = (key: string, defaultVal: number): number => {
+      const val = process.env[key];
+      if (val !== undefined) {
+        const parsed = parseFloat(val);
+        if (!isNaN(parsed)) return parsed;
+      }
+      return defaultVal;
+    };
+
     // Hybrid retrieval initialization (Phase 2)
+    // Priority: programmatic config > env var > hardcoded default
     const scoreConfig: HybridScoreConfig = {
-      vectorWeight: config.retrieval?.vectorWeight ?? 0.50,
-      bm25Weight: config.retrieval?.bm25Weight ?? 0.20,
-      triggerMatchWeight: config.retrieval?.triggerMatchWeight ?? 0.15,
-      archetypeWeight: config.retrieval?.archetypeWeight ?? 0.10,
-      historicalWeight: config.retrieval?.historicalWeight ?? 0.05,
+      vectorWeight: config.retrieval?.vectorWeight ?? envWeight('RETRIEVAL_VECTOR_WEIGHT', 0.50),
+      bm25Weight: config.retrieval?.bm25Weight ?? envWeight('RETRIEVAL_BM25_WEIGHT', 0.20),
+      triggerMatchWeight: config.retrieval?.triggerMatchWeight ?? envWeight('RETRIEVAL_TRIGGER_MATCH_WEIGHT', 0.15),
+      archetypeWeight: config.retrieval?.archetypeWeight ?? envWeight('RETRIEVAL_ARCHETYPE_WEIGHT', 0.10),
+      historicalWeight: config.retrieval?.historicalWeight ?? envWeight('RETRIEVAL_HISTORICAL_WEIGHT', 0.05),
     };
     this.hybridScorer = new HybridScorer(scoreConfig);
     this.bm25Indexer = BM25Indexer.buildIndex([]); // Will be rebuilt when skills are indexed
 
     // MMR diversifier (Phase 3)
+    // Priority: programmatic config > env var > hardcoded default (0.7)
     const diversityEnabled = config.diversity?.enabled ?? true;
     if (diversityEnabled) {
-      this.mmrDiversifier = new MMRDiversifier({
-        ...(config.diversity != null ? { lambda: config.diversity.lambda } : {}),
-      });
+      const mmrLambda = config.diversity?.lambda ?? envWeight('MMR_LAMBDA', 0.7);
+      this.mmrDiversifier = new MMRDiversifier({ lambda: mmrLambda });
     }
 
     this.config = config;

@@ -675,6 +675,9 @@ Use --help for configuration options.
                 this.logger.info('[INDEX] Using remote index', { url: remoteIndexUrl });
                 await this.router.getRegistry().loadFromRemoteIndex(remoteIndexUrl);
                 this.router.syncVectorDatabase();
+                // Initialize BM25 index and vector DB from local skill files
+                // (local files may have full content that overrides metadata-only remote entries)
+                await this.router.initialize();
                 this.remoteIndexUrl = remoteIndexUrl;
                 // Start periodic remote index refresh so newly pushed skills are discovered
                 const syncIntervalMs = parseInt(process.env.SKILL_SYNC_INTERVAL || '3600', 10) * 1000;

@@ -65,7 +65,7 @@ class KubectlTool extends types_1.BaseMCPTool {
      * Get tool specification
      */
     getSpecification() {
-        return {
+        const spec = {
             name: this.name,
             description: this.description,
             parameters: {
@@ -79,6 +79,10 @@ class KubectlTool extends types_1.BaseMCPTool {
                 required: ['command'],
             },
         };
+        if (this.methodology) {
+            spec.methodology = this.methodology;
+        }
+        return spec;
     }
 }
 exports.KubectlTool = KubectlTool;
