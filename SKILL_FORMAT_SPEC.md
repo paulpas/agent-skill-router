@@ -11,9 +11,10 @@
 2. [YAML Frontmatter Specification](#2-yaml-frontmatter-specification)
 3. [Domain Defaults Table](#3-domain-defaults-table)
 4. [Content Structure](#4-content-structure)
-5. [Triggers Guidelines](#5-triggers-guidelines)
-6. [Quality Checklist](#6-quality-checklist)
-7. [Complete Annotated Example](#7-complete-annotated-example)
+5. [Skill Granularity and Atomic Design](#5-skill-granularity-and-atomic-design)
+6. [Triggers Guidelines](#6-triggers-guidelines)
+7. [Quality Checklist](#7-quality-checklist)
+8. [Complete Annotated Example](#8-complete-annotated-example)
 
 ---
 
@@ -574,6 +575,24 @@ Be specific. "When NOT to Use" is just as important — it prevents the model fr
 
 Number the steps. Add **Checkpoint** notes after steps where the model must verify something before continuing. Reference related sections.
 
+### Role-Based Section Requirements
+
+Not every section is needed for every skill. Use this table to determine which sections apply based on your skill's `role` field.
+
+| Section | `implementation` | `reference` | `orchestration` | `review` |
+|---|---|---|---|---|
+| H1 Title | Required | Required | Required | Required |
+| Role/purpose paragraph | Required | Required | Required | Required |
+| TL;DR Checklist | Required | Optional | Optional | Optional |
+| When to Use / When NOT to Use | Required | Recommended | Recommended | Recommended |
+| Core Workflow | Required | Optional | Required | Required |
+| Implementation Patterns | **Required** (≥2 code blocks) | N/A | N/A | N/A |
+| Constraints (MUST/MUST NOT DO) | **Required** | Optional | Recommended | **Required** |
+| Output Template | Optional | N/A | N/A | **Required** |
+| Related Skills | Recommended | Recommended | **Required** | Recommended |
+
+**Key rule:** Only `role = implementation` skills require code examples and the "Implementation Patterns" section. Reference, orchestration, and review skills use prose, diagrams, and structured guidance instead. A reference skill with zero code examples is not a stub — it's doing its job correctly.
+
 #### Constraints (MUST DO / MUST NOT DO)
 
 Short, imperative sentences. No explanations needed here — those belong in the workflow. These are the non-negotiable rules.
@@ -820,7 +839,90 @@ The team implemented this feature for user access.
 
 ---
 
-## 5. Triggers Guidelines
+## 5. Skill Granularity and Atomic Design
+
+Skills should be atomic: each skill covers ONE coherent topic that can stand alone when loaded. Monolithic skills covering multiple distinct patterns confuse the router and dilute the guidance provided to the model.
+
+### Identifying Monoliths
+
+A skill is a monolith (and should be split) when ANY of these conditions are met:
+
+1. **The frontmatter `description` lists 5+ distinct patterns, concepts, or features** separated by commas, parentheses, or "and". Example: `Implements circuit breakers, retry strategies, bulkhead isolation, health checks, graceful degradation, distributed tracing` → 6 distinct patterns in one skill.
+
+2. **The Core Content has 5+ independent "Pattern N:" or similarly headed sections** each with their own implementation code and explanation — topics that could stand alone.
+
+3. **"Implements X, Y, Z" description + file size over 15KB** — broad scope combined with large content volume means the skill is storing significant duplicated material across multiple topics.
+
+4. **`related-skills` lists skills for sub-topics already covered by this skill** — if siblings exist for individual patterns within the parent, the parent is likely over-scoped.
+
+### Monolith Severity Matrix
+
+| Condition | Severity | Action |
+|-----------|----------|--------|
+| 3–4 patterns, under 15KB | LOW | Monitor — note as candidate but don't rush split |
+| 5+ patterns OR "Implements X, Y, Z" + 20KB+ | HIGH | Plan split in next cycle |
+| 10+ patterns (e.g., full GoF catalog) | CRITICAL | Split immediately |
+| Template-generated skill with generic triggers (e.g. "management", "systems") | HIGH | Fix triggers during any review |
+
+### Split Criteria
+
+When creating sub-skills from a monolith, enforce these rules:
+
+- **Each sub-skill must be independently useful** — loading it alone should provide complete guidance for its topic. A fragment that requires the parent to make sense is not a valid sub-skill.
+- **Boundaries follow change frequency** — patterns that evolve independently belong in different skills. If one changes when another doesn't, split them.
+- **Each new skill gets 3–8 carefully calibrated triggers** — do not inherit all parent triggers. Derive fresh ones specific to the sub-skill's domain terms.
+- **Related-skills must be reciprocal** — if A lists B as related, B must list A. Siblings from a split list each other; the parent (if kept as catalog) lists all children.
+
+### Split Patterns
+
+Four common approaches for splitting monoliths:
+
+1. **Topic Decomposition** — The skill covers N distinct topics. Each becomes its own skill.
+   Example: `system-reliability-architecture` (circuit breakers, retry, bulkhead, health checks, degradation, tracing) → 5 focused skills.
+
+2. **Category Split** — Patterns from multiple categories. Each category becomes its own skill.
+   Example: GoF catalog (23 patterns across 3 families) → `creational-patterns`, `structural-patterns`, `behavioral-patterns`.
+
+3. **Depth Layering** — The skill covers both "how to" implementation AND "why" design principles. Split into tactical and strategic layers.
+   Example: `security-engineering` (threat modeling + OWASP prevention + supply chain security + pipeline integration) → separate reference, implementation, and orchestration skills.
+
+4. **Domain Narrowing** — The skill covers a pattern applied across many contexts. Split by primary context.
+   Example: `risk-kill-switches` (account-level, strategy-level, market-level, infrastructure-level) → 4 focused skills.
+
+### Gradual Migration Strategy
+
+When you identify a monolith to split:
+
+1. **Create the atomic skills first** — write complete SKILL.md files for each sub-skill with full depth (not abbreviated versions of the monolith content).
+2. **Update related-skills on the parent** — point to the new atomic skills.
+3. **Add triggers to atomic skills** — carefully calibrated, domain-specific terms.
+4. **Existing monoliths stay intact** — no breaking changes. Users benefit gradually as the router routes specific queries to better-scoped atomic skills via trigger precision.
+
+**Do NOT delete or modify existing monolithic skills during migration.** The goal is additive improvement, not forced refactoring. Eventually (optional): monoliths can be deprecated or converted to overview/catalog entries once atomic skills have matured.
+
+### Preventing New Monoliths
+
+When creating a new skill:
+
+- Write the `description` first, then check: does it list 5+ distinct patterns? If yes, stop and split before writing content.
+- Keep the initial scope tight: one core concept, one workflow, 2–3 code examples.
+- Add related-skills for adjacent concepts that could become sub-skills later.
+
+### Quality Checklist for Split Skills
+
+When validating a skill created from a monolith split:
+
+- [ ] Covers exactly ONE coherent topic or category (not multiple unrelated patterns)
+- [ ] Is independently useful — loading alone provides complete guidance
+- [ ] Description passes the "Implements X, Y, Z" test (lists at most 3 related aspects of the same concept)
+- [ ] File is ≥ 3,000 bytes
+- [ ] Contains sufficient depth for its scope (15–40KB for implementation skills covering one pattern family; less for reference/orchestration skills)
+- [ ] Has its own trigger set of 3–8 terms derived from this sub-skill's specific domain
+- [ ] Related-skills lists all sibling skills from the split
+
+---
+
+## 6. Triggers Guidelines
 
 ### What Triggers Do
 
@@ -907,6 +1009,14 @@ Ask these questions for each trigger candidate:
 ## 6. Quality Checklist
 
 Use this checklist when writing a new skill or auditing an existing one.
+
+### Skill Granularity
+
+- [ ] Description does NOT list 5+ distinct patterns, concepts, or features (use "Implements X, Y, Z" as a detection heuristic — if you see it, split)
+- [ ] Skill covers one coherent topic that stands alone when loaded (not a fragment requiring another skill for context)
+- [ ] If `role = implementation`: file has ≥ 2 code blocks with real implementations (not placeholder/pseudocode)
+- [ ] If `role = reference` or `orchestration`: zero code examples is acceptable — not a stub indicator
+- [ ] Related-skills lists all sibling skills from any split, and reciprocal links verified
 
 ### Frontmatter
 
@@ -1225,6 +1335,7 @@ When implementing or reviewing stop loss logic, produce:
 | Links to `example.com`         | Broken references                    | Use real URLs or omit the link         |
 | H1 = directory name          | Unreadable                           | Use human-readable title               |
 | No `content-types` specified | Validation defaults may be wrong     | Explicitly declare content-types       |
+| `description` lists 5+ patterns | Monolithic skill — confuses router, dilutes guidance | Split into atomic skills; each covers one coherent topic |
 
 ---
 
