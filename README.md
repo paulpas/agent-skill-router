@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 916 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 917 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **916 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **917 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -94,7 +94,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
 | Maker | 3 | DIY projects, IoT, home automation, 3D printing |
-| Programming | 6 | Algorithms, frameworks, language references |
+| Programming | 7 | Algorithms, frameworks, language references |
 | Trading | 89 | Execution, risk management, ML models |
 | Writing | 4 | Technical writing, style guidance |
 ---
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 02:12:04 UTC  
-> **Total skills:** 916  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (916 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-23 22:03:35 UTC  
+> **Total skills:** 917  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (917 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 915 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 915 | Ranking penalty for conflicting query terms |
-| Response Profile | 915 | Verbosity, directive strength, abstraction level |
+| Archetypes | 916 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 916 | Ranking penalty for conflicting query terms |
+| Response Profile | 916 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -1139,12 +1139,13 @@ MIT — All skills are freely available and redistributable.
 | [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. | rapid prototyping, quick prototype, proof of concept, iterative design, mockup, wireframe, how do i quickly test an idea [educational] |
 
 
-### Programming (6 skills)
+### Programming (7 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [algorithms](skills/programming/algorithms/SKILL.md) | ''Provides Comprehensive algorithm selection guide u2014 choose, implement, and' optimize algorithms based on time/space trade-offs, input characteristics, and problem constraints'' | algorithms, comprehensive, algorithm, selection [educational] |
 | [async-runtime](skills/programming/async-runtime/SKILL.md) | Implements and analyzes Rust async runtime patterns including tokio, async-std, and custom executors for high-performance concurrent systems. | rust async, tokio, async-std, futures, executor, concurrency, non-blocking io, async runtime [educational] |
+| [data-structures](skills/programming/data-structures/SKILL.md) | Implements and compares fundamental data structures (hash tables, balanced BSTs, tries, heaps, linked lists, graphs) with O(1) through O(n log n) complexity analysis for optimal algorithm selection. | data structures, hash table, balanced tree, AVL tree, red-black tree, trie, heap priority queue, linked list, graph traversal, binary search tree, b-tree, complexity analysis, time complexity, space complexity [educational, tactical] |
 | [for-loop-iteration](skills/programming/for-loop-iteration/SKILL.md) | Teaches idiomatic for loop patterns across Python, JavaScript, Go, C/C++, Rust, and shell scripting with anti-patterns, common pitfalls, and best practices. | for loop, iteration, loop patterns, enumerate, range, iterator, list comprehension, index-based loop, how do i iterate over a collection [educational] |
 | [graph-traversal](skills/programming/graph-traversal/SKILL.md) | Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving. | graph traversal, depth first search, DFS, breadth first search, BFS, connected components, shortest path unweighted, tree traversal, cycle detection, topological sort, graph algorithm, level order traversal [educational] |
 | [v10-learning](skills/programming/v10-learning/SKILL.md) | "Reference guide for Progress OpenEdge ABL 10.1A (2005) — data types" variable declaration, procedures, functions, OOP basics, error handling, database access, transaction handling, control flow | abl, abl programming, abl v10, openedge, openedge 10, progress 4gl, progress abl [educational] |
@@ -1768,7 +1769,7 @@ MIT — All skills are freely available and redistributable.
 | [zoom-api](skills/coding/zoom-api/SKILL.md) | Coding | Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users) using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination, and rate-limit handling. |
 
 
-### Reference (Learn & Understand) (171 skills)
+### Reference (Learn & Understand) (172 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1819,6 +1820,7 @@ MIT — All skills are freely available and redistributable.
 | [cubefs](skills/cncf/cubefs/SKILL.md) | Cncf | "Provides CubeFS in Storage - distributed, high-performance file system" |
 | [custodian](skills/cncf/custodian/SKILL.md) | Cncf | "Provides Cloud Custodian in Cloud-Native Engineering -/rules engine for cloud infrastructure management" |
 | [dapr](skills/cncf/dapr/SKILL.md) | Cncf | "Provides Dapr in Cloud-Native Engineering - distributed application runtime" |
+| [data-structures](skills/programming/data-structures/SKILL.md) | Programming | Implements and compares fundamental data structures (hash tables, balanced BSTs, tries, heaps, linked lists, graphs) with O(1) through O(n log n) complexity analysis for optimal algorithm selection. |
 | [deployment-manager](skills/cncf/deployment-manager/SKILL.md) | Cncf | "Infrastructure as code using YAML templates for repeatable GCP resource" deployments. |
 | [deployment-philosophy](skills/cncf/deployment-philosophy/SKILL.md) | Cncf | Architects multi-stage deployment strategies that balance speed, safety, and reliability through systematic risk assessment and controlled change delivery. |
 | [developer-pattern-library](skills/agent/developer-pattern-library/SKILL.md) | Agent | Curates and maintains a personal library of validated code patterns, solutions, and anti-patterns accumulated through development experience, enabling faster problem-solving on future tasks. |
@@ -2434,6 +2436,7 @@ MIT — All skills are freely available and redistributable.
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | Implementation |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale | Implementation |
 | [data-quality](skills/coding/data-quality/SKILL.md) | Coding | "Implements data validation, cleaning, outlier detection, and quality assurance techniques to ensure reliable datasets for model training" | Implementation |
+| [data-structures](skills/programming/data-structures/SKILL.md) | Programming | Implements and compares fundamental data structures (hash tables, balanced BSTs, tries, heaps, linked lists, graphs) with O(1) through O(n log n) complexity analysis for optimal algorithm selection. | Reference |
 | [data-validation-patterns](skills/coding/data-validation-patterns/SKILL.md) | Coding | Implements comprehensive data validation and sanitization (schema validation with pydantic, type coercion safety, input sanitization, output encoding, transformation pipelines) to ensure data integrity throughout software systems. | Implementation |
 | [data-versioning](skills/coding/data-versioning/SKILL.md) | Coding | "Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment tracking and governance" | Implementation |
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | Coding | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" | Implementation |
