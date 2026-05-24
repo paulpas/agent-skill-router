@@ -14,6 +14,7 @@ export interface VectorDatabaseConfig {
   maxResults?: number;
   similarityThreshold?: number;
   useKDTree?: boolean;
+  kdTreeDimensionThreshold?: number;
 }
 
 /**
@@ -35,6 +36,7 @@ export class VectorDatabase {
       maxResults: 20,
       similarityThreshold: 0.3,
       useKDTree: true,
+      kdTreeDimensionThreshold: 128,
       ...config,
     };
     this.logger = new Logger('VectorDatabase', {
@@ -263,6 +265,16 @@ export class VectorDatabase {
 
     // Early exit: no skills to index
     if (this.skills.length === 0) {
+      this.kdTree = null;
+      return;
+    }
+
+    // Early exit: KD-tree is ineffective at high dimensions (curse of dimensionality)
+    if (this.embeddingDimension > (this.config.kdTreeDimensionThreshold ?? 128)) {
+      this.logger.info('KD-tree disabled for high-dimensional embeddings', {
+        dimension: this.embeddingDimension,
+        threshold: this.config.kdTreeDimensionThreshold,
+      });
       this.kdTree = null;
       return;
     }

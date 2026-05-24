@@ -36,7 +36,7 @@ export declare class EmbeddingService {
     constructor(config?: Partial<EmbeddingServiceConfig>);
     /**
      * Load persisted embeddings from disk into the in-memory cache at startup.
-     * Prevents re-generating all embeddings after every Docker restart.
+     * Uses async I/O with concurrent reads for better startup performance at scale.
      */
     private loadCacheFromDisk;
     /**

@@ -34,14 +34,33 @@ export declare class CompressionCleanupJob {
     cleanupBatchSize?: number);
     /**
      * Start the cleanup job
-     * For now: run on interval (24 hours default)
-     * TODO: replace with actual cron when cron package is available
+     * Runs immediately on start, then schedules subsequent runs
+     * based on the cron expression in scheduleInterval.
+     * Uses setTimeout for drift-free scheduling (re-calculates after each run).
      */
     start(): void;
     /**
      * Stop the cleanup job
      */
     stop(): void;
+    /**
+     * Schedule the next cleanup execution based on the cron expression.
+     * Uses setTimeout for precise scheduling instead of fixed-interval setInterval.
+     * Re-schedules after each run for drift-free execution.
+     */
+    private scheduleNext;
+    /**
+     * Calculate milliseconds until the next match of a 5-field cron expression.
+     * Fields: minute (0-59), hour (0-23), day of month (1-31), month (1-12), day of week (0-6, 0=Sunday)
+     * Supports: * (wildcard), N (exact value), step/N (every N)
+     * Falls back to 24 hours on parse failure or no match within 7 days.
+     */
+    private msUntilNextCron;
+    /**
+     * Check if a cron field pattern matches a given value.
+     * Supports: * (wildcard), step/N (every N), N (exact value)
+     */
+    private cronFieldMatches;
     /**
      * Run cleanup immediately (not on schedule)
      */

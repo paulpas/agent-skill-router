@@ -26,6 +26,7 @@ export class KDTree {
   private dimension: number;
   private root: KDTreeNode | null = null;
   private points: number[][] = [];
+  private indexMap: Map<number[], number> = new Map();
 
   /**
    * Creates a new KD-tree
@@ -45,7 +46,8 @@ export class KDTree {
   build(points: number[][]): void {
     // Parse and validate input data at boundary
     this.points = this.parsePoints(points);
-    
+    this.indexMap = new Map(this.points.map((p, i) => [p, i]));
+
     // Reset tree before rebuilding
     this.root = null;
     
@@ -117,7 +119,7 @@ export class KDTree {
     // Create node with the median point
     const node: KDTreeNode = {
       point: medianPoint,
-      index: this.points.indexOf(medianPoint),
+      index: this.indexMap.get(medianPoint) ?? 0,
       left: null,
       right: null,
     };

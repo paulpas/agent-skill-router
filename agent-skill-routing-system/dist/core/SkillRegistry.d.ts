@@ -60,6 +60,8 @@ export interface SkillRegistryConfig {
 interface CompressedResult {
     content: string;
     compressPercent: number;
+    tokens?: number;
+    source?: string;
 }
 export interface SkillRegistryWithCompression extends SkillRegistry {
     /** Get skill content with cache layering (memory → disk → original) */

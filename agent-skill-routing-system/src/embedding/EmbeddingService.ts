@@ -89,22 +89,32 @@ export class EmbeddingService {
       },
     };
     this.logger = new Logger('EmbeddingService');
-    this.loadCacheFromDisk();
+    this.loadCacheFromDisk().catch((err) => {
+      this.logger.warn('Failed to load embedding cache from disk', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+    });
   }
 
   /**
    * Load persisted embeddings from disk into the in-memory cache at startup.
-   * Prevents re-generating all embeddings after every Docker restart.
+   * Uses async I/O with concurrent reads for better startup performance at scale.
    */
-  private loadCacheFromDisk(): void {
+  private async loadCacheFromDisk(): Promise<void> {
     try {
       const cacheDir = path.join(this.config.cacheDirectory, 'default');
-      if (!fs.existsSync(cacheDir)) return;
-      const files = fs.readdirSync(cacheDir).filter(f => f.endsWith('.json'));
+      try {
+        await fs.promises.access(cacheDir);
+      } catch {
+        return; // cache dir doesn't exist yet
+      }
+      const files = (await fs.promises.readdir(cacheDir)).filter(f => f.endsWith('.json'));
+      if (files.length === 0) return;
+
       let loaded = 0;
-      for (const file of files) {
+      const readPromises = files.map(async (file) => {
         try {
-          const raw = fs.readFileSync(path.join(cacheDir, file), 'utf-8');
+          const raw = await fs.promises.readFile(path.join(cacheDir, file), 'utf-8');
           const entry = JSON.parse(raw) as { text: string; embedding: number[]; inputTokens?: number };
           if (entry.text && Array.isArray(entry.embedding)) {
             this.cache.set(entry.text, {
@@ -118,7 +128,10 @@ export class EmbeddingService {
         } catch {
           // skip corrupt files silently
         }
-      }
+      });
+
+      await Promise.all(readPromises);
+
       if (loaded > 0) {
         this.logger.info('[CACHE] Loaded embeddings from disk', { count: loaded, dir: cacheDir });
       }

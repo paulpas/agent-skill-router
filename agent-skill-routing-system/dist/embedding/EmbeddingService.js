@@ -51,22 +51,32 @@ class EmbeddingService {
             },
         };
         this.logger = new Logger_1.Logger('EmbeddingService');
-        this.loadCacheFromDisk();
+        this.loadCacheFromDisk().catch((err) => {
+            this.logger.warn('Failed to load embedding cache from disk', {
+                error: err instanceof Error ? err.message : String(err),
+            });
+        });
     }
     /**
      * Load persisted embeddings from disk into the in-memory cache at startup.
-     * Prevents re-generating all embeddings after every Docker restart.
+     * Uses async I/O with concurrent reads for better startup performance at scale.
      */
-    loadCacheFromDisk() {
+    async loadCacheFromDisk() {
         try {
             const cacheDir = path_1.default.join(this.config.cacheDirectory, 'default');
-            if (!fs_1.default.existsSync(cacheDir))
+            try {
+                await fs_1.default.promises.access(cacheDir);
+            }
+            catch {
+                return; // cache dir doesn't exist yet
+            }
+            const files = (await fs_1.default.promises.readdir(cacheDir)).filter(f => f.endsWith('.json'));
+            if (files.length === 0)
                 return;
-            const files = fs_1.default.readdirSync(cacheDir).filter(f => f.endsWith('.json'));
             let loaded = 0;
-            for (const file of files) {
+            const readPromises = files.map(async (file) => {
                 try {
-                    const raw = fs_1.default.readFileSync(path_1.default.join(cacheDir, file), 'utf-8');
+                    const raw = await fs_1.default.promises.readFile(path_1.default.join(cacheDir, file), 'utf-8');
                     const entry = JSON.parse(raw);
                     if (entry.text && Array.isArray(entry.embedding)) {
                         this.cache.set(entry.text, {
@@ -81,7 +91,8 @@ class EmbeddingService {
                 catch {
                     // skip corrupt files silently
                 }
-            }
+            });
+            await Promise.all(readPromises);
             if (loaded > 0) {
                 this.logger.info('[CACHE] Loaded embeddings from disk', { count: loaded, dir: cacheDir });
             }

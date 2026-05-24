@@ -242,9 +242,9 @@ class AgentSkillRoutingApp {
                 reply
                     .header('Content-Type', 'text/plain; charset=utf-8')
                     .header('X-Compression-Version', compressionVersion)
-                    .header('X-Compression-Tokens', '0') // TODO: track token count
+                    .header('X-Compression-Tokens', String(result?.tokens ?? 0))
                     .header('X-Compression-Percent', String(compressPercent))
-                    .header('X-Compression-Source', 'original') // TODO: track source
+                    .header('X-Compression-Source', result?.source ?? 'original')
                     .send(content);
             }
             catch (error) {
@@ -635,7 +635,7 @@ Use --help for configuration options.
         });
         // Load compression configuration for scaling to 1,778 skills
         const compressionCacheSizeMB = parseInt(process.env.COMPRESSION_CACHE_SIZE_MB || '1024', 10);
-        const compressionWarmupSkills = parseInt(process.env.COMPRESSION_WARMUP_SKILLS || '100', 10);
+        const compressionWarmupSkills = parseInt(process.env.COMPRESSION_WARMUP_SKILLS || '500', 10);
         const compressionBatchSize = parseInt(process.env.COMPRESSION_BATCH_SIZE || '10', 10);
         const compressionAdaptiveTTL = process.env.COMPRESSION_ADAPTIVE_TTL !== 'false';
         // Load skill routing configuration
@@ -740,7 +740,7 @@ Use --help for configuration options.
             });
         }
         // Trigger startup warmup for top skills (non-blocking)
-        const warmupSkillsCount = parseInt(process.env.COMPRESSION_WARMUP_SKILLS || '100', 10);
+        const warmupSkillsCount = parseInt(process.env.COMPRESSION_WARMUP_SKILLS || '500', 10);
         const warmupTimeoutMs = parseInt(process.env.COMPRESSION_WARMUP_TIMEOUT_MS || '30000', 10);
         if (warmupSkillsCount > 0) {
             this.logger.info('[COMPRESSION-WARMUP] triggering on startup', { skillCount: warmupSkillsCount });

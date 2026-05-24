@@ -7,6 +7,7 @@ export interface VectorDatabaseConfig {
     maxResults?: number;
     similarityThreshold?: number;
     useKDTree?: boolean;
+    kdTreeDimensionThreshold?: number;
 }
 /**
  * Vector database for skill retrieval
