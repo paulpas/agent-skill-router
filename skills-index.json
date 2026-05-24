@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T07:28:39.754107Z",
-  "totalSkills": 924,
+  "generatedAt": "2026-05-24T08:09:51.587329Z",
+  "totalSkills": 927,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 359,
+    "coding": 362,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 511,
+    "implementation": 514,
     "reference": 172,
     "information": 1,
     "review": 5
@@ -5365,6 +5365,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/css-architecture/SKILL.md"
+    },
+    {
+      "name": "css-nesting",
+      "domain": "coding",
+      "description": "Implements modern CSS native nesting patterns with & parent selector for organizing component styles, managing specificity, and writing maintainable scoped CSS without preprocessors.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "css nesting",
+        "ampersand selector",
+        "& parent selector",
+        "native css nesting",
+        "postcss-nesting",
+        "component styles",
+        "scoped css"
+      ],
+      "relatedSkills": [
+        "css-architecture",
+        "bem-naming",
+        "css-variables",
+        "css-specificity"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/css-nesting/SKILL.md"
     },
     {
       "name": "cubefs",
@@ -20796,6 +20821,30 @@
       "source": "skills/coding/typescript-generics-types/SKILL.md"
     },
     {
+      "name": "typescript-intersection",
+      "domain": "coding",
+      "description": "Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "typescript intersection",
+        "& type operator",
+        "intersection types",
+        "TypeScript type composition",
+        "never type conflict",
+        "TypeScript extends vs intersection",
+        "combining types"
+      ],
+      "relatedSkills": [
+        "typescript-utility-types",
+        "typescript-generics",
+        "typescript-pattern-matching"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/typescript-intersection/SKILL.md"
+    },
+    {
       "name": "typescript-intersection-types",
       "domain": "coding",
       "description": "Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies.",
@@ -21856,6 +21905,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/yaml-anchor-alias/SKILL.md"
+    },
+    {
+      "name": "yaml-anchors",
+      "domain": "coding",
+      "description": "Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "yaml anchors",
+        "yaml aliases",
+        "& anchor",
+        "* alias",
+        "YAML merge key",
+        "docker-compose reuse",
+        "kubernetes config reuse"
+      ],
+      "relatedSkills": [
+        "docker-compose-patterns",
+        "kubernetes-configmap",
+        "helm-charts"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/yaml-anchors/SKILL.md"
     },
     {
       "name": "your-edge",

@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 924 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 927 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **924 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **927 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 359 | Software patterns, security, testing, data science |
+| Coding | 362 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 07:28:41 UTC  
-> **Total skills:** 924  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (924 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 08:09:53 UTC  
+> **Total skills:** 927  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (927 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 923 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 923 | Ranking penalty for conflicting query terms |
-| Response Profile | 923 | Verbosity, directive strength, abstraction level |
+| Archetypes | 926 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 926 | Ranking penalty for conflicting query terms |
+| Response Profile | 926 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (359 skills)
+### Coding (362 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -807,6 +807,7 @@ MIT — All skills are freely available and redistributable.
 | [cross-domain-workflow-sagas](skills/coding/cross-domain-workflow-sagas/SKILL.md) | Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns — compensating actions, timeout handling, distributed state persistence, and failure recovery in domain-driven systems. | saga pattern, saga orchestration, saga choreography, cross-domain workflow, compensating action, distributed transaction, how do i coordinate across bounded contexts, business transaction consistency, eventual consistency, multi-context workflow [tactical, generation] |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | cross-validation, k-fold, stratified cross-validation, time-series cross-validation, validation [tactical, generation] |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. | css architecture, css modules, bem naming, tailwind css v4, container queries, :has selector, css nesting, @layer cascade, how do i organize stylesheets, responsive components, utility-first css, scroll-driven animations, view transitions api, css custom properties, css specificity management [tactical, generation] |
+| [css-nesting](skills/coding/css-nesting/SKILL.md) | Implements modern CSS native nesting patterns with & parent selector for organizing component styles, managing specificity, and writing maintainable scoped CSS without preprocessors. | css nesting, ampersand selector, & parent selector, native css nesting, postcss-nesting, component styles, scoped css [tactical, generation] |
 | [data-collection](skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data [tactical, generation] |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | json serialization, xml parsing, base64 encoding, url encoding, yaml config, protocol buffers, data serialization, type coercion, character encoding, message encoding [tactical, generation] |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data [tactical, generation] |
@@ -1075,6 +1076,7 @@ MIT — All skills are freely available and redistributable.
 | [twilio-api](skills/coding/twilio-api/SKILL.md) | Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation. | twilio, sms api, send sms, whatsapp api, twilio verify, phone verification, twilio voice, twilio webhooks [tactical, generation] |
 | [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. | type safety, type narrowing, strict mode, type guards, static typing, runtime validation, mypy, pyright, typescript strict, zod schema [tactical, generation] |
 | [typescript-generics-types](skills/coding/typescript-generics-types/SKILL.md) | Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations. | generics, type parameters, conditional types, infer keyword, mapped types, template literal types, keyof [tactical, generation] |
+| [typescript-intersection](skills/coding/typescript-intersection/SKILL.md) | Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls. | typescript intersection, & type operator, intersection types, TypeScript type composition, never type conflict, TypeScript extends vs intersection, combining types [tactical, generation] |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | intersection types, ampersand type, type merging, TypeScript & operator, props merging, mixin pattern, type conflicts, keyof T & K, generic constraints, ComponentProps & custom [tactical, generation] |
 | [validation](skills/coding/validation/SKILL.md) | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions | validation, code validation, pipeline validation, config status, input validation, validate pipeline, pipeline stages [tactical, generation] |
 | [vault-api](skills/coding/vault-api/SKILL.md) | Implements HashiCorp Vault API integration (KV Secrets Engine, PKI, Transit, Auth Methods, Leasing & Renewal) using hvac Python SDK v2.4+ with proper authentication, secret leasing, TTL management, and encryption as a service patterns. | hashicorp vault, hvac python, vault kv secrets, vault pki, vault transit, how do i use vault, vault leasing, secret management [tactical, generation] |
@@ -1085,6 +1087,7 @@ MIT — All skills are freely available and redistributable.
 | [websocket-security](skills/coding/websocket-security/SKILL.md) | Hardens WebSocket connections against cross-site hijacking, DoS attacks, and message flooding through origin validation, authentication, rate limiting, connection limits, and secure transport enforcement. | websocket security, origin validation, cross-site WebSocket hijacking, CCoS, wss://, WebSocket authentication, rate limiting, message flooding, slowloris, connection limits, WebSocket auth, Sec-WebSocket-Origin [tactical, generation] |
 | [yagni](skills/coding/yagni/SKILL.md) | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. | yagni, you aren't gonna need it, don't build it now, over-engineering, premature abstraction, speculative features, kill unused code, remove complexity [tactical, generation] |
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | yaml anchor, yaml alias, config deduplication, merge key, helm template, ansible common config, kubernetes shared spec, how do i reduce yaml repetition, <<:, &label, *alias [tactical, generation] |
+| [yaml-anchors](skills/coding/yaml-anchors/SKILL.md) | Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files. | yaml anchors, yaml aliases, & anchor, * alias, YAML merge key, docker-compose reuse, kubernetes config reuse [tactical, generation] |
 | [zendesk-api](skills/coding/zendesk-api/SKILL.md) | Implements Zendesk API integration (Support API, Tickets, Users, Organizations, using zenpy Python SDK with OAuth 2.0, API token auth, ticket CRUD, user management, search, macros, triggers, and Zendesk REST API patterns. | zendesk, zendesk api, zenpy, zendesk support, zendesk tickets, zendesk users, zendesk organizations, how do i integrate with zendesk, support ticketing [tactical, generation] |
 | [zoom-api](skills/coding/zoom-api/SKILL.md) | Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users) using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination, and rate-limit handling. | zoom, zoom api, zoom meetings, create zoom meeting, zoom sdk, zoom webinars, zoom recording, zoom-python [tactical, generation] |
 
@@ -1266,7 +1269,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (511 skills)
+### Implementation (Build Features) (514 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1370,6 +1373,7 @@ MIT — All skills are freely available and redistributable.
 | [cross-domain-workflow-sagas](skills/coding/cross-domain-workflow-sagas/SKILL.md) | Coding | Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns — compensating actions, timeout handling, distributed state persistence, and failure recovery in domain-driven systems. |
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Coding | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. |
+| [css-nesting](skills/coding/css-nesting/SKILL.md) | Coding | Implements modern CSS native nesting patterns with & parent selector for organizing component styles, managing specificity, and writing maintainable scoped CSS without preprocessors. |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." |
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. |
@@ -1755,6 +1759,7 @@ MIT — All skills are freely available and redistributable.
 | [twilio-api](skills/coding/twilio-api/SKILL.md) | Coding | Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation. |
 | [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Coding | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. |
 | [typescript-generics-types](skills/coding/typescript-generics-types/SKILL.md) | Coding | Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations. |
+| [typescript-intersection](skills/coding/typescript-intersection/SKILL.md) | Coding | Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls. |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. |
 | [user-memory-system](skills/agent/user-memory-system/SKILL.md) | Agent | Implements multi-layer user memory systems (episodic, semantic, procedural) for AI agents to retain context across sessions, enable personalization, and build long-term relationships with individual users. |
 | [validation](skills/coding/validation/SKILL.md) | Coding | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions |
@@ -1776,6 +1781,7 @@ MIT — All skills are freely available and redistributable.
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." |
 | [yagni](skills/coding/yagni/SKILL.md) | Coding | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. |
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. |
+| [yaml-anchors](skills/coding/yaml-anchors/SKILL.md) | Coding | Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files. |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. |
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 | [your-routine](skills/trading/your-routine/SKILL.md) | Trading | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. |
@@ -2440,6 +2446,7 @@ MIT — All skills are freely available and redistributable.
 | [cross-validation](skills/coding/cross-validation/SKILL.md) | Coding | "Implements k-fold cross-validation, stratified cross-validation, time-series cross-validation, and model validation strategies" | Implementation |
 | [crossplane](skills/cncf/crossplane/SKILL.md) | Cncf | "Crossplane in Platform Engineering - Kubernetes-native control plane" for multi-cloud infrastructure | Reference |
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Coding | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. | Implementation |
+| [css-nesting](skills/coding/css-nesting/SKILL.md) | Coding | Implements modern CSS native nesting patterns with & parent selector for organizing component styles, managing specificity, and writing maintainable scoped CSS without preprocessors. | Implementation |
 | [cubefs](skills/cncf/cubefs/SKILL.md) | Cncf | "Provides CubeFS in Storage - distributed, high-performance file system" | Reference |
 | [custodian](skills/cncf/custodian/SKILL.md) | Cncf | "Provides Cloud Custodian in Cloud-Native Engineering -/rules engine for cloud infrastructure management" | Reference |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." | Implementation |
@@ -3084,6 +3091,7 @@ MIT — All skills are freely available and redistributable.
 | [twilio-api](skills/coding/twilio-api/SKILL.md) | Coding | Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation. | Implementation |
 | [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Coding | Enforces type safety across codebases using static analysis, runtime validation schemas, and strict typing patterns to prevent data flow errors. | Implementation |
 | [typescript-generics-types](skills/coding/typescript-generics-types/SKILL.md) | Coding | Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations. | Implementation |
+| [typescript-intersection](skills/coding/typescript-intersection/SKILL.md) | Coding | Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls. | Implementation |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | Implementation |
 | [update-framework-tuf](skills/cncf/update-framework-tuf/SKILL.md) | Cncf | "The Update Framework (TUF) in Secure software update framework for protecting" software deliveries | Reference |
 | [upstash-qstash](skills/agent/upstash-qstash/SKILL.md) | Agent | Implements intelligent upstash qstash with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -3130,6 +3138,7 @@ MIT — All skills are freely available and redistributable.
 | [writing-skills](skills/agent/writing-skills/SKILL.md) | Agent | Implements intelligent writing skills with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [yagni](skills/coding/yagni/SKILL.md) | Coding | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. | Implementation |
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | Implementation |
+| [yaml-anchors](skills/coding/yaml-anchors/SKILL.md) | Coding | Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files. | Implementation |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. | Implementation |
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. | Implementation |
 | [your-routine](skills/trading/your-routine/SKILL.md) | Trading | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. | Implementation |
