@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 935 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 937 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **935 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **937 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 370 | Software patterns, security, testing, data science |
+| Coding | 372 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 11:23:54 UTC  
-> **Total skills:** 935  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (935 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 07:18:39 UTC  
+> **Total skills:** 937  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (937 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 933 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 933 | Ranking penalty for conflicting query terms |
-| Response Profile | 933 | Verbosity, directive strength, abstraction level |
+| Archetypes | 935 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 935 | Ranking penalty for conflicting query terms |
+| Response Profile | 935 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (370 skills)
+### Coding (372 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -810,6 +810,7 @@ MIT — All skills are freely available and redistributable.
 | [css-architecture](skills/coding/css-architecture/SKILL.md) | Architects scalable CSS systems using cascade layers (@layer), native nesting, :has() selector, container queries, Tailwind v4 @theme directives, and BEM naming for maintainable, production-ready frontend styling. | css architecture, css modules, bem naming, tailwind css v4, container queries, :has selector, css nesting, @layer cascade, how do i organize stylesheets, responsive components, utility-first css, scroll-driven animations, view transitions api, css custom properties, css specificity management [tactical, generation] |
 | [css-nesting](skills/coding/css-nesting/SKILL.md) | Implements modern CSS native nesting patterns with & parent selector for organizing component styles, managing specificity, and writing maintainable scoped CSS without preprocessors. | css nesting, ampersand selector, & parent selector, native css nesting, postcss-nesting, component styles, scoped css [tactical, generation] |
 | [data-collection](skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data [tactical, generation] |
+| [data-deduplication](skills/coding/data-deduplication/SKILL.md) | Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines. | data deduplication, schema normalization, ETL pipeline dedup, API response standardization, query abstraction, configuration centralization, canonical data source, data model reuse, duplicate schema definitions, data layer DRY [tactical, diagnostic] |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | json serialization, xml parsing, base64 encoding, url encoding, yaml config, protocol buffers, data serialization, type coercion, character encoding, message encoding [tactical, generation] |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data [tactical, generation] |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | data architecture, stream processing, kafka, change data capture, CDC, event sourcing, lakehouse, data mesh, real-time analytics, batch processing, data pipeline design, how do i build a data pipeline, data streaming, Flink, Spark Streaming [tactical, generation] |
@@ -829,6 +830,7 @@ MIT — All skills are freely available and redistributable.
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | ddd refactoring, extract bounded context, split aggregate, god object refactor, primitive obsession, anticorruption layer, how do i move to ddd, legacy code to ddd [tactical, generation] |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. | specification pattern, ddd tactical patterns, domain service, aggregate factory, unit of work, repository implementation, how do i implement specifications, cross-aggregate operations [tactical, generation] |
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. | debugging, root cause analysis, binary search debugging, bisect, rubber ducking, stack trace analysis, log debugging, production debug [tactical, diagnostic] |
+| [deduplication-patterns](skills/coding/deduplication-patterns/SKILL.md) | Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases. | dry principle, don't repeat yourself, code deduplication, extract method, reduce duplication, boilerplate removal, code reuse pattern, abstraction, refactoring duplicate code, shared logic, common function, parameter object, template method, strategy pattern [tactical, diagnostic] |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | dependency inversion principle, DIP, dependency injection, inversion of control, IoC, loose coupling, high level low level abstraction, constructor injection, factory pattern, testable architecture [tactical, generation] |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | CVE, dependency management, vulnerability scanning, dependency updates, security patching, SCA, software composition analysis, vulnerability remediation [tactical, generation] |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... | SBOM, SLSA, sigstore, cosign, supply chain attack, dependency pinning, how do i secure my dependencies, package signing [tactical, generation] |
@@ -1277,7 +1279,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (521 skills)
+### Implementation (Build Features) (523 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1385,6 +1387,7 @@ MIT — All skills are freely available and redistributable.
 | [css-nesting](skills/coding/css-nesting/SKILL.md) | Coding | Implements modern CSS native nesting patterns with & parent selector for organizing component styles, managing specificity, and writing maintainable scoped CSS without preprocessors. |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." |
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" |
+| [data-deduplication](skills/coding/data-deduplication/SKILL.md) | Coding | Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines. |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. |
@@ -1406,6 +1409,7 @@ MIT — All skills are freely available and redistributable.
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. |
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Coding | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. |
+| [deduplication-patterns](skills/coding/deduplication-patterns/SKILL.md) | Coding | Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases. |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Coding | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... |
@@ -2469,6 +2473,7 @@ MIT — All skills are freely available and redistributable.
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." | Implementation |
 | [dapr](skills/cncf/dapr/SKILL.md) | Cncf | "Provides Dapr in Cloud-Native Engineering - distributed application runtime" | Reference |
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | Implementation |
+| [data-deduplication](skills/coding/data-deduplication/SKILL.md) | Coding | Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines. | Implementation |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | Implementation |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | Implementation |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | Implementation |
@@ -2492,6 +2497,7 @@ MIT — All skills are freely available and redistributable.
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | Implementation |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. | Implementation |
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Coding | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. | Implementation |
+| [deduplication-patterns](skills/coding/deduplication-patterns/SKILL.md) | Coding | Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases. | Implementation |
 | [dependency-graph-builder](skills/agent/dependency-graph-builder/SKILL.md) | Agent | Implements intelligent dependency graph builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | Implementation |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | Implementation |
