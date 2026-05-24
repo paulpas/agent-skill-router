@@ -1,6 +1,10 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
+<<<<<<< HEAD
 **An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 941 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 941 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+>>>>>>> origin/main
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +15,11 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
+<<<<<<< HEAD
 - 🎯 **941 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **941 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+>>>>>>> origin/main
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -90,6 +98,18 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 376 | Software patterns, security, testing, data science |
+| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
+| Go | 12 | Go idioms, concurrency patterns, error handling |
+| Linux | 16 | System administration, kernel tuning, security, networking |
+| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
+| Programming | 7 | Algorithms, frameworks, language references |
+| Trading | 89 | Execution, risk management, ML models |
+| Writing | 4 | Technical writing, style guidance |
+<<<<<<< HEAD
+| Coding | 376 | Software patterns, security, testing, data science |
+=======
+| Coding | 375 | Software patterns, security, testing, data science |
+>>>>>>> origin/main
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,7 +285,7 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 10:30:20 UTC  
+> **Last updated:** 2026-05-24 10:31:01 UTC  
 > **Total skills:** 941  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (941 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 

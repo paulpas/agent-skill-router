@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T12:34:57.073844Z",
-  "totalSkills": 938,
+  "generatedAt": "2026-05-24T13:33:40.648743Z",
+  "totalSkills": 940,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 373,
+    "coding": 375,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 524,
+    "implementation": 526,
     "reference": 172,
     "information": 1,
     "review": 6
@@ -19188,6 +19188,38 @@
       "source": "skills/coding/software-design-principles/SKILL.md"
     },
     {
+      "name": "software-development-lifecycle",
+      "domain": "coding",
+      "description": "Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems.",
+      "role": "implementation",
+      "scope": "orchestration",
+      "outputFormat": "code",
+      "triggers": [
+        "software development lifecycle",
+        "SDLC",
+        "requirements engineering",
+        "design documentation",
+        "iterative development",
+        "branching strategy",
+        "code review process",
+        "user stories",
+        "acceptance criteria",
+        "feature branches",
+        "trunk-based development",
+        "how do i manage a software project"
+      ],
+      "relatedSkills": [
+        "software-engineering-principles",
+        "software-design-principles",
+        "test-driven-development",
+        "refactoring-techniques",
+        "modern-software-development-workflows",
+        "architecture-decision-records"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-development-lifecycle/SKILL.md"
+    },
+    {
       "name": "software-documentation",
       "domain": "coding",
       "description": "Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators.",
@@ -19295,6 +19327,39 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-maintainability/SKILL.md"
+    },
+    {
+      "name": "software-quality-assurance",
+      "domain": "coding",
+      "description": "Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "software quality assurance",
+        "SQA",
+        "static analysis",
+        "code fuzzing",
+        "load testing",
+        "performance testing",
+        "security scanning",
+        "dependency audit",
+        "compliance validation",
+        "code quality gates",
+        "how do i ensure software quality",
+        "quality gates",
+        "vulnerability scanning"
+      ],
+      "relatedSkills": [
+        "software-testing-strategy",
+        "code-quality-policies",
+        "dependency-supply-chain-security",
+        "observability-patterns",
+        "production-readiness",
+        "software-engineering-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-quality-assurance/SKILL.md"
     },
     {
       "name": "software-testing-strategy",
