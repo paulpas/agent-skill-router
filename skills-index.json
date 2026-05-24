@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T10:28:38.936185Z",
-  "totalSkills": 933,
+  "generatedAt": "2026-05-24T11:23:52.703104Z",
+  "totalSkills": 935,
   "domains": {
     "agent": 259,
     "cncf": 173,
-    "coding": 368,
+    "coding": 370,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,10 +15,10 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 520,
+    "implementation": 521,
     "reference": 172,
     "information": 1,
-    "review": 5
+    "review": 6
   },
   "skills": [
     {
@@ -6322,6 +6322,39 @@
       "source": "skills/cncf/deployment-philosophy/SKILL.md"
     },
     {
+      "name": "design-pattern-anti-patterns",
+      "domain": "coding",
+      "description": "Identifies and remediates anti-patterns arising from misuse of GoF design patterns including over-engineering, gold plating, dependency inversion violations, and structural code smells in Python systems.",
+      "role": "review",
+      "scope": "review",
+      "outputFormat": "analysis",
+      "triggers": [
+        "anti-patterns",
+        "design pattern abuse",
+        "over-engineering",
+        "gold plating",
+        "dependency inversion violation",
+        "SOLID violation",
+        "code smell",
+        "refactor patterns",
+        "YAGNI",
+        "premature abstraction",
+        "GoF misuse",
+        "factory explosion",
+        "singleton abuse",
+        "strategy proliferation",
+        "template method rigidity"
+      ],
+      "relatedSkills": [
+        "gof-design-patterns-catalog",
+        "design-pattern-selection",
+        "structural-behavioral-patterns",
+        "code-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/design-pattern-anti-patterns/SKILL.md"
+    },
+    {
       "name": "design-pattern-selection",
       "domain": "coding",
       "description": "Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics.",
@@ -9192,6 +9225,38 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/goal-to-milestones/SKILL.md"
+    },
+    {
+      "name": "gof-design-patterns-catalog",
+      "domain": "coding",
+      "description": "Comprehensive catalog of all 23 GoF design patterns with Python implementations covering creational, structural, and behavioral patterns for decoupling and extensible software design.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "gof design patterns",
+        "gang of four",
+        "factory method",
+        "strategy pattern",
+        "decorator pattern",
+        "observer pattern",
+        "singleton",
+        "builder pattern",
+        "creational patterns",
+        "structural patterns",
+        "behavioral patterns",
+        "design catalog",
+        "SOLID principles",
+        "GoF catalog"
+      ],
+      "relatedSkills": [
+        "design-pattern-selection",
+        "structural-design-patterns",
+        "creational-design-patterns",
+        "behavioral-design-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/gof-design-patterns-catalog/SKILL.md"
     },
     {
       "name": "google-analytics-automation",
