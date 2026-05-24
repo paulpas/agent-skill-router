@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 950 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 953 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 950 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 953 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 950 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 953 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 950 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 953 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
 >>>>>>> origin/main
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **950 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **953 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **950 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **953 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **950 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **953 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **950 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **953 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
 >>>>>>> origin/main
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -107,7 +107,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 259 | AI orchestration, routing, task decomposition |
+| Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 385 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -309,22 +309,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 21:44:06 UTC  
-> **Total skills:** 950  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (950 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 17:25:04 UTC  
+> **Total skills:** 953  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (953 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 947 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 947 | Ranking penalty for conflicting query terms |
-| Response Profile | 947 | Verbosity, directive strength, abstraction level |
+| Archetypes | 950 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 950 | Ranking penalty for conflicting query terms |
+| Response Profile | 950 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (259 skills)
+### Agent (262 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -341,6 +341,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. | ai agent safety, hallucination detection, prompt injection, output validation, tool call safety, guardrails, autonomous agent safety, AI safety [tactical] |
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-agents-architect, ai agents architect, how do i ai-agents-architect, orchestrate ai-agents-architect, automate ai-agents-architect, agent ai-agents-architect [orchestration, strategic] |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-dev-jobs-mcp, ai dev jobs mcp, how do i ai-dev-jobs-mcp, orchestrate ai-dev-jobs-mcp, automate ai-dev-jobs-mcp, agent ai-dev-jobs-mcp [orchestration, strategic] |
+| [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. | ai framework comparison, framework evaluation, LangGraph vs CrewAI, agent framework scoring, LLM framework selection, AI framework matrix, model routing framework [tactical, strategic] |
 | [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. | ai framework selection, which ai framework to use, langchain vs crewai, choose ai agent framework, framework comparison, build custom vs use framework, AI agent tooling, how do i pick an ai framework, LLM framework evaluation [orchestration, strategic] |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-ml, ai ml, how do i ai-ml, orchestrate ai-ml, automate ai-ml, agent ai-ml [orchestration, strategic] |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | ai persona, first-person identity, agent voice, personality design, consistent tone, how do i make my ai feel personal, authentic AI, self-expression, character design, brand voice AI [tactical] |
@@ -500,6 +501,7 @@ MIT — All skills are freely available and redistributable.
 | [network-troubleshooting](skills/agent/network-troubleshooting/SKILL.md) | Diagnoses and resolves network connectivity issues including firewall rules, DNS resolution, load balancer configuration, container networking, VPN connectivity, and network policy debugging for Docker, Kubernetes, and cloud-native environments | network troubleshooting, iptables, dns resolution, firewall rules, load balancer, calico, cni, how do i debug network [tactical] |
 | [not-human-search-mcp](skills/agent/not-human-search-mcp/SKILL.md) | Implements intelligent not human search mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | not-human-search-mcp, not human search mcp, how do i not-human-search-mcp, orchestrate not-human-search-mcp, automate not-human-search-mcp, agent not-human-search-mcp [orchestration, strategic] |
 | [notion-automation](skills/agent/notion-automation/SKILL.md) | Implements intelligent notion automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | notion-automation, notion automation, how do i notion-automation, orchestrate notion-automation, automate notion-automation, agent notion-automation [orchestration, strategic] |
+| [observability-patterns](skills/agent/observability-patterns/SKILL.md) | Implements tracing, cost tracking, and latency monitoring patterns for AI agent systems to debug failures, control token spend, and optimize response times across multi-agent workflows. | agent observability, AI tracing, LLM cost tracking, token spend monitoring, latency monitoring, agent debugging, OpenTelemetry agents, Phoenix tracing, LangSmith tracing [diagnostic, tactical] |
 | [orchestration-frameworks](skills/agent/orchestration-frameworks/SKILL.md) | Designs and implements orchestration frameworks for multi-agent systems including LangGraph, AutoGen, CrewAI, Temporal, and Prefect with workflow patterns, state management, and fault tolerance. | orchestration framework, multi-agent system, agent coordination, workflow engine, langgraph, autogen, crewai, temporal, task orchestration, agent routing [orchestration, strategic] |
 | [os-scripting](skills/agent/os-scripting/SKILL.md) | Implements intelligent os scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | os-scripting, os scripting, how do i os-scripting, orchestrate os-scripting, automate os-scripting, agent os-scripting [orchestration, strategic] |
 | [outlook-automation](skills/agent/outlook-automation/SKILL.md) | Implements intelligent outlook automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | outlook-automation, outlook automation, how do i outlook-automation, orchestrate outlook-automation, automate outlook-automation, agent outlook-automation [orchestration, strategic] |
@@ -515,6 +517,7 @@ MIT — All skills are freely available and redistributable.
 | [postgresql-optimization](skills/agent/postgresql-optimization/SKILL.md) | Implements intelligent postgresql optimization with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | postgresql-optimization, postgresql optimization, how do i postgresql-optimization, orchestrate postgresql-optimization, automate postgresql-optimization, agent postgresql-optimization, postgres, postgresql [orchestration, strategic] |
 | [pr-writer](skills/agent/pr-writer/SKILL.md) | Implements intelligent pr writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | pr-writer, pr writer, how do i pr-writer, orchestrate pr-writer, automate pr-writer, agent pr-writer [orchestration, strategic] |
 | [prompt-engineer](skills/agent/prompt-engineer/SKILL.md) | Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | prompt-engineer, prompt engineer, how do i prompt-engineer, orchestrate prompt-engineer, automate prompt-engineer, agent prompt-engineer [orchestration, strategic] |
+| [protocol-first-agent-design](skills/agent/protocol-first-agent-design/SKILL.md) | Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in. | MCP protocol, A2A agent protocol, model context protocol, agent interoperability, protocol-first design, vendor lock-in prevention, agent communication patterns, MCP server [strategic, tactical] |
 | [pydantic-ai](skills/agent/pydantic-ai/SKILL.md) | Implements intelligent pydantic ai with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | pydantic-ai, pydantic ai, how do i pydantic-ai, orchestrate pydantic-ai, automate pydantic-ai, agent pydantic-ai [orchestration, strategic] |
 | [python-fastapi-development](skills/agent/python-fastapi-development/SKILL.md) | Implements intelligent python fastapi development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | python-fastapi-development, python fastapi development, how do i python-fastapi-development, orchestrate python-fastapi-development, automate python-fastapi-development, agent python-fastapi-development [orchestration, strategic] |
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | query-optimizer, query optimizer, how do i query-optimizer, orchestrate query-optimizer, automate query-optimizer, agent query-optimizer [orchestration, strategic] |
@@ -1336,7 +1339,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (535 skills)
+### Implementation (Build Features) (538 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1350,6 +1353,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. |
+| [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Agent | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. |
 | [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Coding | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. |
 | [airtable-api](skills/coding/airtable-api/SKILL.md) | Coding | Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python. |
@@ -1672,6 +1676,7 @@ MIT — All skills are freely available and redistributable.
 | [notion-api](skills/coding/notion-api/SKILL.md) | Coding | Integrates with Notion API to manage pages, databases, blocks, search, and comments using notion-client for Python with typed property access and pagination. |
 | [observability](skills/linux/observability/SKILL.md) | Linux | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. |
 | [observability-engineering](skills/coding/observability-engineering/SKILL.md) | Coding | Designs observability engineering systems with SLO-driven instrumentation, multi-window burn rate alerting, OpenTelemetry patterns, signal correlation, and cost governance for production reliability. |
+| [observability-patterns](skills/agent/observability-patterns/SKILL.md) | Agent | Implements tracing, cost tracking, and latency monitoring patterns for AI agent systems to debug failures, control token spend, and optimize response times across multi-agent workflows. |
 | [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Coding | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" |
 | [oci-sdk](skills/coding/oci-sdk/SKILL.md) | Coding | Integrates Oracle Cloud Infrastructure services (Compute, Object Storage, Autonomous DB, Functions) using the OCI Python SDK with config-based authentication and resource management. |
@@ -1720,6 +1725,7 @@ MIT — All skills are freely available and redistributable.
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. |
 | [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Coding | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. |
+| [protocol-first-agent-design](skills/agent/protocol-first-agent-design/SKILL.md) | Agent | Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in. |
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning |
 | [pulumi](skills/coding/pulumi/SKILL.md) | Coding | Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration. |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Coding | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. |
@@ -2332,6 +2338,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Agent | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | Implementation |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Agent | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. | Implementation |
 | [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Agent | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. | Orchestration |
 | [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Coding | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. | Implementation |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Agent | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2929,6 +2936,7 @@ MIT — All skills are freely available and redistributable.
 | [oathkeeper](skills/cncf/oathkeeper/SKILL.md) | Cncf | "Oathkeeper in Identity & Access - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [observability](skills/linux/observability/SKILL.md) | Linux | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | Implementation |
 | [observability-engineering](skills/coding/observability-engineering/SKILL.md) | Coding | Designs observability engineering systems with SLO-driven instrumentation, multi-window burn rate alerting, OpenTelemetry patterns, signal correlation, and cost governance for production reliability. | Implementation |
+| [observability-patterns](skills/agent/observability-patterns/SKILL.md) | Agent | Implements tracing, cost tracking, and latency monitoring patterns for AI agent systems to debug failures, control token spend, and optimize response times across multi-agent workflows. | Implementation |
 | [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Coding | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. | Implementation |
 | [observational-studies](skills/coding/observational-studies/SKILL.md) | Coding | "Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias" | Implementation |
 | [oci-sdk](skills/coding/oci-sdk/SKILL.md) | Coding | Integrates Oracle Cloud Infrastructure services (Compute, Object Storage, Autonomous DB, Functions) using the OCI Python SDK with config-based authentication and resource management. | Implementation |
@@ -3003,6 +3011,7 @@ MIT — All skills are freely available and redistributable.
 | [prometheus](skills/cncf/prometheus/SKILL.md) | Cncf | "Prometheus in Cloud-Native Engineering - The Prometheus monitoring system" and time series database. | Reference |
 | [prompt-engineer](skills/agent/prompt-engineer/SKILL.md) | Agent | Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Coding | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. | Implementation |
+| [protocol-first-agent-design](skills/agent/protocol-first-agent-design/SKILL.md) | Agent | Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in. | Implementation |
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning | Implementation |
 | [pulumi](skills/coding/pulumi/SKILL.md) | Coding | Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration. | Implementation |
 | [pydantic-ai](skills/agent/pydantic-ai/SKILL.md) | Agent | Implements intelligent pydantic ai with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
