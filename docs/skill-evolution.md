@@ -227,9 +227,9 @@ flowchart TD
     Stage2 -->|"embeds query"| Stage3
 
     %% Stage 3: Vector DB
-    subgraph Stage3["3. Vector Database (KD-tree) ~ 0.1ms"]
+    subgraph Stage3["3. Vector Database (HNSW) ~ 0.001ms"]
         direction TB
-        S3a["O(log n) nearest-neighbor search"]
+        S3a["Approximate nearest-neighbor search"]
         S3b["Top 20 candidates"]
         S3c["cncf-kubernetes ~ 0.89"]
         S3d["cncf-docker ~ 0.72"]
