@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 929 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 931 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **929 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **931 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 259 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 364 | Software patterns, security, testing, data science |
+| Coding | 366 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -265,17 +265,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 08:47:15 UTC  
-> **Total skills:** 929  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (929 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 04:35:56 UTC  
+> **Total skills:** 931  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (931 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 928 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 928 | Ranking penalty for conflicting query terms |
-| Response Profile | 928 | Verbosity, directive strength, abstraction level |
+| Archetypes | 930 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 930 | Ranking penalty for conflicting query terms |
+| Response Profile | 930 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -724,7 +724,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (364 skills)
+### Coding (366 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -836,6 +836,7 @@ MIT — All skills are freely available and redistributable.
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | design patterns, GoF, SOLID, DRY, factory pattern, software architecture, refactoring, SOLID principles [tactical, generation] |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. | design patterns, GoF, SOLID, DRY, YAGNI, architecture, creational patterns, structural patterns [tactical, generation] |
 | [design-systems](skills/coding/design-systems/SKILL.md) | Implements production design systems with design token architecture, component theming, accessibility standards, documentation patterns, and cross-platform consistency for scalable UI ecosystems. | design system, design tokens, theming, accessibility, a11y, component library, UI kit, design language, style guide, token architecture, cross-platform consistency [tactical, generation] |
+| [design-systems-atomic](skills/coding/design-systems-atomic/SKILL.md) | Implements Atomic Design methodology with design tokens, component-driven development in Storybook, accessibility-first patterns, and modern CSS architecture for production design systems. | atomic design, design tokens, component-driven development, storybook workflow, css custom properties, wcag accessibility, responsive design system [tactical, generation] |
 | [developer-toolchain-composition](skills/coding/developer-toolchain-composition/SKILL.md) | Composes integrated developer toolchains by evaluating tool interoperability, dependency management, workflow automation, and friction reduction across the development lifecycle from code to production. | developer toolchain, dev toolchain, how do i set up dev tools, tool interoperability, build system, ci cd pipeline, development workflow, tool integration, code to production, developer experience, makefile, justfile, pre-commit hooks [tactical, generation] |
 | [digitalocean-api](skills/coding/digitalocean-api/SKILL.md) | Integrates DigitalOcean services (Droplets, Spaces, Kubernetes, App Platform, Databases) using the PyDo Python client with token-based authentication and resource management. | digitalocean api, pydo, digitalocean python, droplets, spaces object storage, digitalocean kubernetes, app platform, how do i use digitalocean from python [tactical, generation] |
 | [dimensionality-reduction](skills/coding/dimensionality-reduction/SKILL.md) | "Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency" | dimensionality reduction, PCA, t-SNE, UMAP, feature extraction, how do i reduce dimensions [tactical, generation] |
@@ -1044,6 +1045,7 @@ MIT — All skills are freely available and redistributable.
 | [slack-api](skills/coding/slack-api/SKILL.md) | Integrates Slack API (Web API, Events API, Bolt Framework, Incoming Webhooks, Block Kit) using the slack-sdk Python v3.x with proper event handling, Block Kit construction, and OAuth patterns. | slack, slack api, slack bot, slack webhook, block kit, slack events, bolt python, send message to slack [tactical, generation] |
 | [snowflake-sdk](skills/coding/snowflake-sdk/SKILL.md) | Integrates Snowflake using snowflake-connector-python 4.x with patterns for SQL execution, Snowpark DataFrames, Cortex AI, streams, tasks, stages, and warehouse management. | snowflake, snowflake connector, snowpark, snowflake sql, snowflake cortex, how do i query snowflake from python, data warehouse, snowpipe [tactical, generation] |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | software architecture, system design, layered architecture, hexagonal architecture, clean architecture, separation of concerns, scalable design, architectural patterns [diagnostic, educational] |
+| [software-architecture-design](skills/coding/software-architecture-design/SKILL.md) | Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations. | software architecture, hexagonal architecture, ddd tactical patterns, cqrs pattern, event sourcing, clean architecture, ports and adapters, aggregate root [tactical, strategic] |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD [tactical, generation] |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design [tactical, generation] |
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | software documentation, API docs, docstrings, README writing, developer guides, OpenAPI, MkDocs, Docusaurus, technical writing for developers, how do i document code, Sphinx, type stubs, mypy stubs, py.typed [tactical, generation] |
@@ -1271,7 +1273,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (516 skills)
+### Implementation (Build Features) (518 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1409,6 +1411,7 @@ MIT — All skills are freely available and redistributable.
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Coding | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Coding | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. |
 | [design-systems](skills/coding/design-systems/SKILL.md) | Coding | Implements production design systems with design token architecture, component theming, accessibility standards, documentation patterns, and cross-platform consistency for scalable UI ecosystems. |
+| [design-systems-atomic](skills/coding/design-systems-atomic/SKILL.md) | Coding | Implements Atomic Design methodology with design tokens, component-driven development in Storybook, accessibility-first patterns, and modern CSS architecture for production design systems. |
 | [developer-toolchain-composition](skills/coding/developer-toolchain-composition/SKILL.md) | Coding | Composes integrated developer toolchains by evaluating tool interoperability, dependency management, workflow automation, and friction reduction across the development lifecycle from code to production. |
 | [digital-fabrication](skills/maker/digital-fabrication/SKILL.md) | Maker | Implements 3D printing slicing, laser cutting calibration, CNC toolpaths, and STL validation workflows for turning CAD models into fabrication-ready parts with optimized parameters. |
 | [digitalocean-api](skills/coding/digitalocean-api/SKILL.md) | Coding | Integrates DigitalOcean services (Droplets, Spaces, Kubernetes, App Platform, Databases) using the PyDo Python client with token-based authentication and resource management. |
@@ -1706,6 +1709,7 @@ MIT — All skills are freely available and redistributable.
 | [slippage-model](skills/trading/slippage-model/SKILL.md) | Trading | "Implements slippage modeling and execution simulation for risk management and algorithmic trading execution." |
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis |
 | [snowflake-sdk](skills/coding/snowflake-sdk/SKILL.md) | Coding | Integrates Snowflake using snowflake-connector-python 4.x with patterns for SQL execution, Snowpark DataFrames, Cortex AI, streams, tasks, stages, and warehouse management. |
+| [software-architecture-design](skills/coding/software-architecture-design/SKILL.md) | Coding | Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations. |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. |
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. |
@@ -2492,6 +2496,7 @@ MIT — All skills are freely available and redistributable.
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Coding | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | Implementation |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Coding | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. | Implementation |
 | [design-systems](skills/coding/design-systems/SKILL.md) | Coding | Implements production design systems with design token architecture, component theming, accessibility standards, documentation patterns, and cross-platform consistency for scalable UI ecosystems. | Implementation |
+| [design-systems-atomic](skills/coding/design-systems-atomic/SKILL.md) | Coding | Implements Atomic Design methodology with design tokens, component-driven development in Storybook, accessibility-first patterns, and modern CSS architecture for production design systems. | Implementation |
 | [developer-pattern-library](skills/agent/developer-pattern-library/SKILL.md) | Agent | Curates and maintains a personal library of validated code patterns, solutions, and anti-patterns accumulated through development experience, enabling faster problem-solving on future tasks. | Reference |
 | [developer-toolchain-composition](skills/coding/developer-toolchain-composition/SKILL.md) | Coding | Composes integrated developer toolchains by evaluating tool interoperability, dependency management, workflow automation, and friction reduction across the development lifecycle from code to production. | Implementation |
 | [development](skills/agent/development/SKILL.md) | Agent | Implements intelligent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -3015,6 +3020,7 @@ MIT — All skills are freely available and redistributable.
 | [snowflake-sdk](skills/coding/snowflake-sdk/SKILL.md) | Coding | Integrates Snowflake using snowflake-connector-python 4.x with patterns for SQL execution, Snowpark DataFrames, Cortex AI, streams, tasks, stages, and warehouse management. | Implementation |
 | [sns](skills/cncf/sns/SKILL.md) | Cncf | "Deploys managed pub/sub messaging with SNS for asynchronous notifications" across services, mobile push, email, and Lambda integrations. | Reference |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Coding | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | Reference |
+| [software-architecture-design](skills/coding/software-architecture-design/SKILL.md) | Coding | Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations. | Implementation |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | Implementation |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | Implementation |
 | [software-documentation](skills/coding/software-documentation/SKILL.md) | Coding | Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators. | Implementation |
