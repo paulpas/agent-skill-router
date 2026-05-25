@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T10:09:09.099352Z",
-  "totalSkills": 990,
+  "generatedAt": "2026-05-25T11:27:50.444644Z",
+  "totalSkills": 991,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 417,
+    "coding": 418,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 575,
+    "implementation": 576,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -9221,6 +9221,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-evaluation-criteria/SKILL.md"
+    },
+    {
+      "name": "framework-implementation-patterns",
+      "domain": "coding",
+      "description": "Translates documented framework requirements into concrete implementation patterns with multi-layer validation gates, constraint assertions, and performance budget enforcement to ensure code decisions align with project specifications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "requirement-to-implementation mapping",
+        "framework requirement enforcement",
+        "implementation patterns",
+        "performance budgets",
+        "constraint validation",
+        "requirements-as-code",
+        "implementation decision matrix",
+        "framework requirement validation"
+      ],
+      "relatedSkills": [
+        "framework-utilization",
+        "framework-driven-design",
+        "framework-requirements",
+        "framework-adoption-strategy"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-implementation-patterns/SKILL.md"
     },
     {
       "name": "framework-integration-patterns",
