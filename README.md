@@ -97,16 +97,6 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Programming | 7 | Algorithms, frameworks, language references |
 | Trading | 89 | Execution, risk management, ML models |
 | Writing | 4 | Technical writing, style guidance |
-| Agent | 268 | AI orchestration, routing, task decomposition |
-| CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 435 | Software patterns, security, testing, data science |
-| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
-| Go | 12 | Go idioms, concurrency patterns, error handling |
-| Linux | 16 | System administration, kernel tuning, security, networking |
-| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
-| Programming | 7 | Algorithms, frameworks, language references |
-| Trading | 89 | Execution, risk management, ML models |
-| Writing | 4 | Technical writing, style guidance |
 
 ---
 
@@ -276,9 +266,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 20:13:50 UTC  
-> **Last updated:** 2026-05-25 15:38:46 UTC  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1011 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 20:41:15 UTC  
+> **Total skills:** 1012  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1012 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T20:13:48.400352Z",
-  "totalSkills": 1011,
+  "generatedAt": "2026-05-25T20:41:13.060420Z",
+  "totalSkills": 1012,
   "domains": {
     "agent": 270,
     "cncf": 173,
-    "coding": 435,
+    "coding": 436,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -18,7 +18,7 @@
     "implementation": 593,
     "reference": 173,
     "information": 1,
-    "review": 6
+    "review": 7
   },
   "skills": [
     {
@@ -6550,6 +6550,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ddd-aggregate-lifecycle/SKILL.md"
+    },
+    {
+      "name": "ddd-anti-patterns",
+      "domain": "coding",
+      "description": "Detects and resolves common Domain-Driven Design anti-patterns including god aggregates, anemic domain models, context creep, repository leakage, specification over-engineering, and domain service sprawl in DDD codebases.",
+      "role": "review",
+      "scope": "review",
+      "outputFormat": "analysis",
+      "triggers": [
+        "ddd anti-patterns",
+        "god aggregate",
+        "anemic domain model",
+        "context creep",
+        "repository leakage",
+        "bounded context violation",
+        "domain service sprawl",
+        "specification pattern misuse",
+        "how do i fix ddd mistakes",
+        "DDD code review",
+        "domain model smell"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "ddd-tactical-patterns",
+        "domain-modeling",
+        "domain-repository-pattern",
+        "ddd-context-mapping",
+        "ddd-aggregate-lifecycle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ddd-anti-patterns/SKILL.md"
     },
     {
       "name": "ddd-command-pattern",
