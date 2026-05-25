@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T03:19:02.866531Z",
-  "totalSkills": 962,
+  "generatedAt": "2026-05-25T03:54:32.022063Z",
+  "totalSkills": 964,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 394,
+    "coding": 396,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 547,
+    "implementation": 549,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -3020,6 +3020,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/build-test-validation/SKILL.md"
+    },
+    {
+      "name": "builder-pattern",
+      "domain": "coding",
+      "description": "Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "builder pattern",
+        "fluent interface",
+        "object construction",
+        "complex object",
+        "step-by-step construction",
+        "chained method calls",
+        "director pattern"
+      ],
+      "relatedSkills": [
+        "coding-abstract-factory",
+        "coding-chain-of-responsibility"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/builder-pattern/SKILL.md"
     },
     {
       "name": "buildpacks",
@@ -20349,6 +20372,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/linux/storage-architecture/SKILL.md"
+    },
+    {
+      "name": "strategy-pattern",
+      "domain": "coding",
+      "description": "Implements the Strategy design pattern for runtime algorithm selection with interchangeable behavior interfaces, supporting context delegation, strategy factories, and dependency injection.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "strategy pattern",
+        "algorithm selection",
+        "runtime behavior",
+        "interchangeable algorithms",
+        "context delegation",
+        "polymorphic behavior",
+        "open closed principle",
+        "replace if elif chain",
+        "payment processing strategy",
+        "pricing strategy"
+      ],
+      "relatedSkills": [
+        "behavioral-design-patterns",
+        "dependency-inversion-principle",
+        "creational-design-patterns",
+        "design-patterns-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/strategy-pattern/SKILL.md"
     },
     {
       "name": "stream-processing",

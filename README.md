@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 962 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 964 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **962 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **964 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 394 | Software patterns, security, testing, data science |
+| Coding | 396 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -266,17 +266,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 03:19:04 UTC  
-> **Total skills:** 962  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (962 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 03:54:33 UTC  
+> **Total skills:** 964  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (964 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 957 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 957 | Ranking penalty for conflicting query terms |
-| Response Profile | 957 | Verbosity, directive strength, abstraction level |
+| Archetypes | 959 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 959 | Ranking penalty for conflicting query terms |
+| Response Profile | 959 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -728,7 +728,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (394 skills)
+### Coding (396 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -789,6 +789,7 @@ MIT — All skills are freely available and redistributable.
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. | braintree, braintree transactions, braintree vault, braintree subscriptions, braintree marketplace, 3d secure, braintree webhooks, how do i integrate braintree payments, paypal venmo integration [tactical, generation] |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | git branching strategies, git repository, git-branching-strategies, github, including, models, version control [tactical, generation] |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | makefile testing, build validation, phony target tests, continuous integration for builds, incremental build verification, dependency graph analysis, build reproducibility, make test suite, artifact verification [tactical, generation] |
+| [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. | builder pattern, fluent interface, object construction, complex object, step-by-step construction, chained method calls, director pattern [tactical, generation] |
 | [bus](skills/coding/bus/SKILL.md) | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | async, event bus, event-bus, events, typed, eventbridge, event routing [tactical, generation] |
 | [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. | cache stampede, LRU eviction, write-through, TTL-based, cache invalidation, multi-tier cache, thundering herd, how do i speed up my app [tactical, generation] |
 | [categorical-encoding](skills/coding/categorical-encoding/SKILL.md) | "Provides Encodes categorical variables using one-hot encoding, target encoding, ordinal encoding, embeddings, and other encoding strategies" | categorical encoding, one-hot encoding, target encoding, ordinal encoding, categorical variables [tactical, generation] |
@@ -1088,6 +1089,7 @@ MIT — All skills are freely available and redistributable.
 | [ssrf-prevention](skills/coding/ssrf-prevention/SKILL.md) | Implements defense-in-depth SSRF prevention including URL validation, IP blocking, DNS rebinding protection, and cloud metadata endpoint hardening across Python, Node.js, and Go applications. | ssrf prevention, server-side request forgery, url validation, internal ip blocking, cloud metadata protection, dns rebinding, webhook security [tactical, enforcement] |
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. | stability ai, stabilityai, stable diffusion, sd3, stable image, core, stability api, how do i generate images, text to image, image generation [tactical, generation] |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error [tactical, generation] |
+| [strategy-pattern](skills/coding/strategy-pattern/SKILL.md) | Implements the Strategy design pattern for runtime algorithm selection with interchangeable behavior interfaces, supporting context delegation, strategy factories, and dependency injection. | strategy pattern, algorithm selection, runtime behavior, interchangeable algorithms, context delegation, polymorphic behavior, open closed principle, replace if elif chain, payment processing strategy, pricing strategy [tactical, generation] |
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. | stripe, payment intents, checkout sessions, stripe subscriptions, stripe connect, webhook signature, how do i integrate stripe payments, payment processing [tactical, generation] |
 | [structural-behavioral-patterns](skills/coding/structural-behavioral-patterns/SKILL.md) | Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities. | structural patterns, behavioral patterns, adapter pattern, observer pattern, strategy pattern, command pattern, facade pattern, how do i decouple code [tactical, generation] |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. | structural patterns, adapter pattern, bridge pattern, composite pattern, decorator pattern, facade pattern, proxy pattern, flyweight, GoF design patterns [tactical, generation] |
@@ -1305,7 +1307,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (547 skills)
+### Implementation (Build Features) (549 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1375,6 +1377,7 @@ MIT — All skills are freely available and redistributable.
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Coding | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. |
+| [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Coding | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems |
 | [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Coding | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. |
 | [canary-deployment](skills/cncf/canary-deployment/SKILL.md) | Cncf | Orchestrates canary deployment strategies with gradual traffic promotion, automated health monitoring, and rollback triggers for progressive risk management. |
@@ -1786,6 +1789,7 @@ MIT — All skills are freely available and redistributable.
 | [stm32-embedded-systems](skills/electrical-engineering/stm32-embedded-systems/SKILL.md) | Electrical-engineering | Implements STM32 firmware development using HAL/LL drivers, DMA peripheral programming, FreeRTOS task architecture, clock tree configuration, and power management for production embedded systems on Cortex-M microcontrollers. |
 | [stop-loss](skills/trading/stop-loss/SKILL.md) | Trading | "Implements stop loss strategies for risk management for risk management and algorithmic trading execution." |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Linux | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. |
+| [strategy-pattern](skills/coding/strategy-pattern/SKILL.md) | Coding | Implements the Strategy design pattern for runtime algorithm selection with interchangeable behavior interfaces, supporting context delegation, strategy factories, and dependency injection. |
 | [stream-processing](skills/trading/stream-processing/SKILL.md) | Trading | "Provides Streaming data processing for real-time trading signals and analytics" |
 | [stress-testing](skills/trading/stress-testing/SKILL.md) | Trading | "Implements stress test scenarios and portfolio resilience analysis for risk management and algorithmic trading execution." |
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Coding | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. |
@@ -2418,6 +2422,7 @@ MIT — All skills are freely available and redistributable.
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | Implementation |
 | [build](skills/agent/build/SKILL.md) | Agent | Implements intelligent build with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | Implementation |
+| [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Coding | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. | Implementation |
 | [buildpacks](skills/cncf/buildpacks/SKILL.md) | Cncf | "Provides Buildpacks in Cloud-Native Engineering - Turn source code into container images without Dockerfiles" | Reference |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | Implementation |
 | [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Coding | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. | Implementation |
@@ -3136,6 +3141,7 @@ MIT — All skills are freely available and redistributable.
 | [stm32-embedded-systems](skills/electrical-engineering/stm32-embedded-systems/SKILL.md) | Electrical-engineering | Implements STM32 firmware development using HAL/LL drivers, DMA peripheral programming, FreeRTOS task architecture, clock tree configuration, and power management for production embedded systems on Cortex-M microcontrollers. | Implementation |
 | [stop-loss](skills/trading/stop-loss/SKILL.md) | Trading | "Implements stop loss strategies for risk management for risk management and algorithmic trading execution." | Implementation |
 | [storage-architecture](skills/linux/storage-architecture/SKILL.md) | Linux | Designs and implements Linux storage architectures for cloud block storage and on-prem SAN/NAS with performance and durability guarantees. | Implementation |
+| [strategy-pattern](skills/coding/strategy-pattern/SKILL.md) | Coding | Implements the Strategy design pattern for runtime algorithm selection with interchangeable behavior interfaces, supporting context delegation, strategy factories, and dependency injection. | Implementation |
 | [stream-processing](skills/trading/stream-processing/SKILL.md) | Trading | "Provides Streaming data processing for real-time trading signals and analytics" | Implementation |
 | [stress-testing](skills/trading/stress-testing/SKILL.md) | Trading | "Implements stress test scenarios and portfolio resilience analysis for risk management and algorithmic trading execution." | Implementation |
 | [strimzi](skills/cncf/strimzi/SKILL.md) | Cncf | "Provides Strimzi in Kafka on Kubernetes - Apache Kafka for cloud-native environments" | Reference |
