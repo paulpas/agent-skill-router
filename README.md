@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 975 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 976 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 975 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 976 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> abcf3580f (feat: add new skill - dry-principle)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **975 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **976 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **975 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **976 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> abcf3580f (feat: add new skill - dry-principle)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 407 | Software patterns, security, testing, data science |
+| Coding | 408 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -286,17 +286,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 06:02:38 UTC  
-> **Total skills:** 975  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (975 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 01:33:59 UTC  
+> **Total skills:** 976  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (976 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 961 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 961 | Ranking penalty for conflicting query terms |
-| Response Profile | 961 | Verbosity, directive strength, abstraction level |
+| Archetypes | 962 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 962 | Ranking penalty for conflicting query terms |
+| Response Profile | 962 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -748,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (407 skills)
+### Coding (408 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -834,7 +834,7 @@ MIT — All skills are freely available and redistributable.
 | [composition-root](skills/coding/composition-root/SKILL.md) | Assembles dependency graphs at a single entry point using constructor injection, DI containers, and factory patterns to wire adapters to ports in hexagonal and layered architectures. | composition root, dependency injection wiring, DI container, adapter registration, how do i wire my dependencies, service locator anti-pattern, object graph assembly, factory pattern, IoC container [tactical, generation] |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals [tactical, generation] |
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config [tactical, generation] |
-| [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements production configuration management with layered config resolution, secret rotation, dynamic reloading without downtime, drift detection, and validated environment-specific configuration trees for application systems. | configuration management, config tree, layered config, secret rotation, Vault integration, dynamic reloading, hot reload, configuration drift, environment configs, config validation, sealed secrets, how do i manage application config, configuration drift detection, runtime config changes [tactical, generation] |
+| [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications. | configuration management, config loading, pydantic settings, .env files, environment variables, secrets management, config schema validation, how do i manage application configuration, layered configuration [tactical, generation] |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" | correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships [tactical, generation] |
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. | cqrs, command query responsibility segregation, mediator pattern, outbox pattern, idempotent commands, saga pattern, read write separation, event bus [tactical, generation] |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | creational patterns, factory method, builder pattern, singleton, abstract factory, prototype pattern, object creation, GoF design patterns [tactical, generation] |
@@ -901,6 +901,7 @@ MIT — All skills are freely available and redistributable.
 | [engineering-tradeoffs](skills/coding/engineering-tradeoffs/SKILL.md) | Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints. | engineering tradeoffs, decision making under constraints, build vs buy, speed vs quality, technology selection, weighted decision matrix, tradeoff analysis, two-way door decisions, CAP theorem software [orchestration] |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | ensemble methods, bagging, boosting, stacking, voting, blending, ensemble learning [tactical, generation] |
 | [entra-id-api](skills/coding/entra-id-api/SKILL.md) | Implements Microsoft Entra ID (Azure AD) API integration (Users, Groups, Applications, Service Principals, Conditional Access, B2C) using msgraph-sdk Python + azure.identity with MSAL authentication patterns, Graph API batches, delta queries, and RBA... | microsoft entra id, azure active directory, ms graph api, azure ad users, azure ad groups, microsoft graph, how do i integrate azure ad, conditional access [tactical, generation] |
+| [error-handling](skills/coding/error-handling/SKILL.md) | Implements modern Python error handling patterns including custom exception hierarchies, context propagation, result types, and graceful degradation for resilient production systems. | error handling, exception hierarchy, custom exceptions, context propagation, result type, error recovery, graceful degradation, how do i handle errors in Python [tactical, generation] |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. | event-driven architecture, pub/sub messaging, saga pattern, dead letter queue, outbox pattern, how do i decouple services, async message processing, distributed messaging [tactical, generation] |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | event-driven, event driven architecture, pub/sub, event sourcing, CQRS, saga pattern, outbox pattern, message queue, eventual consistency [tactical, generation] |
 | [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. | event sourcing, event store, aggregate, snapshots, optimistic concurrency, event versioning, projections, read models, replay events, domain events, event streams [tactical, generation] |
@@ -1338,7 +1339,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (560 skills)
+### Implementation (Build Features) (561 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1441,7 +1442,7 @@ MIT — All skills are freely available and redistributable.
 | [concurrency-patterns](skills/go/concurrency-patterns/SKILL.md) | Go | Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications. |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" |
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton |
-| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements production configuration management with layered config resolution, secret rotation, dynamic reloading without downtime, drift detection, and validated environment-specific configuration trees for application systems. |
+| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications. |
 | [configuration-management](skills/go/configuration-management/SKILL.md) | Go | Manages application configuration in Go with environment variables, YAML/JSON parsing, validation, defaults, and hierarchy for multi-environment deployments. |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | Coding | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" |
 | [correlation-risk](skills/trading/correlation-risk/SKILL.md) | Trading | "Implements correlation breakdown and portfolio diversification risk for risk management and algorithmic trading execution." |
@@ -1520,6 +1521,7 @@ MIT — All skills are freely available and redistributable.
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" |
 | [entra-id-api](skills/coding/entra-id-api/SKILL.md) | Coding | Implements Microsoft Entra ID (Azure AD) API integration (Users, Groups, Applications, Service Principals, Conditional Access, B2C) using msgraph-sdk Python + azure.identity with MSAL authentication patterns, Graph API batches, delta queries, and RBA... |
+| [error-handling](skills/coding/error-handling/SKILL.md) | Coding | Implements modern Python error handling patterns including custom exception hierarchies, context propagation, result types, and graceful degradation for resilient production systems. |
 | [error-handling](skills/go/error-handling/SKILL.md) | Go | Designs robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery strategies for resilient applications. |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. |
@@ -2546,7 +2548,7 @@ MIT — All skills are freely available and redistributable.
 | [confidence-based-selector](skills/agent/confidence-based-selector/SKILL.md) | Agent | Implements intelligent confidence based selector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | Coding | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | Implementation |
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | Implementation |
-| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements production configuration management with layered config resolution, secret rotation, dynamic reloading without downtime, drift detection, and validated environment-specific configuration trees for application systems. | Implementation |
+| [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications. | Implementation |
 | [configuration-management](skills/go/configuration-management/SKILL.md) | Go | Manages application configuration in Go with environment variables, YAML/JSON parsing, validation, defaults, and hierarchy for multi-environment deployments. | Implementation |
 | [container-inspector](skills/agent/container-inspector/SKILL.md) | Agent | Implements intelligent container inspector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [container-linux](skills/cncf/container-linux/SKILL.md) | Cncf | "Provides Flatcar Container Linux in Cloud-Native Engineering - container Linux" | Reference |
@@ -2669,6 +2671,7 @@ MIT — All skills are freely available and redistributable.
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | Implementation |
 | [entra-id-api](skills/coding/entra-id-api/SKILL.md) | Coding | Implements Microsoft Entra ID (Azure AD) API integration (Users, Groups, Applications, Service Principals, Conditional Access, B2C) using msgraph-sdk Python + azure.identity with MSAL authentication patterns, Graph API batches, delta queries, and RBA... | Implementation |
 | [envoy](skills/cncf/envoy/SKILL.md) | Cncf | "Envoy in Cloud-Native Engineering - Cloud-native high-performance edge/middle/service" proxy | Reference |
+| [error-handling](skills/coding/error-handling/SKILL.md) | Coding | Implements modern Python error handling patterns including custom exception hierarchies, context propagation, result types, and graceful degradation for resilient production systems. | Implementation |
 | [error-handling](skills/go/error-handling/SKILL.md) | Go | Designs robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery strategies for resilient applications. | Implementation |
 | [error-trace-explainer](skills/agent/error-trace-explainer/SKILL.md) | Agent | Implements intelligent error trace explainer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [etcd](skills/cncf/etcd/SKILL.md) | Cncf | "Provides etcd in Cloud-Native Engineering - distributed key-value store" | Reference |

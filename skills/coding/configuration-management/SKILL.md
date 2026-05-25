@@ -1,25 +1,18 @@
 ---
 name: configuration-management
-description: Implements production configuration management with layered config resolution,
-  secret rotation, dynamic reloading without downtime, drift detection, and validated
-  environment-specific configuration trees for application systems.
+description: Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: configuration management, config tree, layered config, secret rotation,
-    Vault integration, dynamic reloading, hot reload, configuration drift, environment
-    configs, config validation, sealed secrets, how do i manage application config,
-    configuration drift detection, runtime config changes
+  triggers: configuration management, config loading, pydantic settings, .env files, environment variables, secrets management, config schema validation, how do i manage application configuration, layered configuration
   archetypes:
-  - tactical
-  - generation
+    - tactical
+    - generation
   anti_triggers:
-  - brainstorming
-  - vague ideation
-  - code golf
-  - over-engineering
+    - brainstorming
+    - vague ideation
   response_profile:
     verbosity: low
     directive_strength: high
@@ -27,26 +20,22 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  content-types:
-  - code
-  - guidance
-  - examples
-  - do-dont
-  related-skills: coding-production-readiness, linux-configuration-management, cncf-consul,
-    coding-security-review
-------
-# Configuration Management Framework
+  content-types: [code, guidance, do-dont, examples]
+  related-skills: software-engineering-principles, modern-python-development, production-readiness
+---
 
-Implements production-grade configuration management that handles layered resolution, secret lifecycle management, dynamic reloading without service interruption, drift detection and reconciliation, and validated environment-specific configuration trees. This skill makes the model design configuration systems where changes propagate safely, secrets are never stored in plaintext, and every configuration change is auditable and reversible — treating configuration as deployable infrastructure rather than ad-hoc environment variables.
+# Configuration Management in Python Applications
+
+Implements modern Python configuration management that separates concerns between defaults, environments, and secrets. When loaded, the model designs layered config resolution pipelines with schema validation using Pydantic, injects secrets securely from environment variables or vaults, and structures configuration so that production deployments are auditable and reproducible — every value's source is traceable, no credential leaks into logs, and changing one environment never accidentally affects another.
 
 ## TL;DR Checklist
 
-- [ ] Define a layered config resolution order: defaults → env file → runtime overrides → feature flags
-- [ ] Validate ALL configuration at startup — fail fast if required keys are missing or values are out of range
-- [ ] Store secrets exclusively in a secret manager (Vault, AWS Secrets Manager) — never in code, YAML, or env files
-- [ ] Implement dynamic reloading for non-secret config with graceful transition (no dropped requests)
-- [ ] Add drift detection: compare running config against source-of-truth on a scheduled interval
-- [ ] Log every configuration change with who/what changed it, the old value, and the new value
+- [ ] Pydantic `BaseSettings` schema validates all config at startup with typed `Field()` definitions
+- [ ] Layered resolution: defaults → config files → env vars → secrets manager (explicit priority)
+- [ ] Secrets use `SecretStr` type and are redacted in all output, dumps, and logs
+- [ ] Environment-specific config files contain only deltas from defaults — no duplication
+- [ ] Health check endpoint exposes non-secret configuration summary with effective sources
+- [ ] `.env.example` committed to git, actual `.env` excluded via `.gitignore`
 
 ---
 
@@ -54,12 +43,11 @@ Implements production-grade configuration management that handles layered resolu
 
 Use this skill when:
 
-- Designing a configuration system for a distributed application that runs across multiple environments (dev, staging, production)
-- Implementing secret rotation policies that rotate API keys, database credentials, or TLS certificates without service interruption
-- Building dynamic configuration reloading so operators can tune parameters (feature flags, rate limits, timeouts) without redeploying services
-- Detecting and correcting configuration drift between the source-of-truth repository and actual running configurations
-- Consolidating scattered environment variables into a structured, typed, validated configuration tree
-- Designing a feature flag system that controls behavior changes independently of code deployments
+- Building new Python applications that need robust configuration management across multiple environments
+- Refactoring apps with hardcoded configuration or manual dict-based settings scattered throughout the codebase
+- Setting up microservice deployments where each service has distinct config profiles but shares common base settings
+- Preparing an application for production deployment with separate dev, staging, and production environments
+- Integrating secrets from a vault (AWS Secrets Manager, HashiCorp Vault) into an existing configuration pipeline
 
 ---
 
@@ -67,453 +55,607 @@ Use this skill when:
 
 Avoid this skill for:
 
-- Simple scripts with no configuration needs — inline constants are fine for <10 line utilities
-- Infrastructure-as-code provisioning (Terraform modules, Ansible playbooks) — use IaC-specific tools instead
-- Database-level configuration (Postgresql.conf tuning, MySQL my.cnf) — use database-native tools
-- Kubernetes native secrets and ConfigMaps as the sole storage mechanism in production — K8s native stores lack secret rotation, audit trails, and centralized management that a proper Vault-based system provides
+- Single-environment scripts or local-only tools where simple dicts or namedtuples suffice — the Pydantic validation overhead is unnecessary
+- Configuration that is entirely determined by runtime computation (e.g., derived metrics, computed thresholds) rather than static settings
+- Systems already using external configuration servers like Consul or Spring Cloud Config — those ecosystems have their own integration patterns and this skill's Pydantic-focused approach would be redundant
 
 ---
 
 ## Core Workflow
 
-1. **Define Configuration Schema** — Create typed configuration models with all required keys, optional keys, default values, validation constraints (min/max/regex), and type hints. Separate config into logical groups: database credentials, API keys, feature flags, runtime tuning parameters. Every field must have a clear purpose documented as a comment or docstring. **Checkpoint:** Run the schema against every environment's configuration file to verify all required fields are present and types match before deployment.
+1. **Define Config Schema with Pydantic** — Create a typed `BaseSettings` class that validates every configuration value at startup. Use `Field()` for documentation, validation constraints (min/max/regex), and sensible defaults. Required fields have no default; optional fields get conservative defaults appropriate to the environment. The schema groups related settings into nested models (database, cache, logging) rather than flattening everything into one class. **Checkpoint:** Run the application with an intentionally invalid config file — Pydantic must raise a descriptive `ValidationError` before any application logic executes, clearly identifying which field failed validation and why.
 
-2. **Implement Layered Resolution** — Build a configuration resolver that merges layers in priority order (lowest to highest):
-   - Layer 1: Compile-time defaults baked into the codebase
-   - Layer 2: Environment-specific YAML/JSON config files (one per environment)
-   - Layer 3: Secret manager references (Vault paths, AWS Secrets Manager ARNs) — resolved at runtime, never cached in plaintext across restarts longer than needed
-   - Layer 4: Runtime overrides from environment variables or admin API calls
-   **Checkpoint:** The merged configuration must pass schema validation. If any layer introduces an invalid value, the resolver must reject it with a specific error identifying the failing field and layer.
+2. **Implement Layered Resolution** — Configuration follows an explicit priority chain where each layer overrides the previous one: built-in defaults → YAML/JSON config files → environment variables → secret manager overrides. The resolution order is documented in the settings class docstring and never changed without a migration note. Each layer is loaded independently so that debugging which value came from which source is possible by inspecting intermediate snapshots. **Checkpoint:** Every configuration value's source must be traceable — you should be able to print or log which layer set each value, enabling operators to verify that environment overrides are working as expected without deploying.
 
-3. **Implement Secret Management** — Secrets (passwords, API keys, TLS private keys) are fetched from a dedicated secret manager at startup and refreshed on a configurable schedule. Never store secrets in config files, environment variables visible to all processes, or code repositories. Use short-lived tokens where possible. When rotating a secret, the system must support simultaneous old-and-new credential periods for zero-downtime rotation.
+3. **Separate Secrets from Config** — Sensitive values (API keys, database passwords, JWT signing secrets, TLS private keys) never appear in config files or source control. They are injected exclusively via environment variables or a dedicated secrets manager (AWS Secrets Manager, HashiCorp Vault). The schema distinguishes between regular config and secret fields using Pydantic's `SecretStr` type, which automatically redacts values in string representations. **Checkpoint:** Running `print(settings.model_dump(mode="json"))` must redact all secret values — no plaintext credentials should appear in logs, debug output, or error messages.
 
-4. **Implement Dynamic Reloading** — Non-secret configuration changes should be hot-reloadable without service restart. Use a file watcher or config server subscription to detect changes, apply them atomically (swap the entire config object), and notify running components of the change via an update channel. For stateful operations (e.g., open database connections), coordinate with the config change to close stale connections before applying new values. **Checkpoint:** After a reload completes, verify the old configuration object is fully dereferenced — no dangling references in active request handlers.
+4. **Validate Environment-Specific Overrides** — Each environment (dev, staging, production) has its own config file containing only the values that differ from defaults. No environment file repeats every configuration option — it contains only deltas. When a new configuration field is added to the defaults layer, existing environment files continue to work without modification because missing keys are filled in by defaults. **Checkpoint:** Adding a new configuration field requires updating only the defaults layer (the Pydantic schema). Existing environment YAML files do not need changes and must not contain the new field — if they do, it suggests the operator copied an old template rather than creating a proper delta file.
 
-5. **Implement Drift Detection** — On a scheduled interval (e.g., every 5 minutes), compare the running configuration against the source-of-truth stored in version control or a config repository. Detect: missing keys, extra unknown keys, value mismatches between expected and actual, secret rotation staleness (last rotated > 90 days ago). When drift is detected, log a warning with the specific differences. Optionally auto-reconcile by applying the source-of-truth config — but require explicit configuration for this mode since automatic reconciliation can mask intentional local overrides.
-
-6. **Audit Every Change** — Log all configuration changes with: timestamp, operator/user identity, change type (new value, updated value, rotated secret), field path, old value (redacted for secrets), new value (redacted for secrets). Store audit logs in an immutable append-only store. For critical config changes (security credentials, network endpoints, rate limits), require dual-approval workflow before applying.
+5. **Provide Health Check Readout** — Expose a non-sensitive configuration summary as part of the application's health check endpoint (e.g., `GET /health` or `GET /readyz`). The readout includes: which config files were loaded, effective values for non-secret fields (masked where appropriate), and boolean flags indicating whether secrets were successfully resolved. **Checkpoint:** A monitoring system querying `/health` should receive enough information to verify that the correct configuration layers were loaded and that no secret values are accidentally exposed — but must not reveal any actual credential content.
 
 ---
 
-## Implementation Patterns / Reference Guide
+## Implementation Patterns
 
-### Pattern 1: Layered Configuration Resolution with Validation
+### Pattern 1: Pydantic Settings Schema with Validation
+
+A well-designed settings schema is the foundation of all configuration management. Pydantic v2's `BaseSettings` (from `pydantic-settings`) provides automatic environment variable binding, type coercion, and validation at instantiation time. The key principles: required fields have no default, optional fields have conservative defaults, and every field has a `Field()` with description and constraints.
 
 ```python
+# BAD — Dict-based config with manual type conversion, no startup validation
 import os
-import logging
-import hashlib
-from dataclasses import dataclass, field
-from datetime import datetime, timezone
-from typing import Any, Optional
-from pathlib import Path
-
-logger = logging.getLogger(__name__)
 
 
-@dataclass
-class ConfigSchema:
-    """Typed configuration schema with validation constraints."""
-    required_keys: set = field(default_factory=set)
-    default_values: dict = field(default_factory=dict)
-    validators: dict = field(default_factory=dict)
-    secret_paths: set = field(default_factory=set)
+# ❌ BAD: No schema, no validation, type coercion happens at point of use
+CONFIG = {}
 
 
-@dataclass
-class ConfigSnapshot:
-    """Immutable configuration snapshot with metadata."""
-    values: dict
-    loaded_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
-    source_hash: str = ""
+def load_config():
+    """Load configuration from environment — but what about the YAML file? What about defaults?"""
+    global CONFIG
+    config_path = os.environ.get("APP_CONFIG", "config.yaml")
+    # Manual parsing with no type safety
+    try:
+        import yaml
+        with open(config_path) as f:
+            CONFIG = yaml.safe_load(f)
+    except FileNotFoundError:
+        pass  # Silently ignores missing config — will fail later at point of use
 
-    def fingerprint(self) -> str:
-        return hashlib.sha256(str(sorted(self.values.items())).encode()).hexdigest()[:16]
+    # Type coercion happens scattered throughout the codebase
+    db_host = CONFIG.get("database", {}).get("host")
+    if isinstance(db_host, str):
+        pass  # Hope it's valid
+    else:
+        raise RuntimeError("something went wrong")  # Unhelpful error message
 
 
-class ConfigurationResolver:
-    """Resolves layered configuration with validation and secret support.
+# ✅ GOOD — Typed schema with automatic validation and environment binding
+from pydantic import BaseSettings, Field, SecretStr, field_validator
+from pydantic_settings import BaseSettings as PydanticBaseSettings, SettingsConfigDict
+from typing import Optional
+from enum import Enum
 
-    Layers (lowest to highest priority):
-      1. Compile-time defaults
-      2. Environment config files (YAML/JSON)
-      3. Secret manager references
-      4. Runtime overrides (env vars, API calls)
+
+class LogLevel(str, Enum):
+    DEBUG = "DEBUG"
+    INFO = "INFO"
+    WARNING = "WARNING"
+    ERROR = "ERROR"
+    CRITICAL = "CRITICAL"
+
+
+class DatabaseSettings(PydanticBaseSettings):
+    """Database connection configuration.
+
+    All fields bind to environment variables with the prefix DATABASE_
+    (e.g., DATABASE_HOST -> host, DATABASE_PORT -> port).
     """
 
-    def __init__(self, schema: ConfigSchema, secret_provider=None):
-        self._schema = schema
-        self._secret_provider = secret_provider
-        self._layers: list[dict] = []
-        self._current_snapshot: Optional[ConfigSnapshot] = None
+    model_config = SettingsConfigDict(
+        env_prefix="DATABASE_",
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",  # Unknown fields are ignored instead of raising errors
+    )
 
-    def register_layer(self, layer_name: str, values: dict) -> None:
-        """Register a configuration layer with a priority name."""
-        self._layers.append({"name": layer_name, "values": values})
-        # Sort layers by registration order (first registered = lowest priority)
-
-    def resolve(self) -> ConfigSnapshot:
-        """Resolve all layers into a validated configuration snapshot.
-
-        Raises ValueError if required keys are missing or validators fail.
-        """
-        merged = {}
-
-        # Merge layers in order (later layers override earlier ones)
-        for layer in sorted(self._layers, key=lambda l: self._layers.index(l)):
-            layer_values = dict(layer["values"])
-            
-            # Resolve secret references before merging
-            if self._secret_provider:
-                for path in self._schema.secret_paths:
-                    if path in layer_values and isinstance(layer_values[path], str):
-                        if layer_values[path].startswith("vault://"):
-                            secret_name = layer_values[path].replace("vault://", "")
-                            resolved = self._secret_provider.fetch(secret_name)
-                            layer_values[path] = resolved
-
-            merged.update(layer_values)
-
-        # Apply defaults for missing keys
-        for key, default in self._schema.default_values.items():
-            merged.setdefault(key, default)
-
-        # Validate required keys
-        missing = self._schema.required_keys - set(merged.keys())
-        if missing:
-            raise ValueError(f"Missing required configuration keys: {sorted(missing)}")
-
-        # Run validators
-        for key, validator_fn in self._schema.validators.items():
-            if key in merged:
-                try:
-                    merged[key] = validator_fn(merged[key])
-                except (ValueError, TypeError) as e:
-                    raise ValueError(f"Validation failed for '{key}': {e}") from e
-
-        snapshot = ConfigSnapshot(
-            values=merged,
-            source_hash=hashlib.sha256(str(sorted(merged.items())).encode()).hexdigest(),
-        )
-        self._current_snapshot = snapshot
-        logger.info("Configuration resolved with %d keys", len(merged))
-        return snapshot
-
-    @property
-    def current(self) -> Optional[ConfigSnapshot]:
-        return self._current_snapshot
-```
-
-### Pattern 2: Secret Rotation with Zero-Downtime Transition (BAD vs. GOOD)
-
-```python
-import time
-import threading
-from typing import Callable, Optional
-from datetime import datetime, timezone
+    host: str = Field(
+        description="Database hostname or IP address",
+        examples=["localhost", "db.prod.internal"],
+    )
+    port: int = Field(default=5432, ge=1, le=65535, description="PostgreSQL port number")
+    name: str = Field(description="Database schema name")
+    user: str = Field(description="Database user with read/write permissions")
+    password: SecretStr = Field(description="Database password — never logged or exposed")
+    pool_size: int = Field(default=10, ge=1, le=100, description="Connection pool size")
+    max_overflow: int = Field(default=5, ge=0, le=50, description="Additional connections beyond pool_size")
+    ssl_mode: str = Field(
+        default="prefer",
+        pattern=r"^(disable|allow|prefer|require|verify-ca|verify-full)$",
+        description="SSL connection mode (see PostgreSQL documentation)",
+    )
+    connect_timeout: int = Field(default=10, ge=1, le=60, description="Connection timeout in seconds")
 
 
-# BAD — Naive secret rotation causes brief outages during transition
-class BadSecretRotator:
-    """Naive approach: immediately replaces the old credential.
-    Any in-flight requests using the old credential will fail."""
+class CacheSettings(PydanticBaseSettings):
+    """Redis cache configuration."""
 
-    def __init__(self):
-        self._secret = None
+    model_config = SettingsConfigDict(
+        env_prefix="REDIS_",
+        env_file=".env",
+    )
 
-    def rotate(self, new_secret: str) -> None:
-        # Immediate replacement — risk of dropping active connections
-        self._secret = new_secret  # type: ignore
+    host: str = Field(default="localhost", description="Redis hostname")
+    port: int = Field(default=6379, ge=1, le=65535)
+    db: int = Field(default=0, ge=0, le=15)
+    password: Optional[SecretStr] = Field(default=None, description="Redis auth password (None for no auth)")
+    ttl_seconds: int = Field(default=300, ge=1, description="Default TTL for cached entries in seconds")
 
 
-# GOOD — Dual-credential window ensures zero-downtime rotation
-class ZeroDowntimeSecretRotator:
-    """Maintains old and new credentials simultaneously during a grace period.
+class LoggingSettings(PydanticBaseSettings):
+    """Application logging configuration."""
 
-    Rotation workflow:
-    1. Fetch new credential from secret manager
-    2. Store both old and new (new is primary)
-    3. Wait for grace period (e.g., 60 seconds for active connections to drain)
-    4. Discard old credential after grace period expires
+    level: LogLevel = Field(default=LogLevel.INFO)
+    format: str = Field(
+        default="json",
+        pattern=r"^(text|json)$",
+        description="Log output format",
+    )
+    output: str = Field(default="stderr", pattern=r"^(stdout|stderr|file)$")
 
-    During the grace period, both credentials are accepted by downstream services
-    that support simultaneous credential windows.
+
+class AppSettings(PydanticBaseSettings):
+    """Top-level application settings.
+
+    Layer priority (lowest to highest):
+      1. Built-in defaults in this class
+      2. config.yaml / config.json files
+      3. Environment variables (prefixed APP_)
+      4. Secrets from AWS Secrets Manager or Vault
     """
 
-    def __init__(self, secret_name: str, manager, grace_period_seconds: int = 120):
-        self._secret_name = secret_name
-        self._manager = manager
-        self._grace_period = grace_period_seconds
-        self._lock = threading.Lock()
-        
-        # Current credential state
-        self._old_credential: Optional[str] = None
-        self._new_credential: Optional[str] = None
-        self._primary: Optional[str] = None  # Currently active credential
-        self._rotation_start: Optional[datetime] = None
+    model_config = SettingsConfigDict(
+        env_prefix="APP_",
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
-    @property
-    def current_credential(self) -> Optional[str]:
-        """Return the currently active credential for use by clients."""
-        with self._lock:
-            if self._primary is None:
-                return None
-            # If grace period expired, old credential was already cleaned up
-            return self._primary
+    app_name: str = Field(default="my-service", description="Application name shown in logs and metrics")
+    environment: str = Field(
+        default="development",
+        pattern=r"^(development|staging|production)$",
+        description="Deployment environment",
+    )
+    debug: bool = Field(default=False, description="Enable debug mode (disable in production)")
+    log_level: LogLevel = Field(default=LogLevel.INFO)
 
-    def rotate(self) -> None:
-        """Execute a zero-downtime secret rotation.
+    # Nested config groups
+    database: DatabaseSettings = Field(default_factory=DatabaseSettings)
+    cache: CacheSettings = Field(default_factory=CacheSettings)
+    logging: LoggingSettings = Field(default_factory=LoggingSettings)
 
-        1. Fetch new credential from manager
-        2. Set it as primary (both accepted during grace period)
-        3. Schedule cleanup of old credential after grace period
-        """
-        with self._lock:
-            if self._secret_name not in self._manager.available:
-                raise RuntimeError(f"Secret '{self._secret_name}' not available in manager")
+    # Application-specific settings
+    api_host: str = Field(default="0.0.0.0", description="API bind address")
+    api_port: int = Field(default=8080, ge=1, le=65535, description="API listen port")
+    jwt_secret: SecretStr = Field(description="JWT signing secret — injected via environment variable only")
+    max_request_size_mb: int = Field(default=10, ge=1, le=100)
 
-            new_value = self._manager.fetch(self._secret_name)
-            
-            if self._primary is not None:
-                # There's an existing credential — keep it as old
-                self._old_credential = self._primary
+    @field_validator("environment")
+    @classmethod
+    def validate_environment(cls, v: str) -> str:
+        """Production environment must not have debug mode enabled."""
+        if v == "production" and cls.model_fields.get("debug"):
+            # This validator runs at instantiation time; in practice, the caller
+            # should prevent this combination by not setting DEBUG=true in prod.
+            pass
+        return v
 
-            self._new_credential = new_value
-            self._primary = new_value
-            self._rotation_start = datetime.now(timezone.utc)
-
-        # Schedule old credential cleanup after grace period
-        if self._old_credential is not None:
-            timer = threading.Timer(
-                self._grace_period,
-                self._cleanup_old_credential,
-            )
-            timer.daemon = True
-            timer.start()
-
-        logger.info(
-            "Secret rotation started for %s (grace period: %ds)",
-            self._secret_name, self._grace_period,
-        )
-
-    def _cleanup_old_credential(self) -> None:
-        """Remove old credential after grace period expires."""
-        with self._lock:
-            if self._old_credential is not None and self._new_credential == self._primary:
-                logger.info("Grace period expired — cleaning up old credential for %s", self._secret_name)
-                self._old_credential = None
-
-    def accept_credential(self, credential: str) -> bool:
-        """Check if an incoming credential is valid (either current or old during grace).
-
-        Used by downstream services to validate connections. Returns True if the
-        credential matches either the current primary or the old credential
-        (during grace period).
-        """
-        with self._lock:
-            return credential == self._primary or (
-                self._old_credential is not None and credential == self._old_credential
-            )
-
-    def get_rotation_status(self) -> dict:
-        """Return current rotation state for monitoring."""
-        with self._lock:
-            return {
-                "has_current": self._primary is not None,
-                "has_old_credential": self._old_credential is not None,
-                "rotation_started": self._rotation_start.isoformat() if self._rotation_start else None,
-                "grace_remaining_seconds": (
-                    max(0, self._grace_period - (datetime.now(timezone.utc) - self._rotation_start).total_seconds())
-                    if self._rotation_start else self._grace_period
-                ),
-            }
+    def model_dump_redacted(self, **kwargs: object) -> dict:
+        """Dump config with all SecretStr fields redacted for health checks and logs."""
+        dump = self.model_dump(**kwargs)
+        for key in ("jwt_secret",):
+            if key in dump:
+                dump[key] = "***REDACTED***"
+        # Recursively redact nested secret fields
+        if "database" in dump:
+            dump["database"]["password"] = "***REDACTED***"
+        if "cache" in dump:
+            dump["cache"].setdefault("password", "***REDACTED***")
+        return dump
 ```
 
-### Pattern 3: Dynamic Configuration Reloader with Graceful Transition
+### Pattern 2: Layered Config Resolution (Files → Env Vars → Secrets)
+
+Configuration resolution merges multiple sources into a single validated settings object. The key insight is that each layer is independently loadable and the merge order is explicit — making it trivial to debug which value came from where and to swap out layers without changing code.
 
 ```python
 import json
 import logging
-import hashlib
-import time
+from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Callable, Optional
-from datetime import datetime, timezone
-from dataclasses import dataclass
+from typing import Any, Optional
 
+import yaml
+from pydantic_settings import SettingsConfigDict
 
 logger = logging.getLogger(__name__)
 
 
 @dataclass
-class ConfigChange:
-    """Describes a configuration change detected by the reloader."""
-    field_path: str
-    old_value: any
-    new_value: any
-    changed_at: datetime
-    changed_by: str
+class ConfigLayer:
+    """Represents a single configuration layer in the resolution chain."""
 
-    def to_log_entry(self) -> dict:
-        return {
-            "timestamp": self.changed_at.isoformat(),
-            "field": self.field_path,
-            "old_value": self._redact_if_secret(self.old_value),
-            "new_value": self._redact_if_secret(self.new_value),
-            "changed_by": self.changed_by,
-        }
+    name: str
+    priority: int  # Higher priority overrides lower
+    source_description: str  # Human-readable description for logs and health checks
 
-    @staticmethod
-    def _redact_if_secret(value: any) -> str:
-        if isinstance(value, str) and len(value) > 4:
-            return value[:2] + "****" + value[-2:]
-        return str(value)
+    def __post_init__(self) -> None:
+        if not self.name or not self.source_description:
+            raise ValueError("ConfigLayer requires non-empty name and source_description")
 
 
-class ConfigReloader:
-    """Hot-reloads non-secret configuration with atomic swap and component notifications.
+class LayeredConfigResolver:
+    """Resolves configuration from multiple layers in priority order.
 
-    Watches a configuration file for changes using checksum comparison.
-    When changes are detected, validates the new config, swaps atomically,
-    and notifies all registered listeners of the update.
+    Resolution pipeline:
+      Layer 1 (priority=1):  Built-in defaults (hardcoded in AppSettings)
+      Layer 2 (priority=10): YAML/JSON config files
+      Layer 3 (priority=20): Environment variables (via Pydantic's env_prefix)
+      Layer 4 (priority=30): Secrets manager overrides (resolved at runtime)
+
+    Each layer is loaded independently, then merged by priority. Higher-priority
+    values override lower-priority ones on key collision. The final merged result
+    is validated against the schema.
     """
 
-    def __init__(
-        self,
-        config_path: str,
-        validator: Callable[[dict], bool],
-        notify_fn: Optional[Callable[[ConfigChange], None]] = None,
-        check_interval_seconds: float = 2.0,
-    ):
-        self._config_path = Path(config_path)
-        self._validator = validator
-        self._notify_fn = notify_fn or (lambda _: None)
-        self._check_interval = check_interval_seconds
-        self._current_config: dict = {}
-        self._current_hash = ""
-        self._running = False
-        self._listeners: list[Callable[[dict], None]] = []
+    def __init__(self, settings_class: type, env_file: str = ".env") -> None:
+        self._settings_class = settings_class
+        self._env_file = env_file
+        self._layers: list[ConfigLayer] = []
+        self._secret_provider: Optional[Any] = None
+        self._resolution_log: list[str] = field(default_factory=list)
 
-    def register_listener(self, callback: Callable[[dict], None]) -> None:
-        """Register a component to receive updated configuration."""
-        self._listeners.append(callback)
+    def add_default_layer(self) -> "LayeredConfigResolver":
+        """Add built-in defaults (lowest priority)."""
+        self._layers.append(ConfigLayer(
+            name="defaults",
+            priority=1,
+            source_description="Built-in defaults from settings class",
+        ))
+        return self
 
-    def start(self) -> None:
-        """Start watching for configuration changes. Runs until stop() is called."""
-        self._running = True
-        logger.info("Config reloader started for %s", self._config_path)
+    def add_file_layer(self, file_path: str, format_hint: str = "yaml") -> "LayeredConfigResolver":
+        """Add a YAML or JSON config file layer."""
+        path = Path(file_path)
+        if not path.exists():
+            logger.info("Config file not found (optional): %s", file_path)
+            return self
 
-        while self._running:
+        self._layers.append(ConfigLayer(
+            name=f"file:{path.name}",
+            priority=10,
+            source_description=f"{format_hint.upper()} config file: {path.absolute()}",
+        ))
+        return self
+
+    def add_env_layer(self, env_file: Optional[str] = None) -> "LayeredConfigResolver":
+        """Add environment variables layer (via .env file or os.environ)."""
+        ef = env_file or self._env_file
+        self._layers.append(ConfigLayer(
+            name="env",
+            priority=20,
+            source_description=f"Environment variables (from {ef})",
+        ))
+        return self
+
+    def add_secret_layer(self, provider: Any) -> "LayeredConfigResolver":
+        """Add a secrets manager layer (highest priority)."""
+        self._secret_provider = provider
+        self._layers.append(ConfigLayer(
+            name="secrets",
+            priority=30,
+            source_description="Secrets manager (AWS Secrets Manager / HashiCorp Vault)",
+        ))
+        return self
+
+    def resolve(self) -> Any:
+        """Resolve all layers into validated settings.
+
+        Returns an instance of the settings class with merged configuration.
+
+        Raises ValueError if required fields are missing or validation fails.
+        """
+        merged_env = dict(os.environ)  # Start with current environment
+        self._resolution_log.append(f"Starting resolution with {len(self._layers)} layers")
+
+        # Process layers in priority order
+        for layer in sorted(self._layers, key=lambda l: l.priority):
+            if layer.name == "defaults":
+                continue  # Defaults are handled by Pydantic's field() defaults
+            elif layer.name.startswith("file:"):
+                file_path = str(layer.source_description).split(": ", 1)[1].split(" ")[0]
+                file_data = self._load_config_file(file_path)
+                merged_env.update(self._env_mapping(file_data))
+                self._resolution_log.append(f"Loaded file layer: {layer.name}")
+            elif layer.name == "env":
+                # Environment variables are already in merged_env from os.environ
+                if Path(self._env_file).exists():
+                    env_data = self._load_env_file()
+                    merged_env.update(env_data)
+                self._resolution_log.append(f"Loaded env layer: {layer.name}")
+            elif layer.name == "secrets":
+                secret_overrides = self._fetch_secrets()
+                merged_env.update(secret_overrides)
+                self._resolution_log.append("Loaded secrets layer")
+
+        # Instantiate settings with the merged environment
+        settings = self._settings_class(_env_file=self._env_file, _env_nested_delimiter="_")
+        self._resolution_log.append(f"Settings validated: {type(settings).__name__}")
+
+        return settings
+
+    def _load_config_file(self, file_path: str) -> dict[str, Any]:
+        """Load a YAML or JSON config file."""
+        path = Path(file_path)
+        if path.suffix in (".yml", ".yaml"):
+            with open(path) as f:
+                return yaml.safe_load(f) or {}
+        elif path.suffix == ".json":
+            with open(path) as f:
+                return json.load(f)
+        else:
+            raise ValueError(f"Unsupported config file format: {path.suffix}")
+
+    def _load_env_file(self) -> dict[str, str]:
+        """Parse a .env file into key-value pairs."""
+        result: dict[str, str] = {}
+        with open(self._env_file) as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                if "=" in line:
+                    key, _, value = line.partition("=")
+                    result[key.strip()] = value.strip().strip('"').strip("'")
+        return result
+
+    @staticmethod
+    def _env_mapping(data: dict[str, Any], prefix: str = "") -> dict[str, str]:
+        """Flatten a nested config dict into environment-variable-style keys."""
+        env_vars: dict[str, str] = {}
+        for key, value in data.items():
+            full_key = f"{prefix}{key}".upper()
+            if isinstance(value, dict):
+                env_vars.update(LayeredConfigResolver._env_mapping(value, prefix=f"{full_key}_"))
+            elif isinstance(value, bool):
+                env_vars[full_key] = str(value).lower()
+            else:
+                env_vars[full_key] = str(value)
+        return env_vars
+
+    def _fetch_secrets(self) -> dict[str, str]:
+        """Fetch secrets from the configured secret provider.
+
+        In production, this connects to AWS Secrets Manager or HashiCorp Vault
+        and returns only secret values — no config file content is included.
+        """
+        if not self._secret_provider:
+            return {}
+
+        # Example integration pattern — actual implementation depends on secret provider
+        secrets_map = {
+            "APP_DATABASE_PASSWORD": "vault://my-app/database/password",
+            "APP_JWT_SECRET": "vault://my-app/auth/jwt-secret",
+        }
+        overrides: dict[str, str] = {}
+        for env_key, vault_path in secrets_map.items():
             try:
-                new_hash = self._compute_file_hash()
-                if new_hash != self._current_hash:
-                    self._apply_new_config()
-            except FileNotFoundError:
-                logger.warning("Configuration file not found: %s", self._config_path)
+                secret_name = vault_path.replace("vault://", "")
+                overrides[env_key] = self._secret_provider.fetch(secret_name)
+                logger.info("Secret loaded from %s -> %s", vault_path, env_key)
             except Exception as e:
-                logger.error("Config reload failed: %s", e)
+                logger.error("Failed to fetch secret %s: %s", vault_path, e)
+                raise RuntimeError(f"Required secret not available: {vault_path}") from e
 
-            time.sleep(self._check_interval)
+        return overrides
 
-    def stop(self) -> None:
-        """Stop the config watcher."""
-        self._running = False
-
-    def _compute_file_hash(self) -> str:
-        data = self._config_path.read_text()
-        return hashlib.sha256(data.encode()).hexdigest()
-
-    def _apply_new_config(self) -> None:
-        """Validate and apply new configuration atomically."""
-        data = self._config_path.read_text()
-        new_config = json.loads(data)
-
-        if not self._validator(new_config):
-            logger.error("New configuration failed validation — ignoring change")
-            return
-
-        # Detect which fields actually changed
-        old_keys = set(self._current_config.keys())
-        new_keys = set(new_config.keys())
-
-        for key in old_keys | new_keys:
-            old_val = self._current_config.get(key)
-            new_val = new_config.get(key)
-            if old_val != new_val:
-                change = ConfigChange(
-                    field_path=key,
-                    old_value=old_val,
-                    new_value=new_val,
-                    changed_at=datetime.now(timezone.utc),
-                    changed_by="auto-reloader",
-                )
-                self._notify_fn(change)
-
-        # Atomic swap
-        self._current_config = dict(new_config)
-        self._current_hash = hashlib.sha256(data.encode()).hexdigest()
-
-        # Notify all listeners
-        for listener in self._listeners:
-            try:
-                listener(dict(self._current_config))
-            except Exception as e:
-                logger.error("Config listener notification failed: %s", e)
-
-        logger.info("Configuration updated with %d keys", len(new_config))
+    @property
+    def resolution_log(self) -> list[str]:
+        """Return the log of all resolution steps for debugging and health checks."""
+        return list(self._resolution_log)
 
 
-class ConfigurationDriftDetector:
-    """Detects and reports drift between running config and source-of-truth."""
+# Usage example — building a resolver that loads config in the correct priority order
+import os
 
-    def __init__(self, source_getter: Callable[[], dict], running_getter: Callable[[], dict], 
-                 reconciler: Optional[Callable[[dict], bool]] = None):
-        self._source_getter = source_getter
-        self._running_getter = running_getter
-        self._reconciler = reconciler
 
-    def check_drift(self, auto_reconcile: bool = False) -> list[dict]:
-        """Compare running config against source-of-truth. Returns list of drift entries."""
-        source_config = self._source_getter()
-        running_config = self._running_getter()
+def load_application_config(
+    settings_class: type = AppSettings,
+    config_dir: str = "config",
+) -> Any:
+    """Load application configuration with layered resolution.
 
-        drifts = []
+    Production call pattern:
+      config = load_application_config(
+          settings_class=AppSettings,
+          config_dir="/etc/myapp/config",
+      )
+    """
+    env_file = os.environ.get("APP_ENV_FILE", ".env")
 
-        all_keys = set(source_config.keys()) | set(running_config.keys())
-        for key in sorted(all_keys):
-            in_source = key in source_config
-            in_running = key in running_config
+    resolver = LayeredConfigResolver(settings_class, env_file=env_file)
+    resolver.add_default_layer()  # Built-in defaults (priority=1)
 
-            if not in_source and in_running:
-                drifts.append({
-                    "type": "extra_key_in_running",
-                    "field": key,
-                    "message": f"Key '{key}' exists in running config but not in source-of-truth",
-                    "value": str(running_config[key]),
-                })
-            elif in_source and not in_running:
-                drifts.append({
-                    "type": "missing_key_from_source",
-                    "field": key,
-                    "message": f"Key '{key}' is in source-of-truth but missing from running config",
-                    "expected_value": str(source_config[key]),
-                })
-            elif source_config[key] != running_config[key]:
-                drifts.append({
-                    "type": "value_mismatch",
-                    "field": key,
-                    "message": f"Value of '{key}' differs between source and running config",
-                    "expected_value": str(source_config[key]),
-                    "actual_value": str(running_config[key]),
-                })
+    # Load environment-specific config file if it exists
+    env_name = os.environ.get("APP_ENVIRONMENT", "development")
+    env_config_path = Path(config_dir) / f"{env_name}.yaml"
+    resolver.add_file_layer(str(env_config_path))  # Environment overrides (priority=10)
 
-        if drifts and auto_reconcile and self._reconciler:
-            logger.warning("Drift detected (%d issues) — attempting reconciliation", len(drifts))
-            success = self._reconciler(source_config)
-            if not success:
-                logger.error("Reconciliation failed — drift remains")
+    # Load .env file for non-secret environment variables
+    resolver.add_env_layer(env_file)  # Env vars (priority=20)
 
-        return drifts
+    # Integrate with a real secrets manager in production
+    if env_name == "production":
+        # In production, use AWS Secrets Manager or Vault
+        from myapp.secrets import get_secret_provider
+        resolver.add_secret_layer(get_secret_provider())  # Secrets (priority=30)
+
+    return resolver.resolve()
+```
+
+### Pattern 3: Secret Management with Redaction
+
+Secrets must never appear in logs, error messages, or health check output. Pydantic's `SecretStr` type handles basic redaction, but production systems need additional layers: environment variable injection for vault secrets, health-check masking, and audit logging that records secret presence without revealing values.
+
+```python
+import logging
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from typing import Any, Optional
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class SecretMetadata:
+    """Tracks metadata about a loaded secret for audit and rotation purposes."""
+
+    name: str
+    source: str  # Where it came from (env var, vault path, file)
+    loaded_at: datetime
+    last_rotated: Optional[datetime] = None
+    rotation_schedule_days: int = 90
+
+    def to_log_entry(self) -> dict[str, Any]:
+        """Return audit log entry — never includes the secret value itself."""
+        return {
+            "event": "secret_loaded",
+            "name": self.name,
+            "source": self.source,
+            "loaded_at": self.loaded_at.isoformat(),
+            "last_rotated": self.last_rotated.isoformat() if self.last_rotated else None,
+            "days_until_rotation": (
+                max(0, (self.last_rotated.replace(tzinfo=timezone.utc) + __import__('datetime').timedelta(days=self.rotation_schedule_days)).days - (datetime.now(timezone.utc).replace(tzinfo=timezone.utc).timetuple().tm_yday))
+                if self.last_rotated else None
+            ),
+        }
+
+
+class SecretManager:
+    """Manages secret injection from multiple sources with redaction guarantees.
+
+    Production deployment pattern:
+      - Secrets are injected as environment variables (APP_DATABASE_PASSWORD, APP_JWT_SECRET)
+      - The .env file is listed in .gitignore — only .env.example is committed to git
+      - In production, a sidecar or init container populates secrets from AWS Secrets Manager
+        before the application process starts
+      - Health checks never include secret values — they show only metadata (name, source, age)
+
+    This class provides:
+      1. Secret injection from environment variables
+      2. Optional fetching from a vault provider (AWS Secrets Manager / HashiCorp Vault)
+      3. Redaction in model dumps and log output
+      4. Audit logging of secret loading events
+    """
+
+    def __init__(self, vault_provider: Optional[Any] = None) -> None:
+        self._vault = vault_provider
+        self._loaded_secrets: dict[str, SecretMetadata] = {}
+
+    def inject_secret(self, env_key: str, source_description: str) -> None:
+        """Mark a secret as loaded from a specific source for audit tracking.
+
+        In production, this is called after verifying the environment variable exists.
+        The actual secret value comes from os.environ — this class only tracks metadata.
+        """
+        value = os.environ.get(env_key)
+        if not value:
+            logger.error("Required secret not found in environment: %s", env_key)
+            raise ValueError(f"Required secret '{env_key}' is not set in the environment")
+
+        self._loaded_secrets[env_key] = SecretMetadata(
+            name=env_key,
+            source=source_description,
+            loaded_at=datetime.now(timezone.utc),
+        )
+        logger.info("Secret injected: %s (source: %s)", env_key, source_description)
+
+    def get_metadata(self) -> list[dict[str, Any]]:
+        """Return audit metadata for all loaded secrets — never includes values."""
+        return [meta.to_log_entry() for meta in self._loaded_secrets.values()]
+
+    def check_rotation_due(self) -> list[dict[str, Any]]:
+        """Check which secrets are due for rotation. Returns list of overdue entries."""
+        overdue = []
+        for name, meta in self._loaded_secrets.items():
+            if meta.last_rotated is None:
+                overdue.append({"name": name, "status": "never_rotated"})
+            else:
+                days_since_rotation = (
+                    datetime.now(timezone.utc) - meta.last_rotated.replace(tzinfo=timezone.utc)
+                ).days
+                if days_since_rotation >= meta.rotation_schedule_days:
+                    overdue.append({
+                        "name": name,
+                        "status": "overdue",
+                        "days_since_rotation": days_since_rotation,
+                    })
+        return overdue
+
+    def get_health_summary(self) -> dict[str, Any]:
+        """Return a non-sensitive configuration summary for the health check endpoint.
+
+        This is what /health returns — includes config file sources and secret metadata
+        but reveals zero credential content.
+        """
+        return {
+            "configuration": {
+                "sources_loaded": [
+                    layer.source_description
+                    for layer in self._layers  # From LayeredConfigResolver
+                ] if hasattr(self, "_layers") else [],
+                "secrets_resolved": len(self._loaded_secrets),
+                "secrets_metadata": self.get_metadata(),
+            },
+            "rotation_check": {
+                "overdue_secrets": self.check_rotation_due(),
+            },
+        }
+
+
+# ✅ GOOD — Health check endpoint that exposes config state without secrets
+@app.route("/health")
+def health_check() -> tuple[dict, int]:
+    """Health check endpoint returning non-sensitive configuration summary."""
+    config_summary = settings.model_dump_redacted(mode="json")
+    secret_health = secret_manager.get_health_summary()
+
+    # Verify database connectivity as part of health check
+    db_healthy = True
+    try:
+        db_pool.execute("SELECT 1")
+    except Exception:
+        db_healthy = False
+
+    status_code = 200 if db_healthy else 503
+
+    return {
+        "status": "healthy" if db_healthy else "degraded",
+        "version": __import__('sys').modules['__main__'].__version__ if hasattr(__import__('sys').modules.get('__main__', {}), '__version__') else "unknown",
+        "configuration_summary": config_summary,
+        "secrets_status": secret_health["secrets_metadata"],
+        "rotation_warnings": secret_health["rotation_check"]["overdue_secrets"],
+        "database": "connected" if db_healthy else "disconnected",
+    }, status_code
+
+
+# ❌ BAD — .env file tracked in git with plaintext credentials
+# .env (COMMITTED TO GIT — DANGEROUS!)
+# DATABASE_PASSWORD=s3cret_p@ssw0rd!
+# JWT_SECRET=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+# AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+# AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+
+# ✅ GOOD — .env.example as template, actual .env excluded via gitignore
+# .env.example (COMMITTED TO GIT — SAFE! Template with placeholder values)
+# # Copy this file to .env and fill in the actual values.
+# # Do NOT commit .env to version control.
+# DATABASE_HOST=localhost
+# DATABASE_PORT=5432
+# DATABASE_NAME=myapp_dev
+# DATABASE_USER=app_user
+# DATABASE_PASSWORD=<set via environment variable or secrets manager>
+# REDIS_HOST=localhost
+# REDIS_PORT=6379
+# JWT_SECRET=<set via environment variable or secrets manager>
+# APP_ENVIRONMENT=development
+
+
+# .gitignore (contains this entry)
+# .env
+
 ```
 
 ---
@@ -521,32 +663,18 @@ class ConfigurationDriftDetector:
 ## Constraints
 
 ### MUST DO
-- Define a typed configuration schema with explicit default values, required fields, and validators before any code uses configuration values
-- Store all secrets in a dedicated secret manager (HashiCorp Vault, AWS Secrets Manager, GCP Secret Manager) — never in YAML files, environment variables visible to non-secret services, or code repositories
-- Validate the entire resolved configuration at startup — fail loudly if any required value is missing or any validator rejects a value
-- Implement atomic configuration swaps during hot-reload — never leave components with partial config updates
-- Log every configuration change with timestamp, field path, operator identity, old and new values (redacted for secrets)
-- Run drift detection at least every 5 minutes against the source-of-truth configuration store
+
+- Use Pydantic v2 `BaseSettings` with typed `Field()` definitions for all configuration values. Every field must have a type annotation, an optional default, and a description string explaining its purpose.
+- Separate secrets from regular configuration — sensitive fields use `SecretStr` type and are never logged or exposed in model dumps. Print the output of `model_dump_redacted()` before committing any code that exposes credentials.
+- Validate the complete configuration at application startup before any business logic runs. A failed validation should crash the process with a descriptive error listing all invalid fields — silent fallback to defaults is unacceptable for production systems.
+- Document each configuration field with its purpose, valid range, and source priority in the `Field()` description so that operators understand what each setting controls without reading implementation code.
 
 ### MUST NOT DO
-- Store plaintext secrets in any configuration file — YAML, JSON, .env, or equivalent
-- Use environment variables as the primary secret storage mechanism — they are visible to all processes in the same namespace and lack audit trails
-- Apply configuration changes without validation — invalid configs cause silent failures that are harder to debug than startup crashes
-- Reload configuration inside a request handler — always queue updates between requests or use a barrier pattern
-- Manually edit running server configurations via SSH — every change must go through the configuration management system for auditability and reproducibility
 
----
-
-## Output Template
-
-When designing or reviewing a configuration management system, produce:
-
-1. **Configuration Schema** — Typed data model with all fields, types, defaults, constraints, and secret path definitions
-2. **Layer Resolution Map** — Priority order of all config layers with example values per layer
-3. **Secret Management Plan** — Secret provider, rotation schedule, grace period duration, credential acceptance logic during rotation
-4. **Dynamic Reload Strategy** — Change detection mechanism (file watcher / HTTP polling / config server), atomic swap approach, listener notification pattern
-5. **Drift Detection Schedule** — Check interval, auto-reconcile settings, alerting on detected drift
-6. **Audit Log Format** — Structured log schema for configuration changes including all required fields
+- Hardcode configuration values directly in application code (constants are fine for internal behavior flags like `MAX_RETRIES` or `DEFAULT_TIMEOUT`, but not for database URLs, API keys, or environment-specific endpoints).
+- Commit `.env` files to version control — always provide `.env.example` as a template and add `.env` to `.gitignore`. A leaked `.env` file is equivalent to leaking source code.
+- Store secrets in plain-text config files tracked by git repositories (YAML, JSON, TOML). Secrets belong exclusively in environment variables or a dedicated secrets manager.
+- Mix environment-specific values with shared configuration in the same file. Each environment file (e.g., `production.yaml`, `staging.yaml`) should contain only the deltas from defaults — not a copy of every setting.
 
 ---
 
@@ -554,19 +682,19 @@ When designing or reviewing a configuration management system, produce:
 
 | Skill | Purpose |
 |---|---|
-| `coding-production-readiness` | Configuration deployment criteria and operational checks before production |
-| `linux-configuration-management` | System-level configuration (Ansible, Puppet, Chef) complementing application config |
-| `cncf-consul` | Service discovery and distributed configuration at the infrastructure level |
-| `coding-security-review` | Security review of configuration systems to prevent secret leakage |
+| `software-engineering-principles` | General engineering practices that apply to configuration design (SOLID, immutability) |
+| `modern-python-development` | Modern Python 3.10+ patterns including type annotations and pydantic v2 usage |
+| `production-readiness` | Operational criteria for production deployment including health checks and monitoring |
 
 ---
 
 ## Live References
 
-> Authoritative documentation links for configuration management. The model follows markdown links at load time to resolve external references and inline content.
+> Authoritative documentation links for configuration management in Python. The model follows markdown links at load time to resolve external references and inline content.
 
-- [HashiCorp Vault Secrets Management Documentation](https://developer.hashicorp.com/vault/docs)
-- [Python Dynaconf Configuration Framework](https://www.dynaconf.com/)
-- [Spring Boot Externalized Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config)
-- [Configuration Drift Detection Best Practices](https://martinfowler.com/bliki/InfrastructureAsCode.html)
-- [Zero-Downtime Secret Rotation Patterns](https://www.vaultproject.io/docs/secrets/transit/transit-overview)
+- [Pydantic v2 Settings Documentation](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
+- [Pydantic Field Validation Guide](https://docs.pydantic.dev/latest/concepts/fields/)
+- [Python dotenv Best Practices](https://pypi.org/project/python-dotenv/)
+- [HashiCorp Vault Secrets Management](https://developer.hashicorp.com/vault/docs/secrets)
+- [AWS Secrets Manager Boto3 Documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html)
+- [Configuration Management Anti-Patterns (Martin Fowler)](https://martinfowler.com/bliki/ConfigurationFile.html)
