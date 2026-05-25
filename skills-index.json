@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-25T07:36:18.177613Z",
-  "totalSkills": 980,
+  "generatedAt": "2026-05-25T07:55:28.513475Z",
+  "totalSkills": 981,
   "domains": {
-    "agent": 264,
+    "agent": 265,
     "cncf": 173,
     "coding": 410,
     "electrical-engineering": 2,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 565,
+    "implementation": 566,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -11244,6 +11244,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/instruction-engineering/SKILL.md"
+    },
+    {
+      "name": "instruction-parsing",
+      "domain": "agent",
+      "description": "Parses natural language instructions to extract structured intent, constraints, and parameters for reliable skill routing in AI agent systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "instruction parsing",
+        "intent extraction",
+        "prompt understanding",
+        "input analysis",
+        "constraint extraction",
+        "query decomposition",
+        "semantic routing",
+        "natural language processing"
+      ],
+      "relatedSkills": [
+        "confidence-based-selector",
+        "task-decomposition-engine",
+        "context-window-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/instruction-parsing/SKILL.md"
     },
     {
       "name": "instrumental-variables",
