@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T09:30:50.986202Z",
-  "totalSkills": 987,
+  "generatedAt": "2026-05-25T10:09:09.099352Z",
+  "totalSkills": 990,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 414,
+    "coding": 417,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 572,
+    "implementation": 575,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -8505,6 +8505,31 @@
       "source": "skills/trading/ai-explainable-ai/SKILL.md"
     },
     {
+      "name": "extensible-framework-design",
+      "domain": "coding",
+      "description": "Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework design",
+        "extensible architecture",
+        "plugin system",
+        "extension points",
+        "configuration driven",
+        "framework API design",
+        "hook patterns",
+        "middleware chains",
+        "how do i design an extensible system"
+      ],
+      "relatedSkills": [
+        "framework-application-methodology",
+        "coding-knowledge-transfer-methods"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/extensible-framework-design/SKILL.md"
+    },
+    {
       "name": "factory-method",
       "domain": "coding",
       "description": "Implements the GoF Factory Method pattern for polymorphic object creation in Python using ABC-based factories, registration decorators, and type dispatch to replace if/elif chains with extensible factory hierarchies.",
@@ -9096,6 +9121,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-adoption-strategy/SKILL.md"
+    },
+    {
+      "name": "framework-application-methodology",
+      "domain": "coding",
+      "description": "Systematically learns, evaluates, and applies new software frameworks using proven methodology — source code analysis, prototype validation, pattern mapping, and iterative adoption for maximum engineering impact.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework application",
+        "how do i learn a new framework",
+        "framework evaluation",
+        "framework adoption",
+        "source code analysis",
+        "framework comparison",
+        "prototype validation",
+        "how do i adopt a new library"
+      ],
+      "relatedSkills": [
+        "coding-framework-design-patterns",
+        "coding-knowledge-transfer-methods"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-application-methodology/SKILL.md"
     },
     {
       "name": "framework-design",
@@ -12239,6 +12288,32 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/knative/SKILL.md"
+    },
+    {
+      "name": "knowledge-transfer-methods",
+      "domain": "coding",
+      "description": "Implements structured knowledge transfer workflows using Feynman technique, spaced repetition scheduling, active recall exercises, and teach-back protocols to achieve deep framework mastery and team-wide competency.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "knowledge transfer",
+        "teach back",
+        "Feynman technique",
+        "spaced repetition",
+        "active recall",
+        "how do i retain what I learned",
+        "framework mastery",
+        "team knowledge sharing",
+        "skill retention",
+        "learning methodology"
+      ],
+      "relatedSkills": [
+        "framework-application-methodology",
+        "extensible-framework-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/knowledge-transfer-methods/SKILL.md"
     },
     {
       "name": "kong",
