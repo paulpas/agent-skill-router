@@ -1,16 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 960 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-=======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 960 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-=======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 960 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-=======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 960 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
->>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
->>>>>>> origin/main
 
 ```
 You → "review this Python code for security issues"
@@ -21,17 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-<<<<<<< HEAD
-<<<<<<< HEAD
 - 🎯 **960 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-=======
-- 🎯 **960 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-=======
-- 🎯 **960 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-=======
-- 🎯 **960 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
->>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
->>>>>>> origin/main
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -117,30 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Programming | 7 | Algorithms, frameworks, language references |
 | Trading | 89 | Execution, risk management, ML models |
 | Writing | 4 | Technical writing, style guidance |
-<<<<<<< HEAD
-| Coding | 381 | Software patterns, security, testing, data science |
-=======
-| Coding | 382 | Software patterns, security, testing, data science |
->>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
-| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
-| Go | 12 | Go idioms, concurrency patterns, error handling |
-| Linux | 16 | System administration, kernel tuning, security, networking |
-| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
-| Programming | 7 | Algorithms, frameworks, language references |
-| Trading | 89 | Execution, risk management, ML models |
-| Writing | 4 | Technical writing, style guidance |
-<<<<<<< HEAD
-| Coding | 376 | Software patterns, security, testing, data science |
-=======
-| Coding | 375 | Software patterns, security, testing, data science |
->>>>>>> origin/main
-| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
-| Go | 12 | Go idioms, concurrency patterns, error handling |
-| Linux | 16 | System administration, kernel tuning, security, networking |
-| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
-| Programming | 7 | Algorithms, frameworks, language references |
-| Trading | 89 | Execution, risk management, ML models |
-| Writing | 4 | Technical writing, style guidance |
+
 ---
 
 ## Scripts
