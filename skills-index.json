@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T19:54:03.811034Z",
+  "generatedAt": "2026-05-25T20:13:48.400352Z",
   "totalSkills": 1011,
   "domains": {
     "agent": 270,
@@ -22301,7 +22301,7 @@
     {
       "name": "test-driven-development",
       "domain": "coding",
-      "description": "Implements test-driven development with red-green-refactor cycle, property-based testing, mocking strategies, and the test pyramid for behavior-first software design.",
+      "description": "Implements test-driven development with red-green-refactor cycle, property-based testing, mocking strategies, and behavior-first design to produce well-tested, maintainable code.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -22313,12 +22313,12 @@
         "mocking strategies",
         "test pyramid",
         "how do i write tests first",
-        "behavior-driven design"
+        "behavior-first design"
       ],
       "relatedSkills": [
-        "code-review",
-        "refactoring-techniques",
-        "software-testing-strategy"
+        "software-quality-assurance",
+        "systematic-debugging",
+        "input-validation-patterns"
       ],
       "version": "1.0.0",
       "source": "skills/coding/test-driven-development/SKILL.md"
