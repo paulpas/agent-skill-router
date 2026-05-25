@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 991 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 991 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 991 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 991 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 992 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 992 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 992 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 992 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **991 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **991 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **991 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **991 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **992 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **992 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **992 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **992 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -95,7 +95,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 267 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 418 | Software patterns, security, testing, data science |
+| Coding | 419 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -272,17 +272,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 11:27:52 UTC  
-> **Total skills:** 991  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (991 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 07:16:38 UTC  
+> **Total skills:** 992  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (992 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 974 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 974 | Ranking penalty for conflicting query terms |
-| Response Profile | 974 | Verbosity, directive strength, abstraction level |
+| Archetypes | 975 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 975 | Ranking penalty for conflicting query terms |
+| Response Profile | 975 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -739,7 +739,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (418 skills)
+### Coding (419 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -769,6 +769,7 @@ MIT — All skills are freely available and redistributable.
 | [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. | api versioning, url path versioning, accept header, breaking changes, api deprecation, sunset header, backward compatibility, api migration, stripe api versioning, github api version, twilio api version, how do i version my api, rest api lifecycle, api contract stability [tactical, generation] |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay [tactical, generation] |
 | [application-resilience-patterns](skills/coding/application-resilience-patterns/SKILL.md) | Implements application-layer resilience patterns including exponential backoff with jitter, circuit breakers, timeout management, fallback mechanisms, and rate limiters for handling external service failures gracefully. | application resilience, retry with backoff, circuit breaker pattern, timeout management, fallback mechanism, rate limiter, token bucket, graceful degradation, external service failure, how do i handle API failures, idempotency keys [tactical, generation] |
+| [architectural-modernization](skills/coding/architectural-modernization/SKILL.md) | Upgrades legacy technology stacks — framework migrations, database transitions, infrastructure modernization, and API evolution — using incremental strategies that preserve business continuity while eliminating technical debt. | framework migration, database migration, technology upgrade, legacy system modernization, Flask to FastAPI, MongoDB to PostgreSQL, SOAP to REST, on-prem to cloud, language upgrade, API evolution, infrastructure modernization, how do i upgrade a legacy system [tactical, strategic] |
 | [architectural-review](skills/coding/architectural-review/SKILL.md) | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. | architectural review, architecture assessment, system quality evaluation, technical debt audit, how do i evaluate my architecture, codebase health check, coupling analysis, cohesion metrics [educational] |
 | [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | architecture decision records, ADR, architectural decisions, how do i document architectural choices, design rationale, technology selection, system trade-offs, decision log [educational] |
 | [asana-api](skills/coding/asana-api/SKILL.md) | Integrates with Asana API to manage tasks, projects, workspaces, goals, portfolios, and webhooks using the official asana Python SDK for work management automation. | asana api, asana python, asana tasks, asana projects, asana webhooks, asana sdk, asana automation [tactical, generation] |
@@ -1340,7 +1341,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (576 skills)
+### Implementation (Build Features) (577 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1379,6 +1380,7 @@ MIT — All skills are freely available and redistributable.
 | [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. |
 | [application-resilience-patterns](skills/coding/application-resilience-patterns/SKILL.md) | Coding | Implements application-layer resilience patterns including exponential backoff with jitter, circuit breakers, timeout management, fallback mechanisms, and rate limiters for handling external service failures gracefully. |
+| [architectural-modernization](skills/coding/architectural-modernization/SKILL.md) | Coding | Upgrades legacy technology stacks — framework migrations, database transitions, infrastructure modernization, and API evolution — using incremental strategies that preserve business continuity while eliminating technical debt. |
 | [asana-api](skills/coding/asana-api/SKILL.md) | Coding | Integrates with Asana API to manage tasks, projects, workspaces, goals, portfolios, and webhooks using the official asana Python SDK for work management automation. |
 | [ascii-diagram](skills/agent/ascii-diagram/SKILL.md) | Agent | Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states. |
 | [association-rules](skills/coding/association-rules/SKILL.md) | Coding | "Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining" |
@@ -2429,6 +2431,7 @@ MIT — All skills are freely available and redistributable.
 | [apify-ultimate-scraper](skills/agent/apify-ultimate-scraper/SKILL.md) | Agent | Implements intelligent apify ultimate scraper with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | Implementation |
 | [application-resilience-patterns](skills/coding/application-resilience-patterns/SKILL.md) | Coding | Implements application-layer resilience patterns including exponential backoff with jitter, circuit breakers, timeout management, fallback mechanisms, and rate limiters for handling external service failures gracefully. | Implementation |
+| [architectural-modernization](skills/coding/architectural-modernization/SKILL.md) | Coding | Upgrades legacy technology stacks — framework migrations, database transitions, infrastructure modernization, and API evolution — using incremental strategies that preserve business continuity while eliminating technical debt. | Implementation |
 | [architectural-review](skills/coding/architectural-review/SKILL.md) | Coding | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. | Review |
 | [architecture](skills/cncf/architecture/SKILL.md) | Cncf | "Creates or updates ARCHITECTURE.md documenting the project's design" components, and technical decisions for CNCF projects | Reference |
 | [architecture-decision-records](skills/coding/architecture-decision-records/SKILL.md) | Coding | Documents architectural decisions as Architecture Decision Records (ADRs) with structured context, decision rationale, consequences, and status tracking for engineering teams. | Reference |
