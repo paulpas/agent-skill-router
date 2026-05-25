@@ -1,6 +1,10 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1014 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+<<<<<<< HEAD
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1018 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1018 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+>>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +15,11 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **1014 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+<<<<<<< HEAD
+- 🎯 **1018 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1018 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+>>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -87,7 +95,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 270 | AI orchestration, routing, task decomposition |
+| Agent | 274 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 438 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -266,22 +274,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 22:00:04 UTC  
-> **Total skills:** 1014  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1014 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 18:47:01 UTC  
+> **Total skills:** 1018  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1018 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 993 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 993 | Ranking penalty for conflicting query terms |
-| Response Profile | 993 | Verbosity, directive strength, abstraction level |
+| Archetypes | 994 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 994 | Ranking penalty for conflicting query terms |
+| Response Profile | 994 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (270 skills)
+### Agent (274 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -441,12 +449,13 @@ MIT — All skills are freely available and redistributable.
 | [make-workflow-automation](skills/agent/make-workflow-automation/SKILL.md) | Builds and debugs automated workflows in Make (Integromat) using modules, scenarios, routing, error handling, and scheduling for no-code/low-code automation. | make, make com, integromat, workflow automation, no code automation, scenario builder, webhook trigger, task routing [orchestration, strategic] |
 | [mcp-builder](skills/agent/mcp-builder/SKILL.md) | Implements intelligent mcp builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | mcp-builder, mcp builder, how do i mcp-builder, orchestrate mcp-builder, automate mcp-builder, agent mcp-builder [orchestration, strategic] |
 | [mcp-builder-ms](skills/agent/mcp-builder-ms/SKILL.md) | Implements intelligent mcp builder ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | mcp-builder-ms, mcp builder ms, how do i mcp-builder-ms, orchestrate mcp-builder-ms, automate mcp-builder-ms, agent mcp-builder-ms [orchestration, strategic] |
-| [memory-systems](skills/agent/memory-systems/SKILL.md) | Implements intelligent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | memory-systems, memory systems, how do i memory-systems, orchestrate memory-systems, automate memory-systems, agent memory-systems [orchestration, strategic] |
+| [memory-systems](skills/agent/memory-systems/SKILL.md) | Implements conversation memory patterns (bounded buffers, auto-summarization, vector-backed long-term storage) for AI agent context management and factual recall. | conversation memory, long-term memory, vector store, embedding, message history, context window, auto-summarization, chat history, conversation buffer, semantic memory |
 | [memory-usage-analyzer](skills/agent/memory-usage-analyzer/SKILL.md) | Implements intelligent memory usage analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | memory-usage-analyzer, memory usage analyzer, how do i memory-usage-analyzer, orchestrate memory-usage-analyzer, automate memory-usage-analyzer, agent memory-usage-analyzer [orchestration, strategic] |
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems | kafka troubleshooting, rabbitmq debugging, sqs issues, message queue problems, dead letter queues, consumer lag, message backlog, queue monitoring [tactical] |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution | message queue troubleshooting, kafka cluster, rabbitmq queues, dead letter, sqs visibility, message backlog, nats streaming, how do i debug queues [tactical] |
 | [ml-pipeline-workflow](skills/agent/ml-pipeline-workflow/SKILL.md) | Implements intelligent ml pipeline workflow with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ml-pipeline-workflow, ml pipeline workflow, how do i ml-pipeline-workflow, orchestrate ml-pipeline-workflow, automate ml-pipeline-workflow, agent ml-pipeline-workflow [orchestration, strategic] |
 | [multi-advisor](skills/agent/multi-advisor/SKILL.md) | Implements intelligent multi advisor with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | multi-advisor, multi advisor, how do i multi-advisor, orchestrate multi-advisor, automate multi-advisor, agent multi-advisor [orchestration, strategic] |
+| [multi-agent-orchestration](skills/agent/multi-agent-orchestration/SKILL.md) | Orchestrates multi-agent workflows (sequential pipelines, supervisor-worker delegation, group chat coordination, parallel task execution with result synthesis) for complex AI system coordination. | multi-agent, agent orchestration, CrewAI, AutoGen, supervisor worker, group chat, parallel agents, task delegation, agent team, sequential pipeline |
 | [multi-agent-patterns](skills/agent/multi-agent-patterns/SKILL.md) | Implements intelligent multi agent patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | multi-agent-patterns, multi agent patterns, how do i multi-agent-patterns, orchestrate multi-agent-patterns, automate multi-agent-patterns, agent multi-agent-patterns [orchestration, strategic] |
 | [multi-agent-task-orchestrator](skills/agent/multi-agent-task-orchestrator/SKILL.md) | Implements intelligent multi agent task orchestrator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | multi-agent-task-orchestrator, multi agent task orchestrator, how do i multi-agent-task-orchestrator, orchestrate multi-agent-task-orchestrator, automate multi-agent-task-orchestrator, agent multi-agent-task-orchestrator [orchestration, strategic] |
 | [multi-skill-executor](skills/agent/multi-skill-executor/SKILL.md) | Implements intelligent multi skill executor with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | multi-skill-executor, multi skill executor, how do i multi-skill-executor, orchestrate multi-skill-executor, automate multi-skill-executor, agent multi-skill-executor [orchestration, strategic] |
@@ -473,6 +482,7 @@ MIT — All skills are freely available and redistributable.
 | [personalized-behavior](skills/agent/personalized-behavior/SKILL.md) | Implements personalized AI agent behavior by learning and adapting to individual user preferences, communication styles, expertise levels, and interaction history for tailored responses. | personalized behavior, adaptive agent, user preferences, communication style, expertise level, tailored responses, how do i customize ai agent, user profiling [tactical] |
 | [pipecat-friday-agent](skills/agent/pipecat-friday-agent/SKILL.md) | Implements intelligent pipecat friday agent with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | pipecat-friday-agent, pipecat friday agent, how do i pipecat-friday-agent, orchestrate pipecat-friday-agent, automate pipecat-friday-agent, agent pipecat-friday-agent [orchestration, strategic] |
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | plan-writing, plan writing, how do i plan-writing, orchestrate plan-writing, automate plan-writing, agent plan-writing [orchestration, strategic] |
+| [planning-reasoning](skills/agent/planning-reasoning/SKILL.md) | Implements agent reasoning patterns (ReAct loop, chain-of-thought planning, self-reflection evaluation) for structured multi-step task execution with verification. | ReAct, reasoning, chain of thought, plan execute, self reflection, task planning, step by step, agent reasoning, reasoning loop, task decomposition [tactical, orchestration] |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | planning-with-files, planning with files, how do i planning-with-files, orchestrate planning-with-files, automate planning-with-files, agent planning-with-files [orchestration, strategic] |
 | [postgresql-optimization](skills/agent/postgresql-optimization/SKILL.md) | Implements intelligent postgresql optimization with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | postgresql-optimization, postgresql optimization, how do i postgresql-optimization, orchestrate postgresql-optimization, automate postgresql-optimization, agent postgresql-optimization, postgres, postgresql [orchestration, strategic] |
 | [pr-writer](skills/agent/pr-writer/SKILL.md) | Implements intelligent pr writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | pr-writer, pr writer, how do i pr-writer, orchestrate pr-writer, automate pr-writer, agent pr-writer [orchestration, strategic] |
@@ -484,6 +494,7 @@ MIT — All skills are freely available and redistributable.
 | [query-intent-classifier](skills/agent/query-intent-classifier/SKILL.md) | Classifies incoming natural language queries into intent archetypes (tactical, strategic, diagnostic, orchestration, educational, enforcement, generation) using keyword patterns, structural signals, and heuristics for accurate routing. | intent classification, query archetype, tactical query, strategic planning, diagnostic debugging, orchestration workflow, educational explanation, enforcement audit, generation scaffolding, how do i classify a query [orchestration, diagnostic, tactical] |
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | query-optimizer, query optimizer, how do i query-optimizer, orchestrate query-optimizer, automate query-optimizer, agent query-optimizer [orchestration, strategic] |
 | [rag-implementation](skills/agent/rag-implementation/SKILL.md) | Implements intelligent rag implementation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | rag-implementation, rag implementation, how do i rag-implementation, orchestrate rag-implementation, automate rag-implementation, agent rag-implementation [orchestration, strategic] |
+| [rag-pipelines](skills/agent/rag-pipelines/SKILL.md) | Implements RAG pipeline patterns (semantic chunking, hybrid search with BM25+vector, cross-encoder re-ranking, embedding selection) for retrieval-augmented document generation. | RAG, semantic chunking, hybrid search, BM25, cross-encoder rerank, embedding model, vector search, retrieval augmented generation [tactical, generation] |
 | [react-nextjs-development](skills/agent/react-nextjs-development/SKILL.md) | Implements intelligent react nextjs development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | react-nextjs-development, react nextjs development, how do i react-nextjs-development, orchestrate react-nextjs-development, automate react-nextjs-development, agent react-nextjs-development [orchestration, strategic] |
 | [recallmax](skills/agent/recallmax/SKILL.md) | Implements intelligent recallmax with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | recallmax, recallmax, how do i recallmax, orchestrate recallmax, automate recallmax, agent recallmax [orchestration, strategic] |
 | [receiving-code-review](skills/agent/receiving-code-review/SKILL.md) | Implements intelligent receiving code review with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | receiving-code-review, receiving code review, how do i receiving-code-review, orchestrate receiving-code-review, automate receiving-code-review, agent receiving-code-review [orchestration, strategic] |
@@ -533,6 +544,7 @@ MIT — All skills are freely available and redistributable.
 | [terraform-infrastructure](skills/agent/terraform-infrastructure/SKILL.md) | Implements intelligent terraform infrastructure with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | terraform-infrastructure, terraform infrastructure, how do i terraform-infrastructure, orchestrate terraform-infrastructure, automate terraform-infrastructure, agent terraform-infrastructure, infrastructure as code, cloudformation [orchestration, strategic] |
 | [test-oracle-generator](skills/agent/test-oracle-generator/SKILL.md) | Implements intelligent test oracle generator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | test-oracle-generator, test oracle generator, how do i test-oracle-generator, orchestrate test-oracle-generator, automate test-oracle-generator, agent test-oracle-generator, enterprise database, oracle [orchestration, strategic] |
 | [testing-qa](skills/agent/testing-qa/SKILL.md) | Implements intelligent testing qa with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | testing-qa, testing qa, how do i testing-qa, orchestrate testing-qa, automate testing-qa, agent testing-qa, unit tests, testing [orchestration, strategic] |
+| [tool-use-function-calling](skills/agent/tool-use-function-calling/SKILL.md) | Implements tool calling patterns (Pydantic-typed tools, function-to-schema conversion, parallel execution, fallback chains) for AI agent external API and service integration. | tool calling, function calling, Pydantic tools, LangChain tools, tool use, parallel execution, fallback chain, typed tools |
 | [track-management](skills/agent/track-management/SKILL.md) | Implements intelligent track management with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | track-management, track management, how do i track-management, orchestrate track-management, automate track-management, agent track-management [orchestration, strategic] |
 | [trigger-dev](skills/agent/trigger-dev/SKILL.md) | Implements intelligent trigger dev with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | trigger-dev, trigger dev, how do i trigger-dev, orchestrate trigger-dev, automate trigger-dev, agent trigger-dev [orchestration, strategic] |
 | [upstash-qstash](skills/agent/upstash-qstash/SKILL.md) | Implements intelligent upstash qstash with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | upstash-qstash, upstash qstash, how do i upstash-qstash, orchestrate upstash-qstash, automate upstash-qstash, agent upstash-qstash [orchestration, strategic] |
@@ -1357,7 +1369,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (595 skills)
+### Implementation (Build Features) (600 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1689,6 +1701,7 @@ MIT — All skills are freely available and redistributable.
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Coding | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Coding | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. |
+| [memory-systems](skills/agent/memory-systems/SKILL.md) | Agent | Implements conversation memory patterns (bounded buffers, auto-summarization, vector-backed long-term storage) for AI agent context management and factual recall. |
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems |
 | [message-queue-design](skills/coding/message-queue-design/SKILL.md) | Coding | Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems. |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Agent | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution |
@@ -1718,6 +1731,7 @@ MIT — All skills are freely available and redistributable.
 | [monolith-refactoring](skills/coding/monolith-refactoring/SKILL.md) | Coding | Refactors legacy monolithic "big ball of mud" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition. |
 | [monolith-scaling-strategies](skills/coding/monolith-scaling-strategies/SKILL.md) | Coding | Implements vertical scaling, database optimization, caching tiering, deployment patterns, CI/CD pipelines, and observability strategies for growing monolithic applications to delay or eliminate premature service decomposition. |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | Coding | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" |
+| [multi-agent-orchestration](skills/agent/multi-agent-orchestration/SKILL.md) | Agent | Orchestrates multi-agent workflows (sequential pipelines, supervisor-worker delegation, group chat coordination, parallel task execution with result synthesis) for complex AI system coordination. |
 | [multi-asset-model](skills/trading/multi-asset-model/SKILL.md) | Trading | "Provides Model inter-asset relationships for portfolio and cross-asset strategies" |
 | [multi-tenant-domain-isolation](skills/coding/multi-tenant-domain-isolation/SKILL.md) | Coding | Implements multi-tenant domain isolation patterns (schema-per-tenant, row-level tenant scoping, isolated bounded contexts) to prevent data leakage and enforce strict tenant boundaries in SaaS applications. |
 | [netlify-api](skills/coding/netlify-api/SKILL.md) | Coding | Integrates Netlify services (Sites, Builds, Functions, Forms, Identity) using the Netlify REST API with Python, covering token-based authentication, site management, deployment workflows, and serverless function deployment. |
@@ -1768,6 +1782,7 @@ MIT — All skills are freely available and redistributable.
 | [pinecone-api](skills/coding/pinecone-api/SKILL.md) | Coding | Integrates Pinecone vector database (serverless/pod indexes, upsert, query, hybrid search, inference, gRPC) using the pinecone Python SDK v9 for production vector search. |
 | [plaid-api](skills/coding/plaid-api/SKILL.md) | Coding | Implements Plaid API integration (Auth, Transactions, Identity, Investments, Income) using plaid-python SDK with Link token flow, webhook verification, access token storage security, and financial data synchronization patterns. |
 | [planetscale-sdk](skills/coding/planetscale-sdk/SKILL.md) | Coding | Integrates PlanetScale using mysql-connector-python with patterns for database branching, deploy requests, schema management, connection pooling, and insights for serverless MySQL. |
+| [planning-reasoning](skills/agent/planning-reasoning/SKILL.md) | Agent | Implements agent reasoning patterns (ReAct loop, chain-of-thought planning, self-reflection evaluation) for structured multi-step task execution with verification. |
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Coding | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. |
 | [poetry](skills/coding/poetry/SKILL.md) | Coding | Manages Python project dependencies, virtual environments, building, and publishing using Poetry — covering dependency resolution, lockfiles, workspaces, plugin system, and migration from pip. |
 | [polyglot-developer-patterns](skills/coding/polyglot-developer-patterns/SKILL.md) | Coding | Equips individual developers with learning strategies, code review techniques, and pattern translation methods to build fluency across multiple programming languages without losing productivity. |
@@ -1792,6 +1807,7 @@ MIT — All skills are freely available and redistributable.
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" |
 | [query-feature-extraction](skills/agent/query-feature-extraction/SKILL.md) | Agent | Extracts structured signals (action verbs, domain indicators, complexity markers, urgency signals, entity types) from natural language queries as preprocessing for intent classification and skill routing. |
 | [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Coding | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. |
+| [rag-pipelines](skills/agent/rag-pipelines/SKILL.md) | Agent | Implements RAG pipeline patterns (semantic chunking, hybrid search with BM25+vector, cross-encoder re-ranking, embedding selection) for retrieval-augmented document generation. |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" |
 | [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Maker | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. |
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API" Integration |
@@ -1909,6 +1925,7 @@ MIT — All skills are freely available and redistributable.
 | [time-series-forecasting](skills/coding/time-series-forecasting/SKILL.md) | Coding | "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction" |
 | [time-series-forecasting](skills/trading/time-series-forecasting/SKILL.md) | Trading | "Provides Time series forecasting for price prediction and market analysis" |
 | [tool-evaluation-workflow](skills/coding/tool-evaluation-workflow/SKILL.md) | Coding | Applies a structured evaluation framework to select tools, libraries, and frameworks based on technical fit, community health, security posture, performance benchmarks, and total cost of ownership for software projects. |
+| [tool-use-function-calling](skills/agent/tool-use-function-calling/SKILL.md) | Agent | Implements tool calling patterns (Pydantic-typed tools, function-to-schema conversion, parallel execution, fallback chains) for AI agent external API and service integration. |
 | [topic-modeling](skills/coding/topic-modeling/SKILL.md) | Coding | "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods" |
 | [trade-reporting](skills/trading/trade-reporting/SKILL.md) | Trading | "Real-time trade reporting and execution analytics for monitoring and" optimization |
 | [trading-edge](skills/trading/trading-edge/SKILL.md) | Trading | "Provides Finding and maintaining competitive advantage in trading systems" |
@@ -2137,7 +2154,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (238 skills)
+### Orchestration (Manage AI Agents) (237 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2280,7 +2297,6 @@ MIT — All skills are freely available and redistributable.
 | [make-workflow-automation](skills/agent/make-workflow-automation/SKILL.md) | Agent | Builds and debugs automated workflows in Make (Integromat) using modules, scenarios, routing, error handling, and scheduling for no-code/low-code automation. |
 | [mcp-builder](skills/agent/mcp-builder/SKILL.md) | Agent | Implements intelligent mcp builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [mcp-builder-ms](skills/agent/mcp-builder-ms/SKILL.md) | Agent | Implements intelligent mcp builder ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
-| [memory-systems](skills/agent/memory-systems/SKILL.md) | Agent | Implements intelligent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [memory-usage-analyzer](skills/agent/memory-usage-analyzer/SKILL.md) | Agent | Implements intelligent memory usage analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [ml-pipeline-workflow](skills/agent/ml-pipeline-workflow/SKILL.md) | Agent | Implements intelligent ml pipeline workflow with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [monolith-first-design](skills/coding/monolith-first-design/SKILL.md) | Coding | Evaluates architecture decisions to determine when a monolithic application should be chosen over microservices using team assessment, domain complexity analysis, operational cost modeling, and weighted scoring frameworks. |
@@ -2985,7 +3001,7 @@ MIT — All skills are freely available and redistributable.
 | [mcp-builder-ms](skills/agent/mcp-builder-ms/SKILL.md) | Agent | Implements intelligent mcp builder ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Coding | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. | Implementation |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Coding | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | Implementation |
-| [memory-systems](skills/agent/memory-systems/SKILL.md) | Agent | Implements intelligent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [memory-systems](skills/agent/memory-systems/SKILL.md) | Agent | Implements conversation memory patterns (bounded buffers, auto-summarization, vector-backed long-term storage) for AI agent context management and factual recall. | Implementation |
 | [memory-usage-analyzer](skills/agent/memory-usage-analyzer/SKILL.md) | Agent | Implements intelligent memory usage analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mermaid-diagrams](skills/writing/mermaid-diagrams/SKILL.md) | Writing | Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams, Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub. | Reference |
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems | Implementation |
@@ -3023,6 +3039,7 @@ MIT — All skills are freely available and redistributable.
 | [monolith-scaling-strategies](skills/coding/monolith-scaling-strategies/SKILL.md) | Coding | Implements vertical scaling, database optimization, caching tiering, deployment patterns, CI/CD pipelines, and observability strategies for growing monolithic applications to delay or eliminate premature service decomposition. | Implementation |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | Coding | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" | Implementation |
 | [multi-advisor](skills/agent/multi-advisor/SKILL.md) | Agent | Implements intelligent multi advisor with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [multi-agent-orchestration](skills/agent/multi-agent-orchestration/SKILL.md) | Agent | Orchestrates multi-agent workflows (sequential pipelines, supervisor-worker delegation, group chat coordination, parallel task execution with result synthesis) for complex AI system coordination. | Implementation |
 | [multi-agent-patterns](skills/agent/multi-agent-patterns/SKILL.md) | Agent | Implements intelligent multi agent patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [multi-agent-task-orchestrator](skills/agent/multi-agent-task-orchestrator/SKILL.md) | Agent | Implements intelligent multi agent task orchestrator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [multi-asset-model](skills/trading/multi-asset-model/SKILL.md) | Trading | "Provides Model inter-asset relationships for portfolio and cross-asset strategies" | Implementation |
@@ -3109,6 +3126,7 @@ MIT — All skills are freely available and redistributable.
 | [plaid-api](skills/coding/plaid-api/SKILL.md) | Coding | Implements Plaid API integration (Auth, Transactions, Identity, Investments, Income) using plaid-python SDK with Link token flow, webhook verification, access token storage security, and financial data synchronization patterns. | Implementation |
 | [plan-writing](skills/agent/plan-writing/SKILL.md) | Agent | Implements intelligent plan writing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [planetscale-sdk](skills/coding/planetscale-sdk/SKILL.md) | Coding | Integrates PlanetScale using mysql-connector-python with patterns for database branching, deploy requests, schema management, connection pooling, and insights for serverless MySQL. | Implementation |
+| [planning-reasoning](skills/agent/planning-reasoning/SKILL.md) | Agent | Implements agent reasoning patterns (ReAct loop, chain-of-thought planning, self-reflection evaluation) for structured multi-step task execution with verification. | Implementation |
 | [planning-with-files](skills/agent/planning-with-files/SKILL.md) | Agent | Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [platform-engineering](skills/coding/platform-engineering/SKILL.md) | Coding | Designs internal developer platforms (IDPs) with golden paths, self-service infrastructure portals, template-driven deployments, and developer experience metrics to reduce cognitive load and accelerate feature delivery. | Implementation |
 | [poetry](skills/coding/poetry/SKILL.md) | Coding | Manages Python project dependencies, virtual environments, building, and publishing using Poetry — covering dependency resolution, lockfiles, workspaces, plugin system, and migration from pip. | Implementation |
@@ -3146,6 +3164,7 @@ MIT — All skills are freely available and redistributable.
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Agent | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Coding | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. | Implementation |
 | [rag-implementation](skills/agent/rag-implementation/SKILL.md) | Agent | Implements intelligent rag implementation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [rag-pipelines](skills/agent/rag-pipelines/SKILL.md) | Agent | Implements RAG pipeline patterns (semantic chunking, hybrid search with BM25+vector, cross-encoder re-ranking, embedding selection) for retrieval-augmented document generation. | Implementation |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" | Implementation |
 | [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Maker | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. | Implementation |
 | [rate-limiting](skills/trading/rate-limiting/SKILL.md) | Trading | "Rate Limiting Strategies and Circuit Breaker Patterns for Exchange API" Integration | Implementation |
@@ -3330,6 +3349,7 @@ MIT — All skills are freely available and redistributable.
 | [time-series-forecasting](skills/coding/time-series-forecasting/SKILL.md) | Coding | "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction" | Implementation |
 | [time-series-forecasting](skills/trading/time-series-forecasting/SKILL.md) | Trading | "Provides Time series forecasting for price prediction and market analysis" | Implementation |
 | [tool-evaluation-workflow](skills/coding/tool-evaluation-workflow/SKILL.md) | Coding | Applies a structured evaluation framework to select tools, libraries, and frameworks based on technical fit, community health, security posture, performance benchmarks, and total cost of ownership for software projects. | Implementation |
+| [tool-use-function-calling](skills/agent/tool-use-function-calling/SKILL.md) | Agent | Implements tool calling patterns (Pydantic-typed tools, function-to-schema conversion, parallel execution, fallback chains) for AI agent external API and service integration. | Implementation |
 | [topic-modeling](skills/coding/topic-modeling/SKILL.md) | Coding | "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods" | Implementation |
 | [toto](skills/cncf/toto/SKILL.md) | Cncf | "in-toto in Supply Chain Security - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [track-management](skills/agent/track-management/SKILL.md) | Agent | Implements intelligent track management with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
