@@ -1,9 +1,16 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1009 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1009 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1009 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1009 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+<<<<<<< HEAD
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+>>>>>>> a46baef9d (feat: add query intent classification and feature extraction skills)
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +21,17 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **1009 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1009 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1009 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1009 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+<<<<<<< HEAD
+- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+>>>>>>> a46baef9d (feat: add query intent classification and feature extraction skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -93,7 +107,21 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
+| Agent | 270 | AI orchestration, routing, task decomposition |
+| CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
+| Coding | 435 | Software patterns, security, testing, data science |
+| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
+| Go | 12 | Go idioms, concurrency patterns, error handling |
+| Linux | 16 | System administration, kernel tuning, security, networking |
+| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
+| Programming | 7 | Algorithms, frameworks, language references |
+| Trading | 89 | Execution, risk management, ML models |
+| Writing | 4 | Technical writing, style guidance |
+<<<<<<< HEAD
 | Agent | 268 | AI orchestration, routing, task decomposition |
+=======
+| Agent | 270 | AI orchestration, routing, task decomposition |
+>>>>>>> a46baef9d (feat: add query intent classification and feature extraction skills)
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 435 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -272,22 +300,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 19:16:40 UTC  
-> **Total skills:** 1009  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1009 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 14:53:36 UTC  
+> **Total skills:** 1011  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1011 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 990 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 990 | Ranking penalty for conflicting query terms |
-| Response Profile | 990 | Verbosity, directive strength, abstraction level |
+| Archetypes | 992 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 992 | Ranking penalty for conflicting query terms |
+| Response Profile | 992 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (268 skills)
+### Agent (270 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -486,6 +514,8 @@ MIT — All skills are freely available and redistributable.
 | [protocol-first-agent-design](skills/agent/protocol-first-agent-design/SKILL.md) | Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in. | MCP protocol, A2A agent protocol, model context protocol, agent interoperability, protocol-first design, vendor lock-in prevention, agent communication patterns, MCP server [strategic, tactical] |
 | [pydantic-ai](skills/agent/pydantic-ai/SKILL.md) | Implements intelligent pydantic ai with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | pydantic-ai, pydantic ai, how do i pydantic-ai, orchestrate pydantic-ai, automate pydantic-ai, agent pydantic-ai [orchestration, strategic] |
 | [python-fastapi-development](skills/agent/python-fastapi-development/SKILL.md) | Implements intelligent python fastapi development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | python-fastapi-development, python fastapi development, how do i python-fastapi-development, orchestrate python-fastapi-development, automate python-fastapi-development, agent python-fastapi-development [orchestration, strategic] |
+| [query-feature-extraction](skills/agent/query-feature-extraction/SKILL.md) | Extracts structured signals (action verbs, domain indicators, complexity markers, urgency signals, entity types) from natural language queries as preprocessing for intent classification and skill routing. | feature extraction, query parsing, action verb detection, domain detection, urgency signal, complexity marker, entity extraction, natural language processing, NLP preprocessing, how do i parse a query [tactical, orchestration] |
+| [query-intent-classifier](skills/agent/query-intent-classifier/SKILL.md) | Classifies incoming natural language queries into intent archetypes (tactical, strategic, diagnostic, orchestration, educational, enforcement, generation) using keyword patterns, structural signals, and heuristics for accurate routing. | intent classification, query archetype, tactical query, strategic planning, diagnostic debugging, orchestration workflow, educational explanation, enforcement audit, generation scaffolding, how do i classify a query [orchestration, diagnostic, tactical] |
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | query-optimizer, query optimizer, how do i query-optimizer, orchestrate query-optimizer, automate query-optimizer, agent query-optimizer [orchestration, strategic] |
 | [rag-implementation](skills/agent/rag-implementation/SKILL.md) | Implements intelligent rag implementation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | rag-implementation, rag implementation, how do i rag-implementation, orchestrate rag-implementation, automate rag-implementation, agent rag-implementation [orchestration, strategic] |
 | [react-nextjs-development](skills/agent/react-nextjs-development/SKILL.md) | Implements intelligent react nextjs development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | react-nextjs-development, react nextjs development, how do i react-nextjs-development, orchestrate react-nextjs-development, automate react-nextjs-development, agent react-nextjs-development [orchestration, strategic] |
@@ -1358,7 +1388,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (592 skills)
+### Implementation (Build Features) (593 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1790,6 +1820,7 @@ MIT — All skills are freely available and redistributable.
 | [python-typing-patterns](skills/coding/python-typing-patterns/SKILL.md) | Coding | Implements advanced Python typing patterns including generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, and composite type construction for robust static analysis. |
 | [python-uv](skills/coding/python-uv/SKILL.md) | Coding | Manages Python projects with uv by Astral — ultra-fast dependency resolution, virtual environments, workspace/multirepo setup, build tools, and pip compatibility for modern Python development workflows. |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" |
+| [query-feature-extraction](skills/agent/query-feature-extraction/SKILL.md) | Agent | Extracts structured signals (action verbs, domain indicators, complexity markers, urgency signals, entity types) from natural language queries as preprocessing for intent classification and skill routing. |
 | [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Coding | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. |
 | [randomized-experiments](skills/coding/randomized-experiments/SKILL.md) | Coding | "Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations" |
 | [rapid-prototyping-workflow](skills/maker/rapid-prototyping-workflow/SKILL.md) | Maker | Implements rapid prototyping workflows (code mocks, breadboard hardware, physical models, wireframes) with decision matrices and build-test-learn cycles to validate concepts quickly. |
@@ -2135,7 +2166,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (237 skills)
+### Orchestration (Manage AI Agents) (238 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2312,6 +2343,7 @@ MIT — All skills are freely available and redistributable.
 | [prompt-engineer](skills/agent/prompt-engineer/SKILL.md) | Agent | Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [pydantic-ai](skills/agent/pydantic-ai/SKILL.md) | Agent | Implements intelligent pydantic ai with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [python-fastapi-development](skills/agent/python-fastapi-development/SKILL.md) | Agent | Implements intelligent python fastapi development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [query-intent-classifier](skills/agent/query-intent-classifier/SKILL.md) | Agent | Classifies incoming natural language queries into intent archetypes (tactical, strategic, diagnostic, orchestration, educational, enforcement, generation) using keyword patterns, structural signals, and heuristics for accurate routing. |
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Agent | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [rag-implementation](skills/agent/rag-implementation/SKILL.md) | Agent | Implements intelligent rag implementation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [react-nextjs-development](skills/agent/react-nextjs-development/SKILL.md) | Agent | Implements intelligent react nextjs development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -3135,6 +3167,8 @@ MIT — All skills are freely available and redistributable.
 | [python-typing-patterns](skills/coding/python-typing-patterns/SKILL.md) | Coding | Implements advanced Python typing patterns including generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, and composite type construction for robust static analysis. | Implementation |
 | [python-uv](skills/coding/python-uv/SKILL.md) | Coding | Manages Python projects with uv by Astral — ultra-fast dependency resolution, virtual environments, workspace/multirepo setup, build tools, and pip compatibility for modern Python development workflows. | Implementation |
 | [quality-policies](skills/coding/quality-policies/SKILL.md) | Coding | "Provides Establishing policies for maintaining a clean codebase including code standards, linting, formatting, testing requirements, cyclomatic complexity limi" | Implementation |
+| [query-feature-extraction](skills/agent/query-feature-extraction/SKILL.md) | Agent | Extracts structured signals (action verbs, domain indicators, complexity markers, urgency signals, entity types) from natural language queries as preprocessing for intent classification and skill routing. | Implementation |
+| [query-intent-classifier](skills/agent/query-intent-classifier/SKILL.md) | Agent | Classifies incoming natural language queries into intent archetypes (tactical, strategic, diagnostic, orchestration, educational, enforcement, generation) using keyword patterns, structural signals, and heuristics for accurate routing. | Orchestration |
 | [query-optimizer](skills/agent/query-optimizer/SKILL.md) | Agent | Implements intelligent query optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [rag-architecture](skills/coding/rag-architecture/SKILL.md) | Coding | Implements production-grade RAG architectures (chunking strategies, hybrid search, re-ranking, multi-hop retrieval) to inject external knowledge into LLM applications accurately and efficiently. | Implementation |
 | [rag-implementation](skills/agent/rag-implementation/SKILL.md) | Agent | Implements intelligent rag implementation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
