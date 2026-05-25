@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T05:01:04.823312Z",
-  "totalSkills": 971,
+  "generatedAt": "2026-05-25T05:29:41.462079Z",
+  "totalSkills": 972,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 403,
+    "coding": 404,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 556,
+    "implementation": 557,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -20091,6 +20091,41 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-testing-strategy/SKILL.md"
+    },
+    {
+      "name": "solid-anti-patterns",
+      "domain": "coding",
+      "description": "Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "solid anti-patterns",
+        "SOLID violations",
+        "refactoring SOLID",
+        "god class refactor",
+        "fragile base class",
+        "brittle hierarchy",
+        "tight coupling fix",
+        "interface pollution",
+        "dependency inversion violation",
+        "SRP violation",
+        "open closed violation",
+        "LSP violation",
+        "ISP violation",
+        "DIP refactoring",
+        "code smell detection",
+        "architectural debt"
+      ],
+      "relatedSkills": [
+        "single-responsibility",
+        "open-closed-principle",
+        "liskov-substitution-principle",
+        "interface-segregation-principle",
+        "dependency-inversion-principle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/solid-anti-patterns/SKILL.md"
     },
     {
       "name": "spiffe",

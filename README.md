@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 971 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 972 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **971 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **972 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 403 | Software patterns, security, testing, data science |
+| Coding | 404 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -266,17 +266,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 05:01:06 UTC  
-> **Total skills:** 971  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (971 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 05:29:43 UTC  
+> **Total skills:** 972  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (972 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 959 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 959 | Ranking penalty for conflicting query terms |
-| Response Profile | 959 | Verbosity, directive strength, abstraction level |
+| Archetypes | 960 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 960 | Ranking penalty for conflicting query terms |
+| Response Profile | 960 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -728,7 +728,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (403 skills)
+### Coding (404 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1088,6 +1088,7 @@ MIT — All skills are freely available and redistributable.
 | [software-maintainability](skills/coding/software-maintainability/SKILL.md) | Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay. | software maintainability, codebase health, technical debt strategy, refactoring cadence, cyclomatic complexity budget, dependency freshness, how do i keep my codebase clean over time, sustainable development velocity [tactical, generation] |
 | [software-quality-assurance](skills/coding/software-quality-assurance/SKILL.md) | Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds. | software quality assurance, SQA, static analysis, code fuzzing, load testing, performance testing, security scanning, dependency audit, compliance validation, code quality gates, how do i ensure software quality, quality gates, vulnerability scanning [tactical, diagnostic, enforcement] |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | testing strategy, unit test, integration test, property-based testing, test coverage, mocking, assertion, pytest, test suite design, how do i write tests [tactical, generation] |
+| [solid-anti-patterns](skills/coding/solid-anti-patterns/SKILL.md) | Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries. | solid anti-patterns, SOLID violations, refactoring SOLID, god class refactor, fragile base class, brittle hierarchy, tight coupling fix, interface pollution, dependency inversion violation, SRP violation, open closed violation, LSP violation, ISP violation, DIP refactoring, code smell detection... [diagnostic, tactical] |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. | splunk, splunk search, hec, http event collector, splunk sdk, splunk alerts, how do i send logs to splunk, log management [tactical, generation] |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | spring boot, spring framework, dependency injection, auto configuration, rest controller, record dto, profile configuration, actuator, java 21, virtual threads, @service, @component, @autowired, how do i build a spring app [tactical, generation] |
 | [square-api](skills/coding/square-api/SKILL.md) | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. | square, square payments api, square catalog, square inventory, square orders, square webhooks, square terminal, how do i integrate square payments, retail pos [tactical, generation] |
@@ -1314,7 +1315,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (556 skills)
+### Implementation (Build Features) (557 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1790,6 +1791,7 @@ MIT — All skills are freely available and redistributable.
 | [software-maintainability](skills/coding/software-maintainability/SKILL.md) | Coding | Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay. |
 | [software-quality-assurance](skills/coding/software-quality-assurance/SKILL.md) | Coding | Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds. |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. |
+| [solid-anti-patterns](skills/coding/solid-anti-patterns/SKILL.md) | Coding | Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries. |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Coding | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. |
 | [square-api](skills/coding/square-api/SKILL.md) | Coding | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. |
@@ -3143,6 +3145,7 @@ MIT — All skills are freely available and redistributable.
 | [software-maintainability](skills/coding/software-maintainability/SKILL.md) | Coding | Implements long-term codebase maintainability strategies including refactoring cadences, complexity budgets, dependency freshness monitoring, and sustainable development velocity to prevent architectural decay. | Implementation |
 | [software-quality-assurance](skills/coding/software-quality-assurance/SKILL.md) | Coding | Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds. | Implementation |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | Implementation |
+| [solid-anti-patterns](skills/coding/solid-anti-patterns/SKILL.md) | Coding | Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries. | Implementation |
 | [spiffe](skills/cncf/spiffe/SKILL.md) | Cncf | "Provides SPIFFE in Secure Product Identity Framework for Applications" | Reference |
 | [spire](skills/cncf/spire/SKILL.md) | Cncf | "Configures spire in spiffe implementation for real-world deployments for cloud-native deployment and infrastructure management." | Reference |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Coding | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. | Implementation |
