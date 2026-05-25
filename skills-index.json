@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T14:09:14.841875Z",
-  "totalSkills": 998,
+  "generatedAt": "2026-05-25T14:42:11.119864Z",
+  "totalSkills": 1000,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 425,
+    "coding": 427,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 583,
+    "implementation": 585,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -12721,6 +12721,33 @@
       "source": "skills/agent/kubernetes-deployment/SKILL.md"
     },
     {
+      "name": "kubernetes-deployment-patterns",
+      "domain": "coding",
+      "description": "Implements production-grade Kubernetes deployment patterns including resource management, HPA/VPA, pod disruption budgets, health probes, and multi-environment manifest orchestration for reliable service operation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "kubernetes deployment",
+        "k8s manifests",
+        "resource management",
+        "pod disruption budget",
+        "HPA",
+        "readiness probe",
+        "liveness probe",
+        "helm charts",
+        "production deployment",
+        "how do i deploy to kubernetes"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "observability-patterns",
+        "service-mesh-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/kubernetes-deployment-patterns/SKILL.md"
+    },
+    {
       "name": "kubernetes-ingress",
       "domain": "cncf",
       "description": "Configures Kubernetes Ingress resources for external HTTP/HTTPS routing, TLS termination, host-based and path-based routing, with Nginx and Traefik controller integration.",
@@ -14219,6 +14246,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/microprofile/SKILL.md"
+    },
+    {
+      "name": "microservice-contract-testing",
+      "domain": "coding",
+      "description": "Implements consumer-driven contract testing (PACT) with mock services and test doubles to prevent API breaking changes across microservice boundaries in distributed systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "contract testing",
+        "pact",
+        "consumer-driven contracts",
+        "API mocking",
+        "service stubs",
+        "integration testing",
+        "mock server",
+        "test doubles",
+        "api breaking changes",
+        "how do i test microservice interfaces"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "idempotent-distributed-operations",
+        "observability-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/microservice-contract-testing/SKILL.md"
     },
     {
       "name": "microservice-resilience-patterns",
