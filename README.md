@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 980 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 980 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 980 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 980 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 981 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 981 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 981 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 981 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **980 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **980 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **980 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **980 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **981 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **981 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **981 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **981 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -93,7 +93,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 264 | AI orchestration, routing, task decomposition |
+| Agent | 265 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 410 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -272,9 +272,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 07:36:20 UTC  
-> **Total skills:** 980  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (980 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 02:54:54 UTC  
+> **Total skills:** 981  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (981 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -287,7 +287,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Domain
 
 
-### Agent (264 skills)
+### Agent (265 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -428,6 +428,7 @@ MIT — All skills are freely available and redistributable.
 | [infra-drift-detector](skills/agent/infra-drift-detector/SKILL.md) | Implements intelligent infra drift detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | infra-drift-detector, infra drift detector, how do i infra-drift-detector, orchestrate infra-drift-detector, automate infra-drift-detector, agent infra-drift-detector [orchestration, strategic] |
 | [inngest](skills/agent/inngest/SKILL.md) | Implements intelligent inngest with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | inngest, inngest, how do i inngest, orchestrate inngest, automate inngest, agent inngest [orchestration, strategic] |
 | [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. | instruction engineering, prompt design, skill instructions, how do i write better instructions, AI behavior guidance, constraint blocks, few-shot examples, guard clauses for skills, skill quality [tactical] |
+| [instruction-parsing](skills/agent/instruction-parsing/SKILL.md) | Parses natural language instructions to extract structured intent, constraints, and parameters for reliable skill routing in AI agent systems. | instruction parsing, intent extraction, prompt understanding, input analysis, constraint extraction, query decomposition, semantic routing, natural language processing |
 | [intelligent-skill-selection](skills/agent/intelligent-skill-selection/SKILL.md) | Evaluates incoming tasks against available skills using semantic matching, confidence thresholds, and contextual filters to route work to the optimal capability with automatic fallback handling. | skill selection, task routing, choosing the right skill, semantic matching, confidence threshold, adaptive routing, agent dispatch, fallback strategy [orchestration, strategic] |
 | [intercom-automation](skills/agent/intercom-automation/SKILL.md) | Implements intelligent intercom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | intercom-automation, intercom automation, how do i intercom-automation, orchestrate intercom-automation, automate intercom-automation, agent intercom-automation [orchestration, strategic] |
 | [issues](skills/agent/issues/SKILL.md) | Implements intelligent issues with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | issues, issues, how do i issues, orchestrate issues, automate issues, agent issues [orchestration, strategic] |
@@ -1329,7 +1330,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (565 skills)
+### Implementation (Build Features) (566 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1585,6 +1586,7 @@ MIT — All skills are freely available and redistributable.
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. |
 | [input-validation-patterns](skills/coding/input-validation-patterns/SKILL.md) | Coding | Implements production input validation and sanitization patterns including Pydantic v2 schemas, recursive nested validation, custom validators with error accumulation, allowlist enforcement, and type coercion for secure API endpoints. |
 | [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. |
+| [instruction-parsing](skills/agent/instruction-parsing/SKILL.md) | Agent | Parses natural language instructions to extract structured intent, constraints, and parameters for reliable skill routing in AI agent systems. |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. |
 | [integration-testing-patterns](skills/coding/integration-testing-patterns/SKILL.md) | Coding | Implements integration testing strategies (database, HTTP API, event-driven, message queue) with test isolation, fixture management, and real infrastructure validation for production-quality software systems. |
@@ -2799,6 +2801,7 @@ MIT — All skills are freely available and redistributable.
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | Implementation |
 | [input-validation-patterns](skills/coding/input-validation-patterns/SKILL.md) | Coding | Implements production input validation and sanitization patterns including Pydantic v2 schemas, recursive nested validation, custom validators with error accumulation, allowlist enforcement, and type coercion for secure API endpoints. | Implementation |
 | [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. | Implementation |
+| [instruction-parsing](skills/agent/instruction-parsing/SKILL.md) | Agent | Parses natural language instructions to extract structured intent, constraints, and parameters for reliable skill routing in AI agent systems. | Implementation |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | Implementation |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. | Implementation |
 | [integration-testing-patterns](skills/coding/integration-testing-patterns/SKILL.md) | Coding | Implements integration testing strategies (database, HTTP API, event-driven, message queue) with test isolation, fixture management, and real infrastructure validation for production-quality software systems. | Implementation |
