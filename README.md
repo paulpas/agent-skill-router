@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 987 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 987 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 987 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 987 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 990 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 990 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 990 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 990 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **987 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **987 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **987 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **987 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **990 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **990 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **990 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **990 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -95,7 +95,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 267 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 414 | Software patterns, security, testing, data science |
+| Coding | 417 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -272,17 +272,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 09:30:52 UTC  
-> **Total skills:** 987  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (987 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 05:08:04 UTC  
+> **Total skills:** 990  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (990 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 970 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 970 | Ranking penalty for conflicting query terms |
-| Response Profile | 970 | Verbosity, directive strength, abstraction level |
+| Archetypes | 973 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 973 | Ranking penalty for conflicting query terms |
+| Response Profile | 973 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -739,7 +739,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (414 skills)
+### Coding (417 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -904,6 +904,7 @@ MIT — All skills are freely available and redistributable.
 | [event-storming](skills/coding/event-storming/SKILL.md) | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. | event storming, eventstorming, domain discovery, workshop facilitation, bounded context, domain events, sticky notes, collaborative modeling [tactical, generation] |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | experimental design, DOE, factorial design, randomization, blocking, how do I design experiments [tactical, generation] |
 | [explainability](skills/coding/explainability/SKILL.md) | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" | explainability, interpretability, transparency, understanding models, how do I explain predictions [tactical, generation] |
+| [extensible-framework-design](skills/coding/extensible-framework-design/SKILL.md) | Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees. | framework design, extensible architecture, plugin system, extension points, configuration driven, framework API design, hook patterns, middleware chains, how do i design an extensible system [tactical, strategic] |
 | [factory-method](skills/coding/factory-method/SKILL.md) | Implements the GoF Factory Method pattern for polymorphic object creation in Python using ABC-based factories, registration decorators, and type dispatch to replace if/elif chains with extensible factory hierarchies. | factory method pattern, object creation factory, type-based instantiation, abstract factory vs factory method, how do i create objects dynamically, polymorphic constructors, factory registry |
 | [fastapi-development](skills/coding/fastapi-development/SKILL.md) | Implements FastAPI application patterns including dependency injection, Pydantic v2 models, async handlers, JWT authentication, middleware chains, background tasks, and production deployment strategies for high-performance Python web services. | fastapi, fastapi development, dependency injection, pydantic v2, async endpoints, jwt authentication, fastapi middleware, background tasks, starlette, uvicorn, python web framework, fastapi production [tactical, generation] |
 | [feature-engineering](skills/coding/feature-engineering/SKILL.md) | "Creates and transforms features including polynomial features, interactions, domain-specific features, and feature transformations" | feature engineering, feature creation, feature transformation, how do I engineer features, feature design [tactical, generation] |
@@ -914,6 +915,7 @@ MIT — All skills are freely available and redistributable.
 | [firebase-sdk](skills/coding/firebase-sdk/SKILL.md) | Integrates Firebase using firebase-admin 7.x with patterns for Firestore CRUD, Realtime Database, Auth (token verification, user management), Cloud Messaging, and hosting. | firebase, firebase admin, firestore, firebase auth, how do i use firebase from python, firebase realtime database, fcm, firebase cloud messaging [tactical, generation] |
 | [framework-adaptation](skills/coding/framework-adaptation/SKILL.md) | Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation. | framework adaptation, library integration, new framework, dependency evaluation, tech stack upgrade, adapter pattern, facade pattern, progressive migration [tactical, generation] |
 | [framework-adoption-strategy](skills/coding/framework-adoption-strategy/SKILL.md) | Orchestrates structured framework adoption through phased rollout planning, migration strategies, acceptance criteria definition, rollback procedures, and success metrics to ensure teams transition smoothly from selection to production utilization. | framework adoption strategy, phased rollout, framework migration plan, how do i adopt a new framework in production, framework transition planning, rollback strategy, acceptance criteria, framework success metrics [tactical, generation] |
+| [framework-application-methodology](skills/coding/framework-application-methodology/SKILL.md) | Systematically learns, evaluates, and applies new software frameworks using proven methodology — source code analysis, prototype validation, pattern mapping, and iterative adoption for maximum engineering impact. | framework application, how do i learn a new framework, framework evaluation, framework adoption, source code analysis, framework comparison, prototype validation, how do i adopt a new library [tactical, educational] |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | framework design, architectural blueprint, extension points, adapter pattern, interface contracts, composition root, framework integration [tactical, generation] |
 | [framework-driven-design](skills/coding/framework-driven-design/SKILL.md) | Implements framework-driven design patterns (Inversion of Control, Dependency Injection, lifecycle hooks, plugin architectures) to build extensible applications that leverage modern framework constraints instead of bypassing them. | framework driven design, inversion of control, dependency injection, lifecycle hooks, plugin architecture, how do i make code extensible, middleware patterns, convention over configuration [tactical, strategic] |
 | [framework-evaluation-criteria](skills/coding/framework-evaluation-criteria/SKILL.md) | Systematically elicits evaluation criteria across technical, team, ecosystem, security, deployment, integration, cost, and viability dimensions to prevent hype-driven framework selection. Produces structured requirement matrices, weighted scoring fra... | evaluation criteria, requirements elicitation, weighted scoring matrix, ADR decision record, technology selection framework, failure mode analysis, decision sustainability, tech comparison checklist [tactical, diagnostic] |
@@ -968,6 +970,7 @@ MIT — All skills are freely available and redistributable.
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | jvm tuning, garbage collection, GC tuning, zgc, shenandoah, jfr, jcmd, heap dump, memory leak, java performance, oom error, out of memory, thread deadlock, jstack, async-profiler... [tactical, generation] |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" | kernel density estimation, KDE, non-parametric, density estimation, bandwidth selection [tactical, generation] |
 | [kiss-principle](skills/coding/kiss-principle/SKILL.md) | Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions. | kiss principle, keep it simple stupid, over-engineering, simplicity, avoid complexity, simple solution, unnecessary abstraction, how do i simplify my code, reduce boilerplate [tactical, diagnostic] |
+| [knowledge-transfer-methods](skills/coding/knowledge-transfer-methods/SKILL.md) | Implements structured knowledge transfer workflows using Feynman technique, spaced repetition scheduling, active recall exercises, and teach-back protocols to achieve deep framework mastery and team-wide competency. | knowledge transfer, teach back, Feynman technique, spaced repetition, active recall, how do i retain what I learned, framework mastery, team knowledge sharing, skill retention, learning methodology [educational, tactical] |
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | kotlin coroutines, structured concurrency, coroutine scope, SupervisorJob, Flow API, StateFlow, kotlinx-coroutines [tactical, generation] |
 | [kubernetes-api](skills/coding/kubernetes-api/SKILL.md) | Integrates with the Kubernetes API via the official client-python SDK to manage pods, deployments, services, ConfigMaps, Secrets, CRDs, and cluster resources programmatically. | kubernetes api, k8s python client, client-python, kubectl python, kubernetes pods, kubernetes deployments, k8s custom resources, kubernetes operations [tactical, generation] |
 | [langchain](skills/coding/langchain/SKILL.md) | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. | langchain, langgraph, create agent, llm orchestration, rag chain, langchain agent, how do i use langchain, agent middleware [tactical, generation] |
@@ -1336,7 +1339,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (572 skills)
+### Implementation (Build Features) (575 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1534,6 +1537,7 @@ MIT — All skills are freely available and redistributable.
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" |
 | [explainability](skills/coding/explainability/SKILL.md) | Coding | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" |
 | [explainable-ai](skills/trading/explainable-ai/SKILL.md) | Trading | "Provides Explainable AI for understanding and trusting trading model decisions" |
+| [extensible-framework-design](skills/coding/extensible-framework-design/SKILL.md) | Coding | Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees. |
 | [factory-method](skills/coding/factory-method/SKILL.md) | Coding | Implements the GoF Factory Method pattern for polymorphic object creation in Python using ABC-based factories, registration decorators, and type dispatch to replace if/elif chains with extensible factory hierarchies. |
 | [failover-handling](skills/trading/failover-handling/SKILL.md) | Trading | "Provides Automated failover and redundancy management for exchange connectivity" |
 | [false-signal-filtering](skills/trading/false-signal-filtering/SKILL.md) | Trading | "Provides False Signal Filtering Techniques for Robust Technical Analysis" |
@@ -1549,6 +1553,7 @@ MIT — All skills are freely available and redistributable.
 | [firebase-sdk](skills/coding/firebase-sdk/SKILL.md) | Coding | Integrates Firebase using firebase-admin 7.x with patterns for Firestore CRUD, Realtime Database, Auth (token verification, user management), Cloud Messaging, and hosting. |
 | [framework-adaptation](skills/coding/framework-adaptation/SKILL.md) | Coding | Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation. |
 | [framework-adoption-strategy](skills/coding/framework-adoption-strategy/SKILL.md) | Coding | Orchestrates structured framework adoption through phased rollout planning, migration strategies, acceptance criteria definition, rollback procedures, and success metrics to ensure teams transition smoothly from selection to production utilization. |
+| [framework-application-methodology](skills/coding/framework-application-methodology/SKILL.md) | Coding | Systematically learns, evaluates, and applies new software frameworks using proven methodology — source code analysis, prototype validation, pattern mapping, and iterative adoption for maximum engineering impact. |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. |
 | [framework-driven-design](skills/coding/framework-driven-design/SKILL.md) | Coding | Implements framework-driven design patterns (Inversion of Control, Dependency Injection, lifecycle hooks, plugin architectures) to build extensible applications that leverage modern framework constraints instead of bypassing them. |
 | [framework-evaluation-criteria](skills/coding/framework-evaluation-criteria/SKILL.md) | Coding | Systematically elicits evaluation criteria across technical, team, ecosystem, security, deployment, integration, cost, and viability dimensions to prevent hype-driven framework selection. Produces structured requirement matrices, weighted scoring fra... |
@@ -1617,6 +1622,7 @@ MIT — All skills are freely available and redistributable.
 | [kicad-pcb-design](skills/electrical-engineering/kicad-pcb-design/SKILL.md) | Electrical-engineering | Implements modern KiCad 9+ PCB design workflows covering schematic capture, component library management, controlled-impedance layout, EMC-aware routing, DRC validation, and fabrication file generation. |
 | [kill-switches](skills/trading/kill-switches/SKILL.md) | Trading | "Implementing multi-layered kill switches at account, strategy, market" and infrastructure levels to prevent catastrophic losses and system failures |
 | [kiss-principle](skills/coding/kiss-principle/SKILL.md) | Coding | Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions. |
+| [knowledge-transfer-methods](skills/coding/knowledge-transfer-methods/SKILL.md) | Coding | Implements structured knowledge transfer workflows using Feynman technique, spaced repetition scheduling, active recall exercises, and teach-back protocols to achieve deep framework mastery and team-wide competency. |
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Coding | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. |
 | [kubernetes-api](skills/coding/kubernetes-api/SKILL.md) | Coding | Integrates with the Kubernetes API via the official client-python SDK to manage pods, deployments, services, ConfigMaps, Secrets, CRDs, and cluster resources programmatically. |
 | [kubernetes-api-patterns](skills/cncf/kubernetes-api-patterns/SKILL.md) | Cncf | Kubernetes API patterns including CRD development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions |
@@ -2699,6 +2705,7 @@ MIT — All skills are freely available and redistributable.
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | Implementation |
 | [explainability](skills/coding/explainability/SKILL.md) | Coding | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" | Implementation |
 | [explainable-ai](skills/trading/explainable-ai/SKILL.md) | Trading | "Provides Explainable AI for understanding and trusting trading model decisions" | Implementation |
+| [extensible-framework-design](skills/coding/extensible-framework-design/SKILL.md) | Coding | Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees. | Implementation |
 | [factory-method](skills/coding/factory-method/SKILL.md) | Coding | Implements the GoF Factory Method pattern for polymorphic object creation in Python using ABC-based factories, registration decorators, and type dispatch to replace if/elif chains with extensible factory hierarchies. | Implementation |
 | [failover-handling](skills/trading/failover-handling/SKILL.md) | Trading | "Provides Automated failover and redundancy management for exchange connectivity" | Implementation |
 | [failure-mode-analysis](skills/agent/failure-mode-analysis/SKILL.md) | Agent | Implements intelligent failure mode analysis with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2725,6 +2732,7 @@ MIT — All skills are freely available and redistributable.
 | [framework](skills/cncf/framework/SKILL.md) | Cncf | "Operator Framework in Tools to build and manage Kubernetes operators" with standardized patterns | Reference |
 | [framework-adaptation](skills/coding/framework-adaptation/SKILL.md) | Coding | Evaluates and integrates new frameworks into existing projects using adapter patterns, progressive migration strategies, and dependency boundary isolation. | Implementation |
 | [framework-adoption-strategy](skills/coding/framework-adoption-strategy/SKILL.md) | Coding | Orchestrates structured framework adoption through phased rollout planning, migration strategies, acceptance criteria definition, rollback procedures, and success metrics to ensure teams transition smoothly from selection to production utilization. | Implementation |
+| [framework-application-methodology](skills/coding/framework-application-methodology/SKILL.md) | Coding | Systematically learns, evaluates, and applies new software frameworks using proven methodology — source code analysis, prototype validation, pattern mapping, and iterative adoption for maximum engineering impact. | Implementation |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | Implementation |
 | [framework-driven-design](skills/coding/framework-driven-design/SKILL.md) | Coding | Implements framework-driven design patterns (Inversion of Control, Dependency Injection, lifecycle hooks, plugin architectures) to build extensible applications that leverage modern framework constraints instead of bypassing them. | Implementation |
 | [framework-evaluation-criteria](skills/coding/framework-evaluation-criteria/SKILL.md) | Coding | Systematically elicits evaluation criteria across technical, team, ecosystem, security, deployment, integration, cost, and viability dimensions to prevent hype-driven framework selection. Produces structured requirement matrices, weighted scoring fra... | Implementation |
@@ -2854,6 +2862,7 @@ MIT — All skills are freely available and redistributable.
 | [kiss-principle](skills/coding/kiss-principle/SKILL.md) | Coding | Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions. | Implementation |
 | [kms](skills/cncf/kms/SKILL.md) | Cncf | "Manages encryption keys with AWS KMS for data protection at rest and" in transit, key rotation, and compliance with encryption standards across all AWS services. | Reference |
 | [knative](skills/cncf/knative/SKILL.md) | Cncf | "Provides Knative in Cloud-Native Engineering - serverless on Kubernetes" | Reference |
+| [knowledge-transfer-methods](skills/coding/knowledge-transfer-methods/SKILL.md) | Coding | Implements structured knowledge transfer workflows using Feynman technique, spaced repetition scheduling, active recall exercises, and teach-back protocols to achieve deep framework mastery and team-wide competency. | Implementation |
 | [kong](skills/cncf/kong/SKILL.md) | Cncf | "Kong in API Gateway - cloud native architecture, patterns, pitfalls" and best practices | Reference |
 | [kotlin-coroutines](skills/coding/kotlin-coroutines/SKILL.md) | Coding | Implements Kotlin coroutine patterns including structured concurrency, Flow APIs, dispatcher management, cancellation handling, and test-driven async development for production-grade concurrent applications. | Implementation |
 | [kratos](skills/cncf/kratos/SKILL.md) | Cncf | "ORY Kratos in Identity & Access - cloud native architecture, patterns" pitfalls, and best practices | Reference |
