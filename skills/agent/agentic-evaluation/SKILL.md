@@ -1,23 +1,23 @@
 ---
 name: agentic-evaluation
-description: Implements systematic evaluation, benchmarking, and testing of AI agent behaviors including tool-use accuracy, hallucination detection, multi-turn reasoning metrics, automated grading pipelines, and continuous evaluation frameworks.
+description: Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines.
 license: MIT
 compatibility: opencode
+archetypes:
+  - tactical
+  - diagnostic
+anti_triggers:
+  - brainstorming
+  - vague ideation
+  - single-agent monolith
+response_profile:
+  verbosity: low
+  directive_strength: high
+  abstraction_level: operational
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: agent evaluation, benchmarking, LLM testing, tool-use accuracy, hallucination detection, agent metrics, automated grading, promptfoo, agentbench, swe-bench agents, how do i test my agent
-  archetypes:
-    - tactical
-    - diagnostic
-  anti_triggers:
-    - brainstorming
-    - vague ideation
-    - single-agent monolith
-  response_profile:
-    verbosity: low
-    directive_strength: high
-    abstraction_level: operational
+  triggers: agent evaluation, benchmarking, hallucination detection, tool-use accuracy, multi-turn reasoning, automated grading, promptfoo, how do i test my agent
   role: implementation
   scope: implementation
   output-format: code

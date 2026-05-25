@@ -1,23 +1,23 @@
 ---
 name: agent-security-guardrails
-description: Implements prompt injection detection, input/output validation, tool access control, and guardrail enforcement layers to secure LLM-powered agents against adversarial inputs and unauthorized tool execution.
+description: Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM-powered agents against adversarial inputs and unauthorized tool execution.
 license: MIT
 compatibility: opencode
+archetypes:
+  - tactical
+  - enforcement
+anti_triggers:
+  - brainstorming
+  - vague ideation
+  - single-agent monolith
+response_profile:
+  verbosity: low
+  directive_strength: high
+  abstraction_level: operational
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: prompt injection, guardrails, LLM security, input validation, output sanitization, tool access control, adversarial prompts, jailbreak detection, agent safety, how do i secure my agent
-  archetypes:
-    - tactical
-    - enforcement
-  anti_triggers:
-    - brainstorming
-    - vague ideation
-    - single-agent monolith
-  response_profile:
-    verbosity: low
-    directive_strength: high
-    abstraction_level: operational
+  triggers: prompt injection, guardrails, jailbreak detection, tool access control, input validation, LLM security, how do i secure my agent
   role: implementation
   scope: implementation
   output-format: code
