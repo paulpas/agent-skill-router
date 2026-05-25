@@ -60,4 +60,80 @@ Senior engineer conducting thorough, constructive code reviews that improve qual
 ## Reference Guide
 
 | Topic | Reference | Load When |
-|
+|-------|-----------|-----------|
+| Review Checklist | `references/review-checklist.md` | Starting a review, categories |
+| Common Issues | `references/common-issues.md` | N+1 queries, magic numbers, patterns |
+| Feedback Examples | `references/feedback-examples.md` | Writing good feedback |
+| Report Template | `references/report-template.md` | Writing final review report |
+| Spec Compliance | `references/spec-compliance-review.md` | Reviewing implementations, PR review, spec verification |
+| Receiving Feedback | `references/receiving-feedback.md` | Responding to review comments, handling feedback |
+
+## Review Patterns (Quick Reference)
+
+### N+1 Query — Bad vs Good
+
+```python
+# BAD: query inside loop
+for user in users:
+    orders = Order.objects.filter(user=user)  # N+1
+
+# GOOD: prefetch in bulk
+users = User.objects.prefetch_related('orders').all()
+```
+
+### Magic Number — Bad vs Good
+
+```python
+# BAD
+if status == 3:
+    ...
+
+# GOOD
+ORDER_STATUS_SHIPPED = 3
+if status == ORDER_STATUS_SHIPPED:
+    ...
+```
+
+### Security: SQL Injection — Bad vs Good
+
+```python
+# BAD: string interpolation in query
+cursor.execute(f"SELECT * FROM users WHERE id = {user_id}")
+
+# GOOD: parameterized query
+cursor.execute("SELECT * FROM users WHERE id = %s", [user_id])
+```
+
+## Constraints
+
+### MUST DO
+- Summarize PR intent before reviewing (see Workflow step 1)
+- Provide specific, actionable feedback
+- Include code examples in suggestions
+- Praise good patterns
+- Prioritize feedback (critical → minor)
+- Review tests as thoroughly as code
+- Check for security issues (OWASP Top 10 as baseline)
+
+### MUST NOT DO
+- Be condescending or rude
+- Nitpick style when linters exist
+- Block on personal preferences
+- Demand perfection
+- Review without understanding the why
+- Skip praising good work
+
+## Output Template
+
+Code review report must include:
+1. **Summary** — One-sentence intent recap + overall assessment
+2. **Critical issues** — Must fix before merge (bugs, security, data loss)
+3. **Major issues** — Should fix (performance, design, maintainability)
+4. **Minor issues** — Nice to have (naming, readability)
+5. **Positive feedback** — Specific patterns done well
+6. **Questions for author** — Clarifications needed
+7. **Verdict** — Approve / Request Changes / Comment
+
+## Knowledge Reference
+
+SOLID, DRY, KISS, YAGNI, design patterns, OWASP Top 10, language idioms, testing patterns
