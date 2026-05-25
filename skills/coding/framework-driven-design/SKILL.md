@@ -6,12 +6,12 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework driven design, inversion of control, dependency injection, lifecycle hooks, plugin architecture, middleware patterns, extension points, convention over configuration, leveraging framework constraints
+  triggers: framework driven design, inversion of control, dependency injection, lifecycle hooks, plugin architecture, how do i make code extensible, middleware patterns, convention over configuration
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
-  related-skills: test-driven-development, architectural-patterns, modular-design
+  related-skills: test-driven-development, architectural-patterns, SOLID-principles
   archetypes: [tactical, strategic]
   anti_triggers: [standalone script, cli tool, procedural design, quick hack, no-framework]
   response_profile:
@@ -22,7 +22,7 @@ metadata:
 
 # Framework-Driven Design Principles
 
-Architect applications by embracing framework constraints—Inversion of Control (IoC), Dependency Injection (DI), lifecycle hooks, and plugin systems—rather than fighting them. Framework-driven design transforms rigid requirements into extensible, maintainable architectures.
+Architect applications by embracing framework constraints—Inversion of Control (IoC), Dependency Injection (DI), lifecycle hooks, and plugin systems—rather than fighting them. This skill applies the SOLID principles (especially DIP — Dependency Inversion Principle) to transform rigid requirements into extensible, maintainable architectures.
 
 ## TL;DR Checklist
 
@@ -33,6 +33,15 @@ Architect applications by embracing framework constraints—Inversion of Control
 - [ ] Favor configuration-driven behavior over code branching
 - [ ] Validate framework constraints against architecture diagrams during design review
 
+
+## TL;DR for Code Generation
+
+- Use Protocol/abstract base classes (Python typing.Protocol, Go interfaces, TypeScript interface) for all DI contracts — never concrete types in signatures
+- Always inject dependencies via constructor or parameter injection; never use `new`, globals, or module-level singletons inside domain logic
+- Plugin Execute methods must accept a context object and return wrapped errors using `fmt.Errorf("extension %s: %w", name, err)` (Go) or equivalent error chaining
+- Middleware/lifecycle handlers must implement try/finally (or defer/ensure) to guarantee resource cleanup on both success and failure paths
+- All external I/O (databases, caches, HTTP clients) must be abstracted behind injected adapters — never instantiate connection objects inline
+- Configuration-driven behavior uses typed config modules; avoid magic strings for routing keys or feature flags
 ---
 
 ## When to Use
@@ -290,7 +299,7 @@ func (a *AuditLogPlugin) Execute(ctx context.Context, payload map[string]interfa
 |---|---|
 | `test-driven-development` | Design for testability alongside DI and lifecycle hooks |
 | `architectural-patterns` | Broader context for when framework-driven design applies vs. other patterns |
-| `modular-design` | Decomposing monolithic frameworks into cohesive, independent modules |
+| `SOLID-principles` | Foundational object-oriented principles (DIP, SRP) that underpin framework-driven architecture |
 
 ## Live References
 
