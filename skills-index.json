@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T20:41:13.060420Z",
+  "generatedAt": "2026-05-25T20:56:43.531355Z",
   "totalSkills": 1012,
   "domains": {
     "agent": 270,
@@ -16489,23 +16489,25 @@
     {
       "name": "order-flow-analysis",
       "domain": "trading",
-      "description": "Analyzes tick-level order flow data to compute delta, volume profile, footprint patterns, absorption signatures, and conviction scoring for institutional activity detection.",
+      "description": "Analyzes order flow dynamics, market microstructure, and Level 2 data to identify institutional accumulation, liquidity zones, and optimal execution points in algorithmic trading systems.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "order flow",
+        "order book",
+        "liquidity analysis",
+        "market microstructure",
         "footprint charts",
-        "delta analysis",
         "cumulative delta",
         "volume profile",
-        "trade absorption",
-        "iceberg orders",
-        "order book imbalance"
+        "level 2 data",
+        "tape reading",
+        "imbalance detection"
       ],
       "relatedSkills": [
         "risk-stop-loss",
-        "risk-position-sizing",
+        "trading-execution-twap-slw",
         "signals-module"
       ],
       "version": "1.0.0",

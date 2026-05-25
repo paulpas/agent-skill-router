@@ -266,7 +266,7 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 20:41:15 UTC  
+> **Last updated:** 2026-05-25 20:56:45 UTC  
 > **Total skills:** 1012  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (1012 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
@@ -274,9 +274,9 @@ MIT — All skills are freely available and redistributable.
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 993 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 993 | Ranking penalty for conflicting query terms |
-| Response Profile | 993 | Verbosity, directive strength, abstraction level |
+| Archetypes | 992 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 992 | Ranking penalty for conflicting query terms |
+| Response Profile | 992 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -1293,7 +1293,7 @@ MIT — All skills are freely available and redistributable.
 | [order-book-sync](skills/trading/order-book-sync/SKILL.md) | "Provides Order book synchronization and state management for accurate trading" | exchange order book sync, exchange-order-book-sync, management, state, synchronization [tactical] |
 | [order-execution-api](skills/trading/order-execution-api/SKILL.md) | "Implements order execution and management api for trading systems for risk management and algorithmic trading execution." | exchange order execution api, exchange-order-execution-api, management, systems, trading [tactical] |
 | [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | "Provides Analyze order flow to detect market pressure and anticipate price moves" | ai order flow analysis, ai-order-flow-analysis, analyze, detect, market [tactical] |
-| [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Analyzes tick-level order flow data to compute delta, volume profile, footprint patterns, absorption signatures, and conviction scoring for institutional activity detection. | order flow, footprint charts, delta analysis, cumulative delta, volume profile, trade absorption, iceberg orders, order book imbalance [tactical] |
+| [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Analyzes order flow dynamics, market microstructure, and Level 2 data to identify institutional accumulation, liquidity zones, and optimal execution points in algorithmic trading systems. | order flow, order book, liquidity analysis, market microstructure, footprint charts, cumulative delta, volume profile, level 2 data, tape reading, imbalance detection |
 | [order-flow-footprint](skills/trading/order-flow-footprint/SKILL.md) | Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures. | footprint chart, volume delta, cumulative delta, order flow analysis, delta divergence, stacked imbalance, aggressive buying, order flow footprint [tactical] |
 | [order-flow-toxicity](skills/trading/order-flow-toxicity/SKILL.md) | Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk. | order flow toxicity, VPIN, PIN model, adverse selection, predatory HFT, toxic flow, informed trading, liquidity provider toxicity [tactical] |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | "Provides Performance Attribution Systems for Trading Strategy Decomposition" | optimization, paper performance attribution, paper-performance-attribution, strategy, systems, trading, performance, speed [tactical] |
@@ -1746,7 +1746,7 @@ MIT — All skills are freely available and redistributable.
 | [order-book-sync](skills/trading/order-book-sync/SKILL.md) | Trading | "Provides Order book synchronization and state management for accurate trading" |
 | [order-execution-api](skills/trading/order-execution-api/SKILL.md) | Trading | "Implements order execution and management api for trading systems for risk management and algorithmic trading execution." |
 | [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | "Provides Analyze order flow to detect market pressure and anticipate price moves" |
-| [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | Analyzes tick-level order flow data to compute delta, volume profile, footprint patterns, absorption signatures, and conviction scoring for institutional activity detection. |
+| [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | Analyzes order flow dynamics, market microstructure, and Level 2 data to identify institutional accumulation, liquidity zones, and optimal execution points in algorithmic trading systems. |
 | [order-flow-footprint](skills/trading/order-flow-footprint/SKILL.md) | Trading | Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures. |
 | [order-flow-toxicity](skills/trading/order-flow-toxicity/SKILL.md) | Trading | Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk. |
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Coding | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. |
@@ -3074,7 +3074,7 @@ MIT — All skills are freely available and redistributable.
 | [order-book-sync](skills/trading/order-book-sync/SKILL.md) | Trading | "Provides Order book synchronization and state management for accurate trading" | Implementation |
 | [order-execution-api](skills/trading/order-execution-api/SKILL.md) | Trading | "Implements order execution and management api for trading systems for risk management and algorithmic trading execution." | Implementation |
 | [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | "Provides Analyze order flow to detect market pressure and anticipate price moves" | Implementation |
-| [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | Analyzes tick-level order flow data to compute delta, volume profile, footprint patterns, absorption signatures, and conviction scoring for institutional activity detection. | Implementation |
+| [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | Analyzes order flow dynamics, market microstructure, and Level 2 data to identify institutional accumulation, liquidity zones, and optimal execution points in algorithmic trading systems. | Implementation |
 | [order-flow-footprint](skills/trading/order-flow-footprint/SKILL.md) | Trading | Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures. | Implementation |
 | [order-flow-toxicity](skills/trading/order-flow-toxicity/SKILL.md) | Trading | Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk. | Implementation |
 | [os-scripting](skills/agent/os-scripting/SKILL.md) | Agent | Implements intelligent os scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
