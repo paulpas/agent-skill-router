@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 960 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 961 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **960 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **961 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 392 | Software patterns, security, testing, data science |
+| Coding | 393 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -266,17 +266,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 02:37:25 UTC  
-> **Total skills:** 960  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (960 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 21:48:56 UTC  
+> **Total skills:** 961  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (961 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 955 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 955 | Ranking penalty for conflicting query terms |
-| Response Profile | 955 | Verbosity, directive strength, abstraction level |
+| Archetypes | 956 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 956 | Ranking penalty for conflicting query terms |
+| Response Profile | 956 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -728,7 +728,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (392 skills)
+### Coding (393 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -930,6 +930,7 @@ MIT — All skills are freely available and redistributable.
 | [input-normalization](skills/coding/input-normalization/SKILL.md) | Normalizes and standardizes inconsistent inbound data into uniform internal formats using typed normalizers, locale-aware converters, and deterministic transformation pipelines for reliable downstream processing. | input normalization, data standardization, date parsing, currency conversion, phone number format, address normalization, text normalization, how do i normalize data, data cleaning, convert formats [tactical, generation] |
 | [input-processing-pipelines](skills/coding/input-processing-pipelines/SKILL.md) | Builds composable data processing pipelines that validate, transform, filter, and aggregate structured or semi-structured input through typed stages with error handling and observability. | input processing pipeline, data transformation, ETL pipeline, stage processing, data validation pipeline, map filter reduce, data cleaning pipeline, input sanitization chain, structured data extraction, data flow architecture, pipeline composition [tactical, generation] |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | input validation, data sanitization, schema validation, input filtering, sanitize user input, prevent injection, OWASP, form validation, parse and validate [tactical, generation] |
+| [input-validation-patterns](skills/coding/input-validation-patterns/SKILL.md) | Implements production input validation and sanitization patterns including Pydantic v2 schemas, recursive nested validation, custom validators with error accumulation, allowlist enforcement, and type coercion for secure API endpoints. | input validation, pydantic validation, schema validation, allowlist validation, sanitize input, recursive validation, error accumulation, type coercion, data sanitization, how do i validate user input [tactical, generation] |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | instrumental variables, IV, 2SLS, endogeneity, causal effect, how do i handle endogeneity [tactical, generation] |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. | integration patterns, service integration, adapter pattern, saga pattern, circuit breaker, API gateway, messaging, event-driven, system communication, how do i connect systems [tactical, generation] |
 | [integration-testing-patterns](skills/coding/integration-testing-patterns/SKILL.md) | Implements integration testing strategies (database, HTTP API, event-driven, message queue) with test isolation, fixture management, and real infrastructure validation for production-quality software systems. | integration testing, API testing, database integration, test container, fixture management, contract testing, system boundary testing, service integration [tactical, generation] |
@@ -1303,7 +1304,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (545 skills)
+### Implementation (Build Features) (546 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1548,6 +1549,7 @@ MIT — All skills are freely available and redistributable.
 | [input-normalization](skills/coding/input-normalization/SKILL.md) | Coding | Normalizes and standardizes inconsistent inbound data into uniform internal formats using typed normalizers, locale-aware converters, and deterministic transformation pipelines for reliable downstream processing. |
 | [input-processing-pipelines](skills/coding/input-processing-pipelines/SKILL.md) | Coding | Builds composable data processing pipelines that validate, transform, filter, and aggregate structured or semi-structured input through typed stages with error handling and observability. |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. |
+| [input-validation-patterns](skills/coding/input-validation-patterns/SKILL.md) | Coding | Implements production input validation and sanitization patterns including Pydantic v2 schemas, recursive nested validation, custom validators with error accumulation, allowlist enforcement, and type coercion for secure API endpoints. |
 | [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. |
@@ -2742,6 +2744,7 @@ MIT — All skills are freely available and redistributable.
 | [input-normalization](skills/coding/input-normalization/SKILL.md) | Coding | Normalizes and standardizes inconsistent inbound data into uniform internal formats using typed normalizers, locale-aware converters, and deterministic transformation pipelines for reliable downstream processing. | Implementation |
 | [input-processing-pipelines](skills/coding/input-processing-pipelines/SKILL.md) | Coding | Builds composable data processing pipelines that validate, transform, filter, and aggregate structured or semi-structured input through typed stages with error handling and observability. | Implementation |
 | [input-validation](skills/coding/input-validation/SKILL.md) | Coding | Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption. | Implementation |
+| [input-validation-patterns](skills/coding/input-validation-patterns/SKILL.md) | Coding | Implements production input validation and sanitization patterns including Pydantic v2 schemas, recursive nested validation, custom validators with error accumulation, allowlist enforcement, and type coercion for secure API endpoints. | Implementation |
 | [instruction-engineering](skills/agent/instruction-engineering/SKILL.md) | Agent | Crafts precise, domain-specific instructions within SKILL.md files that reliably guide AI behavior through structured constraint blocks, few-shot examples, and explicit fallback routing for every decision branch. | Implementation |
 | [instrumental-variables](skills/coding/instrumental-variables/SKILL.md) | Coding | "Provides Uses instrumental variables (IV), two-stage least squares (2SLS), and IV estimation to identify causal effects in observational data" | Implementation |
 | [integration-patterns](skills/coding/integration-patterns/SKILL.md) | Coding | Implements service-to-service integration patterns (adapter, API gateway, saga, circuit breaker, event-driven) for connecting distributed systems and legacy services with resilience. | Implementation |
