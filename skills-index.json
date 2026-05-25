@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-25T18:32:51.135382Z",
-  "totalSkills": 1008,
+  "generatedAt": "2026-05-25T19:16:38.520856Z",
+  "totalSkills": 1009,
   "domains": {
-    "agent": 267,
+    "agent": 268,
     "cncf": 173,
     "coding": 435,
     "electrical-engineering": 2,
@@ -14,7 +14,7 @@
     "writing": 4
   },
   "roles": {
-    "orchestration": 236,
+    "orchestration": 237,
     "implementation": 592,
     "reference": 173,
     "information": 1,
@@ -20309,6 +20309,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-sentinel/SKILL.md"
+    },
+    {
+      "name": "skill-systems-architecture",
+      "domain": "agent",
+      "description": "Designs production-ready multi-skill agent architectures with cross-skill coordination patterns, quality gates, deployment pipelines, and monitoring strategies for AI skill ecosystems.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "skill architecture",
+        "multi-skill systems",
+        "cross-skill coordination",
+        "quality gates",
+        "deployment pipeline",
+        "how do i deploy skills at scale",
+        "skill monitoring strategy",
+        "orchestration patterns"
+      ],
+      "relatedSkills": [
+        "skill-engineering",
+        "skill-lifecycle-management",
+        "skill-ecosystem-design",
+        "skill-audit",
+        "skill-router-system"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/skill-systems-architecture/SKILL.md"
     },
     {
       "name": "skill-testing-methodology",

@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1008 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1008 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1008 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1008 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1009 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1009 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1009 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1009 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **1008 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1008 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1008 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1008 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1009 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1009 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1009 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1009 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -93,7 +93,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 267 | AI orchestration, routing, task decomposition |
+| Agent | 268 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 435 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -272,9 +272,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 18:32:52 UTC  
-> **Total skills:** 1008  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1008 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 19:16:40 UTC  
+> **Total skills:** 1009  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1009 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -287,7 +287,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Domain
 
 
-### Agent (267 skills)
+### Agent (268 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -521,6 +521,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-scanner](skills/agent/skill-scanner/SKILL.md) | Implements intelligent skill scanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-scanner, skill scanner, how do i skill-scanner, orchestrate skill-scanner, automate skill-scanner, agent skill-scanner [orchestration, strategic] |
 | [skill-seekers](skills/agent/skill-seekers/SKILL.md) | Implements intelligent skill seekers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-seekers, skill seekers, how do i skill-seekers, orchestrate skill-seekers, automate skill-seekers, agent skill-seekers [orchestration, strategic] |
 | [skill-sentinel](skills/agent/skill-sentinel/SKILL.md) | Implements intelligent skill sentinel with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-sentinel, skill sentinel, how do i skill-sentinel, orchestrate skill-sentinel, automate skill-sentinel, agent skill-sentinel [orchestration, strategic] |
+| [skill-systems-architecture](skills/agent/skill-systems-architecture/SKILL.md) | Designs production-ready multi-skill agent architectures with cross-skill coordination patterns, quality gates, deployment pipelines, and monitoring strategies for AI skill ecosystems. | skill architecture, multi-skill systems, cross-skill coordination, quality gates, deployment pipeline, how do i deploy skills at scale, skill monitoring strategy, orchestration patterns |
 | [skill-testing-methodology](skills/agent/skill-testing-methodology/SKILL.md) | Validates AI agent skills through trigger precision/recall measurement, structural output checks, and edge case detection to prevent broken or misleading skills from reaching production. | skill testing, trigger accuracy, output validation, edge case detection, skill QA, automated skill tests, false positive triggers [tactical, diagnostic] |
 | [skill-trigger-engineering](skills/agent/skill-trigger-engineering/SKILL.md) | Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives. | skill triggers, trigger engineering, auto-loading, skill discovery, trigger calibration, keyword matching, how do i design triggers, conversational discovery, two-tier trigger strategy, trigger testing [orchestration, strategic] |
 | [skill-writer](skills/agent/skill-writer/SKILL.md) | Implements intelligent skill writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-writer, skill writer, how do i skill-writer, orchestrate skill-writer, automate skill-writer, agent skill-writer [orchestration, strategic] |
@@ -2134,7 +2135,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (236 skills)
+### Orchestration (Manage AI Agents) (237 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2340,6 +2341,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-scanner](skills/agent/skill-scanner/SKILL.md) | Agent | Implements intelligent skill scanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-seekers](skills/agent/skill-seekers/SKILL.md) | Agent | Implements intelligent skill seekers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-sentinel](skills/agent/skill-sentinel/SKILL.md) | Agent | Implements intelligent skill sentinel with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [skill-systems-architecture](skills/agent/skill-systems-architecture/SKILL.md) | Agent | Designs production-ready multi-skill agent architectures with cross-skill coordination patterns, quality gates, deployment pipelines, and monitoring strategies for AI skill ecosystems. |
 | [skill-trigger-engineering](skills/agent/skill-trigger-engineering/SKILL.md) | Agent | Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives. |
 | [skill-writer](skills/agent/skill-writer/SKILL.md) | Agent | Implements intelligent skill writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [slack-automation](skills/agent/slack-automation/SKILL.md) | Agent | Implements intelligent slack automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -3231,6 +3233,7 @@ MIT — All skills are freely available and redistributable.
 | [skill-scanner](skills/agent/skill-scanner/SKILL.md) | Agent | Implements intelligent skill scanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-seekers](skills/agent/skill-seekers/SKILL.md) | Agent | Implements intelligent skill seekers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [skill-sentinel](skills/agent/skill-sentinel/SKILL.md) | Agent | Implements intelligent skill sentinel with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [skill-systems-architecture](skills/agent/skill-systems-architecture/SKILL.md) | Agent | Designs production-ready multi-skill agent architectures with cross-skill coordination patterns, quality gates, deployment pipelines, and monitoring strategies for AI skill ecosystems. | Orchestration |
 | [skill-testing-methodology](skills/agent/skill-testing-methodology/SKILL.md) | Agent | Validates AI agent skills through trigger precision/recall measurement, structural output checks, and edge case detection to prevent broken or misleading skills from reaching production. | Implementation |
 | [skill-testing-validation](skills/coding/skill-testing-validation/SKILL.md) | Coding | Implements testing strategies for verifying AI skill quality including content validation, trigger matching tests, integration checks, and automated regression detection. | Implementation |
 | [skill-trigger-engineering](skills/agent/skill-trigger-engineering/SKILL.md) | Agent | Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives. | Orchestration |
