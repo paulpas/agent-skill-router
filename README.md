@@ -1,10 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-<<<<<<< HEAD
 **An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 978 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-=======
 **An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 978 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
->>>>>>> abcf3580f (feat: add new skill - dry-principle)
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 978 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 978 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -15,11 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-<<<<<<< HEAD
 - 🎯 **978 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-=======
 - 🎯 **978 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
->>>>>>> abcf3580f (feat: add new skill - dry-principle)
+- 🎯 **978 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **978 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -105,11 +103,15 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Programming | 7 | Algorithms, frameworks, language references |
 | Trading | 89 | Execution, risk management, ML models |
 | Writing | 4 | Technical writing, style guidance |
-<<<<<<< HEAD
+| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
+| Go | 12 | Go idioms, concurrency patterns, error handling |
+| Linux | 16 | System administration, kernel tuning, security, networking |
+| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
+| Programming | 7 | Algorithms, frameworks, language references |
+| Trading | 89 | Execution, risk management, ML models |
+| Writing | 4 | Technical writing, style guidance |
 | Coding | 404 | Software patterns, security, testing, data science |
-=======
 | Coding | 405 | Software patterns, security, testing, data science |
->>>>>>> abcf3580f (feat: add new skill - dry-principle)
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -286,7 +288,7 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 06:55:34 UTC  
+> **Last updated:** 2026-05-25 01:57:26 UTC  
 > **Total skills:** 978  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (978 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
