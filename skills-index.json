@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T06:34:31.759184Z",
-  "totalSkills": 976,
+  "generatedAt": "2026-05-25T06:55:32.451378Z",
+  "totalSkills": 978,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 408,
+    "coding": 410,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 561,
+    "implementation": 563,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -3560,6 +3560,38 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ci-cd-pipeline-analyzer/SKILL.md"
+    },
+    {
+      "name": "ci-cd-pipeline-design",
+      "domain": "coding",
+      "description": "Implements modern CI/CD pipeline architectures (GitHub Actions, GitLab CI, ArgoCD) with security gates, artifact management, and zero-downtime deployment strategies for production systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "CI/CD pipeline",
+        "continuous integration",
+        "continuous deployment",
+        "github actions",
+        "gitlab ci",
+        "build automation",
+        "artifact management",
+        "security scanning",
+        "canary deployment",
+        "blue-green deployment",
+        "SLSA provenance",
+        "container registry",
+        "ArgoCD",
+        "Helm charts"
+      ],
+      "relatedSkills": [
+        "platform-engineering",
+        "iac-engineering",
+        "secure-release-pipeline",
+        "production-readiness"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ci-cd-pipeline-design/SKILL.md"
     },
     {
       "name": "cicd-automation-workflow-automate",
@@ -20955,6 +20987,39 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/system-architecture/SKILL.md"
+    },
+    {
+      "name": "system-design-foundations",
+      "domain": "coding",
+      "description": "Implements core distributed system design patterns (load balancing, caching strategies, database sharding, message queues) for building scalable and resilient production applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "system design",
+        "distributed systems",
+        "scalability",
+        "load balancing",
+        "caching strategy",
+        "database sharding",
+        "message queue",
+        "event-driven architecture",
+        "microservices communication",
+        "CAP theorem",
+        "consistency patterns",
+        "connection pooling",
+        "rate limiting",
+        "circuit breaker"
+      ],
+      "relatedSkills": [
+        "distributed-systems-architecture",
+        "microservice-resilience-patterns",
+        "cqrs-pattern",
+        "domain-events",
+        "production-readiness"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/system-design-foundations/SKILL.md"
     },
     {
       "name": "system-design-fundamentals",

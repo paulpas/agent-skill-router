@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 976 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 978 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 976 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 978 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> abcf3580f (feat: add new skill - dry-principle)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **976 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **978 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **976 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **978 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> abcf3580f (feat: add new skill - dry-principle)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 408 | Software patterns, security, testing, data science |
+| Coding | 410 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -286,17 +286,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 06:34:33 UTC  
-> **Total skills:** 976  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (976 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 06:55:34 UTC  
+> **Total skills:** 978  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (978 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 962 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 962 | Ranking penalty for conflicting query terms |
-| Response Profile | 962 | Verbosity, directive strength, abstraction level |
+| Archetypes | 964 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 964 | Ranking penalty for conflicting query terms |
+| Response Profile | 964 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -748,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (408 skills)
+### Coding (410 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -816,6 +816,7 @@ MIT — All skills are freely available and redistributable.
 | [causal-inference](skills/coding/causal-inference/SKILL.md) | Implements causal models, directed acyclic graphs (DAGs), confounding adjustment, and mediation analysis for causal discovery | causal inference, causality, causal models, DAG, confounding, how do i determine causation, airflow, data pipelines [tactical, generation] |
 | [chain-of-responsibility](skills/coding/chain-of-responsibility/SKILL.md) | Implements the GoF Chain of Responsibility pattern for building middleware-style request handler pipelines in Python where each handler processes or forwards requests along a configurable chain. | chain of responsibility pattern, middleware pipeline python, request handler chain, how do i pass requests through handlers, error propagation pipeline, sequential processing chain |
 | [chroma](skills/coding/chroma/SKILL.md) | Integrates Chroma vector database (collections, embeddings, query, metadata filtering, persistence) using the chromadb Python SDK for local and server-based vector search. | chroma, chromadb, vector database, embedding store, similarity search, chroma collection, how do i use chroma, local vector search [tactical, generation] |
+| [ci-cd-pipeline-design](skills/coding/ci-cd-pipeline-design/SKILL.md) | Implements modern CI/CD pipeline architectures (GitHub Actions, GitLab CI, ArgoCD) with security gates, artifact management, and zero-downtime deployment strategies for production systems. | CI/CD pipeline, continuous integration, continuous deployment, github actions, gitlab ci, build automation, artifact management, security scanning, canary deployment, blue-green deployment, SLSA provenance, container registry, ArgoCD, Helm charts [tactical, strategic] |
 | [circleci-api](skills/coding/circleci-api/SKILL.md) | Integrates with the CircleCI REST API v2 to manage pipelines, workflows, jobs, contexts, environment variables, project settings, and orb configurations. | circleci api, circleci python, circleci pipelines, circleci workflows, circleci orb, circleci contexts, circleci jobs, circleci v2 api [tactical, generation] |
 | [classification-metrics](skills/coding/classification-metrics/SKILL.md) | "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics" | classification metrics, precision, recall, F1-score, ROC-AUC, confusion matrix [tactical, generation] |
 | [clean-architecture](skills/coding/clean-architecture/SKILL.md) | Designs software using Robert C. Martin's Clean Architecture concentric layers (Entities, Use Cases, Interface Adapters, Frameworks) with strict dependency rules and boundary contracts for framework-independent business logic. | clean architecture, robert martin, uncle bob, entity layer, use case layer, interface adapter, dependency rule, framework independence, hexagonal vs clean, bounded entities, port architecture [strategic, tactical] |
@@ -1126,6 +1127,7 @@ MIT — All skills are freely available and redistributable.
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" | support vector machines, SVM, kernel methods, support vectors, SVM classification [tactical, generation] |
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" | synthetic control, difference-in-differences, DiD, quasi-experiment, impact evaluation [tactical, generation] |
 | [system-architecture](skills/coding/system-architecture/SKILL.md) | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. | system architecture, software design, hexagonal architecture, ports and adapters, layered architecture, dependency injection, architectural boundaries, event-driven, microservices, monolith design, scalable systems, maintainable code [tactical, generation] |
+| [system-design-foundations](skills/coding/system-design-foundations/SKILL.md) | Implements core distributed system design patterns (load balancing, caching strategies, database sharding, message queues) for building scalable and resilient production applications. | system design, distributed systems, scalability, load balancing, caching strategy, database sharding, message queue, event-driven architecture, microservices communication, CAP theorem, consistency patterns, connection pooling, rate limiting, circuit breaker [tactical, strategic] |
 | [system-design-fundamentals](skills/coding/system-design-fundamentals/SKILL.md) | Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable... | system design, capacity planning, cache strategy, load balancing, rate limiting, CDN placement, database sharding, circuit breaker, how do i design a scalable system, request estimation, traffic scaling, horizontal scaling [tactical, generation] |
 | [system-reliability-architecture](skills/coding/system-reliability-architecture/SKILL.md) | Implements production reliability patterns (circuit breakers, retry with exponential backoff, bulkhead isolation, health checks, graceful degradation, distributed tracing) to build fault-tolerant distributed systems. | system reliability, circuit breaker, bulkhead isolation, distributed tracing, chaos engineering, fault tolerance, how do i make my system resilient, graceful degradation [tactical, diagnostic, strategic] |
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. | systematic debugging, root cause analysis, stack trace, binary search debugging, production outage, how do i debug systematically, five whys, bug isolation [tactical, generation] |
@@ -1339,7 +1341,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (561 skills)
+### Implementation (Build Features) (563 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1419,6 +1421,7 @@ MIT — All skills are freely available and redistributable.
 | [ccxt-patterns](skills/trading/ccxt-patterns/SKILL.md) | Trading | "Effective patterns for using CCXT library for exchange connectivity including" error handling, rate limiting, and state management |
 | [chain-of-responsibility](skills/coding/chain-of-responsibility/SKILL.md) | Coding | Implements the GoF Chain of Responsibility pattern for building middleware-style request handler pipelines in Python where each handler processes or forwards requests along a configurable chain. |
 | [chroma](skills/coding/chroma/SKILL.md) | Coding | Integrates Chroma vector database (collections, embeddings, query, metadata filtering, persistence) using the chromadb Python SDK for local and server-based vector search. |
+| [ci-cd-pipeline-design](skills/coding/ci-cd-pipeline-design/SKILL.md) | Coding | Implements modern CI/CD pipeline architectures (GitHub Actions, GitLab CI, ArgoCD) with security gates, artifact management, and zero-downtime deployment strategies for production systems. |
 | [cicd-pipeline-debugging](skills/agent/cicd-pipeline-debugging/SKILL.md) | Agent | Debugging patterns for GitHub Actions, GitLab CI, Jenkins and other CI/CD systems including log analysis, runner issues, cache problems, and workflow optimization |
 | [cicd-pipeline-troubleshooting](skills/agent/cicd-pipeline-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves CI/CD pipeline failures with actionable debugging commands for GitHub Actions, GitLab CI, and build optimization patterns. |
 | [circleci-api](skills/coding/circleci-api/SKILL.md) | Coding | Integrates with the CircleCI REST API v2 to manage pipelines, workflows, jobs, contexts, environment variables, project settings, and orb configurations. |
@@ -1842,6 +1845,7 @@ MIT — All skills are freely available and redistributable.
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | Coding | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" |
 | [synthetic-data](skills/trading/synthetic-data/SKILL.md) | Trading | "Provides Generate synthetic financial data for training and testing trading models" |
 | [system-architecture](skills/coding/system-architecture/SKILL.md) | Coding | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. |
+| [system-design-foundations](skills/coding/system-design-foundations/SKILL.md) | Coding | Implements core distributed system design patterns (load balancing, caching strategies, database sharding, message queues) for building scalable and resilient production applications. |
 | [system-design-fundamentals](skills/coding/system-design-fundamentals/SKILL.md) | Coding | Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable... |
 | [system-hints-design](skills/agent/system-hints-design/SKILL.md) | Agent | Constructs layered system hints for agent architectures — identity, context, constraint, and behavioral hint layers — with provider-specific patterns for Anthropic, OpenAI, and Google Gemini. |
 | [system-reliability-architecture](skills/coding/system-reliability-architecture/SKILL.md) | Coding | Implements production reliability patterns (circuit breakers, retry with exponential backoff, bulkhead isolation, health checks, graceful degradation, distributed tracing) to build fault-tolerant distributed systems. |
@@ -2490,6 +2494,7 @@ MIT — All skills are freely available and redistributable.
 | [chaosmesh](skills/cncf/chaosmesh/SKILL.md) | Cncf | ''Provides Chaos Mesh in Cloud-Native Engineering -u6DF7u6C8Cu5DE5u7A0B u5E73' u53F0 for Kubernetes'' | Reference |
 | [chroma](skills/coding/chroma/SKILL.md) | Coding | Integrates Chroma vector database (collections, embeddings, query, metadata filtering, persistence) using the chromadb Python SDK for local and server-based vector search. | Implementation |
 | [ci-cd-pipeline-analyzer](skills/agent/ci-cd-pipeline-analyzer/SKILL.md) | Agent | Implements intelligent ci cd pipeline analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [ci-cd-pipeline-design](skills/coding/ci-cd-pipeline-design/SKILL.md) | Coding | Implements modern CI/CD pipeline architectures (GitHub Actions, GitLab CI, ArgoCD) with security gates, artifact management, and zero-downtime deployment strategies for production systems. | Implementation |
 | [cicd-automation-workflow-automate](skills/agent/cicd-automation-workflow-automate/SKILL.md) | Agent | Implements intelligent cicd automation workflow automate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [cicd-pipeline-debugging](skills/agent/cicd-pipeline-debugging/SKILL.md) | Agent | Debugging patterns for GitHub Actions, GitLab CI, Jenkins and other CI/CD systems including log analysis, runner issues, cache problems, and workflow optimization | Implementation |
 | [cicd-pipeline-troubleshooting](skills/agent/cicd-pipeline-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves CI/CD pipeline failures with actionable debugging commands for GitHub Actions, GitLab CI, and build optimization patterns. | Implementation |
@@ -3209,6 +3214,7 @@ MIT — All skills are freely available and redistributable.
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | Coding | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" | Implementation |
 | [synthetic-data](skills/trading/synthetic-data/SKILL.md) | Trading | "Provides Generate synthetic financial data for training and testing trading models" | Implementation |
 | [system-architecture](skills/coding/system-architecture/SKILL.md) | Coding | Implements architectural patterns (hexagonal, layered, event-driven) with dependency injection and boundary constraints to build maintainable, scalable systems. | Implementation |
+| [system-design-foundations](skills/coding/system-design-foundations/SKILL.md) | Coding | Implements core distributed system design patterns (load balancing, caching strategies, database sharding, message queues) for building scalable and resilient production applications. | Implementation |
 | [system-design-fundamentals](skills/coding/system-design-fundamentals/SKILL.md) | Coding | Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable... | Implementation |
 | [system-hints-design](skills/agent/system-hints-design/SKILL.md) | Agent | Constructs layered system hints for agent architectures — identity, context, constraint, and behavioral hint layers — with provider-specific patterns for Anthropic, OpenAI, and Google Gemini. | Implementation |
 | [system-reliability-architecture](skills/coding/system-reliability-architecture/SKILL.md) | Coding | Implements production reliability patterns (circuit breakers, retry with exponential backoff, bulkhead isolation, health checks, graceful degradation, distributed tracing) to build fault-tolerant distributed systems. | Implementation |
