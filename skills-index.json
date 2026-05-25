@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-25T19:16:38.520856Z",
-  "totalSkills": 1009,
+  "generatedAt": "2026-05-25T19:54:03.811034Z",
+  "totalSkills": 1011,
   "domains": {
-    "agent": 268,
+    "agent": 270,
     "cncf": 173,
     "coding": 435,
     "electrical-engineering": 2,
@@ -14,8 +14,8 @@
     "writing": 4
   },
   "roles": {
-    "orchestration": 237,
-    "implementation": 592,
+    "orchestration": 238,
+    "implementation": 593,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -17974,6 +17974,60 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/code-quality-policies/SKILL.md"
+    },
+    {
+      "name": "query-feature-extraction",
+      "domain": "agent",
+      "description": "Extracts structured signals (action verbs, domain indicators, complexity markers, urgency signals, entity types) from natural language queries as preprocessing for intent classification and skill routing.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "feature extraction",
+        "query parsing",
+        "action verb detection",
+        "domain detection",
+        "urgency signal",
+        "complexity marker",
+        "entity extraction",
+        "natural language processing",
+        "NLP preprocessing",
+        "how do i parse a query"
+      ],
+      "relatedSkills": [
+        "query-intent-classifier",
+        "intelligent-skill-selection",
+        "instruction-parsing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/query-feature-extraction/SKILL.md"
+    },
+    {
+      "name": "query-intent-classifier",
+      "domain": "agent",
+      "description": "Classifies incoming natural language queries into intent archetypes (tactical, strategic, diagnostic, orchestration, educational, enforcement, generation) using keyword patterns, structural signals, and heuristics for accurate routing.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "intent classification",
+        "query archetype",
+        "tactical query",
+        "strategic planning",
+        "diagnostic debugging",
+        "orchestration workflow",
+        "educational explanation",
+        "enforcement audit",
+        "generation scaffolding",
+        "how do i classify a query"
+      ],
+      "relatedSkills": [
+        "intelligent-skill-selection",
+        "query-feature-extraction",
+        "confidence-based-selector"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/query-intent-classifier/SKILL.md"
     },
     {
       "name": "query-optimizer",
