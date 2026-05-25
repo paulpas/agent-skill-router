@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T17:30:40.286059Z",
-  "totalSkills": 1005,
+  "generatedAt": "2026-05-25T18:03:40.336667Z",
+  "totalSkills": 1007,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 432,
+    "coding": 434,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 236,
-    "implementation": 589,
+    "implementation": 591,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -8354,6 +8354,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/go/error-handling/SKILL.md"
+    },
+    {
+      "name": "error-handling-patterns",
+      "domain": "coding",
+      "description": "Implements modern error handling patterns (Result types, error wrapping, retry with backoff, circuit breakers, panic recovery) to eliminate unchecked exceptions and silent failures in production systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "error handling",
+        "Result type",
+        "error wrapping",
+        "circuit breaker",
+        "retry pattern",
+        "exception safety",
+        "how do i handle errors properly",
+        "panic recovery"
+      ],
+      "relatedSkills": [
+        "ports-patterns",
+        "monolith-refactoring",
+        "production-readiness",
+        "input-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/error-handling-patterns/SKILL.md"
     },
     {
       "name": "error-trace-explainer",
@@ -21478,6 +21504,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/structural-design-patterns/SKILL.md"
+    },
+    {
+      "name": "structured-logging",
+      "domain": "coding",
+      "description": "Implements structured JSON logging with correlation IDs, OpenTelemetry context propagation, and tiered log level strategies for production-grade observability in Python and Go services.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "structured logging",
+        "JSON logs",
+        "correlation ID",
+        "OpenTelemetry tracing",
+        "log levels",
+        "request tracing",
+        "how do i add structured logging",
+        "plain text vs structured logs"
+      ],
+      "relatedSkills": [
+        "production-readiness",
+        "error-handling-patterns",
+        "backpressure-handling",
+        "performance-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/structured-logging/SKILL.md"
     },
     {
       "name": "subagent-driven-development",
