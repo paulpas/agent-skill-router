@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 973 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 975 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 973 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 975 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> abcf3580f (feat: add new skill - dry-principle)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **973 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **975 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **973 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **975 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> abcf3580f (feat: add new skill - dry-principle)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 405 | Software patterns, security, testing, data science |
+| Coding | 407 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -286,9 +286,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 05:43:13 UTC  
-> **Total skills:** 973  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (973 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 01:02:04 UTC  
+> **Total skills:** 975  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (975 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -748,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (405 skills)
+### Coding (407 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1152,7 +1152,9 @@ MIT — All skills are freely available and redistributable.
 | [websocket-protocol](skills/coding/websocket-protocol/SKILL.md) | Implements WebSocket protocol-level patterns including frame parsing, subprotocol negotiation, permessage-deflate compression, text/binary framing, and backpressure management for real-time applications. | websocket protocol, frame handling, subprotocol negotiation, permessage-deflate, binary framing, text messages, backpressure, wss://, ws upgrade, opcode, mask bit, close frame [tactical, generation] |
 | [websocket-security](skills/coding/websocket-security/SKILL.md) | Hardens WebSocket connections against cross-site hijacking, DoS attacks, and message flooding through origin validation, authentication, rate limiting, connection limits, and secure transport enforcement. | websocket security, origin validation, cross-site WebSocket hijacking, CCoS, wss://, WebSocket authentication, rate limiting, message flooding, slowloris, connection limits, WebSocket auth, Sec-WebSocket-Origin [tactical, generation] |
 | [yagni](skills/coding/yagni/SKILL.md) | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. | yagni, you aren't gonna need it, don't build it now, over-engineering, premature abstraction, speculative features, kill unused code, remove complexity [tactical, generation] |
+| [yagni-code](skills/coding/yagni-code/SKILL.md) | Enforces YAGNI at the code level to eliminate dead functions, premature abstractions, and unused configuration by writing only what is immediately required. | yagni, dead code, premature abstraction, over-engineering, write-only-needed-code, unnecessary complexity |
 | [yagni-principle](skills/coding/yagni-principle/SKILL.md) | Applies the YAGNI principle to prevent over-engineering by eliminating premature abstractions, unused features, and speculative complexity from codebases. | yagni, you aren't gonna need it, don't build it now, over-engineering, premature abstraction, speculative features, remove unused code, kill dead code [tactical, diagnostic] |
+| [yagni-scope-management](skills/coding/yagni-scope-management/SKILL.md) | Applies YAGNI to project planning and backlog management to prevent scope creep, enforce MVP boundaries, and reject features not needed for current delivery goals. | yagni, scope creep, MVP definition, backlog pruning, feature rejection, agile planning, over-planning |
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | yaml anchor, yaml alias, config deduplication, merge key, helm template, ansible common config, kubernetes shared spec, how do i reduce yaml repetition, <<:, &label, *alias [tactical, generation] |
 | [yaml-anchors](skills/coding/yaml-anchors/SKILL.md) | Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files. | yaml anchors, yaml aliases, & anchor, * alias, YAML merge key, docker-compose reuse, kubernetes config reuse [tactical, generation] |
 | [zendesk-api](skills/coding/zendesk-api/SKILL.md) | Implements Zendesk API integration (Support API, Tickets, Users, Organizations, using zenpy Python SDK with OAuth 2.0, API token auth, ticket CRUD, user management, search, macros, triggers, and Zendesk REST API patterns. | zendesk, zendesk api, zenpy, zendesk support, zendesk tickets, zendesk users, zendesk organizations, how do i integrate with zendesk, support ticketing [tactical, generation] |
@@ -1336,7 +1338,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (558 skills)
+### Implementation (Build Features) (560 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1890,7 +1892,9 @@ MIT — All skills are freely available and redistributable.
 | [websocket-security](skills/coding/websocket-security/SKILL.md) | Coding | Hardens WebSocket connections against cross-site hijacking, DoS attacks, and message flooding through origin validation, authentication, rate limiting, connection limits, and secure transport enforcement. |
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." |
 | [yagni](skills/coding/yagni/SKILL.md) | Coding | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. |
+| [yagni-code](skills/coding/yagni-code/SKILL.md) | Coding | Enforces YAGNI at the code level to eliminate dead functions, premature abstractions, and unused configuration by writing only what is immediately required. |
 | [yagni-principle](skills/coding/yagni-principle/SKILL.md) | Coding | Applies the YAGNI principle to prevent over-engineering by eliminating premature abstractions, unused features, and speculative complexity from codebases. |
+| [yagni-scope-management](skills/coding/yagni-scope-management/SKILL.md) | Coding | Applies YAGNI to project planning and backlog management to prevent scope creep, enforce MVP boundaries, and reject features not needed for current delivery goals. |
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. |
 | [yaml-anchors](skills/coding/yaml-anchors/SKILL.md) | Coding | Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files. |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. |
@@ -3295,7 +3299,9 @@ MIT — All skills are freely available and redistributable.
 | [writing-plans](skills/agent/writing-plans/SKILL.md) | Agent | Implements intelligent writing plans with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [writing-skills](skills/agent/writing-skills/SKILL.md) | Agent | Implements intelligent writing skills with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [yagni](skills/coding/yagni/SKILL.md) | Coding | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. | Implementation |
+| [yagni-code](skills/coding/yagni-code/SKILL.md) | Coding | Enforces YAGNI at the code level to eliminate dead functions, premature abstractions, and unused configuration by writing only what is immediately required. | Implementation |
 | [yagni-principle](skills/coding/yagni-principle/SKILL.md) | Coding | Applies the YAGNI principle to prevent over-engineering by eliminating premature abstractions, unused features, and speculative complexity from codebases. | Implementation |
+| [yagni-scope-management](skills/coding/yagni-scope-management/SKILL.md) | Coding | Applies YAGNI to project planning and backlog management to prevent scope creep, enforce MVP boundaries, and reject features not needed for current delivery goals. | Implementation |
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | Implementation |
 | [yaml-anchors](skills/coding/yaml-anchors/SKILL.md) | Coding | Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files. | Implementation |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. | Implementation |
