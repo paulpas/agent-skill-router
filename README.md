@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 958 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 960 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 958 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 960 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 958 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 960 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 958 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 960 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
 >>>>>>> origin/main
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **958 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **960 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **958 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **960 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **958 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **960 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **958 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **960 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
 >>>>>>> origin/main
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -109,7 +109,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 390 | Software patterns, security, testing, data science |
+| Coding | 392 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -309,17 +309,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 00:54:49 UTC  
-> **Total skills:** 958  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (958 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 20:51:15 UTC  
+> **Total skills:** 960  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (960 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 953 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 953 | Ranking penalty for conflicting query terms |
-| Response Profile | 953 | Verbosity, directive strength, abstraction level |
+| Archetypes | 955 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 955 | Ranking penalty for conflicting query terms |
+| Response Profile | 955 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -771,7 +771,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (390 skills)
+### Coding (392 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1126,6 +1126,7 @@ MIT — All skills are freely available and redistributable.
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | spring boot, spring framework, dependency injection, auto configuration, rest controller, record dto, profile configuration, actuator, java 21, virtual threads, @service, @component, @autowired, how do i build a spring app [tactical, generation] |
 | [square-api](skills/coding/square-api/SKILL.md) | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. | square, square payments api, square catalog, square inventory, square orders, square webhooks, square terminal, how do i integrate square payments, retail pos [tactical, generation] |
 | [sre-engineering](skills/coding/sre-engineering/SKILL.md) | Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability. | sre, site reliability, SLO monitoring, error budget, incident management, capacity planning, chaos engineering, blameless postmortem |
+| [ssrf-prevention](skills/coding/ssrf-prevention/SKILL.md) | Implements defense-in-depth SSRF prevention including URL validation, IP blocking, DNS rebinding protection, and cloud metadata endpoint hardening across Python, Node.js, and Go applications. | ssrf prevention, server-side request forgery, url validation, internal ip blocking, cloud metadata protection, dns rebinding, webhook security [tactical, enforcement] |
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. | stability ai, stabilityai, stable diffusion, sd3, stable image, core, stability api, how do i generate images, text to image, image generation [tactical, generation] |
 | [statistical-power](skills/coding/statistical-power/SKILL.md) | "Analyzes statistical power, sample size determination, effect size estimation, and Type I/Type II error control" | statistical power, power analysis, sample size, effect size, Type I error, Type II error [tactical, generation] |
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. | stripe, payment intents, checkout sessions, stripe subscriptions, stripe connect, webhook signature, how do i integrate stripe payments, payment processing [tactical, generation] |
@@ -1152,6 +1153,7 @@ MIT — All skills are freely available and redistributable.
 | [typescript-generics-types](skills/coding/typescript-generics-types/SKILL.md) | Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations. | generics, type parameters, conditional types, infer keyword, mapped types, template literal types, keyof [tactical, generation] |
 | [typescript-intersection](skills/coding/typescript-intersection/SKILL.md) | Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls. | typescript intersection, & type operator, intersection types, TypeScript type composition, never type conflict, TypeScript extends vs intersection, combining types [tactical, generation] |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | intersection types, ampersand type, type merging, TypeScript & operator, props merging, mixin pattern, type conflicts, keyof T & K, generic constraints, ComponentProps & custom [tactical, generation] |
+| [url-parsing-security](skills/coding/url-parsing-security/SKILL.md) | Secures URL parsing and query string handling against ampersand injection, double-encoding bypasses, parser inconsistencies, and parameter pollution across Python, Node.js, and Go applications. | url parsing security, query parameter injection, double encoding bypass, ampersand in url, parameter pollution, safe url building, rfc 3986 [tactical, diagnostic] |
 | [validation](skills/coding/validation/SKILL.md) | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions | validation, code validation, pipeline validation, config status, input validation, validate pipeline, pipeline stages [tactical, generation] |
 | [vault-api](skills/coding/vault-api/SKILL.md) | Implements HashiCorp Vault API integration (KV Secrets Engine, PKI, Transit, Auth Methods, Leasing & Renewal) using hvac Python SDK v2.4+ with proper authentication, secret leasing, TTL management, and encryption as a service patterns. | hashicorp vault, hvac python, vault kv secrets, vault pki, vault transit, how do i use vault, vault leasing, secret management [tactical, generation] |
 | [vercel-api](skills/coding/vercel-api/SKILL.md) | Integrates Vercel services (Deployments, Projects, Edge Functions, Domains, Analytics) using the Vercel REST API and Python SDK with token-based authentication and deployment automation patterns. | vercel api, vercel python, vercel deployments, vercel edge functions, vercel projects, vercel domains, how do i use vercel api from python [tactical, generation] |
@@ -1344,7 +1346,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (543 skills)
+### Implementation (Build Features) (545 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1815,6 +1817,7 @@ MIT — All skills are freely available and redistributable.
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. |
 | [square-api](skills/coding/square-api/SKILL.md) | Coding | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. |
 | [sre-engineering](skills/coding/sre-engineering/SKILL.md) | Coding | Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability. |
+| [ssrf-prevention](skills/coding/ssrf-prevention/SKILL.md) | Coding | Implements defense-in-depth SSRF prevention including URL validation, IP blocking, DNS rebinding protection, and cloud metadata endpoint hardening across Python, Node.js, and Go applications. |
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Coding | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. |
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. |
 | [statistical-arbitrage](skills/trading/statistical-arbitrage/SKILL.md) | Trading | "Implements pair trading and cointegration-based arbitrage strategies for risk management and algorithmic trading execution." |
@@ -1864,6 +1867,7 @@ MIT — All skills are freely available and redistributable.
 | [typescript-generics-types](skills/coding/typescript-generics-types/SKILL.md) | Coding | Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations. |
 | [typescript-intersection](skills/coding/typescript-intersection/SKILL.md) | Coding | Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls. |
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. |
+| [url-parsing-security](skills/coding/url-parsing-security/SKILL.md) | Coding | Secures URL parsing and query string handling against ampersand injection, double-encoding bypasses, parser inconsistencies, and parameter pollution across Python, Node.js, and Go applications. |
 | [user-memory-system](skills/agent/user-memory-system/SKILL.md) | Agent | Implements multi-layer user memory systems (episodic, semantic, procedural) for AI agents to retain context across sessions, enable personalization, and build long-term relationships with individual users. |
 | [validation](skills/coding/validation/SKILL.md) | Coding | Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions |
 | [validation](skills/trading/validation/SKILL.md) | Trading | "Provides Data validation and quality assurance for trading data pipelines" |
@@ -3160,6 +3164,7 @@ MIT — All skills are freely available and redistributable.
 | [square-api](skills/coding/square-api/SKILL.md) | Coding | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. | Implementation |
 | [sre-engineering](skills/coding/sre-engineering/SKILL.md) | Coding | Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability. | Implementation |
 | [ssm](skills/cncf/ssm/SKILL.md) | Cncf | "Manages EC2 instances and on-premises servers with AWS Systems Manager" for configuration management, patch management, and secure shell access without SSH keys. | Reference |
+| [ssrf-prevention](skills/coding/ssrf-prevention/SKILL.md) | Coding | Implements defense-in-depth SSRF prevention including URL validation, IP blocking, DNS rebinding protection, and cloud metadata endpoint hardening across Python, Node.js, and Go applications. | Implementation |
 | [stabilityai-api](skills/coding/stabilityai-api/SKILL.md) | Coding | Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications. | Implementation |
 | [stacktrace-root-cause](skills/agent/stacktrace-root-cause/SKILL.md) | Agent | Implements intelligent stacktrace root cause with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [state-management](skills/cncf/state-management/SKILL.md) | Cncf | Manages application state across deployment stages including database migrations, cache invalidation, and data consistency during rolling updates. | Implementation |
@@ -3231,6 +3236,7 @@ MIT — All skills are freely available and redistributable.
 | [typescript-intersection-types](skills/coding/typescript-intersection-types/SKILL.md) | Coding | Implements TypeScript intersection type patterns (& operator) for merging props, mixins, generic constraints, utility types, and discriminated extensions with conflict resolution strategies. | Implementation |
 | [update-framework-tuf](skills/cncf/update-framework-tuf/SKILL.md) | Cncf | "The Update Framework (TUF) in Secure software update framework for protecting" software deliveries | Reference |
 | [upstash-qstash](skills/agent/upstash-qstash/SKILL.md) | Agent | Implements intelligent upstash qstash with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [url-parsing-security](skills/coding/url-parsing-security/SKILL.md) | Coding | Secures URL parsing and query string handling against ampersand injection, double-encoding bypasses, parser inconsistencies, and parameter pollution across Python, Node.js, and Go applications. | Implementation |
 | [user-memory-system](skills/agent/user-memory-system/SKILL.md) | Agent | Implements multi-layer user memory systems (episodic, semantic, procedural) for AI agents to retain context across sessions, enable personalization, and build long-term relationships with individual users. | Implementation |
 | [using-superpowers](skills/agent/using-superpowers/SKILL.md) | Agent | Implements intelligent using superpowers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [v10-learning](skills/programming/v10-learning/SKILL.md) | Programming | "Reference guide for Progress OpenEdge ABL 10.1A (2005) — data types" variable declaration, procedures, functions, OOP basics, error handling, database access, transaction handling, control flow | Reference |
