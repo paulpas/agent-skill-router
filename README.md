@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1002 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1002 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1002 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1002 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1005 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1005 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1005 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1005 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **1002 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1002 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1002 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1002 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1005 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1005 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1005 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1005 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -95,7 +95,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 267 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 429 | Software patterns, security, testing, data science |
+| Coding | 432 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -272,17 +272,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 10:26:58 UTC  
-> **Total skills:** 1002  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1002 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 11:26:11 UTC  
+> **Total skills:** 1005  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1005 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 985 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 985 | Ranking penalty for conflicting query terms |
-| Response Profile | 985 | Verbosity, directive strength, abstraction level |
+| Archetypes | 988 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 988 | Ranking penalty for conflicting query terms |
+| Response Profile | 988 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -739,7 +739,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (429 skills)
+### Coding (432 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -789,6 +789,7 @@ MIT — All skills are freely available and redistributable.
 | [aws-sdk](skills/coding/aws-sdk/SKILL.md) | Integrates AWS services (EC2, S3, Lambda, DynamoDB, RDS) using Boto3 SDK with patterns for resource management, error handling, pagination, and IAM authentication. | aws sdk, boto3, amazon web services, s3 bucket, ec2 instance, dynamodb table, lambda function, how do i use aws from python [tactical, generation] |
 | [azure-openai](skills/coding/azure-openai/SKILL.md) | Integrates Azure OpenAI Service (GPT deployments, Responses API, Content Filters, Entra ID auth, Assistants) using the OpenAI SDK with Azure v1 endpoint patterns. | azure openai, azure openai service, azure gpt, azure responses api, content filters, azure openai deployment, how do i use azure openai, microsoft foundry [tactical, generation] |
 | [azure-sdk](skills/coding/azure-sdk/SKILL.md) | Integrates Azure services (Resource Manager, Blob Storage, Cosmos DB, Functions, AKS, Key Vault) using the Azure SDK for Python with authentication and management patterns. | azure sdk, microsoft azure, azure blob storage, cosmos db, azure functions, resource management, how do i use azure from python [tactical, generation] |
+| [backpressure-handling](skills/coding/backpressure-handling/SKILL.md) | Implements production-grade backpressure mechanisms (bounded queues, adaptive rate limiting, circuit breakers, priority queuing) to prevent resource exhaustion in high-throughput event-driven message systems. | backpressure, flow control, rate limiting, circuit breaker, adaptive throttling, consumer lag, processing overload, bounded queue, signal propagation, producer pause [tactical, diagnostic] |
 | [base](skills/coding/base/SKILL.md) | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | abstract, initialization, pattern, strategy base, strategy-base [tactical, generation] |
 | [bash-tui-menu](skills/coding/bash-tui-menu/SKILL.md) | Implements robust interactive Bash TUI menus with dialog widgets, safe selection handling, cancel paths, and non-interactive fallbacks. | bash tui menu, dialog command, interactive shell script, terminal menu, checklist radiolist, how do i make bash menus, ncurses dialog [tactical, generation] |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" | bayesian inference, bayes, prior, posterior, probabilistic inference, how do i do bayesian [tactical, generation] |
@@ -903,6 +904,7 @@ MIT — All skills are freely available and redistributable.
 | [error-handling](skills/coding/error-handling/SKILL.md) | Implements modern Python error handling patterns including custom exception hierarchies, context propagation, result types, and graceful degradation for resilient production systems. | error handling, exception hierarchy, custom exceptions, context propagation, result type, error recovery, graceful degradation, how do i handle errors in Python [tactical, generation] |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. | event-driven architecture, pub/sub messaging, saga pattern, dead letter queue, outbox pattern, how do i decouple services, async message processing, distributed messaging [tactical, generation] |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | event-driven, event driven architecture, pub/sub, event sourcing, CQRS, saga pattern, outbox pattern, message queue, eventual consistency [tactical, generation] |
+| [event-schema-versioning](skills/coding/event-schema-versioning/SKILL.md) | Implements event schema versioning strategies (semantic versioning, forward/backward compatibility, schema registry, deprecation lifecycle) to evolve event contracts in production event-driven systems without breaking consumers. | event schema versioning, schema evolution, backward compatible events, forward compatible events, pydantic models, event migration, deprecated fields, schema registry [tactical, generation] |
 | [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. | event sourcing, event store, aggregate, snapshots, optimistic concurrency, event versioning, projections, read models, replay events, domain events, event streams [tactical, generation] |
 | [event-sourcing-pattern](skills/coding/event-sourcing-pattern/SKILL.md) | Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history. | event sourcing, event store, aggregate root, event replay, projections, snapshots, how do i track all changes, immutable audit trail, state reconstruction from events [tactical, generation] |
 | [event-storming](skills/coding/event-storming/SKILL.md) | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. | event storming, eventstorming, domain discovery, workshop facilitation, bounded context, domain events, sticky notes, collaborative modeling [tactical, generation] |
@@ -998,6 +1000,7 @@ MIT — All skills are freely available and redistributable.
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models | maximum likelihood, MLE, likelihood estimation, likelihood function, optimization, performance, speed [tactical, generation] |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. | mcp, model context protocol, mcp server, fastmcp, mcp tools, mcp resources, how do i build an mcp server, mcp python sdk [tactical, generation] |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | memoization, cache pattern, LRU cache, LFU cache, cache invalidation, TTL strategy, write-through, cache stampede, function decorator, how do i speed up slow functions [tactical, generation] |
+| [message-queue-design](skills/coding/message-queue-design/SKILL.md) | Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems. | message queue, message broker, pub/sub, consumer groups, delivery semantics, at-least-once, exactly-once, RabbitMQ, Kafka, NATS, SQS, queue topology, message ordering [tactical, generation] |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | metrics, KPI, key performance indicator, business metrics, metric definition, how do I choose metrics, cloudwatch, optimization [tactical, generation] |
 | [microservice-contract-testing](skills/coding/microservice-contract-testing/SKILL.md) | Implements consumer-driven contract testing (PACT) with mock services and test doubles to prevent API breaking changes across microservice boundaries in distributed systems. | contract testing, pact, consumer-driven contracts, API mocking, service stubs, integration testing, mock server, test doubles, api breaking changes, how do i test microservice interfaces [tactical, generation] |
 | [microservice-resilience-patterns](skills/coding/microservice-resilience-patterns/SKILL.md) | Implements production-ready resilience patterns (circuit breaker, retry with exponential backoff, bulkhead isolation, timeout enforcement, graceful fallback) to prevent cascading failures in distributed microservice systems. | circuit breaker, retry pattern, bulkhead pattern, resilience, fault tolerance, timeout handling, graceful degradation, fallback strategy, cascading failure, exponential backoff [tactical, generation] |
@@ -1351,7 +1354,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (586 skills)
+### Implementation (Build Features) (589 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1410,6 +1413,7 @@ MIT — All skills are freely available and redistributable.
 | [azure-openai](skills/coding/azure-openai/SKILL.md) | Coding | Integrates Azure OpenAI Service (GPT deployments, Responses API, Content Filters, Entra ID auth, Assistants) using the OpenAI SDK with Azure v1 endpoint patterns. |
 | [azure-sdk](skills/coding/azure-sdk/SKILL.md) | Coding | Integrates Azure services (Resource Manager, Blob Storage, Cosmos DB, Functions, AKS, Key Vault) using the Azure SDK for Python with authentication and management patterns. |
 | [backfill-strategy](skills/trading/backfill-strategy/SKILL.md) | Trading | "Provides Strategic data backfill for populating historical data in trading systems" |
+| [backpressure-handling](skills/coding/backpressure-handling/SKILL.md) | Coding | Implements production-grade backpressure mechanisms (bounded queues, adaptive rate limiting, circuit breakers, priority queuing) to prevent resource exhaustion in high-throughput event-driven message systems. |
 | [base](skills/coding/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration |
 | [bash-tui-menu](skills/coding/bash-tui-menu/SKILL.md) | Coding | Implements robust interactive Bash TUI menus with dialog widgets, safe selection handling, cancel paths, and non-interactive fallbacks. |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | Coding | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" |
@@ -1547,6 +1551,7 @@ MIT — All skills are freely available and redistributable.
 | [error-handling](skills/go/error-handling/SKILL.md) | Go | Designs robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery strategies for resilient applications. |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. |
+| [event-schema-versioning](skills/coding/event-schema-versioning/SKILL.md) | Coding | Implements event schema versioning strategies (semantic versioning, forward/backward compatibility, schema registry, deprecation lifecycle) to evolve event contracts in production event-driven systems without breaking consumers. |
 | [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Coding | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. |
 | [event-sourcing-pattern](skills/coding/event-sourcing-pattern/SKILL.md) | Coding | Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history. |
 | [event-storming](skills/coding/event-storming/SKILL.md) | Coding | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. |
@@ -1679,6 +1684,7 @@ MIT — All skills are freely available and redistributable.
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Coding | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Coding | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. |
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems |
+| [message-queue-design](skills/coding/message-queue-design/SKILL.md) | Coding | Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems. |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Agent | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" |
 | [microservice-contract-testing](skills/coding/microservice-contract-testing/SKILL.md) | Coding | Implements consumer-driven contract testing (PACT) with mock services and test doubles to prevent API breaking changes across microservice boundaries in distributed systems. |
@@ -2484,6 +2490,7 @@ MIT — All skills are freely available and redistributable.
 | [azure-openai](skills/coding/azure-openai/SKILL.md) | Coding | Integrates Azure OpenAI Service (GPT deployments, Responses API, Content Filters, Entra ID auth, Assistants) using the OpenAI SDK with Azure v1 endpoint patterns. | Implementation |
 | [azure-sdk](skills/coding/azure-sdk/SKILL.md) | Coding | Integrates Azure services (Resource Manager, Blob Storage, Cosmos DB, Functions, AKS, Key Vault) using the Azure SDK for Python with authentication and management patterns. | Implementation |
 | [backfill-strategy](skills/trading/backfill-strategy/SKILL.md) | Trading | "Provides Strategic data backfill for populating historical data in trading systems" | Implementation |
+| [backpressure-handling](skills/coding/backpressure-handling/SKILL.md) | Coding | Implements production-grade backpressure mechanisms (bounded queues, adaptive rate limiting, circuit breakers, priority queuing) to prevent resource exhaustion in high-throughput event-driven message systems. | Implementation |
 | [backstage](skills/cncf/backstage/SKILL.md) | Cncf | "Provides Backstage in Cloud-Native Engineering - Developer Portal for Microservices" | Reference |
 | [base](skills/coding/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | Implementation |
 | [bash-scripting](skills/agent/bash-scripting/SKILL.md) | Agent | Implements intelligent bash scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2726,6 +2733,7 @@ MIT — All skills are freely available and redistributable.
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. | Implementation |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | Implementation |
 | [event-hubs](skills/cncf/event-hubs/SKILL.md) | Cncf | "Provides Event streaming platform for high-throughput data ingestion and processing" | Reference |
+| [event-schema-versioning](skills/coding/event-schema-versioning/SKILL.md) | Coding | Implements event schema versioning strategies (semantic versioning, forward/backward compatibility, schema registry, deprecation lifecycle) to evolve event contracts in production event-driven systems without breaking consumers. | Implementation |
 | [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Coding | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. | Implementation |
 | [event-sourcing-pattern](skills/coding/event-sourcing-pattern/SKILL.md) | Coding | Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history. | Implementation |
 | [event-storming](skills/coding/event-storming/SKILL.md) | Coding | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. | Implementation |
@@ -2965,6 +2973,7 @@ MIT — All skills are freely available and redistributable.
 | [memory-usage-analyzer](skills/agent/memory-usage-analyzer/SKILL.md) | Agent | Implements intelligent memory usage analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mermaid-diagrams](skills/writing/mermaid-diagrams/SKILL.md) | Writing | Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams, Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub. | Reference |
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems | Implementation |
+| [message-queue-design](skills/coding/message-queue-design/SKILL.md) | Coding | Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems. | Implementation |
 | [message-queue-troubleshooting](skills/agent/message-queue-troubleshooting/SKILL.md) | Agent | Implements intelligent message queue troubleshooting for Kafka, RabbitMQ, SQS, and NATS clusters with diagnostic commands, dead letter handling, and backlog resolution | Implementation |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | Coding | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | Implementation |
 | [microprofile](skills/cncf/microprofile/SKILL.md) | Cncf | MicroProfile specification reference covering Config, OpenAPI, Fault Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events for cloud-native Java microservices. | Reference |
