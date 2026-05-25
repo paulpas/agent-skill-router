@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T21:22:34.021082Z",
-  "totalSkills": 1013,
+  "generatedAt": "2026-05-25T22:00:02.236704Z",
+  "totalSkills": 1014,
   "domains": {
     "agent": 270,
     "cncf": 173,
-    "coding": 437,
+    "coding": 438,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 594,
+    "implementation": 595,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -9394,6 +9394,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-application-methodology/SKILL.md"
+    },
+    {
+      "name": "framework-comparison-workflow",
+      "domain": "coding",
+      "description": "Runs structured, code-level comparison workflows between competing frameworks through spike projects, side-by-side implementations, developer experience measurement, and ecosystem analysis to produce evidence-based selection recommendations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework comparison",
+        "spike project",
+        "side by side framework",
+        "framework benchmark",
+        "developer experience evaluation",
+        "framework POC",
+        "proof of concept framework",
+        "framework code comparison",
+        "framework ecosystem analysis",
+        "compare frameworks hands on",
+        "framework spike test",
+        "tech stack comparison"
+      ],
+      "relatedSkills": [
+        "framework-selection",
+        "framework-evaluation-criteria",
+        "framework-requirements",
+        "framework-adoption-strategy"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-comparison-workflow/SKILL.md"
     },
     {
       "name": "framework-design",
