@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-25T06:55:32.451378Z",
-  "totalSkills": 978,
+  "generatedAt": "2026-05-25T07:36:18.177613Z",
+  "totalSkills": 980,
   "domains": {
-    "agent": 262,
+    "agent": 264,
     "cncf": 173,
     "coding": 410,
     "electrical-engineering": 2,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 563,
+    "implementation": 565,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -19271,6 +19271,30 @@
       "source": "skills/coding/skill-development-workflow/SKILL.md"
     },
     {
+      "name": "skill-documentation-best-practices",
+      "domain": "agent",
+      "description": "Writes high-fidelity SKILL.md documentation using instruction engineering patterns, typed code examples with BAD vs GOOD comparisons, and enforceable constraint design for AI agent skill systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "skill documentation",
+        "SKILL.md writing",
+        "instruction engineering",
+        "constraint writing",
+        "code example patterns",
+        "skill content design",
+        "prompt design for skills"
+      ],
+      "relatedSkills": [
+        "skill-engineering",
+        "skill-trigger-engineering",
+        "writing-skills"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/skill-documentation-best-practices/SKILL.md"
+    },
+    {
       "name": "skill-ecosystem-design",
       "domain": "agent",
       "description": "Designs interconnected skill networks with dependency graphs, reciprocal relationships, layered capabilities, and cross-domain bridges to maximize discoverability and create coherent capability clusters for AI agent systems.",
@@ -19625,6 +19649,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-sentinel/SKILL.md"
+    },
+    {
+      "name": "skill-testing-methodology",
+      "domain": "agent",
+      "description": "Validates AI agent skills through trigger precision/recall measurement, structural output checks, and edge case detection to prevent broken or misleading skills from reaching production.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "skill testing",
+        "trigger accuracy",
+        "output validation",
+        "edge case detection",
+        "skill QA",
+        "automated skill tests",
+        "false positive triggers"
+      ],
+      "relatedSkills": [
+        "skill-engineering",
+        "skill-audit",
+        "skill-observability"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/skill-testing-methodology/SKILL.md"
     },
     {
       "name": "skill-testing-validation",
