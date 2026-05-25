@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T15:27:20.781446Z",
-  "totalSkills": 1002,
+  "generatedAt": "2026-05-25T16:27:43.725491Z",
+  "totalSkills": 1005,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 429,
+    "coding": 432,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 236,
-    "implementation": 586,
+    "implementation": 589,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -2559,6 +2559,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/data-backfill-strategy/SKILL.md"
+    },
+    {
+      "name": "backpressure-handling",
+      "domain": "coding",
+      "description": "Implements production-grade backpressure mechanisms (bounded queues, adaptive rate limiting, circuit breakers, priority queuing) to prevent resource exhaustion in high-throughput event-driven message systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "backpressure",
+        "flow control",
+        "rate limiting",
+        "circuit breaker",
+        "adaptive throttling",
+        "consumer lag",
+        "processing overload",
+        "bounded queue",
+        "signal propagation",
+        "producer pause"
+      ],
+      "relatedSkills": [
+        "event-driven-patterns",
+        "message-queue-design",
+        "system-reliability-architecture",
+        "event-bus",
+        "data-pipeline-engineering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/backpressure-handling/SKILL.md"
     },
     {
       "name": "backstage",
@@ -8441,6 +8470,33 @@
       "source": "skills/cncf/azure-event-hubs/SKILL.md"
     },
     {
+      "name": "event-schema-versioning",
+      "domain": "coding",
+      "description": "Implements event schema versioning strategies (semantic versioning, forward/backward compatibility, schema registry, deprecation lifecycle) to evolve event contracts in production event-driven systems without breaking consumers.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "event schema versioning",
+        "schema evolution",
+        "backward compatible events",
+        "forward compatible events",
+        "pydantic models",
+        "event migration",
+        "deprecated fields",
+        "schema registry"
+      ],
+      "relatedSkills": [
+        "event-driven-patterns",
+        "event-sourcing-pattern",
+        "domain-events",
+        "api-versioning-strategies",
+        "microservices-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/event-schema-versioning/SKILL.md"
+    },
+    {
       "name": "event-sourcing",
       "domain": "coding",
       "description": "Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models.",
@@ -14168,6 +14224,38 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/message-queue-debugging/SKILL.md"
+    },
+    {
+      "name": "message-queue-design",
+      "domain": "coding",
+      "description": "Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "message queue",
+        "message broker",
+        "pub/sub",
+        "consumer groups",
+        "delivery semantics",
+        "at-least-once",
+        "exactly-once",
+        "RabbitMQ",
+        "Kafka",
+        "NATS",
+        "SQS",
+        "queue topology",
+        "message ordering"
+      ],
+      "relatedSkills": [
+        "event-driven-patterns",
+        "event-bus",
+        "domain-events",
+        "idempotent-distributed-operations",
+        "system-reliability-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/message-queue-design/SKILL.md"
     },
     {
       "name": "message-queue-troubleshooting",
