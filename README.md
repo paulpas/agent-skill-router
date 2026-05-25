@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1007 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1007 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1007 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1007 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1008 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1008 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1008 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1008 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **1007 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1007 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1007 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1007 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1008 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1008 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1008 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1008 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -95,7 +95,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 267 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 434 | Software patterns, security, testing, data science |
+| Coding | 435 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -272,9 +272,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 18:03:42 UTC  
-> **Total skills:** 1007  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1007 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 13:32:19 UTC  
+> **Total skills:** 1008  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1008 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -739,7 +739,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (434 skills)
+### Coding (435 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -897,6 +897,7 @@ MIT — All skills are freely available and redistributable.
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. | elevenlabs, eleven labs, tts, text to speech, voice cloning, elevenlabs api, how do i use elevenlabs, AI voice [tactical, generation] |
 | [engineering-api-design](skills/coding/engineering-api-design/SKILL.md) | Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces. | api design, REST API, GraphQL schema, OpenAPI spec, API versioning, pagination, rate limiting, endpoint design, API authentication, how do i design an API, API documentation, Swagger [tactical, generation] |
 | [engineering-error-handling](skills/coding/engineering-error-handling/SKILL.md) | Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems. | error handling, exception hierarchy, retry strategy, exponential backoff, circuit breaker, graceful degradation, structured logging, panic prevention, how do i handle errors, error wrapping, sentinel errors [tactical, diagnostic] |
+| [engineering-principle-conflicts](skills/coding/engineering-principle-conflicts/SKILL.md) | Resolves contradictions between SOLID, DRY, KISS, and YAGNI principles using a structured decision framework with trade-off analysis and domain-context scoring for architecture decisions. | principle conflicts, SOLID contradictions, DRY fragility, when to abstract, KISS vs abstraction, YAGNI tradeoffs, SRP vs ISP, architecture decision framework, code golf trade-offs, premature abstraction |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | engineering principles, SOLID, DRY, KISS, separation of concerns, code architecture, defensive programming, clean code [tactical, generation] |
 | [engineering-tradeoffs](skills/coding/engineering-tradeoffs/SKILL.md) | Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints. | engineering tradeoffs, decision making under constraints, build vs buy, speed vs quality, technology selection, weighted decision matrix, tradeoff analysis, two-way door decisions, CAP theorem software [orchestration] |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | ensemble methods, bagging, boosting, stacking, voting, blending, ensemble learning [tactical, generation] |
@@ -1356,7 +1357,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (591 skills)
+### Implementation (Build Features) (592 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1545,6 +1546,7 @@ MIT — All skills are freely available and redistributable.
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Coding | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. |
 | [engineering-api-design](skills/coding/engineering-api-design/SKILL.md) | Coding | Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces. |
 | [engineering-error-handling](skills/coding/engineering-error-handling/SKILL.md) | Coding | Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems. |
+| [engineering-principle-conflicts](skills/coding/engineering-principle-conflicts/SKILL.md) | Coding | Resolves contradictions between SOLID, DRY, KISS, and YAGNI principles using a structured decision framework with trade-off analysis and domain-context scoring for architecture decisions. |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Coding | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. |
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" |
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | Coding | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" |
@@ -2724,6 +2726,7 @@ MIT — All skills are freely available and redistributable.
 | [em-dash-guide](skills/writing/em-dash-guide/SKILL.md) | Writing | Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation. | Reference |
 | [engineering-api-design](skills/coding/engineering-api-design/SKILL.md) | Coding | Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces. | Implementation |
 | [engineering-error-handling](skills/coding/engineering-error-handling/SKILL.md) | Coding | Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems. | Implementation |
+| [engineering-principle-conflicts](skills/coding/engineering-principle-conflicts/SKILL.md) | Coding | Resolves contradictions between SOLID, DRY, KISS, and YAGNI principles using a structured decision framework with trade-off analysis and domain-context scoring for architecture decisions. | Implementation |
 | [engineering-principles](skills/coding/engineering-principles/SKILL.md) | Coding | Enforces core software engineering principles (SOLID, DRY, KISS, separation of concerns) to produce clean, maintainable, and scalable code architecture. | Implementation |
 | [engineering-tradeoffs](skills/coding/engineering-tradeoffs/SKILL.md) | Coding | Evaluates competing engineering options using weighted decision matrices, reversibility analysis, and multi-criteria tradeoff frameworks to make defensible technical decisions under constraints. | Orchestration |
 | [enrichment](skills/trading/enrichment/SKILL.md) | Trading | "Provides Data enrichment techniques for adding context to raw trading data" | Implementation |
