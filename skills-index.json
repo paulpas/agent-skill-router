@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T09:16:36.708273Z",
-  "totalSkills": 986,
+  "generatedAt": "2026-05-25T09:30:50.986202Z",
+  "totalSkills": 987,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 413,
+    "coding": 414,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 571,
+    "implementation": 572,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -9172,6 +9172,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-evaluation-criteria/SKILL.md"
+    },
+    {
+      "name": "framework-integration-patterns",
+      "domain": "coding",
+      "description": "Implements robust framework integration patterns including plugin architectures, middleware chains, cross-framework adapters, and configuration layering to safely extend and connect external frameworks without tight coupling or upgrade friction.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework integration",
+        "plugin architecture",
+        "middleware chains",
+        "extension points",
+        "how do i extend a framework",
+        "cross-framework communication",
+        "configuration layering",
+        "adapter pattern"
+      ],
+      "relatedSkills": [
+        "framework-driven-design",
+        "software-architecture",
+        "version-migration",
+        "dependency-injection-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-integration-patterns/SKILL.md"
     },
     {
       "name": "framework-lifecycle",
