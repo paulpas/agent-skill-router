@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 983 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 983 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 983 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 983 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 986 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 986 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 986 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 986 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **983 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **983 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **983 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **983 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **986 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **986 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **986 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **986 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -95,7 +95,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 267 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 410 | Software patterns, security, testing, data science |
+| Coding | 413 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -272,17 +272,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 08:42:42 UTC  
-> **Total skills:** 983  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (983 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 04:16:08 UTC  
+> **Total skills:** 986  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (986 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 966 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 966 | Ranking penalty for conflicting query terms |
-| Response Profile | 966 | Verbosity, directive strength, abstraction level |
+| Archetypes | 969 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 969 | Ranking penalty for conflicting query terms |
+| Response Profile | 969 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -739,7 +739,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (410 skills)
+### Coding (413 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -802,6 +802,7 @@ MIT — All skills are freely available and redistributable.
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | makefile testing, build validation, phony target tests, continuous integration for builds, incremental build verification, dependency graph analysis, build reproducibility, make test suite, artifact verification [tactical, generation] |
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. | builder pattern, fluent interface, object construction, complex object, step-by-step construction, chained method calls, director pattern [tactical, generation] |
 | [bus](skills/coding/bus/SKILL.md) | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | async, event bus, event-bus, events, typed, eventbridge, event routing [tactical, generation] |
+| [business-rules-engine](skills/coding/business-rules-engine/SKILL.md) | Implements a business rules engine using declarative configuration (JSON/YAML-based rule definitions, condition evaluation chains, and runtime rule execution) to replace hard-coded if/elif branches for frequently-changing domain validations. | business rules engine, rules engine, decision table, condition evaluation, declarative rules, rule validation, how do i evaluate complex rules, compliance rules, pricing rules [tactical, generation] |
 | [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. | cache stampede, LRU eviction, write-through, TTL-based, cache invalidation, multi-tier cache, thundering herd, how do i speed up my app [tactical, generation] |
 | [categorical-encoding](skills/coding/categorical-encoding/SKILL.md) | "Provides Encodes categorical variables using one-hot encoding, target encoding, ordinal encoding, embeddings, and other encoding strategies" | categorical encoding, one-hot encoding, target encoding, ordinal encoding, categorical variables [tactical, generation] |
 | [causal-inference](skills/coding/causal-inference/SKILL.md) | Implements causal models, directed acyclic graphs (DAGs), confounding adjustment, and mediation analysis for causal discovery | causal inference, causality, causal models, DAG, confounding, how do i determine causation, airflow, data pipelines [tactical, generation] |
@@ -880,6 +881,8 @@ MIT — All skills are freely available and redistributable.
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns [tactical, generation] |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | domain events, domain event, event publishing, event handler, event dispatcher, in-process event bus, how do i decouple aggregates, idempotent event handling [tactical, generation] |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | domain modeling, ubiquitous language, bounded context, subdomain classification, domain map, how do i understand the domain, strategic design [diagnostic, educational] |
+| [domain-repository-pattern](skills/coding/domain-repository-pattern/SKILL.md) | Implements repository and specification patterns for DDD to abstract data access while keeping domain logic in the domain layer — generic repositories, typed specifications, pagination, and query composition without leaking persistence details. | repository pattern, specification pattern, data access abstraction, generic repository, typed queries, how do i persist aggregates, unit of work, aggregate persistence [tactical, generation] |
+| [domain-service-orchestration](skills/coding/domain-service-orchestration/SKILL.md) | Implements domain service orchestration for cross-aggregate business operations in DDD — coordinating multiple aggregate roots while preserving encapsulation, handling compensation on failure, and maintaining transaction boundaries without leaking co... | domain service, cross-aggregate orchestration, aggregate coordination, how do i coordinate multiple aggregates, saga compensation, distributed transaction, domain orchestrator, business process coordination [tactical, generation] |
 | [domain-testing](skills/coding/domain-testing/SKILL.md) | Verifies DDD domain model correctness through invariant testing of aggregates and value objects, specification candidate tests, test double strategies, and domain event publishing assertions. | domain testing, aggregate testing, value object tests, specification patterns, ddd unit tests, invariant verification, how do i test domain models, domain layer testing [tactical, generation] |
 | [dropbox-api](skills/coding/dropbox-api/SKILL.md) | Integrates with Dropbox API to manage files, folders, sharing, Paper documents, and Sign requests using the official dropbox Python SDK v12. | dropbox api, dropbox python, dropbox files, dropbox sharing, dropbox paper, dropbox sign, dropbox sdk [tactical, generation] |
 | [dry-principle](skills/coding/dry-principle/SKILL.md) | Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering. | dry principle, don't repeat yourself, duplicate code, remove duplication, refactor, abstraction tradeoffs, yagni balance [tactical, diagnostic] |
@@ -1332,7 +1335,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (568 skills)
+### Implementation (Build Features) (571 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1406,6 +1409,7 @@ MIT — All skills are freely available and redistributable.
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. |
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Coding | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems |
+| [business-rules-engine](skills/coding/business-rules-engine/SKILL.md) | Coding | Implements a business rules engine using declarative configuration (JSON/YAML-based rule definitions, condition evaluation chains, and runtime rule execution) to replace hard-coded if/elif branches for frequently-changing domain validations. |
 | [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Coding | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. |
 | [canary-deployment](skills/cncf/canary-deployment/SKILL.md) | Cncf | Orchestrates canary deployment strategies with gradual traffic promotion, automated health monitoring, and rollback triggers for progressive risk management. |
 | [candle-data](skills/trading/candle-data/SKILL.md) | Trading | "OHLCV candle data processing, timeframe management, and validation for" trading algorithms |
@@ -1502,6 +1506,8 @@ MIT — All skills are freely available and redistributable.
 | [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Coding | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. |
+| [domain-repository-pattern](skills/coding/domain-repository-pattern/SKILL.md) | Coding | Implements repository and specification patterns for DDD to abstract data access while keeping domain logic in the domain layer — generic repositories, typed specifications, pagination, and query composition without leaking persistence details. |
+| [domain-service-orchestration](skills/coding/domain-service-orchestration/SKILL.md) | Coding | Implements domain service orchestration for cross-aggregate business operations in DDD — coordinating multiple aggregate roots while preserving encapsulation, handling compensation on failure, and maintaining transaction boundaries without leaking co... |
 | [domain-testing](skills/coding/domain-testing/SKILL.md) | Coding | Verifies DDD domain model correctness through invariant testing of aggregates and value objects, specification candidate tests, test double strategies, and domain event publishing assertions. |
 | [drawdown-analysis](skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." |
 | [drawdown-control](skills/trading/drawdown-control/SKILL.md) | Trading | "Implements maximum drawdown control and equity preservation for risk management and algorithmic trading execution." |
@@ -2471,6 +2477,7 @@ MIT — All skills are freely available and redistributable.
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Coding | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. | Implementation |
 | [buildpacks](skills/cncf/buildpacks/SKILL.md) | Cncf | "Provides Buildpacks in Cloud-Native Engineering - Turn source code into container images without Dockerfiles" | Reference |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | Implementation |
+| [business-rules-engine](skills/coding/business-rules-engine/SKILL.md) | Coding | Implements a business rules engine using declarative configuration (JSON/YAML-based rule definitions, condition evaluation chains, and runtime rule execution) to replace hard-coded if/elif branches for frequently-changing domain validations. | Implementation |
 | [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Coding | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. | Implementation |
 | [calico](skills/cncf/calico/SKILL.md) | Cncf | "Calico in Cloud Native Security - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [canary-deployment](skills/cncf/canary-deployment/SKILL.md) | Cncf | Orchestrates canary deployment strategies with gradual traffic promotion, automated health monitoring, and rollback triggers for progressive risk management. | Implementation |
@@ -2648,6 +2655,8 @@ MIT — All skills are freely available and redistributable.
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | Implementation |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | Implementation |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Coding | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | Reference |
+| [domain-repository-pattern](skills/coding/domain-repository-pattern/SKILL.md) | Coding | Implements repository and specification patterns for DDD to abstract data access while keeping domain logic in the domain layer — generic repositories, typed specifications, pagination, and query composition without leaking persistence details. | Implementation |
+| [domain-service-orchestration](skills/coding/domain-service-orchestration/SKILL.md) | Coding | Implements domain service orchestration for cross-aggregate business operations in DDD — coordinating multiple aggregate roots while preserving encapsulation, handling compensation on failure, and maintaining transaction boundaries without leaking co... | Implementation |
 | [domain-testing](skills/coding/domain-testing/SKILL.md) | Coding | Verifies DDD domain model correctness through invariant testing of aggregates and value objects, specification candidate tests, test double strategies, and domain event publishing assertions. | Implementation |
 | [dragonfly](skills/cncf/dragonfly/SKILL.md) | Cncf | "Provides Dragonfly in Cloud-Native Engineering - P2P file distribution" | Reference |
 | [drawdown-analysis](skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." | Implementation |
