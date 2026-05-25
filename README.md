@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 981 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 981 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 981 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 981 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 983 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 983 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 983 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 983 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **981 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **981 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **981 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **981 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **983 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **983 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **983 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **983 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -93,7 +93,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 265 | AI orchestration, routing, task decomposition |
+| Agent | 267 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 410 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -272,22 +272,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 02:54:54 UTC  
-> **Total skills:** 981  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (981 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 03:13:13 UTC  
+> **Total skills:** 983  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (983 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 966 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 966 | Ranking penalty for conflicting query terms |
-| Response Profile | 966 | Verbosity, directive strength, abstraction level |
+| Archetypes | 968 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 968 | Ranking penalty for conflicting query terms |
+| Response Profile | 968 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (265 skills)
+### Agent (267 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -300,6 +300,8 @@ MIT — All skills are freely available and redistributable.
 | [agent-manager-skill](skills/agent/agent-manager-skill/SKILL.md) | Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-manager-skill, agent manager skill, how do i agent-manager-skill, orchestrate agent-manager-skill, automate agent-manager-skill, agent agent-manager-skill [orchestration, strategic] |
 | [agent-memory-systems](skills/agent/agent-memory-systems/SKILL.md) | Implements intelligent agent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-memory-systems, agent memory systems, how do i agent-memory-systems, orchestrate agent-memory-systems, automate agent-memory-systems, agent agent-memory-systems [orchestration, strategic] |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. | fault tolerance, circuit breaker, retry strategy, exponential backoff, graceful degradation, health check, dead letter queue, timeout management, reliability engineering, agent resilience [tactical] |
+| [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Implements prompt injection detection, input/output validation, tool access control, and guardrail enforcement layers to secure LLM-powered agents against adversarial inputs and unauthorized tool execution. | prompt injection, guardrails, LLM security, input validation, output sanitization, tool access control, adversarial prompts, jailbreak detection, agent safety, how do i secure my agent [tactical, enforcement] |
+| [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors including tool-use accuracy, hallucination detection, multi-turn reasoning metrics, automated grading pipelines, and continuous evaluation frameworks. | agent evaluation, benchmarking, LLM testing, tool-use accuracy, hallucination detection, agent metrics, automated grading, promptfoo, agentbench, swe-bench agents, how do i test my agent [tactical, diagnostic] |
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-agent-development, ai agent development, how do i ai-agent-development, orchestrate ai-agent-development, automate ai-agent-development, agent ai-agent-development [orchestration, strategic] |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. | ai agent safety, hallucination detection, prompt injection, output validation, tool call safety, guardrails, autonomous agent safety, AI safety [tactical] |
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-agents-architect, ai agents architect, how do i ai-agents-architect, orchestrate ai-agents-architect, automate ai-agents-architect, agent ai-agents-architect [orchestration, strategic] |
@@ -1330,7 +1332,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (566 skills)
+### Implementation (Build Features) (568 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1342,6 +1344,8 @@ MIT — All skills are freely available and redistributable.
 | [agent-communication-patterns](skills/agent/agent-communication-patterns/SKILL.md) | Agent | Implements inter-agent communication patterns (message passing, event-driven coordination, shared memory protocols, RPC-style calls, structured JSON messaging) for reliable multi-agent systems. |
 | [agent-evaluation-testing](skills/coding/agent-evaluation-testing/SKILL.md) | Coding | Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python. |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
+| [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Agent | Implements prompt injection detection, input/output validation, tool access control, and guardrail enforcement layers to secure LLM-powered agents against adversarial inputs and unauthorized tool execution. |
+| [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Agent | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors including tool-use accuracy, hallucination detection, multi-turn reasoning metrics, automated grading pipelines, and continuous evaluation frameworks. |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. |
 | [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Agent | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. |
@@ -2352,6 +2356,8 @@ MIT — All skills are freely available and redistributable.
 | [agent-manager-skill](skills/agent/agent-manager-skill/SKILL.md) | Agent | Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [agent-memory-systems](skills/agent/agent-memory-systems/SKILL.md) | Agent | Implements intelligent agent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. | Implementation |
+| [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Agent | Implements prompt injection detection, input/output validation, tool access control, and guardrail enforcement layers to secure LLM-powered agents against adversarial inputs and unauthorized tool execution. | Implementation |
+| [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Agent | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors including tool-use accuracy, hallucination detection, multi-turn reasoning metrics, automated grading pipelines, and continuous evaluation frameworks. | Implementation |
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Agent | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. | Implementation |
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Agent | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
