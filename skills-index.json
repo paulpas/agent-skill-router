@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T08:14:09.131889Z",
+  "generatedAt": "2026-05-25T08:21:59.449815Z",
   "totalSkills": 983,
   "domains": {
     "agent": 267,
@@ -393,20 +393,17 @@
     {
       "name": "agent-security-guardrails",
       "domain": "agent",
-      "description": "Implements prompt injection detection, input/output validation, tool access control, and guardrail enforcement layers to secure LLM-powered agents against adversarial inputs and unauthorized tool execution.",
+      "description": "Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM-powered agents against adversarial inputs and unauthorized tool execution.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "prompt injection",
         "guardrails",
-        "LLM security",
-        "input validation",
-        "output sanitization",
-        "tool access control",
-        "adversarial prompts",
         "jailbreak detection",
-        "agent safety",
+        "tool access control",
+        "input validation",
+        "LLM security",
         "how do i secure my agent"
       ],
       "relatedSkills": [
@@ -420,21 +417,18 @@
     {
       "name": "agentic-evaluation",
       "domain": "agent",
-      "description": "Implements systematic evaluation, benchmarking, and testing of AI agent behaviors including tool-use accuracy, hallucination detection, multi-turn reasoning metrics, automated grading pipelines, and continuous evaluation frameworks.",
+      "description": "Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "agent evaluation",
         "benchmarking",
-        "LLM testing",
-        "tool-use accuracy",
         "hallucination detection",
-        "agent metrics",
+        "tool-use accuracy",
+        "multi-turn reasoning",
         "automated grading",
         "promptfoo",
-        "agentbench",
-        "swe-bench agents",
         "how do i test my agent"
       ],
       "relatedSkills": [
