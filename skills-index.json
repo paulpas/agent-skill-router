@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-25T07:55:28.513475Z",
-  "totalSkills": 981,
+  "generatedAt": "2026-05-25T08:14:09.131889Z",
+  "totalSkills": 983,
   "domains": {
-    "agent": 265,
+    "agent": 267,
     "cncf": 173,
     "coding": 410,
     "electrical-engineering": 2,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 566,
+    "implementation": 568,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -389,6 +389,61 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-reliability-engineering/SKILL.md"
+    },
+    {
+      "name": "agent-security-guardrails",
+      "domain": "agent",
+      "description": "Implements prompt injection detection, input/output validation, tool access control, and guardrail enforcement layers to secure LLM-powered agents against adversarial inputs and unauthorized tool execution.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "prompt injection",
+        "guardrails",
+        "LLM security",
+        "input validation",
+        "output sanitization",
+        "tool access control",
+        "adversarial prompts",
+        "jailbreak detection",
+        "agent safety",
+        "how do i secure my agent"
+      ],
+      "relatedSkills": [
+        "agent-reliability-engineering",
+        "coding-security-review",
+        "agent-system-hints-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-security-guardrails/SKILL.md"
+    },
+    {
+      "name": "agentic-evaluation",
+      "domain": "agent",
+      "description": "Implements systematic evaluation, benchmarking, and testing of AI agent behaviors including tool-use accuracy, hallucination detection, multi-turn reasoning metrics, automated grading pipelines, and continuous evaluation frameworks.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "agent evaluation",
+        "benchmarking",
+        "LLM testing",
+        "tool-use accuracy",
+        "hallucination detection",
+        "agent metrics",
+        "automated grading",
+        "promptfoo",
+        "agentbench",
+        "swe-bench agents",
+        "how do i test my agent"
+      ],
+      "relatedSkills": [
+        "agent-reliability-engineering",
+        "agent-testing-methodology",
+        "coding-code-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agentic-evaluation/SKILL.md"
     },
     {
       "name": "ai-agent-development",
