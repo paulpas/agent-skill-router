@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T02:49:19.363504Z",
-  "totalSkills": 961,
+  "generatedAt": "2026-05-25T03:04:32.702368Z",
+  "totalSkills": 962,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 393,
+    "coding": 394,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 546,
+    "implementation": 547,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -8795,6 +8795,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-design/SKILL.md"
+    },
+    {
+      "name": "framework-driven-design",
+      "domain": "coding",
+      "description": "Implements framework-driven design patterns (Inversion of Control, Dependency Injection, lifecycle hooks, plugin architectures) to build extensible applications that leverage modern framework constraints instead of bypassing them.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework driven design",
+        "inversion of control",
+        "dependency injection",
+        "lifecycle hooks",
+        "plugin architecture",
+        "middleware patterns",
+        "extension points",
+        "convention over configuration",
+        "leveraging framework constraints"
+      ],
+      "relatedSkills": [
+        "test-driven-development",
+        "architectural-patterns",
+        "modular-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-driven-design/SKILL.md"
     },
     {
       "name": "framework-evaluation-criteria",
