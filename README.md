@@ -1,6 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1012 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1013 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **1012 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1013 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 270 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 436 | Software patterns, security, testing, data science |
+| Coding | 437 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -266,9 +266,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 20:56:45 UTC  
-> **Total skills:** 1012  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1012 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 21:22:35 UTC  
+> **Total skills:** 1013  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1013 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -736,7 +736,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (436 skills)
+### Coding (437 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1174,6 +1174,7 @@ MIT — All skills are freely available and redistributable.
 | [yagni-scope-management](skills/coding/yagni-scope-management/SKILL.md) | Applies YAGNI to project planning and backlog management to prevent scope creep, enforce MVP boundaries, and reject features not needed for current delivery goals. | yagni, scope creep, MVP definition, backlog pruning, feature rejection, agile planning, over-planning |
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | yaml anchor, yaml alias, config deduplication, merge key, helm template, ansible common config, kubernetes shared spec, how do i reduce yaml repetition, <<:, &label, *alias [tactical, generation] |
 | [yaml-anchors](skills/coding/yaml-anchors/SKILL.md) | Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files. | yaml anchors, yaml aliases, & anchor, * alias, YAML merge key, docker-compose reuse, kubernetes config reuse [tactical, generation] |
+| [yaml-configuration-management](skills/coding/yaml-configuration-management/SKILL.md) | Implements YAML configuration management patterns including schema validation, anchor/alias reuse, hierarchical merging, and linting for robust infrastructure and application configuration. | yaml, yml, configuration files, schema validation, yaml anchors, config management, json schema, yaml 1.2 |
 | [zendesk-api](skills/coding/zendesk-api/SKILL.md) | Implements Zendesk API integration (Support API, Tickets, Users, Organizations, using zenpy Python SDK with OAuth 2.0, API token auth, ticket CRUD, user management, search, macros, triggers, and Zendesk REST API patterns. | zendesk, zendesk api, zenpy, zendesk support, zendesk tickets, zendesk users, zendesk organizations, how do i integrate with zendesk, support ticketing [tactical, generation] |
 | [zoom-api](skills/coding/zoom-api/SKILL.md) | Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users) using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination, and rate-limit handling. | zoom, zoom api, zoom meetings, create zoom meeting, zoom sdk, zoom webinars, zoom recording, zoom-python [tactical, generation] |
 
@@ -1355,7 +1356,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (593 skills)
+### Implementation (Build Features) (594 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1947,6 +1948,7 @@ MIT — All skills are freely available and redistributable.
 | [yagni-scope-management](skills/coding/yagni-scope-management/SKILL.md) | Coding | Applies YAGNI to project planning and backlog management to prevent scope creep, enforce MVP boundaries, and reject features not needed for current delivery goals. |
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. |
 | [yaml-anchors](skills/coding/yaml-anchors/SKILL.md) | Coding | Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files. |
+| [yaml-configuration-management](skills/coding/yaml-configuration-management/SKILL.md) | Coding | Implements YAML configuration management patterns including schema validation, anchor/alias reuse, hierarchical merging, and linting for robust infrastructure and application configuration. |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. |
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. |
 | [your-routine](skills/trading/your-routine/SKILL.md) | Trading | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. |
@@ -3395,6 +3397,7 @@ MIT — All skills are freely available and redistributable.
 | [yagni-scope-management](skills/coding/yagni-scope-management/SKILL.md) | Coding | Applies YAGNI to project planning and backlog management to prevent scope creep, enforce MVP boundaries, and reject features not needed for current delivery goals. | Implementation |
 | [yaml-anchor-alias](skills/coding/yaml-anchor-alias/SKILL.md) | Coding | Creates reusable YAML anchor and alias patterns with merge keys to eliminate repetition in configuration files across Kubernetes, Ansible, Terraform, and Helm deployments. | Implementation |
 | [yaml-anchors](skills/coding/yaml-anchors/SKILL.md) | Coding | Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files. | Implementation |
+| [yaml-configuration-management](skills/coding/yaml-configuration-management/SKILL.md) | Coding | Implements YAML configuration management patterns including schema validation, anchor/alias reuse, hierarchical merging, and linting for robust infrastructure and application configuration. | Implementation |
 | [your-edge](skills/trading/your-edge/SKILL.md) | Trading | Implements a systematic framework for discovering, documenting, and validating your unique trading edge through statistical analysis, walk-forward testing, Monte Carlo simulation, and competitive moat assessment. | Implementation |
 | [your-position](skills/trading/your-position/SKILL.md) | Trading | Implements personal position awareness framework tracking thesis validity, bias detection, portfolio impact scoring, and emotional state management for algorithmic trading positions. | Implementation |
 | [your-routine](skills/trading/your-routine/SKILL.md) | Trading | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. | Implementation |

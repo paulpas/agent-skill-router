@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T20:56:43.531355Z",
-  "totalSkills": 1012,
+  "generatedAt": "2026-05-25T21:22:34.021082Z",
+  "totalSkills": 1013,
   "domains": {
     "agent": 270,
     "cncf": 173,
-    "coding": 436,
+    "coding": 437,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 593,
+    "implementation": 594,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -24211,6 +24211,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/yaml-anchors/SKILL.md"
+    },
+    {
+      "name": "yaml-configuration-management",
+      "domain": "coding",
+      "description": "Implements YAML configuration management patterns including schema validation, anchor/alias reuse, hierarchical merging, and linting for robust infrastructure and application configuration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "yaml",
+        "yml",
+        "configuration files",
+        "schema validation",
+        "yaml anchors",
+        "config management",
+        "json schema",
+        "yaml 1.2"
+      ],
+      "relatedSkills": [
+        "coding-shell-scripting",
+        "coding-api-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/yaml-configuration-management/SKILL.md"
     },
     {
       "name": "your-edge",
