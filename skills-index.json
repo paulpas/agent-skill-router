@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T05:29:41.462079Z",
-  "totalSkills": 972,
+  "generatedAt": "2026-05-25T05:41:20.460178Z",
+  "totalSkills": 973,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 404,
+    "coding": 405,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 557,
+    "implementation": 558,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -7489,6 +7489,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/dropbox-api/SKILL.md"
+    },
+    {
+      "name": "dry-principle",
+      "domain": "coding",
+      "description": "Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dry principle",
+        "don't repeat yourself",
+        "duplicate code",
+        "remove duplication",
+        "refactor",
+        "abstraction tradeoffs",
+        "yagni balance"
+      ],
+      "relatedSkills": [
+        "coding-abstraction-design-patterns",
+        "coding-refactoring-basics",
+        "clean-code"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/dry-principle/SKILL.md"
     },
     {
       "name": "dry-principles",
