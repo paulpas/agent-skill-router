@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1005 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1005 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1005 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1005 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1007 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1007 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1007 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1007 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -14,10 +14,10 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **1005 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1005 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1005 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1005 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1007 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1007 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1007 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1007 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -95,7 +95,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 267 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 432 | Software patterns, security, testing, data science |
+| Coding | 434 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -272,17 +272,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 17:30:41 UTC  
-> **Total skills:** 1005  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1005 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 13:03:16 UTC  
+> **Total skills:** 1007  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1007 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 988 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 988 | Ranking penalty for conflicting query terms |
-| Response Profile | 988 | Verbosity, directive strength, abstraction level |
+| Archetypes | 990 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 990 | Ranking penalty for conflicting query terms |
+| Response Profile | 990 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -739,7 +739,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (432 skills)
+### Coding (434 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -902,6 +902,7 @@ MIT — All skills are freely available and redistributable.
 | [ensemble-methods](skills/coding/ensemble-methods/SKILL.md) | "Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness" | ensemble methods, bagging, boosting, stacking, voting, blending, ensemble learning [tactical, generation] |
 | [entra-id-api](skills/coding/entra-id-api/SKILL.md) | Implements Microsoft Entra ID (Azure AD) API integration (Users, Groups, Applications, Service Principals, Conditional Access, B2C) using msgraph-sdk Python + azure.identity with MSAL authentication patterns, Graph API batches, delta queries, and RBA... | microsoft entra id, azure active directory, ms graph api, azure ad users, azure ad groups, microsoft graph, how do i integrate azure ad, conditional access [tactical, generation] |
 | [error-handling](skills/coding/error-handling/SKILL.md) | Implements modern Python error handling patterns including custom exception hierarchies, context propagation, result types, and graceful degradation for resilient production systems. | error handling, exception hierarchy, custom exceptions, context propagation, result type, error recovery, graceful degradation, how do i handle errors in Python [tactical, generation] |
+| [error-handling-patterns](skills/coding/error-handling-patterns/SKILL.md) | Implements modern error handling patterns (Result types, error wrapping, retry with backoff, circuit breakers, panic recovery) to eliminate unchecked exceptions and silent failures in production systems. | error handling, Result type, error wrapping, circuit breaker, retry pattern, exception safety, how do i handle errors properly, panic recovery [tactical, diagnostic] |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. | event-driven architecture, pub/sub messaging, saga pattern, dead letter queue, outbox pattern, how do i decouple services, async message processing, distributed messaging [tactical, generation] |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. | event-driven, event driven architecture, pub/sub, event sourcing, CQRS, saga pattern, outbox pattern, message queue, eventual consistency [tactical, generation] |
 | [event-schema-versioning](skills/coding/event-schema-versioning/SKILL.md) | Implements event schema versioning strategies (semantic versioning, forward/backward compatibility, schema registry, deprecation lifecycle) to evolve event contracts in production event-driven systems without breaking consumers. | event schema versioning, schema evolution, backward compatible events, forward compatible events, pydantic models, event migration, deprecated fields, schema registry [tactical, generation] |
@@ -1134,6 +1135,7 @@ MIT — All skills are freely available and redistributable.
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. | stripe, payment intents, checkout sessions, stripe subscriptions, stripe connect, webhook signature, how do i integrate stripe payments, payment processing [tactical, generation] |
 | [structural-behavioral-patterns](skills/coding/structural-behavioral-patterns/SKILL.md) | Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities. | structural patterns, behavioral patterns, adapter pattern, observer pattern, strategy pattern, command pattern, facade pattern, how do i decouple code [tactical, generation] |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. | structural patterns, adapter pattern, bridge pattern, composite pattern, decorator pattern, facade pattern, proxy pattern, flyweight, GoF design patterns [tactical, generation] |
+| [structured-logging](skills/coding/structured-logging/SKILL.md) | Implements structured JSON logging with correlation IDs, OpenTelemetry context propagation, and tiered log level strategies for production-grade observability in Python and Go services. | structured logging, JSON logs, correlation ID, OpenTelemetry tracing, log levels, request tracing, how do i add structured logging, plain text vs structured logs [tactical, diagnostic] |
 | [supabase-sdk](skills/coding/supabase-sdk/SKILL.md) | Integrates Supabase using supabase-py 2.x with patterns for database queries (PostgREST), auth management, storage operations, real-time subscriptions, and Edge Functions. | supabase, supabase-py, postgrest, supabase auth, supabase storage, how do i use supabase from python, supabase realtime, edge functions [tactical, generation] |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" | support vector machines, SVM, kernel methods, support vectors, SVM classification [tactical, generation] |
 | [synthetic-control](skills/coding/synthetic-control/SKILL.md) | "Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation" | synthetic control, difference-in-differences, DiD, quasi-experiment, impact evaluation [tactical, generation] |
@@ -1354,7 +1356,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (589 skills)
+### Implementation (Build Features) (591 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1549,6 +1551,7 @@ MIT — All skills are freely available and redistributable.
 | [entra-id-api](skills/coding/entra-id-api/SKILL.md) | Coding | Implements Microsoft Entra ID (Azure AD) API integration (Users, Groups, Applications, Service Principals, Conditional Access, B2C) using msgraph-sdk Python + azure.identity with MSAL authentication patterns, Graph API batches, delta queries, and RBA... |
 | [error-handling](skills/coding/error-handling/SKILL.md) | Coding | Implements modern Python error handling patterns including custom exception hierarchies, context propagation, result types, and graceful degradation for resilient production systems. |
 | [error-handling](skills/go/error-handling/SKILL.md) | Go | Designs robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery strategies for resilient applications. |
+| [error-handling-patterns](skills/coding/error-handling-patterns/SKILL.md) | Coding | Implements modern error handling patterns (Result types, error wrapping, retry with backoff, circuit breakers, panic recovery) to eliminate unchecked exceptions and silent failures in production systems. |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. |
 | [event-driven-patterns](skills/coding/event-driven-patterns/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems. |
 | [event-schema-versioning](skills/coding/event-schema-versioning/SKILL.md) | Coding | Implements event schema versioning strategies (semantic versioning, forward/backward compatibility, schema registry, deprecation lifecycle) to evolve event contracts in production event-driven systems without breaking consumers. |
@@ -1876,6 +1879,7 @@ MIT — All skills are freely available and redistributable.
 | [stripe-api](skills/coding/stripe-api/SKILL.md) | Coding | Implements Stripe API integration (Payments, Subscriptions, Connect, Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient pattern, webhook signature verification, idempotency keys, and PCI-DSS compliant payment processing. |
 | [structural-behavioral-patterns](skills/coding/structural-behavioral-patterns/SKILL.md) | Coding | Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities. |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Coding | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. |
+| [structured-logging](skills/coding/structured-logging/SKILL.md) | Coding | Implements structured JSON logging with correlation IDs, OpenTelemetry context propagation, and tiered log level strategies for production-grade observability in Python and Go services. |
 | [supabase-sdk](skills/coding/supabase-sdk/SKILL.md) | Coding | Integrates Supabase using supabase-py 2.x with patterns for database queries (PostgREST), auth management, storage operations, real-time subscriptions, and Edge Functions. |
 | [support-resistance](skills/trading/support-resistance/SKILL.md) | Trading | "Implements technical levels where price tends to pause or reverse for risk management and algorithmic trading execution." |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | Coding | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" |
@@ -2728,6 +2732,7 @@ MIT — All skills are freely available and redistributable.
 | [envoy](skills/cncf/envoy/SKILL.md) | Cncf | "Envoy in Cloud-Native Engineering - Cloud-native high-performance edge/middle/service" proxy | Reference |
 | [error-handling](skills/coding/error-handling/SKILL.md) | Coding | Implements modern Python error handling patterns including custom exception hierarchies, context propagation, result types, and graceful degradation for resilient production systems. | Implementation |
 | [error-handling](skills/go/error-handling/SKILL.md) | Go | Designs robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery strategies for resilient applications. | Implementation |
+| [error-handling-patterns](skills/coding/error-handling-patterns/SKILL.md) | Coding | Implements modern error handling patterns (Result types, error wrapping, retry with backoff, circuit breakers, panic recovery) to eliminate unchecked exceptions and silent failures in production systems. | Implementation |
 | [error-trace-explainer](skills/agent/error-trace-explainer/SKILL.md) | Agent | Implements intelligent error trace explainer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [etcd](skills/cncf/etcd/SKILL.md) | Cncf | "Provides etcd in Cloud-Native Engineering - distributed key-value store" | Reference |
 | [event-driven-architecture](skills/coding/event-driven-architecture/SKILL.md) | Coding | Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems. | Implementation |
@@ -3272,6 +3277,7 @@ MIT — All skills are freely available and redistributable.
 | [stripe-automation](skills/agent/stripe-automation/SKILL.md) | Agent | Implements intelligent stripe automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [structural-behavioral-patterns](skills/coding/structural-behavioral-patterns/SKILL.md) | Coding | Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities. | Implementation |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Coding | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. | Implementation |
+| [structured-logging](skills/coding/structured-logging/SKILL.md) | Coding | Implements structured JSON logging with correlation IDs, OpenTelemetry context propagation, and tiered log level strategies for production-grade observability in Python and Go services. | Implementation |
 | [subagent-driven-development](skills/agent/subagent-driven-development/SKILL.md) | Agent | Implements intelligent subagent driven development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [supabase-sdk](skills/coding/supabase-sdk/SKILL.md) | Coding | Integrates Supabase using supabase-py 2.x with patterns for database queries (PostgREST), auth management, storage operations, real-time subscriptions, and Edge Functions. | Implementation |
 | [support-resistance](skills/trading/support-resistance/SKILL.md) | Trading | "Implements technical levels where price tends to pause or reverse for risk management and algorithmic trading execution." | Implementation |
