@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-24T22:25:27.390800Z",
-  "totalSkills": 953,
+  "generatedAt": "2026-05-25T00:54:47.989046Z",
+  "totalSkills": 958,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 385,
+    "coding": 390,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 538,
+    "implementation": 543,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -1125,6 +1125,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/api-architecture/SKILL.md"
+    },
+    {
+      "name": "api-composition-patterns",
+      "domain": "coding",
+      "description": "Implements API composition patterns for orchestrating concurrent calls across multiple microservices including parallel aggregation, timeout isolation, partial failure handling, circuit breaker per dependency, query fan-out, and schema transformation for unified client responses.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "api composition",
+        "concurrent service calls",
+        "data aggregation",
+        "microservice orchestration",
+        "fan-out pattern",
+        "partial failure",
+        "how do i combine data from multiple services"
+      ],
+      "relatedSkills": [
+        "bff-pattern",
+        "microservices-architecture",
+        "system-reliability-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-composition-patterns/SKILL.md"
     },
     {
       "name": "api-design",
@@ -2651,6 +2675,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/go/best-practices/SKILL.md"
+    },
+    {
+      "name": "bff-pattern",
+      "domain": "coding",
+      "description": "Implements backend-for-frontend (BFF) architecture patterns including client-tailored API backends, data aggregation from multiple microservices, authentication delegation, response shaping, and offline optimization for web, mobile, and partner clients.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "backend-for-frontend",
+        "bff pattern",
+        "client-specific API",
+        "data aggregation",
+        "response shaping",
+        "authentication delegation",
+        "how do i tailor APIs for different clients",
+        "web backend",
+        "mobile backend"
+      ],
+      "relatedSkills": [
+        "api-composition-patterns",
+        "microservices-architecture",
+        "cloud-native-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/bff-pattern/SKILL.md"
     },
     {
       "name": "bias-variance-tradeoff",
@@ -8747,6 +8797,32 @@
       "source": "skills/coding/framework-design/SKILL.md"
     },
     {
+      "name": "framework-evaluation-criteria",
+      "domain": "coding",
+      "description": "Systematically elicits evaluation criteria across technical, team, ecosystem, security, deployment, integration, cost, and viability dimensions to prevent hype-driven framework selection. Produces structured requirement matrices, weighted scoring frameworks, and decision records with documented trade-offs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "evaluation criteria",
+        "requirements elicitation",
+        "weighted scoring matrix",
+        "ADR decision record",
+        "technology selection framework",
+        "failure mode analysis",
+        "decision sustainability",
+        "tech comparison checklist"
+      ],
+      "relatedSkills": [
+        "framework-selection",
+        "requirement-driven-selection",
+        "framework-utilization",
+        "tool-evaluation-workflow"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-evaluation-criteria/SKILL.md"
+    },
+    {
       "name": "framework-lifecycle",
       "domain": "coding",
       "description": "Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions.",
@@ -8832,23 +8908,32 @@
     {
       "name": "framework-requirements",
       "domain": "coding",
-      "description": "Configures and scaffolds project frameworks (frontend, backend, full-stack) with dependency resolution, environment validation, and CI/CD boilerplate integration.",
+      "description": "Defines, evaluates, and validates software framework requirements including non-functional criteria (performance, security, extensibility), weighted selection scoring matrices, proof-of-concept feasibility testing, and architecture decision records for production-grade applications.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "framework setup",
-        "project scaffolding",
-        "dependency configuration",
-        "boilerplate generation",
-        "environment validation",
-        "starter kits",
-        "tech stack selection"
+        "framework requirements",
+        "evaluating frameworks",
+        "selecting libraries",
+        "dependency management",
+        "architecture decisions",
+        "tech stack selection",
+        "framework evaluation criteria",
+        "non-functional requirements",
+        "NFR",
+        "framework scoring matrix",
+        "POC testing",
+        "proof of concept",
+        "integration feasibility",
+        "production readiness gate"
       ],
       "relatedSkills": [
+        "framework-evaluation-criteria",
         "test-driven-development",
-        "software-design-principles",
-        "design-patterns-and-principles"
+        "modular-design",
+        "dependency-injection",
+        "framework-utilization"
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-requirements/SKILL.md"
@@ -18417,6 +18502,36 @@
       "source": "skills/coding/sentry-api/SKILL.md"
     },
     {
+      "name": "serverless-architecture-patterns",
+      "domain": "coding",
+      "description": "Implements serverless architecture patterns including AWS Lambda function design, event-driven triggers (S3, DynamoDB streams, SQS/SNS), Serverless API Gateway integration, cold start optimization, distributed tracing, and multi-region deployment strategies for cost-effective scalable applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "serverless architecture",
+        "AWS Lambda",
+        "Cloudflare Workers",
+        "edge computing",
+        "event-driven serverless",
+        "cold start optimization",
+        "provisioned concurrency",
+        "Lambda Layers",
+        "Serverless API Gateway",
+        "DynamoDB triggers",
+        "SQS consumer",
+        "how do I build serverless applications",
+        "pay-per-use compute"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "event-driven-architecture",
+        "cloud-native-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/serverless-architecture-patterns/SKILL.md"
+    },
+    {
       "name": "service-bus",
       "domain": "cncf",
       "description": "\"Provides Messaging service with queues and topics for reliable communication\"",
@@ -18465,6 +18580,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/service-mesh-debugging/SKILL.md"
+    },
+    {
+      "name": "service-mesh-patterns",
+      "domain": "coding",
+      "description": "Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and Linkerd.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "manifests",
+      "triggers": [
+        "service mesh",
+        "istio",
+        "linkerd",
+        "mTLS mutual TLS",
+        "canary deployment",
+        "fault injection",
+        "rate limiting",
+        "envoy proxy"
+      ],
+      "relatedSkills": [
+        "microservices-architecture",
+        "cloud-native-architecture",
+        "system-reliability-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/service-mesh-patterns/SKILL.md"
     },
     {
       "name": "sharpe-ratio",
