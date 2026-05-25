@@ -1,6 +1,10 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 972 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+<<<<<<< HEAD
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 973 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 973 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+>>>>>>> abcf3580f (feat: add new skill - dry-principle)
 
 ```
 You → "review this Python code for security issues"
@@ -11,7 +15,11 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🎯 **972 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+<<<<<<< HEAD
+- 🎯 **973 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **973 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+>>>>>>> abcf3580f (feat: add new skill - dry-principle)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -89,7 +97,19 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
+| Coding | 405 | Software patterns, security, testing, data science |
+| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
+| Go | 12 | Go idioms, concurrency patterns, error handling |
+| Linux | 16 | System administration, kernel tuning, security, networking |
+| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
+| Programming | 7 | Algorithms, frameworks, language references |
+| Trading | 89 | Execution, risk management, ML models |
+| Writing | 4 | Technical writing, style guidance |
+<<<<<<< HEAD
 | Coding | 404 | Software patterns, security, testing, data science |
+=======
+| Coding | 405 | Software patterns, security, testing, data science |
+>>>>>>> abcf3580f (feat: add new skill - dry-principle)
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -266,17 +286,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 05:29:43 UTC  
-> **Total skills:** 972  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (972 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 00:40:51 UTC  
+> **Total skills:** 973  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (973 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 960 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 960 | Ranking penalty for conflicting query terms |
-| Response Profile | 960 | Verbosity, directive strength, abstraction level |
+| Archetypes | 961 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 961 | Ranking penalty for conflicting query terms |
+| Response Profile | 961 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -728,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (404 skills)
+### Coding (405 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -870,6 +890,7 @@ MIT — All skills are freely available and redistributable.
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | domain modeling, ubiquitous language, bounded context, subdomain classification, domain map, how do i understand the domain, strategic design [diagnostic, educational] |
 | [domain-testing](skills/coding/domain-testing/SKILL.md) | Verifies DDD domain model correctness through invariant testing of aggregates and value objects, specification candidate tests, test double strategies, and domain event publishing assertions. | domain testing, aggregate testing, value object tests, specification patterns, ddd unit tests, invariant verification, how do i test domain models, domain layer testing [tactical, generation] |
 | [dropbox-api](skills/coding/dropbox-api/SKILL.md) | Integrates with Dropbox API to manage files, folders, sharing, Paper documents, and Sign requests using the official dropbox Python SDK v12. | dropbox api, dropbox python, dropbox files, dropbox sharing, dropbox paper, dropbox sign, dropbox sdk [tactical, generation] |
+| [dry-principle](skills/coding/dry-principle/SKILL.md) | Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering. | dry principle, don't repeat yourself, duplicate code, remove duplication, refactor, abstraction tradeoffs, yagni balance [tactical, diagnostic] |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | dry principle, don't repeat yourself, code duplication, refactoring, code duplication detection, refactoring guidance, maintainable code, code reuse [tactical, generation] |
 | [eda](skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data [tactical, generation] |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. | elasticsearch, elasticsearch-py, opensearch, full-text search, elastic aggregations, how do i search data from python, elk stack, vector search [tactical, generation] |
@@ -1315,7 +1336,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (557 skills)
+### Implementation (Build Features) (558 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1486,6 +1507,7 @@ MIT — All skills are freely available and redistributable.
 | [drawdown-analysis](skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." |
 | [drawdown-control](skills/trading/drawdown-control/SKILL.md) | Trading | "Implements maximum drawdown control and equity preservation for risk management and algorithmic trading execution." |
 | [dropbox-api](skills/coding/dropbox-api/SKILL.md) | Coding | Integrates with Dropbox API to manage files, folders, sharing, Paper documents, and Sign requests using the official dropbox Python SDK v12. |
+| [dry-principle](skills/coding/dry-principle/SKILL.md) | Coding | Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering. |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Coding | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases |
 | [eda](skills/coding/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Coding | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. |
@@ -2622,6 +2644,7 @@ MIT — All skills are freely available and redistributable.
 | [drawdown-analysis](skills/trading/drawdown-analysis/SKILL.md) | Trading | "Implements maximum drawdown, recovery time, and value-at-risk analysis for risk management and algorithmic trading execution." | Implementation |
 | [drawdown-control](skills/trading/drawdown-control/SKILL.md) | Trading | "Implements maximum drawdown control and equity preservation for risk management and algorithmic trading execution." | Implementation |
 | [dropbox-api](skills/coding/dropbox-api/SKILL.md) | Coding | Integrates with Dropbox API to manage files, folders, sharing, Paper documents, and Sign requests using the official dropbox Python SDK v12. | Implementation |
+| [dry-principle](skills/coding/dry-principle/SKILL.md) | Coding | Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering. | Implementation |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Coding | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | Implementation |
 | [dynamic-replanner](skills/agent/dynamic-replanner/SKILL.md) | Agent | Implements intelligent dynamic replanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [dynamodb](skills/cncf/dynamodb/SKILL.md) | Cncf | "Deploys managed NoSQL databases with DynamoDB for scalable, low-latency" key-value storage, streams, and global tables with high availability and automatic replication. | Reference |
