@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T05:41:20.460178Z",
+  "generatedAt": "2026-05-25T05:43:11.291003Z",
   "totalSkills": 973,
   "domains": {
     "agent": 262,
@@ -7508,8 +7508,8 @@
       ],
       "relatedSkills": [
         "coding-abstraction-design-patterns",
-        "coding-refactoring-basics",
-        "clean-code"
+        "coding-refactoring-techniques",
+        "coding-clean-architecture"
       ],
       "version": "1.0.0",
       "source": "skills/coding/dry-principle/SKILL.md"
