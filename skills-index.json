@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T03:54:32.022063Z",
-  "totalSkills": 964,
+  "generatedAt": "2026-05-25T05:01:04.823312Z",
+  "totalSkills": 971,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 396,
+    "coding": 403,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 549,
+    "implementation": 556,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -3450,6 +3450,30 @@
       "source": "skills/cncf/azure-cdn/SKILL.md"
     },
     {
+      "name": "chain-of-responsibility",
+      "domain": "coding",
+      "description": "Implements the GoF Chain of Responsibility pattern for building middleware-style request handler pipelines in Python where each handler processes or forwards requests along a configurable chain.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "chain of responsibility pattern",
+        "middleware pipeline python",
+        "request handler chain",
+        "how do i pass requests through handlers",
+        "error propagation pipeline",
+        "sequential processing chain"
+      ],
+      "relatedSkills": [
+        "strategy-pattern",
+        "command-pattern",
+        "behavioral-design-patterns",
+        "event-driven-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/chain-of-responsibility/SKILL.md"
+    },
+    {
       "name": "changelog-automation",
       "domain": "agent",
       "description": "Implements intelligent changelog automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -4488,6 +4512,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/cohere-api/SKILL.md"
+    },
+    {
+      "name": "command-pattern",
+      "domain": "coding",
+      "description": "Implements the GoF Command pattern for encapsulating requests as objects in Python, supporting undo/redo stacks, macro commands (composite), serialization-based replay, and async command execution.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "command pattern",
+        "undo redo implementation",
+        "command queue in python",
+        "how do i encapsulate requests",
+        "macro command pattern",
+        "serialized commands",
+        "transaction rollback pattern"
+      ],
+      "relatedSkills": [
+        "strategy-pattern",
+        "observer-pattern",
+        "chain-of-responsibility",
+        "cqrs-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/command-pattern/SKILL.md"
     },
     {
       "name": "commission-model",
@@ -6395,6 +6444,31 @@
       "source": "skills/coding/debugging-methodology/SKILL.md"
     },
     {
+      "name": "decorator-pattern",
+      "domain": "coding",
+      "description": "Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "decorator pattern",
+        "object decoration",
+        "composition over inheritance",
+        "how do i add behavior dynamically",
+        "proxy decorator",
+        "wrapper pattern",
+        "behavioral extension"
+      ],
+      "relatedSkills": [
+        "adapter-pattern",
+        "strategy-pattern",
+        "structural-design-patterns",
+        "dependency-inversion-principle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/decorator-pattern/SKILL.md"
+    },
+    {
       "name": "deduplication-patterns",
       "domain": "coding",
       "description": "Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases.",
@@ -8225,6 +8299,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-explainable-ai/SKILL.md"
+    },
+    {
+      "name": "factory-method",
+      "domain": "coding",
+      "description": "Implements the GoF Factory Method pattern for polymorphic object creation in Python using ABC-based factories, registration decorators, and type dispatch to replace if/elif chains with extensible factory hierarchies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "factory method pattern",
+        "object creation factory",
+        "type-based instantiation",
+        "abstract factory vs factory method",
+        "how do i create objects dynamically",
+        "polymorphic constructors",
+        "factory registry"
+      ],
+      "relatedSkills": [
+        "builder-pattern",
+        "creational-design-patterns",
+        "strategy-pattern",
+        "dependency-inversion-principle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/factory-method/SKILL.md"
     },
     {
       "name": "failover-handling",
@@ -15122,6 +15221,31 @@
       "source": "skills/coding/ds-observational-studies/SKILL.md"
     },
     {
+      "name": "observer-pattern",
+      "domain": "coding",
+      "description": "Implements the GoF Observer pattern for decoupled event-driven architecture in Python using ABC-based subjects, weakref-based subscriptions, async observers with asyncio.create_task, and structured event dataclasses.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "observer pattern",
+        "event-driven architecture",
+        "pub sub in python",
+        "how do i implement event notification",
+        "weakref observer",
+        "async observer pattern",
+        "decoupled event system"
+      ],
+      "relatedSkills": [
+        "strategy-pattern",
+        "command-pattern",
+        "behavioral-design-patterns",
+        "event-driven-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/observer-pattern/SKILL.md"
+    },
+    {
       "name": "oci-sdk",
       "domain": "coding",
       "description": "Integrates Oracle Cloud Infrastructure services (Compute, Object Storage, Autonomous DB, Functions) using the OCI Python SDK with config-based authentication and resource management.",
@@ -18904,6 +19028,30 @@
       "source": "skills/coding/single-responsibility/SKILL.md"
     },
     {
+      "name": "singleton-pattern",
+      "domain": "coding",
+      "description": "Implements the GoF Singleton pattern for controlled object lifecycle management in Python using module-level singletons, metaclass-based enforcement, threading-safe lazy initialization, and async-compatible variants.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "singleton pattern",
+        "module-level singleton",
+        "metaclass singleton",
+        "thread-safe singleton",
+        "lazy initialization singleton",
+        "object lifecycle management",
+        "how do i ensure single instance"
+      ],
+      "relatedSkills": [
+        "dependency-inversion-principle",
+        "factory-method",
+        "creational-design-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/singleton-pattern/SKILL.md"
+    },
+    {
       "name": "skill-audit",
       "domain": "agent",
       "description": "Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring.",
@@ -21048,6 +21196,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/open-telemetry/SKILL.md"
+    },
+    {
+      "name": "template-method-pattern",
+      "domain": "coding",
+      "description": "Implements the GoF Template Method pattern for defining algorithm skeletons in Python ABCs with customizable hook methods, comparing inheritance-based templating vs composition-based strategy selection.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "template method pattern",
+        "abstract base class algorithm",
+        "hook method python",
+        "how do i define algorithm skeleton",
+        "subclass customization",
+        "inheritance-based extension",
+        "strategy vs template method"
+      ],
+      "relatedSkills": [
+        "single-responsibility",
+        "dry-principles",
+        "open-closed-principle",
+        "design-patterns-and-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/template-method-pattern/SKILL.md"
     },
     {
       "name": "temporal-golang-pro",
