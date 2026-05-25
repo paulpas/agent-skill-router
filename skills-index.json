@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T06:02:37.232032Z",
-  "totalSkills": 975,
+  "generatedAt": "2026-05-25T06:34:31.759184Z",
+  "totalSkills": 976,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 407,
+    "coding": 408,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 560,
+    "implementation": 561,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -4983,31 +4983,25 @@
     {
       "name": "configuration-management",
       "domain": "coding",
-      "description": "Implements production configuration management with layered config resolution, secret rotation, dynamic reloading without downtime, drift detection, and validated environment-specific configuration trees for application systems.",
+      "description": "Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "configuration management",
-        "config tree",
-        "layered config",
-        "secret rotation",
-        "Vault integration",
-        "dynamic reloading",
-        "hot reload",
-        "configuration drift",
-        "environment configs",
-        "config validation",
-        "sealed secrets",
-        "how do i manage application config",
-        "configuration drift detection",
-        "runtime config changes"
+        "config loading",
+        "pydantic settings",
+        ".env files",
+        "environment variables",
+        "secrets management",
+        "config schema validation",
+        "how do i manage application configuration",
+        "layered configuration"
       ],
       "relatedSkills": [
-        "coding-production-readiness",
-        "linux-configuration-management",
-        "cncf-consul",
-        "coding-security-review"
+        "software-engineering-principles",
+        "modern-python-development",
+        "production-readiness"
       ],
       "version": "1.0.0",
       "source": "skills/coding/configuration-management/SKILL.md"
@@ -8014,6 +8008,31 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/envoy/SKILL.md"
+    },
+    {
+      "name": "error-handling",
+      "domain": "coding",
+      "description": "Implements modern Python error handling patterns including custom exception hierarchies, context propagation, result types, and graceful degradation for resilient production systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "error handling",
+        "exception hierarchy",
+        "custom exceptions",
+        "context propagation",
+        "result type",
+        "error recovery",
+        "graceful degradation",
+        "how do i handle errors in Python"
+      ],
+      "relatedSkills": [
+        "software-engineering-principles",
+        "software-maintainability",
+        "api-design-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/error-handling/SKILL.md"
     },
     {
       "name": "error-handling",
