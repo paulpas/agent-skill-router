@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T08:21:59.449815Z",
+  "generatedAt": "2026-05-25T08:42:40.553449Z",
   "totalSkills": 983,
   "domains": {
     "agent": 267,
@@ -393,7 +393,7 @@
     {
       "name": "agent-security-guardrails",
       "domain": "agent",
-      "description": "Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM-powered agents against adversarial inputs and unauthorized tool execution.",
+      "description": "Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
