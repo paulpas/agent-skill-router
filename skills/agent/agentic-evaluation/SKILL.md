@@ -27,7 +27,7 @@ metadata:
 
 # Agentic Evaluation Framework
 
-Implements systematic evaluation, benchmarking, and testing of AI agent behaviors to measure tool-use accuracy, multi-turn reasoning quality, hallucination rates, and end-to-end task success. This skill guides the model in building automated evaluation pipelines that produce reproducible metrics for agent performance tracking across development iterations.
+Implements systematic evaluation, benchmarking, and testing of AI agent behaviors to measure tool-use accuracy, multi-turn reasoning quality, hallucination rates, and end-to-end task success. This skill applies the 5 Laws of Elegant Defense — particularly Law 2 (Parse at boundary) for trace validation and Law 3 (Atomic Predictability) for immutable grading results. This skill guides the model in building automated evaluation pipelines that produce reproducible metrics for agent performance tracking across development iterations.
 
 Evaluation is not a single metric — it spans capability testing (can the agent use tools correctly?), correctness auditing (does the agent produce factual outputs?), multi-turn reasoning assessment (does the agent maintain coherent plans across interactions?), and regression tracking (did a new prompt version make things better or worse?). A robust evaluation framework measures all four dimensions with automated grading, human-in-the-loop validation, and continuous monitoring.
 
@@ -126,7 +126,7 @@ import hashlib
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any
-from datetime import datetime
+from datetime import datetime, timezone
 
 logger = logging.getLogger("agent.evaluation")
 
@@ -455,7 +455,7 @@ class GradingEngine:
                 task_id=task.task_id,
                 passed=False,
                 failure_reasons=[f"Execution error: {trace.error_message}"],
-                timestamp=datetime.utcnow().isoformat(),
+                timestamp=datetime.now(timezone.utc).isoformat(),
             )
 
         # Compute per-dimension scores
@@ -512,7 +512,7 @@ class GradingEngine:
             hallucination_score=hallucination_score,
             overall_score=round(overall_score, 4),
             failure_reasons=failure_reasons,
-            timestamp=datetime.utcnow().isoformat(),
+            timestamp=datetime.now(timezone.utc).isoformat(),
         )
 ```
 
@@ -619,7 +619,7 @@ class MetricsAggregator:
             "by_difficulty": difficulty_stats,
             "task_breakdown": task_breakdown,
             "regression_alerts": regression_alerts,
-            "evaluation_timestamp": datetime.utcnow().isoformat(),
+            "evaluation_timestamp": datetime.now(timezone.utc).isoformat(),
         }
 
     def _detect_regressions(self, current: dict[str, float]) -> list[dict]:
@@ -701,6 +701,7 @@ def run_evaluation_cycle(
 ## Constraints
 
 ### MUST DO
+- Follow the 5 Laws of Elegant Defense — particularly Law 2 (Parse at boundary) for all input validation and Law 3 (Atomic Predictability) for immutable grading results
 - Define evaluation tasks with explicit ground truth and grading criteria — never run unmeasured tests and call them "evaluation"
 - Include both positive test cases (expected success) AND negative test cases (expected refusal or error) in every evaluation suite
 - Measure tool-use accuracy as a separate dimension from response quality — getting the right answer via the wrong tool is still a failure

@@ -1,6 +1,6 @@
 ---
 name: agent-security-guardrails
-description: Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM-powered agents against adversarial inputs and unauthorized tool execution.
+description: Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks.
 license: MIT
 compatibility: opencode
 archetypes:
@@ -495,48 +495,54 @@ class OutputValidator:
 
         Returns sanitized output with sensitive patterns redacted. Logs all
         violations for audit purposes. Blocks if CRITICAL content is detected.
+        
+        Collects all matches first (preserving original positions), then rebuilds
+        the string from end-to-start to avoid position-shift bugs during redaction.
         """
         findings: dict[str, list[tuple[str, str]]] = {}
 
+        # First pass: collect all PII matches with their positions in original text
+        all_matches: list[tuple[str, int, int, str]] = []  # (pattern_name, start, end, matched_text)
         for pattern_name, pattern in self._SENSITIVE_PATTERNS:
-            matches = list(pattern.finditer(output))
-            if matches:
-                matched_values = []
-                for m in matches:
-                    matched_values.append((m.group(), f"{pattern_name}_{m.start()}-{m.end()}"))
-                    # Redact this match
-                    output = output[:m.start()] + "[REDACTED]" + output[m.end():"]"
+            for m in pattern.finditer(output):
+                all_matches.append((pattern_name, m.start(), m.end(), m.group()))
 
-                    # Recalculate positions after redaction for next matches
-                    output = output[:m.start()] + "*" * len(m.group()) + output[m.end():]
-                findings[pattern_name] = matched_values
+        if not all_matches:
+            # Check output size only if no PII found
+            if len(output) > self.max_output_bytes:
+                truncated = output[:self.max_output_bytes] + "\n[OUTPUT TRUNCATED]"
+                return GuardrailResult(
+                    action=GuardrailAction.SANITIZE,
+                    severity=Severity.MEDIUM,
+                    message=f"Output truncated from {len(output)} to {self.max_output_bytes} bytes",
+                    sanitized_input=truncated,
+                )
+            return GuardrailResult(action=GuardrailAction.PASS, severity=Severity.LOW, message="Output clean")
 
-        if findings:
-            severity = Severity.CRITICAL if any(
-                name in ("private_key", "api_key") for name in findings
-            ) else Severity.HIGH
-            logger.warning(
-                "PII/sensitive data detected in output from agent '%s': %s",
-                agent_id, list(findings.keys()),
-            )
-            return GuardrailResult(
-                action=GuardrailAction.SANITIZE,
-                severity=severity,
-                message=f"Redacted sensitive patterns: {', '.join(findings.keys())}",
-                sanitized_input=output,
-            )
+        # Group findings by pattern type
+        for pattern_name, start, end, matched_text in all_matches:
+            if pattern_name not in findings:
+                findings[pattern_name] = []
+            findings[pattern_name].append((matched_text, f"{pattern_name}_{start}-{end}"))
 
-        # Check output size
-        if len(output) > self.max_output_bytes:
-            truncated = output[:self.max_output_bytes] + "\n[OUTPUT TRUNCATED]"
-            return GuardrailResult(
-                action=GuardrailAction.SANITIZE,
-                severity=Severity.MEDIUM,
-                message=f"Output truncated from {len(output)} to {self.max_output_bytes} bytes",
-                sanitized_input=truncated,
-            )
+        # Second pass: rebuild string from end-to-start to preserve positions
+        redacted = output
+        for pattern_name, start, end, matched_text in sorted(all_matches, key=lambda x: x[1], reverse=True):
+            redacted = redacted[:start] + "[REDACTED]" + redacted[end:]
 
-        return GuardrailResult(action=GuardrailAction.PASS, severity=Severity.LOW, message="Output clean")
+        severity = Severity.CRITICAL if any(
+            name in ("private_key", "api_key") for name in findings
+        ) else Severity.HIGH
+        logger.warning(
+            "PII/sensitive data detected in output from agent '%s': %s",
+            agent_id, list(findings.keys()),
+        )
+        return GuardrailResult(
+            action=GuardrailAction.SANITIZE,
+            severity=severity,
+            message=f"Redacted sensitive patterns: {', '.join(findings.keys())}",
+            sanitized_input=redacted,
+        )
 
     def validate_structured_output(self, raw_text: str, schema: dict) -> GuardrailResult:
         """Validate that structured output conforms to a JSON schema.
