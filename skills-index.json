@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T05:43:11.291003Z",
-  "totalSkills": 973,
+  "generatedAt": "2026-05-25T06:02:37.232032Z",
+  "totalSkills": 975,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 405,
+    "coding": 407,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 558,
+    "implementation": 560,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -23105,6 +23105,28 @@
       "source": "skills/coding/yagni/SKILL.md"
     },
     {
+      "name": "yagni-code",
+      "domain": "coding",
+      "description": "Enforces YAGNI at the code level to eliminate dead functions, premature abstractions, and unused configuration by writing only what is immediately required.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "yagni",
+        "dead code",
+        "premature abstraction",
+        "over-engineering",
+        "write-only-needed-code",
+        "unnecessary complexity"
+      ],
+      "relatedSkills": [
+        "coding-clean-code-refactoring",
+        "coding-test-driven-development"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/yagni-code/SKILL.md"
+    },
+    {
       "name": "yagni-principle",
       "domain": "coding",
       "description": "Applies the YAGNI principle to prevent over-engineering by eliminating premature abstractions, unused features, and speculative complexity from codebases.",
@@ -23129,6 +23151,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/yagni-principle/SKILL.md"
+    },
+    {
+      "name": "yagni-scope-management",
+      "domain": "coding",
+      "description": "Applies YAGNI to project planning and backlog management to prevent scope creep, enforce MVP boundaries, and reject features not needed for current delivery goals.",
+      "role": "implementation",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "yagni",
+        "scope creep",
+        "MVP definition",
+        "backlog pruning",
+        "feature rejection",
+        "agile planning",
+        "over-planning"
+      ],
+      "relatedSkills": [
+        "coding-yagni-code",
+        "coding-minimum-viable-product",
+        "agent-goal-to-milestones"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/yagni-scope-management/SKILL.md"
     },
     {
       "name": "yaml-anchor-alias",
