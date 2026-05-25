@@ -11,7 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
-  related-skills: coding-abstraction-design-patterns, coding-refactoring-basics, clean-code
+  related-skills: coding-abstraction-design-patterns, coding-refactoring-techniques, coding-clean-architecture
   archetypes:
     - tactical
     - diagnostic
@@ -465,7 +465,8 @@ default_policy.rules.append(ComplianceRule())
 | Skill | Purpose |
 |---|---|
 | `coding-abstraction-design-patterns` | Covers when and how to choose between different abstraction patterns (Strategy, Template Method, Factory, etc.) beyond just DRY extraction |
-| `coding-refactoring-basics` | Provides the broader refactoring toolkit — Extract Variable, Rename, Introduce Parameter Object — that complements DRY refactoring |
+| `coding-refactoring-techniques` | Provides the broader refactoring toolkit — Extract Variable, Rename, Introduce Parameter Object — that complements DRY refactoring |
+| `coding-clean-architecture` | Architectural guidance on separation of concerns and dependency management — related because clean architecture naturally reduces duplication at the design level |
 
 ---
 
