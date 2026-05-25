@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T02:37:24.561420Z",
-  "totalSkills": 960,
+  "generatedAt": "2026-05-25T02:49:19.363504Z",
+  "totalSkills": 961,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 392,
+    "coding": 393,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 545,
+    "implementation": 546,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -10968,6 +10968,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/input-validation/SKILL.md"
+    },
+    {
+      "name": "input-validation-patterns",
+      "domain": "coding",
+      "description": "Implements production input validation and sanitization patterns including Pydantic v2 schemas, recursive nested validation, custom validators with error accumulation, allowlist enforcement, and type coercion for secure API endpoints.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "input validation",
+        "pydantic validation",
+        "schema validation",
+        "allowlist validation",
+        "sanitize input",
+        "recursive validation",
+        "error accumulation",
+        "type coercion",
+        "data sanitization",
+        "how do i validate user input"
+      ],
+      "relatedSkills": [
+        "api-design",
+        "engineering-error-handling",
+        "graphql-error-handling-validation",
+        "input-processing-pipelines"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/input-validation-patterns/SKILL.md"
     },
     {
       "name": "instruction-engineering",
