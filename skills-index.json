@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T18:03:40.336667Z",
-  "totalSkills": 1007,
+  "generatedAt": "2026-05-25T18:32:51.135382Z",
+  "totalSkills": 1008,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 434,
+    "coding": 435,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 236,
-    "implementation": 591,
+    "implementation": 592,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -8164,6 +8164,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/engineering-error-handling/SKILL.md"
+    },
+    {
+      "name": "engineering-principle-conflicts",
+      "domain": "coding",
+      "description": "Resolves contradictions between SOLID, DRY, KISS, and YAGNI principles using a structured decision framework with trade-off analysis and domain-context scoring for architecture decisions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "principle conflicts",
+        "SOLID contradictions",
+        "DRY fragility",
+        "when to abstract",
+        "KISS vs abstraction",
+        "YAGNI tradeoffs",
+        "SRP vs ISP",
+        "architecture decision framework",
+        "code golf trade-offs",
+        "premature abstraction"
+      ],
+      "relatedSkills": [
+        "engineering-principles",
+        "software-design-principles",
+        "design-patterns-and-principles",
+        "software-engineering-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/engineering-principle-conflicts/SKILL.md"
     },
     {
       "name": "engineering-principles",
