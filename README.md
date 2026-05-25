@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 954 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 958 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 954 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 958 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 954 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 958 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 954 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 958 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
 >>>>>>> origin/main
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **954 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **958 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **954 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **958 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **954 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **958 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **954 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **958 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b88b06bfe (feat: add new skills - ddd-context-mapping and ddd-aggregate-lifecycle)
 >>>>>>> origin/main
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -109,7 +109,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 262 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 386 | Software patterns, security, testing, data science |
+| Coding | 390 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -309,17 +309,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-24 18:35:58 UTC  
-> **Total skills:** 954  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (954 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-24 19:54:28 UTC  
+> **Total skills:** 958  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (958 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 951 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 951 | Ranking penalty for conflicting query terms |
-| Response Profile | 951 | Verbosity, directive strength, abstraction level |
+| Archetypes | 953 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 953 | Ranking penalty for conflicting query terms |
+| Response Profile | 953 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -771,7 +771,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (386 skills)
+### Coding (390 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -791,6 +791,7 @@ MIT — All skills are freely available and redistributable.
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. | anti corruption layer, acl, foreign model translation, boundary adapter, external system isolation, how do i protect my domain from bad apis, legacy system integration, domain contamination [tactical, generation] |
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. | anti-pattern, god object, leaky abstraction, feature envy, shotgun surgery, cargo cult, code smell, refactoring, bad design, harmful patterns [educational] |
 | [api-architecture](skills/coding/api-architecture/SKILL.md) | Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces. | api architecture, RESTful API, GraphQL, gRPC, API versioning, OpenAPI specification, rate limiting, authentication patterns, how do i design an API, API gateway, microservice communication, API design [tactical, generation, strategic] |
+| [api-composition-patterns](skills/coding/api-composition-patterns/SKILL.md) | Implements API composition patterns for orchestrating concurrent calls across multiple microservices including parallel aggregation, timeout isolation, partial failure handling, circuit breaker per dependency, query fan-out, and schema transformation... | api composition, concurrent service calls, data aggregation, microservice orchestration, fan-out pattern, partial failure, how do i combine data from multiple services [tactical, generation] |
 | [api-design](skills/coding/api-design/SKILL.md) | Implements production REST API design patterns: resource modeling, unified error envelopes, Pydantic validation, rate limiting, OpenAPI docs, and versioning for maintainable backend systems. | api design, restful api, resource modeling, pydantic validation, error envelope, api versioning, fastapi patterns, how do i design an api [tactical, generation] |
 | [api-design-principles](skills/coding/api-design-principles/SKILL.md) | Implements modern API design principles (REST resource modeling, GraphQL schema design, standardized error responses, versioning strategies, and security best practices) for production-grade backend services. | api design, REST API, GraphQL, API versioning, error handling, OpenAPI, hypermedia, HATEOAS, API security, rate limiting, JSON:API |
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. | api development, REST API design, GraphQL schema design, API error handling, OpenAPI spec, API versioning strategy, how do i build a production API, API conventions [tactical, generation] |
@@ -822,6 +823,7 @@ MIT — All skills are freely available and redistributable.
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" | bayesian inference, bayes, prior, posterior, probabilistic inference, how do i do bayesian [tactical, generation] |
 | [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. | behavioral patterns, observer pattern, state pattern, command pattern, strategy pattern, template method, mediator pattern, chain of responsibility, iterator pattern, object communication [tactical, generation] |
 | [best-practices](skills/coding/best-practices/SKILL.md) | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" | markdown best practices, markdown-best-practices, opencode, skills, syntax [tactical, generation] |
+| [bff-pattern](skills/coding/bff-pattern/SKILL.md) | Implements backend-for-frontend (BFF) architecture patterns including client-tailored API backends, data aggregation from multiple microservices, authentication delegation, response shaping, and offline optimization for web, mobile, and partner clien... | backend-for-frontend, bff pattern, client-specific API, data aggregation, response shaping, authentication delegation, how do i tailor APIs for different clients, web backend, mobile backend |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" | bias-variance, overfitting, underfitting, regularization, generalization, how do I prevent overfitting [tactical, generation] |
 | [bigquery-sdk](skills/coding/bigquery-sdk/SKILL.md) | Integrates Google BigQuery using google-cloud-bigquery 3.x with patterns for SQL queries, dataset/table management, streaming inserts, BI Engine, and load jobs from GCS. | bigquery, google cloud bigquery, bigquery sql, how do i query bigquery from python, bigquery streaming, google-cloud-bigquery, bi engine, bigquery load job [tactical, generation] |
 | [bitbucket-api](skills/coding/bitbucket-api/SKILL.md) | Integrates with Bitbucket Cloud and Bitbucket Data Center REST APIs via atlassian-python-api to manage repositories, pull requests, pipelines, webhooks, and workspace settings. | bitbucket api, atlassian-python-api, bitbucket cloud, bitbucket pipelines, pull request bitbucket, bitbucket webhooks, manage bitbucket repos, bitbucket data center [tactical, generation] |
@@ -1096,6 +1098,8 @@ MIT — All skills are freely available and redistributable.
 | [segment-api](skills/coding/segment-api/SKILL.md) | Implements Segment (CDP) integration (track, identify, group, page, screen, alias) using analytics-python SDK with event batching, user traits, group traits, page properties, Segment Spec compliance, and HTTP API fallback patterns. | segment, cdp, customer data platform, segment track identify, segment spec, how do i integrate segment tracking, rudderstack, customer data infrastructure [tactical, generation] |
 | [sendgrid-api](skills/coding/sendgrid-api/SKILL.md) | Integrates Twilio SendGrid API (Mail Send, Dynamic Templates, Marketing Campaigns, Inbound Parse, Event Webhooks) using the sendgrid Python SDK v6.x with proper mail construction and deliverability patterns. | sendgrid, send email, transactional email, sendgrid api, email templates, dynamic templates, email delivery, marketing campaigns [tactical, generation] |
 | [sentry-api](skills/coding/sentry-api/SKILL.md) | Implements Sentry API integration (error tracking, performance monitoring, issue management, release tracking, event ingestion) using sentry-sdk Python SDK with error capture, performance tracing, breadcrumbs, issue querying, and release management v... | sentry, error tracking, performance monitoring, sentry issues, sentry sdk, exception capture, how do i integrate sentry error tracking, application monitoring [tactical, generation] |
+| [serverless-architecture-patterns](skills/coding/serverless-architecture-patterns/SKILL.md) | Implements serverless architecture patterns including AWS Lambda function design, event-driven triggers (S3, DynamoDB streams, SQS/SNS), Serverless API Gateway integration, cold start optimization, distributed tracing, and multi-region deployment str... | serverless architecture, AWS Lambda, Cloudflare Workers, edge computing, event-driven serverless, cold start optimization, provisioned concurrency, Lambda Layers, Serverless API Gateway, DynamoDB triggers, SQS consumer, how do I build serverless applications, pay-per-use compute |
+| [service-mesh-patterns](skills/coding/service-mesh-patterns/SKILL.md) | Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and... | service mesh, istio, linkerd, mTLS mutual TLS, canary deployment, fault injection, rate limiting, envoy proxy [tactical, generation, strategic] |
 | [shop](skills/coding/shop/SKILL.md) | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | application, guide, juice shop, juice-shop, owasp, security best practices, security guidelines, vulnerability scanning [tactical, generation] |
 | [shopify-api](skills/coding/shopify-api/SKILL.md) | Implements Shopify API integration (Products, Orders, Customers, Storefront GraphQL, Admin REST) using shopifyapi Python SDK with OAuth 2.0 flow, webhook HMAC verification, cursor pagination, and ecommerce platform data synchronization patterns. | shopify, shopify admin api, shopify storefront graphql, shopify products, shopify orders, shopify webhooks, shopify oauth, how do i integrate shopify api, ecommerce platform [tactical, generation] |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | single letter variables, naming conventions, code readability, variable names, a b c d x y z, ambiguous identifiers, code review [tactical, generation] |
@@ -1340,7 +1344,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (539 skills)
+### Implementation (Build Features) (543 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1367,6 +1371,7 @@ MIT — All skills are freely available and redistributable.
 | [anthropic-api](skills/coding/anthropic-api/SKILL.md) | Coding | Integrates Anthropic Claude API (Messages API, Tool Use, MCP Connector, Computer Use, Batches) using the anthropic Python SDK with streaming and error handling. |
 | [anti-corruption-layer](skills/coding/anti-corruption-layer/SKILL.md) | Coding | Implements Anti-Corruption Layer patterns to isolate domain models from foreign systems, translating external APIs and legacy data structures into clean internal models while rejecting incompatible types at boundaries. |
 | [api-architecture](skills/coding/api-architecture/SKILL.md) | Coding | Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces. |
+| [api-composition-patterns](skills/coding/api-composition-patterns/SKILL.md) | Coding | Implements API composition patterns for orchestrating concurrent calls across multiple microservices including parallel aggregation, timeout isolation, partial failure handling, circuit breaker per dependency, query fan-out, and schema transformation... |
 | [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements production REST API design patterns: resource modeling, unified error envelopes, Pydantic validation, rate limiting, OpenAPI docs, and versioning for maintainable backend systems. |
 | [api-design-principles](skills/coding/api-design-principles/SKILL.md) | Coding | Implements modern API design principles (REST resource modeling, GraphQL schema design, standardized error responses, versioning strategies, and security best practices) for production-grade backend services. |
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Coding | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. |
@@ -1399,6 +1404,7 @@ MIT — All skills are freely available and redistributable.
 | [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Coding | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. |
 | [best-practices](skills/coding/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" |
 | [best-practices](skills/go/best-practices/SKILL.md) | Go | Enforces Go idioms and best practices including error handling, interface design, testing conventions, and code organization for maintainable applications. |
+| [bff-pattern](skills/coding/bff-pattern/SKILL.md) | Coding | Implements backend-for-frontend (BFF) architecture patterns including client-tailored API backends, data aggregation from multiple microservices, authentication delegation, response shaping, and offline optimization for web, mobile, and partner clien... |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | Coding | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" |
 | [bigquery-sdk](skills/coding/bigquery-sdk/SKILL.md) | Coding | Integrates Google BigQuery using google-cloud-bigquery 3.x with patterns for SQL queries, dataset/table management, streaming inserts, BI Engine, and load jobs from GCS. |
 | [bitbucket-api](skills/coding/bitbucket-api/SKILL.md) | Coding | Integrates with Bitbucket Cloud and Bitbucket Data Center REST APIs via atlassian-python-api to manage repositories, pull requests, pipelines, webhooks, and workspace settings. |
@@ -1772,7 +1778,9 @@ MIT — All skills are freely available and redistributable.
 | [sentiment-analysis](skills/trading/sentiment-analysis/SKILL.md) | Trading | "AI-powered sentiment analysis for news, social media, and political figures" in trading |
 | [sentiment-features](skills/trading/sentiment-features/SKILL.md) | Trading | "Provides Extract market sentiment from news, social media, and analyst reports" |
 | [sentry-api](skills/coding/sentry-api/SKILL.md) | Coding | Implements Sentry API integration (error tracking, performance monitoring, issue management, release tracking, event ingestion) using sentry-sdk Python SDK with error capture, performance tracing, breadcrumbs, issue querying, and release management v... |
+| [serverless-architecture-patterns](skills/coding/serverless-architecture-patterns/SKILL.md) | Coding | Implements serverless architecture patterns including AWS Lambda function design, event-driven triggers (S3, DynamoDB streams, SQS/SNS), Serverless API Gateway integration, cold start optimization, distributed tracing, and multi-region deployment str... |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. |
+| [service-mesh-patterns](skills/coding/service-mesh-patterns/SKILL.md) | Coding | Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and... |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" |
 | [shell-command-chaining](skills/linux/shell-command-chaining/SKILL.md) | Linux | Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts. |
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Linux | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. |
@@ -2366,6 +2374,7 @@ MIT — All skills are freely available and redistributable.
 | [antigravity-skill-orchestrator](skills/agent/antigravity-skill-orchestrator/SKILL.md) | Agent | Implements intelligent antigravity skill orchestrator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [antigravity-workflows](skills/agent/antigravity-workflows/SKILL.md) | Agent | Implements intelligent antigravity workflows with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-architecture](skills/coding/api-architecture/SKILL.md) | Coding | Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces. | Implementation |
+| [api-composition-patterns](skills/coding/api-composition-patterns/SKILL.md) | Coding | Implements API composition patterns for orchestrating concurrent calls across multiple microservices including parallel aggregation, timeout isolation, partial failure handling, circuit breaker per dependency, query fan-out, and schema transformation... | Implementation |
 | [api-design](skills/coding/api-design/SKILL.md) | Coding | Implements production REST API design patterns: resource modeling, unified error envelopes, Pydantic validation, rate limiting, OpenAPI docs, and versioning for maintainable backend systems. | Implementation |
 | [api-design-principles](skills/coding/api-design-principles/SKILL.md) | Coding | Implements modern API design principles (REST resource modeling, GraphQL schema design, standardized error responses, versioning strategies, and security best practices) for production-grade backend services. | Implementation |
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Coding | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. | Implementation |
@@ -2430,6 +2439,7 @@ MIT — All skills are freely available and redistributable.
 | [best-practices](skills/cncf/best-practices/SKILL.md) | Cncf | "Cloud Native Computing Foundation (CNCF) architecture best practices" for production-grade Kubernetes deployments. Covers service mesh, CNI, GitOps, CI/CD, observability, security, networking, and scaling patterns across the CNCF landscape. | Reference |
 | [best-practices](skills/coding/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" | Implementation |
 | [best-practices](skills/go/best-practices/SKILL.md) | Go | Enforces Go idioms and best practices including error handling, interface design, testing conventions, and code organization for maintainable applications. | Implementation |
+| [bff-pattern](skills/coding/bff-pattern/SKILL.md) | Coding | Implements backend-for-frontend (BFF) architecture patterns including client-tailored API backends, data aggregation from multiple microservices, authentication delegation, response shaping, and offline optimization for web, mobile, and partner clien... | Implementation |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | Coding | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" | Implementation |
 | [bigquery-sdk](skills/coding/bigquery-sdk/SKILL.md) | Coding | Integrates Google BigQuery using google-cloud-bigquery 3.x with patterns for SQL queries, dataset/table management, streaming inserts, BI Engine, and load jobs from GCS. | Implementation |
 | [bitbucket-api](skills/coding/bitbucket-api/SKILL.md) | Coding | Integrates with Bitbucket Cloud and Bitbucket Data Center REST APIs via atlassian-python-api to manage repositories, pull requests, pipelines, webhooks, and workspace settings. | Implementation |
@@ -3086,8 +3096,10 @@ MIT — All skills are freely available and redistributable.
 | [sentiment-analysis](skills/trading/sentiment-analysis/SKILL.md) | Trading | "AI-powered sentiment analysis for news, social media, and political figures" in trading | Implementation |
 | [sentiment-features](skills/trading/sentiment-features/SKILL.md) | Trading | "Provides Extract market sentiment from news, social media, and analyst reports" | Implementation |
 | [sentry-api](skills/coding/sentry-api/SKILL.md) | Coding | Implements Sentry API integration (error tracking, performance monitoring, issue management, release tracking, event ingestion) using sentry-sdk Python SDK with error capture, performance tracing, breadcrumbs, issue querying, and release management v... | Implementation |
+| [serverless-architecture-patterns](skills/coding/serverless-architecture-patterns/SKILL.md) | Coding | Implements serverless architecture patterns including AWS Lambda function design, event-driven triggers (S3, DynamoDB streams, SQS/SNS), Serverless API Gateway integration, cold start optimization, distributed tracing, and multi-region deployment str... | Implementation |
 | [service-bus](skills/cncf/service-bus/SKILL.md) | Cncf | "Provides Messaging service with queues and topics for reliable communication" | Reference |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. | Implementation |
+| [service-mesh-patterns](skills/coding/service-mesh-patterns/SKILL.md) | Coding | Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and... | Implementation |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" | Implementation |
 | [shell-command-chaining](skills/linux/shell-command-chaining/SKILL.md) | Linux | Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts. | Implementation |
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Linux | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. | Implementation |
