@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T08:42:40.553449Z",
-  "totalSkills": 983,
+  "generatedAt": "2026-05-25T09:16:36.708273Z",
+  "totalSkills": 986,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 410,
+    "coding": 413,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 568,
+    "implementation": 571,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -3129,6 +3129,33 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/event-bus/SKILL.md"
+    },
+    {
+      "name": "business-rules-engine",
+      "domain": "coding",
+      "description": "Implements a business rules engine using declarative configuration (JSON/YAML-based rule definitions, condition evaluation chains, and runtime rule execution) to replace hard-coded if/elif branches for frequently-changing domain validations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "business rules engine",
+        "rules engine",
+        "decision table",
+        "condition evaluation",
+        "declarative rules",
+        "rule validation",
+        "how do i evaluate complex rules",
+        "compliance rules",
+        "pricing rules"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "input-validation-patterns",
+        "ddd-tactical-patterns",
+        "framework-requirements"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/business-rules-engine/SKILL.md"
     },
     {
       "name": "caching-strategies",
@@ -7451,6 +7478,59 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/domain-modeling/SKILL.md"
+    },
+    {
+      "name": "domain-repository-pattern",
+      "domain": "coding",
+      "description": "Implements repository and specification patterns for DDD to abstract data access while keeping domain logic in the domain layer — generic repositories, typed specifications, pagination, and query composition without leaking persistence details.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "repository pattern",
+        "specification pattern",
+        "data access abstraction",
+        "generic repository",
+        "typed queries",
+        "how do i persist aggregates",
+        "unit of work",
+        "aggregate persistence"
+      ],
+      "relatedSkills": [
+        "domain-driven-design",
+        "ddd-tactical-patterns",
+        "domain-events",
+        "cqrs-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/domain-repository-pattern/SKILL.md"
+    },
+    {
+      "name": "domain-service-orchestration",
+      "domain": "coding",
+      "description": "Implements domain service orchestration for cross-aggregate business operations in DDD — coordinating multiple aggregate roots while preserving encapsulation, handling compensation on failure, and maintaining transaction boundaries without leaking coordination logic into domain models.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "domain service",
+        "cross-aggregate orchestration",
+        "aggregate coordination",
+        "how do i coordinate multiple aggregates",
+        "saga compensation",
+        "distributed transaction",
+        "domain orchestrator",
+        "business process coordination"
+      ],
+      "relatedSkills": [
+        "ddd-command-pattern",
+        "cross-domain-workflow-sagas",
+        "domain-driven-design",
+        "domain-repository-pattern",
+        "ddd-aggregate-lifecycle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/domain-service-orchestration/SKILL.md"
     },
     {
       "name": "domain-testing",
