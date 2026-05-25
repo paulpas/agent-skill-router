@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T11:27:50.444644Z",
-  "totalSkills": 991,
+  "generatedAt": "2026-05-25T12:17:19.902172Z",
+  "totalSkills": 992,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 418,
+    "coding": 419,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 576,
+    "implementation": 577,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -1753,6 +1753,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/application-resilience-patterns/SKILL.md"
+    },
+    {
+      "name": "architectural-modernization",
+      "domain": "coding",
+      "description": "Upgrades legacy technology stacks — framework migrations, database transitions, infrastructure modernization, and API evolution — using incremental strategies that preserve business continuity while eliminating technical debt.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework migration",
+        "database migration",
+        "technology upgrade",
+        "legacy system modernization",
+        "Flask to FastAPI",
+        "MongoDB to PostgreSQL",
+        "SOAP to REST",
+        "on-prem to cloud",
+        "language upgrade",
+        "API evolution",
+        "infrastructure modernization",
+        "how do i upgrade a legacy system"
+      ],
+      "relatedSkills": [
+        "monolith-refactoring",
+        "microservices-architecture",
+        "event-driven-architecture",
+        "cicd-pipeline-design",
+        "database-migrations"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/architectural-modernization/SKILL.md"
     },
     {
       "name": "architectural-review",
