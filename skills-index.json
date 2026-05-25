@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T03:04:32.702368Z",
+  "generatedAt": "2026-05-25T03:19:02.866531Z",
   "totalSkills": 962,
   "domains": {
     "agent": 262,
@@ -8809,15 +8809,14 @@
         "dependency injection",
         "lifecycle hooks",
         "plugin architecture",
+        "how do i make code extensible",
         "middleware patterns",
-        "extension points",
-        "convention over configuration",
-        "leveraging framework constraints"
+        "convention over configuration"
       ],
       "relatedSkills": [
         "test-driven-development",
         "architectural-patterns",
-        "modular-design"
+        "SOLID-principles"
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-driven-design/SKILL.md"
