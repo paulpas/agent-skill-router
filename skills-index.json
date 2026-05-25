@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T00:54:47.989046Z",
-  "totalSkills": 958,
+  "generatedAt": "2026-05-25T01:51:37.618937Z",
+  "totalSkills": 960,
   "domains": {
     "agent": 262,
     "cncf": 173,
-    "coding": 390,
+    "coding": 392,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 543,
+    "implementation": 545,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -20086,6 +20086,30 @@
       "source": "skills/cncf/aws-ssm/SKILL.md"
     },
     {
+      "name": "ssrf-prevention",
+      "domain": "coding",
+      "description": "Implements defense-in-depth SSRF prevention including URL validation, IP blocking, DNS rebinding protection, and cloud metadata endpoint hardening across Python, Node.js, and Go applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ssrf prevention",
+        "server-side request forgery",
+        "url validation",
+        "internal ip blocking",
+        "cloud metadata protection",
+        "dns rebinding",
+        "webhook security"
+      ],
+      "relatedSkills": [
+        "input-validation",
+        "api-security-patterns",
+        "output-sanitization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ssrf-prevention/SKILL.md"
+    },
+    {
       "name": "stabilityai-api",
       "domain": "coding",
       "description": "Integrates Stability AI API (image generation, video generation, upscaling, inpainting, 3D) using the stability-sdk Python client for generative media applications.",
@@ -21751,6 +21775,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/upstash-qstash/SKILL.md"
+    },
+    {
+      "name": "url-parsing-security",
+      "domain": "coding",
+      "description": "Secures URL parsing and query string handling against ampersand injection, double-encoding bypasses, parser inconsistencies, and parameter pollution across Python, Node.js, and Go applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "url parsing security",
+        "query parameter injection",
+        "double encoding bypass",
+        "ampersand in url",
+        "parameter pollution",
+        "safe url building",
+        "rfc 3986"
+      ],
+      "relatedSkills": [
+        "ssrf-prevention",
+        "input-validation",
+        "api-security-patterns",
+        "data-encoding"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/url-parsing-security/SKILL.md"
     },
     {
       "name": "user-memory-system",
