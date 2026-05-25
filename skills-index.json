@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T14:42:11.119864Z",
-  "totalSkills": 1000,
+  "generatedAt": "2026-05-25T15:27:20.781446Z",
+  "totalSkills": 1002,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 427,
+    "coding": 429,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -14,8 +14,8 @@
     "writing": 4
   },
   "roles": {
-    "orchestration": 235,
-    "implementation": 585,
+    "orchestration": 236,
+    "implementation": 586,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -14867,6 +14867,30 @@
       "source": "skills/coding/monolith-architecture/SKILL.md"
     },
     {
+      "name": "monolith-first-design",
+      "domain": "coding",
+      "description": "Evaluates architecture decisions to determine when a monolithic application should be chosen over microservices using team assessment, domain complexity analysis, operational cost modeling, and weighted scoring frameworks.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "monolith first",
+        "monolithic architecture decision",
+        "when to use monolith",
+        "monolith vs microservices",
+        "avoid premature decomposition",
+        "team readiness assessment",
+        "bounded context analysis"
+      ],
+      "relatedSkills": [
+        "monolith-architecture",
+        "monolith-refactoring",
+        "monolith-scaling-strategies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/monolith-first-design/SKILL.md"
+    },
+    {
       "name": "monolith-refactoring",
       "domain": "coding",
       "description": "Refactors legacy monolithic \"big ball of mud\" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition.",
@@ -14894,6 +14918,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/monolith-refactoring/SKILL.md"
+    },
+    {
+      "name": "monolith-scaling-strategies",
+      "domain": "coding",
+      "description": "Implements vertical scaling, database optimization, caching tiering, deployment patterns, CI/CD pipelines, and observability strategies for growing monolithic applications to delay or eliminate premature service decomposition.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "scaling monolith",
+        "vertical scaling",
+        "how do i scale a monolith",
+        "database connection pool",
+        "caching strategy",
+        "blue-green deployment",
+        "performance bottleneck"
+      ],
+      "relatedSkills": [
+        "monolith-first-design",
+        "monolith-architecture",
+        "monolith-refactoring",
+        "deployment-strategies",
+        "database-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/monolith-scaling-strategies/SKILL.md"
     },
     {
       "name": "monte-carlo",
