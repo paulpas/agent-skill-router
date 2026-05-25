@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T12:17:19.902172Z",
-  "totalSkills": 992,
+  "generatedAt": "2026-05-25T14:09:14.841875Z",
+  "totalSkills": 998,
   "domains": {
     "agent": 267,
     "cncf": 173,
-    "coding": 419,
+    "coding": 425,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 235,
-    "implementation": 577,
+    "implementation": 583,
     "reference": 173,
     "information": 1,
     "review": 6
@@ -1200,6 +1200,31 @@
       "source": "skills/coding/api-composition-patterns/SKILL.md"
     },
     {
+      "name": "api-contract-first-engineering",
+      "domain": "coding",
+      "description": "Implements contract-first API design using OpenAPI/Swagger specifications with schema validation, versioning strategies, backward-compatible changes, and automated code generation from contracts.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "openapi",
+        "swagger",
+        "contract first API",
+        "API specification",
+        "schema validation",
+        "API versioning",
+        "REST contract",
+        "how do i design an API spec"
+      ],
+      "relatedSkills": [
+        "api-design-principles",
+        "graphql-schema-design",
+        "api-versioning-strategies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-contract-first-engineering/SKILL.md"
+    },
+    {
       "name": "api-design",
       "domain": "coding",
       "description": "Implements production REST API design patterns: resource modeling, unified error envelopes, Pydantic validation, rate limiting, OpenAPI docs, and versioning for maintainable backend systems.",
@@ -1852,6 +1877,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/architecture-decision-records/SKILL.md"
+    },
+    {
+      "name": "architecture-documentation-practices",
+      "domain": "coding",
+      "description": "Implements architecture documentation standards including Architecture Decision Records (ADRs), C4 model diagrams, and RFC templates to capture design rationale, system context, and component relationships.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ADR",
+        "architecture decision record",
+        "C4 model",
+        "system context diagram",
+        "software architecture documentation",
+        "RFC template",
+        "design rationale",
+        "how do i document my architecture decisions"
+      ],
+      "relatedSkills": [
+        "architecture-decision-records",
+        "clean-architecture",
+        "domain-driven-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/architecture-documentation-practices/SKILL.md"
     },
     {
       "name": "argo",
@@ -5818,6 +5868,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/css-nesting/SKILL.md"
+    },
+    {
+      "name": "csv-data-handling",
+      "domain": "coding",
+      "description": "Handles CSV data safely across languages with RFC 4180 compliance, formula injection prevention, character encoding validation, and delimiter detection to protect against spreadsheet injection attacks.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "csv data handling",
+        "rfc 4180",
+        "csv injection",
+        "formula injection",
+        "spreadsheet security",
+        "csv parsing",
+        "delimiters",
+        "character encoding",
+        "safe csv reading"
+      ],
+      "relatedSkills": [
+        "html-entity-encoding",
+        "url-parsing-security",
+        "input-validation",
+        "api-security-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/csv-data-handling/SKILL.md"
     },
     {
       "name": "cubefs",
@@ -16569,6 +16646,31 @@
       "source": "skills/coding/performance-optimization/SKILL.md"
     },
     {
+      "name": "performance-optimization-strategies",
+      "domain": "coding",
+      "description": "Implements concrete performance optimization techniques including query-level tuning, multi-layer caching strategies, connection pooling, and lazy loading patterns for production web applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "performance optimization",
+        "slow API response",
+        "database query optimization",
+        "caching strategy",
+        "lazy loading",
+        "connection pooling",
+        "N+1 queries",
+        "how do i make my app faster"
+      ],
+      "relatedSkills": [
+        "caching-strategies",
+        "postgresql-performance-tuning",
+        "async-programming"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/performance-optimization-strategies/SKILL.md"
+    },
+    {
       "name": "performance-profiler",
       "domain": "agent",
       "description": "Implements intelligent performance profiler with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -22631,6 +22733,31 @@
       "source": "skills/agent/using-superpowers/SKILL.md"
     },
     {
+      "name": "ux-design-for-developers",
+      "domain": "coding",
+      "description": "Implements UX design patterns and accessibility standards for backend engineers building user-facing features, covering user flows, responsive layouts, WCAG compliance, and usability heuristics.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ux design",
+        "user experience",
+        "accessibility",
+        "WCAG",
+        "user flows",
+        "responsive layout",
+        "usability testing",
+        "how do i design a good ui"
+      ],
+      "relatedSkills": [
+        "design-systems",
+        "css-architecture",
+        "component-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ux-design-for-developers/SKILL.md"
+    },
+    {
       "name": "v10-learning",
       "domain": "programming",
       "description": "\"Reference guide for Progress OpenEdge ABL 10.1A (2005) — data types\" variable declaration, procedures, functions, OOP basics, error handling, database access, transaction handling, control flow",
@@ -23521,6 +23648,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/writing-skills/SKILL.md"
+    },
+    {
+      "name": "xml-security",
+      "domain": "coding",
+      "description": "Prevents XML External Entity (XXE) injection, entity expansion attacks, and DTD abuse by securing XML parsers with safe configurations, input validation, and defense-in-depth patterns across Python, Java, PHP, Node.js, and Go.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "xx e injection",
+        "xml external entity",
+        "dtd security",
+        "xml parser security",
+        "entity expansion attack",
+        "xml schema validation",
+        "xml vulnerability",
+        "safe xml parsing",
+        "xml input sanitization"
+      ],
+      "relatedSkills": [
+        "html-entity-encoding",
+        "url-parsing-security",
+        "input-validation",
+        "api-security-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/xml-security/SKILL.md"
     },
     {
       "name": "yagni",
