@@ -1,16 +1,6 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-<<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-=======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1011 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
->>>>>>> a46baef9d (feat: add query intent classification and feature extraction skills)
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1012 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 
 ```
 You → "review this Python code for security issues"
@@ -21,17 +11,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-<<<<<<< HEAD
-- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-=======
-- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
-- 🎯 **1011 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
->>>>>>> a46baef9d (feat: add query intent classification and feature extraction skills)
+- 🎯 **1012 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
@@ -109,7 +89,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 270 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 435 | Software patterns, security, testing, data science |
+| Coding | 436 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -117,11 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Programming | 7 | Algorithms, frameworks, language references |
 | Trading | 89 | Execution, risk management, ML models |
 | Writing | 4 | Technical writing, style guidance |
-<<<<<<< HEAD
 | Agent | 268 | AI orchestration, routing, task decomposition |
-=======
-| Agent | 270 | AI orchestration, routing, task decomposition |
->>>>>>> a46baef9d (feat: add query intent classification and feature extraction skills)
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 435 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -301,16 +277,16 @@ MIT — All skills are freely available and redistributable.
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
 > **Last updated:** 2026-05-25 20:13:50 UTC  
-> **Total skills:** 1011  
+> **Last updated:** 2026-05-25 15:38:46 UTC  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (1011 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 992 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 992 | Ranking penalty for conflicting query terms |
-| Response Profile | 992 | Verbosity, directive strength, abstraction level |
+| Archetypes | 993 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 993 | Ranking penalty for conflicting query terms |
+| Response Profile | 993 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -770,7 +746,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (435 skills)
+### Coding (436 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -889,6 +865,7 @@ MIT — All skills are freely available and redistributable.
 | [databricks-sdk](skills/coding/databricks-sdk/SKILL.md) | Integrates Databricks using databricks-sdk with patterns for job orchestration, cluster management, SQL warehouses, Unity Catalog, MLflow, and Delta Lake operations. | databricks, databricks sdk, unity catalog, databricks jobs, databricks sql warehouse, how do i use databricks from python, mlflow, delta lake [tactical, generation] |
 | [datadog-api](skills/coding/datadog-api/SKILL.md) | Implements Datadog API integration (metrics, traces, logs, dashboards, monitors, synthetic tests) using datadog-api-client Python SDK v2+ with API key auth, async metrics submission, monitor creation, and Datadog APM tracing patterns. | datadog, metrics submission, datadog monitors, APM tracing, custom metrics, datadog dashboards, how do i send metrics to datadog, monitoring alerts [tactical, generation] |
 | [ddd-aggregate-lifecycle](skills/coding/ddd-aggregate-lifecycle/SKILL.md) | Implements aggregate lifecycle management patterns — snapshotting, schema versioning, optimistic concurrency control, aggregate root splitting strategies, and consistency boundary enforcement for high-throughput domain-driven systems. | aggregate lifecycle, aggregate snapshotting, aggregate versioning, optimistic concurrency, aggregate root splitting, event sourcing snapshot, how do i scale aggregates, aggregate consistency at scale, ddd performance [tactical, generation] |
+| [ddd-anti-patterns](skills/coding/ddd-anti-patterns/SKILL.md) | Detects and resolves common Domain-Driven Design anti-patterns including god aggregates, anemic domain models, context creep, repository leakage, specification over-engineering, and domain service sprawl in DDD codebases. | ddd anti-patterns, god aggregate, anemic domain model, context creep, repository leakage, bounded context violation, domain service sprawl, specification pattern misuse, how do i fix ddd mistakes, DDD code review, domain model smell [diagnostic, enforcement] |
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. | command pattern, ddd command handler, command bus, how do i implement commands, use case orchestration, command validation, cqrs command side, write model handlers, transaction coordination [tactical, generation] |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration. | context mapping, anticorruption layer, acl, shared kernel, customer supplier relationship, conformist pattern, publication language, bounded context integration, strategic ddd, how do i integrate bounded contexts [tactical, generation] |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | ddd refactoring, extract bounded context, split aggregate, god object refactor, primitive obsession, anticorruption layer, how do i move to ddd, legacy code to ddd [tactical, generation] |
@@ -2410,13 +2387,14 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Agent | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 
 
-### Review (Audit & Validate) (6 skills)
+### Review (Audit & Validate) (7 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
 | [anti-patterns](skills/coding/anti-patterns/SKILL.md) | Coding | Catalogs and detects common software anti-patterns (god object, leaky abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize and refactor harmful code practices. |
 | [architectural-review](skills/coding/architectural-review/SKILL.md) | Coding | Evaluates existing software architectures for coupling, cohesion, testability, scalability, and maintainability using structured assessment frameworks and metric-based analysis. |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Coding | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. |
+| [ddd-anti-patterns](skills/coding/ddd-anti-patterns/SKILL.md) | Coding | Detects and resolves common Domain-Driven Design anti-patterns including god aggregates, anemic domain models, context creep, repository leakage, specification over-engineering, and domain service sprawl in DDD codebases. |
 | [design-pattern-anti-patterns](skills/coding/design-pattern-anti-patterns/SKILL.md) | Coding | Identifies and remediates anti-patterns arising from misuse of GoF design patterns including over-engineering, gold plating, dependency inversion violations, and structural code smells in Python systems. |
 | [humanizer](skills/writing/humanizer/SKILL.md) | Writing | Detects and removes AI writing patterns to produce natural human writing through two-pass editing process |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. |
@@ -2696,6 +2674,7 @@ MIT — All skills are freely available and redistributable.
 | [databricks-sdk](skills/coding/databricks-sdk/SKILL.md) | Coding | Integrates Databricks using databricks-sdk with patterns for job orchestration, cluster management, SQL warehouses, Unity Catalog, MLflow, and Delta Lake operations. | Implementation |
 | [datadog-api](skills/coding/datadog-api/SKILL.md) | Coding | Implements Datadog API integration (metrics, traces, logs, dashboards, monitors, synthetic tests) using datadog-api-client Python SDK v2+ with API key auth, async metrics submission, monitor creation, and Datadog APM tracing patterns. | Implementation |
 | [ddd-aggregate-lifecycle](skills/coding/ddd-aggregate-lifecycle/SKILL.md) | Coding | Implements aggregate lifecycle management patterns — snapshotting, schema versioning, optimistic concurrency control, aggregate root splitting strategies, and consistency boundary enforcement for high-throughput domain-driven systems. | Implementation |
+| [ddd-anti-patterns](skills/coding/ddd-anti-patterns/SKILL.md) | Coding | Detects and resolves common Domain-Driven Design anti-patterns including god aggregates, anemic domain models, context creep, repository leakage, specification over-engineering, and domain service sprawl in DDD codebases. | Review |
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Coding | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. | Implementation |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration. | Implementation |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | Implementation |
