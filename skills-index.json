@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-25T22:00:02.236704Z",
-  "totalSkills": 1014,
+  "generatedAt": "2026-05-25T23:47:24.937904Z",
+  "totalSkills": 1018,
   "domains": {
-    "agent": 270,
+    "agent": 274,
     "cncf": 173,
     "coding": 438,
     "electrical-engineering": 2,
@@ -14,8 +14,8 @@
     "writing": 4
   },
   "roles": {
-    "orchestration": 238,
-    "implementation": 595,
+    "orchestration": 237,
+    "implementation": 600,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -14250,21 +14250,26 @@
     {
       "name": "memory-systems",
       "domain": "agent",
-      "description": "Implements intelligent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
-      "role": "orchestration",
-      "scope": "orchestration",
-      "outputFormat": "analysis",
+      "description": "Implements conversation memory patterns (bounded buffers, auto-summarization, vector-backed long-term storage) for AI agent context management and factual recall.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
       "triggers": [
-        "memory-systems",
-        "memory systems",
-        "how do i memory-systems",
-        "orchestrate memory-systems",
-        "automate memory-systems",
-        "agent memory-systems"
+        "conversation memory",
+        "long-term memory",
+        "vector store",
+        "embedding",
+        "message history",
+        "context window",
+        "auto-summarization",
+        "chat history",
+        "conversation buffer",
+        "semantic memory"
       ],
       "relatedSkills": [
-        "agent-confidence-based-selector",
-        "agent-task-routing"
+        "tool-use-function-calling",
+        "agent-context-management",
+        "user-memory-system"
       ],
       "version": "1.0.0",
       "source": "skills/agent/memory-systems/SKILL.md"
@@ -15194,6 +15199,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/multi-advisor/SKILL.md"
+    },
+    {
+      "name": "multi-agent-orchestration",
+      "domain": "agent",
+      "description": "Orchestrates multi-agent workflows (sequential pipelines, supervisor-worker delegation, group chat coordination, parallel task execution with result synthesis) for complex AI system coordination.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "multi-agent",
+        "agent orchestration",
+        "CrewAI",
+        "AutoGen",
+        "supervisor worker",
+        "group chat",
+        "parallel agents",
+        "task delegation",
+        "agent team",
+        "sequential pipeline"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "planning-reasoning",
+        "memory-systems"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/multi-agent-orchestration/SKILL.md"
     },
     {
       "name": "multi-agent-patterns",
@@ -17250,6 +17282,33 @@
       "source": "skills/coding/planetscale-sdk/SKILL.md"
     },
     {
+      "name": "planning-reasoning",
+      "domain": "agent",
+      "description": "Implements agent reasoning patterns (ReAct loop, chain-of-thought planning, self-reflection evaluation) for structured multi-step task execution with verification.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ReAct",
+        "reasoning",
+        "chain of thought",
+        "plan execute",
+        "self reflection",
+        "task planning",
+        "step by step",
+        "agent reasoning",
+        "reasoning loop",
+        "task decomposition"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "memory-systems",
+        "multi-agent-orchestration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/planning-reasoning/SKILL.md"
+    },
+    {
       "name": "planning-with-files",
       "domain": "agent",
       "description": "Implements intelligent planning with files with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -18165,6 +18224,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/rag-implementation/SKILL.md"
+    },
+    {
+      "name": "rag-pipelines",
+      "domain": "agent",
+      "description": "Implements RAG pipeline patterns (semantic chunking, hybrid search with BM25+vector, cross-encoder re-ranking, embedding selection) for retrieval-augmented document generation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "RAG",
+        "semantic chunking",
+        "hybrid search",
+        "BM25",
+        "cross-encoder rerank",
+        "embedding model",
+        "vector search",
+        "retrieval augmented generation"
+      ],
+      "relatedSkills": [
+        "memory-systems",
+        "tool-use-function-calling",
+        "planning-reasoning"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/rag-pipelines/SKILL.md"
     },
     {
       "name": "randomized-experiments",
@@ -22614,6 +22698,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/tool-evaluation-workflow/SKILL.md"
+    },
+    {
+      "name": "tool-use-function-calling",
+      "domain": "agent",
+      "description": "Implements tool calling patterns (Pydantic-typed tools, function-to-schema conversion, parallel execution, fallback chains) for AI agent external API and service integration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "tool calling",
+        "function calling",
+        "Pydantic tools",
+        "LangChain tools",
+        "tool use",
+        "parallel execution",
+        "fallback chain",
+        "typed tools"
+      ],
+      "relatedSkills": [
+        "memory-systems",
+        "planning-reasoning",
+        "multi-agent-orchestration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/tool-use-function-calling/SKILL.md"
     },
     {
       "name": "topic-modeling",
