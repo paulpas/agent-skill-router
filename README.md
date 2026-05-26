@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1046 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1047 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1046 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1047 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1046 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1047 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1046 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1047 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1046 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1047 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1046 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1047 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1046 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1047 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1046 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1047 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -109,7 +109,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 461 | Software patterns, security, testing, data science |
+| Coding | 462 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -298,17 +298,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 07:23:28 UTC  
-> **Total skills:** 1046  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1046 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 08:21:21 UTC  
+> **Total skills:** 1047  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1047 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1014 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1014 | Ranking penalty for conflicting query terms |
-| Response Profile | 1014 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1015 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1015 | Ranking penalty for conflicting query terms |
+| Response Profile | 1015 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -777,7 +777,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (461 skills)
+### Coding (462 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -804,6 +804,7 @@ MIT — All skills are freely available and redistributable.
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. | api development, REST API design, GraphQL schema design, API error handling, OpenAPI spec, API versioning strategy, how do i build a production API, API conventions [tactical, generation] |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | API gateway, api-gateway, request routing, rate limiting, auth proxy, API aggregation, load balancing, backend for frontend, BFF pattern, how do i route requests [tactical, generation] |
 | [api-gateway-domain-routing](skills/coding/api-gateway-domain-routing/SKILL.md) | Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services. | API gateway, domain routing, subdomain routing, Kong plugin, NGINX server block, Envoy routing, host header routing, how do i route requests by domain, bounded context routing [tactical, generation] |
+| [api-gateway-patterns](skills/coding/api-gateway-patterns/SKILL.md) | Implements API gateway patterns (request routing, JWT validation, rate limiting, circuit breaker, request aggregation) to protect and orchestrate backend service traffic at the edge. | api gateway, request routing, JWT validation, rate limiting, token bucket, how do i protect my backend, kong, envoy proxy [tactical, generation] |
 | [api-idempotency-management](skills/coding/api-idempotency-management/SKILL.md) | Implements idempotency key patterns for REST and GraphQL APIs including key storage with TTL, duplicate request detection, safe retry semantics, and distributed cache-backed enforcement to prevent duplicate operations during network failures. | idempotency, idempotency key, safe retry, duplicate request prevention, API retry safety, request deduplication, how do i handle retry duplicates |
 | [api-pagination-patterns](skills/coding/api-pagination-patterns/SKILL.md) | Implements pagination strategies for API endpoints including cursor-based keyset pagination, offset-based pagination, relay-style connection patterns, and performance optimization techniques to handle large datasets without N+1 queries or memory exha... | pagination patterns, cursor-based pagination, keyset pagination, offset pagination, relay connections, how do i paginate API responses, infinite scroll backend |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. | api security, authentication middleware, JWT tokens, rate limiting, input sanitization, CORS, how do i secure my API, OWASP API [tactical, generation] |
@@ -905,7 +906,7 @@ MIT — All skills are freely available and redistributable.
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. | command pattern, ddd command handler, command bus, how do i implement commands, use case orchestration, command validation, cqrs command side, write model handlers, transaction coordination [tactical, generation] |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration. | context mapping, anticorruption layer, acl, shared kernel, customer supplier relationship, conformist pattern, publication language, bounded context integration, strategic ddd, how do i integrate bounded contexts [tactical, generation] |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | ddd refactoring, extract bounded context, split aggregate, god object refactor, primitive obsession, anticorruption layer, how do i move to ddd, legacy code to ddd [tactical, generation] |
-| [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. | specification pattern, ddd tactical patterns, domain service, aggregate factory, unit of work, repository implementation, how do i implement specifications, cross-aggregate operations [tactical, generation] |
+| [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Implements DDD tactical patterns — aggregate roots with invariant enforcement, value objects, domain events, anti-corruption layers, repositories, and specification pattern for rich domain modeling in Python. | DDD, domain-driven design, aggregate root, value object, domain event, anti-corruption layer, specification pattern, how do i model complex business logic, bounded context implementation [tactical, generation, educational] |
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. | debugging, root cause analysis, binary search debugging, bisect, rubber ducking, stack trace analysis, log debugging, production debug [tactical, diagnostic] |
 | [decorator-pattern](skills/coding/decorator-pattern/SKILL.md) | Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains. | decorator pattern, object decoration, composition over inheritance, how do i add behavior dynamically, proxy decorator, wrapper pattern, behavioral extension |
 | [deduplication-patterns](skills/coding/deduplication-patterns/SKILL.md) | Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases. | dry principle, don't repeat yourself, code deduplication, extract method, reduce duplication, boilerplate removal, code reuse pattern, abstraction, refactoring duplicate code, shared logic, common function, parameter object, template method, strategy pattern [tactical, diagnostic] |
@@ -1160,7 +1161,7 @@ MIT — All skills are freely available and redistributable.
 | [sendgrid-api](skills/coding/sendgrid-api/SKILL.md) | Integrates Twilio SendGrid API (Mail Send, Dynamic Templates, Marketing Campaigns, Inbound Parse, Event Webhooks) using the sendgrid Python SDK v6.x with proper mail construction and deliverability patterns. | sendgrid, send email, transactional email, sendgrid api, email templates, dynamic templates, email delivery, marketing campaigns [tactical, generation] |
 | [sentry-api](skills/coding/sentry-api/SKILL.md) | Implements Sentry API integration (error tracking, performance monitoring, issue management, release tracking, event ingestion) using sentry-sdk Python SDK with error capture, performance tracing, breadcrumbs, issue querying, and release management v... | sentry, error tracking, performance monitoring, sentry issues, sentry sdk, exception capture, how do i integrate sentry error tracking, application monitoring [tactical, generation] |
 | [serverless-architecture-patterns](skills/coding/serverless-architecture-patterns/SKILL.md) | Implements serverless architecture patterns including AWS Lambda function design, event-driven triggers (S3, DynamoDB streams, SQS/SNS), Serverless API Gateway integration, cold start optimization, distributed tracing, and multi-region deployment str... | serverless architecture, AWS Lambda, Cloudflare Workers, edge computing, event-driven serverless, cold start optimization, provisioned concurrency, Lambda Layers, Serverless API Gateway, DynamoDB triggers, SQS consumer, how do I build serverless applications, pay-per-use compute |
-| [service-mesh-patterns](skills/coding/service-mesh-patterns/SKILL.md) | Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and... | service mesh, istio, linkerd, mTLS mutual TLS, canary deployment, fault injection, rate limiting, envoy proxy [tactical, generation, strategic] |
+| [service-mesh-patterns](skills/coding/service-mesh-patterns/SKILL.md) | Implements sidecar service mesh patterns including automatic mTLS encryption, canary traffic routing, distributed tracing injection, least-privilege authorization policies, and cross-cluster federation using Istio and Linkerd. | service mesh, istio, mTLS, sidecar proxy, canary deployment, distributed tracing, traffic management, how do i secure service communication, envoy sidecar, linkerd [tactical, generation] |
 | [shop](skills/coding/shop/SKILL.md) | "'OWASP Juice Shop guide: Web application security testing with intentionally" vulnerable Node.js/Express application for learning and practice' | application, guide, juice shop, juice-shop, owasp, security best practices, security guidelines, vulnerability scanning [tactical, generation] |
 | [shopify-api](skills/coding/shopify-api/SKILL.md) | Implements Shopify API integration (Products, Orders, Customers, Storefront GraphQL, Admin REST) using shopifyapi Python SDK with OAuth 2.0 flow, webhook HMAC verification, cursor pagination, and ecommerce platform data synchronization patterns. | shopify, shopify admin api, shopify storefront graphql, shopify products, shopify orders, shopify webhooks, shopify oauth, how do i integrate shopify api, ecommerce platform [tactical, generation] |
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | single letter variables, naming conventions, code readability, variable names, a b c d x y z, ambiguous identifiers, code review [tactical, generation] |
@@ -1421,7 +1422,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (627 skills)
+### Implementation (Build Features) (628 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1461,6 +1462,7 @@ MIT — All skills are freely available and redistributable.
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Coding | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. |
 | [api-gateway-domain-routing](skills/coding/api-gateway-domain-routing/SKILL.md) | Coding | Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services. |
+| [api-gateway-patterns](skills/coding/api-gateway-patterns/SKILL.md) | Coding | Implements API gateway patterns (request routing, JWT validation, rate limiting, circuit breaker, request aggregation) to protect and orchestrate backend service traffic at the edge. |
 | [api-idempotency-management](skills/coding/api-idempotency-management/SKILL.md) | Coding | Implements idempotency key patterns for REST and GraphQL APIs including key storage with TTL, duplicate request detection, safe retry semantics, and distributed cache-backed enforcement to prevent duplicate operations during network failures. |
 | [api-pagination-patterns](skills/coding/api-pagination-patterns/SKILL.md) | Coding | Implements pagination strategies for API endpoints including cursor-based keyset pagination, offset-based pagination, relay-style connection patterns, and performance optimization techniques to handle large datasets without N+1 queries or memory exha... |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Coding | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. |
@@ -1578,7 +1580,7 @@ MIT — All skills are freely available and redistributable.
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Coding | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration. |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. |
-| [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. |
+| [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical patterns — aggregate roots with invariant enforcement, value objects, domain events, anti-corruption layers, repositories, and specification pattern for rich domain modeling in Python. |
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Coding | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. |
 | [decorator-pattern](skills/coding/decorator-pattern/SKILL.md) | Coding | Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains. |
 | [deduplication-patterns](skills/coding/deduplication-patterns/SKILL.md) | Coding | Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases. |
@@ -1922,7 +1924,7 @@ MIT — All skills are freely available and redistributable.
 | [sentry-api](skills/coding/sentry-api/SKILL.md) | Coding | Implements Sentry API integration (error tracking, performance monitoring, issue management, release tracking, event ingestion) using sentry-sdk Python SDK with error capture, performance tracing, breadcrumbs, issue querying, and release management v... |
 | [serverless-architecture-patterns](skills/coding/serverless-architecture-patterns/SKILL.md) | Coding | Implements serverless architecture patterns including AWS Lambda function design, event-driven triggers (S3, DynamoDB streams, SQS/SNS), Serverless API Gateway integration, cold start optimization, distributed tracing, and multi-region deployment str... |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. |
-| [service-mesh-patterns](skills/coding/service-mesh-patterns/SKILL.md) | Coding | Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and... |
+| [service-mesh-patterns](skills/coding/service-mesh-patterns/SKILL.md) | Coding | Implements sidecar service mesh patterns including automatic mTLS encryption, canary traffic routing, distributed tracing injection, least-privilege authorization policies, and cross-cluster federation using Istio and Linkerd. |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" |
 | [shell-command-chaining](skills/linux/shell-command-chaining/SKILL.md) | Linux | Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts. |
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Linux | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. |
@@ -2554,6 +2556,7 @@ MIT — All skills are freely available and redistributable.
 | [api-documentation](skills/agent/api-documentation/SKILL.md) | Agent | Implements intelligent api documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | Implementation |
 | [api-gateway-domain-routing](skills/coding/api-gateway-domain-routing/SKILL.md) | Coding | Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services. | Implementation |
+| [api-gateway-patterns](skills/coding/api-gateway-patterns/SKILL.md) | Coding | Implements API gateway patterns (request routing, JWT validation, rate limiting, circuit breaker, request aggregation) to protect and orchestrate backend service traffic at the edge. | Implementation |
 | [api-idempotency-management](skills/coding/api-idempotency-management/SKILL.md) | Coding | Implements idempotency key patterns for REST and GraphQL APIs including key storage with TTL, duplicate request detection, safe retry semantics, and distributed cache-backed enforcement to prevent duplicate operations during network failures. | Implementation |
 | [api-pagination-patterns](skills/coding/api-pagination-patterns/SKILL.md) | Coding | Implements pagination strategies for API endpoints including cursor-based keyset pagination, offset-based pagination, relay-style connection patterns, and performance optimization techniques to handle large datasets without N+1 queries or memory exha... | Implementation |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Coding | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. | Implementation |
@@ -2778,7 +2781,7 @@ MIT — All skills are freely available and redistributable.
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Coding | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. | Implementation |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration. | Implementation |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | Implementation |
-| [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management. | Implementation |
+| [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical patterns — aggregate roots with invariant enforcement, value objects, domain events, anti-corruption layers, repositories, and specification pattern for rich domain modeling in Python. | Implementation |
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Coding | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. | Implementation |
 | [decorator-pattern](skills/coding/decorator-pattern/SKILL.md) | Coding | Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains. | Implementation |
 | [deduplication-patterns](skills/coding/deduplication-patterns/SKILL.md) | Coding | Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases. | Implementation |
@@ -3332,7 +3335,7 @@ MIT — All skills are freely available and redistributable.
 | [serverless-architecture-patterns](skills/coding/serverless-architecture-patterns/SKILL.md) | Coding | Implements serverless architecture patterns including AWS Lambda function design, event-driven triggers (S3, DynamoDB streams, SQS/SNS), Serverless API Gateway integration, cold start optimization, distributed tracing, and multi-region deployment str... | Implementation |
 | [service-bus](skills/cncf/service-bus/SKILL.md) | Cncf | "Provides Messaging service with queues and topics for reliable communication" | Reference |
 | [service-mesh-debugging](skills/cncf/service-mesh-debugging/SKILL.md) | Cncf | Implements comprehensive debugging workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices. | Implementation |
-| [service-mesh-patterns](skills/coding/service-mesh-patterns/SKILL.md) | Coding | Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and... | Implementation |
+| [service-mesh-patterns](skills/coding/service-mesh-patterns/SKILL.md) | Coding | Implements sidecar service mesh patterns including automatic mTLS encryption, canary traffic routing, distributed tracing injection, least-privilege authorization policies, and cross-cluster federation using Istio and Linkerd. | Implementation |
 | [sharpe-ratio](skills/trading/sharpe-ratio/SKILL.md) | Trading | "Provides Sharpe Ratio Calculation and Risk-Adjusted Performance Metrics" | Implementation |
 | [shell-command-chaining](skills/linux/shell-command-chaining/SKILL.md) | Linux | Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts. | Implementation |
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Linux | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. | Implementation |

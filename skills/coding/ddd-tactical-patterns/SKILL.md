@@ -1,52 +1,35 @@
 ---
 name: ddd-tactical-patterns
-description: Implements DDD tactical supporting patterns — composable Specification
-  objects for business rules, Domain Services for cross-aggregate coordination, Aggregate
-  Factories for complex construction, and Unit of Work for transaction management.
+description: Implements DDD tactical patterns — aggregate roots with invariant enforcement, value objects, domain events, anti-corruption layers, repositories, and specification pattern for rich domain modeling in Python.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: specification pattern, ddd tactical patterns, domain service, aggregate
-    factory, unit of work, repository implementation, how do i implement specifications,
-    cross-aggregate operations
-  archetypes:
-  - tactical
-  - generation
-  anti_triggers:
-  - brainstorming
-  - vague ideation
-  - code golf
-  - over-engineering
+  role: implementation
+  scope: implementation
+  output-format: code
+  triggers: DDD, domain-driven design, aggregate root, value object, domain event, anti-corruption layer, specification pattern, how do i model complex business logic, bounded context implementation
+  related-skills: software-architecture-patterns,domain-architecture-project-structure
+  archetypes: tactical, generation, educational
+  anti_triggers: project structure, module organization, ubiquitous language discovery, bounded context identification, event sourcing infrastructure, outbox pattern setup
   response_profile:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  role: implementation
-  scope: implementation
-  output-format: code
-  content-types:
-  - code
-  - guidance
-  - do-dont
-  - examples
-  related-skills: domain-driven-design, ddd-context-mapping, cqrs-pattern, event-sourcing-pattern
-------
-# DDD Tactical Supporting Patterns
+---
 
-Implements the supporting structural patterns that make DDD domain models practical and testable. Produces Specification objects for composable business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction scenarios, and Unit of Work implementations for transaction management — all focused on keeping domain logic cohesive while maintaining clean separation from infrastructure concerns.
+# DDD Tactical Patterns
 
-This skill covers tactical patterns that support the core DDD building blocks (entities, value objects, aggregates, bounded contexts) documented in `domain-driven-design`. Use this skill when you need composable rule validation, cross-aggregate operations, or transaction coordination.
+When this skill is active, the model implements Domain-Driven Design tactical patterns as concrete Python classes and interfaces inside bounded contexts. It produces rich domain models with invariant enforcement through aggregate roots, immutable value objects, synchronous domain event publishing, anti-corruption layer adapters, repository abstractions with optimistic concurrency, and composable specification objects. The model writes typed implementations with docstrings, BAD vs GOOD examples, and enforces strict layer boundaries between internal domain models and external systems.
 
 ## TL;DR Checklist
 
-- [ ] Define Specifications as frozen dataclasses with `is_satisfied_by()` methods supporting AND/OR/NOT composition via magic methods
-- [ ] Place repository interfaces in the domain layer using Protocol or ABC — never import ORM types into domain code
-- [ ] Implement Domain Services only for operations spanning two or more aggregate roots — single-aggregate rules belong in the aggregate itself
-- [ ] Create Aggregate Factories when construction requires external lookups, conditional validation, or multi-step setup that exceeds constructor capabilities
-- [ ] Use Unit of Work as a context manager to coordinate transactions across multiple repositories within a single use case
-- [ ] Separate command handlers (write model) from query handlers (read model) — never let queries mutate state
+- [ ] Aggregate roots enforce all invariants — no external mutation of protected state
+- [ ] Value objects are immutable — use copy-with replacement for changes, never mutate
+- [ ] Domain events captured during aggregate operations, published atomically with transaction
+- [ ] Anti-corruption layer isolates internal domain from external model contamination
+- [ ] Repositories expose only aggregate roots — never individual entities or value objects
 
 ---
 
@@ -54,11 +37,12 @@ This skill covers tactical patterns that support the core DDD building blocks (e
 
 Use this skill when:
 
-- You need to express business rules that are tested repeatedly across different parts of the system (use Specifications instead of scattered boolean expressions)
-- An operation needs data from two or more aggregate roots and cannot logically belong to any single one (use a Domain Service)
-- Aggregate construction requires external data lookups, conditional state setup, or multi-step validation beyond what a constructor can reasonably handle (use an Aggregate Factory)
-- Multiple repositories must participate in a single atomic transaction (use Unit of Work with identity map)
-- You need to coordinate reads and writes within a bounded context using the Command pattern — separate command handlers from query handlers
+- Implementing bounded contexts with rich domain models that enforce business invariants
+- Building an anti-corruption layer between a legacy system (e.g., SOAP API, COBOL backend) and a new domain model
+- Designing aggregate boundaries where consistency must be guaranteed across related entities
+- Coordinating domain events across aggregates within the same transaction boundary
+- Implementing complex read queries that need composable business rules without contaminating write models
+- Refactoring an anemic domain model to enforce invariants at the domain layer
 
 ---
 
@@ -66,907 +50,1102 @@ Use this skill when:
 
 Avoid this skill for:
 
-- Simple validation that happens once in a single place — Specifications add indirection when a single if-check suffices
-- Operations that belong entirely within one aggregate root — do not use a Domain Service for logic that can live inside an entity or aggregate
-- Single-repository transactions — if only one repository is involved, use its built-in transaction support directly instead of adding Unit of Work overhead
-- Read-only queries in a CQRS system — use query handlers and read models instead; the Command pattern is for writes only
+- Strategic DDD decisions — bounded context identification, ubiquitous language discovery, and subdomain classification are design choices, not tactical patterns
+- Project directory structure and module organization — use `domain-architecture-project-structure` instead
+- Simple CRUD operations on data-oriented entities with no business rules — a basic SQLAlchemy model is sufficient
+- Event sourcing infrastructure (event store persistence, snapshot storage, replay logic) — covered by `software-architecture-patterns`
+- Domain event infrastructure like Kafka integration or outbox pattern setup
 
 ---
 
 ## Core Workflow
 
-1. **Identify Repeated Business Rules** — Scan the codebase for boolean expressions that appear in multiple places (e.g., "order total >= minimum" AND "has shipping address" AND "not cancelled"). Each reusable rule becomes a Specification. **Checkpoint:** A rule should only become a Specification if it appears in at least two distinct call sites or is expected to grow complex through composition. Single-use rules stay as inline conditions.
+1. **Define the Aggregate Root** — Identify the consistency boundary by finding entities that must change together atomically. The aggregate root owns all invariants and exposes only intent-revealing methods. **Checkpoint:** If you need to modify two aggregates within a single transaction, they should either be collapsed into one aggregate or coordinated via domain events for eventual consistency.
 
-2. **Design Specification Composition** — Create the base `Specification[T]` abstract class with `is_satisfied_by(candidate: T) -> bool` and magic methods `__and__`, `__or__`, `__invert__`. Implement concrete AndSpecification, OrSpecification, and NotSpecification wrappers as frozen dataclasses. Add concrete specifications for each business rule. **Checkpoint:** Every concrete specification must be independently testable with both a passing case (a candidate that satisfies the rule) and a failing case (one that does not).
+2. **Implement Value Objects** — Create immutable types that capture domain concepts by their attributes rather than identity. Every value object validates all invariants at construction time and provides `replace()` methods for creating modified copies. **Checkpoint:** No attribute may ever be None or invalid after construction — if you need a nullable field, model it explicitly as a separate value type.
 
-3. **Create Domain Service for Cross-Aggregate Operations** — Identify operations that require two or more aggregate roots to cooperate. Move these from controllers or application services into dedicated domain service classes named after the business capability. Inject repository dependencies via constructor. Each public method does one coherent business operation. **Checkpoint:** Verify that no domain service has more than 3-4 public methods; if it does, split by business capability.
+3. **Capture Domain Events** — During aggregate operations, append events to an internal `_domain_events` list inside the aggregate root. These events are published atomically after the unit of work commits. **Checkpoint:** Only emit events that external consumers care about — internal state changes that no one outside the aggregate needs should not be domain events.
 
-4. **Build Aggregate Factories for Complex Construction** — For aggregates whose construction requires external lookups (e.g., validating against a product catalog), conditional logic (e.g., applying promo codes based on customer tier), or multi-step validation, create a factory class. The factory orchestrates the build and guarantees the returned aggregate is fully valid. **Checkpoint:** Every factory method either returns a complete aggregate or raises — never return None or partial aggregates.
+4. **Build Repository Abstraction** — Implement repository interfaces for each aggregate root using `Protocol` classes. The repository loads and saves entire aggregates, handling serialization/deserialization and optimistic concurrency. **Checkpoint:** Repositories must never return individual entities or value objects — always return the complete aggregate root from a load operation.
 
-5. **Implement Unit of Work for Transaction Coordination** — When multiple repositories participate in a single use case, create a Unit of Work that tracks changes via an identity map and provides atomic commit/rollback. Use as a context manager with explicit begin/commit semantics. **Checkpoint:** A single use-case handler should acquire one UoW at the top and never nest UoWs — nesting causes transaction conflicts.
-
-6. **Wire Command Handlers for Write Operations** — Create command handler classes that orchestrate write operations within a bounded context. Each command maps to a specific domain operation (CreateOrder, CancelOrder, TransferFunds). The handler acquires repositories through the UoW, validates input, invokes aggregate methods, and commits. **Checkpoint:** Command handlers must never perform read queries that mutate state — verify by inspection that no save() call exists inside a query handler.
+5. **Implement Anti-Corruption Layer** — Create adapter classes that translate external data formats into internal value objects before they enter the domain layer. The adapter validates external input and constructs proper domain objects, preventing foreign model classes from leaking inward. **Checkpoint:** After the adapter runs, the domain layer should be able to operate with zero knowledge of the external API's structure.
 
 ---
 
-## Implementation Patterns / Reference Guide
+## Implementation Patterns
 
-### Pattern 1: Specification Pattern — Composable Business Rules
+### Pattern 1: Aggregate Roots & Value Objects
 
-The Specification pattern encapsulates a business rule as an object with an `is_satisfied_by()` method. Specifications compose through logical combinators (AND, OR, NOT) enabling reusable, testable rule validation without scattered boolean expressions. This eliminates the "boolean explosion" problem where business logic becomes unreadable chains of conditions.
+Aggregate roots encapsulate business invariants and expose intent-revealing methods. Value objects are immutable types compared by attribute equality.
 
 ```python
+"""Order aggregate root with invariant enforcement and value objects."""
+
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
+import uuid
 from dataclasses import dataclass, field
-from decimal import Decimal
-from typing import TypeVar, Generic
+from datetime import date, datetime
+from enum import Enum
+from typing import Iterator
 
 
-T = TypeVar("T")
-
-
-@dataclass(frozen=True)
-class Specification(ABC, Generic[T]):
-    """Abstract base for composable business rule specifications.
-
-    Subclasses implement `is_satisfied_by()` to express a single condition.
-    Logical composition is provided by AndSpecification, OrSpecification,
-    and NotSpecification wrappers accessible via __and__, __or__, __invert__.
-    """
-
-    @abstractmethod
-    def is_satisfied_by(self, candidate: T) -> bool:
-        """Evaluate whether the candidate satisfies this rule."""
-
-    def __and__(self, other: Specification[T]) -> AndSpecification[T]:
-        return AndSpecification(self, other)
-
-    def __or__(self, other: Specification[T]) -> OrSpecification[T]:
-        return OrSpecification(self, other)
-
-    def __invert__(self) -> NotSpecification[T]:
-        return NotSpecification(self)
-
-
-@dataclass(frozen=True)
-class AndSpecification(Specification[T]):
-    """Logical AND composition: both specifications must be satisfied."""
-    left: Specification[T]
-    right: Specification[T]
-
-    def is_satisfied_by(self, candidate: T) -> bool:
-        return self.left.is_satisfied_by(candidate) and self.right.is_satisfied_by(candidate)
-
-
-@dataclass(frozen=True)
-class OrSpecification(Specification[T]):
-    """Logical OR composition: at least one specification must be satisfied."""
-    left: Specification[T]
-    right: Specification[T]
-
-    def is_satisfied_by(self, candidate: T) -> bool:
-        return self.left.is_satisfied_by(candidate) or self.right.is_satisfied_by(candidate)
-
-
-@dataclass(frozen=True)
-class NotSpecification(Specification[T]):
-    """Logical NOT composition: the wrapped specification must not be satisfied."""
-    wrapped: Specification[T]
-
-    def is_satisfied_by(self, candidate: T) -> bool:
-        return not self.wrapped.is_satisfied_by(candidate)
-
-
-# ── Concrete Specifications for an Order Domain ──────────────────────────────
-
-
-@dataclass(frozen=True)
-class MinTotalSpecification(Specification["Order"]):
-    """An order is valid when its total meets or exceeds the minimum threshold."""
-    min_amount: Decimal
-
-    def is_satisfied_by(self, candidate: "Order") -> bool:
-        return candidate.total.amount >= self.min_amount
-
-
-@dataclass(frozen=True)
-class HasShippingAddressSpecification(Specification["Order"]):
-    """An order must have a shipping address set before confirmation."""
-    def is_satisfied_by(self, candidate: "Order") -> bool:
-        return candidate.ship_to is not None
-
-
-@dataclass(frozen=True)
-class NotCancelledSpecification(Specification["Order"]):
-    """An order that has not been cancelled."""
-    def is_satisfied_by(self, candidate: "Order") -> bool:
-        return candidate.status != "CANCELLED"
-
-
-@dataclass(frozen=True)
-class HasItemsSpecification(Specification["Order"]):
-    """An order must contain at least one item."""
-    def is_satisfied_by(self, candidate: "Order") -> bool:
-        return len(candidate.items) > 0
-
-
-# Composite policy combining multiple specifications
-@dataclass(frozen=True)
-class OrderConfirmationPolicy:
-    """Composite specification for all conditions required to confirm an order.
-
-    Built by composing individual specifications using Python operators:
-      & = AND (both must be true)
-      | = OR  (at least one must be true)
-      ~ = NOT (must not be true)
-    """
-    min_total: Decimal = Decimal("0.01")
-
-    @property
-    def rule(self) -> Specification["Order"]:
-        return (
-            MinTotalSpecification(self.min_total)
-            & HasShippingAddressSpecification()
-            & HasItemsSpecification()
-            & NotSpecification(NotCancelledSpecification())
-        )
-
-
-class Order:
-    """Simplified order aggregate for specification demonstration."""
-    def __init__(
-        self,
-        order_id: str,
-        items: list[dict],
-        ship_to: str | None = None,
-        status: str = "DRAFT",
-    ) -> None:
-        self.order_id = order_id
-        self.items = items
-        self.ship_to = ship_to
-        self.status = status
-        self.total = Decimal(sum(float(i["price"]) * i["qty"] for i in items))
-
-    def confirm(self) -> None:
-        """Confirm the order if all specifications are satisfied."""
-        policy = OrderConfirmationPolicy()
-        if not policy.rule.is_satisfied_by(self):
-            raise RuntimeError(
-                f"Order {self.order_id} cannot be confirmed — "
-                f"fails specification checks. Total: {self.total}, "
-                f"Items: {len(self.items)}, Shipping: {self.ship_to}, "
-                f"Status: {self.status}"
-            )
-        self.status = "CONFIRMED"
-
-
-# ❌ BAD: Scattered boolean expressions — impossible to test or reuse
-def bad_confirm_order(order: Order) -> None:
-    if (
-        order.total >= Decimal("0.01")
-        and order.ship_to is not None
-        and len(order.items) > 0
-        and order.status != "CANCELLED"
-    ):
-        order.status = "CONFIRMED"
-    # No way to explain WHY it failed — just "it didn't confirm"
-
-
-# ✅ GOOD: Specification objects — testable, composable, self-documenting
-def good_confirm_order(order: Order) -> None:
-    policy = OrderConfirmationPolicy()
-    order.confirm()  # Raises RuntimeError with specification violation details if invalid
-
-```
-
-**Key principles:**
-- Specifications must be immutable (`frozen=True`) so they can be cached and safely shared across threads
-- Provide `__and__`, `__or__`, `__invert__` magic methods for natural Python composition — this makes complex rules readable: `spec_a & spec_b | ~spec_c`
-- Keep each concrete specification focused on a single condition — if it tests multiple unrelated things, split into smaller specifications that can be composed independently
-- Specifications are side-effect free — `is_satisfied_by()` must not modify state or trigger external calls; they are pure evaluators
-
----
-
-### Pattern 2: Domain Service — Cross-Aggregate Coordination
-
-Domain services handle operations that span multiple aggregate roots or require infrastructure access. They coordinate work across aggregate boundaries without placing that logic inside any single entity. Use domain services sparingly — they are the exception, not the rule. If logic can belong to a single aggregate, it belongs there.
-
-```python
-from __future__ import annotations
-
-from dataclasses import dataclass
-from decimal import Decimal
-from enum import Enum, auto
-from uuid import UUID
-
-
-class AccountStatus(Enum):
-    ACTIVE = auto()
-    FROZEN = auto()
-    CLOSED = auto()
-
+# ── Value Objects ────────────────────────────────────────────────────────────
 
 @dataclass(frozen=True)
 class Money:
-    amount: Decimal
-    currency: str
+    """Immutable value object representing a monetary amount with currency."""
+
+    amount: float
+    currency: str = "USD"
 
     def __post_init__(self) -> None:
         if self.amount < 0:
-            raise ValueError("Money cannot be negative")
+            raise ValueError("Money amount cannot be negative")
+        if not isinstance(self.currency, str) or len(self.currency) != 3:
+            raise ValueError(f"Invalid currency code: {self.currency}")
 
-    def add(self, other: "Money") -> "Money":
+    def __add__(self, other: Money) -> Money:
         if self.currency != other.currency:
-            raise ValueError(f"Currency mismatch: {self.currency} vs {other.currency}")
-        return Money(self.amount + other.amount, self.currency)
+            raise ValueError("Cannot add money with different currencies")
+        return Money(round(self.amount + other.amount, 2), self.currency)
 
-
-class InsufficientFundsError(Exception):
-    """Raised when an account lacks sufficient balance for a withdrawal."""
-
-
-class TransferFailedError(Exception):
-    """Raised when the second half of a transfer fails after debit succeeded."""
-
-
-class Account:
-    """Aggregate root representing a bank account."""
-
-    def __init__(self, account_id: UUID, owner: str, balance: Decimal) -> None:
-        self.account_id = account_id
-        self.owner = owner
-        self._balance = balance
-        self.status = AccountStatus.ACTIVE
-
-    @property
-    def balance(self) -> Money:
-        return Money(self._balance, "USD")
-
-    def withdraw(self, amount: Money) -> None:
-        if self.status != AccountStatus.ACTIVE:
-            raise RuntimeError(f"Account {self.account_id} is {self.status.name}")
-        if amount.currency != "USD":
-            raise ValueError("Only USD transfers supported")
-        if amount.amount > self._balance:
-            raise InsufficientFundsError(
-                f"Cannot withdraw {amount} from account {self.account_id} — balance is {self._balance}"
-            )
-        self._balance -= amount.amount
-
-    def deposit(self, amount: Money) -> None:
-        if self.status == AccountStatus.CLOSED:
-            raise RuntimeError(f"Cannot deposit to closed account {self.account_id}")
-        if amount.currency != "USD":
-            raise ValueError("Only USD transfers supported")
-        self._balance += amount.amount
-
-
-class NotificationService:
-    """Infrastructure dependency — handles sending notifications."""
-
-    def notify_debited(self, account_id: UUID, amount: Money) -> None:
-        print(f"[NOTIFY] Account {account_id} debited {amount}")
-
-    def notify_credited(self, account_id: UUID, amount: Money) -> None:
-        print(f"[NOTIFY] Account {account_id} credited {amount}")
-
-
-class FundTransferResult:
-    """Immutable record of a completed fund transfer."""
-    from_account: UUID
-    to_account: UUID
-    amount: Money
-    executed_at: str  # ISO 8601 string
-
-
-class FundTransferService:
-    """Coordinates fund transfers between accounts — logic spanning two aggregate roots.
-
-    This is NOT an entity method because it operates on two separate aggregates
-    (sender and receiver) without belonging to either one. It also depends on
-    infrastructure services (notifications), making it unsuitable for the domain model.
-
-    Attributes:
-        account_repo: Repository providing access to Account aggregates
-        notification_service: Infrastructure service for sending alerts
-    """
-
-    MIN_TRANSFER: Decimal = Decimal("0.01")
-
-    def __init__(self, account_repo: Any, notification_service: NotificationService) -> None:
-        self._account_repo = account_repo
-        self._notification = notification_service
-
-    def execute(
-        self,
-        from_account_id: UUID,
-        to_account_id: UUID,
-        amount: Money,
-    ) -> FundTransferResult:
-        """Execute an atomic fund transfer between two accounts.
-
-        The transfer is attempted atomically: debit sender first, then credit receiver.
-        If the credit fails after a successful debit, a compensating action reverses it.
-
-        Args:
-            from_account_id: UUID of the source account
-            to_account_id: UUID of the destination account
-            amount: Amount to transfer (must be positive and in USD)
-
-        Returns:
-            FundTransferResult with details of the completed transfer
-
-        Raises:
-            InsufficientFundsError: If the source account lacks sufficient balance
-            TransferFailedError: If crediting fails after debiting
-            ValueError: If accounts are not found or amount is invalid
-        """
-        if amount.amount <= self.MIN_TRANSFER:
+    def subtract(self, other: Money) -> Money:
+        result = self.amount - other.amount
+        if result < 0:
             raise ValueError(
-                f"Transfer amount {amount.amount} must exceed minimum of "
-                f"{self.MIN_TRANSFER}"
+                f"Insufficient funds: {self.amount} - {other.amount}"
             )
+        return Money(round(result, 2), self.currency)
 
-        sender = self._account_repo.get_by_id(from_account_id)
-        receiver = self._account_repo.get_by_id(to_account_id)
-
-        if sender is None:
-            raise ValueError(f"Source account {from_account_id} not found")
-        if receiver is None:
-            raise ValueError(f"Destination account {to_account_id} not found")
-
-        # Debit sender first — if this fails, no compensation needed
-        try:
-            sender.withdraw(amount)
-        except InsufficientFundsError as exc:
-            raise
-
-        self._account_repo.save(sender)
-        self._notification.notify_debited(from_account_id, amount)
-
-        # Credit receiver — if this fails after debit, compensate
-        try:
-            receiver.deposit(amount)
-        except Exception as exc:
-            # Compensating action: restore sender's balance
-            original_balance = sender._balance + amount.amount  # type: ignore[attr-defined]
-            sender._balance = original_balance  # type: ignore[attr-defined]
-            self._account_repo.save(sender)
-            raise TransferFailedError(
-                f"Credit failed for {to_account_id} after debiting {from_account_id}: {exc}"
-            ) from exc
-
-        self._account_repo.save(receiver)
-        self._notification.notify_credited(to_account_id, amount)
-
-        return FundTransferResult(
-            from_account=from_account_id,
-            to_account=to_account_id,
-            amount=amount,
-            executed_at="2026-05-21T10:30:00Z",  # In production: datetime.now(timezone.utc).isoformat()
+    def replace(self, amount: float | None = None, currency: str | None = None) -> Money:
+        """Return a new Money with replaced attributes."""
+        return Money(
+            amount if amount is not None else self.amount,
+            currency if currency is not None else self.currency,
         )
 
 
-# ❌ BAD: Cross-aggregate logic dumped into a controller — violates SRP
-def bad_transfer_controller(from_id: UUID, to_id: UUID, amount: float) -> dict:
-    """Mixes HTTP concerns, persistence, and business rules — impossible to test."""
-    sender = db.get(Account, from_id)
-    receiver = db.get(Account, to_id)
-    if sender.balance < amount:
-        return {"error": "insufficient funds"}, 400
-    sender.balance -= amount
-    receiver.balance += amount
-    db.commit()
-    send_email(sender.owner, f"Debited {amount}")
-    send_email(receiver.owner, f"Credited {amount}")
-    return {"status": "done"}, 200
-
-
-# ✅ GOOD: Domain service isolates coordination from infrastructure
-def demonstrate_domain_service() -> None:
-    """Show domain service usage with proper dependency injection."""
-    repo = DummyAccountRepository()
-    notifier = NotificationService()
-    service = FundTransferService(repo, notifier)
-
-    sender_id = UUID(hex="a1b2c3d4e5f6" + "0" * 20)
-    receiver_id = UUID(hex="f6e5d4c3b2a1" + "0" * 20)
-
-    result = service.execute(sender_id, receiver_id, Money(Decimal("100.00"), "USD"))
-    assert result.from_account == sender_id
-```
-
-**Key principles:**
-- Domain services are the exception, not the rule — only use them when logic cannot belong to any single aggregate root
-- Name domain services after the business capability (`FundTransferService`, `InventoryReservationService`), not their technical role (`AccountService`)
-- Inject dependencies (repositories, external services) via constructor — never create them inside service methods
-- Each public method should do one coherent thing; if it calls more than 3-4 other domain services, consider splitting by use case
-
----
-
-### Pattern 3: Aggregate Factory — Complex Construction
-
-Aggregate factories handle construction scenarios requiring external data lookups, conditional state setup, or multi-step validation that does not fit cleanly into a constructor. The factory orchestrates the build process and guarantees the returned aggregate is fully valid. Use factories when constructors would require too many parameters or need infrastructure access.
-
-```python
-from __future__ import annotations
-
-from abc import ABC, abstractmethod
-from dataclasses import dataclass
-from uuid import UUID, uuid4
-
-
 @dataclass(frozen=True)
-class ProductInfo:
-    """Product information from the catalog — an external dependency for order construction."""
-    product_id: str
-    name: str
-    price: Decimal
-    currency: str = "USD"
-    available: bool = True
+class OrderLineItem:
+    """Immutable value object representing a single line item in an order."""
 
-
-@dataclass(frozen=True)
-class PromoDiscount:
-    """Promotional discount retrieved from an external promo service."""
-    code: str
-    percentage: float  # e.g., 0.15 for 15% off
-    min_order_total: Decimal
-    valid: bool = True
-
-
-@dataclass(frozen=True)
-class InvalidPromoCodeError(Exception):
-    """Raised when a promo code is invalid for the given conditions."""
-    code: str
-    reason: str
-
-
-@dataclass(frozen=True)
-class OrderItem:
     product_id: str
     quantity: int
     unit_price: Money
+    discount: Money = field(default_factory=Money)
 
     def __post_init__(self) -> None:
         if self.quantity <= 0:
-            raise ValueError("Quantity must be positive")
-        if self.unit_price.amount < 0:
-            raise ValueError("Unit price cannot be negative")
-
-
-@dataclass(frozen=True)
-class OrderFactoryError(Exception):
-    """Raised when aggregate factory cannot produce a valid aggregate."""
-    message: str
-
-
-class ProductCatalog:
-    """External dependency — provides product information for order validation."""
-
-    def get_products(self, product_ids: list[str]) -> list[ProductInfo]:
-        """Return products matching the given IDs. Raises if any are missing."""
-        catalog = [
-            ProductInfo("SKU-001", "Widget A", Decimal("25.00"), available=True),
-            ProductInfo("SKU-002", "Gadget B", Decimal("49.99"), available=True),
-            ProductInfo("SKU-003", "Doohickey C", Decimal("9.99"), available=False),  # Out of stock
-        ]
-        result = {p.product_id: p for p in catalog if p.product_id in product_ids}
-        missing = set(product_ids) - set(result.keys())
-        if missing:
-            raise KeyError(f"Products not found: {missing}")
-        return list(result.values())
-
-
-class PromoCodeService:
-    """External dependency — validates promo codes and returns discounts."""
-
-    def validate(self, code: str, customer_tier: str) -> PromoDiscount | None:
-        """Validate a promo code against the customer tier. Returns discount or None."""
-        valid_codes = {
-            "WELCOME15": PromoDiscount("WELCOME15", 0.15, Decimal("50.00")),
-            "VIP20": PromoDiscount("VIP20", 0.20, Decimal("0.00")),
-            "SAVE10": PromoDiscount("SAVE10", 0.10, Decimal("25.00")),
-        }
-        tier_codes = {
-            "gold": ["WELCOME15", "VIP20", "SAVE10"],
-            "silver": ["WELCOME15", "SAVE10"],
-            "bronze": ["SAVE10"],
-        }
-        if code not in valid_codes or customer_tier not in tier_codes.get(customer_tier, []):
-            return None
-        discount = valid_codes[code]
-        # Check minimum order total — set by factory after items are added
-        return PromoDiscount(
-            code=code,
-            percentage=discount.percentage,
-            min_order_total=Decimal("0"),  # Placeholder; validated in factory
-        )
-
-
-class OrderFactory(ABC):
-    """Abstract factory interface for Order aggregates.
-
-    Concrete factories can be swapped per bounded context or testing scenario.
-    Domain code depends on the abstract factory, not concrete implementation details.
-    """
-
-    @abstractmethod
-    def create_order(
-        self,
-        customer_email: str,
-        items: list[OrderItem],
-    ) -> "Order":
-        """Create a basic order with validated items."""
-
-    @abstractmethod
-    def create_promotional_order(
-        self,
-        customer_email: str,
-        items: list[OrderItem],
-        promo_code: str,
-        customer_tier: str,
-    ) -> "Order":
-        """Create an order with a validated promotional discount applied."""
-
-
-class Order:
-    """Simplified order aggregate for factory demonstration."""
-
-    def __init__(self, order_id: UUID, customer_email: str) -> None:
-        self.order_id = order_id
-        self.customer_email = customer_email
-        self._items: list[OrderItem] = []
-        self.status = "DRAFT"
+            raise ValueError("Line item quantity must be positive")
+        if self.discount.amount > self.unit_price.amount:
+            raise ValueError("Discount cannot exceed unit price")
 
     @property
-    def items(self) -> list[OrderItem]:
-        return list(self._items)
+    def total(self) -> Money:
+        net = self.unit_price.subtract(self.discount)
+        return Money(round(net.amount * self.quantity, 2), net.currency)
+
+
+# ── Aggregate Root ───────────────────────────────────────────────────────────
+
+class OrderStatus(Enum):
+    PENDING = "pending"
+    CONFIRMED = "confirmed"
+    CANCELLED = "cancelled"
+    SHIPPED = "shipped"
+
+
+@dataclass
+class Order:
+    """
+    Aggregate root for order management.
+
+    Enforces invariants: total cannot be negative, items must have positive
+    quantities, status transitions follow defined rules. Only intent-revealing
+    methods expose functionality — no direct attribute mutation.
+    """
+
+    id: uuid.UUID = field(default_factory=uuid.uuid4)
+    customer_id: str = ""
+    _items: list[OrderLineItem] = field(default_factory=list, repr=False)
+    status: OrderStatus = OrderStatus.PENDING
+    created_at: datetime = field(default_factory=datetime.utcnow)
+    updated_at: datetime = field(default_factory=datetime.utcnow)
+    cancelled_at: datetime | None = None
+    _domain_events: list[object] = field(default_factory=list, repr=False)
+
+    # ── Invariants ────────────────────────────────────────────────────────
+
+    @property
+    def items(self) -> tuple[OrderLineItem, ...]:
+        """Return a frozen snapshot — callers cannot mutate internal items."""
+        return tuple(self._items)
 
     @property
     def total(self) -> Money:
         if not self._items:
-            return Money(Decimal("0"), "USD")
-        currency = self._items[0].unit_price.currency
-        running = Money(Decimal("0"), currency)
-        for item in self._items:
-            line_value = item.unit_price.amount * Decimal(item.quantity)
-            running = running.add(Money(line_value, currency))
-        return running
+            return Money(0.0)
+        return reduce_money(m.item.total for m in self._items)  # type: ignore[name-defined]
 
-    def add_item(self, product_id: str, quantity: int, unit_price: Money) -> None:
-        if self.status != "DRAFT":
-            raise RuntimeError(f"Cannot add items to order in {self.status} state")
-        self._items.append(OrderItem(product_id, quantity, unit_price))
+    @property
+    def domain_events(self) -> list[object]:
+        """Read-only access to events captured during this operation."""
+        return list(self._domain_events)
 
-    def validate_consistency(self) -> list[str]:
-        violations: list[str] = []
-        if not self._items:
-            violations.append("Order has no items")
-        if len(self._items) != len({i.product_id for i in self._items}):
-            violations.append("Duplicate products found; update quantity instead of adding")
-        return violations
+    # ── Intent-Revealing Methods ────────────────────────────────────────────
 
-
-class DefaultOrderFactory(OrderFactory):
-    """Concrete factory with real-world construction logic.
-
-    Dependencies (catalog, promo service) are injected via constructor.
-    The factory orchestrates the build process and guarantees a fully valid aggregate.
-    """
-
-    def __init__(self, catalog: ProductCatalog, promo_service: PromoCodeService) -> None:
-        self._catalog = catalog
-        self._promo = promo_service
-
-    def create_order(
-        self,
-        customer_email: str,
-        items: list[OrderItem],
-    ) -> Order:
-        """Build a validated order with currency normalization.
-
-        Validates all products exist in the catalog before creating the order.
-        Normalizes currency across items — all must match or conversion is required.
-        Runs final consistency check before returning the aggregate.
-        """
-        if not customer_email or "@" not in customer_email:
-            raise ValueError(f"Invalid customer email: {customer_email!r}")
-
-        # Validate products exist in catalog
-        product_ids = [item.product_id for item in items]
-        available = self._catalog.get_products(product_ids)
-        out_of_stock = {p.product_id for p in available if not p.available}
-        if out_of_stock:
-            raise OrderFactoryError(f"Cannot order — products out of stock: {out_of_stock}")
-
-        # Normalize currency
-        if items:
-            base_currency = items[0].unit_price.currency
-            mismatches = [i.product_id for i in items if i.unit_price.currency != base_currency]
-            if mismatches:
-                raise OrderFactoryError(
-                    f"Items use different currencies (expected {base_currency}): "
-                    f"{mismatches}"
-                )
-
-        order = Order(order_id=UUID(hex=uuid4().hex[:32]), customer_email=customer_email)
-        for item in items:
-            order.add_item(item.product_id, item.quantity, item.unit_price)
-
-        violations = order.validate_consistency()
-        if violations:
-            raise OrderFactoryError(f"Order validation failed: {'; '.join(violations)}")
-
-        return order
-
-    def create_promotional_order(
-        self,
-        customer_email: str,
-        items: list[OrderItem],
-        promo_code: str,
-        customer_tier: str,
-    ) -> Order:
-        """Create an order with a validated promotional discount applied.
-
-        Validates the promo code against the customer tier before applying discounts.
-        Then delegates to create_order for final validation and construction.
-        """
-        # Validate promo first (external lookup)
-        discount = self._promo.validate(promo_code, customer_tier)
-        if not discount:
-            raise InvalidPromoCodeError(promo_code, f"Code '{promo_code}' invalid for tier '{customer_tier}'")
-
-        # Apply discount to each item price
-        discounted_items = []
-        for item in items:
-            discounted_price = Money(
-                item.unit_price.amount * Decimal(1 - discount.percentage),
-                item.unit_price.currency,
-            )
-            discounted_items.append(OrderItem(item.product_id, item.quantity, discounted_price))
-
-        # Delegate to base factory for consistency validation
-        return self.create_order(customer_email, discounted_items)
-
-
-# ❌ BAD: Constructor with too many optional parameters — silent failure via None defaults
-class BadOrderConstruction:
-    def __init__(
-        self,
-        email: str = "",                     # No validation of format
-        items: list[dict] | None = None,     # Raw dicts, not domain types
-        promo_code: str | None = None,       # Discount logic buried in __init__!
-        customer_tier: str | None = None,    # External data needed but no lookup
-        gift_wrap: bool = False,             # Another conditional branch
+    def add_item(
+        self, product_id: str, quantity: int, unit_price: Money
     ) -> None:
-        if promo_code and customer_tier == "gold":
-            pass  # Discount logic inside constructor — hard to test in isolation
+        """Add a line item to this order. Fails fast on invariant violations."""
+        if self.status != OrderStatus.PENDING:
+            raise RuntimeError("Cannot modify a non-pending order")
+        if len(self._items) >= 100:
+            raise ValueError("Order cannot exceed 100 line items")
 
-        self.items = items or []              # No validation at all
+        item = OrderLineItem(product_id, quantity, unit_price)
+        self._items.append(item)
+        self.updated_at = datetime.utcnow()
+
+    def remove_item(self, product_id: str) -> None:
+        """Remove all line items matching a product ID."""
+        if self.status != OrderStatus.PENDING:
+            raise RuntimeError("Cannot modify a non-pending order")
+
+        before = len(self._items)
+        self._items = [i for i in self._items if i.product_id != product_id]
+        if len(self._items) == before:
+            raise KeyError(f"Product {product_id} not found in order")
+
+        self.updated_at = datetime.utcnow()
+        self._domain_events.append(OrderItemsChanged(self.id))
+
+    def confirm(self, confirmed_by: str) -> None:
+        """Transition order to confirmed. Enforces status transition rules."""
+        if self.status != OrderStatus.PENDING:
+            raise RuntimeError(
+                f"Cannot confirm order in {self.status.value} state"
+            )
+        if not self._items:
+            raise ValueError("Cannot confirm an order with no items")
+
+        self.status = OrderStatus.CONFIRMED
+        self.updated_at = datetime.utcnow()
+        self._domain_events.append(
+            OrderConfirmed(self.id, self.customer_id, confirmed_by)
+        )
+
+    def cancel(self, reason: str) -> None:
+        """Cancel the order with a recorded reason."""
+        if self.status == OrderStatus.SHIPPED:
+            raise RuntimeError("Cannot cancel an already shipped order")
+        if self.status == OrderStatus.CANCELLED:
+            return  # idempotent
+
+        was_confirmed = self.status == OrderStatus.CONFIRMED
+        self.status = OrderStatus.CANCELLED
+        self.cancelled_at = datetime.utcnow()
+        self.updated_at = datetime.utcnow()
+        self._domain_events.append(
+            OrderCancelled(self.id, reason, was_confirmed)
+        )
+
+    def clear_events(self) -> None:
+        """Clear published events after they have been dispatched."""
+        self._domain_events.clear()
 
 
-# ✅ GOOD: Factory with clear construction contract and guaranteed validity
-def demonstrate_factory() -> None:
-    """Show factory usage — constructs valid aggregates through orchestrated steps."""
-    catalog = ProductCatalog()
-    promo_service = PromoCodeService()
-    factory = DefaultOrderFactory(catalog, promo_service)
+# ── Supporting helpers ────────────────────────────────────────────────────────
 
-    items = [
-        OrderItem("SKU-001", 2, Money(Decimal("25.00"), "USD")),
-        OrderItem("SKU-002", 1, Money(Decimal("49.99"), "USD")),
-    ]
+from functools import reduce as _reduce
 
-    order = factory.create_order("alice@example.com", items)
-    assert order.total.amount > Decimal("0")
-    assert len(order.items) == 2
+
+def reduce_money(items):  # noqa: D103 — used internally only
+    return _reduce(lambda a, b: a + b, items, Money(0.0))
+
+
+# ── BAD Example (violations to avoid) ───────────────────────────────────────
+
+class BadOrderAggregate:
+    """❌ BAD examples of aggregate root anti-patterns."""
+
+    def __init__(self):
+        self.items = []  # ❌ Exposes mutable internal collection directly
+        self.status = "pending"  # ❌ Status is a bare string, not an enum
+        self._events = []
+
+    def add_item(self, item):  # ❌ No type hints, no validation
+        self.items.append(item)  # ❌ No invariant checks on quantity or price
+
+    def get_total(self):  # ❌ Returns computed value instead of property
+        return sum(i.price * i.qty for i in self.items)  # ❌ No currency handling
+
+
+# ── BAD Example: Mutable Value Object ───────────────────────────────────────
+
+class BadMoneyValue:
+    """❌ BAD — mutable value object breaks equality semantics."""
+
+    def __init__(self, amount: float, currency: str = "USD"):
+        self.amount = amount  # ❌ Mutable attributes
+        self.currency = currency
+
+    def discount(self, percent: float) -> None:
+        self.amount *= (1 - percent / 100)  # ❌ Mutates in place instead of returning new instance
 ```
 
-**Key principles:**
-- Factories guarantee the returned aggregate is fully valid — every factory method either returns a complete aggregate or raises an exception; never return None
-- External data lookups (catalog validation, promo code checking) happen in the factory, not in the domain model itself
-- Use abstract factory interfaces when construction strategy may vary by bounded context
-- Keep factory methods focused on one construction scenario — if you have create_order, create_promotional_order, create_bulk_order, each represents a distinct construction path
+### Pattern 2: Domain Events & Synchronous Publishing
 
----
-
-### Pattern 4: Unit of Work — Transaction Coordination Across Repositories
-
-The Unit of Work (UoW) pattern coordinates transactions across multiple repositories within a single use case. It tracks changes via an identity map and provides atomic commit/rollback semantics. Use UoW when multiple aggregates from different repositories must be persisted as a single atomic operation.
+Domain events capture facts about state changes. They are published synchronously within the transaction boundary so they commit atomically with aggregate state.
 
 ```python
+"""Domain event system with synchronous publishing and deduplication."""
+
 from __future__ import annotations
 
-from collections import defaultdict
-from contextlib import contextmanager
-from typing import Any, Generic, Protocol, TypeVar
+import uuid
+from abc import ABC, abstractmethod
+from dataclasses import dataclass, field
+from datetime import datetime
+from typing import Protocol
 
 
-T = TypeVar("T")
+# ── Event Classes ────────────────────────────────────────────────────────────
+
+@dataclass(frozen=True)
+class DomainEvent:
+    """Base class for all domain events. Immutable and identity-tracked."""
+
+    event_id: uuid.UUID = field(default_factory=uuid.uuid4)
+    occurred_at: datetime = field(default_factory=datetime.utcnow)
+
+    @abstractmethod
+    def aggregate_name(self) -> str: ...
+
+    @abstractmethod
+    def aggregate_id(self) -> str: ...
 
 
-class Identifiable(Protocol):
-    """Base protocol for entities with a stable identity."""
-    id: Any  # type: ignore[misc]
+@dataclass(frozen=True)
+class OrderConfirmed(DomainEvent):
+    event_id: uuid.UUID = field(default_factory=uuid.uuid4)
+    occurred_at: datetime = field(default_factory=datetime.utcnow)
+    order_id: str
+    customer_id: str
+    confirmed_by: str
+
+    def aggregate_name(self) -> str:
+        return "Order"
+
+    def aggregate_id(self) -> str:
+        return self.order_id
 
 
-class UnitOfWorkError(Exception):
-    """Raised when UoW operations fail."""
+@dataclass(frozen=True)
+class OrderCancelled(DomainEvent):
+    event_id: uuid.UUID = field(default_factory=uuid.uuid4)
+    occurred_at: datetime = field(default_factory=datetime.utcnow)
+    order_id: str
+    reason: str
+    was_previously_confirmed: bool
+
+    def aggregate_name(self) -> str:
+        return "Order"
+
+    def aggregate_id(self) -> str:
+        return self.order_id
 
 
-class Repository(Protocol[T]):
-    """Generic repository protocol. Domain code depends on this, not concrete implementations."""
+@dataclass(frozen=True)
+class OrderItemsChanged(DomainEvent):
+    event_id: uuid.UUID = field(default_factory=uuid.uuid4)
+    occurred_at: datetime = field(default_factory=datetime.utcnow)
+    order_id: uuid.UUID
 
-    def get_by_id(self, entity_id: Any) -> T | None: ...  # type: ignore[misc]
-    def save(self, entity: T) -> None: ...
-    def delete(self, entity: T) -> None: ...
+    def aggregate_name(self) -> str:
+        return "Order"
+
+    def aggregate_id(self) -> str:
+        return str(self.order_id)
 
 
-class UnitOfWork:
-    """Coordinates transactions across multiple repositories.
+# ── Event Publisher Interface & Implementation ───────────────────────────────
 
-    The UoW tracks changes via an identity map (ensuring one in-memory instance per entity ID)
-    and provides atomic commit/rollback semantics. It is designed as a context manager.
+class DomainEventPublisher(Protocol):
+    """Interface for publishing domain events atomically with a transaction."""
 
-    Usage:
-        with uow() as unitOfWork:
-            account = unitOfWork.repository(AccountRepo).get_by_id(account_id)
-            account.withdraw(amount)
-            unitOfWork.repository(AccountRepo).save(account)
-            unitOfWork.commit()  # or unitOfWork.rollback() on exception
+    async def publish(self, event: DomainEvent) -> None: ...
+    async def publish_many(self, events: list[DomainEvent]) -> None: ...
+
+
+@dataclass
+class InMemoryDomainEventPublisher:
+    """
+    Synchronous domain event publisher.
+
+    Captures events during aggregate operations and dispatches them within the
+    same transaction boundary. Uses a change tracker to prevent duplicate
+    publication of the same event if an operation is retried.
+    """
+
+    _pending_events: list[DomainEvent] = field(default_factory=list, repr=False)
+    _published_ids: set[uuid.UUID] = field(default_factory=set, repr=False)
+
+    def capture(self, event: DomainEvent) -> None:
+        """Queue a domain event for publication."""
+        self._pending_events.append(event)
+
+    def capture_many(self, events: list[DomainEvent]) -> None:
+        """Queue multiple domain events for publication."""
+        self._pending_events.extend(events)
+
+    async def publish_pending(self) -> list[DomainEvent]:
+        """
+        Publish all captured events and track them to prevent duplicates.
+
+        Returns the list of published events. If called again with already-
+        published events, they are silently skipped based on event_id dedup.
+        """
+        unpublished = [
+            ev for ev in self._pending_events if ev.event_id not in self._published_ids
+        ]
+        for event in unpublished:
+            await self._do_publish(event)
+            self._published_ids.add(event.event_id)
+
+        # Clear pending events regardless of whether they were new or duplicate
+        self._pending_events.clear()
+        return unpublished
+
+    async def _do_publish(self, event: DomainEvent) -> None:
+        """Publish a single event. Override for real implementations."""
+        # In production, this would write to an outbox table or message queue.
+        # The key invariant: publication happens inside the transaction.
+        pass  # noqa: S104 — placeholder for actual persistence logic
+
+    def reset(self) -> None:
+        """Reset state after a failed transaction roll-back."""
+        self._pending_events.clear()
+        # Do NOT clear _published_ids — that event was committed to storage
+
+
+# ── Unit of Work Coordinator ────────────────────────────────────────────────
+
+class UnitOfWork(ABC):
+    """Coordinates transactions: saves aggregates, publishes events atomically."""
+
+    @abstractmethod
+    async def commit(self) -> None: ...
+
+    @abstractmethod
+    async def rollback(self) -> None: ...
+
+
+class InMemoryUnitOfWork(UnitOfWork):
+    """
+    Implements the unit of work pattern with atomic event publishing.
+
+    Saves all registered aggregates and publishes their domain events within
+    a single transaction boundary. On failure, both state changes and events
+    are rolled back.
     """
 
     def __init__(self) -> None:
-        self._repositories: dict[type, Repository] = {}
-        self._identity_map: dict[str, Identifiable] = {}
-        self._committed = False
-        self._rollback_requested = False
+        self._aggregates_to_save: list[object] = []
+        self._publisher = InMemoryDomainEventPublisher()
 
-    def register_repository(self, repo: Repository) -> None:
-        """Register a repository with the UoW. Must be called before use."""
-        repo_type = type(repo)
-        if repo_type in self._repositories:
-            raise ValueError(f"Repository {repo_type.__name__} already registered")
-        self._repositories[repo_type] = repo
+    @property
+    def publisher(self) -> InMemoryDomainEventPublisher:
+        return self._publisher
 
-    def repository(self, repo_type: type) -> Repository:
-        """Get a registered repository by its type. Raises if not found."""
-        if repo_type not in self._repositories:
-            raise KeyError(
-                f"Repository {repo_type.__name__} not registered with UoW. "
-                f"Register it before using."
-            )
-        return self._repositories[repo_type]
-
-    def get_or_load(self, entity_id: str) -> Identifiable | None:
-        """Get an entity from the identity map or load it via its repository.
-
-        This ensures that within a single UoW scope, each entity ID maps to
-        exactly one in-memory instance — preventing stale reads and duplicate saves.
-        """
-        if entity_id in self._identity_map:
-            return self._identity_map[entity_id]
-        # In production: would need repository type lookup by entity type
-        # This is a simplified implementation; real UoWs use type hints for this
-        return None
-
-    def register_entity(self, entity: Identifiable) -> None:
-        """Register an entity in the identity map."""
-        self._identity_map[str(entity.id)] = entity
-
-    def commit(self) -> None:
-        """Commit all tracked changes. Each repository's save() is called for changed entities."""
-        if self._rollback_requested:
-            raise UnitOfWorkError("Cannot commit after rollback was requested")
-
-        for repo in self._repositories.values():
-            # In production: iterate over changed entities, not all repos blindly
-            pass  # Real implementation tracks which entities were modified
-
-        self._committed = True
-        self._identity_map.clear()
-
-    def rollback(self) -> None:
-        """Roll back all changes and clear the identity map."""
-        self._rollback_requested = True
-        self._identity_map.clear()
-        self._committed = False
-
-    @contextmanager
-    def __call__(self) -> Any:
-        """Context manager usage — ensures commit/rollback happens correctly."""
-        uow = self.__class__()
+    async def commit(self) -> None:
+        """Save aggregates and publish events atomically."""
         try:
-            yield uow
-            if not self._committed and not self._rollback_requested:
-                uow.commit()
+            # Step 1: Persist all modified aggregates
+            for agg in self._aggregates_to_save:
+                await self._save_aggregate(agg)
+
+            # Step 2: Publish all captured domain events (within same txn)
+            published = await self._publisher.publish_pending()
+
+            if published:
+                # Step 3: Record event persistence to prevent duplicate replay
+                for ev in published:
+                    self._record_event_published(ev)
+
         except Exception:
-            uow.rollback()
+            await self.rollback()
             raise
 
+    async def rollback(self) -> None:
+        """Rollback all changes including clearing pending events."""
+        self._aggregates_to_save.clear()
+        self._publisher.reset()
 
-# ❌ BAD: No transaction coordination — multiple saves, no rollback on failure
-def bad_multi_repo_operation(
-    sender_repo: Repository,
-    receiver_repo: Repository,
-    from_id: Any,
-    amount: Money,
-) -> None:
-    """Multiple repository operations with no atomicity guarantee."""
-    sender = sender_repo.get_by_id(from_id)
-    sender.withdraw(amount)
-    sender_repo.save(sender)  # If this succeeds but next fails — partial state!
+    def register_for_save(self, aggregate: object) -> None:
+        if aggregate not in self._aggregates_to_save:
+            self._aggregates_to_save.append(aggregate)
 
-    receiver = receiver_repo.get_by_id(receiver_repo)  # Wrong: should be to_id
-    receiver.deposit(amount)
-    receiver_repo.save(receiver)
+    async def _save_aggregate(self, agg: object) -> None:
+        """Persist an aggregate root through its repository. Override as needed."""
+        pass  # noqa: S104
 
-
-# ✅ GOOD: Unit of Work ensures atomic multi-repository operations
-def demonstrate_uow() -> None:
-    """Show UoW coordinating multiple repository operations."""
-    uow = UnitOfWork()
-
-    # Register repositories (in production, these are injected dependencies)
-    account_repo: Repository[Account] = DummyAccountRepository()  # type: ignore[name-defined]
-    transaction_repo: Repository[Any] = DummyTransactionRepository()  # type: ignore[name-defined]
-
-    uow.register_repository(account_repo)
-    uow.register_repository(transaction_repo)
-
-    try:
-        sender = account_repo.get_by_id(UUID(hex="a1b2c3d4e5f6" + "0" * 20))
-        if sender:
-            sender.withdraw(Money(Decimal("50.00"), "USD"))
-            account_repo.save(sender)
-
-        # Commit all changes atomically
-        uow.commit()
-    except Exception as exc:
-        print(f"Operation failed, rolled back: {exc}")
+    def _record_event_published(self, event: DomainEvent) -> None:
+        """Record event persistence for deduplication across retries."""
+        pass  # noqa: S104
 ```
 
-**Key principles:**
-- The UoW must be scoped to a single use case handler — never nest UoWs or share them across handlers
-- Use an identity map to ensure one in-memory instance per entity ID within the UoW scope
-- Register repositories explicitly — the UoW should not discover repositories by type inspection
-- Always commit or roll back — use the context manager pattern to guarantee cleanup
+### Pattern 3: Anti-Corruption Layer Adapter
+
+The anti-corruption layer (ACL) translates between external data formats and internal domain models. External model classes must never leak into the domain layer.
+
+```python
+"""Anti-corruption layer for translating legacy API responses into domain models."""
+
+from __future__ import annotations
+
+import xml.etree.ElementTree as ET
+from dataclasses import dataclass
+from typing import Any
+
+
+# ── Internal Domain Value Objects (these are the ONLY types the domain knows) ─
+
+@dataclass(frozen=True)
+class SupplierProduct:
+    """Internal domain value object representing a supplier product."""
+
+    internal_id: str
+    sku: str
+    name: str
+    price_cents: int
+    currency: str = "USD"
+    available_units: int = 0
+
+
+@dataclass(frozen=True)
+class SupplierOrderPayload:
+    """Internal domain value object for an incoming order."""
+
+    order_reference: str
+    customer_name: str
+    items: list[tuple[str, int]]  # (sku, quantity)
+    shipping_address: dict[str, Any]
+
+
+# ── External API Models (NEVER leak into the domain layer) ───────────────────
+
+@dataclass
+class LegacyAPISupplierProduct:
+    """External model from the legacy supplier SOAP/REST API. Do NOT use in domain code."""
+
+    product_code: str           # Maps to internal SKU
+    supplier_ref: str           # Maps to internal_id
+    description: str            # Maps to name
+    price: float                # In dollars — needs conversion to cents
+    currency_code: str          # May vary (USD, EUR, GBP)
+    stock_quantity: int         # Maps to available_units
+    status: str                 # Active/Inactive — filtered out
+
+
+@dataclass
+class LegacyAPIOrder:
+    """External order format from the legacy system. Do NOT use in domain code."""
+
+    po_number: str              # Maps to order_reference
+    customer_name: str | None   # Nullable in external, required internally
+    line_items: list[dict[str, Any]]  # Raw dict — must be validated
+    ship_to: dict[str, str]     # May have different keys than internal model
+
+
+# ── ACL Adapter ──────────────────────────────────────────────────────────────
+
+class SupplierACLAdapter:
+    """
+    Anti-corruption layer adapter for the legacy supplier system.
+
+    Translates external API models into internal domain value objects.
+    All validation and transformation happens here — the domain layer has
+    zero knowledge of the external data format.
+    """
+
+    def __init__(self, currency_conversion: dict[str, float] | None = None) -> None:
+        self._conversion_rates = currency_conversion or {"USD": 1.0}
+
+    def map_product(self, external: LegacyAPISupplierProduct) -> SupplierProduct:
+        """
+        Transform a single legacy API product into an internal domain value object.
+
+        Raises ValueError if required fields are missing or invalid.
+        The domain layer will never see LegacyAPISupplierProduct.
+        """
+        if not external.supplier_ref:
+            raise ValueError("Supplier reference is required")
+        if not external.product_code:
+            raise ValueError("Product code (SKU) is required")
+        if external.status != "Active":
+            raise ValueError(f"Cannot import inactive product: {external.supplier_ref}")
+
+        # Convert price from dollars to cents
+        rate = self._conversion_rates.get(external.currency_code, 1.0)
+        price_cents = int(external.price * rate * 100)
+
+        return SupplierProduct(
+            internal_id=external.supplier_ref.strip(),
+            sku=external.product_code.strip().upper(),
+            name=external.description.strip(),
+            price_cents=max(price_cents, 0),  # Enforce non-negative at boundary
+            currency=external.currency_code,
+            available_units=external.stock_quantity,
+        )
+
+    def map_products(self, external_list: list[LegacyAPISupplierProduct]) -> list[SupplierProduct]:
+        """Transform a batch of products. Some may be rejected."""
+        results: list[SupplierProduct] = []
+        for ext in external_list:
+            try:
+                results.append(self.map_product(ext))
+            except ValueError:
+                # Skip inactive or malformed products — do not fail the whole batch
+                continue
+        return results
+
+    def map_order(self, external: LegacyAPIOrder) -> SupplierOrderPayload:
+        """
+        Transform a legacy API order into an internal domain value object.
+
+        Validates all required fields and normalizes the data format.
+        Raises ValueError on invalid orders before they reach the domain layer.
+        """
+        if not external.po_number:
+            raise ValueError("Purchase order number is required")
+        if not external.customer_name:
+            raise ValueError(f"Customer name required for PO {external.po_number}")
+
+        validated_items: list[tuple[str, int]] = []
+        for raw_item in external.line_items:
+            sku = raw_item.get("sku", "").strip().upper()
+            qty = raw_item.get("quantity", 0)
+            if not sku or qty <= 0:
+                raise ValueError(f"Invalid line item in PO {external.po_number}: {raw_item}")
+            validated_items.append((sku, qty))
+
+        if not validated_items:
+            raise ValueError(f"PO {external.po_number} has no valid line items")
+
+        return SupplierOrderPayload(
+            order_reference=external.po_number.strip(),
+            customer_name=external.customer_name.strip(),
+            items=validated_items,
+            shipping_address={
+                "street": external.ship_to.get("address1", ""),
+                "city": external.ship_to.get("city", ""),
+                "state": external.ship_to.get("state", ""),
+                "postal_code": external.ship_to.get("zip", ""),
+                "country": external.ship_to.get("country", "US"),
+            },
+        )
+
+
+# ── BAD Example: ACL Anti-Patterns ───────────────────────────────────────────
+
+class BadACLEntryPoint:
+    """❌ BAD — leaks external model directly into the domain layer."""
+
+    def process_order(self, raw_api_data: dict) -> None:
+        # ❌ Domain code receives raw API dictionaries
+        order = ExternalOrder(**raw_api_data)  # ❌ Foreign class enters domain
+        self.domain_service.create(order)      # ❌ Domain method takes foreign type
+
+    def sync_products(self, products: list[ExternalProduct]) -> None:
+        # ❌ No translation — external models used directly in queries
+        for ext_product in products:
+            session.query(InternalProduct).filter_by(sku=ext_product.product_code)  # ❌ Skips ACL
+
+
+# ── GOOD Example: Clean ACL Boundary ─────────────────────────────────────────
+
+class GoodACLEntryPoint:
+    """✅ GOOD — external models are fully translated before reaching the domain."""
+
+    def __init__(self, adapter: SupplierACLAdapter) -> None:
+        self._adapter = adapter
+
+    def process_order(self, raw_api_xml: bytes) -> None:
+        # Step 1: Parse external format (outside domain)
+        tree = ET.fromstring(raw_api_xml)
+        external = LegacyAPIOrder(
+            po_number=tree.findtext("po_number"),
+            customer_name=tree.findtext("customer_name"),
+            line_items=[{"sku": i.findtext("sku"), "quantity": int(i.findtext("qty"))}
+                        for i in tree.findall("item")],
+            ship_to={k: tree.findtext(f"ship_{k}")
+                     for k in ("address1", "city", "state", "zip", "country")},
+        )
+
+        # Step 2: Translate into domain value objects via ACL
+        payload = self._adapter.map_order(external)
+
+        # Step 3: Pass only internal domain types to the domain layer
+        self.domain_service.create_order(
+            order_ref=payload.order_reference,
+            customer_name=payload.customer_name,
+            items=payload.items,
+        )
+```
+
+### Pattern 4: Repository with Optimistic Concurrency
+
+Repositories manage aggregate root persistence with optimistic concurrency control. Read queries use separate projection readers.
+
+```python
+"""Repository pattern for aggregate roots with optimistic concurrency control."""
+
+from __future__ import annotations
+
+import uuid
+from abc import ABC, abstractmethod
+from dataclasses import dataclass, field
+from datetime import datetime
+from typing import Generic, Iterator, Protocol, TypeVar
+
+
+# ── Optimistic Concurrency Base ──────────────────────────────────────────────
+
+@dataclass
+class VersionedAggregate:
+    """
+    Base class providing optimistic concurrency control.
+
+    Each aggregate carries a version number that increments on every save.
+    Concurrent modifications are detected when the stored version differs
+    from the expected version at commit time.
+    """
+
+    id: uuid.UUID
+    version: int = 0
+    updated_at: datetime = field(default_factory=datetime.utcnow)
+
+    def bump_version(self) -> None:
+        self.version += 1
+        self.updated_at = datetime.utcnow()
+
+
+# ── Specification Pattern ───────────────────────────────────────────────────
+
+class Specification(Protocol):
+    """Protocol for composable business rule specifications."""
+
+    def is_satisfied_by(self, candidate: object) -> bool: ...
+    def and_spec(self, other: Specification) -> Specification: ...
+    def or_spec(self, other: Specification) -> Specification: ...
+    def not_spec(self) -> Specification: ...
+
+
+class CompositeSpecification(Specification):
+    """Composable specification using AND/OR/NOT composition."""
+
+    def __init__(self, left: Specification | None = None, right: Specification | None = None,
+                 operator: str = "and") -> None:
+        self._left = left
+        self._right = right
+        self._operator = operator
+
+    @classmethod
+    def always(cls) -> Specification:
+        """Specification that always returns True."""
+        return _AlwaysSpec()
+
+    @classmethod
+    def never(cls) -> Specification:
+        """Specification that always returns False."""
+        return _NeverSpec()
+
+    def is_satisfied_by(self, candidate: object) -> bool:
+        if self._left is None and self._right is None:
+            return True  # Leaf specs override
+
+        left_ok = self._left.is_satisfied_by(candidate) if self._left else True
+
+        if self._operator == "and":
+            right_ok = self._right.is_satisfied_by(candidate) if self._right else True
+            return left_ok and right_ok
+        elif self._operator == "or":
+            right_ok = self._right.is_satisfied_by(candidate) if self._right else False
+            return left_ok or right_ok
+        raise RuntimeError(f"Unknown operator: {self._operator}")
+
+    def and_spec(self, other: Specification) -> Specification:
+        return CompositeSpecification(self, other, "and")
+
+    def or_spec(self, other: Specification) -> Specification:
+        return CompositeSpecification(self, other, "or")
+
+    def not_spec(self) -> Specification:
+        return _NegatedSpec(self)
+
+
+class _AlwaysSpec(Specification):
+    def is_satisfied_by(self, candidate: object) -> bool: return True
+    def and_spec(self, other: Specification) -> Specification: return other
+    def or_spec(self, other: Specification) -> Specification: return self
+    def not_spec(self) -> Specification: return _NeverSpec()
+
+
+class _NeverSpec(Specification):
+    def is_satisfied_by(self, candidate: object) -> bool: return False
+    def and_spec(self, other: Specification) -> Specification: return self
+    def or_spec(self, other: Specification) -> Specification: return other
+    def not_spec(self) -> Specification: return _AlwaysSpec()
+
+
+class _NegatedSpec(Specification):
+    def __init__(self, spec: Specification) -> None:
+        self._spec = spec
+
+    def is_satisfied_by(self, candidate: object) -> bool:
+        return not self._spec.is_satisfied_by(candidate)
+
+    def and_spec(self, other: Specification) -> Specification:
+        return CompositeSpecification(self._spec.not_spec(), other, "and")
+
+    def or_spec(self, other: Specification) -> Specification:
+        return CompositeSpecification(self._spec.not_spec(), other, "or")
+
+    def not_spec(self) -> Specification:
+        return self._spec  # Double negation
+
+
+class OrderStatusSpec(Specification):
+    """Filters by order status."""
+
+    def __init__(self, status: str) -> None:
+        self._status = status
+
+    def is_satisfied_by(self, candidate: object) -> bool:
+        return hasattr(candidate, "status") and candidate.status == self._status
+
+
+class MinTotalSpec(Specification):
+    """Filters by minimum total amount."""
+
+    def __init__(self, minimum_cents: int) -> None:
+        self._minimum_cents = minimum_cents
+
+    def is_satisfied_by(self, candidate: object) -> bool:
+        if not hasattr(candidate, "total"):
+            return False
+        # Assumes `total` has a `cents` property or can be converted
+        total_val = getattr(getattr(candidate, "total", None), "amount", 0) * 100
+        return total_val >= self._minimum_cents
+
+
+class ActiveCustomerSpec(Specification):
+    """Filters by whether the customer is active."""
+
+    def __init__(self, get_customer_status) -> None:  # Injection point for external check
+        self._get_customer_status = get_customer_status
+
+    def is_satisfied_by(self, candidate: object) -> bool:
+        if not hasattr(candidate, "customer_id"):
+            return False
+        status = self._get_customer_status(candidate.customer_id)
+        return status == "active"
+
+
+# ── Repository Protocol & Implementation ─────────────────────────────────────
+
+T = TypeVar("T", bound=VersionedAggregate)
+
+
+class Repository(Protocol, Generic[T]):
+    """Repository interface for an aggregate root type."""
+
+    @abstractmethod
+    async def load(self, id: uuid.UUID) -> T | None: ...
+
+    @abstractmethod
+    async def save(self, aggregate: T) -> None: ...
+
+    @abstractmethod
+    async def find_by(self, spec: Specification) -> list[T]: ...
+
+
+class InMemoryOrderRepository:
+    """
+    In-memory repository demonstrating optimistic concurrency control.
+
+    Production implementations would replace the in-memory store with a real
+    database. The key pattern: every save checks the version number, and a
+    mismatch raises ConcurrencyConflictError.
+    """
+
+    def __init__(self) -> None:
+        self._store: dict[uuid.UUID, VersionedAggregate] = {}
+        self._on_save_hooks: list[callable] = []
+
+    async def load(self, id: uuid.UUID) -> Order | None:
+        """Load an aggregate root by ID. Returns None if not found."""
+        return self._store.get(id)  # type: ignore[return-value]
+
+    async def save(self, aggregate: VersionedAggregate) -> None:
+        """
+        Save an aggregate with optimistic concurrency control.
+
+        Raises ConcurrencyConflictError if the aggregate's version does not
+        match the stored version, indicating a concurrent modification.
+        """
+        existing = self._store.get(aggregate.id)
+
+        if existing is not None and existing.version != aggregate.version:
+            raise ConcurrencyConflictError(
+                f"Aggregate {aggregate.id}: expected version {aggregate.version}, "
+                f"but stored version is {existing.version}. Another process modified it."
+            )
+
+        # Apply any pre-save hooks (e.g., set updated_at, audit fields)
+        for hook in self._on_save_hooks:
+            hook(aggregate)
+
+        aggregate.bump_version()
+        self._store[aggregate.id] = aggregate
+
+    async def find_by(self, spec: Specification) -> list[VersionedAggregate]:
+        """Find all aggregates matching a specification."""
+        return [agg for agg in self._store.values() if spec.is_satisfied_by(agg)]  # type: ignore[arg-type]
+
+    def register_save_hook(self, hook: callable) -> None:
+        self._on_save_hooks.append(hook)
+
+
+class ConcurrencyConflictError(Exception):
+    """Raised when optimistic concurrency check fails."""
+
+    def __init__(self, message: str) -> None:
+        super().__init__(message)
+        self.is_retryable = True  # Signal that the caller should retry
+
+
+# ── Read-Side Projection (Separate from Write Model) ────────────────────────
+
+@dataclass
+class OrderProjection:
+    """Read-side projection — a flattened, query-optimized view of order data."""
+
+    order_id: str
+    customer_id: str
+    status: str
+    item_count: int
+    total_cents: int
+    created_at: datetime
+
+
+class OrderProjectionReader:
+    """
+    Separate reader for queries that don't modify state.
+
+    This keeps read concerns completely separate from the write model.
+    Projections can be denormalized, indexed differently, and queried
+    independently without touching aggregate roots.
+    """
+
+    def __init__(self) -> None:
+        self._projections: dict[str, OrderProjection] = {}
+
+    def apply_event(self, event: DomainEvent) -> None:
+        """Rebuild projections from domain events (eventual consistency)."""
+        if isinstance(event, OrderConfirmed):
+            # In production, this would load the aggregate and project it
+            self._projections[event.order_id] = OrderProjection(
+                order_id=event.order_id,
+                customer_id=event.customer_id,
+                status="confirmed",
+                item_count=0,  # Would come from actual items
+                total_cents=0,  # Would be computed
+                created_at=datetime.utcnow(),
+            )
+
+    def get_by_customer(self, customer_id: str) -> list[OrderProjection]:
+        return [p for p in self._projections.values() if p.customer_id == customer_id]
+
+    def find_pending(self) -> list[OrderProjection]:
+        return [p for p in self._projections.values() if p.status == "pending"]
+```
+
+### Pattern 5: Specification Composition & Query Objects
+
+Specifications are composable business rules that work both for domain validation and repository filtering. Query objects encapsulate complex read queries.
+
+```python
+"""Composable specifications and query objects for read-side operations."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+
+
+# ── Composable Specifications (continued from Pattern 4) ────────────────────
+
+def create_order_query_spec(
+    min_total_cents: int | None = None,
+    exclude_statuses: list[str] | None = None,
+    require_active_customer: bool = False,
+) -> Specification:
+    """
+    Factory for building complex order filtering specifications.
+
+    Demonstrates specification composition — combine simple specs with
+    AND/OR/NOT to build arbitrarily complex business rules.
+
+    Example: "Show me orders over $50 from active customers that are pending or confirmed"
+    spec = create_order_query_spec(min_total_cents=5000, exclude_statuses=["cancelled", "shipped"])
+    """
+    base: Specification = Specification.always()
+
+    if min_total_cents is not None:
+        base = base.and_spec(MinTotalSpec(min_total_cents))
+
+    if exclude_statuses:
+        # NOT any of the excluded statuses — compose by negating each
+        exclusion_specs = [OrderStatusSpec(s) for s in exclude_statuses]
+        combined_exclusion = Specification.always()
+        for spec_obj in exclusion_specs:
+            combined_exclusion = combined_exclusion.or_spec(spec_obj)
+        base = base.and_spec(combined_exclusion.not_spec())
+
+    if require_active_customer:
+        base = base.and_spec(ActiveCustomerSpec(get_customer_status=lambda cid: "active"))
+
+    return base
+
+
+# ── Query Object Pattern ────────────────────────────────────────────────────
+
+@dataclass(frozen=True)
+class OrderQuery:
+    """
+    Immutable query object for complex read operations.
+
+    Encapsulates all parameters needed to build a query without touching
+    the write model. Can be converted to SQL WHERE clauses, cached, and
+    reused across repositories.
+    """
+
+    customer_id: str | None = None
+    status_filter: list[str] | None = None
+    date_range_start: datetime | None = None
+    date_range_end: datetime | None = None
+    min_total_cents: int | None = None
+    max_total_cents: int | None = None
+    product_sku: str | None = None
+    page: int = 1
+    page_size: int = 50
+
+    @property
+    def limit(self) -> int:
+        return min(self.page_size, 100)
+
+    @property
+    def offset(self) -> int:
+        return (self.page - 1) * self.limit
+
+    def to_where_clause(self) -> tuple[str, list[object]]:
+        """
+        Convert this query object into a SQL WHERE clause and parameters.
+
+        Returns a tuple of (clause_string, params_list) ready for parameterized queries.
+        This is how specifications bridge between domain logic and persistence.
+        """
+        conditions: list[str] = []
+        params: list[object] = []
+
+        if self.customer_id:
+            conditions.append("customer_id = ?")
+            params.append(self.customer_id)
+
+        if self.status_filter:
+            placeholders = ", ".join(["?"] * len(self.status_filter))
+            conditions.append(f"status IN ({placeholders})")
+            params.extend(self.status_filter)
+
+        if self.date_range_start:
+            conditions.append("created_at >= ?")
+            params.append(self.date_range_start.isoformat())
+
+        if self.date_range_end:
+            conditions.append("created_at <= ?")
+            params.append(self.date_range_end.isoformat())
+
+        if self.min_total_cents is not None:
+            conditions.append("total_cents >= ?")
+            params.append(self.min_total_cents)
+
+        if self.max_total_cents is not None:
+            conditions.append("total_cents <= ?")
+            params.append(self.max_total_cents)
+
+        where = " AND ".join(conditions) if conditions else "1=1"
+        return f"WHERE {where}", params  # type: ignore[return-value]
+
+
+class SpecificationSQLConverter:
+    """Converts specification objects into SQL WHERE clauses."""
+
+    @staticmethod
+    def to_where_clause(spec: Specification, candidate_template: object) -> tuple[str, list[object]]:
+        """
+        Convert a specification to a WHERE clause.
+
+        For production use with actual databases, this would walk the
+        specification tree and build parameterized SQL conditions.
+        In-memory repositories use is_satisfied_by directly.
+        """
+        # This is where you'd implement the spec-to-SQL translation
+        # For now, return a no-op clause — real implementation depends on ORM
+        return "", []
+```
 
 ---
 
 ## Constraints
 
 ### MUST DO
-- **Keep Specifications side-effect free** — `is_satisfied_by()` must never modify state, trigger I/O, or call external services. They are pure evaluators; if a rule requires database access, move that logic to the aggregate or domain service instead.
-- **Use Domain Services only for cross-aggregate operations** — if a method operates on entities within a single aggregate root, put it in the aggregate. Domain Services are for coordination between aggregates that cannot logically belong to one another.
-- **Name Domain Services after business capabilities** — `FundTransferService`, `InventoryReservationService`, not `AccountManager` or `DataProcessor`. The name should communicate what business operation it performs.
-- **Guarantee aggregate validity from factories** — every factory method must either return a fully constructed, validated aggregate or raise an exception. Never return None, partial aggregates, or aggregates in an invalid state.
-- **Scope Unit of Work to single use case handlers** — each command handler should acquire its own UoW at the top level and never nest UoWs. Nesting causes transaction conflicts and makes rollback semantics unpredictable.
-- **Separate commands from queries** — command handlers (write operations) must never perform read queries that cause mutations, and query handlers must never call `save()` or trigger state changes. This separation is critical in CQRS systems.
+- **Enforce all invariants inside the aggregate root** — never allow invalid state to exist. Every public method on an aggregate must validate before changing state. Use `ValueError` for business rule violations and `RuntimeError` for state transition errors.
+
+- **Make value objects immutable** — use `@dataclass(frozen=True)` or equivalent. Return new instances via `replace()` or copy-with methods instead of mutating existing ones. Equality is by attribute comparison, not identity.
+
+- **Capture domain events during aggregate operations** — append events to `_domain_events` list inside the aggregate. Publish them atomically through the unit of work after the transaction commits. Never publish events directly from an aggregate method.
+
+- **Implement repositories for aggregate roots only** — never individual entities or value objects. The repository loads and saves complete aggregates. If you need a query that crosses aggregates, use a specification or projection reader instead.
+
+- **Use specification pattern for composable business rules** — specifications should be combinable with AND/OR/NOT. They work both for domain validation (`spec.is_satisfied_by(aggregate)`) and repository filtering.
+
+- **Separate read and write models** — projections handle queries that don't modify state. They are rebuilt from domain events, not queried directly from aggregate roots. This prevents read concerns from contaminating the write model.
 
 ### MUST NOT DO
-- **Put Specifications in infrastructure code** — specifications belong in the domain layer; they express business rules, not technical constraints. Infrastructure repositories may USE specifications as filters, but should not DEFINE them.
-- **Let Domain Services access databases directly** — domain services must go through repository interfaces (Protocol or ABC), never call database sessions, ORM objects, or raw SQL queries directly.
-- **Create god factories** — a factory with more than 5-6 distinct creation methods is likely trying to do too much. Split by use case or business scenario (e.g., `OrderFactory` for basic orders vs `PromotionalOrderFactory` for special promotions).
-- **Use Unit of Work for single-repository operations** — if only one repository participates in a transaction, use its native transaction support directly. UoW adds complexity that provides no benefit for single-repo scenarios.
-- **Mutate entity state outside the aggregate root** — even within a UoW scope, domain entities should be mutated through their own methods (`withdraw()`, `deposit()`), not by directly setting attributes from the command handler.
+- **Expose internal collections from aggregates** — return frozen snapshots (`tuple`) or use intent-revealing methods like `add_item()`, `remove_item()`. Never expose `.items`, `.orders`, etc. directly to callers.
+
+- **Persist individual entities directly** — always persist through the aggregate root repository. If you have child entities, they are part of the aggregate and saved/loaded as a unit.
+
+- **Publish domain events outside a transaction boundary** — events must be committed atomically with state changes. Use the unit of work pattern to coordinate saves and event publication in a single transaction. Publishing events before the save commits leads to phantom events on rollback.
+
+- **Allow external model classes into the domain layer** — all translation between external APIs (SOAP, REST, CSV, XML) and internal domain models happens in the anti-corruption layer adapter. The domain layer knows only about its own value objects and aggregate roots.
+
+- **Use repositories for read queries** — use separate projection readers for reads that don't modify state. Repositories are write-model abstractions. Mixing read and write responsibilities in one class leads to anemic domain models.
+
+- **Let aggregates depend on infrastructure** — aggregates should never import `sqlalchemy`, `redis`, or HTTP clients. They depend only on value objects, enums, and other aggregate roots within the same bounded context. Infrastructure concerns belong in repositories and service layers.
 
 ---
 
-## Output Template
+## Live References
 
-When applying this skill, produce:
+> Authoritative documentation links for DDD tactical patterns.
 
-1. **Specification Objects** — Base `Specification[T]` with AND/OR/NOT composition, plus concrete specifications as frozen dataclasses with `is_satisfied_by()` methods for each business rule
-2. **Domain Service Classes** — Cross-aggregate coordination services named after the business capability, with dependency injection via constructor and clear method contracts
-3. **Aggregate Factory Implementations** — Factory classes (abstract interface + concrete implementations) that orchestrate complex aggregate construction through multiple validation steps
-4. **Unit of Work Implementation** — Context-managed UoW with identity map tracking, repository registration, and atomic commit/rollback semantics
-5. **Command Handler Examples** — Write operation handlers showing proper UoW usage, repository access, and transaction boundaries
-
-All code must use Python 3.10+ type hints, docstrings on every public method, and raise descriptive exceptions rather than returning error codes. Follow SOLID principles: each Specification is a single concern (SRP), domain services depend on abstractions (DIP), and specifications compose through extension (OCP).
+- [Domain-Driven Design Distilled — Vaughn Vernon (Red Book)](https://domainlanguage.com/ddd/reference/)
+- [Implementing DDD — Scott Millett](https://www.implementingddd.com/)
+- [Microsoft Architecture Patterns — Domain-Driven Design](https://learn.microsoft.com/en-us/azure/architecture/patterns/domain-driven-design)
+- [Specification Pattern — Martin Fowler](https://martinfowler.com/bliki/Specification.html)
 
 ---
 
@@ -974,16 +1153,5 @@ All code must use Python 3.10+ type hints, docstrings on every public method, an
 
 | Skill | Purpose |
 |---|---|
-| `domain-driven-design` | Core DDD tactical patterns (entities, value objects, aggregates) that this skill's patterns support and build upon |
-| `ddd-context-mapping` | Strategic design patterns for bounded context integration — domain services often bridge multiple contexts |
-| `cqrs-pattern` | CQRS implementation that pairs well with command handlers and Unit of Work from this skill |
-| `event-sourcing-pattern` | Event sourcing uses domain events as the authoritative store — factories and UoW manage event persistence |
-
----
-
-## Further Reading
-
-- *Domain-Driven Design Distilled* by Vaughn Vernon — practical guide to when and how to apply tactical DDD patterns
-- [Specification Pattern](https://martinfowler.com/apspec/) — Martin Fowler's original article defining the specification pattern
-- [Unit of Work Pattern](https://martinfowler.com/eaaCatalog/unitOfWork.html) — Fowler's definition and implementation guidance
-> 📖 skill(local cache): coding-domain-driven-design, coding-domain-events, coding-cqrs-pattern
+| `software-architecture-patterns` | Higher-level architectural patterns (CQRS, Event Sourcing) that use DDD tactical patterns as building blocks |
+| `domain-architecture-project-structure` | Project directory layout and module organization for DDD codebases — complementary to this tactical implementation skill |
