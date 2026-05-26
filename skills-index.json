@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T09:10:24.305235Z",
-  "totalSkills": 1041,
+  "generatedAt": "2026-05-26T10:39:44.508477Z",
+  "totalSkills": 1043,
   "domains": {
     "agent": 276,
     "cncf": 173,
-    "coding": 459,
+    "coding": 461,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 623,
+    "implementation": 625,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -9770,6 +9770,31 @@
       "source": "skills/coding/framework-integration-patterns/SKILL.md"
     },
     {
+      "name": "framework-integration-testing",
+      "domain": "coding",
+      "description": "Designs integration testing strategies including shadow reads, dual-writes, canary deployment validation, and rollback verification to safely validate framework integrations before production commitment.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "integration testing",
+        "shadow read",
+        "dual write",
+        "canary deployment",
+        "framework migration testing",
+        "integration acceptance criteria",
+        "framework switchover",
+        "rollback verification"
+      ],
+      "relatedSkills": [
+        "framework-requirements-validation",
+        "framework-adoption-strategy",
+        "framework-comparison-workflow"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-integration-testing/SKILL.md"
+    },
+    {
       "name": "framework-lifecycle",
       "domain": "coding",
       "description": "Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions.",
@@ -9851,6 +9876,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-performance-tuning/SKILL.md"
+    },
+    {
+      "name": "framework-poc-design",
+      "domain": "coding",
+      "description": "Designs proof-of-concept test harnesses with measurable success criteria, realistic data scenarios, and structured reporting to validate framework integration feasibility before production commitment.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "proof of concept",
+        "POC design",
+        "test harness design",
+        "framework feasibility testing",
+        "POC success criteria",
+        "spike project",
+        "prototype validation",
+        "framework integration testing"
+      ],
+      "relatedSkills": [
+        "framework-requirements",
+        "framework-comparison-workflow",
+        "framework-evaluation-criteria"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-poc-design/SKILL.md"
     },
     {
       "name": "framework-requirements",
