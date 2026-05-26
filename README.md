@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1024 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1029 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1024 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1029 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **1024 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1029 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1024 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1029 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 274 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 444 | Software patterns, security, testing, data science |
+| Coding | 449 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -274,17 +274,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 02:17:38 UTC  
-> **Total skills:** 1024  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1024 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 22:28:29 UTC  
+> **Total skills:** 1029  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1029 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 996 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 996 | Ranking penalty for conflicting query terms |
-| Response Profile | 996 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1001 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1001 | Ranking penalty for conflicting query terms |
+| Response Profile | 1001 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -748,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (444 skills)
+### Coding (449 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1105,8 +1105,13 @@ MIT — All skills are freely available and redistributable.
 | [reproducible-research](skills/coding/reproducible-research/SKILL.md) | "Implements reproducible research practices including code organization, environment management, documentation, and experiment tracking" | reproducible research, reproducibility, code organization, environment, notebooks, how do I reproduce [tactical, generation] |
 | [requirement-driven-selection](skills/coding/requirement-driven-selection/SKILL.md) | Evaluates technology candidates against measurable project requirements using weighted decision matrices, evidence-based validation, and ADR documentation to select the optimal framework or tool for a given context. | requirement driven selection, ADR, weighted scoring matrix, how do i choose a framework, technology decision record, criteria based selection, tech stack choice [tactical, generation] |
 | [rest-api-caching](skills/coding/rest-api-caching/SKILL.md) | Implements HTTP caching strategies for REST APIs including Cache-Control header design, ETag/conditional GET, stale-while-revalidate patterns, cache key construction, Vary header configuration, and invalidation strategies to reduce latency and server... | http caching, cache-control, etag, conditional request, stale-while-revalidate, 304 not modified, rest api caching, vary header [tactical, generation] |
+| [rest-api-error-handling](skills/coding/rest-api-error-handling/SKILL.md) | Implements RFC 7807 Problem Details error responses with proper HTTP status code dispatch, structured validation errors, and machine-readable error URIs for production REST APIs. | RFC 7807, Problem Details API, REST error handling, HTTP status codes, validation errors API, structured error responses, API error format, how do i handle REST errors, Problem Details JSON [tactical, generation] |
+| [rest-api-pagination-filtering](skills/coding/rest-api-pagination-filtering/SKILL.md) | Implements pagination patterns including cursor-based keyset pagination for large datasets, offset-based pagination for small collections, query parameter filtering, field selection sparse fieldsets, and sorting conventions for REST API collections. | cursor-based pagination, offset pagination, keyset pagination, API filtering, sort parameters, field selection, sparse fieldsets, pagination envelope, how do i paginate a REST API, collection filtering API [tactical, generation] |
 | [rest-api-patterns](skills/coding/rest-api-patterns/SKILL.md) | Implements RESTful API design patterns including resource modeling, HTTP method dispatching, structured error responses per RFC 7807, pagination, filtering, versioning, and HATEOAS for production-quality APIs. | REST API, RESTful design, RFC 7807, HTTP methods, API versioning, HATEOAS, pagination [tactical, generation] |
+| [rest-api-resource-modeling](skills/coding/rest-api-resource-modeling/SKILL.md) | Implements REST resource modeling patterns including plural-noun URI conventions, HTTP method semantics, idempotency rules, HATEOAS hypermedia links, and parent-child relationships for predictable API surfaces. | REST resource modeling, URI design, HTTP method semantics, idempotent methods, HATEOAS hypermedia links, resource naming conventions, plural nouns REST API, how do i design REST URIs [tactical, generation] |
+| [rest-api-security-patterns](skills/coding/rest-api-security-patterns/SKILL.md) | Implements REST API security patterns including OAuth 2.1 / OIDC authorization flows with PKCE, JWT access token vs opaque refresh token strategies, API key authentication, rate limiting headers, and CORS configuration for production APIs. | OAuth 2.1, PKCE flow, JWT authentication API, API key security, rate limiting headers, CORS configuration, X-RateLimit-Limit, bearer token API, API security patterns, how do i secure a REST API, mTLS [tactical, enforcement] |
 | [rest-api-testing](skills/coding/rest-api-testing/SKILL.md) | Tests REST API endpoints comprehensively including unit tests, integration tests, contract validation against OpenAPI spec, idempotency checks, error-path coverage, pagination boundary conditions, and load testing with Locust. | rest api testing, contract testing, openapi spec validation, pytest fastapi, http method testing, idempotency test, locust load test, api integration test, swagger schema validation, 304 not modified test, rest endpoint test [tactical, generation] |
+| [rest-api-versioning-strategies](skills/coding/rest-api-versioning-strategies/SKILL.md) | Implements API versioning strategies including URL path versioning, Accept header media type versioning, deprecation headers with Sunset and Deprecation, and backward-compatible contract evolution for REST APIs. | API versioning, URL path versioning, Accept header versioning, API deprecation, Sunset header, Deprecation header, REST API backward compatibility, how do i version an API, API evolution strategy, breaking changes API [tactical, strategic] |
 | [review](skills/coding/review/SKILL.md) | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback | analyzes, code review, code-review, diffs, files [tactical, generation] |
 | [review](skills/coding/review/SKILL.md) | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance | identifying, security review, security-focused, security-review, vulnerabilities, vulnerability scanning, security, security auditing [tactical, generation] |
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. | salesforce, soql, salesforce api, simple salesforce, salesforce objects, salesforce bulk api, how do i integrate with salesforce, crm integration [tactical, generation] |
@@ -1375,7 +1380,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (606 skills)
+### Implementation (Build Features) (611 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1838,8 +1843,13 @@ MIT — All skills are freely available and redistributable.
 | [requirement-driven-selection](skills/coding/requirement-driven-selection/SKILL.md) | Coding | Evaluates technology candidates against measurable project requirements using weighted decision matrices, evidence-based validation, and ADR documentation to select the optimal framework or tool for a given context. |
 | [resource-management](skills/linux/resource-management/SKILL.md) | Linux | Manages Linux system resources using cgroups v2, namespaces, and systemd for workload isolation and resource guarantees in cloud and on-prem environments. |
 | [rest-api-caching](skills/coding/rest-api-caching/SKILL.md) | Coding | Implements HTTP caching strategies for REST APIs including Cache-Control header design, ETag/conditional GET, stale-while-revalidate patterns, cache key construction, Vary header configuration, and invalidation strategies to reduce latency and server... |
+| [rest-api-error-handling](skills/coding/rest-api-error-handling/SKILL.md) | Coding | Implements RFC 7807 Problem Details error responses with proper HTTP status code dispatch, structured validation errors, and machine-readable error URIs for production REST APIs. |
+| [rest-api-pagination-filtering](skills/coding/rest-api-pagination-filtering/SKILL.md) | Coding | Implements pagination patterns including cursor-based keyset pagination for large datasets, offset-based pagination for small collections, query parameter filtering, field selection sparse fieldsets, and sorting conventions for REST API collections. |
 | [rest-api-patterns](skills/coding/rest-api-patterns/SKILL.md) | Coding | Implements RESTful API design patterns including resource modeling, HTTP method dispatching, structured error responses per RFC 7807, pagination, filtering, versioning, and HATEOAS for production-quality APIs. |
+| [rest-api-resource-modeling](skills/coding/rest-api-resource-modeling/SKILL.md) | Coding | Implements REST resource modeling patterns including plural-noun URI conventions, HTTP method semantics, idempotency rules, HATEOAS hypermedia links, and parent-child relationships for predictable API surfaces. |
+| [rest-api-security-patterns](skills/coding/rest-api-security-patterns/SKILL.md) | Coding | Implements REST API security patterns including OAuth 2.1 / OIDC authorization flows with PKCE, JWT access token vs opaque refresh token strategies, API key authentication, rate limiting headers, and CORS configuration for production APIs. |
 | [rest-api-testing](skills/coding/rest-api-testing/SKILL.md) | Coding | Tests REST API endpoints comprehensively including unit tests, integration tests, contract validation against OpenAPI spec, idempotency checks, error-path coverage, pagination boundary conditions, and load testing with Locust. |
+| [rest-api-versioning-strategies](skills/coding/rest-api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies including URL path versioning, Accept header media type versioning, deprecation headers with Sunset and Deprecation, and backward-compatible contract evolution for REST APIs. |
 | [review](skills/coding/review/SKILL.md) | Coding | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback |
 | [review](skills/coding/review/SKILL.md) | Coding | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance |
 | [risk-management-basics](skills/trading/risk-management-basics/SKILL.md) | Trading | "Position sizing, stop-loss implementation, and system-level risk controls" to preserve capital |
@@ -3212,8 +3222,13 @@ MIT — All skills are freely available and redistributable.
 | [resource-manager](skills/cncf/resource-manager/SKILL.md) | Cncf | "Provides Infrastructure as code using ARM templates for repeatable Azure resource deployments" | Reference |
 | [resource-optimizer](skills/agent/resource-optimizer/SKILL.md) | Agent | Implements intelligent resource optimizer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [rest-api-caching](skills/coding/rest-api-caching/SKILL.md) | Coding | Implements HTTP caching strategies for REST APIs including Cache-Control header design, ETag/conditional GET, stale-while-revalidate patterns, cache key construction, Vary header configuration, and invalidation strategies to reduce latency and server... | Implementation |
+| [rest-api-error-handling](skills/coding/rest-api-error-handling/SKILL.md) | Coding | Implements RFC 7807 Problem Details error responses with proper HTTP status code dispatch, structured validation errors, and machine-readable error URIs for production REST APIs. | Implementation |
+| [rest-api-pagination-filtering](skills/coding/rest-api-pagination-filtering/SKILL.md) | Coding | Implements pagination patterns including cursor-based keyset pagination for large datasets, offset-based pagination for small collections, query parameter filtering, field selection sparse fieldsets, and sorting conventions for REST API collections. | Implementation |
 | [rest-api-patterns](skills/coding/rest-api-patterns/SKILL.md) | Coding | Implements RESTful API design patterns including resource modeling, HTTP method dispatching, structured error responses per RFC 7807, pagination, filtering, versioning, and HATEOAS for production-quality APIs. | Implementation |
+| [rest-api-resource-modeling](skills/coding/rest-api-resource-modeling/SKILL.md) | Coding | Implements REST resource modeling patterns including plural-noun URI conventions, HTTP method semantics, idempotency rules, HATEOAS hypermedia links, and parent-child relationships for predictable API surfaces. | Implementation |
+| [rest-api-security-patterns](skills/coding/rest-api-security-patterns/SKILL.md) | Coding | Implements REST API security patterns including OAuth 2.1 / OIDC authorization flows with PKCE, JWT access token vs opaque refresh token strategies, API key authentication, rate limiting headers, and CORS configuration for production APIs. | Implementation |
 | [rest-api-testing](skills/coding/rest-api-testing/SKILL.md) | Coding | Tests REST API endpoints comprehensively including unit tests, integration tests, contract validation against OpenAPI spec, idempotency checks, error-path coverage, pagination boundary conditions, and load testing with Locust. | Implementation |
+| [rest-api-versioning-strategies](skills/coding/rest-api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies including URL path versioning, Accept header media type versioning, deprecation headers with Sunset and Deprecation, and backward-compatible contract evolution for REST APIs. | Implementation |
 | [review](skills/coding/review/SKILL.md) | Coding | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback | Implementation |
 | [review](skills/coding/review/SKILL.md) | Coding | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance | Implementation |
 | [risk-management-basics](skills/trading/risk-management-basics/SKILL.md) | Trading | "Position sizing, stop-loss implementation, and system-level risk controls" to preserve capital | Implementation |
