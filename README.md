@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1038 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1041 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1038 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1041 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1038 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1041 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1038 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1041 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1038 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1041 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1038 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1041 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1038 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1041 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1038 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1041 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -107,9 +107,9 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 274 | AI orchestration, routing, task decomposition |
+| Agent | 276 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 458 | Software patterns, security, testing, data science |
+| Coding | 459 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -298,22 +298,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 07:33:27 UTC  
-> **Total skills:** 1038  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1038 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 03:44:02 UTC  
+> **Total skills:** 1041  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1041 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1006 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1006 | Ranking penalty for conflicting query terms |
-| Response Profile | 1006 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1009 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1009 | Ranking penalty for conflicting query terms |
+| Response Profile | 1009 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (274 skills)
+### Agent (276 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -322,6 +322,8 @@ MIT — All skills are freely available and redistributable.
 | [agent-architecture-patterns](skills/agent/agent-architecture-patterns/SKILL.md) | Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives. | agent architecture, multi-agent system, design patterns, pub-sub messaging, circuit breakers, state management, event-driven architecture, service discovery, fault tolerance [tactical] |
 | [agent-communication-patterns](skills/agent/agent-communication-patterns/SKILL.md) | Implements inter-agent communication patterns (message passing, event-driven coordination, shared memory protocols, RPC-style calls, structured JSON messaging) for reliable multi-agent systems. | agent communication, message passing, event driven, shared memory, rpc calls, multi agent coordination, inter agent messaging, message queue agents, structured messaging, agent to agent communication, agent messaging protocol [tactical] |
 | [agent-context-management](skills/agent/agent-context-management/SKILL.md) | Implements context window management, sliding window strategies, and persistent memory patterns to maintain AI agent coherence across long interactions. | context window, agent memory, sliding window, session state, prompt optimization, rag, token management, long conversation history [orchestration, strategic] |
+| [agent-context-memory](skills/agent/agent-context-memory/SKILL.md) | Implements context window management and memory architectures for LLM agents including token budgeting, sliding window strategies, summarization fallbacks, cross-turn state persistence, and external vector store integration. | context window management, memory architecture, token budgeting, sliding window, conversation summary, cross-turn state, vector store retrieval, long-term memory, short-term memory, agent memory, context overflow, token limit [tactical, strategic] |
+| [agent-debugging](skills/agent/agent-debugging/SKILL.md) | Implements systematic debugging workflows for LLM agent failures including hallucination detection, infinite loop recovery, context window exhaustion, tool call errors, and cascading failure diagnosis using distributed tracing patterns. | agent debugging, LLM agent failure, hallucination detection, infinite loop recovery, context window exhaustion, tool call error, how do i debug an agent [tactical, diagnostic] |
 | [agent-evaluation](skills/agent/agent-evaluation/SKILL.md) | Implements intelligent agent evaluation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-evaluation, agent evaluation, how do i agent-evaluation, orchestrate agent-evaluation, automate agent-evaluation, agent agent-evaluation [orchestration, strategic] |
 | [agent-manager-skill](skills/agent/agent-manager-skill/SKILL.md) | Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-manager-skill, agent manager skill, how do i agent-manager-skill, orchestrate agent-manager-skill, automate agent-manager-skill, agent agent-manager-skill [orchestration, strategic] |
 | [agent-memory-systems](skills/agent/agent-memory-systems/SKILL.md) | Implements intelligent agent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-memory-systems, agent memory systems, how do i agent-memory-systems, orchestrate agent-memory-systems, automate agent-memory-systems, agent agent-memory-systems [orchestration, strategic] |
@@ -772,7 +774,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (458 skills)
+### Coding (459 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1116,6 +1118,7 @@ MIT — All skills are freely available and redistributable.
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving [tactical, generation] |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging [tactical, generation] |
 | [production-readiness](skills/coding/production-readiness/SKILL.md) | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | production readiness, SRE review, deployment criteria, observability setup, canary deployment, on-call coverage, SLO SLI, error budget, golden signals, how do i know my service is production ready, operational excellence, hypercare period [diagnostic, educational] |
+| [prompt-engineering](skills/coding/prompt-engineering/SKILL.md) | Implements prompt design patterns including chain-of-thought reasoning, role-setting, few-shot exemplars, structured output schemas, and system prompt optimization for reliable LLM agent behavior. | prompt engineering, chain of thought, few shot prompting, role setting, structured output, system prompt design, prompt templates, LLM instructions, prompt patterns, prompt design, prompt architecture [tactical, generation] |
 | [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. | prompt optimization, prompt tuning, A/B test prompts, how do i improve my prompt, few-shot selection, prompt versioning, prompt regression testing, adversarial prompt testing [tactical, diagnostic] |
 | [protobuf-format](skills/coding/protobuf-format/SKILL.md) | Designs protocol buffer proto3 schemas for data serialization covering well-known types, field behavior annotations, schema evolution strategies, and Buf CLI tooling for type contracts. | protocol buffers, proto3 schema, protobuf serialization, buf cli, well-known types, wrapper types, schema evolution, how do i design proto schemas [tactical, generation] |
 | [pulumi](skills/coding/pulumi/SKILL.md) | Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration. | pulumi python, pulumi automation api, pulumi sdk, pulumi stacks, pulumi esc, infrastructure as code python, pulumi program, pulumi deploy [tactical, generation] |
@@ -1413,7 +1416,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (620 skills)
+### Implementation (Build Features) (623 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1423,6 +1426,8 @@ MIT — All skills are freely available and redistributable.
 | [adyen-api](skills/coding/adyen-api/SKILL.md) | Coding | Implements Adyen API integration (Payments, Checkout, Marketplaces, Risk, Reporting) using adyen Python SDK with 3D Secure 2 authentication flow, webhook signature verification, idempotency keys, and global enterprise payment processing patterns. |
 | [agent-architecture-patterns](skills/agent/agent-architecture-patterns/SKILL.md) | Agent | Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives. |
 | [agent-communication-patterns](skills/agent/agent-communication-patterns/SKILL.md) | Agent | Implements inter-agent communication patterns (message passing, event-driven coordination, shared memory protocols, RPC-style calls, structured JSON messaging) for reliable multi-agent systems. |
+| [agent-context-memory](skills/agent/agent-context-memory/SKILL.md) | Agent | Implements context window management and memory architectures for LLM agents including token budgeting, sliding window strategies, summarization fallbacks, cross-turn state persistence, and external vector store integration. |
+| [agent-debugging](skills/agent/agent-debugging/SKILL.md) | Agent | Implements systematic debugging workflows for LLM agent failures including hallucination detection, infinite loop recovery, context window exhaustion, tool call errors, and cascading failure diagnosis using distributed tracing patterns. |
 | [agent-evaluation-testing](skills/coding/agent-evaluation-testing/SKILL.md) | Coding | Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python. |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
 | [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Agent | Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks. |
@@ -1851,6 +1856,7 @@ MIT — All skills are freely available and redistributable.
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. |
+| [prompt-engineering](skills/coding/prompt-engineering/SKILL.md) | Coding | Implements prompt design patterns including chain-of-thought reasoning, role-setting, few-shot exemplars, structured output schemas, and system prompt optimization for reliable LLM agent behavior. |
 | [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Coding | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. |
 | [protobuf-format](skills/coding/protobuf-format/SKILL.md) | Coding | Designs protocol buffer proto3 schemas for data serialization covering well-known types, field behavior annotations, schema evolution strategies, and Buf CLI tooling for type contracts. |
 | [protocol-first-agent-design](skills/agent/protocol-first-agent-design/SKILL.md) | Agent | Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in. |
@@ -2487,6 +2493,8 @@ MIT — All skills are freely available and redistributable.
 | [agent-architecture-patterns](skills/agent/agent-architecture-patterns/SKILL.md) | Agent | Implements structural design patterns for AI agent systems including monolithic, multi-agent, hierarchical, and event-driven architectures with state management and security primitives. | Implementation |
 | [agent-communication-patterns](skills/agent/agent-communication-patterns/SKILL.md) | Agent | Implements inter-agent communication patterns (message passing, event-driven coordination, shared memory protocols, RPC-style calls, structured JSON messaging) for reliable multi-agent systems. | Implementation |
 | [agent-context-management](skills/agent/agent-context-management/SKILL.md) | Agent | Implements context window management, sliding window strategies, and persistent memory patterns to maintain AI agent coherence across long interactions. | Orchestration |
+| [agent-context-memory](skills/agent/agent-context-memory/SKILL.md) | Agent | Implements context window management and memory architectures for LLM agents including token budgeting, sliding window strategies, summarization fallbacks, cross-turn state persistence, and external vector store integration. | Implementation |
+| [agent-debugging](skills/agent/agent-debugging/SKILL.md) | Agent | Implements systematic debugging workflows for LLM agent failures including hallucination detection, infinite loop recovery, context window exhaustion, tool call errors, and cascading failure diagnosis using distributed tracing patterns. | Implementation |
 | [agent-evaluation](skills/agent/agent-evaluation/SKILL.md) | Agent | Implements intelligent agent evaluation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [agent-evaluation-testing](skills/coding/agent-evaluation-testing/SKILL.md) | Coding | Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python. | Implementation |
 | [agent-manager-skill](skills/agent/agent-manager-skill/SKILL.md) | Agent | Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -3223,6 +3231,7 @@ MIT — All skills are freely available and redistributable.
 | [project](skills/cncf/project/SKILL.md) | Cncf | "Notary Project in Content Trust &amp; Security - cloud native architecture" patterns, pitfalls, and best practices | Reference |
 | [prometheus](skills/cncf/prometheus/SKILL.md) | Cncf | "Prometheus in Cloud-Native Engineering - The Prometheus monitoring system" and time series database. | Reference |
 | [prompt-engineer](skills/agent/prompt-engineer/SKILL.md) | Agent | Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [prompt-engineering](skills/coding/prompt-engineering/SKILL.md) | Coding | Implements prompt design patterns including chain-of-thought reasoning, role-setting, few-shot exemplars, structured output schemas, and system prompt optimization for reliable LLM agent behavior. | Implementation |
 | [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Coding | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. | Implementation |
 | [protobuf-format](skills/coding/protobuf-format/SKILL.md) | Coding | Designs protocol buffer proto3 schemas for data serialization covering well-known types, field behavior annotations, schema evolution strategies, and Buf CLI tooling for type contracts. | Implementation |
 | [protocol-first-agent-design](skills/agent/protocol-first-agent-design/SKILL.md) | Agent | Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in. | Implementation |
