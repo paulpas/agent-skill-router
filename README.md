@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1050 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1052 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1050 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1052 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1050 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1052 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1050 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1052 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1050 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1052 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1050 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1052 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1050 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1052 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1050 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1052 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -109,7 +109,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 465 | Software patterns, security, testing, data science |
+| Coding | 467 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -298,9 +298,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 16:04:47 UTC  
-> **Total skills:** 1050  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1050 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 11:19:07 UTC  
+> **Total skills:** 1052  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1052 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -777,7 +777,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (465 skills)
+### Coding (467 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -932,6 +932,8 @@ MIT — All skills are freely available and redistributable.
 | [docker-api](skills/coding/docker-api/SKILL.md) | Integrates with the Docker Engine API via the docker-py SDK to manage containers, images, networks, volumes, and Swarm clusters from Python applications. | docker api, docker-py, docker sdk python, docker engine api, container management, docker swarm, manage docker containers, docker compose [tactical, generation] |
 | [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. | project structure, module organization, vertical slice, modular monolith, DDD layout, how do i organize a ddd project, domain driven architecture, clean directory structure, layer separation [tactical, generation] |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns [tactical, generation] |
+| [domain-driven-strategic](skills/coding/domain-driven-strategic/SKILL.md) | Maps bounded contexts using context mapping patterns (Customer/Supplier, Shared Kernel, ACL, Open Host Service) and facilitates Event Storming sessions to discover architecture boundaries in complex domains. | bounded contexts, ubiquitous language, event storming, context mapping, shared kernel, anticorruption layer, strategic design, ACL, open host service, published language, customer supplier pattern |
+| [domain-driven-tactical](skills/coding/domain-driven-tactical/SKILL.md) | Implements tactical DDD patterns including Entities, Value Objects, Aggregates, Repositories, Domain Events, and Factories with Python dataclasses and strict invariant enforcement. | value objects, domain entities, aggregates, repositories, domain events, factories, tactical design, invariant enforcement, aggregate root, idempotency |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | domain events, domain event, event publishing, event handler, event dispatcher, in-process event bus, how do i decouple aggregates, idempotent event handling [tactical, generation] |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | domain modeling, ubiquitous language, bounded context, subdomain classification, domain map, how do i understand the domain, strategic design [diagnostic, educational] |
 | [domain-repository-pattern](skills/coding/domain-repository-pattern/SKILL.md) | Implements repository and specification patterns for DDD to abstract data access while keeping domain logic in the domain layer — generic repositories, typed specifications, pagination, and query composition without leaking persistence details. | repository pattern, specification pattern, data access abstraction, generic repository, typed queries, how do i persist aggregates, unit of work, aggregate persistence [tactical, generation] |
@@ -1425,7 +1427,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (631 skills)
+### Implementation (Build Features) (633 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1613,6 +1615,8 @@ MIT — All skills are freely available and redistributable.
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization |
 | [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Coding | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. |
+| [domain-driven-strategic](skills/coding/domain-driven-strategic/SKILL.md) | Coding | Maps bounded contexts using context mapping patterns (Customer/Supplier, Shared Kernel, ACL, Open Host Service) and facilitates Event Storming sessions to discover architecture boundaries in complex domains. |
+| [domain-driven-tactical](skills/coding/domain-driven-tactical/SKILL.md) | Coding | Implements tactical DDD patterns including Entities, Value Objects, Aggregates, Repositories, Domain Events, and Factories with Python dataclasses and strict invariant enforcement. |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. |
 | [domain-repository-pattern](skills/coding/domain-repository-pattern/SKILL.md) | Coding | Implements repository and specification patterns for DDD to abstract data access while keeping domain logic in the domain layer — generic repositories, typed specifications, pagination, and query composition without leaking persistence details. |
 | [domain-service-orchestration](skills/coding/domain-service-orchestration/SKILL.md) | Coding | Implements domain service orchestration for cross-aggregate business operations in DDD — coordinating multiple aggregate roots while preserving encapsulation, handling compensation on failure, and maintaining transaction boundaries without leaking co... |
@@ -2827,6 +2831,8 @@ MIT — All skills are freely available and redistributable.
 | [documentation](skills/agent/documentation/SKILL.md) | Agent | Implements intelligent documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Coding | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. | Implementation |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Coding | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | Implementation |
+| [domain-driven-strategic](skills/coding/domain-driven-strategic/SKILL.md) | Coding | Maps bounded contexts using context mapping patterns (Customer/Supplier, Shared Kernel, ACL, Open Host Service) and facilitates Event Storming sessions to discover architecture boundaries in complex domains. | Implementation |
+| [domain-driven-tactical](skills/coding/domain-driven-tactical/SKILL.md) | Coding | Implements tactical DDD patterns including Entities, Value Objects, Aggregates, Repositories, Domain Events, and Factories with Python dataclasses and strict invariant enforcement. | Implementation |
 | [domain-events](skills/coding/domain-events/SKILL.md) | Coding | Implements domain events for decoupled communication between aggregates and bounded contexts — event definition, publishing, handling, idempotency, and lifecycle management with typed Python implementations. | Implementation |
 | [domain-modeling](skills/coding/domain-modeling/SKILL.md) | Coding | Analyzes business domains to extract ubiquitous language, identify bounded contexts, map core/supporting/generic subdomains, and produce domain maps that guide software architecture decisions before implementation. | Reference |
 | [domain-repository-pattern](skills/coding/domain-repository-pattern/SKILL.md) | Coding | Implements repository and specification patterns for DDD to abstract data access while keeping domain logic in the domain layer — generic repositories, typed specifications, pagination, and query composition without leaking persistence details. | Implementation |
