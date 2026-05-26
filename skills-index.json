@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T07:33:25.869347Z",
-  "totalSkills": 1038,
+  "generatedAt": "2026-05-26T08:44:32.686213Z",
+  "totalSkills": 1041,
   "domains": {
-    "agent": 274,
+    "agent": 276,
     "cncf": 173,
-    "coding": 458,
+    "coding": 459,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 620,
+    "implementation": 623,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -271,6 +271,59 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-context-management/SKILL.md"
+    },
+    {
+      "name": "agent-context-memory",
+      "domain": "agent",
+      "description": "Implements context window management and memory architectures for LLM agents including token budgeting, sliding window strategies, summarization fallbacks, cross-turn state persistence, and external vector store integration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "context window management",
+        "memory architecture",
+        "token budgeting",
+        "sliding window",
+        "conversation summary",
+        "cross-turn state",
+        "vector store retrieval",
+        "long-term memory",
+        "short-term memory",
+        "agent memory",
+        "context overflow",
+        "token limit"
+      ],
+      "relatedSkills": [
+        "observability-patterns",
+        "agentic-evaluation",
+        "multi-agent-orchestration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-context-memory/SKILL.md"
+    },
+    {
+      "name": "agent-debugging",
+      "domain": "agent",
+      "description": "Implements systematic debugging workflows for LLM agent failures including hallucination detection, infinite loop recovery, context window exhaustion, tool call errors, and cascading failure diagnosis using distributed tracing patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "agent debugging",
+        "LLM agent failure",
+        "hallucination detection",
+        "infinite loop recovery",
+        "context window exhaustion",
+        "tool call error",
+        "how do i debug an agent"
+      ],
+      "relatedSkills": [
+        "observability-patterns",
+        "agentic-evaluation",
+        "multi-agent-orchestration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-debugging/SKILL.md"
     },
     {
       "name": "agent-evaluation",
@@ -18133,6 +18186,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/prompt-engineer/SKILL.md"
+    },
+    {
+      "name": "prompt-engineering",
+      "domain": "coding",
+      "description": "Implements prompt design patterns including chain-of-thought reasoning, role-setting, few-shot exemplars, structured output schemas, and system prompt optimization for reliable LLM agent behavior.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "prompt engineering",
+        "chain of thought",
+        "few shot prompting",
+        "role setting",
+        "structured output",
+        "system prompt design",
+        "prompt templates",
+        "LLM instructions",
+        "prompt patterns",
+        "prompt design",
+        "prompt architecture"
+      ],
+      "relatedSkills": [
+        "prompt-optimization",
+        "coding-code-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/prompt-engineering/SKILL.md"
     },
     {
       "name": "prompt-optimization",
