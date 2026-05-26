@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1043 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1046 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1043 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1046 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1043 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1046 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1043 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1046 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1043 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1046 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1043 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1046 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1043 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1046 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1043 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1046 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -107,7 +107,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 276 | AI orchestration, routing, task decomposition |
+| Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 461 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -298,22 +298,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 10:39:46 UTC  
-> **Total skills:** 1043  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1043 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 07:23:28 UTC  
+> **Total skills:** 1046  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1046 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1011 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1011 | Ranking penalty for conflicting query terms |
-| Response Profile | 1011 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1014 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1014 | Ranking penalty for conflicting query terms |
+| Response Profile | 1014 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (276 skills)
+### Agent (279 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -328,6 +328,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-manager-skill](skills/agent/agent-manager-skill/SKILL.md) | Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-manager-skill, agent manager skill, how do i agent-manager-skill, orchestrate agent-manager-skill, automate agent-manager-skill, agent agent-manager-skill [orchestration, strategic] |
 | [agent-memory-systems](skills/agent/agent-memory-systems/SKILL.md) | Implements intelligent agent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | agent-memory-systems, agent memory systems, how do i agent-memory-systems, orchestrate agent-memory-systems, automate agent-memory-systems, agent agent-memory-systems [orchestration, strategic] |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. | fault tolerance, circuit breaker, retry strategy, exponential backoff, graceful degradation, health check, dead letter queue, timeout management, reliability engineering, agent resilience [tactical] |
+| [agent-requirements-engineering](skills/agent/agent-requirements-engineering/SKILL.md) | Defines and structures functional, non-functional, and safety requirements for AI agent systems including capability matrices, hallucination thresholds, data quality standards, and evaluation criteria. | agent requirements, AI system requirements, capability matrix, hallucination threshold, safety guardrails, AI evaluation criteria, prompt requirements, non-functional AI requirements, functional AI requirements, data quality standards, how do i define AI system requirements [strategic, tactical] |
 | [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks. | prompt injection, guardrails, jailbreak detection, tool access control, input validation, LLM security, how do i secure my agent |
 | [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines. | agent evaluation, benchmarking, hallucination detection, tool-use accuracy, multi-turn reasoning, automated grading, promptfoo, how do i test my agent |
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-agent-development, ai agent development, how do i ai-agent-development, orchestrate ai-agent-development, automate ai-agent-development, agent ai-agent-development [orchestration, strategic] |
@@ -337,7 +338,9 @@ MIT — All skills are freely available and redistributable.
 | [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. | ai framework comparison, framework evaluation, LangGraph vs CrewAI, agent framework scoring, LLM framework selection, AI framework matrix, model routing framework [tactical, strategic] |
 | [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. | ai framework selection, which ai framework to use, langchain vs crewai, choose ai agent framework, framework comparison, build custom vs use framework, AI agent tooling, how do i pick an ai framework, LLM framework evaluation [orchestration, strategic] |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-ml, ai ml, how do i ai-ml, orchestrate ai-ml, automate ai-ml, agent ai-ml [orchestration, strategic] |
+| [ai-model-selector](skills/agent/ai-model-selector/SKILL.md) | Selects the optimal LLM model for a specific task by evaluating capability requirements against cost, latency, context window, and quality needs across all major providers. | ai model selection, which LLM to use, GPT-4o vs Claude, choose AI model, model comparison, best model for task, LLM routing, o3 vs sonnet, Gemini vs GPT, model cost optimization, pick the right model, how do i choose an LLM [tactical, strategic] |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | ai persona, first-person identity, agent voice, personality design, consistent tone, how do i make my ai feel personal, authentic AI, self-expression, character design, brand voice AI [tactical] |
+| [ai-system-evaluation-criteria](skills/agent/ai-system-evaluation-criteria/SKILL.md) | Evaluates AI agent systems against defined requirements using golden datasets, adversarial testing, hallucination metrics, latency benchmarks, and safety compliance checks. | AI evaluation criteria, AI system evaluation, golden dataset testing, adversarial testing, hallucination metrics, latency benchmark, safety compliance check, AI acceptance testing, how do i evaluate an AI system, model evaluation framework, LLM evaluation [diagnostic, enforcement] |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | airflow-dag-patterns, airflow dag patterns, how do i airflow-dag-patterns, orchestrate airflow-dag-patterns, automate airflow-dag-patterns, agent airflow-dag-patterns, workflow orchestration, airflow [orchestration, strategic] |
 | [airtable-automation](skills/agent/airtable-automation/SKILL.md) | Implements intelligent airtable automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | airtable-automation, airtable automation, how do i airtable-automation, orchestrate airtable-automation, automate airtable-automation, agent airtable-automation [orchestration, strategic] |
 | [analyze-project](skills/agent/analyze-project/SKILL.md) | Implements intelligent analyze project with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | analyze-project, analyze project, how do i analyze-project, orchestrate analyze-project, automate analyze-project, agent analyze-project [orchestration, strategic] |
@@ -979,7 +982,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Defines, evaluates, and validates software framework requirements including non-functional criteria (performance, security, extensibility), weighted selection scoring matrices, proof-of-concept feasibility testing, and architecture decision records f... | framework requirements, evaluating frameworks, selecting libraries, dependency management, architecture decisions, tech stack selection, framework evaluation criteria, non-functional requirements, NFR, framework scoring matrix, POC testing, proof of concept, integration feasibility, production readiness gate [tactical, strategic] |
 | [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Validates code against framework conventions and enforces build tool configuration compliance through automated linting pipelines, schema validation, and CI integration. | framework validation, eslint plugin react hooks, next.js linting rules, django check command, framework compliance, build tool config validation, biome linting, vite config check, tsconfig patterns, code conventions checker, schema validation, ci linting pipeline [tactical, enforcement] |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | framework selection, tech stack evaluation, weighted scoring matrix, AHP decision, framework comparison, technology assessment, framework criteria, evaluate frameworks, choose framework, select technology, tech stack decision, framework trade-offs [tactical, generation] |
-| [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value while avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. | framework utilization, three-pass learning, leverage framework patterns, fight the framework, how do i learn a new framework, framework conventions, framework adoption, framework best practices [tactical, generation] |
+| [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Maximizes the value of a chosen technology or framework through progressive adoption strategies, feature discovery patterns, integration anti-pattern avoidance, and optimization techniques for sustainable long-term utilization. | framework utilization, how do i use a new tool effectively, technology adoption, progressive rollout, feature discovery, integration patterns, optimize chosen framework, leveraging technology, avoid integration anti-patterns, framework best practices, adopt a new framework [tactical, generation] |
 | [functional-programming-patterns](skills/coding/functional-programming-patterns/SKILL.md) | Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code. | functional programming, pure function, immutable transform, function composition, currying, Option type, Either type, data pipeline, map filter reduce, referential transparency, how do i eliminate side effects, chain transformations [tactical, generation] |
 | [gemini-api](skills/coding/gemini-api/SKILL.md) | Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding. | gemini, gemini api, vertex ai, google genai, function calling, gemini 2.5 flash, how do i use gemini api, grounding [tactical, generation] |
 | [github-api](skills/coding/github-api/SKILL.md) | Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics. | github api, octokit, pygithub, github rest api, github graphql, manage repositories, github actions, pull request automation [tactical, generation] |
@@ -1418,7 +1421,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (625 skills)
+### Implementation (Build Features) (627 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1432,6 +1435,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-debugging](skills/agent/agent-debugging/SKILL.md) | Agent | Implements systematic debugging workflows for LLM agent failures including hallucination detection, infinite loop recovery, context window exhaustion, tool call errors, and cascading failure diagnosis using distributed tracing patterns. |
 | [agent-evaluation-testing](skills/coding/agent-evaluation-testing/SKILL.md) | Coding | Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python. |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. |
+| [agent-requirements-engineering](skills/agent/agent-requirements-engineering/SKILL.md) | Agent | Defines and structures functional, non-functional, and safety requirements for AI agent systems including capability matrices, hallucination thresholds, data quality standards, and evaluation criteria. |
 | [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Agent | Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks. |
 | [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Agent | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines. |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. |
@@ -1439,6 +1443,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Agent | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. |
 | [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Coding | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. |
+| [ai-system-evaluation-criteria](skills/agent/ai-system-evaluation-criteria/SKILL.md) | Agent | Evaluates AI agent systems against defined requirements using golden datasets, adversarial testing, hallucination metrics, latency benchmarks, and safety compliance checks. |
 | [airtable-api](skills/coding/airtable-api/SKILL.md) | Coding | Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python. |
 | [alternative-data](skills/trading/alternative-data/SKILL.md) | Trading | "Alternative data ingestion pipelines for trading signals including news" social media, and on-chain data sources |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Coding | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. |
@@ -1661,7 +1666,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Defines, evaluates, and validates software framework requirements including non-functional criteria (performance, security, extensibility), weighted selection scoring matrices, proof-of-concept feasibility testing, and architecture decision records f... |
 | [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Coding | Validates code against framework conventions and enforces build tool configuration compliance through automated linting pipelines, schema validation, and CI integration. |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Coding | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. |
-| [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value while avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. |
+| [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Maximizes the value of a chosen technology or framework through progressive adoption strategies, feature discovery patterns, integration anti-pattern avoidance, and optimization techniques for sustainable long-term utilization. |
 | [functional-programming-patterns](skills/coding/functional-programming-patterns/SKILL.md) | Coding | Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code. |
 | [gemini-api](skills/coding/gemini-api/SKILL.md) | Coding | Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding. |
 | [github-api](skills/coding/github-api/SKILL.md) | Coding | Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics. |
@@ -2228,7 +2233,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (237 skills)
+### Orchestration (Manage AI Agents) (238 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2243,6 +2248,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Agent | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Agent | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [ai-model-selector](skills/agent/ai-model-selector/SKILL.md) | Agent | Selects the optimal LLM model for a specific task by evaluating capability requirements against cost, latency, context window, and quality needs across all major providers. |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Agent | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [airtable-automation](skills/agent/airtable-automation/SKILL.md) | Agent | Implements intelligent airtable automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [analyze-project](skills/agent/analyze-project/SKILL.md) | Agent | Implements intelligent analyze project with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -2504,6 +2510,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-manager-skill](skills/agent/agent-manager-skill/SKILL.md) | Agent | Implements intelligent agent manager skill with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [agent-memory-systems](skills/agent/agent-memory-systems/SKILL.md) | Agent | Implements intelligent agent memory systems with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [agent-reliability-engineering](skills/agent/agent-reliability-engineering/SKILL.md) | Agent | Implements fault-tolerance mechanisms for AI agent systems including circuit breakers, exponential backoff retries, graceful degradation, health checks, dead letter queues, and timeout management with observability hooks. | Implementation |
+| [agent-requirements-engineering](skills/agent/agent-requirements-engineering/SKILL.md) | Agent | Defines and structures functional, non-functional, and safety requirements for AI agent systems including capability matrices, hallucination thresholds, data quality standards, and evaluation criteria. | Implementation |
 | [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Agent | Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks. | Implementation |
 | [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Agent | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines. | Implementation |
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Agent | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2515,7 +2522,9 @@ MIT — All skills are freely available and redistributable.
 | [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Agent | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. | Orchestration |
 | [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Coding | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. | Implementation |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Agent | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [ai-model-selector](skills/agent/ai-model-selector/SKILL.md) | Agent | Selects the optimal LLM model for a specific task by evaluating capability requirements against cost, latency, context window, and quality needs across all major providers. | Orchestration |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | Implementation |
+| [ai-system-evaluation-criteria](skills/agent/ai-system-evaluation-criteria/SKILL.md) | Agent | Evaluates AI agent systems against defined requirements using golden datasets, adversarial testing, hallucination metrics, latency benchmarks, and safety compliance checks. | Implementation |
 | [airflow-dag-patterns](skills/agent/airflow-dag-patterns/SKILL.md) | Agent | Implements intelligent airflow dag patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [airtable-api](skills/coding/airtable-api/SKILL.md) | Coding | Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python. | Implementation |
 | [airtable-automation](skills/agent/airtable-automation/SKILL.md) | Agent | Implements intelligent airtable automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2897,7 +2906,7 @@ MIT — All skills are freely available and redistributable.
 | [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Coding | Validates code against framework conventions and enforces build tool configuration compliance through automated linting pipelines, schema validation, and CI integration. | Implementation |
 | [framework-selection](skills/agent/framework-selection/SKILL.md) | Agent | Applies structured decision-making frameworks (weighted scoring, RICE, MoSCoW, decision matrices) to evaluate options against requirements and select optimal solutions. | Orchestration |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Coding | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | Implementation |
-| [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value while avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering. | Implementation |
+| [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Maximizes the value of a chosen technology or framework through progressive adoption strategies, feature discovery patterns, integration anti-pattern avoidance, and optimization techniques for sustainable long-term utilization. | Implementation |
 | [freshdesk-automation](skills/agent/freshdesk-automation/SKILL.md) | Agent | Implements intelligent freshdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [full-stack-orchestration-full-stack-feature](skills/agent/full-stack-orchestration-full-stack-feature/SKILL.md) | Agent | Implements intelligent full stack orchestration full stack feature with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [functional-programming-patterns](skills/coding/functional-programming-patterns/SKILL.md) | Coding | Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code. | Implementation |
