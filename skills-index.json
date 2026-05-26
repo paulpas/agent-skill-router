@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-25T23:47:24.937904Z",
-  "totalSkills": 1018,
+  "generatedAt": "2026-05-26T00:15:47.698203Z",
+  "totalSkills": 1019,
   "domains": {
     "agent": 274,
     "cncf": 173,
-    "coding": 438,
+    "coding": 439,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 600,
+    "implementation": 601,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -6138,6 +6138,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/data-intensive-systems/SKILL.md"
+    },
+    {
+      "name": "data-pipeline-architecture",
+      "domain": "coding",
+      "description": "Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "data pipeline",
+        "ETL architecture",
+        "ELT pipeline",
+        "medallion architecture",
+        "batch processing",
+        "stream processing",
+        "data quality gates",
+        "schema evolution",
+        "data ingestion",
+        "Spark pipeline",
+        "Kafka Streams",
+        "data transformation pipeline",
+        "how do i build a data pipeline"
+      ],
+      "relatedSkills": [
+        "event-driven-architecture",
+        "system-reliability-architecture",
+        "distributed-systems-architecture",
+        "database-design-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/data-pipeline-architecture/SKILL.md"
     },
     {
       "name": "data-pipeline-engineering",
