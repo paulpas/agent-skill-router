@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T10:39:44.508477Z",
-  "totalSkills": 1043,
+  "generatedAt": "2026-05-26T13:22:01.999693Z",
+  "totalSkills": 1047,
   "domains": {
-    "agent": 276,
+    "agent": 279,
     "cncf": 173,
-    "coding": 461,
+    "coding": 462,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -14,8 +14,8 @@
     "writing": 4
   },
   "roles": {
-    "orchestration": 237,
-    "implementation": 625,
+    "orchestration": 238,
+    "implementation": 628,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -444,6 +444,35 @@
       "source": "skills/agent/agent-reliability-engineering/SKILL.md"
     },
     {
+      "name": "agent-requirements-engineering",
+      "domain": "agent",
+      "description": "Defines and structures functional, non-functional, and safety requirements for AI agent systems including capability matrices, hallucination thresholds, data quality standards, and evaluation criteria.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "agent requirements",
+        "AI system requirements",
+        "capability matrix",
+        "hallucination threshold",
+        "safety guardrails",
+        "AI evaluation criteria",
+        "prompt requirements",
+        "non-functional AI requirements",
+        "functional AI requirements",
+        "data quality standards",
+        "how do i define AI system requirements"
+      ],
+      "relatedSkills": [
+        "agent-reliability-engineering",
+        "ai-system-evaluation-criteria",
+        "agent-architecture-patterns",
+        "framework-selection"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-requirements-engineering/SKILL.md"
+    },
+    {
       "name": "agent-security-guardrails",
       "domain": "agent",
       "description": "Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks.",
@@ -708,6 +737,36 @@
       "source": "skills/agent/ai-ml/SKILL.md"
     },
     {
+      "name": "ai-model-selector",
+      "domain": "agent",
+      "description": "Selects the optimal LLM model for a specific task by evaluating capability requirements against cost, latency, context window, and quality needs across all major providers.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "ai model selection",
+        "which LLM to use",
+        "GPT-4o vs Claude",
+        "choose AI model",
+        "model comparison",
+        "best model for task",
+        "LLM routing",
+        "o3 vs sonnet",
+        "Gemini vs GPT",
+        "model cost optimization",
+        "pick the right model",
+        "how do i choose an LLM"
+      ],
+      "relatedSkills": [
+        "ai-framework-selector",
+        "framework-selection",
+        "multi-model-routing",
+        "tool-use-function-calling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/ai-model-selector/SKILL.md"
+    },
+    {
       "name": "ai-persona-design",
       "domain": "agent",
       "description": "Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions.",
@@ -733,6 +792,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ai-persona-design/SKILL.md"
+    },
+    {
+      "name": "ai-system-evaluation-criteria",
+      "domain": "agent",
+      "description": "Evaluates AI agent systems against defined requirements using golden datasets, adversarial testing, hallucination metrics, latency benchmarks, and safety compliance checks.",
+      "role": "implementation",
+      "scope": "review",
+      "outputFormat": "analysis",
+      "triggers": [
+        "AI evaluation criteria",
+        "AI system evaluation",
+        "golden dataset testing",
+        "adversarial testing",
+        "hallucination metrics",
+        "latency benchmark",
+        "safety compliance check",
+        "AI acceptance testing",
+        "how do i evaluate an AI system",
+        "model evaluation framework",
+        "LLM evaluation"
+      ],
+      "relatedSkills": [
+        "agent-requirements-engineering",
+        "agent-reliability-engineering",
+        "ai-dev-jobs-mcp"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/ai-system-evaluation-criteria/SKILL.md"
     },
     {
       "name": "airflow-dag-patterns",
@@ -1432,6 +1519,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/api-gateway-domain-routing/SKILL.md"
+    },
+    {
+      "name": "api-gateway-patterns",
+      "domain": "coding",
+      "description": "Implements API gateway patterns (request routing, JWT validation, rate limiting, circuit breaker, request aggregation) to protect and orchestrate backend service traffic at the edge.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "api gateway",
+        "request routing",
+        "JWT validation",
+        "rate limiting",
+        "token bucket",
+        "how do i protect my backend",
+        "kong",
+        "envoy proxy"
+      ],
+      "relatedSkills": [
+        "api-architecture",
+        "system-reliability-architecture",
+        "service-mesh-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-gateway-patterns/SKILL.md"
     },
     {
       "name": "api-idempotency-management",
@@ -6856,25 +6968,24 @@
     {
       "name": "ddd-tactical-patterns",
       "domain": "coding",
-      "description": "Implements DDD tactical supporting patterns — composable Specification objects for business rules, Domain Services for cross-aggregate coordination, Aggregate Factories for complex construction, and Unit of Work for transaction management.",
+      "description": "Implements DDD tactical patterns — aggregate roots with invariant enforcement, value objects, domain events, anti-corruption layers, repositories, and specification pattern for rich domain modeling in Python.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
+        "DDD",
+        "domain-driven design",
+        "aggregate root",
+        "value object",
+        "domain event",
+        "anti-corruption layer",
         "specification pattern",
-        "ddd tactical patterns",
-        "domain service",
-        "aggregate factory",
-        "unit of work",
-        "repository implementation",
-        "how do i implement specifications",
-        "cross-aggregate operations"
+        "how do i model complex business logic",
+        "bounded context implementation"
       ],
       "relatedSkills": [
-        "domain-driven-design",
-        "ddd-context-mapping",
-        "cqrs-pattern",
-        "event-sourcing-pattern"
+        "software-architecture-patterns",
+        "domain-architecture-project-structure"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ddd-tactical-patterns/SKILL.md"
@@ -10023,25 +10134,29 @@
     {
       "name": "framework-utilization",
       "domain": "coding",
-      "description": "Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value while avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering.",
+      "description": "Maximizes the value of a chosen technology or framework through progressive adoption strategies, feature discovery patterns, integration anti-pattern avoidance, and optimization techniques for sustainable long-term utilization.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "framework utilization",
-        "three-pass learning",
-        "leverage framework patterns",
-        "fight the framework",
-        "how do i learn a new framework",
-        "framework conventions",
-        "framework adoption",
-        "framework best practices"
+        "how do i use a new tool effectively",
+        "technology adoption",
+        "progressive rollout",
+        "feature discovery",
+        "integration patterns",
+        "optimize chosen framework",
+        "leveraging technology",
+        "avoid integration anti-patterns",
+        "framework best practices",
+        "adopt a new framework"
       ],
       "relatedSkills": [
-        "requirement-driven-selection",
-        "dependency-inversion-principle",
-        "modular-design",
-        "test-driven-development"
+        "framework-selection",
+        "ai-framework-selector",
+        "dependency-injection",
+        "integration-testing-patterns",
+        "modular-design"
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-utilization/SKILL.md"
@@ -20317,24 +20432,26 @@
     {
       "name": "service-mesh-patterns",
       "domain": "coding",
-      "description": "Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and Linkerd.",
+      "description": "Implements sidecar service mesh patterns including automatic mTLS encryption, canary traffic routing, distributed tracing injection, least-privilege authorization policies, and cross-cluster federation using Istio and Linkerd.",
       "role": "implementation",
-      "scope": "infrastructure",
+      "scope": "implementation",
       "outputFormat": "manifests",
       "triggers": [
         "service mesh",
         "istio",
-        "linkerd",
-        "mTLS mutual TLS",
+        "mTLS",
+        "sidecar proxy",
         "canary deployment",
-        "fault injection",
-        "rate limiting",
-        "envoy proxy"
+        "distributed tracing",
+        "traffic management",
+        "how do i secure service communication",
+        "envoy sidecar",
+        "linkerd"
       ],
       "relatedSkills": [
-        "microservices-architecture",
-        "cloud-native-architecture",
-        "system-reliability-architecture"
+        "api-gateway-patterns",
+        "system-reliability-architecture",
+        "cloud-native-architecture"
       ],
       "version": "1.0.0",
       "source": "skills/coding/service-mesh-patterns/SKILL.md"
