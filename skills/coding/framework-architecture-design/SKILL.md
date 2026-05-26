@@ -11,6 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, config, examples, do-dont]
+  related-skills: framework-driven-design,composition-root,microservices-architecture,hexagonal-architecture,domain-driven-strategic,framework-extension-design
   archetypes:
     - tactical
     - strategic

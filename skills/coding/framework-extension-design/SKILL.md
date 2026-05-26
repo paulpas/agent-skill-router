@@ -11,6 +11,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, config, examples, do-dont]
+  related-skills: framework-driven-design,framework-architecture-design,composition-root,hexagonal-architecture,microservice-resilience-patterns
   archetypes:
     - tactical
     - generation
@@ -556,6 +557,119 @@ class CacheMiddleware(PriorityOrderedMiddleware):
         """Simplified cache store — production would set TTL and handle eviction."""
         pass
 ```
+
+### Anti-Pattern: Leaking Internal State Through Extension Interfaces
+
+The most common mistake in framework extension design is exposing internal implementation details through the public API. When plugin authors can read or modify internal state, any framework change becomes a breaking change for all plugins.
+
+```python
+# ❌ BAD — Plugin interface leaks internal framework state
+class LegacyPluginInterface:
+    """Plugin must interact with these internal objects directly."""
+
+    def on_request(self, request_obj: Any) -> dict | None:
+        # Plugin receives raw internal request object with mutable state
+        # Framework may change the structure at any time — no versioning guarantee
+        request_obj._cache = {"processed_by": "my_plugin"}  # Side effect on internals
+        if "X-API-Key" not in request_obj.headers:
+            return {"error": "unauthorized"}  # Magic dict response, no contract
+        return None
+
+    def register_hook(self, framework_instance: Any) -> None:
+        # Plugin must hold a reference to the global framework instance
+        # This couples plugin code to framework internals and prevents testing
+        self._fw = framework_instance
+        self._fw._plugin_registry.append(self)  # Direct mutation of internal list
+```
+
+```python
+# ✅ GOOD — Extension interface with explicit contracts and isolation
+from __future__ import annotations
+
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from typing import Any
+
+
+@dataclass(frozen=True)
+class RequestContext:
+    """Immutable snapshot of request data provided to plugins.
+
+    Plugins may read any field but MUST NOT modify it — the framework
+    creates a fresh instance per request. This ensures plugins cannot
+    corrupt state or create cross-request interference.
+    """
+    method: str
+    path: str
+    headers: frozenset[tuple[str, str]]  # Immutable, hashable for caching
+
+    def get_header(self, name: str) -> str | None:
+        """Case-insensitive header lookup."""
+        lower = name.lower()
+        return next((v for k, v in self.headers if k.lower() == lower), None)
+
+
+@dataclass(frozen=True)
+class PluginResult:
+    """Return value contract — plugins MUST return this type.
+
+    The framework recognizes only these three outcomes:
+    - proceed(): continue to the next handler or the default behavior
+    - halt(reason): short-circuit with a reason string (logged at WARN level)
+    - rewrite(context): replace the request context (rare, requires explicit enable)
+    """
+    decision: str = "proceed"  # "proceed", "halt", "rewrite"
+    reason: str | None = None
+    new_context: RequestContext | None = None
+
+
+class PluginInterface(ABC):
+    """Stable extension contract — plugin authors implement this interface.
+
+    Once published in a minor version of the framework, methods, parameters,
+    and return types defined here CANNOT change without a major version bump.
+
+    Each method receives only the data explicitly provided by the framework.
+    No internal objects, no global state references, no mutable shared data.
+    """
+
+    @abstractmethod
+    def on_request_start(self, context: RequestContext) -> PluginResult:
+        """Hook fired immediately after request parsing, before routing.
+
+        Args:
+            context: Immutable snapshot of the incoming request. Plugins
+                     may read headers, method, and path but must not modify.
+
+        Returns:
+            PluginResult indicating whether to proceed, halt, or rewrite
+            the request context. A return value of None is treated as
+            'proceed' for backward compatibility with older plugin versions.
+        """
+        ...
+
+    @abstractmethod
+    def on_request_end(self, context: RequestContext, status_code: int) -> PluginResult:
+        """Hook fired after response generation, before sending to client.
+
+        Use this to attach headers (e.g., X-Plugin-Processed), log metrics,
+        or short-circuit the response in error conditions.
+
+        Args:
+            context: The request that was processed.
+            status_code: The HTTP status code determined by the handler.
+
+        Returns:
+            PluginResult — typically 'proceed' (default). Use 'rewrite'
+            only if you need to replace the response entirely.
+        """
+        ...
+```
+**Key differences:**
+- **❌ BAD**: Receives raw `Any` types — compiler can't catch mistakes, framework changes silently break plugins
+- **✅ GOOD**: Explicit frozen dataclasses with typed signatures — IDE autocomplete, type-checking, immutable by design
+- **❌ BAD**: Direct mutation of internal lists (`_plugin_registry.append`) — race conditions, no encapsulation
+- **✅ GOOD**: Framework controls registration; plugin declares intent through method signatures only
 
 ### Pattern 3: Versioned Extension API with Deprecation Warnings
 
