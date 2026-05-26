@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T02:17:36.337407Z",
-  "totalSkills": 1024,
+  "generatedAt": "2026-05-26T03:28:53.618498Z",
+  "totalSkills": 1029,
   "domains": {
     "agent": 274,
     "cncf": 173,
-    "coding": 444,
+    "coding": 449,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 606,
+    "implementation": 611,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -19082,6 +19082,57 @@
       "source": "skills/coding/rest-api-caching/SKILL.md"
     },
     {
+      "name": "rest-api-error-handling",
+      "domain": "coding",
+      "description": "Implements RFC 7807 Problem Details error responses with proper HTTP status code dispatch, structured validation errors, and machine-readable error URIs for production REST APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "RFC 7807",
+        "Problem Details API",
+        "REST error handling",
+        "HTTP status codes",
+        "validation errors API",
+        "structured error responses",
+        "API error format",
+        "how do i handle REST errors",
+        "Problem Details JSON"
+      ],
+      "relatedSkills": [
+        "rest-api-resource-modeling",
+        "rest-api-security-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rest-api-error-handling/SKILL.md"
+    },
+    {
+      "name": "rest-api-pagination-filtering",
+      "domain": "coding",
+      "description": "Implements pagination patterns including cursor-based keyset pagination for large datasets, offset-based pagination for small collections, query parameter filtering, field selection sparse fieldsets, and sorting conventions for REST API collections.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "cursor-based pagination",
+        "offset pagination",
+        "keyset pagination",
+        "API filtering",
+        "sort parameters",
+        "field selection",
+        "sparse fieldsets",
+        "pagination envelope",
+        "how do i paginate a REST API",
+        "collection filtering API"
+      ],
+      "relatedSkills": [
+        "rest-api-resource-modeling",
+        "rest-api-caching"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rest-api-pagination-filtering/SKILL.md"
+    },
+    {
       "name": "rest-api-patterns",
       "domain": "coding",
       "description": "Implements RESTful API design patterns including resource modeling, HTTP method dispatching, structured error responses per RFC 7807, pagination, filtering, versioning, and HATEOAS for production-quality APIs.",
@@ -19106,6 +19157,58 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/rest-api-patterns/SKILL.md"
+    },
+    {
+      "name": "rest-api-resource-modeling",
+      "domain": "coding",
+      "description": "Implements REST resource modeling patterns including plural-noun URI conventions, HTTP method semantics, idempotency rules, HATEOAS hypermedia links, and parent-child relationships for predictable API surfaces.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "REST resource modeling",
+        "URI design",
+        "HTTP method semantics",
+        "idempotent methods",
+        "HATEOAS hypermedia links",
+        "resource naming conventions",
+        "plural nouns REST API",
+        "how do i design REST URIs"
+      ],
+      "relatedSkills": [
+        "rest-api-error-handling",
+        "rest-api-pagination-filtering",
+        "rest-api-versioning-strategies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rest-api-resource-modeling/SKILL.md"
+    },
+    {
+      "name": "rest-api-security-patterns",
+      "domain": "coding",
+      "description": "Implements REST API security patterns including OAuth 2.1 / OIDC authorization flows with PKCE, JWT access token vs opaque refresh token strategies, API key authentication, rate limiting headers, and CORS configuration for production APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "OAuth 2.1",
+        "PKCE flow",
+        "JWT authentication API",
+        "API key security",
+        "rate limiting headers",
+        "CORS configuration",
+        "X-RateLimit-Limit",
+        "bearer token API",
+        "API security patterns",
+        "how do i secure a REST API",
+        "mTLS"
+      ],
+      "relatedSkills": [
+        "rest-api-error-handling",
+        "rest-api-resource-modeling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rest-api-security-patterns/SKILL.md"
     },
     {
       "name": "rest-api-testing",
@@ -19136,6 +19239,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/rest-api-testing/SKILL.md"
+    },
+    {
+      "name": "rest-api-versioning-strategies",
+      "domain": "coding",
+      "description": "Implements API versioning strategies including URL path versioning, Accept header media type versioning, deprecation headers with Sunset and Deprecation, and backward-compatible contract evolution for REST APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "API versioning",
+        "URL path versioning",
+        "Accept header versioning",
+        "API deprecation",
+        "Sunset header",
+        "Deprecation header",
+        "REST API backward compatibility",
+        "how do i version an API",
+        "API evolution strategy",
+        "breaking changes API"
+      ],
+      "relatedSkills": [
+        "rest-api-resource-modeling",
+        "rest-api-pagination-filtering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rest-api-versioning-strategies/SKILL.md"
     },
     {
       "name": "review",
