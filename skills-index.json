@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T23:30:55.868498Z",
-  "totalSkills": 1066,
+  "generatedAt": "2026-05-26T23:48:53.805937Z",
+  "totalSkills": 1067,
   "domains": {
     "agent": 280,
     "cncf": 173,
-    "coding": 480,
+    "coding": 481,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 648,
+    "implementation": 649,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -1204,6 +1204,7 @@
         "anthropic bedrock"
       ],
       "relatedSkills": [
+        "llm-function-calling",
         "coding-openai-api",
         "coding-aws-bedrock",
         "coding-mcp-protocol"
@@ -14360,6 +14361,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/llm-fine-tuning/SKILL.md"
+    },
+    {
+      "name": "llm-function-calling",
+      "domain": "coding",
+      "description": "Implements reliable LLM function calling patterns including JSON Schema tool definitions, structured output parsing with Pydantic v2, retry strategies, and error handling for cross-provider tool use.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "function calling",
+        "tool use",
+        "structured output",
+        "json schema",
+        "llm api",
+        "pydantic validation",
+        "tool definition",
+        "how do i make an llm call code"
+      ],
+      "relatedSkills": [
+        "anthropic-api",
+        "agent-security-guardrails",
+        "api-design",
+        "agent-debugging"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/llm-function-calling/SKILL.md"
     },
     {
       "name": "llm-orchestration",
