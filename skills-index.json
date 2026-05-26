@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T19:12:59.017997Z",
-  "totalSkills": 1056,
+  "generatedAt": "2026-05-26T20:05:45.691886Z",
+  "totalSkills": 1058,
   "domains": {
     "agent": 279,
     "cncf": 173,
-    "coding": 471,
+    "coding": 473,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 637,
+    "implementation": 639,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -7908,6 +7908,31 @@
       "source": "skills/coding/django-best-practices/SKILL.md"
     },
     {
+      "name": "dlq-retry-patterns",
+      "domain": "coding",
+      "description": "Implements dead letter queue architectures with retry strategies (exponential backoff, circuit breaker integration, poison pill detection) for resilient event-driven systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dead letter queue",
+        "DLQ",
+        "retry pattern",
+        "exponential backoff",
+        "poison pill",
+        "circuit breaker",
+        "how do i handle failed events",
+        "event processing failure"
+      ],
+      "relatedSkills": [
+        "event-driven-patterns",
+        "event-sourcing-pattern",
+        "idempotent-distributed-operations"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/dlq-retry-patterns/SKILL.md"
+    },
+    {
       "name": "docker-api",
       "domain": "coding",
       "description": "Integrates with the Docker Engine API via the docker-py SDK to manage containers, images, networks, volumes, and Swarm clusters from Python applications.",
@@ -9144,6 +9169,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/event-storming/SKILL.md"
+    },
+    {
+      "name": "eventual-consistency-patterns",
+      "domain": "coding",
+      "description": "Manages eventual consistency challenges in distributed systems — read model reconciliation, conflict resolution with CRDTs and vector clocks, anti-corruption layers, and stale read mitigation for event-driven architectures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "eventual consistency",
+        "read model drift",
+        "conflict resolution",
+        "stale reads",
+        "anti-corruption layer",
+        "CRDT",
+        "vector clock",
+        "how do i handle inconsistent data in distributed systems"
+      ],
+      "relatedSkills": [
+        "cqrs-pattern",
+        "event-sourcing-pattern",
+        "distributed-systems-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/eventual-consistency-patterns/SKILL.md"
     },
     {
       "name": "executing-plans",
