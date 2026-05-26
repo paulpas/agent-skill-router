@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T14:22:07.924103Z",
-  "totalSkills": 1048,
+  "generatedAt": "2026-05-26T15:21:53.399705Z",
+  "totalSkills": 1050,
   "domains": {
     "agent": 279,
     "cncf": 173,
-    "coding": 463,
+    "coding": 465,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 629,
+    "implementation": 631,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -2935,27 +2935,26 @@
     {
       "name": "behavioral-design-patterns",
       "domain": "coding",
-      "description": "Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications.",
+      "description": "Implements GoF behavioral design patterns (Strategy, Command, State, Chain of Responsibility, Visitor) to encapsulate algorithms, decouple request senders from receivers, and manage complex control flow in production systems.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "behavioral patterns",
-        "observer pattern",
-        "state pattern",
-        "command pattern",
         "strategy pattern",
-        "template method",
-        "mediator pattern",
+        "command pattern",
+        "state machine",
         "chain of responsibility",
-        "iterator pattern",
-        "object communication"
+        "visitor pattern",
+        "algorithm encapsulation",
+        "how do i decouple logic flow",
+        "interpreter pattern",
+        "iterator pattern"
       ],
       "relatedSkills": [
-        "design-patterns-and-principles",
-        "event-driven-architecture",
-        "refactoring",
-        "modular-design"
+        "structural-design-patterns",
+        "gof-design-patterns-catalog",
+        "refactoring-techniques"
       ],
       "version": "1.0.0",
       "source": "skills/coding/behavioral-design-patterns/SKILL.md"
@@ -3479,6 +3478,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/business-rules-engine/SKILL.md"
+    },
+    {
+      "name": "caching-architecture",
+      "domain": "coding",
+      "description": "Designs multi-level caching strategies (cache-aside, write-through, write-behind, invalidation patterns) for distributed systems with consistency guarantees, TTL management, cache stampede prevention, and monitoring.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "caching strategy",
+        "cache-aside pattern",
+        "write-through cache",
+        "cache invalidation",
+        "LRU cache",
+        "TTL management",
+        "cache stampede",
+        "distributed caching",
+        "Redis cache",
+        "multi-level cache",
+        "cache warm-up",
+        "read-through cache"
+      ],
+      "relatedSkills": [
+        "performance-optimization",
+        "database-design-modeling",
+        "async-runtime",
+        "configuration-management-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/caching-architecture/SKILL.md"
     },
     {
       "name": "caching-strategies",
@@ -5459,6 +5488,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/go/configuration-management/SKILL.md"
+    },
+    {
+      "name": "configuration-management-patterns",
+      "domain": "coding",
+      "description": "Designs production configuration management with schema validation, hierarchical merging of config sources, hot reload capabilities, secret injection from vaults, and environment-specific defaults for reliable deployment.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "configuration management",
+        "config validation",
+        "schema validation",
+        "config hot reload",
+        "secret injection",
+        "HashiCorp Vault",
+        "environment configuration",
+        "hierarchical config",
+        "Pydantic settings",
+        "how do i manage application configuration",
+        "config merging",
+        "env var overrides"
+      ],
+      "relatedSkills": [
+        "database-design-modeling",
+        "performance-optimization",
+        "security-review",
+        "deployment-infrastructure-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/configuration-management-patterns/SKILL.md"
     },
     {
       "name": "container-inspector",
