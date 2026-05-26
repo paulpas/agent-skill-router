@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T16:04:45.794197Z",
-  "totalSkills": 1050,
+  "generatedAt": "2026-05-26T16:19:55.355454Z",
+  "totalSkills": 1052,
   "domains": {
     "agent": 279,
     "cncf": 173,
-    "coding": 465,
+    "coding": 467,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 631,
+    "implementation": 633,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -7973,6 +7973,59 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/domain-driven-design/SKILL.md"
+    },
+    {
+      "name": "domain-driven-strategic",
+      "domain": "coding",
+      "description": "Maps bounded contexts using context mapping patterns (Customer/Supplier, Shared Kernel, ACL, Open Host Service) and facilitates Event Storming sessions to discover architecture boundaries in complex domains.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "bounded contexts",
+        "ubiquitous language",
+        "event storming",
+        "context mapping",
+        "shared kernel",
+        "anticorruption layer",
+        "strategic design",
+        "ACL",
+        "open host service",
+        "published language",
+        "customer supplier pattern"
+      ],
+      "relatedSkills": [
+        "domain-driven-tactical",
+        "architecture-microservices"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/domain-driven-strategic/SKILL.md"
+    },
+    {
+      "name": "domain-driven-tactical",
+      "domain": "coding",
+      "description": "Implements tactical DDD patterns including Entities, Value Objects, Aggregates, Repositories, Domain Events, and Factories with Python dataclasses and strict invariant enforcement.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "value objects",
+        "domain entities",
+        "aggregates",
+        "repositories",
+        "domain events",
+        "factories",
+        "tactical design",
+        "invariant enforcement",
+        "aggregate root",
+        "idempotency"
+      ],
+      "relatedSkills": [
+        "domain-driven-strategic",
+        "architecture-microservices"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/domain-driven-tactical/SKILL.md"
     },
     {
       "name": "domain-events",
