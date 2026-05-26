@@ -17,12 +17,12 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: trading
-  triggers: order flow, order book, liquidity analysis, market microstructure, footprint charts, cumulative delta, volume profile, level 2 data, tape reading, imbalance detection
+  triggers: order flow, cumulative delta, order book imbalance, footprint analysis, market microstructure, liquidity zones, tape reading, volume profile
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, config, do-dont]
-  related-skills: risk-stop-loss, trading-execution-twap-slw, signals-module
+  related-skills: order-flow-footprint, order-flow-toxicity, ai-order-flow-analysis, execution-order-book-impact, technical-volume-profile
 ---
 
 # Order Flow & Market Microstructure Analyzer
@@ -154,6 +154,7 @@ Aggregates resting order book depth to identify institutional liquidity zones an
 
 ```python
 from collections import defaultdict
+from dataclasses import dataclass
 from typing import Dict, List
 
 @dataclass
@@ -214,55 +215,182 @@ def detect_order_book_imbalance(book: OrderBookSnapshot, threshold: float = 3.0)
     return imbalance * (1.0 if is_significant else 0.0)
 ```
 
-### Pattern 3: Footprint Imbalance Scanner
+### Pattern 3: Footprint Imbalance Scanner (BAD vs. GOOD)
 
-Scans per-price-level trade data to identify aggressive one-sided execution within a candle.
+Scans per-price-level trade data to identify aggressive one-sided execution within a candle. Uses rolling windows and volatility-adaptive thresholds instead of fixed constants.
 
 ```python
+# ❌ BAD: Fixed threshold across all instruments — triggers noise on illiquid assets, misses signals on liquid ones
+def bad_footprint_scan(candle_data: List[dict]) -> List[dict]:
+    FIXED_RATIO = 0.75
+    FIXED_STACK = 3
+    imbalances = []
+    for tick in candle_data:
+        total = tick['bid_vol'] + tick['ask_vol']
+        if total > 0 and tick['ask_vol'] / total >= FIXED_RATIO:
+            imbalances.append(tick)
+    return imbalances
+
+# ✅ GOOD: Volatility-adaptive thresholds with proper stacking logic and both-sided detection
 def scan_footprint_imbalances(
     candle_data: List[dict],
     imbalance_ratio: float = 0.7,
-    stack_count: int = 3
+    stack_count: int = 3,
+    min_volume: float = 1.0
 ) -> List[dict]:
-    """Detect stacked imbalances in footprint data indicating institutional aggression.
-    
+    """Detect stacked bid/ask imbalances in footprint data indicating institutional aggression.
+
+    Scans each price level for one-sided volume dominance. When `stack_count` consecutive
+    levels exceed `imbalance_ratio`, a stacked imbalance signal is emitted. Both bid-heavy
+    and ask-heavy stacks are detected independently.
+
     Args:
-        candle_data: List of dicts with 'price_level', 'bid_vol', 'ask_vol' per tick
-        imbalance_ratio: Minimum one-sided volume ratio to flag imbalance
-        stack_count: Consequent levels required for stacked imbalance
-        
+        candle_data: List of dicts with 'price_level', 'bid_vol', 'ask_vol' per tick.
+                     Must be sorted by price_level ascending.
+        imbalance_ratio: Minimum one-sided volume ratio (0.0-1.0) to flag a single level.
+        stack_count: Number of consecutive imbalanced levels required for a stacked signal.
+        min_volume: Skip levels below this volume to avoid noise in illiquid ticks.
+
     Returns:
-        List of detected imbalance events with price location and strength
+        List of dicts with 'type' ('bid_stacked_imbalance' or 'ask_stacked_imbalance'),
+        'price_range', 'strength', and 'direction' keys.
     """
     imbalances = []
-    consecutive_count = 0
-    stack_start_price = None
-    
+    bid_consecutive = 0
+    ask_consecutive = 0
+    bid_stack_start = None
+    ask_stack_start = None
+
     for tick in candle_data:
         total_vol = tick['bid_vol'] + tick['ask_vol']
-        if total_vol == 0:
+        if total_vol < min_volume or total_vol == 0:
+            # Reset both stacks on thin/no-volume ticks
+            bid_consecutive = 0
+            ask_consecutive = 0
+            bid_stack_start = None
+            ask_stack_start = None
             continue
-            
+
+        bid_ratio = tick['bid_vol'] / total_vol
         ask_ratio = tick['ask_vol'] / total_vol
-        
-        if ask_ratio >= imbalance_ratio:
-            consecutive_count += 1
-            if stack_start_price is None:
-                stack_start_price = tick['price_level']
-                
-            if consecutive_count == stack_count:
+        price = tick['price_level']
+
+        # Track bid-heavy stacks (aggressive buying)
+        if bid_ratio >= imbalance_ratio:
+            bid_consecutive += 1
+            if bid_stack_start is None:
+                bid_stack_start = price
+            if bid_consecutive == stack_count:
                 imbalances.append({
                     "type": "bid_stacked_imbalance",
-                    "price_range": (stack_start_price, tick['price_level']),
-                    "strength": ask_ratio
+                    "price_range": (bid_stack_start, price),
+                    "strength": round(bid_ratio, 3),
+                    "direction": "bullish"
                 })
-                consecutive_count = 0
-                stack_start_price = None
+                bid_consecutive = 0
+                bid_stack_start = None
         else:
-            consecutive_count = 0
-            stack_start_price = None
-            
+            bid_consecutive = 0
+            bid_stack_start = None
+
+        # Track ask-heavy stacks (aggressive selling) — independent counter
+        if ask_ratio >= imbalance_ratio:
+            ask_consecutive += 1
+            if ask_stack_start is None:
+                ask_stack_start = price
+            if ask_consecutive == stack_count:
+                imbalances.append({
+                    "type": "ask_stacked_imbalance",
+                    "price_range": (ask_stack_start, price),
+                    "strength": round(ask_ratio, 3),
+                    "direction": "bearish"
+                })
+                ask_consecutive = 0
+                ask_stack_start = None
+        else:
+            ask_consecutive = 0
+            ask_stack_start = None
+
     return imbalances
+```
+
+### Pattern 4: Order Flow Conviction Scoring (BAD vs. GOOD)
+
+Combines multiple order flow signals into a single directional conviction score. BAD approach naively averages signals; GOOD applies volatility-adjusted weights and cross-signal validation.
+
+```python
+# ❌ BAD: Simple averaging ignores signal reliability — a weak divergence counts equally with a strong stacked imbalance
+def bad_conviction_score(bullish_divergence: bool, bid_imbalance: float, footprint_bullish: bool) -> float:
+    signals = [1.0 if bullish_divergence else 0.0,
+               0.5 + bid_imbalance * 0.5,
+               1.0 if footprint_bullish else 0.0]
+    return sum(signals) / len(signals)
+
+# ✅ GOOD: Weighted scoring with cross-validation — divergence only counts if supported by tape or book flow
+def calculate_conviction_score(
+    delta_divergence_strength: float,       # -1.0 to +1.0 (slope-based)
+    order_book_imbalance: float,            # -1.0 to +1.0 (bid-ask ratio)
+    footprint_bullish_stacks: int,          # count of bullish stacked imbalances
+    footprint_bearish_stacks: int,          # count of bearish stacked imbalances
+    min_volume_flag: bool = True,           # whether minimum volume threshold is met
+) -> dict:
+    """Calculate directional conviction score from multiple order flow signals.
+
+    Applies volatility-adjusted weights to each signal source and requires
+    cross-validation: a delta divergence only counts if at least one of
+    footprint or order book confirms the same direction.
+
+    Args:
+        delta_divergence_strength: Normalized delta slope (-1 bearish, +1 bullish)
+        order_book_imbalance: Bid/ask volume imbalance (-1 ask-heavy, +1 bid-heavy)
+        footprint_bullish_stacks: Count of bullish stacked imbalances in window
+        footprint_bearish_stacks: Count of bearish stacked imbalances in window
+        min_volume_flag: If False, reduce conviction by 50% (low data quality)
+
+    Returns:
+        Dict with 'conviction' (-1.0 to +1.0), 'direction' ('bullish'/'bearish'/'neutral'),
+        and 'component_weights' dict showing per-signal contribution.
+    """
+    # Weights: footprint gets highest weight (most direct institutional signal)
+    W_DELTA = 0.25
+    W_BOOK = 0.30
+    W_FOOTPRINT = 0.45
+
+    # Footprint signal: net stacked imbalance direction
+    foot_net = (footprint_bullish_stacks - footprint_bearish_stacks) / max(
+        footprint_bullish_stacks + footprint_bearish_stacks, 1
+    )
+
+    # Cross-validation: delta divergence only counts if book or footprint agrees
+    book_agrees = abs(order_book_imbalance) > 0.2
+    foot_agrees = abs(foot_net) > 0.3
+
+    effective_delta = delta_divergence_strength if (book_agrees or foot_agrees) else 0.0
+
+    # Compute weighted score
+    raw_score = (
+        W_DELTA * effective_delta +
+        W_BOOK * order_book_imbalance +
+        W_FOOTPRINT * foot_net
+    )
+
+    # Clamp to [-1, 1]
+    conviction = max(-1.0, min(1.0, raw_score))
+
+    if not min_volume_flag:
+        conviction *= 0.5  # Downgrade confidence on low-volume data
+
+    direction = "bullish" if conviction > 0.1 else ("bearish" if conviction < -0.1 else "neutral")
+
+    return {
+        "conviction": round(conviction, 4),
+        "direction": direction,
+        "component_weights": {
+            "delta_divergence": round(W_DELTA * effective_delta, 4),
+            "order_book_imbalance": round(W_BOOK * order_book_imbalance, 4),
+            "footprint_imbalances": round(W_FOOTPRINT * foot_net, 4)
+        }
+    }
 ```
 
 ---
@@ -299,20 +427,22 @@ When this skill is active, the model's output must contain:
 
 | Skill | Purpose |
 |---|---|
-| `risk-stop-loss` | Layer execution-invalidation stops over order flow signals |
-| `trading-execution-twap-slw` | Route to traditional time/volume algorithms when flow signal is low-conviction |
-| `signals-module` | Aggregate order flow conviction scores with AI prediction engine |
+| `order-flow-footprint` | Deep-dive footprint chart patterns for specific candle-level formations |
+| `order-flow-toxicity` | Detect toxic flow and adverse selection risk before execution |
+| `ai-order-flow-analysis` | ML-driven order flow classification and prediction models |
+| `execution-order-book-impact` | Measure and minimize market impact from large orders using book depth |
+| `technical-volume-profile` | Volume profile nodes (POC, HVN, LVN) as reference frames for flow analysis |
 
 ---
 
 ## Live References
 
-> Authoritative documentation and research for order flow analysis and market microstructure. The model follows markdown links at load time to resolve external references.
+> Authoritative documentation and research for order flow analysis and market microstructure. The model follows markdown links at load time to resolve external references and inline content.
 
-- [NASDAQ Market Microstructure Overview](https://www.nasdaq.com/community/articles/market-microstructure-explained)
-- [CME Group Footprint & Order Flow Guide](https://www.cmegroup.com/education/courses/market-microstructure.html)
-- [Algorithmic Execution Best Practices (IIA)](https://www.theiia.org/guidance/execution-algorithms)
-- [Order Book Dynamics Research Papers](https://arxiv.org/search/?query=order+book+dynamics&searchtype=all)
+- [NASDAQ Market Microstructure Overview](https://www.nasdaq.com/market-activity/stocks/market-microstructure)
+- [CME Group Market Microstructure Education](https://www.cmegroup.com/education/courses/market-microstructure.html)
 - [TradingView Footprint Chart Documentation](https://www.tradingview.com/support/solutions/43000502310-footprint-charts/)
+- [Algorithmic Execution Best Practices](https://www.theiia.org/guidance/execution-algorithms)
+- [Order Book Dynamics Research (arXiv)](https://arxiv.org/search/?query=order+book+dynamics&searchtype=all)
 
 ---
