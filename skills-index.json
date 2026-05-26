@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T23:11:41.093564Z",
+  "generatedAt": "2026-05-26T23:30:55.868498Z",
   "totalSkills": 1066,
   "domains": {
     "agent": 280,
@@ -12512,25 +12512,22 @@
     {
       "name": "input-validation",
       "domain": "coding",
-      "description": "Validates, sanitizes, and transforms inbound data through typed schema checks and OWASP-compliant filtering to prevent injection attacks and data corruption.",
+      "description": "Validates and normalizes input/output data using schema validation, type coercion, and sanitization patterns to prevent injection attacks and ensure data integrity.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "input validation",
-        "data sanitization",
+        "output sanitization",
         "schema validation",
-        "input filtering",
-        "sanitize user input",
-        "prevent injection",
-        "OWASP",
-        "form validation",
-        "parse and validate"
+        "type checking",
+        "data cleaning",
+        "prompt injection prevention",
+        "JSON Schema"
       ],
       "relatedSkills": [
         "security-review",
-        "software-error-handling",
-        "test-driven-development"
+        "error-handling"
       ],
       "version": "1.0.0",
       "source": "skills/coding/input-validation/SKILL.md"
