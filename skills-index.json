@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T21:17:16.248920Z",
-  "totalSkills": 1062,
+  "generatedAt": "2026-05-26T22:02:33.982655Z",
+  "totalSkills": 1065,
   "domains": {
     "agent": 279,
     "cncf": 173,
-    "coding": 477,
+    "coding": 480,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 643,
+    "implementation": 646,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -589,6 +589,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ai-agents-architect/SKILL.md"
+    },
+    {
+      "name": "ai-assisted-code-review",
+      "domain": "coding",
+      "description": "Orchestrates AI-augmented code review workflows combining LLM-based analysis with human judgment for comprehensive PR quality assurance in modern development teams.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "ai code review",
+        "copilot review",
+        "llm code review",
+        "claude code review",
+        "cursor code review",
+        "automated review",
+        "AI-assisted review",
+        "how do i use AI for code review"
+      ],
+      "relatedSkills": [
+        "coding-code-review",
+        "coding-testing-patterns",
+        "agent-task-routing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ai-assisted-code-review/SKILL.md"
     },
     {
       "name": "ai-assisted-engineering",
@@ -15752,6 +15777,31 @@
       "source": "skills/coding/modern-python-development/SKILL.md"
     },
     {
+      "name": "modern-python-packaging",
+      "domain": "coding",
+      "description": "Configures modern Python packaging with uv, hatchling, pyproject.toml, and dependency resolution for reproducible builds in 2025+.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "python packaging",
+        "uv tool",
+        "pyproject.toml",
+        "hatchling build backend",
+        "rye project manager",
+        "dependency resolution",
+        "Python publish workflow",
+        "how do i package a Python project"
+      ],
+      "relatedSkills": [
+        "coding-modern-python-development",
+        "coding-testing-patterns",
+        "coding-cve-dependency-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/modern-python-packaging/SKILL.md"
+    },
+    {
       "name": "modern-software-development-workflows",
       "domain": "coding",
       "description": "Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery.",
@@ -18570,6 +18620,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-privacy-ml/SKILL.md"
+    },
+    {
+      "name": "production-debugging-observability",
+      "domain": "coding",
+      "description": "Debugs production systems using OpenTelemetry traces, structured logs with context propagation, and eBPF diagnostics for root cause analysis without service interruption.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "production debugging",
+        "OpenTelemetry tracing",
+        "eBPF debugging",
+        "bpftrace",
+        "structured logging",
+        "distributed tracing",
+        "log correlation",
+        "context propagation",
+        "how do i debug production issues"
+      ],
+      "relatedSkills": [
+        "coding-debugging-methodology",
+        "cncf-prometheus",
+        "sre-engineering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/production-debugging-observability/SKILL.md"
     },
     {
       "name": "production-logging",

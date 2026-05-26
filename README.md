@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1065 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1065 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1065 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1065 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1065 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1065 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1065 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1065 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1065 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1065 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1065 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1065 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1065 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1065 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1065 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1065 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -129,7 +129,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 477 | Software patterns, security, testing, data science |
+| Coding | 480 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -330,17 +330,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 21:17:18 UTC  
-> **Total skills:** 1062  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1062 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 22:02:35 UTC  
+> **Total skills:** 1065  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1065 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1026 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1026 | Ranking penalty for conflicting query terms |
-| Response Profile | 1026 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1029 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1029 | Ranking penalty for conflicting query terms |
+| Response Profile | 1029 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -809,7 +809,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (477 skills)
+### Coding (480 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -818,6 +818,7 @@ MIT — All skills are freely available and redistributable.
 | [advanced](skills/coding/advanced/SKILL.md) | "Provides Advanced Git operations including rebasing, cherry-picking, bisecting, reflog, worktrees, filtering branches, and multi-repository workflows for exper" | git rebase, git cherry-pick, git bisect, git reflog, worktrees, filter-branch, multi-repo, advanced git [educational, diagnostic] |
 | [adyen-api](skills/coding/adyen-api/SKILL.md) | Implements Adyen API integration (Payments, Checkout, Marketplaces, Risk, Reporting) using adyen Python SDK with 3D Secure 2 authentication flow, webhook signature verification, idempotency keys, and global enterprise payment processing patterns. | adyen, adyen checkout api, adyen payments, 3d secure 2, adyen webhook verification, adyen marketplaces, adyen risk management, how do i integrate adyen payments, global payment processing [tactical, generation] |
 | [agent-evaluation-testing](skills/coding/agent-evaluation-testing/SKILL.md) | Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python. | agent evaluation, LLM testing, promptfoo, tool-use accuracy, hallucination detection, how do i test my agent, evaluate AI responses, agent quality assurance [tactical, diagnostic] |
+| [ai-assisted-code-review](skills/coding/ai-assisted-code-review/SKILL.md) | Orchestrates AI-augmented code review workflows combining LLM-based analysis with human judgment for comprehensive PR quality assurance in modern development teams. | ai code review, copilot review, llm code review, claude code review, cursor code review, automated review, AI-assisted review, how do i use AI for code review [tactical, orchestration] |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | ai-assisted engineering, AI pair programming, LLM code generation, prompt engineering for code, automated code review with AI, AI test generation, how do i use AI in software development, code generation guardrails [tactical, generation] |
 | [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. | ai framework selection, llm orchestration, langchain vs llamaindex, agentic workflow, how do i choose an ai framework, prompt engineering framework, AI agent platform, RAG architecture [tactical, generation] |
 | [airtable-api](skills/coding/airtable-api/SKILL.md) | Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python. | airtable api, pyairtable, airtable records, airtable bases, airtable python, airtable automation, airtable webhooks [tactical, generation] |
@@ -1117,6 +1118,7 @@ MIT — All skills are freely available and redistributable.
 | [modern-architecture-patterns](skills/coding/modern-architecture-patterns/SKILL.md) | Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems. | hexagonal architecture, ports and adapters, backends-for-frontends, bff pattern, feature flags, CQRS event sourcing, sidecar pattern, how do i design scalable systems |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | programming language comparison, rust vs go, typescript vs python, which language to use, language selection, zig vs c++, language benchmark, developer experience, runtime comparison, language ecosystem maturity [diagnostic, educational] |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. | python typing, python 3.12, python 3.11, TypeAlias, ParamSpec, asyncio TaskGroup, structured concurrency, pyproject.toml, uv package manager, httpx async, python project structure, self type, override decorator, modern python, python best practices 2026 [tactical, generation] |
+| [modern-python-packaging](skills/coding/modern-python-packaging/SKILL.md) | Configures modern Python packaging with uv, hatchling, pyproject.toml, and dependency resolution for reproducible builds in 2025+. | python packaging, uv tool, pyproject.toml, hatchling build backend, rye project manager, dependency resolution, Python publish workflow, how do i package a Python project [tactical, generation] |
 | [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. | software development, CI/CD pipeline, continuous integration, automated testing, code quality gates, deployment strategy, release management, DevOps workflow [orchestration, tactical] |
 | [monday-api](skills/coding/monday-api/SKILL.md) | Integrates with monday.com API using GraphQL queries to manage boards, items, groups, columns, updates, workspaces, and webhooks via monday-api-python-sdk. | monday api, monday.com, monday boards, monday items, monday graphql, monday python, monday automation [tactical, generation] |
 | [mongodb-driver](skills/coding/mongodb-driver/SKILL.md) | Integrates MongoDB using PyMongo 4.x with patterns for CRUD operations, aggregation pipelines, change streams, Atlas Search, and replica set connections. | mongodb, pymongo, mongo aggregation, change streams, mongodb atlas, how do i query mongodb from python, document database, bson [tactical, generation] |
@@ -1167,6 +1169,7 @@ MIT — All skills are freely available and redistributable.
 | [postgresql-performance-tuning](skills/coding/postgresql-performance-tuning/SKILL.md) | Diagnoses and optimizes PostgreSQL performance through execution plan analysis, index strategies, configuration tuning, autovacuum management, partitioning, and monitoring with pg_stat_statements. | postgresql performance tuning, psql query optimization, index strategy, slow queries, pgbouncer, autovacuum tuning, pg_stat_statements, how do i make postgresql faster [tactical, generation] |
 | [postgresql-sdk](skills/coding/postgresql-sdk/SKILL.md) | Integrates PostgreSQL databases using psycopg2 2.9.x and asyncpg 0.31.x with patterns for connection pooling, replication, COPY, and query parameterization. | postgresql, psycopg2, asyncpg, postgres connection pool, sql parameterization, how do i query postgres from python, database replication, libpq [tactical, generation] |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | privacy machine learning, differential privacy, federated learning, privacy attacks, privacy-preserving [tactical, generation] |
+| [production-debugging-observability](skills/coding/production-debugging-observability/SKILL.md) | Debugs production systems using OpenTelemetry traces, structured logs with context propagation, and eBPF diagnostics for root cause analysis without service interruption. | production debugging, OpenTelemetry tracing, eBPF debugging, bpftrace, structured logging, distributed tracing, log correlation, context propagation, how do i debug production issues [diagnostic] |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging [tactical, generation] |
 | [production-readiness](skills/coding/production-readiness/SKILL.md) | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | production readiness, SRE review, deployment criteria, observability setup, canary deployment, on-call coverage, SLO SLI, error budget, golden signals, how do i know my service is production ready, operational excellence, hypercare period [diagnostic, educational] |
 | [prompt-engineering](skills/coding/prompt-engineering/SKILL.md) | Implements prompt design patterns including chain-of-thought reasoning, role-setting, few-shot exemplars, structured output schemas, and system prompt optimization for reliable LLM agent behavior. | prompt engineering, chain of thought, few shot prompting, role setting, structured output, system prompt design, prompt templates, LLM instructions, prompt patterns, prompt design, prompt architecture [tactical, generation] |
@@ -1469,7 +1472,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (643 skills)
+### Implementation (Build Features) (646 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1487,6 +1490,7 @@ MIT — All skills are freely available and redistributable.
 | [agent-security-guardrails](skills/agent/agent-security-guardrails/SKILL.md) | Agent | Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks. |
 | [agentic-evaluation](skills/agent/agentic-evaluation/SKILL.md) | Agent | Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines. |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. |
+| [ai-assisted-code-review](skills/coding/ai-assisted-code-review/SKILL.md) | Coding | Orchestrates AI-augmented code review workflows combining LLM-based analysis with human judgment for comprehensive PR quality assurance in modern development teams. |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. |
 | [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Agent | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. |
 | [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Coding | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. |
@@ -1852,6 +1856,7 @@ MIT — All skills are freely available and redistributable.
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' |
 | [modern-architecture-patterns](skills/coding/modern-architecture-patterns/SKILL.md) | Coding | Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems. |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. |
+| [modern-python-packaging](skills/coding/modern-python-packaging/SKILL.md) | Coding | Configures modern Python packaging with uv, hatchling, pyproject.toml, and dependency resolution for reproducible builds in 2025+. |
 | [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Coding | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. |
 | [modular-design](skills/go/modular-design/SKILL.md) | Go | Designs modular Go applications with clean architecture, dependency injection, package boundaries, and interface-based design for maintainable codebases. |
 | [momentum-indicators](skills/trading/momentum-indicators/SKILL.md) | Trading | "Implements rsi, macd, stochastic oscillators and momentum analysis for risk management and algorithmic trading execution." |
@@ -1926,6 +1931,7 @@ MIT — All skills are freely available and redistributable.
 | [postgresql-sdk](skills/coding/postgresql-sdk/SKILL.md) | Coding | Integrates PostgreSQL databases using psycopg2 2.9.x and asyncpg 0.31.x with patterns for connection pooling, replication, COPY, and query parameterization. |
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" |
+| [production-debugging-observability](skills/coding/production-debugging-observability/SKILL.md) | Coding | Debugs production systems using OpenTelemetry traces, structured logs with context propagation, and eBPF diagnostics for root cause analysis without service interruption. |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. |
 | [prompt-engineering](skills/coding/prompt-engineering/SKILL.md) | Coding | Implements prompt design patterns including chain-of-thought reasoning, role-setting, few-shot exemplars, structured output schemas, and system prompt optimization for reliable LLM agent behavior. |
 | [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Coding | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. |
@@ -2580,6 +2586,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-agent-development](skills/agent/ai-agent-development/SKILL.md) | Agent | Implements intelligent ai agent development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-agent-safety](skills/agent/ai-agent-safety/SKILL.md) | Agent | Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents to prevent misuse, unauthorized actions, and unreliable behavior. | Implementation |
 | [ai-agents-architect](skills/agent/ai-agents-architect/SKILL.md) | Agent | Implements intelligent ai agents architect with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [ai-assisted-code-review](skills/coding/ai-assisted-code-review/SKILL.md) | Coding | Orchestrates AI-augmented code review workflows combining LLM-based analysis with human judgment for comprehensive PR quality assurance in modern development teams. | Implementation |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | Implementation |
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Agent | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. | Implementation |
@@ -3202,6 +3209,7 @@ MIT — All skills are freely available and redistributable.
 | [modern-architecture-patterns](skills/coding/modern-architecture-patterns/SKILL.md) | Coding | Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems. | Implementation |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Coding | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | Reference |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. | Implementation |
+| [modern-python-packaging](skills/coding/modern-python-packaging/SKILL.md) | Coding | Configures modern Python packaging with uv, hatchling, pyproject.toml, and dependency resolution for reproducible builds in 2025+. | Implementation |
 | [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Coding | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. | Implementation |
 | [modular-design](skills/go/modular-design/SKILL.md) | Go | Designs modular Go applications with clean architecture, dependency injection, package boundaries, and interface-based design for maintainable codebases. | Implementation |
 | [momentum-indicators](skills/trading/momentum-indicators/SKILL.md) | Trading | "Implements rsi, macd, stochastic oscillators and momentum analysis for risk management and algorithmic trading execution." | Implementation |
@@ -3319,6 +3327,7 @@ MIT — All skills are freely available and redistributable.
 | [pr-writer](skills/agent/pr-writer/SKILL.md) | Agent | Implements intelligent pr writer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [price-action-patterns](skills/trading/price-action-patterns/SKILL.md) | Trading | "Provides Analysis of candlestick and chart patterns for price movement prediction" | Implementation |
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" | Implementation |
+| [production-debugging-observability](skills/coding/production-debugging-observability/SKILL.md) | Coding | Debugs production systems using OpenTelemetry traces, structured logs with context propagation, and eBPF diagnostics for root cause analysis without service interruption. | Implementation |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | Implementation |
 | [production-readiness](skills/coding/production-readiness/SKILL.md) | Coding | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | Reference |
 | [project](skills/cncf/project/SKILL.md) | Cncf | "Notary Project in Content Trust &amp; Security - cloud native architecture" patterns, pitfalls, and best practices | Reference |
