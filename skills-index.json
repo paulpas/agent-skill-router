@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-26T22:02:33.982655Z",
-  "totalSkills": 1065,
+  "generatedAt": "2026-05-26T23:11:41.093564Z",
+  "totalSkills": 1066,
   "domains": {
-    "agent": 279,
+    "agent": 280,
     "cncf": 173,
     "coding": 480,
     "electrical-engineering": 2,
@@ -14,8 +14,8 @@
     "writing": 4
   },
   "roles": {
-    "orchestration": 238,
-    "implementation": 646,
+    "orchestration": 237,
+    "implementation": 648,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -18798,6 +18798,30 @@
       "source": "skills/coding/prompt-engineering/SKILL.md"
     },
     {
+      "name": "prompt-engineering-patterns",
+      "domain": "agent",
+      "description": "Implements advanced prompt engineering patterns (chain-of-thought, few-shot, ReAct, self-consistency, structured output) for crafting high-quality system prompts and agent instructions that reduce hallucination and improve task completion rates.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "prompt engineering",
+        "chain of thought",
+        "few-shot prompting",
+        "ReAct pattern",
+        "self consistency",
+        "structured output",
+        "system prompt design",
+        "how do i improve prompts"
+      ],
+      "relatedSkills": [
+        "agent-skill-trigger-engineering",
+        "agent-instruction-parsing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/prompt-engineering-patterns/SKILL.md"
+    },
+    {
       "name": "prompt-optimization",
       "domain": "coding",
       "description": "Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions.",
@@ -21722,26 +21746,23 @@
     {
       "name": "skill-trigger-engineering",
       "domain": "agent",
-      "description": "Designs and calibrates trigger keywords for OpenCode skill auto-loading using two-tier strategy combining technical precision with conversational language to maximize skill discoverability while minimizing false positives.",
-      "role": "orchestration",
-      "scope": "orchestration",
-      "outputFormat": "analysis",
+      "description": "Designs optimized trigger sets using a two-tier strategy combining technical terms with conversational variants, prevents false-positive activation, and ensures discoverability across expert and non-technical audiences.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
       "triggers": [
         "skill triggers",
         "trigger engineering",
-        "auto-loading",
-        "skill discovery",
-        "trigger calibration",
-        "keyword matching",
+        "auto-loading keywords",
         "how do i design triggers",
         "conversational discovery",
-        "two-tier trigger strategy",
-        "trigger testing"
+        "trigger overlap",
+        "two-tier strategy",
+        "skill discoverability"
       ],
       "relatedSkills": [
-        "coding-skill-development-workflow",
-        "agent-confidence-based-selector",
-        "agent-task-routing"
+        "agent-skill-ecosystem-design",
+        "prompt-engineering-patterns"
       ],
       "version": "1.0.0",
       "source": "skills/agent/skill-trigger-engineering/SKILL.md"
