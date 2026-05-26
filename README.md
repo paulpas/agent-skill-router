@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1019 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1022 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1019 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1022 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **1019 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1022 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1019 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1022 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 274 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 439 | Software patterns, security, testing, data science |
+| Coding | 442 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -274,9 +274,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 00:15:49 UTC  
-> **Total skills:** 1019  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1019 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 20:25:33 UTC  
+> **Total skills:** 1022  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1022 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -748,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (439 skills)
+### Coding (442 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -775,6 +775,8 @@ MIT — All skills are freely available and redistributable.
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. | api development, REST API design, GraphQL schema design, API error handling, OpenAPI spec, API versioning strategy, how do i build a production API, API conventions [tactical, generation] |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | API gateway, api-gateway, request routing, rate limiting, auth proxy, API aggregation, load balancing, backend for frontend, BFF pattern, how do i route requests [tactical, generation] |
 | [api-gateway-domain-routing](skills/coding/api-gateway-domain-routing/SKILL.md) | Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services. | API gateway, domain routing, subdomain routing, Kong plugin, NGINX server block, Envoy routing, host header routing, how do i route requests by domain, bounded context routing [tactical, generation] |
+| [api-idempotency-management](skills/coding/api-idempotency-management/SKILL.md) | Implements idempotency key patterns for REST and GraphQL APIs including key storage with TTL, duplicate request detection, safe retry semantics, and distributed cache-backed enforcement to prevent duplicate operations during network failures. | idempotency, idempotency key, safe retry, duplicate request prevention, API retry safety, request deduplication, how do i handle retry duplicates |
+| [api-pagination-patterns](skills/coding/api-pagination-patterns/SKILL.md) | Implements pagination strategies for API endpoints including cursor-based keyset pagination, offset-based pagination, relay-style connection patterns, and performance optimization techniques to handle large datasets without N+1 queries or memory exha... | pagination patterns, cursor-based pagination, keyset pagination, offset pagination, relay connections, how do i paginate API responses, infinite scroll backend |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. | api security, authentication middleware, JWT tokens, rate limiting, input sanitization, CORS, how do i secure my API, OWASP API [tactical, generation] |
 | [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. | api versioning, url path versioning, accept header, breaking changes, api deprecation, sunset header, backward compatibility, api migration, stripe api versioning, github api version, twilio api version, how do i version my api, rest api lifecycle, api contract stability [tactical, generation] |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. | configuration management, environment variables, feature flags, secrets management, config validation, .env files, yaml configuration, config overlay [tactical, generation] |
@@ -1056,6 +1058,7 @@ MIT — All skills are freely available and redistributable.
 | [online-experiments](skills/coding/online-experiments/SKILL.md) | "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms" | multi-armed bandits, bandits, contextual bandits, exploration exploitation, online learning [tactical, generation] |
 | [open-closed-principle](skills/coding/open-closed-principle/SKILL.md) | Refactors conditional branching and if/else chains into extensible polymorphic designs using strategy injection, factory registration, and protocol-based interfaces so new behavior extends without modifying existing source. | open closed principle, OCP, extensible design, polymorphism, strategy pattern, factory pattern, extension point, conditional refactoring [tactical, generation] |
 | [openai-api](skills/coding/openai-api/SKILL.md) | Integrates OpenAI API (GPT-5, Responses API, Embeddings, DALL-E 3, Whisper, Realtime) using the openai Python SDK v2.38+ with proper error handling and async patterns. | openai, gpt-5, responses api, chat completions, function calling, openai embeddings, how do i use the openai api, text-embedding-3-large [tactical, generation] |
+| [openapi-specification-engineering](skills/coding/openapi-specification-engineering/SKILL.md) | Engineers production OpenAPI 3.x specifications including schema design, discriminator patterns, reusable components, parameter validation, response schemas, external documentation links, and automated code generation workflows for type-safe client a... | openapi specification, openapi 3, swagger spec, API spec design, schema engineering, openapi codegen, how do i write an openapi spec |
 | [openframeworks](skills/coding/openframeworks/SKILL.md) | Implements OpenFrameworks (C++ creative coding toolkit) application lifecycle, addon integration, drawing primitives, event handling, shader management, and data visualization patterns for cross-platform interactive applications. | openframeworks, ofx addons, creative coding, c++ graphics, interactive art, ofApp setup update draw, particle systems, cross-platform canvas [tactical, generation] |
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. | output formatting, structured output, json schema, response templating, deterministic output, data validation, prompt engineering [tactical, generation] |
 | [output-sanitization](skills/coding/output-sanitization/SKILL.md) | Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption. | output sanitization, html escaping, sql escaping, csv quoting, url encoding, shell argument escaping, log sanitization, xss prevention, output encoding, context-specific escaping [tactical, generation] |
@@ -1370,7 +1373,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (601 skills)
+### Implementation (Build Features) (604 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1406,6 +1409,8 @@ MIT — All skills are freely available and redistributable.
 | [api-development-patterns](skills/coding/api-development-patterns/SKILL.md) | Coding | Implements practical API development patterns including REST conventions, GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning strategies for production-ready APIs. |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. |
 | [api-gateway-domain-routing](skills/coding/api-gateway-domain-routing/SKILL.md) | Coding | Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services. |
+| [api-idempotency-management](skills/coding/api-idempotency-management/SKILL.md) | Coding | Implements idempotency key patterns for REST and GraphQL APIs including key storage with TTL, duplicate request detection, safe retry semantics, and distributed cache-backed enforcement to prevent duplicate operations during network failures. |
+| [api-pagination-patterns](skills/coding/api-pagination-patterns/SKILL.md) | Coding | Implements pagination strategies for API endpoints including cursor-based keyset pagination, offset-based pagination, relay-style connection patterns, and performance optimization techniques to handle large datasets without N+1 queries or memory exha... |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Coding | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. |
 | [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. |
 | [app-configuration-patterns](skills/coding/app-configuration-patterns/SKILL.md) | Coding | Implements layered configuration loading, secrets management abstraction, feature flag systems with percentage rollouts, and startup validation for production applications. |
@@ -1759,6 +1764,7 @@ MIT — All skills are freely available and redistributable.
 | [online-experiments](skills/coding/online-experiments/SKILL.md) | Coding | "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms" |
 | [open-closed-principle](skills/coding/open-closed-principle/SKILL.md) | Coding | Refactors conditional branching and if/else chains into extensible polymorphic designs using strategy injection, factory registration, and protocol-based interfaces so new behavior extends without modifying existing source. |
 | [openai-api](skills/coding/openai-api/SKILL.md) | Coding | Integrates OpenAI API (GPT-5, Responses API, Embeddings, DALL-E 3, Whisper, Realtime) using the openai Python SDK v2.38+ with proper error handling and async patterns. |
+| [openapi-specification-engineering](skills/coding/openapi-specification-engineering/SKILL.md) | Coding | Engineers production OpenAPI 3.x specifications including schema design, discriminator patterns, reusable components, parameter validation, response schemas, external documentation links, and automated code generation workflows for type-safe client a... |
 | [openframeworks](skills/coding/openframeworks/SKILL.md) | Coding | Implements OpenFrameworks (C++ creative coding toolkit) application lifecycle, addon integration, drawing primitives, event handling, shader management, and data visualization patterns for cross-platform interactive applications. |
 | [order-book](skills/trading/order-book/SKILL.md) | Trading | "Order book data handling, spread calculation, liquidity measurement" and cross-exchange normalization |
 | [order-book-impact](skills/trading/order-book-impact/SKILL.md) | Trading | "Provides Order Book Impact Measurement and Market Microstructure Analysis" |
@@ -2471,6 +2477,8 @@ MIT — All skills are freely available and redistributable.
 | [api-documentation](skills/agent/api-documentation/SKILL.md) | Agent | Implements intelligent api documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-gateway-design](skills/coding/api-gateway-design/SKILL.md) | Coding | Designs API gateway patterns for request routing, rate limiting, authentication, response caching, and request aggregation across microservice architectures. | Implementation |
 | [api-gateway-domain-routing](skills/coding/api-gateway-domain-routing/SKILL.md) | Coding | Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services. | Implementation |
+| [api-idempotency-management](skills/coding/api-idempotency-management/SKILL.md) | Coding | Implements idempotency key patterns for REST and GraphQL APIs including key storage with TTL, duplicate request detection, safe retry semantics, and distributed cache-backed enforcement to prevent duplicate operations during network failures. | Implementation |
+| [api-pagination-patterns](skills/coding/api-pagination-patterns/SKILL.md) | Coding | Implements pagination strategies for API endpoints including cursor-based keyset pagination, offset-based pagination, relay-style connection patterns, and performance optimization techniques to handle large datasets without N+1 queries or memory exha... | Implementation |
 | [api-security-patterns](skills/coding/api-security-patterns/SKILL.md) | Coding | Implements API security patterns including authentication middleware, JWT token validation and rotation, rate limiting with sliding windows, input sanitization, CORS configuration, and OWASP API Security Top 10 compliance for production services. | Implementation |
 | [api-security-testing](skills/agent/api-security-testing/SKILL.md) | Agent | Implements intelligent api security testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [api-versioning-strategies](skills/coding/api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies (URL path, Accept header, query parameter, media type) to manage backward compatibility, deprecation timelines, and migration paths while maintaining stable contracts for consumers. | Implementation |
@@ -3086,6 +3094,7 @@ MIT — All skills are freely available and redistributable.
 | [online-experiments](skills/coding/online-experiments/SKILL.md) | Coding | "Implements multi-armed bandits, contextual bandits, exploration-exploitation tradeoff, and online learning algorithms" | Implementation |
 | [open-closed-principle](skills/coding/open-closed-principle/SKILL.md) | Coding | Refactors conditional branching and if/else chains into extensible polymorphic designs using strategy injection, factory registration, and protocol-based interfaces so new behavior extends without modifying existing source. | Implementation |
 | [openai-api](skills/coding/openai-api/SKILL.md) | Coding | Integrates OpenAI API (GPT-5, Responses API, Embeddings, DALL-E 3, Whisper, Realtime) using the openai Python SDK v2.38+ with proper error handling and async patterns. | Implementation |
+| [openapi-specification-engineering](skills/coding/openapi-specification-engineering/SKILL.md) | Coding | Engineers production OpenAPI 3.x specifications including schema design, discriminator patterns, reusable components, parameter validation, response schemas, external documentation links, and automated code generation workflows for type-safe client a... | Implementation |
 | [opencost](skills/cncf/opencost/SKILL.md) | Cncf | "OpenCost in Kubernetes Cost Monitoring - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [openfeature](skills/cncf/openfeature/SKILL.md) | Cncf | "OpenFeature in Feature Flagging - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [openfga](skills/cncf/openfga/SKILL.md) | Cncf | "OpenFGA in Security &amp; Compliance - cloud native architecture, patterns" pitfalls, and best practices | Reference |
