@@ -31,7 +31,7 @@ metadata:
   - guidance
   - do-dont
   - examples
-  related-skills: websocket-manager, websocket-protocol
+  related-skills: websocket-server-architecture, websocket-manager, websocket-protocol, websocket-performance
 ------
 # WebSocket Security Hardening Guide
 

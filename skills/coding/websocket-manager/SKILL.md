@@ -13,7 +13,7 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: null
+  related-skills: websocket-server-architecture, websocket-security, websocket-performance
   role: implementation
   scope: implementation
   triggers: connection, machine, ml, state, websocket manager, websocket-manager,
