@@ -1,47 +1,42 @@
 ---
 name: framework-utilization
-description: Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value while avoiding common anti-patterns like fighting conventions, premature optimization, and over-engineering.
+description: Maximizes the value of a chosen technology or framework through progressive adoption strategies, feature discovery patterns, integration anti-pattern avoidance, and optimization techniques for sustainable long-term utilization.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework utilization, three-pass learning, leverage framework patterns, fight the framework, how do i learn a new framework, framework conventions, framework adoption, framework best practices
+  triggers: framework utilization, how do i use a new tool effectively, technology adoption, progressive rollout, feature discovery, integration patterns, optimize chosen framework, leveraging technology, avoid integration anti-patterns, framework best practices, adopt a new framework
   archetypes:
     - tactical
     - generation
   anti_triggers:
     - brainstorming
     - vague ideation
-    - code golf
     - over-engineering
   response_profile:
-    verbosity: low
+    verbosity: medium
     directive_strength: high
     abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  content-types:
-    - code
-    - guidance
-    - examples
-    - do-dont
-  related-skills: requirement-driven-selection, dependency-inversion-principle, modular-design,test-driven-development
+  content-types: [code, guidance, examples, do-dont]
+  related-skills: framework-selection, ai-framework-selector, dependency-injection, integration-testing-patterns, modular-design
 ---
 
-# Framework Utilization and Adoption Patterns
+# Framework Utilization Engine
 
-Applies structured learning patterns and ecosystem leverage strategies to maximize a chosen framework's value while avoiding common anti-patterns like fighting conventions, over-engineering, and premature optimization. This skill makes the model guide teams through systematic framework onboarding that respects the framework's design philosophy rather than imposing external patterns onto it. The three-pass learning model (Tutorial Walkthrough → Deconstruction Exercise → Constraint Challenge) ensures real understanding before production use.
+Transforms a chosen framework from a mere dependency into a production-grade asset through systematic adoption strategies. When this skill is active, the model acts as a senior integration engineer who guides teams through feature discovery, progressive rollout, optimization patterns, and anti-pattern avoidance to maximize the return on their technology investment.
 
 ## TL;DR Checklist
 
-- [ ] Follow the three-pass learning model: tutorial walkthrough → deconstruction exercise → constraint challenge
-- [ ] Identify and map framework conventions first before exploring configuration or escape hatches
-- [ ] Target Level 2-3 utilization (convention compliance + extension patterns); avoid Level 4+ unless necessary
-- [ ] Audit existing code for "fighting the framework" anti-patterns: custom lifecycle managers, bypassed DI, manual event loops
-- [ ] Plan phased deepening: core conventions → plugin system → advanced runtime features
-- [ ] Prefer ecosystem packages over home-grown solutions whenever a well-maintained alternative exists
+- [ ] Assess current adoption stage (Surface / Advanced / Deep) against the 3-Layer Rollout model
+- [ ] Inventory all framework features discovered but not yet adopted
+- [ ] Audit existing code for integration anti-patterns (Wrapper Hell, Frankenstein, Over-Engineering)
+- [ ] Establish quantitative baselines before any optimization effort
+- [ ] Design a progressive rollout plan with success criteria per stage
+- [ ] Define testing strategy: what to unit-test (mocked) vs. integration-test (real framework)
 
 ---
 
@@ -49,717 +44,684 @@ Applies structured learning patterns and ecosystem leverage strategies to maximi
 
 Use this skill when:
 
-- A team is adopting a new framework (React, Django, Spring Boot, FastAPI, Rails, Express, etc.) and needs a structured onboarding approach
-- Existing code shows signs of "fighting the framework" — custom lifecycle managers, bypassed dependency injection, or manual state management where the framework provides one
-- A team has been using a framework superficially (Level 1) and needs to progress deeper without over-engineering
-- Evaluating whether an extension point (middleware, hook, decorator, plugin) exists for a required capability before building it from scratch
-- Refactoring legacy code to adopt framework conventions incrementally without a full rewrite
-
----
+- You have just selected or inherited a new framework and need a structured onboarding plan beyond the tutorial
+- A team feels they are only using 20% of their framework's capabilities and wants to go deeper
+- Existing code is mixing framework patterns with raw equivalents (the "Frankenstein" anti-pattern)
+- Debugging integration issues caused by fighting the framework instead of working with its conventions
+- Preparing a team for deep framework mastery as part of a technology transfer or onboarding initiative
+- Evaluating whether current framework usage can be optimized for performance, maintainability, or developer velocity
+- Upgrading to a major framework version and need to understand migration paths and new feature adoption
 
 ## When NOT to Use
 
 Avoid this skill for:
 
-- Selecting which framework to use — use `requirement-driven-selection` instead (that covers evaluation criteria and comparison)
-- Designing system architecture at the project level — focus on application-layer convention adoption, not cross-service architecture
-- Framework benchmarking or performance analysis — this skill is about effective usage patterns, not comparative measurement
-- One-off scripts or throwaway prototypes where framework conventions add unnecessary overhead
+- Framework selection or comparison decisions — use `framework-selection` or `ai-framework-selector` instead
+- Evaluating whether to adopt a new technology at all (that is a strategic decision, not an utilization problem)
+- Creating a new framework from scratch
+- When the team is already using a framework that meets all needs with no optimization opportunities identified
 
 ---
 
 ## Core Workflow
 
-1. **Identify Core Conventions** — Enumerate the framework's fundamental conventions (naming, file layout, lifecycle hooks, dependency injection model). Consult official documentation for the canonical structure.
-   **Checkpoint:** List at least 5 core conventions before writing any code. If fewer than 3 exist, the framework may be too minimal; fall back to standard library patterns.
+1. **Assess Current Adoption Stage** — Determine whether the codebase is operating at Surface (basic documented features), Advanced (middleware, hooks, plugins), or Deep (framework-specific optimization, custom extensions) layer. Inventory every feature currently used and flag known-but-unused capabilities. **Checkpoint:** Produce a feature inventory with at least 3 items per adoption stage before proceeding.
 
-2. **Three-Pass Learning** — Execute the three-pass learning model in strict sequence:
-   - **Pass 1 (Tutorial Walkthrough):** Follow an official tutorial end-to-end without deviation. Do not optimize, do not refactor, do not add features beyond the tutorial scope.
-   - **Pass 2 (Deconstruction Exercise):** Take the tutorial result apart. Remove each framework feature one at a time and observe what breaks. Document which framework mechanisms are required versus optional.
-   - **Pass 3 (Constraint Challenge):** Implement the same feature using different constraints — no decorators, no ORM, custom middleware instead of built-in auth. This reveals how deeply conventions are internalized.
+2. **Discover Hidden Capabilities** — Run the Feature Discovery System (see Implementation Patterns below). Read source code of well-maintained framework projects, mine changelogs for hidden gems, and inspect what popular dependency trees import. **Checkpoint:** Produce a "discovered but not adopted" list with estimated impact per item.
 
-3. **Map Extension Points** — For each capability your application needs beyond the tutorial:
-   - Check for an official plugin/hook/middleware extension point first
-   - Check ecosystem package (npm, pip, cargo, gem) second
-   - Build custom implementation only as last resort
-   **Checkpoint:** Every extension must be traced to a documented API surface. If no public API exists for your use case, consider whether the feature belongs in your application layer instead of the framework layer.
+3. **Audit for Anti-Patterns** — Scan the codebase for the three primary integration anti-patterns: Fighting the Framework (Wrapper Hell), Partial Adoption (Frankenstein), and Over-Engineering. Score each finding by severity (Critical / Warning / Info) and produce remediation advice. **Checkpoint:** Every Critical finding must have a specific, actionable remediation with before/after code example.
 
-4. **Implement at Appropriate Level** — Start at Level 2 (convention compliance) and only progress deeper when a demonstrated need exists. Do not jump to Level 4+ features without evidence from production load testing or feature gaps.
-   **Checkpoint:** Review each code file — does it use framework-provided patterns? If you wrote more than 30 lines of custom logic for something the framework handles, flag it for refactoring.
+4. **Design Progressive Rollout** — Create a staged implementation plan mapping discovered capabilities to rollout phases. Each phase must include: success criteria, testing requirements, and team training needs. Start from Surface layer completeness before advancing. **Checkpoint:** No Advanced feature is scheduled until all Surface features have tests passing on the real framework (not mocked).
 
-5. **Run Convention Audit** — Scan the codebase for fighting-against-conventions anti-patterns (see Implementation Patterns below). Categorize findings by severity:
-   - **P0 (breaks framework behavior):** Custom lifecycle managers, bypassed DI containers, manual state management with framework state systems
-   - **P1 (reduces maintainability):** Ignoring routing conventions, custom serialization instead of framework serializers
-   - **P2 (opportunity for improvement):** Not using built-in middleware patterns, reinventing pagination or validation
+5. **Optimize with Measurable Impact** — For each optimization opportunity, establish a baseline measurement first. Apply framework-native patterns to improve performance or maintainability. Measure improvement quantitatively. **Checkpoint:** Every optimization must report before/after metrics. If no measurable improvement occurred, document why and reconsider the approach.
+
+6. **Define Testing Strategy** — Separate what requires unit tests (mocked framework boundaries) from what requires integration tests (real framework behavior). Framework-boundary code that interacts with stateful framework features (databases, async queues, event loops) must have real integration tests. **Checkpoint:** Coverage report distinguishes between mocked-unit and real-integration coverage.
 
 ---
 
-## Implementation Patterns
+## Implementation Patterns / Reference Guide
 
-### Pattern 1: Three-Pass Learning in Practice
+### Progressive Adoption Framework — The "3-Layer Rollout" Model
 
-The three-pass model converts tutorial consumption into genuine framework fluency. Each pass targets a different depth of understanding.
+Framework adoption follows a natural progression through three layers. Moving between layers requires demonstrated mastery of the current layer — do not skip stages.
+
+**Layer 1: Surface Features** — Use what is obvious and documented. Get basic functionality working fast. This includes routing, request/response handling, basic configuration, and standard library integrations that any tutorial covers.
+
+**Layer 2: Advanced Patterns** — Discover middleware, hooks, plugins, lifecycle events, and extension points. This is where framework-specific patterns like dependency injection, event emitters, ORM relationships, and plugin registries come into play.
+
+**Layer 3: Deep Integration** — Framework-specific optimization, performance tuning, custom extensions that modify framework internals, source code-level contributions. This layer requires understanding the framework's internal architecture.
+
+```
+Current Stage          Decision Gate                          Next Stage
+─────────────         ──────────────                        ──────────
+SURFACE  ◄── Need 3+ surface features with passing tests ──► ADVANCED
+ADVANCED ◄── 2+ advanced features integrated + benchmarked ─► DEEP
+DEEP     ◄── Performance optimized against requirements ────► (mastery)
+
+Decision gates must include:
+  - Quantitative baseline measurement before advancing
+  - Team training on new feature categories
+  - Integration tests using real framework, not mocked
+```
+
+### Feature Discovery System
+
+Feature discovery is the systematic process of learning what a framework can do beyond its tutorial-level documentation. The following techniques compound over time and should be repeated quarterly.
+
+**Technique 1: Source Code Reading** — Well-maintained frameworks have clean, documented source code. Read the implementation of features you already use to discover related features you haven't discovered yet. Look at what internal methods call what other internal methods.
 
 ```python
-"""Pass 3 — Constraint Challenge for FastAPI.
-Implement the same CRUD API without FastAPI's built-in features,
-revealing which parts were framework-provided vs application logic."""
+"""Source code inspection technique for discovering hidden framework capabilities.
+This pattern shows how to trace feature relationships through a framework's internals."""
 
-from typing import List, Optional
-import json
-
-# --- Level 1: Minimal HTTP server (no framework) ---
-class MinimalCRUDApp:
-    """Bare HTTP server mimicking what FastAPI provides automatically."""
-
-    def __init__(self) -> None:
-        self._store: dict = {}
-
-    def handle_request(self, method: str, path: str, body: Optional[dict] = None) -> tuple[int, dict]:
-        """Route request — manual routing that FastAPI handles via decorators."""
-        if method == "GET" and path.startswith("/items/"):
-            item_id = path.split("/")[-1]
-            item = self._store.get(item_id)
-            if item is None:
-                return 404, {"detail": "Not found"}
-            return 200, item
-        if method == "POST" and path == "/items":
-            item_id = str(len(self._store))
-            self._store[item_id] = body or {}
-            return 201, {"id": item_id, **body}
-        if method == "GET" and path == "/items":
-            return 200, list(self._store.values())
-        return 405, {"detail": "Method not allowed"}
-
-# --- What FastAPI provides automatically that we manual-coded above: ---
-# - Path parameter extraction from URL patterns
-# - HTTP status code inference from return types
-# - JSON serialization/deserialization
-# - Request body parsing with Pydantic validation
-# - OpenAPI schema generation
-# - Automatic 404 handling for unmatched routes
-
-
-"""Pass 2 — Deconstruction: Remove FastAPI features one by one.
-
-Start with a working FastAPI app, then comment out each framework
-integration point and observe what breaks. This reveals the dependency
-graph between framework mechanisms."""
-
-from fastapi import FastAPI, Depends, HTTPException
-from pydantic import BaseModel, Field
-from typing import List
-import uuid
-
-# Layer 1: Pydantic models (validation + serialization)
-class ItemCreate(BaseModel):
-    name: str = Field(..., min_length=1, max_length=200)
-    description: Optional[str] = None
-    price: float = Field(..., gt=0)
-    tax: Optional[float] = Field(None, ge=0)
-
-class ItemOut(BaseModel):
-    id: str
-    name: str
-    description: Optional[str] = None
-    price: float
-    tax: Optional[float] = None
-
-# Layer 2: Dependency injection (lifecycle + resource management)
-class ItemRepository:
-    """In-memory store — in production this would be a database session."""
-
-    def __init__(self) -> None:
-        self._items: dict[str, dict] = {}
-
-    def get(self, item_id: str) -> Optional[dict]:
-        return self._items.get(item_id)
-
-    def create(self, data: dict) -> dict:
-        item_id = str(uuid.uuid4())
-        self._items[item_id] = {"id": item_id, **data}
-        return self._items[item_id]
-
-    def list_all(self) -> List[dict]:
-        return list(self._items.values())
-
-async def get_repository() -> ItemRepository:
-    """Dependency injection provider — FastAPI manages lifecycle."""
-    repo = ItemRepository()
-    try:
-        yield repo
-    finally:
-        pass  # Would close DB connections in production
-
-
-# Layer 3: Router + decorators (routing + middleware ordering)
-app = FastAPI(title="Items API")
-
-@app.post("/items", response_model=ItemOut, status_code=201)
-async def create_item(
-    item_data: ItemCreate,
-    repo: ItemRepository = Depends(get_repository),
-) -> ItemOut:
-    """POST handler — FastAPI handles: route matching, body parsing,
-       Pydantic validation, DI injection, response serialization."""
-    created = repo.create(item_data.model_dump())
-    return ItemOut(**created)
-
-# Deconstruction experiment notes:
-# - Remove Depends() → DI breaks; must manually instantiate ItemRepository
-# - Remove response_model → validation still works but no auto-openapi/docs
-# - Remove Pydantic model → FastAPI passes raw dict; no validation occurs
-# - Remove @app.post decorator → route never registered; 404 on all requests
-```
-
-### Pattern 2: Convention Mapping — React Hooks vs Class Components
-
-Identifying framework conventions prevents the "write a different language inside X" anti-pattern. This pattern shows how to map conventions in React and contrast convention-compliant vs fighting-against-the-convention code.
-
-```typescript
-// === Convention 1: File & naming conventions (React + TypeScript) ===
-// Convention: PascalCase components, camelCase hooks, kebab-case file names for routes
-// Convention: Co-locate related files: ComponentName.tsx, ComponentName.test.tsx, ComponentName.css
-
-// === Convention 2: Hook rules — called at top level, never conditional ===
-// This is React's most critical convention. Violating it causes silent state corruption.
-
-import { useState, useEffect, useCallback, useMemo } from "react";
-
-interface TaskListProps {
-    userId: string;
-}
-
-interface Task {
-    id: string;
-    title: string;
-    done: boolean;
-}
-
-// ✅ GOOD: Hooks called at top level in strict order. Dependencies explicit.
-function TaskList({ userId }: TaskListProps) {
-    const [tasks, setTasks] = useState<Task[]>([]);
-    const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
-    const [loading, setLoading] = useState<boolean>(false);
-
-    // useCallback with explicit dependency array — prevents stale closures
-    const fetchTasks = useCallback(async () => {
-        setLoading(true);
-        try {
-            const response = await fetch(`/api/users/${userId}/tasks`);
-            const data: Task[] = await response.json();
-            setTasks(data);
-        } catch (error) {
-            console.error("Failed to fetch tasks:", error);
-        } finally {
-            setLoading(false);
-        }
-    }, [userId]);
-
-    // useMemo for expensive derived computation — only recalculates when deps change
-    const filteredTasks = useMemo(() => {
-        if (filter === "all") return tasks;
-        if (filter === "active") return tasks.filter(t => !t.done);
-        return tasks.filter(t => t.done);
-    }, [tasks, filter]);
-
-    // Effect: only runs when userId changes — NOT on every render
-    useEffect(() => {
-        fetchTasks();
-    }, [userId, fetchTasks]);
-
-    const toggleTask = useCallback((taskId: string) => {
-        setTasks(prev =>
-            prev.map(task =>
-                task.id === taskId ? { ...task, done: !task.done } : task
-            )
-        );
-    }, []);
-
-    if (loading) return <div className="spinner">Loading tasks...</div>;
-
-    return (
-        <div>
-            <select value={filter} onChange={e => setFilter(e.target.value as typeof filter)}>
-                <option value="all">All</option>
-                <option value="active">Active</option>
-                <option value="completed">Completed</option>
-            </select>
-            <ul>
-                {filteredTasks.map(task => (
-                    <li key={task.id}>
-                        <input
-                            type="checkbox"
-                            checked={task.done}
-                            onChange={() => toggleTask(task.id)}
-                        />
-                        <span className={task.done ? "line-through" : ""}>{task.title}</span>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-}
-
-
-// ❌ BAD: Fighting React conventions — manual state management outside hooks
-class BadTaskList extends React.Component<TaskListProps, { tasks: Task[], filter: string }> {
-    // Manual lifecycle management instead of useEffect
-    constructor(props: TaskListProps) {
-        super(props);
-        this.state = { tasks: [], filter: "all" };
-        this.fetchTasks = this.fetchTasks.bind(this);  // Manual bind needed
-    }
-
-    async componentDidMount() {
-        // Side effect in lifecycle method — harder to test, no cleanup function
-        const response = await fetch(`/api/users/${this.props.userId}/tasks`);
-        this.setState({ tasks: await response.json() });
-    }
-
-    // ❌ No automatic cleanup if component unmounts during fetch
-    async fetchTasks() {
-        // Manual state updates scattered across methods
-        const response = await fetch(`/api/users/${this.state.userId}/tasks`);
-        this.setState({ tasks: await response.json() });
-    }
-
-    render() {
-        // ❌ Computed values recalculated on every render — no useMemo equivalent
-        const filteredTasks = this.state.tasks.filter(task => {
-            if (this.state.filter === "active") return !task.done;
-            if (this.state.filter === "completed") return task.done;
-            return true;
-        });
-
-        // ❌ Manual event binding, verbose boilerplate, no closures
-        return (
-            <div>
-                <button onClick={this.fetchTasks}>Refresh</button>
-                {/* More manual setup... */}
-            </div>
-        );
-    }
-}
-```
-
-### Pattern 3: Extension Patterns — Middleware, Hooks, and Decorators
-
-Every major framework provides extension points. This pattern demonstrates identifying and using them correctly versus bypassing them with custom implementations.
-
-```python
-"""Extension patterns for Python web frameworks (Django middleware / FastAPI middleware / Flask before_request).
-
-Each example shows: ❌ BAD — custom implementation that duplicates framework logic
-                     ✅ GOOD — using the framework's built-in extension mechanism"""
-
-# --- Django Middleware Pattern ---
-
-# ❌ BAD: Custom request handler class that bypasses Django's middleware stack
-class BypassMiddlewareHandler:
-    """This approach creates a separate HTTP handler entirely outside Django's
-    request/response lifecycle. Hard to test, no access to Django utilities."""
-
-    def __init__(self, get_response) -> None:
-        self.get_response = get_response
-
-    def handle(self, request):
-        # ❌ Manual auth extraction — Django already provides request.user
-        api_key = request.headers.get("X-API-Key")
-        if not api_key:
-            return HttpResponse(status=401)
-
-        # ❌ Manual rate limiting — Redis logic duplicated here
-        # Would need connection pool, TTL management, etc.
-        user_id = extract_user_from_key(api_key)
-        if is_rate_limited(user_id):
-            return HttpResponse(status=429)
-
-        response = self.get_response(request)
-        response["X-Request-Id"] = generate_uuid()  # ❌ After-the-fact header addition
-        return response
-
-
-# ✅ GOOD: Django middleware that plugs into the standard request/response cycle
-import time
-import uuid
-from django.conf import settings
-from django.utils.deprecation import MiddlewareMixin
-from django.http import HttpResponse
-
-class RequestIdMiddleware(MiddlewareMixin):
-    """Adds a unique request ID to every request/response. Uses Django's
-    middleware stack — runs before and after view logic automatically."""
-
-    def process_request(self, request) -> None:
-        # ✅ Hook into the BEFORE phase — runs before view executes
-        request.request_id = str(uuid.uuid4())
-
-    def process_response(self, request, response):
-        # ✅ Hook into the AFTER phase — guaranteed to run for every response
-        response["X-Request-Id"] = getattr(request, "request_id", str(uuid.uuid4()))
-        return response
-
-
-class TimingMiddleware(MiddlewareMixin):
-    """Measures request duration. Logs slow requests automatically."""
-
-    def process_request(self, request) -> None:
-        request._start_time = time.perf_counter()
-
-    def process_response(self, request, response):
-        duration = time.perf_counter() - getattr(request, "_start_time", time.perf_counter())
-        if duration > settings.SLOW_REQUEST_THRESHOLD_SECONDS:  # e.g., 2.0
-            import logging
-            logger = logging.getLogger("django.performance")
-            logger.warning(f"Slow request: {request.method} {request.path} took {duration:.3f}s")
-        response["X-Request-Duration"] = f"{duration:.4f}"
-        return response
-
-
-# --- FastAPI Dependency Injection Pattern (alternative extension) ---
-
-from fastapi import Request, Depends
-from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.responses import Response
-
-# ✅ GOOD: FastAPI middleware that uses its async lifecycle properly
-class TimingMiddlewareFastAPI(BaseHTTPMiddleware):
-    """FastAPI-native timing middleware using the proper ASGI call pattern."""
-
-    async def dispatch(self, request: Request, call_next) -> Response:
-        start = time.perf_counter()
-        response = await call_next(request)  # ✅ Properly chains to next handler
-        duration = time.perf_counter() - start
-        response.headers["X-Request-Duration"] = f"{duration:.4f}"
-        return response
-
-
-# --- Python Decorator Pattern (generic, framework-agnostic extension) ---
-
-def retry_with_backoff(
-    max_retries: int = 3,
-    base_delay: float = 1.0,
-    backoff_factor: float = 2.0,
-) -> callable:
-    """Framework-agnostic decorator for retrying flaky operations.
-    Works as a universal extension pattern applicable across frameworks."""
-
-    def decorator(func: callable) -> callable:
-        import functools
-        import asyncio
-
-        @functools.wraps(func)  # ✅ Preserves function metadata (name, docstring)
-        async def async_wrapper(*args, **kwargs):
-            for attempt in range(max_retries + 1):
-                try:
-                    return await func(*args, **kwargs)
-                except Exception as exc:
-                    if attempt == max_retries:
-                        raise
-                    delay = base_delay * (backoff_factor ** attempt)
-                    await asyncio.sleep(delay)
-
-        @functools.wraps(func)
-        def sync_wrapper(*args, **kwargs):
-            for attempt in range(max_retries + 1):
-                try:
-                    return func(*args, **kwargs)
-                except Exception as exc:
-                    if attempt == max_retries:
-                        raise
-                    delay = base_delay * (backoff_factor ** attempt)
-                    time.sleep(delay)
-
-        return async_wrapper if asyncio.iscoroutinefunction(func) else sync_wrapper
-    return decorator
-
-
-# Usage example — applies universally across any framework
-@retry_with_backoff(max_retries=3, base_delay=0.5)
-async def fetch_external_data(url: str) -> dict:
-    """This function works identically whether called from Flask, FastAPI, Django, or standalone."""
-    import httpx
-    async with httpx.AsyncClient() as client:
-        response = await client.get(url)
-        response.raise_for_status()
-        return response.json()
-```
-
-### Pattern 4: Phased Deepening — Level Progression with Code
-
-Framework mastery follows a natural progression. Each level has concrete code that demonstrates the depth of framework integration.
-
-```typescript
-/** Level 1 — Barely Using the Framework (Tutorial Phase)
- * Typical after following a tutorial for the first time.
- * Uses framework syntax but applies no conventions. */
-
-// ❌ LEVEL 1: React component that treats JSX as templating sugar
-function UserList_L1({ users }: { users: Array<{ id: number; name: string }> }) {
-    // ❌ No custom hooks, no context, no memoization
-    // ❌ Inline styles (framework convention for performance is CSS modules/tailwind)
-    // ❌ Key prop missing — React will warn about this
-    return (
-        <div>
-            <h1>Users</h1>
-            {users.map(function(user) {  // ❌ Function expression instead of arrow function
-                return (
-                    <div style={{border: "1px solid #ccc", padding: "8px"}}>
-                        <span>{user.name}</span>
-                        {/* No key prop — React optimization anti-pattern */}
-                    </div>
-                );
-            })}
-        </div>
-    );
-}
-
-// ✅ LEVEL 2: Convention-Compliant (After 3-pass learning)
-import { useState, useMemo, useCallback } from "react";
-
-interface UserListProps {
-    users: Array<{ id: number; name: string }>;
-    onUserClick?: (id: number) => void;
-}
-
-/** Custom hook encapsulates user filtering logic — framework convention for reusability */
-function useFilteredUsers(users: UserListProps["users"], filter: string) {
-    return useMemo(() => {
-        if (!filter) return users;
-        const lower = filter.toLowerCase();
-        return users.filter(user => user.name.toLowerCase().includes(lower));
-    }, [users, filter]);
-}
-
-export function UserList({ users, onUserClick }: UserListProps): JSX.Element {
-    const [searchTerm, setSearchTerm] = useState("");
-    const filteredUsers = useFilteredUsers(users, searchTerm);
-
-    const handleClick = useCallback((id: number) => {
-        onUserClick?.(id);
-    }, [onUserClick]);
-
-    return (
-        <section className="user-list">
-            <h2>Users</h2>
-            <input
-                type="text"
-                placeholder="Filter users..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                aria-label="Search users"
-            />
-            <ul role="list">
-                {filteredUsers.map(user => (
-                    <li key={user.id}>  {/* ✅ Key prop correct — stable, unique identifier */}
-                        <button onClick={() => handleClick(user.id)}>
-                            {user.name}
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </section>
-    );
-}
-
-// ✅ LEVEL 3: Extension Point Usage (Plugin/Context pattern)
-import { createContext, useContext } from "react";
-
-/** Context — framework's built-in dependency injection for deep prop drilling */
-interface UserContextValue {
-    selectedUserId: number | null;
-    setSelectedUserId: (id: number | null) => void;
-}
-
-const UserContext = createContext<UserContextValue | null>(null);
-
-function useUserContext(): UserContextValue {
-    const ctx = useContext(UserContext);
-    if (!ctx) throw new Error("useUserContext must be used within UserProvider");
-    return ctx;
-}
-
-/** Higher-level component that provides context — composition over inheritance */
-export function UserListWithProvider({ users, onUserClick }: UserListProps): JSX.Element {
-    const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
-    const filteredUsers = useFilteredUsers(users, "");
-
-    return (
-        <UserContext.Provider value={{ selectedUserId, setSelectedUserId }}>
-            <section className="user-list">
-                <h2>Users</h2>
-                {filteredUsers.map(user => (
-                    <li key={user.id}>
-                        <button onClick={() => setSelectedUserId(user.id)}>
-                            {user.name}
-                        </button>
-                    </li>
-                ))}
-            </section>
-        </UserContext.Provider>
-    );
-}
-
-// ✅ LEVEL 4+: Advanced Runtime Integration (React Server Components / Suspense)
-import { Suspense } from "react";
-import { getUserData, type UserData } from "@/api/users";
-
-/** Server component pattern — data fetching at render time, framework manages caching */
-async function UserDetailClient({ userId }: { userId: string }) {
-    const userData = await getUserData(userId);
-    return (
-        <article>
-            <h3>{userData.name}</h3>
-            <p>{userData.email}</p>
-        </article>
-    );
-}
-
-export function UserDetail({ userId }: { userId: string }): JSX.Element {
-    /** Suspense boundary — framework handles loading state automatically */
-    return (
-        <Suspense fallback={<div className="skeleton" />}>
-            <UserDetailClient userId={userId} />
-        </Suspense>
-    );
-}
-
-// Level summary:
-// L1 = Framework syntax only, no conventions used
-// L2 = Convention compliance — hooks, memoization, accessibility, stable keys
-// L3 = Extension patterns — Context for cross-cutting concerns, composition for reuse
-// L4+ = Runtime features — Server components, Suspense, streaming SSR, framework-native caching
-```
-
-### Pattern 5: Ecosystem Leverage — Package Selection Strategy
-
-The most productive teams maximize reuse. This pattern provides a decision framework for when to use ecosystem packages vs building custom solutions.
-
-```python
-"""Ecosystem leverage strategy with concrete implementation examples.
-Shows how to evaluate and integrate existing packages versus building from scratch."""
-
-from typing import Protocol, runtime_checkable
-
-
-@runtime_checkable
-class PackageCandidate(Protocol):
-    """Criteria for evaluating whether an ecosystem package is worth adopting."""
-    name: str
-    downloads_monthly: int
-    last_updated_days_ago: int
-    has_type_stubs: bool
-    has_comprehensive_tests: bool
-
-
-def evaluate_package(candidate: PackageCandidate, need: str) -> tuple[bool, float]:
-    """Score a package candidate (0.0 = don't adopt, 1.0 = definitely adopt).
-
-    Scoring criteria:
-    - Monthly downloads > 100k: +0.25 (proven adoption)
-    - Updated within 90 days: +0.20 (actively maintained)
-    - Has type stubs: +0.15 (developer experience)
-    - Tests > 80% coverage: +0.15 (quality assurance)
-    - Solves the exact need: +0.25 (direct fit)
-    """
-    score = 0.0
-
-    if candidate.downloads_monthly > 100_000:
-        score += 0.25
-    elif candidate.downloads_monthly > 10_000:
-        score += 0.10
-
-    if candidate.last_updated_days_ago <= 90:
-        score += 0.20
-    elif candidate.last_updated_days_ago <= 365:
-        score += 0.05
-
-    if candidate.has_type_stubs:
-        score += 0.15
-    if candidate.has_comprehensive_tests:
-        score += 0.15
-
-    # Direct need match — highest weight
-    score += 0.25
-
-    return (score >= 0.7, round(score, 2))
-
-
-# === Concrete Ecosystem Examples ===
-
-# Example 1: Date parsing — use dateutil.parser over home-grown regex
-from datetime import datetime
-from dateutil import parser as dateutil_parser  # ✅ Third-party: battle-tested, handles edge cases
-
-def parse_user_timestamp(raw_input: str) -> datetime:
-    """Parse user-supplied timestamps with ecosystem leverage."""
-    # ❌ BAD: Home-grown parsing that misses edge cases (RFC 2822, ISO 8601 variants)
-    # if "T" in raw_input:
-    #     return datetime.fromisoformat(raw_input)
-    # elif "/" in raw_input:
-    #     return datetime.strptime(raw_input, "%m/%d/%Y")
-
-    # ✅ GOOD: dateutil.parser handles 50+ date formats automatically
-    try:
-        return dateutil_parser.parse(raw_input)
-    except (ValueError, TypeError) as exc:
-        raise ValueError(f"Unparseable timestamp: {raw_input!r}") from exc
-
-
-# Example 2: HTTP client — use httpx over requests for async, or httpx sync for simplicity
-import httpx
-
-class APIClient:
-    """Framework-agnostic API client leveraging httpx ecosystem."""
-
-    def __init__(self, base_url: str, timeout: float = 30.0) -> None:
-        self.base_url = base_url.rstrip("/")
-        self._timeout = timeout
-        # httpx handles connection pooling, retries (with extension), and both sync/async
-        self._client = httpx.Client(base_url=self.base_url, timeout=self._timeout)
-
-    def get(self, path: str, params: dict | None = None) -> dict:
-        response = self._client.get(path, params=params)
-        response.raise_for_status()
-        return response.json()
-
-    def post(self, path: str, data: dict) -> dict:
-        response = self._client.post(path, json=data)
-        response.raise_for_status()
-        return response.json()
-
-
-# Example 3: Validation — use pydantic over hand-written validators
-from pydantic import BaseModel, field_validator, EmailStr
-
-class CreateUserRequest(BaseModel):
-    """Leverages Pydantic's built-in validation instead of manual checks."""
-    username: str
-    email: EmailStr
-    age: int
-
-    @field_validator("username")
-    @classmethod
-    def username_not_reserved(cls, v: str) -> str:
-        reserved = {"admin", "root", "system", "null"}
-        if v.lower() in reserved:
-            raise ValueError(f"Username {v!r} is a reserved name")
-        return v
-
-
-# Example 4: Caching — use functools.lru_cache or cachetools over custom dict cache
-from functools import lru_cache
+import inspect
 from typing import Any
 
-@lru_cache(maxsize=256)
-def get_cached_config(section: str, key: str) -> Any:
-    """Framework-agnostic caching using standard library.
-    No custom cache implementation needed for simple use cases."""
-    # Simulate expensive config loading
-    import time
-    time.sleep(0.1)  # Pretend this is a DB or file read
-    return {"section": section, "key": key}
+
+def inspect_framework_features(
+    module_name: str,
+    filter_prefix: str = "",
+) -> dict[str, list[str]]:
+    """Discover features in a Python framework module by introspection.
+    
+    Args:
+        module_name: Fully-qualified module name to inspect (e.g., 'fastapi.applications')
+        filter_prefix: Optional prefix to filter discovered members (e.g., 'app.' for methods)
+    
+    Returns:
+        Dict mapping each class/function to its list of called dependencies.
+    """
+    import importlib
+
+    try:
+        module = importlib.import_module(module_name)
+    except ImportError as exc:
+        raise ValueError(f"Cannot import module {module_name!r}: {exc}") from exc
+
+    features: dict[str, list[str]] = {}
+
+    for name, obj in inspect.getmembers(module):
+        if not filter_prefix or name.startswith(filter_prefix):
+            if inspect.isclass(obj) or (inspect.isfunction(obj) and hasattr(obj, "__module__")):
+                # Collect all referenced names within the source
+                try:
+                    source = inspect.getsource(obj)
+                    dependencies = [
+                        dep.strip()
+                        for dep in set(inspect.getcallers.__doc__.split() if inspect.getsourcefile(obj) else [])  # noqa: E501
+                        if dep.isidentifier()
+                    ] if False else []  # Fallback to empty — real usage parses AST
+                    
+                    # Simpler approach: use ast module for dependency extraction
+                    import ast
+                    tree = ast.parse(source)
+                    refs = set()
+                    for node in ast.walk(tree):
+                        if isinstance(node, ast.Attribute):
+                            refs.add(node.attr)
+                        elif isinstance(node, ast.Name):
+                            refs.add(node.id)
+                    
+                    features[name] = sorted(refs)
+                except (OSError, TypeError):
+                    features[name] = ["<source unavailable>"]
+
+    return features
+
+
+# Usage: Discover what FastAPI's Application class depends on internally
+# deps = inspect_framework_features("fastapi.applications", filter_prefix="app.")
+# This reveals hidden methods like app.middleware_stack, app.route_class, etc.
+```
+
+**Technique 2: Dependency Inspection** — Look at what popular projects using this framework import from it. The most commonly imported items are the most valuable features. Use `pip show`, `npm list`, or equivalent to find top dependent packages and inspect their imports.
+
+**Technique 3: Changelog Mining** — Framework changelogs contain hidden gems. Look for entries marked "Added", "Improved", or "New" in each major and minor version release. Features added in recent versions are often the most powerful but least documented.
+
+**Technique 4: Community Pattern Repositories** — GitHub search for `framework-name patterns`, `framework-name best practices`, or `framework-name examples`. The most-starred example repositories reveal community-validated usage patterns.
+
+### Integration Anti-Patterns
+
+The following anti-patterns are the three most common and destructive ways teams misuse frameworks. Each includes a BAD vs GOOD comparison with specific remediation guidance.
+
+**Anti-pattern 1: Fighting the Framework (The "Wrapper Hell")**
+
+Wrapping framework internals with custom logic instead of using the framework's built-in features. This creates a layer of indirection that adds complexity without adding value, and makes migration to newer framework versions painful.
+
+```python
+# ❌ BAD: Wrapping framework internals instead of using them
+class BadRepository:
+    """Fights SQLAlchemy by manually building raw SQL queries."""
+
+    def __init__(self, session) -> None:  # Missing type hints — poor practice
+        self.session = session
+
+    def get_user(self, user_id):
+        # Fighting SQLAlchemy by manually building SQL
+        result = self.session.execute(
+            text("SELECT * FROM users WHERE id = :id"),
+            {"id": user_id}
+        )
+        return result.fetchone()
+
+    def list_active_users(self):
+        # Raw SQL for a simple filter — ignores ORM query builder
+        result = self.session.execute(
+            text("SELECT * FROM users WHERE is_active = 1 ORDER BY created_at DESC LIMIT :limit"),
+            {"limit": 100}
+        )
+        return [dict(row) for row in result]
+
+
+# ✅ GOOD: Using framework idioms — SQLAlchemy ORM declarative queries
+from typing import Optional
+
+class GoodRepository:
+    """Leverages SQLAlchemy ORM features for type-safe, maintainable queries."""
+
+    def __init__(self, session: Session) -> None:
+        self.session = session
+
+    def get_user(self, user_id: int) -> Optional[User]:
+        """SQLAlchemy ORM idiom — declarative query with built-in caching."""
+        return self.session.get(User, user_id)
+
+    def list_active_users(self, limit: int = 100) -> list[User]:
+        """ORM query builder with chainable filters and pagination support."""
+        return (
+            self.session.query(User)
+            .filter(User.is_active == True)  # noqa: E712
+            .order_by(User.created_at.desc())
+            .limit(limit)
+            .all()
+        )
+```
+
+**Anti-pattern 2: Partial Framework Adoption (The "Frankenstein" Pattern)**
+
+Mixing framework patterns with raw equivalents unnecessarily. This creates inconsistent code where some parts use the framework and others bypass it entirely, leading to confusing error handling, disconnected lifecycle management, and duplicated infrastructure.
+
+```python
+# ❌ BAD: Mixing framework patterns with raw equivalents unnecessarily
+import requests  # Frankenstein: mixing FastAPI's built-in features with manual HTTP handling
+
+app = FastAPI()
+
+@app.get("/items")
+def get_items():
+    # Why use FastAPI if you're manually handling HTTP response construction?
+    response = requests.get("https://api.example.com/items")
+    return JSONResponse(content=response.json())
+
+
+# ✅ GOOD: Leveraging framework-native patterns — FastAPI + httpx async integration
+from fastapi import HTTPException
+
+app = FastAPI()
+
+@app.get("/items", response_model=ItemSchema)
+async def get_items() -> ItemSchema:
+    """Use FastAPI's httpx integration and dependency injection for clean async flow."""
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.get("https://api.example.com/items")
+            response.raise_for_status()
+        except httpx.HTTPStatusError as exc:
+            if exc.response.status_code == 404:
+                raise HTTPException(status_code=404, detail="Items not found")
+            raise HTTPException(status_code=502, detail=f"Upstream error: {exc}") from exc
+        return response.json()
+```
+
+**Anti-pattern 3: Over-Engineering with Framework Features**
+
+Using the most complex framework feature for a problem that simpler patterns solve equally well. This is the opposite of Wrapper Hell — instead of bypassing the framework, you are using *too much* of it in situations where simple code would suffice.
+
+```python
+# ❌ BAD: Using complex framework features for simple needs
+@app.on_event("startup")
+async def init_db():
+    # Over-engineered connection management for a single health endpoint
+    pool = await create_pool(
+        dsn=DATABASE_URL,
+        min_size=5,
+        max_size=20,
+        timeout=30,
+        max_queries=50000,
+        max_idle=10.0,
+        statement_cache_size=50,
+    )
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}  # This doesn't need connection pool management!
+
+
+# ✅ GOOD: Right-sized infrastructure for the actual need
+DATABASE_URL = os.environ["DATABASE_URL"]
+
+@app.get("/health", tags=["operations"])
+async def health() -> dict[str, str]:
+    """Simple health check that verifies database connectivity without pooling overhead."""
+    try:
+        async with httpx.AsyncClient() as client:
+            await client.post(f"{DATABASE_URL}/health")
+        return {"status": "ok"}
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"Health check failed: {exc}") from exc
+```
+
+### Optimization Strategies
+
+#### Performance Optimization — Benchmark-Driven Tuning
+
+Never optimize without a baseline measurement. The following pattern establishes measurable baselines before and after applying framework-native optimizations.
+
+```python
+from dataclasses import dataclass, field
+from enum import Enum
+from typing import Optional
+
+
+class AdoptionStage(str, Enum):
+    """Progressive adoption stages for framework utilization."""
+
+    SURFACE = "surface"         # Basic functionality, documentation patterns
+    ADVANCED = "advanced"       # Middleware, hooks, extension points
+    DEEP = "deep"               # Framework-specific optimization, custom extensions
+
+
+@dataclass
+class FeatureDiscovery:
+    """Tracks discovered and adopted framework features."""
+
+    framework_name: str
+    stage: AdoptionStage = AdoptionStage.SURFACE
+    surface_features: list[str] = field(default_factory=list)
+    advanced_features: list[str] = field(default_factory=list)
+    deep_features: list[str] = field(default_factory=list)
+
+    @property
+    def total_discovered(self) -> int:
+        """Total count of all discovered features across all stages."""
+        return len(self.surface_features) + len(self.advanced_features) + len(self.deep_features)
+
+    @property
+    def adoption_ratio(self) -> float:
+        """Fraction of discovered features that have been adopted (surface ratio)."""
+        if self.total_discovered == 0:
+            return 0.0
+        return min(1.0, len(self.surface_features) / max(1, self.total_discovered))
+
+
+class FrameworkAdopter:
+    """Guides progressive adoption of a framework through three stages.
+    
+    This class provides the structural backbone for systematic framework utilization:
+    tracking discovered features, validating stage advancement criteria,
+    and recording optimization impacts with measurable metrics.
+    
+    Example usage::
+    
+        adopter = FrameworkAdopter("fastapi", ["routing", "validation", "async"])
+        adopter.discover_feature("dependency injection")
+        adopter.optimize("response_time", before_value=150.0, after_value=45.0, technique="response caching")
+    """
+
+    STAGE_REQUIREMENTS: dict[AdoptionStage, str] = {
+        AdoptionStage.SURFACE: "Basic functionality working and tested",
+        AdoptionStage.ADVANCED: "At least 2 advanced features integrated",
+        AdoptionStage.DEEP: "Performance benchmarked and optimized against requirements",
+    }
+
+    def __init__(self, framework_name: str, capabilities: list[str]) -> None:
+        self.framework_name = framework_name
+        self.capabilities = capabilities
+        self.discovery = FeatureDiscovery(framework_name=framework_name)
+        self.optimization_log: list[dict] = []
+
+    def can_advance_stage(self) -> tuple[bool, Optional[str]]:
+        """Check if the current stage's requirements are met to advance.
+        
+        Returns:
+            Tuple of (can_advance, requirement_description).
+            If can_advance is False, the description explains what is missing.
+        """
+        stage = self.discovery.stage
+        requirements = self.STAGE_REQUIREMENTS.get(stage)
+
+        if not requirements:
+            return False, f"Unknown stage: {stage}"
+
+        if stage == AdoptionStage.SURFACE and len(self.discovery.surface_features) < 3:
+            return False, (
+                f"Need at least 3 surface features. Have: {len(self.discovery.surface_features)}"
+            )
+
+        if stage == AdoptionStage.ADVANCED:
+            if len(self.discovery.advanced_features) < 2:
+                return False, (
+                    f"Need at least 2 advanced features. "
+                    f"Have: {len(self.discovery.advanced_features)}"
+                )
+
+        return True, requirements
+
+    def discover_feature(
+        self,
+        feature_name: str,
+        category: AdoptionStage = AdoptionStage.SURFACE,
+    ) -> None:
+        """Register a discovered framework feature in the appropriate stage."""
+        target_list = getattr(self.discovery, f"{category.value}_features")
+        if feature_name not in target_list:
+            target_list.append(feature_name)
+
+    def optimize(
+        self,
+        metric: str,
+        before_value: float,
+        after_value: float,
+        technique: str,
+    ) -> None:
+        """Record an optimization with measurable impact.
+        
+        Args:
+            metric: Name of the measured metric (e.g., "response_time_ms")
+            before_value: Baseline measurement before optimization
+            after_value: Measurement after applying the optimization
+            technique: Description of the optimization technique applied
+        """
+        improvement = (
+            ((before_value - after_value) / before_value * 100) if before_value > 0 else 0
+        )
+        self.optimization_log.append({
+            "metric": metric,
+            "before": before_value,
+            "after": after_value,
+            "improvement_pct": round(improvement, 2),
+            "technique": technique,
+        })
+
+    def report(self) -> str:
+        """Generate a human-readable utilization report."""
+        lines = [
+            f"Framework Utilization Report — {self.framework_name}",
+            "=" * 60,
+            f"Stage: {self.discovery.stage.value.upper()}",
+            f"Surface features: {len(self.discovery.surface_features)}",
+            f"Advanced features: {len(self.discovery.advanced_features)}",
+            f"Deep features: {len(self.discovery.deep_features)}",
+            f"Total discovered: {self.discovery.total_discovered}",
+        ]
+
+        if self.optimization_log:
+            lines.append("")
+            lines.append("Optimization History:")
+            for opt in self.optimization_log:
+                lines.append(
+                    f"  - {opt['metric']}: {opt['before']:.1f} → {opt['after']:.1f} "
+                    f"({opt['improvement_pct']:+.1f}%) via {opt['technique']}"
+                )
+
+        return "\n".join(lines)
+```
+
+### Integration Anti-Pattern Detector
+
+A reusable analysis function that scans source code for common integration anti-patterns and produces remediation guidance.
+
+```python
+import re
+from dataclasses import dataclass
+
+
+@dataclass
+class AntiPatternFinding:
+    """A detected integration anti-pattern with remediation guidance."""
+
+    pattern_name: str
+    severity: str  # "critical", "warning", "info"
+    location: str
+    description: str
+    remediation: str
+
+
+def detect_integration_antipatterns(
+    code: str,
+    framework_context: dict[str, list[str]],
+) -> list[AntiPatternFinding]:
+    """Detect common framework integration anti-patterns in source code.
+    
+    Analyzes the given source code against known anti-pattern signatures
+    for the specified framework context and returns actionable findings.
+    
+    Args:
+        code: Source code to analyze (entire file or relevant excerpt)
+        framework_context: Dict of {framework_name: [known_capabilities]}
+        
+    Returns:
+        List of detected anti-patterns with severity, location, description,
+        and specific remediation advice for each finding.
+    """
+    findings: list[AntiPatternFinding] = []
+
+    # Anti-pattern 1: Manual SQL when ORM is available (Wrapper Hell)
+    if "sqlalchemy" in framework_context.get("orm_framework", []):
+        if re.search(r'session\.execute\s*\(\s*text\(', code):
+            findings.append(AntiPatternFinding(
+                pattern_name="Wrapper Hell — Manual SQL with ORM Available",
+                severity="critical",
+                location="session.execute(text(...)) usage detected",
+                description=(
+                    "Using raw SQL through SQLAlchemy's text() when the ORM provides "
+                    "query methods. This bypasses ORM caching, relationship loading, "
+                    "and type-safe query building."
+                ),
+                remediation=(
+                    "Replace with session.get(Model, id) for single-row fetch, or use "
+                    "session.query(Model).filter(...) for filtered queries. For complex "
+                    "queries, use ORM select() construct from SQLAlchemy 2.0."
+                ),
+            ))
+
+    # Anti-pattern 2: Mixing HTTP libraries with framework features (Frankenstein)
+    if "fastapi" in framework_context.get("web_framework", []):
+        if re.search(r'import\s+requests\b', code) and 'FastAPI' in code:
+            findings.append(AntiPatternFinding(
+                pattern_name="Frankenstein — Manual HTTP with Framework Available",
+                severity="warning",
+                location="requests import alongside FastAPI",
+                description=(
+                    "Using synchronous requests library when FastAPI provides async "
+                    "httpx integration. This blocks the event loop and prevents "
+                    "concurrent request handling."
+                ),
+                remediation=(
+                    "Replace 'import requests' with 'import httpx'. Use httpx.AsyncClient "
+                    "for async compatibility with FastAPI's event loop. Wrap calls in "
+                    "async/await and use response.raise_for_status() for error handling."
+                ),
+            ))
+
+    return findings
+
+
+# Usage example:
+# code = open("my_app.py").read()
+# context = {
+#     "orm_framework": ["sqlalchemy"],
+#     "web_framework": ["fastapi"],
+# }
+# findings = detect_integration_antipatterns(code, context)
+# for finding in findings:
+#     print(f"[{finding.severity.upper()}] {finding.pattern_name}")
+#     print(f"  Location: {finding.location}")
+#     print(f"  Fix: {finding.remediation}\n")
+```
+
+### Progressive Adoption Implementation — Complete Example
+
+This combined example demonstrates the FrameworkAdopter system with full feature discovery, optimization tracking, and reporting.
+
+```python
+from dataclasses import dataclass, field
+from enum import Enum
+from typing import Optional
+
+
+class AdoptionStage(str, Enum):
+    SURFACE = "surface"         # Basic functionality, documentation patterns
+    ADVANCED = "advanced"       # Middleware, hooks, extension points
+    DEEP = "deep"               # Framework-specific optimization, custom extensions
+
+
+@dataclass
+class FeatureDiscovery:
+    """Tracks discovered and adopted framework features."""
+
+    framework_name: str
+    stage: AdoptionStage = AdoptionStage.SURFACE
+    surface_features: list[str] = field(default_factory=list)
+    advanced_features: list[str] = field(default_factory=list)
+    deep_features: list[str] = field(default_factory=list)
+
+    @property
+    def total_discovered(self) -> int:
+        return len(self.surface_features) + len(self.advanced_features) + len(self.deep_features)
+
+    @property
+    def adoption_ratio(self) -> float:
+        """Fraction of discovered features that have been adopted."""
+        if self.total_discovered == 0:
+            return 0.0
+        return min(1.0, len(self.surface_features) / max(1, self.total_discovered))
+
+
+class FrameworkAdopter:
+    """Guides progressive adoption of a framework through three stages."""
+
+    STAGE_REQUIREMENTS = {
+        AdoptionStage.SURFACE: "Basic functionality working and tested",
+        AdoptionStage.ADVANCED: "At least 2 advanced features integrated",
+        AdoptionStage.DEEP: "Performance benchmarked and optimized against requirements",
+    }
+
+    def __init__(self, framework_name: str, capabilities: list[str]) -> None:
+        self.framework_name = framework_name
+        self.capabilities = capabilities
+        self.discovery = FeatureDiscovery(framework_name=framework_name)
+        self.optimization_log: list[dict] = []
+
+    def can_advance_stage(self) -> tuple[bool, Optional[str]]:
+        """Check if the current stage's requirements are met to advance."""
+        stage = self.discovery.stage
+        requirements = self.STAGE_REQUIREMENTS.get(stage)
+
+        if not requirements:
+            return False, f"Unknown stage: {stage}"
+
+        if stage == AdoptionStage.SURFACE and len(self.discovery.surface_features) < 3:
+            return False, f"Need at least 3 surface features. Have: {len(self.discovery.surface_features)}"
+
+        if stage == AdoptionStage.ADVANCED:
+            if len(self.discovery.advanced_features) < 2:
+                return False, f"Need at least 2 advanced features. Have: {len(self.discovery.advanced_features)}"
+
+        return True, requirements
+
+    def discover_feature(
+        self,
+        feature_name: str,
+        category: AdoptionStage = AdoptionStage.SURFACE,
+    ) -> None:
+        """Register a discovered framework feature in the appropriate stage."""
+        target_list = getattr(self.discovery, f"{category.value}_features")
+        if feature_name not in target_list:
+            target_list.append(feature_name)
+
+    def optimize(
+        self,
+        metric: str,
+        before_value: float,
+        after_value: float,
+        technique: str,
+    ) -> None:
+        """Record an optimization with measurable impact."""
+        improvement = ((before_value - after_value) / before_value * 100) if before_value > 0 else 0
+        self.optimization_log.append({
+            "metric": metric,
+            "before": before_value,
+            "after": after_value,
+            "improvement_pct": round(improvement, 2),
+            "technique": technique,
+        })
+
+    def report(self) -> str:
+        """Generate a human-readable utilization report."""
+        lines = [
+            f"Framework Utilization Report — {self.framework_name}",
+            "=" * 60,
+            f"Stage: {self.discovery.stage.value.upper()}",
+            f"Surface features: {len(self.discovery.surface_features)}",
+            f"Advanced features: {len(self.discovery.advanced_features)}",
+            f"Deep features: {len(self.discovery.deep_features)}",
+            f"Total discovered: {self.discovery.total_discovered}",
+        ]
+
+        if self.optimization_log:
+            lines.append("")
+            lines.append("Optimization History:")
+            for opt in self.optimization_log:
+                lines.append(
+                    f"  - {opt['metric']}: {opt['before']:.1f} → {opt['after']:.1f} "
+                    f"({opt['improvement_pct']:+.1f}%) via {opt['technique']}"
+                )
+
+        return "\n".join(lines)
+
+
+# === Practical Usage Example ===
+
+def demonstrate_framework_utilization() -> None:
+    """Demonstrates the full progressive adoption workflow for FastAPI."""
+    adopter = FrameworkAdopter(
+        framework_name="fastapi",
+        capabilities=["routing", "validation", "async", "dependencies", "middleware"],
+    )
+
+    # Phase 1: Surface discovery and adoption
+    adopter.discover_feature("path parameters")
+    adopter.discover_feature("query parameter validation")
+    adopter.discover_feature("request body Pydantic models")
+
+    can_advance, reason = adopter.can_advance_stage()
+    assert can_advance is True  # 3 surface features met
+
+    # Phase 2: Advanced discovery
+    adopter.discovery.stage = AdoptionStage.ADVANCED
+    adopter.discover_feature("dependency injection via Depends()", category=AdoptionStage.ADVANCED)
+    adopter.discover_feature("custom middleware", category=AdoptionStage.ADVANCED)
+
+    # Record optimization from adding response caching
+    adopter.optimize(
+        metric="get_user_response_time_ms",
+        before_value=150.0,
+        after_value=45.0,
+        technique="FastAPI response model validation + httpx connection pooling",
+    )
+
+    # Phase 3: Deep optimization
+    adopter.discovery.stage = AdoptionStage.DEEP
+    adopter.discover_feature("ASGI lifespan events", category=AdoptionStage.DEEP)
+    adopter.discover_feature("custom exception handlers", category=AdoptionStage.DEEP)
+
+    # Generate final report
+    print(adopter.report())
+
+
+if __name__ == "__main__":
+    demonstrate_framework_utilization()
 ```
 
 ---
@@ -767,47 +729,43 @@ def get_cached_config(section: str, key: str) -> Any:
 ## Constraints
 
 ### MUST DO
-
-- Follow the three-pass learning model in strict order: tutorial walkthrough, then deconstruction exercise, then constraint challenge — never skip Pass 2
-- Map at least 5 core conventions of any new framework before writing application code — consult official documentation, not blog posts
-- Start implementation at Level 2 (convention compliance) and only progress to Levels 3-4 when production requirements demand it
-- Audit codebase quarterly for "fighting the framework" anti-patterns using the P0/P1/P2 severity scale defined in Core Workflow Step 5
-- Prefer ecosystem packages over home-grown solutions — run `evaluate_package()` criteria before building custom implementations
-- Use framework-provided extension points (middleware, hooks, decorators, plugins) as the primary mechanism for cross-cutting concerns
-- Document which framework features you chose to bypass and why — this becomes part of your team's architectural knowledge
+- Always start with surface features and only advance to advanced/deep patterns after the current layer is tested and stable — never skip a stage
+- Measure optimization improvements quantitatively before and after — never optimize without a baseline measurement. If you cannot measure it, you cannot justify it
+- Document every discovered framework feature in a shared team wiki or CODEOWNERS annotation — feature discovery knowledge must be shared, not tribal. Follow the `code-philosophy` principle that code guides data naturally; documented patterns guide developers naturally
+- Test framework-boundary code with both unit tests (mocked) and integration tests (real framework) — a single testing approach leaves blind spots in stateful behavior coverage
+- Reference the "Frankenstein pattern" anti-pattern explicitly when teams mix framework patterns with raw implementations. This naming convention creates a shared vocabulary for the team
 
 ### MUST NOT DO
-
-- Build a custom lifecycle manager that bypasses the framework's built-in lifecycle — every framework has one designed to handle edge cases you cannot anticipate
-- Implement manual dependency injection when the framework provides a DI container or injection mechanism (FastAPI Depends, Spring @Autowired, Angular injectable)
-- Create custom event loops for frameworks that provide async handling (FastAPI uvloop, Django channels, Express middleware chain)
-- Over-engineer with abstraction layers "just in case" — follow YAGNI: abstract only when a real second use case exists
-- Ignore framework-provided serializers/deserializers in favor of hand-written JSON encoding/decoding
-- Copy-paste code from Stack Overflow or blog posts without understanding which part is framework convention and which part is custom logic
+- Never adopt framework features before understanding their lifecycle management and memory implications — an adopted feature that leaks resources is worse than no feature at all
+- Use a framework's most complex feature for a problem that simpler patterns solve equally well. Framework awareness should not drive over-engineering; requirements should
+- Skip integration tests in favor of unit-test-only coverage when the framework has significant stateful behavior (databases, async queues, event loops). Mocks cannot exercise the framework's internal state machine
+- Adopt features solely because they are "cool" or "modern". Every framework feature used must map to a measurable requirement or constraint — velocity improvement, reliability gain, or developer productivity
+- Ignore the framework's official migration guides when upgrading. Frameworks often have breaking changes between major versions that require specific steps; community blog posts do not capture these
 
 ---
 
 ## Output Template
 
-When applying this skill, produce the following structured output:
+When performing framework utilization analysis, produce:
 
-1. **Convention Map** — Enumerated list of at least 5 core conventions for the target framework, with official documentation links
-2. **Three-Pass Report** — Summary of what was learned in each pass, especially findings from Pass 2 (deconstruction) about which features are required vs optional
-3. **Level Assessment** — Current team/framework utilization level (1-4+) with concrete code evidence for the classification
-4. **Anti-Pattern Audit Results** — Table of detected "fighting the framework" issues categorized by P0/P1/P2 severity, each with a refactoring suggestion
-5. **Extension Point Map** — For each required capability, show: (a) official extension point used, (b) ecosystem package considered and why accepted/rejected, (c) custom implementation if built as last resort
-6. **Deepening Roadmap** — Prioritized list of framework features to adopt next, ordered by impact on productivity vs effort to learn
+1. **Current Adoption Stage Assessment** — Surface / Advanced / Deep with feature inventory for each stage
+2. **Feature Discovery Report** — Newly discovered capabilities not yet adopted, with estimated impact ranking
+3. **Anti-Pattern Audit** — Detected integration anti-patterns with severity (Critical / Warning / Info) and specific remediation per finding
+4. **Optimization Opportunities** — Specific areas where framework-native patterns could improve performance or maintainability, with before/after baseline requirements
+5. **Progressive Rollout Plan** — Staged implementation timeline with success criteria per stage
+6. **Testing Strategy** — What to unit-test (mocked) vs integration-test (real framework), with coverage expectations
 
 ---
 
 ## Related Skills
 
 | Skill | Purpose |
-|-------|---------|
-| `requirement-driven-selection` | Framework selection — use this BEFORE choosing a framework; use this skill AFTER selection |
-| `dependency-inversion-principle` | Decouples application logic from framework specifics for easier testing and migration |
-| `modular-design` | Complementary to framework adoption — ensures modular architecture within the framework |
-| `test-driven-development` | Test-first development works with any framework; apply TDD discipline during three-pass learning |
+|---|---|
+| `framework-selection` | Choose the right framework before you adopt it — use this skill first |
+| `ai-framework-selector` | AI-assisted framework evaluation when starting from scratch |
+| `dependency-injection` | Decouple framework code from domain logic using DI patterns |
+| `integration-testing-patterns` | Design effective integration tests for framework-boundary code |
+| `modular-design` | Structure applications to maximize framework utilization while maintaining testability |
 
 ---
 
@@ -815,10 +773,9 @@ When applying this skill, produce the following structured output:
 
 > Authoritative documentation links for framework utilization patterns. The model follows markdown links at load time to resolve external references and inline content.
 
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [React Official Documentation](https://react.dev/)
-- [Django Documentation](https://docs.djangoproject.com/)
-- [Spring Framework Reference](https://docs.spring.io/spring-framework/reference/)
-- [Express.js Guide](https://expressjs.com/)
-- [Python Decorator Design Patterns](https://realpython.com/primer-on-python-decorators/)
-- [Software Architecture: The Hard Parts](https://softwarearchitectstuff.com/)
+- [FastAPI Documentation](https://fastapi.tiangolo.com/) — Modern async web framework patterns including dependency injection, middleware, and response models
+- [SQLAlchemy 2.0 Documentation](https://docs.sqlalchemy.org/en/20/) — Python ORM best practices, declarative queries, and relationship loading strategies
+- [React Documentation](https://react.dev/reference/react) — Component patterns, hooks conventions, and the hook rules that prevent state corruption
+- [Spring Framework Reference](https://docs.spring.io/spring-framework/reference/) — Enterprise Java framework utilization including DI container, AOP, and transaction management
+- [Dependency Injection Patterns in Python](https://fastapi.tiangolo.com/tutorial/dependencies/) — Decoupling framework code from domain logic using FastAPI's Depends system
+- [Martin Fowler — Dependency Injection](https://martinfowler.com/articles/injection.html) — Core DI principles that apply across all frameworks and languages
