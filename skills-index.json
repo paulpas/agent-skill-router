@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T17:16:26.724210Z",
+  "generatedAt": "2026-05-26T17:45:00.426945Z",
   "totalSkills": 1054,
   "domains": {
     "agent": 279,
@@ -9840,7 +9840,14 @@
         "dependency topology",
         "hexagonal architecture"
       ],
-      "relatedSkills": [],
+      "relatedSkills": [
+        "framework-driven-design",
+        "composition-root",
+        "microservices-architecture",
+        "hexagonal-architecture",
+        "domain-driven-strategic",
+        "framework-extension-design"
+      ],
       "version": "1.0.0",
       "source": "skills/coding/framework-architecture-design/SKILL.md"
     },
@@ -9966,7 +9973,13 @@
         "extension points",
         "versioned extension APIs"
       ],
-      "relatedSkills": [],
+      "relatedSkills": [
+        "framework-driven-design",
+        "framework-architecture-design",
+        "composition-root",
+        "hexagonal-architecture",
+        "microservice-resilience-patterns"
+      ],
       "version": "1.0.0",
       "source": "skills/coding/framework-extension-design/SKILL.md"
     },
