@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1033 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1035 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1033 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1035 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **1033 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1035 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1033 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1035 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 274 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 453 | Software patterns, security, testing, data science |
+| Coding | 455 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -274,17 +274,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 05:29:35 UTC  
-> **Total skills:** 1033  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1033 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 06:36:58 UTC  
+> **Total skills:** 1035  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1035 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1004 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1004 | Ranking penalty for conflicting query terms |
-| Response Profile | 1004 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1006 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1006 | Ranking penalty for conflicting query terms |
+| Response Profile | 1006 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -748,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (453 skills)
+### Coding (455 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1193,8 +1193,10 @@ MIT — All skills are freely available and redistributable.
 | [vercel-api](skills/coding/vercel-api/SKILL.md) | Integrates Vercel services (Deployments, Projects, Edge Functions, Domains, Analytics) using the Vercel REST API and Python SDK with token-based authentication and deployment automation patterns. | vercel api, vercel python, vercel deployments, vercel edge functions, vercel projects, vercel domains, how do i use vercel api from python [tactical, generation] |
 | [version-migration](skills/coding/version-migration/SKILL.md) | Manages framework and library version upgrades through systematic breakage analysis, automated refactoring scripts, and progressive migration with zero-downtime rollback strategies. | version migration, major version upgrade, breaking changes, framework upgrade, deprecation migration, API breakage, automated refactoring, semver upgrade [tactical, generation] |
 | [weaviate-api](skills/coding/weaviate-api/SKILL.md) | Integrates Weaviate vector database (v4 Python client, collections, vector search, hybrid, generative modules, GraphQL) for AI-powered search applications. | weaviate, vector database, weaviate client, hybrid search, generative search, weaviate graphql, how do i use weaviate, vector collections [tactical, generation] |
+| [websocket-performance](skills/coding/websocket-performance/SKILL.md) | Optimizes WebSocket communication throughput and efficiency using binary protocols (MessagePack, Protobuf), per-message deflate compression (RFC 7692), message batching, and payload size reduction for high-frequency real-time systems. | websocket performance, binary protocol, messagepack, protobuf, deflate compression, rfc 7692, message batching, payload optimization, high throughput, low latency, compress messages, ws compression, wire format, serialization speed [tactical, generation] |
 | [websocket-protocol](skills/coding/websocket-protocol/SKILL.md) | Implements WebSocket protocol-level patterns including frame parsing, subprotocol negotiation, permessage-deflate compression, text/binary framing, and backpressure management for real-time applications. | websocket protocol, frame handling, subprotocol negotiation, permessage-deflate, binary framing, text messages, backpressure, wss://, ws upgrade, opcode, mask bit, close frame [tactical, generation] |
 | [websocket-security](skills/coding/websocket-security/SKILL.md) | Hardens WebSocket connections against cross-site hijacking, DoS attacks, and message flooding through origin validation, authentication, rate limiting, connection limits, and secure transport enforcement. | websocket security, origin validation, cross-site WebSocket hijacking, CCoS, wss://, WebSocket authentication, rate limiting, message flooding, slowloris, connection limits, WebSocket auth, Sec-WebSocket-Origin [tactical, generation] |
+| [websocket-server-architecture](skills/coding/websocket-server-architecture/SKILL.md) | Implements WebSocket server architecture patterns including pub/sub routing, session management, horizontal scaling with Redis/NATS, heartbeat keepalive, and graceful shutdown for high-concurrency real-time systems. | websocket server, pub sub routing, session management, horizontal scaling, redis pubsub, heartbeat keepalive, graceful shutdown, real-time server [tactical, orchestration, generation] |
 | [xml-security](skills/coding/xml-security/SKILL.md) | Prevents XML External Entity (XXE) injection, entity expansion attacks, and DTD abuse by securing XML parsers with safe configurations, input validation, and defense-in-depth patterns across Python, Java, PHP, Node.js, and Go. | xx e injection, xml external entity, dtd security, xml parser security, entity expansion attack, xml schema validation, xml vulnerability, safe xml parsing, xml input sanitization [tactical, diagnostic] |
 | [yagni](skills/coding/yagni/SKILL.md) | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. | yagni, you aren't gonna need it, don't build it now, over-engineering, premature abstraction, speculative features, kill unused code, remove complexity [tactical, generation] |
 | [yagni-code](skills/coding/yagni-code/SKILL.md) | Enforces YAGNI at the code level to eliminate dead functions, premature abstractions, and unused configuration by writing only what is immediately required. | yagni, dead code, premature abstraction, over-engineering, write-only-needed-code, unnecessary complexity |
@@ -1384,7 +1386,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (615 skills)
+### Implementation (Build Features) (617 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1987,8 +1989,10 @@ MIT — All skills are freely available and redistributable.
 | [weaviate-api](skills/coding/weaviate-api/SKILL.md) | Coding | Integrates Weaviate vector database (v4 Python client, collections, vector search, hybrid, generative modules, GraphQL) for AI-powered search applications. |
 | [web-applications](skills/go/web-applications/SKILL.md) | Go | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. |
 | [websocket-handling](skills/trading/websocket-handling/SKILL.md) | Trading | "Real-time market data handling with WebSockets including connection management" data aggregation, and robust error recovery |
+| [websocket-performance](skills/coding/websocket-performance/SKILL.md) | Coding | Optimizes WebSocket communication throughput and efficiency using binary protocols (MessagePack, Protobuf), per-message deflate compression (RFC 7692), message batching, and payload size reduction for high-frequency real-time systems. |
 | [websocket-protocol](skills/coding/websocket-protocol/SKILL.md) | Coding | Implements WebSocket protocol-level patterns including frame parsing, subprotocol negotiation, permessage-deflate compression, text/binary framing, and backpressure management for real-time applications. |
 | [websocket-security](skills/coding/websocket-security/SKILL.md) | Coding | Hardens WebSocket connections against cross-site hijacking, DoS attacks, and message flooding through origin validation, authentication, rate limiting, connection limits, and secure transport enforcement. |
+| [websocket-server-architecture](skills/coding/websocket-server-architecture/SKILL.md) | Coding | Implements WebSocket server architecture patterns including pub/sub routing, session management, horizontal scaling with Redis/NATS, heartbeat keepalive, and graceful shutdown for high-concurrency real-time systems. |
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." |
 | [xml-security](skills/coding/xml-security/SKILL.md) | Coding | Prevents XML External Entity (XXE) injection, entity expansion attacks, and DTD abuse by securing XML parsers with safe configurations, input validation, and defense-in-depth patterns across Python, Java, PHP, Node.js, and Go. |
 | [yagni](skills/coding/yagni/SKILL.md) | Coding | Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering by identifying and eliminating premature abstractions, unused features, and speculative complexity from software designs. |
@@ -3446,8 +3450,10 @@ MIT — All skills are freely available and redistributable.
 | [web-applications](skills/go/web-applications/SKILL.md) | Go | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. | Implementation |
 | [web-security-testing](skills/agent/web-security-testing/SKILL.md) | Agent | Implements intelligent web security testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [websocket-handling](skills/trading/websocket-handling/SKILL.md) | Trading | "Real-time market data handling with WebSockets including connection management" data aggregation, and robust error recovery | Implementation |
+| [websocket-performance](skills/coding/websocket-performance/SKILL.md) | Coding | Optimizes WebSocket communication throughput and efficiency using binary protocols (MessagePack, Protobuf), per-message deflate compression (RFC 7692), message batching, and payload size reduction for high-frequency real-time systems. | Implementation |
 | [websocket-protocol](skills/coding/websocket-protocol/SKILL.md) | Coding | Implements WebSocket protocol-level patterns including frame parsing, subprotocol negotiation, permessage-deflate compression, text/binary framing, and backpressure management for real-time applications. | Implementation |
 | [websocket-security](skills/coding/websocket-security/SKILL.md) | Coding | Hardens WebSocket connections against cross-site hijacking, DoS attacks, and message flooding through origin validation, authentication, rate limiting, connection limits, and secure transport enforcement. | Implementation |
+| [websocket-server-architecture](skills/coding/websocket-server-architecture/SKILL.md) | Coding | Implements WebSocket server architecture patterns including pub/sub routing, session management, horizontal scaling with Redis/NATS, heartbeat keepalive, and graceful shutdown for high-concurrency real-time systems. | Implementation |
 | [websocket-streaming](skills/trading/websocket-streaming/SKILL.md) | Trading | "Implements real-time market data streaming and processing for risk management and algorithmic trading execution." | Implementation |
 | [wordpress](skills/agent/wordpress/SKILL.md) | Agent | Implements intelligent wordpress with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [wordpress-plugin-development](skills/agent/wordpress-plugin-development/SKILL.md) | Agent | Implements intelligent wordpress plugin development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
