@@ -1,9 +1,15 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1035 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+<<<<<<< HEAD
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1038 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1035 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1038 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1038 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1038 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+>>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
 ```
@@ -16,9 +22,15 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **1035 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+<<<<<<< HEAD
+- 🎯 **1038 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1035 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1038 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1038 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1038 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+>>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +109,19 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 274 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
+| Coding | 458 | Software patterns, security, testing, data science |
+| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
+| Go | 12 | Go idioms, concurrency patterns, error handling |
+| Linux | 16 | System administration, kernel tuning, security, networking |
+| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
+| Programming | 7 | Algorithms, frameworks, language references |
+| Trading | 89 | Execution, risk management, ML models |
+| Writing | 4 | Technical writing, style guidance |
+<<<<<<< HEAD
 | Coding | 455 | Software patterns, security, testing, data science |
+=======
+| Coding | 458 | Software patterns, security, testing, data science |
+>>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -274,9 +298,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 06:36:58 UTC  
-> **Total skills:** 1035  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1035 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 02:32:54 UTC  
+> **Total skills:** 1038  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1038 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -748,7 +772,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (455 skills)
+### Coding (458 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -855,6 +879,7 @@ MIT — All skills are freely available and redistributable.
 | [data-collection](skills/coding/data-collection/SKILL.md) | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | data collection, web scraping, API integration, data gathering, data acquisition, ETL, how do i collect data [tactical, generation] |
 | [data-deduplication](skills/coding/data-deduplication/SKILL.md) | Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines. | data deduplication, schema normalization, ETL pipeline dedup, API response standardization, query abstraction, configuration centralization, canonical data source, data model reuse, duplicate schema definitions, data layer DRY [tactical, diagnostic] |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | json serialization, xml parsing, base64 encoding, url encoding, yaml config, protocol buffers, data serialization, type coercion, character encoding, message encoding [tactical, generation] |
+| [data-engineering-architecture](skills/coding/data-engineering-architecture/SKILL.md) | Implements streaming pipeline patterns with Kafka, CDC replication, Delta Lake lakehouse architecture, and orchestrator integration for building scalable data infrastructure. | data engineering, streaming pipeline, kafka, cdc change data capture, delta lake, lakehouse, dbt, data quality framework, airflow, spark, etl patterns, data lake, apache spark, kubernetes data, materialized views... |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data [tactical, generation] |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | data architecture, stream processing, kafka, change data capture, CDC, event sourcing, lakehouse, data mesh, real-time analytics, batch processing, data pipeline design, how do i build a data pipeline, data streaming, Flink, Spark Streaming [tactical, generation] |
 | [data-oriented-design](skills/coding/data-oriented-design/SKILL.md) | Implements Data-Oriented Design (DOD) patterns including Structure-of-Arrays layouts, cache-efficient data access, zero-allocation hot paths, and vectorized processing for performance-critical Python systems. | data oriented design, DOD, structure of arrays, SoA layout, cache efficiency, AoS to SoA, vectorized processing, data layout optimization [tactical] |
@@ -1030,6 +1055,7 @@ MIT — All skills are freely available and redistributable.
 | [missing-data](skills/coding/missing-data/SKILL.md) | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" | missing data, imputation, NaN handling, missing values, how do i handle missing data, data gaps [tactical, generation] |
 | [mistral-api](skills/coding/mistral-api/SKILL.md) | Integrates Mistral AI API (Chat, Embeddings, Function Calling, Codestral, Agents) using the mistralai Python SDK for LLM and code generation applications. | mistral, mistral ai, mistral api, codestral, mistral chat, mistral embeddings, how do i use mistral, le chat [tactical, generation] |
 | [mixpanel-api](skills/coding/mixpanel-api/SKILL.md) | Implements Mixpanel analytics integration (event tracking, user profiles, JQL queries, funnel analysis, cohort export) using mixpanel Python SDK with event batching, distinct_id management, engage updates, export API, and ingestion API patterns. | mixpanel, event tracking, user profiles, jql queries, mixpanel funnels, cohort analysis, how do i track events in mixpanel, product analytics [tactical, generation] |
+| [ml-ai-engineering-deployment](skills/coding/ml-ai-engineering-deployment/SKILL.md) | Implements MLOps deployment patterns including model serving with ONNX/TensorRT, drift detection, feature stores, model registries, and A/B testing for production AI systems. | MLOps, model deployment, model serving, ML pipeline, drift detection, feature store, ONNX, TensorRT, model registry, A/B testing ML, AI engineering, how do i deploy a machine learning model, scikit-serve, Triton inference server, batch inference... |
 | [model-fairness](skills/coding/model-fairness/SKILL.md) | "Evaluates and mitigates fairness issues including bias detection, fairness metrics, and debiasing strategies in machine learning" | model fairness, fairness metrics, bias detection, debiasing, fair machine learning, how do I check bias [tactical, generation] |
 | [model-interpretation](skills/coding/model-interpretation/SKILL.md) | "Provides Interprets models using SHAP values, LIME, feature importance, permutation importance, and other explainability techniques" | model interpretation, SHAP, LIME, feature importance, explainability, how do I explain models [tactical, generation] |
 | [model-robustness](skills/coding/model-robustness/SKILL.md) | Improves model robustness including adversarial robustness, out-of-distribution detection, and uncertainty quantification | model robustness, adversarial robustness, out-of-distribution, OOD detection, robustness testing, unit tests, testing, test automation [tactical, generation] |
@@ -1141,6 +1167,7 @@ MIT — All skills are freely available and redistributable.
 | [snowflake-sdk](skills/coding/snowflake-sdk/SKILL.md) | Integrates Snowflake using snowflake-connector-python 4.x with patterns for SQL execution, Snowpark DataFrames, Cortex AI, streams, tasks, stages, and warehouse management. | snowflake, snowflake connector, snowpark, snowflake sql, snowflake cortex, how do i query snowflake from python, data warehouse, snowpipe [tactical, generation] |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | software architecture, system design, layered architecture, hexagonal architecture, clean architecture, separation of concerns, scalable design, architectural patterns [diagnostic, educational] |
 | [software-architecture-design](skills/coding/software-architecture-design/SKILL.md) | Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations. | software architecture, hexagonal architecture, ddd tactical patterns, cqrs pattern, event sourcing, clean architecture, ports and adapters, aggregate root [tactical, strategic] |
+| [software-architecture-patterns](skills/coding/software-architecture-patterns/SKILL.md) | Implements proven software architecture patterns (CQRS, Event Sourcing, Hexagonal/Clean Architecture, layered architecture, DDD aggregates) for building maintainable enterprise systems. | architecture patterns, CQRS, event sourcing, hexagonal architecture, clean architecture, layered architecture, DDD, domain-driven design, aggregate roots, bounded context, how do i structure my application, software architecture, event-driven architecture, port and adapter, onion architecture... |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | CI/CD pipeline, continuous integration, continuous deployment, deployment strategy, blue-green deployment, canary release, how do i set up CI/CD [tactical, generation] |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | software design principles, SOLID, DRY, KISS, dependency injection, clean architecture, modular design [tactical, generation] |
 | [software-development-lifecycle](skills/coding/software-development-lifecycle/SKILL.md) | Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems. | software development lifecycle, SDLC, requirements engineering, design documentation, iterative development, branching strategy, code review process, user stories, acceptance criteria, feature branches, trunk-based development, how do i manage a software project [orchestration, tactical, generation] |
@@ -1386,7 +1413,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (617 skills)
+### Implementation (Build Features) (620 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1517,6 +1544,7 @@ MIT — All skills are freely available and redistributable.
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" |
 | [data-deduplication](skills/coding/data-deduplication/SKILL.md) | Coding | Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines. |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. |
+| [data-engineering-architecture](skills/coding/data-engineering-architecture/SKILL.md) | Coding | Implements streaming pipeline patterns with Kafka, CDC replication, Delta Lake lakehouse architecture, and orchestrator integration for building scalable data infrastructure. |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. |
 | [data-oriented-design](skills/coding/data-oriented-design/SKILL.md) | Coding | Implements Data-Oriented Design (DOD) patterns including Structure-of-Arrays layouts, cache-efficient data access, zero-allocation hot paths, and vectorized processing for performance-critical Python systems. |
@@ -1738,6 +1766,7 @@ MIT — All skills are freely available and redistributable.
 | [missing-data](skills/coding/missing-data/SKILL.md) | Coding | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" |
 | [mistral-api](skills/coding/mistral-api/SKILL.md) | Coding | Integrates Mistral AI API (Chat, Embeddings, Function Calling, Codestral, Agents) using the mistralai Python SDK for LLM and code generation applications. |
 | [mixpanel-api](skills/coding/mixpanel-api/SKILL.md) | Coding | Implements Mixpanel analytics integration (event tracking, user profiles, JQL queries, funnel analysis, cohort export) using mixpanel Python SDK with event batching, distinct_id management, engage updates, export API, and ingestion API patterns. |
+| [ml-ai-engineering-deployment](skills/coding/ml-ai-engineering-deployment/SKILL.md) | Coding | Implements MLOps deployment patterns including model serving with ONNX/TensorRT, drift detection, feature stores, model registries, and A/B testing for production AI systems. |
 | [mobile-applications](skills/go/mobile-applications/SKILL.md) | Go | Develops cross-platform mobile applications with Go using Fyne and Go mobile for iOS and Android with platform-optimized UI patterns. |
 | [model-ensemble](skills/trading/model-ensemble/SKILL.md) | Trading | "Provides Combine multiple models for improved prediction accuracy and robustness" |
 | [model-fairness](skills/coding/model-fairness/SKILL.md) | Coding | "Evaluates and mitigates fairness issues including bias detection, fairness metrics, and debiasing strategies in machine learning" |
@@ -1903,6 +1932,7 @@ MIT — All skills are freely available and redistributable.
 | [slippage-modeling](skills/trading/slippage-modeling/SKILL.md) | Trading | "Slippage Estimation, Simulation, and Fee Modeling for Realistic Execution" Analysis |
 | [snowflake-sdk](skills/coding/snowflake-sdk/SKILL.md) | Coding | Integrates Snowflake using snowflake-connector-python 4.x with patterns for SQL execution, Snowpark DataFrames, Cortex AI, streams, tasks, stages, and warehouse management. |
 | [software-architecture-design](skills/coding/software-architecture-design/SKILL.md) | Coding | Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations. |
+| [software-architecture-patterns](skills/coding/software-architecture-patterns/SKILL.md) | Coding | Implements proven software architecture patterns (CQRS, Event Sourcing, Hexagonal/Clean Architecture, layered architecture, DDD aggregates) for building maintainable enterprise systems. |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. |
 | [software-development-lifecycle](skills/coding/software-development-lifecycle/SKILL.md) | Coding | Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems. |
@@ -2702,6 +2732,7 @@ MIT — All skills are freely available and redistributable.
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | Implementation |
 | [data-deduplication](skills/coding/data-deduplication/SKILL.md) | Coding | Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines. | Implementation |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | Implementation |
+| [data-engineering-architecture](skills/coding/data-engineering-architecture/SKILL.md) | Coding | Implements streaming pipeline patterns with Kafka, CDC replication, Delta Lake lakehouse architecture, and orchestrator integration for building scalable data infrastructure. | Implementation |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | Implementation |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | Implementation |
 | [data-oriented-design](skills/coding/data-oriented-design/SKILL.md) | Coding | Implements Data-Oriented Design (DOD) patterns including Structure-of-Arrays layouts, cache-efficient data access, zero-allocation hot paths, and vectorized processing for performance-critical Python systems. | Implementation |
@@ -3058,6 +3089,7 @@ MIT — All skills are freely available and redistributable.
 | [missing-data](skills/coding/missing-data/SKILL.md) | Coding | "Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information" | Implementation |
 | [mistral-api](skills/coding/mistral-api/SKILL.md) | Coding | Integrates Mistral AI API (Chat, Embeddings, Function Calling, Codestral, Agents) using the mistralai Python SDK for LLM and code generation applications. | Implementation |
 | [mixpanel-api](skills/coding/mixpanel-api/SKILL.md) | Coding | Implements Mixpanel analytics integration (event tracking, user profiles, JQL queries, funnel analysis, cohort export) using mixpanel Python SDK with event batching, distinct_id management, engage updates, export API, and ingestion API patterns. | Implementation |
+| [ml-ai-engineering-deployment](skills/coding/ml-ai-engineering-deployment/SKILL.md) | Coding | Implements MLOps deployment patterns including model serving with ONNX/TensorRT, drift detection, feature stores, model registries, and A/B testing for production AI systems. | Implementation |
 | [ml-pipeline-workflow](skills/agent/ml-pipeline-workflow/SKILL.md) | Agent | Implements intelligent ml pipeline workflow with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mobile-applications](skills/go/mobile-applications/SKILL.md) | Go | Develops cross-platform mobile applications with Go using Fyne and Go mobile for iOS and Android with platform-optimized UI patterns. | Implementation |
 | [model-ensemble](skills/trading/model-ensemble/SKILL.md) | Trading | "Provides Combine multiple models for improved prediction accuracy and robustness" | Implementation |
@@ -3323,6 +3355,7 @@ MIT — All skills are freely available and redistributable.
 | [sns](skills/cncf/sns/SKILL.md) | Cncf | "Deploys managed pub/sub messaging with SNS for asynchronous notifications" across services, mobile push, email, and Lambda integrations. | Reference |
 | [software-architecture](skills/coding/software-architecture/SKILL.md) | Coding | Evaluates and designs software architecture using layered, hexagonal, and clean patterns to ensure scalability, maintainability, and separation of concerns. | Reference |
 | [software-architecture-design](skills/coding/software-architecture-design/SKILL.md) | Coding | Implements production-grade architectural patterns including DDD tactical patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations. | Implementation |
+| [software-architecture-patterns](skills/coding/software-architecture-patterns/SKILL.md) | Coding | Implements proven software architecture patterns (CQRS, Event Sourcing, Hexagonal/Clean Architecture, layered architecture, DDD aggregates) for building maintainable enterprise systems. | Implementation |
 | [software-delivery-pipelines](skills/coding/software-delivery-pipelines/SKILL.md) | Coding | Implements CI/CD pipelines with build automation, test orchestration, blue-green/canary deployments, artifact management, and environment promotion for reliable software delivery. | Implementation |
 | [software-design-principles](skills/coding/software-design-principles/SKILL.md) | Coding | Implements core software design principles (SOLID, DRY, KISS, dependency injection) to create maintainable, scalable, and modular codebases. | Implementation |
 | [software-development-lifecycle](skills/coding/software-development-lifecycle/SKILL.md) | Coding | Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems. | Implementation |
