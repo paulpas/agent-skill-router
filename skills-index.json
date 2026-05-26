@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T08:44:32.686213Z",
+  "generatedAt": "2026-05-26T09:10:24.305235Z",
   "totalSkills": 1041,
   "domains": {
     "agent": 276,
@@ -16923,20 +16923,20 @@
       "outputFormat": "code",
       "triggers": [
         "order flow",
-        "order book",
-        "liquidity analysis",
-        "market microstructure",
-        "footprint charts",
         "cumulative delta",
-        "volume profile",
-        "level 2 data",
+        "order book imbalance",
+        "footprint analysis",
+        "market microstructure",
+        "liquidity zones",
         "tape reading",
-        "imbalance detection"
+        "volume profile"
       ],
       "relatedSkills": [
-        "risk-stop-loss",
-        "trading-execution-twap-slw",
-        "signals-module"
+        "order-flow-footprint",
+        "order-flow-toxicity",
+        "ai-order-flow-analysis",
+        "execution-order-book-impact",
+        "technical-volume-profile"
       ],
       "version": "1.0.0",
       "source": "skills/trading/order-flow-analysis/SKILL.md"
