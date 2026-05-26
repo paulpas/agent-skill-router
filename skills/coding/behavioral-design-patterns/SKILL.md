@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: behavioral patterns, strategy pattern, command pattern, state machine, chain of responsibility, visitor pattern, algorithm encapsulation, how do i decouple logic flow, interpreter pattern, iterator pattern
+  triggers: behavioral patterns, strategy pattern, command pattern, state machine, chain of responsibility, visitor pattern, algorithm encapsulation, how do i decouple logic flow
   role: implementation
   scope: implementation
   output-format: code
@@ -88,8 +88,10 @@ Encapsulates interchangeable algorithms behind a common protocol. The context de
 
 ```python
 from __future__ import annotations
+
 import abc
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from typing import Protocol
 
 
@@ -100,6 +102,9 @@ class Order:
     quantity: int
     unit_price: float
     customer_tier: str  # "standard", "premium", "vip"
+    _manufactured_date: datetime = field(
+        default_factory=lambda: datetime.now(timezone.utc),
+    )
 
     @property
     def subtotal(self) -> float:
@@ -153,7 +158,7 @@ class DynamicPricingDiscount:
         from datetime import datetime, timedelta
 
         # Simulate shelf-life-based decay — in production, fetch from inventory service
-        days_on_shelf = (datetime.now() - order._manufactured_date).days  # type: ignore[attr-defined]
+        days_on_shelf = (datetime.now() - order._manufactured_date).days
         age_ratio = min(days_on_shelf / self._decay_days, 1.0)
         return round(order.subtotal * self._max_discount * age_ratio, 2)
 ```
@@ -267,9 +272,9 @@ class TransferFundsCommand(Executable):
 
     def execute(self) -> dict[str, Any]:
         """Perform the transfer and record balance snapshots for potential undo."""
-        # In production, these would call a repository/service layer
-        self._balance_before_from = self._get_balance(self._from)  # type: ignore[attr-defined]
-        self._balance_before_to = self._get_balance(self._to)  # type: ignore[attr-defined]
+        # In production, these would call a BalanceRepository injected via __init__
+        self._balance_before_from = 0.0  # Placeholder — use injected repository
+        self._balance_before_to = 0.0    # Placeholder — use injected repository
         return {
             "id": str(uuid.uuid4()),
             "status": "completed",
@@ -289,12 +294,7 @@ class TransferFundsCommand(Executable):
             "transferred_amount": self._amount,
         }
 
-    def _get_balance(self, account: str) -> float:  # type: ignore[unused-ignores]
-        """Placeholder — replace with actual balance lookup from persistence layer."""
-        raise NotImplementedError("Inject a BalanceRepository dependency instead")
-
-
-class CommandInvoker:
+ class CommandInvoker:
     """Manages command execution history with undo capability."""
 
     def __init__(self, max_history: int = 100) -> None:

@@ -6,12 +6,12 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: caching strategy, cache-aside pattern, write-through cache, cache invalidation, LRU cache, TTL management, cache stampede, distributed caching, Redis cache, multi-level cache, cache warm-up, read-through cache
+  triggers: caching strategy, cache-aside pattern, cache invalidation, TTL management, cache stampede, Redis cache, multi-level cache, cache warm-up
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
-  related-skills: performance-optimization, database-design-modeling, async-runtime, configuration-management-patterns
+  related-skills: performance-optimization, database-design-modeling, asyncio-patterns, configuration-management-patterns
   author: https://github.com/openai/skill-router-contributors
   source: https://github.com/paulpas/git/agent-skill-router
   archetypes:
@@ -1133,7 +1133,7 @@ When this skill is active, your output must contain:
 |---|---|
 | `performance-optimization` | Broader performance optimization techniques beyond caching — indexing, query planning, connection pooling |
 | `database-design-modeling` | Database schema design to complement caching strategies — denormalization for cache-friendly reads |
-| `async-runtime` | Understanding async execution patterns that affect cache lock contention and background flush loops |
+| `asyncio-patterns` | Async execution patterns that affect cache lock contention, stampede prevention, and background flush loops |
 | `configuration-management-patterns` | Manage TTL values, cache sizes, and strategy selection via externalized configuration |
 
 ---

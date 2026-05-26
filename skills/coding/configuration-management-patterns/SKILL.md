@@ -6,12 +6,12 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: configuration management, config validation, schema validation, config hot reload, secret injection, HashiCorp Vault, environment configuration, hierarchical config, Pydantic settings, how do i manage application configuration, config merging, env var overrides
+  triggers: configuration management, config validation, schema validation, config hot reload, secret injection, HashiCorp Vault, Pydantic settings, how do i manage application configuration
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
-  related-skills: database-design-modeling, performance-optimization, security-review, deployment-infrastructure-patterns
+  related-skills: database-design-modeling, performance-optimization, security-review, cncf-deployment-orchestration
   author: https://github.com/openai/skill-router-contributors
   source: https://github.com/paulpas/git/agent-skill-router
   archetypes:
@@ -203,7 +203,7 @@ class AppSettings(BaseSettings):
         default=None,
         description="External API key — required for production environment",
     )
-    webhook_secret: SecretStr | Field(  # type: ignore[assignment]
+    webhook_secret: SecretStr = Field(
         default=SecretStr(""),
         description="Webhook signature verification secret",
     )
@@ -1298,7 +1298,7 @@ When this skill is active, your output must contain:
 | `database-design-modeling` | Database configuration is a key part of application config — schema design complements connection pool settings |
 | `performance-optimization` | Configuration affects performance (connection pool sizes, cache TTLs) — optimize these together |
 | `security-review` | Secret management and configuration security are intertwined — review vault integration alongside general security posture |
-| `deployment-infrastructure-patterns` | Configuration is deployed via infrastructure (Kubernetes ConfigMaps, Terraform) — coordinate config with deployment strategy |
+| `cncf-deployment-orchestration` | Configuration is deployed via infrastructure (Kubernetes ConfigMaps, Terraform) — coordinate config with deployment strategy |
 
 ---
 
