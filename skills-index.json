@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T01:25:56.061012Z",
-  "totalSkills": 1022,
+  "generatedAt": "2026-05-26T02:17:36.337407Z",
+  "totalSkills": 1024,
   "domains": {
     "agent": 274,
     "cncf": 173,
-    "coding": 442,
+    "coding": 444,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 604,
+    "implementation": 606,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -6188,6 +6188,31 @@
       "source": "skills/coding/data-intensive-systems/SKILL.md"
     },
     {
+      "name": "data-oriented-design",
+      "domain": "coding",
+      "description": "Implements Data-Oriented Design (DOD) patterns including Structure-of-Arrays layouts, cache-efficient data access, zero-allocation hot paths, and vectorized processing for performance-critical Python systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "data oriented design",
+        "DOD",
+        "structure of arrays",
+        "SoA layout",
+        "cache efficiency",
+        "AoS to SoA",
+        "vectorized processing",
+        "data layout optimization"
+      ],
+      "relatedSkills": [
+        "performance-optimization",
+        "async-runtime",
+        "design-patterns-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/data-oriented-design/SKILL.md"
+    },
+    {
       "name": "data-pipeline-architecture",
       "domain": "coding",
       "description": "Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale.",
@@ -7048,6 +7073,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/deployment-philosophy/SKILL.md"
+    },
+    {
+      "name": "design-for-testability",
+      "domain": "coding",
+      "description": "Implements Design For Testability patterns including dependency injection via Protocols, interface segregation with focused interfaces, pure function boundaries, and composition root factories to enable fast unit tests without infrastructure dependencies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "design for testability",
+        "DfT",
+        "dependency injection",
+        "test doubles",
+        "pure functions",
+        "interface segregation",
+        "composition root",
+        "protocol-based fakes"
+      ],
+      "relatedSkills": [
+        "test-driven-development",
+        "dependency-inversion-principle",
+        "hexagonal-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/design-for-testability/SKILL.md"
     },
     {
       "name": "design-pattern-anti-patterns",

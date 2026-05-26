@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1022 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1024 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1022 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1024 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **1022 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1024 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1022 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1024 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 274 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 442 | Software patterns, security, testing, data science |
+| Coding | 444 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -274,17 +274,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 01:25:58 UTC  
-> **Total skills:** 1022  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1022 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 02:17:38 UTC  
+> **Total skills:** 1024  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1024 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 994 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 994 | Ranking penalty for conflicting query terms |
-| Response Profile | 994 | Verbosity, directive strength, abstraction level |
+| Archetypes | 996 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 996 | Ranking penalty for conflicting query terms |
+| Response Profile | 996 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -748,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (442 skills)
+### Coding (444 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -857,6 +857,7 @@ MIT — All skills are freely available and redistributable.
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | json serialization, xml parsing, base64 encoding, url encoding, yaml config, protocol buffers, data serialization, type coercion, character encoding, message encoding [tactical, generation] |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data [tactical, generation] |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | data architecture, stream processing, kafka, change data capture, CDC, event sourcing, lakehouse, data mesh, real-time analytics, batch processing, data pipeline design, how do i build a data pipeline, data streaming, Flink, Spark Streaming [tactical, generation] |
+| [data-oriented-design](skills/coding/data-oriented-design/SKILL.md) | Implements Data-Oriented Design (DOD) patterns including Structure-of-Arrays layouts, cache-efficient data access, zero-allocation hot paths, and vectorized processing for performance-critical Python systems. | data oriented design, DOD, structure of arrays, SoA layout, cache efficiency, AoS to SoA, vectorized processing, data layout optimization [tactical] |
 | [data-pipeline-architecture](skills/coding/data-pipeline-architecture/SKILL.md) | Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale. | data pipeline, ETL architecture, ELT pipeline, medallion architecture, batch processing, stream processing, data quality gates, schema evolution, data ingestion, Spark pipeline, Kafka Streams, data transformation pipeline, how do i build a data pipeline |
 | [data-pipeline-engineering](skills/coding/data-pipeline-engineering/SKILL.md) | Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure. | data pipeline, ETL, ELT, data ingestion, schema evolution, data validation, idempotent processing, data quality, Apache Kafka, Airflow DAG, batch processing, streaming pipeline, how do i build a data pipeline, data engineering, backpressure handling... [tactical, generation] |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | data privacy, anonymization, differential privacy, GDPR, PII protection, privacy-preserving, sensitive data [tactical, generation] |
@@ -881,6 +882,7 @@ MIT — All skills are freely available and redistributable.
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | dependency inversion principle, DIP, dependency injection, inversion of control, IoC, loose coupling, high level low level abstraction, constructor injection, factory pattern, testable architecture [tactical, generation] |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | CVE, dependency management, vulnerability scanning, dependency updates, security patching, SCA, software composition analysis, vulnerability remediation [tactical, generation] |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... | SBOM, SLSA, sigstore, cosign, supply chain attack, dependency pinning, how do i secure my dependencies, package signing [tactical, generation] |
+| [design-for-testability](skills/coding/design-for-testability/SKILL.md) | Implements Design For Testability patterns including dependency injection via Protocols, interface segregation with focused interfaces, pure function boundaries, and composition root factories to enable fast unit tests without infrastructure dependen... | design for testability, DfT, dependency injection, test doubles, pure functions, interface segregation, composition root, protocol-based fakes [tactical, generation] |
 | [design-pattern-anti-patterns](skills/coding/design-pattern-anti-patterns/SKILL.md) | Identifies and remediates anti-patterns arising from misuse of GoF design patterns including over-engineering, gold plating, dependency inversion violations, and structural code smells in Python systems. | anti-patterns, design pattern abuse, over-engineering, gold plating, dependency inversion violation, SOLID violation, code smell, refactor patterns, YAGNI, premature abstraction, GoF misuse, factory explosion, singleton abuse, strategy proliferation, template method rigidity [diagnostic, tactical] |
 | [design-pattern-selection](skills/coding/design-pattern-selection/SKILL.md) | Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics. | design pattern, GoF pattern, factory method, strategy pattern, decorator pattern, observer pattern, how do i choose a pattern, structural pattern [tactical, generation] |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | design patterns, GoF, SOLID, DRY, factory pattern, software architecture, refactoring, SOLID principles [tactical, generation] |
@@ -1373,7 +1375,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (604 skills)
+### Implementation (Build Features) (606 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1506,6 +1508,7 @@ MIT — All skills are freely available and redistributable.
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. |
+| [data-oriented-design](skills/coding/data-oriented-design/SKILL.md) | Coding | Implements Data-Oriented Design (DOD) patterns including Structure-of-Arrays layouts, cache-efficient data access, zero-allocation hot paths, and vectorized processing for performance-critical Python systems. |
 | [data-pipeline-architecture](skills/coding/data-pipeline-architecture/SKILL.md) | Coding | Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale. |
 | [data-pipeline-engineering](skills/coding/data-pipeline-engineering/SKILL.md) | Coding | Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure. |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" |
@@ -1533,6 +1536,7 @@ MIT — All skills are freely available and redistributable.
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Coding | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... |
 | [deployment-orchestration](skills/cncf/deployment-orchestration/SKILL.md) | Cncf | Orchestrates complex multi-stage deployments with dependency management, sequencing rules, and failure handling across interconnected services. |
 | [deployment-patterns](skills/go/deployment-patterns/SKILL.md) | Go | Deploys Go applications with build optimization, multi-stage Docker builds, binary sizing, and deployment strategies for cloud and on-prem. |
+| [design-for-testability](skills/coding/design-for-testability/SKILL.md) | Coding | Implements Design For Testability patterns including dependency injection via Protocols, interface segregation with focused interfaces, pure function boundaries, and composition root factories to enable fast unit tests without infrastructure dependen... |
 | [design-pattern-selection](skills/coding/design-pattern-selection/SKILL.md) | Coding | Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics. |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Coding | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. |
 | [design-patterns-architecture](skills/coding/design-patterns-architecture/SKILL.md) | Coding | Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems. |
@@ -2678,6 +2682,7 @@ MIT — All skills are freely available and redistributable.
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | Implementation |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | Implementation |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | Implementation |
+| [data-oriented-design](skills/coding/data-oriented-design/SKILL.md) | Coding | Implements Data-Oriented Design (DOD) patterns including Structure-of-Arrays layouts, cache-efficient data access, zero-allocation hot paths, and vectorized processing for performance-critical Python systems. | Implementation |
 | [data-pipeline-architecture](skills/coding/data-pipeline-architecture/SKILL.md) | Coding | Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale. | Implementation |
 | [data-pipeline-engineering](skills/coding/data-pipeline-engineering/SKILL.md) | Coding | Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure. | Implementation |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | Implementation |
@@ -2711,6 +2716,7 @@ MIT — All skills are freely available and redistributable.
 | [deployment-orchestration](skills/cncf/deployment-orchestration/SKILL.md) | Cncf | Orchestrates complex multi-stage deployments with dependency management, sequencing rules, and failure handling across interconnected services. | Implementation |
 | [deployment-patterns](skills/go/deployment-patterns/SKILL.md) | Go | Deploys Go applications with build optimization, multi-stage Docker builds, binary sizing, and deployment strategies for cloud and on-prem. | Implementation |
 | [deployment-philosophy](skills/cncf/deployment-philosophy/SKILL.md) | Cncf | Architects multi-stage deployment strategies that balance speed, safety, and reliability through systematic risk assessment and controlled change delivery. | Reference |
+| [design-for-testability](skills/coding/design-for-testability/SKILL.md) | Coding | Implements Design For Testability patterns including dependency injection via Protocols, interface segregation with focused interfaces, pure function boundaries, and composition root factories to enable fast unit tests without infrastructure dependen... | Implementation |
 | [design-pattern-anti-patterns](skills/coding/design-pattern-anti-patterns/SKILL.md) | Coding | Identifies and remediates anti-patterns arising from misuse of GoF design patterns including over-engineering, gold plating, dependency inversion violations, and structural code smells in Python systems. | Review |
 | [design-pattern-selection](skills/coding/design-pattern-selection/SKILL.md) | Coding | Evaluates software problems against the GoF pattern catalog to select optimal design patterns based on structural requirements, complexity constraints, and runtime performance characteristics. | Implementation |
 | [design-patterns-and-principles](skills/coding/design-patterns-and-principles/SKILL.md) | Coding | Implements and explains GoF design patterns (Factory, Observer, Strategy, Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable, extensible software architecture. | Implementation |
