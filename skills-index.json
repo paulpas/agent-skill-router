@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T06:36:56.780809Z",
-  "totalSkills": 1035,
+  "generatedAt": "2026-05-26T07:33:25.869347Z",
+  "totalSkills": 1038,
   "domains": {
     "agent": 274,
     "cncf": 173,
-    "coding": 455,
+    "coding": 458,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 617,
+    "implementation": 620,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -6130,6 +6130,40 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/data-encoding/SKILL.md"
+    },
+    {
+      "name": "data-engineering-architecture",
+      "domain": "coding",
+      "description": "Implements streaming pipeline patterns with Kafka, CDC replication, Delta Lake lakehouse architecture, and orchestrator integration for building scalable data infrastructure.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "data engineering",
+        "streaming pipeline",
+        "kafka",
+        "cdc change data capture",
+        "delta lake",
+        "lakehouse",
+        "dbt",
+        "data quality framework",
+        "airflow",
+        "spark",
+        "etl patterns",
+        "data lake",
+        "apache spark",
+        "kubernetes data",
+        "materialized views",
+        "schema registry",
+        "event sourcing data"
+      ],
+      "relatedSkills": [
+        "data-pipeline-architecture",
+        "engineering-api-design",
+        "production-readiness"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/data-engineering-architecture/SKILL.md"
     },
     {
       "name": "data-ingestion",
@@ -14854,6 +14888,41 @@
       "source": "skills/coding/mixpanel-api/SKILL.md"
     },
     {
+      "name": "ml-ai-engineering-deployment",
+      "domain": "coding",
+      "description": "Implements MLOps deployment patterns including model serving with ONNX/TensorRT, drift detection, feature stores, model registries, and A/B testing for production AI systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "MLOps",
+        "model deployment",
+        "model serving",
+        "ML pipeline",
+        "drift detection",
+        "feature store",
+        "ONNX",
+        "TensorRT",
+        "model registry",
+        "A/B testing ML",
+        "AI engineering",
+        "how do i deploy a machine learning model",
+        "scikit-serve",
+        "Triton inference server",
+        "batch inference",
+        "online inference",
+        "model versioning",
+        "experiment tracking"
+      ],
+      "relatedSkills": [
+        "production-readiness",
+        "engineering-api-design",
+        "data-engineering-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ml-ai-engineering-deployment/SKILL.md"
+    },
+    {
       "name": "ml-pipeline-workflow",
       "domain": "agent",
       "description": "Implements intelligent ml pipeline workflow with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -21248,6 +21317,41 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-architecture-design/SKILL.md"
+    },
+    {
+      "name": "software-architecture-patterns",
+      "domain": "coding",
+      "description": "Implements proven software architecture patterns (CQRS, Event Sourcing, Hexagonal/Clean Architecture, layered architecture, DDD aggregates) for building maintainable enterprise systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "architecture patterns",
+        "CQRS",
+        "event sourcing",
+        "hexagonal architecture",
+        "clean architecture",
+        "layered architecture",
+        "DDD",
+        "domain-driven design",
+        "aggregate roots",
+        "bounded context",
+        "how do i structure my application",
+        "software architecture",
+        "event-driven architecture",
+        "port and adapter",
+        "onion architecture",
+        "read model",
+        "write model",
+        "sagas"
+      ],
+      "relatedSkills": [
+        "engineering-principles",
+        "engineering-api-design",
+        "ddd-context-mapping"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-architecture-patterns/SKILL.md"
     },
     {
       "name": "software-delivery-pipelines",
