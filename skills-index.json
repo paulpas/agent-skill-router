@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T20:05:45.691886Z",
-  "totalSkills": 1058,
+  "generatedAt": "2026-05-26T20:29:20.323044Z",
+  "totalSkills": 1060,
   "domains": {
     "agent": 279,
     "cncf": 173,
-    "coding": 473,
+    "coding": 475,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 639,
+    "implementation": 641,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -10274,6 +10274,33 @@
       "source": "skills/coding/framework-poc-design/SKILL.md"
     },
     {
+      "name": "framework-requirement-adoption",
+      "domain": "coding",
+      "description": "Translates framework requirements into production code architecture through configuration contract generation, type-system enforcement, lifecycle hook mapping, and phased integration patterns for zero-downtime framework adoption.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework requirement adoption",
+        "how do i adapt my code to a framework",
+        "configuration contract",
+        "type-system enforcement",
+        "lifecycle hook mapping",
+        "phased framework integration",
+        "framework requirements implementation",
+        "zero-downtime migration",
+        "architecture adaptation"
+      ],
+      "relatedSkills": [
+        "framework-requirements",
+        "framework-adoption-strategy",
+        "framework-application-methodology",
+        "modular-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-requirement-adoption/SKILL.md"
+    },
+    {
       "name": "framework-requirements",
       "domain": "coding",
       "description": "Defines, evaluates, and validates software framework requirements including non-functional criteria (performance, security, extensibility), weighted selection scoring matrices, proof-of-concept feasibility testing, and architecture decision records for production-grade applications.",
@@ -10390,6 +10417,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-selection/SKILL.md"
+    },
+    {
+      "name": "framework-sourcing-strategy",
+      "domain": "coding",
+      "description": "Discovers and pre-screens software frameworks using ecosystem health analysis, changelog-driven requirement extraction, compatibility matrix evaluation, and AI-assisted signal scoring to shortlist candidates before formal selection.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework discovery",
+        "ecosystem health",
+        "framework sourcing",
+        "how do i find a good framework",
+        "compatibility matrix",
+        "changelog analysis",
+        "framework shortlist",
+        "AI-assisted framework evaluation",
+        "dependency risk assessment",
+        "OSS maturity signals"
+      ],
+      "relatedSkills": [
+        "framework-requirements",
+        "framework-adoption-strategy",
+        "cve-dependency-management",
+        "software-maintainability"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-sourcing-strategy/SKILL.md"
     },
     {
       "name": "framework-utilization",
