@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T00:15:47.698203Z",
-  "totalSkills": 1019,
+  "generatedAt": "2026-05-26T01:25:56.061012Z",
+  "totalSkills": 1022,
   "domains": {
     "agent": 274,
     "cncf": 173,
-    "coding": 439,
+    "coding": 442,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 601,
+    "implementation": 604,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -1379,6 +1379,54 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/api-gateway-domain-routing/SKILL.md"
+    },
+    {
+      "name": "api-idempotency-management",
+      "domain": "coding",
+      "description": "Implements idempotency key patterns for REST and GraphQL APIs including key storage with TTL, duplicate request detection, safe retry semantics, and distributed cache-backed enforcement to prevent duplicate operations during network failures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "idempotency",
+        "idempotency key",
+        "safe retry",
+        "duplicate request prevention",
+        "API retry safety",
+        "request deduplication",
+        "how do i handle retry duplicates"
+      ],
+      "relatedSkills": [
+        "api-versioning-strategies",
+        "rest-api-patterns",
+        "api-security-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-idempotency-management/SKILL.md"
+    },
+    {
+      "name": "api-pagination-patterns",
+      "domain": "coding",
+      "description": "Implements pagination strategies for API endpoints including cursor-based keyset pagination, offset-based pagination, relay-style connection patterns, and performance optimization techniques to handle large datasets without N+1 queries or memory exhaustion.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "pagination patterns",
+        "cursor-based pagination",
+        "keyset pagination",
+        "offset pagination",
+        "relay connections",
+        "how do i paginate API responses",
+        "infinite scroll backend"
+      ],
+      "relatedSkills": [
+        "rest-api-patterns",
+        "graphql-schema-design",
+        "api-development-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/api-pagination-patterns/SKILL.md"
     },
     {
       "name": "api-security-patterns",
@@ -16278,6 +16326,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/openai-api/SKILL.md"
+    },
+    {
+      "name": "openapi-specification-engineering",
+      "domain": "coding",
+      "description": "Engineers production OpenAPI 3.x specifications including schema design, discriminator patterns, reusable components, parameter validation, response schemas, external documentation links, and automated code generation workflows for type-safe client and server implementations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "openapi specification",
+        "openapi 3",
+        "swagger spec",
+        "API spec design",
+        "schema engineering",
+        "openapi codegen",
+        "how do i write an openapi spec"
+      ],
+      "relatedSkills": [
+        "api-contract-first-engineering",
+        "rest-api-patterns",
+        "graphql-schema-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/openapi-specification-engineering/SKILL.md"
     },
     {
       "name": "opencost",
