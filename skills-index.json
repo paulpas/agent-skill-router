@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T13:22:01.999693Z",
-  "totalSkills": 1047,
+  "generatedAt": "2026-05-26T14:22:07.924103Z",
+  "totalSkills": 1048,
   "domains": {
     "agent": 279,
     "cncf": 173,
-    "coding": 462,
+    "coding": 463,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 628,
+    "implementation": 629,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -22001,6 +22001,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/azure-sql-database/SKILL.md"
+    },
+    {
+      "name": "sql-substitution",
+      "domain": "coding",
+      "description": "Implements SQL variable substitution (Oracle &varname, psql :variable, MySQL @var, SQLite3 .variable) with ACCEPT prompts, ampersand escaping, COALESCE defaults, and CI/CD-safe patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "SQL substitution",
+        "ampersand variable",
+        "Oracle substitution",
+        "psql variables",
+        "&varname",
+        "ACCEPT PROMPT",
+        "escaping ampersand",
+        "missing variable handling"
+      ],
+      "relatedSkills": [
+        "linux-shell-command-chaining",
+        "error-handling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/sql-substitution/SKILL.md"
     },
     {
       "name": "sqs",
