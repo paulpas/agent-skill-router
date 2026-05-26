@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1029 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1033 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1029 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1033 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **1029 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1033 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1029 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1033 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 274 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 449 | Software patterns, security, testing, data science |
+| Coding | 453 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -274,17 +274,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 03:28:55 UTC  
-> **Total skills:** 1029  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1029 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 00:29:05 UTC  
+> **Total skills:** 1033  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1033 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1001 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1001 | Ranking penalty for conflicting query terms |
-| Response Profile | 1001 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1004 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1004 | Ranking penalty for conflicting query terms |
+| Response Profile | 1004 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -748,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (449 skills)
+### Coding (453 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -964,8 +964,11 @@ MIT — All skills are freely available and redistributable.
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. | graphql, apollo federation, dataloader, n+1 query, query complexity, graphql schema, graphql authorization, how do i design a graphql api [tactical, generation] |
 | [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. | dataloader, graphql n-plus-one, batch loading, aiodataloader, graphql performance, load per request, graphql batching [tactical, generation] |
 | [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. | graphql error handling, graphql validation, input validation, pydantic graphql, strawberry errors, graphql error codes, graphql middleware [tactical, generation] |
+| [graphql-federation](skills/coding/graphql-federation/SKILL.md) | Implements Apollo Federation 3 patterns (@key, @external, @provides, @requires directives) for building federated microservice graphs with Strawberry Python and Apollo Router. | apollo federation, subgraph, supergraph, entity sharing, @key directive, graphql gateway, federated schema, @external, @provides, @requires, cross-service reference, router configuration |
 | [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. | graphql schema design, SDL, type system, strawberry-graphql, interface, union type, graphql-input-object, graphql-deprecation [tactical, generation] |
+| [graphql-subscriptions](skills/coding/graphql-subscriptions/SKILL.md) | Implements real-time GraphQL subscriptions with Strawberry Python, WebSocket protocol, PubSub patterns, and client reconnection handling for live data delivery. | graphql subscriptions, websocket, pubsub pattern, live updates, graphql-ws, reconnection handling, server push, presence system [tactical, generation] |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. | gRPC, protocol buffers, protobuf, RPC, streaming RPC, unary call, interceptor middleware, grpc service, stub generation, proto file design, bidirectional stream, client streaming, server streaming [tactical, generation] |
+| [grpc-production-readiness](skills/coding/grpc-production-readiness/SKILL.md) | Implements gRPC production operational patterns — graceful shutdown, health checking, service configuration, retry policies, TLS/mTLS, keepalive tuning, flow control, bidirectional stream concurrency, and OpenTelemetry observability for reliable serv... | graceful shutdown, health check, service config, retry policy, keepalive settings, mTLS, flow control, backpressure, how do i make gRPC production-ready [tactical, strategic] |
 | [hexagonal-architecture](skills/coding/hexagonal-architecture/SKILL.md) | Implements hexagonal (ports and adapters) architecture to isolate core business logic from external frameworks, databases, and UI for testable, framework-agnostic systems. | hexagonal architecture, ports and adapters, clean architecture, dependency inversion, core business logic, how do i decouple my code, separate business logic from framework [tactical, generation] |
 | [hint-based-prompting](skills/coding/hint-based-prompting/SKILL.md) | Applies subtle contextual hints instead of explicit step-by-step instructions to guide LLM output naturally, reducing token overhead and improving generation quality through framing rather than commanding. | hints, hint-based prompting, system hints, contextual guidance, token efficiency, prompt framing, how do i use hints in prompts, subtle prompting [tactical, generation] |
 | [html-entity-encoding](skills/coding/html-entity-encoding/SKILL.md) | Encodes HTML special characters (&lt; &gt; &amp; &quot; &#39;) into safe entity references to prevent XSS, ensure correct rendering, and handle character data safely across web frameworks and output contexts. | html entities, entity encoding, html escaping, &amp; ampersand, &lt; less than, &gt; greater than, character references, HTML5 entities, XSS prevention, framework escaping, dangerouslySetInnerHTML, innerHTML, DOMPurify [tactical, generation] |
@@ -1088,6 +1091,7 @@ MIT — All skills are freely available and redistributable.
 | [production-logging](skills/coding/production-logging/SKILL.md) | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. | production logging, structured logging, correlation ID, context propagation, log aggregation, how do i add logging to my app, sensitive data redaction, json logging [tactical, generation] |
 | [production-readiness](skills/coding/production-readiness/SKILL.md) | Evaluates service readiness against Google SRE PRR framework covering reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation for safe production deployment. | production readiness, SRE review, deployment criteria, observability setup, canary deployment, on-call coverage, SLO SLI, error budget, golden signals, how do i know my service is production ready, operational excellence, hypercare period [diagnostic, educational] |
 | [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. | prompt optimization, prompt tuning, A/B test prompts, how do i improve my prompt, few-shot selection, prompt versioning, prompt regression testing, adversarial prompt testing [tactical, diagnostic] |
+| [protobuf-format](skills/coding/protobuf-format/SKILL.md) | Designs protocol buffer proto3 schemas for data serialization covering well-known types, field behavior annotations, schema evolution strategies, and Buf CLI tooling for type contracts. | protocol buffers, proto3 schema, protobuf serialization, buf cli, well-known types, wrapper types, schema evolution, how do i design proto schemas [tactical, generation] |
 | [pulumi](skills/coding/pulumi/SKILL.md) | Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration. | pulumi python, pulumi automation api, pulumi sdk, pulumi stacks, pulumi esc, infrastructure as code python, pulumi program, pulumi deploy [tactical, generation] |
 | [python-module-structure](skills/coding/python-module-structure/SKILL.md) | Designs and organizes Python package directory structures, __init__.py export patterns, type stubs (.pyi), pyproject.toml metadata, and import management following PEP 420 and PEP 561 conventions for production packages. | python module, python package, __init__.py, module structure, pyproject.toml, type stubs, .pyi, circular imports [tactical, generation] |
 | [python-package-publishing](skills/coding/python-package-publishing/SKILL.md) | Builds, verifies, and publishes Python packages with hatchling, hatch-vcs dynamic versioning, twine checks, test pypi, and GitHub Actions release CI/CD. | python package, publish to pypi, how do i publish a python package, build wheel sdist, pyproject.toml hatchling, twine check, test pypi, github actions release [tactical, generation] |
@@ -1380,7 +1384,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (611 skills)
+### Implementation (Build Features) (615 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1633,8 +1637,11 @@ MIT — All skills are freely available and redistributable.
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Coding | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. |
 | [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Coding | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. |
 | [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Coding | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. |
+| [graphql-federation](skills/coding/graphql-federation/SKILL.md) | Coding | Implements Apollo Federation 3 patterns (@key, @external, @provides, @requires directives) for building federated microservice graphs with Strawberry Python and Apollo Router. |
 | [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Coding | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. |
+| [graphql-subscriptions](skills/coding/graphql-subscriptions/SKILL.md) | Coding | Implements real-time GraphQL subscriptions with Strawberry Python, WebSocket protocol, PubSub patterns, and client reconnection handling for live data delivery. |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. |
+| [grpc-production-readiness](skills/coding/grpc-production-readiness/SKILL.md) | Coding | Implements gRPC production operational patterns — graceful shutdown, health checking, service configuration, retry policies, TLS/mTLS, keepalive tuning, flow control, bidirectional stream concurrency, and OpenTelemetry observability for reliable serv... |
 | [grub-uefi-bootloader](skills/linux/grub-uefi-bootloader/SKILL.md) | Linux | Configures GRUB2 bootloader for UEFI firmware boot processes including ESP management, Secure Boot signing, multi-boot setups, kernel parameters, and bootloader recovery procedures. |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Linux | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. |
 | [health](skills/trading/health/SKILL.md) | Trading | "Provides Exchange system health monitoring and connectivity status tracking" |
@@ -1814,6 +1821,7 @@ MIT — All skills are freely available and redistributable.
 | [privacy-ml](skills/coding/privacy-ml/SKILL.md) | Coding | "Implements privacy-preserving machine learning including differential privacy, federated learning, and privacy attack prevention" |
 | [production-logging](skills/coding/production-logging/SKILL.md) | Coding | Implements production logging practices including structured logging, log level management, context propagation, correlation IDs, sensitive data redaction, and log aggregation patterns for actionable observability in software systems. |
 | [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Coding | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. |
+| [protobuf-format](skills/coding/protobuf-format/SKILL.md) | Coding | Designs protocol buffer proto3 schemas for data serialization covering well-known types, field behavior annotations, schema evolution strategies, and Buf CLI tooling for type contracts. |
 | [protocol-first-agent-design](skills/agent/protocol-first-agent-design/SKILL.md) | Agent | Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in. |
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning |
 | [pulumi](skills/coding/pulumi/SKILL.md) | Coding | Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration. |
@@ -2878,9 +2886,12 @@ MIT — All skills are freely available and redistributable.
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Coding | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. | Implementation |
 | [graphql-dataloader-pattern](skills/coding/graphql-dataloader-pattern/SKILL.md) | Coding | Implements the DataLoader batching and caching pattern to solve GraphQL N+1 query problems with per-request loader instances, batch functions, and memoization for efficient data access. | Implementation |
 | [graphql-error-handling-validation](skills/coding/graphql-error-handling-validation/SKILL.md) | Coding | Implements GraphQL error handling and input validation using typed error result unions, Pydantic v2 field validation, error code enums, and middleware-level exception handling for production APIs. | Implementation |
+| [graphql-federation](skills/coding/graphql-federation/SKILL.md) | Coding | Implements Apollo Federation 3 patterns (@key, @external, @provides, @requires directives) for building federated microservice graphs with Strawberry Python and Apollo Router. | Implementation |
 | [graphql-schema-design](skills/coding/graphql-schema-design/SKILL.md) | Coding | Implements GraphQL schema design with SDL-first types, input objects, interfaces, unions, custom scalars, and deprecation directives for type-safe API contracts in Python and Strawberry. | Implementation |
+| [graphql-subscriptions](skills/coding/graphql-subscriptions/SKILL.md) | Coding | Implements real-time GraphQL subscriptions with Strawberry Python, WebSocket protocol, PubSub patterns, and client reconnection handling for live data delivery. | Implementation |
 | [grpc](skills/cncf/grpc/SKILL.md) | Cncf | "gRPC in Remote Procedure Call - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [grpc-patterns](skills/coding/grpc-patterns/SKILL.md) | Coding | Implements gRPC service patterns (unary, streaming, bidirectional), Protocol Buffers design, interceptor middleware, typed error handling, and client/server code generation for Go and Python microservices. | Implementation |
+| [grpc-production-readiness](skills/coding/grpc-production-readiness/SKILL.md) | Coding | Implements gRPC production operational patterns — graceful shutdown, health checking, service configuration, retry policies, TLS/mTLS, keepalive tuning, flow control, bidirectional stream concurrency, and OpenTelemetry observability for reliable serv... | Implementation |
 | [grub-uefi-bootloader](skills/linux/grub-uefi-bootloader/SKILL.md) | Linux | Configures GRUB2 bootloader for UEFI firmware boot processes including ESP management, Secure Boot signing, multi-boot setups, kernel parameters, and bootloader recovery procedures. | Implementation |
 | [harbor](skills/cncf/harbor/SKILL.md) | Cncf | "Configures harbor in cloud-native engineering - container registry for cloud-native deployment and infrastructure management." | Reference |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Linux | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. | Implementation |
@@ -3177,6 +3188,7 @@ MIT — All skills are freely available and redistributable.
 | [prometheus](skills/cncf/prometheus/SKILL.md) | Cncf | "Prometheus in Cloud-Native Engineering - The Prometheus monitoring system" and time series database. | Reference |
 | [prompt-engineer](skills/agent/prompt-engineer/SKILL.md) | Agent | Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [prompt-optimization](skills/coding/prompt-optimization/SKILL.md) | Coding | Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions. | Implementation |
+| [protobuf-format](skills/coding/protobuf-format/SKILL.md) | Coding | Designs protocol buffer proto3 schemas for data serialization covering well-known types, field behavior annotations, schema evolution strategies, and Buf CLI tooling for type contracts. | Implementation |
 | [protocol-first-agent-design](skills/agent/protocol-first-agent-design/SKILL.md) | Agent | Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in. | Implementation |
 | [pulumi](skills/cncf/pulumi/SKILL.md) | Cncf | Implements Pulumi infrastructure as code using Python, TypeScript, and Go for cloud provisioning with state management, stacks, backends, and cross-cloud provisioning | Implementation |
 | [pulumi](skills/coding/pulumi/SKILL.md) | Coding | Integrates with the Pulumi Python SDK and Automation API to manage stacks, resources, programs, ESC (Environments, Secrets, and Configuration), and deployment orchestration. | Implementation |

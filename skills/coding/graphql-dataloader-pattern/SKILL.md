@@ -25,7 +25,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: graphql-schema-design, graphql-error-handling-validation
+  related-skills: graphql-schema-design, graphql-error-handling-validation, graphql-federation, graphql-subscriptions
 ------
 # DataLoader Batching Pattern
 
@@ -717,6 +717,8 @@ When implementing or reviewing a DataLoader pattern, produce:
 |---|---|
 | `graphql-schema-design` | Design the schema structure that determines which fields will have N+1 patterns |
 | `graphql-error-handling-validation` | Handle validation errors and exceptions that occur during batch data fetching |
+| `graphql-federation` | DataLoader is essential inside every federated subgraph to prevent N+1 queries across service boundaries |
+| `graphql-subscriptions` | Batch-associate data with subscription events (e.g., loading user profiles alongside chat messages) |
 
 ---
 

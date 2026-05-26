@@ -30,7 +30,7 @@ metadata:
   - guidance
   - do-dont
   - examples
-  related-skills: rest-api-patterns, api-security-patterns, input-validation
+  related-skills: graphql-federation, graphql-subscriptions, graphql-dataloader-pattern, graphql-schema-design, graphql-error-handling-validation
 ------
 # GraphQL API Design Patterns
 
@@ -944,9 +944,11 @@ When implementing or reviewing a GraphQL API design, produce:
 
 | Skill | Purpose |
 |---|---|
-| `rest-api-patterns` | Migrate from REST to GraphQL; compare pagination, versioning, and error handling patterns |
-| `api-security-patterns` | Broader API security concerns including rate limiting, JWT validation, and CORS configuration |
-| `input-validation` | Validate mutation input objects before they reach resolvers — length limits, regex patterns, type checks |
+| `graphql-federation` | Split a monolithic GraphQL API into federated subgraphs with entity sharing via `@key` directives |
+| `graphql-subscriptions` | Add real-time event streaming on top of the schema using WebSocket subscriptions and PubSub backends |
+| `graphql-dataloader-pattern` | Batch resolver data fetching to eliminate N+1 queries within the GraphQL API |
+| `graphql-schema-design` | Schema modeling conventions, naming standards, and type system best practices for the API |
+| `graphql-error-handling-validation` | Structured error unions, Pydantic input validation, and middleware-level exception handling |
 
 ---
 

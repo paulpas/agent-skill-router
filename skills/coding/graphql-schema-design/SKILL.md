@@ -25,7 +25,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: graphql-dataloader-pattern, graphql-error-handling-validation
+  related-skills: graphql-dataloader-pattern, graphql-error-handling-validation, graphql-federation, graphql-subscriptions
 ------
 # GraphQL Schema Design
 
@@ -620,7 +620,8 @@ When implementing or reviewing a GraphQL schema, produce:
 |---|---|
 | `graphql-dataloader-pattern` | Optimize resolver data fetching to eliminate N+1 queries after schema is designed |
 | `graphql-error-handling-validation` | Handle runtime errors and input validation failures that occur during execution |
-| `api-design` | Broader API design considerations including REST-to-GraphQL migration strategies |
+| `graphql-federation` | Split a well-designed schema into federated subgraphs with entity sharing via `@key` directives |
+| `graphql-subscriptions` | Add real-time event streaming to the schema by defining Subscription root type fields |
 
 ---
 

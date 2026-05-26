@@ -25,7 +25,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: graphql-schema-design, graphql-dataloader-pattern
+  related-skills: graphql-schema-design, graphql-dataloader-pattern, graphql-subscriptions
 ------
 # GraphQL Error Handling and Validation
 
@@ -933,6 +933,7 @@ When implementing or reviewing GraphQL error handling and validation, produce:
 |---|---|
 | `graphql-schema-design` | Design the schema types, interfaces, and unions that include error result types in mutation return values |
 | `graphql-dataloader-pattern` | Handle errors that occur during batch data fetching (missing keys, database failures in batch functions) |
+| `graphql-subscriptions` | Handle subscription-level errors: failed WebSocket connections, structured error unions for auth rejections |
 
 ---
 
