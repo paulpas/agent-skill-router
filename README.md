@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1048 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1050 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1048 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1050 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1048 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1050 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1048 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1050 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1048 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1050 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1048 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1050 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1048 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1050 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1048 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1050 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -109,7 +109,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 463 | Software patterns, security, testing, data science |
+| Coding | 465 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -298,17 +298,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 14:22:09 UTC  
-> **Total skills:** 1048  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1048 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 10:20:44 UTC  
+> **Total skills:** 1050  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1050 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1015 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1015 | Ranking penalty for conflicting query terms |
-| Response Profile | 1015 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1017 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1017 | Ranking penalty for conflicting query terms |
+| Response Profile | 1017 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -777,7 +777,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (463 skills)
+### Coding (465 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -834,7 +834,7 @@ MIT — All skills are freely available and redistributable.
 | [base](skills/coding/base/SKILL.md) | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration | abstract, initialization, pattern, strategy base, strategy-base [tactical, generation] |
 | [bash-tui-menu](skills/coding/bash-tui-menu/SKILL.md) | Implements robust interactive Bash TUI menus with dialog widgets, safe selection handling, cancel paths, and non-interactive fallbacks. | bash tui menu, dialog command, interactive shell script, terminal menu, checklist radiolist, how do i make bash menus, ncurses dialog [tactical, generation] |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" | bayesian inference, bayes, prior, posterior, probabilistic inference, how do i do bayesian [tactical, generation] |
-| [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. | behavioral patterns, observer pattern, state pattern, command pattern, strategy pattern, template method, mediator pattern, chain of responsibility, iterator pattern, object communication [tactical, generation] |
+| [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Implements GoF behavioral design patterns (Strategy, Command, State, Chain of Responsibility, Visitor) to encapsulate algorithms, decouple request senders from receivers, and manage complex control flow in production systems. | behavioral patterns, strategy pattern, command pattern, state machine, chain of responsibility, visitor pattern, algorithm encapsulation, how do i decouple logic flow, interpreter pattern, iterator pattern [tactical, generation] |
 | [best-practices](skills/coding/best-practices/SKILL.md) | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" | markdown best practices, markdown-best-practices, opencode, skills, syntax [tactical, generation] |
 | [bff-pattern](skills/coding/bff-pattern/SKILL.md) | Implements backend-for-frontend (BFF) architecture patterns including client-tailored API backends, data aggregation from multiple microservices, authentication delegation, response shaping, and offline optimization for web, mobile, and partner clien... | backend-for-frontend, bff pattern, client-specific API, data aggregation, response shaping, authentication delegation, how do i tailor APIs for different clients, web backend, mobile backend |
 | [bias-variance-tradeoff](skills/coding/bias-variance-tradeoff/SKILL.md) | "Analyzes bias-variance tradeoff, overfitting, underfitting, and regularization strategies for improving model generalization" | bias-variance, overfitting, underfitting, regularization, generalization, how do I prevent overfitting [tactical, generation] |
@@ -848,6 +848,7 @@ MIT — All skills are freely available and redistributable.
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. | builder pattern, fluent interface, object construction, complex object, step-by-step construction, chained method calls, director pattern [tactical, generation] |
 | [bus](skills/coding/bus/SKILL.md) | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | async, event bus, event-bus, events, typed, eventbridge, event routing [tactical, generation] |
 | [business-rules-engine](skills/coding/business-rules-engine/SKILL.md) | Implements a business rules engine using declarative configuration (JSON/YAML-based rule definitions, condition evaluation chains, and runtime rule execution) to replace hard-coded if/elif branches for frequently-changing domain validations. | business rules engine, rules engine, decision table, condition evaluation, declarative rules, rule validation, how do i evaluate complex rules, compliance rules, pricing rules [tactical, generation] |
+| [caching-architecture](skills/coding/caching-architecture/SKILL.md) | Designs multi-level caching strategies (cache-aside, write-through, write-behind, invalidation patterns) for distributed systems with consistency guarantees, TTL management, cache stampede prevention, and monitoring. | caching strategy, cache-aside pattern, write-through cache, cache invalidation, LRU cache, TTL management, cache stampede, distributed caching, Redis cache, multi-level cache, cache warm-up, read-through cache [tactical, generation] |
 | [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. | cache stampede, LRU eviction, write-through, TTL-based, cache invalidation, multi-tier cache, thundering herd, how do i speed up my app [tactical, generation] |
 | [categorical-encoding](skills/coding/categorical-encoding/SKILL.md) | "Provides Encodes categorical variables using one-hot encoding, target encoding, ordinal encoding, embeddings, and other encoding strategies" | categorical encoding, one-hot encoding, target encoding, ordinal encoding, categorical variables [tactical, generation] |
 | [causal-inference](skills/coding/causal-inference/SKILL.md) | Implements causal models, directed acyclic graphs (DAGs), confounding adjustment, and mediation analysis for causal discovery | causal inference, causality, causal models, DAG, confounding, how do i determine causation, airflow, data pipelines [tactical, generation] |
@@ -873,6 +874,7 @@ MIT — All skills are freely available and redistributable.
 | [confidence-intervals](skills/coding/confidence-intervals/SKILL.md) | "Provides Constructs confidence intervals using bootstrap, analytical methods, and uncertainty quantification for parameter estimation" | confidence intervals, bootstrap, uncertainty quantification, confidence bounds, credible intervals [tactical, generation] |
 | [config](skills/coding/config/SKILL.md) | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | configuration, management, pydantic config, pydantic-based, pydantic-config [tactical, generation] |
 | [configuration-management](skills/coding/configuration-management/SKILL.md) | Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications. | configuration management, config loading, pydantic settings, .env files, environment variables, secrets management, config schema validation, how do i manage application configuration, layered configuration [tactical, generation] |
+| [configuration-management-patterns](skills/coding/configuration-management-patterns/SKILL.md) | Designs production configuration management with schema validation, hierarchical merging of config sources, hot reload capabilities, secret injection from vaults, and environment-specific defaults for reliable deployment. | configuration management, config validation, schema validation, config hot reload, secret injection, HashiCorp Vault, environment configuration, hierarchical config, Pydantic settings, how do i manage application configuration, config merging, env var overrides [tactical, generation] |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" | correlation analysis, covariance, multivariate analysis, correlation, pearson, spearman, feature relationships [tactical, generation] |
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. | cqrs, command query responsibility segregation, mediator pattern, outbox pattern, idempotent commands, saga pattern, read write separation, event bus [tactical, generation] |
 | [creational-design-patterns](skills/coding/creational-design-patterns/SKILL.md) | Implements GoF creational patterns (Factory Method, Builder, Singleton, Abstract Factory, Prototype) to control object creation, manage composition, and reduce coupling in Python systems. | creational patterns, factory method, builder pattern, singleton, abstract factory, prototype pattern, object creation, GoF design patterns [tactical, generation] |
@@ -1423,7 +1425,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (629 skills)
+### Implementation (Build Features) (631 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1493,7 +1495,7 @@ MIT — All skills are freely available and redistributable.
 | [base](skills/coding/base/SKILL.md) | Coding | "Abstract base strategy pattern with initialization guards, typed abstract" methods, and conviction scoring integration |
 | [bash-tui-menu](skills/coding/bash-tui-menu/SKILL.md) | Coding | Implements robust interactive Bash TUI menus with dialog widgets, safe selection handling, cancel paths, and non-interactive fallbacks. |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | Coding | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" |
-| [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Coding | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. |
+| [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Coding | Implements GoF behavioral design patterns (Strategy, Command, State, Chain of Responsibility, Visitor) to encapsulate algorithms, decouple request senders from receivers, and manage complex control flow in production systems. |
 | [best-practices](skills/coding/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" |
 | [best-practices](skills/go/best-practices/SKILL.md) | Go | Enforces Go idioms and best practices including error handling, interface design, testing conventions, and code organization for maintainable applications. |
 | [bff-pattern](skills/coding/bff-pattern/SKILL.md) | Coding | Implements backend-for-frontend (BFF) architecture patterns including client-tailored API backends, data aggregation from multiple microservices, authentication delegation, response shaping, and offline optimization for web, mobile, and partner clien... |
@@ -1509,6 +1511,7 @@ MIT — All skills are freely available and redistributable.
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Coding | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems |
 | [business-rules-engine](skills/coding/business-rules-engine/SKILL.md) | Coding | Implements a business rules engine using declarative configuration (JSON/YAML-based rule definitions, condition evaluation chains, and runtime rule execution) to replace hard-coded if/elif branches for frequently-changing domain validations. |
+| [caching-architecture](skills/coding/caching-architecture/SKILL.md) | Coding | Designs multi-level caching strategies (cache-aside, write-through, write-behind, invalidation patterns) for distributed systems with consistency guarantees, TTL management, cache stampede prevention, and monitoring. |
 | [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Coding | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. |
 | [canary-deployment](skills/cncf/canary-deployment/SKILL.md) | Cncf | Orchestrates canary deployment strategies with gradual traffic promotion, automated health monitoring, and rollback triggers for progressive risk management. |
 | [candle-data](skills/trading/candle-data/SKILL.md) | Trading | "OHLCV candle data processing, timeframe management, and validation for" trading algorithms |
@@ -1543,6 +1546,7 @@ MIT — All skills are freely available and redistributable.
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton |
 | [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications. |
 | [configuration-management](skills/go/configuration-management/SKILL.md) | Go | Manages application configuration in Go with environment variables, YAML/JSON parsing, validation, defaults, and hierarchy for multi-environment deployments. |
+| [configuration-management-patterns](skills/coding/configuration-management-patterns/SKILL.md) | Coding | Designs production configuration management with schema validation, hierarchical merging of config sources, hot reload capabilities, secret injection from vaults, and environment-specific defaults for reliable deployment. |
 | [correlation-analysis](skills/coding/correlation-analysis/SKILL.md) | Coding | "Analyzes correlation, covariance, and multivariate relationships between variables using statistical methods and visualization techniques" |
 | [correlation-risk](skills/trading/correlation-risk/SKILL.md) | Trading | "Implements correlation breakdown and portfolio diversification risk for risk management and algorithmic trading execution." |
 | [cost-optimization](skills/cncf/cost-optimization/SKILL.md) | Cncf | Implements cloud cost optimization strategies (right-sizing, reserved instances, spot instances, multi-cloud comparison) for Kubernetes and cloud-native deployments. |
@@ -2617,7 +2621,7 @@ MIT — All skills are freely available and redistributable.
 | [bash-tui-menu](skills/coding/bash-tui-menu/SKILL.md) | Coding | Implements robust interactive Bash TUI menus with dialog widgets, safe selection handling, cancel paths, and non-interactive fallbacks. | Implementation |
 | [bayesian-inference](skills/coding/bayesian-inference/SKILL.md) | Coding | "Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models" | Implementation |
 | [bdistill-behavioral-xray](skills/agent/bdistill-behavioral-xray/SKILL.md) | Agent | Implements intelligent bdistill behavioral xray with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
-| [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Coding | Implements behavioral design patterns (Observer, State, Command, Strategy, Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication, control flow, and algorithmic variation in Python applications. | Implementation |
+| [behavioral-design-patterns](skills/coding/behavioral-design-patterns/SKILL.md) | Coding | Implements GoF behavioral design patterns (Strategy, Command, State, Chain of Responsibility, Visitor) to encapsulate algorithms, decouple request senders from receivers, and manage complex control flow in production systems. | Implementation |
 | [behavioral-modes](skills/agent/behavioral-modes/SKILL.md) | Agent | Implements intelligent behavioral modes with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [best-practices](skills/cncf/best-practices/SKILL.md) | Cncf | "Cloud Native Computing Foundation (CNCF) architecture best practices" for production-grade Kubernetes deployments. Covers service mesh, CNI, GitOps, CI/CD, observability, security, networking, and scaling patterns across the CNCF landscape. | Reference |
 | [best-practices](skills/coding/best-practices/SKILL.md) | Coding | "Provides Markdown best practices for OpenCode skills - syntax rules, common pitfalls, and coding practices for documentation consistency" | Implementation |
@@ -2640,6 +2644,7 @@ MIT — All skills are freely available and redistributable.
 | [buildpacks](skills/cncf/buildpacks/SKILL.md) | Cncf | "Provides Buildpacks in Cloud-Native Engineering - Turn source code into container images without Dockerfiles" | Reference |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | Implementation |
 | [business-rules-engine](skills/coding/business-rules-engine/SKILL.md) | Coding | Implements a business rules engine using declarative configuration (JSON/YAML-based rule definitions, condition evaluation chains, and runtime rule execution) to replace hard-coded if/elif branches for frequently-changing domain validations. | Implementation |
+| [caching-architecture](skills/coding/caching-architecture/SKILL.md) | Coding | Designs multi-level caching strategies (cache-aside, write-through, write-behind, invalidation patterns) for distributed systems with consistency guarantees, TTL management, cache stampede prevention, and monitoring. | Implementation |
 | [caching-strategies](skills/coding/caching-strategies/SKILL.md) | Coding | Implements caching strategies (cache-aside, write-through, write-behind, multi-tier architecture, stampede prevention) for high-performance data access layers with consistency guarantees. | Implementation |
 | [calico](skills/cncf/calico/SKILL.md) | Cncf | "Calico in Cloud Native Security - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [canary-deployment](skills/cncf/canary-deployment/SKILL.md) | Cncf | Orchestrates canary deployment strategies with gradual traffic promotion, automated health monitoring, and rollback triggers for progressive risk management. | Implementation |
@@ -2722,6 +2727,7 @@ MIT — All skills are freely available and redistributable.
 | [config](skills/coding/config/SKILL.md) | Coding | "Pydantic-based configuration management with frozen models, nested hierarchy" TOML/env parsing, and module-level singleton | Implementation |
 | [configuration-management](skills/coding/configuration-management/SKILL.md) | Coding | Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications. | Implementation |
 | [configuration-management](skills/go/configuration-management/SKILL.md) | Go | Manages application configuration in Go with environment variables, YAML/JSON parsing, validation, defaults, and hierarchy for multi-environment deployments. | Implementation |
+| [configuration-management-patterns](skills/coding/configuration-management-patterns/SKILL.md) | Coding | Designs production configuration management with schema validation, hierarchical merging of config sources, hot reload capabilities, secret injection from vaults, and environment-specific defaults for reliable deployment. | Implementation |
 | [container-inspector](skills/agent/container-inspector/SKILL.md) | Agent | Implements intelligent container inspector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [container-linux](skills/cncf/container-linux/SKILL.md) | Cncf | "Provides Flatcar Container Linux in Cloud-Native Engineering - container Linux" | Reference |
 | [container-registry](skills/cncf/container-registry/SKILL.md) | Cncf | "Provides Stores and manages container images with integration to AKS and Azure services" | Reference |

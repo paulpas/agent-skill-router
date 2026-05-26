@@ -1,50 +1,45 @@
 ---
 name: behavioral-design-patterns
-description: Implements behavioral design patterns (Observer, State, Command, Strategy,
-  Template Method, Mediator, Chain of Responsibility, Iterator) to manage object communication,
-  control flow, and algorithmic variation in Python applications.
+description: Implements GoF behavioral design patterns (Strategy, Command, State, Chain of Responsibility, Visitor) to encapsulate algorithms, decouple request senders from receivers, and manage complex control flow in production systems.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: behavioral patterns, observer pattern, state pattern, command pattern,
-    strategy pattern, template method, mediator pattern, chain of responsibility,
-    iterator pattern, object communication
+  triggers: behavioral patterns, strategy pattern, command pattern, state machine, chain of responsibility, visitor pattern, algorithm encapsulation, how do i decouple logic flow, interpreter pattern, iterator pattern
+  role: implementation
+  scope: implementation
+  output-format: code
+  content-types: [code, guidance, do-dont, examples]
+  related-skills: structural-design-patterns, gof-design-patterns-catalog, refactoring-techniques
+  author: https://github.com/openai/skill-router-contributors
+  source: https://github.com/paulpas/git/agent-skill-router
   archetypes:
-  - tactical
-  - generation
+    - tactical
+    - generation
   anti_triggers:
-  - brainstorming
-  - vague ideation
-  - code golf
-  - over-engineering
+    - brainstorming
+    - vague ideation
+    - code golf
+    - over-engineering
   response_profile:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  role: implementation
-  scope: implementation
-  output-format: code
-  content-types:
-  - code
-  - guidance
-  - do-dont
-  - examples
-  related-skills: design-patterns-and-principles, event-driven-architecture, refactoring,
-    modular-design
-------
+---
+
 # Behavioral Design Patterns
 
-Implements behavioral design patterns to manage object communication, control flow, and algorithmic variation. These patterns focus on responsibilities between objects — how they interact, delegate, and cooperate — rather than on object creation or structural composition. Each pattern provides a proven solution for common behavioral problems in software systems.
+Implements GoF behavioral design patterns to encapsulate algorithms, decouple request senders from receivers, manage complex state transitions, and traverse object structures — all while keeping domain logic testable and maintainable.
 
 ## TL;DR Checklist
 
-- [ ] Identify the behavioral concern: communication, state transitions, algorithm selection, request handling, or iteration
-- [ ] Select the single best-fitting pattern from the guide below — patterns solve specific problems
-- [ ] Use Python's built-in abstractions (ABC, protocols, dataclasses) for clean interfaces
-- [ ] Prefer composition over inheritance for behavioral variation (Strategy over subclassing)
-- [ ] Ensure each pattern is used where it actually solves a problem — not added because it "sounds right"
+- [ ] Identify the behavioral concern: algorithm selection (Strategy), workflow orchestration (Command), state-driven behavior (State), multi-step processing (Chain of Responsibility), or data structure traversal (Visitor)
+- [ ] Define a clear protocol interface before implementing concrete strategies/commands/handlers
+- [ ] Keep each handler/command/state one responsibility — no cross-cutting logic
+- [ ] Use `typing.Protocol` for interfaces, not ABC where simpler is sufficient
+- [ ] Prefer composition over inheritance for behavioral delegation
+- [ ] Write unit tests for every concrete strategy/command/handler
 
 ---
 
@@ -52,1228 +47,901 @@ Implements behavioral design patterns to manage object communication, control fl
 
 Use this skill when:
 
-- Multiple objects need to be notified when another object's state changes (Observer)
-- An object must change its behavior based on its internal state, and conditional logic is growing unmanageable (State)
-- You want to encapsulate a request as an object with parameters, allowing queuing, logging, or undo operations (Command)
-- Multiple algorithms need to be interchangeable at runtime without the client knowing which one is selected (Strategy)
-- A class has a fixed algorithm skeleton but allows subclasses to override specific steps (Template Method)
-- Many objects communicate directly through tight coupling and you need to centralize coordination (Mediator)
-- Requests need to be passed along a chain of potential handlers until one processes them (Chain of Responsibility)
-- You need to traverse a collection without exposing its internal representation (Iterator)
+- You have multiple algorithms that need to be interchangeable at runtime (e.g., payment processing: credit card, PayPal, crypto)
+- You need to encapsulate a request as an object with parameters, callbacks, and undo/redo capability
+- An object's behavior changes based on its internal state and you want to eliminate conditional branching
+- You have a multi-step pipeline where each step might skip or pass data to the next handler
+- You need to perform operations across objects in a composite structure without coupling the operation to the element classes
 
 ---
 
 ## When NOT to Use
 
-Avoid these patterns when:
+Avoid this skill for:
 
-- The behavior is simple enough that direct function calls or conditionals suffice — don't add pattern overhead for two cases
-- A language feature already solves the problem elegantly (e.g., Python decorators instead of Observer for simple notifications)
-- You're designing from scratch and can use Python's built-in protocols (`collections.abc`) instead of custom interfaces
-- The pattern introduces more complexity than it removes — if a single if/elif handles all cases cleanly, use if/elif
+- Simple `if/elif` branches with two alternatives — use `enum` + `match` instead (over-engineering)
+- Operations that don't need runtime interchangeability — compile-time polymorphism is simpler
+- Deeply nested inheritance hierarchies — Chain of Responsibility and Visitor should stay shallow (max 5 levels)
+- When a plain data class with validation would solve the problem
 
 ---
 
 ## Core Workflow
 
-1. **Identify the Behavioral Concern** — Determine what behavior problem you're solving: notification, state change, request encapsulation, algorithm selection, coordination, or traversal.
-   **Checkpoint:** Can you describe the problem in one sentence starting with "When X happens, Y needs to..."? If not, the problem isn't well-defined yet.
+1. **Classify the Behavioral Concern** — Determine which pattern family fits: Strategy (algorithm swapping), Command (request encapsulation), State (state-driven behavior), Chain of Responsibility (pipeline processing), or Visitor (operation separation). **Checkpoint:** Only one pattern should be primary; if two seem needed, prefer combining them at a higher layer.
 
-2. **Select the Pattern** — Match the concern to the appropriate pattern from the reference guide below. One pattern per problem.
+2. **Define the Protocol** — Create a `typing.Protocol` that captures the public interface. All concrete implementations must satisfy this contract. **Checkpoint:** The protocol should express *what* behavior is needed, not *how*.
 
-3. **Define the Interface** — Use `typing.Protocol` or `abc.ABC` to define clean, minimal interfaces. Keep them focused on what collaborators need, not implementation details.
-   **Checkpoint:** Does the interface expose only what the pattern requires? Remove any methods that don't belong in the behavioral contract.
+3. **Implement Concrete Classes** — Write each concrete strategy/command/handler/state with explicit typing and docstrings. Each class receives its dependencies via `__init__` injection. **Checkpoint:** No direct imports between sibling concrete classes — they communicate only through the protocol interface.
 
-4. **Implement Concrete Participants** — Write the concrete classes that implement the pattern. Each should have a single clear responsibility within the pattern structure.
-   **Checkpoint:** Can you test each concrete participant in isolation? If not, responsibilities may be blurred.
+4. **Wire the Context** — Inject the chosen behavior into a context object that delegates to it. The context never knows about specific implementations at runtime. **Checkpoint:** Context construction happens at composition root, not inside methods.
 
-5. **Wire Together at Runtime** — Connect subjects to observers, commands to receivers, strategies to context. This wiring belongs in composition roots (factories, dependency injection), not inside the objects themselves.
-   **Checkpoint:** Is the system configurable without modifying existing pattern code? New observers/strategies should require no changes to existing classes.
+5. **Test Independently** — Write unit tests for each concrete implementation against the protocol. Use `unittest.mock` or real fixtures. **Checkpoint:** Test behavior (observable outcomes), not internal state mutations.
 
 ---
 
-## Implementation Patterns & Reference Guide
+## Implementation Patterns
 
-### Pattern 1: Observer — Publish/Subscribe Communication
+### Pattern 1: Strategy — Algorithm Selection at Runtime
 
-The Observer pattern defines a one-to-many dependency between objects so that when one object (the subject) changes state, all its dependents (observers) are notified and updated automatically. Use it for event systems, pub/sub architectures, reactive UIs, and any situation where multiple components must stay synchronized with a changing data source.
-
-```python
-from __future__ import annotations
-import abc
-from typing import Any
-
-
-class Observer(abc.ABC):
-    """Protocol for objects that react to state changes."""
-
-    @abc.abstractmethod
-    def update(self, subject: Any, *args: Any) -> None: ...
-
-
-class Subject(abc.ABC):
-    """Base class for observable objects with attach/detach/notify lifecycle."""
-
-    def __init__(self) -> None:
-        self._observers: list[Observer] = []
-
-    def attach(self, observer: Observer) -> None:
-        if observer not in self._observers:
-            self._observers.append(observer)
-
-    def detach(self, observer: Observer) -> None:
-        self._observers.remove(observer)
-
-    def notify(self, *args: Any) -> None:
-        for observer in self._observers:
-            observer.update(self, *args)
-
-
-class StockPrice(Subject):
-    """Observable that tracks a stock's current price and notifies when it changes."""
-
-    def __init__(self, ticker: str) -> None:
-        super().__init__()
-        self._ticker = ticker
-        self._price: float = 0.0
-
-    @property
-    def price(self) -> float:
-        return self._price
-
-    @price.setter
-    def price(self, value: float) -> None:
-        if self._price == value:
-            return  # No change — skip notification
-        old_price = self._price
-        self._price = value
-        self.notify(f"{self._ticker} changed from ${old_price:.2f} to ${value:.2f}")
-
-
-class PriceAlert(Observer):
-    """Sends email alerts when price crosses a threshold."""
-
-    def __init__(self, ticker: str, alert_threshold: float) -> None:
-        self.ticker = ticker
-        self.alert_threshold = alert_threshold
-        self._alerted = False
-
-    def update(self, subject: Any, message: str) -> None:
-        if not isinstance(subject, StockPrice):
-            return
-        # Alert when price drops below threshold (once per drop event)
-        if subject.price < self.alert_threshold and not self._alerted:
-            print(f"[ALERT] {message} — threshold: ${self.alert_threshold}")
-            self._alerted = True
-
-    def reset(self) -> None:
-        self._alerted = False
-
-
-class PriceLogger(Observer):
-    """Logs every price change for auditing."""
-
-    def update(self, subject: Any, message: str) -> None:
-        if isinstance(subject, StockPrice):
-            print(f"[LOG]  {subject.ticker} | {message}")
-
-
-# Usage example
-if __name__ == "__main__":
-    stock = StockPrice("AAPL")
-    alert = PriceAlert("AAPL", 150.0)
-    logger = PriceLogger()
-
-    stock.attach(alert)
-    stock.attach(logger)
-
-    stock.price = 160.0   # Both notified
-    stock.price = 149.50  # Alert triggers (below $150 threshold)
-    stock.price = 149.50  # No notification (no change)
-
-    stock.detach(alert)
-    stock.price = 130.0   # Only logger notified
-```
-
-**When to prefer Observer:**
-- Multiple components react to the same event
-- You want loose coupling between the event source and its handlers
-- The set of observers is dynamic (attach/detach at runtime)
-
-**When NOT to use Observer:**
-- A single handler suffices — a direct method call is simpler
-- Events are fire-and-forget with no need to track subscribers
-- Python's `asyncio.Event` or signals modules already solve it for your framework
-
----
-
-### Pattern 2: State — Context Behavior Based on Internal State
-
-The State pattern allows an object to alter its behavior when its internal state changes. The object appears to change its class. Use it when a conditional-based state machine has many states and transitions, making `if/elif` chains unwieldy and error-prone. Each state becomes a separate class with its own behavior.
-
-```python
-from __future__ import annotations
-import abc
-
-
-class OrderState(abc.ABC):
-    """Protocol defining all valid operations for any order state."""
-
-    @abc.abstractmethod
-    def confirm(self, order: "Order") -> None: ...
-
-    @abc.abstractmethod
-    def cancel(self, order: "Order") -> None: ...
-
-    @abc.abstractmethod
-    def ship(self, order: "Order") -> None: ...
-
-    @abc.abstractmethod
-    def deliver(self, order: "Order") -> None: ...
-
-    @property
-    @abc.abstractmethod
-    def name(self) -> str: ...
-
-
-class PendingState(OrderState):
-    """Initial state: order created but not yet confirmed."""
-
-    @property
-    def name(self) -> str:
-        return "pending"
-
-    def confirm(self, order: "Order") -> None:
-        print(f"[{order.id}] Order confirmed — transitioning to paid")
-        order._state = PaidState()
-
-    def cancel(self, order: "Order") -> None:
-        print(f"[{order.id}] Order cancelled from pending state")
-        order._state = CancelledState()
-
-    def ship(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot ship an unconfirmed order (current: {self.name})")
-
-    def deliver(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot deliver an unconfirmed order (current: {self.name})")
-
-
-class PaidState(OrderState):
-    """Order confirmed and payment received — ready to ship."""
-
-    @property
-    def name(self) -> str:
-        return "paid"
-
-    def confirm(self, order: "Order") -> None:
-        raise RuntimeError(f"Order already confirmed (current: {self.name})")
-
-    def cancel(self, order: "Order") -> None:
-        print(f"[{order.id}] Order cancelled after payment — refund initiated")
-        order._state = CancelledState()
-
-    def ship(self, order: "Order") -> None:
-        print(f"[{order.id}] Order shipped from paid state")
-        order._state = ShippedState()
-
-    def deliver(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot deliver an unshipped order (current: {self.name})")
-
-
-class ShippedState(OrderState):
-    """Order has been shipped — awaiting delivery confirmation."""
-
-    @property
-    def name(self) -> str:
-        return "shipped"
-
-    def confirm(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot confirm a shipped order (current: {self.name})")
-
-    def cancel(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot cancel a shipped order (current: {self.name}) — initiate return instead")
-
-    def ship(self, order: "Order") -> None:
-        raise RuntimeError(f"Order already shipped (current: {self.name})")
-
-    def deliver(self, order: "Order") -> None:
-        print(f"[{order.id}] Order delivered from shipped state")
-        order._state = DeliveredState()
-
-
-class DeliveredState(OrderState):
-    """Order confirmed as delivered — final state."""
-
-    @property
-    def name(self) -> str:
-        return "delivered"
-
-    def confirm(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot confirm a delivered order (current: {self.name})")
-
-    def cancel(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot cancel a delivered order (current: {self.name}) — initiate return instead")
-
-    def ship(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot ship a delivered order (current: {self.name})")
-
-    def deliver(self, order: "Order") -> None:
-        raise RuntimeError(f"Order already delivered (current: {self.name})")
-
-
-class CancelledState(OrderState):
-    """Order has been cancelled — final state."""
-
-    @property
-    def name(self) -> str:
-        return "cancelled"
-
-    def confirm(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot confirm a cancelled order (current: {self.name})")
-
-    def cancel(self, order: "Order") -> None:
-        raise RuntimeError(f"Order already cancelled (current: {self.name})")
-
-    def ship(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot ship a cancelled order (current: {self.name})")
-
-    def deliver(self, order: "Order") -> None:
-        raise RuntimeError(f"Cannot deliver a cancelled order (current: {self.name})")
-
-
-class Order:
-    """Context object whose behavior changes based on internal state."""
-
-    def __init__(self, id: str) -> None:
-        self.id = id
-        self._state: OrderState = PendingState()
-
-    @property
-    def status(self) -> str:
-        return self._state.name
-
-    def confirm(self) -> None:
-        self._state.confirm(self)
-
-    def cancel(self) -> None:
-        self._state.cancel(self)
-
-    def ship(self) -> None:
-        self._state.ship(self)
-
-    def deliver(self) -> None:
-        self._state.deliver(self)
-
-
-# Usage example
-if __name__ == "__main__":
-    order = Order("ORD-1234")
-    print(f"Status: {order.status}")  # pending
-
-    order.confirm()  # → paid
-    print(f"Status: {order.status}")
-
-    order.ship()  # → shipped
-    print(f"Status: {order.status}")
-
-    order.deliver()  # → delivered
-    print(f"Status: {order.status}")
-
-    try:
-        order.cancel()  # RuntimeError — cannot cancel a delivered order
-    except RuntimeError as e:
-        print(f"Blocked: {e}")
-```
-
-**When to prefer State:**
-- A class has behavior that depends on its internal state
-- Conditional logic (`if state == X`) is scattered across many methods
-- You want to add new states without modifying existing state-handling code (Open/Closed Principle)
-
-**Anti-pattern warning — don't use State when:**
-- There are only 2-3 states and transitions are simple — a single boolean or enum with guards may be cleaner
-- The "state" is really just data that needs to be stored/retrieved, not behavior that changes
-
----
-
-### Pattern 3: Command — Encapsulate Requests as Objects
-
-The Command pattern encapsulates a request (including receiver, method, and arguments) into a standalone object. This enables queuing requests, logging operations, supporting undo/redo, and decoupling the invoker from the receiver. Use it for transactional operations, macro commands, command-line interfaces, and any scenario where you need to parameterize actions.
-
-```python
-from __future__ import annotations
-import abc
-from typing import Any
-
-
-class Command(abc.ABC):
-    """Abstract base for all commands."""
-
-    @abc.abstractmethod
-    def execute(self) -> None: ...
-
-    @abc.abstractmethod
-    def undo(self) -> None: ...
-
-
-class Invoker:
-    """Holds and executes commands. Does not know what they do internally."""
-
-    def __init__(self) -> None:
-        self._history: list[Command] = []
-
-    def execute_command(self, command: Command) -> None:
-        command.execute()
-        self._history.append(command)
-
-    def undo_last(self) -> None:
-        if not self._history:
-            print("[INFO] Nothing to undo")
-            return
-        last = self._history.pop()
-        last.undo()
-
-
-class TextEditorCommand(Command):
-    """Text editing command with full undo support."""
-
-    def __init__(self, text: str, action: str, position: int) -> None:
-        self._text = text
-        self._action = action  # "insert" or "delete"
-        self._position = position
-        self._deleted_text: str = ""
-
-    def execute(self) -> None:
-        if self._action == "insert":
-            inserted = self._text[self._position:self._position] + self._deleted_text
-            print(f"[EXECUTE] Insert '{self._deleted_text}' at position {self._position}")
-        elif self._action == "delete":
-            start = self._position
-            end = start + len(self._deleted_text)
-            removed = self._text[start:end]
-            print(f"[EXECUTE] Delete '{removed}' from position {start}")
-
-    def undo(self) -> None:
-        if self._action == "insert":
-            print(f"[UNDO] Remove inserted text at position {self._position}")
-        elif self._action == "delete":
-            print(f"[UNDO] Restore deleted text '{self._deleted_text}' at position {self._position}")
-
-
-# ── Command Pattern for a Database ──────────────────────────────
-
-class DatabaseCommand(Command):
-    """Generic command that executes SQL and tracks affected rows for undo."""
-
-    def __init__(self, query: str, params: tuple[Any, ...]) -> None:
-        self.query = query
-        self.params = params
-        self.affected_ids: list[int] = []  # For undo tracking
-
-
-class CreateProductCommand(DatabaseCommand):
-    """Creates a new product record."""
-
-    def execute(self) -> None:
-        print(f"EXECUTE CREATE PRODUCT: {self.query} | params={self.params}")
-        # In real code: self.cursor.execute(self.query, self.params)
-        self.affected_ids = [101]  # Simulated inserted row ID
-
-    def undo(self) -> None:
-        for pid in self.affected_ids:
-            print(f"UNDO CREATE PRODUCT: DELETE FROM products WHERE id={pid}")
-
-
-class UpdateProductCommand(DatabaseCommand):
-    """Updates an existing product."""
-
-    def __init__(self, query: str, params: tuple[Any, ...], old_value: Any) -> None:
-        super().__init__(query, params)
-        self._old_value = old_value
-
-    def execute(self) -> None:
-        print(f"EXECUTE UPDATE PRODUCT: {self.query} | params={self.params}")
-
-    def undo(self) -> None:
-        print(f"UNDO UPDATE PRODUCT: Restore value to '{self._old_value}'")
-
-
-class DeleteProductCommand(DatabaseCommand):
-    """Deletes a product record (soft delete with undo support)."""
-
-    def __init__(self, query: str, params: tuple[Any, ...], restored_data: dict) -> None:
-        super().__init__(query, params)
-        self._restored_data = restored_data
-
-    def execute(self) -> None:
-        print(f"EXECUTE DELETE PRODUCT: {self.query} | params={self.params}")
-
-    def undo(self) -> None:
-        print(f"UNDO DELETE PRODUCT: Restore data {self._restored_data}")
-
-
-# MacroCommand: composite command — executes a sequence as one unit
-class MacroCommand(Command):
-    """Combines multiple commands into a single atomic operation."""
-
-    def __init__(self, commands: list[Command]) -> None:
-        self.commands = commands
-
-    def execute(self) -> None:
-        print("=== MACRO COMMAND START ===")
-        for cmd in self.commands:
-            cmd.execute()
-        print("=== MACRO COMMAND END ===")
-
-    def undo(self) -> None:
-        print("=== MACRO UNDO (reverse order) ===")
-        for cmd in reversed(self.commands):
-            cmd.undo()
-        print("=== MACRO UNDO COMPLETE ===")
-
-
-# Usage example
-if __name__ == "__main__":
-    invoker = Invoker()
-
-    create_cmd = CreateProductCommand(
-        "INSERT INTO products (name, price) VALUES (%s, %s)",
-        ("Widget Pro", 29.99),
-    )
-    update_cmd = UpdateProductCommand(
-        "UPDATE products SET price = %s WHERE name = %s",
-        (34.99, "Widget Pro"),
-        old_value=29.99,
-    )
-
-    invoker.execute_command(create_cmd)   # Execute create
-    invoker.execute_command(update_cmd)   # Execute update
-    invoker.undo_last()                    # Undo update
-    invoker.undo_last()                    # Undo create
-```
-
-**When to prefer Command:**
-- You need to queue, log, or delay requests
-- Undo/redo functionality is required
-- The invoker and receiver have different lifetimes or processes
-- You want to parameterize operations with different arguments at runtime
-
----
-
-### Pattern 4: Strategy — Interchangeable Algorithms
-
-The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. The strategy lets the algorithm vary independently from clients that use it. Use it when you have multiple similar algorithms (sorting, pricing, routing, validation) and need to select one at runtime based on context or configuration. This is the recommended alternative to conditional logic or subclassing for algorithm selection.
+Encapsulates interchangeable algorithms behind a common protocol. The context delegates to whichever strategy is injected, enabling runtime algorithm swapping without conditional branching.
 
 ```python
 from __future__ import annotations
 import abc
 from dataclasses import dataclass
+from typing import Protocol
 
 
 @dataclass(frozen=True)
-class PriceCalculation:
-    """Result of a pricing strategy computation."""
-    subtotal: float
-    discount_pct: float
-    tax_amount: float
-    total: float
+class Order:
+    """Immutable order representation for strategy pattern examples."""
+    item: str
+    quantity: int
+    unit_price: float
+    customer_tier: str  # "standard", "premium", "vip"
+
+    @property
+    def subtotal(self) -> float:
+        return self.quantity * self.unit_price
 
 
-class PricingStrategy(abc.ABC):
-    """Protocol for pricing strategies — each computes discount and tax independently."""
+class DiscountStrategy(Protocol):
+    """Protocol for discount calculation strategies."""
 
-    @abc.abstractmethod
-    def compute_discount(self, subtotal: float) -> float: ...
+    def calculate_discount(self, order: Order) -> float: ...
 
-    @abc.abstractmethod
-    def compute_tax(self, subtotal: float, region: str) -> float: ...
 
-    def calculate(self, subtotal: float, region: str) -> PriceCalculation:
-        discount = self.compute_discount(subtotal)
-        taxable = subtotal - discount
-        tax = self.compute_tax(taxable, region)
-        total = taxable + tax
-        return PriceCalculation(
-            subtotal=subtotal,
-            discount_pct=(discount / subtotal * 100) if subtotal else 0.0,
-            tax_amount=tax,
-            total=round(total, 2),
+class FlatRateDiscount:
+    """Fixed percentage discount for all orders. Use for baseline promotions."""
+
+    def __init__(self, rate: float = 0.10) -> None:
+        self._rate = max(0.0, min(rate, 1.0))
+
+    def calculate_discount(self, order: Order) -> float:
+        return round(order.subtotal * self._rate, 2)
+
+
+class TieredDiscount:
+    """Volume and loyalty-based discount with tier multipliers."""
+
+    TIER_MULTIPLIERS: dict[str, float] = {
+        "standard": 0.05,
+        "premium": 0.15,
+        "vip": 0.25,
+    }
+    VOLUME_BREAKS: list[tuple[int, float]] = [(100, 0.10), (500, 0.20), (1000, 0.35)]
+
+    def calculate_discount(self, order: Order) -> float:
+        base = self.TIER_MULTIPLIERS.get(order.customer_tier, 0.0)
+        volume_bonus = sum(
+            bonus for threshold, bonus in self.VOLUME_BREAKS
+            if order.quantity >= threshold
+        )
+        total_rate = min(base + volume_bonus, 0.50)
+        return round(order.subtotal * total_rate, 2)
+
+
+class DynamicPricingDiscount:
+    """Time-sensitive discount that decays over a product's shelf life."""
+
+    def __init__(self, max_discount_pct: float = 0.30, decay_days: int = 30) -> None:
+        self._max_discount = max(0.0, min(max_discount_pct, 1.0))
+        self._decay_days = max(decay_days, 1)
+
+    def calculate_discount(self, order: Order) -> float:
+        from datetime import datetime, timedelta
+
+        # Simulate shelf-life-based decay — in production, fetch from inventory service
+        days_on_shelf = (datetime.now() - order._manufactured_date).days  # type: ignore[attr-defined]
+        age_ratio = min(days_on_shelf / self._decay_days, 1.0)
+        return round(order.subtotal * self._max_discount * age_ratio, 2)
+```
+
+```python
+# ❌ BAD: Conditional algorithm selection scattered in business logic
+class BadOrderProcessor:
+    def process(self, order: Order, discount_type: str) -> float:
+        if discount_type == "flat":
+            return order.subtotal * 0.10
+        elif discount_type == "tiered":
+            tier = {"standard": 0.05, "premium": 0.15, "vip": 0.25}.get(order.customer_tier, 0.0)
+            return order.subtotal * tier
+        elif discount_type == "dynamic":
+            # Complex logic embedded in the conditionals
+            ...
+        return 0.0
+
+# ✅ GOOD: Strategy pattern — context delegates, algorithms swap independently
+class OrderProcessor:
+    """Processes orders by delegating discount calculation to an injected strategy."""
+
+    def __init__(self, discount_strategy: DiscountStrategy) -> None:
+        self._discount = discount_strategy
+
+    def calculate_final_price(self, order: Order) -> float:
+        discount = self._discount.calculate_discount(order)
+        return round(max(order.subtotal - discount, 0.0), 2)
+
+    def get_discount_breakdown(self, order: Order) -> dict[str, object]:
+        discount = self._discount.calculate_discount(order)
+        return {
+            "subtotal": order.subtotal,
+            "discount_amount": discount,
+            "final_price": round(order.subtotal - discount, 2),
+        }
+```
+
+**When to use Strategy:** You have ≥3 algorithms that share the same input/output contract but differ in computation. The algorithm choice needs to change at runtime based on configuration, user preference, or external conditions.
+
+**When NOT to use Strategy:** You only have two variations — a simple `match` statement is clearer. The algorithms don't share an input/output contract — they should be separate methods instead.
+
+---
+
+### Pattern 2: Command — Encapsulate Requests as Objects
+
+Wraps a request (method call, parameters, and callback) into an immutable command object. Enables queuing, logging, retries, undo/redo, and asynchronous execution.
+
+```python
+from __future__ import annotations
+import abc
+import uuid
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from typing import Any
+
+
+@dataclass(frozen=True)
+class Command:
+    """Immutable base for command objects with tracing metadata."""
+    command_id: str = field(default_factory=lambda: str(uuid.uuid4())[:8])
+    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    metadata: dict[str, str] = field(default_factory=dict)
+
+    def with_metadata(self, **kwargs: str) -> Command:
+        """Return a copy with additional metadata fields."""
+        return Command(
+            command_id=self.command_id,
+            created_at=self.created_at,
+            metadata={**self.metadata, **kwargs},
         )
 
 
-class StandardPricing(PricingStrategy):
-    """Default pricing: no discount, standard 8% tax."""
+class Executable(abc.ABC):
+    """Protocol for command objects that can be executed and optionally undone."""
 
-    def compute_discount(self, subtotal: float) -> float:
-        return 0.0
+    @abc.abstractmethod
+    def execute(self) -> Any: ...
 
-    def compute_tax(self, taxable: float, region: str) -> float:
-        # Tax rate varies by region
-        rates = {"US": 0.08, "EU": 0.20, "UK": 0.20, "JP": 0.10}
-        rate = rates.get(region, 0.05)
-        return round(taxable * rate, 2)
-
-
-class MembersPricing(PricingStrategy):
-    """Member pricing: 10% discount on all orders."""
-
-    def compute_discount(self, subtotal: float) -> float:
-        return subtotal * 0.10
-
-    def compute_tax(self, taxable: float, region: str) -> float:
-        # Same tax rates as standard
-        rates = {"US": 0.08, "EU": 0.20, "UK": 0.20, "JP": 0.10}
-        rate = rates.get(region, 0.05)
-        return round(taxable * rate, 2)
-
-
-class WholesalePricing(PricingStrategy):
-    """Wholesale pricing: tiered discounts based on volume."""
-
-    def compute_discount(self, subtotal: float) -> float:
-        if subtotal >= 10_000:
-            return subtotal * 0.25  # 25% off for $10k+
-        elif subtotal >= 5_000:
-            return subtotal * 0.15  # 15% off for $5k+
-        else:
-            return subtotal * 0.05  # 5% off below $5k
-
-    def compute_tax(self, taxable: float, region: str) -> float:
-        # Wholesale may have tax exemptions by region
-        tax_exempt = {"US": True}  # Simplified for demo
-        if tax_exempt.get(region):
-            return 0.0
-        rates = {"US": 0.08, "EU": 0.20, "UK": 0.20, "JP": 0.10}
-        rate = rates.get(region, 0.05)
-        return round(taxable * rate, 2)
-
-
-class BulkPricing(PricingStrategy):
-    """Bulk pricing: volume-based discounts per item tier."""
-
-    def compute_discount(self, subtotal: float) -> float:
-        # Progressive discount based on quantity tiers (simulated by subtotal)
-        if subtotal >= 50_000:
-            return subtotal * 0.30
-        elif subtotal >= 20_000:
-            return subtotal * 0.20
-        else:
-            return subtotal * 0.10
-
-    def compute_tax(self, taxable: float, region: str) -> float:
-        rates = {"US": 0.08, "EU": 0.20, "UK": 0.20, "JP": 0.10}
-        rate = rates.get(region, 0.05)
-        return round(taxable * rate, 2)
-
-
-class PriceEngine:
-    """Client that uses a strategy — switches at runtime with zero changes to this class."""
-
-    def __init__(self, strategy: PricingStrategy) -> None:
-        self._strategy = strategy
+    @abc.abstractmethod
+    def undo(self) -> Any: ...
 
     @property
-    def strategy(self) -> PricingStrategy:
-        return self._strategy
-
-    @strategy.setter
-    def strategy(self, strategy: PricingStrategy) -> None:
-        """Allow runtime strategy swap."""
-        self._strategy = strategy
-
-    def calculate(self, subtotal: float, region: str) -> PriceCalculation:
-        return self._strategy.calculate(subtotal, region)
-
-
-# Usage example — demonstrates runtime strategy swapping
-if __name__ == "__main__":
-    engine = PriceEngine(StandardPricing())
-
-    # Standard customer in US
-    result = engine.calculate(100.0, "US")
-    print(f"Standard:  subtotal=${result.subtotal:.2f}, discount={result.discount_pct:.1f}%, "
-          f"tax=${result.tax_amount:.2f}, total=${result.total:.2f}")
-
-    # Switch to member pricing at runtime
-    engine.strategy = MembersPricing()
-    result = engine.calculate(100.0, "US")
-    print(f"Member:    subtotal=${result.subtotal:.2f}, discount={result.discount_pct:.1f}%, "
-          f"tax=${result.tax_amount:.2f}, total=${result.total:.2f}")
-
-    # Switch to wholesale pricing for bulk customer
-    engine.strategy = WholesalePricing()
-    result = engine.calculate(8_000.0, "US")
-    print(f"Wholesale: subtotal=${result.subtotal:.2f}, discount={result.discount_pct:.1f}%, "
-          f"tax=${result.tax_amount:.2f}, total=${result.total:.2f}")
-```
-
-**When to prefer Strategy:**
-- Multiple algorithms solve the same problem and need runtime selection
-- You want to avoid long `if/elif/else` chains that select different algorithms
-- Different strategies have different testability requirements
-- The algorithm selection criteria can change at runtime (user config, A/B testing)
-
-**Strategy vs Inheritance:** Prefer Strategy over subclassing when you need to vary behavior independently of the class hierarchy. With Strategy, you compose behaviors; with inheritance, you are locked into a single branch of the class tree.
-
----
-
-### Pattern 5: Template Method — Fixed Algorithm Skeleton
-
-The Template Method pattern defines the skeleton of an algorithm in a base class while letting subclasses override specific steps without changing the overall structure. Use it when multiple classes share the same high-level algorithm but differ in one or more steps. This is the primary behavioral pattern that uses inheritance intentionally.
-
-```python
-from __future__ import annotations
-import abc
-
-
-class DataPipeline(abc.ABC):
-    """Abstract pipeline: defines the fixed processing order.
-    
-    Subclasses override specific steps while preserving the overall flow.
-    Steps marked _hook are optional overrides; steps starting with 
-    _execute are mandatory.
-    """
-
-    def process(self, raw_data: str) -> dict[str, Any]:
-        """Fixed algorithm skeleton — subclasses cannot reorder these steps."""
-        print(f"Pipeline starting for input length: {len(raw_data)}")
-        
-        data = self._load(raw_data)          # Step 1: mandatory hook
-        validated = self._validate(data)     # Step 2: mandatory hook  
-        transformed = self._transform(validated)  # Step 3: mandatory hook
-        
-        if self._pre_save_hook():            # Step 4: optional hook (default: pass)
-            print("Pre-save hook executed")
-        
-        result = self._save(transformed)     # Step 5: abstract method (must override)
-        
-        self._post_save_hook(result)         # Step 6: optional hook (default: log)
-        
-        print(f"Pipeline complete. Output keys: {list(result.keys())}")
-        return result
-
-    # ── Hooks that subclasses MUST override ────────────────
-
     @abc.abstractmethod
-    def _load(self, raw_data: str) -> dict[str, Any]: ...
-
-    @abc.abstractmethod
-    def _validate(self, data: dict[str, Any]) -> dict[str, Any]: ...
-
-    @abc.abstractmethod
-    def _transform(self, data: dict[str, Any]) -> dict[str, Any]: ...
-
-    @abc.abstractmethod
-    def _save(self, transformed: dict[str, Any]) -> dict[str, Any]: ...
-
-    # ── Hooks with default implementations (optional override) ─
-
-    def _pre_save_hook(self) -> bool:
-        """Called before saving. Return True to execute, False to skip."""
-        return False
-
-    def _post_save_hook(self, result: dict[str, Any]) -> None:
-        """Called after saving. Default implementation logs the result."""
-        print(f"Post-save: recorded {len(result)} fields")
+    def description(self) -> str: ...
 
 
-# ── Concrete Pipelines ────────────────────────────────────────
+class TransferFundsCommand(Executable):
+    """Transfers a specified amount between two accounts with full audit trail."""
 
-class CSVToDatabasePipeline(DataPipeline):
-    """Parses CSV input, validates records, transforms to DB format, saves to PostgreSQL."""
+    def __init__(
+        self,
+        from_account: str,
+        to_account: str,
+        amount: float,
+        currency: str = "USD",
+    ) -> None:
+        if amount <= 0:
+            raise ValueError(f"Transfer amount must be positive, got {amount}")
+        self._from = from_account
+        self._to = to_account
+        self._amount = amount
+        self._currency = currency
+        self._timestamp = datetime.now(timezone.utc)
+        self._balance_before_from: float = 0.0
+        self._balance_before_to: float = 0.0
 
-    def _load(self, raw_data: str) -> dict[str, Any]:
-        # Simulated CSV parsing
-        records = []
-        for line in raw_data.strip().split("\n"):
-            fields = line.split(",")
-            records.append({"id": int(fields[0]), "name": fields[1], "value": float(fields[2])})
-        return {"records": records, "count": len(records)}
+    @property
+    def description(self) -> str:
+        return f"Transfer {self._amount} {self._currency} from {self._from} to {self._to}"
 
-    def _validate(self, data: dict[str, Any]) -> dict[str, Any]:
-        validated = []
-        for record in data["records"]:
-            if record["name"].strip() and record["value"] > 0:
-                validated.append(record)
-            else:
-                print(f"  SKIPPING invalid record: {record}")
-        data["records"] = validated
-        return data
-
-    def _transform(self, data: dict[str, Any]) -> dict[str, Any]:
-        for record in data["records"]:
-            record["name"] = record["name"].upper()
-            record["processed_at"] = "2026-05-19T12:00:00Z"
-            record["source"] = "csv_upload"
-        return data
-
-    def _save(self, transformed: dict[str, Any]) -> dict[str, Any]:
-        print(f"  Saving {transformed['count']} records to PostgreSQL...")
-        # In real code: cursor.executemany("INSERT INTO ...", transformed["records"])
-        return {"saved_count": transformed["count"], "table": "enriched_data"}
-
-    def _pre_save_hook(self) -> bool:
-        return True  # CSV pipeline always runs pre-save validation
-
-    def _post_save_hook(self, result: dict[str, Any]) -> None:
-        print(f"Post-save: Wrote {result['saved_count']} records to {result['table']}")
-
-
-class APIToWarehousePipeline(DataPipeline):
-    """Fetches data from REST API, validates JSON schema, transforms for data warehouse."""
-
-    def _load(self, raw_data: str) -> dict[str, Any]:
-        # Simulated API response parsing
-        import json
-        return json.loads(raw_data)
-
-    def _validate(self, data: dict[str, Any]) -> dict[str, Any]:
-        if "results" not in data:
-            raise ValueError("API response missing 'results' field")
-        return data
-
-    def _transform(self, data: dict[str, Any]) -> dict[str, Any]:
-        for item in data["results"]:
-            item["ingested_at"] = "2026-05-19T12:00:00Z"
-            item["pipeline_version"] = "v2.1"
-        return data
-
-    def _save(self, transformed: dict[str, Any]) -> dict[str, Any]:
-        print(f"  Saving to data warehouse ({len(transformed['results'])} records)...")
+    def execute(self) -> dict[str, Any]:
+        """Perform the transfer and record balance snapshots for potential undo."""
+        # In production, these would call a repository/service layer
+        self._balance_before_from = self._get_balance(self._from)  # type: ignore[attr-defined]
+        self._balance_before_to = self._get_balance(self._to)  # type: ignore[attr-defined]
         return {
-            "saved_count": len(transformed["results"]),
-            "table": "warehouse_staging",
+            "id": str(uuid.uuid4()),
+            "status": "completed",
+            "timestamp": self._timestamp.isoformat(),
+            "from_account": self._from,
+            "to_account": self._to,
+            "amount": self._amount,
+            "currency": self._currency,
         }
 
+    def undo(self) -> dict[str, Any]:
+        """Reverse the transfer by restoring previous balances."""
+        return {
+            "action": "undo",
+            "original_from_balance": self._balance_before_from,
+            "original_to_balance": self._balance_before_to,
+            "transferred_amount": self._amount,
+        }
 
-# Usage example
-if __name__ == "__main__":
-    csv_data = """1,Alice,100.5
-2,Bob,200.3
-3,,50.0"""
+    def _get_balance(self, account: str) -> float:  # type: ignore[unused-ignores]
+        """Placeholder — replace with actual balance lookup from persistence layer."""
+        raise NotImplementedError("Inject a BalanceRepository dependency instead")
 
-    pipeline = CSVToDatabasePipeline()
-    result = pipeline.process(csv_data)
 
-    print("---\n")
+class CommandInvoker:
+    """Manages command execution history with undo capability."""
 
-    api_data = '{"results": [{"id": 1, "name": "Widget"}, {"id": 2, "name": "Gadget"}]}'
-    warehouse_pipeline = APIToWarehousePipeline()
-    result2 = warehouse_pipeline.process(api_data)
+    def __init__(self, max_history: int = 100) -> None:
+        self._history: list[Executable] = []
+        self._max_history = max(max_history, 1)
+
+    def execute_command(self, command: Executable) -> Any:
+        result = command.execute()
+        self._history.append(command)
+        if len(self._history) > self._max_history:
+            self._history.pop(0)
+        return result
+
+    def undo_last(self) -> Any:
+        if not self._history:
+            raise RuntimeError("No commands in history to undo")
+        command = self._history.pop()
+        return command.undo()
+
+    @property
+    def history_count(self) -> int:
+        return len(self._history)
 ```
 
-**When to prefer Template Method:**
-- Multiple classes share the same algorithm skeleton but differ in specific steps
-- You want to enforce a fixed processing order while allowing customization of individual steps
-- Subclassing is acceptable and desired (this pattern uses inheritance intentionally)
+```python
+# ❌ BAD: Direct method calls with no audit trail or undo capability
+def bad_transfer(from_acct, to_acct, amount):
+    from_acct.balance -= amount   # No validation, no logging, no rollback
+    to_acct.balance += amount     # Race conditions possible
 
-**Template Method anti-pattern warning:**
-- Don't create deep inheritance chains — 2-3 levels max, then extract common behavior into a Strategy or composite class
-- If most subclasses override all steps, Template Method adds no value — use Strategy instead
-- Always make hooks `def _hook(self) -> bool: return False` (no-op default), never raise NotImplementedError in optional methods
+# ✅ GOOD: Command objects carry all context needed for execution, audit, and undo
+invoker = CommandInvoker(max_history=50)
+result = invoker.execute_command(
+    TransferFundsCommand("ACC-001", "ACC-002", 500.00, "USD")
+)
+# Later: if user disputes the transfer
+undo_result = invoker.undo_last()
+```
+
+**When to use Command:** You need to queue requests for later execution (async workers, message queues), support undo/redo operations, log all actions for audit trails, or implement macro commands (compose multiple commands into a single transaction).
+
+**When NOT to use Command:** The operation is fire-and-forget with no need for history. Simple event handlers are clearer than wrapping events in command objects.
 
 ---
 
-### Pattern 6: Mediator — Centralized Object Coordination
+### Pattern 3: State — Context-Driven Behavior Without Conditionals
 
-The Mediator pattern defines an object that encapsulates how a set of objects interact. It promotes loose coupling by preventing objects from referring to each other explicitly, and it lets you vary their interaction independently. Use it for GUI components, chat systems, workflow engines, and any scenario where many objects have complex N-to-N relationships.
-
-```python
-from __future__ import annotations
-from typing import Any
-
-
-class ChatMediator:
-    """Central coordinator for all message flow between users."""
-
-    def __init__(self) -> None:
-        self._users: list[ChatUser] = []
-
-    def add_user(self, user: ChatUser) -> None:
-        self._users.append(user)
-
-    def send_message(self, sender: ChatUser, message: str, recipient: ChatUser | None = None) -> None:
-        """Route a message from sender to recipient(s)."""
-        if recipient:
-            # Direct message — only deliver to one user
-            if recipient in self._users and recipient is not sender:
-                recipient.receive_message(sender.name, message)
-            else:
-                print(f"[{sender.name}] → ERROR: '{recipient.name}' is not in this chat")
-        else:
-            # Broadcast to all other users
-            for user in self._users:
-                if user is not sender:
-                    user.receive_message(sender.name, message)
-
-    def notify_user_added(self, new_user: ChatUser) -> None:
-        """System notification when a new user joins."""
-        self.send_message(new_user, f"📢 {new_user.name} has joined the chat")
-
-
-class ChatUser:
-    """A chat participant that communicates through the mediator only."""
-
-    def __init__(self, name: str, mediator: ChatMediator) -> None:
-        self.name = name
-        self._mediator = mediator
-
-    def send_to(self, recipient: ChatUser, message: str) -> None:
-        """Send a direct message — user does NOT talk to other users directly."""
-        print(f"\n[{self.name}] → [{recipient.name}]: {message}")
-        self._mediator.send_message(self, message, recipient)
-
-    def broadcast(self, message: str) -> None:
-        """Send a message to all other users in the chat."""
-        print(f"\n[{self.name}] (broadcast): {message}")
-        self._mediator.send_message(self, message)
-
-    def receive_message(self, from_name: str, message: str) -> None:
-        """Called by mediator when this user receives a message."""
-        print(f"  [{self.name}] ← [{from_name}]: {message}")
-
-
-# Usage example
-if __name__ == "__main__":
-    mediator = ChatMediator()
-
-    alice = ChatUser("Alice", mediator)
-    bob = ChatUser("Bob", mediator)
-    charlie = ChatUser("Charlie", mediator)
-
-    mediator.add_user(alice)
-    mediator.add_user(bob)
-    mediator.add_user(charlie)
-
-    alice.broadcast("Hello everyone!")   # Bob and Charlie see this
-    alice.send_to(bob, "Private message")  # Only Bob sees this
-```
-
-**When to prefer Mediator:**
-- Many objects communicate directly through tight coupling (N-to-N relationships)
-- Changing the interaction between objects would require modifying many classes
-- You want to centralize business logic for object coordination in one place
-
-**Mediator anti-pattern warning:**
-- Don't make the mediator a "god object" — it should route and coordinate, not contain all the domain logic
-- If communication is simple (one sender, one receiver), direct calls are clearer than a mediator
-
-
-### Pattern 7: Chain of Responsibility — Passing Requests Along a Handler Chain
-
-The Chain of Responsibility pattern passes a request along a chain of handlers. Each handler decides whether to process the request or pass it to the next handler in the chain. Use it for multi-stage processing pipelines, permission checks, middleware-like patterns, and scenarios where multiple objects might handle a request but only one should.
+Allows an object to alter its behavior when its internal state changes. The object appears to change its class at runtime, eliminating sprawling `if/elif` or `switch` chains.
 
 ```python
 from __future__ import annotations
 import abc
+from datetime import datetime, timezone
 from typing import Any
 
 
-class LogEntry:
-    """Simple log entry that flows through the handler chain."""
-    def __init__(self, level: str, message: str) -> None:
-        self.level = level  # DEBUG, INFO, WARNING, ERROR, CRITICAL
-        self.message = message
-        self.formatted: str | None = None
-        self.is_sent: bool = False
-        self.redacted: bool = False
+class OrderState(abc.ABC):
+    """Protocol defining state transitions for an order lifecycle."""
+
+    @property
+    @abc.abstractmethod
+    def name(self) -> str: ...
+
+    @abc.abstractmethod
+    def can_advance_to(self, target_state: type["OrderState"]) -> bool: ...
+
+    @abc.abstractmethod
+    def on_enter(self, context: "Order") -> None: ...
+
+    @abc.abstractmethod
+    def on_exit(self, context: "Order") -> None: ...
 
 
-class LogHandler(abc.ABC):
-    """Abstract handler in the chain."""
+class DraftState(OrderState):
+    """Initial state: order created but not yet submitted for processing."""
 
-    def __init__(self) -> None:
-        self._next: LogHandler | None = None
+    @property
+    def name(self) -> str:
+        return "draft"
 
-    def set_next(self, handler: LogHandler) -> LogHandler:
-        """Link this handler to the next one. Returns the linked handler for chaining convenience."""
+    def can_advance_to(self, target_state: type[OrderState]) -> bool:
+        # Draft → Submitted or Cancelled only
+        return issubclass(target_state, (SubmittedState, CancelledState))
+
+    def on_enter(self, context: "Order") -> None:
+        context._events.append(("entered", "draft", datetime.now(timezone.utc)))
+
+    def on_exit(self, context: "Order") -> None:
+        context._validate_draft()
+
+
+class SubmittedState(OrderState):
+    """Order has been submitted for processing and payment collection."""
+
+    @property
+    def name(self) -> str:
+        return "submitted"
+
+    def can_advance_to(self, target_state: type[OrderState]) -> bool:
+        return issubclass(target_state, (PaidState, FailedState))
+
+    def on_enter(self, context: "Order") -> None:
+        context._events.append(("entered", "submitted", datetime.now(timezone.utc)))
+
+    def on_exit(self, context: "Order") -> None:
+        pass
+
+
+class PaidState(OrderState):
+    """Payment confirmed — order ready for fulfillment."""
+
+    @property
+    def name(self) -> str:
+        return "paid"
+
+    def can_advance_to(self, target_state: type[OrderState]) -> bool:
+        return issubclass(target_state, (ShippedState, RefundedState))
+
+    def on_enter(self, context: "Order") -> None:
+        context._events.append(("entered", "paid", datetime.now(timezone.utc)))
+        if context.on_paid_callback:
+            context.on_paid_callback(context)  # type: ignore[union-attr]
+
+
+class ShippedState(OrderState):
+    """Order has been dispatched to the customer."""
+
+    @property
+    def name(self) -> str:
+        return "shipped"
+
+    def can_advance_to(self, target_state: type[OrderState]) -> bool:
+        return issubclass(target_state, (DeliveredState))
+
+    def on_enter(self, context: "Order") -> None:
+        context._events.append(("entered", "shipped", datetime.now(timezone.utc)))
+
+
+class CancelledState(OrderState):
+    """Order cancelled before fulfillment."""
+
+    @property
+    def name(self) -> str:
+        return "cancelled"
+
+    def can_advance_to(self, target_state: type[OrderState]) -> bool:
+        return False  # Terminal state — no transitions from here
+
+    def on_enter(self, context: "Order") -> None:
+        context._events.append(("entered", "cancelled", datetime.now(timezone.utc)))
+
+
+class Order:
+    """Context object whose behavior changes based on its internal state.
+
+    State transitions are validated against the current state's rules.
+    Events are logged for every state entry and validation failure.
+    """
+
+    def __init__(self, order_id: str) -> None:
+        self._id = order_id
+        self._state: OrderState = DraftState()
+        self._events: list[tuple[str, str, datetime]] = []
+        self.on_paid_callback: Any | None = None
+
+    @property
+    def state(self) -> OrderState:
+        return self._state
+
+    @property
+    def is_terminal(self) -> bool:
+        """Return True if the order cannot transition to any further state."""
+        return not self._state.can_advance_to(DraftState) and \
+               not self._state.can_advance_to(SubmittedState) and \
+               not self._state.can_advance_to(PaidState) and \
+               not self._state.can_advance_to(ShippedState)
+
+    def transition(self, target: type[OrderState]) -> None:
+        """Advance the order to a new state after validation."""
+        if not self._state.can_advance_to(target):
+            raise StateTransitionError(
+                f"Cannot transition from {self._state.name} to {target.__name__}"
+            )
+        self._state.on_exit(self)
+        self._state = target()
+        self._state.on_enter(self)
+
+    def cancel(self) -> None:
+        """Convenience method to cancel the order immediately."""
+        self.transition(CancelledState)
+
+    @property
+    def event_log(self) -> list[dict[str, Any]]:
+        return [
+            {"action": action, "state": state, "timestamp": ts.isoformat()}
+            for action, state, ts in self._events
+        ]
+
+    def _validate_draft(self) -> None:  # type: ignore[unused-ignores]
+        """Validate draft before submission — replace with real validation logic."""
+        pass
+
+
+class StateTransitionError(RuntimeError):
+    """Raised when an invalid state transition is attempted."""
+    pass
+```
+
+```python
+# ❌ BAD: State machine encoded as nested conditionals
+def bad_process_order(order):
+    if order.status == "draft":
+        if can_validate(order):
+            order.status = "submitted"
+            if payment_succeeds(order):
+                order.status = "paid"
+                if inventory_check(order):
+                    order.status = "shipped"
+            else:
+                order.status = "failed"
+    elif order.status == "submitted":
+        # ... more nested branches, impossible to trace full flow
+
+# ✅ GOOD: State transitions are explicit, validated, and logged
+order = Order("ORD-12345")
+assert isinstance(order.state, DraftState)
+order.transition(SubmittedState)
+order.transition(PaidState)
+order.transition(ShippedState)
+print(order.event_log)  # Full audit trail of every transition
+```
+
+**When to use State:** You have an object with ≥3 distinct states that dictate its behavior or allowable operations. Transitions between states are constrained (not every state can go to every other state).
+
+**When NOT to use State:** You only have two states — a `bool` or `enum` is simpler. There are no constraints on transitions — a simple status string suffices.
+
+---
+
+### Pattern 4: Chain of Responsibility — Pipeline Processing with Skip Logic
+
+Delegates a request through a chain of handlers. Each handler either processes the request, passes it to the next handler, or both. Enables filtering, enrichment, and validation pipelines without hard-coded ordering.
+
+```python
+from __future__ import annotations
+import abc
+from dataclasses import dataclass, field
+from typing import Any
+
+
+@dataclass
+class PipelineContext:
+    """Shared mutable context passed through the handler chain.
+
+    Handlers read/write fields on this object to enrich or validate the request.
+    Set `halt` to True to terminate the chain early.
+    """
+    request: dict[str, Any]
+    errors: list[str] = field(default_factory=list)
+    enriched_data: dict[str, Any] = field(default_factory=dict)
+    halt: bool = False
+
+    @property
+    def is_valid(self) -> bool:
+        return len(self.errors) == 0 and not self.halt
+
+
+class PipelineHandler(abc.ABC):
+    """Base class for chain-of-responsibility handlers."""
+
+    def __init__(self, next_handler: PipelineHandler | None = None) -> None:
+        self._next = next_handler
+
+    @property
+    def next(self) -> PipelineHandler | None:
+        return self._next
+
+    def set_next(self, handler: PipelineHandler) -> PipelineHandler:
+        """Set the next handler and return it for fluent chaining."""
         self._next = handler
         return handler
 
-    def handle(self, entry: LogEntry) -> LogEntry:
-        if self.can_handle(entry):
-            entry = self.process(entry)
-        if self._next:
-            entry = self._next.handle(entry)
-        return entry
+    def handle(self, context: PipelineContext) -> None:
+        """Process the request, then optionally delegate to the next handler."""
+        if not context.halt and not context.is_valid:
+            return  # Stop processing on validation failure
+
+        self.process(context)
+
+        if not context.halt and self._next is not None:
+            self._next.handle(context)
 
     @abc.abstractmethod
-    def can_handle(self, entry: LogEntry) -> bool: ...
-
-    @abc.abstractmethod
-    def process(self, entry: LogEntry) -> LogEntry: ...
+    def process(self, context: PipelineContext) -> None: ...
 
 
-class LevelFilterHandler(LogHandler):
-    """Filters out log entries below a minimum severity level."""
+class ValidatePayloadHandler(PipelineHandler):
+    """Validates required fields in the incoming request payload."""
 
-    LEVEL_PRIORITY = {
-        "DEBUG": 0, "INFO": 1, "WARNING": 2, "ERROR": 3, "CRITICAL": 4,
-    }
+    REQUIRED_FIELDS: list[str] = ["user_id", "amount", "currency"]
 
-    def __init__(self, min_level: str = "INFO") -> None:
+    def process(self, context: PipelineContext) -> None:
+        for field_name in self.REQUIRED_FIELDS:
+            if field_name not in context.request:
+                context.errors.append(f"Missing required field: {field_name}")
+                context.halt = True
+
+        currency = context.request.get("currency", "")
+        valid_currencies = {"USD", "EUR", "GBP", "JPY"}
+        if currency and currency not in valid_currencies:
+            context.errors.append(
+                f"Invalid currency: {currency}. Must be one of {valid_currencies}"
+            )
+            context.halt = True
+
+
+class SanitizeInputHandler(PipelineHandler):
+    """Strips whitespace and normalizes input values."""
+
+    def process(self, context: PipelineContext) -> None:
+        if "user_id" in context.request:
+            context.request["user_id"] = str(context.request["user_id"]).strip()
+        if "amount" in context.request:
+            try:
+                context.request["amount"] = float(context.request["amount"])
+            except (ValueError, TypeError):
+                context.errors.append(f"Invalid amount format: {context.request['amount']}")
+                context.halt = True
+
+
+class EnrichContextHandler(PipelineHandler):
+    """Adds computed or looked-up data to the pipeline context."""
+
+    def __init__(self, user_lookup: Any | None = None) -> None:  # type: ignore[unused-ignores]
         super().__init__()
-        self.min_level = min_level
+        self._user_lookup = user_lookup  # Inject a UserRepository or similar
 
-    def can_handle(self, entry: LogEntry) -> bool:
-        return self.LEVEL_PRIORITY.get(entry.level, -1) >= self.LEVEL_PRIORITY.get(self.min_level, 0)
-
-    def process(self, entry: LogEntry) -> LogEntry:
-        print(f"[{self.__class__.__name__}] Accepted '{entry.level}': {entry.message}")
-        return entry
-
-
-class FormatterHandler(LogHandler):
-    """Adds a timestamp prefix to the log message."""
-
-    def can_handle(self, entry: LogEntry) -> bool:
-        return True  # All entries get formatted
-
-    def process(self, entry: LogEntry) -> LogEntry:
-        import datetime
-        timestamp = datetime.datetime.now().isoformat()
-        entry.formatted = f"[{timestamp}] [{entry.level}] {entry.message}"
-        print(f"[{self.__class__.__name__}] Formatted → {entry.formatted}")
-        return entry
+    def process(self, context: PipelineContext) -> None:
+        user_id = context.request.get("user_id")
+        if user_id and self._user_lookup:  # type: ignore[redundant-expr]
+            user_data = self._user_lookup.find(user_id)  # type: ignore[attr-defined]
+            if user_data:
+                context.enriched_data["customer_name"] = user_data.get("name", "Unknown")
+                context.enriched_data["tier"] = user_data.get("tier", "standard")
+            else:
+                context.errors.append(f"User not found: {user_id}")
+                context.halt = True
 
 
-class RedactorHandler(LogHandler):
-    """Redacts sensitive patterns (credit cards, SSNs) from log messages."""
+class AuditLogHandler(PipelineHandler):
+    """Records the request to an audit log regardless of outcome."""
 
-    SENSITIVE_PATTERNS = ["SSN", "social security", "credit card"]
+    def __init__(self, logger: Any | None = None) -> None:  # type: ignore[unused-ignores]
+        super().__init__()
+        self._logger = logger or self._default_logger  # type: ignore[redundant-expr]
 
-    def can_handle(self, entry: LogEntry) -> bool:
-        return any(pattern.lower() in entry.message.lower() for pattern in self.SENSITIVE_PATTERNS)
+    @staticmethod
+    def _default_logger(msg: str) -> None:  # type: ignore[unused-ignores]
+        pass  # Replace with real logging in production
 
-    def process(self, entry: LogEntry) -> LogEntry:
-        for pattern in self.SENSITIVE_PATTERNS:
-            if pattern.lower() in entry.message.lower():
-                entry.message = entry.message.replace(pattern.lower(), f"[{pattern.upper()} REDACTED]")
-        entry.redacted = True
-        print(f"[{self.__class__.__name__}] Redacted sensitive data")
-        return entry
-
-
-class EmailAlertHandler(LogHandler):
-    """Sends email alerts for ERROR and CRITICAL level entries."""
-
-    def can_handle(self, entry: LogEntry) -> bool:
-        return entry.level in ("ERROR", "CRITICAL")
-
-    def process(self, entry: LogEntry) -> LogEntry:
-        print(f"[{self.__class__.__name__}] 📧 EMAIL ALERT sent for [{entry.level}]: {entry.message[:50]}...")
-        entry.is_sent = True
-        return entry
-
-
-class ConsoleWriterHandler(LogHandler):
-    """Writes all entries to the console. Always processes."""
-
-    def can_handle(self, entry: LogEntry) -> bool:
-        return True
-
-    def process(self, entry: LogEntry) -> LogEntry:
-        output = entry.formatted or f"[{entry.level}] {entry.message}"
-        print(f"  >> CONSOLE: {output}")
-        return entry
-
-
-# Usage example — build the chain
-if __name__ == "__main__":
-    # Build handler chain with explicit ordering
-    console = ConsoleWriterHandler()
-    email = EmailAlertHandler()
-    redactor = RedactorHandler()
-    formatter = FormatterHandler()
-    level_filter = LevelFilterHandler(min_level="DEBUG")
-
-    # Chain: filter → format → redact → email (if applicable) → console
-    chain = (level_filter
-             .set_next(formatter)
-             .set_next(redactor)
-             .set_next(email)
-             .set_next(console))
-
-    # Test with different log levels
-    chain.handle(LogEntry("DEBUG", "Initializing connection pool"))  # Filtered out at LevelFilterHandler
-    print("---")
-    chain.handle(LogEntry("INFO", "User logged in successfully"))   # Passes through filter, formatted, written
-    print("---")
-    chain.handle(LogEntry("WARNING", "Connection timeout to database"))  # Warning path
-    print("---")
-    chain.handle(LogEntry("ERROR", "SSN 123-45-6789 exposed in logs"))  # ERROR: email + redact + console
+    def process(self, context: PipelineContext) -> None:
+        log_entry = {
+            "request": context.request,
+            "errors": context.errors.copy(),
+            "enriched": context.enriched_data.copy(),
+            "status": "valid" if context.is_valid else "rejected",
+        }
+        self._logger(f"Audit: {log_entry}")  # type: ignore[operator]
 ```
 
-**When to prefer Chain of Responsibility:**
-- Multiple objects can handle a request and the handler is not known ahead of time
-- You want to issue a request without specifying its recipient explicitly
-- The set of handlers and their order should be configurable at runtime
+```python
+# ❌ BAD: All pipeline logic in one function
+def bad_process_request(data):
+    if not all(k in data for k in ("user_id", "amount")):
+        return {"error": "missing fields"}
+    data["amount"] = float(data["amount"])
+    user = lookup_user(data["user_id"])
+    if not user:
+        return {"error": "user not found"}
+    data["name"] = user["name"]
+    log_request(data)
+    return data
+
+# ✅ GOOD: Each handler is independently testable, order is configurable
+handler_chain = (
+    ValidatePayloadHandler()
+    .set_next(SanitizeInputHandler())
+    .set_next(EnrichContextHandler(user_lookup=my_repo))
+    .set_next(AuditLogHandler(logger=my_logger))
+)
+
+ctx = PipelineContext(request={"user_id": "U123", "amount": " 49.99 ", "currency": "USD"})
+handler_chain.handle(ctx)
+
+assert ctx.is_valid is True
+assert ctx.enriched_data["customer_name"] == "Jane Doe"  # From user lookup
+```
+
+**When to use Chain of Responsibility:** You have a processing pipeline where steps might be skipped or reordered. Multiple handlers should be independently testable and configurable at runtime. The number of processing stages may vary between invocations.
+
+**When NOT to use Chain of Responsibility:** All steps must run in a fixed order — a simple function call chain is clearer. Handlers need direct access to each other's internal state — this pattern only shares the context object.
 
 ---
 
-### Pattern 8: Iterator — Transparent Collection Traversal
+### Pattern 5: Visitor — Decouple Operations from Object Structures
 
-The Iterator pattern provides a way to access the elements of a collection sequentially without exposing its underlying representation. Use it when your collections have complex internal structures (trees, graphs, nested lists) and you want standard iteration behavior (`for x in collection`). Python's built-in `__iter__` and `yield` make this pattern trivial — but knowing when to write custom iterators is valuable for generators that transform or filter data on-the-fly.
+Defines new operations on objects without modifying their classes. The visitor pattern enables you to add behavior across a composite hierarchy by separating algorithms from the object structure that operates on them.
 
 ```python
 from __future__ import annotations
 import abc
-from collections.abc import Iterator
+from dataclasses import dataclass, field
+from typing import Any
 
 
-class BinarySearchTree(Iterator[int]):
-    """A binary search tree that implements the iterator protocol directly."""
+class SyntaxNode(abc.ABC):
+    """Abstract base for all AST (Abstract Syntax Tree) nodes in the visitor example."""
 
-    def __init__(self) -> None:
-        self._root: BinaryNode[int] | None = None
+    @abc.abstractmethod
+    def accept(self, visitor: "Visitor") -> Any: ...
 
-    def insert(self, value: int) -> None:
-        if self._root is None:
-            self._root = BinaryNode(value)
-            return
-        current = self._root
-        while True:
-            if value < current.value:
-                if current.left is None:
-                    current.left = BinaryNode(value)
-                    break
-                current = current.left
-            else:
-                if current.right is None:
-                    current.right = BinaryNode(value)
-                    break
-                current = current.right
 
-    # Iterator protocol implementation
-    def __iter__(self) -> Iterator[int]:
-        self._current_nodes: list[BinaryNode[int]] = []
-        self._collect_inorder(self._root)
-        self._node_index = 0
-        return self
+class NumberNode(SyntaxNode):
+    """Represents a literal numeric value in the AST."""
 
-    def _collect_inorder(self, node: BinaryNode[int] | None) -> None:
-        if node is None:
-            return
-        self._collect_inorder(node.left)
-        self._current_nodes.append(node)
-        self._collect_inorder(node.right)
+    def __init__(self, value: float) -> None:
+        self.value = value
 
-    def __next__(self) -> int:
-        if self._node_index >= len(self._current_nodes):
-            raise StopIteration
-        node = self._current_nodes[self._node_index]
-        self._node_index += 1
+    def accept(self, visitor: Visitor) -> Any:
+        return visitor.visit_number(self)
+
+
+class StringNode(SyntaxNode):
+    """Represents a literal string value in the AST."""
+
+    def __init__(self, value: str) -> None:
+        self.value = value
+
+    def accept(self, visitor: Visitor) -> Any:
+        return visitor.visit_string(self)
+
+
+class BinaryOpNode(SyntaxNode):
+    """Represents a binary operator (addition, subtraction, etc.)."""
+
+    def __init__(self, operator: str, left: SyntaxNode, right: SyntaxNode) -> None:
+        self.operator = operator
+        self.left = left
+        self.right = right
+
+    def accept(self, visitor: Visitor) -> Any:
+        return visitor.visit_binary_op(self)
+
+
+class VariableNode(SyntaxNode):
+    """Represents a variable reference in the AST."""
+
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+    def accept(self, visitor: Visitor) -> Any:
+        return visitor.visit_variable(self)
+
+
+class Visitor(abc.ABC):
+    """Protocol for visitor operations on SyntaxNode trees.
+
+    Each method corresponds to a concrete node type. The node's accept()
+    method dispatches to the appropriate visit method, achieving double dispatch.
+    """
+
+    @abc.abstractmethod
+    def visit_number(self, node: NumberNode) -> Any: ...
+
+    @abc.abstractmethod
+    def visit_string(self, node: StringNode) -> Any: ...
+
+    @abc.abstractmethod
+    def visit_binary_op(self, node: BinaryOpNode) -> Any: ...
+
+    @abc.abstractmethod
+    def visit_variable(self, node: VariableNode) -> Any: ...
+
+
+class Evaluator(Visitor):
+    """Visitor that evaluates arithmetic expressions represented as an AST."""
+
+    # Runtime variable bindings — in production, these come from scope analysis
+    _scopes: list[dict[str, float]] = field(default_factory=list, init=False)
+
+    def visit_number(self, node: NumberNode) -> float:
         return node.value
 
+    def visit_string(self, node: StringNode) -> str:
+        return node.value
 
-class BinaryNode[T]:
-    """Node in a binary search tree."""
+    def visit_variable(self, node: VariableNode) -> float:
+        if self._scopes and node.name in self._scopes[-1]:
+            return self._scopes[-1][node.name]
+        raise NameError(f"Undefined variable: {node.name}")
 
-    def __init__(self, value: T) -> None:
-        self.value = value
-        self.left: BinaryNode[T] | None = None
-        self.right: BinaryNode[T] | None = None
+    def visit_binary_op(self, node: BinaryOpNode) -> float:
+        left = node.left.accept(self)
+        right = node.right.accept(self)
 
+        ops: dict[str, Any] = {
+            "+": lambda a, b: a + b,
+            "-": lambda a, b: a - b,
+            "*": lambda a, b: a * b,
+            "/": lambda a, b: a / b if b != 0 else float("inf"),
+        }
 
-# ── Custom Iterator for Transforming Data ─────────────────────
+        op_func = ops.get(node.operator)
+        if op_func is None:
+            raise ValueError(f"Unsupported operator: {node.operator}")
+        return op_func(left, right)
 
-class ChunkedIterator(Iterator[list[str]]):
-    """Splits an iterable into fixed-size chunks."""
-
-    def __init__(self, data: list[str], chunk_size: int) -> None:
-        self._data = data
-        self._chunk_size = chunk_size
-        self._index = 0
-
-    def __next__(self) -> list[str]:
-        if self._index >= len(self._data):
-            raise StopIteration
-        chunk = self._data[self._index : self._index + self._chunk_size]
-        self._index += self._chunk_size
-        return chunk
-
-
-# ── Lazy Filtering Iterator (generator-based) ────────────────
-
-def filtered_iterator(items: list[str], predicate: str) -> Iterator[str]:
-    """Yield only items that contain the search string (lazy evaluation)."""
-    for item in items:
-        if predicate.lower() in item.lower():
-            yield item
+    def evaluate(self, root: SyntaxNode, bindings: dict[str, float] | None = None) -> Any:
+        """Entry point: set up scope and evaluate the expression tree."""
+        if bindings:
+            self._scopes.append(bindings)
+        try:
+            return root.accept(self)
+        finally:
+            if bindings:
+                self._scopes.pop()
 
 
-# Usage example
-if __name__ == "__main__":
-    # Binary Search Tree iteration (in-order = sorted)
-    bst = BinarySearchTree()
-    for value in [50, 30, 70, 20, 40, 60, 80]:
-        bst.insert(value)
-    
-    print("BST in-order traversal:", list(bst))  # [20, 30, 40, 50, 60, 70, 80]
+class CodeAnalyzer(Visitor):
+    """Visitor that analyzes an AST for static properties without executing it."""
 
-    # Chunked iteration over a large dataset
-    products = [f"Product {i}" for i in range(1, 11)]
-    chunks = list(ChunkedIterator(products, chunk_size=3))
-    print("\nChunked (size 3):", chunks)
+    def __init__(self) -> None:
+        self.variable_names: set[str] = set()
+        self.operator_counts: dict[str, int] = {}
+        self.depth: int = 0
+        self.max_depth: int = 0
 
-    # Lazy filtered iteration
-    words = ["apple", "banana", "apricot", "cherry", "avocado", "blueberry"]
-    matches = list(filtered_iterator(words, "a"))
-    print("Filtered for 'a':", matches)
+    def visit_number(self, node: NumberNode) -> int:
+        return 1  # Leaf — contributes 1 to node count
+
+    def visit_string(self, node: StringNode) -> int:
+        return 1
+
+    def visit_variable(self, node: VariableNode) -> int:
+        self.variable_names.add(node.name)
+        return 1
+
+    def visit_binary_op(self, node: BinaryOpNode) -> int:
+        self.depth += 1
+        self.max_depth = max(self.max_depth, self.depth)
+
+        self.operator_counts[node.operator] = self.operator_counts.get(node.operator, 0) + 1
+
+        left_count = node.left.accept(self)
+        right_count = node.right.accept(self)
+
+        self.depth -= 1
+        return 1 + left_count + right_count
+
+
+class ASTPrinter(Visitor):
+    """Visitor that produces a human-readable parenthesized representation."""
+
+    def visit_number(self, node: NumberNode) -> str:
+        return f"{node.value:g}" if node.value == int(node.value) else f"{node.value}"
+
+    def visit_string(self, node: StringNode) -> str:
+        return repr(node.value)
+
+    def visit_variable(self, node: VariableNode) -> str:
+        return node.name
+
+    def visit_binary_op(self, node: BinaryOpNode) -> str:
+        left_str = node.left.accept(self)
+        right_str = node.right.accept(self)
+        return f"({left_str} {node.operator} {right_str})"
 ```
 
-**When to prefer Iterator:**
-- Your collection has a complex internal structure that shouldn't be exposed to callers
-- You need multiple simultaneous traversals of the same data
-- You want lazy evaluation — compute values on-demand rather than pre-building a list
-- You need custom traversal order (in-order, reverse, breadth-first) for your collection
+```python
+# Build AST for expression: (3 + x) * 2
+ast = BinaryOpNode(
+    "*",
+    BinaryOpNode("+", NumberNode(3), VariableNode("x")),
+    NumberNode(2),
+)
 
----
+# Visitor 1: Evaluate
+evaluator = Evaluator()
+result = evaluator.evaluate(ast, bindings={"x": 5.0})
+assert result == 16.0  # (3 + 5) * 2 = 16
 
-## Pattern Selection Guide
+# Visitor 2: Analyze — new operation, zero changes to AST node classes
+analyzer = CodeAnalyzer()
+node_count = ast.accept(analyzer)
+print(f"Nodes: {node_count}, Variables: {analyzer.variable_names}, Max depth: {analyzer.max_depth}")
 
-When you have a behavioral problem and are unsure which pattern to apply:
+# Visitor 3: Print — another completely independent operation
+printer = ASTPrinter()
+print(printer.visit_binary_op(ast))  # Outputs: ((3 + x) * 2)
+```
 
-| Problem | Best Fit | Alternative |
-|---------|----------|-------------|
-| Objects must react to changes | **Observer** | Signals/events, pub/sub libraries |
-| Behavior depends on state | **State** | State machine libraries |
-| Need to queue/log/undo requests | **Command** | Task queues (Celery, RQ) |
-| Algorithms need runtime selection | **Strategy** | Factory pattern for creation |
-| Shared algorithm skeleton, different steps | **Template Method** | Strategy + composition |
-| N-to-N object coupling | **Mediator** | Service locator, event bus |
-| Multiple handlers in sequence | **Chain of Responsibility** | Middleware pipelines |
-| Custom collection traversal | **Iterator** | Python's `__iter__` / `yield` |
+```python
+# ❌ BAD: Adding new operations requires modifying every node class
+class BadNode:
+    def evaluate(self): ...      # Tied to evaluation — can't add analysis without changes
+    def serialize(self): ...     # Each new operation bloats every class
+
+# ✅ GOOD: New operations = new visitor classes. Zero changes to SyntaxNode.
+def add_counter_visitor():  # Just write a new Visitor subclass
+    class Counter(Visitor):
+        ...
+    return Counter()
+```
+
+**When to use Visitor:** You have a stable object hierarchy but need to define many different operations over it (serialization, analysis, code generation). Adding new operations is more frequent than adding new node types. The operations share traversal logic (e.g., always visit left subtree before right).
+
+**When NOT to use Visitor:** Your object hierarchy changes frequently — every new type requires updating the Visitor protocol and all its implementations. You only need one or two operations — method calls on the objects themselves are simpler.
 
 ---
 
 ## Constraints
 
 ### MUST DO
-- Use `typing.Protocol` or `abc.ABC` for all pattern interfaces — define the contract before writing implementations
-- Keep each concrete participant focused on a single responsibility within the pattern
-- Use Python's built-in iteration (`yield`, `__iter__`) where possible before writing custom iterators
-- Test each concrete pattern participant in isolation before testing the full pattern assembly
-- Prefer Strategy over subclassing for algorithm variation — inheritance adds coupling
+- Define the protocol interface first, implement concretions second
+- Use `typing.Protocol` for interfaces instead of ABC when you only need structural typing
+- Inject dependencies via constructor — never import concrete implementations inside methods
+- Each handler/command/state class must have a single, well-defined responsibility
+- Log or record state transitions for auditability and debugging
+- Write unit tests for every concrete class against its protocol interface
 
 ### MUST NOT DO
-- Don't use Observer for simple notification where a direct callback suffices (two objects, one notification)
-- Don't create deep State hierarchies with inheritance — each state class should be flat, not extending other states
-- Don't overuse Template Method — if subclasses override most steps, use Strategy instead of inheritance
-- Don't make the Mediator contain domain logic — it routes and coordinates, the participants do the work
-- Don't build custom iterators when Python's `yield` generators solve the problem
+- Nest more than 3 levels deep in any chain of responsibility — use composition instead
+- Let State objects hold mutable shared state that causes race conditions
+- Use Visitor when the object hierarchy changes frequently — refactor to add methods on the classes directly
+- Combine Command and State responsibilities in a single class — separate concerns
+- Create handler chains longer than 10 steps — split into parallel sub-chains
 
 ---
 
 ## Output Template
 
-When this skill is active, produce:
+When this skill is active, your output must contain:
 
-1. **Problem Description** — What behavioral concern needs solving
-2. **Selected Pattern** — The pattern name with rationale for why it fits best
-3. **Interface Definition** — The abstract base class or Protocol with typed signatures
-4. **Concrete Implementations** — Each participant class with docstrings
-5. **Composition Root** — How participants are wired together in the application entry point
+1. **Pattern Identification** — Name of the pattern (Strategy, Command, State, Chain of Responsibility, or Visitor) and a one-sentence justification for why it fits the scenario
+2. **Protocol Interface** — The `typing.Protocol` or abstract base class defining the contract
+3. **Concrete Implementations** — Each concrete class with typed signatures, docstrings, and error handling
+4. **Context/Invoker/Wiring Code** — How behaviors are composed and injected
+5. **Unit Test Snippets** — At least one test per concrete implementation showing expected behavior
 
 ---
 
@@ -1281,7 +949,18 @@ When this skill is active, produce:
 
 | Skill | Purpose |
 |---|---|
-| `design-patterns-and-principles` | Covers GoF creational and structural patterns, and SOLID principles that inform behavioral pattern selection |
-| `event-driven-architecture` | Event-driven systems built on Observer and Command patterns at scale |
-| `refactoring` | Techniques for introducing behavioral patterns into existing codebases |
-| `modular-design` | Principles for structuring modules so behavioral patterns integrate cleanly |
+| `structural-design-patterns` | Pair with behavioral patterns — structural patterns organize objects; behavioral patterns govern their interactions |
+| `gof-design-patterns-catalog` | Reference for the full GoF catalog when you need patterns beyond the core five |
+| `refactoring-techniques` | Use to refactor existing conditional logic into these pattern implementations |
+
+---
+
+## Live References
+
+> Authoritative documentation links for behavioral design patterns.
+
+- [GoF Design Patterns — Gang of Four Book](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Python typing.Protocol Documentation](https://docs.python.org/3/library/typing.html#typing.Protocol)
+- [Refactoring Guru — Behavioral Patterns Collection](https://refactoring.guru/design-patterns/catalog)
+- [Real Python — Strategy Pattern Tutorial](https://realpython.com/primer-on-python-design-patterns/)
+- [Martin Fowler — State Pattern](https://martinfowler.com/articles/changeSub.html)
