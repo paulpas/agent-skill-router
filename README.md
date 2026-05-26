@@ -2,13 +2,23 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1056 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+<<<<<<< HEAD
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1056 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1056 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1056 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+>>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
@@ -23,13 +33,23 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1056 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+<<<<<<< HEAD
+- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1056 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1056 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1056 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+>>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -109,7 +129,19 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
+| Coding | 473 | Software patterns, security, testing, data science |
+| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
+| Go | 12 | Go idioms, concurrency patterns, error handling |
+| Linux | 16 | System administration, kernel tuning, security, networking |
+| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
+| Programming | 7 | Algorithms, frameworks, language references |
+| Trading | 89 | Execution, risk management, ML models |
+| Writing | 4 | Technical writing, style guidance |
+<<<<<<< HEAD
 | Coding | 471 | Software patterns, security, testing, data science |
+=======
+| Coding | 473 | Software patterns, security, testing, data science |
+>>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -298,17 +330,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 19:13:00 UTC  
-> **Total skills:** 1056  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1056 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 15:05:14 UTC  
+> **Total skills:** 1058  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1058 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1021 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1021 | Ranking penalty for conflicting query terms |
-| Response Profile | 1021 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1023 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1023 | Ranking penalty for conflicting query terms |
+| Response Profile | 1023 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -777,7 +809,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (471 skills)
+### Coding (473 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -931,6 +963,7 @@ MIT — All skills are freely available and redistributable.
 | [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. | distributed systems, consensus algorithm, CAP theorem, eventual consistency, data replication, partitioning strategy, Raft, Paxos, vector clocks, service discovery, two-phase commit, distributed transactions, clock synchronization, consistent hashing [tactical, generation] |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | distribution fitting, goodness-of-fit, fitting distributions, distribution selection, how do i fit [tactical, generation] |
 | [django-best-practices](skills/coding/django-best-practices/SKILL.md) | Implements Django 5.x application patterns including modern project structure, ORM optimization, class-based and function views, DRF integration, async views, caching strategies, and settings management for production-ready web applications. | django, django best practices, django project structure, orm optimization, class-based views, drf, django rest framework, django async, django caching, settings management, production django [tactical, generation] |
+| [dlq-retry-patterns](skills/coding/dlq-retry-patterns/SKILL.md) | Implements dead letter queue architectures with retry strategies (exponential backoff, circuit breaker integration, poison pill detection) for resilient event-driven systems. | dead letter queue, DLQ, retry pattern, exponential backoff, poison pill, circuit breaker, how do i handle failed events, event processing failure [tactical, diagnostic] |
 | [docker-api](skills/coding/docker-api/SKILL.md) | Integrates with the Docker Engine API via the docker-py SDK to manage containers, images, networks, volumes, and Swarm clusters from Python applications. | docker api, docker-py, docker sdk python, docker engine api, container management, docker swarm, manage docker containers, docker compose [tactical, generation] |
 | [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. | project structure, module organization, vertical slice, modular monolith, DDD layout, how do i organize a ddd project, domain driven architecture, clean directory structure, layer separation [tactical, generation] |
 | [domain-driven-design](skills/coding/domain-driven-design/SKILL.md) | Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise. | domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns [tactical, generation] |
@@ -962,6 +995,7 @@ MIT — All skills are freely available and redistributable.
 | [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. | event sourcing, event store, aggregate, snapshots, optimistic concurrency, event versioning, projections, read models, replay events, domain events, event streams [tactical, generation] |
 | [event-sourcing-pattern](skills/coding/event-sourcing-pattern/SKILL.md) | Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history. | event sourcing, event store, aggregate root, event replay, projections, snapshots, how do i track all changes, immutable audit trail, state reconstruction from events [tactical, generation] |
 | [event-storming](skills/coding/event-storming/SKILL.md) | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. | event storming, eventstorming, domain discovery, workshop facilitation, bounded context, domain events, sticky notes, collaborative modeling [tactical, generation] |
+| [eventual-consistency-patterns](skills/coding/eventual-consistency-patterns/SKILL.md) | Manages eventual consistency challenges in distributed systems — read model reconciliation, conflict resolution with CRDTs and vector clocks, anti-corruption layers, and stale read mitigation for event-driven architectures. | eventual consistency, read model drift, conflict resolution, stale reads, anti-corruption layer, CRDT, vector clock, how do i handle inconsistent data in distributed systems [tactical, diagnostic] |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | experimental design, DOE, factorial design, randomization, blocking, how do I design experiments [tactical, generation] |
 | [explainability](skills/coding/explainability/SKILL.md) | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" | explainability, interpretability, transparency, understanding models, how do I explain predictions [tactical, generation] |
 | [extensible-framework-design](skills/coding/extensible-framework-design/SKILL.md) | Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees. | framework design, extensible architecture, plugin system, extension points, configuration driven, framework API design, hook patterns, middleware chains, how do i design an extensible system [tactical, strategic] |
@@ -1431,7 +1465,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (637 skills)
+### Implementation (Build Features) (639 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1617,6 +1651,7 @@ MIT — All skills are freely available and redistributable.
 | [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Coding | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" |
 | [django-best-practices](skills/coding/django-best-practices/SKILL.md) | Coding | Implements Django 5.x application patterns including modern project structure, ORM optimization, class-based and function views, DRF integration, async views, caching strategies, and settings management for production-ready web applications. |
+| [dlq-retry-patterns](skills/coding/dlq-retry-patterns/SKILL.md) | Coding | Implements dead letter queue architectures with retry strategies (exponential backoff, circuit breaker integration, poison pill detection) for resilient event-driven systems. |
 | [docker-api](skills/coding/docker-api/SKILL.md) | Coding | Integrates with the Docker Engine API via the docker-py SDK to manage containers, images, networks, volumes, and Swarm clusters from Python applications. |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization |
 | [domain-architecture-project-structure](skills/coding/domain-architecture-project-structure/SKILL.md) | Coding | Defines project directory layouts and module organization for domain-driven systems — vertical slice architecture, modular monolith structure, layer separation within modules, and build configuration for maintainable DDD codebases. |
@@ -1651,6 +1686,7 @@ MIT — All skills are freely available and redistributable.
 | [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Coding | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. |
 | [event-sourcing-pattern](skills/coding/event-sourcing-pattern/SKILL.md) | Coding | Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history. |
 | [event-storming](skills/coding/event-storming/SKILL.md) | Coding | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. |
+| [eventual-consistency-patterns](skills/coding/eventual-consistency-patterns/SKILL.md) | Coding | Manages eventual consistency challenges in distributed systems — read model reconciliation, conflict resolution with CRDTs and vector clocks, anti-corruption layers, and stale read mitigation for event-driven architectures. |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" |
 | [explainability](skills/coding/explainability/SKILL.md) | Coding | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" |
 | [explainable-ai](skills/trading/explainable-ai/SKILL.md) | Trading | "Provides Explainable AI for understanding and trusting trading model decisions" |
@@ -2836,6 +2872,7 @@ MIT — All skills are freely available and redistributable.
 | [distributed-systems-architecture](skills/coding/distributed-systems-architecture/SKILL.md) | Coding | Implements distributed systems patterns (consensus algorithms, consistency models, replication strategies, partitioning, clock synchronization, saga orchestration) for building correct and resilient multi-node systems. | Implementation |
 | [distribution-fitting](skills/coding/distribution-fitting/SKILL.md) | Coding | "Provides Fits statistical distributions to data using goodness-of-fit tests, parameter estimation, and distribution selection methods" | Implementation |
 | [django-best-practices](skills/coding/django-best-practices/SKILL.md) | Coding | Implements Django 5.x application patterns including modern project structure, ORM optimization, class-based and function views, DRF integration, async views, caching strategies, and settings management for production-ready web applications. | Implementation |
+| [dlq-retry-patterns](skills/coding/dlq-retry-patterns/SKILL.md) | Coding | Implements dead letter queue architectures with retry strategies (exponential backoff, circuit breaker integration, poison pill detection) for resilient event-driven systems. | Implementation |
 | [docker-api](skills/coding/docker-api/SKILL.md) | Coding | Integrates with the Docker Engine API via the docker-py SDK to manage containers, images, networks, volumes, and Swarm clusters from Python applications. | Implementation |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Agent | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization | Implementation |
 | [documentation](skills/agent/documentation/SKILL.md) | Agent | Implements intelligent documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -2886,6 +2923,7 @@ MIT — All skills are freely available and redistributable.
 | [event-sourcing](skills/coding/event-sourcing/SKILL.md) | Coding | Persists application state as an append-only immutable event log, enabling full state reconstruction, audit trails, temporal queries, and snapshot-based performance optimization for complex domain models. | Implementation |
 | [event-sourcing-pattern](skills/coding/event-sourcing-pattern/SKILL.md) | Coding | Implements event sourcing pattern (event store, aggregate roots, projections, snapshots, event replay) to maintain complete audit trail and reconstruct state from immutable event history. | Implementation |
 | [event-storming](skills/coding/event-storming/SKILL.md) | Coding | Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects. | Implementation |
+| [eventual-consistency-patterns](skills/coding/eventual-consistency-patterns/SKILL.md) | Coding | Manages eventual consistency challenges in distributed systems — read model reconciliation, conflict resolution with CRDTs and vector clocks, anti-corruption layers, and stale read mitigation for event-driven architectures. | Implementation |
 | [executing-plans](skills/agent/executing-plans/SKILL.md) | Agent | Implements intelligent executing plans with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | Implementation |
 | [explainability](skills/coding/explainability/SKILL.md) | Coding | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" | Implementation |
