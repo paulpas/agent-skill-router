@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1058 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1058 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -129,7 +129,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 473 | Software patterns, security, testing, data science |
+| Coding | 475 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -330,17 +330,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 20:05:47 UTC  
-> **Total skills:** 1058  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1058 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 15:28:54 UTC  
+> **Total skills:** 1060  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1060 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1023 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1023 | Ranking penalty for conflicting query terms |
-| Response Profile | 1023 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1025 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1025 | Ranking penalty for conflicting query terms |
+| Response Profile | 1025 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -809,7 +809,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (473 skills)
+### Coding (475 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1022,9 +1022,11 @@ MIT — All skills are freely available and redistributable.
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | framework lifecycle, framework decision, technology lifecycle, framework evaluation, framework rollback, tech stack lifecycle, framework governance [orchestration] |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | framework performance, performance tuning, optimize framework, profiling application, connection pooling, caching strategy, async optimization, memory management, reduce latency, increase throughput, framework benchmarking, slow endpoint [tactical, generation] |
 | [framework-poc-design](skills/coding/framework-poc-design/SKILL.md) | Designs proof-of-concept test harnesses with measurable success criteria, realistic data scenarios, and structured reporting to validate framework integration feasibility before production commitment. | proof of concept, POC design, test harness design, framework feasibility testing, POC success criteria, spike project, prototype validation, framework integration testing [tactical, diagnostic] |
+| [framework-requirement-adoption](skills/coding/framework-requirement-adoption/SKILL.md) | Translates framework requirements into production code architecture through configuration contract generation, type-system enforcement, lifecycle hook mapping, and phased integration patterns for zero-downtime framework adoption. | framework requirement adoption, how do i adapt my code to a framework, configuration contract, type-system enforcement, lifecycle hook mapping, phased framework integration, framework requirements implementation, zero-downtime migration, architecture adaptation [tactical, generation] |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Defines, evaluates, and validates software framework requirements including non-functional criteria (performance, security, extensibility), weighted selection scoring matrices, proof-of-concept feasibility testing, and architecture decision records f... | framework requirements, evaluating frameworks, selecting libraries, dependency management, architecture decisions, tech stack selection, framework evaluation criteria, non-functional requirements, NFR, framework scoring matrix, POC testing, proof of concept, integration feasibility, production readiness gate [tactical, strategic] |
 | [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Validates code against framework conventions and enforces build tool configuration compliance through automated linting pipelines, schema validation, and CI integration. | framework validation, eslint plugin react hooks, next.js linting rules, django check command, framework compliance, build tool config validation, biome linting, vite config check, tsconfig patterns, code conventions checker, schema validation, ci linting pipeline [tactical, enforcement] |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | framework selection, tech stack evaluation, weighted scoring matrix, AHP decision, framework comparison, technology assessment, framework criteria, evaluate frameworks, choose framework, select technology, tech stack decision, framework trade-offs [tactical, generation] |
+| [framework-sourcing-strategy](skills/coding/framework-sourcing-strategy/SKILL.md) | Discovers and pre-screens software frameworks using ecosystem health analysis, changelog-driven requirement extraction, compatibility matrix evaluation, and AI-assisted signal scoring to shortlist candidates before formal selection. | framework discovery, ecosystem health, framework sourcing, how do i find a good framework, compatibility matrix, changelog analysis, framework shortlist, AI-assisted framework evaluation, dependency risk assessment, OSS maturity signals [tactical, strategic] |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Maximizes the value of a chosen technology or framework through progressive adoption strategies, feature discovery patterns, integration anti-pattern avoidance, and optimization techniques for sustainable long-term utilization. | framework utilization, how do i use a new tool effectively, technology adoption, progressive rollout, feature discovery, integration patterns, optimize chosen framework, leveraging technology, avoid integration anti-patterns, framework best practices, adopt a new framework [tactical, generation] |
 | [functional-programming-patterns](skills/coding/functional-programming-patterns/SKILL.md) | Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code. | functional programming, pure function, immutable transform, function composition, currying, Option type, Either type, data pipeline, map filter reduce, referential transparency, how do i eliminate side effects, chain transformations [tactical, generation] |
 | [gemini-api](skills/coding/gemini-api/SKILL.md) | Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding. | gemini, gemini api, vertex ai, google genai, function calling, gemini 2.5 flash, how do i use gemini api, grounding [tactical, generation] |
@@ -1465,7 +1467,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (639 skills)
+### Implementation (Build Features) (641 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1718,9 +1720,11 @@ MIT — All skills are freely available and redistributable.
 | [framework-integration-testing](skills/coding/framework-integration-testing/SKILL.md) | Coding | Designs integration testing strategies including shadow reads, dual-writes, canary deployment validation, and rollback verification to safely validate framework integrations before production commitment. |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. |
 | [framework-poc-design](skills/coding/framework-poc-design/SKILL.md) | Coding | Designs proof-of-concept test harnesses with measurable success criteria, realistic data scenarios, and structured reporting to validate framework integration feasibility before production commitment. |
+| [framework-requirement-adoption](skills/coding/framework-requirement-adoption/SKILL.md) | Coding | Translates framework requirements into production code architecture through configuration contract generation, type-system enforcement, lifecycle hook mapping, and phased integration patterns for zero-downtime framework adoption. |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Defines, evaluates, and validates software framework requirements including non-functional criteria (performance, security, extensibility), weighted selection scoring matrices, proof-of-concept feasibility testing, and architecture decision records f... |
 | [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Coding | Validates code against framework conventions and enforces build tool configuration compliance through automated linting pipelines, schema validation, and CI integration. |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Coding | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. |
+| [framework-sourcing-strategy](skills/coding/framework-sourcing-strategy/SKILL.md) | Coding | Discovers and pre-screens software frameworks using ecosystem health analysis, changelog-driven requirement extraction, compatibility matrix evaluation, and AI-assisted signal scoring to shortlist candidates before formal selection. |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Maximizes the value of a chosen technology or framework through progressive adoption strategies, feature discovery patterns, integration anti-pattern avoidance, and optimization techniques for sustainable long-term utilization. |
 | [functional-programming-patterns](skills/coding/functional-programming-patterns/SKILL.md) | Coding | Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code. |
 | [gemini-api](skills/coding/gemini-api/SKILL.md) | Coding | Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding. |
@@ -2969,10 +2973,12 @@ MIT — All skills are freely available and redistributable.
 | [framework-orchestration-routing](skills/agent/framework-orchestration-routing/SKILL.md) | Agent | Orchestrates task routing across multiple AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen, MCP) by selecting the optimal framework for each subtask and composing cross-framework workflows with proper context bridges. | Orchestration |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | Implementation |
 | [framework-poc-design](skills/coding/framework-poc-design/SKILL.md) | Coding | Designs proof-of-concept test harnesses with measurable success criteria, realistic data scenarios, and structured reporting to validate framework integration feasibility before production commitment. | Implementation |
+| [framework-requirement-adoption](skills/coding/framework-requirement-adoption/SKILL.md) | Coding | Translates framework requirements into production code architecture through configuration contract generation, type-system enforcement, lifecycle hook mapping, and phased integration patterns for zero-downtime framework adoption. | Implementation |
 | [framework-requirements](skills/coding/framework-requirements/SKILL.md) | Coding | Defines, evaluates, and validates software framework requirements including non-functional criteria (performance, security, extensibility), weighted selection scoring matrices, proof-of-concept feasibility testing, and architecture decision records f... | Implementation |
 | [framework-requirements-validation](skills/coding/framework-requirements-validation/SKILL.md) | Coding | Validates code against framework conventions and enforces build tool configuration compliance through automated linting pipelines, schema validation, and CI integration. | Implementation |
 | [framework-selection](skills/agent/framework-selection/SKILL.md) | Agent | Applies structured decision-making frameworks (weighted scoring, RICE, MoSCoW, decision matrices) to evaluate options against requirements and select optimal solutions. | Orchestration |
 | [framework-selection](skills/coding/framework-selection/SKILL.md) | Coding | Evaluates and scores competing frameworks using weighted criteria matrices, AHP decision-making, risk assessment, and migration planning to select the optimal technology stack for project requirements. | Implementation |
+| [framework-sourcing-strategy](skills/coding/framework-sourcing-strategy/SKILL.md) | Coding | Discovers and pre-screens software frameworks using ecosystem health analysis, changelog-driven requirement extraction, compatibility matrix evaluation, and AI-assisted signal scoring to shortlist candidates before formal selection. | Implementation |
 | [framework-utilization](skills/coding/framework-utilization/SKILL.md) | Coding | Maximizes the value of a chosen technology or framework through progressive adoption strategies, feature discovery patterns, integration anti-pattern avoidance, and optimization techniques for sustainable long-term utilization. | Implementation |
 | [freshdesk-automation](skills/agent/freshdesk-automation/SKILL.md) | Agent | Implements intelligent freshdesk automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [full-stack-orchestration-full-stack-feature](skills/agent/full-stack-orchestration-full-stack-feature/SKILL.md) | Agent | Implements intelligent full stack orchestration full stack feature with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
