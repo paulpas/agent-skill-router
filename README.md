@@ -1,9 +1,9 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1018 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1019 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1018 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1019 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
 ```
@@ -16,9 +16,9 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 <<<<<<< HEAD
-- 🎯 **1018 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1019 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1018 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1019 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
 - 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
@@ -97,7 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 274 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 438 | Software patterns, security, testing, data science |
+| Coding | 439 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -274,9 +274,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-25 23:47:26 UTC  
-> **Total skills:** 1018  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1018 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-25 19:15:05 UTC  
+> **Total skills:** 1019  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1019 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -748,7 +748,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (438 skills)
+### Coding (439 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -855,6 +855,7 @@ MIT — All skills are freely available and redistributable.
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | json serialization, xml parsing, base64 encoding, url encoding, yaml config, protocol buffers, data serialization, type coercion, character encoding, message encoding [tactical, generation] |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | ETL pipeline, data ingestion, streaming data, batch processing, pipeline, how do i ingest data [tactical, generation] |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | data architecture, stream processing, kafka, change data capture, CDC, event sourcing, lakehouse, data mesh, real-time analytics, batch processing, data pipeline design, how do i build a data pipeline, data streaming, Flink, Spark Streaming [tactical, generation] |
+| [data-pipeline-architecture](skills/coding/data-pipeline-architecture/SKILL.md) | Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale. | data pipeline, ETL architecture, ELT pipeline, medallion architecture, batch processing, stream processing, data quality gates, schema evolution, data ingestion, Spark pipeline, Kafka Streams, data transformation pipeline, how do i build a data pipeline |
 | [data-pipeline-engineering](skills/coding/data-pipeline-engineering/SKILL.md) | Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure. | data pipeline, ETL, ELT, data ingestion, schema evolution, data validation, idempotent processing, data quality, Apache Kafka, Airflow DAG, batch processing, streaming pipeline, how do i build a data pipeline, data engineering, backpressure handling... [tactical, generation] |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | data privacy, anonymization, differential privacy, GDPR, PII protection, privacy-preserving, sensitive data [tactical, generation] |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale | data profiling, metadata extraction, schema analysis, data schema, how do i profile data, data structure, performance analysis, optimization [tactical, generation] |
@@ -1369,7 +1370,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (600 skills)
+### Implementation (Build Features) (601 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1500,6 +1501,7 @@ MIT — All skills are freely available and redistributable.
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. |
+| [data-pipeline-architecture](skills/coding/data-pipeline-architecture/SKILL.md) | Coding | Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale. |
 | [data-pipeline-engineering](skills/coding/data-pipeline-engineering/SKILL.md) | Coding | Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure. |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale |
@@ -2668,6 +2670,7 @@ MIT — All skills are freely available and redistributable.
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | Implementation |
 | [data-ingestion](skills/coding/data-ingestion/SKILL.md) | Coding | "Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow" | Implementation |
 | [data-intensive-systems](skills/coding/data-intensive-systems/SKILL.md) | Coding | Implements data-intensive architecture patterns including stream processing, change data capture, lakehouse storage, event sourcing, and data mesh organizational design for high-throughput data systems. | Implementation |
+| [data-pipeline-architecture](skills/coding/data-pipeline-architecture/SKILL.md) | Coding | Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale. | Implementation |
 | [data-pipeline-engineering](skills/coding/data-pipeline-engineering/SKILL.md) | Coding | Designs and implements production data pipelines (ETL, ELT, streaming) with data validation, schema evolution handling, idempotent processing, and quality gates for reliable data infrastructure. | Implementation |
 | [data-privacy](skills/coding/data-privacy/SKILL.md) | Coding | "Applies privacy-preserving techniques including anonymization, differential privacy, encryption, and GDPR compliance for sensitive data" | Implementation |
 | [data-profiling](skills/coding/data-profiling/SKILL.md) | Coding | Provides Extracts data profiles, schemas, metadata, and statistical summaries to understand data structure, quality, and characteristics at scale | Implementation |
