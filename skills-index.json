@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T20:29:20.323044Z",
-  "totalSkills": 1060,
+  "generatedAt": "2026-05-26T21:17:16.248920Z",
+  "totalSkills": 1062,
   "domains": {
     "agent": 279,
     "cncf": 173,
-    "coding": 475,
+    "coding": 477,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 641,
+    "implementation": 643,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -7198,6 +7198,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/dependency-graph-builder/SKILL.md"
+    },
+    {
+      "name": "dependency-injection-patterns",
+      "domain": "coding",
+      "description": "Implements dependency injection patterns (constructor injection, factory patterns, IoC containers, composition root) with Protocol-based interfaces for loose coupling and testable software architecture.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dependency injection",
+        "IoC",
+        "inversion of control",
+        "composition root",
+        "constructor injection",
+        "DI container",
+        "service locator",
+        "how do i decouple my classes",
+        "test with mock dependencies",
+        "wire up my app"
+      ],
+      "relatedSkills": [
+        "design-for-testability",
+        "hexagonal-architecture",
+        "strategy-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/dependency-injection-patterns/SKILL.md"
     },
     {
       "name": "dependency-inversion-principle",
@@ -24058,6 +24085,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/trigger-dev/SKILL.md"
+    },
+    {
+      "name": "trunk-based-development",
+      "domain": "coding",
+      "description": "Implements trunk-based development workflows with feature flag gating, short-lived branching strategies, and automated CI to keep main always deployable.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "trunk-based development",
+        "TBD",
+        "feature flag",
+        "short-lived branches",
+        "main branch protection",
+        "how do i reduce merge conflicts",
+        "avoid long-lived branches"
+      ],
+      "relatedSkills": [
+        "secure-release-pipeline",
+        "monolith-refactoring",
+        "architectural-modernization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/trunk-based-development/SKILL.md"
     },
     {
       "name": "twap",

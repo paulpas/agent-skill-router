@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1060 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1062 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1060 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1062 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -129,7 +129,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 475 | Software patterns, security, testing, data science |
+| Coding | 477 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -330,17 +330,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 20:29:22 UTC  
-> **Total skills:** 1060  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1060 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 21:17:18 UTC  
+> **Total skills:** 1062  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1062 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1025 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1025 | Ranking penalty for conflicting query terms |
-| Response Profile | 1025 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1026 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1026 | Ranking penalty for conflicting query terms |
+| Response Profile | 1026 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -809,7 +809,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (475 skills)
+### Coding (477 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -946,6 +946,7 @@ MIT — All skills are freely available and redistributable.
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. | debugging, root cause analysis, binary search debugging, bisect, rubber ducking, stack trace analysis, log debugging, production debug [tactical, diagnostic] |
 | [decorator-pattern](skills/coding/decorator-pattern/SKILL.md) | Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains. | decorator pattern, object decoration, composition over inheritance, how do i add behavior dynamically, proxy decorator, wrapper pattern, behavioral extension |
 | [deduplication-patterns](skills/coding/deduplication-patterns/SKILL.md) | Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases. | dry principle, don't repeat yourself, code deduplication, extract method, reduce duplication, boilerplate removal, code reuse pattern, abstraction, refactoring duplicate code, shared logic, common function, parameter object, template method, strategy pattern [tactical, diagnostic] |
+| [dependency-injection-patterns](skills/coding/dependency-injection-patterns/SKILL.md) | Implements dependency injection patterns (constructor injection, factory patterns, IoC containers, composition root) with Protocol-based interfaces for loose coupling and testable software architecture. | dependency injection, IoC, inversion of control, composition root, constructor injection, DI container, service locator, how do i decouple my classes, test with mock dependencies, wire up my app [tactical, generation] |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | dependency inversion principle, DIP, dependency injection, inversion of control, IoC, loose coupling, high level low level abstraction, constructor injection, factory pattern, testable architecture [tactical, generation] |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | CVE, dependency management, vulnerability scanning, dependency updates, security patching, SCA, software composition analysis, vulnerability remediation [tactical, generation] |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... | SBOM, SLSA, sigstore, cosign, supply chain attack, dependency pinning, how do i secure my dependencies, package signing [tactical, generation] |
@@ -1262,6 +1263,7 @@ MIT — All skills are freely available and redistributable.
 | [tool-evaluation-workflow](skills/coding/tool-evaluation-workflow/SKILL.md) | Applies a structured evaluation framework to select tools, libraries, and frameworks based on technical fit, community health, security posture, performance benchmarks, and total cost of ownership for software projects. | tool evaluation, library selection, framework comparison, proof of concept, technology assessment, how do i evaluate tools, build vs buy decision, dependency management [educational] |
 | [topic-modeling](skills/coding/topic-modeling/SKILL.md) | "Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods" | topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation, text analysis [tactical, generation] |
 | [tree-methods](skills/coding/tree-methods/SKILL.md) | "Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods for classification and regression | decision trees, random forest, gradient boosting, xgboost, lightgbm, how do i use trees [tactical, generation] |
+| [trunk-based-development](skills/coding/trunk-based-development/SKILL.md) | Implements trunk-based development workflows with feature flag gating, short-lived branching strategies, and automated CI to keep main always deployable. | trunk-based development, TBD, feature flag, short-lived branches, main branch protection, how do i reduce merge conflicts, avoid long-lived branches |
 | [twilio-api](skills/coding/twilio-api/SKILL.md) | Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation. | twilio, sms api, send sms, whatsapp api, twilio verify, phone verification, twilio voice, twilio webhooks [tactical, generation] |
 | [type-safety-enforcement](skills/coding/type-safety-enforcement/SKILL.md) | Enforces strong type safety across software systems using static typing, generics, custom types, strict null checking, and compile-time validation to eliminate entire categories of runtime errors. | type safety, static typing, strict null check, generics, type annotations, type checking, mypy, TypeScript, how do i enforce types, compile-time errors, nominal typing, structural typing [tactical, generation] |
 | [typescript-generics-types](skills/coding/typescript-generics-types/SKILL.md) | Implements TypeScript generics, conditional types, mapped types, template literal types, and type-level programming patterns for compile-time type transformations. | generics, type parameters, conditional types, infer keyword, mapped types, template literal types, keyof [tactical, generation] |
@@ -1467,7 +1469,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (641 skills)
+### Implementation (Build Features) (643 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1633,6 +1635,7 @@ MIT — All skills are freely available and redistributable.
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Coding | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. |
 | [decorator-pattern](skills/coding/decorator-pattern/SKILL.md) | Coding | Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains. |
 | [deduplication-patterns](skills/coding/deduplication-patterns/SKILL.md) | Coding | Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases. |
+| [dependency-injection-patterns](skills/coding/dependency-injection-patterns/SKILL.md) | Coding | Implements dependency injection patterns (constructor injection, factory patterns, IoC containers, composition root) with Protocol-based interfaces for loose coupling and testable software architecture. |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Coding | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... |
@@ -2070,6 +2073,7 @@ MIT — All skills are freely available and redistributable.
 | [trading-psychology](skills/trading/trading-psychology/SKILL.md) | Trading | "Emotional discipline, cognitive bias awareness, and maintaining operational" integrity in trading |
 | [tree-methods](skills/coding/tree-methods/SKILL.md) | Coding | "Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods for classification and regression |
 | [trend-analysis](skills/trading/trend-analysis/SKILL.md) | Trading | "Provides Trend identification, classification, and continuation analysis" |
+| [trunk-based-development](skills/coding/trunk-based-development/SKILL.md) | Coding | Implements trunk-based development workflows with feature flag gating, short-lived branching strategies, and automated CI to keep main always deployable. |
 | [twap](skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large orders with" minimal market impact |
 | [twap-vwap](skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution''' |
 | [twilio-api](skills/coding/twilio-api/SKILL.md) | Coding | Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation. |
@@ -2848,6 +2852,7 @@ MIT — All skills are freely available and redistributable.
 | [decorator-pattern](skills/coding/decorator-pattern/SKILL.md) | Coding | Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains. | Implementation |
 | [deduplication-patterns](skills/coding/deduplication-patterns/SKILL.md) | Coding | Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases. | Implementation |
 | [dependency-graph-builder](skills/agent/dependency-graph-builder/SKILL.md) | Agent | Implements intelligent dependency graph builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [dependency-injection-patterns](skills/coding/dependency-injection-patterns/SKILL.md) | Coding | Implements dependency injection patterns (constructor injection, factory patterns, IoC containers, composition root) with Protocol-based interfaces for loose coupling and testable software architecture. | Implementation |
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | Implementation |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | Implementation |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Coding | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... | Implementation |
@@ -3541,6 +3546,7 @@ MIT — All skills are freely available and redistributable.
 | [tree-methods](skills/coding/tree-methods/SKILL.md) | Coding | "Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods for classification and regression | Implementation |
 | [trend-analysis](skills/trading/trend-analysis/SKILL.md) | Trading | "Provides Trend identification, classification, and continuation analysis" | Implementation |
 | [trigger-dev](skills/agent/trigger-dev/SKILL.md) | Agent | Implements intelligent trigger dev with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [trunk-based-development](skills/coding/trunk-based-development/SKILL.md) | Coding | Implements trunk-based development workflows with feature flag gating, short-lived branching strategies, and automated CI to keep main always deployable. | Implementation |
 | [twap](skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large orders with" minimal market impact | Implementation |
 | [twap-vwap](skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution''' | Implementation |
 | [twilio-api](skills/coding/twilio-api/SKILL.md) | Coding | Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations, Video) using the twilio-python SDK v9.x with proper client initialization, TwiML generation, and webhook validation. | Implementation |
