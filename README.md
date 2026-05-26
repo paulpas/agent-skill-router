@@ -298,7 +298,7 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 08:44:34 UTC  
+> **Last updated:** 2026-05-26 09:10:26 UTC  
 > **Total skills:** 1041  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (1041 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
@@ -1354,7 +1354,7 @@ MIT — All skills are freely available and redistributable.
 | [order-book-sync](skills/trading/order-book-sync/SKILL.md) | "Provides Order book synchronization and state management for accurate trading" | exchange order book sync, exchange-order-book-sync, management, state, synchronization [tactical] |
 | [order-execution-api](skills/trading/order-execution-api/SKILL.md) | "Implements order execution and management api for trading systems for risk management and algorithmic trading execution." | exchange order execution api, exchange-order-execution-api, management, systems, trading [tactical] |
 | [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | "Provides Analyze order flow to detect market pressure and anticipate price moves" | ai order flow analysis, ai-order-flow-analysis, analyze, detect, market [tactical] |
-| [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Analyzes order flow dynamics, market microstructure, and Level 2 data to identify institutional accumulation, liquidity zones, and optimal execution points in algorithmic trading systems. | order flow, order book, liquidity analysis, market microstructure, footprint charts, cumulative delta, volume profile, level 2 data, tape reading, imbalance detection |
+| [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Analyzes order flow dynamics, market microstructure, and Level 2 data to identify institutional accumulation, liquidity zones, and optimal execution points in algorithmic trading systems. | order flow, cumulative delta, order book imbalance, footprint analysis, market microstructure, liquidity zones, tape reading, volume profile |
 | [order-flow-footprint](skills/trading/order-flow-footprint/SKILL.md) | Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures. | footprint chart, volume delta, cumulative delta, order flow analysis, delta divergence, stacked imbalance, aggressive buying, order flow footprint [tactical] |
 | [order-flow-toxicity](skills/trading/order-flow-toxicity/SKILL.md) | Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk. | order flow toxicity, VPIN, PIN model, adverse selection, predatory HFT, toxic flow, informed trading, liquidity provider toxicity [tactical] |
 | [performance-attribution](skills/trading/performance-attribution/SKILL.md) | "Provides Performance Attribution Systems for Trading Strategy Decomposition" | optimization, paper performance attribution, paper-performance-attribution, strategy, systems, trading, performance, speed [tactical] |
