@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1047 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1048 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1047 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1048 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1047 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1048 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1047 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1048 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1047 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1048 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1047 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1048 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1047 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1048 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1047 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1048 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -109,7 +109,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 462 | Software patterns, security, testing, data science |
+| Coding | 463 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -298,9 +298,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 13:22:03 UTC  
-> **Total skills:** 1047  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1047 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 09:21:38 UTC  
+> **Total skills:** 1048  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1048 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -777,7 +777,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (462 skills)
+### Coding (463 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1189,6 +1189,7 @@ MIT — All skills are freely available and redistributable.
 | [solid-anti-patterns](skills/coding/solid-anti-patterns/SKILL.md) | Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries. | solid anti-patterns, SOLID violations, refactoring SOLID, god class refactor, fragile base class, brittle hierarchy, tight coupling fix, interface pollution, dependency inversion violation, SRP violation, open closed violation, LSP violation, ISP violation, DIP refactoring, code smell detection... [diagnostic, tactical] |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. | splunk, splunk search, hec, http event collector, splunk sdk, splunk alerts, how do i send logs to splunk, log management [tactical, generation] |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | spring boot, spring framework, dependency injection, auto configuration, rest controller, record dto, profile configuration, actuator, java 21, virtual threads, @service, @component, @autowired, how do i build a spring app [tactical, generation] |
+| [sql-substitution](skills/coding/sql-substitution/SKILL.md) | Implements SQL variable substitution (Oracle &varname, psql :variable, MySQL @var, SQLite3 .variable) with ACCEPT prompts, ampersand escaping, COALESCE defaults, and CI/CD-safe patterns. | SQL substitution, ampersand variable, Oracle substitution, psql variables, &varname, ACCEPT PROMPT, escaping ampersand, missing variable handling |
 | [square-api](skills/coding/square-api/SKILL.md) | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. | square, square payments api, square catalog, square inventory, square orders, square webhooks, square terminal, how do i integrate square payments, retail pos [tactical, generation] |
 | [sre-engineering](skills/coding/sre-engineering/SKILL.md) | Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability. | sre, site reliability, SLO monitoring, error budget, incident management, capacity planning, chaos engineering, blameless postmortem |
 | [ssrf-prevention](skills/coding/ssrf-prevention/SKILL.md) | Implements defense-in-depth SSRF prevention including URL validation, IP blocking, DNS rebinding protection, and cloud metadata endpoint hardening across Python, Node.js, and Go applications. | ssrf prevention, server-side request forgery, url validation, internal ip blocking, cloud metadata protection, dns rebinding, webhook security [tactical, enforcement] |
@@ -1422,7 +1423,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (628 skills)
+### Implementation (Build Features) (629 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1962,6 +1963,7 @@ MIT — All skills are freely available and redistributable.
 | [solid-anti-patterns](skills/coding/solid-anti-patterns/SKILL.md) | Coding | Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries. |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Coding | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. |
+| [sql-substitution](skills/coding/sql-substitution/SKILL.md) | Coding | Implements SQL variable substitution (Oracle &varname, psql :variable, MySQL @var, SQLite3 .variable) with ACCEPT prompts, ampersand escaping, COALESCE defaults, and CI/CD-safe patterns. |
 | [square-api](skills/coding/square-api/SKILL.md) | Coding | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. |
 | [sre-engineering](skills/coding/sre-engineering/SKILL.md) | Coding | Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability. |
 | [ssrf-prevention](skills/coding/ssrf-prevention/SKILL.md) | Coding | Implements defense-in-depth SSRF prevention including URL validation, IP blocking, DNS rebinding protection, and cloud metadata endpoint hardening across Python, Node.js, and Go applications. |
@@ -3398,6 +3400,7 @@ MIT — All skills are freely available and redistributable.
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Coding | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. | Implementation |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | Implementation |
 | [sql-database](skills/cncf/sql-database/SKILL.md) | Cncf | Provides Managed relational database with elastic pools, geo-replication, and automatic backups | Reference |
+| [sql-substitution](skills/coding/sql-substitution/SKILL.md) | Coding | Implements SQL variable substitution (Oracle &varname, psql :variable, MySQL @var, SQLite3 .variable) with ACCEPT prompts, ampersand escaping, COALESCE defaults, and CI/CD-safe patterns. | Implementation |
 | [sqs](skills/cncf/sqs/SKILL.md) | Cncf | "Deploys managed message queues with SQS for asynchronous processing" decoupling services, and reliable message delivery with visibility timeout and dead-letter queues. | Reference |
 | [square-api](skills/coding/square-api/SKILL.md) | Coding | Implements Square API integration (Payments, Catalog, Inventory, Orders, Customers, Terminal) using square-sdk Python with webhook signature verification, idempotency keys, PCI-compliant card processing, and inventory synchronization. | Implementation |
 | [sre-engineering](skills/coding/sre-engineering/SKILL.md) | Coding | Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability. | Implementation |
