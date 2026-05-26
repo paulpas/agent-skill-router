@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T15:21:53.399705Z",
+  "generatedAt": "2026-05-26T16:04:45.794197Z",
   "totalSkills": 1050,
   "domains": {
     "agent": 279,
@@ -2947,9 +2947,7 @@
         "chain of responsibility",
         "visitor pattern",
         "algorithm encapsulation",
-        "how do i decouple logic flow",
-        "interpreter pattern",
-        "iterator pattern"
+        "how do i decouple logic flow"
       ],
       "relatedSkills": [
         "structural-design-patterns",
@@ -3489,21 +3487,17 @@
       "triggers": [
         "caching strategy",
         "cache-aside pattern",
-        "write-through cache",
         "cache invalidation",
-        "LRU cache",
         "TTL management",
         "cache stampede",
-        "distributed caching",
         "Redis cache",
         "multi-level cache",
-        "cache warm-up",
-        "read-through cache"
+        "cache warm-up"
       ],
       "relatedSkills": [
         "performance-optimization",
         "database-design-modeling",
-        "async-runtime",
+        "asyncio-patterns",
         "configuration-management-patterns"
       ],
       "version": "1.0.0",
@@ -5503,18 +5497,14 @@
         "config hot reload",
         "secret injection",
         "HashiCorp Vault",
-        "environment configuration",
-        "hierarchical config",
         "Pydantic settings",
-        "how do i manage application configuration",
-        "config merging",
-        "env var overrides"
+        "how do i manage application configuration"
       ],
       "relatedSkills": [
         "database-design-modeling",
         "performance-optimization",
         "security-review",
-        "deployment-infrastructure-patterns"
+        "cncf-deployment-orchestration"
       ],
       "version": "1.0.0",
       "source": "skills/coding/configuration-management-patterns/SKILL.md"
