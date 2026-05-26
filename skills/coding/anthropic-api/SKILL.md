@@ -29,7 +29,7 @@ metadata:
   - guidance
   - examples
   - do-dont
-  related-skills: coding-openai-api, coding-aws-bedrock, coding-mcp-protocol
+  related-skills: llm-function-calling, coding-openai-api, coding-aws-bedrock, coding-mcp-protocol
 ------
 # Anthropic Claude API Integration
 

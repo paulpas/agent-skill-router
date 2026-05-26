@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1066 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1066 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1066 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1066 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1066 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1066 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1066 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1066 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1066 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1066 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1066 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1066 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1066 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1066 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1066 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1066 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -129,7 +129,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 280 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 480 | Software patterns, security, testing, data science |
+| Coding | 481 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -330,17 +330,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 23:30:57 UTC  
-> **Total skills:** 1066  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1066 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 18:48:34 UTC  
+> **Total skills:** 1067  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1067 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1029 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1029 | Ranking penalty for conflicting query terms |
-| Response Profile | 1029 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1030 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1030 | Ranking penalty for conflicting query terms |
+| Response Profile | 1030 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -810,7 +810,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (480 skills)
+### Coding (481 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1089,6 +1089,7 @@ MIT — All skills are freely available and redistributable.
 | [liskov-substitution-principle](skills/coding/liskov-substitution-principle/SKILL.md) | Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability. | liskov substitution principle, LSP, subtype contract, precondition, postcondition, invariant, is-a relationship, breaking subclass, type safety [tactical, generation] |
 | [llamaindex](skills/coding/llamaindex/SKILL.md) | Integrates LlamaIndex (indexes, query engines, agents, workflows, document parsing, RAG pipelines) for building data-aware LLM applications in Python. | llamaindex, llama index, rag pipeline, query engine, vector store index, llama parse, how do i use llamaindex, document agents [tactical, generation] |
 | [llm-fine-tuning](skills/coding/llm-fine-tuning/SKILL.md) | Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoRA, AdaLoRA), DPO alignment, instruction tuning with unsloth and axolotl, plus evaluation against MMLU, GSM8K, and HumanEval benchmarks. | fine-tuning LLM, LoRA, QLoRA, PEFT, DPO alignment, instruction tuning, unsloth, parameter-efficient fine-tuning [tactical, generation] |
+| [llm-function-calling](skills/coding/llm-function-calling/SKILL.md) | Implements reliable LLM function calling patterns including JSON Schema tool definitions, structured output parsing with Pydantic v2, retry strategies, and error handling for cross-provider tool use. | function calling, tool use, structured output, json schema, llm api, pydantic validation, tool definition, how do i make an llm call code [tactical, diagnostic, generation] |
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" | logistic regression, classification, binary classification, multinomial, how do i classify [tactical, generation] |
 | [mage-build-tool](skills/coding/mage-build-tool/SKILL.md) | Implements Mage build automation using Go code as build scripts, providing type-safe targets, aliases, build flags, environment-aware builds, and cross-compilation for development workflows. | mage, magefile, go build tool, mg package, main.go targets, how do i write build scripts in go, golang build automation, type-safe makefile, cross-compilation go [tactical, generation] |
 | [mailgun-api](skills/coding/mailgun-api/SKILL.md) | Integrates Mailgun API (Messages, Routes, Email Validation, Suppression List, Analytics) using the official mailgun-python SDK v1.7+ with proper REST patterns, MIME handling, and deliverability optimization. | mailgun, mailgun api, send email, email validation, email routing, transactional email, inbound email, mailgun python [tactical, generation] |
@@ -1473,7 +1474,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (648 skills)
+### Implementation (Build Features) (649 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1814,6 +1815,7 @@ MIT — All skills are freely available and redistributable.
 | [live-model-monitoring](skills/trading/live-model-monitoring/SKILL.md) | Trading | "Provides Monitor production ML models for drift, decay, and performance degradation" |
 | [llamaindex](skills/coding/llamaindex/SKILL.md) | Coding | Integrates LlamaIndex (indexes, query engines, agents, workflows, document parsing, RAG pipelines) for building data-aware LLM applications in Python. |
 | [llm-fine-tuning](skills/coding/llm-fine-tuning/SKILL.md) | Coding | Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoRA, AdaLoRA), DPO alignment, instruction tuning with unsloth and axolotl, plus evaluation against MMLU, GSM8K, and HumanEval benchmarks. |
+| [llm-function-calling](skills/coding/llm-function-calling/SKILL.md) | Coding | Implements reliable LLM function calling patterns including JSON Schema tool definitions, structured output parsing with Pydantic v2, retry strategies, and error handling for cross-provider tool use. |
 | [llm-orchestration](skills/trading/llm-orchestration/SKILL.md) | Trading | "Large Language Model orchestration for trading analysis with structured" output using instructor/pydantic |
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | Coding | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" |
 | [lookahead-bias](skills/trading/lookahead-bias/SKILL.md) | Trading | "Preventing lookahead bias in backtesting through strict causality enforcement" time-based validation, and comprehensive detection frameworks. |
@@ -3154,6 +3156,7 @@ MIT — All skills are freely available and redistributable.
 | [live-model-monitoring](skills/trading/live-model-monitoring/SKILL.md) | Trading | "Provides Monitor production ML models for drift, decay, and performance degradation" | Implementation |
 | [llamaindex](skills/coding/llamaindex/SKILL.md) | Coding | Integrates LlamaIndex (indexes, query engines, agents, workflows, document parsing, RAG pipelines) for building data-aware LLM applications in Python. | Implementation |
 | [llm-fine-tuning](skills/coding/llm-fine-tuning/SKILL.md) | Coding | Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoRA, AdaLoRA), DPO alignment, instruction tuning with unsloth and axolotl, plus evaluation against MMLU, GSM8K, and HumanEval benchmarks. | Implementation |
+| [llm-function-calling](skills/coding/llm-function-calling/SKILL.md) | Coding | Implements reliable LLM function calling patterns including JSON Schema tool definitions, structured output parsing with Pydantic v2, retry strategies, and error handling for cross-provider tool use. | Implementation |
 | [llm-orchestration](skills/trading/llm-orchestration/SKILL.md) | Trading | "Large Language Model orchestration for trading analysis with structured" output using instructor/pydantic | Implementation |
 | [load-balancer](skills/cncf/load-balancer/SKILL.md) | Cncf | Provides Distributes traffic across VMs with health probes and rule-based routing | Reference |
 | [logistic-regression](skills/coding/logistic-regression/SKILL.md) | Coding | "Implements logistic regression for binary and multinomial classification with probability estimation and odds ratio interpretation" | Implementation |
