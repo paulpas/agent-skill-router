@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T16:19:55.355454Z",
-  "totalSkills": 1052,
+  "generatedAt": "2026-05-26T17:16:26.724210Z",
+  "totalSkills": 1054,
   "domains": {
     "agent": 279,
     "cncf": 173,
-    "coding": 467,
+    "coding": 469,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 633,
+    "implementation": 635,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -9825,6 +9825,26 @@
       "source": "skills/coding/framework-application-methodology/SKILL.md"
     },
     {
+      "name": "framework-architecture-design",
+      "domain": "coding",
+      "description": "Translates framework requirements into concrete architectural decisions including module boundaries, layering strategies, extension point placement, data flow design, and dependency topology that respect the chosen framework's paradigms.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework architecture",
+        "architectural layout",
+        "module boundaries",
+        "layering strategy",
+        "how do i structure a framework project",
+        "dependency topology",
+        "hexagonal architecture"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-architecture-design/SKILL.md"
+    },
+    {
       "name": "framework-comparison-workflow",
       "domain": "coding",
       "description": "Runs structured, code-level comparison workflows between competing frameworks through spike projects, side-by-side implementations, developer experience measurement, and ecosystem analysis to produce evidence-based selection recommendations.",
@@ -9929,6 +9949,26 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-evaluation-criteria/SKILL.md"
+    },
+    {
+      "name": "framework-extension-design",
+      "domain": "coding",
+      "description": "Designs extension points, plugin interfaces, and public API surfaces for frameworks built in-house — defining stable plugin contracts, middleware pipelines, versioned extension APIs, and authoring guides for third-party contributors.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "extension design",
+        "plugin interface",
+        "middleware pipeline design",
+        "how do i make my framework extensible",
+        "third-party plugins",
+        "extension points",
+        "versioned extension APIs"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-extension-design/SKILL.md"
     },
     {
       "name": "framework-implementation-patterns",
