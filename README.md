@@ -2,13 +2,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1054 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1056 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1054 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1056 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1054 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1056 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1054 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1056 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 
@@ -23,13 +23,13 @@ Full expert skills injected into context — AI answers as expert reviewer
 **Key Features:**
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1054 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1056 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1054 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1056 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1054 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1056 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1054 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1056 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
@@ -109,7 +109,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 279 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 469 | Software patterns, security, testing, data science |
+| Coding | 471 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -298,17 +298,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 17:45:02 UTC  
-> **Total skills:** 1054  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1054 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 19:13:00 UTC  
+> **Total skills:** 1056  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1056 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1019 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1019 | Ranking penalty for conflicting query terms |
-| Response Profile | 1019 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1021 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1021 | Ranking penalty for conflicting query terms |
+| Response Profile | 1021 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -777,7 +777,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (469 skills)
+### Coding (471 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -907,7 +907,9 @@ MIT — All skills are freely available and redistributable.
 | [ddd-anti-patterns](skills/coding/ddd-anti-patterns/SKILL.md) | Detects and resolves common Domain-Driven Design anti-patterns including god aggregates, anemic domain models, context creep, repository leakage, specification over-engineering, and domain service sprawl in DDD codebases. | ddd anti-patterns, god aggregate, anemic domain model, context creep, repository leakage, bounded context violation, domain service sprawl, specification pattern misuse, how do i fix ddd mistakes, DDD code review, domain model smell [diagnostic, enforcement] |
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. | command pattern, ddd command handler, command bus, how do i implement commands, use case orchestration, command validation, cqrs command side, write model handlers, transaction coordination [tactical, generation] |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration. | context mapping, anticorruption layer, acl, shared kernel, customer supplier relationship, conformist pattern, publication language, bounded context integration, strategic ddd, how do i integrate bounded contexts [tactical, generation] |
+| [ddd-domain-events](skills/coding/ddd-domain-events/SKILL.md) | Implements domain event infrastructure for DDD systems — synchronous publish-subscribe dispatchers, schema versioning with Pydantic discriminators, idempotent handler guards, PostgreSQL outbox pattern for reliable async delivery, and dead letter queu... | domain events, event dispatcher, publish subscribe, event sourcing, idempotent handlers, outbox pattern, event schema versioning, how do i implement domain events, DDD events [tactical, generation] |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | ddd refactoring, extract bounded context, split aggregate, god object refactor, primitive obsession, anticorruption layer, how do i move to ddd, legacy code to ddd [tactical, generation] |
+| [ddd-specification-pattern](skills/coding/ddd-specification-pattern/SKILL.md) | Implements the DDD specification pattern — composable business rule objects using AND/OR/NOT boolean algebra, expression tree translation for ORM query pushdown, domain validation specs, protocol-based contracts, and reusable primitive factories for... | specification pattern, spec pattern, composable business rules, AND OR NOT composition, expression tree translation, repository filtering specs, domain validation specs, primitive factories, query builder specifications, how do i compose business rules in DDD, predicate composition [tactical, generation] |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Implements DDD tactical patterns — aggregate roots with invariant enforcement, value objects, domain events, anti-corruption layers, repositories, and specification pattern for rich domain modeling in Python. | DDD, domain-driven design, aggregate root, value object, domain event, anti-corruption layer, specification pattern, how do i model complex business logic, bounded context implementation [tactical, generation, educational] |
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. | debugging, root cause analysis, binary search debugging, bisect, rubber ducking, stack trace analysis, log debugging, production debug [tactical, diagnostic] |
 | [decorator-pattern](skills/coding/decorator-pattern/SKILL.md) | Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains. | decorator pattern, object decoration, composition over inheritance, how do i add behavior dynamically, proxy decorator, wrapper pattern, behavioral extension |
@@ -1429,7 +1431,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (635 skills)
+### Implementation (Build Features) (637 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1588,7 +1590,9 @@ MIT — All skills are freely available and redistributable.
 | [ddd-aggregate-lifecycle](skills/coding/ddd-aggregate-lifecycle/SKILL.md) | Coding | Implements aggregate lifecycle management patterns — snapshotting, schema versioning, optimistic concurrency control, aggregate root splitting strategies, and consistency boundary enforcement for high-throughput domain-driven systems. |
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Coding | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration. |
+| [ddd-domain-events](skills/coding/ddd-domain-events/SKILL.md) | Coding | Implements domain event infrastructure for DDD systems — synchronous publish-subscribe dispatchers, schema versioning with Pydantic discriminators, idempotent handler guards, PostgreSQL outbox pattern for reliable async delivery, and dead letter queu... |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. |
+| [ddd-specification-pattern](skills/coding/ddd-specification-pattern/SKILL.md) | Coding | Implements the DDD specification pattern — composable business rule objects using AND/OR/NOT boolean algebra, expression tree translation for ORM query pushdown, domain validation specs, protocol-based contracts, and reusable primitive factories for... |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical patterns — aggregate roots with invariant enforcement, value objects, domain events, anti-corruption layers, repositories, and specification pattern for rich domain modeling in Python. |
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Coding | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. |
 | [decorator-pattern](skills/coding/decorator-pattern/SKILL.md) | Coding | Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains. |
@@ -2796,7 +2800,9 @@ MIT — All skills are freely available and redistributable.
 | [ddd-anti-patterns](skills/coding/ddd-anti-patterns/SKILL.md) | Coding | Detects and resolves common Domain-Driven Design anti-patterns including god aggregates, anemic domain models, context creep, repository leakage, specification over-engineering, and domain service sprawl in DDD codebases. | Review |
 | [ddd-command-pattern](skills/coding/ddd-command-pattern/SKILL.md) | Coding | Implements DDD command pattern — command definitions, typed command handlers, command bus routing, use case orchestration with validation, and Unit of Work transaction coordination within bounded contexts. | Implementation |
 | [ddd-context-mapping](skills/coding/ddd-context-mapping/SKILL.md) | Coding | Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration. | Implementation |
+| [ddd-domain-events](skills/coding/ddd-domain-events/SKILL.md) | Coding | Implements domain event infrastructure for DDD systems — synchronous publish-subscribe dispatchers, schema versioning with Pydantic discriminators, idempotent handler guards, PostgreSQL outbox pattern for reliable async delivery, and dead letter queu... | Implementation |
 | [ddd-refactoring](skills/coding/ddd-refactoring/SKILL.md) | Coding | Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers. | Implementation |
+| [ddd-specification-pattern](skills/coding/ddd-specification-pattern/SKILL.md) | Coding | Implements the DDD specification pattern — composable business rule objects using AND/OR/NOT boolean algebra, expression tree translation for ORM query pushdown, domain validation specs, protocol-based contracts, and reusable primitive factories for... | Implementation |
 | [ddd-tactical-patterns](skills/coding/ddd-tactical-patterns/SKILL.md) | Coding | Implements DDD tactical patterns — aggregate roots with invariant enforcement, value objects, domain events, anti-corruption layers, repositories, and specification pattern for rich domain modeling in Python. | Implementation |
 | [debugging-methodology](skills/coding/debugging-methodology/SKILL.md) | Coding | Applies systematic debugging methodologies (binary search, rubber ducking, log analysis, bisect tools) to rapidly identify root causes of bugs in production and development environments. | Implementation |
 | [decorator-pattern](skills/coding/decorator-pattern/SKILL.md) | Coding | Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains. | Implementation |

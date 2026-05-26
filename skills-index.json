@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T17:45:00.426945Z",
-  "totalSkills": 1054,
+  "generatedAt": "2026-05-26T19:12:59.017997Z",
+  "totalSkills": 1056,
   "domains": {
     "agent": 279,
     "cncf": 173,
-    "coding": 469,
+    "coding": 471,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 635,
+    "implementation": 637,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -6990,6 +6990,31 @@
       "source": "skills/coding/ddd-context-mapping/SKILL.md"
     },
     {
+      "name": "ddd-domain-events",
+      "domain": "coding",
+      "description": "Implements domain event infrastructure for DDD systems — synchronous publish-subscribe dispatchers, schema versioning with Pydantic discriminators, idempotent handler guards, PostgreSQL outbox pattern for reliable async delivery, and dead letter queue pipelines.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "domain events",
+        "event dispatcher",
+        "publish subscribe",
+        "event sourcing",
+        "idempotent handlers",
+        "outbox pattern",
+        "event schema versioning",
+        "how do i implement domain events",
+        "DDD events"
+      ],
+      "relatedSkills": [
+        "ddd-aggregate-root",
+        "ddd-specification-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ddd-domain-events/SKILL.md"
+    },
+    {
       "name": "ddd-refactoring",
       "domain": "coding",
       "description": "Refactors monolithic codebases toward DDD — extracts bounded contexts, splits god objects into aggregates, replaces primitive obsession with value objects, and creates anticorruption layers.",
@@ -7013,6 +7038,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ddd-refactoring/SKILL.md"
+    },
+    {
+      "name": "ddd-specification-pattern",
+      "domain": "coding",
+      "description": "Implements the DDD specification pattern — composable business rule objects using AND/OR/NOT boolean algebra, expression tree translation for ORM query pushdown, domain validation specs, protocol-based contracts, and reusable primitive factories for rich domain modeling in Python.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "specification pattern",
+        "spec pattern",
+        "composable business rules",
+        "AND OR NOT composition",
+        "expression tree translation",
+        "repository filtering specs",
+        "domain validation specs",
+        "primitive factories",
+        "query builder specifications",
+        "how do i compose business rules in DDD",
+        "predicate composition"
+      ],
+      "relatedSkills": [
+        "ddd-tactical-patterns",
+        "domain-driven-tactical",
+        "domain-repository-pattern",
+        "ddd-command-pattern",
+        "microservice-contract-testing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ddd-specification-pattern/SKILL.md"
     },
     {
       "name": "ddd-tactical-patterns",
