@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T14:39:06.440601Z",
+  "generatedAt": "2026-05-27T20:31:01.018745Z",
   "totalSkills": 1102,
   "domains": {
     "agent": 285,
@@ -5326,30 +5326,6 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/concise-planning/SKILL.md"
-    },
-    {
-      "name": "concurrency-patterns",
-      "domain": "go",
-      "description": "Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "go concurrency",
-        "go goroutines",
-        "go channels",
-        "worker pool",
-        "go sync",
-        "context cancellation",
-        "fan out fan in"
-      ],
-      "relatedSkills": [
-        "best-practices",
-        "cloud-development",
-        "advanced-patterns"
-      ],
-      "version": "1.0.0",
-      "source": "skills/go/concurrency-patterns/SKILL.md"
     },
     {
       "name": "conductor-implement",
@@ -11328,6 +11304,25 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/gcp-gke/SKILL.md"
+    },
+    {
+      "name": "go-concurrency-patterns",
+      "domain": "go",
+      "description": "Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "go concurrency",
+        "go goroutines",
+        "go channels",
+        "worker pool",
+        "synchronization",
+        "context cancellation"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/go/concurrency-patterns/SKILL.md"
     },
     {
       "name": "goal-to-milestones",
