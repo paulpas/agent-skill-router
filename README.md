@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -129,7 +129,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 283 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 482 | Software patterns, security, testing, data science |
+| Coding | 484 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -330,17 +330,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 01:34:38 UTC  
-> **Total skills:** 1071  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1071 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 21:05:07 UTC  
+> **Total skills:** 1073  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1073 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1034 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1034 | Ranking penalty for conflicting query terms |
-| Response Profile | 1034 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1036 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1036 | Ranking penalty for conflicting query terms |
+| Response Profile | 1036 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -813,7 +813,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (482 skills)
+### Coding (484 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1021,12 +1021,14 @@ MIT — All skills are freely available and redistributable.
 | [framework-comparison-workflow](skills/coding/framework-comparison-workflow/SKILL.md) | Runs structured, code-level comparison workflows between competing frameworks through spike projects, side-by-side implementations, developer experience measurement, and ecosystem analysis to produce evidence-based selection recommendations. | framework comparison, spike project, side by side framework, framework benchmark, developer experience evaluation, framework POC, proof of concept framework, framework code comparison, framework ecosystem analysis, compare frameworks hands on, framework spike test, tech stack comparison [tactical, diagnostic] |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | framework design, architectural blueprint, extension points, adapter pattern, interface contracts, composition root, framework integration [tactical, generation] |
 | [framework-driven-design](skills/coding/framework-driven-design/SKILL.md) | Implements framework-driven design patterns (Inversion of Control, Dependency Injection, lifecycle hooks, plugin architectures) to build extensible applications that leverage modern framework constraints instead of bypassing them. | framework driven design, inversion of control, dependency injection, lifecycle hooks, plugin architecture, how do i make code extensible, middleware patterns, convention over configuration [tactical, strategic] |
+| [framework-evaluation](skills/coding/framework-evaluation/SKILL.md) | Runs automated empirical evaluation of software frameworks through reproducible benchmark harnesses, dependency graph security auditing, integration feasibility testing, and maintenance cost modeling to produce quantitative selection data. | framework selection, technology evaluation, choose a framework, compare frameworks, tech stack decision, benchmark harness, dependency audit, framework scoring [tactical, diagnostic] |
 | [framework-evaluation-criteria](skills/coding/framework-evaluation-criteria/SKILL.md) | Systematically elicits evaluation criteria across technical, team, ecosystem, security, deployment, integration, cost, and viability dimensions to prevent hype-driven framework selection. Produces structured requirement matrices, weighted scoring fra... | evaluation criteria, requirements elicitation, weighted scoring matrix, ADR decision record, technology selection framework, failure mode analysis, decision sustainability, tech comparison checklist [tactical, diagnostic] |
 | [framework-extension-design](skills/coding/framework-extension-design/SKILL.md) | Designs extension points, plugin interfaces, and public API surfaces for frameworks built in-house — defining stable plugin contracts, middleware pipelines, versioned extension APIs, and authoring guides for third-party contributors. | extension design, plugin interface, middleware pipeline design, how do i make my framework extensible, third-party plugins, extension points, versioned extension APIs [tactical, generation] |
 | [framework-implementation-patterns](skills/coding/framework-implementation-patterns/SKILL.md) | Translates documented framework requirements into concrete implementation patterns with multi-layer validation gates, constraint assertions, and performance budget enforcement to ensure code decisions align with project specifications. | requirement-to-implementation mapping, framework requirement enforcement, implementation patterns, performance budgets, constraint validation, requirements-as-code, implementation decision matrix, framework requirement validation [tactical, generation] |
 | [framework-integration-patterns](skills/coding/framework-integration-patterns/SKILL.md) | Implements robust framework integration patterns including plugin architectures, middleware chains, cross-framework adapters, and configuration layering to safely extend and connect external frameworks without tight coupling or upgrade friction. | framework integration, plugin architecture, middleware chains, extension points, how do i extend a framework, cross-framework communication, configuration layering, adapter pattern [tactical, generation] |
 | [framework-integration-testing](skills/coding/framework-integration-testing/SKILL.md) | Designs integration testing strategies including shadow reads, dual-writes, canary deployment validation, and rollback verification to safely validate framework integrations before production commitment. | integration testing, shadow read, dual write, canary deployment, framework migration testing, integration acceptance criteria, framework switchover, rollback verification [tactical, diagnostic] |
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | framework lifecycle, framework decision, technology lifecycle, framework evaluation, framework rollback, tech stack lifecycle, framework governance [orchestration] |
+| [framework-onboarding](skills/coding/framework-onboarding/SKILL.md) | Accelerates learning and effective utilization of newly selected frameworks through structured onboarding paths, best practice scaffolding, incremental adoption patterns, and common pitfall avoidance. | framework onboarding, learn new framework, adopt new technology, framework best practices, quick start guide, framework setup, incremental adoption, scaffold project [tactical, generation] |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | framework performance, performance tuning, optimize framework, profiling application, connection pooling, caching strategy, async optimization, memory management, reduce latency, increase throughput, framework benchmarking, slow endpoint [tactical, generation] |
 | [framework-poc-design](skills/coding/framework-poc-design/SKILL.md) | Designs proof-of-concept test harnesses with measurable success criteria, realistic data scenarios, and structured reporting to validate framework integration feasibility before production commitment. | proof of concept, POC design, test harness design, framework feasibility testing, POC success criteria, spike project, prototype validation, framework integration testing [tactical, diagnostic] |
 | [framework-requirement-adoption](skills/coding/framework-requirement-adoption/SKILL.md) | Translates framework requirements into production code architecture through configuration contract generation, type-system enforcement, lifecycle hook mapping, and phased integration patterns for zero-downtime framework adoption. | framework requirement adoption, how do i adapt my code to a framework, configuration contract, type-system enforcement, lifecycle hook mapping, phased framework integration, framework requirements implementation, zero-downtime migration, architecture adaptation [tactical, generation] |
@@ -1478,7 +1480,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (653 skills)
+### Implementation (Build Features) (655 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1728,11 +1730,13 @@ MIT — All skills are freely available and redistributable.
 | [framework-comparison-workflow](skills/coding/framework-comparison-workflow/SKILL.md) | Coding | Runs structured, code-level comparison workflows between competing frameworks through spike projects, side-by-side implementations, developer experience measurement, and ecosystem analysis to produce evidence-based selection recommendations. |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. |
 | [framework-driven-design](skills/coding/framework-driven-design/SKILL.md) | Coding | Implements framework-driven design patterns (Inversion of Control, Dependency Injection, lifecycle hooks, plugin architectures) to build extensible applications that leverage modern framework constraints instead of bypassing them. |
+| [framework-evaluation](skills/coding/framework-evaluation/SKILL.md) | Coding | Runs automated empirical evaluation of software frameworks through reproducible benchmark harnesses, dependency graph security auditing, integration feasibility testing, and maintenance cost modeling to produce quantitative selection data. |
 | [framework-evaluation-criteria](skills/coding/framework-evaluation-criteria/SKILL.md) | Coding | Systematically elicits evaluation criteria across technical, team, ecosystem, security, deployment, integration, cost, and viability dimensions to prevent hype-driven framework selection. Produces structured requirement matrices, weighted scoring fra... |
 | [framework-extension-design](skills/coding/framework-extension-design/SKILL.md) | Coding | Designs extension points, plugin interfaces, and public API surfaces for frameworks built in-house — defining stable plugin contracts, middleware pipelines, versioned extension APIs, and authoring guides for third-party contributors. |
 | [framework-implementation-patterns](skills/coding/framework-implementation-patterns/SKILL.md) | Coding | Translates documented framework requirements into concrete implementation patterns with multi-layer validation gates, constraint assertions, and performance budget enforcement to ensure code decisions align with project specifications. |
 | [framework-integration-patterns](skills/coding/framework-integration-patterns/SKILL.md) | Coding | Implements robust framework integration patterns including plugin architectures, middleware chains, cross-framework adapters, and configuration layering to safely extend and connect external frameworks without tight coupling or upgrade friction. |
 | [framework-integration-testing](skills/coding/framework-integration-testing/SKILL.md) | Coding | Designs integration testing strategies including shadow reads, dual-writes, canary deployment validation, and rollback verification to safely validate framework integrations before production commitment. |
+| [framework-onboarding](skills/coding/framework-onboarding/SKILL.md) | Coding | Accelerates learning and effective utilization of newly selected frameworks through structured onboarding paths, best practice scaffolding, incremental adoption patterns, and common pitfall avoidance. |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. |
 | [framework-poc-design](skills/coding/framework-poc-design/SKILL.md) | Coding | Designs proof-of-concept test harnesses with measurable success criteria, realistic data scenarios, and structured reporting to validate framework integration feasibility before production commitment. |
 | [framework-requirement-adoption](skills/coding/framework-requirement-adoption/SKILL.md) | Coding | Translates framework requirements into production code architecture through configuration contract generation, type-system enforcement, lifecycle hook mapping, and phased integration patterns for zero-downtime framework adoption. |
@@ -2990,12 +2994,14 @@ MIT — All skills are freely available and redistributable.
 | [framework-comparison-workflow](skills/coding/framework-comparison-workflow/SKILL.md) | Coding | Runs structured, code-level comparison workflows between competing frameworks through spike projects, side-by-side implementations, developer experience measurement, and ecosystem analysis to produce evidence-based selection recommendations. | Implementation |
 | [framework-design](skills/coding/framework-design/SKILL.md) | Coding | Translates framework constraints into concrete architectural blueprints with module structure, interface contracts, adapter wiring, data flow diagrams, and validation checklists that map every framework requirement to a design element. | Implementation |
 | [framework-driven-design](skills/coding/framework-driven-design/SKILL.md) | Coding | Implements framework-driven design patterns (Inversion of Control, Dependency Injection, lifecycle hooks, plugin architectures) to build extensible applications that leverage modern framework constraints instead of bypassing them. | Implementation |
+| [framework-evaluation](skills/coding/framework-evaluation/SKILL.md) | Coding | Runs automated empirical evaluation of software frameworks through reproducible benchmark harnesses, dependency graph security auditing, integration feasibility testing, and maintenance cost modeling to produce quantitative selection data. | Implementation |
 | [framework-evaluation-criteria](skills/coding/framework-evaluation-criteria/SKILL.md) | Coding | Systematically elicits evaluation criteria across technical, team, ecosystem, security, deployment, integration, cost, and viability dimensions to prevent hype-driven framework selection. Produces structured requirement matrices, weighted scoring fra... | Implementation |
 | [framework-extension-design](skills/coding/framework-extension-design/SKILL.md) | Coding | Designs extension points, plugin interfaces, and public API surfaces for frameworks built in-house — defining stable plugin contracts, middleware pipelines, versioned extension APIs, and authoring guides for third-party contributors. | Implementation |
 | [framework-implementation-patterns](skills/coding/framework-implementation-patterns/SKILL.md) | Coding | Translates documented framework requirements into concrete implementation patterns with multi-layer validation gates, constraint assertions, and performance budget enforcement to ensure code decisions align with project specifications. | Implementation |
 | [framework-integration-patterns](skills/coding/framework-integration-patterns/SKILL.md) | Coding | Implements robust framework integration patterns including plugin architectures, middleware chains, cross-framework adapters, and configuration layering to safely extend and connect external frameworks without tight coupling or upgrade friction. | Implementation |
 | [framework-integration-testing](skills/coding/framework-integration-testing/SKILL.md) | Coding | Designs integration testing strategies including shadow reads, dual-writes, canary deployment validation, and rollback verification to safely validate framework integrations before production commitment. | Implementation |
 | [framework-lifecycle](skills/coding/framework-lifecycle/SKILL.md) | Coding | Orchestrates the end-to-end framework decision lifecycle from requirements gathering through selection and utilization, including phase-gate validation, re-evaluation triggers, and rollback planning for technology decisions. | Orchestration |
+| [framework-onboarding](skills/coding/framework-onboarding/SKILL.md) | Coding | Accelerates learning and effective utilization of newly selected frameworks through structured onboarding paths, best practice scaffolding, incremental adoption patterns, and common pitfall avoidance. | Implementation |
 | [framework-orchestration-routing](skills/agent/framework-orchestration-routing/SKILL.md) | Agent | Orchestrates task routing across multiple AI frameworks (LangChain, LlamaIndex, CrewAI, AutoGen, MCP) by selecting the optimal framework for each subtask and composing cross-framework workflows with proper context bridges. | Orchestration |
 | [framework-performance-tuning](skills/coding/framework-performance-tuning/SKILL.md) | Coding | Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management to reduce latency and increase throughput in production applications. | Implementation |
 | [framework-poc-design](skills/coding/framework-poc-design/SKILL.md) | Coding | Designs proof-of-concept test harnesses with measurable success criteria, realistic data scenarios, and structured reporting to validate framework integration feasibility before production commitment. | Implementation |
