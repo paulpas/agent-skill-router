@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-27T21:22:28.737781Z",
-  "totalSkills": 1123,
+  "generatedAt": "2026-05-27T22:04:51.313275Z",
+  "totalSkills": 1135,
   "domains": {
     "agent": 285,
     "architecture": 4,
     "cncf": 176,
-    "coding": 517,
+    "coding": 526,
     "data-and-persistence": 1,
     "electrical-engineering": 2,
     "go": 13,
@@ -14,13 +14,14 @@
     "linux": 18,
     "maker": 3,
     "programming": 7,
+    "security": 4,
     "software": 2,
     "trading": 93,
     "writing": 4
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 702,
+    "implementation": 714,
     "reference": 174,
     "information": 1,
     "review": 8
@@ -5039,6 +5040,27 @@
       "source": "skills/agent/code-correctness-verifier/SKILL.md"
     },
     {
+      "name": "code-coverage-mutation-testing",
+      "domain": "coding",
+      "description": "Implements software engineering practices for code coverage analysis and mutation testing to enhance test suite effectiveness.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "code coverage",
+        "mutation testing",
+        "test suite effectiveness",
+        "code quality",
+        "testing strategies"
+      ],
+      "relatedSkills": [
+        "coding-best-practices",
+        "coding-testing-strategies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/code-coverage-mutation-testing/SKILL.md"
+    },
+    {
       "name": "code-duplication-detection",
       "domain": "coding",
       "description": "Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques.",
@@ -6399,6 +6421,24 @@
       "source": "skills/cncf/dapr/SKILL.md"
     },
     {
+      "name": "dast-tooling",
+      "domain": "security",
+      "description": "Implements Dynamic Application Security Testing (DAST) methodologies to identify runtime vulnerabilities during the execution phase of applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dynamic application security testing",
+        "runtime analysis",
+        "web vulnerabilities",
+        "security testing",
+        "DAST"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/security/dast-tooling/SKILL.md"
+    },
+    {
       "name": "data-collection",
       "domain": "coding",
       "description": "\"Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets\"",
@@ -7485,6 +7525,24 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/dependency-supply-chain-security/SKILL.md"
+    },
+    {
+      "name": "dependency-vulnerability-scanning",
+      "domain": "security",
+      "description": "Implements dependency vulnerability scanning mechanisms to identify known security vulnerabilities in third-party libraries and dependencies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dependency vulnerability scanning",
+        "library vulnerabilities",
+        "third-party security",
+        "vulnerability management",
+        "SCA"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/security/dependency-vulnerability-scanning/SKILL.md"
     },
     {
       "name": "deployment-manager",
@@ -21337,6 +21395,25 @@
       "source": "skills/coding/salesforce-api/SKILL.md"
     },
     {
+      "name": "sast-tooling",
+      "domain": "security",
+      "description": "Implements Static Application Security Testing (SAST) methodologies to identify vulnerabilities in source code during development phases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "static application security testing",
+        "source code analysis",
+        "code vulnerabilities",
+        "security bugs",
+        "early detection",
+        "SAST"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/security/sast-tooling/SKILL.md"
+    },
+    {
       "name": "scale-sets",
       "domain": "cncf",
       "description": "\"Manages auto-scaling VM groups with load balancing and health management\"",
@@ -25043,6 +25120,90 @@
       "source": "skills/agent/test-oracle-generator/SKILL.md"
     },
     {
+      "name": "testing-contract",
+      "domain": "coding",
+      "description": "Validates external APIs and service contracts, ensuring that your application correctly consumes and produces expected data structures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "contract testing",
+        "service contracts",
+        "API contracts",
+        "contract validation"
+      ],
+      "relatedSkills": [
+        "testing-unit",
+        "testing-integration",
+        "testing-end-to-end"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/testing-contract/SKILL.md"
+    },
+    {
+      "name": "testing-end-to-end",
+      "domain": "coding",
+      "description": "Facilitates end-to-end testing of complete workflows, verifying entire systems operate as intended from a user's perspective.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "end-to-end testing",
+        "e2e tests",
+        "user journey",
+        "complete workflow"
+      ],
+      "relatedSkills": [
+        "testing-unit",
+        "testing-integration",
+        "testing-contract"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/testing-end-to-end/SKILL.md"
+    },
+    {
+      "name": "testing-integration",
+      "domain": "coding",
+      "description": "Executes integration tests to validate combined components and their interactions in a system, ensuring workflows operate seamlessly.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "integration testing",
+        "integration tests",
+        "system testing",
+        "workflows"
+      ],
+      "relatedSkills": [
+        "testing-unit",
+        "testing-contract",
+        "testing-end-to-end"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/testing-integration/SKILL.md"
+    },
+    {
+      "name": "testing-mocking",
+      "domain": "coding",
+      "description": "Implements mocking strategies for unit testing by providing controlled, predictable interactions with dependencies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mocking",
+        "test doubles",
+        "mock objects",
+        "unit testing",
+        "how do I mock"
+      ],
+      "relatedSkills": [
+        "testing-stubbing",
+        "testing-test-doubles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/testing-mocking/SKILL.md"
+    },
+    {
       "name": "testing-qa",
       "domain": "agent",
       "description": "Implements intelligent testing qa with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -25067,6 +25228,29 @@
       "source": "skills/agent/testing-qa/SKILL.md"
     },
     {
+      "name": "testing-quality-methodologies",
+      "domain": "coding",
+      "description": "Implements TDD and BDD methodologies for ensuring quality in software engineering with structured guidelines and practices.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "testing methodologies",
+        "test-driven development",
+        "behavior-driven development",
+        "automated testing",
+        "quality assurance",
+        "how do i implement TDD",
+        "how do i implement BDD"
+      ],
+      "relatedSkills": [
+        "coding-tdd",
+        "coding-bdd"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/testing-quality-methodologies/SKILL.md"
+    },
+    {
       "name": "testing-strategies",
       "domain": "go",
       "description": "Implements comprehensive testing strategies for Go including unit tests, integration tests, benchmarks, table-driven tests, and mock patterns.",
@@ -25089,6 +25273,70 @@
       ],
       "version": "1.0.0",
       "source": "skills/go/testing-strategies/SKILL.md"
+    },
+    {
+      "name": "testing-stubbing",
+      "domain": "coding",
+      "description": "Implements stubbing techniques for unit testing by replacing parts of the system under test with pre-defined responses.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "stubbing",
+        "test doubles",
+        "stub objects",
+        "unit testing",
+        "how do I stub"
+      ],
+      "relatedSkills": [
+        "testing-mocking",
+        "testing-test-doubles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/testing-stubbing/SKILL.md"
+    },
+    {
+      "name": "testing-test-doubles",
+      "domain": "coding",
+      "description": "Provides an overview and implementation of test doubles including mocks, stubs, and fakes for comprehensive testing strategies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "test doubles",
+        "mocks",
+        "stubs",
+        "fakes",
+        "unit testing",
+        "how do I use test doubles"
+      ],
+      "relatedSkills": [
+        "testing-mocking",
+        "testing-stubbing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/testing-test-doubles/SKILL.md"
+    },
+    {
+      "name": "testing-unit",
+      "domain": "coding",
+      "description": "Implements unit testing strategies using popular frameworks to ensure the smallest parts of your application work as intended.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "unit testing",
+        "unit tests",
+        "test strategies",
+        "test frameworks"
+      ],
+      "relatedSkills": [
+        "testing-integration",
+        "testing-contract",
+        "testing-end-to-end"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/testing-unit/SKILL.md"
     },
     {
       "name": "testing-unit-integration-e2e",

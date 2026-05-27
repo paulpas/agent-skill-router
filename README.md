@@ -88,7 +88,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Agent | 285 | AI orchestration, routing, task decomposition |
 | Architecture | 4 |  |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 515 | Software patterns, security, testing, data science |
+| Coding | 524 | Software patterns, security, testing, data science |
 | Data And Persistence | 1 |  |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 13 | Go idioms, concurrency patterns, error handling |
@@ -97,6 +97,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Linux | 18 | System administration, kernel tuning, security, networking |
 | Maker | 3 | DIY projects, IoT, home automation, 3D printing |
 | Programming | 7 | Algorithms, frameworks, language references |
+| Security | 3 |  |
 | Software | 2 |  |
 | Trading | 91 | Execution, risk management, ML models |
 | Writing | 4 | Technical writing, style guidance |
@@ -312,17 +313,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 21:22:30 UTC  
-> **Total skills:** 1123  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1123 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 22:04:53 UTC  
+> **Total skills:** 1135  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1135 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1064 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1064 | Ranking penalty for conflicting query terms |
-| Response Profile | 1064 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1069 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1069 | Ranking penalty for conflicting query terms |
+| Response Profile | 1069 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -810,7 +811,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (515 skills)
+### Coding (524 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -901,6 +902,7 @@ MIT — All skills are freely available and redistributable.
 | [cloud-native-architecture](skills/coding/cloud-native-architecture/SKILL.md) | Implements cloud-native architecture patterns including Kubernetes-native design, service mesh integration, GitOps workflows, serverless compute, immutable infrastructure, and platform engineering for resilient distributed systems. | cloud native architecture, kubernetes design, container orchestration, service mesh, GitOps, serverless architecture, immutable infrastructure, platform engineering, internal developer platform, how do i design cloud-native systems, declarative configuration, ephemerality [tactical, generation] |
 | [cloudflare-api](skills/coding/cloudflare-api/SKILL.md) | Integrates Cloudflare services (DNS, Workers, R2, KV, Pages, Zero Trust, WAF) using the official Cloudflare Python SDK with API token authentication and resource management patterns. | cloudflare api, cloudflare python, workers ai, cloudflare dns, r2 object storage, kv namespace, zero trust, how do i use cloudflare api from python [tactical, generation] |
 | [clustering](skills/coding/clustering/SKILL.md) | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" | clustering, k-means, hierarchical clustering, DBSCAN, mixture models, how do I cluster data [tactical, generation] |
+| [code-coverage-mutation-testing](skills/coding/code-coverage-mutation-testing/SKILL.md) | Implements software engineering practices for code coverage analysis and mutation testing to enhance test suite effectiveness. | code coverage, mutation testing, test suite effectiveness, code quality, testing strategies [tactical, educational] |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | code duplication, duplicate code detection, copy-paste code, boilerplate removal, semantic duplication, radon metrics, pylint warnings, refactoring detection, DRY principle, code quality analysis [educational] |
 | [code-quality-metrics](skills/coding/code-quality-metrics/SKILL.md) | Analyzes software quality using static analysis metrics including cyclomatic complexity, maintainability index, code duplication detection, technical debt estimation, and coverage thresholds for engineering teams. | code quality metrics, cyclomatic complexity, maintainability index, code duplication, static analysis, technical debt, sonarqube, pylint metrics, flake8, mypy strict, coverage thresholds, dead code detection, how do i measure code quality, complexity analysis [tactical, generation] |
 | [cohere-api](skills/coding/cohere-api/SKILL.md) | Integrates Cohere API (Generate, Embed, Rerank, Classify, Chat, Tool Use) using the cohere Python SDK for NLP, search, and RAG applications. | cohere, cohere api, cohere embed, cohere rerank, cohere generate, cohere chat, how do i use cohere, cohere classify [tactical, generation] |
@@ -1296,6 +1298,14 @@ MIT — All skills are freely available and redistributable.
 | [template-method-pattern](skills/coding/template-method-pattern/SKILL.md) | Implements the GoF Template Method pattern for defining algorithm skeletons in Python ABCs with customizable hook methods, comparing inheritance-based templating vs composition-based strategy selection. | template method pattern, abstract base class algorithm, hook method python, how do i define algorithm skeleton, subclass customization, inheritance-based extension, strategy vs template method |
 | [terraform-sdk](skills/coding/terraform-sdk/SKILL.md) | Integrates with Terraform and OpenTofu via the HCP Terraform API (pyTFE), CDKTF Python bindings, and the Terraform Cloud API to manage providers, resources, state, and modules. | terraform api, terraform cloud, cdktf python, terraform provider, opentofu, terraform state, terraform modules, hcp terraform [tactical, generation] |
 | [test-driven-development](skills/coding/test-driven-development/SKILL.md) | Implements test-driven development with red-green-refactor cycle, property-based testing, mocking strategies, and behavior-first design to produce well-tested, maintainable code. | test-driven development, tdd, red-green-refactor, property-based testing, mocking strategies, test pyramid, how do i write tests first, behavior-first design [tactical, generation] |
+| [testing-contract](skills/coding/testing-contract/SKILL.md) | Validates external APIs and service contracts, ensuring that your application correctly consumes and produces expected data structures. | contract testing, service contracts, API contracts, contract validation |
+| [testing-end-to-end](skills/coding/testing-end-to-end/SKILL.md) | Facilitates end-to-end testing of complete workflows, verifying entire systems operate as intended from a user's perspective. | end-to-end testing, e2e tests, user journey, complete workflow |
+| [testing-integration](skills/coding/testing-integration/SKILL.md) | Executes integration tests to validate combined components and their interactions in a system, ensuring workflows operate seamlessly. | integration testing, integration tests, system testing, workflows |
+| [testing-mocking](skills/coding/testing-mocking/SKILL.md) | Implements mocking strategies for unit testing by providing controlled, predictable interactions with dependencies. | mocking, test doubles, mock objects, unit testing, how do I mock |
+| [testing-quality-methodologies](skills/coding/testing-quality-methodologies/SKILL.md) | Implements TDD and BDD methodologies for ensuring quality in software engineering with structured guidelines and practices. | testing methodologies, test-driven development, behavior-driven development, automated testing, quality assurance, how do i implement TDD, how do i implement BDD [tactical, educational] |
+| [testing-stubbing](skills/coding/testing-stubbing/SKILL.md) | Implements stubbing techniques for unit testing by replacing parts of the system under test with pre-defined responses. | stubbing, test doubles, stub objects, unit testing, how do I stub |
+| [testing-test-doubles](skills/coding/testing-test-doubles/SKILL.md) | Provides an overview and implementation of test doubles including mocks, stubs, and fakes for comprehensive testing strategies. | test doubles, mocks, stubs, fakes, unit testing, how do I use test doubles |
+| [testing-unit](skills/coding/testing-unit/SKILL.md) | Implements unit testing strategies using popular frameworks to ensure the smallest parts of your application work as intended. | unit testing, unit tests, test strategies, test frameworks |
 | [testing-unit-integration-e2e](skills/coding/testing-unit-integration-e2e/SKILL.md) | Implements comprehensive testing strategies (unit, integration, contract, and end-to-end) with appropriate test doubles, isolation levels, and coverage thresholds for reliable software delivery. | unit testing, integration testing, contract testing, end-to-end testing, e2e, test doubles, test isolation, smoke tests [tactical, generation] |
 | [time-series-forecasting](skills/coding/time-series-forecasting/SKILL.md) | "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction" | time series forecasting, ARIMA, exponential smoothing, LSTM, forecasting, time series prediction [tactical, generation] |
 | [tool-evaluation-workflow](skills/coding/tool-evaluation-workflow/SKILL.md) | Applies a structured evaluation framework to select tools, libraries, and frameworks based on technical fit, community health, security posture, performance benchmarks, and total cost of ownership for software projects. | tool evaluation, library selection, framework comparison, proof of concept, technology assessment, how do i evaluate tools, build vs buy decision, dependency management [educational] |
@@ -1425,6 +1435,15 @@ MIT — All skills are freely available and redistributable.
 | [v12-learning](skills/programming/v12-learning/SKILL.md) | "Reference guide for Progress OpenEdge ABL 12.7 (2023) — v10→v12 migration" INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic collections, safe navigation operator, server-side joins | abl v12, openedge 12, abl 12.7, v10 to v12 migration, abl migration, catch throw, jsonobject, read-json [educational] |
 
 
+### Security (3 skills)
+
+| Skill Name | Description | Triggers |
+|---|---|---|
+| [dast-tooling](skills/security/dast-tooling/SKILL.md) | Implements Dynamic Application Security Testing (DAST) methodologies to identify runtime vulnerabilities during the execution phase of applications. | dynamic application security testing, runtime analysis, web vulnerabilities, security testing, DAST [implementation, review] |
+| [dependency-vulnerability-scanning](skills/security/dependency-vulnerability-scanning/SKILL.md) | Implements dependency vulnerability scanning mechanisms to identify known security vulnerabilities in third-party libraries and dependencies. | dependency vulnerability scanning, library vulnerabilities, third-party security, vulnerability management, SCA [implementation, review] |
+| [sast-tooling](skills/security/sast-tooling/SKILL.md) | Implements Static Application Security Testing (SAST) methodologies to identify vulnerabilities in source code during development phases. | static application security testing, source code analysis, code vulnerabilities, security bugs, early detection, SAST [implementation, review] |
+
+
 ### Software (2 skills)
 
 | Skill Name | Description | Triggers |
@@ -1542,7 +1561,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (702 skills)
+### Implementation (Build Features) (714 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1655,6 +1674,7 @@ MIT — All skills are freely available and redistributable.
 | [cloud-native-architecture](skills/coding/cloud-native-architecture/SKILL.md) | Coding | Implements cloud-native architecture patterns including Kubernetes-native design, service mesh integration, GitOps workflows, serverless compute, immutable infrastructure, and platform engineering for resilient distributed systems. |
 | [cloudflare-api](skills/coding/cloudflare-api/SKILL.md) | Coding | Integrates Cloudflare services (DNS, Workers, R2, KV, Pages, Zero Trust, WAF) using the official Cloudflare Python SDK with API token authentication and resource management patterns. |
 | [clustering](skills/coding/clustering/SKILL.md) | Coding | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" |
+| [code-coverage-mutation-testing](skills/coding/code-coverage-mutation-testing/SKILL.md) | Coding | Implements software engineering practices for code coverage analysis and mutation testing to enhance test suite effectiveness. |
 | [code-quality-metrics](skills/coding/code-quality-metrics/SKILL.md) | Coding | Analyzes software quality using static analysis metrics including cyclomatic complexity, maintainability index, code duplication detection, technical debt estimation, and coverage thresholds for engineering teams. |
 | [cohere-api](skills/coding/cohere-api/SKILL.md) | Coding | Integrates Cohere API (Generate, Embed, Rerank, Classify, Chat, Tool Use) using the cohere Python SDK for NLP, search, and RAG applications. |
 | [command-pattern](skills/coding/command-pattern/SKILL.md) | Coding | Implements the GoF Command pattern for encapsulating requests as objects in Python, supporting undo/redo stacks, macro commands (composite), serialization-based replay, and async command execution. |
@@ -1681,6 +1701,7 @@ MIT — All skills are freely available and redistributable.
 | [css-nesting](skills/coding/css-nesting/SKILL.md) | Coding | Implements modern CSS native nesting patterns with & parent selector for organizing component styles, managing specificity, and writing maintainable scoped CSS without preprocessors. |
 | [csv-data-handling](skills/coding/csv-data-handling/SKILL.md) | Coding | Handles CSV data safely across languages with RFC 4180 compliance, formula injection prevention, character encoding validation, and delimiter detection to protect against spreadsheet injection attacks. |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." |
+| [dast-tooling](skills/security/dast-tooling/SKILL.md) | Security | Implements Dynamic Application Security Testing (DAST) methodologies to identify runtime vulnerabilities during the execution phase of applications. |
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" |
 | [data-deduplication](skills/coding/data-deduplication/SKILL.md) | Coding | Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines. |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. |
@@ -1718,6 +1739,7 @@ MIT — All skills are freely available and redistributable.
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Coding | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... |
+| [dependency-vulnerability-scanning](skills/security/dependency-vulnerability-scanning/SKILL.md) | Security | Implements dependency vulnerability scanning mechanisms to identify known security vulnerabilities in third-party libraries and dependencies. |
 | [deployment-orchestration](skills/cncf/deployment-orchestration/SKILL.md) | Cncf | Orchestrates complex multi-stage deployments with dependency management, sequencing rules, and failure handling across interconnected services. |
 | [deployment-patterns](skills/go/deployment-patterns/SKILL.md) | Go | Deploys Go applications with build optimization, multi-stage Docker builds, binary sizing, and deployment strategies for cloud and on-prem. |
 | [design-for-testability](skills/coding/design-for-testability/SKILL.md) | Coding | Implements Design For Testability patterns including dependency injection via Protocols, interface segregation with focused interfaces, pure function boundaries, and composition root factories to enable fast unit tests without infrastructure dependen... |
@@ -2085,6 +2107,7 @@ MIT — All skills are freely available and redistributable.
 | [runtime-ecosystem-selection](skills/coding/runtime-ecosystem-selection/SKILL.md) | Coding | Selects the optimal runtime ecosystem (JVM, .NET, Node.js/V8, native compilation) based on deployment characteristics, performance requirements, and operational constraints for production systems. |
 | [rust-skills-software-engineering](skills/coding/rust-skills-software-engineering/SKILL.md) | Coding | Implements software engineering skills for Rust programming, covering key aspects including the ownership model, async/await, Cargo package manager, and unsafe code practices. Each section provides guidance, examples, and constraints for using these... |
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Coding | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. |
+| [sast-tooling](skills/security/sast-tooling/SKILL.md) | Security | Implements Static Application Security Testing (SAST) methodologies to identify vulnerabilities in source code during development phases. |
 | [scoring](skills/coding/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights |
 | [security-architecture](skills/coding/security-architecture/SKILL.md) | Coding | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. |
 | [security-compliance](skills/cncf/security-compliance/SKILL.md) | Cncf | Implements security compliance frameworks (SOC2, HIPAA, PCI-DSS) with implementation patterns, audit procedures, and compliance automation for Kubernetes and cloud environments |
@@ -2188,7 +2211,15 @@ MIT — All skills are freely available and redistributable.
 | [terraform](skills/cncf/terraform/SKILL.md) | Cncf | Implements Terraform infrastructure as code for cloud provisioning with state management, modules, remote backends, and troubleshooting |
 | [terraform-sdk](skills/coding/terraform-sdk/SKILL.md) | Coding | Integrates with Terraform and OpenTofu via the HCP Terraform API (pyTFE), CDKTF Python bindings, and the Terraform Cloud API to manage providers, resources, state, and modules. |
 | [test-driven-development](skills/coding/test-driven-development/SKILL.md) | Coding | Implements test-driven development with red-green-refactor cycle, property-based testing, mocking strategies, and behavior-first design to produce well-tested, maintainable code. |
+| [testing-contract](skills/coding/testing-contract/SKILL.md) | Coding | Validates external APIs and service contracts, ensuring that your application correctly consumes and produces expected data structures. |
+| [testing-end-to-end](skills/coding/testing-end-to-end/SKILL.md) | Coding | Facilitates end-to-end testing of complete workflows, verifying entire systems operate as intended from a user's perspective. |
+| [testing-integration](skills/coding/testing-integration/SKILL.md) | Coding | Executes integration tests to validate combined components and their interactions in a system, ensuring workflows operate seamlessly. |
+| [testing-mocking](skills/coding/testing-mocking/SKILL.md) | Coding | Implements mocking strategies for unit testing by providing controlled, predictable interactions with dependencies. |
+| [testing-quality-methodologies](skills/coding/testing-quality-methodologies/SKILL.md) | Coding | Implements TDD and BDD methodologies for ensuring quality in software engineering with structured guidelines and practices. |
 | [testing-strategies](skills/go/testing-strategies/SKILL.md) | Go | Implements comprehensive testing strategies for Go including unit tests, integration tests, benchmarks, table-driven tests, and mock patterns. |
+| [testing-stubbing](skills/coding/testing-stubbing/SKILL.md) | Coding | Implements stubbing techniques for unit testing by replacing parts of the system under test with pre-defined responses. |
+| [testing-test-doubles](skills/coding/testing-test-doubles/SKILL.md) | Coding | Provides an overview and implementation of test doubles including mocks, stubs, and fakes for comprehensive testing strategies. |
+| [testing-unit](skills/coding/testing-unit/SKILL.md) | Coding | Implements unit testing strategies using popular frameworks to ensure the smallest parts of your application work as intended. |
 | [testing-unit-integration-e2e](skills/coding/testing-unit-integration-e2e/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, contract, and end-to-end) with appropriate test doubles, isolation levels, and coverage thresholds for reliable software delivery. |
 | [time-series-database](skills/trading/time-series-database/SKILL.md) | Trading | "Provides Time-series database queries and optimization for financial data" |
 | [time-series-forecasting](skills/coding/time-series-forecasting/SKILL.md) | Coding | "Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction" |
@@ -2898,6 +2929,7 @@ MIT — All skills are freely available and redistributable.
 | [clustering](skills/coding/clustering/SKILL.md) | Coding | "Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering" | Implementation |
 | [cni](skills/cncf/cni/SKILL.md) | Cncf | "Cni in Cloud-Native Engineering - Container Network Interface - networking" for Linux containers | Reference |
 | [code-correctness-verifier](skills/agent/code-correctness-verifier/SKILL.md) | Agent | Implements intelligent code correctness verifier with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [code-coverage-mutation-testing](skills/coding/code-coverage-mutation-testing/SKILL.md) | Coding | Implements software engineering practices for code coverage analysis and mutation testing to enhance test suite effectiveness. | Implementation |
 | [code-duplication-detection](skills/coding/code-duplication-detection/SKILL.md) | Coding | Detects and classifies code duplication patterns (copy-paste, boilerplate, semantic) across codebases using static analysis tools, custom scripts, and manual inspection techniques. | Review |
 | [code-quality-metrics](skills/coding/code-quality-metrics/SKILL.md) | Coding | Analyzes software quality using static analysis metrics including cyclomatic complexity, maintainability index, code duplication detection, technical debt estimation, and coverage thresholds for engineering teams. | Implementation |
 | [cohere-api](skills/coding/cohere-api/SKILL.md) | Coding | Integrates Cohere API (Generate, Embed, Rerank, Classify, Chat, Tool Use) using the cohere Python SDK for NLP, search, and RAG applications. | Implementation |
@@ -2956,6 +2988,7 @@ MIT — All skills are freely available and redistributable.
 | [custodian](skills/cncf/custodian/SKILL.md) | Cncf | "Provides Cloud Custodian in Cloud-Native Engineering -/rules engine for cloud infrastructure management" | Reference |
 | [cycle-analysis](skills/trading/cycle-analysis/SKILL.md) | Trading | "Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution." | Implementation |
 | [dapr](skills/cncf/dapr/SKILL.md) | Cncf | "Provides Dapr in Cloud-Native Engineering - distributed application runtime" | Reference |
+| [dast-tooling](skills/security/dast-tooling/SKILL.md) | Security | Implements Dynamic Application Security Testing (DAST) methodologies to identify runtime vulnerabilities during the execution phase of applications. | Implementation |
 | [data-collection](skills/coding/data-collection/SKILL.md) | Coding | "Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets" | Implementation |
 | [data-deduplication](skills/coding/data-deduplication/SKILL.md) | Coding | Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines. | Implementation |
 | [data-encoding](skills/coding/data-encoding/SKILL.md) | Coding | Serializes and deserializes data through JSON, XML, Base64, URL encoding, YAML, and protocol buffer formats with type safety, error recovery, and character encoding correctness. | Implementation |
@@ -2997,6 +3030,7 @@ MIT — All skills are freely available and redistributable.
 | [dependency-inversion-principle](skills/coding/dependency-inversion-principle/SKILL.md) | Coding | Refactors tightly coupled modules depending on concrete classes into decoupled designs using dependency injection, Python Protocols, factory registration, and inversion containers for testable architecture. | Implementation |
 | [dependency-management](skills/coding/dependency-management/SKILL.md) | Coding | "Provides Cybersecurity operations skill for automating software dependency version updates based on CVE (Common Vulnerabilities and Exposures) data, vulnerabil" | Implementation |
 | [dependency-supply-chain-security](skills/coding/dependency-supply-chain-security/SKILL.md) | Coding | Implements end-to-end software dependency supply chain security including SBOM generation (SPDX/CycloneDX), SLSA attestation levels, exact version pinning, Sigstore/cosign verification, CI scanning pipelines, transitive vulnerability management, and... | Implementation |
+| [dependency-vulnerability-scanning](skills/security/dependency-vulnerability-scanning/SKILL.md) | Security | Implements dependency vulnerability scanning mechanisms to identify known security vulnerabilities in third-party libraries and dependencies. | Implementation |
 | [deployment-manager](skills/cncf/deployment-manager/SKILL.md) | Cncf | "Infrastructure as code using YAML templates for repeatable GCP resource" deployments. | Reference |
 | [deployment-orchestration](skills/cncf/deployment-orchestration/SKILL.md) | Cncf | Orchestrates complex multi-stage deployments with dependency management, sequencing rules, and failure handling across interconnected services. | Implementation |
 | [deployment-patterns](skills/go/deployment-patterns/SKILL.md) | Go | Deploys Go applications with build optimization, multi-stage Docker builds, binary sizing, and deployment strategies for cloud and on-prem. | Implementation |
@@ -3565,6 +3599,7 @@ MIT — All skills are freely available and redistributable.
 | [rust-skills-software-engineering](skills/coding/rust-skills-software-engineering/SKILL.md) | Coding | Implements software engineering skills for Rust programming, covering key aspects including the ownership model, async/await, Cargo package manager, and unsafe code practices. Each section provides guidance, examples, and constraints for using these... | Implementation |
 | [s3](skills/cncf/s3/SKILL.md) | Cncf | "Configures S3 object storage with versioning, lifecycle policies, encryption" and access controls for durable, scalable data storage with cost optimization in AWS. | Reference |
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Coding | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. | Implementation |
+| [sast-tooling](skills/security/sast-tooling/SKILL.md) | Security | Implements Static Application Security Testing (SAST) methodologies to identify vulnerabilities in source code during development phases. | Implementation |
 | [scale-sets](skills/cncf/scale-sets/SKILL.md) | Cncf | "Manages auto-scaling VM groups with load balancing and health management" | Reference |
 | [schema-inference-engine](skills/agent/schema-inference-engine/SKILL.md) | Agent | Implements intelligent schema inference engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [scoring](skills/coding/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | Implementation |
@@ -3717,8 +3752,16 @@ MIT — All skills are freely available and redistributable.
 | [terraform-sdk](skills/coding/terraform-sdk/SKILL.md) | Coding | Integrates with Terraform and OpenTofu via the HCP Terraform API (pyTFE), CDKTF Python bindings, and the Terraform Cloud API to manage providers, resources, state, and modules. | Implementation |
 | [test-driven-development](skills/coding/test-driven-development/SKILL.md) | Coding | Implements test-driven development with red-green-refactor cycle, property-based testing, mocking strategies, and behavior-first design to produce well-tested, maintainable code. | Implementation |
 | [test-oracle-generator](skills/agent/test-oracle-generator/SKILL.md) | Agent | Implements intelligent test oracle generator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [testing-contract](skills/coding/testing-contract/SKILL.md) | Coding | Validates external APIs and service contracts, ensuring that your application correctly consumes and produces expected data structures. | Implementation |
+| [testing-end-to-end](skills/coding/testing-end-to-end/SKILL.md) | Coding | Facilitates end-to-end testing of complete workflows, verifying entire systems operate as intended from a user's perspective. | Implementation |
+| [testing-integration](skills/coding/testing-integration/SKILL.md) | Coding | Executes integration tests to validate combined components and their interactions in a system, ensuring workflows operate seamlessly. | Implementation |
+| [testing-mocking](skills/coding/testing-mocking/SKILL.md) | Coding | Implements mocking strategies for unit testing by providing controlled, predictable interactions with dependencies. | Implementation |
 | [testing-qa](skills/agent/testing-qa/SKILL.md) | Agent | Implements intelligent testing qa with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [testing-quality-methodologies](skills/coding/testing-quality-methodologies/SKILL.md) | Coding | Implements TDD and BDD methodologies for ensuring quality in software engineering with structured guidelines and practices. | Implementation |
 | [testing-strategies](skills/go/testing-strategies/SKILL.md) | Go | Implements comprehensive testing strategies for Go including unit tests, integration tests, benchmarks, table-driven tests, and mock patterns. | Implementation |
+| [testing-stubbing](skills/coding/testing-stubbing/SKILL.md) | Coding | Implements stubbing techniques for unit testing by replacing parts of the system under test with pre-defined responses. | Implementation |
+| [testing-test-doubles](skills/coding/testing-test-doubles/SKILL.md) | Coding | Provides an overview and implementation of test doubles including mocks, stubs, and fakes for comprehensive testing strategies. | Implementation |
+| [testing-unit](skills/coding/testing-unit/SKILL.md) | Coding | Implements unit testing strategies using popular frameworks to ensure the smallest parts of your application work as intended. | Implementation |
 | [testing-unit-integration-e2e](skills/coding/testing-unit-integration-e2e/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, contract, and end-to-end) with appropriate test doubles, isolation levels, and coverage thresholds for reliable software delivery. | Implementation |
 | [thanos](skills/cncf/thanos/SKILL.md) | Cncf | "Provides Thanos in High availability Prometheus solution with long-term storage" | Reference |
 | [tikv](skills/cncf/tikv/SKILL.md) | Cncf | "TiKV in Distributed transactional key-value database inspired by Google" Spanner | Reference |
