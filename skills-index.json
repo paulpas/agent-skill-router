@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T01:34:36.371972Z",
-  "totalSkills": 1071,
+  "generatedAt": "2026-05-27T02:05:31.462797Z",
+  "totalSkills": 1073,
   "domains": {
     "agent": 283,
     "cncf": 173,
-    "coding": 482,
+    "coding": 484,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 653,
+    "implementation": 655,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -10151,6 +10151,32 @@
       "source": "skills/coding/framework-driven-design/SKILL.md"
     },
     {
+      "name": "framework-evaluation",
+      "domain": "coding",
+      "description": "Runs automated empirical evaluation of software frameworks through reproducible benchmark harnesses, dependency graph security auditing, integration feasibility testing, and maintenance cost modeling to produce quantitative selection data.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework selection",
+        "technology evaluation",
+        "choose a framework",
+        "compare frameworks",
+        "tech stack decision",
+        "benchmark harness",
+        "dependency audit",
+        "framework scoring"
+      ],
+      "relatedSkills": [
+        "framework-onboarding",
+        "framework-selection",
+        "framework-comparison-workflow",
+        "tool-evaluation-workflow"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-evaluation/SKILL.md"
+    },
+    {
       "name": "framework-evaluation-criteria",
       "domain": "coding",
       "description": "Systematically elicits evaluation criteria across technical, team, ecosystem, security, deployment, integration, cost, and viability dimensions to prevent hype-driven framework selection. Produces structured requirement matrices, weighted scoring frameworks, and decision records with documented trade-offs.",
@@ -10304,6 +10330,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/framework-lifecycle/SKILL.md"
+    },
+    {
+      "name": "framework-onboarding",
+      "domain": "coding",
+      "description": "Accelerates learning and effective utilization of newly selected frameworks through structured onboarding paths, best practice scaffolding, incremental adoption patterns, and common pitfall avoidance.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "framework onboarding",
+        "learn new framework",
+        "adopt new technology",
+        "framework best practices",
+        "quick start guide",
+        "framework setup",
+        "incremental adoption",
+        "scaffold project"
+      ],
+      "relatedSkills": [
+        "framework-evaluation",
+        "framework-utilization",
+        "framework-adoption-strategy"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/framework-onboarding/SKILL.md"
     },
     {
       "name": "framework-orchestration-routing",
