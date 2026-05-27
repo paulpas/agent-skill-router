@@ -92,7 +92,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
 | Kotlin | 1 |  |
-| Linux | 17 | System administration, kernel tuning, security, networking |
+| Linux | 18 | System administration, kernel tuning, security, networking |
 | Maker | 3 | DIY projects, IoT, home automation, 3D printing |
 | Programming | 7 | Algorithms, frameworks, language references |
 | Trading | 90 | Execution, risk management, ML models |
@@ -295,17 +295,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 14:01:31 UTC  
-> **Total skills:** 1100  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1100 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 09:28:03 UTC  
+> **Total skills:** 1101  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1101 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1056 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1056 | Ranking penalty for conflicting query terms |
-| Response Profile | 1056 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1057 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1057 | Ranking penalty for conflicting query terms |
+| Response Profile | 1057 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -1331,7 +1331,7 @@ MIT — All skills are freely available and redistributable.
 | [modern-kotlin](skills/kotlin/modern-kotlin/SKILL.md) | Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications. | kotlin coroutines, sealed interfaces, data classes, kotlinx serialization, context receivers, how do i write modern kotlin, suspend function [tactical, educational] |
 
 
-### Linux (17 skills)
+### Linux (18 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1343,6 +1343,7 @@ MIT — All skills are freely available and redistributable.
 | [linux-security](skills/linux/linux-security/SKILL.md) | Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments. | linux security, hardening, CIS benchmark, SELinux, AppArmor, SSH hardening, file integrity, audit framework [tactical] |
 | [linux-services](skills/linux/linux-services/SKILL.md) | Manages Linux services with systemd for reliable operation, dependency ordering, resource isolation, and automated recovery in cloud and on-prem environments. | systemd, service management, unit file, service restart, socket activation, systemd timer, journal, service dependency [tactical] |
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, automatic variables, cross-compilation, and CI/CD integration for reproducible software builds. | makefile, GNU make, build automation, incremental builds, phony targets, make variables, dependency graph, cross-compilation, pattern rules, automatic variables, vpath, order-only prerequisites, make command, how do i automate builds with make, make clean all install [tactical, generation] |
+| [makefile-best-practices](skills/linux/makefile-best-practices/SKILL.md) | Implements portable, maintainable Makefiles with proper variable scope, dependency management, error handling, and parallel execution patterns for reliable build automation across Unix-like systems. | makefile, make, build automation, target rules, parallel builds, make dependencies, error handling, .PHONY targets [tactical, implementation] |
 | [networking](skills/linux/networking/SKILL.md) | Configures and optimizes Linux networking for cloud virtual networks and on-prem data center infrastructure with performance and security focus. | linux networking, bond interface, VLAN, bridge, network namespace, nftables, routing, cloud networking, VPC [tactical] |
 | [observability](skills/linux/observability/SKILL.md) | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | linux observability, system metrics, log collection, performance profiling, eBPF, perf, capacity planning, monitoring [tactical] |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. | IPMI, iLO, iDRAC, PXE boot, iSCSI, multipath, bare-metal provisioning, datacenter rack [tactical] |
@@ -1484,7 +1485,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (680 skills)
+### Implementation (Build Features) (681 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1853,6 +1854,7 @@ MIT — All skills are freely available and redistributable.
 | [make](skills/coding/make/SKILL.md) | Coding | Implements systematic build orchestration (Makefile, Nix, Bazel, Just) with dependency tracking, incremental compilation, phony targets, and cross-platform portability for reproducible software construction. |
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, automatic variables, cross-compilation, and CI/CD integration for reproducible software builds. |
 | [makefile](skills/coding/makefile/SKILL.md) | Coding | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. |
+| [makefile-best-practices](skills/linux/makefile-best-practices/SKILL.md) | Linux | Implements portable, maintainable Makefiles with proper variable scope, dependency management, error handling, and parallel execution patterns for reliable build automation across Unix-like systems. |
 | [maker-safety-practices](skills/maker/maker-safety-practices/SKILL.md) | Maker | Implements makerspace safety protocols with PPE selection by hazard type, machine-specific safe operating procedures (3D printers, laser cutters, CNC, soldering), and emergency response. |
 | [manager](skills/coding/manager/SKILL.md) | Coding | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing |
 | [mapbox-api](skills/coding/mapbox-api/SKILL.md) | Coding | Implements Mapbox API integration (Geocoding, Directions, Maps, Search, using mapbox-sdk Python SDK with access token authentication, forward/reverse geocoding, route calculation, static maps, isochrones, map tiles, and Mapbox REST API patterns. |
@@ -3234,6 +3236,7 @@ MIT — All skills are freely available and redistributable.
 | [make-build-system](skills/linux/make-build-system/SKILL.md) | Linux | Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, automatic variables, cross-compilation, and CI/CD integration for reproducible software builds. | Implementation |
 | [make-workflow-automation](skills/agent/make-workflow-automation/SKILL.md) | Agent | Builds and debugs automated workflows in Make (Integromat) using modules, scenarios, routing, error handling, and scheduling for no-code/low-code automation. | Orchestration |
 | [makefile](skills/coding/makefile/SKILL.md) | Coding | Implements Makefile best practices for build automation including phony targets, pattern rules, variable scoping, and cross-platform compatibility to streamline software build processes. | Implementation |
+| [makefile-best-practices](skills/linux/makefile-best-practices/SKILL.md) | Linux | Implements portable, maintainable Makefiles with proper variable scope, dependency management, error handling, and parallel execution patterns for reliable build automation across Unix-like systems. | Implementation |
 | [maker-safety-practices](skills/maker/maker-safety-practices/SKILL.md) | Maker | Implements makerspace safety protocols with PPE selection by hazard type, machine-specific safe operating procedures (3D printers, laser cutters, CNC, soldering), and emergency response. | Implementation |
 | [manager](skills/cncf/manager/SKILL.md) | Cncf | "cert-manager in Cloud-Native Engineering - Certificate Management for" Kubernetes | Reference |
 | [manager](skills/coding/manager/SKILL.md) | Coding | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing | Implementation |

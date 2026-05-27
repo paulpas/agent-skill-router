@@ -26,6 +26,8 @@
 
 set -euo pipefail
 
+MODEL="anthropic/claude-haiku-4-5"
+# MODEL="llamacpp/anomaly-llama-cpp-model"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
@@ -133,7 +135,7 @@ main() {
 
     # Run opencode with the prompt and attach the spec files
     opencode run "$prompt" \
-        -m llamacpp/anomaly-llama-cpp-model \
+        -m ${MODEL} \
         --file SKILL_FORMAT_SPEC.md \
         --file AGENTS.md \
         --dangerously-skip-permissions
