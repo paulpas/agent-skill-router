@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T10:09:50.450377Z",
-  "totalSkills": 1091,
+  "generatedAt": "2026-05-27T11:01:39.563186Z",
+  "totalSkills": 1092,
   "domains": {
     "agent": 283,
     "cncf": 176,
-    "coding": 495,
+    "coding": 496,
     "electrical-engineering": 2,
     "go": 12,
     "java": 1,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 672,
+    "implementation": 673,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -22896,6 +22896,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/solid-anti-patterns/SKILL.md"
+    },
+    {
+      "name": "solid-principles",
+      "domain": "coding",
+      "description": "Implements the five SOLID OOP design principles (SRP, OCP, LSP, ISP, DIP) with Python-specific patterns using Protocols, singledispatch, and explicit dependency injection.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "SOLID principles",
+        "SRP",
+        "OCP",
+        "LSP",
+        "ISP",
+        "DIP",
+        "single responsibility",
+        "interface segregation",
+        "dependency inversion",
+        "typing.Protocol",
+        "composition over inheritance",
+        "how do i design clean oop classes",
+        "god class anti-pattern",
+        "python oop best practices"
+      ],
+      "relatedSkills": [
+        "coding-design-patterns-architecture",
+        "coding-refactoring-techniques",
+        "coding-code-quality-policies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/solid-principles/SKILL.md"
     },
     {
       "name": "spiffe",
