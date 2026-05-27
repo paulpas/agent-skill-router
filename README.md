@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1073 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1073 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -129,7 +129,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 283 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 484 | Software patterns, security, testing, data science |
+| Coding | 486 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -330,17 +330,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 02:05:33 UTC  
-> **Total skills:** 1073  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1073 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 22:16:38 UTC  
+> **Total skills:** 1075  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1075 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1036 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1036 | Ranking penalty for conflicting query terms |
-| Response Profile | 1036 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1037 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1037 | Ranking penalty for conflicting query terms |
+| Response Profile | 1037 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -813,7 +813,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (484 skills)
+### Coding (486 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1090,6 +1090,7 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes-deployment-patterns](skills/coding/kubernetes-deployment-patterns/SKILL.md) | Implements production-grade Kubernetes deployment patterns including resource management, HPA/VPA, pod disruption budgets, health probes, and multi-environment manifest orchestration for reliable service operation. | kubernetes deployment, k8s manifests, resource management, pod disruption budget, HPA, readiness probe, liveness probe, helm charts, production deployment, how do i deploy to kubernetes [tactical, generation] |
 | [langchain](skills/coding/langchain/SKILL.md) | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. | langchain, langgraph, create agent, llm orchestration, rag chain, langchain agent, how do i use langchain, agent middleware [tactical, generation] |
 | [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. | langgraph, state graph, agent workflow, conditional routing, human in the loop, checkpointing, langchain graph, persistent agent, how do i build an ai agent workflow [tactical, generation] |
+| [language-family-idioms](skills/coding/language-family-idioms/SKILL.md) | Implements idiomatic code patterns for JVM, .NET, TypeScript, and Functional ecosystems — showing the right way to write code in each family using modern language features from 2025–2026. | JVM idioms, Java records, Kotlin coroutines, C# primary constructors, TypeScript discriminated unions, Elixir GenServer, idiomatic code [tactical, generation] |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" | linear regression, OLS, ridge regression, lasso, elastic net, regularization [tactical, generation] |
 | [linode-api](skills/coding/linode-api/SKILL.md) | Integrates Linode/Akamai Cloud services (Instances, Object Storage, LKE Kubernetes, NodeBalancers) using the linode_api4 Python SDK with token-based authentication and model-driven resource patterns. | linode api, akamai cloud, linode python, linode instances, linode kubernetes, nodebalancer, object storage, how do i use linode api from python [tactical, generation] |
 | [liskov-substitution-principle](skills/coding/liskov-substitution-principle/SKILL.md) | Detects and repairs subtype contract violations where derived classes break caller expectations by weakening preconditions, strengthening postconditions, or introducing side effects — enforcing safe substitutability. | liskov substitution principle, LSP, subtype contract, precondition, postcondition, invariant, is-a relationship, breaking subclass, type safety [tactical, generation] |
@@ -1209,6 +1210,7 @@ MIT — All skills are freely available and redistributable.
 | [rest-api-versioning-strategies](skills/coding/rest-api-versioning-strategies/SKILL.md) | Implements API versioning strategies including URL path versioning, Accept header media type versioning, deprecation headers with Sunset and Deprecation, and backward-compatible contract evolution for REST APIs. | API versioning, URL path versioning, Accept header versioning, API deprecation, Sunset header, Deprecation header, REST API backward compatibility, how do i version an API, API evolution strategy, breaking changes API [tactical, strategic] |
 | [review](skills/coding/review/SKILL.md) | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback | analyzes, code review, code-review, diffs, files [tactical, generation] |
 | [review](skills/coding/review/SKILL.md) | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance | identifying, security review, security-focused, security-review, vulnerabilities, vulnerability scanning, security, security auditing [tactical, generation] |
+| [runtime-ecosystem-selection](skills/coding/runtime-ecosystem-selection/SKILL.md) | Selects the optimal runtime ecosystem (JVM, .NET, Node.js/V8, native compilation) based on deployment characteristics, performance requirements, and operational constraints for production systems. | runtime selection, JVM vs .NET, container image size, serverless cold start, GraalVM Native Image, .NET Native AOT, startup time, memory footprint |
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. | salesforce, soql, salesforce api, simple salesforce, salesforce objects, salesforce bulk api, how do i integrate with salesforce, crm integration [tactical, generation] |
 | [scoring](skills/coding/scoring/SKILL.md) | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | combining, conviction scoring, conviction-scoring, engine, multi-factor [tactical, generation] |
 | [security-architecture](skills/coding/security-architecture/SKILL.md) | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. | security architecture, threat modeling, STRIDE, defense in depth, zero trust, authentication architecture, authorization design, how do i secure a system [tactical, generation] |
@@ -1480,7 +1482,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (655 skills)
+### Implementation (Build Features) (657 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1817,6 +1819,7 @@ MIT — All skills are freely available and redistributable.
 | [langchain](skills/coding/langchain/SKILL.md) | Coding | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. |
 | [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Coding | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. |
 | [langgraph-state-machine](skills/agent/langgraph-state-machine/SKILL.md) | Agent | Implements LangGraph state machine architecture with typed state graphs, conditional routing, checkpoint-based persistence, and human-in-the-loop interrupt patterns for building deterministic AI agent workflows. |
+| [language-family-idioms](skills/coding/language-family-idioms/SKILL.md) | Coding | Implements idiomatic code patterns for JVM, .NET, TypeScript, and Functional ecosystems — showing the right way to write code in each family using modern language features from 2025–2026. |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | Coding | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" |
 | [linode-api](skills/coding/linode-api/SKILL.md) | Coding | Integrates Linode/Akamai Cloud services (Instances, Object Storage, LKE Kubernetes, NodeBalancers) using the linode_api4 Python SDK with token-based authentication and model-driven resource patterns. |
 | [linux-security](skills/linux/linux-security/SKILL.md) | Linux | Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments. |
@@ -1992,6 +1995,7 @@ MIT — All skills are freely available and redistributable.
 | [risk-management-basics](skills/trading/risk-management-basics/SKILL.md) | Trading | "Position sizing, stop-loss implementation, and system-level risk controls" to preserve capital |
 | [rollback-procedures](skills/cncf/rollback-procedures/SKILL.md) | Cncf | Implements comprehensive rollback procedures including deployment rollback, version rollback, database rollback, and rollback testing for Kubernetes and cloud-native applications |
 | [rollback-strategy](skills/cncf/rollback-strategy/SKILL.md) | Cncf | Designs and implements rollback strategies with data-aware rollback procedures, partial rollback capabilities, and automated rollback triggers for safe deployment recovery. |
+| [runtime-ecosystem-selection](skills/coding/runtime-ecosystem-selection/SKILL.md) | Coding | Selects the optimal runtime ecosystem (JVM, .NET, Node.js/V8, native compilation) based on deployment characteristics, performance requirements, and operational constraints for production systems. |
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Coding | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. |
 | [scoring](skills/coding/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights |
 | [security-architecture](skills/coding/security-architecture/SKILL.md) | Coding | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. |
@@ -3159,6 +3163,7 @@ MIT — All skills are freely available and redistributable.
 | [langgraph](skills/agent/langgraph/SKILL.md) | Agent | Implements intelligent langgraph with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Coding | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. | Implementation |
 | [langgraph-state-machine](skills/agent/langgraph-state-machine/SKILL.md) | Agent | Implements LangGraph state machine architecture with typed state graphs, conditional routing, checkpoint-based persistence, and human-in-the-loop interrupt patterns for building deterministic AI agent workflows. | Implementation |
+| [language-family-idioms](skills/coding/language-family-idioms/SKILL.md) | Coding | Implements idiomatic code patterns for JVM, .NET, TypeScript, and Functional ecosystems — showing the right way to write code in each family using modern language features from 2025–2026. | Implementation |
 | [lima](skills/cncf/lima/SKILL.md) | Cncf | "Lima in Container Runtime - cloud native architecture, patterns, pitfalls" and best practices | Reference |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | Coding | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" | Implementation |
 | [linkerd](skills/cncf/linkerd/SKILL.md) | Cncf | "Linkerd in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | Reference |
@@ -3418,6 +3423,7 @@ MIT — All skills are freely available and redistributable.
 | [rollback-strategy](skills/cncf/rollback-strategy/SKILL.md) | Cncf | Designs and implements rollback strategies with data-aware rollback procedures, partial rollback capabilities, and automated rollback triggers for safe deployment recovery. | Implementation |
 | [rook](skills/cncf/rook/SKILL.md) | Cncf | "Configures rook in cloud-native storage orchestration for kubernetes for cloud-native deployment and infrastructure management." | Reference |
 | [route53](skills/cncf/route53/SKILL.md) | Cncf | "Configures DNS routing with Route 53 for domain registration, health" checks, failover, and traffic management with private hosted zones. | Reference |
+| [runtime-ecosystem-selection](skills/coding/runtime-ecosystem-selection/SKILL.md) | Coding | Selects the optimal runtime ecosystem (JVM, .NET, Node.js/V8, native compilation) based on deployment characteristics, performance requirements, and operational constraints for production systems. | Implementation |
 | [runtime-log-analyzer](skills/agent/runtime-log-analyzer/SKILL.md) | Agent | Implements intelligent runtime log analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [s3](skills/cncf/s3/SKILL.md) | Cncf | "Configures S3 object storage with versioning, lifecycle policies, encryption" and access controls for durable, scalable data storage with cost optimization in AWS. | Reference |
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Coding | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. | Implementation |
