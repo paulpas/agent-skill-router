@@ -85,7 +85,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 283 | AI orchestration, routing, task decomposition |
+| Agent | 285 | AI orchestration, routing, task decomposition |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 498 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -295,22 +295,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 11:32:56 UTC  
-> **Total skills:** 1094  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1094 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 07:30:01 UTC  
+> **Total skills:** 1096  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1096 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1053 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1053 | Ranking penalty for conflicting query terms |
-| Response Profile | 1053 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1055 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1055 | Ranking penalty for conflicting query terms |
+| Response Profile | 1055 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (283 skills)
+### Agent (285 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -538,6 +538,7 @@ MIT — All skills are freely available and redistributable.
 | [self-improvement](skills/agent/self-improvement/SKILL.md) | Enables AI agents to continuously improve through structured reflection cycles, feedback-driven strategy evolution, pattern recognition across experiences, and adaptive knowledge base management. | self improvement, agent reflection, feedback loop, strategy evolution, continuous improvement, how do i improve ai agent, experience-based learning, agent optimization [tactical] |
 | [sendgrid-automation](skills/agent/sendgrid-automation/SKILL.md) | Implements intelligent sendgrid automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | sendgrid-automation, sendgrid automation, how do i sendgrid-automation, orchestrate sendgrid-automation, automate sendgrid-automation, agent sendgrid-automation [orchestration, strategic] |
 | [shopify-automation](skills/agent/shopify-automation/SKILL.md) | Implements intelligent shopify automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | shopify-automation, shopify automation, how do i shopify-automation, orchestrate shopify-automation, automate shopify-automation, agent shopify-automation [orchestration, strategic] |
+| [skill-architecture-design](skills/agent/skill-architecture-design/SKILL.md) | Designs atomic AI agent skill architecture using granularity heuristics, monolith detection algorithms, and network topology patterns to produce modular, independently-testable skill sets that maximize router matching precision. | skill architecture, atomic design, monolith detection, granularity heuristics, skill topology, skill network, modular skills, skill boundaries, skill decomposition, skill splitting, skill graph, related-skills, skill lifecycle, skill registry [strategic, tactical] |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. | skill audit, quality check, trigger effectiveness, skill assessment, stub detection, skill review, how do i evaluate a skill [educational] |
 | [skill-composition](skills/agent/skill-composition/SKILL.md) | Composes multiple specialized skills into coherent workflows using sequential chains, parallel fan-out/fan-in, conditional branching, and error-isolation patterns for reliable multi-step task execution. | skill composition, skill chaining, multi-skill workflow, parallel fan-out, fan-in pattern, state management between skills, error handling between skills, orchestration patterns, how do i combine multiple skills [tactical] |
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | skill-creator, skill creator, how do i skill-creator, orchestrate skill-creator, automate skill-creator, agent skill-creator [orchestration, strategic] |
@@ -577,6 +578,7 @@ MIT — All skills are freely available and redistributable.
 | [tool-use-function-calling](skills/agent/tool-use-function-calling/SKILL.md) | Implements tool calling patterns (Pydantic-typed tools, function-to-schema conversion, parallel execution, fallback chains) for AI agent external API and service integration. | tool calling, function calling, Pydantic tools, LangChain tools, tool use, parallel execution, fallback chain, typed tools |
 | [track-management](skills/agent/track-management/SKILL.md) | Implements intelligent track management with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | track-management, track management, how do i track-management, orchestrate track-management, automate track-management, agent track-management [orchestration, strategic] |
 | [trigger-dev](skills/agent/trigger-dev/SKILL.md) | Implements intelligent trigger dev with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | trigger-dev, trigger dev, how do i trigger-dev, orchestrate trigger-dev, automate trigger-dev, agent trigger-dev [orchestration, strategic] |
+| [trigger-engineering](skills/agent/trigger-engineering/SKILL.md) | Engineers precision trigger sets for AI agent skills using two-tier discovery patterns, anti-trigger calibration, archetype alignment, and hybrid scoring optimization to maximize auto-loading accuracy while minimizing false positive rates. | trigger engineering, trigger design, auto-load triggers, two-tier strategy, trigger calibration, anti-triggers, hybrid scoring, archetype matching, skill discovery, keyword optimization, trigger precision, trigger recall, false positive triggers [tactical, strategic] |
 | [upstash-qstash](skills/agent/upstash-qstash/SKILL.md) | Implements intelligent upstash qstash with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | upstash-qstash, upstash qstash, how do i upstash-qstash, orchestrate upstash-qstash, automate upstash-qstash, agent upstash-qstash [orchestration, strategic] |
 | [user-memory-system](skills/agent/user-memory-system/SKILL.md) | Implements multi-layer user memory systems (episodic, semantic, procedural) for AI agents to retain context across sessions, enable personalization, and build long-term relationships with individual users. | user memory, long-term memory, episodic memory, semantic memory, procedural memory, session persistence, memory retrieval, how do i remember user context, persistent AI, cross-session memory [tactical] |
 | [using-superpowers](skills/agent/using-superpowers/SKILL.md) | Implements intelligent using superpowers with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | using-superpowers, using superpowers, how do i using-superpowers, orchestrate using-superpowers, automate using-superpowers, agent using-superpowers [orchestration, strategic] |
@@ -1478,7 +1480,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (675 skills)
+### Implementation (Build Features) (676 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2114,6 +2116,7 @@ MIT — All skills are freely available and redistributable.
 | [trading-psychology](skills/trading/trading-psychology/SKILL.md) | Trading | "Emotional discipline, cognitive bias awareness, and maintaining operational" integrity in trading |
 | [tree-methods](skills/coding/tree-methods/SKILL.md) | Coding | "Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods for classification and regression |
 | [trend-analysis](skills/trading/trend-analysis/SKILL.md) | Trading | "Provides Trend identification, classification, and continuation analysis" |
+| [trigger-engineering](skills/agent/trigger-engineering/SKILL.md) | Agent | Engineers precision trigger sets for AI agent skills using two-tier discovery patterns, anti-trigger calibration, archetype alignment, and hybrid scoring optimization to maximize auto-loading accuracy while minimizing false positive rates. |
 | [trunk-based-development](skills/coding/trunk-based-development/SKILL.md) | Coding | Implements trunk-based development workflows with feature flag gating, short-lived branching strategies, and automated CI to keep main always deployable. |
 | [twap](skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large orders with" minimal market impact |
 | [twap-vwap](skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution''' |
@@ -2338,7 +2341,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | Cncf | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices |
 
 
-### Orchestration (Manage AI Agents) (237 skills)
+### Orchestration (Manage AI Agents) (238 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2531,6 +2534,7 @@ MIT — All skills are freely available and redistributable.
 | [self-critique-engine](skills/agent/self-critique-engine/SKILL.md) | Agent | Implements intelligent self critique engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [sendgrid-automation](skills/agent/sendgrid-automation/SKILL.md) | Agent | Implements intelligent sendgrid automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [shopify-automation](skills/agent/shopify-automation/SKILL.md) | Agent | Implements intelligent shopify automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
+| [skill-architecture-design](skills/agent/skill-architecture-design/SKILL.md) | Agent | Designs atomic AI agent skill architecture using granularity heuristics, monolith detection algorithms, and network topology patterns to produce modular, independently-testable skill sets that maximize router matching precision. |
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Agent | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-creator-ms](skills/agent/skill-creator-ms/SKILL.md) | Agent | Implements intelligent skill creator ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
 | [skill-developer](skills/agent/skill-developer/SKILL.md) | Agent | Implements intelligent skill developer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense |
@@ -3489,6 +3493,7 @@ MIT — All skills are freely available and redistributable.
 | [single-letter-variables](skills/coding/single-letter-variables/SKILL.md) | Coding | Analyzes variable names to detect ambiguous single-letter identifiers and recommends readable alternatives based on scope, context, and language conventions. | Implementation |
 | [single-responsibility](skills/coding/single-responsibility/SKILL.md) | Coding | Detects and refactors classes that violate the Single Responsibility Principle by splitting multi-purpose modules into focused components with clear responsibility boundaries. | Implementation |
 | [singleton-pattern](skills/coding/singleton-pattern/SKILL.md) | Coding | Implements the GoF Singleton pattern for controlled object lifecycle management in Python using module-level singletons, metaclass-based enforcement, threading-safe lazy initialization, and async-compatible variants. | Implementation |
+| [skill-architecture-design](skills/agent/skill-architecture-design/SKILL.md) | Agent | Designs atomic AI agent skill architecture using granularity heuristics, monolith detection algorithms, and network topology patterns to produce modular, independently-testable skill sets that maximize router matching precision. | Orchestration |
 | [skill-audit](skills/agent/skill-audit/SKILL.md) | Agent | Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring. | Review |
 | [skill-composition](skills/agent/skill-composition/SKILL.md) | Agent | Composes multiple specialized skills into coherent workflows using sequential chains, parallel fan-out/fan-in, conditional branching, and error-isolation patterns for reliable multi-step task execution. | Implementation |
 | [skill-creator](skills/agent/skill-creator/SKILL.md) | Agent | Implements intelligent skill creator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -3619,6 +3624,7 @@ MIT — All skills are freely available and redistributable.
 | [tree-methods](skills/coding/tree-methods/SKILL.md) | Coding | "Implements decision trees, random forests, gradient boosting (XGBoost" LightGBM), and tree ensemble methods for classification and regression | Implementation |
 | [trend-analysis](skills/trading/trend-analysis/SKILL.md) | Trading | "Provides Trend identification, classification, and continuation analysis" | Implementation |
 | [trigger-dev](skills/agent/trigger-dev/SKILL.md) | Agent | Implements intelligent trigger dev with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [trigger-engineering](skills/agent/trigger-engineering/SKILL.md) | Agent | Engineers precision trigger sets for AI agent skills using two-tier discovery patterns, anti-trigger calibration, archetype alignment, and hybrid scoring optimization to maximize auto-loading accuracy while minimizing false positive rates. | Implementation |
 | [trunk-based-development](skills/coding/trunk-based-development/SKILL.md) | Coding | Implements trunk-based development workflows with feature flag gating, short-lived branching strategies, and automated CI to keep main always deployable. | Implementation |
 | [twap](skills/trading/twap/SKILL.md) | Trading | "Time-Weighted Average Price algorithm for executing large orders with" minimal market impact | Implementation |
 | [twap-vwap](skills/trading/twap-vwap/SKILL.md) | Trading | 'Provides ''TWAP and VWAP Execution Algorithms: Institutional-Grade Order Execution''' | Implementation |
