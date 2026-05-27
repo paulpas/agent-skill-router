@@ -86,7 +86,22 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Domain | Count | Focus |
 |--------|-------|-------|
 | Agent | 283 | AI orchestration, routing, task decomposition |
+| CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
+| Coding | 494 | Software patterns, security, testing, data science |
+| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
+| Go | 12 | Go idioms, concurrency patterns, error handling |
+| Java | 1 |  |
+| Kotlin | 1 |  |
+| Linux | 17 | System administration, kernel tuning, security, networking |
+| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
+| Programming | 7 | Algorithms, frameworks, language references |
+| Trading | 90 | Execution, risk management, ML models |
+| Writing | 4 | Technical writing, style guidance |
+<<<<<<< HEAD
 | CNCF | 174 | Kubernetes, cloud-native, DevOps, service mesh |
+=======
+| CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
+>>>>>>> 76ea93470 (feat: add new Jakarta skills - jakarta-security, jakarta-testing)
 | Coding | 494 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
@@ -266,17 +281,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 08:19:44 UTC  
-> **Total skills:** 1088  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1088 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 04:39:22 UTC  
+> **Total skills:** 1090  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1090 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1049 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1049 | Ranking penalty for conflicting query terms |
-| Response Profile | 1049 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1051 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1051 | Ranking penalty for conflicting query terms |
+| Response Profile | 1051 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -570,7 +585,7 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | zoom-automation, zoom automation, how do i zoom-automation, orchestrate zoom-automation, automate zoom-automation, agent zoom-automation [orchestration, strategic] |
 
 
-### Cncf (174 skills)
+### Cncf (176 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -659,6 +674,8 @@ MIT — All skills are freely available and redistributable.
 | [jaeger](skills/cncf/jaeger/SKILL.md) | "Configures jaeger in cloud-native engineering - distributed tracing for cloud-native deployment and infrastructure management." | cloud-native, distributed, distributed tracing, engineering, jaeger, tracing, request tracing, xray [educational, strategic] |
 | [jakarta-ee](skills/cncf/jakarta-ee/SKILL.md) | Jakarta EE platform reference covering specifications, APIs, reference implementations, build configuration, and architecture patterns for enterprise Java development. | jakarta ee, jakarta-ee, enterprise java, servlet, jax-rs, cdi, jsf, ejb, javanamespace migration, javax to jakarta, payara, wildfly, openliberty, tomcat, maven build [educational, strategic] |
 | [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. | java ee migration, javax to jakarta, java ee to jakarta ee, namespace change, jakartaee-api, javax.servlet, javax.persistence, migration tool, eclipse migration, batch rename, java ee 8 upgrade [tactical] |
+| [jakarta-security](skills/cncf/jakarta-security/SKILL.md) | Implements Jakarta Security Enterprise API (JSR 375) for Jakarta EE applications with IdentityStore patterns, JWT Bearer tokens, form login, BCrypt password hashing, and container configuration for WildFly and OpenLiberty. | jakarta security, jsr 375, identity store, jwt bearer, form login, basic auth, @rolesallowed, bcrypt password hashing, wildfly security, openliberty security, container authentication, security context, jax-rs security, programmatic authentication [tactical] |
+| [jakarta-testing](skills/cncf/jakarta-testing/SKILL.md) | Tests Jakarta EE applications using Arquillian, ShrinkWrap, container adapters (WildFly managed/remote, Weld embedded), JUnit 5 integration, and in-container CDI injection with real Java examples. | arquillian, shrinkwrap, container testing, junit5 testing, jakarta ee testing, wildfly managed, in-container test, test deployment [tactical, generation] |
 | [karmada](skills/cncf/karmada/SKILL.md) | "Provides Karmada in Cloud-Native Engineering - multi-cluster orchestration" | cloud-native, engineering, karmada, multi-cluster [educational, strategic] |
 | [keda](skills/cncf/keda/SKILL.md) | "Configures keda in cloud-native engineering - event-driven autoscaling for cloud-native deployment and infrastructure management." | cloud-native, engineering, event-driven, keda, eventbridge, event bus, event routing [educational, strategic] |
 | [key-vault](skills/cncf/key-vault/SKILL.md) | "Manages encryption keys, secrets, and certificates with access control" and auditing. | key vault, key management, secrets, certificate management, encryption keys, acm, kms, secrets management [educational, strategic] |
@@ -1443,7 +1460,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (669 skills)
+### Implementation (Build Features) (671 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1761,6 +1778,8 @@ MIT — All skills are freely available and redistributable.
 | [intermarket-analysis](skills/trading/intermarket-analysis/SKILL.md) | Trading | "Implements cross-market relationships and asset class correlations for risk management and algorithmic trading execution." |
 | [intervention-analysis](skills/coding/intervention-analysis/SKILL.md) | Coding | "Provides Estimates treatment effects, conditional average treatment effects (CATE), heterogeneous effects, and individual treatment responses" |
 | [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Cncf | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. |
+| [jakarta-security](skills/cncf/jakarta-security/SKILL.md) | Cncf | Implements Jakarta Security Enterprise API (JSR 375) for Jakarta EE applications with IdentityStore patterns, JWT Bearer tokens, form login, BCrypt password hashing, and container configuration for WildFly and OpenLiberty. |
+| [jakarta-testing](skills/cncf/jakarta-testing/SKILL.md) | Cncf | Tests Jakarta EE applications using Arquillian, ShrinkWrap, container adapters (WildFly managed/remote, Weld embedded), JUnit 5 integration, and in-container CDI injection with real Java examples. |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. |
 | [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Coding | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. |
 | [javascript-package-workflows](skills/coding/javascript-package-workflows/SKILL.md) | Coding | Automates JavaScript/TypeScript package publishing with semantic-release, conventional commits, CI/CD workflows, and private registry configuration for npm. |
@@ -3093,6 +3112,8 @@ MIT — All skills are freely available and redistributable.
 | [jaeger](skills/cncf/jaeger/SKILL.md) | Cncf | "Configures jaeger in cloud-native engineering - distributed tracing for cloud-native deployment and infrastructure management." | Reference |
 | [jakarta-ee](skills/cncf/jakarta-ee/SKILL.md) | Cncf | Jakarta EE platform reference covering specifications, APIs, reference implementations, build configuration, and architecture patterns for enterprise Java development. | Reference |
 | [jakarta-migration](skills/cncf/jakarta-migration/SKILL.md) | Cncf | Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, and reference implementation transitions. | Implementation |
+| [jakarta-security](skills/cncf/jakarta-security/SKILL.md) | Cncf | Implements Jakarta Security Enterprise API (JSR 375) for Jakarta EE applications with IdentityStore patterns, JWT Bearer tokens, form login, BCrypt password hashing, and container configuration for WildFly and OpenLiberty. | Implementation |
+| [jakarta-testing](skills/cncf/jakarta-testing/SKILL.md) | Cncf | Tests Jakarta EE applications using Arquillian, ShrinkWrap, container adapters (WildFly managed/remote, Weld embedded), JUnit 5 integration, and in-container CDI injection with real Java examples. | Implementation |
 | [java-virtual-threads](skills/coding/java-virtual-threads/SKILL.md) | Coding | Implements modern Java concurrency with virtual threads (JDK 21+), structured concurrency, sealed classes, pattern matching switch expressions, and records for high-throughput application development. | Implementation |
 | [javascript-frontend-ecosystem](skills/coding/javascript-frontend-ecosystem/SKILL.md) | Coding | Implements monorepo architecture, build toolchain selection, module federation, and package health assessment for modern JavaScript frontend ecosystems to enable scalable multi-package development workflows. | Implementation |
 | [javascript-package-workflows](skills/coding/javascript-package-workflows/SKILL.md) | Coding | Automates JavaScript/TypeScript package publishing with semantic-release, conventional commits, CI/CD workflows, and private registry configuration for npm. | Implementation |
