@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T03:17:11.931350Z",
-  "totalSkills": 1075,
+  "generatedAt": "2026-05-27T04:10:28.780462Z",
+  "totalSkills": 1076,
   "domains": {
     "agent": 283,
     "cncf": 173,
-    "coding": 486,
+    "coding": 487,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 657,
+    "implementation": 658,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -16243,6 +16243,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/monolith-scaling-strategies/SKILL.md"
+    },
+    {
+      "name": "monorepo-workspace-patterns",
+      "domain": "coding",
+      "description": "Implements monorepo workspace management patterns across npm, pnpm, yarn, Cargo, and uv including dependency deduplication, build orchestration, shared configuration, and cross-package references for multi-package repository architectures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "monorepo",
+        "workspace patterns",
+        "pnpm workspaces",
+        "yarn workspaces",
+        "cargo workspace",
+        "uv workspace",
+        "Turborepo",
+        "Nx",
+        "Lerna",
+        "shared dependencies",
+        "cross-package references",
+        "how do i structure a monorepo",
+        "multi-package repo"
+      ],
+      "relatedSkills": [
+        "coding-package-ecosystem-navigator",
+        "coding-modern-python-packaging",
+        "coding-ci-cd-pipeline-design",
+        "coding-framework-lifecycle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/monorepo-workspace-patterns/SKILL.md"
     },
     {
       "name": "monte-carlo",
