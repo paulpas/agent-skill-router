@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1075 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1075 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -129,7 +129,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 283 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 486 | Software patterns, security, testing, data science |
+| Coding | 487 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -330,17 +330,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 03:17:13 UTC  
-> **Total skills:** 1075  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1075 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 23:10:00 UTC  
+> **Total skills:** 1076  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1076 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1037 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1037 | Ranking penalty for conflicting query terms |
-| Response Profile | 1037 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1038 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1038 | Ranking penalty for conflicting query terms |
+| Response Profile | 1038 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -813,7 +813,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (486 skills)
+### Coding (487 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1135,6 +1135,7 @@ MIT — All skills are freely available and redistributable.
 | [monolith-first-design](skills/coding/monolith-first-design/SKILL.md) | Evaluates architecture decisions to determine when a monolithic application should be chosen over microservices using team assessment, domain complexity analysis, operational cost modeling, and weighted scoring frameworks. | monolith first, monolithic architecture decision, when to use monolith, monolith vs microservices, avoid premature decomposition, team readiness assessment, bounded context analysis [strategic, diagnostic] |
 | [monolith-refactoring](skills/coding/monolith-refactoring/SKILL.md) | Refactors legacy monolithic "big ball of mud" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition. | monolith refactoring, big ball of mud, how do i untangle legacy code, spaghetti code cleanup, module extraction, strangler fig pattern, codebase restructuring, technical debt refactoring, god class decomposition, dependency analysis [tactical, generation] |
 | [monolith-scaling-strategies](skills/coding/monolith-scaling-strategies/SKILL.md) | Implements vertical scaling, database optimization, caching tiering, deployment patterns, CI/CD pipelines, and observability strategies for growing monolithic applications to delay or eliminate premature service decomposition. | scaling monolith, vertical scaling, how do i scale a monolith, database connection pool, caching strategy, blue-green deployment, performance bottleneck [tactical, diagnostic] |
+| [monorepo-workspace-patterns](skills/coding/monorepo-workspace-patterns/SKILL.md) | Implements monorepo workspace management patterns across npm, pnpm, yarn, Cargo, and uv including dependency deduplication, build orchestration, shared configuration, and cross-package references for multi-package repository architectures. | monorepo, workspace patterns, pnpm workspaces, yarn workspaces, cargo workspace, uv workspace, Turborepo, Nx, Lerna, shared dependencies, cross-package references, how do i structure a monorepo, multi-package repo [tactical, strategic] |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" | monte carlo, sampling, simulation, stochastic, markov chain, mcmc, how do i simulate [tactical, generation] |
 | [multi-tenant-domain-isolation](skills/coding/multi-tenant-domain-isolation/SKILL.md) | Implements multi-tenant domain isolation patterns (schema-per-tenant, row-level tenant scoping, isolated bounded contexts) to prevent data leakage and enforce strict tenant boundaries in SaaS applications. | multi-tenant, tenant isolation, schema per tenant, row-level security, tenant boundary, saas architecture, how do i isolate tenants, data partitioning, bounded context per tenant [tactical, generation] |
 | [netlify-api](skills/coding/netlify-api/SKILL.md) | Integrates Netlify services (Sites, Builds, Functions, Forms, Identity) using the Netlify REST API with Python, covering token-based authentication, site management, deployment workflows, and serverless function deployment. | netlify api, netlify python, netlify deployments, netlify functions, netlify forms, netlify sites, how do i use netlify api from python [tactical, generation] |
@@ -1482,7 +1483,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (657 skills)
+### Implementation (Build Features) (658 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1882,6 +1883,7 @@ MIT — All skills are freely available and redistributable.
 | [monolith-architecture](skills/coding/monolith-architecture/SKILL.md) | Coding | Implements modular monolith patterns (bounded-context layering, hexagonal ports, database-per-module, interface-based inter-module communication) to build cleanly structured single-deployable applications. |
 | [monolith-refactoring](skills/coding/monolith-refactoring/SKILL.md) | Coding | Refactors legacy monolithic "big ball of mud" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition. |
 | [monolith-scaling-strategies](skills/coding/monolith-scaling-strategies/SKILL.md) | Coding | Implements vertical scaling, database optimization, caching tiering, deployment patterns, CI/CD pipelines, and observability strategies for growing monolithic applications to delay or eliminate premature service decomposition. |
+| [monorepo-workspace-patterns](skills/coding/monorepo-workspace-patterns/SKILL.md) | Coding | Implements monorepo workspace management patterns across npm, pnpm, yarn, Cargo, and uv including dependency deduplication, build orchestration, shared configuration, and cross-package references for multi-package repository architectures. |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | Coding | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" |
 | [multi-agent-orchestration](skills/agent/multi-agent-orchestration/SKILL.md) | Agent | Orchestrates multi-agent workflows (sequential pipelines, supervisor-worker delegation, group chat coordination, parallel task execution with result synthesis) for complex AI system coordination. |
 | [multi-asset-model](skills/trading/multi-asset-model/SKILL.md) | Trading | "Provides Model inter-asset relationships for portfolio and cross-asset strategies" |
@@ -3247,6 +3249,7 @@ MIT — All skills are freely available and redistributable.
 | [monolith-first-design](skills/coding/monolith-first-design/SKILL.md) | Coding | Evaluates architecture decisions to determine when a monolithic application should be chosen over microservices using team assessment, domain complexity analysis, operational cost modeling, and weighted scoring frameworks. | Orchestration |
 | [monolith-refactoring](skills/coding/monolith-refactoring/SKILL.md) | Coding | Refactors legacy monolithic "big ball of mud" codebases into cleanly bounded modules using dependency analysis, hexagonal port isolation, strangler fig extraction, and database splitting strategies to prepare for eventual service decomposition. | Implementation |
 | [monolith-scaling-strategies](skills/coding/monolith-scaling-strategies/SKILL.md) | Coding | Implements vertical scaling, database optimization, caching tiering, deployment patterns, CI/CD pipelines, and observability strategies for growing monolithic applications to delay or eliminate premature service decomposition. | Implementation |
+| [monorepo-workspace-patterns](skills/coding/monorepo-workspace-patterns/SKILL.md) | Coding | Implements monorepo workspace management patterns across npm, pnpm, yarn, Cargo, and uv including dependency deduplication, build orchestration, shared configuration, and cross-package references for multi-package repository architectures. | Implementation |
 | [monte-carlo](skills/coding/monte-carlo/SKILL.md) | Coding | "Implements Monte Carlo sampling, simulation methods, and stochastic approximation for uncertainty estimation and numerical integration" | Implementation |
 | [multi-advisor](skills/agent/multi-advisor/SKILL.md) | Agent | Implements intelligent multi advisor with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [multi-agent-orchestration](skills/agent/multi-agent-orchestration/SKILL.md) | Agent | Orchestrates multi-agent workflows (sequential pipelines, supervisor-worker delegation, group chat coordination, parallel task execution with result synthesis) for complex AI system coordination. | Implementation |
