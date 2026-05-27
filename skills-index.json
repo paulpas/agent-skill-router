@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-27T11:32:54.599870Z",
-  "totalSkills": 1094,
+  "generatedAt": "2026-05-27T12:30:36.408512Z",
+  "totalSkills": 1096,
   "domains": {
-    "agent": 283,
+    "agent": 285,
     "cncf": 176,
     "coding": 498,
     "electrical-engineering": 2,
@@ -16,8 +16,8 @@
     "writing": 4
   },
   "roles": {
-    "orchestration": 237,
-    "implementation": 675,
+    "orchestration": 238,
+    "implementation": 676,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -21764,6 +21764,37 @@
       "source": "skills/coding/singleton-pattern/SKILL.md"
     },
     {
+      "name": "skill-architecture-design",
+      "domain": "agent",
+      "description": "Designs atomic AI agent skill architecture using granularity heuristics, monolith detection algorithms, and network topology patterns to produce modular, independently-testable skill sets that maximize router matching precision.",
+      "role": "orchestration",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "skill architecture",
+        "atomic design",
+        "monolith detection",
+        "granularity heuristics",
+        "skill topology",
+        "skill network",
+        "modular skills",
+        "skill boundaries",
+        "skill decomposition",
+        "skill splitting",
+        "skill graph",
+        "related-skills",
+        "skill lifecycle",
+        "skill registry"
+      ],
+      "relatedSkills": [
+        "skill-testing-methodology",
+        "trigger-engineering",
+        "skill-observability"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/skill-architecture-design/SKILL.md"
+    },
+    {
       "name": "skill-audit",
       "domain": "agent",
       "description": "Systematically audits OpenCode AI skills for quality compliance including trigger effectiveness analysis, content depth assessment, cross-reference integrity verification, and automated stub detection scoring.",
@@ -24938,6 +24969,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/trigger-dev/SKILL.md"
+    },
+    {
+      "name": "trigger-engineering",
+      "domain": "agent",
+      "description": "Engineers precision trigger sets for AI agent skills using two-tier discovery patterns, anti-trigger calibration, archetype alignment, and hybrid scoring optimization to maximize auto-loading accuracy while minimizing false positive rates.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "trigger engineering",
+        "trigger design",
+        "auto-load triggers",
+        "two-tier strategy",
+        "trigger calibration",
+        "anti-triggers",
+        "hybrid scoring",
+        "archetype matching",
+        "skill discovery",
+        "keyword optimization",
+        "trigger precision",
+        "trigger recall",
+        "false positive triggers"
+      ],
+      "relatedSkills": [
+        "skill-architecture-design",
+        "skill-testing-methodology",
+        "skill-router"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/trigger-engineering/SKILL.md"
     },
     {
       "name": "trunk-based-development",
