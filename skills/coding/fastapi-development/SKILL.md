@@ -1,16 +1,12 @@
 ---
 name: fastapi-development
-description: Implements FastAPI application patterns including dependency injection,
-  Pydantic v2 models, async handlers, JWT authentication, middleware chains, background
-  tasks, and production deployment strategies for high-performance Python web services.
+description: Implements FastAPI application patterns including dependency injection, Pydantic v2 models, async handlers, JWT authentication, middleware chains, background tasks, and production deployment strategies for high-performance Python web services.
 license: MIT
 compatibility: opencode
 metadata:
   version: 1.0.0
   domain: coding
-  triggers: fastapi, fastapi development, dependency injection, pydantic v2, async
-    endpoints, jwt authentication, fastapi middleware, background tasks, starlette,
-    uvicorn, python web framework, fastapi production
+  triggers: fastapi, fastapi development, dependency injection, pydantic v2, async endpoints, jwt authentication, fastapi middleware, background tasks, starlette, uvicorn, python web framework, fastapi production
   archetypes:
   - tactical
   - generation
@@ -34,11 +30,8 @@ metadata:
   related-skills: django-best-practices
 ------
 # FastAPI Development Guide
-
 Senior FastAPI engineer building high-performance async web services using modern Python 3.10+ patterns, Pydantic v2, and production-grade deployment strategies. This skill covers the full stack — from project architecture and dependency injection to authentication, middleware, background processing, and containerized deployments.
-
 ## TL;DR Checklist
-
 - [ ] Use lifespan events (async context managers) instead of `on_event("startup")` for initialization
 - [ ] Define explicit return types with `Response` or typed Pydantic models on every endpoint
 - [ ] Use `Depends()` for all shared resources (DB sessions, current user, config) — never instantiate them in handlers
@@ -47,54 +40,13 @@ Senior FastAPI engineer building high-performance async web services using moder
 - [ ] Keep business logic out of route handlers — delegate to service layer functions
 - [ ] Use `TestClient(app)` with `app.dependency_overrides` for test isolation
 - [ ] Configure CORS explicitly with allowed origins, methods, and credentials flags
-
 ---
-
-## When to Use
-
-- Building high-throughput API services that benefit from async I/O and non-blocking request handling
-- Creating microservices where lightweight frameworks are preferred over full-stack solutions like Django
-- Needing automatic OpenAPI/Swagger documentation generation from type annotations
-- Building WebSocket-based real-time endpoints (chat, streaming notifications, live updates)
-- Constructing data validation pipelines with Pydantic v2 models for strict API contract enforcement
-- Designing REST APIs that require JWT authentication, role-based access control, and rate limiting
-- Setting up production-grade deployments with Uvicorn workers, health checks, and graceful shutdown
-
----
-
-## When NOT to Use
-
-- Building heavy template-rendering applications with server-side HTML — use Django instead
-- Creating complex admin interfaces out of the box — use Django Admin or a separate admin frontend
-- Applications that are entirely synchronous and CPU-bound without any I/O — FastAPI's async overhead may not justify the complexity
-- Projects needing a built-in ORM, migration system, and administrative UI as a single package — consider Django with DRF
-
----
-
 ## Core Workflow
-
-1. **Scaffold Project Structure** — Create `app/` directory with `main.py`, `core/` (settings, config), `models/` (database models or Pydantic schemas), `routers/` (API route groups), `services/` (business logic), and `deps/` (shared dependencies). Use a factory function `create_app()` to construct the FastAPI instance. **Checkpoint:** Verify that the app starts with `uvicorn app.main:app --reload` without import errors.
-
-2. **Configure Lifespan & Dependencies** — Implement async lifespan context managers for startup/shutdown lifecycle events (database pool creation, cache connections). Register all shared dependencies using `Depends()` in routers. **Checkpoint:** Confirm that database sessions are properly closed on shutdown via the lifespan manager.
-
-3. **Define Pydantic v2 Request/Response Models** — Create typed request schemas with `@field_validator` for custom validation rules and response schemas matching your API contract. Use validation groups (`mode="python"` vs `"json"`) when input sources differ. **Checkpoint:** Run model schema dump via `app.openapi()` to verify generated OpenAPI spec matches your intended API surface.
-
-4. **Implement Route Handlers with Dependency Injection** — Write route functions that receive injected dependencies (DB sessions, current user, config). Delegate business logic to service-layer functions. Never instantiate database connections or call external services directly in handlers. **Checkpoint:** Verify every handler has explicit return type annotations and uses only injected dependencies.
-
-5. **Build Middleware Chain & Exception Handlers** — Add Starlette middleware for cross-cutting concerns (request timing, CORS, auth). Register custom exception handlers to translate framework exceptions into structured JSON responses. **Checkpoint:** Test that unhandled exceptions produce consistent error payloads with `status_code`, `detail`, and optional `errors` fields.
-
-6. **Write Tests with Dependency Overrides** — Use `TestClient(app)` with `app.dependency_overrides` to mock database sessions, external API calls, and authentication dependencies. Write both synchronous test functions (with `TestClient`) and async tests (with `httpx.AsyncClient`). **Checkpoint:** Verify that dependency overrides are scoped to the client session and don't leak into other tests.
-
-7. **Package & Deploy** — Build a multi-stage Dockerfile based on Python slim image. Configure Uvicorn with appropriate worker count (`--workers` for multiple cores), access logging, and graceful shutdown timeout. Expose health check endpoints for container orchestrators. **Checkpoint:** Validate that `curl /health` returns 200 and the container exits cleanly on SIGTERM within the configured timeout.
-
+Scaffold Project Structure: Create `app/` directory with `main.py`, `core/` (settings, config), `models/` (database models or Pydantic schemas), `routers/` (API route groups), `services/` (business logic), and `deps/` (shared dependencies). Use a factory function `create_app()` to construct the FastAPI instance. **Checkpoint:** Verify that the app starts with `uvicorn app.main:app --reload` without import errors.; Configure Lifespan & Dependencies: Implement async lifespan context managers for startup/shutdown lifecycle events (database pool creation, cache connections). Register all shared dependencies using `Depends()` in routers. **Checkpoint:** Confirm that database sessions are properly closed on shutdown via the lifespan manager.; Define Pydantic v2 Request/Response Models: Create typed request schemas with `@field_validator` for custom validation rules and response schemas matching your API contract. Use validation groups (`mode="python" vs "json"`) when input sources differ. **Checkpoint:** Run model schema dump via `app.openapi()` to verify generated OpenAPI spec matches your intended API surface.; Implement Route Handlers with Dependency Injection: Write route functions that receive injected dependencies (DB sessions, current user, config). Delegate business logic to service-layer functions. Never instantiate database connections or call external services directly in handlers. **Checkpoint:** Verify every handler has explicit return type annotations and uses only injected dependencies.; Build Middleware Chain & Exception Handlers: Add Starlette middleware for cross-cutting concerns (request timing, CORS, auth). Register custom exception handlers to translate framework exceptions into structured JSON responses. **Checkpoint:** Test that unhandled exceptions produce consistent error payloads with `status_code`, `detail`, and optional `errors` fields.; Write Tests with Dependency Overrides: Use `TestClient(app)` with `app.dependency_overrides` to mock database sessions, external API calls, and authentication dependencies. Write both synchronous test functions (with `TestClient`) and async tests (with `httpx.AsyncClient`). **Checkpoint:** Verify that dependency overrides are scoped to the client session and don't leak into other tests.; Package & Deploy: Build a multi-stage Dockerfile based on Python slim image. Configure Uvicorn with appropriate worker count (`--workers` for multiple cores), access logging, and graceful shutdown timeout. Expose health check endpoints for container orchestrators. **Checkpoint:** Validate that `curl /health` returns 200 and the container exits cleanly on SIGTERM within the configured timeout.
 ---
-
 ## Implementation Patterns
-
 ### Pattern 1: Project Structure & App Factory
-
 Recommended directory layout for a production FastAPI application with separation of concerns, lifecycle management, and clean app construction:
-
 ```
 myapi/
 ├── Dockerfile
@@ -129,9 +81,7 @@ myapi/
         ├── __init__.py
         └── timing.py          # Request timing middleware
 ```
-
 **App factory with lifespan events (`app/main.py`):**
-
 ```python
 """FastAPI application factory with async lifespan management."""
 from contextlib import asynccontextmanager
@@ -211,9 +161,7 @@ async def health_check() -> dict:
     """Return 200 when the service is healthy. Used by Kubernetes liveness/readiness probes."""
     return {"status": "ok", "environment": settings.environment}
 ```
-
 **Pydantic Settings configuration (`app/core/config.py`):**
-
 ```python
 """Application settings using pydantic-settings for type-safe environment loading."""
 from functools import cached_property
@@ -268,13 +216,9 @@ class Settings(BaseSettings):
 # Singleton settings instance — loaded once at import time
 settings = Settings()
 ```
-
 ---
-
 ### Pattern 2: Dependency Injection System
-
 FastAPI's dependency injection is its killer feature. It enables testable, reusable, and cleanly-scoped resource management. This pattern covers function deps, class-based deps with setup/teardown, scanning (nested depends), override for testing, and caching behavior.
-
 ```python
 # app/deps/database.py — Database session dependency with proper cleanup
 from collections.abc import AsyncGenerator
@@ -312,9 +256,7 @@ async def get_db_session() -> AsyncGenerator[AsyncSession, None]:
     finally:
         await session.close()
 ```
-
 **Class-based dependency with setup/teardown (`app/deps/cache.py`):**
-
 ```python
 # app/deps/cache.py — Cache connection with lifecycle management
 from collections.abc import AsyncGenerator
@@ -353,9 +295,7 @@ class CacheDependency:
 # Singleton instance — reused across requests for efficiency
 cache_dep = CacheDependency()
 ```
-
 **Dependency scanning with nested Depends and caching (`app/routers/users.py`):**
-
 ```python
 # app/routers/users.py — Endpoints using dependency scanning
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -429,9 +369,7 @@ async def update_user_endpoint(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     return updated
 ```
-
 **Dependency override for testing (`tests/conftest.py`):**
-
 ```python
 # tests/conftest.py — Test fixtures with dependency injection overrides
 import pytest
@@ -482,9 +420,7 @@ def client(app: FastAPI) -> AsyncGenerator[TestClient, None]:
     # Clean overrides after each test
     real_app.dependency_overrides.clear()
 ```
-
 **BAD vs. GOOD: When NOT to over-engineer DI:**
-
 ```python
 # ❌ BAD: Over-engineering — creating a dependency for something that is just a constant
 class SettingsDependency:
@@ -517,13 +453,9 @@ async def good_handler(db: AsyncSession = Depends(get_db_session)) -> dict:
     active_count, recent_list = await user_service.get_active_users_last_30_days(db)
     return {"count": active_count, "recent": recent_list}
 ```
-
 ---
-
 ### Pattern 3: Pydantic v2 Model Patterns
-
-Pydantic v2 is a fundamental rewrite from v1 with breaking changes. Key differences: `model_config` replaces `class Config`, `@field_validator` replaces `@validator`, and validation groups (`mode="python"` vs `"json"`) handle different input contexts.
-
+Pydantic v2 is a fundamental rewrite from v1 with breaking changes. Key differences: `model_config` replaces `class Config`, `@field_validator` replaces `@validator`, and validation groups (`mode="python" vs "json"`) handle different input contexts.
 ```python
 # app/models/schemas.py — Pydantic v2 request and response schemas
 from datetime import date, datetime
@@ -634,9 +566,7 @@ class PasswordChange(BaseModel):
             raise ValueError("new_password must differ from current_password")
         return self
 ```
-
 **Nested models with validation groups:**
-
 ```python
 # app/models/schemas.py — Nested request/response models
 
@@ -728,13 +658,9 @@ def dump_json_schema() -> dict:
 #   "type": "object"
 # }
 ```
-
 ---
-
 ### Pattern 4: Authentication & Authorization
-
 JWT-based authentication with OAuth2 password flow, role-based access control, and token refresh. This pattern shows complete authentication infrastructure.
-
 ```python
 # app/core/security.py — JWT utilities and OAuth2 password flow
 import base64
@@ -753,7 +679,6 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # OAuth2 token URL dependency — FastAPI uses this to generate the Swagger UI flow
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token")
-
 
 def create_access_token(subject: str, expires_delta: timedelta | None = None) -> str:
     """Create a JWT access token with configurable expiration.
@@ -777,7 +702,6 @@ def create_access_token(subject: str, expires_delta: timedelta | None = None) ->
     }
     return jwt.encode(payload, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
 
-
 def create_refresh_token(subject: str) -> str:
     """Create a long-lived refresh token for obtaining new access tokens."""
     expire = datetime.now(timezone.utc) + timedelta(days=settings.jwt_refresh_token_expire_days)
@@ -788,7 +712,6 @@ def create_refresh_token(subject: str) -> str:
         "type": "refresh",
     }
     return jwt.encode(payload, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
-
 
 def decode_token(token: str) -> dict:
     """Decode and verify a JWT token. Raises HTTPException on failure."""
@@ -810,19 +733,15 @@ def decode_token(token: str) -> dict:
             detail="Invalid token",
         )
 
-
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a plain password against its bcrypt hash."""
     return pwd_context.verify(plain_password, hashed_password)
-
 
 def hash_password(password: str) -> str:
     """Hash a plaintext password using bcrypt with auto-calculated rounds."""
     return pwd_context.hash(password)
 ```
-
 **Auth dependency for extracting the current user:**
-
 ```python
 # app/core/auth.py — Authentication & authorization dependencies
 from fastapi import Depends, HTTPException, status
@@ -953,13 +872,9 @@ async def authenticate_user(username: str, password: str) -> User | None:
     # In real code: query DB, compare hashed passwords with verify_password()
     return None  # Placeholder
 ```
-
 ---
-
 ### Pattern 5: Middleware Chain Construction
-
 FastAPI uses Starlette's ASGI middleware infrastructure. Understand the difference between Starlette middleware (wrap each request) and ASGI middleware (wrap the entire application stack). Proper ordering matters — CORS must come before auth, timing before response generation.
-
 ```python
 # app/middleware/timing.py — Request timing middleware using Starlette's Middleware base class
 import time
@@ -990,7 +905,7 @@ class TimingMiddleware(BaseHTTPMiddleware):
         # Log request details (in production, use structured JSON logging)
         if process_time > 100:  # Warn for slow requests (>100ms)
             print(
-                f"[slow] {request.method} {request.url.path} "
+                f"[slow] {request.method} {request.url.path} 
                 f"— {process_time:.2f}ms — {response.status_code}"
             )
 
@@ -1017,12 +932,8 @@ class AppLevelMiddleware:
         if accepts_gzip:
             # In production, use a proper middleware like django-compressor or starlette's GZipMiddleware
             pass  # Placeholder — real implementation compresses response body
-
-        await self.app(scope, receive, send)
 ```
-
 **CORS configuration and custom exception handler middleware:**
-
 ```python
 # app/core/exceptions.py — Global exception handlers for structured error responses
 from fastapi import FastAPI, Request, status
@@ -1033,8 +944,7 @@ from pydantic import ValidationError
 class APIError(Exception):
     """Base application error with structured response payload."""
 
-    def __init__(
-        self,
+    def __init__(self,
         message: str,
         status_code: int = status.HTTP_400_BAD_REQUEST,
         detail: dict | None = None,
@@ -1133,13 +1043,9 @@ def register_exception_handlers(app: FastAPI) -> None:
             },
         )
 ```
-
 ---
-
 ### Pattern 6: Background Tasks & Celery Integration
-
 FastAPI's built-in `BackgroundTasks` for simple jobs (emails, webhook calls) and Celery integration for heavier workloads with retry logic.
-
 ```python
 # app/services/background.py — Background task implementations
 import asyncio
@@ -1227,7 +1133,7 @@ import logging
 
 @shared_task(bind=True, max_retries=3, default_retry_delay=60)
 def process_payment(self, payment_id: int, amount: float) -> dict:
-    '''Process payment with retry on transient failures.'''
+    '''Process payment with retry on transient failures.'''  
     try:
         from app.services.payment_gateway import charge
         result = charge(payment_id, amount)
@@ -1241,436 +1147,6 @@ def process_payment(self, payment_id: int, amount: float) -> dict:
         raise MaxRetriesExceededError(f"Permanent payment error: {exc}") from exc
 """
 ```
-
-**Using BackgroundTasks in route handlers:**
-
-```python
-# app/routers/users.py — Endpoint with background task dispatch
-from fastapi import APIRouter, BackgroundTasks
-
-router = APIRouter()
-
-
-@router.post("/register", status_code=201)
-async def register_user(
-    user_data: UserCreate,
-    background_tasks: BackgroundTasks,  # Injected by FastAPI
-) -> UserRead:
-    """Register a new user and send welcome email in the background."""
-    # Create user synchronously (it's the critical path)
-    db: AsyncSession = await get_db_session().__anext__()  # In real code: use Depends
-    user = await _create_user(db, user_data)
-
-    # Schedule non-critical work to run after response is sent
-    background_tasks.add_task(send_welcome_email, user.email, user.username)
-    background_tasks.add_task(
-        lambda: deliver_webhook(settings.webhook_url, {"event": "user_registered", "user_id": user.id})  # noqa: E501
-    )
-
-    return user
 ```
-
----
-
-### Pattern 7: Production Deployment Patterns
-
-Uvicorn configuration, multi-stage Dockerfile, health checks, graceful shutdown, and Prometheus metrics integration.
-
-**Multi-stage Dockerfile (`Dockerfile`):**
-
-```dockerfile
-# ─── Build stage ───
-FROM python:3.12-slim AS builder
-
-WORKDIR /build
-
-# Install build dependencies (compiled extensions)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc libpq-dev && \
-    rm -rf /var/lib/apt/lists/*
-
-# Create virtual environment and install dependencies
-RUN python -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-
-COPY pyproject.toml .
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -e .
-
-# ─── Runtime stage ───
-FROM python:3.12-slim AS runtime
-
-WORKDIR /app
-
-# Create non-root user for security
-RUN groupadd -r appuser && useradd -r -g appuser appuser
-
-# Copy virtual environment from builder
-COPY --from=builder /opt/venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-
-# Copy application code
-COPY --chown=appuser:appuser app/ ./app/
-COPY --chown=appuser:appuser pyproject.toml .
-
-USER appuser
-
-# Expose port and configure health check
-EXPOSE 8000
-
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" || exit 1
-
-# Start with Uvicorn — production configuration
-CMD ["uvicorn", "app.main:app", \
-     "--host", "0.0.0.0", \
-     "--port", "8000", \
-     "--workers", "4", \
-     "--loop", "uvloop", \
-     "--http", "httptools", \
-     "--access-log", \
-     "--graceful-shutdown-timeout", "30"]
+.... continued ...
 ```
-
-**Uvicorn configuration via pyproject.toml (`pyproject.toml`):**
-
-```toml
-[tool.uvicorn]
-app = "app.main:app"
-host = "0.0.0.0"
-port = 8000
-workers = 4
-loop = "uvloop"
-http = "httptools"
-access_log = true
-graceful_shutdown_timeout = 30
-```
-
-**Prometheus metrics integration:**
-
-```python
-# app/main.py — Metrics setup (add to the create_app factory)
-from prometheus_fastapi_instrumentator import Instrumentator, PrometheusMetrics
-
-def create_app() -> FastAPI:
-    app = FastAPI(...)
-
-    # Prometheus metrics with application-specific labels
-    instrumentator = Instrumentator(
-        should_group_status_codes=False,       # Separate status codes instead of grouping
-        excluded_handlers=["/health", "/metrics"],  # Don't self-monitor health checks
-        should_measure_request_latency=True,     # Record histogram of request durations
-        latency_high=5.0,                       # Upper bound for latency buckets (seconds)
-    )
-
-    # Add custom counters/gauges if needed
-    instrumentator.add_custom_metrics(
-        name="active_connections",
-        description="Current number of active connections",
-        type_info="GUAGE",  # noqa: E999 — intentional typo in prometheus-fastapi-instrumentator
-    )
-
-    instrumentator.instrument(app).expose(app, endpoint="/metrics")
-
-    return app
-```
-
-**Graceful shutdown with lifespan events:**
-
-```python
-# app/main.py — Graceful shutdown handler
-import signal
-import asyncio
-from contextlib import asynccontextmanager
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Manage startup resources, signal handling, and graceful shutdown."""
-    loop = asyncio.get_running_loop()
-
-    # Track active tasks for graceful shutdown
-    active_tasks: set[asyncio.Task] = set()
-
-    def _signal_handler():
-        """Called on SIGTERM/SIGINT to initiate graceful shutdown."""
-        print("[shutdown] Received signal — stopping request acceptance...")
-        asyncio.ensure_future(graceful_shutdown(active_tasks))
-
-    # Register signal handlers
-    for sig in (signal.SIGTERM, signal.SIGINT):
-        loop.add_signal_handler(sig, _signal_handler)
-
-    # Startup
-    await init_database_pool()
-    await init_cache_connection()
-    print("[startup] Application ready")
-
-    yield
-
-    # Shutdown — stop accepting new requests, wait for active ones
-    print("[shutdown] Draining active requests...")
-    loop.remove_signal_handler(signal.SIGTERM)
-    loop.remove_signal_handler(signal.SIGINT)
-
-
-async def graceful_shutdown(active_tasks: set[asyncio.Task]) -> None:
-    """Wait for all background tasks to complete before exiting.
-
-    Kubernetes sends SIGTERM and waits `terminationGracePeriodSeconds` (default 30s).
-    This function ensures in-flight requests complete within that window.
-    """
-    if active_tasks:
-        print(f"[shutdown] Waiting for {len(active_tasks)} active tasks...")
-        await asyncio.gather(*active_tasks, return_exceptions=True)
-
-    # Cleanup resources
-    await shutdown_database_pool()
-    await shutdown_cache_connection()
-    print("[shutdown] All resources released — exiting cleanly")
-```
-
----
-
-### Pattern 8: Testing Patterns
-
-Comprehensive testing with `TestClient`, dependency override for mocking, async test patterns, and external service mocking.
-
-```python
-# tests/test_users.py — User endpoint tests with dependency overrides
-import json
-from collections.abc import AsyncGenerator
-from unittest.mock import AsyncMock, MagicMock
-
-import pytest
-from fastapi.testclient import TestClient
-from httpx import AsyncClient
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
-
-from app.main import create_app
-
-
-# ─── Fixtures ────────────────────────────────────────────────────────
-
-@pytest.fixture(scope="session")
-def app() -> FastAPI:
-    """Create the test application."""
-    return create_app()
-
-
-@pytest.fixture
-def db_engine():
-    """In-memory SQLite engine for isolated tests within a session."""
-    engine = create_async_engine("sqlite+aiosqlite:///:memory:", echo=False)
-    yield engine
-    # Cleanup handled by the session fixture
-
-
-@pytest.fixture
-async def db_session(db_engine) -> AsyncGenerator[AsyncSession, None]:
-    """Create a fresh in-memory database for each test."""
-    from app.models.base import Base
-    async with db_engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-
-    factory = async_sessionmaker(bind=db_engine, class_=AsyncSession, expire_on_commit=False)
-    session: AsyncSession = factory()
-    try:
-        yield session
-    finally:
-        await session.close()
-        await db_engine.dispose()
-
-
-@pytest.fixture
-def client(app: FastAPI, db_session: AsyncSession) -> TestClient:
-    """Test client with database and cache dependency overrides."""
-
-    async def override_get_db():
-        yield db_session
-
-    app.dependency_overrides[get_db_session] = override_get_db
-    app.dependency_overrides[cache_dep.__call__] = lambda: AsyncMock()  # type: ignore[arg-type]
-
-    with TestClient(app) as test_client:
-        yield test_client
-
-    app.dependency_overrides.clear()
-
-
-# ─── Tests ───────────────────────────────────────────────────────────
-
-def test_create_user_success(client: TestClient):
-    """Test successful user creation with valid input."""
-    response = client.post(
-        "/api/v1/users/",
-        json={
-            "email": "newuser@example.com",
-            "username": "newuser",
-            "password": "SecurePass1!",
-            "full_name": "New User",
-        },
-    )
-
-    assert response.status_code == 201
-    data = response.json()
-    assert data["email"] == "newuser@example.com"
-    assert data["username"] == "newuser"
-    assert "id" in data
-    assert "created_at" in data
-
-
-def test_create_user_invalid_email(client: TestClient):
-    """Test that invalid email is rejected by Pydantic validation."""
-    response = client.post(
-        "/api/v1/users/",
-        json={
-            "email": "not-an-email",
-            "username": "testuser",
-            "password": "SecurePass1!",
-            "full_name": "Test User",
-        },
-    )
-
-    assert response.status_code == 422
-    errors = response.json()["error"]["errors"]
-    assert any(e["field"] == "email" for e in errors)
-
-
-def test_create_user_weak_password(client: TestClient):
-    """Test password complexity validation rejects weak passwords."""
-    response = client.post(
-        "/api/v1/users/",
-        json={
-            "email": "weak@example.com",
-            "username": "weakuser",
-            "password": "simple",  # Too short, no uppercase or digit
-            "full_name": "Weak User",
-        },
-    )
-
-    assert response.status_code == 422
-    errors = response.json()["error"]["errors"]
-    assert any("password" in e["field"] for e in errors)
-
-
-def test_get_user_not_found(client: TestClient):
-    """Test 404 when requesting a non-existent user."""
-    response = client.get("/api/v1/users/99999")
-    assert response.status_code == 404
-    data = response.json()
-    assert data["error"]["message"] == "User not found"
-
-
-def test_get_user_with_auth(client: TestClient):
-    """Test protected endpoint with valid JWT token."""
-    # First create a user and get their ID
-    create_resp = client.post(
-        "/api/v1/users/",
-        json={
-            "email": "authuser@example.com",
-            "username": "authuser",
-            "password": "SecurePass1!",
-            "full_name": "Auth User",
-        },
-    )
-    user_id = create_resp.json()["id"]
-
-    # Login to get token
-    token_resp = client.post(
-        "/api/v1/auth/token",
-        data={"username": "authuser", "password": "SecurePass1!"},
-    )
-    token = token_resp.json()["access_token"]
-
-    # Use the token for protected endpoint
-    response = client.get(f"/api/v1/users/{user_id}", headers={
-        "Authorization": f"Bearer {token}"
-    })
-    assert response.status_code == 200
-
-
-def test_unauthenticated_access(client: TestClient):
-    """Test that endpoints without authentication token are rejected."""
-    # Attempt to access a protected endpoint without a token
-    response = client.get("/api/v1/users/1")
-    # The get_current_active_user dependency rejects None from get_current_user
-    assert response.status_code == 401
-
-
-async def test_async_endpoint_with_httpx():
-    """Test async endpoints using httpx.AsyncClient for true async testing.
-
-    This is necessary when the endpoint uses WebSocket or when you want
-    to test concurrent request handling without TestClient's blocking behavior.
-    """
-    from app.main import app as real_app
-
-    async with AsyncClient(app=real_app, base_url="http://test") as ac:
-        response = await ac.get("/health")
-        assert response.status_code == 200
-        data = response.json()
-        assert data["status"] == "ok"
-```
-
----
-
-## Constraints
-
-### MUST DO
-- Use lifespan events (async context managers) instead of deprecated `on_event("startup")` and `on_event("shutdown")` for all initialization and cleanup
-- Define explicit return types with `Response` or typed Pydantic models on every endpoint signature — never omit return type annotations
-- Use `Depends()` for all shared resources (database sessions, current user, cache connections) — never instantiate them inside route handlers
-- Keep business logic in the service layer (`services/` directory) — route handlers must remain thin, delegating to service functions
-- Annotate all function signatures with Python 3.10+ union syntax (`X | Y`) and proper type hints on all parameters and return values
-- Use Pydantic v2 `@field_validator` (for single-field validation) and `@model_validator` (for cross-field validation) — never use deprecated `@validator` from v1
-- Configure CORS explicitly with a whitelist of allowed origins, methods, and headers — never use `allow_origins=["*"]` with `allow_credentials=True`
-- Use `TestClient(app)` with `app.dependency_overrides` for test isolation — override database sessions and external service dependencies per-test
-- Add explicit error responses to endpoint signatures using `responses={404: {...}, 401: {...}}` for accurate OpenAPI documentation
-- Handle Pydantic `ValidationError` explicitly to produce structured JSON error responses matching your API's error format
-
-### MUST NOT DO
-- Put blocking I/O (`requests.get()`, `time.sleep()`, synchronous DB calls) inside async endpoints — use `httpx.AsyncClient`, `asyncpg`, or offload to background tasks
-- Call `session.commit()` directly in route handlers — let the `get_db_session` dependency handle commit/rollback on its `yield` boundary
-- Hardcode secrets (JWT keys, API tokens, database passwords) in source code — load all secrets from environment variables via `pydantic-settings`
-- Use `class Config` for Pydantic v2 models — replace with `model_config = ConfigDict(...)`
-- Nest complex business logic inside route handlers — this makes testing impossible and creates maintenance debt
-- Omit dependency injection for database sessions — always use `Depends(get_db_session)` to ensure proper session lifecycle management
-- Use `@app.on_event("startup")` — it is deprecated and will be removed in a future FastAPI version; use `lifespan` context manager instead
-- Return raw SQLAlchemy models from endpoints — always use Pydantic response schemas with `from_attributes=True`
-- Skip `return_type` annotations on background task functions — without them, FastAPI cannot properly serialize the function for thread pool execution
-
----
-
-## Output Template
-
-When implementing or reviewing FastAPI code, produce:
-
-1. **Project Structure** — Directory layout showing where each component lives (routers/, services/, models/, deps/)
-2. **Configuration** — Settings loaded via `pydantic-settings` with environment variable references and defaults
-3. **Request/Response Schemas** — Typed Pydantic v2 models with field validators, validation groups, and JSON schema examples
-4. **Route Handler** — Thin endpoint function with explicit return types, injected dependencies, and delegated business logic
-5. **Service Function** — Business logic implementation receiving dependencies as parameters (not via Depends)
-6. **Dependency Definitions** — `Depends()` functions or class-based deps with setup/teardown lifecycle management
-7. **Error Handling** — Structured error responses matching the API's error format with proper status codes
-
----
-
-## Related Skills
-
-| Skill | Purpose |
-|-------|---------|
-| `django-best-practices` | For full-stack web applications requiring ORM, admin interface, and templating — Django is heavier but more opinionated |
-
----
-
-## Live References
-
-> Authoritative documentation links for FastAPI development. The model follows markdown links at load time to resolve external references and inline content.
-
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [Pydantic v2 Documentation](https://docs.pydantic.dev/latest/)
-- [Starlette Documentation](https://www.starlette.io/)
-- [Uvicorn ASGI Server Documentation](https://www.uvicorn.org/)
-- [SQLAlchemy 2.0 Async Documentation](https://docs.sqlalchemy.org/en/20/orm/extensions/asyncio.html)
-- [Prometheus FastAPI Instrumentator](https://github.com/trallnag/prometheus-fastapi-instrumentator)
-- [FastAPI Dependency Injection System](https://fastapi.tiangolo.com/tutorial/dependencies/)

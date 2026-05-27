@@ -88,7 +88,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Agent | 285 | AI orchestration, routing, task decomposition |
 | Architecture | 4 |  |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 511 | Software patterns, security, testing, data science |
+| Coding | 512 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 13 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
@@ -297,23 +297,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-<<<<<<< HEAD
-> **Last updated:** 2026-05-27 15:30:16 UTC  
-> **Total skills:** 1118  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1118 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
-=======
-> **Last updated:** 2026-05-27 14:39:08 UTC  
-> **Total skills:** 1102  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1102 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
->>>>>>> 8e2e28126400871ccb5c45934d2318be389c052f
+> **Last updated:** 2026-05-27 15:55:43 UTC  
+> **Total skills:** 1119  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1119 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1059 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1059 | Ranking penalty for conflicting query terms |
-| Response Profile | 1059 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1060 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1060 | Ranking penalty for conflicting query terms |
+| Response Profile | 1060 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -801,7 +795,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (511 skills)
+### Coding (512 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1110,6 +1104,7 @@ MIT — All skills are freely available and redistributable.
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models | maximum likelihood, MLE, likelihood estimation, likelihood function, optimization, performance, speed [tactical, generation] |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. | mcp, model context protocol, mcp server, fastmcp, mcp tools, mcp resources, how do i build an mcp server, mcp python sdk [tactical, generation] |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | memoization, cache pattern, LRU cache, LFU cache, cache invalidation, TTL strategy, write-through, cache stampede, function decorator, how do i speed up slow functions [tactical, generation] |
+| [memory-management-and-concurrency](skills/coding/memory-management-and-concurrency/SKILL.md) | Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications. | memory management, smart pointers, RAII, CMake, concurrency, multithreading, thread safety, synchronization primitives |
 | [message-queue-design](skills/coding/message-queue-design/SKILL.md) | Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems. | message queue, message broker, pub/sub, consumer groups, delivery semantics, at-least-once, exactly-once, RabbitMQ, Kafka, NATS, SQS, queue topology, message ordering [tactical, generation] |
 | [metrics-and-kpis](skills/coding/metrics-and-kpis/SKILL.md) | "Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making" | metrics, KPI, key performance indicator, business metrics, metric definition, how do I choose metrics, cloudwatch, optimization [tactical, generation] |
 | [microservice-contract-testing](skills/coding/microservice-contract-testing/SKILL.md) | Implements consumer-driven contract testing (PACT) with mock services and test doubles to prevent API breaking changes across microservice boundaries in distributed systems. | contract testing, pact, consumer-driven contracts, API mocking, service stubs, integration testing, mock server, test doubles, api breaking changes, how do i test microservice interfaces [tactical, generation] |
@@ -1213,6 +1208,7 @@ MIT — All skills are freely available and redistributable.
 | [review](skills/coding/review/SKILL.md) | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback | analyzes, code review, code-review, diffs, files [tactical, generation] |
 | [review](skills/coding/review/SKILL.md) | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance | identifying, security review, security-focused, security-review, vulnerabilities, vulnerability scanning, security, security auditing [tactical, generation] |
 | [runtime-ecosystem-selection](skills/coding/runtime-ecosystem-selection/SKILL.md) | Selects the optimal runtime ecosystem (JVM, .NET, Node.js/V8, native compilation) based on deployment characteristics, performance requirements, and operational constraints for production systems. | runtime selection, JVM vs .NET, container image size, serverless cold start, GraalVM Native Image, .NET Native AOT, startup time, memory footprint |
+| [rust-skills-software-engineering](skills/coding/rust-skills-software-engineering/SKILL.md) | Implements software engineering skills for Rust programming, covering key aspects including the ownership model, async/await, Cargo package manager, and unsafe code practices. Each section provides guidance, examples, and constraints for using these... | rust, ownership model, async/await, cargo, unsafe code, memory safety [implementation, reference] |
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. | salesforce, soql, salesforce api, simple salesforce, salesforce objects, salesforce bulk api, how do i integrate with salesforce, crm integration [tactical, generation] |
 | [scoring](skills/coding/scoring/SKILL.md) | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | combining, conviction scoring, conviction-scoring, engine, multi-factor [tactical, generation] |
 | [security-architecture](skills/coding/security-architecture/SKILL.md) | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. | security architecture, threat modeling, STRIDE, defense in depth, zero trust, authentication architecture, authorization design, how do i secure a system [tactical, generation] |
@@ -1277,7 +1273,6 @@ MIT — All skills are freely available and redistributable.
 | [system-design-fundamentals](skills/coding/system-design-fundamentals/SKILL.md) | Implements production system design patterns including capacity planning, multi-tier caching strategies, load balancing algorithms, rate limiting, CDN placement decisions, database sharding strategies, and circuit breaker implementations for scalable... | system design, capacity planning, cache strategy, load balancing, rate limiting, CDN placement, database sharding, circuit breaker, how do i design a scalable system, request estimation, traffic scaling, horizontal scaling [tactical, generation] |
 | [system-reliability-architecture](skills/coding/system-reliability-architecture/SKILL.md) | Implements production reliability patterns (circuit breakers, retry with exponential backoff, bulkhead isolation, health checks, graceful degradation, distributed tracing) to build fault-tolerant distributed systems. | system reliability, circuit breaker, bulkhead isolation, distributed tracing, chaos engineering, fault tolerance, how do i make my system resilient, graceful degradation [tactical, diagnostic, strategic] |
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. | systematic debugging, root cause analysis, stack trace, binary search debugging, production outage, how do i debug systematically, five whys, bug isolation [tactical, generation] |
-| [systems-thinking-engineering](skills/coding/systems-thinking-engineering/SKILL.md) | Applies systems thinking to engineering problems—modeling stocks/flows, feedback loops, leverage points, and emergent behavior for holistic architecture design. | systems thinking, feedback loops, emergent behavior, system architecture, stocks and flows, leverage points, system modeling, how do i design complex systems |
 | [technical-debt-management](skills/coding/technical-debt-management/SKILL.md) | Tracks, categorizes, and systematically reduces technical debt across codebases using quantitative scoring, prioritization matrices, and automated refactoring strategies. | technical debt, code quality, refactoring strategy, legacy code, debt tracking, interest rate, how do i reduce technical debt, debt inventory [tactical, generation] |
 | [technology-adoption](skills/coding/technology-adoption/SKILL.md) | Maps concrete project requirements to specific technology recommendations using domain-driven decision matrices, adoption risk scoring, and phased rollout strategies for selecting and leveraging technologies effectively. | technology adoption, tech stack choice, how do i choose technology, select framework for my project, pick the right tool, technology decision, framework recommendation, technology leverage, ecosystem navigation, adoption strategy [tactical, generation] |
 | [template-method-pattern](skills/coding/template-method-pattern/SKILL.md) | Implements the GoF Template Method pattern for defining algorithm skeletons in Python ABCs with customizable hook methods, comparing inheritance-based templating vs composition-based strategy selection. | template method pattern, abstract base class algorithm, hook method python, how do i define algorithm skeleton, subclass customization, inheritance-based extension, strategy vs template method |
@@ -1522,7 +1517,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (697 skills)
+### Implementation (Build Features) (698 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1909,6 +1904,7 @@ MIT — All skills are freely available and redistributable.
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Coding | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Coding | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. |
+| [memory-management-and-concurrency](skills/coding/memory-management-and-concurrency/SKILL.md) | Coding | Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications. |
 | [memory-systems](skills/agent/memory-systems/SKILL.md) | Agent | Implements conversation memory patterns (bounded buffers, auto-summarization, vector-backed long-term storage) for AI agent context management and factual recall. |
 | [message-queue-debugging](skills/agent/message-queue-debugging/SKILL.md) | Agent | Debugs Kafka, RabbitMQ, and SQS message queues with consumer lag analysis, dead letter handling, and message flow troubleshooting for distributed systems |
 | [message-queue-design](skills/coding/message-queue-design/SKILL.md) | Coding | Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems. |
@@ -2059,6 +2055,7 @@ MIT — All skills are freely available and redistributable.
 | [rollback-procedures](skills/cncf/rollback-procedures/SKILL.md) | Cncf | Implements comprehensive rollback procedures including deployment rollback, version rollback, database rollback, and rollback testing for Kubernetes and cloud-native applications |
 | [rollback-strategy](skills/cncf/rollback-strategy/SKILL.md) | Cncf | Designs and implements rollback strategies with data-aware rollback procedures, partial rollback capabilities, and automated rollback triggers for safe deployment recovery. |
 | [runtime-ecosystem-selection](skills/coding/runtime-ecosystem-selection/SKILL.md) | Coding | Selects the optimal runtime ecosystem (JVM, .NET, Node.js/V8, native compilation) based on deployment characteristics, performance requirements, and operational constraints for production systems. |
+| [rust-skills-software-engineering](skills/coding/rust-skills-software-engineering/SKILL.md) | Coding | Implements software engineering skills for Rust programming, covering key aspects including the ownership model, async/await, Cargo package manager, and unsafe code practices. Each section provides guidance, examples, and constraints for using these... |
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Coding | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. |
 | [scoring](skills/coding/scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights |
 | [security-architecture](skills/coding/security-architecture/SKILL.md) | Coding | Designs secure system architecture with threat modeling (STRIDE), defense-in-depth layers, zero-trust principles, and authentication patterns for production systems. |
@@ -2155,7 +2152,6 @@ MIT — All skills are freely available and redistributable.
 | [system-reliability-architecture](skills/coding/system-reliability-architecture/SKILL.md) | Coding | Implements production reliability patterns (circuit breakers, retry with exponential backoff, bulkhead isolation, health checks, graceful degradation, distributed tracing) to build fault-tolerant distributed systems. |
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Coding | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. |
 | [systemd-boot](skills/linux/systemd-boot/SKILL.md) | Linux | Analyzes and optimizes the systemd boot process including target management, boot time profiling with systemd-analyze, initramfs configuration, and custom boot-time unit creation for Linux systems. |
-| [systems-thinking-engineering](skills/coding/systems-thinking-engineering/SKILL.md) | Coding | Applies systems thinking to engineering problems—modeling stocks/flows, feedback loops, leverage points, and emergent behavior for holistic architecture design. |
 | [tail-risk](skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event protection for risk management and algorithmic trading execution." |
 | [technical-debt-management](skills/coding/technical-debt-management/SKILL.md) | Coding | Tracks, categorizes, and systematically reduces technical debt across codebases using quantitative scoring, prioritization matrices, and automated refactoring strategies. |
 | [technology-adoption](skills/coding/technology-adoption/SKILL.md) | Coding | Maps concrete project requirements to specific technology recommendations using domain-driven decision matrices, adoption risk scoring, and phased rollout strategies for selecting and leveraging technologies effectively. |
@@ -3313,6 +3309,7 @@ MIT — All skills are freely available and redistributable.
 | [mcp-builder-ms](skills/agent/mcp-builder-ms/SKILL.md) | Agent | Implements intelligent mcp builder ms with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Coding | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. | Implementation |
 | [memoization-cache-patterns](skills/coding/memoization-cache-patterns/SKILL.md) | Coding | Implements application-level caching and memoization patterns (LRU/LFU caches, TTL strategies, cache invalidation, write-through/write-back, stampede prevention) for performance optimization in Python systems. | Implementation |
+| [memory-management-and-concurrency](skills/coding/memory-management-and-concurrency/SKILL.md) | Coding | Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications. | Implementation |
 | [memory-systems](skills/agent/memory-systems/SKILL.md) | Agent | Implements conversation memory patterns (bounded buffers, auto-summarization, vector-backed long-term storage) for AI agent context management and factual recall. | Implementation |
 | [memory-usage-analyzer](skills/agent/memory-usage-analyzer/SKILL.md) | Agent | Implements intelligent memory usage analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [mermaid-diagrams](skills/writing/mermaid-diagrams/SKILL.md) | Writing | Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams, Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub. | Reference |
@@ -3533,6 +3530,7 @@ MIT — All skills are freely available and redistributable.
 | [route53](skills/cncf/route53/SKILL.md) | Cncf | "Configures DNS routing with Route 53 for domain registration, health" checks, failover, and traffic management with private hosted zones. | Reference |
 | [runtime-ecosystem-selection](skills/coding/runtime-ecosystem-selection/SKILL.md) | Coding | Selects the optimal runtime ecosystem (JVM, .NET, Node.js/V8, native compilation) based on deployment characteristics, performance requirements, and operational constraints for production systems. | Implementation |
 | [runtime-log-analyzer](skills/agent/runtime-log-analyzer/SKILL.md) | Agent | Implements intelligent runtime log analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [rust-skills-software-engineering](skills/coding/rust-skills-software-engineering/SKILL.md) | Coding | Implements software engineering skills for Rust programming, covering key aspects including the ownership model, async/await, Cargo package manager, and unsafe code practices. Each section provides guidance, examples, and constraints for using these... | Implementation |
 | [s3](skills/cncf/s3/SKILL.md) | Cncf | "Configures S3 object storage with versioning, lifecycle policies, encryption" and access controls for durable, scalable data storage with cost optimization in AWS. | Reference |
 | [salesforce-api](skills/coding/salesforce-api/SKILL.md) | Coding | Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, using simple-salesforce Python SDK with record CRUD operations, SOQL queries, Bulk API for large datasets, Apex calls, and Salesforce REST API patterns. | Implementation |
 | [scale-sets](skills/cncf/scale-sets/SKILL.md) | Cncf | "Manages auto-scaling VM groups with load balancing and health management" | Reference |
@@ -3670,7 +3668,6 @@ MIT — All skills are freely available and redistributable.
 | [system-reliability-architecture](skills/coding/system-reliability-architecture/SKILL.md) | Coding | Implements production reliability patterns (circuit breakers, retry with exponential backoff, bulkhead isolation, health checks, graceful degradation, distributed tracing) to build fault-tolerant distributed systems. | Implementation |
 | [systematic-debugging](skills/coding/systematic-debugging/SKILL.md) | Coding | Applies a structured debugging methodology (binary search, logging strategy, stack trace analysis, five whys root cause) to isolate bugs and find root causes in production and development codebases. | Implementation |
 | [systemd-boot](skills/linux/systemd-boot/SKILL.md) | Linux | Analyzes and optimizes the systemd boot process including target management, boot time profiling with systemd-analyze, initramfs configuration, and custom boot-time unit creation for Linux systems. | Implementation |
-| [systems-thinking-engineering](skills/coding/systems-thinking-engineering/SKILL.md) | Coding | Applies systems thinking to engineering problems—modeling stocks/flows, feedback loops, leverage points, and emergent behavior for holistic architecture design. | Implementation |
 | [tail-risk](skills/trading/tail-risk/SKILL.md) | Trading | "Implements tail risk management and extreme event protection for risk management and algorithmic trading execution." | Implementation |
 | [task-decomposition-engine](skills/agent/task-decomposition-engine/SKILL.md) | Agent | Implements intelligent task decomposition engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [task-intelligence](skills/agent/task-intelligence/SKILL.md) | Agent | Implements intelligent task intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
