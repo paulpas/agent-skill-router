@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-27T14:01:29.661394Z",
-  "totalSkills": 1100,
+  "generatedAt": "2026-05-27T14:28:31.847070Z",
+  "totalSkills": 1101,
   "domains": {
     "agent": 285,
     "cncf": 176,
@@ -9,7 +9,7 @@
     "go": 12,
     "java": 1,
     "kotlin": 1,
-    "linux": 17,
+    "linux": 18,
     "maker": 3,
     "programming": 7,
     "trading": 90,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 680,
+    "implementation": 681,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -15277,6 +15277,27 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/makefile/SKILL.md"
+    },
+    {
+      "name": "makefile-best-practices",
+      "domain": "linux",
+      "description": "Implements portable, maintainable Makefiles with proper variable scope, dependency management, error handling, and parallel execution patterns for reliable build automation across Unix-like systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "makefile",
+        "make",
+        "build automation",
+        "target rules",
+        "parallel builds",
+        "make dependencies",
+        "error handling",
+        ".PHONY targets"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/linux/makefile-best-practices/SKILL.md"
     },
     {
       "name": "maker-safety-practices",
