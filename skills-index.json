@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T14:28:31.847070Z",
-  "totalSkills": 1101,
+  "generatedAt": "2026-05-27T14:34:47.342423Z",
+  "totalSkills": 1102,
   "domains": {
     "agent": 285,
     "cncf": 176,
-    "coding": 502,
+    "coding": 503,
     "electrical-engineering": 2,
     "go": 12,
     "java": 1,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 681,
+    "implementation": 682,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -4138,6 +4138,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/cicd-automation-workflow-automate/SKILL.md"
+    },
+    {
+      "name": "cicd-build-orchestration",
+      "domain": "coding",
+      "description": "Orchestrates builds in CI/CD pipelines with multi-stage builds, artifact caching, containerized builds, build matrices, parallel execution, and automated deployment strategies (GitHub Actions, GitLab CI, Jenkins) for efficient and reliable software delivery.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "CI/CD pipeline",
+        "build artifact",
+        "docker build",
+        "matrix build",
+        "caching",
+        "deployment pipeline",
+        "github actions",
+        "build orchestration",
+        "artifact management",
+        "containerized builds",
+        "parallel builds"
+      ],
+      "relatedSkills": [
+        "makefile-best-practices",
+        "secure-release-pipeline",
+        "test-driven-development",
+        "git-branching-strategies"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/cicd-build-orchestration/SKILL.md"
     },
     {
       "name": "cicd-pipeline-debugging",
