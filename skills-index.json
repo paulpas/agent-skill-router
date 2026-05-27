@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-05-27T20:57:45.999569Z",
-  "totalSkills": 1120,
+  "generatedAt": "2026-05-27T21:22:28.737781Z",
+  "totalSkills": 1123,
   "domains": {
     "agent": 285,
     "architecture": 4,
     "cncf": 176,
-    "coding": 515,
+    "coding": 517,
+    "data-and-persistence": 1,
     "electrical-engineering": 2,
     "go": 13,
     "java": 1,
@@ -19,7 +20,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 699,
+    "implementation": 702,
     "reference": 174,
     "information": 1,
     "review": 8
@@ -6931,6 +6932,28 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/database-migrations/SKILL.md"
+    },
+    {
+      "name": "database-migrations-skill",
+      "domain": "coding",
+      "description": "Implements a systematic approach to database schema migrations, versioning, and rollback strategies specifically designed for OpenCode projects.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "database migration",
+        "schema versioning",
+        "rollback strategy",
+        "migration tooling",
+        "data integrity",
+        "migration scripts"
+      ],
+      "relatedSkills": [
+        "database-validation",
+        "database-schema-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/database-migrations-skill/SKILL.md"
     },
     {
       "name": "database-patterns",
@@ -17527,6 +17550,28 @@
       "source": "skills/coding/data-normalization/SKILL.md"
     },
     {
+      "name": "nosql-data-modeling",
+      "domain": "coding",
+      "description": "Provides comprehensive patterns and best practices for modeling data in NoSQL databases like MongoDB, Cassandra, and DynamoDB.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "nosql",
+        "mongodb",
+        "cassandra",
+        "dynamodb",
+        "data modeling",
+        "schema design"
+      ],
+      "relatedSkills": [
+        "database-design-modeling",
+        "api-design-principles"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/nosql-data-modeling/SKILL.md"
+    },
+    {
       "name": "not-human-search-mcp",
       "domain": "agent",
       "description": "Implements intelligent not human search mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -18389,6 +18434,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/order-flow-toxicity/SKILL.md"
+    },
+    {
+      "name": "orm-patterns-n-plus-1-awareness",
+      "domain": "data-and-persistence",
+      "description": "Provides comprehensive training on ORM patterns, the N+1 problem, and strategies to mitigate it, complete with code examples and workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "orm patterns",
+        "n+1 problem",
+        "optimization strategies",
+        "data access patterns",
+        "object relational mapping",
+        "lazy loading",
+        "eager loading"
+      ],
+      "relatedSkills": [
+        "orm-best-practices",
+        "data-access-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/data-and-persistence/orm-patterns-n-plus-1-awareness/SKILL.md"
     },
     {
       "name": "os-scripting",
