@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T14:34:47.342423Z",
+  "generatedAt": "2026-05-27T14:39:06.440601Z",
   "totalSkills": 1102,
   "domains": {
     "agent": 285,
@@ -3447,21 +3447,23 @@
     {
       "name": "build-performance-optimization",
       "domain": "coding",
-      "description": "Optimizes CI/CD build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning for production pipelines.",
+      "description": "Profiles, analyzes, and optimizes slow builds through bottleneck identification, incremental compilation strategies, intelligent caching, and parallelization techniques for C++, Java, Python, TypeScript, and Go projects.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "build optimization",
-        "build cache",
+        "build performance",
+        "compilation time",
+        "build profiling",
         "incremental build",
-        "dependency caching",
-        "parallel builds",
-        "how do i make my build faster"
+        "parallel build",
+        "bottleneck analysis",
+        "build cache",
+        "build speed"
       ],
       "relatedSkills": [
-        "ci-cd-pipeline-design",
-        "monorepo-workspace-patterns"
+        "makefile-best-practices",
+        "cicd-build-orchestration"
       ],
       "version": "1.0.0",
       "source": "skills/coding/build-performance-optimization/SKILL.md"
