@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T06:18:15.775971Z",
-  "totalSkills": 1083,
+  "generatedAt": "2026-05-27T06:42:58.054046Z",
+  "totalSkills": 1085,
   "domains": {
     "agent": 283,
     "cncf": 173,
-    "coding": 490,
+    "coding": 492,
     "electrical-engineering": 2,
     "go": 12,
     "java": 1,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 665,
+    "implementation": 667,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -11395,6 +11395,32 @@
       "source": "skills/coding/google-workspace-api/SKILL.md"
     },
     {
+      "name": "gradle-build-system",
+      "domain": "coding",
+      "description": "Implements Gradle build configurations (Kotlin DSL, version catalogs, multi-project builds, dependency locking, configuration cache) for Java and Kotlin projects.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "gradle",
+        "build.gradle.kts",
+        "gradle kotlin dsl",
+        "version catalog",
+        "dependency locking",
+        "configuration cache",
+        "gradle daemon",
+        "java plugin",
+        "multi project build",
+        "libs.versions.toml",
+        "declarative plugins block"
+      ],
+      "relatedSkills": [
+        "maven-build-system"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/gradle-build-system/SKILL.md"
+    },
+    {
       "name": "gradle-build-tool",
       "domain": "coding",
       "description": "Implements Gradle build configurations including Kotlin DSL, version catalogs, configuration cache, multi-project builds, convention plugins, and dependency management for Java/Kotlin/Android applications.",
@@ -15158,6 +15184,34 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/marketo-api/SKILL.md"
+    },
+    {
+      "name": "maven-build-system",
+      "domain": "coding",
+      "description": "Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "maven",
+        "pom.xml",
+        "mvn command",
+        "java build tool",
+        "dependency management",
+        "maven central",
+        "plugin management",
+        "build lifecycle",
+        "mvnw",
+        "effective-pom",
+        "BOM",
+        "bill of materials",
+        "maven profiles"
+      ],
+      "relatedSkills": [
+        "gradle-build-system"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/maven-build-system/SKILL.md"
     },
     {
       "name": "maven-build-tool",
