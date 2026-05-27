@@ -1,5 +1,20 @@
 # Trading Options Pricing
 
+---
+  metadata:
+  version: "1.0.0"
+  domain: trading
+  role: implementation
+  scope: implementation
+  output-format: code
+  archetypes: tactical, educational
+  anti_triggers: naive assumptions about options pricing, simplistic views, quick fixes
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: operational
+---
+
 Utilizes Black-Scholes and Binomial models to calculate the theoretical prices of options, allowing traders to evaluate trades against market prices.
 
 ## Key Concepts
