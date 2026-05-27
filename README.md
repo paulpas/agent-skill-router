@@ -87,7 +87,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 283 | AI orchestration, routing, task decomposition |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 494 | Software patterns, security, testing, data science |
+| Coding | 495 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
@@ -281,17 +281,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 09:39:56 UTC  
-> **Total skills:** 1090  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1090 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 10:09:52 UTC  
+> **Total skills:** 1091  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1091 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1051 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1051 | Ranking penalty for conflicting query terms |
-| Response Profile | 1051 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1052 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1052 | Ranking penalty for conflicting query terms |
+| Response Profile | 1052 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -767,7 +767,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (494 skills)
+### Coding (495 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -959,6 +959,7 @@ MIT — All skills are freely available and redistributable.
 | [eventual-consistency-patterns](skills/coding/eventual-consistency-patterns/SKILL.md) | Manages eventual consistency challenges in distributed systems — read model reconciliation, conflict resolution with CRDTs and vector clocks, anti-corruption layers, and stale read mitigation for event-driven architectures. | eventual consistency, read model drift, conflict resolution, stale reads, anti-corruption layer, CRDT, vector clock, how do i handle inconsistent data in distributed systems [tactical, diagnostic] |
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | experimental design, DOE, factorial design, randomization, blocking, how do I design experiments [tactical, generation] |
 | [explainability](skills/coding/explainability/SKILL.md) | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" | explainability, interpretability, transparency, understanding models, how do I explain predictions [tactical, generation] |
+| [expression-engine](skills/coding/expression-engine/SKILL.md) | Implements expression evaluation engines (arithmetic, conditional logic, string manipulation, function dispatch) for configuration-driven workflows, rule engines, and dynamic computation without hard-coded code paths. | expression engine, expression evaluation, dynamic formula, rule engine, eval sandbox, function dispatch, configuration-driven computation [tactical, generation] |
 | [extensible-framework-design](skills/coding/extensible-framework-design/SKILL.md) | Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees. | framework design, extensible architecture, plugin system, extension points, configuration driven, framework API design, hook patterns, middleware chains, how do i design an extensible system [tactical, strategic] |
 | [factory-method](skills/coding/factory-method/SKILL.md) | Implements the GoF Factory Method pattern for polymorphic object creation in Python using ABC-based factories, registration decorators, and type dispatch to replace if/elif chains with extensible factory hierarchies. | factory method pattern, object creation factory, type-based instantiation, abstract factory vs factory method, how do i create objects dynamically, polymorphic constructors, factory registry |
 | [fastapi-development](skills/coding/fastapi-development/SKILL.md) | Implements FastAPI application patterns including dependency injection, Pydantic v2 models, async handlers, JWT authentication, middleware chains, background tasks, and production deployment strategies for high-performance Python web services. | fastapi, fastapi development, dependency injection, pydantic v2, async endpoints, jwt authentication, fastapi middleware, background tasks, starlette, uvicorn, python web framework, fastapi production [tactical, generation] |
@@ -1460,7 +1461,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (671 skills)
+### Implementation (Build Features) (672 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1690,6 +1691,7 @@ MIT — All skills are freely available and redistributable.
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" |
 | [explainability](skills/coding/explainability/SKILL.md) | Coding | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" |
 | [explainable-ai](skills/trading/explainable-ai/SKILL.md) | Trading | "Provides Explainable AI for understanding and trusting trading model decisions" |
+| [expression-engine](skills/coding/expression-engine/SKILL.md) | Coding | Implements expression evaluation engines (arithmetic, conditional logic, string manipulation, function dispatch) for configuration-driven workflows, rule engines, and dynamic computation without hard-coded code paths. |
 | [extensible-framework-design](skills/coding/extensible-framework-design/SKILL.md) | Coding | Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees. |
 | [factory-method](skills/coding/factory-method/SKILL.md) | Coding | Implements the GoF Factory Method pattern for polymorphic object creation in Python using ABC-based factories, registration decorators, and type dispatch to replace if/elif chains with extensible factory hierarchies. |
 | [failover-handling](skills/trading/failover-handling/SKILL.md) | Trading | "Provides Automated failover and redundancy management for exchange connectivity" |
@@ -2960,6 +2962,7 @@ MIT — All skills are freely available and redistributable.
 | [experimental-design](skills/coding/experimental-design/SKILL.md) | Coding | "Provides Designs experiments using design of experiments (DOE), factorial designs, randomization, and blocking for efficient learning" | Implementation |
 | [explainability](skills/coding/explainability/SKILL.md) | Coding | "Implements explainability and interpretability techniques for model transparency, understanding decisions, and building trust" | Implementation |
 | [explainable-ai](skills/trading/explainable-ai/SKILL.md) | Trading | "Provides Explainable AI for understanding and trusting trading model decisions" | Implementation |
+| [expression-engine](skills/coding/expression-engine/SKILL.md) | Coding | Implements expression evaluation engines (arithmetic, conditional logic, string manipulation, function dispatch) for configuration-driven workflows, rule engines, and dynamic computation without hard-coded code paths. | Implementation |
 | [extensible-framework-design](skills/coding/extensible-framework-design/SKILL.md) | Coding | Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees. | Implementation |
 | [factory-method](skills/coding/factory-method/SKILL.md) | Coding | Implements the GoF Factory Method pattern for polymorphic object creation in Python using ABC-based factories, registration decorators, and type dispatch to replace if/elif chains with extensible factory hierarchies. | Implementation |
 | [failover-handling](skills/trading/failover-handling/SKILL.md) | Trading | "Provides Automated failover and redundancy management for exchange connectivity" | Implementation |

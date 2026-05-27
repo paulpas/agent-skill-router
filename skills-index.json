@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T09:39:54.046609Z",
-  "totalSkills": 1090,
+  "generatedAt": "2026-05-27T10:09:50.450377Z",
+  "totalSkills": 1091,
   "domains": {
     "agent": 283,
     "cncf": 176,
-    "coding": 494,
+    "coding": 495,
     "electrical-engineering": 2,
     "go": 12,
     "java": 1,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 671,
+    "implementation": 672,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -9429,6 +9429,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/ai-explainable-ai/SKILL.md"
+    },
+    {
+      "name": "expression-engine",
+      "domain": "coding",
+      "description": "Implements expression evaluation engines (arithmetic, conditional logic, string manipulation, function dispatch) for configuration-driven workflows, rule engines, and dynamic computation without hard-coded code paths.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "expression engine",
+        "expression evaluation",
+        "dynamic formula",
+        "rule engine",
+        "eval sandbox",
+        "function dispatch",
+        "configuration-driven computation"
+      ],
+      "relatedSkills": [
+        "business-rules-engine",
+        "input-processing-pipelines"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/expression-engine/SKILL.md"
     },
     {
       "name": "extensible-framework-design",
