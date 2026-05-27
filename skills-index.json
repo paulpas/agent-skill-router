@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T06:42:58.054046Z",
-  "totalSkills": 1085,
+  "generatedAt": "2026-05-27T07:44:24.215534Z",
+  "totalSkills": 1087,
   "domains": {
     "agent": 283,
     "cncf": 173,
-    "coding": 492,
+    "coding": 494,
     "electrical-engineering": 2,
     "go": 12,
     "java": 1,
@@ -17,10 +17,10 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 667,
+    "implementation": 668,
     "reference": 173,
     "information": 1,
-    "review": 7
+    "review": 8
   },
   "skills": [
     {
@@ -13269,6 +13269,38 @@
       "source": "skills/coding/just-task-runner/SKILL.md"
     },
     {
+      "name": "jvm-diagnostics",
+      "domain": "coding",
+      "description": "Diagnoses JVM production incidents including OutOfMemoryError root causes, thread deadlock detection, heap leak analysis via MAT, and crash log triage for Java 17+ applications.",
+      "role": "review",
+      "scope": "review",
+      "outputFormat": "analysis",
+      "triggers": [
+        "jvm diagnostics",
+        "thread dump",
+        "heap dump",
+        "oom error",
+        "out of memory",
+        "deadlock detection",
+        "hs_err log",
+        "jstack analysis",
+        "MAT leak suspect",
+        "java crash",
+        "stack overflow",
+        "GC thrashing",
+        "memory leak",
+        "thread contention",
+        "jcmd troubleshooting"
+      ],
+      "relatedSkills": [
+        "jvm-performance-tuning",
+        "framework-performance-tuning",
+        "async-programming"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/jvm-diagnostics/SKILL.md"
+    },
+    {
       "name": "jvm-engineering",
       "domain": "coding",
       "description": "Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications.",
@@ -13303,6 +13335,36 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/jvm-engineering/SKILL.md"
+    },
+    {
+      "name": "jvm-performance-tuning",
+      "domain": "coding",
+      "description": "Optimizes JVM runtime performance through garbage collector selection and tuning, memory layout configuration, JIT compilation flags, and allocation-aware coding patterns for Java 17+ applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "jvm tuning",
+        "garbage collection",
+        "GC tuning",
+        "zgc",
+        "shenandoah",
+        "g1gc",
+        "memory management",
+        "metaspace allocation",
+        "jit compilation",
+        "virtual threads",
+        "project loom",
+        "java performance optimization",
+        "container memory limits"
+      ],
+      "relatedSkills": [
+        "jvm-diagnostics",
+        "framework-performance-tuning",
+        "async-programming"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/jvm-performance-tuning/SKILL.md"
     },
     {
       "name": "k8s-debugger",
