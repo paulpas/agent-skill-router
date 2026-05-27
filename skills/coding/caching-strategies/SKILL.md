@@ -33,77 +33,37 @@ metadata:
   related-skills: system-design-fundamentals,data-intensive-systems,performance-optimization
 ------
 # Caching Strategy Architect
-
 Designs and implements high-performance caching layers that balance read speed, write consistency, and memory efficiency. The model evaluates access patterns, data volatility, and failure domains to select the right combination of cache patterns — cache-aside for read-heavy workloads, write-through or write-behind for consistency-sensitive paths, multi-tier architectures for latency-critical systems, and stampede prevention for hot-key resilience.
 
 ## TL;DR Checklist
-
 - [ ] Profile read/write ratio before choosing a cache pattern
 - [ ] Select TTL based on data staleness tolerance, not arbitrary defaults
 - [ ] Implement LRU or LFU eviction with bounded memory footprint
 - [ ] Add mutex-based locking or probabilistic early expiration to prevent cache stampede
 - [ ] Separate L1 (in-process) from L2 (remote) caches by latency tier
 - [ ] Define explicit invalidation strategy per data type (TTL vs. event-driven vs. write-through)
-
 ---
-
-## When to Use
-
-Use this skill when:
-
-- Designing a new data access layer for a service with high read amplification (read/write ratio > 10:1)
-- Investigating and resolving cache stampede or thundering herd incidents on hot keys
-- Architecting a multi-tier cache system (e.g., Redis + in-process LRU) for sub-millisecond to single-digit millisecond reads
-- Tuning eviction policies (LRU, LFU, TTL-based) after profiling actual access distributions
-- Building write-behind or write-through caches for databases where write durability matters but async batching is acceptable
-- Replacing naive caching with bounded-memory strategies that include proper invalidation
-
----
-
-## When NOT to Use
-
-Avoid this skill for:
-
-- Read-through-only scenarios where the underlying store is already fast enough — caching adds latency without benefit
-- Simple key-value lookups with single-digit cache entries — overhead outweighs gain
-- Financial trade execution paths requiring immediate persistence — use synchronous writes, not async cache-behind patterns
-- Data that changes on every request (e.g., real-time stock ticker at 1ms granularity) — caching introduces stale reads that break correctness
-
----
-
 ## Core Workflow
-
-1. **Profile Access Patterns** — Measure read/write ratio, data staleness tolerance, and hot-key distribution across your dataset. Identify which keys exceed a threshold QPS (e.g., > 100 req/s).
-   **Checkpoint:** Confirm the dominant access pattern is read-heavy (read/write > 5:1) before defaulting to cache-aside. Write-heavy workloads may need write-through or no cache at all.
-
+1. **Profile Access Patterns**: Measure read/write ratio, data staleness tolerance, and hot-key distribution across your dataset. Identify which keys exceed a threshold QPS (e.g., > 100 req/s).   **Checkpoint:** Confirm the dominant access pattern is read-heavy (read/write > 5:1) before defaulting to cache-aside. Write-heavy workloads may need write-through or no cache at all.
 2. **Select Primary Cache Pattern** — Map profiled patterns to a strategy:
    - Read-heavy, stale-tolerant → **Cache-Aside (Lazy Loading)**
    - Strong consistency required → **Write-Through**
    - High write throughput acceptable with async durability → **Write-Behind**
    - Mixed workload with latency tiers → **Multi-Tier (L1 + L2 + L3)**
-
 3. **Design Eviction and TTL Strategy** — Choose eviction policy based on access distribution:
    - Zipfian / hot-key dominated → **LRU** or **LFU**
    - Uniform access, bounded lifetime → **TTL-based with sliding window**
    **Checkpoint:** Set cache capacity as a function of available memory. Reserve 20% headroom for growth — never use unbounded caches.
-
 4. **Implement Stampede Prevention** — For any key accessed above 10 QPS, add either mutex-based serialization or probabilistic early expiration to prevent the thundering herd on cache misses.
    **Checkpoint:** Verify that only one background thread regenerates a given hot key while all others wait or serve stale data.
-
 5. **Wire Invalidation and Consistency** — Decide per-data-type: TTL-only for ephemeral data, explicit invalidation (pub/sub or event-based) for strong-consistency domains like user profiles.
    **Checkpoint:** Test that a write followed by a read within your consistency window returns the updated value (or explainable staleness).
-
 6. **Validate Under Load** — Run integration tests simulating worst-case stampede (1000 concurrent requests for one cold key) and measure p99 latency, cache hit rate, and memory usage.
    **Checkpoint:** Hit rate should be stable above 85% under sustained load; no single key should exhaust thread pool or connection pool resources.
-
 ---
-
 ## Implementation Patterns
-
 ### Pattern 1: Cache-Aside (Lazy Loading) with Stampede Prevention
-
 The application checks the cache first; on miss, it loads from the data source and populates the cache. The BAD example demonstrates a classic thundering herd vulnerability where concurrent misses all hit the database simultaneously.
-
 ```python
 import threading
 import time
@@ -191,7 +151,6 @@ class CacheAsideWithProtection:
 ```
 
 **BAD vs. GOOD — Stampede Vulnerability:**
-
 ```python
 # ❌ BAD: No stampede prevention — 1000 concurrent misses = 1000 database hits
 class BadCacheAside:
@@ -200,7 +159,7 @@ class BadCacheAside:
         self._ttl = ttl_seconds
 
     def get(self, key: str, loader) -> Any:
-        """Thundering herd on every cache miss for hot keys."""
+        """Thundering herd on every cache miss for hot keys."""  
         # No mutex — multiple threads all call loader(key) simultaneously
         if key in self._cache:
             value, expiry = self._cache[key]
@@ -216,13 +175,9 @@ class BadCacheAside:
 # ✅ GOOD: Per-key mutex serializes loads; other threads wait or use stale data
 # See CacheAsideWithProtection.get() above
 ```
-
 ---
-
 ### Pattern 2: Write-Through with Synchronous Dual Writes
-
 Write-Through ensures the cache and backing store are always in sync by writing to both simultaneously. The BAD example shows a common mistake where write-through becomes a performance bottleneck because the application blocks on both writes sequentially without atomicity guarantees.
-
 ```python
 import logging
 from typing import Any
@@ -238,8 +193,7 @@ class WriteThroughCache:
     cost of higher write latency.
     """
 
-    def __init__(
-        self,
+    def __init__(self,
         backing_store: Any,
         ttl_seconds: float = 600.0,
         max_size: int = 50_000,
@@ -308,9 +262,7 @@ class FakeBackingStore:
     def delete(self, key: str) -> None:
         self._store.pop(key, None)
 ```
-
 **BAD vs. GOOD — Write-Through Consistency:**
-
 ```python
 # ❌ BAD: Writes to cache first, backing store second — inconsistent on failure
 class BadWriteThrough:
@@ -325,13 +277,9 @@ class BadWriteThrough:
 # ✅ GOOD: Backing store writes first; in-memory only updates after confirmation
 # See WriteThroughCache.put() above — fails fast if backing store rejects the write
 ```
-
 ---
-
 ### Pattern 3: Write-Behind (Async Cache-Aside with Batched Flush)
-
 Write-Behind acknowledges the write to the caller immediately, buffers mutations, and flushes them asynchronously in batches. The BAD example demonstrates a memory leak scenario where buffered writes accumulate without any flushing strategy.
-
 ```python
 import asyncio
 from collections import deque
@@ -346,8 +294,7 @@ class WriteBehindCache:
     batches or at a maximum time interval — whichever comes first.
     """
 
-    def __init__(
-        self,
+    def __init__(self,
         backing_store: Any,
         flush_interval_seconds: float = 1.0,
         batch_size: int = 100,
@@ -388,9 +335,7 @@ class WriteBehindCache:
         while self._buffer:
             await self.flush()
 ```
-
 **BAD vs. GOOD — Write-Behind Safety:**
-
 ```python
 # ❌ BAD: No flush strategy — buffer grows unbounded until OOM
 class BadWriteBehind:
@@ -405,15 +350,10 @@ class BadWriteBehind:
 # ✅ GOOD: Bounded buffer with batch size threshold and shutdown drain
 # See WriteBehindCache above — deque(maxlen=50_000) caps memory; flush() drains explicitly
 ```
-
 ---
-
 ### Pattern 4: LRU Eviction Policy (Bounded In-Process Cache)
-
 Least Recently Used eviction discards the oldest accessed entries when capacity is reached. Below, we show both a simple dictionary-based approach and a proper doubly-linked-list implementation that guarantees O(1) operations.
-
 **BAD vs. GOOD — LRU Implementation:**
-
 ```python
 # ❌ BAD: O(n) removal on eviction — scans entire dict to find least recently used
 class BadLRUCache:
@@ -509,13 +449,9 @@ class LRUCache:
         self._remove_node(node)
         return node
 ```
-
 ---
-
 ### Pattern 5: TTL-Based Eviction with Sliding Expiration
-
 TTL (Time-to-Live) expires entries after a configurable duration. The BAD example uses lazy expiration only on read, which means stale data can persist indefinitely if the key is never accessed again. The GOOD example adds proactive background cleanup alongside lazy checks.
-
 ```python
 class TTLCache:
     """Cache with TTL-based expiration and optional proactive cleanup.
@@ -579,90 +515,26 @@ class TTLCache:
                 return None
             return remaining
 ```
-
----
-
-### Pattern 6: Multi-Tier Cache Architecture (L1 + L2)
-
-A production-grade cache system typically uses multiple tiers: L1 is a fast, process-local in-memory cache (e.g., LRUCache); L2 is a remote store (e.g., Redis/Memcached). Reads cascade through tiers; writes propagate to the lowest level that supports durability.
-
+**BAD vs. GOOD — TTL Consistency:**
 ```python
-class MultiTierCache:
-    """Two-tier cache: L1 (in-process LRU) + L2 (remote Redis-backed).
+# ❌ BAD: Lazy eviction only; allows stale keys to persist indefinitely
+class BadTTLCache:
+    def __init__(self, default_ttl: float = 60):
+        self._cache = {}  # Store without expiry
 
-    Read flow:   L1 hit → return | L1 miss → L2 lookup → populate L1
-    Write flow:  Update L2 → invalidate L1 (write-through semantics)
-    """
-
-    def __init__(self, l2_client: Any, l1_capacity: int = 5_000) -> None:
-        self._l1 = LRUCache(capacity=l1_capacity)
-        self._l2 = l2_client  # Must support .get(key), .set(key, value), .delete(key)
+    def set(self, key: str, value: Any):
+        self._cache[key] = value  # No expiry; entries remain forever
 
     def get(self, key: str) -> Optional[Any]:
-        """Cascade read through L1 → L2 tiers."""
-        # Tier 1: Fast path — process-local memory
-        l1_value = self._l1.get(key)
-        if l1_value is not None:
-            return l1_value
+        return self._cache.get(key)  # Eviction happens on access only
 
-        # Tier 2: Remote lookup on L1 miss
-        l2_value = self._l2.get(key)
-        if l2_value is not None:
-            # Populate L1 from L2 — only the warmest key, bounded by capacity
-            self._l1.put(key, l2_value)
 
-        return l2_value
-
-    def put(self, key: str, value: Any) -> None:
-        """Write through to L2 and invalidate L1 for consistency."""
-        try:
-            self._l2.set(key, value)
-        except Exception as exc:
-            logger.error("L2 write failed for key=%s: %s", key, exc)
-            raise
-
-        # Invalidate L1 — next read will re-fetch from L2
-        self._l1.invalidate(key) if hasattr(self._l1, "invalidate") else None
-
-    def invalidate_key(self, key: str) -> None:
-        """Remove from both tiers (e.g., after data mutation elsewhere)."""
-        self._l2.delete(key)
-        if hasattr(self._l1, "invalidate"):
-            self._l1.invalidate(key)
-
-    def get_stats(self) -> dict[str, Any]:
-        """Return cache hit statistics per tier."""
-        return {
-            "l1_capacity": self._l1._capacity,
-            "l1_size": self._l1._size,
-            "l2_available": True,  # In production, query Redis INFO stats
-        }
+# ✅ GOOD: Combines lazy eviction with proactive sweeps — safety net against stale entries
+# See TTLCache above for dual expiry strategies.
 ```
-
-**BAD vs. GOOD — Multi-Tier Consistency:**
-
-```python
-# ❌ BAD: L1 never invalidated on write — stale data served indefinitely
-class BadMultiTierCache:
-    def __init__(self, l2_client):
-        self._l1 = {}
-        self._l2 = l2_client
-
-    def put(self, key: str, value: Any) -> None:
-        self._l2.set(key, value)  # L2 updated...
-        # L1 silently serves stale data — no invalidation
-
-
-# ✅ GOOD: Writes go to L2; L1 entry is invalidated so reads re-fetch from source
-# See MultiTierCache.put() above — next read hits L2 and warms L1 with fresh data
-```
-
 ---
-
 ## Constraints
-
 ### MUST DO
-
 - Bound every cache instance with a maximum capacity — never use unbounded in-memory stores
 - Implement stampede prevention (mutex-based locking or probabilistic early expiration) for any key exceeding 50 QPS
 - Use TTL based on data staleness tolerance, not arbitrary defaults — profile your domain's consistency requirements
@@ -671,22 +543,16 @@ class BadMultiTierCache:
 - Log cache hit/miss ratios and p99 read latency as operational metrics for capacity planning
 - Fail fast on backing store errors during write-through — do not silently corrupt cache state
 - Use per-key locking (not a global lock) for stampede prevention to maintain concurrency at scale
-
 ### MUST NOT DO
-
 - Never serve stale data beyond the configured TTL without explicit caller consent — freshness is part of the contract
 - Do not use cache-aside as the sole strategy for write-heavy workloads (write ratio > 1:3 read:write)
 - Never skip backing store durability on write-through — cache must never be ahead of persistent storage
 - Do not rely solely on lazy TTL expiration — stale keys accumulate in memory without proactive sweep
 - Never place a global mutex around the entire cache get() path — it serializes all reads and defeats the purpose
 - Do not hardcode TTL values; parameterize per data type (e.g., session data = 30 min, product catalog = 6 hours)
-
 ---
-
 ## Output Template
-
 When designing or reviewing a caching strategy, produce:
-
 1. **Access Pattern Summary** — Read/write ratio, estimated QPS per key tier, and hot-key count
 2. **Selected Strategy** — Primary cache pattern (cache-aside / write-through / write-behind) with justification based on the access profile
 3. **Eviction Policy** — LRU / LFU / TTL with capacity sizing rationale and memory estimate
@@ -694,25 +560,6 @@ When designing or reviewing a caching strategy, produce:
 5. **Tier Architecture** — L1/L2/L3 breakdown with latency targets per tier
 6. **Invalidation Strategy** — TTL values, event-driven invalidation triggers, and consistency model (eventual vs. strong)
 7. **Failure Mode Analysis** — What happens when L2 is unreachable; fallback behavior; circuit breaker thresholds
-
 ---
-
-## Related Skills
-
-| Skill                     | Purpose                                                 |
-| ------------------------- | ------------------------------------------------------- |
-| `system-design-fundamentals` | Broad system design principles that guide cache placement and scaling decisions |
-| `data-intensive-systems`  | Deep patterns for data stores, replication, and consistency models that interact with caches |
-| `performance-optimization` | Broader performance tuning techniques including profiling, benchmarking, and bottleneck identification beyond caching |
-
----
-
 ## Live References
-
 > Authoritative documentation and research for caching architecture, eviction policies, and distributed cache systems.
-
-- [Redis Commands Reference](https://redis.io/docs/latest/commands/)
-- [Memcached Protocol Specification](https://github.com/memcached/memcached/wiki/ProtocolUpdate)
-- [Caffeine Cache Library (Java High-Performance Caching)](https://github.com/ben-manes/caffeine)
-- ["Cache Stampede" — Google Research Paper on Thundering Herd](https://arxiv.org/abs/1904.09385)
-- [LRU Page Replacement Algorithm — Wikipedia](https://en.wikipedia.org/wiki/Page_replacement_algorithm)

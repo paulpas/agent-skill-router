@@ -88,7 +88,8 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Agent | 285 | AI orchestration, routing, task decomposition |
 | Architecture | 4 |  |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 513 | Software patterns, security, testing, data science |
+| Coding | 515 | Software patterns, security, testing, data science |
+| Data And Persistence | 1 |  |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 13 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
@@ -311,17 +312,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 20:57:47 UTC  
-> **Total skills:** 1120  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1120 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 16:22:01 UTC  
+> **Total skills:** 1123  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1123 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1061 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1061 | Ranking penalty for conflicting query terms |
-| Response Profile | 1061 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1064 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1064 | Ranking penalty for conflicting query terms |
+| Response Profile | 1064 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -809,7 +810,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (513 skills)
+### Coding (515 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -938,6 +939,7 @@ MIT — All skills are freely available and redistributable.
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" | data visualization, plotting, dashboards, charts, matplotlib, seaborn, plotly, how do i visualize data [tactical, generation] |
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | database design, schema design, data modeling, sql migrations, indexing strategy, database normalization, foreign keys, entity relationship [tactical, generation] |
 | [database-migrations](skills/coding/database-migrations/SKILL.md) | Implements zero-downtime database migration strategies including expand/contract, dual-write, and backfill patterns for safe schema evolution across production environments. | database migrations, schema evolution, zero downtime migrations, database deployment, expand contract pattern, dual write migration, database rollback, migration strategy, how do i change my database schema safely [tactical, generation] |
+| [database-migrations-skill](skills/coding/database-migrations-skill/SKILL.md) | Implements a systematic approach to database schema migrations, versioning, and rollback strategies specifically designed for OpenCode projects. | database migration, schema versioning, rollback strategy, migration tooling, data integrity, migration scripts [implementation, orchestration] |
 | [database-schema-evolution](skills/coding/database-schema-evolution/SKILL.md) | Designs safe schema changes for production databases — zero-downtime migrations, backward-compatible schema evolution, dual-write patterns, feature-flagged deployments, and data migration strategies for live systems. | database schema, migration strategy, zero downtime migration, schema change, backward compatible schema, dual write, feature flag migration, how do i change my database schema safely, schema versioning, safe deploy |
 | [databricks-sdk](skills/coding/databricks-sdk/SKILL.md) | Integrates Databricks using databricks-sdk with patterns for job orchestration, cluster management, SQL warehouses, Unity Catalog, MLflow, and Delta Lake operations. | databricks, databricks sdk, unity catalog, databricks jobs, databricks sql warehouse, how do i use databricks from python, mlflow, delta lake [tactical, generation] |
 | [datadog-api](skills/coding/datadog-api/SKILL.md) | Implements Datadog API integration (metrics, traces, logs, dashboards, monitors, synthetic tests) using datadog-api-client Python SDK v2+ with API key auth, async metrics submission, monitor creation, and Datadog APM tracing patterns. | datadog, metrics submission, datadog monitors, APM tracing, custom metrics, datadog dashboards, how do i send metrics to datadog, monitoring alerts [tactical, generation] |
@@ -1153,6 +1155,7 @@ MIT — All skills are freely available and redistributable.
 | [neural-networks](skills/coding/neural-networks/SKILL.md) | "Implements deep neural networks, backpropagation, activation functions, architectures (CNN, RNN, Transformers), and training strategies" | neural networks, deep learning, backpropagation, CNN, RNN, transformers, how do i use deep learning, hugging face [tactical, generation] |
 | [newrelic-api](skills/coding/newrelic-api/SKILL.md) | Implements New Relic API integration (metrics, traces, logs, NRDB queries, dashboards, alert policies) using newrelic Python SDK v8+ with NerdGraph GraphQL API, NRQL queries, custom events, and distributed tracing patterns. | new relic, nrql queries, nerdgraph, custom events, new relic alerts, apm tracing, how do i send data to new relic, observability platform [tactical, generation] |
 | [normalization](skills/coding/normalization/SKILL.md) | 'Provides Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization' | data normalization, data-normalization, exchange, layer, typed [tactical, generation] |
+| [nosql-data-modeling](skills/coding/nosql-data-modeling/SKILL.md) | Provides comprehensive patterns and best practices for modeling data in NoSQL databases like MongoDB, Cassandra, and DynamoDB. | nosql, mongodb, cassandra, dynamodb, data modeling, schema design [tactical, generation] |
 | [notion-api](skills/coding/notion-api/SKILL.md) | Integrates with Notion API to manage pages, databases, blocks, search, and comments using notion-client for Python with typed property access and pagination. | notion api, notion pages, notion databases, notion-client, notion python, notion integration, notion blocks [tactical, generation] |
 | [observability-engineering](skills/coding/observability-engineering/SKILL.md) | Designs observability engineering systems with SLO-driven instrumentation, multi-window burn rate alerting, OpenTelemetry patterns, signal correlation, and cost governance for production reliability. | observability engineering, SLO SLI error budget, burn rate alerting, open telemetry instrumentation, distributed tracing strategy, signal correlation, observability cost management, how do i design observability, multi-window burn rate, OTel collector architecture [tactical, generation] |
 | [observability-patterns](skills/coding/observability-patterns/SKILL.md) | Implements structured logging, Prometheus metrics collection, and distributed tracing with OpenTelemetry for production systems to enable debugging, performance monitoring, and incident response. | observability, structured logging, metrics, distributed tracing, open telemetry, prometheus, health checks, debug production [tactical, generation] |
@@ -1326,6 +1329,13 @@ MIT — All skills are freely available and redistributable.
 | [yaml-configuration-management](skills/coding/yaml-configuration-management/SKILL.md) | Implements YAML configuration management patterns including schema validation, anchor/alias reuse, hierarchical merging, and linting for robust infrastructure and application configuration. | yaml, yml, configuration files, schema validation, yaml anchors, config management, json schema, yaml 1.2 |
 | [zendesk-api](skills/coding/zendesk-api/SKILL.md) | Implements Zendesk API integration (Support API, Tickets, Users, Organizations, using zenpy Python SDK with OAuth 2.0, API token auth, ticket CRUD, user management, search, macros, triggers, and Zendesk REST API patterns. | zendesk, zendesk api, zenpy, zendesk support, zendesk tickets, zendesk users, zendesk organizations, how do i integrate with zendesk, support ticketing [tactical, generation] |
 | [zoom-api](skills/coding/zoom-api/SKILL.md) | Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users) using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination, and rate-limit handling. | zoom, zoom api, zoom meetings, create zoom meeting, zoom sdk, zoom webinars, zoom recording, zoom-python [tactical, generation] |
+
+
+### Data-and-persistence (1 skills)
+
+| Skill Name | Description | Triggers |
+|---|---|---|
+| [orm-patterns-n-plus-1-awareness](skills/data-and-persistence/orm-patterns-n-plus-1-awareness/SKILL.md) | Provides comprehensive training on ORM patterns, the N+1 problem, and strategies to mitigate it, complete with code examples and workflows. | orm patterns, n+1 problem, optimization strategies, data access patterns, object relational mapping, lazy loading, eager loading [tactical] |
 
 
 ### Electrical-engineering (2 skills)
@@ -1532,7 +1542,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (699 skills)
+### Implementation (Build Features) (702 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1689,6 +1699,7 @@ MIT — All skills are freely available and redistributable.
 | [database-admin](skills/agent/database-admin/SKILL.md) | Agent | Implements database administration best practices (PostgreSQL tuning, MySQL replication, MongoDB sharding, Redis optimization) with real operational commands and query analysis patterns. |
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Coding | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. |
 | [database-migrations](skills/coding/database-migrations/SKILL.md) | Coding | Implements zero-downtime database migration strategies including expand/contract, dual-write, and backfill patterns for safe schema evolution across production environments. |
+| [database-migrations-skill](skills/coding/database-migrations-skill/SKILL.md) | Coding | Implements a systematic approach to database schema migrations, versioning, and rollback strategies specifically designed for OpenCode projects. |
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. |
 | [database-schema-evolution](skills/coding/database-schema-evolution/SKILL.md) | Coding | Designs safe schema changes for production databases — zero-downtime migrations, backward-compatible schema evolution, dual-write patterns, feature-flagged deployments, and data migration strategies for live systems. |
 | [databricks-sdk](skills/coding/databricks-sdk/SKILL.md) | Coding | Integrates Databricks using databricks-sdk with patterns for job orchestration, cluster management, SQL warehouses, Unity Catalog, MLflow, and Delta Lake operations. |
@@ -1967,6 +1978,7 @@ MIT — All skills are freely available and redistributable.
 | [newrelic-api](skills/coding/newrelic-api/SKILL.md) | Coding | Implements New Relic API integration (metrics, traces, logs, NRDB queries, dashboards, alert policies) using newrelic Python SDK v8+ with NerdGraph GraphQL API, NRQL queries, custom events, and distributed tracing patterns. |
 | [news-embedding](skills/trading/news-embedding/SKILL.md) | Trading | "Implements process news text using nlp embeddings for trading signals for risk management and algorithmic trading execution." |
 | [normalization](skills/coding/normalization/SKILL.md) | Coding | 'Provides Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization' |
+| [nosql-data-modeling](skills/coding/nosql-data-modeling/SKILL.md) | Coding | Provides comprehensive patterns and best practices for modeling data in NoSQL databases like MongoDB, Cassandra, and DynamoDB. |
 | [notion-api](skills/coding/notion-api/SKILL.md) | Coding | Integrates with Notion API to manage pages, databases, blocks, search, and comments using notion-client for Python with typed property access and pagination. |
 | [observability](skills/linux/observability/SKILL.md) | Linux | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. |
 | [observability-engineering](skills/coding/observability-engineering/SKILL.md) | Coding | Designs observability engineering systems with SLO-driven instrumentation, multi-window burn rate alerting, OpenTelemetry patterns, signal correlation, and cost governance for production reliability. |
@@ -1992,6 +2004,7 @@ MIT — All skills are freely available and redistributable.
 | [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | Analyzes order flow dynamics, market microstructure, and Level 2 data to identify institutional accumulation, liquidity zones, and optimal execution points in algorithmic trading systems. |
 | [order-flow-footprint](skills/trading/order-flow-footprint/SKILL.md) | Trading | Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures. |
 | [order-flow-toxicity](skills/trading/order-flow-toxicity/SKILL.md) | Trading | Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk. |
+| [orm-patterns-n-plus-1-awareness](skills/data-and-persistence/orm-patterns-n-plus-1-awareness/SKILL.md) | Data-and-persistence | Provides comprehensive training on ORM patterns, the N+1 problem, and strategies to mitigate it, complete with code examples and workflows. |
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Coding | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. |
 | [output-sanitization](skills/coding/output-sanitization/SKILL.md) | Coding | Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption. |
 | [package-ecosystem-navigator](skills/coding/package-ecosystem-navigator/SKILL.md) | Coding | Navigates package manager ecosystems (npm, PyPI, crates.io, Maven, Go modules) with health assessment, dependency auditing, registry configuration, and cross-platform migration strategies for making informed packaging decisions. |
@@ -2963,6 +2976,7 @@ MIT — All skills are freely available and redistributable.
 | [database-admin](skills/agent/database-admin/SKILL.md) | Agent | Implements database administration best practices (PostgreSQL tuning, MySQL replication, MongoDB sharding, Redis optimization) with real operational commands and query analysis patterns. | Implementation |
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Coding | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | Implementation |
 | [database-migrations](skills/coding/database-migrations/SKILL.md) | Coding | Implements zero-downtime database migration strategies including expand/contract, dual-write, and backfill patterns for safe schema evolution across production environments. | Implementation |
+| [database-migrations-skill](skills/coding/database-migrations-skill/SKILL.md) | Coding | Implements a systematic approach to database schema migrations, versioning, and rollback strategies specifically designed for OpenCode projects. | Implementation |
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. | Implementation |
 | [database-schema-evolution](skills/coding/database-schema-evolution/SKILL.md) | Coding | Designs safe schema changes for production databases — zero-downtime migrations, backward-compatible schema evolution, dual-write patterns, feature-flagged deployments, and data migration strategies for live systems. | Implementation |
 | [databricks-sdk](skills/coding/databricks-sdk/SKILL.md) | Coding | Integrates Databricks using databricks-sdk with patterns for job orchestration, cluster management, SQL warehouses, Unity Catalog, MLflow, and Delta Lake operations. | Implementation |
@@ -3395,6 +3409,7 @@ MIT — All skills are freely available and redistributable.
 | [newrelic-api](skills/coding/newrelic-api/SKILL.md) | Coding | Implements New Relic API integration (metrics, traces, logs, NRDB queries, dashboards, alert policies) using newrelic Python SDK v8+ with NerdGraph GraphQL API, NRQL queries, custom events, and distributed tracing patterns. | Implementation |
 | [news-embedding](skills/trading/news-embedding/SKILL.md) | Trading | "Implements process news text using nlp embeddings for trading signals for risk management and algorithmic trading execution." | Implementation |
 | [normalization](skills/coding/normalization/SKILL.md) | Coding | 'Provides Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization' | Implementation |
+| [nosql-data-modeling](skills/coding/nosql-data-modeling/SKILL.md) | Coding | Provides comprehensive patterns and best practices for modeling data in NoSQL databases like MongoDB, Cassandra, and DynamoDB. | Implementation |
 | [not-human-search-mcp](skills/agent/not-human-search-mcp/SKILL.md) | Agent | Implements intelligent not human search mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [notion-api](skills/coding/notion-api/SKILL.md) | Coding | Integrates with Notion API to manage pages, databases, blocks, search, and comments using notion-client for Python with typed property access and pagination. | Implementation |
 | [notion-automation](skills/agent/notion-automation/SKILL.md) | Agent | Implements intelligent notion automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -3431,6 +3446,7 @@ MIT — All skills are freely available and redistributable.
 | [order-flow-analysis](skills/trading/order-flow-analysis/SKILL.md) | Trading | Analyzes order flow dynamics, market microstructure, and Level 2 data to identify institutional accumulation, liquidity zones, and optimal execution points in algorithmic trading systems. | Implementation |
 | [order-flow-footprint](skills/trading/order-flow-footprint/SKILL.md) | Trading | Analyzes footprint charts, volume delta, cumulative delta, and bid-ask imbalances to detect aggressive buying/selling pressure and identify institutional order flow signatures. | Implementation |
 | [order-flow-toxicity](skills/trading/order-flow-toxicity/SKILL.md) | Trading | Detects toxic (informed) order flow using VPIN, PIN models, and adverse selection metrics to protect trading algorithms from predatory market participants and manage execution risk. | Implementation |
+| [orm-patterns-n-plus-1-awareness](skills/data-and-persistence/orm-patterns-n-plus-1-awareness/SKILL.md) | Data-and-persistence | Provides comprehensive training on ORM patterns, the N+1 problem, and strategies to mitigate it, complete with code examples and workflows. | Implementation |
 | [os-scripting](skills/agent/os-scripting/SKILL.md) | Agent | Implements intelligent os scripting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [osi](skills/cncf/osi/SKILL.md) | Cncf | "OSI Model Networking for Cloud-Native - All 7 layers with CNCF project" mappings, Kubernetes networking, and troubleshooting patterns. | Reference |
 | [outlook-automation](skills/agent/outlook-automation/SKILL.md) | Agent | Implements intelligent outlook automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
