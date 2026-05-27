@@ -87,7 +87,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 285 | AI orchestration, routing, task decomposition |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 498 | Software patterns, security, testing, data science |
+| Coding | 499 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
@@ -295,17 +295,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 12:30:37 UTC  
-> **Total skills:** 1096  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1096 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 08:36:26 UTC  
+> **Total skills:** 1097  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1097 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1055 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1055 | Ranking penalty for conflicting query terms |
-| Response Profile | 1055 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1056 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1056 | Ranking penalty for conflicting query terms |
+| Response Profile | 1056 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -783,7 +783,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (498 skills)
+### Coding (499 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -829,6 +829,7 @@ MIT — All skills are freely available and redistributable.
 | [atlassian-api](skills/coding/atlassian-api/SKILL.md) | Integrates with Atlassian suite (Jira, Confluence, Bitbucket, Rovo, Forge) using atlassian-python-api to automate issue tracking, documentation, and code management. | jira api, confluence api, bitbucket api, atlassian python, jira automation, confluence pages, atlassian forge [tactical, generation] |
 | [atomic-skills-spec](skills/coding/atomic-skills-spec/SKILL.md) | Defines criteria, thresholds, and migration patterns for splitting monolithic skills into focused atomic skills — including split heuristics, trigger engineering for new sub-skills, and gradual migration strategy. | atomic skills, skill granularity, monolithic skill, skill splitting, refactoring skills, trigger calibration, skill architecture [strategic, orchestration] |
 | [auth0-api](skills/coding/auth0-api/SKILL.md) | Implements Auth0 API integration (Authentication, Management API, Actions, Organizations, Universal Login) using auth0-python SDK v5.4+ with ManagementClient, async support, automatic token management, pagination, and CIAM workflows. | auth0 api, auth0 management, auth0 authentication, auth0 universal login, auth0 actions, auth0 organizations, how do i integrate auth0, ciam [tactical, generation] |
+| [authentication-design-patterns](skills/coding/authentication-design-patterns/SKILL.md) | Implements production authentication architecture including JWT token lifecycle, OAuth 2.0 flows, session management, MFA/TOTP, API key auth, and password hashing strategies with security-first design patterns. | JWT authentication, OAuth 2.0, session management, MFA TOTP, API key auth, password hashing, Bcrypt Argon2, token refresh, bearer token, authentication design, how do i implement auth, security tokens [tactical, strategic] |
 | [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. | authentication, password hashing, JWT token, OAuth PKCE, session management, MFA, TOTP, two-factor, passkeys, login system, how do i implement auth, secure login, user authentication, token validation, webauthn [tactical, generation] |
 | [autogen-conversational-patterns](skills/coding/autogen-conversational-patterns/SKILL.md) | Implements AutoGen conversational multi-agent workflows including group chat orchestration, code execution groups, termination conditions, and human-in-the-loop patterns for solving complex problems through agent dialogue. | autogen, multi-agent conversation, group chat agents, code execution group, agent termination condition, how do i build conversational ai agents [tactical, generation] |
 | [automation](skills/coding/automation/SKILL.md) | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" | semantic versioning, semver, version bumping, conventional commits, semantic-release, changelog automation, release automation, git tags [tactical, generation] |
@@ -1480,7 +1481,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (676 skills)
+### Implementation (Build Features) (677 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1538,6 +1539,7 @@ MIT — All skills are freely available and redistributable.
 | [atlassian-api](skills/coding/atlassian-api/SKILL.md) | Coding | Integrates with Atlassian suite (Jira, Confluence, Bitbucket, Rovo, Forge) using atlassian-python-api to automate issue tracking, documentation, and code management. |
 | [auth-credentials](skills/agent/auth-credentials/SKILL.md) | Agent | Implements agent authentication, credential management, capability-based access control, JWT identity verification, and human-in-the-loop authorization gates for production-safe AI agent systems. |
 | [auth0-api](skills/coding/auth0-api/SKILL.md) | Coding | Implements Auth0 API integration (Authentication, Management API, Actions, Organizations, Universal Login) using auth0-python SDK v5.4+ with ManagementClient, async support, automatic token management, pagination, and CIAM workflows. |
+| [authentication-design-patterns](skills/coding/authentication-design-patterns/SKILL.md) | Coding | Implements production authentication architecture including JWT token lifecycle, OAuth 2.0 flows, session management, MFA/TOTP, API key auth, and password hashing strategies with security-first design patterns. |
 | [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Coding | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. |
 | [autogen-conversational-patterns](skills/coding/autogen-conversational-patterns/SKILL.md) | Coding | Implements AutoGen conversational multi-agent workflows including group chat orchestration, code execution groups, termination conditions, and human-in-the-loop patterns for solving complex problems through agent dialogue. |
 | [automation](skills/coding/automation/SKILL.md) | Coding | "Provides Automating semantic versioning in Git repositories for version bumping, changelog generation, and release automation using conventional commits and to" |
@@ -2704,6 +2706,7 @@ MIT — All skills are freely available and redistributable.
 | [auri-core](skills/agent/auri-core/SKILL.md) | Agent | Implements intelligent auri core with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [auth-credentials](skills/agent/auth-credentials/SKILL.md) | Agent | Implements agent authentication, credential management, capability-based access control, JWT identity verification, and human-in-the-loop authorization gates for production-safe AI agent systems. | Implementation |
 | [auth0-api](skills/coding/auth0-api/SKILL.md) | Coding | Implements Auth0 API integration (Authentication, Management API, Actions, Organizations, Universal Login) using auth0-python SDK v5.4+ with ManagementClient, async support, automatic token management, pagination, and CIAM workflows. | Implementation |
+| [authentication-design-patterns](skills/coding/authentication-design-patterns/SKILL.md) | Coding | Implements production authentication architecture including JWT token lifecycle, OAuth 2.0 flows, session management, MFA/TOTP, API key auth, and password hashing strategies with security-first design patterns. | Implementation |
 | [authentication-patterns](skills/coding/authentication-patterns/SKILL.md) | Coding | Implements production-grade authentication systems including password hashing (bcrypt/argon2), JWT token lifecycle, OAuth 2.0 PKCE flows, secure session management, and MFA/TOTP for multi-factor verification. | Implementation |
 | [auto-scaling](skills/cncf/auto-scaling/SKILL.md) | Cncf | "Configures automatic scaling of compute resources (EC2, RDS, DynamoDB" Lambda) based on demand metrics with scaling policies and lifecycle hooks. | Reference |
 | [autogen-conversational-patterns](skills/coding/autogen-conversational-patterns/SKILL.md) | Coding | Implements AutoGen conversational multi-agent workflows including group chat orchestration, code execution groups, termination conditions, and human-in-the-loop patterns for solving complex problems through agent dialogue. | Implementation |
