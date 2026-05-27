@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-27T08:19:42.491609Z",
-  "totalSkills": 1088,
+  "generatedAt": "2026-05-27T09:39:54.046609Z",
+  "totalSkills": 1090,
   "domains": {
     "agent": 283,
-    "cncf": 174,
+    "cncf": 176,
     "coding": 494,
     "electrical-engineering": 2,
     "go": 12,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 669,
+    "implementation": 671,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -13140,6 +13140,62 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/jakarta-migration/SKILL.md"
+    },
+    {
+      "name": "jakarta-security",
+      "domain": "cncf",
+      "description": "Implements Jakarta Security Enterprise API (JSR 375) for Jakarta EE applications with IdentityStore patterns, JWT Bearer tokens, form login, BCrypt password hashing, and container configuration for WildFly and OpenLiberty.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "jakarta security",
+        "jsr 375",
+        "identity store",
+        "jwt bearer",
+        "form login",
+        "basic auth",
+        "@rolesallowed",
+        "bcrypt password hashing",
+        "wildfly security",
+        "openliberty security",
+        "container authentication",
+        "security context",
+        "jax-rs security",
+        "programmatic authentication"
+      ],
+      "relatedSkills": [
+        "jakarta-ee",
+        "microprofile",
+        "jakarta-migration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/jakarta-security/SKILL.md"
+    },
+    {
+      "name": "jakarta-testing",
+      "domain": "cncf",
+      "description": "Tests Jakarta EE applications using Arquillian, ShrinkWrap, container adapters (WildFly managed/remote, Weld embedded), JUnit 5 integration, and in-container CDI injection with real Java examples.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "arquillian",
+        "shrinkwrap",
+        "container testing",
+        "junit5 testing",
+        "jakarta ee testing",
+        "wildfly managed",
+        "in-container test",
+        "test deployment"
+      ],
+      "relatedSkills": [
+        "jakarta-ee",
+        "jakarta-security",
+        "microprofile"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/jakarta-testing/SKILL.md"
     },
     {
       "name": "java-virtual-threads",
