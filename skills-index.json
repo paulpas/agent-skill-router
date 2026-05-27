@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T13:57:48.407073Z",
-  "totalSkills": 1097,
+  "generatedAt": "2026-05-27T14:01:29.661394Z",
+  "totalSkills": 1100,
   "domains": {
     "agent": 285,
     "cncf": 176,
-    "coding": 499,
+    "coding": 502,
     "electrical-engineering": 2,
     "go": 12,
     "java": 1,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 677,
+    "implementation": 680,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -13559,6 +13559,87 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/karmada/SKILL.md"
+    },
+    {
+      "name": "karpathy-coding-mindset",
+      "domain": "coding",
+      "description": "Applies Karpathy's pre-implementation discipline — state assumptions explicitly, surface tradeoffs instead of hiding them, push back on unnecessary complexity, and write minimum code that solves the problem with no speculative features or premature abstractions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "coding mindset",
+        "think before coding",
+        "simplicity first",
+        "overengineering",
+        "code complexity",
+        "yagni",
+        "premature optimization",
+        "assumptions",
+        "tradeoffs",
+        "keep it simple"
+      ],
+      "relatedSkills": [
+        "karpathy-surgical-changes",
+        "karpathy-goal-driven-execution",
+        "yagni",
+        "kiss-principle"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/karpathy-coding-mindset/SKILL.md"
+    },
+    {
+      "name": "karpathy-goal-driven-execution",
+      "domain": "coding",
+      "description": "Drives implementation through verifiable success criteria — transform vague tasks into testable goals, write reproduction tests before fixes, loop until criteria pass, checkpoint after every significant step, and declare uncertainty explicitly rather than silently proceeding.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "goal-driven execution",
+        "success criteria",
+        "test-driven",
+        "verification loop",
+        "define success criteria",
+        "checkpoint",
+        "fail loud",
+        "reproduce bug first",
+        "test intent"
+      ],
+      "relatedSkills": [
+        "karpathy-coding-mindset",
+        "karpathy-surgical-changes",
+        "test-driven-development",
+        "debugging-methodology"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/karpathy-goal-driven-execution/SKILL.md"
+    },
+    {
+      "name": "karpathy-surgical-changes",
+      "domain": "coding",
+      "description": "Enforces surgical code modification discipline — touch only what the request requires, read full context before editing, match existing codebase conventions, clean up only your own orphans, and never refactor adjacent code that isn't broken.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "surgical changes",
+        "minimal edits",
+        "code modification",
+        "editing existing code",
+        "refactoring discipline",
+        "touch only what you must",
+        "read before you write",
+        "codebase conventions"
+      ],
+      "relatedSkills": [
+        "karpathy-coding-mindset",
+        "karpathy-goal-driven-execution",
+        "code-review",
+        "refactoring-techniques"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/karpathy-surgical-changes/SKILL.md"
     },
     {
       "name": "keda",
