@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1071 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1071 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -127,7 +127,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 280 | AI orchestration, routing, task decomposition |
+| Agent | 283 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 482 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -330,22 +330,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 19:14:20 UTC  
-> **Total skills:** 1068  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1068 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 20:34:15 UTC  
+> **Total skills:** 1071  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1071 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1031 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1031 | Ranking penalty for conflicting query terms |
-| Response Profile | 1031 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1034 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1034 | Ranking penalty for conflicting query terms |
+| Response Profile | 1034 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (280 skills)
+### Agent (283 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -453,6 +453,7 @@ MIT — All skills are freely available and redistributable.
 | [dispatching-parallel-agents](skills/agent/dispatching-parallel-agents/SKILL.md) | Implements intelligent dispatching parallel agents with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | dispatching-parallel-agents, dispatching parallel agents, how do i dispatching-parallel-agents, orchestrate dispatching-parallel-agents, automate dispatching-parallel-agents, agent dispatching-parallel-agents [orchestration, strategic] |
 | [docker-debugging](skills/agent/docker-debugging/SKILL.md) | Diagnoses and resolves Docker container issues including crashes, OOM errors, network problems, volume mounts, resource contention, and caching optimization | docker debugging, container crash, oom error, network troubleshooting, docker compose, container logs, how do i debug docker, volume mount [tactical] |
 | [documentation](skills/agent/documentation/SKILL.md) | Implements intelligent documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | documentation, documentation, how do i documentation, orchestrate documentation, automate documentation, agent documentation [orchestration, strategic] |
+| [durable-execution](skills/agent/durable-execution/SKILL.md) | Implements durable execution patterns for fault-tolerant AI agent workflows including checkpoint-based persistence, exponential backoff retry, idempotency keys, and crash recovery strategies across LangGraph, Temporal, and generic async frameworks. | durable execution, checkpointing, crash recovery, idempotency, retry strategy, exponential backoff, state persistence, fault tolerance, workflow resume, temporal, replay detection, atomic commits, saga pattern, circuit breaker [tactical, enforcement] |
 | [dynamic-replanner](skills/agent/dynamic-replanner/SKILL.md) | Implements intelligent dynamic replanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | dynamic-replanner, dynamic replanner, how do i dynamic-replanner, orchestrate dynamic-replanner, automate dynamic-replanner, agent dynamic-replanner [orchestration, strategic] |
 | [e2e-testing](skills/agent/e2e-testing/SKILL.md) | Implements intelligent e2e testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | e2e-testing, e2e testing, how do i e2e-testing, orchestrate e2e-testing, automate e2e-testing, agent e2e-testing, selenium, unit tests [orchestration, strategic] |
 | [error-trace-explainer](skills/agent/error-trace-explainer/SKILL.md) | Implements intelligent error trace explainer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | error-trace-explainer, error trace explainer, how do i error-trace-explainer, orchestrate error-trace-explainer, automate error-trace-explainer, agent error-trace-explainer [orchestration, strategic] |
@@ -502,6 +503,7 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes-deployment](skills/agent/kubernetes-deployment/SKILL.md) | Implements intelligent kubernetes deployment with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | kubernetes-deployment, kubernetes deployment, how do i kubernetes-deployment, orchestrate kubernetes-deployment, automate kubernetes-deployment, agent kubernetes-deployment, container orchestration, deployment [orchestration, strategic] |
 | [lambda-lang](skills/agent/lambda-lang/SKILL.md) | Implements intelligent lambda lang with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | lambda-lang, lambda lang, how do i lambda-lang, orchestrate lambda-lang, automate lambda-lang, agent lambda-lang, serverless functions, lambda [orchestration, strategic] |
 | [langgraph](skills/agent/langgraph/SKILL.md) | Implements intelligent langgraph with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | langgraph, langgraph, how do i langgraph, orchestrate langgraph, automate langgraph, agent langgraph [orchestration, strategic] |
+| [langgraph-state-machine](skills/agent/langgraph-state-machine/SKILL.md) | Implements LangGraph state machine architecture with typed state graphs, conditional routing, checkpoint-based persistence, and human-in-the-loop interrupt patterns for building deterministic AI agent workflows. | langgraph, state machine, StateGraph, checkpointing, time travel, human in the loop, graph workflow, node edges, typed state, interrupt resume, durable execution, agent workflow, state transitions [tactical, orchestration] |
 | [lint-and-validate](skills/agent/lint-and-validate/SKILL.md) | Implements intelligent lint and validate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | lint-and-validate, lint and validate, how do i lint-and-validate, orchestrate lint-and-validate, automate lint-and-validate, agent lint-and-validate [orchestration, strategic] |
 | [linux-troubleshooting](skills/agent/linux-troubleshooting/SKILL.md) | Implements intelligent linux troubleshooting with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | linux-troubleshooting, linux troubleshooting, how do i linux-troubleshooting, orchestrate linux-troubleshooting, automate linux-troubleshooting, agent linux-troubleshooting [orchestration, strategic] |
 | [m365-agents-dotnet](skills/agent/m365-agents-dotnet/SKILL.md) | Implements intelligent m365 agents dotnet with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | m365-agents-dotnet, m365 agents dotnet, how do i m365-agents-dotnet, orchestrate m365-agents-dotnet, automate m365-agents-dotnet, agent m365-agents-dotnet [orchestration, strategic] |
@@ -597,6 +599,7 @@ MIT — All skills are freely available and redistributable.
 | [slack-automation](skills/agent/slack-automation/SKILL.md) | Implements intelligent slack automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | slack-automation, slack automation, how do i slack-automation, orchestrate slack-automation, automate slack-automation, agent slack-automation [orchestration, strategic] |
 | [stacktrace-root-cause](skills/agent/stacktrace-root-cause/SKILL.md) | Implements intelligent stacktrace root cause with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | stacktrace-root-cause, stacktrace root cause, how do i stacktrace-root-cause, orchestrate stacktrace-root-cause, automate stacktrace-root-cause, agent stacktrace-root-cause [orchestration, strategic] |
 | [stripe-automation](skills/agent/stripe-automation/SKILL.md) | Implements intelligent stripe automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | stripe-automation, stripe automation, how do i stripe-automation, orchestrate stripe-automation, automate stripe-automation, agent stripe-automation [orchestration, strategic] |
+| [structured-output-validation](skills/agent/structured-output-validation/SKILL.md) | Implements structured output patterns for AI agent systems including Pydantic model validation, JSON Schema generation, function calling contracts, response parsing with retry loops, and schema evolution for reliable agent-to-agent communication. | structured output, Pydantic validation, JSON Schema, function calling, response parsing, typed responses, output contract, tool schema, LLM output parsing, structured extraction, schema evolution, output validation, response format, constrained decoding [tactical, enforcement] |
 | [subagent-driven-development](skills/agent/subagent-driven-development/SKILL.md) | Implements intelligent subagent driven development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | subagent-driven-development, subagent driven development, how do i subagent-driven-development, orchestrate subagent-driven-development, automate subagent-driven-development, agent subagent-driven-development [orchestration, strategic] |
 | [system-hints-design](skills/agent/system-hints-design/SKILL.md) | Constructs layered system hints for agent architectures — identity, context, constraint, and behavioral hint layers — with provider-specific patterns for Anthropic, OpenAI, and Google Gemini. | system hints, system prompt design, agent behavior control, context layering, hint architecture, how do i design better system prompts, tool-use hints, multi-agent hints [tactical] |
 | [task-decomposition-engine](skills/agent/task-decomposition-engine/SKILL.md) | Implements intelligent task decomposition engine with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | task-decomposition-engine, task decomposition engine, how do i task-decomposition-engine, orchestrate task-decomposition-engine, automate task-decomposition-engine, agent task-decomposition-engine [orchestration, strategic] |
@@ -1475,7 +1478,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (650 skills)
+### Implementation (Build Features) (653 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1680,6 +1683,7 @@ MIT — All skills are freely available and redistributable.
 | [dry-principle](skills/coding/dry-principle/SKILL.md) | Coding | Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering. |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Coding | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases |
 | [dsl-engineering](skills/coding/dsl-engineering/SKILL.md) | Coding | Designs and implements domain-specific languages (embedded DSLs with Python/Go idioms, external DSLs with PEG/ANTLR/Lark parsers) for configuration, query, and rule engines in production systems. |
+| [durable-execution](skills/agent/durable-execution/SKILL.md) | Agent | Implements durable execution patterns for fault-tolerant AI agent workflows including checkpoint-based persistence, exponential backoff retry, idempotency keys, and crash recovery strategies across LangGraph, Temporal, and generic async frameworks. |
 | [eda](skills/coding/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Coding | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. |
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Coding | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. |
@@ -1808,6 +1812,7 @@ MIT — All skills are freely available and redistributable.
 | [lake](skills/trading/lake/SKILL.md) | Trading | "Provides Data lake architecture and management for trading data storage" |
 | [langchain](skills/coding/langchain/SKILL.md) | Coding | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. |
 | [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Coding | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. |
+| [langgraph-state-machine](skills/agent/langgraph-state-machine/SKILL.md) | Agent | Implements LangGraph state machine architecture with typed state graphs, conditional routing, checkpoint-based persistence, and human-in-the-loop interrupt patterns for building deterministic AI agent workflows. |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | Coding | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" |
 | [linode-api](skills/coding/linode-api/SKILL.md) | Coding | Integrates Linode/Akamai Cloud services (Instances, Object Storage, LKE Kubernetes, NodeBalancers) using the linode_api4 Python SDK with token-based authentication and model-driven resource patterns. |
 | [linux-security](skills/linux/linux-security/SKILL.md) | Linux | Hardens Linux systems against common attack vectors with security baselines, access controls, and audit frameworks for cloud and on-prem environments. |
@@ -2053,6 +2058,7 @@ MIT — All skills are freely available and redistributable.
 | [structural-behavioral-patterns](skills/coding/structural-behavioral-patterns/SKILL.md) | Coding | Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities. |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Coding | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. |
 | [structured-logging](skills/coding/structured-logging/SKILL.md) | Coding | Implements structured JSON logging with correlation IDs, OpenTelemetry context propagation, and tiered log level strategies for production-grade observability in Python and Go services. |
+| [structured-output-validation](skills/agent/structured-output-validation/SKILL.md) | Agent | Implements structured output patterns for AI agent systems including Pydantic model validation, JSON Schema generation, function calling contracts, response parsing with retry loops, and schema evolution for reliable agent-to-agent communication. |
 | [supabase-sdk](skills/coding/supabase-sdk/SKILL.md) | Coding | Integrates Supabase using supabase-py 2.x with patterns for database queries (PostgREST), auth management, storage operations, real-time subscriptions, and Edge Functions. |
 | [support-resistance](skills/trading/support-resistance/SKILL.md) | Trading | "Implements technical levels where price tends to pause or reverse for risk management and algorithmic trading execution." |
 | [support-vector-machines](skills/coding/support-vector-machines/SKILL.md) | Coding | "Implements support vector machines (SVM) with kernel methods, support vectors, and margin maximization for classification and regression" |
@@ -2914,6 +2920,7 @@ MIT — All skills are freely available and redistributable.
 | [dry-principle](skills/coding/dry-principle/SKILL.md) | Coding | Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering. | Implementation |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Coding | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | Implementation |
 | [dsl-engineering](skills/coding/dsl-engineering/SKILL.md) | Coding | Designs and implements domain-specific languages (embedded DSLs with Python/Go idioms, external DSLs with PEG/ANTLR/Lark parsers) for configuration, query, and rule engines in production systems. | Implementation |
+| [durable-execution](skills/agent/durable-execution/SKILL.md) | Agent | Implements durable execution patterns for fault-tolerant AI agent workflows including checkpoint-based persistence, exponential backoff retry, idempotency keys, and crash recovery strategies across LangGraph, Temporal, and generic async frameworks. | Implementation |
 | [dynamic-replanner](skills/agent/dynamic-replanner/SKILL.md) | Agent | Implements intelligent dynamic replanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [dynamodb](skills/cncf/dynamodb/SKILL.md) | Cncf | "Deploys managed NoSQL databases with DynamoDB for scalable, low-latency" key-value storage, streams, and global tables with high availability and automatic replication. | Reference |
 | [e2e-testing](skills/agent/e2e-testing/SKILL.md) | Agent | Implements intelligent e2e testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
@@ -3145,6 +3152,7 @@ MIT — All skills are freely available and redistributable.
 | [langchain](skills/coding/langchain/SKILL.md) | Coding | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. | Implementation |
 | [langgraph](skills/agent/langgraph/SKILL.md) | Agent | Implements intelligent langgraph with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Coding | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. | Implementation |
+| [langgraph-state-machine](skills/agent/langgraph-state-machine/SKILL.md) | Agent | Implements LangGraph state machine architecture with typed state graphs, conditional routing, checkpoint-based persistence, and human-in-the-loop interrupt patterns for building deterministic AI agent workflows. | Implementation |
 | [lima](skills/cncf/lima/SKILL.md) | Cncf | "Lima in Container Runtime - cloud native architecture, patterns, pitfalls" and best practices | Reference |
 | [linear-regression](skills/coding/linear-regression/SKILL.md) | Coding | "Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction" | Implementation |
 | [linkerd](skills/cncf/linkerd/SKILL.md) | Cncf | "Linkerd in Service Mesh - cloud native architecture, patterns, pitfalls" and best practices | Reference |
@@ -3514,6 +3522,7 @@ MIT — All skills are freely available and redistributable.
 | [structural-behavioral-patterns](skills/coding/structural-behavioral-patterns/SKILL.md) | Coding | Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities. | Implementation |
 | [structural-design-patterns](skills/coding/structural-design-patterns/SKILL.md) | Coding | Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator, Facade, Proxy, Flyweight) to compose classes and objects into larger structures while keeping them flexible and efficient. | Implementation |
 | [structured-logging](skills/coding/structured-logging/SKILL.md) | Coding | Implements structured JSON logging with correlation IDs, OpenTelemetry context propagation, and tiered log level strategies for production-grade observability in Python and Go services. | Implementation |
+| [structured-output-validation](skills/agent/structured-output-validation/SKILL.md) | Agent | Implements structured output patterns for AI agent systems including Pydantic model validation, JSON Schema generation, function calling contracts, response parsing with retry loops, and schema evolution for reliable agent-to-agent communication. | Implementation |
 | [subagent-driven-development](skills/agent/subagent-driven-development/SKILL.md) | Agent | Implements intelligent subagent driven development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [supabase-sdk](skills/coding/supabase-sdk/SKILL.md) | Coding | Integrates Supabase using supabase-py 2.x with patterns for database queries (PostgREST), auth management, storage operations, real-time subscriptions, and Edge Functions. | Implementation |
 | [support-resistance](skills/trading/support-resistance/SKILL.md) | Trading | "Implements technical levels where price tends to pause or reverse for risk management and algorithmic trading execution." | Implementation |
