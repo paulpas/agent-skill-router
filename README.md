@@ -87,7 +87,21 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 283 | AI orchestration, routing, task decomposition |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
+| Coding | 496 | Software patterns, security, testing, data science |
+| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
+| Go | 12 | Go idioms, concurrency patterns, error handling |
+| Java | 1 |  |
+| Kotlin | 1 |  |
+| Linux | 17 | System administration, kernel tuning, security, networking |
+| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
+| Programming | 7 | Algorithms, frameworks, language references |
+| Trading | 90 | Execution, risk management, ML models |
+| Writing | 4 | Technical writing, style guidance |
+<<<<<<< HEAD
 | Coding | 495 | Software patterns, security, testing, data science |
+=======
+| Coding | 496 | Software patterns, security, testing, data science |
+>>>>>>> c19c83151 (feat: add coding/solid-principles skill)
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
@@ -281,17 +295,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 10:09:52 UTC  
-> **Total skills:** 1091  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1091 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 06:00:55 UTC  
+> **Total skills:** 1092  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1092 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1052 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1052 | Ranking penalty for conflicting query terms |
-| Response Profile | 1052 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1053 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1053 | Ranking penalty for conflicting query terms |
+| Response Profile | 1053 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -767,7 +781,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (495 skills)
+### Coding (496 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1205,6 +1219,7 @@ MIT — All skills are freely available and redistributable.
 | [software-quality-assurance](skills/coding/software-quality-assurance/SKILL.md) | Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds. | software quality assurance, SQA, static analysis, code fuzzing, load testing, performance testing, security scanning, dependency audit, compliance validation, code quality gates, how do i ensure software quality, quality gates, vulnerability scanning [tactical, diagnostic, enforcement] |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | testing strategy, unit test, integration test, property-based testing, test coverage, mocking, assertion, pytest, test suite design, how do i write tests [tactical, generation] |
 | [solid-anti-patterns](skills/coding/solid-anti-patterns/SKILL.md) | Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries. | solid anti-patterns, SOLID violations, refactoring SOLID, god class refactor, fragile base class, brittle hierarchy, tight coupling fix, interface pollution, dependency inversion violation, SRP violation, open closed violation, LSP violation, ISP violation, DIP refactoring, code smell detection... [diagnostic, tactical] |
+| [solid-principles](skills/coding/solid-principles/SKILL.md) | Implements the five SOLID OOP design principles (SRP, OCP, LSP, ISP, DIP) with Python-specific patterns using Protocols, singledispatch, and explicit dependency injection. | SOLID principles, SRP, OCP, LSP, ISP, DIP, single responsibility, interface segregation, dependency inversion, typing.Protocol, composition over inheritance, how do i design clean oop classes, god class anti-pattern, python oop best practices [tactical, educational] |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. | splunk, splunk search, hec, http event collector, splunk sdk, splunk alerts, how do i send logs to splunk, log management [tactical, generation] |
 | [spring-boot-auto-config](skills/coding/spring-boot-auto-config/SKILL.md) | Implements Spring Boot auto-configuration mechanics, externalized config binding with @ConfigurationProperties, custom starter development with conditional annotations, and Actuator endpoint customization for production-ready applications. | auto configuration, application properties, spring profiles, custom starter, conditional beans, actuator endpoints, @configurationproperties, externalized config [tactical, diagnostic] |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. | spring boot, spring framework, dependency injection, auto configuration, rest controller, record dto, profile configuration, actuator, java 21, virtual threads, @service, @component, @autowired, how do i build a spring app [tactical, generation] |
@@ -1461,7 +1476,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (672 skills)
+### Implementation (Build Features) (673 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2037,6 +2052,7 @@ MIT — All skills are freely available and redistributable.
 | [software-quality-assurance](skills/coding/software-quality-assurance/SKILL.md) | Coding | Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds. |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. |
 | [solid-anti-patterns](skills/coding/solid-anti-patterns/SKILL.md) | Coding | Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries. |
+| [solid-principles](skills/coding/solid-principles/SKILL.md) | Coding | Implements the five SOLID OOP design principles (SRP, OCP, LSP, ISP, DIP) with Python-specific patterns using Protocols, singledispatch, and explicit dependency injection. |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Coding | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. |
 | [spring-boot-auto-config](skills/coding/spring-boot-auto-config/SKILL.md) | Coding | Implements Spring Boot auto-configuration mechanics, externalized config binding with @ConfigurationProperties, custom starter development with conditional annotations, and Actuator endpoint customization for production-ready applications. |
 | [spring-boot-core](skills/coding/spring-boot-core/SKILL.md) | Coding | Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications. |
@@ -3514,6 +3530,7 @@ MIT — All skills are freely available and redistributable.
 | [software-quality-assurance](skills/coding/software-quality-assurance/SKILL.md) | Coding | Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds. | Implementation |
 | [software-testing-strategy](skills/coding/software-testing-strategy/SKILL.md) | Coding | Implements comprehensive testing strategies (unit, integration, property-based, mocking, fixture design) to validate software correctness and prevent regressions. | Implementation |
 | [solid-anti-patterns](skills/coding/solid-anti-patterns/SKILL.md) | Coding | Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries. | Implementation |
+| [solid-principles](skills/coding/solid-principles/SKILL.md) | Coding | Implements the five SOLID OOP design principles (SRP, OCP, LSP, ISP, DIP) with Python-specific patterns using Protocols, singledispatch, and explicit dependency injection. | Implementation |
 | [spiffe](skills/cncf/spiffe/SKILL.md) | Cncf | "Provides SPIFFE in Secure Product Identity Framework for Applications" | Reference |
 | [spire](skills/cncf/spire/SKILL.md) | Cncf | "Configures spire in spiffe implementation for real-world deployments for cloud-native deployment and infrastructure management." | Reference |
 | [splunk-api](skills/coding/splunk-api/SKILL.md) | Coding | Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns. | Implementation |
