@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1067 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1068 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1067 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1068 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -129,7 +129,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 280 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 481 | Software patterns, security, testing, data science |
+| Coding | 482 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Linux | 16 | System administration, kernel tuning, security, networking |
@@ -330,17 +330,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-26 23:48:55 UTC  
-> **Total skills:** 1067  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1067 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-26 19:14:20 UTC  
+> **Total skills:** 1068  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1068 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1030 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1030 | Ranking penalty for conflicting query terms |
-| Response Profile | 1030 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1031 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1031 | Ranking penalty for conflicting query terms |
+| Response Profile | 1031 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -810,7 +810,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (481 skills)
+### Coding (482 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -980,6 +980,7 @@ MIT — All skills are freely available and redistributable.
 | [dropbox-api](skills/coding/dropbox-api/SKILL.md) | Integrates with Dropbox API to manage files, folders, sharing, Paper documents, and Sign requests using the official dropbox Python SDK v12. | dropbox api, dropbox python, dropbox files, dropbox sharing, dropbox paper, dropbox sign, dropbox sdk [tactical, generation] |
 | [dry-principle](skills/coding/dry-principle/SKILL.md) | Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering. | dry principle, don't repeat yourself, duplicate code, remove duplication, refactor, abstraction tradeoffs, yagni balance [tactical, diagnostic] |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | dry principle, don't repeat yourself, code duplication, refactoring, code duplication detection, refactoring guidance, maintainable code, code reuse [tactical, generation] |
+| [dsl-engineering](skills/coding/dsl-engineering/SKILL.md) | Designs and implements domain-specific languages (embedded DSLs with Python/Go idioms, external DSLs with PEG/ANTLR/Lark parsers) for configuration, query, and rule engines in production systems. | dsl design, domain-specific language, embedded dsl, external dsl, parser generator, peg grammar, antlr, lark, ast transformation, query language, configuration language, how do i create a custom language [tactical, generation] |
 | [eda](skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data [tactical, generation] |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. | elasticsearch, elasticsearch-py, opensearch, full-text search, elastic aggregations, how do i search data from python, elk stack, vector search [tactical, generation] |
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. | elevenlabs, eleven labs, tts, text to speech, voice cloning, elevenlabs api, how do i use elevenlabs, AI voice [tactical, generation] |
@@ -1474,7 +1475,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (649 skills)
+### Implementation (Build Features) (650 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1678,6 +1679,7 @@ MIT — All skills are freely available and redistributable.
 | [dropbox-api](skills/coding/dropbox-api/SKILL.md) | Coding | Integrates with Dropbox API to manage files, folders, sharing, Paper documents, and Sign requests using the official dropbox Python SDK v12. |
 | [dry-principle](skills/coding/dry-principle/SKILL.md) | Coding | Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering. |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Coding | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases |
+| [dsl-engineering](skills/coding/dsl-engineering/SKILL.md) | Coding | Designs and implements domain-specific languages (embedded DSLs with Python/Go idioms, external DSLs with PEG/ANTLR/Lark parsers) for configuration, query, and rule engines in production systems. |
 | [eda](skills/coding/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Coding | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. |
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Coding | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. |
@@ -2911,6 +2913,7 @@ MIT — All skills are freely available and redistributable.
 | [dropbox-api](skills/coding/dropbox-api/SKILL.md) | Coding | Integrates with Dropbox API to manage files, folders, sharing, Paper documents, and Sign requests using the official dropbox Python SDK v12. | Implementation |
 | [dry-principle](skills/coding/dry-principle/SKILL.md) | Coding | Refactors code to eliminate duplicate logic and knowledge by applying targeted abstraction techniques while balancing YAGNI to prevent over-engineering. | Implementation |
 | [dry-principles](skills/coding/dry-principles/SKILL.md) | Coding | Implements DRY (Don't Repeat Yourself) principle enforcement through pattern recognition, code duplication detection, and refactoring guidance for clean maintainable codebases | Implementation |
+| [dsl-engineering](skills/coding/dsl-engineering/SKILL.md) | Coding | Designs and implements domain-specific languages (embedded DSLs with Python/Go idioms, external DSLs with PEG/ANTLR/Lark parsers) for configuration, query, and rule engines in production systems. | Implementation |
 | [dynamic-replanner](skills/agent/dynamic-replanner/SKILL.md) | Agent | Implements intelligent dynamic replanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [dynamodb](skills/cncf/dynamodb/SKILL.md) | Cncf | "Deploys managed NoSQL databases with DynamoDB for scalable, low-latency" key-value storage, streams, and global tables with high availability and automatic replication. | Reference |
 | [e2e-testing](skills/agent/e2e-testing/SKILL.md) | Agent | Implements intelligent e2e testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
