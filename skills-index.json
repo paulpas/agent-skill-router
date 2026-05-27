@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T02:05:31.462797Z",
-  "totalSkills": 1073,
+  "generatedAt": "2026-05-27T03:17:11.931350Z",
+  "totalSkills": 1075,
   "domains": {
     "agent": 283,
     "cncf": 173,
-    "coding": 484,
+    "coding": 486,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 655,
+    "implementation": 657,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -14169,6 +14169,31 @@
       "source": "skills/agent/langgraph-state-machine/SKILL.md"
     },
     {
+      "name": "language-family-idioms",
+      "domain": "coding",
+      "description": "Implements idiomatic code patterns for JVM, .NET, TypeScript, and Functional ecosystems — showing the right way to write code in each family using modern language features from 2025–2026.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "JVM idioms",
+        "Java records",
+        "Kotlin coroutines",
+        "C# primary constructors",
+        "TypeScript discriminated unions",
+        "Elixir GenServer",
+        "idiomatic code"
+      ],
+      "relatedSkills": [
+        "modern-language-comparison",
+        "polyglot-development",
+        "polyglot-developer-patterns",
+        "framework-selection"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/language-family-idioms/SKILL.md"
+    },
+    {
       "name": "lima",
       "domain": "cncf",
       "description": "\"Lima in Container Runtime - cloud native architecture, patterns, pitfalls\" and best practices",
@@ -20468,6 +20493,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/aws-route53/SKILL.md"
+    },
+    {
+      "name": "runtime-ecosystem-selection",
+      "domain": "coding",
+      "description": "Selects the optimal runtime ecosystem (JVM, .NET, Node.js/V8, native compilation) based on deployment characteristics, performance requirements, and operational constraints for production systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "analysis",
+      "triggers": [
+        "runtime selection",
+        "JVM vs .NET",
+        "container image size",
+        "serverless cold start",
+        "GraalVM Native Image",
+        ".NET Native AOT",
+        "startup time",
+        "memory footprint"
+      ],
+      "relatedSkills": [
+        "modern-language-comparison",
+        "polyglot-development",
+        "framework-selection",
+        "version-migration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/runtime-ecosystem-selection/SKILL.md"
     },
     {
       "name": "runtime-log-analyzer",
