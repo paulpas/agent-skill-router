@@ -87,7 +87,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 283 | AI orchestration, routing, task decomposition |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 496 | Software patterns, security, testing, data science |
+| Coding | 498 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
@@ -295,9 +295,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 11:01:41 UTC  
-> **Total skills:** 1092  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1092 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 11:32:56 UTC  
+> **Total skills:** 1094  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1094 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -781,7 +781,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (496 skills)
+### Coding (498 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -849,6 +849,7 @@ MIT — All skills are freely available and redistributable.
 | [box-api](skills/coding/box-api/SKILL.md) | Integrates with Box API to manage files, folders, collaborations, metadata, signatures, hubs, and AI features using the boxsdk Python SDK. | box api, box python, box sdk, box files, box folders, box collaboration, box sign, box metadata [tactical, generation] |
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. | braintree, braintree transactions, braintree vault, braintree subscriptions, braintree marketplace, 3d secure, braintree webhooks, how do i integrate braintree payments, paypal venmo integration [tactical, generation] |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | git branching strategies, git repository, git-branching-strategies, github, including, models, version control [tactical, generation] |
+| [build-performance-optimization](skills/coding/build-performance-optimization/SKILL.md) | Optimizes CI/CD build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning for production pipelines. | build optimization, build cache, incremental build, dependency caching, parallel builds, how do i make my build faster |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | makefile testing, build validation, phony target tests, continuous integration for builds, incremental build verification, dependency graph analysis, build reproducibility, make test suite, artifact verification [tactical, generation] |
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. | builder pattern, fluent interface, object construction, complex object, step-by-step construction, chained method calls, director pattern [tactical, generation] |
 | [bus](skills/coding/bus/SKILL.md) | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | async, event bus, event-bus, events, typed, eventbridge, event routing [tactical, generation] |
@@ -906,6 +907,7 @@ MIT — All skills are freely available and redistributable.
 | [data-visualization](skills/coding/data-visualization/SKILL.md) | "Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling" | data visualization, plotting, dashboards, charts, matplotlib, seaborn, plotly, how do i visualize data [tactical, generation] |
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | database design, schema design, data modeling, sql migrations, indexing strategy, database normalization, foreign keys, entity relationship [tactical, generation] |
 | [database-migrations](skills/coding/database-migrations/SKILL.md) | Implements zero-downtime database migration strategies including expand/contract, dual-write, and backfill patterns for safe schema evolution across production environments. | database migrations, schema evolution, zero downtime migrations, database deployment, expand contract pattern, dual write migration, database rollback, migration strategy, how do i change my database schema safely [tactical, generation] |
+| [database-schema-evolution](skills/coding/database-schema-evolution/SKILL.md) | Designs safe schema changes for production databases — zero-downtime migrations, backward-compatible schema evolution, dual-write patterns, feature-flagged deployments, and data migration strategies for live systems. | database schema, migration strategy, zero downtime migration, schema change, backward compatible schema, dual write, feature flag migration, how do i change my database schema safely, schema versioning, safe deploy |
 | [databricks-sdk](skills/coding/databricks-sdk/SKILL.md) | Integrates Databricks using databricks-sdk with patterns for job orchestration, cluster management, SQL warehouses, Unity Catalog, MLflow, and Delta Lake operations. | databricks, databricks sdk, unity catalog, databricks jobs, databricks sql warehouse, how do i use databricks from python, mlflow, delta lake [tactical, generation] |
 | [datadog-api](skills/coding/datadog-api/SKILL.md) | Implements Datadog API integration (metrics, traces, logs, dashboards, monitors, synthetic tests) using datadog-api-client Python SDK v2+ with API key auth, async metrics submission, monitor creation, and Datadog APM tracing patterns. | datadog, metrics submission, datadog monitors, APM tracing, custom metrics, datadog dashboards, how do i send metrics to datadog, monitoring alerts [tactical, generation] |
 | [ddd-aggregate-lifecycle](skills/coding/ddd-aggregate-lifecycle/SKILL.md) | Implements aggregate lifecycle management patterns — snapshotting, schema versioning, optimistic concurrency control, aggregate root splitting strategies, and consistency boundary enforcement for high-throughput domain-driven systems. | aggregate lifecycle, aggregate snapshotting, aggregate versioning, optimistic concurrency, aggregate root splitting, event sourcing snapshot, how do i scale aggregates, aggregate consistency at scale, ddd performance [tactical, generation] |
@@ -1476,7 +1478,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (673 skills)
+### Implementation (Build Features) (675 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1560,6 +1562,7 @@ MIT — All skills are freely available and redistributable.
 | [box-api](skills/coding/box-api/SKILL.md) | Coding | Integrates with Box API to manage files, folders, collaborations, metadata, signatures, hubs, and AI features using the boxsdk Python SDK. |
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Coding | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines |
+| [build-performance-optimization](skills/coding/build-performance-optimization/SKILL.md) | Coding | Optimizes CI/CD build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning for production pipelines. |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. |
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Coding | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems |
@@ -1632,6 +1635,7 @@ MIT — All skills are freely available and redistributable.
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Coding | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. |
 | [database-migrations](skills/coding/database-migrations/SKILL.md) | Coding | Implements zero-downtime database migration strategies including expand/contract, dual-write, and backfill patterns for safe schema evolution across production environments. |
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. |
+| [database-schema-evolution](skills/coding/database-schema-evolution/SKILL.md) | Coding | Designs safe schema changes for production databases — zero-downtime migrations, backward-compatible schema evolution, dual-write patterns, feature-flagged deployments, and data migration strategies for live systems. |
 | [databricks-sdk](skills/coding/databricks-sdk/SKILL.md) | Coding | Integrates Databricks using databricks-sdk with patterns for job orchestration, cluster management, SQL warehouses, Unity Catalog, MLflow, and Delta Lake operations. |
 | [datadog-api](skills/coding/datadog-api/SKILL.md) | Coding | Implements Datadog API integration (metrics, traces, logs, dashboards, monitors, synthetic tests) using datadog-api-client Python SDK v2+ with API key auth, async metrics submission, monitor creation, and Datadog APM tracing patterns. |
 | [ddd-aggregate-lifecycle](skills/coding/ddd-aggregate-lifecycle/SKILL.md) | Coding | Implements aggregate lifecycle management patterns — snapshotting, schema versioning, optimistic concurrency control, aggregate root splitting strategies, and consistency boundary enforcement for high-throughput domain-driven systems. |
@@ -2734,6 +2738,7 @@ MIT — All skills are freely available and redistributable.
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Coding | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. | Implementation |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | Implementation |
 | [build](skills/agent/build/SKILL.md) | Agent | Implements intelligent build with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [build-performance-optimization](skills/coding/build-performance-optimization/SKILL.md) | Coding | Optimizes CI/CD build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning for production pipelines. | Implementation |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | Implementation |
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Coding | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. | Implementation |
 | [buildpacks](skills/cncf/buildpacks/SKILL.md) | Cncf | "Provides Buildpacks in Cloud-Native Engineering - Turn source code into container images without Dockerfiles" | Reference |
@@ -2877,6 +2882,7 @@ MIT — All skills are freely available and redistributable.
 | [database-design-modeling](skills/coding/database-design-modeling/SKILL.md) | Coding | Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement for scalable application backends. | Implementation |
 | [database-migrations](skills/coding/database-migrations/SKILL.md) | Coding | Implements zero-downtime database migration strategies including expand/contract, dual-write, and backfill patterns for safe schema evolution across production environments. | Implementation |
 | [database-patterns](skills/go/database-patterns/SKILL.md) | Go | Implements database access patterns in Go with connection pooling, transaction management, repository patterns, and migration strategies. | Implementation |
+| [database-schema-evolution](skills/coding/database-schema-evolution/SKILL.md) | Coding | Designs safe schema changes for production databases — zero-downtime migrations, backward-compatible schema evolution, dual-write patterns, feature-flagged deployments, and data migration strategies for live systems. | Implementation |
 | [databricks-sdk](skills/coding/databricks-sdk/SKILL.md) | Coding | Integrates Databricks using databricks-sdk with patterns for job orchestration, cluster management, SQL warehouses, Unity Catalog, MLflow, and Delta Lake operations. | Implementation |
 | [datadog-api](skills/coding/datadog-api/SKILL.md) | Coding | Implements Datadog API integration (metrics, traces, logs, dashboards, monitors, synthetic tests) using datadog-api-client Python SDK v2+ with API key auth, async metrics submission, monitor creation, and Datadog APM tracing patterns. | Implementation |
 | [ddd-aggregate-lifecycle](skills/coding/ddd-aggregate-lifecycle/SKILL.md) | Coding | Implements aggregate lifecycle management patterns — snapshotting, schema versioning, optimistic concurrency control, aggregate root splitting strategies, and consistency boundary enforcement for high-throughput domain-driven systems. | Implementation |

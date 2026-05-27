@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T11:01:39.563186Z",
-  "totalSkills": 1092,
+  "generatedAt": "2026-05-27T11:32:54.599870Z",
+  "totalSkills": 1094,
   "domains": {
     "agent": 283,
     "cncf": 176,
-    "coding": 496,
+    "coding": 498,
     "electrical-engineering": 2,
     "go": 12,
     "java": 1,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 673,
+    "implementation": 675,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -3418,6 +3418,28 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/build/SKILL.md"
+    },
+    {
+      "name": "build-performance-optimization",
+      "domain": "coding",
+      "description": "Optimizes CI/CD build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning for production pipelines.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "build optimization",
+        "build cache",
+        "incremental build",
+        "dependency caching",
+        "parallel builds",
+        "how do i make my build faster"
+      ],
+      "relatedSkills": [
+        "ci-cd-pipeline-design",
+        "monorepo-workspace-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/build-performance-optimization/SKILL.md"
     },
     {
       "name": "build-test-validation",
@@ -6879,6 +6901,33 @@
       ],
       "version": "1.0.0",
       "source": "skills/go/database-patterns/SKILL.md"
+    },
+    {
+      "name": "database-schema-evolution",
+      "domain": "coding",
+      "description": "Designs safe schema changes for production databases — zero-downtime migrations, backward-compatible schema evolution, dual-write patterns, feature-flagged deployments, and data migration strategies for live systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "database schema",
+        "migration strategy",
+        "zero downtime migration",
+        "schema change",
+        "backward compatible schema",
+        "dual write",
+        "feature flag migration",
+        "how do i change my database schema safely",
+        "schema versioning",
+        "safe deploy"
+      ],
+      "relatedSkills": [
+        "performance-optimization-strategies",
+        "postgresql-sdk",
+        "ci-cd-pipeline-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/database-schema-evolution/SKILL.md"
     },
     {
       "name": "databricks-sdk",
