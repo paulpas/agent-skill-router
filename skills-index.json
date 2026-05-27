@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-27T07:44:24.215534Z",
-  "totalSkills": 1087,
+  "generatedAt": "2026-05-27T08:19:42.491609Z",
+  "totalSkills": 1088,
   "domains": {
     "agent": 283,
-    "cncf": 173,
+    "cncf": 174,
     "coding": 494,
     "electrical-engineering": 2,
     "go": 12,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 668,
+    "implementation": 669,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -14008,6 +14008,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/kubernetes-ingress/SKILL.md"
+    },
+    {
+      "name": "kubernetes-resource-tuning",
+      "domain": "cncf",
+      "description": "Implements Kubernetes resource tuning — HPA scaling policies, VPA right-sizing, cluster autoscaler configuration, and resource limits/requests optimization for production container workloads.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "kubernetes resource tuning",
+        "HPA scaling",
+        "VPA right-sizing",
+        "cluster autoscaler",
+        "resource limits",
+        "pod requests",
+        "how do i scale kubernetes workloads",
+        "k8s performance tuning"
+      ],
+      "relatedSkills": [
+        "kubernetes-deployment-patterns",
+        "cncf-cost-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/kubernetes-resource-tuning/SKILL.md"
     },
     {
       "name": "kubescape",

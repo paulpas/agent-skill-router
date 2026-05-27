@@ -86,7 +86,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Domain | Count | Focus |
 |--------|-------|-------|
 | Agent | 283 | AI orchestration, routing, task decomposition |
-| CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
+| CNCF | 174 | Kubernetes, cloud-native, DevOps, service mesh |
 | Coding | 494 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
@@ -266,17 +266,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 07:44:26 UTC  
-> **Total skills:** 1087  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1087 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 08:19:44 UTC  
+> **Total skills:** 1088  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1088 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1048 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1048 | Ranking penalty for conflicting query terms |
-| Response Profile | 1048 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1049 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1049 | Ranking penalty for conflicting query terms |
+| Response Profile | 1049 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -570,7 +570,7 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | zoom-automation, zoom automation, how do i zoom-automation, orchestrate zoom-automation, automate zoom-automation, agent zoom-automation [orchestration, strategic] |
 
 
-### Cncf (173 skills)
+### Cncf (174 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -676,6 +676,7 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes-api-patterns](skills/cncf/kubernetes-api-patterns/SKILL.md) | Kubernetes API patterns including CRD development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions | kubernetes api, k8s api, crd development, api groups, subresources, watch api, admission webhooks, client libraries [tactical] |
 | [kubernetes-debugging](skills/cncf/kubernetes-debugging/SKILL.md) | Implements comprehensive Kubernetes debugging workflow with pod inspection, log analysis, resource debugging, network troubleshooting, and common failure pattern diagnosis using kubectl commands. | kubernetes debugging, k8s troubleshooting, pod crashes, node failures, cluster debugging, kubectl debug, container logs, k8s errors [tactical] |
 | [kubernetes-ingress](skills/cncf/kubernetes-ingress/SKILL.md) | Configures Kubernetes Ingress resources for external HTTP/HTTPS routing, TLS termination, host-based and path-based routing, with Nginx and Traefik controller integration. | ingress, kubernetes ingress, ingress controller, host-based routing, path-based routing, TLS termination, cert-manager, external access, load balancer, reverse proxy [educational, strategic] |
+| [kubernetes-resource-tuning](skills/cncf/kubernetes-resource-tuning/SKILL.md) | Implements Kubernetes resource tuning — HPA scaling policies, VPA right-sizing, cluster autoscaler configuration, and resource limits/requests optimization for production container workloads. | kubernetes resource tuning, HPA scaling, VPA right-sizing, cluster autoscaler, resource limits, pod requests, how do i scale kubernetes workloads, k8s performance tuning [tactical, strategic] |
 | [kubescape](skills/cncf/kubescape/SKILL.md) | "Configures kubescape in cloud-native engineering - kubernetes security for cloud-native deployment and infrastructure management." | cloud-native, container orchestration, engineering, k8s, kubescape, kubernetes [educational, strategic] |
 | [kubevela](skills/cncf/kubevela/SKILL.md) | "Configures kubevela in cloud-native engineering - application platform for cloud-native deployment and infrastructure management." | application, cloud-native, engineering, kubevela [educational, strategic] |
 | [kubevirt](skills/cncf/kubevirt/SKILL.md) | "Provides KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes" | cloud-native, engineering, kubevirt, virtualization [educational, strategic] |
@@ -1442,7 +1443,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (668 skills)
+### Implementation (Build Features) (669 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1778,6 +1779,7 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes-api-patterns](skills/cncf/kubernetes-api-patterns/SKILL.md) | Cncf | Kubernetes API patterns including CRD development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions |
 | [kubernetes-debugging](skills/cncf/kubernetes-debugging/SKILL.md) | Cncf | Implements comprehensive Kubernetes debugging workflow with pod inspection, log analysis, resource debugging, network troubleshooting, and common failure pattern diagnosis using kubectl commands. |
 | [kubernetes-deployment-patterns](skills/coding/kubernetes-deployment-patterns/SKILL.md) | Coding | Implements production-grade Kubernetes deployment patterns including resource management, HPA/VPA, pod disruption budgets, health probes, and multi-environment manifest orchestration for reliable service operation. |
+| [kubernetes-resource-tuning](skills/cncf/kubernetes-resource-tuning/SKILL.md) | Cncf | Implements Kubernetes resource tuning — HPA scaling policies, VPA right-sizing, cluster autoscaler configuration, and resource limits/requests optimization for production container workloads. |
 | [lake](skills/trading/lake/SKILL.md) | Trading | "Provides Data lake architecture and management for trading data storage" |
 | [langchain](skills/coding/langchain/SKILL.md) | Coding | Integrates LangChain/LangGraph (create_agent, chains, tools, memory, RAG, streaming, middleware) for building LLM-powered agents and applications in Python. |
 | [langgraph-implementation](skills/coding/langgraph-implementation/SKILL.md) | Coding | Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications. |
@@ -3127,6 +3129,7 @@ MIT — All skills are freely available and redistributable.
 | [kubernetes-deployment](skills/agent/kubernetes-deployment/SKILL.md) | Agent | Implements intelligent kubernetes deployment with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [kubernetes-deployment-patterns](skills/coding/kubernetes-deployment-patterns/SKILL.md) | Coding | Implements production-grade Kubernetes deployment patterns including resource management, HPA/VPA, pod disruption budgets, health probes, and multi-environment manifest orchestration for reliable service operation. | Implementation |
 | [kubernetes-ingress](skills/cncf/kubernetes-ingress/SKILL.md) | Cncf | Configures Kubernetes Ingress resources for external HTTP/HTTPS routing, TLS termination, host-based and path-based routing, with Nginx and Traefik controller integration. | Reference |
+| [kubernetes-resource-tuning](skills/cncf/kubernetes-resource-tuning/SKILL.md) | Cncf | Implements Kubernetes resource tuning — HPA scaling policies, VPA right-sizing, cluster autoscaler configuration, and resource limits/requests optimization for production container workloads. | Implementation |
 | [kubescape](skills/cncf/kubescape/SKILL.md) | Cncf | "Configures kubescape in cloud-native engineering - kubernetes security for cloud-native deployment and infrastructure management." | Reference |
 | [kubevela](skills/cncf/kubevela/SKILL.md) | Cncf | "Configures kubevela in cloud-native engineering - application platform for cloud-native deployment and infrastructure management." | Reference |
 | [kubevirt](skills/cncf/kubevirt/SKILL.md) | Cncf | "Provides KubeVirt in Cloud-Native Engineering - virtualization on Kubernetes" | Reference |
