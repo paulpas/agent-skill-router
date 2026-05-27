@@ -87,7 +87,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 285 | AI orchestration, routing, task decomposition |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 500 | Software patterns, security, testing, data science |
+| Coding | 499 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
@@ -295,9 +295,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 08:57:24 UTC  
-> **Total skills:** 1098  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1098 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 13:57:50 UTC  
+> **Total skills:** 1097  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1097 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -783,7 +783,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (500 skills)
+### Coding (499 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1059,7 +1059,6 @@ MIT — All skills are freely available and redistributable.
 | [jvm-diagnostics](skills/coding/jvm-diagnostics/SKILL.md) | Diagnoses JVM production incidents including OutOfMemoryError root causes, thread deadlock detection, heap leak analysis via MAT, and crash log triage for Java 17+ applications. | jvm diagnostics, thread dump, heap dump, oom error, out of memory, deadlock detection, hs_err log, jstack analysis, MAT leak suspect, java crash, stack overflow, GC thrashing, memory leak, thread contention, jcmd troubleshooting [diagnostic, tactical] |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. | jvm tuning, garbage collection, GC tuning, zgc, shenandoah, jfr, jcmd, heap dump, memory leak, java performance, oom error, out of memory, thread deadlock, jstack, async-profiler... [tactical, generation] |
 | [jvm-performance-tuning](skills/coding/jvm-performance-tuning/SKILL.md) | Optimizes JVM runtime performance through garbage collector selection and tuning, memory layout configuration, JIT compilation flags, and allocation-aware coding patterns for Java 17+ applications. | jvm tuning, garbage collection, GC tuning, zgc, shenandoah, g1gc, memory management, metaspace allocation, jit compilation, virtual threads, project loom, java performance optimization, container memory limits [tactical, generation] |
-| [karpathy-coding-mindset](skills/coding/karpathy-coding-mindset/SKILL.md) | Applies Karpathy's pre-implementation discipline — state assumptions explicitly, surface tradeoffs instead of hiding them, push back on unnecessary complexity, and write minimum code that solves the problem with no speculative features or premature a... | coding mindset, think before coding, simplicity first, overengineering, code complexity, yagni, premature optimization, assumptions, tradeoffs, keep it simple |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" | kernel density estimation, KDE, non-parametric, density estimation, bandwidth selection [tactical, generation] |
 | [kiss-principle](skills/coding/kiss-principle/SKILL.md) | Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions. | kiss principle, keep it simple stupid, over-engineering, simplicity, avoid complexity, simple solution, unnecessary abstraction, how do i simplify my code, reduce boilerplate [tactical, diagnostic] |
 | [knowledge-transfer-methods](skills/coding/knowledge-transfer-methods/SKILL.md) | Implements structured knowledge transfer workflows using Feynman technique, spaced repetition scheduling, active recall exercises, and teach-back protocols to achieve deep framework mastery and team-wide competency. | knowledge transfer, teach back, Feynman technique, spaced repetition, active recall, how do i retain what I learned, framework mastery, team knowledge sharing, skill retention, learning methodology [educational, tactical] |
@@ -1482,7 +1481,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (678 skills)
+### Implementation (Build Features) (677 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1813,7 +1812,6 @@ MIT — All skills are freely available and redistributable.
 | [just-task-runner](skills/coding/just-task-runner/SKILL.md) | Coding | Implements the Just task runner as a modern alternative to GNU Make with named arguments, subcommands, runsets, environment file support, and cross-platform portability for developer workflow automation. |
 | [jvm-engineering](skills/coding/jvm-engineering/SKILL.md) | Coding | Diagnoses and optimizes JVM performance through garbage collector tuning, memory profiling with JFR and async-profiler, heap dump analysis, thread contention detection, and configuration best practices for production Java applications. |
 | [jvm-performance-tuning](skills/coding/jvm-performance-tuning/SKILL.md) | Coding | Optimizes JVM runtime performance through garbage collector selection and tuning, memory layout configuration, JIT compilation flags, and allocation-aware coding patterns for Java 17+ applications. |
-| [karpathy-coding-mindset](skills/coding/karpathy-coding-mindset/SKILL.md) | Coding | Applies Karpathy's pre-implementation discipline — state assumptions explicitly, surface tradeoffs instead of hiding them, push back on unnecessary complexity, and write minimum code that solves the problem with no speculative features or premature a... |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Linux | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. |
 | [kicad-pcb-design](skills/electrical-engineering/kicad-pcb-design/SKILL.md) | Electrical-engineering | Implements modern KiCad 9+ PCB design workflows covering schematic capture, component library management, controlled-impedance layout, EMC-aware routing, DRC validation, and fabrication file generation. |
@@ -3158,7 +3156,6 @@ MIT — All skills are freely available and redistributable.
 | [jvm-performance-tuning](skills/coding/jvm-performance-tuning/SKILL.md) | Coding | Optimizes JVM runtime performance through garbage collector selection and tuning, memory layout configuration, JIT compilation flags, and allocation-aware coding patterns for Java 17+ applications. | Implementation |
 | [k8s-debugger](skills/agent/k8s-debugger/SKILL.md) | Agent | Implements intelligent k8s debugger with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [karmada](skills/cncf/karmada/SKILL.md) | Cncf | "Provides Karmada in Cloud-Native Engineering - multi-cluster orchestration" | Reference |
-| [karpathy-coding-mindset](skills/coding/karpathy-coding-mindset/SKILL.md) | Coding | Applies Karpathy's pre-implementation discipline — state assumptions explicitly, surface tradeoffs instead of hiding them, push back on unnecessary complexity, and write minimum code that solves the problem with no speculative features or premature a... | Implementation |
 | [keda](skills/cncf/keda/SKILL.md) | Cncf | "Configures keda in cloud-native engineering - event-driven autoscaling for cloud-native deployment and infrastructure management." | Reference |
 | [kernel-density](skills/coding/kernel-density/SKILL.md) | Coding | "Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions" | Implementation |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Linux | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. | Implementation |

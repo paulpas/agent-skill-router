@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T13:36:58.975891Z",
+  "generatedAt": "2026-05-27T13:57:48.407073Z",
   "totalSkills": 1097,
   "domains": {
     "agent": 285,
@@ -2515,12 +2515,8 @@
         "MFA TOTP",
         "API key auth",
         "password hashing",
-        "Bcrypt Argon2",
         "token refresh",
-        "bearer token",
-        "authentication design",
-        "how do i implement auth",
-        "security tokens"
+        "how do i implement auth"
       ],
       "relatedSkills": [
         "api-gateway-patterns",
