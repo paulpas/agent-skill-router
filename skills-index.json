@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T12:30:36.408512Z",
-  "totalSkills": 1096,
+  "generatedAt": "2026-05-27T13:36:58.975891Z",
+  "totalSkills": 1097,
   "domains": {
     "agent": 285,
     "cncf": 176,
-    "coding": 498,
+    "coding": 499,
     "electrical-engineering": 2,
     "go": 12,
     "java": 1,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 676,
+    "implementation": 677,
     "reference": 173,
     "information": 1,
     "review": 8
@@ -2500,6 +2500,35 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/auth0-api/SKILL.md"
+    },
+    {
+      "name": "authentication-design-patterns",
+      "domain": "coding",
+      "description": "Implements production authentication architecture including JWT token lifecycle, OAuth 2.0 flows, session management, MFA/TOTP, API key auth, and password hashing strategies with security-first design patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "JWT authentication",
+        "OAuth 2.0",
+        "session management",
+        "MFA TOTP",
+        "API key auth",
+        "password hashing",
+        "Bcrypt Argon2",
+        "token refresh",
+        "bearer token",
+        "authentication design",
+        "how do i implement auth",
+        "security tokens"
+      ],
+      "relatedSkills": [
+        "api-gateway-patterns",
+        "spring-security-core",
+        "websocket-security"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/authentication-design-patterns/SKILL.md"
     },
     {
       "name": "authentication-patterns",
