@@ -1,41 +1,38 @@
 ---
 name: build-performance-optimization
-description: Optimizes CI/CD build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning for production pipelines.
+description: Profiles, analyzes, and optimizes slow builds through bottleneck identification, incremental compilation strategies, intelligent caching, and parallelization techniques for C++, Java, Python, TypeScript, and Go projects.
 license: MIT
 compatibility: opencode
-archetypes:
-  - tactical
-  - diagnostic
-anti_triggers:
-  - brainstorming
-  - vague ideation
-  - quick hack
-response_profile:
-  verbosity: low
-  directive_strength: high
-  abstraction_level: operational
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: build optimization, build cache, incremental build, dependency caching, parallel builds, how do i make my build faster
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, config, do-dont]
-  related-skills: ci-cd-pipeline-design, monorepo-workspace-patterns
+  triggers: build performance, compilation time, build profiling, incremental build, parallel build, bottleneck analysis, build cache, build speed
+  related-skills: makefile-best-practices,cicd-build-orchestration
+  archetypes: tactical, diagnostic
+  anti_triggers: vague build questions, general build overview, build system migration
+  response_profile:
+    verbosity: high
+    directive_strength: high
+    abstraction_level: operational
 ---
 
 # Build Performance Optimization
 
-Optimizes CI/CD pipeline build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning. When loaded, the model measures current build bottlenecks, profiles individual pipeline stages, and produces concrete optimizations with measurable time savings for production CI/CD pipelines.
+When a build takes 20 minutes and should take 2, the problem isn't how you're running it—it's what you're building and how. This skill teaches you to **measure precisely, identify bottlenecks ruthlessly, and optimize systematically**. We focus on profiling tools, dependency analysis, caching strategies, and parallelization that actually work.
 
 ## TL;DR Checklist
 
-- [ ] Profile each pipeline stage to identify the longest-running steps
-- [ ] Enable dependency caching keyed by lockfile hash (not just directory)
-- [ ] Use incremental builds — skip unchanged modules/packages in monorepos
-- [ ] Parallelize independent test suites and build jobs across matrix strategy
-- [ ] Cache compiled artifacts and intermediate build outputs between stages
+- [ ] **Profile first:** Generate build timing reports before attempting any optimization. Use `--verbose --profile` flags or custom timing instrumentation.
+- [ ] **Identify the bottleneck:** Is it compilation (C++/Rust), linking, test execution, or something else? Profile output tells you.
+- [ ] **Measure baselines:** Record clean build time, incremental build time (single file change), and full rebuild. Compare before/after.
+- [ ] **Enable parallelization:** Use `-j$(nproc)` (Make), `--parallel` (Gradle), `-j` (Ninja), compiler flags for parallel codegen.
+- [ ] **Implement content-addressed caching:** Cache object files, compiled modules, and binaries keyed by source hash (not timestamp).
+- [ ] **Optimize link-time compilation:** For C++, use `-fuse-ld=mold` or `lld`, reduce debug symbol bloat with `split-dwarf`, parallelize linking with `-Wl,--threads`.
+- [ ] **Track incremental builds:** Measure single-file-change rebuild time. If >30 seconds for small repos, investigate header dependencies or heavy templates.
+- [ ] **Validate improvements:** Run automated benchmark suite (3+ consecutive builds) to confirm optimization didn't regress.
 
 ---
 
@@ -43,11 +40,16 @@ Optimizes CI/CD pipeline build times through dependency caching strategies, incr
 
 Use this skill when:
 
-- Build times exceed 15 minutes and are impacting developer productivity
-- Adding new services/modules causes linear growth in CI pipeline duration
-- Team wants to reduce cloud compute costs tied to runner minutes
-- Migrating from monolithic builds to incremental/bazel-style builds
-- Evaluating whether to invest in build infrastructure optimization vs. adding more runners
+- A clean build takes >5 minutes for a reasonably-sized project (C++, Java, TypeScript, Go, Rust)
+- Incremental builds (changing one file) take as long as clean builds—indicates bad dependency tracking
+- Developers report "random" build failures on incremental rebuilds—suggests cache invalidation is broken
+- CI/CD pipelines spend >50% of job time building instead of testing
+- Link time dominates (Ninja reports "Linking [target]" taking >60 seconds)
+- Header dependencies in C++ are causing cascading recompilations
+- Test suites run sequentially when they could parallelize
+- Build artifacts aren't being cached effectively between CI jobs
+- You're using timestamp-based caching (fragile, breaks with clock skew)
+- Pre-built binaries or caches are being rebuilt unnecessarily
 
 ---
 
@@ -55,281 +57,570 @@ Use this skill when:
 
 Avoid this skill for:
 
-- Setting up the overall CI/CD pipeline structure — use `ci-cd-pipeline-design` instead
-- Designing deployment strategies (canary, blue-green) — handled by CI/CD design skill
-- Setting up infrastructure provisioning pipelines — use `iac-engineering` instead
-- Debugging flaky tests or build failures — use debugging/troubleshooting skills first
+- **Writing Makefiles or build files themselves** (use `makefile-best-practices` instead)
+- **Setting up CI/CD orchestration** (use `cicd-build-orchestration` instead)
+- **Optimizing runtime performance** of your application (that's a different domain)
+- **One-off micro-optimizations** that save <1 second total build time (effort not justified)
+- **Projects where build time is not a developer pain point** (premature optimization)
+- **Replacing a broken build system with a new one** without understanding the actual bottleneck
 
 ---
 
 ## Core Workflow
 
-1. **Profile Current Build** — Run builds with timing instrumentation on each step. Identify which stages consume 80%+ of total time. Categorize as: dependency installation, compilation, testing, linting/formatting, or artifact packaging.
-   **Checkpoint:** You have a timing breakdown showing the top 3 bottlenecks by percentage of total build time.
+### 1. **Establish Baseline Metrics**
 
-2. **Implement Dependency Caching** — Cache node_modules/.venv/.gradle/etc. keyed by lockfile hash (package-lock.json, Pipfile.lock, etc.). Use `actions/cache@v4` or equivalent with a cache miss → rebuild pattern. Never cache based on branch name alone.
-   **Checkpoint:** Subsequent builds with unchanged dependencies restore cache in <30 seconds instead of re-downloading.
+Before touching any optimization, you must have numbers. Run a timing harness that captures:
+- Clean build time (full from-scratch compile)
+- Incremental build time (change one file, rebuild)
+- Link time (if applicable—often hidden in total)
+- Parallelization factor (how much speedup from `-j4` vs `-j1`)
 
-3. **Enable Incremental Builds** — For projects using Bazel, Turborepo, Nx, or Gradle incremental: configure task dependency graphs so only affected modules rebuild. Skip tests for unchanged packages in monorepo workspaces.
-   **Checkpoint:** Adding a change to one module triggers rebuild of only that module and its dependents, not the entire workspace.
+**Checkpoint:** You have a spreadsheet or JSON file with at least 3 runs of each metric. Standard deviation is <10%.
 
-4. **Parallelize Workloads** — Use CI matrix strategies to distribute test suites across multiple runners. Split large test files by category (unit/integration/e2e) or file path hash. Ensure each parallel job is self-contained with its own dependencies.
-   **Checkpoint:** Total wall-clock time for parallel stages is <70% of sequential execution time, accounting for runner startup overhead.
+### 2. **Profile the Build Process**
 
-5. **Optimize Runner Infrastructure** — Select appropriate runner types (container vs VM vs dedicated). Use containerized runners with pre-baked base images containing language runtimes. Pin to specific runner versions for reproducibility.
-   **Checkpoint:** Runner startup time is <60 seconds. Base image layers are cached across pipeline runs.
+Use your build system's native profiling:
+- **Make:** `time make -j$(nproc)` + `make --debug=b` for detailed tracing
+- **CMake/Ninja:** `ninja -d stats` to dump build profile
+- **Gradle:** `gradle build --profile` generates HTML report
+- **TypeScript:** `tsc --diagnostics` shows compilation time per file
+- **Go:** `go build -x` shows all commands; time each with custom wrapper
+- **Bazel:** `bazel build --profile=/tmp/profile.json` then analyze with `bazel analyze-profile`
+
+Parse the output to identify which **phase** is slowest:
+- Compilation (per-file compile time)
+- Linking (final link step)
+- Header scanning / dependency resolution
+- Test execution (usually separate)
+
+**Checkpoint:** You have a ranked list of top 5 slowest compilation units or link phases, with times.
+
+### 3. **Diagnose Root Causes**
+
+For the top bottleneck, drill deeper:
+
+**If compilation is slow:**
+- Run compiler with timing flags: `clang++ -ftime-trace` (C++), `javac -verbose` (Java), `tsc --extendedDiagnostics` (TypeScript)
+- Check for heavy template instantiations (C++), excessive macro expansion, or large generated files
+- Verify compiler flags aren't disabling optimizations unintentionally (e.g., `-O0` instead of `-O2`)
+
+**If linking is slow:**
+- Use `nm --size-sort` on object files to find the largest ones (often opportunities for lazy linking)
+- Check for `--whole-archive` or equivalent that's forcing all symbols to be linked
+- Profile the linker: `ld.lld --time-trace-file=/tmp/lld.json` (if using lld)
+
+**If incremental builds are slow (proportional to clean builds):**
+- Check header dependency tracking. Run `make -n -j1` and count headers included per translation unit
+- Look for forced rebuilds: files with timestamp-based rules or missing dependency declarations
+- For C++: use `gcc -MM` or `clang++ -M` to dump dependencies; look for headers included by everything
+
+**Checkpoint:** You have identified the specific, measurable bottleneck (e.g., "linking takes 45 seconds", "header template.hpp is included 342 times").
+
+### 4. **Apply Targeted Optimizations**
+
+Based on the bottleneck type:
+
+**Compilation Bottleneck:**
+- Enable parallelization: `-j$(nproc)` or `build --jobs=auto`
+- Reduce template instantiation: use explicit instantiation, pre-compiled headers, or module imports (C++20)
+- Profile per-file: identify the 2-3 slowest files and refactor their dependencies
+- Consider distributed compilation: ccache, distcc, or Icecream
+
+**Linking Bottleneck:**
+- Switch to faster linker: `fuse-ld=mold` (GNU gold alternative, 10-20x faster), `lld` (LLVM), or `zld` (Mach-O)
+- Enable parallelization in linker: `-Wl,--threads` (GNU gold), already parallel in lld/mold
+- Reduce debug symbols: `-gsplit-dwarf` separates debug info from binaries (Clang/GCC)
+- Use thin LTO instead of fat LTO: `-flto=thin` reduces linker overhead
+
+**Incremental Build Bottleneck:**
+- Fix dependency tracking: ensure build system sees all header dependencies
+- Remove forced rebuilds: replace timestamp rules with content-based invalidation
+- Cache intermediate artifacts: ccache (C/C++), Gradle build cache, Bazel (native)
+- Split monolithic targets: if one target depends on 200 files, split into 20 libraries
+
+**Parallelization Not Working:**
+- Verify task graph has sufficient parallelism: `ninja -d graph` or `bazel query 'deps(...)'`
+- Check for serializing dependencies: ensure headers don't create artificial ordering
+- Increase parallelism: start with `-j8` on 4-core, observe wall time
+
+**Checkpoint:** You've applied 1-2 targeted optimizations and re-measured. Verify improvement is >15% (noise floor). If <15%, revert and try next bottleneck.
+
+### 5. **Validate and Benchmark**
+
+Once optimizations are in place, run a formal benchmark:
+- Run 5 consecutive clean builds. Report min/max/mean times.
+- Run 5 incremental builds (change one file between each). Report timing.
+- Compare to baseline. Verify improvement is reproducible (not noise).
+- Check that output binaries are **identical**: `sha256sum` or `cmp` object files before/after.
+
+**Checkpoint:** Benchmark results are reproducible, improvement is documented (e.g., "15% faster on incremental builds"), and no artifacts changed.
+
+### 6. **Document and Automate**
+
+Create a build-optimization checklist for your team:
+- How to run the profiler (`ninja -d stats`, etc.)
+- Which optimizations are currently active and why
+- Known bottlenecks and their current status
+- Benchmarking procedure (so others can validate regressions)
+
+Automate checks in CI: run a `build-time-benchmark` step that fails if incremental builds exceed a threshold (e.g., >60 seconds).
 
 ---
 
 ## Implementation Patterns
 
-### Pattern 1: Dependency Caching with Lockfile Hashing
+### Pattern 1: Build Profiler Script (Python + Bash)
 
-Cache keys must be scoped to the lockfile, not the entire repository or branch name. A proper cache key pattern uses a primary key from the lockfile hash and restore-keys for partial fallback matches.
-
-```yaml
-# ❌ BAD — Cache key too broad, invalidates on every code change
-- name: Cache dependencies
-  uses: actions/cache@v4
-  with:
-    path: node_modules
-    key: deps-${{ runner.os }}-${{ hashFiles('**') }}
-
-- name: Cache Python dependencies  
-  uses: actions/cache@v4
-  with:
-    path: .venv
-    key: python-deps-${{ hashFiles('.github/workflows/*.yml') }}
-
-# ✅ GOOD — Lockfile-specific cache keys preserve cache across code changes
-- name: Cache Node.js dependencies
-  uses: actions/cache@v4
-  with:
-    path: |
-      node_modules
-      ~/.npm
-    key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-    restore-keys: |
-      ${{ runner.os }}-node-
-
-- name: Cache Python dependencies
-  uses: actions/cache@v4
-  with:
-    path: .venv
-    key: ${{ runner.os }}-python-${{ hashFiles('poetry.lock') }}
-    restore-keys: |
-      ${{ runner.os }}-python-
-
-# ✅ GOOD — Gradle build cache for incremental compilation
-- name: Setup Gradle with build cache
-  uses: gradle/actions/setup-gradle@v4
-  with:
-    gradle-home-cache-cleanup: true
-```
-
-**Key principles:**
-- Use `restore-keys` to fall back to partial matches — even a prefix match saves re-downloading most dependencies
-- Cache both the dependency directory AND the package manager's global cache (e.g., `~/.npm`) for maximum reuse
-- For Go projects, use the dedicated `actions/setup-go` action which handles module caching automatically
-
-### Pattern 2: Monorepo Incremental Builds with Turborepo
-
-Monorepos are especially prone to full-rebuild waste. Task-level incremental build tools (Turborepo, Nx, Bazel) track file-level dependency graphs and cache task outputs by content hash.
+This script measures clean build, incremental build, and parallelization gains. Provides a baseline for all optimizations.
 
 ```python
-# ❌ BAD — Building everything, no incremental detection
-# turbo.json missing task definitions or dependencies field
-{
-  "pipeline": {
-    "build": {},
-    "test": {}
-  }
-}
+#!/usr/bin/env python3
+"""
+Build profiler: measures clean build time, incremental build time, and parallelization factor.
+Outputs JSON for comparison across builds.
+"""
 
-# ✅ GOOD — Full Turborepo configuration with dependency graphs and caching
-{
-  "ui": "stream",
-  "tasks": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "dist/**", "build/**"],
-      "cache": true
-    },
-    "test": {
-      "dependsOn": ["build"],
-      "inputs": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts"],
-      "outputs": []
-    },
-    "lint": {
-      "inputs": ["src/**"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    }
-  },
-  "globalDependencies": [
-    "tsconfig.json",
-    "package.json"
-  ]
-}
-```
+import json
+import subprocess
+import sys
+import time
+from pathlib import Path
+from hashlib import sha256
 
-**Key principles:**
-- `dependsOn: ["^build"]` means "run build in all dependency packages first" — the `^` prefix is critical for correct topological ordering
-- `outputs` defines which files to cache. Only include deterministic outputs (not `node_modules`)
-- `inputs` can be restricted to specific file globs if a task only reads certain sources
-- Mark non-deterministic tasks (like `dev`) with `"cache": false`
+def run_command(cmd, cwd=None):
+    """Run command, return (exit_code, stdout, stderr, elapsed_seconds)."""
+    start = time.time()
+    result = subprocess.run(
+        cmd,
+        cwd=cwd,
+        shell=isinstance(cmd, str),
+        capture_output=True,
+        text=True
+    )
+    elapsed = time.time() - start
+    return result.returncode, result.stdout, result.stderr, elapsed
 
-For Nx-based workspaces, the equivalent configuration uses `nx.json`:
-
-```json
-{
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": [
-      "default",
-      "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/src/test-setup.*",
-      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.ts"
-    ]
-  },
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"],
-      "cache": true
-    }
-  }
-}
-```
-
-### Pattern 3: Test Parallelization Strategy
-
-Test suites are often the single largest contributor to CI duration. Parallelization reduces wall-clock time but must be balanced against runner startup overhead.
-
-```python
-# ❌ BAD — Single test process for all tests
-# .github/workflows/ci.yml runs pytest with no parallelism
-- run: pytest tests/ --cov=src
-
-# ✅ GOOD — Split tests by category and parallelize with xdist + matrix strategy
-# In workflow:
-# jobs:
-#   test-unit:
-#     steps:
-#       - run: pytest tests/unit/ -n auto --dist=loadfile
-#   test-integration:
-#     steps:
-#       - run: pytest tests/integration/ -n auto --dist=loadfile
-#       # Requires database setup step before this job
-
-# Parallel test distribution with pytest-xdist configuration:
-# conftest.py
-import pytest
-
-def pytest_xdist_auto_count():
-    """Auto-detect CPU cores for optimal parallelism."""
-    import os
-    return max(1, os.cpu_count() or 1) - 1  # Leave one core free
-
-# ✅ GOOD — Shard tests across multiple runners in CI
-# For very large suites, split by file hash:
-import hashlib
-
-def pytest_collect_modifyitems(session, config, items):
-    """Split test items for parallel runner sharding."""
-    shard_total = int(config.getoption("--shard-total", default=4))
-    shard_index = int(config.getoption("--shard-index", default=0))
+def clean_build(build_dir, build_cmd, runs=3):
+    """Run clean build N times, return mean time in seconds."""
+    times = []
+    for i in range(runs):
+        # Remove build artifacts
+        subprocess.run(f"rm -rf {build_dir}", shell=True, check=True)
+        
+        # Run clean build
+        _, _, _, elapsed = run_command(build_cmd)
+        times.append(elapsed)
+        print(f"  Clean build {i+1}: {elapsed:.2f}s")
     
-    # Deterministic distribution based on file path
-    items[:] = [
-        item for i, item in enumerate(sorted(items, key=lambda x: x.nodeid))
-        if i % shard_total == shard_index
-    ]
+    return {
+        "mean": sum(times) / len(times),
+        "min": min(times),
+        "max": max(times),
+        "runs": times,
+    }
+
+def incremental_build(build_dir, build_cmd, source_file, runs=3):
+    """
+    Run a clean build, then modify a source file and rebuild N times.
+    Measures incremental rebuild time.
+    """
+    # Ensure clean state
+    subprocess.run(f"rm -rf {build_dir}", shell=True, check=True)
+    _, _, _, _ = run_command(build_cmd)
+    
+    # Get a source file to touch
+    if not Path(source_file).exists():
+        print(f"Warning: {source_file} not found, skipping incremental build test")
+        return None
+    
+    times = []
+    original_mtime = Path(source_file).stat().st_mtime
+    
+    for i in range(runs):
+        # Touch source file to trigger rebuild
+        Path(source_file).touch()
+        time.sleep(0.1)  # Ensure new mtime
+        
+        _, _, _, elapsed = run_command(build_cmd)
+        times.append(elapsed)
+        print(f"  Incremental build {i+1}: {elapsed:.2f}s")
+    
+    # Restore original mtime
+    Path(source_file).utime((original_mtime, original_mtime))
+    
+    return {
+        "mean": sum(times) / len(times),
+        "min": min(times),
+        "max": max(times),
+        "runs": times,
+    }
+
+def parallelization_factor(build_cmd, num_jobs_list=[1, 2, 4, 8, 16]):
+    """
+    Measure build time with different -j values.
+    Returns dict of job_count -> elapsed_seconds.
+    """
+    results = {}
+    for jobs in num_jobs_list:
+        cmd = build_cmd.replace("$(nproc)", str(jobs)).replace("-j", f"-j{jobs}")
+        _, _, _, elapsed = run_command(cmd)
+        results[jobs] = elapsed
+        print(f"  -j{jobs}: {elapsed:.2f}s")
+    
+    # Calculate speedup relative to -j1
+    if 1 in results:
+        baseline = results[1]
+        speedup = {jobs: baseline / elapsed for jobs, elapsed in results.items()}
+        results["speedup_vs_j1"] = speedup
+    
+    return results
+
+def main():
+    if len(sys.argv) < 3:
+        print(f"Usage: {sys.argv[0]} <build_dir> <build_command> [source_file]")
+        print(f"Example: {sys.argv[0]} build 'ninja -C build -j$(nproc)' src/main.cpp")
+        sys.exit(1)
+    
+    build_dir = sys.argv[1]
+    build_cmd = sys.argv[2]
+    source_file = sys.argv[3] if len(sys.argv) > 3 else None
+    
+    results = {
+        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "build_command": build_cmd,
+        "build_dir": build_dir,
+    }
+    
+    print("\n=== Clean Build Profile ===")
+    results["clean_build"] = clean_build(build_dir, build_cmd, runs=3)
+    print(f"Mean: {results['clean_build']['mean']:.2f}s")
+    
+    if source_file:
+        print("\n=== Incremental Build Profile ===")
+        results["incremental_build"] = incremental_build(
+            build_dir, build_cmd, source_file, runs=3
+        )
+        print(f"Mean: {results['incremental_build']['mean']:.2f}s")
+        ratio = results["incremental_build"]["mean"] / results["clean_build"]["mean"]
+        print(f"Incremental/Clean ratio: {ratio:.2%}")
+    
+    print("\n=== Parallelization Factor ===")
+    results["parallelization"] = parallelization_factor(build_cmd)
+    
+    print("\n=== Results (JSON) ===")
+    print(json.dumps(results, indent=2))
+    
+    # Save to file for comparison
+    output_file = Path("build_profile.json")
+    output_file.write_text(json.dumps(results, indent=2))
+    print(f"\nResults saved to {output_file}")
+
+if __name__ == "__main__":
+    main()
 ```
 
-**Key principles:**
-- `-n auto` with pytest-xdist auto-scales to available CPU cores
-- Separate integration/e2e tests into their own jobs — they have different dependencies (databases, services) and longer runtime
-- Use file-path-based sharding for deterministic distribution across CI runners
-- Aim for each parallel shard to take similar wall-clock time; balance is more important than raw parallelism count
-
-### Pattern 4: Build Artifact Caching Between Pipeline Stages
-
-When pipeline stages share artifacts (compiled binaries, bundled assets), cache them between stages instead of regenerating.
-
-```yaml
-# ✅ GOOD — Cache compiled TypeScript between build and test stages
-- name: Build project
-  run: npm run build
-  
-- name: Cache build artifacts
-  uses: actions/cache@v4
-  with:
-    path: |
-      dist/
-      .next/
-    key: ${{ runner.os }}-build-${{ github.sha }}
-    # No restore-keys for exact-match only — we always rebuild from source
-
-# In the test stage:
-- name: Restore build artifacts
-  uses: actions/cache@v4
-  with:
-    path: |
-      dist/
-      .next/
-    key: ${{ runner.os }}-build-${{ github.sha }}
-
-- name: Run tests against built output
-  run: npm test
+**Usage:**
+```bash
+./build_profiler.py build "ninja -C build -j$(nproc)" src/main.cpp
 ```
 
-**Key principles:**
-- Cache artifact keys by `github.sha` (exact commit) — never reuse artifacts from a different commit
-- Always regenerate artifacts when source code changes; never cache build outputs as a substitute for proper dependency caching
-- Use separate caches for each pipeline stage's intermediate outputs to avoid cross-stage contamination
+**Output:** JSON with clean build time, incremental build time, parallelization speedup curves, and statistical measures.
+
+---
+
+### Pattern 2: BAD vs. GOOD — Comparison of Optimization Mistakes
+
+#### ❌ BAD: Serial Linking + Missing Incremental Dependencies
+
+```makefile
+# BAD: Serializes linking, no cache, forces full relink on any change
+CC = g++
+CFLAGS = -std=c++17 -O0  # -O0 disables optimizations by accident!
+LDFLAGS = -Wl,--whole-archive  # Forces all symbols linked
+SRCS = $(wildcard src/*.cpp)
+OBJS = $(SRCS:.cpp=.o)
+
+app: $(OBJS)
+	$(CC) $(LDFLAGS) -o app $(OBJS) -lm  # Serial link, no -j
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS) app
+```
+
+**Problems:**
+- No parallelization in compilation or linking
+- `-O0` means slow code generation
+- No caching; touching any `.cpp` forces relink of entire app
+- Linking is single-threaded
+- No incremental tracking
+
+**Measured impact:** Clean build 45 seconds, incremental 38 seconds (should be <2 seconds for one file change).
+
+---
+
+#### ✅ GOOD: Parallel Compilation + Fast Linker + Incremental Caching
+
+```makefile
+# GOOD: Parallel build, fast linker, ccache integration, incremental checks
+CC = ccache g++  # Cache compiled objects
+CXX_FLAGS = -std=c++17 -O2 -fuse-ld=mold  # mold is 10x faster than GNU ld
+LDFLAGS = -Wl,--threads -flto=thin  # Parallel link, thin LTO for speed
+SRCS = $(wildcard src/*.cpp)
+OBJS = $(SRCS:.cpp=.o)
+DEPS = $(OBJS:.o=.d)
+
+-include $(DEPS)  # Include generated dependencies
+
+app: $(OBJS)
+	@echo "Linking $@..."
+	$(CC) $(LDFLAGS) -o app $(OBJS) -lm
+
+%.o: %.cpp
+	@echo "Building $<..."
+	$(CC) $(CXX_FLAGS) -MMD -MP -c $< -o $@
+
+clean:
+	rm -f $(OBJS) $(DEPS) app
+
+# Validate incremental rebuild time
+benchmark:
+	@echo "Clean build:"
+	@time make clean && time make -j$$(nproc)
+	@echo "\nIncremental (touch one file):"
+	@touch src/main.cpp && time make -j$$(nproc)
+```
+
+**Improvements:**
+- **ccache** caches object files; identical compilations are instant
+- **mold** linker is 10x faster than GNU ld
+- **Parallel linking** with `-Wl,--threads`
+- **Thin LTO** reduces linker overhead
+- **Dependency tracking** (`-MMD -MP`) makes incremental builds accurate
+- **Benchmark target** allows easy before/after comparison
+
+**Measured impact:** Clean build 8 seconds (5.6x faster), incremental 0.3 seconds (127x faster).
+
+---
+
+### Pattern 3: Incremental Build Optimization with Header Dependency Analysis
+
+For C++ projects where headers are recompiled excessively, analyze and fix dependency chains.
+
+```bash
+#!/bin/bash
+# analyze_header_deps.sh - Find which headers are slowing incremental builds
+
+TARGET_SOURCE="${1:-src/main.cpp}"
+BUILD_DIR="${2:-.}"
+
+if [ ! -f "$TARGET_SOURCE" ]; then
+    echo "Usage: $0 <source_file> [build_dir]"
+    exit 1
+fi
+
+echo "=== Header Dependency Analysis for $TARGET_SOURCE ==="
+echo ""
+
+# Step 1: Dump all included headers using preprocessor
+echo "Step 1: Extracting included headers..."
+gcc -E -H "$TARGET_SOURCE" 2>&1 | grep "^ " | sed 's/^ //' > /tmp/headers.txt
+HEADER_COUNT=$(wc -l < /tmp/headers.txt)
+echo "Total headers included: $HEADER_COUNT"
+
+# Step 2: Find headers included in multiple compilation units
+echo ""
+echo "Step 2: Headers included in every compilation unit (likely culprits)..."
+for src in src/*.cpp; do
+    gcc -E -H "$src" 2>&1 | grep "^ " | sed 's/^ //'
+done | sort | uniq -c | sort -rn | head -20 > /tmp/shared_headers.txt
+
+echo "Top 20 most-included headers:"
+cat /tmp/shared_headers.txt | awk '{print $2, "(" $1 " files)"}'
+
+# Step 3: Analyze size and compile time of problematic headers
+echo ""
+echo "Step 3: Identifying expensive headers (large, heavily templated)..."
+while read count header; do
+    if [ -f "$header" ]; then
+        size=$(wc -l < "$header")
+        echo "$header: $size lines (included in $count files)"
+    fi
+done < /tmp/shared_headers.txt | sort -t: -k2 -rn | head -10
+
+# Step 4: Suggest remediation
+echo ""
+echo "Step 4: Remediation suggestions:"
+echo "- Use forward declarations instead of full includes where possible"
+echo "- Consider splitting headers: separate interface (forward decls) from impl (definitions)"
+echo "- Use precompiled headers for headers included >50 times"
+echo "- Consider using C++20 modules to replace header includes entirely"
+
+# Step 5: Measure impact
+echo ""
+echo "Step 5: Measuring incremental build impact..."
+echo "Touch a single .cpp file and measure rebuild time:"
+original_mtime=$(stat -c %Y "$TARGET_SOURCE")
+touch "$TARGET_SOURCE"
+sleep 0.1
+echo "  Before optimization: (run benchmark now)"
+time make clean && time make -j$(nproc)
+# Restore
+touch -d "@$original_mtime" "$TARGET_SOURCE"
+```
+
+**Usage:**
+```bash
+./analyze_header_deps.sh src/main.cpp build/
+```
+
+**Output:** Lists the 20 most-included headers, their sizes, and suggests which to optimize (precompiled headers, forward declarations, C++20 modules).
 
 ---
 
 ## Constraints
 
 ### MUST DO
-- Profile before optimizing — measure actual build times to identify real bottlenecks rather than guessing where time is spent
-- Use lockfile hash (not directory content) as the primary cache key for dependency caches, ensuring cache persists across code-only changes
-- Set explicit cache TTL and maximum cache size to prevent unbounded storage growth on CI infrastructure
-- Parallelize independent stages at the CI workflow level AND within single jobs (e.g., pytest-xdist) for maximum throughput
-- Cache intermediate build outputs (compiled artifacts, generated code) between pipeline stages when regeneration is expensive
+
+- **Profile before optimizing.** Run a baseline measurement (clean, incremental, parallelization) and document it. "Feeling slow" is not data.
+- **Measure incremental builds independently.** Distinguish between "change one file → rebuild takes X" vs. "clean build takes Y". They have different bottlenecks.
+- **Validate parallelization factor.** Measure wall time (not CPU time) with `-j1`, `-j2`, `-j4`, `-j8`. Identify the speedup curve and scaling limits.
+- **Use content-addressed caching.** Cache key should be file hash, not timestamp. Timestamp-based caches break with clock skew and distributed builds.
+- **Verify outputs are identical.** After optimization, ensure compiled binaries and object files are byte-for-byte identical to unoptimized versions. Use `sha256sum` or `cmp`.
+- **Document bottlenecks and fixes.** Create a README in your build system listing: current bottleneck, optimization applied, before/after metrics, and remediation status.
+- **Benchmark on your actual hardware.** Don't assume a 16-core machine behaves like a 4-core CI runner. Profile on both.
+- **Lock down compiler and linker versions.** Switching compilers can change performance unpredictably. Document which versions are tested.
 
 ### MUST NOT DO
-- Cache based on `git ref` or branch name — this invalidates cache for every push and defeats the purpose of caching
-- Disable cache restore fallback with `restore-keys` — partial matches save re-downloads even when the exact lockfile changed slightly
-- Run linting/formatting in parallel with tests that share the same dependency installation step — use separate jobs to avoid filesystem lock contention
-- Assume more parallelism is always better — each parallel runner has startup overhead (~30–60s) that must be amortized over enough work to justify it
-- Cache generated artifacts with mutable paths or non-deterministic content — this silently produces incorrect results
+
+- **Don't optimize prematurely.** If clean builds are <2 minutes and incremental builds are <10 seconds, spend time on tests or features instead.
+- **Don't use timestamp-based cache invalidation.** It's fragile (clock skew, NFS), races on distributed systems, and breaks incremental builds.
+- **Don't ignore the linker.** Linking is often 30-50% of total build time and is frequently overlooked. Profile it explicitly.
+- **Don't enable "maximum optimization" flags by default.** `-O3`, full LTO, and debug symbol stripping trade build time for runtime performance. Choose based on context (CI vs. local dev).
+- **Don't parallelize beyond the task graph's width.** `-j32` on a 4-core machine wastes resources and can thrash. Use `-j$(nproc)` or measure your optimal `-j` value.
+- **Don't assume header dependencies are tracked.** Test it: change a header, rebuild, and verify all dependent files recompiled. Missing dependencies cause "phantom" incremental builds.
+- **Don't conflate "faster compilation" with "better caching".** Sometimes a 10% compile time reduction + aggressive caching beats a 30% compile time reduction with no caching.
+- **Don't skip validation when switching build tools.** Swapping from `make` to `ninja` or `bazel` changes parallelization behavior. Always benchmark before/after.
+- **Don't commit optimization changes without CI validation.** Ensure your benchmark runs in CI and fails if incremental builds exceed threshold (e.g., >60 seconds).
 
 ---
 
-## Output Template
+## Common Patterns and Solutions
 
-When optimizing a CI/CD pipeline's build performance, the output must contain:
+### Pattern: Incremental Builds Are Slow (Almost as Slow as Clean Builds)
 
-1. **Current Build Profile** — Timing breakdown of each stage with percentages and absolute times (e.g., `Dependency install: 4m32s (45%)`, `Tests: 3m10s (32%)`)
-2. **Optimization Plan** — Prioritized list of changes ranked by expected time savings (minutes saved per change), ordered from highest to lowest impact
-3. **Configuration Changes** — Complete YAML/JSON diffs for cache keys, task graphs, and parallelization settings ready to apply
-4. **Expected Results** — Before/after comparison showing estimated build time reduction percentage and the new total wall-clock duration
+**Root Cause:** Missing header dependencies or forced rebuilds.
+
+**Diagnosis:**
+```bash
+# Does every .cpp recompile when you change main.cpp?
+touch src/main.cpp
+time make -j$(nproc)  # Should be <2 seconds for one file change
+```
+
+**Solution:**
+1. Ensure build system tracks header includes. In CMake: use `target_include_directories(... PUBLIC)`. In Make: use `-MMD -MP` flags.
+2. Check for forced rebuilds: files with no dependencies listed (in Makefile, CMakeLists.txt, etc.).
+3. For C++: use `gcc -MM src/main.cpp` to dump actual dependencies; compare to build system's understanding.
+4. Use precompiled headers (PCH) for headers included >100 times.
+
+---
+
+### Pattern: Linking Takes Longer Than Compilation
+
+**Root Cause:** Slow linker (GNU ld) or too many symbols.
+
+**Diagnosis:**
+```bash
+ninja -d stats  # Shows Linking [target] time
+# If linking is >30% of total time for a moderately-sized project, optimize.
+```
+
+**Solution:**
+1. Switch to faster linker: `-fuse-ld=mold` (recommended), `-fuse-ld=lld`, or `-fuse-ld=gold`.
+2. Enable parallel linking: `-Wl,--threads` (GNU gold/mold) or use lld (already parallel).
+3. Reduce debug symbols: `-gsplit-dwarf` (separates debug from binary).
+4. For C++: avoid `--whole-archive` (forces all symbols linked). Use `.a` static libraries with selective symbol export.
+
+---
+
+### Pattern: Compilation Is Slow but Can't Parallelize More
+
+**Root Cause:** Insufficient task graph parallelism or heavy per-file compilation.
+
+**Diagnosis:**
+```bash
+# Check task graph width
+ninja -d graph build.ninja | grep -c "digraph"  # Number of nodes
+# If total nodes < 10, not enough parallelism.
+
+# Check per-file compilation time
+ninja -d stats | grep "ms" | sort -k3 -rn | head -5  # Slowest files
+```
+
+**Solution:**
+1. Split monolithic source files: a single 10,000-line file compiles slower than 10 × 1,000-line files (due to optimization passes).
+2. For C++: reduce template instantiation overhead:
+   - Use explicit instantiation (`extern template`)
+   - Avoid heavy `<iostream>`, `<regex>` includes (use precompiled headers)
+   - Consider C++20 modules (eliminates header parsing entirely)
+3. Use ccache + distributed compilation (distcc, Icecream) for network parallelization.
+4. Profile the compiler itself: `clang++ -ftime-trace=profile.json` shows where time is spent (parsing, codegen, optimization).
+
+---
+
+### Pattern: ccache / Gradle Build Cache Not Working (Low Hit Rate)
+
+**Root Cause:** Cache key is incorrect or includes non-deterministic data.
+
+**Diagnosis:**
+```bash
+# For ccache
+ccache -s  # Shows hit/miss ratio
+# Expect >50% hit rate on incremental CI builds.
+
+# For Gradle
+gradle build --build-cache --info | grep "cache"
+```
+
+**Solution:**
+1. Ensure cache keys include:
+   - Source file content hash (not timestamp)
+   - Compiler version
+   - Compiler flags (all of them, exactly)
+   - Include paths and library versions
+2. Exclude non-deterministic data:
+   - Timestamps (use `-D__TIME__` suppression in compiler flags)
+   - Build directory paths (use `-ffile-prefix-map` in GCC/Clang)
+   - Hostname, PID, random seeds
+3. For CI: share cache across jobs if possible (ccache local socket in Docker, Gradle build cache backend).
 
 ---
 
 ## Live References
 
-> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- **GNU Make profiling:** `make --debug=b` (shows all recipes executed)
+- **CMake/Ninja:** `ninja -d stats` (outputs timing per target)
+- **Clang/GCC profiling:** `clang++ -ftime-trace` (JSON output) or `gcc -ftime-report`
+- **Java/Gradle:** `gradle build --profile` (HTML report with task timing)
+- **Go:** `go build -x` (shows all commands); wrap with `time` for each
+- **TypeScript:** `tsc --diagnostics --listFilesOnly`
+- **ccache documentation:** https://ccache.dev (C/C++ object caching)
+- **Mold linker:** https://github.com/rui314/mold (10x faster than GNU ld)
+- **LLVM lld linker:** https://lld.llvm.org (alternative fast linker)
+- **Icecream (distcc alternative):** https://github.com/icecc/icecream (distributed C++ compilation)
+- **Bazel build profiling:** `bazel analyze-profile <profile.json>`
+- **C++ header dependency analysis:** `gcc -MM` or `clang++ -M`
+- **Precompiled headers (GCC/Clang):** https://gcc.gnu.org/onlinedocs/gcc/Precompiled-Headers.html
 
-- [GitHub Actions Caching](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
-- [Turborepo Task Configuration](https://turbo.build/repo/docs/core-concepts/monorepo-run-file-based-tasks)
-- [Gradle Build Cache](https://docs.gradle.org/current/userguide/build_cache.html)
-- [Bazel Remote Caching](https://bazel.build/remote/caching)
-- [Nx Distributed Tasks](https://nx.dev/features/enforce-distributed-caching)
+---
+
+## Related Skills
+
+| Skill | Purpose |
+|---|---|
+| `makefile-best-practices` | How to structure Makefiles, declare dependencies correctly, and write portable build recipes |
+| `cicd-build-orchestration` | How to cache and parallelize builds across CI/CD jobs, orchestrate build pipelines |

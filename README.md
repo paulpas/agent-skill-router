@@ -295,7 +295,7 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 09:34:23 UTC  
+> **Last updated:** 2026-05-27 09:38:16 UTC  
 > **Total skills:** 1102  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (1102 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
@@ -303,9 +303,9 @@ MIT — All skills are freely available and redistributable.
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1057 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1057 | Ranking penalty for conflicting query terms |
-| Response Profile | 1057 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1058 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1058 | Ranking penalty for conflicting query terms |
+| Response Profile | 1058 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -852,7 +852,7 @@ MIT — All skills are freely available and redistributable.
 | [box-api](skills/coding/box-api/SKILL.md) | Integrates with Box API to manage files, folders, collaborations, metadata, signatures, hubs, and AI features using the boxsdk Python SDK. | box api, box python, box sdk, box files, box folders, box collaboration, box sign, box metadata [tactical, generation] |
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. | braintree, braintree transactions, braintree vault, braintree subscriptions, braintree marketplace, 3d secure, braintree webhooks, how do i integrate braintree payments, paypal venmo integration [tactical, generation] |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | git branching strategies, git repository, git-branching-strategies, github, including, models, version control [tactical, generation] |
-| [build-performance-optimization](skills/coding/build-performance-optimization/SKILL.md) | Optimizes CI/CD build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning for production pipelines. | build optimization, build cache, incremental build, dependency caching, parallel builds, how do i make my build faster |
+| [build-performance-optimization](skills/coding/build-performance-optimization/SKILL.md) | Profiles, analyzes, and optimizes slow builds through bottleneck identification, incremental compilation strategies, intelligent caching, and parallelization techniques for C++, Java, Python, TypeScript, and Go projects. | build performance, compilation time, build profiling, incremental build, parallel build, bottleneck analysis, build cache, build speed [tactical, diagnostic] |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | makefile testing, build validation, phony target tests, continuous integration for builds, incremental build verification, dependency graph analysis, build reproducibility, make test suite, artifact verification [tactical, generation] |
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. | builder pattern, fluent interface, object construction, complex object, step-by-step construction, chained method calls, director pattern [tactical, generation] |
 | [bus](skills/coding/bus/SKILL.md) | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems | async, event bus, event-bus, events, typed, eventbridge, event routing [tactical, generation] |
@@ -1571,7 +1571,7 @@ MIT — All skills are freely available and redistributable.
 | [box-api](skills/coding/box-api/SKILL.md) | Coding | Integrates with Box API to manage files, folders, collaborations, metadata, signatures, hubs, and AI features using the boxsdk Python SDK. |
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Coding | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines |
-| [build-performance-optimization](skills/coding/build-performance-optimization/SKILL.md) | Coding | Optimizes CI/CD build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning for production pipelines. |
+| [build-performance-optimization](skills/coding/build-performance-optimization/SKILL.md) | Coding | Profiles, analyzes, and optimizes slow builds through bottleneck identification, incremental compilation strategies, intelligent caching, and parallelization techniques for C++, Java, Python, TypeScript, and Go projects. |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. |
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Coding | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. |
 | [bus](skills/coding/bus/SKILL.md) | Coding | "Async pub/sub event bus with typed events, mixed sync/async dispatch" and singleton initialization for trading systems |
@@ -2755,7 +2755,7 @@ MIT — All skills are freely available and redistributable.
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Coding | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. | Implementation |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | Implementation |
 | [build](skills/agent/build/SKILL.md) | Agent | Implements intelligent build with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
-| [build-performance-optimization](skills/coding/build-performance-optimization/SKILL.md) | Coding | Optimizes CI/CD build times through dependency caching strategies, incremental compilation, build parallelization, artifact reuse, and runner infrastructure tuning for production pipelines. | Implementation |
+| [build-performance-optimization](skills/coding/build-performance-optimization/SKILL.md) | Coding | Profiles, analyzes, and optimizes slow builds through bottleneck identification, incremental compilation strategies, intelligent caching, and parallelization techniques for C++, Java, Python, TypeScript, and Go projects. | Implementation |
 | [build-test-validation](skills/coding/build-test-validation/SKILL.md) | Coding | Validates Makefile-based builds through automated test suites, dependency analysis, CI/CD integration, and reproducibility checks to ensure reliable software construction. | Implementation |
 | [builder-pattern](skills/coding/builder-pattern/SKILL.md) | Coding | Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration. | Implementation |
 | [buildpacks](skills/cncf/buildpacks/SKILL.md) | Cncf | "Provides Buildpacks in Cloud-Native Engineering - Turn source code into container images without Dockerfiles" | Reference |
