@@ -87,7 +87,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 285 | AI orchestration, routing, task decomposition |
 | CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 502 | Software patterns, security, testing, data science |
+| Coding | 503 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
@@ -295,9 +295,9 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 14:28:33 UTC  
-> **Total skills:** 1101  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1101 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 09:34:23 UTC  
+> **Total skills:** 1102  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1102 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
@@ -783,7 +783,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (502 skills)
+### Coding (503 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -864,6 +864,7 @@ MIT — All skills are freely available and redistributable.
 | [chain-of-responsibility](skills/coding/chain-of-responsibility/SKILL.md) | Implements the GoF Chain of Responsibility pattern for building middleware-style request handler pipelines in Python where each handler processes or forwards requests along a configurable chain. | chain of responsibility pattern, middleware pipeline python, request handler chain, how do i pass requests through handlers, error propagation pipeline, sequential processing chain |
 | [chroma](skills/coding/chroma/SKILL.md) | Integrates Chroma vector database (collections, embeddings, query, metadata filtering, persistence) using the chromadb Python SDK for local and server-based vector search. | chroma, chromadb, vector database, embedding store, similarity search, chroma collection, how do i use chroma, local vector search [tactical, generation] |
 | [ci-cd-pipeline-design](skills/coding/ci-cd-pipeline-design/SKILL.md) | Implements modern CI/CD pipeline architectures (GitHub Actions, GitLab CI, ArgoCD) with security gates, artifact management, and zero-downtime deployment strategies for production systems. | CI/CD pipeline, continuous integration, continuous deployment, github actions, gitlab ci, build automation, artifact management, security scanning, canary deployment, blue-green deployment, SLSA provenance, container registry, ArgoCD, Helm charts [tactical, strategic] |
+| [cicd-build-orchestration](skills/coding/cicd-build-orchestration/SKILL.md) | Orchestrates builds in CI/CD pipelines with multi-stage builds, artifact caching, containerized builds, build matrices, parallel execution, and automated deployment strategies (GitHub Actions, GitLab CI, Jenkins) for efficient and reliable software d... | CI/CD pipeline, build artifact, docker build, matrix build, caching, deployment pipeline, github actions, build orchestration, artifact management, containerized builds, parallel builds |
 | [circleci-api](skills/coding/circleci-api/SKILL.md) | Integrates with the CircleCI REST API v2 to manage pipelines, workflows, jobs, contexts, environment variables, project settings, and orb configurations. | circleci api, circleci python, circleci pipelines, circleci workflows, circleci orb, circleci contexts, circleci jobs, circleci v2 api [tactical, generation] |
 | [classification-metrics](skills/coding/classification-metrics/SKILL.md) | "Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics" | classification metrics, precision, recall, F1-score, ROC-AUC, confusion matrix [tactical, generation] |
 | [clean-architecture](skills/coding/clean-architecture/SKILL.md) | Designs software using Robert C. Martin's Clean Architecture concentric layers (Entities, Use Cases, Interface Adapters, Frameworks) with strict dependency rules and boundary contracts for framework-independent business logic. | clean architecture, robert martin, uncle bob, entity layer, use case layer, interface adapter, dependency rule, framework independence, hexagonal vs clean, bounded entities, port architecture [strategic, tactical] |
@@ -1485,7 +1486,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (681 skills)
+### Implementation (Build Features) (682 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1585,6 +1586,7 @@ MIT — All skills are freely available and redistributable.
 | [chain-of-responsibility](skills/coding/chain-of-responsibility/SKILL.md) | Coding | Implements the GoF Chain of Responsibility pattern for building middleware-style request handler pipelines in Python where each handler processes or forwards requests along a configurable chain. |
 | [chroma](skills/coding/chroma/SKILL.md) | Coding | Integrates Chroma vector database (collections, embeddings, query, metadata filtering, persistence) using the chromadb Python SDK for local and server-based vector search. |
 | [ci-cd-pipeline-design](skills/coding/ci-cd-pipeline-design/SKILL.md) | Coding | Implements modern CI/CD pipeline architectures (GitHub Actions, GitLab CI, ArgoCD) with security gates, artifact management, and zero-downtime deployment strategies for production systems. |
+| [cicd-build-orchestration](skills/coding/cicd-build-orchestration/SKILL.md) | Coding | Orchestrates builds in CI/CD pipelines with multi-stage builds, artifact caching, containerized builds, build matrices, parallel execution, and automated deployment strategies (GitHub Actions, GitLab CI, Jenkins) for efficient and reliable software d... |
 | [cicd-pipeline-debugging](skills/agent/cicd-pipeline-debugging/SKILL.md) | Agent | Debugging patterns for GitHub Actions, GitLab CI, Jenkins and other CI/CD systems including log analysis, runner issues, cache problems, and workflow optimization |
 | [cicd-pipeline-troubleshooting](skills/agent/cicd-pipeline-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves CI/CD pipeline failures with actionable debugging commands for GitHub Actions, GitLab CI, and build optimization patterns. |
 | [circleci-api](skills/coding/circleci-api/SKILL.md) | Coding | Integrates with the CircleCI REST API v2 to manage pipelines, workflows, jobs, contexts, environment variables, project settings, and orb configurations. |
@@ -2783,6 +2785,7 @@ MIT — All skills are freely available and redistributable.
 | [ci-cd-pipeline-analyzer](skills/agent/ci-cd-pipeline-analyzer/SKILL.md) | Agent | Implements intelligent ci cd pipeline analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ci-cd-pipeline-design](skills/coding/ci-cd-pipeline-design/SKILL.md) | Coding | Implements modern CI/CD pipeline architectures (GitHub Actions, GitLab CI, ArgoCD) with security gates, artifact management, and zero-downtime deployment strategies for production systems. | Implementation |
 | [cicd-automation-workflow-automate](skills/agent/cicd-automation-workflow-automate/SKILL.md) | Agent | Implements intelligent cicd automation workflow automate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [cicd-build-orchestration](skills/coding/cicd-build-orchestration/SKILL.md) | Coding | Orchestrates builds in CI/CD pipelines with multi-stage builds, artifact caching, containerized builds, build matrices, parallel execution, and automated deployment strategies (GitHub Actions, GitLab CI, Jenkins) for efficient and reliable software d... | Implementation |
 | [cicd-pipeline-debugging](skills/agent/cicd-pipeline-debugging/SKILL.md) | Agent | Debugging patterns for GitHub Actions, GitLab CI, Jenkins and other CI/CD systems including log analysis, runner issues, cache problems, and workflow optimization | Implementation |
 | [cicd-pipeline-troubleshooting](skills/agent/cicd-pipeline-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves CI/CD pipeline failures with actionable debugging commands for GitHub Actions, GitLab CI, and build optimization patterns. | Implementation |
 | [cilium](skills/cncf/cilium/SKILL.md) | Cncf | "Cilium in Cloud Native Network - cloud native architecture, patterns" pitfalls, and best practices | Reference |
