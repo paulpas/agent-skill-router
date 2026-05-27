@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-27T05:36:48.507287Z",
-  "totalSkills": 1079,
+  "generatedAt": "2026-05-27T06:00:19.932373Z",
+  "totalSkills": 1082,
   "domains": {
     "agent": 283,
     "cncf": 173,
-    "coding": 487,
+    "coding": 490,
     "electrical-engineering": 2,
     "go": 12,
     "java": 1,
@@ -17,7 +17,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 661,
+    "implementation": 664,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -22711,6 +22711,30 @@
       "source": "skills/coding/splunk-api/SKILL.md"
     },
     {
+      "name": "spring-boot-auto-config",
+      "domain": "coding",
+      "description": "Implements Spring Boot auto-configuration mechanics, externalized config binding with @ConfigurationProperties, custom starter development with conditional annotations, and Actuator endpoint customization for production-ready applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "auto configuration",
+        "application properties",
+        "spring profiles",
+        "custom starter",
+        "conditional beans",
+        "actuator endpoints",
+        "@configurationproperties",
+        "externalized config"
+      ],
+      "relatedSkills": [
+        "spring-security-core",
+        "spring-data-jpa"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/spring-boot-auto-config/SKILL.md"
+    },
+    {
       "name": "spring-boot-core",
       "domain": "coding",
       "description": "Implements Spring Boot 3.x core patterns including dependency injection, auto-configuration, RESTful API design with Record DTOs, profile-based configuration, and Actuator monitoring for production-grade Java applications.",
@@ -22741,6 +22765,55 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/spring-boot-core/SKILL.md"
+    },
+    {
+      "name": "spring-data-jpa",
+      "domain": "coding",
+      "description": "Implements Spring Data JPA repository interfaces, derived query methods, JPQL/native @Query annotations, transaction management with rollback rules, pagination with Pageable, and N+1 query optimization using EntityGraph or JOIN FETCH.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "spring data jpa",
+        "repository pattern",
+        "entity mapping",
+        "jpql queries",
+        "transaction management",
+        "pagination sorting",
+        "n plus one problem",
+        "@entitygraph",
+        "derived queries"
+      ],
+      "relatedSkills": [
+        "spring-boot-auto-config",
+        "spring-security-core"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/spring-data-jpa/SKILL.md"
+    },
+    {
+      "name": "spring-security-core",
+      "domain": "coding",
+      "description": "Implements Spring Security 6.x filter chain configuration, JWT authentication filters, method-level security with @EnableMethodSecurity, password encoding, and CORS/CSRF handling for production Spring Boot applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "spring security",
+        "jwt authentication",
+        "security filter chain",
+        "method security",
+        "password encoder",
+        "cors csrf",
+        "authorization rules",
+        "spring security core"
+      ],
+      "relatedSkills": [
+        "spring-boot-auto-config",
+        "spring-data-jpa"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/spring-security-core/SKILL.md"
     },
     {
       "name": "sql-database",
