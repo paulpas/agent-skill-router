@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1079 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1079 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1079 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1079 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1079 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1079 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1079 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1079 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1079 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1079 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1079 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1079 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1079 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1079 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1079 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1079 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -137,7 +137,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Linux | 16 | System administration, kernel tuning, security, networking |
 | Maker | 3 | DIY projects, IoT, home automation, 3D printing |
 | Programming | 7 | Algorithms, frameworks, language references |
-| Trading | 89 | Execution, risk management, ML models |
+| Trading | 90 | Execution, risk management, ML models |
 | Writing | 4 | Technical writing, style guidance |
 <<<<<<< HEAD
 | Coding | 471 | Software patterns, security, testing, data science |
@@ -332,17 +332,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 05:21:10 UTC  
-> **Total skills:** 1078  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1078 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 00:36:22 UTC  
+> **Total skills:** 1079  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1079 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1039 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1039 | Ranking penalty for conflicting query terms |
-| Response Profile | 1039 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1040 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1040 | Ranking penalty for conflicting query terms |
+| Response Profile | 1040 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -1392,7 +1392,7 @@ MIT — All skills are freely available and redistributable.
 | [v12-learning](skills/programming/v12-learning/SKILL.md) | "Reference guide for Progress OpenEdge ABL 12.7 (2023) — v10→v12 migration" INT64, ENUM, VAR shorthand, CATCH/THROW/FINALLY, JSON support, generic collections, safe navigation operator, server-side joins | abl v12, openedge 12, abl 12.7, v10 to v12 migration, abl migration, catch throw, jsonobject, read-json [educational] |
 
 
-### Trading (89 skills)
+### Trading (90 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1451,6 +1451,7 @@ MIT — All skills are freely available and redistributable.
 | [regime-classification](skills/trading/regime-classification/SKILL.md) | "Provides Detect current market regime for adaptive trading strategies" | ai regime classification, ai-regime-classification, current, detect, market [tactical] |
 | [regime-detection](skills/trading/regime-detection/SKILL.md) | "Provides Market Regime Detection Systems for Adaptive Trading Strategies" | adaptive, market, systems, technical regime detection, technical-regime-detection [tactical] |
 | [reinforcement-learning](skills/trading/reinforcement-learning/SKILL.md) | "Provides Reinforcement Learning for automated trading agents and policy optimization" | agents, ai reinforcement learning, ai-reinforcement-learning, automated, trading [tactical] |
+| [risk-kelly-criterion](skills/trading/risk-kelly-criterion/SKILL.md) | Calculates optimal position sizing using Kelly Criterion and Fractional Kelly formulas to maximize geometric growth while controlling drawdown risk in algorithmic trading systems. | kelly criterion, fractional kelly, position sizing, optimal f, bet sizing, geometric growth, edge calculation, bankroll management [tactical] |
 | [risk-management-basics](skills/trading/risk-management-basics/SKILL.md) | "Position sizing, stop-loss implementation, and system-level risk controls" to preserve capital | fundamentals risk management basics, fundamentals-risk-management-basics, position, sizing, stop-loss [tactical] |
 | [sentiment-analysis](skills/trading/sentiment-analysis/SKILL.md) | "AI-powered sentiment analysis for news, social media, and political figures" in trading | ai sentiment analysis, ai-powered, ai-sentiment-analysis, media, social [tactical] |
 | [sentiment-features](skills/trading/sentiment-features/SKILL.md) | "Provides Extract market sentiment from news, social media, and analyst reports" | ai sentiment features, ai-sentiment-features, extract, market, social [tactical] |
@@ -1499,7 +1500,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (660 skills)
+### Implementation (Build Features) (661 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2012,6 +2013,7 @@ MIT — All skills are freely available and redistributable.
 | [rest-api-versioning-strategies](skills/coding/rest-api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies including URL path versioning, Accept header media type versioning, deprecation headers with Sunset and Deprecation, and backward-compatible contract evolution for REST APIs. |
 | [review](skills/coding/review/SKILL.md) | Coding | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback |
 | [review](skills/coding/review/SKILL.md) | Coding | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance |
+| [risk-kelly-criterion](skills/trading/risk-kelly-criterion/SKILL.md) | Trading | Calculates optimal position sizing using Kelly Criterion and Fractional Kelly formulas to maximize geometric growth while controlling drawdown risk in algorithmic trading systems. |
 | [risk-management-basics](skills/trading/risk-management-basics/SKILL.md) | Trading | "Position sizing, stop-loss implementation, and system-level risk controls" to preserve capital |
 | [rollback-procedures](skills/cncf/rollback-procedures/SKILL.md) | Cncf | Implements comprehensive rollback procedures including deployment rollback, version rollback, database rollback, and rollback testing for Kubernetes and cloud-native applications |
 | [rollback-strategy](skills/cncf/rollback-strategy/SKILL.md) | Cncf | Designs and implements rollback strategies with data-aware rollback procedures, partial rollback capabilities, and automated rollback triggers for safe deployment recovery. |
@@ -3441,6 +3443,7 @@ MIT — All skills are freely available and redistributable.
 | [rest-api-versioning-strategies](skills/coding/rest-api-versioning-strategies/SKILL.md) | Coding | Implements API versioning strategies including URL path versioning, Accept header media type versioning, deprecation headers with Sunset and Deprecation, and backward-compatible contract evolution for REST APIs. | Implementation |
 | [review](skills/coding/review/SKILL.md) | Coding | "Analyzes code diffs and files to identify bugs, security vulnerabilities" code smells, and architectural concerns, producing a structured review report with prioritized, actionable feedback | Implementation |
 | [review](skills/coding/review/SKILL.md) | Coding | "Security-focused code review identifying vulnerabilities like injection" XSS, insecure deserialization, and misconfigurations, with remediation guidance | Implementation |
+| [risk-kelly-criterion](skills/trading/risk-kelly-criterion/SKILL.md) | Trading | Calculates optimal position sizing using Kelly Criterion and Fractional Kelly formulas to maximize geometric growth while controlling drawdown risk in algorithmic trading systems. | Implementation |
 | [risk-management-basics](skills/trading/risk-management-basics/SKILL.md) | Trading | "Position sizing, stop-loss implementation, and system-level risk controls" to preserve capital | Implementation |
 | [rollback-procedures](skills/cncf/rollback-procedures/SKILL.md) | Cncf | Implements comprehensive rollback procedures including deployment rollback, version rollback, database rollback, and rollback testing for Kubernetes and cloud-native applications | Implementation |
 | [rollback-strategy](skills/cncf/rollback-strategy/SKILL.md) | Cncf | Designs and implements rollback strategies with data-aware rollback procedures, partial rollback capabilities, and automated rollback triggers for safe deployment recovery. | Implementation |
