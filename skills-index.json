@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-26T23:48:53.805937Z",
-  "totalSkills": 1067,
+  "generatedAt": "2026-05-27T01:34:36.371972Z",
+  "totalSkills": 1071,
   "domains": {
-    "agent": 280,
+    "agent": 283,
     "cncf": 173,
-    "coding": 481,
+    "coding": 482,
     "electrical-engineering": 2,
     "go": 12,
     "linux": 16,
@@ -15,7 +15,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 649,
+    "implementation": 653,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -8425,6 +8425,67 @@
       "source": "skills/coding/dry-principles/SKILL.md"
     },
     {
+      "name": "dsl-engineering",
+      "domain": "coding",
+      "description": "Designs and implements domain-specific languages (embedded DSLs with Python/Go idioms, external DSLs with PEG/ANTLR/Lark parsers) for configuration, query, and rule engines in production systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dsl design",
+        "domain-specific language",
+        "embedded dsl",
+        "external dsl",
+        "parser generator",
+        "peg grammar",
+        "antlr",
+        "lark",
+        "ast transformation",
+        "query language",
+        "configuration language",
+        "how do i create a custom language"
+      ],
+      "relatedSkills": [
+        "coding-api-design",
+        "coding-testing-patterns",
+        "coding-code-validation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/dsl-engineering/SKILL.md"
+    },
+    {
+      "name": "durable-execution",
+      "domain": "agent",
+      "description": "Implements durable execution patterns for fault-tolerant AI agent workflows including checkpoint-based persistence, exponential backoff retry, idempotency keys, and crash recovery strategies across LangGraph, Temporal, and generic async frameworks.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "durable execution",
+        "checkpointing",
+        "crash recovery",
+        "idempotency",
+        "retry strategy",
+        "exponential backoff",
+        "state persistence",
+        "fault tolerance",
+        "workflow resume",
+        "temporal",
+        "replay detection",
+        "atomic commits",
+        "saga pattern",
+        "circuit breaker"
+      ],
+      "relatedSkills": [
+        "langgraph-state-machine",
+        "tool-use-function-calling",
+        "multi-agent-orchestration",
+        "agent-reliability-engineering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/durable-execution/SKILL.md"
+    },
+    {
       "name": "dynamic-replanner",
       "domain": "agent",
       "description": "Implements intelligent dynamic replanner with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -14024,6 +14085,37 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/langgraph-implementation/SKILL.md"
+    },
+    {
+      "name": "langgraph-state-machine",
+      "domain": "agent",
+      "description": "Implements LangGraph state machine architecture with typed state graphs, conditional routing, checkpoint-based persistence, and human-in-the-loop interrupt patterns for building deterministic AI agent workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "langgraph",
+        "state machine",
+        "StateGraph",
+        "checkpointing",
+        "time travel",
+        "human in the loop",
+        "graph workflow",
+        "node edges",
+        "typed state",
+        "interrupt resume",
+        "durable execution",
+        "agent workflow",
+        "state transitions"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "multi-agent-orchestration",
+        "langgraph",
+        "durable-execution"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/langgraph-state-machine/SKILL.md"
     },
     {
       "name": "lima",
@@ -23022,6 +23114,38 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/structured-logging/SKILL.md"
+    },
+    {
+      "name": "structured-output-validation",
+      "domain": "agent",
+      "description": "Implements structured output patterns for AI agent systems including Pydantic model validation, JSON Schema generation, function calling contracts, response parsing with retry loops, and schema evolution for reliable agent-to-agent communication.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "structured output",
+        "Pydantic validation",
+        "JSON Schema",
+        "function calling",
+        "response parsing",
+        "typed responses",
+        "output contract",
+        "tool schema",
+        "LLM output parsing",
+        "structured extraction",
+        "schema evolution",
+        "output validation",
+        "response format",
+        "constrained decoding"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "langgraph-state-machine",
+        "multi-agent-orchestration",
+        "prompt-engineering-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/structured-output-validation/SKILL.md"
     },
     {
       "name": "subagent-driven-development",
