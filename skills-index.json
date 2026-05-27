@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-27T05:21:08.306856Z",
-  "totalSkills": 1078,
+  "generatedAt": "2026-05-27T05:36:48.507287Z",
+  "totalSkills": 1079,
   "domains": {
     "agent": 283,
     "cncf": 173,
@@ -12,12 +12,12 @@
     "linux": 16,
     "maker": 3,
     "programming": 7,
-    "trading": 89,
+    "trading": 90,
     "writing": 4
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 660,
+    "implementation": 661,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -20458,6 +20458,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/security-review/SKILL.md"
+    },
+    {
+      "name": "risk-kelly-criterion",
+      "domain": "trading",
+      "description": "Calculates optimal position sizing using Kelly Criterion and Fractional Kelly formulas to maximize geometric growth while controlling drawdown risk in algorithmic trading systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "kelly criterion",
+        "fractional kelly",
+        "position sizing",
+        "optimal f",
+        "bet sizing",
+        "geometric growth",
+        "edge calculation",
+        "bankroll management"
+      ],
+      "relatedSkills": [
+        "risk-stop-loss",
+        "risk-position-sizing",
+        "risk-kill-switches"
+      ],
+      "version": "1.0.0",
+      "source": "skills/trading/risk-kelly-criterion/SKILL.md"
     },
     {
       "name": "risk-management-basics",
