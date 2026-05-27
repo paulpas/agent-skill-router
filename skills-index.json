@@ -1,24 +1,26 @@
 {
-  "generatedAt": "2026-05-27T20:31:01.018745Z",
-  "totalSkills": 1102,
+  "generatedAt": "2026-05-27T20:57:45.999569Z",
+  "totalSkills": 1120,
   "domains": {
     "agent": 285,
+    "architecture": 4,
     "cncf": 176,
-    "coding": 503,
+    "coding": 515,
     "electrical-engineering": 2,
-    "go": 12,
+    "go": 13,
     "java": 1,
     "kotlin": 1,
     "linux": 18,
     "maker": 3,
     "programming": 7,
-    "trading": 90,
+    "software": 2,
+    "trading": 93,
     "writing": 4
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 682,
-    "reference": 173,
+    "implementation": 699,
+    "reference": 174,
     "information": 1,
     "review": 8
   },
@@ -2050,6 +2052,27 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/architectural-modernization/SKILL.md"
+    },
+    {
+      "name": "architectural-patterns",
+      "domain": "coding",
+      "description": "Provides a thorough overview of software architectural patterns, including layers, microservices, event-driven architectures, and more.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "architectural patterns",
+        "microservices",
+        "event-driven",
+        "service-oriented architecture",
+        "layered architecture"
+      ],
+      "relatedSkills": [
+        "coding-design-principles",
+        "coding-software-engineering-basics"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/architectural-patterns/SKILL.md"
     },
     {
       "name": "architectural-review",
@@ -7649,31 +7672,6 @@
       "source": "skills/coding/design-patterns-and-principles/SKILL.md"
     },
     {
-      "name": "design-patterns-architecture",
-      "domain": "coding",
-      "description": "Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "design patterns",
-        "GoF",
-        "SOLID",
-        "DRY",
-        "YAGNI",
-        "architecture",
-        "creational patterns",
-        "structural patterns"
-      ],
-      "relatedSkills": [
-        "coding/refactoring",
-        "coding/code-review",
-        "coding/test-driven-development"
-      ],
-      "version": "1.0.0",
-      "source": "skills/coding/design-patterns-architecture/SKILL.md"
-    },
-    {
       "name": "design-systems",
       "domain": "coding",
       "description": "Implements production design systems with design token architecture, component theming, accessibility standards, documentation patterns, and cross-platform consistency for scalable UI ecosystems.",
@@ -9215,24 +9213,20 @@
     {
       "name": "event-driven-architecture",
       "domain": "coding",
-      "description": "Implements event-driven architecture patterns (pub/sub messaging, message queues, saga coordination, dead letter queues, outbox pattern, async processing) for building decoupled, scalable distributed systems.",
-      "role": "implementation",
+      "description": "Discusses event-driven architecture patterns, including event sourcing, CQRS, and message-driven communication.",
+      "role": "reference",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "event-driven architecture",
-        "pub/sub messaging",
-        "saga pattern",
-        "dead letter queue",
-        "outbox pattern",
-        "how do i decouple services",
-        "async message processing",
-        "distributed messaging"
+        "event-driven",
+        "message queues",
+        "event sourcing",
+        "CQRS",
+        "microservices"
       ],
       "relatedSkills": [
-        "microservice-resilience-patterns",
-        "event-sourcing-pattern",
-        "observability-patterns"
+        "architectural-patterns",
+        "microservices-pattern"
       ],
       "version": "1.0.0",
       "source": "skills/coding/event-driven-architecture/SKILL.md"
@@ -11306,6 +11300,28 @@
       "source": "skills/cncf/gcp-gke/SKILL.md"
     },
     {
+      "name": "go-concurrency",
+      "domain": "go",
+      "description": "Implements concurrency patterns in Go programming using goroutines and channels along with insights on the Go standard library and module system.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "goroutines",
+        "channels",
+        "go standard library",
+        "go modules",
+        "concurrency patterns",
+        "how to use goroutines"
+      ],
+      "relatedSkills": [
+        "go-error-handling",
+        "go-testing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/go/concurrency/SKILL.md"
+    },
+    {
       "name": "go-concurrency-patterns",
       "domain": "go",
       "description": "Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications.",
@@ -11377,6 +11393,45 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/gof-design-patterns-catalog/SKILL.md"
+    },
+    {
+      "name": "gof-singleton-pattern",
+      "domain": "architecture",
+      "description": "Implements the Singleton design pattern ensuring a class has only one instance while providing a global point of access to it.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "singleton pattern",
+        "ensure single instance",
+        "global access",
+        "gof patterns"
+      ],
+      "relatedSkills": [
+        "gof-factory-pattern",
+        "gof-strategy-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/architecture/gof-singleton-pattern/SKILL.md"
+    },
+    {
+      "name": "gof-strategy-pattern",
+      "domain": "architecture",
+      "description": "Implements the Strategy design pattern allowing the definition of a family of algorithms, encapsulating each one, and making them interchangeable.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "strategy pattern",
+        "encapsulate algorithms",
+        "interchangeable algorithms",
+        "gof patterns"
+      ],
+      "relatedSkills": [
+        "gof-factory-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/architecture/gof-strategy-pattern/SKILL.md"
     },
     {
       "name": "google-analytics-automation",
@@ -11625,26 +11680,21 @@
     {
       "name": "graphql-api-design",
       "domain": "coding",
-      "description": "Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs.",
+      "description": "Implements best practices for designing GraphQL APIs, focusing on schema design, query optimization, and resolver implementation.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "graphql",
-        "apollo federation",
-        "dataloader",
-        "n+1 query",
-        "query complexity",
-        "graphql schema",
-        "graphql authorization",
-        "how do i design a graphql api"
+        "api design",
+        "schema definition",
+        "resolver implementation",
+        "query optimization",
+        "documentation"
       ],
       "relatedSkills": [
-        "graphql-federation",
-        "graphql-subscriptions",
-        "graphql-dataloader-pattern",
-        "graphql-schema-design",
-        "graphql-error-handling-validation"
+        "coding-api-best-practices",
+        "coding-error-handling"
       ],
       "version": "1.0.0",
       "source": "skills/coding/graphql-api-design/SKILL.md"
@@ -13319,6 +13369,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/jakarta-testing/SKILL.md"
+    },
+    {
+      "name": "java-kotlin-best-practices",
+      "domain": "coding",
+      "description": "Implements best practices for Java/Kotlin applications using Spring Boot, leveraging Maven/Gradle, JVM tuning, and Jakarta EE patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "java best practices",
+        "kotlin best practices",
+        "spring boot",
+        "maven",
+        "gradle",
+        "jvm tuning",
+        "jakarta ee"
+      ],
+      "relatedSkills": [
+        "java-security-best-practices",
+        "kotlin-coroutines"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/java-kotlin-best-practices/SKILL.md"
     },
     {
       "name": "java-virtual-threads",
@@ -15729,6 +15802,31 @@
       "source": "skills/coding/memoization-cache-patterns/SKILL.md"
     },
     {
+      "name": "memory-management-and-concurrency",
+      "domain": "coding",
+      "description": "Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "memory management",
+        "smart pointers",
+        "RAII",
+        "CMake",
+        "concurrency",
+        "multithreading",
+        "thread safety",
+        "synchronization primitives"
+      ],
+      "relatedSkills": [
+        "coding-testing",
+        "coding-debugging",
+        "coding-performance-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/memory-management-and-concurrency/SKILL.md"
+    },
+    {
       "name": "memory-systems",
       "domain": "agent",
       "description": "Implements conversation memory patterns (bounded buffers, auto-summarization, vector-backed long-term storage) for AI agent context management and factual recall.",
@@ -16016,6 +16114,27 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/microservices-architecture/SKILL.md"
+    },
+    {
+      "name": "microservices-pattern",
+      "domain": "coding",
+      "description": "Implements microservices architecture patterns, including service discovery, inter-service communication, and data management techniques.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "microservices",
+        "service discovery",
+        "inter-service communication",
+        "domain-driven design",
+        "data management"
+      ],
+      "relatedSkills": [
+        "architectural-patterns",
+        "coding-api-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/microservices-pattern/SKILL.md"
     },
     {
       "name": "microsoft-graph-api",
@@ -18508,29 +18627,6 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/parallel-skill-runner/SKILL.md"
-    },
-    {
-      "name": "patterns",
-      "domain": "coding",
-      "description": "\"Provides Software architecture patterns including MVC, MVVM, microservices, event-driven, CQRS, DDD, hexagonal architecture, layered architecture, and pattern\"",
-      "role": "reference",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "architectural patterns",
-        "system design",
-        "architecture",
-        "microservices",
-        "design patterns",
-        "CQRS",
-        "DDD",
-        "hexagonal architecture"
-      ],
-      "relatedSkills": [
-        "code-quality-policies"
-      ],
-      "version": "1.0.0",
-      "source": "skills/coding/architectural-patterns/SKILL.md"
     },
     {
       "name": "patterns",
@@ -21098,6 +21194,30 @@
       "source": "skills/agent/runtime-log-analyzer/SKILL.md"
     },
     {
+      "name": "rust-skills-software-engineering",
+      "domain": "coding",
+      "description": "Implements software engineering skills for Rust programming, covering key aspects including the ownership model, async/await, Cargo package manager, and unsafe code practices. Each section provides guidance, examples, and constraints for using these features effectively.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "rust",
+        "ownership model",
+        "async/await",
+        "cargo",
+        "unsafe code",
+        "memory safety"
+      ],
+      "relatedSkills": [
+        "coding/rust/ownership-model",
+        "coding/rust/async-await",
+        "coding/rust/cargo",
+        "coding/rust/unsafe-code"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rust-skills-software-engineering/SKILL.md"
+    },
+    {
       "name": "s3",
       "domain": "cncf",
       "description": "\"Configures S3 object storage with versioning, lifecycle policies, encryption\" and access controls for durable, scalable data storage with cost optimization in AWS.",
@@ -22809,6 +22929,111 @@
       "source": "skills/coding/software-architecture-design/SKILL.md"
     },
     {
+      "name": "software-architecture-event-driven",
+      "domain": "coding",
+      "description": "Implements event-driven architecture, detailing event sourcing, message brokers, and consumer strategies for handling events efficiently.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "event-driven",
+        "event sourcing",
+        "message broker",
+        "event-driven patterns"
+      ],
+      "relatedSkills": [
+        "software-architecture-microservices",
+        "software-architecture-monolith",
+        "software-architecture-hexagonal"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-architecture-event-driven/SKILL.md"
+    },
+    {
+      "name": "software-architecture-hexagonal",
+      "domain": "coding",
+      "description": "Guides the implementation of hexagonal (ports and adapters) architecture, focusing on best practices for decoupling business logic from external concerns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "hexagonal architecture",
+        "ports and adapters",
+        "hexagonal design patterns"
+      ],
+      "relatedSkills": [
+        "software-architecture-microservices",
+        "software-architecture-monolith",
+        "software-architecture-event-driven"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-architecture-hexagonal/SKILL.md"
+    },
+    {
+      "name": "software-architecture-microservices",
+      "domain": "coding",
+      "description": "Implements strategies for designing, developing, and deploying microservices architecture. Offers guidance on best practices, patterns, and anti-patterns for microservices.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "microservices",
+        "service-oriented architecture",
+        "microservices design",
+        "microservices patterns"
+      ],
+      "relatedSkills": [
+        "software-architecture-monolith",
+        "software-architecture-event-driven",
+        "software-architecture-hexagonal"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-architecture-microservices/SKILL.md"
+    },
+    {
+      "name": "software-architecture-monolith",
+      "domain": "coding",
+      "description": "Guides the design and implementation of monolithic architecture, focusing on best practices and pitfalls in monolithic systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "monolith",
+        "monolithic architecture",
+        "monolith design",
+        "monolith patterns"
+      ],
+      "relatedSkills": [
+        "software-architecture-microservices",
+        "software-architecture-event-driven",
+        "software-architecture-hexagonal"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-architecture-monolith/SKILL.md"
+    },
+    {
+      "name": "software-architecture-overview",
+      "domain": "software",
+      "description": "Provides a comprehensive understanding of modern software architecture patterns, including microservices, serverless, and event-driven architectures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "microservices",
+        "serverless",
+        "event-driven",
+        "architecture patterns",
+        "scalability",
+        "software design"
+      ],
+      "relatedSkills": [
+        "software-development-lifecycle",
+        "software-testing-best-practices"
+      ],
+      "version": "1.0.0",
+      "source": "skills/software/software-architecture-overview/SKILL.md"
+    },
+    {
       "name": "software-architecture-patterns",
       "domain": "coding",
       "description": "Implements proven software architecture patterns (CQRS, Event Sourcing, Hexagonal/Clean Architecture, layered architecture, DDD aggregates) for building maintainable enterprise systems.",
@@ -22927,6 +23152,28 @@
       "source": "skills/coding/software-development-lifecycle/SKILL.md"
     },
     {
+      "name": "software-development-lifecycle",
+      "domain": "software",
+      "description": "Covers the complete software development lifecycle (SDLC) including analysis, design, development, testing, deployment, and maintenance.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "software development lifecycle",
+        "SDLC",
+        "Agile",
+        "DevOps",
+        "Waterfall",
+        "project management"
+      ],
+      "relatedSkills": [
+        "software-architecture-overview",
+        "software-testing-best-practices"
+      ],
+      "version": "1.0.0",
+      "source": "skills/software/software-development-lifecycle/SKILL.md"
+    },
+    {
       "name": "software-documentation",
       "domain": "coding",
       "description": "Writes authoritative technical documentation (API references, inline docstrings, READMEs, developer guides) using modern standards like OpenAPI 3.1, Google/NumPy docstring formats, and MkDocs/Docusaurus static site generators.",
@@ -23008,6 +23255,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/software-error-handling/SKILL.md"
+    },
+    {
+      "name": "software-incident-response",
+      "domain": "coding",
+      "description": "Handles production incidents with systematic root-cause analysis, incident response procedures, communication protocols, and post-incident learning to minimize downtime and prevent recurrence.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "incident response",
+        "root cause analysis",
+        "production troubleshooting",
+        "post-mortem",
+        "how do i respond to incidents",
+        "production failures",
+        "incident management"
+      ],
+      "relatedSkills": [
+        "production-readiness",
+        "observability-patterns",
+        "observability-engineering",
+        "systematic-debugging"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/software-incident-response/SKILL.md"
     },
     {
       "name": "software-maintainability",
@@ -23131,6 +23403,25 @@
       "source": "skills/coding/solid-anti-patterns/SKILL.md"
     },
     {
+      "name": "solid-ocp-pattern",
+      "domain": "architecture",
+      "description": "Implements the Open/Closed Principle (OCP) from SOLID design principles, allowing classes to be open for extension but closed for modification.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "open closed principle",
+        "solid principles",
+        "extend",
+        "modify"
+      ],
+      "relatedSkills": [
+        "solid-srp-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/architecture/solid-ocp-pattern/SKILL.md"
+    },
+    {
       "name": "solid-principles",
       "domain": "coding",
       "description": "Implements the five SOLID OOP design principles (SRP, OCP, LSP, ISP, DIP) with Python-specific patterns using Protocols, singledispatch, and explicit dependency injection.",
@@ -23160,6 +23451,24 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/solid-principles/SKILL.md"
+    },
+    {
+      "name": "solid-srp-pattern",
+      "domain": "architecture",
+      "description": "Implements the Single Responsibility Principle (SRP) from SOLID, ensuring a class has one reason to change.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "single responsibility principle",
+        "solid principles",
+        "gof patterns"
+      ],
+      "relatedSkills": [
+        "solid-ocp-pattern"
+      ],
+      "version": "1.0.0",
+      "source": "skills/architecture/solid-srp-pattern/SKILL.md"
     },
     {
       "name": "spiffe",
@@ -23348,6 +23657,25 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/azure-sql-database/SKILL.md"
+    },
+    {
+      "name": "sql-mastery",
+      "domain": "coding",
+      "description": "Implements methods for mastering SQL through query optimization, effective indexing, and understanding execution plans with practical examples.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "sql mastery",
+        "query optimization",
+        "indexing",
+        "execution plans"
+      ],
+      "relatedSkills": [
+        "database-admin"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/sql-mastery/SKILL.md"
     },
     {
       "name": "sql-substitution",
@@ -24988,6 +25316,27 @@
       "source": "skills/trading/fundamentals-trading-edge/SKILL.md"
     },
     {
+      "name": "trading-options-strategies",
+      "domain": "trading",
+      "description": "Implements various options trading strategies including covered calls, protective puts, straddles, and strangles to optimize trading performance.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "covered calls",
+        "protective puts",
+        "straddles",
+        "strangles",
+        "options trading"
+      ],
+      "relatedSkills": [
+        "trading-risk-management",
+        "trading-technical-analysis"
+      ],
+      "version": "1.0.0",
+      "source": "skills/trading/options-strategies/SKILL.md"
+    },
+    {
       "name": "trading-plan",
       "domain": "trading",
       "description": "\"Implements trading plan structure and risk management framework for risk management and algorithmic trading execution.\"",
@@ -25348,6 +25697,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/typescript-intersection-types/SKILL.md"
+    },
+    {
+      "name": "typescript-node-monorepos",
+      "domain": "coding",
+      "description": "Implements software engineering skills for TypeScript/JavaScript in Node.js, focusing on ESM/CJS and monorepos using Turborepo/Nx.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "typescript",
+        "javascript",
+        "nodejs",
+        "esmodules",
+        "cjs",
+        "monorepos",
+        "turborepo",
+        "nx"
+      ],
+      "relatedSkills": [
+        "coding-esm-cjs"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/typescript-node-monorepos/SKILL.md"
     },
     {
       "name": "update-framework-tuf",
