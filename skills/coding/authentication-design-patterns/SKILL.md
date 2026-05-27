@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: JWT authentication, OAuth 2.0, session management, MFA TOTP, API key auth, password hashing, Bcrypt Argon2, token refresh, bearer token, authentication design, how do i implement auth, security tokens
+  triggers: JWT authentication, OAuth 2.0, session management, MFA TOTP, API key auth, password hashing, token refresh, how do i implement auth
   archetypes:
     - tactical
     - strategic
@@ -20,7 +20,6 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  content-types: [code, guidance, config, do-dont]
   related-skills: api-gateway-patterns,spring-security-core,websocket-security
 ---
 
@@ -397,15 +396,42 @@ def verify_password(stored_hash: str, password: str) -> bool:
 
 
 def _update_password_in_database(old_hash: str, new_hash: str) -> None:
-    """Update a password hash in the database.
+    """Update a password hash in the database atomically.
 
-    This is a stub for the actual database update call. In production, this
-    should be a single atomic UPDATE statement using the user's primary key.
-    Never batch-update multiple users' passwords - only update when verified
-    during active authentication.
+    Production implementation pattern using SQLAlchemy-style direct SQL execution.
+    Uses optimistic concurrency control: the WHERE clause matches both the user's
+    primary key AND their current hash value, ensuring atomicity without explicit
+    transactions. If another request updated the password concurrently (returning 0 rows),
+    an IntegrityError is raised to signal a race condition.
+
+    Args:
+        old_hash: The previously stored hash value used as a concurrency guard.
+        new_hash: The new Argon2id hash to store.
+
+    Raises:
+        IntegrityError: If the password was changed by another concurrent request
+            (old_hash no longer matches, meaning someone else updated it first).
     """
-    # db.execute("UPDATE users SET password_hash = ? WHERE hash = ?", (new_hash, old_hash))
-    pass
+    from sqlalchemy.exc import IntegrityError
+
+    session = SessionLocal()
+    try:
+        result = session.execute(
+            "UPDATE users SET password_hash = :new_hash WHERE id = :user_id AND password_hash = :old_hash",
+            {"new_hash": new_hash, "user_id": _get_current_user_id(), "old_hash": old_hash},
+        )
+        if result.rowcount == 0:
+            raise IntegrityError(
+                "UPDATE users SET password_hash = :new_hash WHERE id = :user_id AND password_hash = :old_hash",
+                {"new_hash": new_hash, "user_id": _get_current_user_id(), "old_hash": old_hash},
+                None,
+            )
+        session.commit()
+    except Exception:
+        session.rollback()
+        raise
+    finally:
+        session.close()
 ```
 
 ### Pattern 3: Secure Session Cookie Configuration
@@ -553,7 +579,7 @@ def generate_totp_secret() -> str:
     return base64.b32encode(__import__("os").urandom(20)).decode("ascii").rstrip("=")
 
 
-def generate_totp_code(secret_b32: str, time_step: int | None = None) -> str:
+def generate_totp_code(secret_b32: str, time_step: int | None = None, digits: int = 6) -> str:
     """Generate a TOTP code for the current or specified time step.
 
     Implements RFC 6238 Section 5 (TOTP Algorithm):
@@ -567,6 +593,7 @@ def generate_totp_code(secret_b32: str, time_step: int | None = None) -> str:
         secret_b32: Base32-encoded shared secret (the value stored in the authenticator app).
         time_step: Optional specific time step index (for testing or back-dating).
             If None, uses current Unix time divided by period.
+        digits: Number of digits in the output code. Must be 6–8.
 
     Returns:
         A zero-padded numeric string of length `digits` (default "123456").
@@ -588,9 +615,9 @@ def generate_totp_code(secret_b32: str, time_step: int | None = None) -> str:
     code_int = struct.unpack(">I", hmac_digest[offset:offset + 4])[0]
     code_int &= 0x7FFFFFFF  # Mask to 31 bits
 
-    # Generate N-digit code
-    code = code_int % (10 ** 6)  # Always use 6 digits for comparison
-    return str(code).zfill(6)
+    # Generate N-digit code using configurable digits parameter
+    code = code_int % (10 ** digits)
+    return str(code).zfill(digits)
 
 
 def verify_totp_code(secret_b32: str, code: str, options: TOTPOptions | None = None) -> bool:
@@ -619,7 +646,7 @@ def verify_totp_code(secret_b32: str, code: str, options: TOTPOptions | None = N
 
     # Check current step and drift window (past + future)
     for offset in range(-opts.allowed_drift, opts.allowed_drift + 1):
-        expected = generate_totp_code(secret_b32, time_step=base_step + offset)
+        expected = generate_totp_code(secret_b32, time_step=base_step + offset, digits=opts.digits)
         if hmac.compare_digest(expected, code):
             return True
 
