@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1082 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1082 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1082 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1082 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1082 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1082 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1082 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1082 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1082 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1082 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1082 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1082 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1082 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1082 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1082 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1082 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -134,7 +134,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
 | Kotlin | 1 |  |
-| Linux | 16 | System administration, kernel tuning, security, networking |
+| Linux | 17 | System administration, kernel tuning, security, networking |
 | Maker | 3 | DIY projects, IoT, home automation, 3D printing |
 | Programming | 7 | Algorithms, frameworks, language references |
 | Trading | 90 | Execution, risk management, ML models |
@@ -332,17 +332,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 06:00:21 UTC  
-> **Total skills:** 1082  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1082 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 06:18:17 UTC  
+> **Total skills:** 1083  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1083 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1043 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1043 | Ranking penalty for conflicting query terms |
-| Response Profile | 1043 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1044 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1044 | Ranking penalty for conflicting query terms |
+| Response Profile | 1044 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -1351,10 +1351,11 @@ MIT — All skills are freely available and redistributable.
 | [modern-kotlin](skills/kotlin/modern-kotlin/SKILL.md) | Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications. | kotlin coroutines, sealed interfaces, data classes, kotlinx serialization, context receivers, how do i write modern kotlin, suspend function [tactical, educational] |
 
 
-### Linux (16 skills)
+### Linux (17 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
+| [boot-sequence](skills/linux/boot-sequence/SKILL.md) | Implements step-by-step diagnosis and optimization of the modern Linux boot process from UEFI through GRUB, initramfs, and systemd target initialization for production servers. | boot process, systemd, grub2, initramfs, uefi boot, slow startup, boot troubleshooting, secure boot, linux boot, boot optimization [tactical, diagnostic] |
 | [cloud-linux-engineering](skills/linux/cloud-linux-engineering/SKILL.md) | Engineers Linux systems for cloud-native environments with cloud-init bootstrapping, IMDSv2 security, ephemeral lifecycle management, spot instance handling, and cloud observability integration. | cloud-init, IMDSv2, ephemeral instance, cloud metadata, spot instance, user-data, instance metadata, cloud observability, cloud SSH keys, instance lifecycle [tactical] |
 | [grub-uefi-bootloader](skills/linux/grub-uefi-bootloader/SKILL.md) | Configures GRUB2 bootloader for UEFI firmware boot processes including ESP management, Secure Boot signing, multi-boot setups, kernel parameters, and bootloader recovery procedures. | grub2, UEFI boot, Secure Boot, EFI System Partition, bootloader recovery, how do i repair bootloader, efibootmgr, GRUB configuration, dual boot, shim signing [tactical] |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. | hardware provisioning, instance sizing, RAID configuration, SSD, cloud instance, on-prem hardware, disk sizing, CPU architecture [tactical] |
@@ -1503,7 +1504,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (664 skills)
+### Implementation (Build Features) (665 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1583,6 +1584,7 @@ MIT — All skills are freely available and redistributable.
 | [bitbucket-api](skills/coding/bitbucket-api/SKILL.md) | Coding | Integrates with Bitbucket Cloud and Bitbucket Data Center REST APIs via atlassian-python-api to manage repositories, pull requests, pipelines, webhooks, and workspace settings. |
 | [bitwise-masks](skills/coding/bitwise-masks/SKILL.md) | Coding | Implements bitwise operations (&, |, ^, <<, >>) for flag management, permission bitmasking, and state tracking across C++, Python, and Rust. |
 | [blue-green-deployment](skills/cncf/blue-green-deployment/SKILL.md) | Cncf | Implements blue-green deployment strategies with traffic switching, state management, and rollback capabilities to achieve zero-downtime releases. |
+| [boot-sequence](skills/linux/boot-sequence/SKILL.md) | Linux | Implements step-by-step diagnosis and optimization of the modern Linux boot process from UEFI through GRUB, initramfs, and systemd target initialization for production servers. |
 | [box-api](skills/coding/box-api/SKILL.md) | Coding | Integrates with Box API to manage files, folders, collaborations, metadata, signatures, hubs, and AI features using the boxsdk Python SDK. |
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Coding | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines |
@@ -2746,6 +2748,7 @@ MIT — All skills are freely available and redistributable.
 | [blob-storage](skills/cncf/blob-storage/SKILL.md) | Cncf | Provides Object storage with versioning, lifecycle policies, and integration to other Azure services | Reference |
 | [blue-green-deployment](skills/cncf/blue-green-deployment/SKILL.md) | Cncf | Implements blue-green deployment strategies with traffic switching, state management, and rollback capabilities to achieve zero-downtime releases. | Implementation |
 | [blueprint](skills/agent/blueprint/SKILL.md) | Agent | Implements intelligent blueprint with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [boot-sequence](skills/linux/boot-sequence/SKILL.md) | Linux | Implements step-by-step diagnosis and optimization of the modern Linux boot process from UEFI through GRUB, initramfs, and systemd target initialization for production servers. | Implementation |
 | [box-api](skills/coding/box-api/SKILL.md) | Coding | Integrates with Box API to manage files, folders, collaborations, metadata, signatures, hubs, and AI features using the boxsdk Python SDK. | Implementation |
 | [braintree-api](skills/coding/braintree-api/SKILL.md) | Coding | Implements Braintree API integration (Transactions, Vault, Subscriptions, Marketplace) using braintree Python SDK with 3D Secure verification, webhook signature validation, payment method tokenization, and PayPal/Venmo payment processing patterns. | Implementation |
 | [branching-strategies](skills/coding/branching-strategies/SKILL.md) | Coding | "Git branching models including Git Flow, GitHub Flow, Trunk-Based Development" and feature flag strategies for CI/CD pipelines | Implementation |
