@@ -97,7 +97,15 @@ def parse_skill(skill_dir: Path) -> Optional[Dict]:
     metadata = metadata_dict.get("metadata", {})
     domain = metadata.get("domain", "unknown")
     role = metadata.get("role", "unknown")
-    triggers = metadata.get("triggers", "")
+    triggers_raw = metadata.get("triggers", "")
+
+    # Extract triggers from frontmatter (supports both YAML array and comma-separated string)
+    if isinstance(triggers_raw, list):
+        triggers = ", ".join(str(t).strip() for t in triggers_raw if str(t).strip())
+    elif isinstance(triggers_raw, str):
+        triggers = triggers_raw
+    else:
+        triggers = ""
 
     # Extract archetypes from frontmatter (supports both YAML array and comma-separated string)
     archetypes_raw = metadata.get("archetypes", "")
