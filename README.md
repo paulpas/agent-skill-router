@@ -100,7 +100,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Trading | 91 | Execution, risk management, ML models |
 | Writing | 4 | Technical writing, style guidance |
 <<<<<<< HEAD
-| Coding | 495 | Software patterns, security, testing, data science |
+| Coding | 496 | Software patterns, security, testing, data science |
 =======
 | Coding | 496 | Software patterns, security, testing, data science |
 >>>>>>> c19c83151 (feat: add coding/solid-principles skill)
@@ -297,9 +297,15 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
+<<<<<<< HEAD
 > **Last updated:** 2026-05-27 15:30:16 UTC  
 > **Total skills:** 1118  
 > **Canonical catalog:** [`skills-index.json`](skills-index.json) (1118 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+=======
+> **Last updated:** 2026-05-27 14:39:08 UTC  
+> **Total skills:** 1102  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1102 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+>>>>>>> 8e2e28126400871ccb5c45934d2318be389c052f
 
 ## Advanced Routing Field Coverage
 
