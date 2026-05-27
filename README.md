@@ -3,21 +3,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1076 skills across 10 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1078 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +34,21 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1076 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1078 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -132,6 +132,8 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Coding | 487 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
+| Java | 1 |  |
+| Kotlin | 1 |  |
 | Linux | 16 | System administration, kernel tuning, security, networking |
 | Maker | 3 | DIY projects, IoT, home automation, 3D printing |
 | Programming | 7 | Algorithms, frameworks, language references |
@@ -330,17 +332,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 04:10:30 UTC  
-> **Total skills:** 1076  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1076 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 05:21:10 UTC  
+> **Total skills:** 1078  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1078 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1038 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1038 | Ranking penalty for conflicting query terms |
-| Response Profile | 1038 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1039 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1039 | Ranking penalty for conflicting query terms |
+| Response Profile | 1039 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -1332,6 +1334,20 @@ MIT — All skills are freely available and redistributable.
 | [web-applications](skills/go/web-applications/SKILL.md) | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. | go web, go http, go router, go middleware, go rest api, go templates, go websocket [tactical] |
 
 
+### Java (1 skills)
+
+| Skill Name | Description | Triggers |
+|---|---|---|
+| [modern-java](skills/java/modern-java/SKILL.md) | Implements modern Java language features (JDK 21–26) including virtual threads, pattern matching switch expressions, records, sequenced collections, and scoped values for production application development. | virtual threads, pattern matching switch, record patterns, sequenced collections, scoped values, foreign function memory api, how do i write modern java |
+
+
+### Kotlin (1 skills)
+
+| Skill Name | Description | Triggers |
+|---|---|---|
+| [modern-kotlin](skills/kotlin/modern-kotlin/SKILL.md) | Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications. | kotlin coroutines, sealed interfaces, data classes, kotlinx serialization, context receivers, how do i write modern kotlin, suspend function [tactical, educational] |
+
+
 ### Linux (16 skills)
 
 | Skill Name | Description | Triggers |
@@ -1483,7 +1499,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (658 skills)
+### Implementation (Build Features) (660 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1873,6 +1889,8 @@ MIT — All skills are freely available and redistributable.
 | [model-selection](skills/coding/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" |
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' |
 | [modern-architecture-patterns](skills/coding/modern-architecture-patterns/SKILL.md) | Coding | Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems. |
+| [modern-java](skills/java/modern-java/SKILL.md) | Java | Implements modern Java language features (JDK 21–26) including virtual threads, pattern matching switch expressions, records, sequenced collections, and scoped values for production application development. |
+| [modern-kotlin](skills/kotlin/modern-kotlin/SKILL.md) | Kotlin | Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications. |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. |
 | [modern-python-packaging](skills/coding/modern-python-packaging/SKILL.md) | Coding | Configures modern Python packaging with uv, hatchling, pyproject.toml, and dependency resolution for reproducible builds in 2025+. |
 | [modern-software-development-workflows](skills/coding/modern-software-development-workflows/SKILL.md) | Coding | Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery. |
@@ -3236,6 +3254,8 @@ MIT — All skills are freely available and redistributable.
 | [model-selection](skills/coding/model-selection/SKILL.md) | Coding | "Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques" | Implementation |
 | [models](skills/coding/models/SKILL.md) | Coding | "'Pydantic frozen data models for trading: enums, annotated constraints" field/model validators, and computed properties' | Implementation |
 | [modern-architecture-patterns](skills/coding/modern-architecture-patterns/SKILL.md) | Coding | Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems. | Implementation |
+| [modern-java](skills/java/modern-java/SKILL.md) | Java | Implements modern Java language features (JDK 21–26) including virtual threads, pattern matching switch expressions, records, sequenced collections, and scoped values for production application development. | Implementation |
+| [modern-kotlin](skills/kotlin/modern-kotlin/SKILL.md) | Kotlin | Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications. | Implementation |
 | [modern-language-comparison](skills/coding/modern-language-comparison/SKILL.md) | Coding | Evaluates and compares modern programming languages using performance benchmarks, safety guarantees, developer experience metrics, ecosystem maturity, and deployment characteristics to guide language selection decisions. | Reference |
 | [modern-python-development](skills/coding/modern-python-development/SKILL.md) | Coding | Implements modern Python 3.10+ development practices including structural union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx async patterns, and pyproject.toml-based project structure with uv. | Implementation |
 | [modern-python-packaging](skills/coding/modern-python-packaging/SKILL.md) | Coding | Configures modern Python packaging with uv, hatchling, pyproject.toml, and dependency resolution for reproducible builds in 2025+. | Implementation |

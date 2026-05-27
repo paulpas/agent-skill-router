@@ -1,12 +1,14 @@
 {
-  "generatedAt": "2026-05-27T04:10:28.780462Z",
-  "totalSkills": 1076,
+  "generatedAt": "2026-05-27T05:21:08.306856Z",
+  "totalSkills": 1078,
   "domains": {
     "agent": 283,
     "cncf": 173,
     "coding": 487,
     "electrical-engineering": 2,
     "go": 12,
+    "java": 1,
+    "kotlin": 1,
     "linux": 16,
     "maker": 3,
     "programming": 7,
@@ -15,7 +17,7 @@
   },
   "roles": {
     "orchestration": 237,
-    "implementation": 658,
+    "implementation": 660,
     "reference": 173,
     "information": 1,
     "review": 7
@@ -15907,6 +15909,55 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/modern-architecture-patterns/SKILL.md"
+    },
+    {
+      "name": "modern-java",
+      "domain": "java",
+      "description": "Implements modern Java language features (JDK 21–26) including virtual threads, pattern matching switch expressions, records, sequenced collections, and scoped values for production application development.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "virtual threads",
+        "pattern matching switch",
+        "record patterns",
+        "sequenced collections",
+        "scoped values",
+        "foreign function memory api",
+        "how do i write modern java"
+      ],
+      "relatedSkills": [
+        "java-virtual-threads",
+        "go-concurrency-patterns",
+        "coding-code-review"
+      ],
+      "version": "1.0.0",
+      "source": "skills/java/modern-java/SKILL.md"
+    },
+    {
+      "name": "modern-kotlin",
+      "domain": "kotlin",
+      "description": "Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "kotlin coroutines",
+        "sealed interfaces",
+        "data classes",
+        "kotlinx serialization",
+        "context receivers",
+        "how do i write modern kotlin",
+        "suspend function"
+      ],
+      "relatedSkills": [
+        "kotlin-coroutines-fundamentals",
+        "kotlin-serialization-patterns",
+        "kotlin-context-receivers",
+        "kotlin-jvm-interop"
+      ],
+      "version": "1.0.0",
+      "source": "skills/kotlin/modern-kotlin/SKILL.md"
     },
     {
       "name": "modern-language-comparison",
