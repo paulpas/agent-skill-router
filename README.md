@@ -3,21 +3,39 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+<<<<<<< HEAD
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
 =======
-**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1083 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+=======
+**An AI skill routing system that automatically selects and injects the right expertise into your AI's context.** With 1085 skills across 12 domains and built-in compression, the router delivers expert knowledge without manual commands.
+>>>>>>> 41fe37308 (feat: add maven-build-system and gradle-build-system skills)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -34,21 +52,39 @@ Full expert skills injected into context — AI answers as expert reviewer
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+<<<<<<< HEAD
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
 =======
-- 🎯 **1083 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+=======
+- 🎯 **1085 Skills** across 10 domains (Agent, CNCF, Coding, Electrical Engineering, Go, Linux, Maker, Programming, Trading, Writing)
+>>>>>>> 41fe37308 (feat: add maven-build-system and gradle-build-system skills)
 >>>>>>> b430d6464 (feat: add new skills - dlq-retry-patterns and eventual-consistency-patterns)
 >>>>>>> a88c75a25 (feat: add 3 engineering skills — data-engineering-architecture, software-architecture-patterns, ml-ai-engineering-deployment)
 >>>>>>> 4ef6965d5 (feat: add five new AI agent framework skills)
@@ -129,7 +165,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 |--------|-------|-------|
 | Agent | 283 | AI orchestration, routing, task decomposition |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 490 | Software patterns, security, testing, data science |
+| Coding | 492 | Software patterns, security, testing, data science |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
 | Go | 12 | Go idioms, concurrency patterns, error handling |
 | Java | 1 |  |
@@ -332,17 +368,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 06:18:17 UTC  
-> **Total skills:** 1083  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1083 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 01:42:26 UTC  
+> **Total skills:** 1085  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1085 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1044 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1044 | Ranking penalty for conflicting query terms |
-| Response Profile | 1044 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1046 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1046 | Ranking penalty for conflicting query terms |
+| Response Profile | 1046 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -815,7 +851,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (490 skills)
+### Coding (492 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1047,6 +1083,7 @@ MIT — All skills are freely available and redistributable.
 | [google-cloud-sdk](skills/coding/google-cloud-sdk/SKILL.md) | Integrates Google Cloud services (Compute Engine, Cloud Storage, BigQuery, Cloud Functions, GKE, Pub/Sub) using the Google Cloud Python client libraries with authentication and resource patterns. | google cloud sdk, gcp python, cloud storage, bigquery, compute engine, pub sub, how do i use google cloud from python [tactical, generation] |
 | [google-maps-api](skills/coding/google-maps-api/SKILL.md) | Implements Google Maps Platform API integration (Geocoding, Directions, Places, Distance Matrix, Time Zone, Elevation, using googlemaps Python SDK with API key authentication, address geocoding, route calculation, place search, distance matrix, and G... | google maps, google maps api, googlemaps, geocoding, directions api, places api, distance matrix, how do i integrate with google maps, map integration [tactical, generation] |
 | [google-workspace-api](skills/coding/google-workspace-api/SKILL.md) | Integrates with Google Workspace APIs (Gmail, Drive, Calendar, Docs, Sheets, Admin) using google-api-python-client for programmatic access and automation. | google workspace, gmail api, google drive api, google calendar, google sheets api, google api client, service account [tactical, generation] |
+| [gradle-build-system](skills/coding/gradle-build-system/SKILL.md) | Implements Gradle build configurations (Kotlin DSL, version catalogs, multi-project builds, dependency locking, configuration cache) for Java and Kotlin projects. | gradle, build.gradle.kts, gradle kotlin dsl, version catalog, dependency locking, configuration cache, gradle daemon, java plugin, multi project build, libs.versions.toml, declarative plugins block [tactical, generation] |
 | [gradle-build-tool](skills/coding/gradle-build-tool/SKILL.md) | Implements Gradle build configurations including Kotlin DSL, version catalogs, configuration cache, multi-project builds, convention plugins, and dependency management for Java/Kotlin/Android applications. | gradle, build.gradle.kts, version catalog, configuration cache, kotlin dsl, how do i fix gradle conflicts, how do i set up java project build, buildSrc, incremental builds [tactical, generation] |
 | [grafana-prometheus](skills/coding/grafana-prometheus/SKILL.md) | Implements Grafana and Prometheus integration (metrics collection, querying, alerting rules, Grafana dashboards as code, PromQL patterns, and Grafana HTTP API for dashboard management, using prometheus-api-client and grafana-api Python SDKs. | prometheus, promql queries, grafana dashboards, alerting rules, prometheus metrics, grafana api, how do i query prometheus metrics, monitoring as code [tactical, generation] |
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. | graphql, apollo federation, dataloader, n+1 query, query complexity, graphql schema, graphql authorization, how do i design a graphql api [tactical, generation] |
@@ -1107,6 +1144,7 @@ MIT — All skills are freely available and redistributable.
 | [manager](skills/coding/manager/SKILL.md) | "WebSocket connection manager with state machine (connecting/connected/reconnecting/error)" exponential backoff, and message routing | connection, machine, ml, state, websocket manager, websocket-manager, machine learning, ai [tactical, generation] |
 | [mapbox-api](skills/coding/mapbox-api/SKILL.md) | Implements Mapbox API integration (Geocoding, Directions, Maps, Search, using mapbox-sdk Python SDK with access token authentication, forward/reverse geocoding, route calculation, static maps, isochrones, map tiles, and Mapbox REST API patterns. | mapbox, mapbox api, mapbox-sdk, mapbox geocoding, mapbox directions, mapbox static maps, mapbox isochrones, how do i integrate with mapbox, map integration [tactical, generation] |
 | [marketo-api](skills/coding/marketo-api/SKILL.md) | Implements Marketo API integration (REST, SOAP, Lead Database, Activities, Campaigns, using requests with OAuth 2.0 authentication, lead CRUD, bulk import/export, trigger campaigns, and Marketo REST API patterns. | marketo, marketo api, marketo rest, adobe marketo, marketo leads, marketo activities, marketo campaigns, how do i integrate with marketo, marketing automation [tactical, generation] |
+| [maven-build-system](skills/coding/maven-build-system/SKILL.md) | Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects. | maven, pom.xml, mvn command, java build tool, dependency management, maven central, plugin management, build lifecycle, mvnw, effective-pom, BOM, bill of materials, maven profiles [tactical, generation] |
 | [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. | maven, pom.xml, mvn command, dependency management, how do i fix maven conflicts, how do i manage java dependencies, reactor build, BOM, plugin management [tactical, generation] |
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models | maximum likelihood, MLE, likelihood estimation, likelihood function, optimization, performance, speed [tactical, generation] |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. | mcp, model context protocol, mcp server, fastmcp, mcp tools, mcp resources, how do i build an mcp server, mcp python sdk [tactical, generation] |
@@ -1504,7 +1542,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (665 skills)
+### Implementation (Build Features) (667 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1779,6 +1817,7 @@ MIT — All skills are freely available and redistributable.
 | [google-cloud-sdk](skills/coding/google-cloud-sdk/SKILL.md) | Coding | Integrates Google Cloud services (Compute Engine, Cloud Storage, BigQuery, Cloud Functions, GKE, Pub/Sub) using the Google Cloud Python client libraries with authentication and resource patterns. |
 | [google-maps-api](skills/coding/google-maps-api/SKILL.md) | Coding | Implements Google Maps Platform API integration (Geocoding, Directions, Places, Distance Matrix, Time Zone, Elevation, using googlemaps Python SDK with API key authentication, address geocoding, route calculation, place search, distance matrix, and G... |
 | [google-workspace-api](skills/coding/google-workspace-api/SKILL.md) | Coding | Integrates with Google Workspace APIs (Gmail, Drive, Calendar, Docs, Sheets, Admin) using google-api-python-client for programmatic access and automation. |
+| [gradle-build-system](skills/coding/gradle-build-system/SKILL.md) | Coding | Implements Gradle build configurations (Kotlin DSL, version catalogs, multi-project builds, dependency locking, configuration cache) for Java and Kotlin projects. |
 | [gradle-build-tool](skills/coding/gradle-build-tool/SKILL.md) | Coding | Implements Gradle build configurations including Kotlin DSL, version catalogs, configuration cache, multi-project builds, convention plugins, and dependency management for Java/Kotlin/Android applications. |
 | [grafana-prometheus](skills/coding/grafana-prometheus/SKILL.md) | Coding | Implements Grafana and Prometheus integration (metrics collection, querying, alerting rules, Grafana dashboards as code, PromQL patterns, and Grafana HTTP API for dashboard management, using prometheus-api-client and grafana-api Python SDKs. |
 | [graphql-api-design](skills/coding/graphql-api-design/SKILL.md) | Coding | Implements production GraphQL API design: schema modeling, DataLoader batching, query complexity limits, auth directives, cursor pagination, and Apollo Federation for microservice graphs. |
@@ -1870,6 +1909,7 @@ MIT — All skills are freely available and redistributable.
 | [market-regimes](skills/trading/market-regimes/SKILL.md) | Trading | "Market regime detection and adaptation for trading systems across changing" market conditions. |
 | [market-structure](skills/trading/market-structure/SKILL.md) | Trading | "Implements market structure and trading participants analysis for risk management and algorithmic trading execution." |
 | [marketo-api](skills/coding/marketo-api/SKILL.md) | Coding | Implements Marketo API integration (REST, SOAP, Lead Database, Activities, Campaigns, using requests with OAuth 2.0 authentication, lead CRUD, bulk import/export, trigger campaigns, and Marketo REST API patterns. |
+| [maven-build-system](skills/coding/maven-build-system/SKILL.md) | Coding | Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects. |
 | [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Coding | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. |
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models |
 | [mcp-protocol](skills/coding/mcp-protocol/SKILL.md) | Coding | Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration. |
@@ -3078,6 +3118,7 @@ MIT — All skills are freely available and redistributable.
 | [google-drive-automation](skills/agent/google-drive-automation/SKILL.md) | Agent | Implements intelligent google drive automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [google-maps-api](skills/coding/google-maps-api/SKILL.md) | Coding | Implements Google Maps Platform API integration (Geocoding, Directions, Places, Distance Matrix, Time Zone, Elevation, using googlemaps Python SDK with API key authentication, address geocoding, route calculation, place search, distance matrix, and G... | Implementation |
 | [google-workspace-api](skills/coding/google-workspace-api/SKILL.md) | Coding | Integrates with Google Workspace APIs (Gmail, Drive, Calendar, Docs, Sheets, Admin) using google-api-python-client for programmatic access and automation. | Implementation |
+| [gradle-build-system](skills/coding/gradle-build-system/SKILL.md) | Coding | Implements Gradle build configurations (Kotlin DSL, version catalogs, multi-project builds, dependency locking, configuration cache) for Java and Kotlin projects. | Implementation |
 | [gradle-build-tool](skills/coding/gradle-build-tool/SKILL.md) | Coding | Implements Gradle build configurations including Kotlin DSL, version catalogs, configuration cache, multi-project builds, convention plugins, and dependency management for Java/Kotlin/Android applications. | Implementation |
 | [grafana-prometheus](skills/coding/grafana-prometheus/SKILL.md) | Coding | Implements Grafana and Prometheus integration (metrics collection, querying, alerting rules, Grafana dashboards as code, PromQL patterns, and Grafana HTTP API for dashboard management, using prometheus-api-client and grafana-api Python SDKs. | Implementation |
 | [graph-traversal](skills/programming/graph-traversal/SKILL.md) | Programming | Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order, cycle detection, connected components) with working Python code for algorithmic problem solving. | Reference |
@@ -3234,6 +3275,7 @@ MIT — All skills are freely available and redistributable.
 | [market-regimes](skills/trading/market-regimes/SKILL.md) | Trading | "Market regime detection and adaptation for trading systems across changing" market conditions. | Implementation |
 | [market-structure](skills/trading/market-structure/SKILL.md) | Trading | "Implements market structure and trading participants analysis for risk management and algorithmic trading execution." | Implementation |
 | [marketo-api](skills/coding/marketo-api/SKILL.md) | Coding | Implements Marketo API integration (REST, SOAP, Lead Database, Activities, Campaigns, using requests with OAuth 2.0 authentication, lead CRUD, bulk import/export, trigger campaigns, and Marketo REST API patterns. | Implementation |
+| [maven-build-system](skills/coding/maven-build-system/SKILL.md) | Coding | Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects. | Implementation |
 | [maven-build-tool](skills/coding/maven-build-tool/SKILL.md) | Coding | Implements Maven build configurations including multi-module projects, dependency management with BOMs, plugin patterns, enforcer rules, and reactor builds for Java/Kotlin applications. | Implementation |
 | [maximum-likelihood](skills/coding/maximum-likelihood/SKILL.md) | Coding | Implements maximum likelihood estimation, likelihood functions, and optimization methods for parameter estimation in probabilistic models | Implementation |
 | [mcp-builder](skills/agent/mcp-builder/SKILL.md) | Agent | Implements intelligent mcp builder with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
