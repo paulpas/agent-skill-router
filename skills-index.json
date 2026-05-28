@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T12:08:14.822702Z",
+  "generatedAt": "2026-05-28T21:21:53.577385Z",
   "totalSkills": 1190,
   "domains": {
     "agent": 290,
@@ -37,7 +37,7 @@
     {
       "name": "ab-testing",
       "domain": "coding",
-      "description": "Provides Designs and analyzes A/B tests including hypothesis testing, power analysis, sample size calculation, and statistical significance evaluation",
+      "description": "Provides Designs and analyzes A/B tests including hypothesis testing power analysis, sample size calculation, and statistical significance evaluation",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -46,16 +46,14 @@
         "A/B test",
         "statistical test",
         "power analysis",
-        "sample size",
-        "how do I design tests",
+        "sample size how do I design tests",
         "unit tests",
         "testing"
       ],
       "relatedSkills": [
         "ds-classification-metrics",
         "ds-experimental-design",
-        "ds-hypothesis-testing",
-        "ds-metrics-and-kpis ds-statistical-power"
+        "ds-hypothesis-testing ds-metrics-and-kpis ds-statistical-power"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-ab-testing/SKILL.md"
@@ -2339,7 +2337,7 @@
     {
       "name": "association-rules",
       "domain": "coding",
-      "description": "\"Provides Discovers association rules and frequent itemsets using Apriori, Eclat, and market basket analysis for pattern mining\"",
+      "description": "\"Provides Discovers association rules and frequent itemsets using Apriori Eclat, and market basket analysis for pattern mining\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -2348,8 +2346,7 @@
         "market basket",
         "apriori",
         "frequent itemsets",
-        "recommendation",
-        "pattern mining"
+        "recommendation pattern mining"
       ],
       "relatedSkills": [
         "ds-clustering",
@@ -3159,7 +3156,7 @@
     {
       "name": "bayesian-inference",
       "domain": "coding",
-      "description": "\"Applies Bayesian methods for prior selection, posterior estimation, and probabilistic inference in machine learning models\"",
+      "description": "\"Applies Bayesian methods for prior selection, posterior estimation and probabilistic inference in machine learning models\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -3168,14 +3165,12 @@
         "bayes",
         "prior",
         "posterior",
-        "probabilistic inference",
-        "how do i do bayesian"
+        "probabilistic inference how do i do bayesian"
       ],
       "relatedSkills": [
         "ds-confidence-intervals",
         "ds-hypothesis-testing",
-        "ds-maximum-likelihood",
-        "ds-monte-carlo ds-monte-carlo"
+        "ds-maximum-likelihood ds-monte-carlo ds-monte-carlo"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-bayesian-inference/SKILL.md"
@@ -3355,8 +3350,7 @@
         "overfitting",
         "underfitting",
         "regularization",
-        "generalization",
-        "how do I prevent overfitting"
+        "generalization how do I prevent overfitting"
       ],
       "relatedSkills": [
         "ds-cross-validation",
@@ -3934,8 +3928,7 @@
         "categorical encoding",
         "one-hot encoding",
         "target encoding",
-        "ordinal encoding",
-        "categorical variables"
+        "ordinal encoding categorical variables"
       ],
       "relatedSkills": [
         "ds-feature-engineering",
@@ -3965,8 +3958,7 @@
       "relatedSkills": [
         "ds-instrumental-variables",
         "ds-intervention-analysis",
-        "ds-observational-studies",
-        "ds-randomized-experiments ds-synthetic-control"
+        "ds-observational-studies ds-randomized-experiments ds-synthetic-control"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-causal-inference/SKILL.md"
@@ -4510,7 +4502,7 @@
     {
       "name": "classification-metrics",
       "domain": "coding",
-      "description": "\"Evaluates classification models using precision, recall, F1-score, ROC-AUC, confusion matrix, and other classification metrics\"",
+      "description": "\"Evaluates classification models using precision, recall, F1-score ROC-AUC, confusion matrix, and other classification metrics\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -5165,7 +5157,7 @@
     {
       "name": "clustering",
       "domain": "coding",
-      "description": "\"Implements clustering algorithms including K-means, hierarchical clustering, DBSCAN, Gaussian mixture models, and spectral clustering\"",
+      "description": "\"Implements clustering algorithms including K-means, hierarchical clustering DBSCAN, Gaussian mixture models, and spectral clustering\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -5174,14 +5166,12 @@
         "k-means",
         "hierarchical clustering",
         "DBSCAN",
-        "mixture models",
-        "how do I cluster data"
+        "mixture models how do I cluster data"
       ],
       "relatedSkills": [
         "ds-anomaly-detection",
         "ds-association-rules",
-        "ds-community-detection",
-        "ds-dimensionality-reduction ds-dimensionality-reduction"
+        "ds-community-detection ds-dimensionality-reduction ds-dimensionality-reduction"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-clustering/SKILL.md"
@@ -5451,7 +5441,7 @@
     {
       "name": "community-detection",
       "domain": "coding",
-      "description": "\"Detects communities and clusters in graphs using modularity optimization, spectral methods, and graph partitioning algorithms\"",
+      "description": "\"Detects communities and clusters in graphs using modularity optimization spectral methods, and graph partitioning algorithms\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -5459,8 +5449,7 @@
         "community detection",
         "graph clustering",
         "modularity",
-        "spectral clustering",
-        "graph partitioning"
+        "spectral clustering graph partitioning"
       ],
       "relatedSkills": [
         "ds-association-rules",
@@ -6165,8 +6154,7 @@
         "correlation analysis",
         "covariance",
         "multivariate analysis",
-        "correlation",
-        "pearson",
+        "correlation pearson",
         "spearman",
         "feature relationships"
       ],
@@ -6477,14 +6465,12 @@
         "cross-validation",
         "k-fold",
         "stratified cross-validation",
-        "time-series cross-validation",
-        "validation"
+        "time-series cross-validation validation"
       ],
       "relatedSkills": [
         "ds-bias-variance-tradeoff",
         "ds-classification-metrics",
-        "ds-hyperparameter-tuning",
-        "ds-model-selection ds-regression-evaluation"
+        "ds-hyperparameter-tuning ds-model-selection ds-regression-evaluation"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-cross-validation/SKILL.md"
@@ -6692,7 +6678,7 @@
     {
       "name": "data-collection",
       "domain": "coding",
-      "description": "\"Implements data gathering strategies including APIs, web scraping, sensor data collection, and database queries for building machine learning datasets\"",
+      "description": "\"Implements data gathering strategies including APIs, web scraping sensor data collection, and database queries for building machine learning datasets\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -6701,8 +6687,7 @@
         "web scraping",
         "API integration",
         "data gathering",
-        "data acquisition",
-        "ETL",
+        "data acquisition ETL",
         "how do i collect data"
       ],
       "relatedSkills": [
@@ -6806,7 +6791,7 @@
     {
       "name": "data-ingestion",
       "domain": "coding",
-      "description": "\"Provides Designs and implements ETL pipelines, streaming data ingestion, batch processing, and data pipeline orchestration for reliable data flow\"",
+      "description": "\"Provides Designs and implements ETL pipelines, streaming data ingestion batch processing, and data pipeline orchestration for reliable data flow\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -6815,8 +6800,7 @@
         "data ingestion",
         "streaming data",
         "batch processing",
-        "pipeline",
-        "how do i ingest data"
+        "pipeline how do i ingest data"
       ],
       "relatedSkills": [
         "ds-data-collection",
@@ -6961,8 +6945,7 @@
         "anonymization",
         "differential privacy",
         "GDPR",
-        "PII protection",
-        "privacy-preserving",
+        "PII protection privacy-preserving",
         "sensitive data"
       ],
       "relatedSkills": [
@@ -7081,7 +7064,7 @@
     {
       "name": "data-versioning",
       "domain": "coding",
-      "description": "\"Implements data versioning, lineage tracking, provenance management, and reproducible data pipelines for experiment tracking and governance\"",
+      "description": "\"Implements data versioning, lineage tracking, provenance management and reproducible data pipelines for experiment tracking and governance\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -7090,8 +7073,7 @@
         "data lineage",
         "provenance",
         "reproducibility",
-        "data governance",
-        "how do i track data"
+        "data governance how do i track data"
       ],
       "relatedSkills": [
         "ds-data-collection",
@@ -7105,7 +7087,7 @@
     {
       "name": "data-visualization",
       "domain": "coding",
-      "description": "\"Creates effective visualizations including plots, charts, dashboards, and interactive visualizations for data insight and storytelling\"",
+      "description": "\"Creates effective visualizations including plots, charts, dashboards and interactive visualizations for data insight and storytelling\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -7115,8 +7097,7 @@
         "dashboards",
         "charts",
         "matplotlib",
-        "seaborn",
-        "plotly",
+        "seaborn plotly",
         "how do i visualize data"
       ],
       "relatedSkills": [
@@ -8248,7 +8229,7 @@
     {
       "name": "dimensionality-reduction",
       "domain": "coding",
-      "description": "\"Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders, and other feature extraction methods for visualization and efficiency\"",
+      "description": "\"Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders and other feature extraction methods for visualization and efficiency\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -9105,7 +9086,7 @@
     {
       "name": "eda",
       "domain": "coding",
-      "description": "\"Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic\"",
+      "description": "\"Provides Performs exploratory data analysis using summary statistics distributions, correlations, and descriptive methods to understand dataset characteristic\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -9120,8 +9101,7 @@
       "relatedSkills": [
         "ds-correlation-analysis",
         "ds-data-profiling",
-        "ds-data-visualization",
-        "ds-dimensionality-reduction ds-missing-data"
+        "ds-data-visualization ds-dimensionality-reduction ds-missing-data"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-eda/SKILL.md"
@@ -9438,7 +9418,7 @@
     {
       "name": "ensemble-methods",
       "domain": "coding",
-      "description": "\"Provides Combines multiple models using bagging, boosting, stacking, voting, and blending for improved predictive performance and robustness\"",
+      "description": "\"Provides Combines multiple models using bagging, boosting, stacking voting, and blending for improved predictive performance and robustness\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -9860,8 +9840,7 @@
       "relatedSkills": [
         "ds-ab-testing",
         "ds-online-experiments",
-        "ds-randomized-experiments",
-        "ds-statistical-power ds-statistical-power"
+        "ds-randomized-experiments ds-statistical-power ds-statistical-power"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-experimental-design/SKILL.md"
@@ -9877,14 +9856,12 @@
         "explainability",
         "interpretability",
         "transparency",
-        "understanding models",
-        "how do I explain predictions"
+        "understanding models how do I explain predictions"
       ],
       "relatedSkills": [
         "ds-model-fairness",
         "ds-model-interpretation",
-        "ds-model-robustness",
-        "ds-reproducible-research ds-reproducible-research"
+        "ds-model-robustness ds-reproducible-research ds-reproducible-research"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-explainability/SKILL.md"
@@ -10124,7 +10101,7 @@
     {
       "name": "feature-engineering",
       "domain": "coding",
-      "description": "\"Creates and transforms features including polynomial features, interactions, domain-specific features, and feature transformations\"",
+      "description": "\"Creates and transforms features including polynomial features, interactions domain-specific features, and feature transformations\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -10138,8 +10115,7 @@
       "relatedSkills": [
         "ds-categorical-encoding",
         "ds-dimensionality-reduction",
-        "ds-feature-scaling-normalization",
-        "ds-feature-selection ds-missing-data"
+        "ds-feature-scaling-normalization ds-feature-selection ds-missing-data"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-feature-engineering/SKILL.md"
@@ -10203,8 +10179,7 @@
         "feature interaction",
         "interaction terms",
         "polynomial features",
-        "cross-features",
-        "feature interactions"
+        "cross-features feature interactions"
       ],
       "relatedSkills": [
         "ds-correlation-analysis",
@@ -10217,7 +10192,7 @@
     {
       "name": "feature-scaling-normalization",
       "domain": "coding",
-      "description": "\"Provides Scales and normalizes features using standardization, normalization, robust scaling, and other scaling methods for model compatibility\"",
+      "description": "\"Provides Scales and normalizes features using standardization, normalization robust scaling, and other scaling methods for model compatibility\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -10240,7 +10215,7 @@
     {
       "name": "feature-selection",
       "domain": "coding",
-      "description": "\"Selects relevant features using univariate selection, recursive elimination, stability selection, and importance-based methods\"",
+      "description": "\"Selects relevant features using univariate selection, recursive elimination stability selection, and importance-based methods\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -10254,8 +10229,7 @@
       "relatedSkills": [
         "ds-feature-engineering",
         "ds-feature-interaction",
-        "ds-hyperparameter-tuning",
-        "ds-model-interpretation ds-model-interpretation"
+        "ds-hyperparameter-tuning ds-model-interpretation ds-model-interpretation"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-feature-selection/SKILL.md"
@@ -12883,14 +12857,12 @@
         "hyperparameter tuning",
         "grid search",
         "random search",
-        "bayesian optimization",
-        "how do I tune parameters"
+        "bayesian optimization how do I tune parameters"
       ],
       "relatedSkills": [
         "ds-bias-variance-tradeoff",
         "ds-cross-validation",
-        "ds-model-selection",
-        "ds-support-vector-machines ds-tree-methods"
+        "ds-model-selection ds-support-vector-machines ds-tree-methods"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-hyperparameter-tuning/SKILL.md"
@@ -12919,7 +12891,7 @@
     {
       "name": "hypothesis-testing",
       "domain": "coding",
-      "description": "Implements hypothesis testing including t-tests, chi-square tests, p-values, and statistical significance evaluation for data-driven decisions",
+      "description": "Implements hypothesis testing including t-tests, chi-square tests, p-values and statistical significance evaluation for data-driven decisions",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -12928,8 +12900,7 @@
         "t-test",
         "chi-square",
         "p-value",
-        "statistical significance",
-        "how do i test hypotheses",
+        "statistical significance how do i test hypotheses",
         "unit tests",
         "testing"
       ],
@@ -13691,14 +13662,12 @@
         "treatment effects",
         "intervention analysis",
         "CATE",
-        "heterogeneous effects",
-        "treatment response"
+        "heterogeneous effects treatment response"
       ],
       "relatedSkills": [
         "ds-causal-inference",
         "ds-observational-studies",
-        "ds-randomized-experiments",
-        "ds-synthetic-control ds-synthetic-control"
+        "ds-randomized-experiments ds-synthetic-control ds-synthetic-control"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-intervention-analysis/SKILL.md"
@@ -14317,7 +14286,7 @@
     {
       "name": "kernel-density",
       "domain": "coding",
-      "description": "\"Implements kernel density estimation, non-parametric density estimation, and bandwidth selection for probability density functions\"",
+      "description": "\"Implements kernel density estimation, non-parametric density estimation and bandwidth selection for probability density functions\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -15327,7 +15296,7 @@
     {
       "name": "linear-regression",
       "domain": "coding",
-      "description": "\"Implements linear regression including OLS, ridge regression, lasso, elastic net, and other regularized linear models for prediction\"",
+      "description": "\"Implements linear regression including OLS, ridge regression, lasso elastic net, and other regularized linear models for prediction\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -15342,8 +15311,7 @@
       "relatedSkills": [
         "ds-feature-engineering",
         "ds-feature-scaling-normalization",
-        "ds-instrumental-variables",
-        "ds-logistic-regression ds-regression-evaluation"
+        "ds-instrumental-variables ds-logistic-regression ds-regression-evaluation"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-linear-regression/SKILL.md"
@@ -15719,8 +15687,7 @@
         "logistic regression",
         "classification",
         "binary classification",
-        "multinomial",
-        "how do i classify"
+        "multinomial how do i classify"
       ],
       "relatedSkills": [
         "ds-classification-metrics",
@@ -16322,15 +16289,13 @@
         "MLE",
         "likelihood estimation",
         "likelihood function",
-        "optimization",
-        "performance",
+        "optimization performance",
         "speed"
       ],
       "relatedSkills": [
         "ds-bayesian-inference",
         "ds-distribution-fitting",
-        "ds-hypothesis-testing",
-        "ds-linear-regression ds-monte-carlo"
+        "ds-hypothesis-testing ds-linear-regression ds-monte-carlo"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-maximum-likelihood/SKILL.md"
@@ -16667,16 +16632,14 @@
         "KPI",
         "key performance indicator",
         "business metrics",
-        "metric definition",
-        "how do I choose metrics",
+        "metric definition how do I choose metrics",
         "cloudwatch",
         "optimization"
       ],
       "relatedSkills": [
         "ds-ab-testing",
         "ds-classification-metrics",
-        "ds-online-experiments",
-        "ds-regression-evaluation ds-regression-evaluation"
+        "ds-online-experiments ds-regression-evaluation ds-regression-evaluation"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-metrics-and-kpis/SKILL.md"
@@ -16839,7 +16802,7 @@
     {
       "name": "missing-data",
       "domain": "coding",
-      "description": "\"Handles missing data using imputation strategies, deletion methods, and techniques for dealing with incomplete datasets while preserving information\"",
+      "description": "\"Handles missing data using imputation strategies, deletion methods and techniques for dealing with incomplete datasets while preserving information\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -17026,8 +16989,7 @@
       "relatedSkills": [
         "ds-explainability",
         "ds-model-interpretation",
-        "ds-model-robustness",
-        "ds-privacy-ml ds-privacy-ml"
+        "ds-model-robustness ds-privacy-ml ds-privacy-ml"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-model-fairness/SKILL.md"
@@ -17035,7 +16997,7 @@
     {
       "name": "model-interpretation",
       "domain": "coding",
-      "description": "\"Provides Interprets models using SHAP values, LIME, feature importance, permutation importance, and other explainability techniques\"",
+      "description": "\"Provides Interprets models using SHAP values, LIME, feature importance permutation importance, and other explainability techniques\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -17044,8 +17006,7 @@
         "SHAP",
         "LIME",
         "feature importance",
-        "explainability",
-        "how do I explain models"
+        "explainability how do I explain models"
       ],
       "relatedSkills": [
         "ds-explainability",
@@ -17066,8 +17027,7 @@
         "model robustness",
         "adversarial robustness",
         "out-of-distribution",
-        "OOD detection",
-        "robustness testing",
+        "OOD detection robustness testing",
         "unit tests",
         "testing",
         "test automation"
@@ -17084,7 +17044,7 @@
     {
       "name": "model-selection",
       "domain": "coding",
-      "description": "\"Provides Compares and selects models using AIC, BIC, validation curves, learning curves, and model comparison techniques\"",
+      "description": "\"Provides Compares and selects models using AIC, BIC, validation curves learning curves, and model comparison techniques\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -17099,8 +17059,7 @@
       "relatedSkills": [
         "ds-bias-variance-tradeoff",
         "ds-cross-validation",
-        "ds-ensemble-methods",
-        "ds-hyperparameter-tuning ds-regression-evaluation"
+        "ds-ensemble-methods ds-hyperparameter-tuning ds-regression-evaluation"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-model-selection/SKILL.md"
@@ -17610,8 +17569,7 @@
       "relatedSkills": [
         "ds-bayesian-inference",
         "ds-confidence-intervals",
-        "ds-distribution-fitting",
-        "ds-kernel-density ds-kernel-density"
+        "ds-distribution-fitting ds-kernel-density ds-kernel-density"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-monte-carlo/SKILL.md"
@@ -18137,7 +18095,7 @@
     {
       "name": "neural-networks",
       "domain": "coding",
-      "description": "\"Implements deep neural networks, backpropagation, activation functions, architectures (CNN, RNN, Transformers), and training strategies\"",
+      "description": "\"Implements deep neural networks, backpropagation, activation functions architectures (CNN, RNN, Transformers), and training strategies\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -18147,15 +18105,13 @@
         "backpropagation",
         "CNN",
         "RNN",
-        "transformers",
-        "how do i use deep learning",
+        "transformers how do i use deep learning",
         "hugging face"
       ],
       "relatedSkills": [
         "ds-categorical-encoding",
         "ds-ensemble-methods",
-        "ds-hyperparameter-tuning",
-        "ds-support-vector-machines ds-tree-methods"
+        "ds-hyperparameter-tuning ds-support-vector-machines ds-tree-methods"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-neural-networks/SKILL.md"
@@ -18516,7 +18472,7 @@
     {
       "name": "observational-studies",
       "domain": "coding",
-      "description": "\"Analyzes observational data using matching methods, propensity scores, stratification, and adjustment for confounding bias\"",
+      "description": "\"Analyzes observational data using matching methods, propensity scores stratification, and adjustment for confounding bias\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -18531,8 +18487,7 @@
       "relatedSkills": [
         "ds-causal-inference",
         "ds-instrumental-variables",
-        "ds-intervention-analysis",
-        "ds-randomized-experiments ds-synthetic-control"
+        "ds-intervention-analysis ds-randomized-experiments ds-synthetic-control"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-observational-studies/SKILL.md"
@@ -18674,8 +18629,7 @@
         "multi-armed bandits",
         "bandits",
         "contextual bandits",
-        "exploration exploitation",
-        "online learning"
+        "exploration exploitation online learning"
       ],
       "relatedSkills": [
         "ds-ab-testing",
@@ -21059,7 +21013,7 @@
     {
       "name": "randomized-experiments",
       "domain": "coding",
-      "description": "\"Provides Designs and analyzes randomized controlled trials (RCTs), A/B tests, experimental blocking, and sample size calculations\"",
+      "description": "\"Provides Designs and analyzes randomized controlled trials (RCTs) A/B tests, experimental blocking, and sample size calculations\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -21068,8 +21022,7 @@
         "RCT",
         "experimental design",
         "randomization",
-        "blocking",
-        "sample size"
+        "blocking sample size"
       ],
       "relatedSkills": [
         "ds-ab-testing",
@@ -21406,7 +21359,7 @@
     {
       "name": "regression-evaluation",
       "domain": "coding",
-      "description": "\"Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared, and other metrics for assessing predictive accuracy\"",
+      "description": "\"Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared and other metrics for assessing predictive accuracy\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -21416,14 +21369,12 @@
         "RMSE",
         "MAE",
         "R-squared",
-        "regression metrics",
-        "how do i evaluate"
+        "regression metrics how do i evaluate"
       ],
       "relatedSkills": [
         "ds-cross-validation",
         "ds-linear-regression",
-        "ds-metrics-and-kpis",
-        "ds-time-series-forecasting ds-model-selection"
+        "ds-metrics-and-kpis ds-time-series-forecasting ds-model-selection"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-regression-evaluation/SKILL.md"
@@ -21540,7 +21491,7 @@
     {
       "name": "reproducible-research",
       "domain": "coding",
-      "description": "\"Implements reproducible research practices including code organization, environment management, documentation, and experiment tracking\"",
+      "description": "\"Implements reproducible research practices including code organization environment management, documentation, and experiment tracking\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -21548,8 +21499,7 @@
         "reproducible research",
         "reproducibility",
         "code organization",
-        "environment",
-        "notebooks",
+        "environment notebooks",
         "how do I reproduce"
       ],
       "relatedSkills": [
@@ -25071,8 +25021,7 @@
         "power analysis",
         "sample size",
         "effect size",
-        "Type I error",
-        "Type II error"
+        "Type I error Type II error"
       ],
       "relatedSkills": [
         "ds-ab-testing",
@@ -25496,7 +25445,7 @@
     {
       "name": "synthetic-control",
       "domain": "coding",
-      "description": "\"Implements synthetic control methods, difference-in-differences estimation, and quasi-experimental designs for impact evaluation\"",
+      "description": "\"Implements synthetic control methods, difference-in-differences estimation and quasi-experimental designs for impact evaluation\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -26419,7 +26368,7 @@
     {
       "name": "time-series-forecasting",
       "domain": "coding",
-      "description": "\"Implements ARIMA, exponential smoothing, state-space models, LSTM networks, and deep learning methods for temporal prediction\"",
+      "description": "\"Implements ARIMA, exponential smoothing, state-space models, LSTM networks and deep learning methods for temporal prediction\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -26428,8 +26377,7 @@
         "ARIMA",
         "exponential smoothing",
         "LSTM",
-        "forecasting",
-        "time series prediction"
+        "forecasting time series prediction"
       ],
       "relatedSkills": [
         "ds-feature-engineering",
@@ -26514,7 +26462,7 @@
     {
       "name": "topic-modeling",
       "domain": "coding",
-      "description": "\"Implements topic modeling using Latent Dirichlet Allocation (LDA), Non-negative Matrix Factorization (NMF), and other topic extraction methods\"",
+      "description": "\"Implements topic modeling using Latent Dirichlet Allocation (LDA) Non-negative Matrix Factorization (NMF), and other topic extraction methods\"",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -26523,8 +26471,7 @@
         "LDA",
         "NMF",
         "topic extraction",
-        "latent dirichlet allocation",
-        "text analysis"
+        "latent dirichlet allocation text analysis"
       ],
       "relatedSkills": [
         "ds-association-rules",
@@ -26769,8 +26716,7 @@
       "relatedSkills": [
         "ds-ensemble-methods",
         "ds-hyperparameter-tuning",
-        "ds-neural-networks",
-        "ds-support-vector-machines ds-support-vector-machines"
+        "ds-neural-networks ds-support-vector-machines ds-support-vector-machines"
       ],
       "version": "1.0.0",
       "source": "skills/coding/ds-tree-methods/SKILL.md"
