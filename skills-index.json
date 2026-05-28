@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-05-28T02:18:21.243538Z",
-  "totalSkills": 1165,
+  "generatedAt": "2026-05-28T12:08:14.822702Z",
+  "totalSkills": 1190,
   "domains": {
-    "agent": 288,
+    "agent": 290,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
-    "cncf": 177,
-    "coding": 553,
+    "cncf": 178,
+    "coding": 576,
+    "commerce": 1,
+    "communications": 3,
     "data-and-persistence": 1,
     "devops": 6,
     "electrical-engineering": 2,
@@ -16,16 +18,17 @@
     "kotlin": 1,
     "linux": 18,
     "maker": 3,
+    "payments": 5,
     "programming": 7,
     "secrets-management": 2,
-    "security": 4,
+    "security": 5,
     "software": 2,
     "trading": 94,
     "writing": 4
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 747,
+    "implementation": 772,
     "reference": 171,
     "information": 1,
     "review": 8
@@ -724,23 +727,42 @@
       "source": "skills/agent/ai-framework-selector/SKILL.md"
     },
     {
-      "name": "ai-llm-agentic-tooling-mcp",
-      "domain": "agent",
-      "description": "Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating the effective management of servers, clients, tools, resources, and prompts.",
+      "name": "ai-llm-agentic-tooling-langchain-langgraph",
+      "domain": "coding",
+      "description": "Integrates LangChain/LangGraph for building LLM-powered agents and applications in Python, facilitating advanced logic and workflows.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "AI tooling",
-        "LLM",
-        "Model Context Protocol",
-        "MCP",
-        "resource management",
-        "prompt optimization"
+        "langchain",
+        "langgraph",
+        "llm integration",
+        "agent",
+        "workflows",
+        "python"
       ],
       "relatedSkills": [
-        "ai-llm-resources-management",
-        "ai-llm-prompt-engineering"
+        "ai-llm-agentic-tooling-mcp"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/ai-llm-agentic-tooling-langchain-langgraph/SKILL.md"
+    },
+    {
+      "name": "ai-llm-agentic-tooling-mcp",
+      "domain": "agent",
+      "description": "Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating effective management of servers, clients, tools, resources, and prompts.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "mcp",
+        "model context protocol",
+        "server management",
+        "client management",
+        "resources"
+      ],
+      "relatedSkills": [
+        "ai-llm-agentic-tooling-langchain-langgraph"
       ],
       "version": "1.0.0",
       "source": "skills/agent/ai-llm-agentic-tooling-mcp/SKILL.md"
@@ -877,25 +899,25 @@
       "source": "skills/agent/airflow-dag-patterns/SKILL.md"
     },
     {
-      "name": "airtable-api",
+      "name": "airtable-api-overview",
       "domain": "coding",
-      "description": "Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python.",
+      "description": "Provides comprehensive coverage of Airtable API features and capabilities, including Bases, Tables, Records, Webhooks, and Automations with practical implementation examples.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "airtable api",
-        "pyairtable",
-        "airtable records",
-        "airtable bases",
-        "airtable python",
-        "airtable automation",
-        "airtable webhooks"
+        "airtable",
+        "bases",
+        "tables",
+        "records",
+        "webhooks",
+        "automations",
+        "how to use airtable API",
+        "airtable integration"
       ],
       "relatedSkills": [
-        "coding-google-workspace-api",
-        "coding-notion-api",
-        "coding-asana-api"
+        "airtable-api-bases",
+        "airtable-api-webhooks"
       ],
       "version": "1.0.0",
       "source": "skills/coding/airtable-api/SKILL.md"
@@ -2226,6 +2248,47 @@
       "source": "skills/coding/asana-api/SKILL.md"
     },
     {
+      "name": "asana-projects",
+      "domain": "coding",
+      "description": "",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "asana",
+        "project management",
+        "tasks",
+        "team collaboration",
+        "API integration"
+      ],
+      "relatedSkills": [
+        "coding/asana-tasks"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/asana-projects/SKILL.md"
+    },
+    {
+      "name": "asana-tasks",
+      "domain": "coding",
+      "description": "Implements functions for managing tasks in Asana, including creating, updating, and deleting tasks through the Asana API.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "asana",
+        "task management",
+        "create task",
+        "update task",
+        "delete task"
+      ],
+      "relatedSkills": [
+        "asana-projects",
+        "asana-user-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/asana-tasks/SKILL.md"
+    },
+    {
       "name": "ascii-diagram",
       "domain": "agent",
       "description": "Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts, sequence diagrams, and state diagrams to visualize processes, interactions, and system states.",
@@ -2539,6 +2602,32 @@
       "source": "skills/coding/auth0-api/SKILL.md"
     },
     {
+      "name": "auth0-api-skills",
+      "domain": "security",
+      "description": "Implements Auth0 API functionalities (user CRUD, authentication flows, actions/hooks, organizations/multi-tenancy) for secure identity and access management in web and mobile applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "auth0",
+        "authentication",
+        "user management",
+        "actions",
+        "organizations",
+        "identity security",
+        "auth0 api",
+        "user creation",
+        "jwt tokens",
+        "oauth2 login",
+        "multi-tenant identity"
+      ],
+      "relatedSkills": [
+        "auth0-user-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/security/auth0-api-skills/SKILL.md"
+    },
+    {
       "name": "authentication-design-patterns",
       "domain": "coding",
       "description": "Implements production authentication architecture including JWT token lifecycle, OAuth 2.0 flows, session management, MFA/TOTP, API key auth, and password hashing strategies with security-first design patterns.",
@@ -2741,6 +2830,27 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/aws-bedrock/SKILL.md"
+    },
+    {
+      "name": "aws-dynamodb-integration",
+      "domain": "coding",
+      "description": "Implements AWS DynamoDB functionalities, showcasing data modeling, queries, and performance optimization using the AWS SDK.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dynamodb",
+        "aws",
+        "data modeling",
+        "aws sdk",
+        "performance optimization"
+      ],
+      "relatedSkills": [
+        "aws-sqs",
+        "bigquery-api-query"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/aws-dynamodb-integration/SKILL.md"
     },
     {
       "name": "aws-iam",
@@ -12961,6 +13071,54 @@
       "source": "skills/coding/idempotent-distributed-operations/SKILL.md"
     },
     {
+      "name": "identity-security-aws-iam",
+      "domain": "coding",
+      "description": "Comprehensive guide to AWS Identity and Access Management (IAM) covering users, roles, policies, STS, and Identity Center.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "iam",
+        "aws",
+        "identity",
+        "access management",
+        "cloud security",
+        "sts",
+        "roles",
+        "policies"
+      ],
+      "relatedSkills": [
+        "aws-sdk",
+        "aws-security-best-practices"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/identity-security-aws-iam/SKILL.md"
+    },
+    {
+      "name": "identity-security-aws-iam",
+      "domain": "coding",
+      "description": "Comprehensive guide to AWS Identity and Access Management (IAM) covering users, roles, policies, STS, and Identity Center.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "iam",
+        "aws",
+        "identity",
+        "access management",
+        "cloud security",
+        "sts",
+        "roles",
+        "policies"
+      ],
+      "relatedSkills": [
+        "aws-sdk",
+        "aws-security-best-practices"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/okta-api/SKILL.md"
+    },
+    {
       "name": "immutable-data-patterns",
       "domain": "coding",
       "description": "Implements immutable data patterns (value objects, pure functions, structural updates, copy-on-write collections, domain events) to eliminate mutation bugs and enable safe concurrent data processing.",
@@ -14634,6 +14792,24 @@
       "source": "skills/cncf/kubernetes-api-patterns/SKILL.md"
     },
     {
+      "name": "kubernetes-crds-management",
+      "domain": "coding",
+      "description": "Manages Kubernetes Custom Resource Definitions, including creation, updates, and best practices for usage.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "crds",
+        "kubernetes crds",
+        "managing crds",
+        "creating crds",
+        "updating crds"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/kubernetes-crds-management/SKILL.md"
+    },
+    {
       "name": "kubernetes-debugging",
       "domain": "cncf",
       "description": "Implements comprehensive Kubernetes debugging workflow with pod inspection, log analysis, resource debugging, network troubleshooting, and common failure pattern diagnosis using kubectl commands.",
@@ -14739,6 +14915,24 @@
       "source": "skills/cncf/kubernetes-ingress/SKILL.md"
     },
     {
+      "name": "kubernetes-monitoring-logging",
+      "domain": "coding",
+      "description": "Manages monitoring and logging in Kubernetes, including setting up Prometheus, Grafana, and logging best practices.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "monitoring",
+        "kubernetes monitoring",
+        "logging",
+        "prometheus",
+        "grafana"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/kubernetes-monitoring-logging/SKILL.md"
+    },
+    {
       "name": "kubernetes-resource-tuning",
       "domain": "cncf",
       "description": "Implements Kubernetes resource tuning — HPA scaling policies, VPA right-sizing, cluster autoscaler configuration, and resource limits/requests optimization for production container workloads.",
@@ -14761,6 +14955,24 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/kubernetes-resource-tuning/SKILL.md"
+    },
+    {
+      "name": "kubernetes-services-management",
+      "domain": "coding",
+      "description": "Manages Kubernetes Services, including configuration for ClusterIP, NodePort, and LoadBalancer services. This skill provides detailed guidance on setting up and maintaining services in a Kubernetes cluster, ensuring efficient access and networking for deployed applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "services",
+        "kubernetes services",
+        "managing services",
+        "creating services",
+        "configuring services"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/kubernetes-services-management/SKILL.md"
     },
     {
       "name": "kubescape",
@@ -16399,6 +16611,51 @@
       "source": "skills/agent/message-queue-troubleshooting/SKILL.md"
     },
     {
+      "name": "messaging-channels",
+      "domain": "communications",
+      "description": "Integrates various messaging channels to enable seamless communication with users about multiple platforms.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "messaging channels",
+        "channel integration",
+        "multi-platform messaging",
+        "unified communication"
+      ],
+      "relatedSkills": [
+        "communications/messaging-bots",
+        "communications/messaging-microsoft-teams"
+      ],
+      "version": "1.0.0",
+      "source": "skills/communications/messaging-channels/SKILL.md"
+    },
+    {
+      "name": "messaging-microsoft-teams",
+      "domain": "communications",
+      "description": "Integrates Microsoft Teams for chat and collaboration solutions, enabling bot interactions via the Microsoft Graph API including channel management, message posting with adaptive cards, and tab configurations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "microsoft teams",
+        "teams integration",
+        "chat management",
+        "collaboration",
+        "bot interactions",
+        "teams bot",
+        "graph api teams",
+        "adaptive card",
+        "channel management"
+      ],
+      "relatedSkills": [
+        "communications/messaging-bots",
+        "communications/messaging-channels"
+      ],
+      "version": "1.0.0",
+      "source": "skills/communications/messaging-microsoft-teams/SKILL.md"
+    },
+    {
       "name": "metrics-and-kpis",
       "domain": "coding",
       "description": "\"Defines, selects, and monitors key performance indicators (KPIs), business metrics, and evaluation metrics for decision-making\"",
@@ -16630,25 +16887,22 @@
     {
       "name": "mixpanel-api",
       "domain": "coding",
-      "description": "Implements Mixpanel analytics integration (event tracking, user profiles, JQL queries, funnel analysis, cohort export) using mixpanel Python SDK with event batching, distinct_id management, engage updates, export API, and ingestion API patterns.",
+      "description": "Implements Mixpanel analytics integration (event tracking, user profiles, JQL queries, funnel analysis, cohort export, data exporting) using the Mixpanel Python SDK and REST API for product analytics in applications.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "mixpanel",
+        "mixpanel api",
         "event tracking",
         "user profiles",
+        "funnel analysis",
+        "cohort export",
         "jql queries",
-        "mixpanel funnels",
-        "cohort analysis",
-        "how do i track events in mixpanel",
-        "product analytics"
+        "product analytics",
+        "mixpanel sdk"
       ],
-      "relatedSkills": [
-        "coding-amplitude-api",
-        "coding-segment-api",
-        "coding-hubspot-api"
-      ],
+      "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/mixpanel-api/SKILL.md"
     },
@@ -17125,6 +17379,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/monday-api/SKILL.md"
+    },
+    {
+      "name": "monday-com-api",
+      "domain": "coding",
+      "description": "Implements functionalities of the Monday.com API, focusing on Boards, Items, Updates, and GraphQL to enhance project management, productivity, and collaboration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "monday.com api",
+        "boards",
+        "items",
+        "updates",
+        "graphql",
+        "productivity",
+        "collaboration",
+        "monday api",
+        "how do i use monday api"
+      ],
+      "relatedSkills": [
+        "project-management-tools",
+        "productivity-framework"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/monday-com-api/SKILL.md"
     },
     {
       "name": "mongodb-driver",
@@ -18334,31 +18613,6 @@
       "source": "skills/coding/of-shader-programming/SKILL.md"
     },
     {
-      "name": "okta-api",
-      "domain": "coding",
-      "description": "Implements Okta API integration (Users, Groups, Applications, MFA, OAuth, Workflows) using okta Python SDK v3.4+ with async client patterns, pagination support, DPoP authentication, and SCIM provisioning workflows.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "okta api",
-        "okta users",
-        "okta groups",
-        "okta mfa",
-        "okta sso",
-        "how do i integrate okta",
-        "okta scim",
-        "user provisioning"
-      ],
-      "relatedSkills": [
-        "coding-auth0-api",
-        "coding-entra-id-api",
-        "coding-aws-iam"
-      ],
-      "version": "1.0.0",
-      "source": "skills/coding/okta-api/SKILL.md"
-    },
-    {
       "name": "on-prem-infrastructure",
       "domain": "linux",
       "description": "Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems.",
@@ -19191,6 +19445,29 @@
       "source": "skills/coding/paypal-api/SKILL.md"
     },
     {
+      "name": "paypal-api-payments-commerce",
+      "domain": "coding",
+      "description": "Implements PayPal API functionalities focusing on Orders, Payments, Subscriptions, Payouts, and Disputes for comprehensive ecommerce management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "paypal api",
+        "orders",
+        "payments",
+        "subscriptions",
+        "payouts",
+        "disputes",
+        "ecommerce"
+      ],
+      "relatedSkills": [
+        "coding-payment-processing",
+        "coding-subscription-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/paypal-api-payments-commerce/SKILL.md"
+    },
+    {
       "name": "performance-attribution",
       "domain": "trading",
       "description": "\"Provides Performance Attribution Systems for Trading Strategy Decomposition\"",
@@ -19515,6 +19792,126 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/plaid-api/SKILL.md"
+    },
+    {
+      "name": "plaid-authentication",
+      "domain": "payments",
+      "description": "Implements authentication strategies using the Plaid API (Link token flow, Item public token exchange, Auth data retrieval) for secure user bank account verification in financial applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "plaid authentication",
+        "plaid link token",
+        "bank account verification",
+        "plaid auth",
+        "public token exchange",
+        "item access token",
+        "secure login",
+        "user verification"
+      ],
+      "relatedSkills": [
+        "plaid-transactions",
+        "plaid-identity"
+      ],
+      "version": "1.0.0",
+      "source": "skills/payments/plaid-authentication/SKILL.md"
+    },
+    {
+      "name": "plaid-identity",
+      "domain": "payments",
+      "description": "Implements identity verification features via the Plaid API (IdentityGet, address validation, name matching) for KYC compliance and user profile enrichment in financial applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "plaid identity",
+        "identity verification",
+        "plaid identity get",
+        "user identity data",
+        "kyc verification",
+        "name matching",
+        "address verification",
+        "account holder verification"
+      ],
+      "relatedSkills": [
+        "plaid-authentication",
+        "plaid-transactions"
+      ],
+      "version": "1.0.0",
+      "source": "skills/payments/plaid-identity/SKILL.md"
+    },
+    {
+      "name": "plaid-income",
+      "domain": "payments",
+      "description": "Implements income verification features via the Plaid API (IncomeGet, IncomeList) for employment-based and deposited income analysis in lending, underwriting, and financial applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "plaid income",
+        "income verification",
+        "plaid income get",
+        "employment income",
+        "salary verification",
+        "deposited income",
+        "earning capacity analysis",
+        "underwriting income"
+      ],
+      "relatedSkills": [
+        "plaid-authentication",
+        "plaid-transactions"
+      ],
+      "version": "1.0.0",
+      "source": "skills/payments/plaid-income/SKILL.md"
+    },
+    {
+      "name": "plaid-investments",
+      "domain": "payments",
+      "description": "Implements investment tracking features via the Plaid API (InvestmentsGet, HoldingsList, Transactions) to access and manage investment portfolio data for users in financial applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "plaid investments",
+        "investment tracking",
+        "plaid investments get",
+        "portfolio holdings",
+        "investment positions",
+        "securities data",
+        "brokerage account sync",
+        "asset allocation"
+      ],
+      "relatedSkills": [
+        "plaid-authentication",
+        "plaid-transactions"
+      ],
+      "version": "1.0.0",
+      "source": "skills/payments/plaid-investments/SKILL.md"
+    },
+    {
+      "name": "plaid-transactions",
+      "domain": "payments",
+      "description": "Implements transaction management features via the Plaid API (TransactionsGet, Categories) to retrieve, filter, and analyze user transaction data in financial applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "plaid transactions",
+        "plaid transactions get",
+        "transaction history",
+        "transaction categorization",
+        "spending analysis",
+        "merchant data",
+        "bank statement sync"
+      ],
+      "relatedSkills": [
+        "plaid-authentication",
+        "plaid-identity",
+        "plaid-income"
+      ],
+      "version": "1.0.0",
+      "source": "skills/payments/plaid-transactions/SKILL.md"
     },
     {
       "name": "plan-writing",
@@ -20304,6 +20701,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/pulumi/SKILL.md"
+    },
+    {
+      "name": "pulumi-stacks-resources",
+      "domain": "cncf",
+      "description": "Implements detailed Pulumi deployment processes in cloud environments, focusing on stacks, resources, programs, deployments, and best practices for effective infrastructure management.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "pulumi",
+        "infrastructure as code",
+        "stacks",
+        "cloud deployments",
+        "resource management",
+        "best practices",
+        "pulumi examples"
+      ],
+      "relatedSkills": [
+        "pulumi",
+        "pulumi-aws",
+        "pulumi-azure",
+        "pulumi-gcp"
+      ],
+      "version": "1.0.0",
+      "source": "skills/cncf/developer-platforms-devops-pulumi/SKILL.md"
     },
     {
       "name": "pydantic-ai",
@@ -21784,6 +22206,71 @@
       "source": "skills/coding/salesforce-api/SKILL.md"
     },
     {
+      "name": "salesforce-api-bulk",
+      "domain": "coding",
+      "description": "Handles bulk API operations using Salesforce API, including large data transfers efficiently while ensuring robust compliance and error handling throughout data transfers.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "salesforce api",
+        "bulk api",
+        "data migration",
+        "large data",
+        "salesforce bulk operations",
+        "how do I transfer data with salesforce"
+      ],
+      "relatedSkills": [
+        "salesforce-api-rest",
+        "salesforce-api-soap"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/salesforce-api-bulk/SKILL.md"
+    },
+    {
+      "name": "salesforce-api-rest",
+      "domain": "coding",
+      "description": "Implements interactions with the Salesforce API using REST protocols to manage customer relationship data effectively.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "salesforce api",
+        "rest api",
+        "customer relationship management",
+        "crm",
+        "salesforce data access",
+        "how do I access salesforce data"
+      ],
+      "relatedSkills": [
+        "salesforce-api-soap",
+        "salesforce-api-bulk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/salesforce-api-rest/SKILL.md"
+    },
+    {
+      "name": "salesforce-api-soap",
+      "domain": "coding",
+      "description": "Implements interactions with Salesforce API using SOAP protocols for legacy systems integration efficiently, ensuring compliance and data integrity while supporting seamless data transactions across legacy systems and optimizing integration processes.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "salesforce api",
+        "soap api",
+        "crm integration",
+        "legacy systems",
+        "how do I use salesforce soap"
+      ],
+      "relatedSkills": [
+        "salesforce-api-rest",
+        "salesforce-api-bulk"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/salesforce-api-soap/SKILL.md"
+    },
+    {
       "name": "sast-tooling",
       "domain": "security",
       "description": "Implements Static Application Security Testing (SAST) methodologies to identify vulnerabilities in source code during development phases.",
@@ -22170,6 +22657,48 @@
       "source": "skills/agent/sendgrid-automation/SKILL.md"
     },
     {
+      "name": "sendgrid-mail-management",
+      "domain": "agent",
+      "description": "Implements features for sending emails, managing templates, handling marketing campaigns, and parsing inbound emails with the SendGrid API.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "sendgrid",
+        "send email",
+        "email templates",
+        "marketing campaigns",
+        "inbound email parsing"
+      ],
+      "relatedSkills": [
+        "coding-sendgrid-api",
+        "coding-email-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/sendgrid-mail-management/SKILL.md"
+    },
+    {
+      "name": "sendgrid-template-management",
+      "domain": "agent",
+      "description": "Implements features for creating, updating, and deleting email templates using the SendGrid API.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "sendgrid template management",
+        "create sendgrid template",
+        "update sendgrid template",
+        "delete sendgrid template",
+        "manage sendgrid templates"
+      ],
+      "relatedSkills": [
+        "sendgrid-integration",
+        "email-automation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/sendgrid-template-management/SKILL.md"
+    },
+    {
       "name": "sentiment-analysis",
       "domain": "trading",
       "description": "\"AI-powered sentiment analysis for news, social media, and political figures\" in trading",
@@ -22461,32 +22990,6 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/coding/juice-shop/SKILL.md"
-    },
-    {
-      "name": "shopify-api",
-      "domain": "coding",
-      "description": "Implements Shopify API integration (Products, Orders, Customers, Storefront GraphQL, Admin REST) using shopifyapi Python SDK with OAuth 2.0 flow, webhook HMAC verification, cursor pagination, and ecommerce platform data synchronization patterns.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "shopify",
-        "shopify admin api",
-        "shopify storefront graphql",
-        "shopify products",
-        "shopify orders",
-        "shopify webhooks",
-        "shopify oauth",
-        "how do i integrate shopify api",
-        "ecommerce platform"
-      ],
-      "relatedSkills": [
-        "coding-stripe-api",
-        "coding-square-api",
-        "coding-paypal-api"
-      ],
-      "version": "1.0.0",
-      "source": "skills/coding/shopify-api/SKILL.md"
     },
     {
       "name": "shopify-automation",
@@ -23378,6 +23881,25 @@
       "source": "skills/trading/execution-slippage-modeling/SKILL.md"
     },
     {
+      "name": "snowflake-api",
+      "domain": "coding",
+      "description": "Implements Snowflake API integration focusing on SQL execution, Snowpark DataFrames, Cortex, Streams, and Tasks.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "snowflake",
+        "snowpark",
+        "cortex",
+        "streams",
+        "tasks",
+        "sql"
+      ],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/snowflake-api/SKILL.md"
+    },
+    {
       "name": "snowflake-sdk",
       "domain": "coding",
       "description": "Integrates Snowflake using snowflake-connector-python 4.x with patterns for SQL execution, Snowpark DataFrames, Cortex AI, streams, tasks, stages, and warehouse management.",
@@ -24076,7 +24598,7 @@
     {
       "name": "splunk-api",
       "domain": "coding",
-      "description": "Implements Splunk integration (log ingestion, search queries, REST API) using splunk-sdk Python SDK with HEC (HTTP Event Collector) for log ingestion, Splunk search queries, saved searches, alert management, and REST API patterns.",
+      "description": "Implements Splunk integration (log ingestion via HEC, search queries, saved searches, alert management) using the splunk-sdk Python SDK and REST API for production-grade monitoring and log analytics.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
@@ -24087,8 +24609,9 @@
         "http event collector",
         "splunk sdk",
         "splunk alerts",
-        "how do i send logs to splunk",
-        "log management"
+        "splunk query",
+        "splunk dashboard",
+        "time-series log analysis"
       ],
       "relatedSkills": [
         "coding-datadog-api",
@@ -24320,6 +24843,27 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/square-api/SKILL.md"
+    },
+    {
+      "name": "square-payments",
+      "domain": "commerce",
+      "description": "Integrates Square Payments API for handling payment transactions, refunds, and reporting.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "square payments",
+        "payment processing",
+        "transactions",
+        "refunds",
+        "reporting"
+      ],
+      "relatedSkills": [
+        "commerce/paypal-api-payments-commerce",
+        "commerce/shopify-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/commerce/square-payments/SKILL.md"
     },
     {
       "name": "sre-engineering",
@@ -27988,25 +28532,21 @@
     {
       "name": "zendesk-api",
       "domain": "coding",
-      "description": "Implements Zendesk API integration (Support API, Tickets, Users, Organizations, using zenpy Python SDK with OAuth 2.0, API token auth, ticket CRUD, user management, search, macros, triggers, and Zendesk REST API patterns.",
+      "description": "Implements modern features of the Zendesk API, enabling automation, ticket management, and integration with various tools.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
         "zendesk",
         "zendesk api",
-        "zenpy",
-        "zendesk support",
-        "zendesk tickets",
-        "zendesk users",
-        "zendesk organizations",
-        "how do i integrate with zendesk",
-        "support ticketing"
+        "ticket management",
+        "automate zendesk",
+        "integrate zendesk",
+        "how do i zendesk api"
       ],
       "relatedSkills": [
-        "coding-salesforce-api",
-        "coding-hubspot-api",
-        "coding-marketo-api"
+        "coding-api-integration",
+        "coding-nodejs-examples"
       ],
       "version": "1.0.0",
       "source": "skills/coding/zendesk-api/SKILL.md"
