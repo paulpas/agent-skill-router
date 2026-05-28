@@ -90,7 +90,7 @@ main() {
     fi
 
     # Build the prompt
-    local prompt="let's make a new skill, look at SKILL_FORMAT_SPEC.md as well as AGENTS.md to learn how to make a skill and how to name it and all the other requirements. after you understand, create a skill based upon the phrase: $TASK, utilizing your newly learned framework requirements. If you see the opportunity to make multiple skills from the phrase, then do so. Search the web to ensure your information is current and modern. Each skill must be atomic and have no overlap. If overlap exists, then convert to smaller atomic tasks with proper key words optimized for semantic search."
+    local prompt="let's make a new skill, look at SKILL_FORMAT_SPEC.md as well as AGENTS.md to learn how to make a skill and how to name it and all the other requirements. after you understand, create a skill based upon the phrase: $TASK, utilizing your newly learned framework requirements. If you see the opportunity to make multiple skills from the phrase, then do so. Search the web to ensure your information is current and modern. Each skill must be atomic and have no overlap. If overlap exists, then convert to smaller atomic tasks with proper key words optimized for semantic search. Do not ask questions and perform non-interactively and use your best judgement."
 
     # CRITICAL: Add validation requirements so generated skills will pass the pre-commit validator
     prompt+="\n\nIMPORTANT VALIDATION REQUIREMENTS — the skill MUST meet ALL of the following to pass ./scripts/validate_skill.sh:"

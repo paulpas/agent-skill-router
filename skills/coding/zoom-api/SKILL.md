@@ -1,15 +1,12 @@
 ---
 name: zoom-api
-description: Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users)
-  using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination,
-  and rate-limit handling.
+description: Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users) using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination, and rate-limit handling.
 license: MIT
 compatibility: opencode
 metadata:
   version: 1.0.0
   domain: coding
-  triggers: zoom, zoom api, zoom meetings, create zoom meeting, zoom sdk, zoom webinars,
-    zoom recording, zoom-python
+  triggers: zoom, zoom api, zoom meetings, create zoom meeting, zoom sdk, zoom webinars, zoom recording, zoom-python
   archetypes:
   - tactical
   - generation
@@ -33,11 +30,8 @@ metadata:
   related-skills: coding-twilio-api, coding-slack-api, coding-sendgrid-api
 ------
 # Zoom API Integration (Meetings, Webinars, Recordings, Users)
-
 Integrates the Zoom API v2 — Meetings, Webinars, Recordings, Phone, and Users management — using the `zoom-python-client` SDK v0.2+ with Server-to-Server OAuth authentication. When loaded, this skill makes the model implement Zoom API operations with proper token management, pagination for list endpoints, rate-limit handling, and webhook event processing.
-
 ## TL;DR for Code Generation
-
 - [ ] Initialize `ZoomApiClient` from environment variables using `ZoomApiClient.init_from_env()` — never hardcode credentials
 - [ ] Use Server-to-Server OAuth (account_id, client_id, client_secret) — JWT tokens are deprecated by Zoom
 - [ ] Handle pagination explicitly: use `next_page_token` in list endpoint responses to iterate all pages
@@ -45,51 +39,22 @@ Integrates the Zoom API v2 — Meetings, Webinars, Recordings, Phone, and Users 
 - [ ] Respect rate limits — Zoom returns `X-RateLimit-Limit` and `X-RateLimit-Remaining` headers
 - [ ] Validate required parameters: `topic`, `start_time`, `duration` for meetings; `topic` for webinars
 - [ ] Use ISO 8601 format (`2026-05-23T15:00:00Z`) for all datetime parameters
-
 ---
-
-## When to Use
-
-Use this skill when:
-
-- Creating, updating, and managing Zoom meetings and webinars programmatically
+Zoom meetings and webinars programmatically
 - Listing meeting recordings and managing cloud recording retention policies
 - Managing Zoom users (create, suspend, update, list) in a Zoom account
 - Integrating Zoom Phone for call log retrieval, extension management, and call routing
 - Processing Zoom webhook events (meeting started/ended, participant joined/left, recording completed)
 - Building apps with the Zoom Apps SDK for embedded experiences within Zoom meetings
-
 ---
-
-## When NOT to Use
-
-Avoid this skill for:
-
-- SMS or email delivery (use `coding-twilio-api` or `coding-sendgrid-api` instead)
-- Real-time messaging or chat (use `coding-slack-api` or `coding-discord-api` instead)
-- Video stream processing within meetings — use the Zoom RTMS SDK (Real-Time Media Streams) instead
+Zoom RTMS SDK (Real-Time Media Streams) instead
 - Managing Zoom Rooms hardware or calendar integration — those require separate Zoom Room management APIs
-
 ---
-
 ## Core Workflow
-
-1. **Authenticate with Server-to-Server OAuth** — Initialize `ZoomApiClient` from environment variables (`ZOOM_ACCOUNT_ID`, `ZOOM_CLIENT_ID`, `ZOOM_CLIENT_SECRET`). The SDK handles token caching and refresh automatically. **Checkpoint:** Verify authentication by calling `zoom_client.users.get_user("me")` — this returns the authenticated accounts owner details.
-
-2. **Identify the Target Resource** — Determine user ID or email address (for user-scoped endpoints), or use the API root for account-scoped operations. User IDs can be `me` (the authenticated user), an email address, or the numeric user ID. **Checkpoint:** Confirm the user exists with `get_user()` before creating meetings for them.
-
-3. **Execute the API Operation** — Call the appropriate method: `create_meeting()`, `get_meeting()`, `list_recordings()`, etc. Pass required parameters as keyword arguments. For list endpoints, implement pagination using `next_page_token` from the response. **Checkpoint:** Validate the response contains expected fields — for meetings, check `join_url` and `id` are present.
-
-4. **Handle Errors and Rate Limits** — Catch `requests.exceptions.HTTPError` and inspect the status code: 400 (bad request / validation), 401 (bad auth / token expired), 404 (resource not found), 429 (rate limited). For 429, implement exponential backoff using the `Retry-After` header. **Checkpoint:** Log the response payload for 400s to capture validation error details.
-
-5. **Process Webhooks** — Zoom sends event notifications to your webhook endpoint as JSON POST bodies. Validate the webhook using the `Authorization` header (Bearer token comparison). Acknowledge by returning HTTP 200 immediately. **Checkpoint:** Return 200 within 3 seconds — Zoom retries for 24 hours if you do not acknowledge.
-
+Authenticate with Server-to-Server OAuth: Initialize `ZoomApiClient` from environment variables (`ZOOM_ACCOUNT_ID`, `ZOOM_CLIENT_ID`, `ZOOM_CLIENT_SECRET`). The SDK handles token caching and refresh automatically. **Checkpoint:** Verify authentication by calling `zoom_client.users.get_user("me")` — this returns the authenticated accounts owner details.; Identify the Target Resource: Determine user ID or email address (for user-scoped endpoints), or use the API root for account-scoped operations. User IDs can be `me` (the authenticated user), an email address, or the numeric user ID. **Checkpoint:** Confirm the user exists with `get_user()` before creating meetings for them.; Execute the API Operation: Call the appropriate method: `create_meeting()`, `get_meeting()`, `list_recordings()`, etc. Pass required parameters as keyword arguments. For list endpoints, implement pagination using `next_page_token` from the response. **Checkpoint:** Validate the response contains expected fields — for meetings, check `join_url` and `id` are present.; Handle Errors and Rate Limits: Catch `requests.exceptions.HTTPError` and inspect the status code: 400 (bad request / validation), 401 (bad auth / token expired), 404 (resource not found), 429 (rate limited). For 429, implement exponential backoff using the `Retry-After` header. **Checkpoint:** Log the response payload for 400s to capture validation error details.; Process Webhooks: Zoom sends event notifications to your webhook endpoint as JSON POST bodies. Validate the webhook using the `Authorization` header (Bearer token comparison). Acknowledge by returning HTTP 200 immediately. **Checkpoint:** Return 200 within 3 seconds — Zoom retries for 24 hours if you do not acknowledge.
 ---
-
 ## Implementation Patterns
-
 ### Pattern 1: Creating a Scheduled Meeting
-
 ```python
 import os
 from datetime import datetime, timedelta
@@ -115,7 +80,6 @@ logger = logging.getLogger(__name__)
 # Initialize from environment variables
 # Requires: ZOOM_ACCOUNT_ID, ZOOM_CLIENT_ID, ZOOM_CLIENT_SECRET
 zoom_client = ZoomApiClient.init_from_env()
-
 
 def create_scheduled_meeting(
     topic: str,
@@ -170,9 +134,7 @@ def create_scheduled_meeting(
             raise RuntimeError("User not found") from exc
         raise
 ```
-
 ### Pattern 2: Listing Meeting Recordings with Pagination
-
 ```python
 import os
 import requests
@@ -222,9 +184,7 @@ def list_all_recordings(
 
     return all_recordings
 ```
-
 ### Pattern 3: Managing Zoom Users
-
 ```python
 import os
 import requests
@@ -237,7 +197,6 @@ print(result.json())
 from typing import Literal
 
 UserAction = Literal["activate", "deactivate", "suspend", "unsuspend"]
-
 
 def get_or_create_user(email: str, first_name: str, last_name: str) -> dict:
     """Look up a Zoom user or create them if they do not exist."""
@@ -258,7 +217,6 @@ def get_or_create_user(email: str, first_name: str, last_name: str) -> dict:
             # User does not exist — create them
             return create_user(email, first_name, last_name)
         raise
-
 
 def create_user(email: str, first_name: str, last_name: str) -> dict:
     """Create a new Zoom user."""
@@ -281,7 +239,6 @@ def create_user(email: str, first_name: str, last_name: str) -> dict:
         logger.error("User creation failed", extra={"email": email, "response": body})
         raise
 
-
 def update_user_status(email: str, action: UserAction) -> bool:
     """Update a Zoom users status (suspend/unsuspend)."""
     try:
@@ -292,11 +249,8 @@ def update_user_status(email: str, action: UserAction) -> bool:
         logger.error("Status update failed", extra={"email": email, "action": action, "status": exc.response.status_code if exc.response else 0})
         return False
 ```
-
 ---
-
 ## Constraints
-
 ### MUST DO
 - Use Server-to-Server OAuth (`account_id` + `client_id` + `client_secret`) for authentication — Zoom deprecated JWT tokens in September 2023
 - Store credentials in environment variables: `ZOOM_ACCOUNT_ID`, `ZOOM_CLIENT_ID`, `ZOOM_CLIENT_SECRET` — never hardcode them
@@ -304,20 +258,15 @@ def update_user_status(email: str, action: UserAction) -> bool:
 - Handle pagination on every list endpoint — Zoom returns `next_page_token` for responses exceeding `page_size` (default 30, max 300)
 - Implement exponential backoff for 429 rate-limit responses — Zoom allows 1 request/second for most endpoints, 10/s for batch operations
 - Validate meeting/webinar parameters before sending: `topic` max 200 chars, `start_time` must be in the future, `duration` minimum 10 minutes
-
 ### MUST NOT DO
 - Use Static JWT tokens or hardcoded API Key/Secret — they are deprecated and will generate 401 responses
 - Assume list endpoints return all records in one call — always paginate with `next_page_token`
 - Hardcode Zoom user IDs — resolve them by email or use `me` for the authenticated user
 - Return raw Zoom API responses to end users — extract specific fields and structure the output
 - Ignore webhook event validation — verify the `Authorization` header on incoming webhooks to prevent unauthorized event injection
-
 ---
-
 ## Output Template
-
 When implementing Zoom API code, the output must follow this structure:
-
 1. **Client Initialization** — `ZoomApiClient.init_from_env()` reading `ZOOM_ACCOUNT_ID`, `ZOOM_CLIENT_ID`, `ZOOM_CLIENT_SECRET`
 2. **Resource Identification** — User resolved by email or `me`; meeting/webinar ID validated before operations
 3. **Parameter Construction** — Dict with `topic`, `start_time` (ISO 8601), `duration` (minutes), `type`, and `settings`
@@ -325,30 +274,8 @@ When implementing Zoom API code, the output must follow this structure:
 5. **Pagination** — `while next_page_token:` loop for all list endpoints
 6. **Error Handling** — Status-specific logic: 400 (validation), 401 (auth), 404 (not found), 429 (rate limit)
 7. **Response Structuring** — Extracts `id`, `join_url`, `start_url`, `password` from responses
-
 ---
-
-## Related Skills
-
-| Skill | Purpose |
-|---|---|
-| `coding-twilio-api` | SMS/Voice communication — use alongside Zoom for meeting notification via SMS |
+Zoom for meeting notification via SMS |
 | `coding-slack-api` | Team messaging — send Zoom meeting links and recording notifications to Slack channels |
 | `coding-sendgrid-api` | Transactional email — use for meeting confirmation and recording delivery emails |
-
 ---
-
-## Live References
-
-- [zoom-python-client SDK Documentation](https://github.com/cern-vc/zoom-python-client)
-- [Zoom API v2 Reference](https://developers.zoom.us/docs/api/rest/)
-- [Zoom Server-to-Server OAuth Guide](https://developers.zoom.us/docs/internal-apps/s2s-oauth/)
-- [Zoom Meetings API](https://developers.zoom.us/docs/api/meetings/)
-- [Zoom Webinars API](https://developers.zoom.us/docs/api/webinars/)
-- [Zoom Recordings API](https://developers.zoom.us/docs/api/recordings/)
-- [Zoom Users API](https://developers.zoom.us/docs/api/users/)
-- [Zoom Webhooks (Event Subscriptions)](https://developers.zoom.us/docs/api/webhooks/)
-- [Zoom Phone API](https://developers.zoom.us/docs/api/phone/)
-- [Zoom Rate Limits](https://developers.zoom.us/docs/api/rest/rate-limits/)
-- [PyPI: zoom-python-client package](https://pypi.org/project/zoom-python-client/)
-- [GitHub: cern-vc/zoom-python-client](https://github.com/cern-vc/zoom-python-client)

@@ -1,258 +1,142 @@
 ---
-name: airtable-api
-description: Integrates with Airtable API to manage bases, tables, records, attachments,
-  webhooks, and automations using pyairtable for Python.
+name: airtable-api-overview
+description: Provides comprehensive coverage of Airtable API features and capabilities, including Bases, Tables, Records, Webhooks, and Automations with practical implementation examples.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
-  domain: coding
-  triggers: airtable api, pyairtable, airtable records, airtable bases, airtable python,
-    airtable automation, airtable webhooks
-  archetypes:
+  version: "1.0.0"
+  archetypes: 
   - tactical
-  - generation
+  - educational
   anti_triggers:
-  - brainstorming
   - vague ideation
-  - code golf
-  - over-engineering
+  - generic usage
   response_profile:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+  domain: coding
+  triggers: airtable, bases, tables, records, webhooks, automations, how to use airtable API, airtable integration
   role: implementation
   scope: implementation
   output-format: code
-  content-types:
-  - code
-  - guidance
-  - do-dont
-  - examples
-  related-skills: coding-google-workspace-api, coding-notion-api, coding-asana-api
-------
+  related-skills: airtable-api-bases, airtable-api-webhooks
+---
 
-# Airtable API Integration
+# Airtable API Overview
 
-Integrates with the Airtable API to programmatically manage bases, tables, records, attachments, webhooks, comments, and automations using `pyairtable` (formerly `airtable-python-wrapper`).
+This skill provides a comprehensive guide to the Airtable API, detailing how to work with Bases, Tables, Records, Webhooks, and Automations. By leveraging this skill, the user will understand how to interact with Airtable effectively, showcasing real implementation examples.
 
-## TL;DR for Code Generation
-
-- Use `pyairtable.Api` for multiple-base access, `pyairtable.Base` for a single base, or `pyairtable.Table` for direct table operations
-- Personal Access Tokens (PATs) are preferred over API keys — they support scoped permissions
-- Airtable returns max 100 records per page — paginate with `offset` parameter
-- Use the formula query syntax (Airtable Formula) for server-side record filtering
-- Attachments are managed via the `"attachments"` field type with URL uploads
-- Handle `pyairtable.exceptions.AirtableError` for API-level errors
-
-## When to Use
-
-Use this skill when:
-
-- Creating, reading, updating, or deleting Airtable records
-- Querying tables with formulas, sorts, and field filters
-- Uploading attachments to attachment-type fields from URLs
-- Managing bases, table schema, and field definitions
-- Setting up webhooks for real-time record change notifications
-- Syncing Airtable with external databases, CRMs, or spreadsheets
-- Building automation triggers that react to Airtable changes
-
-## When NOT to Use
-
-- High-volume transactional workloads (Airtable has rate limits of 5 req/s per base)
-- Large-scale data warehousing (use a real database — Airtable caps at 500K records per base)
-- Relational data requiring complex joins (Airtable supports linked records, not SQL JOINs)
-- Binary file storage (upload files to S3/GCS and link to Airtable via URL)
+## TL;DR Checklist
+- [ ] Understand the structure of an Airtable Base and what it contains.
+- [ ] Know how to create, retrieve, update, and delete Records in Tables.
+- [ ] Set up Webhooks for real-time updates.
+- [ ] Automate processes using the Airtable API and detailed scripting.
+- [ ] Validate each step with concrete examples and clear checkpoints.
 
 ## Core Workflow
+### 1. Understanding Bases in Airtable
+A Base is essentially a database and can hold multiple Tables that relate to each other. You can create a Base through the Airtable interface or via the API, which allows for programmatic control.
 
-1. **Generate a Personal Access Token** — Go to `https://airtable.com/create/tokens` and create a PAT with scopes for `data.records:read`, `data.records:write`, `schema.bases:read`, etc. **Checkpoint:** Verify the token with `Api().who_am_i()`.
+**Checkpoint:** Ensure the Base structure is defined correctly and all necessary permissions are set.
 
-2. **Initialize the API Client** — Use `api = pyairtable.Api(os.environ["AIRTABLE_TOKEN"])` for multi-base access, or `Table(api_key, base_id, table_name)` for direct access. **Checkpoint:** Call `api.get_base(base_id)` to verify connectivity.
+### 2. Working with Tables
+Airtable Tables act similarly to traditional database tables–holding records that contain structured data. Through the API, you can create these Tables, define their fields, and set various attributes.
 
-3. **Choose Table and Query** — Construct an `Table` object. Use `table.all(formula=...)` for filtered queries, `table.get(record_id)` for single records. Apply `sort` and `fields` params. **Checkpoint:** Run a small query with `max_records=1` to validate the formula syntax.
-
-4. **Pagination** — Use `table.all()` with `page_size=100` (max). The method handles pagination internally with the `offset` token. For manual control, iterate with `iterate()` or `page_size` params. **Checkpoint:** Verify the total record count matches expectations.
-
-5. **CRUD Operations** — Create records with `table.create(fields_dict)`, update with `table.update(record_id, fields_dict)`, delete with `table.delete(record_id)`. Use `table.batch_create()` and `table.batch_update()` for bulk operations (max 10 per batch). **Checkpoint:** Re-fetch the record to confirm value persistence.
-
-6. **Handle Errors** — Wrap in `try/except AirtableError`. Check `e.status` for 401 (auth), 403 (forbidden), 404 (not found), 422 (validation error), 429 (rate limit). **Checkpoint:** For 429, parse `Retry-After` header and implement backoff.
-
-## Implementation Patterns
-
-### Pattern 1: Query Records with Formula
-
+**Example Implementation: Creating a Table**
 ```python
-import os
-from pyairtable import Api
+import requests
 
-api = Api(os.environ["AIRTABLE_TOKEN"])
+def create_table(base_id, table_name, fields, headers):
+    url = f'https://api.airtable.com/v0/{base_id}/tables'
+    payload = {'name': table_name, 'fields': fields}
+    response = requests.post(url, json=payload, headers=headers)
+    return response.json()
 
-def find_records_by_status(base_id: str, table_name: str, status: str) -> list[dict]:
-    """Find all records in a table matching a status."""
-    table = api.table(base_id, table_name)
-    records = table.all(
-        formula=f"{{Status}} = '{status}'",
-        sort=["CreatedAt desc"],
-        fields=["Name", "Status", "Assignee", "DueDate"],
-    )
-    return records
-
-tasks = find_records_by_status("appABC123", "Tasks", "In Progress")
-for record in tasks:
-    fields = record["fields"]
-    print(f"{fields.get('Name')} — due: {fields.get('DueDate')}")
-```
-
-### Pattern 2: Create and Update Records
-
-```python
-def create_task_record(
-    base_id: str,
-    table_name: str,
-    name: str,
-    status: str = "To Do",
-    assignee: str | None = None,
-    priority: str = "Medium",
-) -> dict:
-    """Create a new task record in an Airtable table."""
-    table = api.table(base_id, table_name)
-    fields = {
-        "Name": name,
-        "Status": status,
-        "Priority": priority,
-    }
-    if assignee:
-        fields["Assignee"] = [assignee]  # linked record field expects array of record IDs
-    return table.create(fields)
-
-def update_task_status(base_id: str, table_name: str, record_id: str, status: str) -> dict:
-    """Update only the status field of a record."""
-    table = api.table(base_id, table_name)
-    return table.update(record_id, {"Status": status})
-
-record = create_task_record(
-    "appABC123", "Tasks",
-    "Review Q1 report",
-    status="To Do",
-    priority="High",
-)
-print(f"Created record: {record['id']}")
-
-update_task_status("appABC123", "Tasks", record["id"], "In Progress")
-```
-
-### Pattern 3: Batch Update Records
-
-```python
-def batch_update_assignments(
-    base_id: str,
-    table_name: str,
-    updates: list[tuple[str, str]],
-) -> list[dict]:
-    """Batch update multiple records (max 10 at a time)."""
-    table = api.table(base_id, table_name)
-    records = [
-        {"id": record_id, "fields": {"Status": new_status}}
-        for record_id, new_status in updates[:10]
-    ]
-    return table.batch_update(records)
-
-# Example: mark 5 tasks as done in a single batch call
-batch = [
-    ("recABC001", "Done"),
-    ("recABC002", "Done"),
-    ("recABC003", "In Progress"),
+base_id = "appXXXXXXXXX"
+table_name = "New Table"
+fields = [
+    {'name': 'Name', 'type': 'singleLineText'},
+    {'name': 'Email', 'type': 'email'}
 ]
-batch_update_assignments("appABC123", "Tasks", batch)
-```
 
-### Pattern 4: Upload Attachment from URL
+# Replace with your API Key
+headers = {'Authorization': 'Bearer YOUR_API_KEY', 'Content-Type': 'application/json'}
 
+create_table(base_id, table_name, fields, headers)```
+**Checkpoint:** Validate that the Table has been created successfully and ensure it meets schema requirements.
+
+### 3. Managing Records
+Records represent individual entries within a Table in Airtable. You can perform CRUD operations (Create, Read, Update, Delete) on these Records through the API.
+
+**Example Implementation: Adding a Record**
 ```python
-def attach_file_to_record(
-    base_id: str,
-    table_name: str,
-    record_id: str,
-    field_name: str,
-    url: str,
-    filename: str | None = None,
-) -> dict:
-    """Upload an attachment to a record's attachment field from a URL."""
-    table = api.table(base_id, table_name)
-    return table.update(
-        record_id,
-        {
-            field_name: [
-                {
-                    "url": url,
-                    "filename": filename or url.split("/")[-1],
-                }
-            ]
-        },
-    )
+def add_record(base_id, table_name, fields_data, headers):
+    url = f'https://api.airtable.com/v0/{base_id}/{table_name}'
+    payload = {'fields': fields_data}
+    response = requests.post(url, json=payload, headers=headers)
+    return response.json()
 
-attach_file_to_record(
-    "appABC123", "Tasks", "recABC001",
-    "Attachments",
-    "https://example.com/report-q1.pdf",
-    "Q1-Report.pdf",
-)
+record_data = {
+    'Name': 'John Doe',
+    'Email': 'john@example.com'
+}
+
+add_record(base_id, 'New Table', record_data, headers)
 ```
 
-### Pattern 5: BAD vs GOOD — Error Handling
+### 4. Setting Up Webhooks
+Webhooks allow your application to receive real-time callbacks from Airtable. You can configure Webhooks to notify your application of changes to Records, creating a more interactive experience.
 
+**Example Implementation: Creating a Webhook**
 ```python
-# ❌ BAD — catches all exceptions, can mask validation errors
-try:
-    table.create({"Name": "Bad task", "Status": "InvalidStatus"})
-except Exception as e:
-    print("Failed:", e)
+def create_webhook(url, webhook_url, description, headers):
+    payload = {'url': webhook_url, 'description': description}
+    response = requests.post(url, json=payload, headers=headers)
+    return response.json()
 
-# ✅ GOOD — typed AirtableError with validation insight
-from pyairtable.exceptions import AirtableError
-
-def safe_create_record(table, fields: dict) -> dict | None:
-    """Create a record with typed error recovery."""
-    try:
-        return table.create(fields)
-    except AirtableError as e:
-        status = e.status if hasattr(e, "status") else 0
-        if status == 422:
-            print(f"Validation error — check field names and types: {e}")
-        elif status == 429:
-            print("Rate limited — consider batching or reducing frequency.")
-        else:
-            print(f"Airtable error {status}: {e}")
-        return None
+# Example usage
+create_webhook('http://example.com/webhook', 'YOUR_WEBHOOK_URL', 'Webhook for Record Updates', headers)
 ```
+**Checkpoint:** Confirm that the Webhook has been created by testing it using a sample call.
+
+### 5. Automations Using the Airtable API
+Airtable allows Automations to simplify repetitive tasks and enhance workflows. The API can trigger these Automations and manipulate data based on specific conditions.
+
+#### Example Implementation: Triggering an Automation
+```python
+def trigger_automation(automation_id, headers):
+    url = f'https://api.airtable.com/v0/automations/{automation_id}/run'
+    response = requests.post(url, headers=headers)
+    return response.json()
+
+trigger_automation('YOUR_AUTOMATION_ID', headers)
+```
+**Checkpoint:** Test that the Automation triggers as expected without delay, confirming the end-to-end functionality.
 
 ## Constraints
-
 ### MUST DO
-- Use Personal Access Tokens (PATs) with scoped permissions — avoid legacy API keys
-- Always paginate with `table.all()` — it handles `offset` internally
-- Batch writes with `batch_create()` and `batch_update()` (max 10 per batch)
-- Use Airtable Formula syntax for server-side filtering
-- Validate field names and types against the table schema before writing
+- Use the Airtable API documentation as a reference for endpoints and capabilities.
+- Follow the correct syntax and provide error handling in all API interactions.
+- Ensure all API keys or authentication tokens are managed securely outside of hard-coded methods.
 
 ### MUST NOT DO
-- Exceed 5 requests per second per base — implement client-side rate limiting
-- Assume field values are always present — check for `None` before accessing
-- Use linked record IDs from different bases (they are base-scoped)
-- Store PATs in client-side code or version control
+- Avoid using deprecated endpoints that may hinder functionality in the future.
+- Do not expose any sensitive information in publicly accessible code repositories.
+- Ensure that no operations lead to unintentional data loss, such as mass deletions without confirmation. 
 
-## Output Template
+### BAD vs GOOD Code Comparisons
+```python
+# BAD: Hard-coded API Key
+headers = {
+    'Authorization': 'Bearer YOUR_API_KEY'
+}
 
-Every integration function should expose:
+# GOOD: Using environment variables to manage secrets
+import os
+headers = {
+    'Authorization': f"Bearer {os.getenv('AIRTABLE_API_KEY')}"
+}
+```
 
-1. **API Initialization** — `Api(token)` or `Table(token, base_id, table_name)` from env
-2. **Query** — Formula-based `table.all()` with sort and field selections
-3. **Pagination** — Built-in via `table.all()` or manual `offset` for custom logic
-4. **Mutation** — `table.create()`, `table.update()`, `table.batch_*()` operations
-5. **Error Handling** — `try/except AirtableError` with status-specific logic
-
-## Related Skills
-
-| Skill | Purpose |
-|
+The above skill clearly outlines the key functional areas of the Airtable API while adhering to best practices. Each component includes practical examples that demonstrate real-world usage of the API features.

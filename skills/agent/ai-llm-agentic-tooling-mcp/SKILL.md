@@ -1,96 +1,109 @@
 ---
 name: ai-llm-agentic-tooling-mcp
-
-description: Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating the effective management of servers, clients, tools, resources, and prompts.
-
+description: Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating effective management of servers, clients, tools, resources, and prompts.
+license: MIT
+compatibility: opencode
 metadata:
-  archetypes: [agent, tooling, integration]
-  anti_triggers: [generic routing]
-  response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
-  
   version: "1.0.0"
   domain: agent
-  triggers: AI tooling, LLM, Model Context Protocol, MCP, resource management, prompt optimization
+  triggers: mcp, model context protocol, server management, client management, resources
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: ai-llm-resources-management, ai-llm-prompt-engineering
-
+  related-skills: ai-llm-agentic-tooling-langchain-langgraph
 ---
 
-# AI Tooling - Model Context Protocol (MCP)
+# AI LLM Agentic Tooling with Model Context Protocol (MCP)
 
-Provides a structured protocol for aligning AI models with their operational environment, ensuring optimal tool performance and resource management.
+Implements best practices and guidelines for applying the Model Context Protocol (MCP) in AI and LLM environments. Focuses on the effective management of servers, clients, tools, resources, and prompts.
 
-## TL;DR Checklist
-- [ ] Define resource constraints and tool availability for each task.
-- [ ] Implement the Model Context Protocol to inform LLM decision-making.
-- [ ] Assess client-server interactions to maintain operational integrity.
+## Use Cases
 
----
-
-## When to Use
-- When deploying AI/LLM applications requiring structured context interaction.
-- For managing diverse resources while ensuring optimal tool performance.
-- When developing or integrating new server-client frameworks in AI applications.
-
----
-
-## When NOT to Use
-- Avoid for static applications that do not require adaptive resource management.
-- Do not apply in environments where operational flexibility is not needed.
-
----
-
-## Core Workflow
-1. **Define Contextual Goals** — Establish specific goals for the task and the desired outcomes for each LLM interaction.
-   **Checkpoint:** Ensure clarity on the expected outputs and resource constraints.
-2. **Identify Resources** — List available tools and resources relevant to the task.
-   **Checkpoint:** Verify compatibility of tools with the MCP framework.
-3. **Apply the MCP** — Integrate the Model Context Protocol into the AI model's decision-making processes, ensuring that the model can adapt to various operational contexts.
-   **Checkpoint:** Validate the model's responses against expected outcomes.
-4. **Monitor & Adjust** — Continuously assess client-server interactions and make adjustments as needed to optimize the operational flow.
-
----
+Use this skill when:
+- Building scalable LLM applications that require contextual awareness.
+- Managing resources in a multi-layered AI architecture.
+- Implementing protocols for efficient handling of contexts and state.
 
 ## Implementation Patterns
 
-### Pattern 1: Resource Allocation
+This skill outlines the implementation of best practices for applying the Model Context Protocol (MCP) in AI and LLM environments. It focuses on efficient management of resources and contextual state to optimize performance and ease-of-use for users and developers alike.
+
+### Basic MCP Implementation
+Here's how to initiate a basic Model Context:
 ```python
-def allocate_resources(task_id: str, resources: List[str]) -> Dict[str, Any]:
-    """Allocates resources based on task requirements and MCP guidelines."""
-    resource_plan = {}
-    for resource in resources:
-        # Check availability and allocate
-        if is_resource_available(resource):
-            resource_plan[resource] = allocate(resource)
-    return resource_plan
+class ModelContext:
+    def __init__(self):
+        self.context = {}
+
+    def update_context(self, key: str, value: str):
+        self.context[key] = value
+
+    def get_context(self, key: str) -> str:
+        return self.context.get(key, "")
 ```
 
-### Pattern 2: Contextual Adaptation
+### Advanced Context Management
+This section includes management strategies for context handling:
 ```python
-class MCPContext:
-    def __init__(self, task_id: str):
-        self.task_id = task_id
-        self.contextual_data = self.fetch_context(task_id)
+class AdvancedModelContext(ModelContext):
+    def merge_context(self, new_context: dict):
+        self.context.update(new_context)
 
-    def fetch_context(self, task_id: str) -> Any:
-        # Logic to fetch context based on the task ID
-        return context_data
+    def clear_context(self):
+        self.context.clear()
 ```
-## Constraints
-### MUST DO
-- Regularly assess and update resource allocations based on model performance.
-- Ensure all tools are compatible with the MCP.
 
-### MUST NOT DO
-- Run unmonitored tasks that could lead to resource wastage.
-- Ignore feedback mechanisms that inform context adjustments.
+### Constraints on Use
+Ensure adherence to the following constraints when working with MCP:
+- Maintain strict input/output structures for context objects.
+- Implement thorough logging to track context changes.
+
+## Metadata Updates
+```yaml
+archetypes: tactical
+anti_triggers:
+  - generic model context
+  - vague context request
+response_profile:
+  verbosity: medium
+  directive_strength: high
+  abstraction_level: operational
+```
+
+### Basic MCP Implementation
+```python
+class ModelContext:
+    def __init__(self):
+        self.context = {}
+
+    def update_context(self, key: str, value: str):
+        self.context[key] = value
+
+    def get_context(self, key: str) -> str:
+        return self.context.get(key, "")
+```
+
+### Advanced Context Management
+```python
+class AdvancedModelContext(ModelContext):
+    def merge_context(self, new_context: dict):
+        self.context.update(new_context)
+
+    def clear_context(self):
+        self.context.clear()
+```
+
+### Constraints on Use
+- Ensure prompt structures are maintained to maximize performance and clarity.
+- Validate all context objects to ensure they adhere to expected formats and types.
 
 ---
+## Constraints
 
-## Related Skills
-| Skill | Purpose |
-|-------|---------|
-| `ai-llm-resources-management` | Management of resources within AI models |
-| `ai-llm-prompt-engineering` | Crafting optimal prompts for AI tools |
+### MUST DO
+- Regularly review and optimize context management practices to enhance performance.
+- Include logging for context updates and state changes to facilitate troubleshooting.
+
+### MUST NOT DO
+- Allow context bloat; clear unused or outdated context entries regularly.
+- Skip context validation checks before executing actions; enforce strict type and format checks.

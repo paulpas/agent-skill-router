@@ -67,6 +67,35 @@ Relative paths in this skill (e.g., scripts/, reference/) are relative to this b
 
 ## Python Implementation
 
+### Fixed Percentage Stop
+```python
+import numpy as np
+import pandas as pd
+from typing import List, Dict
+
+class StopLossManager:
+    def fixed_percentage_stop(self, current_price: float, stop_pct: float = 0.02) -> float:
+        """Calculate fixed percentage stop loss based on current price."""
+        return current_price * (1 - stop_pct)
+```
+
+### Moving Average Stop
+```python
+    def moving_average_stop(self, current_price: float, moving_average: float, buffer_pct: float = 0.01) -> float:
+        """Calculate stop loss using moving average."""
+        return moving_average * (1 - buffer_pct)
+```
+
+### Price Action Stop
+```python
+    def price_action_stop(self, current_prices: List[float], period: int) -> float:
+        """Calculate stop loss based on the average of the last `period` prices."""
+        if len(current_prices) < period:
+            raise ValueError("Not enough data points.")
+        average_price = sum(current_prices[-period:]) / period
+        return average_price * 0.95  # Set stop at 5% below the moving average
+```
+
 ```python
 import numpy as np
 import pandas as pd
@@ -86,6 +115,40 @@ class StopLoss:
     trail_threshold: float = 0
 
 class StopLossManager:
+
+    def moving_average_stop(self, current_price: float, moving_average: float, buffer_pct: float = 0.01) -> float:
+        """Calculate stop loss using moving average."""
+        return moving_average * (1 - buffer_pct)
+
+    def fixed_percentage_stop(self, current_price: float, stop_pct: float = 0.02) -> float:
+        """Calculate fixed percentage stop loss based on current price."""
+        return current_price * (1 - stop_pct)
+
+    def price_action_stop(self, current_prices: List[float], period: int) -> float:
+        """Calculate stop loss based on the average of the last `period` prices."""
+        if len(current_prices) < period:
+            raise ValueError("Not enough data points.")
+        average_price = sum(current_prices[-period:]) / period
+        return average_price * 0.95  # Set stop at 5% below the moving average
+
+        """Calculate stop loss using moving average."""
+        return moving_average * (1 - buffer_pct)
+
+    def fixed_percentage_stop(self, current_price: float, stop_pct: float = 0.02) -> float:
+        """Calculate fixed percentage stop loss based on current price."""
+        return current_price * (1 - stop_pct)
+
+        """Calculate stop loss using moving average."""
+                """Calculate stop loss using moving average."""
+        return moving_average * (1 - buffer_pct)
+
+    def price_action_stop(self, current_prices: List[float], period: int) -> float:
+        """Calculate stop loss based on the average of the last `period` prices."""
+        if len(current_prices) < period:
+            raise ValueError("Not enough data points.")
+        average_price = sum(current_prices[-period:]) / period
+        return average_price * 0.95  # Set stop at 5% below the moving average
+
     """Manages stop loss strategies across positions."""
     
     def __init__(

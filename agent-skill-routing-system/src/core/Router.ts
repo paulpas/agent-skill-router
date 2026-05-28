@@ -518,7 +518,7 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         const triggerScore = TriggerMatchScorer.score(
           query,
           candidate.metadata.tags ?? [],
-          (candidate.metadata as any).triggers ?? []
+          (candidate.metadata.triggers ?? [])
         );
 
         // Archetype boost (from precomputed query archetypes)
@@ -610,7 +610,7 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       const triggerScore = TriggerMatchScorer.score(
         query,
         candidate.metadata.tags ?? [],
-        (candidate.metadata as any).triggers ?? []
+        (candidate.metadata.triggers ?? [])
       );
 
       // Archetype boost (from precomputed query archetypes)
