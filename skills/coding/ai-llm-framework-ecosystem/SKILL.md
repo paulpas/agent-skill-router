@@ -1,3 +1,5 @@
+# Skill: ai-llm-framework-ecosystem
+
 ---
 name: ai-llm-framework-ecosystem
 description: Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI,
@@ -30,11 +32,8 @@ metadata:
     coding-dependency-management
 ------
 # AI/LLM Framework Ecosystem Navigator
-
 Evaluates AI/LLM framework ecosystems using structured scoring across capability domains to guide production-grade project architecture decisions. When loaded, this skill makes the model analyze requirements against LangChain, LlamaIndex, CrewAI, DSPy, and Microsoft Agent Framework, then produce a ranked recommendation with vendor lock-in assessment and migration strategy.
-
 ## TL;DR Checklist
-
 - [ ] Define the AI project's capability requirements across all 8 domains (memory, orchestration, RAG, agents, evaluation, observability, deployment, data handling)
 - [ ] Score each candidate framework against every domain using weighted scoring (0-10 scale with justification)
 - [ ] Calculate vendor lock-in risk by assessing abstraction depth, proprietary extensions, and migration cost
@@ -42,50 +41,8 @@ Evaluates AI/LLM framework ecosystems using structured scoring across capability
 - [ ] Produce a ranked recommendation with tiebreaker rules for equal scores
 - [ ] Generate dependency configuration (pyproject.toml) and CI pipeline template matching the chosen framework
 - [ ] Document migration path and fallback strategy if the primary framework degrades
-
 ---
-
-## When to Use
-
-Use this skill when:
-
-- Starting a new AI/LLM project and need to select an orchestration framework before writing application code
-- Evaluating whether to migrate an existing LLM pipeline from one framework to another
-- Building a proof-of-concept that may scale to production and need future-proof architecture decisions
-- Comparing two specific frameworks (e.g., LangChain vs LlamaIndex) for a concrete use case
-- An architect or tech lead needs a documented, defensible rationale for framework choice
-
----
-
-## When NOT to Use
-
-Avoid this skill for:
-
-- Single-purpose script using one LLM API directly without any orchestration layer — no framework needed
-- Prototyping a chat interface where LangChain's quickstart template is sufficient and migration is not a concern
-- Evaluating pure inference frameworks (vLLM, TensorRT-LLM) which are deployment/runtime tools, not orchestration layers
-- When the decision has already been made by executive mandate or organizational policy — analysis adds no value
-
----
-
-## Core Workflow
-
-1. **Capture Requirements** — List every capability the project needs: memory type (short-term, long-term, vector), agent complexity (single-step, multi-agent, autonomous loop), data pipeline depth (simple retrieval vs multi-hop extraction), evaluation requirements (offline benchmarks, online A/B testing). **Checkpoint:** Every requirement must map to at least one scoring domain in the Capability Domain Scoring Guide.
-
-2. **Assign Domain Weights** — Rate each capability domain's importance on a 1-5 scale based on project goals. Core functionality gets weight 4-5. Nice-to-have features get weight 1-2. Compute weighted score by multiplying each domain score by its weight. **Checkpoint:** Sum of weights must equal total requirements count for accurate proportional scoring.
-
-3. **Score Each Framework** — Evaluate every candidate framework against every weighted domain using the 0-10 scale from the Capability Domain Scoring Guide. Record a one-sentence justification per domain. Use live references to validate capability claims. **Checkpoint:** No framework may score above 8 without documented evidence from official docs or recent benchmarks.
-
-4. **Assess Vendor Lock-in Risk** — Analyze each shortlisted framework's abstraction layers, proprietary extension APIs, data format lock-in (e.g., LangChain chains vs portable prompts), and estimated migration effort to the runner-up. Assign risk as Low (portable abstractions, < 2 weeks migration), Medium (partial lock-in, 2-4 weeks), or High (deeply coupled, > 1 month). **Checkpoint:** Lock-in assessment must include a concrete migration path, not just a label.
-
-5. **Evaluate Ecosystem Health** — Check release cadence (last 3 releases within 90 days = healthy), community signals (GitHub stars trend, Discord/Slack activity, conference talks), enterprise adoption (companies using it in production), and breaking change frequency. Flag frameworks with major regressions or declining momentum. **Checkpoint:** Ecosystem health must use May 2026 data; do not rely on pre-2025 information.
-
-6. **Produce Recommendation** — Generate a ranked table, explain the top choice with tiebreaker rationale (e.g., "LangChain edged out LlamaIndex by 3 points due to superior multi-agent orchestration despite equivalent RAG scores"), list the top 3 risks, and provide the initial dependency configuration. **Checkpoint:** Recommendation must be actionable within one paragraph — a stakeholder should understand the decision without reading the full analysis.
-
----
-
 ## Framework Landscape (May 2026)
-
 | Framework | Primary Use Case | Agentic Capability | RAG Quality | Maturity | Enterprise Backing | GitHub Stars (est.) |
 |-----------|------------------|-------------------|-------------|----------|--------------------|---------------------|
 | LangChain | General-purpose LLM orchestration | Strong (LangGraph) | Strong | Mature (v0.3.x) | Amazon, Google, Cohere partnerships | 90k+ |
@@ -95,18 +52,14 @@ Avoid this skill for:
 | Microsoft Agent Framework | Enterprise agent orchestration | Strong (Azure-native) | Good (Azure AI Search integrated) | Emerging (preview/GA transition) | Microsoft / Azure | N/A (closed) |
 | AutoGen (Microsoft) | Multi-agent conversation patterns | Excellent (conversable agents) | Weak (integration via extensions) | Stable (v0.4.x) | Microsoft Research | 40k+ |
 | Haystack (Deepset) | Production RAG pipelines | Moderate (agent components) | Excellent (deep RAG focus) | Mature (v2.x) | Deepset, AWS marketplace | 18k+ |
-
 **Selection Notes:**
 - **LangChain** remains the default general-purpose choice but has the highest vendor lock-in risk due to extensive proprietary chain/agent abstractions.
 - **LlamaIndex** dominates when retrieval quality is the primary concern; its data indexing architecture is unmatched for complex document pipelines.
 - **CrewAI** excels at structured multi-agent workflows with role separation but requires external tools for RAG and observability.
 - **DSPy** is the best choice when prompt optimization and programmatic compilation matter more than out-of-the-box templates.
 - **Microsoft Agent Framework** is preferred for organizations already invested in Azure; closed-source limits portability.
-
 ---
-
 ## Capability Domain Scoring Guide
-
 | Domain | Score 9-10 | Score 6-8 | Score 3-5 | Score 0-2 |
 |--------|-----------|----------|----------|----------|
 | **Memory Management** | Native short-term, long-term, and vector memory with automatic persistence and eviction | Basic session memory; vector requires external integration | Only token-window limited context | No memory abstraction |
@@ -117,15 +70,10 @@ Avoid this skill for:
 | **Observability** | Production-grade tracing, metrics, structured logging, PII redaction, dashboard integration | Basic request logging and simple tracing | Console prints or minimal logs | No observability |
 | **Deployment** | Containerized templates, cloud SDKs, batch inference support, edge deployment | Standard web service patterns | Manual deployment scripts | No deployment guidance |
 | **Data Handling** | Streaming I/O, batch processing, schema validation, file format support (PDF, JSON, etc.) | Basic file reading/writing | CSV/JSON only | Minimal data primitives |
-
 ---
-
 ## Implementation Patterns
-
 ### Pattern 1: Requirements-to-Framework Scoring Engine
-
 Build a typed scoring engine that transforms project requirements into a weighted multi-domain evaluation. Use Python dataclasses for domain integrity and a pure scoring function for testability.
-
 ```python
 # ❌ BAD — untyped dicts, mixed responsibilities, no validation
 def pick_framework(reqs, frameworks):
@@ -262,11 +210,8 @@ for entry in ranked:
 # #1 langchain: 7.85/10
 # #2 llamaindex: 6.55/10
 ```
-
 ### Pattern 2: Vendor Lock-in Risk Assessment
-
 Assess lock-in risk by measuring abstraction depth, proprietary API surface area, and migration effort to the next-best alternative.
-
 ```python
 # ❌ BAD — vague classification, no actionable output
 def assess_lockin(framework):
@@ -332,11 +277,8 @@ langchain_assessment = LockInAssessment.assess("langchain", {
 print(f"Lock-in: {langchain_assessment.overall_risk}")       # High
 print(f"Migration: ~{langchain_assessment.estimated_migration_days} days")  # ~51 days
 ```
-
 ### Pattern 3: AI Project Dependency Management Setup
-
 Generate a production-ready `pyproject.toml` and CI pipeline for the selected framework with proper dependency isolation, version pinning, and pre-commit hooks.
-
 ```toml
 # pyproject.toml — LangChain-based project template
 [build-system]
@@ -387,7 +329,6 @@ warn_return_any = true
 module = ["langchain.*", "langgraph.*", "tiktoken.*"]
 ignore_missing_imports = true
 ```
-
 ```yaml
 # .github/workflows/ai-pipeline-ci.yml — CI pipeline for AI project
 name: AI Pipeline CI
@@ -462,11 +403,8 @@ jobs:
           print('Agent smoke test passed')
           "
 ```
-
 ### Pattern 4: Ecosystem Health Assessment Metrics
-
 Track framework health using measurable signals that predict long-term viability. Use this pattern to report on ecosystem maturity during architecture reviews.
-
 ```python
 from __future__ import annotations
 
@@ -579,11 +517,8 @@ for flag in langchain_health.flag_concerns():
     print(flag)
 # (No flags — all green/yellow at acceptable thresholds)
 ```
-
 ---
-
 ## Constraints
-
 ### MUST DO
 - Always score against ALL 8 capability domains — do not skip domains even if they seem irrelevant to the current project
 - Use weighted scoring, never unweighted averages. A "nice-to-have" domain must contribute proportionally less than a core requirement.
@@ -592,7 +527,6 @@ for flag in langchain_health.flag_concerns():
 - Generate concrete dependency pinning (compatible version ranges, not wildcards) in pyproject.toml output
 - Follow the 5 Laws of Elegant Defense from code-philosophy: design data flows that make invalid states unreachable, parse framework APIs at boundaries and trust them only internally, ensure every scoring function is a pure function with no side effects.
 - Include a migration path even when recommending a lock-in framework — portability planning is not optional.
-
 ### MUST NOT DO
 - Never recommend a framework based on hype, Twitter/X sentiment, or blog posts without corroborating documentation evidence
 - Do not use `*` or `>=0.0.0` as version specifiers — always define upper bounds to prevent breaking changes from silently upgrading
@@ -600,25 +534,8 @@ for flag in langchain_health.flag_concerns():
 - Do not treat DSPy as a general-purpose framework substitute — it is specifically for prompt/program optimization, not orchestration or RAG
 - Do not conflate an LLM provider (OpenAI, Anthropic) with an orchestration framework — they are orthogonal concerns
 - Never present ecosystem health metrics from before May 2026 without flagging the date discrepancy
-
 ---
-
-## Output Template
-
-When this skill is active, the analysis output must follow this structure:
-
-1. **Requirements Summary** — Bullet list of captured requirements with domain mapping and importance weights (1-5)
-2. **Weighted Scoring Table** — Markdown table showing each framework's raw score, weighted contribution, and total per domain. Include a summary column with normalized total.
-3. **Lock-in Assessment** — One entry per shortlisted framework showing abstraction portability, proprietary API count, migration path, and overall risk label.
-4. **Ecosystem Health Report** — Composite health score (0-10) with flagged concerns for each framework. Include release cadence and growth data.
-5. **Ranking & Recommendation** — Ranked list with the top recommendation called out in a bold summary paragraph. Explain tiebreaker logic if scores are within 1 point.
-6. **Risk Register** — Top 3 risks (one from scoring, one from lock-in, one from ecosystem) with mitigation strategies.
-7. **Dependency Configuration** — Ready-to-use pyproject.toml snippet and CI pipeline YAML for the recommended framework.
-
----
-
 ## Live References
-
 | Resource | URL | Purpose |
 |----------|-----|---------|
 | LangChain Documentation | https://python.langchain.com/docs/introduction/ | Framework API, chains, agents, integrations |
@@ -628,18 +545,12 @@ When this skill is active, the analysis output must follow this structure:
 | LangGraph Documentation | https://langchain-ai.github.io/langgraph/ | Stateful multi-agent orchestration with LangChain |
 | Microsoft AutoGen Documentation | https://microsoft.github.io/autogen/ | Multi-agent conversation framework (Microsoft) |
 | Hugging Face AI Agents Guide | https://huggingface.co/docs/agents | Agent patterns across ecosystem (community resource) |
-
 **Data Freshness:** All metrics, version numbers, and ecosystem data should be verified against these sources at the time of analysis. Do not rely on information older than May 2026 without explicitly flagging it.
-
 ---
-
 ## Related Skills
-
 | Skill | Purpose |
 |-------|---------|
 | `coding-architecture-patterns` | Guides overall system architecture decisions after framework selection |
 | `coding-design-patterns` | Provides design pattern catalog for implementing the chosen framework's abstractions |
 | `coding-testing-strategies` | Defines testing approaches for LLM-powered systems including eval harnesses and hallucination checks |
 | `coding-dependency-management` | Covers broader dependency isolation strategies, virtual environments, and reproducible builds across all project types |
-
-> 📖 skill(local cache): coding-architecture-patterns, coding-design-patterns, coding-testing-strategies, coding-dependency-management

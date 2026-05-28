@@ -85,11 +85,12 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 
 | Domain | Count | Focus |
 |--------|-------|-------|
-| Agent | 285 | AI orchestration, routing, task decomposition |
+| Agent | 287 | AI orchestration, routing, task decomposition |
+| Ai | 3 |  |
 | Architecture | 4 |  |
 | Cloud | 2 |  |
 | CNCF | 173 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 536 | Software patterns, security, testing, data science |
+| Coding | 538 | Software patterns, security, testing, data science |
 | Data And Persistence | 1 |  |
 | Devops | 5 |  |
 | Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
@@ -103,6 +104,7 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 | Security | 3 |  |
 | Software | 2 |  |
 | Trading | 91 | Execution, risk management, ML models |
+| Unknown | 2 |  |
 | Writing | 4 | Technical writing, style guidance |
 <<<<<<< HEAD
 | Coding | 512 | Software patterns, security, testing, data science |
@@ -316,22 +318,22 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-05-27 19:23:02 UTC  
-> **Total skills:** 1152  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1152 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-05-27 21:15:49 UTC  
+> **Total skills:** 1161  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1161 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1086 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1086 | Ranking penalty for conflicting query terms |
-| Response Profile | 1086 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1095 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1095 | Ranking penalty for conflicting query terms |
+| Response Profile | 1095 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
 
-### Agent (285 skills)
+### Agent (287 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -355,6 +357,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-dev-jobs-mcp, ai dev jobs mcp, how do i ai-dev-jobs-mcp, orchestrate ai-dev-jobs-mcp, automate ai-dev-jobs-mcp, agent ai-dev-jobs-mcp [orchestration, strategic] |
 | [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. | ai framework comparison, framework evaluation, LangGraph vs CrewAI, agent framework scoring, LLM framework selection, AI framework matrix, model routing framework [tactical, strategic] |
 | [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. | ai framework selection, which ai framework to use, langchain vs crewai, choose ai agent framework, framework comparison, build custom vs use framework, AI agent tooling, how do i pick an ai framework, LLM framework evaluation [orchestration, strategic] |
+| [ai-llm-agentic-tooling-mcp](skills/agent/ai-llm-agentic-tooling-mcp/SKILL.md) | Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating the effective management of servers, clients, tools, resources, and prompts. | AI tooling, LLM, Model Context Protocol, MCP, resource management, prompt optimization [agent, tooling, integration] |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ai-ml, ai ml, how do i ai-ml, orchestrate ai-ml, automate ai-ml, agent ai-ml [orchestration, strategic] |
 | [ai-model-selector](skills/agent/ai-model-selector/SKILL.md) | Selects the optimal LLM model for a specific task by evaluating capability requirements against cost, latency, context window, and quality needs across all major providers. | ai model selection, which LLM to use, GPT-4o vs Claude, choose AI model, model comparison, best model for task, LLM routing, o3 vs sonnet, Gemini vs GPT, model cost optimization, pick the right model, how do i choose an LLM [tactical, strategic] |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | ai persona, first-person identity, agent voice, personality design, consistent tone, how do i make my ai feel personal, authentic AI, self-expression, character design, brand voice AI [tactical] |
@@ -402,6 +405,7 @@ MIT — All skills are freely available and redistributable.
 | [cc-skill-security-review](skills/agent/cc-skill-security-review/SKILL.md) | Implements intelligent cc skill security review with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | cc-skill-security-review, cc skill security review, how do i cc-skill-security-review, orchestrate cc-skill-security-review, automate cc-skill-security-review, agent cc-skill-security-review, vulnerability scanning, security [orchestration, strategic] |
 | [cc-skill-strategic-compact](skills/agent/cc-skill-strategic-compact/SKILL.md) | Implements intelligent cc skill strategic compact with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | cc-skill-strategic-compact, cc skill strategic compact, how do i cc-skill-strategic-compact, orchestrate cc-skill-strategic-compact, automate cc-skill-strategic-compact, agent cc-skill-strategic-compact [orchestration, strategic] |
 | [changelog-automation](skills/agent/changelog-automation/SKILL.md) | Implements intelligent changelog automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | changelog-automation, changelog automation, how do i changelog-automation, orchestrate changelog-automation, automate changelog-automation, agent changelog-automation [orchestration, strategic] |
+| [chroma-tooling](skills/agent/chroma-tooling/SKILL.md) | Implements advanced tooling strategies for integrating Chroma libraries into AI/LLM workflows, covering collections, embeddings, queries, and persistence mechanisms. | chroma, collections, embeddings, query, persistence, AI tooling, LLM integration, how do I use chroma [agent, tooling, integration] |
 | [ci-cd-pipeline-analyzer](skills/agent/ci-cd-pipeline-analyzer/SKILL.md) | Implements intelligent ci cd pipeline analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | ci-cd-pipeline-analyzer, ci cd pipeline analyzer, how do i ci-cd-pipeline-analyzer, orchestrate ci-cd-pipeline-analyzer, automate ci-cd-pipeline-analyzer, agent ci-cd-pipeline-analyzer [orchestration, strategic] |
 | [cicd-automation-workflow-automate](skills/agent/cicd-automation-workflow-automate/SKILL.md) | Implements intelligent cicd automation workflow automate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | cicd-automation-workflow-automate, cicd automation workflow automate, how do i cicd-automation-workflow-automate, orchestrate cicd-automation-workflow-automate, automate cicd-automation-workflow-automate, agent cicd-automation-workflow-automate [orchestration, strategic] |
 | [cicd-pipeline-debugging](skills/agent/cicd-pipeline-debugging/SKILL.md) | Debugging patterns for GitHub Actions, GitLab CI, Jenkins and other CI/CD systems including log analysis, runner issues, cache problems, and workflow optimization | github actions debugging, gitlab ci troubleshooting, jenkins pipeline, ci cd failures, build errors, workflow debugging, pipeline logs, runner issues [tactical] |
@@ -622,6 +626,15 @@ MIT — All skills are freely available and redistributable.
 | [zoom-automation](skills/agent/zoom-automation/SKILL.md) | Implements intelligent zoom automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | zoom-automation, zoom automation, how do i zoom-automation, orchestrate zoom-automation, automate zoom-automation, agent zoom-automation [orchestration, strategic] |
 
 
+### Ai (3 skills)
+
+| Skill Name | Description | Triggers |
+|---|---|---|
+| [weaviate-collections-api](skills/ai/weaviate-collections-api/SKILL.md) | Implements Weaviate API for managing collections of data within AI applications, enhancing the structure and retrieval of information. | weaviate, collections, AI, data storage, vector search, machine learning [ai, weaviate, collections] |
+| [weaviate-graphql](skills/ai/weaviate-graphql/SKILL.md) | Implements the GraphQL capabilities of the Weaviate API, enabling flexible querying options for managing AI datasets efficiently. | weaviate, GraphQL, AI, query language, database management [ai, weaviate, graphql] |
+| [weaviate-vector-search](skills/ai/weaviate-vector-search/SKILL.md) | Implements vector search capabilities of the Weaviate API, allowing efficient and scalable retrieval of relevant data for AI applications. | weaviate, vector search, AI, retrieval, machine learning [ai, weaviate, vector-search] |
+
+
 ### Architecture (4 skills)
 
 | Skill Name | Description | Triggers |
@@ -819,7 +832,7 @@ MIT — All skills are freely available and redistributable.
 | [zot](skills/cncf/zot/SKILL.md) | "Zot in Container Registry - cloud native architecture, patterns, pitfalls" and best practices | cdn, container, infrastructure as code, monitoring, registry, zot, cloudformation, cloudfront [educational, strategic] |
 
 
-### Coding (536 skills)
+### Coding (538 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -830,7 +843,6 @@ MIT — All skills are freely available and redistributable.
 | [agent-evaluation-testing](skills/coding/agent-evaluation-testing/SKILL.md) | Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python. | agent evaluation, LLM testing, promptfoo, tool-use accuracy, hallucination detection, how do i test my agent, evaluate AI responses, agent quality assurance [tactical, diagnostic] |
 | [ai-assisted-code-review](skills/coding/ai-assisted-code-review/SKILL.md) | Orchestrates AI-augmented code review workflows combining LLM-based analysis with human judgment for comprehensive PR quality assurance in modern development teams. | ai code review, copilot review, llm code review, claude code review, cursor code review, automated review, AI-assisted review, how do i use AI for code review [tactical, orchestration] |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. | ai-assisted engineering, AI pair programming, LLM code generation, prompt engineering for code, automated code review with AI, AI test generation, how do i use AI in software development, code generation guardrails [tactical, generation] |
-| [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. | ai framework selection, llm orchestration, langchain vs llamaindex, agentic workflow, how do i choose an ai framework, prompt engineering framework, AI agent platform, RAG architecture [tactical, generation] |
 | [airtable-api](skills/coding/airtable-api/SKILL.md) | Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python. | airtable api, pyairtable, airtable records, airtable bases, airtable python, airtable automation, airtable webhooks [tactical, generation] |
 | [ampersand-operator](skills/coding/ampersand-operator/SKILL.md) | Implements bitwise AND operations, address/reference resolution, and memory pointer manipulation using & operator across C, C++, Rust, Python ctypes, and Go for low-level programming. | &, ampersand operator, bitwise AND, address of, flag checking, bitmask, pointer manipulation [tactical, generation] |
 | [amplitude-api](skills/coding/amplitude-api/SKILL.md) | Implements Amplitude analytics integration (event tracking, user profiles, identify API, cohort analysis, dashboard export) using amplitude-analytics Python SDK with event batching, user properties, group identify, revenue tracking, and Amplitude HTT... | amplitude, event tracking, user analytics, amplitude events, identify api, cohort analysis, how do i track user events in amplitude, product analytics [tactical, generation] |
@@ -1004,6 +1016,7 @@ MIT — All skills are freely available and redistributable.
 | [dsl-engineering](skills/coding/dsl-engineering/SKILL.md) | Designs and implements domain-specific languages (embedded DSLs with Python/Go idioms, external DSLs with PEG/ANTLR/Lark parsers) for configuration, query, and rule engines in production systems. | dsl design, domain-specific language, embedded dsl, external dsl, parser generator, peg grammar, antlr, lark, ast transformation, query language, configuration language, how do i create a custom language [tactical, generation] |
 | [eda](skills/coding/eda/SKILL.md) | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" | exploratory data analysis, EDA, summary statistics, distributions, data exploration, how do i explore data [tactical, generation] |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. | elasticsearch, elasticsearch-py, opensearch, full-text search, elastic aggregations, how do i search data from python, elk stack, vector search [tactical, generation] |
+| [elevenlabs-ai-tooling](skills/coding/elevenlabs-ai-tooling/SKILL.md) | Implements integrations with ElevenLabs API for Text-to-Speech, Voice Cloning, and Conversational AI capabilities within AI/LLM agendas. | elevenlabs api, text-to-speech, voice cloning, conversational ai, how do i convert text to speech, voice ai integration [generation, tactical] |
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. | elevenlabs, eleven labs, tts, text to speech, voice cloning, elevenlabs api, how do i use elevenlabs, AI voice [tactical, generation] |
 | [engineering-api-design](skills/coding/engineering-api-design/SKILL.md) | Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces. | api design, REST API, GraphQL schema, OpenAPI spec, API versioning, pagination, rate limiting, endpoint design, API authentication, how do i design an API, API documentation, Swagger [tactical, generation] |
 | [engineering-error-handling](skills/coding/engineering-error-handling/SKILL.md) | Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems. | error handling, exception hierarchy, retry strategy, exponential backoff, circuit breaker, graceful degradation, structured logging, panic prevention, how do i handle errors, error wrapping, sentinel errors [tactical, diagnostic] |
@@ -1061,6 +1074,8 @@ MIT — All skills are freely available and redistributable.
 | [git-pr-workflows](skills/coding/git-pr-workflows/SKILL.md) | Implements best practices for managing pull requests (PRs) in Git, including workflow automation and quality control strategies. | git, pull request, PR workflows, code review, branching strategies [implementation, orchestration] |
 | [github-api](skills/coding/github-api/SKILL.md) | Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics. | github api, octokit, pygithub, github rest api, github graphql, manage repositories, github actions, pull request automation [tactical, generation] |
 | [gitlab-api](skills/coding/gitlab-api/SKILL.md) | Integrates with the GitLab REST API v4 and GraphQL API via python-gitlab to automate projects, merge requests, CI/CD pipelines, runners, and container registry management. | gitlab api, python-gitlab, gitlab ci/cd, merge request automation, gitlab pipelines, gitlab runner, gitlab graphql, manage projects [tactical, generation] |
+| [gitlab-api-devops](skills/coding/gitlab-api-devops/SKILL.md) | Implements GitLab API functionalities for Developer Platforms and DevOps, covering projects, pipelines, merge requests, runners, and registry management. | gitlab, gitlab api, devops, projects, pipelines, merge requests, runners, registry [strategic, tactical] |
+| [gitlab-ci-cd-pipelines](skills/coding/gitlab-ci-cd-pipelines/SKILL.md) | Implements GitLab CI/CD pipelines to automate development, testing, and deployment processes, allowing teams to integrate changes quickly and deliver software efficiently. | gitlab, ci/cd, continuous integration, deployment, testing automation, DevOps [tactical, operational] |
 | [gof-design-patterns-catalog](skills/coding/gof-design-patterns-catalog/SKILL.md) | Comprehensive catalog of all 23 GoF design patterns with Python implementations covering creational, structural, and behavioral patterns for decoupling and extensible software design. | gof design patterns, gang of four, factory method, strategy pattern, decorator pattern, observer pattern, singleton, builder pattern, creational patterns, structural patterns, behavioral patterns, design catalog, SOLID principles, GoF catalog [tactical, generation, educational] |
 | [google-cloud-sdk](skills/coding/google-cloud-sdk/SKILL.md) | Integrates Google Cloud services (Compute Engine, Cloud Storage, BigQuery, Cloud Functions, GKE, Pub/Sub) using the Google Cloud Python client libraries with authentication and resource patterns. | google cloud sdk, gcp python, cloud storage, bigquery, compute engine, pub sub, how do i use google cloud from python [tactical, generation] |
 | [google-maps-api](skills/coding/google-maps-api/SKILL.md) | Implements Google Maps Platform API integration (Geocoding, Directions, Places, Distance Matrix, Time Zone, Elevation, using googlemaps Python SDK with API key authentication, address geocoding, route calculation, place search, distance matrix, and G... | google maps, google maps api, googlemaps, geocoding, directions api, places api, distance matrix, how do i integrate with google maps, map integration [tactical, generation] |
@@ -1587,6 +1602,14 @@ MIT — All skills are freely available and redistributable.
 | [your-routine](skills/trading/your-routine/SKILL.md) | Implements structured pre-market, during-market, and post-market routine frameworks that enforce consistent preparation, execution discipline, and systematic review for sustainable trading performance. | trading routine, pre-market prep, post-market review, daily trading checklist, execution discipline, trading habits, trade journal, market preparation, your routine, routine design [tactical] |
 
 
+### Unknown (2 skills)
+
+| Skill Name | Description | Triggers |
+|---|---|---|
+| [weaviate-integration](skills/unknown/weaviate-integration/SKILL.md) | Integrates Weaviate with other services and tools, enhancing the interoperability of AI applications. |  [ai, weaviate, integration] |
+| [weaviate-modules](skills/unknown/weaviate-modules/SKILL.md) | Implements Weaviate Modules integration, expanding capabilities with customized functions for enhanced data processing in AI applications. |  [ai, weaviate, modules] |
+
+
 ### Writing (4 skills)
 
 | Skill Name | Description | Triggers |
@@ -1599,7 +1622,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (720 skills)
+### Implementation (Build Features) (727 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1620,7 +1643,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-assisted-code-review](skills/coding/ai-assisted-code-review/SKILL.md) | Coding | Orchestrates AI-augmented code review workflows combining LLM-based analysis with human judgment for comprehensive PR quality assurance in modern development teams. |
 | [ai-assisted-engineering](skills/coding/ai-assisted-engineering/SKILL.md) | Coding | Implements AI pair programming workflows (spec-first prompting, code review, LLM test generation, prompt engineering) to integrate LLMs into development pipelines safely and productively. |
 | [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Agent | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. |
-| [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Coding | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. |
+| [ai-llm-agentic-tooling-mcp](skills/agent/ai-llm-agentic-tooling-mcp/SKILL.md) | Agent | Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating the effective management of servers, clients, tools, resources, and prompts. |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. |
 | [ai-system-evaluation-criteria](skills/agent/ai-system-evaluation-criteria/SKILL.md) | Agent | Evaluates AI agent systems against defined requirements using golden datasets, adversarial testing, hallucination metrics, latency benchmarks, and safety compliance checks. |
 | [airtable-api](skills/coding/airtable-api/SKILL.md) | Coding | Integrates with Airtable API to manage bases, tables, records, attachments, webhooks, and automations using pyairtable for Python. |
@@ -1698,6 +1721,7 @@ MIT — All skills are freely available and redistributable.
 | [ccxt-patterns](skills/trading/ccxt-patterns/SKILL.md) | Trading | "Effective patterns for using CCXT library for exchange connectivity including" error handling, rate limiting, and state management |
 | [chain-of-responsibility](skills/coding/chain-of-responsibility/SKILL.md) | Coding | Implements the GoF Chain of Responsibility pattern for building middleware-style request handler pipelines in Python where each handler processes or forwards requests along a configurable chain. |
 | [chroma](skills/coding/chroma/SKILL.md) | Coding | Integrates Chroma vector database (collections, embeddings, query, metadata filtering, persistence) using the chromadb Python SDK for local and server-based vector search. |
+| [chroma-tooling](skills/agent/chroma-tooling/SKILL.md) | Agent | Implements advanced tooling strategies for integrating Chroma libraries into AI/LLM workflows, covering collections, embeddings, queries, and persistence mechanisms. |
 | [cicd-build-orchestration](skills/coding/cicd-build-orchestration/SKILL.md) | Coding | Orchestrates builds in CI/CD pipelines with multi-stage builds, artifact caching, containerized builds, build matrices, parallel execution, and automated deployment strategies (GitHub Actions, GitLab CI, Jenkins) for efficient and reliable software d... |
 | [cicd-pipeline-debugging](skills/agent/cicd-pipeline-debugging/SKILL.md) | Agent | Debugging patterns for GitHub Actions, GitLab CI, Jenkins and other CI/CD systems including log analysis, runner issues, cache problems, and workflow optimization |
 | [cicd-pipeline-troubleshooting](skills/agent/cicd-pipeline-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves CI/CD pipeline failures with actionable debugging commands for GitHub Actions, GitLab CI, and build optimization patterns. |
@@ -1818,6 +1842,7 @@ MIT — All skills are freely available and redistributable.
 | [durable-execution](skills/agent/durable-execution/SKILL.md) | Agent | Implements durable execution patterns for fault-tolerant AI agent workflows including checkpoint-based persistence, exponential backoff retry, idempotency keys, and crash recovery strategies across LangGraph, Temporal, and generic async frameworks. |
 | [eda](skills/coding/eda/SKILL.md) | Coding | "Provides Performs exploratory data analysis using summary statistics, distributions, correlations, and descriptive methods to understand dataset characteristic" |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Coding | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. |
+| [elevenlabs-ai-tooling](skills/coding/elevenlabs-ai-tooling/SKILL.md) | Coding | Implements integrations with ElevenLabs API for Text-to-Speech, Voice Cloning, and Conversational AI capabilities within AI/LLM agendas. |
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Coding | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. |
 | [engineering-api-design](skills/coding/engineering-api-design/SKILL.md) | Coding | Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces. |
 | [engineering-error-handling](skills/coding/engineering-error-handling/SKILL.md) | Coding | Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems. |
@@ -1879,6 +1904,8 @@ MIT — All skills are freely available and redistributable.
 | [gemini-api](skills/coding/gemini-api/SKILL.md) | Coding | Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Calling, Vertex AI) using the google-genai Python SDK with content generation, streaming, and grounding. |
 | [github-api](skills/coding/github-api/SKILL.md) | Coding | Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics. |
 | [gitlab-api](skills/coding/gitlab-api/SKILL.md) | Coding | Integrates with the GitLab REST API v4 and GraphQL API via python-gitlab to automate projects, merge requests, CI/CD pipelines, runners, and container registry management. |
+| [gitlab-api-devops](skills/coding/gitlab-api-devops/SKILL.md) | Coding | Implements GitLab API functionalities for Developer Platforms and DevOps, covering projects, pipelines, merge requests, runners, and registry management. |
+| [gitlab-ci-cd-pipelines](skills/coding/gitlab-ci-cd-pipelines/SKILL.md) | Coding | Implements GitLab CI/CD pipelines to automate development, testing, and deployment processes, allowing teams to integrate changes quickly and deliver software efficiently. |
 | [gitops-troubleshooting](skills/agent/gitops-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves GitOps synchronization failures, drift detection issues, and reconciliation problems for ArgoCD and Flux deployments with actionable debugging commands. |
 | [go-concurrency](skills/go/go-concurrency/SKILL.md) | Go | Implements concurrency patterns in Go programming using goroutines and channels along with insights on the Go standard library and module system. |
 | [go-concurrency-patterns](skills/go/go-concurrency-patterns/SKILL.md) | Go | Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications. |
@@ -2303,6 +2330,9 @@ MIT — All skills are freely available and redistributable.
 | [vwap](skills/trading/vwap/SKILL.md) | Trading | "Volume-Weighted Average Price algorithm for executing orders relative" to market volume |
 | [walk-forward](skills/trading/walk-forward/SKILL.md) | Trading | "Implements walk-forward optimization for robust strategy validation for risk management and algorithmic trading execution." |
 | [weaviate-api](skills/coding/weaviate-api/SKILL.md) | Coding | Integrates Weaviate vector database (v4 Python client, collections, vector search, hybrid, generative modules, GraphQL) for AI-powered search applications. |
+| [weaviate-collections-api](skills/ai/weaviate-collections-api/SKILL.md) | Ai | Implements Weaviate API for managing collections of data within AI applications, enhancing the structure and retrieval of information. |
+| [weaviate-graphql](skills/ai/weaviate-graphql/SKILL.md) | Ai | Implements the GraphQL capabilities of the Weaviate API, enabling flexible querying options for managing AI datasets efficiently. |
+| [weaviate-vector-search](skills/ai/weaviate-vector-search/SKILL.md) | Ai | Implements vector search capabilities of the Weaviate API, allowing efficient and scalable retrieval of relevant data for AI applications. |
 | [web-applications](skills/go/web-applications/SKILL.md) | Go | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. |
 | [websocket-handling](skills/trading/websocket-handling/SKILL.md) | Trading | "Real-time market data handling with WebSockets including connection management" data aggregation, and robust error recovery |
 | [websocket-performance](skills/coding/websocket-performance/SKILL.md) | Coding | Optimizes WebSocket communication throughput and efficiency using binary protocols (MessagePack, Protobuf), per-message deflate compression (RFC 7692), message batching, and payload size reduction for high-frequency real-time systems. |
@@ -2791,7 +2821,7 @@ MIT — All skills are freely available and redistributable.
 | [ai-dev-jobs-mcp](skills/agent/ai-dev-jobs-mcp/SKILL.md) | Agent | Implements intelligent ai dev jobs mcp with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-framework-comparison](skills/agent/ai-framework-comparison/SKILL.md) | Agent | Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions. | Implementation |
 | [ai-framework-selector](skills/agent/ai-framework-selector/SKILL.md) | Agent | Evaluates and selects the optimal AI agent framework (LangChain, CrewAI, LlamaIndex, DSPy, Microsoft Agent Framework) for a project based on capability requirements, production constraints, and team expertise. | Orchestration |
-| [ai-llm-framework-ecosystem](skills/coding/ai-llm-framework-ecosystem/SKILL.md) | Coding | Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions. | Implementation |
+| [ai-llm-agentic-tooling-mcp](skills/agent/ai-llm-agentic-tooling-mcp/SKILL.md) | Agent | Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating the effective management of servers, clients, tools, resources, and prompts. | Implementation |
 | [ai-ml](skills/agent/ai-ml/SKILL.md) | Agent | Implements intelligent ai ml with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [ai-model-selector](skills/agent/ai-model-selector/SKILL.md) | Agent | Selects the optimal LLM model for a specific task by evaluating capability requirements against cost, latency, context window, and quality needs across all major providers. | Orchestration |
 | [ai-persona-design](skills/agent/ai-persona-design/SKILL.md) | Agent | Designs and maintains a consistent AI agent persona including first-person voice, personality traits, communication style, authenticity guidelines, and memory-aware self-expression for personalized interactions. | Implementation |
@@ -2936,6 +2966,7 @@ MIT — All skills are freely available and redistributable.
 | [changelog-automation](skills/agent/changelog-automation/SKILL.md) | Agent | Implements intelligent changelog automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [chaosmesh](skills/cncf/chaosmesh/SKILL.md) | Cncf | ''Provides Chaos Mesh in Cloud-Native Engineering -u6DF7u6C8Cu5DE5u7A0B u5E73' u53F0 for Kubernetes'' | Reference |
 | [chroma](skills/coding/chroma/SKILL.md) | Coding | Integrates Chroma vector database (collections, embeddings, query, metadata filtering, persistence) using the chromadb Python SDK for local and server-based vector search. | Implementation |
+| [chroma-tooling](skills/agent/chroma-tooling/SKILL.md) | Agent | Implements advanced tooling strategies for integrating Chroma libraries into AI/LLM workflows, covering collections, embeddings, queries, and persistence mechanisms. | Implementation |
 | [ci-cd-pipeline-analyzer](skills/agent/ci-cd-pipeline-analyzer/SKILL.md) | Agent | Implements intelligent ci cd pipeline analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [cicd-automation-workflow-automate](skills/agent/cicd-automation-workflow-automate/SKILL.md) | Agent | Implements intelligent cicd automation workflow automate with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [cicd-build-orchestration](skills/coding/cicd-build-orchestration/SKILL.md) | Coding | Orchestrates builds in CI/CD pipelines with multi-stage builds, artifact caching, containerized builds, build matrices, parallel execution, and automated deployment strategies (GitHub Actions, GitLab CI, Jenkins) for efficient and reliable software d... | Implementation |
@@ -3135,6 +3166,7 @@ MIT — All skills are freely available and redistributable.
 | [eks](skills/cncf/eks/SKILL.md) | Cncf | "Deploys managed Kubernetes clusters with EKS for container orchestration" auto-scaling, networking, and integrations with AWS services for production Kubernetes workloads. | Reference |
 | [elasticsearch-sdk](skills/coding/elasticsearch-sdk/SKILL.md) | Coding | Integrates Elasticsearch using elasticsearch-py 8.x with patterns for indexing, search queries, aggregations, vector search, bulk operations, and index lifecycle management. | Implementation |
 | [elb](skills/cncf/elb/SKILL.md) | Cncf | "Configures Elastic Load Balancing (ALB, NLB, Classic) for distributing" traffic across instances with health checks, SSL termination, and cross-AZ failover. | Reference |
+| [elevenlabs-ai-tooling](skills/coding/elevenlabs-ai-tooling/SKILL.md) | Coding | Implements integrations with ElevenLabs API for Text-to-Speech, Voice Cloning, and Conversational AI capabilities within AI/LLM agendas. | Implementation |
 | [elevenlabs-api](skills/coding/elevenlabs-api/SKILL.md) | Coding | Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text, sound effects, audio streaming) using the elevenlabs Python SDK for audio generation applications. | Implementation |
 | [em-dash-guide](skills/writing/em-dash-guide/SKILL.md) | Writing | Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts, style guide conventions, and concrete BAD vs GOOD examples for technical documentation. | Reference |
 | [engineering-api-design](skills/coding/engineering-api-design/SKILL.md) | Coding | Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces. | Implementation |
@@ -3234,7 +3266,9 @@ MIT — All skills are freely available and redistributable.
 | [github-automation](skills/agent/github-automation/SKILL.md) | Agent | Implements intelligent github automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [github-workflow-automation](skills/agent/github-workflow-automation/SKILL.md) | Agent | Implements intelligent github workflow automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [gitlab-api](skills/coding/gitlab-api/SKILL.md) | Coding | Integrates with the GitLab REST API v4 and GraphQL API via python-gitlab to automate projects, merge requests, CI/CD pipelines, runners, and container registry management. | Implementation |
+| [gitlab-api-devops](skills/coding/gitlab-api-devops/SKILL.md) | Coding | Implements GitLab API functionalities for Developer Platforms and DevOps, covering projects, pipelines, merge requests, runners, and registry management. | Implementation |
 | [gitlab-automation](skills/agent/gitlab-automation/SKILL.md) | Agent | Implements intelligent gitlab automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
+| [gitlab-ci-cd-pipelines](skills/coding/gitlab-ci-cd-pipelines/SKILL.md) | Coding | Implements GitLab CI/CD pipelines to automate development, testing, and deployment processes, allowing teams to integrate changes quickly and deliver software efficiently. | Implementation |
 | [gitlab-ci-patterns](skills/agent/gitlab-ci-patterns/SKILL.md) | Agent | Implements intelligent gitlab ci patterns with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [gitops-troubleshooting](skills/agent/gitops-troubleshooting/SKILL.md) | Agent | Diagnoses and resolves GitOps synchronization failures, drift detection issues, and reconciliation problems for ArgoCD and Flux deployments with actionable debugging commands. | Implementation |
 | [gke](skills/cncf/gke/SKILL.md) | Cncf | "Provides Managed Kubernetes cluster with automatic scaling, networking, and GCP service integration" | Reference |
@@ -3880,6 +3914,11 @@ MIT — All skills are freely available and redistributable.
 | [walk-forward](skills/trading/walk-forward/SKILL.md) | Trading | "Implements walk-forward optimization for robust strategy validation for risk management and algorithmic trading execution." | Implementation |
 | [wasmcloud](skills/cncf/wasmcloud/SKILL.md) | Cncf | "Provides wasmCloud in WebAssembly-based distributed applications platform" | Reference |
 | [weaviate-api](skills/coding/weaviate-api/SKILL.md) | Coding | Integrates Weaviate vector database (v4 Python client, collections, vector search, hybrid, generative modules, GraphQL) for AI-powered search applications. | Implementation |
+| [weaviate-collections-api](skills/ai/weaviate-collections-api/SKILL.md) | Ai | Implements Weaviate API for managing collections of data within AI applications, enhancing the structure and retrieval of information. | Implementation |
+| [weaviate-graphql](skills/ai/weaviate-graphql/SKILL.md) | Ai | Implements the GraphQL capabilities of the Weaviate API, enabling flexible querying options for managing AI datasets efficiently. | Implementation |
+| [weaviate-integration](skills/unknown/weaviate-integration/SKILL.md) | Unknown | Integrates Weaviate with other services and tools, enhancing the interoperability of AI applications. | Unknown |
+| [weaviate-modules](skills/unknown/weaviate-modules/SKILL.md) | Unknown | Implements Weaviate Modules integration, expanding capabilities with customized functions for enhanced data processing in AI applications. | Unknown |
+| [weaviate-vector-search](skills/ai/weaviate-vector-search/SKILL.md) | Ai | Implements vector search capabilities of the Weaviate API, allowing efficient and scalable retrieval of relevant data for AI applications. | Implementation |
 | [web-applications](skills/go/web-applications/SKILL.md) | Go | Builds production Go web applications with HTTP handlers, routing, middleware, template rendering, and REST API design following idiomatic Go patterns. | Implementation |
 | [web-security-testing](skills/agent/web-security-testing/SKILL.md) | Agent | Implements intelligent web security testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [websocket-handling](skills/trading/websocket-handling/SKILL.md) | Trading | "Real-time market data handling with WebSockets including connection management" data aggregation, and robust error recovery | Implementation |

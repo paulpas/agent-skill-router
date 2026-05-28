@@ -32,49 +32,20 @@ metadata:
   related-skills: coding-openai-api, coding-cohere-api, coding-langchain
 ------
 # Mistral AI API Integration
-
 Integrates Mistral AI API using the `mistralai` Python SDK for chat completions, embeddings, function calling, code generation (Codestral), and agent building. When loaded, this skill makes the model implement Mistral API calls with proper authentication, streaming, and error handling.
-
-## When to Use
-
-Use this skill when:
-
-- Building chat applications with Mistral models (Mistral Large, Mistral Small, Mistral Nemo)
-- Generating code with Codestral for AI-assisted programming
-- Creating embeddings with Mistral's embedding model for semantic search
-- Implementing function calling / tool use with Mistral models
-- Building agents that use Mistral as the reasoning engine
-- Using Mistral's Agents API for managed agent deployment
-- Streaming responses for real-time applications
-
----
-
-## When NOT to Use
-
-- For OpenAI models, use `coding-openai-api`
-- For Cohere embeddings or reranking, use `coding-cohere-api`
-- For multi-provider orchestration, use `coding-langchain`
-
----
 
 ## Core Workflow
 
-1. **Initialize the Client** — Create a `MistralClient()` (sync) or `MistralAsyncClient()` (async) with the API key from the `MISTRAL_API_KEY` environment variable. The SDK provides typed request/response models with Pydantic. **Checkpoint:** Verify by listing models with `client.list_models()`.
-
-2. **Send a Chat Completion** — Use `client.chat()` with `model` (e.g., `"mistral-large-latest"`), `messages` (list of role/content dicts), and optional `temperature` and `max_tokens`. Mistral supports system, user, and assistant roles. **Checkpoint:** Verify `response.choices[0].message.content` is non-empty.
-
-3. **Implement Function Calling** — Define tools with `type: "function"` containing name, description, and `parameters` JSON schema. Pass them to `client.chat()` with `tools` parameter. Handle `tool_calls` in the response and return results via additional messages. **Checkpoint:** Check `response.choices[0].finish_reason` — `"tool_calls"` means the model wants to execute tools.
-
-4. **Generate Embeddings** — Use `client.embeddings()` with `model` (e.g., `"mistral-embed"`) and `input` (string or list of strings). Mistral embeddings produce 1024-dimensional vectors suitable for semantic search and RAG. **Checkpoint:** Verify vector dimensions via `len(embedding)`.
-
-5. **Generate Code with Codestral** — Use `client.chat()` with the `codestral-latest` model for code generation tasks. Codestral supports fill-in-the-middle via the `codestral` endpoint with `prompt` and `suffix` parameters. **Checkpoint:** For fill-in-the-middle, verify the generated code correctly bridges the prefix and suffix.
+1. **Initialize the Client:** Create a `MistralClient()` (sync) or `MistralAsyncClient()` (async) with the API key from the `MISTRAL_API_KEY` environment variable. The SDK provides typed request/response models with Pydantic. **Checkpoint:** Verify by listing models with `client.list_models()`.  
+2. **Send a Chat Completion:** Use `client.chat()` with `model` (e.g., `"mistral-large-latest"`), `messages` (list of role/content dicts), and optional `temperature` and `max_tokens`. Mistral supports system, user, and assistant roles. **Checkpoint:** Verify `response.choices[0].message.content` is non-empty.  
+3. **Implement Function Calling:** Define tools with `type: "function"` containing name, description, and `parameters` JSON schema. Pass them to `client.chat()` with `tools` parameter. Handle `tool_calls` in the response and return results via additional messages. **Checkpoint:** Check `response.choices[0].finish_reason` — `"tool_calls"` means the model wants to execute tools.  
+4. **Generate Embeddings:** Use `client.embeddings()` with `model` (e.g., `"mistral-embed"`) and `input` (string or list of strings). Mistral embeddings produce 1024-dimensional vectors suitable for semantic search and RAG. **Checkpoint:** Verify vector dimensions via `len(embedding)`.  
+5. **Generate Code with Codestral:** Use `client.chat()` with the `codestral-latest` model for code generation tasks. Codestral supports fill-in-the-middle via the `codestral` endpoint with `prompt` and `suffix` parameters. **Checkpoint:** For fill-in-the-middle, verify the generated code correctly bridges the prefix and suffix.
 
 ---
-
 ## Implementation Patterns
 
 ### Pattern 1: Chat Completion with Streaming
-
 ```python
 from __future__ import annotations
 
@@ -88,7 +59,6 @@ print(response.choices[0].message.content)
 
 # ✅ GOOD — env-based auth, streaming, typed error handling
 client = Mistral()  # reads MISTRAL_API_KEY from environment
-
 
 def chat(
     prompt: str,
@@ -150,7 +120,6 @@ def chat_stream(
 ```
 
 ### Pattern 2: Function Calling
-
 ```python
 from __future__ import annotations
 
@@ -158,7 +127,6 @@ from typing import Any
 from mistralai import Mistral
 
 client = Mistral()
-
 
 def get_weather(location: str) -> dict[str, Any]:
     """Mock weather function."""
@@ -184,7 +152,6 @@ TOOLS: list[dict[str, Any]] = [
         },
     }
 ]
-
 
 def ask_with_tools(prompt: str) -> str:
     """Ask a question with tool use capabilities.
@@ -238,14 +205,12 @@ def ask_with_tools(prompt: str) -> str:
 ```
 
 ### Pattern 3: Embeddings
-
 ```python
 from __future__ import annotations
 
 from mistralai import Mistral
 
 client = Mistral()
-
 
 def embed_texts(
     texts: list[str],
@@ -268,26 +233,20 @@ def embed_texts(
 ```
 
 ---
-
 ## Constraints
-
 ### MUST DO
 - Read API key from `MISTRAL_API_KEY` environment variable
 - Use the `mistralai` package (v1.0+) with the `Mistral()` constructor
 - Use `client.chat.stream()` for streaming responses and `client.chat.complete()` for single responses
 - Use `codestral-latest` model for code generation and fill-in-the-middle tasks
 - Handle `tool_calls` in the response to support function calling workflows
-
 ### MUST NOT DO
 - Hardcode API keys in source files
 - Use the deprecated `MistralClient(api_key=...)` constructor — use `Mistral()` instead
 - Skip temperature setting for function calling (set to 0 for deterministic behavior)
 - Use the default model without specifying an explicit model version (use `-latest` or pin a version)
-
 ---
-
 ## Live References
-
 | Resource | URL |
 |----------|-----|
 | Mistral AI Python SDK (PyPI) | https://pypi.org/project/mistralai/ |
@@ -296,13 +255,10 @@ def embed_texts(
 | Mistral Function Calling | https://docs.mistral.ai/capabilities/function-calling/ |
 | Codestral Documentation | https://docs.mistral.ai/capabilities/code-generation/ |
 | Mistral GitHub | https://github.com/mistralai/client-python |
-
 ---
-
 ## Related Skills
-
 | Skill | Purpose |
 |-------|---------|
-| `coding-openai-api` | Alternative LLM provider |
-| `coding-cohere-api` | Alternative embedding and reranking provider |
-| `coding-langchain` | LangChain integration with Mistral models |
+| coding-openai-api | Alternative LLM provider |
+| coding-cohere-api | Alternative embedding and reranking provider |
+| coding-langchain | LangChain integration with Mistral models |
