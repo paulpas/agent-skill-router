@@ -1,12 +1,15 @@
 {
-  "generatedAt": "2026-05-27T22:04:51.313275Z",
-  "totalSkills": 1135,
+  "generatedAt": "2026-05-28T02:18:21.243538Z",
+  "totalSkills": 1165,
   "domains": {
-    "agent": 285,
+    "agent": 288,
+    "ai": 5,
     "architecture": 4,
-    "cncf": 176,
-    "coding": 526,
+    "cloud": 1,
+    "cncf": 177,
+    "coding": 553,
     "data-and-persistence": 1,
+    "devops": 6,
     "electrical-engineering": 2,
     "go": 13,
     "java": 1,
@@ -14,15 +17,16 @@
     "linux": 18,
     "maker": 3,
     "programming": 7,
+    "secrets-management": 2,
     "security": 4,
     "software": 2,
-    "trading": 93,
+    "trading": 94,
     "writing": 4
   },
   "roles": {
     "orchestration": 238,
-    "implementation": 714,
-    "reference": 174,
+    "implementation": 747,
+    "reference": 171,
     "information": 1,
     "review": 8
   },
@@ -720,30 +724,26 @@
       "source": "skills/agent/ai-framework-selector/SKILL.md"
     },
     {
-      "name": "ai-llm-framework-ecosystem",
-      "domain": "coding",
-      "description": "Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI, DSPy, Microsoft Agent Framework) using structured scoring across capability domains to guide production project architecture decisions.",
+      "name": "ai-llm-agentic-tooling-mcp",
+      "domain": "agent",
+      "description": "Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating the effective management of servers, clients, tools, resources, and prompts.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "ai framework selection",
-        "llm orchestration",
-        "langchain vs llamaindex",
-        "agentic workflow",
-        "how do i choose an ai framework",
-        "prompt engineering framework",
-        "AI agent platform",
-        "RAG architecture"
+        "AI tooling",
+        "LLM",
+        "Model Context Protocol",
+        "MCP",
+        "resource management",
+        "prompt optimization"
       ],
       "relatedSkills": [
-        "coding-architecture-patterns",
-        "coding-design-patterns",
-        "coding-testing-strategies",
-        "coding-dependency-management"
+        "ai-llm-resources-management",
+        "ai-llm-prompt-engineering"
       ],
       "version": "1.0.0",
-      "source": "skills/coding/ai-llm-framework-ecosystem/SKILL.md"
+      "source": "skills/agent/ai-llm-agentic-tooling-mcp/SKILL.md"
     },
     {
       "name": "ai-ml",
@@ -1191,6 +1191,18 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/ansible-api/SKILL.md"
+    },
+    {
+      "name": "anthro-claude-api",
+      "domain": "coding",
+      "description": "",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/coding/anthro-claude-api/SKILL.md"
     },
     {
       "name": "anthropic-api",
@@ -2732,6 +2744,24 @@
     },
     {
       "name": "aws-iam",
+      "domain": "cncf",
+      "description": "Implements AWS Identity and Access Management (IAM) for securely managing users, groups, roles, and permissions in the AWS ecosystem.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "aws iam",
+        "identity management",
+        "access control",
+        "permissions",
+        "user management"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/cncf/aws-iam/SKILL.md"
+    },
+    {
+      "name": "aws-iam",
       "domain": "coding",
       "description": "Implements AWS IAM (Identity and Access Management) integration (Users, Roles, Policies, Groups, Access Keys, MFA, STS, Identity Center) using boto3 SDK with proper credential chain, policy validation, least privilege principle, and temporary credentials.",
       "role": "implementation",
@@ -2779,6 +2809,60 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/aws-sdk/SKILL.md"
+    },
+    {
+      "name": "aws-secrets-manager",
+      "domain": "coding",
+      "description": "Implements AWS Secrets Manager for secure secret storage, management, and automatic rotation of credentials using AWS SDK for Python (Boto3).",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "aws secrets manager",
+        "boto3",
+        "secret management",
+        "automatic rotation",
+        "credential management"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/coding/aws-secrets-manager/SKILL.md"
+    },
+    {
+      "name": "aws-secrets-manager",
+      "domain": "secrets-management",
+      "description": "Implements AWS Secrets Manager for secure secret storage, management, and automatic rotation of credentials using AWS SDK for Python (Boto3).",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "aws secrets manager",
+        "boto3",
+        "secret management",
+        "automatic rotation",
+        "credential management"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/secrets-management/aws-secrets-manager/SKILL.md"
+    },
+    {
+      "name": "aws-sns",
+      "domain": "cloud",
+      "description": "Implements Amazon Simple Notification Service (SNS) for building and managing message-driven applications through an event-driven architecture.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "aws sns",
+        "event-driven architecture",
+        "notification service",
+        "publish-subscribe model",
+        "scalable messaging"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/cloud/aws-sns/SKILL.md"
     },
     {
       "name": "azure-openai",
@@ -4091,6 +4175,30 @@
       "source": "skills/coding/chroma/SKILL.md"
     },
     {
+      "name": "chroma-tooling",
+      "domain": "agent",
+      "description": "Implements advanced tooling strategies for integrating Chroma libraries into AI/LLM workflows, covering collections, embeddings, queries, and persistence mechanisms.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "chroma",
+        "collections",
+        "embeddings",
+        "query",
+        "persistence",
+        "AI tooling",
+        "LLM integration",
+        "how do I use chroma"
+      ],
+      "relatedSkills": [
+        "ai-ml",
+        "skill-systems-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/chroma-tooling/SKILL.md"
+    },
+    {
       "name": "ci-cd-pipeline-analyzer",
       "domain": "agent",
       "description": "Implements intelligent ci cd pipeline analyzer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -4111,38 +4219,6 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/ci-cd-pipeline-analyzer/SKILL.md"
-    },
-    {
-      "name": "ci-cd-pipeline-design",
-      "domain": "coding",
-      "description": "Implements modern CI/CD pipeline architectures (GitHub Actions, GitLab CI, ArgoCD) with security gates, artifact management, and zero-downtime deployment strategies for production systems.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "CI/CD pipeline",
-        "continuous integration",
-        "continuous deployment",
-        "github actions",
-        "gitlab ci",
-        "build automation",
-        "artifact management",
-        "security scanning",
-        "canary deployment",
-        "blue-green deployment",
-        "SLSA provenance",
-        "container registry",
-        "ArgoCD",
-        "Helm charts"
-      ],
-      "relatedSkills": [
-        "platform-engineering",
-        "iac-engineering",
-        "secure-release-pipeline",
-        "production-readiness"
-      ],
-      "version": "1.0.0",
-      "source": "skills/coding/ci-cd-pipeline-design/SKILL.md"
     },
     {
       "name": "cicd-automation-workflow-automate",
@@ -5147,6 +5223,53 @@
       "source": "skills/coding/cohere-api/SKILL.md"
     },
     {
+      "name": "collaboration-process-dependency-management",
+      "domain": "coding",
+      "description": "Implements strategies for effective dependency management and versioning in software development, focusing on Semantic Versioning (SemVer) and the use of lock files.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "dependency management",
+        "versioning",
+        "semver",
+        "lock files",
+        "package management",
+        "semantic versioning"
+      ],
+      "relatedSkills": [
+        "coding-version-control-skills",
+        "coding-package-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/collaboration-process-dependency-management/SKILL.md"
+    },
+    {
+      "name": "collaboration-process-refactoring",
+      "domain": "coding",
+      "description": "Safely refactors legacy codebases using specific techniques such as dependency analysis, strangler fig pattern, and port isolation to ensure clean modularity and enhanced collaboration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "legacy code refactoring",
+        "collaboration",
+        "refactor safely",
+        "dependency analysis",
+        "strangler fig pattern",
+        "modular design",
+        "process improvement",
+        "technical debt reduction"
+      ],
+      "relatedSkills": [
+        "ddd-refactoring",
+        "design-patterns",
+        "clean-code"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/collaboration-process-refactoring/SKILL.md"
+    },
+    {
       "name": "command-pattern",
       "domain": "coding",
       "description": "Implements the GoF Command pattern for encapsulating requests as objects in Python, supporting undo/redo stacks, macro commands (composite), serialization-based replay, and async command execution.",
@@ -5769,6 +5892,24 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/containerd/SKILL.md"
+    },
+    {
+      "name": "containerization-devops",
+      "domain": "devops",
+      "description": "Implements best practices for containerization in the DevOps lifecycle, focusing on deployment, orchestration, and management of containerized applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "containerization",
+        "devops",
+        "docker",
+        "kubernetes",
+        "orchestration"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/devops/containerization-devops/SKILL.md"
     },
     {
       "name": "context-window-management",
@@ -7885,6 +8026,24 @@
       "source": "skills/agent/development/SKILL.md"
     },
     {
+      "name": "devops-infrastructure-as-code",
+      "domain": "devops",
+      "description": "Implements best practices for Infrastructure as Code (IaC) management and automation in the DevOps workflow, focusing on tools and methodologies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "infrastructure as code",
+        "IaC",
+        "automation",
+        "cloud provisioning",
+        "devops practices"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/devops/devops-infrastructure-as-code/SKILL.md"
+    },
+    {
       "name": "diary",
       "domain": "agent",
       "description": "Implements intelligent diary with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -8068,6 +8227,67 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/dispatching-parallel-agents/SKILL.md"
+    },
+    {
+      "name": "distributed-system-bulkheads",
+      "domain": "coding",
+      "description": "Implements the bulkhead pattern to isolate resources and improve fault tolerance in distributed systems using Resilience4j.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "bulkhead",
+        "resource isolation",
+        "resilience4j",
+        "distributed systems"
+      ],
+      "relatedSkills": [
+        "distributed-system-rate-limiting",
+        "distributed-system-circuit-breakers"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/distributed-system-bulkheads/SKILL.md"
+    },
+    {
+      "name": "distributed-system-circuit-breakers",
+      "domain": "coding",
+      "description": "Implements circuit breakers for fault tolerance in distributed systems using Resilience4j to improve system resilience and stability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "circuit breaker",
+        "resilience4j",
+        "fault tolerance",
+        "distributed systems"
+      ],
+      "relatedSkills": [
+        "distributed-system-rate-limiting",
+        "distributed-system-bulkheads"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/distributed-system-circuit-breakers/SKILL.md"
+    },
+    {
+      "name": "distributed-system-rate-limiting",
+      "domain": "coding",
+      "description": "Implements rate limiting strategies for distributed systems using the Resilience4j library to control API traffic and enhance system stability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "rate limiting",
+        "token bucket",
+        "leaky bucket",
+        "resilience4j",
+        "distributed systems"
+      ],
+      "relatedSkills": [
+        "distributed-system-circuit-breakers",
+        "distributed-system-bulkheads"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/distributed-system-rate-limiting/SKILL.md"
     },
     {
       "name": "distributed-systems-architecture",
@@ -8747,32 +8967,6 @@
       "source": "skills/agent/e2e-testing/SKILL.md"
     },
     {
-      "name": "ec2",
-      "domain": "cncf",
-      "description": "\"Deploys, configures, and auto-scales EC2 instances with load balancing\" using best practices for high availability, security, and cost optimization in AWS compute environments.",
-      "role": "reference",
-      "scope": "infrastructure",
-      "outputFormat": "manifests",
-      "triggers": [
-        "ec2",
-        "compute instances",
-        "auto-scaling",
-        "load balancing",
-        "asg",
-        "launch template",
-        "instance types",
-        "ebs volumes"
-      ],
-      "relatedSkills": [
-        "aws-auto-scaling",
-        "aws-cloudformation",
-        "aws-cloudwatch",
-        "aws-iam"
-      ],
-      "version": "1.0.0",
-      "source": "skills/cncf/aws-ec2/SKILL.md"
-    },
-    {
       "name": "ecr",
       "domain": "cncf",
       "description": "\"Manages container image repositories with ECR for secure storage, scanning\" replication, and integration with EKS, ECS, and Lambda for container deployments.",
@@ -8898,6 +9092,28 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/aws-elb/SKILL.md"
+    },
+    {
+      "name": "elevenlabs-ai-tooling",
+      "domain": "agent",
+      "description": "Implements integrations with ElevenLabs API for Text-to-Speech, Voice Cloning, and Conversational AI capabilities within AI/LLM agendas.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "elevenlabs api",
+        "text-to-speech",
+        "voice cloning",
+        "conversational ai",
+        "how do i convert text to speech",
+        "voice ai integration"
+      ],
+      "relatedSkills": [
+        "coding-ai-integration",
+        "coding-llm-usage"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/elevenlabs-ai-tooling/SKILL.md"
     },
     {
       "name": "elevenlabs-api",
@@ -11062,6 +11278,24 @@
       "source": "skills/agent/git-hooks-automation/SKILL.md"
     },
     {
+      "name": "git-pr-workflows",
+      "domain": "coding",
+      "description": "Implements best practices for managing pull requests (PRs) in Git, including workflow automation and quality control strategies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "git",
+        "pull request",
+        "PR workflows",
+        "code review",
+        "branching strategies"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/coding/git-pr-workflows/SKILL.md"
+    },
+    {
       "name": "git-pr-workflows-git-workflow",
       "domain": "agent",
       "description": "Implements intelligent git pr workflows git workflow with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -11289,6 +11523,30 @@
       "source": "skills/coding/gitlab-api/SKILL.md"
     },
     {
+      "name": "gitlab-api-devops",
+      "domain": "coding",
+      "description": "Implements GitLab API functionalities for Developer Platforms and DevOps, covering projects, pipelines, merge requests, runners, and registry management.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "gitlab",
+        "gitlab api",
+        "devops",
+        "projects",
+        "pipelines",
+        "merge requests",
+        "runners",
+        "registry"
+      ],
+      "relatedSkills": [
+        "coding-github-api",
+        "coding-jenkins-api"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/gitlab-api-devops/SKILL.md"
+    },
+    {
       "name": "gitlab-automation",
       "domain": "agent",
       "description": "Implements intelligent gitlab automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -11309,6 +11567,28 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/gitlab-automation/SKILL.md"
+    },
+    {
+      "name": "gitlab-ci-cd-pipelines",
+      "domain": "coding",
+      "description": "Implements GitLab CI/CD pipelines to automate development, testing, and deployment processes, allowing teams to integrate changes quickly and deliver software efficiently.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "gitlab",
+        "ci/cd",
+        "continuous integration",
+        "deployment",
+        "testing automation",
+        "DevOps"
+      ],
+      "relatedSkills": [
+        "coding-git",
+        "coding-test-automation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/gitlab-ci-cd-pipelines/SKILL.md"
     },
     {
       "name": "gitlab-ci-patterns",
@@ -12063,6 +12343,24 @@
       "source": "skills/linux/hardware-provisioning/SKILL.md"
     },
     {
+      "name": "hashicorp-vault",
+      "domain": "secrets-management",
+      "description": "Implements HashiCorp Vault for secure secret management, including features for dynamic secrets, access control, and secret revocation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "HashiCorp Vault",
+        "secret management",
+        "API security",
+        "dynamic secrets",
+        "credential management"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/secrets-management/hashicorp-vault/SKILL.md"
+    },
+    {
       "name": "health",
       "domain": "trading",
       "description": "\"Provides Exchange system health monitoring and connectivity status tracking\"",
@@ -12560,30 +12858,29 @@
       "source": "skills/coding/iac-engineering/SKILL.md"
     },
     {
-      "name": "iam",
-      "domain": "cncf",
-      "description": "\"Configures identity and access management with IAM users, roles, policies\" and MFA for secure, least-privilege access control across AWS resources and services.",
-      "role": "reference",
+      "name": "iac-engineering",
+      "domain": "devops",
+      "description": "Implements advanced IaC engineering patterns including modular Terraform architecture, policy-as-code with OPA, GitOps with ArgoCD, Terratest-driven testing, and cross-cloud multi-account resource management for production infrastructure.",
+      "role": "implementation",
       "scope": "infrastructure",
-      "outputFormat": "manifests",
+      "outputFormat": "code",
       "triggers": [
-        "iam",
-        "identity management",
-        "access control",
-        "iam role",
-        "iam policy",
-        "mfa",
-        "least privilege",
-        "service role"
+        "Terraform modules",
+        "policy as code",
+        "OPA Conftest",
+        "GitOps ArgoCD",
+        "IaC testing",
+        "Terratest",
+        "how do i manage terraform state"
       ],
       "relatedSkills": [
-        "aws-cloudformation",
-        "aws-ec2",
-        "aws-ecr",
-        "aws-eks"
+        "coding-platform-engineering",
+        "cncf-kubernetes",
+        "coding-software-delivery-pipelines",
+        "cncf-terraform"
       ],
       "version": "1.0.0",
-      "source": "skills/cncf/aws-iam/SKILL.md"
+      "source": "skills/devops/iac-engineering/SKILL.md"
     },
     {
       "name": "iam",
@@ -13206,6 +13503,24 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/technical-intermarket-analysis/SKILL.md"
+    },
+    {
+      "name": "internationalization-localization-best-practices",
+      "domain": "coding",
+      "description": "Implements best practices for internationalization and localization of software to ensure global usability and compliance with cultural preferences.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "localization",
+        "internationalization",
+        "i18n",
+        "l10n",
+        "user experience"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/coding/internationalization-localization-best-practices/SKILL.md"
     },
     {
       "name": "intervention-analysis",
@@ -14747,6 +15062,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/language-family-idioms/SKILL.md"
+    },
+    {
+      "name": "license-compliance-and-open-source-policy",
+      "domain": "coding",
+      "description": "Implements strategies and guidelines for managing software licensing compliance and formulating open-source policies in software engineering practices.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "license compliance",
+        "open-source policy",
+        "software licensing",
+        "compliance management",
+        "how do i manage open-source",
+        "policy formation",
+        "licensing guidelines"
+      ],
+      "relatedSkills": [
+        "coding-code-quality-policies",
+        "coding-open-source-contributions"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/license-compliance-and-open-source-policy/SKILL.md"
     },
     {
       "name": "lima",
@@ -17792,6 +18130,42 @@
       "source": "skills/coding/observability-engineering/SKILL.md"
     },
     {
+      "name": "observability-logging-strategies",
+      "domain": "devops",
+      "description": "Implements best practices for logging strategies in observability to improve performance monitoring and troubleshooting in applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "logging strategies",
+        "observability",
+        "performance monitoring",
+        "application logging",
+        "troubleshooting"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/devops/observability-logging-strategies/SKILL.md"
+    },
+    {
+      "name": "observability-metrics-strategies",
+      "domain": "devops",
+      "description": "Implements best practices for metrics collection and monitoring in observability, enhancing application performance and incident response capabilities.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "observability metrics",
+        "monitoring",
+        "performance",
+        "data collection",
+        "dashboarding"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/devops/observability-metrics-strategies/SKILL.md"
+    },
+    {
       "name": "observability-patterns",
       "domain": "agent",
       "description": "Implements tracing, cost tracking, and latency monitoring patterns for AI agent systems to debug failures, control token spend, and optimize response times across multi-agent workflows.",
@@ -17841,6 +18215,24 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/observability-patterns/SKILL.md"
+    },
+    {
+      "name": "observability-tracing-strategies",
+      "domain": "devops",
+      "description": "Implements best practices for distributed tracing in observability, improving application performance monitoring and debugging capabilities.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "observability tracing",
+        "distributed tracing",
+        "performance monitoring",
+        "debugging strategies",
+        "trace analysis"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/devops/observability-tracing-strategies/SKILL.md"
     },
     {
       "name": "observational-studies",
@@ -19052,6 +19444,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/pinecone-api/SKILL.md"
+    },
+    {
+      "name": "pinecone-api-tooling",
+      "domain": "coding",
+      "description": "",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "pinecone api",
+        "vectors",
+        "indexes",
+        "namespaces",
+        "hybrid search",
+        "inference",
+        "how do i use pinecone"
+      ],
+      "relatedSkills": [
+        "trading-risk-stop-loss",
+        "trading-risk-kill-switches"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/pinecone-api-tooling/SKILL.md"
     },
     {
       "name": "pipecat-friday-agent",
@@ -20334,32 +20749,6 @@
       "source": "skills/cncf/azure-rbac/SKILL.md"
     },
     {
-      "name": "rds",
-      "domain": "cncf",
-      "description": "\"Deploys managed relational databases (MySQL, PostgreSQL, MariaDB, Oracle\" SQL Server) with multi-AZ failover, automated backups, read replicas, and encryption for production-grade database infrastructure.",
-      "role": "reference",
-      "scope": "infrastructure",
-      "outputFormat": "manifests",
-      "triggers": [
-        "rds",
-        "relational database",
-        "mysql",
-        "postgresql",
-        "multi-az",
-        "database failover",
-        "read replica",
-        "automated backup"
-      ],
-      "relatedSkills": [
-        "aws-auto-scaling",
-        "aws-cloudformation",
-        "aws-cloudwatch",
-        "aws-kms"
-      ],
-      "version": "1.0.0",
-      "source": "skills/cncf/aws-rds/SKILL.md"
-    },
-    {
       "name": "react-nextjs-development",
       "domain": "agent",
       "description": "Implements intelligent react nextjs development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -21623,6 +22012,24 @@
       "source": "skills/coding/security-engineering/SKILL.md"
     },
     {
+      "name": "security-owasp-top-10",
+      "domain": "coding",
+      "description": "Provides an in-depth analysis of the OWASP Top 10 vulnerabilities, along with strategies to mitigate them effectively in software applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "OWASP",
+        "security vulnerabilities",
+        "web application security",
+        "risk management",
+        "cybersecurity"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/coding/security-owasp-top-10/SKILL.md"
+    },
+    {
       "name": "security-policy",
       "domain": "cncf",
       "description": "\"Creates or updates SECURITY.md defining the vulnerability reporting process\" disclosure timeline, and supported versions for CNCF projects",
@@ -21912,26 +22319,24 @@
     {
       "name": "service-mesh-patterns",
       "domain": "coding",
-      "description": "Implements sidecar service mesh patterns including automatic mTLS encryption, canary traffic routing, distributed tracing injection, least-privilege authorization policies, and cross-cluster federation using Istio and Linkerd.",
+      "description": "Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and Linkerd.",
       "role": "implementation",
-      "scope": "implementation",
+      "scope": "infrastructure",
       "outputFormat": "manifests",
       "triggers": [
         "service mesh",
         "istio",
-        "mTLS",
-        "sidecar proxy",
+        "linkerd",
+        "mTLS mutual TLS",
         "canary deployment",
-        "distributed tracing",
-        "traffic management",
-        "how do i secure service communication",
-        "envoy sidecar",
-        "linkerd"
+        "fault injection",
+        "rate limiting",
+        "envoy proxy"
       ],
       "relatedSkills": [
-        "api-gateway-patterns",
-        "system-reliability-architecture",
-        "cloud-native-architecture"
+        "microservices-architecture",
+        "cloud-native-architecture",
+        "system-reliability-architecture"
       ],
       "version": "1.0.0",
       "source": "skills/coding/service-mesh-patterns/SKILL.md"
@@ -23351,6 +23756,25 @@
       "source": "skills/coding/software-documentation/SKILL.md"
     },
     {
+      "name": "software-engineering-backwards-compatibility",
+      "domain": "coding",
+      "description": "",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "backwards compatibility",
+        "API versioning",
+        "deprecation strategies",
+        "feature flags"
+      ],
+      "relatedSkills": [
+        "software-engineering-deprecation-strategies"
+      ],
+      "version": "1.1.0",
+      "source": "skills/coding/software-engineering-backwards-compatibility/SKILL.md"
+    },
+    {
       "name": "software-engineering-principles",
       "domain": "coding",
       "description": "Applies core software engineering principles (modularity, separation of concerns, defensive programming, YAGNI) to produce maintainable, robust, and scalable code.",
@@ -24046,6 +24470,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/state-management/SKILL.md"
+    },
+    {
+      "name": "static-analysis-linting-type-checking",
+      "domain": "coding",
+      "description": "Implements best practices for integrating static analysis, linting, and type checking into software development workflows ensuring code quality and robustness.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "static analysis",
+        "code quality",
+        "linting",
+        "type checking",
+        "code review",
+        "how to ensure code quality",
+        "quality standards"
+      ],
+      "relatedSkills": [
+        "coding-quality-assurance",
+        "coding-automated-testing"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/static-analysis-linting-type-checking/SKILL.md"
     },
     {
       "name": "statistical-arbitrage",
@@ -25609,6 +26056,27 @@
       "source": "skills/trading/exchange-trade-reporting/SKILL.md"
     },
     {
+      "name": "trading-arbitrage-strategies",
+      "domain": "trading",
+      "description": "",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "arbitrage",
+        "trading strategies",
+        "how do I profit from arbitrage",
+        "arbitrage opportunities",
+        "moving average arbitrage"
+      ],
+      "relatedSkills": [
+        "trading-risk-management",
+        "trading-technical-analysis"
+      ],
+      "version": "1.0.0",
+      "source": "skills/trading/arbitrage-strategies/SKILL.md"
+    },
+    {
       "name": "trading-edge",
       "domain": "trading",
       "description": "\"Provides Finding and maintaining competitive advantage in trading systems\"",
@@ -25720,6 +26188,24 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/azure-traffic-manager/SKILL.md"
+    },
+    {
+      "name": "translation-strategies-for-software",
+      "domain": "coding",
+      "description": "Implements best practices for translating software content efficiently and accurately for global markets while adhering to localization standards.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "translation strategies",
+        "software localization",
+        "i18n",
+        "l10n",
+        "multilingual support"
+      ],
+      "relatedSkills": [],
+      "version": "1.1.1",
+      "source": "skills/coding/translation-strategies-for-software/SKILL.md"
     },
     {
       "name": "tree-methods",
@@ -26289,31 +26775,6 @@
       "source": "skills/trading/risk-value-at-risk/SKILL.md"
     },
     {
-      "name": "vault-api",
-      "domain": "coding",
-      "description": "Implements HashiCorp Vault API integration (KV Secrets Engine, PKI, Transit, Auth Methods, Leasing & Renewal) using hvac Python SDK v2.4+ with proper authentication, secret leasing, TTL management, and encryption as a service patterns.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "hashicorp vault",
-        "hvac python",
-        "vault kv secrets",
-        "vault pki",
-        "vault transit",
-        "how do i use vault",
-        "vault leasing",
-        "secret management"
-      ],
-      "relatedSkills": [
-        "coding-aws-iam",
-        "coding-onepassword-api",
-        "coding-entra-id-api"
-      ],
-      "version": "1.0.0",
-      "source": "skills/coding/vault-api/SKILL.md"
-    },
-    {
       "name": "vercel-api",
       "domain": "coding",
       "description": "Integrates Vercel services (Deployments, Projects, Edge Functions, Domains, Analytics) using the Vercel REST API and Python SDK with token-based authentication and deployment automation patterns.",
@@ -26720,6 +27181,94 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/weaviate-api/SKILL.md"
+    },
+    {
+      "name": "weaviate-collections-api",
+      "domain": "ai",
+      "description": "Implements Weaviate API for managing collections of data within AI applications, enhancing the structure and retrieval of information.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "weaviate",
+        "collections",
+        "AI",
+        "data storage",
+        "vector search",
+        "machine learning"
+      ],
+      "relatedSkills": [
+        "weaviate-vector-search",
+        "weaviate-graphql"
+      ],
+      "version": "1.0.0",
+      "source": "skills/ai/weaviate-collections-api/SKILL.md"
+    },
+    {
+      "name": "weaviate-graphql",
+      "domain": "ai",
+      "description": "Implements the GraphQL capabilities of the Weaviate API, enabling flexible querying options for managing AI datasets efficiently.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "weaviate",
+        "GraphQL",
+        "AI",
+        "query language",
+        "database management"
+      ],
+      "relatedSkills": [
+        "weaviate-collections-api",
+        "weaviate-vector-search"
+      ],
+      "version": "1.0.0",
+      "source": "skills/ai/weaviate-graphql/SKILL.md"
+    },
+    {
+      "name": "weaviate-integration",
+      "domain": "ai",
+      "description": "Integrates Weaviate with other services and tools, enhancing the interoperability of AI applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/ai/weaviate-integration/SKILL.md"
+    },
+    {
+      "name": "weaviate-modules",
+      "domain": "ai",
+      "description": "Implements Weaviate Modules integration, expanding capabilities with customized functions for enhanced data processing in AI applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [],
+      "relatedSkills": [],
+      "version": "1.0.0",
+      "source": "skills/ai/weaviate-modules/SKILL.md"
+    },
+    {
+      "name": "weaviate-vector-search",
+      "domain": "ai",
+      "description": "Implements vector search capabilities of the Weaviate API, allowing efficient and scalable retrieval of relevant data for AI applications.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "weaviate",
+        "vector search",
+        "AI",
+        "retrieval",
+        "machine learning"
+      ],
+      "relatedSkills": [
+        "weaviate-collections-api",
+        "weaviate-graphql"
+      ],
+      "version": "1.0.0",
+      "source": "skills/ai/weaviate-vector-search/SKILL.md"
     },
     {
       "name": "web-applications",
