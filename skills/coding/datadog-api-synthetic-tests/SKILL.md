@@ -75,3 +75,13 @@ def update_synthetic_test(test_id: int, new_url: str):
 - Never use hardcoded values in test configurations; rely on environment variables instead.
 
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Datadog Synthetics API Documentation](https://docs.datadoghq.com/api/latest/synthetic-tests/)
+- [Synthetic Testing Overview](https://docs.datadoghq.com/synthetics/)
+- [API Tests vs Browser Tests Guide](https://docs.datadoghq.com/synthetics/api_tests/)
+- [Synthetic Test Scheduling and Configuration](https://docs.datadoghq.com/synthetics/manage_tests/)
+- [Monitoring with Synthetic Tests Best Practices](https://docs.datadoghq.com/synthetics/guides/synthetics_best_practices/)

@@ -76,3 +76,13 @@ def update_alert(alert_id: int, new_message: str):
 - Never ignore the need for historical performance metrics in defining alert thresholds.
 
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Datadog Alerts API Documentation](https://docs.datadoghq.com/api/latest/alerts/)
+- [Datadog Alerting Best Practices](https://docs.datadoghq.com/monitors/manage/status/#setting-up-alert-notifications)
+- [Monitor vs Alert Configuration Guide](https://docs.datadoghq.com/monitors/guide/monitor-multi-region/)
+- [Datadog Alert Rules Management Tutorial](https://docs.datadoghq.com/monitors/manage/status/#managing-monitor-status)
+- [Alerting with Datadog - Getting Started](https://docs.datadoghq.com/graphing/metrics/instrumentation/alerts/)

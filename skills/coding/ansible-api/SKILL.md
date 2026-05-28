@@ -256,6 +256,15 @@ def run_playbook_good(
 - Never embed SSH passwords or vault passwords in playbook code
 - Do not use `gather_facts: no` unless you explicitly don't need facts — many modules depend on them
 - Ignoring unreachable hosts (`dark` in stats) can silently mask infrastructure problems
-## Live References
-- 
+
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Ansible Documentation](https://docs.ansible.com/ansible/latest/user_guide/index.html)
+- [Ansible Playbook Guide](https://docs.ansible.com/ansible/latest/playbook_guide/index.html)
+- [Ansible Runner SDK Reference](https://ansible-runner.readthedocs.io/)
+- [AWX / Automation Controller API Documentation](https://docs.ansible.com/automation-controller/latest/api_ref.html)
+- [Ansible Collections Development Guide](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html)

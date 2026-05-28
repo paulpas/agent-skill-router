@@ -278,4 +278,15 @@ When implementing Zoom API code, the output must follow this structure:
 Zoom for meeting notification via SMS |
 | `coding-slack-api` | Team messaging — send Zoom meeting links and recording notifications to Slack channels |
 | `coding-sendgrid-api` | Transactional email — use for meeting confirmation and recording delivery emails |
+
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Zoom REST API Documentation](https://developers.zoom.us/docs/api/rest/)
+- [Zoom Meeting API Reference](https://developers.zoom.us/docs/api/meetings/)
+- [Zoom Webinars API Guide](https://developers.zoom.us/docs/api/webinars/)
+- [Zoom Server-to-Server OAuth Authentication](https://developers.zoom.us/docs/api/rest/server-to-server-oauth/)
+- [Zoom Webhooks and Event Subscriptions](https://developers.zoom.us/docs/api/webhooks/)

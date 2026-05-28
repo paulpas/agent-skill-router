@@ -81,3 +81,15 @@ aws sts assume-role --role-arn arn:aws:iam::123456789012:role/role-name --role-s
 ### 3. Not Enforcing Multi-Factor Authentication (MFA)
 - **Problem:** Accounts without MFA enabled are at higher risk of unauthorized access.
 - **Solution:** Set MFA as a requirement for all IAM users with AWS Management Console access and for sensitive operations.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Okta API Documentation](https://developer.okta.com/docs/reference/core-okta-api/)
+- [Okta Users API Reference](https://developer.okta.com/docs/reference/api/users/)
+- [Okta Authentication API Guide](https://developer.okta.com/docs/reference/api/authn/)
+- [Okta Groups and Roles Management](https://developer.okta.com/docs/reference/api/groups/)
+- [Okta API Security Best Practices](https://developer.okta.com/docs/concepts/oauth-openid/)

@@ -568,3 +568,16 @@ When applying this skill, your output should contain:
 **Created:** 2026-05-15  
 **Maturity:** stable  
 **Completeness:** 95%
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://kubernetes.io/docs/concepts/architecture/controlling-state/)
+- [API Reference or Getting Started](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+- [Configuration Guide](https://kubernetes.io/docs/tasks/administer-cluster/backup-and-restore-etcd)
+- [Best Practices](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+- [Common Patterns or Tutorials](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
+

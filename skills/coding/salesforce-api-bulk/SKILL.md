@@ -117,4 +117,16 @@ Implements the Bulk API for efficient data operations with large datasets in Sal
 
 ### MUST NOT DO
 - Submit too many concurrent jobs which can overwhelm the Salesforce limits and degrade performance.
-- Exceed the maximum CSV size limit of 10MB for each payload without splitting data appropriately to maintain the efficiency of operations.  
+- Exceed the maximum CSV size limit of 10MB for each payload without splitting data appropriately to maintain the efficiency of operations.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Salesforce Bulk API Documentation](https://developer.salesforce.com/docs/atlas.en-us.api_async.meta/api_async/)
+- [Bulk API 2.0 Quick Start](https://developer.salesforce.com/docs/atlas.en-us.api_async.meta/api_async/async_api_guide_bulk_api_2_start.htm)
+- [Bulk API Data Loading Guide](https://developer.salesforce.com/docs/atlas.en-us.api_async.meta/api_async/async_api_guide_data_loading.htm)
+- [Bulk API Job Management Reference](https://developer.salesforce.com/docs/atlas.en-us.api_async.meta/api_async/async_api_guide_bulk_job_management.htm)
+- [Salesforce Bulk API Best Practices](https://developer.salesforce.com/docs/atlas.en-us.api_async.meta/api_async/async_api_guide_best_practices.htm)

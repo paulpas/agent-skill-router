@@ -149,3 +149,15 @@ function main() {
 | `coding-hubspot-api` | Integrating marketing analytics with HubSpot |
 
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Mixpanel API Documentation](https://developer.mixpanel.com/docs)
+- [Mixpanel REST API Reference](https://developer.mixpanel.com/reference/overview)
+- [Mixpanel Python SDK Guide](https://developer.mixpanel.com/docs/python)
+- [JQL Query Functions Reference](https://developer.mixpanel.com/reference/jql-functions)
+- [Funnel Analysis Tutorial](https://developer.mixpanel.com/reference/funnels-overview)
+
+---

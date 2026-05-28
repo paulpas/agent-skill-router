@@ -141,3 +141,15 @@ cur.execute("SELECT * FROM orders WHERE id = %s", (order_id,))
 |---|---|
 | coding-snowpark | Integrates Snowpark DataFrame operations for seamless data processing. |
 | coding-cortex-integration | Implements functions for leveraging AI capabilities within Snowflake. |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Snowflake API Documentation](https://docs.snowflake.com/en/developer-guide/snowflake-connectors/connectors-overview)
+- [Snowflake Connector Overview](https://docs.snowflake.com/en/developer-guide/snowflake-connectors/connectors-overview)
+- [Snowpark Python Developer Guide](https://docs.snowflake.com/en/developer-guide/snowpark/python/index)
+- [Snowflake REST API Reference](https://docs.snowflake.com/en/developer-guide/sql-api/using-sql-api)
+- [Snowflake Cortex AI Features](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions)

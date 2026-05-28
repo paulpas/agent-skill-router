@@ -399,3 +399,15 @@ def verify_access_token(shop: str, access_token: str) -> dict[str, Any]:
 ```python
 ... (additional code patterns as necessary)...
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Shopify Admin REST API Documentation](https://shopify.dev/docs/api/admin-rest)
+- [Shopify Admin GraphQL API Reference](https://shopify.dev/docs/api/admin-graphql)
+- [Shopify Storefront API Guide](https://shopify.dev/docs/api/storefront)
+- [Shopify OAuth and App Installation](https://shopify.dev/docs/apps/auth/oauth/getting-started)
+- [Shopify Webhooks Reference](https://shopify.dev/docs/api/webhooks)

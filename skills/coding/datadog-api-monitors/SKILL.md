@@ -81,3 +81,13 @@ def update_monitor(id: int, query: str, critical_threshold: float):
 - Don't neglect to validate monitor configurations against API standards to prevent misconfigurations.
 
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Datadog Monitors API Documentation](https://docs.datadoghq.com/api/latest/monitors/)
+- [Creating and Managing Monitors](https://docs.datadoghq.com/monitors/)
+- [Monitor Recovery and Escalation](https://docs.datadoghq.com/monitors/manage/status/)
+- [Datadog Monitor Types Reference](https://docs.datadoghq.com/monitors/types/)
+- [Alerting with Monitors Best Practices](https://docs.datadoghq.com/monitors/guide/monitor-multi-region/)

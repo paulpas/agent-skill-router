@@ -118,3 +118,15 @@ create_service('my-service', 'nginx:latest')  # Create a new service in Swarm
 
 ## Conclusion
 The Docker Engine API skill provides essential functionalities for container management, image handling, networking, volume management, and Swarm orchestration. By utilizing the `docker-py` SDK, developers can interact programmatically with Docker for automated workflows and CI/CD integrations.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Docker Engine API Documentation](https://docs.docker.com/engine/api/latest/)
+- [Docker SDK for Python (docker-py) Guide](https://docker-py.readthedocs.io/)
+- [Docker Container Management Reference](https://docs.docker.com/engine/reference/commandline/cli/)
+- [Docker Swarm Orchestration Guide](https://docs.docker.com/engine/swarm/)
+- [Docker Networking Configuration Reference](https://docs.docker.com/network/)

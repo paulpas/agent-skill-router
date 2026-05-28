@@ -320,3 +320,15 @@ def search_splunk(query:str):
 ### MUST NOT DO
 - Do not send logs without validation for required fields; invalid logs can cause ingestion errors.
 - Avoid excessive polling on the API; utilize appropriate event-driven architectures where possible.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Splunk REST API Reference](https://docs.splunk.com/Documentation/Splunk/latest/RESTREF/RESTapis)
+- [HTTP Event Collector (HEC) Documentation](https://docs.splunk.com/Documentation/Splunk/latest/Data/UsetheHTTPEventCollector)
+- [Splunk Search Processing Language (SPL) Guide](https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/TheBasics)
+- [Splunk SDK for Python](https://dev.splunk.com/view/python-sdk/SP-CAAAE6Q)
+- [Splunk Alert Configuration Reference](https://docs.splunk.com/Documentation/Splunk/latest/Admin/Alerts)

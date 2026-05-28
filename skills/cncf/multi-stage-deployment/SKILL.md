@@ -1051,3 +1051,16 @@ Example:
 **Created:** 2026-05-16  
 **Maturity:** stable  
 **Completeness:** 95%
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deploy/#strategy)
+- [API Reference or Getting Started](https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/)
+- [Configuration Guide](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#updating-a-deployment)
+- [Best Practices](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#rolling-updates)
+- [Common Patterns or Tutorials](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-app/create-interactive/)
+

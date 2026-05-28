@@ -75,3 +75,15 @@ def get_records(object_name, access_token, instance_url):
 ### MUST NOT DO
 - Store sensitive credentials directly in the codebase.
 - Exceed Salesforce API limits, which could lead to temporary lockouts.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Salesforce REST API Documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/)
+- [REST API Quick Start Guide](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart.htm)
+- [REST API Resource Reference](https://developer.salesforce.com/docs/atlas.en-us.api_rest/meta/api_rest/resources_list.htm)
+- [Salesforce OAuth 2.0 Authentication](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/auth_used_for_interacting_with_other_systems.htm)
+- [REST API Bulk Operations Best Practices](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_bulk_insert_delete_query.htm)

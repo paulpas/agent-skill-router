@@ -243,3 +243,15 @@ description: Deploys managed relational databases (MySQL, PostgreSQL, MariaDB, O
 ### MUST NOT DO
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html)
+- [API Reference or Getting Started](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDatabaseInstance.html)
+- [Configuration Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html)
+- [Best Practices](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.AmazonRDS.CommonIssues.html)
+- [Common Patterns or Tutorials](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html)
+

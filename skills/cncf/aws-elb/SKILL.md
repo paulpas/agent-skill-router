@@ -535,3 +535,16 @@ Route 53 + ALB enables:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
+- [API Reference or Getting Started](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/introduction-distributed-load-balancing.html)
+- [Configuration Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-security-policy-definitions.html)
+- [Best Practices](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/monitoring-elb-load-balancers.html)
+- [Common Patterns or Tutorials](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/health-check-overview.html)
+

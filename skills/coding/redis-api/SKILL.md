@@ -125,3 +125,15 @@ When implementing scripts, adhere to structure:
 3. **Primary Operation**
 4. **Error Handling**
 5. **Graceful Shutdown**
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Redis Documentation](https://redis.io/docs/latest/operate/oss_and_stack/)
+- [Redis Commands Reference](https://redis.io/docs/latest/operate/oss_and_stack/commands/)
+- [Redis Modules Overview (JSON, Search, TimeSeries)](https://redis.io/docs/latest/operate/oss_and_stack/server/storage/modules/)
+- [Redis Best Practices for Performance and Reliability](https://redis.io/docs/latest/operate/oss_and_stack/reference/optimize/)
+- [Redis Data Types and Use Cases](https://redis.io/docs/latest/develop/data-types/)

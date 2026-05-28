@@ -142,3 +142,15 @@ def get_open_tickets():
 - Avoid assuming that responses from Zendesk will always be successful.
 - Do not skip API rate limit handling; always check the limits before making requests.
 - Avoid blocking calls that could hinder the performance of applications.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Zendesk API Reference](https://developer.zendesk.com/api-reference/)
+- [Zendesk Tickets API Guide](https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/)
+- [Zendesk API Authentication](https://developer.zendesk.com/api-reference/integration-authentications/authentication/)
+- [Zendesk API Rate Limits](https://developer.zendesk.com/api-reference/introduction-to-security/rate-limits/)
+- [Zendesk Webhooks Documentation](https://developer.zendesk.com/api-reference/ticketing/automations/webhooks/)

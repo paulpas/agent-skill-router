@@ -150,3 +150,15 @@ Resources:
 
 ## Conclusion
 Using AWS EC2 enables powerful cloud-based computing at scale. This skill provides essential patterns and practices to manage and deploy EC2 instances effectively.
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-launch-wizard.html)
+- [API Reference or Getting Started](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+- [Configuration Guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html)
+- [Best Practices](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)
+- [Common Patterns or Tutorials](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-consoles.html)
+

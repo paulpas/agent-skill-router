@@ -265,3 +265,16 @@ spec:
       authenticationModes:
         - PERMISSIVE
         - STRICT
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://linkerd.io/2.15/getting-started)
+- [API Reference or Getting Started](https://linkerd.io/2.15/reference/cli/install)
+- [Configuration Guide](https://linkerd.io/2.15/features/service-profiles)
+- [Best Practices](https://linkerd.io/2.15/features/mutual-tls)
+- [Common Patterns or Tutorials](https://linkerd.io/2.15/reference/proxy-config)
+

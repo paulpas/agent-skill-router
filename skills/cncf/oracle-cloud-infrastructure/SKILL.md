@@ -102,3 +102,15 @@ def create_autonomous_database(db_name: str, cpu_count: int, storage_size: int) 
 |---|---|
 | `oracle-cloud-architecture` | Guidance on optimal OCI architecture practices. |
 | `cloud-best-practices` | General best practices for cloud implementations. |
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://docs.oracle.com/en-us/iaas/home.html)
+- [API Reference or Getting Started](https://docs.oracle.com/en-us/iaas/products/compute.htm)
+- [Configuration Guide](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/understandingobjectstorage.htm)
+- [Best Practices](https://docs.oracle.com/en-us/iaas/Content/Identity/policies/intro.htm)
+- [Common Patterns or Tutorials](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+

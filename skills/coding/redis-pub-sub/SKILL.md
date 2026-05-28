@@ -99,3 +99,13 @@ When working with Redis for Pub/Sub messaging, ensure you follow this structure:
 4. Cleanup connections properly after operations.
 
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Redis Pub/Sub Documentation](https://redis.io/docs/latest/develop/interact/replication-and-clustering/pubsub/)
+- [Redis pub/sub Commands Reference](https://redis.io/docs/latest/operate/oss_and_stack/commands/pubsub/)
+- [Redis Streams for Durable Messaging](https://redis.io/docs/latest/develop/data-types/streams/)
+- [Redis Pub/Sub Best Practices](https://redis.io/docs/latest/develop/use/pubsub/)
+- [Building Real-Time Apps with Redis Pub/Sub](https://redis.io/docs/latest/develop/interact/pubsub/)

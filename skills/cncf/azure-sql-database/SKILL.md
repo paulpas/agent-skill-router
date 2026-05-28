@@ -227,3 +227,16 @@ Connect with platform services:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart)
+- [API Reference or Getting Started](https://learn.microsoft.com/en-us/azure/azure-sql/database/security-overview)
+- [Configuration Guide](https://learn.microsoft.com/en-us/azure/azure-sql/database/performance-guidelines-best-practices)
+- [Best Practices](https://learn.microsoft.com/en-us/azure/azure-sql/database/auto-tuning)
+- [Common Patterns or Tutorials](https://learn.microsoft.com/en-us/azure/azure-sql/database/pause-resume-database-automatically)
+

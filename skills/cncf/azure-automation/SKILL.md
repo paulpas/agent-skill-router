@@ -227,3 +227,16 @@ Connect with platform services:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://learn.microsoft.com/en-us/azure/automation/automation-intro)
+- [API Reference or Getting Started](https://learn.microsoft.com/en-us/automation/how-to/runbook-execution-proxy?tabs=portal%2Cshared-permission-token-new)
+- [Configuration Guide](https://learn.microsoft.com/en-us/azure/automation/shared-resources/runbooks)
+- [Best Practices](https://learn.microsoft.com/en-us/azure/automation/shared-resources/modules)
+- [Common Patterns or Tutorials](https://learn.microsoft.com/en-us/azure/automation/shared-resources/schedules)
+

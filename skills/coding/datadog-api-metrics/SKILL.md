@@ -177,3 +177,13 @@ def handle_logging_error(e):
 - Do not neglect to include trace IDs for correlation purposes.
 
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Datadog Logs API Documentation](https://docs.datadoghq.com/api/latest/logs/)
+- [Structured Logging with Datadog](https://docs.datadoghq.com/logs/log_configuration/processing_rules/)
+- [Log Collection and Forwarding Guide](https://docs.datadoghq.com/logs/log_collection/)
+- [Log Analytics and Exploration](https://docs.datadoghq.com/logs/exploration/)
+- [Datadog Log Retention and Storage](https://docs.datadoghq.com/logs/retention_and_storage/)

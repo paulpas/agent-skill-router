@@ -56,3 +56,15 @@ AWS CloudTrail provides logging for all secret accesses and actions taken on the
 AWS Secrets Manager can store API keys, database credentials, and any sensitive information that needs management.
 
 By implementing AWS Secrets Manager, organizations can securely manage sensitive information while automating key management processes and complying with organizational security policies. Maximizing the utilization of AWS services enables better governance, reducing security risks significantly.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [AWS Secrets Manager Documentation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/)
+- [Secrets Manager Getting Started](https://docs.aws.amazon.com/secretsmanager/latest/userguide/sec_manager_chap.html)
+- [Automatic Secret Rotation Guide](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html)
+- [Boto3 Secrets Manager Client Reference](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html)
+- [Secrets Manager Best Practices](https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html)

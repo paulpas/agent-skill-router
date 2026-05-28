@@ -74,3 +74,15 @@ Utilize AWS CloudTrail for tracking user activity and AWS Config rules to evalua
 Absolutely! IAM allows you to create policies that enforce tag-based access control, helping align permissions with resources effectively.
 
 By leveraging AWS IAM, organizations can build a robust security framework to manage access and permissions efficiently in their AWS environments, helping gain better control over sensitive data and operations.
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+- [API Reference or Getting Started](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html)
+- [Configuration Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)
+- [Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+- [Common Patterns or Tutorials](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_management_scheduled-change.html)
+

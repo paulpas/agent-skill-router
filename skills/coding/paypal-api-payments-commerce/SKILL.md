@@ -124,3 +124,15 @@ When invoking this skill, you will produce:
 |---|---|
 | coding-payment-processing | General guidelines for processing payments across APIs |
 | coding-subscription-management | Handling subscription-based billing operations |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PayPal Payments Commerce API Documentation](https://developer.paypal.com/docs/api/payments/v2/)
+- [PayPal Orders API Reference](https://developer.paypal.com/docs/api/orders-v2/#orders_create)
+- [PayPal Subscriptions API Guide](https://developer.paypal.com/docs/subscriptions/)
+- [PayPal Payouts API Implementation](https://developer.paypal.com/docs/api/payouts-to-paypal-balance/v2/)
+- [PayPal Dispute Management API](https://developer.paypal.com/docs/disputes/)

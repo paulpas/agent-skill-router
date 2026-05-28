@@ -81,3 +81,13 @@ def add_widget_to_dashboard(dashboard_id: int, widget: Widget):
 - Never send requests with missing required parameters, as this can cause API errors.
 
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Datadog Dashboards API Documentation](https://docs.datadoghq.com/api/latest/dashboards/)
+- [Creating Dashboards in Datadog](https://docs.datadoghq.com/graphing/manage/dashboard_templates/)
+- [Widget Types and Layout Guide](https://docs.datadoghq.com/graphing/widgets/types/)
+- [Dashboard Sharing and Permissions](https://docs.datadoghq.com/graphing/manage/sharing/)
+- [Datadog Dashboard Best Practices](https://docs.datadoghq.com/graphing/manage/dashboard_templates/)

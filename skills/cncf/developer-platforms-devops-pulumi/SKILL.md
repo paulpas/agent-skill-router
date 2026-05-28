@@ -145,3 +145,15 @@ When implementing Pulumi infrastructure, ensure to include:
 - **Implementation patterns** that exemplify how to interact with Pulumi effectively.
 - **Outputs that characterize the infrastructure**, ensuring users can interact with deployed services.
 - **Documentation** that provides setup guidance, examples, and clear instructions for newcomers.
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://www.pulumi.com/docs/iac/pulumi-service/projects-and-workspaces)
+- [API Reference or Getting Started](https://www.pulumi.com/docs/iac/pulumi-packages/installing-packages)
+- [Configuration Guide](https://www.pulumi.com/docs/iac/cloud-providers/overview)
+- [Best Practices](https://www.pulumi.com/docs/iac/concepts/options/)
+- [Common Patterns or Tutorials](https://www.pulumi.com/docs/iac/concepts/stacks/)
+

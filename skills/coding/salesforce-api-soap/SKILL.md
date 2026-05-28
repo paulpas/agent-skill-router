@@ -60,3 +60,15 @@ def get_account_details(client, account_id):
 ### MUST NOT DO
 - Share SOAP endpoint credentials in publicly accessible code repositories.
 - Use deprecated SOAP methods that Salesforce no longer supports.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Salesforce SOAP API Documentation](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_header_sessionid.htm)
+- [SOAP API Authentication and Session Management](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_header_sessionid.htm)
+- [SOAP API sObject Reference](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_calls_sobjects.htm)
+- [SOAP API Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select.htm)
+- [Salesforce SOAP API Best Practices](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_calls_intro.htm)

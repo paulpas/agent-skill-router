@@ -227,3 +227,16 @@ Connect with platform services:
 - Deploy manifests without testing in a staging environment first
 - Use deprecated API versions (e.g., apps/v1beta1)
 - Omit resource limits and requests in Kubernetes manifests
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Primary Documentation](https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts)
+- [API Reference or Getting Started](https://learn.microsoft.com/en-us/azure/key-vault/general/delete-recovery)
+- [Configuration Guide](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-requirements)
+- [Best Practices](https://learn.microsoft.com/en-us/azure/key-vault/general-manage-portal-delete-recover)
+- [Common Patterns or Tutorials](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-permissions)
+
