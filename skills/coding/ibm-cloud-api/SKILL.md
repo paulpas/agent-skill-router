@@ -1,15 +1,12 @@
 ---
 name: ibm-cloud-api
-description: Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes Service,
-  Cloud Object Storage) using IBM Cloud SDK for Python with IAM authentication and
-  service patterns.
+description: Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes Service, Cloud Object Storage) using IBM Cloud SDK for Python with IAM authentication and service patterns.
 license: MIT
 compatibility: opencode
 metadata:
   version: 1.0.0
   domain: coding
-  triggers: ibm cloud, watson api, ibm cloud sdk, cloud object storage, ibm kubernetes,
-    cloud foundry, how do i use ibm cloud from python
+  triggers: ibm cloud, watson api, ibm cloud sdk, cloud object storage, ibm kubernetes, cloud foundry, how do i use ibm cloud from python
   archetypes:
   - tactical
   - generation
@@ -28,11 +25,9 @@ metadata:
   related-skills: aws-sdk, azure-sdk, oci-sdk
 ------
 # IBM Cloud API & Watson SDK Integration Patterns
-
 Integrates IBM Cloud services using the `ibm-cloud-sdk-core` authenticators and service SDKs. Covers IAM authentication patterns, Watson AI services (Assistant, Natural Language Understanding), Cloud Object Storage (COS), IBM Cloud Kubernetes Service (IKS), and Cloud Foundry resource management with the `ibm_boto3` and `ibm_watson` libraries.
 
 ## TL;DR Checklist
-
 - [ ] Use `IAMAuthenticator` from `ibm_cloud_sdk_core` for service authentication
 - [ ] Install specific service packages (`ibm-watson`, `ibm-cos-sdk`) — granular, not monolithic
 - [ ] Handle `ApiException` with specific error codes for Watson services
@@ -42,35 +37,9 @@ Integrates IBM Cloud services using the `ibm-cloud-sdk-core` authenticators and 
 - [ ] Use context managers for COS client lifecycle
 
 ---
-
-## When to Use
-
-Use this skill when:
-
-- Building AI-powered applications using Watson services (Assistant, NLU, Speech, Vision)
-- Managing IBM Cloud Object Storage buckets with S3-compatible API
-- Automating Kubernetes cluster provisioning on IBM Cloud Kubernetes Service (IKS)
-- Deploying Cloud Foundry applications and managing service bindings
-- Querying IBM Cloud resource instances and managing IAM service IDs
-- Implementing natural language processing with Watson Natural Language Understanding
-
----
-
-## When NOT to Use
-
-- For declarative infrastructure (use Terraform or IBM Cloud Schematics)
-- For one-off CLI operations (use `ibmcloud` CLI)
-- When you need raw REST API access without SDK overhead (use direct HTTP calls)
-- For COS operations in non-Python environments (use AWS S3 SDK with COS endpoint)
-
----
-
 ## Core Workflow
-
 ### 1. IAM Authentication and Client Setup
-
 IBM Cloud SDK uses a core authentication library with pluggable authenticators.
-
 ```python
 import os
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
@@ -90,11 +59,9 @@ assistant = AssistantV2(
 )
 assistant.set_service_url(os.environ["WATSON_ASSISTANT_URL"])
 ```
-
 **Checkpoint:** Verify auth with a simple call: `assistant.list_assistants()`. Catch `ApiException` with status code 401 for invalid API keys.
 
 ### 2. Watson Assistant Session and Message
-
 ```python
 class WatsonAssistant:
     """Manage Watson Assistant sessions and send messages."""
@@ -151,18 +118,14 @@ class WatsonAssistant:
                 pass  # Session may already be expired
             self.session_id = None
 ```
-
 **Checkpoint:** Sessions expire after 5-60 minutes of inactivity (configurable). Always create a new session for long idle periods. Delete sessions after use to avoid billing.
 
 ### 3. Cloud Object Storage (S3-Compatible)
-
 IBM Cloud Object Storage uses an S3-compatible API via `ibm_boto3`.
-
 ```python
 import ibm_boto3
 from ibm_botocore.client import Config
 from ibm_botocore.exceptions import ClientError
-
 
 class COSManager:
     """Manage IBM Cloud Object Storage with S3-compatible API."""
@@ -227,15 +190,12 @@ class COSManager:
                 ) from err
             raise
 ```
-
 **Checkpoint:** COS endpoints are region-specific (e.g., `s3.us-south.cloud-object-storage.appdomain.cloud`). Use the correct endpoint for the bucket's location. Use `oauth` signature version for IAM-based auth.
 
 ### 4. Watson Natural Language Understanding
-
 ```python
 from ibm_watson import NaturalLanguageUnderstandingV1
 from ibm_watson.natural_language_understanding_v1 import Features, EntitiesOptions, KeywordsOptions
-
 
 def analyze_text(
     api_key: str,
@@ -264,16 +224,11 @@ def analyze_text(
             f"NLU analysis failed: {err.message}"
         ) from err
 ```
-
 ---
-
 ## Implementation Patterns
-
 ### Pattern 1: IBM Cloud Kubernetes Cluster Management
-
 ```python
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-
 
 def list_clusters(api_key: str, resource_group_id: str) -> list[dict]:
     """List IKS clusters in a resource group."""
@@ -294,9 +249,7 @@ def list_clusters(api_key: str, resource_group_id: str) -> list[dict]:
     response.raise_for_status()
     return response.json()
 ```
-
 ### Pattern 2: Cloud Foundry App Deployment
-
 ```python
 def cf_push(
     api_endpoint: str,
@@ -322,9 +275,7 @@ def cf_push(
                 f"CF command failed: {' '.join(cmd)}\n{result.stderr}"
             )
 ```
-
 ### BAD vs GOOD: Watson Error Handling
-
 ```python
 # ❌ BAD — Catching base Exception loses error context
 from ibm_watson import AssistantV2
@@ -348,9 +299,7 @@ except ApiException as err:
         raise PermissionError("Invalid API key or expired token") from err
     raise
 ```
-
 ### BAD vs GOOD: COS Bucket Creation
-
 ```python
 # ❌ BAD — No location constraint, no error handling
 client = ibm_boto3.client("s3", ...)
@@ -364,64 +313,40 @@ def ensure_bucket(client, name: str, location: str = "us-south") -> None:
             CreateBucketConfiguration={"LocationConstraint": location},
         )
     except ClientError as err:
-        if err.response["Error"]["Code"] in ("BucketAlreadyOwnedByYou", "BucketAlreadyExists"):
-            return  # Expected: bucket exists
+        if err.response["Error"]["Code"] == "BucketAlreadyOwnedByYou":
+            return False  # Idempotent success
         raise
 
 ensure_bucket(client, "my-bucket", "us-south")
 ```
-
 ---
-
 ## Constraints
-
 ### MUST DO
 - Use `IAMAuthenticator` for all IBM Cloud SDK authentication — API key is the primary auth mechanism
 - Set service URLs explicitly after client creation — default URLs may not match your region
 - Handle `ApiException` (Watson) and `ClientError` (COS) with specific HTTP codes for each service
-- Use `ibm_boto3` (not `boto3`) for COS — it supports IAM-based `oauth` signature
+- Use `ibm_boto3` (not `boto3`) for COS — it doesn't support IBM IAM OAuth tokens
 - Use `get_result()` on Watson responses to access the parsed JSON payload
 - Use resource groups to scope service instances for IAM access control
-
 ### MUST NOT DO
 - Hardcode API keys in source code — use environment variables or a secrets manager
 - Use `boto3` (vanilla) for COS — it doesn't support IBM IAM OAuth tokens
 - Forget to call `set_service_url` — SDKs default to `https://api.us-south.assistant.watson.cloud.ibm.com` which may be wrong
 - Use synchronous sessions for long-running Watson conversations — sessions expire
 - Ignore Watson API version dates — always set an explicit version string
-
 ---
-
 ## Output Template
-
 When implementing an IBM Cloud SDK integration, structure your output as:
-
 1. **Authentication** — `IAMAuthenticator` creation from API key
 2. **Client Setup** — Service client with version and service URL
 3. **Operation** — API call with service-specific parameters
 4. **Error Handling** — `ApiException` or `ClientError` with code branching
 5. **Response Parsing** — `.get_result()` for Watson, standard dict access for COS
 6. **Cleanup** — Session deletion (Watson) or client close
-
 ---
-
-## Related Skills
-
-| Skill | Purpose |
-|---|---|
-| `aws-sdk` | AWS SDK patterns (COS shares S3-compatible API) |
-| `azure-sdk` | Azure SDK patterns |
-| `oci-sdk` | Oracle Cloud SDK patterns |
-| `google-cloud-sdk` | Google Cloud SDK patterns |
-
----
-
 ## Live References
+- [IBM Cloud SDK Documentaion](https://cloud.ibm.com/apidocs)
+- [Watson SDK Documentation](https://cloud.ibm.com/apidocs/watson)
+- [IBM Cloud Object Storage SDK](https://cloud.ibm.com/apidocs/cloud-object-storage)
 
-- [IBM Cloud SDK Core (Python)](https://github.com/IBM/python-sdk-core) — Core authentication library
-- [IBM Watson Python SDK](https://github.com/watson-developer-cloud/python-sdk) — Watson service client library
-- [IBM Cloud Object Storage Python SDK](https://github.com/IBM/ibm-cos-sdk-python) — COS S3-compatible SDK
-- [IBM Cloud SDK Common](https://github.com/IBM/ibm-cloud-sdk-common) — SDK usage patterns across languages
-- [IBM Cloud API Documentation](https://cloud.ibm.com/apidocs) — All IBM Cloud service APIs
-- [IBM Cloud IAM Authentication](https://cloud.ibm.com/docs/account?topic=account-iamoverview) — IAM service ID management
-- [Cloud Object Storage Endpoints](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints) — Regional endpoint reference
+--- 

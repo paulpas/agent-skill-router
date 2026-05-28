@@ -1,509 +1,152 @@
 ---
-compatibility: opencode
-completeness: 95
-content-types:
-- guidance
-- examples
-- do-dont
-- config
-description: '"Deploys, configures, and auto-scales EC2 instances with load balancing"
-  using best practices for high availability, security, and cost optimization in AWS
-  compute environments.'
-license: MIT
-maturity: stable
-metadata:
-  domain: cncf
-  output-format: manifests
-  related-skills: aws-auto-scaling, aws-cloudformation, aws-cloudwatch, aws-iam
-  role: reference
-  scope: infrastructure
-  triggers: ec2, compute instances, auto-scaling, load balancing, asg, launch template,
-    instance types, ebs volumes
-  archetypes:
-  - educational
-  - strategic
-  anti_triggers:
-  - brainstorming
-  - vague ideation
-  - non-containerized architecture
-  response_profile:
-    verbosity: medium
-    directive_strength: low
-    abstraction_level: strategic
-  version: 1.0.0
-name: ec2
-------
-# EC2 (Elastic Compute Cloud)
+name: aws-ec2
 
-Deploy, configure, and scale virtual compute instances on AWS with high availability, automatic scaling, and integrated load balancing. EC2 is the foundational compute service for running applications in AWS.
+description: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: "1.0.0"\n  domain: cncf\n  triggers: aws ec2, ec2 instances, aws sdk, scaling, security groups, instance management\n  archetypes: educational, tactical\n  related-skills: aws-iam, aws-sdk, aws-s3\n  output-format: code\n  role: implementation\n  scope: infrastructure\n  anti_triggers: vague concepts, misconfigured instances\n  response_profile: medium\n---\ndescription: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  triggers: aws ec2, ec2 instances, aws sdk, scaling, security groups, instance management
+  archetypes:
+    - educational
+    - tactical
+  related-skills: aws-iam, aws-sdk, aws-s3
+  output-format: code
+  role: implementation
+  scope: infrastructure
+---
+
+# AWS EC2 Management Skill
+
+Deploy, configure, and manage Elastic Compute Cloud (EC2) instances on AWS with scalable architectures and rigorous security practices. This skill will cover:
 
 ## TL;DR Checklist
-
-- [ ] Choose appropriate instance type for workload (t3 for burstable, c5 for compute-optimized, m5 for general-purpose)
-- [ ] Use Auto Scaling Groups with proper min/max/desired capacity
-- [ ] Configure security groups with principle of least privilege
-- [ ] Enable detailed CloudWatch monitoring
-- [ ] Use IMDSv2 for instance metadata security
-- [ ] Implement health checks and lifecycle policies
-- [ ] Encrypt EBS volumes by default
-- [ ] Use launch templates instead of launch configurations
-
----
-
-## When to Use
-
-Use EC2 when:
-
-- Running application servers, web servers, or batch processing workloads
-- Requiring full OS-level control and custom software installation
-- Building auto-scaling infrastructure with custom health checks
-- Integrating with load balancers for application distribution
-- Running stateful workloads that require persistent storage
-- Needing predictable, granular performance control
-
----
-
-## When NOT to Use
-
-Avoid EC2 when:
-
-- Building simple, event-driven serverless applications (use Lambda instead)
-- Needing fully managed Kubernetes clusters (use EKS instead)
-- Running stateless microservices that scale to zero (use Fargate instead)
-- Requiring minimal infrastructure management overhead
-- Running short-lived, infrequent workloads (use Lambda for lower cost)
+- [ ] Choose the appropriate EC2 instance types for workloads.
+- [ ] Implement Auto Scaling Groups for managing instance scaling.
+- [ ] Configure security groups with the principle of least privilege.
+- [ ] Understand how to manage instances using the AWS SDK (Boto3).
 
 ---
 
 ## Purpose and Use Cases
-
-**Primary Purpose:** Provide scalable, resizable compute capacity in the cloud with full control over OS, networking, and performance tuning.
-
-**Common Use Cases:**
-
-1. **Web Server Tier** — Host application servers for web applications with auto-scaling
-2. **Batch Processing** — Run data processing jobs with Spot instances for cost optimization
-3. **Database Servers** — Run self-managed databases (MySQL, PostgreSQL) with EBS storage
-4. **High-Performance Computing** — Run compute-intensive workloads on GPU or CPU-optimized instances
-5. **Development and Testing** — Launch environments on-demand with quick teardown
+* **Primary Purpose**: Provide scalable computation capacity in the cloud while allowing users to manage infrastructure through comprehensive SDK usage.
+* **Common Use Cases**:
+  1. Hosting web applications in a highly available configuration.
+  2. Running background processing workloads and batch jobs.
+  3. Developing and testing applications in scalable environments.
+  4. Implementing data analytics workflows using compute clusters.
 
 ---
 
 ## Architecture Design Patterns
+### Pattern 1: Launch and Manage EC2 Instances
+```python
+import boto3
+from botocore.exceptions import ClientError
 
-### Pattern 1: Auto-Scaling Web Application
+def launch_instance(ami_id, instance_type='t2.micro', key_name='my-key', security_group='my-sg'):
+    ec2 = boto3.resource('ec2')
+    try:
+        instance = ec2.create_instances(
+            ImageId=ami_id,
+            MinCount=1,
+            MaxCount=1,
+            InstanceType=instance_type,
+            KeyName=key_name,
+            SecurityGroups=[security_group]
+        )
+        print(f'Instance created: {instance[0].id}')  # Log instance ID
+        return instance[0].id
+    except ClientError as e:
+        print(f'Error occurred: {e}')
 
+# Example usage
+launch_instance('ami-12345678', 't2.micro', 'my-key', 'my-sg')
+```
+
+### Pattern 2: Configure Security Groups
+```python
+def create_security_group(group_name, description, vpc_id):
+    ec2 = boto3.client('ec2')
+    try:
+        response = ec2.create_security_group(GroupName=group_name,
+                                               Description=description,
+                                               VpcId=vpc_id)
+        sg_id = response['GroupId']
+        print(f'Security Group {sg_id} created successfully')
+        return sg_id
+    except ClientError as e:
+        print(e)
+
+# Example usage
+create_security_group('MySecurityGroup', 'My security group for EC2 instances', 'vpc-12345678')
+```
+
+### Pattern 3: Scaling EC2 Instances with Auto Scaling
 ```yaml
-# Launch Template - defines instance configuration
 AWSTemplateFormatVersion: '2010-09-09'
 Resources:
-  LaunchTemplate:
-    Type: AWS::EC2::LaunchTemplate
+  LaunchConfiguration:
+    Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
-      LaunchTemplateData:
-        ImageId: ami-0c55b159cbfafe1f0
-        InstanceType: t3.medium
-        KeyName: my-key-pair
-        SecurityGroupIds:
-          - sg-0123456789abcdef0
-        IamInstanceProfile:
-          Arn: arn:aws:iam::123456789012:instance-profile/EC2-App-Role
-        UserData:
-          Fn::Base64: |
-            #!/bin/bash
-            yum update -y
-            yum install -y httpd
-            systemctl start httpd
-        TagSpecifications:
-          - ResourceType: instance
-            Tags:
-              - Key: Name
-                Value: web-app-instance
-              - Key: Environment
-                Value: production
-        BlockDeviceMappings:
-          - DeviceName: /dev/xvda
-            Ebs:
-              VolumeSize: 100
-              VolumeType: gp3
-              DeleteOnTermination: true
-              Encrypted: true
+      ImageId: ami-12345678
+      InstanceType: t2.micro
+      SecurityGroups:
+        - my-sg
+      KeyName: my-key
 
   AutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
-      LaunchTemplate:
-        LaunchTemplateId: !Ref LaunchTemplate
-        Version: !GetAtt LaunchTemplate.LatestVersionNumber
-      MinSize: 2
+      LaunchConfigurationName: !Ref LaunchConfiguration
+      MinSize: 1
       MaxSize: 10
-      DesiredCapacity: 3
+      DesiredCapacity: 2
       VPCZoneIdentifier:
-        - subnet-0123456789abcdef0
-        - subnet-0123456789abcdef1
-        - subnet-0123456789abcdef2
-      TargetGroupARNs:
-        - arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/web-app/0123456789abcdef0
-      HealthCheckType: ELB
-      HealthCheckGracePeriod: 300
+        - subnet-12345678
       Tags:
         - Key: Name
-          Value: web-app-asg
+          Value: MyEC2Instance
           PropagateAtLaunch: true
 
-  ScaleUpPolicy:
+  ScalingPolicy:
     Type: AWS::AutoScaling::ScalingPolicy
     Properties:
-      AdjustmentType: ChangeInCapacity
       AutoScalingGroupName: !Ref AutoScalingGroup
+      PolicyType: SimpleScaling
+      ScalingAdjustment: 1
       Cooldown: 300
-      ScalingAdjustment: 2
 
-  ScaleDownPolicy:
-    Type: AWS::AutoScaling::ScalingPolicy
-    Properties:
-      AdjustmentType: ChangeInCapacity
-      AutoScalingGroupName: !Ref AutoScalingGroup
-      Cooldown: 300
-      ScalingAdjustment: -1
-
-  CPUHighAlarm:
-    Type: AWS::CloudWatch::Alarm
-    Properties:
-      AlarmDescription: Scale up when CPU > 70%
-      MetricName: CPUUtilization
-      Namespace: AWS/EC2
-      Statistic: Average
-      Period: 300
-      EvaluationPeriods: 2
-      Threshold: 70
-      ComparisonOperator: GreaterThanThreshold
-      Dimensions:
-        - Name: AutoScalingGroupName
-          Value: !Ref AutoScalingGroup
-      AlarmActions:
-        - !Ref ScaleUpPolicy
-
-  CPULowAlarm:
-    Type: AWS::CloudWatch::Alarm
-    Properties:
-      AlarmDescription: Scale down when CPU < 25%
-      MetricName: CPUUtilization
-      Namespace: AWS/EC2
-      Statistic: Average
-      Period: 300
-      EvaluationPeriods: 3
-      Threshold: 25
-      ComparisonOperator: LessThanThreshold
-      Dimensions:
-        - Name: AutoScalingGroupName
-          Value: !Ref AutoScalingGroup
-      AlarmActions:
-        - !Ref ScaleDownPolicy
 ```
-
-**Key Elements:**
-- Launch Template encapsulates instance configuration
-- User Data bootstraps application installation
-- Auto Scaling Group manages capacity across multiple AZs
-- ELB health checks ensure only healthy instances receive traffic
-- CloudWatch alarms trigger scaling policies based on CPU utilization
-- Encrypted EBS volumes for data protection
-- IAM instance profile grants permissions to application
-
-### Pattern 2: Spot Instance Strategy for Cost Optimization
-
-```yaml
-Resources:
-  SpotFleetRole:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: spotfleet.amazonaws.com
-            Action: sts:AssumeRole
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/service-role/AmazonEC2SpotFleetTaggingRole
-
-  SpotFleetRequest:
-    Type: AWS::EC2::SpotFleet
-    Properties:
-      SpotFleetRequestConfigData:
-        AllocationStrategy: lowestPrice
-        IamFleetRole: !GetAtt SpotFleetRole.Arn
-        LaunchSpecifications:
-          - ImageId: ami-0c55b159cbfafe1f0
-            InstanceType: t3.medium
-            KeyName: my-key-pair
-            SpotPrice: '0.0416'
-            SubnetId: subnet-0123456789abcdef0
-            WeightedCapacity: 1
-          - ImageId: ami-0c55b159cbfafe1f0
-            InstanceType: t3.large
-            KeyName: my-key-pair
-            SpotPrice: '0.0832'
-            SubnetId: subnet-0123456789abcdef0
-            WeightedCapacity: 2
-        TargetCapacity: 4
-        Type: maintain
-        ValidFrom: !Sub 
-          - '${ISO8601Date}'
-          - ISO8601Date: !GetAtt SpotFleetTimestamp.Timestamp
-        TerminateInstancesWithExpiration: true
-```
-
-**Key Elements:**
-- Multiple instance type options provide flexibility
-- LowestPrice strategy optimizes cost
-- WeightedCapacity allows different instance types to contribute to target capacity
-- Spot instances reduce compute costs by 70-90%
-
-### Pattern 3: Security-Hardened Instance Configuration
-
-```yaml
-Resources:
-  InstanceSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupDescription: Security group with principle of least privilege
-      VpcId: vpc-0123456789abcdef0
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 443
-          ToPort: 443
-          CidrIp: 0.0.0.0/0
-          Description: HTTPS from anywhere
-        - IpProtocol: tcp
-          FromPort: 80
-          ToPort: 80
-          CidrIp: 0.0.0.0/0
-          Description: HTTP from anywhere
-      SecurityGroupEgress:
-        - IpProtocol: -1
-          CidrIp: 0.0.0.0/0
-          Description: Allow all outbound traffic
-
-  EC2InstanceProfile:
-    Type: AWS::IAM::InstanceProfile
-    Properties:
-      Roles:
-        - !Ref EC2InstanceRole
-
-  EC2InstanceRole:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: ec2.amazonaws.com
-            Action: sts:AssumeRole
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
-        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
-      Policies:
-        - PolicyName: CloudWatchLogs
-          PolicyDocument:
-            Version: '2012-10-17'
-            Statement:
-              - Effect: Allow
-                Action:
-                  - logs:CreateLogGroup
-                  - logs:CreateLogStream
-                  - logs:PutLogEvents
-                Resource: arn:aws:logs:*:*:*
-
-  HardenedInstance:
-    Type: AWS::EC2::Instance
-    Properties:
-      ImageId: ami-0c55b159cbfafe1f0
-      InstanceType: t3.medium
-      IamInstanceProfile: !Ref EC2InstanceProfile
-      SecurityGroupIds:
-        - !Ref InstanceSecurityGroup
-      MetadataOptions:
-        HttpEndpoint: enabled
-        HttpTokens: required
-        HttpPutResponseHopLimit: 1
-      BlockDeviceMappings:
-        - DeviceName: /dev/xvda
-          Ebs:
-            VolumeSize: 50
-            VolumeType: gp3
-            DeleteOnTermination: true
-            Encrypted: true
-      Monitoring: true
-      Tags:
-        - Key: Name
-          Value: hardened-instance
-```
-
-**Security Features:**
-- IMDSv2 enforced (HttpTokens: required)
-- CloudWatch detailed monitoring enabled
-- IAM role with SSM access for secure shell access
-- Encrypted EBS volumes
-- Security group with least privilege ingress rules
-- CloudWatch Logs integration for audit trails
 
 ---
 
 ## Integration Approaches
-
-### 1. Integration with Load Balancers
-
-EC2 instances work with Elastic Load Balancing (ALB, NLB, Classic ELB) for:
-- Distributing traffic across instances
-- Health checks and automatic failover
-- SSL/TLS termination
-- Cross-AZ load balancing
-
-### 2. Integration with Auto Scaling
-
-Auto Scaling Groups:
-- Automatically launch/terminate instances based on demand
-- Distribute instances across multiple AZs for high availability
-- Support scheduled scaling and dynamic scaling policies
-- Integrate with CloudWatch metrics for scaling triggers
-
-### 3. Integration with CloudWatch
-
-CloudWatch provides:
-- EC2 metric collection (CPU, network, disk)
-- Custom metrics from applications
-- Alarms to trigger scaling actions
-- Logs for application and system diagnostics
-
-### 4. Integration with Systems Manager
-
-AWS Systems Manager enables:
-- Session Manager for secure shell access without SSH keys
-- Patch Manager for automated OS patching
-- Parameter Store for application configuration
-- State Manager for configuration management
-
-### 5. Integration with IAM
-
-IAM roles provide:
-- Secure credential management for applications
-- Fine-grained permissions for AWS API access
-- Temporary credentials (auto-rotated)
-- Cross-account access capabilities
+1. **Load Balancing**: EC2 instances can be integrated with Elastic Load Balancing (ELB) for optimized routing of traffic.
+2. **Auto Scaling**: Use Auto Scaling Groups to automatically adjust capacity based on load.
+3. **CloudWatch Monitoring**: Monitor EC2 metrics with CloudWatch to ensure performance and health.
+4. **IAM Roles**: Use IAM to define permissions for EC2 instances securely.
 
 ---
 
 ## Common Pitfalls
-
-### ❌ Pitfall 1: Choosing Wrong Instance Type
-
-**Problem:** Oversizing instances wastes money; undersizing causes performance issues.
-
-**Solution:**
-- Analyze workload requirements (CPU, memory, network)
-- Use t3 instances (burstable) for variable workloads
-- Use c5/c6 (compute-optimized) for CPU-intensive workloads
-- Use m5/m6 (general-purpose) for balanced workloads
-- Use Compute Optimizer to analyze instance fit
-
-### ❌ Pitfall 2: No Auto Scaling
-
-**Problem:** Manual instance management doesn't handle traffic spikes; over-provisioning increases costs.
-
-**Solution:**
-- Always use Auto Scaling Groups for production workloads
-- Set appropriate target tracking policies (CPU, ALB request count)
-- Test scaling policies under load before going live
-
-### ❌ Pitfall 3: Security Group Rules Too Permissive
-
-**Problem:** Overly open security groups increase attack surface.
-
-**Solution:**
-- Use principle of least privilege
-- Restrict ingress to only required ports and sources
-- Use security groups as virtual firewalls
-- Regularly audit security group rules
-
-### ❌ Pitfall 4: Not Monitoring Instance Health
-
-**Problem:** Instances fail silently; unhealthy instances continue receiving traffic.
-
-**Solution:**
-- Enable detailed CloudWatch monitoring
-- Use ELB health checks (not just EC2 status checks)
-- Configure CloudWatch alarms for critical metrics
-- Set up log aggregation and analysis
-
-### ❌ Pitfall 5: Unencrypted EBS Volumes
-
-**Problem:** Data at rest is exposed to unauthorized access.
-
-**Solution:**
-- Enable EBS encryption by default in account settings
-- Use AWS KMS keys for encryption (customer-managed keys for sensitive data)
-- Encrypt snapshots and volumes used for backups
-
-### ❌ Pitfall 6: Using Launch Configurations Instead of Launch Templates
-
-**Problem:** Launch configurations are deprecated; limited versioning.
-
-**Solution:**
-- Always use Launch Templates for new deployments
-- Templates support versioning, mixed instance types, and advanced options
-- Migrate existing Launch Configurations to Templates
+### ❌ Misconfigured Security Groups
+**Solution**: Always configure security groups with the principle of least privilege and routinely audit them.
+### ❌ Indiscriminate Scaling
+**Solution**: Tune your Auto Scaling policies carefully to match your application load patterns.
+### ❌ Not Using Tags
+**Solution**: Tag instances for better resource management and reporting.
 
 ---
 
-## Best Practices Summary
-
-| Category | Best Practice |
-|---|---|
-| **Instance Selection** | Use right-sized instances; leverage Compute Optimizer for recommendations |
-| **Availability** | Distribute across 3+ AZs; use Auto Scaling Groups with min >= 2 |
-| **Security** | IMDSv2, encrypted EBS, IAM roles, least-privilege security groups |
-| **Monitoring** | Enable detailed CloudWatch monitoring; set up alarms for key metrics |
-| **Cost** | Use Spot instances for fault-tolerant workloads; right-size instances |
-| **Scaling** | Use target tracking policies; avoid manual scaling |
-| **Updates** | Use Systems Manager Patch Manager for OS patching |
+## Best Practices
+- **Select the Right Instance Type**: Use the right instance types based on workload requirements.
+- **Scale Wisely**: Always implement Auto Scaling for production workloads to handle changes in traffic.
+- **Monitor**: Utilize CloudWatch for real-time monitoring and alarms on the health of EC2 instances.
+- **Optimize Costs**: Regularly analyze your usage and consider using Reserved Instances or Spot Instances for cost savings.
 
 ---
 
-## Related Skills
-
-| Skill | Purpose |
-|---|---|
-| `cncf-aws-elb` | Load balance traffic across EC2 instances |
-| `cncf-aws-vpc` | Configure networking for EC2 instances |
-| `cncf-aws-iam` | Manage EC2 instance permissions |
-| `cncf-aws-cloudwatch` | Monitor EC2 metrics and logs |
-| `cncf-aws-auto-scaling` | Configure dynamic scaling policies |
-| `cncf-aws-cloudformation` | Infrastructure as code for EC2 resources |
----
-
-## Core Workflow
-
-1. **Assess Requirements** — Understand the use case, scale, integration needs, and existing infrastructure. **Checkpoint:** Document requirements, constraints, and success criteria.
-
-2. **Design Architecture** — Plan component interactions, data flow, and deployment strategy using cloud-native best practices. **Checkpoint:** Verify the architecture addresses all requirements and follows CNCF conventions.
-
-3. **Implement & Configure** — Create manifests, configurations, and deployment scripts. Include resource limits, health checks, and observability hooks. **Checkpoint:** Validate all YAML against schema and test in a staging environment.
-
-4. **Deploy & Monitor** — Apply manifests to the cluster, verify component health, and confirm observability is working. **Checkpoint:** Confirm all pods/services are running, probes passing, and metrics/alerts configured.
-
----
-
-## Constraints
-
-### MUST DO
-- Include at least one complete working YAML manifest example
-- Note when content is auto-generated vs. manually verified
-- Reference relevant CNCF project documentation
-
-### MUST NOT DO
-- Deploy manifests without testing in a staging environment first
-- Use deprecated API versions (e.g., apps/v1beta1)
-- Omit resource limits and requests in Kubernetes manifests
+## Conclusion
+Using AWS EC2 enables powerful cloud-based computing at scale. This skill provides essential patterns and practices to manage and deploy EC2 instances effectively.

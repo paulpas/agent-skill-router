@@ -1,16 +1,12 @@
 ---
 name: feature-flags-progressive-delivery
-description: Implements feature flag systems with progressive delivery, A/B testing,
-  and gradual rollout strategies for safe application-level feature deployment without
-  code changes.
+description: Implements feature flag systems with progressive delivery, A/B testing, and gradual rollout strategies for safe application-level feature deployment without code changes.
 license: MIT
 compatibility: opencode
 metadata:
   version: 1.0.0
   domain: coding
-  triggers: feature flags, progressive delivery, canary release, A/B testing, flag
-    management, gradual rollout, feature toggle, percentage rollout, how do i safely
-    roll out new features, experiment flags
+  triggers: feature flags, progressive delivery, canary release, A/B testing, flag management, gradual rollout, feature toggle, percentage rollout, how do i safely roll out new features, experiment flags
   archetypes:
   - tactical
   - generation
@@ -26,83 +22,38 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  content-types:
-  - code
-  - guidance
-  - config
-  - do-dont
   related-skills: secure-release-pipeline, software-delivery-pipelines, microservice-resilience-patterns
-------
+---
 # Feature Flag Progressive Delivery
-
 Implements feature flag systems for controlled, progressive delivery of application features — enabling safe rollouts, A/B testing, and instant rollbacks without redeploying code.
-
 ## TL;DR Checklist
-
 - [ ] Choose the right flag type (release toggle, experiment, permissioning, or operation toggle)
 - [ ] Implement boolean evaluation with a fallback to `false` when the flag service is unreachable
 - [ ] Start rollouts at 1% and scale to 10% → 50% → 100% over monitored intervals
 - [ ] Set up error-rate and latency monitoring for each rollout bucket
 - [ ] Schedule cleanup of stale flags within 90 days of full release
 - [ ] Document every flag's owner, purpose, and expiration in code comments
-
 ---
-
-## When to Use
-
-Use this skill when:
-
-- Rolling out a new feature to a subset of users before full deployment
-- Running A/B or A/B/n experiments to compare feature variants quantitatively
-- Enabling features per user segment (e.g., premium users only, internal testers)
-- Performing canary releases where you gradually increase traffic to a new version
-- Need instant rollback without redeploying — flip the flag instead of reverting code
-- Deploying risky or untested changes behind a safety gate
-
----
-
-## When NOT to Use
-
-Avoid this skill for:
-
-- Simple boolean configurations that change infrequently (use config files or environment variables)
-- Features that are already gated by infrastructure-level deployment strategies (e.g., blue-green deployments with no gradual user targeting)
-- Performance-critical code paths where flag evaluation latency is unacceptable (< 1ms p99 required)
-- Security-sensitive toggles — never use feature flags for security controls; always enforce in the security layer
-
----
-
 ## Core Workflow
-
-1. **Define Flag Schema** — Create a structured flag definition with: unique key, name, description, default value (usually `false`), targeting rules (percentage, user segments, geographic), owner, and scheduled expiry date. Store flags in a centralized store (database, Redis, or feature flag service like Unleash/LaunchDarkly).
+1. **Define Flag Schema:** Create a structured flag definition with: unique key, name, description, default value (usually `false`), targeting rules (percentage, user segments, geographic), owner, and scheduled expiry date. Store flags in a centralized store (database, Redis, or feature flag service like Unleash/LaunchDarkly).
    **Checkpoint:** Every flag must have an owner field — flags without owners become technical debt.
-
-2. **Implement Flag Client** — Build a thin client that wraps flag evaluation. The client should: cache flag values for the configured TTL (typically 5–30 seconds), handle service failures gracefully by returning the default value, and emit metrics (evaluation count, hit/miss rates).
+2. **Implement Flag Client**: Build a thin client that wraps flag evaluation. The client should: cache flag values for the configured TTL (typically 5–30 seconds), handle service failures gracefully by returning the default value, and emit metrics (evaluation count, hit/miss rates).
    **Checkpoint:** Test the failure mode — when the flag service is down, the client must return `false` (fail-safe) within 100ms.
-
-3. **Wrap Feature Code** — Replace conditional checks with flag evaluation calls. The application code should branch based on the flag value while maintaining both code paths in production. Each flag-gated section should have its own metrics bucket for independent monitoring.
+3. **Wrap Feature Code:** Replace conditional checks with flag evaluation calls. The application code should branch based on the flag value while maintaining both code paths in production. Each flag-gated section should have its own metrics bucket for independent monitoring.
    **Checkpoint:** Ensure both the flagged-on and flagged-off code paths execute at least once during staging testing.
-
-4. **Configure Rollout Strategy** — Set up progressive delivery rules: start with 1% of users for 24 hours, promote to 10% if error rates stay below threshold, then 50%, then 100%. Each step should trigger alerts on anomalous behavior. Use user-level targeting (consistent hashing) so a given user always sees the same variant.
+4. **Configure Rollout Strategy:** Set up progressive delivery rules: start with 1% of users for 24 hours, promote to 10% if error rates stay below threshold, then 50%, then 100%. Each step should trigger alerts on anomalous behavior. Use user-level targeting (consistent hashing) so a given user always sees the same variant.
    **Checkpoint:** Verify rollout percentages match actual traffic distribution by comparing flagged vs unflagged request counts in logs.
-
-5. **Monitor and Clean Up** — Track flag health metrics: stale flags (unchanged for 30+ days), flags with zero evaluations, and flags approaching expiry. Schedule cleanup tasks to remove flags after their feature is fully released or abandoned.
+5. **Monitor and Clean Up:** Track flag health metrics: stale flags (unchanged for 30+ days), flags with zero evaluations, and flags approaching expiry. Schedule cleanup tasks to remove flags after their feature is fully released or abandoned.
    **Checkpoint:** Review the flag dashboard weekly — remove any flags past their expiration date that are no longer needed.
-
 ---
-
 ## Implementation Patterns
-
 ### Pattern 1: Feature Flag Client with Caching and Fallback
-
 A production-ready client handles caching, failure modes, and metrics emission.
-
 ```python
 """
 Feature flag evaluation system with progressive delivery support.
 Implements caching, failure-safe defaults, and per-user targeting.
 """
-
 from __future__ import annotations
 
 import hashlib
@@ -123,7 +74,7 @@ class FlagType(Enum):
     OPERATION = "operation"                # Toggle runtime operations (kill switches)
 
 
-@dataclass
+dataclass
 class FlagDefinition:
     """Schema for a single feature flag definition."""
     key: str
@@ -144,7 +95,7 @@ class FlagDefinition:
         return datetime.now() > expiry
 
 
-@dataclass
+dataclass
 class FlagEvaluationResult:
     """Result of evaluating a feature flag for a specific context."""
     flag_key: str
@@ -161,22 +112,13 @@ class FeatureFlagClient:
     when the flag service is unavailable.
     """
 
-    def __init__(
-        self,
-        cache_ttl_seconds: float = 15.0,
-        failure_timeout_seconds: float = 60.0,
-    ):
+    def __init__(self, cache_ttl_seconds: float = 15.0, failure_timeout_seconds: float = 60.0):
         self._cache: dict[str, tuple[bool, float]] = {}
         self._cache_ttl = cache_ttl_seconds
         self._failure_since: float | None = None
         self._failure_timeout = failure_timeout_seconds
 
-    def evaluate(
-        self,
-        flag: FlagDefinition,
-        user_id: str,
-        context: Optional[dict[str, Any]] = None,
-    ) -> FlagEvaluationResult:
+    def evaluate(self, flag: FlagDefinition, user_id: str, context: Optional[dict[str, Any]] = None) -> FlagEvaluationResult:
         """Evaluate a feature flag for a specific user.
 
         Uses consistent hashing of (flag_key + user_id) to deterministically
@@ -203,8 +145,8 @@ class FeatureFlagClient:
         # Check for service failure — use default if still in timeout window
         if self._failure_since and (time.time() - self._failure_since) < self._failure_timeout:
             logger.warning(
-                f"Flag service unavailable since {self._failure_since:.0f}s ago. "
-                f"Returning default for flag '{flag.key}'."
+                f"Flag service unavailable since {self._failure_since:.0f}s ago. \
+                Returning default for flag '{flag.key}'."
             )
             result = FlagEvaluationResult(
                 flag_key=flag.key, value=flag.default_value, evaluation_ms=0.1,
@@ -223,12 +165,7 @@ class FeatureFlagClient:
             flag_key=flag.key, value=value, evaluation_ms=elapsed,
         )
 
-    def _calculate_rollout(
-        self,
-        flag: FlagDefinition,
-        user_id: str,
-        context: dict[str, Any],
-    ) -> bool:
+    def _calculate_rollout(self, flag: FlagDefinition, user_id: str, context: dict[str, Any]) -> bool:
         """Determine the flag value based on rollout percentage and user context.
 
         Uses CRC32-style hashing for deterministic bucket assignment. Users assigned
@@ -278,30 +215,15 @@ class FeatureFlagClient:
         return the default value until the failure timeout expires."""
         self._failure_since = time.time()
 
-
 # Usage example in application code:
-#
 # client = FeatureFlagClient(cache_ttl_seconds=15.0)
-#
-# new_checkout_flag = FlagDefinition(
-#     key="new-checkout-flow",
-#     name="New Checkout Flow",
-#     description="Redirects users to the redesigned checkout experience",
-#     flag_type=FlagType.RELEASE_TOGGLE,
-#     default_value=False,
-#     owner="team-payments@company.com",
-#     rollout_percentages=[1, 5, 25, 50, 100],
-# )
-#
-# result = client.evaluate(new_checkout_flag, user_id="user-12345")
+# result = client.evaluate(flag_definition, user_id="user-12345")
 # if result.value:
-#     return render_new_checkout(request)
+#     # New feature code
 # else:
-#     return render_legacy_checkout(request)
+#     # Old feature code
 ```
-
 ### Pattern 2: Progressive Rollout Manager (BAD vs. GOOD)
-
 ```python
 # ❌ BAD — No progressive rollout, no monitoring, instant full release
 def bad_feature_rollout(flag_key: str, user_id: str):
@@ -402,8 +324,8 @@ class ProgressiveRolloutManager:
 
         if should_rollback:
             logger.error(
-                f"Rollback triggered for '{flag_key}': "
-                f"error_rate={error_rate:.4f}, p99={p99_latency:.0f}ms"
+                f"Rollback triggered for '{flag_key}': \
+                error_rate={error_rate:.4f}, p99={p99_latency:.0f}ms"
             )
 
         return should_rollback
@@ -432,16 +354,13 @@ class ProgressiveRolloutManager:
         # Example: return self.dogstatsd.histogram(metric_name).mean()
         return 0.0  # Simulate normal operation (no rollback needed)
 
-
 # Usage example:
 # manager = ProgressiveRolloutManager(FeatureFlagClient())
 # result = manager.start_rollout(new_checkout_flag, user_id="user-12345")
 # if manager.check_rollback_criteria("new-checkout-flow"):
 #     manager.rollback_flag("new-checkout-flow")  # Flip to default=false
 ```
-
 ### Pattern 3: Flag Staleness Cleanup
-
 ```python
 from __future__ import annotations
 
@@ -535,62 +454,39 @@ class FlagLifecycleManager:
         recent_evaluations = self._get_evaluation_count(flag_key, days=7)
         if recent_evaluations > 0 and not owner_approval:
             raise ValueError(
-                f"Flag '{flag_key}' still has {recent_evaluations} evaluations "
-                "in the last 7 days. Cannot delete without owner approval."
+                f"Flag '{flag_key}' still has {recent_evaluations} evaluations \
+                in the last 7 days. Cannot delete without owner approval."
             )
 
         self.flag_service.delete_flag(flag_key)
         logger.info(f"Flag '{flag_key}' permanently removed")
 ```
-
 ---
-
 ## Constraints
-
 ### MUST DO
 - Always provide a default value of `false` for new flags — enable features deliberately, not by accident
 - Cache flag evaluations locally (5–30s TTL) to avoid blocking requests on remote flag service calls
 - Use consistent hashing per user ID so the same user always sees the same flag state across sessions
 - Set expiration dates on all temporary/experimental flags and track staleness metrics
 - Test both flag-on and flag-off code paths in staging — untested code paths are bugs waiting to happen
-
 ### MUST NOT DO
 - Never use feature flags for security or authorization decisions — these must be enforced in the security layer
 - Do not let flags accumulate without lifecycle management — stale flags become invisible technical debt
 - Don't evaluate flags synchronously on the critical path without a failure timeout (fail-safe to default)
 - Never hardcode flag keys in multiple places — define them as constants or in a central registry
 - Do not promote from 1% directly to 100% — always use intermediate stages with monitoring checkpoints
-
 ---
-
 ## Output Template
-
 When implementing or reviewing feature flags, produce:
-
 1. **Flag Definition** — Key, type, default value, owner, expiry date, rollout percentages
 2. **Client Implementation** — Caching strategy, failure mode handling, metrics emission
 3. **Rollout Plan** — Stage-by-stage percentage ramp with monitoring checkpoints and rollback criteria
 4. **Cleanup Strategy** — Staleness detection process, archival vs deletion policy, and owner notification workflow
-
 ---
-
-## Related Skills
-
-| Skill                        | Purpose                                                    |
-| ---------------------------- | ---------------------------------------------------------- |
-| `secure-release-pipeline`    | Gate feature rollouts behind CI/CD approval workflows      |
-| `software-delivery-pipelines` | Orchestrate deployment timing alongside flag lifecycle     |
-| `microservice-resilience-patterns` | Handle inter-service feature flags in distributed systems |
-
----
-
 ## Live References
-
-> Authoritative documentation links for feature flag and progressive delivery practices.
-
-- [Unleash Feature Flag Documentation](https://docs.getunleash.io/)
-- [LaunchDarkly Feature Management Guide](https://docs.launchdarkly.com/home)
-- [Flagsmith Feature Flag Platform Docs](https://docs.flagsmith.com/)
-- [Netflix Tachi: Feature Management at Scale](https://netflixtechblog.com/tag/tachi)
-- [Google SLOs and Feature Rollout Best Practices](https://sre.google/sre-book/service-level-objectives/)
-- [Stripe's Approach to Gradual Rollouts](https://stripe.com/docs/feature-flags)
+> Authoritative documentation links for feature flag and progressive delivery best practices.
+- [Unleash Documentation](https://docs.getunleash.io) - Feature flags, progressive delivery, and rollout strategies.
+- [LaunchDarkly Documentation](https://docs.launchdarkly.com/home) - Concepts, examples, and integration patterns for feature flagging.
+- [Flagsmith Documentation](https://docs.flagsmith.com) - Managing feature flags and remote configuration across applications.
+- [Netflix Tech Blog](https://netflixtechblog.com/tag/tachi) - Insights from Netflix's engineering on feature flags and delivery strategies.
+- [Google SRE](https://sre.google/sre-book/service-level-objectives/) - Concepts around service level objectives and reliability in feature delivery.
