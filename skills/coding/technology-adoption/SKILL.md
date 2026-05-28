@@ -538,6 +538,16 @@ When this skill is active, produce:
 
 ---
 
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — Technology Adoption Lifecycle](https://en.wikipedia.org/wiki/Technology_adoption_lifecycle)
+- [Gartner — IT Research & Technology Adoption Insights](https://www.gartner.com/en/information-technology)
+- [Marc Andreessen — Why Software Is Eating the World](https://techcrunch.com/2011/08/19/why-software-is-eating-the-world/)
+- [Harvard Business Review — Technology Adoption Strategies for Enterprise](https://hbr.org/search?q=technology+adoption)
+- [Standish Group — CHAOS Report on Technology Project Success Rates](https://standishgroup.com/sample_research_project/)
+
 ## Example: Complete Technology Decision
 
 ### Project Context

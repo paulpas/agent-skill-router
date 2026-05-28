@@ -438,3 +438,15 @@ class Downsample:
         
         return result
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [InfluxDB Documentation](https://docs.influxdata.com/influxdb/v2/)
+- [Time Series Database Comparison](https://www.influxdata.com/time-series-database-comparison/)
+- [TSDB Best Practices for Financial Data](https://docs.influxdata.com/influxdb/v2/write-data/)
+- [Prometheus Metrics Storage](https://prometheus.io/docs/introduction/storage/)
+- [Time-Series Data Modeling Patterns](https://docs.timescale.com/latest/about/concepts-time-series/)

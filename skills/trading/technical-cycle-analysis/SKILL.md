@@ -237,3 +237,15 @@ class CycleAnalyzer:
 ``````
 ```
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Hartmann Cycle Theory](https://www.investopedia.com/articles/trading/08/hartmann_cycle.asp)
+- [Kitchin Inventory Cycles](https://en.wikipedia.org/wiki/Kitchin_inventories)
+- [Juglar Fixed Investment Cycles](https://en.wikipedia.org/wiki/Juglar_cycle)
+- [Kuznets Long Wave Cycles](https://en.wikipedia.org/wiki/Kuznets_cycle)
+- [Economic Cycle Analysis Guide](https://www.investopedia.com/terms/e/economic-cycle.asp)

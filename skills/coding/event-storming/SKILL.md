@@ -573,3 +573,13 @@ Quick reference for running a focused 60-minute EventStorming sprint on a single
 ---
 
 *EventStorming was invented by Stefano Maggioli and Alberto Brandolini. This skill encodes the core workshop methodology for use as a collaborative discovery technique within domain-driven design projects.*
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [EventStorming Official Website](https://www.eventstorming.com/) — Alberto Brandolini's official EventStorming methodology documentation
+- [Domain-Driven Design Redesign (Eric Evans, 2020)](https://domainlanguage.com/ddd/redesign/) — Eric Evans' updated DDD guidance including EventStorming integration
+- [EventStorming for Discovery and Design (InfoQ Guide)](https://www.infoq.com/articles/event-storming-discovery-design/) — InfoQ's practical guide to running EventStorming workshops effectively
+- [Big Picture EventStorming vs Process Modeling (Stefano Maggioli)](https://leanpub.com/bigpictureeventstorming) — Leanpub reference for the Big Picture variant of EventStorming
+- [C4 Model for Software Architecture](https://c4model.com/) — Simon Brown's C4 model for visualizing system architecture alongside EventStorming outputs

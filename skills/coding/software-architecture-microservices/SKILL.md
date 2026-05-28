@@ -101,3 +101,13 @@ class OrderService:
 ### MUST NOT DO
 - Create tightly coupled services.
 - Use synchronous communication for everything, leading to bottlenecks.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microservices.io Pattern Catalog (Chris Richardson)](https://microservices.io/patterns/microservices.html) — Chris Richardson's comprehensive pattern catalog for microservice architecture design
+- [AWS Microservices Best Practices](https://docs.aws.amazon.com/wellarchitected/latest/microservices-lens/welcome.html) — AWS Well-Architected Framework guide for designing resilient microservice architectures
+- [Google Microservices Architecture Guide](https://cloud.google.com/architecture/microservices-architecture) — Google Cloud's reference architecture for building cloud-native microservices
+- [Domain-Driven Design and Microservices (Eric Evans)](https://www.infoq.com/articles/ddd-and-microservices/) — InfoQ article on applying DDD bounded contexts to define microservice boundaries
+- [Service Mesh Patterns (Istio)](https://istio.io/latest/docs/concepts/) — Istio documentation on service mesh patterns for inter-service communication, observability, and traffic management

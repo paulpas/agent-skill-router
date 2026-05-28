@@ -301,6 +301,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Unified Diff Format RFC (RFC 2970)](<https://datatracker.ietf.org/doc/html/rfc2970>)
+- [Git Diff Documentation](<https://git-scm.com/docs/git-diff>)
+- [SonarQube Code Quality Rules](<https://rules.sonarsource.com/>)
+- [Code Review Best Practices (Google Engineering)](<https://google.github.io/eng-practices/review/>)
+- [Linting and Static Analysis Tools Comparison](<https://en.wikipedia.org/wiki/Lint_(software)>)
+
 ## Related Skills
 
 | Skill | Purpose |

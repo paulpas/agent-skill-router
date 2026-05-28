@@ -526,3 +526,15 @@ class OrderFlowDivergenceDetector:
         
         return strength
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Order Flow Analysis Tutorial](https://docs.quantconnect.com/tutorials/order-flow-analysis)
+- [Volume Profile and Order Flow Concepts](https://www.tradingview.com/wiki/Order_Flow)
+- [Microstructure Theory Overview](https://en.wikipedia.org/wiki/Market_microstructure)
+- [Large Trade Detection Methods](https://arxiv.org/abs/1805.01469)
+- [Order Flow Imbalance Signals](https://www.investopedia.com/terms/o/order-flow.asp)

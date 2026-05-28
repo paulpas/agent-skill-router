@@ -337,3 +337,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [OpenAI Agents SDK Documentation](<https://openai.github.io/openai-agents-python/>)
+- [Anthropic Claude API for Agents](<https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview>)
+- [Google Gemini for Agent Development](<https://ai.google.dev/gemini-api/docs>)
+- [Agent Hosting Platforms Comparison](<https://langchain-ai.github.io/langgraph/cloud/>)
+- [LLM API Cost Optimization Guide](<https://www.anthropic.com/research/build-with-claude-cost-analysis>)

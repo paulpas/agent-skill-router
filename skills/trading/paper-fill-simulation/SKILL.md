@@ -705,3 +705,15 @@ Before completing your task, verify:
 
 5. Bershatsky, A. (2019). *High-Frequency Trading and Liquidity Provision*. CRC Press.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Order Fill Simulation](https://www.investopedia.com/terms/f/fill.asp)
+- [Paper Trading Best Practices](https://docs.quantconnect.com/tutorials/backtesting-overview)
+- [Realistic Fill Modeling Techniques](https://en.wikipedia.org/wiki/Limit_order_book)
+- [Slippage and Partial Fill Handling](https://www.investopedia.com/terms/s/slippage.asp)
+- [Backtest vs Live Execution Differences](https://docs.quantconnect.com/tutorials/backtesting-pitfalls)

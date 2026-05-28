@@ -379,3 +379,15 @@ class DataCatalog:
         
         return results
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [What is a Data Lake?](https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/)
+- [AWS Data Lake Architecture](https://aws.amazon.com/solutions/guidance/an-end-to-end-data-lake/)
+- [Delta Lake for Financial Data](https://delta.io/)
+- [Data Lake vs Data Warehouse Comparison](https://www.investopedia.com/terms/d/data-lake.asp)
+- [Building Scalable Data Lakes](https://aws.amazon.com/big-data/datalakes-and-analytics/batch-processing-tools/)

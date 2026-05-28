@@ -627,3 +627,15 @@ When generating TypeScript generics-based code, produce:
 | `type-safety-enforcement` | Runtime validation complement — uses zod/io-ts alongside compile-time generic constraints |
 
 > 📖 skill(local cache): typescript-generics-types
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [TypeScript Handbook — Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)
+- [TypeScript Handbook — Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html)
+- [TypeScript Handbook — Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html)
+- [TypeScript Handbook — Template Literal Types](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
+- [TypeScript Handbook — Keyof & Indexed Access Types](https://www.typescriptlang.org/docs/handbook/2/keyof-and-indexed-access-types.html)

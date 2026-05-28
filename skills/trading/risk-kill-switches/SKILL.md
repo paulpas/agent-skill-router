@@ -1130,3 +1130,15 @@ def check_and_halt():
 
 ## Base Directory
 file:///home/paulpas/git/ideas/trading_bot/skills/risk-engine
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Risk Management Tutorial](https://docs.quantconnect.com/tutorials/risk-management)
+- [Emergency Stop Procedures for Algorithms](https://www.investopedia.com/terms/e/emergency-stop.asp)
+- [Circuit Breaker Mechanisms in Trading](https://en.wikipedia.org/wiki/Circuit_breaker)
+- [Automated Risk Circuit Breakers](https://docs.quantconnect.com/tutorials/risk-management)
+- [Fail-Safe Design for Live Trading](https://docs.quantconnect.com/tutorials/live-trading-overview)

@@ -299,4 +299,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `changelog-automation` | Changelog generation from commit history |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Conventional Commits Specification v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)
+- [Git — git-commit Documentation](https://git-scm.com/docs/git-commit)
+- [Git — Commit Message Best Practices (Atlassian)](https://www.atlassian.com/git/tutorials/comitting-changes)
+- [Semantic Commit Messages (Angular Convention)](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+- [How to Write a Git Commit Message (GitHub Skills)](https://docs.github.com/en/get-started/using-github/github-flow)

@@ -312,9 +312,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google Developer Documentation Style Guide](https://developers.google.com/style)
+- [The Elements of Style — Strunk & White (4th Edition)](https://www.gutenberg.org/ebooks/37134)
+- [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/)
+- [AP Stylebook — Journalism Writing Standards](https://www.apstylebook.com/)
+- [Chicago Manual of Style Online](https://www.chicagomanualofstyle.org/tools_cms6/faq.html)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

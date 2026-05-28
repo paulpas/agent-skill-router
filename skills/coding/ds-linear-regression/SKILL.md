@@ -6,14 +6,14 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements linear regression including OLS, ridge regression, lasso,
+description: '"Implements linear regression including OLS, ridge regression, lasso
   elastic net, and other regularized linear models for prediction"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-feature-engineering, ds-feature-scaling-normalization, ds-instrumental-variables,
+  related-skills: ds-feature-engineering, ds-feature-scaling-normalization, ds-instrumental-variables
     ds-logistic-regression ds-regression-evaluation
   role: implementation
   scope: implementation
@@ -156,11 +156,11 @@ class LinearRegressionPipeline:
             r2 = r2_score(y, y_pred)
             
             return {
-                'status': 'success',
-                'mae': float(mae),
-                'r2_score': float(r2),
-                'coefficients': self.model.coef_.tolist(),
-                'intercept': float(self.model.intercept_),
+                'status': 'success'
+                'mae': float(mae)
+                'r2_score': float(r2)
+                'coefficients': self.model.coef_.tolist()
+                'intercept': float(self.model.intercept_)
                 'feature_names': X.columns.tolist()
             }
         except Exception as e:
@@ -204,3 +204,15 @@ def good_regression(df: pd.DataFrame, target: str = 'target') -> Dict[str, Any]:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Linear Regression — Wikipedia](https://en.wikipedia.org/wiki/Linear_regression)
+- [Statsmodels OLS Documentation](https://www.statsmodels.org/)
+- [Scikit-learn Linear Model](https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares)
+- [Simple Linear Regression (Khan Academy)](https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/more-on-the-least-squares-regression-line/a/least-squares-regression-review)
+- [Linear Regression Assumptions (NIST)](https://www.itl.nist.gov/div898/handbook/eckol/section4/eckol43.htm)

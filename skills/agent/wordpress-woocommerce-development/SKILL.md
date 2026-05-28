@@ -325,9 +325,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [WooCommerce REST API Documentation](https://woocommerce.github.io/woocommerce-rest-api-docs/)
+- [WooCommerce Developer Docs](https://developer.woocommerce.com/docs/)
+- [WordPress Plugin Development — Hooks & Filters](https://developer.wordpress.org/plugins/)
+- [RESTful API Design — Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html)
+- [PHP Session Security Best Practices (OWASP)](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

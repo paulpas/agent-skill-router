@@ -28,3 +28,15 @@ While they add steps to the development process, evidence shows that code review
 Yes, reviewing parties should familiarize themselves with the context of the changes. This includes reading related issue tickets or understanding the purpose of the changes.
 
 By instilling structured methodologies into the code review process, teams can significantly improve software quality while sharing knowledge and maintaining standards throughout development operations.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Comparing Workflows (Atlassian Git Tutorials)](https://www.atlassian.com/git/tutorials/comparing-workflows)
+- [GitHub Flow vs GitFlow — Workflow Comparison](https://www.atlassian.com/git/tutorials/comparing-workflows/github-flow)
+- [Code Review Atomicity Principles (Google Engineering Practices)](https://google.github.io/eng-practices/review/code/)
+- [Small PRs and Review Efficiency (Stripe Blog)](https://stripe.com/blog/small-pull-requests)
+- [Reviewing Pull Requests (GitHub Docs)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request)

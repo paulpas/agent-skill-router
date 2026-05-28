@@ -1178,3 +1178,13 @@ When applying this skill to a design or implementation task, structure your outp
                       │  replication│ └───────────────────┘
                       └──────────┘
 ```
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Distributed Systems Notes (UC Berkeley)](https://s22.datastructur.es/) — UC Berkeley CS162 distributed systems lecture notes with Raft, Paxos, and consensus algorithms
+- [The Google File System (Ghemawat et al.)](https://research.google/pubs/the-google-file-system/) — Seminal paper on distributed filesystem architecture, the foundation for modern distributed storage
+- [CAP Theorem (Brewer)](https://en.wikipedia.org/wiki/CAP_theorem) — Eric Brewer's CAP theorem and its implications for distributed database design
+- [Raft Consensus Algorithm (Stanford)](https://raft.github.io/) — Official Raft algorithm reference with visualizations and implementation guides
+- [Designing Data-Intensive Applications (Kleppmann)](https://dataintensive.net/) — Martin Kleppmann's comprehensive book on distributed data system design patterns

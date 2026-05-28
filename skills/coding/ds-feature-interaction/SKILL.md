@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-correlation-analysis, ds-feature-engineering, ds-feature-selection
   role: implementation
   scope: implementation
-  triggers: feature interaction, interaction terms, polynomial features, cross-features,
+  triggers: feature interaction, interaction terms, polynomial features, cross-features
     feature interactions
   archetypes:
   - tactical
@@ -124,8 +124,8 @@ def generate_basic_interactions(df: pd.DataFrame, feature_pairs: List[Tuple[str,
 # Self-contained test
 if __name__ == "__main__":
     test_df = pd.DataFrame({
-        'A': np.random.randn(50),
-        'B': np.random.randn(50),
+        'A': np.random.randn(50)
+        'B': np.random.randn(50)
         'C': np.random.randn(50)
     })
     result = generate_basic_interactions(test_df, feature_pairs=[('A', 'B')])
@@ -177,12 +177,12 @@ class FeatureInteractionEngine:
                     logger.info(f"Added cross-feature: {col_name}")
                     
             result = {
-                'status': 'success',
-                'transformed_data': transformed_df,
+                'status': 'success'
+                'transformed_data': transformed_df
                 'metadata': {
-                    'original_columns': len(data.columns),
-                    'new_columns': len(transformed_df.columns),
-                    'interaction_degree': self.degree,
+                    'original_columns': len(data.columns)
+                    'new_columns': len(transformed_df.columns)
+                    'interaction_degree': self.degree
                     'rows_processed': len(data)
                 }
             }
@@ -197,8 +197,8 @@ class FeatureInteractionEngine:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     test_df = pd.DataFrame({
-        'x1': np.random.randn(100),
-        'x2': np.random.randn(100),
+        'x1': np.random.randn(100)
+        'x2': np.random.randn(100)
         'x3': np.random.randn(100)
     })
     engine = FeatureInteractionEngine(degree=2, interaction_pairs=[['x1', 'x2']])
@@ -220,3 +220,15 @@ if __name__ == "__main__":
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Feature Engineering — Interaction Terms (Wikipedia)](https://en.wikipedia.org/wiki/Feature_engineering#Interaction_terms)
+- [PolynomialFeatures — Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html)
+- [Feature Interactions in Tree Models (XGBoost docs)](https://xgboost.readthedocs.io/en/latest/tutorial/feature_interactions.html)
+- [Feature Interaction Selection (PyCaret)](https://pycaret.org/interactions/)
+- [Automated Feature Engineering with Featuretools](https://docs.featuretools.com/deep_feature_synthesis/description.html)

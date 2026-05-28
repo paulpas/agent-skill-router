@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Discovers association rules and frequent itemsets using Apriori,
+description: '"Provides Discovers association rules and frequent itemsets using Apriori
   Eclat, and market basket analysis for pattern mining"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-clustering, ds-community-detection, ds-topic-modeling
   role: implementation
   scope: implementation
-  triggers: association rules, market basket, apriori, frequent itemsets, recommendation,
+  triggers: association rules, market basket, apriori, frequent itemsets, recommendation
     pattern mining
   archetypes:
   - tactical
@@ -159,10 +159,10 @@ class AssociationRuleMiner:
                 if confidence >= self.min_confidence:
                     lift = confidence / self.frequent_itemsets[consequent]
                     self.rules.append({
-                        'antecedent': list(antecedent),
-                        'consequent': list(consequent),
-                        'support': support,
-                        'confidence': confidence,
+                        'antecedent': list(antecedent)
+                        'consequent': list(consequent)
+                        'support': support
+                        'confidence': confidence
                         'lift': lift
                     })
         logger.info(f"Generated {len(self.rules)} rules.")
@@ -217,3 +217,15 @@ def good_rule_mining(transactions: List[Set[str]], min_support: float = 0.1, min
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Association Rule Learning — Wikipedia](https://en.wikipedia.org/wiki/Association_rule_learning)
+- [MLxtend Association Rules](https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/)
+- [FP-Growth Algorithm — scikit-learn community](https://github.com/igor-bd/FP-Growth-Python)
+- [Market Basket Analysis with Apriori (Towards Data Science)](https://towardsdatascience.com/market-basket-analysis-with-apriori-in-python-a30561dba9f4)
+- [MLxtend Association Rules Example](https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/), |

@@ -63,3 +63,15 @@ name: candle-data
 - **Rule:** Use clear, consistent naming. Avoid ambiguous terms like "short", "medium", "long". Use raw time period names.
 - **Defense:** `Timeframe.ONE_MINUTE` or `"1m"` not `Timeframe.SHORT`.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Pandas Time Series OHLC Documentation](https://pandas.pydata.org/docs/user_guide/timeseries.html#ohlc-data)
+- [Candlestick Pattern Recognition](https://www.investopedia.com/trading/candlestick-patterns-trading/)
+- [OHLC Data Processing with Python](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.resample.html)
+- [Volume-Weighted OHLC Aggregation](https://pandas.pydata.org/docs/user_guide/timeseries.html#resampling)
+- [Candlestick Charting in Python](https://plotly.com/python/candlestick-charts/)

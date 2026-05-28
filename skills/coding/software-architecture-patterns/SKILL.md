@@ -299,5 +299,11 @@ class AccountService:
 - Place business validation logic in controllers, services, or DTOs — all invariants belong inside aggregate roots
 ---
 ## Live References
-> Authoritative documentation links for this skill's domain.
----
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microservices.io Pattern Catalog (Chris Richardson)](https://microservices.io/patterns/microservices.html) — Comprehensive catalog of microservice patterns including API Gateway, CQRS, Saga, and Event Sourcing
+- [Martin Fowler's Architecture Patterns](https://martinfowler.com/tag/architecture/) — Martin Fowler's collection of architecture pattern articles covering hexagonal, onion, and layered architectures
+- [AWS Well-Architected Framework](https://aws.amazon.com/architecture/wellarchitected/) — AWS's six-pillar framework for designing reliable, secure, and efficient cloud architectures
+- [Google Cloud Architecture Framework](https://cloud.google.com/architecture/framework) — Google Cloud's architectural frameworks covering reliability, security, cost optimization, and operations
+- [Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/) — Microsoft Azure's reference architecture documentation for enterprise-scale application design

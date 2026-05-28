@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-anomaly-detection, ds-explainability, ds-model-fairness, ds-reproducible-research
   role: implementation
   scope: implementation
-  triggers: model robustness, adversarial robustness, out-of-distribution, OOD detection,
+  triggers: model robustness, adversarial robustness, out-of-distribution, OOD detection
     robustness testing, unit tests, testing, test automation
   archetypes:
   - tactical
@@ -119,9 +119,9 @@ train_mahal = np.array([
 ood_threshold = np.percentile(train_mahal, 95)
 
 results = {
-    'accuracy': accuracy_score(y_test, y_pred),
-    'mean_uncertainty': float(np.mean(entropy)),
-    'ood_samples_detected': int(np.sum(mahal_dist > ood_threshold)),
+    'accuracy': accuracy_score(y_test, y_pred)
+    'mean_uncertainty': float(np.mean(entropy))
+    'ood_samples_detected': int(np.sum(mahal_dist > ood_threshold))
     'classification_report': classification_report(y_test, y_pred, zero_division=0)
 }
 ```
@@ -169,7 +169,7 @@ class ModelRobustness:
             if y is not None:
                 self.model.fit(X_scaled, y)
                 self.train_stats = {
-                    'mean': np.mean(X_scaled, axis=0),
+                    'mean': np.mean(X_scaled, axis=0)
                     'cov_inv': np.linalg.inv(np.cov(X_scaled.T) + 1e-6 * np.eye(X_scaled.shape[1]))
                 }
             else:
@@ -189,9 +189,9 @@ class ModelRobustness:
         is_ood = mahal_dist > np.percentile(mahal_dist, self.ood_percentile * 100)
 
         metrics = {
-            'f1_score': float(f1_score(y, y_pred, average='weighted', zero_division=0)),
-            'mean_uncertainty': float(np.mean(uncertainty)),
-            'ood_ratio': float(np.mean(is_ood)),
+            'f1_score': float(f1_score(y, y_pred, average='weighted', zero_division=0))
+            'mean_uncertainty': float(np.mean(uncertainty))
+            'ood_ratio': float(np.mean(is_ood))
             'predictions': y_pred.tolist()
         }
         return metrics
@@ -237,3 +237,15 @@ def good_predict_with_robustness(model, X_test, scaler, threshold: float = 0.85)
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Robust Statistics — Wikipedia](https://en.wikipedia.org/wiki/Robust_statistics)
+- [Scikit-learn Robust Scaling](https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-robust-scaling)
+- [Outlier Detection Methods (NIST Handbook)](https://www.itl.nist.gov/div898/handbook/tq/section4/tq_4_2.htm)
+- [M-Estimators — Statistical Learning Theory](https://en.wikipedia.org/wiki/M-estimator)
+- [Robust Machine Learning — MIT 6.S191](https://www.youtube.com/watch?v=9w6y7prKjE8)

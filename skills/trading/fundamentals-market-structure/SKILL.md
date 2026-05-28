@@ -731,3 +731,15 @@ class MarketStructureVisualizer:
         
         return pd.DataFrame(data)
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Market Structure Explained](https://www.investopedia.com/markets-5218395)
+- [Exchange Types and Market Architecture](https://en.wikipedia.org/wiki/Securities_exchange)
+- [Liquidity Provision in Markets](https://www.investopedia.com/terms/l/liquidity.asp)
+- [Dark Pools vs lit Markets](https://www.investopedia.com/terms/d/dark_pool.asp)
+- [Market Microstructure Overview](https://en.wikipedia.org/wiki/Market_microstructure)

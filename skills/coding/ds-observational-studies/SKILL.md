@@ -6,14 +6,14 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Analyzes observational data using matching methods, propensity scores,
+description: '"Analyzes observational data using matching methods, propensity scores
   stratification, and adjustment for confounding bias"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-causal-inference, ds-instrumental-variables, ds-intervention-analysis,
+  related-skills: ds-causal-inference, ds-instrumental-variables, ds-intervention-analysis
     ds-randomized-experiments ds-synthetic-control
   role: implementation
   scope: implementation
@@ -94,7 +94,7 @@ def compute_propensity_scores(df: pd.DataFrame, treatment_col: str, covariates: 
     
     y_pred = model.predict(X)
     metrics = {
-        'accuracy': accuracy_score(y, y_pred),
+        'accuracy': accuracy_score(y, y_pred)
         'roc_auc': roc_auc_score(y, scores)
     }
     return {'propensity_scores': scores, 'model_metrics': metrics}
@@ -104,8 +104,8 @@ if __name__ == "__main__":
     np.random.seed(42)
     n_samples = 500
     data = pd.DataFrame({
-        'age': np.random.normal(50, 10, n_samples),
-        'income': np.random.normal(60000, 15000, n_samples),
+        'age': np.random.normal(50, 10, n_samples)
+        'income': np.random.normal(60000, 15000, n_samples)
         'treatment': np.random.binomial(1, 0.5, n_samples)
     })
     covariates = ['age', 'income']
@@ -167,10 +167,10 @@ class ObservationalStudyPipeline:
         matched_df = self._match_treatments(df)
         
         self.results = {
-            'status': 'success',
-            'matched_samples': len(matched_df),
-            'treated_count': len(matched_df[matched_df['treatment'] == 1]),
-            'control_count': len(matched_df[matched_df['treatment'] == 0]),
+            'status': 'success'
+            'matched_samples': len(matched_df)
+            'treated_count': len(matched_df[matched_df['treatment'] == 1])
+            'control_count': len(matched_df[matched_df['treatment'] == 0])
             'matched_data': matched_df
         }
         logger.info(f"Pipeline completed. Matched {self.results['matched_samples']} samples.")
@@ -191,3 +191,15 @@ class ObservationalStudyPipeline:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Observational Study — Wikipedia](https://en.wikipedia.org/wiki/Observational_study)
+- [Propensity Score Matching (NIST)](https://www.itl.nist.gov/div898/handbook/tq/section4/tq_3.htm)
+- [Causal Inference with Observational Data (Harvard Biostats)](https://biostatistics.mdanderson.org/shinysoftware/causaleffect)
+- [Matching Methods — Stanford Statistics](https://plato.stanford.edu/archives/fall2021/entries/causal-inference/)
+- [Regression Discontinuity Design (MIT OpenCourseWare)](https://ocw.mit.edu/courses/economics-141-econometrics-fall-2008/)

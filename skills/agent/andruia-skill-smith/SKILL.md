@@ -306,4 +306,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `andruia-consultant` | AI consulting and strategic guidance |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [AI Engineering — Skill Design Patterns (Anthropic Research)](https://www.anthropic.com/research)
+- [LangChain Documentation — Custom Tool & Agent Design](https://python.langchain.com/docs/modules/agents/)
+- [OpenAI Cookbook — Structured Outputs & Function Calling](https://github.com/openai/openai-cookbook)
+- [Agent Skill Specification Standards (AutoGen / CrewAI)](https://microsoft.github.io/autogen/)
+- [Prompt Engineering Guide — Instruction Design Patterns](https://www.promptingguide.ai/)

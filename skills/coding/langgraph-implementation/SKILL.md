@@ -377,3 +377,13 @@ main_app = main_graph.compile()
 | `autogen-conversational-patterns` | Conversational multi-agent chat groups for iterative problem solving |
 | `framework-utilization` | General framework adoption strategy and learning patterns applicable to any framework |
 
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LangGraph Official Documentation](https://langchain-ai.github.io/langgraph/) — Comprehensive LangGraph docs covering state graphs, checkpointing, streaming, and human-in-the-loop patterns
+- [LangGraph Studio (Development IDE)](https://langchain-ai.github.io/langgraph/studio/) — LangGraph's development environment for building, testing, and debugging agent workflows
+- [State Graph Pattern (LangGraph Concept)](https://langchain-ai.github.io/langgraph/concepts/high_level/) — Official explanation of the StateGraph abstraction for building stateful multi-agent applications
+- [Checkpointing and Persistence in LangGraph](https://langchain-ai.github.io/langgraph/concepts/persistence/) — LangGraph docs on saving, restoring, and managing agent conversation state
+- [LangChain Ecosystem Integration](https://python.langchain.com/docs/integrations/) — LangChain's integration catalog showing how LangGraph connects with tools, memory, and LLM providers
+

@@ -13,7 +13,7 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-explainability, ds-model-interpretation, ds-model-robustness,
+  related-skills: ds-explainability, ds-model-interpretation, ds-model-robustness
     ds-privacy-ml ds-privacy-ml
   role: implementation
   scope: implementation
@@ -170,9 +170,9 @@ class ModelFairnessAuditor:
             
             metrics = self._calculate_metrics(y_test.values, y_pred, s_test.values)
             self.results = {
-                "status": "success",
-                "metrics": metrics,
-                "predictions": y_pred.tolist(),
+                "status": "success"
+                "metrics": metrics
+                "predictions": y_pred.tolist()
                 "model_type": "RandomForestClassifier"
             }
             logger.info(f"Fairness audit complete. DP Diff: {metrics['demographic_parity_diff']:.4f}")
@@ -196,3 +196,15 @@ class ModelFairnessAuditor:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Fairlearn Documentation](https://fairlearn.org/)
+- [Fairness in Machine Learning — Wikipedia](https://en.wikipedia.org/wiki/Fairness_(machine_learning))
+- [AI Fairness 360 (IBM)](https://aif360.res.ibm.com/)
+- [Google What-If Tool](https://pair.withgoogle.com/tool/)
+- [Explainable AI for ML — Microsoft Azure](https://learn.microsoft.com/en-us/azure/machine-learning/concept-explanation-of-models)

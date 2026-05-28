@@ -1525,13 +1525,13 @@ When this skill is active, produce:
 
 ## Live References
 
-- [PyPI Security Advisories](https://security.debian.org/) — Official security advisory database for Python package vulnerabilities
-- [GitHub Advisory Database (GHSA)](https://github.com/advisories) — Global security vulnerability database for GitHub-hosted packages
-- [Open Source Vulnerability Database (OSV)](https://osv.dev/) — Open-source CVE database with programmatic API access
-- [Snyk Open Source Security](https://snyk.io/product/snyk-open-source/) — Dependency scanning tool with real-time CVE tracking and fix suggestions
-- [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/) — Industry-standard SCA tool for automated vulnerability detection in dependency graphs
-- [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar) — Ring-based classification framework for assessing technology maturity and adoption readiness
-- [PyBench](https://github.com/benkehoe/pybench) — Python benchmarking library demonstrating statistically rigorous micro-benchmark patterns
+> Authoritative documentation links for framework evaluation methodologies and tools. The model follows markdown links at load time to resolve external references and inline content.
+
+- [How to Evaluate Software Frameworks (Jahia)](https://www.jahia.com/blog/how-to-evaluate-software-frameworks) — Comprehensive methodology covering requirements analysis, criteria definition, and scoring matrices for framework comparison
+- [Framework Evaluation (Martin Fowler)](https://martinfowler.com/articles/frameworkEvaluation.html) — Spikes, proof-of-concepts, and evidence-based evaluation patterns for technology selection decisions
+- [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar) — Ring-based classification (Adopt, Trial, Assess, Hold) for assessing technology maturity and organizational readiness
+- [PyPI Package Analytics API](https://pypi.org/help/#apitokens) — Programmatic access to download statistics, release history, and dependency metadata for quantitative evaluation
+- [GitHub API — Repository Metrics](https://docs.github.com/en/rest/repos) — Query stars, forks, commit frequency, contributor activity, and issue resolution rates as adoption signals
 
 ---
 

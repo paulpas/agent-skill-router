@@ -141,3 +141,15 @@ app.get('/api/data', (req, res) => {
 
 ### MUST NOT DO
 - Use a one-size-fits-all approach to architecture; always tailor to specific needs.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Enterprise Architecture Patterns (Martin Fowler)](https://martinfowler.com/eaaDev/)
+- [Software Architecture Patterns — GeeksforGeeks](https://www.geeksforgeeks.org/software-engineering-architectural-design-patterns-in-software-engineering-set-1/)
+- [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+- [Microsoft Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/)
+- [Fundamentals of Software Architecture (O'Reilly)](https://www.oreilly.com/library/view/fundamentals-of-software/9781492993457/)

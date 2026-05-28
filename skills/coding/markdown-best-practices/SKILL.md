@@ -261,3 +261,13 @@ Always maintain heading hierarchy:
 - Use magic numbers or hardcoded configuration values
 - Bypass error handling for assumed-valid inputs
 - Write functions longer than 50 lines without decomposition
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Markdown Guide — Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- [CommonMark — Markdown Specification](https://commonmark.org/help/)
+- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+- [Markdownlint Rules Reference](https://github.com/markdownlint/markdownlint/blob/main/docs/Rules.md)
+- [AsciiDoc vs Markdown — Format Comparison Guide](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/)

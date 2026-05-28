@@ -296,4 +296,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `agent-confidence-based-selector` | Provides the confidence-based selection layer that this parallel runner orchestrates across multiple candidates |
+| `agent-task-routing` | Handles sequential task routing — use this when tasks must be ordered rather than parallelized |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenAI Agent Design Patterns (Microsoft)](https://microsoft.github.io/autogen/stable/user-guide/agent-design/design-patterns.html) — Standard patterns for agent orchestration including parallel execution
+- [LangGraph Parallel Branches](https://langchain-ai.github.io/langgraph/concepts/high_level/#parallel-processing) — Documentation on implementing parallel processing workflows in LangGraph
+- [Multi-Agent Orchestration with CrewAI](https://docs.crewai.com/how-to/Parallel-Processing/) — Guide to parallel task execution across multiple AI agents
+- [CAMEL Communication Framework](https://www.camel-ai.org/) — Research on multi-agent communication and coordination patterns
+- [LLM Powered Autonomous Agents (Liao et al.)](https://arxiv.org/abs/2307.11765) — Foundational paper on LLM-based autonomous agent architectures

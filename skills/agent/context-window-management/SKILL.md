@@ -311,6 +311,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LLM Context Window Optimization Guide](<https://www.promptingguide.ai/techniques/contextwindow>)
+- [Tokenization Algorithms (BPE, WordPiece)](<https://arxiv.org/abs/1508.07909>)
+- [Retrieval-Augmented Generation (RAG) Paper (Facebook AI)](<https://arxiv.org/abs/2005.11401>)
+- [KV Cache Optimization in LLMs](<https://huggingface.co/docs/transformers/perf_infer_gpu_one#kv-cache>)
+- [Sliding Window Attention Mechanism (Wikipedia)](<https://en.wikipedia.org/wiki/Transformer_(deep_learning)#Scaled_dot-product_attention>)
+
 ## Related Skills
 
 | Skill | Purpose |

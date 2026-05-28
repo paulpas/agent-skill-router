@@ -304,3 +304,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Microsoft Graph TypeScript SDK](<https://github.com/microsoftgraph/msgraph-sdk-typescript>)
+- [Power Platform JavaScript API Reference](<https://learn.microsoft.com/en-us/power-apps/developer/model-driven-apps/clientapi/reference/context>)
+- [Node.js M365 Integration Guide](<https://learn.microsoft.com/en-us/graph/sdks/use-nodejs?tabs=JS>)
+- [Teams App Development with Node.js](<https://learn.microsoft.com/en-us/microsoftteams/platform/apps-overview>)
+- [M365 Copilot Plugin Development](<https://learn.microsoft.com/en-us/copilot-plugins/overview>)

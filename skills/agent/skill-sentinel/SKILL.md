@@ -303,4 +303,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-scanner` | Scans for skill issues; sentinel monitors runtime behavior and enforces quality gates |
+| `security-audit` | Security-focused sentinel patterns that complement general skill quality monitoring |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SentinelOne Endpoint Protection Documentation](https://support.sentinelone.com/hc/en-us) — Enterprise security sentinel platform documentation (conceptual reference for sentinel architecture patterns)
+- [Open Policy Agent (OPA)](https://www.openpolicyagent.org/docs/) — OPA documentation for policy enforcement and runtime guardrails in distributed systems
+- [Kubernetes Admission Controllers](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/admission-control-controllers/) — Kubernetes admission controller patterns for runtime enforcement of policies
+- [AWS GuardDuty Threat Detection](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html) — AWS documentation on threat detection and anomaly monitoring as sentinel patterns
+- [Falco Runtime Security Monitoring](https://falco.org/docs/) — Sysdig Falco documentation for runtime security monitoring and anomaly detection in containers

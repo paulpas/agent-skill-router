@@ -888,3 +888,13 @@ When executing this skill, produce the following report structure:
 | `refactoring-techniques` | Supplies specific refactoring patterns (Extract Method, Replace Conditional with Polymorphism, Template Method) to resolve each duplication classification |
 | `code-review` | Complements this skill by providing general review heuristics; use this skill for the quantitative analysis and `code-review` for the qualitative assessment |
 | `code-quality-policies` | Defines organizational quality gates and CI/CD thresholds that this analysis should feed into (e.g., maximum allowed cyclomatic complexity per module) |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SonarQube Code Duplication Detection](https://docs.sonarsource.com/sonarqube/latest/analyzing-code-quality/detecting-code-duplication/)
+- [Radon — Python Code Complexity & Duplication Metrics](https://radon.readthedocs.io/)
+- [Wikipedia: Duplication in Computer Programming](https://en.wikipedia.org/wiki/Duplication_in_computer_programming)
+- [AST-Based Clone Detection with Tree-Sitter](https://tree-sitter.github.io/tree-sitter/)
+- [CloneDR — Code Clone Detection and Reporting Tool](https://github.com/anduse/clonedr)

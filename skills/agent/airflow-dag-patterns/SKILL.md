@@ -316,6 +316,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Apache Airflow Documentation](<https://airflow.apache.org/docs/>)
+- [Airflow DAG API Reference](<https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html>)
+- [Apache Airflow Provider Packages](<https://airflow.apache.org/docs/apache-airflow-providers/>)
+- [Directed Acyclic Graph (Wikipedia)](<https://en.wikipedia.org/wiki/Directed_acyclic_graph>)
+- [Apache Software Foundation License](<https://www.apache.org/licenses/>)
+
 ## Related Skills
 
 | Skill | Purpose |

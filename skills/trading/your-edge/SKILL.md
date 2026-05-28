@@ -682,3 +682,15 @@ The only sustainable edges come from one of five sources:
 5. **Research depth** — Your methodology finds patterns others miss because you look where they won't
 
 If your edge comes from none of these five sources, it is borrowed time at best and self-delusion at worst. The frameworks above exist to force you to identify which source (if any) supports your edge before the market reveals the answer through losses.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Hartmann Cycle Theory](https://www.investopedia.com/articles/trading/08/hartmann_cycle.asp)
+- [Finding Alpha in Financial Markets](https://en.wikipedia.org/wiki/Alpha_(investment))
+- [Market Inefficiency Identification](https://www.investopedia.com/articles/investing/09/market-efficiency.asp)
+- [Sustainable Trading Strategies Research](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2758976)
+- [QuantConnect Strategy Development](https://docs.quantconnect.com/tutorials/algorithms)

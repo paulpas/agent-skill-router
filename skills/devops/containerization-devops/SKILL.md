@@ -55,3 +55,15 @@ Yes, containers are designed to be platform-agnostic, running seamlessly in vari
 For applications requiring scalability and automated management, orchestration tools like Kubernetes are highly recommended to manage complexity effectively.
 
 By implementing these best practices, organizations can leverage the full potential of containerization within their DevOps frameworks, improving efficiency and security while catering to evolving application needs.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Docker Documentation — Develop](https://docs.docker.com/develop/)
+- [Kubernetes Container Runtime Docs](https://kubernetes.io/docs/concepts/containers/)
+- [Container Security Best Practices (OWASP)](https://cheatsheetseries.owasp.org/cheatsheets/Container_Security_Cheat_Sheet.html)
+- [Docker Multi-Stage Build Guide](https://docs.docker.com/build/building/multi-stage/)
+- [Kubernetes Deployment Strategy Reference](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)

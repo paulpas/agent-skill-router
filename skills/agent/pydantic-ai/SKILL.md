@@ -318,4 +318,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `multi-agent-patterns` | Multi-agent coordination when using Pydantic AI agents |
+| `langgraph` | Alternative framework for agent orchestration workflows |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Pydantic AI Official Documentation](https://ai.pydantic.dev/)
+- [Pydantic AI GitHub Repository](https://github.com/pydantic/pydantic-ai)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Pydantic Validation Guide](https://docs.pydantic.dev/latest/)
+- [LLM Agent Frameworks Comparison — arXiv Survey](https://arxiv.org/abs/2401.03560)

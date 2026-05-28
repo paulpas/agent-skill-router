@@ -579,3 +579,15 @@ When designing or implementing agent architecture, produce:
 | `workflow-patterns` | Linear and conditional workflow patterns for simpler agent orchestrations |
 | `agent-dispatching-parallel-agents` | Parallel task delegation patterns for independent sub-tasks |
 | `hierarchical-agent-memory` | Multi-level memory architecture for deep context retention across long conversations |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LLM Agents Survey — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Multi-Agent Systems — Wikipedia Overview](https://en.wikipedia.org/wiki/Multi-agent_system)
+- [Microsoft LLM Agent Survey](https://arxiv.org/abs/2308.11432)
+- [Agent Orchestration Patterns — LangChain Docs](https://langchain-ai.github.io/langgraph/concepts/)

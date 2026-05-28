@@ -577,3 +577,13 @@ When applying this skill to analyze or design an application architecture, produ
 | `software-architecture` | Broader architecture pattern selection and tradeoff analysis |
 | `domain-driven-design` | Bounded context mapping, aggregate design, ubiquitous language patterns |
 | `architectural-patterns` | Pattern catalog including microservices, CQRS, event-driven, hexagonal |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Monolith First (Martin Fowler)](https://martinfowler.com/bliki/MonolithFirst.html) — Martin Fowler's argument for starting with a monolith before considering microservices
+- [Microservices Patterns: Anti-Patterns (Chris Richardson)](https://microservices.io/patterns/microservices.html) — Chris Richardson's catalog of microservice patterns and common anti-patterns to avoid
+- [Modular Monolith Architecture (Allan Kinigstein)](https://modularmonolith.org/) — Reference architecture for building well-structured modular monoliths that can evolve over time
+- [The Phoenix Project (Kim et al.)](https://the-phoenix-project.com/) — Novel that illustrates the pain points of monolithic architectures and the case for decomposition
+- [DDD Bounded Contexts for Decomposition (Eric Evans)](https://domainlanguage.com/ddd/reference/) — Eric Evans' DDD reference guide for identifying module boundaries in monoliths

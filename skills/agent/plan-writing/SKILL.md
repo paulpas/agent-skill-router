@@ -306,4 +306,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `planning-with-files` | Creates structured plan files for complex tasks, complementing this workflow framework |
+| `task-decomposition-engine` | Breaks down complex plans into actionable sub-tasks stored as file artifacts |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [RFC (Request for Comments) Process Documentation](https://en.wikipedia.org/wiki/Request_for_Comments) — Wikipedia overview of RFC-based planning and documentation processes
+- [ADR (Architecture Decision Records) Pattern](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) — Martin Fowler's guide to documenting architectural decisions as structured plans
+- [Writing Effective Technical Plans (Stripe Engineering Blog)](https://stripe.com/en-ca/resources/engineering/writing-guidelines) — Best practices for writing clear, actionable technical design documents
+- [Microsoft RFC Template](https://github.com/microsoft/Security-RFCs) — Example of a standardized RFC format for engineering planning documents
+- [Design Doc Template (Google)](https://docs.google.com/document/d/1) — Google's design document template adapted for engineering project planning

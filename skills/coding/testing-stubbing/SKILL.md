@@ -47,4 +47,16 @@ def test_function(mock_get_data):
     result = function_that_calls_external()
     
     assert result == "expected response based on 'stubbed data'"
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [unittest — Test Doubles (Python Docs)](https://docs.python.org/3/library/unittest.html#test-double)
+- [Stub vs Mock vs Fake (Martin Fowler)](https://martinfowler.com/articles/mocksArentStubs.html)
+- [pytest-stubber Plugin](https://github.com/vprokhorov81/pytest-stubber)
+- [Python Stubbing with unittest.mock.patch](https://docs.python.org/3/library/unittest.mock.html#patch)
+- [Test Doubles in TDD — Types and Use Cases](https://www.baeldung.com/cs/test-doubles-stubs-mocks-fakes)
 ```

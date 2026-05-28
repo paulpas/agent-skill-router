@@ -333,4 +333,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `sendgrid-automation` | Email automation counterpart — Slack and email together form common notification channels |
+| `stripe-automation` | Payment-related workflow automation that complements Slack notifications for billing events |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Slack API Documentation](https://api.slack.com/) — Official Slack API reference covering webhooks, bot users, slash commands, and event subscriptions
+- [Slack Bolt Framework](https://slack.dev/bolt-python/) — Official Slack Bolt SDK documentation for building Slack apps in Python
+- [Slack App Manifests](https://api.slack.com/reference/app-manifests) — Slack's documentation on defining app configurations declaratively via manifest files
+- [Interoperability Patterns: Slack + Webhooks (Twilio)](https://www.twilio.com/docs/slack) — Twilio's guide on integrating Slack with external webhook systems
+- [Slack Block Kit Builder](https://app.slack.com/block-kit-builder/) — Interactive Slack block kit tool for designing message layouts and interactive components

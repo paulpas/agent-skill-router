@@ -300,6 +300,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Netflix Conductor Documentation](<https://netflix.github.io/conductor/>)
+- [Conductor Workflow SDK](<https://netflix.github.io/conductor/sdk/>)
+- [Workflow Orchestration Patterns (Martin Fowler)](<https://martinfowler.com/articles/choreographyVsOrchestration.html>)
+- [Temporal.io Documentation](<https://docs.temporal.io/>)
+- [Apache Airflow Conductor Pattern](<https://airflow.apache.org/docs/>)
+
 ## Related Skills
 
 | Skill | Purpose |

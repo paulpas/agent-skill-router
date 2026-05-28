@@ -656,3 +656,15 @@ When applying this skill, produce:
 | `linux-filesystem` | Path management and directory traversal strategies for file-processing parallel jobs that scan large filesystem trees |
 
 > 📖 skill(local cache): linux-services, linux-filesystem
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GNU Bash Manual](https://www.gnu.org/software/bash/manual/)
+- [Process Management in Linux](https://man7.org/linux/man-pages/man1/ps.1.html)
+- [Job Control with Foreground/Background](https://man7.org/linux/man-pages/man1/jobs.1p.html)
+- [Signal Handling in Bash](https://www.gnu.org/software/bash/manual/html_node/Signals.html)
+- [Linux Process Scheduling](https://man7.org/linux/man-pages/man7/sched.7.html)

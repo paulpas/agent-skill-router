@@ -83,12 +83,12 @@ def basic_data_profiling(df: pd.DataFrame) -> dict:
         raise ValueError("DataFrame cannot be empty")
     
     profile = {
-        'shape': df.shape,
-        'columns': list(df.columns),
-        'dtypes': df.dtypes.to_dict(),
-        'missing_values': df.isnull().sum().to_dict(),
-        'missing_percentages': (df.isnull().mean() * 100).round(2).to_dict(),
-        'numeric_summary': df.describe().to_dict() if len(df.select_dtypes(include='number').columns) > 0 else {},
+        'shape': df.shape
+        'columns': list(df.columns)
+        'dtypes': df.dtypes.to_dict()
+        'missing_values': df.isnull().sum().to_dict()
+        'missing_percentages': (df.isnull().mean() * 100).round(2).to_dict()
+        'numeric_summary': df.describe().to_dict() if len(df.select_dtypes(include='number').columns) > 0 else {}
         'categorical_summary': {col: df[col].nunique() for col in df.select_dtypes(include='object').columns}
     }
     return profile
@@ -96,8 +96,8 @@ def basic_data_profiling(df: pd.DataFrame) -> dict:
 # Example usage
 if __name__ == "__main__":
     sample_df = pd.DataFrame({
-        'age': [25, 30, 35, 40, np.nan],
-        'salary': [50000, 60000, 75000, 80000, 90000],
+        'age': [25, 30, 35, 40, np.nan]
+        'salary': [50000, 60000, 75000, 80000, 90000]
         'department': ['HR', 'IT', 'IT', 'HR', 'Finance']
     })
     results = basic_data_profiling(sample_df)
@@ -132,13 +132,13 @@ class DataProfiling:
         
         profile = {
             'metadata': {
-                'rows': len(data),
-                'columns': len(data.columns),
+                'rows': len(data)
+                'columns': len(data.columns)
                 'memory_usage_mb': round(data.memory_usage(deep=True).sum() / 1024**2, 2)
-            },
-            'data_types': data.dtypes.to_dict(),
-            'null_counts': data.isnull().sum().to_dict(),
-            'null_percentages': (data.isnull().mean() * 100).round(2).to_dict(),
+            }
+            'data_types': data.dtypes.to_dict()
+            'null_counts': data.isnull().sum().to_dict()
+            'null_percentages': (data.isnull().mean() * 100).round(2).to_dict()
             'unique_counts': data.nunique().to_dict()
         }
         
@@ -166,3 +166,15 @@ class DataProfiling:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Data Profiling — Wikipedia](https://en.wikipedia.org/wiki/Data_profiling)
+- [dbt Data Quality Guide](https://docs.getdbt.com/docs/collaborate/guides/data-quality)
+- [Great Expectations Documentation](https://docs.greatexpectations.io/)
+- [ydata-profiling Library Docs](https://docs.profiling.ydata.ai/latest/)
+- [Data Quality Best Practices (Gartner)](https://www.gartner.com/en/articles/data-quality-best-practices)

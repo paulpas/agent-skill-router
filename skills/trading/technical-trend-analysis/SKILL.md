@@ -276,3 +276,15 @@ class TrendAnalyzer:
         
         return rsi
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Trend Analysis Guide](https://www.investopedia.com/articles/trading/09/trend-analysis.asp)
+- [Identifying Trends with Moving Averages](https://www.investopedia.com/terms/m/moving-average.asp)
+- [Dow Theory and Trend Principles](https://en.wikipedia.org/wiki/Dow_theory)
+- [Trend Following Strategies](https://en.wikipedia.org/wiki/Trend_following)
+- [Multi-Timeframe Trend Analysis](https://www.investopedia.com/trading/multi-timeframe-technical-analysis/)

@@ -147,11 +147,11 @@ class ConfidenceIntervalCalculator:
                 
             logger.info(f"Calculated CI: [{lower:.4f}, {upper:.4f}]")
             return {
-                'status': 'success',
-                'lower_bound': float(lower),
-                'upper_bound': float(upper),
-                'point_estimate': float(np.mean(values)),
-                'method': self.method,
+                'status': 'success'
+                'lower_bound': float(lower)
+                'upper_bound': float(upper)
+                'point_estimate': float(np.mean(values))
+                'method': self.method
                 'sample_size': int(n if self.method == 'analytical' else len(values))
             }
         except Exception as e:
@@ -174,3 +174,15 @@ class ConfidenceIntervalCalculator:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Confidence Interval — Wikipedia](https://en.wikipedia.org/wiki/Confidence_interval)
+- [SciPy Stats — Statistical Distributions](https://docs.scipy.org/doc/scipy/reference/stats.html)
+- [Statistical Intervals (NIST Handbook)](https://itl.nist.gov/div898/handbook/prc/section2/prc211.htm)
+- [Confidence Interval Calculator (GraphPad)](https://www.graphpad.com/quickcalcs/confint1/)
+- [Bayesian Credible Intervals — PyMC docs](https://docs.pymc.io/en/stable/notebooks/posterior_interpretation.html)

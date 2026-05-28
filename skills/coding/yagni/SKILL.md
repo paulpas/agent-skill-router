@@ -348,3 +348,15 @@ When auditing or refactoring code with YAGNI active, produce:
 | `dht-technical-debt` | Identifies and tracks technical debt for systematic remediation |
 | `progressive-enhancement` | Build the core that works first, then layer on improvements — the positive counterpart to YAGNI's restraint |
 | `emergent-design` | Let architecture emerge from real requirements rather than designing it all upfront |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — YAGNI (You Aren't Gonna Need It)](https://en.wikipedia.org/wiki/YAGNI)
+- [Martin Fowler — YAGNI](https://martinfowler.com/bliki/Yagni.html)
+- [Extreme Programming — Core Practices on xprogramming.com](https://xp.colorado.edu/)
+- [Robert Martin — The Art of Agile Development (YAGNI Chapter)](https://www.amazon.com/Art-Agile-Development-John-Shoemaker/dp/0470344254)
+- [Kent Beck — Test-Driven Development by Example (YAGNI in Practice)](https://en.wikipedia.org/wiki/Test-driven_development)

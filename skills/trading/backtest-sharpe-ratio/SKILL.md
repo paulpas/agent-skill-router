@@ -528,3 +528,15 @@ if __name__ == "__main__":
         else:
             print(f"{key}: {value:.4f}")
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Sharpe Ratio Explained](https://www.investopedia.com/sharperatio/)
+- [Modified Sharpe Ratio Adjustments](https://en.wikipedia.org/wiki/Sharpe_ratio)
+- [Risk-Adjusted Return Metrics Comparison](https://www.investopedia.com/articles/fundamental-analysis/07/risk-adjusted-return.asp)
+- [Calmar Ratio for Strategy Evaluation](https://www.investopedia.com/terms/c/calmar-ratio.asp)
+- [Sharpe Ratio in Algorithmic Trading](https://docs.quantconnect.com/tutorials/backtesting-overview)

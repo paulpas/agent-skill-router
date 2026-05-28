@@ -375,3 +375,15 @@ class EnsembleAnomalyDetector:
         
         return sorted(anomalies, key=lambda x: x['score'], reverse=True)
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Anomaly Detection in Financial Data](https://docs.quantconnect.com/tutorials/anomaly-detection-in-financial-data)
+- [Isolation Forest for Outlier Detection](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html)
+- [Statistical Process Control in Trading](https://www.investopedia.com/terms/s/statistical-process-control.asp)
+- [Anomaly Detection Techniques Overview](https://en.wikipedia.org/wiki/Anomaly_detection)
+- [Real-time Anomaly Detection Patterns](https://docs.quantconnect.com/tutorials/live-trading-overview)

@@ -316,3 +316,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [GitHub Flow Documentation](<https://docs.github.com/get-started/quickstart/github-flow>)
+- [Git branching model (Trunk-Based Development)](<https://trunkbaseddevelopment.com/>)
+- [GitLab Gitflow Workflow](<https://docs.gitlab.com/ee/topics/gitlab_flow.html>)
+- [Bitbucket Branching Model](<https://www.atlassian.com/git/tutorials/comparing-workflows>)
+- [Software Configuration Management (IEEE 828)](<https://en.wikipedia.org/wiki/Configuration_management>)

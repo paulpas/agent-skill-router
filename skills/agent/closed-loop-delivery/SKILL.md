@@ -294,4 +294,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `acceptance-orchestrator` | Acceptance criteria and delivery validation |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Closed Loop Delivery — Martin Fowler (Bliki)](https://martinfowler.com/bliki/ClosedLoopDelivery.html)
+- [Continuous Delivery Pipeline (Martin Fowler)](https://martinfowler.com/bliki/ContinuousDelivery.html)
+- [Google DevOps Research — DORA Metrics](https://www.atlassian.com/devops/frameworks/dora-metrics)
+- [AWS — Continuous Integration & Delivery Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/ci-cd-patterns/welcome.html)
+- [The DevOps Handbook, 2nd Ed. (Gene Kim et al.) — Chapter 4](https://itrevolution.com/the-devops-handbook-2nd-edition/)

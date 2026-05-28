@@ -46,4 +46,16 @@ def test_function_using_fake():
     result = function_using_service(fake_service)
     
     assert result == "expected response based on 'fake data'"
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Test Double (Martin Fowler — Bliki)](https://martinfowler.com/bliki/TestDouble.html)
+- [Mock vs Stub vs Fake — Comprehensive Guide](https://www.baeldung.com/cs/test-doubles-stubs-mocks-fakes)
+- [Python unittest.mock — Mock, MagicMock, PropertyMock](https://docs.python.org/3/library/unittest.mock.html)
+- [Test Doubles in xUnit Test Patterns (Gérard Meszaros)](https://www.amazon.com/xUnit-Test-Patterns-Refactoring-Testing/dp/0131495054)
+- [When to Use Each Test Double Type](https://codeopinion.com/stubs-mocks-spies-and-fakes-whats-the-difference/)
 ```

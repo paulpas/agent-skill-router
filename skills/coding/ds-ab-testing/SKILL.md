@@ -6,18 +6,18 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: Provides Designs and analyzes A/B tests including hypothesis testing,
+description: Provides Designs and analyzes A/B tests including hypothesis testing
   power analysis, sample size calculation, and statistical significance evaluation
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-classification-metrics, ds-experimental-design, ds-hypothesis-testing,
+  related-skills: ds-classification-metrics, ds-experimental-design, ds-hypothesis-testing
     ds-metrics-and-kpis ds-statistical-power
   role: implementation
   scope: implementation
-  triggers: A/B testing, A/B test, statistical test, power analysis, sample size,
+  triggers: A/B testing, A/B test, statistical test, power analysis, sample size
     how do I design tests, unit tests, testing
   archetypes:
   - tactical
@@ -97,12 +97,12 @@ def run_basic_ab_test(group_a: pd.Series, group_b: pd.Series, alpha: float = 0.0
     ci_upper = mean_diff + stats.t.ppf(1 - alpha / 2, df=len(group_a) + len(group_b) - 2) * se_diff
 
     return {
-        "p_value": float(p_value),
-        "significant": bool(p_value < alpha),
-        "mean_difference": float(mean_diff),
-        "confidence_interval": (float(ci_lower), float(ci_upper)),
-        "cohens_d": float(cohens_d),
-        "group_a_mean": float(group_a.mean()),
+        "p_value": float(p_value)
+        "significant": bool(p_value < alpha)
+        "mean_difference": float(mean_diff)
+        "confidence_interval": (float(ci_lower), float(ci_upper))
+        "cohens_d": float(cohens_d)
+        "group_a_mean": float(group_a.mean())
         "group_b_mean": float(group_b.mean())
     }
 ```
@@ -151,12 +151,12 @@ class ABTestAnalyzer:
         required_n = power_analysis.solve_power(effect_size=abs(cohens_d), alpha=self.alpha, power=0.8, ratio=1.0)
         
         return {
-            "p_value": float(p_value),
-            "significant": bool(p_value < self.alpha),
-            "mean_difference": float(mean_diff),
-            "effect_size_cohens_d": float(cohens_d),
-            "required_sample_size_per_group": int(np.ceil(required_n)),
-            "actual_sample_sizes": {"group_a": len(group_a), "group_b": len(group_b)},
+            "p_value": float(p_value)
+            "significant": bool(p_value < self.alpha)
+            "mean_difference": float(mean_diff)
+            "effect_size_cohens_d": float(cohens_d)
+            "required_sample_size_per_group": int(np.ceil(required_n))
+            "actual_sample_sizes": {"group_a": len(group_a), "group_b": len(group_b)}
             "status": "pass" if p_value < self.alpha and abs(cohens_d) >= self.min_effect_size else "inconclusive"
         }
 ```
@@ -175,3 +175,15 @@ class ABTestAnalyzer:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [A/B Testing — Wikipedia](https://en.wikipedia.org/wiki/A/B_testing)
+- [Google Analytics Statistics Guide](https://developers.google.com/stats)
+- [Scikit-learn Model Evaluation](https://scikit-learn.org/stable/modules/model_evaluation.html)
+- [Statistical Significance Calculator (Real Statistics)](https://www.real-statistics.com/statistics-tables/t-distribution-table/)
+- [Optimizely A/B Testing Best Practices](https://blog.optimizely.com/a-b-testing-best-practices/)

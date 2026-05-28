@@ -60,3 +60,15 @@ Automated rotations can be configured using AWS Lambda functions you provide for
 AWS Secrets Manager provides redundancy through multi-region support, ensuring that secrets are available when needed.
 
 By adopting best practices and prioritizing security, AWS Secrets Manager plays a crucial role in maintaining the integrity and confidentiality of sensitive information across your applications and services.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [AWS Secrets Manager User Guide](https://docs.aws.amazon.com/secretsmanager/latest/userguide/)
+- [Boto3 SecretsManager Client Reference](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html)
+- [Secrets Manager Rotation Functions](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets.html)
+- [AWS KMS Key Management for Secrets](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html)
+- [IAM Policies for Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/securing_iam.html)

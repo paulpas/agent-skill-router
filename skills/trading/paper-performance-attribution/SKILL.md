@@ -691,3 +691,15 @@ Before completing your task, verify:
 
 5. Menchero, J. (2010). The Characteristics of Successful Active Management. *Journal of Investment Management*, 8(2), 1-15.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Performance Attribution Explained](https://www.investopedia.com/terms/p/performance-attribution.asp)
+- [Brinson Model for Attribution](https://en.wikipedia.org/wiki/Performance_attribution)
+- [Factor-Based Performance Analysis](https://docs.quantconnect.com/tutorials/risk-management)
+- [Returns Attribution Methods](https://www.investopedia.com/articles/fundamental-analysis/07/performance-measurement.asp)
+- [Strategy Performance Reporting](https://docs.quantconnect.com/tutorials/live-monitoring)

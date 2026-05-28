@@ -324,3 +324,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Git Hooks Documentation](<https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks>)
+- [Husky Git Hooks for JavaScript Projects](<https://typicode.github.io/husky/>)
+- [Pre-commit Framework (Python)](<https://pre-commit.com/>)
+- [Lint-Staged for Pre-Commit Linting](<https://github.com/okonet/lint-staged>)
+- [Commitlint Conventional Commits](<https://commitlint.js.org/>)

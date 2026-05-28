@@ -504,3 +504,15 @@ class EmbeddingSentimentScorer:
         
         return cluster_sentiments[clusters]
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [TensorFlow Transformer Tutorial](https://www.tensorflow.org/text/tutorials/transformers)
+- [Sentence Transformers for Financial Text](https://www.sbert.net/)
+- [News-Based Alpha Signals Research](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2758976)
+- [Text Embedding Best Practices](https://huggingface.co/docs/transformers/model_doc/bert)
+- [Financial NLP with BERT](https://arxiv.org/abs/1908.10063)

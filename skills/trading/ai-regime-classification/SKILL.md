@@ -403,3 +403,15 @@ class RegimeStabilityAnalyzer:
             'hysteresis_indicator': 'strong' if high_vol_transitions > low_vol_transitions * 1.5 else 'weak'
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Regime Detection Tutorial](https://docs.quantconnect.com/tutorials/regime-detection)
+- [Hidden Markov Models for Regime Switching](https://en.wikipedia.org/wiki/Hidden_Markov_model)
+- [Market Regime Classification with ML](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1495603)
+- [GARCH Models for Volatility Regimes](https://www.investopedia.com/terms/g/garch.asp)
+- [Statistical Regime Switching Models](https://en.wikipedia.org/wiki/Regime_switching)

@@ -326,4 +326,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `multi-agent-patterns` | Higher-level multi-agent orchestration and coordination patterns |
+| `agent-evaluation` | Evaluating advisor quality and cross-advisor consensus |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [What Is Multi-Agent — LangChain Blog](https://blog.langchain.dev/what-is-multi-agent/)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Multi-Agent System Survey — arXiv (2402.16817)](https://arxiv.org/abs/2402.16817)
+- [LLM Agent Survey — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- [Expert Ensembling for LLMs — arXiv Paper](https://arxiv.org/abs/2305.14798)

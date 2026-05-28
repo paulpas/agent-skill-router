@@ -337,6 +337,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub API Documentation](<https://docs.github.com/en/rest>)
+- [GitHub Webhooks Reference](<https://docs.github.com/en/webhooks/webhook-events-and-payloads>)
+- [OpenAPI Specification](<https://swagger.io/specification/>)
+- [RESTful API Design Guide (Microsoft)](<https://learn.microsoft.com/en-us/styleguide/api-design-guide/>)
+- [GitHub Actions Expressions](<https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions>)
+
 ## Related Skills
 
 | Skill | Purpose |

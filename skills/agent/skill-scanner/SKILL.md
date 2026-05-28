@@ -311,4 +311,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-audit` | Performs detailed quality audits after the scanner identifies skills that need attention |
+| `skill-observability` | Uses observability data to guide scanner focus on high-impact skill areas |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Code Scanning with GitHub Advanced Security](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning) — GitHub's documentation on automated code scanning for vulnerabilities
+- [Directory Traversal Patterns in Python (os.walk)](https://docs.python.org/3/library/os.html#os.walk) — Python's os module documentation for filesystem traversal operations
+- [AST Parsing for Static Analysis](https://docs.python.org/3/library/ast.html) — Python AST module documentation for programmatic code analysis
+- [Markdown Parser Libraries (CommonMark)](https://commonmark.org/) — CommonMark-compatible Markdown parsing libraries for processing SKILL.md files
+- [JSON Schema Validation with AJV](https://ajv.js.org/) — JSON Schema validation library documentation for validating structured data formats

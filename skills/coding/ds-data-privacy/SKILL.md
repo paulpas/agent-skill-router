@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-data-versioning, ds-privacy-ml
   role: implementation
   scope: implementation
-  triggers: data privacy, anonymization, differential privacy, GDPR, PII protection,
+  triggers: data privacy, anonymization, differential privacy, GDPR, PII protection
     privacy-preserving, sensitive data
   archetypes:
   - tactical
@@ -173,3 +173,15 @@ class DataPrivacyEngine:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Data Privacy — Wikipedia](https://en.wikipedia.org/wiki/Data_privacy)
+- [NIST Privacy Framework](https://www.nist.gov/privacy)
+- [GDPR Official Text (europa.eu)](https://gdpr.eu/)
+- [HIPAA Privacy Rule (HHS)](https://www.hhs.gov/hipaa/for-professionals/privacy/index.html)
+- [Data Protection Impact Assessment Guide (EDPB)](https://edpb.europa.eu/)

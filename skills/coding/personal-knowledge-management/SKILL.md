@@ -472,4 +472,16 @@ When applying this skill to set up or audit a PKM system, produce:
 
 ### For DevOps / Platform Engineers
 - Tag infrastructure notes with cloud provider (`aws`, `gcp`) and service type (`compute`, `networking`, `storage`)
-- Cookbook entries for on-call runbooks should include severity levels and escalation paths
+  - Cookbook entries for on-call runbooks should include severity levels and escalation paths
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Zettelkasten Method — Original Introduction by Niklas Luhmann](https://www.zettelkasten.de/introduction/)
+- [Obsidian Help — Getting Started with Second Brain](https://obsidian.md/learn/getting-started)
+- [PARA Method by Tiago Forte — Core Organization Framework](https://fortelabs.com/blog/para/)
+- [Building a Second Brain by Tiago Forte (Book Summary & Notes)](https://tiagoforte.com/book/building-a-second-brain/)
+- [Obsidian API Documentation for Plugin Developers](https://help.obsidian.md/Extending+obsidian/Obsidian+API)

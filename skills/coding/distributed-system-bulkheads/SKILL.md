@@ -105,3 +105,13 @@ public class AdvancedBulkheadExample {
 ### MUST NOT DO
 - Allow the bulkhead settings to default without understanding the service's workload.
 - Ignore system performance impacts that arise from improperly configured bulkheads.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Resilience4j Documentation](https://resilience4j.readthedocs.io/en/latest/) — Official Resilience4j documentation covering circuit breakers, bulkheads, rate limiters, and retry mechanisms
+- [Bulkhead Pattern (Microsoft P&A)](https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead) — Microsoft Azure Architecture Center's implementation guide for the bulkhead isolation pattern
+- [Isolating Services with Bulkheads (Netflix Chaos Monkey)](https://netflix.github.io/chaosmonkey/) — Netflix's research on service isolation and fault tolerance in microservice architectures
+- [Resource Pooling Patterns (Martin Fowler)](https://martinfowler.com/bliki/ResourcePool.html) — Martin Fowler's analysis of resource pooling strategies for system stability
+- [The Mythical Man-Month: Separable Systems (Brooks)](https://en.wikipedia.org/wiki/The_Mythical_Man-Month#Separability) — Fred Brooks' concept of separability as the foundation for bulkhead design in complex systems

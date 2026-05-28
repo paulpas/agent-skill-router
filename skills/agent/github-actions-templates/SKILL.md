@@ -332,3 +332,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [GitHub Actions Documentation](<https://docs.github.com/en/actions>)
+- [GitHub Actions Workflow Syntax](<https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions>)
+- [GitHub Actions Marketplace](<https://github.com/marketplace?type=actions>)
+- [Reusable Workflows (GitHub Docs)](<https://docs.github.com/en/actions/sharing-automations/reusable-workflows>)
+- [GitHub Actions Self-Hosted Runners](<https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners>)

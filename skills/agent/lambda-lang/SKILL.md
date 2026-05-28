@@ -304,3 +304,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Lambda Calculus (Wikipedia)](<https://en.wikipedia.org/wiki/Lambda_calculus>)
+- [Haskell Programming Language Guide](<https://www.haskell.org/documentation/>)
+- [Functional Programming Concepts (OCaml)](<https://ocaml.org/docs>)
+- [Rust Ownership and Lambda Closures](<https://doc.rust-lang.org/book/ch13-01-closures.html>)
+- [Category Theory for Programmers (Bartosz Milewski)](<https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/>)

@@ -314,6 +314,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Netflix Conductor REST API Reference](<https://netflix.github.io/conductor/server/rest-api/>)
+- [Prometheus Querying Guide (PromQL)](<https://prometheus.io/docs/prometheus/latest/querying/examples/>)
+- [OpenTelemetry Status Collection](<https://opentelemetry.io/docs/specs/otel/overview/>)
+- [Health Check Patterns in Microservices](<https://learn.microsoft.com/en-us/azure/architecture/guide/design-principles/health-check-pattern>)
+- [Monitoring Dashboards Best Practices (Grafana)](<https://grafana.com/docs/grafana/latest/dashboards/>)
+
 ## Related Skills
 
 | Skill | Purpose |

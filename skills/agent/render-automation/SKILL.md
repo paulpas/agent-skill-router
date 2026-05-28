@@ -309,4 +309,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `ci-cd-pipelines` | Provides CI/CD pipeline patterns that complement deployment automation workflows |
+| `infrastructure-as-code` | Covers infrastructure patterns for automating the environments where apps are deployed |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Vercel Documentation](https://vercel.com/docs) — Official Vercel platform docs covering deployment, preview branches, and edge functions
+- [Render Documentation](https://render.com/docs) — Official Render platform documentation for web services, static sites, and automated deployments
+- [CI/CD for Web Applications (GitHub Docs)](https://docs.github.com/en/actions/use-cases-and-examples/deploying/simple-deployment) — GitHub Actions patterns for automating web application deployment pipelines
+- [Static Site Generation vs Server-Side Rendering](https://nextjs.org/docs/app/building-your-application/rendering/server-side-rendering) — Framework-specific documentation on rendering strategies and automation tradeoffs
+- [Web Deployment Automation Best Practices (Atlassian)](https://www.atlassian.com/continuous-delivery/principles/web-deployment) — Atlassian's principles for automating web application deployment workflows

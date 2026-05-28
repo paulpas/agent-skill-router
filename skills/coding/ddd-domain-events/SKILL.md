@@ -967,3 +967,15 @@ When implementing or reviewing domain event infrastructure, the output must cont
 ---
 
 *This skill covers the complete domain event lifecycle: definition, dispatch, idempotency, reliable delivery via outbox, and failure isolation through dead letter queues.*
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Domain Event Pattern (Microsoft Azure Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/patterns/domain-event)
+- [Domain-Driven Design — Domain Events (Martin Fowler)](https://martinfowler.com/bliki/DomainEvent.html)
+- [Event Sourcing vs Domain Events (Azure Patterns)](https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+- [Distributed Outbox Pattern for Reliable Messaging](https://learn.microsoft.com/en-us/azure/architecture/patterns/outbox)
+- [DDD Tactical Patterns — Aggregates, Domains Events, Repositories](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation)

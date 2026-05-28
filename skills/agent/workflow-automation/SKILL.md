@@ -336,9 +336,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub Actions Workflow Syntax](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
+- [GitLab CI/CD Pipeline Configuration](https://docs.gitlab.com/ee/ci/yaml/)
+- [Actions Runner Controller (ARC) Documentation](https://github.com/actions/runner-controller)
+- [Docker Buildx Documentation](https://docs.docker.com/build/buildkit/)
+- [Semgrep Static Analysis Rules](https://semgrep.dev/explore)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

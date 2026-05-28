@@ -590,3 +590,13 @@ When applying this skill, produce:
 | `personal-workflow-framework` | Manages recurring workflows that can be personalized per user |
 | `conversation-memory` | Provides the memory infrastructure for storing interaction history |
 | `hierarchical-agent-memory` | Adds hierarchical memory layers for long-term preference retention across sessions |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenAI User Instructions Guide](https://platform.openai.com/docs/guides/participant-design/user-instructions) — Best practices for personalizing AI assistant behavior per user
+- [Anthropic System Prompt Design](https://docs.anthropic.com/en/docs/build-with-claude/system-prompts) — Techniques for structuring personalized system-level instructions
+- [LangSmith User Profiles](https://docs.smith.langchain.com/cookbook/user-profiles) — Guide to managing user-specific preferences and context in LangChain applications
+- [Personalized LLM Responses Research (Zhu et al.)](https://arxiv.org/abs/2310.12518) — Academic study on personalizing LLM outputs based on user characteristics
+- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) — Foundational reasoning framework for adaptive agent behavior

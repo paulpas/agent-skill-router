@@ -475,3 +475,15 @@ class AsyncCommandQueue:
 #     AsyncAppendTextCommand(doc, "Line 1"),
 #     AsyncAppendTextCommand(doc, "Line 2"),
 # ])
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Command Pattern (Refactoring Guru)](https://refactoring.guru/design-patterns/command)
+- [GoF Design Patterns — Command (Martin Fowler)](https://martinfowler.com/articles/refactoringDSL.html)
+- [Python Command Pattern Implementation (Real Python)](https://realpython.com/commands-in-python/)
+- [Undo/Redo with the Command Pattern (Gang of Four)](https://en.wikipedia.org/wiki/Command_pattern)
+- [CQRS — Commands and Queries (Microsoft Docs)](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)

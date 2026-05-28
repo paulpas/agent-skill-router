@@ -621,3 +621,13 @@ When implementing or reviewing data normalization code, produce:
 | `data-encoding` | Handles binary encoding/decoding (base64, hex, MIME multipart) for raw bytes before they reach the text-level normalization layer |
 | `input-processing-pipelines` | Chains multiple normalizers into streaming transformation pipelines when you need to process bulk data through sequential normalization stages with error handling and retry logic |
 | `type-safety-enforcement` | Applies runtime type checking and static analysis patterns that complement normalization by ensuring normalized values conform to expected types at module boundaries |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Unicode Normalization Forms (W3C)](https://www.w3.org/International/articles/string-byte-segments/) — W3C's guide to Unicode normalization forms (NFC, NFD, NFKC, NFKD) for text processing
+- [Input Validation Best Practices (OWASP)](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html) — OWASP's input validation cheat sheet covering sanitization and normalization strategies
+- [Python str.normalize (unicodedata)](https://docs.python.org/3/library/unicodedata.html#unicodedata.normalize) — Python's unicodedata module documentation for Unicode text normalization
+- [HTML Sanitization Libraries (OWASP)](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html) — OWASP reference on sanitizing user input to prevent XSS and injection attacks
+- [RFC 3986: URI Normalization](https://datatracker.ietf.org/doc/html/rfc3986#section-6) — IETF RFC for URI syntax including normalization and comparison rules

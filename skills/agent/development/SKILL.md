@@ -324,6 +324,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PyCharm Documentation](<https://www.jetbrains.com/help/pycharm/>)
+- [VS Code Documentation](<https://code.visualstudio.com/docs>)
+- [Django Web Framework Docs](<https://docs.djangoproject.com/>)
+- [Flask Quickstart (Pallets Projects)](<https://flask.palletsprojects.com/en/latest/quickstart/>)
+- [Node.js Documentation](<https://nodejs.org/en/docs/>)
+
 ## Related Skills
 
 | Skill | Purpose |

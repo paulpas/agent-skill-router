@@ -134,3 +134,13 @@ def inbound_webhook():
 |---------------------------|----------------------------------------|
 | coding-sendgrid-api       | For general SendGrid API interactions  |
 | coding-email-management    | For managing and sending emails through another platform |
+
+## Live References
+
+> Authorative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SendGrid Mail Send API](https://docs.sendgrid.com/api-reference/mail-send/mail-send) — Official SendGrid API reference for the `/v3/mail/send` endpoint
+- [SendGrid Dynamic Templates](https://docs.sendgrid.com/ui/sending-email/templates#dynamic-html-templates-vs-classic-templates) — Documentation on using dynamic templates with personalization variables
+- [SendGrid Web API Python SDK](https://github.com/sendgrid/sendgrid-python) — Official SendGrid Python library source code and usage examples
+- [Email API Standards Comparison (Postmark, Mailgun, AWS SES)](https://www.twilio.com/docs/email-sending-api/comparison) — Comparative reference for email sending platforms and their API approaches
+- [RFC 5322: Internet Message Format](https://datatracker.ietf.org/doc/html/rfc5322) — IETF standard defining the format of email messages

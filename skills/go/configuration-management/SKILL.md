@@ -580,3 +580,15 @@ func DefaultConfig() *Config {
 | `best-practices` | Go idioms, naming, and code organization |
 | `cloud-development` | Cloud-native configuration with Kubernetes ConfigMaps and Secrets |
 | `deployment-patterns` | Configuration in containerized environments |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Viper Configuration Package](https://pkg.go.dev/github.com/spf13/viper)
+- [Go Config File Patterns](https://pkg.go.dev/github.com/spf13/cobra)
+- [Environment Variables in Go](https://pkg.go.dev/os#Environ)
+- [YAML Parsing in Go](https://pkg.go.dev/gopkg.in/yaml.v3)
+- [Go Configuration Best Practices](https://12factor.net/config)

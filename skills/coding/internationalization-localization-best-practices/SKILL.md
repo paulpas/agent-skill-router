@@ -43,3 +43,13 @@ Effective localization leads to better customer satisfaction, increased user eng
 While automated tools are helpful for initial drafts, always ensure human review to maintain quality and cultural relevance.
 
 In summary, by adopting robust internationalization and localization practices, businesses can effectively enhance global engagement, ensuring usability and accessibility for diverse user bases across various regions and cultures. This proactive approach allows for scalability and fosters long-term relationships with international customers.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [W3C Internationalization — Questions and Answers](https://www.w3.org/International/questions/qa-i18n)
+- [Wikipedia: Internationalization and Localization](https://en.wikipedia.org/wiki/Internationalization_and_localization)
+- [Unicode CLDR — Common Locale Data Repository](https://cldr.unicode.org/)
+- [i18next Documentation — JavaScript i18n Library](https://www.i18next.com/)
+- [GNU gettext — Internationalization Guide](https://www.gnu.org/software/gettext/manual/gettext.html)

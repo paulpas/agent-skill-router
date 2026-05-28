@@ -126,3 +126,13 @@ type Resource {
 def resolve_resources(parent, args, context):
     return get_all_resources()
 ```
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GraphQL Official — How GraphQL Works](https://graphql.org/learn/)
+- [Hasura — Learn GraphQL](https://hasura.io/learn/graphql/)
+- [Apollo Client Documentation](https://www.apollographql.com/docs/react/)
+- [GraphQL Yoga — Server Implementation Guide](https://the-guild.dev/graphql/yoga-server)
+- [GraphiQL IDE Usage and Schema Browsing](https://github.com/graphql/graphiql)

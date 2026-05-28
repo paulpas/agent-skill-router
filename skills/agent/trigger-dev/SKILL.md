@@ -366,9 +366,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [JSON Schema Validation Specification](https://json-schema.org/understanding-json-schema/)
+- [CloudEvents Specification — Event Data Format](https://cloudevents.io/)
+- [RFC 5424 — The Syslog Protocol](https://datatracker.ietf.org/doc/html/rfc5424)
+- [GitHub Actions Workflow Syntax](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
+- [Webhook.site Documentation](https://webhook.site/)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

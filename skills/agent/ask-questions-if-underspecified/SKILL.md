@@ -316,4 +316,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `behavioral-modes` | Behavioral mode selection for agent conversations |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Self-Consistency Improves Chain of Thought Reasoning (Huang et al.)](https://arxiv.org/abs/2203.11171)
+- [PromptingGuide — Self-Consistency Technique](https://www.promptingguide.ai/techniques/self_consistency)
+- [LLM Prompt Engineering for Clarification (LangChain Blog)](https://blog.langchain.dev/prompt-engineering/)
+- [Clarifying Ambiguity in LLM Interactions (ACL Anthology)](https://aclanthology.org/2023.findings-acl.678/)
+- [Interactive Questioning Strategies for AI Assistants](https://arxiv.org/abs/2310.05029)

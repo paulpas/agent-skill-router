@@ -113,3 +113,13 @@ unsafe {
 | `coding/rust/async-await` | A focused skill on asynchronous programming in Rust |
 | `coding/rust/cargo` | A focused skill on using Cargo for Rust package management |
 | `coding/rust/unsafe-code` | A focused skill on Rust's unsafe code practices |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [The Rust Programming Language (Official Book)](https://doc.rust-lang.org/book/) — Official Rust book covering ownership, borrowing, lifetimes, traits, and concurrency
+- [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/) — Official Rust API design guidelines for writing idiomatic, consistent libraries
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/) — Official Rust documentation with runnable code examples for all language features
+- [Cargo Documentation](https://doc.rust-lang.org/cargo/) — Official Cargo (Rust's package manager and build system) documentation
+- [Rust Unsafe Code Guidelines](https://github.com/RustLangUnsafeCode/Guidelines) — Community-maintained safety guidelines for writing correct unsafe Rust code

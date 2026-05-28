@@ -328,3 +328,13 @@ print(f"Aggregate conviction: {combined_score.overall:.3f}")
 - Use magic numbers or hardcoded configuration values
 - Bypass error handling for assumed-valid inputs
 - Write functions longer than 50 lines without decomposition
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Technical Analysis Indicators Reference (Investopedia)](https://www.investopedia.com/terms/t/technical-indicators.asp) — Investopedia's comprehensive reference on technical indicators used in conviction scoring
+- [Machine Learning for Financial Forecasting (Goodfellow et al.)](https://www.deeplearningbook.org/) — Goodfellow's Deep Learning textbook with chapters on time series prediction and feature engineering
+- [Weighted Scoring Models (Project Management Institute)](https://www.pmi.org/) — PMI standards for multi-factor decision scoring applicable to conviction system design
+- [Signal Processing for Trading Systems (Ernest Chan)](https://epchan.blogspot.com/) — Ernest Chan's blog on quantitative trading signals and signal processing techniques
+- [Ensemble Learning Methods (scikit-learn)](https://scikit-learn.org/stable/modules/ensemble.html) — scikit-learn's ensemble methods for combining multiple prediction signals

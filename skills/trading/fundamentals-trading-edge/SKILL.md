@@ -701,3 +701,15 @@ if __name__ == "__main__":
 4. Markowitz, H. (1952). *Portfolio Selection*. Journal of Finance. - Modern portfolio theory and edge quantification.
 5. Pardo, R. (2013). *The Science of Trading*. Wiley. - Statistical validation of trading systems.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Trading Edge Definition](https://www.investopedia.com/trading/)
+- [Finding Alpha in Financial Markets](https://en.wikipedia.org/wiki/Alpha_(investment))
+- [Statistical Arbitrage Concepts](https://en.wikipedia.org/wiki/Statistical_arbitrage)
+- [Sustainable Trading Strategies Research](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2758976)
+- [Market Inefficiency Identification](https://www.investopedia.com/articles/investing/09/market-efficiency.asp)

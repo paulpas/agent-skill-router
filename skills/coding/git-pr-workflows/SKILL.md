@@ -68,3 +68,13 @@ Yes! GitHub and GitLab provide settings to allow auto-merging based on CI succes
 Communicate with the concerned branch maintainers, pull the latest changes, resolve conflicts locally, and then push the resolved branch back to the remote.
 
 Following these best practices in managing Git pull requests results in enhanced collaboration, reduced integration issues, and improved overall software quality.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub: Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) — Official GitHub documentation on creating, reviewing, and merging pull requests
+- [Git Workflow Patterns (Atlassian)](https://www.atlassian.com/git/tutorials/comparing-workflows) — Atlassian's comparison of Git workflow models including GitHub Flow, GitFlow, and Trunk-Based Development
+- [Conventional Commits Specification](https://www.conventionalcommits.org/) — Standard for adding human and machine-readable meaning to commit messages
+- [Git Rebase vs Merge (GitHub Docs)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-methods-gitlab) — GitHub's documentation on choosing between merge, rebase, and squash methods
+- [Pull Request Review Best Practices (Google)](https://google.github.io/eng-practices/review/) — Google's engineering practices guide for effective pull request review workflows

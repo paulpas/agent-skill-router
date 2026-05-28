@@ -862,3 +862,15 @@ When applying this skill to a system design task, produce:
 | `microservices-architecture` | Designs service boundaries, inter-service contracts, and API gateway routing — system design fundamentals provide the capacity and scaling patterns that microservices rely on. |
 | `distributed-systems-architecture` | Covers lower-level distributed primitives (consensus algorithms, consistent hashing for partitioning, vector clocks) that complement the operational patterns in this skill. |
 | `event-driven-patterns` | Provides async messaging patterns (pub/sub, message queues, sagas) for decoupling services — integrates with rate limiting and circuit breaker patterns for resilient event processing. |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub — donnemartin/system-design-primer (System Design Interview Guide)](https://github.com/donnemartin/system-design-primer)
+- [Brendan Gregg — The System Performance Analysis Checklist](https://www.brendangregg.com/blog/2017-05-04/the-system-performance-analysis-checklist.html)
+- [Netflix Tech Blog — Scalability at Netflix](https://netflixtechblog.com/tagged/scalability)
+- [Google SRE Book — Capacity Planning & Load Shedding](https://sre.google/sre-book/capacity-planning/)
+- [AWS Architecture Center — Best Practices for Building Scalable Systems](https://aws.amazon.com/architecture/well-architected/)

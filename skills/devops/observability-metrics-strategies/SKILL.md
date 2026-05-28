@@ -51,3 +51,15 @@ Prioritize metrics based on their impact on user experience and business goals�
 Regularly review captured metrics—monthly or quarterly—to ensure alignment with evolving application needs and business objectives.
 
 By implementing effective metrics strategies, organizations can greatly enhance observability within their applications. This leads to improved performance monitoring and quicker incident responses, ultimately ensuring a reliable user experience.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [OpenTelemetry Documentation](https://opentelemetry.io/docs/)
+- [Prometheus Metrics Guide](https://prometheus.io/docs/practices/)
+- [Grafana Dashboard & Alerting Docs](https://grafana.com/docs/grafana/latest/dashboards/)
+- [Datadog Metric Collection Reference](https://docs.datadoghq.com/metrics/)
+- [Observability Maturity Model (CNCF)](https://github.com/cncf/tag-app-delivery/blob/main/reports/observability-maturity-model.pdf)

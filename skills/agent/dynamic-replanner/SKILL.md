@@ -318,3 +318,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [HTN Planning in AI (Wikipedia)](<https://en.wikipedia.org/wiki/Hierarchical_task_network>)
+- [Task and Motion Planning Survey](<https://arxiv.org/abs/2108.01657>)
+- [LLM Task Decomposition Methods](<https://www.promptingguide.ai/techniques/task_decomposition>)
+- [ReAct: Reasoning and Acting](<https://arxiv.org/abs/2210.03629>)
+- [Self-Refine: Iterative Refinement with Self-Feedback](<https://arxiv.org/abs/2303.17651>)

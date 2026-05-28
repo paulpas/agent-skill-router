@@ -362,3 +362,15 @@ async def get_async_cache() -> AsyncGenerator[AsyncCache, None]:
 
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Singleton Pattern (Refactoring Guru)](https://refactoring.guru/design-patterns/singleton)
+- [GoF Design Patterns — Singleton (Martin Fowler)](https://martinfowler.com/articles/injection.html)
+- [Python Singleton Best Practices (Real Python)](https://realpython.com/principles-of-python-singleton/)
+- [When to Use the Singleton Pattern (Stack Overflow)](https://stackoverflow.com/questions/137975/what-is-a-monostate-and-how-does-it-differ-from-a-singleton)
+- [Thread-Safe Singleton Implementations in Python](https://docs.python.org/3/library/enum.html#singletons)

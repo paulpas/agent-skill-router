@@ -306,3 +306,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [FMEA Handbook - SAE International](<https://www.sae.org/standards/content/j1739_202205/>)
+- [ISO 26262 Functional Safety](<https://en.wikipedia.org/wiki/ISO_26262>)
+- [Fault Tree Analysis Guide (NIST)](<https://www.nist.gov/topics/manufacturing-engineering/reliability-and-maintainability-engineering>)
+- [Root Cause Analysis Methods (ASQ)](<https://asq.org/quality-resources/root-cause>)
+- [Hazard and Operability Study (HAZOP)](<https://en.wikipedia.org/wiki/Hazard_and_operability_study>)

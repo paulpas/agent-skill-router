@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements kernel density estimation, non-parametric density estimation,
+description: '"Implements kernel density estimation, non-parametric density estimation
   and bandwidth selection for probability density functions"'
 license: MIT
 maturity: stable
@@ -165,3 +165,15 @@ class ProductionKDE:
 ### BAD vs GOOD: Bandwidth Selection
 | Aspect | BAD Approach | GOOD Approach |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Kernel Density Estimation](https://scikit-learn.org/stable/modules/density.html)
+- [KernelDensity — Scikit-learn docs](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KernelDensity.html)
+- [Gaussian KDE — SciPy stats](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html)
+- [Density Estimation — Wikipedia](https://en.wikipedia.org/wiki/Density_estimation)
+- [KDE Bandwidth Selection (Scikit-learn User Guide)](https://scikit-learn.org/stable/modules/density.html#bandwidth-selection)

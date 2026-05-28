@@ -508,3 +508,15 @@ class DataPipeline:
 #
 # # Later, swap to mergesort without any code changes to DataPipeline:
 # pipeline._sorter = MergeSort()
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Template Method Pattern (Refactoring Guru)](https://refactoring.guru/design-patterns/template-method)
+- [GoF Template Method — Martin Fowler](https://martinfowler.com/articles/classicGof.html)
+- [Python Abstract Base Classes for Template Methods](https://docs.python.org/3/library/abc.html)
+- [Framework Extension via Template Method (Martin Fowler)](https://martinfowler.com/articles/frameworkExtensionDesign.html)
+- [Open/Closed Principle and Template Method (Refactoring Guru)](https://refactoring.guru/refactoring-patterns/template-method)

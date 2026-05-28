@@ -320,4 +320,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `pr-writer` | Complements code review requests with PR writing best practices for structured submissions |
+| `receiving-code-review` | The counterpart skill — after getting feedback, load this to learn how to respond and iterate |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google Engineering Practices: Code Review](https://google.github.io/eng-practices/review/) — Google's comprehensive guide to requesting, preparing for, and conducting code reviews
+- [Microsoft: Pull Request Etiquette](https://learn.microsoft.com/en-us/devops/develop/cpp/code-review) — Microsoft's documentation on effective pull request practices and reviewer expectations
+- [GitHub: About Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) — Official GitHub reference for understanding PR workflows and requesting reviews
+- [Effective Code Review Request Templates (Stripe)](https://stripe.com/blog/code-review-at-stripe) — Stripe's engineering blog on structuring review requests with context, scope, and checklists
+- [Code Review Culture Guide (ThoughtWorks)](https://www.thoughtworks.com/radar/tools/code-review-culture) — ThoughtWorks Radar article on building a healthy code review culture in teams

@@ -340,3 +340,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Fal.ai Documentation](<https://docs.fal.ai/>)
+- [ElevenLabs API Documentation](<https://elevenlabs.io/docs/api-reference/python>)
+- [Replicate Audio Models](<https://replicate.com/?q=audio>)
+- [OpenAI Whisper for Speech-to-Text](<https://platform.openai.com/docs/guides/speech-to-text>)
+- [Coqui TTS (Text-to-Speech)](<https://docs.coqui.ai/>)

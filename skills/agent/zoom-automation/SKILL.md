@@ -295,9 +295,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Zoom Video Communications — REST API Reference](https://developers.zoom.us/docs/api/rest/)
+- [Zoom Meetings SDK Documentation](https://developers.zoom.us/docs/meetings-sdk/)
+- [Zoom OAuth 2.0 Integration Guide](https://developers.zoom.us/docs/integrations/oauth/)
+- [Zoom Webhook Events Reference](https://developers.zoom.us/docs/api/rest/webhook-reference/)
+- [Google Workspace Calendar API](https://developers.google.com/workspace/calendar/quickstart/python)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

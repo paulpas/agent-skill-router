@@ -822,3 +822,13 @@ When this skill is active, model output must contain:
 | `extensible-framework-design` | Design your own extensible frameworks instead of adopting third-party ones |
 | `coding-knowledge-transfer-methods` | Structured learning workflows for team-wide framework mastery after adoption |
 | `coding-code-review` | Review framework integration code against quality and security standards |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Agile Manifesto](https://agilemanifesto.org/)
+- [Martin Fowler — Practical Agile](https://martinfowler.com/articles/practical%20agile.html)
+- [Scrum Guide — Official Framework Reference](https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US-Latin1v1.pdf)
+- [SAFe Framework — Scaled Agile Inc.](https://scaledagile.com/framework/)
+- [The Pragmatic Programmer (20th Anniversary Edition)](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/)

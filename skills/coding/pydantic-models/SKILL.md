@@ -399,3 +399,15 @@ candle = Candle(
 - Use magic numbers or hardcoded configuration values
 - Bypass error handling for assumed-valid inputs
 - Write functions longer than 50 lines without decomposition
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Pydantic V2 Official Documentation](https://docs.pydantic.dev/latest/)
+- [Pydantic V2 User Guide — Models & Validators](https://docs.pydantic.dev/latest/concepts/models/)
+- [Pydantic Field Constraints Reference — Annotated Types](https://docs.pydantic.dev/latest/concepts/fields/)
+- [Pydantic JSON Schema Generation Guide](https://docs.pydantic.dev/latest/concepts/json_schema/)
+- [Python typing.Annotated PEP 593 Specification](https://peps.python.org/pep-0593/)

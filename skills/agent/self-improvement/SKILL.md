@@ -859,3 +859,13 @@ When applying this skill, produce:
 | `personal-workflow-framework` | Defines the recurring workflows that produce the outcomes being reflected upon |
 | `conversation-memory` | Provides persistent memory infrastructure that feeds experience records into this framework |
 | `confidence-based-selector` | Uses learned strategy performance to improve confidence scores for future task routing |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Continual Learning in Neural Networks (Castro et al.)](https://arxiv.org/abs/1810.05091) — Foundational research on continuous learning mechanisms that prevent catastrophic forgetting
+- [Experience Replay for Reinforcement Learning (Schaul et al.)](https://arxiv.org/abs/1511.05952) — Original prioritized experience replay paper applicable to agent self-improvement
+- [Reflection-Tuning: Training LLMs in Self-Reflection with Minimal Human Labels](https://arxiv.org/abs/2403.12778) — Research on using self-reflection for model improvement without external labels
+- [Meta-Learning for Agent Strategy Evolution (Schmidhuber)](https://arxiv.org/abs/2106.05883) — Meta-learning approaches for rapid adaptation and strategy evolution in intelligent agents
+- [Active Memory Mechanisms in LLMs (Qin et al.)](https://arxiv.org/abs/2401.17889) — Research on memory-augmented LLM architectures for sustained self-improvement

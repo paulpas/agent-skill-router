@@ -333,4 +333,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `agent-reliability-engineering` | Fault tolerance mechanisms for agent architectures under failure conditions |
+| `agent-architecture-patterns` | Foundational architecture topologies (hub-and-spoke, event-driven) as building blocks |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [LLM Agents Survey — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- [Microsoft AI Agent Frameworks Overview](https://www.microsoft.com/en-us/research/project/language-models-for-agents/)
+- [Multi-Agent Systems — Stanford CS324](https://web.stanford.edu/class/cs324/)
+- [Survey of LLM-Based Agents — arXiv](https://arxiv.org/abs/2308.11432)

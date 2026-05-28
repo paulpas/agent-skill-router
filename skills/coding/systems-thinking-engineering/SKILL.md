@@ -962,3 +962,15 @@ Systems thinking in engineering is about seeing the whole before optimizing part
 4. You want to argue for what matters most (Meadows' leverage points, not busywork)
 
 The core insight: **Most engineering problems aren't solved by optimizing individual components. They're solved by understanding and designing feedback loops.**
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Systems Thinking (Wikipedia)](https://en.wikipedia.org/wiki/System_thinking)
+- [The Fifth Discipline — Systems Thinking (Peter Senyold)](https://www.petersenyold.com/the-fifth-discipline/)
+- [System Dynamics — MIT Media Lab](https://mitsloan.mit.edu/ideas-made-to-matter/system-dynamics)
+- [Cynefin Framework for Complex Decision-Making](https://en.wikipedia.org/wiki/Cynefin_framework)
+- [Feedback Loops in Software Systems (Amazon Web Services)](https://aws.amazon.com/builders-library/designing-and-implementing-feedback-loops/)

@@ -121,3 +121,13 @@ spec:
 | `cncf-kubernetes` | General Kubernetes operations and management skills | 
 | `cloudflare-infrastructure` | Infrastructure management skills related to deployment in cloud environments | 
 | `docker-network-management` | Networking practices for containers which often tie into CRD-based deployments | 
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Kubernetes Custom Resource Definitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) — Official K8s docs on creating, managing, and using CRDs
+- [CRD Validation with OpenAPI Schema](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/) — K8s guide to schema validation for custom resources
+- [Operator Pattern in Kubernetes (Red Hat)](https://developer.redhat.com/articles/2022/06/13/operator-pattern) — Red Hat's guide to building Kubernetes operators using CRDs
+- [Kubernetes API Machinery](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/) — K8s API machinery documentation for extending the API server
+- [Controller Runtime (Kubebuilder)](https://book.kubebuilder.io/) — Kubebuilder's Operator SDK for building CRD-based controllers in Go 

@@ -1207,3 +1207,15 @@ def backtest_with_walk_forward_validation(all_data, train_size=252, test_size=63
 
 5. **QuantInsti Blog - "The Dangers of Look-Ahead Bias"** - Real-world examples of lookahead bias in algorithmic trading strategies and how to detect them.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Backtesting Pitfalls Guide](https://docs.quantconnect.com/tutorials/backtesting-pitfalls)
+- [Survivorship Bias in Backtests](https://www.investopedia.com/terms/s/survivorship-bias.asp)
+- [Data Snooping and P-Hacking](https://en.wikipedia.org/wiki/Data_dredging)
+- [Proper Backtesting Data Handling](https://docs.quantconnect.com/tutorials/data-sources-and-format)
+- [Avoiding Look-Ahead Bias in ML Models](https://machinelearningmastery.com/difference-between-a-test-set-and-validation-set/)

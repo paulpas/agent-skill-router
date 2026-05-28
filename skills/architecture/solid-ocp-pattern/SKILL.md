@@ -118,3 +118,15 @@ func main() {
 ### MUST NOT DO
 - Modify existing classes directly for new functionality.
 - Break the existing interface contract when implementing new features.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Wikipedia — Open/Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
+- [Refactoring.Guru — SOLID Overview](https://refactoring.guru/design-principles/solid)
+- [Martin Fowler — Polymorphism & OCP](https://martinfowler.com/bliki/DependencyInversion.html)
+- [Clean Architecture (Robert C. Martin)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [SOLID Principles in Practice (Real Python)](https://realpython.com/solid-principles-python/)

@@ -297,4 +297,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `runtime-log-analyzer` | Correlates stack traces with runtime log patterns for comprehensive root cause analysis |
+| `incident-response` | Triggers incident response workflows when root cause analysis identifies critical issues |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Stack Trace Analysis Guide (Mozilla Developer Network)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Debugging_overview#stack_traces) — MDN's guide to understanding and analyzing JavaScript stack traces
+- [Java Stack Trace Tutorial (Oracle)](https://docs.oracle.com/javase/tutorial/essential/environment/exceptions.html) — Oracle's documentation on Java exception handling and stack trace analysis
+- [Python Exception Handling and Tracebacks](https://docs.python.org/3/tutorial/errors.html#tracebacks) — Python official docs on understanding tracebacks and exception chains
+- [Root Cause Analysis Methodology (IBM)](https://www.ibm.com/think/topics/root-cause-analysis) — IBM's comprehensive guide to systematic root cause analysis techniques
+- [Google SRE: Debugging Stack Traces](https://sre.google/sre-workbook/debugging/) — Google SRE workbook chapter on debugging with stack traces and error logs

@@ -242,3 +242,15 @@ class MomentumAnalyzer:
         
         return ema
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Momentum Indicators Explained](https://www.investopedia.com/terms/m/momentum.asp)
+- [RSI - Relative Strength Index](https://www.investopedia.com/terms/r/rsi.asp)
+- [MACD - Moving Average Convergence Divergence](https://www.investopedia.com/terms/m/macd.asp)
+- [Stochastic Oscillator Guide](https://www.investopedia.com/terms/s/stochastic-oscillator.asp)
+- [Momentum Trading Strategies](https://www.investopedia.com/trading/introduction-to-momentum-trading/)

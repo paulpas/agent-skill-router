@@ -313,4 +313,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `audit-context-building` | Audit context and verification workflow integration |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Program Verification Survey (ArXiv:2305.14942)](https://arxiv.org/abs/2305.14942)
+- [Wikipedia — Formal Verification](https://en.wikipedia.org/wiki/Formal_verification)
+- [Coq Proof Assistant — Official Documentation](https://coq.inria.fr/)
+- [Isabelle/HOL — Theorem Prover Guide](https://isabelle.in.tum.de/doc/manual.pdf)
+- [Software Model Checking (Springer Handbook)](https://link.springer.com/book/10.1007/978-3-540-69161-2)

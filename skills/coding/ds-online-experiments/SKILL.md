@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-ab-testing, ds-experimental-design, ds-metrics-and-kpis
   role: implementation
   scope: implementation
-  triggers: multi-armed bandits, bandits, contextual bandits, exploration exploitation,
+  triggers: multi-armed bandits, bandits, contextual bandits, exploration exploitation
     online learning
   archetypes:
   - tactical
@@ -103,8 +103,8 @@ class EpsilonGreedyBandit:
         
     def get_statistics(self) -> Dict[str, List[float]]:
         return {
-            'avg_reward': [float(np.mean(self.q_values))],
-            'arm_counts': self.arm_counts.tolist(),
+            'avg_reward': [float(np.mean(self.q_values))]
+            'arm_counts': self.arm_counts.tolist()
             'q_values': self.q_values.tolist()
         }
 ```
@@ -164,9 +164,9 @@ class UCBBandit:
             
         logger.info(f"Processed {len(results)} observations across {self.n_arms} arms")
         return {
-            'final_q_values': self.q_values.tolist(),
-            'arm_counts': self.arm_counts.tolist(),
-            'total_pulls': self.total_pulls,
+            'final_q_values': self.q_values.tolist()
+            'arm_counts': self.arm_counts.tolist()
+            'total_pulls': self.total_pulls
             'history': results
         }
 ```
@@ -207,7 +207,7 @@ def good_bandit(rewards: List[float], n_arms: int = 3, alpha: float = 0.1) -> Di
         q_estimates[arm] += alpha * (reward - q_estimates[arm])
         
     return {
-        'estimated_means': q_estimates.tolist(),
+        'estimated_means': q_estimates.tolist()
         'pull_counts': arm_counts.tolist()
     }
 ```
@@ -227,3 +227,15 @@ def good_bandit(rewards: List[float], n_arms: int = 3, alpha: float = 0.1) -> Di
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Online Controlled Experiments (Microsoft Research)](https://www.microsoft.com/en-us/research/uploads/prod/2018/03/online-a-b-testing.pdf)
+- [Optimizely Online Experimentation Guide](https://blog.optimizely.com/a-b-testing-best-practices/)
+- [VWO A/B Testing Best Practices](https://vwo.com/blog/ab-testing-best-practices/)
+- [Experimentation at Scale — Netflix Eng Blog](https://netflixtechblog.com/experimentation-at-scale-netflix-and-the-evolution-of-distributed-decision-making-a1f7b2e45a0e)
+- [Google Optimize Documentation](https://support.google/optimize/)

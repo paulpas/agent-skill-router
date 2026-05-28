@@ -803,3 +803,13 @@ When this skill is active, produce an audit report with exactly these sections:
 | `skill-router-system` | Understanding how the router uses trigger matches — context for interpreting trigger scores |
 | `skill-lifecycle-management` | Managing deprecation/retirement decisions once an audit determines a skill is underperforming |
 | `coding-code-review` | General code review patterns that apply when reviewing the Python example code within skills |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenCode Documentation](https://opencode.ai/docs) — Official OpenCode documentation on skill configuration, loading, and routing behavior
+- [Skill Format Specification (agent-skill-router)](https://github.com/anthropics/agent-skill-router/blob/main/SKILL_FORMAT_SPEC.md) — The format specification that defines validation criteria used by this audit skill
+- [Quality Assurance in Software Documentation (ISO/IEC 25010)](https://iso25010.com/) — ISO standard for software product quality, applicable to skill documentation evaluation
+- [Automated Documentation Quality Metrics](https://ieeexplore.ieee.org/document/9363486) — IEEE research on automated metrics for assessing technical documentation quality
+- [OpenAPI Specification Validation](https://swagger.io/specification/) — Reference for schema validation patterns applicable to skill metadata and frontmatter verification

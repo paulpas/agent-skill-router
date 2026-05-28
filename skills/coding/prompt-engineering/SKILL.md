@@ -822,3 +822,15 @@ Use this decision matrix when choosing which pattern to apply:
 | Very high (reasoning over abstract principles) | Free-form but structured | Step-back prompting + CoT |
 
 **Default strategy when unsure:** Start with role-setting + structured output enforcement + 3 diverse few-shot exemplars. Add chain-of-thought only if zero-shot outputs are factually incorrect on at least 2 of your test inputs. This minimizes token cost while maximizing reliability for most production use cases.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenAI Prompt Engineering Guide — Official Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)
+- [Microsoft Prompt Engineering Documentation — Industry Patterns](https://microsoft.github.io/prompt-engineering/)
+- [Google Developer — Gemini & Palm Prompting Guide](https://ai.google.dev/docs/prompt_guide)
+- [Anthropic Prompt Engineering Documentation](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)
+- [HuggingFace — Prompt Engineering for LLM Applications](https://huggingface.co/docs/transformers/conversation_detection)

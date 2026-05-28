@@ -331,3 +331,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Google Drive API v3 Documentation](<https://developers.google.com/drive/api/reference/rest>)
+- [Google Drive SDK Python Quickstart](<https://developers.google.com/drive/api/quickstart/python>)
+- [Google Drive Sharing and Permissions](<https://developers.google.com/drive/api/guides/manage-shares>)
+- [Google Workspace Automation Guide](<https://workspace.google.com/resources/automation/>)
+- [Google Apps Script for Drive Automation](<https://developers.google.com/apps-script/guides/sheets>)

@@ -58,3 +58,15 @@ Regularly audit your IaC configurations against compliance policies and utilize 
 Yes, while challenging, IaC can be adapted for legacy systems with appropriate planning and incremental adoption.
 
 By implementing effective Infrastructure as Code strategies, organizations not only foster a more agile DevOps environment but also enhance their ability to deploy infrastructure securely and consistently, improving overall operational efficiency and responsiveness to changing business needs.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Terraform Documentation](https://www.terraform.io/docs)
+- [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)
+- [Ansible Documentation](https://docs.ansible.com/ansible/latest/)
+- [Infrastructure as Code Best Practices (HashiCorp)](https://developer.hashicorp.com/terraform/tutorials)
+- [Terraform Registry — Provider Reference](https://registry.terraform.io/)

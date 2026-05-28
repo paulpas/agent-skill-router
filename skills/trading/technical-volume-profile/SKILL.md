@@ -223,3 +223,15 @@ class VolumeProfileAnalyzer:
         
         return candles_copy[mask]
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Volume Profile Guide](https://www.investopedia.com/articles/trading/11/volume-profile.asp)
+- [Point of Control and Value Area](https://www.tradingview.com/wiki/Volume_Profile)
+- [Volume Profile Trading Strategies](https://en.wikipedia.org/wiki/Volume_profile_(trading))
+- [Footprint Charts and Order Flow](https://www.tradingview.com/wiki/Order_Flow)
+- [Volume Analysis in Technical Trading](https://www.investopedia.com/terms/v/volume.asp)

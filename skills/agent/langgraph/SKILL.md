@@ -299,4 +299,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `multi-agent-task-orchestrator` | Multi-agent coordination using LangGraph's state machines |
+| `parallel-agents` | Parallel agent execution patterns within LangGraph workflows |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LangGraph Official Documentation](https://langchain-ai.github.io/langgraph/)
+- [LangChain Agents Tutorial](https://python.langchain.com/docs/tutorials/agents/)
+- [LangGraph Multi-Agent Patterns](https://langchain-ai.github.io/langgraph/concepts/multi_agent/)
+- [LangGraph State Machine Guide](https://langchain-ai.github.io/langgraph/concepts/high_level/)
+- [Building Agent Workflows — LangChain Blog](https://blog.langchain.dev/)

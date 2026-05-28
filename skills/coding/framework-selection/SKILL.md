@@ -642,3 +642,13 @@ Winner: FastAPI at 8.15/10 with significant margin over Django Channels (6.20) a
 - **Performance:** 4/5 — Benchmarks show >100k rps for simple endpoints, well above requirements
 
 Overall risk: LOW (3.75/5). Mitigation: Cross-train one additional developer on async patterns before production rollout.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Gartner — Software Development Frameworks](https://www.gartner.com/en/information-technology/insights/software-development-frameworks)
+- [State of the Developer Ecosystem (JetBrains)](https://www.jetbrains.com/lp/devecosystem/)
+- [AWS Architecture Center — Framework Selection Guide](https://aws.amazon.com/architecture/)
+- [CNCF Cloud Native Landscape](https://landscape.cncf.io/)
+- [Tech Radar by ThoughtWorks](https://www.thoughtworks.com/radar)

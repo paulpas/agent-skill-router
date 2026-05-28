@@ -348,4 +348,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `debugging-performance-optimization` | Uses profiler output to identify and fix performance bottlenecks |
+| `systematic-debugging-methodology` | Applies structured debugging after profiling identifies hotspots |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Linux perf Documentation](https://perf.wiki.kernel.org/index.php/Main) — Comprehensive guide to the Linux performance analysis toolkit
+- [Python cProfile Module](https://docs.python.org/3/library/profile.html#module-cProfile) — Official Python documentation for built-in code profiling
+- [py-spy Production Profiler](https://github.com/benfred/py-spy) — Sampling profiler for Python programs, zero-overhead production profiling
+- [Google Performance Tools (gperftools)](https://github.com/gperftools/gperftools) — High-performance libraries including heap and CPU profilers
+- [OpenTelemetry Profiling](https://opentelemetry.io/docs/specs/otel/profiling/) — Official OpenTelemetry specification for distributed profiling

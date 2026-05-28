@@ -781,3 +781,13 @@ Base Type (T)
 ```
 
 The core test: **If I replace every `Base` with `Sub`, does the program behave identically?** If any call site breaks, adapts, or produces different results, LSP is violated. The repair is never to patch the caller — it is to fix the subclass hierarchy.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia: Liskov Substitution Principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle)
+- [Robert C. Martin — The Liskov Substitution Principle](https://www.oracle.com/technetwork/articles/oopatterns/clean-lsp-089155.html)
+- [Postconditions and the LSP — Bertrand Meyer](https://wiki.inf.ethz.ch/books/evoart74.pdf)
+- [Dijkstra's Guards and the Contract of Programming](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)
+- [Interface Segregation Principle (SOLID Companion)](https://en.wikipedia.org/wiki/Interface_segregation_principle)

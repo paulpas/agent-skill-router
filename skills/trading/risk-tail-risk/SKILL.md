@@ -207,3 +207,15 @@ class TailRiskManager:
         
         return False, ""
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Tail Risk Explained](https://www.investopedia.com/terms/t/tail-risk.asp)
+- [Fat Tails in Financial Markets](https://en.wikipedia.org/wiki/Fat_tail)
+- [Tail Risk Hedging Strategies](https://www.investopedia.com/articles/investing/09/tail-risk-hedges.asp)
+- [Extreme Value Theory Applications](https://en.wikipedia.org/wiki/Extreme_value_theory)
+- [Tail Risk in Portfolio Management](https://docs.quantconnect.com/tutorials/risk-management)

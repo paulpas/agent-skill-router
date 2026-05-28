@@ -561,3 +561,13 @@ When designing or reviewing a caching solution, produce:
 | `software-error-handling` | Error handling in cache layers — fallback when Redis is down, graceful degradation on miss storms |
 | `observability-patterns` | Structured logging and metrics integration for cache hit rates, latency percentiles, and evict counters |
 | `pydantic-models` | Type-safe data models that pair with versioned cache keys to ensure schema consistency across versions |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Python functools — lru_cache Documentation](https://docs.python.org/3/library/functools.html#functools.lru_cache)
+- [Redis Documentation — Caching with Redis](https://redis.io/docs/latest/develop/use/caching/)
+- [AWS ElastiCache — Best Practices Guide](https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/best-practices.html)
+- [Designing Data-Intensive Applications (Kleppmann), Ch. 7: Caching](https://dataintensive.net/)
+- [Memcached Protocol Specification](https://github.com/memcached/memcached/wiki/BinaryProtocolRevamped)

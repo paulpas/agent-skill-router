@@ -97,6 +97,18 @@ class AdvancedModelContext(ModelContext):
 - Ensure prompt structures are maintained to maximize performance and clarity.
 - Validate all context objects to ensure they adhere to expected formats and types.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Model Context Protocol Specification](<https://modelcontextprotocol.io/specification>)
+- [MCP GitHub Repository](<https://github.com/modelcontextprotocol/specification>)
+- [Anthropic MCP Documentation](<https://docs.anthropic.com/en/docs/model-context-protocol>)
+- [Claude API Reference](<https://docs.anthropic.com/en/api/getting-started>)
+- [LLM Agent Patterns (Survey Paper)](<https://arxiv.org/abs/2308.11432>)
 ---
 ## Constraints
 

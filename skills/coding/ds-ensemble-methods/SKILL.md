@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Combines multiple models using bagging, boosting, stacking,
+description: '"Provides Combines multiple models using bagging, boosting, stacking
   voting, and blending for improved predictive performance and robustness"'
 license: MIT
 maturity: stable
@@ -101,7 +101,7 @@ def train_basic_ensemble(X: np.ndarray, y: np.ndarray) -> Dict[str, Any]:
     )
     
     base_estimators = [
-        ('logreg', LogisticRegression(random_state=42, max_iter=1000)),
+        ('logreg', LogisticRegression(random_state=42, max_iter=1000))
         ('dt', DecisionTreeClassifier(random_state=42))
     ]
     
@@ -110,8 +110,8 @@ def train_basic_ensemble(X: np.ndarray, y: np.ndarray) -> Dict[str, Any]:
     ensemble.fit(X_train, y_train)
     
     return {
-        'test_accuracy': accuracy_score(y_test, ensemble.predict(X_test)),
-        'cv_mean': float(cv_scores.mean()),
+        'test_accuracy': accuracy_score(y_test, ensemble.predict(X_test))
+        'cv_mean': float(cv_scores.mean())
         'cv_std': float(cv_scores.std())
     }
 
@@ -162,7 +162,7 @@ class EnsembleMethods:
         )
         
         base_ests = [
-            ('rf', RandomForestClassifier(n_estimators=self.n_estimators, random_state=self.random_state)),
+            ('rf', RandomForestClassifier(n_estimators=self.n_estimators, random_state=self.random_state))
             ('gb', GradientBoostingClassifier(n_estimators=self.n_estimators, random_state=self.random_state))
         ]
         meta_ests = LogisticRegression(random_state=self.random_state, max_iter=1000)
@@ -172,15 +172,15 @@ class EnsembleMethods:
         y_pred = stack_clf.predict(X_test)
         
         self.metrics = {
-            'accuracy': float(accuracy_score(y_test, y_pred)),
+            'accuracy': float(accuracy_score(y_test, y_pred))
             'f1_score': float(f1_score(y_test, y_pred, average='weighted'))
         }
         
         logger.info(f"Ensemble training complete. Accuracy: {self.metrics['accuracy']:.4f}")
         return {
-            'status': 'success',
-            'metrics': self.metrics,
-            'predictions': y_pred.tolist(),
+            'status': 'success'
+            'metrics': self.metrics
+            'predictions': y_pred.tolist()
             'model_type': 'StackingClassifier'
         }
 ```
@@ -199,3 +199,15 @@ class EnsembleMethods:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Ensemble Methods](https://scikit-learn.org/stable/modules/ensemble.html)
+- [Random Forest — Scikit-learn docs](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
+- [Gradient Boosting — XGBoost documentation](https://xgboost.readthedocs.io/)
+- [Stacking Classifiers (Scikit-learn)](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingClassifier.html)
+- [Ensemble Learning Survey (Schapire)](https://www.cs.princeton.edu/courses/archive/fall02/cs498/lectures/enhancing_boosting.pdf)

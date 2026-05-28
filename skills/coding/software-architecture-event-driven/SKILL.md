@@ -109,3 +109,15 @@ class EventSourcedOrder:
 ### MUST NOT DO
 - Create complex event chains that are hard to manage.
 - Ignore the order of events if it’s significant to business logic.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microsoft Azure — Event-Driven Architecture Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-driven-design)
+- [Martin Fowler — Publish Subscribe Messaging](https://martinfowler.com/articles/pubSub.html)
+- [Event Sourcing Pattern by Martin Fowler](https://martinfowler.com/eaaDev/EventSourcing.html)
+- [Apache Kafka — Event Streaming Platform Documentation](https://kafka.apache.org/documentation/)
+- [AWS EventBridge — Serverless Event-Driven Architecture](https://aws.amazon.com/eventbridge/)

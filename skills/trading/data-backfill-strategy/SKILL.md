@@ -436,3 +436,15 @@ class BatchBackfillWorker:
         """Get list of completed time ranges."""
         return self.completed_ranges
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [QuantConnect Data Overview](https://docs.quantconnect.com/dataset/overview)
+- [Data Gap Handling in Backtests](https://docs.quantconnect.com/tutorials/data-sources-and-format)
+- [Market Data Quality Best Practices](https://docs.quantconnect.com/tutorials/data-market-data)
+- [Historical Data Recovery Methods](https://www.investopedia.com/terms/h/historical-data.asp)
+- [Data Validation and Cleaning](https://greatexpectations.io/)

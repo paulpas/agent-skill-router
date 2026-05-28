@@ -340,6 +340,18 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Git Branching Model (Atlassian)](<https://www.atlassian.com/git/tutorials/comparing-workflows>)
+- [Feature Branch Workflow Guide](<https://docs.github.com/en/get-started/using-github/github-flow>)
+- [Git Flow vs GitHub Flow Comparison](<https://nvie.com/posts/a-successful-git-branching-model/>)
+- [Trunk-Based Development (Martin Fowler)](<https://martinfowler.com/articles/onpa/trunkbaseddevelopment.html>)
+
 ## Related Skills
 
 | Skill | Purpose |

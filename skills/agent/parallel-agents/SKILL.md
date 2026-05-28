@@ -395,4 +395,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `langgraph` | LangGraph state machines for orchestrating parallel agent workflows |
+| `multi-agent-task-orchestrator` | Task decomposition with parallel execution branches |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LangGraph Parallel Execution — LangChain Docs](https://blog.langchain.dev/orchestrate-multi-agent-systems-with-langgraph/)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Multi-Agent System Survey — arXiv (2402.16817)](https://arxiv.org/abs/2402.16817)
+- [LLM Agent Survey — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- [Parallel LLM Inference Patterns — arXiv Paper](https://arxiv.org/abs/2401.12205)

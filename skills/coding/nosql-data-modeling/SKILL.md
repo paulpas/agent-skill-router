@@ -171,3 +171,13 @@ Resources:
 ### MUST NOT DO
 - Use overly normalized schemes that hamper read performance in document databases.
 - Assume one-size-fits-all approaches for disparate database systems without adjustments.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [NoSQL Data Modeling Patterns (DynamoDB)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/best-practices.html) — AWS DynamoDB's best practices for data modeling patterns including singleton, time series, and hierarchical
+- [Document Database Design Patterns (MongoDB)](https://www.mongodb.com/resources/products/guides/noSQL-data-modeling) — MongoDB's official guide to document data modeling strategies and anti-patterns
+- [Graph Database Modeling (Neo4j)](https://neo4j.com/developer/graph-data-modeling/) — Neo4j's guide to graph data modeling techniques for relationship-heavy domains
+- [Cassandra Data Modeling](https://docs.datastax.com/en/cassandra-oss/cassandra-developer/dql/dqldataModel.html) — DataStax documentation on designing tables and partitioning strategies for Apache Cassandra
+- [Key-Value Store Patterns (Redis)](https://redis.io/docs/latest/develop/use/data-types/) — Redis data type patterns for efficient key-value data modeling in high-performance systems

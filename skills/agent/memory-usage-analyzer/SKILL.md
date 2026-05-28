@@ -319,3 +319,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Python Memory Profiling (tracemalloc)](<https://docs.python.org/3/library/tracemalloc.html>)
+- [Valgrind Memory Debugging Tool](<https://valgrind.org/docs/manual/manual.html>)
+- [AddressSanitizer for Memory Errors](<https://clang.llvm.org/docs/AddressSanitizer.html>)
+- [glibc malloc Stats (malloc_stats)](<https://man7.org/linux/man-pages/man3/mallopt.3.html>)
+- [Memory Leak Detection Best Practices](<https://en.wikipedia.org/wiki/Memory_leak>)

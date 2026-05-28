@@ -618,10 +618,10 @@ When this skill is active, the model's output must contain:
 
 ## Live References
 
-> Authoritative documentation links for framework integration testing.
+> Authoritative documentation links for framework integration testing. The model follows markdown links at load time to resolve external references and inline content.
 
-- [Gray Release Deployment Strategies (Nginx)](https://www.nginx.com/blog/gray-release-deployment-strategies/) — Gray release techniques including shadow traffic patterns
-- [Canary Deployments (Martin Fowler)](https://martinfowler.com/articles/canary.html) — Comprehensive guide to canary deployment strategies and best practices
-- [Dual-Write Migration Patterns (Confluent)](https://www.confluent.io/blog/dual-writing-migration-pattern/) — Data migration patterns using dual-write with eventual consistency guarantees
-- [Chaos Engineering for Integration Testing](https://www.chaosengineering.org/) — Injecting failures to validate resilience in distributed integrations
-- [The Twelve-Factor App: Process Model](https://12factor.net/processes) — Stateless processes and graceful shutdown patterns relevant to canary deployments
+- [pytest Documentation](https://docs.pytest.org/en/stable/) — Official testing framework reference covering fixtures, parameterization, plugins, and assertion rewriting for integration test suites
+- [Testcontainers Python](https://testcontainers-python.readthedocs.io/en/latest/) — Production-grade library for spinning up Docker containers (PostgreSQL, Redis, Kafka) in integration tests
+- [Factory Boy Documentation](https://factoryboy.readthedocs.io/en/latest/) — Fixture replacement library for creating test data objects with realistic defaults and traits
+- [HTTPX — Full-Featured HTTP Client for Python](https://www.python-httpx.org/) — Async/sync HTTP client designed for testing web frameworks with built-in test client support
+- [VCR.py — Record HTTP Interactions](https://vcrpy.readthedocs.io/en/latest/) — Record and replay HTTP interactions to make integration tests fast, deterministic, and offline-capable

@@ -360,3 +360,13 @@ class EventHandler(Protocol):
 - Use magic numbers or hardcoded configuration values
 - Bypass error handling for assumed-valid inputs
 - Write functions longer than 50 lines without decomposition
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Event Sourcing Pattern (Martin Fowler)](https://martinfowler.com/eaaDev/EventSourcing.html) — Martin Fowler's definitive guide to event sourcing as the foundation of event bus architecture
+- [Publish-Subscribe Pattern (Microsoft P&A)](https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber) — Microsoft's implementation guide for pub/sub message routing in distributed systems
+- [AMQP 1.0 Specification](https://www.amqp.org/resources/specifications) — Advanced Message Queuing Protocol specification for interoperable event bus implementations
+- [Python asyncio Event Loop](https://docs.python.org/3/library/asyncio-eventloop.html) — Python's asyncio documentation for building async pub/sub systems
+- [AWS EventBridge Documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/what-is-amazon-eventbridge.html) — AWS EventBridge architecture for cloud-native event routing and processing

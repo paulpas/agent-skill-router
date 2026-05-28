@@ -171,3 +171,15 @@ When applying this skill, produce:
 |---|---|
 | `coding-clean-code-refactoring` | Broader clean code techniques beyond YAGNI |
 | `coding-test-driven-development` | TDD enforces writing only tested, needed code |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — YAGNI (You Aren't Gonna Need It)](https://en.wikipedia.org/wiki/YAGNI)
+- [Extreme Programming — YAGNI Core Practice](https://xp.colorado.edu/yagni.html)
+- [Martin Fowler — You Aren't Gonna Need It](https://martinfowler.com/bliki/Yagni.html)
+- [Robert Martin — Clean Code Principles on YAGNI](https://blog.cleancoder.com/)
+- [Kent Beck — Test-Driven Development: YAGNI in the Red-Green-Refactor Cycle](https://en.wikipedia.org/wiki/Test-driven_development)

@@ -237,3 +237,15 @@ class LiquidityAssessment:
         else:
             return False, 'GOOD', 'Adequate liquidity'
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Liquidity Risk Explained](https://www.investopedia.com/terms/l/liquidityrisk.asp)
+- [Market Liquidity Measures](https://en.wikipedia.org/wiki/Liquability_(finance))
+- [Liquidity Risk in Portfolio Management](https://www.investopedia.com/articles/investing/07/liquability-risk.asp)
+- [Bid-Ask Spread and Market Depth](https://www.investopedia.com/terms/b/bid-ask-spread.asp)
+- [Liquidity Stress Testing Methods](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1495603)

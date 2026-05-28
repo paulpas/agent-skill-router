@@ -715,3 +715,15 @@ When implementing or auditing WebSocket protocol-level code, produce:
 |---|---|
 | `websocket-manager` | Connection state machine, reconnection with exponential backoff, message routing |
 | `websocket-security` | Origin validation, authentication over WebSocket, rate limiting, attack prevention |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [RFC 6455 — The WebSocket Protocol](https://datatracker.ietf.org/doc/html/rfc6455/) — Complete IETF specification covering handshake, framing, close sequences, opcodes, and extended payload lengths
+- [MDN Web Docs — WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) — Browser-native WebSocket client API reference with connection lifecycle events (onopen, onmessage, onclose, onerror)
+- [Node.js tls.createServer Example](https://nodejs.org/api/tls.html#tlscreateserveroptions-secureconnectionlistener) — Secure WebSocket (wss://) server setup with TLS certificate configuration
+- [Python websockets RFC 6455 Reference Implementation](https://websockets.readthedocs.io/en/stable/intro.html) — Full RFC 6455 compliant implementation covering subprotocol negotiation, permessage-deflate compression, and backpressure
+- [Cloudflare WebSocket Architecture Guide](https://www.cloudflare.com/learning/network-layer/websocket-tcp/) — How WebSockets operate over TCP including reverse proxy configuration at Cloudflare edge

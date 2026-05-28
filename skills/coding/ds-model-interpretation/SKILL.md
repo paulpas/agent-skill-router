@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Interprets models using SHAP values, LIME, feature importance,
+description: '"Provides Interprets models using SHAP values, LIME, feature importance
   permutation importance, and other explainability techniques"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-explainability, ds-feature-selection, ds-model-fairness
   role: implementation
   scope: implementation
-  triggers: model interpretation, SHAP, LIME, feature importance, explainability,
+  triggers: model interpretation, SHAP, LIME, feature importance, explainability
     how do I explain models
   archetypes:
   - tactical
@@ -106,7 +106,7 @@ def basic_model_interpretation():
     plt.show()
 
     return {
-        "feature_importances": dict(zip(feature_names, importances)),
+        "feature_importances": dict(zip(feature_names, importances))
         "top_features": [feature_names[i] for i in indices[:5]]
     }
 
@@ -158,8 +158,8 @@ class ModelInterpretation:
             )
             
             importance_df = pd.DataFrame({
-                "feature": self.feature_names,
-                "importance_mean": result.importances_mean,
+                "feature": self.feature_names
+                "importance_mean": result.importances_mean
                 "importance_std": result.importances_std
             }).sort_values(by="importance_mean", ascending=False)
             
@@ -193,3 +193,15 @@ if __name__ == "__main__":
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SHAP Documentation](https://shap.readthedocs.io/)
+- [LIME Documentation](https://lime-ml.readthedocs.io/)
+- [InterpretML — Microsoft](https://interpret.ml/)
+- [ELI5 Library](https://eli5.readthedocs.io/)
+- [Model Interpretation (Kaggle Learn)](https://www.kaggle.com/learn/machine-learning-explainability)

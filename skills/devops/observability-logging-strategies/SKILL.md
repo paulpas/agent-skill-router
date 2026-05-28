@@ -56,3 +56,15 @@ Utilize indexing and careful schema design in your logging solution to ensure op
 No, focus on meaningful events and errors. Overlogging can lead to unnecessary noise and hinder performance.
 
 Adopting these best practices will significantly enhance the observability in your applications, leading to better performance monitoring and more efficient troubleshooting in DevOps processes.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [OpenTelemetry Logging Documentation](https://opentelemetry.io/docs/concepts/signals/logs/)
+- [Elasticsearch Logging Best Practices](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html)
+- [Structured Logging with JSON (Cloud Native)](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/logs/README.md)
+- [ELK Stack Architecture Guide](https://www.elastic.co/what-is/elk-stack)
+- [Datadog Log Management Documentation](https://docs.datadoghq.com/logs/)

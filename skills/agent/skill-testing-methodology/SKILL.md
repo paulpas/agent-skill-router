@@ -622,3 +622,13 @@ Use these templates when building your 100+ query test corpus. Each category ser
 - Empty/short: `""`, `"?"`, `"..."`
 - Encoding edge cases: emojis, Unicode characters, extremely long inputs (500+ words)
 - Adversarial: trigger words embedded in irrelevant context ("I hate stop loss but love trading")
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PyTest Documentation](https://docs.pytest.org/en/stable/) — Official PyTest reference for writing test suites, fixtures, and parametrized tests
+- [pytest-asyncio for Async Testing](https://pytest-asyncio.readthedocs.io/) — PyTest plugin documentation for testing async code patterns common in skill routing
+- [Trigger Precision/Recall Measurement (scikit-learn)](https://scikit-learn.org/stable/modules/model_evaluation.html) — Scikit-learn's metrics for precision, recall, and F1-score applicable to trigger evaluation
+- [Property-Based Testing with Hypothesis](https://hypothesis.readthedocs.io/) — Hypothesis library documentation for automated edge case discovery in testing
+- [AI Testing Methodologies Research (IEEE)](https://ieeexplore.ieee.org/xpl/conhome/5230149/all-proceedings) — IEEE research on testing methodologies specifically for AI and LLM-based systems

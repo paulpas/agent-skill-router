@@ -308,6 +308,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Software Project Management (PMI)](<https://www.pmi.org/about/what-is-pmi>)
+- [Agile Manifesto Principles](<https://agilemanifesto.org/>)
+- [Conventional Commits Specification](<https://www.conventionalcommits.org/>)
+- [Trunk-Based Development (Martin Fowler)](<https://martinfowler.com/articles/onpa/trunkbaseddevelopment.html>)
+- [Git Flow vs Trunk-Based Comparison](<https://www.atlassian.com/git/tutorials/comparing-workflows>)
+
 ## Related Skills
 
 | Skill | Purpose |

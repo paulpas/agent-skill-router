@@ -301,6 +301,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Docker Documentation](<https://docs.docker.com/get-started/overview/>)
+- [Kubernetes Getting Started Guide](<https://kubernetes.io/docs/tutorials/hello-minikube/>)
+- [Conductor Server Setup (Netflix GitHub)](<https://netflix.github.io/conductor/server/overview/>)
+- [PostgreSQL Installation Guide](<https://www.postgresql.org/docs/current/installation.html>)
+- [Redis Documentation](<https://redis.io/docs/latest/operate/oss_and_stack/>)
+
 ## Related Skills
 
 | Skill | Purpose |

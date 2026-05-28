@@ -470,3 +470,13 @@ When creating or auditing a skill, produce:
 | `coding-code-quality-policies` | General code quality standards that apply when writing implementation code inside skills |
 | `agent-skill-trigger-engineering` | Designing trigger keywords for optimal skill auto-loading and discovery |
 | `agent-skill-creator` | Orchestrated approach to skill creation (uses this skill as a sub-step) |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenCode Skill Documentation](https://opencode.ai/docs/skills) — Official OpenCode documentation on skill structure, configuration, and loading mechanisms
+- [Semantic Versioning 2.0.0 (semver.org)](https://semver.org/) — The semantic versioning specification for managing skill versions and breaking changes
+- [GitHub Actions for Skill CI/CD](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-python-using-actions-and-matrix) — GitHub Actions patterns for automated skill validation in CI pipelines
+- [MarkdownLint Rules Reference](https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md) — CommonMark lint rules applicable to SKILL.md quality enforcement in the development workflow
+- [RFC Process for Skill Changes (agent-skill-router)](https://github.com/anthropics/agent-skill-router) — The repository's contribution guidelines and RFC process for skill ecosystem changes

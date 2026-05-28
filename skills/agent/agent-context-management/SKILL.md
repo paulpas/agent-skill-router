@@ -226,3 +226,15 @@ When implementing or reviewing agent context management, produce:
 | `agent-task-decomposition-engine`  | Breaks complex goals into subtasks to reduce context pressure |
 | `agent-reasoning-framework`        | Structured reasoning patterns that require stable context windows |
 | `coding-prompt-engineering`        | General prompt optimization techniques applicable here |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Understanding Prompt Lengths — Prompting Guide](https://www.promptingguide.ai/techniques/contextlength)
+- [Context Window Management — Hugging Face Blog](https://huggingface.co/docs/transformers/model_context_size)
+- [LLM Token Limits Overview — OpenAI Docs](https://platform.openai.com/docs/guides/context-window)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Prompt Engineering Techniques — Prompting Guide](https://www.promptingguide.ai/)

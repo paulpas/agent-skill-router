@@ -321,3 +321,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Terraform State Documentation](<https://developer.hashicorp.com/terraform/language/state>)
+- [Open Policy Agent (OPA) Governance](<https://www.openpolicyagent.org/docs/latest/>)
+- [AWS Config for Compliance Checking](<https://docs.aws.amazon.com/config/latest/developerguide/what-is-config.html>)
+- [Cloud Custodian for Infrastructure Policy](<https://cloudcustodian.io/>)
+- [Infrastructure as Code (IaC) Security](<https://www.cisecurity.org/benchmark/cloud_platform>)

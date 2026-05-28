@@ -635,3 +635,15 @@ When implementing or reviewing intersection type code, produce:
 | `typescript-utility-types` | Complements intersections with built-in utility types (Partial, Required, Pick, Omit) and custom utility construction patterns |
 | `typescript-generics-patterns` | Expands on generic constraints including intersection constraints (`T extends A & B`) and conditional types |
 | `typescript-decorator-patterns` | Intersections are used in decorator type transformations where metadata must be merged with the target type |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [TypeScript Handbook — Objects & Intersection Types](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types)
+- [TypeScript Handbook — Type Aliases & Intersection Operators](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#intersection-types)
+- [TypeScript Playground — Interactive Intersection Type Examples](https://www.typescriptlang.org/play)
+- [React TypeScript Cheatsheets — ComponentProps with Intersections](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/type_parameters_and_generics/)
+- [Microsoft TSConfig Reference — Strict Null Checks & Intersection Safety](https://www.typescriptlang.org/tsconfig/#strictNullChecks)

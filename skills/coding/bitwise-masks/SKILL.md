@@ -349,3 +349,13 @@ When implementing or reviewing bitmask logic, produce:
 |---|---|
 | `reference-operators` | Understanding & as reference/address-of operator across C++, Rust, and C# |
 | `type-safety-enums` | Using typed enums and structs instead of raw bitmasks for higher-level type safety |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [C++ Core Guidelines: Bitwise Operations](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) — Microsoft's C++ Core Guidelines with best practices for safe bitwise operations and flag management
+- [Rust Bit Flags Crate (bitflags)](https://docs.rs/bitflags/) — Official Rust `bitflags` crate documentation for type-safe bitmask creation and manipulation
+- [Go Flag Constants Pattern](https://pkg.go.dev/flag) — Go's standard library flag package patterns combined with constant-based flag definitions
+- [Python Enum and IntFlag (PEP 435)](https://peps.python.org/pep-0435/) — Python's Enum specification including IntFlag for type-safe bitwise flags
+- [Bitwise Operations Reference (Wikipedia)](https://en.wikipedia.org/wiki/Bitwise_operation) — Wikipedia's comprehensive reference on all bitwise operations: AND, OR, XOR, NOT, shifts, and masking

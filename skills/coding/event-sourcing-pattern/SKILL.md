@@ -846,6 +846,18 @@ When implementing or reviewing event sourcing, produce:
 
 ---
 
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Event Sourcing Pattern (Microsoft Azure Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+- [Event Store — Event-Sourced Databases](https://eventstore.com/)
+- [Axon Framework — Event Sourcing in Java](https://axoniq.io/product-overview/axon-framework)
+- [CQRS and Event Sourcing (Microsoft Docs)](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
+- [Event Sourcing Patterns — Command, Projection, Snapshotting](https://event-driven.io/en/event_sourcing_pattern/)
+
+---
+
 ## Related Skills
 
 | Skill | Purpose |

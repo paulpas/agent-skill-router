@@ -368,3 +368,15 @@ while not twap.is_complete():
 metrics = twap.get_metrics()
 print(f"Total filled: {metrics.filled_quantity} @ {metrics.avg_fill_price} BPS slippage: {metrics.slippage_bps}")
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [TWAP Execution Tutorial](https://docs.quantconnect.com/tutorials/time-weighted-average-price)
+- [Time-Weighted Average Price Strategy](https://www.investopedia.com/terms/t/twap.asp)
+- [Algorithmic Execution Algorithms Guide](https://www.investopedia.com/articles/trading/10/vwap-metric-trading.asp)
+- [TWAP vs VWAP Comparison](https://www.investopedia.com/terms/t/twap.asp)
+- [Execution Quality Analysis](https://arxiv.org/abs/1805.01469)

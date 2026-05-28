@@ -306,6 +306,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Zettelkasten Method (Wikipedia)](<https://en.wikipedia.org/wiki/Zettelkasten>)
+- [Bullet Journal Method (Ryder Carroll)](<https://bulletjournal.com/>)
+- [GTD Getting Things Done Method](<https://www.agilealliance.org/glossary/getting-things-done/>)
+- [Personal Knowledge Management Systems](<https://en.wikipedia.org/wiki/Personal_knowledge_management>)
+- [Obsidian Help Documentation](<https://help.obsidian.md/>)
+
 ## Related Skills
 
 | Skill | Purpose |

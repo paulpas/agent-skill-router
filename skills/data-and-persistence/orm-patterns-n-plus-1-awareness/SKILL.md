@@ -112,3 +112,15 @@ user_with_orders = session.query(User).
 
 ## Output Template
 When loaded, this skill helps identify ORM patterns and mitigate common pitfalls effectively, providing crucial background for impactful data-driven application development.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Django Performance Guide — N+1 Queries](https://docs.djangoproject.com/en/5.0/topics/db/debug/#preventing-n-1-queries)
+- [PostgreSQL EXPLAIN Documentation](https://www.postgresql.org/docs/current/routines-explain.html)
+- [SQLAlchemy eager loading guide (joinedload/subqueryload)](https://docs.sqlalchemy.org/en/20/orm/eagerloads.html)
+- [Ruby on Rails N+1 Query Guide](https://guides.rubyonrails.org/debugging_rails_applications.html#active-record-query-info)
+- [PostgreSQL Performance Tuning Documentation](https://www.postgresql.org/docs/current/sql-explain.html)

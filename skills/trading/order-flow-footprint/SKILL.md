@@ -817,3 +817,14 @@ When analyzing footprint charts and order flow data, produce:
 | `technical-volume-profile` | Volume profile at price levels across multiple timeframes — provides broader context to evaluate whether footprint signals align with established value areas |
 
 > 📖 skill(local cache): order-flow-footprint
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Order Flow Footprint Charts Guide](https://www.tradingview.com/wiki/Order_Flow)
+- [Footprint Chart Patterns and Analysis](https://www.investopedia.com/articles/trading/11/volume-profile.asp)
+- [Delta and Order Flow Imbalance](https://en.wikipedia.org/wiki/Market_microstructure)
+- [Volume Distribution in Order Books](https://arxiv.org/abs/1805.01469)
+- [Footprint Trading Strategies](https://www.tradingview.com/wiki/Order_Flow)

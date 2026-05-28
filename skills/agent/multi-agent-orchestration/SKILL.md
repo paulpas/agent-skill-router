@@ -902,3 +902,15 @@ orchestrator = create_supervisor(llm_client, max_workers=4)
 result = orchestrator.run("Analyze the competitive landscape for AI coding assistants")
 # → {success: bool, summary: str, failed_subtasks: list[str], final_output: dict}
 ```
+
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Multi-Agent Orchestration with LangGraph](<https://langchain-ai.github.io/langgraph/concepts/multi_agent/>)
+- [CrewAI Multi-Agent Framework Docs](<https://docs.crewai.com/concepts/how-crewai-works>)
+- [MetaGPT Multi-Agent Research Paper](<https://arxiv.org/abs/2308.00352>)
+- [AutoGen: Enabling Next-Gen LLM Applications (Microsoft)](<https://arxiv.org/abs/2308.08155>)
+- [LLM Agent Orchestration Patterns Survey](<https://arxiv.org/abs/2402.01680>)

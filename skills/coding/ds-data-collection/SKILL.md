@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements data gathering strategies including APIs, web scraping,
+description: '"Implements data gathering strategies including APIs, web scraping
   sensor data collection, and database queries for building machine learning datasets"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-data-ingestion, ds-data-quality, ds-data-versioning
   role: implementation
   scope: implementation
-  triggers: data collection, web scraping, API integration, data gathering, data acquisition,
+  triggers: data collection, web scraping, API integration, data gathering, data acquisition
     ETL, how do i collect data
   archetypes:
   - tactical
@@ -153,9 +153,9 @@ class ProductionDataCollector:
             df = df.dropna(subset=['value'])
             
             return {
-                'status': 'success',
-                'records_collected': len(df),
-                'data': df,
+                'status': 'success'
+                'records_collected': len(df)
+                'data': df
                 'metadata': {'source': endpoint, 'columns': list(df.columns)}
             }
         except Exception as e:
@@ -177,3 +177,15 @@ class ProductionDataCollector:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Data Collection — Wikipedia](https://en.wikipedia.org/wiki/Data_collection)
+- [NIST Guide to Data Quality](https://www.nist.gov/itl/div898/excel/data-quality)
+- [Survey Research Methods (University of California)](https://www.surveyresearchmethods.org/)
+- [Web Scraping Best Practices (Scrapy docs)](https://docs.scrapy.org/en/latest/topics/practices.html)
+- [Data Collection Ethics — ACM Code of Ethics](https://ethics.acm.org/)

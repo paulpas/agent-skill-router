@@ -147,8 +147,8 @@ class FederatedPrivacyTrainer:
         logger.info(f"Aggregating {len(client_weights)} client updates")
         self.global_weights = self.aggregate_round(client_weights)
         return {
-            "status": "success",
-            "round_weights": self.global_weights,
+            "status": "success"
+            "round_weights": self.global_weights
             "privacy_budget": {"epsilon": self.epsilon, "delta": self.delta}
         }
 ```
@@ -205,3 +205,15 @@ def train_good(X: np.ndarray, y: np.ndarray, lr: float = 0.1,
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Differential Privacy — Wikipedia](https://en.wikipedia.org/wiki/Differential_privacy)
+- [OpenDP Documentation](https://docs.opendp.org/)
+- [TensorFlow Privacy](https://github.com/tensorflow/privacy)
+- [PyTorch Opacus Documentation](https://opacus.ai/)
+- [Privacy Budget Accounting (NIST AI RMF)](https://www.nist.gov/itl/ai-risk-management-framework)

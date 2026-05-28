@@ -434,3 +434,15 @@ class VWAPBenchmark:
         # Simplified: return current VWAP
         return [(time.time(), self.calculate_vwap())]
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [VWAP Trading Indicator Guide](https://www.investopedia.com/terms/v/vwap.asp)
+- [Volume-Weighted Average Price Calculation](https://www.investopedia.com/articles/trading/10/vwap-metric-trading.asp)
+- [Institutional VWAP Execution](https://docs.quantconnect.com/tutorials/commission-models)
+- [VWAP as Execution Benchmark](https://en.wikipedia.org/wiki/Volume-weighted_average_price)
+- [VWAP Strategy Implementation](https://www.investopedia.com/trading/vwap-volume-indicator/)

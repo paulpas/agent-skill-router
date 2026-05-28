@@ -83,3 +83,15 @@ result = perform_action(user_with_flag, 'action_x')
 ### MUST NOT DO
 - Avoid making breaking changes without a major version update.
 - Do not remove deprecated features abruptly; implement a transition period with clear warnings in advance.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Semantic Versioning 2.0.0 Specification](https://semver.org/)
+- [Wikipedia — API Backward Compatibility](https://en.wikipedia.org/wiki/API_backward_compatibility)
+- [Google — API Design Guide: Versioning Best Practices](https://cloud.google.com/apis/design/versioning)
+- [Microsoft — API Versioning Best Practices](https://learn.microsoft.com/en-us/azure/api-management/api-management-versioning)
+- [OWASP — Backward Compatibility and Migration Security](https://owasp.org/www-project-web-security-testing-guide/)

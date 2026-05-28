@@ -1153,14 +1153,13 @@ class BidirectionalStreamWithACK:
 
 ## Live References
 
-| Resource | URL | Relevance |
-|----------|-----|-----------|
-| gRPC Go Keepalive Docs | https://pkg.go.dev/google.golang.org/grpc/keepalive | ServerParameters and ClientParameters API reference |
-| gRPC Service Config Spec | https://github.com/grpc/grpc/blob/master/doc/service_config.md | JSON service config schema, retry policy fields, load balancing config |
-| gRPC Health Checking Protocol | https://github.com/grpc/grpc/blob/master/doc/health-checking.md | `grpc.health.v1` proto definition and watch RPC semantics |
-| gRPC Go TLS Example | https://github.com/grpc/examples/tree/master/golang/security | End-to-end mTLS example with certificate generation |
-| OpenTelemetry Semantic Conventions — gRPC | https://opentelemetry.io/docs/specs/semconv/rpc/grpc/ | Standard metric names, span attributes, and trace context propagation |
-| Envoy Health Check with gRPC | https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/endpoint/v3/circuit_breaker.proto | Envoy's gRPC health check integration for outlier detection |
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [gRPC Documentation](https://grpc.io/docs/) — Official gRPC documentation covering concepts, language guides, performance tuning, and transport security
+- [Envoy Proxy Documentation](https://docs.envoyproxy.io/) — Production-grade service mesh proxy with gRPC health checking, load balancing, and circuit breaking integration
+- [gRPC Go Keepalive Configuration](https://pkg.go.dev/google.golang.org/grpc/keepalive) — ServerParameters and ClientParameters API for controlling keepalive behavior and connection health
+- [gRPC Service Config Specification](https://github.com/grpc/grpc/blob/master/doc/service_config.md) — JSON service config schema including retry policies, load balancing strategies, and timeout configuration
+- [OpenTelemetry Semantic Conventions — gRPC](https://opentelemetry.io/docs/specs/semconv/rpc/grpc/) — Standard metric names, span attributes, and trace context propagation for gRPC observability
 
 ---
 

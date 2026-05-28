@@ -885,3 +885,15 @@ Before completing your task, verify:
 
 5. Pring, R. D. (1986). *Technical Analysis Explained*. McGraw-Hill.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Indicator Confluence Explained](https://www.investopedia.com/terms/i/index.asp)
+- [Multiple Indicator Confirmation](https://www.investopedia.com/trading/introduction-to-technical-analysis/)
+- [Combining Technical Indicators Effectively](https://www.investopedia.com/articles/trading/08/technical-trading-rules.asp)
+- [Signal Confluence Best Practices](https://en.wikipedia.org/wiki/Technical_analysis)
+- [Multi-Timeframe Analysis for Trading](https://www.investopedia.com/trading/multi-timeframe-technical-analysis/)

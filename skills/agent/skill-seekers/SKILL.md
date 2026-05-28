@@ -288,4 +288,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-router` | The routing system that skill seekers interface with to find and load appropriate skills |
+| `intelligent-skill-selection` | Provides selection heuristics that complement the skill seeker's discovery patterns |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Information Retrieval Fundamentals (Wikipedia)](https://en.wikipedia.org/wiki/Information_retrieval) — Wikipedia overview of information retrieval systems, the foundation of skill search
+- [Elasticsearch Search API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-api.html) — Elasticsearch documentation for full-text search and relevance ranking
+- [Semantic Search with LangChain](https://python.langchain.com/docs/modules/data_connection/retrievers/) — LangChain documentation on building semantic search capabilities for document retrieval
+- [FAISS Vector Similarity Search](https://github.com/facebookresearch/faiss) — Facebook's FAISS library for efficient similarity search and clustering of dense vectors
+- [Reciprocal Rank Fusion (RRF) Ranking](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf/) — Academic paper on reciprocal rank fusion for combining multiple ranking signals

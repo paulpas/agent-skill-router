@@ -128,4 +128,16 @@ When utilizing this skill, ensure your outputs include:
 3. **Error Handling** — Common errors with their resolutions.
 4. **Performance Metrics** — Establish key metrics to monitor before and after optimization steps.
 5. **Rollback Procedure** — Document how to revert any changes that lead to undesirable outcomes.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PostgreSQL Documentation — SQL Commands Reference](https://www.postgresql.org/docs/current/sql.html)
+- [MySQL 8.0 Reference Manual — SQL Statement Syntax](https://dev.mysql.com/doc/refman/8.0/en/)
+- [PostgreSQL EXPLAIN Documentation](https://www.postgresql.org/docs/current/using-explain.html)
+- [Microsoft T-SQL Query Optimization Guide](https://learn.microsoft.com/en-us/sql/t-sql/language-elements/set-statements-before-executing-a-query-transact-sql)
+- [Database Indexing Best Practices by Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBParameters)
 ```

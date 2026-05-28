@@ -665,3 +665,13 @@ When this skill is active, the model's output should follow this structure:
 |-------|---------|
 | `coding-bitwise-operations` | Broader bitwise operations beyond just AND (OR `|`, XOR `^`, NOT `~`, left/right shifts `<<`, `>>`) for complete bitmask manipulation |
 | `coding-error-handling` | Safe memory error handling when using pointers/references — null checks, panic recovery in Go, Result types in Rust, and RAII patterns in C++ |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [CppReference: Address-of and Dereference Operators](https://en.cppreference.com/w/c/language/operator_address) — Comprehensive reference for `&` operator semantics across C, C++, and related languages
+- [Rust Reference: References and Borrowing](https://doc.rust-lang.org/reference/references-and-borrowing.html) — Official Rust language specification for reference types and borrowing rules
+- [Go Spec: Address Operator](https://go.dev/ref/spec#Address_operators) — Official Go language specification for the `&` operator in pointer creation
+- [Python ctypes Documentation](https://docs.python.org/3/library/ctypes.html) — Python's ctypes library documentation for calling C functions and working with memory pointers
+- [Computer Arithmetic: Bitwise Operations (Wikipedia)](https://en.wikipedia.org/wiki/Bitwise_operation) — Wikipedia overview of all bitwise operations including AND, OR, XOR, NOT, and shifts

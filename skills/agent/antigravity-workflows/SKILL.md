@@ -331,6 +331,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [State Machine Patterns (Wikipedia)](<https://en.wikipedia.org/wiki/Finite-state_machine>)
+- [Workflow Orchestration with Apache Airflow](<https://airflow.apache.org/docs/>)
+- [DAG-based Workflow Execution Models](<https://en.wikipedia.org/wiki/Directed_acyclic_graph>)
+- [Resilience Patterns in Distributed Systems (Microsoft)](<https://learn.microsoft.com/en-us/azure/architecture/framework/resiliency/>)
+- [Saga Pattern Documentation](<https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga>)
+
 ## Related Skills
 
 | Skill | Purpose |

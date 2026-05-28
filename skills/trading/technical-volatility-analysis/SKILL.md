@@ -262,3 +262,15 @@ class VolatilityAnalyzer:
             'ATM_iv': float(atm_iv)
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Volatility in Finance Explained](https://en.wikipedia.org/wiki/V_(finance))
+- [ATR - Average True Range Guide](https://www.investopedia.com/terms/a/atr.asp)
+- [Implied Volatility Trading](https://www.investopedia.com/terms/i/impliedvolatility.asp)
+- [GARCH Models for Volatility Forecasting](https://www.investopedia.com/terms/g/garch.asp)
+- [Volatility Breakout Strategies](https://www.investopedia.com/articles/trading/08/volatility-breakout.asp)

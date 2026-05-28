@@ -305,4 +305,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `hierarchical-agent-memory` | Multi-level memory architecture with episodic, semantic, and procedural stores |
+| `agent-context-memory` | Short-term context window management and sliding window strategies |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Memory Mechanisms in LLMs — arXiv (2307.05939)](https://arxiv.org/abs/2307.05939)
+- [What Is Agent Memory — LangChain Blog](https://blog.langchain.dev/what-is-agent-memory/)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Vector Databases for Agent Memory — Pinecone Guide](https://www.pinecone.io/learn/vector-databases/)
+- [Long-Term Memory for LLMs — arXiv Survey](https://arxiv.org/abs/2307.06388)

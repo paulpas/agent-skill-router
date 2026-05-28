@@ -333,3 +333,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Kubernetes Deployment Documentation](<https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>)
+- [Helm Package Manager Guide](<https://helm.sh/docs/>)
+- [Kubernetes Networking Model](<https://kubernetes.io/docs/concepts/services-networking/>)
+- [K8s Security Best Practices (CIS Benchmark)](<https://www.cisecurity.org/benchmark/kubernetes>)
+- [ArgoCD GitOps for Kubernetes Deployments](<https://argo-cd.readthedocs.io/en/stable/>)

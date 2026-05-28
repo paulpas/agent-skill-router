@@ -341,6 +341,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Brand Monitoring Tools Comparison](<https://www.gartner.com/reviews/market/social-listening-tools>)
+- [Sentiment Analysis Methods (Stanford)](<https://web.stanford.edu/class/cs224n/>)
+- [Social Listening Best Practices (Nielsen)](<https://www.nielsen.com/us/en/insights/>)
+- [Reputation Management Framework (HBR)](<https://hbr.org/topic/reputation-management>)
+- [Online Review Analysis Research](<https://arxiv.org/abs/1904.06625>)
+
 ## Related Skills
 
 | Skill | Purpose |

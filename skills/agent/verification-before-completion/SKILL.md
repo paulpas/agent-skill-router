@@ -307,9 +307,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google Verification Before Completion — Software Engineering Practices](https://ai.google/gemini-api/docs/verification)
+- [IEEE 1012 — System and Software Verification and Validation Standard](https://standards.ieee.org/standard/1012-2016.html)
+- [Formal Methods in Software Verification](https://en.wikipedia.org/wiki/Formal_verification)
+- [Property-Based Verification with Hypothesis](https://hypothesis.works/)
+- [AWS Well-Architected Framework — Reliability Pillar](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

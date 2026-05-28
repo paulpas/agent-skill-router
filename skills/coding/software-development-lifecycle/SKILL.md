@@ -1107,3 +1107,15 @@ assert config.release_pattern is None  # No release branches needed
 | `modern-software-development-workflows` | CI/CD pipeline configuration and automation that supports the branching strategy defined here |
 
 > 📖 skill(local cache): software-development-lifecycle
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [IBM — Software Development Lifecycle (SDLC) Overview](https://www.ibm.com/topics/software-development-lifecycle)
+- [Wikipedia — Software Development Process](https://en.wikipedia.org/wiki/Software_development_process)
+- [Atlassian — SDLC Guide: Stages & Best Practices](https://www.atlassian.com/agile/project-management/sdlc)
+- [ISO/IEC/IEEE 12207 — Systems and Software Engineering — Life Cycle Processes](https://www.iso.org/standard/65694.html)
+- [GitHub Docs — Managing Your Project Board for SDLC Workflows](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-a-project-board/about-your-project)

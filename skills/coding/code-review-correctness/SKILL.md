@@ -29,3 +29,15 @@ A: Continuously gather feedback from team members about the reviewing process it
 A: Utilize error theory to anticipate potential edge cases based on user behaviors that deviate from the norm, applying targeted tests for those scenarios.
 
 Strengthening the focus on correctness in code reviews can lead to significant benefits in reliability and user satisfaction, laying the groundwork for more robust applications in the future.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Code Reviews — Azure DevOps (Microsoft)](https://docs.microsoft.com/en-us/azure/devops/repos/git/code-reviews)
+- [Testing Patterns for Correctness Verification](https://martinfowler.com/articles/practicalTestPatterns.html)
+- [Property-Based Testing with Hypothesis (Python)](https://hypothesis.readthedocs.io/en/latest/)
+- [Formal Methods in Software Correctness](https://en.wikipedia.org/wiki/Formal_verification)
+- [Static Analysis for Code Correctness — SonarQube](https://www.sonarsource.com/solutions/code-quality-risk/)

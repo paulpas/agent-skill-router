@@ -161,3 +161,14 @@ func main() {
 - Spawn a goroutine without limiting its numbers and managing resources effectively.
 - Ignore cancellation of goroutines, which can result in resource leaks.
 - Use `time.Sleep` for synchronization; opt for structured synchronization techniques instead.
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Go Tour - Concurrency 1](https://go.dev/tour/concurrency/1)
+- [Effective Go - Goroutines](https://go.dev/doc/effective_go#goroutines)
+- [Worker Pools in Go](https://gobyexample.com/worker-pools)
+- [Select Statement Guide](https://gobyexample.com/select)
+- [Go Concurrency Patterns](https://talks.golang.org/2012/concurrency.slide#1)

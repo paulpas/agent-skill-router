@@ -105,3 +105,13 @@ print(item)
 ### MUST NOT DO
 - Do not exceed rate limits imposed by Monday.com API.
 - Avoid making changes to boards or items without proper validation to prevent data corruption.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Monday.com API Documentation](https://developer.monday.com/api/docs/) — Official Monday.com REST and GraphQL API reference covering boards, items, columns, and automations
+- [Monday.com REST API Reference](https://developer.monday.com/api/docs/rest-api) — Complete REST API documentation for Monday.com board management operations
+- [Monday.com GraphQL API](https://developer.monday.com/api/docs/graphql) — GraphQL API reference for complex queries across Monday.com boards and items
+- [Monday.com Webhooks Documentation](https://developer.monday.com/api/docs/webhooks) — Official guide to setting up webhook integrations for real-time board event notifications
+- [API Rate Limiting Guide (Monday.com)](https://developer.monday.com/api/docs/rate-limits) — Monday's documentation on API rate limits, retry strategies, and best practices

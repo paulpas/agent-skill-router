@@ -319,3 +319,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Model Context Protocol (MCP) Specification](<https://modelcontextprotocol.io/specification/2024/11/05/basic>)
+- [Anthropic MCP SDK Documentation](<https://github.com/modelcontextprotocol/typescript-sdk>)
+- [MCP Server Development Guide](<https://modelcontextprotocol.io/docs/concepts/tools>)
+- [MCP Transport Protocols (stdio, SSE, HTTP)](<https://modelcontextprotocol.io/docs/concepts/transports>)
+- [Cline MCP Integration for AI Agents](<https://github.com/cline/cline/wiki/MCP-Setup-Guide>)

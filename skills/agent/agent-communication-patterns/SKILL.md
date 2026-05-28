@@ -1492,3 +1492,15 @@ When implementing inter-agent communication for a multi-agent system, produce:
 | `multi-agent-patterns` | Higher-level multi-agent orchestration including skill selection, fallback chains, and coordination strategies that build on top of this communication layer |
 | `task-decomposition-engine` | Breaks complex tasks into sub-tasks assigned to different agents via the communication patterns defined in this skill |
 | `agent-reliability-engineering` | Circuit breakers, graceful degradation, and fault isolation for agent communication paths when downstream agents fail |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Multi-Agent Systems — Wikipedia Overview](https://en.wikipedia.org/wiki/Multi-agent_system)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [LLM Agents Survey — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- [Async Python Communication Patterns](https://docs.python.org/3/library/asyncio.html)
+- [Event-Driven Architecture — Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/guide/design-patterns/event-driven-architecture-guide)

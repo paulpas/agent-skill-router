@@ -72,3 +72,15 @@ describe('End-to-End Testing Example', () => {
 ### MUST NOT DO
 - Skip essential flows; every critical component must be validated through E2E tests.
 - Neglect to keep test environments updated.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Playwright Official Documentation](https://playwright.dev/)
+- [Playwright Python API Reference](https://playwright.dev/python/docs/api/class-playwright)
+- [Selenium WebDriver — Getting Started](https://www.selenium.dev/documentation/webdriver/)
+- [Selenium Browser Automation Guide](https://www.selenium.dev/documentation/selenium_grid/)
+- [End-to-End Testing Best Practices (Google)](https://web.dev/articles/e2e-testing-best-practices)

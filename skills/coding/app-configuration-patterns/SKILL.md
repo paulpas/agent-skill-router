@@ -703,3 +703,13 @@ When implementing or reviewing configuration management code, produce:
 | `security-review`        | Audit configuration for exposed secrets and insecure defaults |
 | `deployment-patterns`    | Coordinate config changes across environments during deployments |
 | `software-design-principles` | Design clean boundaries between configuration consumers and loaders |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [12-Factor App: Config](https://12factor.net/config) — Martin Fowler's 12-factor methodology chapter on storing config in the environment
+- [HashiCorp Vault Documentation](https://developer.hashicorp.com/vault/docs) — Official Vault documentation for secrets management, dynamic secrets, and encryption as a service
+- [AWS Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) — AWS documentation on centralized configuration and secret management
+- [Python python-dotenv Documentation](https://pypi.org/project/python-dotenv/) — Python library for reading .env files, commonly used for local development configuration
+- [YAML Specification 1.2](https://yaml.org/spec/1.2/spec.html) — Official YAML specification for structured configuration file formats

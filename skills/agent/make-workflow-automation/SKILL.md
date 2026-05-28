@@ -199,3 +199,15 @@ When designing or reviewing a Make workflow, produce:
 | `agent-task-routing` | Handles routing decisions when workflow branches require complex conditional logic |
 | `parallel-skill-runner` | Manages concurrent execution paths for high-throughput data processing scenarios |
 | `coding-script-automation` | Replaces complex Make chains with native code when performance or customization demands it |
+
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Make Platform Documentation (Integromat)](<https://www.make.com/en/help>)
+- [Automated Workflow Design Patterns](<https://en.wikipedia.org/wiki/Workflow_management_system>)
+- [Event-Driven Automation Architecture](<https://learn.microsoft.com/en-us/azure/architecture/guide/design-patters/event-based-patterns>)
+- [Make Webhooks and Trigger Integration](<https://www.make.com/en/help/webhooks-trigger-module>)
+- [Process Mining for Workflow Optimization](<https://en.wikipedia.org/wiki/Process_mining>)

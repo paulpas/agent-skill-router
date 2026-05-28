@@ -386,3 +386,15 @@ When analyzing or optimizing code, produce:
 | `performance-testing` | Load and stress testing at the system level; this skill drills into individual function-level CPU/memory bottlenecks |
 | `memoization-cache-patterns` | Advanced caching strategies (LRU, TTL, write-through); this skill covers when to apply caching vs. algorithmic fixes |
 | `systematic-debugging` | General debugging methodology; use this first for correctness issues, then this skill when the bug is purely performance-related |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google Developer Performance Documentation](https://developers.google.com/performance)
+- [MDN Web Docs — Performance API Reference](https://developer.mozilla.org/en-US/docs/Web/API/Performance_API)
+- [Wikipedia — Program Optimization (Survey of Techniques)](https://en.wikipedia.org/wiki/Program_optimization)
+- [Python cProfile Documentation — CPU Profiling Standard Library](https://docs.python.org/3/library/profile.html)
+- [Google Developers — Core Web Vitals and Performance Metrics](https://web.dev/vitals/)

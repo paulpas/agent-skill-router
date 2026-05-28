@@ -341,3 +341,15 @@ class FeatureCache:
         if key in self._cache:
             del self._cache[key]
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Featureform Documentation](https://docs.featureform.com/)
+- [Feast Feature Store](https://docs.feast.dev/)
+- [Feature Store Architecture Guide](https://www.oreilly.com/radar/an-introduction-to-feature-stores/)
+- [Online vs Offline Feature Storage](https://towardsdatascience.com/feature-store-basics-30c5dbefbe72)
+- [Feature Store Best Practices for Trading](https://docs.quantconnect.com/tutorials/feature-selection-and-engineering)

@@ -773,3 +773,15 @@ When implementing or auditing a design system, produce:
 | `component-architecture`   | Compound components, headless UI patterns — how to structure the components your design system provides |
 | `api-design`               | Backend API contract design — pairs with design system when building full-stack product interfaces |
 | `engineering-principles`   | SOLID, DRY, separation of concerns — guides the architecture of the design system codebase itself |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [USDS Design System (designsystem.digital.gov)](https://designsystem.digital.gov/)
+- [Design Tokens — W3C Community Group](https://design-tokens.github.io/community-group/format/)
+- [Storybook — Component Documentation Tool](https://storybook.js.org/)
+- [Primer Design System (GitHub)](https://primer.style/design/)
+- [Material Design — Components and Theming](https://m3.material.io/)

@@ -649,3 +649,15 @@ class CalibrationMonitor:
             'mce_current': current_calibration.get('mce', 0)
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [MLflow Model Performance Tracking](https://mlflow.org/docs/latest/model-performance.html)
+- [Model Drift Detection with Evidently AI](https://docs.evidentlyai.com/)
+- [Production ML Monitoring Best Practices](https://docs.quantconnect.com/tutorials/live-monitoring)
+- [Data Drift vs Concept Drift](https://towardsdatascience.com/data-drift-vs-concept-drift-9379ea0c0aee)
+- [MLOps Model Monitoring Stack](https://mlflow.org/docs/latest/tracking.html)

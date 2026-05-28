@@ -960,10 +960,8 @@ The FastAPI spike requires more upfront code for models and schemas, but that bo
 
 > Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
 
-- [GitHub API — Repository Metrics](https://docs.github.com/en/rest/repos) — Query stars, forks, commit dates, and contributor activity
-- [PyPI JSON API](https://warehouse.pypa.io/api-reference/json/) — Fetch package download stats, release history, and metadata
-- [npm Registry API](https://registry.npmjs.org/about) — Access package download counts, version history, and dependency graphs
-- [OWASP Software Component Verification Standard](https://owasp.org/www-project-software-component-verification-standard/) — Framework for assessing security posture of software dependencies
-- [RFC 9110 — HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110) — Canonical reference for request/response contracts used in framework spikes
-- [Artillery Load Testing Documentation](https://www.artillery.io/docs) — Industry-standard tool for running consistent benchmark comparisons
-- [Google's ADR Template](https://github.com/cncf/technical-committee/blob/main/governance/releases/v1.0/adrs/index.md) — Architecture Decision Record format used to document framework selection outcomes
+- [Gartner — Top Strategic Technology Trends](https://www.gartner.com/en/information-technology/insights/software-development-frameworks) — Annual research on framework ecosystem maturity, adoption curves, and vendor capability assessments
+- [Stack Overflow Developer Survey — Framework Popularity](https://survey.stackoverflow.co/) — Community-driven metrics on framework usage, satisfaction, and trending tools across developer demographics
+- [TIOBE Index — Programming Language Rankings](https://www.tiobe.com/tiobe-index/) — Historical popularity trends for languages and their associated frameworks over decades
+- [GitHub Archive — Open Source Contribution Data](https://www.gharchive.org/) — Historical repository activity data for measuring framework ecosystem health through contributor growth
+- [OpenSSF Scorecard — Security of OSS Projects](https://github.com/ossf/scorecard) — Automated security posture assessment for frameworks and their dependency chains

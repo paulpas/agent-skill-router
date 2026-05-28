@@ -67,3 +67,15 @@ Yes! Various security testing tools can help identify weaknesses and verify comp
 Absolutely! Ensuring that developers understand vulnerabilities and remediation strategies is key to security improvements.
 
 Implementing these OWASP strategies not only mitigates risks but also promotes a culture of security awareness within software development practices. By addressing vulnerabilities proactively, organizations can enhance security posture and protect sensitive data effectively.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OWASP Top 10 — Official Project](https://owasp.org/www-project-top-ten/)
+- [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/)
+- [OWASP Testing Guide v4](https://owasp.org/www-project-web-security-testing-guide/)
+- [OWASPy API Security Top 10](https://owasp.org/API-Security/)
+- [CWE/SANS Top 25 Most Dangerous Software Errors](https://cwe.mitre.org/top25/index.html)

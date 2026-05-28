@@ -331,3 +331,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Google Docs API v1 Documentation](<https://developers.google.com/docs/api/reference/rest>)
+- [Google Workspace Add-ons](<https://developers.google.com/workspace/add-ons>)
+- [Google Apps Script Documentation](<https://developers.google.com/apps-script>)
+- [Google Documents Processing (Python)](<https://python-docx.readthedocs.io/>)
+- [Google Drive API Integration](<https://developers.google.com/drive/api/guides/about-sdk>)

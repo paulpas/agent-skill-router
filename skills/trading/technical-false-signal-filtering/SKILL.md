@@ -1127,3 +1127,15 @@ Before completing your task, verify:
 
 
 Relative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Identifying False Breakouts](https://www.investopedia.com/articles/trading/08/technical-trading-rules.asp)
+- [Noise vs Signal in Market Data](https://en.wikipedia.org/wiki/Technical_analysis)
+- [Filtering Trading Signals with Volume](https://www.investopedia.com/terms/v/volume.asp)
+- [Whipsaw Prevention Strategies](https://www.investopedia.com/articles/trading/08/whipsaw.asp)
+- [Confirming Technical Indicators](https://www.investopedia.com/trading/introduction-to-technical-analysis/)

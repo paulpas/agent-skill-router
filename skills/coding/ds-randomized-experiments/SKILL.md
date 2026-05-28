@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Designs and analyzes randomized controlled trials (RCTs),
+description: '"Provides Designs and analyzes randomized controlled trials (RCTs)
   A/B tests, experimental blocking, and sample size calculations"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-ab-testing, ds-causal-inference, ds-intervention-analysis, ds-observational-studies
   role: implementation
   scope: implementation
-  triggers: randomized experiments, RCT, experimental design, randomization, blocking,
+  triggers: randomized experiments, RCT, experimental design, randomization, blocking
     sample size
   archetypes:
   - tactical
@@ -102,9 +102,9 @@ def basic_rct_analysis(
     effect_size = float(np.mean(treatment_data) - np.mean(control_data))
     
     results: Dict[str, float] = {
-        "t_statistic": float(t_stat),
-        "p_value": float(p_value),
-        "effect_size": effect_size,
+        "t_statistic": float(t_stat)
+        "p_value": float(p_value)
+        "effect_size": effect_size
         "significant": float(1.0 if p_value < 0.05 else 0.0)
     }
     
@@ -113,8 +113,8 @@ def basic_rct_analysis(
         for block in data[block_col].unique():
             block_data = data[data[block_col] == block]
             t_b, p_b = stats.ttest_ind(
-                block_data[block_data[treatment_col] == 1][outcome_col],
-                block_data[block_data[treatment_col] == 0][outcome_col],
+                block_data[block_data[treatment_col] == 1][outcome_col]
+                block_data[block_data[treatment_col] == 0][outcome_col]
                 equal_var=False
             )
             blocked_means[f"block_{block}_p"] = float(p_b)
@@ -181,15 +181,15 @@ class RandomizedExperiment:
         
         t_stat, p_value = stats.ttest_ind(treatment, control, equal_var=False)
         ci = stats.t.interval(0.95, len(treatment) + len(control) - 2, 
-                              loc=np.mean(treatment) - np.mean(control),
+                              loc=np.mean(treatment) - np.mean(control)
                               scale=np.sqrt(np.var(treatment)/len(treatment) + np.var(control)/len(control)))
         
         self._analysis_results = {
-            "t_statistic": float(t_stat),
-            "p_value": float(p_value),
-            "confidence_interval": [float(ci[0]), float(ci[1])],
-            "significant": bool(p_value < self.alpha),
-            "n_treatment": len(treatment),
+            "t_statistic": float(t_stat)
+            "p_value": float(p_value)
+            "confidence_interval": [float(ci[0]), float(ci[1])]
+            "significant": bool(p_value < self.alpha)
+            "n_treatment": len(treatment)
             "n_control": len(control)
         }
         return self._analysis_results
@@ -215,15 +215,15 @@ def good_experiment(data: pd.DataFrame, group_col: str, value_col: str) -> Dict[
         raise ValueError("Exactly two groups required for comparison")
         
     t_stat, p_val = stats.ttest_ind(
-        data[data[group_col] == groups[0]][value_col],
-        data[data[group_col] == groups[1]][value_col],
+        data[data[group_col] == groups[0]][value_col]
+        data[data[group_col] == groups[1]][value_col]
         equal_var=False
     )
     
     return {
         "effect_size": float(np.mean(data[data[group_col] == groups[1]][value_col]) - 
-                             np.mean(data[data[group_col] == groups[0]][value_col])),
-        "p_value": float(p_val),
+                             np.mean(data[data[group_col] == groups[0]][value_col]))
+        "p_value": float(p_val)
         "significant": bool(p_val < 0.05)
     }
 ```
@@ -242,3 +242,15 @@ def good_experiment(data: pd.DataFrame, group_col: str, value_col: str) -> Dict[
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Randomized Experiment — Wikipedia](https://en.wikipedia.org/wiki/Randomized_experiment)
+- [Causal Inference & Control Experiments (Microsoft)](https://www.microsoft.com/en-us/research/uploads/prod/2018/03/online-a-b-testing.pdf)
+- [Experimental Design — NIST Engineering Handbook](https://www.itl.nist.gov/div898/handbook/index.htm)
+- [A/B Testing Best Practices (Google Analytics)](https://marketingplatform.google.com/about/analytics/)
+- [Randomization in Clinical Trials (FDA Guidance)](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/statistical-guidance-clinical-trials)

@@ -317,6 +317,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Competitive Intelligence Best Practices (CIPC)](<https://www.cipc.com/resources/best-practices/>)
+- [Web Scraping for Market Research](<https://scrapingbee.com/blog/web-scraping-market-research/>)
+- [Gartner Competitive Intelligence Framework](<https://www.gartner.com/en/research/methodologies/competitive-intelligence>)
+- [OSINT Methodologies Overview](<https://en.wikipedia.org/wiki/Open-source_intelligence>)
+- [Pricing Intelligence Methods](<https://pricemonitor.io/blog/pricing-strategies-for-ecommerce/>)
+
 ## Related Skills
 
 | Skill | Purpose |

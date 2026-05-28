@@ -335,3 +335,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [n8n Workflow Patterns Documentation](<https://docs.n8n.io/workflows/>)
+- [Event-Driven Workflow Design (Martin Fowler)](<https://martinfowler.com/articles/201701-event-driven.html>)
+- [ETL Pipeline Patterns for Data Processing](<https://en.wikipedia.org/wiki/Extract,_transform,_load>)
+- [n8n Error Handling and Retry Patterns](<https://docs.n8n.io/workflows/error-handling/>)
+- [Workflow Orchestration Best Practices (Confluent)](<https://www.confluent.io/blog/workflow-orchestration-patterns/>)

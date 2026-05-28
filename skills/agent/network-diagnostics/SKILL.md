@@ -328,3 +328,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [TCP/IP Networking (RFC 793)](<https://www.rfc-editor.org/rfc/rfc793>)
+- [DNS Resolution Troubleshooting (RFC 1034/1035)](<https://www.rfc-editor.org/rfc/rfc1034>)
+- [HTTP/2 and HTTP/3 Protocol Specifications](<https://www.rfc-editor.org/rfc/rfc9113>)
+- [Wireshark Network Protocol Analysis](<https://www.wireshark.org/docs/>)
+- [Linux netstat/ss/traceroute Commands](<https://man7.org/linux/man-pages/man8/ip-route.8.html>)

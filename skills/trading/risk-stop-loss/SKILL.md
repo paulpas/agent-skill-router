@@ -270,3 +270,15 @@ class StopLossManager:
         
         return updated_stops
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Stop Loss Explained](https://www.investopedia.com/terms/s/stoploss.asp)
+- [Trailing Stop Loss Strategies](https://www.investopedia.com/terms/t/trailing-stop.asp)
+- [ATR-Based Stop Loss Placement](https://en.wikipedia.org/wiki/Average_true_range)
+- [Stop Loss Order Types](https://www.investopedia.com/trading/stop-loss-orders/)
+- [Risk Management with Stops](https://docs.quantconnect.com/tutorials/risk-management)

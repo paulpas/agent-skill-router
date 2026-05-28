@@ -768,3 +768,13 @@ When applying this skill, produce:
 | `monolith-scaling-strategies` | Scaling patterns for monoliths: read replicas, sharding, caching, async queues |
 
 > 📖 skill(local cache): monolith-first-design
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Martin Fowler — Modular Monolith](https://martinfowler.com/articles/modular-monolith.html)
+- [Martin Fowler — Scaling the Monolith](https://martinfowler.com/articles/scaling-monolith.html)
+- [Shopify Engineering Blog — Scaling Ruby on Rails](https://shopify.engineering/tagged/monolith)
+- [Basecamp's Approach to Productivity and Architecture](https://basecamp.com/essays/the-cost-of-microservices)
+- [Amazon's API Mandate — Case Study by Werner Vogels](https://martinfowler.com/articles/201901-monolith-to-microservices.html)

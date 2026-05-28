@@ -300,4 +300,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `langgraph-implementation` | Provides LangGraph-specific implementation patterns that Pipecat integrates with |
+| `real-time-audio-processing` | Covers audio pipeline design that complements Pipecat's streaming architecture |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Pipecat Documentation](https://docs.pipecat.ai) — Official documentation for the Pipecat real-time audio/video framework
+- [Pipecat GitHub Repository](https://github.com/pipecat-ai/pipecat) — Source code, examples, and contribution guidelines
+- [WebRTC Real-Time Communication](https://webrtc.org/getting-started/overview) — Foundational protocol documentation for real-time streaming used by Pipecat
+- [VAD (Voice Activity Detection) Algorithms](https://github.com/wiseman/py-webrtcvad) — Voice activity detection reference implementation commonly used in audio pipelines
+- [STT/TTS Integration Patterns for Real-Time AI](https://platform.openai.com/docs/guides/speech-to-text) — Best practices for integrating speech recognition and synthesis in streaming applications

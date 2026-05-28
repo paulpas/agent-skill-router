@@ -294,3 +294,15 @@ When analyzing or implementing async runtime patterns, produce:
 | `programming/error-handling`     | Async error propagation and recovery strategies          |
 | `programming/performance-tuning` | Profiling and optimizing Rust async workloads            |
 | `programming/memory-safety`      | Zero-cost abstractions and lifetime management in async  |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Tokio Documentation](https://docs.rs/tokio/latest/tokio/)
+- [Tokio Tutorial — Getting Started](https://tokio.rs/tokio/tutorial)
+- [Rust Async Book (Official)](https://rust-lang.github.io/async-book/)
+- [async-std Documentation](https://docs.rs/async-std/latest/async_std/)
+- [RFC 3421 — async/await for Rust](https://rust-lang.github.io/rfcs/0397-async_await.html)

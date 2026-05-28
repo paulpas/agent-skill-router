@@ -101,3 +101,13 @@ public class LeakyBucketExample {
 ### MUST NOT DO
 - Set overly aggressive rate limits that could block legitimate user behavior.
 - Forget to handle exceptions that may arise from rate limiting breaches.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Resilience4j RateLimiter Documentation](https://resilience4j.readthedocs.io/en/latest/ratelimiter/) — Official Resilience4j rate limiter module documentation with configuration patterns
+- [Token Bucket Algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Token_bucket) — Wikipedia article on the token bucket algorithm, the most common rate limiting approach
+- [Leaky Bucket Algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Leaky_bucket) — Wikipedia article on the leaky bucket algorithm for traffic shaping and rate limiting
+- [API Rate Limiting Best Practices (Cloudflare)](https://developers.cloudflare.com/waf/rate-limiting-rules/) — Cloudflare's documentation on implementing rate limiting for API protection
+- [Rate Limiting in Distributed Systems (Redis)](https://redis.io/docs/latest/develop/use/rate-limiters/) — Redis documentation on distributed rate limiting using Lua scripts and sliding windows

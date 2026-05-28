@@ -330,3 +330,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Zendesk API Documentation](<https://developer.zendesk.com/api-reference/>)
+- [Freshdesk Automation Guide](<https://developers.freshdesk.com/v2/docs>)
+- [Intercom API for Customer Support](<https://developers.intercom.com/reference/api-overview>)
+- [Help Scout API Documentation](<https://docs.helpscout.com/docs/api/>)
+- [Jira Service Management REST API](<https://developer.atlassian.com/cloud/jira/service-management/rest/>)

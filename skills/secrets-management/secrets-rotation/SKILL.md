@@ -12,3 +12,15 @@ description: Manages the periodic and automatic rotation of sensitive secrets, i
 1. **AWS Secrets Manager Implementations**: Automate rotation using Lambda functions that trigger based on predefined schedules, minimizing operational overhead while enhancing security by ensuring secrets are always up-to-date.\n2. **HashiCorp Vault**: Use Vault's built-in dynamic secrets feature to allow for automatic rotation without manual intervention, streamlining operations and securing applications by providing short-lived credentials that reduce risk and facilitate secure access management.\n
 ### Resources:
 - **AWS Secrets Manager Documentation**: Detailed instructions on automated secret rotation techniques in AWS, focusing on operational security measures and best practices for effective management.\n- **HashiCorp Vault Documentation**: Best practices and guidelines on how to effectively use Vault for secret management and rotation, ensuring comprehensive security measures are in place while meeting compliance requirements.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [HashiCorp — Rotating Credentials](https://developer.hashicorp.com/vault/docs/secrets/rotating-credentials)
+- [AWS Secrets Manager Rotation Guide](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets.html)
+- [Azure Key Vault Secret Rotation](https://learn.microsoft.com/en-us/azure/key-vault/general/basic-concepts#secret-expiration-and-purge-date)
+- [Google Cloud Secret Manager — Best Practices](https://cloud.google.com/secret-manager/docs/best-practices)
+- [Secrets Management Automation (OWASP)](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)

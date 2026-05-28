@@ -104,3 +104,15 @@ describe('add', () => {
 ### MUST NOT DO
 - Rely solely on code coverage metrics without assessing test effectiveness.
 - Ignore code sections flagged as untested during coverage analysis.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Mutations.io — Mutation Testing](https://mutations.io/)
+- [Stryker Mutator — JavaScript/TypeScript Mutation Testing](https://stryker-mutator.io/)
+- [mutmut — Python Mutation Testing Framework](https://github.com/thibaud-guillot/mutmut)
+- [Pytest-Cov Code Coverage Integration](https://pytest-cov.readthedocs.io/en/latest/)
+- [Mutation Testing Explained (InfoQ)](https://www.infoq.com/articles/mutation-testing/)

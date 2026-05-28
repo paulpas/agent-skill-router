@@ -325,3 +325,13 @@ When reviewing a skill for atomic compliance, produce:
 | `coding-code-review` | Reviews individual skills for quality, stub detection, and trigger calibration |
 | `trading-risk-stop-loss` | Example of a well-scoped atomic skill (single pattern family) |
 | `coding-security-engineering` | Current monolith candidate for splitting (see Prioritized Split Queue) |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Atomic Design by Brad Frost](https://atomicdesign.bradfrost.com/) — Foundational methodology for designing granular, composable components applicable to skill architecture
+- [Grain of Salt: Monolith Detection in Software (IEEE)](https://ieeexplore.ieee.org/document/9363486) — IEEE research on automated monolith detection and decomposition patterns
+- [Domain-Driven Design Bounded Contexts (Eric Evans)](https://martinfowler.com/bliki/DomainDrivenDesign.html) — DDD patterns for defining clear boundaries between modular components
+- [Microservices Decomposition Patterns (Red Hat)](https://www.redhat.com/en/topics/microservices) — Red Hat's guide to decomposing monolithic applications into microservices
+- [Software Granularity Heuristics (ACM Computing Surveys)](https://dl.acm.org/doi/10.1145/3563072) — ACM research paper on granularity heuristics for software component design

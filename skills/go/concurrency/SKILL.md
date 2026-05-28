@@ -148,3 +148,15 @@ When the skill is active, the model's output must include:
 | `go-error-handling`   | Provides error handling best practices in Go. |
 | `go-testing`          | Contains strategies for testing concurrent Go code. |
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Effective Go - Goroutines](https://go.dev/doc/effective_go#goroutines)
+- [Go Blog - Pipelines](https://go.dev/blog/pipelines)
+- [Concurrency Patterns in Go](https://go.dev/tour/concurrency/1)
+- [Go Sync Package Documentation](https://pkg.go.dev/sync)
+- [Go Concurrency Patterns Video](https://go.dev/blog/context)

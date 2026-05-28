@@ -335,9 +335,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OWASP Top Ten Web Application Security Risks](https://owasp.org/www-project-top-ten/)
+- [OWASP Testing Guide v4](https://owasp.org/www-project-web-security-testing-guide/latest/)
+- [NIST SP 800-115 — Technical Guide to Information Security Testing](https://csrc.nist.gov/publications/detail/sp/800-115/final)
+- [Rapid7 Metasploit Framework Documentation](https://docs.rapid7.com/metasploit/)
+- [Burp Suite Professional User Guide](https://portswigger.net/burp/documentation)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

@@ -1053,3 +1053,15 @@ Before completing your task, verify:
 
 
 Relative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Understanding Slippage in Trading](https://www.investopedia.com/terms/s/slippage.asp)
+- [Slippage Estimation Methods](https://docs.quantconnect.com/tutorials/commission-models)
+- [Market Impact and Slippage Analysis](https://en.wikipedia.org/wiki/Market_impact)
+- [Reducing Slippage in Algorithmic Trading](https://www.investopedia.com/articles/trading/08/slippage.asp)
+- [Slippage Modeling for Backtesting](https://docs.quantconnect.com/tutorials/backtesting-overview)

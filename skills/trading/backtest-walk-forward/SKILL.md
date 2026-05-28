@@ -816,3 +816,15 @@ Before completing your task, verify:
 
 5. Kelleher, J., & Langley, P. (2015). Deep Learning Necessitates Empirical Validation. *arXiv preprint arXiv:1511.04237*.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Walk-Forward Optimization Tutorial](https://docs.quantconnect.com/tutorials/walk-forward-optimization)
+- [Walk-Forward Analysis Explained](https://en.wikipedia.org/wiki/Walk_forward_validation)
+- [Rolling Window Backtesting Methods](https://www.investopedia.com/terms/r/rolling-analysis.asp)
+- [Preventing Overfitting in Strategy Testing](https://docs.quantconnect.com/tutorials/backtesting-pitfalls)
+- [Out-of-Sample Validation Techniques](https://machinelearningmastery.com/difference-between-a-test-set-and-validation-set/)

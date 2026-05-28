@@ -310,4 +310,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `agent-architecture-patterns` | Foundational architecture patterns that an agent manager orchestrates |
+| `multi-agent-task-orchestrator` | Multi-agent task decomposition and coordination strategies |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Azure AI Agent Service — Microsoft Docs](https://learn.microsoft.com/en-us/azure/ai-services/agent-service/overview)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Multi-Agent Systems — Wikipedia Overview](https://en.wikipedia.org/wiki/Multi-agent_system)
+- [Agent Orchestration Patterns — LangChain Docs](https://langchain-ai.github.io/langgraph/concepts/)
+- [LLM Agent Survey — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)

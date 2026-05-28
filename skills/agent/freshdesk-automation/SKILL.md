@@ -313,3 +313,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Freshdesk REST API Documentation](<https://developers.freshdesk.com/v2/docs>)
+- [Freshdesk Automation Rules](<https://support.freshdesk.com/en/support/solutions/articles/215019>)
+- [Freshdesk Webhooks Integration](<https://developers.freshdesk.com/v2/docs/webhooks>)
+- [Freshdesk AI Assist (Freddy)](<https://www.freshworks.com/ai/customer-service/>)
+- [Freshdesk Scripting API](<https://develop.freshworks.com/freshdesk-apps/sdk/scripting-api/#getticketdetails>)

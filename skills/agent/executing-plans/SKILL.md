@@ -315,3 +315,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Project Management Body of Knowledge (PMBOK)](<https://www.pmi.org/pmbok-guide-standards>)
+- [Agile Project Management (Scrum Guide)](<https://scrumguides.org/scrum-guide.html>)
+- [OKR Planning Framework](<https://www.atlassian.com/agile/project-management/okrs>)
+- [WBS Work Breakdown Structure](<https://en.wikipedia.org/wiki/Work_breakdown_structure>)
+- [Critical Path Method (CPM)](<https://en.wikipedia.org/wiki/Critical_path_method>)

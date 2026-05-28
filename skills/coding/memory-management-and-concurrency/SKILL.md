@@ -175,3 +175,13 @@ int main() {
 - Rely on manual memory management without using smart pointers.
 - Leave resources allocated in any error path, leading to leaks or exceptions.  
 - Overlook testing concurrency aspects of applications in multi-threaded developments.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia: Memory Management](https://en.wikipedia.org/wiki/Memory_management)
+- [Preshing on Programming — Memory Allocators Demystified](https://preshing.com/20121224/how-to-demonstrate-the-nuts-and-bolts-of-memory-allocators/)
+- [C++ Core Guidelines — RAII and Smart Pointers](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-resource)
+- [ISO C++ Standard — Concurrency Support Library](https://en.cppreference.com/w/cpp/thread)
+- [CMake Official Documentation](https://cmake.org/documentation/)

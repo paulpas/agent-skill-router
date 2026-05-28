@@ -102,4 +102,14 @@ When using this skill, the output must include:
 |---|---|
 | `allo-some-skill` | Helps with an allocation based on inference metrics. |
 | `quick-search` | Quick lookup methodology using Pinecone vectors. |
-| `data-preprocessing` | Prepares data for optimal index performance. |
+| `data-preprocessing` | Prepares data for optimal index performance.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Pinecone Documentation](https://docs.pinecone.io/) — Official Pinecone documentation covering indexes, namespaces, vectors, metadata filtering, and hybrid search
+- [Pinecone Python SDK (pinecone-io)](https://github.com/pinecone-io/pinecone-python-client) — Official Pinecone Python client library source code with usage examples
+- [Vector Database Comparison (Pinecone vs Milvus vs Weaviate)](https://docs.pinecone.io/guides/data/understanding-index-types) — Pinecone's guide to understanding different vector index types and their trade-offs
+- [FAISS Vector Similarity Search (Meta)](https://github.com/facebookresearch/faiss) — Meta's FAISS library documentation, a foundational reference for vector similarity search algorithms
+- [Embedding Models for Semantic Search (Hugging Face)](https://huggingface.co/spaces/mteb/leaderboard) — Hugging Face MTEB leaderboard ranking embedding models used with Pinecone vector databases |

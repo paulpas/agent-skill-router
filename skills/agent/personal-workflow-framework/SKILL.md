@@ -315,3 +315,13 @@ When this skill is active and invoked on a task, produce:
 | `workflow-patterns` | Generic orchestration patterns — this skill is the personalized variant tailored to individual needs |
 
 > 📖 skill(local cache): code-philosophy
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [DevOps Research and Assessment (DORA) Reports](https://www.puppet.com/resources/whitepaper/devops-research-and-assessment-report) — Empirical research on high-performing development workflows and team structures
+- [Kanban Method: Principles for Evolutionary Change](https://kanbanchi.com/blog/kanban-method-principles-for-evolutionary-change/) — Framework for iterative workflow improvement in software development
+- [Structured Thinking in Software Development (Martin Fowler)](https://martinfowler.com/articles/bottlenecks.html) — Patterns for managing workflow complexity and team bottlenecks
+- [Agile Estimation Techniques (Planning Poker, T-Shirt Sizing)](https://www.atlassian.com/agile/project-management/planning-poker) — Practical techniques for sizing and prioritizing development tasks
+- [Flow Metrics for Software Delivery (DORA)](https://cloud.google.com/blog/products/application-development/measuring-software-delivery-performance) — Key metrics for measuring and improving developer workflow efficiency

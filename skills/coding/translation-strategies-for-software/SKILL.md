@@ -46,3 +46,15 @@ Focus on user-facing elements that directly impact the user experience, ensuring
 While AI translation tools can offer drafts, human translators should review content for contextual accuracy and cultural alignment.
 
 By implementing robust translation strategies, organizations can significantly enhance their global outreach and user satisfaction while maintaining consistent quality in software products across multiple languages. This leads to improved user engagement and a broader user base in diverse markets.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — Internationalization and Localization](https://en.wikipedia.org/wiki/Internationalization_and_localization)
+- [Lingohub — Software Translation Best Practices](https://lingohub.com/blog/software-translation-best-practices/)
+- [Unicode Consortium — CLDR (Common Locale Data Repository)](https://cldr.unicode.org/)
+- [MDN Web Docs — Internationalization (i18n) and Localization (l10n)](https://developer.mozilla.org/en-US/docs/Mozilla/Localization)
+- [Google — Web App i18n Best Practices](https://web.dev/i18n/)

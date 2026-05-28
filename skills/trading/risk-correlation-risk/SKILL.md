@@ -236,3 +236,15 @@ class CorrelationRiskManager:
 ``````
 ```
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Correlation in Finance Explained](https://www.investopedia.com/terms/c/correlation.asp)
+- [Portfolio Correlation Analysis](https://en.wikipedia.org/wiki/Coefficient_of_correlation)
+- [Correlation Risk Management](https://www.investopedia.com/terms/c/correlation-risk.asp)
+- [Dynamic Correlation in Crisis Periods](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1495603)
+- [Diversification and Correlation Benefits](https://www.investopedia.com/terms/d/diversification.asp)

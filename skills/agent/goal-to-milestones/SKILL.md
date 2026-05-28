@@ -321,3 +321,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [OKR Framework (Objectives and Key Results)](<https://www.atlassian.com/agile/project-management/okrs>)
+- [Milestone Planning Best Practices (PMI)](<https://www.pmi.org/learning/library/project-milestones-6679>)
+- [Agile Sprint Planning Guide](<https://www.scrum.org/resources/blog/how-write-effective-user-stories-agile>)
+- [WBS for Milestone Breakdown](<https://en.wikipedia.org/wiki/Work_breakdown_structure>)
+- [SMART Goals Framework](<https://en.wikipedia.org/wiki/SMART_criteria>)

@@ -13,7 +13,7 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-instrumental-variables, ds-intervention-analysis, ds-observational-studies,
+  related-skills: ds-instrumental-variables, ds-intervention-analysis, ds-observational-studies
     ds-randomized-experiments ds-synthetic-control
   role: implementation
   scope: implementation
@@ -100,10 +100,10 @@ def estimate_ate_ols(df: pd.DataFrame, treatment_col: str, outcome_col: str, con
     df['propensity'] = ps_model.predict_proba(X[:, 1:])[:, 1]
     
     return {
-        'method': 'OLS with Confounders',
-        'ate': float(coef_treatment),
-        'confidence_interval': tuple(model.conf_int().loc[treatment_col]),
-        'p_value': float(model.pvalues[treatment_col]),
+        'method': 'OLS with Confounders'
+        'ate': float(coef_treatment)
+        'confidence_interval': tuple(model.conf_int().loc[treatment_col])
+        'p_value': float(model.pvalues[treatment_col])
         'r_squared': float(model.rsquared)
     }
 ```
@@ -169,10 +169,10 @@ class CausalInference:
         ate = np.mean(ipw_weights * (Y - predicted_treated))
         
         return {
-            'status': 'success',
-            'average_treatment_effect': float(ate),
-            'standard_error': float(np.std(ipw_weights * (Y - predicted_treated)) / np.sqrt(len(Y))),
-            'sample_size': len(Y),
+            'status': 'success'
+            'average_treatment_effect': float(ate)
+            'standard_error': float(np.std(ipw_weights * (Y - predicted_treated)) / np.sqrt(len(Y)))
+            'sample_size': len(Y)
             'confounders_used': self.confounders
         }
 ```
@@ -191,3 +191,15 @@ class CausalInference:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Causal Inference for Statistics, Machine Learning, and the Social Sciences](https://www.causalinferenceteaching.com/)
+- [Causal Inference — Wikipedia](https://en.wikipedia.org/wiki/Causal_inference)
+- [DoWhy: Causal Inference Library (Microsoft)](https://github.com/microsoft/dowhy)
+- [The Book of Why — Pearl & Mackenzie](https://basichypnosis.co.uk/pearl-mackenzie-the-book-of-why/)
+- [CausalNex — Causal Bayesian Networks (Uber)](https://casual-machine.github.io/causalnex/)

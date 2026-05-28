@@ -618,3 +618,13 @@ When this skill is active, the model's output must contain:
 | `coding-skill-quality-metrics` | Provides the quality scoring framework (code correctness, completeness, pattern adherence) that feeds into skill satisfaction calculations |
 | `agent-skill-trigger-engineering` | Defines how trigger keywords are engineered; this skill measures whether those engineering decisions produce good routing fidelity in practice |
 | `agent-skill-lifecycle-management` | Handles skill deprecation and retirement decisions; observability metrics from this skill feed directly into lifecycle transition thresholds |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenTelemetry Observability Framework](https://opentelemetry.io/docs/) — Official OpenTelemetry documentation for metrics, traces, and logs observability
+- [Prometheus Metrics Best Practices](https://prometheus.io/docs/practices/naming/) — Prometheus documentation on metric naming conventions and labeling strategies
+- [Grafana Dashboard Design Patterns](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/) — Grafana's guide to building effective observability dashboards
+- [ELK Stack for Log Analytics (Elastic)](https://www.elastic.co/what-is/elk-stack) — Elastic documentation on Elasticsearch, Logstash, and Kibana for centralized log analysis
+- [LangSmith Observability Platform](https://docs.smith.langchain.com/) — LangChain's observability platform for monitoring LLM application performance and tracing

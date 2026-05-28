@@ -322,4 +322,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-lifecycle-management` | Manages the upgrade lifecycle — versioning, migration, and backward compatibility during Rails upgrades |
+| `security-audit` | Provides security audit patterns to validate applications after major Rails framework upgrades |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Ruby on Rails Upgrade Guide](https://guides.rubyonrails.org/upgrading_ruby_on_rails.html) — Official Rails guides for upgrading between major and minor Rails versions
+- [Rails Security Advisory Archive](https://rubyonrails.org/security/) — Official Rails security advisory archive covering known vulnerabilities and fixes
+- [Ruby Version Upgrade Guide (ruby-lang.org)](https://www.ruby-lang.org/en/downloads/) — Ruby language version upgrade documentation and compatibility notes
+- [Active Record Migration Best Practices](https://guides.rubyonrails.org/active_record_migrations.html) — Official Rails guide on managing database migrations during framework upgrades
+- [Rails Performance Upgrades (GoRails)](https://gorails.com/) — GoRails tutorials on upgrading Rails applications with performance optimization strategies

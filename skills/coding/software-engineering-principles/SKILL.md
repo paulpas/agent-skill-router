@@ -283,3 +283,15 @@ When applying this skill to review or implement code, produce:
 | `coding-testing` | Complementary testing strategies that verify engineering contracts and module boundaries |
 | `coding-error-handling` | Deep dive into error handling patterns that complement defensive programming |
 | `coding-refactoring` | Practical techniques for untangling high-coupling, low-cohesion codebases |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — Software Engineering Principles](https://en.wikipedia.org/wiki/Software_engineering_principles)
+- [IEEE 730 — IEEE Standard for Software Quality Assurance Processes](https://standards.ieee.org/standard/730-2014.html)
+- [ISO/IEC/IEEE 15288 — Systems and Software Engineering — Life Cycle Processes](https://www.iso.org/standard/65694.html)
+- [Robert Martin — Clean Architecture: Principles of Software Design](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [SOLID Principles by Robert C. Martin](https://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)

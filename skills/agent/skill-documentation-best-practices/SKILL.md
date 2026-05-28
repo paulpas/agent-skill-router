@@ -574,3 +574,13 @@ Use this reference when deciding what belongs in each section of a SKILL.md:
 | Output Template | Skills producing structured output | Numbered template sections |
 | Related Skills Table | `related-skills` metadata is non-empty | Table with skill name + purpose |
 | Architecture Diagram | Complex multi-step workflows | ASCII flow diagram showing data/control flow |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [CommonMark Specification](https://spec.commonmark.org/) — Official Markdown specification that SKILL.md files follow
+- [YAML 1.2 Specification](https://yaml.org/spec/1.2/spec.html) — YAML format reference for frontmatter in skill files
+- [Google Developer Documentation Style Guide](https://developers.google.com/style) — Google's style guide for clear, consistent technical documentation
+- [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/microsoft-writing-style-guide/) — Microsoft's documentation writing standards applicable to AI skill documentation
+- [Technical Communication Best Practices (Lindsay Schneider)](https://www.technicalcommunication.se/blog) — Industry guide on clarity, structure, and audience awareness in technical documentation

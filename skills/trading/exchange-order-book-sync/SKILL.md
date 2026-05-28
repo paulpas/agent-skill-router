@@ -392,3 +392,15 @@ def reconcile_order_book(current_book: OrderBook, snapshot: OrderBookSnapshot):
     return True
 ```
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Binance API Documentation](https://docs.binance.org/)
+- [Order Book Synchronization Patterns](https://en.wikipedia.org/wiki/Limit_order_book)
+- [WebSocket Order Book Updates](https://docs.binance.org/websockets.html)
+- [Limit Order Book Recovery](https://arxiv.org/abs/1805.01469)
+- [Real-Time Order Book Reconciliation](https://docs.quantconnect.com/tutorials/order-book-analysis)

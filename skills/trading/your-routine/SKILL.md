@@ -776,3 +776,15 @@ The three phases of your routine map to the three states of a trading day:
 3. **Post-Market (Review)** — The world is still again. This is where you separate luck from skill through attribution analysis and ensure tomorrow's routine improves on today's weaknesses. Skipping post-market review means every mistake gets repeated, compounding over time.
 
 The ultimate goal is not rigid adherence for its own sake — it is building **automatic competence**. When your routine becomes unconscious competence, your conscious mind is freed to focus on edge refinement rather than process maintenance.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Algorithmic Trading Workflow](https://docs.quantconnect.com/tutorials/algorithms)
+- [Trading Journal Best Practices](https://www.investopedia.com/articles/trading/08/trading-journal.asp)
+- [Daily Pre-Market Routine for Traders](https://www.babypips.com/learn/forex/pre-market-routine-for-traders)
+- [QuantConnect Live Trading Setup](https://docs.quantconnect.com/tutorials/live-trading-overview)
+- [Behavioral Finance and Trading Discipline](https://www.investopedia.com/articles/trading/09/trading-psychology.asp)

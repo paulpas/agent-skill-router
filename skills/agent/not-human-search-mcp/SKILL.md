@@ -306,3 +306,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [SearXNG Meta Search Engine](<https://docs.searxng.org/>)
+- [Model Context Protocol (MCP) Specification](<https://modelcontextprotocol.io/specification/2024/11/05/basic>)
+- [DuckDuckGo Search API ( unofficial)](<https://pypi.org/project/python-duckduckgo-search/>)
+- [Tavily AI Search API](<https://docs.tavily.com/documentation/api-reference/search>)
+- [Brave Search API Documentation](<https://api.search.brave.com/docs/web/search/v1>)

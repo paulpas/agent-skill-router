@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements ARIMA, exponential smoothing, state-space models, LSTM networks,
+description: '"Implements ARIMA, exponential smoothing, state-space models, LSTM networks
   and deep learning methods for temporal prediction"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-feature-engineering, ds-neural-networks, ds-regression-evaluation
   role: implementation
   scope: implementation
-  triggers: time series forecasting, ARIMA, exponential smoothing, LSTM, forecasting,
+  triggers: time series forecasting, ARIMA, exponential smoothing, LSTM, forecasting
     time series prediction
   archetypes:
   - tactical
@@ -108,8 +108,8 @@ def basic_forecasting_pipeline(data: pd.Series, forecast_horizon: int = 10) -> d
     rmse = np.sqrt(mean_squared_error(test_data, test_forecasts))
     
     return {
-        'forecasts': forecasts,
-        'metrics': {'mae': mae, 'rmse': rmse},
+        'forecasts': forecasts
+        'metrics': {'mae': mae, 'rmse': rmse}
         'fitted_model': fitted_model
     }
 ```
@@ -187,3 +187,15 @@ class TimeSeriesForecasting:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Statsmodels Time Series Analysis](https://www.statsmodels.org/stable/tsa.html)
+- [What is Time Series Forecasting (Databricks Blog)](https://databricks.com/blog/what-time-series-forecasting)
+- [Prophet — Facebook/Meta Documentation](https://facebook.github.io/prophet/)
+- [Temporal Fusion Transformers (Google Research)](https://ai.googleblog.com/2021/06/temporal-fusion-transformers-for.html)
+- [Time Series Forecasting (Kaggle Learn)](https://www.kaggle.com/learn/time-series)

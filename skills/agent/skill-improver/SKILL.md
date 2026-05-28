@@ -332,4 +332,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-creator` | The creation counterpart — after creating skills, use this skill to iteratively improve them |
+| `self-critique-engine` | Provides critique methodologies that skill improver applies to evaluate and refine skills |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Continuous Integration Best Practices (Atlassian)](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment) — Atlassian's guide to continuous improvement practices applicable to skill iteration
+- [Code Refactoring Patterns (Fowler)](https://martinfowler.com/books/refactoring.html) — Martin Fowler's catalog of refactoring patterns applicable to improving existing skills
+- [Prompt Iteration and Optimization Techniques](https://www.promptingguide.ai/techniques/iterating) — Research on iterative prompt improvement methods applicable to skill refinement
+- [A/B Testing for Documentation (Microsoft)](https://learn.microsoft.com/en-us/azure/devops/project/about-continuous-integration) — Microsoft's guidance on testing documentation changes with measurable quality improvements
+- [Technical Writing Iterative Process (Google)](https://developers.google.com/style/editing-your-work) — Google's style guide on iterative editing and refinement processes for technical content

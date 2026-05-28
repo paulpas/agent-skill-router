@@ -63,3 +63,15 @@ name: llm-orchestration
 - **Rule:** Name each agent by its function: `MarketAnalyst`, `RiskAssessor`, `SignalGenerator`. Clear names → clear outputs.
 - **Defense:** System prompt should start with "You are `Role`, a specialized trading AI assistant. Your purpose is..."
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LangChain Getting Started](https://python.langchain.com/docs/get_started/introduction)
+- [LangGraph for Multi-Agent Workflows](https://langchain-ai.github.io/langgraph/)
+- [LLM Orchestration Patterns](https://learn.microsoft.com/azure/ai-studio/concepts/agentic-engineering-intro)
+- [Prompt Engineering Guide](https://www.promptingguide.ai/)
+- [Building LLM-Powered Applications](https://python.langchain.com/docs/tutorials/)

@@ -315,9 +315,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Upstash Qstash Documentation](https://upstash.com/docs/qstash/overall/whatIsQStash)
+- [Upstash REST API Reference](https://upstash.com/docs/qstash/overall/restAPI)
+- [Webhook Reliability Best Practices — Stripe Docs](https://stripe.com/docs/webhooks/best-practices)
+- [HTTP/2 Server Push and Retry Semantics](https://httpwg.org/specs/rfc7540.html)
+- [Exponential Backoff Pattern (AWS Architecture Blog)](https://aws.amazon.com/building-blocks/back-off-retry-strategies/)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

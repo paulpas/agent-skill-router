@@ -300,6 +300,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Audience Segmentation Methods (Wikipedia)](<https://en.wikipedia.org/wiki/Audience_segmentation>)
+- [Demographic Data Analysis Best Practices](<https://www.surveymonkey.com/mp/demographic-data/>)
+- [Market Research Methodologies Guide](<https://www.investopedia.com/terms/m/marketresearch.asp>)
+- [Data Privacy (GDPR Overview)](<https://gdpr.eu/what-is-gdpr/>)
+- [Sentiment Analysis in Social Media Analytics](<https://arxiv.org/abs/2010.13749>)
+
 ## Related Skills
 
 | Skill | Purpose |

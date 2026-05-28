@@ -877,3 +877,13 @@ When this skill is active, your output must contain:
 | `monolith-refactoring` | Incremental service extraction from a growing monolith |
 | `deployment-strategies` | Advanced blue-green and canary patterns beyond this skill's scope |
 | `database-optimization` | Heavy database schema refactoring, indexing strategies, partitioning |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Martin Fowler — Scaling the Monolith](https://martinfowler.com/articles/scaling-monolith.html)
+- [High Performance MySQL — Connection Pooling & Caching](https://www.oreilly.com/library/view/high-performance-mysql/9780596525725/)
+- [AWS Well-Architected Framework — Scaling Patterns](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+- [Redis Documentation — Caching Strategies](https://redis.io/docs/latest/develop/use/caching/)
+- [Nginx Blue-Green Deployment Guide](https://www.nginx.com/blog/zero-downtime-deployment-strategies/)

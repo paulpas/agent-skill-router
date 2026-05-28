@@ -342,4 +342,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `rag-pipelines` | Full RAG pipeline design with hybrid retrieval and re-ranking |
+| `agent-context-management` | Managing retrieved context within agent conversation windows |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [RAG — Paul Graham Essay](https://paulgraham.com/rags.html)
+- [LangChain RAG Tutorial — Pinecone Docs](https://www.pinecone.io/learn/series/langchain/)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [RAG Evaluation Frameworks — arXiv Survey](https://arxiv.org/abs/2404.13781)
+- [Vector Search and Embeddings Guide — Pinecone](https://www.pinecone.io/learn/vector-databases/)

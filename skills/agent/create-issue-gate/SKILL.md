@@ -308,6 +308,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub Issues API Reference](<https://docs.github.com/en/rest/issues>)
+- [Issue Templates (GitHub Docs)](<https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms>)
+- [Jira Issue Management Guide](<https://www.atlassian.com/agile/project-management/issues>)
+- [Issue Triage Best Practices (GitHub)](<https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects>)
+- [Project Board Automation Rules](<https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-sticky-sheets/automating-your-project>)
+
 ## Related Skills
 
 | Skill | Purpose |

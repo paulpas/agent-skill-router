@@ -320,9 +320,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [ISO 10816 — Mechanical Vibration Evaluation Standards](https://www.iso.org/standard/39785.html)
+- [IEEE Std 1057 — Digital Waveform Measurements](https://standards.ieee.org/standard/1057-2017.html)
+- [Fast Fourier Transform (FFT) Algorithm — Cooley & Tukey 1965](https://doi.org/10.1145/365696.365696)
+- [Scipy Signal Processing Documentation](https://docs.scipy.org/doc/scipy/signal.html)
+- [Vibration Analysis for Predictive Maintenance — NIST](https://www.nist.gov/topics/manufacturing/predictive-maintenance)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

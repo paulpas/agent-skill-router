@@ -242,3 +242,13 @@ When this skill is active, produce the following structure:
 | `cloud-architecture-patterns`  | Initial design ideation and reference patterns           |
 | `security-architecture-review` | Deep-dive security and compliance validation             |
 | `cost-optimization-review`     | Financial efficiency and resource right-sizing analysis  |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) — AWS's comprehensive framework for reviewing cloud architecture across six pillars
+- [Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/) — Microsoft Azure's reference architectures and design pattern documentation
+- [GCP Architecture Framework](https://cloud.google.com/architecture/framework) — Google Cloud's architectural frameworks for reliability, security, cost optimization, and operations
+- [12-Factor App Methodology](https://12factor.net/) — Martin Fowler's methodology for building SaaS applications with cloud-native architectures
+- [CNCF Cloud Native Architecture Patterns](https://www.cncf.io/planet-cloud-native/) — CNCF documentation on microservices, service mesh, and distributed system patterns

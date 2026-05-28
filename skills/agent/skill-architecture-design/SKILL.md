@@ -579,3 +579,13 @@ When decomposing a monolith, use this decision matrix to select the appropriate 
 | Applies same pattern across multiple contexts/markets | **Domain Narrowing** | Kill switches: account-level + strategy-level + market-level + infrastructure-level |
 
 **Decision rule:** If the monolith's sections are functionally independent (each can stand alone with its own tests), use Topic Decomposition. If they share a common abstraction layer, use Category Split.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Atomic Design by Brad Frost](https://atomicdesign.bradfrost.com/chapter-2/) — Foundational methodology for designing granular, composable design systems
+- [Modular Architecture Patterns (Martin Fowler)](https://martinfowler.com/articles/modular.html) — Fowler's analysis of modularity patterns and their tradeoffs in software architecture
+- [Microkernel Architecture Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/microkernel) — Microsoft Azure Architecture Center documentation on microkernel design for extensible systems
+- [Component-Based Software Engineering](https://dl.acm.org/doi/book/10.5555/317464) — ACM reference on component granularity and interface design principles
+- [Domain-Driven Design: Bounded Contexts (Eric Evans)](https://martinfowler.com/bliki/DomainDrivenDesign.html) — DDD patterns for defining clear boundaries between modular skill domains

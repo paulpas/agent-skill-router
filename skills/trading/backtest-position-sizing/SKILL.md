@@ -743,3 +743,15 @@ if __name__ == "__main__":
     print(f"Position: ${stats['dollar_position']:,.0f} ({stats['position_size']:.0f} units)")
     print(f"Expected Growth: {stats['expected_growth_rate']:.2%}")
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Position Sizing Fundamentals](https://www.investopedia.com/terms/p/position-sizing.asp)
+- [Kelly Criterion for Position Sizing](https://www.investopedia.com/articles/trading/07/kelly-criterion.asp)
+- [Fixed Fractional Position Sizing](https://docs.quantconnect.com/tutorials/algorithms)
+- [Volatility-Adjusted Position Sizing](https://en.wikipedia.org/wiki/Average_true_range)
+- [Risk-Based Portfolio Sizing](https://www.investopedia.com/terms/v/var.asp)

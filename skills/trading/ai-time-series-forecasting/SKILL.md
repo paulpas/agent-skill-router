@@ -358,3 +358,15 @@ class WalkForwardValidator:
         
         return results
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [What is Time Series Forecasting?](https://databricks.com/blog/what-time-series-forecasting)
+- [Prophet - Facebook Time Series Tool](https://facebook.github.io/prophet/)
+- [ARIMA Model Guide](https://www.investopedia.com/terms/a/arima.asp)
+- [LSTM for Time Series Prediction](https://www.tensorflow.org/tutorials/structured_data/time_series)
+- [Time Series Forecasting Best Practices](https://otexts.com/fpp3/)

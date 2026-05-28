@@ -952,3 +952,15 @@ When implementing toxic flow detection or a kill switch, produce:
 | `risk-kill-switches` | System-level emergency circuit breakers — broader than flow-toxicity-specific kill switches |
 | `execution-slippage-modeling` | Post-trade slippage decomposition into adverse selection vs. timing cost components |
 | `data-order-book` | Order book data structures and real-time snapshot processing needed for toxicity estimation |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Toxic Flow in Markets Explained](https://en.wikipedia.org/wiki/Toxic_flow)
+- [PIN - Probability of Informed Trading](https://www.investopedia.com/terms/p/pin.asp)
+- [Informed Trading Detection Methods](https://arxiv.org/abs/1805.01469)
+- [Order Flow Toxicity Metrics](https://en.wikipedia.org/wiki/Market_microstructure)
+- [VPIN - Volume-Synchronized Probability of Informed Trading](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2758976)

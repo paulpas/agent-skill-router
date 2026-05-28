@@ -133,3 +133,13 @@ deploy:
 - Avoid deploying from branches other than main or production. Always implement branching strategies for safer deployments.
 - Do not hard code sensitive information directly in the `.gitlab-ci.yml` file; use GitLab CI/CD variables instead.
 
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitLab CI/CD Documentation](https://docs.gitlab.com/ee/ci/) — Official GitLab CI/CD documentation covering pipelines, jobs, stages, runners, and caching
+- [GitLab CI YAML Reference](https://docs.gitlab.com/ee/ci/yaml/gitlab_yaml_configuration.html) — Official reference for all available `.gitlab-ci.yml` keywords and configurations
+- [GitLab Self-Managed Runners](https://docs.gitlab.com/ee/runners/) — GitLab documentation on configuring and managing CI/CD runners for self-hosted deployments
+- [GitLab CI/CD Best Practices (GitLab Blog)](https://about.gitlab.com/blog/categories/devops/) — GitLab's official blog posts on CI/CD optimization and best practices
+- [Reproducible Builds with GitLab CI](https://docs.gitlab.com/ee/ci/repeatable_builds/) — Official GitLab guide to ensuring reproducible builds in CI/CD pipelines
+

@@ -165,3 +165,15 @@ When applying this skill during planning sessions, produce:
 | `coding-yagni-code` | Applying YAGNI at the implementation level to eliminate dead code |
 | `coding-minimum-viable-product` | MVP scoping frameworks and validation techniques |
 | `agent-goal-to-milestones` | Breaking down scoped features into executable sprint milestones |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — YAGNI (You Aren't Gonna Need It)](https://en.wikipedia.org/wiki/YAGNI)
+- [Atlassian Agile Guide — Managing Scope & Backlog Prioritization](https://www.atlassian.com/agile/project-management/backlog)
+- [Scrum.org — MVP & Product Backlog Management](https://www.scrum.org/resources/what-mvp-minimum-viable-product)
+- [Dave Farley — Minimizing Unnecessary Work (YAGNI in Agile)](https://davefarley.net/?p=108)
+- [Lean Startup — MVP as a YAGNI Strategy for Product Development](https://en.wikipedia.org/wiki/Minimum_viable_product)

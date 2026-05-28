@@ -294,4 +294,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `closed-loop-delivery` | End-to-end delivery pipeline with feedback loops |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Practical Agile — Martin Fowler](https://martinfowler.com/articles/practicalAgile.html)
+- [Acceptance Criteria Patterns (BDD/SpecByExample)](https://www.cucumber.io/bdd/)
+- [Definition of Done — Scrum Guide 2020](https://scrumguides.org/scrum-guide.html)
+- [Behavior-Driven Development with Gherkin Syntax](https://cucumber.io/docs/gherkin/reference/)
+- [Acceptance Test-Driven Development (ATDD) Practices](https://www.agilealliance.org/glossary/atdd/)

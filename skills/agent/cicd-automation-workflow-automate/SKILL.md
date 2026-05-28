@@ -325,4 +325,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `closed-loop-delivery` | Delivery pipeline feedback and iteration patterns |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [Atlassian Git — Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
+- [GitLab CI/CD Pipeline Configuration](https://docs.gitlab.com/ee/ci/yaml/)
+- [Jenkins — Declarative Pipeline Syntax Reference](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/)
+- [ArgoCD — GitOps Continuous Delivery for Kubernetes](https://argo-cd.readthedocs.io/en/stable/)

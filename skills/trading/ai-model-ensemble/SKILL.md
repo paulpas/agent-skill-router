@@ -441,3 +441,13 @@ class EnsembleFailureDetector:
             'correlation_distribution': correlations
         }
 ```
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Ensemble Learning: A Survey (Dietterich, 2000)](https://link.springer.com/article/10.1023/A:1010933404324) — Thomas Dietterich's seminal paper on ensemble learning methods for improving prediction accuracy
+- [scikit-learn Ensemble Methods](https://scikit-learn.org/stable/modules/ensemble.html) — Official scikit-learn documentation on Bagging, Random Forests, Gradient Boosting, and AdaBoost
+- [Stacking and Blending Ensemble Techniques (Kaggle Guide)](https://www.kaggle.com/code/lextoumbourou/stacking-demo/notebook) — Kaggle's guide to stacking and blending ensemble methods for competitive machine learning
+- [Quantitative Trading with ML (Ernest Chan)](https://epchan.blogspot.com/) — Ernest Chan's blog on applying machine learning ensemble methods to quantitative trading strategies
+- [XGBoost Documentation](https://xgboost.readthedocs.io/) — Official XGBoost documentation for gradient-boosted decision trees, a dominant model in financial prediction

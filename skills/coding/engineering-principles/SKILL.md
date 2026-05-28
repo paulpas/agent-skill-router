@@ -1032,3 +1032,13 @@ When producing code under this skill, always structure output as follows:
 | `design-patterns-and-principles` | Use when you need deeper pattern knowledge (Observer, Strategy, Factory) that builds on these core principles for specific structural problems |
 
 > Note: The related skills (`code-review`, `refactoring`, `test-driven-development`) should list `engineering-principles` in their `metadata.related-skills` field for reciprocity. Ensure bidirectional linkage so users discover this skill when exploring complementary capabilities.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia: Software Engineering Principles](https://en.wikipedia.org/wiki/Software_engineering_principles)
+- [SOLID Principles — Robert C. Martin](https://web.archive.org/web/20220419163603/https://medium.com/@patrickcollins/solid-principles-explained-in-simple-and-simple-terms-877c17e5f0fc)
+- [Martin Fowler — Refactoring Catalog](https://martinfowler.com/refactoring/)
+- [Google Engineering Practices — Code Quality](https://google.github.io/eng-practices/review/)
+- [Clean Architecture — Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)

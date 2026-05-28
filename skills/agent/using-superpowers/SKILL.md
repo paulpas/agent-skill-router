@@ -323,9 +323,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microsoft AutoGen Framework](https://microsoft.github.io/autogen/)
+- [LangGraph Multi-Agent Orchestration](https://langchain-ai.github.io/langgraph/concepts/multi_agent/)
+- [CrewAI Multi-Agent Framework](https://docs.crewai.com/)
+- [OpenAI Agents SDK Overview](https://openai.com/index/introducing-the-agents-sdk/)
+- [Multi-Agent Orchestration Survey — arXiv](https://arxiv.org/abs/2309.03361)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

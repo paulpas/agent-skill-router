@@ -475,3 +475,15 @@ When this skill is active, produce:
 | `task-decomposition-engine` | Break down the chosen option's requirements into discrete implementable tasks |
 | `dynamic-replanner` | Re-evaluate and adjust decisions if circumstances change during execution |
 | `self-critique-engine` | Stress-test your own decision framework for blind spots and biases before finalizing |
+
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Decision Matrix Methodology (MIT)](<https://mitsloan.mit.edu/ideas-made-to-matter/decision-making-tools>)
+- [RICE Prioritization Framework (Atlassian)](<https://www.atlassian.com/agile/project-management/rice-prioritization>)
+- [MoSCoW Method (Baidu Agile)](<https://en.wikipedia.org/wiki/MoSCoW_method>)
+- [Weighted Scoring Model Guide](<https://www.pmi.org/learning/library/weighted-scoring-model-project-selection-6927>)
+- [Multi-Criteria Decision Analysis (MCDA)](<https://en.wikipedia.org/wiki/Multi-criteria_decision_analysis>)

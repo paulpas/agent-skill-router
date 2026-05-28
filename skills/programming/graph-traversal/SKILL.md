@@ -711,3 +711,15 @@ When implementing or reviewing graph traversal code, produce:
 |-------|---------|
 | `algorithms` | Broader algorithm reference guide including Dijkstra, Floyd-Warshall, dynamic programming patterns |
 | `for-loop-iteration` | Foundational iteration patterns that underpin graph traversal control flow |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Wikipedia — Graph Traversal](https://en.wikipedia.org/wiki/Graph_traversal)
+- [GeeksforGeeks — BFS and DFS](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+- [MIT OpenCourseWare — Graph Algorithms](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2020/)
+- [CP-Algorithms — Depth First Search](https://cp-algorithms.com/graph/depth-first-search.html)
+- [Wikipedia — Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)

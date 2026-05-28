@@ -392,3 +392,15 @@ class PerformanceTracker:
             "vwap_by_hour": dict(sorted(self.vwap_by_time.items()))
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Trade Reports Tutorial](https://docs.quantconnect.com/tutorials/trade-reports)
+- [Trade Execution Confirmation](https://www.investopedia.com/terms/f/fill.asp)
+- [Regulatory Trade Reporting Requirements](https://en.wikipedia.org/wiki/Trade_reporting)
+- [Order Lifecycle Tracking](https://docs.quantconnect.com/tutorials/algorithms)
+- [Post-Trade Data Management](https://www.investopedia.com/terms/t/trade.asp)

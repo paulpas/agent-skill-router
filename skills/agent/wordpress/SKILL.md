@@ -316,9 +316,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [WordPress.org Developer Resources](https://developer.wordpress.org/)
+- [WordPress REST API Documentation](https://developer.wordpress.org/rest-api/)
+- [WP-CLI Command Reference](https://developer.wordpress.org/cli/commands/)
+- [WordPress PHP Function Reference](https://developer.wordpress.org/reference/functions/)
+- [WordPress Plugin Boilerplate](https://github.com/WebDevStudios/WordPress-Plugin-Boilerplate)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

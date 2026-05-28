@@ -913,3 +913,15 @@ class ImpactCalibrator:
         except:
             return {'error': 'Calibration failed'}
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Market Impact Definition](https://en.wikipedia.org/wiki/Market_impact)
+- [Understanding Slippage and Impact](https://www.investopedia.com/terms/s/slippage.asp)
+- [Large Trade Execution Strategies](https://arxiv.org/abs/quant-ph/0405176)
+- [Market Microstructure and Impact Models](https://en.wikipedia.org/wiki/Market_microstructure)
+- [Paper Trading Market Reality Checks](https://docs.quantconnect.com/tutorials/backtesting-overview)

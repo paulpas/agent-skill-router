@@ -286,3 +286,15 @@ func GetUserByID(ctx context.Context, id string) (*User, error) {
 | `cloud-development` | Cloud-native patterns (graceful shutdown, health checks, config) |
 | `testing-strategies` | Table-driven tests, mocks, benchmarks, and integration testing |
 | `error-handling` | Custom error types, retry patterns, and failure recovery strategies |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Effective Go Guide](https://go.dev/doc/effective_go)
+- [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments)
+- [Go Proverbs](https://go-proverbs.github.io/)
+- [Go Blog - Style Guidelines](https://go.dev/blog/gofmt)
+- [Uber Go Style Guide](https://github.com/uber-go/guide/blob/master/style.md)

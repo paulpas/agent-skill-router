@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Scales and normalizes features using standardization, normalization,
+description: '"Provides Scales and normalizes features using standardization, normalization
   robust scaling, and other scaling methods for model compatibility"'
 license: MIT
 maturity: stable
@@ -81,8 +81,8 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 # Generate sample data with different scales and distributions
 np.random.seed(42)
 data = pd.DataFrame({
-    'feature_A': np.random.normal(loc=100, scale=10, size=100),
-    'feature_B': np.random.uniform(low=0, high=1, size=100),
+    'feature_A': np.random.normal(loc=100, scale=10, size=100)
+    'feature_B': np.random.uniform(low=0, high=1, size=100)
     'feature_C': np.random.exponential(scale=5, size=100)
 })
 
@@ -152,12 +152,12 @@ class FeatureScaling:
             logger.info(f"Successfully scaled {len(target_cols)} columns using {self.method}")
             
             return {
-                'status': 'success',
-                'scaled_data': result_df,
+                'status': 'success'
+                'scaled_data': result_df
                 'metadata': {
-                    'method': self.method,
-                    'columns_scaled': target_cols,
-                    'original_shape': data.shape,
+                    'method': self.method
+                    'columns_scaled': target_cols
+                    'original_shape': data.shape
                     'scaled_shape': result_df.shape
                 }
             }
@@ -180,3 +180,15 @@ class FeatureScaling:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Preprocessing](https://scikit-learn.org/stable/modules/preprocessing.html)
+- [StandardScaler, MinMaxScaler, RobustScaler — Scikit-learn docs](https://scikit-learn.org/stable/modules/preprocessing.html)
+- [Feature Scaling (Kaggle Learn)](https://www.kaggle.com/learn/pandas)
+- [Normalization vs Standardization (Towards Data Science)](https://towardsdatascience.com/normalization-vs-standardization-66282a250611)
+- [Feature Scaling — MLflow preprocessing](https://mlflow.org/docs/latest/python_api/mlflow.sklearn.html)

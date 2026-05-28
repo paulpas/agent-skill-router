@@ -369,4 +369,16 @@ When this skill is active, the model's output must contain:
 
 ---
 
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google Python Style Guide — Naming Conventions (s3.1)](https://google.github.io/styleguide/pyguide.html#s3.1-identifiers)
+- [PEP 8 — Style Guide for Python Code: Naming Conventions](https://peps.python.org/pep-0008/#naming-conventions)
+- [Microsoft C# Naming Guidelines — .NET Documentation](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/naming-conventions)
+- [Mozilla MDN — JavaScript Naming Conventions Best Practices](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Code_style/naming_guidelines)
+- [Sonatype — Code Style Guide for Java Developers](https://www.sonatype.com/hubfs/Code%20Style%20Guide.pdf)
+
+---
+
 *This skill operationalizes Robert Martin's "Clean Code" chapter on variables: "The name of a variable, function, or class should answer all the big questions. It should tell you why it exists, what it does, and how it is used." Referenced standards include Clean Code (Martin, 2008), PEP 8 (Python Enhancement Proposal 8), SOLID principles (maintainability aspect), and DRY principle.*

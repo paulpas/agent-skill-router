@@ -726,3 +726,15 @@ When applying this skill, produce the following structured output:
 | `memory-systems` | Long-term memory stores and retrieval patterns that complement RAG — vector databases, knowledge graphs, and episodic memory for multi-turn conversations with a single user. |
 | `tool-use-function-calling` | When retrieved context is insufficient, use tool calling to fetch additional data from APIs or databases as a fallback before falling back to the LLM's parametric knowledge. |
 | `planning-reasoning` | Complex queries often need multi-step retrieval — decompose compound questions into sub-queries, retrieve for each, then synthesize a combined answer using planning strategies. |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [How to Implement RAG with LangChain — LangChain Blog](https://blog.langchain.dev/how-to-implement-rag-with-langchain-and-opensearch/)
+- [LangChain RAG Documentation](https://python.langchain.com/docs/use_cases/question_answering/quickstart/)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [RAG Evaluation Frameworks — arXiv Survey (2404.13781)](https://arxiv.org/abs/2404.13781)
+- [Hybrid Search with BM25 and Vector Embeddings — Pinecone Guide](https://www.pinecone.io/learn/hybrid-search/)

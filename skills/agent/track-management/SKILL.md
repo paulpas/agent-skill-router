@@ -315,9 +315,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microsoft Azure DevOps Boards — Work Items](https://learn.microsoft.com/en-us/azure/devops/boards/)
+- [Jira Agile Guide — Issue Management](https://www.atlassian.com/agile/project-management)
+- [GitLab Issues & Milestones Documentation](https://docs.gitlab.com/ee/user/project/issues/)
+- [Linear Product Documentation](https://linear.app/product)
+- [RESTful API Design Best Practices (Fielding REST Thesis)](https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

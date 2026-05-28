@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements reproducible research practices including code organization,
+description: '"Implements reproducible research practices including code organization
   environment management, documentation, and experiment tracking"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-data-versioning, ds-explainability, ds-model-robustness, ds-privacy-ml
   role: implementation
   scope: implementation
-  triggers: reproducible research, reproducibility, code organization, environment,
+  triggers: reproducible research, reproducibility, code organization, environment
     notebooks, how do I reproduce
   archetypes:
   - tactical
@@ -94,9 +94,9 @@ def setup_reproducible_environment(seed: int = 42) -> Dict[str, Any]:
     np.random.seed(seed)
     
     config = {
-        'seed': seed,
-        'environment': 'reproducible',
-        'timestamp': 'setup_complete',
+        'seed': seed
+        'environment': 'reproducible'
+        'timestamp': 'setup_complete'
         'libraries': {'numpy': np.__version__, 'pandas': pd.__version__}
     }
     logger.info(f"Reproducible environment configured with seed: {seed}")
@@ -145,9 +145,9 @@ class ExperimentManager:
         
         # Save artifacts
         metadata = {
-            'run_id': run_id,
-            'params': model_params,
-            'metrics': metrics,
+            'run_id': run_id
+            'params': model_params
+            'metrics': metrics
             'data_shape': list(data.shape)
         }
         with open(run_dir / "metadata.json", "w") as f:
@@ -189,3 +189,15 @@ def good_pipeline(data: pd.DataFrame, seed: int = 42) -> float:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Reproducible Research — Wikipedia](https://en.wikipedia.org/wiki/Reproducible_research)
+- [Jupyter Documentation](https://jupyter.org/)
+- [DVC (Data Version Control)](https://dvc.org/)
+- [MLflow Reproducible Workflows](https://mlflow.org/docs/latest/tracking.html)
+- [Computational Reproducibility — Nature Publishing Group](https://www.nature.com/srep/journal-policy/reproducibility)

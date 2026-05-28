@@ -571,3 +571,15 @@ Before completing your task, verify:
 
 ## Base Directory
 file:///home/paulpas/git/ideas/trading_bot/skills/exchange-integration
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Binance WebSocket API](https://docs.binance.org/websockets.html)
+- [WebSocket Reconnection Strategies](https://en.wikipedia.org/wiki/WebSocket)
+- [Real-Time Market Data with WebSockets](https://docs.quantconnect.com/tutorials/live-trading-overview)
+- [WebSocket Message Parsing Best Practices](https://www.investopedia.com/terms/w/websocket.asp)
+- [Handling WebSocket Disconnections](https://docs.ccxt.org/en/latest/manual.html#market-data)

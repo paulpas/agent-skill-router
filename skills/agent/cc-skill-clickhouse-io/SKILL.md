@@ -318,6 +318,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [ClickHouse Documentation](<https://clickhouse.com/docs>)
+- [ClickHouse SQL Reference](<https://clickhouse.com/docs/en/sql-reference/>)
+- [Column-Oriented DBMS (Wikipedia)](<https://en.wikipedia.org/wiki/Column-oriented_DBMS>)
+- [ClickHouse Benchmarks](<https://clickhouse.com/benchmarks>)
+- [ClickHouse GitHub Repository](<https://github.com/ClickHouse/ClickHouse>)
+
 ## Related Skills
 
 | Skill | Purpose |

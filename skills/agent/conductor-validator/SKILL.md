@@ -303,6 +303,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Workflow Schema Validation Patterns](<https://json-schema.org/learn/getting-started-step-by-step>)
+- [OpenAPI Specification for API Validation](<https://swagger.io/specification/>)
+- [JSON Schema Documentation](<https://json-schema.org/understanding-json-schema/>)
+- [Netflix Conductor Task Validators](<https://netflix.github.io/conductor/core-concepts/task/>)
+- [Input/Output Validation Frameworks (Pydantic)](<https://docs.pydantic.dev/latest/>)
+
 ## Related Skills
 
 | Skill | Purpose |

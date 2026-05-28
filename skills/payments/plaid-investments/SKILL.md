@@ -249,3 +249,15 @@ When implementing Plaid Investments, output must contain:
 |-------|---------|
 | `plaid-authentication` | Initial brokerage account linking before investment data retrieval |
 | `plaid-transactions` | Combine banking and investment transactions for full financial picture |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Plaid Investments API Documentation](https://plaid.com/docs/api/products/investments/)
+- [Plaid Link Token & Auth Setup](https://plaid.com/docs/auth/)
+- [Portfolio Aggregation with Plaid](https://plaid.com/docs/investments/portfolio-aggregation/)
+- [Plaid Holdings & Positions Reference](https://plaid.com/docs/api/products/investments/#investmentsgetv2)
+- [Brokerage Account Linking Guide](https://plaid.com/docs/link/products/#investments)

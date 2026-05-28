@@ -300,6 +300,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Strategic Management Theory (Porter's Five Forces)](<https://en.wikipedia.org/wiki/Five_Forces_Analysis>)
+- [Business Model Canvas (Strategyzer)](<https://www.strategyzer.com/canvas/business-model-canvas>)
+- [OKR Framework Guide (Google)](<https://www.atlassian.com/agile/project-management/okrs>)
+- [Decision Matrix Methods](<https://en.wikipedia.org/wiki/Multi-criteria_decision_analysis>)
+- [SWOT Analysis in Strategic Planning](<https://hbr.org/1985/07/how-to-assess-your-company-strengths-and-weaknesses>)
+
 ## Related Skills
 
 | Skill | Purpose |

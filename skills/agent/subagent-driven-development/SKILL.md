@@ -321,4 +321,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `parallel-skill-runner` | Executes subagent tasks in parallel — complements the delegation patterns covered here |
+| `task-decomposition-engine` | Decomposes tasks into subagent assignments — the upstream process for subagent-driven workflows |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microsoft AutoGen Documentation](https://microsoft.github.io/autogen/stable/) — Microsoft's framework for building multi-agent conversation systems
+- [CrewAI Multi-Agent Framework](https://docs.crewai.com/) — Official CrewAI documentation for orchestrating role-based AI agent teams
+- [LLM Agent Orchestration Patterns (LangGraph)](https://langchain-ai.github.io/langgraph/concepts/high_level/) — LangGraph patterns for coordinating multiple LLM agents
+- [Multi-Agent System Design Patterns (Stanford CS224)](https://github.com/stanfordnlp/dspy) — Stanford's research on multi-agent system architectures and coordination patterns
+- [Delegation Patterns in AI Agents (OpenAI Cookbook)](https://cookbook.openai.com/) — OpenAI's cookbook examples for agent delegation and tool-use orchestration

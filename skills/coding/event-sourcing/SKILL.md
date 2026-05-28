@@ -130,4 +130,16 @@ class DomainEvent:
         }
 
 
-# 
+#
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Event Sourcing Pattern (Microsoft Azure Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+- [Event Sourcing — Martin Fowler Bliki](https://martinfowler.com/eaaDev/EventSourcing.html)
+- [Event Store Platform Documentation](https://eventstore.com/docs/)
+- [Axon Framework Event Sourcing Guide](https://docs.axoniq.io/reference-guide/extensions/event-sourcing)
+- [Building an Event-Sourced System (Event-Driven.io)](https://event-driven.io/en/event_sourcing_pattern/) 

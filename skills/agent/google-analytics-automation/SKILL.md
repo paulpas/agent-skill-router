@@ -341,3 +341,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Google Analytics 4 (GA4) Documentation](<https://developers.google.com/analytics>)
+- [GA4 REST API Reference](<https://developers.google.com/analytics/devguides/reporting/data/v1>)
+- [Google Analytics Admin API](<https://developers.google.com/analytics/devguides/config/admin/v1>)
+- [Google Tag Manager Documentation](<https://support.google.com/tagmanager/>)
+- [GA4 Event Tracking Guide](<https://developers.google.com/analytics/devguides/collection/protocol/ga4/events>)

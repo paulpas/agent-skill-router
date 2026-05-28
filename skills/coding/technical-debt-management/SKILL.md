@@ -710,3 +710,15 @@ When applying this skill, produce output in the following structure:
 | `engineering-principles`  | Foundational principles (SOLID, DRY, KISS) that prevent new debt   |
 | `refactoring-techniques`  | Specific transformations to apply when paying down identified debt |
 | `code-quality-policies`   | Policies and thresholds for automated quality gates in CI/CD       |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Martin Fowler — Tech Debt](https://martinfowler.com/bliki/TechDebt.html)
+- [Sonatype — Technical Debt Management Guide](https://www.sonarsource.com/solutions/technical-debt/)
+- [Microsoft — Technical Debt Assessment Framework for .NET](https://learn.microsoft.com/en-us/azure/architecture/framework/devops/technical-debt)
+- [OWASP — Technical Debt and Security Risk](https://owasp.org/www-community/vulnerabilities/)
+- [Refactoring.guru — Technical Debt Catalog](https://refactoring.guru/refactoring/smells)

@@ -297,6 +297,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Lead Generation Best Practices (HubSpot)](<https://www.hubspot.com/marketing-statistics>)
+- [CRM Integration Patterns (Salesforce)](<https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/>)
+- [Data Enrichment Methods Overview](<https://en.wikipedia.org/wiki/Data_enrichment>)
+- [B2B Lead Data Sources (ZoomInfo)](<https://www.zoominfo.com/company/blog/b2b-lead-generation-guide>)
+- [GDPR Compliance for Lead Generation](<https://gdpr.eu/business/what-is-gdpr-compliance/>)
+
 ## Related Skills
 
 | Skill | Purpose |

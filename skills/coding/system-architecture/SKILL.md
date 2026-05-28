@@ -585,3 +585,15 @@ When this skill is active and tasked with designing or auditing an architecture,
 ---
 
 *This skill applies SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) as the theoretical foundation for all architectural decisions. The Dependency Rule is an instantiation of DRY applied at the module level: business logic written once in the domain layer, accessed through interfaces rather than duplicated across adapter implementations.*
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — System Architecture](https://en.wikipedia.org/wiki/System_architecture)
+- [Wikipedia — Enterprise Architecture](https://en.wikipedia.org/wiki/Enterprise_architecture)
+- [Microsoft Azure Architecture Center — Architectural Patterns](https://learn.microsoft.com/en-us/azure/architecture/framework/)
+- [Martin Fowler — Hexagonal Architecture (Ports and Adapters)](https://martinfowler.com/bliki/HexagonalArchitecture.html)
+- [CNCF — Cloud Native Application Patterns Reference](https://www.cncf.io/blog/2023/04/18/cloud-native-application-patterns/)

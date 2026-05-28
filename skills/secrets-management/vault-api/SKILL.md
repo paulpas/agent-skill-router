@@ -35,3 +35,15 @@ Access is controlled using policy documents that specify which users or roles ca
 Absolutely! You can set up webhooks or Lambda functions to trigger based on changes or updates to your secrets, allowing for responsive security practices.
 
 By implementing best practices for using the HashiCorp Vault API, organizations can significantly enhance their security posture while ensuring a reliable means of managing sensitive data across applications, thereby meeting compliance standards and maintaining user trust in their systems.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [HashiCorp Vault API Documentation](https://developer.hashicorp.com/vault/docs/api)
+- [Vault Secret Engines Reference](https://developer.hashicorp.com/vault/docs/secrets)
+- [Vault Authentication Methods](https://developer.hashicorp.com/vault/docs/auth)
+- [Vault Policy Language Reference](https://developer.hashicorp.com/vault/docs/policies)
+- [Vault Dynamic Secrets Guide](https://developer.hashicorp.com/vault/docs/secrets/dynamic)

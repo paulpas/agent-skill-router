@@ -231,3 +231,15 @@ When applying this skill to route a task, produce:
 | `dependency-graph-builder` | Maps inter-skill dependencies before routing to prevent circular execution |
 | `parallel-skill-runner` | Executes multiple selected skills concurrently when tasks are independent |
 | `dynamic-replanner` | Adjusts routing strategy based on historical performance and failure patterns |
+
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Information Retrieval and Semantic Search Survey](<https://arxiv.org/abs/2001.00427>)
+- [LangChain Document Loaders](<https://python.langchain.com/docs/modules/data_connection/document_loaders/>)
+- [Embedding Models Comparison (MTEB)](<https://huggingface.co/spaces/mteb/leaderboard>)
+- [BM25 Retrieval Algorithm](<https://en.wikipedia.org/wiki/Okapi_BM25>)
+- [Vector Search with FAISS](<https://faiss.ai/>)

@@ -112,3 +112,15 @@ npm install
 ### MUST NOT DO
 - Mix ESM and CJS syntax within the same file.
 - Allow packages to grow without clear ownership and maintainability practices.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Turborepo — Official Documentation](https://turborepo.com/docs)
+- [pnpm Workspaces Documentation](https://pnpm.io/workspaces)
+- [Nx — Monorepo Architecture & Task Orchestration Docs](https://nx.dev/)
+- [TypeScript Handbook — Module Resolution in Monorepos](https://www.typescriptlang.org/docs/handbook/esm-node.html)
+- [Node.js Documentation — ESM vs CJS Modules](https://nodejs.org/api/esm.html)

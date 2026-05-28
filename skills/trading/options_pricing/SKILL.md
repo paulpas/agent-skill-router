@@ -158,3 +158,14 @@ def binomial_tree(S: float, K: float, T: float, r: float, sigma: float, N: int, 
 
     return option_prices[0, 0]
 ```
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Black-Scholes Model](https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model)
+- [Options Pricing Fundamentals](https://www.investopedia.com/options-4428194)
+- [Binomial Option Pricing Model](https://www.investopedia.com/terms/b/binomial-option-pricing-model.asp)
+- [Options Greeks in Pricing](https://www.investopedia.com/trading/introduction-to-the-greeks/)
+- [Monte Carlo Methods for Options](https://en.wikipedia.org/wiki/Monte_Carlo_method)

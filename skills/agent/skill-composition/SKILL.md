@@ -644,3 +644,13 @@ When designing or reviewing a multi-skill composition, produce:
 | `task-decomposition-engine` | Decomposes complex tasks into sub-tasks suitable for skill routing |
 | `intelligent-skill-selection` | Routes individual tasks to the best matching skill |
 | `skill-router-system` | Infrastructure for managing skill auto-loading and trigger matching |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LangGraph Sequential and Parallel Patterns](https://langchain-ai.github.io/langgraph/concepts/orchestration/) — Official LangGraph documentation on composing chains of agents with sequential, parallel, and conditional flows
+- [Temporal Workflow Orchestration](https://docs.temporal.io/workflows) — Temporal's documentation for building reliable multi-step workflows with fault tolerance
+- [Apache Airflow DAG Patterns](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) — Apache Airflow documentation on defining complex task dependencies and orchestration flows
+- [Choreography vs Orchestration (Microsoft Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/orchestration-choreography) — Microsoft's comparison of orchestration patterns for distributed systems
+- [Saga Pattern for Distributed Transactions (Martin Fowler)](https://martinfowler.com/articles/saga.html) — Fowler's reference on the Saga pattern for managing multi-step distributed workflows

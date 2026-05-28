@@ -903,3 +903,15 @@ When implementing or reviewing framework orchestration routing, produce:
 | `confidence-based-selector` | Confidence scoring mechanism that can feed into framework selection decisions |
 | `agent-architecture-patterns` | Higher-level agent architecture patterns including hub-and-spoke, hierarchical, and peer-to-peer topologies |
 | `workflow-patterns` | General workflow orchestration — use when all components live within a single framework |
+
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [LangChain Documentation](<https://python.langchain.com/docs/get_started/introduction>)
+- [LlamaIndex Documentation](<https://docs.llamaindex.ai/en/stable/>)
+- [CrewAI Official Documentation](<https://docs.crewai.com/>)
+- [Microsoft AutoGen Documentation](<https://microsoft.github.io/autogen/0.2/>)
+- [Model Context Protocol (MCP) Specification](<https://modelcontextprotocol.io/>)

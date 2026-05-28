@@ -93,3 +93,13 @@ def step_then_the_result_should_be(context, expected):
 ### MUST NOT DO
 - Avoid skipping any step in the TDD or BDD workflows.
 - Do not ignore collaboration with stakeholders during the BDD process. 
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PyTest Documentation](https://docs.pytest.org/en/stable/) — Official PyTest reference covering fixtures, parametrization, plugins, and assertion rewriting
+- [pytest-xdist for Parallel Test Execution](https://pytest-xdist.readthedocs.io/) — PyTest plugin documentation for running tests in parallel across CPU cores
+- [Cucumber BDD Framework](https://cucumber.io/docs/bdd/) — Official Cucumber documentation for behavior-driven development with Gherkin syntax
+- [JUnit 5 Testing Guide (Oracle)](https://junit.org/junit5/docs/current/user-guide/) — JUnit 5 user guide for Java testing including assertions, parameterized tests, and extensions
+- [Testing Taxonomy by James Bach](https://www.satisfice.com/testing-taxonomy) — James Bach's research on test categories (state-based, behavior-based, exploratory) and when to apply each

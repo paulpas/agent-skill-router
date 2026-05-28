@@ -234,3 +234,13 @@ When implementing or reviewing output formatting logic, produce:
 | `prompt-engineering` | Designs input prompts that naturally yield well-formatted outputs |
 | `error-handling` | Provides patterns for catching and reporting format validation failures |
 | `test-driven-development` | Ensures output templates are covered by regression test suites |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [JSON Schema Specification](https://json-schema.org/) — Official JSON Schema specification for defining, validating, and documenting structured data formats
+- [RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format](https://datatracker.ietf.org/doc/html/rfc8259) — IETF standard defining the JSON format and its canonical representation rules
+- [YAML 1.2 Specification](https://yaml.org/spec/1.2/spec.html) — Official YAML specification for human-readable configuration and data serialization formats
+- [CSV Format (RFC 4180)](https://datatracker.ietf.org/doc/html/rfc4180) — IETF standard defining the CSV file format for tabular data interchange
+- [OpenAPI Specification](https://www.openapis.org/) — OpenAPI specification for describing API request/response formats as structured output contracts

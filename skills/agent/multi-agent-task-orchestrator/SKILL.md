@@ -289,4 +289,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `langgraph` | LangGraph state machine patterns for multi-agent workflow execution |
+| `parallel-agents` | Parallel agent execution strategies within orchestrated workflows |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LangGraph Multi-Agent Documentation](https://langchain-ai.github.io/langgraph/concepts/multi_agent/)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Multi-Agent System Survey — arXiv (2402.16817)](https://arxiv.org/abs/2402.16817)
+- [LLM Agent Survey — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- [Agent Orchestration — LangChain Blog](https://blog.langchain.dev/orchestrate-multi-agent-systems-with-langgraph/)

@@ -316,3 +316,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [GitHub PR Review Best Practices](<https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-a-pull-request/about-pull-request-reviews>)
+- [Diff Checker and Code Comparison Tools](<https://www.gnu.org/software/diffutils/>)
+- [Code Review Checklist (Google Engineering)](<https://google.github.io/eng-practices/review/reviewer/>)
+- [Conventional Commits Specification](<https://www.conventionalcommits.org/en/v1.0.0/>)
+- [Pull Request Template Guidelines (GitHub Docs)](<https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository>)

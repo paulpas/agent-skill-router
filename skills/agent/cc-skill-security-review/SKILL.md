@@ -316,6 +316,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OWASP Top 10 Web Application Risks](<https://owasp.org/www-project-top-ten/>)
+- [OWASP Testing Guide v4](<https://owasp.org/www-project-web-security-testing-guide/>)
+- [CWE/SANS Top 25 Most Dangerous Software Errors](<https://cwe.mitre.org/top25/>)
+- [NIST Cybersecurity Framework](<https://www.nist.gov/cyberframework>)
+- [SAST vs DAST Comparison (OWASP)](<https://owasp.org/www-community/Application_Vulnerability_Scan>)
+
 ## Related Skills
 
 | Skill | Purpose |

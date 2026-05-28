@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Evaluates classification models using precision, recall, F1-score,
+description: '"Evaluates classification models using precision, recall, F1-score
   ROC-AUC, confusion matrix, and other classification metrics"'
 license: MIT
 maturity: stable
@@ -80,7 +80,7 @@ from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
-    precision_score, recall_score, f1_score,
+    precision_score, recall_score, f1_score
     roc_auc_score, confusion_matrix, classification_report
 )
 
@@ -96,10 +96,10 @@ y_prob = model.predict_proba(X_test)[:, 1]
 
 # Calculate core classification metrics
 metrics = {
-    'precision': precision_score(y_test, y_pred),
-    'recall': recall_score(y_test, y_pred),
-    'f1_score': f1_score(y_test, y_pred),
-    'roc_auc': roc_auc_score(y_test, y_prob),
+    'precision': precision_score(y_test, y_pred)
+    'recall': recall_score(y_test, y_pred)
+    'f1_score': f1_score(y_test, y_pred)
+    'roc_auc': roc_auc_score(y_test, y_prob)
     'confusion_matrix': confusion_matrix(y_test, y_pred).tolist()
 }
 
@@ -192,3 +192,15 @@ def good_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float]:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Model Evaluation — Classification Metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics)
+- [Precision, Recall, F1-Score Explained (Scikit-learn docs)](https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html)
+- [ROC Curves — Scikit-learn](https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html)
+- [Imbalanced Classification Metrics (Kaggle Learn)](https://www.kaggle.com/learn/metrics-for-machine-learning-education)
+- [Classification Report — MLflow metrics](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.classification_report)

@@ -13,11 +13,11 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-causal-inference, ds-observational-studies, ds-randomized-experiments,
+  related-skills: ds-causal-inference, ds-observational-studies, ds-randomized-experiments
     ds-synthetic-control ds-synthetic-control
   role: implementation
   scope: implementation
-  triggers: treatment effects, intervention analysis, CATE, heterogeneous effects,
+  triggers: treatment effects, intervention analysis, CATE, heterogeneous effects
     treatment response
   archetypes:
   - tactical
@@ -104,10 +104,10 @@ def estimate_ate_propensity_score(data: pd.DataFrame, treatment_col: str, outcom
     ate = weighted_treated - weighted_control
     
     return {
-        'ate': float(ate),
-        'propensity_scores': propensity_scores,
-        'weights': weights,
-        'treated_mean': float(weighted_treated),
+        'ate': float(ate)
+        'propensity_scores': propensity_scores
+        'weights': weights
+        'treated_mean': float(weighted_treated)
         'control_mean': float(weighted_control)
     }
 ```
@@ -188,3 +188,15 @@ class InterventionAnalysis:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Intervention Analysis — Wikipedia](https://en.wikipedia.org/wiki/Intervention_analysis)
+- [statsmodels SARIMAX (Intervention/Dummy Variables)](https://www.statsmodels.org/stable/generated/statsmodels.tsa.statespace.SARIMAX.html)
+- [Time Series Intervention Detection (NIST Handbook)](https://www.itl.nist.gov/div898/handbook/tsa/section3/tsa36.htm)
+- [CausalImpact — Bayesian Structural Time Series (Google)](https://github.com/google/CausalImpact)
+- [Interrupted Time Series Analysis (Journal of Clinical Epidemiology)](https://www.sciencedirect.com/science/article/pii/S0895435617305133)

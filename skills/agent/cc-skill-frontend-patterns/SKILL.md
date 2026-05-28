@@ -317,6 +317,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [CSS Grid Layout Module (MDN)](<https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout>)
+- [React Documentation](<https://react.dev/reference/react>)
+- [Web Components Specification (W3C)](<https://dev.w3.org/html5/shadow-dom/>)
+- [Accessibility Guidelines WCAG 2.1](<https://www.w3.org/WAI/WCAG21/quickref/>)
+- [Component-Driven Development Storybook](<https://storybook.js.org/docs/react/get-started/introduction>)
+
 ## Related Skills
 
 | Skill | Purpose |

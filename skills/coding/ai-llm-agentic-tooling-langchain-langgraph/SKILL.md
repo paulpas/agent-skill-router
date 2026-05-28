@@ -118,3 +118,13 @@ executor.run()
 ### MUST NOT DO
 - Skip testing integrations with external APIs and tools; ensure all dependencies function as expected.
 - Assume workflows will automatically adjust; handle edge cases explicitly in your implementations.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LangChain Documentation](https://python.langchain.com/docs/introduction/) — Official LangChain documentation covering chains, agents, tools, memory, and retrieval-augmented generation
+- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/) — Official LangGraph documentation for building stateful, multi-actor applications with LLMs
+- [LangSmith Evaluation Guide](https://docs.smith.langchain.com/evaluation) — LangChain's evaluation framework for measuring agent performance and reliability
+- [Pydantic Documentation](https://docs.pydantic.dev/) — Data validation library used extensively in LangChain schema definitions
+- [OpenAI API Reference](https://platform.openai.com/docs/api-reference) — OpenAI API reference for integrating GPT models into LangChain chains and agents

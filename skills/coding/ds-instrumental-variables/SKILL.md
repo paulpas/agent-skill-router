@@ -99,10 +99,10 @@ def basic_iv_2sls(X: pd.DataFrame, Z: pd.DataFrame, y: pd.Series) -> dict:
     stage2_results = sm.OLS(y, X_hat).fit()
     
     return {
-        'coefficients': stage2_results.params.values,
-        'standard_errors': stage2_results.bse.values,
-        'r_squared': stage2_results.rsquared,
-        'f_statistic': stage2_results.fvalue,
+        'coefficients': stage2_results.params.values
+        'standard_errors': stage2_results.bse.values
+        'r_squared': stage2_results.rsquared
+        'f_statistic': stage2_results.fvalue
         'stage1_f_statistic': stage1_results.fvalue
     }
 
@@ -185,13 +185,13 @@ class InstrumentalVariables:
         self.fit(data)
         predictions = self.predict(data)
         return {
-            'status': 'success',
-            'coefficients': self.results.params.to_dict(),
-            'p_values': self.results.pvalues.to_dict(),
-            'confidence_intervals': self.results.conf_int(self.alpha).to_dict(),
-            'predictions': predictions.tolist(),
-            'r_squared': self.results.rsquared,
-            'aic': self.results.aic,
+            'status': 'success'
+            'coefficients': self.results.params.to_dict()
+            'p_values': self.results.pvalues.to_dict()
+            'confidence_intervals': self.results.conf_int(self.alpha).to_dict()
+            'predictions': predictions.tolist()
+            'r_squared': self.results.rsquared
+            'aic': self.results.aic
             'bic': self.results.bic
         }
 ```
@@ -237,3 +237,15 @@ def good_iv_implementation(df: pd.DataFrame, z_col: str, x_col: str, y_col: str)
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Instrumental Variables Estimation — Wikipedia](https://en.wikipedia.org/wiki/Instrumental_variables_estimation)
+- [Statsmodels IV2SLS Documentation](https://www.statsmodels.org/stable/regression.html#instrumental-variable-regression)
+- [Causal Inference with IV (MIT OpenCourseWare)](https://ocw.mit.edu/courses/economics-141-econometrics-fall-2008/)
+- [LIML and IV Estimation (Econometrics Academy)](https://www.econometrics-with-r.org/6.2-instrumental-regression.html)
+- [Two-Stage Least Squares — Khan Academy](https://www.khanacademy.org/economics-finance-domain/microeconomics/supply-demand-curves/a/two-stage-least-squares)

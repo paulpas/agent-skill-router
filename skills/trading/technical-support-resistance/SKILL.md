@@ -283,3 +283,15 @@ class SupportResistanceAnalyzer:
         
         return min(test_score + volume_score + recency_score, 1.0)
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Support and Resistance Explained](https://www.investopedia.com/terms/s/support_resistance.asp)
+- [Pivot Points and Price Levels](https://www.investopedia.com/articles/trading/07/pivot-points.asp)
+- [Drawing Trendlines Effectively](https://www.investopedia.com/articles/trading/06/drawing-trendlines.asp)
+- [Breakout Trading Strategies](https://www.investopedia.com/trading/breakouts/)
+- [Support Resistance with Volume Profiles](https://www.investopedia.com/articles/trading/11/volume-profile.asp)

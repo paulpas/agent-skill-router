@@ -308,3 +308,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Notion API Documentation](<https://developers.notion.com/reference/intro>)
+- [Notion Database API Operations](<https://developers.notion.com/reference/post-database-query-filter>)
+- [Notion Block-Level Content Manipulation](<https://developers.notion.com/reference/patch-block-children>)
+- [Notion Webhooks and Sync Events](<https://developers.notion.com/reference/create-a-webhook>)
+- [Notion SDK for Python (notion-sdk-py)](<https://github.com/ramnes/notion-sdk-py>)

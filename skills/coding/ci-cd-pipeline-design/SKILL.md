@@ -33,3 +33,13 @@ Start with automating the build process, and gradually progress to full deployme
 Absolutely! CI/CD can enhance workflows in both cloud and on-premises setups, yielding quality improvements.
 
 By adopting effective CI/CD strategies, teams can foster an environment of continuous improvement while delivering high-quality software rapidly and efficiently.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [Jenkins User Handbook](https://www.jenkins.io/doc/book/)
+- [GitLab CI/CD Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/)
+- [CircleCI Configuration Best Practices](https://circleci.com/docs/configuration-tips-and-tricks/)
+- [Spinnaker Deployment Pipelines Guide](https://spinnaker.io/guides/user/pipelines/)

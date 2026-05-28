@@ -971,3 +971,15 @@ async def execute_tool_safely(
 ---
 
 *This skill provides operational debugging tooling for LLM agents. When a failure occurs, follow the Core Workflow in order — classify first, then apply the matching Implementation Pattern.*
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [VS Code Debugger Documentation](https://code.visualstudio.com/docs/editor/debugging)
+- [Python pdb Module — Official Docs](https://docs.python.org/3/library/pdb.html)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [LLM Observability and Debugging — arXiv Survey](https://arxiv.org/abs/2401.03558)
+- [Debugging AI Applications — OpenTelemetry AI Guide](https://opentelemetry.io/docs/specs/semconv/gen-ai/)

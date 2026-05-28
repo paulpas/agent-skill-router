@@ -293,4 +293,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `query-optimizer` | Provides general query optimization techniques applicable to PostgreSQL workloads |
+| `schema-inference-engine` | Helps design efficient schemas that support optimized query patterns in PostgreSQL |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PostgreSQL Documentation: Query Performance](https://www.postgresql.org/docs/current/performance-tips.html) — Official PostgreSQL documentation on query performance optimization
+- [PostgreSQL Documentation: EXPLAIN and ANALYZE](https://www.postgresql.org/docs/current/using-explain.html) — Official guide to using EXPLAIN for query plan analysis
+- [PgTune: PostgreSQL Configuration Tuner](https://pgtune.leopard.in.ua/) — Community tool for generating optimized postgresql.conf based on server specifications
+- [PostgreSQL Index Types (B-tree, GiST, GIN, BRIN)](https://www.postgresql.org/docs/current/indexes-types.html) — Official documentation on choosing the right index type for query patterns
+- [Hyperlight: PostgreSQL Query Optimization Guide](https://hyperskill.org/guides/postgres/optimization) — Comprehensive guide to query optimization techniques and execution plan tuning

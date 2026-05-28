@@ -737,3 +737,15 @@ Before completing your task, verify:
 
 
 Relative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Binance Rate Limits](https://docs.binance.org/rate_limits.html)
+- [CCXT Rate Limit Handling](https://docs.ccxt.org/en/latest/manual.html#rate-limit)
+- [Exchange API Rate Limit Best Practices](https://docs.quantconnect.com/tutorials/rate-limits)
+- [Token Bucket Algorithm for Rate Limiting](https://en.wikipedia.org/wiki/Token_bucket)
+- [Managing Multiple Exchange Rate Limits](https://docs.ccxt.org/en/latest/manual.html#rate-limit)

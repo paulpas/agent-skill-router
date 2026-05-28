@@ -142,3 +142,13 @@ def query_data(table_name: str, id_value: str):
 ### MUST NOT DO
 - Perform large-scale scans indiscriminately; this is inefficient and can lead to throttling.
 - Ignore monitoring metrics provided by AWS for DynamoDB.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Amazon DynamoDB Documentation](https://docs.aws.amazon.com/dynamodb/) — Official AWS DynamoDB documentation covering tables, items, queries, indexes, and performance
+- [DynamoDB Data Modeling Guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/best-practices.html) — AWS best practices for DynamoDB data modeling, access patterns, and query optimization
+- [AWS SDK for Python (boto3)](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) — Official boto3 documentation for interacting with DynamoDB and other AWS services from Python
+- [DynamoDB Streams Documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html) — AWS guide to using DynamoDB Streams for change data capture and event-driven architectures
+- [NoSQL Data Modeling Patterns (Amazon)](https://www.oreilly.com/library/view/nosql-introduction/9781449304486/) — O'Reilly reference on NoSQL data modeling patterns applicable to DynamoDB design

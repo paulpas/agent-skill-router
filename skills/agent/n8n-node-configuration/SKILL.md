@@ -296,3 +296,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [n8n Node Documentation](<https://docs.n8n.io/integrations/>)
+- [n8n Custom Node Development Guide](<https://docs.n8n.io/hosting/scaling/nodes/>)
+- [n8n Credentials Management](<https://docs.n8n.io/integrations/builtin/reference/credentials-management/>)
+- [n8n Trigger Nodes Configuration](<https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/>)
+- [n8n Node Type System (Core vs Community)](<https://docs.n8n.io/hosting/scaling/nodes/>)

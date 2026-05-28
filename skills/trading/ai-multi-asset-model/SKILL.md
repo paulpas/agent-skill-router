@@ -571,3 +571,15 @@ class RegimeAwareCorrelationModel:
             'most_dynamic_regime': max(correlations, key=lambda k: correlations[k])
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Multi-Asset Strategy Tutorial](https://docs.quantconnect.com/tutorials/multi-asset-strategies)
+- [Cross-Asset Correlation Analysis](https://www.investopedia.com/terms/c/cross-asset-correlation.asp)
+- [Portfolio Optimization with ML](https://en.wikipedia.org/wiki/Modern_portfolio_theory)
+- [Multi-Factor Models in Practice](https://www.investopedia.com/terms/f/factor-model.asp)
+- [Asset Allocation Using Machine Learning](https://docs.quantconnect.com/tutorials/portfolio-optimization)

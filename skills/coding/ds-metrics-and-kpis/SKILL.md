@@ -13,11 +13,11 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-ab-testing, ds-classification-metrics, ds-online-experiments,
+  related-skills: ds-ab-testing, ds-classification-metrics, ds-online-experiments
     ds-regression-evaluation ds-regression-evaluation
   role: implementation
   scope: implementation
-  triggers: metrics, KPI, key performance indicator, business metrics, metric definition,
+  triggers: metrics, KPI, key performance indicator, business metrics, metric definition
     how do I choose metrics, cloudwatch, optimization
   archetypes:
   - tactical
@@ -153,16 +153,16 @@ class MetricsAndKPIs:
 
             result = {
                 "metrics": {
-                    "accuracy": report["accuracy"],
-                    "precision_macro": report["macro avg"]["precision"],
-                    "recall_macro": report["macro avg"]["recall"],
-                    "f1_macro": report["macro avg"]["f1-score"],
-                    "confusion_matrix": cm,
+                    "accuracy": report["accuracy"]
+                    "precision_macro": report["macro avg"]["precision"]
+                    "recall_macro": report["macro avg"]["recall"]
+                    "f1_macro": report["macro avg"]["f1-score"]
+                    "confusion_matrix": cm
                     "business_roi": business_roi
-                },
+                }
                 "metadata": {
-                    "rows_processed": len(data),
-                    "kpi_names": self.kpi_names,
+                    "rows_processed": len(data)
+                    "kpi_names": self.kpi_names
                     "timestamp": pd.Timestamp.now().isoformat()
                 }
             }
@@ -188,3 +188,15 @@ class MetricsAndKPIs:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Kaggle Metrics for Machine Learning](https://www.kaggle.com/learn/metrics-for-machine-learning-education)
+- [MLflow Metrics Tracking](https://mlflow.org/docs/latest/tracking.html)
+- [Scikit-learn Model Evaluation](https://scikit-learn.org/stable/modules/model_evaluation.html)
+- [OKR & KPI Best Practices (Gartner)](https://www.gartner.com/en/articles/what-are-kpis)
+- [Machine Learning Metrics (Towards Data Science)](https://towardsdatascience.com/machine-learning-metrics-made-simple-a974063a1080)

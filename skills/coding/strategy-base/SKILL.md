@@ -346,3 +346,15 @@ except RuntimeError as e:
 - Use magic numbers or hardcoded configuration values
 - Bypass error handling for assumed-valid inputs
 - Write functions longer than 50 lines without decomposition
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — Design Pattern (Computer Science) Behavioral Patterns](https://en.wikipedia.org/wiki/Design_pattern_(computer_science)#Behavioral_patterns)
+- [Refactoring.guru — Strategy Pattern in Python](https://refactoring.guru/design-patterns/strategy/python/example)
+- [Martin Fowler — Abstractions and the Strategy Pattern](https://martinfowler.com/bliki/Abstraction.html)
+- [Python abc Module Documentation — Abstract Base Classes](https://docs.python.org/3/library/abc.html)
+- [GoF Design Patterns — Strategy Pattern (Gamma et al.)](https://sourcemaking.com/design_patterns/strategy)

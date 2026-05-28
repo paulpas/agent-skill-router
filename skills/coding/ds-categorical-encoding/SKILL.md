@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-feature-engineering, ds-feature-scaling-normalization, ds-neural-networks
   role: implementation
   scope: implementation
-  triggers: categorical encoding, one-hot encoding, target encoding, ordinal encoding,
+  triggers: categorical encoding, one-hot encoding, target encoding, ordinal encoding
     categorical variables
   archetypes:
   - tactical
@@ -177,8 +177,8 @@ class CategoricalEncodingPipeline:
         
         y_pred = self.model.predict(X)
         metrics = {
-            'accuracy': accuracy_score(y, y_pred),
-            'n_features': X.shape[1],
+            'accuracy': accuracy_score(y, y_pred)
+            'n_features': X.shape[1]
             'n_samples': X.shape[0]
         }
         logger.info(f"Model trained. Accuracy: {metrics['accuracy']:.4f}")
@@ -199,3 +199,15 @@ class CategoricalEncodingPipeline:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Preprocessing of Categorical Features](https://scikit-learn.org/stable/modules/preprocessing_categoricals.html)
+- [Feature Engineering — Scikit-learn docs](https://scikit-learn.org/stable/modules/feature_extraction.html#categorical-encoding)
+- [Category Encoders Library Documentation](https://contrib.scikit-learn.org/category_encoders/)
+- [Encoding Categorical Features (Kaggle Learn)](https://www.kaggle.com/learn/categorical-encoding)
+- [One-Hot vs Target Encoding (Towards Data Science)](https://towardsdatascience.com/what-is-the-difference-between-one-hot-and-target-encoding-c45193a07c09)

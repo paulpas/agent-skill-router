@@ -32,3 +32,15 @@ A: Track metrics like PR review time, the number of issues reported in code vers
 A: It’s essential to create an environment where feedback is focused solely on the code and leads to constructive discussion while setting up structured guidelines for how reviews should occur.
 
 By promoting effective code reviewing skills among teams, software can not only maintain a higher quality standard but also ensure the development process is a shared, collaborative effort leading to greater overall product efficacy.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The Model follows markdown links at load time to resolve external references and inline content.
+
+- [About Pull Request Reviews (GitHub Docs)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
+- [Effective Code Review — Google Engineering Practices](https://google.github.io/eng-practices/review/)
+- [How to Do a Code Review (Atlassian)](https://www.atlassian.com/team-platform/topics/collaboration/how-to-do-code-review)
+- [Code Review Culture (ThoughtWorks Technology Radar)](https://www.thoughtworks.com/radar/questions/is-code-review-valuable)
+- [Reviewer and Author Roles in PRs (GitHub Guides)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)

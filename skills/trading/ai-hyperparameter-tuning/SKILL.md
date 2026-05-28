@@ -480,3 +480,15 @@ class MultiStartOptimizer:
         
         return new_point
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Optuna Documentation](https://docs.optuna.org/)
+- [Hyperparameter Optimization Survey](https://arxiv.org/abs/2007.03981)
+- [Bayesian Optimization with Scikit-Optimize](https://scikit-optimize.github.io/)
+- [Grid vs Random vs Bayesian Search](https://machinelearningmastery.com/grid-search-hyperparameters-decision-trees/)
+- [Hyperparameter Tuning Best Practices](https://docs.quantconnect.com/tutorials/hyperparameter-optimization)

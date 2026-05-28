@@ -303,3 +303,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Agent Communication Protocols (ACL/FIPA)](<https://en.wikipedia.org/wiki/Agent_Communication_Language>)
+- [Distributed Task Queues (Celery)](<https://docs.celeryq.dev/en/stable/getting-started/introduction.html>)
+- [Asyncio for Python Concurrency](<https://docs.python.org/3/library/asyncio.html>)
+- [Apache Kafka Event Streaming](<https://kafka.apache.org/documentation/>)
+- [Message Queue Patterns (Enterprise Integration)](<https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageQueue.html>)

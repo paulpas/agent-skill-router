@@ -222,3 +222,15 @@ class DataBuffer:
         """Check if buffer has overflowed recently."""
         return self.overflow_count > 0
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Subscribe to Streams](https://docs.binance.org/websockets.html#subscribe-to-streams)
+- [Binance WebSocket API Reference](https://docs.binance.org/)
+- [Real-Time Trade Data Streaming](https://docs.quantconnect.com/tutorials/live-trading-overview)
+- [WebSocket Compression and Efficiency](https://en.wikipedia.org/wiki/WebSocket#Compression_extension)
+- [Streaming Market Data Architecture](https://kafka.apache.org/documentation/)

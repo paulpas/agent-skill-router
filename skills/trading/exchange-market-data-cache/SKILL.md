@@ -286,3 +286,15 @@ class DeltaCache:
             if self._versions.get(k, 0) > since_version
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [InfluxDB Cache Metrics](https://docs.influxdata.com/influxdb/v2/monitor/metrics/system/#cache-stats)
+- [Redis Caching for Market Data](https://redis.io/docs/latest/operate/rc/during-deployment/caching-strategies/)
+- [Market Data Latency Optimization](https://docs.quantconnect.com/tutorials/data-sources-and-format)
+- [Caching Strategies for Real-Time Trading](https://www.investopedia.com/terms/c/cache.asp)
+- [Time-Series Cache Architecture](https://docs.timescale.com/latest/about/how-timescaledb-works/hypertables/)

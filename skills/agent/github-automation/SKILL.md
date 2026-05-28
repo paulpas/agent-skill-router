@@ -324,3 +324,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [GitHub REST API v3 Documentation](<https://docs.github.com/rest>)
+- [GitHub GraphQL API v4 Documentation](<https://docs.github.com/graphql>)
+- [GitHub CLI (gh) Documentation](<https://cli.github.com/manual/>)
+- [GitHub Actions Events and Triggers](<https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows>)
+- [GitHub Webhooks Documentation](<https://docs.github.com/en/webhook>)

@@ -285,6 +285,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PEP 8 — Style Guide for Python Code](<https://peps.python.org/pep-0008/>)
+- [Clean Code Principles (Robert C. Martin)](<https://www.clean-code-developer.com/>)
+- [Google Software Styling Guides](<https://google.github.io/styleguide/>)
+- [SemVer Specification](<https://semver.org/>)
+- [The Zen of Python (PEP 20)](<https://peps.python.org/pep-0020/>)
+
 ## Related Skills
 
 | Skill | Purpose |

@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: Implements hypothesis testing including t-tests, chi-square tests, p-values,
+description: Implements hypothesis testing including t-tests, chi-square tests, p-values
   and statistical significance evaluation for data-driven decisions
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-ab-testing, ds-bayesian-inference, ds-confidence-intervals, ds-maximum-likelihood
   role: implementation
   scope: implementation
-  triggers: hypothesis testing, t-test, chi-square, p-value, statistical significance,
+  triggers: hypothesis testing, t-test, chi-square, p-value, statistical significance
     how do i test hypotheses, unit tests, testing
   archetypes:
   - tactical
@@ -102,10 +102,10 @@ def perform_independent_t_test(
     is_significant = p_value < alpha
     
     return {
-        "t_statistic": float(t_stat),
-        "p_value": float(p_value),
-        "significant": bool(is_significant),
-        "alpha": alpha,
+        "t_statistic": float(t_stat)
+        "p_value": float(p_value)
+        "significant": bool(is_significant)
+        "alpha": alpha
         "conclusion": "Reject null hypothesis" if is_significant else "Fail to reject null hypothesis"
     }
 ```
@@ -138,10 +138,10 @@ class HypothesisTestingEngine:
             
         chi2_stat, p_value = stats.chisquare(f_obs=observed, f_exp=expected)
         result = {
-            "test": "chi_square",
-            "statistic": float(chi2_stat),
-            "p_value": float(p_value),
-            "significant": bool(p_value < self.alpha),
+            "test": "chi_square"
+            "statistic": float(chi2_stat)
+            "p_value": float(p_value)
+            "significant": bool(p_value < self.alpha)
             "timestamp": pd.Timestamp.now().isoformat()
         }
         self.results_log.append(result)
@@ -190,8 +190,8 @@ def good_test(group_a: np.ndarray, group_b: np.ndarray, alpha: float = 0.05) -> 
         raise ValueError("Insufficient samples for statistical testing")
     _, p_value = stats.ttest_ind(group_a, group_b, equal_var=False)
     return {
-        "p_value": float(p_value),
-        "significant": bool(p_value < alpha),
+        "p_value": float(p_value)
+        "significant": bool(p_value < alpha)
         "alpha_used": alpha
     }
 ```
@@ -200,3 +200,15 @@ def good_test(group_a: np.ndarray, group_b: np.ndarray, alpha: float = 0.05) -> 
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SciPy Stats Module](https://docs.scipy.org/doc/scipy/reference/stats.html)
+- [Hypothesis Testing — Wikipedia](https://en.wikipedia.org/wiki/Hypothesis_test)
+- [t-test Documentation (SciPy)](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html)
+- [NIST Engineering Statistics Handbook — Hypothesis Testing](https://www.itl.nist.gov/div898/handbook/index.htm)
+- [Statistical Tests in Python (Scipy Cookbook)](https://docs.scipy.org/doc/scipy/tutorial/stats/hypothesis_testing.html)

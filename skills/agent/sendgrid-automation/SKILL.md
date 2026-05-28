@@ -312,4 +312,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `sendgrid-mail-management` | Provides the email management operations that sendgrid automation workflows build upon |
+| `workflow-patterns` | Offers general automation patterns that complement SendGrid-specific email workflows |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SendGrid API Documentation](https://docs.sendgrid.com/api-reference/) — Official SendGrid API reference covering mail send, templates, marketing campaigns, and webhooks
+- [SendGrid Python SDK Documentation](https://docs.sendgrid.com/ui/sending-email/how-to-send-an-email-with-the-python-sdk) — Step-by-step guide for sending emails using the official SendGrid Python library
+- [SendGrid Webhook Event Notifications](https://docs.sendgrid.com/ui/api/trackers/event-webhooks) — Official documentation on setting up and processing email delivery event webhooks
+- [Transactional Email Best Practices (AWS SES Comparison)](https://aws.amazon.com/ses/sendgrid-alternative/) — Comparative analysis of transactional email platforms including SendGrid's positioning
+- [Email Deliverability Guide (SendGrid Blog)](https://sendgrid.com/en-us/resource-hub/deliverability/) — SendGrid's official best practices for maintaining high email deliverability rates

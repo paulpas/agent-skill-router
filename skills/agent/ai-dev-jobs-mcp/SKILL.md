@@ -324,4 +324,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `ai-llm-agentic-tooling-mcp` | Deep integration patterns for MCP servers and tools within agent workflows |
+| `multi-agent-patterns` | Multi-agent coordination when MCP tool usage spans multiple agents |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Model Context Protocol — Official Documentation](https://modelcontextprotocol.io/docs/)
+- [MCP SDK — GitHub Repository](https://github.com/modelcontextprotocol/sdks)
+- [MCP Transport Protocols — Overview](https://modelcontextprotocol.io/specitecture/transport)
+- [Building MCP Servers — Tutorial](https://modelcontextprotocol.io/quickstart/server)
+- [Anthropic MCP Blog Post](https://www.anthropic.com/engineering/model-context-protocol)

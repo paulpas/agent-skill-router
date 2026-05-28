@@ -351,3 +351,13 @@ print(book.sequence)    # 12345678
 - Use magic numbers or hardcoded configuration values
 - Bypass error handling for assumed-valid inputs
 - Write functions longer than 50 lines without decomposition
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia: Database Normalization](https://en.wikipedia.org/wiki/Database_normalization)
+- [PostgreSQL Documentation: CREATE TABLE](https://www.postgresql.org/docs/current/sql-createtable.html)
+- [MySQL Reference Manual: Normalization](https://dev.mysql.com/doc/refman/8.0/en/normalization-introduction.html)
+- [Entity-Relationship Modeling Best Practices - IBM](https://www.ibm.com/docs/en/informix-servers/12.10?topic=files-relational-database-design-modeling)
+- [Database Design Principles and Third Normal Form](https://www.w3schools.com/sql/sql_normalization.asp)

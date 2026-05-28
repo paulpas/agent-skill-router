@@ -298,4 +298,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `commit` | Conventional commit integration for changelog generation |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Keep a Changelog — Specification](https://keepachangelog.com/en/1.1.0/)
+- [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/)
+- [Semantic Release — Automated Versioning & Changelogs](https://semantic-release.gitbook.io/semantic-release)
+- [Release Please by Google — Automated Releases](https://github.com/googleapis/release-please)
+- [Changelog-Generator Automation Patterns (GitHub Actions)](https://github.com/marketplace/actions/changelog-generator)

@@ -518,3 +518,13 @@ When applying DRY principle enforcement, structure the output as follows:
 ---
 
 *This skill enforces DRY as a maintainability principle, not a rigid rule. Apply judgment: duplicate code is better than wrong abstraction.*
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia: Don't Repeat Yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+- [Martin Fowler — Refactoring Duplicates](https://martinfowler.com/refactoring/)
+- [The Clean Code Book — DRY Principle (Uncle Bob)](https://blog.cleancoder.com/uncle-bob/2013/05/27/TheMathematicianAndTheGarbageCollector.html)
+- [Google Style Guide — Avoid Duplication](https://google.github.io/styleguide/)
+- [Refactoring.guru — Extract Method Pattern](https://refactoring.com/catalog/extractFunction.html)

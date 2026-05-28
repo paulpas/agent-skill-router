@@ -349,4 +349,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `typescript-typing-system` | Provides TypeScript patterns for React components and Next.js API routes |
+| `frontend-architecture-patterns` | Covers frontend architectural patterns that complement Next.js project structure |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Next.js Official Documentation](https://nextjs.org/docs) — Complete official docs covering App Router, Server Components, data fetching, and routing
+- [React 19 Documentation](https://react.dev/reference/react) — Official React reference covering hooks, components, and concurrent features
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/) — Official TypeScript documentation for type-safe React and Next.js development
+- [Vercel Deployment Guide](https://vercel.com/docs/deployments/overview) — Official deployment guide for Next.js applications on Vercel
+- [React Server Components Architecture](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components) — React team's documentation on RSC design and implementation

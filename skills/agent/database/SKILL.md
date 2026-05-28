@@ -317,6 +317,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PostgreSQL Documentation](<https://www.postgresql.org/docs/>)
+- [MySQL Documentation](<https://dev.mysql.com/doc/>)
+- [SQLite Official Website](<https://www.sqlite.org/index.html>)
+- [ACID Properties (Wikipedia)](<https://en.wikipedia.org/wiki/ACID>)
+- [CAP Theorem Explained](<https://en.wikipedia.org/wiki/CAP_theorem>)
+
 ## Related Skills
 
 | Skill | Purpose |

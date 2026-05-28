@@ -313,4 +313,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `multi-agent-task-orchestrator` | Multi-agent task decomposition and execution with LangGraph |
+| `agent-communication-patterns` | Communication protocols between agents in multi-agent systems |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Multi-Agent Systems — Wikipedia Overview](https://en.wikipedia.org/wiki/Multi-agent_system)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Multi-Agent System Survey — arXiv](https://arxiv.org/abs/2402.16817)
+- [LLM Agent Survey — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- [Multi-Agent Collaboration — Meta AI Research](https://ai.meta.com/research/publications/multi-agent-collaboration-in-language-models/)

@@ -314,4 +314,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-creator` | The creation counterpart — use this when building new skills, load creator for the full workflow |
+| `skill-testing-methodology` | Ensures created skills are tested through systematic validation before deployment |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Semantic Versioning 2.0.0](https://semver.org/) — The semantic versioning specification used for tracking skill versions
+- [Software Testing Principles (ISTQB)](https://www.istqb.org/get-certified/ foundations.html) — ISTQB foundational testing principles applicable to skill quality assurance
+- [Agent Framework Evaluation Metrics](https://arxiv.org/abs/2401.12954) — Academic framework for evaluating LLM-based agent systems including skills
+- [CI/CD for Documentation (GitHub Actions)](https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-markdown-documentation) — GitHub Actions patterns for automating documentation and skill validation workflows
+- [Developer Experience (DX) Best Practices](https://www.getdx.com/resources/) — Developer experience research and best practices for building effective developer tools

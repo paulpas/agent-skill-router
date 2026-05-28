@@ -133,3 +133,13 @@ When applying this skill for database migrations, ensure you capture:
 |---|---|
 | `database-validation` | Validating data integrity across migrations and schema changes. |
 | `database-schema-management` | Managing the overall schema lifecycle alongside migrating changes. |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Flyway Documentation](https://flywaydb.org/documentation/)
+- [Liquibase Reference Guide](https://www.liquibase.org/learn/reference/)
+- [Alembic — Database Migration for SQLAlchemy](https://alembic.sqlalchemy.org/en/latest/)
+- [Prisma Migrate: Schema Evolution](https://www.prisma.io/docs/concepts/components/prisma-migrate)
+- [Database Migration Best Practices - AWS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tasks.AutoVersions.html)

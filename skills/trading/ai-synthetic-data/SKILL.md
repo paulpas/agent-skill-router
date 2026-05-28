@@ -640,3 +640,15 @@ class SyntheticDataValidator:
             'match': abs(real_max_acf - synth_max_acf) < 0.5
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SDMetrics Documentation](https://sdmetrics.readthedocs.io/)
+- [CTGAN - Conditional GAN for Tabular Data](https://docs.sdv.dev/ctgan/)
+- [Synthetic Data Best Practices](https://www.syntheticdata.io/best-practices)
+- [Data Generation with TensorFlow Generative Models](https://www.tensorflow.org/generative)
+- [Evaluating Synthetic Financial Data Quality](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3868325)

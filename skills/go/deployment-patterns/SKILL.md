@@ -420,3 +420,15 @@ func initPlatform() error {
 | `cloud-development` | Cloud-native deployment with Kubernetes manifests and rolling updates |
 | `best-practices` | Go idioms and code organization for maintainable applications |
 | `modular-design` | Package structure that supports build tags and platform-specific code |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Go Deployment Guide](https://go.dev/doc/deploy)
+- [Docker and Go Applications](https://docs.docker.com/language/golang/build-images/)
+- [Go Binary Distribution](https://go.dev/doc/install/source)
+- [CI/CD for Go Projects](https://go.dev/blog/ci)
+- [Go Production Deployment Checklist](https://go.dev/doc/deploy)

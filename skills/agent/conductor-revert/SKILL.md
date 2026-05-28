@@ -297,6 +297,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Git Revert vs Reset Guide (Atlassian)](<https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting>)
+- [Rollback Patterns for Microservices](<https://microservices.io/patterns/rollback.html>)
+- [Blue-Green Deployment Strategy](<https://martinfowler.com/bliki/BlueGreenDeployment.html>)
+- [Database Migration Rollback Strategies](<https://www.redhat.com/en/topics/devopses/blog/how-to-roll-back-database-migrations>)
+- [Change Management Best Practices (ITIL)](<https://axelos.com/certifications/itil-service-management>)
+
 ## Related Skills
 
 | Skill | Purpose |

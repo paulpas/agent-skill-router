@@ -657,3 +657,13 @@ When applying this skill to audit a SKILL.md file, produce:
 | `coding-skill-testing-validation` | Complements metrics by running integration and trigger-matching tests; metrics scores structure quality while testing validates runtime behavior |
 | `coding-skill-lifecycle-management` | Use metrics as input to lifecycle decisions — skills scoring below 60 may be candidates for deprecation or major version bumps |
 | `agent-skill-optimizer` | Takes the output of this metrics tool and automatically rewrites flagged sections to improve specific dimension scores |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenCode Skill System Telemetry](https://opencode.ai/docs/telemetry) — Official OpenCode documentation on skill usage telemetry and analytics collection
+- [Software Quality Metrics (ISO/IEC 25010)](https://iso25010.com/index.php/en/iso-25010.html) — ISO standard for software product quality metrics including maintainability, reliability, and performance
+- [Code Quality Metrics (SonarQube)](https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/metrics/) — SonarQube's documentation on code quality gates, technical debt, and maintainability ratings
+- [NIST Software Quality Standards](https://csrc.nist.gov/projects/software-assurance/practitioners/resources/software-quality) — NIST guidelines for measuring and improving software development quality metrics
+- [Developer Productivity Metrics (DORA)](https://www.puppet.com/resources/whitepaper/devops-research-and-assessment-report) — DORA's research on engineering performance metrics including deployment frequency and lead time

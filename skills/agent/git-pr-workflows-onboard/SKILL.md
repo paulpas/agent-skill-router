@@ -332,3 +332,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Onboarding Guide for Open Source (Open Source Guides)](<https://opensource.guide/how-to-contribute/>)
+- [GitHub CODEOWNERS Documentation](<https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners>)
+- [GitHub Issue Templates](<https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms>)
+- [Contribution Guidelines Template (CONTRIBUTING.md)](<https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors>)
+- [First-Timers Only Help](<https://www.firsttimersonly.com/>)

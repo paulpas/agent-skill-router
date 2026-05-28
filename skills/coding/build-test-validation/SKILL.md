@@ -671,3 +671,13 @@ When executing this skill, produce a structured validation report containing:
 | `coding-make` | Broad build orchestration across Make, Nix, Bazel, Just — use to understand the build system architecture before applying targeted validation |
 | `linux-make-build-system` | GNU Make deep dive including cross-compilation and variable scoping — use when validation failures trace to complex Make internals |
 | `testing-unit-integration-e2e` | Application-level test strategy for the code under build — use alongside this skill to ensure both the build system and the tests it runs are correct |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html) — Official GNU Make documentation covering rules, prerequisites, variables, functions, and phony targets
+- [Makefile Best Practices (Google)](https://github.com/google/simhash/blob/master/Makefile) — Google's open-source Makefile patterns and best practices for build system organization
+- [Continuous Build Validation (GitHub Actions)](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-python-using-actions-and-matrix) — GitHub Actions examples for automated build and test validation in CI/CD pipelines
+- [Reproducible Builds (Debian)](https://reproducible-builds.org/) — Debian's reproducible builds initiative documentation on build determinism and verification
+- [Dependency Analysis with Vulture and Bandit](https://github.com/PyCQA) — Python Quality Tools collection for static analysis of build dependencies

@@ -305,6 +305,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Continuous Learning in ML (Google Research)](<https://research.google/pubs/continuous-learning-a-survey/>)
+- [Active Learning Survey Paper (arXiv)](<https://arxiv.org/abs/2302.13898>)
+- [Reinforcement Learning Basics (Sutton & Barto)](<http://www.incompleteideas.net/book/the-book-2nd.html>)
+- [Online Machine Learning Tutorial](<https://online-learning-course.github.io/>)
+- [Model Drift Detection Methods](<https://arxiv.org/abs/1904.02652>)
+
 ## Related Skills
 
 | Skill | Purpose |

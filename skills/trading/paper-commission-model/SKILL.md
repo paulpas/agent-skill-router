@@ -844,3 +844,15 @@ class BatchTradeProcessor:
         
         return progress
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Commission Models Tutorial](https://docs.quantconnect.com/tutorials/commission-models)
+- [Understanding Trading Commissions](https://www.investopedia.com/terms/t/trading-commissions.asp)
+- [Commission Impact on Strategy Performance](https://docs.quantconnect.com/tutorials/backtesting-overview)
+- [Per-Share vs Per-Cent Commission Structures](https://en.wikipedia.org/wiki/Commission_(trade))
+- [Minimizing Transaction Costs in Trading](https://www.investopedia.com/articles/trading/08/transaction-costs.asp)

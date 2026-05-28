@@ -332,3 +332,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Iterative Development Methodology (Wikipedia)](<https://en.wikipedia.org/wiki/Iterative_and_incremental_development>)
+- [Continuous Integration Best Practices](<https://www.thoughtworks.com/radar/techniques/continuous-integration>)
+- [Pull Request Review Cycles (Google Engineering)](<https://google.github.io/eng-practices/review/coder/>)
+- [Agile Retrospectives for Process Improvement](<https://www.scrum.org/resources/blog/write-effective-retrospective-action-items>)
+- [Feedback Loop Design in Software Development](<https://martinfowler.com/bliki/FeedbackLoop.html>)

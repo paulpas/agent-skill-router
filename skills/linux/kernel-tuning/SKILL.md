@@ -423,3 +423,15 @@ echo "Verify with: sysctl -a | grep -E 'tcp_.*|rmem|wmem'"
 | `storage-architecture` | Tune storage-specific parameters (I/O scheduler, mount options) alongside kernel tuning |
 | `linux-security` | Ensure kernel hardening does not conflict with performance tuning goals |
 | `observability` | Monitor kernel parameters and performance metrics to validate tuning effectiveness |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Kernel sysctl Admin Guide](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/index.html)
+- [Kernel Documentation Index](https://www.kernel.org/doc/html/latest/)
+- [System Tuning with sysctl](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html)
+- [Linux Kernel Parameter Reference](https://man7.org/linux/man-pages/man8/sysctl.8.html)
+- [Network Stack Tuning in Linux](https://www.kernel.org/doc/html/latest/network/)

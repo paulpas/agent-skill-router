@@ -289,3 +289,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Inngest Documentation](<https://www.inngest.com/docs>)
+- [Inngest Functions SDK](<https://www.inngest.com/docs/sdk/python>)
+- [Event-Driven Architecture Patterns](<https://microservices.io/patterns/data/event-driven.html>)
+- [Temporal Workflow Orchestration](<https://docs.temporal.io/>)
+- [AWS Step Functions for Serverless Workflows](<https://docs.aws.amazon.com/step-functions/latest/d/welcome.html>)

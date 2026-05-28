@@ -313,6 +313,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [RESTful API Design Guide (Microsoft)](<https://learn.microsoft.com/en-us/styleguide/api-design-guide/>)
+- [GraphQL Specification (graphql.org)](<https://spec.graphql.org/October2021/>)
+- [gRPC Documentation](<https://grpc.io/docs/>)
+- [Microservices Patterns (Chris Richardson)](<https://microservices.io/patterns/microservices.html>)
+- [CQRS Pattern Reference](<https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs>)
+
 ## Related Skills
 
 | Skill | Purpose |

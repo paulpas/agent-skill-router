@@ -940,4 +940,5 @@ def good_matrix_evaluation(
 - [GitHub API Reference](https://docs.github.com/en/rest)
 - [PyPI JSON API](https://warehouse.pypa.io/api-reference/)
 - [npm Registry API](https://docs.npmjs.com/cli/v10/configuring-npm/package-json)
-- [Dependabot Security Advisories](https://docs.github.com/en/code-security/security-advisories/working-with-global-security-reports/viewing-security-advise
+- [GitHub Dependabot — Automated Dependency Updates](https://docs.github.com/en/code-security/dependabot) — Automated dependency version updates and security patching for multi-language ecosystems
+- [OWASP Software Component Verification Standard](https://owasp.org/www-project-software-component-verification-standard/) — Framework for verifying the security posture of software dependencies before adoptionse

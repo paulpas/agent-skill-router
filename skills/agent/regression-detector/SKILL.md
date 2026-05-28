@@ -308,4 +308,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `performance-profiler` | Uses profiler output to detect performance regressions alongside functional regression detection |
+| `build-test-validation` | Provides validation patterns that complement automated regression detection workflows |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Git Bisect Documentation (Git Scm)](https://git-scm.com/docs/git-bisect) — Official Git documentation for binary search-based regression detection
+- [Regression Testing: A Survey (Hasan & Hasan, 2021)](https://dl.acm.org/doi/10.1145/3468293) — ACM Computing Surveys paper on modern regression testing techniques and tools
+- [Selenium Regression Testing Guide](https://www.selenium.dev/documentation/) — Official Selenium documentation for web application regression testing automation
+- [Junit Best Practices for Regression Testing](https://junit.org/junit5/docs/current/user-guide/) — JUnit 5 user guide with patterns for organizing regression test suites
+- [Azure DevOps: Detecting Regressions with CI/CD](https://learn.microsoft.com/en-us/azure/devops/pipelines/testing/) — Microsoft's guide to automated regression detection in CI/CD pipelines

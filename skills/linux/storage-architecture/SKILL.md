@@ -662,3 +662,15 @@ echo "rm -f $TEST_FILE"
 | `kernel-tuning` | Tune I/O scheduler and kernel storage parameters for optimal performance |
 | `linux-security` | Secure storage with encryption (LUKS) and access controls |
 | `observability` | Monitor storage I/O, latency, and capacity for proactive management |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [fsck Manual Page](https://man7.org/linux/man-pages/man8/fsck.8.html)
+- [Linux Storage Stack Overview](https://www.kernel.org/doc/html/latest/admin-guide/devices.html#block-layer)
+- [LVM Administration Guide](https://man7.org/linux/man-pages/man8/lvm.8.html)
+- [ext4 Filesystem Documentation](https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html)
+- [Block Device Management](https://man7.org/linux/man-pages/man8/blkid.8.html)

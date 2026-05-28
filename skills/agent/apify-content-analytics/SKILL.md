@@ -310,6 +310,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Content Analytics Framework (Gartner)](<https://www.gartner.com/en/documents/content-analytics>)
+- [Google Analytics Documentation](<https://support.google.com/analytics/answer/1008010>)
+- [Text Mining and NLP Overview (Wikipedia)](<https://en.wikipedia.org/wiki/Text_mining>)
+- [Content Performance Metrics Guide](<https://neilpatel.com/blog/content-marketing-metrics/>)
+- [Natural Language Processing with Python (NLTK Book)](<https://www.nltk.org/book/>)
+
 ## Related Skills
 
 | Skill | Purpose |

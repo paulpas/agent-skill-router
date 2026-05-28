@@ -329,6 +329,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Influencer Marketing Industry Report (influencermarketinghub)](<https://influencermarketinghub.com/influencer-marketing-rate-card/>)
+- [Social Media API Access Guidelines](<https://developers.facebook.com/docs/graph-api>)
+- [Audience Authenticity Analysis Methods](<https://www.nielsen.com/us/en/insights/2019/social-media-measurement-influencers/>)
+- [Instagram Graph API Reference](<https://developers.facebook.com/docs/instagram-api/>)
+- [YouTube Data API v3 Documentation](<https://developers.google.com/youtube/v3>)
+
 ## Related Skills
 
 | Skill | Purpose |

@@ -683,3 +683,15 @@ Before completing your task, verify:
 
 
 Relative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Rate Limits Tutorial](https://docs.quantconnect.com/tutorials/rate-limits)
+- [Exchange API Rate Limit Handling](https://docs.ccxt.org/en/latest/manual.html#rate-limit)
+- [Binance Rate Limits Documentation](https://docs.binance.org/rate_limits.html)
+- [Rate Limiter Design Patterns](https://en.wikipedia.org/wiki/Token_bucket)
+- [Backoff Strategies for API Calls](https://www.investopedia.com/terms/r/rate-limit.asp)

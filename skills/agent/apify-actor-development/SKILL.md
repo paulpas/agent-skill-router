@@ -316,6 +316,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Apify SDK Documentation](<https://docs.apify.com/sdk/python>)
+- [Apify Platform Console Docs](<https://docs.apify.com/platform/>)
+- [Scraping Best Practices (OWASP)](<https://cheatsheetseries.owasp.org/cheatsheets/Web_Scraping_Cheat_Sheet.html>)
+- [Proxy Rotation for Web Scraping](<https://docs.apify.com/platform/proxy>)
+- [Apify Actor Store](<https://apify.com/store>)
+
 ## Related Skills
 
 | Skill | Purpose |

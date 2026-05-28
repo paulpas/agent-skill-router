@@ -80,3 +80,13 @@ def evaluate_compliance(dependencies: Dict[str, str], organization_licenses: Lis
 ### MUST NOT DO
 - Use third-party libraries without verifying their licenses against organizational policies.
 - Allow contributions to open-source projects without having explicit policies in place to govern them.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Open Source Initiative — OSI Approved Licenses](https://opensource.org/licenses/alphabetical)
+- [ChooseALicense.com — License Selection Guide](https://choosealicense.com/)
+- [SPDX License List — Machine-Readable License Identifiers](https://spdx.org/licenses/)
+- [SFO — Software Freedom Conservancy Licensing Guidelines](https://sfconservancy.org/)
+- [Apache Foundation — License Compliance for Projects](https://www.apache.org/legal/resolved.html)

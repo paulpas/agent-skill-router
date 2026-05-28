@@ -338,4 +338,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `ask-questions-if-underspecified` | Clarification & underspecification handling |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [What is Multi-Agent? (LangChain Blog)](https://blog.langchain.dev/what-is-multi-agent/)
+- [LLamaIndex — Multi-Agent Frameworks](https://docs.llamaindex.ai/en/latest/module_guides/orchestration/agent_pipelines/multi_agent/)
+- [Microsoft AutoGen — Conversable Agents](https://microsoft.github.io/autogen/docs/FAQ/#how-does-autogen-support-multi-agent-conversations)
+- [Research: Behavioral Specialization in Multi-Agent Systems (NeurIPS)](https://arxiv.org/abs/2309.07894)
+- [Anthropic — Constitutional AI & Behavior Control](https://www.anthropic.com/research/build-effective-agent-systems)

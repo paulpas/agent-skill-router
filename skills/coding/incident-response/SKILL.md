@@ -510,3 +510,13 @@ When conducting incident response or postmortem analysis, produce:
 | `observability-patterns` | Metrics, logging, and tracing setup that enables faster incident detection; preventive skill used before incidents occur |
 | `engineering-principles` | Foundational software engineering principles that prevent common failure modes when designing resilient systems |
 | `production-logging` | Structured logging practices that provide the signal needed during incident investigation to reconstruct what happened |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google SRE: Incident Response](https://sre.google/workbook/incident-response/) — Google SRE workbook chapter on incident response processes, escalation, and post-mortems
+- [Incident Response Playbooks (NIST SP 800-61)](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final) — NIST Computer Security Handbook for incident handling guidance
+- [PagerDuty Incident Response Guide](https://response.pagerduty.com/guides/incident-response/) — PagerDuty's practical guide to managing production incidents and on-call response
+- [Post-Mortem Culture (Atlassian)](https://www.atlassian.com/incident-management/post-mortom-culture) — Atlassian's guidance on blameless post-mortems and learning from incidents
+- [Chaos Engineering for Resilience Testing](https://chaosengineering.org/) — The Chaos Engineering methodology for proactively testing system resilience before incidents occur

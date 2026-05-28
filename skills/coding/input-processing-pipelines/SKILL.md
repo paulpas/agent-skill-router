@@ -1779,3 +1779,13 @@ if __name__ == "__main__":
 ---
 
 > 📖 skill(local cache): input-processing-pipelines
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Apache Kafka Streams Documentation](https://kafka.apache.org/documentation/) — Official Kafka Streams API documentation for building real-time data processing pipelines
+- [Apache Spark Structured Streaming](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html) — Apache Spark documentation for large-scale streaming data pipeline construction
+- [Debezium Change Data Capture](https://debezium.io/documentation/) — Debezium's guide to building reliable CDC pipelines for real-time data ingestion
+- [Python Generator Pipelines (PEP 289)](https://peps.python.org/pep-0289/) — Python generator expressions for memory-efficient stream processing patterns
+- [ETL Pipeline Design Patterns (Martin Fowler)](https://martinfowler.com/articles/etl.html) — Martin Fowler's analysis of Extract-Transform-Load patterns in data pipeline architecture

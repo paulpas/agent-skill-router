@@ -304,4 +304,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `parallel-skill-runner` | Handles parallel execution after the router selects multiple skills for a task |
+| `confidence-based-selector` | Uses confidence scoring to rank and select the best skill after routing analysis |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Vector Database Retrieval Patterns (Pinecone)](https://www.pinecone.io/learn/vector-search/) — Pinecone's guide to vector similarity search, the foundation of semantic skill matching
+- [BM25 Information Retrieval Algorithm](https://en.wikipedia.org/wiki/Okapi_BM25) — Wikipedia article on BM25, the ranking function used in keyword-based skill matching
+- [LangChain Semantic Router](https://python.langchain.com/docs/integrations/tools/langsmith/) — LangChain documentation on implementing semantic routing for LLM applications
+- [Semantic Search with Embeddings (Hugging Face)](https://huggingface.co/docs/sentence_transformers/) — Hugging Face's guide to sentence embeddings for semantic matching tasks
+- [Task Routing in Multi-Agent Systems (Microsoft AutoGen)](https://microsoft.github.io/autogen/stable/user-guide/agent-chat-user-guide/tutorial/directchat.html) — Microsoft AutoGen documentation on routing tasks across multiple agents

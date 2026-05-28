@@ -319,6 +319,16 @@ When this skill is active and you want to document a new pattern or search exist
 
 ---
 
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Refactoring.Guru Design Patterns](<https://refactoring.guru/design-patterns>)
+- [Clean Architecture (Robert C. Martin)](<https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html>)
+- [SOLID Principles of OOP (Wikipedia)](<https://en.wikipedia.org/wiki/SOLID>)
+- [Anti-Patterns in Software Engineering (Wikipedia)](<https://en.wikipedia.org/wiki/Anti-pattern>)
+- [Software Design Patterns Catalog (GoF Book)](<https://en.wikipedia.org/wiki/Design_Patterns>)
+
 ## Related Skills
 
 | Skill | Purpose |

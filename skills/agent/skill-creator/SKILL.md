@@ -290,4 +290,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-engineering` | Provides engineering practices that complement skill creation workflows |
+| `skill-documentation-best-practices` | Covers documentation patterns for high-fidelity SKILL.md files |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Markdown Specification (CommonMark)](https://spec.commonmark.org/) — The official CommonMark specification that SKILL.md files follow
+- [YAML Frontmatter Standards](https://jekyllrb.com/docs/frontmatter/) — YAML frontmatter conventions used in static site generators and documentation systems
+- [OpenCode Skill Documentation](https://opencode.ai/docs/skills) — Official OpenCode documentation on skill structure, loading, and configuration
+- [Instruction Engineering Patterns (Google)](https://ai.google.dev/guides/instruction-overview) — Google's research on writing effective instructions for AI models
+- [Agent Communication Protocols (ACL Guidelines)](https://aclanthology.org/volumes/2024.acl-long/) — ACL Anthology research papers on multi-agent communication and protocol design

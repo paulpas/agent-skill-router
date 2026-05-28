@@ -309,6 +309,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google Trends API (Google)](<https://trends.google.com/trending>)
+- [Trend Analysis Methods (Harvard Business Review)](<https://hbr.org/topic/data-analytics>)
+- [Python pandas Documentation](<https://pandas.pydata.org/docs/>)
+- [Time Series Forecasting (Prophet by Meta)](<https://facebook.github.io/prophet/>)
+- [Trend Detection Algorithms Survey (arXiv)](<https://arxiv.org/abs/1809.05286>)
+
 ## Related Skills
 
 | Skill | Purpose |

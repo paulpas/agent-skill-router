@@ -346,6 +346,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Architecture Decision Records (ADR Pattern)](<https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions>)
+- [Software Blueprint Patterns (Martin Fowler)](<https://martinfowler.com/bliki/SoftwareBlueprint.html>)
+- [C4 Model for Software Architecture](<https://c4model.com/>)
+- [UML Use Case Modeling Guide](<https://www.ibm.com/docs/en/rational-warehouse-modeler/9.6.0?topic=types-use-case-diagram>)
+- [Design Documentation Best Practices (NIST)](<https://csrc.nist.gov/pubs/sp/800-160/vol-2/final>)
+
 ## Related Skills
 
 | Skill | Purpose |

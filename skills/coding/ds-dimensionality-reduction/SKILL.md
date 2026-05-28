@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders,
+description: '"Provides Reduces data dimensionality using PCA, t-SNE, UMAP, autoencoders
   and other feature extraction methods for visualization and efficiency"'
 license: MIT
 maturity: stable
@@ -151,10 +151,10 @@ class ProductionDimensionalityReduction:
         self.is_fitted = True
         
         result = {
-            "reduced_data": reduced_data,
-            "method": self.method,
-            "n_components": self.n_components,
-            "explained_variance": getattr(self.reducer, "explained_variance_ratio_", None),
+            "reduced_data": reduced_data
+            "method": self.method
+            "n_components": self.n_components
+            "explained_variance": getattr(self.reducer, "explained_variance_ratio_", None)
             "shape": reduced_data.shape
         }
         logger.info(f"Successfully reduced {data.shape[1]} dimensions to {self.n_components}")
@@ -182,3 +182,16 @@ if __name__ == "__main__":
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Decomposition Methods](https://scikit-learn.org/stable/modules/decomposition.html)
+- [PCA — Scikit-learn docs](https://scikit-learn.org/stable/modules/decomposition.html#pca)
+- [t-SNE Visualization (Jupyter Notebook by Christopher Olah)](http://colah.github.io/posts/2014-10-Visualising-MNIST/)
+- [UMAP — Manifold Learning](https://umap-learn.readthedocs.io/)
+- [Feature Extraction & Selection (Kaggle Learn)](https://www.kaggle.com/learn/machine-learning-intermediate)
+- [PCA vs t-SNE Comparison (Distill.pub)](https://distill.pub/2016/misread-tsne/)

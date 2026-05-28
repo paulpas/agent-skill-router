@@ -311,4 +311,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `stacktrace-root-cause` | Uses log analysis output to correlate runtime logs with stack trace root cause analysis |
+| `incident-response` | Provides incident response workflows triggered by critical patterns found in runtime logs |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenTelemetry Logging Specification](https://opentelemetry.io/docs/specs/otel/logs/) — Official OpenTelemetry specification for structured logging in distributed systems
+- [ELK Stack Documentation (Elasticsearch, Logstash, Kibana)](https://www.elastic.co/guide/index.html) — Official documentation for the ELK stack, the most common log analysis platform
+- [Structured Logging Best Practices (Uber Engineering)](https://eng.uber.com/structured-logging/) — Uber's engineering blog on designing effective structured logging systems
+- [Grep Documentation](https://www.gnu.org/software/grep/manual/grep.html) — GNU grep manual for command-line log searching and pattern matching
+- [Log Analysis at Scale (Netflix Tech Blog)](https://netflixtechblog.com/tagged/log-analysis) — Netflix's research and patterns on analyzing logs at massive scale

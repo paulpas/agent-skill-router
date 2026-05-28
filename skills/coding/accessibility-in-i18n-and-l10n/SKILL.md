@@ -25,3 +25,13 @@ Accessibility ensures that users with diverse abilities can effectively interact
 - **Assistive Technologies**: Understanding the variety of assistive technologies commonly used helps anticipate user interactions and potential issues.
 
 By prioritizing accessibility through practical strategies in internationalization and localization, your software can significantly enhance user experience while fostering inclusivity across diverse demographics. This ensures that your software not only meets regulatory requirements but also aligns with best practices, making usability a shared priority.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [WCAG 2.2 Guidelines](https://www.w3.org/TR/WCAG22/) — W3C Web Content Accessibility Guidelines, the definitive standard for web accessibility compliance
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) — W3C's ARIA specification for making dynamic content accessible to assistive technologies
+- [Unicode CLDR (Common Locale Data Repository)](https://cldr.unicode.org/) — Unicode's comprehensive locale data for internationalization and localization
+- [ISO 9241-171:2016 Ergonomics of Human-System Interaction](https://www.iso.org/standard/63539.html) — International standard for accessibility of information technology products
+- [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) — W3C's Web Accessibility Initiative providing tools, training, and resources for building accessible web content

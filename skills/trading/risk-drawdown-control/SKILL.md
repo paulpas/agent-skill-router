@@ -229,3 +229,15 @@ class DrawdownController:
         
         return scaling * base_size
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Understanding Drawdown in Trading](https://www.investopedia.com/terms/d/drawdown.asp)
+- [Maximum Drawdown Calculation](https://en.wikipedia.org/wiki/Downside_risk)
+- [Drawdown Limits for Risk Control](https://docs.quantconnect.com/tutorials/risk-management)
+- [Portfolio Drawdown Recovery Strategies](https://www.investopedia.com/articles/trading/06/maxdrawdown.asp)
+- [Volatility Targeting to Control Drawdown](https://en.wikipedia.org/wiki/Average_true_range)

@@ -1162,3 +1162,15 @@ When this skill is active, produce:
 | `rapid-prototyping-workflow` | Plan the overall prototype workflow — safety protocols apply at every stage from paper sketch to physical fabrication |
 | `digital-fabrication` | Machine-specific fabrication methods (3D printing, laser cutting, CNC milling) each have unique safety requirements covered in this skill |
 | `maker-safety-practices` | This skill — the comprehensive safety reference covering all makerspace operations and hazards |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [OSHA Electrical Safety Standards](https://www.osha.gov/electrical)
+- [ANSI Z87.1 — Occupational Eye & Face Protection](https://www.ansi.org/standards-information/ansi-z87-1/)
+- [NFPA 45 — Standard for Fire Prevention in Labs](https://www.nfpa.org/codes-and-standards/nfpa-45)
+- [Maker Safety Guidelines (Haxpress)](https://hackaday.com/category/safety/)
+- [NIOSH — Particulate Respirator Guide](https://www.cdc.gov/niosh/topics/respirators/)

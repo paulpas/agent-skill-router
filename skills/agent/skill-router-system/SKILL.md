@@ -180,3 +180,13 @@ When configuring or auditing the skill router, produce:
 | `confidence-based-selector` | Advanced scoring and adaptive threshold tuning for uncertain matches |
 | `parallel-skill-runner` | Concurrent execution of multi-skill routing for complex tasks |
 | `dependency-graph-builder` | Maps skill interdependencies to prevent circular auto-loading |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [agent-skill-router Repository](https://github.com/anthropics/agent-skill-router) — Source code and documentation for the open-source skill routing system
+- [OpenCode Skill System Documentation](https://opencode.ai/docs/skills) — Official OpenCode documentation on skill configuration, auto-loading, and metadata
+- [LangChain Router Pattern](https://python.langchain.com/docs/modules/model_io/models/chat/router/) — LangChain's documentation on implementing chat model routing patterns
+- [FastAPI for API Services (Official Docs)](https://fastapi.tiangolo.com/) — FastAPI official documentation for building the skill router API endpoints
+- [Semantic Vector Search with FAISS](https://facebookresearch.github.io/faiss/) — Facebook AI Similarity Search documentation, commonly used for semantic skill matching

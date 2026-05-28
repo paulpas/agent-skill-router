@@ -147,4 +147,14 @@ spec:
 | Skill | Purpose |
 |-------|---------|
 | kubernetes-security-best-practices | Ensures secure Kubernetes configurations and practices. |
-| kubernetes-logging-best-practices | Enhances logging strategies in Kubernetes environments.|
+| kubernetes-logging-best-practices | Enhances logging strategies in Kubernetes environments.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Prometheus Monitoring on Kubernetes](https://prometheus.io/docs/guides/kubernetes/) — Official Prometheus guide for monitoring Kubernetes clusters
+- [EFK Stack (Elasticsearch, Fluentd, Kibana) for K8s](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-deploy-fluentd.html) — Elastic's documentation on centralized logging in Kubernetes
+- [OpenTelemetry for Kubernetes](https://opentelemetry.io/docs/platforms/kubernetes/) — OpenTelemetry's official guide to instrumenting K8s applications
+- [Kubernetes Dashboard Monitoring](https://kubernetes.io/docs/tasks/extend-kubernetes/setup-monitoring-visualui/) — Official K8s guide to setting up monitoring UIs
+- [Grafana Dashboards for Kubernetes](https://grafana.com/grafana/dashboards/?search=kubernetes) — Grafana's curated Kubernetes dashboard templates and configuration guides|

@@ -103,3 +103,14 @@ Before completing your skill, verify:
 1. **Ignoring Market Conditions**: Ensure strategies align with current market volatility and trends.  
 2. **Overcomplicating Implementations**: Keep code clean and focused on the strategy logic.  
 3. **Neglecting to Test**: Always provide unit tests for each strategy's logic.
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [CBOE Options Strategies Glossary](https://www.cboe.com/training/training-materials/glossary/options-strategies/)
+- [Options Trading Fundamentals](https://www.investopedia.com/options-4428194)
+- [Common Options Strategies Guide](https://www.investopedia.com/trading/options-trading-strategies-beginner-s-guide/)
+- [Options Greeks Explained](https://www.investopedia.com/trading/introduction-to-the-greeks/)
+- [Advanced Options Strategies Research](https://en.wikipedia.org/wiki/Option_(finance))

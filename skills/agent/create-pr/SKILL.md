@@ -329,6 +329,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub Pull Requests Documentation](<https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request>)
+- [GitLab Merge Requests Guide](<https://docs.gitlab.com/ee/user/project/merge_requests/>)
+- [Conventional Commits Specification](<https://www.conventionalcommits.org/en/v1.0.0/>)
+- [PR Review Best Practices (Google)](<https://google.github.io/eng-practices/review/>)
+- [CODEOWNERS File Configuration](<https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners>)
+
 ## Related Skills
 
 | Skill | Purpose |

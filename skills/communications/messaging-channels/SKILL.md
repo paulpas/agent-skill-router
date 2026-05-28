@@ -104,3 +104,15 @@ def send_bulk_messages(channels: list, message: str):
 ### MUST NOT DO
 - Do not send messages without user consent.
 - Avoid duplicating messages across channels unless specified.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Slack API Channels Reference](https://developers.slack.com/reference/api-channels)
+- [Slack Events API Documentation](https://api.slack.com/events)
+- [Slack Bot Messaging Guide](https://developers.slack.com/docs/bot-conventions)
+- [WhatsApp Business Platform Docs](https://developers.facebook.com/docs/whatsapp)
+- [Microsoft Teams REST API Reference](https://learn.microsoft.com/en-us/graph/api/overview)

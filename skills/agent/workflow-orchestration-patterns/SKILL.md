@@ -301,9 +301,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Temporal Workflow Orchestration](https://temporal.io/workflow-orchestration)
+- [Apache Airflow DAG Patterns](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html)
+- [AWS Step Functions State Machine Syntax](https://docs.aws.amazon.com/step-functions/latest/dg/amisupport.html)
+- [Orchestration vs Choreography — Microsoft Architecture Guide](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-patterns/orchestration-vs-choreography)
+- [SAGA Pattern for Distributed Transactions](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

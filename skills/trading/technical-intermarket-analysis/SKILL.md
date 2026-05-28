@@ -261,3 +261,13 @@ class IntermarketAnalyzer:
 ``````
 ```
 ```
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Intermarket Analysis: Stocks, Bonds, Commodities (John J. Murphy)](https://www.investopedia.com/articles/investing/072815/intermarket-analysis.asp) — John Murphy's framework for analyzing relationships between stock, bond, commodity, and currency markets
+- [Correlation Matrix in Financial Markets (Investopedia)](https://www.investopedia.com/terms/c/correlation-matrix.asp) — Investopedia's guide to using correlation matrices for intermarket relationship analysis
+- [SPY vs TLT Correlation (StockCharts)](https://stockcharts.com/free-charting/tech-radar.html) — StockCharts tools for visualizing and analyzing cross-market correlations in real-time
+- [Asset Class Correlations (Federal Reserve Economic Data)](https://fred.stlouisfed.org/) — FRED dataset for tracking intermarket relationships including Treasury yields, equity indices, and commodity prices
+- [Dow Jones U.S. Composite Index Methodology](https://indexes.dj.com/methodology) — Dow Jones methodology documentation for understanding composite index relationships across sectors

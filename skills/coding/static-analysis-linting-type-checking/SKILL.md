@@ -111,3 +111,13 @@ The model will generate outputs containing suggestions for integrating static an
 1. Step-by-step instructions matching core workflow stages.
 2. Sample configurations for various tools relevant to the project.
 3. Documentation excerpts that illustrate best practices for the team.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [ESLint Documentation](https://eslint.org/docs/latest/use/core-concepts/) — ESLint's official guide for static code analysis, rule configuration, and custom plugin development in JavaScript/TypeScript
+- [Ruff: Ultra-Fast Python Linter (Astral)](https://docs.astral.sh/ruff/) — Ruff documentation for the high-performance Python linter that combines flake8, pylint, isort, and more
+- [pyright / Pylance Type Checking](https://github.com/microsoft/pyright) — Microsoft's static type checker for Python with language server protocol support
+- [MyPy Static Type Checker for Python](https://mypy.readthedocs.io/) — Official MyPy documentation on gradual typing, plugins, and configuration for Python codebases
+- [SonarQube Analysis Pipeline](https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/scanning/sonarcloud-ci-integration/) — SonarQube's guide to integrating static analysis, linting, and code quality gates in CI/CD pipelines

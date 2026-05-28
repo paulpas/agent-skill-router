@@ -579,6 +579,16 @@ When applying this skill, produce outputs following this structure:
 
 ---
 
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenCode Documentation](https://opencode.ai/docs)
+- [LangChain Prompting Best Practices](https://python.langchain.com/docs/concepts/prompt_templates/)
+- [Anthropic Prompt Engineering Guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)
+- [Google Gemini System Instructions](https://ai.google.dev/gemini-api/docs/system-instructions)
+- [MCP (Model Context Protocol) Specification](https://modelcontextprotocol.io/)
+
 ## Appendix: Domain-Specific Trigger Templates
 
 Use these templates as starting points when designing triggers for each domain. Adapt terms to your specific skill topic.

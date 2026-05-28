@@ -785,3 +785,15 @@ Before completing your task, verify:
 
 
 Relative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Market Impact Models Research](https://arxiv.org/abs/quant-ph/0405176)
+- [Price Impact of Trading Orders](https://en.wikipedia.org/wiki/Market_impact)
+- [Algorithmic Execution and Market Impact](https://www.investopedia.com/terms/m/market-impact.asp)
+- [Liquidity and Order Book Dynamics](https://arxiv.org/abs/0802.2576)
+- [Minimizing Market Impact in Large Trades](https://docs.quantconnect.com/tutorials/rate-limits)

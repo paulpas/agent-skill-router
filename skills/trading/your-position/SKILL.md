@@ -587,3 +587,15 @@ The three pillars of your-position awareness are:
 1. **Honesty** — Your thesis must be falsifiable. If it can't be proven wrong, it's not a thesis; it's hope.
 2. **Systems** — Biases are inevitable. The system catches what willpower cannot.
 3. **Attribution** — You are responsible for your process, not the market's response to it.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Account Information Tutorial](https://docs.quantconnect.com/tutorials/account-information)
+- [Portfolio Position Tracking](https://en.wikipedia.org/wiki/Position_(finance))
+- [Long vs Short Positions Explained](https://www.investopedia.com/terms/l/long.asp)
+- [Position Sizing and Risk Control](https://www.investopedia.com/terms/p/position-sizing.asp)
+- [OpenSource Trading Platforms](https://docs.quantconnect.com/tutorials/algorithms)

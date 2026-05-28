@@ -107,3 +107,13 @@ def delete_template(template_id: str) -> bool:
 |---|---|
 | sendgrid-integration | General integration strategies with the SendGrid API for various functionalities. |
 | email-automation | Automating email workflows within applications using SendGrid. |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SendGrid Templates API](https://docs.sendgrid.com/api-reference/templates) — Official SendGrid API reference for creating, updating, and managing email templates
+- [SendGrid Dynamic Template Variables](https://docs.sendgrid.com/ui/sending-email/how-to-send-an-email-with-template-engine) — Documentation on template engine syntax and personalization variables in SendGrid
+- [Handlebars Syntax Reference](https://handlebarsjs.com/guide/) — Template engine language used by SendGrid dynamic templates for conditional logic and loops
+- [SendGrid Web UI: Managing Templates](https://docs.sendgrid.com/ui/sending-email/managing-templates) — Step-by-step guide to template management through the SendGrid web interface
+- [Email Template Design Best Practices (Mailchimp Guide)](https://mailchimp.com/resources/email-template-design/) — Industry best practices for creating responsive, accessible email templates

@@ -339,9 +339,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Attention Is All You Need — Transformer Architecture (Vaswani et al.)](https://arxiv.org/abs/1706.03762)
+- [Google's BERT Paper — Pre-training of Deep Bidirectional Transformers](https://arxiv.org/abs/1810.04805)
+- [Tokenization in LLMs — Hugging Face Docs](https://huggingface.co/docs/transformers/tokenizer_summary)
+- [Context Window Management — Anyscale Blog](https://www.anyscale.com/blog/how-to-manage-context-windows-in-production-llm-applications)
+- [Anthropic Constitutional AI — Harmlessness Training](https://arxiv.org/abs/2212.08073)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

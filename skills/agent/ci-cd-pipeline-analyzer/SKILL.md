@@ -278,6 +278,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub Actions Documentation](<https://docs.github.com/en/actions>)
+- [GitLab CI/CD Documentation](<https://docs.gitlab.com/ee/ci/>)
+- [Jenkins Pipeline Syntax Reference](<https://www.jenkins.io/doc/book/pipeline/syntax/>)
+- [CircleCI Configuration Reference](<https://circleci.com/docs/configuration-tokens/>)
+- [CI/CD Security Best Practices (SLSA)](<https://slsa.dev/spec/v1.0/security-baseline>)
+
 ## Related Skills
 
 | Skill | Purpose |

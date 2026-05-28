@@ -1332,3 +1332,15 @@ class TradeValidator:
 
 
 Relative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Trading Plan Guide](https://www.investopedia.com/articles/trading/08/trading-plan.asp)
+- [Creating a Quantitative Trading Plan](https://docs.quantconnect.com/tutorials/algorithms)
+- [Risk Management in Trading Plans](https://docs.quantconnect.com/tutorials/risk-management)
+- [Trading Journal and Performance Tracking](https://www.investopedia.com/articles/trading/08/trading-journal.asp)
+- [Strategy Documentation Standards](https://en.wikipedia.org/wiki/Algorithmic_trading)

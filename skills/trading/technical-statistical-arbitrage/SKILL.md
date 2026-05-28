@@ -257,3 +257,15 @@ class StatisticalArbitrage:
         
         return p_values
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Statistical Arbitrage Overview](https://en.wikipedia.org/wiki/Statistical_arbitrage)
+- [Pairs Trading Strategies](https://en.wikipedia.org/wiki/Statistical_arbitrage)
+- [Cointegration in Trading](https://www.investopedia.com/terms/c/cointegration.asp)
+- [Mean Reversion Trading Strategies](https://en.wikipedia.org/wiki/Statistical_arbitrage)
+- [Quantitative Arbitrage Methods](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2758976)

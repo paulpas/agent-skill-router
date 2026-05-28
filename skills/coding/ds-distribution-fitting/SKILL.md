@@ -95,10 +95,10 @@ def basic_distribution_fitting(data: pd.Series) -> dict:
     pdf = stats.norm.pdf(x, mu, std)
 
     return {
-        "distribution": "normal",
-        "parameters": {"mu": mu, "sigma": std},
-        "goodness_of_fit": {"ks_statistic": ks_stat, "p_value": p_value},
-        "x_values": x,
+        "distribution": "normal"
+        "parameters": {"mu": mu, "sigma": std}
+        "goodness_of_fit": {"ks_statistic": ks_stat, "p_value": p_value}
+        "x_values": x
         "pdf_values": pdf
     }
 
@@ -162,10 +162,10 @@ class DistributionFitting:
         # Select best distribution based on lowest AIC
         best_fit = min(fit_results, key=lambda x: x["aic"])
         self.results = {
-            "status": "success",
-            "best_distribution": best_fit["distribution"],
-            "best_params": best_fit["params"],
-            "aic": best_fit["aic"],
+            "status": "success"
+            "best_distribution": best_fit["distribution"]
+            "best_params": best_fit["params"]
+            "aic": best_fit["aic"]
             "all_fits": fit_results
         }
         return self.results
@@ -185,3 +185,15 @@ class DistributionFitting:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scipy Stats — Distribution Fitting](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.fit.html)
+- [Scipy Statistical Distributions Reference](https://docs.scipy.org/doc/scipy/reference/stats.html)
+- [Continuous Probability Distributions (NIST)](https://www.itl.nist.gov/div898/handbook/prc/section1/prc1.htm)
+- [Fitting Distributions with Python (SciPy Cookbook)](https://docs.scipy.org/doc/scipy/tutorial/stats/statdist.html)
+- [MaxEnt Distribution Fitting (PyMC examples)](https://www.pymc.io/projects/examples/en/latest/generalized-linear-models/GLM-negative-binomial-regression.html)

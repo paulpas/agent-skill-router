@@ -335,3 +335,15 @@ class JoinProcessor(Generic[L, R, O]):
             return self.join_func(self.left_buffer[key], right)
         return None
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Kafka Streams Documentation](https://kafka.apache.org/documentation/#streams)
+- [Real-Time Data Processing Patterns](https://www.confluent.io/blog/stream-processing-patterns/)
+- [Apache Flink for Streaming Analytics](https://flink.apache.org/)
+- [Stream Processing Architecture Guide](https://docs.quantconnect.com/tutorials/live-trading-overview)
+- [Event-Driven Trading Data Pipelines](https://kafka.apache.org/documentation/streamssdk/)

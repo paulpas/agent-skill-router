@@ -321,6 +321,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [AWS Cloud Documentation](<https://aws.amazon.com/documentation/>)
+- [Terraform Registry & Providers](<https://registry.terraform.io/>)
+- [Kubernetes Documentation](<https://kubernetes.io/docs/home/>)
+- [Google Cloud Documentation](<https://cloud.google.com/docs>)
+- [Azure Documentation](<https://learn.microsoft.com/en-us/azure/>)
+
 ## Related Skills
 
 | Skill | Purpose |

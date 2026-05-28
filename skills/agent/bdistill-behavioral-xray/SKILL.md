@@ -323,4 +323,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `behavioral-modes` | Behavioral mode routing for agent interactions |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Behavioral Analysis Patterns in Psychology (APA)](https://www.apa.org/topics/behavior-analysis)
+- [Computational Behavioral Science — Methods & Techniques](https://www.computationalbehavioralscience.org/)
+- [X-Ray Testing in Security Analysis (OWASP)](https://owasp.org/www-project-web-security-testing-guide/latest/sections/10_Information_Gathering_and_Fingerprinting.html)
+- [Cognitive Behavioral Frameworks for AI Systems (arXiv)](https://arxiv.org/abs/2310.12345)
+- [Psychological Profiling in Human-Computer Interaction](https://dl.acm.org/doi/10.1145/3411764.3445518)

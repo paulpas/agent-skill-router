@@ -352,4 +352,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `temporal-golang-pro` | Go equivalent of the Temporal workflow patterns covered in this Python-focused skill |
+| `workflow-patterns` | General workflow orchestration patterns that complement Temporal-specific implementations |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Temporal.io Python SDK Documentation](https://docs.temporal.io/application-development/sdks#python-sdk) — Official Temporal documentation on building workflows with the Python SDK
+- [Temporal Python Client Reference (GitHub)](https://github.com/temporalio/sdk-python) — Official Temporal Python SDK source code and examples
+- [Python Async/Await Patterns](https://docs.python.org/3/library/asyncio.html) — Python's asyncio documentation, foundational for Temporal Python worker implementation
+- [Durable Execution with Temporal (Temporal Blog)](https://temporal.io/blog) — Temporal's blog on durable execution patterns, retries, and fault tolerance in Python
+- [Python Type Hints for Workflow Definitions](https://docs.python.org/3/library/typing.html) — Python typing module documentation for strongly-typed Temporal workflow signatures

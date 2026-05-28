@@ -291,6 +291,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Agent-Based Systems Architecture (Wikipedia)](<https://en.wikipedia.org/wiki/Agent_(computer_science)>)
+- [Multi-Agent System Design Patterns](<https://www.mdpi.com/2076-3417/12/15/7589>)
+- [Distributed Task Scheduling Algorithms](<https://en.wikipedia.org/wiki/Scheduling_(computing)>)
+- [Autonomous Agent Frameworks Survey (arXiv)](<https://arxiv.org/abs/2308.11432>)
+- [Service Mesh Patterns (Istio Docs)](<https://istio.io/latest/docs/>)
+
 ## Related Skills
 
 | Skill | Purpose |

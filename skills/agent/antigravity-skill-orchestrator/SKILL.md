@@ -290,6 +290,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Design Patterns: Orchestrator Pattern](<https://docs.microsoft.com/en-us/azure/architecture/patterns/orchestrator-choreography>)
+- [Microservices Orchestration vs Choreography (Martin Fowler)](<https://martinfowler.com/articles/choreographyVsOrchestration.html>)
+- [Saga Pattern for Distributed Transactions](<https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga>)
+- [Distributed Systems Patterns Overview](<https://www.cs.cornell.edu/courses/cs6410/2018sp/patterns.html>)
+- [Event-Driven Architecture Patterns](<https://www.enterpriseintegrationpatterns.com/>)
+
 ## Related Skills
 
 | Skill | Purpose |

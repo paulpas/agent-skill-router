@@ -311,3 +311,15 @@ class JapanTaxRule:
 ```
 
 ...}{"filePath":"skills/coding/design-patterns-architecture/SKILL.md"}uptools to validate creativity using communications. All to be validated and acknowledge the shift from explicit promises to adaptive, optimistic actions. The solver observes multiple styles to give a clear answer. For this pathway, put forward logical constraint in all areas. The goal is deliberative strategy.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Design Patterns — GoF Catalog (Refactoring Guru)](https://refactoring.guru/design-patterns/about)
+- [Enterprise Architecture Application Patterns (Martin Fowler)](https://martinfowler.com/eaaDev/)
+- [Microservice Decomposition Strategies](https://docs.microsoft.com/en-us/azure/architecture/guide/microservices/decompose-by-type)
+- [Hexagonal Architecture — Alistair Cockburn](https://8thlight.com/blog/alistair-cockburn/2012/06/27/a-port-in-shore-is-a-port-in-a-storm-too.html)
+- [Domain-Driven Design — Eric Evans (O'Reilly)](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215)

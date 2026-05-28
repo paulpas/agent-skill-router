@@ -6,18 +6,18 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared,
+description: '"Evaluates regression models using MSE, RMSE, MAE, MAPE, R-squared
   and other metrics for assessing predictive accuracy"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-cross-validation, ds-linear-regression, ds-metrics-and-kpis,
+  related-skills: ds-cross-validation, ds-linear-regression, ds-metrics-and-kpis
     ds-time-series-forecasting ds-model-selection
   role: implementation
   scope: implementation
-  triggers: regression evaluation, MSE, RMSE, MAE, R-squared, regression metrics,
+  triggers: regression evaluation, MSE, RMSE, MAE, R-squared, regression metrics
     how do i evaluate
   archetypes:
   - tactical
@@ -99,9 +99,9 @@ def basic_regression_evaluation(X: np.ndarray, y: np.ndarray) -> Dict[str, float
     y_pred = model.predict(X_test)
     
     metrics: Dict[str, float] = {
-        'mse': float(mean_squared_error(y_test, y_pred)),
-        'rmse': float(np.sqrt(mean_squared_error(y_test, y_pred))),
-        'mae': float(mean_absolute_error(y_test, y_pred)),
+        'mse': float(mean_squared_error(y_test, y_pred))
+        'rmse': float(np.sqrt(mean_squared_error(y_test, y_pred)))
+        'mae': float(mean_absolute_error(y_test, y_pred))
         'r2': float(r2_score(y_test, y_pred))
     }
     return metrics
@@ -142,10 +142,10 @@ class RegressionEvaluator:
         y_pred = self.model.predict(X_test)
         
         metrics: Dict[str, Any] = {
-            'mse': float(mean_squared_error(y_test, y_pred)),
-            'rmse': float(np.sqrt(mean_squared_error(y_test, y_pred))),
-            'mae': float(mean_absolute_error(y_test, y_pred)),
-            'r2': float(r2_score(y_test, y_pred)),
+            'mse': float(mean_squared_error(y_test, y_pred))
+            'rmse': float(np.sqrt(mean_squared_error(y_test, y_pred)))
+            'mae': float(mean_absolute_error(y_test, y_pred))
+            'r2': float(r2_score(y_test, y_pred))
             'mape': float(np.mean(np.abs((y_test - y_pred) / y_test)) * 100)
         }
         logger.info(f"Evaluation complete. R2: {metrics['r2']:.4f}")
@@ -201,8 +201,8 @@ def good_evaluation(X: pd.DataFrame, y: pd.Series) -> Dict[str, float]:
     y_pred = model.predict(X_test)
     
     metrics: Dict[str, float] = {
-        'r2': float(r2_score(y_test, y_pred)),
-        'rmse': float(np.sqrt(mean_squared_error(y_test, y_pred))),
+        'r2': float(r2_score(y_test, y_pred))
+        'rmse': float(np.sqrt(mean_squared_error(y_test, y_pred)))
         'mae': float(mean_absolute_error(y_test, y_pred))
     }
     return metrics
@@ -223,3 +223,15 @@ def good_evaluation(X: pd.DataFrame, y: pd.Series) -> Dict[str, float]:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Model Evaluation — Regression Metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics)
+- [Mean Squared Error, R² — Scikit-learn docs](https://scikit-learn.org/stable/modules/model_evaluation.html#mean-squared-error)
+- [Residual Analysis (NIST Handbook)](https://www.itl.nist.gov/div898/handbook/tq/section4/tq_3.htm)
+- [Regression Diagnostics — Wikipedia](https://en.wikipedia.org/wiki/Regression_analysis#Diagnostics)
+- [Cross-Validation for Regression (Kaggle Learn)](https://www.kaggle.com/learn/cross-validation)

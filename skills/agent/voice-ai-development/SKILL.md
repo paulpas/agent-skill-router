@@ -322,9 +322,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [WebRTC Audio Processing Specification](https://www.w3.org/TR/webrtc/#dom-peerconnection-getstats)
+- [Mozilla DeepSpeech — Open Source Speech Recognition](https://github.com/mozilla/DeepSpeech)
+- [ElevenLabs API Documentation](https://elevenlabs.io/docs/api-reference/text-to-speech)
+- [OpenAI Whisper Model Paper — arXiv](https://arxiv.org/abs/2212.04356)
+- [Audio Codec Comparison: Opus, AAC, MP3 (RFC 6716)](https://datatracker.ietf.org/doc/html/rfc6716)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

@@ -290,4 +290,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-creator` | The core skill creation workflow — this variant adds Microsoft-specific guidance |
+| `skill-documentation-best-practices` | Provides documentation patterns that complement the skill creator workflow |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microsoft Learn Documentation Standards](https://learn.microsoft.com/en-us/contribute/content/doc-contribute-guide) — Microsoft's guidelines for writing technical documentation and skill-like learning modules
+- [Azure AI Agent Framework Documentation](https://learn.microsoft.com/en-us/azure/ai-services/) — Official Azure AI services documentation for building agentic workflows
+- [OpenAI Function Calling Specification](https://platform.openai.com/docs/guides/function-calling) — OpenAI's documentation on defining and calling external functions from GPT models
+- [Anthropic Tool Use Documentation](https://docs.anthropic.com/en/docs/build-with-claude/tool-use) — Anthropic's guide to tool use patterns for Claude-based agents
+- [LangChain Tool Definition Patterns](https://python.langchain.com/docs/modules/agents/tools/) — LangChain documentation on defining, registering, and composing tools for AI agents

@@ -646,3 +646,15 @@ echo "Inventory saved to $OUTPUT_FILE"
 | `storage-architecture` | Configure filesystems, LVM, and mount options on provisioned storage |
 | `linux-security` | Harden the provisioned system against security threats |
 | `observability` | Monitor hardware health and set up alerting for failures |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Kernel Admin Guide Index](https://www.kernel.org/doc/html/latest/admin-guide/index.html)
+- [Linux Hardware Management](https://www.kernel.org/doc/html/latest/hwmon/index.html)
+- [Device Tree Documentation](https://www.kernel.org/doc/html/latest/devicetree/)
+- [Linux Boot Process Guide](https://www.kernel.org/doc/html/latest/admin-guide/initrd.html)
+- [Hardware Detection with lsusb/lspci](https://man7.org/linux/man-pages/man8/lsusb.8.html)

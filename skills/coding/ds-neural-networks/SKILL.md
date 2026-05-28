@@ -6,18 +6,18 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements deep neural networks, backpropagation, activation functions,
+description: '"Implements deep neural networks, backpropagation, activation functions
   architectures (CNN, RNN, Transformers), and training strategies"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-categorical-encoding, ds-ensemble-methods, ds-hyperparameter-tuning,
+  related-skills: ds-categorical-encoding, ds-ensemble-methods, ds-hyperparameter-tuning
     ds-support-vector-machines ds-tree-methods
   role: implementation
   scope: implementation
-  triggers: neural networks, deep learning, backpropagation, CNN, RNN, transformers,
+  triggers: neural networks, deep learning, backpropagation, CNN, RNN, transformers
     how do i use deep learning, hugging face
   archetypes:
   - tactical
@@ -89,12 +89,12 @@ def train_basic_neural_network(X: np.ndarray, y: np.ndarray) -> dict:
     )
     
     model = MLPClassifier(
-        hidden_layer_sizes=(64, 32),
-        activation='relu',
-        solver='adam',
-        max_iter=500,
-        random_state=42,
-        early_stopping=True,
+        hidden_layer_sizes=(64, 32)
+        activation='relu'
+        solver='adam'
+        max_iter=500
+        random_state=42
+        early_stopping=True
         validation_fraction=0.1
     )
     
@@ -102,8 +102,8 @@ def train_basic_neural_network(X: np.ndarray, y: np.ndarray) -> dict:
     y_pred = model.predict(X_test)
     
     metrics = {
-        'accuracy': accuracy_score(y_test, y_pred),
-        'report': classification_report(y_test, y_pred, output_dict=True),
+        'accuracy': accuracy_score(y_test, y_pred)
+        'report': classification_report(y_test, y_pred, output_dict=True)
         'n_iterations': model.n_iter_
     }
     return metrics
@@ -139,12 +139,12 @@ class NeuralNetworkPipeline:
         self.learning_rate = learning_rate
         self.scaler = StandardScaler()
         self.model = MLPClassifier(
-            hidden_layer_sizes=hidden_layers,
-            learning_rate_init=learning_rate,
-            solver='adam',
-            random_state=42,
-            early_stopping=True,
-            validation_fraction=0.15,
+            hidden_layer_sizes=hidden_layers
+            learning_rate_init=learning_rate
+            solver='adam'
+            random_state=42
+            early_stopping=True
+            validation_fraction=0.15
             max_iter=1000
         )
         self.is_trained = False
@@ -174,9 +174,9 @@ class NeuralNetworkPipeline:
             
             y_pred = self.model.predict(X_test_scaled)
             metrics = {
-                'accuracy': accuracy_score(y_test, y_pred),
-                'f1_score': f1_score(y_test, y_pred, average='weighted'),
-                'model_type': 'MLPClassifier',
+                'accuracy': accuracy_score(y_test, y_pred)
+                'f1_score': f1_score(y_test, y_pred, average='weighted')
+                'model_type': 'MLPClassifier'
                 'layers': self.hidden_layers
             }
             logger.info(f"Pipeline completed. Accuracy: {metrics['accuracy']:.4f}")
@@ -200,10 +200,10 @@ def good_nn_implementation(X: pd.DataFrame, y: pd.Series) -> Dict[str, Any]:
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
     model = MLPClassifier(
-        hidden_layer_sizes=(128, 64),
-        early_stopping=True,
-        validation_fraction=0.2,
-        max_iter=1000,
+        hidden_layer_sizes=(128, 64)
+        early_stopping=True
+        validation_fraction=0.2
+        max_iter=1000
         random_state=42
     )
     model.fit(X_scaled, y)
@@ -224,3 +224,15 @@ def good_nn_implementation(X: pd.DataFrame, y: pd.Series) -> Dict[str, Any]:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PyTorch nn Module](https://pytorch.org/docs/stable/nn.html)
+- [TensorFlow Keras Overview](https://www.tensorflow.org/guide/keras/overview)
+- [Deep Learning — Ian Goodfellow et al. (Free Book)](https://www.deeplearningbook.org/)
+- [Fast.ai Practical Deep Learning](https://course.fast.ai/)
+- [Neural Network Architectures — Hugging Face Course](https://huggingface.co/course/chapter7/1)

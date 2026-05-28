@@ -324,6 +324,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SAST Security Scanning Overview](<https://owasp.org/www-community/vulnerabilities/>)
+- [OWASP Top 10 Web Application Risks](<https://owasp.org/www-project-top-ten/>)
+- [Cyclomatic Complexity (Wikipedia)](<https://en.wikipedia.org/wiki/Cyclomatic_complexity>)
+- [Dependency Analysis Tools Comparison](<https://deps.dev/>)
+- [Software Architecture Assessment Patterns](<https://www.informit.com/articles/article.aspx?p=2982163>)
+
 ## Related Skills
 
 | Skill | Purpose |

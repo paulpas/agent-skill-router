@@ -313,4 +313,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `api-documentation` | API documentation and specification workflows |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OWASP Web Security Testing Guide v4](https://owasp.org/www-project-web-security-testing-guide/latest/)
+- [Portswigger Web Security Academy](https://portswigger.net/web-security)
+- [OWASP API Security Top 10 (2023)](https://owasp.org/API-Security/)
+- [NIST SP 800-115 — Technical Guide to Information Security Testing](https://csrc.nist.gov/publications/detail/sp/800-115/final)
+- [OWASP Testing Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/Testing_Cheat_Sheet.html)

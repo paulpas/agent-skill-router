@@ -1285,7 +1285,7 @@ class MyTransformPlugin(PluginV2):
 
 - [Python Protocol Design — Typing Best Practices](https://typing.python.org/en/latest/spec/protocol.html)
 - [Plugin Architecture Patterns — Martin Fowler](https://martinfowler.com/articles/nonOpaquePluginArchitecture.html)
-- [Middleware Pipeline Patterns (Go Middleware, Express Middleware)](https://github.com/pressly/go-chi/wiki/Middleware)
+- [Express.js Middleware Documentation](https://expressjs.com/en/guide/using-middleware.html) — Node.js middleware pipeline architecture and pattern for request processing chains
 - [Semantic Versioning for API Design](https://semver.org/)
 - [pytest Plugin Architecture — Conftest and Hookspec Design](https://docs.pytest.org/en/latest/reference/hookspec.html)
 - [OpenTelemetry SDK Extension Points (Propagators, Instrumentations)](https://opentelemetry.io/docs/specs/otel/extension/)

@@ -523,3 +523,13 @@ class VolatilityRegimeDetector:
                 labels.append('high_volatility')
         return labels
 ```
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GARCH Models: Theory and Applications (Bollerslev)](https://www.sciencedirect.com/science/article/pii/0304407686900631) — Bollerslev's foundational paper on Generalized Autoregressive Conditional Heteroskedasticity for volatility modeling
+- [implied Volatility Forecasting (CBOE)](https://www.cboe.com/trading-products/volatility-products/cboe-volatility-indexes/) — CBOE's documentation on VIX methodology and implied volatility index construction
+- [Machine Learning for Financial Time Series (Goodfellow)](https://arxiv.org/abs/1507.00930) — Academic paper on applying deep learning models to financial time series forecasting
+- [volatility Library Documentation](https://github.com/bashtage/volatility) — Python volatility library for econometric modeling of financial market volatility
+- [Options Volatility Forecasting (Hull, Options, Futures)](https://www.pearson.com/en-us/subject/plan/h-john-hull-options-futures-and-other-derivivatives-9780134601537) — John Hull's textbook reference on volatility estimation and prediction for derivatives pricing

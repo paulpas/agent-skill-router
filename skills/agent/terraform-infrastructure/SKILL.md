@@ -336,4 +336,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `infrastructure-as-code` | General IaC patterns that complement Terraform-specific implementations |
+| `cloudflare-infrastructure` | Cloud infrastructure patterns that work alongside Terraform-managed resources |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Terraform Documentation](https://developer.hashicorp.com/terraform) — Official HashiCorp Terraform documentation covering providers, resources, modules, and state management
+- [Terraform Language Reference](https://developer.hashicorp.com/terraform/language) — Terraform language reference for HCL syntax, variables, outputs, and configuration blocks
+- [Terraform Best Practices (HashiCorp)](https://developer.hashicorp.com/terraform/best-practices) — Official HashiCorp best practices guide for Terraform project organization and workflows
+- [Terraform Registry](https://registry.terraform.io/) — HashiCorp's registry of community and official Terraform providers and modules
+- [Infrastructure as Code with Terraform (AWS)](https://aws.amazon.com/tfsm/) — AWS Terraform State Migration tool documentation for managing state transitions at scale

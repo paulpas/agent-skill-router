@@ -310,6 +310,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [E-commerce Platform Comparison (G2)](<https://www.g2.com/categories/ecommerce>)
+- [Shopify API Documentation](<https://shopify.dev/docs/api>)
+- [Web Scraping Best Practices for E-commerce](<https://brightdata.com/blog/web-scraping-ecommerce>)
+- [Product Data Schema.org Reference](<https://schema.org/Product>)
+- [E-commerce Security (PCI DSS Overview)](<https://www.pcisecuritystandards.org/pci_security/standard_overview>)
+
 ## Related Skills
 
 | Skill | Purpose |

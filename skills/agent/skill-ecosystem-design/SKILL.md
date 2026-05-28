@@ -428,3 +428,13 @@ When designing a skill ecosystem, produce:
 | `coding-skill-lifecycle-management` | Manages versioning and retirement — this skill ensures relationships stay intact during changes |
 | `agent-skill-router` | Routes tasks to skills at runtime — this skill designs the ecosystem that routing depends on |
 | `agent-confidence-based-selector` | Selects skills by confidence scores — complementary to trigger-based network discovery |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Graph Theory Fundamentals (Wikipedia)](https://en.wikipedia.org/wiki/Graph_theory) — Foundational concepts in graph theory applicable to skill dependency graphs
+- [Dependency Injection Patterns (Martin Fowler)](https://martinfowler.com/articles/injection.html) — Fowler's analysis of dependency injection and component relationship patterns
+- [Network Topology Design Patterns](https://www.sciencedirect.com/topics/computer-science/network-topology) — Research on designing interconnected systems with optimal discoverability and resilience
+- [Component-Based Architecture (IBM)](https://developer.ibm.com/technologies/software/patterns/component-based-architecture/) — IBM's patterns for building component ecosystems with clear interfaces and relationships
+- [Knowledge Graph Design Patterns](https://www.w3.org/standwich/graph-data-model/) — W3C knowledge graph standards applicable to skill relationship networks

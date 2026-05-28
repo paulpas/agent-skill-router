@@ -322,4 +322,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `api-security-testing` | Security-focused API documentation and testing workflows |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenAPI Specification 3.1](https://spec.openapis.org/oas/v3.1.0)
+- [OpenAPI Initiative — What is the Open API Specification?](https://www.openapis.org/what-is-the-open-api-specification)
+- [Swagger Editor & Validation](https://editor.swagger.io/)
+- [RESTful API Design Guide (Google)](https://cloud.google.com/apis/design)
+- [JSON Schema Draft 2020-12 Specification](https://json-schema.org/draft/2020-12/json-schema-core.html)

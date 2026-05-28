@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-classification-metrics, ds-feature-engineering, ds-linear-regression
   role: implementation
   scope: implementation
-  triggers: logistic regression, classification, binary classification, multinomial,
+  triggers: logistic regression, classification, binary classification, multinomial
     how do i classify
   archetypes:
   - tactical
@@ -149,10 +149,10 @@ class LogisticRegressionPipeline:
         
         logger.info("Pipeline executed successfully")
         return {
-            'status': 'success',
-            'predictions': predictions.tolist(),
-            'probabilities': probabilities.tolist(),
-            'model_params': {'C': self.C, 'penalty': self.penalty},
+            'status': 'success'
+            'predictions': predictions.tolist()
+            'probabilities': probabilities.tolist()
+            'model_params': {'C': self.C, 'penalty': self.penalty}
             'feature_names': X.columns.tolist()
         }
 ```
@@ -171,3 +171,15 @@ class LogisticRegressionPipeline:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Logistic Regression](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
+- [Logistic Regression — Wikipedia](https://en.wikipedia.org/wiki/Logistic_regression)
+- [Statsmodels GLM Documentation](https://www.statsmodels.org/stable/glm.html)
+- [Understanding Logistic Regression (Kaggle Learn)](https://www.kaggle.com/learn/logistic-regression)
+- [Logistic Regression Assumptions (SPSS Analytics)](https://blog.usa.spss.com/logistic-regression-assumptions-spss-statistics/)

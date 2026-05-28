@@ -766,11 +766,10 @@ When this skill is active, the model's output must contain:
 
 ## Live References
 
-> Authoritative documentation links for framework POC design and testing.
+> Authoritative documentation links for proof-of-concept design and evaluation. The model follows markdown links at load time to resolve external references and inline content.
 
-- [Python dataclasses](https://docs.python.org/3/library/dataclasses.html) — Data container pattern for test results and configuration
-- [pytest-benchmark](https://pytest-benchmark.readthedocs.io/en/latest/) — Automated performance measurement and comparison in test suites
-- [Hypothesis testing library](https://hypothesis.works/) — Property-based testing for discovering edge cases beyond manual test design
-- [Google Benchmark](https://github.com/google/benchmark) — Production-grade C++ benchmarking framework with statistical analysis
-- [tracemalloc](https://docs.python.org/3/library/tracemalloc.html) — Python memory profiler for tracking peak allocation during POC runs
-- [time.perf_counter](https://docs.python.org/3/library/time.html#time.perf_counter) — Highest-resolution timer for measuring short durations
+- [Wikipedia — Proof of Concept](https://en.wikipedia.org/wiki/Proof_of_concept) — Definition, purpose, and lifecycle of PoCs in software engineering including when to use them vs prototypes vs spikes
+- [Atlassian — Designing a Proof of Concept](https://www.atlassian.com/agile/project-management/poCs) — Practical guide to scoping PoCs, defining success criteria, and transitioning findings into production-ready implementations
+- [Martin Fowler — Spike Solution](https://martinfowler.com/bliki/SpikeSolution.html) — Time-boxed investigation approach for reducing risk through experimental code before committing to an architecture
+- [RICE Prioritization Framework (ProductPlan)](https://www.productplan.com/learning/rice-prioritization/) — Reach, Impact, Confidence, Effort scoring model for ranking PoC candidates by business value and feasibility
+- [Scrum Guide — Sprint Structure for POCs](https://scrumguides.org/scrum-guide.html) — How to run time-boxed investigation sprints within Scrum ceremonies for framework evaluation

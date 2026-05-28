@@ -1011,3 +1011,13 @@ def _good_react_with_max_iterations(query: str, max_iters: int = 10) -> FinalAns
 ---
 
 *This skill implements deterministic, verifiable reasoning patterns for AI agents. Every execution should be traceable through its full thought-action-observation history.*
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [ReAct: Synergizing Reasoning and Acting in LLMs (Yao et al.)](https://arxiv.org/abs/2210.03629) — Foundational paper introducing the ReAct pattern for agent reasoning
+- [Chain-of-Thought Prompting Elicits Reasoning in LLMs (Wei et al.)](https://arxiv.org/abs/2201.11903) — Seminal research on chain-of-thought reasoning patterns
+- [Self-Consistency Improves Chain of Thought Reasoning (Wang et al.)](https://arxiv.org/abs/2203.11171) — Research on self-reflection and consistency-based reasoning evaluation
+- [LangGraph Agent Patterns](https://langchain-ai.github.io/langgraph/concepts/) — Official documentation on implementing planning and reasoning patterns in LangGraph
+- [LLM Agent Survey: Design, Testing, and Applications (Kumar et al.)](https://arxiv.org/abs/2401.12954) — Comprehensive survey of LLM agent architectures and reasoning strategies

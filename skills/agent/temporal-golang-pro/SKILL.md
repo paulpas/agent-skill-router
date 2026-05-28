@@ -317,4 +317,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `temporal-python-pro` | Python equivalent of the Temporal workflow patterns covered in this Go-focused skill |
+| `workflow-patterns` | General workflow orchestration patterns that complement Temporal-specific implementations |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Temporal.io Workflow Documentation](https://docs.temporal.io/workflows) — Official Temporal documentation on building reliable workflows with Go
+- [Go Concurrency Patterns (Effective Go)](https://go.dev/doc/effective_go#goroutines) — Effective Go guide to goroutines, channels, and concurrency patterns used in Temporal workers
+- [Temporal Go SDK Reference](https://pkg.go.dev/go.temporal.io/sdk) — Official Temporal Go SDK API reference documentation
+- [Durable Execution Patterns (Temporal Blog)](https://temporal.io/blog) — Temporal's engineering blog on durable execution, saga patterns, and workflow orchestration
+- [Go Testing Patterns for Workers](https://go.dev/doc/tutorial/add-a-workflow) — Official Go tutorial including testing patterns for Temporal workflow applications

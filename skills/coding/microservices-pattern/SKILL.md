@@ -150,3 +150,13 @@ response, err := client.MyMethod(context.Background(), &pb.MyRequest{})
 
 ### MUST NOT DO
 - Allow tight coupling between microservices; ensure loose coupling for flexibility.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microservices.io — Service Patterns](https://microservices.io/patterns/microservices.html)
+- [Microsoft Azure — Microservices Architecture Guide](https://docs.microsoft.com/en-us/azure/architecture/guide/microservices/)
+- [Netflix TechBlog — Microservices Resilience Patterns](https://netflix.github.io/techblog/tags/resilience/)
+- [Consul Service Discovery Documentation](https://developer.hashicorp.com/consul/docs)
+- [gRPC Official Documentation and Tutorials](https://grpc.io/docs/)

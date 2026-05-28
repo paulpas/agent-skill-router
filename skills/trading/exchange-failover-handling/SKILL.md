@@ -344,3 +344,15 @@ class StateSynchronizer:
             await self.trigger_sync(target_nodes)
             await asyncio.sleep(self.sync_interval)
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [CCXT Error Handling Guide](https://docs.ccxt.org/en/latest/manual.html#error-handling)
+- [Exchange Failover Architecture](https://docs.quantconnect.com/tutorials/live-trading-overview)
+- [High Availability Trading Systems](https://en.wikipedia.org/wiki/Failover)
+- [Multi-Exchange Order Routing](https://docs.ccxt.org/en/latest/manual.html#exchange-market-data)
+- [Resilient Exchange Connection Patterns](https://arxiv.org/abs/2111.09135)

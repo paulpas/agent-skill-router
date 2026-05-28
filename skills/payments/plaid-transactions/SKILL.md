@@ -305,3 +305,15 @@ When implementing Plaid Transactions, output must contain:
 | `plaid-authentication` | Initial bank account linking before transaction retrieval |
 | `plaid-identity` | Post-retrieval identity verification against transaction data |
 | `plaid-income` | Income analysis complemented by transaction-level detail |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Plaid Transactions API Documentation](https://plaid.com/docs/api/products/transactions/)
+- [Plaid Auth & Link Token Setup](https://plaid.com/auth/)
+- [Transaction Categorization Reference](https://plaid.com/docs/data/transactions/#categorization)
+- [Plaid Webhooks for Transaction Events](https://plaid.com/docs/webhooks/)
+- [Spending Analytics with Plaid Data](https://plaid.com/docs/data/personal-finance/)

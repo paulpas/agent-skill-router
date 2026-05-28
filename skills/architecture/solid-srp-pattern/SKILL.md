@@ -106,3 +106,15 @@ func main() {
 ### MUST NOT DO
 - Allow any class to handle multiple responsibilities.
 - Mix business logic with infrastructure concerns in one class.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Wikipedia — Single-Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+- [Refactoring.Guru — SOLID Overview](https://refactoring.guru/design-principles/solid)
+- [Martin Fowler — SRP Explanation](https://martinfowler.com/bliki/SingleResponsibility.html)
+- [Clean Architecture (Robert C. Martin)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [SOLID Principles in Practice (Real Python)](https://realpython.com/solid-principles-python/)

@@ -60,3 +60,13 @@ SNS can trigger Lambda functions upon message delivery, making it suitable for e
 Yes, SNS allows messages to be broadcasted to multiple endpoints, including SQS queues, Lambda functions, and HTTP endpoints.
 
 By implementing AWS SNS strategies, businesses can efficiently manage messaging needs, enhance application decoupling, and ensure a secure and scalable infrastructure.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Amazon SNS Documentation](https://docs.aws.amazon.com/sns/) — Official AWS SNS documentation covering topics, subscriptions, message publishing, and delivery status
+- [SNS vs SQS Architecture Patterns (AWS)](https://aws.amazon.com/sns/faqs/) — AWS FAQ comparing SNS pub/sub patterns with SQS point-to-point queue patterns for messaging design decisions
+- [SNS Topic Policies and Permissions](https://docs.aws.amazon.com/sns/latest/dg/sns-topic-policies.html) — Official guide to configuring access policies, permissions, and security for SNS topics
+- [SNS Message Attributes and Filtering](https://docs.aws.amazon.com/sns/latest/dg/message-filtering.html) — AWS documentation on using message attributes for subscriber filtering and routing
+- [AWS SDK for Python (boto3) with SNS](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html) — Official boto3 reference for programmatic SNS operations in Python applications

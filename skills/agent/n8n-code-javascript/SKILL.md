@@ -336,3 +336,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [n8n Documentation](<https://docs.n8n.io/>)
+- [n8n JavaScript Code Node](<https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/>)
+- [n8n Expressions Reference](<https://docs.n8n.io/integrations/builtin/reference/expression-language/>)
+- [JavaScript for Automation Scripting (MDN)](<https://developer.mozilla.org/en-US/docs/Web/JavaScript>)
+- [n8n Workflow Templates Library](<https://n8n.io/workflows/>)

@@ -3246,3 +3246,15 @@ Use this skill when:
 - Present an algorithm without its complexity bounds
 - Use recursive solutions without discussing tail-call or memoization alternatives
 - Omit edge case handling in examples
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Wikipedia — Algorithm](https://en.wikipedia.org/wiki/Algorithm)
+- [Big-O Cheat Sheet](https://bigocheatsheet.com/)
+- [Introduction to Algorithms (CLRS) — MIT Press](https://mitpress.mit.edu/9780262033848/introduction-to-algorithms/)
+- [GeeksforGeeks — Algorithm Design Techniques](https://www.geeksforgeeks.org/algorithm-design-techniques/)
+- [Stanford CS 161 — Algorithm Design and Analysis](https://web.stanford.edu/class/cs161/)

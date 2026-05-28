@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements topic modeling using Latent Dirichlet Allocation (LDA),
+description: '"Implements topic modeling using Latent Dirichlet Allocation (LDA)
   Non-negative Matrix Factorization (NMF), and other topic extraction methods"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-association-rules, ds-clustering, ds-dimensionality-reduction
   role: implementation
   scope: implementation
-  triggers: topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation,
+  triggers: topic modeling, LDA, NMF, topic extraction, latent dirichlet allocation
     text analysis
   archetypes:
   - tactical
@@ -100,9 +100,9 @@ def basic_topic_modeling(texts: List[str], n_topics: int = 5) -> Dict[str, Any]:
     
     # Initialize and fit LDA model
     lda_model = LatentDirichletAllocation(
-        n_components=n_topics,
-        max_iter=10,
-        learning_method='online',
+        n_components=n_topics
+        max_iter=10
+        learning_method='online'
         random_state=42
     )
     lda_model.fit(doc_term_matrix)
@@ -115,9 +115,9 @@ def basic_topic_modeling(texts: List[str], n_topics: int = 5) -> Dict[str, Any]:
         topics[f'topic_{idx}'] = [feature_names[i] for i in top_words_idx]
         
     return {
-        'model': lda_model,
-        'vectorizer': vectorizer,
-        'topics': topics,
+        'model': lda_model
+        'vectorizer': vectorizer
+        'topics': topics
         'doc_term_matrix': doc_term_matrix
     }
 ```
@@ -158,14 +158,14 @@ class TopicModeling:
             
     def _build_pipeline(self) -> Pipeline:
         vectorizer = TfidfVectorizer(
-            max_features=self.max_features,
-            stop_words='english',
+            max_features=self.max_features
+            stop_words='english'
             ngram_range=(1, 2)
         )
         nmf_model = NMF(
-            n_components=self.n_topics,
-            init='nndsvd',
-            random_state=self.random_state,
+            n_components=self.n_topics
+            init='nndsvd'
+            random_state=self.random_state
             max_iter=200
         )
         return Pipeline([('tfidf', vectorizer), ('nmf', nmf_model)])
@@ -189,9 +189,9 @@ class TopicModeling:
         inertia = float(np.linalg.norm(tfidf_matrix.toarray() - reconstructed))
         
         return {
-            'topics': topic_words,
-            'inertia': inertia,
-            'pipeline': self.pipeline,
+            'topics': topic_words
+            'inertia': inertia
+            'pipeline': self.pipeline
             'document_topics': self.pipeline.named_steps['nmf'].transform(tfidf_matrix)
         }
 ```
@@ -211,3 +211,15 @@ class TopicModeling:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Topic Modeling — Wikipedia](https://en.wikipedia.org/wiki/Topic_model)
+- [Gensim Documentation](https://radimrehurek.com/gensim/)
+- [LDA Topic Modeling — Scikit-learn docs](https://scikit-learn.org/stable/modules/lda_lda.html)
+- [BERTopic Documentation](https://maartengr.github.io/BERTopic/)
+- [NMF for Topic Extraction (Scikit-learn)](https://scikit-learn.org/stable/modules/decomposition.html#nmf)

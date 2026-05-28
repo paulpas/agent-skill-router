@@ -337,3 +337,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Linux perf Performance Profiling](<https://man7.org/linux/man-pages/man1/perf.1.html>)
+- [Python cProfile Documentation](<https://docs.python.org/3/library/profile.html>)
+- [Flame Graph Visualization (Brendan Gregg)](<http://www.brendangregg.com/flamegraphs.html>)
+- [OpenTelemetry Performance Tracing](<https://opentelemetry.io/docs/concepts/signals/traces/>)
+- [eBPF for System Performance Analysis](<https://docs.kernel.org/bpf/>)

@@ -881,3 +881,15 @@ When this skill is active, produce:
 | `refactoring` | Step-by-step refactoring techniques and strategies |
 | `code-review` | Broader code review methodology where this skill integrates |
 | `modular-design` | Principles for modular structure that prevent many anti-patterns |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Anti-Pattern (Wikipedia)](https://en.wikipedia.org/wiki/Anti-pattern)
+- [Design Patterns — AntiPatterns Catalog](https://antipatterns.com/)
+- [Enterprise Integration Patterns — Anti-Patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging/Anti-Patterns.html)
+- [Code Design Anti-Patterns (Refactoring Guru)](https://refactoring.guru/apply-patterns/anti-patterns)
+- [Bad Code: Antipatterns and Smells (Martin Fowler)](https://martinfowler.com/bliki/AntiPattern.html)

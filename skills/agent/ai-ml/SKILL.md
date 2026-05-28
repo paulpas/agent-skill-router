@@ -308,6 +308,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PyTorch Documentation](<https://pytorch.org/docs/>)
+- [Scikit-learn User Guide](<https://scikit-learn.org/stable/user_guide.html>)
+- [TensorFlow Official Docs](<https://www.tensorflow.org/guide>)
+- [ML Pipeline Orchestration (MLOps)](<https://ml-ops.org/content/mlops-principles>)
+- [arXiv ML Survey](<https://arxiv.org/list/cs.LR/recent>)
+
 ## Related Skills
 
 | Skill | Purpose |

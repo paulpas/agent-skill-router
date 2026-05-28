@@ -310,4 +310,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `commit` | Source control commit workflows |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Semantic Versioning 2.0.0](https://semver.org/)
+- [Wikipedia — Build Automation](https://en.wikipedia.org/wiki/Build_automation)
+- [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html)
+- [GitHub Actions — Build & CI/CD Pipeline Examples](https://docs.github.com/en/actions/use-cases-and-examples/building)
+- [Apache Maven — Build Automation Guide](https://maven.apache.org/guides/index.html)

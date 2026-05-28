@@ -336,4 +336,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `plan-writing` | Creates structured plan files for complex tasks, complementing this workflow framework |
+| `task-decomposition-engine` | Breaks down complex plans into actionable sub-tasks stored as file artifacts |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub Flow (GitHub Documentation)](https://docs.github.com/en/get-started/using-github/github-flow) — Lightweight, branch-based workflow for managing work artifacts in version control
+- [Branching Models: GitFlow vs GitHub Flow](https://nvie.com/posts/a-successful-git-branching-model/) — Comparison of common branching strategies for organizing development plans
+- [Markdown for Planning and Documentation](https://www.markdownguide.org/cheat-sheet/) — Markdown specification for structured plan file creation
+- [Structured Planning in AI-Assisted Development](https://www.jetbrains.com/help/ai-hub/create-plans.html) — Patterns for using AI-assisted planning with version-controlled files
+- [Project Management as Code (Pacaw)](https://github.com/pacaw-project/pacaw) — Framework for treating project plans as executable, versioned artifacts

@@ -443,3 +443,13 @@ parsed_findings = [Finding(**item) for item in result.structured]
 | `langgraph-implementation` | State graph-based workflows with explicit state machine control and checkpointing |
 | `autogen-conversational-patterns` | Conversational multi-agent chat groups for iterative problem solving through dialogue |
 | `framework-utilization` | General framework adoption strategy and learning patterns applicable to any framework |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [CrewAI Documentation](https://docs.crewai.com/) — Official CrewAI documentation covering agent creation, task definition, and workflow orchestration
+- [CrewAI GitHub Repository](https://github.com/crewAIInc/crewAI) — Source code, examples, and contribution guidelines for the CrewAI framework
+- [Multi-Agent System Design Patterns (Stanford)](https://ai.stanford.edu/) — Stanford AI Lab research on multi-agent coordination and delegation patterns
+- [Agent Tool Use Integration](https://python.langchain.com/docs/modules/agents/tools/) — LangChain's tool use patterns that CrewAI agents can leverage for external integrations
+- [Role-Based Access Control in Agent Systems (IEEE)](https://ieeexplore.ieee.org/document/9363486) — IEEE research on role-based agent architectures and access control patterns

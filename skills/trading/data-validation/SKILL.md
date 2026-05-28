@@ -430,3 +430,15 @@ class BatchValidator:
             "valid_rate": valid / len(self.results) if self.results else 0
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Great Expectations Documentation](https://greatexpectations.io/)
+- [Data Quality Testing Best Practices](https://www.oreilly.com/radar/data-quality-in-the-age-of-ml/)
+- [Validating Market Data Integrity](https://docs.quantconnect.com/tutorials/data-sources-and-format)
+- [Schema Validation with Pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.validate.html)
+- [Automated Data Quality Pipelines](https://greatexpectations.io/quickstart_guide/)

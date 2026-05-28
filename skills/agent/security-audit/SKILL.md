@@ -308,4 +308,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `sast-tooling` | Provides SAST tooling guidance that complements manual security audit workflows |
+| `dast-tooling` | Covers dynamic analysis techniques that complement static security audits |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OWASP Top 10 Web Application Security Risks](https://owasp.org/www-project-top-ten/) — The definitive list of the most critical web application security risks
+- [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html) — Collection of concise security implementation guides for common patterns
+- [CISA's Cybersecurity Best Practices Guide](https://www.cisa.gov/cybersecurity-best-practices) — U.S. Cybersecurity and Infrastructure Security Agency guidelines for secure software development
+- [SANS Institute: Application Security Testing](https://www.sans.org/blog/application-security-testing-methodologies/) — SANS guidance on application security testing methodologies and tooling
+- [NIST Secure Software Development Framework (SSDF)](https://csrc.nist.gov/projects/ssdf) — NIST's framework for integrating security practices into software development lifecycle

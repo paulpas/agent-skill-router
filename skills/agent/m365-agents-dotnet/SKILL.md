@@ -319,3 +319,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Microsoft 365 Agents Documentation](<https://learn.microsoft.com/en-us/microsoft-cloud/solution-providers/ai-agents-for-m365>)
+- [Microsoft Graph API for M365 Integration](<https://developer.microsoft.com/en-us/graph>)
+- [Power Automate Agent Builder](<https://powerautomate.microsoft.com/en-us/agents/>)
+- [Copilot Studio (M365 Agent Platform)](<https://learn.microsoft.com/en-us/copilot-studio/>)
+- [Bot Framework for Custom M365 Agents (.NET)](<https://learn.microsoft.com/en-us/azure/bot-service/>)

@@ -381,3 +381,13 @@ When applying this skill, produce:
 ---
 
 *This skill helps transform AI-generated text into natural, human-style writing by systematically detecting and replacing common AI writing patterns.*
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google Developer Writing Style Guide](https://developers.google.com/style) — Google's style guide for clear, concise technical writing with guidance on voice and tone
+- [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/microsoft-writing-style-guide/) — Microsoft's documentation on writing naturally, avoiding AI-sounding patterns in technical prose
+- [Purdue OWL: Academic and Professional Writing](https://owl.purdue.edu/owl/) — Purdue Online Writing Lab resources for improving clarity, voice, and human-like communication
+- [Hemingway Editor Guidelines](https://hemingwayapp.com/about/) — Hemingway's guidelines for readable writing with techniques to reduce AI-typical complexity markers
+- [The Elements of Style (Strunk & White)](https://www.gutenberg.org/ebooks/37134) — Classic writing guide on concise, natural prose that avoids verbosity and artificial construction

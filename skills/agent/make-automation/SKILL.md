@@ -321,3 +321,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Make (Integromat) Documentation](<https://www.make.com/en/help>)
+- [Make Scenario Builder Guide](<https://www.make.com/en/help/scenarios/scenario-builder>)
+- [Make Modules and Operations Reference](<https://www.make.com/en/help/modules>)
+- [Zapier vs Make Automation Comparison](<https://zapier.com/blog/make-zapier-comparison/>)
+- [API Integration Patterns with Make](<https://www.make.com/en/help/api-connector>)

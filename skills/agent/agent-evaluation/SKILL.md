@@ -328,4 +328,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `agentic-evaluation` | Systematic quality evaluation of agent behaviors and outputs |
+| `agent-reliability-engineering` | Reliability metrics and failure rate tracking for production agents |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Evaluating LLMs — arXiv Survey (2311.18760)](https://arxiv.org/abs/2311.18760)
+- [Open LLM Leaderboard — Hugging Face](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [AgentBench: Evaluating LLMs as Agents — arXiv](https://arxiv.org/abs/2308.03688)
+- [LLM Evaluation Benchmarks — Stanford HELM](https://crfm.stanford.edu/helm/latest/)

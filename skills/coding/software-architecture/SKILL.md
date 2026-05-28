@@ -645,3 +645,15 @@ When this skill is applied to review or design architecture, the output must con
 | `code-review` | Validates that implementation decisions align with the architectural design; catches coupling violations and logic leakage between layers during pull request review. |
 | `test-driven-development` | Ensures the architecture is testable from the outset — TDD practice reveals hidden coupling early, when interfaces are still mutable, before adapters become entrenched. |
 | `modular-design` | Complements architectural patterns by providing guidance on breaking monoliths into cohesive, independently deployable modules with explicit public APIs and versioned contracts. |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — Software Architecture](https://en.wikipedia.org/wiki/Software_architecture)
+- [ISO/IEC/IEEE 42010:2011 — Systems and software engineering — Architecture description](https://www.iso.org/standard/42343.html)
+- [Martin Fowler — Layers and Dependencies](https://martinfowler.com/bliki/LayersOfDependency.html)
+- [Alistair Cockburn — Hexagonal Architecture (Ports & Adapters)](https://alistair.cockburn.us/hexagonal-architecture/)
+- [Software Architecture Patterns by Microsoft Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/)

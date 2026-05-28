@@ -125,3 +125,15 @@ func main() {
 ### MUST NOT DO
 - Coupling algorithms within the context class itself.
 - Hardcoding specific strategy instantiation within client code.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Refactoring.Guru — Strategy Pattern](https://refactoring.guru/design-patterns/strategy)
+- [GoF Design Patterns (Gamma et al.) — Addison-Wesley](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/)
+- [Strategy Pattern in Python (Real Python)](https://realpython.com/strategy-pattern-python/)
+- [Martin Fowler — Strategy Pattern](https://martinfowler.com/articles/nonOOlisp.html)
+- [Java Strategy Pattern (Baeldung)](https://www.baeldung.com/java-strategy-pattern)

@@ -338,4 +338,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `prompt-optimization` | Provides prompt iteration techniques that complement the prompt engineering workflow |
+| `testing-quality-methodologies` | Validates prompt outputs through systematic testing strategies |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Prompt Engineering Guide (Vik Paruchuri)](https://www.promptingguide.ai/) — Comprehensive guide covering zero-shot, few-shot, chain-of-thought, and advanced prompting techniques
+- [OpenAI Prompt Engineering Guidelines](https://platform.openai.com/docs/guides/prompt-engineering) — Official OpenAI documentation on designing effective prompts for GPT models
+- [Anthropic Prompt Engineering Documentation](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering) — Anthropic's best practices for system prompts and prompt design with Claude
+- [PromptPerfect: Prompt Testing Platform](https://www.promptperfect.com/) — Platform documentation for testing and optimizing prompts across multiple LLM providers
+- [Chain-of-Thought Prompting Elicits Reasoning in LLMs (Wei et al.)](https://arxiv.org/abs/2201.11903) — Foundational research on advanced prompting strategies for LLM reasoning

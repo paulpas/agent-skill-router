@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements synthetic control methods, difference-in-differences estimation,
+description: '"Implements synthetic control methods, difference-in-differences estimation
   and quasi-experimental designs for impact evaluation"'
 license: MIT
 maturity: stable
@@ -106,7 +106,7 @@ def compute_synthetic_weights(
         return float(np.sum(residual**2) + regularization * np.sum(w**2))
         
     constraints = (
-        {'type': 'eq', 'fun': lambda w: np.sum(w) - 1.0},
+        {'type': 'eq', 'fun': lambda w: np.sum(w) - 1.0}
         {'type': 'ineq', 'fun': lambda w: w}
     )
     
@@ -117,7 +117,7 @@ def compute_synthetic_weights(
         objective, 
         initial_weights, 
         constraints=constraints, 
-        method='SLSQP',
+        method='SLSQP'
         options={'maxiter': 1000, 'ftol': 1e-9}
     )
     
@@ -156,7 +156,7 @@ class SyntheticControlEstimator:
             return float(np.sum(error**2) + self.regularization * np.sum(w**2))
             
         constraints = (
-            {'type': 'eq', 'fun': lambda w: np.sum(w) - 1.0},
+            {'type': 'eq', 'fun': lambda w: np.sum(w) - 1.0}
             {'type': 'ineq', 'fun': lambda w: w}
         )
         
@@ -164,7 +164,7 @@ class SyntheticControlEstimator:
         w0 = np.ones(n_donors) / n_donors
         
         res = minimize(
-            loss, w0, constraints=constraints, method='SLSQP',
+            loss, w0, constraints=constraints, method='SLSQP'
             options={'maxiter': self.max_iter}
         )
         if not res.success:
@@ -195,9 +195,9 @@ class SyntheticControlEstimator:
         counterfactual = donor_post.values @ self.weights_
         
         return {
-            'weights': self.weights_,
-            'pre_mse': self.pre_error_,
-            'counterfactual': counterfactual,
+            'weights': self.weights_
+            'pre_mse': self.pre_error_
+            'counterfactual': counterfactual
             'status': 'success'
         }
 ```
@@ -234,3 +234,15 @@ def good_scm(
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Synthetic Control Method — Wikipedia](https://en.wikipedia.org/wiki/Synthetic_control_method)
+- [CausalImpact — Bayesian Structural Time Series (Google)](https://github.com/google/CausalImpact)
+- [Synthetic Controls for Policy Evaluation (NBER Paper)](https://www.nber.org/papers/w13519)
+- [Double Machine Learning for Causal Inference](https://github.com/PythonRegressionsML/doubleml)
+- [Time Series Counterfactuals — Microsoft DoWhy](https://microsoft.github.io/dowy/)

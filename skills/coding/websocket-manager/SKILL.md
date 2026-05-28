@@ -331,3 +331,15 @@ start
 - Use magic numbers or hardcoded configuration values
 - Bypass error handling for assumed-valid inputs
 - Write functions longer than 50 lines without decomposition
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [websockets — Python WebSocket Client/Server Library](https://websockets.readthedocs.io/en/stable/) — Reference implementation with connection pooling, automatic reconnection, and asyncio integration
+- [MDN WebSockets API Guide](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) — Browser-native WebSocket API for connection management, message handling, and event-driven architecture
+- [uWebSockets.js Production Performance](https://github.com/uNetworking/uWebSockets) — High-performance C++ WebSocket server with Node.js bindings for maximum throughput
+- [RFC 6455 Section 10.3 — Security Considerations](https://datatracker.ietf.org/doc/html/rfc6455#section-10.3) — WebSocket security model including origin checking, transport layer requirements, and threat analysis
+- [Realtime Web Architecture Patterns (AWS)](https://aws.amazon.com/blogs/compute/building-real-time-applications-with-websockets-and-api-gateway/) — Serverless WebSocket patterns using API Gateway for connection lifecycle management

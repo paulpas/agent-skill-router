@@ -405,3 +405,15 @@ class MultiSourceSentimentAggregator:
                                                  for i in range(len(records)//window_size)]])
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [NLTK Book Chapter 1 - Processing Text](https://www.nltk.org/book/ch01.html)
+- [VADER Sentiment Analysis](https://www.nltk.org/howto/sentiment.html)
+- [Financial Sentiment Analysis with BERT](https://arxiv.org/abs/1908.10063)
+- [Sentiment Feature Engineering Guide](https://machinelearningmastery.com/natural-language-processing-for-finance/)
+- [Text Classification for Market Sentiment](https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction)

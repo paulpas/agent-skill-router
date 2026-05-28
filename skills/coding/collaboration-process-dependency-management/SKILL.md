@@ -113,3 +113,13 @@ Your package-lock.json will contain specific versions, for example:
 ### MUST NOT DO
 - Avoid using wildcard versioning (e.g., `*`, `latest`) to prevent unexpected breaking changes.
 - Don’t forget to run audits on your dependencies to check for vulnerabilities.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Atlassian Agile Dependency Management Guide](https://www.atlassian.com/agile/scrum/components)
+- [Semantic Versioning 2.0.0 Specification](https://semver.org/)
+- [npm Dependency Security Best Practices](https://docs.npmjs.com/resolving-cve-security-vulnerabilities-your-package)
+- [Yarn Lock File Reference](https://yarnpkg.com/features/locking)
+- [Python Packaging User Guide](https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/)

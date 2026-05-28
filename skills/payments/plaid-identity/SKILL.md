@@ -310,3 +310,15 @@ When implementing Plaid Identity, output must contain:
 |-------|---------|
 | `plaid-authentication` | Initial bank account linking before identity verification |
 | `plaid-transactions` | Post-verification transaction analysis and income checks |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Plaid Identity API Documentation](https://plaid.com/docs/api/products/identity/)
+- [Plaid Auth & Link Token Setup](https://plaid.com/docs/auth/)
+- [KYC Verification with Plaid](https://plaid.com/docs/products/identity/#verification)
+- [Plaid Address Validation Reference](https://plaid.com/docs/api/products/identity/#identityget)
+- [Plaid Data Access & Privacy Guidelines](https://plaid.com/legal/data-use-policy/)

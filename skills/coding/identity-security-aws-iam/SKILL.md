@@ -136,3 +136,13 @@ aws iam create-policy --policy-name DynamoDBAccessPolicy --policy-document file:
 ---
 ## Conclusion
 AWS IAM is a crucial component of security and identity management in the cloud. By adhering to best practices such as the principle of least privilege, continuous monitoring, and periodic audits, organizations can effectively protect their resources and manage identities efficiently.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [AWS IAM Documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) — Official AWS IAM documentation covering users, groups, roles, policies, and permissions
+- [IAM Identity Center (AWS SSO)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) — AWS documentation on centralized identity management across multiple AWS accounts
+- [IAM Policy Evaluation Logic](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html) — Official guide to how AWS evaluates IAM and resource-based policies
+- [AWS Security Best Practices (Whitepaper)](https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html) — AWS Well-Architected Framework security pillar with IAM recommendations
+- [Least Privilege Access Patterns (AWS)](https://aws.amazon.com/blogs/security/least-privilege-for-iam/) — AWS security blog on implementing least-privilege access in IAM

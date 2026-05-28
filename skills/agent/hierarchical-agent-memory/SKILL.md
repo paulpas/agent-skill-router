@@ -366,4 +366,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `agent-memory-systems` | Broader memory architectures including vector stores and retrieval strategies |
+| `agent-context-memory` | Short-term context window management layered on top of hierarchical memory |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Memory Mechanisms in LLMs — arXiv (2307.05939)](https://arxiv.org/abs/2307.05939)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [What Is Agent Memory — LangChain Blog](https://blog.langchain.dev/what-is-agent-memory/)
+- [RAG vs. Fine-Tuning for Knowledge — arXiv Survey](https://arxiv.org/abs/2312.10997)
+- [Agent Memory Architectures — Microsoft AI Research](https://www.microsoft.com/en-us/research/project/language-models-for-agents/)

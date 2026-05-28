@@ -30,3 +30,15 @@ A: Use clear documentation and structured logs to communicate findings from edge
 A: While some edge cases may be difficult to replicate, document the conditions under which they were reported and validate them with additional logging or monitoring in production environments.
 
 By focusing on edge case handling in code reviews, teams can increase the reliability and resilience of their software, ultimately leading to higher user satisfaction and reduced operational risks.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [About Pull Requests (GitHub Docs)](https://docs.github.com/en/pull-requests)
+- [Edge Case Testing — A Complete Guide (TestDriven.io)](https://testdriven.io/blog/edge-case-testing/)
+- [Boundary Value Analysis in Software Testing](https://www.guru99.com/boundary-value-analysis.html)
+- [Property-Based Testing for Edge Cases (Hypothesis)](https://hypothesis.readthedocs.io/en/latest/data.html)
+- [Fuzz Testing — Finding Edge Case Bugs Automatically](https://en.wikipedia.org/wiki/Fuzzing)

@@ -107,3 +107,14 @@ def check_drawdown(current_equity: float, peak_equity: float, max_drawdown_perce
 ### MUST NOT DO
 - Exceed risk limits based on account balance.
 - Implement high-risk strategies that threaten significant capital loss.
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Risk Management Tutorial](https://docs.quantconnect.com/tutorials/risk-management)
+- [Position Sizing and Risk Control](https://www.investopedia.com/terms/p/position-sizing.asp)
+- [Portfolio Risk Metrics](https://en.wikipedia.org/wiki/Value_at_risk)
+- [Risk Management Best Practices for Traders](https://www.investopedia.com/articles/trading/05/riskmanagement.asp)
+- [Drawdown Control Strategies](https://www.investopedia.com/terms/d/drawdown.asp)

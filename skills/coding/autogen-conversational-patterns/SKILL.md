@@ -445,3 +445,13 @@ print("Deployment plan result:", result.summary)
 | `langgraph-implementation` | State graph-based workflows with explicit state machine control and checkpointing |
 | `crewai-agent-workflows` | Role-based multi-agent collaboration with task delegation and structured execution pipelines |
 | `framework-utilization` | General framework adoption strategy and learning patterns applicable to any framework |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microsoft AutoGen Documentation](https://microsoft.github.io/autogen/stable/) — Official Microsoft AutoGen documentation for multi-agent conversation frameworks
+- [AutoGen GitHub Repository](https://github.com/microsoft/autogen) — Source code, examples, and contribution guidelines for the AutoGen framework
+- [Multi-Agent Conversation Patterns (Stanford CS224)](https://github.com/stanfordnlp/dspy) — Stanford research on conversational agent patterns and dialogue systems
+- [Group Chat Architecture in Multi-Agent Systems](https://arxiv.org/abs/2308.08155) — Research paper on group chat paradigms for multi-agent problem solving
+- [Human-in-the-Loop Agent Systems (OpenAI)](https://cookbook.openai.com/) — OpenAI's examples and patterns for integrating human oversight into agent workflows

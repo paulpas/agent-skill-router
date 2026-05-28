@@ -227,3 +227,15 @@ Before completing your task, verify:
 
 ## Base Directory
 file:///home/paulpas/git/ideas/trading_bot/skills/trading-fundamentals
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Psychology of Trading](https://www.babypips.com/learn/forex/psychology-of-trading)
+- [Behavioral Finance Concepts](https://en.wikipedia.org/wiki/Behavioral_finance)
+- [Cognitive Biases in Trading](https://www.investopedia.com/terms/c/cognitive-bias.asp)
+- [Emotional Control for Traders](https://www.investopedia.com/articles/trading/09/trading-psychology.asp)
+- [Discipline and Risk Management Mindset](https://www.babypips.com/learn/forex/discipline-in-trading)

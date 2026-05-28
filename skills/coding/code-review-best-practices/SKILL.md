@@ -32,3 +32,15 @@ A: Keep PRs small and focused on specific changes. Extensive reviews can overwhe
 A: Yes, create organizational standards for code reviews that align with best practices, adapted to fit various team workflows and cultures.
 
 By integrating these best practices into your code review process, teams can promote a high standard of code quality while fostering a collaborative and resilient engineering culture.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [About Pull Request Reviews (GitHub Docs)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
+- [GitHub — Code Review Best Practices](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request)
+- [Google — Engineering Code Review Guidelines](https://google.github.io/eng-practices/review/)
+- [Atlassian — How to Do a Code Review](https://www.atlassian.com/team-platform/topics/collaboration/how-to-do-code-review)
+- [Microsoft — Best Practices for Code Reviews (Azure DevOps)](https://docs.microsoft.com/en-us/azure/devops/repos/git/code-reviews)

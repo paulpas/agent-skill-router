@@ -337,3 +337,15 @@ class CrossSectionalFeatureBuilder:
         
         return features
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Feature Selection and Engineering Tutorial](https://docs.quantconnect.com/tutorials/feature-selection-and-engineering)
+- [Automated Feature Engineering with Featuretools](https://docs.featureform.com/)
+- [Feature Importance in ML Models](https://scikit-learn.org/stable/modules/model_selection.html)
+- [Time Series Feature Engineering](https://machinelearningmastery.com/time-series-feature-engineering/)
+- [Feature Store Best Practices for Trading](https://docs.quantconnect.com/tutorials/feature-selection-and-engineering)

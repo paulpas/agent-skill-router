@@ -306,3 +306,13 @@ When implementing or reviewing a Makefile, produce:
 | `shell-scripting` | Shell scripts for complex pre/post build logic that Make cannot express |
 | `docker-compose` | Containerized build environments that eliminate local dependency drift |
 | `ci-cd-pipelines` | Integrating Makefile targets into GitHub Actions, GitLab CI, or Jenkins |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html)
+- [Makefile Best Practices — Google Style Guide](https://github.com/google/styleguide/blob/gh-pages/docguide/style.md#makefiles)
+- [Automated Dependency Tracking in Makefiles](https://makefiletutorial.com/)
+- [Cross-Platform Makefile Patterns (GNU vs BSD)](https://www.gnu.org/software/make/manual/html_node/POSIX.html)
+- [CMake as an Alternative to Make](https://cmake.org/cmake/help/latest/guide/user-interaction/index.html)

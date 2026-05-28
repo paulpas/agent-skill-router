@@ -855,3 +855,15 @@ When implementing or reviewing an event-driven architecture, produce:
 | `domain-driven-design` | Bounded contexts define natural event boundaries |
 | `architecture-decision-records` | Documents why a specific EDA pattern was chosen over alternatives |
 | `test-driven-development` | Test strategies for event-driven systems (integration, contract, replay tests) |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Event-Driven Computing — AWS Whitepaper](https://docs.aws.amazon.com/whitepapers/latest/event-driven-computing/introduction.html)
+- [Kafka Event Streaming Documentation](https://kafka.apache.org/documentation/)
+- [RabbitMQ Events and Messaging Guide](https://www.rabbitmq.com/tutorials/tutorial-one-python)
+- [Event Sourcing vs Event-Driven Architecture (ThoughtWorks)](https://www.thoughtworks.com/insights/articles/event-sourcing-vs-event-driven-architecture)
+- [Asynchronous Cloud Architectures with Amazon SQS and SNS](https://docs.aws.amazon.com/AmazonS3/latest/dev/notify-events.html)

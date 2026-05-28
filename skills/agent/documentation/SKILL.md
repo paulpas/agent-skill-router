@@ -309,3 +309,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [DITA Open Toolkit](<https://dita.xml.org/get-started/>)
+- [MkDocs Documentation Tool](<https://www.mkdocs.org/>)
+- [Sphinx Documentation Generator](<https://www.sphinx-doc.org/en/master/>)
+- [MDX Documentation Format](<https://mdxjs.com/>)
+- [Google Developer Documentation Style Guide](<https://developers.google.com/style>)

@@ -649,3 +649,15 @@ class StressTestAnalyzer:
             }
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Understanding Drawdown in Trading](https://www.investopedia.com/terms/d/drawdown.asp)
+- [Maximum Drawdown Calculation](https://docs.quantconnect.com/tutorials/backtesting-pitfalls)
+- [Drawdown Recovery Metrics](https://www.investopedia.com/articles/trading/06/maxdrawdown.asp)
+- [Portfolio Risk and Drawdown Management](https://en.wikipedia.org/wiki/Downside_risk)
+- [Advanced Drawdown Analysis Techniques](https://docs.quantconnect.com/tutorials/risk-management)

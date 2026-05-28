@@ -96,3 +96,15 @@ jobs:
 ### MUST NOT DO
 - Overlook edge cases in unit tests.
 - Skip writing tests for new features; testing should be integral.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [ASTM G196 — Verification & Validation Guide](https://www.astm.org/g196-03e1)
+- [IEEE 829 — Software Test Documentation Standard](https://standards.ieee.org/standard/829-2008.html)
+- [Selenium WebDriver Documentation](https://www.selenium.dev/documentation/)
+- [pytest Official Guide](https://docs.pytest.org/en/stable/)
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)

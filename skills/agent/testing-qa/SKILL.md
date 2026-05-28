@@ -295,9 +295,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
+- [IEEE 829 Software Test Documentation Standard](https://standards.ieee.org/standard/829-2008.html)
+- [W3C Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG21/)
+- [Martin Fowler - Unit Testing vs Integration Testing](https://martinfowler.com/articles/practical-test-pyramid.html)
+- [Selenium WebDriver Documentation](https://www.selenium.dev/documentation/)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

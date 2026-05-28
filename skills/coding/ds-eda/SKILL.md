@@ -6,14 +6,14 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Performs exploratory data analysis using summary statistics,
+description: '"Provides Performs exploratory data analysis using summary statistics
   distributions, correlations, and descriptive methods to understand dataset characteristic"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-correlation-analysis, ds-data-profiling, ds-data-visualization,
+  related-skills: ds-correlation-analysis, ds-data-profiling, ds-data-visualization
     ds-dimensionality-reduction ds-missing-data
   role: implementation
   scope: implementation
@@ -99,9 +99,9 @@ def perform_basic_eda(df: pd.DataFrame) -> dict:
     skewness = {col: float(stats.skew(df[col].dropna())) for col in numeric_cols.columns}
     
     return {
-        'summary': summary,
-        'correlations': corr_matrix,
-        'missing_values': missing,
+        'summary': summary
+        'correlations': corr_matrix
+        'missing_values': missing
         'skewness': skewness
     }
 
@@ -139,11 +139,11 @@ class ExploratoryDataAnalysis:
             raise ValueError("Input DataFrame is empty")
             
         results = {
-            'shape': data.shape,
-            'dtypes': data.dtypes.astype(str).to_dict(),
-            'missing_counts': data.isnull().sum().to_dict(),
-            'missing_pct': (data.isnull().sum() / len(data) * 100).to_dict(),
-            'numeric_summary': data.describe().to_dict(),
+            'shape': data.shape
+            'dtypes': data.dtypes.astype(str).to_dict()
+            'missing_counts': data.isnull().sum().to_dict()
+            'missing_pct': (data.isnull().sum() / len(data) * 100).to_dict()
+            'numeric_summary': data.describe().to_dict()
             'categorical_counts': {}
         }
         
@@ -172,3 +172,15 @@ class ExploratoryDataAnalysis:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Exploratory Data Analysis — Wikipedia](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
+- [EDA in Python (Towards Data Science)](https://towardsdatascience.com/exploratory-data-analysis-in-python/)
+- [Pandas Profiling / ydata-profiling](https://docs.profiling.ydata.ai/latest/)
+- [Seaborn EDA Examples](https://seaborn.pydata.org/examples/index.html)
+- [Kaggle EDA Tutorial](https://www.kaggle.com/learn/data-visualization)

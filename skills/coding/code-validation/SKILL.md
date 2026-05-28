@@ -303,3 +303,13 @@ STAGING_ALLOWED_STAGES = {"build", "test", "deploy", "smoke-test", "notify"}
 |---|---|---|
 | `"valid_config"` | All stages are in the allowed set | Pipeline proceeds to next stage |
 | `"invalid_config"` | At least one stage is not allowed | Pipeline halts, error logged |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Pydantic Validation Documentation](https://docs.pydantic.dev/latest/concepts/validation/) — Pydantic's official guide on data validation, field constraints, and custom validators
+- [Zod Schema Validation (JavaScript)](https://zod.dev/) — TypeScript-first schema validation library with runtime type checking patterns
+- [JSON Schema Validation Specification](https://json-schema.org/learn/getting-started-step-by-step) — W3C JSON Schema specification for validating structured configuration files
+- [Guard Clause Patterns (Martin Fowler)](https://martinfowler.com/articles/nonConditional.html) — Fowler's guide to guard clauses and early returns for clean validation logic
+- [Config Validation Best Practices (HashiCorp Vault)](https://developer.hashicorp.com/vault/docs/concepts/configuration) — HashiCorp's best practices for configuration validation in production systems

@@ -13,7 +13,7 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-ensemble-methods, ds-hyperparameter-tuning, ds-neural-networks,
+  related-skills: ds-ensemble-methods, ds-hyperparameter-tuning, ds-neural-networks
     ds-support-vector-machines ds-support-vector-machines
   role: implementation
   scope: implementation
@@ -105,7 +105,7 @@ print(classification_report(y_test, y_pred))
 # Extract and display feature importances
 importances = dt_model.feature_importances_
 feature_importance_df = pd.DataFrame({
-    'feature': X_train.columns,
+    'feature': X_train.columns
     'importance': importances
 }).sort_values(by='importance', ascending=False)
 print("\nFeature Importances:\n", feature_importance_df)
@@ -148,9 +148,9 @@ class TreeBasedMethods:
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
         
         self.model = GradientBoostingClassifier(
-            n_estimators=self.n_estimators,
-            max_depth=self.max_depth,
-            learning_rate=self.learning_rate,
+            n_estimators=self.n_estimators
+            max_depth=self.max_depth
+            learning_rate=self.learning_rate
             random_state=42
         )
         self.model.fit(X_train, y_train)
@@ -159,17 +159,17 @@ class TreeBasedMethods:
         y_prob = self.model.predict_proba(X_test)[:, 1]
         
         metrics = {
-            'accuracy': float((y_pred == y_test).mean()),
-            'f1_score': float(f1_score(y_test, y_pred)),
+            'accuracy': float((y_pred == y_test).mean())
+            'f1_score': float(f1_score(y_test, y_pred))
             'roc_auc': float(roc_auc_score(y_test, y_prob))
         }
         
         logger.info(f"Model trained successfully. Metrics: {metrics}")
         return {
-            'status': 'success',
-            'metrics': metrics,
-            'feature_importances': dict(zip(self.feature_names, self.model.feature_importances_)),
-            'predictions': y_pred.tolist(),
+            'status': 'success'
+            'metrics': metrics
+            'feature_importances': dict(zip(self.feature_names, self.model.feature_importances_))
+            'predictions': y_pred.tolist()
             'probabilities': y_prob.tolist()
         }
 ```
@@ -188,3 +188,15 @@ class TreeBasedMethods:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Decision Trees — Wikipedia](https://en.wikipedia.org/wiki/Decision_tree)
+- [Scikit-learn Decision Trees](https://scikit-learn.org/stable/modules/tree.html)
+- [CART Algorithm (Breiman et al.)](https://www.statisticsschool.com/article/cart-algorithm/)
+- [XGBoost Documentation](https://xgboost.readthedocs.io/)
+- [Tree Ensemble Methods — Scikit-learn Ensemble Module](https://scikit-learn.org/stable/modules/ensemble.html#tree-ensembles)

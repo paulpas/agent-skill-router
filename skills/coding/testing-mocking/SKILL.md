@@ -49,4 +49,16 @@ result = mock_service.get_data()
 assert result == 'mocked data'
 # Verify interaction
 mock_service.get_data.assert_called_once()
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [unittest.mock — Python Official Docs](https://docs.python.org/3/library/unittest.mock.html)
+- [Mock Objects in Testing (Martin Fowler)](https://martinfowler.com/articles/mocksArentStubs.html)
+- [pytest-mock Plugin Documentation](https://pytest-mock.readthedocs.io/en/latest/)
+- [MagicMock vs Mock — When to Use Each](https://docs.python.org/3/library/unittest.mock.html#magicspecifying-allowed-methods-and-attributes)
+- [Side Effects and Return Values in unittest.mock](https://docs.python.org/3/library/unittest.mock.html#side-effects)
 ```

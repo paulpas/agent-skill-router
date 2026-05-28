@@ -606,3 +606,15 @@ if __name__ == "__main__":
 4. Chande, M. (2000). *The New Technical Trader*. Wiley. - Regime detection using technical indicators.
 5. Pardo, R. (2013). *The Science of Trading*. Wiley. - Scientific approach to regime-based trading systems.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Market Regime Definition](https://www.investopedia.com/terms/m/market-regime.asp)
+- [Regime Detection Tutorial](https://docs.quantconnect.com/tutorials/regime-detection)
+- [Hidden Markov Models for Markets](https://en.wikipedia.org/wiki/Hidden_Markov_model)
+- [Market Regime Classification Research](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1495603)
+- [Understanding Bull and Bear Markets](https://www.investopedia.com/terms/b/bull-market.asp)

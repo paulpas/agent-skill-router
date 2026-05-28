@@ -394,3 +394,15 @@ When implementing or reviewing reference/pointer patterns, produce:
 |---|---|
 | `bitwise-masks` | Low-level flag and permission bitmask operations using the & operator for state management |
 | `smart-pointers` | Modern ownership patterns with unique_ptr, shared_ptr, and Box for safe heap memory management |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia — Operator (Programming) Overview](https://en.wikipedia.org/wiki/Operator_(programming))
+- [Cplusplus.com Tutorial — Operators Reference](https://www.cplusplus.com/doc/tutorial/operators/)
+- [cppreference — C++ Reference & Address-of Operators](https://en.cppreference.com/w/cpp/language/operator_member_access)
+- [Mozilla MDN Web Docs — JavaScript & and && Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_AND)
+- [Rust Language Reference — References and Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)

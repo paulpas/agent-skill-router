@@ -350,3 +350,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Intercom API Documentation](<https://developers.intercom.com/reference/api-overview>)
+- [Intercom Messages API (Conversations)](<https://developers.intercom.com/reference/conversations-create-a-reply-to-a-conversation>)
+- [Intercom Webhooks for Events](<https://developers.intercom.com/docs/build-intercom-apps/build-a-bot/using-events-and-webhooks>)
+- [Intercom Custom Attributes](<https://developers.intercom.com/docs/build-intercom-apps/using-custom-attributes/custom-attributes-overview>)
+- [Intercom AI Copilot (Artificial Intelligence)](<https://www.intercom.com/products/ai-copilot/>)

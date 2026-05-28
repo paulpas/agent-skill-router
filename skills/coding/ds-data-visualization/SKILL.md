@@ -1,6 +1,6 @@
 ---
 name: data-visualization
-description: '"Creates effective visualizations including plots, charts, dashboards,
+description: '"Creates effective visualizations including plots, charts, dashboards
   and interactive visualizations for data insight and storytelling"'
 license: MIT
 compatibility: opencode
@@ -10,7 +10,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  triggers: data visualization, plotting, dashboards, charts, matplotlib, seaborn,
+  triggers: data visualization, plotting, dashboards, charts, matplotlib, seaborn
     plotly, how do i visualize data
   archetypes:
   - tactical
@@ -102,8 +102,8 @@ def create_basic_visualizations(df: pd.DataFrame) -> dict:
 
 if __name__ == "__main__":
     sample_df = pd.DataFrame({
-        'age': np.random.normal(35, 10, 200),
-        'income': np.random.exponential(50000, 200),
+        'age': np.random.normal(35, 10, 200)
+        'income': np.random.exponential(50000, 200)
         'score': np.random.randint(0, 100, 200)
     })
     result = create_basic_visualizations(sample_df)
@@ -194,3 +194,15 @@ class DataVisualization:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html)
+- [Seaborn Documentation](https://seaborn.pydata.org/)
+- [Plotly Python Documentation](https://plotly.com/python/)
+- [Bokeh Visualization Library](https://docs.bokeh.org/en/latest/)
+- [Data Visualization Best Practices (Nightingale)](https://nightingaledataviz.medium.com/)

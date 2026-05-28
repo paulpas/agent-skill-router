@@ -13,11 +13,11 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-model-fairness, ds-model-interpretation, ds-model-robustness,
+  related-skills: ds-model-fairness, ds-model-interpretation, ds-model-robustness
     ds-reproducible-research ds-reproducible-research
   role: implementation
   scope: implementation
-  triggers: explainability, interpretability, transparency, understanding models,
+  triggers: explainability, interpretability, transparency, understanding models
     how do I explain predictions
   archetypes:
   - tactical
@@ -146,10 +146,10 @@ class ExplainabilityEngine:
         mean_abs_shap = np.abs(shap_values).mean(axis=0)
         
         results = {
-            'feature_importance': mean_abs_shap,
+            'feature_importance': mean_abs_shap
             'summary_statistics': {
-                'mean_importance': float(np.mean(mean_abs_shap)),
-                'max_importance': float(np.max(mean_abs_shap)),
+                'mean_importance': float(np.mean(mean_abs_shap))
+                'max_importance': float(np.max(mean_abs_shap))
                 'min_importance': float(np.min(mean_abs_shap))
             }
         }
@@ -171,3 +171,15 @@ class ExplainabilityEngine:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SHAP Documentation](https://shap.readthedocs.io/)
+- [Explainable AI — Wikipedia](https://en.wikipedia.org/wiki/Explainable_artificial_intelligence)
+- [LIME — Local Interpretable Model-Agnostic Explanations](https://lime-ml.readthedocs.io/)
+- [InterpretML (Microsoft)](https://interpret.ml/)
+- [AI Fairness 360 — Explainability Metrics](https://aif360.res.ibm.com/)

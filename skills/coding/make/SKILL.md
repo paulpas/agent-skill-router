@@ -222,3 +222,13 @@ When implementing or reviewing a build system, produce:
 | `testing`          | Define test targets and integrate into build flow |
 | `refactoring`      | Restructure legacy build scripts into modular patterns |
 | `ci-cd-pipelines`  | Connect Make outputs to continuous deployment workflows |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html) — The definitive GNU Make reference covering variables, patterns, functions, and implicit rules
+- [GNU Make Best Practices (Google)](https://github.com/google/simhash/blob/master/Makefile) — Google's open-source Makefiles demonstrating idiomatic build script patterns
+- [Just: A Command Runner](https://just.systems/man/en/) — Modern alternative to Make with improved syntax; useful for understanding build tool evolution
+- [GNU Make vs Bazel vs Nix (Comparison)](https://blog.bazel.build/2019/02/07/nix-bazel-make.html) — Bazel blog post comparing modern build systems with traditional Make
+- [Automating Builds with Make in CI (GitHub Actions)](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-with-make) — GitHub Actions examples for running Make-based builds in CI/CD pipelines

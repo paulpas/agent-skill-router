@@ -304,4 +304,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `performance-profiler` | Provides profiling data that resource optimizers use to identify waste and inefficiency |
+| `infrastructure-as-code` | Covers infrastructure optimization patterns for cloud resource management |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google Cloud: Resource Optimization Guide](https://cloud.google.com/architecture/resource-optimization) — Google Cloud's best practices for optimizing compute, memory, and storage resources
+- [AWS Well-Architected Framework: Operational Excellence](https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillow/welcome.html) — AWS guide to resource optimization within the Well-Architected Framework
+- [FinOps Foundation: Cloud Cost Optimization](https://www.finops.org/framework/cloud-cost-optimization/) — FinOps Framework for financial operations and cloud resource cost optimization
+- [Kubernetes Resource Management (K8s Docs)](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) — Official Kubernetes documentation on CPU/memory requests, limits, and QoS classes
+- [Cost Optimization Patterns in Distributed Systems (IEEE)](https://ieeexplore.ieee.org/document/9245803) — IEEE paper on resource optimization patterns for large-scale distributed computing systems

@@ -18,3 +18,13 @@ description: Implements load testing strategies using Locust to simulate user be
 
 ### Resources:
 - **Locust Documentation**: Comprehensive guide to implementing load testing with Locust effectively, including setup and best practices for ensuring thorough testing of applications.\n- **Performance Testing Best Practices**: Insights on best practices and strategies for thorough load testing across varied platforms to ensure robust application performance and reliability under real-world conditions.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Locust Official Documentation](https://docs.locust.io/en/stable/) — Official Locust documentation covering user classes, task sets, events, and distributed testing
+- [Locust GitHub Repository (locustio)](https://github.com/locustio/locust) — Source code, examples, and contribution guidelines for the Locust load testing framework
+- [Locust Web UI and Master-Slave Mode](https://docs.locust.io/en/stable/writing-a-locustfile.html) — Official guide to running distributed tests with master-worker nodes and viewing real-time results
+- [k6 Load Testing Documentation (Grafana)](https://grafana.com/docs/k6/latest/) — Grafana k6 documentation, a popular alternative command-line load testing tool for comparison
+- [Load Testing Best Practices (Google PageSpeed)](https://web.dev/articles/lt) — Google's web performance guide on measuring and improving load times under stress

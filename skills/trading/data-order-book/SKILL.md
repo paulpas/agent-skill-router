@@ -64,3 +64,15 @@ name: order-book
 - **Rule:** Use clear, consistent terminology. `OrderBookLevel` with explicit `price`, `size`, `order_count` not `bids[0]`, `asks[0]`.
 - **Defense:** `order_book_depth` instead of `book_size` to avoid confusion with exchange depth metrics.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Order Book Analysis Tutorial](https://docs.quantconnect.com/tutorials/order-book-analysis)
+- [Limit Order Book Dynamics](https://en.wikipedia.org/wiki/Limit_order_book)
+- [Order Book Reconstruction Methods](https://arxiv.org/abs/1805.01469)
+- [Market Microstructure Data Processing](https://www.investopedia.com/terms/m/market-microstructure.asp)
+- [High-Frequency Order Book Data](https://docs.quantconnect.com/dataset/overview)

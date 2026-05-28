@@ -292,9 +292,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Enterprise Integration Patterns — Gregor Hohpe & Bobby Woolf](https://www.enterpriseintegrationpatterns.com/)
+- [AWS Step Functions State Machine Documentation](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html)
+- [Temporal Workflow Patterns](https://temporal.io/workflow-orchestration)
+- [Apache Airflow Operator Design Patterns](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/operators.html)
+- [Saga Pattern — Microsoft Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

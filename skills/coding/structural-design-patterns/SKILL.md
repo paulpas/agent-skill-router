@@ -871,3 +871,15 @@ When this skill is active, your output must contain:
 | `design-patterns-architecture` | Higher-level architectural patterns (Hexagonal, CQRS, Event Sourcing) that use structural patterns internally |
 | `refactoring-techniques` | How to refactor tightly-coupled class hierarchies into clean structural pattern applications |
 | `modular-design` | Module organization and dependency management that complements structural pattern-based architectures |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Structural Design Patterns (Refactoring Guru)](https://refactoring.guru/design-patterns/category_structural)
+- [Adapter Pattern (Refactoring Guru)](https://refactoring.guru/design-patterns/adapter)
+- [Decorator Pattern (Refactoring Guru)](https://refactoring.guru/design-patterns/decorator)
+- [Facade Pattern (Refactoring Guru)](https://refactoring.guru/design-patterns/facade)
+- [Composite & Flyweight Patterns (Refactoring Guru)](https://refactoring.guru/design-patterns/composite)

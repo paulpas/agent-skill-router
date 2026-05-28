@@ -321,3 +321,15 @@ class CircuitHealthIntegrator:
         elif health.status == HealthStatus.HEALTHY:
             self.circuit.record_success()
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Exchange Status Tutorial](https://docs.quantconnect.com/tutorials/exchange-status)
+- [Exchange Uptime Monitoring](https://docs.binance.org/)
+- [Trading System Health Checks](https://docs.quantconnect.com/tutorials/live-trading-overview)
+- [Market Status Indicators](https://www.investopedia.com/terms/m/market-hours.asp)
+- [Exchange API Latency Monitoring](https://docs.ccxt.org/en/latest/manual.html#rate-limit)

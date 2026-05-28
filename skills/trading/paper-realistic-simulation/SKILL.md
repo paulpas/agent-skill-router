@@ -971,3 +971,15 @@ Before completing your task, verify:
 5. **Fixed Impact**: Using constant market impact instead of variable impact based on order size
 6. **Unrealistic Liquidity**: Assuming infinite market depth for large orders
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Backtesting Overview](https://docs.quantconnect.com/tutorials/backtesting-overview)
+- [Paper Trading Setup Guide](https://docs.quantconnect.com/tutorials/live-trading-overview)
+- [Realistic Execution Assumptions](https://www.investopedia.com/terms/s/slippage.asp)
+- [Simulating Transaction Costs](https://docs.quantconnect.com/tutorials/commission-models)
+- [Avoiding Backtesting Pitfalls](https://docs.quantconnect.com/tutorials/backtesting-pitfalls)

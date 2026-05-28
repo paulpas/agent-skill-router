@@ -315,4 +315,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `sendgrid-automation` | Email automation counterpart — Stripe events trigger SendGrid notifications for payment workflows |
+| `slack-automation` | Slack notifications for Stripe billing events and subscription changes |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Stripe API Documentation](https://stripe.com/docs/api) — Official Stripe API reference covering payments, subscriptions, webhooks, and billing
+- [Stripe CLI Documentation](https://stripe.com/docs/cli) — Stripe CLI reference for local webhook development and testing
+- [Stripe Webhook Best Practices](https://stripe.com/docs/webhooks/best-practices) — Official Stripe guide on designing robust webhook handlers for payment events
+- [Stripe Python Library (GitHub)](https://github.com/stripe/stripe-python) — Official Stripe Python SDK source code with usage examples
+- [Payment Automation Architecture Patterns (PCI DSS)](https://www.pcisecuritystandards.org/pci_security/standards) — PCI DSS standards for secure payment processing and automation

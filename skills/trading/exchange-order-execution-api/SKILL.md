@@ -294,3 +294,15 @@ for order in active_orders:
     print(f"Order {order.id}: {order.status}")
 ```
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Binance Exchange API](https://docs.binance.org/)
+- [Order Types and Execution](https://www.investopedia.com/terms/f/fill.asp)
+- [CCXT Unified Exchange API](https://docs.ccxt.org/en/latest/manual.html)
+- [API Authentication for Trading](https://docs.quantconnect.com/tutorials/api-authentication)
+- [Order Placement and Management](https://www.investopedia.com/terms/o/order.asp)

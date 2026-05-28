@@ -208,3 +208,15 @@ class ValueAtRiskCalculator:
             'acceptable': abs(z_score) < 2
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Value at Risk Explained](https://www.investopedia.com/terms/v/var.asp)
+- [VaR Calculation Methods](https://en.wikipedia.org/wiki/Value_at_risk)
+- [Historical VaR vs Parametric VaR](https://www.investopedia.com/articles/trading/08/calculating-var.asp)
+- [Expected Shortfall and CVaR](https://en.wikipedia.org/wiki/Expected_shortfall)
+- [VaR in Portfolio Risk Management](https://docs.quantconnect.com/tutorials/risk-management)

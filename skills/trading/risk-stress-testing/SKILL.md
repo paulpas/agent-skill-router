@@ -267,3 +267,15 @@ class StressTestEngine:
             'survival_probability': float(np.sum(weights[[r.survival for r in results]]))
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Stress Testing in Finance Overview](https://en.wikipedia.org/wiki/Stress_testing_(finance))
+- [Monte Carlo Stress Testing Methods](https://www.investopedia.com/terms/m/monte-carlo-method.asp)
+- [Regulatory Stress Testing Frameworks](https://www.federalreserve.gov/supervisionreg/stress-tests.htm)
+- [Portfolio Stress Testing Techniques](https://docs.quantconnect.com/tutorials/risk-management)
+- [Historical Scenario Analysis](https://en.wikipedia.org/wiki/Stress_testing_(finance))

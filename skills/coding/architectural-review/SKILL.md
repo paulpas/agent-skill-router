@@ -617,3 +617,15 @@ Maintainability measures how easily code can be understood and modified by new d
 | `software-architecture` | Provides design patterns and architectural styles for the remediation phase after review identifies issues |
 | `engineering-principles` | Supplies foundational SOLID, DRY, and separation of concerns principles referenced during assessment |
 | `technical-debt-management` | Extends review findings into a prioritized backlog with tracking, monitoring, and repayment strategies |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Applied Software Architecture (Amazon)](https://www.amazon.com/Applied-Software-Architecture/p/dp/0596510242)
+- [Software Architecture in Practice (FOSSA Book)](https://www.informit.com/store/software-architecture-in-practice-9780137578967)
+- [Architecture Tradeoff Analysis Method (ATAM)](https://www.sei.cmu.edu/documents/1422)
+- [Architectural Review Board (ARB) Best Practices](https://martinfowler.com/articles/archReview.html)
+- [NIST SP 800-160 Vol. 2 — Systems Security Engineering](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-160v2.pdf)

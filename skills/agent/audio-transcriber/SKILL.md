@@ -351,6 +351,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenAI Whisper Documentation](<https://github.com/openai/whisper>)
+- [Speech Recognition Evaluation Metrics (Wikipedia)](<https://en.wikipedia.org/wiki/Word_error_rate>)
+- [FFmpeg Documentation](<https://ffmpeg.org/ffmpeg-all.html>)
+- [Audio Codec Formats Comparison](<https://en.wikipedia.org/wiki/Audio_compression>)
+- [Mozilla DeepSpeech Speech Recognition](<https://github.com/mozilla/DeepSpeech>)
+
 ## Related Skills
 
 | Skill | Purpose |

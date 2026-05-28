@@ -104,3 +104,13 @@ public class AdvancedCircuitBreakerExample {
 ### MUST NOT DO
 - Configure the circuit breaker to be too sensitive, causing unnecessary trips.
 - Delay recovery time excessively to avoid service impact.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Circuit Breaker Pattern (Microsoft P&A)](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker) — Microsoft's official guide to implementing circuit breakers in distributed systems
+- [Resilience4j Circuit Breaker Documentation](https://resilience4j.readthedocs.io/en/latest/circuitbreaker/) — Official Resilience4j docs for the circuit breaker module with configuration options
+- [Microservices Patterns: Circuit Breaker (Chris Richardson)](https://microservices.io/patterns/reliability/circuitbreaker.html) — Chris Richardson's Microservices.io reference on circuit breaker implementation
+- [Fail Fast Design Principles (Amazon)](https://aws.amazon.com/builders-library/fail-fast/) — AWS Builders Library article on fail-fast patterns and graceful degradation strategies
+- [Hystrix: Circuit Breaker Library (Netflix)](https://github.com/Netflix/Hystrix) — Netflix's Hystrix library source code (legacy reference for circuit breaker patterns now in Resilience4j)

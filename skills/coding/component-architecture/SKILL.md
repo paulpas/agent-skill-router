@@ -1442,3 +1442,13 @@ When applying this skill to design a component architecture, produce:
 - Define typed protocols for component interfaces — enables duck typing and flexible mocking in tests
 - Add docstrings describing return values and side effects — not just what the function does, but what it produces
 - Name methods after their outcome, not their mechanism — `set_active(index)` not `_update_tab_state()`
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [React Compound Components Pattern (Overreacted)](https://overreacted.io/making-self-contained-components/) — Dan Abramov's guide to compound component patterns in React
+- [Headless UI Patterns (Tailwind Labs)](https://headlessui.dev/) — Headless UI library documentation on building unstyled, accessible component primitives
+- [Render Props Pattern (React Docs)](https://react.dev/reference/react/cloneElement) — Official React documentation on render props and children-as-functions patterns
+- [Composition Over Inheritance (Martin Fowler)](https://martinfowler.com/bliki/CompositionOverInheritance.html) — Martin Fowler's classic article on preferring composition over inheritance for component design
+- [Component-Driven Development (Storybook)](https://storybook.js.org/tutorials/design-systems-for-developers/) — Storybook's guide to building components bottom-up in a systematic, testable way

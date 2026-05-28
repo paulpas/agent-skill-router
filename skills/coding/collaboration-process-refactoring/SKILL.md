@@ -125,3 +125,13 @@ def new_order_system():
 ### MUST NOT DO
 - Avoid attempting to refactor on large chunks of code simultaneously; take incremental steps instead.
 - Do not remove legacy code before confirming the new implementation meets functional requirements.
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Strangler Fig Pattern — Martin Fowler](https://martinfowler.com/bliki/StranglerFigApplication.html)
+- [Refactoring Legacy Codebases — Martin Fowler](https://www.refactoring.com/)
+- [Atlassian Agile Refactoring Techniques](https://www.atlassian.com/agile/scrum/refactoring)
+- [Clean Architecture by Robert C. Martin](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [Dependency Analysis Tools — SonarSource](https://www.sonarsource.com/products/sonarqube/)

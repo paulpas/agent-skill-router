@@ -1522,7 +1522,7 @@ When implementing or reviewing dead letter queue and retry patterns, produce:
 - [AWS SQS Dead Letter Queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloper/sqs-dead-letter-queues.html)
 - [RabbitMQ DLX (Dead Letter Exchange)](https://www.rabbitmq.com/dlx.html)
 - [Kafka Dead Letter Queue Pattern](https://www.confluent.io/blog/kafka-dead-letter-queue-pattern/)
-- [Resilient Web Design: Retry Patterns](https://resilientwebdesign.com/chapter/retry_patterns/)
+- [AWS SQS FIFO Dead Letter Queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloper/sqs-fifo-dlq.html) — FIFO queue DLQ configuration with message deduplication for exactly-once delivery guarantees
 - [Circuit Breaker Pattern (Martin Fowler)](https://martinfowler.com/bliki/CircuitBreaker.html)
 - [Exponential Backoff And Jitter (AWS Best Practices)](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/)
 - [Microsoft Resilient Systems: Retry Guidance](https://learn.microsoft.com/en-us/azure/architecture/patterns/retry)

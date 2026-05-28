@@ -345,3 +345,15 @@ Client          API Server         Database
 - [ ] Clear start/end points where applicable
 - [ ] Readable at glance without needing legend or explanation
 - [ ] Stays within 80-character width for terminal compatibility
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Excalidraw — Virtual Whiteboard for Sketching](https://excalidraw.com/)
+- [AsciiFlow — ASCII Diagram Editor](https://www.asciiflow.com/)
+- [Wikipedia — ASCII Art (History & Techniques)](https://en.wikipedia.org/wiki/ASCII_art)
+- [PlantUML — Text-Based Diagramming](https://plantuml.com/)
+- [Mermaid.js — Diagramming and Charting](https://mermaid.js.org/)

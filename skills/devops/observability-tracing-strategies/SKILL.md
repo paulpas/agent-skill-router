@@ -57,3 +57,15 @@ Utilize specialized tools or platforms that organize traces visually, enabling e
 No, focus on high-impact requests or transactions that are critical to performance and user experience to make the best use of tracing resources.
 
 By implementing solid distributed tracing strategies, organizations can significantly improve their application observability, leading to better performance monitoring and quicker debugging processes, ultimately enhancing user experience.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [OpenTelemetry Tracing Documentation](https://opentelemetry.io/docs/concepts/signals/traces/)
+- [Jaeger Distributed Tracing Docs](https://www.jaegertracing.io/docs/latest/)
+- [OpenTelemetry Context Propagation Guide](https://opentelemetry.io/docs/concepts/context-propagation/)
+- [Distributed Tracing Best Practices (CNCF)](https://github.com/cncf/tag-app-delivery/blob/main/reports/distributed-tracing.md)
+- [Zipkin Documentation](https://zipkin.io/zipkin/)

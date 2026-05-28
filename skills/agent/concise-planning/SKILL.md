@@ -304,6 +304,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OKR Goal Setting Framework](<https://www.atlassian.com/agile/project-management/okrs>)
+- [Agile Estimation Techniques (Planning Poker)](<https://www.agilenutshell.com/planningpoker>)
+- [Gantt Chart Methodology (PMI)](<https://www.pmi.org/learning/library/gantt-chart-techniques-project-schedule-5913>)
+- [WBS (Work Breakdown Structure) Guide](<https://www.projectsmart.co.uk/work-breakdown-structure.php>)
+- [Critical Path Method (CPM)](<https://en.wikipedia.org/wiki/Critical_path_method>)
+
 ## Related Skills
 
 | Skill | Purpose |

@@ -130,3 +130,15 @@ def fetch_external_data(endpoint: str):
 ### MUST NOT DO
 - Do not provide responses without verifying intent.
 - Avoid overwhelming users with too many automated messages during a single interaction.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Facebook Bot Platform Developer Docs](https://developers.facebook.com/docs/bot-platform)
+- [WhatsApp Business API Documentation](https://developers.facebook.com/docs/whatsapp/cloud-api)
+- [Slack Events API Reference](https://api.slack.com/events)
+- [Microsoft Teams Bot Framework SDK](https://learn.microsoft.com/en-us/azure/bot-service/)
+- [Chatbot Design Best Practices — Interaction Design Foundation](https://www.interaction-design.org/literature/article/chatbots-and-conversational-ui)

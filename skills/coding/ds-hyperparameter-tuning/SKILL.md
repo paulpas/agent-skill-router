@@ -13,11 +13,11 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-bias-variance-tradeoff, ds-cross-validation, ds-model-selection,
+  related-skills: ds-bias-variance-tradeoff, ds-cross-validation, ds-model-selection
     ds-support-vector-machines ds-tree-methods
   role: implementation
   scope: implementation
-  triggers: hyperparameter tuning, grid search, random search, bayesian optimization,
+  triggers: hyperparameter tuning, grid search, random search, bayesian optimization
     how do I tune parameters
   archetypes:
   - tactical
@@ -88,18 +88,18 @@ X, y = make_classification(n_samples=500, n_features=10, random_state=42)
 # Define base estimator and parameter search space
 model = RandomForestClassifier(random_state=42)
 param_grid: dict[str, list[int]] = {
-    'n_estimators': [50, 100, 200],
-    'max_depth': [None, 10, 20],
+    'n_estimators': [50, 100, 200]
+    'max_depth': [None, 10, 20]
     'min_samples_split': [2, 5, 10]
 }
 
 # Initialize GridSearchCV with stratified cross-validation
 grid_search: GridSearchCV = GridSearchCV(
-    estimator=model,
-    param_grid=param_grid,
-    cv=5,
-    scoring='accuracy',
-    n_jobs=-1,
+    estimator=model
+    param_grid=param_grid
+    cv=5
+    scoring='accuracy'
+    n_jobs=-1
     verbose=1
 )
 
@@ -140,20 +140,20 @@ class HyperparameterTuning:
         try:
             logger.info("Starting hyperparameter tuning...")
             search = RandomizedSearchCV(
-                estimator=self.model,
-                param_distributions=self.param_distributions,
-                n_iter=20,
-                cv=self.cv,
-                scoring=make_scorer(accuracy_score),
-                random_state=42,
+                estimator=self.model
+                param_distributions=self.param_distributions
+                n_iter=20
+                cv=self.cv
+                scoring=make_scorer(accuracy_score)
+                random_state=42
                 n_jobs=-1
             )
             search.fit(X, y)
             
             self.results = {
-                'best_params': search.best_params_,
-                'best_score': float(search.best_score_),
-                'cv_results_mean': search.cv_results_['mean_test_score'].tolist(),
+                'best_params': search.best_params_
+                'best_score': float(search.best_score_)
+                'cv_results_mean': search.cv_results_['mean_test_score'].tolist()
                 'status': 'success'
             }
             logger.info(f"Tuning completed. Best score: {self.results['best_score']:.4f}")
@@ -179,3 +179,15 @@ class HyperparameterTuning:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Grid Search](https://scikit-learn.org/stable/modules/grid_search.html)
+- [Optuna Documentation](https://optuna.org/)
+- [Hyperopt — Distributed Algorithm Optimization](https://github.com/hyperopt/hyperopt/wiki/FMin)
+- [Bayesian Hyperparameter Optimization (Artur's Blog)](https://nikhilsood.github.io/bayesian_optimization/)
+- [Ray Tune Documentation](https://docs.ray.io/en/latest/tune/index.html)

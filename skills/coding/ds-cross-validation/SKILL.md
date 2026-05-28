@@ -13,11 +13,11 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-bias-variance-tradeoff, ds-classification-metrics, ds-hyperparameter-tuning,
+  related-skills: ds-bias-variance-tradeoff, ds-classification-metrics, ds-hyperparameter-tuning
     ds-model-selection ds-regression-evaluation
   role: implementation
   scope: implementation
-  triggers: cross-validation, k-fold, stratified cross-validation, time-series cross-validation,
+  triggers: cross-validation, k-fold, stratified cross-validation, time-series cross-validation
     validation
   archetypes:
   - tactical
@@ -98,9 +98,9 @@ def basic_kfold_cv(X: np.ndarray, y: np.ndarray, n_splits: int = 5) -> dict:
     y_pred = model.predict(X[test_idx])
     
     return {
-        'mean_accuracy': float(np.mean(scores)),
-        'std_accuracy': float(np.std(scores)),
-        'fold_scores': scores.tolist(),
+        'mean_accuracy': float(np.mean(scores))
+        'std_accuracy': float(np.std(scores))
+        'fold_scores': scores.tolist()
         'first_fold_report': classification_report(y[test_idx], y_pred, output_dict=True)
     }
 
@@ -153,7 +153,7 @@ class ProductionCrossValidator:
                 
             if model is None:
                 model = Pipeline([
-                    ('scaler', StandardScaler()),
+                    ('scaler', StandardScaler())
                     ('classifier', GradientBoostingClassifier(n_estimators=100, random_state=self.random_state))
                 ])
                 
@@ -167,12 +167,12 @@ class ProductionCrossValidator:
             
             self.logger.info(f"CV completed with strategy: {self.cv_strategy}")
             return {
-                'status': 'success',
-                'cv_strategy': self.cv_strategy,
-                'n_splits': self.n_splits,
-                'test_scores': {k: float(np.mean(v)) for k, v in cv_results.items() if k.startswith('test_')},
-                'train_scores': {k: float(np.mean(v)) for k, v in cv_results.items() if k.startswith('train_')},
-                'fit_times': float(np.mean(cv_results['fit_time'])),
+                'status': 'success'
+                'cv_strategy': self.cv_strategy
+                'n_splits': self.n_splits
+                'test_scores': {k: float(np.mean(v)) for k, v in cv_results.items() if k.startswith('test_')}
+                'train_scores': {k: float(np.mean(v)) for k, v in cv_results.items() if k.startswith('train_')}
+                'fit_times': float(np.mean(cv_results['fit_time']))
                 'score_times': float(np.mean(cv_results['score_time']))
             }
         except Exception as e:
@@ -203,3 +203,15 @@ if __name__ == "__main__":
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Cross Validation](https://scikit-learn.org/stable/modules/cross_validation.html)
+- [Model Selection / Cross-Validation (scikit-learn docs)](https://scikit-learn.org/stable/modules/model_selection.html)
+- [Stratified K-Fold — Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)
+- [Cross-Validation (Kaggle Learn)](https://www.kaggle.com/learn/cross-validation)
+- [Optuna Cross-Validation Integration](https://optuna.readthedocs.io/en/stable/reference/sample.html)

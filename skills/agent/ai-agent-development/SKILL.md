@@ -297,4 +297,18 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `agent-confidence-based-selector` | Intelligent skill selection with multi-factor scoring and fallback chains |
+| `agent-task-routing` | Routing tasks to the most appropriate specialized skills |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LLM Agents Survey — Lilian Weng](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- [Survey of LLM-Based Agents — Stanford HAI](https://arxiv.org/abs/2308.11432)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [LangGraph Multi-Agent Documentation](https://langchain-ai.github.io/langgraph/concepts/multi_agent/)
+- [Agent Architecture Patterns — Microsoft AI Research](https://www.microsoft.com/en-us/research/project/language-models-for-agents/)

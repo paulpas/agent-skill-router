@@ -13,11 +13,11 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-bayesian-inference, ds-distribution-fitting, ds-hypothesis-testing,
+  related-skills: ds-bayesian-inference, ds-distribution-fitting, ds-hypothesis-testing
     ds-linear-regression ds-monte-carlo
   role: implementation
   scope: implementation
-  triggers: maximum likelihood, MLE, likelihood estimation, likelihood function, optimization,
+  triggers: maximum likelihood, MLE, likelihood estimation, likelihood function, optimization
     performance, speed
   archetypes:
   - tactical
@@ -111,9 +111,9 @@ def basic_mle(data: np.ndarray) -> dict:
         raise RuntimeError(f"MLE optimization failed: {result.message}")
         
     return {
-        'mu': result.x[0],
-        'sigma': result.x[1],
-        'log_likelihood': -result.fun,
+        'mu': result.x[0]
+        'sigma': result.x[1]
+        'log_likelihood': -result.fun
         'converged': result.success
     }
 
@@ -162,7 +162,7 @@ class MaximumLikelihoodEstimator:
             self._negative_log_likelihood, 
             initial_guess, 
             args=(values,), 
-            method=self.method,
+            method=self.method
             tol=self.tol
         )
         
@@ -170,9 +170,9 @@ class MaximumLikelihoodEstimator:
             logger.warning(f"MLE optimization did not converge: {result.message}")
             
         self.results_ = {
-            'parameters': {'mu': result.x[0], 'sigma': result.x[1]},
-            'log_likelihood': -result.fun,
-            'converged': result.success,
+            'parameters': {'mu': result.x[0], 'sigma': result.x[1]}
+            'log_likelihood': -result.fun
+            'converged': result.success
             'iterations': result.nit
         }
         return self
@@ -217,3 +217,15 @@ def good_mle(data: np.ndarray) -> Dict[str, float]:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Maximum Likelihood Estimation — Wikipedia](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation)
+- [MLE with SciPy Optimization](https://docs.scipy.org/doc/scipy/tutorial/stats/mle.html)
+- [Statistical Inference — Coursera (Johns Hopkins)](https://www.coursera.org/learn/statistical-inference)
+- [MLE Guide (Stanford Statistics 312)](https://web.stanford.edu/class/stats312/)
+- [Optimization Methods in SciPy](https://docs.scipy.org/doc/scipy/tutorial/optimize.html#maximum-likelihood-estimation)

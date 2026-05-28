@@ -725,3 +725,13 @@ When implementing idempotency for a system, produce output in this structure:
 | `microservices-architecture` | Service decomposition, inter-service communication patterns, and API gateway design where idempotent endpoints are required |
 | `event-driven-patterns` | Event sourcing, CQRS, saga orchestration, and outbox pattern — all of which depend on idempotent consumers for correctness |
 | `database-design-modeling` | Normalization, indexing strategies, constraint design, and transaction isolation levels that support atomic deduplication at the data layer |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microsoft Azure — Idempotency Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/idempotency)
+- [AWS Durable Design Guidelines](https://aws.amazon.com/blogs/architecture/tag/durable-design/)
+- [Netflix Concurrency Patterns — Retry and Idempotency](https://netflix.github.io/techblog/tags/concurrency/)
+- [PostgreSQL Advisory Locks for Distributed Systems](https://www.postgresql.org/docs/current/explicit-locking.html#ADVISORY-LOCKS)
+- [Redis Redlock Algorithm for Distributed Locking](https://redis.io/docs/latest/develop/interaction/distributed-locking/)

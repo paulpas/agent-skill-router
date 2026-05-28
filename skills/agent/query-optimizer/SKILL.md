@@ -293,4 +293,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `postgresql-optimization` | PostgreSQL-specific optimization techniques that work alongside general query optimization |
+| `nosql-data-modeling` | NoSQL query patterns and data modeling strategies for non-relational databases |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [MySQL EXPLAIN Output Explanation](https://dev.mysql.com/doc/refman/8.4/en/explain-output.html) — Official MySQL documentation on reading query execution plans
+- [PostgreSQL Documentation: EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html) — Official PostgreSQL guide to analyzing query execution plans
+- [Database Query Optimization Techniques (ACM Computing Surveys)](https://dl.acm.org/doi/10.1145/3636957) — Research paper on modern query optimization algorithms and techniques
+- [Citus: Distributed PostgreSQL Query Optimization](https://www.citusdata.com/blog/2023/10/05/how-citus-improves-postgres-query-performance/) — Guide to distributed query optimization with Citus
+- [Query Planner and Optimizer (Oracle Docs)](https://docs.oracle.com/cd/B19306_01/server.102/b14211/optplan.htm) — Oracle's comprehensive documentation on relational database query planning and optimization

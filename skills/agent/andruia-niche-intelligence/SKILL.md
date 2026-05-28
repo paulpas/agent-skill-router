@@ -301,4 +301,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `andruia-consultant` | AI consulting and strategy workflows |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Harvard Business Review — Building a Niche Strategy (Porter)](https://hbr.org/1985/01/whathas-strategy)
+- [MIT Sloan — Competitive Advantage Through Specialization](https://mitsloan.mit.edu/ideas-made-to-matter/articles/competitive-strategy)
+- [Niche Market Intelligence Frameworks (Forrester Research)](https://www.forrester.com/report/)
+- [Blue Ocean Strategy — Value Innovation & Niche Creation](https://www.blueoceanstrategy.com/)
+- [Harvard Business School — Data-Driven Niche Market Analysis](https://www.hbs.edu/research/Pages/default.aspx)

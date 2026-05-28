@@ -335,3 +335,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Pull Request Workflows (Pro Git Book Ch. 3)](<https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows>)
+- [GitHub Pull Requests Documentation](<https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>)
+- [GitLab Merge Request Guidelines](<https://docs.gitlab.com/ee/user/project/merge_requests/>)
+- [Branch Protection Rules (GitHub Docs)](<https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches>)
+- [Code Review Best Practices (Google Engineering Practices)](<https://google.github.io/eng-practices/review/>)

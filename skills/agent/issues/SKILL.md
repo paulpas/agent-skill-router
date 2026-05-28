@@ -329,3 +329,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [GitHub Issues Documentation](<https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues>)
+- [Jira Issue Management REST API](<https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/>)
+- [Linear API Documentation](<https://developers.linear.app/docs>)
+- [Issue Triage Methodology (Open Source)](<https://opensource.guide/building-community/#issue-and-pull-request-triage>)
+- [GitHub Issues Labels and Automation](<https://docs.github.com/en/issues/using-labels-milestones-and-project/using-labels/managing-labels>)

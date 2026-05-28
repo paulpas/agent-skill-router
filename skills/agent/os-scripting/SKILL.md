@@ -376,3 +376,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Bash Scripting Guide (GNU Bash Manual)](<https://www.gnu.org/software/bash/manual/>)
+- [PowerShell Core Documentation](<https://learn.microsoft.com/en-us/powershell/scripting/overview>)
+- [Zsh Configuration and Scripting](<https://zsh.sourceforge.io/DocRelease/Quick-Reference.html>)
+- [Python os.subprocess for System Tasks](<https://docs.python.org/3/library/subprocess.html>)
+- [Shell Script Security Best Practices (CIS)](<https://www.cisecurity.org/benchmark/unix_linux>)

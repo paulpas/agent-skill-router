@@ -346,3 +346,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Microsoft Graph Calendar API](<https://learn.microsoft.com/en-us/graph/api/resources/calendar-api-overview>)
+- [Outlook REST API Documentation](<https://learn.microsoft.com/en-us/previous-versions/office/developer/outlook-rest-api/overview/outlook-rest-api-overview>)
+- [Microsoft Graph Outlook Events API](<https://learn.microsoft.com/en-us/graph/api/user-post-events>)
+- [Power Automate for Outlook Automation](<https://powerautomate.microsoft.com/en-us/templates/overview/>)
+- [MSAL Python Authentication for M365 APIs](<https://msal-python.readthedocs.io/en/latest/>)

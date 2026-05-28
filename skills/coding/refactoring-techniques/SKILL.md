@@ -937,3 +937,15 @@ class OrderProcessor:
 | `test-driven-development` | Write tests before refactoring to establish a safety net — TDD makes refactoring safe and fast |
 | `software-testing-strategy` | Design comprehensive test suites that cover the behavior you must preserve during refactoring |
 | `dry-principles` | Understand when duplication is real (warranting extraction) vs. coincidental (not worth collapsing) to avoid over-refactoring |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Refactoring.guru — Catalog of Refactoring Techniques](https://refactoring.guru/refactoring/techniques)
+- [Martin Fowler — Refactoring: Improving the Design of Existing Code (Book)](https://martinfowler.com/books/refactoring.html)
+- [Refactoring.guru — Extract Method Pattern](https://refactoring.guru/extract-method)
+- [Refactoring.guru — Replace Conditional with Polymorphism](https://refactoring.guru/replace-conditionals-with-polymorphism)
+- [Refactoring.guru — Introduce Parameter Object](https://refactoring.guru/introduce-parameter-object)

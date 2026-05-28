@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements data versioning, lineage tracking, provenance management,
+description: '"Implements data versioning, lineage tracking, provenance management
   and reproducible data pipelines for experiment tracking and governance"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-data-collection, ds-data-ingestion, ds-data-privacy, ds-reproducible-research
   role: implementation
   scope: implementation
-  triggers: data versioning, data lineage, provenance, reproducibility, data governance,
+  triggers: data versioning, data lineage, provenance, reproducibility, data governance
     how do i track data
   archetypes:
   - tactical
@@ -92,11 +92,11 @@ def compute_data_version(data: pd.DataFrame) -> Dict[str, Any]:
     version_hash = hashlib.sha256(data_bytes).hexdigest()
     
     metadata = {
-        'version_id': version_hash,
-        'rows': len(data),
-        'columns': list(data.columns),
-        'dtypes': {col: str(dtype) for col, dtype in data.dtypes.items()},
-        'checksum': hashlib.md5(data_bytes).hexdigest(),
+        'version_id': version_hash
+        'rows': len(data)
+        'columns': list(data.columns)
+        'dtypes': {col: str(dtype) for col, dtype in data.dtypes.items()}
+        'checksum': hashlib.md5(data_bytes).hexdigest()
         'created_at': pd.Timestamp.now().isoformat()
     }
     return metadata
@@ -104,8 +104,8 @@ def compute_data_version(data: pd.DataFrame) -> Dict[str, Any]:
 # Example usage
 if __name__ == "__main__":
     sample_df = pd.DataFrame({
-        'feature_a': np.random.randn(50),
-        'feature_b': np.random.randint(0, 10, 50),
+        'feature_a': np.random.randn(50)
+        'feature_b': np.random.randint(0, 10, 50)
         'target': np.random.choice([0, 1], 50)
     })
     version_info = compute_data_version(sample_df)
@@ -159,12 +159,12 @@ class DataVersionManager:
         version_id = hashlib.sha256(data_bytes).hexdigest()
         
         version_record = {
-            'version_id': version_id,
-            'name': name,
-            'timestamp': datetime.now().isoformat(),
-            'rows': len(data),
-            'columns': list(data.columns),
-            'checksum': hashlib.md5(data_bytes).hexdigest(),
+            'version_id': version_id
+            'name': name
+            'timestamp': datetime.now().isoformat()
+            'rows': len(data)
+            'columns': list(data.columns)
+            'checksum': hashlib.md5(data_bytes).hexdigest()
             'lineage': []
         }
         
@@ -234,3 +234,15 @@ def good_versioning(df: pd.DataFrame, manager: DataVersionManager) -> Dict[str, 
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [DVC (Data Version Control) Documentation](https://dvc.org/)
+- [MLflow Model Registry](https://mlflow.org/docs/latest/model-registry.html)
+- [DVC Data Pipeline Documentation](https://dvc.org/doc/user-guide/data-pipelines)
+- [LakeFS Git-Based Data Versioning](https://lakefs.io/)
+- [Data Versioning Best Practices (Towards Data Science)](https://towardsdatascience.com/versioning-your-data-with-dvc-a-practical-guide-b4c3a7f0e1e2)

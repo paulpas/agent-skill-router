@@ -350,4 +350,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-improver` | The improvement counterpart — optimizer measures performance, improver acts on the findings |
+| `skill-observability` | Provides telemetry data that skill optimizers use to identify underperforming patterns |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Hyperparameter Optimization (Scikit-Learn)](https://scikit-learn.org/stable/modules/grid_search.html) — Scikit-learn's documentation on systematic parameter optimization techniques
+- [Bayesian Optimization for HPO (BoTorch)](https://botorch.org/) — Botorch framework for Bayesian optimization in machine learning model tuning
+- [AutoML and Neural Architecture Search](https://arxiv.org/abs/1905.01979) — Research paper on automated machine learning and architecture search techniques
+- [Resource Optimization in ML Systems (Google ML Blog)](https://ai.googleblog.com/2023/08/optimizing-ml-models-for-production.html) — Google's blog post on optimizing ML models for production deployment
+- [Optimization Algorithms Survey (Bengio, 2017)](https://www.foundationsbook.com/) — Yoshua Bengio's comprehensive survey of optimization algorithms for deep learning systems

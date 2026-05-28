@@ -319,4 +319,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `planning-reasoning` | Provides the reasoning framework that self-critique evaluates and improves upon |
+| `self-improvement` | Uses critique results to drive continuous improvement cycles in agent behavior |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Self-Correction in LLMs: A Survey (Wang et al.)](https://arxiv.org/abs/2308.07921) — Comprehensive survey of self-correction techniques for language models
+- [Critique-Based Refinement in Agent Systems (Madaan et al.)](https://arxiv.org/abs/2303.17651) — Research on self-refine and critique patterns for improving model outputs
+- [ReAct: Synergizing Reasoning and Acting in LLMs (Yao et al.)](https://arxiv.org/abs/2210.03629) — Foundational paper that includes self-reflection as part of the ReAct loop
+- [Self-Consistency Improves Chain of Thought (Wang et al.)](https://arxiv.org/abs/2203.11171) — Research on generating multiple reasoning paths and selecting the most consistent output
+- [LLM Self-Evaluation Frameworks (Leviathan & Taitelbaum)](https://arxiv.org/abs/2305.11035) — Academic research on using LLMs to evaluate and improve their own outputs

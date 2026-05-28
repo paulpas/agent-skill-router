@@ -6,18 +6,18 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Implements clustering algorithms including K-means, hierarchical clustering,
+description: '"Implements clustering algorithms including K-means, hierarchical clustering
   DBSCAN, Gaussian mixture models, and spectral clustering"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-anomaly-detection, ds-association-rules, ds-community-detection,
+  related-skills: ds-anomaly-detection, ds-association-rules, ds-community-detection
     ds-dimensionality-reduction ds-dimensionality-reduction
   role: implementation
   scope: implementation
-  triggers: clustering, k-means, hierarchical clustering, DBSCAN, mixture models,
+  triggers: clustering, k-means, hierarchical clustering, DBSCAN, mixture models
     how do I cluster data
   archetypes:
   - tactical
@@ -106,9 +106,9 @@ def basic_clustering_workflow(
     inertia = kmeans.inertia_
     
     return {
-        "labels": cluster_labels,
-        "silhouette_score": float(silhouette_avg),
-        "inertia": float(inertia),
+        "labels": cluster_labels
+        "silhouette_score": float(silhouette_avg)
+        "inertia": float(inertia)
         "centers": kmeans.cluster_centers_
     }
 ```
@@ -157,10 +157,10 @@ class ProductionClustering:
             labels = self.model.fit_predict(X_scaled)
             
             result = {
-                "status": "success",
-                "labels": labels,
-                "n_clusters": len(np.unique(labels)) if self.algorithm == "kmeans" else "variable",
-                "inertia": getattr(self.model, 'inertia_', None),
+                "status": "success"
+                "labels": labels
+                "n_clusters": len(np.unique(labels)) if self.algorithm == "kmeans" else "variable"
+                "inertia": getattr(self.model, 'inertia_', None)
                 "metadata": {"rows_processed": len(clean_data), "algorithm": self.algorithm}
             }
             logger.info("Clustering completed successfully.")
@@ -203,3 +203,15 @@ def good_clustering(data: pd.DataFrame, n_clusters: int = 3) -> Dict[str, Any]:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Clustering](https://scikit-learn.org/stable/modules/clustering.html)
+- [K-Means Guide — Scikit-learn](https://scikit-learn.org/stable/modules/clustering.html#k-means)
+- [DBSCAN Clustering — Scikit-learn docs](https://scikit-learn.org/stable/modules/clustering.html#dbscan)
+- [Hierarchical Clustering — Scipy documentation](https://docs.scipy.org/doc/scipy/reference/cluster.hierarchy.html)
+- [Unsupervised Learning (Kaggle Learn)](https://www.kaggle.com/learn/unsupervised-learning)

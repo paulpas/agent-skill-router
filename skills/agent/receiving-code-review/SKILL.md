@@ -325,4 +325,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `requesting-code-review` | The counterpart skill — use this to learn how to structure reviews so they receive good feedback |
+| `code-review` | Provides the review methodology that both reviewers and authors should follow |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Google Engineering Practices: Code Review](https://google.github.io/eng-practices/review/) — Google's comprehensive guide to receiving and giving code reviews
+- [Atlassian: Code Review Best Practices](https://www.atlassian.com/engineering/code-review-best-practices) — Atlassian's practical guidelines for effective code review workflows
+- [Mozilla's Guide to Code Review](https://wiki.mozilla.org/EngineeringProductivity/Guides/CodeReview) — Mozilla's engineering guide on reviewing and responding to feedback
+- [How to Respond to Code Reviews (Uber Engineering)](https://eng.uber.com/code-review/) — Uber's engineering blog post on handling code review feedback constructively
+- [Software Engineering Institute: Code Review Checklist](https://www.sei.cmu.edu/capabilities/practices/system-engineering/2021/code-review.cfm) — Carnegie Mellon SEI's structured approach to code review processes

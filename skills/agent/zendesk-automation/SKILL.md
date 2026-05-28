@@ -323,9 +323,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Zendesk REST API Documentation](https://developer.zendesk.com/api-reference/)
+- [Zendesk Triggers & Automation](https://www.zendesk.com/blog/automate-ticket-workflows/)
+- [Zendesk Webhooks Guide](https://developer.zendesk.com/documentation/troubleshooting/webhooks/introduction-to-webhooks/)
+- [Ticketing System Design Patterns — Atlassian](https://www.atlassian.com/agile/project-management/tickets)
+- [OAuth 2.0 RFC 6749 — Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

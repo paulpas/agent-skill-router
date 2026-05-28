@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-data-visualization, ds-eda, ds-feature-engineering, ds-feature-interaction
   role: implementation
   scope: implementation
-  triggers: correlation analysis, covariance, multivariate analysis, correlation,
+  triggers: correlation analysis, covariance, multivariate analysis, correlation
     pearson, spearman, feature relationships
   archetypes:
   - tactical
@@ -137,13 +137,13 @@ class CorrelationAnalysis:
             logger.info(f"Correlation analysis completed using {self.method} method.")
             
             return {
-                'correlation_matrix': self.corr_matrix,
-                'p_values': self.p_values,
-                'significant_pairs': self._get_significant_pairs(),
+                'correlation_matrix': self.corr_matrix
+                'p_values': self.p_values
+                'significant_pairs': self._get_significant_pairs()
                 'metadata': {
-                    'method': self.method,
-                    'threshold': self.threshold,
-                    'rows': len(data),
+                    'method': self.method
+                    'threshold': self.threshold
+                    'rows': len(data)
                     'numeric_columns': list(numeric_cols.columns)
                 }
             }
@@ -160,8 +160,8 @@ class CorrelationAnalysis:
         r = self.corr_matrix.values
         t_stats = r * np.sqrt((n - 2) / (1 - r**2 + 1e-10))
         p_values = pd.DataFrame(
-            stats.t.sf(np.abs(t_stats), n - 2) * 2,
-            index=numeric_cols.columns,
+            stats.t.sf(np.abs(t_stats), n - 2) * 2
+            index=numeric_cols.columns
             columns=numeric_cols.columns
         )
         return p_values.clip(upper=1.0)
@@ -180,9 +180,9 @@ class CorrelationAnalysis:
                 p = self.p_values.iloc[i, j]
                 if not np.isnan(p) and p < 0.05 and abs(r) >= self.threshold:
                     pairs.append({
-                        'feature_1': col_i,
-                        'feature_2': col_j,
-                        'correlation': r,
+                        'feature_1': col_i
+                        'feature_2': col_j
+                        'correlation': r
                         'p_value': p
                     })
         return pairs
@@ -221,3 +221,15 @@ def good_correlation(df: pd.DataFrame, method: str = 'pearson') -> Dict[str, Any
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Correlation — Wikipedia](https://en.wikipedia.org/wiki/Correlation)
+- [Pandas corr() Documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html)
+- [Scipy stats — Correlation Coefficients](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html)
+- [Correlation vs Causation (NIST)](https://www.itl.nist.gov/div898/handbook/eda/section3/eda360.htm)
+- [Seaborn Correlation Heatmaps](https://seaborn.pydata.org/generated/seaborn.heatmap.html)

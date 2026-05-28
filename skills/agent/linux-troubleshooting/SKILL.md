@@ -346,3 +346,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Linux Systemd Troubleshooting](<https://www.freedesktop.org/software/systemd/man/latest/systemctl.html>)
+- [Dmesg Kernel Ring Buffer](<https://man7.org/linux/man-pages/man1/dmesg.1.html>)
+- [Strace System Call Tracing](<https://man7.org/linux/man-pages/man1/strace.1.html>)
+- [Netstat and SS Network Diagnostics](<https://man7.org/linux/man-pages/man8/ss.8.html>)
+- [Linux Performance (Brendan Gregg)](<http://www.brendangregg.com/linuxperf.html>)

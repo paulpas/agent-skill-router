@@ -75,3 +75,15 @@ describe('GET /api/users', () => {
 ### MUST NOT DO
 - Combine too many tests into one suite to avoid confusion.
 - Neglect to test error scenarios along with successful workflows.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [pytest Documentation — Integration Testing](https://docs.pytest.org/en/stable/usage.html#integration-testing)
+- [pytest Fixtures for Test Setup](https://docs.pytest.org/en/stable/explanation/fixtures.html)
+- [Integration Testing Best Practices (Guru99)](https://www.guru99.com/integration-testing.html)
+- [Pytest HTTPX for API Integration Tests](https://docs.pytest.org/en/stable/how-to/asyncio.html)
+- [Testing Microservices — End-to-End vs Integration](https://www.testim.io/blog/the-difference-between-unit-integration-and-e2e-tests/)

@@ -875,3 +875,13 @@ When applying this skill to analyze or refactor code, produce:
 | `liskov-substitution-principle` | LSP violations (stub methods, NotImplementedError) are often a symptom of ISP failure |
 | `dependency-inversion-principle` | DIP depends on abstractions — ISP ensures those abstractions are narrow, not fat |
 | `design-patterns-and-principles` | Broader catalog of patterns where ISP is one tool among many for interface design |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [SOLID Principles (Robert C. Martin)](https://web.archive.org/web/20231204195346/https://www.openmymind.net/The-L-Of-SOLID/) — Uncle Bob's original SOLID principles with the ISP chapter
+- [Interface Segregation Pattern (Refactoring.Guru)](https://refactoring.guru/design-patterns/interface-segregation) — Refactoring Guru's practical guide to applying the Interface Segregation Principle
+- [Go Interface Design Patterns](https://go.dev/tour/methods/3) — Effective Go documentation on idiomatic Go interface design and composition
+- [Python ABC (Abstract Base Classes)](https://docs.python.org/3/library/abc.html) — Python's abc module for defining narrow, segregated interfaces programmatically
+- [Duck Typing vs Explicit Interfaces (Martin Fowler)](https://martinfowler.com/bliki/DuckTyping.html) — Fowler's comparison of duck typing and explicit interface design approaches

@@ -247,3 +247,15 @@ class MarketMicrostructure:
         
         return len(recent_updates) > 100 and execution_rate < 0.1
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Market Microstructure Overview](https://en.wikipedia.org/wiki/Market_microstructure)
+- [Limit Order Book Dynamics](https://en.wikipedia.org/wiki/Limit_order_book)
+- [Bid-Ask Spread Analysis](https://www.investopedia.com/terms/b/bid-ask-spread.asp)
+- [High-Frequency Trading Microstructure](https://arxiv.org/abs/0802.2576)
+- [Market Maker Behavior and Inventory](https://en.wikipedia.org/wiki/Market_microstructure)

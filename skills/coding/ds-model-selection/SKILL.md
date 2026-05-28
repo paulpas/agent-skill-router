@@ -6,14 +6,14 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Compares and selects models using AIC, BIC, validation curves,
+description: '"Provides Compares and selects models using AIC, BIC, validation curves
   learning curves, and model comparison techniques"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-bias-variance-tradeoff, ds-cross-validation, ds-ensemble-methods,
+  related-skills: ds-bias-variance-tradeoff, ds-cross-validation, ds-ensemble-methods
     ds-hyperparameter-tuning ds-regression-evaluation
   role: implementation
   scope: implementation
@@ -96,7 +96,7 @@ def basic_model_selection() -> Dict[str, Any]:
     )
 
     models: Dict[str, Any] = {
-        'Linear Regression': LinearRegression(),
+        'Linear Regression': LinearRegression()
         'Ridge Regression': Ridge(alpha=1.0)
     }
 
@@ -109,9 +109,9 @@ def basic_model_selection() -> Dict[str, Any]:
         mse = mean_squared_error(y_test, y_pred)
 
         results[name] = {
-            'cv_r2_mean': float(np.mean(cv_scores)),
-            'cv_r2_std': float(np.std(cv_scores)),
-            'test_r2': float(r2),
+            'cv_r2_mean': float(np.mean(cv_scores))
+            'cv_r2_std': float(np.std(cv_scores))
+            'test_r2': float(r2)
             'test_mse': float(mse)
         }
         print(f"{name} - CV R2: {np.mean(cv_scores):.4f} (+/- {np.std(cv_scores):.4f}), Test R2: {r2:.4f}")
@@ -162,8 +162,8 @@ class ModelSelector:
         try:
             X_train, X_test, y_train, y_test = self._prepare_data(data, target_col)
             models = {
-                'Logistic Regression': LogisticRegression(max_iter=1000, random_state=self.random_state),
-                'Random Forest': RandomForestClassifier(n_estimators=100, random_state=self.random_state),
+                'Logistic Regression': LogisticRegression(max_iter=1000, random_state=self.random_state)
+                'Random Forest': RandomForestClassifier(n_estimators=100, random_state=self.random_state)
                 'SVM': SVC(kernel='rbf', probability=True, random_state=self.random_state)
             }
 
@@ -178,9 +178,9 @@ class ModelSelector:
                 report = classification_report(y_test, y_pred, output_dict=True)
 
                 self.results[name] = {
-                    'cv_accuracy_mean': float(np.mean(cv_scores)),
-                    'cv_accuracy_std': float(np.std(cv_scores)),
-                    'test_accuracy': float(acc),
+                    'cv_accuracy_mean': float(np.mean(cv_scores))
+                    'cv_accuracy_std': float(np.std(cv_scores))
+                    'test_accuracy': float(acc)
                     'classification_report': report
                 }
 
@@ -238,3 +238,15 @@ def good_selection(X: np.ndarray, y: np.ndarray) -> float:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Model Evaluation](https://scikit-learn.org/stable/modules/model_evaluation.html)
+- [Model Selection — Scikit-learn docs](https://scikit-learn.org/stable/modules/model_selection.html)
+- [Cross-Validation (Kaggle Learn)](https://www.kaggle.com/learn/cross-validation)
+- [AIC vs BIC (NIST Handbook)](https://www.itl.nist.gov/div898/handbook/tq/section4/tq_2.htm)
+- [Model Selection and Regularization (ESL Chapter 7)](https://web.stanford.edu/~hastie/ElemStatLearn/)

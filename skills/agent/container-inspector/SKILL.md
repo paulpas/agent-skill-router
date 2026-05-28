@@ -333,6 +333,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Docker Security Best Practices](<https://docs.docker.com/security/>)
+- [Container Scanning with Trivy](<https://aquasecurity.github.io/trivy/>)
+- [CIS Docker Benchmark](<https://www.cisecurity.org/benchmark/docker>)
+- [Open Container Initiative (OCI) Specs](<https://opencontainers.org/>)
+- [Kubernetes Pod Security Standards](<https://kubernetes.io/docs/concepts/security/pod-security-standards/>)
+
 ## Related Skills
 
 | Skill | Purpose |

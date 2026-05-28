@@ -335,3 +335,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Git Documentation - Advanced Operations](<https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History>)
+- [GitHub Flow vs GitFlow (Atlassian)](<https://www.atlassian.com/git/tutorials/comparing-workflows>)
+- [Git Rebase Interactive Workflow](<https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_interactive_rebase>)
+- [Bisect for Binary Search Debugging (Git Docs)](<https://git-scm.com/docs/git-bisect>)
+- [Cherry-Pick in Git (Pro Git Book)](<https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_cherry_pick>)

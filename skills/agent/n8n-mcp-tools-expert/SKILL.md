@@ -310,3 +310,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [n8n Documentation and Workflows](<https://docs.n8n.io/>)
+- [Model Context Protocol (MCP) Specification](<https://modelcontextprotocol.io/specification/2024/11/05/basic>)
+- [n8n MCP Tool Node Integration](<https://docs.n8n.io/integrations/builtin/>)
+- [AI Agent Orchestration with n8n](<https://docs.n8n.io/hosting/scaling/microservices/>)
+- [MCP Server Protocol Reference](<https://modelcontextprotocol.io/docs/concepts/tools>)

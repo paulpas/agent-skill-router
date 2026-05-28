@@ -544,3 +544,15 @@ Use this table to review an ADR before sharing it with stakeholders.
 | Consequences balanced | Both benefits and drawbacks documented with specific examples | ☐ |
 | Index updated | Root README links to this ADR and includes it in the table | ☐ |
 | No editing of history | If replacing a decision, a new ADR supersedes rather than rewrites | ☐ |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Architecture Decision Records (adr.github.io)](https://adr.github.io/)
+- [Michael Nygard — Record Architecture Decisions](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions)
+- [ADR Catalog — Marco Casario](https://adr.github.io/adr/)
+- [Azure Architectural Decision Records (Microsoft)](https://learn.microsoft.com/en-us/azure/architecture/framework/design/monitor-design-adr)
+- [Pragmatic ADRs — Practical Guide to Architecture Decision Records](https://pragmaticadrs.com/)

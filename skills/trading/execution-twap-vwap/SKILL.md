@@ -635,3 +635,15 @@ Before completing your task, verify:
 
 
 Relative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [VWAP as a Trading Benchmark](https://www.investopedia.com/articles/trading/10/vwap-metric-trading.asp)
+- [Time-Weighted vs Volume-Weighted Average Price](https://www.investopedia.com/terms/t/twap.asp)
+- [Execution Algorithm Comparison Guide](https://docs.quantconnect.com/tutorials/time-weighted-average-price)
+- [VWAP Execution Best Practices](https://www.investopedia.com/terms/v/vwap.asp)
+- [Institutional Order Execution Strategies](https://en.wikipedia.org/wiki/Volume-weighted_average_price)

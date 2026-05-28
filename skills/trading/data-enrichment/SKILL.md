@@ -427,3 +427,15 @@ class EnrichmentQualityMonitor:
         
         return report
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Enriching Data Tutorial](https://docs.quantconnect.com/tutorials/enriching-data)
+- [Alternative Data Sources for Trading](https://www.investopedia.com/terms/a/alternative-data.asp)
+- [Feature Enrichment in ML Pipelines](https://scikit-learn.org/stable/modules/compose.html#combining-estimators)
+- [Cross-Referencing Market Data Feeds](https://docs.quantconnect.com/tutorials/data-sources-and-format)
+- [Real-Time Data Enrichment Patterns](https://kafka.apache.org/documentation/)

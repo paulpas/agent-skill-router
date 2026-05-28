@@ -335,3 +335,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [MLflow Experiment Tracking and Pipeline Orchestration](<https://mlflow.org/docs/latest/>)
+- [Apache Airflow ML Pipeline Guide](<https://airflow.apache.org/docs/apache-airflow/stable/tutorial_operator.html>)
+- [Kubeflow ML Pipeline on Kubernetes](<https://www.kubeflow.org/docs/components/pipelines/v2/overview/>)
+- [DVC (Data Version Control) for ML Pipelines](<https://dvc.org/doc/user-guide/data-and-project-files/versioning-data-in-experiments>)
+- [Scikit-learn Pipeline API](<https://scikit-learn.org/stable/modules/compose.html#pipeline-pipelines>)

@@ -209,3 +209,15 @@ app.get('/queries/getOrders', (req, res) => {
 
 ### MUST NOT DO
 - Allow changes in event structure to break existing consumers; use backward compatibility.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Event-Driven Computing — AWS Whitepaper](https://docs.aws.amazon.com/whitepapers/latest/event-driven-computing/introduction.html)
+- [Enterprise Integration Patterns — Event-Driven Architecture](https://www.enterpriseintegrationpatterns.com/patterns/messaging/EventDrivenArchitecture.html)
+- [Kafka Event Streaming Documentation](https://kafka.apache.org/documentation/)
+- [RabbitMQ Tutorial — Getting Started](https://www.rabbitmq.com/getstarted.html)
+- [AWS EventBridge Event-Driven Architecture](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-driven-architectures.html)

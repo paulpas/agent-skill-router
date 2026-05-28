@@ -87,20 +87,20 @@ def basic_data_quality_check(df: pd.DataFrame) -> Dict[str, Any]:
         raise TypeError("Input must be a pandas DataFrame")
 
     quality_report = {
-        "total_rows": len(df),
-        "total_columns": len(df.columns),
-        "missing_values": df.isnull().sum().to_dict(),
-        "duplicate_rows": int(df.duplicated().sum()),
-        "data_types": df.dtypes.astype(str).to_dict(),
+        "total_rows": len(df)
+        "total_columns": len(df.columns)
+        "missing_values": df.isnull().sum().to_dict()
+        "duplicate_rows": int(df.duplicated().sum())
+        "data_types": df.dtypes.astype(str).to_dict()
         "numeric_summary": {}
     }
 
     for col in df.select_dtypes(include=[np.number]).columns:
         quality_report["numeric_summary"][col] = {
-            "mean": float(df[col].mean()),
-            "std": float(df[col].std()),
-            "min": float(df[col].min()),
-            "max": float(df[col].max()),
+            "mean": float(df[col].mean())
+            "std": float(df[col].std())
+            "min": float(df[col].min())
+            "max": float(df[col].max())
             "null_count": int(df[col].isnull().sum())
         }
 
@@ -160,9 +160,9 @@ class ProductionDataQuality:
 
         self.quality_issues = issues
         return {
-            "cleaned_data": clean_data,
-            "issues_found": issues,
-            "rows_processed": len(data),
+            "cleaned_data": clean_data
+            "issues_found": issues
+            "rows_processed": len(data)
             "columns_retained": len(clean_data.columns)
         }
 ```
@@ -205,3 +205,15 @@ def good_quality_check(df: pd.DataFrame, threshold: float = 0.5) -> pd.DataFrame
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Data Quality — Wikipedia](https://en.wikipedia.org/wiki/Data_quality)
+- [Great Expectations Documentation](https://docs.greatexpectations.io/)
+- [NIST Data Quality Guide](https://www.nist.gov/itl/div898/excel/data-quality)
+- [Data Quality Framework (TDWI)](https://tdwi.org/research/2019/03/27/data-quality-framework.aspx)
+- [Kaggle Data Quality Tutorial](https://www.kaggle.com/learn/data-cleaning)

@@ -308,4 +308,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `parallel-skill-runner` | Executes decomposed sub-tasks in parallel after the engine splits a complex task |
+| `subagent-driven-development` | Delegates decomposed sub-tasks to subagents for parallel execution |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Task Decomposition in LLM Agents (Gao et al., 2023)](https://arxiv.org/abs/2305.08291) — Academic research on task decomposition strategies for LLM-based agents
+- [Plan-and-Solve Prompting (Wang et al.)](https://arxiv.org/abs/2205.04616) — Research on decomposing problems into plans before execution for improved reasoning
+- [ReAct: Synergizing Reasoning and Acting (Yao et al., 2022)](https://arxiv.org/abs/2210.03629) — Foundational paper including task decomposition as part of the ReAct loop
+- [Hierarchical Task Networks for AI Planning](https://en.wikipedia.org/wiki/Hierarchical_task_analysis) — Wikipedia article on HTN planning, a foundational approach to task decomposition
+- [Subgoal-Based Planning in Reinforcement Learning (Schaul et al.)](https://arxiv.org/abs/2006.15473) — Research on using subgoals for efficient task decomposition in learning systems

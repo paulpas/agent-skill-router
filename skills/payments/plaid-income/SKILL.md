@@ -270,3 +270,15 @@ When implementing Plaid Income, output must contain:
 |-------|---------|
 | `plaid-authentication` | Initial bank account linking before income verification |
 | `plaid-transactions` | Supplement income analysis with transaction-level detail |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Plaid Income API Documentation](https://plaid.com/docs/api/products/income/)
+- [Plaid Auth & Link Token Flow](https://plaid.com/docs/auth/)
+- [Income Verification for Lending](https://plaid.com/docs/income/underwriting/)
+- [Plaid Employment Data Reference](https://plaid.com/docs/api/products/income/#incomeget)
+- [Plaid Developer Best Practices](https://plaid.com/docs/security-best-practices/)

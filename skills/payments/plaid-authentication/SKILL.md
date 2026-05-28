@@ -280,3 +280,15 @@ When implementing Plaid authentication, output must contain:
 |-------|---------|
 | `plaid-transactions` | Retrieve and analyze transaction history after authentication |
 | `plaid-identity` | Verify user identity data from bank accounts post-authentication |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Plaid Auth API Documentation](https://plaid.com/docs/auth/)
+- [Plaid Link Token API Reference](https://plaid.com/docs/link/token/)
+- [Plaid Webhooks Guide](https://plaid.com/docs/webhooks/)
+- [Plaid Sandbox Environment Setup](https://plaid.com/docs/sandbox/)
+- [Plaid Identity Verification Best Practices](https://plaid.com/docs/products/identity/)

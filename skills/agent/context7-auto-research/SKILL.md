@@ -322,6 +322,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Context7 AI Tool Documentation](<https://github.com/upstash/context7>)
+- [arXiv Search API Reference](<https://arxiv.org/help/api/>)
+- [Semantic Scholar API Documentation](<https://api.semanticscholar.org/graph/v1/>)
+- [Google Scholar API Alternatives](<https://scholar.google.com/intl/en/scholar/inclusion.html>)
+- [Research Paper Mining Techniques Survey](<https://arxiv.org/abs/2005.01534>)
+
 ## Related Skills
 
 | Skill | Purpose |

@@ -13,7 +13,7 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-bayesian-inference, ds-confidence-intervals, ds-distribution-fitting,
+  related-skills: ds-bayesian-inference, ds-confidence-intervals, ds-distribution-fitting
     ds-kernel-density ds-kernel-density
   role: implementation
   scope: implementation
@@ -133,12 +133,12 @@ class MonteCarloSimulator:
     def get_statistics(self, returns: np.ndarray) -> Dict[str, Any]:
         """Calculate summary statistics from simulation results."""
         stats = {
-            'mean': float(np.mean(returns)),
-            'std': float(np.std(returns)),
-            'median': float(np.median(returns)),
-            'percentile_5': float(np.percentile(returns, 5)),
-            'percentile_95': float(np.percentile(returns, 95)),
-            'skewness': float(np.mean(((returns - np.mean(returns)) / np.std(returns))**3)),
+            'mean': float(np.mean(returns))
+            'std': float(np.std(returns))
+            'median': float(np.median(returns))
+            'percentile_5': float(np.percentile(returns, 5))
+            'percentile_95': float(np.percentile(returns, 95))
+            'skewness': float(np.mean(((returns - np.mean(returns)) / np.std(returns))**3))
             'kurtosis': float(np.mean(((returns - np.mean(returns)) / np.std(returns))**4) - 3)
         }
         return stats
@@ -166,3 +166,15 @@ if __name__ == "__main__":
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Monte Carlo Method — Wikipedia](https://en.wikipedia.org/wiki/Monte_Carlo_method)
+- [Python random Module Documentation](https://docs.python.org/3/library/random.html)
+- [NumPy Random Generator](https://numpy.org/doc/stable/reference/random/)
+- [Monte Carlo Simulation (MIT OpenCourseWare)](https://ocw.mit.edu/courses/mathematics/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/)
+- [Uncertainty Quantification — Stanford CEIV](https://ceiv.stanford.edu/research/uncertainty-quantification/)

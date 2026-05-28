@@ -324,3 +324,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Git Push Documentation](<https://git-scm.com/docs/git-push>)
+- [GitHub Flow - Pushing to Remote](<https://docs.github.com/en/get-started/quickstart/github-flow>)
+- [Git Rebase vs Merge Decision](<https://www.atlassian.com/git/tutorials/merging-vs-rebasing>)
+- [Pushing Protected Branches (GitHub Docs)](<https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches>)
+- [Git Remote Management](<https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes>)

@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Provides Designs and implements ETL pipelines, streaming data ingestion,
+description: '"Provides Designs and implements ETL pipelines, streaming data ingestion
   batch processing, and data pipeline orchestration for reliable data flow"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-data-collection, ds-data-quality, ds-data-versioning
   role: implementation
   scope: implementation
-  triggers: ETL pipeline, data ingestion, streaming data, batch processing, pipeline,
+  triggers: ETL pipeline, data ingestion, streaming data, batch processing, pipeline
     how do i ingest data
   archetypes:
   - tactical
@@ -102,9 +102,9 @@ def basic_data_ingestion(file_path: Optional[str] = None, sample_data: Optional[
         raise ValueError(f"Missing required columns: {missing}")
         
     return {
-        'data': df,
-        'shape': df.shape,
-        'missing_values': int(df.isnull().sum().sum()),
+        'data': df
+        'shape': df.shape
+        'missing_values': int(df.isnull().sum().sum())
         'status': 'success'
     }
 ```
@@ -146,10 +146,10 @@ class ProductionDataIngestion:
             self._validate_schema(data)
             cleaned_df = self._clean_data(data)
             result = {
-                'ingested_data': cleaned_df,
-                'row_count': len(cleaned_df),
-                'column_count': len(cleaned_df.columns),
-                'timestamp': datetime.now().isoformat(),
+                'ingested_data': cleaned_df
+                'row_count': len(cleaned_df)
+                'column_count': len(cleaned_df.columns)
+                'timestamp': datetime.now().isoformat()
                 'status': 'completed'
             }
             self.logger.info(f"Successfully ingested {len(cleaned_df)} rows.")
@@ -197,3 +197,15 @@ def good_ingestion(df: pd.DataFrame, fill_strategy: str = "median") -> pd.DataFr
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Apache Spark Streaming Programming Guide](https://spark.apache.org/docs/latest/streaming-programming-guide.html#data-ingestion)
+- [Apache Kafka Connect — Data Ingestion](https://kafka.apache.org/documentation/#connect)
+- [AWS Kinesis — Real-Time Data Streaming](https://docs.aws.amazon.com/kinesis/)
+- [Google Cloud Pub/Sub Documentation](https://cloud.google.com/pubsub/docs/overview)
+- [dbt Docs — Data Transformation & Ingestion](https://docs.getdbt.com/docs)

@@ -123,3 +123,15 @@ function validateToken(token) {
 | `versioning-apis`           | Best practices for maintaining backward compatibility through API versioning.
 
 ---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [OpenAPI Specification 3.1](https://swagger.io/specification/)
+- [RESTful API Design — Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design)
+- [HTTP Status Codes Reference (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [OAuth 2.0 RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749)
+- [API Versioning Best Practices (Martin Fowler)](https://martinfowler.com/articles/richardsonMaturityModel.html)
+
+---

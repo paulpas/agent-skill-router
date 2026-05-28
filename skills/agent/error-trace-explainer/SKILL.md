@@ -320,3 +320,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Python Traceback Documentation](<https://docs.python.org/3/library/traceback.html>)
+- [Stack Overflow Error Debugging Guide](<https://stackoverflow.blog/2024/09/16/better-error-messages-for-developers/>)
+- [ELK Stack for Log Analysis](<https://www.elastic.co/elasticsearch>)
+- [Sentry Error Tracking Documentation](<https://docs.sentry.io/product/error-monitoring/>)
+- [OpenTelemetry Error Context](<https://opentelemetry.io/docs/concepts/signals/traces/>)

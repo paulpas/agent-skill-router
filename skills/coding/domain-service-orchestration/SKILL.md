@@ -778,3 +778,15 @@ def process_order_decided():
     decision = evaluate_order_process()
     assert decision.recommended_pattern == "orchestration"
     # Proceed with domain service implementation (Pattern 1)
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Orchestration vs Choreography (Martin Fowler)](https://martinfowler.com/articles/orchestrationOrchestratorVsChoreography.html)
+- [Saga Pattern (Microsoft Azure Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga)
+- [Microservice Orchestration Patterns](https://docs.microservices.com/patterns/orchestration/)
+- [Axway — Orchestrator vs Choreography in Microservices](https://www.axway.com/blog/microservices-orchestration-vs-choreography)
+- [Event-Driven Architecture with CQRS (Microsoft Docs)](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)

@@ -712,11 +712,11 @@ When implementing or reviewing REST API pagination and filtering with this skill
 
 ## Live References
 
-> Authorative documentation links for pagination and filtering strategies. The model follows these references at load time to resolve external content.
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
 
 - [RFC 5988 — Web Linking](https://www.rfc-editor.org/rfc/rfc5988.html) — Defines the Link HTTP header format used in offset-based pagination for prev/next/first/last navigation
 - [JSON:API Pagination Specification](https://jsonapi.org/format/#fetching-pagination) — Industry-standard pagination envelope with `page[number]`, `page[size]`, and `links` objects
-- [MySQL Keyset Pagination](https://use-the-index-luke.com/no-offset) — Detailed explanation of why OFFSET degrades on large datasets and how keyset (cursor-based) pagination avoids this
+- [GraphQL Cursor Connections Specification](https://relay.dev/graphql/connections.htm) — Relay-compliant cursor pagination using base64-encoded cursors, widely adopted as an industry alternative to URL-based pagination
 - [PostgreSQL LIMIT/OPTIMIZATION](https://www.postgresql.org/docs/current/queries-limit.html) — How PostgreSQL handles LIMIT/OFFSET queries and optimization strategies for large offset values
 
 > 📖 skill(local cache): rest-api-pagination-filtering

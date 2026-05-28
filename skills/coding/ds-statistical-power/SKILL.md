@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-ab-testing, ds-experimental-design, ds-hypothesis-testing
   role: implementation
   scope: implementation
-  triggers: statistical power, power analysis, sample size, effect size, Type I error,
+  triggers: statistical power, power analysis, sample size, effect size, Type I error
     Type II error
   archetypes:
   - tactical
@@ -142,10 +142,10 @@ class StatisticalPowerAnalyzer:
         
         logger.info(f"Calculated effect size: {effect_size:.4f}, Current power: {current_power:.4f}")
         return {
-            'effect_size': float(effect_size),
-            'current_power': float(current_power),
-            'required_sample_size': required_n,
-            'target_power': target_power,
+            'effect_size': float(effect_size)
+            'current_power': float(current_power)
+            'required_sample_size': required_n
+            'target_power': target_power
             'alpha': self.alpha
         }
 ```
@@ -180,3 +180,15 @@ def good_power_calc(effect_size: float, n: int, alpha: float = 0.05) -> float:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Statistical Power — Wikipedia](https://en.wikipedia.org/wiki/Statistical_power)
+- [Statsmodels Power Analysis](https://www.statsmodels.org/)
+- [G*Power Documentation (University of Düsseldorf)](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower)
+- [Sample Size Calculation (NIST Handbook)](https://www.itl.nist.gov/div898/handbook/index.htm)
+- [Power Analysis with Python (Statsmodels examples)](https://www.statsmodels.org/stable/examples.html)

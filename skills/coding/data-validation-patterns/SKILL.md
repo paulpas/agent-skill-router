@@ -670,3 +670,13 @@ When implementing or reviewing data validation code, produce:
 | `software-error-handling` | Structured error types, exception hierarchies, and error propagation across service boundaries |
 | `pydantic-models` | Deep-dive into Pydantic v2 features: computed fields, serialization, custom validators, and model inheritance |
 | `data-encoding` | Character encoding standards (UTF-8, ISO-8859), base64/binhex encoding/decoding, and MIME multipart handling |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [JSON Schema — Understanding JSON Schema](https://json-schema.org/understanding-json-schema/)
+- [Wikipedia: Data Validation](https://en.wikipedia.org/wiki/Data_validation)
+- [Pydantic Documentation v2](https://docs.pydantic.dev/latest/)
+- [OWASP Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)
+- [Rust Serde — Serialization Framework for Data Validation](https://serde.rs/)

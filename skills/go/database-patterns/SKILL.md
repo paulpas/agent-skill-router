@@ -443,3 +443,15 @@ func (r *userRepository) GetByID(ctx context.Context, id string) (*user.User, er
 | `cloud-development` | Configuration management for database connection strings |
 | `modular-design` | Repository pattern integration with clean architecture |
 | `testing-strategies` | Testing database code with mocks and test containers |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Go SQLx Documentation](https://go.dev/sqlx)
+- [Database/SQL Package Guide](https://pkg.go.dev/database/sql)
+- [Go Database Connection Pooling](https://pkg.go.dev/database/sql#DB.SetMaxOpenConns)
+- [GORM Object Relational Mapping](https://gorm.io/docs/)
+- [Go SQL Best Practices](https://go.dev/blog/database)

@@ -1057,3 +1057,15 @@ class InMemoryVectorStore:
 | `observability-patterns` | Production tracing and metrics for monitoring context usage patterns |
 | `agentic-evaluation` | Evaluating agent performance across different memory strategies |
 | `multi-agent-orchestration` | Cross-agent state passing and coordination patterns |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [LLM Memory Systems — arXiv Paper (2307.05939)](https://arxiv.org/abs/2307.05939)
+- [What Is Agent Memory — LangChain Blog](https://blog.langchain.dev/what-is-agent-memory/)
+- [Building Effective Agents — Anthropic Research](https://www.anthropic.com/research/building-effective-agents)
+- [Context Window Management — Hugging Face Docs](https://huggingface.co/docs/transformers/model_context_size)
+- [Prompt Engineering Techniques — Prompting Guide](https://www.promptingguide.ai/)

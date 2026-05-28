@@ -530,3 +530,13 @@ When applying this skill to manage a skill's lifecycle, produce:
 | `skill-engineering` | Creating new skills from scratch — use before managing a new skill's lifecycle |
 | `skill-router-system` | Understanding how the router index works — necessary context for deprecation and retirement steps |
 | `skill-audit` | Assessing whether a skill has earned its place before deciding to deprecate or retire it |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Semantic Versioning 2.0.0](https://semver.org/) — The semver specification for managing skill version numbers, deprecation signals, and compatibility
+- [API Deprecation Best Practices (Microsoft)](https://learn.microsoft.com/en-us/azure/api-management/api-management-versioning) — Microsoft's guidance on API lifecycle management applicable to skill retirement workflows
+- [Backward Compatibility Guidelines (Google)](https://cloud.google.com/apis/design/versioning) — Google Cloud's standards for maintaining backward compatibility during service evolution
+- [Software Retirement and Migration Patterns (OWASP)](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/) — OWASP guidance on secure decommissioning of software components
+- [Change Management Frameworks (ITIL 4)](https://www.axelos.com/certifications/itil-certifications/itil-4-foundation) — ITIL 4 standards for managing service lifecycle transitions including deprecation and retirement

@@ -303,4 +303,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `nosql-data-modeling` | Provides data modeling strategies that complement schema inference for non-relational databases |
+| `postgresql-optimization` | Uses inferred schemas to generate optimized PostgreSQL queries and indexes |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [JSON Schema Specification](https://json-schema.org/learn/getting-started-step-by-step) — Official JSON Schema documentation for schema definition and validation
+- [Apache Avro Schema Evolution](https://avro.apache.org/docs/current/spec.html#schemas) — Apache Avro specification covering schema inference and compatibility guarantees
+- [Schema Inference in Data Lakes (Databricks Documentation)](https://docs.databricks.com/en/sql/language-manual/sql-ref-syntax-ddl-create-table-hive-format.html) — Databricks guide to automatic schema inference for structured data formats
+- [BigQuery Schema Detection](https://cloud.google.com/bigquery/docs/schema-detection) — Google Cloud documentation on automated schema detection for BigQuery loads
+- [Apache Spark Schema Inference](https://spark.apache.org/docs/latest/sql-programming-guide.html#inferring-the-schema-using-reflection) — Apache Spark documentation on automatic schema inference from data sources

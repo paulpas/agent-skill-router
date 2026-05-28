@@ -316,9 +316,18 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+## Live References
 
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [WordPress Theme Handbook](https://developer.wordpress.org/themes/)
+- [theme.json Reference (Block Themes)](https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference/)
+- [WordPress Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/)
+- [WordPress Coding Standards for Themes](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/)
+- [HTML5 Boilerplate for WordPress](https://github.com/h5bp/html5-boilerplate)
 
 ## Related Skills
 
 | Skill | Purpose |
 |
+

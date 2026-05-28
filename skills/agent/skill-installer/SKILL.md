@@ -301,4 +301,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-lifecycle-management` | Manages the full lifecycle after installation — deprecation, updates, and versioning |
+| `skill-router-system` | The routing system that uses installed skills at runtime — complementary to installation workflows |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [npm Package Installation Patterns](https://docs.npmjs.com/downloading-and-installing-packages) — npm documentation on package installation, versioning, and dependency management
+- [PyPI Package Management](https://packaging.python.org/en/latest/tutorials/installing-packages/) — Python packaging tutorial covering pip install, virtual environments, and dependency resolution
+- [GitHub Actions for Package Installation](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python) — GitHub Actions patterns for automated package/skill installation in CI/CD workflows
+- [Container Image Layer Optimization](https://docs.docker.com/build/cache/) — Docker documentation on optimizing image layer installation and caching strategies
+- [Software Dependency Management (OWASP)](https://owasp.org/www-community/vulnerabilities/Using_components_with_known_vulnerabilities) — OWASP guidance on managing software dependencies securely

@@ -562,4 +562,11 @@ When designing or reviewing a caching strategy, produce:
 7. **Failure Mode Analysis** — What happens when L2 is unreachable; fallback behavior; circuit breaker thresholds
 ---
 ## Live References
-> Authoritative documentation and research for caching architecture, eviction policies, and distributed cache systems.
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Redis Documentation](https://redis.io/docs/) — Official Redis documentation covering data structures, eviction policies (LRU, LFU, TTL), clustering, and persistence
+- [Memcached Protocol Specification](https://github.com/memcached/memcached/blob/master/doc/protocol.txt) — Memcached's binary protocol specification for caching system interoperability
+- [Caching Best Practices (Google PageSpeed)](https://web.dev/articles/cache-metrics) — Google's web performance documentation on browser and CDN caching strategies
+- [Thundering Herd Problem (Wikipedia)](https://en.wikipedia.org/wiki/Thundering_herd_problem) — Wikipedia article on the thundering herd problem in caching systems and prevention strategies
+- [Distributed Caching Architectures (AWS)](https://docs.aws.amazon.com/AmazonElastiCache/latest/dwh/WhatIs.html) — AWS documentation on distributed caching patterns using ElastiCache for Redis/Memcached

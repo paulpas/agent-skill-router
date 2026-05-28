@@ -191,6 +191,18 @@ class OrderService:
 - Keep architecture well-documented.
 - Separate concerns via modules within the monolith.
 
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Martin Fowler — Monolithic Application](https://martinfowler.com/bliki/MonolithicApplication.html)
+- [Modular Monolith Architecture by Microsoft](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/modular-monolith)
+- [Monolith First — Why Start with a Monolith by ThoughtWorks](https://www.thoughtworks.com/radar/techniques/monolith-first)
+- [Martin Fowler — Microservices vs Monoliths](https://martinfowler.com/articles/microservices.html)
+- [IBM — Monolithic Architecture: Pros, Cons & Migration Strategies](https://www.ibm.com/topics/monolithic-architecture)
+
 ### MUST NOT DO
 - Allow unregulated dependencies between modules.
 - Ignore performance metrics as the application grows.

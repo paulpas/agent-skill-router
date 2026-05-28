@@ -245,3 +245,15 @@ class PricePatternDetector:
             "volatility_ratio": float(np.std(volumes) / (np.mean(volumes) + 1e-8))
         }
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Price Action Trading Guide](https://www.investopedia.com/trading/price-action-trading/)
+- [Candlestick Patterns Encyclopedia](https://www.investopedia.com/trading/candlestick-patterns-trading/)
+- [Support and Resistance Levels](https://www.investopedia.com/terms/s/support_resistance.asp)
+- [Chart Pattern Recognition](https://en.wikipedia.org/wiki/Chart_pattern)
+- [Price Action Trading Strategies](https://www.investopedia.com/trading/price-action-trading/)

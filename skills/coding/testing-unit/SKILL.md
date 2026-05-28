@@ -70,3 +70,15 @@ if __name__ == '__main__':
 ### MUST NOT DO
 - Overlook edge cases in test scenarios.
 - Implement testing logic within production code.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [pytest Official Documentation](https://docs.pytest.org/en/stable/)
+- [pytest Assertions — Rewrite for Clarity](https://docs.pytest.org/en/stable/how-to/assert.html)
+- [Writing Unit Tests with pytest](https://docs.pytest.org/en/stable/getting_started/tutorial.html)
+- [pytest Fixtures for Dependency Injection](https://docs.pytest.org/en/stable/explanation/fixtures.html)
+- [pytest Parametrize — Parameterized Unit Tests](https://docs.pytest.org/en/stable/how-to/parametrize.html)

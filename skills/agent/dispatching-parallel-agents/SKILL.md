@@ -317,3 +317,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Multi-Agent Systems Design Patterns](<https://www.microsoft.com/en-us/research/uploads/prod/2023/05/multi-agent-design-patterns.pdf>)
+- [LangGraph Multi-Agent Orchestration](<https://langchain-ai.github.io/langgraph/concepts/multi_agent/>)
+- [CrewAI Documentation](<https://docs.crewai.com/>)
+- [AutoGen Multi-Agent Framework](<https://microsoft.github.io/autogen/0.2/>)
+- [Multi-Agent Orchestration Survey (arXiv)](<https://arxiv.org/abs/2402.01680>)

@@ -608,3 +608,13 @@ class RepositoryRegistry:
             repo: The repository instance to register.
         """
         setattr(self, name, repo)
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Domain-Driven Design: Repository Pattern (Martin Fowler)](https://martinfowler.com/eaaCatalog/repository.html) — Martin Fowler's definitive catalog entry on the Repository pattern with implementation examples
+- [Specification Pattern (Martin Fowler)](https://martinfowler.com/apsupp/spec.pdf) — Fowler's original paper defining the Specification pattern for composable business rules
+- [DDD Repository Implementation (Eric Evans, DDD Context Book)](https://domainlanguage.com/dd/) — Eric Evans' reference implementation of repository abstractions in DDD
+- [Python ABC and Protocol-Based Repositories](https://docs.python.org/3/library/abc.html) — Python's abc module documentation for defining abstract repository interfaces
+- [CQRS and Repository Patterns (Microsoft)](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs) — Microsoft's Azure Architecture Center guide combining CQRS with repository abstractions

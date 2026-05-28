@@ -553,3 +553,15 @@ class _CountryCodePrefixRule(ValueRule):
 | `refactoring` | Systematic technique for incrementally improving code structure without changing external behavior |
 | `test-driven-development` | Establishes correctness guarantees before implementation, ensuring design decisions serve testability |
 | `code-review` | Catches SOLID and DRY violations during PR reviews before they reach production |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Software Design (Wikipedia)](https://en.wikipedia.org/wiki/Software_design)
+- [SOLID Principles (Martin Fowler)](https://martinfowler.com/bliki/Solid.html)
+- [Clean Architecture (Robert C. Martin)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [Design Principles — Microsoft](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/index)
+- [Refactoring — Improving the Design of Existing Code (Fowler et al.)](https://refactoring.com/)

@@ -317,3 +317,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Kubernetes kubectl Debug Command](<https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#debug>)
+- [Kubernetes Troubleshooting Guide](<https://kubernetes.io/docs/tasks/debug/>)
+- [EKS Pod Troubleshooting (AWS)](<https://docs.aws.amazon.com/eks/latest/userguide/troubleshooting.html>)
+- [kubectl Debug with ephemeral containers](<https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/>)
+- [Kubernetes Event Diagnostics](<https://kubernetes.io/docs/reference/kubectl/cheatsheet/>)

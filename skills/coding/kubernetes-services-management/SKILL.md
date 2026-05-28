@@ -97,3 +97,13 @@ spec:
 |---|---|
 | kubernetes-pod-management | Manages Kubernetes Pods and their lifecycle. |
 | kubernetes-deployment-management | Handles creation and configuration of Deployments for applications in Kubernetes.
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Kubernetes Services Documentation](https://kubernetes.io/docs/concepts/services-networking/service/) — Official K8s docs on ClusterIP, NodePort, LoadBalancer, and Headless services
+- [Service Discovery in Kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services) — K8s guide to service discovery via DNS and environment variables
+- [Kube-proxy and Network Policies](https://kubernetes.io/docs/concepts/services-networking/ network-policies/) — Official documentation on cluster networking, kube-proxy modes, and policy enforcement
+- [Ingress Controllers for Kubernetes](https://kubernetes.io/docs/concepts/services-networking/ingress/) — K8s guide to Ingress resources, controllers, and TLS termination
+- [Kubernetes Networking Deep Dive (CNCF)](https://github.com/nicolaka/netshoot) — CNCF's networking diagnostic toolkit and reference documentation

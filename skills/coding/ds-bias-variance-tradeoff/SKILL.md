@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-cross-validation, ds-hyperparameter-tuning, ds-model-selection
   role: implementation
   scope: implementation
-  triggers: bias-variance, overfitting, underfitting, regularization, generalization,
+  triggers: bias-variance, overfitting, underfitting, regularization, generalization
     how do I prevent overfitting
   archetypes:
   - tactical
@@ -100,10 +100,10 @@ def analyze_bias_variance_tradeoff(X, y, max_degree=8, cv=5):
     variance = np.mean([np.var(cross_val_score(make_pipeline(PolynomialFeatures(d, include_bias=False), Ridge(alpha=1.0)), X, y, cv=cv, scoring='r2')) for d in degrees])
     
     return {
-        'degrees': list(degrees),
-        'train_scores': train_scores_list,
-        'val_scores': val_scores_list,
-        'estimated_bias': bias,
+        'degrees': list(degrees)
+        'train_scores': train_scores_list
+        'val_scores': val_scores_list
+        'estimated_bias': bias
         'estimated_variance': variance
     }
 ```
@@ -157,12 +157,12 @@ class BiasVarianceTradeoff:
             variance = np.var(cross_val_score(self.model, X, y, cv=self.cv, scoring='r2'))
             
             self.results = {
-                'train_mse': float(train_mse),
-                'test_mse': float(test_mse),
-                'cv_mse_mean': float(-np.mean(cv_scores)),
-                'cv_mse_std': float(np.std(cv_scores)),
-                'estimated_bias': float(bias),
-                'estimated_variance': float(variance),
+                'train_mse': float(train_mse)
+                'test_mse': float(test_mse)
+                'cv_mse_mean': float(-np.mean(cv_scores))
+                'cv_mse_std': float(np.std(cv_scores))
+                'estimated_bias': float(bias)
+                'estimated_variance': float(variance)
                 'feature_importance': dict(zip(X.columns, self.model.feature_importances_))
             }
             logger.info(f"Analysis complete. Train MSE: {train_mse:.4f}, Test MSE: {test_mse:.4f}")
@@ -187,3 +187,16 @@ class BiasVarianceTradeoff:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Bias–Variance Tradeoff — Wikipedia](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
+- [Scikit-learn Learning Curves](https://scikit-learn.org/stable/modules/model_evaluation.html#learning-curves)
+- [Understanding Bias-Variance Tradeoff (Colah's Blog)](http://colah.github.io/posts/2014-07-ML-Normalization/)
+- [An Introduction to Statistical Learning — Chapter 5](https://www.statlearning.com/)
+- [Overfitting and Underfitting — TensorFlow docs](https://www.tensorflow.org/tutorials/keras/overfit_and_underfit)
+- [Bias-Variance Tradeoff (Towards Data Science)](https://towardsdatascience.com/bias-vs-variance-in-machine-learning-b403f8def189), |

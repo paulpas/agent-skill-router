@@ -671,3 +671,15 @@ When helping with loop-related questions, produce output following this structur
 |---|---|
 | `algorithms` | Algorithm complexity analysis for loop-heavy code |
 | `sorting-algorithms` | Common sorting implementations use nested loops |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Wikipedia — For Loop](https://en.wikipedia.org/wiki/For_loop)
+- [Python for Loops — Official Docs](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
+- [Effective Python: Iteration Best Practices](https://realpython.com/python-for-loop/)
+- [MDN Web Docs — JavaScript Looping](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+- [Go for Range Documentation](https://go.dev/ref/spec#For_statements)

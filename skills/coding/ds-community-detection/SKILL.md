@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Detects communities and clusters in graphs using modularity optimization,
+description: '"Detects communities and clusters in graphs using modularity optimization
   spectral methods, and graph partitioning algorithms"'
 license: MIT
 maturity: stable
@@ -16,7 +16,7 @@ metadata:
   related-skills: ds-association-rules, ds-clustering, ds-dimensionality-reduction
   role: implementation
   scope: implementation
-  triggers: community detection, graph clustering, modularity, spectral clustering,
+  triggers: community detection, graph clustering, modularity, spectral clustering
     graph partitioning
   archetypes:
   - tactical
@@ -84,8 +84,8 @@ def basic_community_detection(graph: nx.Graph) -> Dict[str, Any]:
     community_labels = {node: idx for idx, comm in enumerate(communities) for node in comm}
     modularity = nx.community.modularity(graph, communities)
     return {
-        'communities': communities,
-        'labels': community_labels,
+        'communities': communities
+        'labels': community_labels
         'modularity': float(modularity)
     }
 
@@ -144,11 +144,11 @@ class CommunityDetection:
                 modularity = nx.community.modularity(G, communities)
                 
             return {
-                'status': 'success',
-                'communities': communities,
-                'labels': labels.tolist(),
-                'modularity': float(modularity),
-                'node_count': G.number_of_nodes(),
+                'status': 'success'
+                'communities': communities
+                'labels': labels.tolist()
+                'modularity': float(modularity)
+                'node_count': G.number_of_nodes()
                 'edge_count': G.number_of_edges()
             }
         except Exception as e:
@@ -191,3 +191,15 @@ def good_detection(graph: nx.Graph, n_clusters: int = 4) -> list[int]:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Community Detection — Wikipedia](https://en.wikipedia.org/wiki/Community_detection)
+- [NetworkX Community Detection Module](https://networkx.org/documentation/stable/reference/algorithms/community.html)
+- [Louvain Method Implementation (python-louvain)](https://github.com/JoshuaOConnor/python-louvain)
+- [Graph Community Structure — Complex Networks Lecture Notes](https://networksciencebook.com/chapter/7)
+- [Leiden Algorithm — Traag et al.](https://arxiv.org/abs/1810.08473)

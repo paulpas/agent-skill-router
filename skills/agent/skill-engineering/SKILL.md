@@ -469,6 +469,16 @@ Candidate: "emergency stop" → Green (specific operational scenario)
 Candidate: "risk management" → Yellow (too broad — applies to position sizing, portfolio allocation too)
 Candidate: "trading" → Red (ultra-generic single word)
 
-Result: Keep 6 terms. Drop "risk management" and "trading". Final set: 6 triggers, balanced between 
+Result: Keep 6 terms. Drop "risk management" and "trading". Final set: 6 triggers, balanced between
 technical precision and conversational discovery.
 ```
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [OpenCode Documentation](https://opencode.ai/docs) — Official OpenCode platform documentation on skill loading, routing, and configuration
+- [agent-skill-router Repository](https://github.com/anthropics/agent-skill-router) — Source repository for the skill router system with format specifications and examples
+- [MarkdownLint Configuration Guide](https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md) — Markdown linting rules applicable to SKILL.md quality enforcement
+- [YAML Schema Validation (JSON Schema)](https://json-schema.org/learn/getting-started-step-by-step) — JSON Schema patterns for validating YAML frontmatter in skill files
+- [AST Parsing for Markdown Files](https://remark.js.org/) — Remark.js documentation on programmatically parsing and validating Markdown structure

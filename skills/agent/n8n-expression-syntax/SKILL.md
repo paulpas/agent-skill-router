@@ -329,3 +329,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [n8n Expression Language Documentation](<https://docs.n8n.io/integrations/builtin/reference/expression-language/>)
+- [n8n Function Item Expressions](<https://docs.n8n.io/code/expression-language/>)
+- [n8n Date and Time Functions](<https://docs.n8n.io/integrations/builtin/reference/date-functions/>)
+- [JQ Query Language for Data Transformation](<https://jqlang.github.io/jq/manual/>)
+- [n8n Conditional Logic with Expressions](<https://docs.n8n.io/workflows/expressions/>)

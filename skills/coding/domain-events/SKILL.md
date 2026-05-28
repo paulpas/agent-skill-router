@@ -624,3 +624,15 @@ All code must use Python 3.10+ type hints, docstrings on every public method, an
 | `event-driven-architecture` | System-level architecture using asynchronous message brokers and event streaming — extends in-process domain events to distributed cross-service communication |
 
 > 📖 skill(local cache): coding-domain-events, coding-clean-architecture, coding-cqrs-pattern, trading-order-lifecycle-engine
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Domain Event Pattern (Microsoft Azure Architecture Center)](https://learn.microsoft.com/en-us/azure/architecture/patterns/domain-event)
+- [DDD Domain Events — Martin Fowler Bliki](https://martinfowler.com/bliki/DomainEvent.html)
+- [Event Sourcing Pattern (Azure Patterns)](https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+- [CQRS and Domain Events (Microsoft .NET Microservices Docs)](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation)
+- [Outbox Pattern for Reliable Event Delivery](https://debezium.io/blog/2019/02/19/reliable-messaging-using-saga-pattern-with-outbox-pattern/)

@@ -301,4 +301,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `andruia-skill-smith` | Agent skill creation and design patterns |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [MIT Sloan — AI Consulting: Best Practices for the Digital Age](https://mitsloan.mit.edu/ideas-made-to-matter)
+- [McKinsey Global Institute — Notes from AI Frontiers (2024)](https://www.mckinsey.com/mgi/our-research/artificial-intelligence)
+- [Gartner Hype Cycle for Artificial Intelligence](https://www.gartner.com/en/articles/gartner-hype-cycle-for-artificial-intelligence)
+- [Deloitte AI Institute — Enterprise AI Adoption Framework](https://www2.deloitte.com/us/en/insights/industry/technology/ai-insights.html)
+- [Stanford HAI — AI Index Report 2024](https://hai.stanford.edu/news/ai-index-report-2024/)

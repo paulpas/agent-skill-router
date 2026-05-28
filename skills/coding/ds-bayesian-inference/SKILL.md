@@ -6,18 +6,18 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Applies Bayesian methods for prior selection, posterior estimation,
+description: '"Applies Bayesian methods for prior selection, posterior estimation
   and probabilistic inference in machine learning models"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-confidence-intervals, ds-hypothesis-testing, ds-maximum-likelihood,
+  related-skills: ds-confidence-intervals, ds-hypothesis-testing, ds-maximum-likelihood
     ds-monte-carlo ds-monte-carlo
   role: implementation
   scope: implementation
-  triggers: bayesian inference, bayes, prior, posterior, probabilistic inference,
+  triggers: bayesian inference, bayes, prior, posterior, probabilistic inference
     how do i do bayesian
   archetypes:
   - tactical
@@ -122,10 +122,10 @@ def bayesian_linear_regression(
     )
     
     return {
-        'posterior_mean': posterior_mean,
-        'posterior_cov': posterior_cov,
-        'noise_variance': sigma2_init,
-        'n_samples': n_samples,
+        'posterior_mean': posterior_mean
+        'posterior_cov': posterior_cov
+        'noise_variance': sigma2_init
+        'n_samples': n_samples
         'n_features': n_features
     }
 ```
@@ -182,12 +182,12 @@ class BayesianInferenceEngine:
         ci_half_width = stats.norm.ppf((1 + self.confidence_level) / 2) * np.sqrt(pred_var)
         
         return {
-            'posterior_mean': post_mean,
-            'posterior_cov': post_cov,
-            'predictions': y_pred,
-            'lower_bound': y_pred - ci_half_width,
-            'upper_bound': y_pred + ci_half_width,
-            'noise_variance': sigma2,
+            'posterior_mean': post_mean
+            'posterior_cov': post_cov
+            'predictions': y_pred
+            'lower_bound': y_pred - ci_half_width
+            'upper_bound': y_pred + ci_half_width
+            'noise_variance': sigma2
             'status': 'success'
         }
 ```
@@ -206,3 +206,16 @@ class BayesianInferenceEngine:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [PyMC Documentation](https://docs.pymc.io/)
+- [Bayesian Inference — Wikipedia](https://en.wikipedia.org/wiki/Bayesian_inference)
+- [Bayesian Methods for Hackers](http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/)
+- [Stan User's Guide](https://mc-stan.org/docs/stan-users-guide/index.html)
+- [Bayesian A/B Testing (Optimizely)](https://blog.optimizely.com/a-b-testing-best-practices/), |
+- [Statistical Rethinking — Richard McElreath](https://github.com/rmcelreath/rethinking)

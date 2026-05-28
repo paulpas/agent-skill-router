@@ -321,4 +321,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `code-correctness-verifier` | Code verification and correctness analysis |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [IIA International Standards for the Professional Practice of Internal Auditing](https://www.theiia.org/en/us/Pages/International-Standards-for-the-Professional-Practice-of-Internal-Auditing.aspx)
+- [Wikipedia — Auditing (Overview)](https://en.wikipedia.org/wiki/Auditing)
+- [ISO 19011:2018 — Guidelines for Auditing Management Systems](https://www.iso.org/standard/65076.html)
+- [COBIT 2019 Framework — IT Governance & Audit](https://isaca.my.site.com/ispaus/s/cobit-2019-overview)
+- [NIST SP 800-53 Rev. 5 — Security & Privacy Controls for Audit](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final)

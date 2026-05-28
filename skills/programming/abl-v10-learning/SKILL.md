@@ -1277,3 +1277,13 @@ IF VALID-OBJECT(rOrder) THEN
 - Present an algorithm without its complexity bounds
 - Use recursive solutions without discussing tail-call or memoization alternatives
 - Omit edge case handling in examples
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Introduction to Algorithms (CLRS)](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/) — Cormen, Leiserson, Rivest, Stein's definitive algorithms textbook with pseudocode and complexity analysis
+- [Algorithms by Sedgewick & Wayne](https://algs4.cs.princeton.edu/home/) — Princeton's open-course algorithms textbook with Java implementations and visualizations
+- [Algorithm Complexity Reference (Big-O Guide)](https://www.bigocheatsheet.com/) — Big-O complexity reference table for common algorithm operations and time/space trade-offs
+- [LeetCode Problem Set](https://leetcode.com/) — LeetCode's curated collection of algorithm problems with community solutions and discussions
+- [MIT OpenCourseWare: Analysis of Algorithms](https://ocw.mit.edu/courses/6-046j-introduction-to-algorithms-sma-5503-fall-2020/) — MIT's open course materials on algorithm design, analysis, and complexity theory

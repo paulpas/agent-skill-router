@@ -321,6 +321,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Netflix Conductor Workflow Creation](<https://netflix.github.io/conductor/core-concepts/overview/>)
+- [REST API Design Best Practices](<https://restfulapi.net/>)
+- [Workflow Versioning Strategies](<https://semver.org/>)
+- [API Schema Evolution Patterns](<https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design>)
+- [Backward Compatible API Design (Google)](<https://cloud.google.com/apis/design/versioning>)
+
 ## Related Skills
 
 | Skill | Purpose |

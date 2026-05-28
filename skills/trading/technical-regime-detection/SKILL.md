@@ -646,3 +646,15 @@ Before completing your task, verify:
 
 5. Campbell, J. Y., Lo, A. W., & MacKinlay, A. C. (1997). *The Econometrics of Financial Markets*. Princeton University Press.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Regime Detection Tutorial](https://docs.quantconnect.com/tutorials/regime-detection)
+- [Statistical Regime Switching Models](https://en.wikipedia.org/wiki/Regime_switching)
+- [Hidden Markov Models for Markets](https://en.wikipedia.org/wiki/Hidden_Markov_model)
+- [Trending vs Ranging Market Detection](https://www.investopedia.com/terms/t/trend.asp)
+- [Market Regime Classification Research](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1495603)

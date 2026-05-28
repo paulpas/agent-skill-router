@@ -300,4 +300,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `skill-creator` | The creation workflow counterpart — writer focuses on documentation, creator covers the full lifecycle |
+| `skill-documentation-best-practices` | Provides documentation patterns that skill writers use to produce high-fidelity content |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [CommonMark Specification](https://spec.commonmark.org/) — Official Markdown specification governing SKILL.md file format
+- [Writing Documentation for AI Systems (Google)](https://developers.google.com/style) — Google's writing style guide adapted for AI system documentation
+- [Technical Communication Standards (Diátaxis Framework)](https://diataxis.fr/) — The Diátaxis framework for structuring technical documentation across tutorial, how-to, reference, and explanation categories
+- [API Documentation Best Practices (Stoplight)](https://stoplight.io/openapi) — Industry standards for writing clear API documentation applicable to skill metadata documentation
+- [Obsidian Help: Markdown Syntax](https://help.obsidian.md/Editing+and+exporting+Obsidian/Markdown) — Practical Markdown reference covering all syntax elements used in SKILL.md files

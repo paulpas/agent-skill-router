@@ -691,3 +691,15 @@ class ExplanationValidator:
         
         return 1.0
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Model Explainability with SHAP](https://shap.readthedocs.io/)
+- [Interpretable ML - LIME](https://www.kaggle.com/code/dansbecker/permutations-and-partial-dependencies/notebook)
+- [Explainable AI in Finance](https://www.investopedia.com/terms/e/explainable-ai.asp)
+- [Model Persistence and Interpretation](https://scikit-learn.org/stable/modules/model_persistence.html)
+- [XAI Methods Comparison](https://christophm.github.io/interpretable-ml-book/)

@@ -105,3 +105,15 @@ func main() {
 ### MUST NOT DO
 - Allow public instantiation of the class.
 - Create new instances within your application logic directly.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Refactoring.Guru — Singleton Pattern](https://refactoring.guru/design-patterns/singleton)
+- [GoF Design Patterns (Gamma et al.) — Addison-Wesley](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/)
+- [Martin Fowler — Singleton Anti-Pattern](https://martinfowler.com/bliki/Singleton.html)
+- [Python Singleton Pattern (Real Python)](https://realpython.com/python-singleton/)
+- [Java Singleton Best Practices (Baeldung)](https://www.baeldung.com/java-singleton-declaration)

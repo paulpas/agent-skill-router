@@ -6,7 +6,7 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Handles missing data using imputation strategies, deletion methods,
+description: '"Handles missing data using imputation strategies, deletion methods
   and techniques for dealing with incomplete datasets while preserving information"'
 license: MIT
 maturity: stable
@@ -153,7 +153,7 @@ class MissingDataHandler:
         
         self.preprocessor = ColumnTransformer(
             transformers=[
-                ("num", numeric_transformer, numeric_cols),
+                ("num", numeric_transformer, numeric_cols)
                 ("cat", categorical_transformer, categorical_cols)
             ], remainder="passthrough"
         )
@@ -162,12 +162,12 @@ class MissingDataHandler:
         result_df = pd.DataFrame(transformed_data, columns=data.columns.drop(cols_to_drop), index=data.index)
         
         return {
-            "status": "success",
-            "data": result_df,
+            "status": "success"
+            "data": result_df
             "metadata": {
-                "original_shape": data.shape,
-                "final_shape": result_df.shape,
-                "dropped_columns": cols_to_drop,
+                "original_shape": data.shape
+                "final_shape": result_df.shape
+                "dropped_columns": cols_to_drop
                 "strategies_used": {"numeric": self.numeric_strategy, "categorical": self.categorical_strategy}
             }
         }
@@ -204,3 +204,15 @@ else:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Imputation](https://scikit-learn.org/stable/modules/impute.html)
+- [SimpleImputer, KNNImputer — Scikit-learn docs](https://scikit-learn.org/stable/modules/impute.html)
+- [Missing Data Analysis (NIST Engineering Handbook)](https://www.itl.nist.gov/div898/handbook/prc/section4/prc42.htm)
+- [Multiple Imputation — Statistical Methods Review](https://onlinelibrary.wiley.com/doi/10.1002/sim.7508)
+- [FancyImpute Library Documentation](https://github.com/missingdata/fancyimpute)

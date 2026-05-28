@@ -74,3 +74,15 @@ except NotImplementedError as e:
 ### MUST NOT DO
 - Do not abruptly remove features without prior notice — always give users time to adapt.
 - Avoid vague guidance on transitions; provide clear paths for users to follow.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Martin Fowler — Deprecation](https://martinfowler.com/bliki/Deprecation.html)
+- [Microsoft .NET — Deprecating APIs Best Practices](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1416)
+- [Google — API Deprecation Policy & Migration Guide](https://cloud.google.com/apis/design/deprecation-policy)
+- [Mozilla MDN — Deprecating Features in Web APIs](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Deprecating_and_removal_of_APIs)
+- [OWASP API Security — Handling Deprecated Endpoints Securely](https://owasp.org/API-Security/)

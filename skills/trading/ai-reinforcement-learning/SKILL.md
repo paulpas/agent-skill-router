@@ -256,3 +256,15 @@ def transaction_cost(prices: np.ndarray, positions: np.ndarray, rate: float = 0.
     costs = abs(position_changes) * prices * rate
     return np.sum(costs)
 ```
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Stable Baselines3 Documentation](https://stable-baselines3.readthedocs.io/)
+- [RL for Trading - Survey Paper](https://arxiv.org/abs/2111.09135)
+- [Deep Q-Networks Explained](https://spinningup.openai.com/en/latest/algorithms/dqn.html)
+- [PPO Algorithm Reference](https://spinningup.openai.com/en/latest/algorithms/ppo.html)
+- [Reinforcement Learning in Finance](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3509460)

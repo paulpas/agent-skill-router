@@ -93,3 +93,15 @@ This skill provides a detailed look into various modern software architecture pa
 ### MUST NOT DO
 - Avoid tight coupling between services to maintain independence.
 - Do not compromise on testing and validation before deployment; ensure every component is thoroughly tested before going live.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [Martin Fowler — Software Architecture](https://martinfowler.com/articles/softwareArchitecture.html)
+- [Microservices.io — Patterns Reference](https://microservices.io/patterns/microservices.html)
+- [AWS Serverless Architecture Best Practices](https://aws.amazon.com/serverless/best-practices/)
+- [Event-Driven Architecture (Red Hat)](https://www.redhat.com/en/topics/integration/what-is-event-driven-architecture)
+- [CNCF Cloud-Native Landscape](https://landscape.cncf.io/)

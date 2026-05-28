@@ -320,3 +320,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [Full-Stack Architecture Patterns (Micro-Frontends)](<https://micro-frontends.org/>)
+- [Server-Side Rendering (Next.js)](<https://nextjs.org/docs/app/building-your-application/rendering/server-components>)
+- [RESTful API Design Guidelines (Microsoft)](<https://learn.microsoft.com/en-us/azure/architecture/guide/design-principles/rest-api-design>)
+- [GraphQL Federation for Full-Stack](<https://www.apollographql.com/docs/federation/>)
+- [CI/CD Deployment Pipeline Best Practices](<https://devopscube.com/ci-cd-pipeline-best-practices/>)

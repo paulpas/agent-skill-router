@@ -333,4 +333,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `testing-quality-methodologies` | Covers testing strategies for FastAPI applications including async test patterns |
+| `input-processing-pipelines` | Handles input validation that complements FastAPI's Pydantic-based request processing |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [FastAPI Official Documentation](https://fastapi.tiangolo.com/) — Complete official documentation covering routes, middleware, dependency injection, and deployment
+- [Starlette Framework Docs](https://www.starlette.io/) — Foundation framework documentation; FastAPI is built on Starlette
+- [Pydantic v2 Documentation](https://docs.pydantic.dev/latest/) — Data validation library used by FastAPI for request/response models
+- [Python ASGI Specification](https://asgi.readthedocs.io/en/latest/) — Async Server Gateway Interface specification underlying FastAPI's async architecture
+- [FastAPI Dependency Injection System](https://fastapi.tiangolo.com/tutorial/dependencies/) — Official guide to dependency injection patterns in FastAPI applications

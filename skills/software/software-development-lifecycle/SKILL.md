@@ -87,3 +87,15 @@ jobs:
 ### MUST NOT DO
 - Skip important documentation as it is crucial for future reference and onboarding new team members.
 - Rush through any stage of the lifecycle; each phase must be given its appropriate attention to ensure quality and success of the project.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [IBM — Software Development Lifecycle](https://www.ibm.com/topics/software-development-lifecycle)
+- [IEEE 12207 — Systems & Software Engineering Life Cycle Processes](https://standards.ieee.org/standard/12207-2008.html)
+- [Agile Alliance — Agile Methodology Guide](https://www.agilealliance.org/glossary/agile/)
+- [GitFlow Workflow (Atlassian)](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [Continuous Integration & Delivery (Martin Fowler)](https://martinfowler.com/articles/continuousIntegration.html)

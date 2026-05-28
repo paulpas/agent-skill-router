@@ -324,4 +324,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `task-decomposition-engine` | Uses intelligence analysis to inform how tasks should be decomposed into sub-tasks |
+| `skill-router-system` | Applies task intelligence scores to improve skill routing accuracy |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Task Classification with NLP (Hugging Face)](https://huggingface.co/docs/transformers/task_summaries) — Hugging Face's guide to using transformer models for text classification and task categorization
+- [Intent Recognition in Conversational AI](https://arxiv.org/abs/2010.06483) — Research paper on intent recognition techniques for understanding user tasks
+- [Task Complexity Estimation Models (IEEE)](https://ieeexplore.ieee.org/document/9363486) — IEEE research on automated task complexity estimation using machine learning
+- [Machine Learning for Software Effort Estimation](https://arxiv.org/abs/2001.08047) — Academic survey on ML-based software effort and task complexity prediction
+- [Prompt Classification Framework (Anthropic)](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering) — Anthropic's framework for classifying and understanding different types of tasks in prompts

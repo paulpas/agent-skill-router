@@ -99,3 +99,15 @@ def analyze_codebase(codebase_paths: List[str]) -> List[dict]:
 ### MUST NOT DO
 - Ignore or postpone remediation of identified vulnerabilities. All high-severity vulnerabilities must be addressed before release.
 - Depend solely on SAST tools without combining with other testing approaches such as DAST (Dynamic Application Security Testing). SAST can miss runtime issues that only appear during application execution.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links to resolve external references and inline content.
+
+- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)
+- [OWASP Software Verification Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Software_Verification_Cheat_Sheet.html)
+- [Semgrep SAST Documentation](https://semgrep.dev/docs/)
+- [SonarQube Analysis Guide](https://docs.sonarsource.com/sonarqube/latest/analyzing-scanner-status/analysis/)
+- [Snyk Code Security Scanning](https://snyk.io/products/snyk-code/)

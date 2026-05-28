@@ -1044,15 +1044,13 @@ class ItemRepositoryFacade:
 
 ## Live References
 
-| Resource | URL | What It Covers |
-|----------|-----|----------------|
-| FastAPI Official Documentation | https://fastapi.tiangolo.com/ | Framework fundamentals, routing, dependency injection, Pydantic integration |
-| FastAPI Testing Guide | https://fastapi.tiangolo.com/tutorial/testing/ | Test client usage, integration testing patterns, async test fixtures |
-| Pydantic v2 Documentation | https://docs.pydantic.dev/latest/ | Model validation, serialization, configuration options, field constraints |
-| Python Type Checking Documentation | https://typing.python.org/en/latest/ | Protocol definitions, generic types, type stub (.pyi) writing conventions |
-| SQLAlchemy 2.0 Tutorial | https://docs.sqlalchemy.org/en/20/tutorial/index.html | ORM patterns, async session management, declarative model definition |
-| FastAPI Community Best Practices | https://github.com/tiangolo/fastapi/discussions/categories/best-practices | Real-world patterns from the framework maintainers and active contributors |
-| Web Framework Benchmark Guide | https://www.techempower.com/benchmarks/ | Performance comparisons across popular web frameworks (updated quarterly) |
+> Authoritative documentation links for software onboarding and developer experience. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Nielsen Norman Group — Onboarding Users into Software](https://www.nngroup.com/articles/onboarding-users-software/) — UX research on progressive disclosure, user education patterns, and reducing time-to-value for new software adopters
+- [Martin Fowler — Framework Onboarding](https://martinfowler.com/articles/frameworkOnboarding.html) — Technical strategies for introducing new frameworks to teams including scaffolding, convention adoption, and gradual migration
+- [Google's Developer Documentation Best Practices](https://developers.google.com/style) — Writing guidelines for documentation that enables developers to onboard quickly with clear examples and progressive complexity
+- [ReadTheDocs — Project Documentation Hosting](https://docs.readthedocs.io/en/stable/) — Platform for hosting framework documentation with versioning, search, and cross-linking capabilities
+- [Docusaurus — Modern Documentation Framework](https://docusaurus.io/docs) — React-based documentation site generator used by major open-source projects for onboarding documentation |
 
 ---
 

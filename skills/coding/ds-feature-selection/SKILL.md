@@ -6,14 +6,14 @@ content-types:
 - guidance
 - do-dont
 - examples
-description: '"Selects relevant features using univariate selection, recursive elimination,
+description: '"Selects relevant features using univariate selection, recursive elimination
   stability selection, and importance-based methods"'
 license: MIT
 maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-feature-engineering, ds-feature-interaction, ds-hyperparameter-tuning,
+  related-skills: ds-feature-engineering, ds-feature-interaction, ds-hyperparameter-tuning
     ds-model-interpretation ds-model-interpretation
   role: implementation
   scope: implementation
@@ -93,7 +93,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
 
 pipeline = Pipeline([
-    ('selector', SelectKBest(f_classif, k=5)),
+    ('selector', SelectKBest(f_classif, k=5))
     ('classifier', RandomForestClassifier(n_estimators=100, random_state=42))
 ])
 scores = cross_val_score(pipeline, X, y, cv=5, scoring='accuracy')
@@ -123,7 +123,7 @@ class FeatureSelectionPipeline:
         self.threshold = threshold
         self.max_features = max_features
         self.selector = SelectFromModel(
-            RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1),
+            RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
             threshold=threshold
         )
         self.selected_features: List[str] = []
@@ -145,11 +145,11 @@ class FeatureSelectionPipeline:
         X_selected = self.selector.transform(X)
         
         result = {
-            'status': 'success',
-            'original_features': X.shape[1],
-            'selected_features': len(self.selected_features),
-            'feature_names': self.selected_features,
-            'transformed_data': X_selected,
+            'status': 'success'
+            'original_features': X.shape[1]
+            'selected_features': len(self.selected_features)
+            'feature_names': self.selected_features
+            'transformed_data': X_selected
             'importance_scores': dict(zip(X.columns, self.selector.estimator_.feature_importances_))
         }
         logger.info(f"Selected {len(self.selected_features)} features from {X.shape[1]}")
@@ -170,3 +170,15 @@ class FeatureSelectionPipeline:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Scikit-learn Feature Selection](https://scikit-learn.org/stable/modules/feature_selection.html)
+- [SelectKBest, RFE — Scikit-learn docs](https://scikit-learn.org/stable/modules/feature_selection.html#feature-selection)
+- [Mutual Information Classifier (Scikit-learn)](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.mutual_info_classif.html)
+- [Feature Importance with Tree Ensembles](https://scikit-learn.org/stable/modules/tree.html#decisions-and-feature-importance)
+- [Recursive Feature Elimination Tutorial (Kaggle)](https://www.kaggle.com/code/leandro0421/feature-selection-with-recursive-feature-elimination)

@@ -314,4 +314,17 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `behavioral-modes` | Behavioral specialization for agent routing decisions |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Agent Selection via Confidence Estimation (arXiv:2308.11432)](https://arxiv.org/abs/2308.11432)
+- [LLM Self-Confidence & Calibration Survey](https://arxiv.org/abs/2209.07523)
+- [LangChain — Agent Selection Patterns](https://python.langchain.com/docs/modules/agents/)
+- [Uncertainty Quantification in Large Language Models (Nature)](https://www.nature.com/articles/s42256-024-00839-2)
+- [Mixture of Agents: Confidence-Based Routing (OpenAI Research)](https://openai.com/research/mixture-of-agents)

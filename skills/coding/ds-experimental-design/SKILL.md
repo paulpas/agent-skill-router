@@ -13,7 +13,7 @@ maturity: stable
 metadata:
   domain: coding
   output-format: code
-  related-skills: ds-ab-testing, ds-online-experiments, ds-randomized-experiments,
+  related-skills: ds-ab-testing, ds-online-experiments, ds-randomized-experiments
     ds-statistical-power ds-statistical-power
   role: implementation
   scope: implementation
@@ -144,9 +144,9 @@ class ExperimentalDesign:
             f_stat, p_val = np.nan, np.nan
             
         results = {
-            'status': 'success',
-            'design_matrix': design,
-            'statistics': {'f_statistic': float(f_stat), 'p_value': float(p_val), 'n_runs': len(design)},
+            'status': 'success'
+            'design_matrix': design
+            'statistics': {'f_statistic': float(f_stat), 'p_value': float(p_val), 'n_runs': len(design)}
             'metadata': {'factors': factors, 'blocks': n_blocks, 'seed': self.seed}
         }
         return results
@@ -166,3 +166,15 @@ class ExperimentalDesign:
 
 | Pitfall | Problem | Solution |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Design of Experiments — Wikipedia](https://en.wikipedia.org/wiki/Design_of_experiments)
+- [NIST Engineering Statistics Handbook](https://www.itl.nist.gov/div898/handbook/index.htm)
+- [DOE Guide (Six Sigma)](https://sixsigmadsi.com/design-of-experiments-doepdf/)
+- [Randomized Block Design — StatLect](https://www.statlect.com/experimental-design/randomized-block-design)
+- [Factorial Experiments (Khan Academy)](https://www.khanacademy.org/math/statistics-probability/design-of-significant-experiments)

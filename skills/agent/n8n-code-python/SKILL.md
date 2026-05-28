@@ -286,3 +286,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [n8n Documentation](<https://docs.n8n.io/>)
+- [n8n Python Code Node](<https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/>)
+- [n8n Custom Python Nodes Guide](<https://docs.n8n.io/hosting/docker/self-hosted-python-code-node/>)
+- [Python for Automation Scripting (Real Python)](<https://realpython.com/>)
+- [n8n Webhook and API Integration](<https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/>)

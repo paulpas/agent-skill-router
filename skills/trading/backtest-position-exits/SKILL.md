@@ -654,3 +654,15 @@ if __name__ == "__main__":
 4. Sharpe, W. F. (1994). *The Sharpe Ratio*. Journal of Portfolio Management. - Risk-adjusted return metrics for exit evaluation.
 5. Elder, A. (2014). *Three Signs a Trend Is Ending*. Elder Trading. - Identifying trend exhaustion for optimal exit timing.
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Exit Strategies Tutorial](https://docs.quantconnect.com/tutorials/exit-strategies)
+- [Trailing Stop Exit Methods](https://www.investopedia.com/terms/t/trailing-stop.asp)
+- [Technical Exit Signal Design](https://www.investopedia.com/articles/trading/08/technical-trading-rules.asp)
+- [Time-Based Position Exits](https://docs.quantconnect.com/tutorials/algorithms)
+- [Exit Rule Optimization](https://en.wikipedia.org/wiki/Technical_analysis)

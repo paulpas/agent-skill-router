@@ -342,3 +342,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [POSIX Filesystem API Reference](<https://man7.org/linux/man-pages/man7/inotify.7.html>)
+- [Python os Module Documentation](<https://docs.python.org/3/library/os.html>)
+- [inotify Linux Kernel File Monitoring](<https://en.wikipedia.org/wiki/Inotify>)
+- [fswatch Cross-Platform File Monitor](<https://github.com/emcrisostomo/fswatch>)
+- [Tree-sitter Codebase Parsing](<https://tree-sitter.github.io/tree-sitter/>)

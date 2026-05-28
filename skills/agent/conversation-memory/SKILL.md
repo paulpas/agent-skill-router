@@ -320,6 +320,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Conversation History Management Patterns](<https://www.promptingguide.ai/techniques/memory>)
+- [LangChain Memory Module Docs](<https://python.langchain.com/docs/modules/memory/>)
+- [State Machines in Conversational AI (Wikipedia)](<https://en.wikipedia.org/wiki/Dialogue_manager>)
+- [Context Window Optimization Techniques](<https://arxiv.org/abs/2307.03172>)
+- [Conversational State Management Survey](<https://arxiv.org/abs/2103.13026>)
+
 ## Related Skills
 
 | Skill | Purpose |

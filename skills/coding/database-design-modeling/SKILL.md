@@ -798,3 +798,13 @@ When designing or reviewing database schemas, produce:
 | `backend-dev-guidelines`  | Ensure database access patterns follow backend conventions     |
 | `api-design-principles`   | Design API layers that abstract the schema from clients        |
 | `domain-driven-design`    | Align table structure with domain boundaries and bounded contexts |
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Wikipedia: Database Design](https://en.wikipedia.org/wiki/Database_design)
+- [IBM: Relational Database Design & Modeling](https://www.ibm.com/docs/en/informix-servers/12.10?topic=files-relational-database-design-modeling)
+- [MySQL Reference Manual: CREATE TABLE Syntax](https://dev.mysql.com/doc/refman/8.0/en/create-table.html)
+- [PostgreSQL Documentation: Data Types](https://www.postgresql.org/docs/current/datatype.html)
+- [Database Normalization Rules (1NF through 5NF)](https://en.wikipedia.org/wiki/Database_normalization)

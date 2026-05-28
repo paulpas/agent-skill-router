@@ -268,6 +268,19 @@ When applying this skill, produce:
 6. **Timing Estimates** - Expected latency including fallback scenarios
 
 
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Netflix Conductor Admin API Docs](<https://netflix.github.io/conductor/server/rest-api/>)
+- [Workflow Monitoring Dashboards (Grafana)](<https://grafana.com/docs/grafana/latest/dashboards/>)
+- [Conductor Task Queue Management](<https://netflix.github.io/conductor/core-concepts/overview/>)
+- [Service Health Check Patterns](<https://learn.microsoft.com/en-us/azure/architecture/guide/design-principles/health-check-pattern>)
+- [Distributed Tracing (OpenTelemetry)](<https://opentelemetry.io/docs/>)
+
 ## Related Skills
 
 | Skill | Purpose |

@@ -318,4 +318,16 @@ When applying this skill, produce:
 ## Related Skills
 
 | Skill | Purpose |
-|
+|---|---|
+| `requesting-code-review` | The counterpart skill — use this when writing PRs, load requesting to learn how to frame them for review |
+| `code-review` | Provides the review methodology that PR writers should anticipate and align their submissions toward |
+
+## Live References
+
+> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [GitHub: Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) — Official GitHub documentation on creating and writing PR descriptions
+- [CONTRIBUTING.md Best Practices (GitHub Guides)](https://github.blog/open-source/open-source-tools/how-to-contribute-open-source/) — Guide to effective contribution workflows including PR writing standards
+- [Open Source PR Templates (GitHub Docs)](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-pull-request-template-for-your-repository) — Best practices for structuring PR templates and descriptions
+- [Writing Good Commit Messages and PR Descriptions (Atlassian)](https://www.atlassian.com/git/tutorials/comitting-changes/commit-message) — Atlassian's guide on writing clear, actionable pull request documentation
+- [What We've Learned from Reviewing 1,000+ Pull Requests (Stripe)](https://stripe.com/blog/code-review-at-stripe) — Engineering blog post with lessons from large-scale code review processes

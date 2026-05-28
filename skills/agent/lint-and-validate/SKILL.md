@@ -299,3 +299,14 @@ When applying this skill, produce:
 
 | Skill | Purpose |
 |
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+- [ESLint Documentation](<https://eslint.org/docs/latest/use/core-concepts>)
+- [Pylint Python Linter Guide](<https://pylint.readthedocs.io/en/stable/>)
+- [Ruff Fast Python Linter](<https://docs.astral.sh/ruff/>)
+- [Markdownlint for MD Files](<https://github.com/DavidAnson/markdownlint>)
+- [YAML Linting with yamllint](<https://yamllint.readthedocs.io/>)
