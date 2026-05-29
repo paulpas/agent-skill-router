@@ -21,26 +21,37 @@ const MAX_RESULTS = 5;
 
 // Benchmark queries with varying lengths and complexity
 const BENCHMARK_QUERIES = [
-  // Short query (11 tokens)
+  // ── Technical queries ──────────────────────────────────────────────────────
   'stop loss crypto',
-  
-  // Medium query (18 tokens)
   'How do I implement a stop loss for cryptocurrency trading?',
-  
-  // Long query (23 tokens)
   'What is the best way to run a Kubernetes pod with persistent storage and network policies?',
-  
-  // Technical query (19 tokens)
   'Explain how to write a Python unit test with mock objects and assertions',
-  
-  // Complex query (21 tokens)
   'How do I configure Prometheus for Kubernetes monitoring with service discovery?',
-  
-  // Multi-concept query (26 tokens)
   'Implement a TWAP execution algorithm for crypto trading with volume weighting and slippage control',
-  
-  // Open-ended query (15 tokens)
   'What are the best practices for code review in a team environment?',
+
+  // ── Adversarial / short queries ────────────────────────────────────────────
+  'k8s',
+  'go concurrency',
+  'fix bug now',
+  '!@#$%^&*()',
+
+  // ── Conversational queries ─────────────────────────────────────────────────
+  'how do i deploy my app to the cloud',
+  'teach me about docker containers',
+  'help me understand kubernetes networking',
+  'what is the best way to store data',
+  'i need to protect my trading bot from losing too much money',
+
+  // ── Multi-intent queries ───────────────────────────────────────────────────
+  'deploy python trading bot to kubernetes and monitor with prometheus',
+  'write a go microservice with postgres, redis, and kubernetes',
+  'implement rate limiting and circuit breaker patterns in a trading engine',
+
+  // ── Long / detailed queries ────────────────────────────────────────────────
+  'I have a production Kubernetes cluster running nginx ingress where pods are randomly getting OOMKilled every 4 hours, I need to debug this, adjust resource limits, set up proper horizontal pod autoscaling',
+  'Implement a complete algorithmic trading system with data ingestion, technical indicators, signal generation, position sizing, stop loss, backtesting, and deployment',
+  'Design a multi-agent AI system where one agent handles code review, another handles testing, and a third handles documentation generation, coordinating through a shared task queue',
 ];
 
 // ============================================================================
@@ -50,11 +61,14 @@ const BENCHMARK_QUERIES = [
 interface QueryResult {
   query: string;
   latencyMs: number;
-  kdTreeLatencyMs?: number;
+  hnswLatencyMs?: number;
   linearLatencyMs?: number;
   inputTokens: number;
   outputTokens: number;
   candidateCount: number;
+  topSkillConfidence: number;
+  scoreSpread: number;
+  relevantDomains: string[];
   topSkills: string[];
   scores: number[];
 }
@@ -65,6 +79,9 @@ interface BenchmarkSummary {
   avgInputTokens: number;
   avgOutputTokens: number;
   avgCandidates: number;
+  avgScoreSpread: number;
+  avgTopConfidence: number;
+  relevantMatchRate: number;
   latencyDistribution: {
     min: number;
     max: number;
@@ -77,6 +94,12 @@ interface BenchmarkSummary {
     inputMax: number;
     outputMin: number;
     outputMax: number;
+  };
+  scoreDistribution: {
+    min: number;
+    max: number;
+    avg: number;
+    median: number;
   };
 }
 
@@ -122,6 +145,117 @@ function stats(arr: number[]): { min: number; max: number; avg: number; median: 
     avg: sum / sorted.length,
     median: sorted[Math.floor(sorted.length / 2)],
   };
+}
+
+// ============================================================================
+// CLI Argument Parsing
+// ============================================================================
+
+const args = process.argv.slice(2);
+const jsonMode = args.includes('--json') || (args.includes('--format') && args[args.indexOf('--format') + 1] === 'json');
+
+// ============================================================================
+// Domain Helpers
+// ============================================================================
+
+/**
+ * Extract domain prefix from a skill name (e.g. "trading-risk-stop-loss" → "trading")
+ */
+function extractDomain(skillName: string): string {
+  const idx = skillName.indexOf('-');
+  return idx === -1 ? skillName : skillName.substring(0, idx);
+}
+
+/**
+ * Heuristic: infer expected domains from a query based on keywords.
+ * Returns an array of domain strings the query likely relates to.
+ */
+function expectedDomains(query: string): string[] {
+  const q = query.toLowerCase();
+  const domains: string[] = [];
+  if (/\b(trad|crypto|stop loss|position sizing|twap|backtest|algo trading|slippage|risk)\b/.test(q)) {
+    domains.push('trading');
+  }
+  if (/\b(kubernetes|k8s|pod|deploy|nginx|helm|container|docker|statefulset|horizontal pod autoscal|oomkill|ingress)\b/.test(q)) {
+    domains.push('cncf');
+  }
+  if (/\b(python|unit test|code review|go\b|golang|microservice|postgres|redis|rate limit|circuit breaker|oauth|jwt|react|mock|assertion)\b/.test(q)) {
+    domains.push('coding');
+  }
+  if (/\b(prometheus|monitoring|grafana|alert|metric)\b/.test(q)) {
+    domains.push('cncf');
+  }
+  if (/\b(database|store data|sql|nosql)\b/.test(q)) {
+    domains.push('coding');
+  }
+  if (/\b(agent|multi-agent|orchestrat|workflow|coordinat)\b/.test(q)) {
+    domains.push('agent');
+  }
+  if (/\b(go\b|golang|goroutine|channel)\b/.test(q)) {
+    domains.push('go');
+  }
+  if (/\b(linux|bash|systemd|unix)\b/.test(q)) {
+    domains.push('linux');
+  }
+  return domains;
+}
+
+/**
+ * Check whether a skill name is plausibly relevant to the given query
+ * by comparing its domain prefix against expected domains.
+ */
+function isSkillRelevant(skillName: string, query: string): boolean {
+  const skillDomain = extractDomain(skillName);
+  const expected = expectedDomains(query);
+  // If we couldn't infer any domain for the query, be lenient
+  if (expected.length === 0) return true;
+  return expected.includes(skillDomain);
+}
+
+// ============================================================================
+// JSON Output Formatter
+// ============================================================================
+
+function outputJSON(results: QueryResult[], summary: BenchmarkSummary): void {
+  const output = {
+    metadata: {
+      generatedAt: new Date().toISOString(),
+      totalQueries: results.length,
+      numIterations: NUM_ITERATIONS,
+      maxResults: MAX_RESULTS,
+    },
+    results: results.map((r) => ({
+      query: r.query,
+      latencyMs: Math.round(r.latencyMs * 100) / 100,
+      hnswLatencyMs: r.hnswLatencyMs !== undefined ? Math.round(r.hnswLatencyMs * 100) / 100 : null,
+      linearLatencyMs: r.linearLatencyMs !== undefined ? Math.round(r.linearLatencyMs * 100) / 100 : null,
+      speedupFactor: (r.hnswLatencyMs !== undefined && r.linearLatencyMs !== undefined && r.linearLatencyMs > 0)
+        ? Math.round((r.linearLatencyMs / r.hnswLatencyMs) * 100) / 100
+        : null,
+      inputTokens: r.inputTokens,
+      outputTokens: r.outputTokens,
+      candidateCount: r.candidateCount,
+      topSkillConfidence: r.topSkillConfidence,
+      scoreSpread: r.scoreSpread,
+      relevantDomains: r.relevantDomains,
+      topSkills: r.topSkills,
+      scores: r.scores.map((s) => Math.round(s * 10000) / 10000),
+    })),
+    summary: {
+      totalQueries: summary.totalQueries,
+      avgLatencyMs: Math.round(summary.avgLatencyMs * 100) / 100,
+      avgInputTokens: Math.round(summary.avgInputTokens),
+      avgOutputTokens: Math.round(summary.avgOutputTokens),
+      avgCandidates: Math.round(summary.avgCandidates),
+      avgScoreSpread: Math.round(summary.avgScoreSpread * 10000) / 10000,
+      avgTopConfidence: Math.round(summary.avgTopConfidence * 10000) / 10000,
+      relevantMatchRate: Math.round(summary.relevantMatchRate * 10000) / 10000,
+      latencyDistribution: summary.latencyDistribution,
+      tokenDistribution: summary.tokenDistribution,
+      scoreDistribution: summary.scoreDistribution,
+    },
+  };
+  console.log(JSON.stringify(output, null, 2));
 }
 
 // ============================================================================
@@ -173,17 +307,15 @@ async function runBenchmark(): Promise<void> {
     console.log(`   Iterations: ${NUM_ITERATIONS}`);
 
     const latencies: number[] = [];
-    const kdTreeLatencies: number[] = [];
-    const linearLatencies: number[] = [];
     const inputTokensList: number[] = [];
     const outputTokensList: number[] = [];
     const candidateCounts: number[] = [];
     const topSkillsSet = new Set<string>();
     const scoresList: number[][] = [];
+    let hnswMs: number | undefined;
+    let linearMs: number | undefined;
 
     for (let i = 0; i < NUM_ITERATIONS; i++) {
-      const startTime = Date.now();
-
       // Route the task
       const response = await router.routeTask({
         task: query,
@@ -195,15 +327,7 @@ async function runBenchmark(): Promise<void> {
       const latencyMs = response.latencyMs;
       latencies.push(latencyMs);
 
-      // Extract token stats from vector database
-      const tokenStats = (router as any).vectorDatabase?.getTokenStats?.() || {
-        input: 0,
-        output: 0,
-      };
-
-      // For accurate per-request tokens, we need to extract from the response
-      // This requires accessing internal state or modifying the Router
-      // For now, we'll estimate from the LLM ranker
+      // Estimate per-request tokens from the LLM ranker
       const llmRanker = (router as any).llmRanker;
       const inputTokens = llmRanker?.getInputTokens?.() || 0;
       const outputTokens = llmRanker?.getOutputTokens?.() || 0;
@@ -220,8 +344,32 @@ async function runBenchmark(): Promise<void> {
 
       scoresList.push(response.selectedSkills.map((s) => s.score));
 
-      // Note: KD-tree vs linear comparison requires access to internal timing
-      // For a real benchmark, we'd need to add timing instrumentation to VectorDatabase
+      // On the last iteration, attempt to time HNSW vs linear search directly
+      if (i === NUM_ITERATIONS - 1) {
+        try {
+          const vdb = (router as any).vectorDatabase;
+          const embedService = (router as any).embeddingService;
+          if (vdb && embedService?.generateEmbedding) {
+            const embedResp = await embedService.generateEmbedding(query);
+            const embedding = embedResp.embedding;
+
+            // Time HNSW search (default path)
+            const hStart = Date.now();
+            await vdb.search(embedding, 20);
+            hnswMs = Date.now() - hStart;
+
+            // Time linear search (temporarily disable HNSW)
+            const origHNSW = vdb.config.useHNSW;
+            vdb.config.useHNSW = false;
+            const lStart = Date.now();
+            await vdb.search(embedding, 20);
+            linearMs = Date.now() - lStart;
+            vdb.config.useHNSW = origHNSW;
+          }
+        } catch {
+          // Instrumentation not available — leave hnswMs / linearMs undefined
+        }
+      }
 
       console.log(`   Iter ${i + 1}: ${formatMs(latencyMs)}, Input: ${formatTokens(inputTokens)}, Output: ${formatTokens(outputTokens)}`);
     }
@@ -233,12 +381,28 @@ async function runBenchmark(): Promise<void> {
     const avgCandidates = candidateCounts.reduce((a, b) => a + b, 0) / candidateCounts.length;
     const avgScores = scoresList.reduce((acc, scores) => acc.concat(scores), []);
 
+    // Quality metrics from the last iteration's scores
+    const lastScores = scoresList.length > 0 ? scoresList[scoresList.length - 1] : [];
+    const topConf = lastScores.length > 0 ? lastScores[0] : 0;
+    const spread = lastScores.length > 1 ? lastScores[0] - lastScores[1] : 0;
+
+    // Extract unique domains from all skills seen across iterations
+    const relevantDomains = Array.from(topSkillsSet)
+      .map(extractDomain)
+      .filter((d, i, arr) => arr.indexOf(d) === i)
+      .slice(0, MAX_RESULTS);
+
     results.push({
       query,
       latencyMs: avgLatency,
+      hnswLatencyMs: hnswMs,
+      linearLatencyMs: linearMs,
       inputTokens: Math.round(avgInputTokens),
       outputTokens: Math.round(avgOutputTokens),
       candidateCount: Math.round(avgCandidates),
+      topSkillConfidence: Math.round(topConf * 10000) / 10000,
+      scoreSpread: Math.round(spread * 10000) / 10000,
+      relevantDomains,
       topSkills: Array.from(topSkillsSet).slice(0, MAX_RESULTS),
       scores: avgScores,
     });
@@ -263,17 +427,35 @@ function calculateSummary(results: QueryResult[]): BenchmarkSummary {
   const inputTokens = results.map((r) => r.inputTokens);
   const outputTokens = results.map((r) => r.outputTokens);
   const candidates = results.map((r) => r.candidateCount);
+  const scoreSpreads = results.map((r) => r.scoreSpread);
+  const topConfidences = results.map((r) => r.topSkillConfidence);
+  const topScores = results.map((r) => r.scores.length > 0 ? r.scores[0] : 0);
 
   const sortedLatencies = [...latencies].sort((a, b) => a - b);
+  const scoreDist = stats(topScores);
+
+  // Compute relevantMatchRate: fraction of queries where top skill domain
+  // matches at least one expected domain for that query
+  let matches = 0;
+  for (const r of results) {
+    if (r.topSkills.length > 0 && isSkillRelevant(r.topSkills[0], r.query)) {
+      matches++;
+    }
+  }
 
   return {
     totalQueries: results.length,
     avgLatencyMs: latencies.reduce((a, b) => a + b, 0) / latencies.length,
-    avgKdTreeLatencyMs: undefined,
-    avgLinearLatencyMs: undefined,
     avgInputTokens: inputTokens.reduce((a, b) => a + b, 0) / inputTokens.length,
     avgOutputTokens: outputTokens.reduce((a, b) => a + b, 0) / outputTokens.length,
     avgCandidates: candidates.reduce((a, b) => a + b, 0) / candidates.length,
+    avgScoreSpread: scoreSpreads.length > 0
+      ? scoreSpreads.reduce((a, b) => a + b, 0) / scoreSpreads.length
+      : 0,
+    avgTopConfidence: topConfidences.length > 0
+      ? topConfidences.reduce((a, b) => a + b, 0) / topConfidences.length
+      : 0,
+    relevantMatchRate: results.length > 0 ? matches / results.length : 0,
     latencyDistribution: {
       min: Math.min(...latencies),
       max: Math.max(...latencies),
@@ -287,6 +469,7 @@ function calculateSummary(results: QueryResult[]): BenchmarkSummary {
       outputMin: Math.min(...outputTokens),
       outputMax: Math.max(...outputTokens),
     },
+    scoreDistribution: scoreDist,
   };
 }
 
@@ -295,64 +478,110 @@ function calculateSummary(results: QueryResult[]): BenchmarkSummary {
 // ============================================================================
 
 function printResults(results: QueryResult[], summary: BenchmarkSummary): void {
-  // Print per-query results
+  // ── JSON mode: dump structured output and exit ────────────────────────────
+  if (jsonMode) {
+    outputJSON(results, summary);
+    return;
+  }
+
+  // ── Per-query results ─────────────────────────────────────────────────────
   console.log('\n' + '─'.repeat(80));
   console.log('QUERY RESULTS');
   console.log('─'.repeat(80));
 
   for (const result of results) {
-    console.log(`\nQuery: "${result.query.substring(0, 60)}${result.query.length > 60 ? '...' : ''}"`);
-    console.log(`  Latency:        ${formatMs(result.latencyMs)}`);
-    console.log(`  Input Tokens:   ${formatTokens(result.inputTokens)}`);
-    console.log(`  Output Tokens:  ${formatTokens(result.outputTokens)}`);
-    console.log(`  Candidates:     ${result.candidateCount}`);
+    const label = `${result.query.substring(0, 55)}${result.query.length > 55 ? '...' : ''}`;
+    console.log(`\nQuery: "${label}"`);
+    console.log(`  Latency:            ${formatMs(result.latencyMs)}`);
+    console.log(`  Input/Output Tokens: ${formatTokens(result.inputTokens)} / ${formatTokens(result.outputTokens)}`);
+    console.log(`  Candidates:         ${result.candidateCount}`);
+    console.log(`  Top Skill Confidence: ${(result.topSkillConfidence * 100).toFixed(2)}%`);
+    console.log(`  Score Spread (#1-#2): ${(result.scoreSpread * 10000).toFixed(2)}bp`);
+    console.log(`  Relevant Domains:   ${result.relevantDomains.join(', ') || '(none)'}`);
+
+    if (result.hnswLatencyMs !== undefined && result.linearLatencyMs !== undefined) {
+      const speedup = result.linearLatencyMs / result.hnswLatencyMs;
+      console.log(`  HNSW vs Linear:     ${formatMs(result.hnswLatencyMs)} vs ${formatMs(result.linearLatencyMs)} (${speedup.toFixed(2)}x faster)`);
+    }
+
     console.log(`  Top Skills:`);
-    
     result.topSkills.forEach((skill, i) => {
-      console.log(`    ${i + 1}. ${skill}`);
+      const relevant = isSkillRelevant(skill, result.query) ? '✓' : '✗';
+      console.log(`    ${i + 1}. ${skill}  [${relevant}]`);
     });
   }
 
-  // Print summary statistics
+  // ── Summary statistics ────────────────────────────────────────────────────
   console.log('\n' + '─'.repeat(80));
   console.log('SUMMARY STATISTICS');
   console.log('─'.repeat(80));
 
-  console.log(`\nTotal Queries:        ${summary.totalQueries}`);
-  console.log(`Average Latency:      ${formatMs(summary.avgLatencyMs)}`);
-  console.log(`  Min/Max:            ${formatMs(summary.latencyDistribution.min)} / ${formatMs(summary.latencyDistribution.max)}`);
-  console.log(`  P50/P95/P99:        ${formatMs(summary.latencyDistribution.p50)} / ${formatMs(summary.latencyDistribution.p95)} / ${formatMs(summary.latencyDistribution.p99)}`);
+  console.log(`\nTotal Queries:          ${summary.totalQueries}`);
+  console.log(`Average Latency:        ${formatMs(summary.avgLatencyMs)}`);
+  console.log(`  Min/Max:              ${formatMs(summary.latencyDistribution.min)} / ${formatMs(summary.latencyDistribution.max)}`);
+  console.log(`  P50/P95/P99:          ${formatMs(summary.latencyDistribution.p50)} / ${formatMs(summary.latencyDistribution.p95)} / ${formatMs(summary.latencyDistribution.p99)}`);
 
-  console.log(`\nAverage Input Tokens: ${formatTokens(summary.avgInputTokens)}`);
-  console.log(`  Range:              ${formatTokens(summary.tokenDistribution.inputMin)} - ${formatTokens(summary.tokenDistribution.inputMax)}`);
+  console.log(`\nAverage Input Tokens:   ${formatTokens(summary.avgInputTokens)}`);
+  console.log(`  Range:                ${formatTokens(summary.tokenDistribution.inputMin)} - ${formatTokens(summary.tokenDistribution.inputMax)}`);
 
-  console.log(`\nAverage Output Tokens: ${formatTokens(summary.avgOutputTokens)}`);
-  console.log(`  Range:               ${formatTokens(summary.tokenDistribution.outputMin)} - ${formatTokens(summary.tokenDistribution.outputMax)}`);
+  console.log(`\nAverage Output Tokens:  ${formatTokens(summary.avgOutputTokens)}`);
+  console.log(`  Range:                ${formatTokens(summary.tokenDistribution.outputMin)} - ${formatTokens(summary.tokenDistribution.outputMax)}`);
 
-  console.log(`\nAverage Candidates:   ${Math.round(summary.avgCandidates)}`);
+  console.log(`\nAverage Candidates:     ${Math.round(summary.avgCandidates)}`);
 
-  // Performance comparison (if KD-tree timing available)
+  // New quality summary metrics
+  console.log(`\nAverage Score Spread:  ${(summary.avgScoreSpread * 10000).toFixed(2)}bp`);
+  console.log(`Average Top Confidence: ${(summary.avgTopConfidence * 100).toFixed(2)}%`);
+  console.log(`Relevant Match Rate:    ${(summary.relevantMatchRate * 100).toFixed(1)}%`);
+
+  console.log(`\nScore Distribution (top scores):`);
+  console.log(`  Min:                  ${(summary.scoreDistribution.min * 100).toFixed(2)}%`);
+  console.log(`  Max:                  ${(summary.scoreDistribution.max * 100).toFixed(2)}%`);
+  console.log(`  Avg:                  ${(summary.scoreDistribution.avg * 100).toFixed(2)}%`);
+  console.log(`  Median:               ${(summary.scoreDistribution.median * 100).toFixed(2)}%`);
+
+  // ── HNSW vs Linear performance comparison ─────────────────────────────────
   console.log('\n' + '─'.repeat(80));
-  console.log('PERFORMANCE COMPARISON');
+  console.log('HNSW vs LINEAR SEARCH COMPARISON');
   console.log('─'.repeat(80));
 
-  console.log('Note: KD-tree vs linear search timing requires instrumentation.');
-  console.log('      The VectorDatabase.search() method supports both methods:');
-  console.log('      - KD-tree: O(log n) - Uses KDTree for efficient nearest neighbor search');
-  console.log('      - Linear:  O(n) - Brute force similarity calculation');
-  console.log('      Current config: useKDTree is enabled by default');
+  const queriesWithTiming = results.filter(
+    (r) => r.hnswLatencyMs !== undefined && r.linearLatencyMs !== undefined
+  );
 
-  // Token usage breakdown
+  if (queriesWithTiming.length > 0) {
+    const avgHnsw = queriesWithTiming.reduce((s, r) => s + r.hnswLatencyMs!, 0) / queriesWithTiming.length;
+    const avgLinear = queriesWithTiming.reduce((s, r) => s + r.linearLatencyMs!, 0) / queriesWithTiming.length;
+    const maxSpeedup = Math.max(
+      ...queriesWithTiming.map((r) => r.linearLatencyMs! / r.hnswLatencyMs!)
+    );
+
+    console.log(`  Queries measured:     ${queriesWithTiming.length}`);
+    console.log(`  Average HNSW:         ${formatMs(avgHnsw)}`);
+    console.log(`  Average Linear:       ${formatMs(avgLinear)}`);
+    console.log(`  Average Speedup:      ${(avgLinear / avgHnsw).toFixed(2)}x`);
+    console.log(`  Max Speedup:          ${maxSpeedup.toFixed(2)}x`);
+    console.log(`  Method:               HNSW (approx. nearest neighbor) vs brute-force O(n)`);
+  } else {
+    console.log('  HNSW comparison not available (instrumentation requires');
+    console.log('  access to VectorDatabase and EmbeddingService internals).');
+    console.log('  The VectorDatabase.search() method supports both:');
+    console.log('  - HNSW: O(log n) approximate nearest neighbor');
+    console.log('  - Linear:  O(n) brute-force similarity calculation');
+    console.log('  Current config: useHNSW is enabled by default');
+  }
+
+  // ── Token usage breakdown ─────────────────────────────────────────────────
   console.log('\n' + '─'.repeat(80));
   console.log('TOKEN USAGE STATISTICS');
   console.log('─'.repeat(80));
 
   const totalTokens = summary.avgInputTokens + summary.avgOutputTokens;
-  console.log(`Average Total Tokens: ${formatTokens(totalTokens)}`);
-  console.log(`  Input:  ${((summary.avgInputTokens / totalTokens) * 100).toFixed(1)}%`);
-  console.log(`  Output: ${((summary.avgOutputTokens / totalTokens) * 100).toFixed(1)}%`);
+  console.log(`Average Total Tokens:   ${formatTokens(totalTokens)}`);
+  console.log(`  Input:                ${((summary.avgInputTokens / totalTokens) * 100).toFixed(1)}%`);
+  console.log(`  Output:               ${((summary.avgOutputTokens / totalTokens) * 100).toFixed(1)}%`);
 
-  // Cost estimation (assuming OpenAI pricing)
+  // ── Cost estimation ───────────────────────────────────────────────────────
   console.log('\n' + '─'.repeat(80));
   console.log('COST ESTIMATION (OpenAI pricing - text-embedding-3-small + gpt-4o-mini)');
   console.log('─'.repeat(80));
@@ -364,13 +593,13 @@ function printResults(results: QueryResult[], summary: BenchmarkSummary): void {
   const embeddingCost = (summary.avgInputTokens / 1_000_000) * 0.02; // Approximate
   const totalCost = (avgInputCost + avgOutputCost + embeddingCost) * summary.totalQueries;
 
-  console.log(`Average Input Cost:   $${avgInputCost.toFixed(6)}`);
-  console.log(`Average Output Cost:  $${avgOutputCost.toFixed(6)}`);
+  console.log(`Average Input Cost:     $${avgInputCost.toFixed(6)}`);
+  console.log(`Average Output Cost:    $${avgOutputCost.toFixed(6)}`);
   console.log(`Average Embedding Cost: $${embeddingCost.toFixed(6)}`);
-  console.log(`Total Estimated Cost: $${totalCost.toFixed(6)} (${summary.totalQueries} queries)`);
-  console.log(`Cost per Query:       $${(totalCost / summary.totalQueries).toFixed(6)}`);
+  console.log(`Total Estimated Cost:   $${totalCost.toFixed(6)} (${summary.totalQueries} queries)`);
+  console.log(`Cost per Query:         $${(totalCost / summary.totalQueries).toFixed(6)}`);
 
-  // Final recommendations
+  // ── Recommendations ───────────────────────────────────────────────────────
   console.log('\n' + '─'.repeat(80));
   console.log('RECOMMENDATIONS');
   console.log('─'.repeat(80));
@@ -380,7 +609,9 @@ function printResults(results: QueryResult[], summary: BenchmarkSummary): void {
 2. For production, use a smaller embedding model for initial filtering
 3. Consider caching LLM rankings for repeated queries
 4. Monitor token usage - current average: ${formatTokens(totalTokens)} tokens/query
-5. KD-tree provides O(log n) search vs O(n) linear - significant for large skill sets
+5. HNSW provides O(log n) search vs O(n) linear - significant for large skill sets
+6. Track relevantMatchRate to identify trigger coverage gaps
+7. Watch scoreSpread — narrow spreads indicate ambiguous routing
 `);
 
   console.log('\n✓ Benchmark complete!\n');
