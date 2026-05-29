@@ -81,6 +81,41 @@ export class SafetyLayer {
       };
     }
 
+    // Reject queries shorter than 3 characters (too ambiguous for routing)
+    const MIN_QUERY_LENGTH = 3;
+    if (request.task.trim().length < MIN_QUERY_LENGTH) {
+      return {
+        isSafe: false,
+        riskLevel: 'high',
+        flags: ['query-too-short'],
+        errorMessage: `Query too short (min ${MIN_QUERY_LENGTH} characters)`,
+      };
+    }
+
+    // Reject queries consisting entirely of stop words (no domain-specific signal)
+    const STOP_WORDS = new Set([
+      'the','a','an','is','it','of','to','in','and','or','for','on','with','as','at','by',
+      'this','that','these','those','what','which','who','how','why','where','when',
+      'do','does','did','has','have','had','not','no','yes','so','if','then','than','but',
+      'because','about','up','down','out','off','over','under','again','further','once',
+      'here','there','all','each','every','both','few','more','most','other','some','such',
+      'only','own','same','too','very','just','also','now','will','can','may','might',
+      'shall','should','would','could','please','help','need','want','like','use',
+      'me','my','your','you','he','him','his','she','her','we','us','our','they','them','their',
+    ]);
+    const queryWords = request.task.trim().toLowerCase().split(/\s+/);
+    const allStopWords = queryWords.length > 0 && queryWords.every((w) => STOP_WORDS.has(w));
+    // Only apply this filter to short queries (<=5 words) — longer all-stop-word queries
+    // are unlikely in practice and could be legitimate (e.g. "what is this and how does it work")
+    if (allStopWords && queryWords.length <= 5) {
+      return {
+        isSafe: false,
+        riskLevel: 'high',
+        flags: ['query-only-stop-words'],
+        errorMessage: 'Query contains only common words, no domain-specific terms to route on',
+      };
+    }
+
     if (request.task.length > this.config.maxTaskLength) {
       return {
         isSafe: false,

@@ -327,7 +327,7 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
     );
 
     // Apply deterministic filtering (quality gates, max skills, etc.)
-    const filteredSkills = this.applyDeterministicFilter(
+    let filteredSkills = this.applyDeterministicFilter(
       rankedSkills,
       request.constraints
     );
@@ -357,6 +357,20 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
 
     // Calculate confidence score
     const confidence = this.calculateConfidence(filteredSkills);
+
+    // Minimum confidence threshold: if the top skill's confidence is too low,
+    // the query is too ambiguous to route meaningfully. Return empty results
+    // instead of hallucinating a match.
+    const MIN_CONFIDENCE_THRESHOLD = 0.15;
+    if (filteredSkills.length > 0 && filteredSkills[0].score < MIN_CONFIDENCE_THRESHOLD) {
+      this.logger.warn('Query confidence below threshold, returning empty results', {
+        taskId,
+        topSkill: filteredSkills[0].name,
+        topScore: filteredSkills[0].score,
+        threshold: MIN_CONFIDENCE_THRESHOLD,
+      });
+      filteredSkills = [];
+    }
 
     // Build response
     const response: RouteResponse = {
