@@ -179,6 +179,10 @@ export interface RouteResponse {
   candidatePool: string[];
   routingScores: Record<string, ScoreBreakdown | number>;
   latencyMs: number;
+  /** Total input tokens consumed during this routing request (embedding + optional LLM ranking) */
+  inputTokens?: number;
+  /** Total output tokens generated during this routing request (optional LLM ranking) */
+  outputTokens?: number;
   attributionFooter?: string;
   /** Human-readable score explanations per skill (only when requested) */
   scoreExplanations?: Record<string, string[]>;

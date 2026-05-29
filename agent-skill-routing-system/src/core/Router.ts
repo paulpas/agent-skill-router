@@ -372,6 +372,21 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       filteredSkills = [];
     }
 
+    // Collect token usage from embedding service
+    const embeddingTokens = taskEmbeddingResponse.inputTokens ?? 0;
+
+    // Collect token usage from LLM ranker if it was used
+    let llmInputTokens = 0;
+    let llmOutputTokens = 0;
+    const llmRankingEnabled = process.env.LLM_RANKING_ENABLED === 'true';
+    // The LLMRanker overwrites its token counters on each call (not accumulated).
+    // Since we call rankCandidates at most once per routeTask, getInputTokens/getOutputTokens
+    // represent that single call's token usage.
+    if (llmRankingEnabled && this.llmRanker) {
+      llmInputTokens = this.llmRanker.getInputTokens();
+      llmOutputTokens = this.llmRanker.getOutputTokens();
+    }
+
     // Build response
     const response: RouteResponse = {
       taskId,
@@ -382,6 +397,8 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       candidatePool: candidates.map((c) => c.skill.metadata.name),
       routingScores: this.extractRoutingScores(filteredSkills),
       latencyMs: Date.now() - startTime,
+      inputTokens: embeddingTokens + llmInputTokens,
+      outputTokens: llmOutputTokens,
     };
 
     // Add score explanations if requested (Phase 5)
