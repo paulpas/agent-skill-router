@@ -107,11 +107,84 @@ export class AgentSkillRoutingApp {
 
 // Log every HTTP request/response
       
-     this.app.addHook('onRequest', async (request) => {
-       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-       (request as any)._startTime = Date.now();
-       this.logger.info(`→ ${request.method} ${request.url}`);
-     });
+      // ── API key authentication ──────────────────────────────────────────
+      const API_KEY = process.env.API_KEY || '';
+      const AUTH_ENABLED = API_KEY.length > 0;
+
+      // ── In-memory rate limiter (only active when AUTH_ENABLED) ──────────
+      const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
+      const RATE_LIMIT_MAX = 60;           // 60 requests per window
+      const rateLimitMap = new Map<string, { count: number; windowStart: number }>();
+
+      // ── CORS origins ────────────────────────────────────────────────────
+      const CORS_ALLOWED_ORIGINS = (process.env.CORS_ORIGINS || 'http://localhost:*,https://localhost:*,opencode://*')
+        .split(',').map((o) => o.trim());
+
+      function isOriginAllowed(origin: string | undefined): boolean {
+        if (!origin) return false;
+        return CORS_ALLOWED_ORIGINS.some((allowed) => {
+          if (allowed.endsWith(':*')) {
+            const prefix = allowed.slice(0, -2);
+            return origin.startsWith(prefix);
+          }
+          return origin === allowed;
+        });
+      }
+
+      this.app.addHook('onRequest', async (request, reply) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (request as any)._startTime = Date.now();
+
+        // CORS headers (preflight + regular)
+        const origin = request.headers.origin as string | undefined;
+        if (origin && isOriginAllowed(origin)) {
+          reply.header('Access-Control-Allow-Origin', origin);
+          reply.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+          reply.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+          reply.header('Access-Control-Max-Age', '86400');
+        }
+
+        // Handle CORS preflight
+        if (request.method === 'OPTIONS') {
+          reply.code(204);
+          return;
+        }
+
+        // Skip auth/rate-limit for health endpoint
+        if (request.url === '/health') return;
+
+        // Auth check (only if API_KEY env is set — disabled by default)
+        if (AUTH_ENABLED) {
+          const authHeader = request.headers.authorization as string | undefined;
+          if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.slice(7) !== API_KEY) {
+            reply.code(401).send({ error: 'Unauthorized', message: 'Valid API key required' });
+            return;
+          }
+
+          // Rate limiting (per IP, only when auth is active)
+          const ip = request.ip || 'unknown';
+          const now = Date.now();
+          let entry = rateLimitMap.get(ip);
+          if (!entry || now - entry.windowStart > RATE_LIMIT_WINDOW_MS) {
+            entry = { count: 0, windowStart: now };
+            rateLimitMap.set(ip, entry);
+          }
+          entry.count++;
+
+          // Set rate limit headers
+          const remaining = Math.max(0, RATE_LIMIT_MAX - entry.count);
+          reply.header('X-RateLimit-Limit', String(RATE_LIMIT_MAX));
+          reply.header('X-RateLimit-Remaining', String(remaining));
+          reply.header('X-RateLimit-Reset', String(Math.ceil((entry.windowStart + RATE_LIMIT_WINDOW_MS) / 1000)));
+
+          if (entry.count > RATE_LIMIT_MAX) {
+            reply.code(429).send({ error: 'Rate limit exceeded', message: 'Too many requests' });
+            return;
+          }
+        }
+
+        this.logger.info(`→ ${request.method} ${request.url}`);
+      });
      this.app.addHook('onSend', async (request, reply, payload) => {
        // eslint-disable-next-line @typescript-eslint/no-explicit-any
        const durationMs = Date.now() - ((request as any)._startTime || Date.now());

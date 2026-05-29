@@ -985,7 +985,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
 
     let fm: Record<string, unknown>;
     try {
-      fm = YAML.parse(fmMatch[1]) as Record<string, unknown>;
+      fm = YAML.parse(fmMatch[1], { logLevel: 'error' }) as Record<string, unknown>;
       if (!fm || typeof fm !== 'object') throw new Error('YAML parsed to non-object');
     } catch (yamlErr) {
       this.logger.debug(`YAML.parse failed for ${filePath}, trying lenient extractor`, {
