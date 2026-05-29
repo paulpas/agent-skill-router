@@ -62,6 +62,9 @@ const SKILLS_BASE_DIR = resolveSkillsDir();
 try { fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true }); } catch { /* best-effort */ }
 
 const logStream = fs.createWriteStream(LOG_FILE, { flags: 'a' });
+logStream.on('error', (err) => {
+  process.stderr.write(`[MCP-BRIDGE] Log stream error: ${err.message}\n`);
+});
 
 function log(level, msg, data) {
   const ts = new Date().toISOString();
@@ -83,6 +86,11 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
+process.on('unhandledRejection', (reason) => {
+  log('ERROR', 'unhandled rejection', { error: reason?.message || String(reason) });
+  // Don't exit — log and continue so the bridge stays alive
+});
+
 // ── HTTP helpers (router-targeted) ──────────────────────────────────────────
 
 const ROUTER_URL = new URL(ROUTER_BASE_URL);
@@ -102,6 +110,7 @@ function routerRequest(options, body) {
 
   const mod = ROUTER_URL.protocol === 'https:' ? https : http;
 
+  const REQUEST_TIMEOUT_MS = 15000;
   return new Promise((resolve, reject) => {
     const req = mod.request(fullOptions, (res) => {
       let data = '';
@@ -115,6 +124,9 @@ function routerRequest(options, body) {
         }
       });
     });
+    req.setTimeout(REQUEST_TIMEOUT_MS, () => {
+      req.destroy(new Error(`Router request timed out after ${REQUEST_TIMEOUT_MS}ms`));
+    });
     req.on('error', reject);
     if (body) req.write(body);
     req.end();
@@ -122,6 +134,7 @@ function routerRequest(options, body) {
 }
 
 function httpGetText(url) {
+  const GET_TIMEOUT_MS = 15000;
   return new Promise((resolve, reject) => {
     const u = new URL(url);
     const mod = u.protocol === 'https:' ? https : http;
@@ -144,6 +157,9 @@ function httpGetText(url) {
       res.on('error', reject);
     });
     req.on('error', reject);
+    req.setTimeout(GET_TIMEOUT_MS, () => {
+      req.destroy(new Error(`GET request timed out after ${GET_TIMEOUT_MS}ms: ${url}`));
+    });
     req.end();
   });
 }
