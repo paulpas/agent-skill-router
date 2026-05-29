@@ -26,6 +26,7 @@ import { ScoreExplanationBuilder, ScoreBreakdown as ObsScoreBreakdown } from '..
 import { QueryArchetypeInferencer } from './QueryArchetypeInferencer';
 import { ArchetypeRankingBoost } from './ArchetypeRankingBoost';
 import { AntiTriggerScorer } from './AntiTriggerScorer';
+import { ValidationError } from './AppError';
 
 /**
  * Hybrid retrieval weight configuration for the Router.
@@ -209,8 +210,9 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         flags: safetyResult.flags,
       });
 
-      throw new Error(
-        `Safety validation failed: ${safetyResult.errorMessage}`
+      throw new ValidationError(
+        `Safety validation failed: ${safetyResult.errorMessage}`,
+        'SAFETY_VALIDATION'
       );
     }
 

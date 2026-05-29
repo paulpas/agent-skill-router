@@ -7,6 +7,7 @@ import { Logger } from './observability/Logger';
 import { GitHubSkillLoader } from './skills/GitHubSkillLoader';
 import { CompressionMetrics } from './utils/CompressionMetrics';
 import { SkillRegistryWithCompression } from './core/SkillRegistry';
+import { AppError } from './core/AppError';
 
 /**
  * Route request body
@@ -151,11 +152,16 @@ export class AgentSkillRoutingApp {
         if (this.accessLog.length > 100) this.accessLog.shift();
         reply.code(200).send(response);
       } catch (error) {
-        this.logger.error('Route request failed', {
+        const isAppError = error instanceof AppError;
+        const statusCode = isAppError ? error.statusCode : 500;
+        const errorLabel = isAppError ? 'Validation failed' : 'Route failed';
+
+        this.logger.error(errorLabel, {
           error: error instanceof Error ? error.message : String(error),
+          statusCode,
         });
-        reply.code(500).send({
-          error: 'Route failed',
+        reply.code(statusCode).send({
+          error: errorLabel,
           message: error instanceof Error ? error.message : String(error),
         });
       }
@@ -208,11 +214,16 @@ export class AgentSkillRoutingApp {
           results,
         });
       } catch (error) {
-        this.logger.error('Execute request failed', {
+        const isAppError = error instanceof AppError;
+        const statusCode = isAppError ? error.statusCode : 500;
+        const errorLabel = isAppError ? 'Validation failed' : 'Execution failed';
+
+        this.logger.error(errorLabel, {
           error: error instanceof Error ? error.message : String(error),
+          statusCode,
         });
-        reply.code(500).send({
-          error: 'Execution failed',
+        reply.code(statusCode).send({
+          error: errorLabel,
           message: error instanceof Error ? error.message : String(error),
         });
       }
