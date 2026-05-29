@@ -216,9 +216,20 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
       );
     }
 
+    // Truncate task to 2000 chars before embedding to save cost/latency
+    const embeddingInput = request.task.length > 2000
+      ? request.task.slice(0, 2000)
+      : request.task;
+    if (embeddingInput.length !== request.task.length) {
+      this.logger.info('Task truncated for embedding', {
+        originalLength: request.task.length,
+        truncatedLength: embeddingInput.length,
+      });
+    }
+
     // Generate task embedding
     const taskEmbeddingResponse: EmbeddingResponse = await this.embeddingService.generateEmbedding(
-      request.task
+      embeddingInput
     );
 
     // Search for candidates via vector similarity

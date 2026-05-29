@@ -60,7 +60,7 @@ export class SafetyLayer {
       enablePromptInjectionFilter: true,
       requireSchemaValidation: true,
       skillAllowlist: [],
-      maxTaskLength: 10000,
+      maxTaskLength: 5000,
       blockCategories: [],
       ...config,
     };

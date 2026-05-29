@@ -123,7 +123,7 @@ export class AgentSkillRoutingApp {
     });
 
     // ── /route ─────────────────────────────────────────────────────────────
-    this.app.post('/route', async (request, reply) => {
+    this.app.post('/route', { bodyLimit: 10000 }, async (request, reply) => {
       if (!this.ready) {
         reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
         return;
