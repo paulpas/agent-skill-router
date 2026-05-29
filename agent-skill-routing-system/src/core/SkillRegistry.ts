@@ -1021,12 +1021,17 @@ export class SkillRegistry implements SkillRegistryWithCompression {
     // description
     const description = (fm.description as string) || `Skill: ${name}`;
 
-    // tags: parse metadata.triggers (comma-separated string) + add domain prefix
-    const triggersRaw = (nestedMeta.triggers as string) || '';
-    const triggerTags = triggersRaw
-      .split(',')
-      .map((t) => t.trim())
-      .filter((t) => t.length > 0);
+    // tags: parse metadata.triggers (supports YAML array or comma-separated string) + add domain prefix
+    let triggerTags: string[] = [];
+    const triggersRaw = (nestedMeta as Record<string, unknown>).triggers;
+    if (Array.isArray(triggersRaw)) {
+      triggerTags = triggersRaw.map((t) => String(t));
+    } else if (typeof triggersRaw === 'string') {
+      triggerTags = triggersRaw
+        .split(',')
+        .map((t) => t.trim())
+        .filter((t) => t.length > 0);
+    }
 
     // Also add role and scope as tags if present
     const roleTags = [
