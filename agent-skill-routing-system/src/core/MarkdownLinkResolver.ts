@@ -340,30 +340,38 @@ export class MarkdownLinkResolver {
         args: ['--no-sandbox', '--disable-setuid-sandbox']
       });
 
-      const page = await browser.newPage();
-      await page.setViewport({ width: 1280, height: 800 });
+      try {
+        const page = await browser.newPage();
+        await page.setViewport({ width: 1280, height: 800 });
 
-      // Navigate and wait for content
-      await page.goto(url, {
-        waitUntil: 'domcontentloaded',
-        timeout: timeoutMs
-      });
+        // Navigate and wait for content
+        await page.goto(url, {
+          waitUntil: 'domcontentloaded',
+          timeout: timeoutMs
+        });
 
-      // Wait a bit for dynamic content
-      await new Promise(resolve => setTimeout(resolve, 1000));
+        // Wait a bit for dynamic content
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
-      // Extract rendered HTML
-      const html = await page.content();
+        // Extract rendered HTML
+        const html = await page.content();
 
-      await browser.close();
+        // 8MB hard limit
+        if (html.length > 8_000_000) {
+          this.logger.warn('JS-rendered content exceeds 8MB hard limit', { url, size: html.length });
+          return null;
+        }
 
-      // 8MB hard limit
-      if (html.length > 8_000_000) {
-        this.logger.warn('JS-rendered content exceeds 8MB hard limit', { url, size: html.length });
-        return null;
+        return html;
+      } finally {
+        // CRITICAL FIX: Always close the browser, even if page operations throw.
+        // Previously, browser.close() was after all page ops with no finally guard,
+        // so any exception in newPage(), goto(), or content() would orphan the
+        // Chromium process (~200-500MB each). Over time these accumulated to 8GB+.
+        await browser.close().catch(() => {
+          // Swallow close errors to avoid masking the original exception
+        });
       }
-
-      return html;
     } catch (error) {
       this.logger.warn('JS rendering failed', { url, error: error instanceof Error ? error.message : String(error) });
       return null;
