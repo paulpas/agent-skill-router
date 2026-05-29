@@ -149,7 +149,7 @@ export class Router {
     // Priority: programmatic config > env var > hardcoded default
     const scoreConfig: HybridScoreConfig = {
       vectorWeight: config.retrieval?.vectorWeight ?? envWeight('RETRIEVAL_VECTOR_WEIGHT', 0.50),
-      bm25Weight: config.retrieval?.bm25Weight ?? envWeight('RETRIEVAL_BM25_WEIGHT', 0.20),
+      bm25Weight: config.retrieval?.bm25Weight ?? envWeight('RETRIEVAL_BM25_WEIGHT', 0.30),
       triggerMatchWeight: config.retrieval?.triggerMatchWeight ?? envWeight('RETRIEVAL_TRIGGER_MATCH_WEIGHT', 0.15),
       archetypeWeight: config.retrieval?.archetypeWeight ?? envWeight('RETRIEVAL_ARCHETYPE_WEIGHT', 0.10),
       historicalWeight: config.retrieval?.historicalWeight ?? envWeight('RETRIEVAL_HISTORICAL_WEIGHT', 0.05),

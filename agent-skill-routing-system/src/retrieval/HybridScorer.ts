@@ -7,7 +7,7 @@
  */
 export interface HybridScoreConfig {
   vectorWeight: number;    // default 0.50
-  bm25Weight: number;      // default 0.20
+  bm25Weight: number;      // default 0.30
   triggerMatchWeight: number; // default 0.15
   archetypeWeight: number;   // default 0.10
   historicalWeight: number;  // default 0.05
@@ -31,7 +31,7 @@ export interface ScoreComponents {
 /** Default weight configuration */
 const DEFAULT_CONFIG: HybridScoreConfig = {
   vectorWeight: 0.50,
-  bm25Weight: 0.20,
+  bm25Weight: 0.30,
   triggerMatchWeight: 0.15,
   archetypeWeight: 0.10,
   historicalWeight: 0.05,
@@ -79,8 +79,8 @@ export class HybridScorer {
     // e.g., -0.5 * 0.15 = -0.075 (sufficient to prevent generic skill dominance)
     weightedSum += components.antiTriggerPenalty * (c.antiTriggerWeight ?? 0.15);
 
-    // 2. Specificity multiplicative boost: [0.7, 1.0] range
-    const specificityFactor = 0.7 + 0.3 * components.specificityScore;
+    // 2. Specificity multiplicative boost: [0.7, 1.1] range
+    const specificityFactor = 0.7 + 0.4 * components.specificityScore;
     weightedSum *= specificityFactor;
 
     // 3. Conciseness additive nudge: [-0.025, +0.025] around neutral 0.5
