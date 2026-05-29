@@ -1,0 +1,1458 @@
+
+╔════════════════════════════════════════════════════════════════╗
+║     Agent Skill Router - Vector Search Benchmark               ║
+╚════════════════════════════════════════════════════════════════╝
+
+Initializing Router...
+[32m[18:11:52.621] [DomainRegistry] Loaded domain config  {"domainCount":8,"domains":["agent","cncf","coding","go","linux","programming","trading","writing"]}[0m
+[32m[18:11:52.621] [LLMRanker] LLMRanker initialized  {"provider":"openai","model":"gpt-4o-mini"} [model: gpt-4o-mini, input: 0 tokens, output: 0 tokens][0m
+[32m[18:11:52.622] [SkillRegistry] Loading skills from directories  {"directories":["../../skills"]}[0m
+[32m[18:11:52.651] [EmbeddingService] [CACHE] Loaded embeddings from disk  {"count":22,"dir":".embedding-cache/default"}[0m
+[31m[18:11:52.820] [SkillRegistry] Failed to parse skill file ../../skills/kotlin/modern-kotlin/SKILL.md  {"error":"(nestedMeta.triggers || \"\").split is not a function. (In '(nestedMeta.triggers || \"\").split(\",\")', '(nestedMeta.triggers || \"\").split' is undefined)"}[0m
+YAMLWarning: Alias ending in : is ambiguous at line 23, column 4:
+
+**Q: How can we ensure every piece of code receives adequate testing?**  
+   ^
+
+     pos: [ 2402, 2403 ],
+ linePos: [
+  [Object ...], [Object ...]
+],
+    code: "BAD_ALIAS"
+
+      at <anonymous> (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/composer.js:68:36)
+      at composeAlias (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:102:9)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:18:20)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:58:15)
+      at resolveCollection (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-collection.js:13:27)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:34:42)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:85:19)
+      at resolveCollection (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-collection.js:13:27)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:34:42)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:85:19)
+      at async <anonymous> (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/SkillRegistry.ts:863:40)
+      at async loadSkills (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/SkillRegistry.ts:870:46)
+      at async initialize (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/Router.ts:177:30)
+      at async runBenchmark (/home/paulpas/git/agent-skill-router/benchmark_vector_search.ts:297:16)
+
+YAMLWarning: Alias ending in : is ambiguous at line 19, column 17:
+
+- **Checklists**: Provide a checklist to reviewers that includes common areas t…
+                ^
+
+     pos: [ 2045, 2046 ],
+ linePos: [
+  [Object ...], [Object ...]
+],
+    code: "BAD_ALIAS"
+
+      at <anonymous> (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/composer.js:68:36)
+      at composeAlias (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:102:9)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:18:20)
+      at resolveBlockSeq (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-seq.js:40:15)
+      at resolveCollection (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-collection.js:15:31)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:34:42)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:85:19)
+      at resolveCollection (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-collection.js:13:27)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:34:42)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:85:19)
+      at async <anonymous> (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/SkillRegistry.ts:863:40)
+      at async loadSkills (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/SkillRegistry.ts:870:46)
+      at async initialize (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/Router.ts:177:30)
+      at async runBenchmark (/home/paulpas/git/agent-skill-router/benchmark_vector_search.ts:297:16)
+
+YAMLWarning: Alias ending in : is ambiguous at line 22, column 4:
+
+**Q: How should I give feedback?**  
+   ^
+
+     pos: [ 2237, 2238 ],
+ linePos: [
+  [Object ...], [Object ...]
+],
+    code: "BAD_ALIAS"
+
+      at <anonymous> (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/composer.js:68:36)
+      at composeAlias (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:102:9)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:18:20)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:58:15)
+      at resolveCollection (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-collection.js:13:27)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:34:42)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:85:19)
+      at resolveCollection (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-collection.js:13:27)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:34:42)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:85:19)
+      at async <anonymous> (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/SkillRegistry.ts:863:40)
+      at async loadSkills (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/SkillRegistry.ts:870:46)
+      at async initialize (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/Router.ts:177:30)
+      at async runBenchmark (/home/paulpas/git/agent-skill-router/benchmark_vector_search.ts:297:16)
+
+YAMLWarning: Alias ending in : is ambiguous at line 24, column 4:
+
+**Q: Why focus on edge cases during reviews?**  
+   ^
+
+     pos: [ 2268, 2269 ],
+ linePos: [
+  [Object ...], [Object ...]
+],
+    code: "BAD_ALIAS"
+
+      at <anonymous> (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/composer.js:68:36)
+      at composeAlias (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:102:9)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:18:20)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:58:15)
+      at resolveCollection (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-collection.js:13:27)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:34:42)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:85:19)
+      at resolveCollection (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-collection.js:13:27)
+      at composeNode (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/compose-node.js:34:42)
+      at resolveBlockMap (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/node_modules/yaml/dist/compose/resolve-block-map.js:85:19)
+      at async <anonymous> (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/SkillRegistry.ts:863:40)
+      at async loadSkills (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/SkillRegistry.ts:870:46)
+      at async initialize (/home/paulpas/git/agent-skill-router/agent-skill-routing-system/src/core/Router.ts:177:30)
+      at async runBenchmark (/home/paulpas/git/agent-skill-router/benchmark_vector_search.ts:297:16)
+
+[32m[18:11:53.229] [SkillRegistry] Loaded 1200 skills from ../../skills  {"dir":"../../skills","successCount":1200,"errorCount":1}[0m
+[32m[18:11:53.230] [SkillRegistry] 📊 Generating embeddings for 1200 skills...  {"total":1200}[0m
+[32m[18:11:55.981] [SkillRegistry]   [200/1200] (17%) [2749ms][0m
+[32m[18:11:57.200] [SkillRegistry]   [400/1200] (33%) [1219ms][0m
+[32m[18:11:58.751] [SkillRegistry]   [600/1200] (50%) [1551ms][0m
+[32m[18:12:00.159] [SkillRegistry]   [800/1200] (67%) [1408ms][0m
+[32m[18:12:01.139] [SkillRegistry]   [1000/1200] (83%) [980ms][0m
+[32m[18:12:02.541] [SkillRegistry]   [1200/1200] (100%) [1402ms][0m
+[32m[18:12:02.542] [SkillRegistry] ✅ Embedding generation complete  {"generated":1200}[0m
+[32m[18:12:02.542] [SkillRegistry] Loaded 1200 skills total  {"skillCount":1200,"categories":49,"tags":6994}[0m
+[32m[18:12:06.167] [VectorDatabase] HNSW index built successfully[0m
+✓ Router initialized with 1200 skills
+
+
+🔍 Query: "stop loss crypto"
+   Length: 16 chars, 3 tokens
+   Iterations: 5
+   Iter 1: 23.00 ms, Input: 0, Output: 0
+   Iter 2: 15.00 ms, Input: 0, Output: 0
+   Iter 3: 15.00 ms, Input: 0, Output: 0
+   Iter 4: 17.00 ms, Input: 0, Output: 0
+   Iter 5: 16.00 ms, Input: 0, Output: 0
+
+🔍 Query: "How do I implement a stop loss for cryptocurrency trading?"
+   Length: 58 chars, 10 tokens
+   Iterations: 5
+   Iter 1: 13.00 ms, Input: 0, Output: 0
+   Iter 2: 13.00 ms, Input: 0, Output: 0
+   Iter 3: 13.00 ms, Input: 0, Output: 0
+   Iter 4: 13.00 ms, Input: 0, Output: 0
+   Iter 5: 16.00 ms, Input: 0, Output: 0
+
+🔍 Query: "What is the best way to run a Kubernetes pod with persistent storage and network policies?"
+   Length: 90 chars, 16 tokens
+   Iterations: 5
+   Iter 1: 26.00 ms, Input: 0, Output: 0
+   Iter 2: 23.00 ms, Input: 0, Output: 0
+   Iter 3: 24.00 ms, Input: 0, Output: 0
+   Iter 4: 25.00 ms, Input: 0, Output: 0
+   Iter 5: 23.00 ms, Input: 0, Output: 0
+
+🔍 Query: "Explain how to write a Python unit test with mock objects and assertions"
+   Length: 72 chars, 13 tokens
+   Iterations: 5
+   Iter 1: 18.00 ms, Input: 0, Output: 0
+   Iter 2: 17.00 ms, Input: 0, Output: 0
+   Iter 3: 18.00 ms, Input: 0, Output: 0
+   Iter 4: 18.00 ms, Input: 0, Output: 0
+   Iter 5: 17.00 ms, Input: 0, Output: 0
+
+🔍 Query: "How do I configure Prometheus for Kubernetes monitoring with service discovery?"
+   Length: 79 chars, 11 tokens
+   Iterations: 5
+   Iter 1: 17.00 ms, Input: 0, Output: 0
+   Iter 2: 14.00 ms, Input: 0, Output: 0
+   Iter 3: 13.00 ms, Input: 0, Output: 0
+   Iter 4: 13.00 ms, Input: 0, Output: 0
+   Iter 5: 13.00 ms, Input: 0, Output: 0
+
+🔍 Query: "Implement a TWAP execution algorithm for crypto trading with volume weighting and slippage control"
+   Length: 98 chars, 14 tokens
+   Iterations: 5
+   Iter 1: 17.00 ms, Input: 0, Output: 0
+   Iter 2: 15.00 ms, Input: 0, Output: 0
+   Iter 3: 14.00 ms, Input: 0, Output: 0
+   Iter 4: 15.00 ms, Input: 0, Output: 0
+   Iter 5: 15.00 ms, Input: 0, Output: 0
+
+🔍 Query: "What are the best practices for code review in a team environment?"
+   Length: 66 chars, 12 tokens
+   Iterations: 5
+   Iter 1: 12.00 ms, Input: 0, Output: 0
+   Iter 2: 11.00 ms, Input: 0, Output: 0
+   Iter 3: 13.00 ms, Input: 0, Output: 0
+   Iter 4: 12.00 ms, Input: 0, Output: 0
+   Iter 5: 11.00 ms, Input: 0, Output: 0
+
+🔍 Query: "k8s"
+   Length: 3 chars, 1 tokens
+   Iterations: 5
+   Iter 1: 18.00 ms, Input: 0, Output: 0
+   Iter 2: 18.00 ms, Input: 0, Output: 0
+   Iter 3: 18.00 ms, Input: 0, Output: 0
+   Iter 4: 18.00 ms, Input: 0, Output: 0
+   Iter 5: 20.00 ms, Input: 0, Output: 0
+
+🔍 Query: "go concurrency"
+   Length: 14 chars, 2 tokens
+   Iterations: 5
+   Iter 1: 13.00 ms, Input: 0, Output: 0
+   Iter 2: 12.00 ms, Input: 0, Output: 0
+   Iter 3: 13.00 ms, Input: 0, Output: 0
+   Iter 4: 12.00 ms, Input: 0, Output: 0
+   Iter 5: 12.00 ms, Input: 0, Output: 0
+
+🔍 Query: "fix bug now"
+   Length: 11 chars, 3 tokens
+   Iterations: 5
+   Iter 1: 23.00 ms, Input: 0, Output: 0
+   Iter 2: 23.00 ms, Input: 0, Output: 0
+   Iter 3: 23.00 ms, Input: 0, Output: 0
+   Iter 4: 23.00 ms, Input: 0, Output: 0
+   Iter 5: 23.00 ms, Input: 0, Output: 0
+
+🔍 Query: "!@#$%^&*()"
+   Length: 10 chars, 1 tokens
+   Iterations: 5
+[33m[18:12:08.630] [Router] All skills filtered, returning first candidate as fallback[0m
+   Iter 1: 25.00 ms, Input: 0, Output: 0
+[33m[18:12:08.654] [Router] All skills filtered, returning first candidate as fallback[0m
+   Iter 2: 25.00 ms, Input: 0, Output: 0
+[33m[18:12:08.680] [Router] All skills filtered, returning first candidate as fallback[0m
+   Iter 3: 25.00 ms, Input: 0, Output: 0
+[33m[18:12:08.707] [Router] All skills filtered, returning first candidate as fallback[0m
+   Iter 4: 27.00 ms, Input: 0, Output: 0
+[33m[18:12:08.734] [Router] All skills filtered, returning first candidate as fallback[0m
+   Iter 5: 27.00 ms, Input: 0, Output: 0
+
+🔍 Query: "how do i deploy my app to the cloud"
+   Length: 35 chars, 9 tokens
+   Iterations: 5
+   Iter 1: 19.00 ms, Input: 0, Output: 0
+   Iter 2: 18.00 ms, Input: 0, Output: 0
+   Iter 3: 19.00 ms, Input: 0, Output: 0
+   Iter 4: 19.00 ms, Input: 0, Output: 0
+   Iter 5: 18.00 ms, Input: 0, Output: 0
+
+🔍 Query: "teach me about docker containers"
+   Length: 32 chars, 5 tokens
+   Iterations: 5
+   Iter 1: 18.00 ms, Input: 0, Output: 0
+   Iter 2: 19.00 ms, Input: 0, Output: 0
+   Iter 3: 18.00 ms, Input: 0, Output: 0
+   Iter 4: 20.00 ms, Input: 0, Output: 0
+   Iter 5: 18.00 ms, Input: 0, Output: 0
+
+🔍 Query: "help me understand kubernetes networking"
+   Length: 40 chars, 5 tokens
+   Iterations: 5
+   Iter 1: 19.00 ms, Input: 0, Output: 0
+   Iter 2: 19.00 ms, Input: 0, Output: 0
+   Iter 3: 19.00 ms, Input: 0, Output: 0
+   Iter 4: 20.00 ms, Input: 0, Output: 0
+   Iter 5: 20.00 ms, Input: 0, Output: 0
+
+🔍 Query: "what is the best way to store data"
+   Length: 34 chars, 8 tokens
+   Iterations: 5
+   Iter 1: 20.00 ms, Input: 0, Output: 0
+   Iter 2: 20.00 ms, Input: 0, Output: 0
+   Iter 3: 19.00 ms, Input: 0, Output: 0
+   Iter 4: 19.00 ms, Input: 0, Output: 0
+   Iter 5: 19.00 ms, Input: 0, Output: 0
+
+🔍 Query: "i need to protect my trading bot from losing too much money"
+   Length: 59 chars, 12 tokens
+   Iterations: 5
+   Iter 1: 21.00 ms, Input: 0, Output: 0
+   Iter 2: 19.00 ms, Input: 0, Output: 0
+   Iter 3: 19.00 ms, Input: 0, Output: 0
+   Iter 4: 19.00 ms, Input: 0, Output: 0
+   Iter 5: 19.00 ms, Input: 0, Output: 0
+
+🔍 Query: "deploy python trading bot to kubernetes and monitor with prometheus"
+   Length: 67 chars, 10 tokens
+   Iterations: 5
+   Iter 1: 25.00 ms, Input: 0, Output: 0
+   Iter 2: 22.00 ms, Input: 0, Output: 0
+   Iter 3: 23.00 ms, Input: 0, Output: 0
+   Iter 4: 26.00 ms, Input: 0, Output: 0
+   Iter 5: 24.00 ms, Input: 0, Output: 0
+
+🔍 Query: "write a go microservice with postgres, redis, and kubernetes"
+   Length: 60 chars, 9 tokens
+   Iterations: 5
+   Iter 1: 21.00 ms, Input: 0, Output: 0
+   Iter 2: 22.00 ms, Input: 0, Output: 0
+   Iter 3: 23.00 ms, Input: 0, Output: 0
+   Iter 4: 23.00 ms, Input: 0, Output: 0
+   Iter 5: 23.00 ms, Input: 0, Output: 0
+
+🔍 Query: "implement rate limiting and circuit breaker patterns in a trading engine"
+   Length: 72 chars, 11 tokens
+   Iterations: 5
+   Iter 1: 17.00 ms, Input: 0, Output: 0
+   Iter 2: 18.00 ms, Input: 0, Output: 0
+   Iter 3: 19.00 ms, Input: 0, Output: 0
+   Iter 4: 20.00 ms, Input: 0, Output: 0
+   Iter 5: 17.00 ms, Input: 0, Output: 0
+
+🔍 Query: "I have a production Kubernetes cluster running nginx ingress where pods are randomly getting OOMKilled every 4 hours, I need to debug this, adjust resource limits, set up proper horizontal pod autoscaling"
+   Length: 204 chars, 32 tokens
+   Iterations: 5
+   Iter 1: 25.00 ms, Input: 0, Output: 0
+   Iter 2: 26.00 ms, Input: 0, Output: 0
+   Iter 3: 28.00 ms, Input: 0, Output: 0
+   Iter 4: 24.00 ms, Input: 0, Output: 0
+   Iter 5: 22.00 ms, Input: 0, Output: 0
+
+🔍 Query: "Implement a complete algorithmic trading system with data ingestion, technical indicators, signal generation, position sizing, stop loss, backtesting, and deployment"
+   Length: 165 chars, 20 tokens
+   Iterations: 5
+   Iter 1: 24.00 ms, Input: 0, Output: 0
+   Iter 2: 22.00 ms, Input: 0, Output: 0
+   Iter 3: 21.00 ms, Input: 0, Output: 0
+   Iter 4: 22.00 ms, Input: 0, Output: 0
+   Iter 5: 20.00 ms, Input: 0, Output: 0
+
+🔍 Query: "Design a multi-agent AI system where one agent handles code review, another handles testing, and a third handles documentation generation, coordinating through a shared task queue"
+   Length: 179 chars, 26 tokens
+   Iterations: 5
+   Iter 1: 26.00 ms, Input: 0, Output: 0
+   Iter 2: 28.00 ms, Input: 0, Output: 0
+   Iter 3: 26.00 ms, Input: 0, Output: 0
+   Iter 4: 25.00 ms, Input: 0, Output: 0
+   Iter 5: 26.00 ms, Input: 0, Output: 0
+{
+  "metadata": {
+    "generatedAt": "2026-05-29T18:12:09.959Z",
+    "totalQueries": 22,
+    "numIterations": 5,
+    "maxResults": 5
+  },
+  "results": [
+    {
+      "query": "stop loss crypto",
+      "latencyMs": 17.2,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 3,
+      "speedupFactor": 1.5,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.3953,
+      "scoreSpread": 0.0995,
+      "relevantDomains": [
+        "stop",
+        "risk",
+        "position"
+      ],
+      "topSkills": [
+        "stop-loss",
+        "risk-management-basics",
+        "position-exits"
+      ],
+      "scores": [
+        0.3953,
+        0.2958,
+        0.2595,
+        0.3953,
+        0.2958,
+        0.2595,
+        0.3953,
+        0.2958,
+        0.2595,
+        0.3953,
+        0.2958,
+        0.2595,
+        0.3953,
+        0.2958,
+        0.2595
+      ]
+    },
+    {
+      "query": "How do I implement a stop loss for cryptocurrency trading?",
+      "latencyMs": 13.6,
+      "hnswLatencyMs": 1,
+      "linearLatencyMs": 3,
+      "speedupFactor": 3,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.6196,
+      "scoreSpread": 0.0717,
+      "relevantDomains": [
+        "stop",
+        "risk",
+        "position",
+        "kill",
+        "drawdown"
+      ],
+      "topSkills": [
+        "stop-loss",
+        "risk-management-basics",
+        "position-exits",
+        "kill-switches",
+        "drawdown-control"
+      ],
+      "scores": [
+        0.6196,
+        0.5479,
+        0.5063,
+        0.4766,
+        0.4002,
+        0.6196,
+        0.5479,
+        0.5063,
+        0.4766,
+        0.4002,
+        0.6196,
+        0.5479,
+        0.5063,
+        0.4766,
+        0.4002,
+        0.6196,
+        0.5479,
+        0.5063,
+        0.4766,
+        0.4002,
+        0.6196,
+        0.5479,
+        0.5063,
+        0.4766,
+        0.4002
+      ]
+    },
+    {
+      "query": "What is the best way to run a Kubernetes pod with persistent storage and network policies?",
+      "latencyMs": 24.2,
+      "hnswLatencyMs": 1,
+      "linearLatencyMs": 3,
+      "speedupFactor": 3,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.4883,
+      "scoreSpread": 0.0297,
+      "relevantDomains": [
+        "kubernetes",
+        "fluid",
+        "openkruise",
+        "eks",
+        "gke"
+      ],
+      "topSkills": [
+        "kubernetes",
+        "fluid",
+        "openkruise",
+        "eks",
+        "gke"
+      ],
+      "scores": [
+        0.4883,
+        0.4586,
+        0.4477,
+        0.4315,
+        0.4239,
+        0.4883,
+        0.4586,
+        0.4477,
+        0.4315,
+        0.4239,
+        0.4883,
+        0.4586,
+        0.4477,
+        0.4315,
+        0.4239,
+        0.4883,
+        0.4586,
+        0.4477,
+        0.4315,
+        0.4239,
+        0.4883,
+        0.4586,
+        0.4477,
+        0.4315,
+        0.4239
+      ]
+    },
+    {
+      "query": "Explain how to write a Python unit test with mock objects and assertions",
+      "latencyMs": 17.6,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 3,
+      "speedupFactor": 1.5,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.448,
+      "scoreSpread": 0.0458,
+      "relevantDomains": [
+        "testing",
+        "software",
+        "microservice",
+        "component"
+      ],
+      "topSkills": [
+        "testing-mocking",
+        "software-testing-strategy",
+        "microservice-contract-testing",
+        "testing-stubbing",
+        "component-testing-library"
+      ],
+      "scores": [
+        0.448,
+        0.4021,
+        0.3553,
+        0.3386,
+        0.3224,
+        0.448,
+        0.4021,
+        0.3553,
+        0.3386,
+        0.3224,
+        0.448,
+        0.4021,
+        0.3553,
+        0.3386,
+        0.3224,
+        0.448,
+        0.4021,
+        0.3553,
+        0.3386,
+        0.3224,
+        0.448,
+        0.4021,
+        0.3553,
+        0.3386,
+        0.3224
+      ]
+    },
+    {
+      "query": "How do I configure Prometheus for Kubernetes monitoring with service discovery?",
+      "latencyMs": 14,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 3,
+      "speedupFactor": 1.5,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.4497,
+      "scoreSpread": 0.001,
+      "relevantDomains": [
+        "kubernetes",
+        "grafana",
+        "prometheus",
+        "kuma"
+      ],
+      "topSkills": [
+        "kubernetes-monitoring-logging",
+        "grafana-prometheus",
+        "prometheus",
+        "kubernetes-deployment-patterns",
+        "kuma"
+      ],
+      "scores": [
+        0.4497,
+        0.4487,
+        0.4373,
+        0.4049,
+        0.3724,
+        0.4497,
+        0.4487,
+        0.4373,
+        0.4049,
+        0.3724,
+        0.4497,
+        0.4487,
+        0.4373,
+        0.4049,
+        0.3724,
+        0.4497,
+        0.4487,
+        0.4373,
+        0.4049,
+        0.3724,
+        0.4497,
+        0.4487,
+        0.4373,
+        0.4049,
+        0.3724
+      ]
+    },
+    {
+      "query": "Implement a TWAP execution algorithm for crypto trading with volume weighting and slippage control",
+      "latencyMs": 15.2,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.632,
+      "scoreSpread": 0.0097,
+      "relevantDomains": [
+        "twap",
+        "vwap",
+        "slippage",
+        "trading"
+      ],
+      "topSkills": [
+        "twap-vwap",
+        "twap",
+        "vwap",
+        "slippage-model",
+        "trading-plan"
+      ],
+      "scores": [
+        0.632,
+        0.6223,
+        0.5819,
+        0.5017,
+        0.4286,
+        0.632,
+        0.6223,
+        0.5819,
+        0.5017,
+        0.4286,
+        0.632,
+        0.6223,
+        0.5819,
+        0.5017,
+        0.4286,
+        0.632,
+        0.6223,
+        0.5819,
+        0.5017,
+        0.4286,
+        0.632,
+        0.6223,
+        0.5819,
+        0.5017,
+        0.4286
+      ]
+    },
+    {
+      "query": "What are the best practices for code review in a team environment?",
+      "latencyMs": 11.8,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.4767,
+      "scoreSpread": 0.0636,
+      "relevantDomains": [
+        "code",
+        "requesting",
+        "ai",
+        "git"
+      ],
+      "topSkills": [
+        "code-review-best-practices",
+        "code-review-atomic",
+        "requesting-code-review",
+        "ai-assisted-code-review",
+        "git-pr-workflows"
+      ],
+      "scores": [
+        0.4767,
+        0.4131,
+        0.3888,
+        0.3761,
+        0.3712,
+        0.4767,
+        0.4131,
+        0.3888,
+        0.3761,
+        0.3712,
+        0.4767,
+        0.4131,
+        0.3888,
+        0.3761,
+        0.3712,
+        0.4767,
+        0.4131,
+        0.3888,
+        0.3761,
+        0.3712,
+        0.4767,
+        0.4131,
+        0.3888,
+        0.3761,
+        0.3712
+      ]
+    },
+    {
+      "query": "k8s",
+      "latencyMs": 18.4,
+      "hnswLatencyMs": 1,
+      "linearLatencyMs": 3,
+      "speedupFactor": 3,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.4433,
+      "scoreSpread": 0.0606,
+      "relevantDomains": [
+        "k8s",
+        "aks",
+        "gke",
+        "eks",
+        "kubernetes"
+      ],
+      "topSkills": [
+        "k8s-debugger",
+        "aks",
+        "gke",
+        "eks",
+        "kubernetes-deployment-patterns"
+      ],
+      "scores": [
+        0.4433,
+        0.3826,
+        0.3737,
+        0.3701,
+        0.3664,
+        0.4433,
+        0.3826,
+        0.3737,
+        0.3701,
+        0.3664,
+        0.4433,
+        0.3826,
+        0.3737,
+        0.3701,
+        0.3664,
+        0.4433,
+        0.3826,
+        0.3737,
+        0.3701,
+        0.3664,
+        0.4433,
+        0.3826,
+        0.3737,
+        0.3701,
+        0.3664
+      ]
+    },
+    {
+      "query": "go concurrency",
+      "latencyMs": 12.4,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 3,
+      "speedupFactor": 1.5,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.4787,
+      "scoreSpread": 0.0415,
+      "relevantDomains": [
+        "go",
+        "memory",
+        "java",
+        "kotlin"
+      ],
+      "topSkills": [
+        "go-concurrency",
+        "go-concurrency-patterns",
+        "memory-management-and-concurrency",
+        "java-virtual-threads",
+        "kotlin-coroutines"
+      ],
+      "scores": [
+        0.4787,
+        0.4373,
+        0.2995,
+        0.2695,
+        0.2522,
+        0.4787,
+        0.4373,
+        0.2995,
+        0.2695,
+        0.2522,
+        0.4787,
+        0.4373,
+        0.2995,
+        0.2695,
+        0.2522,
+        0.4787,
+        0.4373,
+        0.2995,
+        0.2695,
+        0.2522,
+        0.4787,
+        0.4373,
+        0.2995,
+        0.2695,
+        0.2522
+      ]
+    },
+    {
+      "query": "fix bug now",
+      "latencyMs": 23,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.3887,
+      "scoreSpread": 0.0122,
+      "relevantDomains": [
+        "debugging",
+        "systematic"
+      ],
+      "topSkills": [
+        "debugging-methodology",
+        "systematic-debugging"
+      ],
+      "scores": [
+        0.3887,
+        0.3764,
+        0.3887,
+        0.3764,
+        0.3887,
+        0.3764,
+        0.3887,
+        0.3764,
+        0.3887,
+        0.3764
+      ]
+    },
+    {
+      "query": "!@#$%^&*()",
+      "latencyMs": 25.8,
+      "hnswLatencyMs": 3,
+      "linearLatencyMs": 2,
+      "speedupFactor": 0.67,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.0969,
+      "scoreSpread": 0,
+      "relevantDomains": [
+        "ampersand"
+      ],
+      "topSkills": [
+        "ampersand-operator"
+      ],
+      "scores": [
+        0.0969,
+        0.0969,
+        0.0969,
+        0.0969,
+        0.0969
+      ]
+    },
+    {
+      "query": "how do i deploy my app to the cloud",
+      "latencyMs": 18.6,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.402,
+      "scoreSpread": 0.0204,
+      "relevantDomains": [
+        "cloud",
+        "functions",
+        "deployment",
+        "pulumi"
+      ],
+      "topSkills": [
+        "cloud-native-architecture",
+        "functions",
+        "deployment-philosophy",
+        "cloud-functions",
+        "pulumi"
+      ],
+      "scores": [
+        0.402,
+        0.3816,
+        0.3746,
+        0.3648,
+        0.3576,
+        0.402,
+        0.3816,
+        0.3746,
+        0.3648,
+        0.3576,
+        0.402,
+        0.3816,
+        0.3746,
+        0.3648,
+        0.3576,
+        0.402,
+        0.3816,
+        0.3746,
+        0.3648,
+        0.3576,
+        0.402,
+        0.3816,
+        0.3746,
+        0.3648,
+        0.3576
+      ]
+    },
+    {
+      "query": "teach me about docker containers",
+      "latencyMs": 18.6,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.3842,
+      "scoreSpread": 0.0005,
+      "relevantDomains": [
+        "container",
+        "docker",
+        "containerization"
+      ],
+      "topSkills": [
+        "container-registry",
+        "docker-api",
+        "docker-engine-api",
+        "containerization-devops",
+        "docker-debugging"
+      ],
+      "scores": [
+        0.3842,
+        0.3836,
+        0.3832,
+        0.3789,
+        0.3754,
+        0.3842,
+        0.3836,
+        0.3832,
+        0.3789,
+        0.3754,
+        0.3842,
+        0.3836,
+        0.3832,
+        0.3789,
+        0.3754,
+        0.3842,
+        0.3836,
+        0.3832,
+        0.3789,
+        0.3754,
+        0.3842,
+        0.3836,
+        0.3832,
+        0.3789,
+        0.3754
+      ]
+    },
+    {
+      "query": "help me understand kubernetes networking",
+      "latencyMs": 19.4,
+      "hnswLatencyMs": 1,
+      "linearLatencyMs": 2,
+      "speedupFactor": 2,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.4472,
+      "scoreSpread": 0.0077,
+      "relevantDomains": [
+        "kubernetes",
+        "gke",
+        "eks",
+        "ingress",
+        "istio"
+      ],
+      "topSkills": [
+        "kubernetes",
+        "gke",
+        "eks",
+        "ingress",
+        "istio"
+      ],
+      "scores": [
+        0.4472,
+        0.4395,
+        0.4354,
+        0.4162,
+        0.4046,
+        0.4472,
+        0.4395,
+        0.4354,
+        0.4162,
+        0.4046,
+        0.4472,
+        0.4395,
+        0.4354,
+        0.4162,
+        0.4046,
+        0.4472,
+        0.4395,
+        0.4354,
+        0.4162,
+        0.4046,
+        0.4472,
+        0.4395,
+        0.4354,
+        0.4162,
+        0.4046
+      ]
+    },
+    {
+      "query": "what is the best way to store data",
+      "latencyMs": 19.4,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.3462,
+      "scoreSpread": 0.0145,
+      "relevantDomains": [
+        "blob",
+        "cloud",
+        "firestore",
+        "secret",
+        "feature"
+      ],
+      "topSkills": [
+        "blob-storage",
+        "cloud-storage",
+        "firestore",
+        "secret-manager",
+        "feature-store"
+      ],
+      "scores": [
+        0.3462,
+        0.3317,
+        0.3023,
+        0.2832,
+        0.2591,
+        0.3462,
+        0.3317,
+        0.3023,
+        0.2832,
+        0.2591,
+        0.3462,
+        0.3317,
+        0.3023,
+        0.2832,
+        0.2591,
+        0.3462,
+        0.3317,
+        0.3023,
+        0.2832,
+        0.2591,
+        0.3462,
+        0.3317,
+        0.3023,
+        0.2832,
+        0.2591
+      ]
+    },
+    {
+      "query": "i need to protect my trading bot from losing too much money",
+      "latencyMs": 19.4,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.4067,
+      "scoreSpread": 0.0046,
+      "relevantDomains": [
+        "risk",
+        "trading",
+        "kill",
+        "stop",
+        "drawdown"
+      ],
+      "topSkills": [
+        "risk-management-basics",
+        "trading-psychology",
+        "kill-switches",
+        "stop-loss",
+        "drawdown-control"
+      ],
+      "scores": [
+        0.4067,
+        0.4021,
+        0.3651,
+        0.3609,
+        0.3498,
+        0.4067,
+        0.4021,
+        0.3651,
+        0.3609,
+        0.3498,
+        0.4067,
+        0.4021,
+        0.3651,
+        0.3609,
+        0.3498,
+        0.4067,
+        0.4021,
+        0.3651,
+        0.3609,
+        0.3498,
+        0.4067,
+        0.4021,
+        0.3651,
+        0.3609,
+        0.3498
+      ]
+    },
+    {
+      "query": "deploy python trading bot to kubernetes and monitor with prometheus",
+      "latencyMs": 24,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.3961,
+      "scoreSpread": 0.0514,
+      "relevantDomains": [
+        "kubernetes",
+        "prometheus",
+        "openkruise"
+      ],
+      "topSkills": [
+        "kubernetes-monitoring-logging",
+        "prometheus",
+        "kubernetes-api",
+        "kubernetes-deployment",
+        "openkruise"
+      ],
+      "scores": [
+        0.3961,
+        0.3447,
+        0.3401,
+        0.3381,
+        0.3228,
+        0.3961,
+        0.3447,
+        0.3401,
+        0.3381,
+        0.3228,
+        0.3961,
+        0.3447,
+        0.3401,
+        0.3381,
+        0.3228,
+        0.3961,
+        0.3447,
+        0.3401,
+        0.3381,
+        0.3228,
+        0.3961,
+        0.3447,
+        0.3401,
+        0.3381,
+        0.3228
+      ]
+    },
+    {
+      "query": "write a go microservice with postgres, redis, and kubernetes",
+      "latencyMs": 22.4,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.409,
+      "scoreSpread": 0.0506,
+      "relevantDomains": [
+        "modular",
+        "cloud",
+        "kubernetes",
+        "database"
+      ],
+      "topSkills": [
+        "modular-design",
+        "cloud-development",
+        "kubernetes",
+        "database-patterns",
+        "cloud-native-architecture"
+      ],
+      "scores": [
+        0.409,
+        0.3584,
+        0.3548,
+        0.3507,
+        0.3423,
+        0.409,
+        0.3584,
+        0.3548,
+        0.3507,
+        0.3423,
+        0.409,
+        0.3584,
+        0.3548,
+        0.3507,
+        0.3423,
+        0.409,
+        0.3584,
+        0.3548,
+        0.3507,
+        0.3423,
+        0.409,
+        0.3584,
+        0.3548,
+        0.3507,
+        0.3423
+      ]
+    },
+    {
+      "query": "implement rate limiting and circuit breaker patterns in a trading engine",
+      "latencyMs": 18.2,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 3,
+      "speedupFactor": 1.5,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.5158,
+      "scoreSpread": 0.0818,
+      "relevantDomains": [
+        "rate",
+        "backpressure",
+        "application",
+        "kill",
+        "distributed"
+      ],
+      "topSkills": [
+        "rate-limiting",
+        "backpressure-handling",
+        "application-resilience-patterns",
+        "kill-switches",
+        "distributed-system-circuit-breakers"
+      ],
+      "scores": [
+        0.5158,
+        0.4339,
+        0.4226,
+        0.4031,
+        0.393,
+        0.5158,
+        0.4339,
+        0.4226,
+        0.4031,
+        0.393,
+        0.5158,
+        0.4339,
+        0.4226,
+        0.4031,
+        0.393,
+        0.5158,
+        0.4339,
+        0.4226,
+        0.4031,
+        0.393,
+        0.5158,
+        0.4339,
+        0.4226,
+        0.4031,
+        0.393
+      ]
+    },
+    {
+      "query": "I have a production Kubernetes cluster running nginx ingress where pods are randomly getting OOMKilled every 4 hours, I need to debug this, adjust resource limits, set up proper horizontal pod autoscaling",
+      "latencyMs": 25,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 3,
+      "speedupFactor": 1.5,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.5368,
+      "scoreSpread": 0.0009,
+      "relevantDomains": [
+        "kubernetes",
+        "docker"
+      ],
+      "topSkills": [
+        "kubernetes-debugging",
+        "kubernetes-resource-tuning",
+        "kubernetes-deployment-patterns",
+        "kubernetes",
+        "docker-debugging"
+      ],
+      "scores": [
+        0.5368,
+        0.5359,
+        0.4927,
+        0.4187,
+        0.3881,
+        0.5368,
+        0.5359,
+        0.4927,
+        0.4187,
+        0.3881,
+        0.5368,
+        0.5359,
+        0.4927,
+        0.4187,
+        0.3881,
+        0.5368,
+        0.5359,
+        0.4927,
+        0.4187,
+        0.3881,
+        0.5368,
+        0.5359,
+        0.4927,
+        0.4187,
+        0.3881
+      ]
+    },
+    {
+      "query": "Implement a complete algorithmic trading system with data ingestion, technical indicators, signal generation, position sizing, stop loss, backtesting, and deployment",
+      "latencyMs": 21.8,
+      "hnswLatencyMs": 2,
+      "linearLatencyMs": 2,
+      "speedupFactor": 1,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.5444,
+      "scoreSpread": 0.0211,
+      "relevantDomains": [
+        "trading",
+        "risk",
+        "feature",
+        "position",
+        "momentum"
+      ],
+      "topSkills": [
+        "trading-plan",
+        "risk-management-basics",
+        "feature-engineering",
+        "position-exits",
+        "momentum-indicators"
+      ],
+      "scores": [
+        0.5444,
+        0.5232,
+        0.5091,
+        0.5053,
+        0.4861,
+        0.5444,
+        0.5232,
+        0.5091,
+        0.5053,
+        0.4861,
+        0.5444,
+        0.5232,
+        0.5091,
+        0.5053,
+        0.4861,
+        0.5444,
+        0.5232,
+        0.5091,
+        0.5053,
+        0.4861,
+        0.5444,
+        0.5232,
+        0.5091,
+        0.5053,
+        0.4861
+      ]
+    },
+    {
+      "query": "Design a multi-agent AI system where one agent handles code review, another handles testing, and a third handles documentation generation, coordinating through a shared task queue",
+      "latencyMs": 26.2,
+      "hnswLatencyMs": 1,
+      "linearLatencyMs": 2,
+      "speedupFactor": 2,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "candidateCount": 20,
+      "topSkillConfidence": 0.5253,
+      "scoreSpread": 0.013,
+      "relevantDomains": [
+        "orchestration",
+        "subagent",
+        "multi",
+        "ai"
+      ],
+      "topSkills": [
+        "orchestration-frameworks",
+        "subagent-driven-development",
+        "multi-agent-task-orchestrator",
+        "ai-agent-development",
+        "ai-agents-architect"
+      ],
+      "scores": [
+        0.5253,
+        0.5124,
+        0.4996,
+        0.4961,
+        0.4814,
+        0.5253,
+        0.5124,
+        0.4996,
+        0.4961,
+        0.4814,
+        0.5253,
+        0.5124,
+        0.4996,
+        0.4961,
+        0.4814,
+        0.5253,
+        0.5124,
+        0.4996,
+        0.4961,
+        0.4814,
+        0.5253,
+        0.5124,
+        0.4996,
+        0.4961,
+        0.4814
+      ]
+    }
+  ],
+  "summary": {
+    "totalQueries": 22,
+    "avgLatencyMs": 19.37,
+    "avgInputTokens": 0,
+    "avgOutputTokens": 0,
+    "avgCandidates": 20,
+    "avgScoreSpread": 0.0319,
+    "avgTopConfidence": 0.4469,
+    "relevantMatchRate": 0.2273,
+    "latencyDistribution": {
+      "min": 11.8,
+      "max": 26.2,
+      "p50": 18.6,
+      "p95": 25.8,
+      "p99": 26.2
+    },
+    "tokenDistribution": {
+      "inputMin": 0,
+      "inputMax": 0,
+      "outputMin": 0,
+      "outputMax": 0
+    },
+    "scoreDistribution": {
+      "min": 0.09691239015481713,
+      "max": 0.6320221576223146,
+      "avg": 0.4468534133394687,
+      "median": 0.4479760012718596
+    }
+  }
+}
