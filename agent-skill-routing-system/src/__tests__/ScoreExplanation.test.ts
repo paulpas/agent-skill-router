@@ -1,5 +1,5 @@
 // Tests for ScoreExplanationBuilder
-import { ScoreExplanationBuilder, ScoreBreakdown } from '../observability/ScoreExplanation';
+import { ScoreExplanationBuilder, ScoreBreakdown, ScoreDebugJson } from '../observability/ScoreExplanation';
 
 describe('ScoreExplanationBuilder', () => {
   // Helper: create a minimal breakdown
@@ -107,12 +107,12 @@ describe('ScoreExplanationBuilder', () => {
       );
 
       expect(debugJson).toHaveProperty('query');
-      expect((debugJson as ScoreBreakdown).query).toBe('how do i refactor legacy code');
+      expect((debugJson as ScoreDebugJson).query).toBe('how do i refactor legacy code');
       expect(debugJson).toHaveProperty('timestamp');
       expect(debugJson).toHaveProperty('candidateCount');
-      expect((debugJson as ScoreBreakdown).candidateCount).toBe(2);
+      expect((debugJson as ScoreDebugJson).candidateCount).toBe(2);
 
-      const cands = (debugJson as ScoreBreakdown).candidates;
+      const cands = (debugJson as ScoreDebugJson).candidates;
       expect(Array.isArray(cands)).toBe(true);
       expect(cands.length).toBe(2);
 
@@ -128,8 +128,8 @@ describe('ScoreExplanationBuilder', () => {
     it('debug JSON for empty candidates list produces empty candidates array', () => {
       const debugJson = ScoreExplanationBuilder.buildDebugJson('empty query', []);
 
-      expect((debugJson as ScoreBreakdown).candidateCount).toBe(0);
-      expect((debugJson as ScoreBreakdown).candidates).toEqual([]);
+      expect((debugJson as ScoreDebugJson).candidateCount).toBe(0);
+      expect((debugJson as ScoreDebugJson).candidates).toEqual([]);
     });
   });
 

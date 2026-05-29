@@ -24,6 +24,8 @@ export interface SkillMetadata {
     };
     /** Archetypes describing the skill's primary role patterns */
     archetypes?: Archetype[];
+    /** Triggers — keywords that cause this skill to be auto-loaded */
+    triggers?: string[];
     /** Anti-triggers — topics/phrases that indicate the user should NOT use this skill */
     antiTriggers?: string[];
     /** Response profile shaping tone, depth, and abstraction of outputs */

@@ -24,6 +24,20 @@ export interface ScoreBreakdown {
 }
 
 /**
+ * Debug JSON shape produced by buildDebugJson.
+ */
+export interface ScoreDebugJson {
+  query: string;
+  timestamp: string;
+  candidateCount: number;
+  candidates: Array<{
+    name: string;
+    scoreBreakdown: ScoreBreakdown;
+    explanation: string[];
+  }>;
+}
+
+/**
  * ScoreExplanationBuilder — generates human-readable explanations
  * for why a skill received its ranking position.
  */
@@ -217,7 +231,7 @@ export class ScoreExplanationBuilder {
   static buildDebugJson(
     query: string,
     skills: Array<{ name: string; breakdown: ScoreBreakdown }>
-  ): object {
+  ): ScoreDebugJson {
     return {
       query,
       timestamp: new Date().toISOString(),

@@ -349,7 +349,7 @@ class Router {
                 // BM25 scoring (from precomputed results)
                 const bm25Score = normalizedBm25Scores.get(candidate.metadata.name) ?? 0;
                 // Trigger match scoring
-                const triggerScore = TriggerMatchScorer_1.TriggerMatchScorer.score(query, candidate.metadata.tags ?? [], candidate.metadata.triggers ?? []);
+                const triggerScore = TriggerMatchScorer_1.TriggerMatchScorer.score(query, candidate.metadata.tags ?? [], (candidate.metadata.triggers ?? []));
                 // Archetype boost (from precomputed query archetypes)
                 const archetypeBoost = ArchetypeRankingBoost_1.ArchetypeRankingBoost.computeBoost(queryArchetypes, candidate.metadata.archetypes ?? []);
                 // Anti-trigger penalty
@@ -410,7 +410,7 @@ class Router {
             // BM25 scoring (from precomputed results)
             const bm25Score = normalizedBm25Scores.get(candidate.metadata.name) ?? 0;
             // Trigger match scoring
-            const triggerScore = TriggerMatchScorer_1.TriggerMatchScorer.score(query, candidate.metadata.tags ?? [], candidate.metadata.triggers ?? []);
+            const triggerScore = TriggerMatchScorer_1.TriggerMatchScorer.score(query, candidate.metadata.tags ?? [], (candidate.metadata.triggers ?? []));
             // Archetype boost (from precomputed query archetypes)
             const archetypeBoost = ArchetypeRankingBoost_1.ArchetypeRankingBoost.computeBoost(queryArchetypes, candidate.metadata.archetypes ?? []);
             // Anti-trigger penalty
