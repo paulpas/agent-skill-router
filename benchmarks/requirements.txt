@@ -7,7 +7,7 @@ openai>=2.37.0
 anthropic>=0.102.0
 
 # Groq API support
-groq>=1.2.0
+groq>=1.4.0
 
 # Token counting for OpenAI models
 tiktoken>=0.13.0
