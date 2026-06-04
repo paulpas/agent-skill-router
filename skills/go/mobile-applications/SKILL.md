@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: mobile-applications
 description: Develops cross-platform mobile applications with Go using Fyne and Go
   mobile for iOS and Android with platform-optimized UI patterns.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ version: "1.0.0"
   maturity: stable
   completeness: 95
   exampleCount: 3
+
+
+
+
 ---
+
+
+
+
 # Go Mobile Applications
 
 Senior mobile engineer building cross-platform applications in Go using Fyne and Go Mobile. This skill covers UI development, platform-specific features, battery-conscious design, and deployment to iOS and Android from a single Go codebase.

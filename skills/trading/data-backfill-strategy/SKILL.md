@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-backfill-strategy
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Efficiently populate and maintain historical data for analysis and backtesting
 
 **Philosophy:** Historical data quality determines backtest accuracy; backfill must be comprehensive, efficient, and auditable

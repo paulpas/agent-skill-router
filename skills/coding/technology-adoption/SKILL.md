@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technology-adoption
 description: Maps concrete project requirements to specific technology recommendations
   using domain-driven decision matrices, adoption risk scoring, and phased rollout
@@ -6,11 +10,9 @@ description: Maps concrete project requirements to specific technology recommend
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: technology adoption, tech stack choice, how do i choose technology, select
-    framework for my project, pick the right tool, technology decision, framework
-    recommendation, technology leverage, ecosystem navigation, adoption strategy
+  triggers: technology adoption, tech stack choice, how do i choose technology, select framework for my project, pick the right tool, technology decision, framework recommendation, technology leverage framework for my project
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ version: "1.0.0"
   - do-dont
   related-skills: framework-selection, framework-utilization, software-architecture,
     hexagonal-architecture
+
+
+
+
 ---
+
+
+
+
 # Technology Adoption and Leverage Framework
 
 Maps concrete project requirements to specific technology recommendations using domain-driven decision matrices, adoption risk scoring, and phased rollout strategies. This skill helps teams choose technologies that match their actual needs (not hype) and then leverage them effectively by working with the ecosystem rather than against it.

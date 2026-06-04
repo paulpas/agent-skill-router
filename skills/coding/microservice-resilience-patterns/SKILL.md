@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: microservice-resilience-patterns
 description: Implements production-ready resilience patterns (circuit breaker, retry
   with exponential backoff, bulkhead isolation, timeout enforcement, graceful fallback)
@@ -6,11 +10,9 @@ description: Implements production-ready resilience patterns (circuit breaker, r
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: circuit breaker, retry pattern, bulkhead pattern, resilience, fault tolerance,
-    timeout handling, graceful degradation, fallback strategy, cascading failure,
-    exponential backoff
+  triggers: circuit breaker, retry pattern, bulkhead pattern, resilience, fault tolerance, timeout handling, graceful degradation, fallback strategy timeout handling
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ version: "1.0.0"
   - examples
   related-skills: microservices-architecture, idempotent-distributed-operations, observability-patterns,
     event-driven-patterns
+
+
+
+
 ---
+
+
+
+
 # Microservice Resilience Patterns
 
 Implements production-ready resilience patterns to prevent cascading failures in distributed microservice systems. When loaded, this skill makes the model design, implement, and validate circuit breakers, retry strategies with jitter, bulkhead isolation, timeout enforcement, and graceful degradation mechanisms — all tailored to the specific failure modes of the target architecture.

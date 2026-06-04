@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gcp-cloud-tasks
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Google Cloud Tasks
 
 Deploy and manage google cloud tasks infrastructure as part of your cloud-native environment.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: aws-cloudformation
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # CloudFormation
 
 Design and deploy complete AWS infrastructure as code using templates, enabling version control, repeatable deployments, and automated stack management.

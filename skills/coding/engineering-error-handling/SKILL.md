@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: engineering-error-handling
 description: Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - examples
     - do-dont
   related-skills: engineering-principles, testing-unit-integration-e2e, software-documentation, framework-utilization
+
+
+
+
 ---
+
+
+
+
 
 # Error Handling Engineering
 

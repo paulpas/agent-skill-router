@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: testing-integration
 description: Executes integration tests to validate combined components and their interactions in a system, ensuring workflows operate seamlessly.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: testing-unit, testing-contract, testing-end-to-end
+
+
+
+
 ---
+
+
+
+
 
 # Integration Testing
 

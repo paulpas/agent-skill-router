@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-structures
 description: Implements and compares fundamental data structures (hash tables, balanced BSTs, tries, heaps, linked lists, graphs) with O(1) through O(n log n) complexity analysis for optimal algorithm selection.
 license: MIT
@@ -26,7 +30,15 @@ metadata:
     - examples
     - diagrams
   related-skills: algorithms, graph-traversal, for-loop-iteration
+
+
+
+
 ---
+
+
+
+
 
 # Data Structures Reference
 

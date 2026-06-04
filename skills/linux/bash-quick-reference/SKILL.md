@@ -1,70 +1,55 @@
 ---
-title: "Bash — Quick Reference"
-audience: "Engineers who already write bash occasionally and want one page that covers the moves they always have to look up — language constructs, idioms, scripting discipline, and common foot-guns."
-status: "complete"
+
+
+
+
+name: bash-quick-reference
+description: Reference guide for Bash language constructs, parameter expansion, arrays, control flow, functions, and scripting discipline.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: linux
+  triggers: bash, shell scripting, parameter expansion, brace expansion, how do i write bash scripts, exit status, pipefail
+  role: reference
+  scope: infrastructure
+  output-format: code
+  related-skills: linux-cli-reference,text-processing-quick-reference
+  archetypes: educational
+  anti_triggers: implement from scratch, architect a system, build infrastructure, design patterns
+  response_profile:
+    verbosity: high
+    directive_strength: low
+    abstraction_level: operational
+
+
+
+
 ---
 
-# Bash
-### A Quick Reference for Working Engineers
 
----
 
-> Bash is a Bourne-derived shell with arrays, arithmetic, brace
-> expansion, readline, programmable completion, parameter
-> expansion that does string manipulation in-process, and a few
-> decades of accumulated extension. It is, simultaneously, the
-> command-line interpreter you use interactively all day and a
-> programming language you write scripts in. Treating it as one or
-> the other is fine for short tasks, but it's worth understanding
-> the language properly when scripts grow beyond about fifty
-> lines — at that point bash starts rewarding rigor and punishing
-> sloppiness in equal measure.
->
-> This card covers the language: data (variables, parameter
-> expansion, arrays, associative arrays), control flow
-> (`if`/`case`/`for`/`while`/`until`), functions, redirections,
-> pipes, traps, signals, job control, debugging, and the strict-
-> mode discipline that turns bash from "fragile glue" into "small
-> programming language we can review like any other code."
->
-> Where bash fits in the toolbox: it's the right answer for
-> short-to-medium scripts that glue together UNIX commands. When
-> the work is dominated by data structures, by anything you'd want
-> to unit-test, by string parsing of any complexity, or by
-> cross-platform requirements, escalate to Python (or Go, or your
-> language of choice). Bash is excellent at what it's excellent
-> at; it's a poor general-purpose language.
 
-## When to reach for bash
 
-- You're gluing CLI tools together on a Linux/macOS host and the
-  whole job fits in a screen or two of code.
-- You need a script that any user with a recent shell can run, with
-  no toolchain install, no virtualenv, no compiled artifact.
-- The work is dominated by file/process plumbing, not data
-  structures.
-- You want a one-shot wrapper around an external command that
-  takes a few flags, applies some defaults, and exits.
-- You're writing a `Makefile` recipe, a `Dockerfile` `RUN` line,
-  a CI step, a systemd `ExecStart`, or any other place where
-  a few lines of glue is exactly the right shape.
+# Bash — Quick Reference
 
-## When *not* to reach for bash
+Reference guide for the Bash language: data (variables, parameter expansion, arrays), control flow (if/case/for/while/until), functions, redirections, pipes, traps, signals, job control, debugging, and strict-mode discipline.
 
-- You need rich data types (nested dicts, typed records,
-  dataframes). Reach for Python.
-- The work is testable enough that you want unit tests with a
-  decent ergonomics. `bats` is the bash testing framework, but
-  it's nothing close to `pytest` — switch to a real language at
-  this point.
-- You need cross-platform Windows support. PowerShell is the
-  answer there.
-- The script needs to handle untrusted input, especially anything
-  involving filenames, environment variables, or external command
-  output. Bash is hard to write securely; the more user input
-  involved, the worse the odds.
-- You're starting to hit "if my script were 30% bigger I'd write
-  it in Python instead." Just write it in Python.
+## When to Use
+
+- Writing short-to-medium scripts that glue together UNIX commands on Linux/macOS hosts
+- Creating one-shot wrappers around external commands with flags and defaults
+- Writing Makefile recipes, Dockerfile RUN lines, CI steps, or systemd ExecStart entries
+- File/process plumbing where bash is the shortest path to the solution
+- Any place where a few lines of glue are exactly the right shape
+
+## When NOT to Use
+
+- You need rich data types (nested dicts, typed records, dataframes) — use Python instead
+- The work needs unit tests with decent ergonomics — switch to a real language at this point
+- You need cross-platform Windows support — use PowerShell instead
+- The script handles untrusted input involving filenames, environment variables, or external command output — bash is hard to write securely
+- You're hitting "if my script were 30% bigger I'd write it in Python" — just write it in Python
 
 ## Mental model
 

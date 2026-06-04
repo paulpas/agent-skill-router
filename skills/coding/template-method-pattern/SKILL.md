@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: template-method-pattern
 description: Implements the GoF Template Method pattern for defining algorithm skeletons in Python ABCs with customizable hook methods, comparing inheritance-based templating vs composition-based strategy selection.
 archetypes:
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: single-responsibility, dry-principles, open-closed-principle, design-patterns-and-principles
+
+
+
+
 ---
+
+
+
+
 
 # Template Method Pattern
 

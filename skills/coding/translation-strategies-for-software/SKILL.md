@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: translation-strategies-for-software
 description: Implements best practices for translating software content efficiently and accurately for global markets while adhering to localization standards.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: coding
   triggers: translation strategies, software localization, i18n, l10n, multilingual support
   archetypes: [implementation, reference]
@@ -13,7 +17,18 @@ version: "1.1.1"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Best Practices for Translation Strategies in Software Development
 Effectively translating software content requires strategic planning and execution to ensure accuracy, cultural relevance, and usability across diverse user bases. Here are key practices to consider:

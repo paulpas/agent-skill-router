@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: testing-mocking
 description: Implements mocking strategies for unit testing by providing controlled, predictable interactions with dependencies.
 license: MIT
@@ -20,7 +24,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Mocking Strategies
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: adyen-api
 description: Implements Adyen API integration (Payments, Checkout, Marketplaces, Risk,
   Reporting) using adyen Python SDK with 3D Secure 2 authentication flow, webhook
@@ -7,11 +11,9 @@ description: Implements Adyen API integration (Payments, Checkout, Marketplaces,
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: adyen, adyen checkout api, adyen payments, 3d secure 2, adyen webhook
-    verification, adyen marketplaces, adyen risk management, how do i integrate adyen
-    payments, global payment processing
+  triggers: adyen, adyen checkout api, adyen payments, 3d secure 2, adyen webhook verification, adyen marketplaces, adyen risk management, how do i integrate adyen payments verification
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-stripe-api, coding-paypal-api, coding-braintree-api
+
+
+
+
 ---
+
+
+
+
 # Adyen API Integration
 
 Implements production-grade Adyen API integration for global enterprise payments including Checkout API, Payments API, Marketplaces (Adyen for Platforms), Risk Management, and Financial Reporting. When loaded, this skill makes the model implement the `adyen` Python SDK patterns including: `/sessions` for hosted checkout drop-in, `/payments` for direct API integration, 3D Secure 2 handling flow, `/payments/details` for handling authentication results, webhook HMAC signature verification, idempotency keys for safe retries, and Marketplace API for split payments and onboarding.

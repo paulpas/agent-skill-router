@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: jvm-diagnostics
 description: Diagnoses JVM production incidents including OutOfMemoryError root causes, thread deadlock detection, heap leak analysis via MAT, and crash log triage for Java 17+ applications.
 license: MIT
@@ -26,7 +30,15 @@ metadata:
     - examples
     - do-dont
   related-skills: jvm-performance-tuning, framework-performance-tuning, async-programming
+
+
+
+
 ---
+
+
+
+
 
 # JVM Diagnostician
 

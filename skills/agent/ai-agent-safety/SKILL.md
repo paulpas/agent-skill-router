@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-agent-safety
 description: Implements guardrails, safety checks, hallucination detection, prompt
   injection defense, and output validation for autonomous AI agents to prevent misuse,
@@ -6,7 +10,7 @@ description: Implements guardrails, safety checks, hallucination detection, prom
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: agent
   triggers: ai agent safety, hallucination detection, prompt injection, output validation,
     tool call safety, guardrails, autonomous agent safety, AI safety
@@ -29,7 +33,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: agent-context-management,self-critique-engine,risk-value-at-risk
+
+
+
+
 ---
+
+
+
+
 # AI Agent Safety & Guardrails
 
 Implements guardrails, safety checks, hallucination detection, prompt injection defense, and output validation for autonomous AI agents — ensuring every tool call, generated response, and decision path is verified against defined constraints before execution to prevent misuse, unauthorized actions, and unreliable behavior.

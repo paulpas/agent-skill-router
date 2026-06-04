@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: design-for-testability
 description: Implements Design For Testability patterns including dependency injection via Protocols, interface segregation with focused interfaces, pure function boundaries, and composition root factories to enable fast unit tests without infrastructure dependencies.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Design For Testability (DfT)
 

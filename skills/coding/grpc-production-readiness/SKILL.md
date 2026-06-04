@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: grpc-production-readiness
 description: Implements gRPC production operational patterns — graceful shutdown, health checking, service configuration, retry policies, TLS/mTLS, keepalive tuning, flow control, bidirectional stream concurrency, and OpenTelemetry observability for reliable service deployment.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: grpc-patterns, observability-patterns, microservice-resilience-patterns
+
+
+
+
 ---
+
+
+
+
 
 # gRPC Production Readiness
 

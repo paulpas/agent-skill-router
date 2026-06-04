@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: order-flow-toxicity
 description: Detects toxic (informed) order flow using VPIN, PIN models, and adverse
   selection metrics to protect trading algorithms from predatory market participants
@@ -6,7 +10,7 @@ description: Detects toxic (informed) order flow using VPIN, PIN models, and adv
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: trading
   triggers: order flow toxicity, VPIN, PIN model, adverse selection, predatory HFT,
     toxic flow, informed trading, liquidity provider toxicity
@@ -30,7 +34,15 @@ version: "1.0.0"
   - do-dont
   related-skills: ai-order-flow-analysis, risk-kill-switches, execution-slippage-modeling,
     data-order-book
+
+
+
+
 ---
+
+
+
+
 # Order Flow Toxicity & Adverse Selection
 
 Detects toxic (informed) order flow and quantifies adverse selection cost to protect passive market makers and limit-order-based strategies from predatory HFT activity. When loading this skill, you act as a quantitative risk analyst who measures the proportion of informed versus noise flow in real time and triggers protective actions when toxicity exceeds safe thresholds.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: dry-principles
 compatibility: opencode
 completeness: 95
@@ -33,7 +37,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # DRY Principle Enforcer
 
 Implements DRY (Don't Repeat Yourself) principle enforcement by identifying semantic duplication patterns, providing actionable refactoring strategies, and guiding developers toward maintainable codebases where knowledge and logic exist in exactly one place.

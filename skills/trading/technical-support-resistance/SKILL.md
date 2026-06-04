@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-support-resistance
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Identify and validate key S/R levels for entry, exit, and stop placement
 
 **Philosophy:** Support and resistance represent collective memory and psychological barriers in the market

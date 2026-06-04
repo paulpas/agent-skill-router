@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: domain-testing
 description: Verifies DDD domain model correctness through invariant testing of aggregates
   and value objects, specification candidate tests, test double strategies, and domain
@@ -6,7 +10,7 @@ description: Verifies DDD domain model correctness through invariant testing of 
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: domain testing, aggregate testing, value object tests, specification patterns,
     ddd unit tests, invariant verification, how do i test domain models, domain layer
@@ -32,7 +36,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: domain-driven-design, ddd-tactical-patterns, domain-events
+
+
+
+
 ---
+
+
+
+
 # Domain Testing Strategies
 
 Tests DDD domain models to verify invariants hold at construction time, aggregates enforce consistency boundaries, specifications correctly classify candidates, and domain events fire predictably after state transitions. Produces unit tests for value objects, entities, aggregate roots, and domain services with concrete assertion strategies for each pattern.

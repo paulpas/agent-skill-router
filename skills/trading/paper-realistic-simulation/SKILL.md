@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: paper-realistic-simulation
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Trading System Simulator — implements comprehensive paper trading simulations that replicate live trading conditions including slippage, fees, partial fills, and market impact for accurate performance estimation.
 
 **Philosophy:** Live Trading Replication — paper trading must simulate real-world execution friction to provide accurate expectations of live trading performance; unrealistic simulations lead to overoptimistic performance projections.

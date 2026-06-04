@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-deployment-patterns
 description: Implements production-grade Kubernetes deployment patterns including resource management, HPA/VPA, pod disruption budgets, health probes, and multi-environment manifest orchestration for reliable service operation.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: microservices-architecture, observability-patterns, service-mesh-patterns
+
+
+
+
 ---
+
+
+
+
 
 # Kubernetes Deployment Patterns
 

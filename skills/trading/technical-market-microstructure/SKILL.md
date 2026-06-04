@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-market-microstructure
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Analyze order book depth, spread, and trade execution patterns
 
 **Philosophy:** Order book reflects real-time supply and demand; microstructure reveals hidden liquidity

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: deduplication-patterns
 description: Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: refactoring-techniques,code-duplication-detection,yagni,dry-principles,single-responsibility
+
+
+
+
 ---
+
+
+
+
 
 # Deduplication Patterns (DRY in Practice)
 

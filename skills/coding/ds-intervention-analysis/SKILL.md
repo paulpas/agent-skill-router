@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-intervention-analysis
 compatibility: opencode
 completeness: 95
@@ -33,7 +37,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Intervention Analysis
 
 Comprehensive guide to intervention analysis in machine learning and data science workflows.

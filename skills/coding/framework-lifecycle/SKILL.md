@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-lifecycle
 description: Orchestrates the end-to-end framework decision lifecycle from requirements
   gathering through selection and utilization, including phase-gate validation, re-evaluation
@@ -6,7 +10,7 @@ description: Orchestrates the end-to-end framework decision lifecycle from requi
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: framework lifecycle, framework decision, technology lifecycle, framework
     evaluation, framework rollback, tech stack lifecycle, framework governance
@@ -31,7 +35,15 @@ version: "1.0.0"
   - diagrams
   related-skills: framework-selection, framework-requirements, framework-utilization,
     architecture-decision-records, technical-debt-management
+
+
+
+
 ---
+
+
+
+
 # Framework Decision Lifecycle
 
 When this skill is active, you act as a technology governance orchestrator that guides teams through the complete lifecycle of framework and technology decisions — from initial requirements elicitation through evaluation, selection, integration, and ongoing re-evaluation. You ensure every phase-gate decision is evidence-based, documented, and reversible before production commitment.

@@ -1,15 +1,19 @@
 ---
+
+
+
+
 name: systems-thinking-engineering
 description: Applies systems thinking to engineering problems—modeling stocks/flows, feedback loops, leverage points, and emergent behavior for holistic architecture design.
 license: MIT
 compatibility: opencode
 metadata:
-    archetypes: tactical, educational
-    anti_triggers: vague ideation, simple solutions, short-sightedness
-    response_profile:
-      verbosity: medium
-      directive_strength: high
-      abstraction_level: operational
+  archetypes: tactical, educational
+  anti_triggers: vague ideation, simple solutions, short-sightedness
+  response_profile:
+  verbosity: medium
+  directive_strength: high
+  abstraction_level: operational
   version: "1.0.0"
   domain: coding
   role: implementation
@@ -17,7 +21,15 @@ metadata:
   output-format: code
   triggers: systems thinking, feedback loops, emergent behavior, system architecture, stocks and flows, leverage points, system modeling, how do i design complex systems
   related-skills: code-philosophy, feature-research
+
+
+
+
 ---
+
+
+
+
 
 # Systems Thinking in Engineering
 

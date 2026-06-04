@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: testing-stubbing
 description: Implements stubbing techniques for unit testing by replacing parts of the system under test with pre-defined responses.
 license: MIT
@@ -20,7 +24,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Stubbing Techniques
 

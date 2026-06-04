@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gcp-container-registry
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Google Container Registry
 
 Deploy and manage google container registry infrastructure as part of your cloud-native environment.

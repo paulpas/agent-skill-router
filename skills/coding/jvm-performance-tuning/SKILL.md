@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: jvm-performance-tuning
 description: Optimizes JVM runtime performance through garbage collector selection and tuning, memory layout configuration, JIT compilation flags, and allocation-aware coding patterns for Java 17+ applications.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: jvm-diagnostics, framework-performance-tuning, async-programming
+
+
+
+
 ---
+
+
+
+
 
 # JVM Performance Tuner
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: multi-agent-orchestration
 description: Orchestrates multi-agent workflows (sequential pipelines, supervisor-worker delegation, group chat coordination, parallel task execution with result synthesis) for complex AI system coordination.
 archetypes:
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: tool-use-function-calling, planning-reasoning, memory-systems
+
+
+
+
 ---
+
+
+
+
 
 # Multi-Agent Orchestration
 

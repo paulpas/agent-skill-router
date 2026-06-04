@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-specification-pattern
 description: Implements the DDD specification pattern — composable business rule objects using AND/OR/NOT boolean algebra, expression tree translation for ORM query pushdown, domain validation specs, protocol-based contracts, and reusable primitive factories for rich domain modeling in Python.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Specification Pattern for DDD
 

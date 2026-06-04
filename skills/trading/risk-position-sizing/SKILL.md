@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-position-sizing
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Guide an AI coding assistant to implement mathematically sound position sizing that balances growth optimization with capital preservation across varying market conditions
 
 **Philosophy:** Position sizing is the most important factor in trading success—far more significant than entry timing or strategy selection. Systems must calculate position sizes dynamically based on edge strength, volatility, account drawdown, and market conditions. Static position sizing ignores the probabilistic nature of trading and leads to suboptimal outcomes. Risk should be proportional to opportunity.

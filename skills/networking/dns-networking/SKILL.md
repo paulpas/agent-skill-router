@@ -1,59 +1,53 @@
 ---
-title: "DNS and Networking — Quick Reference"
-audience: "Engineers who run DNS or troubleshoot it, plus admins who inherit a BIND deployment and need to be productive fast."
-status: "complete"
+
+
+
+
+name: dns-networking
+description: Operator's manual for DNS covering zone files, resource records, query resolution lifecycle, operational commands, TSIG/DNSSEC security, and production troubleshooting recipes.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: networking
+  triggers: dns, bind, zone file, named.conf, resource records, dig nslookup, how do i manage dns, dnssec tsig
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  related-skills: linux-cli-reference
+  archetypes: educational
+  anti_triggers: implement from scratch, architect a system, build infrastructure, design patterns
+  response_profile:
+    verbosity: high
+    directive_strength: low
+    abstraction_level: operational
+
+
+
+
 ---
 
-# DNS and Networking
-### A Quick Reference for Operators, Architects, and Troubleshooters
 
----
 
-> The Domain Name System is, fundamentally, a distributed,
-> hierarchical, cached key-value store keyed on names. The keys
-> are domain names; the values are *resource records* describing
-> hosts, mail routing, name servers, signatures, and a long tail of
-> other things. Almost every other piece of infrastructure on the
-> Internet depends on DNS working correctly, which means almost every
-> outage on the Internet, somewhere along the way, has a DNS-shaped
-> moment in its postmortem.
->
-> This card is the operator's manual. It covers the mental model you
-> need to read a `named.conf` and not get lost, every resource record
-> you'll meet in practice, the lifecycle of a DNS query, the operational
-> commands you'll type at three in the morning, the security stories
-> (TSIG and DNSSEC), and the troubleshooting recipes that resolve almost
-> every issue you'll see in real production.
 
-## When to reach for this card
 
-- You're staring at a zone file and need to remember whether to put a
-  trailing dot on a name, what happens if you don't, and which fields
-  of the SOA record actually matter.
-- You're being handed an existing BIND deployment and need to be
-  productive in a day.
-- You're adding a record, retiring a host, moving a service, or
-  delegating a subdomain, and you want to do it without breaking
-  anything that depends on the old answers.
-- A colleague says "the site is down" and you need to determine,
-  inside two minutes, whether it's DNS, networking, the application,
-  or something else.
-- You're modernising — turning on DNSSEC, switching to TSIG-secured
-  zone transfers, replacing `nslookup` with `dig` everywhere, or
-  moving an authoritative service from BIND to a hosted provider —
-  and you want a checklist of what each step entails.
+# DNS and Networking — Quick Reference
 
-## When *not* to reach for this card
+Operator's manual for DNS covering the mental model needed to read named.conf, every resource record you'll meet in practice, the lifecycle of a DNS query, operational commands, security (TSIG and DNSSEC), and troubleshooting recipes for production.
 
-- For a deep dive on the protocol's bytes-on-the-wire — read the
-  RFCs (1034, 1035, plus the modern updates in 6604, 6891, 8482,
-  9156). This card describes operational DNS.
-- For a complete reference on a non-BIND server (Knot DNS, NSD,
-  Unbound, PowerDNS, Microsoft DNS Server). Most concepts here
-  transfer, but the configuration syntax does not.
-- For DHCP integration, IPAM tooling, or DNS-as-a-Service (Route 53,
-  Cloud DNS, Azure DNS) specific tooling. The protocol-level concepts
-  apply, but those products have their own consoles.
+## When to Use
+
+- Staring at a zone file and needing to remember trailing dot conventions, SOA record fields, and delegation behavior
+- Being handed an existing BIND deployment and needing to be productive quickly
+- Adding a record, retiring a host, moving a service, or delegating a subdomain without breaking dependencies
+- Determining within two minutes whether "the site is down" is DNS, networking, application, or something else
+- Modernizing: turning on DNSSEC, switching to TSIG-secured zone transfers, replacing nslookup with dig, moving from BIND to hosted
+
+## When NOT to Use
+
+- For a deep dive on the protocol's bytes-on-the-wire — read the RFCs (1034, 1035, 6604, 6891, 8482, 9156)
+- For non-BIND server documentation (Knot DNS, NSD, Unbound, PowerDNS, Microsoft DNS Server) — most concepts transfer but config syntax differs
+- For DHCP integration, IPAM tooling, or DNS-as-a-Service specific tooling (Route 53, Cloud DNS, Azure DNS)
 
 ## Mental model
 

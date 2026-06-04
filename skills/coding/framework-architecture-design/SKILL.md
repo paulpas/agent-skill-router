@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-architecture-design
 description: Translates framework requirements into concrete architectural decisions including module boundaries, layering strategies, extension point placement, data flow design, and dependency topology that respect the chosen framework's paradigms.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Framework Architecture Design
 

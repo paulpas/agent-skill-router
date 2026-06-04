@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-intermarket-analysis
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Analyze relationships between markets to identify divergences and arbitrage opportunities
 
 **Philosophy:** Markets move in concert; intermarket analysis reveals hidden correlations and regime shifts

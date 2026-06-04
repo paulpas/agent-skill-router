@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: durable-execution
 description: Implements durable execution patterns for fault-tolerant AI agent workflows including checkpoint-based persistence, exponential backoff retry, idempotency keys, and crash recovery strategies across LangGraph, Temporal, and generic async frameworks.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Durable Execution for AI Agent Workflows
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: weaviate-modules
 description: Implements custom Weaviate modules (functions, vectorizers, generative providers) to extend data processing capabilities with application-specific AI and ML functions.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Weaviate Module Integration Patterns
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: exchange-trade-reporting
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Generate and analyze trade reports for performance monitoring and regulatory compliance
 
 **Philosophy:** Execution quality directly impacts PnL; trade reporting provides the feedback loop for continuous improvement

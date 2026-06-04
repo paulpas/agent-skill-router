@@ -1,4 +1,9 @@
 ---
+
+
+
+
+
 name: secrets-rotation
 description: Manages the periodic and automatic rotation of sensitive secrets, integrating techniques applicable to systems like AWS Secrets Manager and HashiCorp Vault while ensuring minimal disruption to services and enhancing overall security and compliance measures for sensitive information.
 license: MIT
@@ -6,7 +11,7 @@ compatibility: opencode
 metadata:
   version: "1.1.0"
   domain: secrets-management
-  triggers: secrets rotation, automatic rotation, credential rotation, secret management, HashiCorp Vault, AWS Secrets Manager, key rotation, password rotation, security compliance
+  triggers: secrets rotation, automatic rotation, credential rotation, secret management, HashiCorp Vault, AWS Secrets Manager, key rotation, password rotation
   archetypes: [management, implementation]
   anti_triggers: [disruptive secret management, static secrets, poor access controls, weak security practices, manual rotations]
   response_profile:
@@ -16,7 +21,17 @@ metadata:
   role: reference
   scope: infrastructure
   output-format: report
+
+
+
+
+
 ---
+
+
+
+
+
 
 # Secrets Rotation
 

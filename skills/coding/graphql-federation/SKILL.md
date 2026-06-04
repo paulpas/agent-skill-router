@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: graphql-federation
 description: Implements Apollo Federation 3 patterns (@key, @external, @provides, @requires directives) for building federated microservice graphs with Strawberry Python and Apollo Router.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   content-types: [code, guidance, do-dont, examples, config]
   triggers: apollo federation, subgraph, supergraph, entity sharing, @key directive, graphql gateway, federated schema, router configuration
   related-skills: graphql-api-design, graphql-dataloader-pattern, graphql-schema-design
+
+
+
+
 ---
+
+
+
+
 
 # GraphQL Federation Architecture
 

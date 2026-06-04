@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: collaboration-process-refactoring
 
 description: Safely refactors legacy codebases using specific techniques such as dependency analysis, strangler fig pattern, and port isolation to ensure clean modularity and enhanced collaboration.
@@ -6,7 +10,7 @@ description: Safely refactors legacy codebases using specific techniques such as
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   archetypes:
   - tactical
   - generation
@@ -26,7 +30,15 @@ version: "1.0.0"
   scope: implementation
   output-format: code
   related-skills: ddd-refactoring, design-patterns, clean-code
+
+
+
+
 ---
+
+
+
+
 
 # Collaboration & Process Refactoring
 A structured approach to refactoring legacy codebases in a safe manner that emphasizes collaboration among developers and stakeholders. Utilizing principles from atomic design and modularity ensures each component can be tested and maintained independently.

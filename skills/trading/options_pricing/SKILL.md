@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: options_pricing
 description: Calculates theoretical option prices using Black-Scholes and Binomial tree models with implied volatility analysis for European and American-style options.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Options Pricing Models
 

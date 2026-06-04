@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-kill-switches
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Guide an AI coding assistant to build comprehensive kill switch systems that automatically halt trading operations when predefined risk thresholds are breached, protecting capital and preventing system damage
 
 **Philosophy:** Kill switches are the emergency brakes of a trading system—they must be reliable, instantaneous, and fail-safe. Systems should assume that any component can fail and design kill switches accordingly. Multiple layers of kill switches ensure that no single point of failure can cause catastrophic loss. The philosophy is "trust but verify": always assume code can have bugs, so external validation through kill switches is essential.

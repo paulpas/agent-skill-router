@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: go-error-handling
 description: Designs robust error handling in Go with custom error types, error wrapping,
   retry patterns, and failure recovery strategies for resilient applications.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ version: "1.0.0"
   maturity: stable
   completeness: 95
   exampleCount: 3
+
+
+
+
 ---
+
+
+
+
 # Go Error Handling
 
 Senior engineer designing robust error handling in Go with custom error types, error wrapping, retry patterns, and failure recovery. This skill covers creating meaningful error hierarchies and implementing resilience patterns.

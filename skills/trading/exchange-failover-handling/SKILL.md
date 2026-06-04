@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: exchange-failover-handling
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Manage multiple exchange connections with automatic failover for uninterrupted trading
 
 **Philosophy:** Redundancy is essential for production trading; failover must be transparent to trading logic

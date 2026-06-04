@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-domain-events
 description: Implements domain event infrastructure for DDD systems — synchronous publish-subscribe dispatchers, schema versioning with Pydantic discriminators, idempotent handler guards, PostgreSQL outbox pattern for reliable async delivery, and dead letter queue pipelines.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Domain Event Infrastructure for DDD
 

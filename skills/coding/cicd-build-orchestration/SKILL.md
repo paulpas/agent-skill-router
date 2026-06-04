@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: cicd-build-orchestration
 description: Orchestrates builds in CI/CD pipelines with multi-stage builds, artifact caching, containerized builds, build matrices, parallel execution, and automated deployment strategies (GitHub Actions, GitLab CI, Jenkins) for efficient and reliable software delivery.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   triggers: CI/CD pipeline, build artifact, docker build, github actions, deployment pipeline, containerized builds, build orchestration, artifact management
   related-skills: makefile-best-practices, secure-release-pipeline, test-driven-development, git-branching-strategies
+
+
+
+
 ---
+
+
+
+
 
 # CI/CD Build Orchestration
 

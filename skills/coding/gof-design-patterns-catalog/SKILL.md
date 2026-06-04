@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gof-design-patterns-catalog
 description: Comprehensive catalog of all 23 GoF design patterns with Python implementations covering creational, structural, and behavioral patterns for decoupling and extensible software design.
 license: MIT
@@ -25,7 +29,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: design-pattern-selection, structural-design-patterns, creational-design-patterns, behavioral-design-patterns
+
+
+
+
 ---
+
+
+
+
 
 # GoF Design Patterns Catalog
 

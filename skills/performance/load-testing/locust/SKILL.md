@@ -1,7 +1,41 @@
 ---
+
+
+
+
+
+
 name: locust
 
-description: Implements load testing strategies using Locust to simulate user behavior and assess application performance, ensuring that systems are prepared for real-world traffic conditions effectively while providing actionable insights for optimization, scalability, and performance validation.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: performance\n  triggers: locust, load testing, performance evaluation, user behavior simulation, scalability testing, automated testing integration, performance metrics\n  archetypes: [implementation, testing]\n  anti_triggers: [superficial assessment, incomplete user behavior modeling, ineffective load testing, lack of metrics]\n  response_profile:\n    verbosity: medium\n    directive_strength: high\n    abstraction_level: operational\n---
+description: Implements load testing strategies using Locust to simulate user behavior and assess application performance, ensuring that systems are prepared for real-world traffic conditions effectively while providing actionable insights for optimization, scalability, and performance validation.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: performance
+  triggers: locust, load testing, performance evaluation, user behavior simulation, scalability testing, automated testing integration, performance metrics
+  archetypes: [implementation, testing]
+  anti_triggers: [superficial assessment, incomplete user behavior modeling, ineffective load testing, lack of metrics]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: operational
+
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+
+---
+
+
+
+
+
+
 
 # Performance Load Testing with Locust
 

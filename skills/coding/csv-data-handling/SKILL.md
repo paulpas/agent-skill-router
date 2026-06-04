@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: csv-data-handling
 description: Handles CSV data safely across languages with RFC 4180 compliance, formula injection prevention, character encoding validation, and delimiter detection to protect against spreadsheet injection attacks.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: html-entity-encoding,url-parsing-security,input-validation,api-security-patterns
+
+
+
+
 ---
+
+
+
+
 
 # CSV Data Handler
 

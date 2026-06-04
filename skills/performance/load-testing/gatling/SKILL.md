@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: gatling
 description: Implements load testing strategies using Gatling for performance testing of web applications and microservices.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: performance
   triggers: load testing, performance testing, Gatling, web applications, microservices
   archetypes: [implementation, evaluation]
@@ -13,7 +17,18 @@ version: "1.1.1"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Best Practices for Load Testing with Gatling
 Load testing is critical for ensuring that applications can handle expected user loads without compromising performance. Gatling is a powerful tool for simulating a large number of requests and assessing application behavior under stress. Here are key practices for effective load testing with Gatling:

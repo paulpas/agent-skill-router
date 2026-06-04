@@ -1,17 +1,18 @@
 ---
-name: framework-evaluation-checklist
+
+
+
+
+name: "framework-evaluation"
 description: Evaluates and scores competing frameworks using weighted criteria matrices,
   AHP decision-making, risk assessment, and migration planning to select the optimal
   technology stack for project requirements.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: framework selection, tech stack evaluation, weighted scoring matrix, AHP
-    decision, framework comparison, technology assessment, framework criteria, evaluate
-    frameworks, choose framework, select technology, tech stack decision, framework
-    trade-offs
+  triggers: framework selection, tech stack evaluation, weighted scoring matrix, AHP decision, framework comparison, technology assessment, framework criteria, evaluate frameworks decision
   archetypes:
   - tactical
   - generation
@@ -33,7 +34,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: framework-requirements, software-architecture, hexagonal-architecture
+
+
+
+
 ---
+
+
+
+
 # Framework Selection Engine
 
 Evaluates and scores competing frameworks using weighted criteria matrices, AHP (Analytic Hierarchy Process) decision-making, risk assessment, and migration planning. This skill turns subjective framework debates into data-driven selection decisions backed by quantitative scoring and documented trade-offs.

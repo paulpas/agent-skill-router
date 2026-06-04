@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-tail-risk
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Identify and protect against tail risk events
 
 **Philosophy:** Tail events are rare but devastating; portfolios should be designed for survival, not just growth

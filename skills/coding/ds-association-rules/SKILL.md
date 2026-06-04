@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-association-rules
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Association Rules
 
 Comprehensive guide to association rules in machine learning and data science workflows.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-debugging
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Kubernetes Cluster Debugging
 
 Implements systematic debugging workflows for Kubernetes clusters using kubectl commands to diagnose pod issues, node failures, network problems, resource constraints, and common failure patterns.

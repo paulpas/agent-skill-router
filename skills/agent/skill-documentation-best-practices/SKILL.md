@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-documentation-best-practices
 description: Writes high-fidelity SKILL.md documentation using instruction engineering patterns, typed code examples with BAD vs GOOD comparisons, and enforceable constraint design for AI agent skill systems.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: skill-engineering, skill-trigger-engineering, writing-skills
+
+
+
+
 ---
+
+
+
+
 
 # Skill Documentation Best Practices
 

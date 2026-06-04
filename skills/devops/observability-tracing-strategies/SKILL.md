@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: observability-tracing-strategies
 description: Implements best practices for distributed tracing in observability, improving application performance monitoring and debugging capabilities.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: devops
   triggers: observability tracing, distributed tracing, performance monitoring, debugging strategies, trace analysis
   archetypes: [implementation, reference]
@@ -16,7 +20,15 @@ version: "1.1.1"
   role: implementation
   scope: infrastructure
   output-format: code
+
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Strategies for Distributed Tracing in DevOps
 Distributed tracing plays a vital role in observability, allowing teams to monitor request paths across microservices and identify performance bottlenecks effectively. Here are key practices to improve your tracing strategies:

@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: hashicorp-vault
 description: Implements HashiCorp Vault for secure secret management, including features for dynamic secrets, access control, and secret revocation.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: secrets-management
   triggers: HashiCorp Vault, secret management, API security, dynamic secrets, credential management
   archetypes: [implementation, secret management]
@@ -16,7 +20,15 @@ version: "1.1.1"
   role: implementation
   scope: infrastructure
   output-format: code
+
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Overview of HashiCorp Vault
 HashiCorp Vault provides secure storage and management of secrets, enabling dynamic secrets and fine-grained access control for sensitive information. Here are essential practices and features:

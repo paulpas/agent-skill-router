@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: event-driven-architecture
 description: Implements event-driven architecture patterns including pub/sub messaging with RabbitMQ and Kafka, schema registry management, dead letter queue handling, idempotent consumer design, database outbox pattern, and event streaming for asynchronous system coordination.
 license: MIT
@@ -26,7 +30,15 @@ metadata:
     - do-dont
     - examples
   related-skills: microservices-architecture, monolith-strangler-pattern
+
+
+
+
 ---
+
+
+
+
 
 # Event-Driven Architecture Implementation
 

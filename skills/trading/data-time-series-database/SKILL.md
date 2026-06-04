@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-time-series-database
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Efficiently query time-series data with support for financial data patterns
 
 **Philosophy:** Time-series queries are the bread and butter of trading; optimization enables faster decisions

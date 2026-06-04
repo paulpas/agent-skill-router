@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: database-migrations-skill
 description: Implements a systematic approach to database schema migrations, versioning, and rollback strategies specifically designed for OpenCode projects.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: database migration, schema versioning, rollback strategy, migration tooling, data integrity, migration scripts
   role: implementation
@@ -17,7 +21,15 @@ version: "1.0.0"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Database Migration and Versioning Skill
 Facilitates the systematic management of database schema changes, including migrations, versioning, and rollback procedures, ensuring data integrity and maintainability.

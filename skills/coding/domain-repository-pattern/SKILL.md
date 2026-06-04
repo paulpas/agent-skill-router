@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: domain-repository-pattern
 description: Implements repository and specification patterns for DDD to abstract data access while keeping domain logic in the domain layer — generic repositories, typed specifications, pagination, and query composition without leaking persistence details.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: domain-driven-design, ddd-tactical-patterns, domain-events, cqrs-pattern
+
+
+
+
 ---
+
+
+
+
 
 # Repository and Specification Patterns
 

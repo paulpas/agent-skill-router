@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: canary-deployment
 compatibility: opencode
 completeness: 95
@@ -38,7 +42,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
-------
+
+
+
+
+---
+
+
+
+---
 # Canary Deployment
 
 Orchestrates gradual traffic promotion through a series of health-gated stages, automatically rolling back if any stage's metrics breach defined thresholds. Enables progressive risk management with minimal manual intervention.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: stripe-api
 description: Implements Stripe API integration (Payments, Subscriptions, Connect,
   Invoices, Terminal, Issuing) using stripe Python SDK v15.0.0+ with StripeClient
@@ -7,7 +11,7 @@ description: Implements Stripe API integration (Payments, Subscriptions, Connect
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: stripe, payment intents, checkout sessions, stripe subscriptions, stripe
     connect, webhook signature, how do i integrate stripe payments, payment processing
@@ -32,7 +36,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-paypal-api, coding-square-api, coding-braintree-api
+
+
+
+
 ---
+
+
+
+
 # Stripe API Integration
 
 Implements production-grade Stripe API integration using the `stripe` Python SDK v15.0.0+. When loaded, this skill makes the model implement PaymentIntents, Checkout Sessions, Subscriptions, Stripe Connect onboarding, Invoicing, and webhook handling with proper signature verification. All implementations follow PCI-DSS best practices: never log card data, always verify webhook signatures, use idempotency keys for retries, and handle SCA/3D Secure authentication flows.

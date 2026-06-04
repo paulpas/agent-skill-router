@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-drawdown-control
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Implement drawdown protection mechanisms to preserve capital during losing streaks
 
 **Philosophy:** Drawdown control prevents catastrophic losses; a 50% drawdown requires 100% return to recover

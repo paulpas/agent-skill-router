@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: yagni
 description: Applies the You-Aren't-Gonna-Need-It principle to prevent over-engineering
   by identifying and eliminating premature abstractions, unused features, and speculative
@@ -6,7 +10,7 @@ description: Applies the You-Aren't-Gonna-Need-It principle to prevent over-engi
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: yagni, you aren't gonna need it, don't build it now, over-engineering,
     premature abstraction, speculative features, kill unused code, remove complexity
@@ -31,7 +35,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: kiss-principle, dht-technical-debt, progressive-enhancement, emergent-design
+
+
+
+
 ---
+
+
+
+
 # YAGNI — You Aren't Gonna Need It
 
 Senior engineer applying the YAGNI principle to eliminate premature abstractions, speculative features, and unnecessary complexity from codebases. YAGNI is not about avoiding architecture entirely — it's about letting requirements drive design decisions, not hypothetical future scenarios.

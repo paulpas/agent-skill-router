@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: performance-optimization
 description: Identifies and eliminates performance bottlenecks through systematic
   profiling (cProfile, py-spy, memory_profiler), Big-O complexity analysis, algorithmic
@@ -6,11 +10,9 @@ description: Identifies and eliminates performance bottlenecks through systemati
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: performance optimization, code profiling, bottleneck analysis, cProfile,
-    py-spy, Big O complexity, memory leak detection, slow code, latency reduction,
-    how do i make my code faster, benchmarking, time complexity, p95 latency
+  triggers: performance optimization, code profiling, bottleneck analysis, cProfile, py-spy, Big O complexity, memory leak detection, slow code py-spy
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ version: "1.0.0"
   - examples
   related-skills: framework-performance-tuning, performance-testing, systematic-debugging,
     memoization-cache-patterns
+
+
+
+
 ---
+
+
+
+
 # Performance Optimization Framework
 
 Identifies and eliminates performance bottlenecks through systematic profiling, Big-O complexity analysis, algorithmic optimization techniques, and benchmark-driven validation. When loaded, this skill makes the model act as a senior performance engineer — measuring before optimizing, isolating hot paths with CPU and memory profilers, analyzing algorithmic complexity, applying targeted optimizations, and proving improvement with controlled benchmarks. This skill applies the 5 Laws of Elegant Defense: validate inputs before processing, make illegal states unrepresentable, fail fast with descriptive errors, return new data structures where applicable, and guide data naturally through optimization pipelines.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-selection
 description: Applies structured decision-making frameworks (weighted scoring, RICE,
   MoSCoW, decision matrices) to evaluate options against requirements and select optimal
@@ -6,7 +10,7 @@ description: Applies structured decision-making frameworks (weighted scoring, RI
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: agent
   triggers: framework selection, weighted scoring, decision matrix, option evaluation,
     criteria-based selection, RICE prioritization, MoSCoW, how do i choose between
@@ -31,7 +35,15 @@ version: "1.0.0"
   - do-dont
   related-skills: goal-to-milestones, task-decomposition-engine, dynamic-replanner,
     self-critique-engine
+
+
+
+
 ---
+
+
+
+
 # Framework-Based Decision Maker
 
 Systematically evaluates options against established requirements using structured decision frameworks to produce defensible, reproducible selections. This skill makes the model apply quantitative and qualitative evaluation methods instead of relying on intuition or ad-hoc reasoning when faced with multiple viable approaches.

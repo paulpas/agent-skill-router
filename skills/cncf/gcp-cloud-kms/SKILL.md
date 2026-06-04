@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gcp-cloud-kms
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Google Cloud KMS
 
 Deploy and manage google cloud kms infrastructure as part of your cloud-native environment.

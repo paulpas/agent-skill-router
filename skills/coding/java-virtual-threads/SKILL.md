@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: java-virtual-threads
 description: Implements modern Java concurrency with virtual threads (JDK 21+), structured
   concurrency, sealed classes, pattern matching switch expressions, and records for
@@ -6,7 +10,7 @@ description: Implements modern Java concurrency with virtual threads (JDK 21+), 
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: virtual threads, Project Loom, JEP 444, sealed classes, pattern matching
     switch, thread-per-request, Java concurrency
@@ -31,7 +35,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: async-programming, framework-performance-tuning, design-patterns-and-principles
+
+
+
+
 ---
+
+
+
+
 # Modern Java Concurrency Engineer
 
 When this skill loads, the model implements high-throughput concurrent applications using Java 21+ features — specifically virtual threads from Project Loom, structured concurrency via StructuredTaskScope, sealed class hierarchies with exhaustive pattern matching in switch expressions, and immutable data transfer objects via records. The model writes production-grade code that replaces legacy platform-thread executors and thread-per-request server patterns with lightweight concurrency primitives.

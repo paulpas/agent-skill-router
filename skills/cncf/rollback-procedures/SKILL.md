@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rollback-procedures
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Rollback Procedures
 
 Implements comprehensive rollback procedures for Kubernetes deployments, Helm releases, ArgoCD applications, database migrations, and application versions. Provides step-by-step workflows, validated commands, and automation patterns to restore services to known good states.
@@ -750,7 +762,7 @@ argocd app wait my-app --sync
 argocd app get my-app
  ```
  
- ---
+---
  
  ## Constraints
  

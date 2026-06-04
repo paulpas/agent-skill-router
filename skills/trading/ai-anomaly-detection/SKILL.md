@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-anomaly-detection
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Build detection systems that identify unusual price movements, volume spikes, and structural breaks
 
 **Philosophy:** Anomalies signal information - either noise, news events, or market inefficiencies. Prioritize low false positive rates and explainable detections over pure sensitivity.

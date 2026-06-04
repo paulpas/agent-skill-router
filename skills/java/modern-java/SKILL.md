@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: modern-java
 description: Implements modern Java language features (JDK 21–26) including virtual threads, pattern matching switch expressions, records, sequenced collections, and scoped values for production application development.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: java-virtual-threads, go-concurrency-patterns, coding-code-review
+
+
+
+
 ---
+
+
+
+
 
 # Modern Java Development (JDK 21–26)
 

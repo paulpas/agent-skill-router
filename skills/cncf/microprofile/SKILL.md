@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: microprofile
 description: MicroProfile specification reference covering Config, OpenAPI, Fault
   Tolerance, Metrics, Health, JWT Security, Open Telemetry, and Server Sent Events
@@ -6,11 +10,9 @@ description: MicroProfile specification reference covering Config, OpenAPI, Faul
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: cncf
-  triggers: microprofile, fault tolerance, service mesh, openapi spec, health checks,
-    metrics endpoint, config source, jwt security, open telemetry, server sent events,
-    cloud native java, smallrye, quarkus integration
+  triggers: microprofile, fault tolerance, service mesh, openapi spec, health checks, metrics endpoint, config source, jwt security metrics endpoint
   archetypes:
   - educational
   - strategic
@@ -31,7 +33,15 @@ version: "1.0.0"
   - do-dont
   - config
   related-skills: jakarta-ee, jakarta-migration
+
+
+
+
 ---
+
+
+
+
 # MicroProfile for Cloud-Native Java
 
 Implements and configures MicroProfile specifications to add cloud-native operational capabilities — externalized configuration, service mesh compatibility, observability (metrics, tracing, health), fault tolerance patterns, and JWT-based security — on top of Jakarta EE application servers or as part of native compilation with Quarkus.

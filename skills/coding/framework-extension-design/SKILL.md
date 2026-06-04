@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-extension-design
 description: Designs extension points, plugin interfaces, and public API surfaces for frameworks built in-house — defining stable plugin contracts, middleware pipelines, versioned extension APIs, and authoring guides for third-party contributors.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Framework Extension Design
 

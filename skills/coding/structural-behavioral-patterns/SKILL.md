@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: structural-behavioral-patterns
 description: Implements GoF structural and behavioral design patterns (Adapter, Observer, Strategy, Command, Facade, Template Method, Mediator) to decouple components and manage object responsibilities.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Structural & Behavioral Design Patterns
 

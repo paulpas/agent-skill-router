@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: chaosmesh
 compatibility: opencode
 completeness: 95
@@ -36,7 +40,15 @@ role: reference
 scope: infrastructure
 triggers: chaos, chaosmesh, cloud-native, engineering
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Chaos Mesh in Cloud-Native Engineering
 
 **Category:** chaos  

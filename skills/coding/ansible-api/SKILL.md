@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ansible-api
 description: Integrates with Ansible via ansible-runner, the AWX/Tower API, and the
   Ansible Python API to manage playbooks, inventory, job templates, collections, and
@@ -6,7 +10,7 @@ description: Integrates with Ansible via ansible-runner, the AWX/Tower API, and 
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: ansible api, ansible-runner, ansible tower, awx api, ansible playbook,
     ansible inventory, ansible collections, automation controller
@@ -31,7 +35,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-terraform-sdk, coding-kubernetes-api, coding-docker-api
+
+
+
+
 ---
+
+
+
+
 # Ansible API & AWX/Tower Integration
 Integrates with Ansible using `ansible-runner` for embedded playbook execution, the AWX/Ansible Automation Controller REST API for job template and inventory management, and the native Ansible Python API for custom modules and plugin development.
 ## TL;DR for Code Generation

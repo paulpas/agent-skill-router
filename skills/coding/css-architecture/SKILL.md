@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: css-architecture
 description: Architects scalable CSS systems using cascade layers (@layer), native
   nesting, :has() selector, container queries, Tailwind v4 @theme directives, and
@@ -6,12 +10,9 @@ description: Architects scalable CSS systems using cascade layers (@layer), nati
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: css architecture, css modules, bem naming, tailwind css v4, container
-    queries, :has selector, css nesting, @layer cascade, how do i organize stylesheets,
-    responsive components, utility-first css, scroll-driven animations, view transitions
-    api, css custom properties, css specificity management
+  triggers: css architecture, css modules, bem naming, tailwind css v4, container queries, :has selector, css nesting, @layer cascade queries
   archetypes:
   - tactical
   - generation
@@ -34,7 +35,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: design-systems, component-architecture, frontend-philosophy
+
+
+
+
 ---
+
+
+
+
 # CSS Architecture for Modern Frontend Systems
 
 Architect scalable, maintainable CSS systems using native CSS features and established architectural patterns. This skill makes the model organize cascade layers with `@layer`, leverage browser-native selectors (`:has()`, nesting, container queries), structure BEM naming conventions, integrate Tailwind v4's CSS-first approach, and write scoped styles that avoid specificity wars and maintenance debt.

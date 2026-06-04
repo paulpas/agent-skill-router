@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: datadog-api-logs
 description: Implements log submission and forwarding to the Datadog API with structured logging best practices for content observability.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 
 # Datadog Logs Submission
 Implements log submission and forwarding to Datadog API with a focus on structured logging for enhanced observability. Configures logging to include necessary Datadog fields for correlation with metrics.

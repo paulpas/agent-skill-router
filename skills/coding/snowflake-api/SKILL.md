@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: snowflake-api
 description: Implements Snowflake API integration focusing on SQL execution, Snowpark DataFrames, Cortex, Streams, and Tasks.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   archetypes:
   - tactical
@@ -22,7 +26,15 @@ version: "1.0.0"
   role: implementation
   scope: implementation
   output-format: code
+
+
+
+
 ---
+
+
+
+
 
 # Snowflake API Skill
 Integrates Snowflake API with a focus on SQL, Snowpark data manipulation, Cortex AI features, and task scheduling using streams.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: graph-traversal
 description: Implements graph traversal algorithms (DFS recursive/iterative, BFS level-order,
   cycle detection, connected components) with working Python code for algorithmic
@@ -6,11 +10,9 @@ description: Implements graph traversal algorithms (DFS recursive/iterative, BFS
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: programming
-  triggers: graph traversal, depth first search, DFS, breadth first search, BFS, connected
-    components, shortest path unweighted, tree traversal, cycle detection, topological
-    sort, graph algorithm, level order traversal
+  triggers: graph traversal, depth first search, DFS, breadth first search, BFS, connected components, shortest path unweighted, tree traversal components
   archetypes:
   - educational
   anti_triggers:
@@ -28,7 +30,15 @@ version: "1.0.0"
   - guidance
   - examples
   related-skills: algorithms, for-loop-iteration
+
+
+
+
 ---
+
+
+
+
 # Graph Traversal Algorithms
 
 Implements fundamental graph traversal techniques — DFS and BFS — with working Python code covering recursive and iterative variants, cycle detection, connected components, path finding, and topological sorting. These are the two foundational algorithms every developer should know cold.

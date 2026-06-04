@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: karpathy-coding-mindset
 description: Applies Karpathy's pre-implementation discipline — state assumptions explicitly, surface tradeoffs instead of hiding them, push back on unnecessary complexity, and write minimum code that solves the problem with no speculative features or premature abstractions.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: karpathy-surgical-changes, karpathy-goal-driven-execution, yagni, kiss-principle
+
+
+
+
 ---
+
+
+
+
 
 # Karpathy Coding Mindset
 

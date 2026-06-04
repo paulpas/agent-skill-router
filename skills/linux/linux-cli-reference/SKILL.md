@@ -1,65 +1,53 @@
 ---
-title: "Linux CLI — Quick Reference"
-audience: "Engineers who use a Linux command line several times a week and want one page that consolidates the everyday tools."
-status: "complete"
+
+
+
+
+name: linux-cli-reference
+description: Consolidated reference for the essential Linux CLI tools and utilities used daily by engineers at the command line.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: linux
+  triggers: linux cli, command line tools, file management, process inspection, how do i use the linux terminal, disk usage, ssh rsync
+  role: reference
+  scope: infrastructure
+  output-format: code
+  related-skills: bash-quick-reference,text-processing-quick-reference
+  archetypes: educational
+  anti_triggers: implement from scratch, architect a system, build infrastructure, design patterns
+  response_profile:
+    verbosity: high
+    directive_strength: low
+    abstraction_level: operational
+
+
+
+
 ---
 
-# Linux CLI
-### A Quick Reference for the Working Engineer's Toolbox
 
----
 
-> The Linux command line is a programming language disguised as a
-> conversation. You type a single line, the shell parses it, looks up
-> each word, and turns it into a chain of small programs feeding each
-> other through pipes. The set of "small programs" is enormous — a
-> typical Linux box ships with thousands of executables — but a few
-> dozen of them carry the weight of almost everything you'll do at the
-> command line. This card is the long form of those few dozen.
->
-> The card is organised by what you want to *do*. Files, then
-> processes, then users and permissions, then archives and packaging,
-> then networking, then system inspection, then a survey of the small
-> utilities that round out the toolkit. Where the same problem can be
-> solved with several tools, the card explains why one is preferable
-> to another for which kinds of work.
->
-> Wherever the GNU and BSD versions diverge in interesting ways
-> (`ps`, `sed`, `tar`, `find -delete`, `stat`, `readlink -f`, etc.),
-> the differences are called out. Where modern alternatives have
-> displaced classical commands (`ss` for `netstat`, `ip` for
-> `ifconfig`, `journalctl` for log files, `ripgrep` for `grep -r`),
-> both are covered.
 
-## When to reach for this card
 
-- You're sitting at a terminal and need to remember the exact flag
-  for a tool you've used a hundred times.
-- You're writing or reading a shell script and want to lean on the
-  right small tool rather than re-implementing it.
-- You're inheriting a server, a Docker image, or a CI pipeline and
-  need to inspect what's running, what's installed, and what's
-  failing.
-- You're trying to construct a one-line pipeline that solves a
-  problem that would otherwise take a full Python script.
-- You're translating between distributions: `apt` on Debian/Ubuntu
-  vs. `dnf` on Red Hat-family vs. `pacman` on Arch, or between Linux
-  conventions and BSD/macOS conventions.
+# Linux CLI — Quick Reference
 
-## When not to reach for this card
+Consolidated reference for the essential Linux CLI tools and utilities used daily by engineers at the command line. Covers files, processes, users/permissions, archives/packaging, networking, system inspection, and the small utilities that round out the toolkit.
 
-- For the deep details of `bash` as a programming language — that's
-  the Bash Quick Reference. This card mentions enough shell
-  scripting to drive its examples, but the heavy lifting is over
-  there.
-- For regex / `grep` / `sed` / `awk` / pipeline composition in
-  full — that's the Text Processing Quick Reference. This card
-  references the tools and shows the day-to-day forms; the deeper
-  treatment lives in the Text Processing card.
-- For DNS-specific queries and `BIND` — that's in the DNS and
-  Networking card. This card covers the network utilities engineers
-  reach for *outside* of DNS work (ping, traceroute, ss, ip,
-  ssh, scp, rsync, curl, wget).
+## When to Use
+
+- Sitting at a terminal and needing to remember the exact flag for a tool you've used many times
+- Writing or reading shell scripts and wanting to use the right small tool rather than reimplementing it
+- Inheriting a server, Docker image, or CI pipeline and needing to inspect what's running, installed, or failing
+- Constructing a one-line pipeline that solves a problem otherwise requiring a full Python script
+- Translating between distributions: apt on Debian/Ubuntu vs dnf on Red Hat-family vs pacman on Arch
+
+## When NOT to Use
+
+- For the deep details of bash as a programming language — use the Bash Quick Reference instead
+- For regex/grep/sed/awk/pipeline composition in full — use the Text Processing Quick Reference
+- For DNS-specific queries and BIND — use the DNS and Networking card
 
 ## Mental model
 

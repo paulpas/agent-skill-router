@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: dsl-engineering
 description: Designs and implements domain-specific languages (embedded DSLs with Python/Go idioms, external DSLs with PEG/ANTLR/Lark parsers) for configuration, query, and rule engines in production systems.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # DSL Engineering and Design Architect
 

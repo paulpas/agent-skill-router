@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: aws-rds
 description: Deploys managed relational databases (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server) with multi-AZ failover, automated backups, read replicas, and encryption for production-grade database infrastructure.
 license: MIT
@@ -19,7 +23,15 @@ metadata:
     - weak security
   response_profile:
     verbosity: high
+
+
+
+
 ---
+
+
+
+
 ---
 
 ## When to Use

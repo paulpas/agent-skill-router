@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: extensible-framework-design
 description: Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-application-methodology, coding-knowledge-transfer-methods
+
+
+
+
 ---
+
+
+
+
 
 # Extensible Framework Design
 

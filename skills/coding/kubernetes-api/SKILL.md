@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-api
 description: Integrates with the Kubernetes API via the official client-python SDK
   to manage pods, deployments, services, ConfigMaps, Secrets, CRDs, and cluster resources
@@ -6,7 +10,7 @@ description: Integrates with the Kubernetes API via the official client-python S
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: kubernetes api, k8s python client, client-python, kubectl python, kubernetes
     pods, kubernetes deployments, k8s custom resources, kubernetes operations
@@ -31,7 +35,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-docker-api, coding-terraform-sdk, coding-ansible-api
+
+
+
+
 ---
+
+
+
+
 # Kubernetes API & client-python Integration
 
 Integrates with the Kubernetes API using the official `kubernetes` Python client (`client-python`) to manage pods, deployments, services, ConfigMaps, Secrets, ingress, Custom Resource Definitions (CRDs), and cluster-wide resources. Supports both in-cluster and kubeconfig-based authentication.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-router-system
 description: Implements and configures the AI agent skill routing system for auto-loading,
   trigger matching, confidence scoring, and skills-index generation across orchestration
@@ -6,7 +10,7 @@ description: Implements and configures the AI agent skill routing system for aut
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: agent
   triggers: skill router, auto-routing, trigger matching, skills-index, agent dispatch,
     adaptive routing, prompt injection, task routing
@@ -30,7 +34,15 @@ version: "1.0.0"
   - diagrams
   - do-dont
   related-skills: confidence-based-selector, parallel-skill-runner, dependency-graph-builder
+
+
+
+
 ---
+
+
+
+
 # Agent Skill Router System
 
 Configures and maintains the AI agent skill routing infrastructure that automatically matches conversational triggers to specialized skill documents, manages the skills-index registry, and ensures reliable auto-loading of contextual expertise. This system enforces deterministic fallback chains, prevents routing drift, and aligns all dispatch logic with The 5 Laws of Elegant Defense (see `code-philosophy`).

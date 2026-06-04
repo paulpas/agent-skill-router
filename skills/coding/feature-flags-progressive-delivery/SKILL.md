@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: feature-flags-progressive-delivery
 description: Implements feature flag systems with progressive delivery, A/B testing, and gradual rollout strategies for safe application-level feature deployment without code changes.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: feature flags, progressive delivery, canary release, A/B testing, flag management, gradual rollout, feature toggle, how do i safely roll out new features
   archetypes:
@@ -23,7 +27,15 @@ version: "1.0.0"
   scope: implementation
   output-format: code
   related-skills: secure-release-pipeline, software-delivery-pipelines, microservice-resilience-patterns
+
+
+
+
 ---
+
+
+
+
 # Feature Flag Progressive Delivery
 Implements feature flag systems for controlled, progressive delivery of application features — enabling safe rollouts, A/B testing, and instant rollbacks without redeploying code.
 ## TL;DR Checklist

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gcp-cloud-dns
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Google Cloud DNS
 
 Deploy and manage google cloud dns infrastructure as part of your cloud-native environment.

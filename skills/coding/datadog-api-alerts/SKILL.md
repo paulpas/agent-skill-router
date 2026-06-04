@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: datadog-api-alerts
 description: Implements alert management using the Datadog API, focusing on creating effective alerts that respond to service conditions with best practices.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 
 # Datadog Alerts Management
 Implements alert creation and management leveraging the Datadog API. This skill ensures alerts are configured properly to monitor critical service health metrics and respond appropriately to incidents.

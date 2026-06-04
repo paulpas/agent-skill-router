@@ -1,17 +1,29 @@
 ---
+
+
+
+
 name: java-kotlin-best-practices
 description: Implements best practices for Java/Kotlin applications using Spring Boot, leveraging Maven/Gradle, JVM tuning, and Jakarta EE patterns.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: java best practices, kotlin best practices, spring boot, maven, gradle, jvm tuning, jakarta ee
   role: implementation
   scope: implementation
   output-format: code
   related-skills: java-security-best-practices, kotlin-coroutines
+
+
+
+
 ---
+
+
+
+
 
 # Java/Kotlin Best Practices
 

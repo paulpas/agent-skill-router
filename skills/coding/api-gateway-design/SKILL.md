@@ -1,15 +1,17 @@
 ---
+
+
+
+
 name: api-gateway-design
 description: Designs API gateway patterns for request routing, rate limiting, authentication,
   response caching, and request aggregation across microservice architectures.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: API gateway, api-gateway, request routing, rate limiting, auth proxy,
-    API aggregation, load balancing, backend for frontend, BFF pattern, how do i route
-    requests
+  triggers: API gateway, api-gateway, request routing, rate limiting, auth proxy, API aggregation, load balancing, backend for frontend API aggregation
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ version: "1.0.0"
   - do-dont
   related-skills: integration-patterns, rest-api-patterns, microservice-resilience-patterns,
     grpc-patterns
+
+
+
+
 ---
+
+
+
+
 # API Gateway Design
 
 Designs and implements API gateway patterns that serve as the single entry point for client requests, handling routing, authentication, rate limiting, caching, and request aggregation across microservice architectures. Covers both centralized gateways (Kong, NGINX) and code-level implementations (FastAPI-based).

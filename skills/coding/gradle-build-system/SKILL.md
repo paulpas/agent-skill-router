@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gradle-build-system
 description: Implements Gradle build configurations (Kotlin DSL, version catalogs, multi-project builds, dependency locking, configuration cache) for Java and Kotlin projects.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples, config]
   related-skills: maven-build-system
+
+
+
+
 ---
+
+
+
+
 
 # Gradle Build System
 

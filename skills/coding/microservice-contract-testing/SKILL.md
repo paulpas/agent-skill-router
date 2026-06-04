@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: microservice-contract-testing
 description: Implements consumer-driven contract testing (PACT) with mock services and test doubles to prevent API breaking changes across microservice boundaries in distributed systems.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: microservices-architecture, idempotent-distributed-operations, observability-patterns
+
+
+
+
 ---
+
+
+
+
 
 # Microservice Contract Testing
 

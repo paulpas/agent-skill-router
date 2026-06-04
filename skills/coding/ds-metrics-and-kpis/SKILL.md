@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-metrics-and-kpis
 compatibility: opencode
 completeness: 95
@@ -33,7 +37,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Metrics and KPIs
 
 Comprehensive guide to metrics and kpis in machine learning and data science workflows.

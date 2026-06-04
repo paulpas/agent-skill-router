@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: your-edge
 description: Implements a systematic framework for discovering, documenting, and validating
   your unique trading edge through statistical analysis, walk-forward testing, Monte
@@ -6,11 +10,9 @@ description: Implements a systematic framework for discovering, documenting, and
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: trading
-  triggers: trading edge, edge discovery, alpha generation, edge validation, statistical
-    advantage, walk forward test, monte carlo simulation, performance decay, competitive
-    moat, your edge
+  triggers: trading edge, edge discovery, alpha generation, edge validation, statistical advantage, walk forward test, monte carlo simulation, performance decay advantage
   archetypes:
   - tactical
   anti_triggers:
@@ -31,7 +33,15 @@ version: "1.0.0"
   - examples
   related-skills: fundamentals-trading-edge, backtest-walk-forward, backtest-sharpe-ratio,
     ai-regime-classification
+
+
+
+
 ---
+
+
+
+
 # Your Edge Framework
 
 Quantitative strategist discovering, documenting, and validating your unique trading edge — the statistical advantage that makes your strategy profitable over time. An edge is not a signal; it's a persistent, repeatable mismatch between market behavior and the information available to other participants.

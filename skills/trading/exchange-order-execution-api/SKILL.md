@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: exchange-order-execution-api
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Execute and manage orders across multiple exchanges with consistency and reliability
 
 **Philosophy:** Order execution is the final step in the trading pipeline; it must be precise, auditable, and resilient to failure

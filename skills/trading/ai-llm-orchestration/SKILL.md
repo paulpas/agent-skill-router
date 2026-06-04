@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-llm-orchestration
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # LLM Orchestration for Trading: The 5 Laws of AI-Powered Analysis
 
 **Role:** AI Integration Engineer — applies to LLM provider selection, structured output generation, prompt engineering, and cost optimization for trading analysis systems.

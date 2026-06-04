@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: monorepo-workspace-patterns
 description: Implements monorepo workspace management patterns across npm, pnpm, yarn, Cargo, and uv including dependency deduplication, build orchestration, shared configuration, and cross-package references for multi-package repository architectures.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
   related-skills: coding-package-ecosystem-navigator, coding-modern-python-packaging, coding-ci-cd-pipeline-design, coding-framework-lifecycle
+
+
+
+
 ---
+
+
+
+
 
 # Monorepo Workspace Patterns
 

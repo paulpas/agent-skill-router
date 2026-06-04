@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: input-validation-patterns
 description: Implements production input validation and sanitization patterns including Pydantic v2 schemas, recursive nested validation, custom validators with error accumulation, allowlist enforcement, and type coercion for secure API endpoints.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Input Validation & Sanitization Patterns
 

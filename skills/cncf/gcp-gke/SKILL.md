@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gcp-gke
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Google Kubernetes Engine
 
 Deploy and manage google kubernetes engine infrastructure as part of your cloud-native environment.

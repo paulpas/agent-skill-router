@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: multi-tenant-domain-isolation
 description: Implements multi-tenant domain isolation patterns (schema-per-tenant, row-level tenant scoping, isolated bounded contexts) to prevent data leakage and enforce strict tenant boundaries in SaaS applications.
 license: MIT
@@ -27,7 +31,15 @@ metadata:
     - do-dont
     - examples
   related-skills: domain-driven-design, monolith-architecture, api-gateway-domain-routing
+
+
+
+
 ---
+
+
+
+
 
 # Multi-Tenant Domain Isolation
 

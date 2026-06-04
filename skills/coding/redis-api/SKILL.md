@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: redis-api
 description: Integrates Redis Stack modules (JSON, Search, TimeSeries) for versatile data manipulation including caching, text search, time-series analytics, and real-time data processing with the redis-py SDK.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 
 # Redis Stack API Skill
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: plaid-api
 description: Implements Plaid API integration (Auth, Transactions, Identity, Investments,
   Income) using plaid-python SDK with Link token flow, webhook verification, access
@@ -6,11 +10,9 @@ description: Implements Plaid API integration (Auth, Transactions, Identity, Inv
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: plaid, plaid link, plaid auth, plaid transactions, plaid identity, plaid
-    investments, plaid income verification, how do i integrate plaid, bank account
-    linking
+  triggers: plaid, plaid link, plaid auth, plaid transactions, plaid identity, plaid investments, plaid income verification, how do i integrate plaid investments
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-stripe-api, coding-shopify-api, coding-paypal-api
+
+
+
+
 ---
+
+
+
+
 # Plaid API Integration
 
 Implements production-grade Plaid API integration for bank account linking, transaction data retrieval, identity verification, investment holdings, and income confirmation. When loaded, this skill makes the model implement the `plaid-python` SDK including: Link token creation and frontend Link flow, access token exchange and secure storage, Auth API for account/routing numbers, Transactions API for syncing bank transactions, Identity API for owner verification, Investments API for portfolio data, Income API for employment/income verification, and webhook verification using HMAC-SHA256.

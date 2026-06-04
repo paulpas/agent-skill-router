@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: graphql-subscriptions
 description: Implements real-time GraphQL subscriptions with Strawberry Python, WebSocket protocol, PubSub patterns, and client reconnection handling for live data delivery.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: graphql-api-design, graphql-error-handling-validation, graphql-dataloader-pattern
+
+
+
+
 ---
+
+
+
+
 
 # GraphQL Subscriptions & Real-Time Updates
 

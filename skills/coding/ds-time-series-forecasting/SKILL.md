@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-time-series-forecasting
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Time Series Forecasting
 
 Comprehensive guide to time series forecasting in machine learning and data science workflows.

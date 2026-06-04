@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-community-detection
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Community Detection
 
 Comprehensive guide to community detection in machine learning and data science workflows.

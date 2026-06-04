@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: fundamentals-risk-management-basics
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Guide an AI coding assistant to implement robust risk management that prevents catastrophic losses while allowing trading opportunities to breathe
 
 **Philosophy:** Risk management is not about avoiding risk but about optimizing the risk-reward ratio to ensure survival. Capital preservation comes first; without it, no amount of profitable trading matters. Systems must have multiple layers of protection and clear kill-switch mechanisms.

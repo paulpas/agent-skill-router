@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-maximum-likelihood
 compatibility: opencode
 completeness: 95
@@ -33,7 +37,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Maximum Likelihood Estimation
 
 Comprehensive guide to maximum likelihood estimation in machine learning and data science workflows.

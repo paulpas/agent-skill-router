@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-quality-assurance
 description: Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - examples
     - do-dont
   related-skills: software-testing-strategy, code-quality-policies, dependency-supply-chain-security, observability-patterns, production-readiness, software-engineering-principles
+
+
+
+
 ---
+
+
+
+
 
 # Software Quality Assurance
 

@@ -1,14 +1,17 @@
 ---
+
+
+
+
 name: software-testing-strategy
 description: Implements comprehensive testing strategies (unit, integration, property-based,
   mocking, fixture design) to validate software correctness and prevent regressions.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: testing strategy, unit test, integration test, property-based testing,
-    test coverage, mocking, assertion, pytest, test suite design, how do i write tests
+  triggers: testing strategy, unit test, integration test, property-based testing, test coverage, mocking, assertion, pytest test coverage
   archetypes:
   - tactical
   - generation
@@ -30,7 +33,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: test-driven-development, refactoring-techniques, code-quality-policies
+
+
+
+
 ---
+
+
+
+
 # Software Testing Strategy
 
 Implements comprehensive testing strategies across the full stack to validate software correctness and prevent regressions. Models this skill as a senior QA engineer who designs test architectures, selects appropriate strategies per context, and writes production-grade test suites using pytest conventions with property-based discovery for edge case coverage.

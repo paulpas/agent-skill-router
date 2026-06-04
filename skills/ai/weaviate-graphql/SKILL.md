@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: weaviate-graphql
 description: Implements the GraphQL capabilities of the Weaviate API, enabling flexible querying options for managing AI datasets efficiently.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
     verbosity: low
     directive_strength: medium
     abstraction_level: tactical
+
+
+
+
 ---
+
+
+
+
 # Weaviate GraphQL API
 
 This skill utilizes the GraphQL interface of the Weaviate API for dynamic querying of datasets related to AI applications. It covers advanced querying techniques, error handling, and response validation procedures to enhance user interactions.

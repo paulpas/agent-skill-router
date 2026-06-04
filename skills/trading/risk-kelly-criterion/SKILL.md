@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-kelly-criterion
 description: Calculates optimal position sizing using Kelly Criterion and Fractional Kelly formulas to maximize geometric growth while controlling drawdown risk in algorithmic trading systems.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: risk-stop-loss, risk-position-sizing, risk-kill-switches
+
+
+
+
 ---
+
+
+
+
 
 # Kelly Criterion & Optimal Position Sizing
 

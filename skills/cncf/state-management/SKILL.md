@@ -1,4 +1,9 @@
 ---
+
+
+
+
+
 name: state-management
 compatibility: opencode
 completeness: 95
@@ -38,7 +43,17 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
-------
+
+
+
+
+
+---
+
+
+
+
+---
 # State Management
 
 Manages application state — database schemas, cached data, and persisted state — across deployment stages. Ensures data consistency when old and new versions of a service coexist during deployment transitions.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: aws-vpc
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # VPC (Virtual Private Cloud)
 
 Design and configure isolated cloud networks with subnets, route tables, security groups, and advanced networking features for secure, scalable infrastructure.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: google-cloud-sdk
 description: Integrates Google Cloud services (Compute Engine, Cloud Storage, BigQuery,
   Cloud Functions, GKE, Pub/Sub) using the Google Cloud Python client libraries with
@@ -6,7 +10,7 @@ description: Integrates Google Cloud services (Compute Engine, Cloud Storage, Bi
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: google cloud sdk, gcp python, cloud storage, bigquery, compute engine,
     pub sub, how do i use google cloud from python
@@ -26,7 +30,15 @@ version: "1.0.0"
   scope: implementation
   output-format: code
   related-skills: aws-sdk, azure-sdk, cloudflare-api
+
+
+
+
 ---
+
+
+
+
 # Google Cloud SDK (GCP) Integration Patterns
 
 Integrates Google Cloud Platform services using the idiomatic Python client libraries. Covers authentication via application-default credentials, resource patterns for Compute Engine, Cloud Storage, BigQuery, Cloud Functions, GKE, and Pub/Sub, with consistent error handling and pagination.

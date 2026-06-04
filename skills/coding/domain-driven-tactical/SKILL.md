@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: domain-driven-tactical
 description: Implements tactical DDD patterns including Entities, Value Objects, Aggregates, Repositories, Domain Events, and Factories with Python dataclasses and strict invariant enforcement.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: domain-driven-strategic, architecture-microservices
+
+
+
+
 ---
+
+
+
+
 
 # Tactical Domain-Driven Design — Entities, Value Objects & Aggregate Roots
 

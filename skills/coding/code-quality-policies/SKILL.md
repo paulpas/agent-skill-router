@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: code-quality-policies
 compatibility: opencode
 completeness: 95
@@ -33,7 +37,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Code Quality Policies
 
 Implementation guide for establishing and enforcing code quality standards in repositories, including linting configuration, code formatting rules, testing requirements, complexity limits, and automated policy enforcement through CI/CD pipelines.

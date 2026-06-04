@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: domain-service-orchestration
 description: Implements domain service orchestration for cross-aggregate business operations in DDD — coordinating multiple aggregate roots while preserving encapsulation, handling compensation on failure, and maintaining transaction boundaries without leaking coordination logic into domain models.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: ddd-command-pattern, cross-domain-workflow-sagas, domain-driven-design, domain-repository-pattern, ddd-aggregate-lifecycle
+
+
+
+
 ---
+
+
+
+
 
 # Domain Service Orchestration
 

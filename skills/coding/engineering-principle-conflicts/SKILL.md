@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: engineering-principle-conflicts
 description: Resolves contradictions between SOLID, DRY, KISS, and YAGNI principles using a structured decision framework with trade-off analysis and domain-context scoring for architecture decisions.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: engineering-principles, software-design-principles, design-patterns-and-principles, software-engineering-principles
+
+
+
+
 ---
+
+
+
+
 
 # Engineering Principle Conflict Resolver
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: process-releases
 compatibility: opencode
 completeness: 95
@@ -33,7 +37,15 @@ metadata:
     abstraction_level: strategic
 version: "1.0.0"
 template_source: https://contribute.cncf.io/maintainers/github/releases/
+
+
+
+
 ---
+
+
+
+
   related-skills: cncf-argo, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 

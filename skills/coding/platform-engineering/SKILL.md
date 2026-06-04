@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: platform-engineering
 description: Designs internal developer platforms (IDPs) with golden paths, self-service
   infrastructure portals, template-driven deployments, and developer experience metrics
@@ -6,7 +10,7 @@ description: Designs internal developer platforms (IDPs) with golden paths, self
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: platform engineering, internal developer platform, IDP, golden paths,
     self-service infrastructure, Backstage.io, developer experience metrics, how do
@@ -33,7 +37,15 @@ version: "1.0.0"
   - do-dont
   related-skills: coding-cloud-native-architecture, cncf-kubernetes, coding-software-delivery-pipelines,
     coding-security-review
+
+
+
+
 ---
+
+
+
+
 # Platform Engineering Framework
 
 Acting as a platform engineer who designs and implements internal developer platforms that reduce cognitive load and accelerate feature delivery. This skill makes the model create self-service infrastructure solutions, golden path templates, platform team operating models, and Developer Experience metrics — treating developers as the product whose friction is systematically eliminated.

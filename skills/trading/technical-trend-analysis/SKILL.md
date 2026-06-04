@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-trend-analysis
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Determine market trend direction and strength for directional trading decisions
 
 **Philosophy:** The trend is your friend; identifying trends early and confirming continuations maximizes reward/risk

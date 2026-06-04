@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-data-profiling
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Data Profiling
 
 Comprehensive guide to data profiling in machine learning and data science workflows.

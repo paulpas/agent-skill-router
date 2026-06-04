@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: singleton-pattern
 description: Implements the GoF Singleton pattern for controlled object lifecycle management in Python using module-level singletons, metaclass-based enforcement, threading-safe lazy initialization, and async-compatible variants.
 archetypes:
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: dependency-inversion-principle, factory-method, creational-design-patterns
+
+
+
+
 ---
+
+
+
+
 
 # Singleton Pattern
 

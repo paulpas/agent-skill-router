@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-sourcing-strategy
 description: Discovers and pre-screens software frameworks using ecosystem health analysis, changelog-driven requirement extraction, compatibility matrix evaluation, and AI-assisted signal scoring to shortlist candidates before formal selection.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-requirements, framework-adoption-strategy, cve-dependency-management, software-maintainability
+
+
+
+
 ---
+
+
+
+
 
 # Framework Sourcing Strategy
 

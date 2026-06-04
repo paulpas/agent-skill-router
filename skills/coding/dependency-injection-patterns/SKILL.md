@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: dependency-injection-patterns
 description: Implements dependency injection patterns (constructor injection, factory patterns, IoC containers, composition root) with Protocol-based interfaces for loose coupling and testable software architecture.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Dependency Injection Patterns
 

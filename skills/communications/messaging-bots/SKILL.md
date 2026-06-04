@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: messaging-bots
 
 description: Develops integration patterns for messaging bots across platforms, focusing on automated interactions.
@@ -18,7 +22,15 @@ metadata:
       directive_strength: high
   scope: infrastructure
   related-skills: communications/messaging-channels, communications/messaging-microsoft-teams
+
+
+
+
 ---
+
+
+
+
 
 # Messaging Bots Integration
 Implements patterns for developing messaging bots, focusing on automated interactions using various APIs.

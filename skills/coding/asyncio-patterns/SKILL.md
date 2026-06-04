@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: asyncio-patterns
 description: Implements Python asyncio patterns (TaskGroup, semaphores, queues, context
   management) with typed coroutines, proper error handling, and structured concurrency
@@ -6,11 +10,9 @@ description: Implements Python asyncio patterns (TaskGroup, semaphores, queues, 
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: asyncio, async await, coroutine, event loop, TaskGroup, async context
-    manager, aiohttp, structured concurrency, python async, asyncio.timeout, gather
-    as_completed
+  triggers: asyncio, async await, coroutine, event loop, TaskGroup, async context manager, aiohttp, structured concurrency manager
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: async-programming, automated-testing
+
+
+
+
 ---
+
+
+
+
 # Python AsyncIO Patterns
 
 Implements production-grade asyncio patterns for Python applications — structured concurrency with TaskGroup, bounded concurrency via semaphores and queues, typed coroutines with proper error propagation, and async resource management using context managers. This skill covers the full lifecycle from event loop setup to graceful shutdown in Python 3.12+.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: functional-programming-patterns
 description: Implements functional programming patterns (pure functions, immutable transforms, composition, currying, Option/Either types, data pipelines) for predictable, testable, and side-effect-free code.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: immutable-data-patterns, software-error-handling, dependency-inversion-principle
+
+
+
+
 ---
+
+
+
+
 
 # Functional Programming Patterns
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: pinecone-api-tooling
 license: MIT
 compatibility: opencode
@@ -19,7 +23,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Pinecone API Tooling
 

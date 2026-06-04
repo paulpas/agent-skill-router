@@ -1,7 +1,32 @@
 ---
+
+
+
+
 name: code-review-skills
 
-description: Implements skills and strategies to enhance the effectiveness of code reviews, promoting quality, collaboration, and knowledge sharing within development teams.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: code review skills, peer review, quality assurance, knowledge sharing\n  archetypes: [implementation, evaluation]\n  anti_triggers: [vague feedback, bypass reviews]\n  response_profile: medium\n---
+description: Implements skills and strategies to enhance the effectiveness of code reviews, promoting quality, collaboration, and knowledge sharing within development teams.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: code review skills, peer review, quality assurance, knowledge sharing
+  archetypes: [implementation, evaluation]
+  anti_triggers: [vague feedback, bypass reviews]
+  response_profile: medium
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+---
+
+
+
+
 # Enhanced Code Review Skills Content
 
 ## Significance of Code Review Skills in Development

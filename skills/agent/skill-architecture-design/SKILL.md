@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-architecture-design
 description: Designs atomic AI agent skill architecture using granularity heuristics, monolith detection algorithms, and network topology patterns to produce modular, independently-testable skill sets that maximize router matching precision.
 license: MIT
@@ -27,7 +31,15 @@ metadata:
     - do-dont
     - diagrams
   related-skills: skill-testing-methodology, trigger-engineering, skill-observability
+
+
+
+
 ---
+
+
+
+
 
 # Skill Architecture Design
 

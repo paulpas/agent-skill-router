@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: google-workspace-api
 description: Integrates with Google Workspace APIs (Gmail, Drive, Calendar, Docs,
   Sheets, Admin) using google-api-python-client for programmatic access and automation.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: google workspace, gmail api, google drive api, google calendar, google
     sheets api, google api client, service account
@@ -30,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-microsoft-graph-api, coding-atlassian-api, coding-airtable-api
+
+
+
+
 ---
+
+
+
+
 
 # Google Workspace API Integration
 

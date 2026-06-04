@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: datadog-api-metrics
 description: Implements metrics submission to Datadog API using `datadog-api-client` with best practices for batching and tagging.
 license: MIT
@@ -26,7 +30,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 Implements production-grade metrics submission to Datadog using `datadog-api-client`. Metrics are batched for efficiency and tagged for categorization. Adheres to Datadog best practices to ensure data integrity and efficient API usage.
 
 ## TL;DR Checklist

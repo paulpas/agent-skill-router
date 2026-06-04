@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: hint-based-prompting
 description: Applies subtle contextual hints instead of explicit step-by-step instructions
   to guide LLM output naturally, reducing token overhead and improving generation
@@ -6,7 +10,7 @@ description: Applies subtle contextual hints instead of explicit step-by-step in
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: hints, hint-based prompting, system hints, contextual guidance, token
     efficiency, prompt framing, how do i use hints in prompts, subtle prompting
@@ -32,7 +36,15 @@ version: "1.0.0"
   - examples
   related-skills: prompt-engineer, instruction-engineering, agent-context-management,
     output-formatting
+
+
+
+
 ---
+
+
+
+
 # Hint-Based Prompting for LLMs
 
 Implements contextual hinting — using brief domain framing and environmental constraints instead of verbose explicit instructions — to guide LLM generation naturally while saving context window tokens. When this skill is active, the model replaces long constraint lists with precise scenario descriptions that make desired outputs feel inevitable rather than commanded.

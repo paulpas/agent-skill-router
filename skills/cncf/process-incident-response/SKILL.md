@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: process-incident-response
 compatibility: opencode
 completeness: 95
@@ -35,7 +39,15 @@ metadata:
     abstraction_level: strategic
 version: "1.0.0"
 template_source: https://github.com/cncf/tag-security/blob/main/project-resources/templates/INCIDENT-RESPONSE.md
+
+
+
+
 ---
+
+
+
+
 # CNCF Incident Response Process
 
 Creates or updates an incident response plan with the step-by-step process for triaging, remediating, and disclosing a confirmed security vulnerability.

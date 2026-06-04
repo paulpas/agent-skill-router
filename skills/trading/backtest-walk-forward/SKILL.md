@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: backtest-walk-forward
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Backtest Validation Engineer — implements walk-forward optimization to validate strategy robustness, prevent overfitting, and ensure out-of-sample performance consistency.
 
 **Philosophy:** Forward-Looking Validation — strategies should be tested as if deployed in real-time, with parameters optimized on rolling windows and validated on unseen future data to simulate real trading conditions.

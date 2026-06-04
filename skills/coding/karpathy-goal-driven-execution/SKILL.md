@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: karpathy-goal-driven-execution
 description: Drives implementation through verifiable success criteria — transform vague tasks into testable goals, write reproduction tests before fixes, loop until criteria pass, checkpoint after every significant step, and declare uncertainty explicitly rather than silently proceeding.
 license: MIT
@@ -29,7 +33,15 @@ metadata:
     - do-dont
     - examples
   related-skills: karpathy-coding-mindset, karpathy-surgical-changes, test-driven-development, debugging-methodology
+
+
+
+
 ---
+
+
+
+
 
 # Karpathy Goal-Driven Execution
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-bias-variance-tradeoff
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Bias-Variance Tradeoff
 
 Comprehensive guide to bias-variance tradeoff in machine learning and data science workflows.

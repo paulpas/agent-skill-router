@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: event-schema-versioning
 description: Implements event schema versioning strategies (semantic versioning, forward/backward compatibility, schema registry, deprecation lifecycle) to evolve event contracts in production event-driven systems without breaking consumers.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
   related-skills: event-driven-patterns, event-sourcing-pattern, domain-events, api-versioning-strategies, microservices-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Event Schema Versioning
 

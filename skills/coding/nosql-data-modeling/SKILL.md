@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: nosql-data-modeling
 description: Provides comprehensive patterns and best practices for modeling data in NoSQL databases like MongoDB, Cassandra, and DynamoDB.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: nosql, mongodb, cassandra, dynamodb, data modeling, schema design
   archetypes:
@@ -26,7 +30,15 @@ version: "1.0.0"
     - examples
     - do-dont
   related-skills: database-design-modeling, api-design-principles
+
+
+
+
 ---
+
+
+
+
 # NoSQL Data Modeling for MongoDB, Cassandra, and DynamoDB
 This skill provides comprehensive patterns and best practices for modeling data in popular NoSQL databases including MongoDB, Cassandra, and DynamoDB. When this skill is loaded, the model produces concrete examples, migration scripts, and query optimization patterns — not generic advice.
 ## TL;DR Checklist

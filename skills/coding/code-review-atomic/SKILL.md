@@ -1,7 +1,38 @@
 ---
+
+
+
+
+
+
 name: code-review-atomic
 
-description: Implements a structured approach to code reviews that enhances quality, performance, and knowledge sharing among team members.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: code review, peer review, quality assurance, code quality\n  archetypes: [implementation, evaluation]\n  anti_triggers: [ad-hoc reviews, lack of documentation]\n  response_profile: medium\n---\n## Expanded Code Review Atomic Content
+description: Implements a structured approach to code reviews that enhances quality, performance, and knowledge sharing among team members.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: code review, peer review, quality assurance, code quality
+  archetypes: [implementation, evaluation]
+  anti_triggers: [ad-hoc reviews, lack of documentation]
+  response_profile: medium
+
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+
+---
+
+
+
+
+
+\n## Expanded Code Review Atomic Content
 
 ### The Significance of Code Reviews in Development
 Code reviews play a vital role in ensuring the quality and maintainability of software projects. Here are several core benefits:

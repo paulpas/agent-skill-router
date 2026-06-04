@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: datadog-api-dashboards
 description: Creates and manages dashboards in Datadog API using `datadog-api-client`, with a focus on template widget creation, layout management, and configuration best practices.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 
 # Datadog Dashboards Management
 Implements dashboard creation and management in Datadog using the `datadog-api-client`. This skill covers creating various types of widgets, configuring layout settings, and ensuring that best practices are followed for performance and usability.

@@ -1,29 +1,53 @@
 ---
-title: "Python for DevOps — Quick Reference"
-audience: "Engineers fluent in shell who are being pulled into Python for larger ops automation, IaC and CI."
-status: "complete"
+
+
+
+
+name: python-devops
+description: Python reference for ops teams — shelling out, file manipulation, structured data parsing, CLI tools, testing, cloud SDKs, Kubernetes API, IaC and CI/CD patterns.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: devops
+  triggers: python devops, ops automation, infrastructure as code, iac, ci cd, kubernetes api, how do i write ops python scripts, subprocess
+  role: reference
+  scope: infrastructure
+  output-format: code
+  related-skills: bash-quick-reference,text-processing-quick-reference
+  archetypes: educational
+  anti_triggers: implement from scratch, architect a system, build infrastructure, design patterns
+  response_profile:
+    verbosity: high
+    directive_strength: low
+    abstraction_level: operational
+
+
+
+
 ---
 
-# Python for DevOps
-### A Quick Reference for Ops, IaC, and CI/CD
 
----
 
-> A reference for using Python the way ops teams use it: shelling out,
-> manipulating files, parsing structured data, building CLI tools,
-> writing tests, talking to clouds and Kubernetes.
 
-## When to reach for Python (over shell)
 
-- Logic that doesn't fit one screen of bash. Anything past ~50 lines of
-  control flow tends to read better in Python.
-- Real data structures: nested dicts, typed records, dataframes.
-- Anything you'd want to *test*. Bash testing exists; pytest is far
-  more pleasant.
-- HTTP, JSON / YAML / TOML / XML, cloud SDKs, Kubernetes API.
-- Cross-platform (especially Windows compatibility) without rewriting.
-- **Don't** reach for Python when the task is plain
-  pipe-A-into-B-into-C; bash is shorter and faster to start up.
+# Python for DevOps — Quick Reference
+
+Reference for using Python the way ops teams use it: shelling out, manipulating files, parsing structured data, building CLI tools, writing tests, talking to clouds and Kubernetes.
+
+## When to Use
+
+- Logic that doesn't fit one screen of bash (anything past ~50 lines of control flow reads better in Python)
+- Working with real data structures: nested dicts, typed records, dataframes
+- Writing testable ops automation where pytest is far more pleasant than bash testing
+- HTTP, JSON/YAML/TOML/XML parsing, cloud SDKs, and Kubernetes API interaction
+- Cross-platform work (especially Windows compatibility) without rewriting
+
+## When NOT to Use
+
+- For plain pipe-A-into-B-into-C tasks — bash is shorter and faster to start up
+- Simple CLI glue where subprocess calls would add unnecessary complexity
+- Performance-critical loops where compiled languages are more appropriate
 
 ## Mental model
 

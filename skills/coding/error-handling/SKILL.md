@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: error-handling
 description: Implements modern Python error handling patterns including custom exception hierarchies, context propagation, result types, and graceful degradation for resilient production systems.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: software-engineering-principles, software-maintainability, api-design-principles
+
+
+
+
 ---
+
+
+
+
 
 # Error Handling in Production Python
 

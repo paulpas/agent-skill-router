@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-reinforcement-learning
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Design and implement RL agents that learn optimal trading strategies through interaction with market environments
 
 **Philosophy:** Trading is a sequential decision-making problem where agents learn from trial and error. Emphasize sample efficiency, stability, and generalization across market regimes.

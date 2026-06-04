@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: license-compliance-and-open-source-policy
 description: Implements strategies and guidelines for managing software licensing compliance and formulating open-source policies in software engineering practices.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: coding-code-quality-policies, coding-open-source-contributions
+
+
+
+
 ---
+
+
+
+
 
 # License Compliance and Open-Source Policy
 Implements strategies and guidelines for managing software licensing compliance and formulating open-source policies in software engineering practices.

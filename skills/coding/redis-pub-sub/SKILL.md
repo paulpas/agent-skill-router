@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: redis-pub-sub
 description: Implements Redis Pub/Sub messaging patterns for real-time, asynchronous communication between distributed system components using channel-based publish and subscribe operations.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 
 # Redis Pub/Sub Messaging Operations
 

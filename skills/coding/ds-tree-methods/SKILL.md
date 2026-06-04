@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-tree-methods
 compatibility: opencode
 completeness: 95
@@ -33,7 +37,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Tree-Based Methods
 
 Comprehensive guide to tree-based methods in machine learning and data science workflows.

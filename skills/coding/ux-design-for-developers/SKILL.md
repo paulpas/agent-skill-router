@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ux-design-for-developers
 description: Implements UX design patterns and accessibility standards for backend engineers building user-facing features, covering user flows, responsive layouts, WCAG compliance, and usability heuristics.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: design-systems, css-architecture, component-architecture
+
+
+
+
 ---
+
+
+
+
 
 # UX Design Patterns for Developers
 

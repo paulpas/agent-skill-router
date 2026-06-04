@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: square-api
 description: Implements Square API integration (Payments, Catalog, Inventory, Orders,
   Customers, Terminal) using square-sdk Python with webhook signature verification,
@@ -6,11 +10,9 @@ description: Implements Square API integration (Payments, Catalog, Inventory, Or
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: square, square payments api, square catalog, square inventory, square
-    orders, square webhooks, square terminal, how do i integrate square payments,
-    retail pos
+  triggers: square, square payments api, square catalog, square inventory, square orders, square webhooks, square terminal, how do i integrate square payments orders
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-stripe-api, coding-paypal-api, coding-shopify-api
+
+
+
+
 ---
+
+
+
+
 # Square API Integration
 
 Implements production-grade Square API integration for payments, catalog management, inventory tracking, order processing, customer management, and in-person Terminal payments. When loaded, this skill makes the model implement the `square` Python SDK patterns including: Payment API with idempotency keys, Catalog API batch upserts, Inventory API real-time counts, Orders API with line items, Customers API for CRM, Webhook signature verification using HMAC-SHA256, and Square Terminal for in-person retail payments.

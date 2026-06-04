@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: openai-api
 description: Integrates OpenAI API (GPT-5, Responses API, Embeddings, DALL-E 3, Whisper,
   Realtime) using the openai Python SDK v2.38+ with proper error handling and async
@@ -6,7 +10,7 @@ description: Integrates OpenAI API (GPT-5, Responses API, Embeddings, DALL-E 3, 
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: openai, gpt-5, responses api, chat completions, function calling, openai
     embeddings, how do i use the openai api, text-embedding-3-large
@@ -31,7 +35,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: coding-anthropic-api, coding-azure-openai, coding-langchain
+
+
+
+
 ---
+
+
+
+
 # OpenAI API Integration
 
 Integrates OpenAIs GPT-5, GPT-5-mini, GPT-5-nano, GPT-4o, and embedding models using the `openai` Python SDK (v2.38+). When loaded, this skill makes the model implement OpenAI API calls with proper client initialization, error handling, streaming, async patterns, and the new Responses API.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: iac-infrastructure
 description: Implements advanced IaC engineering patterns including modular Terraform architecture, policy-as-code with OPA, GitOps with ArgoCD, Terratest-driven testing, and cross-cloud multi-account resource management for production infrastructure.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, config, examples]
   related-skills: coding-platform-engineering, cncf-kubernetes, coding-software-delivery-pipelines, cncf-terraform
+
+
+
+
 ---
+
+
+
+
 # Infrastructure as Code Engineering
 Acts as a senior infrastructure engineer who designs, implements, and validates production-grade IaC systems. This skill makes the model build modular Terraform architectures with proper state isolation, enforce compliance through policy-as-code (OPA/Conftest), orchestrate deployments via GitOps workflows (ArgoCD), write automated tests using Terratest, and manage resources across multiple cloud providers and accounts.
 ## TL;DR Checklist

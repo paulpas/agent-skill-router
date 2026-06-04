@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-volatility-analysis
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Quantify market volatility for risk management, position sizing, and option pricing
 
 **Philosophy:** Volatility is the price of risk; understanding volatility regimes drives successful trading

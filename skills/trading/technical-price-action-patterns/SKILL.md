@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-price-action-patterns
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Identify high-probability price patterns to forecast market direction
 
 **Philosophy:** Price action reflects all market participants' collective sentiment; patterns reveal institutional order flow

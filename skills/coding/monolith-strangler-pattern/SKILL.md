@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: monolith-strangler-pattern
 description: Implements incremental migration from monolithic applications to microservices using the strangler fig pattern with anti-corruption layer routing, dual-write database synchronization, feature flag management, and safe rollback strategies.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: microservices-architecture, event-driven-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Monolith Strangler Fig Migration
 

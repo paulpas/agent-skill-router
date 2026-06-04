@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-requirements-validation
 description: Validates code against framework conventions and enforces build tool configuration compliance through automated linting pipelines, schema validation, and CI integration.
 license: MIT
@@ -27,7 +31,15 @@ metadata:
     - examples
     - do-dont
   related-skills: framework-utilization, framework-requirements, code-validation, build-test-validation
+
+
+
+
 ---
+
+
+
+
 
 # Framework Requirements Validation
 

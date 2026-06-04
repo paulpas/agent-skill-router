@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-crds-management
 description: Manages Kubernetes Custom Resource Definitions, including creation, updates, and best practices for usage.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance]
+
+
+
+
 ---
+
+
+
+
 
 # Kubernetes Custom Resource Definitions Management
 

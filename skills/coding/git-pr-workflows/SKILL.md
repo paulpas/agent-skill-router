@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: git-pr-workflows
 description: Implements best practices for managing pull requests (PRs) in Git, including workflow automation and quality control strategies.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: coding
   triggers: git, pull request, PR workflows, code review, branching strategies
   archetypes: [implementation, orchestration]
@@ -13,7 +17,18 @@ version: "1.1.1"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Best Practices for Managing Git Pull Requests
 Managing pull requests is critical for maintaining code quality and facilitating team collaboration. Below are comprehensive practices for handling PRs effectively:

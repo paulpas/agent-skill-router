@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kserve
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # KServe in Cloud-Native Engineering
 
 **Category:** ml  

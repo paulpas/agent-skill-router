@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: messaging-channels
 
 description: Integrates various messaging channels to enable seamless communication with users about multiple platforms.
@@ -18,7 +22,15 @@ metadata:
       directive_strength: high
   scope: infrastructure
   related-skills: communications/messaging-bots, communications/messaging-microsoft-teams
+
+
+
+
 ---
+
+
+
+
 
 # Messaging Channels Integration
 Facilitates integration of multiple messaging channels to ensure unified communication across platforms.

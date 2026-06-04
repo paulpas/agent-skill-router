@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: fastapi-development
 description: Implements FastAPI application patterns including dependency injection, Pydantic v2 models, async handlers, JWT authentication, middleware chains, background tasks, and production deployment strategies for high-performance Python web services.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: fastapi, dependency injection, pydantic v2, async endpoints, jwt authentication, fastapi middleware, uvicorn, python web framework
   archetypes:
@@ -28,7 +32,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: django-best-practices
+
+
+
+
 ---
+
+
+
+
 # FastAPI Development Guide
 Senior FastAPI engineer building high-performance async web services using modern Python 3.10+ patterns, Pydantic v2, and production-grade deployment strategies. This skill covers the full stack — from project architecture and dependency injection to authentication, middleware, background processing, and containerized deployments.
 ---

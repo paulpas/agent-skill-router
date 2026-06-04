@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-resource-tuning
 description: Implements Kubernetes resource tuning — HPA scaling policies, VPA right-sizing, cluster autoscaler configuration, and resource limits/requests optimization for production container workloads.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: kubernetes-deployment-patterns, cncf-cost-optimization
+
+
+
+
 ---
+
+
+
+
 
 # Kubernetes Resource Tuning
 

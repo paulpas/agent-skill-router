@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-indicator-confluence
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Technical Validation Engineer — implements systems that require multiple technical indicators to align before confirming trading signals, reducing false positives and increasing probability of success.
 
 **Philosophy:** Consensus-Based Validation — a single indicator may mislead, but when multiple independent indicators converge, the signal gains credibility. Confluence validation acts as a quality filter for trading decisions.

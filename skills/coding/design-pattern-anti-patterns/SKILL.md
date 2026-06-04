@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: design-pattern-anti-patterns
 description: Identifies and remediates anti-patterns arising from misuse of GoF design patterns including over-engineering, gold plating, dependency inversion violations, and structural code smells in Python systems.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: analysis
   content-types: [guidance, examples, do-dont]
   related-skills: gof-design-patterns-catalog, design-pattern-selection, structural-behavioral-patterns, code-review
+
+
+
+
 ---
+
+
+
+
 
 # Design Pattern Anti-Patterns & Code Smells
 

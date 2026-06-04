@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: dragonfly
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Dragonfly in Cloud-Native Engineering
 
 **Category:** distribution  

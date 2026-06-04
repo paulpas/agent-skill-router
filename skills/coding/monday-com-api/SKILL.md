@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: monday-com-api
 description: Implements functionalities of the Monday.com API, focusing on Boards, Items, Updates, and GraphQL to enhance project management, productivity, and collaboration.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
   output-format: code
   triggers: monday.com api, boards, items, updates, graphql, productivity, collaboration, how do i use monday api
   related-skills: project-management-tools, productivity-framework
+
+
+
+
 ---
+
+
+
+
 
 # Monday.com API Skill
 Implements functionalities of the Monday.com API, focusing on Boards, Items, Updates, and GraphQL to enhance project management, productivity, and collaboration.

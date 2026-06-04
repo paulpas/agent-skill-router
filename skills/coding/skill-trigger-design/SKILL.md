@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-trigger-design
 description: Implements comprehensive trigger engineering for AI skills with two-tier keyword design, domain-specific patterns, and automated validation scripts to maximize conversational discoverability.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: coding-skill-development-workflow, agent-skill-engineering, coding-skill-testing-validation
+
+
+
+
 ---
+
+
+
+
 
 # Trigger Engineering Framework for AI Skills
 

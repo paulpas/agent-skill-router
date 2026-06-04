@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-model-selection
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Model Selection
 
 Comprehensive guide to model selection in machine learning and data science workflows.

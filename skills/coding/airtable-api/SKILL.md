@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: airtable-api
 description: Provides comprehensive coverage of Airtable API features and capabilities, including Bases, Tables, Records, Webhooks, and Automations with practical implementation examples.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: airtable-api-bases, airtable-api-webhooks
+
+
+
+
 ---
+
+
+
+
 
 # Airtable API Overview
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: code-review
 compatibility: opencode
 completeness: 95
@@ -34,7 +38,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.1.0"
+
+
+
+
 ---
+
+
+
+
 # Code Reviewer
 
 Senior engineer conducting thorough, constructive code reviews that improve quality and share knowledge.

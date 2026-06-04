@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: code-quality-metrics
 description: Analyzes software quality using static analysis metrics including cyclomatic
   complexity, maintainability index, code duplication detection, technical debt estimation,
@@ -6,12 +10,9 @@ description: Analyzes software quality using static analysis metrics including c
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: code quality metrics, cyclomatic complexity, maintainability index, code
-    duplication, static analysis, technical debt, sonarqube, pylint metrics, flake8,
-    mypy strict, coverage thresholds, dead code detection, how do i measure code quality,
-    complexity analysis
+  triggers: code quality metrics, cyclomatic complexity, maintainability index, code duplication, static analysis, technical debt, sonarqube, pylint metrics duplication
   archetypes:
   - tactical
   - generation
@@ -35,7 +36,15 @@ version: "1.0.0"
   - config
   related-skills: coding-static-analysis-tools, coding-code-review, coding-refactoring-techniques,
     coding-type-safety-enforcement
+
+
+
+
 ---
+
+
+
+
 # Code Quality Metrics & Analysis
 
 Analyzes software quality using measurable static analysis metrics — cyclomatic complexity, maintainability index, code duplication, technical debt estimation, and coverage thresholds. This skill configures tooling (radon, pylint, ruff, mypy, coverage.py) and defines quantitative quality gates that teams enforce in CI/CD pipelines.

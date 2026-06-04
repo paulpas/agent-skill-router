@@ -1,7 +1,41 @@
 ---
+
+
+
+
+
+
+
 name: code-review-edge-case-handling
 
-description: Implements strategies to identify and address edge cases in code reviews to enhance software robustness and reliability.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: edge case handling, software robustness, boundary testing, performance testing\n  archetypes: [implementation, evaluation]\n  anti_triggers: [neglecting edge cases, inadequate testing]\n  response_profile: medium\n---
+description: Implements strategies to identify and address edge cases in code reviews to enhance software robustness and reliability.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: edge case handling, software robustness, boundary testing, performance testing
+  archetypes: [implementation, evaluation]
+  anti_triggers: [neglecting edge cases, inadequate testing]
+  response_profile: medium
+
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+
+
+---
+
+
+
+
+
+
+
 ## Expanded Content for Code Review Edge Cases
 
 ### Importance of Addressing Edge Cases in Software Development

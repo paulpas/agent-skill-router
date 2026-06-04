@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: docker-engine-api
 description: Integrates with the Docker Engine API to manage containers, build images, configure networks, manage volumes, and orchestrate services with Swarm.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: low
     directive_strength: medium
     abstraction_level: tactical
+
+
+
+
 ---
+
+
+
+
 
 # Docker Engine API Skill
 

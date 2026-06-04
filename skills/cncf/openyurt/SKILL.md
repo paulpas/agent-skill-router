@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: openyurt
 compatibility: opencode
 completeness: 95
@@ -35,7 +39,15 @@ role: reference
 scope: infrastructure
 triggers: computing, container orchestration, extending, k8s, openyurt, kubernetes
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 

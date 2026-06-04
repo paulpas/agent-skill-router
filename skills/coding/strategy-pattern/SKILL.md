@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: strategy-pattern
 description: Implements the Strategy design pattern for runtime algorithm selection with interchangeable behavior interfaces, supporting context delegation, strategy factories, and dependency injection.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: behavioral-design-patterns, dependency-inversion-principle, creational-design-patterns, design-patterns-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Strategy Pattern (Behavioral GoF)
 

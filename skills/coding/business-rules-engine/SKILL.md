@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: business-rules-engine
 description: Implements a business rules engine using declarative configuration (JSON/YAML-based rule definitions, condition evaluation chains, and runtime rule execution) to replace hard-coded if/elif branches for frequently-changing domain validations.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: domain-driven-design, input-validation-patterns, ddd-tactical-patterns, framework-requirements
+
+
+
+
 ---
+
+
+
+
 
 # Business Rules Engine
 

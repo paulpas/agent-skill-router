@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gcp-firestore
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Google Firestore
 
 Deploy and manage google firestore infrastructure as part of your cloud-native environment.

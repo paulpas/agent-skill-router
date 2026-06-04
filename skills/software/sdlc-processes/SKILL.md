@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: sdlc-processes
 description: Covers the complete software development lifecycle (SDLC) including analysis, design, development, testing, deployment, and maintenance.
 license: MIT
@@ -14,7 +18,15 @@ metadata:
   archetypes: tactical
   anti_triggers: legacy, manual
   response_profile: { verbosity: high, directive_strength: high, abstraction_level: tactical }
+
+
+
+
 ---
+
+
+
+
 
 # Software Development Lifecycle
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: container-network-interface-cni
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Container Network Interface in Cloud-Native Engineering
 
 **Category:** network  

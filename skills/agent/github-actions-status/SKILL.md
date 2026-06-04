@@ -1,4 +1,9 @@
 ---
+
+
+
+
+
 name: github-actions-status
 compatibility: opencode
 completeness: 95
@@ -19,8 +24,7 @@ metadata:
   role: information
   scope: implementation
   source: local
-  triggers: github actions, ci/cd, workflow, gh run, gh workflow, pipeline, build
-    status, ci status, action status, check runs
+  triggers: github actions, ci/cd, workflow, gh run, gh workflow, pipeline, build status, ci status status status
   archetypes:
   - educational
   anti_triggers:
@@ -32,7 +36,17 @@ metadata:
     directive_strength: medium
     abstraction_level: tactical
 version: "1.0.0"
+
+
+
+
+
 ---
+
+
+
+
+
 # GitHub Actions Status
 
 View, monitor, and manage GitHub Actions workflows and their run statuses using the `gh` CLI.

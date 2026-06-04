@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: solid-anti-patterns
 description: Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: single-responsibility, open-closed-principle, liskov-substitution-principle, interface-segregation-principle, dependency-inversion-principle
+
+
+
+
 ---
+
+
+
+
 
 # SOLID Anti-Pattern Detection & Refactoring
 

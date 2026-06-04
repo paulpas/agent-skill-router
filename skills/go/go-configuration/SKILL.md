@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: go-configuration
 description: Manages application configuration in Go with environment variables, YAML/JSON
   parsing, validation, defaults, and hierarchy for multi-environment deployments.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ version: "1.0.0"
   maturity: stable
   completeness: 95
   exampleCount: 3
+
+
+
+
 ---
+
+
+
+
 # Go Configuration Management
 
 Senior platform engineer implementing robust configuration management for Go applications. This skill covers environment variables, YAML/JSON parsing, validation, defaults, secret handling, and multi-environment configuration hierarchy.

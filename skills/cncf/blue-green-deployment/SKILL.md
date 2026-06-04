@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: blue-green-deployment
 compatibility: opencode
 completeness: 95
@@ -38,7 +42,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
-------
+
+
+
+
+---
+
+
+
+---
 # Blue-Green Deployment
 
 Orchestrates parallel environment deployments with traffic switching, state management, and instant rollback to achieve zero-downtime releases. Maintains two identical environments and switches traffic between them.

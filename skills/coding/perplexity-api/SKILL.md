@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: perplexity-api
 description: Integrates Perplexity AI API (Sonar chat completions, online search,
   multi-step queries) using the perplexity-openai Python SDK for real-time web-connected
@@ -6,7 +10,7 @@ description: Integrates Perplexity AI API (Sonar chat completions, online search
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: perplexity, perplexity ai, sonar, perplexity api, perplexity sonar, online
     LLM, how do i use perplexity, real-time search LLM
@@ -31,7 +35,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: coding-openai-api, coding-anthropic-api, coding-pinecone-api
+
+
+
+
 ---
+
+
+
+
 # Perplexity AI API Integration
 
 Integrates Perplexity AI's Sonar API using the `perplexity-openai` Python SDK for real-time web-connected LLM completions. When loaded, this skill makes the model implement Perplexity API calls with proper authentication, streaming, and citation handling for online search-augmented responses.

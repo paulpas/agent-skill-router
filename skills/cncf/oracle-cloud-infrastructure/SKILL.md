@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: oracle-cloud-infrastructure
 description: Implements functionalities for Oracle Cloud Infrastructure, covering Compute, Object Storage, and Autonomous Database services.
 license: MIT
@@ -19,7 +23,15 @@ metadata:
     - insufficient permissions
   response_profile:
     verbosity: high
+
+
+
+
 ---
+
+
+
+
 ---
 
 ## When to Use

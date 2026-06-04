@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: networking-troubleshooting
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Networking Troubleshooting
 
 Implements comprehensive networking troubleshooting workflows for cloud-native environments. This skill provides step-by-step procedures for diagnosing network connectivity issues across iptables rules, DNS resolution, load balancer configurations, Kubernetes CNI implementations, container networking, and VPN connectivity.

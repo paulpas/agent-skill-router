@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: splunk-api
 description: Implements Splunk integration (log ingestion via HEC, search queries, saved searches, alert management) using the splunk-sdk Python SDK and REST API for production-grade monitoring and log analytics.
 license: MIT
@@ -16,7 +20,18 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: coding-datadog-api, coding-grafana-prometheus, coding-newrelic-api
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 # Splunk API & SDK Integration
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-requirements
 description: Defines, evaluates, and validates software framework requirements including non-functional criteria (performance, security, extensibility), weighted selection scoring matrices, proof-of-concept feasibility testing, and architecture decision records for production-grade applications.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: framework-evaluation-criteria, test-driven-development, modular-design, dependency-injection, framework-utilization
+
+
+
+
 ---
+
+
+
+
 
 # Framework Requirements Guide
 

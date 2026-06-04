@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: interface-segregation-principle
 description: Detects fat interfaces that force implementors to provide unused methods
   and refactors them into narrow, client-specific contracts using Python Protocols
@@ -6,11 +10,9 @@ description: Detects fat interfaces that force implementors to provide unused me
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: interface segregation principle, ISP, fat interface, thin interface, client
-    specific, Protocol, ABC, unused methods, stub implementation, NotImplementedError,
-    duck typing
+  triggers: interface segregation principle, ISP, fat interface, thin interface, client specific, Protocol, ABC, unused methods specific
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ version: "1.0.0"
   - examples
   related-skills: single-responsibility, open-closed-principle, liskov-substitution-principle,
     dependency-inversion-principle
+
+
+
+
 ---
+
+
+
+
 # Interface Segregation Principle (ISP)
 
 Identifies fat interfaces that force clients to depend on methods they do not use and refactors them into narrow, client-specific contracts. Applies Python Protocols for structural duck typing, targeted ABCs for nominal typing, and composition patterns to eliminate stub implementations, `NotImplementedError` stubs, and LSP-violating fallback methods.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: bff-pattern
 description: Implements backend-for-frontend (BFF) architecture patterns including client-tailored API backends, data aggregation from multiple microservices, authentication delegation, response shaping, and offline optimization for web, mobile, and partner clients.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: api-composition-patterns,microservices-architecture,cloud-native-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Backend-for-Frontend (BFF) Pattern
 

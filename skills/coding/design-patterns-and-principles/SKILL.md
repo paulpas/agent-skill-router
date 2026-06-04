@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: design-patterns-and-principles
 description: Implements and explains GoF design patterns (Factory, Observer, Strategy,
   Decorator, Singleton), SOLID principles, and DRY/YAGNI guidelines to produce maintainable,
@@ -6,7 +10,7 @@ description: Implements and explains GoF design patterns (Factory, Observer, Str
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: design patterns, GoF, SOLID, DRY, factory pattern, software architecture,
     refactoring, SOLID principles
@@ -31,7 +35,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: test-driven-development, code-review, refactoring, modular-design
+
+
+
+
 ---
+
+
+
+
 # Design Patterns & Software Architecture Principles
 
 Senior software architect designing maintainable, extensible systems using proven design patterns and principles. Applies GoF patterns, SOLID principles, and DRY/YAGNI guidelines to produce code that is easy to understand, test, and evolve. Evaluates architectural tradeoffs, prevents over-engineering, and selects the simplest pattern that solves the identified problem.

@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: internationalization-localization-best-practices
 description: Implements best practices for internationalization and localization of software to ensure global usability and compliance with cultural preferences.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: coding
   triggers: localization, internationalization, i18n, l10n, user experience
   archetypes: [implementation, evaluation]
@@ -13,7 +17,18 @@ version: "1.1.1"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Best Practices for Internationalization and Localization
 To effectively reach a global audience, it’s crucial to implement best practices in internationalization and localization. Here are strategies to consider:

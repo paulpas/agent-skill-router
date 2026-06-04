@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: fundamentals-market-regimes
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Identify and adapt to different market regimes (trending, mean-reverting, sideways, volatile) to optimize trading strategy parameters dynamically.
 
 **Philosophy:** Markets do not operate in a single consistent state. Successful trading requires recognizing when market behavior changes and adjusting strategies accordingly. A regime-aware system anticipates shifts in market dynamics rather than reacting to them. The philosophy emphasizes regime detection as a first-class citizen in trading systems, with adaptation happening automatically and systematically before performance degradation occurs.

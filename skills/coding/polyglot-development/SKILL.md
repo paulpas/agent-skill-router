@@ -1,15 +1,17 @@
 ---
+
+
+
+
 name: polyglot-development
 description: Implements language selection heuristics, polyglot monorepo patterns,
   and cross-language communication protocols for multi-language software systems.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: polyglot, multi-language, language selection, go vs typescript, rust vs
-    python, monorepo build, cross-language communication, protocol buffer, interop
-    patterns, which language to use
+  triggers: polyglot, multi-language, language selection, go vs typescript, rust vs python, monorepo build, cross-language communication, protocol buffer python
   archetypes:
   - tactical
   - generation
@@ -31,7 +33,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: framework-selection, system-architecture, data-encoding, design-patterns-and-principles
+
+
+
+
 ---
+
+
+
+
 # Polyglot Development — Language Selection and Cross-Language Integration
 
 Architects and engineers applying language selection heuristics to assign the optimal programming language to each component of a multi-language system, then implementing robust cross-language communication patterns (gRPC/Protobuf, REST/JSON, message queues) between those components. When loaded, this skill makes the model produce a language assignment rationale and working integration code for every inter-component boundary.

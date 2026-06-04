@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: marketo-api
 description: Implements Marketo API integration (REST, SOAP, Lead Database, Activities,
   Campaigns, using requests with OAuth 2.0 authentication, lead CRUD, bulk import/export,
@@ -6,10 +10,9 @@ description: Implements Marketo API integration (REST, SOAP, Lead Database, Acti
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: marketo, marketo api, marketo rest, adobe marketo, marketo leads, marketo
-    activities, marketo campaigns, how do i integrate with marketo, marketing automation
+  triggers: marketo, marketo api, marketo rest, adobe marketo, marketo leads, marketo activities, marketo campaigns, how do i integrate with marketo activities
   archetypes:
   - tactical
   - generation
@@ -31,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-salesforce-api, coding-hubspot-api, coding-hubspot-api
+
+
+
+
 ---
+
+
+
+
 # Marketo API Integration
 
 Implements production-grade Marketo integration using the Marketo REST API with OAuth 2.0 authentication. When loaded, this skill makes the model implement operations on the Marketo Lead Database (Leads, Companies, Opportunities), Activities tracking, Campaigns triggers, Bulk API for import/export, Custom Objects, and the Marketo SOAP API for legacy integrations. All implementations follow Marketo best practices: use `MARKETO_CLIENT_ID`, `MARKETO_CLIENT_SECRET`, `MARKETO_BASE_URL` from environment, implement access token caching with auto-refresh, handle rate limits with exponential backoff, use Bulk API for > 300 records, and properly paginate list results using the `nextPageToken`.

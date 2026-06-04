@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: engineering-principles
 description: Enforces core software engineering principles (SOLID, DRY, KISS, separation
   of concerns) to produce clean, maintainable, and scalable code architecture.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: engineering principles, SOLID, DRY, KISS, separation of concerns, code
     architecture, defensive programming, clean code
@@ -30,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: code-review, refactoring, test-driven-development
+
+
+
+
 ---
+
+
+
+
 # Software Engineering Principles
 
 This skill makes the model evaluate and produce code that adheres to foundational engineering principles. When active, it enforces Single Responsibility, DRY, KISS, Separation of Concerns, and Composition Over Inheritance across every implementation, review, or refactor — ensuring architecture decisions are intentional, modules have clear boundaries, and code reads like a well-organized system rather than an accident of convenience.

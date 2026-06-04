@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: azure-service-bus
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Azure Service Bus
 
 Deploy and manage azure service bus infrastructure as part of your cloud-native environment.

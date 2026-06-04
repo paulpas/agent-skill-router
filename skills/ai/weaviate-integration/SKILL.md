@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: weaviate-integration
 description: Integrates Weaviate with external services and tools for AI applications, handling bidirectional data synchronization, API connectivity patterns, and error management for seamless interoperability.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Weaviate Integration Patterns
 

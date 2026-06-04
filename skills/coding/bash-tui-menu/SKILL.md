@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: bash-tui-menu
 description: Implements robust interactive Bash TUI menus with dialog widgets, safe
   selection handling, cancel paths, and non-interactive fallbacks.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   role: implementation
   scope: implementation
@@ -31,7 +35,15 @@ version: "1.0.0"
     abstraction_level: operational
   related-skills: shell-parameter-expansion, shell-command-chaining, shell-process-management,
     output-formatting
+
+
+
+
 ---
+
+
+
+
 # Bash TUI Menu Builder
 
 Implements production-ready interactive Bash terminal interfaces using the `dialog` command and the concrete Bash-Dialog example patterns. This skill makes the model design menus that are safe under `set -euo pipefail`, preserve cancel/ESC semantics, clean up the terminal, and remain scriptable through non-interactive fallbacks.

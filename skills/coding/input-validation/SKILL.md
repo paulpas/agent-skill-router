@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: input-validation
 description: Validates and normalizes input/output data using schema validation, type coercion, and sanitization patterns to prevent injection attacks and ensure data integrity.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: security-review,error-handling
+
+
+
+
 ---
+
+
+
+
 
 # Input Validation & Sanitization Manager
 

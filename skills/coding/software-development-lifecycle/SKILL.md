@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-development-lifecycle
 description: Orchestrates the complete software development lifecycle from requirements gathering through design, iterative implementation with branching strategies, and structured code review to produce maintainable, well-documented software systems.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - examples
     - do-dont
   related-skills: software-engineering-principles, software-design-principles, test-driven-development, refactoring-techniques, modern-software-development-workflows, architecture-decision-records
+
+
+
+
 ---
+
+
+
+
 
 # Software Development Lifecycle
 

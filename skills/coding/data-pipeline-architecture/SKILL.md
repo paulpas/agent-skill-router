@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-pipeline-architecture
 description: Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
   related-skills: event-driven-architecture, system-reliability-architecture, distributed-systems-architecture, database-design-patterns
+
+
+
+
 ---
+
+
+
+
 
 # Data Pipeline Architecture
 

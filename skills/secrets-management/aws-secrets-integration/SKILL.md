@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: aws-secrets-integration
 description: Implements AWS Secrets Manager for secure secret storage, management, and automatic rotation of credentials using AWS SDK for Python (Boto3).
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   role: implementation
   scope: infrastructure
   output-format: code
+
+
+
+
 ---
+
+
+
+
 
 ## Enhanced Content for AWS Secrets Manager Skill
 

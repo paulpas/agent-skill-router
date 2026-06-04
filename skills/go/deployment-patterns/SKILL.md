@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: deployment-patterns
 description: Deploys Go applications with build optimization, multi-stage Docker builds,
   binary sizing, and deployment strategies for cloud and on-prem.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ version: "1.0.0"
   maturity: stable
   completeness: 95
   exampleCount: 3
+
+
+
+
 ---
+
+
+
+
 # Go Deployment Patterns
 
 Senior DevOps engineer deploying optimized Go applications with multi-stage Docker builds, binary sizing, cross-compilation, and deployment strategies. This skill covers building minimal binaries, container optimization, and production deployment patterns.

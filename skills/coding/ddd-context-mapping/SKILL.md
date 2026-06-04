@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-context-mapping
 description: Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: domain-driven-design, domain-modeling, domain-events, microservices-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Context Mapping Strategies (Strategic DDD)
 

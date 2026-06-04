@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: cross-domain-workflow-sagas
 description: Orchestrates and choreographs long-running business transactions across
   multiple bounded contexts using saga patterns — compensating actions, timeout handling,
@@ -6,12 +10,9 @@ description: Orchestrates and choreographs long-running business transactions ac
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: saga pattern, saga orchestration, saga choreography, cross-domain workflow,
-    compensating action, distributed transaction, how do i coordinate across bounded
-    contexts, business transaction consistency, eventual consistency, multi-context
-    workflow
+  triggers: saga pattern, saga orchestration, saga choreography, cross-domain workflow, compensating action, distributed transaction, how do i coordinate across bounded contexts, business transaction consistency compensating action
   archetypes:
   - tactical
   - generation
@@ -34,7 +35,15 @@ version: "1.0.0"
   - examples
   related-skills: domain-driven-design, ddd-context-mapping, event-driven-patterns,
     cqrs-pattern, domain-events
+
+
+
+
 ---
+
+
+
+
 # Cross-Domain Workflow Coordination with Sagas
 
 Orchestrates and choreographs long-running business transactions across multiple bounded contexts using saga patterns. Implements compensating actions for failure recovery, timeout handling for unresponsive contexts, persistent saga state for restart resilience, and both orchestration (centralized coordinator) and choreography (decentralized event-driven) coordination styles — enabling eventual consistency without distributed locking or two-phase commit across service boundaries.

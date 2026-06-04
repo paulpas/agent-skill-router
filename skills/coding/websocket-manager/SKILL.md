@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: websocket-manager
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Skill: coding-websocket-manager
 
 # WebSocket connection manager with state machine (connecting/connected/reconnecting/error), exponential backoff, and message routing

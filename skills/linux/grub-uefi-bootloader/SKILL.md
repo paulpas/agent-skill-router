@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: grub-uefi-bootloader
 description: Configures GRUB2 bootloader for UEFI firmware boot processes including
   ESP management, Secure Boot signing, multi-boot setups, kernel parameters, and bootloader
@@ -6,7 +10,7 @@ description: Configures GRUB2 bootloader for UEFI firmware boot processes includ
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -16,8 +20,7 @@ version: "1.0.0"
   - guidance
   - config
   - do-dont
-  triggers: grub2, UEFI boot, Secure Boot, EFI System Partition, bootloader recovery,
-    how do i repair bootloader, efibootmgr, GRUB configuration, dual boot, shim signing
+  triggers: grub2, UEFI boot, Secure Boot, EFI System Partition, bootloader recovery, how do i repair bootloader, efibootmgr, GRUB configuration how do i repair bootloader
   archetypes:
   - tactical
   anti_triggers:
@@ -32,7 +35,15 @@ version: "1.0.0"
   maturity: stable
   completeness: 95
   exampleCount: 5
+
+
+
+
 ---
+
+
+
+
 # GRUB2 and UEFI Bootloader Manager
 
 System engineer managing the GRUB2 bootloader in UEFI environments — configuring boot entries, integrating Secure Boot via Shim signing, setting up multi-boot systems, tuning kernel parameters, performing recovery operations, and chain-loading network boot configurations.

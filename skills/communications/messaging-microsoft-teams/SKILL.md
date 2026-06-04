@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: messaging-microsoft-teams
 
 description: Integrates Microsoft Teams for chat and collaboration solutions, enabling bot interactions via the Microsoft Graph API including channel management, message posting with adaptive cards, and tab configurations.
@@ -21,7 +25,15 @@ metadata:
   scope: infrastructure
   output-format: code
   related-skills: communications/messaging-bots, communications/messaging-channels
+
+
+
+
 ---
+
+
+
+
 
 # Microsoft Teams Integration via Graph API
 

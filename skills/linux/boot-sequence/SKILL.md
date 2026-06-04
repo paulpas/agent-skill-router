@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: boot-sequence
 description: Implements step-by-step diagnosis and optimization of the modern Linux boot process from UEFI through GRUB, initramfs, and systemd target initialization for production servers.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: systemd-services, linux-security, linux-networking
+
+
+
+
 ---
+
+
+
+
 
 # Linux Boot Process Manager
 

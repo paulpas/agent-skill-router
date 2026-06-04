@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: shell-command-chaining
 description: Implements shell command chaining patterns using &&, ||, and ; operators
   for conditional execution, validation gates, fallback chains, and safe sequential
@@ -6,7 +10,7 @@ description: Implements shell command chaining patterns using &&, ||, and ; oper
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -16,9 +20,7 @@ version: "1.0.0"
   - guidance
   - do-dont
   - examples
-  triggers: shell command chaining, && operator, || operator, semicolon in bash, conditional
-    command execution, fallback chain, AND list OR list, short-circuit evaluation,
-    how do i chain commands reliably
+  triggers: shell command chaining, && operator, || operator, semicolon in bash, conditional command execution, fallback chain, AND list OR list, short-circuit evaluation command execution
   archetypes:
   - tactical
   anti_triggers:
@@ -29,7 +31,15 @@ version: "1.0.0"
     directive_strength: high
     abstraction_level: operational
   related-skills: linux-shell-process-management, shell-parameter-expansion
+
+
+
+
 ---
+
+
+
+
 # Shell Command Chaining and Conditional Execution
 
 Implements reliable sequential and conditional command execution patterns using `&&` (AND-list), `||` (OR-list), and `;` (semicolon) operators in bash scripts. Teaches how to build validation gates, fallback chains, safe cleanup sequences, and deployment pipelines that behave predictably under `set -e`.

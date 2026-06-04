@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: database-schema-evolution
 description: Designs safe schema changes for production databases — zero-downtime migrations, backward-compatible schema evolution, dual-write patterns, feature-flagged deployments, and data migration strategies for live systems.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: performance-optimization-strategies, postgresql-sdk, ci-cd-pipeline-design
+
+
+
+
 ---
+
+
+
+
 
 # Database Schema Evolution
 

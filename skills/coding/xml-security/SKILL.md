@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: xml-security
 description: Prevents XML External Entity (XXE) injection, entity expansion attacks, and DTD abuse by securing XML parsers with safe configurations, input validation, and defense-in-depth patterns across Python, Java, PHP, Node.js, and Go.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: html-entity-encoding,url-parsing-security,input-validation,api-security-patterns
+
+
+
+
 ---
+
+
+
+
 
 # XML Security Engineer
 

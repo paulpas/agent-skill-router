@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: aws-sdk
 description: Integrates AWS services (EC2, S3, Lambda, DynamoDB, RDS) using Boto3
   SDK with patterns for resource management, error handling, pagination, and IAM authentication.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: aws sdk, boto3, amazon web services, s3 bucket, ec2 instance, dynamodb
     table, lambda function, how do i use aws from python
@@ -25,7 +29,15 @@ version: "1.0.0"
   scope: implementation
   output-format: code
   related-skills: azure-sdk, google-cloud-sdk, oci-sdk
+
+
+
+
 ---
+
+
+
+
 # AWS SDK (Boto3) Integration Patterns
 
 Integrates AWS services using the Boto3 SDK for Python. Covers credential management, service clients, resource APIs, pagination, waiters, and error handling across EC2, S3, Lambda, DynamoDB, and RDS.

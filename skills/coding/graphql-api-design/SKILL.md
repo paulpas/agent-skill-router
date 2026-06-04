@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: graphql-api-design
 description: Implements best practices for designing GraphQL APIs, focusing on schema design, query optimization, and resolver implementation.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: coding-api-best-practices, coding-error-handling
+
+
+
+
 ---
+
+
+
+
 
 # GraphQL API Design Skill
 

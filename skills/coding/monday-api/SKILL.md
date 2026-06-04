@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: monday-api
 description: Integrates with monday.com API using GraphQL queries to manage boards,
   items, groups, columns, updates, workspaces, and webhooks via monday-api-python-sdk.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: monday api, monday.com, monday boards, monday items, monday graphql, monday
     python, monday automation
@@ -30,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-asana-api, coding-clickup-api, coding-notion-api
+
+
+
+
 ---
+
+
+
+
 
 # Monday.com API Integration
 

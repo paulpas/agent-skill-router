@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: intelligent-skill-selection
 description: Evaluates incoming tasks against available skills using semantic matching,
   confidence thresholds, and contextual filters to route work to the optimal capability
@@ -6,7 +10,7 @@ description: Evaluates incoming tasks against available skills using semantic ma
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: agent
   triggers: skill selection, task routing, choosing the right skill, semantic matching,
     confidence threshold, adaptive routing, agent dispatch, fallback strategy
@@ -30,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - diagrams
   related-skills: dependency-graph-builder, parallel-skill-runner, dynamic-replanner
+
+
+
+
 ---
+
+
+
+
 # Intelligent Skill Selection Framework
 
 Orchestrates task-to-skill mapping by evaluating intent, domain constraints, and confidence scores to dispatch work to the most appropriate capability, ensuring accurate routing with built-in fallback mechanisms.

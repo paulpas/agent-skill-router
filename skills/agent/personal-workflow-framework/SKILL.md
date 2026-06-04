@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: personal-workflow-framework
 description: Designs personalized development workflows by mapping task types to optimized
   process patterns, enabling developers to choose structured approaches that match
@@ -6,7 +10,7 @@ description: Designs personalized development workflows by mapping task types to
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: agent
   triggers: personal workflow, developer workflow, structured approach, task methodology,
     how do i organize my work, development process, workflow customization, project
@@ -30,7 +34,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: workflow-patterns, planning-with-files, closed-loop-delivery
+
+
+
+
 ---
+
+
+
+
 # Personal Workflow Framework
 
 Designs personalized development workflows by matching task types to optimized process patterns. Your workflow is not one-size-fits-all — it should adapt based on project complexity, team size, timeline pressure, and the specific nature of the work at hand. This skill helps you define, evaluate, and refine your own approach to software development.

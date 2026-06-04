@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: azure-cosmos-db
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Azure Cosmos DB
 
 Deploy and manage azure cosmos db infrastructure as part of your cloud-native environment.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: domain-events
 description: Implements domain events for decoupled communication between aggregates
   and bounded contexts — event definition, publishing, handling, idempotency, and
@@ -6,7 +10,7 @@ description: Implements domain events for decoupled communication between aggreg
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: domain events, domain event, event publishing, event handler, event dispatcher,
     in-process event bus, how do i decouple aggregates, idempotent event handling
@@ -31,7 +35,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: domain-driven-design, event-sourcing-pattern, event-driven-architecture
+
+
+
+
 ---
+
+
+
+
 # Domain Events
 
 Implements domain events as a tactical DDD pattern for decoupled communication between aggregates, bounded contexts, and application services. Produces immutable past-tense event definitions, typed event registries, in-process dispatchers with error handling strategies, and idempotent handlers that safely process duplicate deliveries without side effects.

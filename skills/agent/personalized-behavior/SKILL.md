@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: personalized-behavior
 description: Implements personalized AI agent behavior by learning and adapting to
   individual user preferences, communication styles, expertise levels, and interaction
@@ -6,7 +10,7 @@ description: Implements personalized AI agent behavior by learning and adapting 
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: agent
   triggers: personalized behavior, adaptive agent, user preferences, communication
     style, expertise level, tailored responses, how do i customize ai agent, user
@@ -30,7 +34,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: personal-workflow-framework,conversation-memory,hierarchical-agent-memory
+
+
+
+
 ---
+
+
+
+
 # Personalized AI Agent Behavior
 
 Implements personalized AI agent behavior by adapting responses to individual users based on learned preferences, communication styles, expertise levels, and interaction history. The model acts as a user-aware assistant that continuously refines its output format, tone, depth, and complexity to match each user's evolving needs and expectations.

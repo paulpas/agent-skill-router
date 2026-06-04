@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: datadog-api-synthetic-tests
 description: Implements management and execution of Datadog Synthetic Tests using the API, focusing on setup, validation, and best practices.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 
 # Datadog Synthetic Tests Management
 Implements the creation and management of Datadog Synthetic Tests through the API. This skill focuses on ensuring proper configurations and execution of synthetic monitoring for application performance.

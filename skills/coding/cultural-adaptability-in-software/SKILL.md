@@ -1,7 +1,35 @@
 ---
+
+
+
+
 name: cultural-adaptability-in-software
 
-description: Implements strategies for adapting software development to diverse cultural contexts to enhance user experience and inclusivity.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.1\n  domain: coding\n  triggers: cultural adaptability, localization, i18n, user experience, software design\n  archetypes: [implementation, evaluation, user-focused]\n  anti_triggers: [one-size-fits-all solutions, neglecting user inputs]\n  response_profile:\n    verbosity: medium\n    directive_strength: high\n    abstraction_level: operational\n---
+description: Implements strategies for adapting software development to diverse cultural contexts to enhance user experience and inclusivity.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.1"
+  domain: coding
+  triggers: cultural adaptability, localization, i18n, user experience, software design
+  archetypes: [implementation, evaluation, user-focused]
+  anti_triggers: [one-size-fits-all solutions, neglecting user inputs]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+---
+
+
+
+
 
 ## Enhanced Strategies for Cultural Adaptability in Software Development
 Cultural adaptability in software is crucial for meeting the needs of diverse user bases across different regions. Here are key strategies to consider:

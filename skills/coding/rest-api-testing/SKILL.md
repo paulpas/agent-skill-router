@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rest-api-testing
 description: Tests REST API endpoints comprehensively including unit tests, integration
   tests, contract validation against OpenAPI spec, idempotency checks, error-path
@@ -6,11 +10,9 @@ description: Tests REST API endpoints comprehensively including unit tests, inte
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: rest api testing, contract testing, openapi spec validation, pytest fastapi,
-    http method testing, idempotency test, locust load test, api integration test,
-    swagger schema validation, 304 not modified test, rest endpoint test
+  triggers: rest api testing, contract testing, openapi spec validation, pytest fastapi, http method testing, idempotency test, locust load test, api integration test http method testing
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ version: "1.0.0"
   - examples
   related-skills: fastapi-patterns, rest-api-patterns, test-driven-development, code-validation,
     api-security-patterns
+
+
+
+
 ---
+
+
+
+
 # REST API Testing
 
 Tests REST API endpoints comprehensively across unit, integration, contract, idempotency, error-path, pagination boundary, and load testing dimensions. Produces a pytest-based test suite that validates observable behavior — status codes, response shapes, side effects, and schema compliance — against the OpenAPI specification.

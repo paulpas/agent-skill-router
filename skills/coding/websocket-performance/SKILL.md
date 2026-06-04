@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: websocket-performance
 description: Optimizes WebSocket communication throughput and efficiency using binary protocols (MessagePack, Protobuf), per-message deflate compression (RFC 7692), message batching, and payload size reduction for high-frequency real-time systems.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: websocket-server-architecture, websocket-security, websocket-manager
+
+
+
+
 ---
+
+
+
+
 
 # WebSocket Performance Optimization
 

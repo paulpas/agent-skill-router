@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-stress-testing
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Evaluate portfolio performance under extreme market conditions
 
 **Philosophy:** Stress testing reveals hidden vulnerabilities; portfolios should survive worst-case scenarios

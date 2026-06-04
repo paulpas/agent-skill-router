@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: aws-route53
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Route 53 (Amazon Route 53)
 
 Configure DNS routing, domain management, and health checks with support for failover, weighted routing, and geolocation-based policies.

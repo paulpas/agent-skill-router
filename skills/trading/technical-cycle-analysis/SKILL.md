@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-cycle-analysis
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Identify and trade based on cyclical market behavior
 
 **Philosophy:** Markets exhibit repeating cycles; understanding cycle phases enables timing advantages

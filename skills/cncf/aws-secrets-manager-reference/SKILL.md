@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: aws-secrets-manager-reference
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Secrets Manager
 
 Manage sensitive credentials with automatic encryption, rotation, and fine-grained access control across AWS services and applications.

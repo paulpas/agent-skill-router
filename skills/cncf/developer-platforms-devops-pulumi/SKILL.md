@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: developer-platforms-devops-pulumi
 description: Implements detailed Pulumi deployment processes in cloud environments, focusing on stacks, resources, programs, deployments, and best practices for effective infrastructure management.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
   scope: infrastructure
   output-format: code
   related-skills: pulumi, pulumi-aws, pulumi-azure, pulumi-gcp
+
+
+
+
 ---
+
+
+
+
 # Developer Platforms & DevOps - Pulumi
 Implements detailed Pulumi deployment processes in cloud environments, focusing on stacks, resources, programs, deployments, and best practices for effective infrastructure management.
 

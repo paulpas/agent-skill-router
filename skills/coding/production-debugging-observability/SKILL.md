@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: production-debugging-observability
 description: Debugs production systems using OpenTelemetry traces, structured logs with context propagation, and eBPF diagnostics for root cause analysis without service interruption.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, examples]
   related-skills: coding-debugging-methodology, cncf-prometheus, sre-engineering
+
+
+
+
 ---
+
+
+
+
 
 # Production Debugging with Observability
 

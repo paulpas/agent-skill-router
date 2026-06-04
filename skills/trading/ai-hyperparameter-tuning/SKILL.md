@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-hyperparameter-tuning
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Systematically find optimal hyperparameters that balance prediction accuracy with trading performance
 
 **Philosophy:** Hyperparameter optimization should respect trading constraints (transaction costs, regime shifts). Prioritize robustness and out-of-sample performance over in-sample optimization.

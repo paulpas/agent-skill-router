@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-liquidity-risk
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Evaluate liquidity conditions before executing trades
 
 **Philosophy:** Liquidity dries up when needed most; position sizing should reflect real-time liquidity

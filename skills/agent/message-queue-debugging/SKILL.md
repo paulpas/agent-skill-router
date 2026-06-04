@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: message-queue-debugging
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Message Queue Debugging
 
 Debugs distributed message queue systems including Kafka, RabbitMQ, and SQS — identifies consumer lag, dead letter queue issues, message backlogs, and flow bottlenecks to restore reliable message delivery.

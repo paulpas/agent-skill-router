@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: postgresql-optimization
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: tactical
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Postgresql Optimization
 
 Orchestrates intelligent skill selection and execution for postgresql optimization workflows. Applies the 5 Laws of Elegant Defense to guide data naturally through the orchestration pipeline, preventing errors before they occur. Selects optimal skills based on multi-factor scoring including text similarity, historical performance, and system availability.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-system-evaluation-criteria
 description: Evaluates AI agent systems against defined requirements using golden datasets, adversarial testing, hallucination metrics, latency benchmarks, and safety compliance checks.
 license: MIT
@@ -27,7 +31,15 @@ metadata:
     - examples
     - config
   related-skills: agent-requirements-engineering, agent-reliability-engineering, ai-dev-jobs-mcp
+
+
+
+
 ---
+
+
+
+
 
 # AI System Evaluation Criteria
 

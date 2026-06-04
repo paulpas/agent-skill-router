@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: solid-srp-pattern
 description: Implements the Single Responsibility Principle (SRP) from SOLID, ensuring a class has one reason to change.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: solid-ocp-pattern, 
+
+
+
+
 ---
+
+
+
+
 
 # Single Responsibility Principle (SRP)
 

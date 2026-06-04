@@ -22,8 +22,8 @@ export interface DecomposedQuery {
 
 /** Known domain names for intent matching against skill categories. */
 const DOMAINS = [
-  'coding', 'cncf', 'trading', 'agent', 'go', 'linux',
-  'programming', 'writing', 'electical-engineering', 'maker',
+  'agent', 'cncf', 'coding', 'devops', 'electical-engineering', 'go',
+  'linux', 'maker', 'networking', 'programming', 'trading', 'writing',
 ] as const;
 
 /**
@@ -31,6 +31,41 @@ const DOMAINS = [
  * When a keyword is found in the query, the associated domain(s) become intent fragments.
  */
 const KEYWORD_MAP: Record<string, string[]> = {
+  // networking domain keywords
+  'dns': ['networking'],
+  'tcp ip': ['networking'],
+  'subnetting': ['networking'],
+  'routing protocols': ['networking'],
+  'bgp': ['networking'],
+  'ospf': ['networking'],
+  'firewall': ['networking'],
+  'vpn': ['networking'],
+  'vlan': ['networking'],
+  'switch configuration': ['networking'],
+  'troubleshoot network': ['networking'],
+  'network security': ['networking'],
+  'load balancing': ['networking'],
+  'cdn': ['networking'],
+
+  // devops domain keywords
+  'devops': ['devops'],
+  'ci cd': ['devops'],
+  'continuous integration': ['devops'],
+  'continuous deployment': ['devops'],
+  'deployment pipeline': ['devops'],
+  'infrastructure as code': ['devops'],
+  'iac': ['devops'],
+  'terraform': ['devops'],
+  'ansible': ['devops'],
+  'puppet': ['devops'],
+  'chef': ['devops'],
+  'containerization': ['devops'],
+  'monitoring': ['devops'],
+  'observability': ['devops'],
+  'alerting': ['devops'],
+  'python automation': ['devops'],
+  'python devops': ['devops'],
+
   // coding domain keywords
   'rust': ['coding'],
   'typescript': ['coding'],

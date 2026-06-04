@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: testing-test-doubles
 description: Provides an overview and implementation of test doubles including mocks, stubs, and fakes for comprehensive testing strategies.
 license: MIT
@@ -20,7 +24,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Test Doubles in Testing
 

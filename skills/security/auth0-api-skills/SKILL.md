@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: auth0-api-skills
 description: Implements Auth0 API functionalities (user CRUD, authentication flows, actions/hooks, organizations/multi-tenancy) for secure identity and access management in web and mobile applications.
 license: MIT
@@ -19,7 +23,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: auth0-user-management
+
+
+
+
 ---
+
+
+
+
 
 # Auth0 API Skills
 

@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: aws-iam
 description: Implements AWS Identity and Access Management (IAM) for securely managing users, groups, roles, and permissions in the AWS ecosystem.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: cloud
   triggers: aws iam, identity management, access control, permissions, user management
   archetypes: [implementation, access management]
@@ -13,7 +17,18 @@ version: "1.1.1"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Guide to AWS IAM
 AWS Identity and Access Management (IAM) enables organizations to manage access and user identities effectively. Here’s an in-depth exploration of its features and best practices:

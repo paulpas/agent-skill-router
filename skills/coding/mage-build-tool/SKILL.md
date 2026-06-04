@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: mage-build-tool
 description: Implements Mage build automation using Go code as build scripts, providing type-safe targets, aliases, build flags, environment-aware builds, and cross-compilation for development workflows.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: makefile, just-task-runner, coding-make, linux-make-build-system
+
+
+
+
 ---
+
+
+
+
 
 # Mage — Go-Based Build Tool
 

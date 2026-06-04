@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: options-strategies
 description: Implements various options trading strategies including covered calls, protective puts, straddles, and strangles to optimize trading performance.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 ## Trading Options Strategies
 

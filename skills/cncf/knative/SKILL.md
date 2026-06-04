@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: knative
 compatibility: opencode
 completeness: 95
@@ -28,7 +32,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 # Knative in Cloud-Native Engineering

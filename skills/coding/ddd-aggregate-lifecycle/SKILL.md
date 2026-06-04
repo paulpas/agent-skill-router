@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-aggregate-lifecycle
 description: Implements aggregate lifecycle management patterns — snapshotting, schema versioning, optimistic concurrency control, aggregate root splitting strategies, and consistency boundary enforcement for high-throughput domain-driven systems.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: domain-driven-design, ddd-context-mapping, event-sourcing-pattern, cqrs-pattern
+
+
+
+
 ---
+
+
+
+
 
 # Aggregate Lifecycle Management
 

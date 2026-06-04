@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: datadog-api-monitors
 description: Manages Datadog monitors including creating, updating, and deleting with alert configurations and best practices.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 
 # Datadog Monitor Management
 Implements creation and management of monitors in Datadog using the API. This skill focuses on defining alerts based on various metrics, along with configurations for notifications and monitoring best practices.

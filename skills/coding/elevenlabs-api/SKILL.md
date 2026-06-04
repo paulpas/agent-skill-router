@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: elevenlabs-api
 description: Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to-text,
   sound effects, audio streaming) using the elevenlabs Python SDK for audio generation
@@ -6,7 +10,7 @@ description: Integrates ElevenLabs API (text-to-speech, voice cloning, speech-to
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: elevenlabs, eleven labs, tts, text to speech, voice cloning, elevenlabs
     api, how do i use elevenlabs, AI voice
@@ -31,7 +35,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: coding-openai-api, coding-stabilityai-api
+
+
+
+
 ---
+
+
+
+
 # ElevenLabs API Integration
 
 Integrates ElevenLabs API using the `elevenlabs` Python SDK for text-to-speech, voice cloning, speech-to-text, sound effects generation, and audio streaming. When loaded, this skill makes the model implement ElevenLabs API calls with proper authentication, audio handling, and streaming for production voice AI applications.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: clean-architecture
 description: Designs software using Robert C. Martin's Clean Architecture concentric layers (Entities, Use Cases, Interface Adapters, Frameworks) with strict dependency rules and boundary contracts for framework-independent business logic.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Clean Architecture — Robert C. Martin's Layered Design
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: shopify-api
 description: Implements production-grade Shopify API integration (Admin REST/GraphQL, Storefront, OAuth 2.0, webhooks) using the shopifyapi Python SDK for ecommerce applications.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 
 # Shopify API Integration
 

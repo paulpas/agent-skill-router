@@ -1,14 +1,17 @@
 ---
+
+
+
+
 name: em-dash-guide
 description: Distinguishes hyphens, en-dashes, and em-dashes with typing shortcuts,
   style guide conventions, and concrete BAD vs GOOD examples for technical documentation.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: writing
-  triggers: em dash, en dash, hyphen, dash typography, how do i type dashes, long
-    dash, range notation, compound modifier, —, –
+  triggers: em dash, en dash, hyphen, dash typography, how do i type dashes, long dash, range notation, compound modifier dash
   archetypes:
   - educational
   anti_triggers:
@@ -26,7 +29,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: technical-documentation, style-guide
+
+
+
+
 ---
+
+
+
+
 # Dash Typography Guide for Technical Documentation
 
 Selects the correct dash character (hyphen `-`, en-dash `–`, em-dash `—`) based on context and applies style guide conventions consistently across all written content. Misusing dashes is one of the most common typography errors in technical writing — it signals carelessness to readers and makes documentation harder to parse visually.

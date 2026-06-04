@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: trigger-engineering
 description: Engineers precision trigger sets for AI agent skills using two-tier discovery patterns, anti-trigger calibration, archetype alignment, and hybrid scoring optimization to maximize auto-loading accuracy while minimizing false positive rates.
 license: MIT
@@ -27,7 +31,15 @@ metadata:
     - examples
     - do-dont
   related-skills: skill-architecture-design, skill-testing-methodology, skill-router
+
+
+
+
 ---
+
+
+
+
 
 # Trigger Engineering for AI Agent Skills
 

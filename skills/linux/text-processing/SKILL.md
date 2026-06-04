@@ -1,59 +1,56 @@
 ---
-title: "Text Processing — Quick Reference"
-audience: "Engineers who need regex, grep, sed and awk to feel like first-class tools, not occasional surprises."
-status: "complete"
+
+
+
+
+
+name: "text-processing"
+description: Reference for regex, grep, sed, awk, and the UNIX filter toolbox — the stream-oriented text transformation tools designed to be composed in pipelines.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: linux
+  triggers: grep, sed, awk, regex, text processing, regular expressions, how do i process text on the command line, pipeline filters
+  role: reference
+  scope: infrastructure
+  output-format: code
+  related-skills: bash-quick-reference,linux-cli-reference
+  archetypes: educational
+  anti_triggers: implement from scratch, architect a system, build infrastructure, design patterns
+  response_profile:
+    verbosity: high
+    directive_strength: low
+    abstraction_level: operational
+
+
+
+
+
 ---
 
-# Text Processing
-### Regex, grep, sed, awk, and the Filter Toolbox
 
----
 
-> The classical text-processing tools — `grep`, `sed`, `awk`, plus the
-> small filters `cut`, `paste`, `sort`, `uniq`, `tr`, `column`, `tee`,
-> `tac`, `shuf`, `expand`, `fmt`, `fold`, `wc`, `comm`, and friends —
-> are stream-oriented programs that read text, transform it, and emit
-> text. They are designed to be composed: you take a stream of records
-> (almost always lines), you push it through a chain of filters, and
-> the chain becomes the program.
->
-> The whole toolkit is held together by a single shared idea —
-> **regular expressions** — and by a single shared mental model:
-> **lines come in, transformed lines go out, and you don't need to
-> know how the program is implemented**. Once you have that mental
-> model and you have the regex flavors clear in your head, the rest of
-> this card is a series of recipes you can mix and match.
 
-## When to reach for which tool
 
-The split between the four big tools is fuzzy in practice — `grep` can
-do simple substitutions if you ask it nicely, `sed` can implement
-state machines, `awk` can do almost anything `sed` can do plus
-arithmetic, and any modern language with a regex library can replace
-all three. But each tool earns its place in the pipeline because
-each is the *shortest* and *fastest* path to its core use case:
 
-| If you want to… | Reach for |
-| --- | --- |
-| Find lines that match a pattern; print them, count them, list which files contain them | `grep` (or `egrep`, or modern `rg`) |
-| Make line-by-line edits to a stream — substitution, deletion, insertion, simple address-based transformations | `sed` |
-| Treat input as records broken into fields, compute on those fields, accumulate state across the stream, produce reports | `awk` |
-| Translate, delete, or squeeze individual characters | `tr` |
-| Pick out columns by character offset or by delimiter | `cut` |
-| Stitch files together as side-by-side columns | `paste` |
-| Order lines, with sane handling of numeric values and field-aware sort keys | `sort` |
-| Collapse runs of identical adjacent lines, or count them | `uniq` |
-| Format ragged input into aligned columns, or pour a sequence into a multi-column layout | `column` |
-| Count lines, words, characters, or bytes | `wc` |
-| Compare two sorted lists set-theoretically | `comm` |
-| Reformat paragraphs to a target width, hard-wrap, soft-wrap, expand or unexpand tabs | `fmt`, `fold`, `expand`, `unexpand` |
-| Split a stream so it goes to a file *and* keeps flowing down the pipeline | `tee` |
-| Reverse a file, or sample random lines | `tac`, `shuf` |
+# Text Processing — Quick Reference
 
-`grep` is read-only. `sed` rewrites lines. `awk` is a small
-programming language pretending to be a filter. `tr` operates on a
-byte stream and does not understand lines. Everything else either
-re-orders, projects, or counts.
+Reference for regex, grep, sed, awk, and the UNIX filter toolbox — the stream-oriented text transformation tools designed to be composed in pipelines. Covers regular expressions, grep patterns, sed substitutions, awk field processing, and common recipes.
+
+## When to Use
+
+- Finding lines that match a pattern; printing them, counting them, or listing which files contain them
+- Making line-by-line edits to a stream: substitution, deletion, insertion, simple address-based transformations
+- Treating input as records broken into fields, computing on those fields, accumulating state across the stream, producing reports
+- Translating, deleting, or squeezing individual characters in a byte stream
+- Picking out columns by character offset or delimiter, re-ordering lines, projecting, or counting
+
+## When NOT to Use
+
+- For data types that aren't text streams (nested dicts, typed records) — use Python
+- For regex-heavy work that exceeds sed/awk capabilities — use a general-purpose language with a proper regex library
+- On Windows without WSL/Cygwin — use PowerShell or the appropriate native toolchain
 
 ## Mental model
 

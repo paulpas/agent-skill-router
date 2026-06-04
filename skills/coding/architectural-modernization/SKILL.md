@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: architectural-modernization
 description: Upgrades legacy technology stacks — framework migrations, database transitions, infrastructure modernization, and API evolution — using incremental strategies that preserve business continuity while eliminating technical debt.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont]
   related-skills: monolith-refactoring,microservices-architecture,event-driven-architecture,cicd-pipeline-design,database-migrations
+
+
+
+
 ---
+
+
+
+
 
 # Architectural Modernization Guide
 

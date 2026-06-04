@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: box-api
 description: Integrates with Box API to manage files, folders, collaborations, metadata,
   signatures, hubs, and AI features using the boxsdk Python SDK.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: box api, box python, box sdk, box files, box folders, box collaboration,
     box sign, box metadata
@@ -30,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-microsoft-graph-api, coding-google-workspace-api, coding-dropbox-api
+
+
+
+
 ---
+
+
+
+
 
 # Box API Integration
 

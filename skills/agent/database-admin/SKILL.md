@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: database-admin
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Database Administration
 
 Implements comprehensive database administration practices across PostgreSQL, MySQL, MongoDB, and Redis with real operational commands, performance optimization patterns, and emergency procedures.

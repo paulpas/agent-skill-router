@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: metal3-io
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Metal3.io in Cloud-Native Engineering
 
 **Category:** infrastructure  

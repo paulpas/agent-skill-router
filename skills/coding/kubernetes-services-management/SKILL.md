@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-services-management
 description: Manages Kubernetes Services, including configuration for ClusterIP, NodePort, and LoadBalancer services. This skill provides detailed guidance on setting up and maintaining services in a Kubernetes cluster, ensuring efficient access and networking for deployed applications.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance]
+
+
+
+
 ---
+
+
+
+
 
 # Kubernetes Services Management
 

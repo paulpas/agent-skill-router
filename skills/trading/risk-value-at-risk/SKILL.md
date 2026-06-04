@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-value-at-risk
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Quantify potential losses in portfolio value over specified time horizons
 
 **Philosophy:** VaR provides a common language for risk comparison; different methods suit different market regimes

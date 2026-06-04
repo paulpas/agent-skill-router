@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: css-nesting
 description: Implements modern CSS native nesting patterns with & parent selector for organizing component styles, managing specificity, and writing maintainable scoped CSS without preprocessors.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # CSS Native Nesting with & Parent Selector
 

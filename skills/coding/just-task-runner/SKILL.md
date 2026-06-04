@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: just-task-runner
 description: Implements the Just task runner as a modern alternative to GNU Make with named arguments, subcommands, runsets, environment file support, and cross-platform portability for developer workflow automation.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: makefile, linux-make-build-system, coding-mage-build-tool
+
+
+
+
 ---
+
+
+
+
 
 # Just Task Runner — Modern Build Orchestration
 

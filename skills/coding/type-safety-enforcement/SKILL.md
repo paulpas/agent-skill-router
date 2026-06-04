@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: type-safety-enforcement
 description: Enforces strong type safety across software systems using static typing, generics, custom types, strict null checking, and compile-time validation to eliminate entire categories of runtime errors.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - examples
     - do-dont
   related-skills: engineering-principles, software-documentation, testing-unit-integration-e2e, static-analysis-tools
+
+
+
+
 ---
+
+
+
+
 
 # Type Safety Enforcement
 

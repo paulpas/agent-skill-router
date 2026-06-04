@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: modular-design
 description: Designs modular Go applications with clean architecture, dependency injection,
   package boundaries, and interface-based design for maintainable codebases.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ version: "1.0.0"
   maturity: stable
   completeness: 95
   exampleCount: 3
+
+
+
+
 ---
+
+
+
+
 # Modular Go Design
 
 Senior architect designing clean, modular Go applications using dependency injection, interface boundaries, and clean architecture principles. This skill covers package organization, inversion of control, and scalable codebase structure.

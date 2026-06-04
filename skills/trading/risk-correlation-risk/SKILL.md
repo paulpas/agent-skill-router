@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-correlation-risk
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Monitor and manage correlation risk in multi-asset portfolios
 
 **Philosophy:** Correlations break down in crises; true diversification requires assets with stable low correlations

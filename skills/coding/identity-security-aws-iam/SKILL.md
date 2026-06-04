@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: identity-security-aws-iam
 description: "Comprehensive guide to AWS Identity and Access Management (IAM) covering users, roles, policies, STS, and Identity Center."
 license: MIT
@@ -16,7 +20,16 @@ metadata:
   output-format: code
   triggers: iam, aws, identity, access management, cloud security, sts, roles, policies
   related-skills: aws-sdk, aws-security-best-practices
+
+  scope: implementation
+
+
+
 ---
+
+
+
+
 # AWS Identity and Access Management (IAM)
 AWS Identity and Access Management (IAM) provides a comprehensive way to securely control access to AWS services and resources through authentication and authorization. This includes managing IAM users, roles, policies, and leveraging security features like Security Token Service (STS) and Identity Center.
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: fundamentals-trading-edge
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Identify, quantify, test, and optimize sources of edge in trading strategies to ensure long-term profitability.
 
 **Philosophy:** Edge is the foundation of profitable trading. Without it, trading is gambling. Edge represents a statistical advantage that produces positive expected value over time. The philosophy emphasizes scientific rigor in edge discovery, rigorous statistical validation, continuous monitoring for edge decay, and systematic adaptation when edge deteriorates. Trading systems must be built on proven edge, not hope or superstition.

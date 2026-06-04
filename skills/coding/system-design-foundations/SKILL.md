@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: system-design-foundations
 description: Implements core distributed system design patterns (load balancing, caching strategies, database sharding, message queues) for building scalable and resilient production applications.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, diagrams, do-dont]
   related-skills: distributed-systems-architecture, microservice-resilience-patterns, cqrs-pattern, domain-events, production-readiness
+
+
+
+
 ---
+
+
+
+
 
 # System Design Foundations
 

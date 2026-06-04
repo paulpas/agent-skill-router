@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: memory-systems
 description: Implements conversation memory patterns (bounded buffers, auto-summarization, vector-backed long-term storage) for AI agent context management and factual recall.
 archetypes:
@@ -23,7 +27,15 @@ metadata:
   related-skills: tool-use-function-calling, agent-context-management, user-memory-system
   maturity: stable
   completeness: 95
+
+
+
+
 ---
+
+
+
+
 
 # AI Agent Memory Systems
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: risk-management
 description: Implements risk management techniques (position sizing, risk-reward ratios, drawdown control) to safeguard capital and enhance trading performance in algorithmic trading systems.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Trading Risk Management
 

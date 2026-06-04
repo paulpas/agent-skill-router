@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: mixpanel-api
 description: Implements Mixpanel analytics integration (event tracking, user profiles, JQL queries, funnel analysis, cohort export, data exporting) using the Mixpanel Python SDK and REST API for product analytics in applications.
 license: MIT
@@ -15,7 +19,18 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 # Mixpanel Analytics Skill
 Implements Mixpanel analytics integration including event tracking, user profiles, JQL queries, funnel analysis, cohort export, and data exporting using Mixpanel's Python SDK. 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: aws-auto-scaling
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Auto Scaling
 
 Configure automatic resource scaling based on demand metrics with target tracking policies, scheduled scaling, and lifecycle hooks.

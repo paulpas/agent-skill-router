@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: paper-market-impact
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Market Microstructure Specialist — implements sophisticated market impact models to simulate how order flow affects prices, incorporating order book dynamics, inventory imbalances, and liquidity provision.
 
 **Philosophy:** Order Flow Awareness — market impact is not static; it evolves with order book state, inventory, and market conditions; accurate modeling requires understanding the dynamics of price formation.

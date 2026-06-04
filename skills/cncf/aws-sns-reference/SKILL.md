@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: aws-sns-reference
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # SNS (Simple Notification Service)
 
 Deploy scalable publish-subscribe messaging for asynchronous notifications, mobile push, email delivery, and event-driven architecture.

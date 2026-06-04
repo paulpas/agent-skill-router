@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: azure-scale-sets
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Azure Virtual Machine Scale Sets
 
 Deploy and manage azure virtual machine scale sets infrastructure as part of your cloud-native environment.

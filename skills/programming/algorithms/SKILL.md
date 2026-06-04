@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: algorithms
 compatibility: opencode
 completeness: 95
@@ -34,7 +38,15 @@ role: reference
 scope: implementation
 triggers: algorithm, algorithms, big-o, complexity, data structure, searching, sorting
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
   related-skills: abl-v10-learning, abl-v12-learning
 
 
@@ -3209,7 +3221,7 @@ Algorithm selection is a critical skill in computer science. This guide provides
 
 **Pro Tip:** When in doubt, start with the simplest algorithm that meets your requirements. Optimize only after profiling confirms it's necessary.
 
---- 
+---
 
 *This skill document is designed for OpenCode algorithm selection. For specific implementation questions, refer to the code-philosophy skill for implementation guidelines.*
 ---

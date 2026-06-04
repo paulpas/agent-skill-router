@@ -1,7 +1,35 @@
 ---
+
+
+
+
+
 name: code-review-correctness
 
-description: Implements structured approaches to ensure code correctness through robust review practices, emphasizing testing and continual improvement.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: code review, correctness, software reliability, bug prevention\n  archetypes: [implementation, evaluation]\n  anti_triggers: [undefined behavior, ad-hoc reviews]\n  response_profile: medium\n---
+description: Implements structured approaches to ensure code correctness through robust review practices, emphasizing testing and continual improvement.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: code review, correctness, software reliability, bug prevention
+  archetypes: [implementation, evaluation]
+  anti_triggers: [undefined behavior, ad-hoc reviews]
+  response_profile: medium
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+
+---
+
+
+
+
+
 ## Enhanced Code Review Correctness Content
 
 ### The Role of Code Review in Ensuring Correctness

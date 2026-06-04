@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: execution-twap
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Execute large orders over time to minimize market impact and achieve good prices
 
 **Philosophy:** TWAP provides a disciplined approach to execution; the algorithm's predictability reduces slippage

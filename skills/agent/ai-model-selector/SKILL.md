@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-model-selector
 description: Selects the optimal LLM model for a specific task by evaluating capability requirements against cost, latency, context window, and quality needs across all major providers.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: analysis
   content-types: [guidance, examples, do-dont, diagrams]
   related-skills: ai-framework-selector, framework-selection, multi-model-routing, tool-use-function-calling
+
+
+
+
 ---
+
+
+
+
 
 # AI Model Selector
 

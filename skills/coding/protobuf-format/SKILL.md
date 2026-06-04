@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: protobuf-format
 description: Designs protocol buffer proto3 schemas for data serialization covering well-known types, field behavior annotations, schema evolution strategies, and Buf CLI tooling for type contracts.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: grpc-patterns, data-encoding, event-schema-versioning
+
+
+
+
 ---
+
+
+
+
 
 # Protocol Buffers Schema Design (proto3)
 

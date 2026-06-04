@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: elevenlabs-ai-tooling
 description: Implements integrations with ElevenLabs API for Text-to-Speech, Voice Cloning, and Conversational AI capabilities within AI/LLM agendas.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: elevenlabs api, text-to-speech, voice cloning, conversational ai, how do i convert text to speech, voice ai integration
   scope: implementation
@@ -22,7 +26,15 @@ version: "1.0.0"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # ElevenLabs API Integration for Voice AI
 Integrates ElevenLabs API to enable advanced voice capabilities within projects. This skill allows developers to implement Text-to-Speech (TTS) and Voice Cloning features to enhance user interfaces and interactions via AI-powered speech.

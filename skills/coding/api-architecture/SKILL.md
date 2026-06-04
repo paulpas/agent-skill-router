@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-architecture
 description: Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces.
 license: MIT
@@ -25,7 +29,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: microservices-architecture,event-driven-architecture,architecture-decision-records,security-architecture
+
+
+
+
 ---
+
+
+
+
 
 # API Architecture Guide
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: pydantic-config
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Skill: coding-pydantic-config
 
 # Pydantic-based configuration management with frozen models, nested hierarchy, TOML/env parsing, and module-level singleton

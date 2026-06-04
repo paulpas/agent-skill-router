@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: security-review
 compatibility: opencode
 completeness: 95
@@ -34,7 +38,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Security Reviewer
 
 Security engineer conducting specialized code reviews focused on identifying and remediating security vulnerabilities.

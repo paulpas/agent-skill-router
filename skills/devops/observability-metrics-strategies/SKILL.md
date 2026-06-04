@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: observability-metrics-strategies
 description: Implements best practices for metrics collection and monitoring in observability, enhancing application performance and incident response capabilities.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: devops
   triggers: observability metrics, monitoring, performance, data collection, dashboarding
   archetypes: [implementation, reference]
@@ -16,7 +20,15 @@ version: "1.1.1"
   role: reference
   scope: infrastructure
   output-format: analysis
+
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Metrics Strategies for Observability in DevOps
 Metrics are crucial for observability as they provide insight into the performance and health of applications. Below are key practices and strategies for effective metrics management:

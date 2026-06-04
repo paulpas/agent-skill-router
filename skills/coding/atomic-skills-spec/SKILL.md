@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: atomic-skills-spec
 description: Defines criteria, thresholds, and migration patterns for splitting monolithic skills into focused atomic skills — including split heuristics, trigger engineering for new sub-skills, and gradual migration strategy.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
   role: reference
   scope: orchestration
   output-format: analysis
+
+
+
+
 ---
+
+
+
+
 
 # Atomic Skills Specification
 

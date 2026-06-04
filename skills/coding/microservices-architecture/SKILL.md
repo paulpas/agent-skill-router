@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: microservices-architecture
 description: Implements microservices architecture patterns including domain-driven service decomposition, inter-service communication protocols, Saga pattern for distributed transactions, circuit breaker resilience, and API gateway routing for independently deployable services.
 license: MIT
@@ -27,7 +31,15 @@ metadata:
     - do-dont
     - examples
   related-skills: event-driven-architecture, monolith-strangler-pattern, ddd-context-mapping
+
+
+
+
 ---
+
+
+
+
 
 # Microservices Architecture Implementation
 

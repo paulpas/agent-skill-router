@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: aws-secrets-manager
 description: Implements AWS Secrets Manager for secure secret storage, management, and automatic rotation of credentials using AWS SDK for Python (Boto3).
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: coding
   triggers: aws secrets manager, boto3, secret management, automatic rotation, credential management
   archetypes: [implementation, secret management]
@@ -13,7 +17,18 @@ version: "1.1.1"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## AWS Secrets Manager: Comprehensive Guide
 AWS Secrets Manager is a critical service that aids in securely managing sensitive information such as passwords, secrets, and API keys. This guide covers best practices, implementation steps, and relevant examples.

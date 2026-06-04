@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: karmada
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Karmada in Cloud-Native Engineering
 
 **Category:** multi-cluster  

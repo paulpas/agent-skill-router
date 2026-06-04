@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: datadog-api-traces
 description: Implements application performance monitoring (APM) using the Datadog API for tracing, including best practices for initiating and managing traces and spans.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   response_profile:
     verbosity: medium
     directive_strength: high
+
+
+
+
 ---
+
+
+
+
 
 # Datadog APM Tracing
 Implements APM tracing for applications using Datadog API. This skill covers how to create, manage, and submit traces for effective performance monitoring and alerting based on APM data.

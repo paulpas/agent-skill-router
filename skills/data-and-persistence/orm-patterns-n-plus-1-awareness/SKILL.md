@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: orm-patterns-n-plus-1-awareness
 description: Provides comprehensive training on ORM patterns, the N+1 problem, and strategies to mitigate it, complete with code examples and workflows.
 license: MIT
@@ -20,7 +24,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # ORM Patterns and N+1 Problem Awareness
 Provides comprehensive training on ORM patterns, the N+1 problem, and strategies to mitigate it, complete with code examples and workflows.

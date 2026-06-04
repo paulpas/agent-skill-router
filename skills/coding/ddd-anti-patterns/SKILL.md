@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-anti-patterns
 description: Detects and resolves common Domain-Driven Design anti-patterns including god aggregates, anemic domain models, context creep, repository leakage, specification over-engineering, and domain service sprawl in DDD codebases.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: domain-driven-design, ddd-tactical-patterns, domain-modeling, domain-repository-pattern, ddd-context-mapping, ddd-aggregate-lifecycle
+
+
+
+
 ---
+
+
+
+
 
 # DDD Anti-Patterns Reference
 

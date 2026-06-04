@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: k6
 description: Implements best practices for load testing web applications using K6, a modern performance testing tool optimized for developers.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: performance
   triggers: load testing, performance testing, K6, web applications, system performance
   archetypes: [implementation, reference]
@@ -13,7 +17,18 @@ version: "1.1.1"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Best Practices for Load Testing with K6
 Load testing ensures that your applications can handle expected usage patterns and helps identify performance bottlenecks. K6 is an excellent tool for developers seeking to implement modern performance testing efficiently. Below are strategies for effective load testing using K6:

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ml-ai-engineering-deployment
 description: Implements MLOps deployment patterns including model serving with ONNX/TensorRT, drift detection, feature stores, model registries, and A/B testing for production AI systems.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: production-readiness, engineering-api-design, data-engineering-architecture
+
+
+
+
 ---
+
+
+
+
 
 # ML/AI Engineering Deployment
 

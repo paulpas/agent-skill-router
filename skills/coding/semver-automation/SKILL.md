@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: semver-automation
 compatibility: opencode
 completeness: 95
@@ -34,7 +38,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Semantic Versioning Automation
 
 Implementation guide for automating semantic versioning in Git repositories using conventional commits and release automation tools like semantic-release, including version bumping, changelog generation, and release workflows.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: tempo
 description: Deploys and manages Tempo distributed tracing infrastructure on Kubernetes with configuration, querying via Loki-style APIs, health monitoring, and troubleshooting for production microservice observability.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Grafana Tempo Distributed Tracing in Kubernetes
 

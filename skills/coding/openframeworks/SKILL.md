@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: openframeworks
 description: Implements OpenFrameworks (C++ creative coding toolkit) application lifecycle,
   addon integration, drawing primitives, event handling, shader management, and data
@@ -6,7 +10,7 @@ description: Implements OpenFrameworks (C++ creative coding toolkit) application
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: openframeworks, ofx addons, creative coding, c++ graphics, interactive
     art, ofApp setup update draw, particle systems, cross-platform canvas
@@ -31,7 +35,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: of-shader-programming, performance-optimization
+
+
+
+
 ---
+
+
+
+
 # OpenFrameworks Developer
 
 Implements interactive creative applications using the OpenFrameworks C++ toolkit. Covers application lifecycle, addon management, rendering, event handling, and data visualization patterns for artists and developers building cross-platform projects on macOS, Linux, and Windows.

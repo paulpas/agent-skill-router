@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: auth-patterns
 description: Implements authentication patterns using OAuth2, OIDC, JWT, and SAML protocols for secure user management, including token handling, verification, and refresh flows.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Authentication Patterns
 

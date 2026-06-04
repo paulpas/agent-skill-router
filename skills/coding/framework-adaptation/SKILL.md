@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: framework-adaptation
 description: Evaluates and integrates new frameworks into existing projects using
   adapter patterns, progressive migration strategies, and dependency boundary isolation.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: framework adaptation, library integration, new framework, dependency evaluation,
     tech stack upgrade, adapter pattern, facade pattern, progressive migration
@@ -30,7 +34,15 @@ version: "1.0.0"
   - examples
   - do-dont
   related-skills: version-migration, dependency-conflict-resolution, architecture-review
+
+
+
+
 ---
+
+
+
+
 # Framework Adaptation & Integration
 
 When loaded, this skill makes the model evaluate and integrate new frameworks into existing projects using adapter patterns, progressive migration strategies (Strangler Fig), and dependency boundary isolation. The model produces a dependency analysis, type-safe adapter interfaces, a step-by-step migration plan with feature flags for rollback, and a validation strategy using shadow reads or dual-write comparison.

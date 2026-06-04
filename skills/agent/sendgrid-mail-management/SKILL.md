@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: sendgrid-mail-management
 description: Implements features for sending emails, managing templates, handling marketing campaigns, and parsing inbound emails with the SendGrid API.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: agent
   triggers: sendgrid, send email, email templates, marketing campaigns, inbound email parsing
   role: implementation
@@ -23,7 +27,15 @@ version: "1.0.0"
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # SendGrid Mail Management
 This skill integrates the SendGrid API to manage email functionalities, including sending transactional emails, handling email templates, managing marketing campaigns, and parsing inbound emails. Upon loading, this skill allows the model to create well-structured emails, utilize dynamic templates, and process email responses via webhooks.

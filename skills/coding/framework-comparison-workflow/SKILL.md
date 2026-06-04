@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-comparison-workflow
 description: Runs structured, code-level comparison workflows between competing frameworks through spike projects, side-by-side implementations, developer experience measurement, and ecosystem analysis to produce evidence-based selection recommendations.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-selection, framework-evaluation-criteria, framework-requirements, framework-adoption-strategy
+
+
+
+
 ---
+
+
+
+
 
 # Framework Comparison Workflow
 

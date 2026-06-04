@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kiss-principle
 description: Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # KISS Principle — Keep It Simple, Stupid
 

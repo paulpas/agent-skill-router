@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: configuration-management
 description: Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: software-engineering-principles, modern-python-development, production-readiness
+
+
+
+
 ---
+
+
+
+
 
 # Configuration Management in Python Applications
 

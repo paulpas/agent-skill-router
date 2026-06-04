@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: command-pattern
 description: Implements the GoF Command pattern for encapsulating requests as objects in Python, supporting undo/redo stacks, macro commands (composite), serialization-based replay, and async command execution.
 archetypes:
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: strategy-pattern, observer-pattern, chain-of-responsibility, cqrs-pattern
+
+
+
+
 ---
+
+
+
+
 
 # Command Pattern
 

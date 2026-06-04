@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-randomized-experiments
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Randomized Experiments
 
 Comprehensive guide to randomized experiments in machine learning and data science workflows.

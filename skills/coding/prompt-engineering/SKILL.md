@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: prompt-engineering
 description: Implements prompt design patterns including chain-of-thought reasoning, role-setting, few-shot exemplars, structured output schemas, and system prompt optimization for reliable LLM agent behavior.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Prompt Engineering Patterns
 

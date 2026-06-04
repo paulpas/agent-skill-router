@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: execution-vwap
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Execute orders in proportion to market volume to minimize slippage in high-volume periods
 
 **Philosophy:** Volume-weighted execution aligns with market liquidity; orders follow the market's trading patterns

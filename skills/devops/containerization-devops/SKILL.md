@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: containerization-devops
 description: Implements best practices for containerization in the DevOps lifecycle, focusing on deployment, orchestration, and management of containerized applications.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: devops
   triggers: containerization, devops, docker, kubernetes, orchestration
   archetypes: [implementation, management]
@@ -16,7 +20,15 @@ version: "1.1.1"
   role: implementation
   scope: infrastructure
   output-format: code
+
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Guidelines for Containerization in DevOps
 Containerization is a cornerstone of modern DevOps practices, facilitating the development, deployment, and management of applications. Below are best practices and strategies for effective containerization:

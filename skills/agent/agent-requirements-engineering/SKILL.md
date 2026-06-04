@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: agent-requirements-engineering
 description: Defines and structures functional, non-functional, and safety requirements for AI agent systems including capability matrices, hallucination thresholds, data quality standards, and evaluation criteria.
 license: MIT
@@ -27,7 +31,15 @@ metadata:
     - examples
     - config
   related-skills: agent-reliability-engineering, ai-system-evaluation-criteria, agent-architecture-patterns, framework-selection
+
+
+
+
 ---
+
+
+
+
 
 # AI Agent Requirements Engineering
 

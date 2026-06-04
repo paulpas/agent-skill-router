@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: linux-services
 description: Manages Linux services with systemd for reliable operation, dependency
   ordering, resource isolation, and automated recovery in cloud and on-prem environments.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ version: "1.0.0"
   maturity: stable
   completeness: 95
   exampleCount: 3
+
+
+
+
 ---
+
+
+
+
 # Linux Service Management with systemd
 
 Infrastructure engineer managing Linux services with systemd for reliable operation, dependency ordering, resource isolation, and automated recovery in cloud and on-prem environments.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: juice-shop
 compatibility: opencode
 completeness: 95
@@ -34,7 +38,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # OWASP Juice Shop
 
 The OWASP Juice Shop is an intentionally vulnerable Node.js/Express web application for learning and practicing web application security testing.

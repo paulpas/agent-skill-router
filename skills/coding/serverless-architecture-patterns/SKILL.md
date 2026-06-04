@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: serverless-architecture-patterns
 description: Implements serverless architecture patterns including AWS Lambda function design, event-driven triggers (S3, DynamoDB streams, SQS/SNS), Serverless API Gateway integration, cold start optimization, distributed tracing, and multi-region deployment strategies for cost-effective scalable applications.
 license: MIT
@@ -25,7 +29,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: microservices-architecture, event-driven-architecture, cloud-native-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Serverless Architecture Patterns
 

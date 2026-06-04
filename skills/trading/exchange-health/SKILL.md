@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: exchange-health
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Monitor exchange API health and availability to ensure reliable trading operations
 
 **Philosophy:** Exchange availability is critical; early detection of issues prevents trading failures and potential losses

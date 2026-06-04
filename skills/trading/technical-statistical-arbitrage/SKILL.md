@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-statistical-arbitrage
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Identify and trade mean-reverting relationships between securities
 
 **Philosophy:** Statistical arbitrage exploits temporary pricing inefficiencies while maintaining market neutrality

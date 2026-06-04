@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gitops-troubleshooting
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # GitOps Troubleshooting
 
 Implements comprehensive GitOps debugging workflows for ArgoCD and Flux deployments. Provides actionable diagnostic commands, synchronization failure analysis, drift detection procedures, and reconciliation troubleshooting with real command examples. Follows the 5 Laws of Elegant Defense to guide data naturally through the debugging pipeline.

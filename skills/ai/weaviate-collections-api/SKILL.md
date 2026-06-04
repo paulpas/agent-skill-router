@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: weaviate-collections-api
 description: Implements Weaviate API for managing collections of data within AI applications, enhancing the structure and retrieval of information.
 license: MIT
@@ -25,7 +29,15 @@ metadata:
     verbosity: low
     directive_strength: medium
     abstraction_level: tactical
+
+
+
+
 ---
+
+
+
+
 # Weaviate Collections API
 
 Utilizes the Weaviate API to manage collections of data effectively in AI-enabled applications.

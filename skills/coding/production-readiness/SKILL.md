@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: production-readiness
 description: Evaluates service readiness against Google SRE PRR framework covering
   reliability, observability, scalability, security, data management, deployment engineering,
@@ -6,11 +10,9 @@ description: Evaluates service readiness against Google SRE PRR framework coveri
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: production readiness, SRE review, deployment criteria, observability setup,
-    canary deployment, on-call coverage, SLO SLI, error budget, golden signals, how
-    do i know my service is production ready, operational excellence, hypercare period
+  triggers: production readiness, SRE review, deployment criteria, observability setup, canary deployment, on-call coverage, SLO SLI, error budget canary deployment
   archetypes:
   - diagnostic
   - educational
@@ -32,7 +34,15 @@ version: "1.0.0"
   - do-dont
   - config
   related-skills: observability-patterns, technical-debt-management, architecture-decision-records
+
+
+
+
 ---
+
+
+
+
 # Production Readiness Review
 
 Evaluates and validates that services meet operational criteria before deploying to production. Applies the Google SRE PRR framework across eight categories — reliability, observability, scalability, security, data management, deployment engineering, cost governance, and documentation — ensuring teams ship with confidence rather than hope. This skill guides systematic pre-launch validation so that production deployments are deliberate, traceable, and reversible.

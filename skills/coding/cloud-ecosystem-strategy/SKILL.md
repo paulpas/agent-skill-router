@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: cloud-ecosystem-strategy
 description: Strategizes cross-cloud ecosystem navigation (AWS, Azure, GCP) with vendor
   lock-in analysis, interoperability patterns, cost optimization frameworks, and multi-cloud
@@ -6,11 +10,9 @@ description: Strategizes cross-cloud ecosystem navigation (AWS, Azure, GCP) with
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: cloud ecosystem, aws, azure, gcp, multi-cloud, hybrid cloud, vendor lock-in,
-    cloud migration, cross-cloud, how do i choose cloud provider, cloud strategy,
-    cloud interoperability, cost optimization, cloud architecture decision
+  triggers: cloud ecosystem, aws, azure, gcp, multi-cloud, hybrid cloud, vendor lock-in, cloud migration cloud migration
   archetypes:
   - tactical
   - generation
@@ -34,7 +36,15 @@ version: "1.0.0"
   - do-dont
   related-skills: coding-cloud-native-architecture, coding-platform-engineering, coding-technology-adoption,
     coding-cost-optimization-patterns
+
+
+
+
 ---
+
+
+
+
 # Cloud Ecosystem Strategy
 
 Strategizes cross-cloud ecosystem navigation across AWS, Azure, and GCP with vendor lock-in analysis, interoperability patterns, cost optimization frameworks, and multi-cloud architecture decisions. This skill makes the model evaluate cloud provider capabilities, identify cross-cloud equivalencies, design for portability, and create migration strategies that minimize disruption while maximizing the benefits of each provider's unique services.

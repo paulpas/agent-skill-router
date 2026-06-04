@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: event-sourcing-pattern
 description: Implements event sourcing pattern (event store, aggregate roots, projections,
   snapshots, event replay) to maintain complete audit trail and reconstruct state
@@ -6,11 +10,9 @@ description: Implements event sourcing pattern (event store, aggregate roots, pr
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
-  triggers: event sourcing, event store, aggregate root, event replay, projections,
-    snapshots, how do i track all changes, immutable audit trail, state reconstruction
-    from events
+  triggers: event sourcing, event store, aggregate root, event replay, projections, snapshots, how do i track all changes, immutable audit trail snapshots
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: event-driven-architecture,cqrs-pattern,microservice-resilience-patterns
+
+
+
+
 ---
+
+
+
+
 # Event Sourcing Pattern
 
 Implements the event sourcing pattern to maintain a complete, immutable audit trail of all state changes. When loaded, this skill makes the model design aggregate roots that derive state from ordered event streams, implement an event store for persistent storage and replay, build projections for read-optimized views, add snapshots for performance optimization, and construct safe event replay mechanisms for debugging and migration.

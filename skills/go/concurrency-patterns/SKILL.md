@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: concurrency-patterns
 description: Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications.
 license: MIT
@@ -10,13 +14,21 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
-version: "1.0.0"
+  version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
   output-format: code
   triggers: go concurrency, go goroutines, go channels, worker pool, synchronization, context cancellation
+
+
+
+
 ---
+
+
+
+
 
 # Go Concurrency Patterns
 This skill provides a comprehensive overview of Go concurrency patterns, focusing on the effective use of goroutines and channels. It covers the standard library's tools for synchronization and how to manage concurrent tasks safely in high-performance applications.

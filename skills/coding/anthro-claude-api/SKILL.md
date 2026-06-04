@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: anthro-claude-api
 license: MIT
 compatibility: opencode
@@ -6,7 +10,20 @@ metadata:
   archetypes: [coding, AI, claude]
   anti_triggers: [generic routing]
   response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
+
+  triggers: 
+  domain: 
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 metadata:
   archetypes: [coding, AI, claude]

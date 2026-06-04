@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: python-module-structure
 description: Designs and organizes Python package directory structures, __init__.py
   export patterns, type stubs (.pyi), pyproject.toml metadata, and import management
@@ -6,7 +10,7 @@ description: Designs and organizes Python package directory structures, __init__
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: python module, python package, __init__.py, module structure, pyproject.toml,
     type stubs, .pyi, circular imports
@@ -32,7 +36,15 @@ version: "1.0.0"
   - examples
   related-skills: framework-requirements, engineering-principles, dry-principles,
     code-quality-policies, pydantic-models, python-package-publishing
+
+
+
+
 ---
+
+
+
+
 # Python Module & Package Structure Manager
 
 Designs and organizes Python package directory structures, `__init__.py` export patterns, type stub files (.pyi), pyproject.toml metadata, and import management following PEP 420 (namespace packages) and PEP 561 (package typing) conventions. Ensures every module has a single responsibility, imports are managed to avoid circular dependencies, public APIs are explicitly declared via `__all__`, and distributable packages include proper metadata for PyPI publishing.

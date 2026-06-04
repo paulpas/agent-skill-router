@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-kernel-density
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Kernel Density Estimation
 
 Comprehensive guide to kernel density estimation in machine learning and data science workflows.

@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: observability-logging-strategies
 description: Implements best practices for logging strategies in observability to improve performance monitoring and troubleshooting in applications.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: devops
   triggers: logging strategies, observability, performance monitoring, application logging, troubleshooting
   archetypes: [implementation, reference]
@@ -16,7 +20,15 @@ version: "1.1.1"
   role: implementation
   scope: infrastructure
   output-format: code
+
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Logging Strategies for Enhanced Observability in DevOps
 Effective logging is crucial for achieving observability in applications. Below are best practices and strategies to improve logging outcomes and facilitate issue resolution:

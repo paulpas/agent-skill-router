@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ds-data-privacy
 compatibility: opencode
 completeness: 95
@@ -32,7 +36,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Data Privacy
 
 Comprehensive guide to data privacy in machine learning and data science workflows.

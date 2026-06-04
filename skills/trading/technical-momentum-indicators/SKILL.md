@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-momentum-indicators
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Measure the speed and strength of price movement for timing entries and exits
 
 **Philosophy:** Momentum leads price; divergences and overbought/oversold conditions signal potential reversals

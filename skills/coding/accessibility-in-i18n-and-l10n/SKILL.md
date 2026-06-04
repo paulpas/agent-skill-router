@@ -1,7 +1,35 @@
 ---
+
+
+
+
 name: accessibility-in-i18n-and-l10n
 
-description: Implements accessibility strategies to ensure user-friendly software aligned with WCAG standards in internationalization and localization contexts.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.1\n  domain: coding\n  triggers: accessibility, i18n, l10n, WCAG compliance, diverse user experience\n  archetypes: [implementation, evaluation]\n  anti_triggers: [generic solutions, oversimplified cultural strategies]\n  response_profile:\n    verbosity: medium\n    directive_strength: high\n    abstraction_level: operational\n---
+description: Implements accessibility strategies to ensure user-friendly software aligned with WCAG standards in internationalization and localization contexts.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.1"
+  domain: coding
+  triggers: accessibility, i18n, l10n, WCAG compliance, diverse user experience
+  archetypes: [implementation, evaluation]
+  anti_triggers: [generic solutions, oversimplified cultural strategies]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+---
+
+
+
+
 
 ## Enhanced Accessibility Strategies for Internationalization and Localization
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: weaviate-vector-search
 description: Implements vector search capabilities of the Weaviate API, allowing efficient and scalable retrieval of relevant data for AI applications.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
     verbosity: low
     directive_strength: medium
     abstraction_level: tactical
+
+
+
+
 ---
+
+
+
+
 # Weaviate Vector Search
 
 Leverages the vector search functionality of the Weaviate API to retrieve relevant data efficiently in AI applications.

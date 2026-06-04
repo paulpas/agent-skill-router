@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: network-troubleshooting
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Network Troubleshooting
 
 Implements comprehensive network troubleshooting workflows for diagnosing connectivity issues including firewall rules (iptables, nftables), DNS resolution failures, load balancer configuration problems, container networking (Docker, CNI, Calico, Cilium), VPN connectivity issues, and network policy enforcement using real command-line tools and diagnostic scripts.

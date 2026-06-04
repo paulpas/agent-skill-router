@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: artifact-hub
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
   related-skills: cncf-argo, cncf-aws-eks, cncf-azure-aks, cncf-azure-resource-manager
 # Artifact Hub in Cloud-Native Engineering
 

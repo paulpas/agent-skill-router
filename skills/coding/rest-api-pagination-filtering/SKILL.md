@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rest-api-pagination-filtering
 description: Implements pagination patterns including cursor-based keyset pagination for large datasets, offset-based pagination for small collections, query parameter filtering, field selection sparse fieldsets, and sorting conventions for REST API collections.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: rest-api-resource-modeling, rest-api-caching
+
+
+
+
 ---
+
+
+
+
 
 # Pagination and Filtering Specialist
 

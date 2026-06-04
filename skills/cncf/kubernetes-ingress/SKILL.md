@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-ingress
 description: Configures Kubernetes Ingress resources for external HTTP/HTTPS routing,
   TLS termination, host-based and path-based routing, with Nginx and Traefik controller
@@ -6,11 +10,9 @@ description: Configures Kubernetes Ingress resources for external HTTP/HTTPS rou
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: cncf
-  triggers: ingress, kubernetes ingress, ingress controller, host-based routing, path-based
-    routing, TLS termination, cert-manager, external access, load balancer, reverse
-    proxy
+  triggers: ingress, kubernetes ingress, ingress controller, host-based routing, path-based routing, TLS termination, cert-manager, external access routing
   archetypes:
   - educational
   - strategic
@@ -31,7 +33,15 @@ version: "1.0.0"
   - do-dont
   - config
   related-skills: cncf-kubernetes,cncf-cert-manager,cncf-traefik,cncf-network-policies,cncf-service-mesh
+
+
+
+
 ---
+
+
+
+
 # Kubernetes Ingress Configuration
 
 Configures Kubernetes Ingress resources to route external HTTP and HTTPS traffic to internal Services. Manages TLS termination, host-based routing, path-based routing, and controller-specific annotations for production-grade external access patterns across Nginx, Traefik, and cloud-provider ingress controllers.

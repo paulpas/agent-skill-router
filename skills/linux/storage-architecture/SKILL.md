@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: storage-architecture
 description: Designs and implements Linux storage architectures for cloud block storage
   and on-prem SAN/NAS with performance and durability guarantees.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -15,8 +19,7 @@ version: "1.0.0"
   - guidance
   - config
   - do-dont
-  triggers: storage architecture, LVM, filesystem, XFS, ext4, btrfs, cloud storage,
-    NVMe, mount options, storage monitoring
+  triggers: storage architecture, LVM, filesystem, XFS, ext4, btrfs, cloud storage, NVMe NVMe
   archetypes:
   - tactical
   anti_triggers:
@@ -30,7 +33,15 @@ version: "1.0.0"
   maturity: stable
   completeness: 95
   exampleCount: 3
+
+
+
+
 ---
+
+
+
+
 # Linux Storage Architecture
 
 Storage engineer designing and implementing Linux storage architectures for cloud block storage and on-prem SAN/NAS, selecting appropriate filesystems, configuring LVM, optimizing mount options, and monitoring storage health for performance and durability.

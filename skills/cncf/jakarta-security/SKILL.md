@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: jakarta-security
 description: Implements Jakarta Security Enterprise API (JSR 375) for Jakarta EE applications with IdentityStore patterns, JWT Bearer tokens, form login, BCrypt password hashing, and container configuration for WildFly and OpenLiberty.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Jakarta Security Enterprise API (JSR 375)
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-deduplication
 description: Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: deduplication-patterns,data-modeling,dry-principles,refactoring-techniques,code-quality-metrics
+
+
+
+
 ---
+
+
+
+
 
 # Data-Layer Deduplication
 

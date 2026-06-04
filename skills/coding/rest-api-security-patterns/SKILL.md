@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rest-api-security-patterns
 description: Implements REST API security patterns including OAuth 2.1 / OIDC authorization flows with PKCE, JWT access token vs opaque refresh token strategies, API key authentication, rate limiting headers, and CORS configuration for production APIs.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: rest-api-error-handling, rest-api-resource-modeling
+
+
+
+
 ---
+
+
+
+
 
 # API Security Patterns Engineer
 

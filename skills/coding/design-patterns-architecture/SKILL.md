@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: design-patterns-architecture
 description: Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: refactoring, code-review, test-driven-development
+
+
+
+
 ---
+
+
+
+
 
 # Architecture & Design Patterns
 Senior software architect designing scalable, maintainable systems using GoF design patterns and SOLID/DRY/YAGNI principles. Evaluates architectural tradeoffs, applies the right pattern to the right problem, and enforces composition over inheritance to produce code that is easy to test, extend, and evolve without premature abstraction.

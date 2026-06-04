@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: in-toto
 compatibility: opencode
 completeness: 95
@@ -30,7 +34,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # in-toto in Cloud-Native Engineering
 
 ## Purpose and Use Cases

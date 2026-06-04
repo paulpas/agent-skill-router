@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: best-practices
 description: Enforces Go idioms and best practices including error handling, interface
   design, testing conventions, and code organization for maintainable applications.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ version: "1.0.0"
   maturity: stable
   completeness: 95
   exampleCount: 3
+
+
+
+
 ---
+
+
+
+
 # Go Best Practices
 
 Senior engineer enforcing idiomatic Go conventions — writing clean, maintainable Go code that reads like well-structured English. This skill covers error handling, interface design, naming, package organization, and the conventions that make Go code predictable and reviewable.

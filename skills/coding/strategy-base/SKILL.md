@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: strategy-base
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Skill: coding-strategy-base
 
 # Abstract base strategy pattern with initialization guards, typed abstract methods, and conviction scoring integration

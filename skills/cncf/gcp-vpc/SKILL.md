@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gcp-vpc
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Google Virtual Private Cloud
 
 Deploy and manage google virtual private cloud infrastructure as part of your cloud-native environment.

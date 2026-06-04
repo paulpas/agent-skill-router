@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: pulumi
 description: Integrates with the Pulumi Python SDK and Automation API to manage stacks,
   resources, programs, ESC (Environments, Secrets, and Configuration), and deployment
@@ -6,7 +10,7 @@ description: Integrates with the Pulumi Python SDK and Automation API to manage 
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: pulumi python, pulumi automation api, pulumi sdk, pulumi stacks, pulumi
     esc, infrastructure as code python, pulumi program, pulumi deploy
@@ -31,7 +35,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-terraform-sdk, coding-kubernetes-api, coding-docker-api
+
+
+
+
 ---
+
+
+
+
 # Pulumi Python SDK & Automation API Integration
 
 Integrates with Pulumi using the official Python SDK (`pulumi`) and Automation API (`pulumi.automation`) to define cloud infrastructure as Python code, manage stacks, orchestrate deployments, handle secrets with ESC, and build self-service infrastructure platforms.

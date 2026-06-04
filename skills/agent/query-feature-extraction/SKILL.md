@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: query-feature-extraction
 description: Extracts structured signals (action verbs, domain indicators, complexity markers, urgency signals, entity types) from natural language queries as preprocessing for intent classification and skill routing.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: query-intent-classifier, intelligent-skill-selection, instruction-parsing
+
+
+
+
 ---
+
+
+
+
 
 # Query Feature Extractor
 

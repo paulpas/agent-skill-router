@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: maven-build-system
 description: Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples, config]
   related-skills: gradle-build-system
+
+
+
+
 ---
+
+
+
+
 
 # Maven Build System
 

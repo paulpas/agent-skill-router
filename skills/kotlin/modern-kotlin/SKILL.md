@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: modern-kotlin
 description: Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications.
 license: MIT
@@ -36,7 +40,15 @@ metadata:
   maturity: stable
   completeness: 97
   exampleCount: 5
+
+
+
+
 ---
+
+
+
+
 
 # Modern Kotlin Development
 

@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: security-owasp-top-10
 description: Provides an in-depth analysis of the OWASP Top 10 vulnerabilities, along with strategies to mitigate them effectively in software applications.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: coding
   triggers: OWASP, security vulnerabilities, web application security, risk management, cybersecurity
   archetypes: [reference, evaluation]
@@ -13,7 +17,18 @@ version: "1.1.1"
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Overview of OWASP Top 10 Security Vulnerabilities
 The OWASP Top 10 provides a critical framework for understanding and addressing the most significant security vulnerabilities in web applications. Below are detailed descriptions and mitigation strategies for each vulnerability:

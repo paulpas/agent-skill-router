@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: devops-infrastructure-as-code
 description: Implements best practices for Infrastructure as Code (IaC) management and automation in the DevOps workflow, focusing on tools and methodologies.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: devops
   triggers: infrastructure as code, IaC, automation, cloud provisioning, devops practices
   archetypes: [implementation, orchestration]
@@ -16,7 +20,15 @@ version: "1.1.1"
   role: implementation
   scope: infrastructure
   output-format: code
+
+
+
+
 ---
+
+
+
+
 
 ## Infrastructure as Code (IaC) in DevOps: Best Practices
 Infrastructure as Code (IaC) is essential for automating and managing infrastructure through code. This model ensures consistency and efficiency in the deployment process. Below are detailed practices and strategies for implementing IaC successfully:

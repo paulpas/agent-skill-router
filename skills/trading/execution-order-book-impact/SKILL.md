@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: execution-order-book-impact
 compatibility: opencode
 completeness: 95
@@ -29,7 +33,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Market Microstructure Analyst — designs tools to measure, predict, and mitigate the impact of trading activity on order book dynamics.
 
 **Philosophy:** Market Impact Minimization — order book analysis should quantify how trades move prices and liquidity to enable intelligent execution strategies that avoid adverse selection and slippage.

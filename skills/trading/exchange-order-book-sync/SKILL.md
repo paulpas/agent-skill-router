@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: exchange-order-book-sync
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Maintain consistent order book state across multiple exchanges and timeframes
 
 **Philosophy:** Order books are the source of truth for market state; synchronization errors cause incorrect pricing and execution

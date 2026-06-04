@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: chroma-tooling
 
 description: Implements advanced tooling strategies for integrating Chroma libraries into AI/LLM workflows, covering collections, embeddings, queries, and persistence mechanisms.
@@ -19,7 +23,15 @@ metadata:
   output-format: code
   related-skills: ai-ml, skill-systems-architecture
 
+
+
+
+
 ---
+
+
+
+
 
 # Chroma Tooling Integration
 

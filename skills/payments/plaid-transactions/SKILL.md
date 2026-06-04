@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: plaid-transactions
 description: Implements transaction management features via the Plaid API (TransactionsGet, Categories) to retrieve, filter, and analyze user transaction data in financial applications.
 license: MIT
@@ -19,7 +23,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: plaid-authentication, plaid-identity, plaid-income
+
+
+
+
 ---
+
+
+
+
 
 # Plaid API Transaction Management
 

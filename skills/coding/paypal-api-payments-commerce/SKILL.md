@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: paypal-api-payments-commerce
 description: Implements PayPal API functionalities focusing on Orders, Payments, Subscriptions, Payouts, and Disputes for comprehensive ecommerce management.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   triggers: paypal api, orders, payments, subscriptions, payouts, disputes, ecommerce
   related-skills: coding-payment-processing, coding-subscription-management
+
+
+
+
 ---
+
+
+
+
 
 # PayPal API for Payments & Commerce
 This skill implements the core functionalities of the PayPal API focused on managing ecommerce transactions, including Orders, Payments, Subscriptions, Payouts, and Disputes. It provides developers with clear guidelines and implementation patterns for integrating PayPal services into their applications.

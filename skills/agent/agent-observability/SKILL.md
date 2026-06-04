@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: agent-observability
 description: Implements tracing, cost tracking, and latency monitoring patterns for AI agent systems to debug failures, control token spend, and optimize response times across multi-agent workflows.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: ai-framework-comparison, protocol-first-agent-design, framework-utilization
+
+
+
+
 ---
+
+
+
+
 
 # AI Agent Observability Patterns
 

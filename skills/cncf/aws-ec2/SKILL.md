@@ -1,7 +1,33 @@
 ---
+
+
+
+
 name: aws-ec2
 
-description: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: "1.0.0"\n  domain: cncf\n  triggers: aws ec2, ec2 instances, aws sdk, scaling, security groups, instance management\n  archetypes: educational, tactical\n  related-skills: aws-iam, aws-sdk, aws-s3\n  output-format: code\n  role: implementation\n  scope: infrastructure\n  anti_triggers: vague concepts, misconfigured instances\n  response_profile: medium\n---\ndescription: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.
+description: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  triggers: aws ec2, ec2 instances, aws sdk, scaling, security groups, instance management
+  archetypes: educational, tactical
+  related-skills: aws-iam, aws-sdk, aws-s3
+  output-format: code
+  role: implementation
+  scope: infrastructure
+  anti_triggers: vague concepts, misconfigured instances
+  response_profile: medium
+
+
+
+
+---
+
+
+
+\ndescription: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.
 license: MIT
 compatibility: opencode
 metadata:

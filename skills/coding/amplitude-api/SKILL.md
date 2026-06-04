@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: amplitude-api
 description: Implements Amplitude analytics integration (event tracking, user profiles,
   identify API, cohort analysis, dashboard export) using amplitude-analytics Python
@@ -7,7 +11,7 @@ description: Implements Amplitude analytics integration (event tracking, user pr
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   triggers: amplitude, event tracking, user analytics, amplitude events, identify
     api, cohort analysis, how do i track user events in amplitude, product analytics
@@ -32,7 +36,15 @@ version: "1.0.0"
   - do-dont
   - examples
   related-skills: coding-mixpanel-api, coding-segment-api, coding-salesforce-api
+
+
+
+
 ---
+
+
+
+
 # Amplitude Analytics Integration
 
 Implements production-grade Amplitude analytics integration using the `amplitude-analytics` Python SDK and HTTP API v2. When loaded, this skill makes the model implement event tracking with rich properties, user profile management via Identify API, group analytics, revenue tracking, event batching for efficiency, user property operations (set, set_once, add, unset), and cohort export. All implementations follow Amplitude best practices: use `AMPLITUDE_API_KEY` from environment, batch events with configurable flush interval, always include `user_id` or `device_id`, avoid high-cardinality property values, validate API connectivity on startup, and never send PII without user consent.

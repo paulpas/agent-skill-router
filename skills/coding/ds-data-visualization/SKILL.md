@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: ds-data-visualization
 description: '"Creates effective visualizations including plots, charts, dashboards
   and interactive visualizations for data insight and storytelling"'
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: coding
   role: implementation
   scope: implementation
@@ -25,7 +29,15 @@ version: "1.0.0"
     directive_strength: high
     abstraction_level: operational
   related-skills: ds-correlation-analysis, ds-data-profiling, ds-eda
+
+
+
+
 ---
+
+
+
+
 
 
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: fundamentals-trading-plan
 compatibility: opencode
 completeness: 95
@@ -31,7 +35,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 **Role:** Trading Strategy Developer — builds comprehensive trading plans that define rules, risk parameters, and execution guidelines for systematic trading operations.
 
 **Philosophy:** Risk-First Planning — trading plans should be designed around risk constraints and exit criteria before entry rules, ensuring survival and long-term viability regardless of market conditions.

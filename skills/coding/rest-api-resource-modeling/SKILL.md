@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rest-api-resource-modeling
 description: Implements REST resource modeling patterns including plural-noun URI conventions, HTTP method semantics, idempotency rules, HATEOAS hypermedia links, and parent-child relationships for predictable API surfaces.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: rest-api-error-handling, rest-api-pagination-filtering, rest-api-versioning-strategies
+
+
+
+
 ---
+
+
+
+
 
 # REST Resource Model Designer
 

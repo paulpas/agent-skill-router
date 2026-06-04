@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: async-runtime
 description: Implements and analyzes Rust async runtime patterns including tokio,
   async-std, and custom executors for high-performance concurrent systems.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: programming
   triggers: rust async, tokio, async-std, futures, executor, concurrency, non-blocking
     io, async runtime
@@ -27,7 +31,15 @@ version: "1.0.0"
   - examples
   - diagrams
   related-skills: programming/concurrency-patterns, programming/error-handling
+
+
+
+
 ---
+
+
+
+
 # Rust Async Runtime Patterns
 
 Guides the implementation, selection, and optimization of async runtimes in Rust, focusing on executor architecture, task scheduling, and I/O multiplexing. This skill enables the model to design high-performance concurrent systems using `tokio`, `async-std`, or custom executors while adhering to Rust's zero-cost abstraction principles.

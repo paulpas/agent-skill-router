@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: aws-sns
 description: Implements Amazon Simple Notification Service (SNS) for building and managing message-driven applications through an event-driven architecture.
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.1.1"
+  version: "1.1.1"
   domain: cloud
   triggers: aws sns, event-driven architecture, notification service, publish-subscribe model, scalable messaging
   archetypes: [implementation, event management]
@@ -16,7 +20,15 @@ version: "1.1.1"
   role: implementation
   scope: infrastructure
   output-format: code
+
+
+
+
 ---
+
+
+
+
 
 ## Enhanced Content for AWS SNS Skill
 

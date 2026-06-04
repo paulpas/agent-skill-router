@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: deployment-philosophy
 compatibility: opencode
 completeness: 95
@@ -37,7 +41,15 @@ metadata:
     directive_strength: medium
     abstraction_level: tactical
 version: "1.0.0"
+
+
+
+
 ---
+
+
+
+
 # Cloud Deployment Philosophy
 
 Mental model for designing safe, reliable, and fast deployment systems. Treats every deployment as a risk management exercise: minimize blast radius, maximize feedback velocity, and maintain irreversible safety nets at every stage.

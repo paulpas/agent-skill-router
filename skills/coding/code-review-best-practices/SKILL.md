@@ -1,7 +1,32 @@
 ---
+
+
+
+
 name: code-review-best-practices
 
-description: Implements best practices for conducting effective code reviews to enhance quality, collaboration, and knowledge sharing in teams.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: code review practices, peer review, collaboration, quality assurance\n  archetypes: [implementation, evaluation]\n  anti_triggers: [vague feedback, non-constructive criticism]\n  response_profile: medium\n---
+description: Implements best practices for conducting effective code reviews to enhance quality, collaboration, and knowledge sharing in teams.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: code review practices, peer review, collaboration, quality assurance
+  archetypes: [implementation, evaluation]
+  anti_triggers: [vague feedback, non-constructive criticism]
+  response_profile: medium
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+---
+
+
+
+
 # Expanded Content for Code Review Best Practices
 
 ## Importance of Implementing Best Practices in Code Reviews

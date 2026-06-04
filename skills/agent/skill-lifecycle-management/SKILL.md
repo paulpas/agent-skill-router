@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-lifecycle-management
 description: Manages the full lifecycle of OpenCode AI skills including versioning
   strategies, deprecation workflows, backward compatibility checks, and retirement
@@ -6,7 +10,7 @@ description: Manages the full lifecycle of OpenCode AI skills including versioni
 license: MIT
 compatibility: opencode
 metadata:
-version: "1.0.0"
+  version: "1.0.0"
   domain: agent
   triggers: skill lifecycle, versioning strategy, skill deprecation, backward compatibility,
     skill retirement, migration guide, how do i sunset a skill
@@ -30,7 +34,15 @@ version: "1.0.0"
   - config
   - diagrams
   related-skills: skill-engineering, skill-router-system, skill-audit
+
+
+
+
 ---
+
+
+
+
 # Skill Lifecycle Manager
 
 Orchestrates the complete lifecycle of OpenCode AI skills from initial creation through versioning, deprecation, backward compatibility validation, and retirement — ensuring every skill evolves without breaking existing auto-routing pipelines.
