@@ -1,5 +1,5 @@
 ---
-name: pulumi-stacks-resources
+name: developer-platforms-devops-pulumi
 description: Implements detailed Pulumi deployment processes in cloud environments, focusing on stacks, resources, programs, deployments, and best practices for effective infrastructure management.
 license: MIT
 compatibility: opencode

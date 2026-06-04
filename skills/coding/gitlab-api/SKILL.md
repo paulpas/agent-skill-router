@@ -336,6 +336,23 @@ def list_all_project_names(url: str, token: str) -> list[str]:
 - Never use admin credentials for routine API operations
 - Do not poll pipelines without a timeout — always set a maximum wait duration
 
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
+
 ## Live References
 
 - [python-gitlab Documentation](https://python-gitlab.readthedocs.io/en/stable/)

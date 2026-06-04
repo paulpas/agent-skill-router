@@ -19,7 +19,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: goal-driven execution, success criteria, test-driven, verification loop, define success criteria, checkpoint, fail loud, reproduce bug first, test intent
+  triggers: goal-driven execution, success criteria, test-driven, verification loop, checkpoint, fail loud, reproduce bug first, test intent
   role: implementation
   scope: implementation
   output-format: code

@@ -434,10 +434,10 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
     return response;
   }
 
-  /**
-   * Apply deterministic filtering to ranked skills
-   * Includes quality gate to filter out stub skills (draft: true)
-   */
+ /**
+    * Apply deterministic filtering to ranked skills
+    * Includes quality gate to filter out stub skills (draft: true) and built-in skills with no metadata (customize-opencode)
+    */
   private applyDeterministicFilter(
     rankedSkills: SelectedSkill[],
     constraints?: RouteRequest['constraints']
@@ -463,6 +463,20 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         filteredNames: rankedSkills
           .filter((s) => draftSkillSet.has(s.name))
           .map((s) => s.name),
+      });
+    }
+
+    // Exclude built-in skill that has no metadata and over-matches broadly
+    const BUILT_IN_EXCLUDE_LIST = new Set(['customize-opencode']);
+    const beforeBuiltinFilter = filtered.length;
+    filtered = filtered.filter((skill) => !BUILT_IN_EXCLUDE_LIST.has(skill.name));
+    const builtinFiltered = beforeBuiltinFilter - filtered.length;
+
+    if (builtinFiltered > 0) {
+      this.logger.info('Filtered out built-in skill (no metadata, over-matching)', {
+        builtinFiltered,
+        remaining: filtered.length,
+        filteredNames: ['customize-opencode'],
       });
     }
 

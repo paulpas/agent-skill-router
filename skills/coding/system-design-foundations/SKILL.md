@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: system design, distributed systems, scalability, load balancing, caching strategy, database sharding, message queue, event-driven architecture, microservices communication, CAP theorem, consistency patterns, connection pooling, rate limiting, circuit breaker
+  triggers: system design, distributed systems, scalability, load balancing, caching strategy, database sharding, message queue, CAP theorem
   archetypes:
     - tactical
     - strategic

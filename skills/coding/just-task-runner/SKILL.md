@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: justfile, just task runner, task runner, casey just, how do i replace make, named arguments, runsets, recipe variables, dotenv, cross-platform make alternative
+  triggers: justfile, just task runner, casey just, named arguments, runsets, recipe variables, dotenv, cross-platform make alternative
   archetypes:
     - tactical
     - generation

@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: monorepo, workspace patterns, pnpm workspaces, yarn workspaces, cargo workspace, uv workspace, Turborepo, Nx, Lerna, shared dependencies, cross-package references, how do i structure a monorepo, multi-package repo
+  triggers: monorepo, workspace patterns, pnpm workspaces, yarn workspaces, cargo workspace, Turborepo, Nx, how do i structure a monorepo
   archetypes:
     - tactical
     - strategic

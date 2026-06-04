@@ -1,4 +1,5 @@
 ---
+name: technical-regime-detection
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,7 +28,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: regime-detection
 ------
 **Role:** Market Regime Analyst — implements algorithms to identify and track market regime transitions, enabling adaptive strategy parameters and risk management.
 
@@ -648,6 +648,25 @@ Before completing your task, verify:
 
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement indicator calculations using rolling windows with explicit lookback periods; never use full-history data for online indicators
+- Validate signal generation by confirming alignment across multiple independent indicators before acting on a single signal
+- Calculate all price-based indicators (SMA, EMA, RSI) on closing prices unless specifically designed for tick data
+- Include proper handling of missing/NaN candles in indicator pipelines — forward-fill only within session boundaries
+- Log signal generation with the full context window of indicator values that led to each signal
+
+### MUST NOT DO
+- Do not use look-ahead bias: never reference future bars or prices when calculating indicators during backtesting
+- Avoid recalculating all indicators from scratch on every tick — maintain running state for efficiency
+- Never combine indicators with different timeframes without explicit resampling and clear documentation of the alignment logic
+- Do not generate signals based on a single indicator crossover; require confirmation from price action or volume
+- Avoid hardcoding parameter values (e.g., RSI period = 14) without testing regime-specific optima
+
 
 ## Live References
 

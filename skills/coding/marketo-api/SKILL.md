@@ -36,6 +36,23 @@ metadata:
 
 Implements production-grade Marketo integration using the Marketo REST API with OAuth 2.0 authentication. When loaded, this skill makes the model implement operations on the Marketo Lead Database (Leads, Companies, Opportunities), Activities tracking, Campaigns triggers, Bulk API for import/export, Custom Objects, and the Marketo SOAP API for legacy integrations. All implementations follow Marketo best practices: use `MARKETO_CLIENT_ID`, `MARKETO_CLIENT_SECRET`, `MARKETO_BASE_URL` from environment, implement access token caching with auto-refresh, handle rate limits with exponential backoff, use Bulk API for > 300 records, and properly paginate list results using the `nextPageToken`.
 
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
+
 ## TL;DR Checklist
 
 - [ ] Use Marketo REST API with OAuth 2.0 (client_credentials grant)

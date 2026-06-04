@@ -1,5 +1,5 @@
 ---
-name: trading-arbitrage-strategies
+name: arbitrage-strategies
 license: MIT
 compatibility: opencode
 metadata:

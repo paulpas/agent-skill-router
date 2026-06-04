@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: jvm diagnostics, thread dump, heap dump, oom error, out of memory, deadlock detection, hs_err log, jstack analysis, MAT leak suspect, java crash, stack overflow, GC thrashing, memory leak, thread contention, jcmd troubleshooting
+  triggers: jvm diagnostics, thread dump, heap dump, oom error, deadlock detection, jstack analysis, MAT leak suspect, GC thrashing
   archetypes:
     - diagnostic
     - tactical

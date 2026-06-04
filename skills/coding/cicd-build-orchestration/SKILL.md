@@ -20,7 +20,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  triggers: CI/CD pipeline, build artifact, docker build, matrix build, caching, deployment pipeline, github actions, build orchestration, artifact management, containerized builds, parallel builds
+  triggers: CI/CD pipeline, build artifact, docker build, github actions, deployment pipeline, containerized builds, build orchestration, artifact management
   related-skills: makefile-best-practices, secure-release-pipeline, test-driven-development, git-branching-strategies
 ---
 

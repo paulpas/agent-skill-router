@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: knowledge transfer, teach back, Feynman technique, spaced repetition, active recall, how do i retain what I learned, framework mastery, team knowledge sharing, skill retention, learning methodology
+  triggers: knowledge transfer, teach back, Feynman technique, spaced repetition, active recall, how do i retain what I learned, team knowledge sharing, learning methodology
   archetypes:
     - educational
     - tactical

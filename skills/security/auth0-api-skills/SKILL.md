@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: security
-  triggers: auth0, authentication, user management, actions, organizations, identity security, auth0 api, user creation, jwt tokens, oauth2 login, multi-tenant identity
+  triggers: auth0, authentication, user management, actions, organizations, identity security, auth0 api, jwt tokens
   archetypes: tactical
   anti_triggers:
     - brainstorming

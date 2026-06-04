@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: cursor-based pagination, offset pagination, keyset pagination, API filtering, sort parameters, field selection, sparse fieldsets, pagination envelope, how do i paginate a REST API, collection filtering API
+  triggers: cursor-based pagination, offset pagination, keyset pagination, API filtering, sparse fieldsets, pagination envelope, how do i paginate a REST API, collection filtering API
   role: implementation
   scope: implementation
   output-format: code

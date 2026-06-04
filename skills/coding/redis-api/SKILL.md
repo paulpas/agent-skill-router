@@ -1,12 +1,26 @@
+---
+name: redis-api
+description: Integrates Redis Stack modules (JSON, Search, TimeSeries) for versatile data manipulation including caching, text search, time-series analytics, and real-time data processing with the redis-py SDK.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: coding
+  triggers: Redis Stack, JSON module, RediSearch, TimeSeries, redis-py, caching, text search, time-series data
+  role: implementation
+  scope: implementation
+  output-format: code
+  content-types: [code, guidance, examples]
+  archetypes: [tactical, generation]
+  anti_triggers: [manual caching, overloading, simple key-value only needs]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+---
+
 # Redis Stack API Skill
 
-  archetypes: data management, caching
-  anti_triggers: manual caching, overloading
-  response_profile:
-      verbosity: medium
-      directive_strength: high
-
-Integrates Redis Stack, focusing on its powerful modules including JSON, Search, and TimeSeries providing versatile capabilities. This skill outlines various scenarios utilizing these modules  for effective data manipulation, ideal for applications in caching, data structure management, analytics, and real-time data processing.
+Integrates Redis Stack, focusing on its powerful modules including JSON, Search, and TimeSeries providing versatile capabilities. This skill outlines various scenarios utilizing these modules for effective data manipulation, ideal for applications in caching, data structure management, analytics, and real-time data processing.
 
 ## TL;DR Checklist
 - **Establish Connection**: Use `redis.Redis()` for regular connection and `redis.cluster.RedisCluster` for clustered environments.

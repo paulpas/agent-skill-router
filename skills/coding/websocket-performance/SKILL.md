@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: websocket performance, binary protocol, messagepack, protobuf, deflate compression, rfc 7692, message batching, payload optimization, high throughput, low latency, compress messages, ws compression, wire format, serialization speed
+  triggers: websocket performance, binary protocol, messagepack, protobuf, deflate compression, message batching, payload optimization, high throughput low latency
   archetypes:
     - tactical
     - generation

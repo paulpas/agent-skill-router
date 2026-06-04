@@ -10,7 +10,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
-  triggers: specification pattern, spec pattern, composable business rules, AND OR NOT composition, expression tree translation, repository filtering specs, domain validation specs, primitive factories, query builder specifications, how do i compose business rules in DDD, predicate composition
+  triggers: specification pattern, spec pattern, composable business rules, AND OR NOT composition, expression tree translation, repository filtering specs, domain validation specs, how do i compose business rules in DDD
   related-skills: ddd-tactical-patterns,domain-driven-tactical,domain-repository-pattern,ddd-command-pattern,microservice-contract-testing
   archetypes:
     - tactical

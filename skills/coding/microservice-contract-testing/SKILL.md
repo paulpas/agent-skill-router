@@ -9,7 +9,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  triggers: contract testing, pact, consumer-driven contracts, API mocking, service stubs, integration testing, mock server, test doubles, api breaking changes, how do i test microservice interfaces
+  triggers: contract testing, pact, consumer-driven contracts, API mocking, service stubs, integration testing, mock server, how do i test microservice interfaces
   archetypes:
     - tactical
     - generation

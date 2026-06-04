@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework requirement adoption, how do i adapt my code to a framework, configuration contract, type-system enforcement, lifecycle hook mapping, phased framework integration, framework requirements implementation, zero-downtime migration, architecture adaptation
+  triggers: framework requirement adoption, configuration contract, type-system enforcement, lifecycle hook mapping, phased framework integration, zero-downtime migration, architecture adaptation, how do i adapt my code to a framework
   archetypes:
     - tactical
     - generation

@@ -12,10 +12,11 @@ metadata:
   output-format: code
   triggers: messaging bots, chatbot integration, automated responses, conversational agents
   archetypes: conversational automation, messaging
-anti_triggers: human customer service, manual interactions
+  anti_triggers: human customer service, manual interactions
   response_profile:
       verbosity: low
       directive_strength: high
+  scope: infrastructure
   related-skills: communications/messaging-channels, communications/messaging-microsoft-teams
 ---
 

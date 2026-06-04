@@ -1,4 +1,5 @@
 ---
+name: ds-logistic-regression
 compatibility: opencode
 completeness: 95
 content-types:
@@ -31,7 +32,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: logistic-regression
 ------
 # Logistic Regression
 
@@ -173,6 +173,23 @@ class LogisticRegressionPipeline:
 |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate binary outcome distribution: ensure classes are balanced or use class weights / SMOTE
+- Check for complete separation — if any feature perfectly predicts the outcome, regularize with Ridge penalty
+- Assess model calibration using ROC-AUC and PR-AUC, not just accuracy
+- Apply decision threshold tuning based on business cost matrix, not default 0.5
+
+### MUST NOT DO
+- Do not use logistic regression for multi-class problems without explicit one-vs-rest or multinomial setup
+- Avoid interpreting raw coefficients as feature importance when features are on different scales
+- Never apply a trained model to data with shifted distributions without retraining or domain adaptation
+- Do not use accuracy as the sole evaluation metric — always report precision, recall, F1, and AUC
+
 
 ## Live References
 

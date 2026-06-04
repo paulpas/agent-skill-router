@@ -1,4 +1,5 @@
 ---
+name: changelog-automation
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: high
     abstraction_level: tactical
   version: 1.0.0
-name: changelog-automation
 ------
 # Changelog Automation
 
@@ -302,6 +302,23 @@ When applying this skill, produce:
 | `commit` | Conventional commit integration for changelog generation |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement idempotent automation triggers: running the same automation twice should not create duplicate resources or actions
+- Validate all trigger conditions with explicit allowlists before executing automated actions
+- Include rollback procedures in every automation workflow — every CREATE should have a corresponding DELETE capability
+- Log all automation executions with input state, output state, duration, and any errors for monitoring and debugging
+
+### MUST NOT DO
+- Do not create circular automation loops where trigger A causes action B which triggers A again
+- Avoid using automations that modify production data without explicit human approval gates
+- Never embed API keys or credentials directly in automation workflows — use vaulted secrets with rotation
+- Do not assume external service availability; implement retry logic with exponential backoff and dead-letter queues
+
 
 ## Live References
 

@@ -59,6 +59,23 @@ By implementing AWS Secrets Manager, organizations can securely manage sensitive
 
 ---
 
+---
+
+## Constraints
+
+### MUST DO
+- Configure all AWS resources with explicit tagging for cost allocation, ownership tracking, and compliance
+- Use AWS SDK (Boto3) typed clients instead of resource API where type safety matters — prefer client() over resource()
+- Implement error handling that distinguishes between retryable (Throttling, RequestLimitExceeded) and non-retryable errors
+- Use IAM roles with least-privilege policies scoped to specific actions and resources, never wildcard permissions
+
+### MUST NOT DO
+- Do not hardcode AWS credentials — use IAM roles, environment variables, or AWS Secrets Manager
+- Avoid unencrypted S3 buckets or RDS instances in production without explicit KMS encryption configuration
+- Never launch EC2 instances without specifying a security group and subnet — always use VPC networking explicitly
+- Do not use the default endpoint region — always specify the target region explicitly in all SDK calls
+
+
 ## Live References
 
 > Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.

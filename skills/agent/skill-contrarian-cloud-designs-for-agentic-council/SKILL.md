@@ -1,5 +1,5 @@
 ---
-name: contrarian-cloud-deployment-review
+name: skill-contrarian-cloud-designs-for-agentic-council
 description: Generates structured contrarian critiques and adversarial review prompts
   for cloud deployment architectures to enable rigorous agentic council vetting.
 license: MIT

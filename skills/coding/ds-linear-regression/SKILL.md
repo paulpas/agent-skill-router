@@ -1,4 +1,5 @@
 ---
+name: ds-linear-regression
 compatibility: opencode
 completeness: 95
 content-types:
@@ -31,7 +32,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: linear-regression
 ------
 # Linear Regression
 
@@ -206,6 +206,23 @@ def good_regression(df: pd.DataFrame, target: str = 'target') -> Dict[str, Any]:
 |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate linearity assumption using residual plots before interpreting coefficients
+- Check for multicollinearity using VIF (Variance Inflation Factor) — flag any predictor with VIF > 10
+- Standardize or normalize features before regularization (Ridge, Lasso, ElasticNet)
+- Report both R-squared and adjusted R-squared, and include confidence intervals for all coefficients
+
+### MUST NOT DO
+- Do not interpret correlation as causation from regression output without controlled experiments
+- Avoid including dummy variables for all categories without dropping one reference category (dummy variable trap)
+- Never use OLS on time series data without checking for stationarity — leads to spurious regression
+- Do not report R-squared alone; always include residual diagnostics and cross-validated error metrics
+
 
 ## Live References
 

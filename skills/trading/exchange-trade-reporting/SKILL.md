@@ -1,4 +1,5 @@
 ---
+name: exchange-trade-reporting
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: trade-reporting
 ------
 **Role:** Generate and analyze trade reports for performance monitoring and regulatory compliance
 
@@ -394,6 +394,106 @@ class PerformanceTracker:
 ```
 
 ---
+
+---
+
+
+
+### Pattern 2: Risk-Managed Trading Logic with Validation
+
+```python
+from __future__ import annotations
+
+import logging
+from dataclasses import dataclass
+from typing import Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class TradeSignal:
+    """Immutable trade signal with all required validation constraints."""
+    symbol: str
+    side: str  # "buy" or "sell"
+    price: float
+    quantity: float
+    confidence: float  # 0.0 to 1.0
+    reason: str
+
+    def validate(self) -> bool:
+        """Validate that the trade signal meets all business constraints."""
+        if self.quantity <= 0:
+            raise ValueError(f"Quantity must be positive, got {self.quantity}")
+        if self.price <= 0:
+            raise ValueError(f"Price must be positive, got {self.price}")
+        if not 0.0 <= self.confidence <= 1.0:
+            raise ValueError(f"Confidence must be between 0 and 1, got {self.confidence}")
+        return True
+
+
+def generate_trade_signal(
+    symbol: str,
+    side: str,
+    price: float,
+    quantity: float,
+    confidence: float,
+    reason: str,
+) -> TradeSignal:
+    """Generate a validated trade signal with guard clause checks."""
+    if side not in ("buy", "sell"):
+        raise ValueError(f"Invalid side '{side}', must be 'buy' or 'sell'")
+
+    signal = TradeSignal(
+        symbol=symbol,
+        side=side,
+        price=price,
+        quantity=quantity,
+        confidence=confidence,
+        reason=reason,
+    )
+    signal.validate()
+    logger.info("Trade signal generated: %s %s %.4f @ %.2f (confidence=%.2f)",
+                 symbol, side, quantity, price, confidence)
+    return signal
+
+
+def execute_with_risk_check(signal: TradeSignal, max_position_pct: float = 0.05) -> dict:
+    """Execute a trade signal after applying risk management checks."""
+    adjusted_quantity = signal.quantity
+    if signal.side == "buy" and signal.quantity > max_position_pct:
+        logger.warning("Position %s exceeds max %.1f%% — capping to %.4f",
+                        signal.symbol, max_position_pct * 100, max_position_pct)
+        adjusted_quantity = max_position_pct
+
+    return {
+        "symbol": signal.symbol,
+        "side": signal.side,
+        "price": signal.price,
+        "quantity": adjusted_quantity,
+        "capped": adjusted_quantity < signal.quantity,
+        "confidence": signal.confidence,
+        "status": "submitted",
+    }
+```
+
+## Constraints
+
+### MUST DO
+- Implement a unified adapter interface across all exchange integrations to standardize order placement, cancellation, and querying
+- Handle rate limiting proactively with token bucket or leaky bucket algorithms — never wait for 429 responses before slowing down
+- Maintain local order state as the source of truth; reconcile with exchange state periodically via webhook events and polling
+- Implement heartbeat monitoring per exchange connection with automatic failover to a secondary data feed on timeout
+- Log all API interactions including request/response IDs, timing, and status codes for audit and debugging
+
+### MUST NOT DO
+- Do not trust exchange-reported order states without local confirmation — always reconcile after every state change
+- Avoid sending multiple orders for the same position simultaneously across different adapters or sessions
+- Never store API keys or secrets in code — use environment variables or a secrets manager with automatic rotation
+- Do not assume all exchanges support the same order types — implement graceful degradation with clear capability negotiation
+- Avoid polling-based price updates when WebSocket/streaming APIs are available — polling creates unnecessary load and latency
+
 
 ## Live References
 

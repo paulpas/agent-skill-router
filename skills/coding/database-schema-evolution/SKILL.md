@@ -17,7 +17,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: database schema, migration strategy, zero downtime migration, schema change, backward compatible schema, dual write, feature flag migration, how do i change my database schema safely, schema versioning, safe deploy
+  triggers: database schema, migration strategy, zero downtime migration, backward compatible schema, dual write, feature flag migration, schema versioning, how do i change my database schema safely
   role: implementation
   scope: implementation
   output-format: code

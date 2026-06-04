@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: splunk, splunk search, hec, http event collector, splunk sdk, splunk alerts, splunk query, splunk dashboard, time-series log analysis
+  triggers: splunk, splunk search, hec, http event collector, splunk sdk, splunk alerts, splunk query, time-series log analysis
   archetypes: tactical
   anti_triggers:
     - brainstorming

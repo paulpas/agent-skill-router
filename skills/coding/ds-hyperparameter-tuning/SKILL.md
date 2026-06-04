@@ -1,4 +1,5 @@
 ---
+name: ds-hyperparameter-tuning
 compatibility: opencode
 completeness: 95
 content-types:
@@ -32,7 +33,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: hyperparameter-tuning
 ------
 # Hyperparameter Tuning
 
@@ -181,6 +181,23 @@ class HyperparameterTuning:
 |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Use cross-validation with stratified splits for classification, group-aware splits when data has natural groups
+- Implement early stopping for iterative methods (XGBoost, neural nets) based on validation loss, not training loss
+- Search log-scale for parameters like learning_rate, C, and gamma using log-uniform distributions
+- Report the best configuration along with its cross-validated standard deviation to quantify result stability
+
+### MUST NOT DO
+- Do not optimize hyperparameters on a single train/validation split — always use k-fold or repeated CV
+- Avoid exhaustive grid search when random search or Bayesian optimization would be more efficient
+- Never set patience too low for early stopping — 50-100 epochs minimum to allow models to learn complex patterns
+- Do not ignore the interaction between learning rate and batch size — they are coupled parameters
+
 
 ## Live References
 

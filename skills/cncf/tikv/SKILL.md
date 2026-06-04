@@ -1,4 +1,5 @@
 ---
+name: tikv
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,7 +29,6 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
   version: 1.0.0
-name: tikv
 ------
   related-skills: cncf-aws-dynamodb, cncf-aws-ecr, cncf-aws-rds, cncf-aws-s3
 

@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: production debugging, OpenTelemetry tracing, eBPF debugging, bpftrace, structured logging, distributed tracing, log correlation, context propagation, how do i debug production issues
+  triggers: production debugging, OpenTelemetry tracing, eBPF debugging, structured logging, distributed tracing, log correlation, context propagation, how do i debug production issues
   archetypes:
     - diagnostic
   anti_triggers:

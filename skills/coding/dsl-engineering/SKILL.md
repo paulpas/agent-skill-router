@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: dsl design, domain-specific language, embedded dsl, external dsl, parser generator, peg grammar, antlr, lark, ast transformation, query language, configuration language, how do i create a custom language
+  triggers: dsl design, domain-specific language, embedded dsl, parser generator, peg grammar, antlr, ast transformation, how do i create a custom language
   role: implementation
   scope: implementation
   output-format: code

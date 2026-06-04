@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: type safety, static typing, strict null check, generics, type annotations, type checking, mypy, TypeScript, how do i enforce types, compile-time errors, nominal typing, structural typing
+  triggers: type safety, static typing, strict null check, generics, type annotations, type checking, TypeScript, how do i enforce types
   archetypes:
     - tactical
     - generation

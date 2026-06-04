@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: software development lifecycle, SDLC, requirements engineering, design documentation, iterative development, branching strategy, code review process, user stories, acceptance criteria, feature branches, trunk-based development, how do i manage a software project
+  triggers: software development lifecycle, SDLC, iterative development, branching strategy, code review process, user stories, acceptance criteria, how do i manage a software project
   archetypes:
     - orchestration
     - tactical

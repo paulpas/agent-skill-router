@@ -1,4 +1,5 @@
 ---
+name: execution-vwap
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,7 +29,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: vwap
 ------
 **Role:** Execute orders in proportion to market volume to minimize slippage in high-volume periods
 
@@ -436,6 +436,106 @@ class VWAPBenchmark:
 ```
 
 ---
+
+---
+
+
+
+### Pattern 2: Risk-Managed Trading Logic with Validation
+
+```python
+from __future__ import annotations
+
+import logging
+from dataclasses import dataclass
+from typing import Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class TradeSignal:
+    """Immutable trade signal with all required validation constraints."""
+    symbol: str
+    side: str  # "buy" or "sell"
+    price: float
+    quantity: float
+    confidence: float  # 0.0 to 1.0
+    reason: str
+
+    def validate(self) -> bool:
+        """Validate that the trade signal meets all business constraints."""
+        if self.quantity <= 0:
+            raise ValueError(f"Quantity must be positive, got {self.quantity}")
+        if self.price <= 0:
+            raise ValueError(f"Price must be positive, got {self.price}")
+        if not 0.0 <= self.confidence <= 1.0:
+            raise ValueError(f"Confidence must be between 0 and 1, got {self.confidence}")
+        return True
+
+
+def generate_trade_signal(
+    symbol: str,
+    side: str,
+    price: float,
+    quantity: float,
+    confidence: float,
+    reason: str,
+) -> TradeSignal:
+    """Generate a validated trade signal with guard clause checks."""
+    if side not in ("buy", "sell"):
+        raise ValueError(f"Invalid side '{side}', must be 'buy' or 'sell'")
+
+    signal = TradeSignal(
+        symbol=symbol,
+        side=side,
+        price=price,
+        quantity=quantity,
+        confidence=confidence,
+        reason=reason,
+    )
+    signal.validate()
+    logger.info("Trade signal generated: %s %s %.4f @ %.2f (confidence=%.2f)",
+                 symbol, side, quantity, price, confidence)
+    return signal
+
+
+def execute_with_risk_check(signal: TradeSignal, max_position_pct: float = 0.05) -> dict:
+    """Execute a trade signal after applying risk management checks."""
+    adjusted_quantity = signal.quantity
+    if signal.side == "buy" and signal.quantity > max_position_pct:
+        logger.warning("Position %s exceeds max %.1f%% — capping to %.4f",
+                        signal.symbol, max_position_pct * 100, max_position_pct)
+        adjusted_quantity = max_position_pct
+
+    return {
+        "symbol": signal.symbol,
+        "side": signal.side,
+        "price": signal.price,
+        "quantity": adjusted_quantity,
+        "capped": adjusted_quantity < signal.quantity,
+        "confidence": signal.confidence,
+        "status": "submitted",
+    }
+```
+
+## Constraints
+
+### MUST DO
+- Implement slippage modeling that accounts for market impact proportional to order size relative to average daily volume
+- Include pre-trade risk checks (position limits, exposure caps) before any order is submitted to an exchange
+- Log all execution decisions with timestamps, prices, quantities, and benchmark deviations for post-trade analysis
+- Support both aggressive (market/limit) and passive (maker) order types with configurable preference based on market regime
+- Implement circuit breaker logic: pause execution if price moves >X% from decision price or volume drops below threshold
+
+### MUST NOT DO
+- Do not submit orders without verifying account equity, available margin, and symbol trading status first
+- Avoid static time-based slicing (e.g., 'divide order by 60 minutes') without considering actual market volume patterns
+- Never disable pre-trade risk checks for 'backtesting' or 'development' — use a separate simulation environment instead
+- Do not assume exchange API uptime — always implement retry logic with exponential backoff and fallback routing
+- Avoid rounding quantity to lot sizes using integer division without checking partial-fill policy compatibility
+
 
 ## Live References
 

@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: prompt engineering, chain of thought, few shot prompting, role setting, structured output, system prompt design, prompt templates, LLM instructions, prompt patterns, prompt design, prompt architecture
+  triggers: prompt engineering, chain of thought, few shot prompting, role setting, structured output, system prompt design, LLM instructions, prompt patterns
   role: implementation
   scope: implementation
   output-format: code

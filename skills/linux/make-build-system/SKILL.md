@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "2.0.0"
   domain: linux
-  triggers: makefile, GNU make, build automation, incremental builds, phony targets, make variables, dependency graph, cross-compilation, pattern rules, automatic variables, vpath, order-only prerequisites, make command, how do i automate builds with make, make clean all install
+  triggers: makefile, GNU make, build automation, incremental builds, phony targets, pattern rules, automatic variables, how do i automate builds with make
   archetypes:
     - tactical
     - generation

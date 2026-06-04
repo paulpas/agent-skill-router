@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: agent requirements, AI system requirements, capability matrix, hallucination threshold, safety guardrails, AI evaluation criteria, prompt requirements, non-functional AI requirements, functional AI requirements, data quality standards, how do i define AI system requirements
+  triggers: agent requirements, AI system requirements, capability matrix, hallucination threshold, safety guardrails, AI evaluation criteria, prompt requirements, how do i define AI system requirements
   archetypes:
     - strategic
     - tactical

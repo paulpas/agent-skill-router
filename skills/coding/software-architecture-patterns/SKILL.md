@@ -18,7 +18,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: architecture patterns, CQRS, event sourcing, hexagonal architecture, clean architecture, layered architecture, DDD, domain-driven design, aggregate roots, bounded context, how do i structure my application, software architecture, event-driven architecture, port and adapter, onion architecture, read model, write model, sagas
+  triggers: architecture patterns, CQRS, event sourcing, hexagonal architecture, clean architecture, DDD, bounded context, port and adapter
   role: implementation
   scope: implementation
   output-format: code

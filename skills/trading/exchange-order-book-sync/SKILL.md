@@ -1,4 +1,5 @@
 ---
+name: exchange-order-book-sync
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,7 +31,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: order-book-sync
 ------
 **Role:** Maintain consistent order book state across multiple exchanges and timeframes
 
@@ -394,6 +394,25 @@ def reconcile_order_book(current_book: OrderBook, snapshot: OrderBookSnapshot):
 ```
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement a unified adapter interface across all exchange integrations to standardize order placement, cancellation, and querying
+- Handle rate limiting proactively with token bucket or leaky bucket algorithms — never wait for 429 responses before slowing down
+- Maintain local order state as the source of truth; reconcile with exchange state periodically via webhook events and polling
+- Implement heartbeat monitoring per exchange connection with automatic failover to a secondary data feed on timeout
+- Log all API interactions including request/response IDs, timing, and status codes for audit and debugging
+
+### MUST NOT DO
+- Do not trust exchange-reported order states without local confirmation — always reconcile after every state change
+- Avoid sending multiple orders for the same position simultaneously across different adapters or sessions
+- Never store API keys or secrets in code — use environment variables or a secrets manager with automatic rotation
+- Do not assume all exchanges support the same order types — implement graceful degradation with clear capability negotiation
+- Avoid polling-based price updates when WebSocket/streaming APIs are available — polling creates unnecessary load and latency
+
 
 ## Live References
 

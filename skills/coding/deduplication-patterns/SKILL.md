@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: dry principle, don't repeat yourself, code deduplication, extract method, reduce duplication, boilerplate removal, code reuse pattern, abstraction, refactoring duplicate code, shared logic, common function, parameter object, template method, strategy pattern
+  triggers: dry principle, don't repeat yourself, code deduplication, extract method, template method, strategy pattern, boilerplate removal, code reuse pattern
   archetypes:
     - tactical
     - diagnostic

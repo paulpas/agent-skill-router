@@ -1,25 +1,23 @@
-# Skill: datadog-api-alerts
-
 ---
 name: datadog-api-alerts
 description: Implements alert management using the Datadog API, focusing on creating effective alerts that respond to service conditions with best practices.
 license: MIT
 compatibility: opencode
 metadata:
-  archetypes: monitoring, implementation
-  anti_triggers: alert fatigue, generic monitoring
-  response_profile:
-      verbosity: medium
-      directive_strength: high
-
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: datadog alerts, create alerts, manage alerts, alert conditions, datadog API alerts
   role: implementation
   scope: implementation
   output-format: code
   related-skills: datadog-api-monitors, datadog-api-dashboards, datadog-api-logs
-------
+  archetypes: [monitoring, implementation]
+  anti_triggers: [alert fatigue, generic monitoring]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+---
+
 # Datadog Alerts Management
 Implements alert creation and management leveraging the Datadog API. This skill ensures alerts are configured properly to monitor critical service health metrics and respond appropriately to incidents.
 

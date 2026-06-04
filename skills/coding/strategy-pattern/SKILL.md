@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: strategy pattern, algorithm selection, runtime behavior, interchangeable algorithms, context delegation, polymorphic behavior, open closed principle, replace if elif chain, payment processing strategy, pricing strategy
+  triggers: strategy pattern, algorithm selection, runtime behavior, interchangeable algorithms, polymorphic behavior, open closed principle, replace if elif chain, payment processing strategy
   role: implementation
   scope: implementation
   output-format: code

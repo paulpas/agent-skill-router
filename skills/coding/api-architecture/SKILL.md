@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: api architecture, RESTful API, GraphQL, gRPC, API versioning, OpenAPI specification, rate limiting, authentication patterns, how do i design an API, API gateway, microservice communication, API design
+  triggers: api architecture, RESTful API, GraphQL, gRPC, API versioning, OpenAPI specification, authentication patterns, how do i design an API
   archetypes:
     - tactical
     - generation

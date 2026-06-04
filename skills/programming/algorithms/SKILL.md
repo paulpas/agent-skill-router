@@ -1,4 +1,5 @@
 ---
+name: algorithms
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,7 +29,6 @@ metadata:
     directive_strength: medium
     abstraction_level: tactical
   version: 1.0.0
-name: algorithms
 output-format: code
 role: reference
 scope: implementation

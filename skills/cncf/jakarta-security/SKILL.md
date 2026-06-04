@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: cncf
-  triggers: jakarta security, jsr 375, identity store, jwt bearer, form login, basic auth, @rolesallowed, bcrypt password hashing, wildfly security, openliberty security, container authentication, security context, jax-rs security, programmatic authentication
+  triggers: jakarta security, jsr 375, identity store, jwt bearer, form login, bcrypt password hashing, wildfly security, programmatic authentication
   role: implementation
   scope: implementation
   output-format: code

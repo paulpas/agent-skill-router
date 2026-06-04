@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: linux
-  triggers: boot process, systemd, grub2, initramfs, uefi boot, slow startup, boot troubleshooting, secure boot, linux boot, boot optimization
+  triggers: boot process, systemd, grub2, initramfs, uefi boot, slow startup, boot troubleshooting, linux boot
   role: implementation
   scope: infrastructure
   output-format: code

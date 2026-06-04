@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: langgraph, state machine, StateGraph, checkpointing, time travel, human in the loop, graph workflow, node edges, typed state, interrupt resume, durable execution, agent workflow, state transitions
+  triggers: langgraph, state machine, StateGraph, checkpointing, time travel, human in the loop, durable execution, state transitions
   role: implementation
   scope: implementation
   output-format: code

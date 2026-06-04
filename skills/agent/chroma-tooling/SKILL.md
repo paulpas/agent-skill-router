@@ -125,6 +125,23 @@ When applying this skill, produce:
 4. **Execution Metrics** - Performance metrics from executed queries.
 5. **Persistent Storage Status** - Log of data confirmed written to storage.
 
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
+
 ## Related Skills
 | Skill | Purpose |
 | ai-ml | Implements intelligent AI/ML tooling strategies for high-performance applications. |

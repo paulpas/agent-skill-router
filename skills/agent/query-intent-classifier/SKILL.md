@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: intent classification, query archetype, tactical query, strategic planning, diagnostic debugging, orchestration workflow, educational explanation, enforcement audit, generation scaffolding, how do i classify a query
+  triggers: intent classification, query archetype, tactical query, strategic planning, diagnostic debugging, orchestration workflow, educational explanation, how do i classify a query
   archetypes:
     - orchestration
     - diagnostic

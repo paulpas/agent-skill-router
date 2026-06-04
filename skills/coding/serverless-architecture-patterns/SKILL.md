@@ -19,7 +19,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: serverless architecture, AWS Lambda, Cloudflare Workers, edge computing, event-driven serverless, cold start optimization, provisioned concurrency, Lambda Layers, Serverless API Gateway, DynamoDB triggers, SQS consumer, how do I build serverless applications, pay-per-use compute
+  triggers: serverless architecture, AWS Lambda, Cloudflare Workers, edge computing, cold start optimization, provisioned concurrency, Serverless API Gateway, how do I build serverless applications
   role: implementation
   scope: implementation
   output-format: code

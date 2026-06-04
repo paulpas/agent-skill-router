@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: ReAct, reasoning, chain of thought, plan execute, self reflection, task planning, step by step, agent reasoning, reasoning loop, task decomposition
+  triggers: ReAct, reasoning, chain of thought, plan execute, self reflection, task planning, step by step, agent reasoning
   role: implementation
   scope: implementation
   output-format: code

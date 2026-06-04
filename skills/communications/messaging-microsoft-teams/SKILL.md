@@ -8,7 +8,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: communications
-  triggers: microsoft teams, teams integration, chat management, collaboration, bot interactions, teams bot, graph api teams, adaptive card, channel management
+  triggers: microsoft teams, teams integration, chat management, bot interactions, teams bot, graph api teams, adaptive card, channel management
   archetypes: tactical
   anti_triggers:
     - brainstorming
@@ -17,6 +17,9 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+  role: implementation
+  scope: infrastructure
+  output-format: code
   related-skills: communications/messaging-bots, communications/messaging-channels
 ---
 

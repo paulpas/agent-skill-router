@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework utilization, how do i use a new tool effectively, technology adoption, progressive rollout, feature discovery, integration patterns, optimize chosen framework, leveraging technology, avoid integration anti-patterns, framework best practices, adopt a new framework
+  triggers: framework utilization, technology adoption, integration patterns, feature discovery, progressive rollout, framework best practices, how do i use a new tool effectively, adopt a new framework
   archetypes:
     - tactical
     - generation

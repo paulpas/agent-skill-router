@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: 1.0.0
   domain: coding
-  triggers: feature flags, progressive delivery, canary release, A/B testing, flag management, gradual rollout, feature toggle, percentage rollout, how do i safely roll out new features, experiment flags
+  triggers: feature flags, progressive delivery, canary release, A/B testing, flag management, gradual rollout, feature toggle, how do i safely roll out new features
   archetypes:
   - tactical
   - generation

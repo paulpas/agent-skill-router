@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: trigger engineering, trigger design, auto-load triggers, two-tier strategy, trigger calibration, anti-triggers, hybrid scoring, archetype matching, skill discovery, keyword optimization, trigger precision, trigger recall, false positive triggers
+  triggers: trigger engineering, trigger design, auto-load triggers, two-tier strategy, anti-triggers, hybrid scoring, archetype matching
   archetypes:
     - tactical
     - strategic

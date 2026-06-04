@@ -1,4 +1,5 @@
 ---
+name: data-enrichment
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,7 +29,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: enrichment
 ------
 **Role:** Add contextual information to raw data for better decision making
 
@@ -429,6 +429,176 @@ class EnrichmentQualityMonitor:
 ```
 
 ---
+
+---
+
+
+### Pattern 2: Feature Engineering Pipeline with Validation
+
+```python
+from __future__ import annotations
+
+import logging
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from typing import Optional
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class EnrichedCandle:
+    """A candle enriched with computed technical features."""
+    timestamp: datetime
+    open_price: float
+    high_price: float
+    low_price: float
+    close_price: float
+    volume: float
+
+    # Computed features
+    sma_20: Optional[float] = None
+    rsi_14: Optional[float] = None
+    atr_14: Optional[float] = None
+    macd_signal: Optional[str] = None
+    vwap: Optional[float] = None
+
+    @property
+    def has_all_features(self) -> bool:
+        return all([
+            self.sma_20 is not None,
+            self.rsi_14 is not None,
+            self.atr_14 is not None,
+            self.vwap is not None,
+        ])
+
+
+class FeatureEnricher:
+    """Computes technical features and enriches raw candle data."""
+
+    def __init__(self, window_sizes: dict[str, int] | None = None):
+        self._windows = window_sizes or {"sma": 20, "rsi": 14, "atr": 14}
+
+    def enrich_batch(
+        self, candles: list[dict],
+    ) -> list[EnrichedCandle]:
+        """Apply feature engineering to a batch of raw candle dicts.
+
+        Args:
+            candles: List of raw OHLCV dicts with keys: timestamp, open, high, low, close, volume.
+
+        Returns:
+            List of EnrichedCandle objects with computed technical features.
+        """
+        if not candles:
+            return []
+
+        prices = [c["close"] for c in candles]
+        highs = [c["high"] for c in candles]
+        lows = [c["low"] for c in candles]
+        volumes = [c["volume"] for c in candles]
+
+        sma_values = self._compute_sma(prices, self._windows["sma"])
+        rsi_values = self._compute_rsi(prices, self._windows["rsi"])
+        atr_values = self._compute_atr(highs, lows, prices, self._windows["atr"])
+        vwap_values = self._compute_vwap(prices, volumes)
+
+        enriched: list[EnrichedCandle] = []
+        for i, candle in enumerate(candles):
+            ec = EnrichedCandle(
+                timestamp=datetime.fromisoformat(candle["timestamp"]),
+                open_price=candle["open"],
+                high_price=candle["high"],
+                low_price=candle["low"],
+                close_price=candle["close"],
+                volume=candle["volume"],
+                sma_20=sma_values[i],
+                rsi_14=rsi_values[i],
+                atr_14=atr_values[i],
+                vwap=vwap_values[i],
+            )
+            enriched.append(ec)
+
+        logger.info("Enriched %d candles with %d features", len(enriched), 4)
+        return enriched
+
+    @staticmethod
+    def _compute_sma(closes: list[float], window: int) -> list[Optional[float]]:
+        result: list[Optional[float]] = [None] * window
+        for i in range(window, len(closes)):
+            avg = sum(closes[i - window:i]) / window
+            result.append(round(avg, 6))
+        return result
+
+    @staticmethod
+    def _compute_rsi(closes: list[float], period: int) -> list[Optional[float]]:
+        result: list[Optional[float]] = [None] * period
+        if len(closes) < period + 1:
+            return result
+        deltas = [closes[i] - closes[i - 1] for i in range(1, len(closes))]
+        gains = [d if d > 0 else 0 for d in deltas]
+        losses = [-d if d < 0 else 0 for d in deltas]
+        avg_gain = sum(gains[:period]) / period
+        avg_loss = sum(losses[:period]) / period
+        if avg_loss == 0:
+            result.append(100.0)
+        else:
+            rs = avg_gain / avg_loss
+            result.append(round(100 - (100 / (1 + rs)), 4))
+        for i in range(period, len(deltas)):
+            avg_gain = (avg_gain * (period - 1) + gains[i]) / period
+            avg_loss = (avg_loss * (period - 1) + losses[i]) / period
+            if avg_loss == 0:
+                result.append(100.0)
+            else:
+                rs = avg_gain / avg_loss
+                result.append(round(100 - (100 / (1 + rs)), 4))
+        return result
+
+    @staticmethod
+    def _compute_atr(highs, lows, closes, period):
+        result = [None] * period
+        if len(highs) < period + 1:
+            return result
+        trs = []
+        for i in range(1, len(highs)):
+            tr = max(highs[i] - lows[i], abs(highs[i] - closes[i - 1]), abs(lows[i] - closes[i - 1]))
+            trs.append(tr)
+        avg_tr = sum(trs[:period]) / period
+        result.append(round(avg_tr, 6))
+        for i in range(period, len(trs)):
+            avg_tr = (avg_tr * (period - 1) + trs[i]) / period
+            result.append(round(avg_tr, 6))
+        return result
+
+    @staticmethod
+    def _compute_vwap(prices, volumes):
+        result: list[Optional[float]] = []
+        cum_pv = 0.0
+        cum_vol = 0.0
+        for p, v in zip(prices, volumes):
+            cum_pv += p * v
+            cum_vol += v
+            result.append(round(cum_pv / cum_vol, 6) if cum_vol > 0 else None)
+        return result
+```
+
+## Constraints
+
+### MUST DO
+- Validate all incoming data against schema constraints (type, range, nullability) before processing or storage
+- Implement idempotent operations: re-processing the same data must produce identical results
+- Track data lineage and provenance with timestamps, source identifiers, and transformation history for every record
+- Handle out-of-order data by implementing a watermark-based ordering mechanism with configurable tolerance window
+- Log data quality metrics (completeness, freshness, accuracy) per source with automatic alerting on degradation
+
+### MUST NOT DO
+- Do not silently drop records that fail validation — log them to a quarantine table for review
+- Avoid concatenating strings for timestamp comparison; use proper datetime/timedelta objects
+- Never assume data arrives in chronological order from any external feed without explicit ordering guarantees
+- Do not store raw and processed data in the same table without clear partitioning or separation strategy
+- Avoid blocking on slow data sources — implement async prefetch with timeout-based fallback to cached data
+
 
 ## Live References
 

@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: AI evaluation criteria, AI system evaluation, golden dataset testing, adversarial testing, hallucination metrics, latency benchmark, safety compliance check, AI acceptance testing, how do i evaluate an AI system, model evaluation framework, LLM evaluation
+  triggers: AI evaluation criteria, AI system evaluation, golden dataset testing, adversarial testing, hallucination metrics, safety compliance check, how do i evaluate an AI system
   archetypes:
     - diagnostic
     - enforcement

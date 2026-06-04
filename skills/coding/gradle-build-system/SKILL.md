@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: gradle, build.gradle.kts, gradle kotlin dsl, version catalog, dependency locking, configuration cache, gradle daemon, java plugin, multi project build, libs.versions.toml, declarative plugins block
+  triggers: gradle, build.gradle.kts, gradle kotlin dsl, version catalog, dependency locking, configuration cache, multi project build, libs.versions.toml
   archetypes: [tactical, generation]
   anti_triggers: [brainstorming, vague ideation, code golf, over-engineering]
   response_profile:

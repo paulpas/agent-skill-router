@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: message queue, message broker, pub/sub, consumer groups, delivery semantics, at-least-once, exactly-once, RabbitMQ, Kafka, NATS, SQS, queue topology, message ordering
+  triggers: message queue, message broker, pub/sub, consumer groups, delivery semantics, RabbitMQ, Kafka, SQS
   archetypes:
     - tactical
     - generation

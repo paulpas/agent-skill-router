@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: anti-patterns, design pattern abuse, over-engineering, gold plating, dependency inversion violation, SOLID violation, code smell, refactor patterns, YAGNI, premature abstraction, GoF misuse, factory explosion, singleton abuse, strategy proliferation, template method rigidity
+  triggers: anti-patterns, design pattern abuse, over-engineering, gold plating, YAGNI, premature abstraction, GoF misuse, singleton abuse
   archetypes:
     - diagnostic
     - tactical

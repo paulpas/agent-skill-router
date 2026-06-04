@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: context mapping, anticorruption layer, acl, shared kernel, customer supplier relationship, conformist pattern, publication language, bounded context integration, strategic ddd, how do i integrate bounded contexts
+  triggers: context mapping, anticorruption layer, acl, shared kernel, customer supplier relationship, publication language, bounded context integration, how do i integrate bounded contexts
   archetypes:
     - tactical
     - generation

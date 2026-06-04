@@ -1,4 +1,5 @@
 ---
+name: fundamentals-trading-psychology
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,7 +29,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: trading-psychology
 ------
 **Role:** Guide an AI coding assistant to build trading systems that respect human psychological limits and prevent emotionally-driven decisions
 
@@ -229,6 +229,104 @@ Before completing your task, verify:
 file:///home/paulpas/git/ideas/trading_bot/skills/trading-fundamentals
 
 ---
+
+---
+
+
+
+### Pattern 2: Risk-Managed Trading Logic with Validation
+
+```python
+from __future__ import annotations
+
+import logging
+from dataclasses import dataclass
+from typing import Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class TradeSignal:
+    """Immutable trade signal with all required validation constraints."""
+    symbol: str
+    side: str  # "buy" or "sell"
+    price: float
+    quantity: float
+    confidence: float  # 0.0 to 1.0
+    reason: str
+
+    def validate(self) -> bool:
+        """Validate that the trade signal meets all business constraints."""
+        if self.quantity <= 0:
+            raise ValueError(f"Quantity must be positive, got {self.quantity}")
+        if self.price <= 0:
+            raise ValueError(f"Price must be positive, got {self.price}")
+        if not 0.0 <= self.confidence <= 1.0:
+            raise ValueError(f"Confidence must be between 0 and 1, got {self.confidence}")
+        return True
+
+
+def generate_trade_signal(
+    symbol: str,
+    side: str,
+    price: float,
+    quantity: float,
+    confidence: float,
+    reason: str,
+) -> TradeSignal:
+    """Generate a validated trade signal with guard clause checks."""
+    if side not in ("buy", "sell"):
+        raise ValueError(f"Invalid side '{side}', must be 'buy' or 'sell'")
+
+    signal = TradeSignal(
+        symbol=symbol,
+        side=side,
+        price=price,
+        quantity=quantity,
+        confidence=confidence,
+        reason=reason,
+    )
+    signal.validate()
+    logger.info("Trade signal generated: %s %s %.4f @ %.2f (confidence=%.2f)",
+                 symbol, side, quantity, price, confidence)
+    return signal
+
+
+def execute_with_risk_check(signal: TradeSignal, max_position_pct: float = 0.05) -> dict:
+    """Execute a trade signal after applying risk management checks."""
+    adjusted_quantity = signal.quantity
+    if signal.side == "buy" and signal.quantity > max_position_pct:
+        logger.warning("Position %s exceeds max %.1f%% — capping to %.4f",
+                        signal.symbol, max_position_pct * 100, max_position_pct)
+        adjusted_quantity = max_position_pct
+
+    return {
+        "symbol": signal.symbol,
+        "side": signal.side,
+        "price": signal.price,
+        "quantity": adjusted_quantity,
+        "capped": adjusted_quantity < signal.quantity,
+        "confidence": signal.confidence,
+        "status": "submitted",
+    }
+```
+
+## Constraints
+
+### MUST DO
+- Define explicit, measurable criteria for each trading concept rather than using subjective or vague definitions
+- Include concrete examples of how each principle applies to real market scenarios with specific conditions and outcomes
+- Link each fundamental concept to its practical impact on position sizing, risk management, or execution timing
+- Maintain version control on framework documents — note when principles are added, modified, or deprecated
+
+### MUST NOT DO
+- Do not present trading psychology concepts as universally applicable without acknowledging individual trader differences
+- Avoid conflating correlation with causation when discussing market behavior patterns and their drivers
+- Never include subjective profit targets or return expectations as part of a fundamental framework
+- Do not present risk management principles in isolation — always connect them to specific position and portfolio mechanics
+
 
 ## Live References
 

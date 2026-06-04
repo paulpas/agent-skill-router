@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: immutable data, value object, pure function, structural update, copy-on-write, data immutability, frozen dataclass, readonly types, how do i prevent mutation bugs, safe concurrent data
+  triggers: immutable data, value object, pure function, structural update, copy-on-write, frozen dataclass, readonly types, how do i prevent mutation bugs
   archetypes:
     - tactical
     - generation

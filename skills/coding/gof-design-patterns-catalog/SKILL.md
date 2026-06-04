@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: gof design patterns, gang of four, factory method, strategy pattern, decorator pattern, observer pattern, singleton, builder pattern, creational patterns, structural patterns, behavioral patterns, design catalog, SOLID principles, GoF catalog
+  triggers: gof design patterns, gang of four, factory method, strategy pattern, decorator pattern, observer pattern, SOLID principles, design catalog
   archetypes:
     - tactical
     - generation

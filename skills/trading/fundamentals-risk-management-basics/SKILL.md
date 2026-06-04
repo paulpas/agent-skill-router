@@ -1,4 +1,5 @@
 ---
+name: fundamentals-risk-management-basics
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,7 +31,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: risk-management-basics
 ------
 **Role:** Guide an AI coding assistant to implement robust risk management that prevents catastrophic losses while allowing trading opportunities to breathe
 
@@ -415,6 +415,23 @@ def calculate_expected_shortfall(returns: np.ndarray, confidence: float = 0.95) 
 ```
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Define explicit, measurable criteria for each trading concept rather than using subjective or vague definitions
+- Include concrete examples of how each principle applies to real market scenarios with specific conditions and outcomes
+- Link each fundamental concept to its practical impact on position sizing, risk management, or execution timing
+- Maintain version control on framework documents — note when principles are added, modified, or deprecated
+
+### MUST NOT DO
+- Do not present trading psychology concepts as universally applicable without acknowledging individual trader differences
+- Avoid conflating correlation with causation when discussing market behavior patterns and their drivers
+- Never include subjective profit targets or return expectations as part of a fundamental framework
+- Do not present risk management principles in isolation — always connect them to specific position and portfolio mechanics
+
 
 ## Live References
 

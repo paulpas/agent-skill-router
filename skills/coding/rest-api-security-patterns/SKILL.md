@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: OAuth 2.1, PKCE flow, JWT authentication API, API key security, rate limiting headers, CORS configuration, X-RateLimit-Limit, bearer token API, API security patterns, how do i secure a REST API, mTLS
+  triggers: OAuth 2.1, PKCE flow, JWT authentication API, API key security, rate limiting headers, bearer token API, how do i secure a REST API, mTLS
   role: implementation
   scope: implementation
   output-format: code

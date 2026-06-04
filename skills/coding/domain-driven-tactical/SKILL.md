@@ -16,7 +16,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: value objects, domain entities, aggregates, repositories, domain events, factories, tactical design, invariant enforcement, aggregate root, idempotency
+  triggers: value objects, domain entities, aggregates, repositories, domain events, factories, tactical design, invariant enforcement
   role: implementation
   scope: implementation
   output-format: code

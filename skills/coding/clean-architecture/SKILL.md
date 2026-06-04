@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: clean architecture, robert martin, uncle bob, entity layer, use case layer, interface adapter, dependency rule, framework independence, hexagonal vs clean, bounded entities, port architecture
+  triggers: clean architecture, robert martin, hexagonal vs clean, entity layer, use case layer, interface adapter, dependency rule, port architecture
   role: implementation
   scope: implementation
   output-format: code

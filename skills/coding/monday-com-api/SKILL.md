@@ -15,7 +15,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  triggers: monday.com api, boards, items, updates, graphql, productivity, collaboration, monday api, how do i use monday api
+  triggers: monday.com api, boards, items, updates, graphql, productivity, collaboration, how do i use monday api
   related-skills: project-management-tools, productivity-framework
 ---
 

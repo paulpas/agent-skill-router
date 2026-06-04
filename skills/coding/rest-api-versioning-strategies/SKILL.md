@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: API versioning, URL path versioning, Accept header versioning, API deprecation, Sunset header, Deprecation header, REST API backward compatibility, how do i version an API, API evolution strategy, breaking changes API
+  triggers: API versioning, URL path versioning, Accept header versioning, API deprecation, Sunset header, REST API backward compatibility, how do i version an API, breaking changes API
   role: implementation
   scope: implementation
   output-format: code

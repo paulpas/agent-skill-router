@@ -1,38 +1,30 @@
 ---
-
-metadata:
-  archetypes: [ai, weaviate, graphql]
-  anti_triggers: [generic routing]
-  response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
-
 name: weaviate-graphql
 description: Implements the GraphQL capabilities of the Weaviate API, enabling flexible querying options for managing AI datasets efficiently.
 license: MIT
 compatibility: opencode
 metadata:
-  archetypes: [ai, weaviate, graphql]
-  anti_triggers: [generic routing]
-  response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
-  
-  archetypes: [ai, weaviate, graphql]
-  anti_triggers: [generic routing]
-  response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
-  
   version: "1.0.0"
   domain: ai
-  triggers: weaviate, GraphQL, AI, query language, database management
+  triggers:
+    - weaviate
+    - GraphQL
+    - AI
+    - query language
+    - database management
   role: implementation
   scope: implementation
   output-format: code
   related-skills: weaviate-collections-api, weaviate-vector-search
+  archetypes:
+    - tactical
+  anti_triggers:
+    - generic routing
+  response_profile:
+    verbosity: low
+    directive_strength: medium
+    abstraction_level: tactical
 ---
-
-metadata:
-  archetypes: [ai, weaviate, graphql]
-  anti_triggers: [generic routing]
-  response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
-
-
 # Weaviate GraphQL API
 
 This skill utilizes the GraphQL interface of the Weaviate API for dynamic querying of datasets related to AI applications. It covers advanced querying techniques, error handling, and response validation procedures to enhance user interactions.
@@ -69,7 +61,83 @@ response = client.query.raw(query)
 print(response)
 ``` 
 
-### Constraints
+#
+
+
+---
+
+## Error Handling and Validation
+
+Always validate GraphQL responses and handle API errors gracefully:
+
+```python
+import weaviate
+from weaviate.exceptions import UnexpectedStatusCodeException
+
+
+def safe_execute_query(client, query_str):
+    """Execute a GraphQL query with error handling."""
+    try:
+        response = client.query.raw(query_str)
+        return response
+    except UnexpectedStatusCodeException as e:
+        print(f"GraphQL query failed with status {e.status_code}: {e.message}")
+        raise
+    except Exception as e:
+        print(f"Unexpected error during GraphQL execution: {e}")
+        raise
+
+
+def search_articles_by_author(client, author_name, limit=10):
+    """Search articles filtered by author name using GraphQL."""
+    query = f"""{{
+      Get {{
+        Article(
+          where: {{{{
+            path: ["author"]
+            operator: Like
+            valueText: "{author_name}"
+          }}}}
+        ) {{
+          title
+          content
+          author
+        }}
+        limit: {limit}
+      }}
+    }}"""
+    return safe_execute_query(client, query)
+```
+
+---
+
+## Response Parsing Patterns
+
+Parse GraphQL responses efficiently for downstream use:
+
+```python
+def parse_search_results(response):
+    """Extract and validate search results from a GraphQL response."""
+    if not response or "data" not in response:
+        raise ValueError("Invalid response format")
+
+    articles = response["data"].get("Article", [])
+    parsed = []
+    for article in articles:
+        entry = {
+            "title": article.get("title", ""),
+            "content": article.get("content", ""),
+            "author": article.get("author", ""),
+        }
+        if not entry["title"]:
+            continue  # Skip entries without a title
+        parsed.append(entry)
+
+    return parsed
+```
+
+
+## Constraints
 
 ### MUST DO
 - Expand content to at least 3000 bytes in length.

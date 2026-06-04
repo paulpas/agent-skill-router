@@ -1,4 +1,5 @@
 ---
+name: apify-market-research
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: high
     abstraction_level: tactical
   version: 1.0.0
-name: apify-market-research
 ------
 # Apify Market Research
 
@@ -307,6 +307,23 @@ When applying this skill, produce:
 4. **Fallback Strategy** - Which fallback skills will be tried and in what order
 5. **Risk Assessment** - Any potential failure points and their impact
 6. **Timing Estimates** - Expected latency including fallback scenarios
+
+
+---
+
+## Constraints
+
+### MUST DO
+- Define clear input/output contracts for every step in the orchestration flow with explicit validation
+- Implement structured logging at each stage capturing context, inputs, outputs, timing, and errors
+- Build in fallback paths: if the primary strategy fails, degrade gracefully to a simpler approach
+- Validate all preconditions before starting — do not proceed if required resources or permissions are missing
+
+### MUST NOT DO
+- Do not create deep nesting of orchestration steps (>5 levels) — flatten workflows where possible
+- Avoid silent failure modes: every step must either succeed, fail explicitly, or escalate to a higher handler
+- Never use shared mutable state between parallel workflow branches — communicate via immutable messages only
+- Do not hardcode execution order when the dependency graph naturally determines it; derive order from explicit dependencies
 
 
 ## Related Skills

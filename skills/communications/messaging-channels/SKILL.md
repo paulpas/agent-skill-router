@@ -16,6 +16,7 @@ metadata:
   response_profile:
       verbosity: low
       directive_strength: high
+  scope: infrastructure
   related-skills: communications/messaging-bots, communications/messaging-microsoft-teams
 ---
 

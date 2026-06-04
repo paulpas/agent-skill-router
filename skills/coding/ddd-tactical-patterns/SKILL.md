@@ -9,7 +9,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  triggers: DDD, domain-driven design, aggregate root, value object, domain event, anti-corruption layer, specification pattern, how do i model complex business logic, bounded context implementation
+  triggers: DDD, domain-driven design, aggregate root, value object, domain event, anti-corruption layer, specification pattern, how do i model complex business logic
   related-skills: software-architecture-patterns,domain-architecture-project-structure
   archetypes: tactical, generation, educational
   anti_triggers: project structure, module organization, ubiquitous language discovery, bounded context identification, event sourcing infrastructure, outbox pattern setup

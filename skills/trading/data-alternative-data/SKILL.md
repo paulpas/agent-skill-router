@@ -1,4 +1,5 @@
 ---
+name: data-alternative-data
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: alternative-data
 ------
 # Alternative Data Ingestion Pipeline: The 5 Laws of Data Normalization
 

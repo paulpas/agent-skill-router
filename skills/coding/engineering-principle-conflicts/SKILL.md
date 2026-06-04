@@ -16,7 +16,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: principle conflicts, SOLID contradictions, DRY fragility, when to abstract, KISS vs abstraction, YAGNI tradeoffs, SRP vs ISP, architecture decision framework, code golf trade-offs, premature abstraction
+  triggers: principle conflicts, SOLID contradictions, DRY fragility, KISS vs abstraction, YAGNI tradeoffs, SRP vs ISP, architecture decision framework, premature abstraction
   role: implementation
   scope: implementation
   output-format: code

@@ -17,7 +17,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: data pipeline, ETL architecture, ELT pipeline, medallion architecture, batch processing, stream processing, data quality gates, schema evolution, data ingestion, Spark pipeline, Kafka Streams, data transformation pipeline, how do i build a data pipeline
+  triggers: data pipeline, ETL architecture, batch processing, stream processing, data quality gates, schema evolution, Spark pipeline, how do i build a data pipeline
   role: implementation
   scope: implementation
   output-format: code

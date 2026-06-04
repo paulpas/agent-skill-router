@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework comparison, spike project, side by side framework, framework benchmark, developer experience evaluation, framework POC, proof of concept framework, framework code comparison, framework ecosystem analysis, compare frameworks hands on, framework spike test, tech stack comparison
+  triggers: framework comparison, spike project, framework benchmark, developer experience evaluation, framework POC, proof of concept framework, framework ecosystem analysis, tech stack comparison
   archetypes:
     - tactical
     - diagnostic

@@ -15,7 +15,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: conversation memory, long-term memory, vector store, embedding, message history, context window, auto-summarization, chat history, conversation buffer, semantic memory
+  triggers: conversation memory, long-term memory, vector store, embedding, context window, auto-summarization, chat history, semantic memory
   role: implementation
   scope: implementation
   output-format: code

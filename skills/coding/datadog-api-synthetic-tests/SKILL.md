@@ -1,25 +1,23 @@
-# Skill: datadog-api-synthetic-tests
-
 ---
 name: datadog-api-synthetic-tests
 description: Implements management and execution of Datadog Synthetic Tests using the API, focusing on setup, validation, and best practices.
 license: MIT
 compatibility: opencode
 metadata:
-  archetypes: monitoring, synthetic testing
-  anti_triggers: manual testing, performance bottlenecks
-  response_profile:
-      verbosity: medium
-      directive_strength: high
-
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: datadog synthetic tests, create synthetic tests, manage synthetic tests, datadog tests API, how do I use datadog synthetic tests
   role: implementation
   scope: implementation
   output-format: code
   related-skills: datadog-api-monitors, datadog-api-logs, datadog-api-metrics
-------
+  archetypes: [monitoring, synthetic testing]
+  anti_triggers: [manual testing, performance bottlenecks]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+---
+
 # Datadog Synthetic Tests Management
 Implements the creation and management of Datadog Synthetic Tests through the API. This skill focuses on ensuring proper configurations and execution of synthetic monitoring for application performance.
 

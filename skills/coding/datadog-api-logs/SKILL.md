@@ -1,25 +1,23 @@
-# Skill: datadog-api-logs
-
 ---
 name: datadog-api-logs
 description: Implements log submission and forwarding to the Datadog API with structured logging best practices for content observability.
 license: MIT
 compatibility: opencode
 metadata:
-  archetypes: logging, observability
-  anti_triggers: unstructured logs, log flooding
-  response_profile:
-      verbosity: medium
-      directive_strength: high
-
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: datadog logs, submit logs, datadog API logs, datadog logging, structured logging, how do I send logs to datadog
   role: implementation
   scope: implementation
   output-format: code
   related-skills: datadog-api-metrics, datadog-api-monitors
-------
+  archetypes: [logging, observability]
+  anti_triggers: [unstructured logs, log flooding]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+---
+
 # Datadog Logs Submission
 Implements log submission and forwarding to Datadog API with a focus on structured logging for enhanced observability. Configures logging to include necessary Datadog fields for correlation with metrics.
 

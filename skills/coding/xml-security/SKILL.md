@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: xx e injection, xml external entity, dtd security, xml parser security, entity expansion attack, xml schema validation, xml vulnerability, safe xml parsing, xml input sanitization
+  triggers: xx e injection, xml external entity, dtd security, xml parser security, entity expansion attack, xml schema validation, safe xml parsing, xml input sanitization
   archetypes:
     - tactical
     - diagnostic

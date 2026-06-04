@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: business rules engine, rules engine, decision table, condition evaluation, declarative rules, rule validation, how do i evaluate complex rules, compliance rules, pricing rules
+  triggers: business rules engine, decision table, condition evaluation, declarative rules, rule validation, how do i evaluate complex rules, compliance rules, pricing rules
   archetypes:
     - tactical
     - generation

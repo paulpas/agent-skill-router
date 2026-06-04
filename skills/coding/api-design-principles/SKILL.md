@@ -16,7 +16,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: api design, REST API, GraphQL, API versioning, error handling, OpenAPI, hypermedia, HATEOAS, API security, rate limiting, JSON:API
+  triggers: api design, REST API, GraphQL, API versioning, error handling, OpenAPI, hypermedia, HATEOAS
   role: implementation
   scope: implementation
   output-format: code

@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: api design, REST API, GraphQL schema, OpenAPI spec, API versioning, pagination, rate limiting, endpoint design, API authentication, how do i design an API, API documentation, Swagger
+  triggers: api design, REST API, GraphQL schema, OpenAPI spec, API versioning, endpoint design, rate limiting, how do i design an API
   archetypes:
     - tactical
     - generation

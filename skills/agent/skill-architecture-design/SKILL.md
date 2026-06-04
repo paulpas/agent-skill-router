@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: skill architecture, atomic design, monolith detection, granularity heuristics, skill topology, skill network, modular skills, skill boundaries, skill decomposition, skill splitting, skill graph, related-skills, skill lifecycle, skill registry
+  triggers: skill architecture, atomic design, monolith detection, granularity heuristics, skill topology, modular skills, skill boundaries, skill decomposition
   archetypes:
     - strategic
     - tactical

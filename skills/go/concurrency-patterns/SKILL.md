@@ -1,5 +1,5 @@
 ---
-name: go-concurrency-patterns
+name: concurrency-patterns
 description: Implements Go concurrency patterns including goroutines, channels, worker pools, context cancellation, and synchronization for high-performance applications.
 license: MIT
 compatibility: opencode

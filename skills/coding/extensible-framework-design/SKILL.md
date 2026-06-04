@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework design, extensible architecture, plugin system, extension points, configuration driven, framework API design, hook patterns, middleware chains, how do i design an extensible system
+  triggers: framework design, extensible architecture, plugin system, extension points, configuration driven, hook patterns, middleware chains, how do i design an extensible system
   archetypes:
     - tactical
     - strategic

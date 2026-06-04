@@ -357,6 +357,23 @@ def get_or_create_workspace(
 - Never ignore variables that should be `sensitive=true` (e.g., database passwords, API keys)
 - Do not assume workspaces are deletable — check for attached resources first
 
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
+
 ## Live References
 
 - [pyTFE (HCP Terraform Python Client) Documentation](https://github.com/hashicorp/python-tfe)

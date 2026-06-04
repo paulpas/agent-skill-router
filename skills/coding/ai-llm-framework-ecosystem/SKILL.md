@@ -1,5 +1,3 @@
-# Skill: ai-llm-framework-ecosystem
-
 ---
 name: ai-llm-framework-ecosystem
 description: Evaluates AI/LLM framework ecosystems (LangChain, LlamaIndex, CrewAI,

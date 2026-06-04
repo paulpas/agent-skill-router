@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: backpressure, flow control, rate limiting, circuit breaker, adaptive throttling, consumer lag, processing overload, bounded queue, signal propagation, producer pause
+  triggers: backpressure, flow control, rate limiting, circuit breaker, consumer lag, processing overload, bounded queue, signal propagation
   archetypes:
     - tactical
     - diagnostic

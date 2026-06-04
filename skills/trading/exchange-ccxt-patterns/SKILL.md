@@ -1,4 +1,5 @@
 ---
+name: exchange-ccxt-patterns
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: ccxt-patterns
 ------
 **Role:** Guide an AI coding assistant to build robust exchange integrations using CCXT with proper error handling, state management, and performance optimization
 
@@ -263,5 +263,132 @@ class ExchangeWrapper:
         self.state.successes += 1
         self.state.failures = 0
         self.state.last_success = datetime.now()
-    
-    # 
+```
+
+### Pattern 2: CCXT Rate Limit Awareness with Token Bucket
+
+```python
+import time
+import asyncio
+from dataclasses import dataclass, field
+
+
+@dataclass
+class TokenBucketRateLimiter:
+    """Token bucket algorithm for exchange rate limit compliance.
+
+    Each exchange has different rate limits (requests per second/window).
+    This limiter tracks tokens and ensures calls don't exceed the limit
+    even across multiple parallel requests.
+    """
+    max_tokens: int = 10
+    refill_rate: float = 1.0  # tokens per second
+    current_tokens: float = field(default=10.0, init=False)
+    last_refill_time: float = field(default_factory=time.monotonic, init=False)
+
+    def acquire(self, tokens: int = 1) -> bool:
+        """Try to acquire N tokens. Returns True if successful, False if rate limited."""
+        self._refill()
+        if self.current_tokens >= tokens:
+            self.current_tokens -= tokens
+            return True
+        return False
+
+    def wait_for_token(self, timeout: float = 10.0) -> None:
+        """Block until a token is available or timeout expires."""
+        start = time.monotonic()
+        while time.monotonic() - start < timeout:
+            if self.acquire():
+                return
+            time.sleep(1.0 / self.refill_rate)
+        raise TimeoutError("Rate limit wait timed out")
+
+    def _refill(self) -> None:
+        """Refill tokens based on elapsed time since last refill."""
+        now = time.monotonic()
+        elapsed = now - self.last_refill_time
+        tokens_to_add = elapsed * self.refill_rate
+        self.current_tokens = min(self.max_tokens, self.current_tokens + tokens_to_add)
+        self.last_refill_time = now
+
+
+class CCXTExchangeAdapter:
+    """High-level adapter wrapping CCXT exchanges with rate limiting and error handling."""
+
+    def __init__(self, exchange_id: str, api_key: str | None = None, secret: str | None = None):
+        import ccxt
+
+        self._exchange = getattr(ccxt, exchange_id)({
+            "apiKey": api_key or "",
+            "secret": secret or "",
+            "enableRateLimit": True,
+            "options": {"defaultType": "spot"},
+        })
+
+        self._rate_limiter = TokenBucketRateLimiter(
+            max_tokens=10,
+            refill_rate=self._exchange.rateLimit / 1000.0,
+        )
+
+    async def fetch_ticker(self, symbol: str) -> dict:
+        """Fetch ticker data for a trading pair with rate limit awareness."""
+        self._rate_limiter.wait_for_token(timeout=5.0)
+        try:
+            return self._exchange.fetch_ticker(symbol)
+        except ccxt.RateLimitExceeded as e:
+            self._rate_limiter.current_tokens = 0  # Reset bucket on rate limit hit
+            raise
+        except ccxt.NetworkError as e:
+            raise ConnectionError(f"Network error fetching {symbol}: {e}") from e
+
+    async def fetch_ohlcv(self, symbol: str, timeframe: str = "1m", limit: int = 500) -> list[list]:
+        """Fetch OHLCV candle data for a trading pair."""
+        self._rate_limiter.wait_for_token()
+        try:
+            return self._exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+        except ccxt.InvalidOrder as e:
+            raise ValueError(f"Invalid order parameters for {symbol}: {e}") from e
+        except ccxt.ExchangeNotAvailable as e:
+            raise ConnectionError(f"Exchange unavailable: {e}") from e
+
+    async def create_limit_order(
+        self, symbol: str, side: str, amount: float, price: float
+    ) -> dict:
+        """Place a limit order with safety checks."""
+        if amount <= 0 or price <= 0:
+            raise ValueError(f"Invalid order params: amount={amount}, price={price}")
+
+        self._rate_limiter.wait_for_token()
+        try:
+            return self._exchange.create_limit_order(symbol, side, amount, price)
+        except ccxt.InsufficientFunds as e:
+            raise InsufficientBalanceError(f"Insufficient funds for order: {e}") from e
+        except ccxt.InvalidOrder as e:
+            raise InvalidOrderError(f"Invalid order on {symbol}: {e}") from e
+
+
+class InsufficientBalanceError(Exception):
+    """Raised when account balance is insufficient for an order."""
+    pass
+
+
+class InvalidOrderError(Exception):
+    """Raised when the exchange rejects an order."""
+    pass
+```
+
+## Constraints
+
+### MUST DO
+- Implement a unified adapter interface across all exchange integrations to standardize order placement, cancellation, and querying
+- Handle rate limiting proactively with token bucket or leaky bucket algorithms — never wait for 429 responses before slowing down
+- Maintain local order state as the source of truth; reconcile with exchange state periodically via webhook events and polling
+- Implement heartbeat monitoring per exchange connection with automatic failover to a secondary data feed on timeout
+- Log all API interactions including request/response IDs, timing, and status codes for audit and debugging
+
+### MUST NOT DO
+- Do not trust exchange-reported order states without local confirmation — always reconcile after every state change
+- Avoid sending multiple orders for the same position simultaneously across different adapters or sessions
+- Never store API keys or secrets in code — use environment variables or a secrets manager with automatic rotation
+- Do not assume all exchanges support the same order types — implement graceful degradation with clear capability negotiation
+- Avoid polling-based price updates when WebSocket/streaming APIs are available — polling creates unnecessary load and latency

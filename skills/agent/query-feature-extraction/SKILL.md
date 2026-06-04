@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: feature extraction, query parsing, action verb detection, domain detection, urgency signal, complexity marker, entity extraction, natural language processing, NLP preprocessing, how do i parse a query
+  triggers: feature extraction, query parsing, action verb detection, domain detection, entity extraction, natural language processing, NLP preprocessing, how do i parse a query
   archetypes:
     - tactical
     - orchestration

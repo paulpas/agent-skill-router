@@ -1,4 +1,5 @@
 ---
+name: deployment-philosophy
 compatibility: opencode
 completeness: 95
 content-types:
@@ -36,7 +37,6 @@ metadata:
     directive_strength: medium
     abstraction_level: tactical
   version: 1.0.0
-name: deployment-philosophy
 ------
 # Cloud Deployment Philosophy
 

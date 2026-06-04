@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: mixpanel, mixpanel api, event tracking, user profiles, funnel analysis, cohort export, jql queries, product analytics, mixpanel sdk
+  triggers: mixpanel, mixpanel api, event tracking, user profiles, funnel analysis, product analytics, jql queries, cohort export
   archetypes: tactical
   anti_triggers:
     - brainstorming

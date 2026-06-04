@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: graceful shutdown, health check, service config, retry policy, keepalive settings, mTLS, flow control, backpressure, how do i make gRPC production-ready
+  triggers: graceful shutdown, health check, retry policy, keepalive settings, mTLS, flow control, backpressure, how do i make gRPC production-ready
   archetypes:
     - tactical
     - strategic

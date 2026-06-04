@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: spring data jpa, repository pattern, entity mapping, jpql queries, transaction management, pagination sorting, n plus one problem, @entitygraph, derived queries
+  triggers: spring data jpa, repository pattern, entity mapping, jpql queries, transaction management, pagination sorting, n plus one problem, derived queries
   archetypes:
     - tactical
     - diagnostic

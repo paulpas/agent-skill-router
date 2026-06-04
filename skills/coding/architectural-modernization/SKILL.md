@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework migration, database migration, technology upgrade, legacy system modernization, Flask to FastAPI, MongoDB to PostgreSQL, SOAP to REST, on-prem to cloud, language upgrade, API evolution, infrastructure modernization, how do i upgrade a legacy system
+  triggers: legacy system modernization, framework migration, database migration, technology upgrade, API evolution, on-prem to cloud, Flask to FastAPI, how do i upgrade a legacy system
   archetypes:
     - tactical
     - strategic

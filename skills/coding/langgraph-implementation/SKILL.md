@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: langgraph, state graph, agent workflow, conditional routing, human in the loop, checkpointing, langchain graph, persistent agent, how do i build an ai agent workflow
+  triggers: langgraph, state graph, agent workflow, conditional routing, human in the loop, checkpointing, langchain graph, persistent agent
   archetypes:
     - tactical
     - generation

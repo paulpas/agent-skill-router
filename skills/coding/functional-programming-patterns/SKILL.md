@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: functional programming, pure function, immutable transform, function composition, currying, Option type, Either type, data pipeline, map filter reduce, referential transparency, how do i eliminate side effects, chain transformations
+  triggers: functional programming, pure function, immutable transform, function composition, currying, Option type, Either type, how do i eliminate side effects
   archetypes:
     - tactical
     - generation

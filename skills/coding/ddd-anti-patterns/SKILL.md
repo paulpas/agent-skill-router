@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: ddd anti-patterns, god aggregate, anemic domain model, context creep, repository leakage, bounded context violation, domain service sprawl, specification pattern misuse, how do i fix ddd mistakes, DDD code review, domain model smell
+  triggers: ddd anti-patterns, god aggregate, anemic domain model, context creep, repository leakage, bounded context violation, domain service sprawl, how do i fix ddd mistakes
   role: review
   scope: review
   output-format: analysis

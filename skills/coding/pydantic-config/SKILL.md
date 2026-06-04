@@ -1,4 +1,5 @@
 ---
+name: pydantic-config
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,7 +31,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: config
 ------
 # Skill: coding-pydantic-config
 

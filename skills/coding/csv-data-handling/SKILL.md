@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: csv data handling, rfc 4180, csv injection, formula injection, spreadsheet security, csv parsing, delimiters, character encoding, safe csv reading
+  triggers: csv data handling, rfc 4180, csv injection, formula injection, spreadsheet security, csv parsing, delimiters, safe csv reading
   archetypes:
     - tactical
     - diagnostic

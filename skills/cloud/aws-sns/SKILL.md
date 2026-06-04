@@ -13,6 +13,9 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+  role: implementation
+  scope: infrastructure
+  output-format: code
 ---
 
 ## Enhanced Content for AWS SNS Skill
@@ -60,6 +63,66 @@ SNS can trigger Lambda functions upon message delivery, making it suitable for e
 Yes, SNS allows messages to be broadcasted to multiple endpoints, including SQS queues, Lambda functions, and HTTP endpoints.
 
 By implementing AWS SNS strategies, businesses can efficiently manage messaging needs, enhance application decoupling, and ensure a secure and scalable infrastructure.
+
+---
+
+
+
+### Pattern 2: SNS with Subscriptions and Message Filtering
+
+```python
+import boto3
+from typing import Optional
+
+
+def create_topic_and_subscribe(client, topic_name: str, protocol: str, endpoint: str) -> dict:
+    """Create an SNS topic with a subscription."""
+    topic_resp = client.create_topic(Name=topic_name)
+    topic_arn = topic_resp["TopicArn"]
+
+    sub_resp = client.subscribe(
+        TopicArn=topic_arn,
+        Protocol=protocol,
+        Endpoint=endpoint,
+    )
+    print(f"Created subscription: {sub_resp['SubscriptionArn']} for topic {topic_arn}")
+    return {"topic_arn": topic_arn, "subscription_arn": sub_resp["SubscriptionArn"]}
+
+
+def publish_with_attributes(client, topic_arn: str, message: str,
+                             event_type: str = "general") -> dict:
+    """Publish a message with attributes for subscriber filtering."""
+    response = client.publish(
+        TopicArn=topic_arn,
+        Message=message,
+        MessageAttributes={
+            "event_type": {"DataType": "String", "StringValue": event_type},
+            "priority": {"DataType": "String", "StringValue": "high"},
+        },
+    )
+    print(f"Published message with attributes to {topic_arn}: {response['MessageId']}")
+    return response
+
+
+def get_topic_attributes(client, topic_arn: str) -> dict:
+    """Get all attributes for an SNS topic."""
+    return client.get_topic_attributes(TopicArn=topic_arn)
+```
+
+## Constraints
+
+### MUST DO
+- Configure all AWS resources with explicit tagging for cost allocation, ownership tracking, and compliance
+- Use AWS SDK (Boto3) typed clients instead of resource API where type safety matters — prefer client() over resource()
+- Implement error handling that distinguishes between retryable (Throttling, RequestLimitExceeded) and non-retryable errors
+- Use IAM roles with least-privilege policies scoped to specific actions and resources, never wildcard permissions
+
+### MUST NOT DO
+- Do not hardcode AWS credentials — use IAM roles, environment variables, or AWS Secrets Manager
+- Avoid unencrypted S3 buckets or RDS instances in production without explicit KMS encryption configuration
+- Never launch EC2 instances without specifying a security group and subnet — always use VPC networking explicitly
+- Do not use the default endpoint region — always specify the target region explicitly in all SDK calls
+
 
 ## Live References
 

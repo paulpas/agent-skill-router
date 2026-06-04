@@ -1,4 +1,5 @@
 ---
+name: aws-lambda
 compatibility: opencode
 completeness: 95
 content-types:
@@ -31,7 +32,6 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
   version: 1.0.0
-name: lambda
 ------
 # Lambda (AWS Lambda)
 

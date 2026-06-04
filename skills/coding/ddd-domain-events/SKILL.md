@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: domain events, event dispatcher, publish subscribe, event sourcing, idempotent handlers, outbox pattern, event schema versioning, how do i implement domain events, DDD events
+  triggers: domain events, event dispatcher, publish subscribe, event sourcing, idempotent handlers, outbox pattern, event schema versioning, how do i implement domain events
   role: implementation
   scope: implementation
   output-format: code

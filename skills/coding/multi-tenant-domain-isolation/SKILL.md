@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: multi-tenant, tenant isolation, schema per tenant, row-level security, tenant boundary, saas architecture, how do i isolate tenants, data partitioning, bounded context per tenant
+  triggers: multi-tenant, tenant isolation, schema per tenant, row-level security, saas architecture, how do i isolate tenants, data partitioning, bounded context per tenant
   archetypes:
     - tactical
     - generation

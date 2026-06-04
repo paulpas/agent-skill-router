@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: aggregate lifecycle, aggregate snapshotting, aggregate versioning, optimistic concurrency, aggregate root splitting, event sourcing snapshot, how do i scale aggregates, aggregate consistency at scale, ddd performance
+  triggers: aggregate lifecycle, aggregate snapshotting, aggregate versioning, optimistic concurrency, event sourcing snapshot, how do i scale aggregates, aggregate consistency at scale, ddd performance
   archetypes:
     - tactical
     - generation

@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: input validation, pydantic validation, schema validation, allowlist validation, sanitize input, recursive validation, error accumulation, type coercion, data sanitization, how do i validate user input
+  triggers: input validation, pydantic validation, schema validation, allowlist validation, sanitize input, recursive validation, data sanitization, how do i validate user input
   role: implementation
   scope: implementation
   output-format: code

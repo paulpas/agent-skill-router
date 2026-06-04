@@ -1,4 +1,5 @@
 ---
+name: fluentd
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
   version: 1.0.0
-name: fluentd
 ------
   related-skills: cncf-aws-cloudwatch, cncf-azure-monitor, cncf-cortex, cncf-gcp-autoscaling
 

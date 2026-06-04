@@ -22,7 +22,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples, config]
-  triggers: apollo federation, subgraph, supergraph, entity sharing, @key directive, graphql gateway, federated schema, @external, @provides, @requires, cross-service reference, router configuration
+  triggers: apollo federation, subgraph, supergraph, entity sharing, @key directive, graphql gateway, federated schema, router configuration
   related-skills: graphql-api-design, graphql-dataloader-pattern, graphql-schema-design
 ---
 

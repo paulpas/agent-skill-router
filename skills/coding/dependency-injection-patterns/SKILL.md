@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: dependency injection, IoC, inversion of control, composition root, constructor injection, DI container, service locator, how do i decouple my classes, test with mock dependencies, wire up my app
+  triggers: dependency injection, IoC, inversion of control, composition root, constructor injection, DI container, how do i decouple my classes, test with mock dependencies
   role: implementation
   scope: implementation
   output-format: code

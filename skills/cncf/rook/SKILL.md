@@ -1,4 +1,5 @@
 ---
+name: rook
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,7 +29,6 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
   version: 1.0.0
-name: rook
 ------
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ecr
 

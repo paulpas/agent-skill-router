@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: durable execution, checkpointing, crash recovery, idempotency, retry strategy, exponential backoff, state persistence, fault tolerance, workflow resume, temporal, replay detection, atomic commits, saga pattern, circuit breaker
+  triggers: durable execution, checkpointing, crash recovery, idempotency, retry strategy, state persistence, fault tolerance, temporal
   role: implementation
   scope: implementation
   output-format: code

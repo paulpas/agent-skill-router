@@ -1,4 +1,5 @@
 ---
+name: risk-kill-switches
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,7 +29,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: kill-switches
 ------
 **Role:** Guide an AI coding assistant to build comprehensive kill switch systems that automatically halt trading operations when predefined risk thresholds are breached, protecting capital and preventing system damage
 
@@ -1132,6 +1132,25 @@ def check_and_halt():
 file:///home/paulpas/git/ideas/trading_bot/skills/risk-engine
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Calculate position sizing using a risk-per-trade percentage of portfolio equity, not a fixed dollar amount
+- Implement layered risk controls: stop loss → drawdown limit → portfolio-level circuit breaker → kill switch
+- Compute VaR using historical simulation with at least 1 year of data and multiple confidence levels (95%, 99%)
+- Track correlation matrices across all open positions and flag portfolios where top-3 correlations exceed 0.8
+- Log all risk events (stop hits, drawdown warnings, kill switches) with full context including P&L, position state, and market conditions
+
+### MUST NOT DO
+- Do not use a stop loss as the sole risk control — always layer with portfolio-level limits
+- Avoid recalculating position sizes during active drawdown without regime analysis — volatility is likely elevated
+- Never allow a single position to exceed 5% of portfolio equity regardless of signal strength or confidence score
+- Do not backtest risk metrics without including slippage, commissions, and partial fills in the simulation
+- Avoid using standard deviation alone for VaR when returns show fat tails — use historical simulation or EVT
+
 
 ## Live References
 

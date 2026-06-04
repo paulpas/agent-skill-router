@@ -1,4 +1,5 @@
 ---
+name: conductor-revert
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: high
     abstraction_level: tactical
   version: 1.0.0
-name: conductor-revert
 ------
 # Conductor Revert
 
@@ -299,6 +299,25 @@ When applying this skill, produce:
 
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Parse user request into structured task specifications before dispatching to downstream agents
+- Implement a state machine for each conductor phase with explicit entry/exit conditions and transition logs
+- Validate revert outputs against expected schema before proceeding to the next orchestration step
+- Log every orchestration decision including rationale, selected strategy, and confidence scores for auditability
+- Maintain a task queue with priority ordering — critical path items execute first during resource contention
+
+### MUST NOT DO
+- Do not allow a single failed agent task to silently terminate the entire workflow — implement per-step fallbacks
+- Avoid circular delegation patterns where Agent A delegates to B which delegates back to A without termination condition
+- Never bypass the validation step for revert results even if timing is critical — correctness supersedes speed
+- Do not use shared mutable state between parallel agent executions — use message-passing or immutable data transfer
+- Avoid hardcoding agent selection rules; parameterize them and load from configuration for runtime flexibility
+
 
 ## Live References
 

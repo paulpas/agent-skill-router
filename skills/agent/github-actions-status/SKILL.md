@@ -1,4 +1,5 @@
 ---
+name: github-actions-status
 compatibility: opencode
 completeness: 95
 content-types:
@@ -31,7 +32,6 @@ metadata:
     directive_strength: medium
     abstraction_level: tactical
   version: 1.0.0
-name: github-actions-status
 ------
 # GitHub Actions Status
 
@@ -147,3 +147,16 @@ The `--ref` flag specifies which branch/tag to run against (defaults to the defa
 
 | Action | Command |
 |
+---
+
+## Constraints
+
+### MUST DO
+- Implement all core functionality with explicit error handling and validation at every boundary
+- Document the purpose and expected inputs/outputs of each public interface in docstrings or comments
+- Use consistent naming conventions that clearly communicate intent — variable names should describe what they represent, not how they are used
+
+### MUST NOT DO
+- Do not implement features without considering edge cases, error states, and failure modes
+- Avoid accepting unvalidated input at any API or interface boundary
+- Never use magic numbers or hardcoded strings that obscure the purpose of configuration values

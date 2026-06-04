@@ -1,4 +1,5 @@
 ---
+name: fastapi-patterns
 compatibility: opencode
 completeness: 95
 content-types:
@@ -31,7 +32,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: patterns
 ------
 # Skill: coding-fastapi-patterns
 

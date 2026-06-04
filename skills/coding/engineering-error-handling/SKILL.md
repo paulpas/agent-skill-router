@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: error handling, exception hierarchy, retry strategy, exponential backoff, circuit breaker, graceful degradation, structured logging, panic prevention, how do i handle errors, error wrapping, sentinel errors
+  triggers: error handling, exception hierarchy, retry strategy, exponential backoff, circuit breaker, graceful degradation, structured logging, how do i handle errors
   archetypes:
     - tactical
     - diagnostic

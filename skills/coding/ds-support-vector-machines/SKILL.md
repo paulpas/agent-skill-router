@@ -1,4 +1,5 @@
 ---
+name: ds-support-vector-machines
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,7 +31,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: support-vector-machines
 ------
 # Support Vector Machines
 
@@ -193,6 +193,23 @@ def train_svm_proper(X: pd.DataFrame, y: pd.Series) -> Dict[str, Any]:
 |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Standardize/normalize all features before fitting SVM — scale differences severely impact kernel computation
+- Validate kernel selection: start with RBF, use grid search over C and gamma with cross-validation
+- For large datasets (>50k samples), use linear SVM or approximation methods (LinearSVC, SGDClassifier)
+- Report both classification metrics and confusion matrix to identify class-specific performance
+
+### MUST NOT DO
+- Do not use raw unnormalized features with RBF kernel — the distance metric becomes dominated by high-variance features
+- Avoid training SVM on imbalanced data without class weight adjustment or resampling
+- Never treat the margin width as a measure of probability confidence — SVM outputs are decision values, not probabilities
+- Do not use full SVM for datasets exceeding 100k rows without approximation — memory complexity is O(n²)
+
 
 ## Live References
 

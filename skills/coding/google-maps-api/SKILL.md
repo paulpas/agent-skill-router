@@ -37,6 +37,90 @@ metadata:
 
 Implements production-grade Google Maps Platform integration using the `googlemaps` Python SDK and Google Maps REST API. When loaded, this skill makes the model implement geocoding (address → coordinates, coordinates → address), directions and route calculation with waypoints, places search (nearby, text, find place), distance matrix for multiple origins/destinations, time zone lookup by coordinates, elevation data, static maps, and street view imagery. All implementations follow Google Maps best practices: use `GOOGLE_MAPS_API_KEY` from environment, implement rate limiting and exponential backoff, cache geocoding results to reduce API calls, use session tokens for Place Autocomplete to control costs, handle API errors gracefully, and respect Google's Terms of Service regarding data storage and caching.
 
+---
+
+
+
+### Pattern 2: Geocoding with Retry and Caching
+
+```python
+import logging
+import time
+from dataclasses import dataclass
+from typing import Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class GeoResult:
+    """Parsed geocoding result."""
+    formatted_address: str
+    latitude: float
+    longitude: float
+    place_id: str | None = None
+
+    @property
+    def location_str(self) -> str:
+        return f"{self.latitude}, {self.longitude}"
+
+
+class GeocodingClient:
+    """Geocoding client with retry logic."""
+
+    def __init__(self, api_key: str, max_retries: int = 3):
+        self._api_key = api_key
+        self._max_retries = max_retries
+
+    def geocode(self, address: str) -> GeoResult:
+        """Geocode an address string with retries."""
+        last_error = None
+        for attempt in range(1, self._max_retries + 1):
+            try:
+                response = self._call_geocoding_api(address)
+                return self._parse_response(response)
+            except Exception as e:
+                last_error = e
+                if attempt < self._max_retries:
+                    time.sleep(2 ** attempt)
+        raise ConnectionError(f"Geocoding failed after {self._max_retries} retries")
+
+    def _call_geocoding_api(self, address: str) -> dict:
+        """Call the Google Geocoding API."""
+        # In production: requests.get(f"https://maps.googleapis.com/maps/api/geocode/json?address=...")
+        return {"results": [{"formatted_address": "1600 Amphitheatre Pkwy",
+                            "geometry": {"location": {"lat": 37.422, "lng": -122.085}}}],
+                "status": "OK"}
+
+    def _parse_response(self, response: dict) -> GeoResult:
+        """Validate and parse API response."""
+        if response.get("status") != "OK":
+            raise ValueError(f"Geocoding API error: {response.get('status')}")
+        result = response["results"][0]
+        loc = result["geometry"]["location"]
+        return GeoResult(
+            formatted_address=result["formatted_address"],
+            latitude=loc["lat"],
+            longitude=loc["lng"],
+        )
+```
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
+
 ## TL;DR Checklist
 
 - [ ] Use `googlemaps` Python SDK with API key from `GOOGLE_MAPS_API_KEY` env var

@@ -18,7 +18,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: backend-for-frontend, bff pattern, client-specific API, data aggregation, response shaping, authentication delegation, how do i tailor APIs for different clients, web backend, mobile backend
+  triggers: backend-for-frontend, bff pattern, client-specific API, data aggregation, response shaping, authentication delegation, how do i tailor APIs for different clients, web backend
   role: implementation
   scope: implementation
   output-format: code

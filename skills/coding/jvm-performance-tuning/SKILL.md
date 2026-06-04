@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: jvm tuning, garbage collection, GC tuning, zgc, shenandoah, g1gc, memory management, metaspace allocation, jit compilation, virtual threads, project loom, java performance optimization, container memory limits
+  triggers: jvm tuning, garbage collection, G1GC, zgc, shenandoah, memory management, jit compilation, virtual threads
   archetypes:
     - tactical
     - generation

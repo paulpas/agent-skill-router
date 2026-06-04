@@ -18,7 +18,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: coding mindset, think before coding, simplicity first, overengineering, code complexity, yagni, premature optimization, assumptions, tradeoffs, keep it simple
+  triggers: coding mindset, think before coding, simplicity first, overengineering, yagni, premature optimization, assumptions, tradeoffs
   role: implementation
   scope: implementation
   output-format: code

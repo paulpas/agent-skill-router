@@ -1,9 +1,31 @@
-# Skill: vault-api
-
 ---
 name: vault-api
-
-description: Implements HashiCorp Vault API integration (KV Secrets Engine, PKI, Transit, Auth Methods, Leasing & Renewal) using hvac Python SDK v2.4+ with proper authentication, secret leasing, TTL management, and encryption as a service patterns.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: hashicorp vault, hvac python, vault kv secrets, vault pki, vault transit, how do i use vault, vault leasing, secret management\n  archetypes: [tactical, generation]\n  anti_triggers: [vague implementations, manual processes]\n  response_profile:\n    verbosity: medium\n    directive_strength: high\n    abstraction_level: operational\n---
+description: Implements HashiCorp Vault API integration (KV Secrets Engine, PKI, Transit, Auth Methods, Leasing & Renewal) using hvac Python SDK v2.4+ with proper authentication, secret leasing, TTL management, and encryption as a service patterns.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers:
+    - hashicorp vault
+    - hvac python
+    - vault kv secrets
+    - vault pki
+    - vault transit
+    - how do i use vault
+    - vault leasing
+    - secret management
+  archetypes:
+    - tactical
+    - generation
+  anti_triggers:
+    - vague implementations
+    - manual processes
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: operational
+---
 
 # HashiCorp Vault Integration (Secrets Management)
 Implements production-grade HashiCorp Vault integration using the `hvac` Python SDK v2.4+. When loaded, this skill makes the model implement KV (Key/Value) secrets engine v1/v2 operations, Transit (encryption as a service), PKI (certificate generation), AppRole authentication, Token auth, LDAP/Kubernetes auth methods, secret leasing and renewal, TTL management, and response wrapping. All implementations follow Vault best practices: use environment variables for auth, proper token lifecycle management (lease renewal, revoke on exit), short-lived dynamic secrets instead of long-lived credentials, encryption/decryption via Transit (never roll your own crypto), and wrapping tokens for secure one-time delivery.

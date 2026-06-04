@@ -1,4 +1,5 @@
 ---
+name: skill-router
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: high
     abstraction_level: tactical
   version: 1.0.0
-name: skill-router
 ------
 # Skill Router
 
@@ -307,6 +307,23 @@ When applying this skill, produce:
 |---|---|
 | `parallel-skill-runner` | Handles parallel execution after the router selects multiple skills for a task |
 | `confidence-based-selector` | Uses confidence scoring to rank and select the best skill after routing analysis |
+
+---
+
+## Constraints
+
+### MUST DO
+- Define clear input/output contracts for every step in the orchestration flow with explicit validation
+- Implement structured logging at each stage capturing context, inputs, outputs, timing, and errors
+- Build in fallback paths: if the primary strategy fails, degrade gracefully to a simpler approach
+- Validate all preconditions before starting — do not proceed if required resources or permissions are missing
+
+### MUST NOT DO
+- Do not create deep nesting of orchestration steps (>5 levels) — flatten workflows where possible
+- Avoid silent failure modes: every step must either succeed, fail explicitly, or escalate to a higher handler
+- Never use shared mutable state between parallel workflow branches — communicate via immutable messages only
+- Do not hardcode execution order when the dependency graph naturally determines it; derive order from explicit dependencies
+
 
 ## Live References
 

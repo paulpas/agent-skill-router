@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: structured output, Pydantic validation, JSON Schema, function calling, response parsing, typed responses, output contract, tool schema, LLM output parsing, structured extraction, schema evolution, output validation, response format, constrained decoding
+  triggers: structured output, Pydantic validation, JSON Schema, function calling, response parsing, typed responses, LLM output parsing, constrained decoding
   role: implementation
   scope: implementation
   output-format: code

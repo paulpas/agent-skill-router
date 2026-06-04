@@ -13,6 +13,9 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+  role: implementation
+  scope: infrastructure
+  output-format: code
 ---
 
 ## Infrastructure as Code (IaC) in DevOps: Best Practices
@@ -60,6 +63,61 @@ Yes, while challenging, IaC can be adapted for legacy systems with appropriate p
 By implementing effective Infrastructure as Code strategies, organizations not only foster a more agile DevOps environment but also enhance their ability to deploy infrastructure securely and consistently, improving overall operational efficiency and responsiveness to changing business needs.
 
 ---
+
+---
+
+
+
+### Pattern 2: Terraform Module Structure for Production
+
+```terraform
+resource "aws_vpc" "main" {
+  cidr_block           = var.cidr_block
+  enable_dns_hostnames = true
+  tags = { Name = "${var.environment}-vpc" }
+}
+
+resource "aws_subnet" "public" {
+  count             = length(var.public_subnet_cidrs)
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.public_subnet_cidrs[count.index]
+  availability_zone = var.availability_zones[count.index]
+
+  tags = { Name = "${var.environment}-public-${count.index + 1}" }
+}
+
+resource "aws_internet_gateway" "main" {
+  vpc_id = aws_vpc.main.id
+  tags   = { Name = "${var.environment}-igw" }
+}
+
+# RDS Module
+resource "aws_db_instance" "main" {
+  identifier     = var.db_identifier
+  engine         = "postgres"
+  instance_class = var.instance_class
+  storage_type   = "gp3"
+  multi_az       = true
+  deletion_protection = true
+
+  backup_retention_period = 7
+}
+```
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

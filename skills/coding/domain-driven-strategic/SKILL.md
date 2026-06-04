@@ -17,7 +17,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: bounded contexts, ubiquitous language, event storming, context mapping, shared kernel, anticorruption layer, strategic design, ACL, open host service, published language, customer supplier pattern
+  triggers: bounded contexts, ubiquitous language, event storming, context mapping, shared kernel, anticorruption layer, strategic design, ACL
   role: implementation
   scope: implementation
   output-format: code

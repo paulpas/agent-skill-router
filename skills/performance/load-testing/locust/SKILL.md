@@ -1,5 +1,5 @@
 ---
-name: performance-load-testing-locust
+name: locust
 
 description: Implements load testing strategies using Locust to simulate user behavior and assess application performance, ensuring that systems are prepared for real-world traffic conditions effectively while providing actionable insights for optimization, scalability, and performance validation.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: performance\n  triggers: locust, load testing, performance evaluation, user behavior simulation, scalability testing, automated testing integration, performance metrics\n  archetypes: [implementation, testing]\n  anti_triggers: [superficial assessment, incomplete user behavior modeling, ineffective load testing, lack of metrics]\n  response_profile:\n    verbosity: medium\n    directive_strength: high\n    abstraction_level: operational\n---
 
@@ -18,6 +18,23 @@ description: Implements load testing strategies using Locust to simulate user be
 
 ### Resources:
 - **Locust Documentation**: Comprehensive guide to implementing load testing with Locust effectively, including setup and best practices for ensuring thorough testing of applications.\n- **Performance Testing Best Practices**: Insights on best practices and strategies for thorough load testing across varied platforms to ensure robust application performance and reliability under real-world conditions.
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

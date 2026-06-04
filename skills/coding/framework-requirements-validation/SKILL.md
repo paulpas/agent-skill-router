@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework validation, eslint plugin react hooks, next.js linting rules, django check command, framework compliance, build tool config validation, biome linting, vite config check, tsconfig patterns, code conventions checker, schema validation, ci linting pipeline
+  triggers: framework validation, eslint plugin react hooks, next.js linting rules, framework compliance, build tool config validation, biome linting, code conventions checker, ci linting pipeline
   archetypes:
     - tactical
     - enforcement

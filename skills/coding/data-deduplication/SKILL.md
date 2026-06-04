@@ -6,7 +6,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: data deduplication, schema normalization, ETL pipeline dedup, API response standardization, query abstraction, configuration centralization, canonical data source, data model reuse, duplicate schema definitions, data layer DRY
+  triggers: data deduplication, schema normalization, ETL pipeline dedup, API response standardization, canonical data source, data model reuse, duplicate schema definitions, data layer DRY
   archetypes:
     - tactical
     - diagnostic

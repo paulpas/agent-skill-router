@@ -1,4 +1,5 @@
 ---
+name: ds-feature-engineering
 compatibility: opencode
 completeness: 95
 content-types:
@@ -32,7 +33,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: feature-engineering
 ------
 # Feature Engineering
 
@@ -214,6 +214,23 @@ class FeatureEngineering:
 |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Document every engineered feature with its formula, data source, and expected range before adding to model pipeline
+- Validate new features against the target variable using mutual information or point-biserial correlation
+- Implement feature transformations in a composable pipeline: fit-only on training data, transform on all splits
+- Track feature drift over time by monitoring distribution statistics (mean, std, skewness) per batch
+
+### MUST NOT DO
+- Do not create features that leak the target variable (e.g., using future values or post-event metrics)
+- Avoid creating too many features without dimensionality reduction — aim for 20-50 high-signal features
+- Never engineer features using statistics computed over the full dataset including test set — causes data leakage
+- Do not use custom feature engineering that cannot be reproduced in production — stick to standard transformations
+
 
 ## Live References
 

@@ -1,4 +1,5 @@
 ---
+name: abl-v12-learning
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: medium
     abstraction_level: tactical
   version: 1.0.0
-name: v12-learning
 ------
 # Progress OpenEdge ABL 12 — v10 to v12 Migration Reference
 

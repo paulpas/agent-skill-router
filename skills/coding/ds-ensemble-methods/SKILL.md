@@ -1,4 +1,5 @@
 ---
+name: ds-ensemble-methods
 compatibility: opencode
 completeness: 95
 content-types:
@@ -31,7 +32,6 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   version: 1.0.0
-name: ensemble-methods
 ------
 # Ensemble Methods
 
@@ -201,6 +201,23 @@ class EnsembleMethods:
 |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Combine diverse base models (linear, tree-based, neural) rather than similar architectures for better ensemble diversity
+- Use out-of-fold predictions (stacking) instead of training-set predictions to prevent overfitting in meta-model
+- Validate feature importance consistency across individual trees in Random Forest and XGBoost
+- Report performance at multiple granularity levels: overall metrics, per-class metrics, and calibration curves
+
+### MUST NOT DO
+- Do not ensemble models trained on the same data splits without addressing leakage between training stages
+- Avoid using more than 5-10 base models in stacking — complexity increases faster than gains
+- Never use greedy forward selection of base learners without a validation-set guardrail
+- Do not ignore class imbalance when ensembling — ensure each base model handles it appropriately
+
 
 ## Live References
 

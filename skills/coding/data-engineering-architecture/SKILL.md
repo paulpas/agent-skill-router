@@ -17,7 +17,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: data engineering, streaming pipeline, kafka, cdc change data capture, delta lake, lakehouse, dbt, data quality framework, airflow, spark, etl patterns, data lake, apache spark, kubernetes data, materialized views, schema registry, event sourcing data
+  triggers: data engineering, streaming pipeline, kafka, delta lake, dbt, spark, etl patterns, data quality framework
   role: implementation
   scope: implementation
   output-format: code

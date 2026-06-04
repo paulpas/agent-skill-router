@@ -1,25 +1,23 @@
-# Skill: datadog-api-dashboards
-
 ---
 name: datadog-api-dashboards
 description: Creates and manages dashboards in Datadog API using `datadog-api-client`, with a focus on template widget creation, layout management, and configuration best practices.
 license: MIT
 compatibility: opencode
 metadata:
-  archetypes: monitoring, dashboard management
-  anti_triggers: performance issues, alert fatigue
-  response_profile:
-      verbosity: medium
-      directive_strength: high
-
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: datadog dashboards, create datadog dashboards, datadog API dashboards, dashboards management, how do I create a dashboard in datadog
   role: implementation
   scope: implementation
   output-format: code
   related-skills: datadog-api-logs, datadog-api-monitors, datadog-api-metrics
-------
+  archetypes: [monitoring, dashboard management]
+  anti_triggers: [performance issues, alert fatigue]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+---
+
 # Datadog Dashboards Management
 Implements dashboard creation and management in Datadog using the `datadog-api-client`. This skill covers creating various types of widgets, configuring layout settings, and ensuring that best practices are followed for performance and usability.
 

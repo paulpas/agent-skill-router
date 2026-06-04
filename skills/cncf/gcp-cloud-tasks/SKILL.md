@@ -1,4 +1,5 @@
 ---
+name: gcp-cloud-tasks
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,7 +30,6 @@ metadata:
     directive_strength: low
     abstraction_level: strategic
   version: 1.0.0
-name: cloud-tasks
 ------
 # Google Cloud Tasks
 
