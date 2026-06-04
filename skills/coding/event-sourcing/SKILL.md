@@ -6,7 +6,7 @@ description: Persists application state as an append-only immutable event log, e
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: event sourcing, event store, aggregate, snapshots, optimistic concurrency,
     event versioning, projections, read models, replay events, domain events, event
@@ -32,7 +32,7 @@ metadata:
   - config
   - do-dont
   related-skills: cqrs-pattern, saga-pattern, idempotency-patterns
-------
+---
 
 # Event Sourcing
 

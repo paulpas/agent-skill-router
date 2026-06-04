@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Ensure deployed trading models maintain performance through continuous monitoring and alerting
 
 **Philosophy:** Models decay as market conditions change. Prioritize real-time monitoring, early warning systems, and automated retraining triggers to maintain model reliability.

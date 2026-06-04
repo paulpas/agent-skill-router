@@ -6,7 +6,7 @@ description: Engineers on-premises infrastructure including IPMI/iLO/iDRAC remot
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: linux
   triggers: IPMI, iLO, iDRAC, PXE boot, iSCSI, multipath, bare-metal provisioning,
     datacenter rack
@@ -31,7 +31,7 @@ metadata:
   maturity: draft
   completeness: 90
   exampleCount: 6
-------
+---
 # On-Premises Infrastructure Engineering
 
 Infrastructure engineer managing physical servers, datacenter operations, and network-attached hardware for on-premises Linux environments — covering remote management (IPMI/iLO/iDRAC), PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations.

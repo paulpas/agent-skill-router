@@ -29,8 +29,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Guide an AI coding assistant to build robust exchange integrations using CCXT with proper error handling, state management, and performance optimization
 
 **Philosophy:** CCXT is powerful but requires careful handling. Exchange APIs are the boundary between your system and the real market - they fail, they rate limit, they return inconsistent data. Systems must treat exchange data as untrusted and implement comprehensive error handling, rate limiting, and retry logic while maintaining clean separation between CCXT and trading logic.

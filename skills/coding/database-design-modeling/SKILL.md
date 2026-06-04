@@ -6,7 +6,7 @@ description: Designs relational database schemas with proper normalization, inde
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: database design, schema design, data modeling, sql migrations, indexing
     strategy, database normalization, foreign keys, entity relationship
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: backend-dev-guidelines, api-design-principles, domain-driven-design
-------
+---
 # Database Design & Modeling for Production Systems
 
 Designs relational database schemas with proper normalization, indexing strategies, versioned migrations, and constraint enforcement. When this skill is loaded, the model produces concrete SQL DDL, migration files, and Python data access patterns — not generic "normalize your tables" advice.

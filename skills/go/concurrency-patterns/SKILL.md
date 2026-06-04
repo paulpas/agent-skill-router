@@ -10,7 +10,7 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
+version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation

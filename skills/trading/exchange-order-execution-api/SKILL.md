@@ -30,8 +30,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Execute and manage orders across multiple exchanges with consistency and reliability
 
 **Philosophy:** Order execution is the final step in the trading pipeline; it must be precise, auditable, and resilient to failure

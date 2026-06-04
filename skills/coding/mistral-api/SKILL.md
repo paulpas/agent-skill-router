@@ -5,7 +5,7 @@ description: Integrates Mistral AI API (Chat, Embeddings, Function Calling, Code
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: mistral, mistral ai, mistral api, codestral, mistral chat, mistral embeddings,
     how do i use mistral, le chat
@@ -30,7 +30,7 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-openai-api, coding-cohere-api, coding-langchain
-------
+---
 # Mistral AI API Integration
 Integrates Mistral AI API using the `mistralai` Python SDK for chat completions, embeddings, function calling, code generation (Codestral), and agent building. When loaded, this skill makes the model implement Mistral API calls with proper authentication, streaming, and error handling.
 

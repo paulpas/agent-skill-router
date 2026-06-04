@@ -5,7 +5,7 @@ description: Implements Linux system observability with metrics, logs, and perfo
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -31,7 +31,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Linux System Observability
 
 Infrastructure engineer implementing comprehensive Linux system observability with metrics collection, log aggregation, performance profiling, and capacity planning for proactive infrastructure management across cloud and on-prem environments.

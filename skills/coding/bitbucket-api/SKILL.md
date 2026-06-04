@@ -6,7 +6,7 @@ description: Integrates with Bitbucket Cloud and Bitbucket Data Center REST APIs
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: bitbucket api, atlassian-python-api, bitbucket cloud, bitbucket pipelines,
     pull request bitbucket, bitbucket webhooks, manage bitbucket repos, bitbucket
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-github-api, coding-gitlab-api, coding-jenkins-api
-------
+---
 # Bitbucket API & atlassian-python-api Integration
 
 Integrates with Bitbucket Cloud (API v2) and Bitbucket Server/Data Center REST APIs using the `atlassian-python-api` library to manage repositories, pull requests, pipelines, branch restrictions, webhooks, and workspace administration.

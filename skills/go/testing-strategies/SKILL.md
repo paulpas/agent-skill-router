@@ -5,7 +5,7 @@ description: Implements comprehensive testing strategies for Go including unit t
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +30,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Go Testing Strategies
 
 Senior QA engineer implementing comprehensive testing strategies for Go applications. This skill covers table-driven tests, mocking, benchmarks, integration testing, and fuzzing following Go's native testing conventions.

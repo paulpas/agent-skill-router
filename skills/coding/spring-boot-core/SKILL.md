@@ -6,7 +6,7 @@ description: Implements Spring Boot 3.x core patterns including dependency injec
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: spring boot, spring framework, dependency injection, auto configuration,
     rest controller, record dto, profile configuration, actuator, java 21, virtual
@@ -33,7 +33,7 @@ metadata:
   - examples
   related-skills: coding-spring-security, coding-spring-data-jpa, coding-framework-performance-tuning,
     coding-observability-patterns
-------
+---
 # Spring Boot 3 Core Patterns
 
 Implements modern Spring Boot 3.x application architecture using Java 21 features including Records, Virtual Threads, and Sealed Classes. When loaded, the model acts as a senior Spring developer — producing production-ready REST APIs, configuring dependency injection with proper scoping, implementing auto-configuration safely, and wiring Actuator endpoints for observability.

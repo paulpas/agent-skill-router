@@ -5,7 +5,7 @@ description: Configures and optimizes Linux networking for cloud virtual network
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -30,7 +30,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Linux Networking Configuration
 
 Senior network engineer configuring and optimizing Linux networking for cloud virtual networks and on-prem data center infrastructure, covering bonding, VLANs, bridges, network namespaces, firewalls, and routing.

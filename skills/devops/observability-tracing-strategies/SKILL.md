@@ -4,7 +4,7 @@ description: Implements best practices for distributed tracing in observability,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: devops
   triggers: observability tracing, distributed tracing, performance monitoring, debugging strategies, trace analysis
   archetypes: [implementation, reference]

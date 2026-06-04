@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # LLM Orchestration for Trading: The 5 Laws of AI-Powered Analysis
 
 **Role:** AI Integration Engineer — applies to LLM provider selection, structured output generation, prompt engineering, and cost optimization for trading analysis systems.

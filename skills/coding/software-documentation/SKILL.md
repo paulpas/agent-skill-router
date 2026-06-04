@@ -6,7 +6,7 @@ description: Writes authoritative technical documentation (API references, inlin
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: software documentation, API docs, docstrings, README writing, developer
     guides, OpenAPI, MkDocs, Docusaurus, technical writing for developers, how do
@@ -34,7 +34,7 @@ metadata:
   - config
   related-skills: coding-api-design, coding-code-review, coding-type-safety-enforcement,
     coding-static-analysis-tools
-------
+---
 # Technical Documentation for Software
 
 Writes authoritative technical documentation that developers actually read and rely on. This skill produces API references with typed signatures, inline docstrings following Google/NumPy conventions, README files with usage examples, and developer guides structured for discoverability — all aligned to current 2025-2026 tooling standards.

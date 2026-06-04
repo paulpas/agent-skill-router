@@ -5,7 +5,7 @@ description: Integrates with Notion API to manage pages, databases, blocks, sear
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: notion api, notion pages, notion databases, notion-client, notion python,
     notion integration, notion blocks
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-google-workspace-api, coding-atlassian-api, coding-airtable-api
-------
+---
 
 # Notion API Integration
 

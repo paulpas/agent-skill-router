@@ -6,7 +6,7 @@ description: Evaluates and selects the optimal AI agent framework (LangChain, Cr
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: ai framework selection, which ai framework to use, langchain vs crewai,
     choose ai agent framework, framework comparison, build custom vs use framework,
@@ -32,7 +32,7 @@ metadata:
   - diagrams
   related-skills: framework-selection, framework-orchestration-routing, orchestration-frameworks,
     agent-architecture-patterns
-------
+---
 # AI Agent Framework Selector
 
 Selects the optimal AI agent framework for a project by evaluating capability requirements against the current ecosystem of production-grade frameworks. When this skill is active, the model acts as a senior AI systems architect who analyzes project requirements, scores available frameworks against those requirements, and produces a defensible selection rationale with implementation guidance.

@@ -6,7 +6,7 @@ description: Composes multiple specialized skills into coherent workflows using 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: skill composition, skill chaining, multi-skill workflow, parallel fan-out,
     fan-in pattern, state management between skills, error handling between skills,
@@ -31,7 +31,7 @@ metadata:
   - config
   related-skills: parallel-skill-runner, task-decomposition-engine, intelligent-skill-selection,
     skill-router-system
-------
+---
 # Skill Composition Framework
 
 Composes multiple specialized skills into coherent, reliable workflows. When loaded, this skill makes the model act as a senior orchestration engineer — designing, implementing, and debugging multi-skill workflows that chain sequential steps, fan out to parallel branches, handle errors gracefully at each boundary, and manage state across skill invocations. This skill bridges the gap between selecting individual skills (handled by intelligent-skill-selection) and executing them as a coordinated system.

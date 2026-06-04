@@ -4,7 +4,7 @@ description: Provides comprehensive patterns and best practices for modeling dat
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: nosql, mongodb, cassandra, dynamodb, data modeling, schema design
   archetypes:

@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Identify high-probability price patterns to forecast market direction
 
 **Philosophy:** Price action reflects all market participants' collective sentiment; patterns reveal institutional order flow

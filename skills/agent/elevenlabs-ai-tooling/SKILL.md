@@ -4,7 +4,7 @@ description: Implements integrations with ElevenLabs API for Text-to-Speech, Voi
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: elevenlabs api, text-to-speech, voice cloning, conversational ai, how do i convert text to speech, voice ai integration
   scope: implementation

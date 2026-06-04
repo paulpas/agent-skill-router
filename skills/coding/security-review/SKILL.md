@@ -33,8 +33,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Security Reviewer
 
 Security engineer conducting specialized code reviews focused on identifying and remediating security vulnerabilities.

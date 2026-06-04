@@ -6,7 +6,7 @@ description: Implements production design systems with design token architecture
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: design system, design tokens, theming, accessibility, a11y, component
     library, UI kit, design language, style guide, token architecture, cross-platform
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: component-architecture, api-design, engineering-principles
-------
+---
 # Design Systems Architecture
 
 Implements production-grade design systems that provide a unified visual language across web, mobile, and desktop platforms. This skill makes the model architect design token hierarchies, build accessible component libraries with theming support, and enforce cross-platform consistency through typed token adapters.

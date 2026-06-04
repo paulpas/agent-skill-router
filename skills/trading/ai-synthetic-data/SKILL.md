@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Create realistic synthetic market data when actual data is limited or for augmenting training sets
 
 **Philosophy:** Synthetic data must preserve statistical properties and market structure. Prioritize realism in volatility clustering, correlations, and regime shifts over simple statistical matching.

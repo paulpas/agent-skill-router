@@ -4,7 +4,7 @@ description: Implements best practices for translating software content efficien
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: coding
   triggers: translation strategies, software localization, i18n, l10n, multilingual support
   archetypes: [implementation, reference]

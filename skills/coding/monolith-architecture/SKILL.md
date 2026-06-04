@@ -6,7 +6,7 @@ description: Implements modular monolith patterns (bounded-context layering, hex
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: monolith, monolithic architecture, modular monolith, how do i structure
     a monolith, code organization, layered architecture, hexagonal architecture in
@@ -33,7 +33,7 @@ metadata:
   - examples
   related-skills: microservices-architecture, software-architecture, domain-driven-design,
     architectural-patterns
-------
+---
 # Monolith Architecture Guide
 
 Senior software architect designing well-structured monolithic applications that are simple to deploy, test, and evolve. Applies modular boundaries, layered architecture, and hexagonal ports-and-adapters within a single codebase to prevent "big ball of mud" anti-pattern while preserving deployment simplicity.

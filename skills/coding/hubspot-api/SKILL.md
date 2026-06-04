@@ -6,7 +6,7 @@ description: Implements HubSpot API integration (CRM, Contacts, Companies, Deals
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: hubspot, hubspot api, hubspot crm, hubspot-api-client, hubspot contacts,
     hubspot companies, hubspot deals, how do i integrate with hubspot, crm integration
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-salesforce-api, coding-marketo-api, coding-zendesk-api
-------
+---
 # HubSpot API Integration
 
 Implements production-grade HubSpot integration using the `hubspot-api-client` Python SDK and HubSpot REST API. When loaded, this skill makes the model implement CRUD operations on HubSpot CRM objects (Contacts, Companies, Deals, Tickets, Products, Line Items, Custom Objects), associations between objects, CRM search, HubSpot Forms, Engagements, and HubSpot's Batch API. All implementations follow HubSpot best practices: use `HUBSPOT_ACCESS_TOKEN` from environment for Private Apps, implement OAuth 2.0 refresh token flow for user-facing apps, use v4 API for CRM objects, handle rate limits with exponential backoff, and properly paginate through list results.

@@ -5,7 +5,7 @@ description: Manages Linux background processes, parallel execution, and job con
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -27,7 +27,7 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: linux-services, linux-filesystem
-------
+---
 # Linux Shell Process Management
 
 Infrastructure engineer managing Linux background processes, parallel execution, and interactive job control using shell builtins (`&`, `jobs`, `fg`, `bg`, `wait`), signal handling with `trap`, batch parallelism with `xargs -P`, and GNU `parallel` for efficient multi-core work distribution.

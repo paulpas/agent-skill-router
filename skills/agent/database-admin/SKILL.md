@@ -29,8 +29,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Database Administration
 
 Implements comprehensive database administration practices across PostgreSQL, MySQL, MongoDB, and Redis with real operational commands, performance optimization patterns, and emergency procedures.

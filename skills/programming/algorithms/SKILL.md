@@ -28,13 +28,13 @@ metadata:
     verbosity: medium
     directive_strength: medium
     abstraction_level: tactical
-  version: 1.0.0
+version: "1.0.0"
 output-format: code
 role: reference
 scope: implementation
 triggers: algorithm, algorithms, big-o, complexity, data structure, searching, sorting
-version: 1.0.0
-------
+version: "1.0.0"
+---
   related-skills: abl-v10-learning, abl-v12-learning
 
 

@@ -6,7 +6,7 @@ description: Designs and implements production data pipelines (ETL, ELT, streami
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: data pipeline, ETL, ELT, data ingestion, schema evolution, data validation,
     idempotent processing, data quality, Apache Kafka, Airflow DAG, batch processing,
@@ -34,7 +34,7 @@ metadata:
   - do-dont
   related-skills: ds-feature-engineering, production-logging, software-error-handling,
     coding-production-readiness
-------
+---
 # Data Pipeline Engineering Framework
 
 Designs and implements production-grade data pipelines that reliably move, transform, validate, and serve data across systems. This skill makes the model architect ETL/ELT workflows with built-in data quality gates, idempotent processing for exactly-once semantics, schema evolution strategies, and streaming/batch hybrid patterns — ensuring data is trustworthy, traceable, and resilient to failures at every stage.

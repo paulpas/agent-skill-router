@@ -6,7 +6,7 @@ description: Implements AI pair programming workflows (spec-first prompting, cod
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: ai-assisted engineering, AI pair programming, LLM code generation, prompt
     engineering for code, automated code review with AI, AI test generation, how do
@@ -32,7 +32,7 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-code-quality-policies, coding-testing-strategy, coding-security-review
-------
+---
 # AI-Assisted Software Engineering
 
 Acting as a senior engineer who integrates AI pair programming tools into professional development workflows. This skill makes the model structure AI interactions like formal engineering processes — writing specifications before code, verifying outputs against contracts, and maintaining human review gates for all AI-generated changes. It treats every AI suggestion as a draft requiring validation, never as final output.

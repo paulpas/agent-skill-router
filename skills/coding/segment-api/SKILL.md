@@ -6,7 +6,7 @@ description: Implements Segment (CDP) integration (track, identify, group, page,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: segment, cdp, customer data platform, segment track identify, segment
     spec, how do i integrate segment tracking, rudderstack, customer data infrastructure
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-amplitude-api, coding-mixpanel-api, coding-hubspot-api
-------
+---
 # Segment CDP Integration
 
 Implements production-grade Segment (Customer Data Platform) integration using the `analytics-python` SDK. When loaded, this skill makes the model implement Segment Spec-compliant tracking: `track()` for events, `identify()` for user traits, `group()` for account-level properties, `page()`/`screen()` for views, `alias()` for identity linking. All implementations follow Segment best practices: use `WRITE_KEY` from environment, batch events with configurable flush, use anonymousId for logged-out users, userId for authenticated users, implement context fields for device/channel info, and always include required fields from the Segment Spec.

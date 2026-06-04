@@ -6,7 +6,7 @@ description: Implements Gradle build configurations including Kotlin DSL, versio
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: gradle, build.gradle.kts, version catalog, configuration cache, kotlin
     dsl, how do i fix gradle conflicts, how do i set up java project build, buildSrc,
@@ -33,7 +33,7 @@ metadata:
   - examples
   - config
   related-skills: maven-build-tool, coding-testing, coding-security-review
-------
+---
 # Gradle Build Tool
 
 Implements Gradle build configurations for Java and Kotlin projects — managing multi-project builds with Kotlin DSL, version catalogs (libs.versions.toml), configuration cache, convention plugins from buildSrc, and incremental build optimization. When loaded, the model acts as a senior build engineer producing correct Gradle configuration files, resolving dependency conflicts through version catalogs, and diagnosing build performance issues via the configuration cache and task input/output analysis.

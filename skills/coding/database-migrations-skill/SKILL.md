@@ -4,7 +4,7 @@ description: Implements a systematic approach to database schema migrations, ver
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: database migration, schema versioning, rollback strategy, migration tooling, data integrity, migration scripts
   role: implementation

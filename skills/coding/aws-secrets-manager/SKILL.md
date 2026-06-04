@@ -4,7 +4,7 @@ description: Implements AWS Secrets Manager for secure secret storage, managemen
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: coding
   triggers: aws secrets manager, boto3, secret management, automatic rotation, credential management
   archetypes: [implementation, secret management]

@@ -6,7 +6,7 @@ description: Jakarta EE platform reference covering specifications, APIs, refere
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: cncf
   triggers: jakarta ee, jakarta-ee, enterprise java, servlet, jax-rs, cdi, jsf, ejb,
     javanamespace migration, javax to jakarta, payara, wildfly, openliberty, tomcat,
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - config
   related-skills: microprofile, jakarta-migration
-------
+---
 # Jakarta EE Platform
 
 Provides architecture guidance, specification references, and implementation patterns for building enterprise Java applications on the Jakarta EE platform. Acts as a reference for selecting containers, configuring build systems, wiring CDI beans, JAX-RS resources, JPA entities, and JSF pages into production-grade deployments.

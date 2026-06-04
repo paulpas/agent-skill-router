@@ -29,13 +29,13 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
+version: "1.0.0"
 output-format: manifests
 role: reference
 scope: infrastructure
 triggers: computing, container orchestration, extending, k8s, openyurt, kubernetes
-version: 1.0.0
-------
+version: "1.0.0"
+---
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-azure-aks
 
 

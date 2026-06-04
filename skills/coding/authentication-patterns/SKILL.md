@@ -6,7 +6,7 @@ description: Implements production-grade authentication systems including passwo
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: authentication, password hashing, JWT token, OAuth PKCE, session management,
     MFA, TOTP, two-factor, passkeys, login system, how do i implement auth, secure
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-security-review, coding-input-validation, coding-security-architecture
-------
+---
 # Authentication Implementation Patterns
 
 Implements production-grade authentication systems that handle identity verification securely. When loaded, the model acts as a senior backend engineer — writing concrete authentication code covering password hashing, JWT token lifecycles, OAuth 2.0/PKCE flows, secure session management, MFA/TOTP, and modern passwordless auth patterns using current best practices (OWASP Authentication Cheat Sheet 2025, NIST SP 800-63B).

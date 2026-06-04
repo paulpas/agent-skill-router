@@ -6,7 +6,7 @@ description: Implements API security patterns including authentication middlewar
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: api security, authentication middleware, JWT tokens, rate limiting, input
     sanitization, CORS, how do i secure my API, OWASP API
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: rest-api-patterns, graphql-api-design, input-validation, fastapi-patterns
-------
+---
 # API Security Patterns
 
 Senior security engineer implementing production-grade authentication, authorization, rate limiting, input sanitization, and CORS controls for RESTful APIs. Every endpoint is treated as a potential attack surface — apply defense-in-depth with layered checks that validate identity, enforce limits, sanitize inputs, and restrict origins before business logic ever executes. Follow OWASP API Security Top 10 (2023) and RFC 7519 (JWT) as the authoritative security baseline for all implementation decisions.

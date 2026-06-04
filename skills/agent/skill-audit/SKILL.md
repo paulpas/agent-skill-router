@@ -6,7 +6,7 @@ description: Systematically audits OpenCode AI skills for quality compliance inc
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: skill audit, quality check, trigger effectiveness, skill assessment, stub
     detection, skill review, how do i evaluate a skill
@@ -30,7 +30,7 @@ metadata:
   - config
   related-skills: skill-engineering, skill-router-system, skill-lifecycle-management,
     coding-code-review
-------
+---
 # Skill Audit Framework
 
 Reviews and scores OpenCode AI skills against the repository quality standards. Produces structured audit reports with pass/fail verdicts per dimension and an overall quality score from 0 to 100.

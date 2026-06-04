@@ -6,7 +6,7 @@ description: Integrates Google Gemini API (Gemini 2.5 Pro/Flash, Function Callin
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: gemini, gemini api, vertex ai, google genai, function calling, gemini
     2.5 flash, how do i use gemini api, grounding
@@ -31,7 +31,7 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-openai-api, coding-anthropic-api, coding-langchain
-------
+---
 # Google Gemini API Integration
 
 Integrates Google Gemini models (Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 3 Flash) using the `google-genai` Python SDK. When loaded, this skill makes the model implement Gemini API calls with content generation, function calling, streaming, grounding, and Vertex AI configuration.

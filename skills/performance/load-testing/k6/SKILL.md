@@ -4,7 +4,7 @@ description: Implements best practices for load testing web applications using K
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: performance
   triggers: load testing, performance testing, K6, web applications, system performance
   archetypes: [implementation, reference]

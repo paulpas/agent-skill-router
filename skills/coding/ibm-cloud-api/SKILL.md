@@ -4,7 +4,7 @@ description: Integrates IBM Cloud services (Watson AI, Cloud Foundry, Kubernetes
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: ibm cloud, watson api, ibm cloud sdk, cloud object storage, ibm kubernetes, cloud foundry, how do i use ibm cloud from python
   archetypes:
@@ -23,7 +23,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: aws-sdk, azure-sdk, oci-sdk
-------
+---
 # IBM Cloud API & Watson SDK Integration Patterns
 Integrates IBM Cloud services using the `ibm-cloud-sdk-core` authenticators and service SDKs. Covers IAM authentication patterns, Watson AI services (Assistant, Natural Language Understanding), Cloud Object Storage (COS), IBM Cloud Kubernetes Service (IKS), and Cloud Foundry resource management with the `ibm_boto3` and `ibm_watson` libraries.
 

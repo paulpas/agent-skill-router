@@ -6,7 +6,7 @@ description: Optimizes framework runtime performance through profiling-driven bo
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: framework performance, performance tuning, optimize framework, profiling
     application, connection pooling, caching strategy, async optimization, memory
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   - examples
   related-skills: framework-utilization, framework-selection, observability-patterns
-------
+---
 # Framework Performance Tuner
 
 Optimizes framework runtime performance through profiling-driven bottleneck analysis, caching strategies, connection pooling, async concurrency patterns, and memory management. The model acts as a senior performance engineer, producing actionable optimization plans backed by measured benchmarks rather than guesswork. This skill applies the 5 Laws of Elegant Defense: validate inputs before processing, make illegal states unrepresentable, fail fast with descriptive errors, return new data structures, and guide data naturally through the optimization pipeline.

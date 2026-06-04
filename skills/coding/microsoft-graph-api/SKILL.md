@@ -6,7 +6,7 @@ description: Integrates with Microsoft Graph API to manage mail, calendar, OneDr
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: microsoft graph, msgraph, outlook api, teams api, sharepoint api, office
     365 api, entra id graph, msgraph-sdk
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-google-workspace-api, coding-atlassian-api
-------
+---
 
 # Microsoft Graph API Integration
 

@@ -31,8 +31,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Cloud Cost Optimization Analysis
 
 Implements comprehensive multi-cloud cost optimization strategies including AWS Cost Explorer analysis, Azure Cost Management analysis, GCP Billing analysis, right-sizing recommendations, spot instance optimization, reserved instance planning, and cost allocation frameworks. This skill enables data-driven decisions to reduce cloud infrastructure costs while maintaining performance and reliability.

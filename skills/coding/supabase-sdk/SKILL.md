@@ -6,7 +6,7 @@ description: Integrates Supabase using supabase-py 2.x with patterns for databas
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: supabase, supabase-py, postgrest, supabase auth, supabase storage, how
     do i use supabase from python, supabase realtime, edge functions
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-postgresql-sdk, coding-firebase-sdk, coding-authentication-patterns
-------
+---
 # Supabase Python SDK Integration
 
 Integrates Supabase using `supabase-py` 2.x with patterns for PostgREST database queries, Row-Level Security (RLS), user authentication (email, OAuth, magic link), file storage, real-time subscriptions, and Edge Functions invocation.

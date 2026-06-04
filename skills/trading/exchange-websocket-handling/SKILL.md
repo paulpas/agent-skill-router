@@ -29,8 +29,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Guide an AI coding assistant to build robust real-time data pipelines using WebSockets that handle connection instability, data synchronization, and high-frequency updates
 
 **Philosophy:** Real-time data is the lifeblood of modern trading systems, but WebSocket connections are inherently unreliable. Systems must treat WebSocket data as potentially out-of-order, duplicate, or missing. The architecture should prioritize data integrity over raw speed, with robust state synchronization mechanisms that can recover from connection drops without losing critical information.

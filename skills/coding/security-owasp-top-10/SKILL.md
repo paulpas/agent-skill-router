@@ -4,7 +4,7 @@ description: Provides an in-depth analysis of the OWASP Top 10 vulnerabilities, 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: coding
   triggers: OWASP, security vulnerabilities, web application security, risk management, cybersecurity
   archetypes: [reference, evaluation]

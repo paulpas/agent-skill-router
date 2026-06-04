@@ -5,7 +5,7 @@ description: Integrates Stability AI API (image generation, video generation, up
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: stability ai, stabilityai, stable diffusion, sd3, stable image, core,
     stability api, how do i generate images, text to image, image generation
@@ -30,7 +30,7 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-replicate-api, coding-openai-api, coding-elevenlabs-api
-------
+---
 # Stability AI API Integration
 
 Integrates Stability AI API using the `stability-sdk` Python client for image generation (Stable Image Core/Ultra, SD3), video generation (Stable Video), upscaling, inpainting, outpainting, and 3D model generation. When loaded, this skill makes the model implement Stability AI API calls with proper authentication, payload construction, and image handling.

@@ -5,7 +5,7 @@ description: Integrates LlamaIndex (indexes, query engines, agents, workflows, d
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: llamaindex, llama index, rag pipeline, query engine, vector store index,
     llama parse, how do i use llamaindex, document agents
@@ -30,7 +30,7 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-langchain, coding-openai-api, coding-pinecone-api, coding-chroma
-------
+---
 # LlamaIndex Integration
 
 Integrates LlamaIndex (v0.14+) for building data-aware LLM applications with indexing, retrieval, query engines, agents, and workflows. When loaded, this skill makes the model implement LlamaIndex pipelines for RAG, document Q&A, structured data extraction, and multi-agent orchestration.

@@ -7,7 +7,7 @@ description: Implements end-to-end software dependency supply chain security inc
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: SBOM, SLSA, sigstore, cosign, supply chain attack, dependency pinning,
     how do i secure my dependencies, package signing
@@ -27,7 +27,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: dependency-management, review
-------
+---
 # Dependency Supply Chain Security
 
 Implements comprehensive supply chain security controls across the software dependency lifecycle — from generating SBOMs and signing artifacts to verifying signatures in CI, pinning versions, scanning transitive vulnerabilities, and building reproducible outputs. This skill covers every layer of defense against modern supply chain attacks like log4shell and the xz backdoor.

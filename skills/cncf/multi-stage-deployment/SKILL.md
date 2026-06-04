@@ -6,7 +6,7 @@ description: Designs multi-stage deployment pipelines that reduce risk through p
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: cncf
   triggers: multi-stage deployment, deployment stages, environment parity, deployment
     pipeline, stage gates, dev staging pre-prod, deployment readiness, progressive
@@ -30,7 +30,7 @@ metadata:
   - examples
   - do-dont
   related-skills: deployment-philosophy,blue-green-deployment,canary-deployment,state-management,rollback-strategy,deployment-orchestration
-------
+---
 # Multi-Stage Deployment Pipeline
 
 Architects deployment pipelines as a series of quality-gated stages, each with a distinct purpose and validation focus. Treats every stage boundary as a decision point that must earn the right to expose more users to the change.

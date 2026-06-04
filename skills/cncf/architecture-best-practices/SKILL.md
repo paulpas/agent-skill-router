@@ -31,8 +31,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # CNCF Architecture Best Practices
 
 > **Load this skill** when designing, implementing, or reviewing cloud-native architectures using CNCF projects (Kubernetes, Istio, CNI, Argo, Tekton, Prometheus, etc.). This skill provides production-ready patterns for scalable, secure, and maintainable cloud-native systems.

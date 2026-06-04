@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Quantify market volatility for risk management, position sizing, and option pricing
 
 **Philosophy:** Volatility is the price of risk; understanding volatility regimes drives successful trading

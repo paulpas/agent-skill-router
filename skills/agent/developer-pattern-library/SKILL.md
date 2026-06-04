@@ -6,7 +6,7 @@ description: Curates and maintains a personal library of validated code patterns
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: pattern library, developer patterns, reusable solutions, personal knowledge
     base, code patterns, anti-patterns, how do i organize my code snippets, solution
@@ -29,7 +29,7 @@ metadata:
   - examples
   - do-dont
   related-skills: personal-workflow-framework, workflow-patterns, skill-creator
-------
+---
 # Developer Pattern Library
 
 Curates and maintains a personal library of validated code patterns, solutions, and anti-patterns accumulated through development experience. Your pattern library is your professional capital — every problem you solve that produces a reusable solution is an investment in your future self's speed and accuracy. This skill teaches you how to discover, document, categorize, and retrieve patterns systematically.

@@ -29,8 +29,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Order Book Data Pipeline: The 5 Laws of Liquidity Analysis
 
 **Role:** Market Microstructure Engineer — applies to order book data processing, spread analysis, liquidity measurement, and exchange normalization for algorithmic trading.

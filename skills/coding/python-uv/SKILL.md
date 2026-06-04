@@ -6,7 +6,7 @@ description: Manages Python projects with uv by Astral — ultra-fast dependency
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: uv, astral uv, python package manager, uv sync, uv lock, python project
     management, ultra-fast dependency resolution, pip compatibility, how do i manage
@@ -34,7 +34,7 @@ metadata:
   - do-dont
   - config
   related-skills: coding-poetry, coding-package-ecosystem-navigator, coding-dependency-supply-chain-security
-------
+---
 # uv — Ultra-Fast Python Package Manager
 
 Manages Python projects with uv by Astral — the ultra-fast Python package and project manager written in Rust. Covers dependency resolution, virtual environment management, workspace/multirepo setup, build tool integration, CI/CD optimization, and pip compatibility layer for modern Python development workflows.

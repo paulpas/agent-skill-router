@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Determine market trend direction and strength for directional trading decisions
 
 **Philosophy:** The trend is your friend; identifying trends early and confirming continuations maximizes reward/risk

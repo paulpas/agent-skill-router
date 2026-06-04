@@ -4,7 +4,7 @@ description: Implements best practices for metrics collection and monitoring in 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: devops
   triggers: observability metrics, monitoring, performance, data collection, dashboarding
   archetypes: [implementation, reference]

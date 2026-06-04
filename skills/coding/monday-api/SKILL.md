@@ -5,7 +5,7 @@ description: Integrates with monday.com API using GraphQL queries to manage boar
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: monday api, monday.com, monday boards, monday items, monday graphql, monday
     python, monday automation
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-asana-api, coding-clickup-api, coding-notion-api
-------
+---
 
 # Monday.com API Integration
 

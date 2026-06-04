@@ -5,7 +5,7 @@ description: Integrates MongoDB using PyMongo 4.x with patterns for CRUD operati
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: mongodb, pymongo, mongo aggregation, change streams, mongodb atlas, how
     do i query mongodb from python, document database, bson
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-postgresql-sdk, coding-elasticsearch-sdk, coding-asyncio-patterns
-------
+---
 # MongoDB Python Driver (PyMongo) Integration
 
 Integrates MongoDB using `PyMongo` 4.x — the official MongoDB Python driver — with patterns for CRUD operations, aggregation pipelines, change streams, Atlas Search queries, index management, replica set connections, and bulk writes.

@@ -6,7 +6,7 @@ description: Applies core software engineering principles (modularity, separatio
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: software engineering, modular design, separation of concerns, defensive
     programming, KISS principle, YAGNI, clean architecture
@@ -31,7 +31,7 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-code-review, coding-testing, coding-error-handling, coding-refactoring
-------
+---
 # Software Engineering Principles
 
 Applies foundational engineering principles to guide daily development decisions, ensuring code is modular, maintainable, and resilient. This skill turns abstract best practices into concrete implementation choices.

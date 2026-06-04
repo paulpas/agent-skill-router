@@ -5,7 +5,7 @@ description: Implements zero-downtime database migration strategies including ex
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: database migrations, schema evolution, zero downtime migrations, database
     deployment, expand contract pattern, dual write migration, database rollback,
@@ -31,7 +31,7 @@ metadata:
   - config
   - do-dont
   related-skills: database-design-modeling, software-delivery-pipelines, secure-release-pipeline
-------
+---
 # Database Migration Patterns
 
 Implements safe, zero-downtime database migration strategies for evolving production schemas without service interruption or data loss.

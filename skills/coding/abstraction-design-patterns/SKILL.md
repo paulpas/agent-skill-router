@@ -5,7 +5,7 @@ description: Designs clean, maintainable abstractions using Protocols, ABCs, int
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: abstraction design, interface design, Protocol pattern, over-abstraction,
     leaky abstraction, composition over inheritance, Rule of Three
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: dry-principles,dependency-inversion-principle,design-patterns-architecture,solid-principles
-------
+---
 # Abstraction Design Patterns
 
 Designs clean, maintainable abstractions using Python Protocols, ABCs, composition, and interface segregation to reduce coupling between modules while actively preventing over-engineering, leaky abstractions, and thin wrapper proliferation. Ensures every abstraction earns its existence by serving at least two real use cases or enabling verifiable test isolation.

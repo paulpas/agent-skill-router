@@ -6,7 +6,7 @@ description: Implements Grafana and Prometheus integration (metrics collection, 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: prometheus, promql queries, grafana dashboards, alerting rules, prometheus
     metrics, grafana api, how do i query prometheus metrics, monitoring as code
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-datadog-api, coding-newrelic-api, coding-sentry-api
-------
+---
 # Grafana & Prometheus Integration
 
 Implements production-grade Prometheus metrics querying, PromQL patterns, Grafana dashboard management via HTTP API, and alerting rules as code. When loaded, this skill makes the model implement PromQL queries for time-series analysis, Grafana dashboard JSON templating, alerting rules with YAML, Prometheus HTTP API calls, and Grafana datasource management. All implementations follow Prometheus and Grafana best practices: use label-based filtering, avoid high-cardinality labels, use range vectors for aggregations, implement dashboard version control, and validate PromQL syntax before deployment.

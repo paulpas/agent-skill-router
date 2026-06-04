@@ -30,8 +30,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # CloudFront (Amazon CloudFront)
 
 Distribute content globally with edge caching, DDoS protection, and SSL/TLS termination for improved performance and security.

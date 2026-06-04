@@ -6,7 +6,7 @@ description: Integrates Twilio API (SMS, Voice, WhatsApp, Verify, Conversations,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: twilio, sms api, send sms, whatsapp api, twilio verify, phone verification,
     twilio voice, twilio webhooks
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-sendgrid-api, coding-slack-api, coding-mailgun-api
-------
+---
 # Twilio API Integration (SMS, Voice, WhatsApp, Verify)
 
 Integrates the Twilio Communications API — SMS, Voice, WhatsApp, Verify (2FA), Conversations, and Video — using the `twilio` Python SDK v9.x. When loaded, this skill makes the model implement Twilio operations with proper client initialization, TwiML generation, webhook signature validation, error handling, and async patterns.

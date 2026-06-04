@@ -6,7 +6,7 @@ description: Diagnoses and optimizes PostgreSQL performance through execution pl
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: postgresql performance tuning, psql query optimization, index strategy,
     slow queries, pgbouncer, autovacuum tuning, pg_stat_statements, how do i make
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-database-design-modeling, coding-caching-strategies, coding-performance-optimization
-------
+---
 # PostgreSQL Performance Tuning
 
 Diagnoses and optimizes PostgreSQL performance across execution plans, indexes, server configuration, connection pooling, vacuum strategy, query patterns, partitioning, and production monitoring. This skill turns raw EXPLAIN ANALYZE output, pg_stat_statements data, and table statistics into actionable optimization decisions for production databases running PostgreSQL 12 through 17.

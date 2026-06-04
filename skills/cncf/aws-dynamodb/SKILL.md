@@ -31,8 +31,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # DynamoDB (Amazon DynamoDB)
 
 Deploy highly scalable, serverless NoSQL databases with low-latency performance, automatic replication, and sophisticated features like streams, global tables, and transactions.

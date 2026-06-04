@@ -31,8 +31,8 @@ metadata:
     verbosity: medium
     directive_strength: medium
     abstraction_level: tactical
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # GitHub Actions Status
 
 View, monitor, and manage GitHub Actions workflows and their run statuses using the `gh` CLI.

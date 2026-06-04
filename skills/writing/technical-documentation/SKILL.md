@@ -6,7 +6,7 @@ description: Writes clear, structured technical documentation including READMEs,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: writing
   triggers: technical documentation, how do i write docs, README, API documentation,
     getting started guide, architecture overview, developer experience, docs-as-code,
@@ -28,7 +28,7 @@ metadata:
   - examples
   - do-dont
   related-skills: humanizer
-------
+---
 # Technical Documentation Writer
 
 Writes clear, structured, and actionable technical documentation that helps developers understand, adopt, and use software effectively. Covers READMEs, API references, getting-started guides, and architectural overviews using proven conventions.

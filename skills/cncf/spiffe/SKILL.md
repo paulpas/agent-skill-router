@@ -28,8 +28,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # SPIFFE in Cloud-Native Engineering
 
 **Category:** Security & Identity  

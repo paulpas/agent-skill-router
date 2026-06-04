@@ -6,7 +6,7 @@ description: Implements Kotlin coroutine patterns including structured concurren
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: kotlin coroutines, structured concurrency, coroutine scope, SupervisorJob,
     Flow API, StateFlow, kotlinx-coroutines
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: async-programming, testing-best-practices, error-handling-patterns
-------
+---
 # Kotlin Concurrency Engineer
 
 When this skill loads, the model implements concurrent and asynchronous Kotlin applications using kotlinx-coroutines. The model designs coroutine scopes with structured concurrency via SupervisorJob, selects appropriate dispatchers (IO, Default, Main), builds reactive streams with Flow APIs, and writes production-grade cancellation-aware async code. When testing is involved, the model applies `runTest` with TestDispatcher patterns for deterministic concurrent test execution.

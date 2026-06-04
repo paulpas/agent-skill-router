@@ -31,9 +31,9 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
+version: "1.0.0"
 template_source: https://contribute.cncf.io/maintainers/github/releases/
-------
+---
   related-skills: cncf-argo, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 

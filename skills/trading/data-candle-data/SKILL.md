@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Candle Data Pipeline: The 5 Laws of Financial Time Series
 
 **Role:** Data Engineer for Financial Time Series — applies to OHLCV candle data processing, resampling, validation, and cleaning for trading algorithms.

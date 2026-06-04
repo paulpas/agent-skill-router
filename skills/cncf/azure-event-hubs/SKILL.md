@@ -30,8 +30,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Azure Event Hubs
 
 Deploy and manage azure event hubs infrastructure as part of your cloud-native environment.

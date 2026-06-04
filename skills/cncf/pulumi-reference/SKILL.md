@@ -30,8 +30,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Pulumi Infrastructure as Code
 
 Implements Pulumi infrastructure as code using Python, TypeScript, and Go programming languages for cloud provisioning with state management, stacks, backends, and multi-cloud infrastructure support.

@@ -28,8 +28,8 @@ metadata:
     verbosity: medium
     directive_strength: medium
     abstraction_level: tactical
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Humanizer: Remove AI Writing Patterns
 
 Detects AI-generated writing patterns and transforms them into natural, human-style writing through a systematic two-pass editing process.

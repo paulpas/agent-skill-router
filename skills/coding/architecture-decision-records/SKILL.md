@@ -6,7 +6,7 @@ description: Documents architectural decisions as Architecture Decision Records 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: architecture decision records, ADR, architectural decisions, how do i
     document architectural choices, design rationale, technology selection, system
@@ -30,7 +30,7 @@ metadata:
   - examples
   - config
   related-skills: software-architecture, engineering-principles, technical-debt-management
-------
+---
 # Architecture Decision Records (ADRs)
 
 Produces and maintains Architecture Decision Records — lightweight, structured documents that capture important architectural decisions, the context behind them, their consequences, and current status. ADRs create a searchable, version-controlled history of why a system is built the way it is, reducing tribal knowledge loss and enabling future teams to understand trade-offs without guessing intent.

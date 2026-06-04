@@ -6,7 +6,7 @@ description: Implements structural design patterns for AI agent systems includin
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: agent architecture, multi-agent system, design patterns, pub-sub messaging,
     circuit breakers, state management, event-driven architecture, service discovery,
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   related-skills: agent-context-management, workflow-patterns, dispatching-parallel-agents,
     hierarchical-agent-memory
-------
+---
 # Agent Architecture Patterns
 
 Implements structural design patterns for building robust, scalable AI agent systems. This skill guides the model in selecting and applying the right architecture pattern based on complexity, communication needs, and fault tolerance requirements of the agent system.

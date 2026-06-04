@@ -6,7 +6,7 @@ description: Designs and maintains a consistent AI agent persona including first
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: ai persona, first-person identity, agent voice, personality design, consistent
     tone, how do i make my ai feel personal, authentic AI, self-expression, character
@@ -30,7 +30,7 @@ metadata:
   - examples
   - do-dont
   related-skills: personalized-behavior, user-memory-system, conversation-memory
-------
+---
 # AI Persona Design Framework
 
 Designs and maintains a consistent AI agent persona — the identifiable "self" that users interact with. This skill covers first-person voice design, personality trait selection, consistency mechanisms across sessions, authenticity guardrails, and memory-aware self-expression. A well-designed persona transforms an anonymous service into a recognizable assistant that users trust, remember, and enjoy working with over time.

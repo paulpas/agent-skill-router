@@ -5,7 +5,7 @@ description: Implements database access patterns in Go with connection pooling, 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +30,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Go Database Patterns
 
 Senior data engineer implementing robust database access in Go with connection pooling, transaction management, repository patterns, and migration strategies. This skill covers both SQL and NoSQL data stores.

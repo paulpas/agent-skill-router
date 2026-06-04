@@ -5,7 +5,7 @@ description: Automates JavaScript/TypeScript package publishing with semantic-re
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: semantic-release, conventional commits, npm publish workflow, how do i
     publish a npm package, changelog automation, private npm registry, .npmrc setup,
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   related-skills: coding-javascript-frontend-ecosystem, coding-semver-automation,
     coding-software-delivery-pipelines
-------
+---
 # JavaScript Package Publishing Workflows
 
 Automates version bumps, changelog generation, and package publishing for npm packages using semantic-release, conventional commits, and CI/CD pipelines. When loaded, this skill makes the model act as a senior JavaScript infrastructure engineer — writing complete `package.json` exports configurations, configuring semantic-release with GitHub Actions, setting up private registries, and designing publish workflows for single-package and monorepo projects.

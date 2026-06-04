@@ -4,7 +4,7 @@ description: Implements best practices for Java/Kotlin applications using Spring
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: java best practices, kotlin best practices, spring boot, maven, gradle, jvm tuning, jakarta ee
   role: implementation

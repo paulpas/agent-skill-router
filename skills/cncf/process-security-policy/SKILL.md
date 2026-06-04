@@ -32,9 +32,9 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
+version: "1.0.0"
 template_source: https://github.com/cncf/tag-security/blob/main/project-resources/templates/SECURITY.md
-------
+---
   related-skills: cncf-aws-kms, cncf-aws-s3, cncf-aws-secrets-manager, cncf-azure-key-vault
 
 

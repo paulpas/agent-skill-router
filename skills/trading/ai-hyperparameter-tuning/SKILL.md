@@ -29,8 +29,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Systematically find optimal hyperparameters that balance prediction accuracy with trading performance
 
 **Philosophy:** Hyperparameter optimization should respect trading constraints (transaction costs, regime shifts). Prioritize robustness and out-of-sample performance over in-sample optimization.

@@ -6,7 +6,7 @@ description: Configures GRUB2 bootloader for UEFI firmware boot processes includ
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -32,7 +32,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 5
-------
+---
 # GRUB2 and UEFI Bootloader Manager
 
 System engineer managing the GRUB2 bootloader in UEFI environments — configuring boot entries, integrating Secure Boot via Shim signing, setting up multi-boot systems, tuning kernel parameters, performing recovery operations, and chain-loading network boot configurations.

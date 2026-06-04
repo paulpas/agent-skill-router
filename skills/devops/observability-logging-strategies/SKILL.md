@@ -4,7 +4,7 @@ description: Implements best practices for logging strategies in observability t
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: devops
   triggers: logging strategies, observability, performance monitoring, application logging, troubleshooting
   archetypes: [implementation, reference]

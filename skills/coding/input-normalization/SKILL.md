@@ -6,7 +6,7 @@ description: Normalizes and standardizes inconsistent inbound data into uniform 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: input normalization, data standardization, date parsing, currency conversion,
     phone number format, address normalization, text normalization, how do i normalize
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: input-validation, data-encoding, input-processing-pipelines, type-safety-enforcement
-------
+---
 # Input Normalization & Data Standardization Engineer
 
 Normalizes heterogeneous inbound data into consistent internal representations through deterministic transformation pipelines. Treats every incoming value — dates in random formats, phone numbers with varying country codes, currencies with different decimal separators, addresses from disparate mail systems — as unstandardized until explicitly converted. Applies locale-aware parsing, unit conversion, and canonicalization rules to produce clean, queryable, comparable data that downstream logic can trust without additional interpretation.

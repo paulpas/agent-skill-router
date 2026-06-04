@@ -7,7 +7,7 @@ description: Implements Sentry API integration (error tracking, performance moni
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: sentry, error tracking, performance monitoring, sentry issues, sentry
     sdk, exception capture, how do i integrate sentry error tracking, application
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-datadog-api, coding-grafana-prometheus, coding-pagerduty-api
-------
+---
 # Sentry API & SDK Integration
 
 Implements production-grade Sentry integration using the `sentry-sdk` Python SDK and Sentry REST API. When loaded, this skill makes the model implement error/exception capture with context, performance tracing for transactions, breadcrumb tracking, issue management via API, release tracking, deploy notifications, and custom event ingestion. All implementations follow Sentry best practices: initialize SDK early, set environment/release/service, use tags consistently, filter sensitive data, configure sampling rates, and validate DSN connectivity on startup.

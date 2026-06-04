@@ -6,7 +6,7 @@ description: Integrates Chroma vector database (collections, embeddings, query, 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: chroma, chromadb, vector database, embedding store, similarity search,
     chroma collection, how do i use chroma, local vector search
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   related-skills: coding-openai-api, coding-pinecone-api, coding-weaviate-api, coding-langchain,
     coding-llamaindex
-------
+---
 # Chroma Integration
 
 Integrates Chroma vector database using the `chromadb` Python SDK. When loaded, this skill makes the model implement Chroma operations for creating and managing collections, adding and querying documents, metadata filtering, embedding functions, and persistence.

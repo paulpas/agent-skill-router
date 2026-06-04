@@ -6,7 +6,7 @@ description: Implements gRPC service patterns (unary, streaming, bidirectional),
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: gRPC, protocol buffers, protobuf, RPC, streaming RPC, unary call, interceptor
     middleware, grpc service, stub generation, proto file design, bidirectional stream,
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: grpc, rest-api-patterns, fastapi-patterns
-------
+---
 # gRPC Service Patterns
 
 Implements production-ready gRPC services and clients using Protocol Buffers, covering unary and streaming RPCs, interceptor middleware, typed error handling with status codes, and cross-language code generation for Go and Python.

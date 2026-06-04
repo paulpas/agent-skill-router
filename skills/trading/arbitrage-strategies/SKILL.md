@@ -7,7 +7,7 @@ metadata:
   anti_triggers: [generic routing]
   response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
   
-  version: 1.0.0
+version: "1.0.0"
   domain: trading
   triggers: arbitrage, trading strategies, how do I profit from arbitrage, arbitrage opportunities, moving average arbitrage
   role: implementation

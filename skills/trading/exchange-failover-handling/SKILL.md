@@ -29,8 +29,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Manage multiple exchange connections with automatic failover for uninterrupted trading
 
 **Philosophy:** Redundancy is essential for production trading; failover must be transparent to trading logic

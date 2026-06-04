@@ -6,7 +6,7 @@ description: Integrates Linode/Akamai Cloud services (Instances, Object Storage,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: linode api, akamai cloud, linode python, linode instances, linode kubernetes,
     nodebalancer, object storage, how do i use linode api from python
@@ -26,7 +26,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: digitalocean-api, aws-sdk, cloudflare-api
-------
+---
 # Linode/Akamai Cloud API Integration Patterns
 
 Integrates Linode (Akamai Connected Cloud) services using the official `linode_api4` Python SDK. Covers Personal Access Token authentication, Linode Instance lifecycle, Object Storage (S3-compatible), Linode Kubernetes Engine (LKE) cluster management, and NodeBalancer configuration with the SDK's model-driven design and filtering system.

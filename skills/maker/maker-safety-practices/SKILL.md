@@ -6,7 +6,7 @@ description: Implements makerspace safety protocols with PPE selection by hazard
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: maker
   triggers: maker safety, makerspace safety, 3d printer safety, laser cutter safety,
     PPE selection, fume extraction, how do i work safely with tools
@@ -29,7 +29,7 @@ metadata:
   - examples
   - do-dont
   related-skills: rapid-prototyping-workflow, digital-fabrication
-------
+---
 # Maker Safety Practices
 
 Implements comprehensive safety protocols for makerspace operations covering hazard assessment, PPE selection by hazard type, machine-specific safe operating procedures for 3D printers/laser cutters/CNC mills/electronics workstations, electrical safety for power tools and battery handling, fume extraction requirements, and emergency response procedures. Safety is not optional — every operation requires a documented risk assessment before the first tool is touched.

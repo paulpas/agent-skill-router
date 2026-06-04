@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Extract meaningful representations from news text to create predictive trading features
 
 **Philosophy:** News embeddings capture semantic meaning and temporal trends. Prioritize real-time processing, domain-specific fine-tuning, and integration with market state.

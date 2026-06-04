@@ -32,8 +32,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Secure Release Pipeline Manager
 
 Implements comprehensive security controls throughout the software release lifecycle — from dependency scanning and code review to version management and incident response — ensuring zero compromises on security while maintaining delivery velocity.

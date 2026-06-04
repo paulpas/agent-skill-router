@@ -29,8 +29,8 @@ metadata:
     verbosity: medium
     directive_strength: medium
     abstraction_level: tactical
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Progress OpenEdge ABL 12 — v10 to v12 Migration Reference
 
 > **Version:** Progress OpenEdge 12.7 (May 2023)  

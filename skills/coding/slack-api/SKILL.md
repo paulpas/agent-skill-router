@@ -6,7 +6,7 @@ description: Integrates Slack API (Web API, Events API, Bolt Framework, Incoming
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: slack, slack api, slack bot, slack webhook, block kit, slack events, bolt
     python, send message to slack
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-discord-api, coding-twilio-api, coding-sendgrid-api
-------
+---
 # Slack API Integration (Bolt, Web API, Block Kit, Events)
 
 Integrates the Slack platform — Web API, Events API, Bolt Framework, Incoming Webhooks, and Block Kit — using the `slack-sdk` Python SDK v3.x and `bolt-python`. When loaded, this skill makes the model implement Slack integrations with proper event handling, Block Kit message construction, OAuth flow, webhook verification, and slash command processing.

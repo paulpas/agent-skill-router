@@ -29,8 +29,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Store and retrieve engineered features for consistent model training and inference
 
 **Philosophy:** Features are the foundation of ML models; feature store ensures reproducibility and consistency across training and production

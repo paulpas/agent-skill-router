@@ -6,7 +6,7 @@ description: Serializes and deserializes data through JSON, XML, Base64, URL enc
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: json serialization, xml parsing, base64 encoding, url encoding, yaml config,
     protocol buffers, data serialization, type coercion, character encoding, message
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: input-validation, error-handling, data-normalization
-------
+---
 # Data Encoding and Serialization Engineer
 
 Serializes and deserializes data between internal application objects and external serialization formats with strict type safety, error recovery, and character encoding correctness. Every time your application reads a message from a network socket, parses a JSON API response, writes configuration to YAML, encodes binary data for HTTP transmission, or converts database query results into a CSV export — it is performing data encoding. Treat every incoming serialized payload as potentially malformed, maliciously crafted, or using an unexpected schema version. Validate the structure before trusting any deserialized value, and always serialize with explicit type declarations rather than relying on implicit coercion that can silently corrupt data.

@@ -5,7 +5,7 @@ description: Implements TypeScript generics, conditional types, mapped types, te
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: generics, type parameters, conditional types, infer keyword, mapped types,
     template literal types, keyof
@@ -30,7 +30,7 @@ metadata:
   - examples
   - do-dont
   related-skills: typescript-intersection-types,type-safety-enforcement
-------
+---
 
 # TypeScript Generics and Type-Level Programming
 

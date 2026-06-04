@@ -31,8 +31,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # EKS (Elastic Kubernetes Service)
 
 Deploy and manage production-grade Kubernetes clusters with automatic control plane updates, high availability, and deep AWS service integration.

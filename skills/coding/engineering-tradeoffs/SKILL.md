@@ -6,7 +6,7 @@ description: Evaluates competing engineering options using weighted decision mat
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: engineering tradeoffs, decision making under constraints, build vs buy,
     speed vs quality, technology selection, weighted decision matrix, tradeoff analysis,
@@ -32,7 +32,7 @@ metadata:
   - diagrams
   related-skills: architecture-decision-records, design-pattern-selection, engineering-principles,
     technical-debt-management
-------
+---
 # Engineering Tradeoff Analysis
 
 Senior engineer facilitating structured tradeoff decisions when requirements conflict and no option is perfect. This skill makes the model act as a disciplined decision analyst — surfacing hidden assumptions, quantifying competing priorities, and producing recommendations with explicit reasoning that stakeholders can challenge or endorse.

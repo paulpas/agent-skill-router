@@ -5,7 +5,7 @@ description: Manages Linux system resources using cgroups v2, namespaces, and sy
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -30,7 +30,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Linux Resource Management with cgroups and systemd
 
 Senior systems engineer configuring and managing Linux resources using cgroups v2, namespaces, and systemd to isolate workloads and guarantee resource allocation across cloud and on-prem environments.

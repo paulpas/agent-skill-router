@@ -31,9 +31,9 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
+version: "1.0.0"
 template_source: https://contribute.cncf.io/maintainers/templates/
-------
+---
 # CNCF Architecture Documentation Process
 
 Creates or updates `ARCHITECTURE.md` explaining the project's major components, data flow, and key design decisions.

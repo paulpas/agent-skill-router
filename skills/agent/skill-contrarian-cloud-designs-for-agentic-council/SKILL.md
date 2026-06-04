@@ -5,7 +5,7 @@ description: Generates structured contrarian critiques and adversarial review pr
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: cloud architecture review, adversarial design, contrarian critique, deployment
     vetting, agentic council, cloud security review, infrastructure review
@@ -31,7 +31,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Contrarian Cloud Deployment Review
 
 Acts as an adversarial reviewer within an agentic council, systematically generating contrarian critiques and structured challenge prompts for cloud deployment architectures. This skill forces the council to stress-test designs against failure modes, security vulnerabilities, cost inefficiencies, and operational blind spots before approval.

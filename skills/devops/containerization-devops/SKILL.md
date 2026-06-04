@@ -4,7 +4,7 @@ description: Implements best practices for containerization in the DevOps lifecy
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: devops
   triggers: containerization, devops, docker, kubernetes, orchestration
   archetypes: [implementation, management]

@@ -4,7 +4,7 @@ description: Implements AWS Identity and Access Management (IAM) for securely ma
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: cloud
   triggers: aws iam, identity management, access control, permissions, user management
   archetypes: [implementation, access management]

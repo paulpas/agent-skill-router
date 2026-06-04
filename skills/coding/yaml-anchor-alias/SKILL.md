@@ -6,7 +6,7 @@ description: Creates reusable YAML anchor and alias patterns with merge keys to 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: yaml anchor, yaml alias, config deduplication, merge key, helm template,
     ansible common config, kubernetes shared spec, how do i reduce yaml repetition,
@@ -33,7 +33,7 @@ metadata:
   - examples
   - diagrams
   related-skills: coding-data-encoding, cncf-kubernetes, linux-systemd-services
-------
+---
 # YAML Anchor and Alias Patterns
 
 Implements YAML anchor (`&`) and alias (`*`) reference patterns with merge keys (`<<:`) to eliminate configuration repetition across Kubernetes manifests, Ansible playbooks, Terraform provider configs, Helm templates, and other YAML-based configuration files. Anchors define reusable blocks of data; aliases inject those definitions at any nesting depth without copying the content. This skill covers anchor definition, alias injection, deep merge behavior, anchor inheritance through mapping keys, and framework-specific patterns for infrastructure-as-code workflows.

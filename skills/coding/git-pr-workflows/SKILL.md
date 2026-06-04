@@ -4,7 +4,7 @@ description: Implements best practices for managing pull requests (PRs) in Git, 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: coding
   triggers: git, pull request, PR workflows, code review, branching strategies
   archetypes: [implementation, orchestration]

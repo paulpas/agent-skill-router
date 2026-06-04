@@ -32,8 +32,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Regression Evaluation
 
 Comprehensive guide to regression evaluation in machine learning and data science workflows.

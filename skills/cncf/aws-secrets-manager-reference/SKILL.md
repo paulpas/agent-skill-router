@@ -30,8 +30,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Secrets Manager
 
 Manage sensitive credentials with automatic encryption, rotation, and fine-grained access control across AWS services and applications.

@@ -6,7 +6,7 @@ description: Evaluates and compares modern programming languages using performan
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: programming language comparison, rust vs go, typescript vs python, which
     language to use, language selection, zig vs c++, language benchmark, developer
@@ -33,7 +33,7 @@ metadata:
   - diagrams
   related-skills: polyglot-development, framework-selection, technology-adoption,
     performance-optimization
-------
+---
 # Modern Programming Language Comparison
 
 Evaluates and compares modern programming languages using quantifiable metrics — performance benchmarks, safety guarantees, developer experience scores, ecosystem maturity, and deployment characteristics — to guide language selection decisions for new projects or migrations. When loaded, this skill makes the model produce a structured language comparison report with ranked candidates, concrete benchmark data, and migration feasibility assessments.

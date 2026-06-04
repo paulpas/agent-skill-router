@@ -6,7 +6,7 @@ description: Implements fault-tolerance mechanisms for AI agent systems includin
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: fault tolerance, circuit breaker, retry strategy, exponential backoff,
     graceful degradation, health check, dead letter queue, timeout management, reliability
@@ -31,7 +31,7 @@ metadata:
   - examples
   - do-dont
   related-skills: agent-architecture-patterns, workflow-patterns, failure-mode-analysis
-------
+---
 # Agent Reliability Engineering
 
 Implements fault-tolerance mechanisms for AI agent systems to ensure graceful operation under partial failure. This skill guides the model in applying circuit breakers, retry strategies, degradation patterns, health monitoring, and observability primitives that keep agent systems operational when external dependencies fail.

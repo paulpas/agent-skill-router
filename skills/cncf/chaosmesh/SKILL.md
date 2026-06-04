@@ -29,14 +29,14 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
+version: "1.0.0"
 output-format: manifests
 related-skills: null
 role: reference
 scope: infrastructure
 triggers: chaos, chaosmesh, cloud-native, engineering
-version: 1.0.0
-------
+version: "1.0.0"
+---
 # Chaos Mesh in Cloud-Native Engineering
 
 **Category:** chaos  

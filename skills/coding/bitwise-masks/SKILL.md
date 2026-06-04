@@ -5,7 +5,7 @@ description: Implements bitwise operations (&, |, ^, <<, >>) for flag management
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: bitwise operations, bit mask, flag enum, permission bits, bitwise AND,
     shift operator, bitmasking, flag management, state flags, permission mask, bitwise
@@ -31,7 +31,7 @@ metadata:
   - examples
   - do-dont
   related-skills: reference-operators,type-safety-enums
-------
+---
 # Bitwise Mask Operations
 
 Implements bitwise operations (&, |, ^, <<, >>) for flag management, permission bitmasking, and state tracking. These low-level patterns eliminate conditional branches, reduce memory footprint, and enable compact representation of multi-state configurations.

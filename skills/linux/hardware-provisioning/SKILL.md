@@ -5,7 +5,7 @@ description: Plans and provisions Linux systems for cloud instances and on-prem 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -30,7 +30,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Linux Hardware Provisioning
 
 Infrastructure engineer planning and provisioning Linux systems for cloud instances and on-prem hardware, selecting appropriate sizing, configuring RAID/storage, and abstracting hardware differences for consistent operation.

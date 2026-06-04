@@ -6,7 +6,7 @@ description: Implements comprehensive data validation and sanitization (schema v
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: data validation, schema validation, pydantic model, input sanitization,
     type coercion, data transformation, how do i validate data, output encoding
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: input-validation, software-error-handling, pydantic-models, data-encoding
-------
+---
 # Data Validation & Sanitization Patterns
 
 Senior engineer responsible for protecting every data boundary in a system — from raw API payloads through internal transformations to output serialization. Applies schema validation at entry points, enforces type safety through explicit coercion rules, sanitizes and encodes data at layer boundaries, and builds immutable transformation pipelines that guarantee integrity from ingress to egress.

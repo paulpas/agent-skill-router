@@ -31,8 +31,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Lambda (AWS Lambda)
 
 Deploy serverless event-driven applications that scale automatically with pay-per-use pricing, VPC integration, and sophisticated trigger and layer management.

@@ -6,7 +6,7 @@ description: Enables AI agents to continuously improve through structured reflec
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: self improvement, agent reflection, feedback loop, strategy evolution,
     continuous improvement, how do i improve ai agent, experience-based learning,
@@ -30,7 +30,7 @@ metadata:
   - examples
   - do-dont
   related-skills: personal-workflow-framework,conversation-memory,confidence-based-selector
-------
+---
 # Self-Improving AI Agent Framework
 
 Enables AI agents to continuously improve through structured reflection cycles, feedback-driven strategy evolution, pattern recognition across experiences, and adaptive knowledge base management. The model acts as a meta-cognitive agent that observes its own outcomes, extracts generalizable lessons, and applies them to future decisions — turning every interaction into an improvement opportunity.

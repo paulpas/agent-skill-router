@@ -30,8 +30,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Azure Container Registry
 
 Deploy and manage azure container registry infrastructure as part of your cloud-native environment.

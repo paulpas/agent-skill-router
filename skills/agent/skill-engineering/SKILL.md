@@ -6,7 +6,7 @@ description: Designs high-fidelity OpenCode AI skills with precision trigger eng
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: skill design, trigger engineering, SKILL.md crafting, stub detection,
     skill generation, agent skill routing, how do i create a skill
@@ -29,7 +29,7 @@ metadata:
   - do-dont
   - config
   related-skills: coding-code-review, agent-task-routing, coding-security-review
-------
+---
 # Skill Engineering Framework
 
 Designs high-fidelity OpenCode AI skills with precision trigger engineering, stub-free validation frameworks, and domain-specific constraint patterns. When loaded, this skill makes the model act as a senior skill architect — reviewing, creating, or refining SKILL.md files to meet the zero-tolerance quality standards of the agent-skill-router system.

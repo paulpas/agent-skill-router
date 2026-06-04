@@ -22,7 +22,7 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: microservices-architecture, idempotent-distributed-operations, observability-patterns
-------
+---
 
 # Microservice Contract Testing
 

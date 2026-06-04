@@ -6,7 +6,7 @@ description: Implements distributed systems patterns (consensus algorithms, cons
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: distributed systems, consensus algorithm, CAP theorem, eventual consistency,
     data replication, partitioning strategy, Raft, Paxos, vector clocks, service discovery,
@@ -34,7 +34,7 @@ metadata:
   - examples
   related-skills: microservices-architecture, event-driven-patterns, domain-driven-design,
     software-architecture
-------
+---
 # Distributed Systems Architecture
 
 Implements distributed systems patterns including consensus algorithms, consistency models, data replication strategies, partitioning schemes, clock synchronization mechanisms, and distributed transaction orchestrations to build correct and resilient multi-node architectures.

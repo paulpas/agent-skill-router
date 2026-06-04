@@ -6,7 +6,7 @@ description: Detects and refactors classes that violate the Single Responsibilit
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: single responsibility principle, SRP, god class, split class, cohesion,
     high coupling, module boundary, one reason to change, separation of concerns
@@ -32,7 +32,7 @@ metadata:
   - examples
   related-skills: open-closed-principle, liskov-substitution-principle, interface-segregation-principle,
     dependency-inversion-principle, refactoring-techniques
-------
+---
 # Single Responsibility Principle (SRP)
 
 Acts as a senior software architect applying the Single Responsibility Principle to decompose bloated classes and modules into focused, cohesive units. Detects violations through concrete code smells — God classes, mixed concerns, high cyclomatic complexity — then refactors each into separate components with explicit responsibility boundaries.

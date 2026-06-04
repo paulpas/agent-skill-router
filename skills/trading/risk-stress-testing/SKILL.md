@@ -29,8 +29,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Evaluate portfolio performance under extreme market conditions
 
 **Philosophy:** Stress testing reveals hidden vulnerabilities; portfolios should survive worst-case scenarios

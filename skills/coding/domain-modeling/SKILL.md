@@ -6,7 +6,7 @@ description: Analyzes business domains to extract ubiquitous language, identify 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: domain modeling, ubiquitous language, bounded context, subdomain classification,
     domain map, how do i understand the domain, strategic design
@@ -31,7 +31,7 @@ metadata:
   - examples
   - do-dont
   related-skills: domain-driven-design, software-design-principles, framework-requirements
-------
+---
 # Domain Modeling Framework
 
 Senior architect performing deep business domain analysis to extract shared vocabulary, identify bounded context boundaries, classify subdomains by strategic importance, and produce domain maps that directly inform software architecture. This skill operates at the strategic layer of DDD — understanding *what* the business does before deciding *how* to build it. It is complementary to `domain-driven-design` which covers tactical patterns like aggregates, value objects, and entities applied after the domain has been modeled.

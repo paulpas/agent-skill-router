@@ -6,7 +6,7 @@ description: Implements RESTful API design patterns including resource modeling,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: REST API, RESTful design, RFC 7807, HTTP methods, API versioning, HATEOAS,
     pagination
@@ -32,7 +32,7 @@ metadata:
   - examples
   related-skills: fastapi-patterns, grpc-patterns, code-validation, input-validation,
     frontend-api-integration-patterns
-------
+---
 # REST API Design Patterns
 
 Implements production-grade RESTful API design following Richardson Maturity Model Level 2+ principles. Models resources as named entities with proper HTTP method dispatching, structured error responses per RFC 7807 Problem Details, consistent pagination and filtering conventions, explicit versioning strategies, HATEOAS hypermedia links where beneficial, and authentication/authorization patterns that integrate cleanly with the resource model.

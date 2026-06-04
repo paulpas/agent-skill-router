@@ -6,7 +6,7 @@ description: Evaluates software problems against the GoF pattern catalog to sele
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: design pattern, GoF pattern, factory method, strategy pattern, decorator
     pattern, observer pattern, how do i choose a pattern, structural pattern
@@ -31,7 +31,7 @@ metadata:
   - examples
   - do-dont
   related-skills: modular-design, refactoring-techniques, dependency-inversion-principle
-------
+---
 # Design Pattern Selection Guide
 
 Selects optimal design patterns for code-level problems by analyzing structural requirements, evaluating trade-offs between complexity and flexibility, and implementing solutions with idiomatic Go. This skill makes the model classify problems against the Gang of Four (GoF) pattern catalog — Creational, Structural, or Behavioral — then produce concrete implementations that respect SOLID principles, avoid premature abstraction, and align with Go effective_go conventions.

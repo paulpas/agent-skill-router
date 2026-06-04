@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Convert sentiment signals into actionable trading features with proper temporal alignment
 
 **Philosophy:** Sentiment reflects market psychology but can lag prices. Prioritize real-time processing, sentiment drift detection, and integration with price-based signals.

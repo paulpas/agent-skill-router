@@ -4,7 +4,7 @@ description: Implements features for sending emails, managing templates, handlin
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: sendgrid, send email, email templates, marketing campaigns, inbound email parsing
   role: implementation

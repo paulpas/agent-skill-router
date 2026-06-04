@@ -6,7 +6,7 @@ description: Implements idempotency patterns for distributed microservice system
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: idempotency, idempotent, idempotency key, request deduplication, exactly
     once, duplicate detection, optimistic concurrency, idempotent handler, outbox
@@ -33,7 +33,7 @@ metadata:
   - examples
   related-skills: microservice-resilience-patterns, microservices-architecture, event-driven-patterns,
     database-design-modeling
-------
+---
 # Idempotent Distributed Operations
 
 Implements idempotency guarantees across distributed microservice systems by combining request-level deduplication via idempotency keys, optimistic concurrency control with version vectors, idempotent event consumers, and database-level unique constraints — ensuring that repeated execution of the same operation never produces side effects beyond the first application.

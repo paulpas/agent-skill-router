@@ -7,7 +7,7 @@ description: Implements AWS IAM (Identity and Access Management) integration (Us
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: aws iam, boto3 iam, aws roles, iam policies, sts assume role, aws access
     keys, aws mfa, how do i manage aws iam
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-entra-id-api, coding-okta-api, coding-vault-api
-------
+---
 # AWS IAM Integration (Identity & Access Management)
 
 Implements production-grade AWS IAM (Identity and Access Management) integration using the `boto3` Python SDK. When loaded, this skill makes the model implement IAM user lifecycle management (create, access keys, MFA), IAM groups and managed policies, IAM roles and trust policies, STS (Security Token Service) operations (AssumeRole, GetFederationToken, GetSessionToken), policy validation using IAM Access Analyzer, permission boundary enforcement, least privilege principle implementation, and credential chain best practices. All implementations follow AWS security best practices: use default credential provider chain, rotate access keys, enforce MFA for console and API access, use roles instead of long-term credentials, use permission boundaries, validate policies before deployment, and monitor access with CloudTrail.

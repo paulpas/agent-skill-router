@@ -4,7 +4,7 @@ description: Integrates Vercel services (Deployments, Projects, Edge Functions, 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: vercel api, vercel python, vercel deployments, vercel edge functions, vercel projects, vercel domains, how do i use vercel api from python
   archetypes:
@@ -23,7 +23,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: cloudflare-api, netlify-api, aws-sdk
-------
+---
 
 # Vercel API Integration Patterns
 Integrates Vercel services using the Vercel REST API and `vercel-py` SDK. Covers API token authentication, project management, deployment creation (with file uploads), Edge Config management, domain configuration, and environment variable management with patterns for deployment status polling and rollback.

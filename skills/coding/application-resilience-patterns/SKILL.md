@@ -6,7 +6,7 @@ description: Implements application-layer resilience patterns including exponent
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: application resilience, retry with backoff, circuit breaker pattern, timeout
     management, fallback mechanism, rate limiter, token bucket, graceful degradation,
@@ -32,7 +32,7 @@ metadata:
   - config
   - do-dont
   related-skills: microservice-resilience-patterns, systematic-debugging, distributed-systems-architecture
-------
+---
 # Application Resilience Patterns
 
 Implements application-layer resilience patterns for handling external service failures gracefully — ensuring your application remains functional when downstream dependencies degrade or fail.

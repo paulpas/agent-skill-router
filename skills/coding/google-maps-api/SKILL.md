@@ -7,7 +7,7 @@ description: Implements Google Maps Platform API integration (Geocoding, Directi
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: google maps, google maps api, googlemaps, geocoding, directions api, places
     api, distance matrix, how do i integrate with google maps, map integration
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-mapbox-api, coding-aws-route-53
-------
+---
 # Google Maps Platform API Integration
 
 Implements production-grade Google Maps Platform integration using the `googlemaps` Python SDK and Google Maps REST API. When loaded, this skill makes the model implement geocoding (address → coordinates, coordinates → address), directions and route calculation with waypoints, places search (nearby, text, find place), distance matrix for multiple origins/destinations, time zone lookup by coordinates, elevation data, static maps, and street view imagery. All implementations follow Google Maps best practices: use `GOOGLE_MAPS_API_KEY` from environment, implement rate limiting and exponential backoff, cache geocoding results to reduce API calls, use session tokens for Place Autocomplete to control costs, handle API errors gracefully, and respect Google's Terms of Service regarding data storage and caching.

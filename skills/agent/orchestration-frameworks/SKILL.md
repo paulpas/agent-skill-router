@@ -6,7 +6,7 @@ description: Designs and implements orchestration frameworks for multi-agent sys
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: orchestration framework, multi-agent system, agent coordination, workflow
     engine, langgraph, autogen, crewai, temporal, task orchestration, agent routing
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - diagrams
   related-skills: task-decomposition-engine, parallel-skill-runner, confidence-based-selector
-------
+---
 # Orchestration Framework Engineering
 
 Architects and implements orchestration frameworks that coordinate multi-agent systems, manage workflow state, and handle fault tolerance. You design the control plane that determines how agents delegate tasks, share context, and recover from failures.

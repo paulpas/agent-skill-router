@@ -6,7 +6,7 @@ description: Integrates Hugging Face APIs (Inference Client, Inference Endpoints
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: hugging face, huggingface, transformers, inference api, inference endpoints,
     pipelines, how do i use hugging face models, hf inference client
@@ -31,7 +31,7 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-openai-api, coding-replicate-api, coding-langchain
-------
+---
 # Hugging Face API Integration
 
 Integrates Hugging Face APIs for model inference using the `huggingface_hub` `InferenceClient`, dedicated Inference Endpoints, `transformers` pipelines, and `datasets` library. When loaded, this skill makes the model implement Hugging Face model inference with proper token management, task routing, batching, and error handling.

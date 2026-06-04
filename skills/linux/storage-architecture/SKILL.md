@@ -5,7 +5,7 @@ description: Designs and implements Linux storage architectures for cloud block 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -30,7 +30,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Linux Storage Architecture
 
 Storage engineer designing and implementing Linux storage architectures for cloud block storage and on-prem SAN/NAS, selecting appropriate filesystems, configuring LVM, optimizing mount options, and monitoring storage health for performance and durability.

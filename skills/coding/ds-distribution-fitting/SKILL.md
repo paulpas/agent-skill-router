@@ -31,8 +31,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Distribution Fitting
 
 Comprehensive guide to distribution fitting in machine learning and data science workflows.

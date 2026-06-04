@@ -6,7 +6,7 @@ description: Implements GraphQL error handling and input validation using typed 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: graphql error handling, graphql validation, input validation, pydantic
     graphql, strawberry errors, graphql error codes, graphql middleware
@@ -26,7 +26,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: graphql-schema-design, graphql-dataloader-pattern, graphql-subscriptions
-------
+---
 # GraphQL Error Handling and Validation
 
 Implements production-grade GraphQL error handling and input validation using typed result unions, Pydantic v2 field-level constraints, machine-readable error code enums, and middleware-level exception handlers. Ensures clients receive structured, actionable errors while server internals remain fully shielded.

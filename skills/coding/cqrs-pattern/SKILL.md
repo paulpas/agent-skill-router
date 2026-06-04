@@ -6,7 +6,7 @@ description: Separates command (write) model from query (read) model using media
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: cqrs, command query responsibility segregation, mediator pattern, outbox
     pattern, idempotent commands, saga pattern, read write separation, event bus
@@ -31,7 +31,7 @@ metadata:
   - config
   - do-dont
   related-skills: event-sourcing, saga-pattern, idempotency-patterns
-------
+---
 # Command Query Responsibility Segregation (CQRS)
 
 Implements CQRS to separate command (write) model from query (read) model, enabling independent scaling, different consistency models, and clean domain boundaries. Uses mediator pipelines for cross-cutting concerns, the outbox pattern for reliable event publishing, and idempotent command handling for at-least-once delivery guarantees.

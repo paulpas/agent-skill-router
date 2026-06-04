@@ -6,7 +6,7 @@ description: Applies systematic refactoring techniques (extract method, introduc
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: refactoring, clean up code, reduce complexity, extract method, rename
     variable, improve readability, how do i refactor legacy code, technical debt,
@@ -32,7 +32,7 @@ metadata:
   - examples
   - do-dont
   related-skills: test-driven-development, software-testing-strategy, dry-principles
-------
+---
 # Refactoring Techniques
 
 Applies systematic refactoring transformations to improve code readability and reduce complexity without changing external behavior. Models this skill as a senior engineer who identifies code smells using concrete detection criteria, then applies small incremental transformations — each verified by tests — to guide legacy code toward clean architecture following SOLID and DRY principles.

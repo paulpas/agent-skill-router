@@ -4,7 +4,7 @@ description: Implements Amazon Simple Notification Service (SNS) for building an
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: cloud
   triggers: aws sns, event-driven architecture, notification service, publish-subscribe model, scalable messaging
   archetypes: [implementation, event management]

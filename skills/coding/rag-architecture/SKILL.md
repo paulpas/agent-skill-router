@@ -6,7 +6,7 @@ description: Implements production-grade RAG architectures (chunking strategies,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: rag, retrieval augmented generation, vector search, embedding pipeline,
     document chunking, semantic search, re-ranking, hybrid search, llm context injection,
@@ -34,7 +34,7 @@ metadata:
   - do-dont
   related-skills: coding-vector-databases, agent-knowledge-base, coding-prompt-engineering,
     coding-llm-fine-tuning
-------
+---
 # Retrieval-Augmented Generation (RAG) Architecture
 
 Implements production-grade RAG pipelines that retrieve relevant external knowledge and inject it into LLM prompts for accurate, grounded responses. A modern RAG system is not a single component — it is an orchestrated pipeline of chunking policies, hybrid retrieval signals, cross-encoder re-ranking, and grounding validation loops that together prevent hallucination while preserving response latency under 2 seconds.

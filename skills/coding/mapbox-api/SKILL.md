@@ -6,7 +6,7 @@ description: Implements Mapbox API integration (Geocoding, Directions, Maps, Sea
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: mapbox, mapbox api, mapbox-sdk, mapbox geocoding, mapbox directions, mapbox
     static maps, mapbox isochrones, how do i integrate with mapbox, map integration
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-google-maps-api, coding-aws-route-53
-------
+---
 # Mapbox Platform API Integration
 
 Implements production-grade Mapbox integration using the `mapbox-sdk` Python SDK and Mapbox REST API. When loaded, this skill makes the model implement geocoding (Mapbox Geocoding API), directions and route optimization (Mapbox Directions API, Optimization API), static map generation (Mapbox Static Images API), isochrones (reachability analysis), search with autocomplete (Mapbox Search Box API), and map tiles. All implementations follow Mapbox best practices: use `MAPBOX_ACCESS_TOKEN` from environment, implement rate limiting and exponential backoff, use permanent geocoding only for geocoding results you intend to cache, use temporary for batch geocoding for one-time searches, use session tokens for autocomplete + detail pattern, respect Mapbox's rate limits (600 requests per minute for most APIs, and follow Mapbox Terms of Service regarding data storage and map display attribution requirements.

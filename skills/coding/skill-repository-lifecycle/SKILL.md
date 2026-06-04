@@ -6,7 +6,7 @@ description: Manages the complete lifecycle of SKILL.md files including versioni
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: skill lifecycle, skill versioning, skill deprecation, skill retirement,
     how do i manage skills, skill migration, deprecated skills, skill health monitoring,
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   related-skills: coding-skill-development-workflow, agent-skill-trigger-engineering,
     coding-code-quality-policies
-------
+---
 # Skill Lifecycle Management
 
 Manages the complete lifecycle of SKILL.md files from initial creation through versioning, deprecation, retirement, and migration. This skill provides structured processes for maintaining skill health, detecting content drift over time, and ensuring backward compatibility when skills evolve across versions.

@@ -29,8 +29,8 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-------
+version: "1.0.0"
+---
   related-skills: cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2, cncf-aws-eks
 
 

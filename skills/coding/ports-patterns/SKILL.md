@@ -6,7 +6,7 @@ description: Defines and manages port interfaces (driving/driven) in hexagonal a
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: port interface, driving port, driven port, port contract, Protocol vs
     ABC, hexagonal ports, how do i define clean boundaries, dependency inversion,
@@ -33,7 +33,7 @@ metadata:
   - examples
   related-skills: hexagonal-architecture, composition-root, test-driven-development,
     anti-corruption-layer
-------
+---
 # Hexagonal Port Interface Patterns
 
 Acts as a senior software architect designing clean port interfaces for hexagonal architecture. When loaded, the model creates driving and driven ports using Python's `Protocol` or `abc.ABC`, writes explicit port contracts with preconditions and postconditions, and produces adapter stubs that enforce boundary integrity between domain logic and external systems.

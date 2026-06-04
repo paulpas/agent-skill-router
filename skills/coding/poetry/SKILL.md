@@ -6,7 +6,7 @@ description: Manages Python project dependencies, virtual environments, building
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: poetry, python package manager, pyproject.toml, poetry lock, virtual environment,
     dependency management, Python publishing, PyPI upload, poetry workspaces, how
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   - config
   related-skills: coding-python-uv, coding-package-ecosystem-navigator, coding-dependency-supply-chain-security
-------
+---
 # Poetry — Python Package & Dependency Manager
 
 Manages Python project dependencies, virtual environments, building, and publishing using Poetry. Covers dependency resolution strategies, lockfile management, workspace/multirepo setup, plugin architecture, and migration from pip/requirements.txt workflows.

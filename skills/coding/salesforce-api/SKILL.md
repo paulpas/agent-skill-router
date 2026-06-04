@@ -6,7 +6,7 @@ description: Implements Salesforce API integration (REST, SOQL, Bulk API, Apex, 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: salesforce, soql, salesforce api, simple salesforce, salesforce objects,
     salesforce bulk api, how do i integrate with salesforce, crm integration
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-hubspot-api, coding-marketo-api, coding-zendesk-api
-------
+---
 # Salesforce API Integration
 
 Implements production-grade Salesforce integration using the `simple-salesforce` Python SDK and Salesforce REST API. When loaded, this skill makes the model implement CRUD operations on Salesforce objects (Accounts, Contacts, Opportunities, Leads, Cases, Custom Objects), SOQL queries, Bulk API for large datasets, Apex REST calls, and Salesforce Streaming API. All implementations follow Salesforce best practices: use `SF_INSTANCE_URL`, `SF_USERNAME`, `SF_PASSWORD`, `SF_SECURITY_TOKEN` from environment, query with `query_all()` for deleted/archived records, use Bulk API for >10,000 records, implement exponential backoff for rate limits, and handle Salesforce IDs (15-char vs 18-char IDs).

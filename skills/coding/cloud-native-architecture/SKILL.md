@@ -6,7 +6,7 @@ description: Implements cloud-native architecture patterns including Kubernetes-
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: cloud native architecture, kubernetes design, container orchestration,
     service mesh, GitOps, serverless architecture, immutable infrastructure, platform
@@ -34,7 +34,7 @@ metadata:
   - do-dont
   related-skills: microservices-architecture, distributed-systems-architecture, event-driven-architecture,
     observability-patterns
-------
+---
 # Cloud-Native Architecture Patterns
 
 Designs and implements cloud-native architectures that treat ephemerality, declarative configuration, and self-healing as first-class concerns. When loaded, the model creates system designs leveraging Kubernetes-native patterns, service mesh communication, GitOps delivery workflows, serverless compute integration, and platform engineering principles to build resilient distributed systems that recover from failures without human intervention.

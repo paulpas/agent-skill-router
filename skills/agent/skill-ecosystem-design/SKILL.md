@@ -6,7 +6,7 @@ description: Designs interconnected skill networks with dependency graphs, recip
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: skill ecosystem, skill network, skill dependencies, skill relationships,
     layered skills, cross-domain skills, how do i design skill networks, reciprocal
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   related-skills: agent-skill-trigger-engineering, coding-skill-lifecycle-management,
     agent-skill-router, agent-confidence-based-selector
-------
+---
 # Skill Ecosystem Design
 
 Designs interconnected skill networks where each skill reinforces and discovers others through reciprocal relationships, layered capabilities, and cross-domain bridges. This skill creates coherent capability clusters that guide agents from foundational concepts to specialized execution patterns, maximizing auto-loading discovery while preventing trigger overlap between related skills.

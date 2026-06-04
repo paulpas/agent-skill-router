@@ -6,7 +6,7 @@ description: Integrates Mailgun API (Messages, Routes, Email Validation, Suppres
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: mailgun, mailgun api, send email, email validation, email routing, transactional
     email, inbound email, mailgun python
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-sendgrid-api, coding-twilio-api, coding-slack-api
-------
+---
 # Mailgun Email API Integration
 
 Integrates the Mailgun API (Messages, Routes, Email Validation, Suppression List, Events/Analytics) using the official `mailgun` Python SDK v1.7+ and direct requests for legacy endpoints. When loaded, this skill makes the model implement email operations with proper REST API patterns, MIME construction, attachment handling, webhook signature validation, batch sending, and deliverability optimization.

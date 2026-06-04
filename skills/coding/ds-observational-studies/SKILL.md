@@ -32,8 +32,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Observational Studies
 
 Comprehensive guide to observational studies in machine learning and data science workflows.

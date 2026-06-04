@@ -6,7 +6,7 @@ description: Integrates Netlify services (Sites, Builds, Functions, Forms, Ident
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: netlify api, netlify python, netlify deployments, netlify functions, netlify
     forms, netlify sites, how do i use netlify api from python
@@ -26,7 +26,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: vercel-api, cloudflare-api, aws-sdk
-------
+---
 # Netlify API Integration Patterns
 
 Integrates Netlify services using the Netlify REST API (`api.netlify.com/api/v1`) with Python. Covers Personal Access Token authentication, site creation and management, atomic deploys (file digest and ZIP methods), serverless function deployment, form submission handling, and build hook management patterns.

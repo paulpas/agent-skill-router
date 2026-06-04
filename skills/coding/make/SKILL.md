@@ -6,7 +6,7 @@ description: Implements systematic build orchestration (Makefile, Nix, Bazel, Ju
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: make, build system, makefile, compilation, incremental build, build automation,
     justfile, phony targets
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: testing, refactoring, ci-cd-pipelines
-------
+---
 # Build Orchestration & Make Patterns
 
 Implements systematic build orchestration to transform source artifacts into reliable, reproducible outputs. A well-designed build system is not just a collection of commands — it is the contract between developers and the compilation pipeline, enforcing correctness through dependency tracking, incremental execution, and explicit phony target separation. Follow the Unix philosophy (KISS) by keeping recipes focused, transparent, and composable.

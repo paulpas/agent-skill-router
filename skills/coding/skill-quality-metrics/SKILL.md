@@ -6,7 +6,7 @@ description: Scores SKILL.md files across seven dimensions (content depth, code 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: skill quality metrics, skill scoring, quality rubric, skill evaluation
     framework, skill health score, how do i measure skill quality, skill audit checklist,
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   related-skills: coding-skill-testing-validation, coding-skill-lifecycle-management,
     agent-skill-optimizer
-------
+---
 # Skill Quality Metrics Framework
 
 Scores SKILL.md files across seven measurable dimensions using a weighted rubric system. When loaded, this skill makes the model act as a quality auditor — evaluating skills objectively against quantifiable criteria, producing a numerical score with breakdown by dimension and actionable improvement recommendations.

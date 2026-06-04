@@ -6,7 +6,7 @@ description: Implements hexagonal (ports and adapters) architecture to isolate c
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: hexagonal architecture, ports and adapters, clean architecture, dependency
     inversion, core business logic, how do i decouple my code, separate business logic
@@ -27,7 +27,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: test-driven-development, event-driven-architecture
-------
+---
 # Hexagonal Architecture Implementation Guide
 
 Acts as a senior software architect designing framework-agnostic core domains using ports and adapters. Ensures business rules remain independent of external concerns like databases, UIs, or cloud APIs by strictly enforcing the Dependency Inversion Principle (DIP).

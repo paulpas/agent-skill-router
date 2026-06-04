@@ -32,8 +32,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Pipeline Stage Validator
 
 Validates pipeline stages against allowed configuration and returns 'valid_config' if all stages are in the allowed set, or 'invalid_config' otherwise.

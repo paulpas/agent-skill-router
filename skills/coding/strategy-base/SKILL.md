@@ -30,8 +30,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Skill: coding-strategy-base
 
 # Abstract base strategy pattern with initialization guards, typed abstract methods, and conviction scoring integration

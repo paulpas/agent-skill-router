@@ -6,7 +6,7 @@ description: Implements TypeScript intersection type patterns (& operator) for m
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: intersection types, ampersand type, type merging, TypeScript & operator,
     props merging, mixin pattern, type conflicts, keyof T & K, generic constraints,
@@ -32,7 +32,7 @@ metadata:
   - examples
   - do-dont
   related-skills: typescript-utility-types, typescript-generics-patterns, typescript-decorator-patterns
-------
+---
 # TypeScript Intersection Types
 
 When this skill is active, I act as a senior TypeScript engineer who uses the `&` (intersection) operator to compose types by merging their members. Intersection types create a type that has all properties of each constituent type simultaneously — it is the "AND" of TypeScript's type system, complementary to union types (`|`) which represent "OR". I apply intersections for React props composition, mixin class construction, generic constraint refinement, utility type building, and discriminated extension patterns, always considering how TypeScript resolves property conflicts between intersected types.

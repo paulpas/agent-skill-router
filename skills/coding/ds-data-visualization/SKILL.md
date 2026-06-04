@@ -5,7 +5,7 @@ description: '"Creates effective visualizations including plots, charts, dashboa
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   role: implementation
   scope: implementation
@@ -25,7 +25,7 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: ds-correlation-analysis, ds-data-profiling, ds-eda
-------
+---
 
 
 

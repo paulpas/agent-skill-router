@@ -6,7 +6,7 @@ description: Evaluates existing software architectures for coupling, cohesion, t
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: architectural review, architecture assessment, system quality evaluation,
     technical debt audit, how do i evaluate my architecture, codebase health check,
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - config
   related-skills: software-architecture, engineering-principles, technical-debt-management
-------
+---
 # Architectural Review Guide
 
 Acts as a senior software architect conducting thorough reviews of existing codebases to assess architectural quality across coupling, cohesion, testability, scalability, and maintainability dimensions. Produces structured reports with metric-based findings, prioritized remediation plans, and actionable recommendations for structural improvement.

@@ -4,7 +4,7 @@ description: Implements best practices for Infrastructure as Code (IaC) manageme
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: devops
   triggers: infrastructure as code, IaC, automation, cloud provisioning, devops practices
   archetypes: [implementation, orchestration]

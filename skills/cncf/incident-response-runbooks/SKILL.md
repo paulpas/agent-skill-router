@@ -29,8 +29,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Incident Response Runbooks
 
 Implements comprehensive incident response procedures for cloud-native environments including Kubernetes clusters, microservices architectures, and infrastructure-as-code deployments. Provides structured workflows for detection, triage, communication, resolution, and post-incident review following SRE and ITIL best practices.

@@ -6,7 +6,7 @@ description: Implements Braintree API integration (Transactions, Vault, Subscrip
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: braintree, braintree transactions, braintree vault, braintree subscriptions,
     braintree marketplace, 3d secure, braintree webhooks, how do i integrate braintree
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-stripe-api, coding-paypal-api, coding-adyen-api
-------
+---
 # Braintree API Integration
 
 Implements production-grade Braintree API integration for Transactions, Vault (payment method storage), Subscriptions, and Marketplace (Braintree Commerce Platform). When loaded, this skill makes the model implement the `braintree` Python SDK patterns including: Client token generation for Drop-in UI, Payment method nonce tokenization, Transaction sale with 3D Secure (3DS), Vault storage of cards/PayPal accounts, Subscription billing with plans and add-ons, Marketplace split payments with sub-merchants, and webhook signature validation using the Braintree SDK's built-in verifier.

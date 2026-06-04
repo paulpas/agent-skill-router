@@ -6,7 +6,7 @@ description: Implements caching strategies (cache-aside, write-through, write-be
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: cache stampede, LRU eviction, write-through, TTL-based, cache invalidation,
     multi-tier cache, thundering herd, how do i speed up my app
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: system-design-fundamentals,data-intensive-systems,performance-optimization
-------
+---
 # Caching Strategy Architect
 Designs and implements high-performance caching layers that balance read speed, write consistency, and memory efficiency. The model evaluates access patterns, data volatility, and failure domains to select the right combination of cache patterns — cache-aside for read-heavy workloads, write-through or write-behind for consistency-sensitive paths, multi-tier architectures for latency-critical systems, and stampede prevention for hot-key resilience.
 

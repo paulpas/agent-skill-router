@@ -5,7 +5,7 @@ description: Integrates with the Jenkins REST API via python-jenkins and Jenkins
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: jenkins api, python-jenkins, jenkinsapi, jenkins job, jenkins pipeline,
     jenkins build, jenkins plugin, jenkins credentials
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-github-api, coding-gitlab-api, coding-circleci-api
-------
+---
 # Jenkins API & python-jenkins Integration
 
 Integrates with the Jenkins REST API using `python-jenkins` and `JenkinsAPI` libraries to automate jobs, builds, pipelines, credentials, plugins, nodes, folders, and system configuration.

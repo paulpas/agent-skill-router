@@ -5,7 +5,7 @@ description: Evaluates and designs software architecture using layered, hexagona
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: software architecture, system design, layered architecture, hexagonal
     architecture, clean architecture, separation of concerns, scalable design, architectural
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - diagrams
   related-skills: code-review, test-driven-development, modular-design
-------
+---
 # Software Architecture Guide
 
 Evaluates and designs software architecture from a senior architect's perspective — auditing existing systems for coupling violations, recommending proven structural patterns (layered, hexagonal/clean, event-driven), enforcing separation of concerns across modules, and producing actionable design decisions that balance long-term maintainability with delivery velocity.

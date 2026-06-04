@@ -6,7 +6,7 @@ description: Implements application-level caching and memoization patterns (LRU/
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: memoization, cache pattern, LRU cache, LFU cache, cache invalidation,
     TTL strategy, write-through, cache stampede, function decorator, how do i speed
@@ -33,7 +33,7 @@ metadata:
   - examples
   related-skills: framework-performance-tuning, software-error-handling, observability-patterns,
     pydantic-models
-------
+---
 # Memoization & Cache Patterns
 
 Implements production-grade caching and memoization strategies to eliminate redundant computation and I/O. When active, this skill makes the model design cache layers with correct invalidation semantics, choose between in-memory and distributed caches based on access patterns, prevent stampedes with mutex-based serialization, and implement write-through or write-back strategies that match consistency requirements. Grounded in SOLID principles — the Open/Closed Principle ensures cache implementations are swappable without changing calling code, and the Single Responsibility Principle isolates caching logic into dedicated layers.

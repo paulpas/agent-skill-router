@@ -27,8 +27,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Provide scalable, cost-effective storage for trading data with efficient query capabilities
 
 **Philosophy:** Data is an asset; storage must balance cost, accessibility, and retention policies

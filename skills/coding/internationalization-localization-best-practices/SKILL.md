@@ -4,7 +4,7 @@ description: Implements best practices for internationalization and localization
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: coding
   triggers: localization, internationalization, i18n, l10n, user experience
   archetypes: [implementation, evaluation]

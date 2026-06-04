@@ -6,7 +6,7 @@ description: Refactors monolithic codebases toward DDD — extracts bounded cont
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: ddd refactoring, extract bounded context, split aggregate, god object
     refactor, primitive obsession, anticorruption layer, how do i move to ddd, legacy
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: domain-driven-design, ddd-context-mapping, ddd-tactical-patterns
-------
+---
 # DDD Refactoring Patterns
 
 Refactors existing non-DDD codebases toward proper Domain-Driven Design by extracting bounded contexts from monoliths, splitting god objects into focused aggregates, introducing value objects to replace primitive obsession, and creating anticorruption layers around legacy integrations. Provides step-by-step migration patterns for controller/service layers into domain models with working before/after code examples.

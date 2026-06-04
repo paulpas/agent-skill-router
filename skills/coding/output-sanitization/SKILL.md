@@ -6,7 +6,7 @@ description: Escapes, encodes, and sanitizes outbound data for safe rendering in
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: output sanitization, html escaping, sql escaping, csv quoting, url encoding,
     shell argument escaping, log sanitization, xss prevention, output encoding, context-specific
@@ -32,7 +32,7 @@ metadata:
   - do-dont
   - examples
   related-skills: input-validation, security-review, software-error-handling
-------
+---
 # Output Sanitization Engineer
 
 Escapes, encodes, and sanitizes outbound data for safe rendering in context-specific output channels. Every piece of data leaving your application — whether rendered as HTML in a browser, formatted into a SQL query string, written to a CSV file, encoded in a URL, or logged to stdout — must be transformed according to the security rules of its target context. Treat every external value that reaches your presentation layer as potentially dangerous and apply context-appropriate escaping before rendering. Follow OWASP's Context-Specific Output Encoding guidelines to prevent XSS, SQL injection through output paths, CSV injection, and command injection via shell-unsafe string construction.

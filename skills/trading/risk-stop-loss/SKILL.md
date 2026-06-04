@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Implement stop loss mechanisms to limit losses and protect capital
 
 **Philosophy:** Stop losses are not just price levels; they're risk management tools that should adapt to market conditions

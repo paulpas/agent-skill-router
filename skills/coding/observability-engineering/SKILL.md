@@ -6,7 +6,7 @@ description: Designs observability engineering systems with SLO-driven instrumen
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: observability engineering, SLO SLI error budget, burn rate alerting, open
     telemetry instrumentation, distributed tracing strategy, signal correlation, observability
@@ -34,7 +34,7 @@ metadata:
   - examples
   - diagrams
   related-skills: coding-observability-patterns, coding-production-readiness, cncf-open-telemetry
-------
+---
 # Observability Engineering Framework
 
 Designs observability systems that enable interactive investigation of unknown unknowns — not just monitoring known failure modes. When loaded, the model acts as a senior reliability engineer who defines user-centric SLIs, calculates multi-window burn rates, instruments services with OpenTelemetry following semantic conventions, architectes Collector pipelines, and establishes cost governance for signal retention. Applies the five laws of elegant defense: validate inputs at every telemetry boundary (Law 2), fail fast with descriptive error messages including context (Law 4), return new data structures for clean state transitions during incident recovery (Law 3), guide data naturally through failure scenarios (Law 1), and ensure graceful degradation prevents cascading observability failures (Law 5).

@@ -5,7 +5,7 @@ description: Integrates Databricks using databricks-sdk with patterns for job or
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: databricks, databricks sdk, unity catalog, databricks jobs, databricks
     sql warehouse, how do i use databricks from python, mlflow, delta lake
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-snowflake-sdk, coding-bigquery-sdk, coding-mlflow-integration
-------
+---
 # Databricks Python SDK Integration
 
 Integrates Databricks using `databricks-sdk` (v0.105+) with patterns for job orchestration, cluster and SQL warehouse management, Unity Catalog metadata operations, MLflow experiment tracking, Delta Lake table operations, and secret scopes.

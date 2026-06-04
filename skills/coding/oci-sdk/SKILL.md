@@ -6,7 +6,7 @@ description: Integrates Oracle Cloud Infrastructure services (Compute, Object St
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: oracle cloud, oci sdk, oci python, oracle cloud infrastructure, autonomous
     database, object storage, how do i use oci from python
@@ -26,7 +26,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: aws-sdk, azure-sdk, ibm-cloud-api
-------
+---
 # Oracle Cloud Infrastructure (OCI) SDK Integration Patterns
 
 Integrates Oracle Cloud Infrastructure services using the OCI Python SDK. Covers config-based authentication, Compute instance management, Object Storage CRUD, Autonomous Database operations, and Functions (FaaS) invocation with OCI-specific patterns for pagination, tagging, and composite operations.

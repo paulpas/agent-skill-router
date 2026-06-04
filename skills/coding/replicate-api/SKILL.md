@@ -6,7 +6,7 @@ description: Integrates Replicate API (models, predictions, trainings, webhooks)
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: replicate, replicate api, replicate predictions, replicate training, replicate
     webhook, how do i use replicate, run open source models
@@ -31,7 +31,7 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-huggingface-api, coding-openai-api, coding-stabilityai-api
-------
+---
 # Replicate API Integration
 
 Integrates Replicate API using the `replicate` Python SDK for running and fine-tuning open-source AI models in the cloud. When loaded, this skill makes the model implement Replicate API calls for running predictions (sync and async), training/fine-tuning models, handling webhooks, and managing model deployments.

@@ -4,7 +4,7 @@ description: Implements load testing strategies using Gatling for performance te
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: performance
   triggers: load testing, performance testing, Gatling, web applications, microservices
   archetypes: [implementation, evaluation]

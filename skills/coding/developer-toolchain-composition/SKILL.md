@@ -6,7 +6,7 @@ description: Composes integrated developer toolchains by evaluating tool interop
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: developer toolchain, dev toolchain, how do i set up dev tools, tool interoperability,
     build system, ci cd pipeline, development workflow, tool integration, code to
@@ -34,7 +34,7 @@ metadata:
   - do-dont
   related-skills: coding-software-delivery-pipelines, coding-framework-requirements-validation,
     coding-tool-evaluation-workflow, coding-observability-patterns
-------
+---
 # Developer Toolchain Composition
 
 Composes integrated developer toolchains by evaluating tool interoperability, managing dependencies between tools, automating workflows, and reducing friction across the development lifecycle from code editing through production deployment. This skill makes the model design coherent tool ecosystems where each tool serves a specific purpose without overlap, communicates via standard interfaces, and collectively accelerates developer productivity while maintaining quality gates.

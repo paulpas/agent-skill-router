@@ -6,7 +6,7 @@ description: Crafts precise, domain-specific instructions within SKILL.md files 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: instruction engineering, prompt design, skill instructions, how do i write
     better instructions, AI behavior guidance, constraint blocks, few-shot examples,
@@ -30,7 +30,7 @@ metadata:
   - examples
   - do-dont
   related-skills: skill-composition, skill-ecosystem-design, agent-context-management
-------
+---
 # Instruction Engineering for AI Skills
 
 Crafts precise, domain-specific instructions within SKILL.md files that reliably steer AI model behavior. When loaded, this skill makes the model act as a senior technical writer and behavioral architect — analyzing existing skill content for ambiguity, rewriting generic workflows into concrete step-by-step procedures with real code, designing constraint blocks that enforce quality standards, and embedding fallback routing so every decision branch has an explicit error path. This skill is the meta-skill about writing SKILL.md files that work as intended on first load.

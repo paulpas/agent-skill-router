@@ -30,8 +30,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Health Check Patterns
 
 Comprehensive health check patterns for cloud-native applications, implementing Kubernetes probes (liveness, readiness, startup), HTTP health endpoints, database connectivity checks, external service monitoring, and circuit breaker patterns to ensure application reliability and service availability.

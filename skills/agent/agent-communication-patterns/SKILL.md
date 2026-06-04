@@ -6,7 +6,7 @@ description: Implements inter-agent communication patterns (message passing, eve
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: agent
   triggers: agent communication, message passing, event driven, shared memory, rpc
     calls, multi agent coordination, inter agent messaging, message queue agents,
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: ai-agent-safety,multi-agent-patterns,task-decomposition-engine
-------
+---
 # Agent Communication Patterns
 
 Implements reliable inter-agent communication mechanisms for multi-agent systems. This skill makes the model design and build message passing, event-driven coordination, shared-memory state exchange, and RPC-style request-response protocols that enable agents to coordinate without tight coupling, race conditions, or silent data corruption.

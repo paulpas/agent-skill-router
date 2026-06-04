@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Extract actionable insights from order book dynamics and trade flow data
 
 **Philosophy:** Order flow reveals hidden liquidity and order imbalances. Prioritize microsecond timing, bid-ask spread analysis, and volume profiling for predictive signals.

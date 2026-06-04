@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Implement forecasting models that predict future price movements and market indicators
 
 **Philosophy:** Markets exhibit both predictable patterns and random noise. Prioritize robustness, uncertainty quantification, and regime-aware forecasts over pure prediction accuracy.

@@ -5,7 +5,7 @@ description: Integrates with Atlassian suite (Jira, Confluence, Bitbucket, Rovo,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: jira api, confluence api, bitbucket api, atlassian python, jira automation,
     confluence pages, atlassian forge
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-microsoft-graph-api, coding-google-workspace-api, coding-asana-api
-------
+---
 
 # Atlassian API Integration
 

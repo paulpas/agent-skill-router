@@ -6,7 +6,7 @@ description: Integrates with Terraform and OpenTofu via the HCP Terraform API (p
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: terraform api, terraform cloud, cdktf python, terraform provider, opentofu,
     terraform state, terraform modules, hcp terraform
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-kubernetes-api, coding-pulumi, coding-ansible-api
-------
+---
 # Terraform/OpenTofu SDK & API Integration
 
 Integrates with Terraform and OpenTofu using the HCP Terraform API (via `pyTFE`), the CDKTF Python SDK, and the Terraform Cloud/Enterprise REST API to programmatically manage providers, resources, state, workspaces, and modules.

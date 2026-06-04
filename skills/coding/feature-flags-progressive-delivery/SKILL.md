@@ -4,7 +4,7 @@ description: Implements feature flag systems with progressive delivery, A/B test
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: feature flags, progressive delivery, canary release, A/B testing, flag management, gradual rollout, feature toggle, how do i safely roll out new features
   archetypes:

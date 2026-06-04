@@ -16,7 +16,7 @@ metadata:
     directive_strength: high
     abstraction_level: tactical
 
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: zendesk, zendesk api, ticket management, automate zendesk, integrate zendesk, how do i zendesk api
   role: implementation

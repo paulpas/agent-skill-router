@@ -4,7 +4,7 @@ description: Implements AWS Secrets Manager for secure secret storage, managemen
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+  version: "1.1.1"
   domain: coding
   triggers: aws secrets manager, boto3, secret management, automatic rotation, credential management
   archetypes: [implementation, secret management]
@@ -54,6 +54,47 @@ get_secret_value_response = client.get_secret_value(SecretId='MyDatabaseSecret')
 print(get_secret_value_response['SecretString'])
 ```
 
+### Example 2: Configuring Automatic Secret Rotation
+
+```python
+import boto3
+import json
+from botocore.exceptions import ClientError
+
+def enable_rotation(secret_arn: str, rotation_lambda_arn: str) -> None:
+    """Enable automatic rotation for a secret using a Lambda function."""
+    client = boto3.client("secretsmanager", region_name="us-east-1")
+    try:
+        response = client.rotate_secret(
+            SecretId=secret_arn,
+            RotationLambdaARN=rotation_lambda_arn,
+            RotationRules={
+                "AutomaticallyAfterDays": 30
+            }
+        )
+        print(f"Rotation scheduled. Next rotation: {response['NextRotationDate']}")
+    except ClientError as e:
+        if e.response["Error"]["Code"] == "ResourceNotFoundException":
+            raise ValueError(f"Secret not found: {secret_arn}") from e
+        raise
+
+def get_rotated_secret(secret_id: str) -> dict:
+    """Retrieve and parse a secret with error handling."""
+    client = boto3.client("secretsmanager", region_name="us-east-1")
+    try:
+        response = client.get_secret_value(SecretId=secret_id)
+        return json.loads(response["SecretString"])
+    except ClientError as e:
+        error_code = e.response["Error"]["Code"]
+        if error_code == "AccessDeniedException":
+            raise PermissionError(
+                f"Insufficient IAM permissions to access secret '{secret_id}'"
+            ) from e
+        elif error_code == "ResourceNotFoundException":
+            raise FileNotFoundError(f"Secret not found: {secret_id}") from e
+        raise
+```
+
 ### FAQs Regarding AWS Secrets Manager Functionality:
 - **Can I define resource policies to control access to secrets?**  
 Yes, you have the ability to define resource-based policies in Secrets Manager to control access.
@@ -63,8 +104,6 @@ Automated rotations can be configured using AWS Lambda functions you provide for
 AWS Secrets Manager provides redundancy through multi-region support, ensuring that secrets are available when needed.
 
 By adopting best practices and prioritizing security, AWS Secrets Manager plays a crucial role in maintaining the integrity and confidentiality of sensitive information across your applications and services.
-
----
 
 ---
 

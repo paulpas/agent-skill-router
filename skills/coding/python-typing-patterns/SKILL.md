@@ -6,7 +6,7 @@ description: Implements advanced Python typing patterns including generic classe
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: python generics, typing patterns, Protocol structural subtyping, TypeVar
     bounds, Generic classes, covariance contravariance, TypeAliasType, runtime type
@@ -32,7 +32,7 @@ metadata:
   - examples
   - do-dont
   related-skills: python-modern-development, type-safety-enforcement
-------
+---
 # Python Advanced Typing Patterns
 
 Implements advanced static typing constructs — Generic classes, Protocol structural subtyping, TypeVar bounds and constraints, variance annotations, composite type construction, and runtime type inspection — to catch type errors at development time in Python codebases.

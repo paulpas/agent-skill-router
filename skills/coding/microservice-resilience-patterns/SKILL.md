@@ -6,7 +6,7 @@ description: Implements production-ready resilience patterns (circuit breaker, r
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: circuit breaker, retry pattern, bulkhead pattern, resilience, fault tolerance,
     timeout handling, graceful degradation, fallback strategy, cascading failure,
@@ -33,7 +33,7 @@ metadata:
   - examples
   related-skills: microservices-architecture, idempotent-distributed-operations, observability-patterns,
     event-driven-patterns
-------
+---
 # Microservice Resilience Patterns
 
 Implements production-ready resilience patterns to prevent cascading failures in distributed microservice systems. When loaded, this skill makes the model design, implement, and validate circuit breakers, retry strategies with jitter, bulkhead isolation, timeout enforcement, and graceful degradation mechanisms — all tailored to the specific failure modes of the target architecture.

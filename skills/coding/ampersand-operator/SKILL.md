@@ -6,7 +6,7 @@ description: Implements bitwise AND operations, address/reference resolution, an
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: '&, ampersand operator, bitwise AND, address of, flag checking, bitmask,
     pointer manipulation'
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-bitwise-operations, coding-error-handling
-------
+---
 # Ampersand (&) Operator Reference
 
 This skill teaches how to correctly use the `&` (ampersand) operator across multiple programming languages for bitwise AND operations on integer types, address-of / reference binding in systems languages (C, C++, Rust), and set intersection in Python. When loaded, this skill makes the model produce correct, idiomatic code that respects language-specific semantics, avoids precedence pitfalls, and handles memory safety explicitly.

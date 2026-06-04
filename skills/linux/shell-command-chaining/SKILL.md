@@ -6,7 +6,7 @@ description: Implements shell command chaining patterns using &&, ||, and ; oper
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -29,7 +29,7 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: linux-shell-process-management, shell-parameter-expansion
-------
+---
 # Shell Command Chaining and Conditional Execution
 
 Implements reliable sequential and conditional command execution patterns using `&&` (AND-list), `||` (OR-list), and `;` (semicolon) operators in bash scripts. Teaches how to build validation gates, fallback chains, safe cleanup sequences, and deployment pipelines that behave predictably under `set -e`.

@@ -6,7 +6,7 @@ description: Implements long-term codebase maintainability strategies including 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: software maintainability, codebase health, technical debt strategy, refactoring
     cadence, cyclomatic complexity budget, dependency freshness, how do i keep my
@@ -33,7 +33,7 @@ metadata:
   - examples
   related-skills: technical-debt-management, refactoring-techniques, code-quality-metrics,
     performance-optimization
-------
+---
 # Software Maintainability Framework
 
 Implements strategies for keeping codebases healthy and navigable as they grow over years of development. When loaded, this skill makes the model act as a senior software architect focused on long-term sustainability — designing refactoring cadences, setting complexity budgets, monitoring dependency health, and preventing the gradual architectural decay that turns maintainable systems into unmaintainable ones.

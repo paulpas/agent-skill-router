@@ -4,7 +4,7 @@ description: Integrates with the GitHub REST API and GraphQL API via PyGithub an
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: github api, octokit, pygithub, github rest api, github graphql, manage repositories, github actions, pull request automation
   archetypes:
@@ -28,7 +28,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-gitlab-api, coding-bitbucket-api, coding-jenkins-api
-------
+---
 # GitHub API & Octokit Integration
 Integrates with GitHub's REST API v3 and GraphQL API v4 to automate repository management, issue tracking, pull request workflows, Actions pipelines, and Copilot usage analytics. Use PyGithub for Python projects or Octokit for JavaScript/TypeScript projects.
 ## TL;DR for Code Generation

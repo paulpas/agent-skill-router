@@ -30,8 +30,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Skill: coding-event-bus
 
 # Async pub/sub event bus with typed events, mixed sync/async dispatch, and singleton initialization for trading systems

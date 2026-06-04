@@ -30,8 +30,8 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: tactical
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 # Cc Skill Continuous Learning
 
 Orchestrates intelligent skill selection and execution for cc skill continuous learning workflows. Applies the 5 Laws of Elegant Defense to guide data naturally through the orchestration pipeline, preventing errors before they occur. Selects optimal skills based on multi-factor scoring including text similarity, historical performance, and system availability.

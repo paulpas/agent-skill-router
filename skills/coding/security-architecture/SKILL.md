@@ -5,7 +5,7 @@ description: Designs secure system architecture with threat modeling (STRIDE), d
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: security architecture, threat modeling, STRIDE, defense in depth, zero
     trust, authentication architecture, authorization design, how do i secure a system
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-api-security-patterns, coding-code-review, coding-dependency-supply-chain-security
-------
+---
 # Security Architecture Patterns
 
 Designs secure system architecture by applying threat modeling (STRIDE methodology), defense-in-depth layering, zero-trust principles, and robust authentication/authorization patterns. When loaded, the model acts as a senior security architect — analyzing system boundaries, identifying threats, and producing concrete architectural safeguards aligned with OWASP standards.

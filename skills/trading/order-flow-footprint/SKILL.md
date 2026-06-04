@@ -6,7 +6,7 @@ description: Analyzes footprint charts, volume delta, cumulative delta, and bid-
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: trading
   triggers: footprint chart, volume delta, cumulative delta, order flow analysis,
     delta divergence, stacked imbalance, aggressive buying, order flow footprint
@@ -29,7 +29,7 @@ metadata:
   - examples
   - do-dont
   related-skills: ai-order-flow-analysis, data-order-book, technical-volume-profile
-------
+---
 # Footprint Chart & Delta Analysis
 
 Analyzes footprint-level tick data to compute volume delta, cumulative delta, and bid-ask imbalances that reveal aggressive order flow. Detects institutional buying/selling signatures through stacked imbalances, divergence patterns, and absorption at key price levels.

@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Transform price and volume data into predictive features for machine learning models
 
 **Philosophy:** Features should capture market structure, liquidity, and behavioral biases. Prioritize interpretability, robustness to market regime changes, and low inter-feature correlation.

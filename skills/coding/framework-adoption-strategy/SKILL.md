@@ -6,7 +6,7 @@ description: Orchestrates structured framework adoption through phased rollout p
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: framework adoption strategy, phased rollout, framework migration plan,
     how do i adopt a new framework in production, framework transition planning, rollback
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   related-skills: framework-selection, framework-utilization, framework-requirements,
     version-migration
-------
+---
 # Framework Adoption Strategy
 
 Orchestrates structured framework adoption through phased rollout planning, migration strategies, acceptance criteria definition, rollback procedures, and success metrics. This skill ensures teams transition smoothly from the point of selecting a framework to successfully utilizing it in production — covering the critical gap where most adoptions fail.

@@ -6,7 +6,7 @@ description: Implements PagerDuty API integration (incident management, on-call 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: pagerduty, incidents, on-call schedules, escalation policies, events api
     v2, pagerduty alerts, how do i trigger pagerduty alerts, incident management
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-datadog-api, coding-sentry-api, coding-grafana-prometheus
-------
+---
 # PagerDuty API Integration
 
 Implements production-grade PagerDuty API integration using the `pdpyras` Python SDK and direct HTTP API calls. When loaded, this skill makes the model implement Event API v2 ingestion (trigger/acknowledge/resolve), incident querying and management, on-call schedule lookup, escalation policy management, alert grouping, and maintenance window creation. All implementations follow PagerDuty best practices: use Events API for alert ingestion (not REST API), always include `dedup_key` for deduplication, implement exponential backoff for rate limits, and validate API connectivity on startup.

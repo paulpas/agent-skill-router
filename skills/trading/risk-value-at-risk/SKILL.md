@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Quantify potential losses in portfolio value over specified time horizons
 
 **Philosophy:** VaR provides a common language for risk comparison; different methods suit different market regimes

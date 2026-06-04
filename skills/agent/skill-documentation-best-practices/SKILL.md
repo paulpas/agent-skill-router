@@ -21,7 +21,7 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: skill-engineering, skill-trigger-engineering, writing-skills
-------
+---
 
 # Skill Documentation Best Practices
 

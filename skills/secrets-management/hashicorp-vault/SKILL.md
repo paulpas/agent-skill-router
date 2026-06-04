@@ -4,7 +4,7 @@ description: Implements HashiCorp Vault for secure secret management, including 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+version: "1.1.1"
   domain: secrets-management
   triggers: HashiCorp Vault, secret management, API security, dynamic secrets, credential management
   archetypes: [implementation, secret management]

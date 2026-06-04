@@ -6,7 +6,7 @@ description: Designs reusable component architectures using compound components,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: component architecture, compound components, headless ui, render props,
     component composition, container presentational pattern, component hooks, how
@@ -32,7 +32,7 @@ metadata:
   - examples
   - do-dont
   related-skills: design-pattern-selection,abstraction-design-patterns,solid-principles
-------
+---
 # Component Architecture Patterns
 
 Designs reusable, testable component architectures using compound components, headless UI patterns, render props, and composition over inheritance. Separates concerns between data flow (container) and rendering logic (presentational), enabling libraries where behavior is decoupled from presentation.

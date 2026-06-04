@@ -5,7 +5,7 @@ description: Integrates Weaviate vector database (v4 Python client, collections,
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: weaviate, vector database, weaviate client, hybrid search, generative
     search, weaviate graphql, how do i use weaviate, vector collections
@@ -30,7 +30,7 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-pinecone-api, coding-chroma, coding-openai-api, coding-langchain
-------
+---
 # Weaviate API Integration
 
 Integrates Weaviate vector database using the `weaviate-client` Python SDK (v4.21+). When loaded, this skill makes the model implement Weaviate operations for collection management, vector and hybrid search, generative search, batch import, and data modeling with the v4 collections API.

@@ -6,7 +6,7 @@ description: Equips individual developers with learning strategies, code review 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: polyglot developer, multi-language productivity, learn new language, code
     review in different language, language translation, context switching between
@@ -33,7 +33,7 @@ metadata:
   - do-dont
   - examples
   related-skills: polyglot-development, framework-selection, version-migration, single-letter-variables
-------
+---
 # Polyglot Developer Patterns
 
 Senior developer who learns new languages efficiently, reviews code across unfamiliar languages, translates idioms between paradigms, and builds long-term multi-language fluency without burning context-switching bandwidth.

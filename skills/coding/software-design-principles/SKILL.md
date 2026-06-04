@@ -5,7 +5,7 @@ description: Implements core software design principles (SOLID, DRY, KISS, depen
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: software design principles, SOLID, DRY, KISS, dependency injection, clean
     architecture, modular design
@@ -30,7 +30,7 @@ metadata:
   - do-dont
   - examples
   related-skills: refactoring, test-driven-development, code-review
-------
+---
 # Software Design Principles
 
 Applies foundational software design principles to guide architecture decisions, enforce maintainable structure, and prevent technical debt. This skill makes the model evaluate existing code and design new systems against established engineering standards, ensuring every module, class, and function follows SOLID, DRY, and KISS rules with practical dependency injection patterns.

@@ -6,7 +6,7 @@ description: Integrates with the GitLab REST API v4 and GraphQL API via python-g
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: gitlab api, python-gitlab, gitlab ci/cd, merge request automation, gitlab
     pipelines, gitlab runner, gitlab graphql, manage projects
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-github-api, coding-bitbucket-api, coding-kubernetes-api
-------
+---
 # GitLab API & python-gitlab Integration
 
 Integrates with the GitLab REST API v4 and GraphQL API using the `python-gitlab` library to programmatically manage projects, groups, merge requests, CI/CD pipelines, runners, container registry, and GitLab Pages.

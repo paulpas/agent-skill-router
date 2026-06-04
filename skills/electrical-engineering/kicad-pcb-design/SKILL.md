@@ -6,7 +6,7 @@ description: Implements modern KiCad 9+ PCB design workflows covering schematic 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: electrical-engineering
   triggers: PCB design, KiCad, printed circuit board, schematic capture, signal integrity,
     impedance control, how do i design a circuit board, EMC compliance
@@ -29,7 +29,7 @@ metadata:
   - config
   - diagrams
   related-skills: electrical-engineering-hardware-debugging, electrical-engineering-component-selection
-------
+---
 # KiCad PCB Design Guide
 
 Implements modern KiCad 9+ PCB design workflows — from schematic capture through fabrication-ready file export — with emphasis on controlled impedance routing, EMC-aware layout, and robust DRC validation. Acts as a senior hardware design engineer ensuring every board meets signal integrity, manufacturability, and regulatory standards before leaving the desk.

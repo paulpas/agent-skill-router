@@ -5,7 +5,7 @@ description: Deploys Go applications with build optimization, multi-stage Docker
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +30,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Go Deployment Patterns
 
 Senior DevOps engineer deploying optimized Go applications with multi-stage Docker builds, binary sizing, cross-compilation, and deployment strategies. This skill covers building minimal binaries, container optimization, and production deployment patterns.

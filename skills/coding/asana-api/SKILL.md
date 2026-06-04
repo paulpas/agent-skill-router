@@ -6,7 +6,7 @@ description: Integrates with Asana API to manage tasks, projects, workspaces, go
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: asana api, asana python, asana tasks, asana projects, asana webhooks,
     asana sdk, asana automation
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-clickup-api, coding-monday-api, coding-atlassian-api
-------
+---
 
 # Asana API Integration
 

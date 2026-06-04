@@ -27,8 +27,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Ensure trading data meets quality standards before processing to prevent bad decisions
 
 **Philosophy:** Garbage in, garbage out; validating data at pipeline boundaries catches errors early and prevents cascading failures

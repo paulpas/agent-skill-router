@@ -28,8 +28,8 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-------
+version: "1.0.0"
+---
 **Role:** Design and implement ensemble methods that leverage multiple models for trading signals
 
 **Philosophy:** Diversification reduces risk and improves stability. Prioritize models that are diverse in structure, training data, and error patterns to maximize ensemble benefits.

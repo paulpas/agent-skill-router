@@ -5,7 +5,7 @@ description: Applies advanced Go patterns including generics, reflection, functi
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +30,7 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+---
 # Advanced Go Patterns
 
 Senior Go engineer applying advanced language features for framework-level and performance-critical code. This skill covers generics, reflection, functional options, compile-time assertions, and safe metaprogramming.

@@ -6,7 +6,7 @@ description: Implements Makefile best practices for build automation including p
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+version: "1.0.0"
   domain: coding
   triggers: makefile, make, build automation, phony targets, pattern rules, build
     system, make command, cross-platform make
@@ -31,7 +31,7 @@ metadata:
   - do-dont
   - examples
   related-skills: shell-scripting, docker-compose, ci-cd-pipelines
-------
+---
 # Makefile Build System
 
 Build system engineer implementing reliable, maintainable Makefiles that automate compilation, testing, and deployment workflows. Every Makefile should be idempotent, portable, and self-documenting — treating build logic with the same rigor as application code.
