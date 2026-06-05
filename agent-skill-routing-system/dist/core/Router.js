@@ -21,6 +21,8 @@ const ScoreExplanation_1 = require("../observability/ScoreExplanation");
 const QueryArchetypeInferencer_1 = require("./QueryArchetypeInferencer");
 const ArchetypeRankingBoost_1 = require("./ArchetypeRankingBoost");
 const AntiTriggerScorer_1 = require("./AntiTriggerScorer");
+const AppError_1 = require("./AppError");
+const IntentDecomposer_1 = require("../retrieval/IntentDecomposer");
 /**
  * Router - orchestrates skill routing
  */
@@ -80,13 +82,21 @@ class Router {
         // Priority: programmatic config > env var > hardcoded default
         const scoreConfig = {
             vectorWeight: config.retrieval?.vectorWeight ?? envWeight('RETRIEVAL_VECTOR_WEIGHT', 0.50),
-            bm25Weight: config.retrieval?.bm25Weight ?? envWeight('RETRIEVAL_BM25_WEIGHT', 0.20),
+            bm25Weight: config.retrieval?.bm25Weight ?? envWeight('RETRIEVAL_BM25_WEIGHT', 0.30),
             triggerMatchWeight: config.retrieval?.triggerMatchWeight ?? envWeight('RETRIEVAL_TRIGGER_MATCH_WEIGHT', 0.15),
             archetypeWeight: config.retrieval?.archetypeWeight ?? envWeight('RETRIEVAL_ARCHETYPE_WEIGHT', 0.10),
             historicalWeight: config.retrieval?.historicalWeight ?? envWeight('RETRIEVAL_HISTORICAL_WEIGHT', 0.05),
         };
         this.hybridScorer = new HybridScorer_1.HybridScorer(scoreConfig);
         this.bm25Indexer = BM25Indexer_1.BM25Indexer.buildIndex([]); // Will be rebuilt when skills are indexed
+        // Semantic selection control: enables/disables vector similarity + BM25 scoring
+        const semanticSelectionEnabled = process.env.SEMANTIC_SKILL_SELECTION !== 'false';
+        if (!semanticSelectionEnabled) {
+            this.hybridScorer = new HybridScorer_1.HybridScorer({
+                vectorWeight: 0,
+                bm25Weight: 0,
+            });
+        }
         // MMR diversifier (Phase 3)
         // Priority: programmatic config > env var > hardcoded default (0.7)
         const diversityEnabled = config.diversity?.enabled ?? true;
@@ -107,6 +117,15 @@ class Router {
         this.vectorDatabase.setSkills(this.skillRegistry.getAllSkills());
         // Build BM25 index from all loaded skills
         this.bm25Indexer = this.buildBM25Index();
+        // Build the dynamic trigger→domain index from loaded skills' metadata.triggers.
+        // This makes keyword matching self-documenting: new skills automatically teach
+        // the router their triggers without any code changes to IntentDecomposer.
+        IntentDecomposer_1.IntentDecomposer.initialize(this.skillRegistry);
+        const idx = IntentDecomposer_1.IntentDecomposer.getTriggerDomainIndex();
+        this.logger.info('Dynamic trigger domain index built', {
+            skillCount: this.skillRegistry.getAllSkills().length,
+            indexedTriggers: idx?.size ?? 0,
+        });
         this.logger.info('Router initialized successfully', {
             skillCount: this.skillRegistry.getAllSkills().length,
         });
@@ -130,10 +149,20 @@ class Router {
                 error: safetyResult.errorMessage,
                 flags: safetyResult.flags,
             });
-            throw new Error(`Safety validation failed: ${safetyResult.errorMessage}`);
+            throw new AppError_1.ValidationError(`Safety validation failed: ${safetyResult.errorMessage}`, 'SAFETY_VALIDATION');
+        }
+        // Truncate task to 2000 chars before embedding to save cost/latency
+        const embeddingInput = request.task.length > 2000
+            ? request.task.slice(0, 2000)
+            : request.task;
+        if (embeddingInput.length !== request.task.length) {
+            this.logger.info('Task truncated for embedding', {
+                originalLength: request.task.length,
+                truncatedLength: embeddingInput.length,
+            });
         }
         // Generate task embedding
-        const taskEmbeddingResponse = await this.embeddingService.generateEmbedding(request.task);
+        const taskEmbeddingResponse = await this.embeddingService.generateEmbedding(embeddingInput);
         // Search for candidates via vector similarity
         const candidates = await this.vectorDatabase.search(taskEmbeddingResponse.embedding, 20);
         this.logger.info('Vector search candidates', {
@@ -211,7 +240,7 @@ class Router {
             vectorScore: c.score, // Pass the actual vector DB similarity score
         })));
         // Apply deterministic filtering (quality gates, max skills, etc.)
-        const filteredSkills = this.applyDeterministicFilter(rankedSkills, request.constraints);
+        let filteredSkills = this.applyDeterministicFilter(rankedSkills, request.constraints);
         this.logger.info('Selected skills for request', {
             taskId,
             task: request.task.slice(0, 100),
@@ -230,6 +259,32 @@ class Router {
         const plan = this.executionPlanner.generatePlan(request.task, filteredSkills, request.context);
         // Calculate confidence score
         const confidence = this.calculateConfidence(filteredSkills);
+        // Minimum confidence threshold: if the top skill's confidence is too low,
+        // the query is too ambiguous to route meaningfully. Return empty results
+        // instead of hallucinating a match.
+        const MIN_CONFIDENCE_THRESHOLD = 0.15;
+        if (filteredSkills.length > 0 && filteredSkills[0].score < MIN_CONFIDENCE_THRESHOLD) {
+            this.logger.warn('Query confidence below threshold, returning empty results', {
+                taskId,
+                topSkill: filteredSkills[0].name,
+                topScore: filteredSkills[0].score,
+                threshold: MIN_CONFIDENCE_THRESHOLD,
+            });
+            filteredSkills = [];
+        }
+        // Collect token usage from embedding service
+        const embeddingTokens = taskEmbeddingResponse.inputTokens ?? 0;
+        // Collect token usage from LLM ranker if it was used
+        let llmInputTokens = 0;
+        let llmOutputTokens = 0;
+        const llmRankingEnabled = process.env.LLM_RANKING_ENABLED === 'true';
+        // The LLMRanker overwrites its token counters on each call (not accumulated).
+        // Since we call rankCandidates at most once per routeTask, getInputTokens/getOutputTokens
+        // represent that single call's token usage.
+        if (llmRankingEnabled && this.llmRanker) {
+            llmInputTokens = this.llmRanker.getInputTokens();
+            llmOutputTokens = this.llmRanker.getOutputTokens();
+        }
         // Build response
         const response = {
             taskId,
@@ -240,6 +295,8 @@ class Router {
             candidatePool: candidates.map((c) => c.skill.metadata.name),
             routingScores: this.extractRoutingScores(filteredSkills),
             latencyMs: Date.now() - startTime,
+            inputTokens: embeddingTokens + llmInputTokens,
+            outputTokens: llmOutputTokens,
         };
         // Add score explanations if requested (Phase 5)
         const explainRequested = request.constraints?.includeScoreBreakdown === true ||
@@ -265,9 +322,9 @@ class Router {
         return response;
     }
     /**
-     * Apply deterministic filtering to ranked skills
-     * Includes quality gate to filter out stub skills (draft: true)
-     */
+       * Apply deterministic filtering to ranked skills
+       * Includes quality gate to filter out stub skills (draft: true) and built-in skills with no metadata (customize-opencode)
+       */
     applyDeterministicFilter(rankedSkills, constraints) {
         let filtered = rankedSkills;
         // Quality gate: filter out stub/draft skills
@@ -285,6 +342,18 @@ class Router {
                 filteredNames: rankedSkills
                     .filter((s) => draftSkillSet.has(s.name))
                     .map((s) => s.name),
+            });
+        }
+        // Exclude built-in skill that has no metadata and over-matches broadly
+        const BUILT_IN_EXCLUDE_LIST = new Set(['customize-opencode']);
+        const beforeBuiltinFilter = filtered.length;
+        filtered = filtered.filter((skill) => !BUILT_IN_EXCLUDE_LIST.has(skill.name));
+        const builtinFiltered = beforeBuiltinFilter - filtered.length;
+        if (builtinFiltered > 0) {
+            this.logger.info('Filtered out built-in skill (no metadata, over-matching)', {
+                builtinFiltered,
+                remaining: filtered.length,
+                filteredNames: ['customize-opencode'],
             });
         }
         // Filter by max skills
@@ -527,11 +596,42 @@ class Router {
         };
     }
     /**
+     * Detect whether a route response indicates a gap in existing skills.
+     * Returns true when:
+     *   - No skills matched (empty selectedSkills)
+     *   - Confidence score is below the configured threshold
+     *   - Top skill's raw score is very low (< 0.1), indicating almost certainly not a real match
+     *
+     * The confidence threshold is read from the AUTO_SKILL_CONFIDENCE_THRESHOLD env var (default: 0.35).
+     */
+    detectGap(response) {
+        const threshold = parseFloat(process.env.AUTO_SKILL_CONFIDENCE_THRESHOLD || '0.35');
+        if (isNaN(threshold)) {
+            // Fallback to sensible default if env var is garbage
+            return response.selectedSkills.length === 0;
+        }
+        // No skills matched at all → gap
+        if (response.selectedSkills.length === 0)
+            return true;
+        // Confidence below threshold → gap
+        if (response.confidence < threshold)
+            return true;
+        // Top skill score is very low (< 0.1) — almost certainly not a real match
+        const topScore = response.selectedSkills[0]?.score ?? 0;
+        if (topScore < 0.1)
+            return true;
+        return false;
+    }
+    /**
      * Reload skills
      */
     async reloadSkills() {
         await this.skillRegistry.reload();
         this.vectorDatabase.setSkills(this.skillRegistry.getAllSkills());
+        // Rebuild BM25 index so newly added skills are searchable (important after auto-creation)
+        this.bm25Indexer = this.buildBM25Index();
+        // Rebuild the dynamic trigger→domain index after reload
+        IntentDecomposer_1.IntentDecomposer.initialize(this.skillRegistry);
     }
     /**
      * Get all loaded skill definitions (delegates to registry)

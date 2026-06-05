@@ -7,6 +7,8 @@ export * from './core/ExecutionPlanner';
 export * from './core/SafetyLayer';
 export * from './core/SkillCompressor';
 export * from './mcp/MCPBridge';
+export * from './core/AutoSkillCreator';
+export * from './core/types';
 export * from './embedding/EmbeddingService';
 export * from './embedding/VectorDatabase';
 export * from './llm/LLMRanker';
@@ -21,6 +23,7 @@ export declare class AgentSkillRoutingApp {
     private router;
     private mcpBridge;
     private githubLoader;
+    private autoSkillCreator;
     private logger;
     private ready;
     private loadingError;

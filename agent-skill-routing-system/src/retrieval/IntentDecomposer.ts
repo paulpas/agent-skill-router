@@ -29,131 +29,6 @@ const DOMAINS = [
 ] as const;
 
 /**
- * Keyword-to-domain mapping. Each keyword maps to one or more domains.
- * This is the fallback map for terms not covered by any loaded skill's triggers.
- * When a new skill is added, its triggers are automatically indexed at load time,
- * so this static map only needs entries for edge cases (domains without matching skills,
- * or highly specific keywords that predate the dynamic indexing system).
- */
-const KEYWORD_MAP: Record<string, string[]> = {
-  // networking domain keywords
-  'dns': ['networking'],
-  'tcp ip': ['networking'],
-  'subnetting': ['networking'],
-  'routing protocols': ['networking'],
-  'bgp': ['networking'],
-  'ospf': ['networking'],
-  'firewall': ['networking'],
-  'vpn': ['networking'],
-  'vlan': ['networking'],
-  'switch configuration': ['networking'],
-  'troubleshoot network': ['networking'],
-  'network security': ['networking'],
-  'load balancing': ['networking'],
-  'cdn': ['networking'],
-
-  // devops domain keywords
-  'devops': ['devops'],
-  'ci cd': ['devops'],
-  'continuous integration': ['devops'],
-  'continuous deployment': ['devops'],
-  'deployment pipeline': ['devops'],
-  'infrastructure as code': ['devops'],
-  'iac': ['devops'],
-  'terraform': ['devops'],
-  'ansible': ['devops'],
-  'puppet': ['devops'],
-  'chef': ['devops'],
-  'containerization': ['devops'],
-  'monitoring': ['devops'],
-  'observability': ['devops'],
-  'alerting': ['devops'],
-  'python automation': ['devops'],
-  'python devops': ['devops'],
-
-  // coding domain keywords
-  'rust': ['coding'],
-  'typescript': ['coding'],
-  'javascript': ['coding'],
-  'python': ['coding'],
-  'go': ['coding', 'go'],
-  'golang': ['coding', 'go'],
-  'refactoring': ['coding'],
-  'testing': ['coding'],
-  'unit test': ['coding'],
-  'integration test': ['coding'],
-  'tdd': ['coding'],
-  'code review': ['coding'],
-  'code quality': ['coding'],
-  'code-review': ['coding'],
-  'software engineering': ['coding'],
-  'clean code': ['coding'],
-  'design pattern': ['coding'],
-  // cncf domain keywords
-  'kubernetes': ['cncf'],
-  'k8s': ['cncf'],
-  'docker': ['cncf'],
-  'helm': ['cncf'],
-  'prometheus': ['cncf'],
-  'istio': ['cncf'],
-  'service mesh': ['cncf'],
-  'container orchestration': ['cncf'],
-  'microservices': ['cncf'],
-  'kafka': ['cncf'],
-  'etcd': ['cncf'],
-  'coredns': ['cncf'],
-  'calico': ['cncf'],
-  // trading domain keywords
-  'trading': ['trading'],
-  'crypto': ['trading'],
-  'cryptocurrency': ['trading'],
-  'bitcoin': ['trading'],
-  'ethereum': ['trading'],
-  'stop loss': ['trading'],
-  'stop-loss': ['trading'],
-  'bollinger bands': ['trading'],
-  'rsi': ['trading'],
-  'macd': ['trading'],
-  'vwap': ['trading'],
-  'order book': ['trading'],
-  'market making': ['trading'],
-  'arbitrage': ['trading'],
-  'defi': ['trading'],
-  'uniswap': ['trading'],
-  // agent domain keywords
-  'agent': ['agent'],
-  'orchestration': ['agent'],
-  'routing': ['agent'],
-  'delegation': ['agent'],
-  'multi-agent': ['agent'],
-  'task decomposition': ['agent'],
-  'tool use': ['agent'],
-  'function calling': ['agent'],
-  // linux domain keywords
-  'linux': ['linux'],
-  'systemd': ['linux'],
-  'bash': ['linux'],
-  'shell scripting': ['linux'],
-  'cron': ['linux'],
-  'iptables': ['linux'],
-  'kernel': ['linux'],
-  'networking': ['linux', 'cncf'],
-  // programming domain keywords
-  'algorithm': ['programming'],
-  'data structure': ['programming'],
-  'dynamic programming': ['programming'],
-  'graph traversal': ['programming'],
-  'sorting algorithm': ['programming'],
-  'search algorithm': ['programming'],
-  'time complexity': ['programming'],
-  // writing domain keywords
-  'documentation': ['writing'],
-  'technical writing': ['writing'],
-  'api docs': ['writing'],
-  'readme': ['writing'],
-};
-
-/**
  * Intent category keyword mapping (non-domain intents).
  * Each intent name maps to a list of synonymous trigger phrases.
  */
@@ -237,29 +112,17 @@ export function buildTriggerDomainIndex(skillRegistry: SkillRegistry): TriggerDo
 }
 
 /**
- * Look up a normalized trigger phrase in the dynamic index, then fall back to KEYWORD_MAP.
+ * Look up a normalized trigger phrase in the dynamic index.
  * Returns the list of domains for the given trigger, or undefined if not found.
  */
 function lookupTrigger(
   normalizedPhrase: string,
   dynamicIndex: TriggerDomainIndex | null,
 ): string[] | undefined {
-  // Check dynamic index first (built from loaded skills)
+  // Check dynamic index (built from loaded skills)
   if (dynamicIndex) {
     const domains = dynamicIndex.get(normalizedPhrase);
     if (domains && domains.length > 0) {
-      return domains;
-    }
-  }
-
-  // Fall back to hardcoded KEYWORD_MAP
-  // Try the exact normalized phrase first
-  const fallbackEntry = KEYWORD_MAP[normalizedPhrase];
-  if (fallbackEntry) return fallbackEntry;
-
-  // Also check original casing variants from KEYWORD_MAP for legacy compatibility
-  for (const [key, domains] of Object.entries(KEYWORD_MAP)) {
-    if (normalizeTrigger(key) === normalizedPhrase) {
       return domains;
     }
   }
@@ -274,14 +137,10 @@ function lookupTrigger(
  * Trigger Index:
  * - Built once at router initialization via `initialize()` which calls `buildTriggerDomainIndex()`
  * - Uses loaded skills' metadata.triggers + metadata.category fields
- * - Falls back to hardcoded KEYWORD_MAP for any terms not covered by skill triggers
  */
 export class IntentDecomposer {
   /** Known domains for intent matching against skill categories. */
   static readonly DOMAINS = [...DOMAINS];
-
-  /** Keyword-to-domain mapping used during decomposition (fallback for uncovered terms). */
-  static readonly KEYWORD_MAP = { ...KEYWORD_MAP };
 
   /** Intent category keyword mapping used during decomposition. */
   static readonly INTENT_MAP = { ...INTENT_MAP };
@@ -298,17 +157,17 @@ export class IntentDecomposer {
     IntentDecomposer._triggerDomainIndex = buildTriggerDomainIndex(skillRegistry);
   }
 
-  /**
-   * Decompose a query into weighted intent fragments.
-   *
-   * Algorithm:
-   * 1. Tokenize query (lowercase, split on whitespace/punctuation)
-   * 2. Check each token and multi-word span against dynamic index + KEYWORD_MAP
-   * 3. Check intent category phrases against INTENT_MAP
-   * 4. Collect matches with raw counts
-   * 5. Normalize weights so they sum to 1.0
-   * 6. Fallback: if no keywords matched, treat the whole query as a single intent
-   */
+/**
+    * Decompose a query into weighted intent fragments.
+    *
+    * Algorithm:
+    * 1. Tokenize query (lowercase, split on whitespace/punctuation)
+    * 2. Check each token and multi-word span against dynamic trigger→domain index
+    * 3. Check intent category phrases against INTENT_MAP
+    * 4. Collect matches with raw counts
+    * 5. Normalize weights so they sum to 1.0
+    * 6. Fallback: if no keywords matched, treat the whole query as a single intent
+    */
   static decompose(query: string): DecomposedQuery {
     const trimmed = query.trim();
     if (!trimmed) {
@@ -319,21 +178,11 @@ export class IntentDecomposer {
     const rawFragments = new Map<string, number>();
     const lowerQuery = trimmed.toLowerCase();
 
-    // Combine dynamic index keys with hardcoded KEYWORD_MAP keys, sorted by length descending
-    // so longest matches take priority (e.g. "stop loss" beats "stop")
-    const allKeys = new Set<string>();
-
-    // Add normalized dynamic index keys
-    if (IntentDecomposer._triggerDomainIndex) {
-      for (const key of IntentDecomposer._triggerDomainIndex.keys()) {
-        allKeys.add(key);
-      }
-    }
-
-    // Add hardcoded KEYWORD_MAP keys
-    for (const key of Object.keys(KEYWORD_MAP)) {
-      allKeys.add(normalizeTrigger(key));
-    }
+    // Use dynamic index keys only, sorted by length descending so longest matches take priority
+    // If the index is empty, fall back gracefully to Phase 3 single-word token matching.
+    const allKeys = IntentDecomposer._triggerDomainIndex
+      ? new Set(IntentDecomposer._triggerDomainIndex.keys())
+      : new Set<string>();
 
     const sortedKeywords = [...allKeys].sort((a, b) => b.length - a.length);
 
@@ -349,12 +198,12 @@ export class IntentDecomposer {
         startIndex += lowerKeyword.length;
       }
 
-      // Look up domains: dynamic index first, then KEYWORD_MAP fallback
+      // Look up domains from the dynamic trigger→domain index
       const domains = lookupTrigger(keyword, IntentDecomposer._triggerDomainIndex) ?? [];
       for (const domain of domains) {
         rawFragments.set(domain, (rawFragments.get(domain) ?? 0) + count);
       }
-    }
+   }
 
     // --- Phase 2: Intent category matching ---
     // Build reverse lookup: trigger phrase → intent name
@@ -389,16 +238,12 @@ export class IntentDecomposer {
 
     // --- Phase 3: Single-word fallback matching ---
     if (rawFragments.size === 0) {
-      // Fallback: tokenize and match individual words
+      // Fallback: tokenize and match individual words against dynamic index
       const tokens = trimmed.toLowerCase().split(/[\s,;:.!?/\\]+/).filter(Boolean);
       for (const token of tokens) {
         const normalizedToken = normalizeTrigger(token);
-        // Check both dynamic index and KEYWORD_MAP single-word entries
-        let domains = lookupTrigger(normalizedToken, IntentDecomposer._triggerDomainIndex);
-        if (!domains) {
-          // Also try the un-normalized token against KEYWORD_MAP (legacy compatibility)
-          domains = KEYWORD_MAP[token];
-        }
+        // Check dynamic index for single-word matches
+        const domains = lookupTrigger(normalizedToken, IntentDecomposer._triggerDomainIndex);
         if (domains) {
           for (const domain of domains) {
             rawFragments.set(domain, (rawFragments.get(domain) ?? 0) + 1);

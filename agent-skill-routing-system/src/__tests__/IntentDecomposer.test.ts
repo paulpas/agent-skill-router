@@ -2,33 +2,27 @@
 import { IntentDecomposer } from '../retrieval/IntentDecomposer';
 
 describe('IntentDecomposer', () => {
-  // --- Test 1: Multi-domain query ---
-  describe('multi-domain query', () => {
-    it('"review this Rust Kubernetes operator" → fragments for rust and kubernetes with weights summing to 1.0', () => {
+  // --- Test 1: Fallback for queries without domain index ---
+  describe('fallback for unknown terms', () => {
+    it('query with no INTENT_MAP matches → single intent fragment (Phase 4)', () => {
       const result = IntentDecomposer.decompose('review this Rust Kubernetes operator');
 
-      expect(result.fragments.length).toBeGreaterThan(0);
-
-      // Should have fragments for 'coding' (from rust) and 'cncf' (from kubernetes)
-      const fragmentNames = result.fragments.map((f) => f.intent);
-      expect(fragmentNames).toContain('coding');
-      expect(fragmentNames).toContain('cncf');
-
-      // Weights must sum to 1.0
-      const weightSum = result.fragments.reduce((sum, f) => sum + f.weight, 0);
-      expect(weightSum).toBeCloseTo(1.0, 3);
+      // Without a loaded dynamic index, these domain keywords won't resolve.
+      // Phase 4 fallback produces a single fragment with the whole query.
+      expect(result.fragments.length).toBe(1);
+      expect(result.fragments[0].weight).toBeCloseTo(1.0, 3);
     });
   });
 
-  // --- Test 2: Single-intent query ---
+  // --- Test 2: Single-intent INTENT_MAP queries ---
   describe('single-intent query', () => {
-    it('"fix the stop loss logic" → single fragment for trading', () => {
+    it('"fix the stop loss logic" → debugging intent from "fix"', () => {
       const result = IntentDecomposer.decompose('fix the stop loss logic');
 
       expect(result.fragments.length).toBeGreaterThan(0);
-      // Should match 'trading' domain from 'stop loss' keyword
+      // INTENT_MAP maps "fix" to "debugging"
       const fragmentNames = result.fragments.map((f) => f.intent);
-      expect(fragmentNames).toContain('trading');
+      expect(fragmentNames).toContain('debugging');
     });
   });
 
@@ -36,10 +30,10 @@ describe('IntentDecomposer', () => {
   describe('weights normalization', () => {
     it('all fragment weights sum to 1.0 for any query with matches', () => {
       const testQueries = [
-        'kubernetes networking with prometheus monitoring',
-        'security audit for docker containers and istio service mesh',
-        'how do i implement unit testing in go with tdd',
-        'rust typescript performance optimization debugging',
+        'kubernetes networking with prometheus monitoring', // "monitoring" → INTENT_MAP
+        'security audit for docker containers and istio service mesh', // "security" → INTENT_MAP
+        'how do i implement unit testing in go with tdd', // "testing" → INTENT_MAP
+        'rust typescript performance optimization debugging', // "performance", "debugging" → INTENT_MAP
       ];
 
       for (const query of testQueries) {
@@ -63,7 +57,7 @@ describe('IntentDecomposer', () => {
 
     it('multiple occurrences of the same keyword are counted correctly', () => {
       const result = IntentDecomposer.decompose('test test testing test');
-      // 'testing' should count as 1, 'test' (single word) might match intent map
+      // 'testing' should count as 1 from INTENT_MAP
       const weightSum = result.fragments.reduce((sum, f) => sum + f.weight, 0);
       expect(weightSum).toBeCloseTo(1.0, 3);
     });
@@ -90,71 +84,47 @@ describe('IntentDecomposer', () => {
     });
   });
 
-  // --- Test 5: Case insensitivity ---
+  // --- Test 5: Case insensitivity (INTENT_MAP queries) ---
   describe('case insensitivity', () => {
-    it('"RUST KUBERNETES SECURITY" decomposes correctly despite uppercase', () => {
-      const result = IntentDecomposer.decompose('RUST KUBERNETES SECURITY');
+    it('"SECURITY PERFORMANCE DESIGN" decomposes correctly despite uppercase', () => {
+      const result = IntentDecomposer.decompose('SECURITY PERFORMANCE DESIGN');
 
       expect(result.fragments.length).toBeGreaterThan(0);
 
       const fragmentNames = result.fragments.map((f) => f.intent);
-      expect(fragmentNames).toContain('coding'); // from RUST
-      expect(fragmentNames).toContain('cncf');   // from KUBERNETES
-      expect(fragmentNames).toContain('security'); // from SECURITY
+      expect(fragmentNames).toContain('security');
+      expect(fragmentNames).toContain('performance');
+      expect(fragmentNames).toContain('design');
 
       const weightSum = result.fragments.reduce((sum, f) => sum + f.weight, 0);
       expect(weightSum).toBeCloseTo(1.0, 3);
     });
 
-    it('"Prometheus and Kubernetes MONITORING" mixed case works', () => {
+    it('"MONITORING AND OBSERVABILITY" mixed case works', () => {
       const result = IntentDecomposer.decompose('Prometheus and Kubernetes MONITORING');
 
       expect(result.fragments.length).toBeGreaterThan(0);
       const fragmentNames = result.fragments.map((f) => f.intent);
-      expect(fragmentNames).toContain('cncf');
+      expect(fragmentNames).toContain('monitoring');
     });
   });
 
-  // --- Test 6: Multi-word intent matching ---
-  describe('multi-word intent matching', () => {
-    it('"stop loss" matched as one fragment, not two separate words', () => {
+  // --- Test 6: Multi-word matching (Phase 1 without KEYWORD_MAP) ---
+  describe('multi-word keyword matching', () => {
+    it('domain keywords without dynamic index fall to Phase 4', () => {
+      // Without a loaded registry, domain keywords like "stop loss", "code review"
+      // no longer map to domains (KEYWORD_MAP removed). They should fall through.
       const result = IntentDecomposer.decompose('implement a stop loss strategy');
 
-      expect(result.fragments.length).toBeGreaterThan(0);
-      // Should have 'trading' from the multi-word keyword "stop loss"
-      const fragmentNames = result.fragments.map((f) => f.intent);
-      expect(fragmentNames).toContain('trading');
-
-      // Verify it's not matching both "stop" and "loss" as separate words
-      // (the single word 'stop' is not in KEYWORD_MAP, so no spurious matches)
-      const fragmentCount = result.fragments.length;
-      // Should be exactly 1 or a small number of legitimate matches
-      expect(fragmentCount).toBeLessThanOrEqual(3);
+      expect(result.fragments.length).toBe(1);
+      expect(result.fragments[0].weight).toBeCloseTo(1.0, 3);
     });
 
-    it('"code review" matched as one intent', () => {
+    it('unknown multi-word phrase falls to Phase 4', () => {
       const result = IntentDecomposer.decompose('perform a code review on this PR');
 
-      expect(result.fragments.length).toBeGreaterThan(0);
-      const fragmentNames = result.fragments.map((f) => f.intent);
-      expect(fragmentNames).toContain('coding');
-    });
-
-    it('"service mesh" matched as one intent', () => {
-      const result = IntentDecomposer.decompose('configure service mesh for kubernetes');
-
-      expect(result.fragments.length).toBeGreaterThan(0);
-      const fragmentNames = result.fragments.map((f) => f.intent);
-      expect(fragmentNames).toContain('cncf');
-    });
-
-    it('"unit test" and "integration test" both recognized', () => {
-      const result = IntentDecomposer.decompose('write unit test and integration test for this module');
-
-      expect(result.fragments.length).toBeGreaterThan(0);
-      // Both should map to 'coding' domain, but the intent match may also pick up 'testing'
-      const fragmentNames = result.fragments.map((f) => f.intent);
-      expect(fragmentNames).toContain('coding');
+      expect(result.fragments.length).toBe(1);
+      expect(result.fragments[0].weight).toBeCloseTo(1.0, 3);
     });
   });
 
@@ -170,15 +140,17 @@ describe('IntentDecomposer', () => {
       expect(domains).toContain('linux');
     });
 
-    it('KEYWORD_MAP contains entries for major domains', () => {
-      const map = IntentDecomposer.KEYWORD_MAP;
-      // coding
-      expect(map['rust']).toEqual(['coding']);
-      expect(map['kubernetes']).toEqual(['cncf']);
-      // trading
-      expect(map['trading']).toEqual(['trading']);
-      // agent
-      expect(map['orchestration']).toEqual(['agent']);
+    it('decompose() gracefully handles uninitialized index (Phase 3 fallback)', () => {
+      // Save current index, set to null, test Phase 3 single-word fallback
+      const savedIndex = IntentDecomposer.getTriggerDomainIndex();
+      (IntentDecomposer as any)._triggerDomainIndex = null;
+
+      // Query with a term not in INTENT_MAP should produce a single-fragment result
+      const result = IntentDecomposer.decompose('kubernetes');
+      expect(result.fragments.length).toBeGreaterThan(0);
+
+      // Restore the index
+      (IntentDecomposer as any)._triggerDomainIndex = savedIndex;
     });
   });
 
@@ -226,14 +198,14 @@ describe('IntentDecomposer', () => {
   describe('fragment ordering', () => {
     it('fragments are sorted by weight descending', () => {
       const result = IntentDecomposer.decompose('kubernetes docker helm');
-      // All three keywords map to 'cncf' → single fragment with count=3
+      // Without dynamic index, falls to Phase 4 → single fragment
 
       expect(result.fragments.length).toBe(1);
       expect(result.fragments[0].weight).toBeCloseTo(1.0, 3);
     });
 
     it('fragments sorted by weight, ties broken alphabetically', () => {
-      // "security performance debugging" — each appears once, equal raw counts
+      // "security performance debugging" — each appears once in INTENT_MAP, equal raw counts
       const result = IntentDecomposer.decompose('security performance debugging');
 
       expect(result.fragments.length).toBe(3);
