@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-incident-response
 description: Handles production incidents with systematic root-cause analysis, incident response procedures, communication protocols, and post-incident learning to minimize downtime and prevent recurrence.
 license: MIT
@@ -27,7 +31,15 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 4
+
+
+
+
 ---
+
+
+
+
 
 # Software Incident Response
 

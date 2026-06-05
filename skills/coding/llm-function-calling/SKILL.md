@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: llm-function-calling
 description: Implements reliable LLM function calling patterns including JSON Schema tool definitions, structured output parsing with Pydantic v2, retry strategies, and error handling for cross-provider tool use.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # LLM Function Calling & Tool Use Patterns
 

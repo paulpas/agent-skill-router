@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: testing-end-to-end
 description: Facilitates end-to-end testing of complete workflows, verifying entire systems operate as intended from a user's perspective.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: testing-unit, testing-integration, testing-contract
+
+
+
+
 ---
+
+
+
+
 
 # End-to-End Testing
 

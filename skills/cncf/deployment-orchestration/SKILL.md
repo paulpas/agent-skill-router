@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: deployment-orchestration
 compatibility: opencode
 completeness: 95
 content-types:
@@ -36,9 +41,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: deployment-orchestration
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+---
 # Deployment Orchestration
 
 Orchestrates coordinated multi-service deployments with dependency-aware sequencing, failure containment, and automatic rollback across service boundaries. Ensures that when multiple services deploy together, their compatibility constraints are respected.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: eventual-consistency-patterns
 description: Manages eventual consistency challenges in distributed systems — read model reconciliation, conflict resolution with CRDTs and vector clocks, anti-corruption layers, and stale read mitigation for event-driven architectures.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont]
   related-skills: cqrs-pattern,event-sourcing-pattern,distributed-systems-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Eventual Consistency Management
 

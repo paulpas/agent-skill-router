@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: backtest-position-exits
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: position-exits
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Manage the systematic exit of trading positions to lock in profits, limit losses, and adapt to market conditions.
 
 **Philosophy:** Position exits are equally important as entry decisions. A great entry with poor exits will result in suboptimal performance. Exit strategies should be systematic, adaptive, and designed to capture the majority of trends while cutting losses quickly. The philosophy emphasizes probability management, risk containment, and adaptive behavior based on market state.
@@ -656,6 +668,25 @@ if __name__ == "__main__":
 
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement walk-forward validation: optimize on a training window, validate on a subsequent out-of-sample window
+- Include realistic transaction costs (commissions, slippage, market impact) in all backtest calculations
+- Use point-to-point or tick-level data when available; never use OHLCV with intra-bar assumptions for strategy logic
+- Track and report key metrics: Sharpe ratio, max drawdown, win rate, profit factor, average trade duration, and Calmar ratio
+- Implement survivorship-bias-free testing using a constant universe list that includes delisted symbols
+
+### MUST NOT DO
+- Do not optimize strategy parameters on the same data used for evaluation — always use out-of-sample or walk-forward testing
+- Avoid assuming infinite liquidity in backtests; model order book constraints and partial fills for large positions
+- Never include future information (survivorship bias, look-ahead) in backtest signals by indexing data correctly
+- Do not report only win rate — always include risk-adjusted metrics alongside raw return statistics
+- Avoid curve-fitting to historical data; cap the number of optimized parameters and validate with Monte Carlo permutation tests
+
 
 ## Live References
 

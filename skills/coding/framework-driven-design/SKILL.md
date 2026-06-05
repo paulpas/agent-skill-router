@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-driven-design
 description: Implements framework-driven design patterns (Inversion of Control, Dependency Injection, lifecycle hooks, plugin architectures) to build extensible applications that leverage modern framework constraints instead of bypassing them.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Framework-Driven Design Principles
 

@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: ai-hyperparameter-tuning
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: hyperparameter-tuning
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Systematically find optimal hyperparameters that balance prediction accuracy with trading performance
 
 **Philosophy:** Hyperparameter optimization should respect trading constraints (transaction costs, regime shifts). Prioritize robustness and out-of-sample performance over in-sample optimization.
@@ -482,6 +494,25 @@ class MultiStartOptimizer:
 ```
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate input feature distributions against training data baselines; flag drift exceeding 2 standard deviations
+- Implement model versioning with reproducibility tags — every prediction must be traceable to the exact model artifact and config
+- Include confidence intervals or probability estimates alongside all point predictions, never return raw scores without context
+- Log all model inputs, outputs, and metadata to enable post-hoc analysis of prediction failures
+- Implement feature computation consistently between training and inference — use the same transformation pipeline for both
+
+### MUST NOT DO
+- Do not train models on look-ahead biased features (e.g., using future prices or events in training data)
+- Avoid deploying a new model version without shadow-testing against the current production model first
+- Never retrain a model on a data window that includes regime changes without explicit regime-aware validation
+- Do not use accuracy as the primary metric for imbalanced datasets — use precision/recall, F1, or AUC-ROC
+- Avoid hardcoding feature names; load them from a schema or config file to prevent mismatches between training and inference
+
 
 ## Live References
 

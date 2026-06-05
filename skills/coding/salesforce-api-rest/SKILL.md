@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: salesforce-api-rest
 description: Implements interactions with the Salesforce API using REST protocols to manage customer relationship data effectively.
 license: MIT
@@ -20,7 +24,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: tactical
+
+
+
+
 ---
+
+
+
+
 
 # Salesforce API - REST Integration
 

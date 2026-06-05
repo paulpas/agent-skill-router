@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rest-api-pagination-filtering
 description: Implements pagination patterns including cursor-based keyset pagination for large datasets, offset-based pagination for small collections, query parameter filtering, field selection sparse fieldsets, and sorting conventions for REST API collections.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: cursor-based pagination, offset pagination, keyset pagination, API filtering, sort parameters, field selection, sparse fieldsets, pagination envelope, how do i paginate a REST API, collection filtering API
+  triggers: cursor-based pagination, offset pagination, keyset pagination, API filtering, sparse fieldsets, pagination envelope, how do i paginate a REST API, collection filtering API
   role: implementation
   scope: implementation
   output-format: code
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: rest-api-resource-modeling, rest-api-caching
+
+
+
+
 ---
+
+
+
+
 
 # Pagination and Filtering Specialist
 

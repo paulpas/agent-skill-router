@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-aggregate-lifecycle
 description: Implements aggregate lifecycle management patterns — snapshotting, schema versioning, optimistic concurrency control, aggregate root splitting strategies, and consistency boundary enforcement for high-throughput domain-driven systems.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: aggregate lifecycle, aggregate snapshotting, aggregate versioning, optimistic concurrency, aggregate root splitting, event sourcing snapshot, how do i scale aggregates, aggregate consistency at scale, ddd performance
+  triggers: aggregate lifecycle, aggregate snapshotting, aggregate versioning, optimistic concurrency, event sourcing snapshot, how do i scale aggregates, aggregate consistency at scale, ddd performance
   archetypes:
     - tactical
     - generation
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: domain-driven-design, ddd-context-mapping, event-sourcing-pattern, cqrs-pattern
+
+
+
+
 ---
+
+
+
+
 
 # Aggregate Lifecycle Management
 

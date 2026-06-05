@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: distributed-system-bulkheads
 description: Implements the bulkhead pattern to isolate resources and improve fault tolerance in distributed systems using Resilience4j.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: distributed-system-rate-limiting, distributed-system-circuit-breakers
+
+
+
+
 ---
+
+
+
+
 
 # Bulkhead Pattern in Distributed Systems
 

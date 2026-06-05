@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: etcd
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: etcd
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # etcd in Cloud-Native Engineering
 
 **Category:** storage  

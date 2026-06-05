@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: github-api
 description: Integrates with the GitHub REST API and GraphQL API via PyGithub and Octokit to manage repositories, issues, pull requests, Actions workflows, and Copilot metrics.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: github api, octokit, pygithub, github rest api, github graphql, manage repositories, github actions, pull request automation
   archetypes:
@@ -28,7 +32,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-gitlab-api, coding-bitbucket-api, coding-jenkins-api
-------
+
+
+
+
+---
+
+
+
+
 # GitHub API & Octokit Integration
 Integrates with GitHub's REST API v3 and GraphQL API v4 to automate repository management, issue tracking, pull request workflows, Actions pipelines, and Copilot usage analytics. Use PyGithub for Python projects or Octokit for JavaScript/TypeScript projects.
 ## TL;DR for Code Generation
@@ -242,6 +254,23 @@ def create_issue(
 - [Managing Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 - [GitHub Copilot](https://docs.github.com/en/copilot)
 ---
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
+
 ## Related Skills
 | Skill | Purpose |
 |---|---|

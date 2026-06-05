@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: business-rules-engine
 description: Implements a business rules engine using declarative configuration (JSON/YAML-based rule definitions, condition evaluation chains, and runtime rule execution) to replace hard-coded if/elif branches for frequently-changing domain validations.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: business rules engine, rules engine, decision table, condition evaluation, declarative rules, rule validation, how do i evaluate complex rules, compliance rules, pricing rules
+  triggers: business rules engine, decision table, condition evaluation, declarative rules, rule validation, how do i evaluate complex rules, compliance rules, pricing rules
   archetypes:
     - tactical
     - generation
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: domain-driven-design, input-validation-patterns, ddd-tactical-patterns, framework-requirements
+
+
+
+
 ---
+
+
+
+
 
 # Business Rules Engine
 

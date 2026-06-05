@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: azure-openai
 description: Integrates Azure OpenAI Service (GPT deployments, Responses API, Content
   Filters, Entra ID auth, Assistants) using the OpenAI SDK with Azure v1 endpoint
@@ -6,7 +10,7 @@ description: Integrates Azure OpenAI Service (GPT deployments, Responses API, Co
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: azure openai, azure openai service, azure gpt, azure responses api, content
     filters, azure openai deployment, how do i use azure openai, microsoft foundry
@@ -31,7 +35,15 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-openai-api, coding-aws-bedrock, coding-langchain
-------
+
+
+
+
+---
+
+
+
+
 # Azure OpenAI Service Integration
 
 Integrates Azure OpenAI Service using the `openai` Python SDK with the Azure v1 API endpoint. When loaded, this skill makes the model implement Azure OpenAI calls with proper authentication (API key and Entra ID), the Responses API, content filter handling, and deployment management.

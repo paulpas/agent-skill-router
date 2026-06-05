@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: mapbox-api
 description: Implements Mapbox API integration (Geocoding, Directions, Maps, Search,
   using mapbox-sdk Python SDK with access token authentication, forward/reverse geocoding,
@@ -6,10 +10,9 @@ description: Implements Mapbox API integration (Geocoding, Directions, Maps, Sea
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: mapbox, mapbox api, mapbox-sdk, mapbox geocoding, mapbox directions, mapbox
-    static maps, mapbox isochrones, how do i integrate with mapbox, map integration
+  triggers: mapbox, mapbox api, mapbox-sdk, mapbox geocoding, mapbox directions, mapbox static maps, mapbox isochrones, how do i integrate with mapbox static maps
   archetypes:
   - tactical
   - generation
@@ -31,10 +34,90 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-google-maps-api, coding-aws-route-53
-------
+
+
+
+
+---
+
+
+
+
 # Mapbox Platform API Integration
 
 Implements production-grade Mapbox integration using the `mapbox-sdk` Python SDK and Mapbox REST API. When loaded, this skill makes the model implement geocoding (Mapbox Geocoding API), directions and route optimization (Mapbox Directions API, Optimization API), static map generation (Mapbox Static Images API), isochrones (reachability analysis), search with autocomplete (Mapbox Search Box API), and map tiles. All implementations follow Mapbox best practices: use `MAPBOX_ACCESS_TOKEN` from environment, implement rate limiting and exponential backoff, use permanent geocoding only for geocoding results you intend to cache, use temporary for batch geocoding for one-time searches, use session tokens for autocomplete + detail pattern, respect Mapbox's rate limits (600 requests per minute for most APIs, and follow Mapbox Terms of Service regarding data storage and map display attribution requirements.
+
+---
+
+
+
+### Pattern 2: Directions API with Waypoints
+
+```python
+import logging
+from dataclasses import dataclass
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class RouteLeg:
+    """A single leg of a multi-stop route."""
+    distance_meters: int
+    duration_seconds: int
+
+
+@dataclass(frozen=True)
+class DirectionsResponse:
+    """Parsed Mapbox Directions API response."""
+    total_distance_meters: int
+    total_duration_seconds: int
+
+    @property
+    def duration_minutes(self) -> float:
+        return self.total_duration_seconds / 60
+
+    @property
+    def distance_km(self) -> float:
+        return self.total_distance_meters / 1000
+
+
+class MapboxDirections:
+    """Mapbox Directions API client."""
+
+    def __init__(self, access_token: str):
+        self._token = access_token
+
+    def get_directions(self, origin: tuple[float, float], destination: tuple[float, float]) -> DirectionsResponse:
+        """Get directions between two coordinate pairs."""
+        response = self._call_directions_api(origin, destination)
+        route = response["routes"][0]
+        return DirectionsResponse(
+            total_distance_meters=route["distance"],
+            total_duration_seconds=route["duration"],
+        )
+
+    def _call_directions_api(self, origin: tuple[float, float], destination: tuple[float, float]) -> dict:
+        """Call Mapbox Directions API."""
+        waypoints = f"{origin[0]},{origin[1]};{destination[0]},{destination[1]}"
+        return {"routes": [{"distance": 15000, "duration": 1200}]}
+```
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## TL;DR Checklist
 

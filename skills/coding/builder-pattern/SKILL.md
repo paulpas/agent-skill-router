@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: builder-pattern
 description: Implements the Builder design pattern for constructing complex objects step by step with a fluent API, supporting hierarchical builders and director orchestration.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: coding-abstract-factory, coding-chain-of-responsibility
+
+
+
+
 ---
+
+
+
+
 
 # Builder Design Pattern
 

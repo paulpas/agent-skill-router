@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: yaml-anchors
 description: Implements YAML anchor and alias patterns (& and *) for configuration reuse, merge keys, and value referencing across Docker Compose, Kubernetes, and Helm files.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # YAML Anchor and Alias Patterns
 

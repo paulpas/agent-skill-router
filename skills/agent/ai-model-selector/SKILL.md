@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-model-selector
 description: Selects the optimal LLM model for a specific task by evaluating capability requirements against cost, latency, context window, and quality needs across all major providers.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: ai model selection, which LLM to use, GPT-4o vs Claude, choose AI model, model comparison, best model for task, LLM routing, o3 vs sonnet, Gemini vs GPT, model cost optimization, pick the right model, how do i choose an LLM
+  triggers: ai model selection, GPT-4o vs Claude, choose AI model, model comparison, best model for task, LLM routing, o3 vs sonnet, how do i choose an LLM
   archetypes:
     - tactical
     - strategic
@@ -22,7 +26,15 @@ metadata:
   output-format: analysis
   content-types: [guidance, examples, do-dont, diagrams]
   related-skills: ai-framework-selector, framework-selection, multi-model-routing, tool-use-function-calling
+
+
+
+
 ---
+
+
+
+
 
 # AI Model Selector
 

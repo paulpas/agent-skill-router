@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: gcp-deployment-manager
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: deployment-manager
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Google Cloud Deployment Manager
 
 Deploy and manage google cloud deployment manager infrastructure as part of your cloud-native environment.

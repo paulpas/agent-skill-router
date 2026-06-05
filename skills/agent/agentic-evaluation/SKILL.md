@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: agentic-evaluation
 description: Implements systematic evaluation, benchmarking, and testing of AI agent behaviors with tool-use accuracy, hallucination detection, multi-turn reasoning metrics, and automated grading pipelines.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: agent-reliability-engineering, agent-testing-methodology, coding-code-review
+
+
+
+
 ---
+
+
+
+
 
 # Agentic Evaluation Framework
 

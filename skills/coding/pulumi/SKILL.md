@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: pulumi
 description: Integrates with the Pulumi Python SDK and Automation API to manage stacks,
   resources, programs, ESC (Environments, Secrets, and Configuration), and deployment
@@ -6,7 +10,7 @@ description: Integrates with the Pulumi Python SDK and Automation API to manage 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: pulumi python, pulumi automation api, pulumi sdk, pulumi stacks, pulumi
     esc, infrastructure as code python, pulumi program, pulumi deploy
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-terraform-sdk, coding-kubernetes-api, coding-docker-api
-------
+
+
+
+
+---
+
+
+
+
 # Pulumi Python SDK & Automation API Integration
 
 Integrates with Pulumi using the official Python SDK (`pulumi`) and Automation API (`pulumi.automation`) to define cloud infrastructure as Python code, manage stacks, orchestrate deployments, handle secrets with ESC, and build self-service infrastructure platforms.
@@ -402,6 +414,23 @@ def good_output_handling():
 - Avoid creating very large Pulumi programs that cannot be reasoned about as a unit
 - Do not ignore `pulumi preview` — always review the diff before applying changes
 - Never embed Pulumi access tokens in code — use the `PULUMI_ACCESS_TOKEN` environment variable
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

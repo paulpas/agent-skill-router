@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gitlab-api-devops
 description: Implements GitLab API functionalities for Developer Platforms and DevOps, covering projects, pipelines, merge requests, runners, and registry management.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # GitLab API for Developer Platforms & DevOps
 

@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: aws-ecr
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: ecr
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # ECR (Elastic Container Registry)
 
 Manage container images securely with vulnerability scanning, lifecycle policies, replication, and integration with container orchestration services.

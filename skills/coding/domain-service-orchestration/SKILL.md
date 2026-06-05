@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: domain-service-orchestration
 description: Implements domain service orchestration for cross-aggregate business operations in DDD — coordinating multiple aggregate roots while preserving encapsulation, handling compensation on failure, and maintaining transaction boundaries without leaking coordination logic into domain models.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: ddd-command-pattern, cross-domain-workflow-sagas, domain-driven-design, domain-repository-pattern, ddd-aggregate-lifecycle
+
+
+
+
 ---
+
+
+
+
 
 # Domain Service Orchestration
 
@@ -780,6 +792,23 @@ def process_order_decided():
     # Proceed with domain service implementation (Pattern 1)
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

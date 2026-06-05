@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: dsl-engineering
 description: Designs and implements domain-specific languages (embedded DSLs with Python/Go idioms, external DSLs with PEG/ANTLR/Lark parsers) for configuration, query, and rule engines in production systems.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: dsl design, domain-specific language, embedded dsl, external dsl, parser generator, peg grammar, antlr, lark, ast transformation, query language, configuration language, how do i create a custom language
+  triggers: dsl design, domain-specific language, embedded dsl, parser generator, peg grammar, antlr, ast transformation, how do i create a custom language
   role: implementation
   scope: implementation
   output-format: code
@@ -18,7 +22,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # DSL Engineering and Design Architect
 

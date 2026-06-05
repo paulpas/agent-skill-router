@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: autogen-conversational-patterns
 description: Implements AutoGen conversational multi-agent workflows including group chat orchestration, code execution groups, termination conditions, and human-in-the-loop patterns for solving complex problems through agent dialogue.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: langgraph-implementation, crewai-agent-workflows, framework-utilization
+
+
+
+
 ---
+
+
+
+
 
 # AutoGen Conversational Agent Patterns
 

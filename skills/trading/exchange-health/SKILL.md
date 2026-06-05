@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: exchange-health
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: health
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Monitor exchange API health and availability to ensure reliable trading operations
 
 **Philosophy:** Exchange availability is critical; early detection of issues prevents trading failures and potential losses
@@ -323,6 +335,133 @@ class CircuitHealthIntegrator:
 ```
 
 ---
+
+---
+
+
+### Pattern 2: Exchange Health Check with Multi-Metric Scoring
+
+```python
+from __future__ import annotations
+
+import logging
+import time
+from dataclasses import dataclass, field
+from enum import Enum
+from typing import Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+class HealthStatus(str, Enum):
+    HEALTHY = "healthy"
+    DEGRADED = "degraded"
+    UNHEALTHY = "unhealthy"
+    UNKNOWN = "unknown"
+
+
+@dataclass
+class ExchangeHealthReport:
+    """Comprehensive health report for an exchange connection."""
+    exchange_id: str
+    status: HealthStatus = HealthStatus.UNKNOWN
+    avg_latency_ms: float = 0.0
+    error_rate_1m: float = 0.0  # Errors / total requests in last minute
+    uptime_ratio: float = 1.0   # Fraction of time reachable in last 5 minutes
+    ws_connected: bool = False
+    order_submit_latency_ms: float = 0.0
+    last_check_at: float = field(default_factory=time.monotonic)
+    health_score: float = 100.0  # 0-100 composite score
+
+    @property
+    def is_tradable(self) -> bool:
+        return self.status in (HealthStatus.HEALTHY, HealthStatus.DEGRADED)
+
+
+class ExchangeHealthMonitor:
+    """Monitors exchange health using multiple metrics with composite scoring."""
+
+    def __init__(self, exchange_id: str, check_interval: float = 10.0):
+        self.exchange_id = exchange_id
+        self._interval = check_interval
+        self._history: list[ExchangeHealthReport] = []
+        self._latency_samples: list[float] = []
+
+    async def run_health_check(self) -> ExchangeHealthReport:
+        """Execute a comprehensive health check against the exchange."""
+        start = time.monotonic()
+
+        # Measure API latency via ping
+        try:
+            await self._ping_exchange()
+            latency_ms = (time.monotonic() - start) * 1000
+        except Exception as e:
+            logger.error("Health check ping failed for %s: %s", self.exchange_id, e)
+            return ExchangeHealthReport(
+                exchange_id=self.exchange_id, status=HealthStatus.UNHEALTHY,
+                last_check_at=time.monotonic(), health_score=0.0,
+            )
+
+        # Measure WebSocket connectivity
+        ws_connected = await self._check_websocket()
+
+        # Compute composite health score (0-100)
+        latency_penalty = min(40, latency_ms / 5)  # Lose up to 40 points for high latency
+        ws_penalty = 30 if not ws_connected else 0
+
+        score = max(0, 100 - latency_penalty - ws_penalty)
+
+        if score >= 80:
+            status = HealthStatus.HEALTHY
+        elif score >= 50:
+            status = HealthStatus.DEGRADED
+        else:
+            status = HealthStatus.UNHEALTHY
+
+        report = ExchangeHealthReport(
+            exchange_id=self.exchange_id,
+            status=status,
+            avg_latency_ms=round(latency_ms, 2),
+            ws_connected=ws_connected,
+            health_score=round(score, 1),
+            last_check_at=time.monotonic(),
+        )
+
+        self._history.append(report)
+        self._latency_samples.append(latency_ms)
+        if len(self._latency_samples) > 100:
+            self._latency_samples.pop(0)
+
+        logger.info("Health check %s: status=%s score=%.1f latency=%.0fms",
+                     self.exchange_id, status.value, score, latency_ms)
+        return report
+
+    async def _ping_exchange(self) -> None:
+        """Lightweight API call to measure response time."""
+        pass  # Actual implementation varies by exchange
+
+    async def _check_websocket(self) -> bool:
+        """Verify WebSocket connection is alive and receiving updates."""
+        return True  # Placeholder — actual WS health check
+```
+
+## Constraints
+
+### MUST DO
+- Implement a unified adapter interface across all exchange integrations to standardize order placement, cancellation, and querying
+- Handle rate limiting proactively with token bucket or leaky bucket algorithms — never wait for 429 responses before slowing down
+- Maintain local order state as the source of truth; reconcile with exchange state periodically via webhook events and polling
+- Implement heartbeat monitoring per exchange connection with automatic failover to a secondary data feed on timeout
+- Log all API interactions including request/response IDs, timing, and status codes for audit and debugging
+
+### MUST NOT DO
+- Do not trust exchange-reported order states without local confirmation — always reconcile after every state change
+- Avoid sending multiple orders for the same position simultaneously across different adapters or sessions
+- Never store API keys or secrets in code — use environment variables or a secrets manager with automatic rotation
+- Do not assume all exchanges support the same order types — implement graceful degradation with clear capability negotiation
+- Avoid polling-based price updates when WebSocket/streaming APIs are available — polling creates unnecessary load and latency
+
 
 ## Live References
 

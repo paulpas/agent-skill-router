@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: karpathy-coding-mindset
 description: Applies Karpathy's pre-implementation discipline — state assumptions explicitly, surface tradeoffs instead of hiding them, push back on unnecessary complexity, and write minimum code that solves the problem with no speculative features or premature abstractions.
 license: MIT
@@ -18,7 +22,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: coding mindset, think before coding, simplicity first, overengineering, code complexity, yagni, premature optimization, assumptions, tradeoffs, keep it simple
+  triggers: coding mindset, think before coding, simplicity first, overengineering, yagni, premature optimization, assumptions, tradeoffs
   role: implementation
   scope: implementation
   output-format: code
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: karpathy-surgical-changes, karpathy-goal-driven-execution, yagni, kiss-principle
+
+
+
+
 ---
+
+
+
+
 
 # Karpathy Coding Mindset
 

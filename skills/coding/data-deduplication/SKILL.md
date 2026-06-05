@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-deduplication
 description: Identifies and eliminates data-layer duplication (schema, ETL transformations, API responses, query patterns, configuration) using canonical source extraction to prevent inconsistent definitions across services and pipelines.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: data deduplication, schema normalization, ETL pipeline dedup, API response standardization, query abstraction, configuration centralization, canonical data source, data model reuse, duplicate schema definitions, data layer DRY
+  triggers: data deduplication, schema normalization, ETL pipeline dedup, API response standardization, canonical data source, data model reuse, duplicate schema definitions, data layer DRY
   archetypes:
     - tactical
     - diagnostic
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: deduplication-patterns,data-modeling,dry-principles,refactoring-techniques,code-quality-metrics
+
+
+
+
 ---
+
+
+
+
 
 # Data-Layer Deduplication
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: async-programming
 description: Implements asynchronous programming patterns (asyncio task groups, goroutine
   pools, cancellation scopes, structured concurrency) to build high-throughput, non-blocking
@@ -6,11 +10,9 @@ description: Implements asynchronous programming patterns (asyncio task groups, 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: asynchronous programming, async await, asyncio, goroutine pool, concurrency
-    patterns, event loop, structured concurrency, cancellation scope, parallel execution,
-    race condition prevention, non-blocking I/O
+  triggers: asynchronous programming, async await, asyncio, goroutine pool, concurrency patterns, event loop, structured concurrency, cancellation scope patterns
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: api-design, automated-testing
-------
+
+
+
+
+---
+
+
+
+
 # Async Programming Engineer
 
 I design and implement high-throughput asynchronous systems using structured concurrency, bounded worker pools, and proper cancellation semantics across Python's asyncio and Go's goroutine model. When I am active, I ensure concurrent code is safe from race conditions, resource leaks, and unhandled errors while delivering measurable latency and throughput improvements over synchronous equivalents.

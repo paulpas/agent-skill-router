@@ -8,6 +8,8 @@ import { GitHubSkillLoader } from './skills/GitHubSkillLoader';
 import { CompressionMetrics } from './utils/CompressionMetrics';
 import { SkillRegistryWithCompression } from './core/SkillRegistry';
 import { AppError } from './core/AppError';
+import { AutoSkillCreator } from './core/AutoSkillCreator';
+import { SkillCreationTracker } from './core/SkillCreationTracker';
 
 /**
  * Route request body
@@ -56,6 +58,9 @@ export * from './core/ExecutionPlanner';
 export * from './core/SafetyLayer';
 export * from './core/SkillCompressor';
 export * from './mcp/MCPBridge';
+export * from './core/AutoSkillCreator';
+export * from './core/SkillCreationTracker';
+export * from './core/types';
 // DO NOT export mcp/types.js to avoid duplicate ToolResult/ToolSpec exports
 export * from './embedding/EmbeddingService';
 export * from './embedding/VectorDatabase';
@@ -72,6 +77,7 @@ export class AgentSkillRoutingApp {
   private router: Router | null = null;
   private mcpBridge: MCPBridge | null = null;
   private githubLoader: GitHubSkillLoader | null = null;
+  private autoSkillCreator: AutoSkillCreator | null = null;
   private logger: Logger;
   private ready = false;
   private loadingError: string | null = null;
@@ -347,6 +353,104 @@ export class AgentSkillRoutingApp {
         sourceFile: s.sourceFile,
       }));
       reply.code(200).send({ total: skills.length, skills });
+    });
+
+    // ── /skill/create — auto-create a skill when no good match exists ──────
+    this.app.post<{ Body: { task: string; domain?: string; topic?: string; dryRun?: boolean } }>(
+      '/skill/create',
+      {
+        bodyLimit: 10000,
+        schema: {
+          body: {
+            type: 'object',
+            properties: {
+              task: { type: 'string' },
+              domain: { type: 'string' },
+              topic: { type: 'string' },
+              dryRun: { type: 'boolean' },
+            },
+            required: ['task'],
+            additionalProperties: false,
+          },
+        },
+      },
+      async (request, reply) => {
+        if (!this.ready) {
+          return reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
+        }
+
+        // Guard: validate request body
+        const body = request.body;
+        if (!body || typeof body !== 'object' || !body.task || typeof body.task !== 'string') {
+          return reply.code(400).send({ error: 'Invalid request', message: 'Missing or invalid "task" field (required string)' });
+        }
+
+        const task = body.task.trim();
+        if (task.length === 0) {
+          return reply.code(400).send({ error: 'Invalid request', message: 'Task cannot be empty' });
+        }
+
+        if (!this.autoSkillCreator || !this.router) {
+          return reply.code(503).send({ error: 'Service unavailable', message: 'Auto-skill creator not initialized' });
+        }
+
+        try {
+          this.logger.info('Auto-skill creation requested', { task: task.slice(0, 120), dryRun: body.dryRun });
+
+          const response = await this.autoSkillCreator.createSkill(
+            {
+              task,
+              domain: body.domain,
+              topic: body.topic,
+              dryRun: body.dryRun,
+            },
+            this.router,
+          );
+
+          reply.code(200).send(response);
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          this.logger.error('Auto-skill creation failed', {
+            error: message,
+            task: task.slice(0, 120),
+          });
+
+          if (message.includes('Missing OpenAI API key')) {
+            return reply.code(400).send({
+              error: 'Configuration required',
+              message: 'OpenAI API key is required for skill generation. Set OPENAI_API_KEY environment variable.',
+            });
+          }
+
+          return reply.code(500).send({
+            error: 'Auto-skill creation failed',
+            message,
+          });
+        }
+      },
+    );
+
+    // ── /skills/created — list all auto-created skills ────────
+    this.app.get('/skills/created', async (_request, reply) => {
+      if (!this.ready) {
+        return reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
+      }
+
+      try {
+        const tracker = new SkillCreationTracker();
+        const skills = tracker.getCreatedSkills();
+
+        reply.code(200).send({
+          total: skills.length,
+          totalTokensUsed: skills.reduce((sum, s) => sum + (s.totalTokensUsed || 0), 0),
+          skills,
+        });
+      } catch (error) {
+        this.logger.error('Failed to list created skills', {
+          error: error instanceof Error ? error.message : String(error),
+        });
+        return reply.code(500).send({ error: 'Internal server error' });
+      }
     });
 
     // ── /skill/:name — on-demand SKILL.md content (with optional compression) ─
@@ -802,6 +906,13 @@ Use --help for configuration options.
       enabledTools: this.config.enabledTools,
       disableTools: this.config.disableTools,
       defaultTimeoutMs: this.config.defaultTimeoutMs,
+    });
+
+    // Initialize auto-skill creator (reads env vars for threshold and feature flag)
+    this.autoSkillCreator = new AutoSkillCreator({
+      enabled: process.env.AUTO_SKILL_CREATION_ENABLED !== 'false',
+      confidenceThreshold: parseFloat(process.env.AUTO_SKILL_CONFIDENCE_THRESHOLD || '0.35') || 0.35,
+      maxValidationRetries: parseInt(process.env.AUTO_SKILL_MAX_RETRIES || '5', 10) || 5,
     });
 
     // Load compression configuration for scaling to 1,778 skills

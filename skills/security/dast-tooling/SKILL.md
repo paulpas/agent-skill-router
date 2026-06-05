@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: dast-tooling
 description: Implements Dynamic Application Security Testing (DAST) methodologies to identify runtime vulnerabilities during the execution phase of applications.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # DAST Tooling
 

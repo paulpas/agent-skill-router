@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: hubspot-api
 description: Implements HubSpot API integration (CRM, Contacts, Companies, Deals,
   Tickets, using hubspot-api-client Python SDK with OAuth 2.0, private apps, CRM objects,
@@ -6,10 +10,9 @@ description: Implements HubSpot API integration (CRM, Contacts, Companies, Deals
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: hubspot, hubspot api, hubspot crm, hubspot-api-client, hubspot contacts,
-    hubspot companies, hubspot deals, how do i integrate with hubspot, crm integration
+  triggers: hubspot, hubspot api, hubspot crm, hubspot-api-client, hubspot contacts, hubspot companies, hubspot deals, how do i integrate with hubspot hubspot companies
   archetypes:
   - tactical
   - generation
@@ -31,10 +34,35 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-salesforce-api, coding-marketo-api, coding-zendesk-api
-------
+
+
+
+
+---
+
+
+
+
 # HubSpot API Integration
 
 Implements production-grade HubSpot integration using the `hubspot-api-client` Python SDK and HubSpot REST API. When loaded, this skill makes the model implement CRUD operations on HubSpot CRM objects (Contacts, Companies, Deals, Tickets, Products, Line Items, Custom Objects), associations between objects, CRM search, HubSpot Forms, Engagements, and HubSpot's Batch API. All implementations follow HubSpot best practices: use `HUBSPOT_ACCESS_TOKEN` from environment for Private Apps, implement OAuth 2.0 refresh token flow for user-facing apps, use v4 API for CRM objects, handle rate limits with exponential backoff, and properly paginate through list results.
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## TL;DR Checklist
 

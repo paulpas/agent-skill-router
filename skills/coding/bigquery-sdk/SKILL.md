@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: bigquery-sdk
 description: Integrates Google BigQuery using google-cloud-bigquery 3.x with patterns
   for SQL queries, dataset/table management, streaming inserts, BI Engine, and load
@@ -6,7 +10,7 @@ description: Integrates Google BigQuery using google-cloud-bigquery 3.x with pat
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: bigquery, google cloud bigquery, bigquery sql, how do i query bigquery
     from python, bigquery streaming, google-cloud-bigquery, bi engine, bigquery load
@@ -32,7 +36,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-snowflake-sdk, coding-databricks-sdk, coding-google-cloud-sdk
-------
+
+
+
+
+---
+
+
+
+
 # Google BigQuery Python SDK Integration
 
 Integrates Google BigQuery using `google-cloud-bigquery` 3.x with patterns for SQL query execution (sync and async), dataset and table management, streaming inserts, load jobs from Cloud Storage, BI Engine reservations, and query job lifecycle management.

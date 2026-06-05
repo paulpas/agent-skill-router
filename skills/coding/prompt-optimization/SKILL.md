@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: prompt-optimization
 description: Systematically optimizes prompts through A/B testing, iterative refinement, few-shot example selection, and adversarial evaluation to maximize LLM output quality across multiple dimensions.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: coding-agent-evaluation-testing, agent-prompt-engineer, coding-software-quality-assurance
+
+
+
+
 ---
+
+
+
+
 
 # Prompt Optimization Framework
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: spring-data-jpa
 description: Implements Spring Data JPA repository interfaces, derived query methods, JPQL/native @Query annotations, transaction management with rollback rules, pagination with Pageable, and N+1 query optimization using EntityGraph or JOIN FETCH.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: spring data jpa, repository pattern, entity mapping, jpql queries, transaction management, pagination sorting, n plus one problem, @entitygraph, derived queries
+  triggers: spring data jpa, repository pattern, entity mapping, jpql queries, transaction management, pagination sorting, n plus one problem, derived queries
   archetypes:
     - tactical
     - diagnostic
@@ -26,7 +30,15 @@ metadata:
     - do-dont
     - patterns
   related-skills: spring-boot-auto-config, spring-security-core
+
+
+
+
 ---
+
+
+
+
 
 # Spring Data JPA Repository & Entity Mapping
 

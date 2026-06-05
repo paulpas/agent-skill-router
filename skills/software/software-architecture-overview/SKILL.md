@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-architecture-overview
 description: Provides a comprehensive understanding of modern software architecture patterns, including microservices, serverless, and event-driven architectures.
 license: MIT
@@ -14,7 +18,15 @@ metadata:
   archetypes: tactical
   anti_triggers: monolithic, legacy
   response_profile: { verbosity: high, directive_strength: high, abstraction_level: tactical }
+
+
+
+
 ---
+
+
+
+
 
 # Software Architecture Overview
 

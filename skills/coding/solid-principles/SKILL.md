@@ -1,4 +1,9 @@
 ---
+
+
+
+
+
 name: solid-principles
 description: Implements the five SOLID OOP design principles (SRP, OCP, LSP, ISP, DIP) with Python-specific patterns using Protocols, singledispatch, and explicit dependency injection.
 license: MIT
@@ -6,10 +11,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: >-
-    SOLID principles, SRP, OCP, LSP, ISP, DIP, single responsibility,
-    interface segregation, dependency inversion, typing.Protocol, composition over
-    inheritance, how do i design clean oop classes, god class anti-pattern, python oop best practices
+  triggers: SOLID principles, SRP, OCP, LSP, ISP, DIP, single responsibility, interface segregation SOLID principles SOLID principles
   archetypes:
     - tactical
     - educational
@@ -25,7 +27,17 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: coding-design-patterns-architecture, coding-refactoring-techniques, coding-code-quality-policies
+
+
+
+
+
 ---
+
+
+
+
+
 
 # SOLID Principles — OOP Design Foundation for Python
 

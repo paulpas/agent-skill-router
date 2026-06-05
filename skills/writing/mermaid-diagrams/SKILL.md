@@ -1,14 +1,17 @@
 ---
+
+
+
+
 name: mermaid-diagrams
 description: Creates clear, web-savvy MermaidJS diagrams (flowcharts, sequence diagrams,
   Gantt charts, and more) for Markdown documentation that renders beautifully on GitHub.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: writing
-  triggers: mermaid, mermaidjs, diagram, flowchart, sequence diagram, how do i create
-    a diagram, github markdown diagram, architecture diagram, diagram best practices
+  triggers: mermaid, mermaidjs, diagram, flowchart, sequence diagram, how do i create a diagram, github markdown diagram, architecture diagram a diagram
   archetypes:
   - educational
   anti_triggers:
@@ -22,7 +25,15 @@ metadata:
   scope: implementation
   output-format: report
   related-skills: technical-documentation
-------
+
+
+
+
+---
+
+
+
+
 # MermaidJS Diagramming for GitHub Markdown
 
 Teaches AI models to write clean, well-structured MermaidJS diagrams that render beautifully on GitHub's native Markdown viewer. Covers diagram type selection, syntax best practices, GitHub-specific constraints, and common pitfalls across 10+ diagram types — flowcharts, sequence diagrams, Gantt charts, mindmaps, and more.

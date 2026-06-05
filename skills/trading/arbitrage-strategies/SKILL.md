@@ -1,5 +1,9 @@
 ---
-name: trading-arbitrage-strategies
+
+
+
+
+name: arbitrage-strategies
 license: MIT
 compatibility: opencode
 metadata:
@@ -7,14 +11,22 @@ metadata:
   anti_triggers: [generic routing]
   response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
   
-  version: 1.0.0
+  version: "1.0.0"
   domain: trading
   triggers: arbitrage, trading strategies, how do I profit from arbitrage, arbitrage opportunities, moving average arbitrage
   role: implementation
   scope: implementation
   output-format: code
   related-skills: trading-risk-management, trading-technical-analysis
+
+
+
+
 ---
+
+
+
+
 
 # Trading Arbitrage Strategies
 Implements intelligent trading strategies focused on exploiting arbitrage opportunities across various financial markets. This skill guides the model in identifying profitable trading scenarios based on price discrepancies, utilizing historical data and real-time market feeds. 

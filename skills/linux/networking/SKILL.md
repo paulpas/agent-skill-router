@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: networking
 description: Configures and optimizes Linux networking for cloud virtual networks
   and on-prem data center infrastructure with performance and security focus.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -15,8 +19,7 @@ metadata:
   - guidance
   - config
   - do-dont
-  triggers: linux networking, bond interface, VLAN, bridge, network namespace, nftables,
-    routing, cloud networking, VPC
+  triggers: linux networking, bond interface, VLAN, bridge, network namespace, nftables, routing, cloud networking routing
   archetypes:
   - tactical
   anti_triggers:
@@ -30,7 +33,15 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+
+
+
+
+---
+
+
+
+
 # Linux Networking Configuration
 
 Senior network engineer configuring and optimizing Linux networking for cloud virtual networks and on-prem data center infrastructure, covering bonding, VLANs, bridges, network namespaces, firewalls, and routing.

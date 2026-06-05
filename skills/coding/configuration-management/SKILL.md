@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: configuration-management
 description: Implements modern Python configuration management including layered config resolution, schema validation with Pydantic, environment-specific overrides, and secrets injection for production-grade applications.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: configuration management, config loading, pydantic settings, .env files, environment variables, secrets management, config schema validation, how do i manage application configuration, layered configuration
+  triggers: configuration management, config loading, pydantic settings, .env files, environment variables, secrets management, config schema validation, how do i manage application configuration
   archetypes:
     - tactical
     - generation
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: software-engineering-principles, modern-python-development, production-readiness
+
+
+
+
 ---
+
+
+
+
 
 # Configuration Management in Python Applications
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: domain-architecture-project-structure
 description: Defines project directory layouts and module organization for domain-driven
   systems — vertical slice architecture, modular monolith structure, layer separation
@@ -6,11 +10,9 @@ description: Defines project directory layouts and module organization for domai
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: project structure, module organization, vertical slice, modular monolith,
-    DDD layout, how do i organize a ddd project, domain driven architecture, clean
-    directory structure, layer separation
+  triggers: project structure, module organization, vertical slice, modular monolith, DDD layout, how do i organize a ddd project, domain driven architecture, clean directory structure DDD layout
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: domain-driven-design, hexagonal-architecture, ports-patterns, monolith-architecture
-------
+
+
+
+
+---
+
+
+
+
 # Domain Architecture and Project Structure
 
 Acts as a senior software architect designing directory layouts, module boundaries, and project organization for domain-driven systems. When loaded, the model selects an appropriate project structure pattern (vertical slice, modular monolith with horizontal layers, or feature-oriented), defines bounded-context module boundaries, configures build-system dependency validation, and produces concrete directory trees and composition root code that enforce inward dependency flow.

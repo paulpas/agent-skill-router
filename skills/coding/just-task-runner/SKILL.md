@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: just-task-runner
 description: Implements the Just task runner as a modern alternative to GNU Make with named arguments, subcommands, runsets, environment file support, and cross-platform portability for developer workflow automation.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: justfile, just task runner, task runner, casey just, how do i replace make, named arguments, runsets, recipe variables, dotenv, cross-platform make alternative
+  triggers: justfile, just task runner, casey just, named arguments, runsets, recipe variables, dotenv, cross-platform make alternative
   archetypes:
     - tactical
     - generation
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: makefile, linux-make-build-system, coding-mage-build-tool
+
+
+
+
 ---
+
+
+
+
 
 # Just Task Runner — Modern Build Orchestration
 

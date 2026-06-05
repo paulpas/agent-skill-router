@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: dlq-retry-patterns
 description: Implements dead letter queue architectures with retry strategies (exponential backoff, circuit breaker integration, poison pill detection) for resilient event-driven systems.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont]
   related-skills: event-driven-patterns,event-sourcing-pattern,idempotent-distributed-operations
+
+
+
+
 ---
+
+
+
+
 
 # Dead Letter Queue and Retry Patterns
 

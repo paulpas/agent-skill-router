@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: circleci-api
 description: Integrates with the CircleCI REST API v2 to manage pipelines, workflows,
   jobs, contexts, environment variables, project settings, and orb configurations.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: circleci api, circleci python, circleci pipelines, circleci workflows,
     circleci orb, circleci contexts, circleci jobs, circleci v2 api
@@ -30,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-github-api, coding-jenkins-api, coding-gitlab-api
-------
+
+
+
+
+---
+
+
+
+
 # CircleCI API v2 Integration
 
 Integrates with the CircleCI REST API v2 to programmatically manage pipelines, workflows, jobs, contexts, environment variables, project settings, SSH keys, and orbs. Supports both the `circleci.py` Python wrapper and direct API calls.
@@ -404,6 +416,23 @@ def trigger_good(
 - Avoid polling jobs more frequently than every 10 seconds — use CircleCI webhooks for event-driven flows
 - Never ignore pipeline parameter validation — invalid parameters cause silent pipeline failures
 - Do not assume all workflows complete — handle `canceled`, `on_hold`, and `error` states explicitly
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## Live References
 

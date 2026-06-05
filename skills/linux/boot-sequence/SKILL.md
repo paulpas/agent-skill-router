@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: boot-sequence
 description: Implements step-by-step diagnosis and optimization of the modern Linux boot process from UEFI through GRUB, initramfs, and systemd target initialization for production servers.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: linux
-  triggers: boot process, systemd, grub2, initramfs, uefi boot, slow startup, boot troubleshooting, secure boot, linux boot, boot optimization
+  triggers: boot process, systemd, grub2, initramfs, uefi boot, slow startup, boot troubleshooting, linux boot
   role: implementation
   scope: infrastructure
   output-format: code
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: systemd-services, linux-security, linux-networking
+
+
+
+
 ---
+
+
+
+
 
 # Linux Boot Process Manager
 

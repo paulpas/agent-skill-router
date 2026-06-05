@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: system-design-foundations
 description: Implements core distributed system design patterns (load balancing, caching strategies, database sharding, message queues) for building scalable and resilient production applications.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: system design, distributed systems, scalability, load balancing, caching strategy, database sharding, message queue, event-driven architecture, microservices communication, CAP theorem, consistency patterns, connection pooling, rate limiting, circuit breaker
+  triggers: system design, distributed systems, scalability, load balancing, caching strategy, database sharding, message queue, CAP theorem
   archetypes:
     - tactical
     - strategic
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, diagrams, do-dont]
   related-skills: distributed-systems-architecture, microservice-resilience-patterns, cqrs-pattern, domain-events, production-readiness
+
+
+
+
 ---
+
+
+
+
 
 # System Design Foundations
 

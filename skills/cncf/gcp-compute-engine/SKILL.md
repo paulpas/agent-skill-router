@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: gcp-compute-engine
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: compute-engine
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Google Compute Engine
 
 Deploy and manage google compute engine infrastructure as part of your cloud-native environment.

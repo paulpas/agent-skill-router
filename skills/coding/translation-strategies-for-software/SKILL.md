@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: translation-strategies-for-software
 description: Implements best practices for translating software content efficiently and accurately for global markets while adhering to localization standards.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+  version: "1.1.1"
   domain: coding
   triggers: translation strategies, software localization, i18n, l10n, multilingual support
   archetypes: [implementation, reference]
@@ -13,7 +17,18 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Best Practices for Translation Strategies in Software Development
 Effectively translating software content requires strategic planning and execution to ensure accuracy, cultural relevance, and usability across diverse user bases. Here are key practices to consider:
@@ -48,6 +63,23 @@ While AI translation tools can offer drafts, human translators should review con
 By implementing robust translation strategies, organizations can significantly enhance their global outreach and user satisfaction while maintaining consistent quality in software products across multiple languages. This leads to improved user engagement and a broader user base in diverse markets.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

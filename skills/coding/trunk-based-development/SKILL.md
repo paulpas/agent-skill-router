@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: trunk-based-development
 description: Implements trunk-based development workflows with feature flag gating, short-lived branching strategies, and automated CI to keep main always deployable.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont]
   related-skills: secure-release-pipeline, monolith-refactoring, architectural-modernization
+
+
+
+
 ---
+
+
+
+
 
 # Trunk-Based Development Workflow
 

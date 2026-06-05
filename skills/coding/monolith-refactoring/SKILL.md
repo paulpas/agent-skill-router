@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: monolith-refactoring
 description: Refactors legacy monolithic "big ball of mud" codebases into cleanly
   bounded modules using dependency analysis, hexagonal port isolation, strangler fig
@@ -6,11 +10,9 @@ description: Refactors legacy monolithic "big ball of mud" codebases into cleanl
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: monolith refactoring, big ball of mud, how do i untangle legacy code,
-    spaghetti code cleanup, module extraction, strangler fig pattern, codebase restructuring,
-    technical debt refactoring, god class decomposition, dependency analysis
+  triggers: monolith refactoring, big ball of mud, how do i untangle legacy code, spaghetti code cleanup, module extraction, strangler fig pattern, codebase restructuring, technical debt refactoring spaghetti code cleanup
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: monolith-architecture,microservices-architecture,anti-corruption-layer,domain-driven-design,technical-debt-management
-------
+
+
+
+
+---
+
+
+
+
 # Monolith Refactoring Guide
 
 Senior software architect untangling legacy monolithic "big ball of mud" codebases into cleanly bounded, independently extractable modules. Analyzes dependency graphs, isolates cross-cutting concerns, applies hexagonal ports to define service boundaries, and orchestrates incremental strangler fig extraction — transforming unstructured spaghetti code into a modular architecture ready for eventual microservice decomposition.

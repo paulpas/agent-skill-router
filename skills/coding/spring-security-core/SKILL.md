@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: spring-security-core
 description: Implements Spring Security 6.x filter chain configuration, JWT authentication filters, method-level security with @EnableMethodSecurity, password encoding, and CORS/CSRF handling for production Spring Boot applications.
 license: MIT
@@ -26,7 +30,15 @@ metadata:
     - do-dont
     - patterns
   related-skills: spring-boot-auto-config, spring-data-jpa
+
+
+
+
 ---
+
+
+
+
 
 # Spring Security Core & JWT Authentication
 

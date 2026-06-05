@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: agent-context-management
 description: Implements context window management, sliding window strategies, and
   persistent memory patterns to maintain AI agent coherence across long interactions.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: agent
   triggers: context window, agent memory, sliding window, session state, prompt optimization,
     rag, token management, long conversation history
@@ -29,7 +33,15 @@ metadata:
   - do-dont
   related-skills: agent-conversation-summarizer, agent-task-decomposition-engine,
     agent-reasoning-framework
-------
+
+
+
+
+---
+
+
+
+
 # Agent Context & Memory Manager
 
 Manages AI agent context windows and implements memory patterns to maintain coherence, reduce token waste, and preserve critical state across extended interactions.

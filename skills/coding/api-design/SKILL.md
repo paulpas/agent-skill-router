@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-design
 description: "Implements production REST API design patterns: resource modeling, unified error envelopes, Pydantic validation, rate limiting, OpenAPI docs, and versioning for maintainable backend systems."
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # API Design Architect
 

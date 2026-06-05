@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kernel-tuning
 description: Tunes Linux kernel parameters for workload optimization across cloud
   VMs and bare metal with hardware-aware adjustments for CPU, memory, and network
@@ -6,7 +10,7 @@ description: Tunes Linux kernel parameters for workload optimization across clou
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -32,7 +36,15 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+
+
+
+
+---
+
+
+
+
 # Kernel Tuning for Linux Systems
 
 Senior Linux engineer tuning kernel parameters to optimize system performance for specific workloads across cloud virtual machines and bare metal servers. Applies hardware-aware adjustments for CPU topology, memory architecture, and network stacks.

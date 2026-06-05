@@ -1,10 +1,36 @@
-# Shopify API Integration
+---
 
-  archetypes: ecommerce, API integration
-  anti_triggers: manual processing, overloading
+
+
+
+name: shopify-api
+description: Implements production-grade Shopify API integration (Admin REST/GraphQL, Storefront, OAuth 2.0, webhooks) using the shopifyapi Python SDK for ecommerce applications.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: coding
+  triggers: Shopify API, admin REST API, GraphQL API, Storefront API, OAuth 2.0, webhooks, shopifyapi SDK, ecommerce integration
+  role: implementation
+  scope: implementation
+  output-format: code
+  content-types: [code, guidance, examples]
+  archetypes: [tactical, generation]
+  anti_triggers: [manual processing, overloading, non-Shopify platforms]
   response_profile:
-      verbosity: medium
-      directive_strength: high
+    verbosity: medium
+    directive_strength: high
+
+
+
+
+---
+
+
+
+
+
+# Shopify API Integration
 
 Implements production-grade Shopify API integration for Admin REST API, Admin GraphQL API, and Storefront API. When loaded, this skill makes the model implement the `shopifyapi` Python SDK patterns including: OAuth 2.0 app installation flow (authorization_code grant), Admin REST API with cursor-based pagination (`page_info`, `limit`), Admin GraphQL API with rate limit handling, Storefront API for customer-facing experiences, webhook HMAC-SHA256 signature verification, API versioning (`2024-01`, etc.), and private app vs custom app authentication patterns.
 
@@ -401,6 +427,83 @@ def verify_access_token(shop: str, access_token: str) -> dict[str, Any]:
 ```
 
 ---
+
+---
+
+
+
+### Pattern 2: REST API with Rate Limiting and Retries
+
+```python
+import logging
+import time
+from typing import Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+class ShopifyRESTClient:
+    """Shopify REST API client with rate limit handling."""
+
+    def __init__(self, shop_domain: str, access_token: str):
+        self._shop = shop_domain
+        self._token = access_token
+
+    def get_order(self, order_id: int) -> dict:
+        """Fetch a single order by ID."""
+        url = f"https://{self._shop}.myshopify.com/admin/api/2024-01/orders/{order_id}.json"
+        headers = {"X-Shopify-Access-Token": self._token}
+        # In production: requests.get(url, headers=headers)
+        return {}
+
+    def list_orders(self, status: str = "any", limit: int = 50) -> list[dict]:
+        """List orders with filtering and pagination."""
+        params = {"status": status, "limit": limit}
+        url = f"https://{self._shop}.myshopify.com/admin/api/2024-01/orders.json"
+        headers = {"X-Shopify-Access-Token": self._token}
+        # In production: requests.get(url, params=params, headers=headers)
+        return []
+
+    def update_inventory(self, variant_id: int, quantity: int) -> dict:
+        """Update inventory level for a product variant."""
+        body = {"inventory_item_id": variant_id, "available": quantity}
+        url = f"https://{self._shop}.myshopify.com/admin/api/2024-01/inventory_levels/adjust_quantity.json"
+        headers = {"X-Shopify-Access-Token": self._token, "Content-Type": "application/json"}
+        # In production: requests.put(url, json=body, headers=headers)
+        return {}
+
+
+class RateLimitState:
+    """Tracks API rate limit status."""
+
+    def __init__(self):
+        self.remaining = 40
+        self.reset_time = time.time()
+
+    def is_rate_limited(self) -> bool:
+        return time.time() > self.reset_time or self.remaining <= 0
+
+    def update_from_headers(self, headers: dict) -> None:
+        if "X-Shopify-Shop-Api-Call-Limit" in headers:
+            parts = headers["X-Shopify-Shop-Api-Call-Limit"].split("/")
+            self.remaining = int(parts[0])
+```
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## Live References
 

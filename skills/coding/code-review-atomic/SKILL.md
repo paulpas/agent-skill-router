@@ -1,7 +1,38 @@
 ---
+
+
+
+
+
+
 name: code-review-atomic
 
-description: Implements a structured approach to code reviews that enhances quality, performance, and knowledge sharing among team members.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: code review, peer review, quality assurance, code quality\n  archetypes: [implementation, evaluation]\n  anti_triggers: [ad-hoc reviews, lack of documentation]\n  response_profile: medium\n---\n## Expanded Code Review Atomic Content
+description: Implements a structured approach to code reviews that enhances quality, performance, and knowledge sharing among team members.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: code review, peer review, quality assurance, code quality
+  archetypes: [implementation, evaluation]
+  anti_triggers: [ad-hoc reviews, lack of documentation]
+  response_profile: medium
+
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+
+---
+
+
+
+
+
+\n## Expanded Code Review Atomic Content
 
 ### The Significance of Code Reviews in Development
 Code reviews play a vital role in ensuring the quality and maintainability of software projects. Here are several core benefits:
@@ -30,6 +61,23 @@ Yes, reviewing parties should familiarize themselves with the context of the cha
 By instilling structured methodologies into the code review process, teams can significantly improve software quality while sharing knowledge and maintaining standards throughout development operations.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

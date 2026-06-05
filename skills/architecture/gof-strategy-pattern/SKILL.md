@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gof-strategy-pattern
 description: Implements the Strategy design pattern allowing the definition of a family of algorithms, encapsulating each one, and making them interchangeable.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: gof-factory-pattern, 
+
+
+
+
 ---
+
+
+
+
 
 # Strategy Pattern
 

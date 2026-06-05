@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-development-patterns
 description: Implements practical API development patterns including REST conventions,
   GraphQL design, error handling strategies, OpenAPI-first workflow, and versioning
@@ -6,7 +10,7 @@ description: Implements practical API development patterns including REST conven
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: api development, REST API design, GraphQL schema design, API error handling,
     OpenAPI spec, API versioning strategy, how do i build a production API, API conventions
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: api-design, rest-api-patterns, graphql-schema-design, api-security-patterns
-------
+
+
+
+
+---
+
+
+
+
 # API Development Patterns
 
 Implements practical patterns for building production-ready APIs that are consistent, resilient, and maintainable. When loaded, this skill makes the model act as a senior API engineer — designing RESTful endpoints, crafting GraphQL schemas, implementing robust error handling, managing API versioning strategies, and enforcing contract-first development workflows with OpenAPI specifications.

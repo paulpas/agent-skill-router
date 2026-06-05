@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: event-storming
 description: Facilitates collaborative EventStorming workshops to discover bounded
   contexts, map domain events, identify aggregates and commands, and produce visual
@@ -6,7 +10,7 @@ description: Facilitates collaborative EventStorming workshops to discover bound
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: event storming, eventstorming, domain discovery, workshop facilitation,
     bounded context, domain events, sticky notes, collaborative modeling
@@ -32,7 +36,15 @@ metadata:
   - diagrams
   related-skills: ddd-context-mapping, ddd-tactical-patterns, event-driven-patterns,
     architecture-decision-records
-------
+
+
+
+
+---
+
+
+
+
 # EventStorming Facilitator
 
 Facilitates collaborative EventStorming workshops to discover bounded contexts, map domain events, identify aggregates and commands, and produce visual business process models for domain-driven design projects.

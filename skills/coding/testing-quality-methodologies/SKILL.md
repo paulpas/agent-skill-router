@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: testing-quality-methodologies
 description: Implements TDD and BDD methodologies for ensuring quality in software engineering with structured guidelines and practices.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Testing & Quality Methodologies in Software Engineering
 

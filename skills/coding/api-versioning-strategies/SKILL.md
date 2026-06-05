@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-versioning-strategies
 description: Implements API versioning strategies (URL path, Accept header, query
   parameter, media type) to manage backward compatibility, deprecation timelines,
@@ -6,12 +10,9 @@ description: Implements API versioning strategies (URL path, Accept header, quer
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: api versioning, url path versioning, accept header, breaking changes,
-    api deprecation, sunset header, backward compatibility, api migration, stripe
-    api versioning, github api version, twilio api version, how do i version my api,
-    rest api lifecycle, api contract stability
+  triggers: api versioning, url path versioning, accept header, breaking changes, api deprecation, sunset header, backward compatibility, api migration api deprecation
   archetypes:
   - tactical
   - generation
@@ -28,7 +29,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: api-design, input-validation, code-review, security-review
-------
+
+
+
+
+---
+
+
+
+
 # API Versioning Strategies
 
 Manages the full API versioning lifecycle — choosing a versioning strategy, classifying breaking vs. compatible changes, deprecating old versions gracefully, and guiding consumers through migrations with zero downtime.

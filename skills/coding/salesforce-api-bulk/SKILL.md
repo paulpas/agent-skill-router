@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: salesforce-api-bulk
 description: Handles bulk API operations using Salesforce API, including large data transfers efficiently while ensuring robust compliance and error handling throughout data transfers.
 license: MIT
@@ -20,7 +24,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: tactical
+
+
+
+
 ---
+
+
+
+
 
 # Salesforce API - Bulk Integration
 

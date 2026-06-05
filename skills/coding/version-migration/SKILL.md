@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: version-migration
 description: Manages framework and library version upgrades through systematic breakage
   analysis, automated refactoring scripts, and progressive migration with zero-downtime
@@ -6,7 +10,7 @@ description: Manages framework and library version upgrades through systematic b
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: version migration, major version upgrade, breaking changes, framework
     upgrade, deprecation migration, API breakage, automated refactoring, semver upgrade
@@ -31,7 +35,15 @@ metadata:
   - examples
   - do-dont
   related-skills: framework-adaptation, dependency-conflict-resolution, architecture-review
-------
+
+
+
+
+---
+
+
+
+
 # Version Migration & Upgrade Manager
 
 Senior engineer conducting systematic version migrations of frameworks, libraries, and dependencies when breaking changes occur. When loaded, this skill makes the model analyze changelogs for breakage, inventories deprecated APIs, generates automated refactoring scripts, and orchestrates progressive migration with regression testing at every step.

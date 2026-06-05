@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: data-feature-store
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: feature-store
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Store and retrieve engineered features for consistent model training and inference
 
 **Philosophy:** Features are the foundation of ML models; feature store ensures reproducibility and consistency across training and production
@@ -343,6 +355,154 @@ class FeatureCache:
 ```
 
 ---
+
+---
+
+
+### Pattern 2: Feature Store with Online/Offline Consistency
+
+```python
+from __future__ import annotations
+
+import hashlib
+import json
+import logging
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from typing import Any, Optional
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class FeatureVector:
+    """Immutable feature vector with lineage tracking."""
+    entity_id: str
+    entity_type: str
+    features: dict[str, float]
+    version: int
+    generated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+
+    @property
+    def fingerprint(self) -> str:
+        """Deterministic hash for cache invalidation and consistency checks."""
+        content = f"{self.entity_id}:{self.version}:{json.dumps(self.features, sort_keys=True)}"
+        return hashlib.sha256(content.encode()).hexdigest()[:16]
+
+
+class FeatureStore:
+    """Feature store with both offline (batch) and online (low-latency) serving paths."""
+
+    def __init__(self, offline_backend, online_backend):
+        self._offline = offline_backend   # e.g., Parquet files, S3, data warehouse
+        self._online = online_backend     # e.g., Redis, in-memory cache
+
+    def compute_and_write(
+        self,
+        entity_id: str,
+        entity_type: str,
+        features: dict[str, float],
+        version: int = 1,
+    ) -> FeatureVector:
+        """Compute a new feature vector and write to both offline and online stores.
+
+        Guarantees that the same feature computation produces identical results
+        regardless of when or where it's called (deterministic + idempotent).
+
+        Args:
+            entity_id: Unique identifier for the entity (e.g., symbol, user).
+            entity_type: Entity category (e.g., "symbol", "user_profile").
+            features: Dict of feature name → float value.
+            version: Feature vector version number.
+
+        Returns:
+            The created FeatureVector with computed fingerprint.
+        """
+        fv = FeatureVector(
+            entity_id=entity_id,
+            entity_type=entity_type,
+            features={k: round(v, 6) for k, v in features.items()},
+            version=version,
+        )
+
+        # Write to offline store (batch path — data warehouse / parquet)
+        self._offline.write(fv.entity_type, fv.entity_id, {
+            "features": fv.features,
+            "version": fv.version,
+            "generated_at": fv.generated_at.isoformat(),
+            "fingerprint": fv.fingerprint,
+        })
+
+        # Write to online store (low-latency path — Redis / DynamoDB)
+        self._online.set(
+            key=f"feature:{fv.entity_type}:{fv.entity_id}",
+            value=json.dumps({
+                "features": fv.features,
+                "version": fv.version,
+                "fingerprint": fv.fingerprint,
+            }),
+            ttl=3600,  # 1 hour TTL for online cache
+        )
+
+        logger.info("Feature vector written: %s/%s v%d (fp=%s)",
+                     entity_type, entity_id, version, fv.fingerprint)
+        return fv
+
+    def get_latest(self, entity_id: str, entity_type: str) -> Optional[FeatureVector]:
+        """Retrieve the latest feature vector from online store.
+
+        Falls back to offline store if online cache misses or is stale.
+        """
+        # Try online store first (fast path)
+        online_data = self._online.get(f"feature:{entity_type}:{entity_id}")
+        if online_data:
+            data = json.loads(online_data)
+            return FeatureVector(
+                entity_id=entity_id,
+                entity_type=entity_type,
+                features=data["features"],
+                version=data["version"],
+            )
+
+        # Fall back to offline store (slow path)
+        offline_data = self._offline.read(entity_type, entity_id)
+        if offline_data:
+            return FeatureVector(
+                entity_id=entity_id,
+                entity_type=entity_type,
+                features=offline_data["features"],
+                version=offline_data["version"],
+            )
+
+        logger.debug("No feature vector found for %s/%s", entity_type, entity_id)
+        return None
+
+    def get_batch(self, entity_ids: list[str], entity_type: str) -> dict[str, FeatureVector]:
+        """Fetch feature vectors for multiple entities in a single batch call."""
+        result = {}
+        for eid in entity_ids:
+            fv = self.get_latest(eid, entity_type)
+            if fv is not None:
+                result[eid] = fv
+        return result
+```
+
+## Constraints
+
+### MUST DO
+- Validate all incoming data against schema constraints (type, range, nullability) before processing or storage
+- Implement idempotent operations: re-processing the same data must produce identical results
+- Track data lineage and provenance with timestamps, source identifiers, and transformation history for every record
+- Handle out-of-order data by implementing a watermark-based ordering mechanism with configurable tolerance window
+- Log data quality metrics (completeness, freshness, accuracy) per source with automatic alerting on degradation
+
+### MUST NOT DO
+- Do not silently drop records that fail validation — log them to a quarantine table for review
+- Avoid concatenating strings for timestamp comparison; use proper datetime/timedelta objects
+- Never assume data arrives in chronological order from any external feed without explicit ordering guarantees
+- Do not store raw and processed data in the same table without clear partitioning or separation strategy
+- Avoid blocking on slow data sources — implement async prefetch with timeout-based fallback to cached data
+
 
 ## Live References
 

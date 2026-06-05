@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: your-routine
 description: Implements structured pre-market, during-market, and post-market routine
   frameworks that enforce consistent preparation, execution discipline, and systematic
@@ -6,11 +10,9 @@ description: Implements structured pre-market, during-market, and post-market ro
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: trading
-  triggers: trading routine, pre-market prep, post-market review, daily trading checklist,
-    execution discipline, trading habits, trade journal, market preparation, your
-    routine, routine design
+  triggers: trading routine, pre-market prep, post-market review, daily trading checklist, execution discipline, trading habits, trade journal, market preparation execution discipline
   archetypes:
   - tactical
   anti_triggers:
@@ -31,7 +33,15 @@ metadata:
   - examples
   related-skills: fundamentals-trading-plan, your-edge, your-position, fundamentals-trading-psychology,
     paper-performance-attribution
-------
+
+
+
+
+---
+
+
+
+
 # Your Routine Framework
 
 Trading operations specialist implementing structured daily routines — pre-market preparation, during-market execution discipline, and post-market review — that transform a trading edge from theoretical into repeatable practice. A routine is not a to-do list; it is the behavioral architecture that ensures your edge survives contact with market chaos.

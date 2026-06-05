@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: software-testing-best-practices
 description: Explains various software testing methodologies including unit testing, integration testing, and system testing with best practices.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
-domain: software
+  domain: software
   triggers: unit testing, integration testing, system testing, testing methodologies, testing frameworks
   role: implementation
   scope: implementation
@@ -14,7 +18,15 @@ domain: software
   archetypes: tactical
   anti_triggers: manual tests, ad-hoc testing
   response_profile: { verbosity: high, directive_strength: high, abstraction_level: tactical }
+
+
+
+
 ---
+
+
+
+
 
 # Software Testing Best Practices
 

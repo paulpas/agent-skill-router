@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: javascript-frontend-ecosystem
 description: Implements monorepo architecture, build toolchain selection, module federation,
   and package health assessment for modern JavaScript frontend ecosystems to enable
@@ -6,7 +10,7 @@ description: Implements monorepo architecture, build toolchain selection, module
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: monorepo setup, how do i set up a monorepo, module federation, micro-frontends,
     build toolchain migration, webpack to vite, turborepo vs nx
@@ -32,7 +36,15 @@ metadata:
   - do-dont
   related-skills: coding-frontend-testing-patterns, javascript-package-workflows,
     agent-task-routing
-------
+
+
+
+
+---
+
+
+
+
 # JavaScript Frontend Ecosystem Architect
 
 Implements monorepo architecture decisions, build toolchain selection, module federation for micro-frontends, and package health assessment across modern JavaScript frontend projects. When loaded, this skill makes the model act as a senior frontend infrastructure engineer — comparing toolchains with real metrics, writing concrete configuration files (turbo.json, vite.config.ts, webpack federation configs), generating dependency audit scripts, and providing migration strategies between build systems.

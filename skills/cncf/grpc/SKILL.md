@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: grpc
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: grpc
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # gRPC in Cloud-Native Engineering
 
 ## Purpose and Use Cases
@@ -623,3 +635,18 @@ jobs:
 
 | Protobuf Type | Go | Python | Java | Notes |
 |
+---
+
+## Constraints
+
+### MUST DO
+- Cite authoritative primary sources (official documentation, RFCs, standards bodies) — avoid secondary or blog references
+- Include version-specific guidance when the reference topic has significant version-dependent behavior
+- Structure reference content with clear navigation: overview first, then detailed subsections organized by use case
+- Keep examples minimal and self-contained so readers can copy-paste without needing external context
+
+### MUST NOT DO
+- Do not present opinionated practices as facts — distinguish between standards, recommendations, and personal preferences
+- Avoid outdated API references or deprecated patterns; explicitly note version requirements for each code example
+- Never include incomplete or pseudocode examples in reference materials — all examples should be runnable
+- Do not conflate different product versions when documenting features that vary across releases

@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: the-update-framework-tuf
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: update-framework-tuf
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # The Update Framework (TUF) in Cloud-Native Engineering
 
 **Category:** Security & Compliance  

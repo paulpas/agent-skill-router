@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: integration-testing-patterns
 description: Implements integration testing strategies (database, HTTP API, event-driven, message queue) with test isolation, fixture management, and real infrastructure validation for production-quality software systems.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: testing-unit-integration-e2e, rest-api-testing, software-testing-strategy
+
+
+
+
 ---
+
+
+
+
 
 # Integration Testing Patterns
 

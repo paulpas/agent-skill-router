@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: git-pr-workflows
 description: Implements best practices for managing pull requests (PRs) in Git, including workflow automation and quality control strategies.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+  version: "1.1.1"
   domain: coding
   triggers: git, pull request, PR workflows, code review, branching strategies
   archetypes: [implementation, orchestration]
@@ -13,7 +17,18 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Best Practices for Managing Git Pull Requests
 Managing pull requests is critical for maintaining code quality and facilitating team collaboration. Below are comprehensive practices for handling PRs effectively:
@@ -68,6 +83,23 @@ Yes! GitHub and GitLab provide settings to allow auto-merging based on CI succes
 Communicate with the concerned branch maintainers, pull the latest changes, resolve conflicts locally, and then push the resolved branch back to the remote.
 
 Following these best practices in managing Git pull requests results in enhanced collaboration, reduced integration issues, and improved overall software quality.
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate branch naming conventions and PR scope before creating pull requests — enforce repository-level policies
+- Require all CI checks to pass before merging; never allow bypass of required status checks without codeowner approval
+- Implement automated changelog generation from commit messages using conventional commits format
+- Maintain linear history via rebase on main branch; avoid merge commits except for release branches
+
+### MUST NOT DO
+- Do not force-push to shared or protected branches — only the original author may force-push their own feature branch
+- Avoid squashing all commits during PR review when historical commit context is valuable for understanding evolution
+- Never skip required code reviews regardless of how small the change appears — automation cannot assess architectural impact
+- Do not create PRs larger than 400 lines of net changes without explicit approval from a senior reviewer
+
 
 ## Live References
 

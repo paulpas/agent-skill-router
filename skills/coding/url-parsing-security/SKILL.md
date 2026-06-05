@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: url-parsing-security
 description: Secures URL parsing and query string handling against ampersand injection, double-encoding bypasses, parser inconsistencies, and parameter pollution across Python, Node.js, and Go applications.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: ssrf-prevention,input-validation,api-security-patterns,data-encoding
+
+
+
+
 ---
+
+
+
+
 
 # URL Parsing Security Engineer
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: solid-ocp-pattern
 description: Implements the Open/Closed Principle (OCP) from SOLID design principles, allowing classes to be open for extension but closed for modification.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: solid-srp-pattern, 
+
+
+
+
 ---
+
+
+
+
 
 # Open/Closed Principle (OCP)
 

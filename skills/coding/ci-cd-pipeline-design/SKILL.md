@@ -1,7 +1,35 @@
 ---
+
+
+
+
 name: ci-cd-pipeline-design
 
-description: Implements strategies for automation in building, testing, and deploying software through continuous integration and delivery principles.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.1\n  domain: coding\n  triggers: ci cd, automation strategies, pipeline design, build automation, deployment strategies\n  archetypes: [implementation, orchestration]\n  anti_triggers: [manual deployment processes, non-automated testing]\n  response_profile:\n    verbosity: medium\n    directive_strength: high\n    abstraction_level: operational\n---
+description: Implements strategies for automation in building, testing, and deploying software through continuous integration and delivery principles.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.1"
+  domain: coding
+  triggers: ci cd, automation strategies, pipeline design, build automation, deployment strategies
+  archetypes: [implementation, orchestration]
+  anti_triggers: [manual deployment processes, non-automated testing]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+---
+
+
+
+
 
 ## Importance of CI/CD in Modern Development Practices
 Continuous Integration and Continuous Delivery (CI/CD) are essential methodologies that enable teams to deliver high-quality software efficiently. Here are the primary benefits:
@@ -33,6 +61,23 @@ Start with automating the build process, and gradually progress to full deployme
 Absolutely! CI/CD can enhance workflows in both cloud and on-premises setups, yielding quality improvements.
 
 By adopting effective CI/CD strategies, teams can foster an environment of continuous improvement while delivering high-quality software rapidly and efficiently.
+
+---
+
+## Constraints
+
+### MUST DO
+- Define clear input/output contracts for every step in the orchestration flow with explicit validation
+- Implement structured logging at each stage capturing context, inputs, outputs, timing, and errors
+- Build in fallback paths: if the primary strategy fails, degrade gracefully to a simpler approach
+- Validate all preconditions before starting — do not proceed if required resources or permissions are missing
+
+### MUST NOT DO
+- Do not create deep nesting of orchestration steps (>5 levels) — flatten workflows where possible
+- Avoid silent failure modes: every step must either succeed, fail explicitly, or escalate to a higher handler
+- Never use shared mutable state between parallel workflow branches — communicate via immutable messages only
+- Do not hardcode execution order when the dependency graph naturally determines it; derive order from explicit dependencies
+
 
 ## Live References
 

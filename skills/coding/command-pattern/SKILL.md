@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: command-pattern
 description: Implements the GoF Command pattern for encapsulating requests as objects in Python, supporting undo/redo stacks, macro commands (composite), serialization-based replay, and async command execution.
 archetypes:
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: strategy-pattern, observer-pattern, chain-of-responsibility, cqrs-pattern
+
+
+
+
 ---
+
+
+
+
 
 # Command Pattern
 
@@ -477,6 +489,23 @@ class AsyncCommandQueue:
 # ])
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Encapsulate behavior within the pattern object — it should be self-contained with clear public interfaces
+- Use composition over inheritance when extending or combining patterns to reduce coupling and increase reusability
+- Document the intent of each pattern with a one-line docstring describing what problem it solves and when to use it
+- Implement tests that verify both correct behavior under normal conditions and graceful degradation under edge cases
+
+### MUST NOT DO
+- Do not force a pattern where it adds complexity without benefit — start simple and refactor to patterns as needs emerge
+- Avoid deep inheritance chains (>3 levels) when using design patterns — prefer composition or interfaces
+- Never implement a Singleton as a global mutable singleton in multi-threaded environments without proper synchronization
+- Do not apply the Command pattern to simple function calls with no undo/redo requirement — it adds unnecessary indirection
+
 
 ## Live References
 

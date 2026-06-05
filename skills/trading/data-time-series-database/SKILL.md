@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: data-time-series-database
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: time-series-database
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Efficiently query time-series data with support for financial data patterns
 
 **Philosophy:** Time-series queries are the bread and butter of trading; optimization enables faster decisions
@@ -440,6 +452,131 @@ class Downsample:
 ```
 
 ---
+
+---
+
+
+### Pattern 2: Time-Series Queries with InfluxDB-style Filter Expressions
+
+```python
+from __future__ import annotations
+
+import logging
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta, timezone
+from typing import Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class TSQueryFilter:
+    """Declarative filter for time-series database queries."""
+    symbol: str | None = None
+    timeframe: str | None = None
+    start_time: Optional[datetime] = None
+    end_time: Optional[datetime] = None
+    min_volume: Optional[float] = None
+    tags: dict[str, str] = field(default_factory=dict)
+
+    def to_query_string(self, table: str = "candles") -> str:
+        """Build a filtered query string suitable for InfluxDB or QuestDB."""
+        parts = [f"FROM {table}"]
+
+        conditions = []
+        if self.symbol:
+            conditions.append(f"symbol = '{self.symbol}'")
+        if self.timeframe:
+            conditions.append(f"timeframe = '{self.timeframe}'")
+        if self.start_time:
+            conditions.append(f"time >= '{self.start_time.isoformat()}'")
+        if self.end_time:
+            conditions.append(f"time < '{self.end_time.isoformat()}'")
+        if self.min_volume:
+            conditions.append(f"volume >= {self.min_volume}")
+        for k, v in self.tags.items():
+            conditions.append(f"{k} = '{v}'")
+
+        if conditions:
+            parts.append(f"WHERE {' AND '.join(conditions)}")
+
+        return " ".join(parts)
+
+
+class TimeSeriesEngine:
+    """Abstraction over time-series databases for trading data queries."""
+
+    def __init__(self, connection_url: str):
+        self._url = connection_url
+
+    def query_candles(self, filters: TSQueryFilter) -> list[dict]:
+        """Execute a candle data query with filtering and aggregation.
+
+        Args:
+            filters: Declarative filter specifying symbol, time range, etc.
+
+        Returns:
+            List of candle dicts matching the query.
+        """
+        query_str = filters.to_query_string()
+        logger.info("Executing TS query: %s", query_str)
+
+        # Placeholder — actual implementation depends on backend (InfluxDB, QuestDB, TimescaleDB)
+        # Example SQL for TimescaleDB:
+        # SELECT time_bucket('1h', time) AS interval,
+        #        first(open, time) AS open, max(high), min(low), last(close), sum(volume)
+        # FROM candles WHERE symbol = 'BTC/USDT' AND time >= '2024-01-01'
+        # GROUP BY interval ORDER BY interval
+
+        return [
+            {
+                "interval": filters.start_time.isoformat(),
+                "open": 67500.0,
+                "high": 68200.0,
+                "low": 67100.0,
+                "close": 67900.0,
+                "volume": 1523.45,
+            }
+        ]
+
+    def aggregate_metrics(
+        self,
+        start: datetime,
+        end: datetime,
+        interval: str = "1h",
+    ) -> dict:
+        """Compute summary statistics over a time range.
+
+        Returns volume-weighted average price, total volume, and trade count.
+        """
+        return {
+            "start": start.isoformat(),
+            "end": end.isoformat(),
+            "interval": interval,
+            "vwap": 67854.32,
+            "total_volume": 145_678.90,
+            "trade_count": 892_341,
+            "num_candles": 168,  # 7 days * 24 hours
+        }
+```
+
+## Constraints
+
+### MUST DO
+- Validate all incoming data against schema constraints (type, range, nullability) before processing or storage
+- Implement idempotent operations: re-processing the same data must produce identical results
+- Track data lineage and provenance with timestamps, source identifiers, and transformation history for every record
+- Handle out-of-order data by implementing a watermark-based ordering mechanism with configurable tolerance window
+- Log data quality metrics (completeness, freshness, accuracy) per source with automatic alerting on degradation
+
+### MUST NOT DO
+- Do not silently drop records that fail validation — log them to a quarantine table for review
+- Avoid concatenating strings for timestamp comparison; use proper datetime/timedelta objects
+- Never assume data arrives in chronological order from any external feed without explicit ordering guarantees
+- Do not store raw and processed data in the same table without clear partitioning or separation strategy
+- Avoid blocking on slow data sources — implement async prefetch with timeout-based fallback to cached data
+
 
 ## Live References
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-quality-assurance
 description: Orchestrates comprehensive software quality assurance including static analysis, fuzzing, load testing, security scanning, dependency auditing, and compliance validation to ensure production-ready software meets all quality thresholds.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: software quality assurance, SQA, static analysis, code fuzzing, load testing, performance testing, security scanning, dependency audit, compliance validation, code quality gates, how do i ensure software quality, quality gates, vulnerability scanning
+  triggers: software quality assurance, SQA, static analysis, code fuzzing, load testing, security scanning, dependency audit, how do i ensure software quality
   archetypes:
     - tactical
     - diagnostic
@@ -28,7 +32,15 @@ metadata:
     - examples
     - do-dont
   related-skills: software-testing-strategy, code-quality-policies, dependency-supply-chain-security, observability-patterns, production-readiness, software-engineering-principles
+
+
+
+
 ---
+
+
+
+
 
 # Software Quality Assurance
 

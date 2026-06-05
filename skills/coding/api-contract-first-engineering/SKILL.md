@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-contract-first-engineering
 description: Implements contract-first API design using OpenAPI/Swagger specifications with schema validation, versioning strategies, backward-compatible changes, and automated code generation from contracts.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: api-design-principles, graphql-schema-design, api-versioning-strategies
+
+
+
+
 ---
+
+
+
+
 
 # Contract-First API Engineering
 

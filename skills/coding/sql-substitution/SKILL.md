@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: sql-substitution
 description: Implements SQL variable substitution (Oracle &varname, psql :variable, MySQL @var, SQLite3 .variable) with ACCEPT prompts, ampersand escaping, COALESCE defaults, and CI/CD-safe patterns.
 archetypes:
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: linux-shell-command-chaining, error-handling
+
+
+
+
 ---
+
+
+
+
 
 # SQL Variable Substitution Across Database Tools
 

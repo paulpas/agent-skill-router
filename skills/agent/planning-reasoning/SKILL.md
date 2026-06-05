@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: planning-reasoning
 description: Implements agent reasoning patterns (ReAct loop, chain-of-thought planning, self-reflection evaluation) for structured multi-step task execution with verification.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: ReAct, reasoning, chain of thought, plan execute, self reflection, task planning, step by step, agent reasoning, reasoning loop, task decomposition
+  triggers: ReAct, reasoning, chain of thought, plan execute, self reflection, task planning, step by step, agent reasoning
   role: implementation
   scope: implementation
   output-format: code
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Planning & Reasoning Patterns
 

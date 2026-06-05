@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: contour
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: contour
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Contour in Cloud-Native Engineering
 
 **Category:** ingress  

@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: skill-seekers
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: tactical
-  version: 1.0.0
-name: skill-seekers
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Skill Seekers
 
 Orchestrates intelligent skill selection and execution for skill seekers workflows. Applies the 5 Laws of Elegant Defense to guide data naturally through the orchestration pipeline, preventing errors before they occur. Selects optimal skills based on multi-factor scoring including text similarity, historical performance, and system availability.
@@ -291,6 +303,23 @@ When applying this skill, produce:
 |---|---|
 | `skill-router` | The routing system that skill seekers interface with to find and load appropriate skills |
 | `intelligent-skill-selection` | Provides selection heuristics that complement the skill seeker's discovery patterns |
+
+---
+
+## Constraints
+
+### MUST DO
+- Define clear input/output contracts for every step in the orchestration flow with explicit validation
+- Implement structured logging at each stage capturing context, inputs, outputs, timing, and errors
+- Build in fallback paths: if the primary strategy fails, degrade gracefully to a simpler approach
+- Validate all preconditions before starting — do not proceed if required resources or permissions are missing
+
+### MUST NOT DO
+- Do not create deep nesting of orchestration steps (>5 levels) — flatten workflows where possible
+- Avoid silent failure modes: every step must either succeed, fail explicitly, or escalate to a higher handler
+- Never use shared mutable state between parallel workflow branches — communicate via immutable messages only
+- Do not hardcode execution order when the dependency graph naturally determines it; derive order from explicit dependencies
+
 
 ## Live References
 

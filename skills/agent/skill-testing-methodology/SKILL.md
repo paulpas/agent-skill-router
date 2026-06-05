@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-testing-methodology
 description: Validates AI agent skills through trigger precision/recall measurement, structural output checks, and edge case detection to prevent broken or misleading skills from reaching production.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: skill-engineering, skill-audit, skill-observability
-------
+
+
+
+
+---
+
+
+
+
 
 # Skill Testing Methodology
 

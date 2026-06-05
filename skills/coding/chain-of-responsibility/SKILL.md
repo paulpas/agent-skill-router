@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: chain-of-responsibility
 description: Implements the GoF Chain of Responsibility pattern for building middleware-style request handler pipelines in Python where each handler processes or forwards requests along a configurable chain.
 archetypes:
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: strategy-pattern, command-pattern, behavioral-design-patterns, event-driven-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Chain of Responsibility Pattern
 

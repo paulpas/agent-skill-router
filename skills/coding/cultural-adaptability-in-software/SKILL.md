@@ -1,7 +1,35 @@
 ---
+
+
+
+
 name: cultural-adaptability-in-software
 
-description: Implements strategies for adapting software development to diverse cultural contexts to enhance user experience and inclusivity.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.1\n  domain: coding\n  triggers: cultural adaptability, localization, i18n, user experience, software design\n  archetypes: [implementation, evaluation, user-focused]\n  anti_triggers: [one-size-fits-all solutions, neglecting user inputs]\n  response_profile:\n    verbosity: medium\n    directive_strength: high\n    abstraction_level: operational\n---
+description: Implements strategies for adapting software development to diverse cultural contexts to enhance user experience and inclusivity.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.1"
+  domain: coding
+  triggers: cultural adaptability, localization, i18n, user experience, software design
+  archetypes: [implementation, evaluation, user-focused]
+  anti_triggers: [one-size-fits-all solutions, neglecting user inputs]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+---
+
+
+
+
 
 ## Enhanced Strategies for Cultural Adaptability in Software Development
 Cultural adaptability in software is crucial for meeting the needs of diverse user bases across different regions. Here are key strategies to consider:
@@ -32,6 +60,23 @@ Adapting to cultural differences can greatly enhance user satisfaction, engageme
 Start by embedding cultural learning into your workplace culture and actively seeking feedback from diverse user groups during the design phase.
 
 Implementing culturally adaptive strategies leads to the engineering of software that resonates emotionally and functionally with users, promoting inclusivity and maximizing user satisfaction.
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

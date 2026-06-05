@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: system-reliability-architecture
 description: Implements production reliability patterns (circuit breakers, retry with exponential backoff, bulkhead isolation, health checks, graceful degradation, distributed tracing) to build fault-tolerant distributed systems.
 license: MIT
@@ -25,7 +29,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: microservices-architecture, event-driven-architecture, microservice-resilience-patterns, api-architecture, architectural-review
+
+
+
+
 ---
+
+
+
+
 
 # System Reliability Architecture
 

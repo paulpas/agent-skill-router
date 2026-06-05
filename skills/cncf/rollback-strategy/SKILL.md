@@ -1,4 +1,10 @@
 ---
+
+
+
+
+
+name: rollback-strategy
 compatibility: opencode
 completeness: 95
 content-types:
@@ -37,9 +43,18 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: rollback-strategy
-------
+version: "1.0.0"
+
+
+
+
+
+---
+
+
+
+
+---
 # Rollback Strategy
 
 Designs and implements safe, data-aware rollback procedures for deployment recovery. Handles partial rollbacks, data consistency during rollback, and automated rollback triggers based on health signals.

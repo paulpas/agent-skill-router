@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: memory-management-and-concurrency
 description: Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: coding-testing, coding-debugging, coding-performance-optimization
+
+
+
+
 ---
+
+
+
+
 # Memory Management and Concurrency for C/C++
 
   archetypes: tactical, educational

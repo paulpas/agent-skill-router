@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: distributed-system-rate-limiting
 description: Implements rate limiting strategies for distributed systems using the Resilience4j library to control API traffic and enhance system stability.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: distributed-system-circuit-breakers, distributed-system-bulkheads
+
+
+
+
 ---
+
+
+
+
 
 # Rate Limiting in Distributed Systems
 

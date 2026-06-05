@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: multi-agent-orchestration
 description: Orchestrates multi-agent workflows (sequential pipelines, supervisor-worker delegation, group chat coordination, parallel task execution with result synthesis) for complex AI system coordination.
 archetypes:
@@ -17,13 +21,21 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: multi-agent, agent orchestration, CrewAI, AutoGen, supervisor worker, group chat, parallel agents, task delegation, agent team, sequential pipeline
+  triggers: multi-agent, agent orchestration, CrewAI, AutoGen, supervisor worker, parallel agents, task delegation, sequential pipeline
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: tool-use-function-calling, planning-reasoning, memory-systems
+
+
+
+
 ---
+
+
+
+
 
 # Multi-Agent Orchestration
 

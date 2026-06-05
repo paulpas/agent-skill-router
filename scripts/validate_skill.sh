@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
-# Validates a SKILL.md file against the stub detection rules.
+# Validates a SKILL.md file against stub detection rules and structural
+# compliance requirements.
+#
 # Usage:
-#   ./scripts/validate_skill.sh skills/coding/my-skill/SKILL.md        # static checks (includes routing metadata)
+#   ./scripts/validate_skill.sh skills/coding/my-skill/SKILL.md        # structural + static checks
 #   ./scripts/validate_skill.sh --llm skills/coding/my-skill/SKILL.md  # + LLM quality check
+#
 # Exit codes: 0=PASS, 1=FAIL
+#
+# Two-phase validation:
+#   Phase 1 (Python) — structural checks via yaml.safe_load
+#   Phase 2 (Bash)   — existing stub-detection checks
 
 set -euo pipefail
 
@@ -27,23 +34,46 @@ if [ ! -f "$SKILL_FILE" ]; then
     exit 1
 fi
 
+# ── PHASE 1: Structural checks (Python) ─────────────────────────────────────
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Capture both stdout and stderr, and get the real exit code.
+# set -e is temporarily disabled so we can inspect the result.
+set +e
+STRUCT_RESULT=$("$SCRIPT_DIR/validate_skill_yaml.py" "$SKILL_FILE" 2>&1)
+STRUCT_EXIT=$?
+set -e
+
+if [ $STRUCT_EXIT -ne 0 ]; then
+    echo "❌ FAIL: $SKILL_FILE (structural checks)" >&2
+    echo "$STRUCT_RESULT" | grep '^✗' >&2
+    echo "" >&2
+    echo "   See SKILL_FORMAT_SPEC.md for requirements." >&2
+    exit 1
+fi
+
+# If we get here, structural checks passed. Show brief status.
+echo "✅ Structural checks passed: $(echo "$STRUCT_RESULT" | grep 'RESULT: PASS' || true)"
+echo ""
+
+# ── PHASE 2: Existing stub-detection checks (bash, unchanged) ────────────────
 PASS=true
 REASONS=()
 
-# ── Static Check 1: Sentinel string ──────────────────────────────────────────
+# Stub sentinel
 if grep -qF "Implementing this specific pattern or feature" "$SKILL_FILE"; then
     PASS=false
     REASONS+=("Stub sentinel string found: 'Implementing this specific pattern or feature'")
 fi
 
-# ── Static Check 2: File size ─────────────────────────────────────────────────
+# File size
 content_bytes=$(wc -c < "$SKILL_FILE")
 if [ "$content_bytes" -lt 3000 ]; then
     PASS=false
     REASONS+=("File too small: ${content_bytes} bytes (minimum 3000)")
 fi
 
-# ── Static Check 3: Code blocks for implementation skills ─────────────────────
+# Code blocks for implementation skills
 if grep -q "role: implementation" "$SKILL_FILE" 2>/dev/null; then
     # Use awk to count fenced code block markers; safe with set -e (no exit on no matches)
     code_block_count=$(grep -E '^\s*```' "$SKILL_FILE" 2>/dev/null | wc -l || true)
@@ -56,7 +86,7 @@ if grep -q "role: implementation" "$SKILL_FILE" 2>/dev/null; then
     fi
 fi
 
-# ── Static Check 4: Generic Core Workflow detection ──────────────────────────
+# Generic Core Workflow detection
 generic_patterns=("Identify the specific use case" "Apply the pattern or technique" "Validate and test the implementation" "Iterate based on results")
 generic_count=0
 for pattern in "${generic_patterns[@]}"; do
@@ -69,7 +99,7 @@ if [ "$generic_count" -ge 2 ]; then
     REASONS+=("Generic Core Workflow detected (${generic_count}/4 stub phrases found)")
 fi
 
-# ── Static Check 5: Advanced routing metadata presence ────────────────────────
+# Advanced routing metadata presence
 if ! grep -q "archetypes:" "$SKILL_FILE" 2>/dev/null; then
     PASS=false
     REASONS+=("Missing archetypes in metadata — required for intent-aware skill selection")
@@ -85,9 +115,9 @@ if ! grep -q "response_profile:" "$SKILL_FILE" 2>/dev/null; then
     REASONS+=("Missing response_profile in metadata — required for output quality matching")
 fi
 
-# ── Report static check results ───────────────────────────────────────────────
+# Report bash check results
 if [ "$PASS" = false ]; then
-    echo "❌ FAIL: $SKILL_FILE" >&2
+    echo "❌ FAIL: $SKILL_FILE (static checks)" >&2
     for reason in "${REASONS[@]}"; do
         echo "   • $reason" >&2
     done
@@ -96,13 +126,13 @@ if [ "$PASS" = false ]; then
     exit 1
 fi
 
-# ── LLM quality check (optional) ─────────────────────────────────────────────
+# ── PHASE 3: LLM quality check (optional, unchanged) ────────────────────────
 if [ "$LLM_CHECK" = true ]; then
     OPENCODE="${OPENCODE_BIN:-$HOME/.opencode/bin/opencode}"
 
     if [ ! -x "$OPENCODE" ]; then
         echo "⚠️  opencode not found at $OPENCODE — skipping LLM check" >&2
-        echo "✅ PASS (static — stub-free, routing-metadata present): $SKILL_FILE"
+        echo "✅ PASS (structural + static — stub-free, routing-metadata present): $SKILL_FILE"
         exit 0
     fi
 
@@ -155,13 +185,13 @@ print(verdict)
         echo "   See SKILL_FORMAT_SPEC.md for requirements (routing metadata is mandatory)." >&2
         exit 1
     elif echo "$llm_verdict" | grep -qE "^PASS"; then
-        echo "✅ PASS (static + LLM — stub-free, routing-metadata present): $SKILL_FILE"
+        echo "✅ PASS (structural + static + LLM — stub-free, routing-metadata present): $SKILL_FILE"
     else
         echo "⚠️  LLM verdict unclear ('$llm_verdict') — treating as PASS" >&2
-        echo "✅ PASS (static, LLM unclear — stub-free, routing-metadata present): $SKILL_FILE"
+        echo "✅ PASS (structural + static, LLM unclear — stub-free, routing-metadata present): $SKILL_FILE"
     fi
 else
-    echo "✅ PASS (static — stub-free, routing-metadata present): $SKILL_FILE"
+    echo "✅ PASS (structural + static — stub-free, routing-metadata present): $SKILL_FILE"
 fi
 
 exit 0

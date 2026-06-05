@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: monolith-scaling-strategies
 description: Implements vertical scaling, database optimization, caching tiering, deployment patterns, CI/CD pipelines, and observability strategies for growing monolithic applications to delay or eliminate premature service decomposition.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Monolith Scaling Strategies
 

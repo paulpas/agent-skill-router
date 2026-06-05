@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-llm-agentic-tooling-mcp
 description: Implements best practices for applying the Model Context Protocol (MCP) in AI/LLM environments, facilitating effective management of servers, clients, tools, resources, and prompts.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: ai-llm-agentic-tooling-langchain-langgraph
+
+
+
+
 ---
+
+
+
+
 
 # AI LLM Agentic Tooling with Model Context Protocol (MCP)
 

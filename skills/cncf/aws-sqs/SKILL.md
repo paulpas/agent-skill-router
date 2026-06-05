@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: aws-sqs
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,9 +35,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: sqs
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # SQS (Simple Queue Service)
 
 Deploy managed message queues for asynchronous processing with guaranteed delivery, visibility timeout, and built-in dead-letter queue support.

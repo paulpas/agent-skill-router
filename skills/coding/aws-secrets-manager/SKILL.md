@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: aws-secrets-manager
 description: Implements AWS Secrets Manager for secure secret storage, management, and automatic rotation of credentials using AWS SDK for Python (Boto3).
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+  version: "1.1.1"
   domain: coding
   triggers: aws secrets manager, boto3, secret management, automatic rotation, credential management
   archetypes: [implementation, secret management]
@@ -13,7 +17,18 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## AWS Secrets Manager: Comprehensive Guide
 AWS Secrets Manager is a critical service that aids in securely managing sensitive information such as passwords, secrets, and API keys. This guide covers best practices, implementation steps, and relevant examples.
@@ -58,6 +73,23 @@ AWS Secrets Manager can store API keys, database credentials, and any sensitive 
 By implementing AWS Secrets Manager, organizations can securely manage sensitive information while automating key management processes and complying with organizational security policies. Maximizing the utilization of AWS services enables better governance, reducing security risks significantly.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Configure all AWS resources with explicit tagging for cost allocation, ownership tracking, and compliance
+- Use AWS SDK (Boto3) typed clients instead of resource API where type safety matters — prefer client() over resource()
+- Implement error handling that distinguishes between retryable (Throttling, RequestLimitExceeded) and non-retryable errors
+- Use IAM roles with least-privilege policies scoped to specific actions and resources, never wildcard permissions
+
+### MUST NOT DO
+- Do not hardcode AWS credentials — use IAM roles, environment variables, or AWS Secrets Manager
+- Avoid unencrypted S3 buckets or RDS instances in production without explicit KMS encryption configuration
+- Never launch EC2 instances without specifying a security group and subnet — always use VPC networking explicitly
+- Do not use the default endpoint region — always specify the target region explicitly in all SDK calls
+
 
 ## Live References
 

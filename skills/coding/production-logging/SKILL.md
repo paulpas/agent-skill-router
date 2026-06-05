@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: production-logging
 description: Implements production logging practices including structured logging,
   log level management, context propagation, correlation IDs, sensitive data redaction,
@@ -6,7 +10,7 @@ description: Implements production logging practices including structured loggin
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: production logging, structured logging, correlation ID, context propagation,
     log aggregation, how do i add logging to my app, sensitive data redaction, json
@@ -32,7 +36,15 @@ metadata:
   - do-dont
   - examples
   related-skills: observability-patterns, software-error-handling, engineering-principles
-------
+
+
+
+
+---
+
+
+
+
 # Production Logging Patterns
 
 Implements production-grade logging practices to make systems debuggable and observable. This skill covers structured JSON logging, context propagation with correlation IDs, sensitive data redaction, tiered log level strategies, and log aggregation patterns — ensuring every log entry carries the right information at the right severity for real-time monitoring and post-incident debugging.

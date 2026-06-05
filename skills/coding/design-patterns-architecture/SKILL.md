@@ -1,24 +1,18 @@
-# Skill: design-patterns-architecture
-
 ---
+
+
+
+
 name: design-patterns-architecture
-description: Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect
-  scalable, maintainable, and testable software systems.
+description: Implements GoF design patterns and SOLID/DRY/YAGNI principles to architect scalable, maintainable, and testable software systems.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: design patterns, GoF, SOLID, DRY, YAGNI, architecture, creational patterns,
-    structural patterns
-  archetypes:
-  - tactical
-  - generation
-  anti_triggers:
-  - brainstorming
-  - vague ideation
-  - code golf
-  - over-engineering
+  triggers: design patterns, GoF, SOLID, DRY, YAGNI, architecture, creational patterns, structural patterns
+  archetypes: [tactical, generation]
+  anti_triggers: [brainstorming, vague ideation, code golf, over-engineering]
   response_profile:
     verbosity: low
     directive_strength: high
@@ -26,13 +20,17 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  content-types:
-  - code
-  - guidance
-  - do-dont
-  - examples
-  related-skills: coding/refactoring, coding/code-review, coding/test-driven-development
-------
+  content-types: [code, guidance, do-dont, examples]
+  related-skills: refactoring, code-review, test-driven-development
+
+
+
+
+---
+
+
+
+
 
 # Architecture & Design Patterns
 Senior software architect designing scalable, maintainable systems using GoF design patterns and SOLID/DRY/YAGNI principles. Evaluates architectural tradeoffs, applies the right pattern to the right problem, and enforces composition over inheritance to produce code that is easy to test, extend, and evolve without premature abstraction.
@@ -313,6 +311,23 @@ class JapanTaxRule:
 ...}{"filePath":"skills/coding/design-patterns-architecture/SKILL.md"}uptools to validate creativity using communications. All to be validated and acknowledge the shift from explicit promises to adaptive, optimistic actions. The solver observes multiple styles to give a clear answer. For this pathway, put forward logical constraint in all areas. The goal is deliberative strategy.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

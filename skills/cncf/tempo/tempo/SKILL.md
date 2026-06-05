@@ -1,403 +1,301 @@
 ---
-completeness: 95
-content-types:
-- guidance
-- examples
-- do-dont
-- config
-maturity: stable
+
+
+
+
+name: tempo
+description: Deploys and manages Tempo distributed tracing infrastructure on Kubernetes with configuration, querying via Loki-style APIs, health monitoring, and troubleshooting for production microservice observability.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  triggers: tempo, distributed tracing, Grafana Tempo, trace query, span debugging, OTLP ingestion, Loki storage, APM infrastructure
+  role: reference
+  scope: infrastructure
+  output-format: manifests
+  content-types: [guidance, examples, config, do-dont]
+  archetypes: [tactical, orchestration]
+  anti_triggers: [brainstorming, vague ideation, long-form architecture planning]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: operational
+
+
+
+
 ---
-# tempo Namespace
+
+
+
+
+
+# Grafana Tempo Distributed Tracing in Kubernetes
+
+Deploys and manages Grafana Tempo distributed tracing infrastructure on Kubernetes. Covers namespace setup, OTLP ingestion configuration, storage backend selection, trace querying via QueryFrontend API, health monitoring, and troubleshooting common issues.
+
+## TL;DR Checklist
+
+- [ ] Deploy Tempo with a suitable storage backend (S3/GCS for production, boltdb-shipper or memcached for dev)
+- [ ] Configure OTLP receiver on port 4317 (gRPC) and 4318 (HTTP) for trace ingestion
+- [ ] Set up QueryFrontend for efficient trace search and filtering
+- [ ] Expose the Tempo UI via Ingress for interactive trace browsing
+- [ ] Monitor ingester flush latency and distributor drop rates in production
+
+---
+
+## Purpose and Use Cases
+
+Tempo is a CNCF project by Grafana Labs — a highly scalable, cost-efficient distributed tracing backend designed to work natively with Grafana. Unlike Jaeger (which stores full traces), Tempo uses log-based indexing similar to Loki, dramatically reducing storage costs while maintaining fast query performance.
+
+**Use Tempo when:**
+- You want distributed tracing integrated with your existing Grafana/Loki stack
+- Storage cost is a concern — Tempo's log-based approach is 10x cheaper than traditional trace databases
+- You need correlation between traces, logs, and metrics in a single Grafana dashboard
+- You're running large-scale microservice architectures with high trace volumes
+
+**Alternatives:** Use Jaeger when you need full-trace storage with complex query capabilities. Use commercial APM tools (Datadog, New Relic) when you want zero infrastructure management.
+
+---
+
+## Architecture Design Patterns
+
+Tempo follows a three-component architecture:
+
+1. **Distributor** — Receives traces from agents or applications via OTLP/gRPC (4317), OTLP/HTTP (4318), or Jaeger-compatible endpoints. Validates and forwards traces to ingesters.
+2. **Ingester** — Buffers incoming traces in memory, applies index writes, and flushes completed spans to storage when idle or size thresholds are met.
+3. **QueryFrontend + QueryScheduler** — Receives search queries, splits them across ingesters/storage backends, and aggregates results for the TraceQL query language.
+
+**Data flow:** `Application → OTLP Receiver → Ingester (memory buffer) → Storage (S3/GCS) ← QueryFrontend ← TraceQL API`
+
+---
+
+## Integration Approaches
+
+### Approach 1: Deploy via Helm Chart (Recommended)
+
+```bash
+# Add the Grafana Helm repository
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+
+# Install Tempo with S3 storage backend
+helm install tempo grafana/tempo -n tempo --create-namespace \
+  --set deploymentMode=distributed \
+  --set tempoServiceAccount.create=true \
+  --set "tempo.main.server.grpcStorageCompression.enabled=true" \
+  --set "tempo.main.storage.s3.bucket=tempo-traces" \
+  --set "tempo.main.storage.s3.region=us-east-1" \
+  --set "tempo.main.storage.s3.secret.access.key=${AWS_SECRET_KEY}" \
+  --set "tempo.main.storage.s3.access.key.id=${AWS_ACCESS_KEY}"
+
+# Verify all distributed components are running
+kubectl get pods -n tempo
+```
+
+### Approach 2: Deploy Core Components Manually
+
+```yaml
+---
+# Tempo Namespace
 apiVersion: v1
 kind: Namespace
 metadata:
   name: tempo
   labels:
     app.kubernetes.io/name: tempo
-    app.kubernetes.io/managed-by: helm
 
 ---
-# tempo Service Account
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: tempo
-  namespace: tempo
-  labels:
-    app.kubernetes.io/name: tempo
----
-# tempo ConfigMap
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: tempo-config
-  namespace: tempo
-  labels:
-    app.kubernetes.io/name: tempo
-data:
-  config.yaml: |
-    global:
-      scrape_interval: 15s
-      evaluation_interval: 15s
-      external_labels:
-        cluster: production
-        environment: primary
-
-    alerting:
-      alertmanagers:
-        - static_configs:
-            - targets:
-                - alertmanager:9093
-
-    rule_files:
-      - /etc/tempo/rules/*.yaml
-
-    scrape_configs:
-      - job_name: 'tempo'
-        static_configs:
-          - targets: ['localhost:9090']
-
-      - job_name: 'kubernetes-nodes'
-        kubernetes_sd_configs:
-          - role: node
-        relabel_configs:
-          - action: labelmap
-            regex: __meta_kubernetes_node_label_(.+)
-
-      - job_name: 'kubernetes-pods'
-        kubernetes_sd_configs:
-          - role: pod
-        relabel_configs:
-          - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
-            action: keep
-            regex: true
-
----
-# tempo Service
+# Tempo QueryFrontend Service (HTTP API for trace queries)
 apiVersion: v1
 kind: Service
 metadata:
-  name: tempo
+  name: tempo-query
   namespace: tempo
   labels:
     app.kubernetes.io/name: tempo
 spec:
-  clusterIP: None
   ports:
-    - port: 9090
-      targetPort: 9090
-      name: http
-    - port: 9093
-      targetPort: 9093
-      name: alertmanager
+    - port: 3100
+      targetPort: 3100
+      name: http-metrics
+    - port: 9095
+      targetPort: 9095
+      name: grpc-query
   selector:
-    app.kubernetes.io/name: tempo
+    app.kubernetes.io/component: query-frontend
 
 ---
-# tempo StatefulSet
-apiVersion: apps/v1
-kind: StatefulSet
+# Tempo Distributor Service (receives traces)
+apiVersion: v1
+kind: Service
 metadata:
-  name: tempo
+  name: tempo-distributor
   namespace: tempo
   labels:
     app.kubernetes.io/name: tempo
 spec:
-  serviceName: tempo
-  replicas: 3
+  ports:
+    - port: 4317
+      targetPort: 4317
+      name: otlp-grpc
+    - port: 4318
+      targetPort: 4318
+      name: otlp-http
+    - port: 9411
+      targetPort: 9411
+      name: zipkin
   selector:
-    matchLabels:
-      app.kubernetes.io/name: tempo
-  template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: tempo
-    spec:
-      serviceAccountName: tempo
-      securityContext:
-        fsGroup: 65534
-        runAsGroup: 65534
-        runAsNonRoot: true
-        runAsUser: 65534
-      containers:
-        - name: tempo
-          image: tempo/tempo:v2.45.0
-          args:
-            - "--config.file=/etc/tempo/config.yaml"
-            - "--storage.tsdb.path=/data"
-            - "--storage.tsdb.retention.time=15d"
-            - "--web.listen-address=0.0.0.0:9090"
-            - "--web.enable-lifecycle"
-          ports:
-            - containerPort: 9090
-              name: http
-            - containerPort: 9093
-              name: alertmanager
-          resources:
-            requests:
-              cpu: 500m
-              memory: 1Gi
-            limits:
-              cpu: 1000m
-              memory: 2Gi
-          volumeMounts:
-            - name: config
-              mountPath: /etc/tempo
-            - name: data
-              mountPath: /data
-            - name: rules
-              mountPath: /etc/tempo/rules
-          livenessProbe:
-            httpGet:
-              path: /-/healthy
-              port: http
-            initialDelaySeconds: 30
-            periodSeconds: 15
-          readinessProbe:
-            httpGet:
-              path: /-/ready
-              port: http
-            initialDelaySeconds: 30
-            periodSeconds: 10
-      volumes:
-        - name: config
-          configMap:
-            name: tempo-config
-        - name: rules
-          configMap:
-            name: tempo-rules
-  volumeClaimTemplates:
-    - metadata:
-        name: data
-      spec:
-        accessModes: ["ReadWriteOnce"]
-        storageClassName: standard
-        resources:
-          requests:
-            storage: 100Gi
+    app.kubernetes.io/component: distributor
 ```
 
-### Manifest Highlights
+---
 
-- **High Availability**: 3 replicas for redundancy
-- **Resource Management**: Proper CPU and memory limits
-- **Security**: Non-root user, restricted security context
-- **Persistence**: StatefulSet with PVC for data retention
-- **Health Checks**: Liveness and readiness probes configured
-- **Configuration**: Externalized via ConfigMap for easy updates
+## Common Pitfalls
+
+- **Missing OTLP receiver configuration:** Tempo requires explicit OTLP receiver setup on ports 4317 (gRPC) and 4318 (HTTP). Without this, OpenTelemetry SDKs cannot send traces.
+- **Ingesters OOM killing:** Large trace payloads can cause memory spikes. Set `max_block_bytes` and tune `ingester_lifecycler` flush thresholds. Monitor `tempo_ingester_ring_tokens_count`.
+- **Storage backend latency:** S3/GCS read latency directly impacts query response time. Use memcached for index caching to reduce cold reads from object storage.
+- **Missing labels for indexing:** Tempo uses labels (like Loki) for trace filtering. Without proper label configuration, searches return empty results even when traces exist.
+- **High distributor drop rate:** When ingesters can't keep up, the distributor drops traces. Monitor `tempo_distributor_queue_capacity` and scale ingester replicas.
+
+---
 
 ## Code Examples and Patterns
 
-### Pattern 1: Creating a tempo Custom Resource (GOOD)
+### Pattern 1: Create Tempo Namespace with OTLP ConfigMap
 
 ```bash
-# ✅ GOOD — Create tempo resource using kubectl
-# Create namespace
+# Create namespace for Tempo deployment
 kubectl create namespace tempo --dry-run=client -o yaml | kubectl apply -f -
 
-# Create ConfigMap for tempo configuration
+# Create ConfigMap for custom distributor settings
 cat << 'EOF' | kubectl apply -f -
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: tempo-config
+  name: tempo-distributor-config
   namespace: tempo
 data:
-  replicas: "1"
-  cpu_request: "100m"
-  memory_request: "64Mi"
+  config.yaml: |
+    distributor:
+      receivers:
+        otlp:
+          protocols:
+            grpc:
+              endpoint: "0.0.0.0:4317"
+            http:
+              endpoint: "0.0.0.0:4318"
+          max_traces_per_user: 1000
+          batch_size: 500
 EOF
-
-# Create tempo deployment using kubectl
-kubectl apply -f - << EOF
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: tempo-controller
-  namespace: tempo
-  labels:
-    app.kubernetes.io/name: tempo
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: tempo-controller
-  template:
-    metadata:
-      labels:
-        app: tempo-controller
-    spec:
-      containers:
-      - name: tempo
-        image: tempo/controller:v1.0.0
-        resources:
-          requests:
-            cpu: "100m"
-            memory: "64Mi"
-          limits:
-            cpu: "500m"
-            memory: "256Mi"
-EOF
-
-# Verify deployment
-kubectl get pods -n tempo -l app=tempo-controller
-kubectl describe deployment tempo-controller -n tempo
 ```
 
-### Pattern 2: Querying tempo Metrics (BAD vs GOOD)
+### Pattern 2: Query Tempo Traces via API
 
 ```bash
-# ✅ GOOD — Query tempo metrics using curl
-# Query tempo metrics with error handling
-METRICS_URL="http://localhost:8080/metrics"
-TIMEOUT=10
+# List all services traced by Tempo
+curl -s http://localhost:3100/services | jq .
 
-# Test connectivity and fetch metrics
-HTTP_CODE=$(curl -s -o /tmp/tempo-metrics.txt -w "%{http_code}" --max-time $TIMEOUT "$METRICS_URL")
-if [[ "$HTTP_CODE" -ge 200 && "$HTTP_CODE" -lt 400 ]]; then
-    echo "✅ tempo metrics retrieved (HTTP $HTTP_CODE)"
-    head -20 /tmp/tempo-metrics.txt
-else
-    echo "❌ Failed to get tempo metrics (HTTP $HTTP_CODE)"
-    exit 1
-fi
+# Get traces using TraceQL — query by service name and operation
+curl -s -X POST "http://localhost:3100/otlp/v1/traces" \
+  -H "Content-Type: application/x-protobuf" \
+  --data-binary @trace.pb  # Pre-recorded trace binary
 
-# Query specific metrics with curl and grep
-curl -s --max-time $TIMEOUT "$METRICS_URL" | grep "tempo_active" | head -10
+# Query traces with TraceQL via the Loki-compatible query endpoint
+SERVICE="orders-service"
+curl -s "http://localhost:3100/api/search?query={service.name=\"${SERVICE}\"}&limit=5" \
+  | jq .
 
-# Query tempo API via port-forward
-kubectl port-forward -n tempo svc/tempo 8080:8080 &
-curl -s http://localhost:8080/api/v1/services | jq .
+# Port-forward to Tempo QueryFrontend for local access
+kubectl port-forward -n tempo svc/tempo-query 3100:3100 &
+open http://localhost:3100
+
+# Fetch trace data by ID (requires the trace ID from search results)
+TRACE_ID="abc123def456"
+curl -s "http://localhost:3100/api/traces/${TRACE_ID}" | jq .
+
+# Check Tempo ingester health and flush metrics
+METRICS_URL="http://localhost:3100/metrics"
+curl -s "$METRICS_URL" \
+  | grep "tempo_ingester_blocks_total\|tempo_distributor_spans_received_total" \
+  | head -20
 ```
 
 ### Pattern 3: Health Check Implementation
 
 ```bash
-# ✅ GOOD — Comprehensive tempo health check using curl
 #!/bin/bash
-# check_tempo_health.sh — Health checks for tempo service
+# check_tempo_health.sh — Comprehensive health check for Tempo service
+set -euo pipefail
 
 HOST="${1:-localhost}"
-PORT="${2:-8081}"
+PORT="${2:-3100}"
 TIMEOUT=5
 
-echo "=== tempo Health Check ==="
+echo "=== Tempo Health Check ==="
 
-# Check 1: Basic connectivity
-echo -n "Connectivity: "
-HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time $TIMEOUT "http://$HOST:$PORT/healthz" 2>/dev/null || echo "000")
+# Check 1: API accessibility (HTTP metrics endpoint)
+echo -n "API (HTTP $PORT): "
+HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time $TIMEOUT \
+    "http://$HOST:$PORT/" 2>/dev/null || echo "000")
 if [[ "$HTTP_CODE" -ge 200 && "$HTTP_CODE" -lt 400 ]]; then
     echo "✅ OK (HTTP $HTTP_CODE)"
-    STATUS="HEALTHY"
 else
     echo "❌ FAILED (HTTP $HTTP_CODE)"
-    STATUS="UNHEALTHY"
 fi
 
-# Check 2: Readiness
-echo -n "Readiness: "
-HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time $TIMEOUT "http://$HOST:$PORT/ready" 2>/dev/null || echo "000")
-if [[ "$HTTP_CODE" -eq 200 ]]; then
-    echo "✅ OK (HTTP $HTTP_CODE)"
+# Check 2: Services endpoint — confirms traces are being received
+echo -n "Services API: "
+SERVICE_COUNT=$(curl -s --max-time $TIMEOUT \
+    "http://$HOST:$PORT/services" 2>/dev/null | jq 'length' 2>/dev/null || echo "0")
+if [[ "$SERVICE_COUNT" -gt 0 ]]; then
+    echo "✅ OK (${SERVICE_COUNT} services)"
 else
-    echo "❌ FAILED (HTTP $HTTP_CODE)"
-    STATUS="UNHEALTHY"
+    echo "⚠️ DEGRADED (0 services — no traces received recently)"
 fi
 
-# Check 3: Metrics endpoint
-echo -n "Metrics: "
-HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time $TIMEOUT "http://$HOST:$PORT/metrics" 2>/dev/null || echo "000")
-if [[ "$HTTP_CODE" -eq 200 ]]; then
-    echo "✅ OK (HTTP $HTTP_CODE)"
+# Check 3: OTLP gRPC receiver connectivity
+echo -n "OTLP gRPC (4317): "
+GRPC_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time $TIMEOUT \
+    "http://$HOST:4317/" 2>/dev/null || echo "000")
+if [[ "$GRPC_CODE" -eq 405 ]] || [[ "$GRPC_CODE" -ge 200 ]]; then
+    echo "✅ OK (listener responding)"
 else
-    echo "⚠️ DEGRADED (HTTP $HTTP_CODE)"
-    [[ "$STATUS" == "HEALTHY" ]] && STATUS="DEGRADED"
+    echo "❌ FAILED (port not listening)"
 fi
 
 echo ""
-echo "=== Overall Status: $STATUS ==="
-exit $([[ "$STATUS" == "HEALTHY" ]] && echo 0 || echo 1)
+echo "=== Tempo Health Check Complete ==="
 ```
 
-```bash
-# ✅ GOOD — Kubernetes-native health check
-# Use kubectl to check tempo service health
-kubectl get pods -n tempo -o jsonpath=''.items[].status.conditions[?(@.type=="Ready")].status'
-kubectl exec -n tempo deployment/tempo-controller -- curl -sf http://localhost:8080/healthz
-```
+---
 
 ## Constraints
 
 ### MUST DO
-
-- Always validate inputs before processing - use guard clauses for early exit
-- Return simple types (bool, str, int, list) - avoid returning complex nested dicts
-- Keep cyclomatic complexity ≤ 10 per function - split anything larger
-- Handle null/empty cases explicitly - don't assume data exists
-- No subprocess calls in pure logic functions - isolate I/O operations
-- Always set resource limits for containers - never use unbounded resources
-- Implement health checks for all long-running services
-- Use ConfigMaps for configuration, never hardcode values
-- Always set appropriate retention policies for time-series data
-- Enable TLS for all inter-service communication
+- Deploy Tempo with a durable storage backend (S3/GCS) for production — never use memory-only storage in production
+- Configure the OTLP receiver explicitly on ports 4317 (gRPC) and 4318 (HTTP) for OpenTelemetry compatibility
+- Set proper label-based indexing so traces can be searched by service name, operation, and tags
+- Enable compression (`grpcStorageCompression`) to reduce storage costs for high-volume deployments
+- Monitor distributor drop rates (`tempo_distributor_spans_dropped_total`) as an early warning of ingester overload
 
 ### MUST NOT DO
+- Expose the Tempo QueryFrontend directly without authentication or network policy restrictions
+- Run ingesters or distributors as root containers — always use a non-root security context with `runAsNonRoot: true`
+- Deploy without configuring storage backend limits — unbounded S3/GCS storage will grow indefinitely
+- Skip index caching in production — every query against cold object storage adds 100ms+ latency per request
 
-- Never disable or bypass safety checks "temporarily"
-- Never store secrets in ConfigMaps or environment variables
-- Never ignore error responses from API calls
-- Never use default passwords or credentials in production
-- Never scale down below minimum replicas without explicit approval
-- Never disable alerting rules without replacement coverage
-- Never run without proper backup and recovery procedures
-- Never expose tempo API endpoints without authentication
-- Never disable resource quotas in shared namespaces
-- Never skip security scanning in CI/CD pipelines
+---
 
 ## Related Skills
 
 | Skill | Purpose |
 |---|---|
-| `cncf-tempo-operator` | tempo operator for Kubernetes deployment automation |
-| `cncf-tempo-integration` | Integration patterns with other CNCF projects |
-| `cncf-tempo-troubleshooting` | Common issues and debugging procedures for tempo |
-| `coding-tempo-api` | tempo API usage patterns and examples |
-
----
-
-## TL;DR Checklist
-
-- [ ] Validate all inputs before processing using guard clauses
-- [ ] Return simple types (bool, str, int, list) - avoid complex nested dicts
-- [ ] Keep cyclomatic complexity ≤ 10 per function
-- [ ] Handle null/empty cases explicitly
-- [ ] No subprocess calls in pure logic functions
-- [ ] Always set resource limits for containers
-- [ ] Implement health checks for all services
-- [ ] Use ConfigMaps for configuration
-- [ ] Set appropriate retention policies
-- [ ] Enable TLS for all communication
-
----
-
-## TL;DR for Code Generation
-
-- Use guard clauses — return early on invalid input before doing work
-- Return simple types (bool, str, int, list) — avoid returning complex nested dicts
-- Cyclomatic complexity ≤ 10 per function — split anything larger
-- Handle the null/empty case explicitly
-- No subprocess calls in pure logic functions
-- Always validate resource limits before deployment
-- Use environment variables for configuration, never hardcode
-- Implement comprehensive health checks for all services
-
-## Additional Resources
-
-- **Official Documentation:** [https://tempo.io/docs/](https://tempo.io/docs/)
-- **GitHub Repository:** [https://github.com/tempo/tempo](https://github.com/tempo/tempo)
-- **CNCF Project Page:** [https://www.cncf.io/projects/tempo/](https://www.cncf.io/projects/tempo/)
-- **Community:** Check the GitHub repository for community channels
-- **Versioning:** Refer to project's release notes for version-specific features
+| `cncf-grafana` | Visualize Tempo traces alongside logs and metrics in Grafana dashboards |
+| `coding-distributed-tracing-patterns` | Application-level distributed tracing patterns with OpenTelemetry SDK |
+| `cncf-opentelemetry` | OpenTelemetry instrumentation for sending traces to Tempo |
 
 ---
 
@@ -405,63 +303,71 @@ kubectl exec -n tempo deployment/tempo-controller -- curl -sf http://localhost:8
 
 ### Common Issues
 
-1. **Deployment Failures**
-   - Check pod logs for errors: `kubectl logs -n tempo <pod-name>`
-   - Verify configuration values in ConfigMap
-   - Ensure network connectivity to targets
-   - Check resource limits and adjust if needed
+1. **No traces appearing in Tempo**
+   - Verify applications are configured to send OTLP traces to the correct distributor endpoint (port 4317 gRPC or 4318 HTTP)
+   - Check: `kubectl logs -n tempo <distributor-pod> --tail=50` for connection errors
+   - Ensure network policies allow egress from services to port 4317 or 4318
 
-2. **Scrape Failures**
-   - Verify service discovery configuration
-   - Check target endpoints are responding
-   - Review scrape interval settings
-   - Ensure network policies allow traffic
+2. **High memory usage in ingesters**
+   - Check `tempo_ingester_ring_tokens_count` — if tokens are imbalanced, reconfigure the ring
+   - Reduce `max_block_bytes` or increase `ingester_flush_timeout` to trigger earlier flushes
+   - Consider increasing ingester replicas for write-heavy workloads
 
-3. **High Memory Usage**
-   - Review retention settings
-   - Check time series cardinality
-   - Consider downsampling for old data
-   - Increase memory limits if necessary
-
-4. **Alerting Problems**
-   - Verify Alertmanager configuration
-   - Check alert rule expressions
-   - Review notification templates
-   - Ensure proper routing configuration
+3. **Slow trace queries**
+   - Add index cache (memcached) to reduce cold reads from S3/GCS storage
+   - Use specific label filters in TraceQL queries instead of broad searches
+   - Review storage backend read latency (`s3_get_object_latency` metrics)
 
 ### Debug Commands
 
 ```bash
-# Check tempo pod status
+# Check Tempo pod status across all distributed components
 kubectl get pods -n tempo
 
-# View recent logs
-kubectl logs -n tempo <pod-name> --tail=100 -f
+# View distributor logs for ingestion errors
+kubectl logs -n tempo -l component=distributor --tail=100 -f
 
-# Query tempo API directly
-kubectl port-forward -n tempo <pod-name> 9090:9090 &
-curl http://localhost:9090/api/v1/targets
+# List all traced services
+curl -s http://localhost:3100/services | jq .
 
-# Check configuration
-kubectl get configmap tempo-config -n tempo -o yaml
+# Search traces using TraceQL (Loki-compatible)
+curl -s "http://localhost:3100/api/search?query={service.name=\"api-gateway\"}&limit=5"
+
+# Check OTLP receiver health via port-forward
+kubectl port-forward -n tempo svc/tempo-distributor 4317:4317 &
 ```
+
 ---
 
 ## When to Use
 
 Use this skill when:
 
-- **Integrating a CNCF project into Kubernetes infrastructure** — You need to configure, deploy, or troubleshoot a cloud-native tool within a cluster
-- **Designing cloud-native architecture** — You are selecting and integrating CNCF tools to solve specific infrastructure challenges
-- **Resolving operational issues** — A CNCF component is misbehaving, underperforming, or needs configuration changes
+- **Deploying distributed tracing infrastructure** — You need to set up Grafana Tempo in a Kubernetes cluster for microservice observability with cost-efficient storage
+- **Debugging latency issues across services** — You need to query traces programmatically via the Tempo QueryFrontend API using TraceQL
+- **Troubleshooting trace ingestion failures** — Traces are not reaching Tempo, and you need to diagnose distributor/OTLP receiver misconfiguration
+- **Configuring custom storage backends** — You need to tune S3/GCS retention, block sizes, or add index caching for query performance
+
 ---
 
 ## Core Workflow
 
-1. **Assess Requirements** — Understand the use case, scale, integration needs, and existing infrastructure. **Checkpoint:** Document requirements, constraints, and success criteria.
+1. **Assess Requirements** — Determine the number of services needing tracing, expected trace volume (traces/sec), storage retention period, and whether you have an existing Grafana/Loki stack for integration. **Checkpoint:** Document trace ingestion rate targets and storage capacity needs.
 
-2. **Design Architecture** — Plan component interactions, data flow, and deployment strategy using cloud-native best practices. **Checkpoint:** Verify the architecture addresses all requirements and follows CNCF conventions.
+2. **Deploy Infrastructure** — Install Tempo components (distributor/ingester/query-frontend) in a dedicated namespace with proper resource limits, non-root security contexts, and a durable storage backend (S3/GCS). Use Helm charts for automated deployment. **Checkpoint:** Verify all pods are Running, probes passing, and no CrashLoopBackOff errors. Confirm OTLP receivers are listening on ports 4317/4318.
 
-3. **Implement & Configure** — Create manifests, configurations, and deployment scripts. Include resource limits, health checks, and observability hooks. **Checkpoint:** Validate all YAML against schema and test in a staging environment.
+3. **Instrument Services** — Configure OpenTelemetry SDKs in applications to emit traces via OTLP/gRPC (port 4317) or OTLP/HTTP (port 4318). Set the correct distributor endpoint as an environment variable. Ensure proper labels are attached to spans for searchability. **Checkpoint:** Verify traces appear in Tempo UI within 60 seconds of deployment.
 
-4. **Deploy & Monitor** — Apply manifests to the cluster, verify component health, and confirm observability is working. **Checkpoint:** Confirm all pods/services are running, probes passing, and metrics/alerts configured.
+4. **Monitor & Query** — Use the TraceQL API (`/api/search`) for programmatic trace queries, and expose the UI (port-forward or Ingress) for interactive debugging. Monitor distributor drop rates, ingester flush latency, and query response times. **Checkpoint:** Confirm trace ingestion rate matches expected volume, queries return within acceptable latency, and no traces are being silently dropped.
+
+---
+
+## Live References
+
+> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Tempo Documentation](https://grafana.com/docs/tempo/latest/)
+- [Tempo Kubernetes Deployment](https://grafana.com/docs/tempo/latest/installation/kubernetes/)
+- [OTLP Receiver Configuration](https://grafana.com/docs/tempo/latest/configuration/#otlp)
+- [TraceQL Query Language Reference](https://grafana.com/docs/tempo/latest/traceql/)
+- [Tempo Storage Backends (S3/GCS)](https://grafana.com/docs/tempo/latest/storage/#s3-gcs)

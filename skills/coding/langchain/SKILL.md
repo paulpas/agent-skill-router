@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: langchain
 description: Integrates LangChain/LangGraph (create_agent, chains, tools, memory,
   RAG, streaming, middleware) for building LLM-powered agents and applications in
@@ -6,7 +10,7 @@ description: Integrates LangChain/LangGraph (create_agent, chains, tools, memory
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: langchain, langgraph, create agent, llm orchestration, rag chain, langchain
     agent, how do i use langchain, agent middleware
@@ -31,7 +35,15 @@ metadata:
   - examples
   - do-dont
   related-skills: coding-openai-api, coding-anthropic-api, coding-llamaindex, coding-mcp-protocol
-------
+
+
+
+
+---
+
+
+
+
 # LangChain / LangGraph Integration
 
 Integrates LangChain v1.3+ and LangGraph v1.2+ for building LLM-powered agents and applications. When loaded, this skill makes the model implement LangChain agents using `create_agent`, LangGraph workflows, tool integration, RAG patterns, middleware hooks, and streaming.

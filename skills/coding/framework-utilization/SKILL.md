@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-utilization
 description: Maximizes the value of a chosen technology or framework through progressive adoption strategies, feature discovery patterns, integration anti-pattern avoidance, and optimization techniques for sustainable long-term utilization.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework utilization, how do i use a new tool effectively, technology adoption, progressive rollout, feature discovery, integration patterns, optimize chosen framework, leveraging technology, avoid integration anti-patterns, framework best practices, adopt a new framework
+  triggers: framework utilization, technology adoption, integration patterns, feature discovery, progressive rollout, framework best practices, how do i use a new tool effectively, adopt a new framework
   archetypes:
     - tactical
     - generation
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-selection, ai-framework-selector, dependency-injection, integration-testing-patterns, modular-design
+
+
+
+
 ---
+
+
+
+
 
 # Framework Utilization Engine
 

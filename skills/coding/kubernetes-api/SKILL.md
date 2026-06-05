@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-api
 description: Integrates with the Kubernetes API via the official client-python SDK
   to manage pods, deployments, services, ConfigMaps, Secrets, CRDs, and cluster resources
@@ -6,7 +10,7 @@ description: Integrates with the Kubernetes API via the official client-python S
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: kubernetes api, k8s python client, client-python, kubectl python, kubernetes
     pods, kubernetes deployments, k8s custom resources, kubernetes operations
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-docker-api, coding-terraform-sdk, coding-ansible-api
-------
+
+
+
+
+---
+
+
+
+
 # Kubernetes API & client-python Integration
 
 Integrates with the Kubernetes API using the official `kubernetes` Python client (`client-python`) to manage pods, deployments, services, ConfigMaps, Secrets, ingress, Custom Resource Definitions (CRDs), and cluster-wide resources. Supports both in-cluster and kubeconfig-based authentication.
@@ -395,6 +407,23 @@ def get_deployment_good(
 - Never use `delete_namespaced_*` without `grace_period_seconds` for pod termination
 - Do not assume all API groups are available — use `get_api_resources()` to discover them
 - Never ignore `409 Conflict` errors — they mean you have a stale object version
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## Live References
 

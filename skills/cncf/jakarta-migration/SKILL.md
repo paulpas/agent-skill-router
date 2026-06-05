@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: jakarta-migration
 description: Migrates Java EE 8 applications to Jakarta EE 9+ by handling namespace
   rewrites, dependency updates, build configuration changes, and reference implementation
@@ -6,11 +10,9 @@ description: Migrates Java EE 8 applications to Jakarta EE 9+ by handling namesp
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: cncf
-  triggers: java ee migration, javax to jakarta, java ee to jakarta ee, namespace
-    change, jakartaee-api, javax.servlet, javax.persistence, migration tool, eclipse
-    migration, batch rename, java ee 8 upgrade
+  triggers: java ee migration, javax to jakarta, java ee to jakarta ee, namespace change, jakartaee-api, javax.servlet, javax.persistence, migration tool change
   archetypes:
   - tactical
   anti_triggers:
@@ -30,7 +32,15 @@ metadata:
   - config
   - do-dont
   related-skills: jakarta-ee, microprofile
-------
+
+
+
+
+---
+
+
+
+
 # Java EE to Jakarta EE Migration
 
 Guides the systematic migration of Java EE 8 (Java SE 8 / javax.*) applications to Jakarta EE 9+ by handling namespace rewrites, dependency updates, build configuration changes, container-specific adjustments, and validation of migrated code against a Jakarta EE reference implementation.

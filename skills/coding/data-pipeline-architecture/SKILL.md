@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-pipeline-architecture
 description: Implements data pipeline architectures (batch ETL/ELT, streaming, medallion bronze-silver-gold layers, data quality gates, schema evolution handling) for reliable data processing at scale.
 license: MIT
@@ -17,13 +21,21 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: data pipeline, ETL architecture, ELT pipeline, medallion architecture, batch processing, stream processing, data quality gates, schema evolution, data ingestion, Spark pipeline, Kafka Streams, data transformation pipeline, how do i build a data pipeline
+  triggers: data pipeline, ETL architecture, batch processing, stream processing, data quality gates, schema evolution, Spark pipeline, how do i build a data pipeline
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
   related-skills: event-driven-architecture, system-reliability-architecture, distributed-systems-architecture, database-design-patterns
+
+
+
+
 ---
+
+
+
+
 
 # Data Pipeline Architecture
 
