@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: aws-s3
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,9 +35,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: s3
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # S3 (Simple Storage Service)
 
 Configure durable, scalable object storage with versioning, lifecycle management, and encryption. S3 provides unlimited, cost-effective storage for any data type with sophisticated access controls.

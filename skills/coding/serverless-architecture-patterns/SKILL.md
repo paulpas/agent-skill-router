@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: serverless-architecture-patterns
 description: Implements serverless architecture patterns including AWS Lambda function design, event-driven triggers (S3, DynamoDB streams, SQS/SNS), Serverless API Gateway integration, cold start optimization, distributed tracing, and multi-region deployment strategies for cost-effective scalable applications.
 license: MIT
@@ -19,13 +23,21 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: serverless architecture, AWS Lambda, Cloudflare Workers, edge computing, event-driven serverless, cold start optimization, provisioned concurrency, Lambda Layers, Serverless API Gateway, DynamoDB triggers, SQS consumer, how do I build serverless applications, pay-per-use compute
+  triggers: serverless architecture, AWS Lambda, Cloudflare Workers, edge computing, cold start optimization, provisioned concurrency, Serverless API Gateway, how do I build serverless applications
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: microservices-architecture, event-driven-architecture, cloud-native-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Serverless Architecture Patterns
 

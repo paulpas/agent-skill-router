@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: pydantic-models
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: models
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Skill: coding-pydantic-models
 
 # Pydantic frozen data models for trading: enums, annotated constraints, field/model validators, and computed properties

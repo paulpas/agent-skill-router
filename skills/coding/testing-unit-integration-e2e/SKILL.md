@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: testing-unit-integration-e2e
 description: Implements comprehensive testing strategies (unit, integration, contract,
   and end-to-end) with appropriate test doubles, isolation levels, and coverage thresholds
@@ -6,7 +10,7 @@ description: Implements comprehensive testing strategies (unit, integration, con
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: unit testing, integration testing, contract testing, end-to-end testing,
     e2e, test doubles, test isolation, smoke tests
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: testing-tdd, testing-mocking-stubs, code-review, testing-static-analysis
-------
+
+
+
+
+---
+
+
+
+
 # Comprehensive Testing Strategies
 
 Architects and writes layered test suites that isolate concerns, validate system boundaries, and prevent regressions across unit, integration, contract, and end-to-end layers. This skill enforces the test pyramid: many fast, narrow unit tests, fewer integration tests, and minimal end-to-end tests that cover user journeys.

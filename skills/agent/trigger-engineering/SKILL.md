@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: trigger-engineering
 description: Engineers precision trigger sets for AI agent skills using two-tier discovery patterns, anti-trigger calibration, archetype alignment, and hybrid scoring optimization to maximize auto-loading accuracy while minimizing false positive rates.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: trigger engineering, trigger design, auto-load triggers, two-tier strategy, trigger calibration, anti-triggers, hybrid scoring, archetype matching, skill discovery, keyword optimization, trigger precision, trigger recall, false positive triggers
+  triggers: trigger engineering, trigger design, auto-load triggers, two-tier strategy, anti-triggers, hybrid scoring, archetype matching
   archetypes:
     - tactical
     - strategic
@@ -27,7 +31,15 @@ metadata:
     - examples
     - do-dont
   related-skills: skill-architecture-design, skill-testing-methodology, skill-router
+
+
+
+
 ---
+
+
+
+
 
 # Trigger Engineering for AI Agent Skills
 

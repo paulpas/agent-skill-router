@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: git-advanced
 compatibility: opencode
 completeness: 95
 content-types:
@@ -31,9 +36,16 @@ metadata:
     verbosity: medium
     directive_strength: medium
     abstraction_level: tactical
-  version: 1.0.0
-name: advanced
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Advanced Git Operations
 
 Reference guide for advanced Git techniques including rebasing, cherry-picking, bisecting, reflog recovery, worktrees, branch filtering, and multi-repository workflows for experienced developers managing complex version control scenarios.

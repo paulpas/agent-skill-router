@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: karpathy-goal-driven-execution
 description: Drives implementation through verifiable success criteria — transform vague tasks into testable goals, write reproduction tests before fixes, loop until criteria pass, checkpoint after every significant step, and declare uncertainty explicitly rather than silently proceeding.
 license: MIT
@@ -19,7 +23,7 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: goal-driven execution, success criteria, test-driven, verification loop, define success criteria, checkpoint, fail loud, reproduce bug first, test intent
+  triggers: goal-driven execution, success criteria, test-driven, verification loop, checkpoint, fail loud, reproduce bug first, test intent
   role: implementation
   scope: implementation
   output-format: code
@@ -29,7 +33,15 @@ metadata:
     - do-dont
     - examples
   related-skills: karpathy-coding-mindset, karpathy-surgical-changes, test-driven-development, debugging-methodology
+
+
+
+
 ---
+
+
+
+
 
 # Karpathy Goal-Driven Execution
 

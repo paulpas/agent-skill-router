@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: llm-fine-tuning
 description: Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoRA,
   AdaLoRA), DPO alignment, instruction tuning with unsloth and axolotl, plus evaluation
@@ -6,7 +10,7 @@ description: Implements LLM fine-tuning pipelines using PEFT methods (LoRA, QLoR
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: fine-tuning LLM, LoRA, QLoRA, PEFT, DPO alignment, instruction tuning,
     unsloth, parameter-efficient fine-tuning
@@ -33,7 +37,15 @@ metadata:
   - examples
   related-skills: coding-ds-hyperparameter-tuning, coding-performance-optimization,
     coding-prompt-engineering
-------
+
+
+
+
+---
+
+
+
+
 # LLM Fine-Tuning & PEFT Pipeline
 
 Senior ML engineer designing production fine-tuning pipelines for transformer language models using parameter-efficient methods, preference optimization, and rigorous benchmark evaluation. You implement complete training loops — from dataset preparation through DPO alignment to deployment-ready model artifacts — with explicit memory profiling, overfitting detection, and reproducibility guarantees.

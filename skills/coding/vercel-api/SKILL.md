@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: vercel-api
 description: Integrates Vercel services (Deployments, Projects, Edge Functions, Domains, Analytics) using the Vercel REST API and Python SDK with token-based authentication and deployment automation patterns.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: vercel api, vercel python, vercel deployments, vercel edge functions, vercel projects, vercel domains, how do i use vercel api from python
   archetypes:
@@ -23,10 +27,35 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: cloudflare-api, netlify-api, aws-sdk
-------
+
+
+
+
+---
+
+
+
+
 
 # Vercel API Integration Patterns
 Integrates Vercel services using the Vercel REST API and `vercel-py` SDK. Covers API token authentication, project management, deployment creation (with file uploads), Edge Config management, domain configuration, and environment variable management with patterns for deployment status polling and rollback.
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## TL;DR Checklist
 - [ ] Use `VERCEL_TOKEN` environment variable with a Vercel API token from Account Settings

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gof-design-patterns-catalog
 description: Comprehensive catalog of all 23 GoF design patterns with Python implementations covering creational, structural, and behavioral patterns for decoupling and extensible software design.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: gof design patterns, gang of four, factory method, strategy pattern, decorator pattern, observer pattern, singleton, builder pattern, creational patterns, structural patterns, behavioral patterns, design catalog, SOLID principles, GoF catalog
+  triggers: gof design patterns, gang of four, factory method, strategy pattern, decorator pattern, observer pattern, SOLID principles, design catalog
   archetypes:
     - tactical
     - generation
@@ -25,7 +29,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: design-pattern-selection, structural-design-patterns, creational-design-patterns, behavioral-design-patterns
+
+
+
+
 ---
+
+
+
+
 
 # GoF Design Patterns Catalog
 

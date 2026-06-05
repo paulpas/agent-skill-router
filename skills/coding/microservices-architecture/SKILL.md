@@ -1,50 +1,58 @@
 ---
+
+
+
+
 name: microservices-architecture
-description: Implements microservices architecture patterns (bounded contexts, API
-  gateway, event-driven communication, saga orchestration) for decomposing monolithic
-  applications into scalable, independent services.
+description: Implements microservices architecture patterns including domain-driven service decomposition, inter-service communication protocols, Saga pattern for distributed transactions, circuit breaker resilience, and API gateway routing for independently deployable services.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: microservices architecture, service decomposition, bounded context, how
-    do i split a monolith, inter-service communication, event-driven messaging, API
-    gateway, saga pattern
+  triggers: microservices, service decomposition, bounded context, saga pattern, circuit breaker, api gateway, service discovery, distributed tracing
   archetypes:
-  - tactical
-  - generation
+    - tactical
+    - strategic
   anti_triggers:
-  - brainstorming
-  - vague ideation
-  - code golf
-  - over-engineering
+    - brainstorming
+    - vague ideation
+    - over-engineering
   response_profile:
-    verbosity: low
+    verbosity: medium
     directive_strength: high
     abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
   content-types:
-  - code
-  - guidance
-  - do-dont
-  - examples
-  related-skills: coding-monolith-refactoring, coding-domain-driven-design, cncf-kubernetes-deployment,
-    coding-event-driven-architecture
-------
+    - code
+    - guidance
+    - do-dont
+    - examples
+  related-skills: event-driven-architecture, monolith-strangler-pattern, ddd-context-mapping
+
+
+
+
+---
+
+
+
+
+
 # Microservices Architecture Implementation
 
-Senior software architect decomposing monolithic applications into independently deployable microservices using domain-driven design, bounded context mapping, and event-driven communication patterns. Applies SOLID and DRY principles to ensure each service owns a single business capability with clear contractual boundaries.
+Senior software architect designing independently deployable service boundaries with resilient inter-service communication, distributed transaction management via Saga patterns, and gateway-based API routing. This skill makes the model think in terms of bounded contexts, failure domains, and operational independence rather than code organization alone.
 
 ## TL;DR Checklist
 
-- [ ] Map bounded contexts using event storming or domain story workshops before writing code
-- [ ] Define strict API contracts (OpenAPI/schemas) between services — no shared database models
-- [ ] Choose sync REST for request-response queries and async events for domain changes
-- [ ] Implement circuit breakers and retry policies on every inter-service call
-- [ ] Use saga orchestration or choreography for cross-service transactions, never distributed locks
+- [ ] Define bounded contexts using domain language before writing any infrastructure
+- [ ] Select sync (gRPC/REST) or async (messaging) based on data consistency requirements
+- [ ] Implement Saga orchestration for cross-service transactions requiring rollback capability
+- [ ] Deploy circuit breaker with CLOSED/OPEN/HALF_OPEN states and configurable thresholds on every inter-service call
+- [ ] Configure API gateway with route matching, request transformation, and response aggregation
+- [ ] Add distributed tracing (trace_id propagation) across all service boundaries
 
 ---
 
@@ -52,724 +60,949 @@ Senior software architect decomposing monolithic applications into independently
 
 Use this skill when:
 
-- Decomposing a monolithic application into independently deployable services with bounded contexts
-- Designing inter-service communication strategies (REST, gRPC, event messaging) for a new distributed system
-- Implementing an API gateway to consolidate service endpoints and handle cross-cutting concerns (auth, rate limiting, routing)
-- Resolving distributed transaction requirements using saga patterns (orchestration or choreography)
-- Establishing service boundaries and ownership models using domain-driven design
+- Architecting greenfield microservices where bounded contexts must be identified from domain language
+- Decomposing a monolithic application by extracting independent domains into separate services
+- Designing high-scale systems requiring read/write separation with independently scalable tiers
+- Coordinating distributed transactions across multiple services that each own their data store
+- Building an API gateway to unify internal service APIs behind a single external interface
+- Implementing resilience patterns (circuit breaker, bulkhead, retry) for service-to-service communication
 
 ---
 
 ## When NOT to Use
 
-Avoid microservices for:
+Avoid this skill for:
 
-- **Small teams shipping MVPs** — a well-structured monolith scales better initially; add decomposition only when team size, deployment frequency, or scaling needs justify the operational overhead (use `coding-monolith-refactoring` instead)
-- **Simple CRUD applications** — if the system is primarily data entry with basic retrieval logic, the network latency and consistency costs of microservices outweigh any benefits
-- **Single bounded context with no domain complexity** — if the entire application maps to one cohesive domain concept (e.g., a simple blog CMS), extracting services creates unnecessary coupling without business value
+- Simple CRUD applications with <10k daily active users — a monolith or modular application is faster and cheaper
+- Teams smaller than 5 developers who cannot support the operational overhead of distributed systems
+- Latency-critical single-domain applications where network hops between services introduce unacceptable overhead
+- Projects with no clear domain boundary separation — if all data belongs to one aggregate root, microservices add cost without benefit
 
 ---
 
 ## Core Workflow
 
-1. **Identify Bounded Contexts via Domain-Driven Design** — Conduct event storming sessions with domain experts to identify aggregate roots, entities, value objects, and contextual boundaries. Each bounded context becomes a candidate service.
-   **Checkpoint:** Every identified context must have a clear owner team, well-defined ubiquitous language, and no ambiguous shared responsibilities across contexts.
+1. **Analyze Domain Boundaries** — Conduct a ubiquitous language exercise with domain experts. Map every entity to its natural home and identify aggregation roots. Identify bounded contexts where invariants are maintained independently.
+   **Checkpoint:** Each identified context must be able to define its own schema, business rules, and data lifecycle without coordinating with other teams. If two contexts constantly need each other's internal state, they may belong to the same context.
 
-2. **Define Service Boundaries & Contracts** — For each bounded context, define the service's public API using OpenAPI 3.0 or Protocol Buffers. Specify request/response schemas, error codes, and versioning strategy. Establish anti-corruption layers where legacy or third-party domains intersect.
-   **Checkpoint:** No two services should share a database. Database-per-service is non-negotiable — each service owns its data store exclusively.
+2. **Decompose Services** — For each bounded context, create an independent service unit. Define the public API surface (gRPC proto or OpenAPI spec) before implementation. Each service owns exactly one database schema — no shared databases across services.
+   **Checkpoint:** Verify that the service interface only exposes operations required by consumers, not internal state. The API should reflect the consumer's use case, not the service's data model.
 
-3. **Choose Communication Style (Sync vs Async)** — Evaluate each inter-service interaction:
-   - Use synchronous REST/gRPC for request-response queries where the caller needs an immediate result
-   - Use asynchronous event messaging for domain events and side effects where eventual consistency is acceptable
-   - Document every communication decision with rationale in the architecture decision record (ADR)
-   **Checkpoint:** Map out all inter-service calls. Services should communicate through contracts, not direct references to internal implementations.
+3. **Select Communication Protocol** — Match protocol to consistency and latency needs:
+   - Sync gRPC for low-latency request/response with strong typing (same-data-center services)
+   - Sync REST/HTTP for external APIs and cross-language integration
+   - Async messaging (Kafka, RabbitMQ) for eventual consistency, event-driven workflows, and fan-out scenarios
+   **Checkpoint:** Every sync call needs a circuit breaker. Every async message has a schema contract and idempotency guarantee.
 
-4. **Implement API Gateway Patterns** — Deploy a gateway (Kong, AWS API Gateway, or custom) that handles authentication, rate limiting, request routing, response aggregation, and SSL termination. The gateway hides service topology from clients and provides a single entry point.
-   **Checkpoint:** The gateway must not contain business logic. It is a traffic cop, not a decision maker. Delegate authN/authZ to dedicated identity services.
+4. **Design Saga Transactions** — For any business operation spanning multiple services with local data persistence, implement the Saga pattern. Choose choreography (event-driven, decentralized) for simple flows or orchestration (coordinator-based) for complex workflows with conditional branching.
+   **Checkpoint:** Every forward action must have a corresponding compensating action that can undo it safely without breaking invariants in either service.
 
-5. **Handle Distributed Transactions with Sagas** — For operations spanning multiple services, implement either saga orchestration (central coordinator) or choreography (event-driven). Each saga step must have a compensating action for rollback. Use an outbox pattern to reliably publish domain events after database commits.
-   **Checkpoint:** Every saga step is idempotent and has a defined compensation path. There are no distributed locks — only optimistic concurrency and retries.
+5. **Implement Resilience Patterns** — Add circuit breaker, bulkhead isolation, and retry with exponential backoff to every inter-service communication path. Configure timeouts at the client level (not server) so failures fail fast.
+   **Checkpoint:** Circuit breaker state transitions must be logged. OPEN state must include a configurable half-open probe interval. Every timeout must have a fallback strategy (cached data, default value, or error).
+
+6. **Deploy Gateway and Observability** — Implement an API gateway that handles cross-cutting concerns: authentication, rate limiting, request transformation, response aggregation, and routing to the correct service based on path matching and feature flags. Deploy distributed tracing with trace_id propagated through every hop.
+   **Checkpoint:** Every request entering the gateway must receive a unique trace_id. All downstream services must include that trace_id in their log statements and span annotations.
 
 ---
 
-## Implementation Patterns / Reference Guide
+## Implementation Patterns
 
-### Pattern 1: Bounded Context Mapping & Service Boundary Definition
+### Pattern 1: Service Decomposition Using Bounded Contexts
 
-Use domain-driven design to establish clear service boundaries. The key insight from DDD is that each bounded context has its own ubiquitous language, model, and data store. Services should be organized around business capabilities, not technical layers.
+Proper bounded context separation prevents distributed monoliths. Each service owns its domain entities, repositories, and application logic independently. Below is a Python module structure for an OrderService bounded context in e-commerce.
 
 ```python
-from enum import Enum
-from dataclasses import dataclass, field
-from typing import Optional
+# orders/context.py — Bounded context root defining the unified language
+from __future__ import annotations
 
 
-class BoundedContext(Enum):
-    """Enumerates all bounded contexts in the domain model."""
-    ORDER = "order"
-    INVENTORY = "inventory"
-    PAYMENT = "payment"
-    SHIPPING = "shipping"
-    NOTIFICATION = "notification"
-
-
-@dataclass(frozen=True)
-class DomainEvent:
-    """Base domain event shared across all bounded contexts.
-
-    Immutable to prevent accidental mutation after emission.
-    Each event carries a unique correlation ID for tracing distributed transactions.
-    """
-    event_type: str
-    aggregate_id: str
-    occurred_at: str  # ISO-8601 timestamp
-    correlation_id: str
-    version: int = 1
-
-
-@dataclass(frozen=True)
-class OrderPlaced(DomainEvent):
-    """Domain event emitted when an order is successfully placed.
-
-    Carries only the data that downstream contexts need — nothing more.
-    This prevents coupling between the Order and Inventory context internals.
-    """
-    aggregate_id: str
-    customer_id: str
-    items: list[dict]  # [{item_id, quantity, price}]
-    total_amount: float
-    currency: str
-
-
-# ❌ BAD: Shared database models create tight coupling across contexts
-class SharedDatabaseModel:
-    """Shared ORM model — both Order and Inventory context access the same tables.
-
-    This creates a distributed monolith: changes in one service silently break another.
-    Violates the single responsibility principle and makes independent deployment impossible.
-    """
-    __shared_table__ = "orders"  # Both services read/write this table
-
-    def create_order(self, **kwargs):
-        # Order context writes here
-        pass
-
-    def check_inventory_for_order(self, order_id: str) -> int:
-        # Inventory context reads the same table — tight coupling
-        pass
-
-
-# ✅ GOOD: Each bounded context owns its own model and communicates via domain events
 class OrderContext:
-    """Order bounded context — owns the order lifecycle exclusively.
-
-    Emits domain events when significant state transitions occur.
-    Never queries another service's database directly.
+    """Root of the Order bounded context.
+    
+    Encapsulates all domain language, invariants, and operations
+    that belong exclusively to order management. This module
+    is the single source of truth for what "order" means here.
     """
 
-    def __init__(self, event_publisher: "EventPublisher") -> None:
-        self._publisher = event_publisher
+    class State:
+        PENDING = "pending"
+        CONFIRMED = "confirmed"
+        PAID = "paid"
+        SHIPPED = "shipped"
+        CANCELLED = "cancelled"
 
-    def place_order(
-        self,
-        order_id: str,
-        customer_id: str,
-        items: list[dict],
-        total_amount: float,
-        currency: str = "USD",
-    ) -> OrderPlaced:
-        """Persist the order and emit a domain event for downstream processing.
+    VALID_TRANSITIONS: dict[str, set[str]] = {
+        State.PENDING: {State.CONFIRMED, State.CANCELLED},
+        State.CONFIRMED: {State.PAID, State.CANCELLED},
+        State.PAID: {State.SHIPPED, State.CANCELLED},
+        State.SHIPPED: set(),  # terminal — no transitions allowed
+        State.CANCELLED: set(),  # terminal
+    }
 
-        The order is committed to the Order context's database first.
-        Then the event is published — never the other way around (outbox pattern).
-        """
-        # Guard clause — validate inputs before any persistence
-        if not order_id or not customer_id:
-            raise ValueError("order_id and customer_id are required")
-        if total_amount <= 0:
-            raise ValueError(f"total_amount must be positive, got {total_amount}")
-        if not items:
-            raise ValueError("Order must contain at least one item")
 
-        # Persist order to Order context's own database
-        self._persist_order(order_id, customer_id, items, total_amount, currency)
+# orders/domain.py — Domain entities with invariants enforced at construction
+from __future__ import annotations
 
-        # Emit domain event — other contexts react independently
-        event = OrderPlaced(
-            event_type="ORDER_PLACED",
-            aggregate_id=order_id,
-            occurred_at="2025-06-15T10:30:00Z",
-            correlation_id=f"corr-{order_id}",
-            customer_id=customer_id,
-            items=items,
-            total_amount=total_amount,
-            currency=currency,
+from dataclasses import dataclass, field
+from datetime import datetime
+from enum import Enum
+from typing import List
+
+
+class OrderStatus(Enum):
+    PENDING = "pending"
+    CONFIRMED = "confirmed"
+    PAID = "paid"
+    SHIPPED = "shipped"
+    CANCELLED = "cancelled"
+
+
+@dataclass(frozen=True)
+class Money:
+    """Immutable value object — money is never nullable or negative."""
+    amount: float
+    currency: str = "USD"
+
+    def __post_init__(self) -> None:
+        if self.amount < 0:
+            raise ValueError("Money amount cannot be negative")
+
+    def subtract(self, other: Money) -> Money:
+        if self.currency != other.currency:
+            raise ValueError("Cannot subtract different currencies")
+        return Money(round(self.amount - other.amount, 2), self.currency)
+
+
+@dataclass
+class OrderItem:
+    product_id: str
+    quantity: int
+    unit_price: Money
+
+    @property
+    def total(self) -> Money:
+        return Money(
+            round(self.unit_price.amount * self.quantity, 2),
+            self.unit_price.currency,
         )
-        self._publisher.publish(event)
-        return event
 
-    def _persist_order(
-        self,
-        order_id: str,
-        customer_id: str,
-        items: list[dict],
-        total_amount: float,
-        currency: str,
-    ) -> None:
-        """Persist order to Order context's own database.
-
-        In production this would use SQLAlchemy or an ORM with transaction boundaries.
-        """
-        raise NotImplementedError("Implement against your chosen database")
+    def __post_init__(self) -> None:
+        if self.quantity < 1:
+            raise ValueError("Order item quantity must be at least 1")
 
 
-class InventoryContext:
-    """Inventory bounded context — owns stock levels exclusively.
+@dataclass
+class Order:
+    order_id: str
+    customer_id: str
+    items: List[OrderItem] = field(default_factory=list)
+    status: OrderStatus = OrderStatus.PENDING
+    created_at: datetime = field(default_factory=datetime.utcnow)
 
-    Reacts to ORDER_PLACED events by decrementing available stock.
-    Does not receive direct API calls from Order context for this operation.
+    @property
+    def grand_total(self) -> Money:
+        if not self.items:
+            return Money(0.0)
+        total_amount = sum(item.total.amount for item in self.items)
+        return Money(round(total_amount, 2), self.items[0].unit_price.currency)
+
+    def transition_to(self, new_status: OrderStatus) -> None:
+        """Transition order state — enforces bounded context invariant."""
+        valid_next = {s.value for s in OrderContext.VALID_TRANSITIONS.get(
+            self.status, set()
+        )}
+        if new_status.value not in valid_next:
+            raise ValueError(
+                f"Cannot transition from {self.status.value} to {new_status.value}"
+            )
+        self.status = new_status
+
+    def add_item(self, item: OrderItem) -> None:
+        """Add item only while order is still pending."""
+        if self.status != OrderStatus.PENDING:
+            raise ValueError("Cannot modify items after order confirmation")
+        self.items.append(item)
+
+
+# orders/application.py — Application service (orchestrates use cases, no business logic)
+from __future__ import annotations
+
+from typing import Protocol
+
+
+class OrderRepository(Protocol):
+    async def save(self, order: Order) -> None: ...
+    async def get_by_id(self, order_id: str) -> Order | None: ...
+    async def list_by_customer(self, customer_id: str) -> list[Order]: ...
+
+
+class OrderService:
+    """Application service — coordinates use cases using domain objects.
+    
+    This layer contains no business rules. It reads from the repository,
+    calls domain methods, and writes back. All validation happens in
+    the domain model itself.
     """
 
-    def __init__(self, event_bus: "EventBus") -> None:
-        self._bus = event_bus
-        # Register subscriber — decoupled from OrderContext directly
-        event_bus.subscribe("ORDER_PLACED", self._handle_order_placed)
+    def __init__(self, repo: OrderRepository) -> None:
+        self._repo = repo
 
-    def _handle_order_placed(self, event: OrderPlaced) -> None:
-        """Handle the ORDER_PLACED domain event and reserve inventory.
+    async def create_order(self, customer_id: str, items_data: list[dict]) -> Order:
+        items = [
+            OrderItem(
+                product_id=data["product_id"],
+                quantity=data["quantity"],
+                unit_price=Money(data["unit_price"], data.get("currency", "USD")),
+            )
+            for data in items_data
+        ]
+        order = Order(order_id=self._generate_id(), customer_id=customer_id, items=items)
+        await self._repo.save(order)
+        return order
 
-        Each handler is idempotent — if the same event arrives twice,
-        the system remains consistent.
-        """
-        for item in event.items:
-            reserved = self._reserve_stock(item["item_id"], item["quantity"])
-            if not reserved:
-                # Emit compensating event — trigger order cancellation saga step
-                raise InventoryInsufficientError(
-                    f"Insufficient stock for item {item['item_id']}"
-                )
+    async def confirm_order(self, order_id: str) -> Order:
+        order = await self._repo.get_by_id(order_id)
+        if order is None:
+            raise KeyError(f"Order {order_id} not found")
+        order.transition_to(OrderStatus.CONFIRMED)
+        await self._repo.save(order)
+        return order
 
-    def _reserve_stock(self, item_id: str, quantity: int) -> bool:
-        """Reserve stock in the Inventory context's own database.
-
-        Uses optimistic concurrency control to prevent overselling.
-        """
-        raise NotImplementedError("Implement against your chosen database")
-
-
-class InventoryInsufficientError(RuntimeError):
-    """Raised when inventory cannot fulfill a demand event."""
-    pass
+    def _generate_id(self) -> str:
+        import uuid
+        return f"ord-{uuid.uuid4().hex[:12]}"
 ```
 
-### Pattern 2: Inter-Service Communication (Synchronous REST vs Asynchronous Event Messaging)
+### Pattern 2: Saga Orchestration
 
-Choosing the right communication style is critical. Synchronous calls (REST/gRPC) are appropriate when the caller needs an immediate answer. Asynchronous events are better for side effects, notifications, and eventual consistency scenarios. Misusing sync calls creates cascading failure chains; misusing events leads to data inconsistency surprises.
+Orchestrator-based Sagas use a central coordinator to manage the sequence of service calls and their compensations. This pattern is ideal when workflows have conditional branching, require human approval steps, or need centralized monitoring.
 
 ```python
-import time
+# saga/orchestrator.py — Centralized Saga orchestrator with compensation handling
+from __future__ import annotations
+
 import asyncio
+import logging
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Optional
+from typing import Any, Awaitable, Callable, Protocol
+
+logger = logging.getLogger(__name__)
 
 
-# ─── Synchronous REST Communication (Request-Response) ──────────────────────
-
-
-class HTTPStatus(Enum):
-    """Standardized inter-service HTTP status codes."""
-    SUCCESS = 200
-    NOT_FOUND = 404
-    SERVICE_UNAVAILABLE = 503
-    GATEWAY_TIMEOUT = 504
+class SagaStatus(Enum):
+    RUNNING = "running"
+    COMPLETED = "completed"
+    COMPENSATING = "compensating"
+    FAILED = "failed"
 
 
 @dataclass
-class ServiceResponse:
-    """Standard response wrapper for all inter-service REST calls.
+class StepResult:
+    step_name: str
+    success: bool
+    data: dict[str, Any] = field(default_factory=dict)
 
-    Provides a consistent envelope so consumers don't need to parse
-    raw HTTP responses differently across services.
+
+class CompensationAction(Protocol):
+    async def __call__(self, context: dict[str, Any], result: StepResult) -> None: ...
+
+
+class SagaStep(ABC):
+    """Base class for a Saga step with forward execution and compensation."""
+
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+    @abstractmethod
+    async def execute(self, context: dict[str, Any]) -> StepResult: ...
+
+    @abstractmethod
+    async def compensate(self, context: dict[str, Any], result: StepResult) -> None: ...
+
+
+class SagaOrchestrator:
+    """Orchestrates a sequence of SagaSteps with automatic compensation on failure.
+    
+    Execution flow:
+      1. Execute steps sequentially, collecting results
+      2. On any step failure, reverse-iterate already-executed steps
+      3. Call compensate() on each completed step in reverse order
+      4. If compensation also fails, log and escalate — do not retry automatically
+    
+    This implements the "orchestration" variant of the Saga pattern (vs choreography).
     """
-    status: HTTPStatus
-    data: Optional[dict] = None
-    error_code: Optional[str] = None
-    retry_after_seconds: Optional[int] = None
+
+    def __init__(self, saga_id: str) -> None:
+        self.saga_id = saga_id
+        self._steps: list[SagaStep] = []
+        self._results: dict[str, StepResult] = {}
+        self.status = SagaStatus.RUNNING
+
+    def add_step(self, step: SagaStep) -> "SagaOrchestrator":
+        """Fluent builder for adding steps in execution order."""
+        self._steps.append(step)
+        return self
+
+    async def execute(self) -> dict[str, Any]:
+        """Run all steps forward. On first failure, compensate in reverse."""
+        context: dict[str, Any] = {"saga_id": self.saga_id}
+
+        for step in self._steps:
+            try:
+                result = await step.execute(context)
+                self._results[step.name] = result
+
+                if not result.success:
+                    logger.error(
+                        "Saga %s failed at step '%s'",
+                        self.saga_id,
+                        step.name,
+                        extra=result.data,
+                    )
+                    await self._compensate(context)
+                    return {"status": "failed", "failed_at": step.name}
+
+            except Exception as exc:
+                logger.exception(
+                    "Saga %s crashed at step '%s': %s",
+                    self.saga_id,
+                    step.name,
+                    exc,
+                )
+                await self._compensate(context)
+                return {"status": "error", "failed_at": step.name, "error": str(exc)}
+
+        self.status = SagaStatus.COMPLETED
+        logger.info("Saga %s completed successfully", self.saga_id)
+        return {"status": "completed", "results": {n: r.data for n, r in self._results.items()}}
+
+    async def _compensate(self, context: dict[str, Any]) -> None:
+        """Execute compensating actions for all completed steps, in reverse order."""
+        self.status = SagaStatus.COMPENSATING
+        reversed_steps = list(reversed(list(zip(self._steps, self._results.items()))))
+
+        compensation_failures: list[str] = []
+
+        for step, (step_name, result) in reversed_steps:
+            try:
+                await step.compensate(context, result)
+                logger.info("Compensation successful for step '%s' in saga %s", step_name, self.saga_id)
+            except Exception as exc:
+                compensation_failures.append(step_name)
+                logger.critical(
+                    "COMPENSATION FAILURE at step '%s' in saga %s: %s",
+                    step_name,
+                    self.saga_id,
+                    exc,
+                    exc_info=True,
+                )
+
+        self.status = SagaStatus.FAILED if compensation_failures else SagaStatus.COMPENSATING
+        if compensation_failures:
+            raise RuntimeError(
+                f"Saga {self.saga_id} failed with uncompensated steps: {compensation_failures}"
+            )
 
 
-class CircuitBreakerError(Exception):
-    """Raised when the circuit breaker is open and requests are short-circuited."""
-    pass
+# --- Concrete saga step example: Order creation across Inventory, Payment, and Shipping ---
+
+class ReserveInventoryStep(SagaStep):
+    """Reserves inventory items for an order. Compensation releases the reservation."""
+
+    def __init__(self, inventory_client: Any) -> None:
+        super().__init__("reserve_inventory")
+        self._client = inventory_client
+
+    async def execute(self, context: dict[str, Any]) -> StepResult:
+        reservation_id = await self._client.reserve(context["items"])
+        context["reservation_id"] = reservation_id
+        return StepResult(self.name, True, {"reservation_id": reservation_id})
+
+    async def compensate(self, context: dict[str, Any], result: StepResult) -> None:
+        if "reservation_id" in context:
+            await self._client.release(context["reservation_id"])
+            logger.info("Released inventory reservation %s", context["reservation_id"])
+
+
+class ProcessPaymentStep(SagaStep):
+    """Charges customer's payment method. Compensation issues a refund."""
+
+    def __init__(self, payment_gateway: Any) -> None:
+        super().__init__("process_payment")
+        self._gateway = payment_gateway
+
+    async def execute(self, context: dict[str, Any]) -> StepResult:
+        txn_id = await self._gateway.charge(
+            customer_id=context["customer_id"],
+            amount=context["total_amount"],
+        )
+        context["transaction_id"] = txn_id
+        return StepResult(self.name, True, {"transaction_id": txn_id})
+
+    async def compensate(self, context: dict[str, Any], result: StepResult) -> None:
+        if "transaction_id" in context:
+            await self._gateway.refund(context["transaction_id"])
+            logger.info("Issued refund for transaction %s", context["transaction_id"])
+
+
+class CreateShippingStep(SagaStep):
+    """Creates a shipping label. Compensation cancels the shipment."""
+
+    def __init__(self, shipping_provider: Any) -> None:
+        super().__init__("create_shipping")
+        self._provider = shipping_provider
+
+    async def execute(self, context: dict[str, Any]) -> StepResult:
+        shipment_id = await self._provider.create_shipment(
+            order_id=context["order_id"],
+            address=context["shipping_address"],
+        )
+        context["shipment_id"] = shipment_id
+        return StepResult(self.name, True, {"shipment_id": shipment_id})
+
+    async def compensate(self, context: dict[str, Any], result: StepResult) -> None:
+        if "shipment_id" in context:
+            await self._provider.cancel_shipment(context["shipment_id"])
+            logger.info("Cancelled shipment %s", context["shipment_id"])
+
+
+# Usage example (not an execution — shows composition):
+# orchestrator = SagaOrchestrator(saga_id="ord-123")
+# orchestrator.add_step(ReserveInventoryStep(inventory_client))
+# orchestrator.add_step(ProcessPaymentStep(payment_gateway))
+# orchestrator.add_step(CreateShippingStep(shipping_provider))
+# result = await orchestrator.execute()
+```
+
+### Pattern 3: Circuit Breaker Pattern
+
+A full circuit breaker with CLOSED (normal), OPEN (failing), and HALF_OPEN (testing recovery) states. Configurable failure thresholds, timeout windows, and fallback mechanisms prevent cascading failures across service boundaries.
+
+```python
+# resilience/circuit_breaker.py — Full implementation of the circuit breaker pattern
+from __future__ import annotations
+
+import enum
+import logging
+import time
+import threading
+from functools import wraps
+from typing import Any, Callable, TypeVar
+
+logger = logging.getLogger(__name__)
+
+T = TypeVar("T")
+
+
+class CircuitState(enum.Enum):
+    CLOSED = "closed"      # Normal — requests flow through
+    OPEN = "open"          # Failing — requests are short-circuited
+    HALF_OPEN = "half_open"  # Testing — one probe request allowed
+
+
+class CircuitOpenError(Exception):
+    """Raised when a call is rejected because the circuit is OPEN."""
+
+    def __init__(self, service_name: str, last_failure_at: float) -> None:
+        self.service_name = service_name
+        self.last_failure_at = last_failure_at
+        super().__init__(
+            f"Circuit breaker OPEN for '{service_name}'. "
+            f"Last failure at {last_failure_at}. Retry after cooldown."
+        )
 
 
 class CircuitBreaker:
-    """Circuit breaker pattern to prevent cascading failures.
-
-    State machine: CLOSED (healthy) → OPEN (failing) → HALF_OPEN (testing recovery).
-    When a service is unhealthy, this breaks the sync chain before it spreads.
+    """Circuit breaker protecting inter-service calls.
+    
+    State machine:
+      CLOSED → OPEN:     When failures >= threshold within the monitoring window
+      OPEN → HALF_OPEN:  After the cooldown period elapses (probe request allowed)
+      HALF_OPEN → CLOSED: If the probe succeeds (circuit closes, reset counters)
+      HALF_OPEN → OPEN:  If the probe fails (re-open with extended cooldown)
+    
+    This prevents cascading failures by failing fast when downstream services
+    are unhealthy, giving them time to recover without being hammered.
     """
 
     def __init__(
         self,
+        name: str,
         failure_threshold: int = 5,
-        recovery_timeout: float = 30.0,
-        half_open_max_calls: int = 1,
+        success_threshold_half_open: int = 3,
+        cooldown_seconds: float = 30.0,
+        extended_cooldown_seconds: float = 60.0,
     ) -> None:
+        self.name = name
+        self.failure_threshold = failure_threshold
+        self.success_threshold_half_open = success_threshold_half_open
+        self.cooldown_seconds = cooldown_seconds
+        self.extended_cooldown_seconds = extended_cooldown_seconds
+
+        # Internal state
+        self._state = CircuitState.CLOSED
         self._failure_count = 0
-        self._failure_threshold = failure_threshold
-        self._recovery_timeout = recovery_timeout
-        self._half_open_max_calls = half_open_max_calls
-        self._last_failure_time: Optional[float] = None
-        self._state = "CLOSED"  # CLOSED, OPEN, HALF_OPEN
-        self._half_open_calls = 0
+        self._success_count_half_open = 0
+        self._last_failure_time: float = 0.0
+        self._opened_at: float = 0.0
+        self._lock = threading.Lock()
 
     @property
-    def state(self) -> str:
-        """Return current state, transitioning to HALF_OPEN if recovery timeout elapsed."""
-        if self._state == "OPEN" and self._last_failure_time is not None:
-            elapsed = time.time() - self._last_failure_time
-            if elapsed >= self._recovery_timeout:
-                self._state = "HALF_OPEN"
-                self._half_open_calls = 0
-        return self._state
+    def state(self) -> CircuitState:
+        """Read the current circuit state, transitioning OPEN → HALF_OPEN if cooldown passed."""
+        with self._lock:
+            if self._state == CircuitState.OPEN:
+                elapsed = time.monotonic() - self._opened_at
+                # Use extended cooldown after a failure during half-open
+                if elapsed >= self.extended_cooldown_seconds:
+                    self._state = CircuitState.HALF_OPEN
+                    self._success_count_half_open = 0
+                    logger.info("Circuit '%s' transitioned to HALF_OPEN (extended cooldown)", self.name)
+                elif elapsed >= self.cooldown_seconds:
+                    self._state = CircuitState.HALF_OPEN
+                    self._success_count_half_open = 0
+                    logger.info("Circuit '%s' transitioned to HALF_OPEN", self.name)
+            return self._state
 
     def record_success(self) -> None:
-        """Record a successful call — resets the breaker."""
-        self._failure_count = 0
-        self._state = "CLOSED"
-        self._half_open_calls = 0
+        """Record a successful call — may close the circuit from HALF_OPEN."""
+        with self._lock:
+            if self._state == CircuitState.HALF_OPEN:
+                self._success_count_half_open += 1
+                if self._success_count_half_open >= self.success_threshold_half_open:
+                    self._state = CircuitState.CLOSED
+                    self._failure_count = 0
+                    self._success_count_half_open = 0
+                    logger.info("Circuit '%s' CLOSED after %d successful probes", self.name, self.success_threshold_half_open)
+
+            elif self._state == CircuitState.CLOSED:
+                # Reset failure count on success to require consecutive failures
+                self._failure_count = 0
 
     def record_failure(self) -> None:
-        """Record a failed call — may transition to OPEN state."""
-        self._failure_count += 1
-        self._last_failure_time = time.time()
+        """Record a failed call — may trip the circuit from CLOSED or re-open from HALF_OPEN."""
+        with self._lock:
+            self._failure_count += 1
+            self._last_failure_time = time.monotonic()
 
-        if self._state == "HALF_OPEN":
-            self._state = "OPEN"
-        elif self._failure_count >= self._failure_threshold:
-            self._state = "OPEN"
+            if self._state == CircuitState.HALF_OPEN:
+                # Any failure during half-open sends us back to OPEN with extended cooldown
+                self._state = CircuitState.OPEN
+                self._opened_at = time.monotonic()
+                logger.warning("Circuit '%s' re-OPENED after probe failure (extended cooldown)", self.name)
 
-    def allow_request(self) -> bool:
-        """Check if a request should be allowed through the circuit."""
-        current_state = self.state  # Triggers state transition check
+            elif self._state == CircuitState.CLOSED:
+                if self._failure_count >= self.failure_threshold:
+                    self._state = CircuitState.OPEN
+                    self._opened_at = time.monotonic()
+                    logger.warning(
+                        "Circuit '%s' OPENED after %d consecutive failures",
+                        self.name,
+                        self.failure_threshold,
+                    )
 
-        if current_state == "CLOSED":
+    def can_execute(self) -> bool:
+        """Check if a call is allowed to proceed based on current circuit state."""
+        current_state = self.state  # property getter may transition OPEN → HALF_OPEN
+        if current_state == CircuitState.CLOSED:
             return True
-        elif current_state == "HALF_OPEN":
-            if self._half_open_calls < self._half_open_max_calls:
-                self._half_open_calls += 1
-                return True
+        elif current_state == CircuitState.HALF_OPEN:
+            return True  # Allow one probe through
+        else:
             return False
-        else:  # OPEN
-            raise CircuitBreakerError(
-                f"Circuit is OPEN (failures={self._failure_count}). "
-                f"Retry after {self._recovery_timeout}s"
-            )
 
+    def wrap(self, fallback: Callable[..., Any] | None = None) -> Callable:
+        """Decorator to wrap a function with circuit breaker protection."""
+        def decorator(func: Callable[..., T]) -> Callable[..., T]:
+            @wraps(func)
+            def wrapper(*args: Any, **kwargs: Any) -> T:
+                if not self.can_execute():
+                    raise CircuitOpenError(self.name, self._last_failure_time)
 
-@dataclass
-class RetryConfig:
-    """Configuration for exponential backoff retry with jitter."""
-    max_retries: int = 3
-    base_delay: float = 1.0
-    max_delay: float = 30.0
-    jitter: bool = True
-
-    def get_delay(self, attempt: int) -> float:
-        """Calculate delay for the given attempt number using exponential backoff + jitter."""
-        import random
-        delay = min(self.base_delay * (2 ** attempt), self.max_delay)
-        if self.jitter:
-            delay *= random.uniform(0.5, 1.0)
-        return delay
-
-
-class SyncServiceClient:
-    """Synchronous REST client for inter-service communication.
-
-    Wraps HTTP calls with circuit breaking, retries, and standardized error handling.
-    Use this for request-response patterns where the caller needs an immediate result.
-    """
-
-    def __init__(
-        self,
-        base_url: str,
-        service_name: str,
-        circuit_breaker: Optional[CircuitBreaker] = None,
-        retry_config: Optional[RetryConfig] = None,
-    ) -> None:
-        self._base_url = base_url.rstrip("/")
-        self._service_name = service_name
-        self._breaker = circuit_breaker or CircuitBreaker()
-        self._retry = retry_config or RetryConfig()
-
-    def get_inventory(self, item_id: str) -> ServiceResponse:
-        """Fetch inventory details for a specific item via REST.
-
-        Demonstrates the full sync communication pattern with all
-        resilience patterns applied (circuit breaker + retries).
-        """
-        # Circuit breaker check — short-circuits if service is unhealthy
-        if not self._breaker.allow_request():
-            return ServiceResponse(
-                status=HTTPStatus.SERVICE_UNAVAILABLE,
-                error_code="CIRCUIT_OPEN",
-                retry_after_seconds=int(self._breaker._recovery_timeout),
-            )
-
-        url = f"{self._base_url}/api/v1/inventory/{item_id}"
-
-        for attempt in range(self._retry.max_retries + 1):
-            try:
-                # In production, use httpx or aiohttp here
-                raise NotImplementedError(f"HTTP GET to {url}")
-
-            except ConnectionError as exc:
-                self._breaker.record_failure()
-                if attempt < self._retry.max_retries:
-                    delay = self._retry.get_delay(attempt)
-                    time.sleep(delay)
-                    continue
-                return ServiceResponse(
-                    status=HTTPStatus.SERVICE_UNAVAILABLE,
-                    error_code="CONNECTION_FAILED",
-                )
-
-            except TimeoutError as exc:
-                self._breaker.record_failure()
-                if attempt < self._retry.max_retries:
-                    delay = self._retry.get_delay(attempt)
-                    time.sleep(delay)
-                    continue
-                return ServiceResponse(
-                    status=HTTPStatus.GATEWAY_TIMEOUT,
-                    error_code="REQUEST_TIMEOUT",
-                )
-
-        # All retries exhausted but last attempt didn't raise — should not reach here
-        # This path handles the case where HTTP returns a non-2xx status
-        self._breaker.record_failure()
-        return ServiceResponse(
-            status=HTTPStatus.SERVICE_UNAVAILABLE,
-            error_code="MAX_RETRIES_EXHAUSTED",
-        )
-
-
-# ─── Asynchronous Event Communication (Event Messaging) ──────────────────────
-
-
-@dataclass
-class MessageEnvelope:
-    """Wraps a domain event with metadata for the message broker.
-
-    Includes correlation_id for saga tracing, message_id for idempotency,
-    and content_type so consumers know how to deserialize the payload.
-    """
-    event_type: str
-    aggregate_id: str
-    correlation_id: str
-    message_id: str
-    content_type: str = "application/json"
-    timestamp: str = field(default_factory=lambda: "2025-06-15T10:30:00Z")
-    payload: dict = field(default_factory=dict)
-
-
-class EventBus(ABC):
-    """Abstract event bus interface for inter-service messaging.
-
-    Concrete implementations publish to Kafka, RabbitMQ, AWS SQS, etc.
-    This abstraction decouples services from the specific messaging technology.
-    """
-
-    @abstractmethod
-    def subscribe(self, event_type: str, handler) -> None:
-        """Register a handler function for a specific event type."""
-        ...
-
-    @abstractmethod
-    def publish(self, event: MessageEnvelope) -> None:
-        """Publish an event to the message broker."""
-        ...
-
-
-# ❌ BAD: Tight coupling through direct synchronous calls across services
-def bad_order_flow(
-    order_service: "OrderService",
-    inventory_service: "InventoryService",  # Direct dependency!
-    payment_service: "PaymentService",      # Another direct dependency!
-    shipping_service: "ShippingService",    # Yet another!
-) -> None:
-    """Tightly coupled synchronous flow — cascading failures and deployment coupling.
-
-    Problems:
-    - If any service is down, the entire flow fails
-    - OrderService must know about every downstream service's existence
-    - Adding a new step requires modifying OrderService (violates Open/Closed Principle)
-    - No retry or resilience patterns — transient failures cause order loss
-    """
-    order = order_service.create_order(...)        # Could fail
-    inventory_service.reserve_items(order.id, ...)  # If this fails, order is orphaned
-    payment_service.charge(order.id, ...)           # Money may be lost if shipping hasn't shipped
-    shipping_service.schedule(order.id)             # Shipping expects payment succeeded
-
-
-# ✅ GOOD: Event-driven flow with decoupled consumers and saga compensation
-class EventDrivenOrderFlow:
-    """Decoupled event-driven order processing using saga choreography.
-
-    Each service publishes events it cares about. The saga flows through
-    a sequence of state transitions triggered by domain events, not direct calls.
-    This is resilient to individual service failures — events are queued and
-    processed when services recover.
-    """
-
-    def __init__(self, event_bus: EventBus) -> None:
-        self._bus = event_bus
-
-    def place_order(
-        self,
-        order_id: str,
-        customer_id: str,
-        items: list[dict],
-        total_amount: float,
-    ) -> MessageEnvelope:
-        """Initiate the order saga by publishing ORDER_PLACED event.
-
-        This is fire-and-forget from the caller's perspective. The rest of the flow
-        happens asynchronously through event propagation between services.
-        """
-        envelope = MessageEnvelope(
-            event_type="ORDER_PLACED",
-            aggregate_id=order_id,
-            correlation_id=f"saga-{order_id}",
-            message_id=f"msg-{order_id}-001",
-            payload={
-                "customer_id": customer_id,
-                "items": items,
-                "total_amount": total_amount,
-            },
-        )
-
-        self._bus.publish(envelope)
-        return envelope
-
-
-class OrderSagaCoordinator:
-    """Saga orchestration using a central coordinator for complex multi-step workflows.
-
-    Orchestrator pattern vs choreography: use this when the saga has many branches,
-    conditional steps, or requires global rollback logic. The orchestrator holds
-    the complete saga state and commands each participant step.
-    """
-
-    # Define the ordered sequence of saga steps with their compensating actions
-    _SAGA_STEPS = [
-        ("reserve_inventory", "cancel_inventory_reservation"),
-        ("process_payment",       "refund_payment"),
-        ("schedule_shipping",     "cancel_shipping"),
-        ("send_notification",     None),  # Notification has no compensation needed
-    ]
-
-    def __init__(self, command_bus: "CommandBus") -> None:
-        self._bus = command_bus
-        self._completed_steps: list[str] = []
-
-    def execute(self, context: dict) -> str:
-        """Execute the saga with automatic compensation on failure.
-
-        Args:
-            context: Dict containing correlation_id and all step parameters.
-
-        Returns:
-            The saga outcome: "COMPLETED" or "COMPENSATED".
-        """
-        correlation_id = context.get("correlation_id", "")
-        if not correlation_id:
-            raise ValueError("saga context must include correlation_id")
-
-        try:
-            self._execute_steps(context)
-            return "COMPLETED"
-
-        except Exception as exc:
-            self._compensate(correlation_id)
-            raise RuntimeError(
-                f"Saga {correlation_id} failed during step execution and was compensated. "
-                f"Completed steps before failure: {self._completed_steps}. Error: {exc}"
-            ) from exc
-
-    def _execute_steps(self, context: dict) -> None:
-        """Run each saga step in sequence until completion or failure."""
-        for step_name, compensation_name in self._SAGA_STEPS:
-            if step_name == "send_notification":
-                # Notification is fire-and-forget; don't block on it
                 try:
-                    self._bus.send(step_name, context)
-                except Exception:
-                    pass  # Non-critical — log but don't abort saga
-                continue
-
-            self._bus.send(step_name, context)
-            self._completed_steps.append(step_name)
-
-    def _compensate(self, correlation_id: str) -> None:
-        """Run compensation actions in reverse order of completion.
-
-        Compensation steps undo the effects of each completed step in reverse,
-        ensuring the system reaches a consistent state even after failure.
-        """
-        for completed_step in reversed(self._completed_steps):
-            # Find the corresponding compensating action
-            compensation = None
-            for original, comp in self._SAGA_STEPS:
-                if original == completed_step:
-                    compensation = comp
-                    break
-
-            if compensation:
-                self._bus.send(compensation, {"correlation_id": correlation_id})
+                    result = func(*args, **kwargs)
+                    self.record_success()
+                    return result
+                except Exception as exc:
+                    self.record_failure()
+                    if fallback:
+                        logger.warning(
+                            "Circuit '%s' fallback invoked for %s: %s",
+                            self.name,
+                            func.__name__,
+                            exc,
+                        )
+                        return fallback(*args, **kwargs)  # type: ignore[no-any-return]
+                    raise
+            return wrapper
+        return decorator
 
 
-class CommandBus(ABC):
-    """Abstract command bus for saga orchestration.
+# --- Example with a REST call to an inventory service ---
 
-    Sends commands to specific services and coordinates the saga flow.
-    Each implementation maps command names to service endpoints.
-    """
+class InventoryServiceClient:
+    """HTTP client for the Inventory microservice with circuit breaker protection."""
 
-    @abstractmethod
-    def send(self, command: str, context: dict) -> None:
-        """Execute a saga step by sending a command to the appropriate service."""
-        ...
-
-
-# ─── Outbox Pattern for Reliable Event Publishing ────────────────────────────
-
-
-class OutboxWriter:
-    """Outbox pattern ensures events are published reliably after database commit.
-
-    Instead of publishing events directly (which can fail between DB commit and
-    publish, causing lost events), we write the event to a local 'outbox' table
-    in the same transaction as the business data change. A separate poller then
-    publishes events from the outbox to the message broker.
-
-    This guarantees at-least-once delivery without dual-write inconsistency.
-    """
-
-    def __init__(self, db_connection: "DBConnection") -> None:
-        self._db = db_connection
-
-    def write_outbox_event(self, event: MessageEnvelope) -> None:
-        """Write an event to the outbox table within a database transaction.
-
-        This happens in the SAME transaction as the business data change.
-        If the transaction commits, the event is guaranteed to be published later.
-        If the transaction rolls back, the event is never written — no phantom events.
-        """
-        self._db.execute(
-            """INSERT INTO outbox_events
-               (message_id, event_type, aggregate_id, correlation_id,
-                content_type, timestamp, payload)
-               VALUES (%s, %s, %s, %s, %s, %s, %s)""",
-            (
-                event.message_id,
-                event.event_type,
-                event.aggregate_id,
-                event.correlation_id,
-                event.content_type,
-                event.timestamp,
-                str(event.payload),
-            ),
+    def __init__(self, base_url: str) -> None:
+        self._base_url = base_url
+        self._breaker = CircuitBreaker(
+            name="inventory-service",
+            failure_threshold=5,
+            success_threshold_half_open=3,
+            cooldown_seconds=30.0,
+            extended_cooldown_seconds=60.0,
         )
 
-    def fetch_pending_events(self, limit: int = 100) -> list[MessageEnvelope]:
-        """Fetch events from the outbox that have not yet been published.
+    @_breaker.wrap(fallback=lambda product_id: {"id": product_id, "available": False, "fallback": True})
+    def check_availability(self, product_id: str) -> dict[str, Any]:
+        """Check inventory availability for a product with circuit breaker protection."""
+        import httpx
 
-        Called by a background poller process. Returns events ordered by timestamp
-        and marks them as published after successful broker delivery.
-        """
-        raise NotImplementedError("Implement against your chosen database")
+        response = httpx.get(
+            f"{self._base_url}/inventory/{product_id}/availability",
+            timeout=5.0,  # Short timeout — fail fast, don't block threads
+        )
+        response.raise_for_status()
+        return response.json()
+
+    @property
+    def breaker(self) -> CircuitBreaker:
+        """Expose the breaker for health checking and monitoring."""
+        return self._breaker
+
+
+# --- Bulkhead Pattern (isolation between different resource pools) ---
+
+import concurrent.futures
+
+
+class Bulkhead:
+    """Bulkhead isolation — limits concurrent calls to prevent resource exhaustion.
+    
+    If all slots are occupied, callers wait up to `wait_timeout` seconds.
+    If the timeout expires, a BulkheadFullError is raised immediately.
+    """
+
+    def __init__(self, max_concurrent: int = 10, wait_timeout: float = 5.0) -> None:
+        self._semaphore = threading.Semaphore(max_concurrent)
+        self._wait_timeout = wait_timeout
+        self._executor = concurrent.futures.ThreadPoolExecutor(
+            max_workers=max_concurrent,
+            thread_name_prefix="bulkhead",
+        )
+
+    def execute(self, func: Callable[..., T], *args: Any, **kwargs: Any) -> T:
+        """Execute func within the bulkhead's concurrency limit."""
+        acquired = self._semaphore.acquire(timeout=self._wait_timeout)
+        if not acquired:
+            raise BulkheadFullError(
+                f"Bulkhead full — cannot acquire slot after {self._wait_timeout}s wait"
+            )
+        try:
+            future = self._executor.submit(func, *args, **kwargs)
+            return future.result()
+        finally:
+            self._semaphore.release()
+
+    def shutdown(self) -> None:
+        self._executor.shutdown(wait=False)
+
+
+class BulkheadFullError(Exception):
+    pass
 ```
 
-### Pattern 3: API Gateway Request Routing & Aggregation
+### Pattern 4: API Gateway with Starlette
 
-An API gateway consolidates multiple service endpoints behind a single entry point, handling cross-cutting concerns like authentication, rate limiting, and response aggregation. The gateway should never contain business logic — it is a routing and policy enforcement layer.
+A production-ready API gateway using Starlette that routes requests to backend services, handles request transformation, aggregates responses from multiple services, and applies cross-cutting concerns like auth, rate limiting, and tracing.
 
 ```python
-# ❌ BAD: Exposing every service's internal endpoints directly to clients
-# Clients must know about 8+ different service URLs, handle their own auth,
-# compose responses from multiple services, and manage retries per-service.
+# gateway/routing.py — API Gateway implementation
+from __future__ import annotations
 
-class BadGatewayApproach:
-    """Each service endpoint is exposed as a public URL — client complexity explodes."""
+import logging
+import time
+import uuid
+from dataclasses import dataclass, field
+from typing import Any, Awaitable, Callable, Protocol
 
-    # /api/order-service/create
-    # /api/inventory-service/check/{item_id}
-    # /api/payment-service/charge
-    # /api/shipping-service/schedule
-    # /api/notification-service/send
-    # ... 8+ endpoints, no consistency, no aggregation
+from starlette.applications import Starlette
+from starlette.requests import Request
+from starlette.responses import JSONResponse, Response
+from starlette.routing import Route
+
+logger = logging.getLogger(__name__)
 
 
-# ✅ GOOD: Gateway provides unified REST API with response aggregation
+@dataclass
+class RouteConfig:
+    """Configuration for a single gateway route mapping."""
+    path_pattern: str           # e.g., "/api/orders/{order_id}"
+    service_name: str           # e.g., "order-service"
+    upstream_path: str          # e.g., "/orders/{order_id}"
+    timeout_seconds: float = 10.0
+    requires_auth: bool = True
+    rate_limit_rpm: int | None = None
+    response_transform: Callable[[Response], Response] | None = None
 
-class SimpleGatewayRouter:
-    """Example gateway router that aggregates responses from multiple services.
 
-    A real implementation would use a framework like Kong, Apigee, or FastAPI-based
-    custom gateway. This demonstrates the routing and aggregation pattern.
-    """
+@dataclass
+class RequestContext:
+    """Carries request context through the gateway pipeline."""
+    request_id: str
+    trace_id: str
+    start_time: float = field(default_factory=time.monotonic)
+    service_name: str = ""
+    method: str = ""
+    path: str = ""
+    status_code: int = 200
 
-    # Route table — declarative mapping of API paths to service endpoints
-    _ROUTES: dict[str, dict] = {
-        "GET /api/orders/{order_id}": {"service": "order-service", "path": "/orders/{order_id}"},
-        "GET /api/products/{product_id}/availability": {
-            "service": "inventory-service",
-            "path": "/products/{product_id}/availability",
-        },
-        "POST /api/orders": {"service": "order-service", "path": "/orders"},
-        "GET /health": {"service": "health-checker", "path": "/internal/health"},
-    }
 
-    def route_request(self, method: str, path: str) -> dict:
-        """Route incoming request to the appropriate downstream service.
+class TracingMiddleware:
+    """Middleware that generates and propagates trace_ids for distributed tracing."""
 
-        In production this runs inside a gateway process that handles:
-        - TLS termination
-        - Authentication (JWT validation against identity service)
-        - Rate limiting (per-client token bucket or sliding window)
-        - Request/response transformation
-        - Response caching for GET endpoints
-        """
-        route_key = f"{method} {path}"
+    def __init__(self, app: Callable) -> None:
+        self.app = app
 
-        if route_key not in self._ROUTES:
-            return {"status": 404, "error": "route_not_found", "path": path}
+    async def __call__(self, scope: dict[str, Any], receive, send) -> None:
+        request = Request(scope, receive)
+        trace_id = request.headers.get("x-trace-id", uuid.uuid4().hex)
+        request_id = request.headers.get("x-request-id", uuid.uuid4().hex)
 
-        route = self._ROUTES[route_key]
-        # In production: extract service URL from service registry (Consul, Eureka)
-        service_url = f"http://{route['service']}:8080{route['path']}"
-
-        return {
-            "status": 200,
-            "proxied_to": service_url,
-            # The actual HTTP forwarding happens in the gateway's request handler
-        }
-
-    def aggregate_order_details(self, order_id: str) -> dict:
-        """Aggregate data from multiple services into a single response.
-
-        This is one of the key patterns an API gateway enables — composing
-        responses from several microservices so clients don't need to make
-        multiple calls themselves.
-        """
-        # In production, use parallel HTTP calls via asyncio.gather or httpx.AsyncClient
-        raise NotImplementedError(
-            "Aggregate: call order-service + inventory-service + shipping-service in parallel"
+        ctx = RequestContext(
+            request_id=request_id,
+            trace_id=trace_id,
+            method=request.method,
+            path=request.url.path,
         )
+
+        async def enriched_send(message: dict[str, Any]) -> None:
+            if message.get("type") == "http.response.start":
+                headers = dict(message.get("headers", []))
+                headers.extend([
+                    (b"x-trace-id", trace_id.encode()),
+                    (b"x-request-id", request_id.encode()),
+                ])
+                message["headers"] = headers
+            await send(message)
+
+        try:
+            await self.app(scope, receive, enriched_send)
+        finally:
+            elapsed = time.monotonic() - ctx.start_time
+            logger.info(
+                "%s %s → %d (%.1fms) [trace=%s]",
+                ctx.method, ctx.path, ctx.status_code,
+                elapsed * 1000, trace_id,
+            )
+
+
+class GatewayRouter:
+    """Routes incoming requests to backend services with path matching and transformation."""
+
+    def __init__(self) -> None:
+        self._routes: dict[str, RouteConfig] = {}
+
+    def add_route(self, config: RouteConfig) -> None:
+        """Register a route mapping."""
+        self._routes[config.path_pattern] = config
+
+    def match_route(self, path: str) -> RouteConfig | None:
+        """Match request path to the most specific registered route pattern."""
+        best_match: RouteConfig | None = None
+        best_depth = -1
+
+        for pattern, config in self._routes.items():
+            if self._matches(pattern, path):
+                depth = pattern.count("/")
+                if depth > best_depth:
+                    best_match = config
+                    best_depth = depth
+
+        return best_match
+
+    def _matches(self, pattern: str, path: str) -> bool:
+        """Simple parameterized route matching: /api/orders/{id} matches /api/orders/abc-123"""
+        pattern_parts = pattern.strip("/").split("/")
+        path_parts = path.strip("/").split("/")
+
+        if len(pattern_parts) != len(path_parts):
+            return False
+
+        for p_part, path_part in zip(pattern_parts, path_parts):
+            if p_part.startswith("{") and p_part.endswith("}"):
+                continue  # Parameter segment matches anything
+            if p_part != path_part:
+                return False
+
+        return True
+
+
+# --- Gateway application with Starlette ---
+
+from starlette.middleware import Middleware
+from starlette.middleware.base import BaseHTTPMiddleware
+import httpx
+
+
+class RateLimitMiddleware(BaseHTTPMiddleware):
+    """Simple in-memory rate limiter using a token bucket algorithm."""
+
+    def __init__(self, app: Starlette, default_rpm: int = 60) -> None:
+        super().__init__(app)
+        self._default_rpm = default_rpm
+        self._buckets: dict[str, list[float]] = {}
+
+    async def dispatch(self, request: Request, call_next) -> Response:
+        client_ip = request.client.host if request.client else "unknown"
+        current_time = time.monotonic()
+        window_start = current_time - 60.0  # 1-minute sliding window
+
+        if client_ip not in self._buckets:
+            self._buckets[client_ip] = []
+
+        # Remove expired timestamps
+        self._buckets[client_ip] = [
+            ts for ts in self._buckets[client_ip] if ts > window_start
+        ]
+
+        if len(self._buckets[client_ip]) >= self._default_rpm:
+            return JSONResponse(
+                status_code=429,
+                content={"error": "Rate limit exceeded", "retry_after": 60},
+            )
+
+        self._buckets[client_ip].append(current_time)
+        return await call_next(request)
+
+
+class AuthMiddleware(BaseHTTPMiddleware):
+    """Validates JWT tokens from an auth service before forwarding requests."""
+
+    def __init__(self, app: Starlette, auth_service_url: str) -> None:
+        super().__init__(app)
+        self._auth_url = auth_service_url
+
+    async def dispatch(self, request: Request, call_next) -> Response:
+        if not request.headers.get("authorization"):
+            return JSONResponse(status_code=401, content={"error": "Missing authorization header"})
+
+        token = request.headers["authorization"].removeprefix("Bearer ")
+        # Validate against auth service
+        async with httpx.AsyncClient(timeout=3.0) as client:
+            try:
+                resp = await client.post(
+                    f"{self._auth_url}/validate",
+                    json={"token": token},
+                    headers={"Content-Type": "application/json"},
+                )
+                if resp.status_code != 200:
+                    return JSONResponse(status_code=403, content={"error": "Invalid or expired token"})
+            except httpx.TimeoutException:
+                # Fail open during auth service outage — log and allow through with caution
+                logger.critical("Auth service unreachable — failing open for %s %s", request.method, request.url.path)
+
+        return await call_next(request)
+
+
+class AggregationMiddleware(BaseHTTPMiddleware):
+    """Aggregates responses from multiple backend services into a single response."""
+
+    def __init__(self, app: Starlette, routes: GatewayRouter) -> None:
+        super().__init__(app)
+        self._routes = routes
+
+    async def dispatch(self, request: Request, call_next) -> Response:
+        route_config = self._routes.match_route(request.url.path)
+        if route_config and "profile" in request.url.path:
+            # Aggregate user + order data from multiple services
+            async with httpx.AsyncClient(timeout=route_config.timeout_seconds) as client:
+                tasks = [
+                    client.get(f"{request.base_url}/api/orders/{path_params['order_id']}",
+                               headers=dict(request.headers))
+                    for path_params in self._extract_path_params(request.url.path, route_config.path_pattern)
+                ]
+                if tasks:
+                    results = await asyncio.gather(*tasks, return_exceptions=True)
+                    aggregated = [r.json() if isinstance(r, Response) else None for r in results]
+                    return JSONResponse(content={"aggregated": aggregated})
+
+        return await call_next(request)
+
+
+# --- Gateway application factory ---
+
+def create_gateway_app(routes: list[RouteConfig]) -> Starlette:
+    """Factory to build the complete gateway application with middleware stack."""
+    router = GatewayRouter()
+    for route in routes:
+        router.add_route(route)
+
+    app = Starlette(
+        middleware=[
+            Middleware(TracingMiddleware),
+            Middleware(RateLimitMiddleware, default_rpm=100),
+            Middleware(AuthMiddleware, auth_service_url="http://auth-service.internal"),
+            Middleware(AggregationMiddleware, routes=router),
+        ],
+        routes=[
+            Route(
+                "/{path:path}",
+                endpoint=lambda request: _proxy_to_service(request, router),
+                methods=["GET", "POST", "PUT", "DELETE", "PATCH"],
+            ),
+        ],
+    )
+
+    return app
+
+
+async def _proxy_to_service(request: Request, routes: GatewayRouter) -> Response:
+    """Core proxy function — matches route and forwards to upstream service."""
+    import httpx
+
+    route_config = routes.match_route(request.url.path)
+    if route_config is None:
+        return JSONResponse(status_code=404, content={"error": "Route not found"})
+
+    # Build upstream URL — in production this comes from service discovery
+    upstream_url = f"http://{route_config.service_name}.internal{route_config.upstream_path}"
+
+    # Transform request body if needed
+    body = await request.body()
+
+    async with httpx.AsyncClient(timeout=route_config.timeout_seconds) as client:
+        try:
+            resp = await client.request(
+                method=request.method,
+                url=upstream_url,
+                content=body,
+                headers=dict(request.headers),
+            )
+            return Response(
+                content=resp.content,
+                status_code=resp.status_code,
+                headers=dict(resp.headers),
+            )
+        except httpx.TimeoutException:
+            logger.error("Gateway timeout for %s → %s", request.url.path, upstream_url)
+            return JSONResponse(
+                status_code=504,
+                content={"error": "Gateway timeout", "service": route_config.service_name},
+            )
+        except httpx.ConnectError:
+            logger.error("Service unavailable: %s", route_config.service_name)
+            return JSONResponse(
+                status_code=502,
+                content={"error": "Bad gateway", "service": route_config.service_name},
+            )
+
+
+def _extract_path_params(path: str, pattern: str) -> list[dict[str, str]]:
+    """Extract path parameters from a matched URL against its pattern."""
+    return [{"path_param": p} for p in path.strip("/").split("/") if not p.startswith("{")]
 ```
 
 ---
@@ -777,42 +1010,43 @@ class SimpleGatewayRouter:
 ## Constraints
 
 ### MUST DO
-- Define strict API contracts (OpenAPI 3.0 / Protobuf) for every service boundary — never rely on implicit interface knowledge
-- Implement circuit breakers with configurable thresholds on every synchronous inter-service call
-- Use the outbox pattern for reliable event publishing — events must be written in the same transaction as the business data change
-- Design all saga steps and event handlers to be idempotent — duplicate messages must not cause side effects
-- Organize services around bounded contexts (DDD), not technical layers (e.g., do not create a "database service" or "logging service")
-- Use correlation IDs and distributed tracing (OpenTelemetry) across every inter-service call for observability
-- Apply the anti-corruption layer pattern when integrating with legacy systems or third-party APIs
+- Enforce bounded context boundaries — no cross-context domain logic, only through well-defined APIs
+- Always implement a circuit breaker on every inter-service synchronous call; never trust downstream availability
+- Use correlation IDs and trace_ids in request headers for distributed tracing from gateway to leaf service
+- Design all async messages with idempotency keys to handle duplicate delivery
+- Keep each service's database private — no shared databases, no cross-service direct DB queries
+- Implement health check endpoints on every service; configure the orchestrator to query them before routing traffic
+- Set short client-side timeouts (2–5 seconds) for inter-service calls to fail fast
 
 ### MUST NOT DO
-- Create a distributed monolith — if services must be deployed together or share database schemas, they are not truly independent
-- Share databases between services — each service owns its data exclusively and communicates through well-defined APIs or events
-- Over-decompose early — start with the smallest meaningful bounded context; extract only when scaling or organizational needs justify it
-- Ignore eventual consistency — design systems where temporary inconsistency is expected and handled gracefully by the user experience
-- Use synchronous calls for all inter-service communication — this creates cascading failure chains and tight coupling
-- Put business logic in the API gateway — the gateway handles routing, auth, and rate limiting only, not domain decisions
-
----
-
-## Output Template
-
-When implementing or reviewing a microservices architecture design, produce:
-
-1. **Bounded Context Map** — List of identified contexts with aggregate roots, ownership, and data store per context
-2. **Service Contract Specifications** — OpenAPI/Protobuf definitions for each public API endpoint including request schemas, response formats, error codes, and versioning strategy
-3. **Communication Style Matrix** — Table mapping every inter-service interaction to sync (REST/gRPC) or async (event messaging) with justification
-4. **Saga Flow Diagram** — ASCII diagram showing saga steps, participant services, event flow, and compensating actions for each failure path
-5. **Resilience Strategy** — Circuit breaker configs, retry policies, timeout settings, and bulkhead boundaries for each service pair
-6. **Deployment & Infrastructure Notes** — Containerization requirements, CI/CD pipeline considerations, and database technology per service
+- Share a single database between microservices — this couples deployment and creates a distributed monolith
+- Use synchronous calls for everything — prefer async messaging when eventual consistency is acceptable
+- Call more than 3 services in a single synchronous request chain — this amplifies latency (N+1 problem)
+- Implement the Saga pattern with only forward actions — every transaction must have compensating actions
+- Disable or bypass circuit breakers "for debugging" in production — this is how outages cascade
+- Expose internal service discovery URLs to clients — all external traffic flows through the API gateway
+- Use magic numbers for circuit breaker thresholds without load-testing justification
 
 ---
 
 ## Related Skills
 
-| Skill                              | Purpose                                                                                                   |
-|------------------------------------|---------------------------------------------------------------------------------------------------------|
-| `coding-monolith-refactoring`      | Strategies for incrementally extracting services from a monolith before full decomposition              |
-| `coding-domain-driven-design`      | Event storming, aggregate boundary identification, and ubiquitous language for defining bounded contexts |
-| `cncf-kubernetes-deployment`       | Container orchestration, service mesh (Istio/Linkerd), and deployment patterns for microservices at scale |
-| `coding-event-driven-architecture` | Event sourcing, CQRS patterns, message broker selection, and event schema versioning for async communication |
+| Skill | Purpose |
+|---|---|
+| `event-driven-architecture` | Async messaging and event streaming to complement sync inter-service communication |
+| `monolith-strangler-pattern` | Incrementally decompose an existing monolith using the strangler fig pattern |
+| `ddd-context-mapping` | Domain-Driven Design techniques for identifying bounded contexts before service decomposition |
+
+---
+
+## Live References
+
+> Authoritative documentation links for microservices architecture patterns. The model follows markdown links at load time to resolve external references and inline content.
+
+- [Microservices.io — Patterns Reference](https://microservices.io/patterns/index.html)
+- [Martin Fowler — Microservices Pattern Catalog](https://martinfowler.com/articles/microservices.html)
+- [Chris Richardson — Microservices Pattern Saga Tutorial](https://microservices.io/patterns/data/saga.html)
+- [Microsoft Azure — Circuit Breaker Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker)
+- [Google Cloud — API Gateway Best Practices](https://cloud.google.com/api-gateway/docs)
+- [OpenTelemetry — Distributed Tracing Documentation](https://opentelemetry.io/docs/concepts/signals/traces/)
+- [Netflix Hystrix — Circuit Breaker Library (Archival Reference)](https://github.com/Netflix/Hystrix)

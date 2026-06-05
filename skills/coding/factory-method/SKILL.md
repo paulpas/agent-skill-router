@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: factory-method
 description: Implements the GoF Factory Method pattern for polymorphic object creation in Python using ABC-based factories, registration decorators, and type dispatch to replace if/elif chains with extensible factory hierarchies.
 archetypes:
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: builder-pattern, creational-design-patterns, strategy-pattern, dependency-inversion-principle
+
+
+
+
 ---
+
+
+
+
 
 # Factory Method Pattern
 

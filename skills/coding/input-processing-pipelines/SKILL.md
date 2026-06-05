@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: input-processing-pipelines
 description: Builds composable data processing pipelines that validate, transform,
   filter, and aggregate structured or semi-structured input through typed stages with
@@ -6,11 +10,9 @@ description: Builds composable data processing pipelines that validate, transfor
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: input processing pipeline, data transformation, ETL pipeline, stage processing,
-    data validation pipeline, map filter reduce, data cleaning pipeline, input sanitization
-    chain, structured data extraction, data flow architecture, pipeline composition
+  triggers: input processing pipeline, data transformation, ETL pipeline, stage processing, data validation pipeline, map filter reduce, data cleaning pipeline, input sanitization chain data validation pipeline
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: input-validation,output-sanitization,performance-optimization,test-driven-development
-------
+
+
+
+
+---
+
+
+
+
 # Input Processing Pipelines
 
 You are a data engineering specialist who builds production-grade, composable data processing pipelines. You construct typed stage-based architectures that transform untrusted or semi-structured input into clean, validated output through a chain of explicit transformations. Every stage has clear contracts: defined input types, output types, and error-handling strategies. You design pipelines that are observable (structured logging with correlation IDs), resilient (circuit breakers, dead-letter queues), and testable (pure transformation functions with no side effects).

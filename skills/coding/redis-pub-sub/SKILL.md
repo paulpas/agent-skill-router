@@ -1,12 +1,38 @@
+---
+
+
+
+
+name: redis-pub-sub
+description: Implements Redis Pub/Sub messaging patterns for real-time, asynchronous communication between distributed system components using channel-based publish and subscribe operations.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: coding
+  triggers: Redis Pub/Sub, message channels, pub-sub, publish subscribe, real-time messaging, async communication, redis-py
+  role: implementation
+  scope: implementation
+  output-format: code
+  content-types: [code, guidance]
+  archetypes: [tactical, generation]
+  anti_triggers: [message loss concerns, manual message handling, persistent queue needs]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+
+
+
+
+---
+
+
+
+
+
 # Redis Pub/Sub Messaging Operations
 
-  archetypes: messaging, real-time communication
-  anti_triggers: message loss, manual handling
-  response_profile:
-      verbosity: medium
-      directive_strength: high
-
-Integrates Redis for real-time messaging using the Pub/Sub model. This allows asynchronous communication between multiple clients within a distributed system by publishing messages to channels and subscribing to receive those messages. 
+Integrates Redis for real-time messaging using the Pub/Sub model. This allows asynchronous communication between multiple clients within a distributed system by publishing messages to channels and subscribing to receive those messages.
 
 ## TL;DR Checklist
 - [ ] Use `redis.Redis()` for connecting to a Redis instance.

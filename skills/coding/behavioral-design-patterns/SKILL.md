@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: behavioral-design-patterns
 description: Implements GoF behavioral design patterns (Strategy, Command, State, Chain of Responsibility, Visitor) to encapsulate algorithms, decouple request senders from receivers, and manage complex control flow in production systems.
 license: MIT
@@ -26,7 +30,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Behavioral Design Patterns
 

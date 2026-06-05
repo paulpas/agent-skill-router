@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: testing-contract
 description: Validates external APIs and service contracts, ensuring that your application correctly consumes and produces expected data structures.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: testing-unit, testing-integration, testing-end-to-end
+
+
+
+
 ---
+
+
+
+
 
 # Contract Testing
 

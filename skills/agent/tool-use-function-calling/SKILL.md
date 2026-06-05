@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: tool-use-function-calling
 description: Implements tool calling patterns (Pydantic-typed tools, function-to-schema conversion, parallel execution, fallback chains) for AI agent external API and service integration.
 archetypes:
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: memory-systems, planning-reasoning, multi-agent-orchestration
+
+
+
+
 ---
+
+
+
+
 
 # Tool Calling & Function Execution
 

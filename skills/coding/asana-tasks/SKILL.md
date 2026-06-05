@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: asana-tasks
 description: Implements functions for managing tasks in Asana, including creating, updating, and deleting tasks through the Asana API.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: asana-projects, asana-user-management
+
+
+
+
 ---
+
+
+
+
 
 # Asana Task Management
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: cloudflare-api
 description: Integrates Cloudflare services (DNS, Workers, R2, KV, Pages, Zero Trust,
   WAF) using the official Cloudflare Python SDK with API token authentication and
@@ -6,7 +10,7 @@ description: Integrates Cloudflare services (DNS, Workers, R2, KV, Pages, Zero T
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: cloudflare api, cloudflare python, workers ai, cloudflare dns, r2 object
     storage, kv namespace, zero trust, how do i use cloudflare api from python
@@ -26,7 +30,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: aws-sdk, vercel-api, google-cloud-sdk
-------
+
+
+
+
+---
+
+
+
+
 # Cloudflare API Integration Patterns
 
 Integrates Cloudflare services using the official `cloudflare` Python SDK (v5.x). Covers API token authentication, DNS record management, Workers script deployment, KV namespace operations, R2 object storage, Pages project management, and Zero Trust configuration with the SDK's typed client design.

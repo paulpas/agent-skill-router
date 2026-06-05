@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: solid-anti-patterns
 description: Detects and refactors SOLID anti-patterns in existing codebases — identifies SRP, OCP, LSP, ISP, and DIP violations through concrete code smells, then applies targeted refactoring patterns to restore clean architectural boundaries.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: solid anti-patterns, SOLID violations, refactoring SOLID, god class refactor, fragile base class, brittle hierarchy, tight coupling fix, interface pollution, dependency inversion violation, SRP violation, open closed violation, LSP violation, ISP violation, DIP refactoring, code smell detection, architectural debt
+  triggers: solid anti-patterns, SOLID violations, god class refactor, fragile base class, tight coupling fix, SRP violation, open closed violation, DIP refactoring
   role: implementation
   scope: implementation
   output-format: code
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: single-responsibility, open-closed-principle, liskov-substitution-principle, interface-segregation-principle, dependency-inversion-principle
+
+
+
+
 ---
+
+
+
+
 
 # SOLID Anti-Pattern Detection & Refactoring
 

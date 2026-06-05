@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: system-hints-design
 description: Constructs layered system hints for agent architectures — identity, context,
   constraint, and behavioral hint layers — with provider-specific patterns for Anthropic,
@@ -6,7 +10,7 @@ description: Constructs layered system hints for agent architectures — identit
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: agent
   triggers: system hints, system prompt design, agent behavior control, context layering,
     hint architecture, how do i design better system prompts, tool-use hints, multi-agent
@@ -30,7 +34,15 @@ metadata:
   - do-dont
   related-skills: hint-based-prompting, instruction-engineering, ai-agent-safety,
     agent-context-management
-------
+
+
+
+
+---
+
+
+
+
 # System Hints Design for AI Agents
 
 Constructs layered system hints that serve as the primary behavioral control surface in multi-turn, tool-using agent architectures. The model designs hint systems organized into four structural layers — identity, context, constraint, and behavioral hint — with provider-specific implementations for Anthropic's system prompt parameter, OpenAI's messages array convention, and Google Gemini's system_instruction field.

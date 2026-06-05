@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: jakarta-testing
 description: Tests Jakarta EE applications using Arquillian, ShrinkWrap, container adapters (WildFly managed/remote, Weld embedded), JUnit 5 integration, and in-container CDI injection with real Java examples.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, examples]
   related-skills: jakarta-ee, jakarta-security, microprofile
+
+
+
+
 ---
+
+
+
+
 
 # Jakarta EE Container Testing with Arquillian and ShrinkWrap
 

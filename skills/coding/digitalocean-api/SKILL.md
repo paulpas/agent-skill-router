@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: digitalocean-api
 description: Integrates DigitalOcean services (Droplets, Spaces, Kubernetes, App Platform,
   Databases) using the PyDo Python client with token-based authentication and resource
@@ -6,7 +10,7 @@ description: Integrates DigitalOcean services (Droplets, Spaces, Kubernetes, App
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: digitalocean api, pydo, digitalocean python, droplets, spaces object storage,
     digitalocean kubernetes, app platform, how do i use digitalocean from python
@@ -26,7 +30,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: aws-sdk, linode-api, cloudflare-api
-------
+
+
+
+
+---
+
+
+
+
 # DigitalOcean API (PyDo) Integration Patterns
 
 Integrates DigitalOcean services using the official PyDo Python client library. Covers token-based authentication, Droplet lifecycle management, Spaces (S3-compatible object storage), Kubernetes cluster provisioning, and App Platform deployments with DigitalOcean-specific pagination and action-waiting patterns.

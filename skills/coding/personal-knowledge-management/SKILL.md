@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: personal-knowledge-management
 description: Implements a complete personal knowledge management system for developers
   including capture workflows, PARA organization framework, Zettelkasten linking patterns,
@@ -6,7 +10,7 @@ description: Implements a complete personal knowledge management system for deve
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: personal knowledge management, PKM, Zettelkasten, PARA framework, note
     taking, how do i organize my notes, knowledge base, second brain
@@ -32,7 +36,15 @@ metadata:
   - examples
   - do-dont
   related-skills: test-driven-development, refactoring, code-review
-------
+
+
+
+
+---
+
+
+
+
 # Developer Knowledge Management System
 
 Implements a complete personal knowledge management system for software engineers. Captures, organizes, and connects technical knowledge — from one-off code snippets to deep architectural understanding — so you can retrieve the right information at the right time instead of relearning the same problems twice.

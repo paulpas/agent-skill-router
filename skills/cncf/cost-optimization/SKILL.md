@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: cost-optimization
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: cost-optimization
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Cloud Cost Optimization
 
 Implements comprehensive cloud cost optimization strategies for Kubernetes clusters and multi-cloud deployments. Provides actionable recommendations for right-sizing, reserved instance procurement, spot instance strategy, and multi-cloud cost comparison.

@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: cert-manager
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: manager
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
   related-skills: cncf-aws-kms, cncf-aws-s3, cncf-aws-secrets-manager, cncf-azure-key-vault
 
 # cert-manager in Cloud-Native Engineering

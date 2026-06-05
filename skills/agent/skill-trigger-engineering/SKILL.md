@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-trigger-engineering
 description: Designs optimized trigger sets using a two-tier strategy combining technical terms with conversational variants, prevents false-positive activation, and ensures discoverability across expert and non-technical audiences.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: agent-skill-ecosystem-design, prompt-engineering-patterns
+
+
+
+
 ---
+
+
+
+
 
 # Skill Trigger Engineering
 

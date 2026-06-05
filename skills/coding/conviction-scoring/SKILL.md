@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: conviction-scoring
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: scoring
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Skill: coding-conviction-scoring
 
 # Multi-factor conviction scoring engine combining technical, momentum, trend, volatility, and volume signals with configurable weights

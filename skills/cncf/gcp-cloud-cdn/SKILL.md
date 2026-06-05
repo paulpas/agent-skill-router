@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: gcp-cloud-cdn
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,9 +35,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: cloud-cdn
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Google Cloud CDN
 
 Deploy and manage google cloud cdn infrastructure as part of your cloud-native environment.

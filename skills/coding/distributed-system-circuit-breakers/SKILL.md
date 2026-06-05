@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: distributed-system-circuit-breakers
 description: Implements circuit breakers for fault tolerance in distributed systems using Resilience4j to improve system resilience and stability.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: distributed-system-rate-limiting, distributed-system-bulkheads
+
+
+
+
 ---
+
+
+
+
 
 # Circuit Breakers in Distributed Systems
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-evaluation
 description: Runs automated empirical evaluation of software frameworks through reproducible benchmark harnesses, dependency graph security auditing, integration feasibility testing, and maintenance cost modeling to produce quantitative selection data.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: framework-onboarding, framework-selection, framework-comparison-workflow, tool-evaluation-workflow
+
+
+
+
 ---
+
+
+
+
 
 # Framework Evaluation Engine
 

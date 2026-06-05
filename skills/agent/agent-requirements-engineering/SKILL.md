@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: agent-requirements-engineering
 description: Defines and structures functional, non-functional, and safety requirements for AI agent systems including capability matrices, hallucination thresholds, data quality standards, and evaluation criteria.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: agent requirements, AI system requirements, capability matrix, hallucination threshold, safety guardrails, AI evaluation criteria, prompt requirements, non-functional AI requirements, functional AI requirements, data quality standards, how do i define AI system requirements
+  triggers: agent requirements, AI system requirements, capability matrix, hallucination threshold, safety guardrails, AI evaluation criteria, prompt requirements, how do i define AI system requirements
   archetypes:
     - strategic
     - tactical
@@ -27,7 +31,15 @@ metadata:
     - examples
     - config
   related-skills: agent-reliability-engineering, ai-system-evaluation-criteria, agent-architecture-patterns, framework-selection
+
+
+
+
 ---
+
+
+
+
 
 # AI Agent Requirements Engineering
 

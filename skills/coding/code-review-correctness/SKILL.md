@@ -1,7 +1,35 @@
 ---
+
+
+
+
+
 name: code-review-correctness
 
-description: Implements structured approaches to ensure code correctness through robust review practices, emphasizing testing and continual improvement.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: code review, correctness, software reliability, bug prevention\n  archetypes: [implementation, evaluation]\n  anti_triggers: [undefined behavior, ad-hoc reviews]\n  response_profile: medium\n---
+description: Implements structured approaches to ensure code correctness through robust review practices, emphasizing testing and continual improvement.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: code review, correctness, software reliability, bug prevention
+  archetypes: [implementation, evaluation]
+  anti_triggers: [undefined behavior, ad-hoc reviews]
+  response_profile: medium
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+
+---
+
+
+
+
+
 ## Enhanced Code Review Correctness Content
 
 ### The Role of Code Review in Ensuring Correctness
@@ -31,6 +59,23 @@ A: Utilize error theory to anticipate potential edge cases based on user behavio
 Strengthening the focus on correctness in code reviews can lead to significant benefits in reliability and user satisfaction, laying the groundwork for more robust applications in the future.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

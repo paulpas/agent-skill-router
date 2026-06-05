@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: stm32-embedded-systems
 description: Implements STM32 firmware development using HAL/LL drivers, DMA peripheral
   programming, FreeRTOS task architecture, clock tree configuration, and power management
@@ -6,7 +10,7 @@ description: Implements STM32 firmware development using HAL/LL drivers, DMA per
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: electrical-engineering
   triggers: STM32, embedded systems, firmware development, microcontroller programming,
     HAL driver, FreeRTOS on STM32, how do i program a microcontroller, clock tree
@@ -31,7 +35,15 @@ metadata:
   - examples
   - diagrams
   related-skills: null
-------
+
+
+
+
+---
+
+
+
+
 # STM32 Embedded Systems Programming
 
 Implements production-quality firmware for STMicroelectronics STM32 microcontrollers (Cortex-M0/M3/M4/M7/M33) using HAL/LL drivers, DMA-based peripheral programming, FreeRTOS task architecture, clock tree configuration, and power management. Produces maintainable C code following IAR/ARM coding standards with hardware abstraction layer design patterns.

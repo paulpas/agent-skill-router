@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: newrelic-api
 description: Implements New Relic API integration (metrics, traces, logs, NRDB queries,
   dashboards, alert policies) using newrelic Python SDK v8+ with NerdGraph GraphQL
@@ -6,7 +10,7 @@ description: Implements New Relic API integration (metrics, traces, logs, NRDB q
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: new relic, nrql queries, nerdgraph, custom events, new relic alerts, apm
     tracing, how do i send data to new relic, observability platform
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-datadog-api, coding-grafana-prometheus, coding-sentry-api
-------
+
+
+
+
+---
+
+
+
+
 # New Relic API Integration
 
 Implements production-grade New Relic API integration using the `newrelic` Python SDK v8+ and NerdGraph GraphQL API. When loaded, this skill makes the model implement custom metrics submission, NRDB queries with NRQL, custom events via Event API, distributed tracing with New Relic APM, alert policy creation, and dashboard management via GraphQL. All implementations follow New Relic best practices: use `NEW_RELIC_LICENSE_KEY` environment variable, batch events/metrics for efficiency, use consistent attribute naming, implement exponential backoff for rate limits, and validate API connectivity on startup.

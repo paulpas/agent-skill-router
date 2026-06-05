@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: caching-architecture
 description: Designs multi-level caching strategies (cache-aside, write-through, write-behind, invalidation patterns) for distributed systems with consistency guarantees, TTL management, cache stampede prevention, and monitoring.
 license: MIT
@@ -26,7 +30,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Caching Architecture
 

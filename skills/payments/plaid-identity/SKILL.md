@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: plaid-identity
 description: Implements identity verification features via the Plaid API (IdentityGet, address validation, name matching) for KYC compliance and user profile enrichment in financial applications.
 license: MIT
@@ -19,7 +23,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: plaid-authentication, plaid-transactions
+
+
+
+
 ---
+
+
+
+
 
 # Plaid API Identity Verification
 

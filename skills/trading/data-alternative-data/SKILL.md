@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: data-alternative-data
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: alternative-data
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Alternative Data Ingestion Pipeline: The 5 Laws of Data Normalization
 
 **Role:** Data Engineer for Alternative Data — applies to news, social media, on-chain, and alternative data ingestion for trading signal generation.

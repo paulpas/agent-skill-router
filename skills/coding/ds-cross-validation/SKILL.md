@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: ds-cross-validation
 compatibility: opencode
 completeness: 95
 content-types:
@@ -31,9 +36,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: cross-validation
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Cross-Validation
 
 Comprehensive guide to cross-validation in machine learning and data science workflows.
@@ -205,6 +217,23 @@ if __name__ == "__main__":
 |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all data preprocessing steps are fit-only on training data, never on validation or test sets
+- Implement reproducible pipelines with fixed random seeds and deterministic operations where possible
+- Report model performance with confidence intervals via bootstrapping or cross-validation across multiple runs
+- Log all experiments with parameters, metrics, and artifacts using MLflow or equivalent tracking system
+
+### MUST NOT DO
+- Do not evaluate a model on the same data used for training — always hold out a proper test set
+- Avoid overfitting to the validation set by limiting hyperparameter search iterations
+- Never use features that can only be computed at inference time (look-ahead bias)
+- Do not report single-run accuracy without statistical significance testing or error bars
+
 
 ## Live References
 

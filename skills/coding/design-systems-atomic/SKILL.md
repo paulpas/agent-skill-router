@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: design-systems-atomic
 description: Implements Atomic Design methodology with design tokens, component-driven development in Storybook, accessibility-first patterns, and modern CSS architecture for production design systems.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Atomic Design Systems & Component Architecture
 

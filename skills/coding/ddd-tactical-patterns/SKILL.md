@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-tactical-patterns
 description: Implements DDD tactical patterns — aggregate roots with invariant enforcement, value objects, domain events, anti-corruption layers, repositories, and specification pattern for rich domain modeling in Python.
 license: MIT
@@ -9,7 +13,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  triggers: DDD, domain-driven design, aggregate root, value object, domain event, anti-corruption layer, specification pattern, how do i model complex business logic, bounded context implementation
+  triggers: DDD, domain-driven design, aggregate root, value object, domain event, anti-corruption layer, specification pattern, how do i model complex business logic
   related-skills: software-architecture-patterns,domain-architecture-project-structure
   archetypes: tactical, generation, educational
   anti_triggers: project structure, module organization, ubiquitous language discovery, bounded context identification, event sourcing infrastructure, outbox pattern setup
@@ -17,7 +21,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # DDD Tactical Patterns
 

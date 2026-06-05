@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-command-pattern
 description: Implements DDD command pattern — command definitions, typed command handlers,
   command bus routing, use case orchestration with validation, and Unit of Work transaction
@@ -6,11 +10,9 @@ description: Implements DDD command pattern — command definitions, typed comma
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: command pattern, ddd command handler, command bus, how do i implement
-    commands, use case orchestration, command validation, cqrs command side, write
-    model handlers, transaction coordination
+  triggers: command pattern, ddd command handler, command bus, how do i implement commands, use case orchestration, command validation, cqrs command side, write model handlers commands
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: domain-driven-design, ddd-tactical-patterns, cqrs-pattern, event-sourcing-pattern
-------
+
+
+
+
+---
+
+
+
+
 # DDD Command Pattern
 
 Implements the Command pattern within DDD bounded contexts — command definitions as immutable value objects, typed command handlers with validation and orchestration, a lightweight command bus for routing, and Unit of Work transaction coordination. This skill focuses on write operations within bounded contexts where commands mutate domain state through aggregate roots. Use this skill when building use case handlers that coordinate between user input, domain logic, and persistence within a single bounded context.

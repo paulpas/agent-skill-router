@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-pagination-patterns
 description: Implements pagination strategies for API endpoints including cursor-based keyset pagination, offset-based pagination, relay-style connection patterns, and performance optimization techniques to handle large datasets without N+1 queries or memory exhaustion.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: rest-api-patterns, graphql-schema-design, api-development-patterns
+
+
+
+
 ---
+
+
+
+
 
 # API Pagination Patterns
 

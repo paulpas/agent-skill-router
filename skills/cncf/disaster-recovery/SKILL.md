@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: disaster-recovery
 description: Implements comprehensive disaster recovery planning for Kubernetes clusters
   with backup strategies, recovery procedures, cross-region replication, RPO/RTO planning,
@@ -6,7 +10,7 @@ description: Implements comprehensive disaster recovery planning for Kubernetes 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: cncf
   role: implementation
   scope: infrastructure
@@ -24,7 +28,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: cncf-argocd, cncf-velero
-------
+
+
+
+
+---
+
+
+
+
 # Disaster Recovery Planning for Kubernetes Clusters
 
 Implements comprehensive disaster recovery planning for Kubernetes clusters with backup strategies, recovery procedures, cross-region replication, RPO/RTO planning, and validation workflows.

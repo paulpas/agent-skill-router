@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: exchange-failover-handling
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: failover-handling
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Manage multiple exchange connections with automatic failover for uninterrupted trading
 
 **Philosophy:** Redundancy is essential for production trading; failover must be transparent to trading logic
@@ -346,6 +358,132 @@ class StateSynchronizer:
 ```
 
 ---
+
+---
+
+
+### Pattern 2: Circuit Breaker with Graceful Degradation
+
+```python
+from __future__ import annotations
+
+import asyncio
+import logging
+import time
+from dataclasses import dataclass, field
+from enum import Enum
+from typing import Callable, Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+class CircuitState(str, Enum):
+    CLOSED = "closed"        # Normal operation — requests pass through
+    OPEN = "open"            # Failures exceeded threshold — block requests
+    HALF_OPEN = "half_open"  # Testing if service recovered — allow probe request
+
+
+@dataclass
+class CircuitBreakerConfig:
+    """Configuration for circuit breaker behavior."""
+    failure_threshold: int = 5          # C trip after N consecutive failures
+    recovery_timeout: float = 30.0      # Seconds before transitioning to HALF_OPEN
+    success_threshold: int = 2          # Half-open successes needed to close
+    monitoring_interval: float = 1.0    # How often to check circuit state
+
+
+class CircuitBreaker:
+    """Circuit breaker that protects against cascading failures across exchanges."""
+
+    def __init__(self, exchange_id: str, config: CircuitBreakerConfig | None = None):
+        self.exchange_id = exchange_id
+        self.config = config or CircuitBreakerConfig()
+        self._state = CircuitState.CLOSED
+        self._failure_count = 0
+        self._success_count = 0
+        self._last_failure_time: float = 0
+        self._opened_at: float = 0
+
+    @property
+    def state(self) -> CircuitState:
+        """Get current circuit state, auto-transitions if recovery timeout elapsed."""
+        if self._state == CircuitState.OPEN and time.monotonic() - self._opened_at >= self.config.recovery_timeout:
+            logger.info("Circuit for %s transitioning to HALF_OPEN", self.exchange_id)
+            self._state = CircuitState.HALF_OPEN
+            self._success_count = 0
+        return self._state
+
+    async def call(self, func: Callable, *args, **kwargs):
+        """Execute a function through the circuit breaker.
+
+        Raises:
+            CircuitOpenError: If circuit is OPEN and no probe request allowed.
+        """
+        if self.state == CircuitState.OPEN:
+            raise CircuitOpenError(self.exchange_id)
+
+        try:
+            result = await func(*args, **kwargs)
+            self._on_success()
+            return result
+        except Exception as e:
+            self._on_failure()
+            logger.warning("Circuit call failed for %s: %s", self.exchange_id, e)
+            raise
+
+    def _on_success(self) -> None:
+        if self._state == CircuitState.HALF_OPEN:
+            self._success_count += 1
+            if self._success_count >= self.config.success_threshold:
+                self._close()
+        else:
+            self._failure_count = 0
+
+    def _on_failure(self) -> None:
+        self._failure_count += 1
+        self._last_failure_time = time.monotonic()
+        if self.state == CircuitState.HALF_OPEN:
+            self._open()
+        elif self._failure_count >= self.config.failure_threshold:
+            self._open()
+
+    def _open(self) -> None:
+        old_state = self._state
+        self._state = CircuitState.OPEN
+        self._opened_at = time.monotonic()
+        logger.warning("Circuit OPEN for %s after %d failures", self.exchange_id, self._failure_count)
+
+    def _close(self) -> None:
+        logger.info("Circuit CLOSED for %s — service recovered", self.exchange_id)
+        self._state = CircuitState.CLOSED
+        self._failure_count = 0
+        self._success_count = 0
+
+
+class CircuitOpenError(Exception):
+    """Raised when a circuit is open and requests are being rejected."""
+    def __init__(self, exchange_id: str):
+        super().__init__(f"Circuit breaker OPEN for {exchange_id} — requests rejected")
+        self.exchange_id = exchange_id
+```
+
+## Constraints
+
+### MUST DO
+- Implement a unified adapter interface across all exchange integrations to standardize order placement, cancellation, and querying
+- Handle rate limiting proactively with token bucket or leaky bucket algorithms — never wait for 429 responses before slowing down
+- Maintain local order state as the source of truth; reconcile with exchange state periodically via webhook events and polling
+- Implement heartbeat monitoring per exchange connection with automatic failover to a secondary data feed on timeout
+- Log all API interactions including request/response IDs, timing, and status codes for audit and debugging
+
+### MUST NOT DO
+- Do not trust exchange-reported order states without local confirmation — always reconcile after every state change
+- Avoid sending multiple orders for the same position simultaneously across different adapters or sessions
+- Never store API keys or secrets in code — use environment variables or a secrets manager with automatic rotation
+- Do not assume all exchanges support the same order types — implement graceful degradation with clear capability negotiation
+- Avoid polling-based price updates when WebSocket/streaming APIs are available — polling creates unnecessary load and latency
+
 
 ## Live References
 

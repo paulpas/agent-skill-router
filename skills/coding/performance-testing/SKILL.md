@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: performance-testing
 description: Measures application throughput, latency percentiles, and resource utilization
   under realistic load to identify bottlenecks before they reach production.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: performance testing, load testing, stress test, p95 latency, bottleneck
     detection, how do i measure system performance, k6, locust
@@ -30,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-code-quality-policies, coding-debugging-profiling
-------
+
+
+
+
+---
+
+
+
+
 # Performance Testing and Load Analysis
 
 Measures application throughput, latency percentiles, and resource utilization under realistic load to identify bottlenecks before they reach production. Builds reproducible test harnesses that model real user behavior and produce actionable metrics including p50/p95/p99 latencies, requests per second (RPS), and error rates.

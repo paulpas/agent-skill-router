@@ -1,14 +1,17 @@
 ---
+
+
+
+
 name: event-driven-patterns
 description: Implements event-driven architecture patterns (pub/sub, event sourcing,
   CQRS, saga orchestration, outbox pattern) for building decoupled, scalable systems.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: event-driven, event driven architecture, pub/sub, event sourcing, CQRS,
-    saga pattern, outbox pattern, message queue, eventual consistency
+  triggers: event-driven, event driven architecture, pub/sub, event sourcing, CQRS, saga pattern, outbox pattern, message queue saga pattern
   archetypes:
   - tactical
   - generation
@@ -31,7 +34,15 @@ metadata:
   - examples
   related-skills: microservices-patterns, architecture-decision-records, domain-driven-design,
     test-driven-development
-------
+
+
+
+
+---
+
+
+
+
 # Event-Driven Architecture Patterns
 
 Implements event-driven design patterns to build decoupled, resilient, and scalable systems. Covers the core EDA patterns — pub/sub, event sourcing, CQRS, saga orchestration, outbox pattern, and event versioning — with practical implementations and anti-patterns to avoid.

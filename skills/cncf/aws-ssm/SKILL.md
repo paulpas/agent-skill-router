@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: aws-ssm
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,9 +35,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: ssm
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # SSM (AWS Systems Manager)
 
 Manage configuration, patches, and secure shell access for EC2 instances and on-premises servers without SSH keys or bastion hosts.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-gateway-domain-routing
 description: Configures API gateway domain routing patterns (subdomain-based tenant resolution, path-based bounded context dispatch, host-header forwarding) to direct traffic from external domains to the correct internal services.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: API gateway, domain routing, subdomain routing, Kong plugin, NGINX server block, Envoy routing, host header routing, how do i route requests by domain, bounded context routing
+  triggers: API gateway, domain routing, subdomain routing, Kong plugin, NGINX server block, Envoy routing, host header routing, how do i route requests by domain
   archetypes:
     - tactical
     - generation
@@ -27,7 +31,15 @@ metadata:
     - do-dont
     - examples
   related-skills: multi-tenant-domain-isolation, api-gateway-design, domain-driven-design, event-driven-architecture
+
+
+
+
 ---
+
+
+
+
 
 # API Gateway Domain Routing
 

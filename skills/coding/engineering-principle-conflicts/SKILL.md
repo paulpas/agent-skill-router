@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: engineering-principle-conflicts
 description: Resolves contradictions between SOLID, DRY, KISS, and YAGNI principles using a structured decision framework with trade-off analysis and domain-context scoring for architecture decisions.
 license: MIT
@@ -16,13 +20,21 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: principle conflicts, SOLID contradictions, DRY fragility, when to abstract, KISS vs abstraction, YAGNI tradeoffs, SRP vs ISP, architecture decision framework, code golf trade-offs, premature abstraction
+  triggers: principle conflicts, SOLID contradictions, DRY fragility, KISS vs abstraction, YAGNI tradeoffs, SRP vs ISP, architecture decision framework, premature abstraction
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: engineering-principles, software-design-principles, design-patterns-and-principles, software-engineering-principles
+
+
+
+
 ---
+
+
+
+
 
 # Engineering Principle Conflict Resolver
 

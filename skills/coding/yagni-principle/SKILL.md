@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: yagni-principle
 description: Applies the YAGNI principle to prevent over-engineering by eliminating premature abstractions, unused features, and speculative complexity from codebases.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: kiss-principle, technical-debt-management, refactoring-techniques, engineering-principles
+
+
+
+
 ---
+
+
+
+
 
 # YAGNI Principle — Preventing Over-Engineering
 

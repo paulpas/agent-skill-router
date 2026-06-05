@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-testing-validation
 description: Implements testing strategies for verifying AI skill quality including
   content validation, trigger matching tests, integration checks, and automated regression
@@ -6,7 +10,7 @@ description: Implements testing strategies for verifying AI skill quality includ
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   role: implementation
   scope: implementation
@@ -16,9 +20,7 @@ metadata:
   - guidance
   - examples
   - do-dont
-  triggers: skill testing, validation, quality assurance, test automation, regression
-    detection, trigger matching, how do i test skills, code review for skills, skill
-    audit
+  triggers: skill testing, validation, quality assurance, test automation, regression detection, trigger matching, how do i test skills, code review for skills detection
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: coding-code-review, agent-skill-ecosystem-design
-------
+
+
+
+
+---
+
+
+
+
 # Skill Testing and Validation Framework
 
 Teaches systematic testing strategies for verifying AI skill (SKILL.md) quality — from static content validation and trigger matching to integration smoke tests and automated regression detection. Follows SOLID and DRY principles applied to skill content design.

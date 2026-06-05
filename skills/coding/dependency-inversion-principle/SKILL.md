@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: dependency-inversion-principle
 description: Refactors tightly coupled modules depending on concrete classes into
   decoupled designs using dependency injection, Python Protocols, factory registration,
@@ -6,11 +10,9 @@ description: Refactors tightly coupled modules depending on concrete classes int
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: dependency inversion principle, DIP, dependency injection, inversion of
-    control, IoC, loose coupling, high level low level abstraction, constructor injection,
-    factory pattern, testable architecture
+  triggers: dependency inversion principle, DIP, dependency injection, inversion of control, IoC, loose coupling, high level low level abstraction, constructor injection control
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ metadata:
   - examples
   related-skills: single-responsibility, open-closed-principle, liskov-substitution-principle,
     interface-segregation-principle, hexagonal-architecture
-------
+
+
+
+
+---
+
+
+
+
 # Dependency Inversion Principle (DIP)
 
 Refactors tightly coupled systems where high-level business modules import and instantiate low-level concrete classes into decoupled architectures using dependency injection, Protocol-based abstractions, and factory registration. Ensures high-level policy code depends only on interfaces/protocols, while low-level details (databases, HTTP clients, file systems) implement those contracts — making the direction of dependencies invert from "outward" to "inward."

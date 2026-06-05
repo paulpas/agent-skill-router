@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: aws-cloudwatch
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,9 +35,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: cloudwatch
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # CloudWatch (Amazon CloudWatch)
 
 Monitor AWS resources with metrics, logs, and alarms. CloudWatch provides complete operational visibility into infrastructure performance, application health, and business metrics.

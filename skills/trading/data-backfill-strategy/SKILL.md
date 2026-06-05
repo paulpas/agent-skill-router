@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: data-backfill-strategy
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: backfill-strategy
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Efficiently populate and maintain historical data for analysis and backtesting
 
 **Philosophy:** Historical data quality determines backtest accuracy; backfill must be comprehensive, efficient, and auditable
@@ -438,6 +450,154 @@ class BatchBackfillWorker:
 ```
 
 ---
+
+---
+
+
+### Pattern 2: Checkpoint-Based Incremental Backfill with Deduplication
+
+```python
+from __future__ import annotations
+
+import logging
+import time
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta, timezone
+from typing import Iterator
+from uuid import UUID, uuid7
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class BackfillCheckpoint:
+    """Tracks the progress of a backfill operation for resume capability."""
+    symbol: str
+    timeframe: str
+    source: str
+    last_processed_ts: datetime
+    total_records_fetched: int = 0
+    last_updated: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+
+    def advance(self, new_ts: datetime, count: int) -> BackfillCheckpoint:
+        return BackfillCheckpoint(
+            symbol=self.symbol,
+            timeframe=self.timeframe,
+            source=self.source,
+            last_processed_ts=new_ts,
+            total_records_fetched=self.total_records_fetched + count,
+        )
+
+
+class BackfillManager:
+    """Manages incremental backfill operations with checkpoint persistence."""
+
+    def __init__(self, data_source, checkpoint_store):
+        self._source = data_source
+        self._store = checkpoint_store
+
+    def get_checkpoint(self, symbol: str, timeframe: str, source: str) -> BackfillCheckpoint | None:
+        """Load the last backfill checkpoint for a given data stream."""
+        key = f"{symbol}:{timeframe}:{source}"
+        return self._store.get(key)
+
+    def save_checkpoint(self, cp: BackfillCheckpoint) -> None:
+        """Persist a checkpoint after successfully processing data."""
+        key = f"{cp.symbol}:{cp.timeframe}:{cp.source}"
+        self._store.save(key, cp)
+        logger.info("Checkpoint saved: %s (processed %d records)", key, cp.total_records_fetched)
+
+    def backfill_range(
+        self,
+        symbol: str,
+        start: datetime,
+        end: datetime,
+        timeframe: str = "1h",
+        max_batch_size: int = 5000,
+    ) -> dict:
+        """Execute a full or incremental backfill between two timestamps.
+
+        If a checkpoint exists for this stream, starts from the last processed point.
+        Otherwise performs a full range backfill from `start`.
+
+        Args:
+            symbol: Trading pair identifier.
+            start: Start of the desired data range (inclusive).
+            end: End of the desired data range (exclusive).
+            timeframe: Data granularity ("1m", "5m", "1h", etc.).
+            max_batch_size: Maximum records per API call to avoid rate limits.
+
+        Returns:
+            Summary dict with total records, duration, and gaps detected.
+        """
+        existing = self.get_checkpoint(symbol, timeframe, self._source)
+        if existing and existing.last_processed_ts > start:
+            logger.info("Resuming backfill from checkpoint: %s", existing.last_processed_ts)
+            actual_start = existing.last_processed_ts + timedelta(seconds=1)
+        else:
+            actual_start = start
+
+        total_fetched = 0
+        gaps_detected = 0
+        batch_start = actual_start
+
+        while batch_start < end:
+            batch_end = min(batch_start + timedelta(hours=24), end)
+
+            try:
+                records = self._source.fetch_ohlcv(
+                    symbol=symbol,
+                    start=batch_start,
+                    end=batch_end,
+                    timeframe=timeframe,
+                    limit=max_batch_size,
+                )
+            except Exception as e:
+                logger.error("Failed to fetch batch %s → %s for %s: %s", batch_start, batch_end, symbol, e)
+                time.sleep(5)
+                continue
+
+            if records:
+                last_ts = max(r["timestamp"] for r in records)
+                total_fetched += len(records)
+                self.save_checkpoint(
+                    BackfillCheckpoint(symbol=symbol, timeframe=timeframe, source=self._source,
+                                       last_processed_ts=last_ts, total_records_fetched=total_fetched),
+                )
+
+            expected_interval = {"1m": 60, "5m": 300, "1h": 3600}.get(timeframe, 3600)
+            if len(records) < (batch_end - batch_start).total_seconds() / expected_interval:
+                gaps_detected += 1
+
+            batch_start = batch_end
+            time.sleep(0.5)  # Respect rate limits between batches
+
+        return {
+            "symbol": symbol,
+            "start": actual_start.isoformat(),
+            "end": end.isoformat(),
+            "timeframe": timeframe,
+            "records_fetched": total_fetched,
+            "gaps_detected": gaps_detected,
+        }
+```
+
+## Constraints
+
+### MUST DO
+- Validate all incoming data against schema constraints (type, range, nullability) before processing or storage
+- Implement idempotent operations: re-processing the same data must produce identical results
+- Track data lineage and provenance with timestamps, source identifiers, and transformation history for every record
+- Handle out-of-order data by implementing a watermark-based ordering mechanism with configurable tolerance window
+- Log data quality metrics (completeness, freshness, accuracy) per source with automatic alerting on degradation
+
+### MUST NOT DO
+- Do not silently drop records that fail validation — log them to a quarantine table for review
+- Avoid concatenating strings for timestamp comparison; use proper datetime/timedelta objects
+- Never assume data arrives in chronological order from any external feed without explicit ordering guarantees
+- Do not store raw and processed data in the same table without clear partitioning or separation strategy
+- Avoid blocking on slow data sources — implement async prefetch with timeout-based fallback to cached data
+
 
 ## Live References
 

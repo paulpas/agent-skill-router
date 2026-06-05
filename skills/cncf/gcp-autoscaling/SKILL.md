@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: gcp-autoscaling
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: autoscaling
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Google Cloud Autoscaling
 
 Deploy and manage google cloud autoscaling infrastructure as part of your cloud-native environment.

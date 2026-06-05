@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: configuration-management-patterns
 description: Designs production configuration management with schema validation, hierarchical merging of config sources, hot reload capabilities, secret injection from vaults, and environment-specific defaults for reliable deployment.
 license: MIT
@@ -26,7 +30,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Configuration Management Patterns
 

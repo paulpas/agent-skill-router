@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: azure-resource-manager
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: resource-manager
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Azure Resource Manager
 
 Deploy and manage azure resource manager infrastructure as part of your cloud-native environment.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: microservices-pattern
 description: Implements microservices architecture patterns, including service discovery, inter-service communication, and data management techniques.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: architectural-patterns, coding-api-design
+
+
+
+
 ---
+
+
+
+
 
 # Microservices Patterns
 

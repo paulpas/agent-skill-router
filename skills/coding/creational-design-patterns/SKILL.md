@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: creational-design-patterns
 description: Implements GoF creational patterns (Factory Method, Builder, Singleton,
   Abstract Factory, Prototype) to control object creation, manage composition, and
@@ -6,7 +10,7 @@ description: Implements GoF creational patterns (Factory Method, Builder, Single
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: creational patterns, factory method, builder pattern, singleton, abstract
     factory, prototype pattern, object creation, GoF design patterns
@@ -32,7 +36,15 @@ metadata:
   - do-dont
   related-skills: behavioral-design-patterns, design-patterns-architecture, refactoring-techniques,
     modular-design
-------
+
+
+
+
+---
+
+
+
+
 # Creational Design Patterns
 
 Implements GoF creational patterns to control object creation, manage composition, and reduce coupling. This skill makes the model apply Factory Method for family-independent instantiation, Builder for complex construction sequences, Singleton (with caution) for shared resources, Abstract Factory for related object families, and Prototype for cloning expensive objects — choosing each pattern based on the specific creation bottleneck in the system.

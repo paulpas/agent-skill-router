@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: open-telemetry
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: telemetry
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
  # Open-Telemetry in Cloud-Native Engineering
 
 **Category:** observability  

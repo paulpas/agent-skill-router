@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: cloud-linux-engineering
 description: Engineers Linux systems for cloud-native environments with cloud-init
   bootstrapping, IMDSv2 security, ephemeral lifecycle management, spot instance handling,
@@ -6,10 +10,9 @@ description: Engineers Linux systems for cloud-native environments with cloud-in
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: linux
-  triggers: cloud-init, IMDSv2, ephemeral instance, cloud metadata, spot instance,
-    user-data, instance metadata, cloud observability, cloud SSH keys, instance lifecycle
+  triggers: cloud-init, IMDSv2, ephemeral instance, cloud metadata, spot instance, user-data, instance metadata, cloud observability user-data
   archetypes:
   - tactical
   anti_triggers:
@@ -31,7 +34,15 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 6
-------
+
+
+
+
+---
+
+
+
+
 # Cloud Linux Engineering
 
 Senior infrastructure engineer designing and operating Linux systems specifically for cloud-native environments, focusing on ephemeral instance lifecycle, cloud-init bootstrapping, IMDSv2 security, and cloud-observable observability patterns.

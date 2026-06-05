@@ -22,7 +22,7 @@ class SafetyLayer {
             enablePromptInjectionFilter: true,
             requireSchemaValidation: true,
             skillAllowlist: [],
-            maxTaskLength: 10000,
+            maxTaskLength: 5000,
             blockCategories: [],
             ...config,
         };
@@ -37,6 +37,39 @@ class SafetyLayer {
                 riskLevel: 'critical',
                 flags: ['empty-task'],
                 errorMessage: 'Task cannot be empty',
+            };
+        }
+        // Reject queries shorter than 3 characters (too ambiguous for routing)
+        const MIN_QUERY_LENGTH = 3;
+        if (request.task.trim().length < MIN_QUERY_LENGTH) {
+            return {
+                isSafe: false,
+                riskLevel: 'high',
+                flags: ['query-too-short'],
+                errorMessage: `Query too short (min ${MIN_QUERY_LENGTH} characters)`,
+            };
+        }
+        // Reject queries consisting entirely of stop words (no domain-specific signal)
+        const STOP_WORDS = new Set([
+            'the', 'a', 'an', 'is', 'it', 'of', 'to', 'in', 'and', 'or', 'for', 'on', 'with', 'as', 'at', 'by',
+            'this', 'that', 'these', 'those', 'what', 'which', 'who', 'how', 'why', 'where', 'when',
+            'do', 'does', 'did', 'has', 'have', 'had', 'not', 'no', 'yes', 'so', 'if', 'then', 'than', 'but',
+            'because', 'about', 'up', 'down', 'out', 'off', 'over', 'under', 'again', 'further', 'once',
+            'here', 'there', 'all', 'each', 'every', 'both', 'few', 'more', 'most', 'other', 'some', 'such',
+            'only', 'own', 'same', 'too', 'very', 'just', 'also', 'now', 'will', 'can', 'may', 'might',
+            'shall', 'should', 'would', 'could', 'please', 'help', 'need', 'want', 'like', 'use',
+            'me', 'my', 'your', 'you', 'he', 'him', 'his', 'she', 'her', 'we', 'us', 'our', 'they', 'them', 'their',
+        ]);
+        const queryWords = request.task.trim().toLowerCase().split(/\s+/);
+        const allStopWords = queryWords.length > 0 && queryWords.every((w) => STOP_WORDS.has(w));
+        // Only apply this filter to short queries (<=5 words) — longer all-stop-word queries
+        // are unlikely in practice and could be legitimate (e.g. "what is this and how does it work")
+        if (allStopWords && queryWords.length <= 5) {
+            return {
+                isSafe: false,
+                riskLevel: 'high',
+                flags: ['query-only-stop-words'],
+                errorMessage: 'Query contains only common words, no domain-specific terms to route on',
             };
         }
         if (request.task.length > this.config.maxTaskLength) {
@@ -123,32 +156,94 @@ class SafetyLayer {
     /**
      * Check for prompt injection attempts.
      *
-     * Design: collect signals from three independent categories, then decide:
-     *   - 0 signals  → safe
-     *   - 1 signal   → warn (log), but allow through (unless SAFETY_STRICT=true)
-     *   - 2+ signals → block
+     * Design: patterns are categorized by severity:
+     *   - CRITICAL → block on a single match (SQL injection, XSS, command injection, etc.)
+     *   - HIGH     → block on 2+ matches (prompt hijacking attempts)
+     *   - MEDIUM   → warn only, allow through (ambiguous signals)
      *
-     * Patterns are deliberately high-confidence to avoid false positives on
-     * normal developer task descriptions like:
-     *   "review code for security issues and check for vulnerabilities"
-     *   "use dependency injection in this service"
-     *   "run shell script to deploy"
+     * This prevents single-pattern adversarial inputs from bypassing the filter
+     * while keeping the existing 2-signal threshold for lower-severity patterns.
      */
     checkPromptInjection(task) {
         const flags = [];
-        // ── Category 1: Prompt hijacking ────────────────────────────────────────
-        // Must clearly attempt to override AI instructions, not just describe a task.
+        const criticalFlags = [];
+        // ── Category 1: SQL Injection (CRITICAL) ──────────────────────────────
+        const sqlPatterns = [
+            /'\s*(OR|AND)\s+['"]?\s*\d+\s*['"]?\s*=\s*['"]?\s*\d+/i, // ' OR 1=1
+            /(UNION|EXCEPT|INTERSECT)\s+(ALL\s+)?SELECT\s+/i, // UNION SELECT
+            /;\s*(DROP|DELETE|TRUNCATE|ALTER|EXEC|EXECUTE)\s+/i, // ; DROP TABLE
+            /(SELECT|INSERT|UPDATE|DELETE)\s+.*\s+FROM\s+.*\s+WHERE\s+/i, // SQL DML with WHERE
+            /sleep\s*\(\s*\d{2,}\s*\)/i, // SQL timing: SLEEP(5)
+            /pg_sleep\s*\(\s*\d+\s*\)/i, // PostgreSQL: pg_sleep(5)
+            /'\s*;.*--\s*$/m, // SQL comment injection
+        ];
+        for (const pattern of sqlPatterns) {
+            if (pattern.test(task)) {
+                criticalFlags.push('sql-injection');
+                break;
+            }
+        }
+        // ── Category 2: XSS / HTML Injection (CRITICAL) ──────────────────────
+        const xssPatterns = [
+            /<script[\s>]/i, // <script> tag
+            /javascript\s*:\s*(alert|confirm|prompt)\s*\(/i, // javascript:alert(
+            /\bon(error|load|click|mouse|key|submit|focus|blur|change)\s*=/i, // onerror=, onload=
+            /<iframe[\s>]/i, // <iframe> tag
+            /<img\s+[^>]*\bonerror\s*=/i, // <img onerror=
+            /expression\s*\(\s*[a-z]/i, // CSS expression()
+        ];
+        for (const pattern of xssPatterns) {
+            if (pattern.test(task)) {
+                criticalFlags.push('xss-injection');
+                break;
+            }
+        }
+        // ── Category 3: Path Traversal (CRITICAL) ────────────────────────────
+        const pathPatterns = [
+            /\.\.\/\.\.\/\.\.\/\.\.\//, // ../../../../
+            /\.\.\\\.\.\\\.\.\\\.\.\\/, // ..\..\..\..\
+            /%2e%2e%2f%2e%2e%2f/, // URL-encoded ../
+            /%2e%2e%5c%2e%2e%5c/, // URL-encoded ..\
+            /\0/, // Null byte injection
+        ];
+        for (const pattern of pathPatterns) {
+            if (pattern.test(task)) {
+                criticalFlags.push('path-traversal');
+                break;
+            }
+        }
+        // ── Category 4: Credential harvesting (CRITICAL) ──────────────────────
+        const harvestPatterns = [
+            /\b(reveal|output|print|show|send|leak)\s+(your\s+)?(api\s*key|password|secret|credentials?|token)/i,
+            /verify\s+(your|the)\s+(password|credentials|api\s*key|secret|token)/i,
+            /what\s+is\s+your\s+(api\s*key|password|secret|token)/i,
+        ];
+        for (const pattern of harvestPatterns) {
+            if (pattern.test(task)) {
+                criticalFlags.push('potential-credential-harvesting');
+                break;
+            }
+        }
+        // ── Category 5: Active command execution (CRITICAL) ────────────────────
+        const commandPatterns = [
+            /`[^`]{1,200}`/, // Backtick command: `rm -rf /`
+            /\$\([^)]{1,200}\)/, // $(command) substitution
+            /\|\s*(sh|bash|zsh)\s*$/, // Pipe-to-shell: ... | sh
+            /&&\s*(rm|mkfs|dd|wget|curl)\b/i, // Chained destructive commands
+        ];
+        for (const pattern of commandPatterns) {
+            if (pattern.test(task)) {
+                criticalFlags.push('potential-command-injection');
+                break;
+            }
+        }
+        // ── Category 6: Prompt hijacking (HIGH) ────────────────────────────────
         const hijackPatterns = [
-            // "ignore all previous instructions", "disregard prior instructions"
             /ignore\s+(all\s+)?previous\s+instructions/i,
             /disregard\s+(all\s+)?previous\s+instructions/i,
-            // "you are now a different AI / you are now in DAN mode"
             /you\s+are\s+now\s+(a|an)\s+\w+\s*(mode|ai|bot|assistant)?/i,
-            // "your new instructions are" / "your new role is"
             /your\s+new\s+(instructions?|role|task|system)\s+(is|are)/i,
-            // "override system prompt" / "bypass safety"
             /\b(override|bypass)\s+(system\s+prompt|safety\s+filter|content\s+filter)/i,
-            // "pretend you have no restrictions"
             /pretend\s+(you\s+have\s+no|there\s+are\s+no)\s+(restrictions?|limits?|filters?)/i,
         ];
         for (const pattern of hijackPatterns) {
@@ -157,61 +252,60 @@ class SafetyLayer {
                 break;
             }
         }
-        // ── Category 2: Active command execution ────────────────────────────────
-        // Shell metacharacters that appear in an execution context, not text discussion.
-        const commandPatterns = [
-            /`[^`]{1,200}`/, // Backtick command substitution: `rm -rf /`
-            /\$\([^)]{1,200}\)/, // $(command) substitution
-            /\|\s*(sh|bash|zsh)\s*$/, // Pipe-to-shell at end of string: ... | sh
-            /&&\s*(rm|mkfs|dd|wget|curl)\b/i, // Chained destructive/download commands
+        // ── Category 7: Prompt leak / system prompt extraction (HIGH) ──────────
+        const leakPatterns = [
+            /(print|output|show|reveal|display|copy|repeat|echo)\s+(your|the)\s+(system\s+)?(prompt|instructions?)/i,
+            /(what|how)\s+(are|is)\s+(your|the)\s+(system\s+)?(prompt|instructions?)/i,
+            /output\s+(your|the)\s+(entire|full|complete)\s+(system\s+)?prompt/i,
         ];
-        for (const pattern of commandPatterns) {
+        for (const pattern of leakPatterns) {
             if (pattern.test(task)) {
-                flags.push('potential-command-injection');
-                break;
-            }
-        }
-        // ── Category 3: Credential harvesting ───────────────────────────────────
-        // Asking the AI to reveal or confirm secrets — not just mentioning security.
-        const harvestPatterns = [
-            /\b(reveal|output|print|show|send|leak)\s+(your\s+)?(api\s*key|password|secret|credentials?|token)/i,
-            /verify\s+(your|the)\s+(password|credentials|api\s*key|secret|token)/i,
-            /what\s+is\s+your\s+(api\s*key|password|secret|token)/i,
-        ];
-        for (const pattern of harvestPatterns) {
-            if (pattern.test(task)) {
-                flags.push('potential-credential-harvesting');
+                flags.push('potential-prompt-leak');
                 break;
             }
         }
         // ── Decision ─────────────────────────────────────────────────────────────
-        if (flags.length === 0) {
-            return { isSafe: true, riskLevel: 'low', flags: [] };
+        // CRITICAL patterns → block immediately (single match is enough)
+        if (criticalFlags.length > 0) {
+            return {
+                isSafe: false,
+                riskLevel: this.determineRiskLevel([...criticalFlags, ...flags]),
+                flags: [...criticalFlags, ...flags],
+                errorMessage: 'Potential security threat detected',
+            };
         }
-        if (flags.length < BLOCK_THRESHOLD) {
-            // Single signal: warn but allow through
+        // HIGH patterns → block on 2+ matches (existing behavior)
+        if (flags.length >= BLOCK_THRESHOLD) {
+            return {
+                isSafe: false,
+                riskLevel: this.determineRiskLevel(flags),
+                flags,
+                errorMessage: 'Potential security threat detected',
+            };
+        }
+        // Single HIGH signal → warn but allow through
+        if (flags.length === 1) {
             console.warn(`[SafetyLayer] Low-confidence injection signal detected (${flags.join(', ')}). ` +
                 `Allowing request. Set SAFETY_STRICT=true to block on single signals.`);
             return { isSafe: true, riskLevel: 'medium', flags };
         }
-        // Multiple signals (or strict mode with 1+): block
-        return {
-            isSafe: false,
-            riskLevel: this.determineRiskLevel(flags),
-            flags,
-            errorMessage: 'Potential security threat detected',
-        };
+        // No signals → safe
+        return { isSafe: true, riskLevel: 'low', flags: [] };
     }
     /**
      * Determine risk level based on flags
      */
     determineRiskLevel(flags) {
         const criticalFlags = [
+            'sql-injection',
+            'xss-injection',
+            'path-traversal',
             'potential-command-injection',
             'potential-credential-harvesting',
         ];
         const highFlags = [
             'potential-injection',
+            'potential-prompt-leak',
         ];
         for (const flag of flags) {
             if (criticalFlags.includes(flag))

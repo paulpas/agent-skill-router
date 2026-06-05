@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: clickup-api
 description: Integrates with ClickUp API v2 to manage tasks, lists, spaces, folders,
   goals, time tracking, dashboards, and teams using clickup-python-sdk.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: clickup api, clickup tasks, clickup lists, clickup python, clickup automation,
     clickup time tracking, clickup custom fields
@@ -30,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-asana-api, coding-monday-api, coding-atlassian-api
-------
+
+
+
+
+---
+
+
+
+
 
 # ClickUp API Integration
 

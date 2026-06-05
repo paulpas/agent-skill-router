@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: structured-output-validation
 description: Implements structured output patterns for AI agent systems including Pydantic model validation, JSON Schema generation, function calling contracts, response parsing with retry loops, and schema evolution for reliable agent-to-agent communication.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: structured output, Pydantic validation, JSON Schema, function calling, response parsing, typed responses, output contract, tool schema, LLM output parsing, structured extraction, schema evolution, output validation, response format, constrained decoding
+  triggers: structured output, Pydantic validation, JSON Schema, function calling, response parsing, typed responses, LLM output parsing, constrained decoding
   role: implementation
   scope: implementation
   output-format: code
@@ -22,7 +26,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Structured Output Validation for AI Agents
 

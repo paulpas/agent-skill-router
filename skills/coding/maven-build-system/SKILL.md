@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: maven-build-system
 description: Implements Apache Maven build configurations (POM structure, dependency management, profiles, multi-module builds, plugin configuration) for Java and Kotlin projects.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: maven, pom.xml, mvn command, java build tool, dependency management, maven central, plugin management, build lifecycle, mvnw, effective-pom, BOM, bill of materials, maven profiles
+  triggers: maven, pom.xml, mvn command, java build tool, dependency management, maven central, plugin management, BOM
   archetypes: [tactical, generation]
   anti_triggers: [brainstorming, vague ideation, code golf, over-engineering]
   response_profile:
@@ -18,7 +22,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples, config]
   related-skills: gradle-build-system
+
+
+
+
 ---
+
+
+
+
 
 # Maven Build System
 

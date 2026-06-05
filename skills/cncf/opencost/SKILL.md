@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: opencost
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: opencost
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # OpenCost in Cloud-Native Engineering
 
 **Category:** observability  

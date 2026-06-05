@@ -76,9 +76,9 @@ export declare class Router {
      */
     routeTask(request: RouteRequest): Promise<RouteResponse>;
     /**
-     * Apply deterministic filtering to ranked skills
-     * Includes quality gate to filter out stub skills (draft: true)
-     */
+       * Apply deterministic filtering to ranked skills
+       * Includes quality gate to filter out stub skills (draft: true) and built-in skills with no metadata (customize-opencode)
+       */
     private applyDeterministicFilter;
     /**
      * Calculate overall confidence score
@@ -109,6 +109,16 @@ export declare class Router {
         categories: number;
         tags: number;
     };
+    /**
+     * Detect whether a route response indicates a gap in existing skills.
+     * Returns true when:
+     *   - No skills matched (empty selectedSkills)
+     *   - Confidence score is below the configured threshold
+     *   - Top skill's raw score is very low (< 0.1), indicating almost certainly not a real match
+     *
+     * The confidence threshold is read from the AUTO_SKILL_CONFIDENCE_THRESHOLD env var (default: 0.35).
+     */
+    detectGap(response: RouteResponse): boolean;
     /**
      * Reload skills
      */

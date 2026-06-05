@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: paper-performance-attribution
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: performance-attribution
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Performance Analyst — implements systems to decompose portfolio returns into signal, execution, and market components to understand sources of alpha and identify areas for improvement.
 
 **Philosophy:** Causal Understanding — performance attribution separates skill from luck by attributing returns to specific decision points: market selection, entry timing, position sizing, exit timing, and execution quality.
@@ -693,6 +705,24 @@ Before completing your task, verify:
 
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement commission structures that reflect real broker fee schedules including per-share, per-contract, and regulatory fees
+- Model market impact for paper orders: simulate price movement caused by your order based on order book depth
+- Use the same data feeds and latency characteristics as live trading to ensure paper results are realistic
+- Track slippage separately from commissions and calculate both fill-level and execution-level slippage metrics
+- Validate paper trading P&L against theoretical expectations at regular intervals to detect simulation bugs
+
+### MUST NOT DO
+- Do not assume fills at the next available price without modeling order book dynamics or queue position
+- Avoid using perfect historical data for paper trading — add realistic noise and latency characteristics
+- Never use different data sources between backtesting, paper trading, and live execution without documenting the delta
+- Do not ignore dividend adjustments in equity paper trading — missed dividends create false P&L discrepancies
+
 
 ## Live References
 

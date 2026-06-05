@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-application-methodology
 description: Systematically learns, evaluates, and applies new software frameworks using proven methodology — source code analysis, prototype validation, pattern mapping, and iterative adoption for maximum engineering impact.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: coding-framework-design-patterns, coding-knowledge-transfer-methods
+
+
+
+
 ---
+
+
+
+
 
 # Framework Application Methodology
 

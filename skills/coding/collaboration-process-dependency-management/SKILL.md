@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: collaboration-process-dependency-management
 description: Implements strategies for effective dependency management and versioning in software development, focusing on Semantic Versioning (SemVer) and the use of lock files.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: coding-version-control-skills, coding-package-management
+
+
+
+
 ---
+
+
+
+
 
 # Dependency Management & Versioning
 

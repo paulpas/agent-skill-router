@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: monolith-first-design
 description: Evaluates architecture decisions to determine when a monolithic application should be chosen over microservices using team assessment, domain complexity analysis, operational cost modeling, and weighted scoring frameworks.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: strategic
+
+
+
+
 ---
+
+
+
+
 
 # Monolith-First Architecture Decision Framework
 

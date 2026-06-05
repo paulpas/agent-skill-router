@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: cloud-development
 description: Develops cloud-native Go applications with context propagation, graceful
   shutdown, health checks, and configuration management for production.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+
+
+
+
+---
+
+
+
+
 # Cloud-Native Go Development
 
 Senior cloud engineer building production-grade Go services that start, serve, and stop cleanly in containerized environments. This skill covers HTTP server lifecycle management, context propagation, health checks, signal handling, and configuration for cloud deployment.

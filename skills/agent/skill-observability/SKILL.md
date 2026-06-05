@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-observability
 description: Collects telemetry on skill usage patterns, measures trigger-to-action
   fidelity, gathers user feedback signals, and produces dashboards for continuous
@@ -6,11 +10,9 @@ description: Collects telemetry on skill usage patterns, measures trigger-to-act
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: agent
-  triggers: skill observability, usage telemetry, how do i track skill usage, skill
-    analytics, feedback collection, skill performance monitoring, trigger fidelity,
-    skill dashboard, skill measurement, skill adoption metrics
+  triggers: skill observability, usage telemetry, how do i track skill usage, skill analytics, feedback collection, skill performance monitoring, trigger fidelity, skill dashboard analytics
   archetypes:
   - tactical
   anti_triggers:
@@ -25,7 +27,15 @@ metadata:
   scope: orchestration
   output-format: code
   related-skills: coding-skill-quality-metrics, agent-skill-trigger-engineering, agent-skill-lifecycle-management
-------
+
+
+
+
+---
+
+
+
+
 # Skill Observability and Telemetry Framework
 
 This skill makes the model implement telemetry collection, trigger-to-action fidelity measurement, user feedback gathering, and analytics dashboarding for AI skills operating in production environments. It defines concrete patterns for tracking when skills load, how often triggers fire, whether loaded skills produce useful outputs, and how users rate their effectiveness — all while preserving privacy by design.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: crewai-agent-workflows
 description: Implements CrewAI multi-agent collaboration patterns including role-based agents, task delegation, tool sharing, sequential and hierarchical workflows, and autonomous agent coordination for production AI applications.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: langgraph-implementation, autogen-conversational-patterns, framework-utilization
+
+
+
+
 ---
+
+
+
+
 
 # CrewAI Agent Workflow Patterns
 

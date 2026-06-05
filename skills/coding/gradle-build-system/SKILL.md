@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gradle-build-system
 description: Implements Gradle build configurations (Kotlin DSL, version catalogs, multi-project builds, dependency locking, configuration cache) for Java and Kotlin projects.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: gradle, build.gradle.kts, gradle kotlin dsl, version catalog, dependency locking, configuration cache, gradle daemon, java plugin, multi project build, libs.versions.toml, declarative plugins block
+  triggers: gradle, build.gradle.kts, gradle kotlin dsl, version catalog, dependency locking, configuration cache, multi project build, libs.versions.toml
   archetypes: [tactical, generation]
   anti_triggers: [brainstorming, vague ideation, code golf, over-engineering]
   response_profile:
@@ -18,7 +22,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples, config]
   related-skills: maven-build-system
+
+
+
+
 ---
+
+
+
+
 
 # Gradle Build System
 

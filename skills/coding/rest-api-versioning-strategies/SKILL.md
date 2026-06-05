@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rest-api-versioning-strategies
 description: Implements API versioning strategies including URL path versioning, Accept header media type versioning, deprecation headers with Sunset and Deprecation, and backward-compatible contract evolution for REST APIs.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: API versioning, URL path versioning, Accept header versioning, API deprecation, Sunset header, Deprecation header, REST API backward compatibility, how do i version an API, API evolution strategy, breaking changes API
+  triggers: API versioning, URL path versioning, Accept header versioning, API deprecation, Sunset header, REST API backward compatibility, how do i version an API, breaking changes API
   role: implementation
   scope: implementation
   output-format: code
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: rest-api-resource-modeling, rest-api-pagination-filtering
+
+
+
+
 ---
+
+
+
+
 
 # API Versioning Strategist
 

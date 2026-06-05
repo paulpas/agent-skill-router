@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: liskov-substitution-principle
 description: Detects and repairs subtype contract violations where derived classes
   break caller expectations by weakening preconditions, strengthening postconditions,
@@ -6,10 +10,9 @@ description: Detects and repairs subtype contract violations where derived class
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: liskov substitution principle, LSP, subtype contract, precondition, postcondition,
-    invariant, is-a relationship, breaking subclass, type safety
+  triggers: liskov substitution principle, LSP, subtype contract, precondition, postcondition, invariant, is-a relationship, breaking subclass invariant
   archetypes:
   - tactical
   - generation
@@ -32,7 +35,15 @@ metadata:
   - examples
   related-skills: single-responsibility, open-closed-principle, interface-segregation-principle,
     dependency-inversion-principle
-------
+
+
+
+
+---
+
+
+
+
 # Liskov Substitution Principle (LSP)
 
 Enforces the Liskov Substitution Principle by detecting subtype contract violations where derived or specialized classes break caller expectations. Identifies preconditions that are weakened, postconditions that are strengthened, invariants that are broken, and side effects introduced at the subclass level — then repairs them through proper inheritance design, composition, or the Composition over Inheritance pattern.

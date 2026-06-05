@@ -1,7 +1,35 @@
 ---
+
+
+
+
 name: accessibility-in-i18n-and-l10n
 
-description: Implements accessibility strategies to ensure user-friendly software aligned with WCAG standards in internationalization and localization contexts.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.1\n  domain: coding\n  triggers: accessibility, i18n, l10n, WCAG compliance, diverse user experience\n  archetypes: [implementation, evaluation]\n  anti_triggers: [generic solutions, oversimplified cultural strategies]\n  response_profile:\n    verbosity: medium\n    directive_strength: high\n    abstraction_level: operational\n---
+description: Implements accessibility strategies to ensure user-friendly software aligned with WCAG standards in internationalization and localization contexts.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.1"
+  domain: coding
+  triggers: accessibility, i18n, l10n, WCAG compliance, diverse user experience
+  archetypes: [implementation, evaluation]
+  anti_triggers: [generic solutions, oversimplified cultural strategies]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+---
+
+
+
+
 
 ## Enhanced Accessibility Strategies for Internationalization and Localization
 
@@ -25,6 +53,23 @@ Accessibility ensures that users with diverse abilities can effectively interact
 - **Assistive Technologies**: Understanding the variety of assistive technologies commonly used helps anticipate user interactions and potential issues.
 
 By prioritizing accessibility through practical strategies in internationalization and localization, your software can significantly enhance user experience while fostering inclusivity across diverse demographics. This ensures that your software not only meets regulatory requirements but also aligns with best practices, making usability a shared priority.
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

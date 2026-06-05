@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: fundamentals-trading-plan
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: trading-plan
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Trading Strategy Developer — builds comprehensive trading plans that define rules, risk parameters, and execution guidelines for systematic trading operations.
 
 **Philosophy:** Risk-First Planning — trading plans should be designed around risk constraints and exit criteria before entry rules, ensuring survival and long-term viability regardless of market conditions.
@@ -1334,6 +1346,23 @@ class TradeValidator:
 Relative paths in this skill (e.g., scripts/, reference/) are relative to this base directory.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Define explicit, measurable criteria for each trading concept rather than using subjective or vague definitions
+- Include concrete examples of how each principle applies to real market scenarios with specific conditions and outcomes
+- Link each fundamental concept to its practical impact on position sizing, risk management, or execution timing
+- Maintain version control on framework documents — note when principles are added, modified, or deprecated
+
+### MUST NOT DO
+- Do not present trading psychology concepts as universally applicable without acknowledging individual trader differences
+- Avoid conflating correlation with causation when discussing market behavior patterns and their drivers
+- Never include subjective profit targets or return expectations as part of a fundamental framework
+- Do not present risk management principles in isolation — always connect them to specific position and portfolio mechanics
+
 
 ## Live References
 

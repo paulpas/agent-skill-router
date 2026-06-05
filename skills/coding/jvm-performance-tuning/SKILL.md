@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: jvm-performance-tuning
 description: Optimizes JVM runtime performance through garbage collector selection and tuning, memory layout configuration, JIT compilation flags, and allocation-aware coding patterns for Java 17+ applications.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: jvm tuning, garbage collection, GC tuning, zgc, shenandoah, g1gc, memory management, metaspace allocation, jit compilation, virtual threads, project loom, java performance optimization, container memory limits
+  triggers: jvm tuning, garbage collection, G1GC, zgc, shenandoah, memory management, jit compilation, virtual threads
   archetypes:
     - tactical
     - generation
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: jvm-diagnostics, framework-performance-tuning, async-programming
+
+
+
+
 ---
+
+
+
+
 
 # JVM Performance Tuner
 

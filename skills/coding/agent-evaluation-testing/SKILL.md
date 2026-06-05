@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: agent-evaluation-testing
 description: Builds evaluation harnesses for AI agents — LLM-as-judge scoring, tool-use accuracy validation, multi-turn conversation testing, and prompt injection detection in production-ready Python.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: coding-software-quality-assurance, coding-test-driven-development, agent-skill-testing-validation
+
+
+
+
 ---
+
+
+
+
 
 # Agent Evaluation & Testing Framework
 

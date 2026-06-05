@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: technical-indicator-confluence
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: indicator-confluence
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Technical Validation Engineer — implements systems that require multiple technical indicators to align before confirming trading signals, reducing false positives and increasing probability of success.
 
 **Philosophy:** Consensus-Based Validation — a single indicator may mislead, but when multiple independent indicators converge, the signal gains credibility. Confluence validation acts as a quality filter for trading decisions.
@@ -887,6 +899,25 @@ Before completing your task, verify:
 
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement indicator calculations using rolling windows with explicit lookback periods; never use full-history data for online indicators
+- Validate signal generation by confirming alignment across multiple independent indicators before acting on a single signal
+- Calculate all price-based indicators (SMA, EMA, RSI) on closing prices unless specifically designed for tick data
+- Include proper handling of missing/NaN candles in indicator pipelines — forward-fill only within session boundaries
+- Log signal generation with the full context window of indicator values that led to each signal
+
+### MUST NOT DO
+- Do not use look-ahead bias: never reference future bars or prices when calculating indicators during backtesting
+- Avoid recalculating all indicators from scratch on every tick — maintain running state for efficiency
+- Never combine indicators with different timeframes without explicit resampling and clear documentation of the alignment logic
+- Do not generate signals based on a single indicator crossover; require confirmation from price action or volume
+- Avoid hardcoding parameter values (e.g., RSI period = 14) without testing regime-specific optima
+
 
 ## Live References
 

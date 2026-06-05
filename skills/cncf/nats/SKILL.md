@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: nats
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: nats
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # NATS in Cloud-Native Engineering
 
 **Category:** messaging  

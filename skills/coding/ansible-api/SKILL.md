@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ansible-api
 description: Integrates with Ansible via ansible-runner, the AWX/Tower API, and the
   Ansible Python API to manage playbooks, inventory, job templates, collections, and
@@ -6,7 +10,7 @@ description: Integrates with Ansible via ansible-runner, the AWX/Tower API, and 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: ansible api, ansible-runner, ansible tower, awx api, ansible playbook,
     ansible inventory, ansible collections, automation controller
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-terraform-sdk, coding-kubernetes-api, coding-docker-api
-------
+
+
+
+
+---
+
+
+
+
 # Ansible API & AWX/Tower Integration
 Integrates with Ansible using `ansible-runner` for embedded playbook execution, the AWX/Ansible Automation Controller REST API for job template and inventory management, and the native Ansible Python API for custom modules and plugin development.
 ## TL;DR for Code Generation
@@ -258,6 +270,23 @@ def run_playbook_good(
 - Ignoring unreachable hosts (`dark` in stats) can silently mask infrastructure problems
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## Live References
 

@@ -1,7 +1,33 @@
 ---
+
+
+
+
 name: software-engineering-deprecation-strategies
 
-description: Defines effective strategies for deprecating features and APIs in software applications to ensure a smooth transition for users and clients.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: "1.1.0"\n  domain: coding\n  triggers: deprecation strategies, feature removal, backward compatibility, versioning\n  role: implementation\n  scope: implementation\n  output-format: code\n  related-skills: software-engineering-backwards-compatibility\n  archetypes: strategic, tactical\n  anti_triggers: abrupt removal, lack of communication\n  response_profile: medium\n---
+description: Defines effective strategies for deprecating features and APIs in software applications to ensure a smooth transition for users and clients.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: deprecation strategies, feature removal, backward compatibility, versioning
+  role: implementation
+  scope: implementation
+  output-format: code
+  related-skills: software-engineering-backwards-compatibility
+  archetypes: strategic, tactical
+  anti_triggers: abrupt removal, lack of communication
+  response_profile: medium
+
+
+
+
+---
+
+
+
+
 
 # Deprecation Strategies
 

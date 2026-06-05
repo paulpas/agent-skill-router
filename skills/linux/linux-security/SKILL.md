@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: linux-security
 description: Hardens Linux systems against common attack vectors with security baselines,
   access controls, and audit frameworks for cloud and on-prem environments.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: linux
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+
+
+
+
+---
+
+
+
+
 # Linux Security Hardening
 
 Security engineer hardening Linux systems against common attack vectors with security baselines, mandatory access controls, SSH hardening, file integrity monitoring, and audit frameworks for cloud and on-prem environments.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rest-api-security-patterns
 description: Implements REST API security patterns including OAuth 2.1 / OIDC authorization flows with PKCE, JWT access token vs opaque refresh token strategies, API key authentication, rate limiting headers, and CORS configuration for production APIs.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: OAuth 2.1, PKCE flow, JWT authentication API, API key security, rate limiting headers, CORS configuration, X-RateLimit-Limit, bearer token API, API security patterns, how do i secure a REST API, mTLS
+  triggers: OAuth 2.1, PKCE flow, JWT authentication API, API key security, rate limiting headers, bearer token API, how do i secure a REST API, mTLS
   role: implementation
   scope: implementation
   output-format: code
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: rest-api-error-handling, rest-api-resource-modeling
+
+
+
+
 ---
+
+
+
+
 
 # API Security Patterns Engineer
 

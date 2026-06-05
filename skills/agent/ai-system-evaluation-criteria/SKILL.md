@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-system-evaluation-criteria
 description: Evaluates AI agent systems against defined requirements using golden datasets, adversarial testing, hallucination metrics, latency benchmarks, and safety compliance checks.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: AI evaluation criteria, AI system evaluation, golden dataset testing, adversarial testing, hallucination metrics, latency benchmark, safety compliance check, AI acceptance testing, how do i evaluate an AI system, model evaluation framework, LLM evaluation
+  triggers: AI evaluation criteria, AI system evaluation, golden dataset testing, adversarial testing, hallucination metrics, safety compliance check, how do i evaluate an AI system
   archetypes:
     - diagnostic
     - enforcement
@@ -27,7 +31,15 @@ metadata:
     - examples
     - config
   related-skills: agent-requirements-engineering, agent-reliability-engineering, ai-dev-jobs-mcp
+
+
+
+
 ---
+
+
+
+
 
 # AI System Evaluation Criteria
 

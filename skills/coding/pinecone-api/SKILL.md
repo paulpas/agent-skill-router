@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: pinecone-api
 description: Integrates Pinecone vector database (serverless/pod indexes, upsert,
   query, hybrid search, inference, gRPC) using the pinecone Python SDK v9 for production
@@ -6,7 +10,7 @@ description: Integrates Pinecone vector database (serverless/pod indexes, upsert
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: pinecone, vector database, vector search, pinecone index, hybrid search,
     upsert vectors, how do i use pinecone, semantic search
@@ -32,7 +36,15 @@ metadata:
   - do-dont
   related-skills: coding-openai-api, coding-langchain, coding-llamaindex, coding-chroma,
     coding-weaviate-api
-------
+
+
+
+
+---
+
+
+
+
 # Pinecone API Integration
 
 Integrates Pinecone vector database using the `pinecone` Python SDK (v9.0+). When loaded, this skill makes the model implement Pinecone operations for creating and managing indexes, upserting and querying vectors, hybrid search, metadata filtering, and integrated inference.

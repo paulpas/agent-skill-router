@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-structures
 description: Implements and compares fundamental data structures (hash tables, balanced BSTs, tries, heaps, linked lists, graphs) with O(1) through O(n log n) complexity analysis for optimal algorithm selection.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: programming
-  triggers: data structures, hash table, balanced tree, AVL tree, red-black tree, trie, heap priority queue, linked list, graph traversal, binary search tree, b-tree, complexity analysis, time complexity, space complexity
+  triggers: data structures, hash table, balanced tree, AVL tree, trie, heap priority queue, linked list, graph traversal
   archetypes:
     - educational
     - tactical
@@ -26,7 +30,15 @@ metadata:
     - examples
     - diagrams
   related-skills: algorithms, graph-traversal, for-loop-iteration
+
+
+
+
 ---
+
+
+
+
 
 # Data Structures Reference
 

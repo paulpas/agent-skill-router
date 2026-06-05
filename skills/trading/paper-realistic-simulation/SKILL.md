@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: paper-realistic-simulation
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: realistic-simulation
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Trading System Simulator — implements comprehensive paper trading simulations that replicate live trading conditions including slippage, fees, partial fills, and market impact for accurate performance estimation.
 
 **Philosophy:** Live Trading Replication — paper trading must simulate real-world execution friction to provide accurate expectations of live trading performance; unrealistic simulations lead to overoptimistic performance projections.
@@ -973,6 +985,24 @@ Before completing your task, verify:
 
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement commission structures that reflect real broker fee schedules including per-share, per-contract, and regulatory fees
+- Model market impact for paper orders: simulate price movement caused by your order based on order book depth
+- Use the same data feeds and latency characteristics as live trading to ensure paper results are realistic
+- Track slippage separately from commissions and calculate both fill-level and execution-level slippage metrics
+- Validate paper trading P&L against theoretical expectations at regular intervals to detect simulation bugs
+
+### MUST NOT DO
+- Do not assume fills at the next available price without modeling order book dynamics or queue position
+- Avoid using perfect historical data for paper trading — add realistic noise and latency characteristics
+- Never use different data sources between backtesting, paper trading, and live execution without documenting the delta
+- Do not ignore dividend adjustments in equity paper trading — missed dividends create false P&L discrepancies
+
 
 ## Live References
 

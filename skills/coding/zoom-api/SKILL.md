@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: zoom-api
 description: Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users) using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination, and rate-limit handling.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: zoom, zoom api, zoom meetings, create zoom meeting, zoom sdk, zoom webinars, zoom recording, zoom-python
   archetypes:
@@ -28,7 +32,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-twilio-api, coding-slack-api, coding-sendgrid-api
-------
+
+
+
+
+---
+
+
+
+
 # Zoom API Integration (Meetings, Webinars, Recordings, Users)
 Integrates the Zoom API v2 — Meetings, Webinars, Recordings, Phone, and Users management — using the `zoom-python-client` SDK v0.2+ with Server-to-Server OAuth authentication. When loaded, this skill makes the model implement Zoom API operations with proper token management, pagination for list endpoints, rate-limit handling, and webhook event processing.
 ## TL;DR for Code Generation

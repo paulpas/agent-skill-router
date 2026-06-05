@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: architectural-patterns
 description: Provides a thorough overview of software architectural patterns, including layers, microservices, event-driven architectures, and more.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: coding-design-principles, coding-software-engineering-basics
+
+
+
+
 ---
+
+
+
+
 
 # Architectural Patterns Overview
 

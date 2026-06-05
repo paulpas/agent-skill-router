@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: sendgrid-template-management
 description: Implements features for creating, updating, and deleting email templates using the SendGrid API.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
 
+
+
+
+
 ---
+
+
+
+
 
 # SendGrid Template Management
 This skill implements functionality for managing email templates using the SendGrid API, allowing users to create, modify, and delete templates efficiently.

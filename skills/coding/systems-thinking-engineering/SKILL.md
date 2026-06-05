@@ -1,15 +1,19 @@
 ---
+
+
+
+
 name: systems-thinking-engineering
 description: Applies systems thinking to engineering problems—modeling stocks/flows, feedback loops, leverage points, and emergent behavior for holistic architecture design.
 license: MIT
 compatibility: opencode
 metadata:
-    archetypes: tactical, educational
-    anti_triggers: vague ideation, simple solutions, short-sightedness
-    response_profile:
-      verbosity: medium
-      directive_strength: high
-      abstraction_level: operational
+  archetypes: tactical, educational
+  anti_triggers: vague ideation, simple solutions, short-sightedness
+  response_profile:
+  verbosity: medium
+  directive_strength: high
+  abstraction_level: operational
   version: "1.0.0"
   domain: coding
   role: implementation
@@ -17,7 +21,15 @@ metadata:
   output-format: code
   triggers: systems thinking, feedback loops, emergent behavior, system architecture, stocks and flows, leverage points, system modeling, how do i design complex systems
   related-skills: code-philosophy, feature-research
+
+
+
+
 ---
+
+
+
+
 
 # Systems Thinking in Engineering
 
@@ -964,6 +976,23 @@ Systems thinking in engineering is about seeing the whole before optimizing part
 The core insight: **Most engineering problems aren't solved by optimizing individual components. They're solved by understanding and designing feedback loops.**
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

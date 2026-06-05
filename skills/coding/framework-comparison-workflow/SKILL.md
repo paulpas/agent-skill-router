@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-comparison-workflow
 description: Runs structured, code-level comparison workflows between competing frameworks through spike projects, side-by-side implementations, developer experience measurement, and ecosystem analysis to produce evidence-based selection recommendations.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework comparison, spike project, side by side framework, framework benchmark, developer experience evaluation, framework POC, proof of concept framework, framework code comparison, framework ecosystem analysis, compare frameworks hands on, framework spike test, tech stack comparison
+  triggers: framework comparison, spike project, framework benchmark, developer experience evaluation, framework POC, proof of concept framework, framework ecosystem analysis, tech stack comparison
   archetypes:
     - tactical
     - diagnostic
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-selection, framework-evaluation-criteria, framework-requirements, framework-adoption-strategy
+
+
+
+
 ---
+
+
+
+
 
 # Framework Comparison Workflow
 
