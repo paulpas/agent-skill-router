@@ -77,11 +77,34 @@ GITHUB_ENABLED=true
 GITHUB_TOKEN=
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Optional: Auto-Skill Generation
+# Optional: Auto-Skill Generation (Basic)
 # ─────────────────────────────────────────────────────────────────────────────
 
-AUTO_SKILL_ENABLED=true
-AUTO_SKILL_MODEL=your-model-name
+AUTO_SKILL_ENABLED=true           # Enable/disable auto-skill generation tool
+AUTO_SKILL_CONTRIBUTE=true        # Enable/disable contribution to git (creates PRs)
+AUTO_SKILL_MODEL=your-model-name  # LLM model used for skill generation
+AUTO_SKILL_CREATION_ENABLED=true  # Auto-create skills when no good match exists
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Optional: Auto-Skill Creation Advanced (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Minimum routing confidence threshold for auto-skill creation (default: 0.35).
+# When no skill matches above this confidence, the router may auto-create one.
+# Range: 0.0–1.0. Lower values trigger more frequent creation attempts.
+# AUTO_SKILL_CONFIDENCE_THRESHOLD=0.35
+
+# Maximum LLM retry attempts when skill generation fails (default: 3)
+# Applies to both manual and auto-skill generation. Range: 1–10.
+# AUTO_SKILL_MAX_RETRIES=3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Semantic Routing (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Enable/disable semantic skill selection (vector embeddings + BM25 scoring).
+# Set to false for deterministic BM25-only routing when embeddings are unavailable.
+SEMANTIC_SKILL_SELECTION=true
 ```
 
 ## Native Embedding Support
@@ -112,6 +135,26 @@ When the configured embedding API is unavailable (e.g., network failure, API key
 - Configurable dimensions: Default 1536, configurable via environment
 
 **Recommendation:** For production use, ensure your embedding provider is accessible to get semantic similarity-based embeddings.
+
+### Embedding Emulation Mode (`emulation`)
+
+When running self-hosted LLMs without a dedicated embedding endpoint, the Skill Router supports **embedding emulation** — using any OpenAI-compatible LLM to generate embedding vectors via a prompt template:
+
+```bash
+# Use your vLLM or LiteLLM endpoint for embeddings instead of a separate model
+EMBEDDING_PROVIDER=emulation
+OPENAI_BASE_URL=http://localhost:8000/v1   # Your self-hosted LLM endpoint
+OPENAI_API_KEY=dummy
+EMBEDDING_DIMENSIONS=64                     # Default (8–3072 supported)
+```
+
+This is particularly useful for fully local deployments where you run one model for both LLM and embedding generation. The emulation prompt template asks the LLM to output a JSON array of floats, which are parsed as the embedding vector.
+
+**Trade-offs of emulation mode:**
+- ✅ No separate embedding model needed
+- ✅ Works with any OpenAI-compatible endpoint (vLLM, Ollama, LiteLLM)
+- ❌ Slower than native embedding APIs (LLM call vs. dedicated embedding request)
+- ❌ Lower dimensional quality (64-dim default vs. 1536-dim for specialized models)
 
 ### Configuration Priority
 
@@ -145,21 +188,27 @@ vLLM is an OpenAI-compatible server, so configure it like this:
 # vLLM Configuration
 OPENAI_BASE_URL=http://localhost:8000/v1
 OPENAI_API_KEY=dummy
-LLM_MODEL=meta-llama/Meta-Llama-3-8B-Instruct
+
+# LLM model (example — use any compatible model)
+LLM_MODEL=meta-llama/Meta-Llama-3.1-8B-Instruct
 
 # Embeddings (OpenAI-compatible, 1536-dim)
 EMBEDDING_MODEL=text-embedding-3-small
+# or use emulation mode for fully local embeddings:
+# EMBEDDING_PROVIDER=emulation
 ```
 
 ### LiteLLM Configuration
 
-LiteLLM provides a unified API for multiple providers:
+LiteLLM provides a unified API for multiple providers, routing to different backends based on model name:
 
 ```bash
 # LiteLLM Configuration
 OPENAI_BASE_URL=https://api.litellm.com/v1
 OPENAI_API_KEY=your-litellm-key
-LLM_MODEL=claude-4-sonnet
+
+# Route LLM ranking to Claude
+LLM_MODEL=claude-3-5-sonnet
 
 # Embeddings (use native if available)
 # For OpenAI embeddings: text-embedding-3-small (1536-dim)
@@ -220,6 +269,44 @@ EMBEDDING_MODEL=text-embedding-3-small
 3. **Cache embeddings** for repeated text queries
 4. **Use local embeddings** when working with sensitive data
 
+## Dynamic Trigger→Domain Index
+
+The Skill Router uses a **dynamic trigger→domain index** that replaces the previous hardcoded `KEYWORD_MAP`. This index is built automatically from every loaded skill's `metadata.triggers` field at startup, enabling:
+
+- **Zero-code new domain discovery** — adding a new skill with triggers automatically registers it for routing
+- **Live updates on reload** — `POST /reload` rebuilds the index from the current skill set
+- **Intent decomposition** — the `IntentDecomposer` queries this live index to infer query domains during routing
+
+### How It Works
+
+1. At initialization, the router iterates every loaded skill's `metadata.triggers` and `metadata.domain`
+2. Triggers are normalized (lowercased, split on commas/spaces) into a lookup map
+3. During routing, user queries are tokenized and matched against this index to infer relevant domains
+4. Domain inference feeds into the hybrid scoring pipeline alongside vector similarity and BM25
+
+### LiteLLM/vLLM Relevance
+
+For self-hosted deployments using LiteLLM or vLLM, the dynamic trigger→domain index operates entirely in-memory and does not require any LLM calls to build or query:
+
+- **Build time**: O(n) where n = total number of loaded skills
+- **Query time**: O(1) per trigger term lookup
+- **Memory footprint**: Typically <1 MB for 500+ skills
+
+This means self-hosted deployments get the same automatic domain discovery as cloud-hosted ones, with no additional API costs or latency overhead.
+
+### Tuning with LiteLLM Routing
+
+When using LiteLLM to route between multiple backends (e.g., vLLM for embeddings, Anthropic for ranking), the trigger→domain index remains agnostic to your backend configuration:
+
+```bash
+# LiteLLM routes both embedding and LLM calls; domain index works independently
+EMBEDDING_PROVIDER=emulation     # Use emulation via LiteLLM endpoint
+OPENAI_BASE_URL=https://api.litellm.com/v1
+LLM_MODEL=claude-3-5-sonnet      # LiteLLM routes to Anthropic for LLM ranking
+```
+
+The dynamic index and hybrid scoring pipeline are independent of which backend handles embedding generation or LLM ranking.
+
 ## Security Considerations
 
 ### API Key Handling
@@ -278,7 +365,19 @@ curl http://localhost:8000/v1/models
 
 ### Error: "Embedding model not found"
 
-**Solution**: Verify your embedding model is available at your endpoint or use a supported OpenAI model like `text-embedding-3-small`.
+**Solution**: Verify your embedding model is available at your endpoint. Options:
+- Use a known supported model: `text-embedding-3-small` (OpenAI), or a compatible local model
+- Use emulation mode instead: `EMBEDDING_PROVIDER=emulation` (uses any LLM via prompt template)
+- Check available models: `curl http://localhost:8000/v1/models`
+
+### Semantic Routing with Self-Hosted Models
+
+**Problem**: Inconsistent results when using local LLMs for embedding emulation.
+
+**Solution**:
+- Ensure `EMBEDDING_DIMENSIONS` matches your model's actual output size (default: 64 for emulation)
+- Try `SEMANTIC_SKILL_SELECTION=false` for deterministic BM25-only routing if emulation quality is insufficient
+- Use `DEBUG_ROUTING=true` to inspect which signals contribute to each skill score
 
 ## Testing Your Configuration
 
@@ -290,7 +389,17 @@ docker run --rm \
   -e OPENAI_BASE_URL="http://host.docker.internal:8000/v1" \
   -e OPENAI_API_KEY="dummy" \
   -e LLM_MODEL="llama3:8b" \
+  -e EMBEDDING_PROVIDER=openai \
   -e EMBEDDING_MODEL="text-embedding-3-small" \
+  -p 3000:3000 \
+  skill-router:latest
+
+# Test with fully local (no external API keys) using emulation mode
+docker run --rm \
+  -e OPENAI_BASE_URL="http://host.docker.internal:8000/v1" \
+  -e OPENAI_API_KEY="dummy" \
+  -e LLM_MODEL="llama3:8b" \
+  -e EMBEDDING_PROVIDER=emulation \
   -p 3000:3000 \
   skill-router:latest
 ```

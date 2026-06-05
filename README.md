@@ -1,6 +1,5 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-
 ```
 You → "review this Python code for security issues"
       ↓
@@ -10,18 +9,43 @@ Full expert skills injected into context — AI answers as expert reviewer
 ```
 
 **Key Features:**
-- 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + archetype alignment + MMR diversification)
-- 🗜️ **SkillCompressor** — reduce token overhead by 28-65%
+- 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,225 valid skills across 24 domains with auto-discovered routing
+- 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
 - 🤖 **LLM-Powered Generation** — generate new skills programmatically using local LLMs
 - 🛠️ **Quality Fixer** — detect and fix placeholder code in existing skills
+- 🆕 **Auto-Skill Creation** — create skills on demand via API with token tracking
+
+---
+
+## Table of Contents
+
+- [Quick Start](#quick-start)
+- [How It Works](#how-it-works)
+- [Advanced Routing](#advanced-routing)
+  - [Dynamic Trigger→Domain Index](#dynamic-triggerdomain-index)
+  - [Hybrid Scoring Pipeline](#hybrid-scoring-pipeline)
+  - [SEMANTIC_SKILL_SELECTION](#semantic_skill_selection)
+- [API Reference](#api-reference)
+  - [Core Endpoints](#core-endpoints)
+  - [Auto-Skill Creation](#auto-skill-creation)
+    - [`POST /skill/create`](#post-skillcreate)
+    - [`GET /skills/created`](#get-skillscreated)
+- [Skill Validation](#skill-validation)
+  - [Pre-commit Hook](#pre-commit-hook)
+- [Script Reference](#script-reference)
+- [Environment Variables](#environment-variables)
+- [Container Management](#container-management)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
 
 ---
 
 ## Quick Start
 
-### Installation (Interactive Mode - Recommended)
+### Installation (Interactive Mode — Recommended)
 
 ```bash
 git clone https://github.com/paulpas/agent-skill-router
@@ -47,121 +71,145 @@ The skill router is an **MCP (Model Context Protocol) server** that routes tasks
 2. **Archetype & Trigger Scoring** — Query intent alignment and keyword matching boost relevance
 3. **MMR Diversification** — Maximum Marginal Relevance ensures diverse, non-redundant results
 4. **LLM Ranking (optional)** — Configurable LLM re-ranks top candidates for final selection
-5. **Caching & Compression** — Multi-layer cache + SkillCompressor reduces token overhead by 28-65%
+5. **Caching & Compression** — Multi-layer cache + SkillCompressor reduces token overhead by 28–65%
 
-**Result:** Only the top 1-3 most relevant skills are loaded per request, saving tokens and improving response quality.
-
----
-
-## Documentation
-
-| File | Purpose |
-|------|---------|
-| **[Routing System Docs](./agent-skill-routing-system/README.md)** | Installation, architecture, provider configuration, and request flow |
-| **[API Reference](./agent-skill-routing-system/skill-router-api.md)** | Complete API documentation with curl examples for all endpoints |
-| **[SKILL_FORMAT_SPEC.md](./SKILL_FORMAT_SPEC.md)** | Formal skill file specification for creating new skills |
+**Result:** Only the top 1–3 most relevant skills are loaded per request, saving tokens and improving response quality.
 
 ---
 
-## Skill Creation
+## Advanced Routing
 
-**New to skill creation?** Start here:
+### Dynamic Trigger→Domain Index
 
-**[AGENTS.md](./AGENTS.md)** — Complete guide for creating new skills with:
-- Frontmatter requirements
-- Content structure templates
-- Trigger engineering best practices
-- Quality checklist and common pitfalls
+The routing system uses a **dynamic trigger→domain index** that replaces the previous hardcoded `KEYWORD_MAP` in `IntentDecomposer.ts`. This index is built from skill metadata (triggers, archetypes, anti-triggers) and updated on every reload, enabling:
 
----
+- **Auto-discovered skill domains** — new domains are picked up automatically without code changes
+- **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
+- **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-## Common Questions
+**Domains:** 24 active domains with 1,225 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
-**Have questions?** See the **[AGENTS.md](./AGENTS.md)** for skill documentation guidelines.
+### Hybrid Scoring Pipeline
 
----
+The final routing score combines five independent signals:
 
-## Domains
+| Signal | Weight | Purpose |
+|--------|--------|---------|
+| Vector similarity (semantic) | 50% | Finds semantically related skills via embeddings |
+| BM25 (exact term match) | 20% | Handles exact technical terms, acronyms, and short queries |
+| Trigger match | 15% | Matches query words against configured skill triggers/tags |
+| Archetype match | 10% | Aligns query intent type with skill purpose |
+| Historical success | 5% | Adaptive learning from past routing effectiveness |
 
-| Domain | Count | Focus |
-|--------|-------|-------|
-| Agent | 289 | AI orchestration, routing, task decomposition |
-| Ai | 3 |  |
-| Architecture | 4 |  |
-| Cloud | 3 |  |
-| CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
-| Coding | 578 | Software patterns, security, testing, data science |
-| Commerce | 1 |  |
-| Communications | 3 |  |
-| Data And Persistence | 1 |  |
-| Devops | 6 |  |
-| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
-| Go | 13 | Go idioms, concurrency patterns, error handling |
-| Java | 1 |  |
-| Kotlin | 1 |  |
-| Linux | 21 | System administration, kernel tuning, security, networking |
-| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
-| Networking | 1 |  |
-| Payments | 5 |  |
-| Programming | 7 | Algorithms, frameworks, language references |
-| Secrets Management | 2 |  |
-| Security | 5 |  |
-| Software | 3 |  |
-| Trading | 93 | Execution, risk management, ML models |
-| Writing | 4 | Technical writing, style guidance |
-<<<<<<< HEAD
-| Coding | 512 | Software patterns, security, testing, data science |
-=======
-| Coding | 503 | Software patterns, security, testing, data science |
->>>>>>> 72e27e253dcb166900ac2882391007286a18b4e0
-| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
-| Go | 12 | Go idioms, concurrency patterns, error handling |
-| Java | 1 |  |
-| Kotlin | 1 |  |
-| Linux | 18 | System administration, kernel tuning, security, networking |
-| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
-| Programming | 7 | Algorithms, frameworks, language references |
-| Trading | 90 | Execution, risk management, ML models |
-| Writing | 4 | Technical writing, style guidance |
-<<<<<<< HEAD
-| Coding | 496 | Software patterns, security, testing, data science |
-=======
-| Coding | 496 | Software patterns, security, testing, data science |
->>>>>>> c19c83151 (feat: add coding/solid-principles skill)
-| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
-| Go | 12 | Go idioms, concurrency patterns, error handling |
-| Java | 1 |  |
-| Kotlin | 1 |  |
-| Linux | 17 | System administration, kernel tuning, security, networking |
-| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
-| Programming | 7 | Algorithms, frameworks, language references |
-| Trading | 90 | Execution, risk management, ML models |
-| Writing | 4 | Technical writing, style guidance |
-<<<<<<< HEAD
-| CNCF | 174 | Kubernetes, cloud-native, DevOps, service mesh |
-=======
-| CNCF | 176 | Kubernetes, cloud-native, DevOps, service mesh |
->>>>>>> 76ea93470 (feat: add new Jakarta skills - jakarta-security, jakarta-testing)
-| Coding | 494 | Software patterns, security, testing, data science |
-| Electrical Engineering | 2 | Hardware design, embedded systems, circuit analysis |
-| Go | 12 | Go idioms, concurrency patterns, error handling |
-| Java | 1 |  |
-| Kotlin | 1 |  |
-| Linux | 17 | System administration, kernel tuning, security, networking |
-| Maker | 3 | DIY projects, IoT, home automation, 3D printing |
-| Programming | 7 | Algorithms, frameworks, language references |
-| Trading | 90 | Execution, risk management, ML models |
-| Writing | 4 | Technical writing, style guidance |
+### SEMANTIC_SKILL_SELECTION
+
+The `SEMANTIC_SKILL_SELECTION` environment variable (default: `true`) enables or disables semantic skill selection entirely. When set to `false`, the router falls back to trigger-only matching without vector embeddings, useful for environments where embedding providers are unavailable.
 
 ---
 
-## Scripts
+## API Reference
 
-The repository includes several scripts for skill management, quality improvement, and container operations.
+### Core Endpoints
 
-### Skill Generation
+| Method | Endpoint | Purpose |
+|--------|----------|---------|
+| `GET` | `/health` | Health check |
+| `GET` | `/stats` | Current stats (skill counts, categories) |
+| `GET` | `/skills` | List all loaded skills |
+| `POST` | `/route` | Route a task to the best matching skill(s) |
+| `GET` | `/skill/:name` | Get content of a specific skill by name |
+| `POST` | `/reload` | Force reload skills from source |
+| `GET` | `/access-log` | Last 100 routing decisions |
 
-**`scripts/skill-generate.sh`** — Generate new skills programmatically using the Skill Router API + local LLM.
+### Auto-Skill Creation
+
+The router can auto-create new skills when no existing skill matches the query well enough. This feature generates a complete SKILL.md file with proper frontmatter, content, and triggers — then tracks every creation event.
+
+#### `POST /skill/create`
+
+Creates a new skill when no good match exists during routing. The request body includes:
+
+```json
+{
+  "task": "Describe the request",
+  "domain": "cncf",          // optional; auto-inferred if omitted
+  "name": "my-skill-name",   // optional; auto-inferred if omitted
+  "tokenLimit": 8000         // optional; max output tokens for generation
+}
+```
+
+**Response:** Returns the generated skill content, file path, metadata (domain, topic, description, triggers), token usage summary, and git status.
+
+#### `GET /skills/created`
+
+Lists all auto-created skills persisted by the **SkillCreationTracker** module. Each entry includes:
+
+- Unique ID (`uuid`)
+- Skill domain/topic path
+- Description and trigger keywords
+- Filesystem path to SKILL.md
+- Timestamp of creation
+- Token usage, generation attempts, and validation attempts
+- Git commit/push status
+
+This endpoint is powered by `SkillCreationTracker` which persists a structured JSON index at `data/skill-creation-index.json`. The tracker records every auto-created skill with full provenance including token cost, retry count, and git operations.
+
+---
+
+## Skill Validation
+
+Skills go through a **three-phase validation pipeline** before they are committed to the repository:
+
+### Phase 1 — Structural Checks
+
+`scripts/validate_skill_yaml.py` performs 8 structural checks on SKILL.md frontmatter:
+- Valid YAML syntax
+- Required fields present (`name`, `description`, `metadata.triggers`)
+- `name` matches directory name (kebab-case)
+- Description is under 200 characters
+- Triggers count is between 3 and 8
+
+### Phase 2 — Stub Detection
+
+`scripts/validate_skill.sh` runs static checks:
+- No stub sentinel string (`Implementing this specific pattern or feature`)
+- File size ≥ 3,000 bytes
+- Implementation skills have ≥ 2 real code blocks (≥ 4 fence markers)
+- Core Workflow is not a generic template ("Identify → Apply → Validate")
+- Advanced routing metadata is present: `archetypes`, `anti_triggers`, `response_profile`
+
+### Phase 3 — LLM Quality Check (optional)
+
+```bash
+./scripts/validate_skill.sh --llm skills/<domain>/<name>/SKILL.md
+```
+
+Uses OpenCode to evaluate content quality: real code examples, specific commands, domain-specific constraints. Passes or fails with a reason.
+
+### Pre-commit Hook
+
+The repository includes a pre-commit hook (`.husky/pre-commit`) that runs lint-staged and Prettier on all staged files. For skill-specific validation during commits, use the `SKIP_SKILL_VALIDATE=1` environment variable to bypass checks when necessary:
+
+```bash
+SKIP_SKILL_VALIDATE=1 git commit -m "temp: skip validation"
+```
+
+**Note:** The pre-commit hook blocks commits containing SKILL.md files that fail validation. Always fix validation errors before committing — stub content corrupts the router index and degrades AI performance for all users.
+
+---
+
+## Script Reference
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/skill-generate.sh` | Generate new skills programmatically using the Skill Router API + local LLM |
+| `scripts/skill-fixer.sh` | LLM-powered quality fixer that detects and repairs placeholder code in SKILL.md files |
+| `scripts/fix-agent-skills.sh` | Wrapper around skill-fixer for agent-domain skills |
+| `scripts/fix-coding-ds-skills.sh` | Wrapper around skill-fixer for data science coding skills |
+| `scripts/validate_skill.sh` | Three-phase validator (structural + stub detection + LLM quality) |
+| `scripts/skill-generate.sh --domain-list` | List all domains and their skill counts |
+
+### Generating Skills
 
 ```bash
 # Generate a skill (auto-infer domain and name)
@@ -171,133 +219,45 @@ The repository includes several scripts for skill management, quality improvemen
 ./scripts/skill-generate.sh "Add a Go concurrency pattern for rate limiting" \
     -d go -n rate-limiting
 
-# Generate and save locally without pushing
+# Generate locally only, do not push
 ./scripts/skill-generate.sh "Create a trading skill about VWAP strategies" \
     --no-push
-
-# List all domains and their skill counts
-./scripts/skill-generate.sh --domain-list
 ```
 
-**Options:**
-| Flag | Description |
-|------|-------------|
-| `-d, --domain DOMAIN` | Domain: agent, cncf, coding, go, linux, trading, programming, writing, or a new domain |
-| `-n, --name NAME` | Skill name in kebab-case (auto-inferred from task if omitted) |
-| `-t, --tags TAG1,TAG2,...` | Comma-separated tags |
-| `--no-push` | Save locally only, do not commit/push to git |
-| `--domain-list` | List all domains and their skill counts |
-| `--help` | Show help message |
-
-**How it works:**
-1. Queries the Skill Router API (`http://localhost:3000/route`) for relevant existing skills
-2. Fetches the SKILL_FORMAT_SPEC.md for format compliance
-3. Sends a combined prompt to the local LLM (llama.cpp at `http://localhost:8080`) with format spec + relevant skill context
-4. Validates the generated skill (YAML frontmatter, name, description, no placeholder code, minimum 150 lines)
-5. Saves the skill to `skills/<domain>/<name>/SKILL.md`
-6. Creates a git branch, commits, and pushes (if `AUTO_SKILL_CONTRIBUTE=true` in `install-skill-router.conf`)
-
-### Skill Quality Fixer
-
-**`scripts/skill-fixer.sh`** — LLM-powered skill quality fixer that detects and repairs placeholder code in SKILL.md files.
+### Fixing Skills
 
 ```bash
-# Fix placeholder code in data science skills (default)
-./scripts/skill-fixer.sh
-
-# Fix all agent skills
-./scripts/skill-fixer.sh "skills/agent/*/SKILL.md"
+# Fix placeholder code in all agent skills
+./scripts/fix-agent-skills.sh
 
 # Preview fixes without modifying files
 ./scripts/skill-fixer.sh --dry-run
 
 # Only check for issues, do not fix
 ./scripts/skill-fixer.sh --validate-only
-
-# Increase retry attempts
-./scripts/skill-fixer.sh --max-retries 3
 ```
-
-**Detects and fixes:**
-- `pass` as sole body in Python code blocks
-- `return {}` placeholders
-- `# Example pattern for X` comment placeholders
-- Empty method bodies
-- Generic `select_skill` / `execute_with_fallback` boilerplate in agent skills
-- Missing YAML frontmatter or H1 titles
-
-**Domain-specific prompts:**
-- `coding/ds-*` → Replaces placeholders with real ML/science implementations (pandas, numpy, scikit-learn)
-- `agent/*` → Removes generic orchestration boilerplate, replaces with domain-specific code
-
-### Domain-Specific Fixer Wrappers
-
-**`scripts/fix-coding-ds-skills.sh`** — Runs `skill-fixer.sh` against all `skills/coding/ds-*/SKILL.md` files with a data science-optimized prompt.
-
-**`scripts/fix-agent-skills.sh`** — Runs `skill-fixer.sh` against all `skills/agent/*/SKILL.md` files with a prompt optimized for removing generic orchestration boilerplate.
-
-### Container Management
-
-**`scripts/start-skill-router.sh`** — Starts the Skill Router Docker container with proper networking and environment variables.
-
-```bash
-# Start the container
-export OPENAI_API_KEY=sk-your-key-here
-./scripts/start-skill-router.sh
-```
-
-**What it does:**
-- Checks if container is already running (exits gracefully)
-- Starts existing stopped container or creates a fresh one
-- Configures `--add-host host.docker.internal:host-gateway` for LLM reachability from inside the container
-- Sets all required environment variables (LLM provider, embedding provider, model names, etc.)
-- Mounts `skills/` directory as read-only
-- Sets `--restart unless-stopped` for automatic recovery
 
 ---
 
-## Container Troubleshooting
+## Environment Variables
 
-### LLM Reachability
+**Total: 82 environment variables** across 14 categories. See [docs/config-reference.md](./docs/config-reference.md) for the complete reference table with defaults and descriptions.
 
-The Skill Router container needs to reach the local LLM server (llama.cpp) running on your host machine. The container uses `--add-host host.docker.internal:host-gateway` to resolve the host machine from within the container.
+Key configuration highlights:
 
-**Common error:** `Connection refused` when connecting to `http://host.docker.internal:8080`
+| Category | Notable Variables |
+|----------|------------------|
+| **LLM Provider** | `LLM_PROVIDER`, `LLM_MODEL`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY` |
+| **Embeddings** | `EMBEDDING_PROVIDER`, `EMBEDDING_MODEL`, `EMBEDDING_DIMENSIONS` |
+| **Advanced Routing** | `SEMANTIC_SKILL_SELECTION`, `LLM_RANKING_ENABLED`, `RETRIEVAL_*_WEIGHT` |
+| **Auto-Skill Creation** | `AUTO_SKILL_ENABLED`, `AUTO_SKILL_CONTRIBUTE`, `AUTO_SKILL_MODEL` |
+| **Skill Compression** | `SKILL_COMPRESSION_ENABLED`, `COMPRESSION_CACHE_SIZE_MB`, `COMPRESSION_LEVEL` |
+| **Link Following** | `LINK_FOLLOWING_ENABLED`, `MAX_LINK_DEPTH`, `MAX_EXTERNAL_SIZE_KB` |
+| **Skill Validation** | `SKIP_SKILL_VALIDATE` (bypass pre-commit hook), `SKILL_VALIDATE_PYTHON_SCRIPT` |
 
-**Fix:**
-```bash
-# Ensure llama.cpp server is running on port 8080
-/home/paulpas/llama.cpp/build/bin/llama-server --model <model-path> --port 8080
+---
 
-# Restart the container
-docker restart skill-router
-```
-
-### API Key Configuration
-
-**Required:** `OPENAI_API_KEY` must be set in your environment for embeddings.
-
-```bash
-# Check if it's set
-echo $OPENAI_API_KEY
-
-# If not, set it (add to ~/.bashrc or ~/.zshrc for persistence)
-export OPENAI_API_KEY=sk-your-openai-api-key-here
-```
-
-### Auto-Skill Contribution
-
-The `install-skill-router.conf` file controls whether auto-generated skills are pushed to git:
-
-```bash
-# In install-skill-router.conf
-AUTO_SKILL_CONTRIBUTE=true   # Skills are committed and pushed
-AUTO_SKILL_CONTRIBUTE=false  # Skills are generated locally only
-```
-
-When `AUTO_SKILL_CONTRIBUTE=false`, generated skills are saved to `skills/<domain>/<name>/SKILL.md` but not pushed to the remote repository.
-
-### Container Status
+## Container Management
 
 ```bash
 # Check container status
@@ -313,6 +273,37 @@ docker restart skill-router
 docker stop skill-router
 ```
 
+The container starts with `./scripts/start-skill-router.sh`, which:
+- Configures `--add-host host.docker.internal:host-gateway` for LLM reachability
+- Mounts `skills/` directory as read-only
+- Sets `--restart unless-stopped` for automatic recovery
+
+---
+
+## Troubleshooting
+
+### LLM Reachability
+
+The Skill Router container needs to reach the local LLM server (llama.cpp) running on your host machine. The container uses `--add-host host.docker.internal:host-gateway` to resolve the host from within the container.
+
+**Common error:** `Connection refused` when connecting to `http://host.docker.internal:8080`
+
+```bash
+# Ensure llama.cpp server is running on port 8080
+/home/paulpas/llama.cpp/build/bin/llama-server --model <model-path> --port 8080
+
+# Restart the container
+docker restart skill-router
+```
+
+### Skill Validation Failures
+
+If a pre-commit hook blocks your commit due to skill validation:
+
+1. Run the validator manually to see errors: `./scripts/validate_skill.sh skills/<domain>/<name>/SKILL.md`
+2. Fix the issues (stub content, missing frontmatter fields, generic triggers)
+3. If you must bypass for an emergency: `SKIP_SKILL_VALIDATE=1 git commit ...`
+
 ---
 
 ## License
@@ -322,21 +313,20 @@ MIT — All skills are freely available and redistributable.
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
 > **Last updated:** 2026-06-04 19:19:35 UTC  
-> **Total skills:** 1225  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1225 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Total skills:** 1,225 valid skills across 24 domains  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1160 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1160 | Ranking penalty for conflicting query terms |
-| Response Profile | 1152 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1,160 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1,160 | Ranking penalty for conflicting query terms |
+| Response Profile | 1,152 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
-
-### Agent (289 skills)
+### Agent (290 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -374,6 +364,16 @@ MIT — All skills are freely available and redistributable.
 | [andruia-skill-smith](skills/agent/andruia-skill-smith/SKILL.md) | Implements intelligent andruia skill smith with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | andruia-skill-smith, andruia skill smith, how do i andruia-skill-smith, orchestrate andruia-skill-smith, automate andruia-skill-smith, agent andruia-skill-smith [orchestration, strategic] |
 | [antigravity-skill-orchestrator](skills/agent/antigravity-skill-orchestrator/SKILL.md) | Implements intelligent antigravity skill orchestrator with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | antigravity-skill-orchestrator, antigravity skill orchestrator, how do i antigravity-skill-orchestrator, orchestrate antigravity-skill-orchestrator, automate antigravity-skill-orchestrator, agent antigravity-skill-orchestrator [orchestration, strategic] |
 | [antigravity-workflows](skills/agent/antigravity-workflows/SKILL.md) | Implements intelligent antigravity workflows with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | antigravity-workflows, antigravity workflows, how do i antigravity-workflows, orchestrate antigravity-workflows, automate antigravity-workflows, agent antigravity-workflows [orchestration, strategic] |
+| [api-documentation](skills/agent/api-documentation/SKILL.md) | Implements intelligent api documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | api-documentation, api documentation, how do i api-documentation, orchestrate api-documentation, automate api-documentation, agent api-documentation [orchestration, strategic] |
+| [api-security-testing](skills/agent/api-security-testing/SKILL.md) | Implements intelligent api security testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | api-security-testing, api security testing, how do i api-security-testing, orchestrate api-security-testing, automate api-security-testing, agent api-security-testing, unit tests, vulnerability scanning [orchestration, strategic] |
+| [apify-actor-development](skills/agent/apify-actor-development/SKILL.md) | Implements intelligent apify actor development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-actor-development, apify actor development, how do i apify-actor-development, orchestrate apify-actor-development, automate apify-actor-development, agent apify-actor-development [orchestration, strategic] |
+| [apify-actorization](skills/agent/apify-actorization/SKILL.md) | Implements intelligent apify actorization with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-actorization, apify actorization, how do i apify-actorization, orchestrate apify-actorization, automate apify-actorization, agent apify-actorization [orchestration, strategic] |
+| [apify-audience-analysis](skills/agent/apify-audience-analysis/SKILL.md) | Implements intelligent apify audience analysis with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-audience-analysis, apify audience analysis, how do i apify-audience-analysis, orchestrate apify-audience-analysis, automate apify-audience-analysis, agent apify-audience-analysis [orchestration, strategic] |
+| [apify-brand-reputation-monitoring](skills/agent/apify-brand-reputation-monitoring/SKILL.md) | Implements intelligent apify brand reputation monitoring with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-brand-reputation-monitoring, apify brand reputation monitoring, how do i apify-brand-reputation-monitoring, orchestrate apify-brand-reputation-monitoring, automate apify-brand-reputation-monitoring, agent apify-brand-reputation-monitoring [orchestration, strategic] |
+| [apify-competitor-intelligence](skills/agent/apify-competitor-intelligence/SKILL.md) | Implements intelligent apify competitor intelligence with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-competitor-intelligence, apify competitor intelligence, how do i apify-competitor-intelligence, orchestrate apify-competitor-intelligence, automate apify-competitor-intelligence, agent apify-competitor-intelligence [orchestration, strategic] |
+| [apify-content-analytics](skills/agent/apify-content-analytics/SKILL.md) | Implements intelligent apify content analytics with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-content-analytics, apify content analytics, how do i apify-content-analytics, orchestrate apify-content-analytics, automate apify-content-analytics, agent apify-content-analytics [orchestration, strategic] |
+
+(Showing lines 368-390 of 4147. Use offset=391 to continue.)| [antigravity-workflows](skills/agent/antigravity-workflows/SKILL.md) | Implements intelligent antigravity workflows with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | antigravity-workflows, antigravity workflows, how do i antigravity-workflows, orchestrate antigravity-workflows, automate antigravity-workflows, agent antigravity-workflows [orchestration, strategic] |
 | [api-documentation](skills/agent/api-documentation/SKILL.md) | Implements intelligent api documentation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | api-documentation, api documentation, how do i api-documentation, orchestrate api-documentation, automate api-documentation, agent api-documentation [orchestration, strategic] |
 | [api-security-testing](skills/agent/api-security-testing/SKILL.md) | Implements intelligent api security testing with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | api-security-testing, api security testing, how do i api-security-testing, orchestrate api-security-testing, automate api-security-testing, agent api-security-testing, unit tests, vulnerability scanning [orchestration, strategic] |
 | [apify-actor-development](skills/agent/apify-actor-development/SKILL.md) | Implements intelligent apify actor development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | apify-actor-development, apify actor development, how do i apify-actor-development, orchestrate apify-actor-development, automate apify-actor-development, agent apify-actor-development [orchestration, strategic] |

@@ -117,7 +117,7 @@ SSH_KNOWN_HOSTS=
 # Auto-Skill Generation (Optional)
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Enable/disable automatic skill generation
+# Enable/disable automatic skill generation tool registration
 AUTO_SKILL_ENABLED=true
 
 # Enable/disable contribution to git (creates pull requests)
@@ -125,6 +125,17 @@ AUTO_SKILL_CONTRIBUTE=true
 
 # LLM model for skill generation
 AUTO_SKILL_MODEL=gpt-4o-mini
+
+# Auto-create skills when no good routing match exists (>confidence threshold)
+AUTO_SKILL_CREATION_ENABLED=true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Semantic Routing (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Enable/disable semantic skill selection (vector embeddings + BM25 scoring).
+# Set to false for deterministic BM25-only routing when embeddings are unavailable.
+SEMANTIC_SKILL_SELECTION=true
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Link Following Configuration (Optional)
@@ -200,6 +211,11 @@ SEMANTIC_SIMILARITY_THRESHOLD=0.3
 # Advanced Routing Configuration (Optional)
 # ─────────────────────────────────────────────────────────────────────────────
 
+# Enable/disable semantic skill selection entirely
+# Set to false for deterministic BM25-only routing (no vector embeddings, no LLM ranking).
+# Useful when embedding providers are unavailable or for reproducible routing.
+# SEMANTIC_SKILL_SELECTION=true
+
 # Enable score breakdown explanations in routing responses (default: false)
 # When enabled, each routed skill includes a per-component breakdown with
 # human-readable explanations for why it was selected.
@@ -222,3 +238,26 @@ SEMANTIC_SIMILARITY_THRESHOLD=0.3
 # MMR diversity tradeoff (default: 0.7)
 # 0.0 = maximum diversity, 1.0 = pure relevance
 # MMR_LAMBDA=0.7
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Auto-Skill Generation Advanced (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Minimum routing confidence threshold for auto-skill creation (default: 0.35).
+# When no skill matches above this confidence, the router may auto-create one.
+# Range: 0.0–1.0. Lower values trigger more frequent creation attempts.
+# AUTO_SKILL_CONFIDENCE_THRESHOLD=0.35
+
+# Maximum LLM retry attempts when skill generation fails (default: 3)
+# Applies to both manual and auto-skill generation.
+# Range: 1–10. Higher values increase resilience against transient API errors.
+# AUTO_SKILL_MAX_RETRIES=3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Pre-commit Hook Configuration (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Emergency bypass for the pre-commit hook validation.
+# Set to any non-empty value (e.g., "1") to skip all skill validation on a commit.
+# Usage: SKIP_SKILL_VALIDATE=1 git commit -m "..."
+# To install hooks: bash scripts/install_hooks.sh

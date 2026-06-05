@@ -28,6 +28,7 @@ const GitHubSkillLoader_1 = require("./skills/GitHubSkillLoader");
 const CompressionMetrics_1 = require("./utils/CompressionMetrics");
 const AppError_1 = require("./core/AppError");
 const AutoSkillCreator_1 = require("./core/AutoSkillCreator");
+const SkillCreationTracker_1 = require("./core/SkillCreationTracker");
 __exportStar(require("./core/types"), exports);
 __exportStar(require("./core/Router"), exports);
 __exportStar(require("./core/ExecutionEngine"), exports);
@@ -36,6 +37,7 @@ __exportStar(require("./core/SafetyLayer"), exports);
 __exportStar(require("./core/SkillCompressor"), exports);
 __exportStar(require("./mcp/MCPBridge"), exports);
 __exportStar(require("./core/AutoSkillCreator"), exports);
+__exportStar(require("./core/SkillCreationTracker"), exports);
 __exportStar(require("./core/types"), exports);
 // DO NOT export mcp/types.js to avoid duplicate ToolResult/ToolSpec exports
 __exportStar(require("./embedding/EmbeddingService"), exports);
@@ -358,6 +360,27 @@ class AgentSkillRoutingApp {
                     error: 'Auto-skill creation failed',
                     message,
                 });
+            }
+        });
+        // ── /skills/created — list all auto-created skills ────────
+        this.app.get('/skills/created', async (_request, reply) => {
+            if (!this.ready) {
+                return reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
+            }
+            try {
+                const tracker = new SkillCreationTracker_1.SkillCreationTracker();
+                const skills = tracker.getCreatedSkills();
+                reply.code(200).send({
+                    total: skills.length,
+                    totalTokensUsed: skills.reduce((sum, s) => sum + (s.totalTokensUsed || 0), 0),
+                    skills,
+                });
+            }
+            catch (error) {
+                this.logger.error('Failed to list created skills', {
+                    error: error instanceof Error ? error.message : String(error),
+                });
+                return reply.code(500).send({ error: 'Internal server error' });
             }
         });
         // ── /skill/:name — on-demand SKILL.md content (with optional compression) ─

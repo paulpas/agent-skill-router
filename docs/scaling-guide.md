@@ -10,6 +10,87 @@ The system is tested and verified at **911+ skills**. All benchmarks below use t
 
 ---
 
+## Auto-Skill Creation Feature
+
+The system includes an auto-skill creation feature that generates new `SKILL.md` files when no existing skill matches a routing query above a configurable confidence threshold.
+
+### Architecture
+
+| Component | Location | Purpose |
+|---|---|---|
+| `AutoSkillCreator` | `src/core/AutoSkillCreator.ts` | Orchestrates skill generation pipeline |
+| `SkillCreationTracker` | `src/core/SkillCreationTracker.ts` | Persists and queries auto-created skill metadata |
+| `POST /skill/create` | `src/index.ts:358-432` | Endpoint that triggers creation |
+| `GET /skills/created` | `src/index.ts:433-455` | Lists all auto-created skills |
+
+### Configuration
+
+| Env Var | Default | Description |
+|---|---|---|
+| `AUTO_SKILL_CREATION_ENABLED` | `true` | Master switch for auto-creation when no good match exists |
+| `AUTO_SKILL_CONFIDENCE_THRESHOLD` | `0.35` | Minimum routing confidence before triggering creation (0.0–1.0) |
+| `AUTO_SKILL_MAX_RETRIES` | `3` | Maximum LLM retry attempts on generation failure (1–10) |
+| `AUTO_SKILL_ENABLED` | `true` | Master switch for the MCP generation tool registration |
+
+### Performance at Scale
+
+- **Creation latency**: ~2–8 seconds per skill (LLM generation + validation)
+- **Retry cost**: Each retry adds ~2–8s; with default 3 retries, worst case ~24s per failed creation
+- **Persistence overhead**: ~50ms per created skill (JSON index append + cache update)
+- **Storage impact**: Each auto-created skill adds ~3–10 KB to the skills directory
+
+### Token Cost Management
+
+Auto-skill creation consumes LLM tokens for generation. To manage costs at scale:
+
+1. **Raise confidence threshold** (`AUTO_SKILL_CONFIDENCE_THRESHOLD=0.5`): Only create when queries are genuinely unmatched
+2. **Disable auto-creation** (`AUTO_SKILL_CREATION_ENABLED=false`): Fall back to manual skill creation only
+3. **Use smaller models** for generation (`AUTO_SKILL_MODEL=gpt-4o-mini`): Cheaper per-token but potentially lower quality
+
+---
+
+## Skill Validation Pipeline
+
+The system enforces skill quality through a 3-phase pre-commit validation pipeline that runs before any `SKILL.md` is committed to the repository.
+
+### Phase 1: Structural Checks
+
+Runs `scripts/validate_skill_yaml.py` with 8 deterministic checks:
+
+| # | Check | Severity |
+|---|---|---|
+| 1 | YAML frontmatter must parse correctly with `yaml.safe_load()` | Fatal |
+| 2 | `name:` field MUST exactly match the directory name (kebab-case) | Fatal |
+| 3 | `version:` field must be quoted — use `"1.0.0"` not `1.0.0` | Warning |
+| 4 | Frontmatter delimiters must be exactly `---` (not more dashes) | Fatal |
+| 5 | `name:` must appear on line 2, immediately after opening `---` | Fatal |
+| 6 | Metadata block MUST include: `triggers`, `domain`, `role`, `scope`, `output-format` | Fatal |
+| 7 | Triggers must have 3–8 comma-separated terms | Warning |
+| 8 | Implementation/review skills MUST have `## Constraints` with `### MUST DO`/`### MUST NOT DO` | Fatal |
+
+### Phase 2: Stub Detection
+
+Runs bash-based static checks via `scripts/validate_skill.sh`:
+
+- File must be ≥ 3,000 bytes of content (excluding frontmatter)
+- No stub sentinel text: `"Implementing this specific pattern or feature"`
+- At least 2 fenced code blocks with **real** code (for implementation skills)
+- No generic workflow steps like `"Identify the use case"`, `"Apply the pattern"`, `"Validate and test"`
+- Routing metadata fields (`archetypes`, `anti_triggers`, `response_profile`) must be present
+
+### Phase 3: LLM Quality Check (Optional)
+
+When `--llm` flag is passed, runs an LLM-based quality assessment on skill content depth, specificity, and usefulness.
+
+### Bypass Mechanism
+
+```bash
+# Emergency bypass for the pre-commit hook validation
+SKIP_SKILL_VALIDATE=1 git commit -m "..."
+```
+
+---
+
 ## Benchmarks (10K Skills × 1536d Embeddings)
 
 | Operation | Measured Time | Target | Verdict |
@@ -103,6 +184,44 @@ HNSW_EF_CONSTRUCTION=200 HNSW_EF_SEARCH=200
 | Total (uncompressed) | ~22 MB | ~220 MB | Full raw content |
 
 > **Note:** The compression cache is bounded by `COMPRESSION_CACHE_SIZE_MB` (default: 1024 MB).
+
+---
+
+## Token Usage & Tracking
+
+The system manages token consumption through the skill compression subsystem, which reduces each SKILL.md before embedding it into LLM context windows.
+
+### Compression Levels and Token Impact
+
+| Level | Technique | Est. Savings | Use Case |
+|---|---|---|---|
+| 0 | No compression (original) | 0% | Debugging, small skill sets (<1K) |
+| 1–2 | Remove blank lines/comments | ~5% | Minimal reduction needed |
+| 3–4 | Collapse "Core Workflow" to paragraph | ~28% | Default production setting |
+| 5 | Remove related-skills table | ~35% | Aggressive token savings |
+| 6 | Remove markdown formatting | ~42% | High-density content needed |
+| 7+ | Remove code examples, abbreviate sections | 55–85% | Extreme scale (>5K skills) |
+
+### Token Budget Planning
+
+For a given number of skills and compression level:
+
+| Skills | Level 0 (raw) | Level 4 (default) | Level 6 (aggressive) |
+|---|---|---|---|
+| 1,000 | ~15 MB (~10K tokens) | ~3 MB (~2K tokens) | ~1.5 MB (~1K tokens) |
+| 10,000 | ~150 MB (~100K tokens) | ~30 MB (~20K tokens) | ~15 MB (~10K tokens) |
+| 50,000 | ~750 MB (~500K tokens) | ~150 MB (~100K tokens) | ~75 MB (~50K tokens) |
+
+> **Note:** Token estimates assume ~650 chars per token. Actual values vary by content type (code vs prose).
+
+### Cost Management at Scale
+
+1. **Compression warmup** pre-compresses top N skills so first requests are fast:
+   - `COMPRESSION_WARMUP_SKILLS=500` (default): ~30s for 500 skills
+   - Higher values = more pre-warmed skills but longer startup
+2. **Adaptive TTL** keeps frequently accessed skills in cache longer:
+   - Hot skills: 30 min TTL, Cold skills: 60 min TTL
+3. **Lazy writes** debounce compression output to reduce I/O pressure
 
 ---
 

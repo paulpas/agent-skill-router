@@ -15,6 +15,9 @@
 6. [Triggers Guidelines](#6-triggers-guidelines)
 7. [Quality Checklist](#7-quality-checklist)
 8. [Complete Annotated Example](#8-complete-annotated-example)
+9. [Skill Validation Pipeline](#9-skill-validation-pipeline)
+10. [Auto-Skill Creation](#10-auto-skill-creation)
+11. [Dynamic Trigger→Domain Index](#11-dynamic-trigger-domain-index)
 
 ---
 
@@ -1336,6 +1339,339 @@ When implementing or reviewing stop loss logic, produce:
 | H1 = directory name          | Unreadable                           | Use human-readable title               |
 | No `content-types` specified | Validation defaults may be wrong     | Explicitly declare content-types       |
 | `description` lists 5+ patterns | Monolithic skill — confuses router, dilutes guidance | Split into atomic skills; each covers one coherent topic |
+
+---
+
+## 9. Skill Validation Pipeline
+
+Skills are validated through a **3-phase pre-commit pipeline** that catches quality issues before they reach the router index. This pipeline replaces the old ad-hoc validation process with automated, deterministic checks followed by optional LLM-based assessment.
+
+### Phase 1: Structural Checks (Python YAML Parser)
+
+The first phase uses Python's YAML parser to validate frontmatter compliance. It runs **8 specific checks** against every SKILL.md:
+
+| # | Check | What It Validates |
+|---|-------|-------------------|
+| 1 | **YAML syntax** | File parses as valid YAML — no unescaped colons, bad indentation, or tabs |
+| 2 | **`name` field** | Present and matches directory name in kebab-case |
+| 3 | **`description` field** | Present, non-empty, single line, ≤ 200 characters |
+| 4 | **`metadata.version`** | Present and follows semantic versioning (`"X.Y.Z"`) |
+| 5 | **`metadata.domain`** | Present and matches one of the known domains |
+| 6 | **`metadata.triggers`** | Present with 3–8 comma-separated terms |
+| 7 | **`metadata.role`** | Present and one of: `implementation`, `reference`, `orchestration`, `review` |
+| 8 | **`metadata.scope`** | Present and one of: `implementation`, `infrastructure`, `orchestration`, `review` |
+
+**Behavior:** If Phase 1 fails, the skill is rejected immediately — no further checks run. This prevents downstream errors from malformed frontmatter.
+
+```bash
+# Run structural validation only
+./scripts/validate_skill.sh --phase 1 skills/<domain>/<topic>/SKILL.md
+```
+
+### Phase 2: Stub Detection (Bash Checks)
+
+Phase 2 runs lightweight shell-based checks that detect low-quality or placeholder content. These are fast, deterministic rules — no LLM calls needed.
+
+| # | Check | Threshold / Rule | Action on Failure |
+|---|-------|------------------|-------------------|
+| 1 | **File size** | Must be ≥ 3,000 bytes | Reject — "TOO THIN — EXPAND OR DON'T CREATE" |
+| 2 | **Stub sentinel** | No match for `"Implementing this specific pattern or feature"` | Reject — "STUB SENTINEL — DELETE" |
+| 3 | **Code block count** | Implementation skills need ≥ 2 code blocks | Warn — "INCOMPLETE — ADD CODE EXAMPLES" |
+| 4 | **Triggers quality** | No trigger is a single ultra-generic word (code, data, risk) | Reject — "TOO BROAD — SHARPEN TRIGGERS" |
+| 5 | **Core workflow depth** | Core Workflow must have domain-specific steps, not generic "identify → apply → validate" | Warn — "STUB — REWRITE WORKFLOW" |
+| 6 | **MUST DO/MUST NOT DO specificity** | Constraints must contain actionable, specific rules (not "follow best practices") | Warn — "ADD ACTIONABLE CONSTRAINTS" |
+
+**Behavior:** Phase 2 produces warnings for issues that can be fixed incrementally, and rejections for zero-tolerance stub patterns.
+
+```bash
+# Run stub detection only
+./scripts/validate_skill.sh --phase 2 skills/<domain>/<topic>/SKILL.md
+```
+
+### Phase 3: LLM Quality Check (Optional)
+
+Phase 3 is an optional deep-quality assessment powered by a local LLM (llama-server with Qwen3 Coder or equivalent). It runs after structural and stub checks pass.
+
+The LLM evaluates:
+
+- **Content depth**: Are code examples real implementations vs. pseudocode?
+- **Trigger specificity**: Do triggers cover both technical terms AND conversational variants?
+- **Cross-reference accuracy**: Do related-skills actually exist in the index?
+- **Domain alignment**: Does the content match the declared domain and role?
+
+```bash
+# Run full validation with LLM quality check
+./scripts/validate_skill.sh --llm skills/<domain>/<topic>/SKILL.md
+
+# Or specify phase explicitly
+./scripts/validate_skill.sh --phase 3 skills/<domain>/<topic>/SKILL.md
+```
+
+**Behavior:** LLM feedback is advisory — it provides a quality score and suggested improvements but does not auto-reject. This lets authors iterate on content quality without hard blocks.
+
+### Pipeline Summary
+
+```
+SKILL.md → Phase 1 (Structural) ──FAIL──→ REJECT (exit early)
+            │ PASS
+            ↓
+         Phase 2 (Stub Detection) ──FAIL──→ REJECT (zero-tolerance) or WARN (fixable)
+            │ PASS
+            ↓
+         Phase 3 (LLM Quality) → Advisory score + suggestions (optional)
+            │
+            ↓
+         SKILL.md approved for commit
+```
+
+### Integration with Git Hooks
+
+The validation script is designed to be used as a pre-commit hook. The repository's `install_hooks.sh` script can install the hook automatically:
+
+```bash
+./scripts/install_hooks.sh
+```
+
+This ensures every committed skill passes Phase 1 and Phase 2 checks before reaching the index.
+
+---
+
+## 10. Auto-Skill Creation
+
+When a developer identifies a gap in the skill catalog, they can use the router's **auto-skill creation** endpoint to generate a SPEC-compliant SKILL.md automatically. This process combines LLM generation with built-in validation loops.
+
+### Creating a Skill via API
+
+Use `POST /skill/create` to generate a new skill:
+
+```bash
+curl -X POST http://localhost:3000/skill/create \
+  -H "Content-Type: application/json" \
+  -d '{
+    "description": "Implement a VWAP execution algorithm for large order splitting in crypto markets",
+    "domain": "trading",
+    "name": "vwap-execution-algo",
+    "triggers": [
+      "VWAP", "volume-weighted average price", "order execution",
+      "how do i execute large orders", "minimal market impact",
+      "smart order routing"
+    ]
+  }'
+```
+
+**Request fields:**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `description` | string | Yes | What the skill should do. Guides the LLM's content generation. |
+| `domain` | string | No | Domain category (default: `coding`). Must be a known domain. |
+| `name` | string | No | Skill topic name in kebab-case (auto-generated from description if omitted). |
+| `triggers` | array | No | Override trigger set. If omitted, the LLM generates 5-8 triggers. |
+
+**Response:** Returns a `skillId` for tracking and a status of `generating`, `validating`, or `complete`.
+
+### The Validation Loop
+
+Auto-generated skills go through a built-in validation loop:
+
+1. **Generate** — LLM creates SKILL.md content following the format spec
+2. **Phase 1 structural check** — YAML parser validates frontmatter compliance
+3. **Phase 2 stub detection** — Checks file size (≥ 3,000 bytes), sentinel strings, code block count
+4. **Fix iteration** — If Phase 1 or 2 fails, the LLM receives feedback and regenerates (up to 3 retries)
+5. **Final validation** — On passing all checks, the skill is written to disk at `skills/<domain>/<name>/SKILL.md`
+
+```bash
+# Check generation status
+curl http://localhost:3000/skill/status/<skillId>
+
+# Response: {"status":"validating","phase":2,"retriesUsed":1,"tokensUsed":4200}
+```
+
+### Token Tracking
+
+Each auto-creation attempt tracks resource usage for billing and rate-limiting:
+
+| Metric | Description |
+|--------|-------------|
+| `tokensUsed` | Total LLM tokens consumed across all generation/fix iterations |
+| `retriesUsed` | Number of fix iterations performed (0 = clean pass) |
+| `totalLatencyMs` | Wall-clock time for full pipeline |
+| `finalQualityScore` | LLM-assigned quality score (0-100, only from Phase 3) |
+
+```bash
+# View creation stats
+curl http://localhost:3000/skill/stats/<skillId>
+
+# Response: {"tokensUsed":4200,"retriesUsed":1,"totalLatencyMs":18500,"finalQualityScore":87}
+```
+
+Token limits are configurable. The default max is 10,000 tokens per skill generation attempt. Exceeding the limit results in a `rate_limited` status.
+
+### CLI Wrapper
+
+The repository includes a shell wrapper for convenience:
+
+```bash
+# Generate a skill with auto-push to git
+./scripts/skill-generate.sh "Add a Go concurrency pattern for rate limiting" \
+    -d go -n rate-limiting
+
+# Generate locally without pushing
+./scripts/skill-generate.sh "Create a trading skill about VWAP strategies" \
+    --no-push
+```
+
+---
+
+## 11. Dynamic Trigger→Domain Index
+
+The router no longer uses hardcoded trigger-to-domain mappings. Instead, triggers are **dynamically indexed** from SKILL.md frontmatter at router load time.
+
+### How It Works
+
+When the skill-router starts (or when triggered by `POST /reload`):
+
+1. The scanner reads every `SKILL.md` in the skills directory tree
+2. Extracts `metadata.triggers` and `metadata.domain` from YAML frontmatter
+3. Builds an inverted index: `{trigger_term → [skill_path, ...]}` per domain
+4. Stores the index for fast lookup during routing
+
+```json
+// Example index entry (internal representation)
+{
+  "prometheus": ["skills/cncf/prometheus/SKILL.md"],
+  "stop loss": ["skills/trading/risk-stop-loss/SKILL.md"],
+  "code review": ["skills/coding/code-review/SKILL.md"]
+}
+```
+
+### Benefits Over Hardcoded Fallbacks
+
+| Aspect | Before (Hardcoded) | After (Dynamic Index) |
+|--------|--------------------|-----------------------|
+| **Configuration** | Static config file maintained manually | Auto-extracted from SKILL.md metadata |
+| **New skills** | Required manual index update | Automatic on next router reload |
+| **Trigger changes** | Manual edit of both trigger and index | Single source of truth (SKILL.md triggers field) |
+| **Domain routing** | Separate domain filter table | Derived directly from `metadata.domain` |
+| **Drift risk** | High — index could diverge from SKILL.md | Zero — index always matches SKILL.md |
+
+### Index Reload Triggers
+
+The trigger→domain index is rebuilt when:
+
+- Router starts (initial load)
+- `POST /reload` endpoint is called
+- New `.md` files are detected in the skills directory (filesystem watch, if enabled)
+- `SKILL_SYNC_INTERVAL` timer fires (default: 3600 seconds / 1 hour)
+
+### Verification
+
+To verify the index is current and functional:
+
+```bash
+# View router stats including index info
+curl http://localhost:3000/stats
+
+# Check a specific trigger's matched skills
+curl "http://localhost:3000/route?trigger=stop+loss"
+
+# Force immediate index rebuild
+curl -X POST http://localhost:3000/reload
+```
+
+---
+
+## 12. SkillCreationTracker and Auto-Created Skill Index
+
+Auto-created skills are tracked by the **SkillCreationTracker** module, which maintains a structured log of all programmatically generated skills. This enables auditing, cleanup, and quality monitoring of auto-generated content.
+
+### The Creation Index
+
+The tracker writes to `data/skill-creation-index.json` (relative to the router's working directory). Each entry records:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `skillId` | string | Unique identifier for this generation session |
+| `skillPath` | string | Full path to the created SKILL.md file |
+| `request` | object | Original creation request (description, domain, triggers) |
+| `timestamps` | object | `created`, `validated`, `first_routed` ISO-8601 timestamps |
+| `generation` | object | `tokensUsed`, `retriesUsed`, `phase` reached, `qualityScore` |
+| `status` | string | One of: `validating`, `complete`, `rejected`, `deprecated` |
+
+```json
+// Example entry in skill-creation-index.json
+{
+  "skillId": "gen-a8f3b2c1",
+  "skillPath": "skills/trading/vwap-execution-algo/SKILL.md",
+  "request": {
+    "description": "Implement a VWAP execution algorithm for large order splitting",
+    "domain": "trading",
+    "name": "vwap-execution-algo"
+  },
+  "timestamps": {
+    "created": "2026-06-01T14:32:00Z",
+    "validated": "2026-06-01T14:32:18Z",
+    "first_routed": "2026-06-01T15:10:00Z"
+  },
+  "generation": {
+    "tokensUsed": 4200,
+    "retriesUsed": 1,
+    "phase": 2,
+    "qualityScore": 87
+  },
+  "status": "complete"
+}
+```
+
+### Querying Auto-Created Skills
+
+The router exposes endpoints to inspect the creation tracker:
+
+```bash
+# List all auto-created skills with their status
+curl http://localhost:3000/skills/created
+
+# Get stats for a specific skill generation session
+curl http://localhost:3000/skill/stats/<skillId>
+
+# Filter by status or domain
+curl "http://localhost:3000/skills/created?status=complete&domain=trading"
+```
+
+### Lifecycle Management
+
+Auto-created skills follow a lifecycle tracked in the index:
+
+1. **`validating`** — Skill is being generated and checked
+2. **`complete`** — Skill passed all validation checks, live in the index
+3. **`rejected`** — Skill failed Phase 1 or 2 stub detection; not written to disk
+4. **`deprecated`** — Skill replaced by a manually authored version or split
+
+The tracker supports cleanup operations for deprecated skills:
+
+```bash
+# List skills marked deprecated with creation date older than 30 days
+curl "http://localhost:3000/skills/created?status=deprecated&older_than_days=30"
+
+# Archive deprecated skills (move to a staging directory)
+curl -X POST http://localhost:3000/skills/archive --data '{"dry_run": true}'
+```
+
+### Manual vs. Auto-Skill Distinction
+
+The index helps distinguish between:
+
+| Property | Manually Created | Auto-Created |
+|----------|-----------------|---------------|
+| **Source** | Developer writes SKILL.md directly | Generated via `POST /skill/create` |
+| **Tracking** | Git history only | Tracked in `data/skill-creation-index.json` |
+| **Validation** | Manual or pre-commit hook | Built-in validation loop with retries |
+| **Quality monitoring** | Review process | Automatic quality score + routing metrics |
+
+This distinction is valuable for:
+- Auditing the ratio of auto-created vs. manually authored skills
+- Identifying auto-created skills that need manual refinement after deployment
+- Tracking LLM generation costs and success rates over time
 
 ---
 

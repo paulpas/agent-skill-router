@@ -8,6 +8,7 @@ export * from './core/SafetyLayer';
 export * from './core/SkillCompressor';
 export * from './mcp/MCPBridge';
 export * from './core/AutoSkillCreator';
+export * from './core/SkillCreationTracker';
 export * from './core/types';
 export * from './embedding/EmbeddingService';
 export * from './embedding/VectorDatabase';

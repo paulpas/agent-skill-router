@@ -301,5 +301,9 @@ export interface SkillCreateResponse {
     confidenceThreshold: number;
     /** Actual routing confidence when a gap was detected (optional, only on "created"/"dry_run") */
     gapConfidence?: number;
+    /** Total tokens consumed across all SkillGenerationTool calls (initial + retries). Only present when status is 'created' or 'dry_run'. */
+    totalTokensUsed?: number;
+    /** Number of times the generation tool was called (1 initial + any regenerations during retry loop). */
+    generationAttempts: number;
 }
 //# sourceMappingURL=types.d.ts.map

@@ -79,11 +79,34 @@ GITHUB_ENABLED=true
 GITHUB_TOKEN=
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Optional: Auto-Skill Generation
+# Optional: Auto-Skill Generation (Basic)
 # ─────────────────────────────────────────────────────────────────────────────
 
-AUTO_SKILL_ENABLED=true
-AUTO_SKILL_MODEL=gpt-4o-mini
+AUTO_SKILL_ENABLED=true         # Enable/disable auto-skill generation tool
+AUTO_SKILL_CONTRIBUTE=true      # Enable/disable contribution to git (creates PRs)
+AUTO_SKILL_MODEL=gpt-4o-mini    # LLM model used for skill generation
+AUTO_SKILL_CREATION_ENABLED=true  # Auto-create skills when no good match exists
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Optional: Auto-Skill Creation Advanced (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Minimum routing confidence threshold for auto-skill creation (default: 0.35).
+# When no skill matches above this confidence, the router may auto-create one.
+# Range: 0.0–1.0. Lower values trigger more frequent creation attempts.
+# AUTO_SKILL_CONFIDENCE_THRESHOLD=0.35
+
+# Maximum LLM retry attempts when skill generation fails (default: 3)
+# Applies to both manual and auto-skill generation. Range: 1–10.
+# AUTO_SKILL_MAX_RETRIES=3
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Semantic Routing (Optional)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Enable/disable semantic skill selection (vector embeddings + BM25 scoring).
+# Set to false for deterministic BM25-only routing when embeddings are unavailable.
+SEMANTIC_SKILL_SELECTION=true
 ```
 
 ## Using Custom Models
@@ -103,6 +126,30 @@ EMBEDDING_MODEL=text-embedding-3-large
 # Legacy model (deprecated but still available)
 LLM_MODEL=gpt-4-turbo
 ```
+
+## Embedding Emulation Mode (`emulation`)
+
+When running the Skill Router with OpenAI as the LLM provider, you can also use **embedding emulation** via any OpenAI-compatible endpoint. This sends a prompt template to an LLM and parses numerical output as embedding vectors — useful when you don't have access to a dedicated embedding model:
+
+```bash
+# Use the same OpenAI key for both LLM and emulation embeddings
+EMBEDDING_PROVIDER=emulation
+OPENAI_API_KEY=sk-proj-...
+EMBEDDING_DIMENSIONS=64              # Default dimensionality (8–3072 supported)
+EMBEDDING_PROMPT_TEMPLATE="Output a JSON array of {{dimensions}} floats representing: {{text}}"
+```
+
+The emulation mode uses the configured `LLM_MODEL` endpoint to generate embeddings. While slower than native embedding APIs, it works with any OpenAI-compatible LLM and avoids needing a separate embedding model API key.
+
+## Token Tracking for Auto-Skill Creation
+
+When auto-skill creation is enabled (`AUTO_SKILL_CREATION_ENABLED=true`), the router tracks token usage for generated skills:
+
+- **Input tokens**: Context provided to the generation LLM (skill format spec, query description)
+- **Output tokens**: Generated SKILL.md content and validation feedback
+- **Token limits**: Each generation attempt respects the model's context window; failures are retried up to `AUTO_SKILL_MAX_RETRIES` times
+
+Monitor token usage in the router logs. High auto-skill creation frequency (`AUTO_SKILL_CONFIDENCE_THRESHOLD=0.25`) can significantly increase token consumption.
 
 ## Cost Considerations
 

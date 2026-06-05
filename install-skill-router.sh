@@ -40,6 +40,7 @@ declare \
   AUTO_SKILL_ENABLED \
   AUTO_SKILL_CONTRIBUTE \
   AUTO_SKILL_MODEL \
+  AUTO_SKILL_CREATION_ENABLED \
   OPENAI_BASE_URL \
   GITHUB_RAW_BASE_URL \
   GITHUB_SKILLS_REPO \
@@ -55,6 +56,7 @@ declare \
   LINK_RESOLUTION_MODE \
   SEMANTIC_TOP_K \
   SEMANTIC_SIMILARITY_THRESHOLD \
+  SEMANTIC_SKILL_SELECTION \
   DEBUG_ROUTING \
   LLM_RANKING_ENABLED \
   RETRIEVAL_VECTOR_WEIGHT \
@@ -159,10 +161,17 @@ CONFIG FILE FORMAT:
     SSH_AGENT_SOCKET=/path/to/socket
     SSH_KNOWN_HOSTS=/path/to/known_hosts
     
-    # Auto-Skill Configuration
-    AUTO_SKILL_ENABLED=true
-    AUTO_SKILL_CONTRIBUTE=true
-    AUTO_SKILL_MODEL=gpt-4o-mini
+   # Auto-Skill Configuration
+     AUTO_SKILL_ENABLED=true           # Enable/disable auto-skill generation tool
+     AUTO_SKILL_CONTRIBUTE=true        # Enable/disable contribution to git (creates PRs)
+     AUTO_SKILL_MODEL=gpt-4o-mini      # LLM model for skill generation
+     AUTO_SKILL_CREATION_ENABLED=true  # Auto-create skills when no good match exists (>confidence threshold)
+
+    # Pre-commit Hook Installation:
+    # Install the repository's pre-commit hook to validate SKILL.md files before committing:
+    #   bash scripts/install_hooks.sh
+    # This installs .git/hooks/pre-commit which validates all staged SKILL.md files.
+    # Bypass with: SKIP_SKILL_VALIDATE=1 git commit ...
 
     # Link Following Configuration (Optional)
     LINK_FOLLOWING_ENABLED=false
@@ -177,16 +186,28 @@ CONFIG FILE FORMAT:
     SEMANTIC_TOP_K=3
     SEMANTIC_SIMILARITY_THRESHOLD=0.3
     # Advanced Routing Configuration (Optional)
-    DEBUG_ROUTING=false              # Enable score breakdown explanations
-    LLM_RANKING_ENABLED=false        # Enable optional LLM ranking fallback
-    RETRIEVAL_VECTOR_WEIGHT=0.50     # Weight for semantic vector similarity (0.0-1.0)
-    RETRIEVAL_BM25_WEIGHT=0.20       # Weight for BM25 exact-term matching (0.0-1.0)
-    RETRIEVAL_TRIGGER_MATCH_WEIGHT=0.15  # Weight for trigger keyword matching (0.0-1.0)
-    RETRIEVAL_ARCHETYPE_WEIGHT=0.10  # Weight for archetype alignment (0.0-1.0)
-    RETRIEVAL_HISTORICAL_WEIGHT=0.05 # Weight for historical success rate (0.0-1.0)
-    MMR_LAMBDA=0.7                   # MMR diversity tradeoff (0.0=diverse, 1.0=relevant)
+     DEBUG_ROUTING=false              # Enable score breakdown explanations
+     LLM_RANKING_ENABLED=false        # Enable optional LLM ranking fallback
+     SEMANTIC_SKILL_SELECTION=true    # Enable/disable semantic skill selection (set false for BM25-only routing)
+     RETRIEVAL_VECTOR_WEIGHT=0.50     # Weight for semantic vector similarity (0.0-1.0)
+     RETRIEVAL_BM25_WEIGHT=0.20       # Weight for BM25 exact-term matching (0.0-1.0)
+     RETRIEVAL_TRIGGER_MATCH_WEIGHT=0.15  # Weight for trigger keyword matching (0.0-1.0)
+     RETRIEVAL_ARCHETYPE_WEIGHT=0.10  # Weight for archetype alignment (0.0-1.0)
+     RETRIEVAL_HISTORICAL_WEIGHT=0.05 # Weight for historical success rate (0.0-1.0)
+     MMR_LAMBDA=0.7                   # MMR diversity tradeoff (0.0=diverse, 1.0=relevant)
 
-  Required: OPENAI_API_KEY
+     # API Endpoints (after installation):
+     #   POST /route        — Route a task to the best skill(s)
+     #   POST /execute      — Execute a task with selected skills
+     #   GET  /skill/:name  — Fetch a specific skill's content
+     #   POST /reload       — Force immediate index reload/sync from GitHub
+     #   GET  /skills       — List all loaded skills
+     #   GET  /skills/created— List auto-created skills
+     #   GET  /health       — Health check (ready status)
+     #   GET  /stats        — System stats (skill count, loading status)
+     #   GET  /access-log   — Last 100 routing requests
+
+   Required: OPENAI_API_KEY
   Optional: All other settings have sensible defaults
 
 EXAMPLES:
@@ -196,6 +217,9 @@ EXAMPLES:
   Non-interactive with config file:
     $0 --config install-skill-router.conf
     $0 -c /path/to/config
+
+  Pre-commit hook (for skill development):
+    bash scripts/install_hooks.sh
 
 EOF
 }
@@ -441,7 +465,7 @@ parse_config_file() {
   
   # Track known variables for validation
   declare -A known_vars=()
-  for var in DEBUG_ROUTING LLM_RANKING_ENABLED MMR_LAMBDA RETRIEVAL_ARCHETYPE_WEIGHT RETRIEVAL_BM25_WEIGHT RETRIEVAL_HISTORICAL_WEIGHT RETRIEVAL_TRIGGER_MATCH_WEIGHT RETRIEVAL_VECTOR_WEIGHT OPENAI_API_KEY PORT LLM_PROVIDER LLM_MODEL EMBEDDING_MODEL ANTHROPIC_API_KEY LLAMACPP_URL EMBEDDING_PROVIDER GITHUB_ENABLED GITHUB_TOKEN SSH_KEY_PATH SSH_AGENT_SOCKET SSH_KNOWN_HOSTS AUTO_SKILL_ENABLED AUTO_SKILL_CONTRIBUTE AUTO_SKILL_MODEL OPENAI_BASE_URL GITHUB_RAW_BASE_URL GITHUB_SKILLS_REPO SYNC_INTERVAL MAX_SKILLS LINK_FOLLOWING_ENABLED ALLOW_EXTERNAL_LINKS MAX_LINK_DEPTH MAX_EXTERNAL_SIZE_KB EXTERNAL_COMPRESSION_MODE JS_RENDERING_ENABLED JS_RENDER_TIMEOUT_MS JS_RENDER_FALLBACK LINK_RESOLUTION_MODE SEMANTIC_TOP_K SEMANTIC_SIMILARITY_THRESHOLD; do
+  for var in DEBUG_ROUTING LLM_RANKING_ENABLED MMR_LAMBDA RETRIEVAL_ARCHETYPE_WEIGHT RETRIEVAL_BM25_WEIGHT RETRIEVAL_HISTORICAL_WEIGHT RETRIEVAL_TRIGGER_MATCH_WEIGHT RETRIEVAL_VECTOR_WEIGHT OPENAI_API_KEY PORT LLM_PROVIDER LLM_MODEL EMBEDDING_MODEL ANTHROPIC_API_KEY LLAMACPP_URL EMBEDDING_PROVIDER GITHUB_ENABLED GITHUB_TOKEN SSH_KEY_PATH SSH_AGENT_SOCKET SSH_KNOWN_HOSTS AUTO_SKILL_ENABLED AUTO_SKILL_CONTRIBUTE AUTO_SKILL_MODEL AUTO_SKILL_CREATION_ENABLED OPENAI_BASE_URL GITHUB_RAW_BASE_URL GITHUB_SKILLS_REPO SYNC_INTERVAL MAX_SKILLS LINK_FOLLOWING_ENABLED ALLOW_EXTERNAL_LINKS MAX_LINK_DEPTH MAX_EXTERNAL_SIZE_KB EXTERNAL_COMPRESSION_MODE JS_RENDERING_ENABLED JS_RENDER_TIMEOUT_MS JS_RENDER_FALLBACK LINK_RESOLUTION_MODE SEMANTIC_TOP_K SEMANTIC_SIMILARITY_THRESHOLD SEMANTIC_SKILL_SELECTION; do
     known_vars[$var]=1
   done
   
@@ -1183,13 +1207,13 @@ configure_auto_skill() {
   echo ""
   
   configure_variable "AUTO_SKILL_ENABLED" \
-    "Enable/disable auto-skill generation" \
+    "Enable/disable auto-skill generation tool" \
     "true" \
     "true" \
     "false"
   
   configure_variable "AUTO_SKILL_CONTRIBUTE" \
-    "Enable/disable contribution to git" \
+    "Enable/disable contribution to git (creates pull requests)" \
     "true" \
     "true" \
     "false"
@@ -1198,6 +1222,12 @@ configure_auto_skill() {
     "LLM model for skill generation" \
     "gpt-4o-mini" \
     "gpt-4o-mini" \
+    "false"
+
+  configure_variable "AUTO_SKILL_CREATION_ENABLED" \
+    "Auto-create skills when no good routing match exists" \
+    "true" \
+    "true" \
     "false"
 }
 
@@ -1299,8 +1329,10 @@ print_summary() {
     echo -e "  ${BOLD}SSH Known Hosts:${RESET} $SSH_KNOWN_HOSTS"
   fi
   
-  echo -e "  ${BOLD}Auto-Skill:${RESET} enabled=$AUTO_SKILL_ENABLED, contribute=$AUTO_SKILL_CONTRIBUTE"
+  echo -e "  ${BOLD}Auto-Skill:${RESET} enabled=$AUTO_SKILL_ENABLED, contribute=$AUTO_SKILL_CONTRIBUTE, creation=$AUTO_SKILL_CREATION_ENABLED"
   echo -e "  ${BOLD}Auto-Skill Model:${RESET} $AUTO_SKILL_MODEL"
+
+  echo -e "  ${BOLD}Semantic Routing:${RESET} selection=$SEMANTIC_SKILL_SELECTION"
 
   echo -e "  ${BOLD}Link Following:${RESET} enabled=$LINK_FOLLOWING_ENABLED, external=$ALLOW_EXTERNAL_LINKS"
   echo -e "  ${BOLD}Link Resolution:${RESET} mode=$LINK_RESOLUTION_MODE, max_size=${MAX_EXTERNAL_SIZE_KB}KB"
@@ -1642,6 +1674,8 @@ dialog_configure_providers() {
   if [[ "${LLM_PROVIDER:-openai}" == "llamacpp" || "${EMBEDDING_PROVIDER:-openai}" == "llamacpp" ]]; then
     dialog_edit_text_setting "LLAMACPP_URL" "llama.cpp URL" "Base URL for your local llama.cpp server." "http://host.docker.internal:8080" "validate_url"
   fi
+
+  dialog_select_boolean_setting "SEMANTIC_SKILL_SELECTION" "Semantic Routing" "Enable semantic skill selection (vector embeddings + BM25)? Set false for BM25-only routing."
 }
 
 dialog_configure_models() {
@@ -1704,6 +1738,7 @@ dialog_configure_auto_skill() {
   dialog_select_boolean_setting "AUTO_SKILL_ENABLED" "Auto-Skill" "Enable automatic skill generation?"
   dialog_select_boolean_setting "AUTO_SKILL_CONTRIBUTE" "Auto-Skill" "Allow auto-skill contribution to git?"
   dialog_edit_text_setting "AUTO_SKILL_MODEL" "Auto-Skill Model" "Model used for auto-skill generation." "gpt-4o-mini"
+  dialog_select_boolean_setting "AUTO_SKILL_CREATION_ENABLED" "Auto-Creation" "Auto-create skills when no good routing match exists?"
 }
 
 dialog_configure_link_following() {
@@ -2150,6 +2185,7 @@ run_installation() {
   ENV_ARGS+=(-e "AUTO_SKILL_ENABLED=${AUTO_SKILL_ENABLED}")
   ENV_ARGS+=(-e "AUTO_SKILL_CONTRIBUTE=${AUTO_SKILL_CONTRIBUTE}")
   ENV_ARGS+=(-e "AUTO_SKILL_MODEL=${AUTO_SKILL_MODEL}")
+  ENV_ARGS+=(-e "AUTO_SKILL_CREATION_ENABLED=${AUTO_SKILL_CREATION_ENABLED:-true}")
   ENV_ARGS+=(-e "SKILL_CACHE_DIR=${SKILL_CACHE_DIR:-/cache/skills}")
 
   # Link Following Configuration
@@ -2165,6 +2201,7 @@ run_installation() {
   ENV_ARGS+=(-e "SEMANTIC_TOP_K=${SEMANTIC_TOP_K:-5}")
   ENV_ARGS+=(-e "SEMANTIC_SIMILARITY_THRESHOLD=${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}")
   # Advanced Routing configuration
+  ENV_ARGS+=(-e "SEMANTIC_SKILL_SELECTION=${SEMANTIC_SKILL_SELECTION:-true}")
   ENV_ARGS+=(-e "DEBUG_ROUTING=${DEBUG_ROUTING:-false}")
   ENV_ARGS+=(-e "LLM_RANKING_ENABLED=${LLM_RANKING_ENABLED:-false}")
   [[ -n "${RETRIEVAL_VECTOR_WEIGHT:-}" ]]        && ENV_ARGS+=(-e "RETRIEVAL_VECTOR_WEIGHT=$RETRIEVAL_VECTOR_WEIGHT")
@@ -2719,6 +2756,8 @@ if [[ "$MODE" == "noninteractive" ]]; then
   AUTO_SKILL_ENABLED="${AUTO_SKILL_ENABLED:-true}"
   AUTO_SKILL_CONTRIBUTE="${AUTO_SKILL_CONTRIBUTE:-true}"
   AUTO_SKILL_MODEL="${AUTO_SKILL_MODEL:-gpt-4o-mini}"
+  AUTO_SKILL_CREATION_ENABLED="${AUTO_SKILL_CREATION_ENABLED:-true}"
+  SEMANTIC_SKILL_SELECTION="${SEMANTIC_SKILL_SELECTION:-true}"
   LINK_FOLLOWING_ENABLED="${LINK_FOLLOWING_ENABLED:-false}"
   ALLOW_EXTERNAL_LINKS="${ALLOW_EXTERNAL_LINKS:-false}"
   MAX_LINK_DEPTH="${MAX_LINK_DEPTH:-2}"
@@ -2754,6 +2793,8 @@ else
   AUTO_SKILL_ENABLED="${AUTO_SKILL_ENABLED:-true}"
   AUTO_SKILL_CONTRIBUTE="${AUTO_SKILL_CONTRIBUTE:-true}"
   AUTO_SKILL_MODEL="${AUTO_SKILL_MODEL:-gpt-4o-mini}"
+  AUTO_SKILL_CREATION_ENABLED="${AUTO_SKILL_CREATION_ENABLED:-true}"
+  SEMANTIC_SKILL_SELECTION="${SEMANTIC_SKILL_SELECTION:-true}"
   LINK_FOLLOWING_ENABLED="${LINK_FOLLOWING_ENABLED:-false}"
   ALLOW_EXTERNAL_LINKS="${ALLOW_EXTERNAL_LINKS:-false}"
   MAX_LINK_DEPTH="${MAX_LINK_DEPTH:-2}"
