@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-domain-events
 description: Implements domain event infrastructure for DDD systems — synchronous publish-subscribe dispatchers, schema versioning with Pydantic discriminators, idempotent handler guards, PostgreSQL outbox pattern for reliable async delivery, and dead letter queue pipelines.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: domain events, event dispatcher, publish subscribe, event sourcing, idempotent handlers, outbox pattern, event schema versioning, how do i implement domain events, DDD events
+  triggers: domain events, event dispatcher, publish subscribe, event sourcing, idempotent handlers, outbox pattern, event schema versioning, how do i implement domain events
   role: implementation
   scope: implementation
   output-format: code
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Domain Event Infrastructure for DDD
 

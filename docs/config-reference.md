@@ -2,7 +2,7 @@
 
 > One source of truth for every environment variable in the agent-skill-router system.
 >
-> **Total: 80 environment variables** (79 unique + 1 alias) across 13 categories
+> **Total: 82 environment variables** (81 unique + 1 alias) across 14 categories
 
 ## Quick Start
 
@@ -87,6 +87,7 @@ All variables in alphabetical order:
 | `RETRIEVAL_TRIGGER_MATCH_WEIGHT` | `0.15` | Advanced Routing |
 | `RETRIEVAL_VECTOR_WEIGHT` | `0.50` | Advanced Routing |
 | `SAFETY_STRICT` | `false` | Safety |
+| `SEMANTIC_SKILL_SELECTION` | `true` | Advanced Routing |
 | `SEMANTIC_SIMILARITY_THRESHOLD` | `0.3` | Link Following |
 | `SEMANTIC_TOP_K` | `3` | Link Following |
 | `SKILL_CACHE_DIR` | `/cache/skills` | GitHub Sync |
@@ -104,6 +105,7 @@ All variables in alphabetical order:
 | `SKILL_ROUTER_URL` | `http://localhost:3000` | MCP Bridge |
 | `SKILL_SYNC_INTERVAL` | `3600` | GitHub Sync |
 | `SKILLS_DIRECTORY` | `./samples/skill-definitions` | Core Server |
+| `SKILL_VALIDATE_PYTHON_SCRIPT` | `scripts/validate_skill_yaml.py` | Skill Validation |
 | `SSH_AUTH_SOCK` | `/tmp/ssh-agent.sock` | Docker & Git Config |
 
 ---
@@ -417,6 +419,40 @@ Docker-level tuning variables for the LLM-based skill compression subsystem. The
 | `COMPRESSION_WARMUP_ENABLED` | boolean | `true` | `true`, `false` | When `false`, skips the startup warmup phase entirely (skills are compressed on first access instead). |
 
 **Source:** Dockerfile lines 131–157.
+
+---
+
+### 16. Skill Validation (2 vars)
+
+Controls the pre-commit validation pipeline that gates SKILL.md commits and the new semantic selection gate for routing.
+
+| Variable | Type | Default | Valid Values | Description |
+|---|---|---|---|---|
+| `SEMANTIC_SKILL_SELECTION` | boolean | `true` | `true`, `false` | When `false`, disables semantic-based skill selection (vector similarity + BM25 scoring). Trigger keyword matching and archetype ranking remain active. Useful when embeddings are unavailable or for deterministic-only routing. Implemented in `Router.ts` — zeros vectorWeight and bm25Weight when set to `false`. |
+| `SKIP_SKILL_VALIDATE` | string | `""` | Any non-empty string | Emergency bypass for the pre-commit hook validation. Set to `1` to skip all skill validation on a specific commit. |
+
+**Validator architecture:** The pre-commit hook runs `scripts/validate_skill.sh` which has three phases:
+
+- **Phase 1 — Structural checks** via `scripts/validate_skill_yaml.py` (8 checks):
+  1. YAML frontmatter must parse correctly with `yaml.safe_load()`
+  2. `name:` field in frontmatter MUST exactly match the directory name (kebab-case)
+  3. `version:` field must be quoted — use `"1.0.0"` not `1.0.0`
+  4. Frontmatter delimiters must be exactly `---` (not more dashes)
+  5. `name:` must appear on line 2, immediately after the opening `---`
+  6. Metadata block MUST include all required fields: `triggers`, `domain`, `role`, `scope`, `output-format`
+  7. Triggers must have 3–8 comma-separated terms (no more, no less)
+  8. If role is `'implementation'` or `'review'`, the skill MUST have a `## Constraints` section with `### MUST DO` and `### MUST NOT DO` subsections
+
+- **Phase 2 — Stub detection** (bash checks):
+  - File must be ≥ 3,000 bytes of content (not counting frontmatter)
+  - No stub sentinel text: `'Implementing this specific pattern or feature'`
+  - At least 2 fenced code blocks with REAL code (for implementation skills)
+  - No generic workflow steps like `"Identify the use case"`, `"Apply the pattern"`, `"Validate and test"`
+  - Routing metadata fields (`archetypes`, `anti_triggers`, `response_profile`) must be present
+
+- **Phase 3 — LLM quality check** (optional): When `--llm` flag is passed, runs an LLM-based quality assessment.
+
+**Source:** `scripts/validate_skill.sh`, `scripts/validate_skill_yaml.py`
 
 ---
 

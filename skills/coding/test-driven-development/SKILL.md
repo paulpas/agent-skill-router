@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: test-driven-development
 description: Implements test-driven development with red-green-refactor cycle, property-based testing, mocking strategies, and behavior-first design to produce well-tested, maintainable code.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Test-Driven Development (TDD)
 

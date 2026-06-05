@@ -47,16 +47,13 @@ export declare class SafetyLayer {
     /**
      * Check for prompt injection attempts.
      *
-     * Design: collect signals from three independent categories, then decide:
-     *   - 0 signals  → safe
-     *   - 1 signal   → warn (log), but allow through (unless SAFETY_STRICT=true)
-     *   - 2+ signals → block
+     * Design: patterns are categorized by severity:
+     *   - CRITICAL → block on a single match (SQL injection, XSS, command injection, etc.)
+     *   - HIGH     → block on 2+ matches (prompt hijacking attempts)
+     *   - MEDIUM   → warn only, allow through (ambiguous signals)
      *
-     * Patterns are deliberately high-confidence to avoid false positives on
-     * normal developer task descriptions like:
-     *   "review code for security issues and check for vulnerabilities"
-     *   "use dependency injection in this service"
-     *   "run shell script to deploy"
+     * This prevents single-pattern adversarial inputs from bypassing the filter
+     * while keeping the existing 2-signal threshold for lower-severity patterns.
      */
     private checkPromptInjection;
     /**

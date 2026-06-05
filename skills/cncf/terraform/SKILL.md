@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: terraform
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: terraform
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Terraform Infrastructure as Code
 
 **Category:** infrastructure  

@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: parallel-skill-runner
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: tactical
-  version: 1.0.0
-name: parallel-skill-runner
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Parallel Skill Runner
 
 Orchestrates intelligent skill selection and execution for parallel skill runner workflows. Applies the 5 Laws of Elegant Defense to guide data naturally through the orchestration pipeline, preventing errors before they occur. Selects optimal skills based on multi-factor scoring including text similarity, historical performance, and system availability.
@@ -299,6 +311,23 @@ When applying this skill, produce:
 |---|---|
 | `agent-confidence-based-selector` | Provides the confidence-based selection layer that this parallel runner orchestrates across multiple candidates |
 | `agent-task-routing` | Handles sequential task routing — use this when tasks must be ordered rather than parallelized |
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement a dependency graph for all tasks before dispatch — only execute nodes whose dependencies are satisfied
+- Use a central coordinator that maintains global state and communicates results between parallel agents via immutable messages
+- Set explicit timeouts per task and implement circuit breakers: abort parallel execution if error rate exceeds threshold
+- Log all inter-agent communications with timestamps, sender, receiver, payload hash, and outcome for debugging
+
+### MUST NOT DO
+- Do not allow parallel agents to modify shared mutable state without locking — use message-passing or per-task snapshots
+- Avoid fan-out patterns that spawn more than 20 parallel tasks simultaneously without rate limiting
+- Never start dependent tasks before confirming upstream task completion — verify status, don't assume success
+- Do not ignore agent failures during parallel execution; aggregate and report all errors together rather than failing fast on first
+
 
 ## Live References
 

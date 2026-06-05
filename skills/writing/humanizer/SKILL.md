@@ -1,4 +1,10 @@
 ---
+
+
+
+
+
+name: humanizer
 compatibility: opencode
 completeness: 95
 content-types:
@@ -15,9 +21,7 @@ metadata:
   related-skills: code-review, markdown-best-practices
   role: review
   scope: review
-  triggers: humanize text, remove AI writing, edit for natural, avoid AI patterns,
-    write like human, writing edit, text review, code documentation, comments, technical
-    writing, readability, code clarity
+  triggers: humanize text, remove AI writing, edit for natural, avoid AI patterns, write like human, writing edit, text review, code documentation write like human write like human
   archetypes:
   - educational
   anti_triggers:
@@ -27,9 +31,18 @@ metadata:
     verbosity: medium
     directive_strength: medium
     abstraction_level: tactical
-  version: 1.0.0
-name: humanizer
-------
+version: "1.0.0"
+
+
+
+
+
+---
+
+
+
+
+
 # Humanizer: Remove AI Writing Patterns
 
 Detects AI-generated writing patterns and transforms them into natural, human-style writing through a systematic two-pass editing process.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: package-ecosystem-navigator
 description: Navigates package manager ecosystems (npm, PyPI, crates.io, Maven, Go
   modules) with health assessment, dependency auditing, registry configuration, and
@@ -6,11 +10,9 @@ description: Navigates package manager ecosystems (npm, PyPI, crates.io, Maven, 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: package manager, npm, pypi, crates.io, maven, go modules, cargo, pip,
-    poetry, dependency management, registry health, how do i find packages, package
-    ecosystem, lockfile, semver, version resolution
+  triggers: package manager, npm, pypi, crates.io, maven, go modules, cargo, pip poetry
   archetypes:
   - tactical
   - generation
@@ -34,7 +36,15 @@ metadata:
   - do-dont
   related-skills: coding-dependency-supply-chain-security, coding-version-migration,
     coding-framework-requirements-validation, coding-tool-evaluation-workflow
-------
+
+
+
+
+---
+
+
+
+
 # Package Ecosystem Navigator
 
 Navigates package manager ecosystems to assess registry health, evaluate dependencies, configure registries, and plan cross-platform migrations. This skill makes the model analyze package availability, security posture, maintenance status, and version resolution strategies across npm, PyPI, crates.io, Maven, Go modules, and other major registries — enabling teams to make informed decisions about which packages to adopt and how to manage their dependency lifecycles.

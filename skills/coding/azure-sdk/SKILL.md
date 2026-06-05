@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: azure-sdk
 description: Integrates Azure services (Resource Manager, Blob Storage, Cosmos DB,
   Functions, AKS, Key Vault) using the Azure SDK for Python with authentication and
@@ -6,7 +10,7 @@ description: Integrates Azure services (Resource Manager, Blob Storage, Cosmos D
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: azure sdk, microsoft azure, azure blob storage, cosmos db, azure functions,
     resource management, how do i use azure from python
@@ -26,7 +30,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: aws-sdk, google-cloud-sdk, oci-sdk
-------
+
+
+
+
+---
+
+
+
+
 # Azure SDK for Python Integration Patterns
 
 Integrates Microsoft Azure services using the Azure SDK for Python. Covers authentication with `DefaultAzureCredential`, resource management via `azure-mgmt-*` libraries, and client SDK patterns for Blob Storage, Cosmos DB, Functions, AKS, and Key Vault.

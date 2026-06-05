@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: modern-architecture-patterns
 description: Implements hexagonal architecture, BFF, feature flags, CQRS with event sourcing, API composition, and sidecar patterns for building modular, observable distributed systems.
 archetypes:
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: structural-design-patterns,cqrs-pattern,microservice-resilience-patterns,domain-driven-design,clean-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Modern Architecture Patterns
 

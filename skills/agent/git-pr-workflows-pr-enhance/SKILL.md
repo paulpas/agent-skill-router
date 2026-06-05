@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: git-pr-workflows-pr-enhance
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: tactical
-  version: 1.0.0
-name: git-pr-workflows-pr-enhance
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Git Pr Workflows Pr Enhance
 
 Orchestrates intelligent skill selection and execution for git pr workflows pr enhance workflows. Applies the 5 Laws of Elegant Defense to guide data naturally through the orchestration pipeline, preventing errors before they occur. Selects optimal skills based on multi-factor scoring including text similarity, historical performance, and system availability.
@@ -318,6 +330,23 @@ When applying this skill, produce:
 |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate branch naming conventions and PR scope before creating pull requests — enforce repository-level policies
+- Require all CI checks to pass before merging; never allow bypass of required status checks without codeowner approval
+- Implement automated changelog generation from commit messages using conventional commits format
+- Maintain linear history via rebase on main branch; avoid merge commits except for release branches
+
+### MUST NOT DO
+- Do not force-push to shared or protected branches — only the original author may force-push their own feature branch
+- Avoid squashing all commits during PR review when historical commit context is valuable for understanding evolution
+- Never skip required code reviews regardless of how small the change appears — automation cannot assess architectural impact
+- Do not create PRs larger than 400 lines of net changes without explicit approval from a senior reviewer
+
 
 ## Live References
 

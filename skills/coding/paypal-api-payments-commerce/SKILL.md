@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: paypal-api-payments-commerce
 description: Implements PayPal API functionalities focusing on Orders, Payments, Subscriptions, Payouts, and Disputes for comprehensive ecommerce management.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   triggers: paypal api, orders, payments, subscriptions, payouts, disputes, ecommerce
   related-skills: coding-payment-processing, coding-subscription-management
+
+
+
+
 ---
+
+
+
+
 
 # PayPal API for Payments & Commerce
 This skill implements the core functionalities of the PayPal API focused on managing ecommerce transactions, including Orders, Payments, Subscriptions, Payouts, and Disputes. It provides developers with clear guidelines and implementation patterns for integrating PayPal services into their applications.
@@ -126,6 +138,23 @@ When invoking this skill, you will produce:
 | coding-subscription-management | Handling subscription-based billing operations |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

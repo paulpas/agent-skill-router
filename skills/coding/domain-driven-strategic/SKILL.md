@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: domain-driven-strategic
 description: Maps bounded contexts using context mapping patterns (Customer/Supplier, Shared Kernel, ACL, Open Host Service) and facilitates Event Storming sessions to discover architecture boundaries in complex domains.
 license: MIT
@@ -17,13 +21,21 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: bounded contexts, ubiquitous language, event storming, context mapping, shared kernel, anticorruption layer, strategic design, ACL, open host service, published language, customer supplier pattern
+  triggers: bounded contexts, ubiquitous language, event storming, context mapping, shared kernel, anticorruption layer, strategic design, ACL
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, diagrams]
   related-skills: domain-driven-tactical, architecture-microservices
+
+
+
+
 ---
+
+
+
+
 
 # Strategic Domain-Driven Design — Bounded Contexts & Architecture Boundaries
 

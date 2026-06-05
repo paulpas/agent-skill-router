@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: modern-python-packaging
 description: Configures modern Python packaging with uv, hatchling, pyproject.toml, and dependency resolution for reproducible builds in 2025+.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, examples]
   related-skills: coding-modern-python-development, coding-testing-patterns, coding-cve-dependency-management
+
+
+
+
 ---
+
+
+
+
 
 # Modern Python Packaging
 

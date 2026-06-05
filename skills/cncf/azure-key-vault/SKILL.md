@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: azure-key-vault
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: key-vault
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Azure Key Vault
 
 Deploy and manage azure key vault infrastructure as part of your cloud-native environment.

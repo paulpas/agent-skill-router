@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-gateway-patterns
 description: Implements API gateway patterns (request routing, JWT validation, rate limiting, circuit breaker, request aggregation) to protect and orchestrate backend service traffic at the edge.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # API Gateway Patterns
 

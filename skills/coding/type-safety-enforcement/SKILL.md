@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: type-safety-enforcement
 description: Enforces strong type safety across software systems using static typing, generics, custom types, strict null checking, and compile-time validation to eliminate entire categories of runtime errors.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: type safety, static typing, strict null check, generics, type annotations, type checking, mypy, TypeScript, how do i enforce types, compile-time errors, nominal typing, structural typing
+  triggers: type safety, static typing, strict null check, generics, type annotations, type checking, TypeScript, how do i enforce types
   archetypes:
     - tactical
     - generation
@@ -28,7 +32,15 @@ metadata:
     - examples
     - do-dont
   related-skills: engineering-principles, software-documentation, testing-unit-integration-e2e, static-analysis-tools
+
+
+
+
 ---
+
+
+
+
 
 # Type Safety Enforcement
 

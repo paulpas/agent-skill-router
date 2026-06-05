@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: bitbucket-api
 description: Integrates with Bitbucket Cloud and Bitbucket Data Center REST APIs via
   atlassian-python-api to manage repositories, pull requests, pipelines, webhooks,
@@ -6,7 +10,7 @@ description: Integrates with Bitbucket Cloud and Bitbucket Data Center REST APIs
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: bitbucket api, atlassian-python-api, bitbucket cloud, bitbucket pipelines,
     pull request bitbucket, bitbucket webhooks, manage bitbucket repos, bitbucket
@@ -32,7 +36,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-github-api, coding-gitlab-api, coding-jenkins-api
-------
+
+
+
+
+---
+
+
+
+
 # Bitbucket API & atlassian-python-api Integration
 
 Integrates with Bitbucket Cloud (API v2) and Bitbucket Server/Data Center REST APIs using the `atlassian-python-api` library to manage repositories, pull requests, pipelines, branch restrictions, webhooks, and workspace administration.
@@ -360,6 +372,23 @@ def poll_pipeline_good(
 - Avoid polling pipelines without backoff — Bitbucket rate-limits at 1000 requests/hour
 - Never log or print pipeline variables or authentication tokens
 - Do not assume pagination is complete without checking the `next` page link
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## Live References
 

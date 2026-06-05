@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: docker-debugging
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: docker-debugging
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Docker Container Debugging
 
 Implements comprehensive Docker container debugging workflows for diagnosing crashes, OOM errors, network issues, volume mount problems, resource contention, and optimization issues using Docker CLI commands, inspection tools, and log analysis.

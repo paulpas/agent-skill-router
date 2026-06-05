@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: data-normalization
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: normalization
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Skill: coding-data-normalization
 
 # Exchange data normalization layer: typed dataclasses for ticker/trade/orderbook, exchange-specific parsing, and symbol format standardization

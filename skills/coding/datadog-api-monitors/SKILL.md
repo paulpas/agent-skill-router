@@ -1,25 +1,35 @@
-# Skill: datadog-api-monitors
-
 ---
+
+
+
+
 name: datadog-api-monitors
 description: Manages Datadog monitors including creating, updating, and deleting with alert configurations and best practices.
 license: MIT
 compatibility: opencode
 metadata:
-  archetypes: monitoring, alert management
-  anti_triggers: alert flooding, generic monitoring
-  response_profile:
-      verbosity: medium
-      directive_strength: high
-
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: datadog monitors, create datadog monitors, update datadog monitors, alerts management, how do I manage monitors in datadog
   role: implementation
   scope: implementation
   output-format: code
   related-skills: datadog-api-logs, datadog-api-metrics, datadog-api-dashboards
-------
+  archetypes: [monitoring, alert management]
+  anti_triggers: [alert flooding, generic monitoring]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+
+
+
+
+---
+
+
+
+
+
 # Datadog Monitor Management
 Implements creation and management of monitors in Datadog using the API. This skill focuses on defining alerts based on various metrics, along with configurations for notifications and monitoring best practices.
 

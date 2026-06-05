@@ -1,7 +1,33 @@
 ---
+
+
+
+
 name: aws-ec2
 
-description: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: "1.0.0"\n  domain: cncf\n  triggers: aws ec2, ec2 instances, aws sdk, scaling, security groups, instance management\n  archetypes: educational, tactical\n  related-skills: aws-iam, aws-sdk, aws-s3\n  output-format: code\n  role: implementation\n  scope: infrastructure\n  anti_triggers: vague concepts, misconfigured instances\n  response_profile: medium\n---\ndescription: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.
+description: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: cncf
+  triggers: aws ec2, ec2 instances, aws sdk, scaling, security groups, instance management
+  archetypes: educational, tactical
+  related-skills: aws-iam, aws-sdk, aws-s3
+  output-format: code
+  role: implementation
+  scope: infrastructure
+  anti_triggers: vague concepts, misconfigured instances
+  response_profile: medium
+
+
+
+
+---
+
+
+
+\ndescription: Comprehensive skill for managing and deploying AWS EC2 instances, including scaling, security group configuration, and SDK usage examples.
 license: MIT
 compatibility: opencode
 metadata:
@@ -151,6 +177,23 @@ Resources:
 ## Conclusion
 Using AWS EC2 enables powerful cloud-based computing at scale. This skill provides essential patterns and practices to manage and deploy EC2 instances effectively.
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Configure all AWS resources with explicit tagging for cost allocation, ownership tracking, and compliance
+- Use AWS SDK (Boto3) typed clients instead of resource API where type safety matters — prefer client() over resource()
+- Implement error handling that distinguishes between retryable (Throttling, RequestLimitExceeded) and non-retryable errors
+- Use IAM roles with least-privilege policies scoped to specific actions and resources, never wildcard permissions
+
+### MUST NOT DO
+- Do not hardcode AWS credentials — use IAM roles, environment variables, or AWS Secrets Manager
+- Avoid unencrypted S3 buckets or RDS instances in production without explicit KMS encryption configuration
+- Never launch EC2 instances without specifying a security group and subnet — always use VPC networking explicitly
+- Do not use the default endpoint region — always specify the target region explicitly in all SDK calls
+
 
 ## Live References
 

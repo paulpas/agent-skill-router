@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: sendgrid-api
 description: Integrates Twilio SendGrid API (Mail Send, Dynamic Templates, Marketing
   Campaigns, Inbound Parse, Event Webhooks) using the sendgrid Python SDK v6.x with
@@ -6,7 +10,7 @@ description: Integrates Twilio SendGrid API (Mail Send, Dynamic Templates, Marke
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: sendgrid, send email, transactional email, sendgrid api, email templates,
     dynamic templates, email delivery, marketing campaigns
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-twilio-api, coding-mailgun-api, coding-slack-api
-------
+
+
+
+
+---
+
+
+
+
 # SendGrid Email API Integration
 
 Integrates Twilio SendGrids Mail Send API, Dynamic Templates, Marketing Campaigns, and Inbound Parse using the `sendgrid` Python SDK v6.x. When loaded, this skill makes the model implement email delivery with proper Mail helper construction, dynamic template personalization, attachment handling, async sending, event webhook processing, and deliverability optimization.

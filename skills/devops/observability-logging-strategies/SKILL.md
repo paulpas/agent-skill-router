@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: observability-logging-strategies
 description: Implements best practices for logging strategies in observability to improve performance monitoring and troubleshooting in applications.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+  version: "1.1.1"
   domain: devops
   triggers: logging strategies, observability, performance monitoring, application logging, troubleshooting
   archetypes: [implementation, reference]
@@ -13,7 +17,18 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+  role: implementation
+  scope: infrastructure
+  output-format: code
+
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Logging Strategies for Enhanced Observability in DevOps
 Effective logging is crucial for achieving observability in applications. Below are best practices and strategies to improve logging outcomes and facilitate issue resolution:
@@ -58,6 +73,74 @@ No, focus on meaningful events and errors. Overlogging can lead to unnecessary n
 Adopting these best practices will significantly enhance the observability in your applications, leading to better performance monitoring and more efficient troubleshooting in DevOps processes.
 
 ---
+
+---
+
+
+
+### Pattern 2: Structured Logging with Correlation IDs
+
+```python
+import json
+import logging
+import uuid
+from contextlib import contextmanager
+from datetime import datetime, timezone
+
+
+class StructuredFormatter(logging.Formatter):
+    """JSON-formatted log output with correlation ID."""
+
+    def format(self, record):
+        log_data = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "level": record.levelname,
+            "logger": record.name,
+            "message": record.getMessage(),
+            "module": record.module,
+        }
+        if hasattr(record, "correlation_id"):
+            log_data["correlation_id"] = record.correlation_id
+        return json.dumps(log_data)
+
+
+@contextmanager
+def correlation_context():
+    """Context manager that injects a correlation ID into all log records."""
+    corr_id = str(uuid.uuid4())[:12]
+    old_factory = logging.getLogRecordFactory()
+
+    def record_factory(*args, **kwargs):
+        record = old_factory(*args, **kwargs)
+        record.correlation_id = corr_id
+        return record
+
+    logging.setLogRecordFactory(record_factory)
+    try:
+        yield corr_id
+    finally:
+        logging.setLogRecordFactory(old_factory)
+
+
+# Usage:
+# with correlation_context() as cid:
+#     logger.info("Processing request")  # Includes correlation_id in output
+```
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

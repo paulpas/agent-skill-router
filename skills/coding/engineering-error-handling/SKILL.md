@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: engineering-error-handling
 description: Designs robust error handling strategies including typed exception hierarchies, graceful degradation, retry with exponential backoff, circuit breakers, structured logging, and panic prevention across software systems.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: error handling, exception hierarchy, retry strategy, exponential backoff, circuit breaker, graceful degradation, structured logging, panic prevention, how do i handle errors, error wrapping, sentinel errors
+  triggers: error handling, exception hierarchy, retry strategy, exponential backoff, circuit breaker, graceful degradation, structured logging, how do i handle errors
   archetypes:
     - tactical
     - diagnostic
@@ -28,7 +32,15 @@ metadata:
     - examples
     - do-dont
   related-skills: engineering-principles, testing-unit-integration-e2e, software-documentation, framework-utilization
+
+
+
+
 ---
+
+
+
+
 
 # Error Handling Engineering
 

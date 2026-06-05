@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ssrf-prevention
 description: Implements defense-in-depth SSRF prevention including URL validation, IP blocking, DNS rebinding protection, and cloud metadata endpoint hardening across Python, Node.js, and Go applications.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: input-validation, api-security-patterns, output-sanitization
+
+
+
+
 ---
+
+
+
+
 
 # SSRF Prevention Engineer
 

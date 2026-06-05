@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-requirement-adoption
 description: Translates framework requirements into production code architecture through configuration contract generation, type-system enforcement, lifecycle hook mapping, and phased integration patterns for zero-downtime framework adoption.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework requirement adoption, how do i adapt my code to a framework, configuration contract, type-system enforcement, lifecycle hook mapping, phased framework integration, framework requirements implementation, zero-downtime migration, architecture adaptation
+  triggers: framework requirement adoption, configuration contract, type-system enforcement, lifecycle hook mapping, phased framework integration, zero-downtime migration, architecture adaptation, how do i adapt my code to a framework
   archetypes:
     - tactical
     - generation
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-requirements, framework-adoption-strategy, framework-application-methodology, modular-design
+
+
+
+
 ---
+
+
+
+
 
 # Framework Requirement Adoption Engine
 

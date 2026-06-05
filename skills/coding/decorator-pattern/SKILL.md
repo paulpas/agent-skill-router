@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: decorator-pattern
 description: Implements the GoF Decorator pattern for dynamic behavior extension via composition over inheritance in Python using abstract decorators, transparent delegation with __getattr__, and composable wrapper chains.
 archetypes:
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: adapter-pattern, strategy-pattern, structural-design-patterns, dependency-inversion-principle
+
+
+
+
 ---
+
+
+
+
 
 # Decorator Pattern
 

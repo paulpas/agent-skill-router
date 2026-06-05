@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: yagni-scope-management
 description: Applies YAGNI to project planning and backlog management to prevent scope creep, enforce MVP boundaries, and reject features not needed for current delivery goals.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: analysis
   content-types: [guidance, do-dont, examples, config]
   related-skills: coding-yagni-code, coding-minimum-viable-product, agent-goal-to-milestones
+
+
+
+
 ---
+
+
+
+
 
 # YAGNI for Scope and Feature Planning
 

@@ -36,15 +36,23 @@ export interface SkillContent {
 }
 
 /**
- * Tool result for skill generation
- */
-interface ToolResult {
-  success: boolean;
-  output?: SkillContent | string;
-  error?: string;
-  latencyMs: number;
-  metadata?: Record<string, unknown>;
-}
+  * Token usage information from an LLM call
+  */
+ interface UsageInfo {
+   promptTokens?: number;
+   completionTokens?: number;
+ }
+
+/**
+  * Tool result for skill generation
+  */
+ interface ToolResult {
+   success: boolean;
+   output?: SkillContent | string;
+   error?: string;
+   latencyMs: number;
+   metadata?: Record<string, unknown>;
+ }
 
 /**
  * Tool specification for LLM
@@ -92,37 +100,43 @@ export class SkillGenerationTool extends BaseMCPTool implements IMCPTool {
       const parsedArgs = this.parseAndValidateArgs(args);
       const { task, domain, topic, dryRun, contribute } = parsedArgs;
 
-      // Generate skill content
-      const skillContent = await this.generateSkill(task, domain, topic);
+     // Generate skill content (includes usage data from LLM calls)
+       const genResult = await this.generateSkill(task, domain, topic);
 
-      if (!skillContent) {
-        throw new Error('Failed to generate skill content');
-      }
+       if (!genResult) {
+         throw new Error('Failed to generate skill content');
+       }
 
-      // Validate skill content
-      const validation = this.validateSkillContent(skillContent);
-      if (!validation.isValid) {
-        console.warn('Skill validation warnings', {
-          issues: validation.issues,
-        });
-      }
+       const skillContent = genResult.content;
+       const usageInfo = genResult.usage;
 
-      // Dry run mode - just return content
-      if (dryRun) {
-        return {
-          success: true,
-          output: skillContent,
-          metadata: {
-            size: skillContent.fullContent.length,
-            isValid: validation.isValid,
-            issues: validation.issues,
-          },
-          latencyMs: Date.now() - startTime,
-        };
-      }
+       // Validate skill content
+       const validation = this.validateSkillContent(skillContent);
+       if (!validation.isValid) {
+         console.warn('Skill validation warnings', {
+           issues: validation.issues,
+         });
+       }
+
+       // Dry run mode - just return content with usage metadata
+       if (dryRun) {
+         return {
+           success: true,
+           output: skillContent,
+           metadata: {
+             size: skillContent.fullContent.length,
+             isValid: validation.isValid,
+             issues: validation.issues,
+             promptTokens: usageInfo?.promptTokens,
+             completionTokens: usageInfo?.completionTokens,
+             totalTokens: (usageInfo?.promptTokens ?? 0) + (usageInfo?.completionTokens ?? 0),
+           },
+           latencyMs: Date.now() - startTime,
+         };
+       }
 
 // Save skill file
-       const savedPath = await this.saveSkillFile(skillContent, domain, topic, contribute);
+        const savedPath = await this.saveSkillFile(skillContent, domain, topic, contribute);
        // eslint-disable-next-line no-console
        console.log('Skill saved successfully', {
          path: savedPath,
@@ -131,17 +145,20 @@ export class SkillGenerationTool extends BaseMCPTool implements IMCPTool {
          topic: topic || skillContent.frontmatter.name,
        });
 
-      return {
-        success: true,
-        output: savedPath,
-        metadata: {
-          size: skillContent.fullContent.length,
-          isValid: validation.isValid,
-          issues: validation.issues,
-          contribute: contribute,
-        },
-        latencyMs: Date.now() - startTime,
-      };
+    return {
+         success: true,
+         output: savedPath,
+         metadata: {
+           size: skillContent.fullContent.length,
+           isValid: validation.isValid,
+           issues: validation.issues,
+           contribute: contribute,
+           promptTokens: usageInfo?.promptTokens,
+           completionTokens: usageInfo?.completionTokens,
+           totalTokens: (usageInfo?.promptTokens ?? 0) + (usageInfo?.completionTokens ?? 0),
+         },
+         latencyMs: Date.now() - startTime,
+       };
     } catch (error) {
       console.error('Skill generation failed', {
         error: error instanceof Error ? error.message : String(error),
@@ -193,14 +210,14 @@ export class SkillGenerationTool extends BaseMCPTool implements IMCPTool {
     return { task, domain, topic, dryRun, contribute };
   }
 
-  /**
-   * Generate skill content using LLM
-   */
-  private async generateSkill(
-    task: string,
-    domain?: string,
-    topic?: string
-  ): Promise<SkillContent | null> {
+ /**
+    * Generate skill content using LLM
+    */
+   private async generateSkill(
+     task: string,
+     domain?: string,
+     topic?: string
+   ): Promise<{ content: SkillContent; usage?: UsageInfo } | null> {
 // eslint-disable-next-line no-console
        console.log('Generating skill', {
          task: task.slice(0, 100),
@@ -237,11 +254,11 @@ export class SkillGenerationTool extends BaseMCPTool implements IMCPTool {
     // Get content-types from extraction (LLM determined) or domain defaults
     const contentTypes = extractionResult?.contentTypes || DomainRegistry.getInstance().getDomainDefaults(extractedDomain!).contentTypes.join(', ');
 
-for (let attempt = 1; attempt <= this.maxRetries; attempt++) {
+   for (let attempt = 1; attempt <= this.maxRetries; attempt++) {
           // eslint-disable-next-line no-console
           console.log(`LLM generation attempt ${attempt}/${this.maxRetries}`);
 
-      const content = await this.generateSkillContent(
+      const result = await this.generateSkillContent(
         extractedDomain!,
         extractedTopic!,
         skillDescription,
@@ -250,8 +267,8 @@ for (let attempt = 1; attempt <= this.maxRetries; attempt++) {
         contentTypes
       );
 
-      if (content) {
-        return content;
+      if (result) {
+        return result;
       }
 
       if (attempt < this.maxRetries) {
@@ -307,7 +324,7 @@ Respond with ONLY the JSON object, no other text.`;
         responseFormat: 'json_object',
       });
 
-      const result = JSON.parse(response);
+      const result = JSON.parse(response.content);
       return {
         domain: result.domain || 'coding',
         topic: result.topic || 'new-skill',
@@ -328,38 +345,41 @@ Respond with ONLY the JSON object, no other text.`;
  /**
     * Generate skill content using LLM
     */
-   private async generateSkillContent(
-    domain: string,
-    topic: string,
-    description: string,
-    role: string,
-    outputFormat: string | null,
-    contentTypes: string
-  ): Promise<SkillContent | null> {
-    const generationPrompt = this.buildGenerationPrompt(domain, topic, description, role, outputFormat, contentTypes);
+ private async generateSkillContent(
+     domain: string,
+     topic: string,
+     description: string,
+     role: string,
+     outputFormat: string | null,
+     contentTypes: string
+   ): Promise<{ content: SkillContent; usage?: UsageInfo } | null> {
+     const generationPrompt = this.buildGenerationPrompt(domain, topic, description, role, outputFormat, contentTypes);
 
-    try {
-      const response = await this.callOpenAI({
-        system: 'You are an expert at creating high-quality AI skill definitions.',
-        user: generationPrompt,
-        temperature: 0.7,
-      });
+     try {
+       const response = await this.callOpenAI({
+         system: 'You are an expert at creating high-quality AI skill definitions.',
+         user: generationPrompt,
+         temperature: 0.7,
+       });
 
-      const content = response.trim();
+       const contentStr = response.content.trim();
 
       // Extract YAML frontmatter and body
-      const parsed = this.extractYamlAndBody(content);
+      const parsed = this.extractYamlAndBody(contentStr);
       if (!parsed) {
-        console.error('Failed to parse generated skill content');
-        return null;
-      }
+         console.error('Failed to parse generated skill content');
+         return null;
+       }
 
-      return {
-        frontmatter: parsed.frontmatter,
-        body: parsed.body,
-        fullContent: content,
-      };
-    } catch (error) {
+       return {
+         content: {
+           frontmatter: parsed.frontmatter,
+           body: parsed.body,
+           fullContent: contentStr,
+         },
+         usage: response.usage,
+       };
+     } catch (error) {
       console.error('LLM generation failed', {
         error: error instanceof Error ? error.message : String(error),
       });
@@ -502,61 +522,67 @@ Generate the complete SKILL.md file content. Start with --- for YAML frontmatter
     * Call OpenAI API directly (like LLMRanker)
     * Supports OpenAI-compatible APIs (OpenRouter, Groq, local LLMs)
     */
-   private async callOpenAI(params: {
-     system: string;
-     user: string;
-     temperature: number;
-     responseFormat?: 'json_object' | 'text';
-    }): Promise<string> {
-     const { system, user, temperature, responseFormat } = params;
+  private async callOpenAI(params: {
+      system: string;
+      user: string;
+      temperature: number;
+      responseFormat?: 'json_object' | 'text';
+     }): Promise<{ content: string; usage?: UsageInfo }> {
+      const { system, user, temperature, responseFormat } = params;
 
-     // Fail Fast: Validate API key before making request
-     if (!this.apiKey || this.apiKey.trim() === '') {
-       throw new Error('Missing OpenAI API key. Set OPENAI_API_KEY environment variable.');
-     }
+      // Fail Fast: Validate API key before making request
+      if (!this.apiKey || this.apiKey.trim() === '') {
+        throw new Error('Missing OpenAI API key. Set OPENAI_API_KEY environment variable.');
+      }
 
-     // Support OpenAI-compatible APIs via environment variable
-     const apiBase = process.env.OPENAI_BASE_URL || process.env.OPENAI_API_BASE || 'https://api.openai.com/v1';
+      // Support OpenAI-compatible APIs via environment variable
+      const apiBase = process.env.OPENAI_BASE_URL || process.env.OPENAI_API_BASE || 'https://api.openai.com/v1';
 
-     const response = await fetch(`${apiBase}/chat/completions`, {
-       method: 'POST',
-       headers: {
-         'Content-Type': 'application/json',
-         'Authorization': `Bearer ${this.apiKey}`,
-       },
-       body: JSON.stringify({
-         model: this.model,
-         messages: [
-           { role: 'system', content: system },
-           { role: 'user', content: user },
-         ],
-         temperature,
-         ...(responseFormat ? { response_format: { type: responseFormat } } : {}),
-         max_tokens: 4000,
-       }),
-     });
+      const response = await fetch(`${apiBase}/chat/completions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({
+          model: this.model,
+          messages: [
+            { role: 'system', content: system },
+            { role: 'user', content: user },
+          ],
+          temperature,
+          ...(responseFormat ? { response_format: { type: responseFormat } } : {}),
+          max_tokens: 4000,
+        }),
+      });
 
-     if (!response.ok) {
-       const err = await response.text();
-       throw new Error(`OpenAI-compatible API error ${response.status}: ${err}`);
-     }
+      if (!response.ok) {
+        const err = await response.text();
+        throw new Error(`OpenAI-compatible API error ${response.status}: ${err}`);
+      }
 
-     const data = await response.json() as {
-       choices: { message: { content: string } }[];
-       usage?: { prompt_tokens?: number; completion_tokens?: number };
-     };
+      const data = await response.json() as {
+        choices: { message: { content: string } }[];
+        usage?: { prompt_tokens?: number; completion_tokens?: number };
+      };
 
- 
-         const content = data.choices[0].message.content;
-         // eslint-disable-next-line no-console
-         console.debug('OpenAI-compatible API response received', {
-           model: this.model,
-           inputTokens: data.usage?.prompt_tokens,
-           outputTokens: data.usage?.completion_tokens,
-         });
 
-     return content;
-   }
+          const content = data.choices[0].message.content;
+          // eslint-disable-next-line no-console
+          console.debug('OpenAI-compatible API response received', {
+            model: this.model,
+            inputTokens: data.usage?.prompt_tokens,
+            outputTokens: data.usage?.completion_tokens,
+          });
+
+      return {
+        content,
+        usage: data.usage ? {
+          promptTokens: data.usage.prompt_tokens,
+          completionTokens: data.usage.completion_tokens,
+        } : undefined,
+      };
+    }
 
   /**
    * Get default role for domain

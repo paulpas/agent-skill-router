@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: risk-stress-testing
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: stress-testing
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Evaluate portfolio performance under extreme market conditions
 
 **Philosophy:** Stress testing reveals hidden vulnerabilities; portfolios should survive worst-case scenarios
@@ -269,6 +281,106 @@ class StressTestEngine:
 ```
 
 ---
+
+---
+
+
+
+### Pattern 2: Risk-Managed Trading Logic with Validation
+
+```python
+from __future__ import annotations
+
+import logging
+from dataclasses import dataclass
+from typing import Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class TradeSignal:
+    """Immutable trade signal with all required validation constraints."""
+    symbol: str
+    side: str  # "buy" or "sell"
+    price: float
+    quantity: float
+    confidence: float  # 0.0 to 1.0
+    reason: str
+
+    def validate(self) -> bool:
+        """Validate that the trade signal meets all business constraints."""
+        if self.quantity <= 0:
+            raise ValueError(f"Quantity must be positive, got {self.quantity}")
+        if self.price <= 0:
+            raise ValueError(f"Price must be positive, got {self.price}")
+        if not 0.0 <= self.confidence <= 1.0:
+            raise ValueError(f"Confidence must be between 0 and 1, got {self.confidence}")
+        return True
+
+
+def generate_trade_signal(
+    symbol: str,
+    side: str,
+    price: float,
+    quantity: float,
+    confidence: float,
+    reason: str,
+) -> TradeSignal:
+    """Generate a validated trade signal with guard clause checks."""
+    if side not in ("buy", "sell"):
+        raise ValueError(f"Invalid side '{side}', must be 'buy' or 'sell'")
+
+    signal = TradeSignal(
+        symbol=symbol,
+        side=side,
+        price=price,
+        quantity=quantity,
+        confidence=confidence,
+        reason=reason,
+    )
+    signal.validate()
+    logger.info("Trade signal generated: %s %s %.4f @ %.2f (confidence=%.2f)",
+                 symbol, side, quantity, price, confidence)
+    return signal
+
+
+def execute_with_risk_check(signal: TradeSignal, max_position_pct: float = 0.05) -> dict:
+    """Execute a trade signal after applying risk management checks."""
+    adjusted_quantity = signal.quantity
+    if signal.side == "buy" and signal.quantity > max_position_pct:
+        logger.warning("Position %s exceeds max %.1f%% — capping to %.4f",
+                        signal.symbol, max_position_pct * 100, max_position_pct)
+        adjusted_quantity = max_position_pct
+
+    return {
+        "symbol": signal.symbol,
+        "side": signal.side,
+        "price": signal.price,
+        "quantity": adjusted_quantity,
+        "capped": adjusted_quantity < signal.quantity,
+        "confidence": signal.confidence,
+        "status": "submitted",
+    }
+```
+
+## Constraints
+
+### MUST DO
+- Calculate position sizing using a risk-per-trade percentage of portfolio equity, not a fixed dollar amount
+- Implement layered risk controls: stop loss → drawdown limit → portfolio-level circuit breaker → kill switch
+- Compute VaR using historical simulation with at least 1 year of data and multiple confidence levels (95%, 99%)
+- Track correlation matrices across all open positions and flag portfolios where top-3 correlations exceed 0.8
+- Log all risk events (stop hits, drawdown warnings, kill switches) with full context including P&L, position state, and market conditions
+
+### MUST NOT DO
+- Do not use a stop loss as the sole risk control — always layer with portfolio-level limits
+- Avoid recalculating position sizes during active drawdown without regime analysis — volatility is likely elevated
+- Never allow a single position to exceed 5% of portfolio equity regardless of signal strength or confidence score
+- Do not backtest risk metrics without including slippage, commissions, and partial fills in the simulation
+- Avoid using standard deviation alone for VaR when returns show fat tails — use historical simulation or EVT
+
 
 ## Live References
 

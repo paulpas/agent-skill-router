@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: authentication-design-patterns
 description: Implements production authentication architecture including JWT token lifecycle, OAuth 2.0 flows, session management, MFA/TOTP, API key auth, and password hashing strategies with security-first design patterns.
 license: MIT
@@ -21,7 +25,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: api-gateway-patterns,spring-security-core,websocket-security
+
+
+
+
 ---
+
+
+
+
 
 # Authentication Design Patterns
 

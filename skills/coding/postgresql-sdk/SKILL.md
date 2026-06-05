@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: postgresql-sdk
 description: Integrates PostgreSQL databases using psycopg2 2.9.x and asyncpg 0.31.x
   with patterns for connection pooling, replication, COPY, and query parameterization.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: postgresql, psycopg2, asyncpg, postgres connection pool, sql parameterization,
     how do i query postgres from python, database replication, libpq
@@ -30,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-database-design-modeling, coding-database-migrations, coding-asyncio-patterns
-------
+
+
+
+
+---
+
+
+
+
 # PostgreSQL Python SDK Integration
 
 Integrates PostgreSQL databases using `psycopg2` 2.9.x (synchronous, DB-API 2.0) and `asyncpg` 0.31.x (asyncio-native) with patterns for connection management, parameterized queries, COPY bulk operations, connection pooling, logical replication, and transaction handling.

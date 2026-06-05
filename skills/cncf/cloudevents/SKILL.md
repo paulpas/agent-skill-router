@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: cloudevents
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: cloudevents
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # CloudEvents in Cloud-Native Engineering
 
 **Category:** eventing  

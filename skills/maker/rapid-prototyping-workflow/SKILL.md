@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rapid-prototyping-workflow
 description: Implements rapid prototyping workflows (code mocks, breadboard hardware,
   physical models, wireframes) with decision matrices and build-test-learn cycles
@@ -6,7 +10,7 @@ description: Implements rapid prototyping workflows (code mocks, breadboard hard
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: maker
   triggers: rapid prototyping, quick prototype, proof of concept, iterative design,
     mockup, wireframe, how do i quickly test an idea
@@ -29,7 +33,15 @@ metadata:
   - examples
   - do-dont
   related-skills: digital-fabrication, maker-safety-practices
-------
+
+
+
+
+---
+
+
+
+
 # Rapid Prototyping Workflow
 
 Implements rapid prototyping workflows to go from raw idea to verified concept through structured build-test-learn cycles. Models select the right fidelity level, choose appropriate build methods (software mockups, hardware breadboards, physical models), run focused validation tests, and make data-driven go/no-go/pivot decisions.

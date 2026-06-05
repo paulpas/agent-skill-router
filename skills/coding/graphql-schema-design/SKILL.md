@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: graphql-schema-design
 description: Implements GraphQL schema design with SDL-first types, input objects,
   interfaces, unions, custom scalars, and deprecation directives for type-safe API
@@ -6,7 +10,7 @@ description: Implements GraphQL schema design with SDL-first types, input object
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: graphql schema design, SDL, type system, strawberry-graphql, interface,
     union type, graphql-input-object, graphql-deprecation
@@ -26,7 +30,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: graphql-dataloader-pattern, graphql-error-handling-validation, graphql-federation, graphql-subscriptions
-------
+
+
+
+
+---
+
+
+
+
 # GraphQL Schema Design
 
 Implements production-grade GraphQL schema design patterns using the Strawberry Python framework. Models domain entities as SDL-first type systems with proper input objects, interfaces, unions, custom scalars, and deprecation directives to create type-safe, maintainable API contracts.

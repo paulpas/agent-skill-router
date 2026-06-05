@@ -26,6 +26,8 @@ const MCPBridge_1 = require("./mcp/MCPBridge");
 const Logger_1 = require("./observability/Logger");
 const GitHubSkillLoader_1 = require("./skills/GitHubSkillLoader");
 const CompressionMetrics_1 = require("./utils/CompressionMetrics");
+const AppError_1 = require("./core/AppError");
+const AutoSkillCreator_1 = require("./core/AutoSkillCreator");
 __exportStar(require("./core/types"), exports);
 __exportStar(require("./core/Router"), exports);
 __exportStar(require("./core/ExecutionEngine"), exports);
@@ -33,6 +35,8 @@ __exportStar(require("./core/ExecutionPlanner"), exports);
 __exportStar(require("./core/SafetyLayer"), exports);
 __exportStar(require("./core/SkillCompressor"), exports);
 __exportStar(require("./mcp/MCPBridge"), exports);
+__exportStar(require("./core/AutoSkillCreator"), exports);
+__exportStar(require("./core/types"), exports);
 // DO NOT export mcp/types.js to avoid duplicate ToolResult/ToolSpec exports
 __exportStar(require("./embedding/EmbeddingService"), exports);
 __exportStar(require("./embedding/VectorDatabase"), exports);
@@ -48,6 +52,7 @@ class AgentSkillRoutingApp {
     router = null;
     mcpBridge = null;
     githubLoader = null;
+    autoSkillCreator = null;
     logger;
     ready = false;
     loadingError = null;
@@ -71,9 +76,72 @@ class AgentSkillRoutingApp {
     async start(port = 3000) {
         this.app = (0, fastify_1.default)({ logger: false });
         // Log every HTTP request/response
-        this.app.addHook('onRequest', async (request) => {
+        // ── API key authentication ──────────────────────────────────────────
+        const API_KEY = process.env.API_KEY || '';
+        const AUTH_ENABLED = API_KEY.length > 0;
+        // ── In-memory rate limiter (only active when AUTH_ENABLED) ──────────
+        const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
+        const RATE_LIMIT_MAX = 60; // 60 requests per window
+        const rateLimitMap = new Map();
+        // ── CORS origins ────────────────────────────────────────────────────
+        const CORS_ALLOWED_ORIGINS = (process.env.CORS_ORIGINS || 'http://localhost:*,https://localhost:*,opencode://*')
+            .split(',').map((o) => o.trim());
+        function isOriginAllowed(origin) {
+            if (!origin)
+                return false;
+            return CORS_ALLOWED_ORIGINS.some((allowed) => {
+                if (allowed.endsWith(':*')) {
+                    const prefix = allowed.slice(0, -2);
+                    return origin.startsWith(prefix);
+                }
+                return origin === allowed;
+            });
+        }
+        this.app.addHook('onRequest', async (request, reply) => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             request._startTime = Date.now();
+            // CORS headers (preflight + regular)
+            const origin = request.headers.origin;
+            if (origin && isOriginAllowed(origin)) {
+                reply.header('Access-Control-Allow-Origin', origin);
+                reply.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+                reply.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+                reply.header('Access-Control-Max-Age', '86400');
+            }
+            // Handle CORS preflight
+            if (request.method === 'OPTIONS') {
+                reply.code(204);
+                return;
+            }
+            // Skip auth/rate-limit for health endpoint
+            if (request.url === '/health')
+                return;
+            // Auth check (only if API_KEY env is set — disabled by default)
+            if (AUTH_ENABLED) {
+                const authHeader = request.headers.authorization;
+                if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.slice(7) !== API_KEY) {
+                    reply.code(401).send({ error: 'Unauthorized', message: 'Valid API key required' });
+                    return;
+                }
+                // Rate limiting (per IP, only when auth is active)
+                const ip = request.ip || 'unknown';
+                const now = Date.now();
+                let entry = rateLimitMap.get(ip);
+                if (!entry || now - entry.windowStart > RATE_LIMIT_WINDOW_MS) {
+                    entry = { count: 0, windowStart: now };
+                    rateLimitMap.set(ip, entry);
+                }
+                entry.count++;
+                // Set rate limit headers
+                const remaining = Math.max(0, RATE_LIMIT_MAX - entry.count);
+                reply.header('X-RateLimit-Limit', String(RATE_LIMIT_MAX));
+                reply.header('X-RateLimit-Remaining', String(remaining));
+                reply.header('X-RateLimit-Reset', String(Math.ceil((entry.windowStart + RATE_LIMIT_WINDOW_MS) / 1000)));
+                if (entry.count > RATE_LIMIT_MAX) {
+                    reply.code(429).send({ error: 'Rate limit exceeded', message: 'Too many requests' });
+                    return;
+                }
+            }
             this.logger.info(`→ ${request.method} ${request.url}`);
         });
         this.app.addHook('onSend', async (request, reply, payload) => {
@@ -86,7 +154,7 @@ class AgentSkillRoutingApp {
             return payload;
         });
         // ── /route ─────────────────────────────────────────────────────────────
-        this.app.post('/route', async (request, reply) => {
+        this.app.post('/route', { bodyLimit: 10000 }, async (request, reply) => {
             if (!this.ready) {
                 reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
                 return;
@@ -117,11 +185,15 @@ class AgentSkillRoutingApp {
                 reply.code(200).send(response);
             }
             catch (error) {
-                this.logger.error('Route request failed', {
+                const isAppError = error instanceof AppError_1.AppError;
+                const statusCode = isAppError ? error.statusCode : 500;
+                const errorLabel = isAppError ? 'Validation failed' : 'Route failed';
+                this.logger.error(errorLabel, {
                     error: error instanceof Error ? error.message : String(error),
+                    statusCode,
                 });
-                reply.code(500).send({
-                    error: 'Route failed',
+                reply.code(statusCode).send({
+                    error: errorLabel,
                     message: error instanceof Error ? error.message : String(error),
                 });
             }
@@ -167,11 +239,15 @@ class AgentSkillRoutingApp {
                 });
             }
             catch (error) {
-                this.logger.error('Execute request failed', {
+                const isAppError = error instanceof AppError_1.AppError;
+                const statusCode = isAppError ? error.statusCode : 500;
+                const errorLabel = isAppError ? 'Validation failed' : 'Execution failed';
+                this.logger.error(errorLabel, {
                     error: error instanceof Error ? error.message : String(error),
+                    statusCode,
                 });
-                reply.code(500).send({
-                    error: 'Execution failed',
+                reply.code(statusCode).send({
+                    error: errorLabel,
                     message: error instanceof Error ? error.message : String(error),
                 });
             }
@@ -223,6 +299,66 @@ class AgentSkillRoutingApp {
                 sourceFile: s.sourceFile,
             }));
             reply.code(200).send({ total: skills.length, skills });
+        });
+        // ── /skill/create — auto-create a skill when no good match exists ──────
+        this.app.post('/skill/create', {
+            bodyLimit: 10000,
+            schema: {
+                body: {
+                    type: 'object',
+                    properties: {
+                        task: { type: 'string' },
+                        domain: { type: 'string' },
+                        topic: { type: 'string' },
+                        dryRun: { type: 'boolean' },
+                    },
+                    required: ['task'],
+                    additionalProperties: false,
+                },
+            },
+        }, async (request, reply) => {
+            if (!this.ready) {
+                return reply.code(503).send({ error: 'Service unavailable', message: 'Skills are still loading' });
+            }
+            // Guard: validate request body
+            const body = request.body;
+            if (!body || typeof body !== 'object' || !body.task || typeof body.task !== 'string') {
+                return reply.code(400).send({ error: 'Invalid request', message: 'Missing or invalid "task" field (required string)' });
+            }
+            const task = body.task.trim();
+            if (task.length === 0) {
+                return reply.code(400).send({ error: 'Invalid request', message: 'Task cannot be empty' });
+            }
+            if (!this.autoSkillCreator || !this.router) {
+                return reply.code(503).send({ error: 'Service unavailable', message: 'Auto-skill creator not initialized' });
+            }
+            try {
+                this.logger.info('Auto-skill creation requested', { task: task.slice(0, 120), dryRun: body.dryRun });
+                const response = await this.autoSkillCreator.createSkill({
+                    task,
+                    domain: body.domain,
+                    topic: body.topic,
+                    dryRun: body.dryRun,
+                }, this.router);
+                reply.code(200).send(response);
+            }
+            catch (error) {
+                const message = error instanceof Error ? error.message : String(error);
+                this.logger.error('Auto-skill creation failed', {
+                    error: message,
+                    task: task.slice(0, 120),
+                });
+                if (message.includes('Missing OpenAI API key')) {
+                    return reply.code(400).send({
+                        error: 'Configuration required',
+                        message: 'OpenAI API key is required for skill generation. Set OPENAI_API_KEY environment variable.',
+                    });
+                }
+                return reply.code(500).send({
+                    error: 'Auto-skill creation failed',
+                    message,
+                });
+            }
         });
         // ── /skill/:name — on-demand SKILL.md content (with optional compression) ─
         this.app.get('/skill/:name', async (request, reply) => {
@@ -632,6 +768,12 @@ Use --help for configuration options.
             enabledTools: this.config.enabledTools,
             disableTools: this.config.disableTools,
             defaultTimeoutMs: this.config.defaultTimeoutMs,
+        });
+        // Initialize auto-skill creator (reads env vars for threshold and feature flag)
+        this.autoSkillCreator = new AutoSkillCreator_1.AutoSkillCreator({
+            enabled: process.env.AUTO_SKILL_CREATION_ENABLED !== 'false',
+            confidenceThreshold: parseFloat(process.env.AUTO_SKILL_CONFIDENCE_THRESHOLD || '0.35') || 0.35,
+            maxValidationRetries: parseInt(process.env.AUTO_SKILL_MAX_RETRIES || '5', 10) || 5,
         });
         // Load compression configuration for scaling to 1,778 skills
         const compressionCacheSizeMB = parseInt(process.env.COMPRESSION_CACHE_SIZE_MB || '1024', 10);

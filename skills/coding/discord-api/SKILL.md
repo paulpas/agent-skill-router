@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: discord-api
 description: Integrates Discord API (Gateway, REST, Slash Commands, Webhooks, Voice)
   using discord.py v2.7+ with proper intent configuration, cog structuring, slash
@@ -6,7 +10,7 @@ description: Integrates Discord API (Gateway, REST, Slash Commands, Webhooks, Vo
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: discord, discord bot, discord.py, slash commands, discord api, discord
     webhook, discord gateway, how do i make a discord bot
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-slack-api, coding-twilio-api
-------
+
+
+
+
+---
+
+
+
+
 # Discord API Integration (Bot, Slash Commands, Gateway, Webhooks)
 
 Integrates the Discord API — Gateway, REST, Slash Commands, Webhooks, and Voice — using `discord.py` v2.7+. When loaded, this skill makes the model implement Discord bots and integrations with proper intent configuration, cog-organized command structure, application command registration, modal interactions, and Gateway event handling.

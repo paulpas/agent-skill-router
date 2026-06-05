@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: firebase-sdk
 description: Integrates Firebase using firebase-admin 7.x with patterns for Firestore
   CRUD, Realtime Database, Auth (token verification, user management), Cloud Messaging,
@@ -6,7 +10,7 @@ description: Integrates Firebase using firebase-admin 7.x with patterns for Fire
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: firebase, firebase admin, firestore, firebase auth, how do i use firebase
     from python, firebase realtime database, fcm, firebase cloud messaging
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-supabase-sdk, coding-postgresql-sdk, coding-authentication-patterns
-------
+
+
+
+
+---
+
+
+
+
 # Firebase Admin Python SDK Integration
 
 Integrates Firebase using `firebase-admin` 7.x with patterns for Firestore document CRUD and queries, Realtime Database operations, Auth (custom tokens, ID token verification, user management), Firebase Cloud Messaging (FCM) push notifications, and Firebase Storage.

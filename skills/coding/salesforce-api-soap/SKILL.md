@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: salesforce-api-soap
 description: Implements interactions with Salesforce API using SOAP protocols for legacy systems integration efficiently, ensuring compliance and data integrity while supporting seamless data transactions across legacy systems and optimizing integration processes.
 license: MIT
@@ -20,7 +24,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: tactical
+
+
+
+
 ---
+
+
+
+
 
 # Salesforce API - SOAP Integration
 

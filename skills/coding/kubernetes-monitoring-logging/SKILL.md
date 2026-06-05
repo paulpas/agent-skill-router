@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-monitoring-logging
 description: Manages monitoring and logging in Kubernetes, including setting up Prometheus, Grafana, and logging best practices.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance]
+
+
+
+
 ---
+
+
+
+
 
 # Kubernetes Monitoring and Logging
 

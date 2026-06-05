@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: build-performance-optimization
 description: Profiles, analyzes, and optimizes slow builds through bottleneck identification, incremental compilation strategies, intelligent caching, and parallelization techniques for C++, Java, Python, TypeScript, and Go projects.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
     verbosity: high
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Build Performance Optimization
 

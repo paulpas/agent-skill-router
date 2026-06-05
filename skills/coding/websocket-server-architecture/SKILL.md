@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: websocket-server-architecture
 description: Implements WebSocket server architecture patterns including pub/sub routing, session management, horizontal scaling with Redis/NATS, heartbeat keepalive, and graceful shutdown for high-concurrency real-time systems.
 license: MIT
@@ -25,7 +29,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: websocket-security, websocket-manager, websocket-protocol, websocket-performance
+
+
+
+
 ---
+
+
+
+
 
 # WebSocket Server Architecture
 

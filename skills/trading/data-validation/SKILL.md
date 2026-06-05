@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: data-validation
 compatibility: opencode
 completeness: 95
 content-types:
@@ -26,9 +31,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: validation
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Ensure trading data meets quality standards before processing to prevent bad decisions
 
 **Philosophy:** Garbage in, garbage out; validating data at pipeline boundaries catches errors early and prevents cascading failures
@@ -432,6 +444,142 @@ class BatchValidator:
 ```
 
 ---
+
+---
+
+
+### Pattern 2: Schema Validation with Pydantic for Financial Data
+
+```python
+from __future__ import annotations
+
+import logging
+from datetime import datetime, timezone
+from decimal import Decimal
+from typing import Optional
+
+from pydantic import BaseModel, Field, field_validator
+
+
+logger = logging.getLogger(__name__)
+
+
+# --- Input Schemas (Parse Don't Validate — validated at boundary) ---
+
+class TickData(BaseModel):
+    """Validated tick record with strict constraints."""
+    symbol: str = Field(min_length=3, max_length=20, pattern=r'^[A-Z]+/[A-Z]+$')
+    price: Decimal = Field(gt=0)
+    size: Decimal = Field(gte=0)
+    side: str = Field(pattern=r'^(buy|sell)$')
+    timestamp_ms: int = Field(gt=0)
+    exchange: str = Field(min_length=1)
+
+    @field_validator("timestamp_ms")
+    @classmethod
+    def validate_timestamp_recent(cls, v: int) -> int:
+        now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
+        if now_ms - v > 30_000:  # Stale by more than 30 seconds
+            raise ValueError("Timestamp is stale — data may be too old to trade on")
+        return v
+
+
+class CandleData(BaseModel):
+    """Validated OHLCV candle with cross-field validation."""
+    symbol: str
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    open_price: Decimal = Field(gt=0)
+    high_price: Decimal
+    low_price: Decimal
+    close_price: Decimal = Field(gt=0)
+    volume: Decimal = Field(gte=0)
+
+    @field_validator("high_price")
+    @classmethod
+    def validate_high_not_below_prices(cls, v, info):
+        data = info.data
+        if v < data.get("open_price", 0) or v < data.get("low_price", 0):
+            raise ValueError(f"High ({v}) must be >= open and low")
+        return v
+
+    @field_validator("low_price")
+    @classmethod
+    def validate_low_not_above_prices(cls, v, info):
+        data = info.data
+        if v > data.get("open_price", 0) or v > data.get("high_price", 0):
+            raise ValueError(f"Low ({v}) must be <= open and high")
+        return v
+
+
+class ValidationResult(BaseModel):
+    """Result of validating a batch of records."""
+    total: int
+    valid: int
+    invalid: int
+    errors: list[dict] = Field(default_factory=list)
+
+    @property
+    def pass_rate(self) -> float:
+        return self.valid / self.total if self.total > 0 else 0.0
+
+
+class DataValidator:
+    """Validates batches of financial data against schema constraints."""
+
+    def validate_ticks(self, raw_records: list[dict]) -> ValidationResult:
+        results = ValidationResult(total=len(raw_records), valid=0, invalid=0)
+        for i, record in enumerate(raw_records):
+            try:
+                TickData(**record)
+                results.valid += 1
+            except Exception as e:
+                results.invalid += 1
+                results.errors.append({
+                    "index": i,
+                    "error": str(e),
+                    "record_sample": {k: v for k, v in list(record.items())[:3]},
+                })
+        logger.info(
+            "Tick validation: %d/%d valid (%.1f%% pass rate)",
+            results.valid, results.total, results.pass_rate * 100,
+        )
+        return results
+
+    def validate_candles(self, raw_records: list[dict]) -> ValidationResult:
+        results = ValidationResult(total=len(raw_records), valid=0, invalid=0)
+        for i, record in enumerate(raw_records):
+            try:
+                CandleData(**record)
+                results.valid += 1
+            except Exception as e:
+                results.invalid += 1
+                results.errors.append({
+                    "index": i,
+                    "error": str(e),
+                })
+        logger.info(
+            "Candle validation: %d/%d valid (%.1f%% pass rate)",
+            results.valid, results.total, results.pass_rate * 100,
+        )
+        return results
+```
+
+## Constraints
+
+### MUST DO
+- Validate all incoming data against schema constraints (type, range, nullability) before processing or storage
+- Implement idempotent operations: re-processing the same data must produce identical results
+- Track data lineage and provenance with timestamps, source identifiers, and transformation history for every record
+- Handle out-of-order data by implementing a watermark-based ordering mechanism with configurable tolerance window
+- Log data quality metrics (completeness, freshness, accuracy) per source with automatic alerting on degradation
+
+### MUST NOT DO
+- Do not silently drop records that fail validation — log them to a quarantine table for review
+- Avoid concatenating strings for timestamp comparison; use proper datetime/timedelta objects
+- Never assume data arrives in chronological order from any external feed without explicit ordering guarantees
+- Do not store raw and processed data in the same table without clear partitioning or separation strategy
+- Avoid blocking on slow data sources — implement async prefetch with timeout-based fallback to cached data
+
 
 ## Live References
 

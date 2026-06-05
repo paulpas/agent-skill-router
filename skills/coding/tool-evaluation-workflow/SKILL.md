@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: tool-evaluation-workflow
 description: Applies a structured evaluation framework to select tools, libraries,
   and frameworks based on technical fit, community health, security posture, performance
@@ -6,7 +10,7 @@ description: Applies a structured evaluation framework to select tools, librarie
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: tool evaluation, library selection, framework comparison, proof of concept,
     technology assessment, how do i evaluate tools, build vs buy decision, dependency
@@ -31,7 +35,15 @@ metadata:
   - examples
   - do-dont
   related-skills: dependency-inversion-principle, refactoring-techniques, modular-design
-------
+
+
+
+
+---
+
+
+
+
 # Tool and Framework Evaluation Workflow
 
 Applies a structured evaluation framework to select tools, libraries, and frameworks for project adoption. This skill makes the model define measurable criteria, score candidates against weighted dimensions, execute focused proof-of-concept tests, review security posture, and produce a data-driven recommendation with documented trade-offs and migration planning.

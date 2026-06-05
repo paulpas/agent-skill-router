@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: gof-singleton-pattern
 description: Implements the Singleton design pattern ensuring a class has only one instance while providing a global point of access to it.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: gof-factory-pattern, gof-strategy-pattern
+
+
+
+
 ---
+
+
+
+
 
 # Singleton Pattern
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: plaid-authentication
 description: Implements authentication strategies using the Plaid API (Link token flow, Item public token exchange, Auth data retrieval) for secure user bank account verification in financial applications.
 license: MIT
@@ -19,7 +23,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: plaid-transactions, plaid-identity
+
+
+
+
 ---
+
+
+
+
 
 # Plaid API Authentication
 

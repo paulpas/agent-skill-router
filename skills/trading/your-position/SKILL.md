@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: your-position
 description: Implements personal position awareness framework tracking thesis validity,
   bias detection, portfolio impact scoring, and emotional state management for algorithmic
@@ -6,10 +10,9 @@ description: Implements personal position awareness framework tracking thesis va
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: trading
-  triggers: position management, mental accounting, home bias, disposition effect,
-    portfolio impact, position thesis, behavioral bias, sunk cost fallacy, your position
+  triggers: position management, mental accounting, home bias, disposition effect, portfolio impact, position thesis, behavioral bias, sunk cost fallacy portfolio impact
   archetypes:
   - tactical
   anti_triggers:
@@ -29,7 +32,15 @@ metadata:
   - do-dont
   - examples
   related-skills: risk-position-sizing, risk-stop-loss, risk-kill-switches, backtest-drawdown-analysis
-------
+
+
+
+
+---
+
+
+
+
 # Your Position Framework
 
 Senior trader conducting deep, honest analysis of each position from a personal ownership perspective — going beyond mechanical risk parameters to understand the behavioral, psychological, and portfolio-level dimensions that make your positions truly yours.

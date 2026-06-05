@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-engineering-backwards-compatibility
 
 license: MIT
@@ -14,7 +18,15 @@ metadata:
   archetypes: tactical, strategic
   anti_triggers: breaking changes, poor communication
   response_profile: medium
+
+
+
+
 ---
+
+
+
+
 
 # Backwards Compatibility Strategies
 

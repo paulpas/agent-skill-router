@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-architecture-monolith
 description: Guides the design and implementation of monolithic architecture, focusing on best practices and pitfalls in monolithic systems.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: software-architecture-microservices, software-architecture-event-driven, software-architecture-hexagonal
+
+
+
+
 ---
+
+
+
+
 
 # Monolithic Architecture
 

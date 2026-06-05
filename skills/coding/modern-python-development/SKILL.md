@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: modern-python-development
 description: Implements modern Python 3.10+ development practices including structural
   union types, TypeAlias, Self, ParamSpec, TaskGroup structured concurrency, httpx
@@ -6,12 +10,9 @@ description: Implements modern Python 3.10+ development practices including stru
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: python typing, python 3.12, python 3.11, TypeAlias, ParamSpec, asyncio
-    TaskGroup, structured concurrency, pyproject.toml, uv package manager, httpx async,
-    python project structure, self type, override decorator, modern python, python
-    best practices 2026
+  triggers: python typing, python 3.12, python 3.11, TypeAlias, ParamSpec, asyncio TaskGroup, structured concurrency, pyproject.toml TaskGroup
   archetypes:
   - tactical
   - generation
@@ -33,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: python-testing-strategies, go-concurrency-patterns, python-package-publishing
-------
+
+
+
+
+---
+
+
+
+
 # Modern Python Development (3.10+)
 
 Implements modern Python development practices for Python 3.10 through 3.13+, covering structural union types, explicit type aliases, fluent interface patterns with Self, decorator signature preservation with ParamSpec, TaskGroup structured concurrency, httpx async I/O, and pyproject.toml-based project structure with uv as the package manager.

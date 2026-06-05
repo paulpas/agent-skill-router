@@ -1,5 +1,9 @@
 ---
-name: identity-security-aws-iam
+
+
+
+
+name: okta-api
 description: "Comprehensive guide to AWS Identity and Access Management (IAM) covering users, roles, policies, STS, and Identity Center."
 license: MIT
 compatibility: opencode
@@ -15,7 +19,16 @@ metadata:
   response_profile:
       verbosity: medium
       directive_strength: high
+
+  scope: implementation
+
+
+
 ---
+
+
+
+
 
 # AWS Identity and Access Management (IAM)
 AWS Identity and Access Management (IAM) provides a comprehensive way to securely control access to AWS services and resources through authentication and authorization. This includes managing IAM users, roles, policies, and leveraging security features like Security Token Service (STS) and Identity Center.
@@ -83,6 +96,23 @@ aws sts assume-role --role-arn arn:aws:iam::123456789012:role/role-name --role-s
 - **Solution:** Set MFA as a requirement for all IAM users with AWS Management Console access and for sensitive operations.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## Live References
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: karpathy-surgical-changes
 description: Enforces surgical code modification discipline — touch only what the request requires, read full context before editing, match existing codebase conventions, clean up only your own orphans, and never refactor adjacent code that isn't broken.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: karpathy-coding-mindset, karpathy-goal-driven-execution, code-review, refactoring-techniques
+
+
+
+
 ---
+
+
+
+
 
 # Karpathy Surgical Changes
 

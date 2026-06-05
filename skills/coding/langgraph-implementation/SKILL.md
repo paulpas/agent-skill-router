@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: langgraph-implementation
 description: Implements LangGraph stateful agent workflows including state graphs, conditional routing, checkpointing, human-in-the-loop approval, and persistence patterns for building reliable multi-step AI agent applications.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: langgraph, state graph, agent workflow, conditional routing, human in the loop, checkpointing, langchain graph, persistent agent, how do i build an ai agent workflow
+  triggers: langgraph, state graph, agent workflow, conditional routing, human in the loop, checkpointing, langchain graph, persistent agent
   archetypes:
     - tactical
     - generation
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: crewai-agent-workflows, autogen-conversational-patterns, framework-utilization
+
+
+
+
 ---
+
+
+
+
 
 # LangGraph Implementation Patterns
 

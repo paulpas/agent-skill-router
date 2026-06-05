@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: component-testing-library
 description: Tests React, Vue, and Svelte components using Testing Library query priorities,
   renderHook for hooks, Mock Service Worker API mocking, and async state patterns
@@ -6,13 +10,9 @@ description: Tests React, Vue, and Svelte components using Testing Library query
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: component testing, react testing library, rtl, vue testing library, svelte
-    testing library, renderhook, msw, mock service worker, api mocking, frontend testing,
-    user event setup, test component, how do i test a react component, testing async
-    ui, testing loading states, testing with hooks, vitest component test, form validation
-    test
+  triggers: component testing, react testing library, rtl, vue testing library, svelte testing library, renderhook, msw, mock service worker testing library
   archetypes:
   - tactical
   - generation
@@ -34,7 +34,15 @@ metadata:
   - examples
   - do-dont
   related-skills: testing-unit-integration-e2e, design-systems, code-review
-------
+
+
+
+
+---
+
+
+
+
 # Component Testing with Testing Library and MSW
 
 Write reliable, maintainable component tests that verify user-facing behavior rather than implementation details. This skill makes the model use Testing Library query priorities (role → label → text → placeholder → test-id), render hooks directly for custom hook testing, Mock Service Worker for API mocking, and async patterns to handle loading/error/empty states in rendered components.

@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: ai-sentiment-analysis
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: sentiment-analysis
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Sentiment Analysis for Trading: The 5 Laws of Market Emotion
 
 **Role:** AI Sentiment Engineer — applies to news sentiment, social media analysis, political monitoring, and sentiment-based trading signals.

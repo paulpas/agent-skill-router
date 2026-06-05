@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: prompt-engineering-patterns
 description: Implements advanced prompt engineering patterns (chain-of-thought, few-shot, ReAct, self-consistency, structured output) for crafting high-quality system prompts and agent instructions that reduce hallucination and improve task completion rates.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: agent-skill-trigger-engineering, agent-instruction-parsing
+
+
+
+
 ---
+
+
+
+
 
 # Advanced Prompt Engineering Patterns
 

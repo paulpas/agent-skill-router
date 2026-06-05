@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: production-debugging-observability
 description: Debugs production systems using OpenTelemetry traces, structured logs with context propagation, and eBPF diagnostics for root cause analysis without service interruption.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: production debugging, OpenTelemetry tracing, eBPF debugging, bpftrace, structured logging, distributed tracing, log correlation, context propagation, how do i debug production issues
+  triggers: production debugging, OpenTelemetry tracing, eBPF debugging, structured logging, distributed tracing, log correlation, context propagation, how do i debug production issues
   archetypes:
     - diagnostic
   anti_triggers:
@@ -21,7 +25,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, examples]
   related-skills: coding-debugging-methodology, cncf-prometheus, sre-engineering
+
+
+
+
 ---
+
+
+
+
 
 # Production Debugging with Observability
 

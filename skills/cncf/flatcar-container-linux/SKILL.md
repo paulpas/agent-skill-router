@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: flatcar-container-linux
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: container-linux
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Flatcar Container Linux in Cloud-Native Engineering
 
 **Category:** os  

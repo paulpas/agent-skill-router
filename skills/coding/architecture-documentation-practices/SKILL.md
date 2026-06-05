@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: architecture-documentation-practices
 description: Implements architecture documentation standards including Architecture Decision Records (ADRs), C4 model diagrams, and RFC templates to capture design rationale, system context, and component relationships.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: architecture-decision-records, clean-architecture, domain-driven-design
+
+
+
+
 ---
+
+
+
+
 
 # Architecture Documentation Practices
 

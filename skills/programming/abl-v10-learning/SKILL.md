@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: abl-v10-learning
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: medium
     abstraction_level: tactical
-  version: 1.0.0
-name: v10-learning
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Progress OpenEdge ABL 10.1A — Reference Guide
 
 > **Version:** Progress OpenEdge 10.1A (December 2005)  

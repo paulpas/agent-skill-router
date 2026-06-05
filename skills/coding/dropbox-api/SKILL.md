@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: dropbox-api
 description: Integrates with Dropbox API to manage files, folders, sharing, Paper
   documents, and Sign requests using the official dropbox Python SDK v12.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: dropbox api, dropbox python, dropbox files, dropbox sharing, dropbox paper,
     dropbox sign, dropbox sdk
@@ -30,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-box-api, coding-microsoft-graph-api, coding-google-workspace-api
-------
+
+
+
+
+---
+
+
+
+
 
 # Dropbox API Integration
 

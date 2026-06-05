@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: expression-engine
 description: Implements expression evaluation engines (arithmetic, conditional logic, string manipulation, function dispatch) for configuration-driven workflows, rule engines, and dynamic computation without hard-coded code paths.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: business-rules-engine, input-processing-pipelines
+
+
+
+
 ---
+
+
+
+
 
 # Expression Engine
 

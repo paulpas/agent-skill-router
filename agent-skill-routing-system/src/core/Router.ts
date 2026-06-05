@@ -27,6 +27,7 @@ import { QueryArchetypeInferencer } from './QueryArchetypeInferencer';
 import { ArchetypeRankingBoost } from './ArchetypeRankingBoost';
 import { AntiTriggerScorer } from './AntiTriggerScorer';
 import { ValidationError } from './AppError';
+import { IntentDecomposer } from '../retrieval/IntentDecomposer';
 
 /**
  * Hybrid retrieval weight configuration for the Router.
@@ -157,6 +158,15 @@ export class Router {
     this.hybridScorer = new HybridScorer(scoreConfig);
     this.bm25Indexer = BM25Indexer.buildIndex([]); // Will be rebuilt when skills are indexed
 
+    // Semantic selection control: enables/disables vector similarity + BM25 scoring
+    const semanticSelectionEnabled = process.env.SEMANTIC_SKILL_SELECTION !== 'false';
+    if (!semanticSelectionEnabled) {
+      this.hybridScorer = new HybridScorer({
+        vectorWeight: 0,
+        bm25Weight: 0,
+      });
+    }
+
     // MMR diversifier (Phase 3)
     // Priority: programmatic config > env var > hardcoded default (0.7)
     const diversityEnabled = config.diversity?.enabled ?? true;
@@ -182,6 +192,16 @@ export class Router {
 
     // Build BM25 index from all loaded skills
     this.bm25Indexer = this.buildBM25Index();
+
+    // Build the dynamic trigger→domain index from loaded skills' metadata.triggers.
+    // This makes keyword matching self-documenting: new skills automatically teach
+    // the router their triggers without any code changes to IntentDecomposer.
+    IntentDecomposer.initialize(this.skillRegistry);
+    const idx = IntentDecomposer.getTriggerDomainIndex();
+    this.logger.info('Dynamic trigger domain index built', {
+      skillCount: this.skillRegistry.getAllSkills().length,
+      indexedTriggers: idx?.size ?? 0,
+    });
 
     this.logger.info('Router initialized successfully', {
       skillCount: this.skillRegistry.getAllSkills().length,
@@ -434,10 +454,10 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
     return response;
   }
 
-  /**
-   * Apply deterministic filtering to ranked skills
-   * Includes quality gate to filter out stub skills (draft: true)
-   */
+ /**
+    * Apply deterministic filtering to ranked skills
+    * Includes quality gate to filter out stub skills (draft: true) and built-in skills with no metadata (customize-opencode)
+    */
   private applyDeterministicFilter(
     rankedSkills: SelectedSkill[],
     constraints?: RouteRequest['constraints']
@@ -463,6 +483,20 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
         filteredNames: rankedSkills
           .filter((s) => draftSkillSet.has(s.name))
           .map((s) => s.name),
+      });
+    }
+
+    // Exclude built-in skill that has no metadata and over-matches broadly
+    const BUILT_IN_EXCLUDE_LIST = new Set(['customize-opencode']);
+    const beforeBuiltinFilter = filtered.length;
+    filtered = filtered.filter((skill) => !BUILT_IN_EXCLUDE_LIST.has(skill.name));
+    const builtinFiltered = beforeBuiltinFilter - filtered.length;
+
+    if (builtinFiltered > 0) {
+      this.logger.info('Filtered out built-in skill (no metadata, over-matching)', {
+        builtinFiltered,
+        remaining: filtered.length,
+        filteredNames: ['customize-opencode'],
       });
     }
 
@@ -801,11 +835,44 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
   }
 
   /**
+   * Detect whether a route response indicates a gap in existing skills.
+   * Returns true when:
+   *   - No skills matched (empty selectedSkills)
+   *   - Confidence score is below the configured threshold
+   *   - Top skill's raw score is very low (< 0.1), indicating almost certainly not a real match
+   *
+   * The confidence threshold is read from the AUTO_SKILL_CONFIDENCE_THRESHOLD env var (default: 0.35).
+   */
+  public detectGap(response: RouteResponse): boolean {
+    const threshold = parseFloat(process.env.AUTO_SKILL_CONFIDENCE_THRESHOLD || '0.35');
+    if (isNaN(threshold)) {
+      // Fallback to sensible default if env var is garbage
+      return response.selectedSkills.length === 0;
+    }
+
+    // No skills matched at all → gap
+    if (response.selectedSkills.length === 0) return true;
+
+    // Confidence below threshold → gap
+    if (response.confidence < threshold) return true;
+
+    // Top skill score is very low (< 0.1) — almost certainly not a real match
+    const topScore = response.selectedSkills[0]?.score ?? 0;
+    if (topScore < 0.1) return true;
+
+    return false;
+  }
+
+  /**
    * Reload skills
    */
   async reloadSkills(): Promise<void> {
     await this.skillRegistry.reload();
     this.vectorDatabase.setSkills(this.skillRegistry.getAllSkills());
+    // Rebuild BM25 index so newly added skills are searchable (important after auto-creation)
+    this.bm25Indexer = this.buildBM25Index();
+    // Rebuild the dynamic trigger→domain index after reload
+    IntentDecomposer.initialize(this.skillRegistry);
   }
 
   /**

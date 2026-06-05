@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ascii-diagram
 description: Generates clear, readable ASCII diagrams in Excalidraw-style for flowcharts,
   sequence diagrams, and state diagrams to visualize processes, interactions, and
@@ -6,10 +10,9 @@ description: Generates clear, readable ASCII diagrams in Excalidraw-style for fl
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: agent
-  triggers: ascii diagram, excalidraw style, flowchart, sequence diagram, state diagram,
-    diagram generation, visual explanation, process flow, system architecture
+  triggers: ascii diagram, excalidraw style, flowchart, sequence diagram, state diagram, diagram generation, visual explanation, process flow diagram generation
   archetypes:
   - tactical
   anti_triggers:
@@ -24,7 +27,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: code-review, documentation, feature-research
-------
+
+
+
+
+---
+
+
+
+
 # ASCII Diagram Generator (Excalidraw Style)
 
 Creates clean, readable ASCII diagrams that mimic the visual style of Excalidraw for technical documentation, architecture visualization, and process explanation.

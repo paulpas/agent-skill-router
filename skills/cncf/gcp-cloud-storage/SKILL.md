@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: gcp-cloud-storage
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: cloud-storage
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Google Cloud Storage
 
 Deploy and manage google cloud storage infrastructure as part of your cloud-native environment.

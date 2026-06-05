@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: sast-tooling
 description: Implements Static Application Security Testing (SAST) methodologies to identify vulnerabilities in source code during development phases.
 license: MIT
@@ -16,7 +20,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # SAST Tooling
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: order-flow-analysis
 description: Analyzes order flow dynamics, market microstructure, and Level 2 data to identify institutional accumulation, liquidity zones, and optimal execution points in algorithmic trading systems.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont]
   related-skills: order-flow-footprint, order-flow-toxicity, ai-order-flow-analysis, execution-order-book-impact, technical-volume-profile
+
+
+
+
 ---
+
+
+
+
 
 # Order Flow & Market Microstructure Analyzer
 

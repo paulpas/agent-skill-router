@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: web-applications
 description: Builds production Go web applications with HTTP handlers, routing, middleware,
   template rendering, and REST API design following idiomatic Go patterns.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: go
   role: implementation
   scope: implementation
@@ -30,7 +34,15 @@ metadata:
   maturity: stable
   completeness: 95
   exampleCount: 3
-------
+
+
+
+
+---
+
+
+
+
 # Go Web Applications
 
 Senior web engineer building production Go web applications with idiomatic HTTP handling, clean routing, reusable middleware, template rendering, and RESTful API design. This skill covers everything from basic handlers to WebSocket connections.

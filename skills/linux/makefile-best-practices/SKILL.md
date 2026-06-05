@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: makefile-best-practices
 description: Implements portable, maintainable Makefiles with proper variable scope, dependency management, error handling, and parallel execution patterns for reliable build automation across Unix-like systems.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Writing Effective Makefiles
 

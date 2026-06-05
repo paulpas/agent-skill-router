@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: docker-api
 description: Integrates with the Docker Engine API via the docker-py SDK to manage
   containers, images, networks, volumes, and Swarm clusters from Python applications.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: docker api, docker-py, docker sdk python, docker engine api, container
     management, docker swarm, manage docker containers, docker compose
@@ -30,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-kubernetes-api, coding-github-api, coding-ansible-api
-------
+
+
+
+
+---
+
+
+
+
 # Docker Engine API & docker-py Integration
 
 Integrates with the Docker Engine API via the official `docker-py` Python SDK to programmatically manage containers, images, networks, volumes, and Swarm clusters. Enables building container management tooling, CI/CD orchestration, and infrastructure automation.
@@ -340,6 +352,23 @@ def run_good(image: str, command: str) -> str:
 - Avoid using `auto_remove=False` for long-running containers that need cleanup
 - Never ignore `BuildError` when building images — the build log contains essential diagnostics
 - Do not hardcode registry credentials in build or push code — use credential helpers or environment variables
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## Live References
 

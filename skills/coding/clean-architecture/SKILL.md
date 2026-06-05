@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: clean-architecture
 description: Designs software using Robert C. Martin's Clean Architecture concentric layers (Entities, Use Cases, Interface Adapters, Frameworks) with strict dependency rules and boundary contracts for framework-independent business logic.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: clean architecture, robert martin, uncle bob, entity layer, use case layer, interface adapter, dependency rule, framework independence, hexagonal vs clean, bounded entities, port architecture
+  triggers: clean architecture, robert martin, hexagonal vs clean, entity layer, use case layer, interface adapter, dependency rule, port architecture
   role: implementation
   scope: implementation
   output-format: code
@@ -21,7 +25,15 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Clean Architecture — Robert C. Martin's Layered Design
 

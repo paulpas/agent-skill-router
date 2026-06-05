@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: error-handling-patterns
 description: Implements modern error handling patterns (Result types, error wrapping, retry with backoff, circuit breakers, panic recovery) to eliminate unchecked exceptions and silent failures in production systems.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
   - do-dont
   - examples
   related-skills: ports-patterns, monolith-refactoring, production-readiness, input-validation
+
+
+
+
 ---
+
+
+
+
 
 # Modern Error Handling Patterns
 

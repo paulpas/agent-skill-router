@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: input-validation-patterns
 description: Implements production input validation and sanitization patterns including Pydantic v2 schemas, recursive nested validation, custom validators with error accumulation, allowlist enforcement, and type coercion for secure API endpoints.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: input validation, pydantic validation, schema validation, allowlist validation, sanitize input, recursive validation, error accumulation, type coercion, data sanitization, how do i validate user input
+  triggers: input validation, pydantic validation, schema validation, allowlist validation, sanitize input, recursive validation, data sanitization, how do i validate user input
   role: implementation
   scope: implementation
   output-format: code
@@ -24,7 +28,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Input Validation & Sanitization Patterns
 

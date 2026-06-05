@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: backtest-sharpe-ratio
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: sharpe-ratio
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Risk-Adjusted Performance Analyst — implements comprehensive Sharpe ratio calculations and risk-adjusted performance metrics to evaluate strategy quality while accounting for volatility and risk.
 
 **Philosophy:** Risk-Aware Performance — returns alone are meaningless without context; risk-adjusted metrics provide the true measure of trading skill by penalizing strategies that take unnecessary risk.
@@ -530,6 +542,25 @@ if __name__ == "__main__":
 ```
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement walk-forward validation: optimize on a training window, validate on a subsequent out-of-sample window
+- Include realistic transaction costs (commissions, slippage, market impact) in all backtest calculations
+- Use point-to-point or tick-level data when available; never use OHLCV with intra-bar assumptions for strategy logic
+- Track and report key metrics: Sharpe ratio, max drawdown, win rate, profit factor, average trade duration, and Calmar ratio
+- Implement survivorship-bias-free testing using a constant universe list that includes delisted symbols
+
+### MUST NOT DO
+- Do not optimize strategy parameters on the same data used for evaluation — always use out-of-sample or walk-forward testing
+- Avoid assuming infinite liquidity in backtests; model order book constraints and partial fills for large positions
+- Never include future information (survivorship bias, look-ahead) in backtest signals by indexing data correctly
+- Do not report only win rate — always include risk-adjusted metrics alongside raw return statistics
+- Avoid curve-fitting to historical data; cap the number of optimized parameters and validate with Monte Carlo permutation tests
+
 
 ## Live References
 

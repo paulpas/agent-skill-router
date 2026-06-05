@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: query-feature-extraction
 description: Extracts structured signals (action verbs, domain indicators, complexity markers, urgency signals, entity types) from natural language queries as preprocessing for intent classification and skill routing.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: feature extraction, query parsing, action verb detection, domain detection, urgency signal, complexity marker, entity extraction, natural language processing, NLP preprocessing, how do i parse a query
+  triggers: feature extraction, query parsing, action verb detection, domain detection, entity extraction, natural language processing, NLP preprocessing, how do i parse a query
   archetypes:
     - tactical
     - orchestration
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: query-intent-classifier, intelligent-skill-selection, instruction-parsing
+
+
+
+
 ---
+
+
+
+
 
 # Query Feature Extractor
 

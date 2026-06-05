@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-design
 description: Translates framework constraints into concrete architectural blueprints
   with module structure, interface contracts, adapter wiring, data flow diagrams,
@@ -6,7 +10,7 @@ description: Translates framework constraints into concrete architectural bluepr
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: framework design, architectural blueprint, extension points, adapter pattern,
     interface contracts, composition root, framework integration
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - diagrams
   related-skills: software-architecture, modular-design, error-handling, fastapi-patterns
-------
+
+
+
+
+---
+
+
+
+
 # Framework Design Blueprint
 
 Translates framework constraints into concrete architectural blueprints — producing module trees, interface contracts, adapter wiring strategies, data flow diagrams, and validation checklists that map every framework requirement to a corresponding design element. The model acts as a senior framework architect who reads the framework's contract, identifies extension points, and designs components that plug cleanly into its lifecycle without fighting its conventions.

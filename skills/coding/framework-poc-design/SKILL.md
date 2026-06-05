@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-poc-design
 description: Designs proof-of-concept test harnesses with measurable success criteria, realistic data scenarios, and structured reporting to validate framework integration feasibility before production commitment.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: framework-requirements, framework-comparison-workflow, framework-evaluation-criteria
+
+
+
+
 ---
+
+
+
+
 
 # Proof-of-Concept Design Engine
 

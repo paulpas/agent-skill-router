@@ -1,25 +1,44 @@
-# Skill: datadog-api-metrics
-
 ---
+
+
+
+
 name: datadog-api-metrics
-  archetypes: monitoring, metrics management
-  anti_triggers: metrics flooding, unstructured metrics
-  response_profile:
-      verbosity: medium
-      directive_strength: high
 description: Implements metrics submission to Datadog API using `datadog-api-client` with best practices for batching and tagging.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: datadog metrics, submit metrics, datadog API metrics, datadog batching, datadog tagging, how do I send metrics to datadog
+  triggers:
+    - datadog metrics
+    - submit metrics
+    - datadog API metrics
+    - datadog batching
+    - datadog tagging
+    - how do I send metrics to datadog
   role: implementation
   scope: implementation
   output-format: code
   related-skills: datadog-api-logs, datadog-api-monitors
-------
-# Datadog Metrics Submission
+  archetypes:
+    - monitoring
+    - metrics management
+  anti_triggers:
+    - metrics flooding
+    - unstructured metrics
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+
+
+
+
+---
+
+
+
+
 Implements production-grade metrics submission to Datadog using `datadog-api-client`. Metrics are batched for efficiency and tagged for categorization. Adheres to Datadog best practices to ensure data integrity and efficient API usage.
 
 ## TL;DR Checklist
@@ -99,25 +118,8 @@ def handle_api_response(response):
 - Never hardcode sensitive information like API keys into your source code.
 - Do not submit metrics individually; group them to reduce overhead.
 - Avoid omitting essential tags on submitted metrics, as it will hinder data categorization and filtering.
----
 
-# Skill: datadog-api-logs
-
----
-name: datadog-api-logs
-description: Implements log submission and forwarding to the Datadog API with structured logging best practices for content observability.
-license: MIT
-compatibility: opencode
-metadata:
-  version: 1.0.0
-  domain: coding
-  triggers: datadog logs, submit logs, datadog API logs, datadog logging, structured logging, how do I send logs to datadog
-  role: implementation
-  scope: implementation
-  output-format: code
-  related-skills: datadog-api-metrics, datadog-api-monitors
-------
-# Datadog Logs Submission
+# Datadog Metrics Submission
 Implements log submission and forwarding to Datadog API with a focus on structured logging for enhanced observability. Configures logging to include necessary Datadog fields for correlation with metrics.
 
 ## TL;DR Checklist

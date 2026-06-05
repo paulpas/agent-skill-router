@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: technical-debt-management
 description: Tracks, categorizes, and systematically reduces technical debt across
   codebases using quantitative scoring, prioritization matrices, and automated refactoring
@@ -6,7 +10,7 @@ description: Tracks, categorizes, and systematically reduces technical debt acro
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: technical debt, code quality, refactoring strategy, legacy code, debt
     tracking, interest rate, how do i reduce technical debt, debt inventory
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: engineering-principles, refactoring-techniques, code-quality-policies
-------
+
+
+
+
+---
+
+
+
+
 # Technical Debt Manager
 
 Tracks, classifies, scores, and plans the systematic reduction of technical debt across software systems. Models as a senior engineer who treats debt like financial debt — distinguishing prudent from reckless borrowing, measuring interest rates, prioritizing payoff based on cost-of-delay, and establishing prevention guardrails so new debt is caught before it compounds into architectural decay.

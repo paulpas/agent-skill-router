@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: ory-hydra
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: hydra
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
  # Ory-Hydra in Cloud-Native Engineering
 
 **Category:** security  

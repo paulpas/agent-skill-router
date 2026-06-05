@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: backpressure-handling
 description: Implements production-grade backpressure mechanisms (bounded queues, adaptive rate limiting, circuit breakers, priority queuing) to prevent resource exhaustion in high-throughput event-driven message systems.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: backpressure, flow control, rate limiting, circuit breaker, adaptive throttling, consumer lag, processing overload, bounded queue, signal propagation, producer pause
+  triggers: backpressure, flow control, rate limiting, circuit breaker, consumer lag, processing overload, bounded queue, signal propagation
   archetypes:
     - tactical
     - diagnostic
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: event-driven-patterns,message-queue-design,system-reliability-architecture,event-bus,data-pipeline-engineering
+
+
+
+
 ---
+
+
+
+
 
 # Backpressure Handling for Event-Driven Systems
 

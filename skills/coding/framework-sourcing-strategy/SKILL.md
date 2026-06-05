@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-sourcing-strategy
 description: Discovers and pre-screens software frameworks using ecosystem health analysis, changelog-driven requirement extraction, compatibility matrix evaluation, and AI-assisted signal scoring to shortlist candidates before formal selection.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework discovery, ecosystem health, framework sourcing, how do i find a good framework, compatibility matrix, changelog analysis, framework shortlist, AI-assisted framework evaluation, dependency risk assessment, OSS maturity signals
+  triggers: framework discovery, ecosystem health, framework sourcing, compatibility matrix, changelog analysis, framework shortlist, dependency risk assessment, OSS maturity signals
   archetypes:
     - tactical
     - strategic
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-requirements, framework-adoption-strategy, cve-dependency-management, software-maintainability
+
+
+
+
 ---
+
+
+
+
 
 # Framework Sourcing Strategy
 

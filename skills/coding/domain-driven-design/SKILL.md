@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: domain-driven-design
 description: Implements Domain-Driven Design patterns (aggregates, value objects, entities, bounded contexts, domain events) to model complex business logic and align software architecture with domain expertise.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: domain driven design, ddd, bounded context, aggregate root, entity, value object, strategic design, tactical patterns
   archetypes:
@@ -28,7 +32,15 @@ metadata:
   - do-dont
   - examples
   related-skills: design-patterns-architecture, software-design-principles, event-driven-architecture
-------
+
+
+
+
+---
+
+
+
+
 # Domain-Driven Design Patterns
 Implements tactical and strategic DDD patterns to model complex business domains where software structure must reflect domain expertise. Produces value objects, entities, aggregates, domain events, and bounded context boundaries that enforce invariants at the domain layer.
 

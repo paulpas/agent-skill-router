@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: snowflake-sdk
 description: Integrates Snowflake using snowflake-connector-python 4.x with patterns
   for SQL execution, Snowpark DataFrames, Cortex AI, streams, tasks, stages, and warehouse
@@ -6,7 +10,7 @@ description: Integrates Snowflake using snowflake-connector-python 4.x with patt
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: snowflake, snowflake connector, snowpark, snowflake sql, snowflake cortex,
     how do i query snowflake from python, data warehouse, snowpipe
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-databricks-sdk, coding-bigquery-sdk, coding-postgresql-sdk
-------
+
+
+
+
+---
+
+
+
+
 # Snowflake Python SDK Integration
 
 Integrates Snowflake using `snowflake-connector-python` 4.x (Snowflake Connector) and `snowpark` for Python with patterns for SQL execution, Snowpark DataFrames, Cortex AI functions, streams and tasks, stage file operations, Snowpipe, warehouse management, and virtual warehouse sizing.

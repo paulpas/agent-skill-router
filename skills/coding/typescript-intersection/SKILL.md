@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: typescript-intersection
 description: Composes TypeScript types using the & intersection operator, combining interfaces, utility types, and object shapes while managing type compatibility, variance, and never-type pitfalls.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # TypeScript Intersection Type Patterns
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-specification-pattern
 description: Implements the DDD specification pattern — composable business rule objects using AND/OR/NOT boolean algebra, expression tree translation for ORM query pushdown, domain validation specs, protocol-based contracts, and reusable primitive factories for rich domain modeling in Python.
 license: MIT
@@ -10,7 +14,7 @@ metadata:
   scope: implementation
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
-  triggers: specification pattern, spec pattern, composable business rules, AND OR NOT composition, expression tree translation, repository filtering specs, domain validation specs, primitive factories, query builder specifications, how do i compose business rules in DDD, predicate composition
+  triggers: specification pattern, spec pattern, composable business rules, AND OR NOT composition, expression tree translation, repository filtering specs, domain validation specs, how do i compose business rules in DDD
   related-skills: ddd-tactical-patterns,domain-driven-tactical,domain-repository-pattern,ddd-command-pattern,microservice-contract-testing
   archetypes:
     - tactical
@@ -24,7 +28,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Specification Pattern for DDD
 

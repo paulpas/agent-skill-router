@@ -291,8 +291,58 @@ export interface DomainConfig {
 }
 
 /**
- * Domain configuration file structure
+  * Domain configuration file structure
+  */
+ export interface DomainsConfig {
+   domains: Record<string, DomainConfig>;
+ }
+
+// ---------------------------------------------------------------------------
+// Auto-Skill Creation Types
+// ---------------------------------------------------------------------------
+
+/**
+ * Request body for POST /skill/create — creates a new skill when no good match exists.
  */
-export interface DomainsConfig {
-  domains: Record<string, DomainConfig>;
-}
+ export interface SkillCreateRequest {
+   /** The task description that needs a skill (required) */
+   task: string;
+   /** Override auto-detected domain (optional) */
+   domain?: string;
+   /** Override auto-detected topic (optional) */
+   topic?: string;
+   /** Generate without saving to disk (default: false) */
+   dryRun?: boolean;
+ }
+
+/**
+ * Response from POST /skill/create endpoint.
+ */
+ export interface SkillCreateResponse {
+   /** Operation result status */
+   status: 'created' | 'dry_run' | 'no_gap';
+   /** e.g. "devops/terraform-module-generation" (present when not "no_gap") */
+   skillName?: string;
+   /** Full filesystem path to SKILL.md (present when "created") */
+   skillPath?: string;
+   /** Detected/generated domain */
+   domain: string;
+   /** Detected/generated topic */
+   topic: string;
+   /** One-sentence description of the generated skill */
+   description: string;
+   /** Trigger keywords for auto-loading */
+   triggers: string;
+   /** Number of validation rounds that passed before success */
+   validationPasses: number;
+   /** Total number of validation attempts made (including failed ones) */
+   totalValidationAttempts: number;
+   /** Confidence threshold used for gap detection */
+   confidenceThreshold: number;
+  /** Actual routing confidence when a gap was detected (optional, only on "created"/"dry_run") */
+    gapConfidence?: number;
+    /** Total tokens consumed across all SkillGenerationTool calls (initial + retries). Only present when status is 'created' or 'dry_run'. */
+    totalTokensUsed?: number;
+    /** Number of times the generation tool was called (1 initial + any regenerations during retry loop). */
+    generationAttempts: number;
+  }

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: mcp-protocol
 description: Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: coding-anthropic-api, coding-langchain, coding-openai-api
+
+
+
+
 ---
+
+
+
+
 
 # Model Context Protocol (MCP) Integration
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: service-mesh-patterns
 description: Implements service mesh patterns including sidecar deployment, automatic mTLS encryption, canary and weighted traffic routing, fault injection for chaos testing, rate limiting, and distributed tracing across microservice architectures using Istio and Linkerd.
 license: MIT
@@ -30,7 +34,15 @@ metadata:
     - examples
     - manifests
   related-skills: microservices-architecture, cloud-native-architecture, system-reliability-architecture
+
+
+
+
 ---
+
+
+
+
 # Service Mesh Patterns (Istio / Linkerd)
 Implements service mesh infrastructure patterns for transparent inter-service communication, security, traffic management, and observability across Kubernetes-deployed microservices using Istio or Linkerd. Covers sidecar proxy deployment, automatic mTLS mutual TLS encryption, progressive delivery routing, fault injection for chaos testing, rate limiting policies, and distributed tracing integration — all without requiring application code changes.
 ## TL;DR Checklist

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: square-payments
 
 description: Integrates Square Payments API for handling payment transactions, refunds, and reporting.
@@ -17,7 +21,16 @@ metadata:
       verbosity: medium
       directive_strength: high
   related-skills: commerce/paypal-api-payments-commerce, commerce/shopify-api
+
+  scope: implementation
+
+
+
 ---
+
+
+
+
 
 # Square Payments API Integration
 Implements integration with Square Payments API, allowing for seamless transaction processing, refunds, and reporting.

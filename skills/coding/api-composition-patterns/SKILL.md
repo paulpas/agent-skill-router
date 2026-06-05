@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-composition-patterns
 description: Implements API composition patterns for orchestrating concurrent calls across multiple microservices including parallel aggregation, timeout isolation, partial failure handling, circuit breaker per dependency, query fan-out, and schema transformation for unified client responses.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: bff-pattern, microservices-architecture, system-reliability-architecture
+
+
+
+
 ---
+
+
+
+
 
 # API Composition Architect
 

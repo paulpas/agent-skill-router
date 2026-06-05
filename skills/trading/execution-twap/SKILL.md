@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: execution-twap
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: twap
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Execute large orders over time to minimize market impact and achieve good prices
 
 **Philosophy:** TWAP provides a disciplined approach to execution; the algorithm's predictability reduces slippage
@@ -370,6 +382,25 @@ print(f"Total filled: {metrics.filled_quantity} @ {metrics.avg_fill_price} BPS s
 ```
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement slippage modeling that accounts for market impact proportional to order size relative to average daily volume
+- Include pre-trade risk checks (position limits, exposure caps) before any order is submitted to an exchange
+- Log all execution decisions with timestamps, prices, quantities, and benchmark deviations for post-trade analysis
+- Support both aggressive (market/limit) and passive (maker) order types with configurable preference based on market regime
+- Implement circuit breaker logic: pause execution if price moves >X% from decision price or volume drops below threshold
+
+### MUST NOT DO
+- Do not submit orders without verifying account equity, available margin, and symbol trading status first
+- Avoid static time-based slicing (e.g., 'divide order by 60 minutes') without considering actual market volume patterns
+- Never disable pre-trade risk checks for 'backtesting' or 'development' — use a separate simulation environment instead
+- Do not assume exchange API uptime — always implement retry logic with exponential backoff and fallback routing
+- Avoid rounding quantity to lot sizes using integer division without checking partial-fill policy compatibility
+
 
 ## Live References
 

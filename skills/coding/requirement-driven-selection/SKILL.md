@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: requirement-driven-selection
 description: Evaluates technology candidates against measurable project requirements
   using weighted decision matrices, evidence-based validation, and ADR documentation
@@ -6,7 +10,7 @@ description: Evaluates technology candidates against measurable project requirem
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: requirement driven selection, ADR, weighted scoring matrix, how do i choose
     a framework, technology decision record, criteria based selection, tech stack
@@ -33,7 +37,15 @@ metadata:
   - do-dont
   related-skills: dependency-inversion-principle, modular-design, test-driven-development,
     hexagonal-architecture
-------
+
+
+
+
+---
+
+
+
+
 # Requirement-Driven Framework Selection
 
 Evaluates technology candidates against measurable project requirements using weighted decision matrices, evidence-based validation, and structured documentation to select the optimal framework or tool. This skill prevents hype-driven decisions by grounding every selection in quantifiable criteria tied directly to the project's needs.

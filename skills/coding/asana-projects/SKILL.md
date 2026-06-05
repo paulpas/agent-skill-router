@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: asana-projects
 license: MIT
 compatibility: opencode
@@ -16,7 +20,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: coding/asana-tasks
+
+
+
+
 ---
+
+
+
+
 
 # Asana Projects Management
 

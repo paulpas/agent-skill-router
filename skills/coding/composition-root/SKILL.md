@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: composition-root
 description: Assembles dependency graphs at a single entry point using constructor
   injection, DI containers, and factory patterns to wire adapters to ports in hexagonal
@@ -6,11 +10,9 @@ description: Assembles dependency graphs at a single entry point using construct
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: composition root, dependency injection wiring, DI container, adapter registration,
-    how do i wire my dependencies, service locator anti-pattern, object graph assembly,
-    factory pattern, IoC container
+  triggers: composition root, dependency injection wiring, DI container, adapter registration, how do i wire my dependencies, service locator anti-pattern, object graph assembly, factory pattern how do i wire my dependencies
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ metadata:
   - examples
   related-skills: hexagonal-architecture, ports-patterns, dependency-inversion-principle,
     test-driven-development, error-handling
-------
+
+
+
+
+---
+
+
+
+
 # Composition Root & Dependency Injection Patterns
 
 Acts as a senior software architect designing dependency injection composition roots. When loaded, the model assembles complete object graphs at a single entry point, selects appropriate DI strategies (manual wiring, factory functions, or container libraries), manages object lifecycles (singleton, per-request, transient), and produces concrete bootstrap code that enforces explicit dependency flow without service locator anti-patterns.

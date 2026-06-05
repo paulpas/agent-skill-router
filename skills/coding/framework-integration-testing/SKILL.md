@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-integration-testing
 description: Designs integration testing strategies including shadow reads, dual-writes, canary deployment validation, and rollback verification to safely validate framework integrations before production commitment.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: framework-requirements-validation, framework-adoption-strategy, framework-comparison-workflow
+
+
+
+
 ---
+
+
+
+
 
 # Framework Integration Testing Strategies
 

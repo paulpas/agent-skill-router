@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-integration-patterns
 description: Implements robust framework integration patterns including plugin architectures, middleware chains, cross-framework adapters, and configuration layering to safely extend and connect external frameworks without tight coupling or upgrade friction.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
   archetypes: [tactical, generation]
   anti_triggers: [standalone script, cli tool, quick hack, no-framework]
   related-skills: framework-driven-design, software-architecture, version-migration, dependency-injection-patterns
+
+
+
+
 ---
+
+
+
+
 
 # Framework Integration & Extension Patterns
 

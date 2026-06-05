@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: agent-context-memory
 description: Implements context window management and memory architectures for LLM agents including token budgeting, sliding window strategies, summarization fallbacks, cross-turn state persistence, and external vector store integration.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: context window management, memory architecture, token budgeting, sliding window, conversation summary, cross-turn state, vector store retrieval, long-term memory, short-term memory, agent memory, context overflow, token limit
+  triggers: context window management, memory architecture, token budgeting, sliding window, conversation summary, cross-turn state, long-term memory, short-term memory
   role: implementation
   scope: implementation
   output-format: code
@@ -18,7 +22,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Agent Context and Memory Management
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: agent-debugging
 description: Implements systematic debugging workflows for LLM agent failures including hallucination detection, infinite loop recovery, context window exhaustion, tool call errors, and cascading failure diagnosis using distributed tracing patterns.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Agent Debugging Toolkit
 

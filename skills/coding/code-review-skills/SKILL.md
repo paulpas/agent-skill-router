@@ -1,7 +1,32 @@
 ---
+
+
+
+
 name: code-review-skills
 
-description: Implements skills and strategies to enhance the effectiveness of code reviews, promoting quality, collaboration, and knowledge sharing within development teams.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: code review skills, peer review, quality assurance, knowledge sharing\n  archetypes: [implementation, evaluation]\n  anti_triggers: [vague feedback, bypass reviews]\n  response_profile: medium\n---
+description: Implements skills and strategies to enhance the effectiveness of code reviews, promoting quality, collaboration, and knowledge sharing within development teams.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: code review skills, peer review, quality assurance, knowledge sharing
+  archetypes: [implementation, evaluation]
+  anti_triggers: [vague feedback, bypass reviews]
+  response_profile: medium
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+---
+
+
+
+
 # Enhanced Code Review Skills Content
 
 ## Significance of Code Review Skills in Development
@@ -34,6 +59,23 @@ A: It’s essential to create an environment where feedback is focused solely on
 By promoting effective code reviewing skills among teams, software can not only maintain a higher quality standard but also ensure the development process is a shared, collaborative effort leading to greater overall product efficacy.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

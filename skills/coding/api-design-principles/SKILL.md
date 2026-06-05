@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-design-principles
 description: Implements modern API design principles (REST resource modeling, GraphQL schema design, standardized error responses, versioning strategies, and security best practices) for production-grade backend services.
 license: MIT
@@ -16,13 +20,21 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: api design, REST API, GraphQL, API versioning, error handling, OpenAPI, hypermedia, HATEOAS, API security, rate limiting, JSON:API
+  triggers: api design, REST API, GraphQL, API versioning, error handling, OpenAPI, hypermedia, HATEOAS
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: coding-api-gateway, coding-rate-limiting, coding-openapi-specification
+
+
+
+
 ---
+
+
+
+
 
 # Modern API Design Principles
 

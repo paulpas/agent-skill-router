@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: make-build-system
 description: Implements GNU Make build automation including dependency graphs, phony targets, variable scoping, pattern rules, automatic variables, cross-compilation, and CI/CD integration for reproducible software builds.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "2.0.0"
   domain: linux
-  triggers: makefile, GNU make, build automation, incremental builds, phony targets, make variables, dependency graph, cross-compilation, pattern rules, automatic variables, vpath, order-only prerequisites, make command, how do i automate builds with make, make clean all install
+  triggers: makefile, GNU make, build automation, incremental builds, phony targets, pattern rules, automatic variables, how do i automate builds with make
   archetypes:
     - tactical
     - generation
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
   related-skills: coding-just-task-runner, coding-mage-build-tool, linux-systemd-services, coding-test-driven-development
+
+
+
+
 ---
+
+
+
+
 
 # GNU Make Build System
 

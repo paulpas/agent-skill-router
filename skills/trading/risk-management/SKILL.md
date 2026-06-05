@@ -1,13 +1,37 @@
 ---
-# Skill Title: Trading Risk Management
 
-  archetypes: tactical, educational
-  anti_triggers: naive assessments, simplistic views on trading, quick solutions
+
+
+
+name: risk-management
+description: Implements risk management techniques (position sizing, risk-reward ratios, drawdown control) to safeguard capital and enhance trading performance in algorithmic trading systems.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: trading
+  triggers: position sizing, risk-reward ratio, drawdown control, trading risk, capital protection, risk management, risk percentage
+  role: implementation
+  scope: implementation
+  output-format: code
+  content-types: [code, guidance, do-dont]
+  archetypes: [tactical, educational]
+  anti_triggers: [naive assessments, simplistic views on trading, quick solutions]
   response_profile:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
 
+
+
+
+---
+
+
+
+
+
+# Trading Risk Management
 
 Implements risk management techniques for traders, focusing on position sizing, risk-reward ratios, and drawdown control strategies to safeguard capital and enhance trading performance.
 
@@ -107,6 +131,7 @@ def check_drawdown(current_equity: float, peak_equity: float, max_drawdown_perce
 ### MUST NOT DO
 - Exceed risk limits based on account balance.
 - Implement high-risk strategies that threaten significant capital loss.
+
 ---
 
 ## Live References

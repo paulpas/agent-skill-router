@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: openkruise
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: openkruise
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-dynamodb, cncf-aws-ec2
 
 

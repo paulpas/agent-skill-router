@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: anti-patterns
 description: Catalogs and detects common software anti-patterns (god object, leaky
   abstraction, feature envy, shotgun surgery, cargo cult) to help developers recognize
@@ -6,10 +10,9 @@ description: Catalogs and detects common software anti-patterns (god object, lea
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: anti-pattern, god object, leaky abstraction, feature envy, shotgun surgery,
-    cargo cult, code smell, refactoring, bad design, harmful patterns
+  triggers: anti-pattern, god object, leaky abstraction, feature envy, shotgun surgery, cargo cult, code smell, refactoring cargo cult
   archetypes:
   - educational
   anti_triggers:
@@ -30,7 +33,15 @@ metadata:
   - do-dont
   - examples
   related-skills: design-patterns-and-principles, refactoring, code-review, modular-design
-------
+
+
+
+
+---
+
+
+
+
 # Anti-Pattern Catalog & Detector
 
 Reviews codebases to identify harmful design anti-patterns, categorizes them by severity, and provides concrete refactoring directions. An anti-pattern is a commonly used solution that produces negative consequences — it works but degrades maintainability, testability, or performance over time.

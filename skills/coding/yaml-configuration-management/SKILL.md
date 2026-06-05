@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: yaml-configuration-management
 description: Implements YAML configuration management patterns including schema validation, anchor/alias reuse, hierarchical merging, and linting for robust infrastructure and application configuration.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: coding-shell-scripting, coding-api-design
+
+
+
+
 ---
+
+
+
+
 
 # YAML Configuration Management
 

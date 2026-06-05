@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: spring-boot-auto-config
 description: Implements Spring Boot auto-configuration mechanics, externalized config binding with @ConfigurationProperties, custom starter development with conditional annotations, and Actuator endpoint customization for production-ready applications.
 license: MIT
@@ -26,7 +30,15 @@ metadata:
     - do-dont
     - patterns
   related-skills: spring-security-core, spring-data-jpa
+
+
+
+
 ---
+
+
+
+
 
 # Spring Boot Auto-Configuration & Externalized Config
 

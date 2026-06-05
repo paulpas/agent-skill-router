@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kubernetes-deployment-patterns
 description: Implements production-grade Kubernetes deployment patterns including resource management, HPA/VPA, pod disruption budgets, health probes, and multi-environment manifest orchestration for reliable service operation.
 license: MIT
@@ -9,7 +13,7 @@ metadata:
   role: implementation
   scope: implementation
   output-format: code
-  triggers: kubernetes deployment, k8s manifests, resource management, pod disruption budget, HPA, readiness probe, liveness probe, helm charts, production deployment, how do i deploy to kubernetes
+  triggers: kubernetes deployment, k8s manifests, resource management, pod disruption budget, HPA, readiness probe, helm charts, how do i deploy to kubernetes
   archetypes:
     - tactical
     - generation
@@ -22,7 +26,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: microservices-architecture, observability-patterns, service-mesh-patterns
-------
+
+
+
+
+---
+
+
+
+
 
 # Kubernetes Deployment Patterns
 

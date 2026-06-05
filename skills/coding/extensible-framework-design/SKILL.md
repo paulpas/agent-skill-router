@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: extensible-framework-design
 description: Designs robust extensible software frameworks with plugin architectures, configuration-driven extension points, and validation patterns — enabling third-party contributors while maintaining core stability and API contract guarantees.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework design, extensible architecture, plugin system, extension points, configuration driven, framework API design, hook patterns, middleware chains, how do i design an extensible system
+  triggers: framework design, extensible architecture, plugin system, extension points, configuration driven, hook patterns, middleware chains, how do i design an extensible system
   archetypes:
     - tactical
     - strategic
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-application-methodology, coding-knowledge-transfer-methods
+
+
+
+
 ---
+
+
+
+
 
 # Extensible Framework Design
 

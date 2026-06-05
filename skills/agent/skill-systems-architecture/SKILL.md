@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-systems-architecture
 description: Designs production-ready multi-skill agent architectures with cross-skill coordination patterns, quality gates, deployment pipelines, and monitoring strategies for AI skill ecosystems.
 license: MIT
@@ -32,7 +36,15 @@ metadata:
   related-skills: >-
     skill-engineering, skill-lifecycle-management, skill-ecosystem-design,
     skill-audit, skill-router-system
+
+
+
+
 ---
+
+
+
+
 
 # Multi-Skill Systems Architecture
 

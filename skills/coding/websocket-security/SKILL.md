@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: websocket-security
 description: Hardens WebSocket connections against cross-site hijacking, DoS attacks,
   and message flooding through origin validation, authentication, rate limiting, connection
@@ -6,11 +10,9 @@ description: Hardens WebSocket connections against cross-site hijacking, DoS att
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: websocket security, origin validation, cross-site WebSocket hijacking,
-    CCoS, wss://, WebSocket authentication, rate limiting, message flooding, slowloris,
-    connection limits, WebSocket auth, Sec-WebSocket-Origin
+  triggers: websocket security, origin validation, cross-site WebSocket hijacking, CCoS, wss://, WebSocket authentication, rate limiting, message flooding CCoS
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: websocket-server-architecture, websocket-manager, websocket-protocol, websocket-performance
-------
+
+
+
+
+---
+
+
+
+
 # WebSocket Security Hardening Guide
 
 Hardens WebSocket connections against cross-site hijacking (CCoS), denial-of-service attacks, message flooding, and authentication bypasses. Covers origin validation, token-based auth over WebSocket, per-connection and per-client rate limiting, connection limits by IP and user, secure transport enforcement (wss:// only), protection against slowloris-style attacks, and message size constraints to prevent memory exhaustion.

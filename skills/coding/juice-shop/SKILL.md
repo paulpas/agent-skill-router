@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: juice-shop
 compatibility: opencode
 completeness: 95
 content-types:
@@ -32,9 +37,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: shop
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # OWASP Juice Shop
 
 The OWASP Juice Shop is an intentionally vulnerable Node.js/Express web application for learning and practicing web application security testing.
@@ -248,3 +260,19 @@ docker run -p 3000:3000 owaspjuice-shop/juice-shop
 - Web Security Academy: https://portswigger.net/web-security
 - Snyk Vulnerability Database: https://snyk.io/vuln/
 
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains

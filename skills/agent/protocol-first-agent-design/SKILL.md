@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: protocol-first-agent-design
 description: Designs AI agent architectures using protocol-first patterns (MCP tool interfaces, A2A inter-agent communication) instead of framework-specific APIs, ensuring interoperability and avoiding vendor lock-in.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: ai-framework-comparison, observability-patterns, framework-utilization
+
+
+
+
 ---
+
+
+
+
 
 # Protocol-First Agent Design
 

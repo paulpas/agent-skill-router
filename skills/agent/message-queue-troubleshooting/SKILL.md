@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: message-queue-troubleshooting
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: message-queue-troubleshooting
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Message Queue Troubleshooting
 
 Diagnoses and resolves issues across Kafka, RabbitMQ, SQS, and NATS message queues with real diagnostic commands, dead letter queue analysis, visibility timeout fixes, and backlog handling strategies.

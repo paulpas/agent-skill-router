@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-requirements
 description: Defines, evaluates, and validates software framework requirements including non-functional criteria (performance, security, extensibility), weighted selection scoring matrices, proof-of-concept feasibility testing, and architecture decision records for production-grade applications.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework requirements, evaluating frameworks, selecting libraries, dependency management, architecture decisions, tech stack selection, framework evaluation criteria, non-functional requirements, NFR, framework scoring matrix, POC testing, proof of concept, integration feasibility, production readiness gate
+  triggers: framework requirements, selecting libraries, tech stack selection, framework evaluation criteria, non-functional requirements, POC testing, integration feasibility, production readiness gate
   archetypes:
     - tactical
     - strategic
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: framework-evaluation-criteria, test-driven-development, modular-design, dependency-injection, framework-utilization
+
+
+
+
 ---
+
+
+
+
 
 # Framework Requirements Guide
 

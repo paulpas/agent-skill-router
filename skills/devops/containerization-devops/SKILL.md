@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: containerization-devops
 description: Implements best practices for containerization in the DevOps lifecycle, focusing on deployment, orchestration, and management of containerized applications.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+  version: "1.1.1"
   domain: devops
   triggers: containerization, devops, docker, kubernetes, orchestration
   archetypes: [implementation, management]
@@ -13,7 +17,18 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+  role: implementation
+  scope: infrastructure
+  output-format: code
+
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Guidelines for Containerization in DevOps
 Containerization is a cornerstone of modern DevOps practices, facilitating the development, deployment, and management of applications. Below are best practices and strategies for effective containerization:
@@ -57,6 +72,80 @@ For applications requiring scalability and automated management, orchestration t
 By implementing these best practices, organizations can leverage the full potential of containerization within their DevOps frameworks, improving efficiency and security while catering to evolving application needs.
 
 ---
+
+---
+
+
+
+### Pattern 2: Multi-Stage Dockerfile Optimization
+
+```dockerfile
+# Stage 1: Build
+FROM python:3.12-slim AS builder
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+COPY src/ ./src/
+
+# Stage 2: Production
+FROM python:3.12-slim AS production
+
+WORKDIR /app
+COPY --from=builder /install /usr/local
+COPY --from=builder /app/src ./src
+
+ENV PYTHONUNBUFFERED=1
+USER nonroot
+CMD ["python", "-m", "src.main"]
+```
+
+### Pattern 3: Docker Compose for Local Development
+
+```yaml
+version: '3.9'
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://user:pass@db:5432/app
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user"]
+      interval: 5s
+      retries: 5
+
+volumes:
+  pgdata:
+```
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

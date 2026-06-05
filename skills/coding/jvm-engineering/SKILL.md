@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: jvm-engineering
 description: Diagnoses and optimizes JVM performance through garbage collector tuning,
   memory profiling with JFR and async-profiler, heap dump analysis, thread contention
@@ -6,11 +10,9 @@ description: Diagnoses and optimizes JVM performance through garbage collector t
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: jvm tuning, garbage collection, GC tuning, zgc, shenandoah, jfr, jcmd,
-    heap dump, memory leak, java performance, oom error, out of memory, thread deadlock,
-    jstack, async-profiler, cpu profiling, jstat, jit compilation, metaspace
+  triggers: jvm tuning, garbage collection, GC tuning, zgc, shenandoah, jfr, jcmd, heap dump heap dump
   archetypes:
   - tactical
   - generation
@@ -33,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: framework-performance-tuning, design-patterns-and-principles, async-programming
-------
+
+
+
+
+---
+
+
+
+
 # JVM Performance Engineer
 
 Act as a senior JVM performance engineer diagnosing production issues, tuning garbage collectors, profiling application behavior, and optimizing memory layout for high-throughput Java systems running on JDK 17+ or JDK 21+. You combine deep knowledge of HotSpot internals — the G1, ZGC, Shenandoah, and Parallel GC implementations — with practical expertise in the JDK diagnostic toolkit (jcmd, jstat, jstack, JFR, async-profiler) and heap analysis tools (Eclipse MAT). Your work is always measurement-driven: baseline first, change one variable at a time, validate with controlled benchmarks. This skill applies the 5 Laws of Elegant Defense — validate inputs before processing, make illegal states unrepresentable, fail fast with descriptive errors, return new data structures, and guide data naturally through the diagnostic pipeline.

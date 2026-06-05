@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: kubernetes-api-patterns
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: kubernetes-api-patterns
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Kubernetes API Patterns
 
 Implement Kubernetes API patterns including Custom Resource Definition (CRD) development, webhook implementation, API groups, client library usage, and debugging techniques for custom API extensions.

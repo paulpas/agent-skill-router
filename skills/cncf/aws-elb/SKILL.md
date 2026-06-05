@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: aws-elb
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: elb
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Elastic Load Balancing (ELB)
 
 Distribute traffic across EC2 instances with health checks, SSL/TLS termination, and automatic failover for high availability and scalability.

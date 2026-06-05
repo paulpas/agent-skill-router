@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: performance-optimization-strategies
 description: Implements concrete performance optimization techniques including query-level tuning, multi-layer caching strategies, connection pooling, and lazy loading patterns for production web applications.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: caching-strategies, postgresql-performance-tuning, async-programming
+
+
+
+
 ---
+
+
+
+
 
 # Performance Optimization Strategies
 
