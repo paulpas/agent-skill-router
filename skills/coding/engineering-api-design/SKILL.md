@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: engineering-api-design
 description: Designs and implements production REST APIs and GraphQL schemas with versioning, authentication, pagination, rate limiting, OpenAPI documentation, and error handling for scalable service interfaces.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: api design, REST API, GraphQL schema, OpenAPI spec, API versioning, pagination, rate limiting, endpoint design, API authentication, how do i design an API, API documentation, Swagger
+  triggers: api design, REST API, GraphQL schema, OpenAPI spec, API versioning, endpoint design, rate limiting, how do i design an API
   archetypes:
     - tactical
     - generation
@@ -28,7 +32,15 @@ metadata:
     - examples
     - do-dont
   related-skills: framework-utilization, software-documentation, engineering-principles, testing-unit-integration-e2e
+
+
+
+
 ---
+
+
+
+
 
 # API Design Engineering
 

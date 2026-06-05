@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-evaluation-criteria
 description: Systematically elicits evaluation criteria across technical, team, ecosystem, security, deployment, integration, cost, and viability dimensions to prevent hype-driven framework selection. Produces structured requirement matrices, weighted scoring frameworks, and decision records with documented trade-offs.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-selection, requirement-driven-selection, framework-utilization, tool-evaluation-workflow
+
+
+
+
 ---
+
+
+
+
 
 # Framework Evaluation Criteria
 

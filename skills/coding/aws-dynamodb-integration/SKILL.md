@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: aws-dynamodb-integration
 description: Implements AWS DynamoDB functionalities, showcasing data modeling, queries, and performance optimization using the AWS SDK.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: aws-sqs, bigquery-api-query
+
+
+
+
 ---
+
+
+
+
 
 # AWS DynamoDB Integration
 

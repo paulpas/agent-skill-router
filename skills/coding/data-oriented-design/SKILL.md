@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-oriented-design
 description: Implements Data-Oriented Design (DOD) patterns including Structure-of-Arrays layouts, cache-efficient data access, zero-allocation hot paths, and vectorized processing for performance-critical Python systems.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: performance-optimization, async-runtime, design-patterns-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Data-Oriented Design (DOD)
 

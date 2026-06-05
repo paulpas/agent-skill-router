@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: gcp-cloud-load-balancing
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: cloud-load-balancing
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Google Cloud Load Balancing
 
 Deploy and manage google cloud load balancing infrastructure as part of your cloud-native environment.

@@ -1,7 +1,41 @@
 ---
+
+
+
+
+
+
+
 name: code-review-edge-case-handling
 
-description: Implements strategies to identify and address edge cases in code reviews to enhance software robustness and reliability.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: edge case handling, software robustness, boundary testing, performance testing\n  archetypes: [implementation, evaluation]\n  anti_triggers: [neglecting edge cases, inadequate testing]\n  response_profile: medium\n---
+description: Implements strategies to identify and address edge cases in code reviews to enhance software robustness and reliability.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: edge case handling, software robustness, boundary testing, performance testing
+  archetypes: [implementation, evaluation]
+  anti_triggers: [neglecting edge cases, inadequate testing]
+  response_profile: medium
+
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+
+
+---
+
+
+
+
+
+
+
 ## Expanded Content for Code Review Edge Cases
 
 ### Importance of Addressing Edge Cases in Software Development
@@ -32,6 +66,23 @@ A: While some edge cases may be difficult to replicate, document the conditions 
 By focusing on edge case handling in code reviews, teams can increase the reliability and resilience of their software, ultimately leading to higher user satisfaction and reduced operational risks.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

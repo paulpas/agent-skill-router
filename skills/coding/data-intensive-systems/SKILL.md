@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-intensive-systems
 description: Implements data-intensive architecture patterns including stream processing,
   change data capture, lakehouse storage, event sourcing, and data mesh organizational
@@ -6,12 +10,9 @@ description: Implements data-intensive architecture patterns including stream pr
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: data architecture, stream processing, kafka, change data capture, CDC,
-    event sourcing, lakehouse, data mesh, real-time analytics, batch processing, data
-    pipeline design, how do i build a data pipeline, data streaming, Flink, Spark
-    Streaming
+  triggers: data architecture, stream processing, kafka, change data capture, CDC, event sourcing, lakehouse, data mesh event sourcing
   archetypes:
   - tactical
   - generation
@@ -34,7 +35,15 @@ metadata:
   - do-dont
   related-skills: event-driven-architecture, database-design-modeling, observability-patterns,
     distributed-systems-architecture
-------
+
+
+
+
+---
+
+
+
+
 # Data-Intensive Systems Architecture
 
 Designs and implements data-intensive architectures that handle high-volume streaming, real-time processing, and scalable storage. When loaded, the model creates system designs combining stream processing (Kafka Streams, Flink), change data capture pipelines, lakehouse storage patterns (Delta Lake, Apache Iceberg), event sourcing implementations, and data mesh organizational principles to build systems where data flow is the primary architectural concern.

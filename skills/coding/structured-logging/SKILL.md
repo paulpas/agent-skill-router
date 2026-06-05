@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: structured-logging
 description: Implements structured JSON logging with correlation IDs, OpenTelemetry context propagation, and tiered log level strategies for production-grade observability in Python and Go services.
 license: MIT
@@ -28,7 +32,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: production-readiness, error-handling-patterns, backpressure-handling, performance-optimization
+
+
+
+
 ---
+
+
+
+
 
 # Structured Logging Patterns
 

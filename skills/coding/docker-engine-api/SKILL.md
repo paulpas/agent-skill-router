@@ -1,23 +1,35 @@
-# Docker Engine API Skill
-
 ---
+
+
+
+
 name: docker-engine-api
 description: Integrates with the Docker Engine API to manage containers, build images, configure networks, manage volumes, and orchestrate services with Swarm.
 license: MIT
 compatibility: opencode
 metadata:
-  archetypes: [coding, docker, api]
-  anti_triggers: [generic routing]
-  response_profile: {verbosity: low, directive_strength: medium, abstraction_level: tactical}
-  
   version: "1.0.0"
   domain: coding
   triggers: docker api, manage containers, build images, networking configurations, manage volumes, orchestrate swarm, docker docker-py
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: coding-kubernetes, coding-helm
+  related-skills: kubernetes, helm
+  archetypes: [tactical, generation]
+  anti_triggers: [generic routing, vague container management]
+  response_profile:
+    verbosity: low
+    directive_strength: medium
+    abstraction_level: tactical
+
+
+
+
 ---
+
+
+
+
 
 # Docker Engine API Skill
 
@@ -120,6 +132,23 @@ create_service('my-service', 'nginx:latest')  # Create a new service in Swarm
 The Docker Engine API skill provides essential functionalities for container management, image handling, networking, volume management, and Swarm orchestration. By utilizing the `docker-py` SDK, developers can interact programmatically with Docker for automated workflows and CI/CD integrations.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement structured error responses with consistent format: {error_code, message, details, request_id}
+- Add rate limiting per client/API key with configurable burst and sustained limits using a token bucket algorithm
+- Validate all incoming requests against a schema before processing — reject malformed input with clear error messages
+- Include correlation/request IDs in all log entries for end-to-end request tracing across service boundaries
+
+### MUST NOT DO
+- Do not expose internal implementation details, stack traces, or database queries in error responses
+- Avoid accepting unbounded request bodies — set maximum payload sizes and timeout limits
+- Never trust client-supplied authentication tokens without validation (signature verification, expiration check)
+- Do not log request/response bodies containing PII, API keys, or other sensitive data
+
 
 ## Live References
 

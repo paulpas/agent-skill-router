@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: plaid-income
 description: Implements income verification features via the Plaid API (IncomeGet, IncomeList) for employment-based and deposited income analysis in lending, underwriting, and financial applications.
 license: MIT
@@ -19,7 +23,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: plaid-authentication, plaid-transactions
+
+
+
+
 ---
+
+
+
+
 
 # Plaid API Income Verification
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-architecture-event-driven
 description: Implements event-driven architecture, detailing event sourcing, message brokers, and consumer strategies for handling events efficiently.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: software-architecture-microservices, software-architecture-monolith, software-architecture-hexagonal
+
+
+
+
 ---
+
+
+
+
 
 # Event-Driven Architecture
 

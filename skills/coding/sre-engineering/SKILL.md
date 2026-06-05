@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: sre-engineering
 description: Implements SRE practices including SLI/SLO frameworks, error budget policies, incident management, capacity planning, and chaos engineering for production reliability.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
   related-skills: coding-observability-engineering, coding-production-readiness, cncf-kubernetes, agent-incident-response
+
+
+
+
 ---
+
+
+
+
 
 # SRE Engineering Practice
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: entra-id-api
 description: Implements Microsoft Entra ID (Azure AD) API integration (Users, Groups,
   Applications, Service Principals, Conditional Access, B2C) using msgraph-sdk Python
@@ -7,7 +11,7 @@ description: Implements Microsoft Entra ID (Azure AD) API integration (Users, Gr
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: microsoft entra id, azure active directory, ms graph api, azure ad users,
     azure ad groups, microsoft graph, how do i integrate azure ad, conditional access
@@ -32,7 +36,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-okta-api, coding-auth0-api, coding-aws-iam
-------
+
+
+
+
+---
+
+
+
+
 # Microsoft Entra ID (Azure AD) Integration
 
 Implements production-grade Microsoft Entra ID (Azure Active Directory) integration using the `msgraph-sdk` Python SDK with `azure.identity` for authentication, plus `msal` library patterns when needed. When loaded, this skill makes the model implement user and group lifecycle management (CRUD, membership), application and service principal operations, Conditional Access policies, B2C user flows, OAuth2 permission grants, role assignments, delta query synchronization, batch requests with $batch, and RBAC (role-based access control) at tenant and resource levels. All implementations follow Microsoft Graph best practices: use `ClientSecretCredential` or `DefaultAzureCredential` for auth, proper scopes like `https://graph.microsoft.com/.default`, paging with `@odata.nextLink`, batch requests via `BatchRequestContent`, delta queries for sync scenarios, and throttling/retry handling with `Retry-After` header awareness.

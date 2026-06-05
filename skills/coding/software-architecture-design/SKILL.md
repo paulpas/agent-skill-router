@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-architecture-design
 description: Implements production-grade architectural patterns including DDD tactical
   patterns, hexagonal architecture, CQRS, and event sourcing with typed Python implementations.
@@ -30,7 +34,15 @@ metadata:
     - do-dont
     - examples
   related-skills: software-architecture, ddd-context-mapping, cqrs-pattern, domain-events, microservices-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Modern Software Architecture Design Patterns
 

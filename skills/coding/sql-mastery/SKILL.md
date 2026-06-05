@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: sql-mastery
 description: Implements methods for mastering SQL through query optimization, effective indexing, and understanding execution plans with practical examples.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: database-admin
+
+
+
+
 ---
+
+
+
+
 
 # SQL Mastery
 This skill provides comprehensive methods and practices for mastering SQL through techniques focusing on query optimization, effective indexing, and understanding execution plans. 

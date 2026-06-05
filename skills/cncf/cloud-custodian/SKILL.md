@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: cloud-custodian
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: custodian
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Cloud Custodian in Cloud-Native Engineering
 
 **Category:** security  

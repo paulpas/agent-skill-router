@@ -1,5 +1,9 @@
 ---
-name: trading-options-strategies
+
+
+
+
+name: options-strategies
 description: Implements various options trading strategies including covered calls, protective puts, straddles, and strangles to optimize trading performance.
 license: MIT
 compatibility: opencode
@@ -21,7 +25,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 ## Trading Options Strategies
 
@@ -104,6 +116,23 @@ Before completing your skill, verify:
 2. **Overcomplicating Implementations**: Keep code clean and focused on the strategy logic.  
 3. **Neglecting to Test**: Always provide unit tests for each strategy's logic.
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

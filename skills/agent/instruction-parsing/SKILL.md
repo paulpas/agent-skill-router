@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: instruction-parsing
 description: Parses natural language instructions to extract structured intent, constraints, and parameters for reliable skill routing in AI agent systems.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: confidence-based-selector, task-decomposition-engine, context-window-management
+
+
+
+
 ---
+
+
+
+
 
 # Instruction Parser for AI Agents
 

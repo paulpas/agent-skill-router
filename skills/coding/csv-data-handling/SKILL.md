@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: csv-data-handling
 description: Handles CSV data safely across languages with RFC 4180 compliance, formula injection prevention, character encoding validation, and delimiter detection to protect against spreadsheet injection attacks.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: csv data handling, rfc 4180, csv injection, formula injection, spreadsheet security, csv parsing, delimiters, character encoding, safe csv reading
+  triggers: csv data handling, rfc 4180, csv injection, formula injection, spreadsheet security, csv parsing, delimiters, safe csv reading
   archetypes:
     - tactical
     - diagnostic
@@ -28,7 +32,15 @@ metadata:
     - do-dont
     - examples
   related-skills: html-entity-encoding,url-parsing-security,input-validation,api-security-patterns
+
+
+
+
 ---
+
+
+
+
 
 # CSV Data Handler
 

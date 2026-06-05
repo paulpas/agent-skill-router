@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: terraform-sdk
 description: Integrates with Terraform and OpenTofu via the HCP Terraform API (pyTFE),
   CDKTF Python bindings, and the Terraform Cloud API to manage providers, resources,
@@ -6,7 +10,7 @@ description: Integrates with Terraform and OpenTofu via the HCP Terraform API (p
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: terraform api, terraform cloud, cdktf python, terraform provider, opentofu,
     terraform state, terraform modules, hcp terraform
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-kubernetes-api, coding-pulumi, coding-ansible-api
-------
+
+
+
+
+---
+
+
+
+
 # Terraform/OpenTofu SDK & API Integration
 
 Integrates with Terraform and OpenTofu using the HCP Terraform API (via `pyTFE`), the CDKTF Python SDK, and the Terraform Cloud/Enterprise REST API to programmatically manage providers, resources, state, workspaces, and modules.
@@ -356,6 +368,23 @@ def get_or_create_workspace(
 - Avoid hardcoding organization names — read them from environment configuration
 - Never ignore variables that should be `sensitive=true` (e.g., database passwords, API keys)
 - Do not assume workspaces are deletable — check for attached resources first
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

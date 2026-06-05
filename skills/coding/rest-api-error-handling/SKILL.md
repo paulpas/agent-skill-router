@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rest-api-error-handling
 description: Implements RFC 7807 Problem Details error responses with proper HTTP status code dispatch, structured validation errors, and machine-readable error URIs for production REST APIs.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: RFC 7807, Problem Details API, REST error handling, HTTP status codes, validation errors API, structured error responses, API error format, how do i handle REST errors, Problem Details JSON
+  triggers: RFC 7807, Problem Details API, REST error handling, HTTP status codes, validation errors API, structured error responses, how do i handle REST errors, Problem Details JSON
   role: implementation
   scope: implementation
   output-format: code
@@ -23,7 +27,15 @@ metadata:
     directive_strength: high
     abstraction_level: operational
   related-skills: rest-api-resource-modeling, rest-api-security-patterns
+
+
+
+
 ---
+
+
+
+
 
 # REST API Error Handler
 

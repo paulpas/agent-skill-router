@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rust-skills-software-engineering
   
 description: Implements software engineering skills for Rust programming, covering key aspects including the ownership model, async/await, Cargo package manager, and unsafe code practices. Each section provides guidance, examples, and constraints for using these features effectively.
@@ -19,7 +23,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: coding/rust/ownership-model, coding/rust/async-await, coding/rust/cargo, coding/rust/unsafe-code
+
+
+
+
 ---
+
+
+
+
 
 # Rust Skills for Software Engineering
 

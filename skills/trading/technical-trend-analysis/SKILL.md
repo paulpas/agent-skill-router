@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: technical-trend-analysis
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: trend-analysis
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Determine market trend direction and strength for directional trading decisions
 
 **Philosophy:** The trend is your friend; identifying trends early and confirming continuations maximizes reward/risk
@@ -278,6 +290,106 @@ class TrendAnalyzer:
 ```
 
 ---
+
+---
+
+
+
+### Pattern 2: Risk-Managed Trading Logic with Validation
+
+```python
+from __future__ import annotations
+
+import logging
+from dataclasses import dataclass
+from typing import Optional
+
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class TradeSignal:
+    """Immutable trade signal with all required validation constraints."""
+    symbol: str
+    side: str  # "buy" or "sell"
+    price: float
+    quantity: float
+    confidence: float  # 0.0 to 1.0
+    reason: str
+
+    def validate(self) -> bool:
+        """Validate that the trade signal meets all business constraints."""
+        if self.quantity <= 0:
+            raise ValueError(f"Quantity must be positive, got {self.quantity}")
+        if self.price <= 0:
+            raise ValueError(f"Price must be positive, got {self.price}")
+        if not 0.0 <= self.confidence <= 1.0:
+            raise ValueError(f"Confidence must be between 0 and 1, got {self.confidence}")
+        return True
+
+
+def generate_trade_signal(
+    symbol: str,
+    side: str,
+    price: float,
+    quantity: float,
+    confidence: float,
+    reason: str,
+) -> TradeSignal:
+    """Generate a validated trade signal with guard clause checks."""
+    if side not in ("buy", "sell"):
+        raise ValueError(f"Invalid side '{side}', must be 'buy' or 'sell'")
+
+    signal = TradeSignal(
+        symbol=symbol,
+        side=side,
+        price=price,
+        quantity=quantity,
+        confidence=confidence,
+        reason=reason,
+    )
+    signal.validate()
+    logger.info("Trade signal generated: %s %s %.4f @ %.2f (confidence=%.2f)",
+                 symbol, side, quantity, price, confidence)
+    return signal
+
+
+def execute_with_risk_check(signal: TradeSignal, max_position_pct: float = 0.05) -> dict:
+    """Execute a trade signal after applying risk management checks."""
+    adjusted_quantity = signal.quantity
+    if signal.side == "buy" and signal.quantity > max_position_pct:
+        logger.warning("Position %s exceeds max %.1f%% — capping to %.4f",
+                        signal.symbol, max_position_pct * 100, max_position_pct)
+        adjusted_quantity = max_position_pct
+
+    return {
+        "symbol": signal.symbol,
+        "side": signal.side,
+        "price": signal.price,
+        "quantity": adjusted_quantity,
+        "capped": adjusted_quantity < signal.quantity,
+        "confidence": signal.confidence,
+        "status": "submitted",
+    }
+```
+
+## Constraints
+
+### MUST DO
+- Implement indicator calculations using rolling windows with explicit lookback periods; never use full-history data for online indicators
+- Validate signal generation by confirming alignment across multiple independent indicators before acting on a single signal
+- Calculate all price-based indicators (SMA, EMA, RSI) on closing prices unless specifically designed for tick data
+- Include proper handling of missing/NaN candles in indicator pipelines — forward-fill only within session boundaries
+- Log signal generation with the full context window of indicator values that led to each signal
+
+### MUST NOT DO
+- Do not use look-ahead bias: never reference future bars or prices when calculating indicators during backtesting
+- Avoid recalculating all indicators from scratch on every tick — maintain running state for efficiency
+- Never combine indicators with different timeframes without explicit resampling and clear documentation of the alignment logic
+- Do not generate signals based on a single indicator crossover; require confirmation from price action or volume
+- Avoid hardcoding parameter values (e.g., RSI period = 14) without testing regime-specific optima
+
 
 ## Live References
 

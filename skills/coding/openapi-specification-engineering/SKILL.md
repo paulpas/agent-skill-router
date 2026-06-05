@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: openapi-specification-engineering
 description: Engineers production OpenAPI 3.x specifications including schema design, discriminator patterns, reusable components, parameter validation, response schemas, external documentation links, and automated code generation workflows for type-safe client and server implementations.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: api-contract-first-engineering, rest-api-patterns, graphql-schema-design
+
+
+
+
 ---
+
+
+
+
 
 # OpenAPI Specification Engineering
 

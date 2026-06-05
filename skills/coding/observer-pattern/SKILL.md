@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: observer-pattern
 description: Implements the GoF Observer pattern for decoupled event-driven architecture in Python using ABC-based subjects, weakref-based subscriptions, async observers with asyncio.create_task, and structured event dataclasses.
 archetypes:
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: strategy-pattern, command-pattern, behavioral-design-patterns, event-driven-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Observer Pattern
 

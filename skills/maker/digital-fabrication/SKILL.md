@@ -1,4 +1,9 @@
 ---
+
+
+
+
+
 name: digital-fabrication
 description: Implements 3D printing slicing, laser cutting calibration, CNC toolpaths,
   and STL validation workflows for turning CAD models into fabrication-ready parts
@@ -6,7 +11,7 @@ description: Implements 3D printing slicing, laser cutting calibration, CNC tool
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: maker
   triggers: 3d printing, slicer, gcode, laser cutting, cnc milling, cad model, additive
     manufacturing
@@ -29,7 +34,17 @@ metadata:
   - examples
   - do-dont
   related-skills: rapid-prototyping-workflow, maker-safety-practices
-------
+
+
+
+
+
+---
+
+
+
+
+
 # Digital Fabrication Workflows
 
 Implements end-to-end digital fabrication workflows for converting CAD models into physical parts. Covers three primary methods — FDM/SLA 3D printing with slicer optimization, laser cutting with material-aware parameter calibration, and CNC milling with toolpath strategy calculation. Includes STL validation, G-code manipulation, and automated calibration test generation to minimize wasted material and machine time.

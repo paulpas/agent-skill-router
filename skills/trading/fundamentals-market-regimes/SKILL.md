@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: fundamentals-market-regimes
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: market-regimes
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Identify and adapt to different market regimes (trending, mean-reverting, sideways, volatile) to optimize trading strategy parameters dynamically.
 
 **Philosophy:** Markets do not operate in a single consistent state. Successful trading requires recognizing when market behavior changes and adjusting strategies accordingly. A regime-aware system anticipates shifts in market dynamics rather than reacting to them. The philosophy emphasizes regime detection as a first-class citizen in trading systems, with adaptation happening automatically and systematically before performance degradation occurs.
@@ -608,6 +620,23 @@ if __name__ == "__main__":
 
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Define explicit, measurable criteria for each trading concept rather than using subjective or vague definitions
+- Include concrete examples of how each principle applies to real market scenarios with specific conditions and outcomes
+- Link each fundamental concept to its practical impact on position sizing, risk management, or execution timing
+- Maintain version control on framework documents — note when principles are added, modified, or deprecated
+
+### MUST NOT DO
+- Do not present trading psychology concepts as universally applicable without acknowledging individual trader differences
+- Avoid conflating correlation with causation when discussing market behavior patterns and their drivers
+- Never include subjective profit targets or return expectations as part of a fundamental framework
+- Do not present risk management principles in isolation — always connect them to specific position and portfolio mechanics
+
 
 ## Live References
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: redis-sdk
 description: Integrates Redis using redis-py 5.x with patterns for caching, streams,
   pub/sub, sorted sets, Redis Stack modules (JSON, Search, TimeSeries), and cluster
@@ -6,7 +10,7 @@ description: Integrates Redis using redis-py 5.x with patterns for caching, stre
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: redis, redis-py, redis cache, redis streams, redis pub/sub, how do i use
     redis from python, redis stack, redis cluster
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-postgresql-sdk, coding-mongodb-driver, coding-caching-strategies
-------
+
+
+
+
+---
+
+
+
+
 # Redis Python SDK (redis-py) Integration
 
 Integrates Redis using `redis-py` 5.x — the official Python Redis client — with patterns for caching, streams, pub/sub, sorted sets (leaderboards), Redis Stack modules (JSON, Search, TimeSeries), pipeline transactions, and cluster/sentinel connections.

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: agent-security-guardrails
 description: Implements prompt injection detection, input validation, tool access control, and output sanitization to secure LLM agents against adversarial attacks.
 license: MIT
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: agent-reliability-engineering, coding-security-review, agent-system-hints-design
+
+
+
+
 ---
+
+
+
+
 
 # Agent Security Guardrails
 

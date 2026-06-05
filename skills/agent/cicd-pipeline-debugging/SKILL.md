@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: cicd-pipeline-debugging
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: cicd-pipeline-debugging
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # CI/CD Pipeline Debugging
 
 Debugging complex CI/CD pipelines across GitHub Actions, GitLab CI, Jenkins, and other systems. Provides systematic approaches to diagnose build failures, test errors, cache problems, runner issues, and workflow optimization challenges with actionable debugging commands and real-world examples.

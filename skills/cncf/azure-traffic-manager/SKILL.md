@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: azure-traffic-manager
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: traffic-manager
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Azure Traffic Manager
 
 Deploy and manage azure traffic manager infrastructure as part of your cloud-native environment.

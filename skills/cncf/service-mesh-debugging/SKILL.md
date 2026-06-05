@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: service-mesh-debugging
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: service-mesh-debugging
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Service Mesh Debugging
 
 Implements comprehensive debugging and troubleshooting workflows for Istio and Linkerd service meshes including mTLS validation, sidecar injection issues, traffic routing problems, and mesh observability for microservices.

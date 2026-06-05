@@ -1,7 +1,32 @@
 ---
+
+
+
+
 name: code-review-best-practices
 
-description: Implements best practices for conducting effective code reviews to enhance quality, collaboration, and knowledge sharing in teams.\nlicense: MIT\ncompatibility: opencode\nmetadata:\n  version: 1.1.0\n  domain: coding\n  triggers: code review practices, peer review, collaboration, quality assurance\n  archetypes: [implementation, evaluation]\n  anti_triggers: [vague feedback, non-constructive criticism]\n  response_profile: medium\n---
+description: Implements best practices for conducting effective code reviews to enhance quality, collaboration, and knowledge sharing in teams.
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.1.0"
+  domain: coding
+  triggers: code review practices, peer review, collaboration, quality assurance
+  archetypes: [implementation, evaluation]
+  anti_triggers: [vague feedback, non-constructive criticism]
+  response_profile: medium
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
+---
+
+
+
+
 # Expanded Content for Code Review Best Practices
 
 ## Importance of Implementing Best Practices in Code Reviews
@@ -34,6 +59,23 @@ A: Yes, create organizational standards for code reviews that align with best pr
 By integrating these best practices into your code review process, teams can promote a high standard of code quality while fostering a collaborative and resilient engineering culture.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

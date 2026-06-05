@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-architecture-microservices
 description: Implements strategies for designing, developing, and deploying microservices architecture. Offers guidance on best practices, patterns, and anti-patterns for microservices.
 license: MIT
@@ -11,7 +15,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: software-architecture-monolith, software-architecture-event-driven, software-architecture-hexagonal
+
+
+
+
 ---
+
+
+
+
 
 # Microservices Architecture
 

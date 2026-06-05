@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: security-engineering
 description: Implements end-to-end secure development lifecycle practices including threat modeling (STRIDE/DREAD), OWASP Top 10 vulnerability prevention, zero-trust architecture patterns, supply chain security, and automated security pipeline integration for production systems.
 license: MIT
@@ -30,7 +34,15 @@ metadata:
     - examples
     - config
   related-skills: coding-security-review, cncf-open-telemetry, coding-software-delivery-pipelines, coding-dependency-supply-chain-security
+
+
+
+
 ---
+
+
+
+
 
 # Security Engineering — Secure Development Lifecycle
 

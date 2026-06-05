@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: durable-execution
 description: Implements durable execution patterns for fault-tolerant AI agent workflows including checkpoint-based persistence, exponential backoff retry, idempotency keys, and crash recovery strategies across LangGraph, Temporal, and generic async frameworks.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: durable execution, checkpointing, crash recovery, idempotency, retry strategy, exponential backoff, state persistence, fault tolerance, workflow resume, temporal, replay detection, atomic commits, saga pattern, circuit breaker
+  triggers: durable execution, checkpointing, crash recovery, idempotency, retry strategy, state persistence, fault tolerance, temporal
   role: implementation
   scope: implementation
   output-format: code
@@ -22,7 +26,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # Durable Execution for AI Agent Workflows
 

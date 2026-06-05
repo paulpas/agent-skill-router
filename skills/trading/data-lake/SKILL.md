@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: data-lake
 compatibility: opencode
 completeness: 95
 content-types:
@@ -26,9 +31,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: lake
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Provide scalable, cost-effective storage for trading data with efficient query capabilities
 
 **Philosophy:** Data is an asset; storage must balance cost, accessibility, and retention policies
@@ -381,6 +393,130 @@ class DataCatalog:
 ```
 
 ---
+
+---
+
+
+### Pattern 2: Parquet Data Lake with Schema Evolution and Partitioning
+
+```python
+from __future__ import annotations
+
+import logging
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Optional
+
+import pandas as pd
+
+
+logger = logging.getLogger(__name__)
+
+
+class DataLakeWriter:
+    """Writes trading data to a partitioned Parquet data lake with schema management."""
+
+    def __init__(self, base_path: str = "/data/lake/trading"):
+        self.base_path = Path(base_path)
+        self._schema_version: dict[str, int] = {}
+
+    def write_candles(
+        self,
+        df: pd.DataFrame,
+        symbol: str,
+        timeframe: str = "1h",
+        schema_version: int = 1,
+    ) -> dict:
+        """Write OHLCV data to the data lake in partitioned Parquet format.
+
+        Partitions by date (year/month/day) for efficient time-range queries.
+
+        Args:
+            df: DataFrame with columns: timestamp, open, high, low, close, volume.
+            symbol: Trading pair identifier.
+            timeframe: Data granularity used for partition naming.
+            schema_version: Current schema version number.
+
+        Returns:
+            Summary dict with file paths written and row counts.
+        """
+        df = df.copy()
+        df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
+        df["symbol"] = symbol
+        df["timeframe"] = timeframe
+
+        # Create date partitions
+        df["date"] = df["timestamp"].dt.date
+
+        result = {"files_written": [], "total_rows": 0}
+        for date_val, group in df.groupby("date"):
+            partition_path = self.base_path / symbol / str(timeframe) / f"year={date_val.year}" / f"month={date_val.month:02d}" / f"day={date_val.day:02d}"
+            partition_path.mkdir(parents=True, exist_ok=True)
+
+            file_name = partition_path / f"candles_{symbol}_{timeframe}_{date_val.isoformat()}.parquet"
+            group[[
+                "timestamp", "open", "high", "low", "close", "volume",
+                "symbol", "timeframe", "date",
+            ]].to_parquet(file_name, engine="pyarrow", index=False)
+
+            result["files_written"].append(str(file_name))
+            result["total_rows"] += len(group)
+
+        self._schema_version[symbol] = schema_version
+        logger.info("Wrote %d candle rows for %s to data lake (v%d)",
+                     result["total_rows"], symbol, schema_version)
+        return result
+
+    def read_range(
+        self,
+        symbol: str,
+        start: datetime,
+        end: datetime,
+        timeframe: str = "1h",
+    ) -> pd.DataFrame:
+        """Read candle data from the data lake for a specific time range.
+
+        Uses partition pruning to scan only relevant date directories.
+        """
+        files = []
+        current = start.date()
+        end_date = end.date()
+
+        while current <= end_date:
+            search_path = (
+                self.base_path / symbol / timeframe /
+                f"year={current.year}" / f"month={current.month:02d}" / f"day={current.day:02d}"
+            )
+            if search_path.exists():
+                for pf in search_path.glob(f"candles_{symbol}_{timeframe}_*.parquet"):
+                    files.append(str(pf))
+            current += __import__("datetime").timedelta(days=1)
+
+        if not files:
+            logger.warning("No data found for %s in range %s → %s", symbol, start, end)
+            return pd.DataFrame()
+
+        df = pd.concat([pd.read_parquet(f) for f in files], ignore_index=True)
+        mask = (df["timestamp"] >= start) & (df["timestamp"] < end)
+        return df.loc[mask].sort_values("timestamp").reset_index(drop=True)
+```
+
+## Constraints
+
+### MUST DO
+- Validate all incoming data against schema constraints (type, range, nullability) before processing or storage
+- Implement idempotent operations: re-processing the same data must produce identical results
+- Track data lineage and provenance with timestamps, source identifiers, and transformation history for every record
+- Handle out-of-order data by implementing a watermark-based ordering mechanism with configurable tolerance window
+- Log data quality metrics (completeness, freshness, accuracy) per source with automatic alerting on degradation
+
+### MUST NOT DO
+- Do not silently drop records that fail validation — log them to a quarantine table for review
+- Avoid concatenating strings for timestamp comparison; use proper datetime/timedelta objects
+- Never assume data arrives in chronological order from any external feed without explicit ordering guarantees
+- Do not store raw and processed data in the same table without clear partitioning or separation strategy
+- Avoid blocking on slow data sources — implement async prefetch with timeout-based fallback to cached data
+
 
 ## Live References
 

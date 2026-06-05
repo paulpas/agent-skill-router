@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: aws-kms
 compatibility: opencode
 completeness: 95
 content-types:
@@ -30,9 +35,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: kms
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # KMS (AWS Key Management Service)
 
 Manage encryption keys and control data encryption at rest and in transit with centralized key management, automatic rotation, and compliance controls.

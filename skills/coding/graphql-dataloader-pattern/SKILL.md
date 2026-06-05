@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: graphql-dataloader-pattern
 description: Implements the DataLoader batching and caching pattern to solve GraphQL
   N+1 query problems with per-request loader instances, batch functions, and memoization
@@ -6,7 +10,7 @@ description: Implements the DataLoader batching and caching pattern to solve Gra
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: dataloader, graphql n-plus-one, batch loading, aiodataloader, graphql
     performance, load per request, graphql batching
@@ -26,7 +30,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: graphql-schema-design, graphql-error-handling-validation, graphql-federation, graphql-subscriptions
-------
+
+
+
+
+---
+
+
+
+
 # DataLoader Batching Pattern
 
 Implements the DataLoader pattern to solve GraphQL N+1 query problems by batching and caching data fetches per request. Creates request-scoped loader instances with typed batch functions, memoization across resolver calls, and explicit cache invalidation via `.prime()` and `.clear()` after mutations.

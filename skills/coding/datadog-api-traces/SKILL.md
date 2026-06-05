@@ -1,25 +1,35 @@
-# Skill: datadog-api-traces
-
 ---
+
+
+
+
 name: datadog-api-traces
 description: Implements application performance monitoring (APM) using the Datadog API for tracing, including best practices for initiating and managing traces and spans.
 license: MIT
 compatibility: opencode
 metadata:
-  archetypes: monitoring, application performance
-  anti_triggers: manual instrumentation, performance degradation
-  response_profile:
-      verbosity: medium
-      directive_strength: high
-
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: datadog traces, send traces, trace management, datadog APM, how do I send traces to datadog
   role: implementation
   scope: implementation
   output-format: code
   related-skills: datadog-api-logs, datadog-api-metrics, datadog-api-monitors
-------
+  archetypes: [monitoring, application performance]
+  anti_triggers: [manual instrumentation, performance degradation]
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+
+
+
+
+---
+
+
+
+
+
 # Datadog APM Tracing
 Implements APM tracing for applications using Datadog API. This skill covers how to create, manage, and submit traces for effective performance monitoring and alerting based on APM data.
 

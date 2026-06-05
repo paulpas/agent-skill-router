@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: language-family-idioms
 description: Implements idiomatic code patterns for JVM, .NET, TypeScript, and Functional ecosystems — showing the right way to write code in each family using modern language features from 2025–2026.
 license: MIT
@@ -25,7 +29,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: modern-language-comparison, polyglot-development, polyglot-developer-patterns, framework-selection
+
+
+
+
 ---
+
+
+
+
 
 # Language Family Idioms and Patterns
 

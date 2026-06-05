@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: multi-tenant-domain-isolation
 description: Implements multi-tenant domain isolation patterns (schema-per-tenant, row-level tenant scoping, isolated bounded contexts) to prevent data leakage and enforce strict tenant boundaries in SaaS applications.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: multi-tenant, tenant isolation, schema per tenant, row-level security, tenant boundary, saas architecture, how do i isolate tenants, data partitioning, bounded context per tenant
+  triggers: multi-tenant, tenant isolation, schema per tenant, row-level security, saas architecture, how do i isolate tenants, data partitioning, bounded context per tenant
   archetypes:
     - tactical
     - generation
@@ -27,7 +31,15 @@ metadata:
     - do-dont
     - examples
   related-skills: domain-driven-design, monolith-architecture, api-gateway-domain-routing
+
+
+
+
 ---
+
+
+
+
 
 # Multi-Tenant Domain Isolation
 

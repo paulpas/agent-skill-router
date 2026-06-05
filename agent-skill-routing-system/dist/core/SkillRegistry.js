@@ -802,7 +802,7 @@ class SkillRegistry {
         }
         let fm;
         try {
-            fm = yaml_1.default.parse(fmMatch[1]);
+            fm = yaml_1.default.parse(fmMatch[1], { logLevel: 'error' });
             if (!fm || typeof fm !== 'object')
                 throw new Error('YAML parsed to non-object');
         }
@@ -834,12 +834,18 @@ class SkillRegistry {
             'general';
         // description
         const description = fm.description || `Skill: ${name}`;
-        // tags: parse metadata.triggers (comma-separated string) + add domain prefix
-        const triggersRaw = nestedMeta.triggers || '';
-        const triggerTags = triggersRaw
-            .split(',')
-            .map((t) => t.trim())
-            .filter((t) => t.length > 0);
+        // tags: parse metadata.triggers (supports YAML array or comma-separated string) + add domain prefix
+        let triggerTags = [];
+        const triggersRaw = nestedMeta.triggers;
+        if (Array.isArray(triggersRaw)) {
+            triggerTags = triggersRaw.map((t) => String(t));
+        }
+        else if (typeof triggersRaw === 'string') {
+            triggerTags = triggersRaw
+                .split(',')
+                .map((t) => t.trim())
+                .filter((t) => t.length > 0);
+        }
         // Also add role and scope as tags if present
         const roleTags = [
             nestedMeta.role,

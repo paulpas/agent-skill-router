@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: message-queue-design
 description: Implements production-grade message queue design patterns (delivery semantics, ordering guarantees, consumer groups, dead letter queues, priority and delayed delivery) for reliable distributed systems.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: message queue, message broker, pub/sub, consumer groups, delivery semantics, at-least-once, exactly-once, RabbitMQ, Kafka, NATS, SQS, queue topology, message ordering
+  triggers: message queue, message broker, pub/sub, consumer groups, delivery semantics, RabbitMQ, Kafka, SQS
   archetypes:
     - tactical
     - generation
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont, examples]
   related-skills: event-driven-patterns, event-bus, domain-events, idempotent-distributed-operations, system-reliability-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Message Queue Design Patterns
 

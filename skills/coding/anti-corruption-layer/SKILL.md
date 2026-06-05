@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: anti-corruption-layer
 description: Implements Anti-Corruption Layer patterns to isolate domain models from
   foreign systems, translating external APIs and legacy data structures into clean
@@ -6,7 +10,7 @@ description: Implements Anti-Corruption Layer patterns to isolate domain models 
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: anti corruption layer, acl, foreign model translation, boundary adapter,
     external system isolation, how do i protect my domain from bad apis, legacy system
@@ -33,7 +37,15 @@ metadata:
   - examples
   related-skills: domain-driven-design, domain-modeling, monolith-architecture, microservices-architecture,
     software-architecture
-------
+
+
+
+
+---
+
+
+
+
 # Anti-Corruption Layer
 
 Senior software architect building isolation boundaries between clean domain models and foreign systems — external APIs, legacy codebases, third-party services, or other bounded contexts with incompatible terminology. Implements translation layers that convert external vocabulary into internal model structures while actively rejecting types and concepts that would corrupt the domain.

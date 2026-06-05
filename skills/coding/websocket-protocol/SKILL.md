@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: websocket-protocol
 description: Implements WebSocket protocol-level patterns including frame parsing,
   subprotocol negotiation, permessage-deflate compression, text/binary framing, and
@@ -6,11 +10,9 @@ description: Implements WebSocket protocol-level patterns including frame parsin
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: websocket protocol, frame handling, subprotocol negotiation, permessage-deflate,
-    binary framing, text messages, backpressure, wss://, ws upgrade, opcode, mask
-    bit, close frame
+  triggers: websocket protocol, frame handling, subprotocol negotiation, permessage-deflate, binary framing, text messages, backpressure, wss:// binary framing
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: websocket-server-architecture, websocket-manager, websocket-security, websocket-performance
-------
+
+
+
+
+---
+
+
+
+
 # WebSocket Protocol Implementation Guide
 
 Implements the WebSocket protocol (RFC 6455) at the frame level — parsing frames, negotiating subprotocols, applying compression extensions, managing backpressure, and correctly framing text and binary messages. This skill covers the mechanics beneath the library abstractions so you can build robust real-time communication layers that understand the protocol they speak.

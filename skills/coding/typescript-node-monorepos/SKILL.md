@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: typescript-node-monorepos
 description: Implements software engineering skills for TypeScript/JavaScript in Node.js, focusing on ESM/CJS and monorepos using Turborepo/Nx.
 license: MIT
@@ -17,7 +21,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: coding-esm-cjs
+
+
+
+
 ---
+
+
+
+
 
 # TypeScript Node Monorepos
 

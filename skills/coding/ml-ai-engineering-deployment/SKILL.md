@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ml-ai-engineering-deployment
 description: Implements MLOps deployment patterns including model serving with ONNX/TensorRT, drift detection, feature stores, model registries, and A/B testing for production AI systems.
 license: MIT
@@ -17,13 +21,21 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: MLOps, model deployment, model serving, ML pipeline, drift detection, feature store, ONNX, TensorRT, model registry, A/B testing ML, AI engineering, how do i deploy a machine learning model, scikit-serve, Triton inference server, batch inference, online inference, model versioning, experiment tracking
+  triggers: MLOps, model deployment, model serving, ML pipeline, drift detection, feature store, ONNX, how do i deploy a machine learning model
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: production-readiness, engineering-api-design, data-engineering-architecture
+
+
+
+
 ---
+
+
+
+
 
 # ML/AI Engineering Deployment
 

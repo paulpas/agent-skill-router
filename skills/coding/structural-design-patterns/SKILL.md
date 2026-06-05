@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: structural-design-patterns
 description: Implements GoF structural patterns (Adapter, Bridge, Composite, Decorator,
   Facade, Proxy, Flyweight) to compose classes and objects into larger structures
@@ -6,10 +10,9 @@ description: Implements GoF structural patterns (Adapter, Bridge, Composite, Dec
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: structural patterns, adapter pattern, bridge pattern, composite pattern,
-    decorator pattern, facade pattern, proxy pattern, flyweight, GoF design patterns
+  triggers: structural patterns, adapter pattern, bridge pattern, composite pattern, decorator pattern, facade pattern, proxy pattern, flyweight decorator pattern
   archetypes:
   - tactical
   - generation
@@ -32,7 +35,15 @@ metadata:
   - do-dont
   related-skills: behavioral-design-patterns, design-patterns-architecture, refactoring-techniques,
     modular-design
-------
+
+
+
+
+---
+
+
+
+
 # Structural Design Patterns
 
 Implements GoF structural patterns to compose classes and objects into larger structures while maintaining flexibility. This skill makes the model apply Adapter for incompatible interfaces, Bridge for separating abstraction from implementation, Composite for tree-like part-whole hierarchies, Decorator for dynamic behavior augmentation, Facade for simplifying complex subsystems, Proxy for controlling access and lazy initialization, and Flyweight for memory-efficient shared object sharing — choosing each based on the structural problem at hand.

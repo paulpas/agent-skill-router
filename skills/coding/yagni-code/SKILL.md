@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: yagni-code
 description: Enforces YAGNI at the code level to eliminate dead functions, premature abstractions, and unused configuration by writing only what is immediately required.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: coding-clean-code-refactoring, coding-test-driven-development
+
+
+
+
 ---
+
+
+
+
 
 # YAGNI for Code Implementation
 

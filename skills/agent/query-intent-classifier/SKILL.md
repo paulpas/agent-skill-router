@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: query-intent-classifier
 description: Classifies incoming natural language queries into intent archetypes (tactical, strategic, diagnostic, orchestration, educational, enforcement, generation) using keyword patterns, structural signals, and heuristics for accurate routing.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: intent classification, query archetype, tactical query, strategic planning, diagnostic debugging, orchestration workflow, educational explanation, enforcement audit, generation scaffolding, how do i classify a query
+  triggers: intent classification, query archetype, tactical query, strategic planning, diagnostic debugging, orchestration workflow, educational explanation, how do i classify a query
   archetypes:
     - orchestration
     - diagnostic
@@ -23,7 +27,15 @@ metadata:
   output-format: analysis
   content-types: [guidance, examples, do-dont, diagrams]
   related-skills: intelligent-skill-selection, query-feature-extraction, confidence-based-selector
+
+
+
+
 ---
+
+
+
+
 
 # Query Intent Classifier
 

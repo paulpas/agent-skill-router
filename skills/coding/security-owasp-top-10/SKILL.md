@@ -1,10 +1,14 @@
 ---
+
+
+
+
 name: security-owasp-top-10
 description: Provides an in-depth analysis of the OWASP Top 10 vulnerabilities, along with strategies to mitigate them effectively in software applications.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+  version: "1.1.1"
   domain: coding
   triggers: OWASP, security vulnerabilities, web application security, risk management, cybersecurity
   archetypes: [reference, evaluation]
@@ -13,7 +17,18 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Comprehensive Overview of OWASP Top 10 Security Vulnerabilities
 The OWASP Top 10 provides a critical framework for understanding and addressing the most significant security vulnerabilities in web applications. Below are detailed descriptions and mitigation strategies for each vulnerability:
@@ -69,6 +84,23 @@ Absolutely! Ensuring that developers understand vulnerabilities and remediation 
 Implementing these OWASP strategies not only mitigates risks but also promotes a culture of security awareness within software development practices. By addressing vulnerabilities proactively, organizations can enhance security posture and protect sensitive data effectively.
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Cite authoritative primary sources (official documentation, RFCs, standards bodies) — avoid secondary or blog references
+- Include version-specific guidance when the reference topic has significant version-dependent behavior
+- Structure reference content with clear navigation: overview first, then detailed subsections organized by use case
+- Keep examples minimal and self-contained so readers can copy-paste without needing external context
+
+### MUST NOT DO
+- Do not present opinionated practices as facts — distinguish between standards, recommendations, and personal preferences
+- Avoid outdated API references or deprecated patterns; explicitly note version requirements for each code example
+- Never include incomplete or pseudocode examples in reference materials — all examples should be runnable
+- Do not conflate different product versions when documenting features that vary across releases
+
 
 ## Live References
 

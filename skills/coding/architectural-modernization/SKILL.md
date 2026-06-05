@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: architectural-modernization
 description: Upgrades legacy technology stacks — framework migrations, database transitions, infrastructure modernization, and API evolution — using incremental strategies that preserve business continuity while eliminating technical debt.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: framework migration, database migration, technology upgrade, legacy system modernization, Flask to FastAPI, MongoDB to PostgreSQL, SOAP to REST, on-prem to cloud, language upgrade, API evolution, infrastructure modernization, how do i upgrade a legacy system
+  triggers: legacy system modernization, framework migration, database migration, technology upgrade, API evolution, on-prem to cloud, Flask to FastAPI, how do i upgrade a legacy system
   archetypes:
     - tactical
     - strategic
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, config, do-dont]
   related-skills: monolith-refactoring,microservices-architecture,event-driven-architecture,cicd-pipeline-design,database-migrations
+
+
+
+
 ---
+
+
+
+
 
 # Architectural Modernization Guide
 

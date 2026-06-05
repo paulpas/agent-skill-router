@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: azure-load-balancer
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: load-balancer
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Azure Load Balancer
 
 Deploy and manage azure load balancer infrastructure as part of your cloud-native environment.

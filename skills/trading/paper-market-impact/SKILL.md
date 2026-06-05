@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: paper-market-impact
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: market-impact
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 **Role:** Market Microstructure Specialist — implements sophisticated market impact models to simulate how order flow affects prices, incorporating order book dynamics, inventory imbalances, and liquidity provision.
 
 **Philosophy:** Order Flow Awareness — market impact is not static; it evolves with order book state, inventory, and market conditions; accurate modeling requires understanding the dynamics of price formation.
@@ -915,6 +927,24 @@ class ImpactCalibrator:
 ```
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement commission structures that reflect real broker fee schedules including per-share, per-contract, and regulatory fees
+- Model market impact for paper orders: simulate price movement caused by your order based on order book depth
+- Use the same data feeds and latency characteristics as live trading to ensure paper results are realistic
+- Track slippage separately from commissions and calculate both fill-level and execution-level slippage metrics
+- Validate paper trading P&L against theoretical expectations at regular intervals to detect simulation bugs
+
+### MUST NOT DO
+- Do not assume fills at the next available price without modeling order book dynamics or queue position
+- Avoid using perfect historical data for paper trading — add realistic noise and latency characteristics
+- Never use different data sources between backtesting, paper trading, and live execution without documenting the delta
+- Do not ignore dividend adjustments in equity paper trading — missed dividends create false P&L discrepancies
+
 
 ## Live References
 

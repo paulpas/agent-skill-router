@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-development-workflow
 description: Implements the complete skill creation lifecycle from research through
   validation, including Python-based quality gates, stub detection, and automated
@@ -6,11 +10,9 @@ description: Implements the complete skill creation lifecycle from research thro
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: skill creation workflow, skill development, skill lifecycle, quality gate
-    validation, skill validator, stub detection, skill compliance check, how do i
-    create a skill, SKILL.md format, skill generation pipeline
+  triggers: skill creation workflow, skill development, skill lifecycle, quality gate validation, skill validator, stub detection, skill compliance check, how do i create a skill validation
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-code-quality-policies, agent-skill-trigger-engineering
-------
+
+
+
+
+---
+
+
+
+
 # Skill Development Workflow
 
 Implements the complete skill creation lifecycle with automated quality gates to ensure every SKILL.md meets repository standards before commit. This skill provides Python-based validators that check file size, stub sentinels, code block counts, trigger diversity, and domain-specific structural requirements.

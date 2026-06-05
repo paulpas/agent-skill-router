@@ -1,16 +1,31 @@
 ---
-name: performance-memory-leak-detection-gc-tuning
 
+
+name: performance-memory-leak-detection-gc-tuning
+description: "JVM Performance: Memory Leak Detection and GC Tuning"
+license: MIT
+compatibility: opencode
+metadata:
+  version: "1.0.0"
+  domain: coding
+  triggers: memory leak detection, gc tuning, jvm performance, garbage collection, heap analysis, jfr profiling, eclipse mat, java memory management
+  role: implementation
+  scope: implementation
+  output-format: code
   archetypes:
+  - 
   - tactical
   - strategic
   anti_triggers:
+  - 
   - brainstorming
   - vague ideation
   response_profile:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+---
 
 # JVM Performance: Memory Leak Detection and GC Tuning
 
@@ -100,14 +115,9 @@ This skill provides comprehensive guidance for diagnosing memory leaks and tunin
 - Do not blindly increase heap sizes without identifying existing leaks; this often leads to OOM errors in production.
 - Avoid multiple simultaneous changes to JVM flags, which confuses validation of the impact.
 
----
 
-## Live References
 
-> Authoritative documentation links for this skill's domain. The model follows markdown links at load time to resolve external references and inline content.
 
-- [Oracle JVM Documentation — Garbage Collection](https://docs.oracle.com/en/java/javase/17/guide/)
-- [OpenJDK GC Log Analysis Guide](https://github.com/openjdk/jdk/tree/master/docspec/lib/build/tools/gclog)
-- [Eclipse Memory Analyzer (MAT) User Guide](https://www.eclipse.org/mat/userhelp/R_How_to_open_a_heap_dump.html)
-- [Java Flight Recorder Official Documentation](https://docs.oracle.com/en/java/javase/17/jfr/index.html)
-- [Valgrind Memcheck Manual — Detecting Memory Leaks](https://valgrind.org/docs/manual/mc-manual.html)
+
+
+

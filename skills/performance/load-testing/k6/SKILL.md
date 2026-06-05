@@ -1,10 +1,14 @@
 ---
-name: load-testing-k6
+
+
+
+
+name: k6
 description: Implements best practices for load testing web applications using K6, a modern performance testing tool optimized for developers.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.1.1
+  version: "1.1.1"
   domain: performance
   triggers: load testing, performance testing, K6, web applications, system performance
   archetypes: [implementation, reference]
@@ -13,7 +17,18 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
+
+  role: implementation
+  scope: implementation
+  output-format: code
+
+
+
 ---
+
+
+
+
 
 ## Best Practices for Load Testing with K6
 Load testing ensures that your applications can handle expected usage patterns and helps identify performance bottlenecks. K6 is an excellent tool for developers seeking to implement modern performance testing efficiently. Below are strategies for effective load testing using K6:
@@ -52,3 +67,18 @@ K6 is known for its performance and ease of integration with modern development 
 Yes, K6 can integrate with various monitoring solutions (e.g., Grafana) to visualize load testing data and gain insights into system performance.
 
 By implementing effective load testing with K6, teams can ensure their applications perform optimally under expected workloads, thus enhancing application reliability and user satisfaction over time.
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains

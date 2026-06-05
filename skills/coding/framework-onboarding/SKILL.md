@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: framework-onboarding
 description: Accelerates learning and effective utilization of newly selected frameworks through structured onboarding paths, best practice scaffolding, incremental adoption patterns, and common pitfall avoidance.
 license: MIT
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: framework-evaluation, framework-utilization, framework-adoption-strategy
+
+
+
+
 ---
+
+
+
+
 
 # Framework Onboarding & Utilization Engine
 

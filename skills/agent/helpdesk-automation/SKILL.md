@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: helpdesk-automation
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: high
     abstraction_level: tactical
-  version: 1.0.0
-name: helpdesk-automation
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Helpdesk Automation
 
 Orchestrates intelligent skill selection and execution for helpdesk automation workflows. Applies the 5 Laws of Elegant Defense to guide data naturally through the orchestration pipeline, preventing errors before they occur. Selects optimal skills based on multi-factor scoring including text similarity, historical performance, and system availability.
@@ -332,6 +344,23 @@ When applying this skill, produce:
 |
 
 ---
+
+---
+
+## Constraints
+
+### MUST DO
+- Implement idempotent automation triggers: running the same automation twice should not create duplicate resources or actions
+- Validate all trigger conditions with explicit allowlists before executing automated actions
+- Include rollback procedures in every automation workflow — every CREATE should have a corresponding DELETE capability
+- Log all automation executions with input state, output state, duration, and any errors for monitoring and debugging
+
+### MUST NOT DO
+- Do not create circular automation loops where trigger A causes action B which triggers A again
+- Avoid using automations that modify production data without explicit human approval gates
+- Never embed API keys or credentials directly in automation workflows — use vaulted secrets with rotation
+- Do not assume external service availability; implement retry logic with exponential backoff and dead-letter queues
+
 
 ## Live References
 

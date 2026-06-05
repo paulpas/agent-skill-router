@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: secure-release-pipeline
 compatibility: opencode
 completeness: 95
 content-types:
@@ -31,9 +36,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: release-pipeline
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Secure Release Pipeline Manager
 
 Implements comprehensive security controls throughout the software release lifecycle — from dependency scanning and code review to version management and incident response — ensuring zero compromises on security while maintaining delivery velocity.

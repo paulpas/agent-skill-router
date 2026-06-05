@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ai-framework-comparison
 description: Evaluates and compares AI agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, LlamaIndex, AutoGen) using weighted scoring matrices across architecture fit, ecosystem maturity, production readiness, cost, and latency dimensions.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: protocol-first-agent-design, ai-framework-selection, observability-patterns
+
+
+
+
 ---
+
+
+
+
 
 # AI Framework Comparison Engine
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: data-engineering-architecture
 description: Implements streaming pipeline patterns with Kafka, CDC replication, Delta Lake lakehouse architecture, and orchestrator integration for building scalable data infrastructure.
 license: MIT
@@ -17,13 +21,21 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: data engineering, streaming pipeline, kafka, cdc change data capture, delta lake, lakehouse, dbt, data quality framework, airflow, spark, etl patterns, data lake, apache spark, kubernetes data, materialized views, schema registry, event sourcing data
+  triggers: data engineering, streaming pipeline, kafka, delta lake, dbt, spark, etl patterns, data quality framework
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: data-pipeline-architecture, engineering-api-design, production-readiness
+
+
+
+
 ---
+
+
+
+
 
 # Data Engineering Architecture
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: auth0-api-skills
 description: Implements Auth0 API functionalities (user CRUD, authentication flows, actions/hooks, organizations/multi-tenancy) for secure identity and access management in web and mobile applications.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: security
-  triggers: auth0, authentication, user management, actions, organizations, identity security, auth0 api, user creation, jwt tokens, oauth2 login, multi-tenant identity
+  triggers: auth0, authentication, user management, actions, organizations, identity security, auth0 api, jwt tokens
   archetypes: tactical
   anti_triggers:
     - brainstorming
@@ -19,7 +23,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: auth0-user-management
+
+
+
+
 ---
+
+
+
+
 
 # Auth0 API Skills
 

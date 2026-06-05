@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: ddd-context-mapping
 description: Implements strategic DDD context mapping patterns — anticorruption layers, shared kernels, customer-supplier relationships, conformist boundaries, and publication language for cross-bounded-context integration.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: context mapping, anticorruption layer, acl, shared kernel, customer supplier relationship, conformist pattern, publication language, bounded context integration, strategic ddd, how do i integrate bounded contexts
+  triggers: context mapping, anticorruption layer, acl, shared kernel, customer supplier relationship, publication language, bounded context integration, how do i integrate bounded contexts
   archetypes:
     - tactical
     - generation
@@ -24,7 +28,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: domain-driven-design, domain-modeling, domain-events, microservices-architecture
+
+
+
+
 ---
+
+
+
+
 
 # Context Mapping Strategies (Strategic DDD)
 

@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: azure-cdn
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: cdn
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Azure CDN
 
 Deploy and manage azure cdn infrastructure as part of your cloud-native environment.

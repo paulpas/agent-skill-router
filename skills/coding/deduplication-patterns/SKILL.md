@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: deduplication-patterns
 description: Applies DRY-driven deduplication patterns (extract method, template method, strategy, factory, mixins, memoization, configuration consolidation) to eliminate copy-paste clones, boilerplate, and semantic duplication in codebases.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: dry principle, don't repeat yourself, code deduplication, extract method, reduce duplication, boilerplate removal, code reuse pattern, abstraction, refactoring duplicate code, shared logic, common function, parameter object, template method, strategy pattern
+  triggers: dry principle, don't repeat yourself, code deduplication, extract method, template method, strategy pattern, boilerplate removal, code reuse pattern
   archetypes:
     - tactical
     - diagnostic
@@ -23,7 +27,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: refactoring-techniques,code-duplication-detection,yagni,dry-principles,single-responsibility
+
+
+
+
 ---
+
+
+
+
 
 # Deduplication Patterns (DRY in Practice)
 

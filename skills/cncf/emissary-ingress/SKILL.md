@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: emissary-ingress
 compatibility: opencode
 completeness: 95
 content-types:
@@ -28,9 +33,16 @@ metadata:
     verbosity: medium
     directive_strength: low
     abstraction_level: strategic
-  version: 1.0.0
-name: ingress
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
   related-skills: cncf-argo, cncf-artifact-hub, cncf-aws-eks, cncf-aws-route53
 
 

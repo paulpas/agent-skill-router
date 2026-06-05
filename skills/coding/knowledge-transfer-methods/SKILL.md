@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: knowledge-transfer-methods
 description: Implements structured knowledge transfer workflows using Feynman technique, spaced repetition scheduling, active recall exercises, and teach-back protocols to achieve deep framework mastery and team-wide competency.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: knowledge transfer, teach back, Feynman technique, spaced repetition, active recall, how do i retain what I learned, framework mastery, team knowledge sharing, skill retention, learning methodology
+  triggers: knowledge transfer, teach back, Feynman technique, spaced repetition, active recall, how do i retain what I learned, team knowledge sharing, learning methodology
   archetypes:
     - educational
     - tactical
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, examples, do-dont]
   related-skills: framework-application-methodology, extensible-framework-design
+
+
+
+
 ---
+
+
+
+
 
 # Knowledge Transfer Methods
 

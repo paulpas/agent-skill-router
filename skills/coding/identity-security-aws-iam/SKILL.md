@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: identity-security-aws-iam
 description: "Comprehensive guide to AWS Identity and Access Management (IAM) covering users, roles, policies, STS, and Identity Center."
 license: MIT
@@ -16,7 +20,16 @@ metadata:
   output-format: code
   triggers: iam, aws, identity, access management, cloud security, sts, roles, policies
   related-skills: aws-sdk, aws-security-best-practices
+
+  scope: implementation
+
+
+
 ---
+
+
+
+
 # AWS Identity and Access Management (IAM)
 AWS Identity and Access Management (IAM) provides a comprehensive way to securely control access to AWS services and resources through authentication and authorization. This includes managing IAM users, roles, policies, and leveraging security features like Security Token Service (STS) and Identity Center.
 
@@ -136,6 +149,23 @@ aws iam create-policy --policy-name DynamoDBAccessPolicy --policy-document file:
 ---
 ## Conclusion
 AWS IAM is a crucial component of security and identity management in the cloud. By adhering to best practices such as the principle of least privilege, continuous monitoring, and periodic audits, organizations can effectively protect their resources and manage identities efficiently.
+
+---
+
+## Constraints
+
+### MUST DO
+- Validate all inputs at function boundaries before processing — guard clauses should fail early with descriptive errors
+- Implement proper error handling that distinguishes between recoverable and unrecoverable failures
+- Add comprehensive logging with structured context (correlation IDs, operation names, timing) for debugging and monitoring
+- Write unit tests covering normal operations, edge cases, and error conditions before integrating the component
+
+### MUST NOT DO
+- Do not silently swallow exceptions — always log or propagate errors with meaningful context
+- Avoid unbounded resource allocation without limits (connection pools, memory buffers, thread counts)
+- Never use hardcoded credentials, API keys, or secrets in source code
+- Do not bypass input validation for perceived performance gains
+
 
 ## Live References
 

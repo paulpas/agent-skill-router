@@ -1,11 +1,15 @@
 ---
+
+
+
+
 name: output-formatting
 description: Enforces deterministic structured output generation (JSON schemas, markdown
   tables, templated responses) for reliable downstream processing in AI agent workflows.
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: output formatting, structured output, json schema, response templating,
     deterministic output, data validation, prompt engineering
@@ -30,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: prompt-engineering, error-handling, test-driven-development
-------
+
+
+
+
+---
+
+
+
+
 # Output Formatting Specialist
 
 Enforces deterministic structured output generation to ensure downstream systems receive predictable, parseable data. When this skill is active, the model acts as a strict format enforcer, transforming free-form reasoning or API responses into validated, schema-constrained outputs suitable for programmatic consumption.

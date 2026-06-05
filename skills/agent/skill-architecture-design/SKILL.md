@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: skill-architecture-design
 description: Designs atomic AI agent skill architecture using granularity heuristics, monolith detection algorithms, and network topology patterns to produce modular, independently-testable skill sets that maximize router matching precision.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: skill architecture, atomic design, monolith detection, granularity heuristics, skill topology, skill network, modular skills, skill boundaries, skill decomposition, skill splitting, skill graph, related-skills, skill lifecycle, skill registry
+  triggers: skill architecture, atomic design, monolith detection, granularity heuristics, skill topology, modular skills, skill boundaries, skill decomposition
   archetypes:
     - strategic
     - tactical
@@ -27,7 +31,15 @@ metadata:
     - do-dont
     - diagrams
   related-skills: skill-testing-methodology, trigger-engineering, skill-observability
+
+
+
+
 ---
+
+
+
+
 
 # Skill Architecture Design
 

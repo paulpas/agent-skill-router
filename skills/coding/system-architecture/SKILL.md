@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: system-architecture
 description: Implements architectural patterns (hexagonal, layered, event-driven)
   with dependency injection and boundary constraints to build maintainable, scalable
@@ -6,11 +10,9 @@ description: Implements architectural patterns (hexagonal, layered, event-driven
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: system architecture, software design, hexagonal architecture, ports and
-    adapters, layered architecture, dependency injection, architectural boundaries,
-    event-driven, microservices, monolith design, scalable systems, maintainable code
+  triggers: system architecture, software design, hexagonal architecture, ports and adapters, layered architecture, dependency injection, architectural boundaries, event-driven adapters
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - do-dont
   - examples
   related-skills: test-driven-development, error-handling, modular-design, api-design
-------
+
+
+
+
+---
+
+
+
+
 # System Architecture Manager
 
 Implements architectural patterns (hexagonal/ports-and-adapters, layered, event-driven) with explicit dependency injection and boundary constraints to produce maintainable, scalable software systems. When loaded, the model enforces architectural integrity by verifying inward dependency flow, selecting appropriate structural patterns based on scale and domain complexity, and generating concrete implementations that isolate external concerns behind pure interfaces.

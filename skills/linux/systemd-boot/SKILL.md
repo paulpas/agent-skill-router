@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: systemd-boot
 description: Analyzes and optimizes the systemd boot process including target management,
   boot time profiling with systemd-analyze, initramfs configuration, and custom boot-time
@@ -6,7 +10,7 @@ description: Analyzes and optimizes the systemd boot process including target ma
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: linux
   triggers: systemd boot, boot time optimization, systemd-analyze, target management,
     how do i speed up boot, dracut initramfs, rescue mode, boot logging
@@ -28,7 +32,15 @@ metadata:
   - config
   - do-dont
   related-skills: linux-services, kernel-tuning, shell-process-management, linux-security
-------
+
+
+
+
+---
+
+
+
+
 # Systemd Boot Process Manager
 
 Senior Linux systems engineer analyzing and optimizing the systemd boot process. Diagnoses slow boots with `systemd-analyze` profiling tools, manages boot targets and runlevels, configures initramfs via dracut, creates custom boot-time units, and traces boot issues through persistent journal logs.

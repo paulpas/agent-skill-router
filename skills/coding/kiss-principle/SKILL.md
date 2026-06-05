@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: kiss-principle
 description: Detects and prevents over-engineering by enforcing the KISS principle (Keep It Simple, Stupid) through code simplification, abstraction reduction, and preference for straightforward solutions.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: kiss principle, keep it simple stupid, over-engineering, simplicity, avoid complexity, simple solution, unnecessary abstraction, how do i simplify my code, reduce boilerplate
+  triggers: kiss principle, keep it simple stupid, over-engineering, simplicity, avoid complexity, unnecessary abstraction, how do i simplify my code, reduce boilerplate
   role: implementation
   scope: implementation
   output-format: code
@@ -22,7 +26,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # KISS Principle — Keep It Simple, Stupid
 

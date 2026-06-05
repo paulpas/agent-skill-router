@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: of-shader-programming
 description: Implements GLSL shader programming in OpenFrameworks including vertex/fragment
   shaders, uniform management, VBO rendering, post-processing effects, and shader
@@ -6,11 +10,9 @@ description: Implements GLSL shader programming in OpenFrameworks including vert
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
-  triggers: of shader, glsl programming, vertex shader, fragment shader, ofShader,
-    uniform management, post-processing, gpu rendering, vbo shader, openframeworks
-    shaders
+  triggers: of shader, glsl programming, vertex shader, fragment shader, ofShader, uniform management, post-processing, gpu rendering uniform management
   archetypes:
   - tactical
   - generation
@@ -32,7 +34,15 @@ metadata:
   - examples
   - do-dont
   related-skills: openframeworks, performance-optimization
-------
+
+
+
+
+---
+
+
+
+
 # GLSL Shader Programming in OpenFrameworks
 
 Implements GPU-accelerated graphics using GLSL shaders within OpenFrameworks. Covers vertex and fragment shader development, uniform management, VBO rendering, post-processing pipelines, and shader compilation debugging for real-time visual applications.

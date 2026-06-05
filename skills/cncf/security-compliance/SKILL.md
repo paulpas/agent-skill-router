@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: security-compliance
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: security-compliance
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Security Compliance and Auditing
 
 Implements comprehensive security compliance frameworks including SOC2, HIPAA, and PCI-DSS controls with automated audit procedures, evidence collection, and regulatory documentation for Kubernetes environments and cloud infrastructure.

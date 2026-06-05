@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: messaging-microsoft-teams
 
 description: Integrates Microsoft Teams for chat and collaboration solutions, enabling bot interactions via the Microsoft Graph API including channel management, message posting with adaptive cards, and tab configurations.
@@ -8,7 +12,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: communications
-  triggers: microsoft teams, teams integration, chat management, collaboration, bot interactions, teams bot, graph api teams, adaptive card, channel management
+  triggers: microsoft teams, teams integration, chat management, bot interactions, teams bot, graph api teams, adaptive card, channel management
   archetypes: tactical
   anti_triggers:
     - brainstorming
@@ -17,8 +21,19 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+  role: implementation
+  scope: infrastructure
+  output-format: code
   related-skills: communications/messaging-bots, communications/messaging-channels
+
+
+
+
 ---
+
+
+
+
 
 # Microsoft Teams Integration via Graph API
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-idempotency-management
 description: Implements idempotency key patterns for REST and GraphQL APIs including key storage with TTL, duplicate request detection, safe retry semantics, and distributed cache-backed enforcement to prevent duplicate operations during network failures.
 license: MIT
@@ -22,7 +26,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: api-versioning-strategies, rest-api-patterns, api-security-patterns
+
+
+
+
 ---
+
+
+
+
 
 # Idempotency Management for APIs
 

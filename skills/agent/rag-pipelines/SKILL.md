@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: rag-pipelines
 description: Implements RAG pipeline patterns (semantic chunking, hybrid search with BM25+vector, cross-encoder re-ranking, embedding selection) for retrieval-augmented document generation.
 license: MIT
@@ -18,7 +22,15 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
+
+
+
+
 ---
+
+
+
+
 
 # RAG Pipeline Patterns
 

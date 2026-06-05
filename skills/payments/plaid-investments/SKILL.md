@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: plaid-investments
 description: Implements investment tracking features via the Plaid API (InvestmentsGet, HoldingsList, Transactions) to access and manage investment portfolio data for users in financial applications.
 license: MIT
@@ -19,7 +23,15 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: plaid-authentication, plaid-transactions
+
+
+
+
 ---
+
+
+
+
 
 # Plaid API Investment Tracking
 

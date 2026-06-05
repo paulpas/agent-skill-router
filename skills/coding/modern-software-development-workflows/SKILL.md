@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: modern-software-development-workflows
 description: >-
   Implements end-to-end software development workflows including CI/CD pipelines, automated testing strategies, code quality gates, observability integration, and production deployment patterns for modern software delivery.
@@ -28,7 +32,15 @@ metadata:
     - examples
     - do-dont
   related-skills: coding-test-driven-development, coding-code-review, coding-performance-optimization, coding-security-review, coding-observability-patterns
+
+
+
+
 ---
+
+
+
+
 
 # Modern Software Development Workflows
 

@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: planetscale-sdk
 description: Integrates PlanetScale using mysql-connector-python with patterns for
   database branching, deploy requests, schema management, connection pooling, and
@@ -6,7 +10,7 @@ description: Integrates PlanetScale using mysql-connector-python with patterns f
 license: MIT
 compatibility: opencode
 metadata:
-  version: 1.0.0
+  version: "1.0.0"
   domain: coding
   triggers: planetscale, mysql connector, database branching, planetscale api, how
     do i connect to planetscale from python, serverless mysql, deploy request, vitess
@@ -31,7 +35,15 @@ metadata:
   - do-dont
   - examples
   related-skills: coding-postgresql-sdk, coding-supabase-sdk, coding-database-migrations
-------
+
+
+
+
+---
+
+
+
+
 # PlanetScale Python SDK Integration
 
 Integrates PlanetScale serverless MySQL using `mysql-connector-python` (and the PlanetScale API via HTTP) with patterns for database branching, deploy requests, schema management, connection with SSL, connection pooling for serverless environments, and querying with Python.

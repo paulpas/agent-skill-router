@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: event-bus
 compatibility: opencode
 completeness: 95
 content-types:
@@ -29,9 +34,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: bus
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # Skill: coding-event-bus
 
 # Async pub/sub event bus with typed events, mixed sync/async dispatch, and singleton initialization for trading systems

@@ -1,4 +1,9 @@
 ---
+
+
+
+
+name: cicd-pipeline-troubleshooting
 compatibility: opencode
 completeness: 95
 content-types:
@@ -27,9 +32,16 @@ metadata:
     verbosity: low
     directive_strength: high
     abstraction_level: operational
-  version: 1.0.0
-name: cicd-pipeline-troubleshooting
-------
+version: "1.0.0"
+
+
+
+
+---
+
+
+
+
 # CI/CD Pipeline Troubleshooting
 
 Debugs and resolves CI/CD pipeline failures with actionable diagnostics, cache optimization strategies, and build optimization techniques for GitHub Actions, GitLab CI, and other CI platforms.

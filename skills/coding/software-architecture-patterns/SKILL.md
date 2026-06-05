@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: software-architecture-patterns
 description: Implements proven software architecture patterns (CQRS, Event Sourcing, Hexagonal/Clean Architecture, layered architecture, DDD aggregates) for building maintainable enterprise systems.
 license: MIT
@@ -18,13 +22,21 @@ response_profile:
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: architecture patterns, CQRS, event sourcing, hexagonal architecture, clean architecture, layered architecture, DDD, domain-driven design, aggregate roots, bounded context, how do i structure my application, software architecture, event-driven architecture, port and adapter, onion architecture, read model, write model, sagas
+  triggers: architecture patterns, CQRS, event sourcing, hexagonal architecture, clean architecture, DDD, bounded context, port and adapter
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: engineering-principles, engineering-api-design, ddd-context-mapping
+
+
+
+
 ---
+
+
+
+
 # Software Architecture Patterns
 Implements proven software architecture patterns for structuring enterprise applications into maintainable, testable systems. When loaded, the model acts as a senior software architect selecting and applying architectural patterns (CQRS, Event Sourcing, Hexagonal/Clean Architecture, layered architecture) to decompose complex domains while keeping infrastructure concerns isolated from business logic.
 

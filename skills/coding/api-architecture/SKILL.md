@@ -1,4 +1,8 @@
 ---
+
+
+
+
 name: api-architecture
 description: Designs and implements production API architectures (RESTful, GraphQL, gRPC) with proper versioning, authentication, rate limiting, error handling, and OpenAPI documentation for scalable service interfaces.
 license: MIT
@@ -6,7 +10,7 @@ compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: api architecture, RESTful API, GraphQL, gRPC, API versioning, OpenAPI specification, rate limiting, authentication patterns, how do i design an API, API gateway, microservice communication, API design
+  triggers: api architecture, RESTful API, GraphQL, gRPC, API versioning, OpenAPI specification, authentication patterns, how do i design an API
   archetypes:
     - tactical
     - generation
@@ -25,7 +29,15 @@ metadata:
   output-format: code
   content-types: [code, guidance, do-dont, examples]
   related-skills: microservices-architecture,event-driven-architecture,architecture-decision-records,security-architecture
+
+
+
+
 ---
+
+
+
+
 
 # API Architecture Guide
 
