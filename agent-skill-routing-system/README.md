@@ -320,7 +320,7 @@ OPENAI_API_KEY=sk-... ./install-skill-router.sh
 # Non-interactive
 OPENAI_API_KEY=sk-... \
 ANTHROPIC_API_KEY=sk-ant-... \
-./install-skill-router.sh --provider anthropic --model claude-3-5-haiku-20241022
+./install-skill-router.sh --provider anthropic --model claude-3-5-haiku
 ```
 Embeddings still use OpenAI (Anthropic has no embedding API). `OPENAI_API_KEY` remains required.
 
@@ -392,7 +392,7 @@ See [`SKILL_FORMAT_SPEC.md`](../SKILL_FORMAT_SPEC.md) for the complete authoring
 | `OPENAI_API_KEY` | *(required for openai/embeddings)* | OpenAI API key |
 | `ANTHROPIC_API_KEY` | — | Anthropic API key (required when `LLM_PROVIDER=anthropic`) |
 | `LLM_PROVIDER` | `openai` | LLM ranking provider: `openai` · `anthropic` · `llamacpp` |
-| `LLM_MODEL` | provider default | Model name (e.g. `gpt-4o-mini`, `claude-3-5-haiku-20241022`, `local-model`) |
+| `LLM_MODEL` | provider default | Model name (e.g. `gpt-4o-mini`, `claude-3-5-haiku`, `local-model`) |
 | `EMBEDDING_PROVIDER` | `openai` | Embedding provider: `openai` · `llamacpp` |
 | `EMBEDDING_MODEL` | `text-embedding-3-small` | Embedding model name |
 | `LLAMACPP_BASE_URL` | `http://host.docker.internal:8080` | llama.cpp server base URL |

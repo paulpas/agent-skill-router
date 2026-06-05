@@ -113,7 +113,7 @@ The Skill Router uses native OpenAI embedding API or llama.cpp local embedding m
 
 ### OpenAI Embeddings
 - **Model**: `text-embedding-3-small` (1536-dimensional embeddings)
-- **Alternative models**: `text-embedding-3-large`, `text-embedding-ada-002`
+- **Alternative models**: `text-embedding-3-large`
 - **Performance**: Fast, optimized for semantic similarity
 
 ### Local Embeddings (llama.cpp)
@@ -189,8 +189,8 @@ vLLM is an OpenAI-compatible server, so configure it like this:
 OPENAI_BASE_URL=http://localhost:8000/v1
 OPENAI_API_KEY=dummy
 
-# LLM model (example — use any compatible model)
-LLM_MODEL=meta-llama/Meta-Llama-3.1-8B-Instruct
+# LLM models: Meta-Llama-3.3-70B-Instruct, Meta-Llama-3.1-8B-Instruct, or Llama-3.2 variants
+LLM_MODEL=meta-llama/Meta-Llama-3.3-70B-Instruct
 
 # Embeddings (OpenAI-compatible, 1536-dim)
 EMBEDDING_MODEL=text-embedding-3-small
@@ -223,7 +223,7 @@ Ollama runs local LLMs with simple configuration:
 # Ollama Configuration
 OPENAI_BASE_URL=http://localhost:11434/v1
 OPENAI_API_KEY=dummy
-LLM_MODEL=llama3:8b
+LLM_MODEL=llama3.2:8b  # or llama3.3:70b for higher quality
 
 # Embeddings (Ollama supports native embeddings)
 # Configure a local embedding model or use OpenAI embeddings
@@ -388,7 +388,7 @@ After configuring, test your setup:
 docker run --rm \
   -e OPENAI_BASE_URL="http://host.docker.internal:8000/v1" \
   -e OPENAI_API_KEY="dummy" \
-  -e LLM_MODEL="llama3:8b" \
+  -e LLM_MODEL="llama3.2:8b" \
   -e EMBEDDING_PROVIDER=openai \
   -e EMBEDDING_MODEL="text-embedding-3-small" \
   -p 3000:3000 \
@@ -398,7 +398,7 @@ docker run --rm \
 docker run --rm \
   -e OPENAI_BASE_URL="http://host.docker.internal:8000/v1" \
   -e OPENAI_API_KEY="dummy" \
-  -e LLM_MODEL="llama3:8b" \
+  -e LLM_MODEL="llama3.2:8b" \
   -e EMBEDDING_PROVIDER=emulation \
   -p 3000:3000 \
   skill-router:latest
@@ -413,7 +413,7 @@ curl http://localhost:3000/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer dummy" \
   -d '{
-    "model": "llama3:8b",
+    "model": "llama3.2:8b",
     "messages": [{"role": "user", "content": "test"}]
   }'
 

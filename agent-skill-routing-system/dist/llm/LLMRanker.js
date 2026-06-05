@@ -48,7 +48,7 @@ class LLMRanker {
     }
     defaultModel(provider) {
         switch (provider) {
-            case 'anthropic': return 'claude-3-5-haiku-20241022';
+            case 'anthropic': return 'claude-3-5-haiku';
             case 'llamacpp': return 'local-model';
             default: return 'gpt-4o-mini';
         }

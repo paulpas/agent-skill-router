@@ -309,7 +309,7 @@ This handles scenarios where skill content changes and compression becomes stale
 # Compression strategy
 SKILL_COMPRESSION_ENABLED=true              # Master on/off switch
 SKILL_COMPRESSION_STRATEGY=moderate         # brief|moderate|detailed (default: moderate)
-SKILL_COMPRESSION_LLM_MODEL=claude-3-haiku  # Claude model to use
+SKILL_COMPRESSION_LLM_MODEL=claude-3-5-haiku  # Claude model to use
 
 # Cache settings
 SKILL_COMPRESSION_MEMORY_TTL_MINUTES=60     # In-memory cache TTL (default: 60)
@@ -351,7 +351,7 @@ const registry = new SkillRegistry({
   compression: {
     enabled: true,
     strategy: 'moderate',
-    llmModel: 'claude-3-haiku',
+    llmModel: 'claude-3-5-haiku',
     memoryTtlMinutes: 60,
     diskTtlDays: 7,
     cacheDir: '.skills',

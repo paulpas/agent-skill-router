@@ -123,8 +123,8 @@ EMBEDDING_MODEL=text-embedding-3-small
 # For higher quality embeddings (larger, more expensive)
 EMBEDDING_MODEL=text-embedding-3-large
 
-# Legacy model (deprecated but still available)
-LLM_MODEL=gpt-4-turbo
+# Smaller / cheaper model for simple tasks
+LLM_MODEL=gpt-4o-mini
 ```
 
 ## Embedding Emulation Mode (`emulation`)
@@ -199,7 +199,7 @@ Monitor token usage in the router logs. High auto-skill creation frequency (`AUT
 
 ### Error: "Model not found"
 
-**Solution**: Verify the model name is correct. Use `gpt-4o-mini`, `gpt-4o`, or `gpt-4-turbo` for LLM.
+**Solution**: Verify the model name is correct. Use `gpt-4o-mini`, `gpt-4o`, or `gpt-4.5` for LLM.
 
 ## Testing Your Configuration
 

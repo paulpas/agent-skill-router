@@ -95,7 +95,7 @@ All variables in alphabetical order:
 | `SKILL_COMPRESSION_ENABLED` | `true` | Compression Advanced |
 | `SKILL_COMPRESSION_LAZY_WRITE_INTERVAL_MS` | `5000` | Compression Advanced |
 | `SKILL_COMPRESSION_LEVEL` | `0` | Skill Compression |
-| `SKILL_COMPRESSION_LLM_MODEL` | `claude-3-haiku` | Compression Advanced |
+| `SKILL_COMPRESSION_LLM_MODEL` | `claude-3-5-haiku` | Compression Advanced |
 | `SKILL_COMPRESSION_MEMORY_TTL_MINUTES` | `60` | Compression Advanced |
 | `SKILL_COMPRESSION_STRATEGY` | `moderate` | Compression Advanced |
 | `SKILL_ROUTER_API_DOC_URL` | *(remote URL)* | MCP Bridge |
@@ -159,7 +159,7 @@ Configures the large language model backend used for ranking skills against user
 | Variable | Type | Default | Valid Values | Description |
 |---|---|---|---|---|
 | `LLM_PROVIDER` | string | `openai` | `openai`, `anthropic`, `llamacpp` | LLM backend for ranking skill candidates against user tasks |
-| `LLM_MODEL` | string | *provider-specific* | Any valid model name | Model identifier. Defaults: `gpt-4o-mini` (openai), `claude-3-5-haiku-20241022` (anthropic), `local-model` (llamacpp) |
+| `LLM_MODEL` | string | *provider-specific* | Any valid model name | Model identifier. Defaults: `gpt-4o-mini` (openai), `claude-3-5-haiku` (anthropic), `local-model` (llamacpp) |
 | `OPENAI_API_KEY` | string | — | Valid OpenAI API key | API key for both LLM ranking and embedding generation via OpenAI |
 | `OPENAI_BASE_URL` | string | `https://api.openai.com` | Valid URL | Custom OpenAI-compatible base URL. Supports LiteLLM, vLLM, ollama, etc. Strips trailing `/v1` automatically. |
 | `OPENAI_API_BASE` | string | — *(alias)* | Valid URL | Alternate name for `OPENAI_BASE_URL`. If both are set, `OPENAI_BASE_URL` takes precedence. |
@@ -409,7 +409,7 @@ Docker-level tuning variables for the LLM-based skill compression subsystem. The
 |---|---|---|---|---|
 | `SKILL_COMPRESSION_ENABLED` | boolean | `true` | `true`, `false` | Master switch for the LLM-based compression system. When false, falls back to regex-based lightweight compression. |
 | `SKILL_COMPRESSION_STRATEGY` | string | `moderate` | `moderate`, `aggressive`, `conservative` | Compression strategy profile that adjusts how aggressively skills are compressed by the LLM. |
-| `SKILL_COMPRESSION_LLM_MODEL` | string | `claude-3-haiku` | Any valid model name | LLM model used specifically for skill compression calls (separate from the ranking model). |
+| `SKILL_COMPRESSION_LLM_MODEL` | string | `claude-3-5-haiku` | Any valid model name | LLM model used specifically for skill compression calls (separate from the ranking model). |
 | `SKILL_COMPRESSION_MEMORY_TTL_MINUTES` | number | `60` | 1–1440 | Time-to-live for compressed skills in the in-memory cache. After this period, the entry is eligible for eviction. |
 | `SKILL_COMPRESSION_DISK_TTL_DAYS` | number | `7` | 1–365 | Time-to-live for compressed skills on disk. Older entries are cleaned up by the periodic cleanup job. |
 | `SKILL_COMPRESSION_LAZY_WRITE_INTERVAL_MS` | number | `5000` | 1000–60000 | Debounce interval for writing compressed skills to disk. Changes are batched to reduce I/O. |
@@ -587,7 +587,7 @@ docker run -d \
   --name skill-router \
   -e ANTHROPIC_API_KEY=sk-ant-... \
   -e LLM_PROVIDER=anthropic \
-  -e LLM_MODEL=claude-3-5-haiku-20241022 \
+  -e LLM_MODEL=claude-3-5-haiku \
   -e OPENAI_API_KEY=sk-... \
   -e EMBEDDING_PROVIDER=openai \
   -e EMBEDDING_MODEL=text-embedding-3-small \
