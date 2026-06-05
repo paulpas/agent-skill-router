@@ -27,6 +27,7 @@ import { QueryArchetypeInferencer } from './QueryArchetypeInferencer';
 import { ArchetypeRankingBoost } from './ArchetypeRankingBoost';
 import { AntiTriggerScorer } from './AntiTriggerScorer';
 import { ValidationError } from './AppError';
+import { IntentDecomposer } from '../retrieval/IntentDecomposer';
 
 /**
  * Hybrid retrieval weight configuration for the Router.
@@ -182,6 +183,16 @@ export class Router {
 
     // Build BM25 index from all loaded skills
     this.bm25Indexer = this.buildBM25Index();
+
+    // Build the dynamic trigger→domain index from loaded skills' metadata.triggers.
+    // This makes keyword matching self-documenting: new skills automatically teach
+    // the router their triggers without any code changes to IntentDecomposer.
+    IntentDecomposer.initialize(this.skillRegistry);
+    const idx = IntentDecomposer.getTriggerDomainIndex();
+    this.logger.info('Dynamic trigger domain index built', {
+      skillCount: this.skillRegistry.getAllSkills().length,
+      indexedTriggers: idx?.size ?? 0,
+    });
 
     this.logger.info('Router initialized successfully', {
       skillCount: this.skillRegistry.getAllSkills().length,
@@ -820,6 +831,8 @@ async routeTask(request: RouteRequest): Promise<RouteResponse> {
   async reloadSkills(): Promise<void> {
     await this.skillRegistry.reload();
     this.vectorDatabase.setSkills(this.skillRegistry.getAllSkills());
+    // Rebuild the dynamic trigger→domain index after reload
+    IntentDecomposer.initialize(this.skillRegistry);
   }
 
   /**
