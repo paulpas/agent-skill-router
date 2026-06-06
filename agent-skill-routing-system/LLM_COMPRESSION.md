@@ -408,21 +408,12 @@ curl http://localhost:3000/skill/trading-risk-stop-loss?compression=moderate&fre
 
 **Response Headers:**
 
-```
-HTTP/1.1 200 OK
-Content-Type: text/markdown; charset=utf-8
-X-Compression-Enabled: true
-X-Compression-Level: moderate
-X-Compression-Original-Tokens: 1240
-X-Compression-Compressed-Tokens: 680
-X-Compression-Reduction: 45%
-X-Compression-Cache-Hit: true
-X-Compression-Cache-Source: disk
-X-Compression-Latency-Ms: 23
-X-Compression-Version: 1.0.0
-Cache-Control: public, max-age=3600
-ETag: "abc123def456"
-```
+| Header | Value | Meaning |
+|--------|-------|---------|
+| `X-Compression-Version` | brief/moderate/detailed | Compression level used |
+| `X-Compression-Tokens` | 4200 | Token count of compressed output |
+| `X-Compression-Percent` | 35 | Percentage reduction vs original |
+| `X-Compression-Source` | original | Source of this compression variant |
 
 **Response Body:**
 ```markdown

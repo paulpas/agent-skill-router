@@ -622,18 +622,14 @@ curl http://localhost:3000/skill/trading-risk-stop-loss?compression=moderate&fre
 
 ### Response Headers
 
-Compressed responses include metrics:
+Compressed responses include metrics. Response headers include compression metadata:
 
-```
-X-Compression-Enabled: true
-X-Compression-Level: moderate
-X-Compression-Original-Tokens: 1240
-X-Compression-Compressed-Tokens: 680
-X-Compression-Reduction: 45%
-X-Compression-Cache-Hit: true
-X-Compression-Cache-Source: disk
-X-Compression-Latency-Ms: 23
-```
+| Header | Value | Meaning |
+|--------|-------|---------|
+| `X-Compression-Version` | brief/moderate/detailed | Compression level used |
+| `X-Compression-Tokens` | 4200 | Token count of compressed output |
+| `X-Compression-Percent` | 35 | Percentage reduction vs original |
+| `X-Compression-Source` | original | Source of this compression variant |
 
 ### Metrics & Monitoring
 

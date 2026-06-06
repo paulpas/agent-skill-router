@@ -1561,11 +1561,11 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       version,
     });
 
-    // Map version hint to compression level
+    // Map version hint to compression level (higher = more aggressive stripping)
     const levelMap: Record<string, number> = {
-      brief: 1,
-      moderate: 5,
-      detailed: 8,
+      brief: 8,       // Aggressive: strips code blocks (L7), abbreviates sections (L8)
+      moderate: 5,    // Medium: removes several sections but preserves code blocks
+      detailed: 2,    // Minimal: only strips "When to Use" bullets, keeps all content
     };
     const compressionLevel = levelMap[version] ?? 5;
 

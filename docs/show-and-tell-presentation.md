@@ -165,7 +165,7 @@ Triggers combine **technical terms** (`ATR`, `stop loss`) with **conversational 
 
 When routing finds no good match above the confidence threshold, the router can **auto-generate** a SPEC-compliant `SKILL.md`:
 
-- **Endpoint:** `POST /skill/create` with `{ task, domain?, constraints? }`
+- **Endpoint:** `POST /skill/create` with `{ task, domain?, topic?, dryRun? }`
 - Generates frontmatter (name from description auto-extraction), structured content sections, code examples, triggers calibrated for the topic
 - Runs through the 3-phase validator (structural → stub detection → LLM quality check)
 - On success: file written to `skills/<domain>/<topic>/SKILL.md`, added to index

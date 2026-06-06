@@ -133,8 +133,8 @@ Creates a new skill when no good match exists during routing. The request body i
 {
   "task": "Describe the request",
   "domain": "cncf",          // optional; auto-inferred if omitted
-  "name": "my-skill-name",   // optional; auto-inferred if omitted
-  "tokenLimit": 8000         // optional; max output tokens for generation
+  "topic": "my-skill-topic", // optional; auto-inferred if omitted
+  "dryRun": false            // optional; true to preview without saving (default: false)
 }
 ```
 

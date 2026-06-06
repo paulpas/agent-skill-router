@@ -27,7 +27,7 @@ Response: `{"status":"healthy","timestamp":"...","version":"1.0.0"}`
 ```bash
 curl http://localhost:3000/stats
 ```
-Response: `{"skills":{"totalSkills":N,"categories":[...],"tags":[...]},"mcpTools":{...}}`
+Response: `{"skills":{"totalSkills":N,"categories":N,"tags":N},"mcpTools":{...}}`
 
 ### Route a Task to Skills
 ```bash

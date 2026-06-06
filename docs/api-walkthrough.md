@@ -212,21 +212,13 @@ curl "http://localhost:3000/skill/risk-stop-loss?compression=moderate"
 curl "http://localhost:3000/skill/risk-stop-loss?compression=brief"
 ```
 
-Compression levels (level 0–10+):
+Compression levels are mapped as follows:
 
-| Level | What's Stripped | Savings |
-|-------|-----------------|---------|
-| `detailed` (level 0) | Nothing. Full original content. | 0% |
-| `moderate` (level ~5) | Blank lines, "When to Use", markdown formatting | ~35% |
-| `brief` (level ~7) | Everything in moderate + code examples | ~55% |
-
-#### Compression via HTTP Headers
-
-You can also set compression per-request using headers:
-
-```bash
-curl -H "X-Compression: brief" http://localhost:3000/skill/risk-stop-loss
-```
+| Level | Request | What Recipes Apply (cumulative 1→N) | Typical Savings |
+|-------|---------|--------------------------------------|-----------------|
+| `detailed` (level 2) | `?compression=detailed` | L1: blank lines + L2: "When to Use" bullets | ~5–15% depending on skill length |
+| `moderate` (level 5) | `?compression=moderate` | L1–L5: blank lines, removes "When to Use", "When NOT to Use", collapses workflow, strips related-skills table | ~30–50% depending on skill length |
+| `brief` (level 8) | `?compression=brief` | L1–L8: everything in moderate + L6: strip bold/italic/backtick formatting + L7: replace code blocks with `[code example removed]` + L8: abbreviate section names | ~60–75% |
 
 ---
 
@@ -238,15 +230,15 @@ Before we send any requests, here's the full pipeline that transforms a natural 
 
 ```mermaid
 flowchart TD
-    A["POST /route"] --> B["1. Safety Layer<br/>Prompt injection check,<br/>input validation, schema validation"]
-    B --> C["2. Embed Task<br/>OpenAI text-embedding-3-small<br/>→ 1536-dim vector"]
-    C --> D["3. Vector Search<br/>HNSW ANN index → top 20 candidates<br/>~1ms lookup"]
-    D --> E["4. Hybrid Scoring<br/>vector 50% + BM25 20%<br/>+ trigger match 15%"]
-    E --> F["5. Archetype Match<br/>Query intent aligns with skill purpose<br/>+30% boost for full match"]
-    F --> G["6. Anti-Trigger Penalty<br/>Conflicting terms → -0.15 each"]
-    G --> H["7. MMR Diversify<br/>Reduce near-duplicates<br/>(lambda = 0.7)"]
-    H --> I["8. LLM Ranker<br/>Optional fallback re-ranking<br/>(LLM_RANKING_ENABLED=true)"]
-    I --> J["9. Filter & Plan<br/>Score threshold, maxSkills,<br/>execution strategy: seq/par/hybrid"]
+    A["POST /route"] --> B["1. Safety Layer | Prompt injection check, input validation"]
+    B --> C["2. Embed Task | OpenAI text-embedding-3-small -> 1536-dim vector"]
+    C --> D["3. Vector Search | HNSW ANN index -> top 20 candidates ~1ms lookup"]
+    D --> E["4. Hybrid Scoring | vector 50% + BM25 20% + trigger match 15%"]
+    E --> F["5. Archetype Match | Query intent aligns with skill purpose, +30% boost"]
+    F --> G["6. Anti-Trigger Penalty | Conflicting terms -> -0.15 each"]
+    G --> H["7. MMR Diversify | Reduce near-duplicates (lambda = 0.7)"]
+    H --> I["8. LLM Ranker | Optional fallback re-ranking"]
+    I --> J["9. Filter & Plan | Score threshold, maxSkills, execution strategy"]
     J --> K["Selected skills + plan"]
 
     style B fill:#e1f5fe
@@ -486,14 +478,6 @@ When you need to fit skills into a limited context window, request compressed ve
 | 0 (off) | `?compression=detailed` | Everything — full original SKILL.md | 0% |
 | ~3 | `?compression=moderate` | Removes "When NOT to Use", collapses workflow sections, removes blank lines | ~18–35% |
 | ~7 | `?compression=brief` | Also strips code examples and markdown formatting | ~55% |
-
-### Using HTTP Headers for Compression
-
-Instead of query parameters, set the compression level via header:
-
-```bash
-curl -H "X-Compression: brief" http://localhost:3000/skill/security-review
-```
 
 ---
 
@@ -865,39 +849,39 @@ curl -X POST http://localhost:3000/config/link-following \
 ```mermaid
 sequenceDiagram
     participant Dev as Developer
-    participant Router as Skill Router :3000
+    participant API as Skill Router API :3000
     participant Registry as Skill Registry
     participant VectorDB as HNSW Vector DB
     participant BM25 as BM25 Index
     participant MCP as MCP Tools
 
-    Dev->>Router: GET /health
-    Router-->>Dev: status=healthy, ready=true
+    Dev->>API: GET /health
+    API-->>Dev: status=healthy, ready=true
 
-    Dev->>Router: GET /stats
-    Router-->>Dev: 1247 skills, 8 categories
+    Dev->>API: GET /stats
+    API-->>Dev: 1247 skills, 8 categories
 
-    Dev->>Router: POST /route<br/>{ task: "review Python code for SQL injection" }
-    activate Router
-    Router->>Registry: Load skill metadata
-    Router->>VectorDB: Embed task + search (HNSW)
-    VectorDB-->>Router: Top 20 candidates
-    Router->>BM25: Score candidates by term match
-    BM25-->>Router: BM25 scores
-    Router->>Router: Hybrid scoring<br/>vector(50%) + bm25(20%) + trigger(15%)
-    Router-->>-Dev: selectedSkills + executionPlan
-    deactivate Router
+    Dev->>API: POST /route | task: "review Python code for SQL injection"
+    activate API
+    API->>Registry: Load skill metadata
+    API->>VectorDB: Embed task + search (HNSW)
+    VectorDB-->>API: Top 20 candidates
+    API->>BM25: Score candidates by term match
+    BM25-->>API: BM25 scores
+    API->>API: Hybrid scoring | vector(50%) + bm25(20%) + trigger(15%)
+    API-->>Dev: selectedSkills + executionPlan
+    deactivate API
 
-    Dev->>Router: GET /skill/security-review
+    Dev->>API: GET /skill/security-review
     activate Registry
-    Registry-->>-Dev: SKILL.md content (plain text)
+    Registry-->>Dev: SKILL.md content (plain text)
     deactivate Registry
 
-    Dev->>Router: POST /execute<br/>{ skills: ["security-review"], inputs: {...} }
+    Dev->>API: POST /execute | skills: ["security-review"], inputs: {...}
     activate MCP
-    Router->>MCP: Execute security-review tool
-    MCP-->>Router: Analysis results
-    Router-->>-Dev: Execution status + output
+    API->>MCP: Execute security-review tool
+    MCP-->>API: Analysis results
+    API-->>Dev: Execution status + output
     deactivate MCP
 ```
 
