@@ -3,9 +3,9 @@
     {
       "id": "skill-reporting-rule",
       "name": "Always report loaded skills",
-      "description": "After every task that loads skills, end your response with: > 📖 skill: <skill-names>",
+      "description": "After every task that loads skills, end your response with: > 📖 skill: <skill-names> (excluding built-in/OpenCode-internal skills like customize-opencode)",
       "scope": "persistent",
-      "action": "End every response that uses skills with the skill citation line in the format: > 📖 skill: <skill-name-1>, <skill-name-2>",
+      "action": "End every response that uses skills with the skill citation line in the format: > 📖 skill: <skill-name-1>, <skill-name-2>. Omit built-in/OpenCode-internal skills (customize-opencode, code-philosophy, explore) — they are loaded by OpenCode itself, not via the skill-router API.",
       "enabled": true
     }
   ]
