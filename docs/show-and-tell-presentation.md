@@ -13,7 +13,7 @@ sequenceDiagram
 
     User->>OC: "review this Python code for SQL injection"
     OC->>Router: route_to_skill("review this code")
-    Router->>Skills: Query HNSW index + trigger index
+    Router->>Skills: Query hybrid index (vector + BM25)
     Skills-->>Router: security-review (0.95), code-review (0.88)
     Router-->>OC: Top skills with scores
     OC->>OC: Inject skill content into context
@@ -54,7 +54,7 @@ Six stages, each feeding the next:
 ```mermaid
 flowchart LR
     Input["POST /route"] --> S1["1. Safety<br/>~0.1ms"]
-    S1 --> S2["2. Hybrid Retrieval<br/>~200ms"]
+    S1 --> S2["2. Hybrid Retrieval<br/>Vector + BM25<br/>~200ms"]
     S2 --> S3["3. Archetype+Trigger<br/>~0.1ms"]
     S3 --> S4["4. MMR Diversify<br/>~0.1ms"]
     S4 --> S5["5. LLM Ranker<br/>~3s optional"]
@@ -65,7 +65,7 @@ flowchart LR
 | # | Stage | Timing | Key Details |
 |---|-------|--------|-------------|
 | 1 | **Safety Layer** | ~0.1ms | Prompt injection (regex Tier 1), task length, skill allowlist, input sanitization |
-| 2 | **Hybrid Retrieval** | ~200ms | Vector similarity 50% + BM25 20% — HNSW ANN returns top candidates in ~1ms |
+| 2 | **Hybrid Retrieval** | ~200ms | Vector similarity 50% + BM25 30% — HNSW ANN index returns top candidates in ~1ms |
 | 3 | **Archetype+Trigger** | ~0.1ms | Trigger keywords 15% (from dynamic trigger→domain index), archetype alignment 10%, anti-trigger penalties |
 | 4 | **MMR Diversify** | ~0.1ms | Reduces near-duplicates via MMR (lambda=0.7) |
 | 5 | **LLM Ranker** | ~3s optional | Re-ranks by semantic nuance when `LLM_RANKING_ENABLED=true`; brace-counting JSON extraction for reasoning models |
@@ -83,31 +83,31 @@ Raw LLMs are generalists — they know a little about everything but aren't doma
 
 ```mermaid
 flowchart TD
-    Root["skills/"] --> A["agent/ AI orchestration"]
-    Root --> AI["ai/ AI/ML systems"]
-    Root --> Arch["architecture/ System design"]
-    Root --> Cloud["cloud/ Cloud platforms"]
-    Root --> Cncf["cncf/ CNCF projects"]
-    Root --> Coding["coding/ Software patterns"]
-    Root --> Commerce["commerce/ E-commerce"]
-    Root --> Comm["communications/ Messaging"]
-    Root --> Data["data-and-persistence/ Databases"]
-    Root --> Devops["devops/ CI/CD, infra"]
-    Root --> EE["electrical-engineering/ Hardware"]
-    Root --> Go["go/ Go language"]
-    Root --> Java["java/ Java ecosystem"]
-    Root --> Kotlin["kotlin/ Kotlin ecosystem"]
-    Root --> Linux["linux/ OS administration"]
-    Root --> Maker["maker/ IoT, hardware projects"]
-    Root --> Net["networking/ Protocols, infra"]
-    Root --> Pay["payments/ Payment systems"]
-    Root --> Perf["performance/ Optimization"]
-    Root --> Prog["programming/ CS fundamentals"]
-    Root --> Secmgmt["secrets-management/ Vault, credentials"]
-    Root --> Security["security/ AppSec, pentesting"]
-    Root --> Software["software/ Engineering practices"]
-    Root --> Trading["trading/ Algorithmic trading"]
-    Root --> Writing["writing/ Technical docs"]
+    Root["skills/"] --> A["agent/<br/>AI orchestration"]
+    Root --> AI["ai/<br/>AI/ML systems"]
+    Root --> Arch["architecture/<br/>System design"]
+    Root --> Cloud["cloud/<br/>Cloud platforms"]
+    Root --> Cncf["cncf/<br/>CNCF projects"]
+    Root --> Coding["coding/<br/>Software patterns"]
+    Root --> Commerce["commerce/<br/>E-commerce"]
+    Root --> Comm["communications/<br/>Messaging"]
+    Root --> Data["data-and-persistence/<br/>Databases"]
+    Root --> Devops["devops/<br/>CI/CD, infra"]
+    Root --> EE["electrical-engineering/<br/>Hardware"]
+    Root --> Go["go/<br/>Go language"]
+    Root --> Java["java/<br/>Java ecosystem"]
+    Root --> Kotlin["kotlin/<br/>Kotlin ecosystem"]
+    Root --> Linux["linux/<br/>OS administration"]
+    Root --> Maker["maker/<br/>IoT, hardware projects"]
+    Root --> Net["networking/<br/>Protocols, infra"]
+    Root --> Pay["payments/<br/>Payment systems"]
+    Root --> Perf["performance/<br/>Optimization"]
+    Root --> Prog["programming/<br/>CS fundamentals"]
+    Root --> Secmgmt["secrets-management/<br/>Vault, credentials"]
+    Root --> Security["security/<br/>AppSec, pentesting"]
+    Root --> Software["software/<br/>Engineering practices"]
+    Root --> Trading["trading/<br/>Algorithmic trading"]
+    Root --> Writing["writing/<br/>Technical docs"]
 ```
 
 ### SKILL.md Anatomy

@@ -1,12 +1,12 @@
 # Agent Skill Router — Intelligent Skill Routing for AI Agents
 
-```
+```text
 You → "review this Python code for security issues"
       ↓
 skill-router auto-fires → hybrid retrieval (vector + BM25) → archetype/trigger scoring → MMR diversify → LLM ranks (opt) → loads skills
       ↓
 Full expert skills injected into context — AI answers as expert reviewer
-```
+```text
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
@@ -96,7 +96,7 @@ The final routing score combines five independent signals:
 | Signal | Weight | Purpose |
 |--------|--------|---------|
 | Vector similarity (semantic) | 50% | Finds semantically related skills via embeddings |
-| BM25 (exact term match) | 20% | Handles exact technical terms, acronyms, and short queries |
+| BM25 (exact term match) | 30% | Handles exact technical terms, acronyms, and short queries |
 | Trigger match | 15% | Matches query words against configured skill triggers/tags |
 | Archetype match | 10% | Aligns query intent type with skill purpose |
 | Historical success | 5% | Adaptive learning from past routing effectiveness |

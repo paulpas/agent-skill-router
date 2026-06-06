@@ -98,14 +98,14 @@ flowchart TD
         A["User says:<br/>'help me deploy containers'"]
         B["Agent scans all skill triggers:"]
         A --> B
-        
-        C["kubernetes triggers:<br/>kubernetes, k8s, deployment,<br/>container orchestration, pod management"]
+
+        C["kubernetes triggers:<br/>kubernetes, k8s,<br/>deployment, container<br/>orchestration, pod management"]
         D["docker triggers:<br/>docker, container, image"]
-        E["prometheus triggers:<br/>prometheus, promql, metrics,<br/>alerting, monitoring"]
+        E["prometheus triggers:<br/>prometheus, promql,<br/>metrics, alerting,<br/>monitoring"]
         B --> C
         B --> D
         B --> E
-        
+
         F["x No trigger matched<br/>x No skill loaded<br/>Agent proceeds as generalist"]
         C -->|"x NO MATCH"| F
         D -->|"x NO MATCH"| F
@@ -119,23 +119,23 @@ The critical flaw: **"help me deploy containers"** should clearly match the Kube
 
 ```mermaid
 flowchart TD
-    A["'help me deploy containers'"] -->|"tokenizes to"| B["Tokenized:<br/>['help', 'me', 'deploy', 'containers']"]
+    A["'help me deploy containers'"] -->|"tokenizes to"| B["Tokenized:<br/>['help', 'me',<br/>'deploy',<br/>'containers']"]
     B -->|"checked against"| C["Checked against triggers:"]
     C --> D["kubernetes x"]
     C --> E["k8s x"]
     C --> F["deployment v"]
-    C --> G["container orchestration x"]
-    C --> H["pod management x"]
-    
-    D --> I["'deploy' != 'deployment'<br/>Not a substring match"]
+    C --> G["container<br/>orchestration x"]
+    C --> H["pod<br/>management x"]
+
+    D --> I["'deploy' !=<br/>'deployment'<br/>Not a substring match"]
     F --> I
-    E --> J["'containers' != 'container'<br/>Not a substring match"]
+    E --> J["'containers' !=<br/>'container'<br/>Not a substring match"]
     H --> J
-    
+
     I --> K["x False negative"]
     J --> K
-    
-    K --> L["User has to know exact trigger vocabulary"]
+
+    K --> L["User has to know<br/>exact trigger vocabulary"]
 ```
 
 ---
@@ -164,23 +164,23 @@ As the skill library grows from dozens to hundreds to thousands, the basic trigg
 
 ```mermaid
 flowchart TD
-    A["User says:<br/>'check this code for data handling issues'"] --> B["Trigger matching against 900+ skills..."]
-    
+    A["User says:<br/>'check this code for data<br/>handling issues'"] --> B["Trigger matching<br/>against 900+ skills..."]
+
     subgraph "Partial Matches"
-        C["coding-code-review<br/>'code' v BUT 'review' != 'check'<br/><- partial match"]
-        D["coding-security<br/>'code' v BUT 'security' != 'data handling'<br/><- partial match"]
-        E["trading-data<br/>'data' v but for market data<br/><- wrong domain!"]
-        F["linux-storage<br/>'data' v but about disks<br/><- wrong domain!"]
-        G["programming-algorithms<br/>'data' v but data structures<br/><- wrong context!"]
+        C["coding-code-review<br/>'code' v BUT<br/>'review' != 'check'<br/><- partial match"]
+        D["coding-security<br/>'code' v BUT<br/>'security' != 'data handling'<br/><- partial match"]
+        E["trading-data<br/>'data' v but for<br/>market data<br/><- wrong domain!"]
+        F["linux-storage<br/>'data' v but about<br/>disks<br/><- wrong domain!"]
+        G["programming-algorithms<br/>'data' v but data<br/>structures<br/><- wrong context!"]
     end
-    
+
     B -->|"partial match"| C
     B -->|"partial match"| D
     B -->|"partial match"| E
     B -->|"partial match"| F
     B -->|"partial match"| G
-    
-    H["Result:<br/>Multiple low-quality partial matches<br/>No clear winner<br/>Possibly misleading skills loaded"]
+
+    H["Result:<br/>Multiple low-quality<br/>partial matches<br/>No clear winner<br/>Possibly misleading skills loaded"]
     C -->|"low quality"| H
     D -->|"low quality"| H
     E -->|"wrong domain"| H
@@ -206,7 +206,7 @@ flowchart TD
     Input(["User says: 'deploy containers to multiple machines'"]) -->|"route task"| Stage1
 
     %% Stage 1: Safety
-    subgraph Stage1["1. Safety Layer ~ 0.1ms"]
+    subgraph Stage1["1. Safety Layer<br/>~ 0.1ms"]
         direction TB
         S1a["v Prompt injection detection"]
         S1b["v Task length validation"]
@@ -217,17 +217,17 @@ flowchart TD
     Stage1 -->|"passes safety"| Stage2
 
     %% Stage 2: Embedding
-    subgraph Stage2["2. Embedding Service ~ 200ms"]
+    subgraph Stage2["2. Embedding Service<br/>~ 200ms"]
         direction TB
         S2a["text-embedding-3-small"]
-        S2b["'deploy containers to multiple machines'"]
+        S2b["'deploy containers to<br/>multiple machines'"]
         S2c["> 1536-dim vector"]
     end
 
     Stage2 -->|"embeds query"| Stage3
 
-    %% Stage 3: Vector DB
-    subgraph Stage3["3. Vector Database (HNSW) ~ 0.001ms"]
+    %% Stage 3: Hybrid Retrieval (HNSW + BM25)
+    subgraph Stage3["3. Hybrid Retrieval<br/>HNSW ANN (~0.001ms) + BM25"]
         direction TB
         S3a["Approximate nearest-neighbor search"]
         S3b["Top 20 candidates"]
@@ -238,11 +238,11 @@ flowchart TD
 
     Stage3 -->|"top candidates"| Stage4
 
-    %% Stage 4: LLM Ranker
-    subgraph Stage4["4. LLM Ranker ~ 3s"]
+    %% Stage 4: Hybrid Scoring
+    subgraph Stage4["4. Hybrid Scoring<br/>vector+BM25+trigger+archetype"]
         direction TB
         S4a["GPT-4o / Claude / llama.cpp"]
-        S4b["'User wants orchestration,"]
+        S4b["'User wants orchestration,'"]
         S4c["not just containerization.'"]
         S4d["<- Kubernetes re-ranked higher"]
     end
@@ -250,7 +250,7 @@ flowchart TD
     Stage4 -->|"ranked results"| Stage5
 
     %% Stage 5: Filter
-    subgraph Stage5["5. Deterministic Filter ~ 0.1ms"]
+    subgraph Stage5["5. Deterministic Filter<br/>~ 0.1ms"]
         direction TB
         S5a["Remove draft skills"]
         S5b["Enforce score >= 0.5"]
@@ -260,7 +260,7 @@ flowchart TD
     Stage5 -->|"filtered skills"| Stage6
 
     %% Stage 6: Planner
-    subgraph Stage6["6. Execution Planner ~ 0.1ms"]
+    subgraph Stage6["6. Execution Planner<br/>~ 0.1ms"]
         direction TB
         S6a["Selected: cncf-kubernetes"]
         S6b["Strategy: sequential"]
@@ -270,7 +270,7 @@ flowchart TD
     Stage6 -->|"execution plan"| Output
 
     %% Output
-    Output[("{ skills: [{name: cncf-kubernetes, score: 0.94}], executionPlan: 'sequential' }")]
+    Output[("{ skills: [{name:<br/>cncf-kubernetes,<br/>score: 0.94}],<br/>executionPlan:<br/>'sequential' }")]
 ```
 
 ### What Each Stage Does
@@ -278,7 +278,7 @@ flowchart TD
 | Stage | Component | Time | What It Solves |
 |-------|-----------|------|----------------|
 | 1 | **Safety Layer** | ~0.1ms | Prompt injection, task validation, allowlist enforcement |
-| 2 | **Hybrid Retrieval (Vector + BM25)** | ~200ms | Converts task to 1536-dim vector + BM25 exact-term scoring. Weighted: 50% vector, 20% BM25 |
+| 2 | **Hybrid Retrieval (Vector + BM25)** | ~200ms | Converts task to 1536-dim vector + BM25 exact-term scoring. Weighted: 50% vector, 30% BM25 |
 | 3 | **Trigger & Archetype Scoring** | ~0.1ms | Matches triggers (15% weight) and aligns query archetypes (10% weight). Anti-triggers apply -0.15 penalty per match |
 | 4 | **MMR Diversification** | ~0.1ms | Re-ranks to reduce near-duplicate skill retrieval (lambda=0.7) |
 | 5 | **LLM Ranker** (optional) | ~3s | Optional LLM re-ranking when LLM_RANKING_ENABLED=true |
@@ -298,16 +298,16 @@ Instead of checking "does this word appear in triggers?", the router converts th
 flowchart LR
     subgraph Industry["Industry Standard"]
         direction TB
-        I1["'deploy containers'"] --> I2["Substring matching against triggers"]
+        I1["'deploy containers'"] --> I2["Substring matching<br/>against triggers"]
         I2 -->|"no match"| I3["kubernetes x<br/>k8s x<br/>deployment x"]
         I3 -->|"fails"| I4["x No skill loaded"]
     end
-    
+
     subgraph Router["Agent-Skill-Router"]
         direction TB
-        R1["'deploy containers'"] --> R2["text-embedding-3-small<br/>> 1536-dim vector"]
+        R1["'deploy containers'"] --> R2["text-embedding-3-small<br/>→ 1536-dim vector"]
         R2 --> R3["[0.23, -0.45, 0.78, ..., 0.12]"]
-        R3 -->|"hybrid search"| R4["Vector + BM25 + Archetype<br/>MMR > hybrid score"]
+        R3 -->|"hybrid search"| R4["Vector + BM25 + Archetype<br/>MMR → hybrid score"]
         R4 -->|"matched"| R5["v Kubernetes (0.94)<br/>v Docker (0.72)"]
     end
 ```
@@ -337,11 +337,11 @@ flowchart TD
     subgraph ReRank["LLM Ranker Output (Re-ordered)"]
         direction TB
         R1["1. coding-security-review ~ 0.95"]
-        R2["    'SQL injection is a security concern'"]
+        R2["    'SQL injection is<br/>a security concern'"]
         R3["2. coding-code-review ~ 0.72"]
         R4["    'general review practices apply'"]
         R5["3. coding-sql-patterns ~ 0.45"]
-        R6["    'too general for this task'"]
+        R6["    'too general<br/>for this task'"]
     end
 ```
 
@@ -372,13 +372,13 @@ flowchart TD
         S1["Single loading path:"] --> S2["GitHub raw URL"]
         S2 --> S3["v"]
         S3 --> S4["! Single point of failure"]
-        S4 --> S5["GitHub down = No skills loaded"]
+        S4 --> S5["GitHub down =<br/>No skills loaded"]
     end
 
     subgraph Router["Agent-Skill-Router"]
         direction TB
         R0["Four-tier cascading fallback:"]
-        R1["Tier 1: Memory cache (~0ms, 84% hit)"]
+        R1["Tier 1: Memory cache<br/>~0ms, 84% hit"]
         R2["Tier 2: Disk cache (~5ms)"]
         R3["Tier 3: GitHub raw URL (~200ms)"]
         R4["Tier 4: Git clone (~2s)"]
@@ -400,14 +400,14 @@ sequenceDiagram
     participant User
     participant Agent as OpenCode Agent
     participant Router as Skill Router
-    
+
     Note over User,Router: Automatic MCP Routing
-    
+
     User->>Agent: "deploy my app to K8s"
     Agent->>Router: route_to_skill("deploy my app to K8s")
     Router-->>Agent: Returns kubernetes skill
     Agent->>Agent: Loads skill automatically
-    
+
     Note over User,Agent: User never types /skill once
 ```
 
@@ -429,28 +429,28 @@ config:
   theme: neutral
 ---
 flowchart TD
-    Input["Skill content with links<br/>---<br/>See [details](deep-dive.md)<br/>Read [docs](example.com)"] -->|"parse"| Parse["Parse markdown links via regex"]
-    
+    Input["Skill content with links<br/>See [details](deep-dive.md)<br/>Read [docs](example.com)"] -->|"parse"| Parse["Parse markdown links<br/>via regex"]
+
     Parse -->|"local path"| Local["Local file reference"]
-    Local --> L1["1. Path resolved relative to skill dir"]
+    Local --> L1["1. Path resolved relative<br/>to skill dir"]
     L1 --> L2["2. Path traversal protection"]
     L2 --> L3["3. Circular reference detection"]
     L3 --> L4["4. Recursive resolve (maxDepth: 2)"]
-    
+
     Parse -->|"external URL"| External["External URL"]
     External --> E1["Static HTTP<br/>(5s timeout, 1MB hard limit)"]
     External --> E2["Puppeteer + Chromium<br/>(JS rendering if enabled)"]
     External --> E3["JS fallback<br/>(auto fallback to static)"]
-    
+
     L4 --> Process["Content Processing"]
     E1 --> Process
     E2 --> Process
     E3 --> Process
-    
-    Process --> P1["1. Under threshold > inline full"]
-    Process --> P2["2. Over threshold > compress"]
-    Process --> P3["3. Semantic mode > chunk > embed > cosine similarity > top-K excerpts"]
-    
+
+    Process --> P1["1. Under threshold → inline full"]
+    Process --> P2["2. Over threshold → compress"]
+    Process --> P3["3. Semantic mode → chunk > embed<br/>cosine similarity > top-K excerpts"]
+
     P1 --> Output["Inline as formatted reference section<br/>[*] Reference: ...<br/>> Source: url"]
     P2 --> Output
     P3 --> Output
@@ -513,7 +513,7 @@ In the standard model, a SKILL.md is limited to what its author can fit in one f
 |---------|------------------|-------------------|
 | **Skill format** | YAML frontmatter + Markdown body | Same format (backward compatible) |
 | **Loading mechanism** | Trigger keyword substring match | Multi-signal hybrid pipeline: Safety → Hybrid Retrieval (Vector+BM25) → Archetype → MMR → LLM (optional) → Filter → Plan |
-| **Matching intelligence** | Exact word matching | Semantic embeddings (1536-dim) + LLM relevance ranking |
+| **Matching intelligence** | Exact word matching | Semantic embeddings (1536-dim, vector 50% + BM25 30%) + LLM relevance ranking |
 | **"deploy containers" → Kubernetes?** | ❌ No match — "kubernetes" not in query | ✅ 0.94 confidence — semantic proximity |
 | **Safety layer** | None | Regex + optional LLM prompt injection detection, 2-signal blocking |
 | **Skill ranking** | None (all matching skills load) | LLM re-ranks with scores, reasons, and relevance filtering |
@@ -560,15 +560,15 @@ flowchart TD
     subgraph Before["Before: Industry Standard"]
         direction TB
         B1["SKILL.md file"] --> B2["Trigger matching (keywords)"]
-        B2 --> B3["Full content injected into agent context"]
+        B2 --> B3["Full content injected<br/>into agent context"]
     end
 
-    Before -->|"v evolves to"| After
+    Before -->|"evolves to"| After
 
     subgraph After["After: Agent-Skill-Router"]
         direction TB
         A1["Same SKILL.md file (zero changes)"]
-        A1 --> A2["Multi-signal pipeline<br/>Safety>Hybrid Retrieval><br/>Archetype>MMR>Filter>Plan"]
+        A1 --> A2["Multi-signal pipeline<br/>Safety → Hybrid Retrieval →<br/>Archetype → MMR → Filter → Plan"]
         A2 --> A3["Compressed, ranked,<br/>diversified skill content<br/>injected into context"]
     end
 

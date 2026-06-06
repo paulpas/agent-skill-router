@@ -150,12 +150,12 @@ KD-trees suffer from the **curse of dimensionality** at 1536 dimensions — spli
 ### Performance Tuning
 
 For faster builds during development:
-```
+```bash
 HNSW_EF_CONSTRUCTION=50 HNSW_EF_SEARCH=50
 ```
 
 For maximum recall in production:
-```
+```bash
 HNSW_EF_CONSTRUCTION=200 HNSW_EF_SEARCH=200
 ```
 

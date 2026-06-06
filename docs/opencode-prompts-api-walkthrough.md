@@ -10,7 +10,7 @@ Reference collection of copy-paste prompts you can paste into an OpenCode sessio
 
 ### Prompt
 
-```
+````
 Read the source code in agent-skill-routing-system/src/ to understand every HTTP endpoint of the Agent Skill Router. Then generate a comprehensive API walkthrough document and save it to docs/api-walkthrough.md.
 
 Requirements:
@@ -39,7 +39,7 @@ Requirements:
 6. Reference the actual compression level mappings: brief=L1 (~5%), moderate=L5 (~35%), detailed=L8 (~68%).
 7. Cover edge cases: 503 during loading, 401 with auth enabled, 429 rate limiting, 400 validation errors, and the access-log entry format.
 8. End with a reference table summarizing every endpoint (method, path, status codes, purpose).
-```
+````
 
 ### What this prompt does
 
@@ -53,7 +53,7 @@ This instructs OpenCode to read the full codebase, understand every route handle
 
 ### Prompt
 
-```
+````
 Test the Agent Skill Router endpoints at http://localhost:3000 and verify they work correctly. Follow these steps in order:
 
 1. **Check if the server is running:**
@@ -107,7 +107,7 @@ Test the Agent Skill Router endpoints at http://localhost:3000 and verify they w
    Report any mismatches as discrepancies with severity (error/warning/info).
 
 Save your findings to docs/endpoint-verification-results.md.
-```
+````
 
 ### What this prompt does
 
@@ -121,7 +121,7 @@ This creates a systematic verification sweep across all major endpoints. It vali
 
 ### Prompt
 
-```
+````
 Audit the skill router's compression system end-to-end. The concern is that `?compression=moderate` might be returning identical output to the uncompressed version. Trace through the code, understand the mapping, and test it.
 
 Step 1 — Read the compression source code:
@@ -194,7 +194,7 @@ Step 6 — Report findings:
 - Are there specific code line references explaining where things might be going wrong?
 
 Save findings to docs/compression-audit.md.
-```
+````
 
 ### What this prompt does
 
@@ -208,7 +208,7 @@ This performs a deep audit by reading the actual transformation recipes in `Skil
 
 ### Prompt
 
-```
+````
 Run an end-to-end validation of the Agent Skill Router pipeline. Test every major feature in sequence, documenting pass/fail status for each step.
 
 --- Phase 1: Server Readiness ---
@@ -336,8 +336,7 @@ Save a summary to docs/e2e-test-results.md with this format:
 
 ## Issues Found
 1. ...
-```
-```
+````
 
 ### What this prompt does
 

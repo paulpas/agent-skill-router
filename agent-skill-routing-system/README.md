@@ -20,7 +20,7 @@ sequenceDiagram
     participant API as Fastify :3000
     participant Safety as Safety Layer
     participant Embed as Embedding Service
-    participant VDB as Vector Database
+    participant VDB as Vector Database (HNSW)
     participant LLM as LLM Ranker
     participant GH as GitHub Raw
 
@@ -31,8 +31,8 @@ sequenceDiagram
     Safety-->>API: pass
     API->>Embed: generate task embedding (~400ms, cached after first)
     Embed-->>API: task vector
-    API->>VDB: cosine similarity search → top-20 candidates
-    VDB-->>API: candidates with similarity scores
+    API->>VDB: HNSW ANN search → top-20 candidates (~1ms)
+    VDB-->>API: candidates with vector similarity scores
     API->>LLM: rank candidates (cache check first)
     Note over LLM: Cache hit: ~5ms · Cold: ~3,000ms
     LLM-->>API: ranked skills with scores + reasoning
@@ -54,7 +54,8 @@ sequenceDiagram
 |---|---|---|
 | Safety check | ~1 ms | ~1 ms |
 | Task embedding | ~400 ms | ~1 ms (memory) |
-| Vector search | ~1 ms | ~1 ms |
+| HNSW ANN search | ~1 ms | ~1 ms |
+| Hybrid scoring (BM25 + trigger) | ~2 ms | ~2 ms |
 | LLM re-ranking | ~3,000 ms | ~5 ms (cache hit) |
 | Skill content fetch | ~1 ms (disk) / ~150 ms (GitHub) | ~1 ms (memory) |
 | **Total** | **~3.5 s** | **~10 ms** |
@@ -92,7 +93,8 @@ sequenceDiagram
     participant C as Client (MCP wrapper)
     participant S as Safety Layer
     participant E as Embedding Service
-    participant V as Vector Database
+    participant V as Vector Database (HNSW)
+    participant BM as BM25 Index
     participant LC as LLM Cache
     participant L as LLM Ranker
     participant P as Execution Planner
@@ -101,7 +103,8 @@ sequenceDiagram
     C->>S: task request
     S->>E: validated request
     E->>V: task vector (disk cache → memory → API)
-    V->>LC: top-K candidates
+    V->>BM: top-K candidates via HNSW ANN (~1ms)
+    BM-->>C: hybrid scored candidates (vector + BM25)
     LC-->>C: cached ranking (if hit, ~5ms)
     LC->>L: candidates (if miss, ~3,000ms)
     L->>LC: store result

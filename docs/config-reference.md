@@ -82,7 +82,7 @@ All variables in alphabetical order:
 | `PUPPETEER_EXECUTABLE_PATH` | `/usr/bin/chromium-browser` | Puppeteer / Chrome |
 | `PUPPETEER_SKIP_DOWNLOAD` | `false` | Puppeteer / Chrome |
 | `RETRIEVAL_ARCHETYPE_WEIGHT` | `0.10` | Advanced Routing |
-| `RETRIEVAL_BM25_WEIGHT` | `0.20` | Advanced Routing |
+| `RETRIEVAL_BM25_WEIGHT` | `0.30` | Advanced Routing |
 | `RETRIEVAL_HISTORICAL_WEIGHT` | `0.05` | Advanced Routing |
 | `RETRIEVAL_TRIGGER_MATCH_WEIGHT` | `0.15` | Advanced Routing |
 | `RETRIEVAL_VECTOR_WEIGHT` | `0.50` | Advanced Routing |
@@ -360,7 +360,7 @@ Controls the hybrid scoring pipeline, MMR diversification, and score explanation
 | `LLM_RANKING_ENABLED` | boolean | `false` | `true`, `false` | When enabled, uses LLM-based ranking as an optional fallback after hybrid scoring. Default is `false` (hybrid scoring only). |
 | `MMR_LAMBDA` | float | `0.7` | `0.0` – `1.0` | MMR diversity tradeoff. `0.0` = maximum diversity, `1.0` = pure relevance. The default `0.7` favors relevance while still penalizing near-duplicate skills. |
 | `RETRIEVAL_ARCHETYPE_WEIGHT` | float | `0.10` | `0.0` – `1.0` | Weight for archetype alignment signal. Higher values prioritize skills matching the query's archetype (tactical, strategic, diagnostic, etc.). |
-| `RETRIEVAL_BM25_WEIGHT` | float | `0.20` | `0.0` – `1.0` | Weight for BM25 exact-term matching signal. Higher values prioritize skills with exact keyword matches. |
+| `RETRIEVAL_BM25_WEIGHT` | float | `0.30` | `0.0` – `1.0` | Weight for BM25 exact-term matching signal. Higher values prioritize skills with exact keyword matches. |
 | `RETRIEVAL_HISTORICAL_WEIGHT` | float | `0.05` | `0.0` – `1.0` | Weight for historical success rate signal. Higher values prioritize skills with proven routing success. |
 | `RETRIEVAL_TRIGGER_MATCH_WEIGHT` | float | `0.15` | `0.0` – `1.0` | Weight for trigger keyword matching signal. Higher values prioritize skills whose configured triggers match query terms. |
 | `RETRIEVAL_VECTOR_WEIGHT` | float | `0.50` | `0.0` – `1.0` | Weight for semantic vector similarity signal. Higher values prioritize skills semantically closest to the query. This is the primary signal. |

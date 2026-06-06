@@ -230,15 +230,15 @@ Before we send any requests, here's the full pipeline that transforms a natural 
 
 ```mermaid
 flowchart TD
-    A["POST /route"] --> B["1. Safety Layer | Prompt injection check, input validation"]
-    B --> C["2. Embed Task | OpenAI text-embedding-3-small -> 1536-dim vector"]
-    C --> D["3. Vector Search | HNSW ANN index -> top 20 candidates ~1ms lookup"]
-    D --> E["4. Hybrid Scoring | vector 50% + BM25 20% + trigger match 15%"]
-    E --> F["5. Archetype Match | Query intent aligns with skill purpose, +30% boost"]
-    F --> G["6. Anti-Trigger Penalty | Conflicting terms -> -0.15 each"]
-    G --> H["7. MMR Diversify | Reduce near-duplicates (lambda = 0.7)"]
-    H --> I["8. LLM Ranker | Optional fallback re-ranking"]
-    I --> J["9. Filter & Plan | Score threshold, maxSkills, execution strategy"]
+    A["POST /route"] --> B["1. Safety Layer<br/>Prompt injection check, input validation"]
+    B --> C["2. Embed Task<br/>OpenAI text-embedding-3-small<br/>→ 1536-dim vector"]
+    C --> D["3. Hybrid Retrieval<br/>HNSW ANN index (~1ms lookup)<br/>+ BM25 exact-term scoring"]
+    D --> E["4. Hybrid Scoring<br/>vector 50% + BM25 30%<br/>+ trigger match 15%"]
+    E --> F["5. Archetype Match<br/>Query intent aligns with<br/>skill purpose, +30% boost"]
+    F --> G["6. Anti-Trigger Penalty<br/>Conflicting terms → -0.15 each"]
+    G --> H["7. MMR Diversify<br/>Reduce near-duplicates<br/>(lambda = 0.7)"]
+    H --> I["8. LLM Ranker<br/>Optional fallback re-ranking"]
+    I --> J["9. Filter & Plan<br/>Score threshold, maxSkills,<br/>execution strategy"]
     J --> K["Selected skills + plan"]
 
     style B fill:#e1f5fe
@@ -251,7 +251,7 @@ flowchart TD
 | Stage | Weight | What It Does |
 |-------|--------|-------------|
 | **Vector similarity** | 50% | Semantic meaning — "Do these concepts match?" via embeddings |
-| **BM25** | 20% | Exact term matching — handles acronyms, product names, short queries |
+| **BM25** | 30% | Exact term matching — handles acronyms, product names, short queries |
 | **Trigger match** | 15% | Keyword keywords from `metadata.triggers` in SKILL.md frontmatter |
 | **Archetype match** | 10% | Query intent type vs. skill purpose (tactical, strategic, diagnostic…) |
 | **Historical success** | 5% | Past routing effectiveness — adaptive learning |
@@ -849,7 +849,7 @@ curl -X POST http://localhost:3000/config/link-following \
 ```mermaid
 sequenceDiagram
     participant Dev as Developer
-    participant API as Skill Router API :3000
+    participant API as Skill Router (port 3000)
     participant Registry as Skill Registry
     participant VectorDB as HNSW Vector DB
     participant BM25 as BM25 Index
@@ -861,14 +861,14 @@ sequenceDiagram
     Dev->>API: GET /stats
     API-->>Dev: 1247 skills, 8 categories
 
-    Dev->>API: POST /route | task: "review Python code for SQL injection"
+    Dev->>API: POST /route (task: "review Python code for SQL injection")
     activate API
     API->>Registry: Load skill metadata
     API->>VectorDB: Embed task + search (HNSW)
     VectorDB-->>API: Top 20 candidates
     API->>BM25: Score candidates by term match
     BM25-->>API: BM25 scores
-    API->>API: Hybrid scoring | vector(50%) + bm25(20%) + trigger(15%)
+    API->>API: Hybrid scoring → vector(50%) + bm25(30%) + trigger(15%)
     API-->>Dev: selectedSkills + executionPlan
     deactivate API
 
@@ -877,7 +877,7 @@ sequenceDiagram
     Registry-->>Dev: SKILL.md content (plain text)
     deactivate Registry
 
-    Dev->>API: POST /execute | skills: ["security-review"], inputs: {...}
+    Dev->>API: POST /execute (skills: ["security-review"], inputs: {...})
     activate MCP
     API->>MCP: Execute security-review tool
     MCP-->>API: Analysis results
@@ -996,7 +996,7 @@ interface SelectedSkill {
   scoreBreakdown?: {            // Per-component scoring breakdown
     finalScore: number;
     vectorScore?: number;       // Vector similarity (50% weight)
-    bm25Score?: number;         // BM25 exact term match (20% weight)
+    bm25Score?: number;         // BM25 exact term match (30% weight)
     triggerMatchScore?: number; // Trigger keyword match (15% weight)
     archetypeScore?: number;    // Archetype alignment (10% weight)
     specificityScore?: number;  // Specialization bonus
