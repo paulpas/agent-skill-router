@@ -87,7 +87,7 @@ When `route_to_skill` loads skills, end your response with one compact line with
 
 `> 📖 skill(local cache): <name-1>, <name-2> | 📖 skill(remotely sourced): <name-1>, <name-2> | 📖 skill(LLM compressed): <name-1>, <name-2>`
 
-List all loaded skill names comma-separated. Omit entirely if no skill was loaded this turn.
+List all **externally-sourced** skill names comma-separated. **Omit built-in/OpenCode-internal skills** (e.g., `customize-opencode`, `code-philosophy`, `explore`) — these are loaded by OpenCode itself, not via the skill-router API, and should never appear in citations. Omit the entire citation line if no external skills were loaded this turn.
 
 ## Docker Management
 
