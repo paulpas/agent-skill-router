@@ -7,9 +7,9 @@
 # No hypotheticals — everything captured from what IS there right now.
 #
 # Usage:
-#   ./api-walkthrough.sh              Run all 8 chapters (default)
-#   ./api-walkthrough.sh --chapter N  Only run a single chapter (1-8)
-#   ./api-walkthrough.sh --skip-opencode   Skip the OpenCode integration chapter
+#   ./api-walkthrough.sh              Walk through all 8 pages (press Enter between each)
+#   ./api-walkthrough.sh --chapter N  Jump to page N directly (1-8)
+#   ./api-walkthrough.sh --skip-opencode   Skip the OpenCode integration page
 # ============================================================================
 
 set -euo pipefail
@@ -157,6 +157,31 @@ check_api() {
     }
 }
 
+# ─── Pagination Navigation ────────────────────────────────────────────────────
+
+prompt_next_page() {
+    echo ""
+    echo -e "${DIM}$(printf '─%.0s' {1..78})${RESET}"
+    echo -e "${CYAN}${BOLD}  [ ${CHAPTER}/${TOTAL_CHAPTERS} ] Press ENTER for next chapter, or type: N[ext] / P[rev] / Q[uit]${RESET}"
+    local input=""
+    read -r -t 60 input < /dev/tty 2>/dev/null || input=$(echo)
+
+    case "${input,,}" in
+        n|next)   return 0 ;;
+        p|prev)   goto_prev_page ;;
+        q|quit|exit) print_summary; exit 0 ;;
+        "")       return 0 ;;
+        *)        return 0 ;;
+    esac
+}
+
+goto_prev_page() {
+    if [[ "$CHAPTER" -gt 1 ]]; then
+        CHAPTER=$((CHAPTER - 1))
+        print_key_point "${YELLOW}Returning to chapter ${CHAPTER}.${RESET}"
+    fi
+}
+
 # ─── Chapter 1: Morning Standup ──────────────────────────────────────────────
 
 chapter_01_morning_standup() {
@@ -204,7 +229,8 @@ import sys,json; d=json.load(sys.stdin); c={}
 for s in d.get('skills',[]): c[s.get('category','?')]=c.get(s.get('category','?'),0)+1
 for cat,n in sorted(c.items(),key=lambda x:-x[1])[:5]: print(f'  {GREEN}►{RESET} {cat}: {n:>4d} skills')" 2>/dev/null || true
 
-    echo ""; echo -e "${GREEN}${BOLD}  ✓ Morning standup complete. System healthy, $(json_extract "$s" "skills.totalSkills") skills loaded.${RESET}"
+    echo ""; echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
 }
 
 # ─── Chapter 2: Onboarding a New Developer ────────────────────────────────────
@@ -268,7 +294,8 @@ for s in d.get('skills',[]):
     if s['name']==t: print(f'  Name: {BOLD}{s[\"name\"]}${RESET}\n  Desc: {s.get(\"description\",\"?\")[:120]}'); break" 2>/dev/null || true
     fi
 
-    echo ""; echo -e "${GREEN}${BOLD}  ✓ Onboarding complete.${RESET}"
+    echo ""; echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
 }
 
 # ─── Chapter 3: A Real Task Comes In (Routing) ───────────────────────────────
@@ -307,7 +334,8 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     echo ""; echo -e "${DIM}  ─── BONUS: Different task → different results ───${RESET}"
     curl_post "/route" '{"task":"Implement ATR-based stop loss for crypto trading","constraints":{"maxSkills":3}}'
 
-    echo ""; echo -e "${GREEN}${BOLD}  ✓ Same API, different results per task.${RESET}"
+    echo ""; echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
 }
 
 # ─── Chapter 4: Execute the Work ─────────────────────────────────────────────
@@ -341,7 +369,8 @@ chapter_04_execute_work() {
     echo -e "  ${CYAN}POST /route${RESET}   when you want skill suggestions with confidence scores"
     echo -e "  ${CYAN}POST /execute${RESET} when you know which tool to run and want results directly"
 
-    echo ""; echo -e "${GREEN}${BOLD}  ✓ Execute endpoint demonstrated.${RESET}"
+    echo ""; echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
 }
 
 # ─── Chapter 5: Audit Trail ──────────────────────────────────────────────────
@@ -396,7 +425,8 @@ for s,n in c.most_common(5): print(f'  {GREEN}►{RESET} {s:<45s} {n:>2d}x   {'�
         echo ""; echo -e "  ${YELLOW}⚠ No history yet — access log populates as the router is used.${RESET}"
     fi
 
-    echo ""; echo -e "${GREEN}${BOLD}  ✓ Audit trail reviewed.${RESET}"
+    echo ""; echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
 }
 
 # ─── Chapter 6: After a Code Change (Reload + Metrics) ───────────────────────
@@ -451,7 +481,8 @@ for e in d.get('recentEvents',[])[:-1:-1][:3]: print(json.dumps(e))" 2>/dev/null
     print_key_point "Cache misses: $(json_extract "$pm" "compression.cacheMisses") (fresh skills compressing)"
 
     print_key_point "${CYAN}►${RESET} /reload does: git fetch → git reset --hard → re-index all SKILL.md files"
-    echo ""; echo -e "${GREEN}${BOLD}  ✓ Reload complete. New content is live.${RESET}"
+    echo ""; echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
 }
 
 # ─── Chapter 7: Production Run (OpenCode Integration) ────────────────────────
@@ -524,7 +555,8 @@ chapter_07_production_run() {
     fi
 
     rm -f "$so" "$se"
-    echo ""; echo -e "${GREEN}${BOLD}  ✓ Full OpenCode → MCP bridge → skill-router pipeline executed.${RESET}"
+    echo ""; echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
 }
 
 # ─── Chapter 8: Capturing Everything ────────────────────────────────────────
@@ -576,7 +608,8 @@ chapter_08_capturing_output() {
     echo -e "  ${CYAN}cmd 2>&1 | tee >(cat >&2) | grep 'pattern'${RESET}"
     echo -e "      → Capture + filter (process substitution). Advanced use only."
 
-    echo ""; echo -e "${GREEN}${BOLD}  ✓ Output capture patterns demonstrated.${RESET}"
+    echo ""; echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
 }
 
 # ─── Summary ──────────────────────────────────────────────────────────────────
@@ -610,7 +643,9 @@ print_summary() {
         print_key_point "${GREEN}${BOLD}All ${TOTAL_CHAPTERS} chapters executed with real live output!${RESET}" || \
         print_key_point "Ran ${CHAPTER}/${TOTAL_CHAPTERS}. Use --chapter N to jump ahead."
 
-    echo "" && echo -e "${BOLD}$(printf '═%.0s' {1..78})${RESET}"
+   echo "" && echo -e "${BOLD}$(printf '═%.0s' {1..78})${RESET}"
+    echo ""
+    echo -e "${DIM}Navigation during walkthrough: [ENTER] next | [P] previous | [Q] quit${RESET}"
 }
 
 # ─── Main ──────────────────────────────────────────────────────────────────────
@@ -621,11 +656,30 @@ main() {
     echo "  ╔══════════════════════════════════════════════════════════════╗"
     echo "  ║   AGENT SKILL ROUTER — A Day Using the System              ║"
     echo "  ║   One continuous story. Real commands. Live output.        ║"
-    echo "  ╚══════════════════════════════════════════════════════════════╝"
+    echo "  ╚═══════════════════════════════════════════════════���══════╝"
     echo -e "${RESET}"
 
     check_api
 
+    # If targeting a single chapter, just run it and exit
+    if [[ -n "$TARGET_CHAPTER" ]]; then
+        CHAPTER=$((TARGET_CHAPTER - 1))  # Start before the target chapter
+        case "$TARGET_CHAPTER" in
+            1) chapter_01_morning_standup ;;
+            2) chapter_02_onboarding ;;
+            3) chapter_03_real_task_routing ;;
+            4) chapter_04_execute_work ;;
+            5) chapter_05_audit_trail ;;
+            6) chapter_06_reload_and_metrics ;;
+            7) chapter_07_production_run ;;
+            8) chapter_08_capturing_output ;;
+        esac
+        print_summary
+        return 0
+    fi
+
+    # Full walkthrough with pagination
+    CHAPTER=0
     chapter_01_morning_standup
     chapter_02_onboarding
     chapter_03_real_task_routing
