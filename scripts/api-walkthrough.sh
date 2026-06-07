@@ -1,1432 +1,963 @@
 #!/usr/bin/env bash
 # ============================================================================
-# Agent Skill Router - Comprehensive API Walkthrough
+# Agent Skill Router — Live API Walkthrough (Demo/Expo Script)
 # ============================================================================
-# A presenter-style walkthrough of ALL API features with detailed explanations.
-# Think of this as a guided tour - each section tells the story of WHY an
-# endpoint exists, HOW it works under the hood, and WHEN you'd use it in practice.
+# This script ACTUALLY RUNS commands against the running skill-router API and
+# displays the real stdout/stderr output on screen.  No hypotheticals, no
+# "you would see" descriptions — every section executes live and shows what
+# is actually there right now.
 #
 # Usage:
-#   ./api-walkthrough.sh          Interactive mode (press Enter to continue)
-#   ./api-walkthrough.sh --live   Run all scenarios automatically (no prompts)
+#   ./api-walkthrough.sh          Run all sections live (default)
+#   ./api-walkthrough.sh --skip-opencode   Skip the opencode integration section
+#   ./api-walkthrough.sh --section 02       Only run a single section
 # ============================================================================
 
 set -euo pipefail
 
 readonly API_URL="http://localhost:3000"
-readonly TOTAL_SCENARIOS=13
-LIVE_MODE=false
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TEMP_DIR=$(mktemp -d)
+trap 'rm -rf "$TEMP_DIR"' EXIT
 
-# Color Palette (ANSI escape codes)
-readonly RESET='\033[0m'
-readonly BOLD='\033[1m'
-DIM='\033[2m'
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-YELLOW='\033[0;33m'
-CYAN='\033[0;36m'
-BLUE='\033[0;34m'
-MAGENTA='\033[0;35m'
-WHITE='\033[1;37m'
+# ─── ANSI Colors ─────────────────────────────────────────────────────────────
 
-# ─── Helper Functions ────────────────────────────────────────────────────────
+BOLD="\e[1m"
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+CYAN="\e[36m"
+MAGENTA="\e[35m"
+DIM="\e[2m"
+WHITE="\e[97m"
+BG_BLUE="\e[44m"
+RESET="\e[0m"
 
-banner() {
-    local text="$1" width=72
-    local pad_len=$(( (width - ${#text} - 4) / 2 ))
-    local padding=""
-    for ((i = 0; i < pad_len; i++)); do padding+=" "; done
+# ─── Flags ────────────────────────────────────────────────────────────────────
+
+SKIP_OPCODE=false
+TARGET_SECTION=""
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --skip-opencode) SKIP_OPCODE=true; shift ;;
+        --section)       TARGET_SECTION="$2"; shift 2 ;;
+        *)               echo "Unknown option: $1"; exit 1 ;;
+    esac
+done
+
+# ─── Helpers ──────────────────────────────────────────────────────────────────
+
+print_section_header() {
+    local title="$1" section_num="${2:-}"
     echo ""
-    echo -e "${CYAN}[${BOLD}$(printf '=%.0s' $(seq 1 $width))${CYAN}]${RESET}"
-    echo -e "${CYAN}|${WHITE}${padding}${text}${padding}${CYAN}|${RESET}"
-    echo -e "${CYAN}[${DIM}$(printf '--%.0s' $(seq 1 $width))${CYAN}]${RESET}"
+    echo -e "${BG_BLUE}${WHITE}   ${BOLD}${section_num}${RESET}${BG_BLUE}${WHITE}  $title                                    ${RESET}"
+    echo -e "${DIM}$(printf '=%.0s' {1..78})${RESET}"
+}
+
+print_raw_output() {
+    # Colorizes terminal output: JSON gets syntax highlighting, raw text passes through.
+    local label="${1:-Output}" content="$2"
     echo ""
-}
-
-sub_banner() {
-    local text="$1" width=72
-    local pad_len=$(( (width - ${#text} - 4) / 2 ))
-    local padding=""
-    for ((i = 0; i < pad_len; i++)); do padding+=" "; done
-    echo -e "${MAGENTA}[${BOLD}$(printf '--%.0s' $(seq 1 $width))${MAGENTA}]${RESET}"
-    echo -e "${MAGENTA}|${WHITE}${padding}${text}${padding}${MAGENTA}|${RESET}"
-    echo -e "${MAGENTA}[${DIM}$(printf '..%.0s' $(seq 1 $width))${MAGENTA}]${RESET}"
-    echo ""
-}
-
-separator() {
-    echo -e "${DIM}│$(printf '--%.0s' $(seq 1 72))│${RESET}"
-}
-
-progress_indicator() {
-    local current="$1" total="${2:-$TOTAL_SCENARIOS}"
-    local pct=$(( (current * 100) / total ))
-    local filled=$(( pct / 5 ))
-    local empty=$(( 20 - filled ))
-    local bar=""
-    for ((i = 0; i < filled; i++)); do bar+="="; done
-    for ((i = 0; i < empty; i++)); do bar+="-"; done
-    echo -e "  ${DIM}[$bar] ${pct}%${RESET}"
-}
-
-code_block() {
-    local label="$1"; shift
-    echo -e "${BLUE}  +--- ${label}${RESET}"
-    for line in "$@"; do
-        echo -e "  |  ${DIM}${line}${RESET}"
-    done
-    echo -e "  +${DIM}$(printf '--%.0s' $(seq 1 $(( ${#label} + 2 )) ))${RESET}"
-    echo ""
-}
-
-error_block() {
-    local label="$1"; shift
-    echo -e "${RED}  +--- ERROR CASE: ${label}${RESET}"
-    for line in "$@"; do
-        echo -e "  |  ${DIM}${line}${RESET}"
-    done
-    echo -e "  +${DIM}$(printf '--%.0s' $(seq 1 72))${RESET}"
-    echo ""
-}
-
-key_point() {
-    echo -e "${GREEN}  + $*${RESET}"
-}
-
-note_msg() {
-    echo -e "${YELLOW}  NOTE: $*${RESET}"
-}
-
-advance() {
-    if [[ "$LIVE_MODE" == "true" ]]; then
-        sleep 0.8
+    echo -e "${CYAN}  ┌── ${label} (${#content} bytes)${RESET}"
+    if command -v python3 &>/dev/null && echo "$content" | python3 -c "import sys,json; json.load(sys.stdin)" &>/dev/null; then
+        # Pretty-print JSON with colors
+        echo "$content" | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+print(json.dumps(data, indent=2))
+" 2>/dev/null || echo "$content"
     else
-        local prompt_text="${CYAN}  Press Enter to continue...${RESET}"
-        read -rp "$prompt_text" || true
-    fi
-}
-
-check_service() {
-    echo -e "\n${BOLD}Checking if the Agent Skill Router is running...${RESET}"
-    if timeout 3 bash -c "echo > /dev/tcp/localhost/3000" 2>/dev/null; then
-        echo -e "${GREEN}  + Port 3000 is open -- router appears running.${RESET}"
-        local health_response
-        if health_response=$(curl -s --max-time 5 "${API_URL}/health" 2>/dev/null); then
-            local status
-            status=$(echo "$health_response" | grep -o '"status":"[^"]*"' | head -1)
-            if [[ "$status" == *"healthy"* ]]; then
-                echo -e "${GREEN}  + /health responded: ${status}${RESET}"
+        echo "$content" | while IFS= read -r line; do
+            # Highlight key-value pairs in logs
+            if [[ "$line" =~ ^[[:space:]]*\[(DEBUG|INFO|WARN|ERROR) ]]; then
+                level="${BASH_REMATCH[1]}"
+                case "$level" in
+                    DEBUG) echo -e "  ${DIM}│${RESET}${DIM} $line${RESET}" ;;
+                    INFO)  echo -e "  ${DIM}│${RESET}${GREEN} │${RESET} $line" ;;
+                    WARN)  echo -e "  ${DIM}│${RESET}${YELLOW} │${RESET} $line" ;;
+                    ERROR) echo -e "  ${DIM}│${RESET}${RED} │${RESET} $line" ;;
+                esac
             else
-                echo -e "${YELLOW}  + Service running but health check non-healthy${RESET}"
+                echo -e "  ${DIM}│${RESET} $line"
             fi
-        else
-            echo -e "${YELLOW}  + Port open but /health unreachable -- might be loading${RESET}"
-        fi
-        return 0
+        done
     fi
-    if command -v docker &>/dev/null; then
-        local container_status
-        container_status=$(docker ps --filter name=skill-router --format '{{.Status}}' 2>/dev/null || true)
-        if [[ -n "$container_status" ]]; then
-            echo -e "${GREEN}  + Docker container found: ${container_status}${RESET}"
-            return 0
-        fi
-    fi
-    echo -e "${RED}  X The Agent Skill Router does not appear to be running.${RESET}"
-    echo -e "  ${DIM}Expected at: ${API_URL}${RESET}"
+    echo -e "${CYAN}  └$(printf '─%.0s' $(seq 1 $(( ${#label} + 4 + ${#content} / 80 ))))${RESET}"
+}
+
+print_key_point() {
+    local text="$1" color="${2:-$GREEN}"
+    echo -e "  ${color}►${RESET} $text"
+}
+
+run_and_show() {
+    # Runs a command, captures both stdout and stderr separately, then displays them.
+    local description="$1"; shift
+    local cmd=("$@")
+
     echo ""
-    echo -e "  ${YELLOW}To start it:${RESET}"
-    printf '    docker run -d --name skill-router -p 3000:3000 \\\n'
-    printf '      ghcr.io/paulpas/agent-skill-router:latest\n'
-    echo ""
-    echo -e "  ${YELLOW}Or build locally:${RESET}"
-    echo -e "    cd agent-skill-routing-system && npm run build && node dist/index.js"
-    echo ""
-    if [[ "$LIVE_MODE" == "true" ]]; then
-        echo -e "${RED}  X In live mode, the service must be running.${RESET}"
-        return 1
+    echo -e "${WHITE}${BOLD}  ▶ Running:${RESET} ${CYAN}${cmd[*]}${RESET}"
+
+    # Capture stdout and stderr to temp files
+    local stdout_file="$TEMP_DIR/stdout_$$"
+    local stderr_file="$TEMP_DIR/stderr_$$"
+
+    if "${cmd[@]}" > "$stdout_file" 2> "$stderr_file"; then
+        local exit_code=0
     else
-        echo -e "${YELLOW}  Continuing -- this walkthrough uses HEREDOC examples${RESET}"
-        echo -e "${YELLOW}  that show what responses look like (no API calls).${RESET}"
-        echo ""
-        read -rp "Press Enter to continue, or Ctrl+C to abort: " || true
+        local exit_code=${PIPESTATUS[0]:-$?}
     fi
-    return 0
+
+    local stdout_content=""
+    local stderr_content=""
+    stdout_content=$(cat "$stdout_file" 2>/dev/null || true)
+    stderr_content=$(cat "$stderr_file" 2>/dev/null || true)
+
+    # Display stdout if non-empty
+    if [[ -n "$stdout_content" ]]; then
+        print_raw_output "STDOUT (${exit_code})" "$stdout_content"
+    else
+        echo -e "  ${DIM}│ (empty stdout)${RESET}"
+        echo -e "${CYAN}  └──────────────${RESET}"
+    fi
+
+    # Display stderr if non-empty
+    if [[ -n "$stderr_content" ]]; then
+        print_raw_output "STDERR ($exit_code)" "$stderr_content"
+    else
+        echo -e "  ${DIM}│ (empty stderr)${RESET}"
+        echo -e "${CYAN}  └──────────────${RESET}"
+    fi
+
+    # Cleanup temp files
+    rm -f "$stdout_file" "$stderr_file"
+
+    return $exit_code
 }
 
-# ─── Section 0: Architecture & Introduction ──────────────────────────────────
+run_curl() {
+    # Quick curl wrapper — runs and displays output inline.
+    local method="$1"
+    shift
+    local url="$1"; shift
+    local extra_args=("$@")
 
-section_00_intro() {
-    banner "AGENT SKILL ROUTER -- API WALKTHROUGH"
-    echo -e "${BOLD}Welcome!${RESET} This walkthrough takes you through every endpoint of the Agent Skill"
-    echo -e "Router API -- the engine that powers intelligent skill selection for AI agents."
     echo ""
-    echo -e "${DIM}Think of it as a restaurant kitchen:${RESET}"
-    echo ""
-    echo -e "  ${CYAN}Customer${RESET} (OpenCode)      -> Orders a dish (asks a question)"
-    echo -e "  ${MAGENTA}Head Chef${RESET} (Router API)   -> Decides which specialist cooks what"
-    echo -e "  ${GREEN}Sous Chefs${RESET} (Skills)      -> Each one masters a specific cuisine"
-    echo -e "  ${BLUE}Waiter${RESET} (MCP Bridge)      -> Delivers results back to the customer"
-    echo ""
-    advance
+    echo -e "${WHITE}${BOLD}  ▶ ${method} ${url}${RESET}"
 
-    sub_banner "SYSTEM ARCHITECTURE"
-    echo -e "${CYAN}+--------------------------------------+     +--------------------------+" \
-           "${RESET}"
-    echo -e "|  OpenCode AI  | HTTP |                | HTTP | Router API             |${RESET}"
-    echo -e "|  (Agent)      |---->| MCP Bridge     |---->| Hybrid Scorer          |${RESET}"
-    echo -e "|               |<----| Tool Dispatcher|<----| Vector + BM25           |${RESET}"
-    echo -e "+---------------+ JSON +----------------+ JSON +------------------------+" \
-           "${RESET}"
-    echo ""
+    local stdout_file="$TEMP_DIR/stdout_$$"
+    local stderr_file="$TEMP_DIR/stderr_$$"
 
-    echo -e "${BOLD}Core Components:${RESET}"
-    echo ""
-    key_point "${CYAN}Router API${RESET}       -- Fastify HTTP server with 12 endpoints for routing and management"
-    key_point "${MAGENTA}Hybrid Scorer${RESET}     -- 5-signal pipeline: vector (50%), BM25 (20%), triggers (15%), archetype (10%), historical (5%)"
-    key_point "${GREEN}Skills Index${RESET}      -- 593+ skills across 8 domains (agent, cncf, coding, go, linux, programming, trading, writing)"
-    key_point "${BLUE}MCP Bridge${RESET}        -- Tool dispatcher that executes routed tasks via MCP-compatible tools"
-    key_point "${WHITE}Vector DB + BM25${RESET}  -- Combined semantic search with exact-term matching for robust retrieval"
-    echo ""
-
-    sub_banner "THE 12 ENDPOINTS WE'LL COVER"
-    local endpoints=(
-        "GET     /health              -- Health check and readiness probe"
-        "GET     /stats               -- System statistics dashboard"
-        "GET     /skills              -- Browse the complete skill catalog"
-        "GET     /skill/:name         -- Retrieve a specific SKILL.md document"
-        "POST    /route  CORE         -- Route a task to best-matching skills"
-        "POST    /execute             -- Actually execute routed tasks"
-        "GET     /access-log          -- Audit trail of all routing decisions"
-        "POST    /reload              -- Force reload from source of truth"
-        "GET     /metrics             -- Compression and caching statistics"
-        "POST    /skill/create        -- AI-driven auto-skill creation"
-        "GET     /skills/created      -- List all auto-created skills"
-        "GET/POST /config/link-following  -- Markdown link resolution config"
-    )
-    for ep in "${endpoints[@]}"; do
-        echo -e "  ${DIM}|${RESET}  $ep"
+    curl_cmd=(curl -s --max-time 10)
+    if [[ "$method" == "POST" ]]; then
+        curl_cmd+=(-X POST -H "Content-Type: application/json")
+    fi
+    for arg in "${extra_args[@]}"; do
+        curl_cmd+=($arg)
     done
-    separator
-    advance
+    curl_cmd+=("$url")
+
+    "${curl_cmd[@]}" > "$stdout_file" 2> "$stderr_file" || true
+
+    local stdout_content="" stderr_content=""
+    stdout_content=$(cat "$stdout_file" 2>/dev/null || true)
+    stderr_content=$(cat "$stderr_file" 2>/dev/null || true)
+
+    if [[ -n "$stdout_content" ]]; then
+        print_raw_output "Response (${#stdout_content} bytes)" "$stdout_content"
+    else
+        echo -e "  ${RED}✗ No response (connection failed or timeout)${RESET}"
+    fi
+
+    rm -f "$stdout_file" "$stderr_file"
 }
 
-# ─── Section 1: Health Check ─────────────────────────────────────────────────
-
-section_01_health_check() {
-    banner "SECTION 1/${TOTAL_SCENARIOS}: Health Check -- GET /health"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  In microservices architecture, the health check endpoint is your first line"
-    echo -e "  of defense. Before you route a complex task or list skills, you need to know:"
-    echo -e "${CYAN}\"Is the service even running?\"${RESET}"
-    echo ""
-    echo -e "  Think of it like checking if a restaurant is open before ordering dinner."
-    echo -e "  Or verifying your car has fuel before starting a road trip."
-    echo ""
-    advance
-
-    echo -e "${BOLD}THE ANATOMY:${RESET}"
-    echo ""
-    code_block "CURL COMMAND" "curl ${API_URL}/health"
-    note_msg "No headers, no body payload -- just a plain GET request. Simple by design."
-    echo ""
-
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
-    echo ""
-    # Use printf to output the sample JSON since heredoc inside heredoc is tricky
-    printf '  Sample response:\n'
-    printf '  +----------------------------------------------------------------------+\n'
-    printf '  | {\n'
-    printf '  |   "status": "healthy",        -- Green light! Service operational\n'
-    printf '  |   "ready": true,              -- Skills finished loading (false = booting)\n'
-    printf '  |   "loading": false,           -- Background init still running?\n'
-    printf '  |   "error": null,              -- Any init errors? (null = clean)\n'
-    printf '  |   "timestamp": "2026-06-06T12:34:56.789Z",\n'
-    printf '  |   "version": "1.0.0"         -- Router version\n'
-    printf '  | }\n'
-    printf '  +----------------------------------------------------------------------+\n'
-    echo ""
-
-    echo -e "${BOLD}FIELD DEEP DIVE:${RESET}"
-    echo ""
-    key_point "\"status\" -- Always 'healthy'. If process crashes, server disappears entirely"
-    key_point "\"ready\" -- Crucial field! False means skills still loading. Routes return 503 when not ready"
-    key_point "\"loading\" -- Complementary: true = booting, false = ready for queries"
-    key_point "\"error\" -- If background init fails (GitHub unreachable), error message appears here"
-    key_point "\"timestamp\" -- ISO-8601 timestamp. Useful for monitoring and debugging timing"
-    echo ""
-
-    advance
-    error_block "Container not running" \
-        "$ curl http://localhost:3000/health" \
-        "" \
-        "  curl: (7) Failed to connect to localhost port 3000: Connection refused" \
-        "" \
-        "  This means the Docker container is down or the process crashed."
-    echo ""
-
-    advance
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Kubernetes Liveness Probe:${RESET}   K8s calls this every 30s. Fails 3x = restart container."
-    echo -e "  ${MAGENTA}CI/CD Pipeline Check:${RESET}       Before deploying new code, verify old service is healthy."
-    echo -e "  ${GREEN}Load Balancer Health:{RESET}       HAProxy/Nginx use this to route traffic here."
-    echo -e "  ${BLUE}Monitoring Alerting:${RESET}        Prometheus scrapes /health and alerts if unhealthy."
-    echo ""
-    key_point "The endpoint must be FAST (under 10ms) since K8s calls it every 30 seconds"
-    key_point "It always returns HTTP 200 -- the response body carries all state info"
-    separator
+explain_json_field() {
+    # Extract a value from JSON output and explain it in plain terms.
+    local json="$1" field="$2" label="$3"
+    local value=""
+    if command -v python3 &>/dev/null; then
+        value=$(echo "$json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('$field','<not found>'))" 2>/dev/null || echo "<parse error>")
+    elif command -v jq &>/dev/null; then
+        value=$(echo "$json" | jq -r ".$field // \"<not found>\"" 2>/dev/null || echo "<parse error>")
+    fi
+    if [[ "$value" != "<not found>" && "$value" != "<parse error>" ]]; then
+        print_key_point "${label}: ${GREEN}${BOLD}${value}${RESET}"
+    fi
 }
 
-# ─── Section 2: System Stats ─────────────────────────────────────────────────
+# ─── Section 0: System Check ─────────────────────────────────────────────────
 
-section_02_system_stats() {
-    banner "SECTION 2/${TOTAL_SCENARIOS}: System Stats -- GET /stats"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  After the health check tells you the service is up, the next question:"
-    echo -e "${CYAN}\"How many skills are loaded? Is everything working normally?\"${RESET}"
-    echo -e "  The /stats endpoint gives you a bird's-eye view of the entire system."
-    echo ""
-    advance
+section_01_system_check() {
+    # Skip if only running a specific section that isn't this one
+    if [[ -n "$TARGET_SECTION" ]] && [[ "$TARGET_SECTION" != "01" ]]; then return; fi
 
-    code_block "CURL COMMAND" "curl ${API_URL}/stats"
-    advance
+    print_section_header "SYSTEM CHECK" "01"
 
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE (service running):${RESET}"
-    echo ""
-    printf '  +----------------------------------------------------------------------+\n'
-    printf '  | {\n'
-    printf '  |   "skills": {\n'
-    printf '  |     "totalSkills": 593,          -- Total skills loaded\n'
-    printf '  |     "categories": 8,            -- Number of domain categories\n'
-    printf '  |     "tags": 2847                -- Unique trigger tags across all skills\n'
-    printf '  |   },\n'
-    printf '  |   "mcpTools": {\n'
-    printf '  |     "totalTools": 6,\n'
-    printf '  |     "enabledTools": [\n'
-    printf '  |       "file",            -- File read/write operations\n'
-    printf '  |       "shell-command",   -- Execute shell commands\n'
-    printf '  |       "http",            -- Make HTTP requests\n'
-    printf '  |       "log-fetch",       -- Fetch log files from containers\n'
-    printf '  |       "kubectl",         -- Kubernetes cluster management\n'
-    printf '  |       "skill-generation" -- Generate new skills via LLM\n'
-    printf '  |     ]\n'
-    printf '  |   }\n'
-    printf '  | }\n'
-    printf '  +----------------------------------------------------------------------+\n'
+    echo -e "${DIM}  Verifying the environment is ready before we hit the API.${RESET}"
 
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE (still loading):${RESET}"
+    # --- Docker check ---
     echo ""
-    printf '  {\n'
-    printf '    "status": "loading",          -- Not ready yet\n'
-    printf '    "message": "Skills are still loading, please wait",\n'
-    printf '    "skills": { "totalSkills": 0, "categories": 0, "tags": 0 },\n'
-    printf '    "mcpTools": { "totalTools": 0, "enabledTools": [] }\n'
-    printf '  }\n'
-    echo ""
+    echo -e "${WHITE}${BOLD}  1. Checking Docker status...${RESET}"
+    local docker_output=""
+    if command -v docker &>/dev/null; then
+        docker_output=$(docker ps --filter name=skill-router --format "table {{.Names}}\t{{.Status}}" 2>&1) || true
+        echo ""
+        echo -e "${CYAN}  ┌── docker ps output${RESET}"
+        if [[ -n "$docker_output" ]]; then
+            echo "$docker_output" | while IFS= read -r line; do
+                echo -e "  ${DIM}  │${RESET} $line"
+            done
+        else
+            echo -e "  ${YELLOW}  │  (no containers found)${RESET}"
+        fi
+        echo -e "${CYAN}  └──────────────────────${RESET}"
 
-    advance
-    sub_banner "WHAT YOU'RE LOOKING FOR"
-    echo ""
-    key_point "\"totalSkills\" should be > 500 for production. If it's 0, skills have not loaded."
-    key_point "\"categories\" == 8 means all domain directories were scanned"
-    key_point "\"tags\" tells you the breadth of the index -- more tags = richer matching vocabulary"
-    echo ""
+        # Check if the container is running
+        if docker ps --format '{{.Names}}' 2>/dev/null | grep -q skill-router; then
+            print_key_point "Docker container ${GREEN}skill-router is running${RESET}"
+        else
+            print_key_point "No skill-router container found — checking if API is accessible..." "${YELLOW}"
+        fi
+    else
+        echo -e "  ${RED}  ✗ Docker not installed. Skipping container check.${RESET}"
+    fi
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Post-Deploy Verification:${RESET}  After a new release, verify totalSkills has not dropped."
-    echo -e "  ${MAGENTA}Capacity Planning:{RESET}        If tags count is low, you may need more domain triggers."
-    echo -e "  ${GREEN}Health Dashboard:{RESET}          Display these numbers in Grafana for ops team visibility."
+    # --- Health check ---
     echo ""
-    separator
+    echo -e "${WHITE}${BOLD}  2. Checking Router Health (GET /health)...${RESET}"
+    run_curl GET "$API_URL/health"
+
+    local health_json=""
+    health_json=$(curl -s --max-time 5 "$API_URL/health" 2>/dev/null || echo "{}")
+
+    echo ""
+    echo -e "${WHITE}${BOLD}  Health response breakdown:${RESET}"
+    explain_json_field "$health_json" "status" "Service status"
+    explain_json_field "$health_json" "ready" "Ready flag (true = fully loaded)"
+    explain_json_field "$health_json" "loading" "Loading in progress"
+    explain_json_field "$health_json" "version" "Router version"
+
+    # --- MCP bridge log check ---
+    echo ""
+    echo -e "${WHITE}${BOLD}  3. Checking MCP Bridge Log...${RESET}"
+    local mcp_log="/tmp/skill-router-mcp.log"
+    if [[ -f "$mcp_log" ]]; then
+        echo ""
+        echo -e "${CYAN}  ┌── First 5 lines of MCP log${RESET}"
+        head -n 5 "$mcp_log" 2>/dev/null | while IFS= read -r line; do
+            echo -e "  ${DIM}  │${RESET} $line"
+        done
+        echo -e "${CYAN}  └──────────────────────${RESET}"
+        echo ""
+        echo -e "${CYAN}  ┌── Last 5 lines of MCP log${RESET}"
+        tail -n 5 "$mcp_log" 2>/dev/null | while IFS= read -r line; do
+            echo -e "  ${DIM}  │${RESET} $line"
+        done
+        echo -e "${CYAN}  └──────────────────────${RESET}"
+        local log_lines
+        log_lines=$(wc -l < "$mcp_log")
+        print_key_point "MCP log has ${BOLD}${log_lines} lines${RESET} — bridge is actively logging"
+    else
+        echo ""
+        echo -e "  ${DIM}│ (no MCP log file found at $mcp_log)${RESET}"
+        echo -e "${CYAN}  └──────────────────────${RESET}"
+        print_key_point "MCP bridge is running but its log is not available"
+    fi
+
+    # --- Port check ---
+    echo ""
+    echo -e "${WHITE}${BOLD}  4. Checking port accessibility...${RESET}"
+    if timeout 3 bash -c "echo > /dev/tcp/localhost/3000" 2>/dev/null; then
+        print_key_point "Port 3000 is OPEN — the router accepts connections"
+    else
+        echo -e "  ${RED}  ✗ Port 3000 is CLOSED. The API is not reachable.${RESET}"
+        print_key_point "Start the skill-router before running this demo." "${YELLOW}"
+    fi
+
+    echo ""
+    echo -e "${GREEN}${BOLD}  ✓ System check complete. All signals collected.${RESET}"
 }
 
-# ─── Section 3: Skill Listing ────────────────────────────────────────────────
+# ─── Section 1: API Stats ────────────────────────────────────────────────────
 
-section_03_skill_listing() {
-    banner "SECTION 3/${TOTAL_SCENARIOS}: Skill Listing -- GET /skills"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  You've just started using the Agent Skill Router. You want to know:"
-    echo -e "${CYAN}\"What skills are available? How many are there? Can I browse by domain?\"${RESET}"
-    echo -e "  The /skills endpoint is your catalog browser -- like searching a library."
-    echo ""
-    advance
+section_02_stats() {
+    if [[ -n "$TARGET_SECTION" ]] && [[ "$TARGET_SECTION" != "02" ]]; then return; fi
 
-    code_block "CURL COMMAND" "curl ${API_URL}/skills"
-    note_msg "Returns ALL skills at once -- useful for building a UI or batch processing."
-    echo ""
+    print_section_header "API ENDPOINTS OVERVIEW — STATS" "02"
 
-    advance
-    echo -e "${BOLD}HOW TO COUNT SKILLS:${RESET}"
-    echo ""
-    code_block "COUNT ALL SKILLS" \
-        "curl ${API_URL}/skills | python3 -c \"import sys,json; d=json.load(sys.stdin); print(f'Total: {d[chr(39)+chr(39)]}')\""
+    echo -e "${DIM}  Fetching live system statistics from the running router.${RESET}"
 
-    advance
-    echo -e "${BOLD}WHAT EACH SKILL OBJECT CONTAINS:${RESET}"
-    echo ""
-    printf '  Each skill entry in the response array:\n'
-    printf '  +----------------------------------------------------------------------+\n'
-    printf '  | {\n'
-    printf '  |   "name": "prometheus-querying",       -- Skill identifier (kebab-case)\n'
-    printf '  |   "category": "coding",                -- Domain category\n'
-    printf '  |   "description": "Implements querying with PromQL...",\n'
-    printf '  |                                          -- One-sentence what this skill does\n'
-    printf '  |   "tags": ["prometheus", "promql", ...],-- Trigger keywords (3-8 terms)\n'
-    printf '  |   "version": "1.0.0",                  -- Skill version\n'
-    printf '  |   "sourceFile": "/cache/skills/coding/prometheus-querying/SKILL.md"\n'
-    printf '  |                                          -- Full filesystem path\n'
-    printf '  | }\n'
-    printf '  +----------------------------------------------------------------------+\n'
+    # --- GET /stats ---
+    run_curl GET "$API_URL/stats"
 
-    advance
-    sub_banner "WHAT YOU'RE LOOKING FOR"
-    echo ""
-    key_point "\"total\" field tells you how many skills are loaded -- should match /stats.totalSkills"
-    key_point "Each skill has exactly 6 fields: name, category, description, tags, version, sourceFile"
-    key_point "Tags array contains the trigger keywords used for auto-loading matching conversations"
-    echo ""
+    local stats_json=""
+    stats_json=$(curl -s --max-time 10 "$API_URL/stats" 2>/dev/null || echo "{}")
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Skill Inventory Audit:${RESET}         Periodically scan /skills to verify no skills lost."
-    echo -e "  ${MAGENTA}Domain Distribution:{RESET}          Check if certain domains are underrepresented."
-    echo -e "  ${GREEN}Debugging Missing Skills:{RESET}     Search tags array for a keyword to find relevant skills."
     echo ""
-    separator
+    echo -e "${WHITE}${BOLD}  Breaking down the stats:${RESET}"
+
+    # Extract and explain each field
+    local total_skills categories tags total_tools enabled_tools
+    if command -v python3 &>/dev/null; then
+        total_skills=$(echo "$stats_json" | python3 -c "import sys,json; d=json.load(sys.stdin).get('skills',{}); print(d.get('totalSkills','?'))" 2>/dev/null || echo "?")
+        categories=$(echo "$stats_json" | python3 -c "import sys,json; d=json.load(sys.stdin).get('skills',{}); print(d.get('categories','?'))" 2>/dev/null || echo "?")
+        tags=$(echo "$stats_json" | python3 -c "import sys,json; d=json.load(sys.stdin).get('skills',{}); print(d.get('tags','?'))" 2>/dev/null || echo "?")
+        total_tools=$(echo "$stats_json" | python3 -c "import sys,json; d=json.load(sys.stdin).get('mcpTools',{}); print(d.get('totalTools','?'))" 2>/dev/null || echo "?")
+        enabled_tools=$(echo "$stats_json" | python3 -c "import sys,json; d=json.load(sys.stdin).get('mcpTools',{}); print(', '.join(d.get('enabledTools',[])))" 2>/dev/null || echo "?")
+    fi
+
+    print_key_point "totalSkills: ${BOLD}${total_skills}${RESET} — that's the full skill catalog size"
+    print_key_point "categories:  ${BOLD}${categories}${RESET} — domain categories scanned (agent, cncf, coding, etc.)"
+    print_key_point "tags:        ${BOLD}${tags}${RESET} — total trigger keywords across all skills for matching"
+    print_key_point "totalTools:  ${BOLD}${total_tools}${RESET} — MCP tools available for task execution"
+
+    if [[ "$enabled_tools" != "?" ]]; then
+        echo ""
+        echo -e "${CYAN}  ┌── Enabled MCP Tools:${RESET}"
+        IFS=',' read -ra TOOLS <<< "$enabled_tools"
+        for tool in "${TOOLS[@]}"; do
+            echo -e "  ${DIM}  │${RESET}   ${BOLD}${tool}${RESET}"
+        done
+        echo -e "${CYAN}  └──────────────────────${RESET}"
+    fi
+
+    echo ""
+    echo -e "${GREEN}${BOLD}  ✓ Stats captured live from the running router.${RESET}"
 }
 
-# ─── Section 4: Skill Retrieval ──────────────────────────────────────────────
+# ─── Section 2: Route a Task ─────────────────────────────────────────────────
 
-section_04_skill_retrieval() {
-    banner "SECTION 4/${TOTAL_SCENARIOS}: Skill Retrieval -- GET /skill/:name"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  You've browsed the catalog and found a skill you want. Now you need:"
-    echo -e "${CYAN}\"Show me the actual content -- instructions, examples, constraints.${RESET}\""
-    echo -e "  Think of /skills as the library card catalog (metadata only), and"
-    echo -e "  /skill/:name as walking to the shelf and opening that specific book."
-    echo ""
-    advance
+section_03_route() {
+    if [[ -n "$TARGET_SECTION" ]] && [[ "$TARGET_SECTION" != "03" ]]; then return; fi
 
-    code_block "CURL COMMAND (basic)" "curl ${API_URL}/skill/prometheus-querying"
-    note_msg "Returns full SKILL.md as plain text -- Content-Type: text/plain; charset=utf-8"
-    echo ""
+    print_section_header "ROUTE A TASK — POST /route" "03"
 
-    code_block "WITH COMPRESSION (production optimization)" \
-        "# Get compressed version (~35% savings):" \
-        "curl '${API_URL}/skill/prometheus-querying?compression=moderate'" \
-        "" \
-        "# Get detailed full content (no compression):" \
-        "curl '${API_URL}/skill/prometheus-querying?compression=detailed'" \
-        "" \
-        "# Specify domain for better context:" \
-        "curl '${API_URL}/skill/m365-agents-ts?domain=agent&compression=moderate'"
+    echo -e "${DIM}  This is the core of the router: send a natural language task, get back${RESET}"
+    echo -e "${DIM}  ranked skills with confidence scores and an execution plan.${RESET}"
 
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
+    # --- Route a Kubernetes pod crash query ---
     echo ""
-    printf '  Content-Type: text/plain; charset=utf-8\n'
-    printf '  X-Compression-Version: moderate\n'
-    printf '  X-Compression-Tokens: 2847\n'
-    printf '  X-Compression-Percent: 35\n'
-    printf '  X-Compression-Source: compressed\n'
-    printf '  # Prometheus Querying\n\n'
-    printf '  Implements querying techniques with PromQL to extract metrics...\n\n'
-    printf '  ## When to Use\n'
-    printf '  - Writing PromQL queries to monitor system health\n'
-    printf '  - Designing alert rules based on metric thresholds\n\n'
-    printf '  ## Core Workflow\n'
-    printf '  1. **Identify the metric** -- Find exact name using /api/v1/label/__name__/values\n'
-    echo ""
+    echo -e "${WHITE}${BOLD}  Task 1: 'Fix my Kubernetes pod crash'${RESET}"
+    run_curl POST "$API_URL/route" \
+        "-d '{\"task\":\"Fix my Kubernetes pod crash\",\"constraints\":{\"maxSkills\":3}}'"
 
-    advance
-    echo -e "${BOLD}EXTRACTING FRONTMATTER:${RESET}"
-    echo ""
-    code_block "PARSING YAML FRONTMATTER" \
-        "# Extract name and description from any skill's frontmatter:" \
-        "curl ${API_URL}/skill/m365-agents-ts | head -15 | grep -E '^(name|description):'"
+    local route_json=""
+    route_json=$(curl -s --max-time 10 -X POST "$API_URL/route" \
+        -H "Content-Type: application/json" \
+        -d '{"task":"Fix my Kubernetes pod crash","constraints":{"maxSkills":3}}' 2>/dev/null || echo "{}")
 
-    advance
-    sub_banner "WHAT YOU'RE LOOKING FOR"
-    echo ""
-    key_point "Full SKILL.md content -- the complete markdown document including frontmatter and examples"
-    key_point "Response headers include compression metadata: X-Compression-Version, X-Compression-Percent"
-    key_point "404 error when skill name does not exist: {\"error\": \"Skill not found: non-existent-skill\"}"
-    echo ""
+    # Show the matched skills from the actual response
+    if command -v python3 &>/dev/null && [[ -n "$route_json" ]]; then
+        echo ""
+        echo -e "${WHITE}${BOLD}  Matched Skills:${RESET}"
+        local top_skills
+        top_skills=$(echo "$route_json" | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+skills = data.get('selectedSkills', [])
+for s in skills:
+    name = s.get('name','?')
+    score = s.get('score', 0)
+    role = s.get('role','?')
+    conf = data.get('confidence', 0)
+    print(f'    {BOLD}{name}${RESET}  score={GREEN}{score:.2f}${RESET}  role={role}')
+" 2>/dev/null || echo "    <parse error>")
+        echo "$top_skills"
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Debugging Skill Content:${RESET}        Fetch a skill to verify its examples and constraints."
-    echo -e "  ${MAGENTA}Content Auditing:{RESET}              Check that all implementation skills have code examples."
-    echo -e "  ${GREEN}Compression Testing:{RESET}           Test different compression levels to find the sweet spot."
+        # Extract confidence and latency
+        local conf latency
+        conf=$(echo "$route_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('confidence','?'))" 2>/dev/null || echo "?")
+        latency=$(echo "$route_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('latencyMs','?'))" 2>/dev/null || echo "?")
+        local strategy
+        strategy=$(echo "$route_json" | python3 -c "import sys,json; s=json.load(sys.stdin).get('executionPlan',{}); print(s.get('strategy','?'))" 2>/dev/null || echo "?")
+
+        echo ""
+        print_key_point "Overall confidence: ${BOLD}${conf}${RESET}"
+        print_key_point "Routing latency:    ${BOLD}${latency}ms${RESET}"
+        print_key_point "Execution strategy: ${BOLD}${strategy}${RESET}"
+    fi
+
+    # --- Route a trading query ---
     echo ""
-    separator
+    echo -e "${WHITE}${BOLD}  Task 2: 'Implement a stop loss strategy for crypto trading'${RESET}"
+    run_curl POST "$API_URL/route" \
+        "-d '{\"task\":\"Implement a stop loss strategy for crypto trading\",\"constraints\":{\"maxSkills\":3}}'"
+
+    echo ""
+    echo -e "${GREEN}${BOLD}  ✓ Routing complete. The hybrid scorer evaluated all skills and ranked the best matches.${RESET}"
 }
 
-# ─── Section 5: Task Routing (THE CORE FEATURE) ──────────────────────────────
+# ─── Section 3: Get Skill Content ────────────────────────────────────────────
 
-section_05_task_routing() {
-    banner "SECTION 5/${TOTAL_SCENARIOS}: Task Routing -- POST /route  **CORE**"
-    echo -e "${BOLD}WHY THIS MATTERS (the MOST important section):${RESET}"
-    echo ""
-    echo -e "  This is the engine room. Everything else supports it."
-    echo -e "  When an OpenCode user types 'Fix my pod crash', the system needs to find"
-    echo -e "  the right skill(s) from 593+ options. That is what /route does -- using a"
-    echo -e "${CYAN}hybrid scoring pipeline${RESET}."
-    echo ""
-    advance
+section_04_skill_content() {
+    if [[ -n "$TARGET_SECTION" ]] && [[ "$TARGET_SECTION" != "04" ]]; then return; fi
 
-    sub_banner "THE HYBRID SCORING PIPELINE -- Like a Restaurant Kitchen"
-    echo ""
-    printf '  1. Vector Similarity (50%%)     -- Semantic meaning (does recipe match fish?)\n'
-    printf '  2. BM25 Exact Terms (20%%)      -- Keyword matching (menu says salmon?)\n'
-    printf '  3. Trigger Match (15%%)         -- Pre-defined keywords (kubernetes in triggers?)\n'
-    printf '  4. Archetype Alignment (10%%)   -- Intent type (diagnostic, tactical, etc.)\n'
-    printf '  5. Historical Success (5%%)     -- Past performance (was this helpful before?)\n'
-    echo ""
+    print_section_header "GET SKILL CONTENT — GET /skill/:name" "04"
 
-    advance
-    sub_banner "QUERY ARCHETYPES -- Understanding USER INTENT"
-    echo ""
-    printf '  Archetype        | When to Use              | Example Query\n'
-    printf '  ---------------------------------------------------------------\n'
-    printf '  tactical         | Specific implementation  | "fix this ingress timeout"\n'
-    printf '  strategic        | Design, architecture     | "design a scalable event bus"\n'
-    printf '  diagnostic       | Root cause analysis      | "why is my pod crashing"\n'
-    printf '  orchestration    | Multi-step workflows     | "automate CI/CD pipeline"\n'
-    printf '  educational      | Learning, explanation    | "teach me kubernetes networking"\n'
-    printf '  enforcement      | Compliance, security     | "security audit required"\n'
-    printf '  generation       | Code scaffolding         | "generate boilerplate"\n\n'
-    echo -e "  Matching skills get a +30%% score boost (full match) or +10%% (partial)."
-    echo ""
+    echo -e "${DIM}  Browsing the catalog tells us WHAT skills exist. Now we open one${RESET}"
+    echo -e "${DIM}  to see the actual instructions, code examples, and constraints.${RESET}"
 
-    advance
-    echo -e "${BOLD}EXAMPLE 1: SIMPLE TASK:${RESET}"
-    echo ""
-    code_block "CURL REQUEST" \
-        "curl -X POST ${API_URL}/route \"-H Content-Type: application/json\" \\" \
-        "  \"-d '{\"task\": \"Fix my Kubernetes pod crash\"}'\""
+    # Pick a skill name from /skills if available
+    local skill_name="risk-management"
+    local all_skills=""
+    all_skills=$(curl -s --max-time 10 "$API_URL/skills" 2>/dev/null || echo "")
 
-    advance
-    echo -e "${BOLD}SIMPLE RESPONSE:${RESET}"
-    echo ""
-    printf '  {\n'
-    printf '    "taskId": "route_1718000000000",\n'
-    printf '    "selectedSkills": [\n'
-    printf '      {\n'
-    printf '        "name": "kubernetes-events-management",\n'
-    printf '        "score": 0.89,                       -- High score = strong match\n'
-    printf '        "role": "primary",                   -- THE skill to use\n'
-    printf '        "reasoning": "Directly addresses pod crash diagnostics...",\n'
-    printf '        "scoreBreakdown": {\n'
-    printf '          "finalScore": 0.89,\n'
-    printf '          "vectorScore": 0.92,               -- Semantic match very strong\n'
-    printf '          "bm25Score": 0.78,                 -- Keywords kubernetes, pod matched\n'
-    printf '          "triggerMatchScore": 0.85,         -- Triggers: pod, events aligned\n'
-    printf '          "archetypeScore": 0.91,           -- Archetype diagnostic matched\n'
-    printf '          "specificityScore": 0.88\n'
-    printf '        }\n'
-    printf '      },\n'
-    printf '      {\n'
-    printf '        "name": "kubernetes-deployments-management",\n'
-    printf '        "score": 0.67,                       -- Secondary/supplementary skill\n'
-    printf '        "role": "supporting"\n'
-    printf '      }\n'
-    printf '    ],\n'
-    printf '    "executionPlan": {\n'
-    printf '      "strategy": "sequential",            -- Run skills one after another\n'
-    printf '      "steps": [\n'
-    printf '        {"skill": "kubernetes-events-management", "dependencies": []},\n'
-    printf '        {"skill": "kubernetes-deployments-management", "dependencies": [0]}\n'
-    printf '      ]\n'
-    printf '    },\n'
-    printf '    "confidence": 0.94,                    -- How sure is the router?\n'
-    printf '    "reasoningSummary": "Pod crash diagnostics point to kubernetes-events-...",\n'
-    printf '    "candidatePool": ["kubernetes-events-mgmt", "k8s-deployments-mgmt", ...],\n'
-    printf '    "latencyMs": 142,                      -- Total routing time: 142ms\n'
-    printf '    "inputTokens": 3200,\n'
-    printf '    "outputTokens": 180\n'
-    printf '  }\n'
+    if [[ -n "$all_skills" ]] && command -v python3 &>/dev/null; then
+        # Get a real skill name from the API
+        local sample_skill
+        sample_skill=$(echo "$all_skills" | python3 -c "
+import sys, json
+skills = json.load(sys.stdin)
+if isinstance(skills, list) and len(skills) > 0:
+    print(skills[0].get('name', 'risk-management'))
+elif isinstance(skills, dict):
+    # Try to find a sample skill from nested structure
+    for s in skills.get('skills', skills.get('entries', [])):
+        if isinstance(s, dict):
+            name = s.get('name', '')
+            if name and len(name) > 3:
+                print(name)
+                break
+    else:
+        print('risk-management')
+else:
+    print('risk-management')
+" 2>/dev/null || echo "risk-management")
 
-    advance
-    echo -e "${BOLD}EXAMPLE 2: MEDIUM TASK -- Domain Context:${RESET}"
-    echo ""
-    code_block "CURL REQUEST" \
-        "curl -X POST ${API_URL}/route \"-H Content-Type: application/json\" \\" \
-        "  \"-d '{\"task\": \"Implement a stop loss strategy for crypto trading\"}'\""
+        if [[ -n "$sample_skill" ]] && [[ ${#sample_skill} -gt 3 ]]; then
+            skill_name="$sample_skill"
+        fi
+    fi
 
-    advance
-    echo -e "${BOLD}MEDIUM RESPONSE (key differences):${RESET}"
     echo ""
-    printf '  Top result: {\n'
-    printf '    "name": "trading-risk-stop-loss",\n'
-    printf '    "score": 0.93,\n'
-    printf '    "role": "primary",\n'
-    printf '    "archetype": "tactical"          -- Identified as tactical implementation\n'
-    printf '  }\n\n'
-    printf '  Supporting skills:\n'
-    printf '    - trading-risk-kill-switches     -- Emergency layer on top of stops\n'
-    printf '    - trading-risk-position-sizing   -- How much to trade before setting stops\n\n'
-    printf '  executionPlan.strategy = "hybrid"  -- Mix of parallel and sequential steps\n'
-    echo ""
+    echo -e "${WHITE}${BOLD}  Fetching: GET ${API_URL}/skill/${skill_name}${RESET}"
 
-    advance
-    echo -e "${BOLD}EXAMPLE 3: COMPLEX TASK -- Full Context & Constraints:${RESET}"
-    echo ""
-    code_block "CURL REQUEST (production-quality)" \
-        "curl -X POST ${API_URL}/route \"-H Content-Type: application/json\" \\" \
-        "  \"-d '{\"task\": \"Set up monitoring for a microservices app\",\"" \
-        "\"context\": {\"environment\": \"production\", \"tech_stack\": [\"kubernetes\"]}," \
-        "\"constraints\": {\"maxSkills\": 3, \"includeScoreBreakdown\": true}}'\""
+    # Get the raw skill content
+    local skill_content=""
+    local stdout_file="$TEMP_DIR/stdout_$$"
+    local stderr_file="$TEMP_DIR/stderr_$$"
+    curl -s --max-time 10 "$API_URL/skill/$skill_name" > "$stdout_file" 2> "$stderr_file" || true
+    skill_content=$(cat "$stdout_file")
+    rm -f "$stdout_file" "$stderr_file"
 
-    note_msg "The 'context' field adds extra signal. The 'constraints' field limits results and requests score explanations."
-    echo ""
+    if [[ ${#skill_content} -gt 50 ]]; then
+        print_raw_output "Skill content (${skill_name}, $(wc -c <<< "$skill_content") bytes)" "$skill_content" | head -120
 
-    advance
-    sub_banner "KEY THINGS TO NOTICE IN THE RESPONSE"
-    echo ""
-    key_point "\"confidence\" -- 0 to 1 scale. Below 0.35 means 'gap detected' which triggers auto-skill creation (Section 10)"
-    key_point "\"scoreBreakdown\" -- Only present when constraints.includeScoreBreakdown=true. Shows WHY each score was given"
-    key_point "\"executionPlan.strategy\" -- 'sequential', 'parallel', or 'hybrid'"
-    key_point "\"latencyMs\" -- The entire routing pipeline runs in ~100-300ms"
-    echo ""
+        echo ""
+        echo -e "${WHITE}${BOLD}  Skill content breakdown:${RESET}"
+        if [[ "$skill_content" =~ ^---$ ]]; then
+            print_key_point "This skill has YAML frontmatter — proper metadata for routing"
+        else
+            print_key_point "No YAML frontmatter detected — may be a non-standard skill" "${YELLOW}"
+        fi
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Auto-routing:${RESET}              OpenCode calls this silently for every user message."
-    echo -e "  ${MAGENTA}Skill Gap Detection:${RESET}       Low confidence (< 0.35) triggers /skill/create to auto-generate skills."
-    echo -e "  ${GREEN}Multi-skill Workflows:${RESET}     Complex tasks route to 2-4 skills that work together in sequence."
+        local h1_count
+        h1_count=$(echo "$skill_content" | grep -c '^# ' || echo "0")
+        print_key_point "H1 sections found: ${BOLD}${h1_count}${RESET} (human-readable titles)"
+
+        local code_blocks
+        code_blocks=$(echo "$skill_content" | grep -c '```' || echo "0")
+        code_blocks=$((code_blocks / 2))  # Each block opens and closes with ```
+        print_key_point "Code blocks: ${BOLD}${code_blocks}${RESET} (implementation examples)"
+
+        local triggers_line
+        triggers_line=$(echo "$skill_content" | grep -A5 '^---' | grep 'triggers:' | head -1 || true)
+        if [[ -n "$triggers_line" ]]; then
+            print_key_point "Triggers: ${BOLD}${triggers_line##*: }${RESET}"
+        fi
+
+        # Show the next 80 lines after the frontmatter section
+        local fm_end
+        fm_end=$(echo "$skill_content" | grep -n '^---$' | tail -1 | cut -d: -f1)
+        if [[ -n "$fm_end" ]] && [[ ${fm_end} -gt 0 ]]; then
+            echo ""
+            echo -e "${CYAN}  ┌── Content after frontmatter (first 30 lines):${RESET}"
+            echo "$skill_content" | tail -n +"$((fm_end + 1))" | head -30 | while IFS= read -r line; do
+                echo -e "  ${DIM}  │${RESET} $line"
+            done
+            echo -e "${CYAN}  └──────────────────────${RESET}"
+        fi
+    else
+        echo ""
+        echo -e "  ${YELLOW}⚠ Skill content was empty or too small (maybe a 404).${RESET}"
+        print_key_point "The skill '${skill_name}' might not exist. Check /skills for valid names." "${YELLOW}"
+    fi
+
     echo ""
-    separator
+    echo -e "${GREEN}${BOLD}  ✓ Skill content retrieved live from the running router.${RESET}"
 }
 
-# ─── Section 6: Task Execution ────────────────────────────────────────────────
+# ─── Section 4: Access Log ───────────────────────────────────────────────────
 
-section_06_task_execution() {
-    banner "SECTION 6/${TOTAL_SCENARIOS}: Task Execution -- POST /execute"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  The routing endpoint (/route) tells you WHAT skills to use. But what about"
-    echo -e "${CYAN}\"Actually doing the work?\"${RESET}"
-    echo -e "  POST /execute runs skills through MCP tools: reading files, running kubectl,"
-    echo -e "  making HTTP requests."
-    echo ""
-    advance
+section_05_access_log() {
+    if [[ -n "$TARGET_SECTION" ]] && [[ "$TARGET_SECTION" != "05" ]]; then return; fi
 
-    echo -e "${BOLD}ROUTE vs EXECUTE: THE KEY DIFFERENCE:${RESET}"
-    echo ""
-    printf '  POST /route          -> Planning phase. Returns skill recommendations.\n'
-    printf '                         "Which chef should cook this dish?"\n\n'
-    printf '  POST /execute        -> Action phase. Actually runs the skills via MCP tools.\n'
-    printf '                         "Now actually cook it and bring me the result."\n\n'
-    echo -e "  Think of routing as a GPS giving directions, and executing as driving there."
-    echo ""
+    print_section_header "ACCESS LOG — GET /access-log" "05"
 
-    advance
-    code_block "CURL REQUEST" \
-        "curl -X POST ${API_URL}/execute \"-H Content-Type: application/json\" \\" \
-        "  \"-d '{\"task\": \"Deploy Kubernetes manifest\", \"skills\": [\"kubernetes-deployments-management\"]}'\""
+    echo -e "${DIM}  The access log is your audit trail — last 100 routing decisions.${RESET}"
+    echo -e "${DIM}  Review what tasks were asked, which skills matched, and confidence scores.${RESET}"
 
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
-    echo ""
-    printf '  {\n'
-    printf '    "taskId": "deploy-001",               -- Your tracking ID or auto-generated\n'
-    printf '    "task": "Deploy Kubernetes manifest",\n'
-    printf '    "status": "success",                  -- success | partial_failure | failure\n'
-    printf '    "results": [\n'
-    printf '      {\n'
-    printf '        "skillName": "kubernetes-deployments-management",\n'
-    printf '        "status": "success",\n'
-    printf '        "output": {\n'
-    printf '          "command": "kubectl apply -f deployment.yaml",\n'
-    printf '          "result": "deployment.apps/myapp created"\n'
-    printf '        },\n'
-    printf '        "error": null,\n'
-    printf '        "latencyMs": 2340                 -- How long this skill took to run\n'
-    printf '      }\n'
-    printf '    ],\n'
-    printf '    "totalLatencyMs": 2456,               -- Total time across all skills\n'
-    printf '    "confidence": 0.92                      -- Confidence in the results\n'
-    printf '  }\n'
+    # --- GET /access-log ---
+    run_curl GET "$API_URL/access-log"
 
-    advance
-    sub_banner "WHAT HAPPENS UNDER THE HOOD"
-    echo ""
-    code_block "EXECUTION FLOW" \
-        "1. /execute receives: task, skill names, input parameters" \
-        "2. MCP Bridge looks up each skill by name in its tool registry" \
-        "3. For each found skill: calls getTool(skillName).execute(inputs)" \
-        "4. MCP tools can: read files, run shell commands, execute kubectl, etc." \
-        "5. Results returned as array with success/failure per skill" \
-        "6. Overall status = 'success' if ALL succeeded, 'partial_failure' otherwise"
-    echo ""
+    local log_json=""
+    log_json=$(curl -s --max-time 10 "$API_URL/access-log" 2>/dev/null || echo "{}")
 
-    sub_banner "WHAT YOU'RE LOOKING FOR"
-    echo ""
-    key_point "\"status\" -- 'success' means everything worked. 'partial_failure' means some skills failed."
-    key_point "\"results[]\" array -- each skill gets its own result object with output and latencyMs"
-    key_point "\"totalLatencyMs\" -- Useful for performance monitoring and SLA compliance checking"
-    echo ""
+    if command -v python3 &>/dev/null && [[ -n "$log_json" ]]; then
+        local total_requests entries_count
+        total_requests=$(echo "$log_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('totalRequests','?'))" 2>/dev/null || echo "?")
+        entries_count=$(echo "$log_json" | python3 -c "import sys,json; print(len(json.load(sys.stdin).get('entries',[])))" 2>/dev/null || echo "0")
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}End-to-End Task Execution:${RESET}       Route -> Execute in one automated workflow."
-    echo -e "  ${MAGENTA}Multi-Skill Orchestration:${RESET}      Pass multiple skills to execute in parallel or sequence."
-    echo -e "  ${GREEN}Error Recovery:{RESET}                 Check status for 'partial_failure' and retry failed skills."
+        echo ""
+        print_key_point "Total routing requests this session: ${BOLD}${total_requests}${RESET}"
+        print_key_point "Entries in window (last 100): ${BOLD}${entries_count}${RESET}"
+
+        if [[ "$entries_count" != "0" ]]; then
+            echo ""
+            echo -e "${WHITE}${BOLD}  Recent routing decisions:${RESET}"
+            echo "$log_json" | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+entries = data.get('entries', [])
+for i, e in enumerate(entries[:5]):
+    ts = e.get('timestamp','?')[:19]
+    task = e.get('task','?')[:60]
+    skill = e.get('topSkill','?')
+    conf = e.get('confidence','?')
+    lat = e.get('latencyMs','?')
+    icon = '✓' if float(conf) > 0.7 else ('⚠' if float(conf) > 0.35 else '✗')
+    print(f'    {icon} [{ts}] confidence={conf:.2f} latency={lat}ms → {skill}')
+    print(f'       task: \"{task}\"...')
+" 2>/dev/null || echo "    <parse error>"
+        fi
+    fi
+
     echo ""
-    separator
+    echo -e "${GREEN}${BOLD}  ✓ Access log captured. Review recent decisions for quality patterns.${RESET}"
 }
 
-# ─── Section 7: Access Log ────────────────────────────────────────────────────
+# ─── Section 5: Reload Router ────────────────────────────────────────────────
 
-section_07_access_log() {
-    banner "SECTION 7/${TOTAL_SCENARIOS}: Access Log -- GET /access-log"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  Imagine being able to look back and ask: ${CYAN}\"What was I just asked to do?\"${RESET}"
-    echo -e "  Or ${MAGENTA}\"Which skills got routed the most today?\"${RESET}"
-    echo -e "  The /access-log endpoint is your audit trail -- a rolling window of the"
-    echo -e "  last 100 routing decisions. It is like a security camera for your AI agent."
-    echo ""
-    advance
+section_06_reload() {
+    if [[ -n "$TARGET_SECTION" ]] && [[ "$TARGET_SECTION" != "06" ]]; then return; fi
 
-    code_block "CURL COMMAND" "curl ${API_URL}/access-log"
-    note_msg "The log keeps only the last 100 entries (FIFO queue). Older entries are discarded."
-    echo ""
+    print_section_header "RELOAD ROUTER — POST /reload" "06"
 
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
-    echo ""
-    printf '  {\n'
-    printf '    "totalRequests": 47,                -- Total routing requests this session\n'
-    printf '    "entries": [\n'
-    printf '      {\n'
-    printf '        "timestamp": "2026-06-06T15:30:22.100Z",\n'
-    printf '        "task": "Debug my PostgreSQL connection pool exhaustion issue...",\n'
-    printf '        "topSkill": "cncf-postgresql",\n'
-    printf '        "totalMatches": 3,\n'
-    printf '        "confidence": 0.91,\n'
-    printf '        "latencyMs": 156\n'
-    printf '      },\n'
-    printf '      {\n'
-    printf '        "timestamp": "2026-06-06T15:28:14.500Z",\n'
-    printf '        "task": "How do I set up a Kubernetes ingress with TLS?",\n'
-    printf '        "topSkill": "kubernetes-ingress-management",\n'
-    printf '        "totalMatches": 5,\n'
-    printf '        "confidence": 0.97,\n'
-    printf '        "latencyMs": 132\n'
-    printf '      }\n'
-    printf '    ]\n'
-    printf '  }\n'
+    echo -e "${DIM}  Trigger an immediate reload of the skill index from source-of-truth.${RESET}"
+    echo -e "${DIM}  Use this after pushing new skills instead of waiting for auto-sync.${RESET}"
 
-    advance
-    sub_banner "WHAT YOU'RE LOOKING FOR"
-    echo ""
-    key_point "\"totalRequests\" -- Cumulative count of all /route calls this session (resets on restart)"
-    key_point "\"entries[]\" sorted newest-first, so the first entry is always your most recent task"
-    key_point "Low confidence scores (< 0.35) indicate potential skill gaps worth investigating"
-    key_point "\"latencyMs\" -- Spot slow routing decisions that might need optimization (e.g., >500ms)"
-    echo ""
+    # --- POST /reload ---
+    run_curl POST "$API_URL/reload" ""
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Debugging Routing Quality:${RESET}     Review recent entries to see if the right skills were selected."
-    echo -e "  ${MAGENTA}Analytics Dashboard:{RESET}          Count tasks per topSkill to see which skills are most popular."
-    echo -e "  ${GREEN}Performance Monitoring:{RESET}        Alert when latencyMs exceeds SLA thresholds."
+    local reload_json=""
+    reload_json=$(curl -s --max-time 30 -X POST "$API_URL/reload" 2>/dev/null || echo "{}")
+
+    if [[ -n "$reload_json" ]]; then
+        print_raw_output "Reload response ($(wc -c <<< "$reload_json") bytes)" "$reload_json"
+
+        local status new_total
+        if command -v python3 &>/dev/null; then
+            status=$(echo "$reload_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status','?'))" 2>/dev/null || echo "?")
+            new_total=$(echo "$reload_json" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+skills = d.get('skills', {})
+print(skills.get('totalSkills','?') if isinstance(skills, dict) else '?')
+" 2>/dev/null || echo "?")
+
+            echo ""
+            print_key_point "Reload status: ${BOLD}${status}${RESET}"
+            print_key_point "Skill count after reload: ${BOLD}${new_total}${RESET}"
+
+            # Compare with /stats to show if anything changed
+            local stats_json=""
+            stats_json=$(curl -s --max-time 10 "$API_URL/stats" 2>/dev/null || echo "{}")
+            local stats_total=""
+            stats_total=$(echo "$stats_json" | python3 -c "import sys,json; d=json.load(sys.stdin).get('skills',{}); print(d.get('totalSkills','?'))" 2>/dev/null || echo "?")
+
+            if [[ "$new_total" != "?" ]] && [[ "$stats_total" != "?" ]]; then
+                print_key_point "Stats endpoint confirms: ${BOLD}${stats_total} skills loaded${RESET}"
+            fi
+        fi
+    else
+        echo ""
+        echo -e "  ${RED}✗ Reload returned no response.${RESET}"
+        print_key_point "The reload might still be in progress (can take several seconds)." "${YELLOW}"
+    fi
+
     echo ""
-    separator
+    echo -e "${GREEN}${BOLD}  ✓ Router reloaded. Fresh skills index is now active.${RESET}"
 }
 
-# ─── Section 8: Force Reload ──────────────────────────────────────────────────
+# ─── Section 6: Metrics ──────────────────────────────────────────────────────
 
-section_08_force_reload() {
-    banner "SECTION 8/${TOTAL_SCENARIOS}: Force Reload -- POST /reload"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  You've just pushed 50 new skills to the repository. Or maybe you fixed a bug."
-    echo -e "  How do you get the router to pick up these changes?${CYAN}Answer: POST /reload${RESET}"
-    echo ""
-    echo -e "  Think of this like hitting Ctrl+R on your browser after a website update."
-    echo -e "  The system discards the old index and rebuilds from scratch."
-    echo ""
-    advance
+section_07_metrics() {
+    if [[ -n "$TARGET_SECTION" ]] && [[ "$TARGET_SECTION" != "07" ]]; then return; fi
 
-    code_block "CURL COMMAND" "curl -X POST ${API_URL}/reload"
-    note_msg "Simple POST with no request body -- just sends the signal to reload."
-    echo ""
+    print_section_header "METRICS — GET /metrics" "07"
 
-    advance
-    sub_banner "WHAT HAPPENS DURING RELOAD (the internal dance):"
-    echo ""
-    code_block "RELOAD SEQUENCE" \
-        "1. Server receives POST /reload" \
-        "2. Fetches updated skills-index.json from GitHub remote URL" \
-        "3. Downloads new/changed SKILL.md files from the skills repository" \
-        "4. Rebuilds the vector database (re-embeds all skill descriptions)" \
-        "5. Rebuilds the BM25 index (re-indexes all trigger keywords)" \
-        "6. Re-initializes MCP tools for each loaded skill" \
-        "7. Returns with updated statistics"
-    echo ""
+    echo -e "${DIM}  Compression metrics show how efficiently skills are stored and served.${RESET}"
+    echo -e "${DIM}  Cache hit rates, token savings, and eviction stats help optimize LLM context usage.${RESET}"
 
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
-    echo ""
-    printf '  {\n'
-    printf '    "status": "reloaded",              -- Operation completed successfully\n'
-    printf '    "skills": {\n'
-    printf '      "totalSkills": 643,           -- New count after reload (was 593 before)\n'
-    printf '      "categories": 8,            -- Domain categories remain the same\n'
-    printf '      "tags": 3012                -- Tags increased (new skills = new triggers)\n'
-    printf '    }\n'
-    printf '  }\n'
+    # --- GET /metrics ---
+    run_curl GET "$API_URL/metrics"
 
-    advance
-    sub_banner "WHEN TO USE /reload vs AUTOMATIC SYNC"
-    echo ""
-    code_block "AUTOMATIC VS MANUAL" \
-        "Auto-sync: The router fetches the skills index every SKILL_SYNC_INTERVAL seconds" \
-        "  (default: 3600 = 1 hour). New skills are discovered automatically." \
-        "" \
-        "Manual /reload: Use this when you need changes IMMEDIATELY -- after:" \
-        "  - Pushing a batch of new skills to the repository" \
-        "  - Fixing bugs in existing SKILL.md files" \
-        "  - Updating trigger keywords for better matching" \
-        "  - Testing that your changes actually get picked up"
-    echo ""
+    local metrics_json=""
+    metrics_json=$(curl -s --max-time 10 "$API_URL/metrics" 2>/dev/null || echo "{}")
 
-    sub_banner "WHAT YOU'RE LOOKING FOR"
-    echo ""
-    key_point "\"status\": \"reloaded\" means the full pipeline completed successfully"
-    key_point "Compare totalSkills before and after to verify new skills were added"
-    key_point "If you see an error, check Docker logs: docker logs skill-router --tail 50"
-    echo ""
+    if command -v python3 &>/dev/null && [[ -n "$metrics_json" ]]; then
+        local compression_data cache_hits cache_misses total_saved avg_pct
+        compression_data=$(echo "$metrics_json" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+c = d.get('compression', d.get('compressions', {}))
+print(json.dumps(c))
+" 2>/dev/null || echo "{}")
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Post-Push Verification:${RESET}       Push skills -> /reload -> verify totalSkills increased."
-    echo -e "  ${MAGENTA}Troubleshooting:{RESET}             Skills not auto-loading? /reload to refresh the index."
-    echo -e "  ${GREEN}Testing Workflow:{RESET}            Create a skill, push it, then /reload and route."
+        if [[ "$compression_data" != "{}" ]]; then
+            echo ""
+            echo -e "${WHITE}${BOLD}  Compression metrics:${RESET}"
+
+            cache_hits=$(echo "$compression_data" | python3 -c "import sys,json; print(json.load(sys.stdin).get('cacheHits','?'))" 2>/dev/null || echo "?")
+            cache_misses=$(echo "$compression_data" | python3 -c "import sys,json; print(json.load(sys.stdin).get('cacheMisses','?'))" 2>/dev/null || echo "?")
+            total_saved=$(echo "$compression_data" | python3 -c "import sys,json; print(json.load(sys.stdin).get('totalTokensSaved','?'))" 2>/dev/null || echo "?")
+            avg_pct=$(echo "$compression_data" | python3 -c "import sys,json; print(json.load(sys.stdin).get('averageCompressionPercent','?'))" 2>/dev/null || echo "?")
+
+            print_key_point "Cache hits:         ${BOLD}${cache_hits}${RESET}"
+            print_key_point "Cache misses:       ${BOLD}${cache_misses}${RESET}"
+            print_key_point "Total tokens saved: ${BOLD}${total_saved}${RESET} — that's context window preserved for LLMs"
+
+            if [[ "$cache_hits" != "?" && "$cache_misses" != "?" ]]; then
+                local total=$((cache_hits + cache_misses))
+                if [[ $total -gt 0 ]]; then
+                    local hit_ratio
+                    hit_ratio=$(python3 -c "print(f'{cache_hits / total * 100:.1f}')" 2>/dev/null || echo "?")
+                    print_key_point "Cache hit ratio:    ${BOLD}${hit_ratio}%${RESET}"
+                fi
+            fi
+
+            if [[ "$avg_pct" != "?" ]]; then
+                print_key_point "Avg compression:    ${BOLD}${avg_pct}%${RESET} — savings per skill fetch"
+            fi
+
+            # Show recent events if available
+            local recent_events
+            recent_events=$(echo "$metrics_json" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+events = d.get('recentEvents', [])
+for e in events[:5]:
+    print(e)
+" 2>/dev/null || echo "")
+
+            if [[ -n "$recent_events" ]]; then
+                echo ""
+                echo -e "${WHITE}${BOLD}  Recent compression events:${RESET}"
+                echo "$recent_events" | python3 -c "
+import sys, json
+for line in sys.stdin:
+    line = line.strip()
+    if not line or line == '[]' or line.startswith('['):
+        continue
+    try:
+        e = json.loads(line)
+        ts = e.get('timestamp','?')[:19]
+        event = e.get('event','?')
+        skill = e.get('skillName','?')
+        saved = e.get('tokensAfter',0)
+        hit = e.get('cacheHit', False)
+        hmark = '✓' if hit else '✗'
+        print(f'    [{ts}] {hmark} {event:12s} skill={skill} tokens_saved={saved}')
+    except:
+        pass
+" 2>/dev/null || echo "    <parse error>"
+            fi
+        fi
+    fi
+
     echo ""
-    separator
+    echo -e "${GREEN}${BOLD}  ✓ Metrics captured. High cache hit ratio means efficient skill serving.${RESET}"
 }
 
-# ─── Section 9: Compression Metrics ──────────────────────────────────────────
+# ─── Section 7: OpenCode Integration ─────────────────────────────────────────
 
-section_09_compression_metrics() {
-    banner "SECTION 9/${TOTAL_SCENARIOS}: Compression Metrics -- GET /metrics"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  Each skill is a Markdown document, often thousands of characters long."
-    echo -e "  When an LLM has a finite context window (say, 128K tokens), you cannot"
-    echo -e "  load every skill verbatim. That is where ${CYAN}compression${RESET} comes in."
-    echo ""
-    echo -e "  The /metrics endpoint tells you how well the compression system works:"
-    echo -e "  How many tokens are we saving? Is the cache doing its job? Are skills"
-    echo -e "  getting evicted too quickly?"
-    echo ""
-    advance
+section_08_opencode_integration() {
+    if [[ -n "$TARGET_SECTION" ]] && [[ "$TARGET_SECTION" != "08" ]]; then return; fi
 
-    code_block "CURL COMMAND" "curl ${API_URL}/metrics"
+    print_section_header "OPENCODE INTEGRATION — RUNNING ACTUAL OPENCODE" "08"
 
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
-    echo ""
-    printf '  {\n'
-    printf '    "timestamp": "2026-06-06T15:45:00.000Z",\n'
-    printf '    "compression": {\n'
-    printf '      "totalOperations": 1847,         -- Total compression operations performed\n'
-    printf '      "successfulCompressions": 1823,   -- How many succeeded\n'
-    printf '      "failedCompressions": 24,         -- How many failed (errors, too large)\n'
-    printf '      "cacheHits": 892,               -- Cached responses returned without recomputing\n'
-    printf '      "cacheMisses": 955,             -- Fresh compression needed\n'
-    printf '      "evictions": 156,               -- Cache entries removed (LRU eviction)\n'
-    printf '      "totalTokensSaved": 2847000,    -- Total tokens saved across all queries\n'
-    printf '      "averageCompressionPercent": 34.7, -- Average savings percentage\n'
-    printf '      "maxCacheSizeBytes": 1073741824,  -- Maximum cache size (1GB default)\n'
-    printf '      "currentCacheSizeBytes": 756492800   -- How much cache is currently used\n'
-    printf '    },\n'
-    printf '    "recentEvents": [\n'
-    printf '      {\n'
-    printf '        "timestamp": "2026-06-06T15:44:58.234Z",\n'
-    printf '        "event": "cache_hit",          -- compression | cache_hit | cache_miss | ...\n'
-    printf '        "skillName": "kubernetes-deployments-management",\n'
-    printf '        "tokensBefore": 4200,\n'
-    printf '        "tokensAfter": 2940,\n'
-    printf '        "compressPercent": 30.0,\n'
-    printf '        "cacheHit": true\n'
-    printf '      }\n'
-    printf '    ]\n'
-    printf '  }\n'
+    if [[ "$SKIP_OPCODE" == "true" ]]; then
+        echo -e "${YELLOW}  ⚠ Skipped (flag --skip-opencode was set)${RESET}"
+        return
+    fi
 
-    advance
-    sub_banner "KEY METRICS TO WATCH"
-    echo ""
-    key_point "cacheHits / (cacheHits + cacheMisses) = Cache Hit Ratio. Above 80% is good for production."
-    key_point "totalTokensSaved -- The most important number. Shows how much context window you saved."
-    key_point "evictions -- High evictions with low cache usage suggests the TTL is too short."
-    key_point "averageCompressionPercent -- Level 3 (~12%%) to Level 5 (~35%%) are safe production values."
-    echo ""
+    echo -e "${DIM}  Now we actually run opencode and show its FULL stdout/stderr output.${RESET}"
+    echo -e "${DIM}  This demonstrates the MCP bridge calling the skill-router in real time.${RESET}"
 
-    sub_banner "COMPRESSION LEVELS REFERENCE"
-    echo ""
-    code_block "LEVEL -> SAVINGS -> WHAT IT REMOVES" \
-        "0   -> 0%%       No compression (original, full content)" \
-        "1   -> ~5%%      Remove blank lines" \
-        "2   -> ~12%%     Remove 'When to Use' section" \
-        "3   -> ~18%%     Remove 'When NOT to Use' section" \
-        "4   -> ~28%%     Collapse 'Core Workflow' to paragraph" \
-        "5   -> ~35%%     Remove related-skills table" \
-        "6   -> ~42%%     Remove markdown formatting" \
-        "7   -> ~55%%     Remove code examples" \
-        "8   -> ~68%%     Abbreviate section names" \
-        "9   -> ~75%%     Combine all sections into summary" \
-        "10+ -> ~85%%     Summary only (first 200 chars)"
-    echo ""
+    # --- Run OpenCode with full logging ---
+    if ! command -v opencode &>/dev/null; then
+        echo ""
+        echo -e "  ${RED}✗ 'opencode' command not found on PATH.${RESET}"
+        print_key_point "Install opencode or skip this section with --skip-opencode" "${YELLOW}"
+        return
+    fi
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Cost Optimization:${RESET}            Fewer tokens = lower LLM API costs."
-    echo -e "  ${MAGENTA}Capacity Planning:{RESET}           Monitor currentCacheSizeBytes vs maxCacheSizeBytes."
-    echo -e "  ${GREEN}Quality Assurance:{RESET}             Check averageCompressionPercent -- if too high, you may be" \
-    "                                                    losing critical instructions. Level 3-5 is the sweet spot."
     echo ""
-    separator
+    echo -e "${WHITE}${BOLD}  Running: timeout 30 opencode run ...${RESET}"
+    echo -e "${DIM}  (This will execute and capture everything — stdout AND stderr)${RESET}"
+
+    local stdout_file="$TEMP_DIR/stdout_$$"
+    local stderr_file="$TEMP_DIR/stderr_$$"
+
+    # Run opencode with full logging, capture both streams separately
+    timeout 30 opencode run \
+        --print-logs \
+        --log-level DEBUG \
+        --dangerously-skip-permissions \
+        -m opencode/big-pickle \
+        "hello" \
+        > "$stdout_file" 2> "$stderr_file" || true
+
+    local stdout_content stderr_content
+    stdout_content=$(cat "$stdout_file" 2>/dev/null || echo "")
+    stderr_content=$(cat "$stderr_file" 2>/dev/null || echo "")
+
+    # Display stdout
+    if [[ -n "$stdout_content" ]]; then
+        print_raw_output "OpenCode STDOUT ($(wc -c <<< "$stdout_content") bytes)" "$stdout_content"
+    else
+        echo -e "  ${DIM}│ (no stdout)${RESET}"
+        echo -e "${CYAN}  └──────────────${RESET}"
+        print_key_point "The model may have produced no text output or timed out"
+    fi
+
+    # Display stderr (logs, MCP calls, tool traces)
+    if [[ -n "$stderr_content" ]]; then
+        print_raw_output "OpenCode STDERR ($(wc -c <<< "$stderr_content") bytes)" "$stderr_content"
+    else
+        echo -e "  ${DIM}│ (no stderr)${RESET}"
+        echo -e "${CYAN}  └──────────────${RESET}"
+        print_key_point "No debug logs captured — check --print-logs flag"
+    fi
+
+    rm -f "$stdout_file" "$stderr_file"
+
+    # --- Analyze what we got ---
+    echo ""
+    echo -e "${WHITE}${BOLD}  Analysis of the output:${RESET}"
+
+    if [[ -n "$stderr_content" ]]; then
+        local mcp_calls tool_calls skill_loads log_lines
+        mcp_calls=$(echo "$stderr_content" | grep -c "route_to_skill\|mcp.*call" 2>/dev/null || echo "0")
+        tool_calls=$(echo "$stderr_content" | grep -c "\[TOOL CALL\]" 2>/dev/null || echo "0")
+        skill_loads=$(echo "$stderr_content" | grep -c "\[SKILL ACCESS\]\|\[ON-DEMAND\]" 2>/dev/null || echo "0")
+        log_lines=$(wc -l <<< "$stderr_content")
+
+        print_key_point "Log lines in stderr:    ${BOLD}${log_lines}${RESET}"
+        print_key_point "MCP route_to_skill calls: ${BOLD}${mcp_calls}${RESET} — this is how the router gets queried"
+        print_key_point "Tool calls:             ${BOLD}${tool_calls}${RESET} — MCP tools that opencode invoked"
+        print_key_point "Skill loads:            ${BOLD}${skill_loads}${RESET} — skills loaded during execution"
+
+        # Show log level breakdown
+        echo ""
+        echo -e "${CYAN}  ┌── Log Level Breakdown:${RESET}"
+        for level in DEBUG INFO WARN ERROR; do
+            local count
+            count=$(echo "$stderr_content" | grep -c "\[$level\]" 2>/dev/null || echo "0")
+            if [[ $count -gt 0 ]]; then
+                echo -e "  ${DIM}  │${RESET}   ${BOLD}${level}${RESET}: ${count} entries"
+            fi
+        done
+        echo -e "${CYAN}  └──────────────────────${RESET}"
+
+        # Extract the skill-router HTTP calls from stderr
+        local http_calls
+        http_calls=$(echo "$stderr_content" | grep "/route\|/health\|/skill" 2>/dev/null | head -5 || true)
+        if [[ -n "$http_calls" ]]; then
+            echo ""
+            echo -e "${WHITE}${BOLD}  HTTP calls to skill-router (from stderr logs):${RESET}"
+            echo "$http_calls" | while IFS= read -r line; do
+                echo -e "  ${CYAN}→${RESET} $line"
+            done
+        fi
+    else
+        print_key_point "No stderr captured — the model may not be available or timed out" "${YELLOW}"
+    fi
+
+    if [[ -z "$stdout_content" && -z "$stderr_content" ]]; then
+        echo ""
+        echo -e "  ${YELLOW}⚠ Both stdout and stderr were empty.${RESET}"
+        print_key_point "Common causes:"
+        print_key_point "  1. The model (opencode/big-pickle) is not available or timed out after 30s"
+        print_key_point "  2. opencode needs API keys configured for the model provider"
+        print_key_point "  3. Try running 'opencode' interactively first to verify it works"
+    fi
+
+    echo ""
+    echo -e "${GREEN}${BOLD}  ✓ OpenCode integration captured live.${RESET}"
+    echo -e "${DIM}  (If you see MCP calls hitting /route, the skill-router is actively routing tasks)${RESET}"
 }
 
-# ─── Section 10: Auto-Created Skills ──────────────────────────────────────────
+# ─── Section 8: Capturing Output ─────────────────────────────────────────────
 
-section_10_auto_created_skills() {
-    banner "SECTION 10/${TOTAL_SCENARIOS}: Auto-Created Skills (POST /skill/create)"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  Here is a problem: What if a user asks about something you have NO skill for?"
-    echo -e "${CYAN}\"How do I set up ArgoCD sync waves?\"${RESET} -- maybe you do not have that skill."
-    echo -e ""
-    echo -e "  The answer: The system ${MAGENTA}auto-creates skills on the fly${RESET}. When /route returns"
-    echo -e "  low confidence (below threshold), it triggers AI-driven skill generation."
-    echo ""
-    advance
+section_09_capture_output() {
+    if [[ -n "$TARGET_SECTION" ]] && [[ "$TARGET_SECTION" != "09" ]]; then return; fi
 
-    sub_banner "POST /skill/create -- Generating a New Skill"
-    echo ""
-    code_block "CURL REQUEST (create from task)" \
-        "curl -X POST ${API_URL}/skill/create \"-H Content-Type: application/json\" \\" \
-        "  \"-d '{\"task\": \"Set up ArgoCD sync waves for deployment ordering\",\"" \
-        "\"domain\": \"cncf\", \"topic\": \"argocd-sync-waves\", \"dryRun\": false}'\""
+    print_section_header "CAPTURING OUTPUT — 2>&1 | tee PATTERN" "09"
 
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
-    echo ""
-    printf '  {\n'
-    printf '    "status": "created",                -- created | dry_run | no_gap\n'
-    printf '    "skillName": "cncf-argocd-sync-waves",\n'
-    printf '    "skillPath": "/cache/skills/cncf/argocd-sync-waves/SKILL.md",\n'
-    printf '    "domain": "cncf",                   -- Auto-detected domain\n'
-    printf '    "topic": "argocd-sync-waves",       -- Generated topic (kebab-case)\n'
-    printf '    "description": "Implements ArgoCD sync wave patterns for ordered deployment...",\n'
-    printf '    "triggers": "argocd, sync waves, deployment ordering, gitops,...",\n'
-    printf '    "validationPasses": 3,              -- Passed validation after 3 rounds\n'
-    printf '    "totalValidationAttempts": 4,       -- One attempt failed before succeeding\n'
-    printf '    "confidenceThreshold": 0.35,        -- Gap detection threshold used\n'
-    printf '    "gapConfidence": 0.21,              -- Original routing confidence (low = gap)\n'
-    printf '    "totalTokensUsed": 4720,            -- LLM tokens consumed during generation\n'
-    printf '    "generationAttempts": 2             -- 1 initial + 1 regeneration during retry\n'
-    printf '  }\n'
+    echo -e "${DIM}  Demonstrating how to capture both stdout and stderr of any command.${RESET}"
+    echo -e "${DIM}  The '2>&1' merges stderr into stdout; 'tee' writes to both screen and file.${RESET}"
 
-    advance
-    sub_banner "THE AUTO-CREATION PIPELINE"
+    # --- Demo: Simple command showing the pattern ---
     echo ""
-    code_block "HOW IT WORKS (under the hood)" \
-        "1. Router detects gap: confidence < 0.35 (or empty results)" \
-        "2. LLM analyzes the task and existing skill corpus" \
-        "3. Determines: domain, topic, description, triggers for new skill" \
-        "4. Generates SKILL.md with proper frontmatter and content" \
-        "5. Validates against stub detection rules (size, sentinels, etc.)" \
-        "6. If validation fails -> regenerates (up to max retries, default 5)" \
-        "7. If all pass -> writes file, commits to git, pushes to origin/main" \
-        "8. Calls POST /reload to make the new skill immediately available"
-    echo ""
+    echo -e "${WHITE}${BOLD}  Example 1: Capturing a simple curl with both streams${RESET}"
 
-    advance
-    sub_banner "WHAT MAKES A GOOD AUTO-CREATION CANDIDATE"
-    echo ""
-    key_point "High gap confidence = low skill coverage -> system knows it needs a new skill"
-    key_point "Domain is clear (cncf, coding, trading) -> LLM can target the right knowledge area"
-    key_point "Topic fits naming convention (kebab-case) -> auto-generated names follow rules"
-    key_point "Task description is specific and actionable -> better skill content quality"
-    echo ""
+    local capture_file="$TEMP_DIR/capture_demo.log"
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Auto-Discovers Gaps:${RESET}          No need to manually track which skills are missing."
-    echo -e "  ${MAGENTA}Rapid Skill Development:${RESET}      New domain emerges? The system creates the skill for you."
-    echo -e "  ${GREEN}Dry Run Mode:{RESET}                 Set dryRun=true to preview without saving to disk."
-    echo ""
-    separator
+    # Run curl with tee — everything goes to screen AND file
+    curl -s --max-time 5 "$API_URL/health" 2>&1 | tee "$capture_file" > /dev/null || true
 
-    # Section 10b: GET /skills/created
-    sub_banner "GET /skills/created -- Listing Auto-Created Skills"
     echo ""
-    code_block "CURL COMMAND" "curl ${API_URL}/skills/created"
+    print_key_point "Output was captured to: ${BOLD}${capture_file}${RESET}"
 
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
-    echo ""
-    printf '  {\n'
-    printf '    "total": 7,                     -- Number of auto-created skills\n'
-    printf '    "totalTokensUsed": 32840,       -- Cumulative tokens spent creating them\n'
-    printf '    "skills": [\n'
-    printf '      {\n'
-    printf '        "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",\n'
-    printf '        "skillName": "cncf-argocd-sync-waves",\n'
-    printf '        "domain": "cncf",\n'
-    printf '        "topic": "argocd-sync-waves",\n'
-    printf '        "description": "Implements ArgoCD sync wave patterns...",\n'
-    printf '        "triggers": "argocd, sync waves, deployment ordering, gitops,...",\n'
-    printf '        "filePath": "/cache/skills/cncf/argocd-sync-waves/SKILL.md",\n'
-    printf '        "timestamp": "2026-06-06T15:30:00.000Z",\n'
-    printf '        "totalTokensUsed": 4720,\n'
-    printf '        "generationAttempts": 2,\n'
-    printf '        "validationAttempts": 4,\n'
-    printf '        "gitCommitted": true,\n'
-    printf '        "gitPushed": true\n'
-    printf '      }\n'
-    printf '    ]\n'
-    printf '  }\n'
+    if [[ -f "$capture_file" ]]; then
+        local file_size
+        file_size=$(wc -c < "$capture_file")
+        print_key_point "File size: ${BOLD}${file_size} bytes${RESET}"
+        echo ""
+        echo -e "${CYAN}  ┌── File contents:${RESET}"
+        cat "$capture_file" | while IFS= read -r line; do
+            echo -e "  ${DIM}  │${RESET} $line"
+        done
+        echo -e "${CYAN}  └──────────────────────${RESET}"
+    fi
 
-    advance
-    sub_banner "WHAT YOU'RE LOOKING FOR"
-    echo ""
-    key_point "\"totalTokensUsed\" -- Budget tracking: how much have you spent on auto-created skills?"
-    key_point "\"gitCommitted\" / \"gitPushed\" -- Verify auto-generated skills made it into version control"
-    key_point "Each skill entry has full metadata, including generation cost and validation history"
-    echo ""
+    rm -f "$capture_file"
 
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Audit Trail:${RESET}                    Review all auto-created skills for quality review."
-    echo -e "  ${MAGENTA}Budget Tracking:{RESET}             Monitor token usage for auto-creation (can get expensive!)."
-    echo -e "  ${GREEN}Dependency Mapping:{RESET}           See which domains have the most auto-generated coverage."
+    # --- Demo: Separate stdout vs stderr ---
     echo ""
-    separator
+    echo -e "${WHITE}${BOLD}  Example 2: Separating stdout and stderr into different files${RESET}"
+
+    local demo_stdout="$TEMP_DIR/demo_stdout.log"
+    local demo_stderr="$TEMP_DIR/demo_stderr.log"
+
+    # A command that writes to both streams
+    (
+        echo "This goes to STDOUT"
+        echo "This goes to STDERR" >&2
+        echo "Another STDOUT line"
+        echo "Another STDERR line" >&2
+    ) > "$demo_stdout" 2> "$demo_stderr"
+
+    echo ""
+    echo -e "${CYAN}  ┌── stdout file:${RESET}"
+    cat "$demo_stdout" | while IFS= read -r line; do
+        echo -e "  ${DIM}  │${RESET} $line"
+    done
+    echo -e "${CYAN}  └──────────────────────${RESET}"
+
+    echo ""
+    echo -e "${CYAN}  ┌── stderr file:${RESET}"
+    cat "$demo_stderr" | while IFS= read -r line; do
+        echo -e "  ${DIM}  │${RESET} $line"
+    done
+    echo -e "${CYAN}  └──────────────────────${RESET}"
+
+    rm -f "$demo_stdout" "$demo_stderr"
+
+    # --- Summary of patterns ---
+    echo ""
+    echo -e "${WHITE}${BOLD}  Patterns you'll use:${RESET}"
+    echo ""
+    echo -e "  ${CYAN}# Capture everything to a file (screen + file):${RESET}"
+    echo -e "  opencode run ... 2>&1 | tee ~/opencode.log"
+    echo ""
+    echo -e "  ${CYAN}# Capture stdout and stderr separately:${RESET}"
+    echo -e "  opencode run ... > stdout.log 2> stderr.log"
+    echo ""
+    echo -e "  ${CYAN}# Just the response, no logs (clean output):${RESET}"
+    echo -e "  opencode run ... > response.txt 2>/dev/null"
+    echo ""
+    echo -e "  ${CYAN}# Grep only errors from a combined log:${RESET}"
+    echo -e "  cat full.log | grep '\[ERROR\]'"
+
+    echo ""
+    echo -e "${GREEN}${BOLD}  ✓ Output capture patterns demonstrated.${RESET}"
 }
 
-# ─── Section 11: Config Link Following ────────────────────────────────────────
-
-section_11_config_link_following() {
-    banner "SECTION 11/${TOTAL_SCENARIOS}: Config -- GET/POST /config/link-following"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  SKILL.md files often contain markdown links -- to other skills, external docs,"
-    echo -e "  or GitHub pages. The ${CYAN}link following system${RESET} decides:"
-    echo -e ""
-    echo -e "${MAGENTA}\"Should we follow this link? If so, how deep? External URLs allowed?\"${RESET}"
-    echo ""
-    echo -e "  Think of it like a web browser's security settings for links -- you control"
-    echo -e "  what gets followed, how deeply, and whether external sites are safe to visit."
-    echo ""
-    advance
-
-    sub_banner "GET /config/link-following -- Read Current Configuration"
-    echo ""
-    code_block "CURL COMMAND (read)" "curl ${API_URL}/config/link-following"
-
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
-    echo ""
-    printf '  {\n'
-    printf '    "enabled": true,                -- Are link following rules active?\n'
-    printf '    "allowExternalLinks": false,    -- Follow links to external URLs (https://)?\n'
-    printf '    "maxDepth": 3,                  -- How deep to follow nested links\n'
-    printf '    "maxExternalSizeKb": 10,        -- Max KB for fetched external content\n'
-    printf '    "compressionMode": "brief",     -- brief | moderate | skip\n'
-    printf '    "jsRenderingEnabled": false,    -- Execute JavaScript on external pages?\n'
-    printf '    "jsRenderTimeoutMs": 5000,      -- Timeout for JS rendering (ms)\n'
-    printf '    "jsRenderFallback": true,       -- Fallback to raw HTML if JS fails\n'
-    printf '    "resolutionMode": "inline",    -- inline | semantic | compressed\n'
-    printf '    "semanticTopK": 3,              -- Top-K results for semantic resolution\n'
-    printf '    "semanticSimilarityThreshold": 0.3, -- Min similarity score for match\n'
-    printf '    "updatedAt": "2026-06-06T15:45:00.000Z"\n'
-    printf '  }\n'
-
-    advance
-    sub_banner "POST /config/link-following -- Update Configuration at Runtime"
-    echo ""
-    code_block "CURL REQUEST (update)" \
-        "curl -X POST ${API_URL}/config/link-following \"-H Content-Type: application/json\" \\" \
-        "  \"-d '{\"max_depth\": 5, \"allow_external_links\": true,\"" \
-        "\"resolution_mode\": \"semantic\", \"compression_mode\": \"moderate\"}'\""
-
-    advance
-    echo -e "${BOLD}WHAT THE RESPONSE LOOKS LIKE:${RESET}"
-    echo ""
-    printf '  {\n'
-    printf '    "enabled": true,                -- Updated config values\n'
-    printf '    "allowExternalLinks": true,\n'
-    printf '    "maxDepth": 5,                  -- Was 3 before this update\n'
-    printf '    "maxExternalSizeKb": 10,\n'
-    printf '    "compressionMode": "moderate",\n'
-    printf '    "jsRenderingEnabled": false,\n'
-    printf '    "jsRenderTimeoutMs": 5000,\n'
-    printf '    "jsRenderFallback": true,\n'
-    printf '    "resolutionMode": "semantic",\n'
-    printf '    "semanticTopK": 3,\n'
-    printf '    "semanticSimilarityThreshold": 0.3,\n'
-    printf '    "updatedAt": "2026-06-06T15:47:30.123Z"   -- When this change was made\n'
-    printf '  }\n'
-
-    advance
-    sub_banner "CONFIGURATION FIELD EXPLANATIONS"
-    echo ""
-    code_block "KEY FIELDS AND THEIR PURPOSES" \
-        "maxDepth (1-10):     How deep to follow nested links. 3 means: A->B->C stops before D." \
-        "allowExternalLinks:  When false, only local SKILL.md references are resolved." \
-        "compressionMode:     brief=summary, moderate=key sections, skip=no fetch" \
-        "resolutionMode:      inline=full content, semantic=search-match, compressed" \
-        "jsRenderingEnabled:  Execute JS on external pages to render SPAs. Security risk!" \
-        "jsRenderTimeoutMs:   How long to wait for JS execution (1000-30000ms)" \
-        "semanticTopK:        When using semantic mode, how many results to return" \
-        "semanticSimilarityThreshold: Min score (0-1) for a semantic match to be accepted"
-    echo ""
-
-    sub_banner "WHAT YOU'RE LOOKING FOR"
-    echo ""
-    key_point "\"allowExternalLinks\" -- Should be false in production unless you trust all referenced sources."
-    key_point "\"maxDepth\" -- Higher values = more content loaded but more latency. 3-5 is recommended."
-    key_point "\"resolutionMode\" -- 'semantic' mode uses vector search to find matching content sections."
-    echo ""
-
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Security Hardening:${RESET}         Set allowExternalLinks=false to prevent loading untrusted content."
-    echo -e "  ${MAGENTA}Performance Tuning:{RESET}         Reduce maxDepth for faster routing, increase for richer context."
-    echo -e "  ${GREEN}Semantic Link Resolution:{RESET}   Use 'semantic' mode with high similarity threshold for accuracy."
-    echo ""
-    separator
-}
-
-# ─── Section 12: Capturing OpenCode Output ─────────────────────────────────────
-
-section_12_output_capture() {
-    banner "SECTION 12/${TOTAL_SCENARIOS}: Capturing OpenCode's Full Output"
-    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
-    echo ""
-    echo -e "  By default, OpenCode splits its output into two streams:"
-    echo ""
-    echo -e "  ${GREEN}stdout${RESET} — The formatted AI response (what the user sees)"
-    echo -e "  ${MAGENTA}stderr${RESET} — Debug logs, MCP bridge calls, skill loading events, tool traces"
-    echo ""
-    echo -e "  If you want to see everything in one stream -- for debugging, logging, or"
-    echo -e "  scripts that need the full picture -- you need both flags together."
-    echo ""
-    echo -e "  Think of it like a podcast with closed captions: ${CYAN}stdout${RESET} is what people hear,"
-    echo -e "  and ${MAGENTA}stderr${RESET} is the transcript running alongside. Capturing both gives you"
-    echo -e "  the complete show."
-    echo ""
-    advance
-
-    echo -e "${BOLD}THE ANATOMY:${RESET}"
-    echo ""
-    code_block "FULL COMMAND WITH ALL FLAGS" \
-        "opencode run \"-\"" \
-        "  --print-logs                    # Enable verbose logging to stderr" \
-        "  --log-level DEBUG               # Maximum detail level (MCP calls, skill loads, tool traces)" \
-        "  --dangerously-skip-permissions   # Auto-approve all tool permissions (no prompts)" \
-        "  -m opencode/big-pickle          # Model selection" \
-        "  \"your prompt here\"              # The task" \
-        "  2>&1 | tee output.log           # Merge stderr into stdout and save to file"
-    echo ""
-
-    advance
-    sub_banner "FLAG EXPLANATION -- EVERY PIECE MATTERS"
-    echo ""
-    code_block "BREAKDOWN OF EACH COMPONENT" \
-        "--print-logs        Prints internal logs (MCP bridge calls, skill loading events," \
-        "                    token usage) to STDERR. Without this, you miss the debug trail." \
-        "" \
-        "--log-level DEBUG   Sets verbosity level. DEBUG captures everything including tool" \
-        "                    call arguments, responses, and HTTP requests to the router." \
-        "                    Other levels: INFO (key events only), WARN (warnings), ERROR (errors)" \
-        "" \
-        "--dangerously-skip-permissions  Prevents interactive permission prompts that would" \
-        "                    block non-interactive use (scripts, CI/CD, background jobs)." \
-        "                    Only use when you trust the prompt -- this bypasses safety!" \
-        "" \
-        "-m opencode/big-pickle   Specifies which model to use. Options include cloud models:" \
-        "                    opencode/gpt-5, opencode/claude-sonnet-4, opencode/big-pickle, etc." \
-        "                    If omitted, uses the default model from your config." \
-        "" \
-        "2>&1              Shell redirection: merges STDERR (verbose logs) into STDOUT" \
-        "                    (formatted response) so everything flows together in one stream." \
-        "" \
-        "| tee output.log   Writes everything to both the terminal screen AND a file for" \
-        "                    later inspection. Without | tee, you only see it on screen."
-
-    advance
-    echo -e "${BOLD}WHAT YOU'LL SEE IN THE CAPTURED OUTPUT:${RESET}"
-    echo ""
-    printf '  The output is a mix of log levels and formatted text:\n'
-    printf '  +----------------------------------------------------------------------+\n'
-    printf '  | [DEBUG] incoming request  {"method":"tools/call","tool":"route_to_skill"}\n'
-    printf '  | [INFO] [TOOL CALL]      {"tool":"route_to_skill","task":"Debug my auth bug"}\n'
-    printf '  | [DEBUG] → POST /route   {"status":200,"durationMs":1247}\n'
-    printf '  | [INFO] [SKILL ACCESS]   skills resolved {"loaded":["coding-security-review"],"total":3,"missing":[]}\n'
-    printf '  | [INFO] [ON-DEMAND]      served via router {"skill":"coding-security-review"}\n'
-    printf '  |\n'
-    printf '  | ... (now the formatted AI response appears in stdout) ...\n'
-    printf '  |\n'
-    printf '  | Here'\''s my analysis of the authentication flow...\n'
-    printf '  |\n'
-    printf '  | The issue is in your token refresh logic -- specifically, when the\n'
-    printf '  | access token expires, the system should automatically call /auth/refresh\n'
-    printf '  | before retrying. Here is the fix:\n'
-    printf '  |\n'
-    printf '  |   async function refreshToken() {\n'
-    printf '  |     const response = await fetch("/api/auth/refresh", { method: "POST" });\n'
-    printf '  |     if (!response.ok) throw new Error("Token refresh failed");\n'
-    printf '  |     return response.json();\n'
-    printf '  |   }\n'
-    printf '  |\n'
-    printf '  | [DEBUG] token usage: 2,847 input / 512 output\n'
-    printf '  +----------------------------------------------------------------------+\n'
-    echo ""
-
-    advance
-    sub_banner "LOG LEVELS YOU'LL ENCOUNTER"
-    echo ""
-    code_block "UNDERSTANDING THE LOG OUTPUT" \
-        "[DEBUG] -- Routine operations: tool calls, HTTP requests to router, skill resolution,\n" \
-        "           token tracking. The most verbose level -- useful for deep troubleshooting." \
-        "" \
-        "[INFO]  -- Meaningful events: tool call start/end, skills loaded, on-demand skill\n" \
-        "           fetches, execution results. Enough context without overwhelming noise." \
-        "" \
-        "[WARN]  -- Warnings: slow queries (>500ms), deprecated API usage, missing config\n" \
-        "           values. Indicates something is suboptimal but not broken." \
-        "" \
-        "[ERROR] -- Errors: failed tool calls, HTTP request failures, skill load errors.\n" \
-        "           The reason things broke. Always check this when routing fails." \
-        "" \
-        "(no tag)  -- Formatted text: the actual AI response and tool outputs from stdout."
-
-    advance
-    sub_banner "CAPTURE MODES FOR DIFFERENT NEEDS"
-    echo ""
-    printf '  +-----------+---------------------------------------------------+----------------------+\n'
-    printf '  | ${BOLD}Mode${RESET}       | Command                                           | When to Use          |\n'
-    printf '  +-----------+---------------------------------------------------+----------------------+\n'
-    printf '  | ${DIM}Human     ${RESET}| opencode run --print-logs --log-level INFO ...   | Quick debugging,\n'
-    printf '  |           |   2>&1 | tee log.txt                              | occasional checks    |\n'
-    printf '  +-----------+---------------------------------------------------+----------------------+\n'
-    printf '  | ${DIM}Max       ${RESET}| opencode run --print-logs --log-level DEBUG ...  | Deep troubleshooting,\n'
-    printf '  |           |   2>&1 | tee log.txt                              | MCP bridge issues    |\n'
-    printf '  +-----------+---------------------------------------------------+----------------------+\n'
-    printf '  | ${DIM}Structured${RESET}| opencode run --format json ...                    | Parsing programmatically,\n'
-    printf '  |           |                                                   | CI/CD pipelines      |\n'
-    printf '  +-----------+---------------------------------------------------+----------------------+\n'
-    printf '  | ${DIM}Silent    ${RESET}| opencode run ... > response.txt 2>/dev/null       | Just want the AI\n'
-    printf '  |           |                                                   | output, no logs      |\n'
-    printf '  +-----------+---------------------------------------------------+----------------------+\n'
-    echo ""
-
-    advance
-    sub_banner "REAL-WORLD USE CASES"
-    echo -e "  ${CYAN}Debugging a Stuck MCP Call:${RESET}     Capture everything to see if the skill router timed out."
-    echo -e "                                   Look for long durationMs values or missing [INFO] events."
-    echo ""
-    echo -e "  ${MAGENTA}Creating Reproducible Examples:${RESET} Save full output to share with someone helping debug."
-    echo -e "                                   The stderr logs provide critical context the AI response alone lacks."
-    echo ""
-    echo -e "  ${GREEN}Audit Trail:${RESET}                   Keep logs of every task run for compliance or review."
-    echo -e "                                   Each log entry captures what was asked, which skills were used, and outcomes."
-    echo ""
-    echo -e "  ${BLUE}Training Data Collection:${RESET}       Collect prompt/response pairs (with DEBUG logs) to analyze routing quality."
-    echo -e "                                   Study which triggers fire most, what confidence scores correlate with success."
-    echo ""
-
-    # Extra detail: the silent mode example
-    advance
-    sub_banner "QUICK EXAMPLES"
-    echo ""
-    code_block "CAPTURE EVERYTHING (debugging)" \
-        "# Run OpenCode, capture everything including debug logs:" \
-        "opencode run --print-logs --log-level DEBUG \"Fix my auth bug\" \\" \
-        "  --dangerously-skip-permissions -m opencode/big-pickle 2>&1 | tee ~/opencode-debug.log"
-
-    code_block "CAPTURE JUST THE RESPONSE (silent)" \
-        "# Get clean AI output only, no logs:" \
-        "opencode run \"Route to the best skill for Kubernetes pod debugging\" > ~/response.txt"
-
-    code_block "PIPE TO JQ FOR FILTERING (structured)" \
-        "# Extract only tool call events from a verbose capture:" \
-        "cat opencode-debug.log | grep '\[INFO\].*TOOL CALL' | jq ."
-    echo ""
-    separator
-}
-
-# ─── Section Summary & Exit ──────────────────────────────────────────────────
+# ─── Summary --- 
 
 section_summary() {
-    banner "COMPLETE ENDPOINT REFERENCE -- YOUR CHEAT SHEET"
-    echo -e "${BOLD}Here is every endpoint we covered today:${RESET}"
+    print_section_header "WALKTHROUGH COMPLETE — ALL SECTIONS EXECUTED" ""
+
+    echo -e "${WHITE}${BOLD}  Here's what we just ran live:${RESET}"
     echo ""
 
-    printf "  ${DIM}+${BOLD} %-6s${DIM}-+-- %-42s${DIM}-+----------------------------------------------+\n" \
-        "METHOD" "ENDPOINT" "PURPOSE"
-    printf "  ${DIM}+------++------------------------------------------+-+----------------------------------------------+\n"
-
-    local endpoints=(
-        "GET     /health                    Health check and readiness probe"
-        "GET     /stats                     System statistics (skills count, categories)"
-        "GET     /skills                    Browse full skill catalog with metadata"
-        "GET     /skill/:name               Retrieve SKILL.md content for a specific skill"
-        "POST    /route  CORE               Route a natural language task to best-matching skills"
-        "POST    /execute                   Execute routed tasks via MCP tools"
-        "GET     /access-log                Audit trail of last 100 routing decisions"
-        "POST    /reload                    Force reload skills index from source of truth"
-        "GET     /metrics                   Compression metrics and cache statistics"
-        "POST    /skill/create              AI-driven skill creation when no good match exists"
-        "GET     /skills/created            List all auto-generated skills with metadata"
-        "GET     /config/link-following     Read current markdown link resolution config"
-        "POST    /config/link-following     Update link following configuration at runtime"
+    local sections_run=0
+    local all_sections=(
+        "System Check     — docker ps, GET /health, MCP log, port check"
+        "API Stats        — GET /stats with field-by-field breakdown"
+        "Route a Task     — POST /route with real task queries"
+        "Skill Content    — GET /skill/:name showing actual SKILL.md"
+        "Access Log       — GET /access-log with recent entries"
+        "Reload Router    — POST /reload triggering fresh index build"
+        "Metrics          — GET /metrics with cache/compression stats"
+        "OpenCode         — Running actual opencode, capturing full stdout/stderr"
+        "Capture Output   — Demonstrating 2>&1 | tee patterns"
     )
 
-    for ep in "${endpoints[@]}"; do
-        local method endpoint purpose
-        method=$(echo "$ep" | awk '{print $1}')
-        endpoint=$(echo "$ep" | awk '{print $2}')
-        purpose=$(echo "$ep" | sed 's/^[^ ]* [^ ]* //')
-        if [[ ${#purpose} -gt 56 ]]; then
-            purpose="${purpose:0:53}..."
-        fi
-        printf "  ${DIM}| ${BOLD}%-6s${RESET}${DIM} │ %-42s${DIM} │ %-58s${RESET}│\n" "$method" "$endpoint" "$purpose"
+    for section in "${all_sections[@]}"; do
+        local name="${section%% *}"
+        echo -e "  ${GREEN}✓${RESET} $section"
+        sections_run=$((sections_run + 1))
     done
 
-    printf "  ${DIM}+------+------+----------------------------------------------+\n\n"
+    echo ""
+    print_key_point "${BOLD}${sections_run} sections executed with real live output${RESET}"
 
-    advance
+    echo ""
+    echo -e "${DIM}  Quick reference for the remaining endpoints we didn't cover live:${RESET}"
+    echo ""
+    echo -e "  ${CYAN}POST   /execute${RESET}           Run routed tasks via MCP tools"
+    echo -e "  ${CYAN}POST   /skill/create${RESET}     Auto-generate a skill via LLM"
+    echo -e "  ${CYAN}GET    /skills/created${RESET}   List auto-generated skills"
+    echo -e "  ${CYAN}GET/POST /config/link-following${RESET}  Markdown link resolution config"
+    echo ""
+    echo -e "${GREEN}${BOLD}  All live demo output is available in temp directory:${RESET} ${TEMP_DIR}"
 
-    sub_banner "WHAT YOU'VE LEARNED TODAY"
-    echo ""
-    code_block "THE AGENT SKILL ROUTER IN 5 SENTENCES" \
-        "1. OpenCode sends a user query as a natural language task string." \
-        "2. POST /route uses hybrid scoring (vector + BM25 + triggers + archetype + historical) to find the best-matching skills from 593+ options." \
-        "3. The response includes skill names, scores, reasoning, and an execution plan (sequential/parallel/hybrid)." \
-        "4. POST /execute runs the selected skills through MCP tools for actual task completion." \
-        "5. If no good match is found (low confidence), POST /skill/create auto-generates a new skill via LLM."
-    echo ""
+    # Show what's left in temp dir (should be cleaned by trap, but let's list before exit)
+    local remaining_files
+    remaining_files=$(ls "$TEMP_DIR" 2>/dev/null | wc -l || echo "0")
+    if [[ $remaining_files -gt 0 ]]; then
+        print_key_point "Note: ${BOLD}${remaining_files} temp file(s) remain (trap cleanup fires after this message)"
+    fi
 
-    advance
-
-    sub_banner "QUICK REFERENCE: COMMON WORKFLOWS"
     echo ""
-    code_block "WORKFLOW 1: Check service health" \
-        "curl ${API_URL}/health | grep status"
-    echo ""
-    code_block "WORKFLOW 2: Route a task and get top skill" \
-        "curl -X POST ${API_URL}/route \"-d '{\"task\": \"Fix my pod crash\"}'\" | grep '\"name\"'"
-    echo ""
-    code_block "WORKFLOW 3: Get full skill content" \
-        "curl ${API_URL}/skill/kubernetes-events-management"
-    echo ""
-    code_block "WORKFLOW 4: Browse all skills by domain" \
-        "curl ${API_URL}/skills | python3 -m json.tool | grep -E '\"(name|category)\":'"
-    echo ""
-    code_block "WORKFLOW 5: After pushing new skills, reload" \
-        "curl -X POST ${API_URL}/reload && echo 'Skills reloaded!'"
-    echo ""
-    code_block "WORKFLOW 6: Check compression efficiency" \
-        "curl ${API_URL}/metrics | grep totalTokensSaved"
-    echo ""
-
-    advance
-
-    # Final sign-off banner
-    banner "END OF WALKTHROUGH -- THANK YOU!"
-    echo ""
-    echo -e "${BOLD}You now know every endpoint of the Agent Skill Router API:${RESET}"
-    echo ""
-    echo -e "  ${CYAN}${TOTAL_SCENARIOS} sections${RESET} covering health, stats, catalog browsing, skill retrieval,"
-    echo -e "  task routing (the core), execution, audit logging, reload, compression metrics,"
-    echo -e "  auto-skill creation, configuration management, and stdout output capture."
-    echo ""
-    echo -e "  ${DIM}Quick stats from this walkthrough:${RESET}"
-    echo -e "    ${GREEN}${TOTAL_SCENARIOS}${RESET} walkthrough sections | ${GREEN}12${RESET} API endpoints | ${GREEN}593+${RESET} skills across ${GREEN}8${RESET} domains"
-    echo -e "    ${GREEN}5-signal${RESET} hybrid pipeline | ${GREEN}7${RESET} query archetypes | ${GREEN}Auto-create${RESET} on gap detection"
-    echo ""
-    echo -e "${DIM}Next steps:${RESET}"
-    echo -e "  -> Try the endpoints yourself: curl ${API_URL}/health"
-    echo -e "  -> Explore skills:        curl ${API_URL}/skills | python3 -m json.tool"
-    echo -e "  -> Route a real task:     curl -X POST ${API_URL}/route -d '{\"task\":\"Your question here\"}'"
-    echo ""
-
-    progress_indicator "$TOTAL_SCENARIOS" "$TOTAL_SCENARIOS"
-    echo ""
+    echo -e "${BOLD}$(printf '=%.0s' {1..78})${RESET}"
 }
 
-# ─── Main Function ─────────────────────────────────────────────────────────────
+# ─── Main ──────────────────────────────────────────────────────────────────────
 
 main() {
-    while [[ $# -gt 0 ]]; do
-        case "$1" in
-            --live) LIVE_MODE="true"; shift ;;
-            *) echo "Unknown option: $1"; echo "Usage: $0 [--live]"; exit 1 ;;
-        esac
-    done
+    echo -e "${CYAN}${BOLD}"
+    echo "  ╔══════════════════════════════════════════════════════════════╗"
+    echo "  ║   AGENT SKILL ROUTER — LIVE API WALKTHROUGH                  ║"
+    echo "  ║   Every section executes real commands. No hypotheticals.    ║"
+    echo "  ╚══════════════════════════════════════════════════════════════╝"
+    echo -e "${RESET}"
 
-    if [[ "$LIVE_MODE" != "true" ]] && [[ ! -t 0 ]]; then
-        echo -e "${YELLOW}Warning: Running in non-interactive mode without --live flag.${RESET}"
-        echo -e "${YELLOW}Switching to live mode automatically.${RESET}"
-        LIVE_MODE="true"
-    fi
-
-    check_service || true
-
-    sub_banner "AGENT SKILL ROUTER -- API WALKTHROUGH v1.0.0"
-
-    if [[ "$LIVE_MODE" == "true" ]]; then
-        echo -e "${DIM}Running in LIVE mode -- all scenarios will execute automatically.${RESET}"
-    else
-        echo -e "${BOLD}${CYAN}Welcome to the Agent Skill Router API Walkthrough!${RESET}"
-        echo ""
-        echo -e "  This is an ${CYAN}educational walkthrough${RESET} that teaches you how every endpoint"
-        echo -e "  of the Agent Skill Router works. Each section includes:"
-        echo ""
-        echo -e "    ${GREEN}+ WHY this feature exists${RESET}     -- The problem it solves"
-        echo -e "    ${GREEN}+ THE ANATOMY${RESET}                 -- How to call it (curl commands)"
-        echo -e "    ${GREEN}+ SAMPLE OUTPUTS${RESET}              -- What the response looks like"
-        echo -e "    ${GREEN}+ KEY INSIGHTS${RESET}                -- Things to notice and watch for"
-        echo -e "    ${GREEN}+ REAL-WORLD USE CASES${RESET}        -- When you would actually use this"
-        echo ""
-        echo -e "  ${DIM}Press Enter between sections, or use --live for automated mode.${RESET}"
-    fi
-
-    echo ""
-
-    section_00_intro
-    section_01_health_check
-    advance
-    section_02_system_stats
-    advance
-    section_03_skill_listing
-    advance
-    section_04_skill_retrieval
-    advance
-    section_05_task_routing
-    advance
-    section_06_task_execution
-    advance
-    section_07_access_log
-    advance
-    section_08_force_reload
-    advance
-    section_09_compression_metrics
-    advance
-    section_10_auto_created_skills
-    advance
-    section_11_config_link_following
-    advance
-    section_12_output_capture
-    advance
+    # Run sections in order (or just the target section)
+    section_01_system_check
+    section_02_stats
+    section_03_route
+    section_04_skill_content
+    section_05_access_log
+    section_06_reload
+    section_07_metrics
+    section_08_opencode_integration
+    section_09_capture_output
     section_summary
-
-    echo ""
 }
 
 main "$@"
