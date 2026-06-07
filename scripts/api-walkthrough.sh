@@ -14,7 +14,7 @@
 set -euo pipefail
 
 readonly API_URL="http://localhost:3000"
-readonly TOTAL_SCENARIOS=12
+readonly TOTAL_SCENARIOS=13
 LIVE_MODE=false
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -1101,6 +1101,165 @@ section_11_config_link_following() {
     separator
 }
 
+# ─── Section 12: Capturing OpenCode Output ─────────────────────────────────────
+
+section_12_output_capture() {
+    banner "SECTION 12/${TOTAL_SCENARIOS}: Capturing OpenCode's Full Output"
+    echo -e "${BOLD}WHY THIS MATTERS:${RESET}"
+    echo ""
+    echo -e "  By default, OpenCode splits its output into two streams:"
+    echo ""
+    echo -e "  ${GREEN}stdout${RESET} — The formatted AI response (what the user sees)"
+    echo -e "  ${MAGENTA}stderr${RESET} — Debug logs, MCP bridge calls, skill loading events, tool traces"
+    echo ""
+    echo -e "  If you want to see everything in one stream -- for debugging, logging, or"
+    echo -e "  scripts that need the full picture -- you need both flags together."
+    echo ""
+    echo -e "  Think of it like a podcast with closed captions: ${CYAN}stdout${RESET} is what people hear,"
+    echo -e "  and ${MAGENTA}stderr${RESET} is the transcript running alongside. Capturing both gives you"
+    echo -e "  the complete show."
+    echo ""
+    advance
+
+    echo -e "${BOLD}THE ANATOMY:${RESET}"
+    echo ""
+    code_block "FULL COMMAND WITH ALL FLAGS" \
+        "opencode run \"-\"" \
+        "  --print-logs                    # Enable verbose logging to stderr" \
+        "  --log-level DEBUG               # Maximum detail level (MCP calls, skill loads, tool traces)" \
+        "  --dangerously-skip-permissions   # Auto-approve all tool permissions (no prompts)" \
+        "  -m opencode/big-pickle          # Model selection" \
+        "  \"your prompt here\"              # The task" \
+        "  2>&1 | tee output.log           # Merge stderr into stdout and save to file"
+    echo ""
+
+    advance
+    sub_banner "FLAG EXPLANATION -- EVERY PIECE MATTERS"
+    echo ""
+    code_block "BREAKDOWN OF EACH COMPONENT" \
+        "--print-logs        Prints internal logs (MCP bridge calls, skill loading events," \
+        "                    token usage) to STDERR. Without this, you miss the debug trail." \
+        "" \
+        "--log-level DEBUG   Sets verbosity level. DEBUG captures everything including tool" \
+        "                    call arguments, responses, and HTTP requests to the router." \
+        "                    Other levels: INFO (key events only), WARN (warnings), ERROR (errors)" \
+        "" \
+        "--dangerously-skip-permissions  Prevents interactive permission prompts that would" \
+        "                    block non-interactive use (scripts, CI/CD, background jobs)." \
+        "                    Only use when you trust the prompt -- this bypasses safety!" \
+        "" \
+        "-m opencode/big-pickle   Specifies which model to use. Options include cloud models:" \
+        "                    opencode/gpt-5, opencode/claude-sonnet-4, opencode/big-pickle, etc." \
+        "                    If omitted, uses the default model from your config." \
+        "" \
+        "2>&1              Shell redirection: merges STDERR (verbose logs) into STDOUT" \
+        "                    (formatted response) so everything flows together in one stream." \
+        "" \
+        "| tee output.log   Writes everything to both the terminal screen AND a file for" \
+        "                    later inspection. Without | tee, you only see it on screen."
+
+    advance
+    echo -e "${BOLD}WHAT YOU'LL SEE IN THE CAPTURED OUTPUT:${RESET}"
+    echo ""
+    printf '  The output is a mix of log levels and formatted text:\n'
+    printf '  +----------------------------------------------------------------------+\n'
+    printf '  | [DEBUG] incoming request  {"method":"tools/call","tool":"route_to_skill"}\n'
+    printf '  | [INFO] [TOOL CALL]      {"tool":"route_to_skill","task":"Debug my auth bug"}\n'
+    printf '  | [DEBUG] → POST /route   {"status":200,"durationMs":1247}\n'
+    printf '  | [INFO] [SKILL ACCESS]   skills resolved {"loaded":["coding-security-review"],"total":3,"missing":[]}\n'
+    printf '  | [INFO] [ON-DEMAND]      served via router {"skill":"coding-security-review"}\n'
+    printf '  |\n'
+    printf '  | ... (now the formatted AI response appears in stdout) ...\n'
+    printf '  |\n'
+    printf '  | Here'\''s my analysis of the authentication flow...\n'
+    printf '  |\n'
+    printf '  | The issue is in your token refresh logic -- specifically, when the\n'
+    printf '  | access token expires, the system should automatically call /auth/refresh\n'
+    printf '  | before retrying. Here is the fix:\n'
+    printf '  |\n'
+    printf '  |   async function refreshToken() {\n'
+    printf '  |     const response = await fetch("/api/auth/refresh", { method: "POST" });\n'
+    printf '  |     if (!response.ok) throw new Error("Token refresh failed");\n'
+    printf '  |     return response.json();\n'
+    printf '  |   }\n'
+    printf '  |\n'
+    printf '  | [DEBUG] token usage: 2,847 input / 512 output\n'
+    printf '  +----------------------------------------------------------------------+\n'
+    echo ""
+
+    advance
+    sub_banner "LOG LEVELS YOU'LL ENCOUNTER"
+    echo ""
+    code_block "UNDERSTANDING THE LOG OUTPUT" \
+        "[DEBUG] -- Routine operations: tool calls, HTTP requests to router, skill resolution,\n" \
+        "           token tracking. The most verbose level -- useful for deep troubleshooting." \
+        "" \
+        "[INFO]  -- Meaningful events: tool call start/end, skills loaded, on-demand skill\n" \
+        "           fetches, execution results. Enough context without overwhelming noise." \
+        "" \
+        "[WARN]  -- Warnings: slow queries (>500ms), deprecated API usage, missing config\n" \
+        "           values. Indicates something is suboptimal but not broken." \
+        "" \
+        "[ERROR] -- Errors: failed tool calls, HTTP request failures, skill load errors.\n" \
+        "           The reason things broke. Always check this when routing fails." \
+        "" \
+        "(no tag)  -- Formatted text: the actual AI response and tool outputs from stdout."
+
+    advance
+    sub_banner "CAPTURE MODES FOR DIFFERENT NEEDS"
+    echo ""
+    printf '  +-----------+---------------------------------------------------+----------------------+\n'
+    printf '  | ${BOLD}Mode${RESET}       | Command                                           | When to Use          |\n'
+    printf '  +-----------+---------------------------------------------------+----------------------+\n'
+    printf '  | ${DIM}Human     ${RESET}| opencode run --print-logs --log-level INFO ...   | Quick debugging,\n'
+    printf '  |           |   2>&1 | tee log.txt                              | occasional checks    |\n'
+    printf '  +-----------+---------------------------------------------------+----------------------+\n'
+    printf '  | ${DIM}Max       ${RESET}| opencode run --print-logs --log-level DEBUG ...  | Deep troubleshooting,\n'
+    printf '  |           |   2>&1 | tee log.txt                              | MCP bridge issues    |\n'
+    printf '  +-----------+---------------------------------------------------+----------------------+\n'
+    printf '  | ${DIM}Structured${RESET}| opencode run --format json ...                    | Parsing programmatically,\n'
+    printf '  |           |                                                   | CI/CD pipelines      |\n'
+    printf '  +-----------+---------------------------------------------------+----------------------+\n'
+    printf '  | ${DIM}Silent    ${RESET}| opencode run ... > response.txt 2>/dev/null       | Just want the AI\n'
+    printf '  |           |                                                   | output, no logs      |\n'
+    printf '  +-----------+---------------------------------------------------+----------------------+\n'
+    echo ""
+
+    advance
+    sub_banner "REAL-WORLD USE CASES"
+    echo -e "  ${CYAN}Debugging a Stuck MCP Call:${RESET}     Capture everything to see if the skill router timed out."
+    echo -e "                                   Look for long durationMs values or missing [INFO] events."
+    echo ""
+    echo -e "  ${MAGENTA}Creating Reproducible Examples:${RESET} Save full output to share with someone helping debug."
+    echo -e "                                   The stderr logs provide critical context the AI response alone lacks."
+    echo ""
+    echo -e "  ${GREEN}Audit Trail:${RESET}                   Keep logs of every task run for compliance or review."
+    echo -e "                                   Each log entry captures what was asked, which skills were used, and outcomes."
+    echo ""
+    echo -e "  ${BLUE}Training Data Collection:${RESET}       Collect prompt/response pairs (with DEBUG logs) to analyze routing quality."
+    echo -e "                                   Study which triggers fire most, what confidence scores correlate with success."
+    echo ""
+
+    # Extra detail: the silent mode example
+    advance
+    sub_banner "QUICK EXAMPLES"
+    echo ""
+    code_block "CAPTURE EVERYTHING (debugging)" \
+        "# Run OpenCode, capture everything including debug logs:" \
+        "opencode run --print-logs --log-level DEBUG \"Fix my auth bug\" \\" \
+        "  --dangerously-skip-permissions -m opencode/big-pickle 2>&1 | tee ~/opencode-debug.log"
+
+    code_block "CAPTURE JUST THE RESPONSE (silent)" \
+        "# Get clean AI output only, no logs:" \
+        "opencode run \"Route to the best skill for Kubernetes pod debugging\" > ~/response.txt"
+
+    code_block "PIPE TO JQ FOR FILTERING (structured)" \
+        "# Extract only tool call events from a verbose capture:" \
+        "cat opencode-debug.log | grep '\[INFO\].*TOOL CALL' | jq ."
+    echo ""
+    separator
+}
+
 # ─── Section Summary & Exit ──────────────────────────────────────────────────
 
 section_summary() {
@@ -1185,10 +1344,10 @@ section_summary() {
     echo ""
     echo -e "  ${CYAN}${TOTAL_SCENARIOS} sections${RESET} covering health, stats, catalog browsing, skill retrieval,"
     echo -e "  task routing (the core), execution, audit logging, reload, compression metrics,"
-    echo -e "  auto-skill creation, and configuration management."
+    echo -e "  auto-skill creation, configuration management, and stdout output capture."
     echo ""
     echo -e "  ${DIM}Quick stats from this walkthrough:${RESET}"
-    echo -e "    ${GREEN}${TOTAL_SCENARIOS}${RESET} endpoint categories | ${GREEN}12${RESET} API endpoints | ${GREEN}593+${RESET} skills across ${GREEN}8${RESET} domains"
+    echo -e "    ${GREEN}${TOTAL_SCENARIOS}${RESET} walkthrough sections | ${GREEN}12${RESET} API endpoints | ${GREEN}593+${RESET} skills across ${GREEN}8${RESET} domains"
     echo -e "    ${GREEN}5-signal${RESET} hybrid pipeline | ${GREEN}7${RESET} query archetypes | ${GREEN}Auto-create${RESET} on gap detection"
     echo ""
     echo -e "${DIM}Next steps:${RESET}"
@@ -1262,6 +1421,8 @@ main() {
     section_10_auto_created_skills
     advance
     section_11_config_link_following
+    advance
+    section_12_output_capture
     advance
     section_summary
 
