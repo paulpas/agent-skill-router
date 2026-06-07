@@ -582,14 +582,19 @@ chapter_07_production_run() {
     local healthy; healthy=$(curl -s --max-time 3 "$API_URL/health" 2>/dev/null | python3 -c "import sys,json; print(json.load(sys.stdin).get('status',''))") || true
     [[ "$healthy" != "healthy" ]] && { echo -e "  ${RED}✗ API unhealthy.${RESET}"; return; }
 
+    # Task prompt that WILL match skill triggers (security + code review keywords)
+    local TASK_TEXT="Review the code in src/ for security issues and suggest improvements using best practices"
+
     echo -e "${WHITE}${BOLD}  Launching OpenCode with MCP bridge...${RESET}"
+    echo -e "${WHITE}${BOLD}  Task being routed:${RESET}"
+    echo -e "  ${DIM}\"${TASK_TEXT}\"${RESET}\n"
     echo -e "${DIM}  timeout 20 opencode run --print-logs --log-level DEBUG\\${RESET}"
-    echo -e "${DIM}    --dangerously-skip-permissions -m opencode/big-pickle 'explain files in src/'${RESET}"
+    echo -e "${DIM}    --dangerously-skip-permissions -m opencode/big-pickle '${TASK_TEXT}'${RESET}"
 
     local so="$TEMP_DIR/oc_stdout.txt" se="$TEMP_DIR/oc_stderr.txt"
     timeout 20 opencode run --print-logs --log-level DEBUG \
         --dangerously-skip-permissions -m opencode/big-pickle \
-        "explain what files are in src/" > "$so" 2> "$se" || true
+        "$TASK_TEXT" > "$so" 2> "$se" || true
 
     local sc="" ec=""; sc=$(cat "$so" 2>/dev/null || echo ""); ec=$(cat "$se" 2>/dev/null || echo "")
 
@@ -601,13 +606,43 @@ chapter_07_production_run() {
         debug_c=$(echo "$ec" | grep -c '\[DEBUG\]' 2>/dev/null || echo "0")
         warn_c=$(echo "$ec" | grep -c '\[WARN\]\|\[WARNING\]' 2>/dev/null || echo "0")
         error_c=$(echo "$ec" | grep -c '\[ERROR\]\|\[FAIL' 2>/dev/null || echo "0")
-        mcp_c=$(echo "$ec" | grep -ci 'mcp\|route_to_skill\|tool_call' 2>/dev/null || echo "0")
+        mcp_c=$(echo "$ec" | grep -ciE 'mcp|route_to_skill|tool_call' 2>/dev/null || echo "0")
         tool_c=$(echo "$ec" | grep -c '\[TOOL' 2>/dev/null || echo "0")
-        skill_c=$(echo "$ec" | grep -ci 'SKILL\|skill.load\|ON-DEMAND' 2>/dev/null || echo "0")
+
+        # Fix: use extended regex (-E) for reliable SKILL ACCESS matching
+        skill_c=$(echo "$ec" | grep -ciE 'SKILL ACCESS|ON-DEMAND|skill.loaded' 2>/dev/null || echo "0")
+
+        # Extract skill names that were loaded (if any)
+        local loaded_skills=""
+        if [[ -n "$ec" ]]; then
+            loaded_skills=$(echo "$ec" | grep -oP '"loaded":\s*\[\K[^\]]+' 2>/dev/null || true)
+            [[ -z "$loaded_skills" ]] && loaded_skills="(none found)"
+        else
+            loaded_skills="(no MCP logs in stderr)"
+        fi
+
+        # Also check the MCP bridge log file directly for skill loading events
+        local mcp_log="$HOME/.config/opencode/skill-router-mcp.log"
+        local mc_ski=0
+        if [[ -f "$mcp_log" ]]; then
+            mc_ski=$(grep -c 'SKILL ACCESS' "$mcp_log" 2>/dev/null || echo "0")
+        fi
+
+        # Combine counts from stderr and MCP log
+        skill_c=$((skill_c + mc_ski))
 
         echo ""; echo -e "${WHITE}${BOLD}  Log stats:${RESET}"
         echo -e "  Lines: ${BOLD}${log_lines}${RESET} | INFO: ${BOLD}${info_c}${RESET} DEBUG: ${BOLD}${debug_c}${RESET} WARN: ${BOLD}${warn_c}${RESET} ERROR: ${BOLD}${error_c}${RESET}"
         echo -e "  MCP: ${BOLD}${mcp_c}${RESET} Tools: ${BOLD}${tool_c}${RESET} Skills: ${BOLD}${skill_c}${RESET}"
+        echo -e "  Loaded skills: ${BOLD}${loaded_skills}${RESET}"
+
+        # Show sample MCP bridge entry if any were found
+        local sample_entry; sample_entry=$(echo "$ec" | grep 'SKILL ACCESS' 2>/dev/null | head -1)
+        if [[ -n "$sample_entry" ]]; then
+            echo ""
+            echo -e "${WHITE}${BOLD}  Sample MCP bridge entry:${RESET}"
+            echo -e "  ${DIM}$sample_entry${RESET}"
+        fi
 
         # Recent log lines with pagination if large
         local recent_logs; recent_logs=$(echo "$ec" | tail -n 20)
@@ -617,6 +652,13 @@ chapter_07_production_run() {
             echo "$recent_logs" | page_output_simple 35
         else
             print_output_box "Last 20 log lines" "$recent_logs" 22
+        fi
+
+        # Show helpful hint if no skills were loaded despite a non-trivial run
+        if [[ "$skill_c" -eq 0 && "$log_lines" -gt 5 ]]; then
+            echo ""
+            echo -e "${YELLOW}  ⚠ No skills loaded — the task '${TASK_TEXT}' didn't match any skill triggers.${RESET}"
+            echo -e "  ${DIM}Try prompts with specific domain terms like 'kubernetes', 'security', 'trading'...${RESET}"
         fi
     fi
 
