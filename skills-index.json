@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-04T23:32:33.978109Z",
-  "totalSkills": 1230,
+  "generatedAt": "2026-06-09T00:46:12.680350Z",
+  "totalSkills": 1252,
   "domains": {
-    "agent": 290,
+    "agent": 312,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
@@ -28,13 +28,38 @@
     "writing": 4
   },
   "roles": {
+    "implementation": 828,
     "orchestration": 238,
-    "implementation": 806,
     "reference": 177,
     "information": 1,
     "review": 8
   },
   "skills": [
+    {
+      "name": "a2a-communication",
+      "domain": "agent",
+      "description": "Implements Google's Agent-to-Agent (A2A) protocol for cross-framework agent communication using HTTP-based JSON-RPC 2.0 with agent card discovery, SSE streaming, and secure multi-agent interoperability patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "A2A",
+        "agent to agent",
+        "cross-framework communication",
+        "JSON-RPC",
+        "agent card",
+        "SSE streaming",
+        "how do i connect agents",
+        "Google A2A protocol"
+      ],
+      "relatedSkills": [
+        "multi-agent-collaboration",
+        "mcp-integration",
+        "routing-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/a2a-communication/SKILL.md"
+    },
     {
       "name": "abl-v10-learning",
       "domain": "programming",
@@ -11398,6 +11423,31 @@
       "source": "skills/cncf/etcd/SKILL.md"
     },
     {
+      "name": "evaluation-monitoring",
+      "domain": "agent",
+      "description": "Continuously monitors agent performance in production through token tracking, LLM-as-a-Judge evaluation, A/B testing for improvements, drift detection, anomaly detection, and trajectory analysis with structured feedback loops.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "evaluation",
+        "LLM as judge",
+        "A/B testing agents",
+        "drift detection",
+        "anomaly detection",
+        "trajectory analysis",
+        "how do i monitor agent performance",
+        "token tracking"
+      ],
+      "relatedSkills": [
+        "reflection-loop",
+        "goal-setting-monitoring",
+        "rag-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/evaluation-monitoring/SKILL.md"
+    },
+    {
       "name": "event-bus",
       "domain": "coding",
       "description": "\"Async pub/sub event bus with typed events, mixed sync/async dispatch\" and singleton initialization for trading systems",
@@ -11594,6 +11644,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/eventual-consistency-patterns/SKILL.md"
+    },
+    {
+      "name": "exception-handling-recovery",
+      "domain": "agent",
+      "description": "Implements agent resilience patterns including retry logic with exponential backoff, fallback handler chains, state rollback, graceful degradation, and error escalation to maintain reliability under failure conditions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "exception handling",
+        "retry logic",
+        "fallback handlers",
+        "state rollback",
+        "graceful degradation",
+        "error recovery",
+        "how do i make agents resilient",
+        "ADK fallback"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "planning-patterns",
+        "agent-architecture-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/exception-handling-recovery/SKILL.md"
     },
     {
       "name": "exchange-ccxt-patterns",
@@ -11963,6 +12038,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/trading/execution-vwap/SKILL.md"
+    },
+    {
+      "name": "exploration-discovery",
+      "domain": "agent",
+      "description": "Implements proactive agent exploration patterns for discovering unknown opportunities, generating hypotheses, designing experiments, and sharing findings through autonomous research loops beyond predefined optimization targets.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "exploration",
+        "discovery",
+        "hypothesis generation",
+        "experimental design",
+        "autonomous research",
+        "how do i make agents explore",
+        "Agent Laboratory",
+        "Co-Scientist"
+      ],
+      "relatedSkills": [
+        "multi-agent-collaboration",
+        "learning-adaptation",
+        "planning-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/exploration-discovery/SKILL.md"
     },
     {
       "name": "expression-engine",
@@ -14215,6 +14315,31 @@
       "source": "skills/go/go-error-handling/SKILL.md"
     },
     {
+      "name": "goal-setting-monitoring",
+      "domain": "agent",
+      "description": "Implements goal-oriented agent architectures with objective definition, LLM-based success criteria evaluation, iterative progress tracking, and max-iteration bounded refinement loops for proactive autonomous systems.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "goal setting",
+        "objective tracking",
+        "success criteria",
+        "progress monitoring",
+        "how do i set agent goals",
+        "autonomous objectives",
+        "goal evaluation",
+        "iterative refinement"
+      ],
+      "relatedSkills": [
+        "planning-patterns",
+        "multi-agent-orchestration",
+        "closed-loop-delivery"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/goal-setting-monitoring/SKILL.md"
+    },
+    {
       "name": "goal-to-milestones",
       "domain": "agent",
       "description": "Implements intelligent goal to milestones with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -14782,6 +14907,56 @@
       "source": "skills/linux/grub-uefi-bootloader/SKILL.md"
     },
     {
+      "name": "guardrails-safety",
+      "domain": "agent",
+      "description": "Protects agent systems from harmful outputs through behavioral constraints, input validation and sanitization, jailbreaking defenses, structured output enforcement, the Principle of Least Privilege, and fault-tolerant state management for safe autonomous operation.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "guardrails",
+        "safety patterns",
+        "input validation",
+        "jailbreaking defenses",
+        "content filtering",
+        "least privilege",
+        "how do i protect agents from harm"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "exception-handling-recovery",
+        "agentic-evaluation",
+        "agent-security-guardrails"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/guardrails-safety/SKILL.md"
+    },
+    {
+      "name": "gui-agent-interaction",
+      "domain": "agent",
+      "description": "Implements GUI agent interaction patterns (screen vision recognition, UI element detection, automated mouse/keyboard execution) for operating desktop and web applications without APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "gui agent",
+        "screen vision",
+        "UI automation",
+        "Project Mariner",
+        "desktop automation",
+        "how do i automate clicking buttons",
+        "visual agent",
+        "computer vision UI"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "coding-agent-frameworks",
+        "mcp-integration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/gui-agent-interaction/SKILL.md"
+    },
+    {
       "name": "harbor",
       "domain": "cncf",
       "description": "\"Configures harbor in cloud-native engineering - container registry for cloud-native deployment and infrastructure management.\"",
@@ -15167,6 +15342,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/huggingface-api/SKILL.md"
+    },
+    {
+      "name": "human-in-the-loop",
+      "domain": "agent",
+      "description": "Integrates human oversight into AI agent workflows for high-stakes decisions through approval gates, feedback loops for RLHF, escalation policies, and decision augmentation patterns that balance automation with accountability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "human in the loop",
+        "human oversight",
+        "approval gates",
+        "RLHF feedback",
+        "escalation policy",
+        "decision augmentation",
+        "how do i add human review",
+        "high-stakes AI decisions"
+      ],
+      "relatedSkills": [
+        "exception-handling-recovery",
+        "tool-use-function-calling",
+        "goal-setting-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/human-in-the-loop/SKILL.md"
     },
     {
       "name": "humanizer",
@@ -17101,6 +17301,31 @@
       "source": "skills/coding/language-family-idioms/SKILL.md"
     },
     {
+      "name": "learning-adaptation",
+      "domain": "agent",
+      "description": "Enables agents to improve through experience using reinforcement learning patterns (PPO, DPO, RLHF) and knowledge base RAG for continuous self-improvement and adaptive behavior across sessions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "reinforcement learning",
+        "PPO",
+        "DPO",
+        "RLHF",
+        "self-improvement",
+        "how do i make agents learn",
+        "SICA",
+        "AlphaEvolve"
+      ],
+      "relatedSkills": [
+        "memory-management",
+        "rag-patterns",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/learning-adaptation/SKILL.md"
+    },
+    {
       "name": "license-compliance-and-open-source-policy",
       "domain": "coding",
       "description": "Implements strategies and guidelines for managing software licensing compliance and formulating open-source policies in software engineering practices.",
@@ -17893,6 +18118,31 @@
       "source": "skills/agent/mcp-builder-ms/SKILL.md"
     },
     {
+      "name": "mcp-integration",
+      "domain": "agent",
+      "description": "Integrates the Model Context Protocol (MCP) standard for LLM tool discovery and interaction, implementing MCP client-server architecture with stdio/HTTP transport, tool/resource/prompt types, and FastMCP SDK patterns.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "MCP",
+        "Model Context Protocol",
+        "tool discovery",
+        "FastMCP",
+        "stdio transport",
+        "SSE transport",
+        "MCP server",
+        "how do i standardize tool access"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "a2a-communication",
+        "prompt-chaining"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/mcp-integration/SKILL.md"
+    },
+    {
       "name": "mcp-protocol",
       "domain": "coding",
       "description": "Implements Model Context Protocol (MCP) servers and clients using the mcp Python SDK (FastMCP, resources, tools, prompts, transports) for LLM tool integration.",
@@ -17942,6 +18192,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/memoization-cache-patterns/SKILL.md"
+    },
+    {
+      "name": "memory-management",
+      "domain": "agent",
+      "description": "Manages agent memory across short-term (conversation buffers), long-term (vector stores, persistent databases), and procedural (learned patterns) layers to maintain stateful context across extended agent interactions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "memory management",
+        "conversation buffer",
+        "long-term memory",
+        "vector store",
+        "context persistence",
+        "how do i maintain agent state",
+        "BaseStore",
+        "SessionService"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "rag-patterns",
+        "learning-adaptation"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/memory-management/SKILL.md"
     },
     {
       "name": "memory-management-and-concurrency",
@@ -18910,6 +19185,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/multi-advisor/SKILL.md"
+    },
+    {
+      "name": "multi-agent-collaboration",
+      "domain": "agent",
+      "description": "Orchestrates multiple specialized agents in concert using hierarchical, parallel, and sequential topologies (parent-child, debate/consensus, expert teams, sequential handoffs) to solve complex problems that exceed single-agent capability.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "multi-agent",
+        "agent collaboration",
+        "expert teams",
+        "sequential handoffs",
+        "parallel agents",
+        "parent child agents",
+        "debate consensus",
+        "how do i orchestrate multiple agents"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "routing-patterns",
+        "planning-patterns",
+        "parallelization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/multi-agent-collaboration/SKILL.md"
     },
     {
       "name": "multi-agent-orchestration",
@@ -20702,6 +21003,30 @@
       "source": "skills/agent/parallel-skill-runner/SKILL.md"
     },
     {
+      "name": "parallelization",
+      "domain": "agent",
+      "description": "Implements concurrent task execution patterns (parallel branches, fan-out/fan-in, multi-API calls, multi-modal processing) to reduce total agent processing time through independent subtask parallelism.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "parallelization",
+        "concurrent execution",
+        "fan-out fan-in",
+        "parallel branches",
+        "multi-API calls",
+        "how do i run tasks in parallel",
+        "RunnableParallel"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "multi-agent-orchestration",
+        "langgraph"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/parallelization/SKILL.md"
+    },
+    {
       "name": "paypal-api",
       "domain": "coding",
       "description": "Implements PayPal API integration (Orders, Payments, Subscriptions, Payouts, Disputes) using paypal-checkout-serversdk or paypalrestsdk with webhook verification, payment capture, and subscription lifecycle management.",
@@ -21234,6 +21559,31 @@
       "source": "skills/coding/planetscale-sdk/SKILL.md"
     },
     {
+      "name": "planning-patterns",
+      "domain": "agent",
+      "description": "Implements multi-step plan generation, iterative refinement, and dynamic task decomposition for proactive agent execution with self-correction.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "planning",
+        "multi-step plan",
+        "task decomposition",
+        "iterative refinement",
+        "dynamic planning",
+        "how do i plan complex tasks",
+        "CrewAI workflow",
+        "Google DeepResearch"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "multi-agent-orchestration",
+        "planning-with-files"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/planning-patterns/SKILL.md"
+    },
+    {
       "name": "planning-reasoning",
       "domain": "agent",
       "description": "Implements agent reasoning patterns (ReAct loop, chain-of-thought planning, self-reflection evaluation) for structured multi-step task execution with verification.",
@@ -21677,6 +22027,31 @@
       "source": "skills/cncf/prometheus/SKILL.md"
     },
     {
+      "name": "prompt-chaining",
+      "domain": "agent",
+      "description": "Implements sequential prompt chaining patterns (linear LCEL pipelines, LangGraph stateful flows, Google ADK primitives) to decompose complex reasoning into reliable multi-step agent workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "prompt chaining",
+        "sequential prompts",
+        "LCEL pipeline",
+        "LangGraph state",
+        "multi-step reasoning",
+        "chain of prompts",
+        "how do i break down complex tasks",
+        "pipeline pattern"
+      ],
+      "relatedSkills": [
+        "framework-orchestration-routing",
+        "dispatching-parallel-agents",
+        "multi-agent-orchestration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/prompt-chaining/SKILL.md"
+    },
+    {
       "name": "prompt-engineer",
       "domain": "agent",
       "description": "Implements intelligent prompt engineer with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -21745,6 +22120,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/prompt-engineering-patterns/SKILL.md"
+    },
+    {
+      "name": "prompt-engineering-patterns-v2",
+      "domain": "agent",
+      "description": "Implements advanced prompt engineering techniques (zero-shot/one-shot design, verb-based instructions, structured output, evaluation rubrics) for maximizing LLM response quality.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "zero-shot prompting",
+        "one-shot prompting",
+        "verb-based instructions",
+        "structured output",
+        "evaluation rubrics",
+        "how do i design better prompts",
+        "prompt optimization",
+        "few-shot prompting"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "reflection-loop",
+        "ai-llm-agentic-tooling-langchain-langgraph"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/prompt-engineering-patterns-v2/SKILL.md"
     },
     {
       "name": "prompt-optimization",
@@ -22198,6 +22598,31 @@
       "source": "skills/agent/rag-implementation/SKILL.md"
     },
     {
+      "name": "rag-patterns",
+      "domain": "agent",
+      "description": "Implements Retrieval-Augmented Generation patterns (chunking strategies, embedding-based vector search, semantic vs keyword retrieval, RAG pipelines) to ground LLM outputs in authoritative external knowledge sources.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "RAG",
+        "retrieval augmented generation",
+        "vector search",
+        "semantic search",
+        "chunking strategies",
+        "embeddings",
+        "knowledge retrieval",
+        "how do i ground LLM outputs in facts"
+      ],
+      "relatedSkills": [
+        "memory-management",
+        "prompt-chaining",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/rag-patterns/SKILL.md"
+    },
+    {
       "name": "rag-pipelines",
       "domain": "agent",
       "description": "Implements RAG pipeline patterns (semantic chunking, hybrid search with BM25+vector, cross-encoder re-ranking, embedding selection) for retrieval-augmented document generation.",
@@ -22266,6 +22691,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/react-nextjs-development/SKILL.md"
+    },
+    {
+      "name": "reasoning-techniques",
+      "domain": "agent",
+      "description": "Implements advanced reasoning methodologies (Chain-of-Thought, Tree-of-Thoughts, ReAct, Self-Correction, Graph of Debates, Program-Aided LLMs) for multi-step problem-solving in complex agent tasks.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "reasoning techniques",
+        "chain of thought",
+        "tree of thoughts",
+        "ReAct",
+        "self-correction",
+        "program-aided LLMs",
+        "how do i improve agent reasoning",
+        "GoD"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "reflection-loop",
+        "planning-patterns",
+        "multi-agent-collaboration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/reasoning-techniques/SKILL.md"
     },
     {
       "name": "recallmax",
@@ -22428,6 +22879,32 @@
       "source": "skills/coding/reference-operators/SKILL.md"
     },
     {
+      "name": "reflection-loop",
+      "domain": "agent",
+      "description": "Implements self-correction feedback loops (execution → evaluation/critique → refinement) to iteratively improve agent outputs through producer-critic collaboration and automated quality gates.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "reflection",
+        "self-correction",
+        "critic agent",
+        "feedback loop",
+        "producer-critic",
+        "quality gate",
+        "how do i improve agent output",
+        "iterative refinement"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "agentic-evaluation",
+        "self-critique-engine",
+        "tool-use-function-calling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/reflection-loop/SKILL.md"
+    },
+    {
       "name": "regression-detector",
       "domain": "agent",
       "description": "Implements intelligent regression detector with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -22567,6 +23044,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/linux/resource-management/SKILL.md"
+    },
+    {
+      "name": "resource-optimization",
+      "domain": "agent",
+      "description": "Dynamically routes agent work based on cost, budget constraints, latency requirements, and query complexity using LLM-driven model selection with feedback-loop optimization for efficient resource utilization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "resource optimization",
+        "model routing",
+        "cost-aware agents",
+        "budget constraints",
+        "latency optimization",
+        "query complexity",
+        "how do i optimize agent costs",
+        "feedback-driven optimization"
+      ],
+      "relatedSkills": [
+        "routing-patterns",
+        "parallelization",
+        "planning-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/resource-optimization/SKILL.md"
     },
     {
       "name": "resource-optimizer",
@@ -23095,6 +23597,30 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/rook/SKILL.md"
+    },
+    {
+      "name": "routing-patterns",
+      "domain": "agent",
+      "description": "Implements intent-based routing patterns (LLM classifiers, node transitions, computational graphs) to dispatch queries to specialized sub-agents with fallback chains and confidence scoring.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "routing",
+        "intent classification",
+        "sub-agent dispatch",
+        "node transitions",
+        "computational graph",
+        "how do i route queries",
+        "query router"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "multi-agent-collaboration",
+        "parallelization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/routing-patterns/SKILL.md"
     },
     {
       "name": "runtime-ecosystem-selection",
@@ -26328,6 +26854,31 @@
       "source": "skills/agent/task-intelligence/SKILL.md"
     },
     {
+      "name": "task-prioritization",
+      "domain": "agent",
+      "description": "Enables agents to rank and schedule tasks by urgency, importance, dependencies, and resource cost using priority matrices, dynamic re-prioritization, and dependency-aware scheduling for optimal execution order.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "task prioritization",
+        "priority ranking",
+        "urgency assessment",
+        "dependency scheduling",
+        "dynamic reprioritization",
+        "how do i prioritize tasks",
+        "P0 P1 P2",
+        "project management agent"
+      ],
+      "relatedSkills": [
+        "planning-patterns",
+        "multi-agent-collaboration",
+        "resource-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/task-prioritization/SKILL.md"
+    },
+    {
       "name": "technical-cycle-analysis",
       "domain": "trading",
       "description": "\"Implements market cycles and periodic patterns in price movement for risk management and algorithmic trading execution.\"",
@@ -27242,24 +27793,24 @@
     {
       "name": "tool-use-function-calling",
       "domain": "agent",
-      "description": "Implements tool calling patterns (Pydantic-typed tools, function-to-schema conversion, parallel execution, fallback chains) for AI agent external API and service integration.",
+      "description": "Implements agent tool use and function calling patterns (@tool decorators, CrewAI tools, Google ADK built-in tools) to enable agents with real-time external data access, API operations, calculations, and code execution.",
       "role": "implementation",
       "scope": "implementation",
       "outputFormat": "code",
       "triggers": [
-        "tool calling",
-        "function calling",
-        "Pydantic tools",
-        "LangChain tools",
         "tool use",
-        "parallel execution",
-        "fallback chain",
-        "typed tools"
+        "function calling",
+        "@tool decorator",
+        "external tools",
+        "API integration",
+        "how do i give agents tools",
+        "vertex extensions",
+        "CrewAI tools"
       ],
       "relatedSkills": [
-        "memory-systems",
-        "planning-reasoning",
-        "multi-agent-orchestration"
+        "prompt-chaining",
+        "reflection-loop",
+        "ai-llm-agentic-tooling-mcp"
       ],
       "version": "1.0.0",
       "source": "skills/agent/tool-use-function-calling/SKILL.md"
