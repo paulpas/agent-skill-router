@@ -1207,17 +1207,35 @@ export class SkillRegistry implements SkillRegistryWithCompression {
       { total: allSkills.length }
     );
 
-    // Build text entries with skill references (index maps to skill)
-    const textEntries: { skill: SkillDefinition; text: string }[] = skillsNeedingEmbeddings.map((skill) => ({
-      skill,
-      text: [
+    // Build text entries with skill references (index maps to skill).
+    // Truncate individual entries at 4000 chars to stay well under the
+    // OpenAI embedding API's 8192-token input limit. The EmbeddingService
+    // also truncates defensively, but catching it here gives us skill names
+    // in logs for easier debugging of oversized descriptions.
+    const MAX_EMBEDDING_TEXT_LENGTH = 4_000;
+    const textEntries: { skill: SkillDefinition; text: string }[] = skillsNeedingEmbeddings.map((skill) => {
+      const rawText = [
         skill.metadata.name,
         skill.metadata.description,
         skill.metadata.tags?.join(' ') || '',
       ]
         .filter(Boolean)
-        .join(' '),
-    }));
+        .join(' ');
+
+      if (rawText.length > MAX_EMBEDDING_TEXT_LENGTH) {
+        this.logger.warn(
+          `[TRUNCATED] "${skill.metadata.name}": text length ${rawText.length} exceeds ${MAX_EMBEDDING_TEXT_LENGTH} chars. Truncated.`,
+          { preview: rawText.slice(0, 120) },
+        );
+      }
+
+      return {
+        skill,
+        text: rawText.length > MAX_EMBEDDING_TEXT_LENGTH
+          ? rawText.slice(0, MAX_EMBEDDING_TEXT_LENGTH)
+          : rawText,
+      };
+    });
 
     // Process in large batches — each batch makes a SINGLE API call
     // with all texts sent as an array (e.g., { input: ["text1", "text2", ...] })

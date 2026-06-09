@@ -1,54 +1,46 @@
 ---
-
-
-
-
 name: tool-use-function-calling
-description: Implements tool calling patterns (Pydantic-typed tools, function-to-schema conversion, parallel execution, fallback chains) for AI agent external API and service integration.
+description: Implements agent tool use and function calling patterns (@tool decorators, CrewAI tools, Google ADK built-in tools) to enable agents with real-time external data access, API operations, calculations, and code execution.
+license: MIT
+compatibility: opencode
 archetypes:
   - tactical
   - orchestration
 anti_triggers:
   - brainstorming
   - vague ideation
-  - design-only architecture
+  - long-form architecture
 response_profile:
-  verbosity: medium
+  verbosity: low
   directive_strength: high
   abstraction_level: operational
-license: MIT
-compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: agent
-  triggers: tool calling, function calling, Pydantic tools, LangChain tools, tool use, parallel execution, fallback chain, typed tools
   role: implementation
   scope: implementation
   output-format: code
   content-types: [code, guidance, do-dont, examples]
-  related-skills: memory-systems, planning-reasoning, multi-agent-orchestration
-
-
-
-
+  maturity: beta
+  completeness: 90
+  exampleCount: 4
+  triggers: tool use, function calling, @tool decorator, external tools, API integration, how do i give agents tools, vertex extensions, CrewAI tools
+  related-skills: prompt-chaining, reflection-loop, ai-llm-agentic-tooling-mcp
 ---
 
+# Tool Use and Function Calling Pattern
 
-
-
-
-# Tool Calling & Function Execution
-
-Implements tool calling patterns that enable AI agents to interact with external APIs and services. Converts Python functions into LLM-callable tools with Pydantic input validation, dispatches parallel tool calls from model responses, handles execution errors with self-correction feedback, and implements ordered fallback chains for resilient agent behavior.
+Enables agentic systems to break out of the LLM's internal knowledge boundary by defining, registering, and executing external tools — allowing agents to access live data, query databases, perform calculations, execute code, and trigger real-world actions through structured function calls.
 
 ## TL;DR Checklist
 
-- [ ] Define all tool schemas using Pydantic models before registering with the model
-- [ ] Wrap every tool call in try/except with structured error formatting for LLM self-correction
-- [ ] Execute independent tool calls in parallel, not sequentially
-- [ ] Implement fallback chains ordered by exception type (connection → validation → rate limit)
-- [ ] Validate all tool results against the expected schema before passing to downstream logic
-- [ ] Reference `code-philosophy` (5 Laws of Elegant Defense) — parse input at boundaries, fail fast on invalid states
+- [ ] Define each tool with a descriptive name, clear docstring, and typed parameter schema
+- [ ] Register tools with the agent framework (LangChain `@tool`, CrewAI `@tool`, ADK built-in)
+- [ ] Bind tools to an LLM that supports function/tool calling (Gemini, GPT-4o series)
+- [ ] Provide a prompt template with `{agent_scratchpad}` placeholder for tool call history
+- [ ] Handle tool failures explicitly — raise typed exceptions, never return error strings
+- [ ] Add security boundaries around code execution and API-access tools
+- [ ] Validate that the LLM can actually invoke tools before relying on them in production
 
 ---
 
@@ -56,11 +48,12 @@ Implements tool calling patterns that enable AI agents to interact with external
 
 Use this skill when:
 
-- Implementing an AI agent that needs to call external APIs, databases, or services
-- Defining function-to-LLM-tool conversion with input validation and schema generation
-- Building a multi-step agent workflow where the model must decide which tools to call
-- Executing multiple independent tool calls from a single model response in parallel
-- Handling tool execution errors so the LLM can self-correct and retry with adjusted parameters
+- Building an agent that needs real-time or live data (weather, stock prices, search results) not available in the LLM's training cut-off
+- The agent must interact with external APIs — databases, payment systems, email services, IoT controllers
+- You need precise computation (math, statistics, data analysis) where probabilistic text generation is unreliable
+- An agent workflow requires code execution in a sandboxed environment for deterministic logic
+- You are designing a multi-agent system where one agent delegates specialized tasks to another via tool interfaces
+- Implementing enterprise search over private datastores using Vertex AI Search or similar RAG-backed tools
 
 ---
 
@@ -68,855 +61,344 @@ Use this skill when:
 
 Avoid this skill for:
 
-- Simple scripted API calls without LLM involvement — use direct HTTP clients instead
-- Tools that must execute strictly sequentially due to data dependencies — sequential dispatch is faster than the overhead of parallel setup
-- High-frequency inference contexts where every millisecond matters — tool call parsing and error handling add latency
-- Situations where no external service integration is needed — pure text generation does not require tools
-
----
-
-## Orchestration Flow
-
-```
-User Request → Model Generates Tool Call(s)
-                        ↓
-              ┌───────────────────────┐
-              │  Parse Tool Invocation │
-              │  (name + arguments)    │
-              └───────────┬───────────┘
-                          ↓
-                  ┌───────────────┐
-                  │ Parallel or   │
-                  │ Sequential?   │
-                  └───┬───────┬───┘
-                      │       │
-               Multiple    Single
-              Independent  Tool Call
-              Calls         │
-                      ┌─────▼──────┐
-                      │ Execute in │
-                      │ parallel   │
-                      └─────┬──────┘
-                            ↓
-                  ┌───────────────────────┐
-                  │  Error Detection      │
-                  │                       │
-                  │  Success? ──► Collect │
-                  │                       │     Results
-                  │                       │
-                  │  Fail? ──► Format     │
-                  │                       │     → LLM with
-                  │                       │     error msg
-                  └──────┬────────┬───────┘
-                         │        │
-                  Retry?     Fallback
-                   (LLM      Chain:
-                    self-    1. Same tool,
-                    correct)   different args
-                      │       2. Alternative tool
-                      ↓       3. Return error
-                ┌───────────────┐
-                │ Final Result  │
-                │ to Model /    │
-                │ User          │
-                └───────────────┘
-```
+- Pure text generation tasks that don't need external data (e.g., summarizing a document the user already provided) — use `prompt-chaining` instead
+- Simple rule-based logic that can be evaluated with standard Python conditionals — tool overhead is unnecessary
+- Situations where the LLM's built-in reasoning or math is sufficient and latency is critical — function calling adds round-trips
+- High-frequency trading execution where every millisecond matters — use direct API calls, not agent-mediated tool calls
 
 ---
 
 ## Core Workflow
 
-1. **Define Tool Schema** — Create Pydantic models for each tool's input parameters, then convert them into LLM-callable tools. Use `@tool` decorators or framework-native converters to generate JSON schemas from the model fields. **Checkpoint:** Verify each tool's schema includes a description, required fields, and type hints before registration.
+1. **Define Tool Functions** — Write Python functions with typed signatures, descriptive docstrings (used as the tool description for the LLM), and clear return types. Each function represents one external capability: search, calculate, query, send, execute. **Checkpoint:** Every tool must have a `"""docstring"""` that the LLM can use to decide when to call it.
 
-2. **Execute Tool Call** — Parse model responses for tool invocations (function name + arguments). When multiple independent tools are called simultaneously, dispatch them concurrently using `asyncio.gather` or equivalent. For dependent tools, execute sequentially in the declared order. **Checkpoint:** Confirm each invocation's argument dictionary matches its Pydantic schema before calling.
+2. **Register Tools with the Framework** — Decorate functions with the framework-specific tool decorator (`@langchain_tool` for LangChain, `@tool` for CrewAI) or reference built-in tools (`google_search`, `BuiltInCodeExecutor` for ADK). Collect them in a list passed to the agent constructor. **Checkpoint:** Verify that `len(tools)` matches your expected tool count and no decorator was accidentally skipped.
 
-3. **Handle Execution Errors** — Catch exceptions during tool execution and format them into a structured error message the LLM can understand. Include the original exception type, a human-readable description, and suggestions for self-correction (e.g., "You used an invalid argument name; try 'user_id' instead of 'userId'"). **Checkpoint:** Never swallow exceptions silently — every tool error must produce a response the LLM can act on.
+3. **Configure the Agent with Tool-Bound LLM** — Create the agent by binding the LLM, tools list, and a prompt template containing an `{agent_scratchpad}` placeholder for internal tool-call reasoning traces. Use `create_tool_calling_agent` (LangChain), pass `tools=[...]` to `Agent` (CrewAI), or set `tools=[...]` on an `LlmAgent` (ADK). **Checkpoint:** Confirm the LLM model name supports function calling — models without this capability silently ignore tools.
 
-4. **Parse Structured Output** — After successful tool execution, validate results against expected output schemas. For tools returning JSON, parse and validate before passing to downstream logic. For streaming tools, buffer partial outputs and reassemble before validation. **Checkpoint:** Reject malformed responses with a clear error that the LLM can use to retry.
+4. **Execute and Observe Tool Results** — Run the agent executor (`AgentExecutor.ainvoke`, `crew.kickoff()`, `runner.run_async`). The framework intercepts the LLM's structured tool-call output, executes the actual Python function, captures the result, and feeds it back as context. **Checkpoint:** Check that the agent's response references data from the tool output, not hallucinated values — if it doesn't, the scratchpad placeholder is missing or the tool docstring is ambiguous.
 
-5. **Implement Fallback Chains** — Define ordered lists of tool alternatives keyed by exception type. When a primary tool fails, the fallback chain tries alternative implementations: for `ConnectionError` try a cached or secondary endpoint; for `ValidationError` retry with corrected arguments provided by the LLM self-correction; for `RateLimitError` apply exponential backoff before retrying the same tool. **Checkpoint:** Enforce a maximum attempt limit across all fallback levels to prevent infinite loops.
+5. **Handle Tool Failures Gracefully** — When a tool raises an exception (e.g., `ValueError` for unknown ticker), the framework returns the error as context to the LLM so it can decide whether to retry with different arguments, report failure to the user, or try an alternative tool. Never suppress errors with silent `try/except` that returns a string. **Checkpoint:** Test every tool with invalid inputs to confirm exceptions propagate correctly and the LLM responds appropriately.
+
+6. **Add Security and Access Controls** — Wrap sensitive tools (email sending, API mutations, code execution) with authentication checks, input validation, and rate limiting. For code execution, always use a sandboxed executor (`BuiltInCodeExecutor` in ADK). For API tools, validate arguments against expected schemas before making network calls. **Checkpoint:** Review each tool's docstring for security-relevant constraints — the LLM reads these as part of its decision logic.
 
 ---
 
 ## Implementation Patterns
 
-### Pattern 1: Pydantic-Typed Tool Definition
+### Pattern 1: Custom Tool with `@tool` Decorator (LangChain)
 
-Define tools using Pydantic models for automatic JSON schema generation and input validation. This ensures the LLM receives correct argument structures and that invalid inputs are caught before execution.
-
-```python
-"""
-Pydantic-typed tool definitions for AI agent function calling.
-All tools use Pydantic v2 BaseModel with Field descriptors for
-automatic JSON schema generation and runtime validation.
-"""
-
-from __future__ import annotations
-
-import asyncio
-from dataclasses import dataclass
-from enum import Enum
-from typing import Any, Optional
-
-from pydantic import BaseModel, Field, field_validator
-
-
-# --- Input Schemas (Pydantic models auto-convert to JSON schema) ---
-
-class SearchEngine(str, Enum):
-    """Supported search engine backends."""
-    GOOGLE = "google"
-    BING = "bing"
-    DUCKDUCKGO = "duckduckgo"
-
-
-class WebSearchInput(BaseModel):
-    """Input parameters for a web search tool call."""
-    query: str = Field(
-        description="The search query string. Must be 1-200 characters.",
-        min_length=1,
-        max_length=200,
-    )
-    engine: SearchEngine = Field(
-        default=SearchEngine.DUCKDUCKGO,
-        description="Search engine backend to use for the query",
-    )
-    max_results: int = Field(
-        default=5,
-        ge=1,
-        le=20,
-        description="Maximum number of results to return (1-20)",
-    )
-
-    @field_validator("query")
-    @classmethod
-    def sanitize_query(cls, v: str) -> str:
-        """Strip whitespace and reject empty queries."""
-        cleaned = v.strip()
-        if not cleaned:
-            raise ValueError("Search query must not be empty after trimming")
-        return cleaned
-
-
-class FetchURLInput(BaseModel):
-    """Input parameters for fetching a web page content."""
-    url: str = Field(
-        description="The full URL to fetch. Must be a valid HTTP/HTTPS URL.",
-    )
-    timeout_seconds: float = Field(
-        default=10.0,
-        gt=0,
-        le=60.0,
-        description="Request timeout in seconds (0 < timeout <= 60)",
-    )
-
-    @field_validator("url")
-    @classmethod
-    def validate_url(cls, v: str) -> str:
-        """Basic URL validation — must start with http:// or https://."""
-        if not (v.startswith("http://") or v.startswith("https://")):
-            raise ValueError(f"URL must start with http:// or https://, got: {v[:30]}...")
-        return v.strip()
-
-
-class DatabaseQueryInput(BaseModel):
-    """Input parameters for running a database query tool."""
-    table_name: str = Field(
-        description="Name of the database table to query",
-        pattern=r"^[a-zA-Z_][a-zA-Z0-9_]*$",
-    )
-    filters: dict[str, Any] = Field(
-        default_factory=dict,
-        description="Key-value filters for WHERE clause conditions",
-    )
-    limit: int = Field(
-        default=50,
-        ge=1,
-        le=500,
-        description="Maximum rows to return",
-    )
-
-
-# --- Tool Registry ---
-
-class ToolRegistry:
-    """Central registry that maps tool names to their Pydantic input schemas and handlers."""
-
-    def __init__(self) -> None:
-        self._tools: dict[str, tuple[type[BaseModel], Any]] = {}
-
-    def register(
-        self,
-        name: str,
-        input_schema: type[BaseModel],
-        handler: Any,
-        description: str,
-    ) -> None:
-        """Register a tool with its Pydantic input schema and callable handler.
-
-        Args:
-            name: Unique tool name used by the LLM to invoke this tool.
-            input_schema: Pydantic BaseModel subclass for input validation.
-            handler: Async or sync callable that receives validated input dict.
-            description: Human-readable description the model uses for tool selection.
-        """
-        if name in self._tools:
-            raise ValueError(f"Tool '{name}' is already registered")
-
-        # Generate JSON schema from Pydantic model for LLM function calling
-        schema = input_schema.model_json_schema()
-        self._tools[name] = (input_schema, handler, description, schema)
-
-    def get_tools(self) -> list[dict[str, Any]]:
-        """Return the list of tools in the format expected by most LLM providers.
-
-        Returns a list of function-call schemas with name, description, and parameters.
-        """
-        result = []
-        for name, (schema_cls, _handler, desc, full_schema) in self._tools.items():
-            result.append({
-                "name": name,
-                "description": desc,
-                "parameters": {
-                    "type": "object",
-                    "properties": full_schema.get("properties", {}),
-                    "required": full_schema.get("required", []),
-                    "$schema": "http://json-schema.org/draft-07/schema#",
-                },
-            })
-        return result
-
-    def get_schema(self, name: str) -> dict[str, Any] | None:
-        """Look up a tool's full JSON schema by name.
-
-        Returns None if the tool is not registered.
-        """
-        entry = self._tools.get(name)
-        if entry is None:
-            return None
-        return {"name": name, "description": entry[2], "schema": entry[3]}
-
-
-# --- Example Handlers (real implementations) ---
-
-async def handle_web_search(input_dict: dict[str, Any]) -> list[dict[str, str]]:
-    """Execute a web search and return structured results.
-
-    Args:
-        input_dict: Validated WebSearchInput as a dictionary.
-
-    Returns:
-        List of result dicts with 'title', 'url', and 'snippet' keys.
-    """
-    # In production, this would call an actual search API
-    engine = input_dict.get("engine", SearchEngine.DUCKDUCKGO)
-    query = input_dict["query"]
-    max_results = input_dict["max_results"]
-
-    # Placeholder: return mock results (replace with real HTTP call)
-    results: list[dict[str, str]] = []
-    for i in range(max_results):
-        results.append({
-            "title": f"Result {i+1} for '{query}'",
-            "url": f"https://example.com/search/{i+1}",
-            "snippet": f"Relevant snippet about {query} from {engine.value}",
-        })
-
-    return results
-
-
-async def handle_fetch_url(input_dict: dict[str, Any]) -> str:
-    """Fetch and return the text content of a URL.
-
-    Args:
-        input_dict: Validated FetchURLInput as a dictionary.
-
-    Returns:
-        The fetched page content as a string (truncated to 5000 chars).
-    """
-    import httpx
-
-    url = input_dict["url"]
-    timeout_seconds = input_dict["timeout_seconds"]
-
-    async with httpx.AsyncClient(timeout=timeout_seconds) as client:
-        response = await client.get(url)
-        response.raise_for_status()
-        content = response.text[:5000]  # Truncate to avoid oversized tool output
-        return content
-
-
-async def handle_database_query(input_dict: dict[str, Any]) -> list[dict[str, Any]]:
-    """Query a database table with optional filters.
-
-    Args:
-        input_dict: Validated DatabaseQueryInput as a dictionary.
-
-    Returns:
-        List of row dicts matching the query conditions.
-    """
-    # In production, this would use an actual database connection
-    table = input_dict["table_name"]
-    limit = input_dict["limit"]
-    filters = input_dict.get("filters", {})
-
-    # Placeholder: return mock results (replace with real DB query)
-    rows: list[dict[str, Any]] = [
-        {k: f"value_{i}_{j}" for j, k in enumerate(sorted(filters.keys() or ["id", "name"]))}
-        for i in range(limit)
-    ]
-
-    return rows
-
-
-# --- Registration and Schema Export ---
-
-def build_tool_registry() -> ToolRegistry:
-    """Construct and configure the complete tool registry.
-
-    Returns a fully-registered ToolRegistry with all available agent tools.
-    """
-    registry = ToolRegistry()
-
-    registry.register(
-        name="web_search",
-        input_schema=WebSearchInput,
-        handler=handle_web_search,
-        description="Search the web for information using the specified engine. Returns up to max_results results.",
-    )
-
-    registry.register(
-        name="fetch_url",
-        input_schema=FetchURLInput,
-        handler=handle_fetch_url,
-        description="Fetch and return the text content of a given URL. Respects timeout settings.",
-    )
-
-    registry.register(
-        name="query_database",
-        input_schema=DatabaseQueryInput,
-        handler=handle_database_query,
-        description="Run a filtered query against a database table. Returns structured rows.",
-    )
-
-    return registry
-
-
-# --- Tool Call Dispatch (for use with LLM function calling APIs) ---
-
-def get_tools_for_llm(registry: ToolRegistry) -> list[dict[str, Any]]:
-    """Convert a ToolRegistry into the tool format expected by OpenAI-compatible APIs.
-
-    Each tool becomes a function definition with name, description, and JSON schema parameters.
-
-    Args:
-        registry: The configured ToolRegistry instance.
-
-    Returns:
-        List of tool definitions ready for model inference.
-    """
-    return registry.get_tools()
-```
-
-### Pattern 2: Parallel Tool Execution with Error Wrapping
-
-When the LLM response contains multiple independent tool calls, execute them concurrently and wrap each in error handling so one failure doesn't collapse all results.
+Define a tool by wrapping a Python function with `@langchain_tool`. The docstring becomes the LLM-facing description. Return raw data — never format human-readable strings inside the tool itself, so the LLM can incorporate results flexibly.
 
 ```python
-"""
-Parallel tool execution with comprehensive error wrapping.
-Dispatches multiple tool calls from a single model response
-concurrently, collects results and errors separately, and
-formats everything back for LLM self-correction.
-"""
-
-from __future__ import annotations
-
-import asyncio
-import json
 import logging
-from dataclasses import dataclass, field
-from typing import Any, Optional
+from langchain_core.tools import tool as langchain_tool
+from typing import Optional
 
-logger = logging.getLogger(__name__)
-
-
-@dataclass
-class ToolCallResult:
-    """Structured result from executing a single tool call."""
-    tool_name: str
-    success: bool
-    output: Optional[str] = None
-    error_type: Optional[str] = None
-    error_message: Optional[str] = None
-    execution_time_ms: float = 0.0
-
-    def to_error_feedback(self) -> str:
-        """Format this result as a structured error message for the LLM.
-
-        The error message includes the tool name, exception type, and a
-        human-readable description so the model can self-correct on retry.
-        """
-        if self.success or not self.error_type:
-            return ""
-        return (
-            f"Tool '{self.tool_name}' failed with {self.error_type}: {self.error_message}. "
-            f"If arguments were invalid, check the required fields and try corrected values."
-        )
-
-    def to_dict(self) -> dict[str, Any]:
-        """Serialize for storage or transmission."""
-        return {
-            "tool_name": self.tool_name,
-            "success": self.success,
-            "output": self.output,
-            "error_type": self.error_type,
-            "error_message": self.error_message,
-            "execution_time_ms": round(self.execution_time_ms, 2),
-        }
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s - %(message)s")
 
 
-async def execute_tool_call(
-    tool_name: str,
-    arguments: dict[str, Any],
-    handler: Any,
-) -> ToolCallResult:
-    """Execute a single tool call with timing and error wrapping.
+@langchain_tool
+def search_information(query: str) -> str:
+    """
+    Provides factual information on a given topic. Use this tool to
+    find answers to phrases like 'capital of France' or 'weather in London?'.
 
     Args:
-        tool_name: Name of the tool to invoke.
-        arguments: Validated input arguments as a dictionary.
-        handler: The callable that implements this tool's logic.
+        query: A natural-language description of the information needed.
 
     Returns:
-        A ToolCallResult with either the output or structured error info.
+        A string containing the factual answer, or a default message if
+        no specific entry matches.
     """
-    start_time = asyncio.get_event_loop().time()
-
-    try:
-        result = await handler(arguments)
-        elapsed = (asyncio.get_event_loop().time() - start_time) * 1000
-        return ToolCallResult(
-            tool_name=tool_name,
-            success=True,
-            output=json.dumps(result) if not isinstance(result, str) else result,
-            execution_time_ms=elapsed,
-        )
-
-    except json.JSONDecodeError as e:
-        elapsed = (asyncio.get_event_loop().time() - start_time) * 1000
-        logger.warning("Tool '%s' produced invalid JSON: %s", tool_name, e)
-        return ToolCallResult(
-            tool_name=tool_name,
-            success=False,
-            error_type="JSONDecodeError",
-            error_message=f"Handler returned invalid JSON: {str(e)}",
-            execution_time_ms=elapsed,
-        )
-
-    except ValueError as e:
-        elapsed = (asyncio.get_event_loop().time() - start_time) * 1000
-        logger.warning("Tool '%s' validation error: %s", tool_name, e)
-        return ToolCallResult(
-            tool_name=tool_name,
-            success=False,
-            error_type="ValidationError",
-            error_message=f"Invalid argument or internal validation failed: {str(e)}",
-            execution_time_ms=elapsed,
-        )
-
-    except ConnectionError as e:
-        elapsed = (asyncio.get_event_loop().time() - start_time) * 1000
-        logger.error("Tool '%s' connection failure: %s", tool_name, e)
-        return ToolCallResult(
-            tool_name=tool_name,
-            success=False,
-            error_type="ConnectionError",
-            error_message=f"Could not reach the service endpoint: {str(e)}",
-            execution_time_ms=elapsed,
-        )
-
-    except TimeoutError as e:
-        elapsed = (asyncio.get_event_loop().time() - start_time) * 1000
-        logger.warning("Tool '%s' timed out: %s", tool_name, e)
-        return ToolCallResult(
-            tool_name=tool_name,
-            success=False,
-            error_type="TimeoutError",
-            error_message=f"Execution exceeded time limit: {str(e)}",
-            execution_time_ms=elapsed,
-        )
-
-    except Exception as e:
-        elapsed = (asyncio.get_event_loop().time() - start_time) * 1000
-        logger.exception("Tool '%s' unexpected error: %s", tool_name, e)
-        return ToolCallResult(
-            tool_name=tool_name,
-            success=False,
-            error_type="UnexpectedError",
-            error_message=f"Unhandled exception in {tool_name}: {type(e).__name__}: {str(e)}",
-            execution_time_ms=elapsed,
-        )
-
-
-async def execute_tool_calls_parallel(
-    calls: list[dict[str, Any]],
-    tool_handlers: dict[str, Any],
-    max_concurrent: int = 5,
-) -> list[ToolCallResult]:
-    """Execute multiple independent tool calls concurrently.
-
-    Each call is dispatched as a coroutine wrapped in try/except via
-    execute_tool_call(). Results are collected preserving the original
-    call order so they can be mapped back to the model's output.
-
-    Args:
-        calls: List of dicts with 'tool_name' and 'arguments' keys.
-               Each entry represents one tool invocation from an LLM response.
-        tool_handlers: Dict mapping tool name → async handler function.
-        max_concurrent: Maximum number of concurrent executions (default 5).
-
-    Returns:
-        List of ToolCallResult instances in the same order as input calls.
-    """
-    if not calls:
-        return []
-
-    semaphore = asyncio.Semaphore(max_concurrent)
-
-    async def _bounded_execute(call: dict[str, Any]) -> ToolCallResult:
-        """Execute a single call with concurrency limiting."""
-        tool_name = call["tool_name"]
-        arguments = call.get("arguments", {})
-
-        handler = tool_handlers.get(tool_name)
-        if handler is None:
-            return ToolCallResult(
-                tool_name=tool_name,
-                success=False,
-                error_type="UnknownTool",
-                error_message=f"No handler registered for tool '{tool_name}'",
-            )
-
-        async with semaphore:
-            return await execute_tool_call(tool_name, arguments, handler)
-
-    # Dispatch all calls concurrently (bounded by semaphore)
-    tasks = [_bounded_execute(call) for call in calls]
-    results: list[ToolCallResult] = await asyncio.gather(*tasks)
-
-    return list(results)
-
-
-def format_tool_results_for_llm(
-    results: list[ToolCallResult],
-    tool_names: list[str],
-) -> str:
-    """Format parallel tool execution results back into a message the LLM can consume.
-
-    Success outputs are included directly. Failed tools include structured error
-    messages that describe the failure mode so the LLM can self-correct arguments
-    or try alternative approaches.
-
-    Args:
-        results: ToolCallResult instances from execute_tool_calls_parallel().
-        tool_names: Corresponding tool names for context.
-
-    Returns:
-        A formatted string containing all outputs and error messages.
-    """
-    parts: list[str] = []
-
-    for result, name in zip(results, tool_names):
-        if result.success:
-            parts.append(f"[TOOL_OUTPUT:{name}] {result.output}")
-        else:
-            feedback = result.to_error_feedback()
-            if feedback:
-                parts.append(f"[TOOL_ERROR:{name}] {feedback}")
-            else:
-                parts.append(f"[TOOL_ERROR:{name}] Unknown failure — check tool '{name}' implementation")
-
-    return "\n\n".join(parts)
-
-
-# --- BAD vs. GOOD Example ---
-
-# ❌ BAD: Sequential execution when calls are independent — wastes time
-async def bad_parallel_execution(calls, handlers):
-    results = []
-    for call in calls:
-        # Waits for each call to finish before starting the next
-        result = await execute_tool_call(call["tool_name"], call.get("arguments", {}), handlers[call["tool_name"]])
-        results.append(result)
-    return results
-
-# ✅ GOOD: Use asyncio.gather() for concurrent execution of independent tools
-async def good_parallel_execution(calls, handlers):
-    # All independent calls fire simultaneously, bounded by concurrency limit
-    return await execute_tool_calls_parallel(calls, handlers)
-```
-
-### Pattern 3: Fallback Chain Implementation
-
-Define ordered fallback tool chains keyed by exception type. When a primary tool fails, the system tries alternatives based on what kind of error occurred — connection errors try cached endpoints, validation errors retry with corrected arguments, and rate limits apply backoff.
-
-```python
-"""
-Fallback chain implementation for resilient tool execution.
-Maps exception types to ordered alternative tools, enforcing
-maximum attempt limits to prevent infinite retry loops.
-"""
-
-from __future__ import annotations
-
-import asyncio
-import time
-from dataclasses import dataclass, field
-from typing import Any, Callable, Optional
-
-
-@dataclass(frozen=True)
-class FallbackConfig:
-    """Configuration for a single fallback level in the chain.
-
-    Attributes:
-        tool_name: The alternative tool to try.
-        condition: Lambda or callable that returns True if this fallback applies.
-                   Receives the exception from the failed tool.
-        backoff_seconds: Seconds to wait before trying this fallback (0 = immediate).
-        description: Human-readable explanation of when this fallback triggers.
-    """
-    tool_name: str
-    condition: Callable[[BaseException], bool]
-    backoff_seconds: float = 0.0
-    description: str = ""
-
-
-@dataclass
-class ExecutionAttempt:
-    """Tracks a single attempt at executing a tool (primary or fallback)."""
-    tool_name: str
-    arguments: dict[str, Any]
-    attempt_number: int
-    success: bool = False
-    error_type: Optional[str] = None
-    error_message: Optional[str] = None
-    result_output: Optional[str] = None
-    retries_used: int = 0
-
-    @property
-    def is_terminal(self) -> bool:
-        """Return True if this attempt exhausted all fallback options."""
-        return not self.success and self.retries_used >= self._max_allowed_retries()
-
-    @staticmethod
-    def _max_allowed_retries() -> int:
-        """Global maximum retries to prevent infinite loops (Law 4: Fail Fast)."""
-        return 5
-
-
-class FallbackChain:
-    """Ordered chain of tool alternatives with exception-based routing.
-
-    A FallbackChain wraps a primary tool and one or more fallback tools,
-    each triggered by specific exception types. When the primary fails, the
-    chain evaluates conditions in order and tries the first matching fallback.
-    After all fallbacks are exhausted, the last error is returned to the LLM.
-
-    Attributes:
-        primary_tool_name: The name of the main tool to attempt first.
-        fallbacks: Ordered list of FallbackConfig entries.
-    """
-
-    def __init__(self, primary_tool_name: str, fallbacks: list[FallbackConfig]) -> None:
-        """Initialize a fallback chain with a primary tool and optional alternatives.
-
-        Args:
-            primary_tool_name: The main tool name for this chain.
-            fallbacks: Ordered list of fallback configurations, evaluated top-to-bottom.
-                       Earlier entries are tried first on matching exceptions.
-        """
-        self.primary_tool_name = primary_tool_name
-        self.fallbacks = fallbacks
-
-    def get_all_tools(self) -> list[str]:
-        """Return the ordered list of all tools in this chain (primary + fallbacks)."""
-        tools = [self.primary_tool_name]
-        for fb in self.fallbacks:
-            if fb.tool_name not in tools:
-                tools.append(fb.tool_name)
-        return tools
-
-    def select_fallback(self, exception: BaseException) -> Optional[FallbackConfig]:
-        """Find the first fallback whose condition matches the given exception.
-
-        Args:
-            exception: The exception raised by the primary or previous fallback tool.
-
-        Returns:
-            The first matching FallbackConfig, or None if no fallback applies.
-        """
-        for fallback in self.fallbacks:
-            try:
-                if fallback.condition(exception):
-                    return fallback
-            except Exception as condition_err:
-                # If the condition itself throws, skip this fallback and try next
-                continue
-        return None
-
-
-async def execute_with_fallback_chain(
-    tool_name: str,
-    arguments: dict[str, Any],
-    handlers: dict[str, Callable[..., Any]],
-    chains: dict[str, FallbackChain],
-) -> dict[str, Any]:
-    """Execute a tool call with automatic fallback chain resolution.
-
-    When the primary tool fails, this function examines the exception type,
-    finds the first matching fallback in the registered chains, and retries
-    with the alternative tool. The process repeats for each level until
-    success or exhaustion of all fallbacks.
-
-    Args:
-        tool_name: The primary tool to attempt first.
-        arguments: Validated input arguments.
-        handlers: Dict mapping all tool names → their handler functions.
-        chains: Dict mapping tool name → its configured FallbackChain.
-
-    Returns:
-        A dict with keys: 'success', 'tool_used', 'output' (on success),
-        or 'success', 'tool_used', 'error_type', 'error_message' (on failure).
-    """
-    # Guard clause: Early Exit (Law 1)
-    if not tool_name:
-        return {
-            "success": False,
-            "tool_used": None,
-            "error_type": "ValidationError",
-            "error_message": "Tool name must not be empty",
-        }
-
-    chain = chains.get(tool_name)
-    # If no chain registered for this tool, just execute once
-    if chain is None:
-        handler = handlers.get(tool_name)
-        if handler is None:
-            return {
-                "success": False,
-                "tool_used": None,
-                "error_type": "UnknownTool",
-                "error_message": f"No handler found for tool '{tool_name}'",
-            }
-
-        try:
-            result = await handler(arguments)
-            return {"success": True, "tool_used": tool_name, "output": str(result)}
-        except Exception as e:
-            return {
-                "success": False,
-                "tool_used": tool_name,
-                "error_type": type(e).__name__,
-                "error_message": str(e),
-            }
-
-    # Build ordered tool list from chain
-    all_tools = chain.get_all_tools()
-    last_exception: Optional[BaseException] = None
-    attempt_count = 0
-
-    for tool_to_try in all_tools:
-        if attempt_count >= ExecutionAttempt._max_allowed_retries():
-            break
-
-        handler = handlers.get(tool_to_try)
-        if handler is None:
-            last_exception = ValueError(f"No handler registered for '{tool_to_try}'")
-            attempt_count += 1
-            continue
-
-        # Apply backoff before fallback attempts (not the first try)
-        if tool_to_try != chain.primary_tool_name:
-            fb_config = chain.select_fallback(last_exception) if last_exception else None
-            if fb_config and fb_config.backoff_seconds > 0:
-                await asyncio.sleep(fb_config.backoff_seconds)
-
-        try:
-            result = await handler(arguments)
-            return {
-                "success": True,
-                "tool_used": tool_to_try,
-                "output": str(result),
-            }
-
-        except Exception as e:
-            last_exception = e
-            attempt_count += 1
-            continue
-
-    # All tools exhausted — return the last error to the caller (LLM self-correction)
-    return {
-        "success": False,
-        "tool_used": all_tools[-1] if all_tools else None,
-        "error_type": type(last_exception).__name__ if last_exception else "Unknown",
-        "error_message": str(last_exception) if last_exception else "All fallback attempts exhausted",
+    logging.info(f"Tool Call: search_information with query='{query}'")
+
+    simulated_results: dict[str, str] = {
+        "weather in london": "The weather in London is currently cloudy "
+                             "with a temperature of 15°C.",
+        "capital of france": "The capital of France is Paris.",
+        "population of earth": "The estimated population of Earth is "
+                               "around 8 billion people.",
+        "tallest mountain": "Mount Everest is the tallest mountain above "
+                            "sea level at 8,849 meters.",
     }
 
+    result = simulated_results.get(query.lower(),
+                                   f"Simulated search for '{query}': "
+                                   "No specific information found.")
+    logging.info(f"--- TOOL RESULT: {result[:120]} ---")
+    return result
+```
 
-# --- Example: Building a Realistic Fallback Chain ---
+**BAD — Returning formatted strings from tools:**
 
-def build_search_fallback_chain() -> FallbackChain:
-    """Create a search tool with layered fallbacks.
+```python
+# ❌ BAD: The LLM cannot re-format or combine this result with other data.
+@langchain_tool
+def get_weather_bad(location: str) -> str:
+    """Get weather."""  # Too short for the LLM to reason about when to use
+    temp = fetch_temperature(location)  # hypothetical
+    return f"The weather in {location} is currently {temp}°C. " \
+           "It looks nice today!"  # Overly opinionated, LLM can't adapt
 
-    Primary: live web search via DuckDuckGo
-    Fallback 1: Bing API (for connection errors to DuckDuckGo)
-    Fallback 2: Local cached results with staleness warning (for validation errors or rate limits)
+
+# ✅ GOOD: Return raw data; let the LLM decide how to present it.
+@langchain_tool
+def get_weather_good(location: str) -> dict:
     """
-    return FallbackChain(
-        primary_tool_name="web_search_duckduckgo",
-        fallbacks=[
-            FallbackConfig(
-                tool_name="web_search_bing",
-                condition=lambda e: isinstance(e, ConnectionError),
-                backoff_seconds=0.5,
-                description="Primary search unreachable — try Bing API as alternative provider",
-            ),
-            FallbackConfig(
-                tool_name="web_search_cached",
-                condition=lambda e: isinstance(e, (ConnectionError, TimeoutError, ValueError)),
-                backoff_seconds=1.0,
-                description="All live search providers failed — return locally cached results with staleness warning",
-            ),
-        ],
-    )
+    Fetches current weather conditions for a given location. Returns
+    temperature, condition, and humidity as structured data.
 
+    Args:
+        location: City name or coordinates (e.g., 'London', '40.7,-74.0').
 
-def build_db_fallback_chain() -> FallbackChain:
-    """Create a database query tool with layered fallbacks.
-
-    Primary: PostgreSQL via async driver
-    Fallback 1: Read replica (for connection errors to primary)
-    Fallback 2: SQLite file cache (for validation or rate-limit errors)
+    Returns:
+        Dict with 'temperature_c', 'condition', and 'humidity_percent'.
     """
-    return FallbackChain(
-        primary_tool_name="query_postgres",
-        fallbacks=[
-            FallbackConfig(
-                tool_name="query_postgres_replica",
-                condition=lambda e: isinstance(e, ConnectionError),
-                backoff_seconds=0.25,
-                description="Primary PostgreSQL unreachable — try read replica",
-            ),
-            FallbackConfig(
-                tool_name="query_sqlite_cache",
-                condition=lambda e: isinstance(e, (ConnectionError, TimeoutError, ValueError)),
-                backoff_seconds=0.5,
-                description="All database endpoints failed — return from SQLite cache",
-            ),
-        ],
+    logging.info(f"Tool Call: get_weather for '{location}'")
+    data = fetch_weather_api(location)  # hypothetical API call
+    return {
+        "temperature_c": float(data["temp"]),
+        "condition": str(data["main_condition"]),
+        "humidity_percent": int(data["humidity"]),
+    }
+```
+
+### Pattern 2: CrewAI Tool with Exception-Based Error Handling
+
+In CrewAI, tools are defined identically to LangChain using the `@tool` decorator from `crewai.tools`, but error handling semantics differ. Raise typed exceptions so the Crew framework routes them back to the agent for decision-making.
+
+```python
+import os
+from crewai import Agent, Task, Crew
+from crewai.tools import tool
+
+
+@tool("Stock Price Lookup Tool")
+def get_stock_price(ticker: str) -> float:
+    """
+    Fetches the latest simulated stock price for a given stock ticker
+    symbol. Returns the price as a float.
+
+    Args:
+        ticker: Stock ticker symbol (e.g., 'AAPL', 'GOOGL'). Must be 1-5
+                uppercase letters.
+
+    Returns:
+        The stock price as a floating-point number.
+
+    Raises:
+        ValueError: If the ticker is not recognized or empty.
+        RuntimeError: If the external price feed is unavailable.
+    """
+    import logging
+    logging.info(f"Tool Call: get_stock_price for ticker '{ticker}'")
+
+    simulated_prices: dict[str, float] = {
+        "AAPL": 178.15,
+        "GOOGL": 1750.30,
+        "MSFT": 425.50,
+        "AMZN": 186.40,
+    }
+
+    normalized_ticker = ticker.strip().upper()
+
+    if not normalized_ticker:
+        raise ValueError("Ticker symbol cannot be empty.")
+
+    price = simulated_prices.get(normalized_ticker)
+    if price is None:
+        raise ValueError(
+            f"Simulated price for ticker '{normalized_ticker}' not found. "
+            f"Available tickers: {', '.join(sorted(simulated_prices.keys()))}"
+        )
+
+    return price
+
+
+# --- Agent and Task Configuration ---
+financial_analyst = Agent(
+    role="Senior Financial Analyst",
+    goal="Analyze stock data using provided tools and report key prices.",
+    backstory=(
+        "You are an experienced financial analyst adept at using data "
+        "sources to find stock information. You provide clear, direct "
+        "answers backed by real-time tool results."
+    ),
+    verbose=True,
+    tools=[get_stock_price],
+    allow_delegation=False,
+)
+
+analyze_task = Task(
+    description=(
+        "What is the current simulated stock price for Apple (ticker: AAPL)? "
+        "Use the 'Stock Price Lookup Tool' to find it. If the ticker is not "
+        "found, report exactly that you were unable to retrieve the price."
+    ),
+    expected_output=(
+        "A single clear sentence stating the simulated stock price for AAPL, "
+        "or a statement that the price could not be retrieved."
+    ),
+    agent=financial_analyst,
+)
+
+financial_crew = Crew(
+    agents=[financial_analyst],
+    tasks=[analyze_task],
+    verbose=True,
+)
+
+
+def run_crew() -> None:
+    """Execute the financial crew and print results."""
+    if not os.environ.get("OPENAI_API_KEY"):
+        raise RuntimeError(
+            "OPENAI_API_KEY environment variable is not set. "
+            "Set it before running the crew."
+        )
+
+    result = financial_crew.kickoff()
+    print(f"\n## Crew Result:\n{result}")
+```
+
+### Pattern 3: Google ADK Pre-Built Tools
+
+Google ADK ships built-in tools that require zero wrapper code. Reference them directly in your agent's `tools` list:
+
+```python
+from google.adk.agents import Agent as ADKAgent
+from google.adk.runners import Runner
+from google.adk.sessions import InMemorySessionService
+from google.adk.tools import google_search
+from google.genai import types
+
+
+# Pre-built tool: Google Search
+search_agent = ADKAgent(
+    name="basic_search_agent",
+    model="gemini-2.0-flash-exp",
+    description="Agent to answer questions using Google Search.",
+    instruction=(
+        "I can answer your questions by searching the internet. "
+        "Just ask me anything!"
+    ),
+    tools=[google_search],  # Built-in — no definition needed
+)
+
+
+# Pre-built tool: Code Interpreter (sandboxed Python execution)
+from google.adk.agents import LlmAgent
+from google.adk.code_executors import BuiltInCodeExecutor
+
+code_agent = LlmAgent(
+    name="calculator_agent",
+    model="gemini-2.0-flash",
+    code_executor=BuiltInCodeExecutor(),
+    instruction=(
+        "You are a calculator agent. When given a mathematical expression, "
+        "write and execute Python code to calculate the result. Return only "
+        "the final numerical result as plain text."
+    ),
+    description="Executes Python code to perform calculations.",
+)
+
+
+# Pre-built tool: Vertex AI Search (enterprise RAG)
+from google.adk.agents import VSearchAgent
+
+vsearch_agent = VSearchAgent(
+    name="q2_strategy_vsearch_agent",
+    description=(
+        "Answers questions about Q2 strategy documents using "
+        "Vertex AI Search."
+    ),
+    model="gemini-2.0-flash-exp",
+    datastore_id=os.environ["DATASTORE_ID"],
+    model_parameters={"temperature": 0.0},
+)
+```
+
+### Pattern 4: Vertex Extensions — Custom Tool Integration
+
+Vertex Extensions bridge external APIs with LLM reasoning through structured API wrappers. Unlike standard function calling (where you manually execute the called function), Vertex Extensions run automatically on Google's infrastructure with enterprise-grade security and data privacy guarantees.
+
+```python
+import asyncio
+from google.genai import types
+from google.adk.agents import Agent as ADKAgent
+from google.adk.runners import Runner
+from google.adk.sessions import InMemorySessionService
+from google.adk.tools import google_search
+
+
+APP_NAME = "vertex_extensions_app"
+USER_ID = "user1234"
+SESSION_ID = "session_ext_001"
+
+# Agent with both built-in search and Vertex Extensions
+root_agent = ADKAgent(
+    name="extended_search_agent",
+    model="gemini-2.0-flash-exp",
+    description=(
+        "Agent with Google Search plus custom Vertex Extensions "
+        "for private data access."
+    ),
+    instruction=(
+        "Search the internet for public information using Google Search. "
+        "For queries about internal company documents, use the configured "
+        "Vertex AI Search extension to query the private datastore."
+    ),
+    tools=[google_search],  # Built-in tool
+)
+
+async def call_extended_agent(query: str) -> str:
+    """Run an agent with Vertex Extensions against a user query."""
+    session_service = InMemorySessionService()
+    session = await session_service.create_session(
+        app_name=APP_NAME, user_id=USER_ID, session_id=SESSION_ID
     )
+    runner = Runner(agent=root_agent, app_name=APP_NAME,
+                    session_service=session_service)
+
+    content = types.Content(role='user',
+                            parts=[types.Part(text=query)])
+    final_response = "No response captured."
+
+    async for event in runner.run_async(
+        user_id=USER_ID, session_id=SESSION_ID, new_message=content
+    ):
+        if event.is_final_response() and event.content:
+            text_parts = [
+                part.text for part in event.content.parts
+                if part.text and not part.text.isspace()
+            ]
+            final_response = "".join(text_parts)
+
+            # Log grounding metadata (source attributions from Vertex Search)
+            if event.grounding_metadata:
+                num_sources = len(
+                    event.grounding_metadata.grounding_attributions
+                )
+                print(f"  [Sources found: {num_sources}]")
+
+    return final_response
+
+
+async def main() -> None:
+    result = await call_extended_agent(
+        "What are the latest developments in AI agent frameworks?"
+    )
+    print(f"\nAgent Response: {result}")
+
+
+try:
+    asyncio.run(main())
+except RuntimeError as e:
+    if "running event loop" in str(e):
+        print("Running in an existing event loop. Run `await main()` instead.")
+    else:
+        raise
 ```
 
 ---
@@ -924,35 +406,50 @@ def build_db_fallback_chain() -> FallbackChain:
 ## Constraints
 
 ### MUST DO
-- Define all tool input schemas with Pydantic models before registering them — never use raw dicts for LLM-facing tool definitions
-- Wrap every tool execution in try/except that catches at least `ConnectionError`, `TimeoutError`, and a generic `Exception` handler
-- Execute independent tool calls concurrently using `asyncio.gather()` or equivalent, not sequentially
-- Format error messages for LLM self-correction: include the exception type, what went wrong, and what to try next
-- Validate all tool results against expected output schemas before passing downstream
-- Implement fallback chains with a maximum attempt limit (5 attempts is recommended) to prevent infinite loops
-- Use guard clauses at the top of every tool handler — return early on empty/invalid input (Early Exit, Law 1)
-- Reference `code-philosophy` (5 Laws of Elegant Defense): parse input at boundaries, fail fast on invalid states, never mutate inputs
+
+1. **Every tool must have a descriptive docstring** — The LLM reads the docstring to decide when to call the tool. Write 2–4 sentences describing purpose, inputs, and expected output. Follow the `code-philosophy` law of *Intentional Naming*: if a human can't understand what the tool does from its docstring alone, refactor it.
+
+2. **Use typed function signatures** — Define parameter types (`str`, `float`, `int`, `dict[str, str]`) and return types. This is how the framework generates the JSON schema the LLM sees. Follow *Parse Don't Validate*: trust that typed signatures define the contract at the boundary.
+
+3. **Raise exceptions for failure states** — Use `ValueError` for bad arguments, `RuntimeError` for unavailable services. Never catch exceptions and return error strings — this robs the LLM of structured error context. Follow *Fail Fast*: invalid states halt with descriptive errors.
+
+4. **Include `{agent_scratchpad}` in prompt templates** — LangChain agents require this placeholder to display tool call history back to the LLM. Without it, the agent cannot learn from previous tool results and will repeat failed calls indefinitely.
+
+5. **Validate API keys before execution** — Check for required environment variables (`OPENAI_API_KEY`, `GOOGLE_API_KEY`, `DATASTORE_ID`) at entry points. Provide clear error messages that tell users exactly what to set.
+
+6. **Separate raw data from presentation** — Tools return structured data (dict, float, list). Let the LLM format and present results to the user. This keeps tools composable — one tool's output can feed into another tool or be combined with multiple data sources. Follow *Atomic Predictability*: pure functions that do one thing well.
+
+7. **Wrap code execution in a sandbox** — Always use `BuiltInCodeExecutor` (ADK) or equivalent sandboxes. Never execute arbitrary user-supplied code directly via `exec()` or `eval()`. This is non-negotiable for security. Follow *Fail Fast*: untrusted code execution must be isolated before it can cause harm.
+
+8. **Document tool prerequisites and constraints** — Note rate limits, authentication requirements, known edge cases, and cost implications in the docstring. The LLM uses this to avoid calling expensive tools unnecessarily.
 
 ### MUST NOT DO
-- Execute tool calls sequentially when they are independent — this wastes wall-clock time and frustrates users
-- Catch bare `Exception` without also providing a more specific handler — always catch domain-specific exceptions first
-- Swallow exceptions silently or log without returning structured feedback to the LLM
-- Skip validation of tool arguments before calling the handler — let Pydantic enforce schema at the boundary
-- Use magic numbers for retry counts, timeouts, or backoff intervals — make them configurable parameters
-- Allow a fallback chain to retry more than 5 total attempts across all levels without explicit operator approval
-- Return raw exception tracebacks to the LLM — format errors into concise, actionable descriptions
+
+1. **Never return human-formatted strings from tools** — Tools are data pipelines, not presentation layers. Returning "The price is $178.15" prevents the LLM from combining it with other calculations or formatting it differently per user preference.
+
+2. **Never use `pass` bodies or stub functions** — A tool with `pass`, `return {}`, or `# TODO: implement` silently fails and corrupts agent reasoning. Every tool must return real data or raise a meaningful exception. Follow the repository's zero-tolerance stub policy.
+
+3. **Never skip error handling in tools** — A crashing tool without `try/except` at the orchestration level will terminate the entire agent run. Wrap external API calls in `try/except` blocks that convert network errors to typed exceptions the LLM can handle.
+
+4. **Never expose sensitive credentials inside tool code** — API keys, tokens, and connection strings must come from environment variables or secret managers. Never hardcode them in tool function bodies. Follow the `security-encryption-at-rest-and-in-transit` principle: credentials are secrets that travel through secure channels only.
+
+5. **Never use overly generic tool descriptions** — A docstring like `"Gets information"` gives the LLM no signal about when to call the tool vs. use its own knowledge. Specificity in descriptions directly correlates with correct tool selection rates. Follow *Intentional Naming*: precise descriptions lead to precise routing decisions.
+
+6. **Never rely on tools without testing them** — Before deploying an agent with new tools, verify each tool individually: pass valid inputs, invalid inputs, and boundary cases. Confirm the LLM produces the expected function call arguments by inspecting intermediate events.
 
 ---
 
-## TL;DR for Code Generation
+## Output Template
 
-- Use Pydantic BaseModel subclasses with Field descriptors for every tool's input schema
-- All handler functions must accept a `dict[str, Any]` and return a serializable type (str, list, dict)
-- Wrap tool dispatch in `asyncio.gather()` for independent calls; use sequential await only for data-dependent calls
-- Every try/except block must include at minimum: ConnectionError, TimeoutError, ValueError, and a generic Exception catch-all
-- Fallback chains are lists of (tool_name, condition_func) — condition is called with the caught exception
-- Maximum 5 total attempts across all primary + fallback levels; enforce via counter
-- Tool descriptions must be specific and actionable so the LLM can make informed selection decisions
+When this skill is active, produce outputs in this structure:
+
+1. **Tool Schema Definition** — Show the Python function with `@tool` decorator, type hints, docstring, and return logic. Include both the tool definition and how it's registered with the framework.
+
+2. **Agent Configuration Block** — Show the agent setup (LLM model, tools list, prompt template with scratchpad placeholder), specifying which framework is being used (LangChain, CrewAI, or ADK).
+
+3. **Execution Flow Demonstration** — Provide a concrete example of invoking the agent with a user query and showing the expected tool call → execution → result cycle, including error handling paths.
+
+4. **Security & Validation Notes** — List any security considerations for the tools implemented (authentication requirements, sandboxing needs, input validation rules).
 
 ---
 
@@ -960,18 +457,51 @@ def build_db_fallback_chain() -> FallbackChain:
 
 | Skill | Purpose |
 |---|---|
-| `memory-systems` | Store tool call history, results, and errors in agent memory for context-aware retries |
-| `planning-reasoning` | Plan multi-step workflows where the model determines the sequence of tool calls needed |
-| `multi-agent-orchestration` | Route tool calling responsibilities across multiple specialized agents with coordinated delegation |
+| `prompt-chaining` | Chains multiple agent steps together; tool use is often one step in a larger prompt chain |
+| `reflection-loop` | Agent reflects on its own tool-use results to decide if further calls are needed or the task is complete |
+| `ai-llm-agentic-tooling-mcp` | Model Context Protocol for standardized external tool integration across LLM frameworks |
 
 ---
 
+## Aggregation Flow Diagram
+
+```
+User Request
+     │
+     ▼
+┌──────────────┐
+│   LLM Agent  │ ◄── Prompt with {agent_scratchpad} placeholder
+└──────┬───────┘
+       │ Decides: call tool?
+       ├──────────────► No → Generate final response
+       │
+       ▼ (Yes)
+┌──────────────┐     ┌──────────────────┐
+│ Function Call│────►│ Tool Executor    │
+│  (JSON args) │     │ (Python function │
+└──────────────┘     │  or API wrapper) │
+                     └───────┬──────────┘
+                             │ Result / Exception
+                     ┌───────▼──────────┐
+                     │ Observation      │ ◄── Returned to LLM context
+                     │ (Result stored   │
+                     │  in scratchpad)  │
+                     └───────┬──────────┘
+                             │ LLM sees result
+                     ┌───────▼──────────┐
+                     │ LLM Decision     │
+                     │ → Call another?  │──► Yes (loop back to Function Call)
+                     │ → Final answer?  │──► Yes (output to user)
+                     └──────────────────┘
+```
+
 ## Live References
 
-> Authoritative documentation links for tool calling and function calling in AI agent systems.
+> Authoritative documentation links for tool use and function calling across the major agentic frameworks. The model follows these links at load time to resolve external references and inline content.
 
-- [OpenAI Function Calling Documentation](https://platform.openai.com/docs/guides/function-calling)
-- [Pydantic v2 Model_json_schema Reference](https://docs.pydantic.dev/latest/api/base_model/)
-- [LangChain Tool Definition Patterns](https://python.langchain.com/docs/modules/agents/tools/custom_tools)
-- [Google Gemini Function Calling Guide](https://ai.google.dev/gemini-api/docs/function-calling)
-- [Anthropic Tool Use Documentation](https://docs.anthropic.com/en/docs/build-with-claude/tool-use)
+- [LangChain Tools Integration Guide](https://python.langchain.com/docs/integrations/tools/) — Official LangChain docs on defining, registering, and using tools
+- [Google ADK Tools Documentation](https://google.github.io/adk-docs/tools/) — Built-in tools, code executors, and Vertex Extensions in ADK
+- [OpenAI Function Calling Guide](https://platform.openai.com/docs/guides/function-calling) — OpenAI's native function calling API specification
+- [CrewAI Tools Concepts](https://docs.crewai.com/concepts/tools) — Tool definitions, multi-agent tool sharing, and best practices
+- [LangGraph Tool Execution Patterns](https://python.langchain.com/docs/versions/migrating_tools/) — Advanced tool calling patterns with LangGraph state machines
+- [Google ADK Code Executors](https://google.github.io/adk-docs/tools/code-execution) — BuiltInCodeExecutor configuration and sandboxing

@@ -26,6 +26,19 @@ const EMBEDDING_PROMPT_TEMPLATE =
   'Example format: [0.123, -0.456, 0.789, ...]';
 
 /**
+ * Maximum character length for a single text input to the embedding API.
+ * OpenAI's text-embedding models have an 8192 token limit (~32KB max), but
+ * we cap at 4000 characters to leave safe margin for token overhead and
+ * multi-language content. Text exceeding this is truncated with a warning.
+ */
+const MAX_TEXT_LENGTH = 4_000;
+
+/**
+ * Preview length used when logging truncated text to keep log lines readable.
+ */
+const PREVIEW_LENGTH = 120;
+
+/**
  * Result of batch embedding generation with token information
  */
 interface EmbeddingsWithTokens {
@@ -312,6 +325,17 @@ export class EmbeddingService {
       return this.generateEmbeddingFromEmulation(text);
     }
 
+    // Defensive truncation: cap text at MAX_TEXT_LENGTH to prevent API errors.
+    const safeText = text.length > MAX_TEXT_LENGTH
+      ? (() => {
+          this.logger.warn(
+            `[TRUNCATED] Single text exceeds max length (${text.length} > ${MAX_TEXT_LENGTH} chars). Truncated to ${MAX_TEXT_LENGTH}.`,
+            { textPreview: text.slice(0, PREVIEW_LENGTH) },
+          );
+          return text.slice(0, MAX_TEXT_LENGTH);
+        })()
+      : text;
+
     try {
       const baseUrl = this.config.provider === 'llamacpp'
         ? this.config.llamacppBaseUrl
@@ -327,7 +351,7 @@ export class EmbeddingService {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${apiKey}`,
         },
-        body: JSON.stringify({ model: this.config.model, input: text }),
+        body: JSON.stringify({ model: this.config.model, input: safeText }),
       });
 
       if (!response.ok) {
@@ -365,26 +389,43 @@ export class EmbeddingService {
   /**
     * Generate embeddings from API in batch (OpenAI or llama.cpp)
     */
-   private async generateEmbeddingsFromAPI(
-     texts: string[]
-   ): Promise<EmbeddingsWithTokens> {
-     try {
-       const baseUrl = this.config.provider === 'llamacpp'
-         ? this.config.llamacppBaseUrl
-         : resolveOpenAIBase();
+  private async generateEmbeddingsFromAPI(
+      texts: string[]
+    ): Promise<EmbeddingsWithTokens> {
+      try {
+        // Defensive truncation: cap each text at MAX_TEXT_LENGTH to prevent
+        // "maximum input length" API errors. One oversized entry should not
+        // fail the entire batch — truncated entries still produce embeddings.
+        const safeTexts: string[] = [];
+        for (let i = 0; i < texts.length; i++) {
+          const text = texts[i];
+          if (text.length > MAX_TEXT_LENGTH) {
+            this.logger.warn(
+              `[TRUNCATED] Text ${i + 1}/${texts.length} exceeds max length (${text.length} > ${MAX_TEXT_LENGTH} chars). Truncated to ${MAX_TEXT_LENGTH}.`,
+              { textPreview: text.slice(0, PREVIEW_LENGTH) },
+            );
+            safeTexts.push(text.slice(0, MAX_TEXT_LENGTH));
+          } else {
+            safeTexts.push(text);
+          }
+        }
 
-       const apiKey = this.config.provider === 'llamacpp'
-         ? (this.config.apiKey || 'no-key')
-         : this.config.apiKey;
+        const baseUrl = this.config.provider === 'llamacpp'
+          ? this.config.llamacppBaseUrl
+          : resolveOpenAIBase();
 
-       const response = await fetch(`${baseUrl}/v1/embeddings`, {
-         method: 'POST',
-         headers: {
-           'Content-Type': 'application/json',
-           'Authorization': `Bearer ${apiKey}`,
-         },
-         body: JSON.stringify({ model: this.config.model, input: texts }),
-       });
+        const apiKey = this.config.provider === 'llamacpp'
+          ? (this.config.apiKey || 'no-key')
+          : this.config.apiKey;
+
+        const response = await fetch(`${baseUrl}/v1/embeddings`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({ model: this.config.model, input: safeTexts }),
+        });
 
        if (!response.ok) {
          const errorData = await response.text();
