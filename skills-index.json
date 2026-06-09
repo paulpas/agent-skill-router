@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-09T00:46:12.680350Z",
-  "totalSkills": 1252,
+  "generatedAt": "2026-06-09T01:54:54.837946Z",
+  "totalSkills": 1258,
   "domains": {
-    "agent": 312,
+    "agent": 318,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
@@ -28,7 +28,7 @@
     "writing": 4
   },
   "roles": {
-    "implementation": 828,
+    "implementation": 834,
     "orchestration": 238,
     "reference": 177,
     "information": 1,
@@ -4826,6 +4826,30 @@
       "source": "skills/coding/braintree-api/SKILL.md"
     },
     {
+      "name": "budget-aware-cost-management",
+      "domain": "agent",
+      "description": "Implements session-level budget quotas, cost monitoring with threshold alerts, and ROI tracking to enforce AI agent spending limits and optimize return on investment.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "analysis",
+      "triggers": [
+        "budget quota",
+        "cost monitoring",
+        "token budget",
+        "spending limits",
+        "ROI tracking",
+        "AI cost optimization",
+        "how do i control agent spending"
+      ],
+      "relatedSkills": [
+        "resource-optimization",
+        "goal-setting-monitoring",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/budget-aware-cost-management/SKILL.md"
+    },
+    {
       "name": "build",
       "domain": "agent",
       "description": "Implements intelligent build with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -5614,6 +5638,31 @@
       "source": "skills/coding/clean-architecture/SKILL.md"
     },
     {
+      "name": "cli-agent-workflows",
+      "domain": "agent",
+      "description": "Implements CLI agent workflows (terminal interaction, file operations, code generation from design specs, MCP bridging) for building command-line AI assistants and developer tooling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "CLI agent",
+        "Gemini CLI",
+        "terminal automation",
+        "command-line assistant",
+        "MCP bridging",
+        "how do i build a CLI AI tool",
+        "developer agent",
+        "stdin/stdout streaming"
+      ],
+      "relatedSkills": [
+        "mcp-integration",
+        "tool-use-function-calling",
+        "coding-agent-frameworks"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/cli-agent-workflows/SKILL.md"
+    },
+    {
       "name": "clickup-api",
       "domain": "coding",
       "description": "Integrates with ClickUp API v2 to manage tasks, lists, spaces, folders, goals, time tracking, dashboards, and teams using clickup-python-sdk.",
@@ -6140,6 +6189,32 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/code-validation/SKILL.md"
+    },
+    {
+      "name": "coding-agent-frameworks",
+      "domain": "agent",
+      "description": "Implements autonomous coding agent frameworks (automated refactoring, test generation, deployment pipeline management) for AI-augmented software development with 30%+ code generation targets.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "coding agent",
+        "automated refactoring",
+        "test generation",
+        "deployment automation",
+        "AI developer",
+        "how do i automate software development",
+        "legacy modernization"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "cli-agent-workflows",
+        "git-pr-workflows-onboard",
+        "subagent-driven-development",
+        "code-correctness-verifier"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/coding-agent-frameworks/SKILL.md"
     },
     {
       "name": "cohere-api",
@@ -11448,6 +11523,30 @@
       "source": "skills/agent/evaluation-monitoring/SKILL.md"
     },
     {
+      "name": "evaluation-rubrics-scored-review",
+      "domain": "agent",
+      "description": "Implements evaluation rubric design (multi-criteria scoring, Elo-based ranking, peer-review simulation) for quantitative assessment of AI agent outputs without ground truth labels.",
+      "role": "implementation",
+      "scope": "review",
+      "outputFormat": "analysis",
+      "triggers": [
+        "evaluation rubrics",
+        "Elo ranking",
+        "peer review simulation",
+        "scored review",
+        "quality criteria design",
+        "inter-rater reliability",
+        "Agent Laboratory"
+      ],
+      "relatedSkills": [
+        "evaluation-monitoring",
+        "agentic-evaluation",
+        "self-critique-engine"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/evaluation-rubrics-scored-review/SKILL.md"
+    },
+    {
       "name": "event-bus",
       "domain": "coding",
       "description": "\"Async pub/sub event bus with typed events, mixed sync/async dispatch\" and singleton initialization for trading systems",
@@ -16626,6 +16725,30 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/knative/SKILL.md"
+    },
+    {
+      "name": "knowledge-graph-construction",
+      "domain": "agent",
+      "description": "Implements knowledge graph construction (entity extraction, relationship mapping, graph database storage) and Graph-RAG integration for enterprise AI agents with structured reasoning over connected data.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "knowledge graph",
+        "Neo4j",
+        "GraphRAG",
+        "entity extraction",
+        "relationship mapping",
+        "how do i build a knowledge graph for AI",
+        "multi-hop queries"
+      ],
+      "relatedSkills": [
+        "rag-patterns",
+        "mcp-integration",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/knowledge-graph-construction/SKILL.md"
     },
     {
       "name": "knowledge-transfer-methods",
@@ -22691,6 +22814,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/react-nextjs-development/SKILL.md"
+    },
+    {
+      "name": "reasoning-engine-internals",
+      "domain": "agent",
+      "description": "Implements dual-provider reasoning architecture (Gemini + Claude orchestration), cross-model reasoning pipelines, token budget management, and AI-assisted development velocity tracking for production AI systems.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "analysis",
+      "triggers": [
+        "dual provider reasoning",
+        "cross-model orchestration",
+        "Gemini Claude routing",
+        "reasoning engine",
+        "token budget management",
+        "AI development velocity",
+        "how do i combine multiple LLMs"
+      ],
+      "relatedSkills": [
+        "resource-optimization",
+        "reasoning-techniques",
+        "agent-context-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/reasoning-engine-internals/SKILL.md"
     },
     {
       "name": "reasoning-techniques",
