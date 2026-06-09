@@ -15,6 +15,12 @@ metadata:
   scope: implementation
   output-format: code
   related-skills: testing-unit, testing-integration, testing-contract
+  archetypes: tactical, diagnostic
+  anti_triggers: unit testing, contract testing, performance testing
+  response_profile:
+    verbosity: medium
+    directive_strength: high
+    abstraction_level: tactical
 
 
 
@@ -74,6 +80,51 @@ describe('End-to-End Testing Example', () => {
         cy.url().should('include', '/welcome');
     });
 });
+```
+
+---
+
+## TL;DR for Code Generation
+
+- **Test real user workflows** — Each E2E test should simulate a complete user journey (sign up → log in → perform action → verify outcome), not isolated UI interactions.
+- **Use `data-testid` selectors** — Prefer `[data-testid="submit-button"]` over fragile CSS class or XPath selectors that break on style changes.
+- **Limit E2E tests to critical paths** — Reserve E2E for the 20% of workflows that provide 80% of business value. Push detailed assertions to unit/integration tests.
+- **Run in a CI-like environment** — E2E tests must run in an environment that mirrors production (same browser, same API responses, realistic data).
+- **Isolate test data** — Each test should create and clean up its own data to avoid flaky interactions between test runs.
+
+---
+
+## Implementation Patterns
+
+### Pattern 2: Using Playwright (Python) for E2E Testing
+
+Playwright provides cross-browser automation with auto-waiting and trace viewing:
+
+```python
+from playwright.sync_api import Page, expect
+
+def test_user_login_flow(page: Page):
+    """Verify a user can log in and see the dashboard."""
+    page.goto("https://example.com/login")
+    
+    page.get_by_label("Email").fill("test@example.com")
+    page.get_by_label("Password").fill("s3cret!")
+    page.get_by_role("button", name="Sign In").click()
+    
+    expect(page).to_have_url("https://example.com/dashboard")
+    expect(page.get_by_text("Welcome, test@example.com")).to_be_visible()
+
+def test_checkout_flow(page: Page):
+    """Verify a user can add items to cart and complete checkout."""
+    page.goto("https://example.com/products")
+    page.get_by_test_id("add-to-cart-1").click()
+    page.get_by_test_id("add-to-cart-2").click()
+    page.get_by_test_id("checkout").click()
+    
+    page.get_by_label("Address").fill("123 Main St")
+    page.get_by_role("button", name="Place Order").click()
+    
+    expect(page.get_by_text("Order confirmed!")).to_be_visible()
 ```
 
 ## Constraints

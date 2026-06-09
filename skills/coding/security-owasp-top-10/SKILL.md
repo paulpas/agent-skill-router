@@ -11,16 +11,16 @@ metadata:
   version: "1.1.1"
   domain: coding
   triggers: OWASP, security vulnerabilities, web application security, risk management, cybersecurity
-  archetypes: [reference, evaluation]
+  archetypes: [reference, evaluation, educational]
   anti_triggers: [generic security advice, outdated practices]
   response_profile:
     verbosity: medium
     directive_strength: high
     abstraction_level: operational
 
-  role: implementation
-  scope: implementation
-  output-format: code
+  role: reference
+  scope: review
+  output-format: report
 
 
 

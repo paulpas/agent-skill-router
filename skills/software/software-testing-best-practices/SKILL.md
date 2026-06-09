@@ -99,6 +99,50 @@ jobs:
           pytest
 ```  
 
+---
+
+## TL;DR for Code Generation
+
+- **Follow the test pyramid** — Write many fast unit tests (60%+), fewer integration tests, and a handful of critical E2E tests. This balances speed with confidence.
+- **Automate every layer** — Every new feature should include tests at the unit, integration, and where appropriate, E2E level.
+- **Use realistic test data** — Avoid fake or placeholder data. Use production-like fixtures that expose edge cases early.
+- **Run tests in CI, block on failures** — A failing test suite should block merging. No exceptions.
+- **Keep tests independent** — Tests must be runnable in any order and in parallel. Shared mutable state is the #1 cause of flaky tests.
+
+---
+
+## Implementation Patterns
+
+### Example: Integration Test with Testcontainers
+
+Testcontainers spins up real service dependencies (PostgreSQL, Redis, etc.) inside Docker containers for true integration testing:
+
+```python
+import pytest
+from testcontainers.postgres import PostgresContainer
+from sqlalchemy import create_engine, text
+
+@pytest.fixture(scope="module")
+def postgres_container():
+    """Spin up a real PostgreSQL instance in Docker."""
+    with PostgresContainer("postgres:16-alpine") as pg:
+        engine = create_engine(pg.get_connection_url())
+        # Run migrations
+        with engine.begin() as conn:
+            conn.execute(text("CREATE TABLE users (id SERIAL PRIMARY KEY, name TEXT)"))
+            conn.execute(text("INSERT INTO users (name) VALUES ('Alice')"))
+        yield engine
+
+def test_database_query(postgres_container):
+    """Verify we can query the real database."""
+    with postgres_container.begin() as conn:
+        result = conn.execute(text("SELECT name FROM users"))
+        names = [row[0] for row in result]
+    
+    assert "Alice" in names
+    assert len(names) == 1
+```
+
 ## Constraints
 
 ### MUST DO
