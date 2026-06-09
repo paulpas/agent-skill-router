@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-09T03:30:38.370288Z",
-  "totalSkills": 1266,
+  "generatedAt": "2026-06-09T05:06:42.666453Z",
+  "totalSkills": 1270,
   "domains": {
-    "agent": 326,
+    "agent": 330,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
@@ -28,9 +28,9 @@
     "writing": 4
   },
   "roles": {
-    "implementation": 842,
+    "implementation": 845,
     "orchestration": 238,
-    "reference": 177,
+    "reference": 178,
     "information": 1,
     "review": 8
   },
@@ -370,6 +370,30 @@
       "source": "skills/agent/agent-debugging/SKILL.md"
     },
     {
+      "name": "agent-engineering-practices",
+      "domain": "agent",
+      "description": "Applies traditional software engineering rigor to AI agents through checkpoint/rollback state management, modular architecture, structured observability logging, and least-privilege permissions for production-grade reliability.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "engineering reliable agents",
+        "checkpoint rollback",
+        "structured logging observability",
+        "modular agent architecture",
+        "least privilege permissions",
+        "how do i make agents production ready",
+        "fault tolerance agents"
+      ],
+      "relatedSkills": [
+        "guardrails-safety",
+        "exception-handling-recovery",
+        "agent-observability"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-engineering-practices/SKILL.md"
+    },
+    {
       "name": "agent-evaluation",
       "domain": "agent",
       "description": "Implements intelligent agent evaluation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -461,6 +485,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-manager-skill/SKILL.md"
+    },
+    {
+      "name": "agent-maturity-levels",
+      "domain": "agent",
+      "description": "Provides a four-level maturity model (Core Reasoning → Connected Solver → Strategic Problem-Solver → Collaborative Multi-Agent) for assessing and planning agent architecture investments based on capability requirements.",
+      "role": "reference",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "agent maturity model",
+        "level 0 to level 3 agents",
+        "agent architecture assessment",
+        "capability progression",
+        "context engineering",
+        "multi-agent complexity",
+        "how do i assess my agent level"
+      ],
+      "relatedSkills": [
+        "agent-architecture-patterns",
+        "multi-agent-collaboration",
+        "memory-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-maturity-levels/SKILL.md"
     },
     {
       "name": "agent-memory-systems",
@@ -8534,6 +8582,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/deduplication-patterns/SKILL.md"
+    },
+    {
+      "name": "deep-research-workflows",
+      "domain": "agent",
+      "description": "Orchestrates iterative autonomous research workflows combining multi-query exploration, gap analysis, follow-up refinement, and structured synthesis within configurable time budgets.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "deep research",
+        "iterative search",
+        "gap analysis",
+        "research synthesis",
+        "OpenAI Deep Research",
+        "Google DeepSearch",
+        "time budget research",
+        "how do i automate thorough research workflows"
+      ],
+      "relatedSkills": [
+        "exploration-discovery",
+        "reasoning-techniques",
+        "planning-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/deep-research-workflows/SKILL.md"
     },
     {
       "name": "dependency-graph-builder",
@@ -18266,6 +18339,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/marketo-api/SKILL.md"
+    },
+    {
+      "name": "mass-framework",
+      "domain": "agent",
+      "description": "Automates multi-agent system design through three-stage optimization (block-level prompt tuning, influence-weighted topology search, workflow-level joint optimization) to discover optimal agent configurations and interactions.",
+      "role": "implementation",
+      "scope": "orchestration",
+      "outputFormat": "code",
+      "triggers": [
+        "MASS framework",
+        "multi-agent system search",
+        "topology optimization",
+        "influence-weighted search",
+        "MAS design automation",
+        "how do i auto-optimize multi-agent systems",
+        "block-level prompt tuning"
+      ],
+      "relatedSkills": [
+        "multi-agent-collaboration",
+        "routing-patterns",
+        "planning-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/mass-framework/SKILL.md"
     },
     {
       "name": "maven-build-system",
