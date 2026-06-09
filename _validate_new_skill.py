@@ -1,9 +1,20 @@
 """Quick validation script for the new SKILL.md."""
 
-import os
+import argparse
 from pathlib import Path
 
-skill_path = Path("/home/paulpas/git/agent-skill-router/skills/coding/domain-architecture-project-structure/SKILL.md")
+DEFAULT_SKILL_PATH = str(Path(__file__).parent / "skills" / "coding" / "domain-architecture-project-structure" / "SKILL.md")
+
+parser = argparse.ArgumentParser(description="Validate a new SKILL.md against quality checks.")
+parser.add_argument(
+    "skill_file",
+    nargs="?",
+    default=DEFAULT_SKILL_PATH,
+    help="Path to the SKILL.md file to validate (default: skills/coding/domain-architecture-project-structure/SKILL.md)",
+)
+args = parser.parse_args()
+
+skill_path = Path(args.skill_file)
 content = skill_path.read_text()
 
 # Check file size (excluding frontmatter)

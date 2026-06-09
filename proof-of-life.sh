@@ -3,4 +3,4 @@
 # This is a convenience wrapper around the Python implementation
 set -euo pipefail
 cd "$(dirname "$0")"
-exec python3 proof-of-life.py "$@"
+exec python3 scripts/proof-of-life.py "$@"

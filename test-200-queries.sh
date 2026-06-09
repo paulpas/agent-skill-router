@@ -42,7 +42,7 @@ run_test() {
 
   # Parse with dedicated Python script to avoid inline quoting issues
   local result
-  result=$(echo "$response" | python3 "$SCRIPT_DIR/test-parser.py" 2>/dev/null)
+  result=$(echo "$response" | python3 "$SCRIPT_DIR/../scripts/test-parser.py" 2>/dev/null)
 
   if [ -z "$result" ] || [ "$result" = "PARSE_ERROR" ]; then
     echo "[$num] FAIL: $expected_domain - Python parse error (HTTP $http_code, body=${#response} bytes) | query: $query"

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-06-09T05:06:42.666453Z",
-  "totalSkills": 1270,
+  "generatedAt": "2026-06-09T16:28:15.958273Z",
+  "totalSkills": 1296,
   "domains": {
     "agent": 330,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
     "cncf": 178,
-    "coding": 576,
+    "coding": 601,
     "commerce": 1,
     "communications": 3,
     "data-and-persistence": 1,
@@ -25,12 +25,12 @@
     "security": 5,
     "software": 3,
     "trading": 94,
-    "writing": 4
+    "writing": 5
   },
   "roles": {
-    "implementation": 845,
+    "implementation": 869,
     "orchestration": 238,
-    "reference": 178,
+    "reference": 180,
     "information": 1,
     "review": 8
   },
@@ -533,6 +533,57 @@
       "source": "skills/agent/agent-memory-systems/SKILL.md"
     },
     {
+      "name": "agent-memory-systems",
+      "domain": "coding",
+      "description": "Implements memory systems for LLM agents including conversation buffers, windowed context, bounded model context management, and vector store-backed long-term memory retrieval with embeddings.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "memory systems",
+        "conversation buffer",
+        "windowed memory",
+        "long-term memory",
+        "vector store embeddings",
+        "context management",
+        "conversation history",
+        "how do i manage agent memory"
+      ],
+      "relatedSkills": [
+        "agent-tool-calling-architecture",
+        "agent-planning-reasoning",
+        "langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/agent-memory-systems/SKILL.md"
+    },
+    {
+      "name": "agent-multi-agent-orchestration",
+      "domain": "coding",
+      "description": "Implements multi-agent orchestration patterns (CrewAI sequential crews, AutoGen group chat, supervisor-worker hierarchy, task guardrails) to coordinate specialized agents on complex workflows.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "multi-agent orchestration",
+        "crew ai",
+        "autogen group chat",
+        "supervisor worker pattern",
+        "agent delegation",
+        "sequential crew",
+        "how do i coordinate multiple agents",
+        "agent team coordination"
+      ],
+      "relatedSkills": [
+        "agent-tool-calling-architecture",
+        "agent-memory-systems",
+        "agent-planning-reasoning",
+        "rag-pipeline-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/agent-multi-agent-orchestration/SKILL.md"
+    },
+    {
       "name": "agent-observability",
       "domain": "agent",
       "description": "Implements tracing, cost tracking, and latency monitoring patterns for AI agent systems to debug failures, control token spend, and optimize response times across multi-agent workflows.",
@@ -556,6 +607,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-observability/SKILL.md"
+    },
+    {
+      "name": "agent-planning-reasoning",
+      "domain": "coding",
+      "description": "Implements planning and reasoning patterns for LLM agents including ReAct loops with native tool calling, modern LangGraph state graphs, and self-reflection quality evaluation loops.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "planning patterns",
+        "reasoning",
+        "ReAct loop",
+        "self-reflection",
+        "chain of thought",
+        "tool loop",
+        "iterative planning",
+        "how do i implement ReAct"
+      ],
+      "relatedSkills": [
+        "agent-tool-calling-architecture",
+        "agent-memory-systems",
+        "langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/agent-planning-reasoning/SKILL.md"
     },
     {
       "name": "agent-reliability-engineering",
@@ -631,6 +707,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/agent-security-guardrails/SKILL.md"
+    },
+    {
+      "name": "agent-tool-calling-architecture",
+      "domain": "coding",
+      "description": "Implements tool calling architecture (Pydantic schemas, function-to-schema conversion, output parsing with error recovery, parallel execution with fallback chains) for LLM agents in Python.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "tool calling",
+        "function calling",
+        "tool use architecture",
+        "pydantic schema",
+        "output parsing",
+        "error recovery",
+        "tool fallback chain",
+        "how do i make my agent use tools"
+      ],
+      "relatedSkills": [
+        "agent-memory-systems",
+        "agent-planning-reasoning",
+        "langchain"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/agent-tool-calling-architecture/SKILL.md"
     },
     {
       "name": "agentic-evaluation",
@@ -22985,6 +23086,31 @@
       "source": "skills/agent/rag-patterns/SKILL.md"
     },
     {
+      "name": "rag-pipeline-architecture",
+      "domain": "coding",
+      "description": "Implements production-quality RAG pipelines combining semantic document chunking, hybrid BM25+vector search, cross-encoder and LLM-based re-ranking, and reciprocal rank fusion for maximum retrieval quality.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "rag pipeline",
+        "retrieval augmented generation",
+        "semantic chunking",
+        "hybrid search",
+        "BM25",
+        "cross-encoder rerank",
+        "vector store embeddings",
+        "how do i build a RAG system"
+      ],
+      "relatedSkills": [
+        "agent-memory-systems",
+        "agent-tool-calling-architecture",
+        "prometheus-querying"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/rag-pipeline-architecture/SKILL.md"
+    },
+    {
       "name": "rag-pipelines",
       "domain": "agent",
       "description": "Implements RAG pipeline patterns (semantic chunking, hybrid search with BM25+vector, cross-encoder re-ranking, embedding selection) for retrieval-augmented document generation.",
@@ -23033,6 +23159,315 @@
       "source": "skills/maker/rapid-prototyping-workflow/SKILL.md"
     },
     {
+      "name": "react-advanced-patterns",
+      "domain": "coding",
+      "description": "Implements advanced React patterns including render props, higher-order components, custom hooks composition, portals, error boundaries, and ref forwarding for complex component architectures.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react advanced",
+        "custom hooks",
+        "error boundary",
+        "react portal",
+        "hoc",
+        "forward ref",
+        "render props"
+      ],
+      "relatedSkills": [
+        "react-composition-patterns",
+        "react-rerender-optimization",
+        "react-client-data-fetching"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-advanced-patterns/SKILL.md"
+    },
+    {
+      "name": "react-async-waterfalls",
+      "domain": "coding",
+      "description": "Eliminates async request waterfalls in React applications by parallelizing data fetching, hoisting fetches to route and page level, and using streaming SSR with Suspense boundaries.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react waterfall",
+        "async waterfall",
+        "data fetching",
+        "promise all",
+        "parallel fetch",
+        "react suspense",
+        "streaming ssr"
+      ],
+      "relatedSkills": [
+        "react-server-performance",
+        "react-client-data-fetching",
+        "react-rerender-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-async-waterfalls/SKILL.md"
+    },
+    {
+      "name": "react-bundle-size",
+      "domain": "coding",
+      "description": "Optimizes JavaScript bundle size in React applications through route-level code splitting, tree shaking configuration, granular imports, dynamic imports, and CI bundle size budgets.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "bundle size",
+        "code splitting",
+        "react bundle",
+        "tree shaking",
+        "dynamic import",
+        "react lazy",
+        "bundle analyzer"
+      ],
+      "relatedSkills": [
+        "react-server-performance",
+        "react-async-waterfalls",
+        "react-rerender-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-bundle-size/SKILL.md"
+    },
+    {
+      "name": "react-client-data-fetching",
+      "domain": "coding",
+      "description": "Implements efficient client-side data fetching in React using TanStack Query with proper caching, stale time configuration, error boundaries, optimistic updates, and query key conventions.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "client data fetching",
+        "tanstack query",
+        "react query",
+        "swr",
+        "data fetching",
+        "optimistic update",
+        "query key"
+      ],
+      "relatedSkills": [
+        "react-async-waterfalls",
+        "react-server-performance",
+        "react-rerender-optimization"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-client-data-fetching/SKILL.md"
+    },
+    {
+      "name": "react-composition-patterns",
+      "domain": "coding",
+      "description": "Implements React composition patterns including compound components, state lifting, polymorphic components, slot-based layouts, and variant-driven designs for reusable component APIs.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react composition",
+        "compound components",
+        "react patterns",
+        "polymorphic components",
+        "slot pattern",
+        "component API",
+        "composition vs inheritance"
+      ],
+      "relatedSkills": [
+        "react-async-waterfalls",
+        "react-rerender-optimization",
+        "react-server-performance"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-composition-patterns/SKILL.md"
+    },
+    {
+      "name": "react-js-performance",
+      "domain": "coding",
+      "description": "Optimizes JavaScript execution performance in React applications through efficient event handling, debouncing/throttling, Web Worker offloading, and DOM operation reduction.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react performance",
+        "javascript optimization",
+        "debounce",
+        "throttle",
+        "web worker",
+        "event delegation",
+        "main thread"
+      ],
+      "relatedSkills": [
+        "react-rerender-optimization",
+        "react-server-performance",
+        "react-bundle-size"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-js-performance/SKILL.md"
+    },
+    {
+      "name": "react-native-animation",
+      "domain": "coding",
+      "description": "Implements smooth, performant animations in React Native using Reanimated for UI thread animations, Animated API with native driver, gesture-driven interactions, and layout animations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native animation",
+        "reanimated",
+        "native animation",
+        "gesture animation",
+        "layout animation",
+        "ui thread animation",
+        "animated api"
+      ],
+      "relatedSkills": [
+        "react-native-list-performance",
+        "react-native-navigation",
+        "react-native-ui-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-animation/SKILL.md"
+    },
+    {
+      "name": "react-native-list-performance",
+      "domain": "coding",
+      "description": "Optimizes React Native FlatList and SectionList performance through windowing, item memoization, getItemLayout, and efficient rendering strategies for smooth scrolling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "flatlist performance",
+        "react native list",
+        "list optimization",
+        "scroll performance",
+        "windowing",
+        "getItemLayout",
+        "flashlist"
+      ],
+      "relatedSkills": [
+        "react-native-animation",
+        "react-native-navigation",
+        "react-native-ui-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-list-performance/SKILL.md"
+    },
+    {
+      "name": "react-native-monorepo-config",
+      "domain": "coding",
+      "description": "Configures React Native projects in monorepo environments using npm/yarn workspaces, Metro bundler, shared packages, and cross-platform module resolution.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native monorepo",
+        "metro config",
+        "yarn workspaces",
+        "shared packages",
+        "react native config",
+        "monorepo setup",
+        "cross-platform"
+      ],
+      "relatedSkills": [
+        "react-native-state-management",
+        "react-native-rendering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-monorepo-config/SKILL.md"
+    },
+    {
+      "name": "react-native-navigation",
+      "domain": "coding",
+      "description": "Implements navigation in React Native using React Navigation with type-safe TypeScript configuration, deep linking, screen lifecycle management, and performance optimization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react navigation",
+        "react native navigation",
+        "stack navigator",
+        "tab navigator",
+        "deep linking",
+        "screen navigation",
+        "navigation typescript"
+      ],
+      "relatedSkills": [
+        "react-native-animation",
+        "react-native-list-performance",
+        "react-native-ui-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-navigation/SKILL.md"
+    },
+    {
+      "name": "react-native-rendering",
+      "domain": "coding",
+      "description": "Optimizes React Native component rendering through virtualization, memoization, image optimization, and efficient component architecture for mobile performance.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native rendering",
+        "component optimization",
+        "native performance",
+        "image optimization",
+        "react memo",
+        "view nesting",
+        "flipper profiling"
+      ],
+      "relatedSkills": [
+        "react-native-state-management",
+        "vercel-optimize"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-rendering/SKILL.md"
+    },
+    {
+      "name": "react-native-state-management",
+      "domain": "coding",
+      "description": "Manages application state in React Native using Context API, Zustand, Redux Toolkit, and Jotai with proper persistence, middleware, and re-render optimization for mobile.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native state",
+        "state management",
+        "zustand",
+        "redux toolkit",
+        "jotai",
+        "asyncstorage",
+        "react native data"
+      ],
+      "relatedSkills": [
+        "react-native-rendering",
+        "react-native-monorepo-config"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-state-management/SKILL.md"
+    },
+    {
+      "name": "react-native-ui-patterns",
+      "domain": "coding",
+      "description": "Implements responsive, accessible, and consistent UI components in React Native using Flexbox layouts, theme systems with dark mode support, platform-specific styling, and safe area handling.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react native ui",
+        "react native styling",
+        "responsive layout",
+        "dark mode",
+        "flexbox",
+        "safe area",
+        "platform specific"
+      ],
+      "relatedSkills": [
+        "react-native-animation",
+        "react-native-navigation",
+        "react-native-list-performance"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-native-ui-patterns/SKILL.md"
+    },
+    {
       "name": "react-nextjs-development",
       "domain": "agent",
       "description": "Implements intelligent react nextjs development with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -23053,6 +23488,78 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/react-nextjs-development/SKILL.md"
+    },
+    {
+      "name": "react-rerender-optimization",
+      "domain": "coding",
+      "description": "Reduces unnecessary React component re-renders using targeted memoization (React.memo, useMemo, useCallback), stable key props for list rendering, atomic state management, and context value stabilization.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "react rerender",
+        "memoization",
+        "react memo",
+        "useMemo",
+        "useCallback",
+        "render optimization",
+        "avoid rerender"
+      ],
+      "relatedSkills": [
+        "react-client-data-fetching",
+        "react-async-waterfalls",
+        "react-composition-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-rerender-optimization/SKILL.md"
+    },
+    {
+      "name": "react-server-performance",
+      "domain": "coding",
+      "description": "Optimizes React server rendering performance using Server Components, streaming SSR with Suspense boundaries, React.cache deduplication, static generation, and ISR caching strategies.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "server components",
+        "react server",
+        "streaming ssr",
+        "server rendering",
+        "next.js server",
+        "isr",
+        "static generation"
+      ],
+      "relatedSkills": [
+        "react-async-waterfalls",
+        "react-client-data-fetching",
+        "react-bundle-size"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-server-performance/SKILL.md"
+    },
+    {
+      "name": "react-view-transitions",
+      "domain": "coding",
+      "description": "Implements smooth page transitions and element animations using the View Transition API in React applications with CSS animation recipes and progressive enhancement.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "view transition",
+        "view transition api",
+        "react navigation",
+        "page transition",
+        "route transition",
+        "css animation",
+        "spa transition"
+      ],
+      "relatedSkills": [
+        "css-architecture",
+        "frontend-philosophy",
+        "design-systems"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/react-view-transitions/SKILL.md"
     },
     {
       "name": "reasoning-engine-internals",
@@ -28670,6 +29177,99 @@
       "source": "skills/coding/vercel-api/SKILL.md"
     },
     {
+      "name": "vercel-cli-token-deploy",
+      "domain": "coding",
+      "description": "Deploys projects to Vercel using the Vercel CLI with token-based authentication for CI/CD environments, preview deployments, and production releases.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "vercel cli",
+        "vercel token",
+        "vercel deploy",
+        "vercel ci/cd",
+        "token-based deployment",
+        "vercel automation",
+        "deploy to vercel"
+      ],
+      "relatedSkills": [
+        "vercel-deploy",
+        "vercel-api",
+        "ci-cd-pipeline-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/vercel-cli-token-deploy/SKILL.md"
+    },
+    {
+      "name": "vercel-deploy",
+      "domain": "coding",
+      "description": "Deploys frontend applications to Vercel with preview deployments, production releases, and environment-specific configuration management via Git integration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "vercel deploy",
+        "vercel deployment",
+        "deploy to vercel",
+        "vercel hosting",
+        "vercel preview",
+        "vercel production",
+        "frontend deployment"
+      ],
+      "relatedSkills": [
+        "vercel-cli-token-deploy",
+        "vercel-api",
+        "ci-cd-pipeline-design"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/vercel-deploy/SKILL.md"
+    },
+    {
+      "name": "vercel-optimize",
+      "domain": "coding",
+      "description": "Optimizes Vercel-deployed applications for cost, performance, and reliability through cold start mitigation, caching strategy, edge function optimization, bundle auditing, and monitoring.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "vercel optimize",
+        "vercel performance",
+        "cold start",
+        "vercel caching",
+        "vercel analytics",
+        "edge functions",
+        "vercel cost"
+      ],
+      "relatedSkills": [
+        "react-native-rendering"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/vercel-optimize/SKILL.md"
+    },
+    {
+      "name": "vercel-writing-guidelines",
+      "domain": "writing",
+      "description": "Enforces clear, concise, and user-focused writing guidelines covering tone, grammar, structure, formatting, and inclusive language for technical documentation and product copy.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "report",
+      "triggers": [
+        "writing guidelines",
+        "technical writing",
+        "documentation style",
+        "content guidelines",
+        "writing style guide",
+        "developer documentation",
+        "api docs"
+      ],
+      "relatedSkills": [
+        "technical-documentation",
+        "humanizer"
+      ],
+      "version": "1.0.0",
+      "source": "skills/writing/vercel-writing-guidelines/SKILL.md"
+    },
+    {
       "name": "verification-before-completion",
       "domain": "agent",
       "description": "Implements intelligent verification before completion with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -28968,6 +29568,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/go/web-applications/SKILL.md"
+    },
+    {
+      "name": "web-interface-guidelines",
+      "domain": "coding",
+      "description": "Applies comprehensive web interface design guidelines covering layout, typography, color, accessibility, responsive design, and UX patterns for consistent, user-friendly interfaces.",
+      "role": "reference",
+      "scope": "implementation",
+      "outputFormat": "guidance",
+      "triggers": [
+        "web design",
+        "ui guidelines",
+        "interface design",
+        "ux patterns",
+        "accessibility",
+        "responsive design",
+        "wcag"
+      ],
+      "relatedSkills": [
+        "css-architecture",
+        "design-systems",
+        "frontend-philosophy",
+        "react-view-transitions"
+      ],
+      "version": "1.0.0",
+      "source": "skills/coding/web-interface-guidelines/SKILL.md"
     },
     {
       "name": "web-security-testing",

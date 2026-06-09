@@ -9,13 +9,13 @@
  * - Result quality (top 5 skill names)
  */
 
-import { Router, RouterConfig, SkillDefinition } from './agent-skill-routing-system/src/index.js';
+import { Router, RouterConfig, SkillDefinition } from '../agent-skill-routing-system/src/index.js';
 
 // ============================================================================
 // Configuration
 // ============================================================================
 
-const SKILLS_DIR = '../../skills';
+const SKILLS_DIR = '../skills';
 const NUM_ITERATIONS = 5; // Number of times to run each query for averaging
 const MAX_RESULTS = 5;
 
