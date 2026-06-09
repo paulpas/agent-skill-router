@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-09T01:54:54.837946Z",
-  "totalSkills": 1258,
+  "generatedAt": "2026-06-09T03:30:38.370288Z",
+  "totalSkills": 1266,
   "domains": {
-    "agent": 318,
+    "agent": 326,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
@@ -28,7 +28,7 @@
     "writing": 4
   },
   "roles": {
-    "implementation": 834,
+    "implementation": 842,
     "orchestration": 238,
     "reference": 177,
     "information": 1,
@@ -415,6 +415,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/agent-evaluation-testing/SKILL.md"
+    },
+    {
+      "name": "agent-knowledge-graph",
+      "domain": "agent",
+      "description": "Constructs agent-centric knowledge graphs representing tools, capabilities, and their relationships for intelligent tool discovery during planning.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "knowledge graph",
+        "tool registry",
+        "capability graph",
+        "agent tools",
+        "graph traversal",
+        "how do i discover tools for agents",
+        "Neo4j agent memory"
+      ],
+      "relatedSkills": [
+        "tool-use-function-calling",
+        "mcp-integration",
+        "knowledge-graph-construction"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/agent-knowledge-graph/SKILL.md"
     },
     {
       "name": "agent-manager-skill",
@@ -3041,6 +3065,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/autogen-conversational-patterns/SKILL.md"
+    },
+    {
+      "name": "autonomous-coding-lifecycle",
+      "domain": "agent",
+      "description": "Manages the complete autonomous coding lifecycle from code generation through self-review, test validation, failure repair, and deployment with state-machine orchestration.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "autonomous coding",
+        "code generation testing fix",
+        "coding lifecycle",
+        "AI refactoring",
+        "how do i automate the full coding workflow",
+        "test-driven code generation"
+      ],
+      "relatedSkills": [
+        "coding-agent-frameworks",
+        "cli-agent-workflows",
+        "tool-use-function-calling"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/autonomous-coding-lifecycle/SKILL.md"
     },
     {
       "name": "aws-auto-scaling",
@@ -11046,6 +11093,30 @@
       "source": "skills/coding/dsl-engineering/SKILL.md"
     },
     {
+      "name": "dual-provider-reasoning-routing",
+      "domain": "agent",
+      "description": "Routes reasoning workloads between multiple LLM providers based on task complexity, cost constraints, and latency requirements with real-time fallback chains.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "dual provider routing",
+        "multi-provider LLM",
+        "model routing",
+        "Gemini Claude routing",
+        "cost-performance analysis",
+        "how do i route between LLM providers",
+        "fallback chain"
+      ],
+      "relatedSkills": [
+        "resource-optimization",
+        "reasoning-engine-internals",
+        "budget-aware-cost-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/dual-provider-reasoning-routing/SKILL.md"
+    },
+    {
       "name": "durable-execution",
       "domain": "agent",
       "description": "Implements durable execution patterns for fault-tolerant AI agent workflows including checkpoint-based persistence, exponential backoff retry, idempotency keys, and crash recovery strategies across LangGraph, Temporal, and generic async frameworks.",
@@ -13101,6 +13172,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/framework-selection/SKILL.md"
+    },
+    {
+      "name": "framework-selection-matrix",
+      "domain": "agent",
+      "description": "Provides a decision matrix for selecting between agentic frameworks (LangChain, LangGraph, Google ADK, CrewAI) based on capability requirements, ecosystem fit, and production readiness.",
+      "role": "implementation",
+      "scope": "orchestration",
+      "outputFormat": "analysis",
+      "triggers": [
+        "framework selection",
+        "LangChain vs LangGraph",
+        "Google ADK",
+        "CrewAI",
+        "agent framework comparison",
+        "how do i choose an agent framework",
+        "LCEL pipeline"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "multi-agent-collaboration",
+        "routing-patterns"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/framework-selection-matrix/SKILL.md"
     },
     {
       "name": "framework-sourcing-strategy",
@@ -16114,6 +16209,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/iterate-pr/SKILL.md"
+    },
+    {
+      "name": "iterative-prompt-refinement",
+      "domain": "agent",
+      "description": "Implements systematic prompt evolution through baseline generation, structured evaluation against rubrics, targeted revision, and regression validation to continuously improve prompt quality.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "prompt refinement",
+        "prompt iteration",
+        "prompt versioning",
+        "A/B testing prompts",
+        "prompt evaluation",
+        "prompt quality",
+        "how do i improve my prompts"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "evaluation-monitoring",
+        "structured-output-enforcement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/iterative-prompt-refinement/SKILL.md"
     },
     {
       "name": "jaeger-reference",
@@ -19403,6 +19522,29 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/multi-agent-task-orchestrator/SKILL.md"
+    },
+    {
+      "name": "multi-platform-agent-deployment",
+      "domain": "agent",
+      "description": "Deploys and orchestrates an identical agent across multiple execution environments (CLI, web UI, API, chat platforms) with shared knowledge base and behavioral consistency.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "multi-platform deployment",
+        "agent deployment",
+        "CLI web API chatbot",
+        "agent adapter",
+        "how do i deploy agents to multiple platforms",
+        "multi-environment agent"
+      ],
+      "relatedSkills": [
+        "cli-agent-workflows",
+        "gui-agent-interaction",
+        "mcp-integration"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/multi-platform-agent-deployment/SKILL.md"
     },
     {
       "name": "multi-skill-executor",
@@ -26678,6 +26820,30 @@
       "source": "skills/coding/structured-logging/SKILL.md"
     },
     {
+      "name": "structured-output-enforcement",
+      "domain": "agent",
+      "description": "Enforces deterministic agent output using JSON Schema, Pydantic models, and LLM-native format constraints to guarantee downstream consumers receive valid structured data.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "structured output",
+        "JSON Schema",
+        "Pydantic validation",
+        "deterministic output",
+        "format constraints",
+        "output parser",
+        "how do i guarantee valid agent output"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "prompt-engineering-patterns-v2",
+        "evaluation-monitoring"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/structured-output-enforcement/SKILL.md"
+    },
+    {
       "name": "structured-output-validation",
       "domain": "agent",
       "description": "Implements structured output patterns for AI agent systems including Pydantic model validation, JSON Schema generation, function calling contracts, response parsing with retry loops, and schema evolution for reliable agent-to-agent communication.",
@@ -28357,6 +28523,30 @@
       "relatedSkills": [],
       "version": "1.1.0",
       "source": "skills/coding/vault-api/SKILL.md"
+    },
+    {
+      "name": "verb-based-instruction-design",
+      "domain": "agent",
+      "description": "Decomposes agent instructions into action verbs with explicit success criteria per verb class to eliminate ambiguity and ensure LLMs correctly interpret intended operations.",
+      "role": "implementation",
+      "scope": "implementation",
+      "outputFormat": "code",
+      "triggers": [
+        "verb-based instructions",
+        "action verbs",
+        "prompt semantics",
+        "instruction design",
+        "ambiguous verbs",
+        "how do i write clear prompts",
+        "precise instructions"
+      ],
+      "relatedSkills": [
+        "prompt-chaining",
+        "prompt-engineering-patterns-v2",
+        "iterative-prompt-refinement"
+      ],
+      "version": "1.0.0",
+      "source": "skills/agent/verb-based-instruction-design/SKILL.md"
     },
     {
       "name": "vercel-api",
