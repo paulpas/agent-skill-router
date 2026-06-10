@@ -247,6 +247,26 @@ print_colored_two_col() {
     printf "\n  ${GREEN}${BOLD}%-45s${DIM}│${RESET} ${CYAN}%s${RESET}\n" "$left_title" "$right_title"
 }
 
+# ─── Prompt for JSON Display ────────────────────────────────────────────────────
+
+# Displays pagination prompt and waits for user input
+# Returns 0 (true) if user wants to see JSON, 1 (false) if they want to skip
+prompt_for_json_display() {
+    echo ""
+    echo -e "${CYAN}${BOLD}━━━━━━━━━━━━━━━━━━━━━ Press SPACE/ENTER to see full JSON response ━━━━━━━━━━━━━━━━━━━━━${RESET}"
+    local user_input=""
+    read -r -t 30 user_input < /dev/tty 2>/dev/null || user_input="Q"
+    
+    case "${user_input,,}" in
+        q|quit|exit)
+            return 1
+            ;;
+        *)
+            return 0
+            ;;
+    esac
+}
+
 # ─── Per-Chapter Pagination ────────────────────────────────────────────────────
 
 page_output_simple() {
@@ -345,6 +365,18 @@ for s in d.get('skills',[]): c[s.get('category','?')]=c.get(s.get('category','?'
 g='\033[32m';r='\033[0m'
 for cat,n in sorted(c.items(),key=lambda x:-x[1])[:5]: print(f'  {g}\u25b8{r} {cat}: {n:>4d} skills')" <<< "$all_s" 2>/dev/null || true
 
+    # Prompt to display full JSON responses
+    if prompt_for_json_display; then
+        echo -e "${WHITE}${BOLD}  Health Check Response:${RESET}"
+        echo "$h" > "$TEMP_DIR/ch01_health.json"
+        python3 -m json.tool < "$TEMP_DIR/ch01_health.json" 2>/dev/null | colorize_json
+        
+        echo ""
+        echo -e "${WHITE}${BOLD}  System Stats Response:${RESET}"
+        echo "$s" > "$TEMP_DIR/ch01_stats.json"
+        python3 -m json.tool < "$TEMP_DIR/ch01_stats.json" 2>/dev/null | colorize_json
+    fi
+
     echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
     prompt_next_page
 }
@@ -394,8 +426,10 @@ if explanation:
         print(f'     {d_}\u2022{r} {e[:120]}')
 " 2>/dev/null || true
 
-    # Show full colorized JSON response
-    display_output "Full /route Response" "$route_file"
+    # Prompt to display full JSON response
+    if prompt_for_json_display; then
+        display_output "Full /route Response" "$route_file" 400 45
+    fi
 
     echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
     prompt_next_page
@@ -435,12 +469,14 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     icon=medals[i-1] if i<=3 else str(i)+'.'
     score=s.get('score',0)
     print(f'  {icon} {b}{s[\"name\"]}{r}  score={g}{score:.4f}{r}')
-    reason = s.get('reasoning','')
-    if reason: print(f'     {d_}{reason[:100]}...{r}')
+     reason = s.get('reasoning','')
+     if reason: print(f'     {d_}{reason[:100]}...{r}')
 " 2>/dev/null || true
 
-    # Show full colorized JSON response
-    display_output "Full /route Response" "$route_file"
+    # Prompt to display full JSON response
+    if prompt_for_json_display; then
+        display_output "Full /route Response" "$route_file" 400 45
+    fi
 
     echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
     prompt_next_page
@@ -479,11 +515,14 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     icon=medals[i-1] if i<=3 else str(i)+'.'
     score=s.get('score',0)
     print(f'  {icon} {b}{s[\"name\"]}{r}  score={g}{score:.4f}{r}')
-    reason = s.get('reasoning','')
-    if reason: print(f'     {d_}{reason[:100]}...{r}')
+     reason = s.get('reasoning','')
+     if reason: print(f'     {d_}{reason[:100]}...{r}')
 " 2>/dev/null || true
 
-    display_output "Full /route Response" "$route_file"
+    # Prompt to display full JSON response
+    if prompt_for_json_display; then
+        display_output "Full /route Response" "$route_file" 400 45
+    fi
 
     echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
     prompt_next_page
@@ -522,11 +561,14 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     icon=medals[i-1] if i<=3 else str(i)+'.'
     score=s.get('score',0)
     print(f'  {icon} {b}{s[\"name\"]}{r}  score={g}{score:.4f}{r}')
-    reason = s.get('reasoning','')
-    if reason: print(f'     {d_}{reason[:100]}...{r}')
+     reason = s.get('reasoning','')
+     if reason: print(f'     {d_}{reason[:100]}...{r}')
 " 2>/dev/null || true
 
-    display_output "Full /route Response" "$route_file"
+    # Prompt to display full JSON response
+    if prompt_for_json_display; then
+        display_output "Full /route Response" "$route_file" 400 45
+    fi
 
     echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
     prompt_next_page
@@ -565,11 +607,14 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     icon=medals[i-1] if i<=3 else str(i)+'.'
     score=s.get('score',0)
     print(f'  {icon} {b}{s[\"name\"]}{r}  score={g}{score:.4f}{r}')
-    reason = s.get('reasoning','')
-    if reason: print(f'     {d_}{reason[:100]}...{r}')
+     reason = s.get('reasoning','')
+     if reason: print(f'     {d_}{reason[:100]}...{r}')
 " 2>/dev/null || true
 
-    display_output "Full /route Response" "$route_file"
+    # Prompt to display full JSON response
+    if prompt_for_json_display; then
+        display_output "Full /route Response" "$route_file" 400 45
+    fi
 
     echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
     prompt_next_page
@@ -741,6 +786,20 @@ chapter_07_opencode_integration() {
         echo -e "    Skill matching events: ${BOLD}${skill_c}${RESET}"
         echo -e "    Tool calls: ${BOLD}${tool_c}${RESET}"
         echo -e "    MCP interactions: ${BOLD}${mcp_c}${RESET}"
+        
+        # Prompt to display full MCP logs
+        if [[ "$log_lines" -gt 0 ]]; then
+            echo ""
+            echo -e "${CYAN}${BOLD}━━━━━━━━━━━━━━━━━━━━ Press SPACE/ENTER to see full MCP logs ━━━━━━━━━━━━━━━━━━━━━${RESET}"
+            local user_input=""
+            read -r -t 30 user_input < /dev/tty 2>/dev/null || user_input="Q"
+            
+            if [[ "${user_input,,}" != "q" && "${user_input,,}" != "quit" ]]; then
+                echo ""
+                echo -e "${WHITE}${BOLD}  Complete MCP Bridge Logs:${RESET}"
+                display_output "Full stderr (MCP logs)" "$se" 500 45
+            fi
+        fi
     fi
 
     rm -f "$so" "$se"
