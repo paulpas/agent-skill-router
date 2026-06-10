@@ -689,8 +689,8 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
 chapter_07_opencode_integration() {
     CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "7" ]] && return
-    show_progress "$CHAPTER" "OpenCode Run"
-    print_chapter_header "$CHAPTER" "LIVE OpenCode RUN — Full stdout/stderr Output"
+    show_progress "$CHAPTER" "OpenCode Live Run"
+    print_chapter_header "$CHAPTER" "LIVE OPENCODE EXECUTION — Like the 'ai' command"
 
     if [[ "${SKIP_OPENCODE:-false}" == "true" ]]; then
         echo -e "  ${YELLOW}⚠ Skipped (--skip-opencode flag set)${RESET}"
@@ -706,180 +706,69 @@ chapter_07_opencode_integration() {
         return
     fi
 
-    # FIX: Add error handling for health check
-    local healthy
-    healthy=$(curl -s --max-time 3 "$API_URL/health" 2>/dev/null | python3 -c "import sys,json; d=json.loads(sys.stdin.read()); print(d.get('status',''))" 2>/dev/null) || healthy=""
-    if [[ "$healthy" != "healthy" ]]; then
-        echo -e "  ${RED}✗ API unhealthy.${RESET}"
-        echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER skipped.${RESET}"
-        prompt_next_page
-        return
-    fi
-
-    # Use the same Redis Streams prompt as chapter 6 for consistency
-    local TASK_TEXT='How does Redis Streams handle exactly-once message processing with consumer groups? Need stream architecture, ack patterns, and dead letter queue handling.'
+    local TASK_PROMPT='How does Redis Streams handle exactly-once message processing with consumer groups? Need stream architecture, ack patterns, and dead letter queue handling for a production system.'
 
     echo -e "${WHITE}${BOLD}  Launching OpenCode with MCP bridge...${RESET}"
     echo ""
-    echo -e "  ${DIM}Task being routed:${RESET}"
-    echo -e "  \"${TASK_TEXT}\""
+    echo -e "  ${DIM}\"${TASK_PROMPT}\"${RESET}"
     echo ""
-    echo -e "${DIM}  timeout 25 opencode run --print-logs --log-level DEBUG \\\\${RESET}"
-    echo -e "${DIM}    --dangerously-skip-permissions --model '$MODEL' '${TASK_TEXT}'${RESET}"
 
-    # Run OpenCode — capture stdout and stderr separately.
-    # The model is passed via --model using the MODEL variable (defaults to the
-    # user's configured local model in opencode.json). Allows override via:
-    #   ./api-walkthrough.sh --model ollama/qwen3-coder:30b
-    #   MODEL=ollama/qwen3 ./api-walkthrough.sh
-    local so="$TEMP_DIR/oc_stdout.txt" se="$TEMP_DIR/oc_stderr.txt"
-    timeout 25 opencode run --print-logs --log-level DEBUG \
-        --dangerously-skip-permissions --model "$MODEL" \
-        "$TASK_TEXT" > "$so" 2> "$se" || true
+    # ─── Inline ai() mechanics: FIFO-based stderr streaming + glow rendering ───
 
-    # ─── Display stderr (MCP/Opencode logs) with colored log levels ──────────
+    local session_dir="$HOME/.ai-sessions"
+    mkdir -p "$session_dir"
+    local session_file="$session_dir/shell-ch7-$$"
+
+    if [[ "$(uname)" == "Darwin" ]]; then
+        _ai_mktemp() { mktemp "${HOME}/tmp.XXXXXXXXXX"; }
+        _ai_mktemp_u() { mktemp -u "${HOME}/tmp.XXXXXXXXXX"; }
+    else
+        _ai_mktemp() { mktemp -p "$HOME"; }
+        _ai_mktemp_u() { mktemp -u -p "$HOME"; }
+    fi
+
+    local instructions="Be concise. Output to stdout only. Never create or modify files unless I explicitly ask to save."
+    local outfile errfile fifo
+    outfile=$(_ai_mktemp)
+    errfile=$(_ai_mktemp_u)
+    fifo=$(_ai_mktemp_u)
+    mkfifo "$fifo"
+
+    trap 'rm -f "$outfile" "$errfile" "$fifo"; unset -f _ai_mktemp _ai_mktemp_u 2>/dev/null; trap - INT RETURN' INT RETURN
+
+    # Reader: streams stderr as a single repainting line on screen, also captures to errfile
+    local reader_pid
+    while IFS= read -r line; do
+        echo -ne "\r\033[K\033[90m${line:0:80}\033[0m" 1>&2
+        echo "$line" >> "$errfile"
+    done < "$fifo" &
+    reader_pid=$!
+
+    # Run opencode — logs flood as single repainting line, stdout goes to file
+    timeout 45 opencode run --print-logs --model "$MODEL" -m opencode/big-pickle \
+        "$instructions: $TASK_PROMPT" > "$outfile" 2> "$fifo"
+    local rc=$?
+
+    wait "$reader_pid" 2>/dev/null
+    rm -f "$fifo"
+
+    # Clear the repainting status line
+    echo -ne "\r\033[K" 1>&2
+
+    # Render markdown response with glow (exactly like ai() function)
+    if [[ -s "$outfile" ]]; then
+        glow "$outfile"
+    else
+        echo -e "\n${DIM}(no stdout output)${RESET}" 1>&2
+        tail -n 20 "$errfile" 1>&2
+    fi
+
+    rm -f "$outfile" "$errfile"
+    unset -f _ai_mktemp _ai_mktemp_u
+    trap - INT RETURN
+    tput sgr0
+
     echo ""
-    echo -e "${WHITE}${BOLD}  MCP Bridge Logs (stderr):${RESET}"
-    local log_lines; log_lines=$(wc -l < "$se" 2>/dev/null || echo "0")
-
-    if [[ "$log_lines" -gt 0 ]]; then
-         # Log level statistics
-         local info_c debug_c warn_c error_c mcp_c tool_c skill_c loaded_skills=""
-         info_c=$(grep -c '\[INFO\]' "$se" 2>/dev/null) || info_c="0"
-         debug_c=$(grep -c '\[DEBUG\]' "$se" 2>/dev/null) || debug_c="0"
-         warn_c=$(grep -cE '\[WARN\]|\[WARNING\]' "$se" 2>/dev/null) || warn_c="0"
-         error_c=$(grep -cE '\[ERROR\]|\[FAIL\]' "$se" 2>/dev/null) || error_c="0"
-         mcp_c=$(grep -ciE 'mcp|route_to_skill|tool_call' "$se" 2>/dev/null) || mcp_c="0"
-         tool_c=$(grep -c '\[TOOL' "$se" 2>/dev/null) || tool_c="0"
-         skill_c=$(grep -ciE 'SKILL ACCESS|ON-DEMAND|skill.loaded' "$se" 2>/dev/null) || skill_c="0"
-
-         # Try to extract loaded skill names
-         loaded_skills=$(grep -oP '"loaded":\s*\[\K[^\]]+' "$se" 2>/dev/null | head -1 || true)
-         [[ -z "$loaded_skills" ]] && loaded_skills="(none found in stderr)"
-
-          # Also check MCP bridge log file directly
-         local mcp_log="$HOME/.config/opencode/skill-router-mcp.log"
-         if [[ -f "$mcp_log" ]]; then
-             local mc_ski; mc_ski=$(grep -c 'SKILL ACCESS' "$mcp_log" 2>/dev/null) || mc_ski="0"
-             skill_c=$((skill_c + mc_ski))
-         fi
-
-        # Log level stats line
-        echo -e "  ${DIM}Lines: ${log_lines} │ ${GREEN}INFO:${info_c}${RESET} ${DIM}DEBUG:${debug_c}${RESET} ${YELLOW}WARN:${warn_c}${RESET} ${RED}ERROR:${error_c}${RESET}"
-        echo -e "  ${DIM}MCP refs:${mcp_c} │ Tools:${tool_c} │ Skill events:${skill_c} │ Loaded: ${loaded_skills}${RESET}"
-        echo ""
-
-        # Display stderr line by line with colored log levels
-        local displayed=0
-        while IFS= read -r line; do
-            [[ -z "$line" ]] && continue
-            if echo "$line" | grep -q '\[DEBUG\]'; then
-                printf "  ${DIM}%s${RESET}\n" "$line"
-            elif echo "$line" | grep -q '\[INFO\]'; then
-                printf "  ${GREEN}%s${RESET}\n" "$line"
-            elif echo "$line" | grep -qE '\[WARN\]|WARNING'; then
-                printf "  ${YELLOW}%s${RESET}\n" "$line"
-            elif echo "$line" | grep -qE '\[ERROR\]|\[FAIL\]'; then
-                printf "  ${RED}%s${RESET}\n" "$line"
-            else
-                printf "  %s\n" "$line"
-            fi
-            displayed=$((displayed + 1))
-
-            # Paginate if output is very large (>100 lines total)
-            if [[ "$displayed" -eq 20 && "$log_lines" -gt 100 ]]; then
-                if [[ -t 1 ]]; then
-                    echo ""
-                    local remaining=$((log_lines - displayed))
-                    echo -e "  ${DIM}─── [ ${remaining} more log lines — press ENTER for more, Q to skip ] ───${RESET}"
-                    read -r -t 30 _ < /dev/tty 2>/dev/null || true
-                fi
-            fi
-        done < "$se"
-
-        # Show sample skill loading events if any
-        local skill_lines; skill_lines=$(grep -iE 'SKILL ACCESS|ON-DEMAND|skill.loaded' "$se" 2>/dev/null || true)
-        if [[ -n "$skill_lines" ]]; then
-            echo ""
-            echo -e "${WHITE}${BOLD}  Skill loading events:${RESET}"
-            echo "$skill_lines" | head -5 | while IFS= read -r line; do
-                echo -e "    ${DIM}│${RESET} $line"
-            done
-        fi
-
-        # Show sample tool call events if any
-        local tool_lines; tool_lines=$(grep '\[TOOL' "$se" 2>/dev/null || true)
-        if [[ -n "$tool_lines" ]]; then
-            echo ""
-            echo -e "${WHITE}${BOLD}  Tool calls:${RESET}"
-            echo "$tool_lines" | head -3 | while IFS= read -r line; do
-                echo -e "    ${DIM}│${RESET} $line"
-            done
-        fi
-    else
-        echo -e "  ${DIM}(no MCP logs — opencode may not have used the router)${RESET}"
-    fi
-
-    # ─── Display stdout (AI response) — render as markdown via glow ──────────────
-    local sc; sc=$(cat "$so" 2>/dev/null || echo "")
-    if [[ -n "$sc" ]]; then
-        local resp_file="$TEMP_DIR/oc_stdout_display.txt"
-        echo "$sc" > "$resp_file"
-        
-        # In interactive mode: render with glow directly to terminal (same as ai())
-        if [[ -t 1 ]] && command -v glow &>/dev/null && [[ -s "$resp_file" ]]; then
-            echo ""
-            echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
-            echo ""
-            # Let glow handle rendering directly — colors, formatting, pager all work
-            glow "$resp_file" 2>/dev/null
-        else
-            # Non-interactive mode: raw text with simple pagination
-            echo ""
-            echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
-            display_output "AI Response (raw)" "$resp_file" 400 40
-        fi
-        
-        rm -f "$resp_file"
-    else
-        echo ""
-        echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
-        echo -e "  ${DIM}(no stdout output captured)${RESET}"
-    fi
-
-    # Summary of the opencode run
-    if [[ -f "$se" ]]; then
-        local se_lines; se_lines=$(wc -l < "$se" 2>/dev/null || echo "0")
-        echo ""
-        echo -e "${WHITE}${BOLD}  OpenCode run summary:${RESET}"
-        echo -e "    Total log lines: ${BOLD}${log_lines}${RESET}"
-        echo -e "    Skill matching events: ${BOLD}${skill_c}${RESET}"
-        echo -e "    Tool calls: ${BOLD}${tool_c}${RESET}"
-        echo -e "    MCP interactions: ${BOLD}${mcp_c}${RESET}"
-        
-        # Prompt to display full MCP logs
-        if [[ "$log_lines" -gt 0 ]]; then
-            # In non-interactive mode, always show logs
-            if [[ ! -t 1 ]]; then
-                echo ""
-                echo -e "${WHITE}${BOLD}  Complete MCP Bridge Logs:${RESET}"
-                display_output "Full stderr (MCP logs)" "$se" 500 45
-            else
-                echo ""
-                echo -e "${CYAN}${BOLD}━━━━━━━━━━━━━━━━━━━━ Press SPACE/ENTER to see full MCP logs ━━━━━━━━━━━━━━━━━━━━━${RESET}"
-                local user_input=""
-                read -r -t 30 user_input < /dev/tty 2>/dev/null || user_input="Q"
-
-                if [[ "${user_input,,}" != "q" && "${user_input,,}" != "quit" ]]; then
-                    echo ""
-                    echo -e "${WHITE}${BOLD}  Complete MCP Bridge Logs:${RESET}"
-                    display_output "Full stderr (MCP logs)" "$se" 500 45
-                fi
-            fi
-        fi
-    fi
-
-    rm -f "$so" "$se" 2>/dev/null || true
     echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
     prompt_next_page
 }
@@ -1042,7 +931,7 @@ print_summary() {
         "Distributed Tracing — POST /route: OpenTelemetry + Jaeger microservices"
         "Auth Patterns       — POST /route: OAuth2 vs OIDC vs JWT comparison"
         "Redis Streams       — POST /route: Exactly-once message processing"
-        "OpenCode Live Run   — Full opencode execution with colored stdout/stderr"
+        "OpenCode Live Run   — FIFO streaming logs + glow markdown rendering (ai() style)"
         "Access Log Review   — GET /access-log routing history and confidence stats"
     )
 
