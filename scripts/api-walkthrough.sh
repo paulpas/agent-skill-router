@@ -14,6 +14,10 @@
 #   MODEL=ollama/qwen3-coder:30b ./api-walkthrough.sh  Override model via environment variable
 #
 # Requirements: bash 4+, curl, python3, jq
+# Note: For markdown rendering of AI responses, install glow (optional):
+#   brew install glow        (macOS)
+#   snap install glow --classic   (Ubuntu/Debian — also available on other distros via snapd)
+#   cargo install glow       (any platform with Rust toolchain)
 # ============================================================================
 
 set -euo pipefail
@@ -820,6 +824,7 @@ chapter_07_opencode_integration() {
     local sc; sc=$(cat "$so" 2>/dev/null || echo "")
     if [[ -n "$sc" ]]; then
         local resp_file="$TEMP_DIR/oc_stdout_display.txt"
+        local glow_file="$TEMP_DIR/oc_glow_rendered.txt"
         echo "$sc" > "$resp_file"
         
         # Clear visual separator for the AI response section
@@ -827,16 +832,28 @@ chapter_07_opencode_integration() {
         echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
         echo ""
         
-        # Display with larger page size (40 lines per page for readability)
-        display_output "AI Response Output" "$resp_file" 400 40
+        # Try glow markdown rendering first (same approach as local ai() function)
+        if command -v glow &>/dev/null && [[ -s "$resp_file" ]]; then
+            # Render with glow, suppressing its built-in pager for scripted use
+            if glow -p=false "$resp_file" > "$glow_file" 2>/dev/null && [[ -s "$glow_file" ]]; then
+                display_output "AI Response (rendered)" "$glow_file" 400 40
+                rm -f "$glow_file"
+            else
+                # Glow failed or produced empty output — fall back to raw text
+                display_output "AI Response Output" "$resp_file" 400 40
+            fi
+        else
+            # No glow available — show raw text
+            display_output "AI Response Output" "$resp_file" 400 40
+        fi
         
-        # Line count summary
+        # Line count summary (from original response)
         local resp_lines; resp_lines=$(wc -l < "$resp_file" 2>/dev/null || echo "0")
         echo ""
         echo -e "  ${DIM}┌─ Summary: ${resp_lines} lines of AI response${RESET}"
-        echo -e "  ${DIM}└─ Pagination: Press Q to skip ahead within large responses${RESET}"
+        echo -e "  ${DIM}└─ Markdown rendering via glow (if available)${RESET}"
         
-        rm -f "$resp_file"
+        rm -f "$resp_file" "$glow_file"
     else
         echo ""
         echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
@@ -875,7 +892,7 @@ chapter_07_opencode_integration() {
         fi
     fi
 
-    rm -f "$so" "$se"
+    rm -f "$so" "$se" "$glow_file" 2>/dev/null || true
     echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
     prompt_next_page
 }
