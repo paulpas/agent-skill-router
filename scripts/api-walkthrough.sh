@@ -168,6 +168,13 @@ display_output() {
         if [[ "$count" -gt "$max_lines" ]]; then
             local offset=$show_first
             while [[ "$offset" -lt "$count" ]]; do
+                # In non-interactive mode, show all pages automatically
+                if [[ ! -t 1 ]]; then
+                    echo ""
+                    sed -n "$((offset + 1)),${count}p" "$file" | colorize_json
+                    break
+                fi
+
                 echo ""
                 local remaining=$((count - offset))
                 echo -e "  ${DIM}─── [ ${count} lines total — showing ${offset}/${count} above ] ───${RESET}"
@@ -256,14 +263,23 @@ print_colored_two_col() {
 
 # ─── Prompt for JSON Display ────────────────────────────────────────────────────
 
-# Displays pagination prompt and waits for user input
-# Returns 0 (true) if user wants to see JSON, 1 (false) if they want to skip
+# Displays pagination prompt and waits for user input.
+# Returns 0 (true) if user wants to see JSON, 1 (false) if they want to skip.
+# In non-interactive mode (piped output), shows JSON automatically without prompting.
 prompt_for_json_display() {
+    # If stdout is not a terminal, don't block — show JSON automatically
+    if [[ ! -t 1 ]]; then
+        return 0
+    fi
+
     echo ""
     echo -e "${CYAN}${BOLD}━━━━━━━━━━━━━━━━━━━━━ Press SPACE/ENTER to see full JSON response ━━━━━━━━━━━━━━━━━━━━━${RESET}"
     local user_input=""
-    read -r -t 30 user_input < /dev/tty 2>/dev/null || user_input="Q"
-    
+    read -r -t 30 user_input < /dev/tty 2>/dev/null || {
+        # If /dev/tty failed or timed out, default to showing JSON (not skipping)
+        return 0
+    }
+
     case "${user_input,,}" in
         q|quit|exit)
             return 1
@@ -293,6 +309,14 @@ page_output_simple() {
         return
     fi
 
+    # In non-interactive mode, show output without pagination
+    if [[ ! -t 1 ]]; then
+        echo ""
+        cat "$tmpf"
+        rm -f "$tmpf"
+        return
+    fi
+
     echo ""
     echo -e "  ${DIM}─── [ ${count} lines, press ENTER/SPACE for more, Q to skip ] ───${RESET}"
     read -r -t 120 _ < /dev/tty 2>/dev/null || true
@@ -303,11 +327,15 @@ page_output_simple() {
 # ─── Pagination Navigation ────────────────────────────────────────────────────
 
 prompt_next_page() {
+    # In non-interactive mode, skip navigation prompt entirely
+    if [[ ! -t 1 ]]; then
+        return 1
+    fi
+
     echo ""
     echo -e "${DIM}$(printf '─%.0s' {1..78})${RESET}"
     echo -e "${CYAN}${BOLD}  [ ${CHAPTER}/${TOTAL_CHAPTERS} ] Press ENTER for next chapter, or type: N[ext] / P[rev] / Q[uit]${RESET}"
     local input=""
-    # FIX: Default to empty string explicitly, not via echo subshell
     read -r -t 60 input < /dev/tty 2>/dev/null || input=""
 
     case "${input,,}" in
@@ -693,12 +721,15 @@ chapter_07_opencode_integration() {
     echo -e "  \"${TASK_TEXT}\""
     echo ""
     echo -e "${DIM}  timeout 25 opencode run --print-logs --log-level DEBUG \\\\${RESET}"
-    echo -e "${DIM}    --dangerously-skip-permissions --model \"${MODEL}\" -m opencode/big-pickle '${TASK_TEXT}'${RESET}"
+    echo -e "${DIM}    --dangerously-skip-permissions -m opencode/big-pickle '${TASK_TEXT}'${RESET}"
 
-    # Run OpenCode — capture stdout and stderr separately
+    # Run OpenCode — capture stdout and stderr separately.
+    # NOTE: OpenCode resolves the model from its own config (opencode.json),
+    # so we do NOT pass --model here. Passing an unconfigured provider/model
+    # path (e.g. anthropic/claude-haiku-4-5) causes a crash.
     local so="$TEMP_DIR/oc_stdout.txt" se="$TEMP_DIR/oc_stderr.txt"
     timeout 25 opencode run --print-logs --log-level DEBUG \
-        --dangerously-skip-permissions --model "$MODEL" -m opencode/big-pickle \
+        --dangerously-skip-permissions -m opencode/big-pickle \
         "$TASK_TEXT" > "$so" 2> "$se" || true
 
     # ─── Display stderr (MCP/Opencode logs) with colored log levels ──────────
@@ -752,10 +783,12 @@ chapter_07_opencode_integration() {
 
             # Paginate if output is very large (>100 lines total)
             if [[ "$displayed" -eq 20 && "$log_lines" -gt 100 ]]; then
-                echo ""
-                local remaining=$((log_lines - displayed))
-                echo -e "  ${DIM}─── [ ${remaining} more log lines — press ENTER for more, Q to skip ] ───${RESET}"
-                read -r -t 30 _ < /dev/tty 2>/dev/null || true
+                if [[ -t 1 ]]; then
+                    echo ""
+                    local remaining=$((log_lines - displayed))
+                    echo -e "  ${DIM}─── [ ${remaining} more log lines — press ENTER for more, Q to skip ] ───${RESET}"
+                    read -r -t 30 _ < /dev/tty 2>/dev/null || true
+                fi
             fi
         done < "$se"
 
@@ -821,15 +854,22 @@ chapter_07_opencode_integration() {
         
         # Prompt to display full MCP logs
         if [[ "$log_lines" -gt 0 ]]; then
-            echo ""
-            echo -e "${CYAN}${BOLD}━━━━━━━━━━━━━━━━━━━━ Press SPACE/ENTER to see full MCP logs ━━━━━━━━━━━━━━━━━━━━━${RESET}"
-            local user_input=""
-            read -r -t 30 user_input < /dev/tty 2>/dev/null || user_input="Q"
-            
-            if [[ "${user_input,,}" != "q" && "${user_input,,}" != "quit" ]]; then
+            # In non-interactive mode, always show logs
+            if [[ ! -t 1 ]]; then
                 echo ""
                 echo -e "${WHITE}${BOLD}  Complete MCP Bridge Logs:${RESET}"
                 display_output "Full stderr (MCP logs)" "$se" 500 45
+            else
+                echo ""
+                echo -e "${CYAN}${BOLD}━━━━━━━━━━━━━━━━━━━━ Press SPACE/ENTER to see full MCP logs ━━━━━━━━━━━━━━━━━━━━━${RESET}"
+                local user_input=""
+                read -r -t 30 user_input < /dev/tty 2>/dev/null || user_input="Q"
+
+                if [[ "${user_input,,}" != "q" && "${user_input,,}" != "quit" ]]; then
+                    echo ""
+                    echo -e "${WHITE}${BOLD}  Complete MCP Bridge Logs:${RESET}"
+                    display_output "Full stderr (MCP logs)" "$se" 500 45
+                fi
             fi
         fi
     fi
@@ -894,13 +934,18 @@ ENDPYTHON
         # If more than 8 entries, offer pagination
         if [[ "$route_lines" -gt 10 ]]; then
             echo ""
-            echo -e "  ${DIM}│ ▼ More routing decisions available (${route_lines} lines total)${RESET}"
-            echo -e "  ${CYAN}  │ Press ENTER for more, Q to skip${RESET}"
-            read -r -t 60 user_input < /dev/tty 2>/dev/null || user_input=""
-            
-            if [[ "${user_input,,}" != "q" ]]; then
-                echo ""
+            if [[ ! -t 1 ]]; then
+                # In non-interactive mode, show all routing data automatically
                 tail -n +11 "$routing_data" | colorize_json
+            else
+                echo -e "  ${DIM}│ ▼ More routing decisions available (${route_lines} lines total)${RESET}"
+                echo -e "  ${CYAN}  │ Press ENTER for more, Q to skip${RESET}"
+                read -r -t 60 user_input < /dev/tty 2>/dev/null || user_input=""
+
+                if [[ "${user_input,,}" != "q" ]]; then
+                    echo ""
+                    tail -n +11 "$routing_data" | colorize_json
+                fi
             fi
         fi
         echo -e "  ${DIM}  │${RESET}"
@@ -947,13 +992,18 @@ ENDPYTHON
         # If more than 8 skills, offer pagination
         if [[ "$skills_lines" -gt 5 ]]; then
             echo ""
-            echo -e "  ${DIM}  │ ▼ More skills available (${skills_lines} total)${RESET}"
-            echo -e "  ${CYAN}  │ Press ENTER to see all skills, Q to skip${RESET}"
-            read -r -t 60 user_input < /dev/tty 2>/dev/null || user_input=""
-            
-            if [[ "${user_input,,}" != "q" ]]; then
-                echo ""
+            if [[ ! -t 1 ]]; then
+                # In non-interactive mode, show all skills automatically
                 tail -n +6 "$skills_data" | colorize_json
+            else
+                echo -e "  ${DIM}  │ ▼ More skills available (${skills_lines} total)${RESET}"
+                echo -e "  ${CYAN}  │ Press ENTER to see all skills, Q to skip${RESET}"
+                read -r -t 60 user_input < /dev/tty 2>/dev/null || user_input=""
+
+                if [[ "${user_input,,}" != "q" ]]; then
+                    echo ""
+                    tail -n +6 "$skills_data" | colorize_json
+                fi
             fi
         fi
         echo -e "  ${DIM}  │${RESET}"
