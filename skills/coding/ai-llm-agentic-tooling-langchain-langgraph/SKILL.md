@@ -1,24 +1,29 @@
 ---
-
-
-
-
 name: ai-llm-agentic-tooling-langchain-langgraph
-description: Integrates LangChain/LangGraph for building LLM-powered agents and applications in Python, facilitating advanced logic and workflows.
+description: Integrates LangChain/LangGraph for building LLM-powered agents and applications
+  in Python, facilitating advanced logic and workflows.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
   triggers: langchain, langgraph, llm integration, agent, workflows, python
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
   related-skills: ai-llm-agentic-tooling-mcp
-
-
-
-
 ---
 
 
@@ -120,23 +125,3 @@ executor.run()
 - Include retries and error logging in your agents.
 - Use state management techniques to preserve data between tasks.
 
----
-## Constraints
-
-### MUST DO
-- Define and document each workflow clearly, especially the input and output structure.
-- Implement logging and monitoring to track agent performance and identify bottlenecks.
-
-### MUST NOT DO
-- Skip testing integrations with external APIs and tools; ensure all dependencies function as expected.
-- Assume workflows will automatically adjust; handle edge cases explicitly in your implementations.
-
-## Live References
-
-> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
-
-- [LangChain Documentation](https://python.langchain.com/docs/introduction/) — Official LangChain documentation covering chains, agents, tools, memory, and retrieval-augmented generation
-- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/) — Official LangGraph documentation for building stateful, multi-actor applications with LLMs
-- [LangSmith Evaluation Guide](https://docs.smith.langchain.com/evaluation) — LangChain's evaluation framework for measuring agent performance and reliability
-- [Pydantic Documentation](https://docs.pydantic.dev/) — Data validation library used extensively in LangChain schema definitions
-- [OpenAI API Reference](https://platform.openai.com/docs/api-reference) — OpenAI API reference for integrating GPT models into LangChain chains and agents

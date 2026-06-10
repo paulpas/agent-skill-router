@@ -1,24 +1,32 @@
 ---
-
-
-
-
 name: software-architecture-microservices
-description: Implements strategies for designing, developing, and deploying microservices architecture. Offers guidance on best practices, patterns, and anti-patterns for microservices.
+description: Implements strategies for designing, developing, and deploying microservices
+  architecture. Offers guidance on best practices, patterns, and anti-patterns for
+  microservices.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: microservices, service-oriented architecture, microservices design, microservices patterns
+  triggers: microservices, service-oriented architecture, microservices design, microservices
+    patterns
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
-  related-skills: software-architecture-monolith, software-architecture-event-driven, software-architecture-hexagonal
-
-
-
-
+  related-skills: software-architecture-monolith, software-architecture-event-driven,
+    software-architecture-hexagonal
 ---
 
 

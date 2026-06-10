@@ -1,24 +1,29 @@
 ---
-
-
-
-
 name: aws-dynamodb-integration
-description: Implements AWS DynamoDB functionalities, showcasing data modeling, queries, and performance optimization using the AWS SDK.
+description: Implements AWS DynamoDB functionalities, showcasing data modeling, queries,
+  and performance optimization using the AWS SDK.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
   triggers: dynamodb, aws, data modeling, aws sdk, performance optimization
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
   related-skills: aws-sqs, bigquery-api-query
-
-
-
-
 ---
 
 
@@ -144,23 +149,3 @@ def query_data(table_name: str, id_value: str):
 - Consider global secondary indexes for complex queries.
 - Monitor and adjust read/write capacity as necessary.
 
----
-## Constraints
-
-### MUST DO
-- Define clear access policies & roles for DynamoDB operations.
-- Monitor performance and adjust capacity settings to handle varying loads.
-
-### MUST NOT DO
-- Perform large-scale scans indiscriminately; this is inefficient and can lead to throttling.
-- Ignore monitoring metrics provided by AWS for DynamoDB.
-
-## Live References
-
-> Authoritative documentation links for this domain. The model follows markdown links at load time to resolve external references and inline content.
-
-- [Amazon DynamoDB Documentation](https://docs.aws.amazon.com/dynamodb/) — Official AWS DynamoDB documentation covering tables, items, queries, indexes, and performance
-- [DynamoDB Data Modeling Guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/best-practices.html) — AWS best practices for DynamoDB data modeling, access patterns, and query optimization
-- [AWS SDK for Python (boto3)](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) — Official boto3 documentation for interacting with DynamoDB and other AWS services from Python
-- [DynamoDB Streams Documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html) — AWS guide to using DynamoDB Streams for change data capture and event-driven architectures
-- [NoSQL Data Modeling Patterns (Amazon)](https://www.oreilly.com/library/view/nosql-introduction/9781449304486/) — O'Reilly reference on NoSQL data modeling patterns applicable to DynamoDB design

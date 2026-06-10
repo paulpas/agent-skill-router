@@ -7,9 +7,11 @@
 # for each task. All prompts are purely hypothetical knowledge questions.
 #
 # Usage:
-#   ./api-walkthrough.sh              Walk through all 8 pages
-#   ./api-walkthrough.sh --chapter N  Jump to page N directly (1-8)
-#   ./api-walkthrough.sh --skip-opencode   Skip the OpenCode integration chapter
+#   ./api-walkthrough-production.sh              Walk through all 8 pages
+#   ./api-walkthrough-production.sh --chapter N  Jump to page N directly (1-8)
+#   ./api-walkthrough-production.sh --skip-opencode   Skip the OpenCode integration chapter
+#
+# Requirements: bash 4+, curl, python3, jq
 # ============================================================================
 
 set -euo pipefail
@@ -19,7 +21,7 @@ TEMP_DIR=$(mktemp -d)
 CHAPTER=0
 TOTAL_CHAPTERS=8
 TARGET_CHAPTER=""
-SKIP_OPCODE=false
+SKIP_OPENCODE=false
 
 trap 'rm -rf "$TEMP_DIR"' EXIT
 
@@ -29,11 +31,38 @@ BOLD="\e[1m" RED="\e[31m" GREEN="\e[32m" YELLOW="\e[33m"
 CYAN="\e[36m" DIM="\e[2m" WHITE="\e[97m"
 BG_CYAN="\e[46m" BG_GREEN="\e[42m" RESET="\e[0m"
 
+# ─── Dependency Check ────────────────────────────────────────────────────────
+
+check_dependencies() {
+    for cmd in curl python3 jq; do
+        if ! command -v "$cmd" &>/dev/null; then
+            echo ""; echo -e "  ${RED}✗ Required command not found: ${cmd}${RESET}"
+            exit 1
+        fi
+    done
+}
+
+# ─── Argument Parsing with Validation ─────────────────────────────────────
+
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --skip-opencode) SKIP_OPCODE=true; shift ;;
-        --chapter) TARGET_CHAPTER="$2"; shift 2 ;;
-        *) echo "Unknown option: $1"; exit 1 ;;
+        --skip-opencode)
+            SKIP_OPENCODE=true
+            shift
+            ;;
+        --chapter)
+            TARGET_CHAPTER="$2"
+            # FIX: Validate that TARGET_CHAPTER is numeric
+            if ! [[ "$TARGET_CHAPTER" =~ ^[0-9]+$ ]] || [[ "$TARGET_CHAPTER" -lt 1 || "$TARGET_CHAPTER" -gt 8 ]]; then
+                echo "Error: --chapter must be a number between 1 and 8" >&2
+                exit 1
+            fi
+            shift 2
+            ;;
+        *)
+            echo "Unknown option: $1" >&2
+            exit 1
+            ;;
     esac
 done
 
@@ -95,9 +124,10 @@ print_scenario() { echo ""; echo -e "${WHITE}${BOLD}  📖 Scenario:${RESET} ${D
 print_key_point() { local color="${2:-$GREEN}"; echo -e "  ${color}►${RESET} $1"; }
 
 # Display output from a file with optional pagination for massive responses.
-# Shows first 20 lines without pausing, then offers to continue if >100 lines total.
+# Shows first N lines without pausing, then offers to continue if >max_lines total.
+# Supports configurable lines per page (default 30-40 for readability).
 display_output() {
-    local label="$1" file="$2" max_lines="${3:-100}"
+    local label="$1" file="$2" max_lines="${3:-300}" lines_per_page="${4:-35}"
     echo ""
 
     # If file is empty (0 bytes), report immediately
@@ -109,8 +139,9 @@ display_output() {
     fi
 
     # Normalize single-line JSON to multi-line for display and correct line counting
+    # FIX: Remove '|| true' so JSON formatting errors are visible
     if [[ "$(wc -l < "$file")" -eq 0 ]]; then
-        python3 -m json.tool < "$file" > "${file}.norm" 2>/dev/null && mv "${file}.norm" "$file" || true
+        python3 -m json.tool < "$file" > "${file}.norm" 2>/dev/null && mv "${file}.norm" "$file"
     fi
 
     local count; count=$(wc -l < "$file")
@@ -119,24 +150,36 @@ display_output() {
     if [[ "$count" -eq 0 ]]; then
         echo -e "  ${DIM}  │ (empty response)${RESET}"
     else
-        # Always show first min(20, count) lines without pausing
-        local show_first=20
+        # Show first page (configurable line count, default 35)
+        local show_first=$lines_per_page
         if [[ "$count" -lt "$show_first" ]]; then
             show_first=$count
-            head -n "$show_first" "$file" | colorize_json
-        else
-            head -n "$show_first" "$file" | colorize_json
         fi
+        head -n "$show_first" "$file" | colorize_json
 
-        # For genuinely massive output (>100 lines), paginate the rest
+        # For large output, paginate the rest with interactive prompts
         if [[ "$count" -gt "$max_lines" ]]; then
-            echo ""
-            local remaining=$((count - show_first))
-            echo -e "  ${DIM}─── [ ${count} lines total — showing first 20 above. Press ENTER/SPACE for more, Q to skip ] ───${RESET}"
-            read -r -t 30 _ < /dev/tty 2>/dev/null || true
-
-            echo ""
-            tail -n +"$((show_first + 1))" "$file" | colorize_json
+            local offset=$show_first
+            while [[ "$offset" -lt "$count" ]]; do
+                echo ""
+                local remaining=$((count - offset))
+                echo -e "  ${DIM}─── [ ${count} lines total — showing ${offset}/${count} above ] ───${RESET}"
+                echo -e "  ${CYAN}${BOLD}Press ENTER for next page, Q to skip remaining${RESET}"
+                read -r -t 60 user_input < /dev/tty 2>/dev/null || user_input=""
+                
+                if [[ "${user_input,,}" == "q" ]]; then
+                    break
+                fi
+                
+                # Show next page
+                echo ""
+                local next_end=$((offset + lines_per_page))
+                if [[ "$next_end" -gt "$count" ]]; then
+                    next_end=$count
+                fi
+                sed -n "$((offset + 1)),${next_end}p" "$file" | colorize_json
+                offset=$next_end
+            done
         fi
     fi
 
@@ -145,28 +188,32 @@ display_output() {
 
 # Display output directly from a variable (piped through temp file for colorize)
 display_var_output() {
-    local label="$1" content="$2" max_lines="${3:-100}"
+    local label="$1" content="$2" max_lines="${3:-300}"
     local tmpf="$TEMP_DIR/var_out_$$"
     echo "$content" > "$tmpf"
     display_output "$label" "$tmpf" "$max_lines"
     rm -f "$tmpf"
 }
 
-# Extract a JSON field value using python3
+# FIX: Extract JSON field value with proper error handling
 json_extract() {
     local json="$1" field="$2"
-    if command -v python3 &>/dev/null; then
-        echo "$json" | python3 -c "
+    if ! command -v python3 &>/dev/null; then
+        echo "?"
+        return 1
+    fi
+    
+    python3 -c "
 import sys,json
 try:
     d=json.loads(sys.stdin.read())
-    for k in '$field'.split('.'): d=d[k]
+    field = '${field}'
+    for k in field.split('.'): 
+        d=d[k]
     print(d)
-except: print('?')
-" 2>/dev/null || echo "?"
-    else
-        echo "?"
-    fi
+except: 
+    print('?')
+" <<< "$json" 2>/dev/null || echo "?"
 }
 
 # Print two columns side-by-side
@@ -183,11 +230,12 @@ print_two_col() {
     while IFS= read -r line; do [[ -n "$line" ]] && left_lines+=("$line"); done <<< "$left"
     while IFS= read -r line; do [[ -n "$line" ]] && right_lines+=("$line"); done <<< "$right"
 
+    # FIX: Use max of both arrays consistently
     local max=$(( ${#left_lines[@]} > ${#right_lines[@]} ? ${#left_lines[@]} : ${#right_lines[@]} ))
     local term_h; term_h=$(tput lines 2>/dev/null || echo 50)
     max=$((max > term_h - 18 ? term_h - 18 : max))
 
-    for ((i=0; i<max && i<${#right_lines[@]}; i++)); do
+    for ((i=0; i<max; i++)); do
         local l="${left_lines[$i]:-}"; local r="${right_lines[$i]:-}"
         printf "  %-45s │ %s\n" "$l" "$r"
     done
@@ -202,7 +250,7 @@ print_colored_two_col() {
 # ─── Per-Chapter Pagination ────────────────────────────────────────────────────
 
 page_output_simple() {
-    local max_lines=${1:-40}
+    local max_lines=${1:-300}
 
     if [[ ! -t 1 ]]; then
         cat; return
@@ -232,11 +280,12 @@ prompt_next_page() {
     echo -e "${DIM}$(printf '─%.0s' {1..78})${RESET}"
     echo -e "${CYAN}${BOLD}  [ ${CHAPTER}/${TOTAL_CHAPTERS} ] Press ENTER for next chapter, or type: N[ext] / P[rev] / Q[uit]${RESET}"
     local input=""
-    read -r -t 60 input < /dev/tty 2>/dev/null || input=$(echo)
+    # FIX: Default to empty string explicitly, not via echo subshell
+    read -r -t 60 input < /dev/tty 2>/dev/null || input=""
 
     case "${input,,}" in
         n|next)   return 0 ;;
-        p|prev)   goto_prev_page ;;
+        p|prev)   goto_prev_page; return 0 ;;
         q|quit|exit) print_summary; exit 0 ;;
         "")       return 0 ;;
         *)        return 0 ;;
@@ -253,8 +302,9 @@ goto_prev_page() {
 # ─── Chapter 1: Morning Standup ──────────────────────────────────────────────
 
 chapter_01_health_check() {
+    CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "1" ]] && return
-    CHAPTER=$((CHAPTER + 1)); show_progress "$CHAPTER" "Health & Stats"
+    show_progress "$CHAPTER" "Health & Stats"
     print_chapter_header "$CHAPTER" "MORNING STANDUP — Health & Stats"
     print_scenario "It's 9 AM. You boot up: Is everything running? How many skills loaded?"
 
@@ -302,8 +352,9 @@ for cat,n in sorted(c.items(),key=lambda x:-x[1])[:5]: print(f'  {g}\u25b8{r} {c
 # ─── Chapter 2: Prometheus/Kubernetes Monitoring ──────────────────────────────
 
 chapter_02_prometheus_k8s() {
+    CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "2" ]] && return
-    CHAPTER=$((CHAPTER + 1)); show_progress "$CHAPTER" "K8s Monitoring"
+    show_progress "$CHAPTER" "K8s Monitoring"
     print_chapter_header "$CHAPTER" "PROMETHEUS & KUBERNETES MONITORING"
 
     local TASK_PROMPT='How do I set up Kubernetes monitoring with Prometheus and Grafana for a production cluster? Need alerting rules and custom dashboards.'
@@ -311,11 +362,11 @@ chapter_02_prometheus_k8s() {
     print_scenario "You need to monitor your K8s cluster. You ask your AI assistant:"
     echo -e "  ${DIM}\"${TASK_PROMPT}\"${RESET}"
 
-    # Route the query — capture output for parsing + display
+    # FIX: Use jq for safe JSON escaping
     local route_file="$TEMP_DIR/ch02_route.json"
     curl -s --max-time 15 -X POST "${API_URL}/route" \
         -H "Content-Type: application/json" \
-        -d "{\"task\":\"${TASK_PROMPT}\",\"constraints\":{\"maxSkills\":5}}" > "$route_file" 2>/dev/null || true
+        -d "$(jq -n --arg task "$TASK_PROMPT" '{task: $task, constraints: {maxSkills: 5}}')" > "$route_file" 2>/dev/null || true
 
     # Show parsed top matches
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
@@ -340,7 +391,7 @@ if explanation:
     print()
     print(f'  {b}Why this skill matched:{r}')
     for e in explanation[:3]:
-        print(f'     {d_}\\u2022{r} {e[:120]}')
+        print(f'     {d_}\u2022{r} {e[:120]}')
 " 2>/dev/null || true
 
     # Show full colorized JSON response
@@ -353,8 +404,9 @@ if explanation:
 # ─── Chapter 3: VWAP Trading Algorithm ────────────────────────────────────────
 
 chapter_03_vwap_trading() {
+    CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "3" ]] && return
-    CHAPTER=$((CHAPTER + 1)); show_progress "$CHAPTER" "VWAP Trading"
+    show_progress "$CHAPTER" "VWAP Trading"
     print_chapter_header "$CHAPTER" "IMPLEMENTING A VWAP EXECUTION ALGORITHM"
 
     local TASK_PROMPT='Implement a VWAP execution algorithm for large crypto orders with minimal market impact. Need position sizing, entry/exit points, and risk limits.'
@@ -362,11 +414,11 @@ chapter_03_vwap_trading() {
     print_scenario "You're building a crypto trading system. You ask your AI assistant:"
     echo -e "  ${DIM}\"${TASK_PROMPT}\"${RESET}"
 
-    # Route the query
+    # FIX: Use jq for safe JSON escaping
     local route_file="$TEMP_DIR/ch03_route.json"
     curl -s --max-time 15 -X POST "${API_URL}/route" \
         -H "Content-Type: application/json" \
-        -d "{\"task\":\"${TASK_PROMPT}\",\"constraints\":{\"maxSkills\":5}}" > "$route_file" 2>/dev/null || true
+        -d "$(jq -n --arg task "$TASK_PROMPT" '{task: $task, constraints: {maxSkills: 5}}')" > "$route_file" 2>/dev/null || true
 
     # Show parsed results
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
@@ -397,8 +449,9 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
 # ─── Chapter 4: Distributed Tracing ──────────────────────────────────────────
 
 chapter_04_distributed_tracing() {
+    CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "4" ]] && return
-    CHAPTER=$((CHAPTER + 1)); show_progress "$CHAPTER" "Distributed Tracing"
+    show_progress "$CHAPTER" "Distributed Tracing"
     print_chapter_header "$CHAPTER" "DESIGNING A DISTRIBUTED TRACING SYSTEM"
 
     local TASK_PROMPT='Design a distributed tracing system for microservices using OpenTelemetry and Jaeger. Need span propagation, baggage handling, and latency budgeting across service boundaries.'
@@ -406,10 +459,11 @@ chapter_04_distributed_tracing() {
     print_scenario "Your microservices are growing out of control. You ask your AI assistant:"
     echo -e "  ${DIM}\"${TASK_PROMPT}\"${RESET}"
 
+    # FIX: Use jq for safe JSON escaping
     local route_file="$TEMP_DIR/ch04_route.json"
     curl -s --max-time 15 -X POST "${API_URL}/route" \
         -H "Content-Type: application/json" \
-        -d "{\"task\":\"${TASK_PROMPT}\",\"constraints\":{\"maxSkills\":5}}" > "$route_file" 2>/dev/null || true
+        -d "$(jq -n --arg task "$TASK_PROMPT" '{task: $task, constraints: {maxSkills: 5}}')" > "$route_file" 2>/dev/null || true
 
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
     python3 -c "
@@ -438,8 +492,9 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
 # ─── Chapter 5: Authentication Patterns ──────────────────────────────────────
 
 chapter_05_auth_patterns() {
+    CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "5" ]] && return
-    CHAPTER=$((CHAPTER + 1)); show_progress "$CHAPTER" "Auth Patterns"
+    show_progress "$CHAPTER" "Auth Patterns"
     print_chapter_header "$CHAPTER" "SECURE AUTHENTICATION — OAUTH2 vs OIDC vs JWT"
 
     local TASK_PROMPT='What are the best practices for secure authentication — OAuth2 vs OIDC vs JWT? Need token lifecycle management, refresh strategies, and security considerations for a web app.'
@@ -447,10 +502,11 @@ chapter_05_auth_patterns() {
     print_scenario "You're designing a new web app's auth system. You ask your AI assistant:"
     echo -e "  ${DIM}\"${TASK_PROMPT}\"${RESET}"
 
+    # FIX: Use jq for safe JSON escaping
     local route_file="$TEMP_DIR/ch05_route.json"
     curl -s --max-time 15 -X POST "${API_URL}/route" \
         -H "Content-Type: application/json" \
-        -d "{\"task\":\"${TASK_PROMPT}\",\"constraints\":{\"maxSkills\":5}}" > "$route_file" 2>/dev/null || true
+        -d "$(jq -n --arg task "$TASK_PROMPT" '{task: $task, constraints: {maxSkills: 5}}')" > "$route_file" 2>/dev/null || true
 
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
     python3 -c "
@@ -479,8 +535,9 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
 # ─── Chapter 6: Redis Streams ────────────────────────────────────────────────
 
 chapter_06_redis_streams() {
+    CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "6" ]] && return
-    CHAPTER=$((CHAPTER + 1)); show_progress "$CHAPTER" "Redis Streams"
+    show_progress "$CHAPTER" "Redis Streams"
     print_chapter_header "$CHAPTER" "REDIS STREAMS — EXACTLY-ONCE MESSAGE PROCESSING"
 
     local TASK_PROMPT='How does Redis Streams handle exactly-once message processing with consumer groups? Need stream architecture, ack patterns, and dead letter queue handling for a production system.'
@@ -488,10 +545,11 @@ chapter_06_redis_streams() {
     print_scenario "Your event-driven architecture needs reliable messaging. You ask your AI assistant:"
     echo -e "  ${DIM}\"${TASK_PROMPT}\"${RESET}"
 
+    # FIX: Use jq for safe JSON escaping
     local route_file="$TEMP_DIR/ch06_route.json"
     curl -s --max-time 15 -X POST "${API_URL}/route" \
         -H "Content-Type: application/json" \
-        -d "{\"task\":\"${TASK_PROMPT}\",\"constraints\":{\"maxSkills\":5}}" > "$route_file" 2>/dev/null || true
+        -d "$(jq -n --arg task "$TASK_PROMPT" '{task: $task, constraints: {maxSkills: 5}}')" > "$route_file" 2>/dev/null || true
 
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
     python3 -c "
@@ -520,11 +578,12 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
 # ─── Chapter 7: OpenCode Integration (Live Run) ──────────────────────────────
 
 chapter_07_opencode_integration() {
+    CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "7" ]] && return
-    CHAPTER=$((CHAPTER + 1)); show_progress "$CHAPTER" "OpenCode Run"
+    show_progress "$CHAPTER" "OpenCode Run"
     print_chapter_header "$CHAPTER" "LIVE OpenCode RUN — Full stdout/stderr Output"
 
-    if [[ "${SKIP_OPCODE:-false}" == "true" ]]; then
+    if [[ "${SKIP_OPENCODE:-false}" == "true" ]]; then
         echo -e "  ${YELLOW}⚠ Skipped (--skip-opencode flag set)${RESET}"
         echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER skipped.${RESET}"
         prompt_next_page
@@ -538,13 +597,15 @@ chapter_07_opencode_integration() {
         return
     fi
 
-    local healthy; healthy=$(curl -s --max-time 3 "$API_URL/health" 2>/dev/null | python3 -c "import sys,json; print(json.load(sys.stdin).get('status',''))") || true
-    [[ "$healthy" != "healthy" ]] && {
+    # FIX: Add error handling for health check
+    local healthy
+    healthy=$(curl -s --max-time 3 "$API_URL/health" 2>/dev/null | python3 -c "import sys,json; d=json.loads(sys.stdin.read()); print(d.get('status',''))" 2>/dev/null) || healthy=""
+    if [[ "$healthy" != "healthy" ]]; then
         echo -e "  ${RED}✗ API unhealthy.${RESET}"
         echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER skipped.${RESET}"
         prompt_next_page
         return
-    }
+    fi
 
     # Use the same Redis Streams prompt as chapter 6 for consistency
     local TASK_TEXT='How does Redis Streams handle exactly-once message processing with consumer groups? Need stream architecture, ack patterns, and dead letter queue handling.'
@@ -554,8 +615,8 @@ chapter_07_opencode_integration() {
     echo -e "  ${DIM}Task being routed:${RESET}"
     echo -e "  \"${TASK_TEXT}\""
     echo ""
-    echo -e "${DIM}  timeout 25 opencode run --print-logs --log-level DEBUG\\${RESET}"
-    echo -e "${DIM}    --dangerously-skip-permissions -m opencode/big-pickle '${TASK_TEXT}'${RESET}"
+     echo -e "${DIM}  timeout 25 opencode run --print-logs --log-level DEBUG \\\\${RESET}"
+     echo -e "${DIM}    --dangerously-skip-permissions -m opencode/big-pickle '${TASK_TEXT}'${RESET}"
 
     # Run OpenCode — capture stdout and stderr separately
     local so="$TEMP_DIR/oc_stdout.txt" se="$TEMP_DIR/oc_stderr.txt"
@@ -569,26 +630,26 @@ chapter_07_opencode_integration() {
     local log_lines; log_lines=$(wc -l < "$se" 2>/dev/null || echo "0")
 
     if [[ "$log_lines" -gt 0 ]]; then
-        # Log level statistics
-        local info_c debug_c warn_c error_c mcp_c tool_c skill_c loaded_skills=""
-        info_c=$(grep -c '\[INFO\]' "$se" 2>/dev/null || echo "0")
-        debug_c=$(grep -c '\[DEBUG\]' "$se" 2>/dev/null || echo "0")
-        warn_c=$(grep -cE '\[WARN\]|\[WARNING\]' "$se" 2>/dev/null || echo "0")
-        error_c=$(grep -cE '\[ERROR\]|\[FAIL' "$se" 2>/dev/null || echo "0")
-        mcp_c=$(grep -ciE 'mcp|route_to_skill|tool_call' "$se" 2>/dev/null || echo "0")
-        tool_c=$(grep -c '\[TOOL' "$se" 2>/dev/null || echo "0")
-        skill_c=$(grep -ciE 'SKILL ACCESS|ON-DEMAND|skill.loaded' "$se" 2>/dev/null || echo "0")
+         # Log level statistics
+         local info_c debug_c warn_c error_c mcp_c tool_c skill_c loaded_skills=""
+         info_c=$(grep -c '\[INFO\]' "$se" 2>/dev/null) || info_c="0"
+         debug_c=$(grep -c '\[DEBUG\]' "$se" 2>/dev/null) || debug_c="0"
+         warn_c=$(grep -cE '\[WARN\]|\[WARNING\]' "$se" 2>/dev/null) || warn_c="0"
+         error_c=$(grep -cE '\[ERROR\]|\[FAIL\]' "$se" 2>/dev/null) || error_c="0"
+         mcp_c=$(grep -ciE 'mcp|route_to_skill|tool_call' "$se" 2>/dev/null) || mcp_c="0"
+         tool_c=$(grep -c '\[TOOL' "$se" 2>/dev/null) || tool_c="0"
+         skill_c=$(grep -ciE 'SKILL ACCESS|ON-DEMAND|skill.loaded' "$se" 2>/dev/null) || skill_c="0"
 
-        # Try to extract loaded skill names
-        loaded_skills=$(grep -oP '"loaded":\s*\[\K[^\]]+' "$se" 2>/dev/null | head -1 || true)
-        [[ -z "$loaded_skills" ]] && loaded_skills="(none found in stderr)"
+         # Try to extract loaded skill names
+         loaded_skills=$(grep -oP '"loaded":\s*\[\K[^\]]+' "$se" 2>/dev/null | head -1 || true)
+         [[ -z "$loaded_skills" ]] && loaded_skills="(none found in stderr)"
 
-        # Also check MCP bridge log file directly
-        local mcp_log="$HOME/.config/opencode/skill-router-mcp.log"
-        if [[ -f "$mcp_log" ]]; then
-            local mc_ski; mc_ski=$(grep -c 'SKILL ACCESS' "$mcp_log" 2>/dev/null || echo "0")
-            skill_c=$((skill_c + mc_ski))
-        fi
+          # Also check MCP bridge log file directly
+         local mcp_log="$HOME/.config/opencode/skill-router-mcp.log"
+         if [[ -f "$mcp_log" ]]; then
+             local mc_ski; mc_ski=$(grep -c 'SKILL ACCESS' "$mcp_log" 2>/dev/null) || mc_ski="0"
+             skill_c=$((skill_c + mc_ski))
+         fi
 
         # Log level stats line
         echo -e "  ${DIM}Lines: ${log_lines} │ ${GREEN}INFO:${info_c}${RESET} ${DIM}DEBUG:${debug_c}${RESET} ${YELLOW}WARN:${warn_c}${RESET} ${RED}ERROR:${error_c}${RESET}"
@@ -605,7 +666,7 @@ chapter_07_opencode_integration() {
                 printf "  ${GREEN}%s${RESET}\n" "$line"
             elif echo "$line" | grep -qE '\[WARN\]|WARNING'; then
                 printf "  ${YELLOW}%s${RESET}\n" "$line"
-            elif echo "$line" | grep -qE '\[ERROR\]|\[FAIL'; then
+            elif echo "$line" | grep -qE '\[ERROR\]|\[FAIL\]'; then
                 printf "  ${RED}%s${RESET}\n" "$line"
             else
                 printf "  %s\n" "$line"
@@ -644,21 +705,34 @@ chapter_07_opencode_integration() {
         echo -e "  ${DIM}(no MCP logs — opencode may not have used the router)${RESET}"
     fi
 
-    # ─── Display stdout (AI response) in full ────────────────────────────────
+    # ─── Display stdout (AI response) with prominent heading and pagination ────
     local sc; sc=$(cat "$so" 2>/dev/null || echo "")
     if [[ -n "$sc" ]]; then
         local resp_file="$TEMP_DIR/oc_stdout_display.txt"
         echo "$sc" > "$resp_file"
+        
+        # Clear visual separator for the AI response section
         echo ""
-        echo -e "${WHITE}${BOLD}  AI Response (stdout):${RESET}"
-        display_output "AI Response" "$resp_file"
+        echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
+        echo ""
+        
+        # Display with larger page size (40 lines per page for readability)
+        display_output "AI Response Output" "$resp_file" 400 40
+        
+        # Line count summary
+        local resp_lines; resp_lines=$(wc -l < "$resp_file" 2>/dev/null || echo "0")
+        echo ""
+        echo -e "  ${DIM}┌─ Summary: ${resp_lines} lines of AI response${RESET}"
+        echo -e "  ${DIM}└─ Pagination: Press Q to skip ahead within large responses${RESET}"
+        
         rm -f "$resp_file"
     else
-        echo -e "  ${DIM}(no stdout output)${RESET}"
+        echo ""
+        echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
+        echo -e "  ${DIM}(no stdout output captured)${RESET}"
     fi
 
     # Summary of the opencode run
-    local total_skill_events=0; : "${total_skill_events:=0}"
     if [[ -f "$se" ]]; then
         local se_lines; se_lines=$(wc -l < "$se" 2>/dev/null || echo "0")
         echo ""
@@ -677,8 +751,9 @@ chapter_07_opencode_integration() {
 # ─── Chapter 8: Access Log Review ─────────────────────────────────────────────
 
 chapter_08_access_log_review() {
+    CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "8" ]] && return
-    CHAPTER=$((CHAPTER + 1)); show_progress "$CHAPTER" "Access Log"
+    show_progress "$CHAPTER" "Access Log"
     print_chapter_header "$CHAPTER" "ROUTING HISTORY — What Was Matched Today?"
 
     local l; l=$(curl -s --max-time 10 "$API_URL/access-log" 2>/dev/null || echo '{"totalRequests":0,"entries":[]}')
@@ -686,20 +761,26 @@ chapter_08_access_log_review() {
     echo "$l" > "$access_file"
 
     local total entries_count
-    total=$(json_extract "$l" "totalRequests"); : "${total:=?}"
+    total=$(json_extract "$l" "totalRequests"); : "${total:=0}"
     entries_count=$(python3 -c "import sys,json; print(len(json.loads(sys.stdin.read()).get('entries',[])))" <<< "$l" 2>/dev/null || echo "0")
 
     echo -e "  Total requests: ${BOLD}${total}${RESET}  |  Entries: ${BOLD}${entries_count}${RESET}"
     echo ""
 
     if [[ "${entries_count:-0}" -gt 0 ]]; then
-        # Recent routing decisions — compact table
-        echo -e "${WHITE}${BOLD}  Recent routing decisions:${RESET}"
-        python3 -c "
+        # ─── SECTION 1: Recent routing decisions with pagination ─────────────────
+        echo -e "${CYAN}${BOLD}  ┌─ SECTION 1: Recent Routing Decisions${RESET}"
+        echo -e "${DIM}  │${RESET}"
+        
+        # Extract and paginate routing decisions
+        local routing_data="$TEMP_DIR/routing_decisions.txt"
+        python3 - "$access_file" > "$routing_data" << 'ENDPYTHON'
 import sys,json
-d=json.load(sys.stdin)
+with open(sys.argv[1]) as f:
+    d=json.load(f)
 b='\033[1m';g='\033[32m';r='\033[0m';y='\033[33m';rd='\033[31m';d_='\033[2m'
-for e in reversed(d.get('entries',[])[:8]):
+entries=list(reversed(d.get('entries',[])))
+for i,e in enumerate(entries):
     ts=e.get('timestamp','?')[:16]
     t=e.get('task','?')[:60]
     s=e.get('topSkill','?')
@@ -707,41 +788,92 @@ for e in reversed(d.get('entries',[])[:8]):
     m=e.get('totalMatches','?')
     icon='\u2713' if c>0.5 else ('\u26a0' if c>0.25 else '\u2717')
     col=g if c>0.5 else (y if c>0.25 else rd)
-    print(f'  {icon} [{ts}] {col}{s}{r} conf={c:.2f} matches={m}')
-    print(f'      task: \"{t}\"...')
-" < "$access_file" 2>/dev/null || true
-
-        # Confidence distribution
-        echo ""
-        echo -e "${WHITE}${BOLD}  Confidence distribution:${RESET}"
+    output=f'  {icon} [{ts}] {col}{s}{r} conf={c:.2f} matches={m}\n'
+    output+=f'      task: "{t}"...'
+    print(output)
+    if i < len(entries) - 1:
+        print()
+ENDPYTHON
+        
+        local route_lines; route_lines=$(wc -l < "$routing_data" 2>/dev/null || echo "0")
+        
+        # Show first 5 entries without pause
+        head -n 10 "$routing_data" | colorize_json
+        
+        # If more than 8 entries, offer pagination
+        if [[ "$route_lines" -gt 10 ]]; then
+            echo ""
+            echo -e "  ${DIM}│ ▼ More routing decisions available (${route_lines} lines total)${RESET}"
+            echo -e "  ${CYAN}  │ Press ENTER for more, Q to skip${RESET}"
+            read -r -t 60 user_input < /dev/tty 2>/dev/null || user_input=""
+            
+            if [[ "${user_input,,}" != "q" ]]; then
+                echo ""
+                tail -n +11 "$routing_data" | colorize_json
+            fi
+        fi
+        echo -e "  ${DIM}  │${RESET}"
+        
+        # ─── SECTION 2: Confidence distribution ──────────────────────────────────
+        echo -e "${CYAN}${BOLD}  ├─ SECTION 2: Confidence Distribution${RESET}"
+        echo -e "${DIM}  │${RESET}"
         python3 -c "
 import sys,json
 d=json.load(sys.stdin)
 c=[e.get('confidence',0) for e in d.get('entries',[])]
-if not c: print('  No entries.'); exit()
+if not c: print('  │ No entries.'); exit()
 hi=sum(1 for x in c if x>0.5); mid=sum(1 for x in c if .25<x<=.5); lo=len(c)-hi-mid; n=len(c)
 avg=sum(c)/n if n else 0
-g='\033[32m';y='\033[33m';rd='\033[31m';r='\033[0m'
-print(f'  Total: {n} requests')
-print(f'  High (>50%): {hi:>3d}/{n} ({hi/n*100:.0f}%)   {g}\u25cf{r}')
-print(f'  Mid  (25-50%):    {mid:>3d}/{n} ({mid/n*100:.0f}%)   {y}\u25cf{r}')
-print(f'  Low  (\u226425%):      {lo:>3d}/{n} ({lo/n*100:.0f}%)   {rd}\u25cf{r}')
-print(f'  Average: {avg:.2f}')
+g='\033[32m';y='\033[33m';rd='\033[31m';r='\033[0m';d_='\033[2m'
+print(f'  │ Total: {n} requests')
+print(f'  │ High (>50%): {hi:>3d}/{n} ({hi/n*100:.0f}%)   {g}\u25cf{r}')
+print(f'  │ Mid  (25-50%):    {mid:>3d}/{n} ({mid/n*100:.0f}%)   {y}\u25cf{r}')
+print(f'  │ Low  (\u226425%):      {lo:>3d}/{n} ({lo/n*100:.0f}%)   {rd}\u25cf{r}')
+print(f'  │ Average: {avg:.2f}')
 " < "$access_file" 2>/dev/null || true
-
-        # Most-routed skills
-        echo ""
-        echo -e "${WHITE}${BOLD}  Top routed skills:${RESET}"
-        python3 -c "
+        echo -e "  ${DIM}  │${RESET}"
+        
+        # ─── SECTION 3: Top routed skills with pagination ───────────────────────
+        echo -e "${CYAN}${BOLD}  ├─ SECTION 3: Top Routed Skills${RESET}"
+        echo -e "${DIM}  │${RESET}"
+        
+        local skills_data="$TEMP_DIR/top_skills.txt"
+        python3 - "$access_file" > "$skills_data" << 'ENDPYTHON'
 import sys,json; from collections import Counter
-d=json.load(sys.stdin)
+with open(sys.argv[1]) as f:
+    d=json.load(f)
 b='\033[1m';r='\033[0m'
 c=Counter(e.get('topSkill','?') for e in d.get('entries',[]))
-for s,n in c.most_common(8): print(f'  {b}{s}{r}  {n:>3d}x')
-" < "$access_file" 2>/dev/null || true
-
-        # Show full access-log JSON response (colorized)
-        display_output "Full /access-log Response" "$access_file"
+for s,n in c.most_common(20):
+    print(f'  {b}{s}{r}  {n:>3d}x')
+ENDPYTHON
+        
+        local skills_lines; skills_lines=$(wc -l < "$skills_data" 2>/dev/null || echo "0")
+        
+        # Show first 5 skills
+        head -n 5 "$skills_data" | colorize_json
+        
+        # If more than 8 skills, offer pagination
+        if [[ "$skills_lines" -gt 5 ]]; then
+            echo ""
+            echo -e "  ${DIM}  │ ▼ More skills available (${skills_lines} total)${RESET}"
+            echo -e "  ${CYAN}  │ Press ENTER to see all skills, Q to skip${RESET}"
+            read -r -t 60 user_input < /dev/tty 2>/dev/null || user_input=""
+            
+            if [[ "${user_input,,}" != "q" ]]; then
+                echo ""
+                tail -n +6 "$skills_data" | colorize_json
+            fi
+        fi
+        echo -e "  ${DIM}  │${RESET}"
+        
+        # ─── SECTION 4: Full JSON response with pagination ──────────────────────
+        echo -e "${CYAN}${BOLD}  └─ SECTION 4: Full /access-log JSON Response${RESET}"
+        echo ""
+        display_output "Complete Access Log (JSON)" "$access_file" 400 45
+        
+        # Cleanup
+        rm -f "$routing_data" "$skills_data"
     else
         echo -e "  ${YELLOW}⚠ No history yet — access log populates as the router is used.${RESET}"
     fi
@@ -798,11 +930,11 @@ main() {
     echo "  ╚══════════════════════════════════════════════════════════════╝"
     echo -e "${RESET}"
 
+    check_dependencies
     check_api
 
     # If targeting a single chapter, just run it and exit
     if [[ -n "$TARGET_CHAPTER" ]]; then
-        CHAPTER=$((TARGET_CHAPTER - 1))  # Start before the target chapter
         case "$TARGET_CHAPTER" in
             1) chapter_01_health_check ;;
             2) chapter_02_prometheus_k8s ;;
@@ -818,7 +950,6 @@ main() {
     fi
 
     # Full walkthrough with pagination
-    CHAPTER=0
     chapter_01_health_check
     chapter_02_prometheus_k8s
     chapter_03_vwap_trading

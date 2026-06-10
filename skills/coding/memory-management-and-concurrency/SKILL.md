@@ -1,24 +1,31 @@
 ---
-
-
-
-
 name: memory-management-and-concurrency
-description: Explores essential software engineering principles for C/C++, focusing on memory management techniques, CMake usage, RAII, and concurrency primitives to build robust applications.
+description: Explores essential software engineering principles for C/C++, focusing
+  on memory management techniques, CMake usage, RAII, and concurrency primitives to
+  build robust applications.
 license: MIT
 compatibility: opencode
 metadata:
   version: "1.0.0"
   domain: coding
-  triggers: memory management, smart pointers, RAII, CMake, concurrency, multithreading, thread safety, synchronization primitives
+  triggers: memory management, smart pointers, RAII, CMake, concurrency, multithreading,
+    thread safety, synchronization primitives
+  archetypes:
+  - tactical
+  - generation
+  anti_triggers:
+  - brainstorming
+  - vague ideation
+  - code golf
+  - over-engineering
+  response_profile:
+    verbosity: low
+    directive_strength: high
+    abstraction_level: operational
   role: implementation
   scope: implementation
   output-format: code
   related-skills: coding-testing, coding-debugging, coding-performance-optimization
-
-
-
-
 ---
 
 
