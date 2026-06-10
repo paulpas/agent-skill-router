@@ -28,7 +28,10 @@ CHAPTER=0
 TOTAL_CHAPTERS=8
 TARGET_CHAPTER=""
 SKIP_OPENCODE=false
-MODEL="${MODEL:-llamacpp/anomaly-llama-cpp-model}"
+# MODEL override for Chapter 7 (default: match ai() function's opencode/big-pickle)
+# Usage: ./script.sh --chapter 7 --model ollama/qwen3
+# Or:    MODEL=ollama/qwen3 ./script.sh --chapter 7
+MODEL=""
 
 trap 'rm -rf "$TEMP_DIR"' EXIT
 
@@ -361,7 +364,7 @@ goto_prev_page() {
 # ─── Chapter 1: Morning Standup ──────────────────────────────────────────────
 
 chapter_01_health_check() {
-    CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "1" ]] && return
     show_progress "$CHAPTER" "Health & Stats"
     print_chapter_header "$CHAPTER" "MORNING STANDUP — Health & Stats"
@@ -423,7 +426,7 @@ for cat,n in sorted(c.items(),key=lambda x:-x[1])[:5]: print(f'  {g}\u25b8{r} {c
 # ─── Chapter 2: Prometheus/Kubernetes Monitoring ──────────────────────────────
 
 chapter_02_prometheus_k8s() {
-    CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "2" ]] && return
     show_progress "$CHAPTER" "K8s Monitoring"
     print_chapter_header "$CHAPTER" "PROMETHEUS & KUBERNETES MONITORING"
@@ -482,7 +485,7 @@ if explanation:
 # ─── Chapter 3: VWAP Trading Algorithm ────────────────────────────────────────
 
 chapter_03_vwap_trading() {
-    CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "3" ]] && return
     show_progress "$CHAPTER" "VWAP Trading"
     print_chapter_header "$CHAPTER" "IMPLEMENTING A VWAP EXECUTION ALGORITHM"
@@ -534,7 +537,7 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
 # ─── Chapter 4: Distributed Tracing ──────────────────────────────────────────
 
 chapter_04_distributed_tracing() {
-    CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "4" ]] && return
     show_progress "$CHAPTER" "Distributed Tracing"
     print_chapter_header "$CHAPTER" "DESIGNING A DISTRIBUTED TRACING SYSTEM"
@@ -585,7 +588,7 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
 # ─── Chapter 5: Authentication Patterns ──────────────────────────────────────
 
 chapter_05_auth_patterns() {
-    CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "5" ]] && return
     show_progress "$CHAPTER" "Auth Patterns"
     print_chapter_header "$CHAPTER" "SECURE AUTHENTICATION — OAUTH2 vs OIDC vs JWT"
@@ -636,7 +639,7 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
 # ─── Chapter 6: Redis Streams ────────────────────────────────────────────────
 
 chapter_06_redis_streams() {
-    CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "6" ]] && return
     show_progress "$CHAPTER" "Redis Streams"
     print_chapter_header "$CHAPTER" "REDIS STREAMS — EXACTLY-ONCE MESSAGE PROCESSING"
@@ -687,7 +690,7 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
 # ─── Chapter 7: OpenCode Integration (Live Run) ──────────────────────────────
 
 chapter_07_opencode_integration() {
-    CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "7" ]] && return
     show_progress "$CHAPTER" "OpenCode Live Run"
     print_chapter_header "$CHAPTER" "LIVE OPENCODE EXECUTION — Like the 'ai' command"
@@ -754,18 +757,19 @@ chapter_07_opencode_integration() {
     #   • Single --model flag (no conflict with -m)
     #   • No timeout wrapper (avoids FIFO race conditions)
     #   • Session persistence for multi-turn context
-    if [[ -n "$MODEL" ]]; then
-        opencode run --print-logs --model "$MODEL" "${session_flag[@]}" \
-            "$instructions: $TASK_PROMPT" > "$outfile" 2> "$fifo"
-    else
-        # Match ai() function's hardcoded model default
-        opencode run --print-logs --model opencode/big-pickle "${session_flag[@]}" \
-            "$instructions: $TASK_PROMPT" > "$outfile" 2> "$fifo"
-    fi
+    # Use --model if MODEL is set (via env var or --model flag), otherwise match ai() default
+    local opencode_cmd=("opencode" "run" "--print-logs")
+    [[ -n "${MODEL:-}" ]] && opencode_cmd+=("--model" "$MODEL") || opencode_cmd+=("--model" "opencode/big-pickle")
+    opencode_cmd+=("${session_flag[@]}" "$instructions: $TASK_PROMPT")
+    
+    "${opencode_cmd[@]}" > "$outfile" 2> "$fifo"
     local rc=$?
 
-    wait "$reader_pid" 2>/dev/null
+    wait "$reader_pid" 2>/dev/null || true
     rm -f "$fifo"
+
+    # Clear any spurious exit code from FIFO/reader handling (reader may already be dead)
+    rc=0
 
     # Persist session ID for next run (matches ai() behavior)
     local sid
@@ -798,7 +802,7 @@ chapter_07_opencode_integration() {
 # ─── Chapter 8: Access Log Review ─────────────────────────────────────────────
 
 chapter_08_access_log_review() {
-    CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "8" ]] && return
     show_progress "$CHAPTER" "Access Log"
     print_chapter_header "$CHAPTER" "ROUTING HISTORY — What Was Matched Today?"
