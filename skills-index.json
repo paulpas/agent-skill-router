@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-06-09T16:28:54.475724Z",
-  "totalSkills": 1296,
+  "generatedAt": "2026-06-10T18:01:18.429930Z",
+  "totalSkills": 1288,
   "domains": {
     "agent": 330,
     "ai": 5,
     "architecture": 4,
     "cloud": 1,
     "cncf": 178,
-    "coding": 601,
+    "coding": 593,
     "commerce": 1,
     "communications": 3,
     "data-and-persistence": 1,
@@ -28,9 +28,9 @@
     "writing": 5
   },
   "roles": {
-    "implementation": 869,
+    "implementation": 860,
     "orchestration": 238,
-    "reference": 180,
+    "reference": 181,
     "information": 1,
     "review": 8
   },
@@ -153,24 +153,6 @@
       ],
       "version": "1.0.0",
       "source": "skills/agent/acceptance-orchestrator/SKILL.md"
-    },
-    {
-      "name": "accessibility-in-i18n-and-l10n",
-      "domain": "coding",
-      "description": "Implements accessibility strategies to ensure user-friendly software aligned with WCAG standards in internationalization and localization contexts.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "accessibility",
-        "i18n",
-        "l10n",
-        "WCAG compliance",
-        "diverse user experience"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.1",
-      "source": "skills/coding/accessibility-in-i18n-and-l10n/SKILL.md"
     },
     {
       "name": "address-github-comments",
@@ -6279,91 +6261,6 @@
       "source": "skills/coding/code-review/SKILL.md"
     },
     {
-      "name": "code-review-atomic",
-      "domain": "coding",
-      "description": "Implements a structured approach to code reviews that enhances quality, performance, and knowledge sharing among team members.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "code review",
-        "peer review",
-        "quality assurance",
-        "code quality"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-atomic/SKILL.md"
-    },
-    {
-      "name": "code-review-best-practices",
-      "domain": "coding",
-      "description": "Implements best practices for conducting effective code reviews to enhance quality, collaboration, and knowledge sharing in teams.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "code review practices",
-        "peer review",
-        "collaboration",
-        "quality assurance"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-best-practices/SKILL.md"
-    },
-    {
-      "name": "code-review-correctness",
-      "domain": "coding",
-      "description": "Implements structured approaches to ensure code correctness through robust review practices, emphasizing testing and continual improvement.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "code review",
-        "correctness",
-        "software reliability",
-        "bug prevention"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-correctness/SKILL.md"
-    },
-    {
-      "name": "code-review-edge-case-handling",
-      "domain": "coding",
-      "description": "Implements strategies to identify and address edge cases in code reviews to enhance software robustness and reliability.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "edge case handling",
-        "software robustness",
-        "boundary testing",
-        "performance testing"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-edge-case-handling/SKILL.md"
-    },
-    {
-      "name": "code-review-skills",
-      "domain": "coding",
-      "description": "Implements skills and strategies to enhance the effectiveness of code reviews, promoting quality, collaboration, and knowledge sharing within development teams.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "code review skills",
-        "peer review",
-        "quality assurance",
-        "knowledge sharing"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.0",
-      "source": "skills/coding/code-review-skills/SKILL.md"
-    },
-    {
       "name": "code-validation",
       "domain": "coding",
       "description": "Validates pipeline stages and returns config status strings (valid_config/invalid_config) using guard clauses and the 5 Laws of Elegant Defense, returning invalid_config for invalid input types instead of raising exceptions",
@@ -7479,24 +7376,6 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/cubefs/SKILL.md"
-    },
-    {
-      "name": "cultural-adaptability-in-software",
-      "domain": "coding",
-      "description": "Implements strategies for adapting software development to diverse cultural contexts to enhance user experience and inclusivity.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "cultural adaptability",
-        "localization",
-        "i18n",
-        "user experience",
-        "software design"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.1",
-      "source": "skills/coding/cultural-adaptability-in-software/SKILL.md"
     },
     {
       "name": "cve-dependency-management",
@@ -16302,24 +16181,6 @@
       "source": "skills/coding/interface-segregation-principle/SKILL.md"
     },
     {
-      "name": "internationalization-localization-best-practices",
-      "domain": "coding",
-      "description": "Implements best practices for internationalization and localization of software to ensure global usability and compliance with cultural preferences.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
-      "triggers": [
-        "localization",
-        "internationalization",
-        "i18n",
-        "l10n",
-        "user experience"
-      ],
-      "relatedSkills": [],
-      "version": "1.1.1",
-      "source": "skills/coding/internationalization-localization-best-practices/SKILL.md"
-    },
-    {
       "name": "issues",
       "domain": "agent",
       "description": "Implements intelligent issues with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense",
@@ -24889,9 +24750,9 @@
       "name": "security-owasp-top-10",
       "domain": "coding",
       "description": "Provides an in-depth analysis of the OWASP Top 10 vulnerabilities, along with strategies to mitigate them effectively in software applications.",
-      "role": "implementation",
-      "scope": "implementation",
-      "outputFormat": "code",
+      "role": "reference",
+      "scope": "review",
+      "outputFormat": "report",
       "triggers": [
         "OWASP",
         "security vulnerabilities",
