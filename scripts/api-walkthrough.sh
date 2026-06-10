@@ -744,13 +744,29 @@ chapter_07_opencode_integration() {
     done < "$fifo" &
     reader_pid=$!
 
-    # Run opencode — logs flood as single repainting line, stdout goes to file
-    timeout 45 opencode run --print-logs --model "$MODEL" -m opencode/big-pickle \
+    # ─── Session persistence (matches ai() function behavior) ──────────────────
+    local session_flag=()
+    if [[ -f "$session_file" ]]; then
+        session_flag=(--session "$(cat "$session_file")")
+    fi
+
+    # Run opencode — mirrors ai() command exactly:
+    #   • Single --model flag (no conflict with -m)
+    #   • No timeout wrapper (avoids FIFO race conditions)
+    #   • Session persistence for multi-turn context
+    opencode run --print-logs --model opencode/big-pickle "${session_flag[@]}" \
         "$instructions: $TASK_PROMPT" > "$outfile" 2> "$fifo"
     local rc=$?
 
     wait "$reader_pid" 2>/dev/null
     rm -f "$fifo"
+
+    # Persist session ID for next run (matches ai() behavior)
+    local sid
+    sid=$(grep -o 'id=ses_[^ ]*' "$errfile" | head -1 | cut -d= -f2)
+    if [[ -n "$sid" ]]; then
+        echo "$sid" > "$session_file"
+    fi
 
     # Clear the repainting status line
     echo -ne "\r\033[K" 1>&2
