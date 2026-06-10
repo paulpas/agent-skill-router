@@ -404,7 +404,12 @@ chapter_02_prometheus_k8s() {
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
     python3 -c "
 import sys,json
-with open('$route_file') as f: d=json.load(f)
+try:
+    with open('$route_file') as f:
+        d=json.load(f)
+except (json.JSONDecodeError, FileNotFoundError, ValueError):
+    print('  ${RED}Error: Invalid or empty JSON response${RESET}')
+    exit(1)
 b='\033[1m';g='\033[32m';r='\033[0m';y='\033[33m';d_='\033[2m'
 conf = d.get('confidence','?')
 lat = d.get('latencyMs','?')
@@ -458,7 +463,12 @@ chapter_03_vwap_trading() {
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
     python3 -c "
 import sys,json
-with open('$route_file') as f: d=json.load(f)
+try:
+    with open('$route_file') as f:
+        d=json.load(f)
+except (json.JSONDecodeError, FileNotFoundError, ValueError):
+    print('  ${RED}Error: Invalid or empty JSON response${RESET}')
+    exit(1)
 b='\033[1m';g='\033[32m';r='\033[0m';d_='\033[2m'
 conf = d.get('confidence','?')
 lat = d.get('latencyMs','?')
@@ -469,8 +479,8 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     icon=medals[i-1] if i<=3 else str(i)+'.'
     score=s.get('score',0)
     print(f'  {icon} {b}{s[\"name\"]}{r}  score={g}{score:.4f}{r}')
-     reason = s.get('reasoning','')
-     if reason: print(f'     {d_}{reason[:100]}...{r}')
+    reason = s.get('reasoning','')
+    if reason: print(f'     {d_}{reason[:100]}...{r}')
 " 2>/dev/null || true
 
     # Prompt to display full JSON response
@@ -504,7 +514,12 @@ chapter_04_distributed_tracing() {
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
     python3 -c "
 import sys,json
-with open('$route_file') as f: d=json.load(f)
+try:
+    with open('$route_file') as f:
+        d=json.load(f)
+except (json.JSONDecodeError, FileNotFoundError, ValueError):
+    print('  ${RED}Error: Invalid or empty JSON response${RESET}')
+    exit(1)
 b='\033[1m';g='\033[32m';r='\033[0m';d_='\033[2m'
 conf = d.get('confidence','?')
 lat = d.get('latencyMs','?')
@@ -515,8 +530,8 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     icon=medals[i-1] if i<=3 else str(i)+'.'
     score=s.get('score',0)
     print(f'  {icon} {b}{s[\"name\"]}{r}  score={g}{score:.4f}{r}')
-     reason = s.get('reasoning','')
-     if reason: print(f'     {d_}{reason[:100]}...{r}')
+    reason = s.get('reasoning','')
+    if reason: print(f'     {d_}{reason[:100]}...{r}')
 " 2>/dev/null || true
 
     # Prompt to display full JSON response
@@ -550,7 +565,12 @@ chapter_05_auth_patterns() {
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
     python3 -c "
 import sys,json
-with open('$route_file') as f: d=json.load(f)
+try:
+    with open('$route_file') as f:
+        d=json.load(f)
+except (json.JSONDecodeError, FileNotFoundError, ValueError):
+    print('  ${RED}Error: Invalid or empty JSON response${RESET}')
+    exit(1)
 b='\033[1m';g='\033[32m';r='\033[0m';d_='\033[2m'
 conf = d.get('confidence','?')
 lat = d.get('latencyMs','?')
@@ -561,8 +581,8 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     icon=medals[i-1] if i<=3 else str(i)+'.'
     score=s.get('score',0)
     print(f'  {icon} {b}{s[\"name\"]}{r}  score={g}{score:.4f}{r}')
-     reason = s.get('reasoning','')
-     if reason: print(f'     {d_}{reason[:100]}...{r}')
+    reason = s.get('reasoning','')
+    if reason: print(f'     {d_}{reason[:100]}...{r}')
 " 2>/dev/null || true
 
     # Prompt to display full JSON response
@@ -596,7 +616,12 @@ chapter_06_redis_streams() {
     echo ""; echo -e "${WHITE}${BOLD}  Top matched skills:${RESET}"
     python3 -c "
 import sys,json
-with open('$route_file') as f: d=json.load(f)
+try:
+    with open('$route_file') as f:
+        d=json.load(f)
+except (json.JSONDecodeError, FileNotFoundError, ValueError):
+    print('  ${RED}Error: Invalid or empty JSON response${RESET}')
+    exit(1)
 b='\033[1m';g='\033[32m';r='\033[0m';d_='\033[2m'
 conf = d.get('confidence','?')
 lat = d.get('latencyMs','?')
@@ -607,8 +632,8 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     icon=medals[i-1] if i<=3 else str(i)+'.'
     score=s.get('score',0)
     print(f'  {icon} {b}{s[\"name\"]}{r}  score={g}{score:.4f}{r}')
-     reason = s.get('reasoning','')
-     if reason: print(f'     {d_}{reason[:100]}...{r}')
+    reason = s.get('reasoning','')
+    if reason: print(f'     {d_}{reason[:100]}...{r}')
 " 2>/dev/null || true
 
     # Prompt to display full JSON response
@@ -660,8 +685,8 @@ chapter_07_opencode_integration() {
     echo -e "  ${DIM}Task being routed:${RESET}"
     echo -e "  \"${TASK_TEXT}\""
     echo ""
-     echo -e "${DIM}  timeout 25 opencode run --print-logs --log-level DEBUG \\\\${RESET}"
-     echo -e "${DIM}    --dangerously-skip-permissions -m opencode/big-pickle '${TASK_TEXT}'${RESET}"
+    echo -e "${DIM}  timeout 25 opencode run --print-logs --log-level DEBUG \\\\${RESET}"
+    echo -e "${DIM}    --dangerously-skip-permissions -m opencode/big-pickle '${TASK_TEXT}'${RESET}"
 
     # Run OpenCode — capture stdout and stderr separately
     local so="$TEMP_DIR/oc_stdout.txt" se="$TEMP_DIR/oc_stderr.txt"
