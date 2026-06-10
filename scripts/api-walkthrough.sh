@@ -820,40 +820,27 @@ chapter_07_opencode_integration() {
         echo -e "  ${DIM}(no MCP logs — opencode may not have used the router)${RESET}"
     fi
 
-    # ─── Display stdout (AI response) with prominent heading and pagination ────
+    # ─── Display stdout (AI response) — render as markdown via glow ──────────────
     local sc; sc=$(cat "$so" 2>/dev/null || echo "")
     if [[ -n "$sc" ]]; then
         local resp_file="$TEMP_DIR/oc_stdout_display.txt"
-        local glow_file="$TEMP_DIR/oc_glow_rendered.txt"
         echo "$sc" > "$resp_file"
         
-        # Clear visual separator for the AI response section
-        echo ""
-        echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
-        echo ""
-        
-        # Try glow markdown rendering first (same approach as local ai() function)
-        if command -v glow &>/dev/null && [[ -s "$resp_file" ]]; then
-            # Render with glow, suppressing its built-in pager for scripted use
-            if glow -p=false "$resp_file" > "$glow_file" 2>/dev/null && [[ -s "$glow_file" ]]; then
-                display_output "AI Response (rendered)" "$glow_file" 400 40
-                rm -f "$glow_file"
-            else
-                # Glow failed or produced empty output — fall back to raw text
-                display_output "AI Response Output" "$resp_file" 400 40
-            fi
+        # In interactive mode: render with glow directly to terminal (same as ai())
+        if [[ -t 1 ]] && command -v glow &>/dev/null && [[ -s "$resp_file" ]]; then
+            echo ""
+            echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
+            echo ""
+            # Let glow handle rendering directly — colors, formatting, pager all work
+            glow "$resp_file" 2>/dev/null
         else
-            # No glow available — show raw text
-            display_output "AI Response Output" "$resp_file" 400 40
+            # Non-interactive mode: raw text with simple pagination
+            echo ""
+            echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
+            display_output "AI Response (raw)" "$resp_file" 400 40
         fi
         
-        # Line count summary (from original response)
-        local resp_lines; resp_lines=$(wc -l < "$resp_file" 2>/dev/null || echo "0")
-        echo ""
-        echo -e "  ${DIM}┌─ Summary: ${resp_lines} lines of AI response${RESET}"
-        echo -e "  ${DIM}└─ Markdown rendering via glow (if available)${RESET}"
-        
-        rm -f "$resp_file" "$glow_file"
+        rm -f "$resp_file"
     else
         echo ""
         echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━ AI RESPONSE FROM OPENCODE ━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
@@ -892,7 +879,7 @@ chapter_07_opencode_integration() {
         fi
     fi
 
-    rm -f "$so" "$se" "$glow_file" 2>/dev/null || true
+    rm -f "$so" "$se" 2>/dev/null || true
     echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
     prompt_next_page
 }
