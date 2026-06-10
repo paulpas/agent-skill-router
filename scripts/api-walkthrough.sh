@@ -7,11 +7,11 @@
 # for each task. All prompts are purely hypothetical knowledge questions.
 #
 # Usage:
-#   ./api-walkthrough.sh                         Walk through all 8 chapters
-#   ./api-walkthrough.sh --chapter N             Jump to chapter N directly (1-8)
-#   ./api-walkthrough.sh --skip-opencode        Skip the OpenCode integration chapter
-#   ./api-walkthrough.sh --model gpt-4           Run with specific model
-#   MODEL=gpt-4 ./api-walkthrough.sh            Override model via environment variable
+#   ./api-walkthrough.sh                          Walk through all 8 chapters (uses llamacpp/anomaly-llama-cpp-model)
+#   ./api-walkthrough.sh --chapter N              Jump to chapter N directly (1-8)
+#   ./api-walkthrough.sh --skip-opencode          Skip the OpenCode integration chapter
+#   ./api-walkthrough.sh --model ollama/qwen3     Use a different model provider
+#   MODEL=ollama/qwen3-coder:30b ./api-walkthrough.sh  Override model via environment variable
 #
 # Requirements: bash 4+, curl, python3, jq
 # ============================================================================
@@ -24,7 +24,7 @@ CHAPTER=0
 TOTAL_CHAPTERS=8
 TARGET_CHAPTER=""
 SKIP_OPENCODE=false
-MODEL="${MODEL:-anthropic/claude-haiku-4-5}"
+MODEL="${MODEL:-llamacpp/anomaly-llama-cpp-model}"
 
 trap 'rm -rf "$TEMP_DIR"' EXIT
 
@@ -721,15 +721,16 @@ chapter_07_opencode_integration() {
     echo -e "  \"${TASK_TEXT}\""
     echo ""
     echo -e "${DIM}  timeout 25 opencode run --print-logs --log-level DEBUG \\\\${RESET}"
-    echo -e "${DIM}    --dangerously-skip-permissions -m opencode/big-pickle '${TASK_TEXT}'${RESET}"
+    echo -e "${DIM}    --dangerously-skip-permissions --model '$MODEL' '${TASK_TEXT}'${RESET}"
 
     # Run OpenCode — capture stdout and stderr separately.
-    # NOTE: OpenCode resolves the model from its own config (opencode.json),
-    # so we do NOT pass --model here. Passing an unconfigured provider/model
-    # path (e.g. anthropic/claude-haiku-4-5) causes a crash.
+    # The model is passed via --model using the MODEL variable (defaults to the
+    # user's configured local model in opencode.json). Allows override via:
+    #   ./api-walkthrough.sh --model ollama/qwen3-coder:30b
+    #   MODEL=ollama/qwen3 ./api-walkthrough.sh
     local so="$TEMP_DIR/oc_stdout.txt" se="$TEMP_DIR/oc_stderr.txt"
     timeout 25 opencode run --print-logs --log-level DEBUG \
-        --dangerously-skip-permissions -m opencode/big-pickle \
+        --dangerously-skip-permissions --model "$MODEL" \
         "$TASK_TEXT" > "$so" 2> "$se" || true
 
     # ─── Display stderr (MCP/Opencode logs) with colored log levels ──────────
