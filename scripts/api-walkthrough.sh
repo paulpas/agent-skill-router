@@ -754,8 +754,14 @@ chapter_07_opencode_integration() {
     #   • Single --model flag (no conflict with -m)
     #   • No timeout wrapper (avoids FIFO race conditions)
     #   • Session persistence for multi-turn context
-    opencode run --print-logs --model opencode/big-pickle "${session_flag[@]}" \
-        "$instructions: $TASK_PROMPT" > "$outfile" 2> "$fifo"
+    if [[ -n "$MODEL" ]]; then
+        opencode run --print-logs --model "$MODEL" "${session_flag[@]}" \
+            "$instructions: $TASK_PROMPT" > "$outfile" 2> "$fifo"
+    else
+        # Match ai() function's hardcoded model default
+        opencode run --print-logs --model opencode/big-pickle "${session_flag[@]}" \
+            "$instructions: $TASK_PROMPT" > "$outfile" 2> "$fifo"
+    fi
     local rc=$?
 
     wait "$reader_pid" 2>/dev/null
