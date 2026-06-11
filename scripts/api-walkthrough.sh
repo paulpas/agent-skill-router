@@ -164,16 +164,12 @@ display_output() {
     if [[ "$count" -eq 0 ]]; then
         echo -e "  ${DIM}  │ (empty response)${RESET}"
     else
-        # Show first page (configurable line count, default 35)
-        local show_first=$lines_per_page
-        if [[ "$count" -lt "$show_first" ]]; then
-            show_first=$count
-        fi
-        head -n "$show_first" "$file" | colorize_json
+        # Display full JSON output
+        cat "$file" | colorize_json
 
         # For large output, paginate the rest with interactive prompts
         if [[ "$count" -gt "$max_lines" ]]; then
-            local offset=$show_first
+            local offset=$count
             while [[ "$offset" -lt "$count" ]]; do
                 # In non-interactive mode, show all pages automatically
                 if [[ ! -t 1 ]]; then
@@ -280,7 +276,7 @@ prompt_for_json_display() {
     fi
 
     echo ""
-    echo -e "${CYAN}${BOLD}━━━━━━━━━━━━━━━━━━━━━ Press SPACE/ENTER to see full JSON response ━━━━━━━━━━━━━━━━━━━━━${RESET}"
+    echo -e "${CYAN}${BOLD}━━━━━━━━━━━━━━━━━━━━━ Press ENTER to see full JSON response (Q to skip) ━━━━━━━━━━━━━━━━━━━━━${RESET}"
     local user_input=""
     read -r -t 30 user_input < /dev/tty 2>/dev/null || {
         # If /dev/tty failed or timed out, default to showing JSON (not skipping)
