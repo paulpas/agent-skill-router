@@ -753,9 +753,9 @@ chapter_07_opencode_integration() {
     #   • Single --model flag (no conflict with -m)
     #   • No timeout wrapper (avoids FIFO race conditions)
     #   • Session persistence for multi-turn context
-    # Use --model if MODEL is set (via env var or --model flag), otherwise match ai() default
+    # Pass --model only when explicitly specified via env var or CLI flag
     local opencode_cmd=("opencode" "run" "--print-logs")
-    [[ -n "${MODEL:-}" ]] && opencode_cmd+=("--model" "$MODEL") || opencode_cmd+=("--model" "opencode/big-pickle")
+    [[ -n "${MODEL:-}" ]] && opencode_cmd+=("--model" "$MODEL")
     opencode_cmd+=("${session_flag[@]}" "$instructions: $TASK_PROMPT")
     
     "${opencode_cmd[@]}" > "$outfile" 2> "$fifo"
