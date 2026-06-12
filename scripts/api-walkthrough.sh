@@ -1025,15 +1025,37 @@ COMPTABLE
 
     print_key_point "API mapping: detailed→level2 (conservative), moderate→level5 (balanced), brief→level8 (aggressive)" "${DIM}"
 
-    # 5) Show side-by-side content comparison: first 5 lines of each
+    # 5) Show actual content differences via diff
     echo ""
-    print_key_point "Content comparison (first 5 lines):" "${CYAN}"
+    print_key_point "What gets compressed away? (diff -u uncompressed vs brief):" "${YELLOW}"
+    diff -u "$raw_file" "$brief_file" 2>/dev/null | head -40 || echo "  (diff not available)"
+    
+    # Show section headers present in raw vs brief
+    echo ""
+    print_key_point "Section headers preserved vs removed:" "${CYAN}"
     print_two_col \
-"${BOLD}uncompressed${RESET}" \
-"${BOLD}brief${RESET}"
-    # Use head to show first 5 lines of each
-    paste <(head -n 5 "$raw_file") <(head -n 5 "$brief_file") | while IFS=$'\t' read -r ra br; do
-        printf "  %-45s │ %s\n" "$ra" "$br"
+"${BOLD}Raw (uncompressed) sections${RESET}" \
+"${BOLD}Brief (compressed) sections${RESET}"
+    # Extract section headers (## or ###) from each
+    local raw_sections brief_sections
+    raw_sections=$(grep -E '^## ' "$raw_file" 2>/dev/null || echo "  (none)")
+    brief_sections=$(grep -E '^## ' "$brief_file" 2>/dev/null || echo "  (none)")
+    paste <(echo "$raw_sections") <(echo "$brief_sections") 2>/dev/null | while IFS=$'\t' read -r r b; do
+        if [ "$r" = "$b" ]; then
+            printf "  \033[32m✓\033[0m %-40s │ \033[32m✓\033[0m %s\n" "$r" "$b"
+        else
+            printf "  \033[31m✗\033[0m %-40s │ \033[33m—\033[0m %s\n" "$r" "${b:-  (removed)}"
+        fi
+    done
+
+    # Show tail of each (where content differs)
+    echo ""
+    print_key_point "Content body (last 10 lines of each):" "${CYAN}"
+    print_two_col \
+"${BOLD}uncompressed (tail)${RESET}" \
+"${BOLD}brief (tail)${RESET}"
+    paste <(tail -n 10 "$raw_file") <(tail -n 10 "$brief_file") | while IFS=$'\t' read -r r b; do
+        printf "  %-45s │ %s\n" "$r" "$b"
     done
 
     # 6) Fetch /metrics to show compression stats
