@@ -332,7 +332,7 @@ page_output_simple() {
 prompt_next_page() {
     # In non-interactive mode, skip navigation prompt entirely
     if [[ ! -t 1 ]]; then
-        return 1
+        return 0
     fi
 
     echo ""
@@ -1027,8 +1027,8 @@ COMPTABLE
 
     # 5) Show actual content differences via diff
     echo ""
-    print_key_point "What gets compressed away? (diff -u uncompressed vs brief):" "${YELLOW}"
-    diff -u "$raw_file" "$brief_file" 2>/dev/null | head -40 || echo "  (diff not available)"
+    print_key_point "What gets compressed away? (sdiff -w 256 uncompressed vs brief):" "${YELLOW}"
+    sdiff -w 256 "$raw_file" "$brief_file" 2>/dev/null | head -60 || true
     
     # Show section headers present in raw vs brief
     echo ""
