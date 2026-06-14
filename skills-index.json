@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-10T18:01:18.429930Z",
-  "totalSkills": 1288,
+  "generatedAt": "2026-06-14T14:35:41.797640Z",
+  "totalSkills": 1289,
   "domains": {
     "agent": 330,
     "ai": 5,
@@ -16,7 +16,7 @@
     "go": 13,
     "java": 1,
     "kotlin": 1,
-    "linux": 21,
+    "linux": 22,
     "maker": 3,
     "networking": 1,
     "payments": 5,
@@ -30,7 +30,7 @@
   "roles": {
     "implementation": 860,
     "orchestration": 238,
-    "reference": 181,
+    "reference": 182,
     "information": 1,
     "review": 8
   },
@@ -20594,6 +20594,30 @@
       ],
       "version": "1.0.0",
       "source": "skills/cncf/opencost/SKILL.md"
+    },
+    {
+      "name": "openedge-replication",
+      "domain": "linux",
+      "description": "Implements three-tier replication architecture (DRBD+AI, ZFS+AI, AI-only rsync) for Progress OpenEdge 12.x databases without OER license.",
+      "role": "reference",
+      "scope": "infrastructure",
+      "outputFormat": "manifests",
+      "triggers": [
+        "openedge replication",
+        "DRBD",
+        "ZFS snapshot",
+        "AI shipping",
+        "failover runbook",
+        "rfutil roll-forward",
+        "keepalived VIP"
+      ],
+      "relatedSkills": [
+        "linux-services",
+        "storage-architecture",
+        "shell-process-management"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/openedge-replication/SKILL.md"
     },
     {
       "name": "openfeature",
