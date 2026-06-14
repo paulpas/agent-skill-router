@@ -10,7 +10,7 @@ Full expert skills injected into context — AI answers as expert reviewer
 
 **Key Features:**
 - 🔄 **Auto-Routing** — tasks automatically match the most relevant skills via hybrid scoring (vector similarity + BM25 + trigger/keyword matching + archetype alignment + MMR diversification)
-- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,225 valid skills across 24 domains with auto-discovered routing
+- 🧠 **Dynamic Trigger→Domain Index** — replaces hardcoded keyword maps; 1,286 valid skills across 24 domains with auto-discovered routing
 - 🗜️ **SkillCompressor** — reduce token overhead by 28–65%
 - ⚡ **Fast** — ~10ms warm, ~3.5s cold responses
 - 🔌 **MCP Integration** — works with OpenCode's `route_to_skill` tool
@@ -87,7 +87,7 @@ The routing system uses a **dynamic trigger→domain index** that replaces the p
 - **Conversational trigger matching** — skills match both technical terms (`kubernetes`, `PromQL`) and natural language queries (`how do I monitor systems`, `how do I scale apps`)
 - **Anti-trigger penalties** — prevents generic skills from dominating specific task queries
 
-**Domains:** 24 active domains with 1,225 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
+**Domains:** 24 active domains with 1,286 valid skills. The index is stored in [`skills-index.json`](skills-index.json).
 
 ### Hybrid Scoring Pipeline
 
@@ -312,17 +312,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-06-14 14:35:44 UTC  
-> **Total skills:** 1284  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1284 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-06-14 10:59:11 UTC  
+> **Total skills:** 1286  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1286 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1211 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1211 | Ranking penalty for conflicting query terms |
-| Response Profile | 1208 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1213 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1213 | Ranking penalty for conflicting query terms |
+| Response Profile | 1210 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -1549,13 +1549,14 @@ MIT — All skills are freely available and redistributable.
 | [modern-kotlin](skills/kotlin/modern-kotlin/SKILL.md) | Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications. | kotlin coroutines, sealed interfaces, data classes, kotlinx serialization, context receivers, how do i write modern kotlin, suspend function [tactical, educational] |
 
 
-### Linux (22 skills)
+### Linux (24 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
 | [bash-quick-reference](skills/linux/bash-quick-reference/SKILL.md) | Reference guide for Bash language constructs, parameter expansion, arrays, control flow, functions, and scripting discipline. | bash, shell scripting, parameter expansion, brace expansion, how do i write bash scripts, exit status, pipefail [educational] |
 | [boot-sequence](skills/linux/boot-sequence/SKILL.md) | Implements step-by-step diagnosis and optimization of the modern Linux boot process from UEFI through GRUB, initramfs, and systemd target initialization for production servers. | boot process, systemd, grub2, initramfs, uefi boot, slow startup, boot troubleshooting, linux boot [tactical, diagnostic] |
 | [cloud-linux-engineering](skills/linux/cloud-linux-engineering/SKILL.md) | Engineers Linux systems for cloud-native environments with cloud-init bootstrapping, IMDSv2 security, ephemeral lifecycle management, spot instance handling, and cloud observability integration. | cloud-init, IMDSv2, ephemeral instance, cloud metadata, spot instance, user-data, instance metadata, cloud observability user-data [tactical] |
+| [corosync](skills/linux/corosync/SKILL.md) | Configures Corosync Cluster Engine v3.x messaging layer including totem protocol, quorum models, nodelist management, knet/udpu transports, and security for Pacemaker HA clusters. | corosync, totem protocol, quorum management, cluster messaging, knet transport, udpu unicast, nodelist configuration, qdevice [tactical, diagnostic] |
 | [grub-uefi-bootloader](skills/linux/grub-uefi-bootloader/SKILL.md) | Configures GRUB2 bootloader for UEFI firmware boot processes including ESP management, Secure Boot signing, multi-boot setups, kernel parameters, and bootloader recovery procedures. | grub2, UEFI boot, Secure Boot, EFI System Partition, bootloader recovery, how do i repair bootloader, efibootmgr, GRUB configuration how do i repair bootloader [tactical] |
 | [hardware-provisioning](skills/linux/hardware-provisioning/SKILL.md) | Plans and provisions Linux systems for cloud instances and on-prem hardware with workload-appropriate sizing, RAID, and hardware abstraction. | hardware provisioning, instance sizing, RAID configuration, SSD, cloud instance, on-prem hardware, disk sizing, CPU architecture [tactical] |
 | [kernel-tuning](skills/linux/kernel-tuning/SKILL.md) | Tunes Linux kernel parameters for workload optimization across cloud VMs and bare metal with hardware-aware adjustments for CPU, memory, and network performance. | kernel tuning, sysctl, NUMA, interrupt affinity, page cache, TCP tuning, kernel parameters, performance tuning [tactical] |
@@ -1568,6 +1569,7 @@ MIT — All skills are freely available and redistributable.
 | [observability](skills/linux/observability/SKILL.md) | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | linux observability, system metrics, log collection, performance profiling, eBPF, perf, capacity planning, monitoring [tactical] |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. | IPMI, iLO, iDRAC, PXE boot, iSCSI, multipath, bare-metal provisioning, datacenter rack [tactical] |
 | [openedge-replication](skills/linux/openedge-replication/SKILL.md) | Implements three-tier replication architecture (DRBD+AI, ZFS+AI, AI-only rsync) for Progress OpenEdge 12.x databases without OER license. | openedge replication, DRBD, ZFS snapshot, AI shipping, failover runbook, rfutil roll-forward, keepalived VIP [tactical, strategic] |
+| [pacemaker](skills/linux/pacemaker/SKILL.md) | Manages Pacemaker HA clusters with pcs and crmsh for resource provisioning, constraints, STONITH fencing, quorum configuration, and cluster lifecycle operations on two-node and multi-node setups. | pacemaker, pcs command, crmsh, cluster resource, STONITH fencing, CIB configuration, quorum management, promotable clone [tactical, diagnostic] |
 | [resource-management](skills/linux/resource-management/SKILL.md) | Manages Linux system resources using cgroups v2, namespaces, and systemd for workload isolation and resource guarantees in cloud and on-prem environments. | cgroups, resource management, cpu limit, memory limit, systemd resource, OOM, workload isolation, resource quota [tactical] |
 | [shell-command-chaining](skills/linux/shell-command-chaining/SKILL.md) | Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts. | shell command chaining, && operator, || operator, semicolon in bash, conditional command execution, fallback chain, AND list OR list, short-circuit evaluation command execution [tactical] |
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. | bash parameter expansion, ${VAR:-default}, variable default value, shell variable substitution, pattern matching shell, case modification, how do i handle unset variables, bash safe defaults variable substitution [tactical] |
@@ -1757,7 +1759,7 @@ MIT — All skills are freely available and redistributable.
 ## Skills by Role
 
 
-### Implementation (Build Features) (855 skills)
+### Implementation (Build Features) (857 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -1917,6 +1919,7 @@ MIT — All skills are freely available and redistributable.
 | [configuration-management-patterns](skills/coding/configuration-management-patterns/SKILL.md) | Coding | Designs production configuration management with schema validation, hierarchical merging of config sources, hot reload capabilities, secret injection from vaults, and environment-specific defaults for reliable deployment. |
 | [containerization-devops](skills/devops/containerization-devops/SKILL.md) | Devops | Implements best practices for containerization in the DevOps lifecycle, focusing on deployment, orchestration, and management of containerized applications. |
 | [conviction-scoring](skills/coding/conviction-scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights |
+| [corosync](skills/linux/corosync/SKILL.md) | Linux | Configures Corosync Cluster Engine v3.x messaging layer including totem protocol, quorum models, nodelist management, knet/udpu transports, and security for Pacemaker HA clusters. |
 | [cost-optimization](skills/cncf/cost-optimization/SKILL.md) | Cncf | Implements cloud cost optimization strategies (right-sizing, reserved instances, spot instances, multi-cloud comparison) for Kubernetes and cloud-native deployments. |
 | [cost-optimization-analysis](skills/cncf/cost-optimization-analysis/SKILL.md) | Cncf | Cloud cost optimization analysis including AWS Cost Explorer, Azure Cost Management, and GCP Billing with right-sizing recommendations and optimization strategies for multi-cloud environments |
 | [cqrs-pattern](skills/coding/cqrs-pattern/SKILL.md) | Coding | Separates command (write) model from query (read) model using mediator pipelines, outbox pattern for reliable event publishing, and idempotent command handlers for systems with asymmetric read/write workloads. |
@@ -2332,6 +2335,7 @@ MIT — All skills are freely available and redistributable.
 | [orm-patterns-n-plus-1-awareness](skills/data-and-persistence/orm-patterns-n-plus-1-awareness/SKILL.md) | Data-and-persistence | Provides comprehensive training on ORM patterns, the N+1 problem, and strategies to mitigate it, complete with code examples and workflows. |
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Coding | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. |
 | [output-sanitization](skills/coding/output-sanitization/SKILL.md) | Coding | Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption. |
+| [pacemaker](skills/linux/pacemaker/SKILL.md) | Linux | Manages Pacemaker HA clusters with pcs and crmsh for resource provisioning, constraints, STONITH fencing, quorum configuration, and cluster lifecycle operations on two-node and multi-node setups. |
 | [package-ecosystem-navigator](skills/coding/package-ecosystem-navigator/SKILL.md) | Coding | Navigates package manager ecosystems (npm, PyPI, crates.io, Maven, Go modules) with health assessment, dependency auditing, registry configuration, and cross-platform migration strategies for making informed packaging decisions. |
 | [pagerduty-api](skills/coding/pagerduty-api/SKILL.md) | Coding | Implements PagerDuty API integration (incident management, on-call schedules, escalation policies, alerts, events API v2) using pdpyras Python SDK with event ingestion, incident querying, on-call retrieval, and maintenance windows. |
 | [paper-commission-model](skills/trading/paper-commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." |
@@ -3362,6 +3366,7 @@ MIT — All skills are freely available and redistributable.
 | [conversation-memory](skills/agent/conversation-memory/SKILL.md) | Agent | Implements intelligent conversation memory with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [conviction-scoring](skills/coding/conviction-scoring/SKILL.md) | Coding | "Multi-factor conviction scoring engine combining technical, momentum" trend, volatility, and volume signals with configurable weights | Implementation |
 | [coredns](skills/cncf/coredns/SKILL.md) | Cncf | "Coredns in Cloud-Native Engineering - CoreDNS is a DNS server that chains" plugins | Reference |
+| [corosync](skills/linux/corosync/SKILL.md) | Linux | Configures Corosync Cluster Engine v3.x messaging layer including totem protocol, quorum models, nodelist management, knet/udpu transports, and security for Pacemaker HA clusters. | Implementation |
 | [cortex](skills/cncf/cortex/SKILL.md) | Cncf | "Cortex in Monitoring & Observability - distributed, horizontally scalable" Prometheus system | Reference |
 | [cost-optimization](skills/cncf/cost-optimization/SKILL.md) | Cncf | Implements cloud cost optimization strategies (right-sizing, reserved instances, spot instances, multi-cloud comparison) for Kubernetes and cloud-native deployments. | Implementation |
 | [cost-optimization-analysis](skills/cncf/cost-optimization-analysis/SKILL.md) | Cncf | Cloud cost optimization analysis including AWS Cost Explorer, Azure Cost Management, and GCP Billing with right-sizing recommendations and optimization strategies for multi-cloud environments | Implementation |
@@ -3962,6 +3967,7 @@ MIT — All skills are freely available and redistributable.
 | [outlook-calendar-automation](skills/agent/outlook-calendar-automation/SKILL.md) | Agent | Implements intelligent outlook calendar automation with multi-factor skill selection, fallback chains, and adherence to the 5 Laws of Elegant Defense | Orchestration |
 | [output-formatting](skills/coding/output-formatting/SKILL.md) | Coding | Enforces deterministic structured output generation (JSON schemas, markdown tables, templated responses) for reliable downstream processing in AI agent workflows. | Implementation |
 | [output-sanitization](skills/coding/output-sanitization/SKILL.md) | Coding | Escapes, encodes, and sanitizes outbound data for safe rendering in HTML, SQL, CSV, URLs, shell commands, logs, and email to prevent injection attacks and data corruption. | Implementation |
+| [pacemaker](skills/linux/pacemaker/SKILL.md) | Linux | Manages Pacemaker HA clusters with pcs and crmsh for resource provisioning, constraints, STONITH fencing, quorum configuration, and cluster lifecycle operations on two-node and multi-node setups. | Implementation |
 | [package-ecosystem-navigator](skills/coding/package-ecosystem-navigator/SKILL.md) | Coding | Navigates package manager ecosystems (npm, PyPI, crates.io, Maven, Go modules) with health assessment, dependency auditing, registry configuration, and cross-platform migration strategies for making informed packaging decisions. | Implementation |
 | [pagerduty-api](skills/coding/pagerduty-api/SKILL.md) | Coding | Implements PagerDuty API integration (incident management, on-call schedules, escalation policies, alerts, events API v2) using pdpyras Python SDK with event ingestion, incident querying, on-call retrieval, and maintenance windows. | Implementation |
 | [paper-commission-model](skills/trading/paper-commission-model/SKILL.md) | Trading | "Implements commission model and fee structure simulation for risk management and algorithmic trading execution." | Implementation |

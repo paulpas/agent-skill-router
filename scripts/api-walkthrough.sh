@@ -7,8 +7,8 @@
 # for each task. All prompts are purely hypothetical knowledge questions.
 #
 # Usage:
-#   ./api-walkthrough.sh                          Walk through all 10 chapters (uses llamacpp/anomaly-llama-cpp-model)
-#   ./api-walkthrough.sh --chapter N              Jump to chapter N directly (1-10)
+#   ./api-walkthrough.sh                          Walk through all 9 chapters (uses llamacpp/anomaly-llama-cpp-model)
+#   ./api-walkthrough.sh --chapter N              Jump to chapter N directly (1-9)
 #   ./api-walkthrough.sh --skip-opencode          Skip the OpenCode integration chapter
 #   ./api-walkthrough.sh --model ollama/qwen3     Use a different model provider
 #   MODEL=ollama/qwen3-coder:30b ./api-walkthrough.sh  Override model via environment variable
@@ -25,12 +25,12 @@ set -euo pipefail
 readonly API_URL="http://localhost:3000"
 TEMP_DIR=$(mktemp -d)
 CHAPTER=0
-TOTAL_CHAPTERS=10
+TOTAL_CHAPTERS=9
 TARGET_CHAPTER=""
 SKIP_OPENCODE=false
-# MODEL override for Chapter 7 (default: match ai() function's opencode/big-pickle)
-# Usage: ./script.sh --chapter 7 --model ollama/qwen3
-# Or:    MODEL=ollama/qwen3 ./script.sh --chapter 7
+# MODEL override for Chapter 9 (default: match ai() function's opencode/big-pickle)
+# Usage: ./script.sh --chapter 9 --model ollama/qwen3
+# Or:    MODEL=ollama/qwen3 ./script.sh --chapter 9
 MODEL=""
 
 trap 'rm -rf "$TEMP_DIR"' EXIT
@@ -63,8 +63,8 @@ while [[ $# -gt 0 ]]; do
         --chapter)
             TARGET_CHAPTER="$2"
             # FIX: Validate that TARGET_CHAPTER is numeric
-            if ! [[ "$TARGET_CHAPTER" =~ ^[0-9]+$ ]] || [[ "$TARGET_CHAPTER" -lt 1 || "$TARGET_CHAPTER" -gt 10 ]]; then
-                echo "Error: --chapter must be a number between 1 and 10" >&2
+            if ! [[ "$TARGET_CHAPTER" =~ ^[0-9]+$ ]] || [[ "$TARGET_CHAPTER" -lt 1 || "$TARGET_CHAPTER" -gt 9 ]]; then
+                echo "Error: --chapter must be a number between 1 and 9" >&2
                 exit 1
             fi
             shift 2
@@ -683,11 +683,266 @@ for i,s in enumerate(d.get('selectedSkills',[])[:5],1):
     prompt_next_page
 }
 
-# ─── Chapter 7: OpenCode Integration (Live Run) ──────────────────────────────
+# ─── Chapter 7: Skill Compression Deep Dive ───────────────────────────────────
 
-chapter_07_opencode_integration() {
+chapter_07_compression_deep_dive() {
     [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
     [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "7" ]] && return
+    show_progress "$CHAPTER" "Compression Deep Dive"
+    print_chapter_header "$CHAPTER" "SKILL COMPRESSION DEEP DIVE — Token Savings & Side-by-Side"
+    print_scenario "How much context can you save? The router compresses skills on-the-fly. Let's see what's gained (and lost) at each compression level."
+
+    LOCAL_SKILL_NAME="kubernetes-deployment"
+
+    # 1) Fetch the skill at ALL three compression levels plus uncompressed
+    print_key_point "Fetching '${LOCAL_SKILL_NAME}' at 4 compression levels..." "${CYAN}"
+    
+    local raw_file="$TEMP_DIR/ch07_raw.json"
+    local brief_file="$TEMP_DIR/ch07_brief.json"
+    local moderate_file="$TEMP_DIR/ch07_moderate.json"
+    local detailed_file="$TEMP_DIR/ch07_detailed.json"
+    local headers_file="$TEMP_DIR/ch07_headers.txt"
+
+    # NO compression — read from disk because the API's /skill/:name endpoint
+    # only accepts compression=brief|moderate|detailed as valid values, and any
+    # other value (including 0, none, raw) falls through to the default (moderate).
+    # The internal getSkillContent(name, 0) supports level 0, but the REST API
+    # does not expose it. Reading SKILL.md directly gives us the true baseline.
+    local repo_root
+    repo_root="$(git rev-parse --show-toplevel 2>/dev/null || echo '/home/paulpas/git/agent-skill-router')"
+    cat "$repo_root/skills/agent/${LOCAL_SKILL_NAME}/SKILL.md" > "$raw_file"
+    # Brief compression  
+    curl -s --max-time 10 -D "$TEMP_DIR/ch07_headers_brief.txt" "$API_URL/skill/${LOCAL_SKILL_NAME}?compression=brief" > "$brief_file"
+    # Moderate compression
+    curl -s --max-time 10 -D "$TEMP_DIR/ch07_headers_moderate.txt" "$API_URL/skill/${LOCAL_SKILL_NAME}?compression=moderate" > "$moderate_file"
+    # Detailed compression
+    curl -s --max-time 10 -D "$TEMP_DIR/ch07_headers_detailed.txt" "$API_URL/skill/${LOCAL_SKILL_NAME}?compression=detailed" > "$detailed_file"
+
+    # 2) Show sizes and savings in a table
+    local raw_size brief_size moderate_size detailed_size
+    raw_size=$(wc -c < "$raw_file" | tr -d ' ')
+    brief_size=$(wc -c < "$brief_file" | tr -d ' ')
+    moderate_size=$(wc -c < "$moderate_file" | tr -d ' ')
+    detailed_size=$(wc -c < "$detailed_file" | tr -d ' ')
+
+    local brief_pct moderate_pct detailed_pct
+    brief_pct=$(python3 -c "print(f'{(1 - ${brief_size}/${raw_size})*100:.0f}%')")
+    moderate_pct=$(python3 -c "print(f'{(1 - ${moderate_size}/${raw_size})*100:.0f}%')")
+    detailed_pct=$(python3 -c "print(f'{(1 - ${detailed_size}/${raw_size})*100:.0f}%')")
+
+    echo ""
+    print_colored_two_col "Compression Level" "Bytes | Token Savings | Headers"
+    print_two_col \
+"  none (raw)
+  brief           
+  moderate         
+  detailed         " \
+"  ${raw_size} bytes  —  0% saved    —  no headers
+  ${brief_size} bytes  —  ${brief_pct} saved  —  X-Compression-*, X-Compression-Percent, X-Compression-Version
+  ${moderate_size} bytes  —  ${moderate_pct} saved  —  X-Compression-*, X-Compression-Percent, X-Compression-Version
+  ${detailed_size} bytes  —  ${detailed_pct} saved  —  X-Compression-*, X-Compression-Percent, X-Compression-Version"
+
+    # 3) Extract and display compression headers for 'brief'
+    echo ""
+    print_key_point "Response headers for compression=brief:" "${YELLOW}"
+    grep -i 'x-compression' "$TEMP_DIR/ch07_headers_brief.txt" 2>/dev/null || echo "  (no compression headers found)"
+    echo ""
+    print_key_point "Response headers for compression=moderate:" "${YELLOW}"
+    grep -i 'x-compression' "$TEMP_DIR/ch07_headers_moderate.txt" 2>/dev/null || echo "  (no compression headers found)"
+    echo ""
+    print_key_point "Response headers for compression=detailed:" "${YELLOW}"
+    grep -i 'x-compression' "$TEMP_DIR/ch07_headers_detailed.txt" 2>/dev/null || echo "  (no compression headers found)"
+
+    # 4) Show the compression level table from COMPRESSION.md
+    echo ""
+    print_key_point "Compression Level Reference:" "${WHITE}"
+    echo ""
+    cat << 'COMPTABLE'
+  Level | What Gets Removed              | Approx Savings
+  ──────┼────────────────────────────────┼──────────────
+  0     | No compression                 |  0%
+  1     | Remove blank lines             |  5%
+  2     | Remove When to Use section     | 12%
+  3     | Remove When NOT to Use         | 18%
+  4     | Collapse Core Workflow         | 28%
+  5     | Remove related-skills table    | 35%
+  6     | Remove markdown formatting     | 42%
+  7     | Remove code examples           | 55%
+  8     | Abbreviate section names       | 68%
+  9     | Single block                   | 75%
+  10+   | Summary only                   | 85%
+COMPTABLE
+
+    print_key_point "API mapping: detailed→level2 (conservative), moderate→level5 (balanced), brief→level8 (aggressive)" "${DIM}"
+
+    # 5) Show actual content differences via diff — raw output to stdout
+    sdiff -w 256 "$raw_file" "$brief_file" | less || true
+
+    # 6) Fetch /metrics to show compression stats
+    echo ""
+    print_key_point "Compression engine stats (GET /metrics):" "${CYAN}"
+    local metrics_file="$TEMP_DIR/ch07_metrics.json"
+    curl -s --max-time 10 "$API_URL/metrics" > "$metrics_file" 2>/dev/null || echo '{}' > "$metrics_file"
+
+    python3 -c "
+import sys,json
+try:
+    with open('$metrics_file') as f: d=json.load(f)
+except: print('  Could not parse metrics'); exit(0)
+c = d.get('compression',{})
+b='\033[1m';g='\033[32m';r='\033[0m';y='\033[33m'
+print(f'  {b}Total Operations:{r}       {c.get(\"totalOperations\",0)}')
+op = c.get('totalOperations',0)
+if op > 0:
+    print(f'  {b}Successful:{r}            {g}{c.get(\"successfulCompressions\",0)}{r}')
+    print(f'  {b}Failed:{r}               {y}{c.get(\"failedCompressions\",0)}{r}')
+print(f'  {b}Cache Hits:{r}            {c.get(\"cacheHits\",0)}')
+print(f'  {b}Cache Misses:{r}          {c.get(\"cacheMisses\",0)}')
+print(f'  {b}Total Tokens Saved:{r}    {c.get(\"totalTokensSaved\",0)}')
+print(f'  {b}Average Compression:{r}   {c.get(\"averageCompressionPercent\",0)}%')
+print(f'  {b}Cache Size:{r}            {c.get(\"currentCacheSizeBytes\",0)}/{c.get(\"maxCacheSizeBytes\",0)} bytes')
+" 2>/dev/null || true
+
+    # Show full metrics JSON on request
+    if prompt_for_json_display; then
+        display_output "Full /metrics Response" "$metrics_file" 200
+    fi
+
+    echo ""
+    print_key_point "Key takeaway: brief compression saved ${brief_pct} (${brief_size} vs ${raw_size} bytes). Use compression when injecting large skills into context windows to preserve tokens for the actual conversation." "${GREEN}"
+
+    echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
+}
+
+# ─── Chapter 8: Markdown Link Following & Web Content Extraction ─────────────
+
+chapter_08_link_following() {
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "8" ]] && return
+    show_progress "$CHAPTER" "Link Following"
+    print_chapter_header "$CHAPTER" "MARKDOWN LINK FOLLOWING & WEB CONTENT EXTRACTION"
+    print_scenario "Skills can embed web content via markdown links. The router resolves those URLs, fetches the content, compresses it, and injects it — turning documentation links into live context."
+
+    # 1) Show current link-following config
+    print_key_point "Current link-following configuration:" "${CYAN}"
+    local cfg_file="$TEMP_DIR/ch08_config.json"
+    curl -s --max-time 10 "$API_URL/config/link-following" > "$cfg_file" 2>/dev/null || echo '{}' > "$cfg_file"
+
+    python3 -c "
+import sys,json
+try:
+    with open('$cfg_file') as f: d=json.load(f)
+except: print('  Could not parse config'); exit(0)
+b='\033[1m';g='\033[32m';r='\033[0m';y='\033[33m';d_='\033[2m'
+print(f'  {b}link_following_enabled:{r}  {g}{d.get(\"enabled\",\"?\")}{r}')
+print(f'  {b}max_depth:{r}              {d.get(\"maxDepth\",\"?\")}')
+print(f'  {b}allow_external_links:{r}   {d.get(\"allowExternalLinks\",\"?\")}')
+print(f'  {b}max_external_size_kb:{r}   {d.get(\"maxExternalSizeKb\",\"?\")}')
+print(f'  {b}resolution_mode:{r}        {y}{d.get(\"resolutionMode\",\"?\")}{r}')
+print(f'  {b}compression_mode:{r}       {d.get(\"compressionMode\",\"?\")}')
+print(f'  {b}semantic_top_k:{r}         {d.get(\"semanticTopK\",\"?\")}')
+print(f'  {b}semantic_threshold:{r}     {d.get(\"semanticSimilarityThreshold\",\"?\")}')
+print(f'  {b}js_rendering_enabled:{r}   {d.get(\"jsRenderingEnabled\",\"?\")}')
+print(f'  {b}js_render_timeout:{r}      {d.get(\"jsRenderTimeoutMs\",\"?\")}ms')
+" 2>/dev/null || true
+
+    # Show full config on request
+    if prompt_for_json_display; then
+        display_output "Full Link-Following Config" "$cfg_file" 200
+    fi
+
+    # 2) Show the resolution modes
+    echo ""
+    print_key_point "Resolution modes:" "${WHITE}"
+    cat << 'RESOLUTION'
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │  Resolution Mode  │  Behavior                                       │
+  ├───────────────────┼─────────────────────────────────────────────────┤
+  │  inline           │  Fetch URL content and insert directly          │
+  │  semantic         │  Fetch → chunk → embed → top-k most relevant   │
+  │  compressed       │  Fetch → chunk → compress to brief (~2000 chars)│
+  └───────────────────┴─────────────────────────────────────────────────┘
+RESOLUTION
+
+    # 3) Show the pipeline diagram
+    echo ""
+    print_key_point "Link-following pipeline:" "${CYAN}"
+    cat << 'PIPELINE'
+  [Markdown Link Resolver]
+       │ resolves [text](url) URLs
+       ▼
+  [Content Fetcher]
+       │ HTTPS GET (with optional Puppeteer JS rendering)
+       ▼
+  [HTML → Text Transformation]
+       │ heading-aware chunking
+       ▼
+  [External Content Chunker]
+       │ optional: chunk into headings + sections
+       ▼
+  [External Content Embedder]
+       │ optional: semantic embedding + similarity search (top_k=10, threshold=0.5)
+       ▼
+  [Content Compressor]
+       │ compress to ~2000 (brief) or ~5000 (moderate) chars
+       ▼
+  [Reference Section Injection]
+       │ formatted as: ## References from <url>
+PIPELINE
+
+    # 4) Show path traversal protection
+    echo ""
+    print_key_point "Path traversal protection:" "${YELLOW}"
+    cat << 'TRAVERSAL'
+  isSafeLocalPath() ensures resolved paths stay within the skill's base directory.
+  Symlinks are NOT followed. Any path containing ".." that escapes the skill root
+  is rejected with a 403. This prevents malicious SKILL.md files from reading
+  arbitrary filesystem paths via markdown link resolution.
+TRAVERSAL
+
+    # 5) Show current link-following stats from metrics
+    echo ""
+    print_key_point "Link-following metrics from /metrics:" "${CYAN}"
+    local metrics_file="$TEMP_DIR/ch08_metrics.json"
+    curl -s --max-time 10 "$API_URL/metrics" > "$metrics_file" 2>/dev/null || echo '{}' > "$metrics_file"
+    
+    python3 -c "
+import sys,json
+try:
+    with open('$metrics_file') as f: d=json.load(f)
+except: print('  Could not parse metrics'); exit(0)
+# Try to extract link-following stats if they exist
+lf = d.get('linkFollowing', d.get('link_following', {}))
+if lf:
+    for k,v in lf.items():
+        print(f'  • {k}: {v}')
+else:
+    print('  (link-following metrics not tracked separately)')
+    print('  Check /metrics for any link resolution data.')
+" 2>/dev/null || true
+
+    # 6) Optional: show demo of updating config
+    echo ""
+    print_key_point "Try it yourself — update a config field:" "${GREEN}"
+    cat << 'UPDATECONFIG'
+  curl -X POST http://localhost:3000/config/link-following \
+    -H "Content-Type: application/json" \
+    -d '{"max_depth": 5, "compression_mode": "brief"}'
+UPDATECONFIG
+
+    echo ""
+    print_key_point "Key takeaway: The link-following system turns static documentation links into live, compressed, context-relevant content — automatically fetched, chunked, embedded, and injected into the skill's reference section." "${GREEN}"
+
+    echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
+    prompt_next_page
+}
+
+# ─── Chapter 9: OpenCode Integration (Live Run) ──────────────────────────────
+
+chapter_09_opencode_integration() {
+    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
+    [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "9" ]] && return
     show_progress "$CHAPTER" "OpenCode Live Run"
     print_chapter_header "$CHAPTER" "LIVE OPENCODE EXECUTION — Like the 'ai' command"
 
@@ -716,7 +971,7 @@ chapter_07_opencode_integration() {
 
     local session_dir="$HOME/.ai-sessions"
     mkdir -p "$session_dir"
-    local session_file="$session_dir/shell-ch7-$$"
+    local session_file="$session_dir/shell-ch9-$$"
 
     if [[ "$(uname)" == "Darwin" ]]; then
         _ai_mktemp() { mktemp "${HOME}/tmp.XXXXXXXXXX"; }
@@ -795,429 +1050,6 @@ chapter_07_opencode_integration() {
     prompt_next_page
 }
 
-# ─── Chapter 8: Access Log Review ─────────────────────────────────────────────
-
-chapter_08_access_log_review() {
-    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
-    [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "8" ]] && return
-    show_progress "$CHAPTER" "Access Log"
-    print_chapter_header "$CHAPTER" "ROUTING HISTORY — What Was Matched Today?"
-
-    local l; l=$(curl -s --max-time 10 "$API_URL/access-log" 2>/dev/null || echo '{"totalRequests":0,"entries":[]}')
-    local access_file="$TEMP_DIR/ch08_access.json"
-    echo "$l" > "$access_file"
-
-    local total entries_count
-    total=$(json_extract "$l" "totalRequests"); : "${total:=0}"
-    entries_count=$(python3 -c "import sys,json; print(len(json.loads(sys.stdin.read()).get('entries',[])))" <<< "$l" 2>/dev/null || echo "0")
-
-    echo -e "  Total requests: ${BOLD}${total}${RESET}  |  Entries: ${BOLD}${entries_count}${RESET}"
-    echo ""
-
-    if [[ "${entries_count:-0}" -gt 0 ]]; then
-        # ─── SECTION 1: Recent routing decisions with pagination ─────────────────
-        echo -e "${CYAN}${BOLD}  ┌─ SECTION 1: Recent Routing Decisions${RESET}"
-        echo -e "${DIM}  │${RESET}"
-        
-        # Extract and paginate routing decisions
-        local routing_data="$TEMP_DIR/routing_decisions.txt"
-        python3 - "$access_file" > "$routing_data" << 'ENDPYTHON'
-import sys,json
-with open(sys.argv[1]) as f:
-    d=json.load(f)
-b='\033[1m';g='\033[32m';r='\033[0m';y='\033[33m';rd='\033[31m';d_='\033[2m'
-entries=list(reversed(d.get('entries',[])))
-for i,e in enumerate(entries):
-    ts=e.get('timestamp','?')[:16]
-    t=e.get('task','?')[:60]
-    s=e.get('topSkill','?')
-    c=e.get('confidence',0)
-    m=e.get('totalMatches','?')
-    icon='\u2713' if c>0.5 else ('\u26a0' if c>0.25 else '\u2717')
-    col=g if c>0.5 else (y if c>0.25 else rd)
-    output=f'  {icon} [{ts}] {col}{s}{r} conf={c:.2f} matches={m}\n'
-    output+=f'      task: "{t}"...'
-    print(output)
-    if i < len(entries) - 1:
-        print()
-ENDPYTHON
-        
-        local route_lines; route_lines=$(wc -l < "$routing_data" 2>/dev/null || echo "0")
-        
-        # Show first 5 entries without pause
-        head -n 10 "$routing_data" | colorize_json
-        
-        # If more than 8 entries, offer pagination
-        if [[ "$route_lines" -gt 10 ]]; then
-            echo ""
-            if [[ ! -t 1 ]]; then
-                # In non-interactive mode, show all routing data automatically
-                tail -n +11 "$routing_data" | colorize_json
-            else
-                echo -e "  ${DIM}│ ▼ More routing decisions available (${route_lines} lines total)${RESET}"
-                echo -e "  ${CYAN}  │ Press ENTER for more, Q to skip${RESET}"
-                read -r -t 60 user_input < /dev/tty 2>/dev/null || user_input=""
-
-                if [[ "${user_input,,}" != "q" ]]; then
-                    echo ""
-                    tail -n +11 "$routing_data" | colorize_json
-                fi
-            fi
-        fi
-        echo -e "  ${DIM}  │${RESET}"
-        
-        # ─── SECTION 2: Confidence distribution ──────────────────────────────────
-        echo -e "${CYAN}${BOLD}  ├─ SECTION 2: Confidence Distribution${RESET}"
-        echo -e "${DIM}  │${RESET}"
-        python3 -c "
-import sys,json
-d=json.load(sys.stdin)
-c=[e.get('confidence',0) for e in d.get('entries',[])]
-if not c: print('  │ No entries.'); exit()
-hi=sum(1 for x in c if x>0.5); mid=sum(1 for x in c if .25<x<=.5); lo=len(c)-hi-mid; n=len(c)
-avg=sum(c)/n if n else 0
-g='\033[32m';y='\033[33m';rd='\033[31m';r='\033[0m';d_='\033[2m'
-print(f'  │ Total: {n} requests')
-print(f'  │ High (>50%): {hi:>3d}/{n} ({hi/n*100:.0f}%)   {g}\u25cf{r}')
-print(f'  │ Mid  (25-50%):    {mid:>3d}/{n} ({mid/n*100:.0f}%)   {y}\u25cf{r}')
-print(f'  │ Low  (\u226425%):      {lo:>3d}/{n} ({lo/n*100:.0f}%)   {rd}\u25cf{r}')
-print(f'  │ Average: {avg:.2f}')
-" < "$access_file" 2>/dev/null || true
-        echo -e "  ${DIM}  │${RESET}"
-        
-        # ─── SECTION 3: Top routed skills with pagination ───────────────────────
-        echo -e "${CYAN}${BOLD}  ├─ SECTION 3: Top Routed Skills${RESET}"
-        echo -e "${DIM}  │${RESET}"
-        
-        local skills_data="$TEMP_DIR/top_skills.txt"
-        python3 - "$access_file" > "$skills_data" << 'ENDPYTHON'
-import sys,json; from collections import Counter
-with open(sys.argv[1]) as f:
-    d=json.load(f)
-b='\033[1m';r='\033[0m'
-c=Counter(e.get('topSkill','?') for e in d.get('entries',[]))
-for s,n in c.most_common(20):
-    print(f'  {b}{s}{r}  {n:>3d}x')
-ENDPYTHON
-        
-        local skills_lines; skills_lines=$(wc -l < "$skills_data" 2>/dev/null || echo "0")
-        
-        # Show first 5 skills
-        head -n 5 "$skills_data" | colorize_json
-        
-        # If more than 8 skills, offer pagination
-        if [[ "$skills_lines" -gt 5 ]]; then
-            echo ""
-            if [[ ! -t 1 ]]; then
-                # In non-interactive mode, show all skills automatically
-                tail -n +6 "$skills_data" | colorize_json
-            else
-                echo -e "  ${DIM}  │ ▼ More skills available (${skills_lines} total)${RESET}"
-                echo -e "  ${CYAN}  │ Press ENTER to see all skills, Q to skip${RESET}"
-                read -r -t 60 user_input < /dev/tty 2>/dev/null || user_input=""
-
-                if [[ "${user_input,,}" != "q" ]]; then
-                    echo ""
-                    tail -n +6 "$skills_data" | colorize_json
-                fi
-            fi
-        fi
-        echo -e "  ${DIM}  │${RESET}"
-        
-        # ─── SECTION 4: Full JSON response with pagination ──────────────────────
-        echo -e "${CYAN}${BOLD}  └─ SECTION 4: Full /access-log JSON Response${RESET}"
-        echo ""
-        display_output "Complete Access Log (JSON)" "$access_file" 400 45
-        
-        # Cleanup
-        rm -f "$routing_data" "$skills_data"
-    else
-        echo -e "  ${YELLOW}⚠ No history yet — access log populates as the router is used.${RESET}"
-    fi
-
-    echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
-    prompt_next_page
-}
-
-# ─── Chapter 9: Skill Compression Deep Dive ───────────────────────────────────
-
-chapter_09_compression_deep_dive() {
-    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
-    [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "9" ]] && return
-    show_progress "$CHAPTER" "Compression Deep Dive"
-    print_chapter_header "$CHAPTER" "SKILL COMPRESSION DEEP DIVE — Token Savings & Side-by-Side"
-    print_scenario "How much context can you save? The router compresses skills on-the-fly. Let's see what's gained (and lost) at each compression level."
-
-    LOCAL_SKILL_NAME="kubernetes-deployment"
-
-    # 1) Fetch the skill at ALL three compression levels plus uncompressed
-    print_key_point "Fetching '${LOCAL_SKILL_NAME}' at 4 compression levels..." "${CYAN}"
-    
-    local raw_file="$TEMP_DIR/ch09_raw.json"
-    local brief_file="$TEMP_DIR/ch09_brief.json"
-    local moderate_file="$TEMP_DIR/ch09_moderate.json"
-    local detailed_file="$TEMP_DIR/ch09_detailed.json"
-    local headers_file="$TEMP_DIR/ch09_headers.txt"
-
-    # NO compression (default)
-    curl -s --max-time 10 "$API_URL/skill/${LOCAL_SKILL_NAME}" > "$raw_file"
-    # Brief compression  
-    curl -s --max-time 10 -D "$TEMP_DIR/ch09_headers_brief.txt" "$API_URL/skill/${LOCAL_SKILL_NAME}?compression=brief" > "$brief_file"
-    # Moderate compression
-    curl -s --max-time 10 -D "$TEMP_DIR/ch09_headers_moderate.txt" "$API_URL/skill/${LOCAL_SKILL_NAME}?compression=moderate" > "$moderate_file"
-    # Detailed compression
-    curl -s --max-time 10 -D "$TEMP_DIR/ch09_headers_detailed.txt" "$API_URL/skill/${LOCAL_SKILL_NAME}?compression=detailed" > "$detailed_file"
-
-    # 2) Show sizes and savings in a table
-    local raw_size brief_size moderate_size detailed_size
-    raw_size=$(wc -c < "$raw_file" | tr -d ' ')
-    brief_size=$(wc -c < "$brief_file" | tr -d ' ')
-    moderate_size=$(wc -c < "$moderate_file" | tr -d ' ')
-    detailed_size=$(wc -c < "$detailed_file" | tr -d ' ')
-
-    local brief_pct moderate_pct detailed_pct
-    brief_pct=$(python3 -c "print(f'{(1 - ${brief_size}/${raw_size})*100:.0f}%')")
-    moderate_pct=$(python3 -c "print(f'{(1 - ${moderate_size}/${raw_size})*100:.0f}%')")
-    detailed_pct=$(python3 -c "print(f'{(1 - ${detailed_size}/${raw_size})*100:.0f}%')")
-
-    echo ""
-    print_colored_two_col "Compression Level" "Bytes | Token Savings | Headers"
-    print_two_col \
-"  none (raw)
-  brief           
-  moderate         
-  detailed         " \
-"  ${raw_size} bytes  —  0% saved    —  no headers
-  ${brief_size} bytes  —  ${brief_pct} saved  —  X-Compression-*, X-Compression-Percent, X-Compression-Version
-  ${moderate_size} bytes  —  ${moderate_pct} saved  —  X-Compression-*, X-Compression-Percent, X-Compression-Version
-  ${detailed_size} bytes  —  ${detailed_pct} saved  —  X-Compression-*, X-Compression-Percent, X-Compression-Version"
-
-    # 3) Extract and display compression headers for 'brief'
-    echo ""
-    print_key_point "Response headers for compression=brief:" "${YELLOW}"
-    grep -i 'x-compression' "$TEMP_DIR/ch09_headers_brief.txt" 2>/dev/null || echo "  (no compression headers found)"
-    echo ""
-    print_key_point "Response headers for compression=moderate:" "${YELLOW}"
-    grep -i 'x-compression' "$TEMP_DIR/ch09_headers_moderate.txt" 2>/dev/null || echo "  (no compression headers found)"
-    echo ""
-    print_key_point "Response headers for compression=detailed:" "${YELLOW}"
-    grep -i 'x-compression' "$TEMP_DIR/ch09_headers_detailed.txt" 2>/dev/null || echo "  (no compression headers found)"
-
-    # 4) Show the compression level table from COMPRESSION.md
-    echo ""
-    print_key_point "Compression Level Reference:" "${WHITE}"
-    echo ""
-    cat << 'COMPTABLE'
-  Level | What Gets Removed              | Approx Savings
-  ──────┼────────────────────────────────┼──────────────
-  0     | No compression                 |  0%
-  1     | Remove blank lines             |  5%
-  2     | Remove When to Use section     | 12%
-  3     | Remove When NOT to Use         | 18%
-  4     | Collapse Core Workflow         | 28%
-  5     | Remove related-skills table    | 35%
-  6     | Remove markdown formatting     | 42%
-  7     | Remove code examples           | 55%
-  8     | Abbreviate section names       | 68%
-  9     | Single block                   | 75%
-  10+   | Summary only                   | 85%
-COMPTABLE
-
-    print_key_point "API mapping: detailed→level2 (conservative), moderate→level5 (balanced), brief→level8 (aggressive)" "${DIM}"
-
-    # 5) Show actual content differences via diff
-    echo ""
-    print_key_point "What gets compressed away? (sdiff -w 256 uncompressed vs brief):" "${YELLOW}"
-    sdiff -w 256 "$raw_file" "$brief_file" 2>/dev/null | head -60 || true
-    
-    # Show section headers present in raw vs brief
-    echo ""
-    print_key_point "Section headers preserved vs removed:" "${CYAN}"
-    print_two_col \
-"${BOLD}Raw (uncompressed) sections${RESET}" \
-"${BOLD}Brief (compressed) sections${RESET}"
-    # Extract section headers (## or ###) from each
-    local raw_sections brief_sections
-    raw_sections=$(grep -E '^## ' "$raw_file" 2>/dev/null || echo "  (none)")
-    brief_sections=$(grep -E '^## ' "$brief_file" 2>/dev/null || echo "  (none)")
-    paste <(echo "$raw_sections") <(echo "$brief_sections") 2>/dev/null | while IFS=$'\t' read -r r b; do
-        if [ "$r" = "$b" ]; then
-            printf "  \033[32m✓\033[0m %-40s │ \033[32m✓\033[0m %s\n" "$r" "$b"
-        else
-            printf "  \033[31m✗\033[0m %-40s │ \033[33m—\033[0m %s\n" "$r" "${b:-  (removed)}"
-        fi
-    done
-
-    # Show tail of each (where content differs)
-    echo ""
-    print_key_point "Content body (last 10 lines of each):" "${CYAN}"
-    print_two_col \
-"${BOLD}uncompressed (tail)${RESET}" \
-"${BOLD}brief (tail)${RESET}"
-    paste <(tail -n 10 "$raw_file") <(tail -n 10 "$brief_file") | while IFS=$'\t' read -r r b; do
-        printf "  %-45s │ %s\n" "$r" "$b"
-    done
-
-    # 6) Fetch /metrics to show compression stats
-    echo ""
-    print_key_point "Compression engine stats (GET /metrics):" "${CYAN}"
-    local metrics_file="$TEMP_DIR/ch09_metrics.json"
-    curl -s --max-time 10 "$API_URL/metrics" > "$metrics_file" 2>/dev/null || echo '{}' > "$metrics_file"
-
-    python3 -c "
-import sys,json
-try:
-    with open('$metrics_file') as f: d=json.load(f)
-except: print('  Could not parse metrics'); exit(0)
-c = d.get('compression',{})
-b='\033[1m';g='\033[32m';r='\033[0m';y='\033[33m'
-print(f'  {b}Total Operations:{r}       {c.get(\"totalOperations\",0)}')
-op = c.get('totalOperations',0)
-if op > 0:
-    print(f'  {b}Successful:{r}            {g}{c.get(\"successfulCompressions\",0)}{r}')
-    print(f'  {b}Failed:{r}               {y}{c.get(\"failedCompressions\",0)}{r}')
-print(f'  {b}Cache Hits:{r}            {c.get(\"cacheHits\",0)}')
-print(f'  {b}Cache Misses:{r}          {c.get(\"cacheMisses\",0)}')
-print(f'  {b}Total Tokens Saved:{r}    {c.get(\"totalTokensSaved\",0)}')
-print(f'  {b}Average Compression:{r}   {c.get(\"averageCompressionPercent\",0)}%')
-print(f'  {b}Cache Size:{r}            {c.get(\"currentCacheSizeBytes\",0)}/{c.get(\"maxCacheSizeBytes\",0)} bytes')
-" 2>/dev/null || true
-
-    # Show full metrics JSON on request
-    if prompt_for_json_display; then
-        display_output "Full /metrics Response" "$metrics_file" 200
-    fi
-
-    echo ""
-    print_key_point "Key takeaway: brief compression saved ${brief_pct} (${brief_size} vs ${raw_size} bytes). Use compression when injecting large skills into context windows to preserve tokens for the actual conversation." "${GREEN}"
-
-    echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
-    prompt_next_page
-}
-
-# ─── Chapter 10: Markdown Link Following & Web Content Extraction ─────────────
-
-chapter_10_link_following() {
-    [[ -n "$TARGET_CHAPTER" ]] && CHAPTER="$TARGET_CHAPTER" || CHAPTER=$((CHAPTER + 1))
-    [[ -n "$TARGET_CHAPTER" && "$TARGET_CHAPTER" != "10" ]] && return
-    show_progress "$CHAPTER" "Link Following"
-    print_chapter_header "$CHAPTER" "MARKDOWN LINK FOLLOWING & WEB CONTENT EXTRACTION"
-    print_scenario "Skills can embed web content via markdown links. The router resolves those URLs, fetches the content, compresses it, and injects it — turning documentation links into live context."
-
-    # 1) Show current link-following config
-    print_key_point "Current link-following configuration:" "${CYAN}"
-    local cfg_file="$TEMP_DIR/ch10_config.json"
-    curl -s --max-time 10 "$API_URL/config/link-following" > "$cfg_file" 2>/dev/null || echo '{}' > "$cfg_file"
-
-    python3 -c "
-import sys,json
-try:
-    with open('$cfg_file') as f: d=json.load(f)
-except: print('  Could not parse config'); exit(0)
-b='\033[1m';g='\033[32m';r='\033[0m';y='\033[33m';d_='\033[2m'
-print(f'  {b}link_following_enabled:{r}  {g}{d.get(\"enabled\",\"?\")}{r}')
-print(f'  {b}max_depth:{r}              {d.get(\"maxDepth\",\"?\")}')
-print(f'  {b}allow_external_links:{r}   {d.get(\"allowExternalLinks\",\"?\")}')
-print(f'  {b}max_external_size_kb:{r}   {d.get(\"maxExternalSizeKb\",\"?\")}')
-print(f'  {b}resolution_mode:{r}        {y}{d.get(\"resolutionMode\",\"?\")}{r}')
-print(f'  {b}compression_mode:{r}       {d.get(\"compressionMode\",\"?\")}')
-print(f'  {b}semantic_top_k:{r}         {d.get(\"semanticTopK\",\"?\")}')
-print(f'  {b}semantic_threshold:{r}     {d.get(\"semanticSimilarityThreshold\",\"?\")}')
-print(f'  {b}js_rendering_enabled:{r}   {d.get(\"jsRenderingEnabled\",\"?\")}')
-print(f'  {b}js_render_timeout:{r}      {d.get(\"jsRenderTimeoutMs\",\"?\")}ms')
-" 2>/dev/null || true
-
-    # Show full config on request
-    if prompt_for_json_display; then
-        display_output "Full Link-Following Config" "$cfg_file" 200
-    fi
-
-    # 2) Show the resolution modes
-    echo ""
-    print_key_point "Resolution modes:" "${WHITE}"
-    cat << 'RESOLUTION'
-  ┌─────────────────────────────────────────────────────────────────────┐
-  │  Resolution Mode  │  Behavior                                       │
-  ├───────────────────┼─────────────────────────────────────────────────┤
-  │  inline           │  Fetch URL content and insert directly          │
-  │  semantic         │  Fetch → chunk → embed → top-k most relevant   │
-  │  compressed       │  Fetch → chunk → compress to brief (~2000 chars)│
-  └───────────────────┴─────────────────────────────────────────────────┘
-RESOLUTION
-
-    # 3) Show the pipeline diagram
-    echo ""
-    print_key_point "Link-following pipeline:" "${CYAN}"
-    cat << 'PIPELINE'
-  [Markdown Link Resolver]
-       │ resolves [text](url) URLs
-       ▼
-  [Content Fetcher]
-       │ HTTPS GET (with optional Puppeteer JS rendering)
-       ▼
-  [HTML → Text Transformation]
-       │ heading-aware chunking
-       ▼
-  [External Content Chunker]
-       │ optional: chunk into headings + sections
-       ▼
-  [External Content Embedder]
-       │ optional: semantic embedding + similarity search (top_k=10, threshold=0.5)
-       ▼
-  [Content Compressor]
-       │ compress to ~2000 (brief) or ~5000 (moderate) chars
-       ▼
-  [Reference Section Injection]
-       │ formatted as: ## References from <url>
-PIPELINE
-
-    # 4) Show path traversal protection
-    echo ""
-    print_key_point "Path traversal protection:" "${YELLOW}"
-    cat << 'TRAVERSAL'
-  isSafeLocalPath() ensures resolved paths stay within the skill's base directory.
-  Symlinks are NOT followed. Any path containing ".." that escapes the skill root
-  is rejected with a 403. This prevents malicious SKILL.md files from reading
-  arbitrary filesystem paths via markdown link resolution.
-TRAVERSAL
-
-    # 5) Show current link-following stats from metrics
-    echo ""
-    print_key_point "Link-following metrics from /metrics:" "${CYAN}"
-    local metrics_file="$TEMP_DIR/ch10_metrics.json"
-    curl -s --max-time 10 "$API_URL/metrics" > "$metrics_file" 2>/dev/null || echo '{}' > "$metrics_file"
-    
-    python3 -c "
-import sys,json
-try:
-    with open('$metrics_file') as f: d=json.load(f)
-except: print('  Could not parse metrics'); exit(0)
-# Try to extract link-following stats if they exist
-lf = d.get('linkFollowing', d.get('link_following', {}))
-if lf:
-    for k,v in lf.items():
-        print(f'  • {k}: {v}')
-else:
-    print('  (link-following metrics not tracked separately)')
-    print('  Check /metrics for any link resolution data.')
-" 2>/dev/null || true
-
-    # 6) Optional: show demo of updating config
-    echo ""
-    print_key_point "Try it yourself — update a config field:" "${GREEN}"
-    cat << 'UPDATECONFIG'
-  curl -X POST http://localhost:3000/config/link-following \
-    -H "Content-Type: application/json" \
-    -d '{"max_depth": 5, "compression_mode": "brief"}'
-UPDATECONFIG
-
-    echo ""
-    print_key_point "Key takeaway: The link-following system turns static documentation links into live, compressed, context-relevant content — automatically fetched, chunked, embedded, and injected into the skill's reference section." "${GREEN}"
-
-    echo -e "${GREEN}${BOLD}  ✓ Chapter $CHAPTER complete.${RESET}"
-    prompt_next_page
-}
-
 # ─── Summary ──────────────────────────────────────────────────────────────────
 
 print_summary() {
@@ -1232,10 +1064,9 @@ print_summary() {
         "Distributed Tracing — POST /route: OpenTelemetry + Jaeger microservices"
         "Auth Patterns       — POST /route: OAuth2 vs OIDC vs JWT comparison"
         "Redis Streams       — POST /route: Exactly-once message processing"
-        "OpenCode Live Run   — FIFO streaming logs + glow markdown rendering (ai() style)"
-        "Access Log Review   — GET /access-log routing history and confidence stats"
         "Compression Demo     — GET /skill?compression=brief|moderate|detailed with savings"
         "Link Following       — GET /config/link-following pipeline and extraction flow"
+        "OpenCode Live Run   — FIFO streaming logs + glow markdown rendering (ai() style)"
     )
 
     for i in "${!chapters[@]}"; do
@@ -1280,10 +1111,9 @@ main() {
             4) chapter_04_distributed_tracing ;;
             5) chapter_05_auth_patterns ;;
             6) chapter_06_redis_streams ;;
-            7) chapter_07_opencode_integration ;;
-            8) chapter_08_access_log_review ;;
-            9) chapter_09_compression_deep_dive ;;
-            10) chapter_10_link_following ;;
+            7) chapter_07_compression_deep_dive ;;
+            8) chapter_08_link_following ;;
+            9) chapter_09_opencode_integration ;;
         esac
         print_summary
         return 0
@@ -1296,10 +1126,9 @@ main() {
     chapter_04_distributed_tracing
     chapter_05_auth_patterns
     chapter_06_redis_streams
-    chapter_07_opencode_integration
-    chapter_08_access_log_review
-    chapter_09_compression_deep_dive
-    chapter_10_link_following
+    chapter_07_compression_deep_dive
+    chapter_08_link_following
+    chapter_09_opencode_integration
 
     print_summary
 }
