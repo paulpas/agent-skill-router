@@ -312,17 +312,17 @@ MIT — All skills are freely available and redistributable.
 
 <!-- AUTO-GENERATED SKILLS INDEX START -->
 
-> **Last updated:** 2026-06-10 18:01:20 UTC  
-> **Total skills:** 1283  
-> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1283 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
+> **Last updated:** 2026-06-14 09:35:14 UTC  
+> **Total skills:** 1284  
+> **Canonical catalog:** [`skills-index.json`](skills-index.json) (1284 entries, JSON) — machine-readable source of truth; the pre-commit hook and GitHub Actions keep this README in sync with it
 
 ## Advanced Routing Field Coverage
 
 | Field | Skills Configured | Description |
 |-------|-------------------|-------------|
-| Archetypes | 1210 | Query intent matching (tactical, strategic, diagnostic, etc.) |
-| Anti-Triggers | 1210 | Ranking penalty for conflicting query terms |
-| Response Profile | 1207 | Verbosity, directive strength, abstraction level |
+| Archetypes | 1211 | Query intent matching (tactical, strategic, diagnostic, etc.) |
+| Anti-Triggers | 1211 | Ranking penalty for conflicting query terms |
+| Response Profile | 1208 | Verbosity, directive strength, abstraction level |
 
 ## Skills by Domain
 
@@ -1549,7 +1549,7 @@ MIT — All skills are freely available and redistributable.
 | [modern-kotlin](skills/kotlin/modern-kotlin/SKILL.md) | Implements idiomatic Kotlin 2.0–2.4 patterns including coroutines, sealed interfaces, data classes, context receivers, and kotlinx libraries for production applications. | kotlin coroutines, sealed interfaces, data classes, kotlinx serialization, context receivers, how do i write modern kotlin, suspend function [tactical, educational] |
 
 
-### Linux (21 skills)
+### Linux (22 skills)
 
 | Skill Name | Description | Triggers |
 |---|---|---|
@@ -1567,6 +1567,7 @@ MIT — All skills are freely available and redistributable.
 | [networking](skills/linux/networking/SKILL.md) | Configures and optimizes Linux networking for cloud virtual networks and on-prem data center infrastructure with performance and security focus. | linux networking, bond interface, VLAN, bridge, network namespace, nftables, routing, cloud networking routing [tactical] |
 | [observability](skills/linux/observability/SKILL.md) | Implements Linux system observability with metrics, logs, and performance profiling for proactive infrastructure management across cloud and on-prem environments. | linux observability, system metrics, log collection, performance profiling, eBPF, perf, capacity planning, monitoring [tactical] |
 | [on-prem-infrastructure](skills/linux/on-prem-infrastructure/SKILL.md) | Engineers on-premises infrastructure including IPMI/iLO/iDRAC remote management, PXE deployment, network storage (NFS/iSCSI/FC), multipath I/O, and datacenter physical operations for bare-metal Linux systems. | IPMI, iLO, iDRAC, PXE boot, iSCSI, multipath, bare-metal provisioning, datacenter rack [tactical] |
+| [openedge-replication](skills/linux/openedge-replication/SKILL.md) | Implements three-tier replication architecture (DRBD+AI, ZFS+AI, AI-only rsync) for Progress OpenEdge 12.x databases without OER license. | openedge replication, DRBD, ZFS snapshot, AI shipping, failover runbook, rfutil roll-forward, keepalived VIP [tactical, strategic] |
 | [resource-management](skills/linux/resource-management/SKILL.md) | Manages Linux system resources using cgroups v2, namespaces, and systemd for workload isolation and resource guarantees in cloud and on-prem environments. | cgroups, resource management, cpu limit, memory limit, systemd resource, OOM, workload isolation, resource quota [tactical] |
 | [shell-command-chaining](skills/linux/shell-command-chaining/SKILL.md) | Implements shell command chaining patterns using &&, ||, and ; operators for conditional execution, validation gates, fallback chains, and safe sequential workflows in bash scripts. | shell command chaining, && operator, || operator, semicolon in bash, conditional command execution, fallback chain, AND list OR list, short-circuit evaluation command execution [tactical] |
 | [shell-parameter-expansion](skills/linux/shell-parameter-expansion/SKILL.md) | Applies bash parameter expansion operators (default values, error messages, substitution, pattern matching, case modification) to write robust shell scripts that safely handle unset variables and edge cases. | bash parameter expansion, ${VAR:-default}, variable default value, shell variable substitution, pattern matching shell, case modification, how do i handle unset variables, bash safe defaults variable substitution [tactical] |
@@ -2617,7 +2618,7 @@ MIT — All skills are freely available and redistributable.
 | [zoom-api](skills/coding/zoom-api/SKILL.md) | Coding | Integrates Zoom API v2 (Meetings, Webinars, Recordings, Phone, Users) using the zoom-python-client SDK v0.2+ with Server-to-Server OAuth, proper pagination, and rate-limit handling. |
 
 
-### Reference (Learn & Understand) (181 skills)
+### Reference (Learn & Understand) (182 skills)
 
 | Skill Name | Domain | Description |
 |---|---|---|
@@ -2768,6 +2769,7 @@ MIT — All skills are freely available and redistributable.
 | [open-policy-agent-opa](skills/cncf/open-policy-agent-opa/SKILL.md) | Cncf | "Open Policy Agent in Security &amp; Compliance - cloud native architecture" patterns, pitfalls, and best practices |
 | [open-telemetry](skills/cncf/open-telemetry/SKILL.md) | Cncf | "OpenTelemetry in Observability - cloud native architecture, patterns" pitfalls, and best practices |
 | [opencost](skills/cncf/opencost/SKILL.md) | Cncf | "OpenCost in Kubernetes Cost Monitoring - cloud native architecture, patterns" pitfalls, and best practices |
+| [openedge-replication](skills/linux/openedge-replication/SKILL.md) | Linux | Implements three-tier replication architecture (DRBD+AI, ZFS+AI, AI-only rsync) for Progress OpenEdge 12.x databases without OER license. |
 | [openfeature](skills/cncf/openfeature/SKILL.md) | Cncf | "OpenFeature in Feature Flagging - cloud native architecture, patterns" pitfalls, and best practices |
 | [openfga](skills/cncf/openfga/SKILL.md) | Cncf | "OpenFGA in Security &amp; Compliance - cloud native architecture, patterns" pitfalls, and best practices |
 | [openkruise](skills/cncf/openkruise/SKILL.md) | Cncf | "OpenKruise in Extended Kubernetes workload management with advanced deployment" strategies |
@@ -3937,6 +3939,7 @@ MIT — All skills are freely available and redistributable.
 | [openai-api](skills/coding/openai-api/SKILL.md) | Coding | Integrates OpenAI API (GPT-5, Responses API, Embeddings, DALL-E 3, Whisper, Realtime) using the openai Python SDK v2.38+ with proper error handling and async patterns. | Implementation |
 | [openapi-specification-engineering](skills/coding/openapi-specification-engineering/SKILL.md) | Coding | Engineers production OpenAPI 3.x specifications including schema design, discriminator patterns, reusable components, parameter validation, response schemas, external documentation links, and automated code generation workflows for type-safe client a... | Implementation |
 | [opencost](skills/cncf/opencost/SKILL.md) | Cncf | "OpenCost in Kubernetes Cost Monitoring - cloud native architecture, patterns" pitfalls, and best practices | Reference |
+| [openedge-replication](skills/linux/openedge-replication/SKILL.md) | Linux | Implements three-tier replication architecture (DRBD+AI, ZFS+AI, AI-only rsync) for Progress OpenEdge 12.x databases without OER license. | Reference |
 | [openfeature](skills/cncf/openfeature/SKILL.md) | Cncf | "OpenFeature in Feature Flagging - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [openfga](skills/cncf/openfga/SKILL.md) | Cncf | "OpenFGA in Security &amp; Compliance - cloud native architecture, patterns" pitfalls, and best practices | Reference |
 | [openframeworks](skills/coding/openframeworks/SKILL.md) | Coding | Implements OpenFrameworks (C++ creative coding toolkit) application lifecycle, addon integration, drawing primitives, event handling, shader management, and data visualization patterns for cross-platform interactive applications. | Implementation |
