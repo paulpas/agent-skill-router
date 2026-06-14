@@ -426,6 +426,20 @@ def update_readme(readme_path: Path, generated_content: str, skills: List[Dict])
         content,
     )
 
+    # Update "N,NNN valid skills across M domains" in the feature bullet (line ~12)
+    content = re.sub(
+        r'\d{1,3}(?:,\d{3})+ valid skills across \d+ domains',
+        f'{total_skills:,} valid skills across {unique_domains} domains',
+        content,
+    )
+
+    # Update "N active domains with M,NNN valid skills" (line ~90)
+    content = re.sub(
+        r'\d+ active domains with \d{1,3}(?:,\d{3})+ valid skills',
+        f'{unique_domains} active domains with {total_skills:,} valid skills',
+        content,
+    )
+
     # Update "🎯 **N Skills**" in the feature bullet
     content = re.sub(
         r'🎯 \*\*\d+ Skills\*\*',

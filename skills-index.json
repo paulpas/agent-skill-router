@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-14T14:35:41.797640Z",
-  "totalSkills": 1289,
+  "generatedAt": "2026-06-14T15:57:50.334503Z",
+  "totalSkills": 1291,
   "domains": {
     "agent": 330,
     "ai": 5,
@@ -16,7 +16,7 @@
     "go": 13,
     "java": 1,
     "kotlin": 1,
-    "linux": 22,
+    "linux": 24,
     "maker": 3,
     "networking": 1,
     "payments": 5,
@@ -28,7 +28,7 @@
     "writing": 5
   },
   "roles": {
-    "implementation": 860,
+    "implementation": 862,
     "orchestration": 238,
     "reference": 182,
     "information": 1,
@@ -7005,6 +7005,31 @@
       "relatedSkills": [],
       "version": "1.0.0",
       "source": "skills/cncf/coredns/SKILL.md"
+    },
+    {
+      "name": "corosync",
+      "domain": "linux",
+      "description": "Configures Corosync Cluster Engine v3.x messaging layer including totem protocol, quorum models, nodelist management, knet/udpu transports, and security for Pacemaker HA clusters.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "corosync",
+        "totem protocol",
+        "quorum management",
+        "cluster messaging",
+        "knet transport",
+        "udpu unicast",
+        "nodelist configuration",
+        "qdevice"
+      ],
+      "relatedSkills": [
+        "pacemaker",
+        "linux-services",
+        "networking"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/corosync/SKILL.md"
     },
     {
       "name": "cortex",
@@ -21123,6 +21148,31 @@
       ],
       "version": "1.0.0",
       "source": "skills/coding/output-sanitization/SKILL.md"
+    },
+    {
+      "name": "pacemaker",
+      "domain": "linux",
+      "description": "Manages Pacemaker HA clusters with pcs and crmsh for resource provisioning, constraints, STONITH fencing, quorum configuration, and cluster lifecycle operations on two-node and multi-node setups.",
+      "role": "implementation",
+      "scope": "infrastructure",
+      "outputFormat": "code",
+      "triggers": [
+        "pacemaker",
+        "pcs command",
+        "crmsh",
+        "cluster resource",
+        "STONITH fencing",
+        "CIB configuration",
+        "quorum management",
+        "promotable clone"
+      ],
+      "relatedSkills": [
+        "corosync",
+        "linux-services",
+        "storage-architecture"
+      ],
+      "version": "1.0.0",
+      "source": "skills/linux/pacemaker/SKILL.md"
     },
     {
       "name": "package-ecosystem-navigator",
