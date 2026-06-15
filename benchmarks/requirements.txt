@@ -19,6 +19,6 @@ requests>=2.34.2
 pydantic>=2.13.4
 
 # Development/optional
-pytest>=9.0.3
+pytest>=9.1.0
 black>=26.5.1
 flake8>=7.3.0
