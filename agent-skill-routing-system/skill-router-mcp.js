@@ -242,6 +242,14 @@ async function handleRouteToSkill(args) {
   const selectedSkills = response.body && response.body.selectedSkills;
   const attributionFooter = response.body && response.body.attributionFooter;
 
+  // DEBUG: Log what we received from the router
+  log('DEBUG', '[ROUTER RESPONSE] received from /route', {
+    hasAttributionFooter: !!attributionFooter,
+    attributionFooterLength: attributionFooter ? attributionFooter.length : 0,
+    attributionFooterPreview: attributionFooter ? attributionFooter.substring(0, 100) : null,
+    selectedSkillsCount: selectedSkills ? selectedSkills.length : 0,
+  });
+
   if (!selectedSkills || selectedSkills.length === 0) {
     log('WARN', 'no skills matched', { task });
     return { content: [{ type: 'text', text: 'No matching skills found for this task.' }] };
@@ -297,7 +305,23 @@ async function handleRouteToSkill(args) {
     });
   }
 
-  return { content: [{ type: 'text', text: body }] };
+  // DEBUG: Capture actual response body before returning
+  log('DEBUG', '[MCP RESPONSE BODY] start', {
+    preview: body.substring(0, 300),
+    totalLength: body.length,
+  });
+  log('DEBUG', '[MCP RESPONSE BODY] end', {
+    preview: body.substring(Math.max(0, body.length - 300)),
+  });
+
+  const mcpResponse = { content: [{ type: 'text', text: body }] };
+  log('DEBUG', '[MCP RESPONSE] complete JSON structure', {
+    contentType: mcpResponse.content[0].type,
+    textFieldLength: mcpResponse.content[0].text.length,
+    hasAttributionFooter: body.includes('Assisted by') || body.includes('externally-sourced') || body.includes('Skills Used'),
+  });
+
+  return mcpResponse;
 }
 
 async function handleListSkills() {
