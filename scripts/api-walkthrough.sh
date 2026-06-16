@@ -960,7 +960,7 @@ chapter_09_opencode_integration() {
         return
     fi
 
-    local TASK_PROMPT='How does Redis Streams handle exactly-once message processing with consumer groups? Need stream architecture, ack patterns, and dead letter queue handling for a production system.'
+    local TASK_PROMPT='How can I bootstrap a new Golang project using best practices, LSP, and Github tooling? Need repo architecture, Golang patterns, and observability handling for a production Golang application.'
 
     echo -e "${WHITE}${BOLD}  Launching OpenCode with MCP bridge...${RESET}"
     echo ""
