@@ -240,6 +240,8 @@ async function handleRouteToSkill(args) {
   }
 
   const selectedSkills = response.body && response.body.selectedSkills;
+  const attributionFooter = response.body && response.body.attributionFooter;
+
   if (!selectedSkills || selectedSkills.length === 0) {
     log('WARN', 'no skills matched', { task });
     return { content: [{ type: 'text', text: 'No matching skills found for this task.' }] };
@@ -282,9 +284,18 @@ async function handleRouteToSkill(args) {
     return { content: [{ type: 'text', text: desc }] };
   }
 
-  const body = loaded
+  let body = loaded
     .map((r) => `# Skill: ${r.name}\n\n${r.content}`)
     .join('\n\n---\n\n');
+
+  // Append attribution footer if available
+  if (attributionFooter) {
+    body += '\n\n---\n\n' + attributionFooter;
+    log('DEBUG', '[ATTRIBUTION] footer appended to response', {
+      skillCount: loaded.length,
+      footerLength: attributionFooter.length,
+    });
+  }
 
   return { content: [{ type: 'text', text: body }] };
 }
