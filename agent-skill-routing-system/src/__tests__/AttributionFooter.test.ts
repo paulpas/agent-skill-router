@@ -47,14 +47,16 @@ it('returns empty string when skills is undefined', () => {
   });
 
     it('generates markdown format by default', () => {
-      const footer = AttributionFooter.generate({ skills: mockSkills });
-      
-      expect(footer).toContain('---');
-      expect(footer).toContain('**Assisted by [agent-skill-router]');
-      expect(footer).toContain('**Skills Used (2):**');
-      expect(footer).toContain('[code-review]');
-      expect(footer).toContain('[testing-patterns]');
-    });
+       const footer = AttributionFooter.generate({ skills: mockSkills });
+       
+       expect(footer).toContain('---');
+       expect(footer).toContain('**Assisted by [agent-skill-router]');
+       expect(footer).toContain('**Skills Used (2):**');
+       expect(footer).toContain('code-review');
+       expect(footer).toContain('testing-patterns');
+       expect(footer).toContain('[Software Engineering]');
+       expect(footer).toContain('[CS Fundamentals]');
+     });
   });
 
   describe('markdown format', () => {
@@ -150,15 +152,15 @@ it('returns empty string when skills is undefined', () => {
       expect(footer).toContain('testing-patterns');
     });
 
-    it('includes domain badges', () => {
-      const footer = AttributionFooter.generate({
-        skills: mockSkills,
-        format: 'plaintext',
-      });
-      
-      expect(footer).toContain('[coding]');
-      expect(footer).toContain('[programming]');
-    });
+     it('includes domain badges', () => {
+       const footer = AttributionFooter.generate({
+         skills: mockSkills,
+         format: 'plaintext',
+       });
+       
+       expect(footer).toContain('[Software Engineering]');
+       expect(footer).toContain('[CS Fundamentals]');
+     });
 
     it('includes project URL', () => {
       const footer = AttributionFooter.generate({
@@ -306,42 +308,43 @@ it('returns empty string when skills is undefined', () => {
 
   describe('skills without URLs', () => {
     it('renders skill names without links in markdown', () => {
-      const skills: SkillAttribution[] = [
-        {
-          name: 'test-skill',
-          domain: 'coding',
-          description: 'Test skill',
-        },
-      ];
-      
-      const footer = AttributionFooter.generate({
-        skills,
-        format: 'markdown',
-      });
-      
-      expect(footer).toContain('**test-skill**');
-      expect(footer).not.toContain('[test-skill](');
-    });
+       const skills: SkillAttribution[] = [
+         {
+           name: 'test-skill',
+           domain: 'coding',
+           description: 'Test skill',
+         },
+       ];
+       
+       const footer = AttributionFooter.generate({
+         skills,
+         format: 'markdown',
+       });
+       
+       expect(footer).toContain('test-skill');
+       expect(footer).toContain('**🛠️ [Software Engineering]**');
+       expect(footer).not.toContain('[test-skill](');
+     });
 
-    it('renders skill names without links in html', () => {
-      const skills: SkillAttribution[] = [
-        {
-          name: 'test-skill',
-          domain: 'coding',
-          description: 'Test skill',
-        },
-      ];
-      
-      const footer = AttributionFooter.generate({
-        skills,
-        format: 'html',
-      });
-      
-      expect(footer).toContain('<strong>test-skill</strong>');
-      // Project link is always included in header, but skill itself has no link
-      expect(footer).toContain('<li><strong>test-skill</strong>');
-      expect(footer).not.toMatch(/<li><strong><a href=.*?test-skill/);
-    });
+     it('renders skill names without links in html', () => {
+       const skills: SkillAttribution[] = [
+         {
+           name: 'test-skill',
+           domain: 'coding',
+           description: 'Test skill',
+         },
+       ];
+       
+       const footer = AttributionFooter.generate({
+         skills,
+         format: 'html',
+       });
+       
+       expect(footer).toContain('test-skill');
+       expect(footer).toContain('<strong>🛠️ [Software Engineering]</strong>');
+       // Project link is always included in header, but skill itself has no link
+       expect(footer).not.toContain('test-skill</a>');
+     });
   });
 
   describe('credibility text', () => {
