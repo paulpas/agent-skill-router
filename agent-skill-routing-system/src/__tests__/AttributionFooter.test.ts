@@ -51,7 +51,7 @@ it('returns empty string when skills is undefined', () => {
       
       expect(footer).toContain('---');
       expect(footer).toContain('**Assisted by [agent-skill-router]');
-      expect(footer).toContain('**Skills Used:**');
+      expect(footer).toContain('**Skills Used (2):**');
       expect(footer).toContain('[code-review]');
       expect(footer).toContain('[testing-patterns]');
     });
@@ -452,6 +452,67 @@ it('returns empty string when skills is undefined', () => {
       });
       
       expect(footer).toContain('code-review-security');
+    });
+  });
+
+  describe('skill count display', () => {
+    it('displays correct count for multiple skills in markdown', () => {
+      const footer = AttributionFooter.generate({
+        skills: mockSkills,
+        format: 'markdown',
+      });
+      
+      expect(footer).toContain('**Skills Used (2):**');
+    });
+
+    it('displays count of 1 for single skill in markdown', () => {
+      const singleSkill = [mockSkills[0]];
+      const footer = AttributionFooter.generate({
+        skills: singleSkill,
+        format: 'markdown',
+      });
+      
+      expect(footer).toContain('**Skills Used (1):**');
+    });
+
+    it('displays correct count in plaintext format', () => {
+      const footer = AttributionFooter.generate({
+        skills: mockSkills,
+        format: 'plaintext',
+      });
+      
+      expect(footer).toContain('Skills Used (2):');
+    });
+
+    it('displays correct count in html format', () => {
+      const footer = AttributionFooter.generate({
+        skills: mockSkills,
+        format: 'html',
+      });
+      
+      expect(footer).toContain('<strong>Skills Used (2):</strong>');
+    });
+
+    it('returns empty string when skills array is empty (no count)', () => {
+      const footer = AttributionFooter.generate({ skills: [] });
+      
+      expect(footer).toBe('');
+      expect(footer).not.toContain('Skills Used');
+    });
+
+    it('displays correct count with 5 skills', () => {
+      const manySkills = Array.from({ length: 5 }, (_, i) => ({
+        name: `skill-${i}`,
+        domain: 'coding',
+        description: `Skill ${i}`,
+      }));
+      
+      const footer = AttributionFooter.generate({
+        skills: manySkills,
+        format: 'markdown',
+      });
+      
+      expect(footer).toContain('**Skills Used (5):**');
     });
   });
 });

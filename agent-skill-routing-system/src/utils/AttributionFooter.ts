@@ -171,12 +171,12 @@ export class AttributionFooter {
     );
 
     if (format === 'markdown') {
-      return '\n**Skills Used:**\n' + skillItems.join('\n');
+      return '\n**Skills Used (' + skills.length + '):**\n' + skillItems.join('\n');
     }
 
     if (format === 'html') {
       return (
-        '<p><strong>Skills Used:</strong></p>\n' +
+        '<p><strong>Skills Used (' + skills.length + '):</strong></p>\n' +
         '<ul>\n' +
         skillItems.map(item => `  <li>${item}</li>`).join('\n') +
         '\n</ul>'
@@ -184,7 +184,7 @@ export class AttributionFooter {
     }
 
     // plaintext
-    return '\nSkills Used:\n' + skillItems.join('\n');
+    return '\nSkills Used (' + skills.length + '):\n' + skillItems.join('\n');
   }
 
   /**
