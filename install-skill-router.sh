@@ -123,11 +123,12 @@ OPTIONS:
   -n, --no-interactive  Non-interactive mode with default config file (install-skill-router.conf)
 
   Integration flags (can be combined):
-      --integrate-opencode          Add skill-router to OpenCode IDE config (opencode.json)
-      --opencode-config FILE        Path to opencode.json (default: auto-detect)
-      --integrate-claude            Add skill-router to Claude Desktop config (claude.json)
-      --claude-config FILE          Path to claude.json (default: auto-detect)
-      --skills-dir DIR              Path to agent-skill-routing-system (default: auto-detect)
+       --integrate-opencode          Add skill-router to OpenCode IDE config (opencode.json)
+       --opencode-config FILE        Path to opencode.json (default: auto-detect)
+       --integrate-claude            Add skill-router to Claude Desktop config (claude.json)
+       --claude-config FILE          Path to claude.json (default: auto-detect)
+       --skills-dir DIR              Path to agent-skill-routing-system (default: auto-detect)
+       --force-update                Force re-copy MCP bridge and API doc files even if checksums match
 
 CONFIG FILE FORMAT:
   The config file should contain key=value pairs, one per line.
@@ -249,6 +250,7 @@ MODE_INTEGRATE_CLAUDE="false"
 MODE_OPENCODE_CONFIG=""
 MODE_CLAUDE_CONFIG=""
 MODE_SKILLS_DIR=""
+MODE_FORCE_UPDATE="false"
 
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -303,21 +305,25 @@ while [[ $# -gt 0 ]]; do
       MODE_CLAUDE_CONFIG="$2"
       shift 2
       ;;
-    --skills-dir)
-      if [[ $# -lt 2 || "$2" == --* ]]; then
-        echo "Error: --skills-dir requires a directory path"
-        exit 1
-      fi
-      MODE_SKILLS_DIR="$2"
-      shift 2
-      ;;
-    *)
-      echo "Unknown option: $1"
-      show_usage
-      exit 1
-      ;;
-  esac
-done
+     --skills-dir)
+       if [[ $# -lt 2 || "$2" == --* ]]; then
+         echo "Error: --skills-dir requires a directory path"
+         exit 1
+       fi
+       MODE_SKILLS_DIR="$2"
+       shift 2
+       ;;
+     --force-update)
+       MODE_FORCE_UPDATE="true"
+       shift
+       ;;
+     *)
+       echo "Unknown option: $1"
+       show_usage
+       exit 1
+       ;;
+   esac
+ done
 
 # Show help if requested
 if [[ "$show_help_flag" == "true" ]]; then
@@ -1969,6 +1975,7 @@ run_installation() {
   local claude_config_arg="${4:-}"
   local no_service="${5:-false}"
   local skills_dir_arg="${6:-}"
+  local force_update="${7:-false}"
   
   # Detect OpenCode config
   OPENCODE_CONFIG=""
@@ -2371,11 +2378,16 @@ PYEOF
     
     mkdir -p "$(dirname "$MCP_SCRIPT_PATH")"
     
-    # Compare SHA-256 checksums to detect drift
+    # Compute source checksum
     local src_checksum
     src_checksum=$(compute_sha256 "$BRIDGE_SRC")
     
-    if [[ -f "$MCP_SCRIPT_PATH" ]]; then
+    # Early exit: force-update flag skips checksum comparison
+    if [[ "$force_update" == "true" ]]; then
+      cp "$BRIDGE_SRC" "$MCP_SCRIPT_PATH"
+      ok "Bridge script installed (force-update): $MCP_SCRIPT_PATH"
+    elif [[ -f "$MCP_SCRIPT_PATH" ]]; then
+      # Checksum comparison for existing file
       local installed_checksum
       installed_checksum=$(compute_sha256 "$MCP_SCRIPT_PATH")
       if [[ "$src_checksum" == "$installed_checksum" ]]; then
@@ -2385,6 +2397,7 @@ PYEOF
         ok "Bridge script updated (checksum mismatch)"
       fi
     else
+      # File doesn't exist, install it
       cp "$BRIDGE_SRC" "$MCP_SCRIPT_PATH"
       ok "Bridge script installed: $MCP_SCRIPT_PATH"
     fi
@@ -2494,28 +2507,34 @@ PYEOF
     
     mkdir -p "$(dirname "$MCP_SCRIPT_PATH")"
     
-    if [[ ! -f "$CLAUDE_BRIDGE_SRC" ]]; then
-      err "Claude MCP bridge source not found: $CLAUDE_BRIDGE_SRC"
-      exit 1
-    fi
-    
-    # Compare SHA-256 checksums to detect drift
-    local src_checksum
-    src_checksum=$(compute_sha256 "$CLAUDE_BRIDGE_SRC")
-    
-    if [[ -f "$MCP_SCRIPT_PATH" ]]; then
-      local installed_checksum
-      installed_checksum=$(compute_sha256 "$MCP_SCRIPT_PATH")
-      if [[ "$src_checksum" == "$installed_checksum" ]]; then
-        ok "Claude MCP script already up to date: $MCP_SCRIPT_PATH"
-      else
-        cp "$CLAUDE_BRIDGE_SRC" "$MCP_SCRIPT_PATH"
-        ok "Claude MCP script updated (checksum mismatch)"
-      fi
-    else
-      cp "$CLAUDE_BRIDGE_SRC" "$MCP_SCRIPT_PATH"
-      ok "Claude MCP script installed: $MCP_SCRIPT_PATH"
-    fi
+     if [[ ! -f "$CLAUDE_BRIDGE_SRC" ]]; then
+       err "Claude MCP bridge source not found: $CLAUDE_BRIDGE_SRC"
+       exit 1
+     fi
+     
+     # Compute source checksum
+     local src_checksum
+     src_checksum=$(compute_sha256 "$CLAUDE_BRIDGE_SRC")
+     
+     # Early exit: force-update flag skips checksum comparison
+     if [[ "$force_update" == "true" ]]; then
+       cp "$CLAUDE_BRIDGE_SRC" "$MCP_SCRIPT_PATH"
+       ok "Claude MCP script installed (force-update): $MCP_SCRIPT_PATH"
+     elif [[ -f "$MCP_SCRIPT_PATH" ]]; then
+       # Checksum comparison for existing file
+       local installed_checksum
+       installed_checksum=$(compute_sha256 "$MCP_SCRIPT_PATH")
+       if [[ "$src_checksum" == "$installed_checksum" ]]; then
+         ok "Claude MCP script already up to date: $MCP_SCRIPT_PATH"
+       else
+         cp "$CLAUDE_BRIDGE_SRC" "$MCP_SCRIPT_PATH"
+         ok "Claude MCP script updated (checksum mismatch)"
+       fi
+     else
+       # File doesn't exist, install it
+       cp "$CLAUDE_BRIDGE_SRC" "$MCP_SCRIPT_PATH"
+       ok "Claude MCP script installed: $MCP_SCRIPT_PATH"
+     fi
     
     info "Claude bridge script checksum: ${src_checksum:0:16}..."
     
@@ -2767,10 +2786,10 @@ if [[ "$MODE" == "noninteractive" ]]; then
   JS_RENDER_TIMEOUT_MS="${JS_RENDER_TIMEOUT_MS:-5000}"
   JS_RENDER_FALLBACK="${JS_RENDER_FALLBACK:-true}"
   LINK_RESOLUTION_MODE="${LINK_RESOLUTION_MODE:-inline}"
-  SEMANTIC_TOP_K="${SEMANTIC_TOP_K:-3}"
-  SEMANTIC_SIMILARITY_THRESHOLD="${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}"
-
-  run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR"
+   SEMANTIC_TOP_K="${SEMANTIC_TOP_K:-3}"
+   SEMANTIC_SIMILARITY_THRESHOLD="${SEMANTIC_SIMILARITY_THRESHOLD:-0.3}"
+ 
+   run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR" "$MODE_FORCE_UPDATE"
 else
   # Dialog-based interactive mode with line-prompt fallback
   OPENAI_API_KEY="${OPENAI_API_KEY:-}"
@@ -2812,9 +2831,9 @@ else
     exit 0
   fi
 
-  print_header
-  echo -e "${BOLD}Starting installation...${RESET}"
-  echo ""
-
-  run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR"
-fi
+   print_header
+   echo -e "${BOLD}Starting installation...${RESET}"
+   echo ""
+ 
+   run_installation "$MODE_INTEGRATE_OPENCODE" "$MODE_INTEGRATE_CLAUDE" "$MODE_OPENCODE_CONFIG" "$MODE_CLAUDE_CONFIG" "false" "$MODE_SKILLS_DIR" "$MODE_FORCE_UPDATE"
+ fi
