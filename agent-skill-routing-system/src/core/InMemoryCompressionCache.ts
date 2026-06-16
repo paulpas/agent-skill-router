@@ -200,12 +200,17 @@ export class InMemoryCompressionCache {
 
   /**
    * Shutdown: stop cleanup timer
+   * MUST be called during test cleanup to prevent open handle warnings
    */
   shutdown(): void {
-    if (this.cleanupTimer) {
-      clearInterval(this.cleanupTimer);
-      this.cleanupTimer = null;
+    // Guard: timer already cleared
+    if (!this.cleanupTimer) {
+      this.logger.debug('Cleanup timer already cleared');
+      return;
     }
+
+    clearInterval(this.cleanupTimer);
+    this.cleanupTimer = null;
     this.logger.info('Cache shutdown');
   }
 

@@ -97,7 +97,12 @@ It should compress well and demonstrate all phases working together.
   });
 
   afterEach(() => {
+    // Shutdown all caches to cleanup timers and prevent async warnings
     memoryCache.shutdown();
+    diskCache.shutdown();
+    registry.shutdown();
+
+    // Clean up filesystem
     if (fs.existsSync(skillsDir)) {
       fs.rmSync(skillsDir, { recursive: true, force: true });
     }

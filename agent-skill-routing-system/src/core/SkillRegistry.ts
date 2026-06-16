@@ -1807,7 +1807,7 @@ export class SkillRegistry implements SkillRegistryWithCompression {
   getMarkdownLinkConfig(): {
     enabled: boolean;
     allowExternalLinks: boolean;
-    maxDepth: number;
+     maxDepth: number;
     maxExternalSizeKb: number;
     compressionMode: 'brief' | 'moderate' | 'skip';
     jsRenderingEnabled: boolean;
@@ -1818,5 +1818,22 @@ export class SkillRegistry implements SkillRegistryWithCompression {
     semanticSimilarityThreshold: number;
   } {
     return this.markdownLinkConfig;
+  }
+
+  /**
+   * Shutdown: cleanup resources held by caches
+   * MUST be called during test cleanup to prevent open handle warnings
+   */
+  shutdown(): void {
+    // Guard: no caches initialized
+    if (!this.memoryCache || !this.diskCache) {
+      return;
+    }
+
+    // Shutdown both caches in sequence
+    this.memoryCache.shutdown();
+    this.diskCache.shutdown();
+
+    this.logger.info('SkillRegistry shutdown complete');
   }
 }

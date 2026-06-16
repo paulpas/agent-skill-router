@@ -13,6 +13,11 @@ describe('ArchetypeParsing', () => {
     registry = new SkillRegistry({ skillsDirectory: __dirname });
   });
 
+  afterEach(() => {
+    // Shutdown registry to cleanup timers and prevent async warnings
+    registry.shutdown();
+  });
+
   // --- Archetypes: YAML array ---
   describe('parsing archetypes from YAML array', () => {
     it('extracts archetype list from YAML array format', () => {
