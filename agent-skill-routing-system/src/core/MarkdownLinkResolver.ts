@@ -478,19 +478,33 @@ export class MarkdownLinkResolver {
   }
 
   /**
-   * Extract meaningful content from HTML, targeting a character limit.
-   * Removes scripts, styles, navigation, and extracts text with heading structure.
-   */
-  private extractKeyContent(html: string, targetChars: number): string {
+    * Strip common navigation/boilerplate HTML elements from content.
+    * Removes nav, footer, header, and aside elements which typically contain
+    * site-level navigation menus, sidebars, and footers rather than useful content.
+    */
+   private stripBoilerplate(html: string): string {
+     let text = html;
+     text = text.split(/<nav[\s\S]*?<\/nav>/gi).join('');
+     text = text.split(/<footer[\s\S]*?<\/footer>/gi).join('');
+     text = text.split(/<header[\s\S]*?<\/header>/gi).join('');
+     text = text.split(/<aside[\s\S]*?<\/aside>/gi).join('');
+     return text;
+   }
+
+   /**
+    * Extract meaningful content from HTML, targeting a character limit.
+    * Removes scripts, styles, navigation, and extracts text with heading structure.
+    */
+   private extractKeyContent(html: string, targetChars: number): string {
     // Extract meaningful content from HTML
     let text = html;
 
     // Remove script/style
     text = text.split(/<script[\s\S]*?<\/script>/gi).join('');
     text = text.split(/<style[\s\S]*?<\/style>/gi).join('');
-    text = text.split(/<nav[\s\S]*?<\/nav>/gi).join('');
-    text = text.split(/<footer[\s\S]*?<\/footer>/gi).join('');
-    text = text.split(/<header[\s\S]*?<\/header>/gi).join('');
+
+    // Strip navigation/boilerplate elements
+    text = this.stripBoilerplate(text);
 
     // Convert to text
     text = text.split(/<h1[^>]*>(.*?)<\/h1>/gi).join('\n# $1\n');
@@ -536,10 +550,8 @@ export class MarkdownLinkResolver {
     text = text.split(/<script[\s\S]*?<\/script>/gi).join('');
     text = text.split(/<style[\s\S]*?<\/style>/gi).join('');
 
-    // NEW: Remove navigation, footer, and header elements to strip site boilerplate noise
-    text = text.split(/<nav[\s\S]*?<\/nav>/gi).join('');
-    text = text.split(/<footer[\s\S]*?<\/footer>/gi).join('');
-    text = text.split(/<header[\s\S]*?<\/header>/gi).join('');
+    // Strip navigation/boilerplate elements
+    text = this.stripBoilerplate(text);
 
     // Convert common HTML elements to markdown-like format
     text = text.split(/<h1[^>]*>(.*?)<\/h1>/gi).join('\n# $1\n');
