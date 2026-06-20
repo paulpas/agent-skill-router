@@ -292,61 +292,65 @@ export class MarkdownLinkResolver {
     const maxBytes = (this.config.maxExternalSizeKb ?? 10) * 1024;
     if (transformed.length <= maxBytes) {
       // Under threshold - inline as-is
+      const reference = this.formatReference(`External: ${url}`, transformed, url);
       if (this.debugContent) {
         this.logger.info('External content injected (inline)', {
           url,
-          size: transformed.length,
+          size: reference.length,
           mode: 'inline',
-          preview: transformed.substring(0, 1000),
+          preview: reference.substring(0, 1000),
         });
       }
-      return this.formatReference(`External: ${url}`, transformed, url);
+      return reference;
     }
 
     // Step 5: Over threshold - compress
     if (this.config.compressionMode === 'skip') {
       // Skip compression - truncate instead
       const truncated = transformed.substring(0, maxBytes) + '\n\n... [content truncated - exceeds size limit]';
+      const reference = this.formatReference(`External: ${url}`, truncated, url);
       if (this.debugContent) {
         this.logger.info('External content injected (truncated)', {
           url,
           originalSize: transformed.length,
-          finalSize: truncated.length,
+          finalSize: reference.length,
           mode: 'truncated',
-          preview: truncated.substring(0, 1000),
+          preview: reference.substring(0, 1000),
         });
       }
-      return this.formatReference(`External: ${url}`, truncated, url);
+      return reference;
     }
 
     // Step 6: LLM compression
     const compressed = await this.compressExternalContent(transformed, url);
     if (compressed !== null) {
+      const reference = this.formatReference(`External: ${url}`, compressed, url);
       if (this.debugContent) {
         this.logger.info('External content injected (compressed)', {
           url,
           originalSize: transformed.length,
-          finalSize: compressed.length,
+          finalSize: reference.length,
           mode: 'llm-compressed',
-          preview: compressed.substring(0, 1000),
+          preview: reference.substring(0, 1000),
         });
       }
-      return this.formatReference(`External: ${url}`, compressed, url);
+      return reference;
     }
 
     // Step 7: LLM compression failed - fallback to truncation
     this.logger.warn('LLM compression failed, falling back to truncation', { url, size: transformed.length });
     const truncated = transformed.substring(0, maxBytes) + '\n\n... [content truncated - LLM compression failed]';
+    const reference = this.formatReference(`External: ${url}`, truncated, url);
     if (this.debugContent) {
       this.logger.info('External content injected (fallback truncated)', {
         url,
         originalSize: transformed.length,
-        finalSize: truncated.length,
+        finalSize: reference.length,
         mode: 'llm-fail-truncated',
-        preview: truncated.substring(0, 1000),
+        preview: reference.substring(0, 1000),
       });
     }
-    return this.formatReference(`External: ${url}`, truncated, url);
+    return reference;
   }
 
   /**
@@ -731,11 +735,24 @@ export class MarkdownLinkResolver {
         .map(c => `### ${c.chunk.headingPath.join(' > ')}\n\n${c.chunk.content}`)
         .join('\n\n---\n\n');
 
-      return this.formatReference(
+      // Format the final reference section that will be injected into the prompt
+      const reference = this.formatReference(
         `External: ${url} (relevant excerpts)`,
         excerpts,
         url
       );
+
+      // Log the actual text being injected for verification
+      if (this.debugContent) {
+        this.logger.info('Semantic filter injected content', {
+          url,
+          chunkCount: relevantChunks.length,
+          totalSize: reference.length,
+          preview: reference.substring(0, 1000),
+        });
+      }
+
+      return reference;
     } catch (error) {
       // Law 4: Fail Fast — log error and return null for graceful fallback
       this.logger.error('Semantic resolution failed, falling back to compressed', {
