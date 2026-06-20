@@ -167,11 +167,11 @@ export class MarkdownLinkResolver {
     const content = await this.readLocalFile(resolvedPath);
     if (content === null) return null;
 
-    this.logger.info('Local link resolved', { path: resolvedPath, size: content.length });
+    this.logger.debug('Local link resolved', { path: resolvedPath, size: content.length });
 
     if (this.debugContent) {
       const previewText = content.substring(0, 1000);
-      this.logger.info('Local link full body', {
+      this.logger.debug('Local link full body', {
         path: resolvedPath,
         size: content.length,
         preview: previewText,
@@ -227,7 +227,7 @@ export class MarkdownLinkResolver {
       return null;
     }
 
-    this.logger.info('Fetching external web content', {
+    this.logger.debug('Fetching external web content', {
       url,
       depth: _depth,
       mode: this.config.jsRenderingEnabled ? 'js-rendered' : 'static'
@@ -257,7 +257,7 @@ export class MarkdownLinkResolver {
     }
 
     // Log what was actually retrieved before transformation
-    this.logger.info('External content retrieved', {
+    this.logger.debug('External content retrieved', {
       url,
       size: rawContent.length,
       mode: this.config.jsRenderingEnabled ? 'js-rendered' : 'static'
@@ -269,7 +269,7 @@ export class MarkdownLinkResolver {
     if (this.debugContent) {
       // Log the extracted plain text after HTML stripping — what actually gets injected into the prompt
       const previewText = transformed.substring(0, 1000);
-      this.logger.info('External content transformed', {
+      this.logger.debug('External content transformed', {
         url,
         rawSize: rawContent.length,
         transformedSize: transformed.length,
@@ -375,7 +375,7 @@ export class MarkdownLinkResolver {
 
       // 8MB hard limit as safety net
       const text = await response.text();
-      this.logger.info('External page fetched', { url, size: text.length });
+      this.logger.debug('External page fetched', { url, size: text.length });
       if (text.length > 8_000_000) {
         this.logger.warn('External content exceeds 8MB hard limit, skipping', { url, size: text.length });
         return null;
@@ -429,7 +429,7 @@ export class MarkdownLinkResolver {
 
         // Extract rendered HTML
         const html = await page.content();
-        this.logger.info('JS-rendered page fetched', { url, size: html.length });
+        this.logger.debug('JS-rendered page fetched', { url, size: html.length });
 
         // 8MB hard limit
         if (html.length > 8_000_000) {
@@ -676,7 +676,7 @@ export class MarkdownLinkResolver {
     // DEBUG: Log chunk count for verification
     if (this.debugContent) {
       const sampleHeading = chunks.slice(0, 3).map(c => c.headingPath.join(' > ')).join(', ');
-      this.logger.info('Semantic resolution started', {
+      this.logger.debug('Semantic resolution started', {
         url,
         totalChunks: chunks.length,
         sampleHeadings: sampleHeading || '(none)',
@@ -705,7 +705,7 @@ export class MarkdownLinkResolver {
           similarity: this.cosineSimilarity(queryEmbedding, ec.embedding),
         }));
 
-        this.logger.info('Semantic filter results', {
+        this.logger.debug('Semantic filter results', {
           url,
           totalChunks: chunks.length,
           passedThreshold: relevantChunks.length,
