@@ -146,7 +146,7 @@ export class EmbeddingService {
       await Promise.all(readPromises);
 
       if (loaded > 0) {
-        this.logger.info('[CACHE] Loaded embeddings from disk', { count: loaded, dir: cacheDir });
+        this.logger.debug('[CACHE] Loaded embeddings from disk', { count: loaded, dir: cacheDir });
       }
     } catch {
       // cache dir doesn't exist yet — that's fine
@@ -274,7 +274,7 @@ export class EmbeddingService {
 
     if (results.length > 0 || uncachedTexts.length > 0) {
       const hits = batch.length - uncachedTexts.length;
-      this.logger.info('[CACHE] batch embeddings', {
+      this.logger.debug('[CACHE] batch embeddings', {
         total: batch.length,
         hits,
         misses: uncachedTexts.length,
@@ -328,7 +328,7 @@ export class EmbeddingService {
     // Defensive truncation: cap text at MAX_TEXT_LENGTH to prevent API errors.
     const safeText = text.length > MAX_TEXT_LENGTH
       ? (() => {
-          this.logger.warn(
+          this.logger.debug(
             `[TRUNCATED] Single text exceeds max length (${text.length} > ${MAX_TEXT_LENGTH} chars). Truncated to ${MAX_TEXT_LENGTH}.`,
             { textPreview: text.slice(0, PREVIEW_LENGTH) },
           );
@@ -362,16 +362,16 @@ export class EmbeddingService {
       const data = await response.json() as { data: { embedding: number[] }[]; usage?: { prompt_tokens?: number; input_tokens?: number } };
       const embedding = data.data[0].embedding;
       const inputTokens = data.usage?.input_tokens ?? data.usage?.prompt_tokens;
-      return { 
-        embedding, 
-        dimensions: embedding.length, 
+      return {
+        embedding,
+        dimensions: embedding.length,
         model: this.config.model,
         inputTokens: typeof inputTokens === 'number' ? inputTokens : undefined
       };
     } catch (error) {
       // If API fails, generate a deterministic placeholder embedding
       // This allows the system to work without API keys for testing
-      this.logger.warn('Failed to generate embedding, using placeholder', {
+      this.logger.debug('Failed to generate embedding, using placeholder', {
         provider: this.config.provider,
         error: error instanceof Error ? error.message : String(error),
       });
@@ -400,7 +400,7 @@ export class EmbeddingService {
         for (let i = 0; i < texts.length; i++) {
           const text = texts[i];
           if (text.length > MAX_TEXT_LENGTH) {
-            this.logger.warn(
+            this.logger.debug(
               `[TRUNCATED] Text ${i + 1}/${texts.length} exceeds max length (${text.length} > ${MAX_TEXT_LENGTH} chars). Truncated to ${MAX_TEXT_LENGTH}.`,
               { textPreview: text.slice(0, PREVIEW_LENGTH) },
             );
@@ -450,11 +450,11 @@ export class EmbeddingService {
          inputTokens: tokensPerText,
        };
      } catch (error) {
-       this.logger.warn('Failed to generate batch embeddings from API', {
-         provider: this.config.provider,
-         error: error instanceof Error ? error.message : String(error),
-         count: texts.length,
-       });
+        this.logger.debug('Failed to generate batch embeddings from API', {
+          provider: this.config.provider,
+          error: error instanceof Error ? error.message : String(error),
+          count: texts.length,
+        });
 
        const placeholders = texts.map((text) => this.generatePlaceholderEmbedding(text));
        return {
